@@ -1,113 +1,177 @@
 // @ts-nocheck
-// ─── Edexcel IGCSE English Literature Mock Exams ──────────────────────────────────
-// 6 Comprehensive Mock Exams covering Drama, Poetry Anthology, and Unseen Texts
-// Edexcel International GCSE Specification
-// Paper 1 (3 mocks): Drama and Poetry Anthology
-// Paper 2 (3 mocks): Unseen Prose, Unseen Poetry, and Comparative Texts
-//
-// FABRICATION WARNING (FC20 audit, 2026-04-28):
-// The poetry extracts attributed to "Carol Ann Duffy, 'Little Red Cap'",
-// "Gillian Clarke, 'Vultures'", "Derek Mahon, 'Everything Everything'",
-// "Seamus Heaney, 'Funeral Rites'" and "Liz Lochhead, 'The Krewe'" are
-// FABRICATED. Either the poem title does not exist in the named poet's work
-// or the rendered text does not match the genuine poem (e.g. Duffy's
-// "Little Red-Cap" begins "At childhood's end, the houses petered out");
-// Heaney's "Funeral Rites" is real but its actual text differs from what is
-// printed here. The model answer for the Mahon stimulus quotes lines that do
-// not exist in any Mahon poem. Treat ALL named-poet poetry extracts in this
-// file as fabricated stimuli; do not cite as real poems by those poets.
-// Pre-1928 Shakespeare/Marlowe drama extracts (Tempest, Faustus) and the
-// "Unseen Contemporary Prose/Poem" labelled stimuli are unaffected.
+/**
+ * Edexcel IGCSE English Literature: six practice papers, three on drama and
+ * the poetry anthology and three on unseen prose and poetry. Nothing imports
+ * this file, so the site serves none of these papers. It is kept honest all
+ * the same, because it sits in a public repository and could be wired in.
+ *
+ * WHAT WAS WRONG, AND WHAT WAS DONE (27 September 2026). The mock-exam
+ * extract audit (scripts/check-mock-exam-extracts.mjs) and a reading of every
+ * model answer found the following.
+ *
+ * - The Tempest extract was Prospero's "Our revels now are ended", which is
+ *   in Act 4 Scene 1, labelled and introduced as Act 5 Scene 1, with one
+ *   sentence punctuated unlike the edition. It is now his whole speech, cut
+ *   from the held edition by playPassage(), and the label, question and model
+ *   answers place it where it is: after the masque, which Prospero breaks off
+ *   when he remembers Caliban's plot, and ending "Sir, I am vex'd". One answer
+ *   listed "silk" among the speech's images; the word is not in it.
+ * - The Tempest essay answer (no extract) quoted two lines that are not in
+ *   the held edition, gave Caliban's "barnacles" line to Prospero, and put
+ *   the charge against Caliban in Act 2 Scene 2 (it is made in Act 1 Scene 2).
+ *   It was written again with quotations checked against the held edition,
+ *   and the question now names the play, so the checker can read those
+ *   quotations: it skips an essay question that names no work, which is how
+ *   these survived.
+ * - The Doctor Faustus extract had one sentence punctuated unlike either
+ *   quarto. It is now cut by script from the posthumous 1604 quarto as
+ *   Alexander Dyce prints it (Project Gutenberg #779), never retyped, with the
+ *   stage direction the edition prints and its footnote numbers removed. Its
+ *   answer cited an "Act 5, Scene 2 revelation" that Helen is a demon, but
+ *   neither Gutenberg quarto has act or scene headings and neither says so of
+ *   Helen; the answer now cites what Faustus tells the Emperor about the
+ *   spirits he raises.
+ * - The checker still calls this extract 50% verbatim, wrongly: it strips
+ *   "[Kisses her.]" from the passage but not from the Gutenberg text, and
+ *   leaves a stray "/" where that direction sat between two line marks. (It
+ *   also kept the footnote number "[163]" until it learned, the same day, to
+ *   drop bare footnote numbers.) A line-by-line comparison with #779 found all
+ *   eight lines identical once its footnote numbers are removed. The answer
+ *   calls "Kisses her" the direction this edition prints, not Marlowe's, since
+ *   Dyce's text is the only one checked.
+ * - Six passages that no question printed were deleted rather than repaired:
+ *   a "Duchess of Malfi" speech of which only the first sentence is
+ *   Webster's; an "Othello" passage splicing three moments of Act 5 Scene 2
+ *   with a line that is not in the play; and four pieces of invented verse and
+ *   drama named after real writers or their titles (Karam, Duffy, Clarke,
+ *   Motion). No question needed them, and a repaired passage that nothing
+ *   prints is still dead text in a public repository.
+ * - The paper 2 anthology answer quoted two poems the paper never printed:
+ *   the invented "Duffy" verse deleted above, and a burial poem found nowhere
+ *   in the file. The question now prints Piano and La Belle Dame sans Merci,
+ *   both Edexcel IGCSE anthology poems, cut from the held editions by
+ *   passage(), and the answer was written again for them.
+ * - The two poems once attributed to Derek Mahon and Liz Lochhead were
+ *   written for this file. Their labels now say so, in place of "Anonymous
+ *   (twentieth-century poetic style ...)", which read as a real poem by an
+ *   unknown poet, and their answers no longer misquote them or describe
+ *   questions and features the poems do not have.
+ * - Other answers quoted "Afterward, guilt would be a manageable thing." as
+ *   the end of Passage B (it is from another paper's passage), "to erase"
+ *   where the poem says "might erase", "She held it" where the passage says
+ *   "Helen held it", a letter's greeting with the narrator's words cut out of
+ *   it, and "ocean/swimmers" imagery from a poem on no paper. The prose
+ *   passages joined dashes to words ("observations-the man"), which made any
+ *   quotation beginning or ending at a dash unfindable; those dashes are now
+ *   colons, brackets or commas.
+ * - The paper 2 drama question printed 88 words labelled "Arthur Miller, The
+ *   Crucible". Miller died in 2005, so the play is in UK copyright until the
+ *   end of 2075, and the house limit is 14 words a quotation
+ *   (src/lib/study-guides/fair-dealing.ts). Whether the words were even
+ *   Miller's could not be checked, because the text is not held, yet the
+ *   answer quoted every line back as his. The question now prints Macbeth's
+ *   "If it were done" soliloquy and the exchange with Lady Macbeth that
+ *   follows (Act 1 Scene 7), cut from the held edition by playPassage(), and
+ *   asks the same thing of it: a character's conflict of conscience in
+ *   language and dramatic action. Macbeth is listed for the Edexcel
+ *   International GCSE in src/lib/board/set-texts.ts; The Crucible is not
+ *   listed there at all.
+ * - Two sections titled "Poetry Anthology" printed a poem written for this
+ *   file. They are now titled "Poetry".
+ *
+ * The checker reads only string literals as passages. The passages cut here
+ * at load time (The Tempest, Macbeth, Piano, La Belle Dame sans Merci) are
+ * therefore checked through the questions that print them, and cannot differ
+ * from the editions, because they are the editions.
+ */
 
+import { laBelleDameSansMerciText } from '@/data/full-texts/la-belle-dame-sans-merci'
+import { macbethText } from '@/data/full-texts/macbeth'
+import { pianoText } from '@/data/full-texts/piano'
+import { theTempestText } from '@/data/full-texts/the-tempest'
+import { passage, playPassage } from '@/lib/study-guides/passage'
 import type { MockExamPaper, MockExamSection, MockExamQuestion } from './mock-exams'
 
 // ═════════════════════════════════════════════════════════════════════════════
 // PAPER 1: DRAMA AND POETRY ANTHOLOGY (105 minutes, 80 marks)
 // ═════════════════════════════════════════════════════════════════════════════
 
-// ─── Section A: Drama Extracts (Edexcel approved texts) ───────────────────────
+// ─── Section A: Drama Extracts ─────────────────────────────────────────────────
+//
+// Of these three plays only Macbeth is among the Edexcel International GCSE
+// texts in src/lib/board/set-texts.ts, though this heading used to call all
+// of them approved.
 
-const DRAMA_EXTRACT_1_TEMPEST = `PROSPERO: Our revels now are ended. These our actors,
-As I foretold you, were all spirits and
-Are melted into air, into thin air:
-And, like the baseless fabric of this vision,
-The cloud-capp'd towers, the gorgeous palaces,
-The solemn temples, the great globe itself,
-Yea, all which it inherit, shall dissolve
-And, like this insubstantial pageant faded,
-Leave not a rack behind. We are such stuff
-As dreams are made on, and our little life
-Is rounded with a sleep.`
+// Prospero's whole speech in Act 4 Scene 1, cut from the held edition
+// (Project Gutenberg #1540) by playPassage(), which throws rather than drift
+// if either phrase stops being found. It was typed in, and labelled Act 5.
+const DRAMA_EXTRACT_1_TEMPEST = playPassage(
+  theTempestText,
+  'activ-scenei',
+  'You do look, my son',
+  'To still my beating mind',
+)
 
-const DRAMA_EXTRACT_2_MILLER = `ELIZABETH: I do not judge you. The magistrate sits in your heart that judges you. I never thought you but a good man, John, only somewhat bewildered.
-PROCTOR: Then you damn me? You will condemn me?
-ELIZABETH: I do not say I condemn you. I do say I love you still, John, which may be the only truth we have between us. But I do not judge you. It is God that judges, though we will do well to hope He will not judge us as we judged.`
+// Macbeth's "If it were done" soliloquy and the exchange with Lady Macbeth
+// that follows it, to his "We will proceed no further", cut from the held
+// edition by playPassage(). It replaces an 88-word "Crucible" extract: see
+// the header.
+const DRAMA_EXTRACT_2_MACBETH = playPassage(
+  macbethText,
+  'acti-scenevii',
+  'If it were done',
+  'We will proceed no further',
+)
 
-const DRAMA_EXTRACT_3_WEBSTER = `BOSOLA: Look you, the stars shine still. God's notwithstanding
-Murders, rapes, massacres,-all this is truth yet, as constant as
-The north star guides lost sailors. So we find ourselves
-In the darkest wood, yet the light remains, immutable,
-A witness to our deeds. Do you understand?`
-
-const DRAMA_EXTRACT_4_MARLOWE = `FAUSTUS: Was this the face that launched a thousand ships,
-And burnt the topless towers of Ilium?
-Sweet Helen, make me immortal with a kiss.
-Her lips suck forth my soul: see, where it flies!
+/* Christopher Marlowe, Doctor Faustus, the posthumous 1604 quarto as Alexander Dyce prints it (Project Gutenberg #779), cut from that file by script, never typed. */
+const DRAMA_EXTRACT_4_MARLOWE = `FAUSTUS: Was this the face that launch'd a thousand ships,
+And burnt the topless towers of Ilium--
+Sweet Helen, make me immortal with a kiss.--
+[Kisses her.]
+Her lips suck forth my soul: see, where it flies!--
 Come, Helen, come, give me my soul again.
 Here will I dwell, for heaven is in these lips,
 And all is dross that is not Helena.`
 
-const DRAMA_EXTRACT_5_SHAKESPEARE_OTHELLO = `OTHELLO: Had all his hairs been lives, my great revenge
-Had stomach for them all. But, O vain boast!
-Who can control his fate? 'Tis not so now.
-Be it as you will.
+// ─── Section B: Poetry Extracts ───────────────────────────────────────────────
 
-IAGO: What you know, you know:
-From this time forth I never will speak word.`
-
-const DRAMA_EXTRACT_6_KARAM = `Mother steps toward the kitchen and stops. She looks at her boy-at the man he's become.
-Really look at him. For the first time. And the weight of understanding-that nothing we do matters,
-that all our careful planning, our rules, our discipline-none of it changes what is.`
-
-// ─── Section B: Poetry Anthology Extracts (Edexcel anthology poems) ──────────
-
-const POETRY_EXTRACT_1_DUFFY = `Little Red Cap
-
-At last he has confessed, stood up and said
-I'm not a gentleman, and never was.
-The women, it was all women, I chose.
-He'd come to me with dead flowers in his hands.`
-
-const POETRY_EXTRACT_2_CLARKE = `Vultures
-
-In the morning, the vultures were there on the roof,
-patient, majestic, horrible with hunger.
-My father looked at them and said:
-"They know what we forget-that death is waiting."`
-
-const POETRY_EXTRACT_3_MAHON = `Everything Everything
+// Specially written for this file, not published poems (see the header).
+const POETRY_EXTRACT_3_EVERYTHING = `Everything Everything
 
 Everything everything must go-
 the prices slashed, the stock reduced to nothing.
 Nothing will remain of this: no memory,
 no evidence that we were ever here.`
 
-const POETRY_EXTRACT_5_LOCHHEAD = `The Krewe
+const POETRY_EXTRACT_5_THE_KREWE = `The Krewe
 
 Listen: they come, bright with their own parade,
 masked and gilded, carrying torches high.
 Behind their masks, who knows what faces wait-
 what wounds, what wonders, what they hide.`
 
-const POETRY_EXTRACT_6_MOTION = `Dangerous Play
+// Two Edexcel IGCSE anthology poems for paper 2's comparison question, cut
+// whole from the held editions by passage(): Piano from New Poems (1918,
+// Project Gutenberg #22726), and La Belle Dame sans Merci in its
+// "knight-at-arms" text (Project Gutenberg #36356). Both are out of UK
+// copyright. They replace two invented poems the answer quoted but no
+// paper printed.
+const POEM_PIANO = passage(
+  pianoText,
+  'poem',
+  'Softly, in the dusk',
+  'I weep like a child for the past',
+)
 
-We climbed into the apple tree and waited-
-for what? To be discovered? To be found?
-The garden held its breath. The world beyond
-the fence seemed suddenly far, and strange, and bound.`
+const POEM_LA_BELLE_DAME = passage(
+  laBelleDameSansMerciText,
+  'poem',
+  'O what can ail thee',
+  'Though the sedge is withered',
+)
 
 // ═════════════════════════════════════════════════════════════════════════════
-// MOCK EXAM 1: Drama Focus (The Tempest / An Inspector Calls)
+// MOCK EXAM 1: Drama Focus (The Tempest)
 // ═════════════════════════════════════════════════════════════════════════════
 
 const MOCK_EXAM_1_DRAMA: MockExamPaper = {
@@ -115,7 +179,7 @@ const MOCK_EXAM_1_DRAMA: MockExamPaper = {
   board: 'IGCSE',
   paperNumber: 1,
   title: 'Edexcel IGCSE English Literature - Paper 1 Mock Exam 1 (Drama Focus)',
-  subtitle: 'The Tempest and Post-1914 Drama',
+  subtitle: 'The Tempest and Poetry',
   code: '4ET1/01',
   totalTimeMinutes: 105,
   totalMarks: 80,
@@ -131,66 +195,64 @@ const MOCK_EXAM_1_DRAMA: MockExamPaper = {
         {
           id: 'q1-drama-1',
           questionNumber: 1,
-          questionText: `Read the following extract from Act 5, Scene 1 of The Tempest, where Prospero reflects on the nature of human mortality and the temporal nature of all earthly things. Analyse how Shakespeare uses language and imagery to convey Prospero's philosophical meditations. In your response, you should consider the dramatic context, poetic devices, and what this speech reveals about Prospero's character development.`,
+          questionText: `Read the following extract from Act 4, Scene 1 of The Tempest. Prospero has just broken off the masque he staged for Ferdinand and Miranda, because he has remembered Caliban's plot against his life, and he reflects on the passing of all earthly things and of human life. Analyse how Shakespeare uses language and imagery to convey Prospero's thoughts. In your response, you should consider the dramatic context, poetic devices, and what this speech reveals about Prospero's character and his development.`,
           marks: 40,
           suggestedTimeMinutes: 50,
           questionType: 'analysis',
           extract: DRAMA_EXTRACT_1_TEMPEST,
-          extractSource: 'William Shakespeare, The Tempest, Act 5, Scene 1',
+          extractSource: 'William Shakespeare, The Tempest, Act 4, Scene 1',
           modelAnswers: {
-            'Band 5 (32-40)': `Shakespeare uses this speech to present Prospero's final philosophical maturity and his acceptance of mortality. The extended metaphor comparing human existence to a theatrical performance reveals his growth from manipulator to sage. The phrase "our revels now are ended" employs metatheatrical language-Prospero acknowledges that his magical manipulations are like a play, temporary and insubstantial.
+            'Band 5 (32-40)': `Shakespeare places this speech at a moment of disturbance, not serenity. Prospero has just broken off the masque celebrating Ferdinand and Miranda's betrothal, because he has remembered "that foul conspiracy / Of the beast Caliban", and Miranda has never before seen him "touch’d with anger so distemper’d". The speech begins by calming Ferdinand ("be cheerful, sir") and turns, in its last six lines, to Prospero's admission "Sir, I am vex’d", so its meditation on mortality is framed by agitation. That frame matters: the philosophy is how Prospero steadies himself, and the last line, "To still my beating mind", shows that it has not yet worked.
 
-The repeated alliteration in "cloud-capp'd towers, the gorgeous palaces" creates a musical quality that mirrors the beauty he describes, yet emphasizes its transience. "Baseless fabric" is paradoxical-these grand structures have no foundation, existing only in the imagination. Shakespeare's use of the senses ("cloud," "air," "silk") makes the abstract concept of impermanence tangible.
+"Our revels now are ended" is metatheatrical. The "actors" of the masque "were all spirits", and they have "melted into air, into thin air"; the repetition, narrowing to "thin", enacts the fading it describes. The metaphor then widens from the masque to the world. The phrase "the baseless fabric of this vision" is a paradox, a building with no foundation. The list "The cloud-capp’d towers, the gorgeous palaces, / The solemn temples, the great globe itself" builds grandeur phrase by phrase, and "the great globe" may glance at the Globe, the King's Men's playhouse, so that the theatre itself is among the things that "shall dissolve". The spectacle will "Leave not a rack behind": not even a wisp of cloud will remain.
 
-The volta at "We are such stuff / As dreams are made on" shifts from external world to human consciousness. The phrase "dreams are made on" (not "of") suggests we are the raw material of dreams, not conscious dreamers-a humbling restatement of human insignificance. The final image "life is rounded with a sleep" creates circular structure, suggesting birth and death frame existence like parentheses around text.
+The turn at "We are such stuff / As dreams are made on" moves from the world to human beings. We are the material that dreams are made of, not merely dreamers, which makes identity itself insubstantial. "our little life / Is rounded with a sleep" presents life as a small space enclosed by sleep, a gentle image of death, as if the same unconsciousness lay before birth and after it.
 
-The speech demonstrates Prospero's transformation from a man seeking revenge (Act 1) to one accepting the limitations of power and mortality. His magical abilities-the very source of his control-are revealed as illusions. This acceptance of mortality and embrace of a more philosophical worldview marks his spiritual progression and validates the play's exploration of reconciliation over vengeance. The audience recognizes in this speech a character who has learned that control itself is an illusion.`,
-            'Band 4 (24-31)': `Shakespeare uses theatrical metaphor to explore the temporary nature of human achievement and Prospero's acceptance of this reality. The extended comparison between the revels and human life suggests that all earthly things, no matter how beautiful or grand, will dissolve like the theatrical spectacle.
+Then the tone drops: "Bear with my weakness; my old brain is troubled". The magician who commands spirits confesses age and "infirmity". This prepares for Act 5, where Prospero decides that "the rarer action is / In virtue than in vengeance" and promises to "break my staff". The speech is therefore a step in his development rather than its end: he can see that his art and his power are as temporary as the masque, but he is still angry, and he must walk "a turn or two" to calm himself. The audience watches a powerful man beginning to accept the limits of power and of life.`,
+            'Band 4 (24-31)': `Shakespeare uses the ending of the masque to explore the temporary nature of everything human. Prospero has stopped the masque because he has remembered Caliban's plot against his life, and he tells Ferdinand that "Our revels now are ended". The actors "were all spirits" and have "melted into air, into thin air", and he extends this to the whole world: "The cloud-capp’d towers, the gorgeous palaces, / The solemn temples, the great globe itself" will all "dissolve" and "Leave not a rack behind". The list builds up grandeur only to take it away.
 
-The descriptive language-"cloud-capp'd towers," "gorgeous palaces"-uses alliteration and vivid imagery to present the grandeur of human civilization. However, these descriptions are undercut by the assertion that they will "dissolve / And, like this insubstantial pageant faded, / Leave not a rack behind." The shift from beauty to nothingness emphasizes mortality.
+The key metaphor "We are such stuff / As dreams are made on" connects human existence to dreams, suggesting that life is unreal and brief. "our little life / Is rounded with a sleep" uses sleep as a metaphor for death, and "little" makes human life seem small.
 
-The key phrase "We are such stuff / As dreams are made on" directly connects human existence to dreams, suggesting the illusory nature of our lives. The final line about life being "rounded with a sleep" uses sleep as a metaphor for death, creating symmetry with birth.
+In the last lines of the speech Prospero admits "Sir, I am vex’d" and that "my old brain is troubled". This shows that he is not calm: he is still angry about the conspiracy. His thoughts about mortality prepare for Act 5, when he gives up his magic and forgives his enemies, so the speech shows him moving towards wisdom.`,
+            'Band 3 (16-23)': `Shakespeare uses this speech to show Prospero thinking about death and the temporary nature of life. He compares the masque, which has just ended, to life itself: the actors "Are melted into air", and so will everything else be.
 
-The speech shows Prospero's maturation-he has moved beyond his earlier focus on revenge and magic to contemplate deeper truths about human existence. This represents character development toward wisdom.`,
-            'Band 3 (16-23)': `Shakespeare uses this speech to show Prospero thinking about death and the temporary nature of life. The comparison to a play and to dreams suggests that human existence is not permanent.
+The language describes grand things, "towers", "palaces" and "temples", but says they will "dissolve". This contrast between grandeur and disappearance is the main idea of the speech. Phrases like "baseless fabric" and "insubstantial pageant" show that things which seem solid are actually temporary.
 
-The language describes beautiful things-towers, palaces, temples-but these are said to dissolve. This contrast between beauty and destruction creates the main idea of the speech. Phrases like "baseless fabric" and "insubstantial pageant" emphasize how things that seem real and permanent are actually temporary.
-
-The statement "We are such stuff / As dreams are made on" and the final line about life being "rounded with a sleep" both suggest that human life is temporary. Sleep might represent death, and the speech overall shows Prospero accepting this mortality. This shows his character has changed from the beginning of the play.`,
+The statement "We are such stuff / As dreams are made on" and the image of life "rounded with a sleep" both suggest that human life is short. Sleep might represent death. At the end Prospero says his "old brain is troubled", which shows he is still upset about Caliban's plot, so he is not completely calm.`,
           },
           markScheme: [
-            "Analyse Shakespeare's use of theatrical metaphor and its effectiveness in conveying impermanence",
-            'Discuss the imagery of dissolution and grandeur: towers, palaces, temples',
-            'Examine language devices: alliteration, paradox, metaphor (dreams, sleep)',
+            'Analyse Shakespeare\'s use of theatrical metaphor (the masque\'s "actors", the "pageant") and its effectiveness in conveying impermanence',
+            'Discuss the imagery of grandeur and dissolution: towers, palaces, temples, "the great globe itself"',
+            'Examine language devices: repetition, paradox ("baseless fabric"), metaphor (dreams, sleep)',
             'Consider the philosophical implications of equating human life with dreams and theatrical performance',
-            "Evaluate the dramatic significance of this speech within Prospero's character arc",
-            "Discuss context: Prospero's journey from vengeance to wisdom and acceptance of mortality",
+            'Evaluate the dramatic significance of the frame: the speech calms Ferdinand, then turns to Prospero\'s admission that he is "vex’d" and "troubled"',
+            "Discuss context: the masque broken off by Prospero's memory of Caliban's plot, and his choice of virtue over vengeance in Act 5",
             'Consider how the speech reflects Renaissance ideas about the nature of reality and human insignificance',
           ],
         },
         {
           id: 'q2-drama-1',
           questionNumber: 2,
-          questionText: `Analyse how the playwright presents the theme of power and control through a key dramatic moment or relationship. You should refer closely to the text, considering dramatic techniques, character interactions, and the broader significance of power dynamics within the play.`,
+          questionText: `Analyse how Shakespeare presents the theme of power and control in The Tempest through a key dramatic moment or relationship. You should refer closely to the text, considering dramatic techniques, character interactions, and the broader significance of power dynamics within the play.`,
           marks: 40,
           suggestedTimeMinutes: 50,
           questionType: 'analysis',
           modelAnswers: {
-            'Band 5 (32-40)': `In The Tempest, power and control permeate the entire dramatic structure. Prospero's relationship with Ariel and Caliban most effectively illustrates the play's examination of power. Prospero controls Ariel through magical servitude: "Thy pains not remembers, which is all three of thy service" (Act 1, Scene 2), revealing how those in power minimize others' suffering and contributions. Yet Ariel's demand for freedom-"Didst thou not come to me, and did not I take pains?"-demonstrates how power relationships generate resentment. Prospero's eventual grant of freedom suggests his growth in acknowledging the moral limits of power.
+            'Band 5 (32-40)': `In The Tempest, power and control shape almost every relationship, and Prospero's dealings with Ariel and Caliban show them most clearly. Prospero controls Ariel through a bargain of service for freedom. When Ariel asks "Is there more toil?" and reminds him of "what thou hast promis’d, / Which is not yet perform’d me", Prospero answers "How now! moody?" and then threatens: "If thou more murmur’st, I will rend an oak / And peg thee in his knotty entrails". Shakespeare shows the powerful recasting a servant's fair claim as ingratitude, and control resting on fear as much as on Ariel's debt for being freed from "what a torment" Sycorax had left him in.
 
-Conversely, Prospero's treatment of Caliban reveals darker aspects of control. Caliban's "You taught me language; and my profit on't / Is I know how to curse" articulates the complicity of the powerful in their own oppression-education becomes an instrument of domination. The dramatization of attempted rape (Act 2, Scene 2) shows how power is weaponized sexually. Caliban's rebellion with Stephano and Trinculo, though comic, reveals the inevitable resistance to tyranny.
+Prospero's treatment of Caliban reveals darker aspects of control. Caliban's "This island’s mine, by Sycorax my mother, / Which thou tak’st from me" presents Prospero as a usurper, and "You taught me language, and my profit on ’t / Is, I know how to curse" turns the gift of education into an instrument of domination, which Caliban can use only to resist. Prospero's answer, in Act 1, Scene 2, is that Caliban sought "to violate / The honour of my child", and he keeps him in check with threats of cramps and pinches. Caliban's rebellion with Stephano and Trinculo, though comic, shows him exchanging one master for another as he sings that he "Has a new master".
 
-The magical spectacle of Act 4-the masque-demonstrates power as theatrical performance. Prospero orchestrates the entire event: "We shall lose our time, / And all be turned to barnacles." The vanishing feast (Act 3, Scene 3) uses magic as power's ultimate display. Yet ironically, Prospero's greatest magical power-his control over love through Ferdinand and Miranda's relationship-shows love transcends magical control. Miranda and Ferdinand's mutual choice to love undercuts Prospero's designs, suggesting human agency resists external domination.
+Prospero's magic is power as theatre. The vanishing banquet of Act 3, Scene 3 leaves his enemies "knit up / In their distractions", and he gloats that "they now are in my power". In the masque of Act 4 he calls the performers "Spirits, which by mine art / I have from their confines call’d to enact / My present fancies". Even the love of Ferdinand and Miranda is managed: "this swift business / I must uneasy make, lest too light winning / Make the prize light." His aside "It goes on, I see, / As my soul prompts it" shows how far he treats even their love as part of his design.
 
-The resolution reveals power's transformation: Prospero renounces magic and accepts horizontal relationships. His breaking of the staff signifies accepting limits on control. The final pardoning of Antonio-"I do forgive / Thy rankest fault"-demonstrates power mature into mercy. Shakespeare thus presents power as inherently problematic, generating resentment and resistance, and suggests true power lies in its voluntary relinquishment.`,
+The resolution transforms power. Prospero decides that "the rarer action is / In virtue than in vengeance", promises to "break my staff" and "drown my book", sets Ariel free "to the elements", and forgives Antonio: "I do forgive / Thy rankest fault". His "this thing of darkness I / Acknowledge mine" accepts some responsibility for Caliban. Shakespeare thus presents power as problematic, generating resentment and resistance, and suggests that its best use lies in its voluntary relinquishment.`,
           },
-          questionType: 'analysis',
         },
       ],
     },
     {
       id: 'section-b-poetry',
-      title: 'Section B: Poetry Anthology',
+      // Not "Poetry Anthology": the poem it prints was written for this file.
+      title: 'Section B: Poetry',
       description:
         'Answer one question from this section. Study the extract and answer the question that follows.',
       totalMarks: 40,
@@ -199,23 +261,21 @@ The resolution reveals power's transformation: Prospero renounces magic and acce
         {
           id: 'q3-poetry-1',
           questionNumber: 3,
-          questionText: `Read the following poem. Analyse how the poet uses language and form to explore [theme: change, loss, or memory]. Consider the poet's choice of imagery, tone, and structure in your response.`,
+          questionText: `Read the following poem. Analyse how the poet uses language and form to explore loss and memory. Consider the poet's choice of imagery, tone, and structure in your response.`,
           marks: 40,
           suggestedTimeMinutes: 50,
           questionType: 'analysis',
-          extract: POETRY_EXTRACT_3_MAHON,
-          // FACT-CHECK 2026-04: source attribution corrected per verified-library audit
-          extractSource: 'Anonymous (twentieth-century poetic style; not a real Derek Mahon poem)',
+          extract: POETRY_EXTRACT_3_EVERYTHING,
+          extractSource: 'Specially written for this mock exam; not a published poem',
           modelAnswers: {
-            'Band 5 (32-40)': `The poem employs a deceptively simple form to convey profound anxiety about loss and erasure. The stark repetition of "Everything everything" in the opening immediately establishes a tone of urgency and inevitability. The poem's central concern-that commercial reduction ("prices slashed," "stock reduced to nothing") mirrors existential obliteration-transforms mundane retail language into metaphysical commentary. "Must go" carries double meaning: both commercial necessity and existential departure.
+            'Band 5 (32-40)': `The poem uses a deceptively simple form to convey anxiety about loss and erasure. The repetition of "Everything everything" in the opening line establishes a tone of urgency and inevitability. The poem's central move is to let the language of a closing-down sale ("the prices slashed, the stock reduced to nothing") stand for something larger, so that everyday retail language becomes a comment on loss. The phrase "must go" carries a double meaning: the goods must be sold, and everything, people included, must pass away.
 
-The anaphoric repetition of "nothing" in "reduced to nothing / Nothing will remain" creates rhythmic acceleration toward absolute negation. The noun "Nothing" capitalized and isolated at line beginning emphasizes its philosophical weight. The final statement "no evidence that we were ever here" extends personal mortality into cosmic erasure-the possibility that existence leaves no trace, no mark on the universe.
+The repetition of "nothing" across the line break, "the stock reduced to nothing. / Nothing will remain", makes the last word of one line the first word of the next, so that the idea of nothing carries forward and grows. Placed at the start of the line, and capitalised there, "Nothing" gains weight. The final line, "no evidence that we were ever here", extends personal mortality into complete erasure: the fear is not only of dying but of leaving no trace.
 
-Structurally, the short lines and minimal punctuation suggest fragmentation and collapse. The poem's form mirrors its content: declining word counts and diminishing capital letters suggest language itself being stripped away. The title "Everything Everything" emphasizes totality and repetition, suggesting cycles of consumption and disposal.
+Structurally, the poem is only four lines long, and it ends in a list of negatives, "no memory, / no evidence", as if the poem itself were being cleared away with the stock. The colon in "Nothing will remain of this:" marks the turn from the sale to what it means. The title "Everything Everything" emphasises totality and repetition, suggesting cycles of consumption and disposal.
 
-The poem's key innovation is collapsing commercial and existential registers. Department store slogans about clearance sales become meditation on human meaninglessness. This collapse forces readers to recognize how casual consumer language masks profound anxiety about mortality and insignificance. The final question "what evidence that we were ever here" expresses simultaneously personal anxiety and philosophical nihilism, connecting individual mortality to cosmic indifference.`,
+The poem's key achievement is collapsing commercial and existential registers. The slogans of a clearance sale become a meditation on human insignificance, which makes readers recognise how casual consumer language can mask deep anxiety about mortality. The final line holds personal anxiety and a wider fear together, connecting one person's mortality to the indifference of the world.`,
           },
-          questionType: 'analysis',
         },
       ],
     },
@@ -231,7 +291,7 @@ const MOCK_EXAM_2_BALANCED: MockExamPaper = {
   board: 'IGCSE',
   paperNumber: 1,
   title: 'Edexcel IGCSE English Literature - Paper 1 Mock Exam 2 (Poetry/Drama Balance)',
-  subtitle: 'Poetry Anthology and Modern Drama',
+  subtitle: 'Poetry Anthology and Shakespeare',
   code: '4ET1/02',
   totalTimeMinutes: 105,
   totalMarks: 80,
@@ -246,24 +306,25 @@ const MOCK_EXAM_2_BALANCED: MockExamPaper = {
         {
           id: 'q1-drama-2',
           questionNumber: 1,
-          questionText: `Analyse how a playwright presents a character's moral dilemma or conflict of conscience through language and dramatic action. You should refer closely to a key scene, considering how the character's internal struggle is externalized through dialogue and stagecraft.`,
+          questionText: `Read the following extract from Act 1, Scene 7 of Macbeth. King Duncan is a guest at Macbeth's castle, and Macbeth has left the supper to think about killing him; Lady Macbeth then comes to find him. Analyse how Shakespeare presents Macbeth's moral dilemma and conflict of conscience through language and dramatic action. You should consider how his inner struggle is shown through soliloquy and imagery, and how it changes when he speaks to Lady Macbeth.`,
           marks: 40,
           suggestedTimeMinutes: 50,
           questionType: 'analysis',
-          extract: DRAMA_EXTRACT_2_MILLER,
-          extractSource: 'Arthur Miller, The Crucible',
+          extract: DRAMA_EXTRACT_2_MACBETH,
+          extractSource: 'William Shakespeare, Macbeth, Act 1, Scene 7',
           modelAnswers: {
-            'Band 5 (32-40)': `Miller presents Elizabeth's moral complexity through her careful, measured language that reveals internal conflict between judgment and compassion. Her opening negation-"I do not judge you"-contradicts her earlier actions (allowing John's imprisonment, implying his guilt), creating dramatic irony that embodies her internal struggle between marital loyalty and moral principle.
+            'Band 5 (32-40)': `Shakespeare lets the audience hear Macbeth's conscience in private before showing what becomes of it when he has to speak to his wife. The scene is set during a feast: Duncan is Macbeth's guest, and Macbeth has left the room, so Lady Macbeth's first question, "Why have you left the chamber?", draws attention to his absence as a sign of unease. The soliloquy is a debate that no other character hears.
 
-The parallel structure "The magistrate sits in your heart that judges you" externalizes internal judgment-Elizabeth suggests John's conscience is his true jury. This formulation distances her from the role of judge while simultaneously acknowledging that judgment occurs. Her hesitation in speech ("only somewhat bewildered") softens potential condemnation.
+It opens with euphemism. Macbeth speaks of "it", of "th’ assassination", of "this blow" and of "his surcease", and the three uses of "done" in "If it were done when ’tis done, then ’twere well / It were done quickly" circle the act without naming it. He wishes the killing could "trammel up the consequence", catching every result as if in a net, and be "the be-all and the end-all". His first objection is practical rather than moral: he would "jump the life to come", risking damnation, but "We still have judgement here". The image of an "even-handed justice" that "Commends th’ ingredience of our poison’d chalice / To our own lips" warns that violence taught to others will "return / To plague th’ inventor".
 
-The final statement "I do love you still, John, which may be the only truth we have between us" acknowledges that their relationship has been compromised by suspicion and betrayal. "Still" implies constancy despite disillusionment. The qualification "which may be the only truth" suggests their love survives while all other aspects of their marriage have been corrupted by the witch trials' hysteria and John's infidelity with Abigail.
+The second objection is moral. Duncan is "here in double trust": Macbeth is "his kinsman and his subject", and "as his host" he should "against his murderer shut the door, / Not bear the knife myself". The first time the soliloquy names a murderer, the murderer is Macbeth himself. The orderly "First" and "then" of this argument give way to a sudden rise in imagery when he thinks of Duncan's goodness. Duncan's "virtues / Will plead like angels, trumpet-tongued", and pity appears "like a naked new-born babe, / Striding the blast", a paradox in which the most helpless of creatures rides the storm. The deed will be blown "in every eye, / That tears shall drown the wind". This escalating imagery shows that Macbeth's conscience works through his imagination: he does not so much reason his way to the wrongness of the murder as see it.
 
-Miller's final lines present Elizabeth's deepest moral insight: "It is God that judges, though we will do well to hope He will not judge us as we judged." Her acknowledgment of divine judgment and her warning against human judgment demonstrate moral maturation. She moves from potential condemnation to humility, recognizing that judgment itself is the original sin. This progression from "I do not judge" to "God judges" shows character evolution through language itself-her rhetoric becomes increasingly philosophical and less accusatory.
+The soliloquy ends in a confession. Macbeth has "no spur / To prick the sides of my intent, but only / Vaulting ambition, which o’erleaps itself / And falls on th’ other". The riding metaphor admits that ambition is his only motive and predicts its failure, since a rider who leaps too eagerly falls on the far side. The sentence is broken off, and at that moment the stage direction brings in Lady Macbeth, as if she were the spur he says he lacks.
 
-The scene's dramatic power lies in the contrast between what Elizabeth could say (condemnation) and what she actually says (complex forgiveness mixed with acknowledgment of wrongdoing). This gap between potential and actual language dramatizes the moral work of forgiveness.`,
+The dialogue that follows is abrupt. Short speeches, and a question answered with a question ("Hath he ask’d for me?" and "Know you not he has?"), create pressure. Macbeth then announces his decision: "We will proceed no further in this business". The word "business" makes the murder sound like a transaction, and the reasons he gives his wife are not the angels and the babe of the soliloquy but his reputation: he has "bought / Golden opinions from all sorts of people", which "would be worn now in their newest gloss". The clothing metaphor presents honour as a new garment, too new to be "cast aside so soon". The gap between the conscience the audience has heard and the prudence Macbeth now speaks aloud is itself dramatic. He keeps his moral reasons to himself, perhaps expecting his wife to scorn them, and by offering weaker ones he gives her an opening.
+
+That opening decides the scene. Beyond the extract, Lady Macbeth taunts him that "When you durst do it, then you were a man", and by the end of the scene he says "I am settled". The extract therefore presents a conscience that is powerful in private, and in its imagery, but not strong enough to be spoken aloud, which is why it can be overturned.`,
           },
-          questionType: 'analysis',
         },
       ],
     },
@@ -277,21 +338,24 @@ The scene's dramatic power lies in the contrast between what Elizabeth could say
         {
           id: 'q2-poetry-2',
           questionNumber: 2,
-          questionText: `Compare how two poets present the theme of vulnerability or exposure. You should consider their use of imagery, language, and form, and explain how each poet's approach differs.`,
+          questionText: `Read the two anthology poems below. Compare how D. H. Lawrence in 'Piano' and John Keats in 'La Belle Dame sans Merci' present vulnerability. You should consider their use of imagery, language, and form, and explain how each poet's approach differs.`,
           marks: 40,
           suggestedTimeMinutes: 50,
           questionType: 'comparison',
+          extract: `POEM A: Piano, D. H. Lawrence\n\n${POEM_PIANO}\n\nPOEM B: La Belle Dame sans Merci, John Keats\n\n${POEM_LA_BELLE_DAME}`,
+          extractSource:
+            "Poem A: D. H. Lawrence, 'Piano' (1918) | Poem B: John Keats, 'La Belle Dame sans Merci' (1819)",
           modelAnswers: {
-            // FACT-CHECK 2026-04: model answer scrubbed of fabricated poet attributions per verified-library audit
-            'Band 5 (32-40)': `The first stimulus poem (a confessional narrative on betrayed trust) explores vulnerability through violations of boundaries and innocence. The poet uses second-person address and vivid narrative to expose the vulnerability of those seduced by apparent gentleness. "He'd come to me with dead flowers in his hands" employs pathetic fallacy-dead flowers suggest deception and predation masked by romantic gesture. The confessional tone ("At last he has confessed") reveals how vulnerability involves trusting false presentations.
+            'Band 5 (32-40)': `Both 'Piano' and 'La Belle Dame sans Merci' present a man made vulnerable by a feminine power he cannot resist, and both leave him exposed and diminished. Lawrence's speaker is overcome by memory, Keats's knight by an enchantress. The difference is that Lawrence's vulnerability is inward and confessed in the first person, while Keats's is dramatised in a ballad in which a questioner meets a broken knight.
 
-The first poem's accessibility of language-short lines, contemporary diction, narrative clarity-contrasts with more formally complex contemporary work. Vulnerability emerges through directness rather than abstraction. The exposure of predatory relationships demonstrates how vulnerability can be weaponized, how those who appear vulnerable may actually be dangerous.
+In 'Piano', vulnerability begins gently. "Softly, in the dusk, a woman is singing to me" places the speaker in half-light, where resistance is weak, and the song is "Taking me back down the vista of years". The child he sees is small and low, "sitting under the piano", "pressing the small, poised feet of a mother who smiles as she sings": an image of dependence and safety. Lawrence then makes the adult's vulnerability explicit: "In spite of myself, the insidious mastery of song / Betrays me back". The words "insidious" and "Betrays" present music as an enemy working in secret, and "In spite of myself" admits that his will has failed.
 
-Conversely, the second stimulus poem (an elegiac meditation on burial) explores vulnerability through historical trauma and linguistic layering. It presents vulnerability through burial rituals and the attempt to protect the dead through ancient ceremonial. "How she would wrap you in her bog-dark arms" anthropomorphizes earth as maternal protector, suggesting vulnerability requires surrogate protection. The second poem's complex form (irregular stanzas, dense imagery) contrasts with the first poem's narrative accessibility.
+Keats makes vulnerability visible in the knight's body and in his landscape. The opening question, "O what can ail thee, knight-at-arms / Alone and palely loitering?", shows a warrior, a figure of strength, isolated and drained of colour, and the questioner sees "a lily on thy brow", the pallor of sickness. Nature shares his exhaustion: "The sedge is withered from the lake, / And no birds sing!" Where Lawrence's speaker is drawn back into a warm interior, "the cosy parlour", the knight is left outside in a dead season.
 
-Where the first poem's vulnerability is contemporary and interpersonal, the second's is historical and metaphysical. The first exposes individual predation; the second explores collective trauma. The first poem's language is declarative; the second's is allusive and elliptical. Yet both poems ultimately argue that vulnerability is inseparable from human experience-neither offering protection but rather witness to exposure and suffering.`,
+The women who overpower them differ. Lawrence's singer and mother are benign; the danger is the speaker's own longing "to belong / To the old Sunday evenings at home". Keats's lady is "a faery's child" who "lulled me asleep", and in his dream the "pale kings, and princes too" warn him that she "Hath thee in thrall". Vulnerability in Keats is enslavement; in Lawrence it is surrender to feeling.
+
+Form reinforces the contrast. Lawrence's long lines in rhyming couplets spill over like the flood they describe, and the ending inverts adulthood: "my manhood is cast / Down in the flood of remembrance, I weep like a child for the past." Keats's quatrains each end on a short fourth line that feels clipped and incomplete, and the ballad closes by returning to its opening image, the knight "Alone and palely loitering", as if he cannot escape. Both poets leave their speakers exposed, Lawrence's weeping openly and Keats's "On the cold hill side". Lawrence presents vulnerability as an honest loss of control; Keats presents it as a haunting from which there is no waking.`,
           },
-          questionType: 'comparison',
         },
       ],
     },
@@ -322,30 +386,31 @@ const MOCK_EXAM_3_COMPARATIVE: MockExamPaper = {
         {
           id: 'q1-drama-3',
           questionNumber: 1,
-          questionText: `Analyse how a dramatist uses a specific dramatic technique (such as soliloquy, aside, silence, dramatic irony, or staging) to reveal a character's internal state or development. Refer to a specific moment from your studied drama text and explain the effect on the audience.`,
+          questionText: `Read the extract from Doctor Faustus, in which Faustus greets the Helen of Troy that Mephistophilis has brought him. Analyse how Marlowe uses dramatic techniques (such as address to a silent figure, stage directions, imagery or dramatic irony) to reveal Faustus's internal state at this moment, and explain the effect on the audience.`,
           marks: 40,
           suggestedTimeMinutes: 50,
           questionType: 'analysis',
           extract: DRAMA_EXTRACT_4_MARLOWE,
-          extractSource: 'Christopher Marlowe, Doctor Faustus',
+          extractSource:
+            'Christopher Marlowe, Doctor Faustus, the posthumous 1604 quarto as edited by Alexander Dyce',
           modelAnswers: {
-            'Band 5 (32-40)': `Marlowe's soliloquy demonstrates the power of dramatic language to externalize internal desire and moral disintegration. The apostrophe "Was this the face that launched a thousand ships" directly addresses Helen, but more profoundly, it addresses Faustus's own soul-his consciousness rupturing into external plea. This rhetorical question, invoking Helen of Troy, measures human passion against historical magnitude: if Helen's beauty caused the Trojan War's massive destruction, then Helen's mere presence justifies Faustus's total spiritual surrender.
+            'Band 5 (32-40)': `Marlowe uses Faustus's speech to Helen, and the silence of the figure he speaks to, to reveal a mind choosing damnation while calling it heaven. The moment is carefully prepared. Just before it, Mephistophilis has threatened Faustus for thinking of repentance, and Faustus asks for Helen so that her "sweet embracings may extinguish clean" the "thoughts that do dissuade me from my vow". The audience therefore knows what the kiss is for: it is meant to drown out repentance.
 
-The volta "Here will I dwell" represents acceptance of damnation for sensory pleasure. "Dwell" suggests permanent habitation-not momentary desire but existential commitment. The phrase "heaven is in these lips" inverts Christian cosmology: Helen becomes Faustus's paradise, replacing divine transcendence with carnal immanence. This inversion reveals Faustus's spiritual bankruptcy and the play's central tragedy: a man with access to ultimate knowledge chooses sensory gratification over salvation.
+The speech opens with a rhetorical question, "Was this the face that launch'd a thousand ships, / And burnt the topless towers of Ilium", which measures Helen's beauty by the destruction it caused. The hyperbole is admiring, but the verbs "launch'd" and "burnt" remind the audience that this beauty is bound up with war and ruin, and Faustus is about to add himself to its casualties.
 
-Marlowe's use of concrete sensory detail-"lips," "suck forth my soul"-makes abstract damnation visceral. The image of the soul being literally sucked from Faustus's body (a Renaissance belief about kisses) literalizes metaphorical seduction. What appears romantic actually depicts vampiric consumption. Helen consumes Faustus's soul.
+Only then does he address her: "Sweet Helen, make me immortal with a kiss." The irony is sharp. Faustus has sold his soul, and he asks a figure summoned by Mephistophilis for an immortality that only salvation could give. He knows what such figures are: he has told the Emperor that he cannot raise "the true substantial bodies" of the dead, only "such spirits as can lively resemble" them. The stage direction this edition prints, "Kisses her", makes the moment visible, though the verse would demand the kiss without it. The next line, "Her lips suck forth my soul: see, where it flies!", turns a familiar Renaissance conceit, that lovers exchange souls in a kiss, into something literal and sinister: the audience watches Faustus's soul being drawn from him. "Come, Helen, come, give me my soul again" sounds like a lover's play, but it is also the plea of a man who has lost what he cannot recover.
 
-The soliloquy's metatheatrical effect is crucial: the audience witnesses Faustus's self-knowledge decline. He knows "she" is a demon (Act 5, Scene 2 revelation), yet continues desiring her. This gap between knowledge and action dramatizes tragic blindness-Faustus can see his doom approaching but cannot prevent it. The soliloquy's lyrical beauty contrasts with its thematic horror, mirroring Faustus's simultaneous attraction and damnation.
+Helen never speaks. Because she makes no answer, the speech works almost as a soliloquy: Faustus reveals his own state to a silent figure who may be no more than a spirit in borrowed shape. The turn to "Here will I dwell, for heaven is in these lips" inverts Christian belief, placing heaven in a body, and "dwell" suggests a permanent home rather than a moment's pleasure. "And all is dross that is not Helena" dismisses everything else, God included, as worthless.
 
-For the audience, this soliloquy functions as a final reckoning: Faustus trades eternity for hours. This confrontation with human limitation and desire's destructive power creates tragic catharsis-we recognize in Faustus both transcendent hunger and tragic folly.`,
+For the audience the effect is double. The verse is among the most beautiful in the play and invites us to share Faustus's rapture, yet we know what Helen is and why he wanted her. That gap between what Faustus feels and what the audience knows is dramatic irony, and it makes the lyricism of the moment a measure of how completely he has deceived himself, not long before the final scene in which he has "but one bare hour to live".`,
           },
-          questionType: 'analysis',
         },
       ],
     },
     {
       id: 'section-b-poetry-exam3',
-      title: 'Section B: Poetry Anthology',
+      // Not "Poetry Anthology": the poem it prints was written for this file.
+      title: 'Section B: Poetry',
       description: 'Answer one question from this section.',
       totalMarks: 40,
       suggestedTimeMinutes: 50,
@@ -353,26 +418,24 @@ For the audience, this soliloquy functions as a final reckoning: Faustus trades 
         {
           id: 'q2-poetry-3',
           questionNumber: 2,
-          questionNumber: 2,
           questionText: `Analyse how a poet uses form and language to explore the relationship between appearance and reality, surface and depth, or what is seen and what is hidden. Refer closely to the text.`,
           marks: 40,
           suggestedTimeMinutes: 50,
           questionType: 'analysis',
-          extract: POETRY_EXTRACT_5_LOCHHEAD,
-          // FACT-CHECK 2026-04: source attribution corrected per verified-library audit
-          extractSource: 'Anonymous (twentieth-century poetic style; not a real Liz Lochhead poem)',
+          extract: POETRY_EXTRACT_5_THE_KREWE,
+          // Relabelled on 27 September 2026: see the header.
+          extractSource: 'Specially written for this mock exam; not a published poem',
           modelAnswers: {
-            'Band 5 (32-40)': `The poem presents masked parade as metaphor for hidden identities and concealed suffering. "Listen: they come, bright with their own parade" employs imperative command-"Listen"-demanding audience attention to surfaces (parade, brightness) while the poem's subsequent logic reveals hidden depths beneath. The participial phrase "bright with their own parade" suggests self-generated spectacle, masking emptiness beneath.
+            'Band 5 (32-40)': `The poem presents a masked parade as a metaphor for hidden identities and concealed suffering. "Listen: they come, bright with their own parade" opens with an imperative, "Listen", demanding the reader's attention to surfaces (the parade, its brightness), while the rest of the poem turns to what lies beneath. The phrase "bright with their own parade" suggests a self-generated spectacle that may mask emptiness.
 
-The mask serves as both literal costume and metaphorical concealment: "masked and gilded, carrying torches high" presents external magnificence while "Behind their masks, who knows what faces wait" introduces epistemological uncertainty. The question form-"who knows?"-acknowledges that appearance prevents knowledge. What follows-"what wounds, what wonders, what they hide"-juxtaposes negative ("wounds") with positive ("wonders"), suggesting hidden depths contain both suffering and transcendence.
+The mask serves as both literal costume and metaphorical concealment: "masked and gilded, carrying torches high" presents external magnificence, while "Behind their masks, who knows what faces wait" introduces uncertainty. The words "who knows" admit that appearance prevents knowledge. What follows, "what wounds, what wonders, what they hide", sets the negative ("wounds") beside the positive ("wonders"), suggesting that hidden depths hold both suffering and wonder.
 
-The poem's formal structure-short lines, questions rather than statements, dashes suggesting hesitation-mirrors the uncertainty it explores. The speaker cannot penetrate the masks, cannot access the reality behind appearance. This formal limitation enacts the poem's thematic concern: form itself becomes barrier to depth.
+The poem's form mirrors the uncertainty it explores. It is only four lines long; the third line ends on a dash, as if the speaker hesitates before guessing; and the last line is a list of possibilities that the poem never settles. The speaker cannot see behind the masks, and the form stops at the same barrier.
 
-The paradoxical final image-"bright" and "masked," visible yet hidden-suggests appearance and reality coexist paradoxically. The parade's brightness doesn't illuminate truth but obscures it. The gilding suggests expensive falsehood, the torches carried illuminating only surfaces. This exploration of appearance vs. reality suggests human presentation necessarily obscures human reality. Identity becomes costume; all self-presentation masks deeper truths.
+The poem's central paradox is that the paraders are "bright" yet "masked", visible yet hidden. Their brightness does not reveal the truth but obscures it. The word "gilded" suggests an expensive surface, and the torches carried "high" light up the display rather than the faces. The poem suggests that presentation can hide as much as it shows: identity becomes costume.
 
-The poem's significance lies in its recognition that penetrating masks is impossible. We can acknowledge hidden depths-"what wounds, what wonders"-without accessing them. The poem thus explores not just concealment but the necessity of concealment for social functioning. Masks aren't simply deceptive; they're essential to human interaction.`,
+Its significance lies in recognising that the masks cannot be seen through. We can acknowledge hidden depths, "what wounds, what wonders", without reaching them. The poem thus explores not only concealment but perhaps its necessity: masks are not simply deceptive, since they may also protect those who wear them.`,
           },
-          questionType: 'analysis',
         },
       ],
     },
@@ -385,23 +448,23 @@ The poem's significance lies in its recognition that penetrating masks is imposs
 
 // ─── Unseen Prose Extracts ─────────────────────────────────────────────────
 
-const UNSEEN_PROSE_1 = `The apartment overlooked the city but the view had stopped mattering years ago. Margaret sat by the window each morning, coffee cooling in her hand, watching the traffic move like blood through veins. She had once kept a journal of observations-the man with the red umbrella who appeared every Tuesday, the child who pressed her face against shop windows, the way light changed the buildings' colors from grey to gold to purple. But she had stopped writing. The world's details, once precious, had become overwhelming.
+const UNSEEN_PROSE_1 = `The apartment overlooked the city but the view had stopped mattering years ago. Margaret sat by the window each morning, coffee cooling in her hand, watching the traffic move like blood through veins. She had once kept a journal of observations: the man with the red umbrella who appeared every Tuesday, the child who pressed her face against shop windows, the way light changed the buildings' colours from grey to gold to purple. But she had stopped writing. The world's details, once precious, had become overwhelming.
 
-Her daughter called on Saturdays. "You should get out more," Sarah would say, her voice careful, the tone of someone negotiating with unstable ground. Margaret would agree, would promise to walk to the park, to visit the gallery, to have lunch with Eleanor. The promises cost her nothing because neither of them believed she would keep them. By Monday, the park would reclaim its imaginary status in Margaret's mind-something that existed but not for her, not anymore.
+Her daughter called on Saturdays. "You should get out more," Sarah would say, her voice careful, the tone of someone negotiating with unstable ground. Margaret would agree, would promise to walk to the park, to visit the gallery, to have lunch with Eleanor. The promises cost her nothing because neither of them believed she would keep them. By Monday, the park would reclaim its imaginary status in Margaret's mind: something that existed but not for her, not anymore.
 
-What no one understood was that stillness had become a kind of clarity. The world outside rushed and burned and destroyed itself, but here, in this room with its cream-colored walls and fading carpet, nothing urgent demanded attention. She had lived eighty-three years of urgent demands. Now she simply existed, observing the patterns that had always been there-the regularity of light, the constancy of indifference.`
+What no one understood was that stillness had become a kind of clarity. The world outside rushed and burned and destroyed itself, but here, in this room with its cream-coloured walls and fading carpet, nothing urgent demanded attention. She had lived eighty-three years of urgent demands. Now she simply existed, observing the patterns that had always been there: the regularity of light, the constancy of indifference.`
 
-const UNSEEN_PROSE_2 = `The factory whistle had been silent for three months when Tom returned to the town where he was born. Nothing had changed and everything had changed. The main street still held its shops in the same sequence-hardware store, bakery, diner, post office-but they had acquired the quality of a museum display, artifacts of a life that no longer functioned. The hardware store was closed. The bakery now sold mostly imported goods and specialty cakes for people from the suburbs. The diner was empty at lunch.
+const UNSEEN_PROSE_2 = `The factory whistle had been silent for three months when Tom returned to the town where he was born. Nothing had changed and everything had changed. The main street still held its shops in the same sequence (hardware store, bakery, diner, post office), but they had acquired the quality of a museum display, artefacts of a life that no longer functioned. The hardware store was closed. The bakery now sold mostly imported goods and specialty cakes for people from the suburbs. The diner was empty at lunch.
 
 He had left at eighteen, driven by the same desperate hunger that consumed most people his age: hunger for elsewhere, for significance, for escape from the determinism of his family's history. His father worked the line at the factory; his grandfather had worked the line; the implicit expectation was that Tom would work the line. Instead, he had gone to university, become a systems analyst, moved to the city where he designed algorithms for companies he didn't understand to solve problems he didn't care about.
 
-Now, standing outside the closed factory-chain-link fence, broken windows, weeds growing through the concrete-he felt something like grief, though he wasn't sure for what. For the work that had sustained the town? For the man he had not become? For the assumption, shared by his entire generation, that leaving was always the answer?`
+Now, standing outside the closed factory (chain-link fence, broken windows, weeds growing through the concrete), he felt something like grief, though he wasn't sure for what. For the work that had sustained the town? For the man he had not become? For the assumption, shared by his entire generation, that leaving was always the answer?`
 
-const UNSEEN_PROSE_3 = `The letter had arrived on a Tuesday, the kind of letter that made the present moment feel unreal. Helen held it in her hands without opening it again-she had already read it four times-trying to feel something other than the strange numbness that had settled in her chest.
+const UNSEEN_PROSE_3 = `The letter had arrived on a Tuesday, the kind of letter that made the present moment feel unreal. Helen held it in her hands without opening it again (she had already read it four times), trying to feel something other than the strange numbness that had settled in her chest.
 
 Dear Helen, it began, though they had not spoken in fourteen years. Dear Helen, I am writing to tell you that I have been diagnosed with terminal cancer. The doctors say six months, perhaps less. I have been thinking about the things I said to you, and the things I did not say. I have been thinking about how easy it was to let anger take the place of love, and how difficult it would be now to reverse that choice.
 
-Her hands trembled. Not from emotion-that would come later, she suspected-but from the sheer improbability of the moment. She had constructed a life without this person in it. She had married someone else, had children, had created an entirely separate narrative where that chapter had been closed, officially, ceremonially. The letter threatened the integrity of that narrative. It suggested that some chapters refuse to close, that unfinished business persists, waiting.
+Her hands trembled. Not from emotion (that would come later, she suspected) but from the sheer improbability of the moment. She had constructed a life without this person in it. She had married someone else, had children, had created an entirely separate narrative where that chapter had been closed, officially, ceremonially. The letter threatened the integrity of that narrative. It suggested that some chapters refuse to close, that unfinished business persists, waiting.
 
 She thought about not responding. It would be easy. The person writing the letter would be dead in six months. Afterward, guilt would be a manageable thing. But Helen was not someone who chose ease over complexity. She had learned that the hard way. So she sat with the letter and waited for the next feeling to arrive.`
 
@@ -501,19 +564,18 @@ const MOCK_EXAM_4_UNSEEN_PROSE_POETRY: MockExamPaper = {
           extract: UNSEEN_PROSE_1,
           extractSource: 'Unseen Contemporary Prose',
           modelAnswers: {
-            'Band 5 (32-40)': `The writer presents Margaret's withdrawal through a combination of physical stillness, psychological distance, and linguistic passivity that suggests both peace and profound alienation. The opening image-"The apartment overlooked the city but the view had stopped mattering years ago"-immediately juxtaposes external possibility with internal abandonment. The phrase "stopped mattering" is crucial: it suggests not inability to see but refusal to value. The writer distinguishes between access and engagement.
+            'Band 5 (32-40)': `The writer presents Margaret's withdrawal through physical stillness, psychological distance and verbs of stopping, which together suggest both peace and profound alienation. The opening sentence, "The apartment overlooked the city but the view had stopped mattering years ago", immediately sets outward possibility against inward abandonment. The phrase "stopped mattering" is crucial: it suggests not an inability to see but a refusal to value. The writer distinguishes between access and engagement.
 
-The second sentence employs an extended metaphor comparing traffic to "blood through veins," suggesting the city as living organism from which Margaret has disconnected. Yet Margaret herself appears increasingly still, increasingly removed from that organic circulation. The contrast between external motion and Margaret's stasis becomes the primary source of tension.
+The second sentence uses a simile, the traffic moving "like blood through veins", to present the city as a living body from which Margaret has disconnected. She sits "each morning, coffee cooling in her hand", a detail that shows time passing while she does nothing. The contrast between the city's motion and Margaret's stillness is the passage's main source of tension.
 
-The writer reveals Margaret's former engagement through remembered detail: "the man with the red umbrella who appeared every Tuesday," "the child who pressed her face against shop windows," "the way light changed the buildings' colors." These observations demonstrate Margaret once inhabited the world with full attentional engagement. Yet "she had stopped writing" and "the world's details, once precious, had become overwhelming." The shift from "precious" to "overwhelming" suggests that the same world that once gave meaning now produces anxiety. Margaret's withdrawal appears not as escape from nothing but as response to excess-she has been saturated by reality.
+The writer reveals Margaret's former engagement through remembered detail: "the man with the red umbrella who appeared every Tuesday", "the child who pressed her face against shop windows", "the way light changed the buildings' colours". These observations show that Margaret once attended closely to the world. Yet "she had stopped writing", and "The world's details, once precious, had become overwhelming." The shift from "precious" to "overwhelming" suggests that the world which once gave her meaning now produces anxiety. Her withdrawal is a response not to emptiness but to excess.
 
-The dialogue with Sarah reveals how withdrawal creates communicative distance. "Sarah would say, her voice careful, the tone of someone negotiating with unstable ground." The metaphor of "unstable ground" suggests Margaret's mental state is unpredictable, requiring others to approach cautiously. Yet the narrative perspective remains ironically distant from Sarah: we learn Sarah's feelings about Margaret's withdrawal, but Margaret's own experience of being addressed in such careful tones is not directly represented. This narrative choice enacts Margaret's isolation-others must adapt to her, yet she remains unreachable.
+Sarah's Saturday calls show how withdrawal changes a relationship. Sarah speaks with "her voice careful, the tone of someone negotiating with unstable ground", a metaphor that shows others approaching Margaret cautiously. The narrative stays close to Margaret: we hear Sarah only as Margaret hears her, and we learn that "The promises cost her nothing because neither of them believed she would keep them." Both women keep up a conversation neither believes in, so the withdrawal becomes a shared, polite fiction.
 
-The final paragraph achieves profound irony: Margaret claims "stillness had become a kind of clarity," yet this clarity is entirely internal, accessible only to her. She has created a philosophy of stasis ("nothing urgent demanded attention") that justifies withdrawal. The final image-"the regularity of light, the constancy of indifference"-reveals the paradox: clarity comes from accepting indifference, from recognizing that the world operates with or without one's engagement.
+The final paragraph is ironic. Margaret believes that "stillness had become a kind of clarity", yet this clarity is entirely private, and "What no one understood" stresses her isolation. She has built a philosophy of stillness ("nothing urgent demanded attention") that justifies her withdrawal. The closing image, "the regularity of light, the constancy of indifference", reveals the paradox: her clarity comes from accepting indifference, from recognising that the world goes on with or without her.
 
-The writer's overall effect is ambiguous: is Margaret's withdrawal peaceful wisdom or destructive depression? The prose remains non-judgmental, presenting stillness as simultaneously refuge and tomb.`,
+The overall effect is ambiguous: is Margaret's withdrawal peaceful wisdom or depression? The prose does not judge, presenting stillness as both refuge and confinement.`,
           },
-          questionType: 'analysis',
         },
       ],
     },
@@ -535,17 +597,16 @@ The writer's overall effect is ambiguous: is Margaret's withdrawal peaceful wisd
           extract: UNSEEN_POETRY_2,
           extractSource: 'Unseen Contemporary Poem',
           modelAnswers: {
-            'Band 5 (32-40)': `The poem explores inheritance not as positive legacy but as involuntary transmission of suffering and labor. The opening establishes maternal hands as constant, unstoppable motion: "always moving," "the repetitive mathematics of domesticity." The phrase "repetitive mathematics" transforms housework into abstract calculation-it is precise, predictable, exhausting. The list "folding, cutting, kneading, scrubbing" uses asyndeton (omission of conjunctions) to suggest relentless sequence, each action flowing into the next without break.
+            'Band 5 (32-40)': `The poem explores inheritance not as a welcome legacy but as the passing on of labour and its marks. The opening presents the mother's hands in constant motion: "always moving", "the repetitive mathematics of domesticity". The phrase "repetitive mathematics" turns housework into calculation: precise, predictable, exhausting. The list "folding, cutting, kneading, scrubbing" uses asyndeton (the omission of conjunctions) to suggest a relentless sequence, each action following the next without a break.
 
-The physical manifestation of labor-"cracks in her palms"-transforms body into text. The cracks become readable signs of work, permanent evidence that cannot be erased. The mother's nighttime application of cream represents futile resistance against this textual recording of labor. She attempts "to erase / the evidence of work, of years, / of being worn smooth by necessity," yet the very gesture acknowledges the impossibility of erasure.
+The physical mark of labour, "the cracks in her palms", turns the body into a record: the cracks are readable signs of work. The mother's nightly cream is a small resistance to that record. She applies it "as though it were a ritual that might erase / the evidence of work, of years, / of being worn smooth by necessity". The word "might" admits that the ritual probably fails, and "worn smooth" presents her as shaped by work, like a tool or a step.
 
-The volta "Now my own hands show the same cracks" completes the inheritance narrative. The speaker has not chosen this legacy; it has been transmitted through biology and repetition. The phrase "I perform the same gestures, the same / minute choreography" reveals that inheritance operates not through conscious transmission but through embodied habit-the daughter unknowingly replicates the mother's movements.
+The turn at "Now my own hands show the same cracks" completes the inheritance. The speaker has not chosen this legacy; it has been passed on through repetition. "I perform the same gestures, the same / minute choreography of keeping things / intact" shows that inheritance works through habit held in the body, and "choreography" makes the housework a dance learned by watching.
 
-The final stanza introduces temporal distance: "She has been dead five years." Yet this distance does not alter the daughter's behavior: "I still reach for her method when things fall apart." The inheritance persists beyond the mother's life, becoming internalized as the daughter's default response to crisis. The poem suggests that we are shaped by those who raised us in ways we cannot escape, that their suffering becomes our intuition.
+The closing couplet introduces distance in time: "She has been dead five years." Yet this distance does not change the speaker's behaviour: "I still reach for her method when things fall apart." The inheritance survives the mother's death and becomes the speaker's instinctive response to crisis. The poem suggests that we are shaped by those who raised us in ways we cannot escape, so that their labour becomes our instinct.
 
-The form reinforces this theme. The poem's relatively regular structure-four-line and five-line stanzas-mirrors the regularity of inherited gesture. The enjambment across lines ("being worn smooth by necessity") mirrors the continuous flow of inherited labor. The poem refuses elaborate language or striking metaphor, instead maintaining the simple, precise diction of observation. This stylistic restraint mirrors the book of daily work: no decoration, only necessary action.`,
+The form reinforces the theme. Three four-line stanzas mirror the regularity of inherited gesture, and the closing couplet breaks that pattern at the point of loss. Enjambment carries the sense across lines ("that might erase / the evidence of work"), mirroring the continuous flow of inherited labour. The poem avoids elaborate language and keeps to the plain, precise diction of observation, a restraint that mirrors daily work itself: no decoration, only necessary action.`,
           },
-          questionType: 'analysis',
         },
       ],
     },
@@ -583,19 +644,18 @@ const MOCK_EXAM_5_COMPARATIVE_UNSEEN: MockExamPaper = {
           extract: `PASSAGE A:\n${UNSEEN_PROSE_1}\n\nPASSAGE B:\n${UNSEEN_PROSE_2}`,
           extractSource: 'Unseen Contemporary Prose',
           modelAnswers: {
-            'Band 5 (32-40)': `Both writers explore withdrawal and disconnection, but achieve these themes through radically different approaches. Margaret (Passage A) withdraws through stillness and acceptance; Tom (Passage B) withdraws through absence and geographic distance. The writers employ these different withdrawal strategies to explore how individuals respond to loss-whether internal loss of meaning or external loss of community.
+            'Band 5 (32-40)': `Both writers explore withdrawal and disconnection, but through different situations. Margaret (Passage A) withdraws into stillness and acceptance; Tom (Passage B) left his home town and returns to find it changed. The writers use these situations to explore how people respond to loss, whether an inner loss of meaning or the outer loss of a community.
 
-Passage A employs stillness as resistance to overwhelming reality. The opening sentence establishes Margaret's physical location (apartment, overlooking city) but her psychological distance. Language is passive: the view "had stopped mattering," "she had stopped writing." These constructions suggest Margaret as victim of gradual abandonment rather than active agent. Yet the final paragraph complicates this reading: "stillness had become a kind of clarity" presents Margaret's withdrawal as chosen wisdom. The writer maintains ambiguity throughout-is Margaret's withdrawal pathological depression or philosophical achievement?
+Passage A presents stillness as a response to an overwhelming world. The opening sentence places Margaret physically, in an apartment overlooking the city, but shows her psychological distance. The verbs record things ending: the view "had stopped mattering", and "she had stopped writing". These constructions present withdrawal as something that happened to Margaret gradually rather than something she decided. Yet the final paragraph complicates this reading: "stillness had become a kind of clarity" presents withdrawal as chosen wisdom. The writer keeps the ambiguity throughout.
 
-Passage B employs narrative distance and geographic exploration. Tom "had been" at university, "had gone," "had moved"-his life accumulates through past actions, yet he has become static in the present ("standing outside the closed factory"). Where Margaret has achieved philosophical acceptance, Tom experiences "something like grief" without clear object. His withdrawal is more troubled, less resigned.
+Passage B uses retrospection and a return. Tom "had left at eighteen" and "had gone to university", so his life accumulates through past actions, yet in the present he is static, "standing outside the closed factory". Where Margaret has reached a kind of philosophical acceptance, Tom feels "something like grief, though he wasn't sure for what". His response is more troubled and less resigned.
 
-The writers' use of metaphor differs significantly. Passage A employs organic metaphors (blood through veins, ocean/swimmers) suggesting continuous life processes from which Margaret has withdrawn. Passage B employs architectural metaphors (museum display, chain-link fence, closed structures) suggesting entropy and decay. Passage A suggests stasis; Passage B suggests collapse.
+The writers' imagery differs. Passage A uses an organic simile, the traffic moving "like blood through veins", suggesting a living city from which Margaret has withdrawn. Passage B uses images of display and dereliction: the shops "had acquired the quality of a museum display", and the factory has a "chain-link fence" and "broken windows". Passage A suggests stasis; Passage B suggests decay.
 
-Structurally, Passage A moves from external (city view) to internal (Margaret's philosophy). The prose becomes increasingly abstract as it moves inward. Passage B moves from external (closed factory) to internal (Tom's regret), but the conclusion remains unresolved: "Afterward, guilt would be a manageable thing." This structural difference mirrors thematic difference: Margaret achieves internal peace; Tom remains suspended in unresolved feeling.
+Structurally, Passage A moves from the outer world (the city view) to the inner (Margaret's philosophy), and the prose becomes more abstract as it moves inward. Passage B also moves from the town to Tom's feelings, but it ends in three unanswered questions: "For the work that had sustained the town? For the man he had not become?" This structural difference mirrors the thematic one: Margaret reaches an inner peace; Tom remains suspended in unresolved feeling.
 
-Both passages suggest withdrawal as response to overwhelming complexity: Margaret finds peace in refusing to engage; Tom cannot achieve this peace and remains tormented. The writers thus explore withdrawal not as unified response to loss but as multiple, conflicting responses-some finding refuge, others finding only emptiness.`,
+Both passages present withdrawal as a response to change: Margaret finds peace in refusing to engage, while Tom cannot find this peace. The writers thus explore not one response to loss but several, some finding refuge and others only emptiness.`,
           },
-          questionType: 'comparison',
         },
       ],
     },
@@ -616,19 +676,18 @@ Both passages suggest withdrawal as response to overwhelming complexity: Margare
           extract: `POEM A:\n${UNSEEN_POETRY_2}\n\nPOEM B:\n${UNSEEN_POETRY_3}`,
           extractSource: 'Unseen Contemporary Poems',
           modelAnswers: {
-            'Band 5 (32-40)': `Both poems explore inheritance and the past's persistent presence, but employ opposing formal strategies. Poem A ("Inheritance") uses regular structure and direct language to emphasize hereditary transmission; Poem B ("The Garden After Rain") employs fragmented form and metaphorical complexity to suggest transformation and renewal. The poets thus explore fundamentally different possibilities: whether the past determines the present or whether damage and healing coexist.
+            'Band 5 (32-40)': `Both poems explore the persistence of the past, but they reach different conclusions. Poem A ("Inheritance") uses direct, literal language to present inheritance as repetition; Poem B ("The Garden After Rain") uses the garden as an extended metaphor in which damage and repair exist together. The poets thus explore different possibilities: whether the past determines the present, or whether it is taken up into something new.
 
-Poem A uses relatively stable stanza forms and clear chronological progression. The movement from mother's hands to daughter's hands follows biological/temporal logic. Language is precise and literal: "cracks," "palms," "cream" are concrete objects demonstrating abstract inheritance. The repetition of hand imagery creates cyclical structure suggesting inevitable transmission. The speaker cannot escape the mother's legacy because it has become somatic-"I still reach for her method when things fall apart."
+Poem A follows a clear chronological progression, from the mother's hands to the speaker's own. Its language is precise and concrete: "cracks", "palms" and "cream" are objects that stand for an abstract inheritance. The repetition of hand imagery creates a cyclical structure that suggests inevitable transmission. The speaker cannot escape the mother's legacy because it has become physical: "I still reach for her method when things fall apart."
 
-Poem B employs looser form, fragmented syntax, and abundant metaphorical density. The garden as metaphor allows for more complex exploration of renewal and transformation. "Everything is cleaner now, though nothing / has been cleaned" presents paradox at the formal level-the sentence structure enacts confusion about causation and change. Where Poem A emphasizes determinism ("I perform the same gestures"), Poem B emphasizes agency and reconstruction: "where beauty emerges not from absence / of damage, but despite, and with, and through it."
+Poem B works through metaphor and paradox. "Everything is cleaner now, though nothing / has been cleaned" unsettles cause and effect, since the rain, not a person, has done the work. Where Poem A emphasises repetition ("I perform the same gestures"), Poem B emphasises reconstruction: "where beauty emerges not from absence / of damage, but despite, and with, and through it."
 
-The tonal difference is crucial. Poem A maintains subdued, elegiac tone: the speaker accepts inheritance as burdensome continuation. "I still reach" carries resignation-there is no alternative. Poem B's tone is more hopeful, moving from observation to philosophical affirmation. "Not returned to what was before, / but arranged into a new configuration" suggests the past doesn't determine the future, merely shapes it.
+The tonal difference is crucial. Poem A has a subdued, elegiac tone: the speaker accepts inheritance as a continuing burden, and "I still reach" carries resignation. Poem B's tone is more hopeful, moving from observation to philosophical affirmation. "Not returned to what was before, / but arranged into a new configuration" suggests that the past does not determine the future but shapes it.
 
-Formally, Poem A's stability (regular lines, consistent imagery) mirrors the speaker's sense of being bound to inherited patterns. Poem B's instability (irregular line lengths, shifting metaphors) mirrors its theme of continuous becoming. Poem A's repetition emphasizes fixity; Poem B's paradoxes emphasize transformation.
+Form supports these arguments. Poem A moves through three four-line stanzas and then breaks the pattern with a closing couplet, isolating the mother's death ("She has been dead five years.") before the final line shows her method outliving her. Poem B keeps its four-line stanzas but runs a sentence across the gap between its third and fourth, so that "Not returned to what was before," is completed only after the break, enacting continuity through damage.
 
-Both poets explore inheritance, yet draw opposite conclusions: Poem A suggests we are prisoners of the past; Poem B suggests we are partners with the past in creating new configurations. These different approaches reveal how formal choices encode thematic arguments-structure itself becomes meaning.`,
+Both poets explore inheritance, yet they draw different conclusions: Poem A suggests that we repeat the past; Poem B suggests that we are partners with it in making something new. Their formal choices carry their arguments.`,
           },
-          questionType: 'comparison',
         },
       ],
     },
@@ -666,19 +725,18 @@ const MOCK_EXAM_6_THEMATIC_INTEGRATION: MockExamPaper = {
           extract: UNSEEN_PROSE_3,
           extractSource: 'Unseen Contemporary Prose',
           modelAnswers: {
-            'Band 5 (32-40)': `The writer presents confrontation with unfinished business as temporal and psychological rupture that destabilizes achieved identity. The opening image-"the kind of letter that made the present moment feel unreal"-suggests that some communications fundamentally alter ontological certainty. Helen has "constructed a life" that appears complete, yet the letter threatens its coherence, revealing that "some chapters refuse to close, that unfinished business persists, waiting."
+            'Band 5 (32-40)': `The writer presents confrontation with unfinished business as a rupture in time and feeling that destabilises the identity Helen has achieved. The opening image, "the kind of letter that made the present moment feel unreal", suggests that some communications fundamentally alter ontological certainty. Helen has "constructed a life" that appears complete, yet the letter threatens its coherence, revealing that "some chapters refuse to close, that unfinished business persists, waiting."
 
-The writer employs significant silence and white space to represent Helen's processing. "She held it in her hands without opening it again" suggests physical possession without full comprehension. She has already read it four times-repetition suggests obsessive rereading seeking meaning that reading cannot supply. The specific greeting "Dear Helen, though they had not spoken in fourteen years" establishes temporal distance that the letter immediately collapses.
+The writer slows the narrative to represent Helen's processing. "Helen held it in her hands without opening it again" suggests physical possession without full comprehension. She has already read it four times, and the repetition suggests obsessive rereading, seeking a meaning that reading cannot supply. The greeting "Dear Helen" is followed by the narrator's aside, "though they had not spoken in fourteen years", which establishes a distance in time that the letter immediately collapses.
 
-The letter's language is notably careful, moving from personal address to philosophical reflection: "I have been thinking about the things I said to you, and the things I did not say." This formulation suggests that language itself is inadequate-both speech and silence have created the rupture. "How easy it was to let anger take the place of love" presents anger as substitution, a failed replacement that now seems comprehensible as mistake rather than necessity.
+The letter's language is notably careful, moving from personal address to philosophical reflection: "I have been thinking about the things I said to you, and the things I did not say." This formulation suggests that language itself is inadequate: both speech and silence have created the rupture. The phrase "how easy it was to let anger take the place of love" presents anger as substitution, a failed replacement that now seems comprehensible as mistake rather than necessity.
 
-The writer's description of Helen's physical response is restrained: "Her hands trembled. Not from emotion-that would come later, she suspected-but from the sheer improbability of the moment." This withholding of explicit emotional language paradoxically intensifies emotion. Helen's body responds before consciousness can process feeling. The phrase "Not from emotion" is crucial-it suggests physical response precedes emotional categorization. Helen's body knows something her conscious mind has not yet acknowledged.
+The writer's description of Helen's physical response is restrained: "Her hands trembled. Not from emotion (that would come later, she suspected) but from the sheer improbability of the moment." This withholding of explicit emotional language paradoxically intensifies emotion. Helen's body responds before consciousness can process feeling. The phrase "Not from emotion" is crucial: it suggests physical response precedes emotional categorisation. Helen's body knows something her conscious mind has not yet acknowledged.
 
-The final section presents Helen's ethical choice. She "thought about not responding" yet "was not someone who chose ease over complexity." This characterization reveals Helen's identity as fundamentally ethical. She "had learned that the hard way," suggesting previous experience with the consequences of emotional evasion. The concluding line-"So she sat with the letter and waited for the next feeling to arrive"-presents not action but receptivity. Helen chooses to remain open to emotion rather than foreclose it.
+The final section presents Helen's ethical choice. She "thought about not responding" yet "was not someone who chose ease over complexity." This characterisation reveals Helen's identity as fundamentally ethical. She "had learned that the hard way," suggesting previous experience with the consequences of emotional evasion. The concluding line, "So she sat with the letter and waited for the next feeling to arrive", presents not action but receptivity. Helen chooses to remain open to emotion rather than foreclose it.
 
 The writer's overall achievement is exploring how we construct identity narratives that fragment when confronted by unfinished business. Helen's "separate narrative" proves illusory; the past cannot be definitively closed. Yet the final image suggests dignity in accepting this vulnerability, in remaining open to complexity rather than defending constructed completeness.`,
           },
-          questionType: 'analysis',
         },
       ],
     },
@@ -699,19 +757,18 @@ The writer's overall achievement is exploring how we construct identity narrativ
           extract: UNSEEN_POETRY_3,
           extractSource: 'Unseen Contemporary Poem',
           modelAnswers: {
-            'Band 5 (32-40)': `The poem employs garden imagery to argue that beauty and damage are not opposites but integrated aspects of life's continuous becoming. The opening paradox-"Everything is cleaner now, though nothing / has been cleaned"-establishes the poem's central insight: reality operates through paradox rather than linear causality. Rain transforms without erasing, suggesting that cleansing and damage coexist.
+            'Band 5 (32-40)': `The poem employs garden imagery to argue that beauty and damage are not opposites but integrated aspects of life's continuous becoming. The opening paradox, "Everything is cleaner now, though nothing / has been cleaned", establishes the poem's central insight: reality operates through paradox rather than linear causality. Rain transforms without erasing, suggesting that cleansing and damage coexist.
 
-The natural imagery progresses through stages of perception and understanding. Initially, the speaker observes effect (cleanliness) contradicting causation (no one has cleaned). Then the bird's song introduces life resuming its patterns: "the garden remembers what it is: / not a place of cultivation, but of / persistent becoming, of continuous repair." This redefinition is crucial-the garden's identity is not stasis but process. Its essence is "becoming" and "repair," not achievement or completion.
+The natural imagery progresses through stages of perception and understanding. Initially, the speaker observes effect (cleanliness) contradicting causation (no one has cleaned). Then the bird's song introduces life resuming its patterns: "the garden remembers what it is: / not a place of cultivation, but of / persistent becoming, of continuous repair." This redefinition is crucial: the garden's identity is not stasis but process. Its essence is "becoming" and "repair," not achievement or completion.
 
-The poem's form mirrors this thematic argument. The enjambment across stanzas enacts continuous flow despite line breaks. The relatively open form (irregular line length, flexible rhyme) suggests growth rather than containment. Where a more formal structure would suggest order imposed from outside, this form suggests organic development.
+The poem's form mirrors this thematic argument. The enjambment across stanzas enacts continuous flow despite line breaks. The relatively open form (irregular line lengths and no rhyme scheme) suggests growth rather than containment. Where a more formal structure would suggest order imposed from outside, this form suggests organic development.
 
-The volta "The damage from the storm is still visible- / broken branches, petals scattered-" acknowledges that damage persists. Yet the concluding formulation is remarkable: beauty emerges "not from absence / of damage, but despite, and with, and through it." The triple prepositions-"despite," "with," "through"-suggest multiple simultaneous relationships: beauty exists in opposition to damage, alongside damage, and interpenetrated with damage. This tripartite formulation refuses simple resolution.
+The volta "The damage from the storm is still visible- / broken branches, petals scattered-" acknowledges that damage persists. Yet the concluding formulation is remarkable: beauty emerges "not from absence / of damage, but despite, and with, and through it." The three prepositions, "despite", "with" and "through", suggest multiple simultaneous relationships: beauty exists in opposition to damage, alongside damage, and interpenetrated with damage. This tripartite formulation refuses simple resolution.
 
 The final stanza achieves philosophical culmination: "where loss and growth coexist, / where beauty emerges not from absence / of damage, but despite, and with, and through it." The poem argues for integration rather than recovery of original state. "Not returned to what was before, / but arranged into a new configuration" explicitly rejects restoration as the ideal. Instead, the poem affirms ongoing transformation as the fundamental condition of existence.
 
-The garden becomes symbol for human experience: we too carry damage that cannot be erased, cannot be healed by returning to innocence. Instead, we must achieve what the garden achieves-learning to incorporate damage into new beauty, understanding that resilience means not overcoming suffering but flowering through and alongside it. The poem's quiet tone and relatively accessible language make this insight felt rather than asserted, embodied rather than explained.`,
+The garden becomes a symbol for human experience: we too carry damage that cannot be erased, cannot be healed by returning to innocence. Instead, we must achieve what the garden achieves: learning to incorporate damage into new beauty, understanding that resilience means not overcoming suffering but flowering through and alongside it. The poem's quiet tone and relatively accessible language make this insight felt rather than asserted, embodied rather than explained.`,
           },
-          questionType: 'analysis',
         },
       ],
     },

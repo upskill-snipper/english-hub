@@ -1,6 +1,66 @@
 // @ts-nocheck
-// ─── AQA GCSE English Language Paper 2 Mock Exam Papers - Set 2 ──────────────
-// Writers' Viewpoints and Perspectives - 6 complete papers with source texts
+// ─── AQA GCSE English Language Paper 2 Mock Exam Paper - Set 2 ───────────────
+// Writers' Viewpoints and Perspectives - one complete paper with source texts
+
+/**
+ * WHAT WAS WRONG (27 September 2026). Both sources were presented as real
+ * journalism with nothing to show that they were. Source A was labelled
+ * "Article from The Guardian, 2023", under the byline "Dr Sarah Mitchell";
+ * Source B "Opinion piece from Education Weekly, 2023", by "James
+ * Richardson". Neither label gave more than a year, and Source A, sold as
+ * the Guardian's, spelt "prioritizes", which the Guardian's house style does
+ * not: they read as written for this file. Had they been real, they would
+ * have been in copyright and far too long to print here. The model answers
+ * then misquoted even the text as printed: the Question 2
+ * answers quoted "creatively over compliance, collaboration over
+ * competition" (the text said "curiosity over compliance"), quoted a verb,
+ * "wastes", that it did not contain, and called its first sentence, a
+ * statement, an "interrogative opening". The header promised six papers;
+ * there was one.
+ *
+ * WHAT IT IS NOW. Two genuine public-domain sources on the same debate,
+ * whether the old literary curriculum should give way to modern subjects and
+ * science, cut by script from the Project Gutenberg texts and never retyped:
+ *   - Source A: T. H. Huxley, "A Liberal Education: and Where to Find It",
+ *     an address of 4 January 1868, as printed in Lay Sermons, Addresses and
+ *     Reviews (Macmillan, 1870), Gutenberg #16729. Four consecutive
+ *     paragraphs, from "It may be said" to "dexterity in boxing".
+ *   - Source B: Matthew Arnold, "Literature and Science", which his preface
+ *     says was first given as the Rede Lecture at Cambridge and recast for
+ *     America, as printed in Discourses in America (Macmillan, 1885),
+ *     Gutenberg #44919. The closing paragraph.
+ * Arnold's lecture answers a later address of Huxley's, the one Arnold says
+ * was given at the opening of Sir Josiah Mason's college at Birmingham, not
+ * this one, so nothing here says the two passages reply to each other. The
+ * question wording, the mark schemes and all eight reading answers were
+ * rewritten for these sources, and every quotation in them was checked
+ * against its extract by script. The writing task, Question 5, is unchanged
+ * apart from the spelling and punctuation of one of its answers.
+ *
+ * REVIEWED THE SAME DAY. Every quotation was in its extract, but a second
+ * reading of what the answers said about the words found four to correct.
+ * The Question 1 Grade 4-5 answer said that the new subjects would be,
+ * perhaps, "far too many"; Arnold says they will be, and his "perhaps"
+ * qualifies the period of confusion that follows. The Question 2 Grade 4-5
+ * answer said almost no boy "understands arithmetic", where Huxley doubts
+ * that one in five hundred has heard a rule of it explained. Both Question
+ * 3 answers fitted a quotation into a sentence it did not fit ("all must
+ * 'acquaint ourselves'"). The Question 5 Grade 6-7 answer had
+ * five dashes collapsed into hyphens ("literacy-precisely",
+ * "reform-implementing"), which read as compound words; they are spaced
+ * hyphens now. And the reading section now glosses the older words
+ * ("animadversions", "collects", "humane letters"), as a real paper does and
+ * as this repository's WJEC papers already do.
+ *
+ * A real AQA Paper 2 pairs a nineteenth-century source with a twentieth- or
+ * twenty-first-century one. Both sources here are nineteenth-century,
+ * because a genuine modern article would be in copyright and could be quoted
+ * only in fragments.
+ *
+ * This paper is not in allMockExamPapers (src/data/mock-exams.ts) and nothing
+ * imports it, so the site does not serve it. It is still in a public
+ * repository, which is reason enough for it to be what it says it is.
+ */
 
 import type { MockExamPaper } from './mock-exams'
 
@@ -16,6 +76,8 @@ interface P2Config {
   textB: string
   authorB: string
   dateB: string
+  /** Printed under the reading section's instructions, as a real paper glosses a source's older words. */
+  glossary?: string
   q1BothTexts: string
   q1MarkScheme: string[]
   q1Answer45: string
@@ -41,6 +103,9 @@ interface P2Config {
 
 function makeP2(c: P2Config): MockExamPaper {
   const nn = String(c.set).padStart(2, '0')
+  // Questions that print both sources name both, rather than "Both texts",
+  // so a student can see whose words each source is.
+  const bothSources = `Source A: ${c.sourceA} | Source B: ${c.sourceB}`
   return {
     id: `aqa-lang-p2-set2-${nn}`,
     board: 'AQA',
@@ -55,7 +120,8 @@ function makeP2(c: P2Config): MockExamPaper {
         id: `aqa-lang-p2-set2-${nn}-reading`,
         title: 'Section A: Reading',
         description:
-          'You are going to read two texts. You will then answer the questions about both texts.',
+          'You are going to read two texts. You will then answer the questions about both texts.' +
+          (c.glossary ? `\n\n${c.glossary}` : ''),
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -67,7 +133,7 @@ function makeP2(c: P2Config): MockExamPaper {
             suggestedTimeMinutes: 12,
             questionType: 'summary',
             extract: `Source A (${c.sourceA}):\n${c.textA}\n\nSource B (${c.sourceB}):\n${c.textB}`,
-            extractSource: 'Both texts',
+            extractSource: bothSources,
             modelAnswers: {
               'Grade 4-5': c.q1Answer45,
               'Grade 6-7': c.q1Answer67,
@@ -97,7 +163,7 @@ function makeP2(c: P2Config): MockExamPaper {
             suggestedTimeMinutes: 18,
             questionType: 'comparison',
             extract: `Source A:\n${c.textA}\n\nSource B:\n${c.textB}`,
-            extractSource: 'Both texts',
+            extractSource: bothSources,
             modelAnswers: {
               'Grade 4-5': c.q3Answer45,
               'Grade 6-7': c.q3Answer67,
@@ -112,7 +178,7 @@ function makeP2(c: P2Config): MockExamPaper {
             suggestedTimeMinutes: 8,
             questionType: 'evaluation',
             extract: `Source A:\n${c.textA}\n\nSource B:\n${c.textB}`,
-            extractSource: 'Both texts',
+            extractSource: bothSources,
             modelAnswers: {
               'Grade 4-5': c.q4Answer45,
               'Grade 6-7': c.q4Answer67,
@@ -151,77 +217,71 @@ function makeP2(c: P2Config): MockExamPaper {
 
 const paper1: MockExamPaper = makeP2({
   set: 1,
-  sourceA: 'Article from The Guardian, 2023',
-  textA: `"The Problem with Modern Education" by Dr Sarah Mitchell
+  sourceA:
+    'Thomas Henry Huxley, "A Liberal Education: and Where to Find It", an address given in London on 4 January 1868, as printed in Lay Sermons, Addresses and Reviews, 1870',
+  // Gutenberg #16729, four consecutive paragraphs, cut by script.
+  textA: `It may be said that all these animadversions may apply to primary schools, but that the higher schools, at any rate, must be allowed to give a liberal education. In fact, they professedly sacrifice everything else to this object.
 
-Education systems across the globe are failing our young people. Traditional classroom models, designed for an industrial era, are fundamentally incompatible with the skills demanded by a modern workforce. Students spend six hours daily sitting in rows, passively receiving information that could be accessed online in minutes. This antiquated approach stifles creativity, crushes independent thinking, and breeds disengagement.
+Let us inquire into this matter. What do the higher schools, those to which the great middle class of the country sends it children, teach, over and above the instruction given in the primary schools? There is a little more reading and writing of English. But, for all that, every one knows that it is a rare thing to find a boy of the middle or upper classes who can read aloud decently, or who can put his thoughts on paper in clear and grammatical (to say nothing of good or elegant) language. The "ciphering" of the lower schools expands into elementary mathematics in the higher; into arithmetic, with a little algebra, a little Euclid. But I doubt if one boy in five hundred has ever heard the explanation of a rule of arithmetic, or knows his Euclid otherwise than by rote.
 
-The time has come for radical reform. We need education that celebrates curiosity over compliance, that teaches collaboration over competition, and that prioritizes well-being over test scores. Project-based learning, mentorship models, and interdisciplinary studies should replace the rigid subject silos of yesterday. Teachers should be facilitators of discovery, not mere deliverers of content.
+Of theology, the middle class schoolboy gets rather less than poorer children, less absolutely and less relatively, because there are so many other claims upon his attention. I venture to say that, in the great majority of cases, his ideas on this subject when he leaves school are of the most shadowy and vague description, and associated with painful impressions of the weary hours spent in learning collects and catechism by heart.
 
-Furthermore, the assessment culture has become toxic. Students are subjected to endless testing, creating anxiety and narrowing curriculum to exam-focused content. We must move towards continuous assessment and authentic evaluation. Real-world problems should form the basis of our curriculum. When students tackle genuine challenges-building infrastructure, developing solutions to environmental problems, creating art-they develop resilience and meaningful skills.
-
-The investment required is significant, but the cost of maintaining this failing system is far greater. We are wasting human potential. Our young people deserve better.`,
-  authorA: 'Dr Sarah Mitchell',
-  dateA: '2023',
-  sourceB: 'Opinion piece from Education Weekly, 2023',
-  textB: `"Why We Must Preserve Educational Excellence" by James Richardson
-
-The calls for educational revolution must be viewed with caution. While acknowledging areas for improvement, wholesale abandonment of proven systems would be reckless. Our traditional education model has produced generations of successful individuals, innovators, and leaders. Rigorous discipline, structured curricula, and comprehensive examinations have real value.
-
-Core subjects-mathematics, English, sciences-provide essential knowledge and cognitive skills that form the foundation for all future learning. A student who cannot calculate percentages or construct a coherent argument is not well-served by project-based activities. Academic rigor develops the intellectual discipline necessary for genuine achievement.
-
-Examination stress, whilst not ideal, can be managed through better pastoral support and mental health resources. The solution is not to dismantle assessment but to improve it holistically. Schools are already implementing mindfulness programs, flexible timetables, and counseling services that support student well-being without compromising academic standards.
-
-Moreover, replacing traditional schooling entirely ignores practical realities. Teachers in many schools lack resources for experimental approaches. School buildings, funding, and staffing are already stretched. Reform must be pragmatic and gradual. We can innovate within our existing framework while maintaining the pedagogical principles that have worked for centuries.
-
-The question is not revolution, but evolution. We must preserve what works while thoughtfully addressing genuine concerns.`,
-  authorB: 'James Richardson',
-  dateB: '2023',
-  q1BothTexts: 'the state of modern education and how it should change',
+Modern geography, modern history, modern literature; the English language as a language; the whole circle of the sciences, physical, moral, and social, are even more completely ignored in the higher than in the lower schools. Up till within a few years back, a boy might have passed through any one of the great public schools with the greatest distinction and credit, and might never so much as have heard of one of the subjects I have just mentioned. He might never have heard that the earth goes round the sun; that England underwent a great revolution in 1688, and France another in 1789; that there once lived certain notable men called Chaucer, Shakspeare, Milton, Voltaire, Goethe, Schiller. The first might be a German and the last an Englishman for anything he could tell you to the contrary. And as for science, the only idea the word would suggest to his mind would be dexterity in boxing.`,
+  authorA: 'Thomas Henry Huxley',
+  dateA: '1868',
+  sourceB:
+    'Matthew Arnold, "Literature and Science", a lecture first given at Cambridge and recast for American audiences, as printed in Discourses in America, 1885',
+  // Gutenberg #44919, the lecture's closing paragraph, cut by script.
+  textB: `And therefore, to say the truth, I cannot really think that humane letters are in much actual danger of being thrust out from their leading place in education, in spite of the array of authorities against them at this moment. So long as human nature is what it is, their attractions will remain irresistible. As with Greek, so with letters generally: they will some day come, we may hope, to be studied more rationally, but they will not lose their place. What will happen will rather be that there will be crowded into education other matters besides, far too many; there will be, perhaps, a period of unsettlement and confusion and false tendency; but letters will not in the end lose their leading place. If they lose it for a time, they will get it back again. We shall be brought back to them by our wants and aspirations. And a poor humanist may possess his soul in patience, neither strive nor cry, admit the energy and brilliancy of the partisans of physical science, and their present favour with the public, to be far greater than his own, and still have a happy faith that the nature of things works silently on behalf of the studies which he loves, and that, while we shall all have to acquaint ourselves with the great results reached by modern science, and to give ourselves as much training in its disciplines as we can conveniently carry, yet the majority of men will always require humane letters; and so much the more, as they have the more and the greater results of science to relate to the need in man for conduct, and to the need in him for beauty.`,
+  authorB: 'Matthew Arnold',
+  dateB: '1885',
+  glossary:
+    "Glossary for Source A: animadversions - criticisms; ciphering - arithmetic, as taught in elementary schools; Euclid - geometry, taught from the Elements of the Greek mathematician Euclid; collects - short prayers set for particular days in the Church of England's services; catechism - a summary of Christian belief in questions and answers, learnt by heart; Shakspeare - an older spelling of Shakespeare.\n\nGlossary for Source B: humane letters - literature, including the Greek and Latin classics; humanist - a scholar or lover of humane letters; partisans - keen supporters; possess his soul in patience - wait calmly.",
+  q1BothTexts: 'what education should teach and whether it needs to change.',
   q1MarkScheme: [
-    "Clear identification of both writers' main positions",
-    'Accurate details from Source A showing criticism of traditional education',
-    'Accurate details from Source B showing defense of traditional education',
-    'Specific evidence from both texts',
-    'Understanding of how the positions differ or contrast',
+    "Clear identification of both writers' main positions: Huxley finds the higher schools failing; Arnold expects literature to keep its leading place",
+    'Accurate details from Source A, such as boys who cannot read aloud or write clearly, Euclid learnt by rote, the catechism learnt by heart, and modern subjects and the sciences ignored',
+    'Accurate details from Source B, such as letters being "studied more rationally", other subjects "crowded into education", and everyone learning the results of modern science',
+    'Specific evidence from both texts, including short, accurate quotations',
+    'Inferences about how the positions differ: Huxley sees what is missing as the problem; Arnold accepts some change but not the loss of "humane letters"',
   ],
-  q1Answer45: `Source A (Dr Mitchell) argues that modern education fails students because traditional classroom models are outdated and designed for an industrial era. She believes education should focus on creativity, collaboration, and well-being rather than test scores. She advocates for project-based learning and mentorship models instead of rigid subjects.
+  q1Answer45: `Source A (Huxley) says that the higher schools claim to give a liberal education but teach very little. He says it is "a rare thing" to find a boy who can "read aloud decently" or write clear English, and he doubts whether many boys know Euclid "otherwise than by rote". Boys spend "weary hours" learning the catechism by heart, and subjects such as modern history, modern literature and "the whole circle of the sciences" are ignored. This suggests that he wants the curriculum to change.
 
-Source B (James Richardson) disagrees, arguing that traditional education systems have produced successful individuals and should not be dismantled. He claims core subjects and rigorous examination provide essential knowledge and intellectual discipline. He suggests reform should be gradual rather than revolutionary.`,
-  q1Answer67: `Source A's Dr Mitchell argues that traditional education fundamentally fails students by prioritizing compliance over curiosity and producing disengagement. She criticizes both the outdated classroom model and the "toxic assessment culture," advocating instead for project-based learning addressing real-world problems. She emphasizes that students develop meaningful skills and resilience through authentic evaluation.
+Source B (Arnold) says that literature, which he calls "humane letters", will keep its "leading place in education". He accepts that other subjects will be added, "far too many" of them, and that everyone will have to learn "the great results reached by modern science", but he believes most people "will always require humane letters". He expects change, but not that literature will be pushed out: letters will be "studied more rationally" but "will not lose their place".`,
+  q1Answer67: `Huxley, in Source A, sets out to test the claim that the higher schools "must be allowed to give a liberal education", and finds it false. Beyond "a little more reading and writing of English", these schools add only "a little algebra, a little Euclid", mostly learnt "by rote", and their religious teaching leaves ideas that are "shadowy and vague". Most damning, in his view, is what is left out: modern geography, history and literature, the English language and "the whole circle of the sciences". Until "a few years back", he says, a boy could leave a great public school with "the greatest distinction and credit" without knowing that the earth goes round the sun. The implication is that the curriculum has failed and must change.
 
-Source B's James Richardson presents a contrasting perspective, defending traditional systems as proven vehicles for producing successful individuals. He argues core subjects provide essential cognitive foundations and that examination stress can be managed through improved pastoral support rather than systemic dismantling. He advocates evolutionary rather than revolutionary change, maintaining existing pedagogical frameworks while addressing specific concerns.`,
-  q2Text: 'express concern about the current education system',
+Arnold, in Source B, looks at the same debate from the other side and is confident that "humane letters" will keep "their leading place in education", however strong "the array of authorities against them". He does not resist change altogether: letters may come to be "studied more rationally", other subjects will be "crowded into education", and everyone must learn "the great results reached by modern science". His reason is human nature: most people "will always require humane letters", because the more science they learn, the more they need letters to relate its results to "the need in man for conduct" and "the need in him for beauty". Where Huxley sees the old curriculum as the problem, Arnold sees it as the part of education that will last.`,
+  q2Text: 'express his concern about what the higher schools of his day teach?',
   q2MarkScheme: [
-    'Identification of specific language techniques',
-    'Explanation of intended effect',
-    'Integration of quotation with analysis',
-    'Multiple techniques identified',
-    'Sophisticated analysis of how language builds meaning',
+    'Identification of specific language features, for example the adverb "professedly", the repeated "a little", the hyperbole of "one boy in five hundred", the list of neglected subjects and the anticlimax of "dexterity in boxing"',
+    'Explanation of the intended effect on the audience, such as making the schools seem neglectful, dull or absurd',
+    'Integration of short quotations with analysis',
+    'Comment on sentence forms and structure, such as the question Huxley asks and then answers, and the list that builds to the final joke',
+    'Sophisticated analysis of how the language builds his concern across the passage',
   ],
-  q2Answer45: `Dr Mitchell uses powerful language to express concern. She describes education as "failing" which is a strong accusation. She uses repetition when she says "creatively over compliance, collaboration over competition" which emphasizes her concerns. The phrase "stifles creativity" and "crushes independent thinking" uses violent verbs to show how harmful the current system is. She calls the assessment culture "toxic" which is a medical metaphor suggesting it is poisonous and harmful.`,
-  q2Answer67: `Mitchell employs semantically loaded terminology to intensify her critique. The verbs "stifles," "crushes," and "wastes" employ violent, destructive imagery conveying irreversible damage. Her metaphorical characterization of assessment as "toxic" invokes biological concepts of poison, suggesting the system is fundamentally incompatible with student development. The anaphoric structure "that teaches... that prioritizes..." builds rhetorical force through repetition, accumulating demands for change. Her interrogative opening-"are failing our young people"-positions the accusation as rhetorical fact rather than opinion, lending authoritative weight to her concern.`,
-  q3BothTexts: 'the value and necessity of educational reform',
+  q2Answer45: `Huxley uses language to show that the higher schools fail their pupils. He starts with what "may be said" in their defence, that they "must be allowed to give a liberal education", and then writes "Let us inquire into this matter", which sounds as if he is about to test the claim and prove it wrong. He uses the exaggerated figure "one boy in five hundred" to suggest that almost no pupil has ever had a rule of arithmetic explained to him, and the phrase "by rote" shows that boys memorise without understanding. The adjectives in "painful impressions of the weary hours" show that learning the catechism was dull and unpleasant. He lists subjects such as "modern history, modern literature" and "the whole circle of the sciences" to show how much is missing. Finally, he ends with a joke: the only idea the word science would suggest to a schoolboy is "dexterity in boxing", which makes the schools seem ridiculous.`,
+  q2Answer67: `Huxley builds his concern by stating the schools' case and then taking it apart. The defence that they "must be allowed to give a liberal education" is undercut by the adverb in "they professedly sacrifice everything else to this object": the aim is professed, not achieved. He then asks what the higher schools teach "over and above the instruction given in the primary schools" and answers his own question, and the answer is thin. His concessions are grudging ("There is a little more reading and writing of English") and are at once cancelled by "But, for all that". The appeal to shared knowledge in "every one knows" presents his criticism as beyond dispute, and the modest adverb "decently" sets a standard so low that failing it is shameful. The repeated "a little" in "a little algebra, a little Euclid" shrinks the mathematics taught, while the hyperbole of "one boy in five hundred" and the phrase "by rote" suggest learning without understanding. On religious teaching, "shadowy and vague" and "painful impressions of the weary hours" suggest that the schoolboy gains only confusion and boredom. The long list of neglected subjects, ending in "the whole circle of the sciences, physical, moral, and social", accumulates a sense of vast omission, and the superlative "the greatest distinction and credit" is ironic when set against a boy who "might never have heard that the earth goes round the sun". Huxley ends in bathos: the only idea the word science would suggest to such a boy "would be dexterity in boxing". The comic anticlimax makes the schools' neglect seem absurd as well as harmful.`,
+  q3BothTexts: 'the traditional curriculum and whether it should change.',
   q3MarkScheme: [
-    'Clear comparison of viewpoints',
-    'Evidence from both texts',
-    'Analysis of language and methods',
-    'Exploration of different reasoning',
-    'Sophisticated understanding of contrasting perspectives',
+    'Clear comparison of the two viewpoints: Huxley attacks the traditional curriculum for what it leaves out; Arnold defends literature while accepting that science must be learnt',
+    'Evidence from both texts, with quotations integrated into the comparison',
+    "Analysis of methods: Huxley's lists, hyperbole and sarcasm set against Arnold's concessions, calm confidence and long final sentence",
+    'Recognition of common ground as well as difference, for example that both writers think science belongs in education',
+    'Perceptive comparison of how each writer tries to influence the reader',
   ],
-  q3Answer45: `Both writers have different views on educational reform. Mitchell believes education must change completely because the current system is broken and harmful. Richardson thinks reform is necessary but should be gradual because traditional methods still work. Mitchell uses strong language to make her argument seem urgent, while Richardson uses balanced language to seem reasonable. Mitchell focuses on what is wrong, while Richardson focuses on what works well. Mitchell wants revolution, but Richardson wants evolution.`,
-  q3Answer67: `The writers diverge fundamentally on the scope and urgency of reform. Mitchell employs crisis rhetoric, utilizing hyperbole and linguistic extremity-"stifles," "crushes," "wasting human potential"-to position reform as essential and immediate. Her language constructs education as a failure requiring dismantling. Richardson adopts a more measured tone, employing hedging language ("whilst not ideal," "can be managed") and acknowledging validity in both positions ("areas for improvement"). His approach positions reform as refinement of working systems. Rhetorically, Mitchell appeals to emotional investment in youth futures, while Richardson emphasizes practical realities and institutional continuity. Where Mitchell presents innovation and tradition as binary opposites, Richardson frames them as compatible through evolutionary change.`,
+  q3Answer45: `Both writers are writing about what education should include, but they have different views. Huxley thinks the traditional curriculum is failing: boys learn Euclid "by rote" and subjects such as modern literature and the sciences are "completely ignored". Arnold defends literature, which he calls "humane letters", and believes that letters "will not lose their place" in education. However, Arnold agrees that people need science too, because everyone will have to learn "the great results reached by modern science". Huxley uses sarcasm and exaggeration, such as "dexterity in boxing", to make the schools look foolish, while Arnold uses a calm, confident tone and says that the "attractions" of letters "will remain irresistible". Huxley's criticism suggests that change is needed now, but Arnold thinks that even if letters lose their place "for a time, they will get it back again".`,
+  q3Answer67: `The writers disagree about whether the traditional, literary curriculum deserves its place. Huxley presents the higher schools as failing on their own terms: they "professedly sacrifice everything else" to a liberal education, yet their pupils can rarely "read aloud decently" and know Euclid only "by rote". His method is accumulation, a catalogue of what is "completely ignored", from "Modern geography" to "the whole circle of the sciences", followed by a string of facts a boy "might never have heard". Arnold, by contrast, writes as "a poor humanist" defending "humane letters", and where Huxley attacks, Arnold reassures. He admits the strength of the other side, "the array of authorities against them" and "the energy and brilliancy of the partisans of physical science", but rests his confidence on something larger than argument: "So long as human nature is what it is, their attractions will remain irresistible." The two are closer than they first appear, since Arnold agrees that "we shall all have to acquaint ourselves with the great results reached by modern science"; the difference is one of balance rather than exclusion. Their tones differ sharply. Huxley's sarcasm ("dexterity in boxing") is designed to provoke his audience into wanting change, while Arnold's patient voice, with its biblical echo of one who will "neither strive nor cry", invites the reader to trust that "the nature of things works silently" in favour of letters. For Huxley reform is urgent. Arnold foresees, "perhaps", "a period of unsettlement and confusion and false tendency", but insists that letters "will not in the end lose their leading place".`,
   q4Text:
     'Whose argument do you find more persuasive? Which writer presents more convincing evidence for their position?',
   q4MarkScheme: [
     'Clear judgement with supported reasoning',
     'Reference to both texts',
-    'Evaluation of evidence quality',
+    "Evaluation of the quality of evidence: Huxley's specific examples against his admitted guesses; Arnold's concessions against his appeal to human nature",
     'Analysis of persuasive technique',
-    'Sophisticated judgement with nuanced consideration',
+    'Sophisticated, balanced judgement with nuanced consideration',
   ],
-  q4Answer45: `Richardson's argument is more persuasive because he acknowledges both sides of the debate. He admits education has problems but argues that drastic change isn't necessary. His evidence about mental health resources already existing makes his position seem realistic. Mitchell's argument relies on dramatic language rather than evidence. She makes strong claims about what education should be but doesn't explain how to implement her ideas. Richardson's practical approach is more convincing than Mitchell's idealism.`,
-  q4Answer67: `While Mitchell's argument carries affective force through urgent language and ideological clarity, Richardson's position proves more persuasive through strategic concession and practical reasoning. Richardson's acknowledgment that "areas for improvement" exist demonstrates intellectual honesty, rendering his skepticism of revolutionary reform more credible than Mitchell's categorical denunciation. Evidentially, Richardson grounds his defense in concrete examples-existing mindfulness programs, counseling services-providing verifiable instances of progress. Mitchell's evidence remains largely hypothetical; her proposal for "project-based learning" and "real-world problems" lacks specific implementation detail or demonstrated efficacy. Furthermore, Richardson's recognition of resource constraints and institutional realities demonstrates sophisticated understanding of systemic barriers that Mitchell overlooks. While Mitchell succeeds in making reform seem emotionally necessary, Richardson more effectively demonstrates why evolutionary rather than revolutionary approaches represent viable, sustainable solutions.`,
+  q4Answer45: `I find Huxley's argument more persuasive because he gives specific examples of what boys do not learn. He says a boy might never have heard "that the earth goes round the sun" or of writers such as "Chaucer, Shakspeare, Milton", which shows how much the schools leave out. Arnold's argument is calmer, and he admits that science matters, but his main evidence is that "human nature is what it is", which is a belief rather than proof. However, Arnold is persuasive when he accepts that education will change, which makes him seem fair.`,
+  q4Answer67: `Huxley's argument is the more persuasive, although both writers rely more on confident assertion than on proof. Huxley's strength is detail: rather than claiming vaguely that schools fail, he names what is missing, from "Modern geography" to the facts that "England underwent a great revolution in 1688, and France another in 1789". His evidence is partly impressionistic, however. "I doubt if one boy in five hundred" and "I venture to say" signal personal judgement rather than measurement, and he admits that his most striking example describes the schools only "Up till within a few years back". Arnold is disarmingly frank about the forces against him, conceding "the array of authorities against them" and granting that all must learn "the great results reached by modern science", and these concessions make him seem reasonable. Yet his central evidence, "So long as human nature is what it is", is an article of faith, and his admission that letters may lose their place "for a time" weakens his reassurance. Arnold persuades through tone and Huxley through detail, and detail is what a reader can test.`,
   q5Prompt:
     'Many people argue that education systems need significant change to prepare students for the modern world.',
   q5Viewpoint:
@@ -245,13 +305,13 @@ Furthermore, the mental health crisis among students shows the current system is
 In conclusion, educational reform is not optional but essential. We must change the system to engage students, reduce mental health problems, and teach relevant skills for the modern world.`,
   q5Answer67: `The perpetuation of nineteenth-century pedagogical models in twenty-first-century education represents a fundamental abdication of institutional responsibility. Schools must undergo systematic reform to align curricula and assessment approaches with contemporary skill requirements and cognitive development research.
 
-Critics contend that traditional education has demonstrable value, producing generations of accomplished individuals. Yet this argument commits a temporal fallacy: the skills requisite for industrial-era success prove demonstrably inadequate for knowledge-economy participation. Contemporary employers consistently identify critical gaps in graduates' collaborative abilities, creative problem-solving capacities, and technological literacy-precisely the competencies traditional curricula systematically deprioritize in favor of subject-specific content recall.
+Critics contend that traditional education has demonstrable value, producing generations of accomplished individuals. Yet this argument commits a temporal fallacy: the skills requisite for industrial-era success prove demonstrably inadequate for knowledge-economy participation. Contemporary employers consistently identify critical gaps in graduates' collaborative abilities, creative problem-solving capacities, and technological literacy - precisely the competencies traditional curricula systematically deprioritise in favour of subject-specific content recall.
 
-Project-based pedagogical frameworks offer compelling alternatives. When students engage substantive real-world challenges-designing sustainable infrastructure, analyzing epidemiological data, constructing policy proposals-they develop integrated competencies: disciplinary knowledge, practical application, communicative clarity, and collaborative negotiation. This authenticity simultaneously addresses the mental health crisis afflicting secondary students. The persistent anxiety and depression correlate directly with decontextualized assessment regimes emphasizing high-stakes examinations over meaningful learning experiences.
+Project-based pedagogical frameworks offer compelling alternatives. When students engage substantive real-world challenges - designing sustainable infrastructure, analysing epidemiological data, constructing policy proposals - they develop integrated competencies: disciplinary knowledge, practical application, communicative clarity, and collaborative negotiation. This authenticity simultaneously addresses the mental health crisis afflicting secondary students. The persistent anxiety and depression correlate directly with decontextualised assessment regimes emphasising high-stakes examinations over meaningful learning experiences.
 
-Moreover, technological transformation necessitates curricular evolution. Information accessibility obviates the necessity of content memorization; educational value increasingly resides in synthesis, critical analysis, and creative application. Schools persisting with rote assessment methodologies effectively prepare students for obsolescence.
+Moreover, technological transformation necessitates curricular evolution. Information accessibility obviates the necessity of content memorisation; educational value increasingly resides in synthesis, critical analysis, and creative application. Schools persisting with rote assessment methodologies effectively prepare students for obsolescence.
 
-However, wholesale institutional dismantling proves neither practical nor advisable. Evolutionary reform-implementing project-based components alongside traditional disciplines, diversifying assessment methods, prioritizing student well-being within maintained academic rigor-offers sustainable transformation. Schools require additional resource investment, but this represents prudent human capital development rather than budgetary expenditure.
+However, wholesale institutional dismantling proves neither practical nor advisable. Evolutionary reform - implementing project-based components alongside traditional disciplines, diversifying assessment methods, prioritising student well-being within maintained academic rigour - offers sustainable transformation. Schools require additional resource investment, but this represents prudent human capital development rather than budgetary expenditure.
 
 In essence, educational reform addresses not revolutionary ideology but pragmatic responsiveness to demonstrable shifts in economic requirements and psychological research on learning effectiveness. Schools failing to adapt risk institutional irrelevance.`,
 })

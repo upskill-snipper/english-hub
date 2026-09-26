@@ -5,6 +5,76 @@
 // NEW DIVERSE GENRES: Psychological Thriller, Dystopian, Magical Realism, Domestic Drama,
 // Adventure at Sea, Childhood Memory
 
+/**
+ * WHAT WAS WRONG, AND WHAT WAS CHANGED (27 September 2026).
+ *
+ * The six extracts are this site's own writing (each labelled "Original ...
+ * fiction"), so there was no author to misquote and none of them was
+ * changed. The fault was in what the questions said about them.
+ * scripts/check-mock-exam-extracts.mjs, the first check ever run on these
+ * banks, found nine quotations in seven questions that were not in the
+ * extract they claimed to quote, and four that joined words of the extract
+ * with a silent cut. A student marking their own answer against a model
+ * answer learns that the model's quotation is evidence; an invented one
+ * teaches them to invent. Every one was rewritten to quote the extract as it
+ * stands, and the analysis round it was checked against the words quoted:
+ *
+ *   - 01 Q2 named its end point as "nothing except that I'm holding" (the
+ *     extract says "anything"), and its model answers quoted lines after that
+ *     point. The range now ends at "has become permeable", which is where the
+ *     answers' quotations stop.
+ *   - 03 Q2 quoted "memory has to go somewhere"; the grandmother says "they
+ *     have to go somewhere". It also credited the narrator's description
+ *     ("reached her wrists") to the grandmother.
+ *   - 04 Q2 to Q4 quoted "stared...for a full minute", "communication became
+ *     easier", "not looking at her", "automatic...responses...automatic" and
+ *     "she had not adapted", none of which is in the extract; the last was
+ *     used to credit Sarah with thoughts about her own inadequacy that the
+ *     extract never gives her. Q3 also offered Sarah's waking and her coffee
+ *     "routine" as evidence of David's predictability.
+ *   - 05 Q2 ran "to 'we deserve'" (the extract says "it deserves"), one
+ *     sentence, while its answers analysed the next three paragraphs and a
+ *     "roaring throat" that is nowhere in the extract. The range now covers
+ *     the paragraphs the answers analyse, and the throat is gone.
+ *   - 06 Q3 and Q1 quoted "didn't come back in the same way" and "dead for
+ *     twelve years"; the second is not in the extract in any form.
+ *   - Quotations under four words, which the checker does not test, were
+ *     read by hand: 02's "regulated co-presence" and "ate when hungry" and
+ *     05's "green air" were not in their extracts, and 01 Q4 spoke of the
+ *     girl's "death" where the extract says only that she disappeared.
+ *
+ * Reading every multiple-choice key against its extract found that all six
+ * Question 1 keys marked as true a statement the extract does not support,
+ * which no quotation check could see: 01 G (that the narrator IS unwell,
+ * which Q4 then asks the student to decide), 02 B (distribution, not eating,
+ * begins at 12:00), 03 (a key that argued with itself across three grades,
+ * "F implied" among them), 04 G (the chipped mug is David's, and E, marked
+ * false, was arguably true), 05 B (the narrator, Peter and "four other
+ * people" are six, not five) and 06 D, E and G (the narrator studied
+ * economics, the "twelve years" is invented, and the narrator's sex is never
+ * given). Each statement was reworded so that the key is true of the
+ * extract, and each key's evidence quotes it.
+ *
+ * A second reading the same day found claims that were still untrue of the
+ * words although every quotation now checked: 02 E, marked true, said the
+ * old world "ate chaotically", which the extract never says (it now quotes
+ * what the extract does say); 03 Q2 set "the passages where the grandmother
+ * explains the blue" while its answers analysed the narrator's lines between
+ * them, so the question now names the range its answers use; 03 Q3 said the
+ * blue "causes" the divorce (the extract: "one of the reasons") and that the
+ * narrator's eyes showed them the blue, which they do not until the last
+ * paragraph; 02 Q4 said speech "has been eliminated" (the couple have
+ * "learned not to speak" during one period); 05 Q3 said the narrator "can
+ * survive alone"; 01 gave its narrator a sex, as 06 had, which the extract
+ * never does; and 06 Q2's "first section" is now "the first two paragraphs".
+ * The questions and answers were also in American spelling ("Analyzes",
+ * "judgment"), which a student may copy into a GCSE answer; they are now in
+ * British spelling. The extracts were left as written.
+ *
+ * None of these papers is in allMockExamPapers, so none was served; they sat
+ * in a public repository all the same.
+ */
+
 import type { MockExamPaper, MockExamSection, MockExamQuestion } from './mock-exams'
 
 // ─── Set 3 Mock Exam Extracts ──────────────────────────────────────────────────────
@@ -146,7 +216,7 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
           {
             id: 'set3-mock-01-q1',
             questionNumber: 1,
-            questionText: `Read again the extract. Choose four of the following statements which are TRUE.\n\nA) The narrator remembers walking to the basement.\nB) The basement has a window showing sky.\nC) The box is labelled in the narrator's own handwriting.\nD) The newspaper clippings are about a missing girl named Elspeth.\nE) Elspeth was the narrator's sister.\nF) The narrator's wife is in the basement with him.\nG) The narrator is mentally unwell.\nH) The narrator knows Elspeth disappeared seventeen years ago.`,
+            questionText: `Read again the extract. Choose four of the following statements which are TRUE.\n\nA) The narrator remembers walking to the basement.\nB) The basement has a window showing sky.\nC) The box is labelled in the narrator's own handwriting.\nD) The newspaper clippings are about a missing girl named Elspeth.\nE) Elspeth was the narrator's sister.\nF) The narrator's wife is in the basement too.\nG) The narrator's wife says the narrator is not well in the basement.\nH) The newspaper clippings date from seventeen years ago.`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -156,9 +226,9 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
               'Grade 4-5':
                 'C, D, G, H - Textually supported. (A) false: "I don\'t remember," (B) false: "only earth," (E) false: knew her through fence, (F) false: upstairs.',
               'Grade 6-7':
-                'C, D, G, H - (C) "handwriting I recognise as my own," (D) "missing girl...Elspeth," (G) "You know you\'re not well," (H) "dates...seventeen years ago."',
+                'C, D, G, H - (C) "handwriting I recognise as my own," (D) "missing girl...Elspeth," (G) "You know you\'re not well down there," (H) "The dates on the newspaper clippings are from seventeen years ago."',
               'Grade 8-9':
-                "C, D, G, H - Each statement has explicit textual validation. The passage establishes unreliable narrator through the wife's concern about basement and the narrator's inability to distinguish memory from imagination.",
+                "C, D, G, H - Each statement has explicit textual support. Statement G needs care: it is the wife who says the narrator is not well, and the narrator's unspoken reply is \"But I don't know that\", so the extract reports her view without confirming it. The passage builds an unreliable narrator through the wife's concern about the basement and the narrator's inability to tell memory from imagination.",
             },
             markScheme: [
               '1 mark for each correct answer',
@@ -169,7 +239,7 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
           {
             id: 'set3-mock-01-q2',
             questionNumber: 2,
-            questionText: `Look in detail at the passage from "The basement smells" to "nothing except that I'm holding". How does the writer use language and description to create a sense of psychological unease?\n\nYou could include the writer's choice of:\n- words and phrases\n- language features and techniques\n- sentence forms.`,
+            questionText: `Look in detail at the passage from "The basement smells" to "has become permeable". How does the writer use language and description to create a sense of psychological unease?\n\nYou could include the writer's choice of:\n- words and phrases\n- language features and techniques\n- sentence forms.`,
             marks: 8,
             suggestedTimeMinutes: 10,
             questionType: 'analysis',
@@ -177,15 +247,15 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
             extractSource: MOCK_SET3_01_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                'The basement is described with words like "dust," "cold," and "odour of things you want to forget." The window shows "only earth" instead of sky, which is strange and frightening. The box is labeled in handwriting the narrator doesn\'t remember writing. These details create confusion and fear because the narrator is unsure of their own memories and actions.',
+                'The basement is described with words like "dust," "cold," and "odour of things you want to forget." The window shows "only earth" instead of sky, which is strange and frightening. The box is labelled in handwriting the narrator doesn\'t remember writing. These details create confusion and fear because the narrator is unsure of their own memories and actions.',
               'Grade 6-7':
-                'The writer creates unease through sensory isolation and perceptual contradiction. The basement smells of "things you want to forget," introducing guilt before explicit cause. The window shows "only earth," inverting normal perspective and suggesting entombment. Most significantly, the narrator finds the box in their own handwriting but has no memory of writing it, which destabilizes the boundary between conscious and unconscious action. The repetition of "I don\'t know" and "I don\'t remember" suggests dissociative experience. The final phrase "whether I put her there...or whether that\'s something I\'ve imagined" refuses certainty, making intention and reality indistinguishable.',
+                'The writer creates unease through sensory isolation and perceptual contradiction. The basement smells of "things you want to forget," introducing guilt before explicit cause. The window shows "only earth," inverting normal perspective and suggesting entombment. Most significantly, the narrator finds the box in their own handwriting but has no memory of writing it, which destabilises the boundary between conscious and unconscious action. The repetition of "I don\'t know" ("But I don\'t know that. I don\'t know anything") suggests dissociative experience. The final phrase "whether I put her there...or whether that\'s something I\'ve imagined" refuses certainty, making intention and reality indistinguishable.',
               'Grade 8-9':
                 'The writer constructs epistemic breakdown through the strategic occlusion of consciousness and the contamination of memory by guilt. The sensory descriptions function metaphorically: "dust and cold concrete" evoke archaeological layers beneath consciousness; the smell of "things you want to forget" introduces guilt as phenomenology before cause. The inverted window (earth rather than sky) performs visual inversion of normal perspective. Most crucially, the discovery of the box in the narrator\'s own handwriting while having no memory of writing it performs what might be called "memory dissociation" - consciousness cannot account for its own actions. The final interrogation - "whether I put her there...or whether that\'s something I\'ve imagined" - treats these as equivalent possibilities, suggesting the narrator cannot distinguish objective action from intrusive ideation. This is the psychological collapse at the passage\'s centre.',
             },
             markScheme: [
               'Identifies language features creating unease',
-              'Analyzes sensory and perceptual detail',
+              'Analyses sensory and perceptual detail',
               'Explores psychological breakdown',
               'Discusses how uncertainty is constructed',
               'Higher bands: sophisticated analysis of memory and consciousness',
@@ -206,11 +276,11 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
               'Grade 6-7':
                 'The writer constructs interpretative ambiguity through controlled revelation. The opening establishes the narrator as victim (memory loss, unexplained dislocation). The middle section introduces incriminating evidence (the box about a missing girl) without clear context. The wife\'s statement positions the narrator as pathological ("You know you\'re not well"), but this could indicate either guilt-induced breakdown or innocent mental illness. The structure deliberately withholds definitive evidence of culpability. The final question - "whether I put her there...or whether that\'s something I\'ve imagined" - treats these possibilities as equally plausible, which is the crucial structural move: by treating them as equivalent, the writer makes both interpretations available to the reader.',
               'Grade 8-9':
-                'The writer employs what might be called "structural unreliability" to generate productive ambiguity about culpability and pathology. The opening establishes memory loss as the narratorial condition, which could indicate either guilty dissociation (trauma response to crime) or innocent cognitive dysfunction. The introduction of the box functions as hermeneutic crisis: its presence could suggest documentation of obsession (innocent but pathological) or evidence of guilt. The wife\'s line "You know you\'re not well" is structurally crucial because it could signify either her knowledge of her husband\'s guilt or her knowledge of his mental illness - both explanations are textually supported. The final interrogation treats objective action ("I put her there") and subjective fantasy ("I\'ve imagined") as phenomenologically equivalent, which performs the collapse of the distinction between guilt and delusion. The structure systematically denies us the information needed to determine which narrative frame is correct, which is precisely where the psychological terror resides.',
+                'The writer employs what might be called "structural unreliability" to generate productive ambiguity about culpability and pathology. The opening establishes memory loss as the narratorial condition, which could indicate either guilty dissociation (trauma response to crime) or innocent cognitive dysfunction. The introduction of the box functions as hermeneutic crisis: its presence could suggest documentation of obsession (innocent but pathological) or evidence of guilt. The wife\'s line "You know you\'re not well" is structurally crucial because it could signify either her knowledge of the narrator\'s guilt or her knowledge of the narrator\'s mental illness - both explanations are textually supported. The final interrogation treats objective action ("I put her there") and subjective fantasy ("I\'ve imagined") as phenomenologically equivalent, which performs the collapse of the distinction between guilt and delusion. The structure systematically denies us the information needed to determine which narrative frame is correct, which is precisely where the psychological terror resides.',
             },
             markScheme: [
               'Identifies structural features: opening, revelation, ending',
-              'Analyzes how perspective creates ambiguity',
+              'Analyses how perspective creates ambiguity',
               'Explores the implications for character interpretation',
               'Discusses how structure generates psychological effect',
               'Higher bands: sees structure as performing the breakdown of certainty',
@@ -227,19 +297,19 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
             extractSource: MOCK_SET3_01_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                "I think the narrator is probably mentally ill because they can't remember going to the basement and they keep imagining things that might not be true. The wife says \"You know you're not well,\" which suggests she thinks he's sick, not guilty. But the box about Elspeth is strange and makes you wonder. The narrator themselves says they're not sure whether they imagined it or did it, which sounds like mental illness rather than actual guilt.",
+                "I think the narrator is probably mentally ill because they can't remember going to the basement and they keep imagining things that might not be true. The wife says \"You know you're not well,\" which suggests she thinks the narrator is ill, not guilty. But the box about Elspeth is strange and makes you wonder. The narrator themselves says they're not sure whether they imagined it or did it, which sounds like mental illness rather than actual guilt.",
               'Grade 6-7':
-                "The evidence points more toward mental illness than guilt, though the writer deliberately maintains ambiguity. The memory loss (\"I don't remember going down\") is consistent with dissociative symptoms rather than calculated concealment. The wife's concern about the basement (\"You know you're not well\") suggests ongoing mental health management rather than suspicion of crime. The existence of the box could indicate obsessive documentation of a case (a symptom of obsessive ideation) rather than evidence of guilt. However, the writer refuses resolution. The narrator's uncertainty (\"I'm trying to remember whether I put her there...or whether that's something I've imagined\") suggests someone whose reality testing has become unstable. The crucial point is that the distinction between guilt and pathology may be false - perhaps the narrator's obsession with the case stems from guilty knowledge expressed through mental illness.",
+                "The evidence points more towards mental illness than guilt, though the writer deliberately maintains ambiguity. The memory loss (\"I don't remember going down\") is consistent with dissociative symptoms rather than calculated concealment. The wife's concern about the basement (\"You know you're not well\") suggests ongoing mental health management rather than suspicion of crime. The existence of the box could indicate obsessive documentation of a case (a symptom of obsessive ideation) rather than evidence of guilt. However, the writer refuses resolution. The narrator's uncertainty (\"I'm trying to remember whether I put her there...or whether that's something I've imagined\") suggests someone whose reality testing has become unstable. The crucial point is that the distinction between guilt and pathology may be false - perhaps the narrator's obsession with the case stems from guilty knowledge expressed through mental illness.",
               'Grade 8-9':
-                "The passage resists definitive interpretation by treating guilt and pathology as inextricable rather than mutually exclusive. Evidence for mental illness: memory loss, wife's persistent concern (\"You know you're not well\" implies chronic condition), inability to distinguish reality from fantasy. Evidence for guilt: the existence of the box suggests knowledge of the case, the neighbour relationship suggests proximity and opportunity, the suppressed dread suggests concealed knowledge. But the writer's genius is to make these evidence sets equivalent in weight, such that no definitive conclusion is possible. The final interrogation - \"whether I put her there...or whether that's something I've imagined\" - resists hierarchizing these possibilities. One might argue that the distinction itself becomes meaningless: the narrator's mental illness could be a manifestation of guilty knowledge, or the guilt (regarding the neighbour's death, regardless of cause) could be producing the pathology. The extract performs what might be called \"forensic indeterminacy\" - the psychological and the criminal become indistinguishable.",
+                "The passage resists definitive interpretation by treating guilt and pathology as inextricable rather than mutually exclusive. Evidence for mental illness: memory loss, wife's persistent concern (\"You know you're not well\" implies chronic condition), inability to distinguish reality from fantasy. Evidence for guilt: the existence of the box suggests knowledge of the case, the neighbour relationship suggests proximity and opportunity, the suppressed dread suggests concealed knowledge. But the writer's genius is to make these evidence sets equivalent in weight, such that no definitive conclusion is possible. The final interrogation - \"whether I put her there...or whether that's something I've imagined\" - resists hierarchising these possibilities. One might argue that the distinction itself becomes meaningless: the narrator's mental illness could be a manifestation of guilty knowledge, or the guilt (about the girl's disappearance, whatever its cause) could be producing the pathology. The extract performs what might be called \"forensic indeterminacy\" - the psychological and the criminal become indistinguishable.",
             },
             markScheme: [
               'Clear judgement about guilt or illness',
               'Close textual support for interpretation',
               'Engages with ambiguity',
-              'Analyzes alternative interpretations',
+              'Analyses alternative interpretations',
               'Uses precise terminology',
-              'Higher bands: recognizes the deliberate indeterminacy; explores how guilt and pathology might be related',
+              'Higher bands: recognises the deliberate indeterminacy; explores how guilt and pathology might be related',
             ],
           },
         ],
@@ -303,7 +373,7 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
           {
             id: 'set3-mock-02-q1',
             questionNumber: 1,
-            questionText: `Choose four TRUE statements:\n\nA) The trains in the city are frequently late.\nB) Citizens eat meals at precisely 12:00.\nC) Sleep duration is not regulated.\nD) The narrator analyzes numerical data.\nE) People in the old world ate chaotically.\nF) The sky has always been grey-white.\nG) The narrator's partner is called a "husband."\nH) An irregular alarm sounds at 9:13.`,
+            questionText: `Choose four TRUE statements:\n\nA) The trains in the city are frequently late.\nB) Food distribution begins at exactly 12:00.\nC) Sleep duration is not regulated.\nD) The narrator analyses numerical data.\nE) People in the old world ate when they were hungry.\nF) The sky has always been grey-white.\nG) The narrator's partner is called a "husband."\nH) An irregular alarm sounds at 9:13.`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -313,7 +383,7 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
               'Grade 4-5':
                 'B, D, E, H - Direct textual support. (A) false: exactly 7:43, (C) false: "enforced," (F) false: filters installed, (G) false: "do not use...husband."',
               'Grade 6-7':
-                'B, D, E, H - (B) "distribution...12:00," (D) "work in Distribution Analysis," (E) "people...chaotic. They ate when hungry," (H) "At 9:13...an alarm sounds."',
+                'B, D, E, H - (B) "distribution...12:00," (D) "work in Distribution Analysis," (E) "people were chaotic. They ate when they were hungry," (H) "At 9:13...an alarm sounds."',
               'Grade 8-9':
                 'B, D, E, H - Each validated with precision. The passage establishes the oppressive precision of the city through numerical regulation.',
             },
@@ -332,22 +402,22 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
               'Grade 4-5':
                 'The writer contrasts the "old world" with the "Approved City." In the old world, people "wanted things," which "was the root of all disorder." The Approved City has "eliminated wanting" so there is no disorder. The writer uses the phrase "If you do not deviate, you are content" to show that accepting rules means being happy. This shows that the city believes controlling desires makes people peaceful.',
               'Grade 6-7':
-                'The writer constructs a causal chain: desire → chaos → disorder → the solution is elimination. The repetition of "if" creates a logical inevitability: "If you do not deviate, you are content. If you are content, you do not want. If you do not want, there is no disorder." This syllogistic structure presents elimination of desire as philosophical necessity rather than tyranny. The contrast with the old world (where people "ate when hungry") emphasizes that natural human behaviour is reframed as "wasteful" and "inefficient." The language of control ("eliminated," "enforced") is presented matter-of-factly, suggesting the speaker has internalized the ideology.',
+                'The writer constructs a causal chain: desire → chaos → disorder → the solution is elimination. The repetition of "if" creates a logical inevitability: "If you do not deviate, you are content. If you are content, you do not want. If you do not want, there is no disorder." This syllogistic structure presents elimination of desire as philosophical necessity rather than tyranny. The contrast with the old world (where people "ate when they were hungry") emphasises that natural human behaviour is reframed as "wasteful" and "inefficient." The language of control ("eliminated wanting") is presented matter-of-factly, suggesting the speaker has internalised the ideology.',
               'Grade 8-9':
-                'The writer performs ideological indoctrination through subtle rhetorical structures. The old world is described through pathological language: people "were chaotic," they "wanted things," and this wanting "was the root of all disorder." Notice the causal claim: disorder doesn\'t arise from desire per se, but desire is constructed as disorder\'s origin. The conditional chain ("If you do not deviate...If you are content...If you do not want...") performs what might be called "tautological elimination" - each clause seems to follow logically, but the structure is actually circular. The final statement - "If you do not want, there is no disorder" - presents elimination of desire as the solution to disorder, but the passage never proves that disorder originates in desire rather than in the desire to possess more than one\'s share. The language suggests the speaker has completely internalized the city\'s ideology, such that this logic appears natural rather than constructed.',
+                'The writer performs ideological indoctrination through subtle rhetorical structures. The old world is described through pathological language: people "were chaotic," they "wanted things," and this wanting "was the root of all disorder." Notice the causal claim: disorder doesn\'t arise from desire per se, but desire is constructed as disorder\'s origin. The conditional chain ("If you do not deviate...If you are content...If you do not want...") performs what might be called "tautological elimination" - each clause seems to follow logically, but the structure is actually circular. The final statement - "If you do not want, there is no disorder" - presents elimination of desire as the solution to disorder, but the passage never proves that disorder originates in desire rather than in the desire to possess more than one\'s share. The language suggests the speaker has completely internalised the city\'s ideology, such that this logic appears natural rather than constructed.',
             },
             markScheme: [
               'Identifies language features: repetition, causality, contrast',
-              'Analyzes rhetorical structures',
+              'Analyses rhetorical structures',
               'Explores the logic of elimination',
               'Discusses ideological implications',
-              'Higher bands: sees how language naturalizes oppression',
+              'Higher bands: sees how language naturalises oppression',
             ],
           },
           {
             id: 'set3-mock-02-q3',
             questionNumber: 3,
-            questionText: `How does the writer use the final section from "My partner" to the ending to create a sense of foreboding about the city\'s control?\n\nYou could write about:\n- what is revealed about human relationships\n- how the ending changes the tone\n- what the "deviation" suggests.`,
+            questionText: `How does the writer use the final section from "My partner" to the ending to create a sense of foreboding about the city\'s control?\n\nYou could write about:\n- what is revealed about human relationships\n- how the ending changes the tone\n- what the deviation from schedule suggests.`,
             marks: 8,
             suggestedTimeMinutes: 10,
             questionType: 'analysis',
@@ -359,11 +429,11 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
               'Grade 6-7':
                 'The relationship section reveals that human intimacy has been reduced to regulated proximity without emotional or verbal connection. The "reintroduction period" of 43 minutes is empty of meaning. The phrase "We have learned not to speak" suggests both conditioning and choice, a troubling ambiguity. Most significantly, the narrator experiences an emotion ("fear" or "hope") that they immediately suppress through the ideology: "But hope and fear are luxuries the city has eliminated." The final alarm at 9:13 - two minutes early - introduces the possibility of deviation. The ending presents deviation not as liberation but as confusion, a moment when the system fails and produces experiences that are literally nameless in the city\'s language.',
               'Grade 8-9':
-                'The final section performs the philosophical collapse of the entire system through a single minute deviation. Human relationship has been hollowed into regulated co-presence without linguistic or emotional content. The phrase "we have learned not to speak" is crucial: it demonstrates that conditioning has been internalized as choice. The narrator\'s experience of an unnamed emotion ("fear" or "hope") at the alarm\'s deviation reveals that emotion is suppressed but not eliminated. The immediate re-inscription ("But hope and fear are luxuries the city has eliminated. So I experience nothing") shows how the ideology functions: by refusing to name the experience, the narrator renders it non-existent through linguistic suppression. The final line - "I am content. I am always content." - performs what might be called "contentment through linguistic exhaustion." The repetition "always content" suggests not peace but compulsion. The ending forebodes not liberation but totalitarian closure, where the system\'s response to deviation will be tighter control, not loosening.',
+                'The final section performs the philosophical collapse of the entire system through a two-minute deviation. Human relationship has been hollowed into regulated co-presence without linguistic or emotional content. The phrase "we have learned not to speak" is crucial: it demonstrates that conditioning has been internalised as choice. The narrator\'s experience of an unnamed emotion ("fear" or "hope") at the alarm\'s deviation reveals that emotion is suppressed but not eliminated. The immediate re-inscription ("But hope and fear are luxuries the city has eliminated. So I experience nothing") shows how the ideology functions: by refusing to name the experience, the narrator renders it non-existent through linguistic suppression. The final line - "I am content. I am always content." - performs what might be called "contentment through linguistic exhaustion." The repetition "always content" suggests not peace but compulsion. The ending forebodes not liberation but totalitarian closure, where the system\'s response to deviation will be tighter control, not loosening.',
             },
             markScheme: [
               'Identifies the mechanical nature of relationship',
-              'Analyzes the significance of the deviation',
+              'Analyses the significance of the deviation',
               'Explores emotional suppression',
               'Discusses ideological control through language',
               'Higher bands: sees how deviation threatens rather than liberates',
@@ -372,7 +442,7 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
           {
             id: 'set3-mock-02-q4',
             questionNumber: 4,
-            questionText: `In your view, does the writer successfully create a convincing critique of excessive control and regulation? Use evidence to support your judgment.`,
+            questionText: `In your view, does the writer successfully create a convincing critique of excessive control and regulation? Use evidence to support your judgement.`,
             marks: 20,
             suggestedTimeMinutes: 20,
             questionType: 'evaluation',
@@ -382,12 +452,12 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
               'Grade 4-5':
                 "The writer successfully creates a critique by showing how the city's control destroys everything that makes us human: relationships, emotions, choice. The narrator explains the system as if it's perfect, but we can see that people are not happy, they're just programmed to accept it. The relationship between the narrator and their partner is empty. Emotions are suppressed. This makes us understand that control like this is harmful, even if the city claims it creates order.",
               'Grade 6-7':
-                'The writer creates critique through the narrator\'s internalization of ideology. By having the narrator present the system in neutral language, the writer forces us to perceive its oppressiveness. The "facts" the narrator presents (citizens eat 1,847 calories, sleep exactly 7 hours) sound scientific but reveal dehumanization. The relationship section effectively demonstrates the cost: intimacy has become "regulated co-presence," speech has been eliminated, emotional connection is impossible. The final alarm disruption is effective because it shows that the system requires absolute control to function - even a two-minute variance causes the narrator to experience suppressed emotion. The critique is convincing because the writer shows us both the system\'s logic and its human cost.',
+                'The writer creates critique through the narrator\'s internalisation of ideology. By having the narrator present the system in neutral language, the writer forces us to perceive its oppressiveness. The "facts" the narrator presents (citizens eat 1,847 calories, sleep exactly 7 hours) sound scientific but reveal dehumanisation. The relationship section effectively demonstrates the cost: intimacy has become "togetherness through proximity," the couple have "learned not to speak," emotional connection is impossible. The final alarm disruption is effective because it shows that the system requires absolute control to function - even a two-minute variance causes the narrator to experience suppressed emotion. The critique is convincing because the writer shows us both the system\'s logic and its human cost.',
               'Grade 8-9':
                 "The writer constructs a sophisticated critique by embedding the analysis within the narrator's voice, making us simultaneously understand and critique the ideology. The early sections establish the city's logic: order = elimination of chaos = elimination of desire. This logic is internally coherent and almost persuasive. However, the writer systematically reveals what this costs: human relationship reduced to regulatory co-presence, emotion suppressed through linguistic exclusion, individuality eliminated. The final deviation is the passage's argumentative pivot: the narrator experiences emotion at the system's failure, which reveals that emotion has been suppressed but not eliminated. This is the crucial insight: the system doesn't remove human desire and emotion; it suppresses them through ideological conditioning. The re-inscription (\"I experience nothing\") shows how language enforces silence. The critique is convincing because the writer demonstrates that excessive control doesn't produce harmony but rather compulsive performance of contentment. The ending suggests that deviation from such a system would not produce joy but terror - the system has made it impossible to experience anything beyond its parameters.",
             },
             markScheme: [
-              'Clear judgment about the effectiveness of the critique',
+              'Clear judgement about the effectiveness of the critique',
               'Textual support for view',
               'Analysis of how control is presented and questioned',
               "Engagement with the writer's methods",
@@ -416,7 +486,7 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
               'Grade 6-7':
                 'Develop a controlled environment with specific rules and consequences. Show the system through character action and dialogue. Vary sentence structures to create tone. Show both the logic of control and its human cost. Approximately 500 words with confident technical control.',
               'Grade 8-9':
-                "Create a sophisticated exploration of control that shows the system's internal logic while revealing its dehumanizing effects. Use precise language and varied sentence structures. Show how ideology is internalized. The piece should be approximately 500-600 words with sophisticated control and thematic depth.",
+                "Create a sophisticated exploration of control that shows the system's internal logic while revealing its dehumanising effects. Use precise language and varied sentence structures. Show how ideology is internalised. The piece should be approximately 500-600 words with sophisticated control and thematic depth.",
             },
             markScheme: [
               'Content and organisation: Clear establishment of the controlled system',
@@ -455,7 +525,7 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
           {
             id: 'set3-mock-03-q1',
             questionNumber: 1,
-            questionText: `Choose four TRUE statements:\n\nA) Only the grandmother can see the blue on her hands.\nB) The blue reached the grandmother\'s shoulders when the narrator was thirty.\nC) The grandmother worked as a scientist.\nD) The grandmother said the blue represents memory.\nE) The narrator\'s husband could see the blue.\nF) The grandmother died when the narrator was thirty-five.\nG) The blue lingered in the kitchen for months after the grandmother died.\nH) The narrator\'s daughter noticed blue on the narrator\'s hand.`,
+            questionText: `Choose four TRUE statements:\n\nA) The narrator\'s mother could see the blue.\nB) The blue reached the grandmother\'s shoulders when the narrator was thirty.\nC) The grandmother worked as a scientist.\nD) The grandmother said the blue represents memory.\nE) The narrator\'s husband could see the blue.\nF) The grandmother died when the narrator was thirty-five.\nG) The blue lingered in the kitchen for months after the grandmother died.\nH) The narrator\'s daughter noticed blue on the narrator\'s hand.`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -463,11 +533,11 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
             extractSource: MOCK_SET3_03_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                'A, D, G, E (Note: A is not a true statement - others see the blue too). Correct answer: A, D, F, G - (B) false: beyond shoulders, (C) false: narrator is scientist, (E) false: never saw it.',
+                'A, B, D, G - (C) false: the narrator is the scientist, (E) false: "my husband never did," (F) false: the extract never says when she died, (H) false: the narrator notices the blue on their own hand.',
               'Grade 6-7':
-                'A, D, F, G - (A) false: "my mother saw it, my sister saw it," (D) "The blue is memory," (F) not explicitly stated but implied, (G) "lingered in her kitchen for months."',
+                'A, B, D, G - (A) "My mother saw it," (B) "By thirty, it spread across her shoulders," (D) "The blue is memory," (G) "It lingered in her kitchen for months."',
               'Grade 8-9':
-                'The issue here is that statement A is false (others can see the blue). True statements are D, G, plus two of F/H. If forced to four: D (memory), G (lingered), and two others need careful reading.',
+                'A, B, D, G - Two statements need care. F: thirty-five is the narrator\'s age when the grandmother explains the blue, not when she dies, which the extract never gives. A: the opening says "only she could see it," yet later the narrator lists others who saw it, and "My mother saw it" settles the statement.',
             },
             markScheme: [
               '1 mark per answer',
@@ -478,7 +548,7 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
           {
             id: 'set3-mock-03-q2',
             questionNumber: 2,
-            questionText: `Look in detail at the passages where the grandmother explains the blue. How does the writer use language to make the impossible seem real and meaningful?\n\nYou could include:\n- the grandmother\'s descriptions\n- imagery and metaphor\n- the tone and perspective.`,
+            questionText: `Look in detail at the passage from "My grandmother\'s hands" to "but you will." How does the writer use language to make the impossible seem real and meaningful?\n\nYou could include:\n- the grandmother\'s descriptions\n- imagery and metaphor\n- the tone and perspective.`,
             marks: 8,
             suggestedTimeMinutes: 10,
             questionType: 'analysis',
@@ -486,15 +556,15 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
             extractSource: MOCK_SET3_03_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                'The grandmother speaks about the blue as if it\'s real. She describes it as "the colour of birds in my country, the ones that no longer exist." This makes the blue seem important and sad. When she explains that "memory has to go somewhere," she makes the blue seem like a natural way for memories to exist. The descriptions make us believe that impossible things can happen.',
+                'The grandmother speaks about the blue as if it\'s real. She describes it as "the colour of birds in my country," "the ones that no longer exist." This makes the blue seem important and sad. When she explains that memories "have to go somewhere," she makes the blue seem like a natural way for memories to exist. The descriptions make us believe that impossible things can happen.',
               'Grade 6-7':
-                'The writer makes the impossible believable through the grandmother\'s matter-of-fact tone and specific imagery. The blue is not metaphorical in the text; it\'s physical ("reached her wrists," "covered her forearms"). Yet it\'s defined through sensory and emotional language: "the colour of birds...the ones that no longer exist" creates poignancy. The explanation that "memory has to go somewhere" and "they colour you" treats the impossible as inevitable physics. The metaphor of memory becoming visible is philosophically coherent within the text\'s logic. The grandmother\'s calm acceptance ("when you remember things") normalizes the extraordinary.',
+                'The writer makes the impossible believable through the grandmother\'s matter-of-fact tone and specific imagery. The blue is not metaphorical in the text; it\'s physical ("reached her wrists," "covered her forearms"). Yet it\'s defined through sensory and emotional language: "the colour of birds...the ones that no longer exist" creates poignancy. The explanation that remembered things "have to go somewhere" and that "they colour you" treats the impossible as inevitable physics. The metaphor of memory becoming visible is philosophically coherent within the text\'s logic. The grandmother\'s calm acceptance ("when you remember things") normalises the extraordinary.',
               'Grade 8-9':
-                'The writer achieves magical realism through what might be called "phenomenological naturalization" of the impossible. The blue is not treated as miracle or hallucination; it\'s treated as a physical consequence of psychological reality. The grandmother\'s descriptions embed the impossible in sensory specificity: "reached her wrists," "covered her forearms," physical measurements that anchor the miraculous. The metaphor of memory becoming pigment is presented as philosophical truth rather than poetic fancy: "When you remember things, they have to go somewhere." This creates a logic where the physical blue follows inevitably from metaphysical reality. The tone is entirely matter-of-fact ("you can\'t see it yet, but you will"), which prevents us from dismissing the blue as delusional. The writer makes the impossible real by refusing any frame other than acceptance.',
+                'The writer achieves magical realism through what might be called "phenomenological naturalisation" of the impossible. The blue is not treated as miracle or hallucination; it\'s treated as a physical consequence of psychological reality. The narrator\'s account around the grandmother\'s words embeds the impossible in physical specificity: the blue "reached her wrists," then "covered her forearms," measurements that anchor the miraculous. The metaphor of memory becoming pigment is presented as philosophical truth rather than poetic fancy: "When you remember things, they have to go somewhere." This creates a logic where the physical blue follows inevitably from metaphysical reality. The tone is entirely matter-of-fact ("you can\'t see it yet, but you will"), which prevents us from dismissing the blue as delusional. The writer makes the impossible real by refusing any frame other than acceptance.',
             },
             markScheme: [
               'Identifies how physical detail grounds the impossible',
-              'Analyzes tone and perspective',
+              'Analyses tone and perspective',
               'Explores metaphor and its function',
               'Discusses how the ordinary and impossible coexist',
               'Higher bands: understands magical realism as method',
@@ -513,13 +583,13 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
               'Grade 4-5':
                 "The grandmother believes in the blue and its meaning. The narrator is a scientist who believes in things that \"could be measured, documented, explained.\" These are different ways of understanding the world. But over time, the narrator comes to accept the blue. In the end, the narrator sees blue on their own hand, which shows that they have come to understand the grandmother's way of seeing. The ending suggests that belief isn't something you choose, it's something that becomes part of you.",
               'Grade 6-7':
-                'The writer structures the extract as a journey from the narrator\'s skepticism to acceptance. The grandmother represents intuitive, spiritual understanding; the narrator represents scientific rationalism. The conflict is never resolved through argument - the blue exists regardless of whether it\'s "real" in scientific terms. The middle section reveals the marriage ending partly because the husband "could not trust something he could not perceive," showing how perception shapes reality in the family. The final section performs the narrator\'s conversion not as intellectual argument but as embodied experience: they notice blue on their own hand. This suggests the writer\'s view that some truths are accessed through experience rather than explanation, and that multiple ways of knowing can coexist.',
+                'The writer structures the extract as a journey from the narrator\'s scepticism to acceptance. The grandmother represents intuitive, spiritual understanding; the narrator represents scientific rationalism. The conflict is never resolved through argument - the blue exists regardless of whether it\'s "real" in scientific terms. The middle section reveals the marriage ending partly because the husband "could not trust something he could not perceive," showing how perception shapes reality in the family. The final section performs the narrator\'s conversion not as intellectual argument but as embodied experience: they notice blue on their own hand. This suggests the writer\'s view that some truths are accessed through experience rather than explanation, and that multiple ways of knowing can coexist.',
               'Grade 8-9':
-                'The writer structures the extract as a philosophical dialogue between epistemologies without resolving the conflict through logic. The grandmother represents what might be called "perceptual relativism" - different people see different truths based on inherited or cultural understanding. The narrator represents scientific materialism, which requires objective proof. The key structural move is that the writer never proves the blue is "real" in scientific terms, yet its effects are undeniable: it causes marriage dissolution, it lingers after death, and the narrator sees it. This structure enacts the philosophical claim that perception constitutes reality for those who perceive it. The narrator\'s profession (scientist/doctor) never equips them to understand what their eyes show them. The ending - "I was becoming painted" - suggests acceptance of a truth that exists not in objective reality but in relational, family reality. The structure privileges embodied experience over rational explanation, showing that multiple epistemic frameworks can be valid.',
+                'The writer structures the extract as a philosophical dialogue between epistemologies without resolving the conflict through logic. The grandmother represents what might be called "perceptual relativism" - different people see different truths based on inherited or cultural understanding. The narrator represents scientific materialism, which requires objective proof. The key structural move is that the writer never proves the blue is "real" in scientific terms, yet its effects are undeniable: it is "one of the reasons" for a divorce, it lingers after death, and in the end the narrator sees it. This structure enacts the philosophical claim that perception constitutes reality for those who perceive it. The narrator\'s profession (a scientist who worked in a hospital) does not help: "I had never been able to explain my grandmother\'s hands." The ending - "I was becoming painted" - suggests acceptance of a truth that exists not in objective reality but in relational, family reality. The structure privileges embodied experience over rational explanation, showing that multiple epistemic frameworks can be valid.',
             },
             markScheme: [
               'Identifies contrasting worldviews',
-              'Analyzes the grandmother-narrator relationship',
+              'Analyses the grandmother-narrator relationship',
               'Explores how perspective creates reality',
               'Discusses the resolution through experience',
               'Higher bands: sees epistemological conflict as central',
@@ -538,13 +608,13 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
               'Grade 4-5':
                 "The blue seems metaphorical because memory isn't actually a colour. But the writer describes the blue in such physical terms that it seems real within the story. The narrator sees blue on their own hand at the end. I think the writer wants us to understand the blue as real in the world of the story, even though it's impossible in our world. This makes it magical realism - the impossible feels real.",
               'Grade 6-7':
-                'The text resists a simple literal-metaphorical binary. The physical specificity ("reached her wrists," "covered her forearms") suggests literality. Yet selective visibility (only family members see it) suggests metaphor. However, the writer\'s method is to present the blue as literal within the family\'s shared reality. The grandmother can measure its progress; others can see it; it exists as a fact in their phenomenology. The crucial point is that the text treats the blue as real within its universe, even if impossible in ours. This is the definition of magical realism: the impossible is presented with the straightforwardness of the mundane. Whether we call it "literal" or "metaphorical" depends on our framework, but within the text\'s framework, it\'s literal.',
+                'The text resists a simple literal-metaphorical binary. The physical specificity ("reached her wrists," "covered her forearms") suggests literality. Yet selective visibility (the mother and sister see it; the doctors and the husband never do) suggests metaphor. However, the writer\'s method is to present the blue as literal within the family\'s shared reality. Its progress is measured year by year; others can see it; it exists as a fact in their phenomenology. The crucial point is that the text treats the blue as real within its universe, even if impossible in ours. This is the definition of magical realism: the impossible is presented with the straightforwardness of the mundane. Whether we call it "literal" or "metaphorical" depends on our framework, but within the text\'s framework, it\'s literal.',
               'Grade 8-9':
                 'The passage deliberately collapses the literal-metaphorical distinction, which is the core achievement of magical realism. The blue is described with physical specificity that demands literal reading, yet its selective visibility and metaphorical origin (memory becoming visible) suggest metaphor. The resolution of this tension is that within the family\'s epistemological framework, the blue is literal. It exists as a shared perceptual reality. The writer never allows us outside this framework to judge from a "rational" perspective. The narrator, despite scientific training, cannot explain it away. The ending ("I was becoming painted") suggests the narrator has accepted the blue\'s literality within their own perceptual field. The writer\'s achievement is to show that "literality" is not objective but relational - the blue is real because it\'s perceived and accepted as real within a community of believers. This challenges the reader\'s distinction between literal and metaphorical truth.',
             },
             markScheme: [
               'Engages with the literal-metaphorical question',
-              'Recognizes magical realism as a mode',
+              'Recognises magical realism as a mode',
               'Uses textual evidence about perception',
               'Explores how shared reality is constructed',
               'Higher bands: understands how magical realism resists binary thinking',
@@ -611,7 +681,7 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
           {
             id: 'set3-mock-04-q1',
             questionNumber: 1,
-            questionText: `Choose four TRUE statements:\n\nA) Sarah always wakes before her alarm.\nB) Sarah\'s husband\'s name is Michael.\nC) Sarah\'s daughter is in Singapore.\nD) Sarah receives a phone call from her daughter.\nE) David takes the same time to shower and dress as the extract suggests.\nF) Sarah has looked at a cottage in Dorset.\nG) Sarah\'s coffee cup is chipped.\nH) The excerpt ends with Sarah and David sitting in silence.`,
+            questionText: `Choose four TRUE statements:\n\nA) Sarah always wakes before her alarm.\nB) Sarah\'s husband\'s name is Michael.\nC) Sarah\'s daughter is in Singapore.\nD) Sarah receives a phone call from her daughter.\nE) David greets Sarah when he comes into the kitchen.\nF) Sarah has looked at a cottage in Dorset.\nG) David\'s mug has a chip on the handle.\nH) The excerpt ends with Sarah and David sitting in silence.`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -619,11 +689,11 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
             extractSource: MOCK_SET3_04_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                'A, C, F, G - Textually supported. (B) false: "David," (D) false: message not call, (E) false: timing unspecified in terms of predictability, (H) incomplete.',
+                'A, C, F, G - Textually supported. (B) false: "David," (D) false: a message, not a call, (E) false: "He goes directly to the coffee," (H) false: the extract ends on their exchange of words.',
               'Grade 6-7':
-                'A, C, F, G - (A) "wakes before...every day," (C) "working in Singapore," (F) "cottage in Dorset they looked at," (G) "mug with the chip."',
+                'A, C, F, G - (A) "wakes before...every day," (C) "working in Singapore," (F) "cottage in Dorset they looked at," (G) "the mug with the chip on the handle - his mug."',
               'Grade 8-9':
-                'A, C, F, G - Each with precise textual validation. Statement E requires careful reading: the timing is predicted as "seven minutes" exactly, which is about total time, not shower/dress separately.',
+                'A, C, F, G - Each with precise textual support. Statement G requires careful reading: the chipped mug is David\'s ("his mug, always his mug"), not Sarah\'s. Statement E is false: Sarah predicts he will come down "without greeting her," and when he does, "He does not look at her. He goes directly to the coffee."',
             },
             markScheme: ['1 mark per answer', 'Maximum 4 marks'],
           },
@@ -638,15 +708,15 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
             extractSource: MOCK_SET3_04_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                'Sarah receives a message that is only an emoji - a thumbs-up. The writer shows Sarah staring at the emoji for a full minute, which shows it has upset her. The writer asks "When did her daughter become someone who communicated in emojis?" This shows Sarah is confused and sad about how her daughter has changed. The phrase "communication became easier with strangers" shows that Sarah feels distant from her daughter now.',
+                'Sarah receives a message that is only an emoji - a thumbs-up. The writer shows Sarah staring at the emoji for a full minute, which shows it has upset her. The writer asks "When did her daughter become someone who communicated in emojis?" This shows Sarah is confused and sad about how her daughter has changed. The question "When did communication become easier with strangers than with the people you love?" shows that Sarah feels distant from her daughter now.',
               'Grade 6-7':
-                'The writer establishes emotional distance through the reduction of communication to a single emoji. Sarah\'s extended contemplation ("stared...for a full minute") suggests the message is insufficient, inadequate. The rhetorical question "When did her daughter become..." expresses incomprehension of change, implying Sarah has not adapted to new forms of intimacy. The contrast between "easier with strangers" and the parent-child relationship suggests a failure of the relationship that communication technology has revealed rather than caused. The emoji becomes a symbol of emotional distance: a positive gesture (thumbs-up) presented in a form that prevents intimacy.',
+                'The writer establishes emotional distance through the reduction of communication to a single emoji. Sarah\'s extended contemplation ("Sarah stares at the thumbs-up for a full minute") suggests the message is insufficient, inadequate. The rhetorical question "When did her daughter become..." expresses incomprehension of change, implying Sarah has not adapted to new forms of intimacy. The contrast between "easier with strangers" and the parent-child relationship suggests a failure of the relationship that communication technology has revealed rather than caused. The emoji becomes a symbol of emotional distance: a positive gesture (thumbs-up) presented in a form that prevents intimacy.',
               'Grade 8-9':
                 "The writer performs generational miscommunication through the collision of different communicative registers. The emoji is technically positive (approval) yet phenomenologically empty for Sarah, who expects substance. The extended stare (\"full minute\") performs temporal expansion of an empty moment - the minute becomes a measure of emotional distance. The rhetorical question expresses Sarah's failure to understand her daughter's generation's communication norms, and by extension, her daughter's life. Crucially, \"easier with strangers\" suggests that communication technology enables emotional efficiency but prevents intimacy. The passage performs the paradox of modern relationships: more communication channels but less connection. Sarah's expectation of voice communication (or full language) collides with her daughter's emoji efficiency, and in that collision, their relationship appears unbridged.",
             },
             markScheme: [
               'Identifies use of emoji as symbol',
-              "Analyzes Sarah's emotional response",
+              "Analyses Sarah's emotional response",
               'Explores generational communication differences',
               'Discusses effects on the relationship',
               'Higher bands: sees communication failure as central theme',
@@ -663,15 +733,15 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
             extractSource: MOCK_SET3_04_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                'The writer shows Sarah\'s thoughts but not David\'s. Sarah thinks about the cottage and whether she should book it, but David doesn\'t think or feel anything shown in the text. The writer repeatedly describes David as "predictable" and "routine" - he showers, dresses, drinks coffee the same way every day. This repetition makes the marriage seem boring and empty. Sarah understands the relationship isn\'t working, but David just goes through the motions.',
+                'The writer shows Sarah\'s thoughts but not David\'s. Sarah thinks about the cottage and whether she should book it, but David doesn\'t think or feel anything shown in the text. The writer describes David as "predictable" and times each thing he does: "He will shower (4 minutes), dress (2 minutes), brush teeth (1 minute)." He even drinks from the same mug every day: "his mug, always his mug." This repetition makes the marriage seem boring and empty. Sarah understands the relationship isn\'t working, but David just goes through the motions.',
               'Grade 6-7':
-                'The writer establishes narrative asymmetry: we have access to Sarah\'s rich interiority but David is presented through external action only. The repeated emphasis on David\'s predictability ("wakes...every day," "seven minutes, exactly," "automatic," "routine") suggests Sarah\'s perception of him as mechanical. The interior monologue about whether to book the cottage reveals Sarah\'s awareness that surprise requires her action, not his desire. The final exchange where David says "Thank you" and Sarah replies is presented as automatic performance: "automatic...responses...automatic...muscle memory." The perspective suggests they are both performing rather than connecting. David doesn\'t seem to have awareness of disconnection; Sarah does but is resigned to it.',
+                'The writer establishes narrative asymmetry: we have access to Sarah\'s rich interiority but David is presented through external action only. The repeated emphasis on David\'s predictability ("He will be down in seven minutes," "because he is predictable," "Seven minutes, exactly as predicted") suggests Sarah\'s perception of him as mechanical, although her own mornings are just as ordered: she wakes before her alarm "every day" and her coffee "routine is precise." The interior monologue about whether to book the cottage reveals Sarah\'s awareness that surprise requires her action, not his desire. The final exchange where David says "Thank you" and Sarah replies is presented as automatic performance on both sides: "The words are automatic," then "this too is automatic," a reply that is "just the muscle memory of two people." The perspective suggests they are both performing rather than connecting. David doesn\'t seem to have awareness of disconnection; Sarah does but is resigned to it.',
               'Grade 8-9':
-                'The writer constructs perspective and repetition as tools for revealing the asymmetry of awareness in disconnected marriage. We are entirely within Sarah\'s consciousness, which grants her a kind of tragic awareness: she understands the marriage\'s emptiness while David seems to inhabit it unreflectively. The repetition of "every day," "exactly," and "automatic" across different contexts (alarm, routine, coffee, conversation) performs the collapse of distinction between their relationship and his daily routine - they have become indistinguishable. The interior monologue about the cottage reveals Sarah\'s understanding that spontaneity requires her initiation, that David\'s predictability is a form of absence. Crucially, the final "automatic" is applied to both of them, suggesting they are both trapped in performance. The perspective creates tragic irony: Sarah sees clearly but feels powerless to change the relationship; David remains unreflective, perhaps contentedly, perhaps tragically. The writer never reveals which.',
+                'The writer constructs perspective and repetition as tools for revealing the asymmetry of awareness in disconnected marriage. We are entirely within Sarah\'s consciousness, which grants her a kind of tragic awareness: she understands the marriage\'s emptiness while David seems to inhabit it unreflectively. The repetition of "every day," "exactly," and "automatic" across different contexts (alarm, routine, coffee, conversation) performs the collapse of distinction between their relationship and their daily routine - they have become indistinguishable. The interior monologue about the cottage reveals Sarah\'s understanding that spontaneity requires her initiation, that David\'s predictability is a form of absence. Crucially, the final "automatic" is applied to both of them, suggesting they are both trapped in performance. The perspective creates tragic irony: Sarah sees clearly but feels powerless to change the relationship; David remains unreflective, perhaps contentedly, perhaps tragically. The writer never reveals which.',
             },
             markScheme: [
               'Identifies narrative perspective strategy',
-              'Analyzes repetition and its effects',
+              'Analyses repetition and its effects',
               'Explores predictability as emotional distance',
               'Discusses the final exchange',
               'Higher bands: understands perspective as creating tragic awareness',
@@ -690,16 +760,16 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
               'Grade 4-5':
                 "Sarah's resignation seems justified because her husband is completely predictable and unemotional. He never greets her, never initiates anything, and seems not to notice her. Their daughter has become distant. Sarah wants to plan a cottage trip but feels exhausted thinking about it. David just goes through his routine without emotion. The marriage appears empty, so Sarah's resignation makes sense. However, we only see Sarah's view, so David might feel differently.",
               'Grade 6-7':
-                'Sarah\'s resignation appears justified by the evidence: her husband is emotionally unavailable (no greeting, "not looking at her," automatic responses), their communication has become mechanical, and their daughter\'s distance suggests relational patterns of disconnection. Sarah\'s exhaustion at the thought of booking a surprise reveals how much effort she must expend to create connection. The phrase "muscle memory" suggests they are performing rather than connecting. However, the extract shows only Sarah\'s perspective and her thoughts about her inadequacy ("she had not adapted"). One might argue her resignation is not justified but rather a product of her own perception and assumptions about David\'s incapability. The extract doesn\'t give David voice to confirm her interpretation.',
+                'Sarah\'s resignation appears justified by the evidence: her husband is emotionally unavailable (no greeting, "He does not look at her," automatic responses), their communication has become mechanical, and their daughter\'s distance suggests relational patterns of disconnection. Sarah\'s exhaustion at the thought of booking a surprise reveals how much effort she must expend to create connection. The phrase "muscle memory" suggests they are performing rather than connecting. However, the extract shows only Sarah\'s perspective, and she herself allows another reading of his "Thank you": "Or perhaps he means everything, and he has simply run out of ways to say it." One might argue her resignation is not justified but rather a product of her own perception and assumptions about David\'s incapability. The extract doesn\'t give David voice to confirm her interpretation.',
               'Grade 8-9':
                 "Sarah's resignation is simultaneously justified and problematic, which is the extract's sophisticated point. The evidence justifies her view: David's mechanical predictability, absence of initiative, failure of greeting, automatic responses - these suggest emotional unavailability. The cottage thought experiment reveals a painful truth: she has learned that creating connection requires her unilateral effort, and the thought exhausts her. However, the extract also suggests resignation as a form of self-fulfilling prophecy. Sarah's assumption that David \"hadn't thought of it first, hadn't wanted it enough\" may prevent her from communicating her desire. The final \"automatic\" applied to both of them suggests they are both trapped, but neither is trying to escape. The writer doesn't resolve whether the marriage is actually empty or whether both partners are performing emptiness. This ambiguity is precisely where the extract's power resides: resignation appears justified because we see the relationship through Sarah's eyes, but the extract also suggests that resignation itself creates the emptiness it claims to describe.",
             },
             markScheme: [
               'Judges whether resignation is justified',
-              'Supports judgment with textual evidence',
+              'Supports judgement with textual evidence',
               'Considers alternative interpretations',
-              "Analyzes David's perspective gap",
-              'Higher bands: recognizes complexity; sees resignation as potentially self-fulfilling',
+              "Analyses David's perspective gap",
+              'Higher bands: recognises complexity; sees resignation as potentially self-fulfilling',
             ],
           },
         ],
@@ -763,7 +833,7 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
           {
             id: 'set3-mock-05-q1',
             questionNumber: 1,
-            questionText: `Choose four TRUE statements:\n\nA) The boat is a 40-foot catamaran.\nB) The group consists of five people.\nC) The charter company is in Crete.\nD) The storm lasted three hours.\nE) Elena is the narrator\'s mother.\nF) The engine stopped during the storm.\nG) Peter knew the storm was coming.\nH) Sarah and Michael are on their anniversary trip.`,
+            questionText: `Choose four TRUE statements:\n\nA) The boat is a 40-foot catamaran.\nB) The group consists of six people.\nC) The charter company is in Crete.\nD) The storm lasted three hours.\nE) Elena is the narrator\'s mother.\nF) The engine stopped during the storm.\nG) Peter knew the storm was coming.\nH) Sarah and Michael are on their anniversary trip.`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -773,16 +843,16 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
               'Grade 4-5':
                 'A, B, D, F - (C) false: Kos, (E) false: Michael\'s mother, (G) false: "stopped paying attention," (H) false: honeymoon, not anniversary.',
               'Grade 6-7':
-                'A, B, D, F - (A) "40-foot catamaran," (B) narrator + Peter + three others, (D) "three hours," (F) "engine cut out."',
+                'A, B, D, F - (A) "40-foot catamaran," (B) the narrator and Peter "with four other people," (D) "three hours," (F) "The engine cut out."',
               'Grade 8-9':
-                'A, B, D, F - Each validated. Elena is specifically "Michael\'s mother," not narrator\'s.',
+                'A, B, D, F - Each validated. Statement B needs counting: Sarah, Michael, Tom and Elena are the "four other people," and the narrator and Peter make six. Elena is specifically "Michael\'s mother," not the narrator\'s.',
             },
             markScheme: ['1 mark per answer', 'Maximum 4 marks'],
           },
           {
             id: 'set3-mock-05-q2',
             questionNumber: 2,
-            questionText: `Look in detail at the passage from "The sea teaches" to "we deserve." How does the writer use language to convey the danger and terror of the storm?\n\nYou could include:\n- word choice and vivid imagery\n- sentence structures that convey danger\n- metaphors and personification.`,
+            questionText: `Look in detail at the passage from "The sea teaches" to "a narrower death spread across decades." How does the writer use language to convey the danger and terror of the storm?\n\nYou could include:\n- word choice and vivid imagery\n- sentence structures that convey danger\n- metaphors and personification.`,
             marks: 8,
             suggestedTimeMinutes: 10,
             questionType: 'analysis',
@@ -790,15 +860,15 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
             extractSource: MOCK_SET3_05_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                'The writer describes the sea as teaching that "you are nothing," which shows how powerful and frightening it is. The sky "turned the colour of bruises," which creates a visual image of danger. The water is described as "green," and there is "foam and spray." The language uses violent words like "roaring throat" to show the force of nature. The writer makes short, urgent sentences when describing the danger.',
+                'The writer describes the sea as teaching that "you are nothing," which shows how powerful and frightening it is. The sky "turned the colour of bruises," which creates a visual image of danger. The world is described as "green," filled with "foam and spray." The mast was "bending at angles that seemed anatomically impossible," which shows the force of nature. The writer uses short, urgent sentences when describing the danger, such as "The engine cut out."',
               'Grade 6-7':
-                'The writer establishes danger through personification: the sea "teaches," becomes a "roaring throat," the wind "stops" as though conscious. The metaphor of bruises for the sky creates visual dread. The air becomes "green" - an inversion of normal colour that suggests displacement. The phrase "no vessel should make" implies movements that violate physical law. The personification extends to the mast which "bends at angles that seemed anatomically impossible," anthropomorphizing the boat as a body in distress. The escalating violence is conveyed through the "rhythm" of waves becoming progressively larger, as though the sea is methodically building an argument.',
+                'The writer establishes danger through personification: the sea "teaches," and even the wind "seemed to stop" in "a moment of terrible silence," as though holding its breath. The metaphor of bruises for the sky creates visual dread. The air itself becomes "green" - an inversion of normal colour that suggests displacement. The phrase "no vessel should make" implies movements that violate physical law. The personification extends to the mast, which was "bending at angles that seemed anatomically impossible," anthropomorphising the boat as a body in distress. The escalating violence is conveyed through the "rhythm" of waves becoming progressively larger, as though the sea is methodically building an argument.',
               'Grade 8-9':
-                'The writer constructs terror through both personification and dissolution of human agency. The opening line - "The sea teaches you that you are nothing" - establishes a philosophical framework for the episodic terror: the sea is not merely dangerous but revelatory, stripping away human pretension to mastery. The physical descriptions accumulate increasingly unstable effects: colours become unnatural ("green air," sky of "bruises"), movements exceed safe parameters ("angles that seemed anatomically impossible"), the boat\'s body becomes vulnerable. The rhythm of escalation is crucial: each wave "slightly larger," as though the sea is constructing an argument whose violent conclusion is inevitable. The image of the mast bending beyond breaking point creates what might be called "anticipatory dread" - we await catastrophe because the narrative logic seems to demand it. The writer uses parenthetical interjection ("which is its own kind of death, a narrower death spread across decades") to collapse time: the potential of death now spreads into future haunting.',
+                'The writer constructs terror through both personification and dissolution of human agency. The opening line - "The sea teaches you that you are nothing" - establishes a philosophical framework for the episodic terror: the sea is not merely dangerous but revelatory, stripping away human pretension to mastery. The physical descriptions accumulate increasingly unstable effects: colours become unnatural (the air itself "green," a sky "the colour of bruises"), movements exceed safe parameters ("angles that seemed anatomically impossible"), the boat\'s body becomes vulnerable. The rhythm of escalation is crucial: each wave "slightly larger," as though the sea is constructing an argument whose violent conclusion is inevitable. The image of the mast bending beyond breaking point creates what might be called "anticipatory dread" - we await catastrophe because the narrative logic seems to demand it. The writer uses a long trailing clause ("which is its own kind of death, a narrower death spread across decades") to collapse time: the potential of death now spreads into future haunting.',
             },
             markScheme: [
               'Identifies language techniques: personification, metaphor, unusual imagery',
-              'Analyzes effects of these choices',
+              'Analyses effects of these choices',
               'Explores how danger is escalated',
               'Discusses how language conveys terror beyond physical threat',
               'Higher bands: sees how terror extends into psychological consequences',
@@ -815,15 +885,15 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
             extractSource: MOCK_SET3_05_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                "Peter tells the narrator to hold the wheel even though they have never sailed before. This shows the narrator has to trust and act even without experience. Then Elena comes and puts her hands on the narrator's to help hold the wheel. Elena cannot speak over the wind, but her presence helps. This shows that in crisis, human connection and help are more important than words. The narrator and Elena work together to survive.",
+                "Peter tells the narrator to hold the wheel even though they have never sailed before. This shows the narrator has to trust and act even without experience. Then Elena comes and puts her hands on the narrator's to help hold the wheel. The narrator cannot hear what Elena says over the wind, but her presence helps. This shows that in crisis, human connection and help are more important than words. The narrator and Elena work together to survive.",
               'Grade 6-7':
-                "The turning point comes when Elena appears and offers wordless support. The passage moves from the narrator's fear and isolation to shared action. Peter's instruction requires trust despite inadequacy, but Elena's presence - physical contact, mutual grip on the wheel - transforms survival from individual struggle to collective action. Crucially, \"she said something I couldn't hear over the wind\" but the physical presence suffices. This suggests that in extremity, presence and coordinated action matter more than communication. The narrator can survive alone but not confidently; with Elena's hands, survival becomes shared responsibility.",
+                'The turning point comes when Elena appears and offers wordless support. The passage moves from the narrator\'s fear and isolation to shared action. Peter\'s instruction requires trust despite inadequacy, but Elena\'s presence - physical contact, mutual grip on the wheel - transforms survival from individual struggle to collective action. Crucially, Elena "said something I couldn\'t hear over the wind," but the physical presence suffices: "the presence of her hands was enough." This suggests that in extremity, presence and coordinated action matter more than communication. Alone at the wheel, the narrator admits "I wasn\'t sure I could hold it"; with Elena\'s hands, survival becomes shared responsibility.',
               'Grade 8-9':
-                'The structural shift from isolation to connection marks the passage\'s philosophical pivot. The narrator faces catastrophe alone, feeling the wheel\'s force against their untrained body. Peter\'s command requires what might be called "competent vulnerability" - the narrator must act despite inadequacy. But Elena\'s arrival performs a crucial transformation: survival becomes relational. The detail that "she said something I couldn\'t hear" is significant - communication breaks down but is replaced by coordinated physical action. The shared grip on the wheel becomes a metonym for interdependence: neither person alone can maintain course, but their combined action creates stability. The passage suggests that human resilience emerges not from individual mastery but from the willingness to be vulnerable with others, to share the burden. The "three hours" becomes bearable through this connection.',
+                'The structural shift from isolation to connection marks the passage\'s philosophical pivot. The narrator faces catastrophe alone, feeling the wheel\'s force against their untrained body. Peter\'s command requires what might be called "competent vulnerability" - the narrator must act despite inadequacy. But Elena\'s arrival performs a crucial transformation: survival becomes relational. The detail that Elena "said something I couldn\'t hear over the wind" is significant - communication breaks down but is replaced by coordinated physical action. The shared grip on the wheel becomes a metonym for interdependence: neither person alone can maintain course, but their combined action creates stability. The passage suggests that human resilience emerges not from individual mastery but from the willingness to be vulnerable with others, to share the burden. The "three hours" becomes bearable through this connection.',
             },
             markScheme: [
               "Identifies the role of Elena's support",
-              "Analyzes Peter's instructions",
+              "Analyses Peter's instructions",
               'Explores wordless communication',
               'Discusses how connection enables survival',
               'Higher bands: sees cooperation as philosophical answer to terror',
@@ -842,12 +912,12 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
               'Grade 4-5':
                 'The writer effectively shows how facing death changes someone\'s thinking. The narrator experiences fear: "I had never seen that expression on anyone\'s face before. That was when I understood we might die." The narrator\'s thoughts show terror and helplessness. The description of almost dying affecting the rest of your life ("you spend the rest of your life as someone who almost died") shows that the psychological impact lasts long after the danger. The writer makes us understand that facing death is more than a physical threat; it\'s a lasting psychological change.',
               'Grade 6-7':
-                "The writer establishes the psychological impact through multiple registers: perceptual shock (Peter's unrecognized expression), temporal extension (near-death as ongoing state), and the collapse of certainty about the future. The parenthetical on \"almost died\" is psychologically significant: it suggests that near-death trauma extends across decades, that one's future becomes permanently marked. The physical sensations (wheel slippery, body exhausted) are secondary to psychological states (fear, confusion about whether they'll survive). The storm's violence is terrifying partly because it exceeds comprehension - the mast shouldn't bend like that, waves shouldn't escalate like that. This breakdown of predictability attacks the psyche as much as physics attacks the boat. The writer conveys that the greatest danger is loss of control and comprehension.",
+                'The writer establishes the psychological impact through multiple registers: perceptual shock (an expression on Peter\'s face the narrator "had never seen" on anyone before), temporal extension (near-death as ongoing state), and the collapse of certainty about the future. The clause on "someone who almost died" is psychologically significant: it suggests that near-death trauma extends across decades, that one\'s future becomes permanently marked. The physical sensations (the wheel "slippery with spray," "fighting me") are secondary to psychological states (fear, confusion about whether they\'ll survive). The storm\'s violence is terrifying partly because it exceeds comprehension - the mast shouldn\'t bend like that, waves shouldn\'t escalate like that. This breakdown of predictability attacks the psyche as much as physics attacks the boat. The writer conveys that the greatest danger is loss of control and comprehension.',
               'Grade 8-9':
-                'The writer achieves psychological depth through what might be called "temporal contamination": the storm doesn\'t merely present immediate danger; it retroactively and prospectively poisons time. The phrase "or if you do survive it you spend the rest of your life as someone who almost died, which is its own kind of death, a narrower death spread across decades" performs the crucial move of treating psychological consequences as equivalent to physical death. The parenthesis collapses present danger into future haunting. Psychologically, the storm operates through cognitive failure: the narrator cannot assimilate the mast\'s impossible angles, cannot predict whether actions will save them. This epistemic breakdown is as destabilizing as physical peril. The intensity is conveyed through the narrator\'s internal monologue, which reveals not courage but confusion, not heroism but animal terror. The final action - taking the wheel despite incompetence, accepting Elena\'s support despite exhaustion - is presented not as triumph but as survival without dignity. This psychological realism, where heroism is replaced by mere continuation, is more affecting than narrative triumph would be.',
+                'The writer achieves psychological depth through what might be called "temporal contamination": the storm doesn\'t merely present immediate danger; it retroactively and prospectively poisons time. The phrase "or if you do survive it you spend the rest of your life as someone who almost died, which is its own kind of death, a narrower death spread across decades" performs the crucial move of treating psychological consequences as equivalent to physical death. The clause collapses present danger into future haunting. Psychologically, the storm operates through cognitive failure: the narrator cannot assimilate the mast\'s impossible angles, cannot predict whether actions will save them. This epistemic breakdown is as destabilising as physical peril. The intensity is conveyed through the narrator\'s internal monologue, which reveals not courage but confusion, not heroism but animal terror. The final action - taking the wheel despite incompetence, accepting Elena\'s support without hearing a word she says - is presented not as triumph but as survival without dignity. This psychological realism, where heroism is replaced by mere continuation, is more affecting than narrative triumph would be.',
             },
             markScheme: [
-              'Clear judgment about effectiveness',
+              'Clear judgement about effectiveness',
               'Textual support for view',
               'Analysis of psychological language and structure',
               'Engagement with temporal and cognitive dimensions',
@@ -915,7 +985,7 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
           {
             id: 'set3-mock-06-q1',
             questionNumber: 1,
-            questionText: `Choose four TRUE statements:\n\nA) The narrator\'s brother is younger than the narrator.\nB) The fort was intentionally constructed.\nC) The narrator\'s mother died at age sixty.\nD) The narrator is studying economics.\nE) The narrator\'s mother had been dead for twelve years before the backyard visits ended.\nF) The hedge was eventually cut down.\nG) The narrator is currently a father.\nH) The narrator\'s daughter is ten years old.`,
+            questionText: `Choose four TRUE statements:\n\nA) The narrator\'s brother is younger than the narrator.\nB) The fort was intentionally constructed.\nC) The narrator\'s mother died at age sixty.\nD) The narrator studied economics at university.\nE) The narrator\'s mother died when the narrator was twenty-three.\nF) The hedge was eventually cut down.\nG) The narrator is now a parent.\nH) The narrator\'s daughter is ten years old.`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -923,18 +993,18 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
             extractSource: MOCK_SET3_06_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                'B is false (discovered not constructed), C not stated, D true, E true, F true, G true, H false. Correct answer: D, E, F, G - Clear textual support.',
+                'D, E, F, G - Clear textual support. (A) false: the brother went to university first, (B) false: they "didn\'t construct it deliberately," (C) false: her age is not given, (H) false: the daughter is six.',
               'Grade 6-7':
-                'D, E, F, G - (A) implies older brother, (B) "discovered not constructed," (C) age not stated, (H) daughter is "six."',
+                'D, E, F, G - (A) the brother leaves for university first, which implies he is older, (B) "we discovered it," (C) age not stated, (H) daughter is "six."',
               'Grade 8-9':
-                'D, E, F, G - Precise textual citations: (D) "studying economics," (E) "dead for twelve years," (F) "eventually...cut it down," (G) "I have a daughter now."',
+                'D, E, F, G - Precise textual citations: (D) "studying economics," (E) "My mother died when I was twenty-three," (F) "Eventually someone cut it down," (G) "I have a daughter now." G says parent, not mother or father: the extract never says which the narrator is.',
             },
             markScheme: ['1 mark per answer', 'Maximum 4 marks'],
           },
           {
             id: 'set3-mock-06-q2',
             questionNumber: 2,
-            questionText: `Look in detail at the description of the backyard and the fort in the first section. How does the writer use language to convey the special quality of childhood experience?\n\nYou could include:\n- word choice and imagery\n- use of contrast\n- sentence structures.`,
+            questionText: `Look in detail at the description of the backyard and the fort in the first two paragraphs. How does the writer use language to convey the special quality of childhood experience?\n\nYou could include:\n- word choice and imagery\n- use of contrast\n- sentence structures.`,
             marks: 8,
             suggestedTimeMinutes: 10,
             questionType: 'analysis',
@@ -944,13 +1014,13 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
               'Grade 4-5':
                 'The writer describes the backyard as "a foreign country" and says it had "different rules, different physics." This makes it seem magical and special. The grass "grew higher," insects were "larger," and time "moved differently." An afternoon could contain "several lifetimes of experience." This shows that as a child, the backyard felt bigger and more important than an adult would see it. The language creates wonder.',
               'Grade 6-7':
-                'The writer establishes the backyard as a separate phenomenological space through comparative language. It is "a foreign country" with inverted physics - grass grows taller, insects enlarge, time distorts. Most significantly, time is reimagined: "an afternoon could contain several lifetimes of experience." This temporal distortion captures how children experience duration differently. The fort is "discovered" rather than "constructed," suggesting that childhood imagination finds rather than creates meaning. The use of contrast (backyard vs. adult world) establishes the child\'s world as internally coherent and self-sufficient.',
+                'The writer establishes the backyard as a separate phenomenological space through comparative language. It is "a foreign country" with inverted physics - grass grows taller, insects enlarge, time distorts. Most significantly, time is reimagined: "an afternoon could contain several lifetimes of experience." This temporal distortion captures how children experience duration differently. The fort is found rather than made ("We didn\'t construct it deliberately; rather, we discovered it"), suggesting that childhood imagination finds rather than creates meaning. The use of contrast (backyard vs. adult world) establishes the child\'s world as internally coherent and self-sufficient.',
               'Grade 8-9':
                 'The writer enacts childhood phenomenology through systematic distortion of normal parameters. The backyard becomes "a foreign country," which simultaneously means physically near and experientially distant. The enumeration of differences - higher grass, larger insects, different time - performs what might be called "recursive magnification": each element of the childhood world expands its significance. The phrase "could contain several lifetimes of experience" is temporally paradoxical: childhood moments are simultaneously fleeting and infinite. This captures the child\'s experience of duration as qualitative rather than quantitative. The discovery-rather-than-construction of the fort is philosophically significant: it suggests that imagination and reality are not distinguished in childhood. What matters is that the fort is the fort, not whether it was built. This register of certainty about invented meaning is what childhood allows. The writer\'s achievement is to make us understand childhood not as lesser comprehension of reality but as different experiential framework.',
             },
             markScheme: [
               'Identifies language creating magical/special quality',
-              'Analyzes temporal and spatial distortion',
+              'Analyses temporal and spatial distortion',
               'Explores contrast with adult perspective',
               'Discusses how meaning is created in childhood',
               'Higher bands: understands childhood as different phenomenology',
@@ -967,15 +1037,15 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
             extractSource: MOCK_SET3_06_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                "The extract starts with description of the magical backyard in childhood. Then it moves to the narrator as an adult, explaining that the brother went to university and didn't return the same way. The mother died. The narrator realized too late that the mother was mourning the loss of childhood even while they were still children. At the end, the narrator has a daughter but hasn't built the fort with her. The structure shows how time passes and things are lost.",
+                "The extract starts with description of the magical backyard in childhood. Then it moves to the narrator as an adult, explaining that the brother went to university and didn't return the same way. The mother died. The narrator realised too late that the mother was mourning the loss of childhood even while they were still children. At the end, the narrator has a daughter but hasn't built the fort with her. The structure shows how time passes and things are lost.",
               'Grade 6-7':
-                'The structure moves chronologically from childhood certainty to adult awareness of loss. The turning point is the brother\'s departure to university: "one day my brother went away...and didn\'t come back in the same way." This marks childhood\'s end. The mother\'s death is presented as the moment when the narrator understands the mother had been mourning (knowing childhood was temporary). The final section collapses past loss into present regret: the narrator has a daughter, the season to build the fort exists, but the narrator has "made an excuse because I was busy." The structure performs the mechanism of loss: it is not dramatic but quotidian, not a single moment but accumulated moments of non-action.',
+                'The structure moves chronologically from childhood certainty to adult awareness of loss. The turning point is the brother\'s departure to university: "One day my brother went away to university and didn\'t come back in the way he had before." This marks childhood\'s end. The mother\'s death is presented as the moment when the narrator understands the mother had been mourning (knowing childhood was temporary). The final section collapses past loss into present regret: the narrator has a daughter, the season to build the fort exists, but the narrator has "made an excuse because I was busy." The structure performs the mechanism of loss: it is not dramatic but quotidian, not a single moment but accumulated moments of non-action.',
               'Grade 8-9':
-                "The structure enacts the tragedy of temporal consciousness: the moment we become aware of something's value is the moment we lose it. The childhood section is presented without awareness of its fragility. The turning point is the brother's departure, which marks the shift from childhood to the knowledge that childhood ends. Crucially, the mother's mourning at the kitchen window was simultaneous with the backyard's reality - she was grieving something happening in the present, not past. The structural irony is devastating: the mother knew what the narrator later learns too late. The final section performs the tragedy's completion: the narrator now has a daughter and the possibility of fort-building, yet makes excuses. The structure suggests that once we acquire consciousness of loss, we become incapable of preventing new losses. We cannot rebuild what we know is temporary. The final line - \"The backyard is still there. The fort was never built\" - presents this as failure of will, but the structure suggests it is more: it is the price of consciousness.",
+                "The structure enacts the tragedy of temporal consciousness: the moment we become aware of something's value is the moment we lose it. The childhood section is presented without awareness of its fragility. The turning point is the brother's departure, which marks the shift from childhood to the knowledge that childhood ends. Crucially, the mother's mourning at the kitchen window was simultaneous with the backyard's reality - she was grieving something happening in the present, not past. The structural irony is devastating: the mother knew what the narrator later learns too late. The final section performs the tragedy's completion: the narrator now has a daughter and the possibility of fort-building, yet makes excuses. The structure suggests that once we acquire consciousness of loss, we become incapable of preventing new losses. We cannot rebuild what we know is temporary. The flat statements near the end - \"The backyard is still there. The fort was never built\" - present this as failure of will, but the structure suggests it is more: it is the price of consciousness.",
             },
             markScheme: [
               'Identifies structural progression through time',
-              "Analyzes the role of the brother's departure",
+              "Analyses the role of the brother's departure",
               "Explores the mother's consciousness of loss",
               "Discusses the final section's significance",
               'Higher bands: understands structure as performing temporal tragedy',
@@ -984,7 +1054,7 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
           {
             id: 'set3-mock-06-q4',
             questionNumber: 4,
-            questionText: `In your view, is the narrator\'s failure to build the fort with their daughter presented more as personal tragedy or as inevitable human condition? Support your judgment with evidence.`,
+            questionText: `In your view, is the narrator\'s failure to build the fort with their daughter presented more as personal tragedy or as inevitable human condition? Support your judgement with evidence.`,
             marks: 20,
             suggestedTimeMinutes: 20,
             questionType: 'evaluation',
@@ -992,17 +1062,17 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
             extractSource: MOCK_SET3_06_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                "The narrator's failure seems like personal tragedy because they could have chosen differently. They made an excuse about work. But the extract also suggests it's inevitable because once you understand that things are temporary, you can't enjoy them anymore. The mother mourning at the window shows that parents understand childhood is temporary and will be lost. So the narrator's failure is sad, but also shows how time works - we always realize things are precious only after they're gone.",
+                "The narrator's failure seems like personal tragedy because they could have chosen differently. They made an excuse about work. But the extract also suggests it's inevitable because once you understand that things are temporary, you can't enjoy them anymore. The mother mourning at the window shows that parents understand childhood is temporary and will be lost. So the narrator's failure is sad, but also shows how time works - we always realise things are precious only after they're gone.",
               'Grade 6-7':
-                "The extract presents the failure as both personal and inevitable. The specific excuse about work suggests human weakness - the narrator chose distraction over presence. Yet the structural connection between the mother's mourning and the narrator's later regret suggests something more universal: once consciousness arrives, we cannot prevent loss. The passage suggests that the narrator didn't build the fort not because of a specific failure but because consciousness of time's passage prevents spontaneity. The final line \"I understand, too late\" suggests that understanding and action are temporally misaligned: understanding arrives after the moment has passed.",
+                "The extract presents the failure as both personal and inevitable. The specific excuse about work suggests human weakness - the narrator chose distraction over presence. Yet the structural connection between the mother's mourning and the narrator's later regret suggests something more universal: once consciousness arrives, we cannot prevent loss. The passage suggests that the narrator didn't build the fort not because of a specific failure but because consciousness of time's passage prevents spontaneity. The phrase \"I understand, too late\" in the final paragraph suggests that understanding and action are temporally misaligned: understanding arrives after the moment has passed.",
               'Grade 8-9':
-                'The passage constructs this as inevitable tragedy, not personal failure. Yes, the narrator "made an excuse," but the structure suggests this excuse is symptomatic rather than causal. The crucial point is the mother\'s awareness: she mourned the backyard while it existed, not after. This demonstrates that consciousness of impermanence is synchronous with the moment itself - you cannot be present in the moment while aware of its transience. The narrator understands "the backyard time was temporary, that the fort would not last" - this understanding is precisely what prevents building. The final revelation "she was mourning its presence" is the passage\'s philosophical centre: once you understand temporality, you mourn what still exists. This is not a failure of will but a consequence of consciousness. The narrator cannot build the fort because to do so would require forgetting that childhood forts are temporary, and that forgetting is no longer available. The passage suggests this is the human condition: consciousness makes loss inevitable.',
+                'The passage constructs this as inevitable tragedy, not personal failure. Yes, the narrator "made an excuse," but the structure suggests this excuse is symptomatic rather than causal. The crucial point is the mother\'s awareness: she mourned the backyard while it existed, not after. This demonstrates that consciousness of impermanence is synchronous with the moment itself - you cannot be present in the moment while aware of its transience. The narrator comes to see that the mother "had known, somehow, that the backyard time was temporary, that the fort would not last" - and now shares that knowledge, which is precisely what prevents building. The final revelation "she was mourning its presence" is the passage\'s philosophical centre: once you understand temporality, you mourn what still exists. This is not a failure of will but a consequence of consciousness. The narrator cannot build the fort because to do so would require forgetting that childhood forts are temporary, and that forgetting is no longer available. The passage suggests this is the human condition: consciousness makes loss inevitable.',
             },
             markScheme: [
               'Engages clearly with the question',
-              'Supports judgment with textual evidence',
+              'Supports judgement with textual evidence',
               'Considers both personal and universal dimensions',
-              'Analyzes the role of consciousness',
+              'Analyses the role of consciousness',
               'Higher bands: sees this as existential rather than merely personal tragedy',
             ],
           },
@@ -1018,7 +1088,7 @@ export const aqaLangP1MocksSet3: MockExamPaper[] = [
           {
             id: 'set3-mock-06-q5',
             questionNumber: 5,
-            questionText: `Write a narrative or reflective piece exploring a moment or period that you recognize only after it has passed as being significant or precious. You might write about a place, a relationship, a time of life, or an experience. Show both the moment itself and the later understanding of its importance.\n\nYour response should be 400-600 words.`,
+            questionText: `Write a narrative or reflective piece exploring a moment or period that you recognise only after it has passed as being significant or precious. You might write about a place, a relationship, a time of life, or an experience. Show both the moment itself and the later understanding of its importance.\n\nYour response should be 400-600 words.`,
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'creative-writing',

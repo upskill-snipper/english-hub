@@ -1,6 +1,137 @@
 // @ts-nocheck
 import type { MockExamPaper } from './types'
 
+/**
+ * WHAT WAS WRONG (found 26 September 2026 by
+ * scripts/check-mock-exam-extracts.mjs, fixed 27 September). These five
+ * papers are live: they are in allMockExamPapers (src/data/mock-exams.ts).
+ * Every Source B was printed as the words of a named nineteenth-century
+ * writer, and not one was:
+ *   - Exam 06, "Florence Nightingale, Notes on Hospitals (1859)": seven
+ *     London infirmaries, patients two to a bed, a nurse at St Thomas's and a
+ *     nation that keeps "the largest navy in the world". None of its nine
+ *     sentences is in Notes on Nursing, the Nightingale text the checker
+ *     reads. Notes on Hospitals is not on Gutenberg, and the passage reads as
+ *     written for this file.
+ *   - Exam 07, "John Ruskin, Letters to the Working Men of England (1871)": a
+ *     walk in the Lake District, felled woods, muddy streams and a vanished
+ *     red squirrel. Ruskin's letters to working men of 1871 are Fors
+ *     Clavigera, and none of the passage's ten sentences is in the first two
+ *     volumes of it, which begin with the letters of 1871.
+ *   - Exam 08, "Lord Shaftesbury, Report on the Employment of Children in
+ *     Mines (1842)": a first-person day down a mine and an eleven-year-old
+ *     called Thomas. The 1842 report was the Children's Employment
+ *     Commission's, not Shaftesbury's (then Lord Ashley). A search of
+ *     Gutenberg found no text by him to check against, and the passage reads
+ *     as invented.
+ *   - Exam 09, "Friedrich Engels, The Condition of the Working Class in
+ *     England (1845)": Irish families defended against prejudice. None of its
+ *     eleven sentences is in the Kelley translation, and it gave Engels a view
+ *     of the Irish close to the opposite of the one he printed.
+ *   - Exam 10, "Charles Dickens, 'A Walk Through the Workhouse', Household
+ *     Words (1850)": a girl called Mary minding her brother off Drury Lane.
+ *     The real piece is "A Walk in a Workhouse", in Reprinted Pieces, and none
+ *     of the passage's fifteen sentences is in it.
+ * The Question 3 and 4 answers then quoted the invented lines as the
+ * writers' own (at least sixteen quotations in Exam 09's Questions 3 and 4
+ * and Exam 10's Question 3 alone, among them "six or eight families to a
+ * house"), and
+ * every one of those answers analysed words the named writer never wrote.
+ * Exam 06's Question 4 answer also quoted "twelve feet by ten", which was in
+ * no extract at all.
+ *
+ * Every Source A was labelled as a 2024 or 2025 article by a named writer in
+ * a real publication (Wales Online, The New Statesman, The Observer, BBC
+ * Wales, TES Cymru). Nothing supports any of them. Had they been real, they
+ * would be in copyright and far too long to print; they read as written for
+ * this file, and the bylines could belong to real people who wrote none of
+ * it.
+ *
+ * WHAT IT IS NOW. Each Source B is a genuine passage, cut by script from the
+ * Project Gutenberg text with passage() (src/lib/study-guides/passage.ts) and
+ * never retyped. Only typography was touched: doubled spaces are closed
+ * up, a footnote number in the Ruskin ("Demeter, [12] into")
+ * is dropped, and so are the marginal side-notes of Notes on Nursing.
+ *   - 06: Nightingale, Notes on Nursing: What It Is, and What It Is Not
+ *     (1859; Gutenberg #12439, D. Appleton's New York printing of 1898),
+ *     from the untitled opening section before Chapter I (Ventilation and
+ *     Warming): eight paragraphs, consecutive apart from the side-notes, on
+ *     why the sick suffer more from bad nursing than from disease. The label
+ *     says "from the opening pages", not "chapter", for that reason. It is the same year as the label's Notes on Hospitals and the
+ *     same argument, and it is on Gutenberg. Question 4's statement now sets
+ *     specific examples against general principles, because Source B makes
+ *     no emotional appeal to set against evidence.
+ *   - 07: Ruskin, Fors Clavigera, Letter V (1 May 1871; Gutenberg #59456,
+ *     volume 1, George Allen, 1871), seven consecutive paragraphs on what his
+ *     readers have done to air, water and earth. Questions 3 and 4 gloss its
+ *     hard words and allusions.
+ *   - 08: Engels, The Condition of the Working-Class in England in 1844,
+ *     "The Mining Proletariat", in Florence Kelley Wischnewetzky's
+ *     translation (London edition of 1892; Gutenberg #17306): the paragraph
+ *     on the coal and iron mines, then, after a marked cut, the first four
+ *     sentences of the paragraph after next, on the children's exhaustion.
+ *     Engels is summarising the evidence of the Children's Employment
+ *     Commission, the report the old label named, and Question 3 now says so.
+ *     With no text of Shaftesbury's to cut from, the passage and its label
+ *     are Engels's, and this file now prints two passages of his.
+ *   - 09: Engels, the same translation, "Irish Immigration", the last
+ *     thirteen sentences of the chapter's third paragraph: the immigrants'
+ *     dwellings, their crowding and their drinking, and his turn to blame
+ *     society for them. The genuine Engels is contemptuous of the Irish, so
+ *     Question 3 now asks about his attitude as well as their lives, Question
+ *     4 no longer says that both writers defend immigrants, and the answers
+ *     name his prejudice rather than soften it. src/data/mock-exams/aqa-p2-b.ts
+ *     prints the chapter's first paragraph and the start of its third, so
+ *     this paper takes a different part of it.
+ *   - 10: Dickens, "A Walk in a Workhouse", Household Words (1850), from
+ *     Reprinted Pieces (Gutenberg #872, Chapman and Hall, 1905), the last
+ *     seven sentences of one paragraph: the workhouse's infant, girls' and
+ *     boys' schools. Question 3 now asks about workhouse children, since they
+ *     are who the passage describes, and glosses Tooting.
+ * The Source A passages are kept and labelled as what they are, specially
+ * written for this paper, and the answers call their writer "the writer of
+ * Source A" rather than by the invented names; two questions that gave that
+ * writer a gender the text does not are reworded. Every Question 3 and 4
+ * answer was rewritten for its new Source B, and every quotation in the
+ * answers was checked by script against its extract. The Question 2 answers
+ * also misdescribed Source A in six places, now corrected: a single use of
+ * "suffocation" called a sustained metaphor, a phrase called the final
+ * sentence when it is not, a first-person plural called direct address,
+ * "Not depleted. Not diminished. Empty" called a triple repetition, a phrase
+ * in the main clause called parenthetical, and the third paragraph called the
+ * second. Questions 1, 5 and 6 are unchanged.
+ *
+ * REVIEWED 27 September 2026. Every Source B paragraph was matched again,
+ * by a separate script, against the Gutenberg paragraphs it came from, and
+ * every quotation of any length in every answer and mark scheme (249) was
+ * found in its own extract, each Question 4 quotation in the source the
+ * answer credits it to. That pass also found answers that quoted true words
+ * but said something false about them, now corrected:
+ *   - 06 Q3 said Nightingale's last sentence has Nature intend disease to be
+ *     a reparative process; the sentence says God made it so. The label
+ *     said "from the opening chapter" for a passage that stands before
+ *     Chapter I. Question 3 now glosses reparative, poultices and viz.
+ *   - 06 Q2 called "ferocity" a modifier of "purpose"; it is the noun.
+ *   - 07 Q2 called "clarity of absence" an oxymoron (the words are not
+ *     opposites) and a two-word quotation an adverbial triplet.
+ *   - 07 Q4 had Source A turn to the rock pools after admitting that figures
+ *     become abstract (the pools open the article), and glued "things" to
+ *     Ruskin's "inventive of explosive and deathful", whose noun is "Dust".
+ *   - 08 Q2 said Source A repeats "be your own boss", which it says once;
+ *     08 Q4 said Source A asks readers to look at their own part in the
+ *     system, which it never does.
+ *   - 09 Q3 put Engels's "And since the poor devil" after his worst
+ *     contempt and called it one of the last sentences; it comes just before
+ *     "bestial drunkenness" and "little above the savage".
+ *
+ * KNOWN GAPS. Source A's figures ("73%", "353%", "£4.80 an hour") belong to
+ * the specially written articles and are not sourced. The glosses in the
+ * question text (Tooting, the Franco-Prussian War, the Children's Employment
+ * Commission) are general knowledge, not checked by script. Notes on Nursing
+ * is checked against the Appleton printing only; the London first edition
+ * (Harrison, 1859) was not compared.
+ */
+
 // ─── WJEC Component 2 Source Texts ──────────────────────────────────────────
 
 // Exam 06 - Health & Medicine
@@ -10,15 +141,26 @@ I spent three months embedded in A&E departments across England and Wales, and w
 
 These are not failures of individual commitment. Every doctor, nurse, porter, and receptionist I met was working with a ferocity of purpose that left me humbled and, frankly, frightened - because you cannot sustain that intensity indefinitely. You cannot run a health service on goodwill alone. The staffing shortages, the crumbling infrastructure, the impossible waiting lists - these are political choices disguised as unfortunate circumstances. And until we name them honestly, nothing will change.`
 
-const HEALTH_SOURCE_A_REF = 'Rhian Davies, "The Unravelling", Wales Online, 2024'
+const HEALTH_SOURCE_A_REF = 'Newspaper article, specially written for this paper'
 
-const HEALTH_SOURCE_B = `It is a melancholy truth that the hospitals of this country, which ought to be sanctuaries of healing, are too often little better than antechambers of death. I have visited no fewer than seven of the principal infirmaries of the metropolis, and in each I found the same dispiriting catalogue of neglect: wards so overcrowded that patients lie two to a bed; ventilation so inadequate that the very air seems thick with contagion; and a shortage of trained nurses so severe that the sick are left for hours without attention or comfort.
+const HEALTH_SOURCE_B = `In watching diseases, both in private houses and in public hospitals, the thing which strikes the experienced observer most forcibly is this, that the symptoms or the sufferings generally considered to be inevitable and incident to the disease are very often not symptoms of the disease at all, but of something quite different--of the want of fresh air, or of light, or of warmth, or of quiet, or of cleanliness, or of punctuality and care in the administration of diet, of each or of all of these. And this quite as much in private as in hospital nursing.
 
-The fault lies not with those who labour within these institutions, for I have seen among them devotion and self-sacrifice of the most extraordinary kind. A nurse at St Thomas's told me that she regularly works from six in the morning until ten at night, with no interval for rest, and that she considers this unremarkable. The fault lies with a system that treats the health of the poor as an afterthought - an expense to be minimised rather than a duty to be honoured.
+The reparative process which Nature has instituted and which we call disease, has been hindered by some want of knowledge or attention, in one or in all of these things, and pain, suffering, or interruption of the whole process sets in.
 
-I am told that reform is impossible, that the costs would be prohibitive, that the public purse cannot bear the burden. I do not believe it. A nation that can afford to maintain the largest navy in the world can afford to ensure that its citizens do not die of diseases that are entirely preventable. What is lacking is not resources but resolve.`
+If a patient is cold, if a patient is feverish, if a patient is faint, if he is sick after taking food, if he has a bed-sore, it is generally the fault not of the disease, but of the nursing.
 
-const HEALTH_SOURCE_B_REF = 'Florence Nightingale, Notes on Hospitals (1859)'
+I use the word nursing for want of a better. It has been limited to signify little more than the administration of medicines and the application of poultices. It ought to signify the proper use of fresh air, light, warmth, cleanliness, quiet, and the proper selection and administration of diet--all at the least expense of vital power to the patient.
+
+It has been said and written scores of times, that every woman makes a good nurse. I believe, on the contrary, that the very elements of nursing are all but unknown.
+
+By this I do not mean that the nurse is always to blame. Bad sanitary, bad architectural, and bad administrative arrangements often make it impossible to nurse.
+
+But the art of nursing ought to include such arrangements as alone make what I understand by nursing, possible.
+
+The art of nursing, as now practised, seems to be expressly constituted to unmake what God had made disease to be, viz., a reparative process.`
+
+const HEALTH_SOURCE_B_REF =
+  'Florence Nightingale, Notes on Nursing: What It Is, and What It Is Not (1859), from the opening pages'
 
 // Exam 07 - Environment
 const ENV_SOURCE_A = `Last summer, I stood on a beach in Pembrokeshire that I had visited every year since childhood. The rock pools where I had spent hours as a boy, cataloguing crabs and anemones with the obsessive precision of a seven-year-old naturalist, were empty. Not depleted. Not diminished. Empty. The seaweed that had once draped every surface in glistening curtains of brown and green had gone. The water was clear in a way that should have been beautiful but was, in fact, terrifying - the clarity of absence.
@@ -27,15 +169,24 @@ Wales has lost 73% of its monitored insect populations since 1990. One in six sp
 
 We speak of the environment as though it were something separate from us - a resource to be managed, a backdrop to human activity. It is not. It is the ground beneath our feet, the air in our lungs, the food on our plates. When it dies, we die. This is not ideology. It is biology.`
 
-const ENV_SOURCE_A_REF = 'Gethin Roberts, "Silent Spring, Silent Wales", The New Statesman, 2025'
+const ENV_SOURCE_A_REF = 'Magazine article, specially written for this paper'
 
-const ENV_SOURCE_B = `I have been walking in the countryside near my home in the Lake District, and I am bound to say that the changes wrought upon this landscape within my own lifetime fill me with the deepest apprehension. Where once stood ancient woodland - oak and ash and elm, sheltering a thousand forms of life beneath their canopy - there are now bare hillsides, stripped of every tree and given over to sheep that crop the grass to its very roots.
+const ENV_SOURCE_B = `The first three, I said, are Pure Air, Water, and Earth.
 
-The streams that once ran clear now carry a burden of mud and filth from the denuded hills. The fish that were once so plentiful that a man might catch his supper in half an hour have all but vanished. The red squirrel, which was formerly so common that children regarded it as a pest, is now so rare that its appearance occasions wonder.
+Heaven gives you the main elements of these. You can destroy them at your pleasure, or increase, almost without limit, the available qualities of them.
 
-I do not pretend to understand the science of these matters, but I know what I see. The land is being exhausted. It is being used without thought for the future, as though its fertility were infinite and its beauty of no account. Our grandchildren will inherit a country that is poorer in every sense - poorer in beauty, poorer in variety, poorer in the simple, sustaining pleasure of a walk through woods that have stood for centuries. And they will ask us, rightly, what we were thinking.`
+You can vitiate the air by your manner of life, and of death, to any extent. You might easily vitiate it so as to bring such a pestilence on the globe as would end all of you. You or your fellows, German and French, are at present busy in vitiating it to the best of your power in every direction; chiefly at this moment with corpses, and animal and vegetable ruin in war: changing men, horses, and garden-stuff into noxious gas. But everywhere, and all day long, you are vitiating it with foul chemical exhalations; and the horrible nests, which you call towns, are little more than laboratories for the distillation into heaven of venomous smokes and smells, mixed with effluvia from decaying animal matter, and infectious miasmata from purulent disease.
 
-const ENV_SOURCE_B_REF = 'John Ruskin, Letters to the Working Men of England (1871)'
+On the other hand, your power of purifying the air, by dealing properly and swiftly with all substances in corruption; by absolutely forbidding noxious manufactures; and by planting in all soils the trees which cleanse and invigorate earth and atmosphere,--is literally infinite. You might make every breath of air you draw, food.
+
+Secondly, your power over the rain and river-waters of the earth is infinite. You can bring rain where you will, by planting wisely and tending carefully;--drought where you will, by ravage of woods and neglect of the soil. You might have the rivers of England as pure as the crystal of the rock; beautiful in falls, in lakes, in living pools; so full of fish that you might take them out with your hands instead of nets. Or you may do always as you have done now, turn every river of England into a common sewer, so that you cannot so much as baptize an English baby but with filth, unless you hold its face out in the rain; and even that falls dirty.
+
+Then for the third, Earth,--meant to be nourishing for you, and blossoming. You have learned, about it, that there is no such thing as a flower; and as far as your scientific hands and scientific brains, inventive of explosive and deathful, instead of blossoming and life giving, Dust, can contrive, you have turned the Mother-Earth, Demeter, into the Avenger-Earth, Tisiphone--with the voice of your brother's blood crying out of it, in one wild harmony round all its murderous sphere.
+
+This is what you have done for the Three Material Useful Things.`
+
+const ENV_SOURCE_B_REF =
+  'John Ruskin, Fors Clavigera: Letters to the Workmen and Labourers of Great Britain, Letter V (1 May 1871)'
 
 // Exam 08 - Work & Industry
 const WORK_SOURCE_A = `The gig economy was supposed to set us free. That was the promise, anyway - be your own boss, set your own hours, work from anywhere. Silicon Valley sold us a vision of liberation, and millions of us bought it. But freedom, it turns out, looks remarkably like exploitation when you strip away the branding.
@@ -44,15 +195,16 @@ I spent six months working as a delivery rider for three different apps simultan
 
 The app tracked our every movement. It measured our speed, our acceptance rate, our customer ratings. A score below 4.5 meant fewer deliveries. Fewer deliveries meant less money. Less money meant accepting every order, no matter how far, no matter how dangerous the route, no matter that the rain was horizontal and the streets were black with ice. This is not flexibility. It is algorithmic control with a smiley-face interface.`
 
-const WORK_SOURCE_A_REF = 'Priya Sharma, "Pedalling in Circles", The Observer, 2024'
+const WORK_SOURCE_A_REF = 'Newspaper article, specially written for this paper'
 
-const WORK_SOURCE_B = `I went down into the mine at half-past five in the morning and did not emerge until seven in the evening. In those thirteen and a half hours I saw things that no man who has not witnessed them could readily believe, and that no man who has witnessed them can easily forget.
+const WORK_SOURCE_B = `In the coal and iron mines which are worked in pretty much the same way, children of four, five, and seven years are employed. They are set to transporting the ore or coal loosened by the miner from its place to the horse-path or the main shaft, and to opening and shutting the doors (which separate the divisions of the mine and regulate its ventilation) for the passage of workers and material. For watching the doors the smallest children are usually employed, who thus pass twelve hours daily, in the dark, alone, sitting usually in damp passages without even having work enough to save them from the stupefying, brutalising tedium of doing nothing. The transport of coal and iron-stone, on the other hand, is very hard labour, the stuff being shoved in large tubs, without wheels, over the uneven floor of the mine; often over moist clay, or through water, and frequently up steep inclines and through paths so low-roofed that the workers are forced to creep on hands and knees. For this more wearing labour, therefore, older children and half-grown girls are employed. One man or two boys per tub are employed, according to circumstances; and, if two boys, one pushes and the other pulls. The loosening of the ore or coal, which is done by men or strong youths of sixteen years or more, is also very weary work. The usual working-day is eleven to twelve hours, often longer; in Scotland it reaches fourteen hours, and double time is frequent, when all the employees are at work below ground twenty-four, and even thirty-six hours at a stretch. Set times for meals are almost unknown, so that these people eat when hunger and time permit.
 
-The passages were so low that I was compelled to crawl on my hands and knees for considerable distances, and in some places to lie flat upon my stomach and drag myself forward by my elbows. The air was thick with coal dust and so hot that within minutes my shirt was soaked through. Children - boys and girls of ten and twelve years of age - worked in these passages, hauling carts of coal by means of chains attached to leather belts around their waists. They worked in darkness, for candles were too expensive to waste on mere haulage, and they worked in silence, for they had long since ceased to find anything remarkable in their condition.
+[...]
 
-I asked one boy, whose name was Thomas and whose age was eleven, what he wished to be when he grew up. He looked at me with an expression of such blank incomprehension that I realised my question had no meaning for him. There was no "when he grew up." There was only this: the darkness, the dust, the chain, the coal. Today, tomorrow, and every day after until his body failed him.`
+The children and young people who are employed in transporting coal and iron-stone all complain of being over-tired. Even in the most recklessly conducted industrial establishments there is no such universal and exaggerated overwork. The whole report proves this, with a number of examples on every page. It is constantly happening that children throw themselves down on the stone hearth or the floor as soon as they reach home, fall asleep at once without being able to take a bite of food, and have to be washed and put to bed while asleep; it even happens that they lie down on the way home, and are found by their parents late at night asleep on the road.`
 
-const WORK_SOURCE_B_REF = 'Lord Shaftesbury, Report on the Employment of Children in Mines (1842)'
+const WORK_SOURCE_B_REF =
+  'Friedrich Engels, The Condition of the Working-Class in England in 1844 (1845), from "The Mining Proletariat", translated by Florence Kelley Wischnewetzky (London edition, 1892)'
 
 // Exam 09 - Immigration
 const IMMIGRATION_SOURCE_A = `My parents came to Cardiff from Somalia in 1998. They arrived with two suitcases, three children under five, and a level of optimism that I now recognise as either extraordinary courage or magnificent delusion. They spoke no Welsh, very little English, and knew precisely no one. My father, who had been an engineer in Mogadishu, took a job washing dishes in a hotel. My mother, who had been a teacher, cleaned offices from five until eight every morning before walking us to school.
@@ -61,16 +213,12 @@ I tell you this not to inspire pity - my parents would be mortified - but to est
 
 And here is the thing that is almost never said in our increasingly toxic public discourse: they were right. I went to a comprehensive school, then to university, then to law school. My sister is a GP. My brother runs a construction company. We pay our taxes, we vote, we volunteer, we argue about rugby. We are, by any reasonable measure, exactly the kind of citizens that any country would want. And yet the prevailing narrative insists that people like my parents are a problem to be solved rather than an asset to be celebrated.`
 
-const IMMIGRATION_SOURCE_A_REF = 'Amina Hassan, "We Are Here", BBC Wales, 2025'
+const IMMIGRATION_SOURCE_A_REF = 'Online article, specially written for this paper'
 
-const IMMIGRATION_SOURCE_B = `The question of immigration is one upon which strong feelings are held on every side, and I do not propose to add to the stock of inflammatory rhetoric that already surrounds it. I wish only to record what I have observed, and to let the facts speak for their own eloquence.
-
-I have spent some weeks among the Irish families who have lately arrived in our city in such numbers, driven from their own country by famine and despair. They are crowded into the courts and alleys of the poorest districts, six or eight families to a house, living in conditions that would disgrace a stable. They are, for the most part, willing and industrious people who ask for nothing but the opportunity to work. I have seen men queue from before dawn at the factory gates, waiting in silence and in cold for the chance of a day's labour at wages that an Englishman would scorn.
-
-And yet they are met with hostility at every turn. They are told they steal English jobs, though they take only the work that no Englishman will do. They are told they are dirty and diseased, though their squalor is the consequence of the housing we provide them. They are told they are a burden upon the parish, though they work harder and for less than any native-born labourer I have encountered. The prejudice against them is deep and general, and it is sustained not by evidence but by the ancient human instinct to fear what is unfamiliar.`
+const IMMIGRATION_SOURCE_B = `The filth and comfortlessness that prevail in the houses themselves it is impossible to describe. The Irishman is unaccustomed to the presence of furniture; a heap of straw, a few rags, utterly beyond use as clothing, suffice for his nightly couch. A piece of wood, a broken chair, an old chest for a table, more he needs not; a tea-kettle, a few pots and dishes, equip his kitchen, which is also his sleeping and living room. When he is in want of fuel, everything combustible within his reach, chairs, door-posts, mouldings, flooring, finds its way up the chimney. Moreover, why should he need much room? At home in his mud-cabin there was only one room for all domestic purposes; more than one room his family does not need in England. So the custom of crowding many persons into a single room, now so universal, has been chiefly implanted by the Irish immigration. And since the poor devil must have one enjoyment, and society has shut him out of all others, he betakes himself to the drinking of spirits. Drink is the only thing which makes the Irishman's life worth having, drink and his cheery care-free temperament; so he revels in drink to the point of the most bestial drunkenness. The southern facile character of the Irishman, his crudity, which places him but little above the savage, his contempt for all humane enjoyments, in which his very crudeness makes him incapable of sharing, his filth and poverty, all favour drunkenness. The temptation is great, he cannot resist it, and so when he has money he gets rid of it down his throat. What else should he do? How can society blame him when it places him in a position in which he almost of necessity becomes a drunkard; when it leaves him to himself, to his savagery?`
 
 const IMMIGRATION_SOURCE_B_REF =
-  'Friedrich Engels, The Condition of the Working Class in England (1845)'
+  'Friedrich Engels, The Condition of the Working-Class in England in 1844 (1845), from "Irish Immigration", translated by Florence Kelley Wischnewetzky (London edition, 1892)'
 
 // Exam 10 - Childhood
 const CHILDHOOD_SOURCE_A = `We are raising the most protected and the most anxious generation in human history, and these two facts are not unrelated. In our determination to keep children safe from every conceivable danger - from strangers, from traffic, from germs, from failure, from boredom, from the unsupervised outdoors - we have inadvertently created a generation that does not know how to assess risk, tolerate discomfort, or entertain itself without a screen.
@@ -79,18 +227,12 @@ I am a secondary school teacher in Newport, and I have watched this transformati
 
 The statistics confirm what every teacher already knows. Referrals to CAMHS have increased by 353% in a decade. One in six children aged five to sixteen now has a probable mental health disorder. Self-harm among teenage girls has tripled since 2010. We have tried to eliminate suffering from childhood, and we have produced suffering on an industrial scale.`
 
-const CHILDHOOD_SOURCE_A_REF = 'David Pritchard, "The Fragile Generation", TES Cymru, 2025'
+const CHILDHOOD_SOURCE_A_REF = 'Magazine article, specially written for this paper'
 
-const CHILDHOOD_SOURCE_B = `The children of the poor have no childhood. This is a plain statement of fact which admits of no qualification and requires no elaboration, though I shall provide both. From the moment they are old enough to be of use - which is to say, from the age of five or six - they are put to work. They mind babies, they sweep crossings, they pick oakum, they sell matches, they beg. Their days are not divided, as ours are, into periods of work and periods of play; for them, there is only work, punctuated by sleep.
-
-I watched a girl of perhaps eight years tending her infant brother in a doorway off Drury Lane. She held him with a competence that was at once impressive and heartbreaking - the competence of someone who has never had the luxury of being incompetent. She fed him from a bottle, wiped his face, sang to him in a voice so quiet I had to strain to hear it. When I asked her name, she regarded me with the wary, appraising look of someone who has learned early that adults are not to be trusted.
-
-"Mary," she said, after a pause long enough to suggest that she was considering whether to tell me the truth.
-
-I asked whether she went to school. She smiled at this, as at an excellent joke, and shook her head. I asked what she did all day. "I mind the baby," she said, "and when he sleeps, I mind myself." It was the most economical description of a childhood I have ever heard, and the saddest.`
+const CHILDHOOD_SOURCE_B = `It was very agreeable, recollecting that most infamous and atrocious enormity committed at Tooting—an enormity which, a hundred years hence, will still be vividly remembered in the bye-ways of English life, and which has done more to engender a gloomy discontent and suspicion among many thousands of the people than all the Chartist leaders could have done in all their lives—to find the pauper children in this workhouse looking robust and well, and apparently the objects of very great care. In the Infant School—a large, light, airy room at the top of the building—the little creatures, being at dinner, and eating their potatoes heartily, were not cowed by the presence of strange visitors, but stretched out their small hands to be shaken, with a very pleasant confidence. And it was comfortable to see two mangy pauper rocking-horses rampant in a corner. In the girls’ school, where the dinner was also in progress, everything bore a cheerful and healthy aspect. The meal was over, in the boys’ school, by the time of our arrival there, and the room was not yet quite rearranged; but the boys were roaming unrestrained about a large and airy yard, as any other schoolboys might have done. Some of them had been drawing large ships upon the schoolroom wall; and if they had a mast with shrouds and stays set up for practice (as they have in the Middlesex House of Correction), it would be so much the better. At present, if a boy should feel a strong impulse upon him to learn the art of going aloft, he could only gratify it, I presume, as the men and women paupers gratify their aspirations after better board and lodging, by smashing as many workhouse windows as possible, and being promoted to prison.`
 
 const CHILDHOOD_SOURCE_B_REF =
-  'Charles Dickens, "A Walk Through the Workhouse", Household Words (1850)'
+  'Charles Dickens, "A Walk in a Workhouse", Household Words (1850), from Reprinted Pieces'
 
 // ─── Exam Papers ────────────────────────────────────────────────────────────
 
@@ -135,7 +277,7 @@ export const wjecC2B: MockExamPaper[] = [
           {
             id: 'wjec-c2-06-q2',
             questionNumber: 2,
-            questionText: `How does the writer of Source A use language to convey her feelings about the state of the NHS?\n\nYou should comment on specific words and phrases and the effects they create. [10]`,
+            questionText: `How does the writer of Source A use language to convey their feelings about the state of the NHS?\n\nYou should comment on specific words and phrases and the effects they create. [10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'analysis',
@@ -143,9 +285,9 @@ export const wjecC2B: MockExamPaper[] = [
             extractSource: HEALTH_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses the metaphor "national religion" to show how important the NHS is to people. The phrase "slow, systemic suffocation" uses alliteration to emphasise how the service is being strangled. Specific examples like "nineteen hours on a trolley" shock the reader. The phrase "political choices disguised as unfortunate circumstances" shows her anger at the government.',
+                'The writer uses the metaphor "national religion" to show how important the NHS is to people. The phrase "slow, systemic suffocation" uses alliteration to emphasise how the service is being strangled. Specific examples like "nineteen hours on a trolley" shock the reader. The phrase "political choices disguised as unfortunate circumstances" shows the writer\'s anger at the government.',
               'Grade 6-7':
-                'Davies constructs a rhetorical architecture that moves from reverence to outrage. The opening metaphor - "the closest thing we have to a national religion" - elevates the NHS to sacred status, making its decline feel like desecration. The sustained metaphor of suffocation ("slow, systemic suffocation") uses sibilant alliteration to create an auditory sense of breath being squeezed out. The tricolon of case studies progresses through geography (Swansea, Leeds, Birmingham) but also through emotional register: from sympathy to admiration to systemic horror. The modifier "ferocity" applied to "purpose" is deliberately paradoxical - violence in the service of care - capturing the impossible demands placed on staff. The final sentence\'s antithesis - "political choices disguised as unfortunate circumstances" - strips away euphemism to expose culpability, with the verb "disguised" implying deliberate deception.',
+                'The writer constructs a rhetorical architecture that moves from reverence to outrage. The opening metaphor - "the closest thing we have to a national religion" - elevates the NHS to sacred status, making its decline feel like desecration. The metaphor of suffocation ("slow, systemic suffocation") uses sibilant alliteration to create an auditory sense of breath being squeezed out. The tricolon of case studies progresses through geography (Swansea, Leeds, Birmingham) but also through emotional register: from sympathy to admiration to systemic horror. The phrase "ferocity of purpose" is deliberately paradoxical - violence in the service of care - capturing the impossible demands placed on staff. The antithesis near the end - "political choices disguised as unfortunate circumstances" - strips away euphemism to expose culpability, with the verb "disguised" implying deliberate deception.',
             },
             markScheme: [
               'Analyses specific language techniques',
@@ -157,7 +299,7 @@ export const wjecC2B: MockExamPaper[] = [
           {
             id: 'wjec-c2-06-q3',
             questionNumber: 3,
-            questionText: `What do you learn about the problems facing healthcare from Source B?\n\nYou must refer to the text to support your answer. [10]`,
+            questionText: `What do you learn about the problems facing healthcare from Source B?\n\n(reparative: healing, repairing. poultices: soft, warm pastes laid on the skin to ease pain or swelling. viz.: namely.)\n\nYou must refer to the text to support your answer. [10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'short-answer',
@@ -165,9 +307,9 @@ export const wjecC2B: MockExamPaper[] = [
             extractSource: HEALTH_SOURCE_B_REF,
             modelAnswers: {
               'Grade 4-5':
-                'You learn that hospitals were overcrowded, with patients sharing beds. Ventilation was so poor the air felt thick with disease. There was a severe shortage of trained nurses. Nurses worked extremely long hours, from six in the morning until ten at night. The writer argues that the government could afford reform but lacked the will.',
+                'You learn that sick people often suffer because they are badly looked after, not only because they are ill. Nightingale says that many "symptoms" are really caused by "the want of fresh air, or of light, or of warmth, or of quiet, or of cleanliness". If a patient is cold or has a "bed-sore", "it is generally the fault not of the disease, but of the nursing." Nursing was thought to mean "little more than the administration of medicines and the application of poultices". She believes that "the very elements of nursing are all but unknown", although the nurse is not always to blame, because bad buildings and bad management "often make it impossible to nurse".',
               'Grade 6-7':
-                'Nightingale reveals that Victorian hospitals were characterised by systematic neglect rather than isolated failure. The overcrowding was structural - "patients lie two to a bed" - suggesting not temporary pressure but permanent inadequacy. The description of air "thick with contagion" reveals understanding of disease transmission that anticipates germ theory. The nurse at St Thomas\'s who "considers this unremarkable" demonstrates how exploitation becomes normalised through institutional culture. Most significantly, Nightingale frames the problem as one of political priority: the comparison between naval expenditure and healthcare investment exposes a hierarchy of values in which military power outranks human wellbeing. Her rhetoric shifts from observation to moral argument, from "I have seen" to "I do not believe it," marking her transition from witness to advocate.',
+                'Nightingale shows that the greatest problem facing the care of the sick is not disease but ignorance and neglect. She writes as "the experienced observer" who has watched illness "both in private houses and in public hospitals", so the problem she describes is everywhere, not in one bad institution. Her first sentence builds a long list of what patients go without - "the want of fresh air, or of light, or of warmth, or of quiet, or of cleanliness" - and the repeated "or of" makes the neglect seem endless, while every item on the list is simple and cheap. The run of conditions "If a patient is cold, if a patient is feverish, if a patient is faint" ends in a blunt reversal: "it is generally the fault not of the disease, but of the nursing." This moves the blame from illness, which no one can help, to care, which someone could. She also shows that nursing itself is misunderstood: it has been limited to "little more than the administration of medicines and the application of poultices", and she dismisses the comfortable belief that "every woman makes a good nurse" with a firm "I believe, on the contrary". Yet she is fair to nurses: "I do not mean that the nurse is always to blame." The triple "Bad sanitary, bad architectural, and bad administrative arrangements" widens the blame to the buildings and to the people who run them. Her last sentence is bitterly ironic: nursing "as now practised" seems "expressly constituted to unmake" what God made disease to be, "a reparative process", so the care meant to heal the sick works against them.',
             },
             markScheme: [
               'Identifies key information from the text',
@@ -179,7 +321,7 @@ export const wjecC2B: MockExamPaper[] = [
           {
             id: 'wjec-c2-06-q4',
             questionNumber: 4,
-            questionText: `"Both writers feel passionately about healthcare, but the 21st-century writer is more effective because she uses real evidence rather than emotional appeals."\n\nTo what extent do you agree with this statement? You must refer to both Source A and Source B in your answer. [15]`,
+            questionText: `"Both writers feel passionately about healthcare, but the 21st-century writer is more effective because Source A gives specific examples, while Source B deals only in general principles."\n\nTo what extent do you agree with this statement? You must refer to both Source A and Source B in your answer. [15]`,
             marks: 15,
             suggestedTimeMinutes: 18,
             questionType: 'comparison',
@@ -187,9 +329,9 @@ export const wjecC2B: MockExamPaper[] = [
             extractSource: `Source A: ${HEALTH_SOURCE_A_REF} | Source B: ${HEALTH_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                "I partially agree. Davies uses powerful real-life examples like the woman on a trolley and the exhausted doctor, which are very convincing. However, Nightingale also uses real evidence from her visits to hospitals. Both writers combine facts with emotional language. Nightingale's comparison between navy spending and healthcare is a strong logical argument. I think both are effective in different ways.",
+                'I partly agree. Source A gives specific examples, like the woman who waited "nineteen hours on a trolley in a corridor", and these make the problems easy to picture. Nightingale does write in general terms, but her points come from what she has seen, and her examples of a patient who is "cold", "feverish" or "faint" are ones every reader will recognise. Both writers say the staff are not the ones to blame: Source A says "These are not failures of individual commitment", and Nightingale says "I do not mean that the nurse is always to blame." I think both are effective in different ways.',
               'Grade 6-7':
-                'The statement presents a false dichotomy. Both writers blend empirical evidence with emotional rhetoric, though their methods reflect their respective eras. Davies\'s "evidence" - the nineteen-hour wait, the thirty-hour shift - functions as testimony rather than data, and her most powerful moments are metaphorical ("slow, systemic suffocation") rather than statistical. Nightingale, conversely, deploys remarkably precise observation ("twelve feet by ten," "two to a bed") that constitutes the evidence-gathering methodology of her era. The real distinction is structural: Davies moves from sacred metaphor ("national religion") to secular outrage, while Nightingale moves from empirical witness to moral imperative. Davies implicates the reader through proximity; Nightingale appeals to national pride. Both are effective, but for different audiences: Davies addresses a public already sympathetic to the NHS, while Nightingale must first persuade her readers that the health of the poor matters at all.',
+                'The statement is half right. Source A is built on specific cases, and its three scenes - Swansea, Leeds, Birmingham - make the crisis vivid and hard to dismiss. Yet its force comes as much from metaphor ("slow, systemic suffocation") and from its accusation that the failings are "political choices disguised as unfortunate circumstances" as from its examples. Source B does deal in general principles, but that is where its power lies. Nightingale writes as "the experienced observer" and turns what she has seen into a rule that holds "as much in private as in hospital nursing", so every reader who has nursed a relative is implicated. Her particulars are not named patients but symptoms anyone would recognise - a patient who is "cold", "feverish" or "faint", or has a "bed-sore" - and her conclusion is a reversal that no single case could carry: "it is generally the fault not of the disease, but of the nursing." The two writers reach a similar verdict by opposite routes. Both clear the individual worker ("These are not failures of individual commitment"; "I do not mean that the nurse is always to blame") and blame the system, which Source A calls political and Nightingale calls "Bad sanitary, bad architectural, and bad administrative arrangements". Source A is more immediate; Source B reaches further, because it asks readers to change how they care for the sick rather than only to feel angry about it.',
             },
             markScheme: [
               'Evaluates both texts with a personal response',
@@ -301,9 +443,9 @@ export const wjecC2B: MockExamPaper[] = [
             extractSource: ENV_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses the phrase "the clarity of absence" to show that the empty rock pools are frightening, not beautiful. The triple repetition of "Not depleted. Not diminished. Empty" builds up to a shocking final word. Statistics like "73%" make the problem feel real and urgent. The personal memory of childhood makes the reader feel sad about what has been lost.',
+                'The writer uses the phrase "the clarity of absence" to show that the empty rock pools are frightening, not beautiful. The three short sentences "Not depleted. Not diminished. Empty" build up to a shocking final word. Statistics like "73%" make the problem feel real and urgent. The personal memory of childhood makes the reader feel sad about what has been lost.',
               'Grade 6-7':
-                'Roberts employs a strategy of defamiliarisation: what should be positive - clear water, quiet mornings - is reframed as evidence of catastrophe. The tricolon "Not depleted. Not diminished. Empty" uses successive negation to reject euphemism before arriving at the brutal monosyllable. The oxymoron in "clarity of absence" transforms visual beauty into existential horror. The shift from personal anecdote to statistics to direct address ("the air in our lungs") creates a rhetorical funnel that narrows from the particular to the universal. The adverbial triplet "Measurably. Quantifiably" following "Not metaphorically" aggressively pre-empts dismissal by insisting on empirical rather than emotional truth. The closing sentences deploy the starkest possible syntax - "When it dies, we die" - reducing ecological complexity to primal cause and effect. The final antithesis - "This is not ideology. It is biology" - claims scientific authority while performing a deeply rhetorical manoeuvre.',
+                'The writer employs a strategy of defamiliarisation: what should be positive - clear water, quiet mornings - is reframed as evidence of catastrophe. The tricolon "Not depleted. Not diminished. Empty" uses successive negation to reject euphemism before arriving at the brutal monosyllable. The paradox in "clarity of absence" transforms visual beauty into existential horror. The shift from personal anecdote to statistics to the first-person plural ("the air in our lungs") creates a rhetorical funnel that narrows from the particular to the universal. The three clipped sentences "Not metaphorically. Measurably. Quantifiably." aggressively pre-empt dismissal by insisting on empirical rather than emotional truth. The closing sentences deploy the starkest possible syntax - "When it dies, we die" - reducing ecological complexity to primal cause and effect. The final antithesis - "This is not ideology. It is biology" - claims scientific authority while performing a deeply rhetorical manoeuvre.',
             },
             markScheme: [
               'Analyses specific language techniques',
@@ -315,7 +457,7 @@ export const wjecC2B: MockExamPaper[] = [
           {
             id: 'wjec-c2-07-q3',
             questionNumber: 3,
-            questionText: `What do you learn about environmental damage from Source B?\n\nYou must refer to the text to support your answer. [10]`,
+            questionText: `What do you learn about environmental damage from Source B?\n\n(Source B is from a letter Ruskin addressed to working men. vitiate: spoil, make impure. effluvia, miasmata: foul and poisonous vapours, then thought to spread disease. German and French: the Franco-Prussian War of 1870-71. Demeter: the Greek goddess of the harvest. Tisiphone: one of the Furies, who avenged murder.)\n\nYou must refer to the text to support your answer. [10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'short-answer',
@@ -323,9 +465,9 @@ export const wjecC2B: MockExamPaper[] = [
             extractSource: ENV_SOURCE_B_REF,
             modelAnswers: {
               'Grade 4-5':
-                'You learn that ancient woodland has been destroyed and replaced with bare hillsides for sheep farming. Streams that were once clear now carry mud. Fish have almost disappeared from the rivers. The red squirrel has become extremely rare. Ruskin believes the land is being used up without any thought for the future.',
+                'You learn that people were damaging the air, the water and the earth. Ruskin says that war was filling the air with "noxious gas" from the dead, and that towns gave off "venomous smokes and smells" all day long. He calls towns "horrible nests". Rivers had been turned into "a common sewer", so dirty that you could not "baptize an English baby but with filth", and even the rain "falls dirty". He also shows that the damage could be undone: planting trees and "forbidding noxious manufactures" would clean the air, and the rivers could be "as pure as the crystal of the rock". He blames science for turning the earth from something that feeds people into something deadly.',
               'Grade 6-7':
-                'Ruskin reveals a landscape undergoing systematic degradation driven by agricultural exploitation. The progression from woodland to "bare hillsides" represents ecological simplification - complex ecosystems reduced to monoculture. The streams "carry a burden of mud and filth" - the personifying noun "burden" suggests the waterways themselves suffer. The red squirrel\'s transformation from "pest" to wonder charts a reversal that encapsulates the broader narrative of loss. Most significantly, Ruskin identifies an economic logic behind the destruction: the land is "used without thought for the future, as though its fertility were infinite." This critique of short-term exploitation anticipates modern sustainability discourse. His final appeal to intergenerational responsibility - "our grandchildren will inherit" - frames environmental destruction as a moral debt passed to those who had no part in incurring it.',
+                'Ruskin presents environmental damage as something people choose, not something that happens to them. His grammar makes the point: the reader is the subject of the destructive verbs - "You can vitiate the air", "you have turned the Mother-Earth, Demeter, into the Avenger-Earth, Tisiphone" - so the damage is an act with a doer. He shows it in each of the three "Material" things in turn. The air is poisoned by war, "changing men, horses, and garden-stuff into noxious gas", a flat list that puts soldiers alongside vegetables, and by everyday industry: towns are "horrible nests" and "laboratories for the distillation into heaven of venomous smokes and smells", an image that turns the sky itself into a place of manufacture. The water has been made "a common sewer", and the detail that "you cannot so much as baptize an English baby but with filth" makes pollution a spiritual defilement as well as a physical one; the short clause "and even that falls dirty" leaves nowhere clean. The earth, "meant to be nourishing for you, and blossoming", has been turned, as far as "scientific hands and scientific brains" can manage it, from a mother into an avenger, and "the voice of your brother\'s blood" echoes God\'s words to Cain, so the harm done to the earth is bound up with killing. Yet the passage is not hopeless. The power to repair is "literally infinite": planting trees, forbidding "noxious manufactures", and rivers "so full of fish that you might take them out with your hands instead of nets". The reader learns that the damage is real, widespread and man-made, and that it could be reversed.',
             },
             markScheme: [
               'Identifies key information from the text',
@@ -337,7 +479,7 @@ export const wjecC2B: MockExamPaper[] = [
           {
             id: 'wjec-c2-07-q4',
             questionNumber: 4,
-            questionText: `"Both writers are alarmed by environmental destruction, but the modern writer communicates more urgency because he uses scientific evidence."\n\nTo what extent do you agree with this statement? You must refer to both Source A and Source B in your answer. [15]`,
+            questionText: `"Both writers are alarmed by environmental destruction, but the modern writer communicates more urgency because he uses scientific evidence."\n\n(Source B glossary: vitiate: spoil, make impure. effluvia, miasmata: foul and poisonous vapours. German and French: the Franco-Prussian War of 1870-71. Demeter: the Greek goddess of the harvest. Tisiphone: one of the Furies, who avenged murder.)\n\nTo what extent do you agree with this statement? You must refer to both Source A and Source B in your answer. [15]`,
             marks: 15,
             suggestedTimeMinutes: 18,
             questionType: 'comparison',
@@ -345,9 +487,9 @@ export const wjecC2B: MockExamPaper[] = [
             extractSource: `Source A: ${ENV_SOURCE_A_REF} | Source B: ${ENV_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'I partially agree. Roberts uses statistics like "73%" and "one in six species" which give a scientific feel and make the problem seem undeniable. However, Ruskin is also effective even without statistics - his detailed descriptions of lost wildlife and ruined streams create powerful images. Both writers use personal experience to make their points convincing. Ruskin\'s appeal to future generations is very effective emotionally.',
+                'I partly agree. The writer of Source A uses figures like "73%" and "One in six species", which make the problem seem serious and proven. Ruskin uses no statistics at all. However, Ruskin is just as urgent, because he speaks straight to the reader: "You can vitiate the air". He uses shocking images, like towns as "horrible nests" and rivers turned into "a common sewer". Ruskin even attacks science, blaming "scientific hands and scientific brains" for the damage. Both writers show that people have caused the destruction, and both make the reader feel responsible.',
               'Grade 6-7':
-                'The statement overstates the role of "scientific evidence" in Roberts\'s rhetoric. His most powerful moments are not statistical but sensory: the empty rock pools, the quiet dawn chorus. Statistics are used strategically - "73%" establishes scale - but the emotional force comes from the personal, the particular, the remembered. Ruskin, meanwhile, explicitly disclaims scientific knowledge ("I do not pretend to understand the science") yet his methodology is essentially empirical: careful observation, comparison over time, inference from evidence. Both writers construct authority through witness rather than expertise. The real difference in urgency is temporal: Roberts writes from a position of accumulated data showing irreversible loss, while Ruskin writes as degradation is still in progress. Roberts\'s urgency comes from knowing the scale of what has been lost; Ruskin\'s comes from watching it happen in real time. Both are compelling, but they demand different responses: Roberts requires systemic action; Ruskin requires a change of values.',
+                'The statement assumes that scientific evidence creates urgency, but neither text bears that out simply. The writer of Source A does use figures - "73%", "One in six species" - yet admits that they "become abstract, and abstraction is the enemy of action", and so makes them concrete: the quieter dawn chorus, like the empty rock pools of the opening. The urgency comes from the insistence of "Not metaphorically. Measurably. Quantifiably." and the stark "When it dies, we die." Ruskin offers no evidence of that kind and would not want to: he blames "scientific hands and scientific brains", which invent "explosive and deathful" dust instead of "blossoming and life giving" dust, for turning the nourishing earth into an avenging one. His urgency comes from direct accusation - "You can vitiate the air by your manner of life, and of death, to any extent" - and from images that shock: towns as "horrible nests" breathing "venomous smokes and smells", a baby that cannot be baptised but with filth. Both writers make the damage personal. Source A says the environment is "the air in our lungs"; Ruskin makes the reader answer for it with "the voice of your brother\'s blood". I would say Ruskin is at least as urgent, because he offers the reader a choice, between rivers "as pure as the crystal of the rock" and "a common sewer", and insists that it is theirs to make now. Source A\'s urgency is the fear of loss; Ruskin\'s is a demand for action.',
             },
             markScheme: [
               'Evaluates both texts with a personal response',
@@ -459,9 +601,9 @@ export const wjecC2B: MockExamPaper[] = [
             extractSource: WORK_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses sarcasm in "be your own boss" to mock the promises of the gig economy. The word "disposable" shows how little the workers are valued. The contrast between "independent contractors" and reality highlights the dishonesty of the companies. The description of riding "on a rainy Tuesday night" makes the reader feel sympathy for the workers.',
+                'The writer echoes the promise "be your own boss" ironically, to mock what the gig economy offered. The word "disposable" shows how little the workers are valued. The contrast between "independent contractors" and reality highlights the dishonesty of the companies. The description of riding "on a rainy Tuesday night" makes the reader feel sympathy for the workers.',
               'Grade 6-7':
-                'Sharma constructs her critique through systematic exposure of linguistic deception. The opening paragraph ventriloquises Silicon Valley\'s rhetoric - "set us free," "be your own boss" - before the devastating pivot: "freedom, it turns out, looks remarkably like exploitation when you strip away the branding." The noun "branding" functions doubly, referencing both marketing and the literal marking of ownership. The juxtaposition of corporate terminology ("independent contractors") against Sharma\'s own blunt lexis ("disposable") enacts the gap between rhetoric and reality that is her central argument. The final paragraph\'s description of algorithmic control - tracking, measuring, scoring - uses the vocabulary of surveillance to reframe "flexibility" as panopticism. The closing metaphor "algorithmic control with a smiley-face interface" brilliantly encapsulates the gig economy\'s defining contradiction: totalitarian power dressed in the visual language of friendliness.',
+                'The writer constructs the critique through systematic exposure of linguistic deception. The opening paragraph ventriloquises Silicon Valley\'s rhetoric - "set us free," "be your own boss" - before the devastating pivot: "freedom, it turns out, looks remarkably like exploitation when you strip away the branding." The noun "branding" functions doubly, referencing both marketing and the literal marking of ownership. The juxtaposition of corporate terminology ("independent contractors") against the writer\'s own blunt lexis ("disposable") enacts the gap between rhetoric and reality that is the central argument. The final paragraph\'s description of algorithmic control - tracking, measuring, scoring - uses the vocabulary of surveillance to reframe "flexibility" as panopticism. The closing metaphor "algorithmic control with a smiley-face interface" brilliantly encapsulates the gig economy\'s defining contradiction: totalitarian power dressed in the visual language of friendliness.',
             },
             markScheme: [
               'Analyses specific language techniques',
@@ -473,7 +615,7 @@ export const wjecC2B: MockExamPaper[] = [
           {
             id: 'wjec-c2-08-q3',
             questionNumber: 3,
-            questionText: `What do you learn about working conditions in the mines from Source B?\n\nYou must refer to the text to support your answer. [10]`,
+            questionText: `What do you learn about working conditions in the mines from Source B?\n\n(Engels is summarising the evidence gathered by the Children's Employment Commission, whose report on the mines was published in 1842. iron-stone: iron ore. tubs: boxes for carrying coal or ore.)\n\nYou must refer to the text to support your answer. [10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'short-answer',
@@ -481,9 +623,9 @@ export const wjecC2B: MockExamPaper[] = [
             extractSource: WORK_SOURCE_B_REF,
             modelAnswers: {
               'Grade 4-5':
-                'You learn that the mine passages were so low that people had to crawl or lie flat. The air was thick with coal dust and very hot. Children as young as ten worked in the mines, hauling carts of coal with chains. They worked in complete darkness to save money on candles. A boy called Thomas, aged eleven, could not imagine any future beyond the mine.',
+                'You learn that children "of four, five, and seven years" worked in the coal and iron mines. The smallest children opened and shut the doors, sitting "in the dark, alone" for twelve hours a day. Older children and "half-grown girls" pushed and pulled heavy tubs with no wheels through water and mud, in passages so low that they had "to creep on hands and knees". A working day was "eleven to twelve hours, often longer", and there were no proper meal times. The children were so tired that they fell asleep on the floor as soon as they got home, and some were found "asleep on the road".',
               'Grade 6-7':
-                'Shaftesbury reveals a working environment that systematically dehumanises its workers. The physical conditions - passages requiring crawling, air "thick with coal dust" - reduce adult men to animals and children to machines. The detail of chains attached to leather belts literalises the metaphor of industrial slavery. The deprivation of light ("candles were too expensive") demonstrates how economic logic overrides basic human needs. Most powerfully, Thomas\'s "blank incomprehension" at the question about his future reveals not merely poverty but the obliteration of possibility itself. Shaftesbury\'s rhetoric relies on understatement and precise observation rather than overt commentary: the horror speaks for itself. The final sentence\'s repetitive structure - "the darkness, the dust, the chain, the coal" - creates a verbal equivalent of the monotonous, inescapable cycle of the boy\'s existence.',
+                'Engels shows that the mines depended on the labour of children, and that the work damaged them in body and mind. The youngest, "of four, five, and seven years", were given the doors, which sounds like light work, but he makes it one of the cruellest jobs: they "pass twelve hours daily, in the dark, alone", and the heavy pair of adjectives "stupefying, brutalising" shows that the "tedium of doing nothing" harms them as surely as labour would. Older children did the opposite, "very hard labour", shoving "large tubs, without wheels" over "moist clay, or through water", along passages "so low-roofed that the workers are forced to creep on hands and knees", a detail that bends children into the posture of animals. The hours are given plainly, "eleven to twelve hours, often longer", rising to "thirty-six hours at a stretch", and the flat statement that "Set times for meals are almost unknown" shows that even eating is fitted around the work. The final sentence moves from the mine to the home, and it is the most telling: children "throw themselves down on the stone hearth or the floor", "fall asleep at once without being able to take a bite of food", and must be "washed and put to bed while asleep". Engels\'s method is to let the evidence speak, "with a number of examples on every page", and his one comment, that "Even in the most recklessly conducted industrial establishments there is no such universal and exaggerated overwork", tells the reader that the mines are worse than any factory.',
             },
             markScheme: [
               'Identifies key information from the text',
@@ -503,9 +645,9 @@ export const wjecC2B: MockExamPaper[] = [
             extractSource: `Source A: ${WORK_SOURCE_A_REF} | Source B: ${WORK_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'I agree that child labour is more shocking, because children should be protected. Thomas\'s story is heartbreaking. However, Sharma also shows exploitation of vulnerable people - immigrants who cannot demand better treatment. Both texts show workers being treated as less than human. The gig economy riders are "disposable" and the child miners work "in darkness." Both are powerful in different ways.',
+                'I agree that Source B is more shocking, because the workers are small children, some only "four, five, and seven years" old, who sit "in the dark, alone" and are so tired that they are found "asleep on the road". However, Source A is shocking in a different way, because it is happening now. The riders earn "£4.80 an hour after expenses" and have "No sick pay. No holiday pay. No pension." Both texts show workers being treated as if they do not matter: the riders are "disposable", and the children work until they are too tired to eat. Both are powerful in different ways.',
               'Grade 6-7':
-                "The statement assumes that the identity of the victim determines the power of the exposé. While the exploitation of children in Source B is undeniably harrowing, Source A's power lies in a different kind of shock: the recognition that exploitation has not been eliminated but merely rebranded. Shaftesbury's mine is visibly barbaric - the horror is on the surface. Sharma's gig economy is insidious precisely because it looks like freedom. The child miners are chained; the delivery riders are tracked by algorithms. Both are controlled, but the modern mechanism disguises itself as choice. Shaftesbury's Thomas cannot imagine a future; Sharma's riders were promised one that turned out to be a lie. The 19th-century text shocks through extremity; the 21st-century text shocks through proximity - this is happening now, on our streets, delivering our food. Both writers use individual stories to humanise systemic exploitation, but the rhetorical stakes differ: Shaftesbury demands new legislation; Sharma demands that we examine our own complicity.",
+                'The statement assumes that the identity of the victim decides how shocking an account is. The exploitation of children in Source B is harrowing, and Engels needs no rhetoric to make it so: the youngest "pass twelve hours daily, in the dark, alone", and at home the children "fall asleep at once without being able to take a bite of food". But Source A shocks in a different way, by showing that exploitation has not ended but changed its appearance. The mine is visibly brutal; the gig economy is insidious because it looks like freedom, and the writer\'s point is that "freedom, it turns out, looks remarkably like exploitation when you strip away the branding." The children in the mine creep "on hands and knees" through clay and water; the riders are watched by an app that "tracked our every movement" and are sent out on streets "black with ice". Both texts describe work that is dangerous and exhausting, and both show workers with no power to refuse: the children have no choice at all, and the riders must accept "every order, no matter how far". The 19th-century text shocks through extremity; the 21st-century text shocks through nearness - it is happening on our streets, delivering our food. Engels sets out the Commission\'s evidence and lets it condemn the mines; the writer of Source A worked as a rider and exposes the system from inside, stripping away its friendly language.',
             },
             markScheme: [
               'Evaluates both texts with a personal response',
@@ -617,9 +759,9 @@ export const wjecC2B: MockExamPaper[] = [
             extractSource: IMMIGRATION_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses personal details to make immigration real, like "ironing a school uniform with hands that are raw from bleach." The list of what her family contributes - "We pay our taxes, we vote, we volunteer" - counters negative stereotypes. Calling the public debate "toxic" shows her frustration. The phrase "a problem to be solved rather than an asset to be celebrated" directly challenges negative views.',
+                'The writer uses personal details to make immigration real, like "ironing a school uniform with hands that are raw from bleach." The list of what the writer\'s family contributes - "We pay our taxes, we vote, we volunteer" - counters negative stereotypes. Calling the public debate "toxic" shows the writer\'s frustration. The phrase "a problem to be solved rather than an asset to be celebrated" directly challenges negative views.',
               'Grade 6-7':
-                'Hassan deploys a two-stage rhetorical strategy: humanisation followed by confrontation. The opening paragraph\'s accumulation of specific detail - "two suitcases, three children under five" - transforms "immigration" from political abstraction to embodied experience. The parenthetical self-correction "either extraordinary courage or magnificent delusion" establishes a voice that is wry, intelligent, and self-aware, preemptively disarming the reader\'s defences. The image of ironing "with hands that are raw from bleach" is a deliberate counter-narrative: not the immigrant as burden but as sacrifice. The second paragraph\'s shift to the present tense and first-person plural - "We pay our taxes, we vote, we volunteer, we argue about rugby" - insists on belonging through the everyday. The inclusion of rugby is culturally precise, claiming Welsh identity specifically. The concluding antithesis - "a problem to be solved rather than an asset to be celebrated" - exposes the framing bias of public discourse with surgical economy.',
+                'The writer deploys a two-stage rhetorical strategy: humanisation followed by confrontation. The opening paragraph\'s accumulation of specific detail - "two suitcases, three children under five" - transforms "immigration" from political abstraction to embodied experience. The wry alternative "either extraordinary courage or magnificent delusion" establishes a voice that is intelligent and self-aware, pre-emptively disarming the reader\'s defences. The image of ironing "with hands that are raw from bleach" is a deliberate counter-narrative: not the immigrant as burden but as sacrifice. The third paragraph\'s shift to the first-person plural - "We pay our taxes, we vote, we volunteer, we argue about rugby" - insists on belonging through the everyday. The inclusion of rugby is culturally precise, claiming Welsh identity specifically. The concluding antithesis - "a problem to be solved rather than an asset to be celebrated" - exposes the framing bias of public discourse with surgical economy.',
             },
             markScheme: [
               'Analyses specific language techniques',
@@ -631,7 +773,7 @@ export const wjecC2B: MockExamPaper[] = [
           {
             id: 'wjec-c2-09-q3',
             questionNumber: 3,
-            questionText: `What do you learn about the experiences of Irish immigrants from Source B?\n\nYou must refer to the text to support your answer. [10]`,
+            questionText: `What do you learn from Source B about the lives of Irish immigrants in England's industrial towns, and about the writer's attitude towards them?\n\nYou must refer to the text to support your answer. [10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'short-answer',
@@ -639,21 +781,21 @@ export const wjecC2B: MockExamPaper[] = [
             extractSource: IMMIGRATION_SOURCE_B_REF,
             modelAnswers: {
               'Grade 4-5':
-                "You learn that Irish immigrants were driven to England by famine. They lived in extremely overcrowded conditions, with six or eight families to a house. They were willing to work hard and queued from before dawn for the chance of a day's labour. They were met with hostility and accused of stealing jobs. The prejudice against them was based on fear rather than evidence.",
+                'You learn that the Irish immigrants lived in dirty, uncomfortable homes with almost no furniture: they slept on "a heap of straw, a few rags" and used "an old chest for a table". One room served as kitchen, bedroom and living room, and Engels says that the habit of "crowding many persons into a single room" came to England with them. When they had no fuel they burned chairs and door-posts. Many turned to drink. Engels\'s attitude is mostly scornful: he says the Irishman\'s "crudity" places him "but little above the savage" and calls his drunkenness "bestial". But at the end he blames society, which has shut the Irishman out of every enjoyment except drink and "leaves him to himself".',
               'Grade 6-7':
-                'Engels reveals a community trapped between desperation and prejudice. The immigrants are "driven" - the passive construction removing agency and emphasising compulsion. Their living conditions ("six or eight families to a house") parallel the overcrowding they fled, suggesting that displacement merely exchanges one form of suffering for another. Engels carefully establishes their moral credentials: they are "willing and industrious" and they "queue from before dawn," demonstrating a work ethic that contradicts the stereotypes levelled against them. His rhetorical strategy involves systematic dismantling of each prejudice: they "steal" jobs no one else wants; their "squalor" is caused by the housing they are given; they "burden" the parish less than native workers. The final sentence elevates the analysis from the particular to the anthropological: prejudice is sustained "not by evidence but by the ancient human instinct to fear what is unfamiliar," locating xenophobia in human nature rather than rational assessment.',
+                'Engels shows the Irish living at the lowest level of the industrial towns, and his account is both a record of poverty and a display of prejudice. The conditions are extreme. "The filth and comfortlessness" of the houses are, he says, "impossible to describe", and the inventory of possessions - "a heap of straw, a few rags", "a broken chair, an old chest for a table", "a tea-kettle, a few pots and dishes" - shows how little they have, in a kitchen "which is also his sleeping and living room". The list of what is burned for fuel, "chairs, door-posts, mouldings, flooring", suggests homes being slowly consumed by the people who live in them. Yet for most of the passage Engels explains all this through character rather than circumstance. The rhetorical question "Moreover, why should he need much room?" and the claim that "more than one room his family does not need" treat overcrowding as a habit brought from the "mud-cabin", not as the result of poverty. His language slides into open contempt: the singular "The Irishman" turns a whole people into one type, whose "crudity" places him "but little above the savage" and whose drinking reaches "the most bestial drunkenness". But the argument keeps turning back on society. Just before that contempt, "And since the poor devil must have one enjoyment, and society has shut him out of all others" gives the drinking a cause outside the Irishman, and the passage ends with two questions, "What else should he do?" and "How can society blame him", which place the responsibility on the society that "leaves him to himself". The reader learns that the immigrants\' lives were harsh and crowded, and that even a writer who blamed society for their condition described them with the prejudices common in his time.',
             },
             markScheme: [
               'Identifies key information from the text',
               'Selects appropriate evidence',
               'Makes valid inferences',
-              'Shows clear understanding of implicit meaning',
+              "Comments on the writer's attitude, including the prejudice in his language",
             ],
           },
           {
             id: 'wjec-c2-09-q4',
             questionNumber: 4,
-            questionText: `"Both writers defend immigrants, but the 21st-century writer is more persuasive because she writes from personal experience."\n\nTo what extent do you agree with this statement? You must refer to both Source A and Source B in your answer. [15]`,
+            questionText: `"The writer of Source A presents immigrants far more fairly than the writer of Source B, because Source A is written from personal experience, while Source B looks in from outside."\n\nTo what extent do you agree with this statement? You must refer to both Source A and Source B in your answer. [15]`,
             marks: 15,
             suggestedTimeMinutes: 18,
             questionType: 'comparison',
@@ -661,9 +803,9 @@ export const wjecC2B: MockExamPaper[] = [
             extractSource: `Source A: ${IMMIGRATION_SOURCE_A_REF} | Source B: ${IMMIGRATION_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                "I partially agree. Hassan's personal story is very powerful because it gives a real example of successful immigration. However, Engels also uses vivid details from his observations, like men queuing in the cold before dawn. Both writers challenge prejudice effectively. Hassan makes the reader feel personally connected, while Engels uses logical arguments to dismantle stereotypes.",
+                'I mostly agree. The writer of Source A knows immigration from the inside, describing parents who worked hard, like the mother who cleaned offices "from five until eight every morning", and children who went on to law school, general practice and a construction company. Engels looks in from outside and judges: he says the Irishman is "but little above the savage" and that drink is "the only thing" that makes his life worth having. That is not fair, because it treats a whole people as one type. However, Engels does blame society at the end, asking "How can society blame him". And Source A tells only one family\'s story, a success story, so it is not the whole picture either.',
               'Grade 6-7':
-                'Personal experience gives Hassan\'s text emotional immediacy but also risks being dismissed as anecdotal - and she knows this, which is why she explicitly states "I tell you this not to inspire pity." Her persuasive power lies not in the personal story itself but in the gap between that story and the "prevailing narrative," which she forces the reader to confront. Engels, writing as an outsider observer, possesses a different authority: the authority of the disinterested witness. His systematic dismantling of each accusation - jobs, cleanliness, dependency - has the structure of a legal defence, and his concluding appeal to "the ancient human instinct to fear" universalises the argument beyond any specific immigrant group. The texts are complementary rather than competitive: Hassan provides the human face that makes us care; Engels provides the analytical framework that explains why we need to. The most persuasive case for immigration would use both.',
+                'The statement is largely right, but the reason it gives is only half the story. Personal experience lets the writer of Source A replace a category with people: "two suitcases, three children under five", a father who "had been an engineer in Mogadishu" washing dishes, a mother ironing "with hands that are raw from bleach". The writer knows this could be dismissed as one family\'s story - "I tell you this not to inspire pity" - and so turns it into an argument against a "prevailing narrative" that treats immigrants as "a problem to be solved rather than an asset to be celebrated". Engels, by contrast, looks in from outside, and the distance shows. He writes of "The Irishman" as a single type, explains overcrowding as a habit brought from the "mud-cabin" rather than as a result of poverty, and uses the language of contempt: "but little above the savage", "the most bestial drunkenness". Yet the outsider\'s view is not simply unfair. His closing questions, "What else should he do?" and "How can society blame him", turn the blame on a society that "has shut him out of all others", every enjoyment but drink, which is close to Source A\'s own charge that the problem lies in how the host country sees immigrants. Neither text is neutral: Source A chooses a family that succeeded, and Engels sees the Irish through the prejudices common in his time. Source A is fairer because it treats immigrants as individuals rather than as a type, but it is its attitude, more than its experience, that makes the difference.',
             },
             markScheme: [
               'Evaluates both texts with a personal response',
@@ -767,7 +909,7 @@ export const wjecC2B: MockExamPaper[] = [
           {
             id: 'wjec-c2-10-q2',
             questionNumber: 2,
-            questionText: `How does the writer of Source A use language to convey his concerns about modern childhood?\n\nYou should comment on specific words and phrases and the effects they create. [10]`,
+            questionText: `How does the writer of Source A use language to convey concerns about modern childhood?\n\nYou should comment on specific words and phrases and the effects they create. [10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'analysis',
@@ -777,7 +919,7 @@ export const wjecC2B: MockExamPaper[] = [
               'Grade 4-5':
                 'The writer uses the metaphor "bubble-wrapped" to show that children are overprotected. The phrase "hit them like a truck" creates a violent image to show how unprepared they are. The list of things they are protected from - "strangers, from traffic, from germs, from failure, from boredom" - shows how extreme the protection has become. The final sentence uses irony: trying to eliminate suffering has created more suffering.',
               'Grade 6-7':
-                'Pritchard constructs his argument through a series of paradoxes that expose the unintended consequences of well-meaning parenting. The opening sentence yokes "most protected" and "most anxious" in deliberate juxtaposition, with "these two facts are not unrelated" employing litotes to understate a causal relationship the reader must infer. The catalogue of dangers - "strangers, from traffic, from germs, from failure, from boredom, from the unsupervised outdoors" - escalates from genuine threats to absurd ones, the anaphoric "from" creating a suffocating rhythm that mimics overprotection itself. "Bubble-wrapped" reduces children to fragile objects, while "hit them like a truck" deploys violent vehicular imagery that suggests not gradual difficulty but sudden, devastating collision. The statistical triplet in the final paragraph - "353%," "one in six," "tripled" - creates an evidence base, but the closing sentence delivers the rhetorical coup de grâce: "eliminate suffering... produced suffering on an industrial scale." The paradox is made complete; the metaphor "industrial scale" implies mass production of the very thing society sought to prevent.',
+                'The writer constructs the argument through a series of paradoxes that expose the unintended consequences of well-meaning parenting. The opening sentence yokes "most protected" and "most anxious" in deliberate juxtaposition, with "these two facts are not unrelated" employing litotes to understate a causal relationship the reader must infer. The catalogue of dangers - "strangers, from traffic, from germs, from failure, from boredom, from the unsupervised outdoors" - escalates from genuine threats to absurd ones, the anaphoric "from" creating a suffocating rhythm that mimics overprotection itself. The word "bubble-wrapped" reduces children to fragile objects, while "hit them like a truck" deploys violent vehicular imagery that suggests not gradual difficulty but sudden, devastating collision. The statistical triplet in the final paragraph - "353%," "One in six," "tripled" - creates an evidence base, but the closing sentence delivers the rhetorical coup de grâce: "eliminate suffering... produced suffering on an industrial scale." The paradox is made complete; the metaphor "industrial scale" implies mass production of the very thing society sought to prevent.',
             },
             markScheme: [
               'Analyses specific language techniques',
@@ -789,7 +931,7 @@ export const wjecC2B: MockExamPaper[] = [
           {
             id: 'wjec-c2-10-q3',
             questionNumber: 3,
-            questionText: `What do you learn about the lives of poor children in the 19th century from Source B?\n\nYou must refer to the text to support your answer. [10]`,
+            questionText: `What do you learn about the lives of children in a Victorian workhouse from Source B?\n\n(Tooting: in 1849 cholera killed more than 150 of the pauper children whom London parishes paid a private contractor to board at Tooting. pauper: a person living on public relief. the Chartists: a working-class movement campaigning for the vote. going aloft: climbing a ship's rigging. the Middlesex House of Correction: a London prison.)\n\nYou must refer to the text to support your answer. [10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'short-answer',
@@ -797,9 +939,9 @@ export const wjecC2B: MockExamPaper[] = [
             extractSource: CHILDHOOD_SOURCE_B_REF,
             modelAnswers: {
               'Grade 4-5':
-                'You learn that poor children had no real childhood and were put to work from the age of five or six. They did various jobs like minding babies, sweeping crossings, and selling matches. A girl of about eight was looking after her baby brother with adult-level skill. She did not go to school. Her entire day was spent caring for the baby or looking after herself.',
+                'You learn that in this workhouse the children were "looking robust and well" and seemed to be "the objects of very great care". The infants had a "large, light, airy room", ate their potatoes "heartily" and were not frightened of visitors: they held out "their small hands to be shaken". The girls\' school looked "cheerful and healthy", and the boys played freely in "a large and airy yard". Some boys had drawn ships on the wall, which suggests that they dreamed of going to sea, but Dickens says that the only way a workhouse boy could learn to climb a ship\'s rigging was the way adult paupers got better food and lodging: by smashing workhouse windows and being sent to prison. He also reminds readers of Tooting, where pauper children had been treated far worse.',
               'Grade 6-7':
-                'Dickens reveals a world in which childhood as a distinct phase of life simply does not exist for the poor. The opening declarative - "The children of the poor have no childhood" - is deliberately absolute, refusing qualification. The catalogue of child labour ("mind babies... sweep crossings... pick oakum... sell matches... beg") presents exploitation as varied and normalised. Mary embodies this erasure: her "competence" in caring for her brother is simultaneously "impressive and heartbreaking," a paradox that captures how deprivation accelerates capability at the cost of innocence. Her "wary, appraising look" reveals learned distrust of adults - childhood vulnerability replaced by survival instinct. The most devastating detail is linguistic: "I mind the baby, and when he sleeps, I mind myself." The repetition of "mind" - meaning both "look after" and "attend to" - reduces an entire childhood to two activities, neither of which involves play, education, or joy. Dickens calls it "the most economical description of a childhood" - the adjective "economical" resonating with the poverty that produced it.',
+                'Dickens shows that a workhouse childhood could be decent, and that this was worth remarking on only because it so often was not. The long first sentence holds back its good news behind the memory of Tooting, "that most infamous and atrocious enormity", so that the healthy children are seen against the dead ones, and the word "agreeable" sounds like relief. The children here are "looking robust and well", though "apparently the objects of very great care" is a guarded phrase from a visitor who knows that appearances can be arranged. The infants are "the little creatures", tender rather than pitiful, and the detail that they "were not cowed by the presence of strange visitors, but stretched out their small hands to be shaken, with a very pleasant confidence" suggests children who have not learned to fear adults. Even the "two mangy pauper rocking-horses rampant in a corner" are affectionately comic: "pauper" makes the toys share the children\'s poverty, and "rampant", a word from heraldry, gives the shabby horses a mock nobility. The boys roam "unrestrained about a large and airy yard, as any other schoolboys might have done", which is the passage\'s real standard: workhouse children should be treated like any others. The ending shows where they are not. The ships on the schoolroom wall reveal ambition, but the only way such a boy could learn "the art of going aloft" would be to do as adult paupers do, "by smashing as many workhouse windows as possible, and being promoted to prison". The irony of "promoted" exposes a system that offers a poor boy more chance of training in prison than in the workhouse.',
             },
             markScheme: [
               'Identifies key information from the text',
@@ -819,9 +961,9 @@ export const wjecC2B: MockExamPaper[] = [
             extractSource: `Source A: ${CHILDHOOD_SOURCE_A_REF} | Source B: ${CHILDHOOD_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                "I disagree. Although the specific problems are different - overprotection versus poverty - both writers are concerned about children being denied a proper childhood. Pritchard's children are anxious because they are too sheltered; Dickens's children have no childhood at all. Both writers believe that adults are failing children, just in different ways. The texts can be compared because the underlying concern is the same.",
+                'I disagree. The problems are different, but both writers care about how adults treat children. The writer of Source A thinks children are "bubble-wrapped" and cannot cope with anything. Dickens is relieved to find workhouse children "looking robust and well", when pauper children at Tooting had died. But both writers value freedom: Dickens likes seeing the boys "roaming unrestrained about a large and airy yard", and the writer of Source A worries that children are kept away from "the unsupervised outdoors". The texts can be compared because both want children to have a healthy, free childhood.',
               'Grade 6-7':
-                "I strongly disagree with the statement. The texts are not only comparable but illuminate each other in revealing ways. Both writers identify a failure to provide children with what they need: Dickens's children lack protection; Pritchard's have too much. Both describe childhoods defined by absence - Mary has no play, no school, no freedom; Pritchard's students have no risk, no independence, no resilience. The structural parallel is precise: in both cases, adult society has imposed conditions on children that serve adult needs rather than children's development. Victorian parents needed child labour; modern parents need the reassurance of safety. The comparison also reveals an uncomfortable irony: we have moved from a society that gave children no protection to one that gives them nothing but protection, and neither produces flourishing. Dickens's Mary \"minds herself\" because no one else will; Pritchard's students cannot mind themselves because everyone else does. The texts together suggest that healthy childhood requires a balance between safety and autonomy that neither era has achieved.",
+                'I strongly disagree. The texts are more alike than they first appear, and each sheds light on the other. Dickens writes against a background of children dying through neglect - the "most infamous and atrocious enormity committed at Tooting" - so for him the first question is whether poor children are safe and fed, and he is relieved to find them "robust and well". The writer of Source A writes at the opposite extreme, about a generation that is "the most protected" in history and pays for it in anxiety. Yet both measure a childhood by the same things: freedom, confidence and the chance to take risks. Dickens admires the infants\' "very pleasant confidence" with strangers and the boys "roaming unrestrained about a large and airy yard, as any other schoolboys might have done"; he even wants a mast set up so that they can learn "the art of going aloft", a genuinely dangerous skill. The writer of Source A laments the loss of exactly these things: children kept from "the unsupervised outdoors", who "cannot resolve playground disputes without a teacher". Dickens\'s complaint is that a poor boy\'s ambition has no outlet but prison; Source A\'s is that protected children never learn "to assess risk, tolerate discomfort, or entertain" themselves. Together the texts suggest that a healthy childhood needs both care and freedom, and that each age has found it easier to supply one than the other.',
             },
             markScheme: [
               'Evaluates both texts with a personal response',

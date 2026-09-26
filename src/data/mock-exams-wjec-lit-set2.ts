@@ -5,93 +5,257 @@
 
 import type { MockExamPaper, MockExamQuestion, MockExamSection } from './mock-exams'
 
+/*
+ * FACT-CHECK, 27 September 2026 (scripts/check-mock-exam-extracts.mjs).
+ *
+ * WHAT WAS WRONG. This file printed extracts as the words of Shakespeare,
+ * Dickens and Dylan Thomas, and most of them were not:
+ *
+ *   - OTHELLO_EXTRACT_1, labelled Act 3 Scene 3: one sentence in five was the
+ *     play's. Iago's jealousy speech ran on into lines in no edition ("Your
+ *     Cassio's coming", "Mine own escape / Hath not an itch"), and two model
+ *     answers analysed "I am not what I am" as Iago's closing words here. It
+ *     is his line in Act 1 Scene 1.
+ *   - OTHELLO_EXTRACT_2 (printed by no question): an exchange between
+ *     Othello and Cassio in Act 3 Scene 4, which the two never share. None
+ *     of its sentences is the play's.
+ *   - HENRY_V_EXTRACT_1: "Once more unto the breach" with words changed
+ *     ("o'erwhew" for "o'erwhelm", "doth" for "does"), set by a question that
+ *     placed it "before Agincourt". Act 3 Scene 1 is the siege of Harfleur.
+ *   - HENRY_V_EXTRACT_2: the Crispin's Day lines in the right words but not
+ *     the edition's punctuation or spelling ("to-day", "remember'd"), which
+ *     the model answers then quoted.
+ *   - UNDER_MILK_WOOD_EXTRACT_1: the play's first sentence altered and run on
+ *     into lines Thomas did not write, among them a "Cwmdonkin Chapel"
+ *     (Cwmdonkin Drive is the Swansea street he grew up in; it is not in the
+ *     play). One of its eight sentences was as he wrote it.
+ *     UNDER_MILK_WOOD_EXTRACT_2 (unused) was labelled "adapted passage" and
+ *     none of it is his.
+ *   - GREAT_EXPECTATIONS_EXTRACT_1 and _2 (unused): labelled Dickens, none
+ *     and one in nine of their sentences his, written largely in the third
+ *     person about Pip in a novel Pip narrates.
+ *   - The model answers: henry-v-q4 and q5 had Bates say "Henry's subjects"
+ *     where he says "the King's subjects", and henry-v-q4 gave him a line in
+ *     no edition ("I will never distrust his promise"; the nearest, "I will
+ *     never trust his word after", is the disguised King's). othello-q4
+ *     quoted "O behold! / How you see light" as Othello's, which is not in
+ *     the play, and "a fair devil" for "the fair devil". henry-v-q1 read
+ *     "Disguise fair nature with hard-favour'd rage" backwards, as if
+ *     savagery were the soldiers' true nature, when the line makes the rage
+ *     the disguise. henry-v-q3 and q5 called the massacre Henry threatens at
+ *     Harfleur one that happened; umw-q3 credited the play with the Welsh
+ *     language, though it is written in English.
+ *
+ * WHAT REPLACED THEM. Each extract is now cut by script, never typed, and
+ * written in as a literal so that the checker, which reads string literals,
+ * still measures it:
+ *
+ *   - Othello and Henry V from the held editions in src/data/full-texts
+ *     (Gutenberg #1531 and #1521), with passage() from
+ *     src/lib/study-guides/passage.ts. OTHELLO_EXTRACT_1 runs from "O,
+ *     beware, my lord, of jealousy" to "Away at once with love or jealousy",
+ *     so it now includes Othello's reply, and the question asks about it.
+ *     OTHELLO_EXTRACT_2 runs from "How now, good Cassio" to the end of
+ *     Desdemona's "Alas, thrice-gentle Cassio": Cassio's suit, which is what
+ *     that scene really gives him. Each Henry V speech is one paragraph in
+ *     the edition, so its lines were taken from passage()'s result: Act 3
+ *     Scene 1 from "Once more unto the breach" to "wild and wasteful ocean",
+ *     the fourteen lines the invented version imitated; Act 4 Scene 3 from
+ *     "He that shall live this day, and see old age" to the end of the
+ *     speech, so that the "he" of "Old men forget" has someone to refer to.
+ *   - Great Expectations from Project Gutenberg #1400: the two paragraphs of
+ *     Chapter 39 from "Miss Havisham's intentions towards me" (the convict as
+ *     the source of Pip's expectations, and his shame, which the invented
+ *     passage was about), and two of Chapter 59, the site of Satis House in
+ *     the mist.
+ *   - Under Milk Wood from Project Gutenberg Australia, eBook 0608221, which
+ *     names no source edition and spells the town "Llaregyb"; neither extract
+ *     names the town, and the questions keep the usual "Llareggub". The
+ *     opening from "To begin at the beginning" to the paragraph "Hush, the
+ *     babies are sleeping", and the Voice of a Guide-Book, which describes
+ *     the town from outside as the invented "adapted passage" did. Thomas
+ *     died in 1953, so the play is out of copyright in the UK. The checker
+ *     knows no edition of it and reports both as UNVERIFIED; they were
+ *     compared with that eBook, paragraph by paragraph, when they were cut.
+ *     Their labels carry no date because the checker reads a date after the
+ *     author's death as impossible, and this play was published after his.
+ *
+ * Every model answer quoting an old extract was rewritten from the new one,
+ * and every quotation in the Othello, Henry V and Under Milk Wood papers was
+ * checked against its extract, or for an essay question against the play.
+ *
+ * A SECOND READING, the same day, found claims the quotation check cannot
+ * see, because the words quoted were right and what was said about them was
+ * not. othello-q3 said Othello never asks Desdemona about the handkerchief;
+ * he demands it of her in Act 3 Scene 4. henry-v-q2 had the veteran show his
+ * scars on Saint Crispin's day; the extract puts it on the vigil, the eve.
+ * henry-v-q1 still called the soldiers' ferocity "natural aggression" two
+ * sentences before the corrected reading of "Disguise fair nature", said
+ * that fourteen lines which never mention glory promise it, and said the
+ * whole speech addresses one undifferentiated mass, though Henry goes on to
+ * address nobles and yeomen apart. othello-q1 called Iago's warning to
+ * Othello an apostrophe (his prayer to heaven is one; the warning is not) and
+ * a maxim a syllogism. henry-v-q5 called Bates's resigned acceptance
+ * scepticism. Two answers opened a sentence with "Bible-black", which the
+ * text prints in lower case. The Under Milk Wood paper was subtitled "Poetry
+ * and Prose"; it is a play for voices. The claim that the 1954 first edition
+ * spelt the town "Llaregyb" was not verifiable and is withdrawn.
+ *
+ * WHAT IS LEFT, for the founder. Hobson's Choice (Harold Brighouse, died
+ * 1958) and Paddy Clarke Ha Ha Ha (Roddy Doyle, living) are in UK copyright,
+ * so their extracts are untouched and only reported here. Both pairs read as
+ * invented (PADDY_CLARKE_EXTRACT_2 slips into the third person; the novel is
+ * narrated by Paddy), each runs to over a hundred words against the house
+ * limit of fourteen words a quotation, and the Hobson's Choice paper names
+ * the playwright "Brackett" throughout while its model answers quote the
+ * invented lines. Correcting the name alone would attribute those lines to
+ * Brighouse, so it is left as found; that paper cannot be served as it
+ * stands. None of this file is served: the papers are built but never
+ * exported, and nothing imports the file.
+ */
+
 // ═══════════════════════════════════════════════════════════════════════════
 // EXTRACTS FOR OTHELLO
 // ═══════════════════════════════════════════════════════════════════════════
 
-const OTHELLO_EXTRACT_1 = `O, beware, my lord, of jealousy;
-It is the green-eyed monster which doth mock
-The meat it feeds on; that cuckold lives in bliss
+const OTHELLO_EXTRACT_1 = `IAGO
+O, beware, my lord, of jealousy;
+It is the green-ey’d monster which doth mock
+The meat it feeds on. That cuckold lives in bliss
 Who, certain of his fate, loves not his wronger;
-But O, what damned minutes tells he o'er
-Who dotes, yet doubts; suspects, yet soundly loves!
+But O, what damned minutes tells he o’er
+Who dotes, yet doubts, suspects, yet strongly loves!
 
-I am not what I am. Your Cassio's coming.
-Away, away! Good night. Mine own escape
-Hath not an itch: I would not now alter your love
-For all the world. Here comes my lord.`
+OTHELLO
+O misery!
 
-const OTHELLO_EXTRACT_1_SOURCE = 'Othello, Act 3 Scene 3 (Iago, Othello)'
+IAGO
+Poor and content is rich, and rich enough;
+But riches fineless is as poor as winter
+To him that ever fears he shall be poor.
+Good heaven, the souls of all my tribe defend
+From jealousy!
 
-const OTHELLO_EXTRACT_2 = `Othello: What's the reason that my temperate is suddenly gone?
-Is't possible?-Iago says thou hold'st him in thy hate.
+OTHELLO
+Why, why is this?
+Think’st thou I’d make a life of jealousy,
+To follow still the changes of the moon
+With fresh suspicions? No. To be once in doubt
+Is once to be resolv’d: exchange me for a goat
+When I shall turn the business of my soul
+To such exsufflicate and blown surmises,
+Matching thy inference. ’Tis not to make me jealous,
+To say my wife is fair, feeds well, loves company,
+Is free of speech, sings, plays, and dances well;
+Where virtue is, these are more virtuous:
+Nor from mine own weak merits will I draw
+The smallest fear or doubt of her revolt,
+For she had eyes, and chose me. No, Iago,
+I’ll see before I doubt; when I doubt, prove;
+And on the proof, there is no more but this:
+Away at once with love or jealousy!`
 
-Cassio: My lord, I had rather have this tongue cut from my mouth
-Than it should do offence to Michael Cassio;
-Yet, I persuade myself, to speak the truth
-Shall nothing wrong him. This it is, my lord:
-If I have any grace or power to move you,
-His presence can no way offend the state.
+const OTHELLO_EXTRACT_1_SOURCE = 'William Shakespeare, Othello, Act 3 Scene 3 (Iago, Othello)'
 
-Othello: We will not have it so. You must not speak of Cassio
-Henceforth as our general's friend. We do consent
-You shall no longer be his officer.`
+const OTHELLO_EXTRACT_2 = `DESDEMONA
+How now, good Cassio, what’s the news with you?
 
-const OTHELLO_EXTRACT_2_SOURCE = 'Othello, Act 3 Scene 4 (Othello, Cassio)'
+CASSIO
+Madam, my former suit: I do beseech you
+That by your virtuous means I may again
+Exist, and be a member of his love,
+Whom I, with all the office of my heart,
+Entirely honour. I would not be delay’d.
+If my offence be of such mortal kind
+That nor my service past, nor present sorrows,
+Nor purpos’d merit in futurity,
+Can ransom me into his love again,
+But to know so must be my benefit;
+So shall I clothe me in a forc’d content,
+And shut myself up in some other course
+To fortune’s alms.
+
+DESDEMONA
+Alas, thrice-gentle Cassio,
+My advocation is not now in tune;
+My lord is not my lord; nor should I know him
+Were he in favour as in humour alter’d.
+So help me every spirit sanctified,
+As I have spoken for you all my best,
+And stood within the blank of his displeasure
+For my free speech! You must awhile be patient.
+What I can do I will; and more I will
+Than for myself I dare. Let that suffice you.`
+
+const OTHELLO_EXTRACT_2_SOURCE = 'William Shakespeare, Othello, Act 3 Scene 4 (Desdemona, Cassio)'
 
 // ═══════════════════════════════════════════════════════════════════════════
 // EXTRACTS FOR HENRY V
 // ═══════════════════════════════════════════════════════════════════════════
 
-const HENRY_V_EXTRACT_1 = `Once more unto the breach, dear friends, once more;
+const HENRY_V_EXTRACT_1 = `KING HENRY
+Once more unto the breach, dear friends, once more,
 Or close the wall up with our English dead.
-In peace there's nothing so becomes a man
-As modest stillness and humility:
+In peace there’s nothing so becomes a man
+As modest stillness and humility;
 But when the blast of war blows in our ears,
 Then imitate the action of the tiger;
 Stiffen the sinews, summon up the blood,
-Disguise fair nature with hard-favour'd rage:
-Then lend the eye a terrible aspect:
+Disguise fair nature with hard-favour’d rage;
+Then lend the eye a terrible aspect;
 Let it pry through the portage of the head
-Like the brass cannon; let the brow o'erwhew it
-As fearfully as doth a galled rock
-O'erhang and jutty his confounded base,
-Swill'd with the wild and wasteful ocean.`
+Like the brass cannon; let the brow o’erwhelm it
+As fearfully as does a galled rock
+O’erhang and jutty his confounded base,
+Swill’d with the wild and wasteful ocean.`
 
-const HENRY_V_EXTRACT_1_SOURCE = 'Henry V, Act 3 Scene 1 (King Henry)'
+const HENRY_V_EXTRACT_1_SOURCE =
+  'William Shakespeare, Henry V, Act 3 Scene 1 (King Henry, before Harfleur)'
 
-const HENRY_V_EXTRACT_2 = `Old men forget: yet all shall be forgot,
-But he'll remember with advantages
-What feats he did that day: then shall our names.
-Familiar in his mouth as household words
-Harry the king, Bedford and Exeter,
+const HENRY_V_EXTRACT_2 = `KING
+He that shall live this day, and see old age,
+Will yearly on the vigil feast his neighbours,
+And say, “Tomorrow is Saint Crispian.”
+Then will he strip his sleeve and show his scars,
+And say, “These wounds I had on Crispian’s day.”
+Old men forget; yet all shall be forgot,
+But he’ll remember with advantages
+What feats he did that day. Then shall our names,
+Familiar in his mouth as household words,
+Harry the King, Bedford, and Exeter,
 Warwick and Talbot, Salisbury and Gloucester,
-Be in their flowing cups freshly remember'd.
+Be in their flowing cups freshly remembered.
 This story shall the good man teach his son;
-And Crispin Crispian shall ne'er go by,
+And Crispin Crispian shall ne’er go by,
 From this day to the ending of the world,
-But we in it shall be remember'd;
-We few, we happy few, we band of brothers;
-For he to-day that sheds his blood with me
-Shall be my brother.`
+But we in it shall be remembered,
+We few, we happy few, we band of brothers.
+For he today that sheds his blood with me
+Shall be my brother; be he ne’er so vile,
+This day shall gentle his condition;
+And gentlemen in England now abed
+Shall think themselves accurs’d they were not here,
+And hold their manhoods cheap whiles any speaks
+That fought with us upon Saint Crispin’s day.`
 
-const HENRY_V_EXTRACT_2_SOURCE = 'Henry V, Act 4 Scene 3 (King Henry)'
+const HENRY_V_EXTRACT_2_SOURCE =
+  'William Shakespeare, Henry V, Act 4 Scene 3 (King Henry, before Agincourt)'
 
 // ═══════════════════════════════════════════════════════════════════════════
 // EXTRACTS FOR UNDER MILK WOOD
 // ═══════════════════════════════════════════════════════════════════════════
 
-const UNDER_MILK_WOOD_EXTRACT_1 = `To begin at the beginning: It is spring, moonless night in the small town, starless and bible-black, the cobbled streets silent and the hunched, courters'-and-rabbits' wood limping invisible down to the sloeblack, slow, black, crowblack, fishingboatbobbing sea. The houses are blind. Not a soul stirring. No sleep anywhere but in the slow, safe dark, restless and exalted night of the town, sleeping itself sleeepily on towards dawn. And all the people of the town, are sleeping now.
+const UNDER_MILK_WOOD_EXTRACT_1 = `To begin at the beginning:
 
-Except for Nogood Boyo, who is up to no good in the wash-house behind Cwmdonkin Chapel, and Mrs Organ Morgan, music-mad, world-ignorant, short-sighted Organ Morgan. And the Reverend Jenkins in his bedroom, in the upright bed, the stitches in his side aching from the Reverend's Sunday sermon, the strain of rising from the crouch of his purple chair, the labour of managing his faith.`
+It is spring, moonless night in the small town, starless and bible-black, the cobblestreets silent and the hunched, courters'-and-rabbits' wood limping invisible down to the sloeblack, slow, black, crowblack, fishingboatbobbing sea. The houses are blind as moles (though moles see fine to-night in the snouting, velvet dingles) or blind as Captain Cat there in the muffled middle by the pump and the town clock, the shops in mourning, the Welfare Hall in widows' weeds. And all the people of the lulled and dumbfound town are sleeping now.
 
-const UNDER_MILK_WOOD_EXTRACT_1_SOURCE = 'Under Milk Wood, opening (First Voice)'
+Hush, the babies are sleeping, the farmers, the fishers, the tradesmen and pensioners, cobbler, schoolteacher, postman and publican, the undertaker and the fancy woman, drunkard, dressmaker, preacher, policeman, the webfoot cocklewomen and the tidy wives. Young girls lie bedded soft or glide in their dreams, with rings and trousseaux, bridesmaided by glowworms down the aisles of the organplaying wood. The boys are dreaming wicked or of the bucking ranches of the night and the jollyrodgered sea. And the anthracite statues of the horses sleep in the fields, and the cows in the byres, and the dogs in the wetnosed yards; and the cats nap in the slant corners or lope sly, streaking and needling, on the one cloud of the roofs.`
 
-const UNDER_MILK_WOOD_EXTRACT_2 = `Llareggub. The name of the town is Llareggub. It is not one of your romantic, castled, singing place-names. It is bare, wind-blown, and hard-living. The people are spare and quiet, and they do not smile much at visitors. The town hall is a stone building that looks as if it would prefer not to be looked at. The schoolhouse has a high wall around it, as if to keep the learning in, or the ignorance out.
+const UNDER_MILK_WOOD_EXTRACT_1_SOURCE = 'Dylan Thomas, Under Milk Wood, the opening (First Voice)'
 
-But in the morning, the streets fill with people carrying parcels and pushing prams. The shop-keepers open up their windows, letting in the pale light. Someone rings the bell in the chapel tower. And Llareggub comes alive, as it has done every morning for a hundred years, and will do tomorrow, and the day after that.`
+const UNDER_MILK_WOOD_EXTRACT_2 = `Less than five hundred souls inhabit the three quaint streets and the few narrow by-lanes and scattered farmsteads that constitute this small, decaying watering-place which may, indeed, be called a 'backwater of life' without disrespect to its natives who possess, to this day, a salty individuality of their own. The main street, Coronation Street, consists, for the most part, of humble, two-storied houses many of which attempt to achieve some measure of gaiety by prinking themselves out in crude colours and by the liberal use of pinkwash, though there are remaining a few eighteenth-century houses of more pretension, if, on the whole, in a sad state of disrepair. Though there is little to attract the hillclimber, the healthseeker, the sportsman, or the weekending motorist, the contemplative may, if sufficiently attracted to spare it some leisurely hours, find, in its cobbled streets and its little fishing harbour, in its several curious customs, and in the conversation of its local 'characters,' some of that picturesque sense of the past so frequently lacking in towns and villages which have kept more abreast of the times. The one place of worship, with its neglected graveyard, is of no architectural interest. The River Dewi is said to abound in trout, but is much poached.`
 
-const UNDER_MILK_WOOD_EXTRACT_2_SOURCE = 'Under Milk Wood, adapted passage'
+const UNDER_MILK_WOOD_EXTRACT_2_SOURCE = 'Dylan Thomas, Under Milk Wood, the Voice of a Guide-Book'
 
 // ═══════════════════════════════════════════════════════════════════════════
 // EXTRACTS FOR HOBSON'S CHOICE
@@ -115,17 +279,17 @@ const HOBBSONS_CHOICE_EXTRACT_2_SOURCE = "Hobson's Choice, Act 3 (Hobson, Maggie
 // EXTRACTS FOR GREAT EXPECTATIONS
 // ═══════════════════════════════════════════════════════════════════════════
 
-const GREAT_EXPECTATIONS_EXTRACT_1 = `It was then that I began to understand that Pip the child was gone, and that in his place stood a young man ashamed of his own origins. The convict had been the instrument of his great expectations, and yet Pip could not bear to know it. Such is the pride of youth, and such is the terrible irony of ambition: that it raises a man up only to cast him down the moment he discovers the truth of what he has become.
+const GREAT_EXPECTATIONS_EXTRACT_1 = `Miss Havisham’s intentions towards me, all a mere dream; Estella not designed for me; I only suffered in Satis House as a convenience, a sting for the greedy relations, a model with a mechanical heart to practise on when no other practice was at hand; those were the first smarts I had. But, sharpest and deepest pain of all,—it was for the convict, guilty of I knew not what crimes, and liable to be taken out of those rooms where I sat thinking, and hanged at the Old Bailey door, that I had deserted Joe.
 
-Estella was a lady, yes, and Pip had made her in his dreams into something more than human. But she was a lady of no heart, and her coldness was the coldness of the marble in Satis House - beautiful, perfect, and utterly without feeling.`
+I would not have gone back to Joe now, I would not have gone back to Biddy now, for any consideration; simply, I suppose, because my sense of my own worthless conduct to them was greater than every consideration. No wisdom on earth could have given me the comfort that I should have derived from their simplicity and fidelity; but I could never, never, undo what I had done.`
 
-const GREAT_EXPECTATIONS_EXTRACT_1_SOURCE = 'Great Expectations, adapted passage (Dickens)'
+const GREAT_EXPECTATIONS_EXTRACT_1_SOURCE = 'Charles Dickens, Great Expectations (1861), Chapter 39'
 
-const GREAT_EXPECTATIONS_EXTRACT_2 = `The mist was upon the marshes when Pip walked towards the old chimney. Behind him, the life he had thought he wanted had crumbled into dust. Estella was gone. Magwitch was dead. The house where he had hoped to find love and acceptance had burned to the ground. And Pip himself, stripped of his great expectations, had to discover who he really was beneath the layers of shame and pretension that he had wrapped around himself.
+const GREAT_EXPECTATIONS_EXTRACT_2 = `There was no house now, no brewery, no building whatever left, but the wall of the old garden. The cleared space had been enclosed with a rough fence, and looking over it, I saw that some of the old ivy had struck root anew, and was growing green on low quiet mounds of ruin. A gate in the fence standing ajar, I pushed it open, and went in.
 
-He walked slowly, feeling the weight of years that should have been bright with promise. The convict had loved him, had sacrificed everything for him, and Pip had despised him for it. Such is the cruelty of youth, and such is the price of understanding what true worth really means.`
+A cold silvery mist had veiled the afternoon, and the moon was not yet up to scatter it. But, the stars were shining beyond the mist, and the moon was coming, and the evening was not dark. I could trace out where every part of the old house had been, and where the brewery had been, and where the gates, and where the casks. I had done so, and was looking along the desolate garden walk, when I beheld a solitary figure in it.`
 
-const GREAT_EXPECTATIONS_EXTRACT_2_SOURCE = 'Great Expectations, closing sections (Dickens)'
+const GREAT_EXPECTATIONS_EXTRACT_2_SOURCE = 'Charles Dickens, Great Expectations (1861), Chapter 59'
 
 // ═══════════════════════════════════════════════════════════════════════════
 // EXTRACTS FOR PADDY CLARKE HA HA HA
@@ -167,16 +331,16 @@ const othellopaper: MockExamPaper = {
         {
           id: 'othello-q1',
           questionNumber: 1,
-          questionText: `Read the extract from Act 3 Scene 3 below. Analyse the significance of Iago's warning to Othello about jealousy. Consider the dramatic irony of this moment and how Shakespeare uses it to foreshadow the tragic conclusion of the play.\n\nYour response should consider:\n- The language and imagery used\n- The dramatic function of the warning\n- The relationship between Iago's words and actions\n- How Shakespeare presents the nature of jealousy`,
+          questionText: `Read the extract from Act 3 Scene 3 below. Analyse the significance of Iago's warning to Othello about jealousy, and of Othello's reply. Consider the dramatic irony of this moment and how Shakespeare uses it to foreshadow the tragic conclusion of the play.\n\nYour response should consider:\n- The language and imagery used\n- The dramatic function of the warning\n- The relationship between Iago's words and actions\n- How Shakespeare presents the nature of jealousy`,
           marks: 13,
           suggestedTimeMinutes: 20,
           questionType: 'analysis',
           extract: OTHELLO_EXTRACT_1,
           extractSource: OTHELLO_EXTRACT_1_SOURCE,
           modelAnswers: {
-            'Grade 4-5': `Iago warns Othello that jealousy is "the green-eyed monster" which destroys men's happiness. He says that a man who is certain his wife is unfaithful can be happy, but a man who suspects is miserable. This is ironic because Iago is deliberately planting jealousy in Othello's mind. The phrase "green-eyed monster" is a metaphor that makes jealousy seem dangerous and destructive. Shakespeare uses this warning to show how Iago manipulates people by saying things that seem helpful but are actually harmful. By the end of the play, Othello has become consumed by jealousy, which shows how the warning was also a prophecy of what would happen.`,
-            'Grade 6-7': `Shakespeare employs dramatic irony masterfully in this moment: Iago, who is orchestrating Othello's jealousy, warns against it as though he were Othello's protector. The language reveals Iago's understanding of jealousy's destructive power-the "green-eyed monster" metaphor personifies it as an autonomous, devouring force. Iago's observation that the jealous man is trapped in a state of simultaneous desire and doubt ("dotes, yet doubts") anticipates Othello's psychological descent. Crucially, Iago's final phrase "I am not what I am" hints at his own duplicitous nature, establishing the rhetorical strategy he will employ: speaking truths that mask falsehoods. The warning functions as psychological grooming, inoculating Othello against his own better judgment by positioning jealousy as an external threat he must defend against-when in fact it is being carefully cultivated within him.`,
-            'Grade 8-9': `The extract crystallises Shakespeare's exploration of epistemological uncertainty and the precariousness of masculine identity. Iago's apostrophe to jealousy constructs it not merely as an emotion but as an ontological condition-a state of being that colonises the subject's consciousness. The verb "mock" is semantically loaded: jealousy simultaneously ridicules and consumes its victim, enacting the subject's degradation through mockery. The distinction Iago draws between certainty ("certain of his fate") and suspicion ("dotes, yet doubts") articulates the tragedy's central problematics: absolute knowledge (even of cuckoldry) provides psychological stability, whereas uncertainty fractures the subject across incompatible states. The subsequent assertion "I am not what I am" destabilises the utterance's truth-value retroactively-Iago's warning against jealousy becomes a performative contradiction, his words simultaneously genuine and duplicitous. This collapses the boundary between warning and induction, between protection and manipulation, prefiguring the tragedy's trajectory toward total epistemological collapse.`,
+            'Grade 4-5': `Iago tells Othello to "beware, my lord, of jealousy" and calls it "the green-ey'd monster which doth mock / The meat it feeds on". The metaphor makes jealousy a beast that feeds on the person who feels it, so it destroys the man it lives in. Iago says a husband who is "certain of his fate" is better off than one who "dotes, yet doubts", because not knowing is the worst torment. This is ironic, because Iago is the one planting doubt in Othello's mind while pretending to protect him from it. He even prays, "Good heaven, the souls of all my tribe defend / From jealousy!" Othello answers confidently that he will not "make a life of jealousy" and that he will "see before I doubt; when I doubt, prove". The audience knows that Iago will give him false proof, so Othello's confidence foreshadows how he is destroyed. By the end of the play he is consumed by the jealousy he says here he will never feel.`,
+            'Grade 6-7': `Shakespeare builds this moment on dramatic irony: Iago, who is manufacturing Othello's jealousy, warns against it as though he were Othello's protector. The metaphor of "the green-ey'd monster which doth mock / The meat it feeds on" personifies jealousy as a predator that toys with and consumes its own host, so the jealous man is both its home and its food. Iago's balanced antitheses ("dotes, yet doubts, suspects, yet strongly loves") trap the jealous man between incompatible states, and the "damned minutes" he counts anticipate Othello's torment in the scenes to come. Othello's short reply, "O misery!", suggests the poison is already working, even before he insists at length that he will not "make a life of jealousy". His long speech is full of confident logic, "I'll see before I doubt; when I doubt, prove", and this is where the irony is sharpest: Iago will supply exactly the proof Othello asks for, and the handkerchief will stand in for seeing. Iago's prayer, "Good heaven, the souls of all my tribe defend / From jealousy!", shows the strategy he uses throughout the play, saying what sounds loyal and true in order to do the opposite. The warning works as manipulation of the subtlest kind: it puts jealousy into Othello's vocabulary under the pretence of keeping it out.`,
+            'Grade 8-9': `The extract dramatises the paradox on which the tragedy turns: jealousy enters Othello's mind through a warning against it. Iago's warning constructs jealousy as "the green-ey'd monster which doth mock / The meat it feeds on", an image in which the jealous subject is at once the monster's host and its prey; the verb "mock" suggests that jealousy ridicules its victim even as it devours him. The distinction Iago draws between the cuckold who is "certain of his fate" and the man who "dotes, yet doubts" identifies uncertainty, not betrayal, as the unbearable condition, and uncertainty is precisely what he is creating. Othello answers with a rhetoric of resolution: he rejects a life that would "follow still the changes of the moon / With fresh suspicions", and his maxim "I'll see before I doubt; when I doubt, prove" presents a mind that trusts evidence. Yet the speech carries its own fracture. The phrase "mine own weak merits" raises an insecurity Iago has not yet named, "For she had eyes, and chose me" answers a doubt nobody has voiced, and the closing antithesis, "Away at once with love or jealousy!", reduces the marriage to a choice between two absolutes, the binary Iago will exploit. The dramatic irony is therefore structural: Othello's demand for proof is the opening Iago needs, and the tragedy follows the substitution of manufactured evidence, the handkerchief, for sight. Iago's prayer that heaven defend "all my tribe" from jealousy completes the performative contradiction, since the warning and the infection are one speech act.`,
           },
           markScheme: [
             'Identifies key quotations and explains their significance',
@@ -196,8 +360,8 @@ const othellopaper: MockExamPaper = {
           suggestedTimeMinutes: 20,
           questionType: 'analysis',
           modelAnswers: {
-            'Grade 4-5': `Othello is a general and is supposed to be in charge, but Iago, though he is just a soldier, manages to control him. Iago is clever and knows what to say to make Othello doubt Desdemona. At the beginning, Othello seems confident and in control, but by the end Iago has destroyed him completely. Shakespeare shows that Othello's position as a general doesn't protect him from manipulation. Iago uses lies and suggestions to make Othello angry and jealous. The fact that Othello is Black in Venice might make him feel like an outsider, and Iago uses this against him. Race seems to play a role in how easily Othello can be manipulated by Iago.`,
-            'Grade 6-7': `Shakespeare's portrayal of the power dynamic between Othello and Iago reveals a paradox: despite Othello's official authority as general, Iago's linguistic and psychological power gradually displaces it. Othello initially demonstrates rhetorical mastery and military confidence, qualities that command respect in Venice. However, Iago's insidious strategy of suggestion-offering "honest Iago's" observations as though reluctant-inverts the power structure. By Act 3, Othello has become dependent on Iago's interpretations of events, transforming the general into the subordinate. This inversion is intersected by racial considerations: Othello's position as a Moorish outsider in Venetian society may render him psychologically vulnerable to Iago's insinuations that he does not truly belong, that he cannot trust Venetian women, that his authority is provisional. Iago's repeated assertions of loyalty paradoxically undermine Othello's confidence in his own judgment. The tragedy unfolds through this erosion of agency, suggesting that patriarchal authority can be destabilised by the manipulation of doubt.`,
+            'Grade 4-5': `Othello is a general and is supposed to be in charge, but Iago, though he is only Othello's ensign, manages to control him. Iago is clever and knows what to say to make Othello doubt Desdemona. At the beginning, Othello seems confident and in control, but by the end Iago has destroyed him completely. Shakespeare shows that Othello's position as a general doesn't protect him from manipulation. Iago uses lies and suggestions to make Othello angry and jealous. The fact that Othello is Black in Venice might make him feel like an outsider, and Iago uses this against him. Race seems to play a role in how easily Othello can be manipulated by Iago.`,
+            'Grade 6-7': `Shakespeare's portrayal of the power dynamic between Othello and Iago reveals a paradox: despite Othello's official authority as general, Iago's linguistic and psychological power gradually displaces it. Othello initially demonstrates rhetorical mastery and military confidence, qualities that command respect in Venice. However, Iago's insidious strategy of suggestion-offering the observations of "honest Iago" as though reluctantly-inverts the power structure. By Act 3, Othello has become dependent on Iago's interpretations of events, transforming the general into the subordinate. This inversion is intersected by racial considerations: Othello's position as a Moorish outsider in Venetian society may render him psychologically vulnerable to Iago's insinuations that he does not truly belong, that he cannot trust Venetian women, that his authority is provisional. Iago's repeated assertions of loyalty paradoxically undermine Othello's confidence in his own judgment. The tragedy unfolds through this erosion of agency, suggesting that patriarchal authority can be destabilised by the manipulation of doubt.`,
             'Grade 8-9': `The power dynamics between Othello and Iago enact a semiotic inversion whereby the subaltern position becomes the site of rhetorical dominance. Othello's authority, grounded in military prowess and aristocratic privilege within the Venetian state apparatus, lacks the hermeneutic authority to interpret the signs that Iago systematically plants. Iago's mastery operates through negative capability-the strategic withholding of explicit assertion. His preferred rhetorical mode is the reluctant suggestion ("I like not that"), which inverts the power relation: Othello becomes the supplicant, entreating Iago to articulate the meanings Othello himself can no longer secure. This dynamic intersects critically with race: Othello's Moorish otherness, which initially grants him exoticism and authority, becomes, through Iago's manipulations, the site of insecurity. Iago exploits the constructed liminality of Othello's position-simultaneously valorised and alienated-suggesting that Othello's access to Venetian institutions (marriage, military command) remains contingent. The tragedy thus enacts the precariousness of authority when it cannot command interpretation, when the subject is epistemically positioned as outside the hermeneutic community he nominally leads.`,
           },
           markScheme: [
@@ -219,7 +383,7 @@ const othellopaper: MockExamPaper = {
           suggestedTimeMinutes: 15,
           questionType: 'evaluation',
           modelAnswers: {
-            'Grade 4-5': `Othello is both responsible and not responsible for what happens to him. He is responsible because he chooses to believe Iago's lies. He doesn't ask Desdemona about the handkerchief or trust her. But he is also a victim of Iago's clever manipulation. Iago is very good at his job and knows exactly what to say to make Othello jealous. A stronger man might have resisted, but Othello's jealousy takes over his mind. So while Othello makes the final choices that lead to tragedy, Iago has manipulated him into making those choices.`,
+            'Grade 4-5': `Othello is both responsible and not responsible for what happens to him. He is responsible because he chooses to believe Iago's lies. When he asks Desdemona for the handkerchief and she cannot produce it, he treats that as a sign that she is guilty, and he will not believe her when she swears she is innocent. But he is also a victim of Iago's clever manipulation. Iago is very good at his job and knows exactly what to say to make Othello jealous. A stronger man might have resisted, but Othello's jealousy takes over his mind. So while Othello makes the final choices that lead to tragedy, Iago has manipulated him into making those choices.`,
             'Grade 6-7': `Othello's culpability exists in a complex relation to Iago's manipulation. While Iago is undoubtedly the architect of the tragedy, Othello is not merely passive. His vulnerability stems from his existential position as an outsider in Venetian society-a vulnerability that Iago expertly targets. Othello's acceptance of the handkerchief as proof of infidelity suggests a willingness to believe that is partially his own. However, the intensity and sophistication of Iago's assault-his understanding of masculine honour, his exploitation of Othello's insecurity regarding his marriage-makes it difficult to attribute responsibility primarily to Othello. Shakespeare complicates a simple moral reading by suggesting that Othello's tragic blindness is induced by an antagonist of extraordinary psychological acuity. The play thus invites a tragic understanding wherein protagonist and antagonist are locked in a dynamic where responsibility is distributed, not concentrated.`,
             'Grade 8-9': `The question of responsibility in Othello invokes the tragedy's fundamental concern with agency and determination. Othello is culpable insofar as his acceptance of ocular "proof" (the handkerchief) demonstrates a susceptibility to empiricism that privileges visible evidence over epistemic alternatives. His refusal to credit Desdemona's testimony, his demand for "ocular proof," enacts a hermeneutic closure that forecloses other interpretive possibilities. Yet this same susceptibility is precisely what Iago has engineered through a methodical dismantling of Othello's interpretive frameworks. The handkerchief functions as a linguistic sign whose meaning is entirely constructed by Iago; Othello's error is not in his reasoning but in his acceptance of Iago's hermeneutics. This suggests that responsibility must be understood not as individuated agency but as the production of subjects through discourse. Othello's vulnerability is constituted through his racial and social liminality, his masculine identity contingent on the recognition of others. Iago's tragic achievement is his exploitation of this contingency. Thus responsibility is shared, distributed across a field of power relations that produces Othello's tragic blindness.`,
           },
@@ -243,8 +407,8 @@ const othellopaper: MockExamPaper = {
           questionType: 'analysis',
           modelAnswers: {
             'Grade 4-5': `Desdemona is presented through the eyes of the men around her. Othello sees her as perfect and beautiful, but he also treats her as something he owns. When he becomes jealous, he calls her terrible names like "that cunning whore." Iago also describes her in crude, sexual ways, which shows how men reduce her to her sexuality. Desdemona herself speaks less than the men, and she is often passive. She defends herself against the accusations, but no one listens to her. Shakespeare shows how women are trapped by men's ideas of what they should be. Desdemona is loving and loyal, but this loyalty is used against her by the men who don't believe her.`,
-            'Grade 6-7': `Shakespeare's Desdemona is constructed almost entirely through male mediation. Othello's earlier speeches employ Petrarchan language, aestheticising her into an object of idealised beauty: "she loved me for the dangers I had pass'd." This elevation is paradoxically possessive-she becomes a trophy of conquest, evidence of Othello's exceptional status. When jealousy intervenes, Othello's language undergoes violent inversion; she becomes "a fair devil," his apostrophes charged with misogynistic degradation. Iago's characterisation of her is relentlessly sexual, reducing her to her sexuality through crude imagery. Crucially, Desdemona's own voice is marginalised; she speaks less frequently and is often confined to domestic spaces. Yet her language, when permitted, is direct, logical, and emotionally articulate-she attempts rational argument ("I am not merry, but I do beguile / The thing I am by seeming otherwise"). Her final "Commend me to my kind lord" demonstrates a persistence of loyalty that exposes the tragedy's gendered dimensions: she remains subject to male interpretation even as she is dying. Shakespeare's portrayal suggests how patriarchal authority depends on the silencing of female subjectivity.`,
-            'Grade 8-9': `Desdemona's textual presence instantiates what we might term the tragedy's gender aporia: her status as protagonist is constantly deferred through the hermeneutic authority granted to male speakers. Her selfhood is constituted through masculine interpretation-Othello's Petrarchan idealisation ("O behold! / How you see light"), Iago's pornographic reduction, Cassio's courtly adoration. The notable infrequency of Desdemona's direct speech, relative to her narrative centrality, enacts syntactically her exclusion from meaning-making. Yet when she does speak, her discourse instantiates a radical alterity to the male tragic register: rational, affectively direct, concerned with relationship rather than honour. Her "I am not merry but I do beguile the thing I am" demonstrates a sophistication of self-reflection absent from Othello's jealous solipsism. The play's final cruelty is positioned precisely here: Desdemona's attempted speech in her own defence is constantly interrupted, foreclosed, reinterpreted. Her final utterance-"Commend me to my kind lord"-performs a tragic irony of stunning force: even in extremis, even facing her murderer, she enacts the linguistic subjection that has defined her throughout. Shakespeare's presentation thus implicates the tragedy in the very structures of patriarchal silencing it ostensibly depicts.`,
+            'Grade 6-7': `Shakespeare's Desdemona is constructed almost entirely through male mediation. Othello's account to the Senate makes her love a response to his own story ("She lov'd me for the dangers I had pass'd"), and on Cyprus he greets her as "my fair warrior" and "my soul's joy": she is idealised, but as a reflection of his own glory. This elevation is paradoxically possessive - she becomes a trophy of conquest, evidence of Othello's exceptional status. When jealousy intervenes, Othello's language undergoes violent inversion; she becomes "the fair devil", his apostrophes charged with misogynistic degradation. Iago's characterisation of her is relentlessly sexual, reducing her to her sexuality through crude imagery. Crucially, Desdemona's own voice is marginalised; she speaks less frequently and is often confined to domestic spaces. Yet her language, when permitted, is direct and emotionally self-aware: waiting for news of Othello's ship, she admits, "I am not merry, but I do beguile / The thing I am, by seeming otherwise." Her final "Commend me to my kind lord" demonstrates a persistence of loyalty that exposes the tragedy's gendered dimensions: she remains subject to male interpretation even as she is dying. Shakespeare's portrayal suggests how patriarchal authority depends on the silencing of female subjectivity.`,
+            'Grade 8-9': `Desdemona's textual presence instantiates what we might term the tragedy's gender aporia: her status as protagonist is constantly deferred through the hermeneutic authority granted to male speakers. Her selfhood is constituted through masculine interpretation-Othello's idealisation ("O my soul's joy!"), Iago's crudely sexual reduction, Cassio's courtly adoration. The notable infrequency of Desdemona's direct speech, relative to her narrative centrality, enacts syntactically her exclusion from meaning-making. Yet when she does speak, her discourse instantiates a radical alterity to the male tragic register: rational, affectively direct, concerned with relationship rather than honour. Her "I am not merry, but I do beguile / The thing I am, by seeming otherwise" demonstrates a sophistication of self-reflection absent from Othello's jealous solipsism. The play's final cruelty is positioned precisely here: Desdemona's attempted speech in her own defence is constantly interrupted, foreclosed, reinterpreted. Her final utterance-"Commend me to my kind lord"-performs a tragic irony of stunning force: even in extremis, even facing her murderer, she enacts the linguistic subjection that has defined her throughout. Shakespeare's presentation thus implicates the tragedy in the very structures of patriarchal silencing it ostensibly depicts.`,
           },
           markScheme: [
             'Identifies language features and imagery related to Desdemona',
@@ -316,16 +480,16 @@ const henryVpaper: MockExamPaper = {
         {
           id: 'henry-v-q1',
           questionNumber: 1,
-          questionText: `Read the extract from Henry's speech before Agincourt (Act 3 Scene 1). Analyse the techniques Shakespeare uses to inspire his soldiers and motivate them to fight.\n\nConsider:\n- The language and tone of the speech\n- The use of imagery and metaphor\n- How Shakespeare presents the transformation from peacetime to warfare\n- The effectiveness of Henry's rhetoric`,
+          questionText: `Read the extract from Henry's speech at the siege of Harfleur (Act 3 Scene 1). Analyse the techniques Shakespeare gives Henry to inspire his soldiers and motivate them to fight.\n\nConsider:\n- The language and tone of the speech\n- The use of imagery and metaphor\n- How Shakespeare presents the transformation from peacetime to warfare\n- The effectiveness of Henry's rhetoric`,
           marks: 13,
           suggestedTimeMinutes: 20,
           questionType: 'analysis',
           extract: HENRY_V_EXTRACT_1,
           extractSource: HENRY_V_EXTRACT_1_SOURCE,
           modelAnswers: {
-            'Grade 4-5': `Henry's speech uses very dramatic language to inspire his soldiers. He starts with "Once more unto the breach" which is a command that shows determination. He tells them to "imitate the action of the tiger," which means they should be fierce and savage like an animal. He says they should "Disguise fair nature with hard-favour'd rage," meaning they should hide their humanity and show only anger. The images of war are violent and powerful. He says that in peace men should be humble, but in war they must be fierce. His speech builds excitement and makes the soldiers feel like heroes. It's very effective because he makes them feel brave and important, and he suggests that following him will lead to glory.`,
-            'Grade 6-7': `Shakespeare's Henry uses a series of imperative constructions to establish rhetorical dominance and mobilise agency: "Once more unto the breach" functions as both rallying cry and implicit threat. The central opposition between "peace" and "war" defines two modes of masculine expression: peace demands "modest stillness and humility," while war requires the full unleashing of natural aggression. The metaphorical language builds intensity through animal imagery-soldiers are exhorted to "imitate the action of the tiger," connecting martial prowess to predatory instinct. The language of physical transformation ("Stiffen the sinews," "summon up the blood") emphasises embodied change, as if the men must become different creatures. The visual imagery is relentless: "terrible aspect," "galled rock / O'erhang and jutty his confounded base, / Swill'd with the wild and wasteful ocean." This imagery combines geological solidity with liquid chaos, suggesting the overwhelming power of natural and martial forces. Henry's rhetoric works through what we might call a "naturalisation" of violence-he suggests that ferocity is the men's true nature, merely disguised in peacetime. This is a powerful rhetorical move because it simultaneously demands brutal action while suggesting that such action aligns with essential masculine identity.`,
-            'Grade 8-9': `Henry's oratory enacts a phenomenological transformation whereby the soldiers' bodies become the instruments of sovereign will. The opening imperative "Once more unto the breach" is spatially and temporally disorientating-"breach" refers simultaneously to the literal opening in the fortification and the rupture in historical time that warfare creates. The antithesis between peace and war establishes a binary metaphysics wherein peace is characterised by negation ("modest stillness," "humility") while war is characterised by pure presence and affirmation. The command to "imitate the action of the tiger" invokes a Lacanian imaginary wherein identification with the predator overwrites human identity itself. Crucially, Henry constructs this transformation as both necessary and "natural"-soldiers are exhorted to "disguise fair nature," suggesting that beneath courtly civility lies an essential savagery awaiting activation. The extended maritime imagery in the final lines-"Swill'd with the wild and wasteful ocean"-constructs the body of the soldier as a geographical entity, subject to the forces of nature itself. This rhetorical strategy operates through a kind of affective contagion: Henry's language attempts to redistribute affect, to transform fear into rage, hesitation into momentum. The speech's power derives from its insistence that individual agency is subsumed into collective movement-the soldiers are addressed not as individuals but as an undifferentiated mass ("dear friends") whose bodies must become one body under the king's direction.`,
+            'Grade 4-5': `Henry's speech uses very dramatic language to inspire his soldiers. He starts with "Once more unto the breach" which is a command that shows determination. He tells them to "imitate the action of the tiger," which means they should be fierce and savage like an animal. He says they should "Disguise fair nature with hard-favour'd rage," meaning they should hide their humanity and show only anger. The images of war are violent and powerful. He says that in peace men should be humble, but in war they must be fierce. His speech builds excitement because the commands come one after another: "Stiffen the sinews, summon up the blood". It's very effective because it gives the soldiers something to do with their bodies, so they have no time to be afraid.`,
+            'Grade 6-7': `Shakespeare's Henry uses a series of imperative constructions to establish rhetorical dominance and mobilise agency: "Once more unto the breach" functions as both rallying cry and implicit threat. The central opposition between "peace" and "war" defines two modes of masculine expression: peace demands "modest stillness and humility," while war requires a ferocity the soldiers must put on. The metaphorical language builds intensity through animal imagery-soldiers are exhorted to "imitate the action of the tiger," connecting martial prowess to predatory instinct. The language of physical transformation ("Stiffen the sinews," "summon up the blood") emphasises embodied change, as if the men must become different creatures. The visual imagery is relentless: "terrible aspect," "galled rock / O'erhang and jutty his confounded base, / Swill'd with the wild and wasteful ocean." This imagery combines geological solidity with liquid chaos, suggesting the overwhelming power of natural and martial forces. Henry is candid that this ferocity is a performance: the men must "Disguise fair nature with hard-favour'd rage", so their true nature is "fair" and the rage is a mask put on for battle. This is a powerful rhetorical move because it demands brutal action while reassuring the soldiers that such action does not change who they are.`,
+            'Grade 8-9': `Henry's oratory enacts a phenomenological transformation whereby the soldiers' bodies become the instruments of sovereign will. The opening imperative "Once more unto the breach" is spatially and temporally disorientating-"breach" refers simultaneously to the literal opening in the fortification and the rupture in historical time that warfare creates. The antithesis between peace and war establishes a binary metaphysics wherein peace is characterised by negation ("modest stillness," "humility") while war is characterised by pure presence and affirmation. The command to "imitate the action of the tiger" invokes a Lacanian imaginary wherein identification with the predator seems to overwrite human identity itself. Crucially, Henry presents this transformation as a disguise rather than a revelation: the line "Disguise fair nature with hard-favour'd rage" makes the savagery a mask worn over a nature that remains "fair". The speech licenses violence as a role to be played, a telling image in a play so conscious of its own theatricality. The extended maritime imagery in the final lines-"Swill'd with the wild and wasteful ocean"-constructs the body of the soldier as a geographical entity, subject to the forces of nature itself. This rhetorical strategy operates through a kind of affective contagion: Henry's language attempts to redistribute affect, to transform fear into rage, hesitation into momentum. The speech's power derives from its insistence that individual agency is subsumed into collective movement: in these lines the soldiers are addressed not as individuals but together, as "dear friends", whose bodies must become one body under the king's direction. Only later in the speech, beyond these lines, does Henry address the nobles and the yeomen separately.`,
           },
           markScheme: [
             'Identifies key rhetorical techniques',
@@ -340,16 +504,16 @@ const henryVpaper: MockExamPaper = {
         {
           id: 'henry-v-q2',
           questionNumber: 2,
-          questionText: `Analyse Henry's St. Crispin's Day speech (Act 4 Scene 3). How does Shakespeare present the nature of honour, brotherhood, and legacy through this speech?\n\nConsider:\n- The structure and language of the speech\n- How Henry addresses his soldiers\n- The promised reward for fighting\n- The presentation of memory and legacy`,
+          questionText: `Read the extract from Henry's St Crispin's Day speech (Act 4 Scene 3). How does Shakespeare present the nature of honour, brotherhood, and legacy through this speech?\n\nConsider:\n- The structure and language of the speech\n- How Henry addresses his soldiers\n- The promised reward for fighting\n- The presentation of memory and legacy`,
           marks: 13,
           suggestedTimeMinutes: 20,
           questionType: 'analysis',
           extract: HENRY_V_EXTRACT_2,
           extractSource: HENRY_V_EXTRACT_2_SOURCE,
           modelAnswers: {
-            'Grade 4-5': `In this speech, Henry tells his soldiers that they will be remembered forever. He says that men who fight with him today will be seen as brothers. The idea of "we few, we happy few, we band of brothers" shows that the soldiers are united in a special way. Henry promises that even old men will remember this day and teach their sons about it. People will know the soldiers' names forever. This is a powerful promise because it transforms the horror of war into something glorious. Henry suggests that dying in battle is worth it because you will be remembered as a hero. He uses the idea of legacy and memory to make the soldiers feel like what they are doing is important and will be celebrated.`,
-            'Grade 6-7': `Henry's St. Crispin's Day speech articulates a philosophy of history wherein individual death is transcended through collective memory and national legacy. The speech's opening ("Old men forget: yet all shall be forgot") establishes a paradox: forgetting is inevitable, yet these particular soldiers will be exempted from historical erasure. Henry constructs a temporal economy wherein present sacrifice is exchanged for eternal remembrance. The famous phrase "we few, we happy few, we band of brothers" democratises brotherhood-hierarchy is momentarily suspended in the shared identity of soldiers. Henry emphasises that the soldiers' names will be "Familiar in his mouth as household words," suggesting a kind of domestication of the martial into the intimate. The final assertion, "he to-day that sheds his blood with me / Shall be my brother," uses the verb "sheds" to suggest a kind of sacrificial exchange: blood spilled becomes the basis for kinship. This is a remarkable rhetorical move because it reframes violent death as a source of identity and connection. The speech's power lies in its offer of transcendence through remembrance: death becomes meaningful insofar as it becomes part of historical narrative. Shakespeare thus presents honour not as individual martial prowess but as narrative immortality, as being written into the stories that generations will tell.`,
-            'Grade 8-9': `Henry's speech enacts what we might term a "memorialisation of the present"-a temporal doubling whereby the moment of utterance is simultaneously positioned as historical event and as source of future narrative. The opening paradox ("Old men forget: yet all shall be forgot") instantiates the speech's fundamental problematic: how to secure permanence in a world governed by temporality and forgetting. Henry's solution is to position his auditors outside the logic of mere mortality, to make them the subject of perpetual commemoration. The phrase "we few, we happy few, we band of brothers" performs an extraordinary rhetorical act: it egalitarianises the military hierarchy, positioning all soldiers as bound together through the prospect of shared memory rather than through subordination to kingly will. This is not a promise of reward in heaven or in the material world, but rather a promise of narratological immortality-to be embedded within the stories by which a nation constitutes itself. The verb "sheds" carries phenomenological weight: the spillage of blood becomes the fluid through which brotherhood is constituted. The speech thus transforms the obscene spectacle of actual warfare-the crushing mud, the medieval horror-into a narrative of transcendent community. Henry's rhetoric achieves its power precisely through this aestheticisation of violence: he offers his soldiers the fantasy that their deaths will be meaningful, that their blood will have been well-spent on behalf of their names. The speech's genius lies in its construction of a narrative temporality wherein the past is perpetually recuperated for national purposes.`,
+            'Grade 4-5': `In this speech, Henry tells his men that they will be remembered for ever. He imagines a soldier who survives into old age and every year, on the eve of Saint Crispin's day, will "strip his sleeve and show his scars". He says that the men who fight with him will be his brothers: "We few, we happy few, we band of brothers". This shows that the soldiers are united in a special way, even with the King. He promises that "This story shall the good man teach his son", so the battle will be passed down through families. This is a powerful promise because it turns the danger of war into something glorious. He even says that "gentlemen in England now abed" will wish they had been there. He uses legacy and memory to make the soldiers feel that what they are doing is important and will be celebrated.`,
+            'Grade 6-7': `Henry's Crispin's Day speech sets out a philosophy of history in which danger now is exchanged for remembrance later. The extract begins with the survivor, "He that shall live this day, and see old age", who will "strip his sleeve and show his scars" at the yearly feast. The line "Old men forget; yet all shall be forgot" concedes that memory fails, yet insists that this old man will "remember with advantages" what he did, a wry admission that the story will grow in the telling. The names that become "Familiar in his mouth as household words" are those of the King and his lords ("Harry the King, Bedford, and Exeter"), domesticating the martial into the intimate language of a toast. The famous phrase "We few, we happy few, we band of brothers" then extends that fellowship to every man: hierarchy is momentarily suspended, and "he today that sheds his blood with me / Shall be my brother; be he ne'er so vile". The verb "sheds" suggests a sacrificial exchange in which blood spilled becomes the basis of kinship, and "This day shall gentle his condition" promises that the lowest-born will be raised to gentility by fighting. The closing image of "gentlemen in England now abed" who will "hold their manhoods cheap" turns absence from the battle into shame. Shakespeare thus presents honour not as individual prowess but as membership of a story that generations will tell.`,
+            'Grade 8-9': `Henry's speech enacts a memorialisation of the present: the moment of utterance is positioned at once as historical event and as the source of future narrative, and its future tenses project the listeners forward to a feast day on which the battle has already become a story. The paradox of "Old men forget; yet all shall be forgot" names the speech's fundamental problem, how to secure permanence in a world governed by forgetting, and Henry's answer is candidly partial: the veteran will "remember with advantages", so remembrance is itself a kind of embellishment. There is a quiet hierarchy in the commemoration, too. The names drunk in "flowing cups" are the King's and his lords', while the common soldier survives only as the unnamed veteran who shows his scars. Against that, "We few, we happy few, we band of brothers" performs an extraordinary egalitarian gesture, binding all ranks through shared danger and shared memory, and "This day shall gentle his condition" promises a social elevation that the rest of the play does not stage. The reward offered is not plunder or ransom but status and story. The verb "sheds" carries the weight of sacrifice: spilled blood becomes the fluid through which brotherhood is constituted, "be he ne'er so vile". The speech thus transforms the prospect of actual warfare, outnumbered and exhausted men facing a fresh French army, into a narrative of transcendent community, and its closing turn on the "gentlemen in England now abed" converts absence into shame. Henry's rhetoric draws its power from this aestheticisation of violence: it assures his men that their blood will have been well spent, and recuperates the present for national purposes before it has even happened.`,
           },
           markScheme: [
             'Identifies key themes and concepts',
@@ -371,8 +535,8 @@ const henryVpaper: MockExamPaper = {
           questionType: 'evaluation',
           modelAnswers: {
             'Grade 4-5': `Henry is presented as a strong and inspiring leader. He makes powerful speeches that motivate his soldiers, and he seems to care about his men. However, he is also a warrior king who orders killing and violence. He is willing to kill people for political power, and he doesn't seem to feel sorry about the deaths caused by the war. He uses rhetoric to inspire men to die for him, but this might be seen as manipulation. So while Henry is an effective leader who achieves his military goals, he might not be an ideal leader because he is willing to use violence and deception to get what he wants. Shakespeare shows both his strengths and his moral weaknesses.`,
-            'Grade 6-7': `Shakespeare presents Henry as an exceptionally effective leader whose rhetorical and strategic abilities are considerable, yet also as a morally ambiguous figure whose conduct raises ethical questions. Henry's speeches demonstrate his capacity to inspire, to bind soldiers to his will through language, and to articulate a coherent vision of national purpose. His private scenes show him as reflective and even sympathetic. However, the play also registers serious reservations: his order to execute the French prisoners complicates any straightforward celebration of his heroism. His courtship of Katherine appears performative and politically calculated. The Harfleur episode, with its implicit threat of massacre, suggests Henry understands that his power partly depends on the capacity to unleash violence. Moreover, the play's frame (the Chorus) continually emphasises the limitations of theatrical representation, inviting scepticism about Henry's constructed image. Thus Shakespeare presents Henry as an ideal pragmatic leader-one who understands power and executes his will effectively-but as a problematic ideal if measured against moral principles or humane values.`,
-            'Grade 8-9': `Shakespeare's Henry instantiates what we might call the paradox of ideal leadership under conditions of war: he achieves his military and political objectives through a combination of rhetorical mastery, strategic acuity, and willingness to deploy violence. Yet the play systematically thematises the gap between representation and reality, between the king's public persona and his private consciousness. Henry is "ideal" insofar as he understands power as fundamentally rhetorical-his authority derives not from inherent right but from his capacity to construct narratives (of brotherhood, of national glory, of historical continuity) that mobilise action. Yet this very capacity for aesthetic manipulation registers the contingency and constructedness of all authority. The massacre at Harfleur and the execution of prisoners reveal that Henry's benign rhetoric conceals a willingness to mobilise spectacular violence. His courtship of Katherine performs nationhood as a sexual conquest-the marriage becomes a political instrument. The play's repeated Chorus invitations to the audience to "eke out our performance" suggest that all political representation requires complicity, that the audience must supply the narrative coherence that the play itself resists providing. Thus Shakespeare presents Henry as an ideal leader precisely in the sense that he perfectly embodies the operations of political power: persuasion, strategic violence, the construction of legitimacy through narrative. But the play simultaneously troubles any uncritical endorsement, suggesting that such power necessarily depends on forms of occlusion and violence that resist narrative aestheticisation.`,
+            'Grade 6-7': `Shakespeare presents Henry as an exceptionally effective leader whose rhetorical and strategic abilities are considerable, yet also as a morally ambiguous figure whose conduct raises ethical questions. Henry's speeches demonstrate his capacity to inspire, to bind soldiers to his will through language, and to articulate a coherent vision of national purpose. His private scenes show him as reflective and even sympathetic. However, the play also registers serious reservations: his order to execute the French prisoners complicates any straightforward celebration of his heroism. His courtship of Katherine appears performative and politically calculated. The Harfleur episode, with its explicit threat of massacre if the town does not yield, suggests Henry understands that his power partly depends on the capacity to unleash violence. Moreover, the play's frame (the Chorus) continually emphasises the limitations of theatrical representation, inviting scepticism about Henry's constructed image. Thus Shakespeare presents Henry as an ideal pragmatic leader-one who understands power and executes his will effectively-but as a problematic ideal if measured against moral principles or humane values.`,
+            'Grade 8-9': `Shakespeare's Henry instantiates what we might call the paradox of ideal leadership under conditions of war: he achieves his military and political objectives through a combination of rhetorical mastery, strategic acuity, and willingness to deploy violence. Yet the play systematically thematises the gap between representation and reality, between the king's public persona and his private consciousness. Henry is "ideal" insofar as he understands power as fundamentally rhetorical-his authority derives not from inherent right but from his capacity to construct narratives (of brotherhood, of national glory, of historical continuity) that mobilise action. Yet this very capacity for aesthetic manipulation registers the contingency and constructedness of all authority. The massacre he threatens at Harfleur and his order to kill the French prisoners reveal that Henry's benign rhetoric conceals a willingness to mobilise spectacular violence. His courtship of Katherine performs nationhood as a sexual conquest-the marriage becomes a political instrument. The play's repeated Chorus invitations to the audience to "eke out our performance" suggest that all political representation requires complicity, that the audience must supply the narrative coherence that the play itself resists providing. Thus Shakespeare presents Henry as an ideal leader precisely in the sense that he perfectly embodies the operations of political power: persuasion, strategic violence, the construction of legitimacy through narrative. But the play simultaneously troubles any uncritical endorsement, suggesting that such power necessarily depends on forms of occlusion and violence that resist narrative aestheticisation.`,
           },
           markScheme: [
             'Addresses the question of ideal leadership',
@@ -393,13 +557,13 @@ const henryVpaper: MockExamPaper = {
           suggestedTimeMinutes: 15,
           questionType: 'analysis',
           modelAnswers: {
-            'Grade 4-5': `The common soldiers in the play experience war very differently from how Henry describes it. Henry talks about glory and brotherhood, but the soldiers worry about dying, about being hungry, and about being forgotten. In scenes with soldiers like Williams and Bates, we see them discussing whether the war is just and whether they will survive. They are concerned about their wives and families back home. Shakespeare shows that while Henry sees war as glorious and meaningful, the actual soldiers experience it as frightening and uncertain. There is a big gap between Henry's inspiring speeches and what the soldiers actually feel. This makes us question whether Henry's vision of war is really true or whether it is just a way to make men willing to die.`,
-            'Grade 6-7': `Shakespeare creates a significant disjunction between the aestheticised vision of war presented through Henry's rhetoric and the phenomenological reality experienced by common soldiers. In scenes with Williams, Bates, and Court, Shakespeare grants the soldiers a voice that expresses skepticism, fear, and moral concern. Their conversation about the justice of the war, their anxiety about death, their loyalty despite uncertainty-these elements present war as an experience of vulnerability rather than transcendent glory. Bates's statement "I will never distrust his promise" complicates easy readings of the soldiers' consent to violence; their loyalty appears constructed through rhetorical persuasion rather than genuine conviction. The soldiers' language is marked by pragmatism and earthiness, contrasting sharply with Henry's elevated diction. Moreover, the play's depiction of actual battle-the descriptions of death and suffering-provides a counterpoint to Henry's celebrations of martial prowess. Shakespeare thus uses the common soldiers to interrogate the gap between political rhetoric and lived experience, between the narrative Henry constructs and the reality his soldiers encounter.`,
-            'Grade 8-9': `The play's two-fold representation of war-through Henry's rhetoric and through the soldiers' consciousness-enacts what we might call the phenomenological rupture of ideological language. Henry's speeches construct war as meaningful, as a site of transcendent community and historical significance. Yet Shakespeare consistently grants voice to the soldiers' experience of war as characterised by contingency, mortality, and ethical uncertainty. In particular, the scene wherein Henry encounters Williams and Bates in disguise reveals that the soldiers' consent to violence is not enthusiastic but rather a form of resigned acceptance: "we know enough if we know we are Henry's subjects." The construction of "Henry's subjects" suggests that the soldiers' identity is entirely constituted through their relation to the king, that their agency is collapsed into the sovereign's will. Furthermore, the soldiers' conversation about the justice of the war introduces an ethical register absent from Henry's rhetoric. They worry about their families, about the legitimacy of Henry's claims, about what happens to the dead. Shakespeare thus presents two incommensurable versions of war: Henry's aestheticised and meaningful account, and the soldiers' experience of war as characterised by fear, uncertainty, and the crushing weight of sovereign demand. The play does not resolve this disjunction but rather preserves it, inviting critical reflection on the gap between rhetorical idealisation and lived suffering.`,
+            'Grade 4-5': `The common soldiers in the play experience war very differently from how Henry describes it. Henry talks about glory and brotherhood, but the soldiers worry about dying, about the families they will leave behind, and about whether the war is right. In scenes with soldiers like Williams and Bates, we see them discussing whether the war is just and whether they will survive. They are concerned about their wives and families back home. Shakespeare shows that while Henry sees war as glorious and meaningful, the actual soldiers experience it as frightening and uncertain. There is a big gap between Henry's inspiring speeches and what the soldiers actually feel. This makes us question whether Henry's vision of war is really true or whether it is just a way to make men willing to die.`,
+            'Grade 6-7': `Shakespeare creates a significant disjunction between the aestheticised vision of war presented through Henry's rhetoric and the phenomenological reality experienced by common soldiers. In scenes with Williams, Bates, and Court, Shakespeare grants the soldiers a voice that expresses scepticism, fear, and moral concern. Their conversation about the justice of the war, their anxiety about death, their loyalty despite uncertainty: these elements present war as an experience of vulnerability rather than transcendent glory. Bates's "I do not desire he should answer for me; and yet I determine to fight lustily for him" complicates easy readings of the soldiers' consent to violence, since his loyalty is a decision taken in spite of doubt rather than the product of conviction. Williams's image of "all those legs and arms and heads, chopp'd off in a battle" joining together "at the latter day" is the play's bluntest reply to Henry's rhetoric of glory. The soldiers' language is marked by pragmatism and earthiness, contrasting sharply with Henry's elevated diction. Moreover, the play's depiction of actual battle-the descriptions of death and suffering-provides a counterpoint to Henry's celebrations of martial prowess. Shakespeare thus uses the common soldiers to interrogate the gap between political rhetoric and lived experience, between the narrative Henry constructs and the reality his soldiers encounter.`,
+            'Grade 8-9': `The play's two-fold representation of war-through Henry's rhetoric and through the soldiers' consciousness-enacts what we might call the phenomenological rupture of ideological language. Henry's speeches construct war as meaningful, as a site of transcendent community and historical significance. Yet Shakespeare consistently grants voice to the soldiers' experience of war as characterised by contingency, mortality, and ethical uncertainty. In particular, the scene wherein Henry encounters Williams and Bates in disguise reveals that the soldiers' consent to violence is not enthusiastic but rather a form of resigned acceptance: Bates says "we know enough, if we know we are the King's subjects." The phrase "the King's subjects" defines the soldiers by their relation to an office rather than to a man, and the irony is that Bates says it to the King himself, in disguise. He goes on to argue that "our obedience to the King wipes the crime of it out of us", handing moral responsibility upwards, so that the soldiers' agency is collapsed into the sovereign's will. Furthermore, the soldiers' conversation about the justice of the war introduces an ethical register absent from Henry's rhetoric. They worry about their families, about the legitimacy of Henry's claims, about what happens to the dead. Shakespeare thus presents two incommensurable versions of war: Henry's aestheticised and meaningful account, and the soldiers' experience of war as characterised by fear, uncertainty, and the crushing weight of sovereign demand. The play does not resolve this disjunction but rather preserves it, inviting critical reflection on the gap between rhetorical idealisation and lived suffering.`,
           },
           markScheme: [
             'Identifies soldier perspectives in the play',
-            'Analyzes their language and concerns',
+            'Analyses their language and concerns',
             "Compares to Henry's rhetoric",
             'Uses specific textual examples',
             'Discusses the disjunction between ideal and reality',
@@ -426,15 +590,15 @@ const henryVpaper: MockExamPaper = {
           questionType: 'evaluation',
           modelAnswers: {
             'Grade 4-5': `Shakespeare presents heroism in Henry V, but he also questions it. Henry is a hero because he is brave, he inspires his soldiers, and he achieves great military victories. But Shakespeare also shows the cost of heroism-soldiers die, innocent people are killed, and the glory Henry describes might not be real. The play celebrates Henry's achievements but questions whether war is really as glorious as it seems. Henry uses his words to make soldiers believe in his version of heroism, but the soldiers are also shown as afraid and uncertain. So Shakespeare presents heroism as powerful but complicated-it is admirable but also troubling because it depends on rhetoric and violence.`,
-            'Grade 6-7': `Shakespeare's Henry V presents heroism as a complex and contested concept. On one hand, the play celebrates Henry's martial prowess, his rhetorical brilliance, and his capacity to inspire collective action. The Chorus invokes traditional heroic themes, positioning Henry within a lineage of English warrior kings. Henry's speeches construct heroism as a form of transcendence-dying in battle becomes meaningful because one will be remembered. Yet simultaneously, the play undermines this celebratory vision. The common soldiers' skepticism about the war's justice complicates straightforward heroic narratives. The depiction of actual violence-the threats at Harfleur, the massacre of prisoners-suggests that heroism depends on the willingness to commit acts that might otherwise appear barbaric. Furthermore, Henry's construction of his heroic identity is increasingly revealed to be a performative act: his private conversations with Katherine, his disguised encounters with soldiers, suggest that heroism is something to be performed rather than authentically embodied. Thus Shakespeare presents heroism as at once real (Henry does achieve military victory) and constructed (heroism is fundamentally a matter of rhetorical representation and narrative framing).`,
-            'Grade 8-9': `Shakespeare's interrogation of heroism in Henry V unfolds through a sustained play on the distinction between performative construction and authentic achievement. Traditional heroic narrative depends on the coherence between inner virtue and outward action, between the hero's subjective experience and his public representation. Yet Shakespeare systematically complicates this coherence. Henry's rhetorical mastery is extraordinary, but it is precisely a mastery of representation-he constructs narratives that mobilise action but which may not correspond to phenomenological reality. The soldiers' implicit skepticism ("we know enough if we know we are Henry's subjects") suggests that heroic identity is conferred by the sovereign, not achieved through individual virtue. The massacre at Harfleur and the execution of prisoners reveal that heroism (understood as martial success) depends on capacities for violence and brutality that resist aesthetic integration into heroic narrative. Moreover, the Chorus's repeated invitations to the audience to "eke out our performance" foreground the role of audience complicity in constructing heroic meaning. The play thus suggests that heroism is fundamentally dependent on acts of imaginative collaboration between performer and audience, between the hero and the community that constructs his meaning. This does not mean that Henry's achievements are illusory-he does win at Agincourt-but rather that the significance and meaning of those achievements are constructed through narrative and representation, not transparently present in the events themselves. Shakespeare thus presents heroism as dependent on rhetoric and imagination, as contingent and constructed, yet real in its effects.`,
+            'Grade 6-7': `Shakespeare's Henry V presents heroism as a complex and contested concept. On one hand, the play celebrates Henry's martial prowess, his rhetorical brilliance, and his capacity to inspire collective action. The Chorus invokes traditional heroic themes, positioning Henry within a lineage of English warrior kings. Henry's speeches construct heroism as a form of transcendence-dying in battle becomes meaningful because one will be remembered. Yet simultaneously, the play undermines this celebratory vision. The common soldiers' scepticism about the war's justice complicates straightforward heroic narratives. The depiction of actual violence-the threats at Harfleur, the massacre of prisoners-suggests that heroism depends on the willingness to commit acts that might otherwise appear barbaric. Furthermore, Henry's construction of his heroic identity is increasingly revealed to be a performative act: his private conversations with Katherine, his disguised encounters with soldiers, suggest that heroism is something to be performed rather than authentically embodied. Thus Shakespeare presents heroism as at once real (Henry does achieve military victory) and constructed (heroism is fundamentally a matter of rhetorical representation and narrative framing).`,
+            'Grade 8-9': `Shakespeare's interrogation of heroism in Henry V unfolds through a sustained play on the distinction between performative construction and authentic achievement. Traditional heroic narrative depends on the coherence between inner virtue and outward action, between the hero's subjective experience and his public representation. Yet Shakespeare systematically complicates this coherence. Henry's rhetorical mastery is extraordinary, but it is precisely a mastery of representation-he constructs narratives that mobilise action but which may not correspond to phenomenological reality. The soldiers' doubts, and Bates's resigned "we know enough, if we know we are the King's subjects", which hands the moral weight of the war to the King, suggest that the common soldier's part in the heroic is conferred by the sovereign, not achieved through individual virtue. The massacre Henry threatens at Harfleur and the killing of the French prisoners reveal that heroism (understood as martial success) depends on capacities for violence and brutality that resist aesthetic integration into heroic narrative. Moreover, the Chorus's repeated invitations to the audience to "eke out our performance" foreground the role of audience complicity in constructing heroic meaning. The play thus suggests that heroism is fundamentally dependent on acts of imaginative collaboration between performer and audience, between the hero and the community that constructs his meaning. This does not mean that Henry's achievements are illusory-he does win at Agincourt-but rather that the significance and meaning of those achievements are constructed through narrative and representation, not transparently present in the events themselves. Shakespeare thus presents heroism as dependent on rhetoric and imagination, as contingent and constructed, yet real in its effects.`,
           },
           markScheme: [
             'Directly addresses the question of heroism',
             'Discusses celebration and critique',
             'Uses substantial textual evidence',
             'Considers multiple perspectives',
-            'Analyzes key scenes and speeches',
+            'Analyses key scenes and speeches',
             'Discusses historical and theatrical context',
             'Develops sustained, nuanced argument',
             'Reaches well-justified conclusion',
@@ -454,7 +618,7 @@ const underMilkWoodpaper: MockExamPaper = {
   board: 'WJEC',
   paperNumber: 1,
   title: 'Under Milk Wood: Community, Language, and Identity',
-  subtitle: 'WJEC Literature A Level: Poetry and Prose',
+  subtitle: 'WJEC Literature A Level: Drama',
   code: 'A101/03',
   totalTimeMinutes: 120,
   totalMarks: 105,
@@ -476,13 +640,13 @@ const underMilkWoodpaper: MockExamPaper = {
           extract: UNDER_MILK_WOOD_EXTRACT_1,
           extractSource: UNDER_MILK_WOOD_EXTRACT_1_SOURCE,
           modelAnswers: {
-            'Grade 4-5': `Thomas's opening is very poetic and uses interesting language. The phrase "bible-black" is unusual-it compares the darkness to the Bible, which makes it seem very dark and also religious. "Starless and moonless" and "sloeblack, slow, black, crowblack" repeat the word "black" and similar sounds, which creates a feeling of darkness and mystery. The alliteration (words starting with the same sound) like "crowblack" and "fishingboatbobbing" makes the writing rhythmic and musical. Thomas describes the town as asleep and peaceful, but also suggests that there are people who are "up to no good," which creates tension. He establishes the town as a real place with real people, but also as a kind of magical, dream-like setting. The tone is mysterious and slightly dark, even though the town is described as safe and sleeping.`,
-            'Grade 6-7': `Thomas's prose-poetry establishes atmosphere through a densely interwoven tapestry of linguistic devices. The opening phrase "bible-black" is remarkable: it yokes spiritual and chromatic registers, suggesting not mere darkness but a darkness laden with moral or religious significance. The repetition of "black" in various compounds-"sloeblack," "crowblack," "fishingboatbobbing"-creates a rhythmic incantation that mimics oral tradition. The technique of alliteration ("slow, safe dark," "sloeblack, slow...sea") produces a musicality that privileges sound over semantic precision. Syntactically, Thomas's sentences are extended and appositive, piling descriptive phrases atop one another, creating a sense of accumulation and abundance. The oxymoronic "starless and bible-black" night paradoxically combines negation (the absence of stars) with presence (the positive darkness). The introduction of minor characters ("Nogood Boyo," "Mrs Organ Morgan") establishes the town as inhabited, alive with human drama despite the encompassing sleep. Thomas thus establishes Llareggub as a liminal space: formally asleep yet alive with suppressed desire and transgression. The tone is elegiac and nostalgic, mourning the everyday life of an ordinary Welsh town.`,
-            'Grade 8-9': `Thomas's opening enacts what we might term a linguistic summoning of place through the mobilisation of sound, archaic diction, and mythic register. The phrase "bible-black" performs a semiotic collapse: the modifier "bible" evokes spiritual authority and moral weight, while "black" simultaneously denotes chromatic absence and suggests moral transgression. This collision of registers-the sacred and the nocturnal, the moral and the chromatic-establishes the text's fundamental concern with the collision between institutional morality and human desire. The patterned repetition of "black" in lexically disparate contexts ("sloeblack, slow, black, crowblack") performs a kind of obsessive return, aestheticising the night while threatening to reduce linguistic meaning to pure sound. The alliterative chains ("slow, safe dark," "fishingboatbobbing," "cobbled streets") create what we might call an oral poetics-language that prioritises performance and incantation over transparent reference. The opening's syntax, with its accretive appositions, enacts a kind of phenomenological immersion: rather than describing the town from outside, Thomas creates a linguistic field within which the reader is already embedded. The introduction of named characters-"Nogood Boyo," "Mrs Organ Morgan," "the Reverend Jenkins"-within the narrative of sleep establishes the dialectic central to the entire work: the tension between the communal sleeping and the persistent human activity that sleep cannot contain. Thomas's language thus constitutes the town not as a geographical entity but as a linguistic and imaginative phenomenon-Llareggub exists through language, and language is the means by which human presence persists against the encompassing night.`,
+            'Grade 4-5': `Thomas's opening is very poetic. The First Voice starts "To begin at the beginning", which sounds like someone telling a story aloud. The night is "starless and bible-black": the compound adjective compares the dark to the black cover of a Bible, so it seems very dark and also hints at religion, which matters in a chapel town. Thomas makes up new compound words such as "sloeblack", "crowblack" and "fishingboatbobbing", and he repeats "black" so that the sentence sounds like a chant. The heavy words slow the reading down, like the sleeping town. He personifies the town too: the houses are "blind as moles", the shops are "in mourning" and the Welfare Hall is "in widows' weeds", so the whole town seems asleep or grieving. Then he lists the people: "the undertaker and the fancy woman, drunkard, dressmaker, preacher, policeman". Putting such different people side by side in one list makes them all equal while they sleep. The tone is gentle and mysterious, as if the narrator is letting us into a secret.`,
+            'Grade 6-7': `Thomas establishes atmosphere through sound as much as sense. After the storyteller's formula "To begin at the beginning", the first long sentence piles up descriptive phrases: the night is "starless and bible-black", the streets are silent, and the "hunched, courters'-and-rabbits' wood" goes "limping invisible down to the sloeblack, slow, black, crowblack, fishingboatbobbing sea". The compound "bible-black" yokes a colour to the chapel religion of the town, and the coinages "sloeblack", "crowblack" and "fishingboatbobbing" fuse things into single words, as if the dark had run everything together. The repetition of "black" and the heavy stresses of "slow, black" make the rhythm drag, enacting the sleep being described. Personification extends the mood: the houses are "blind as moles", the shops are "in mourning" and the Welfare Hall is "in widows' weeds", so the town at night is both asleep and faintly funereal. The one inhabitant named, Captain Cat, is also blind, which suits a play in which we hear rather than see. The next paragraph opens with "Hush" and introduces the community as a catalogue, "the undertaker and the fancy woman, drunkard, dressmaker, preacher, policeman", in which respectability and disrepute sit side by side without comment. The tone is intimate and affectionate, but the pairings hint at the comic gap between public roles and private lives that the play goes on to explore.`,
+            'Grade 8-9': `The opening summons the town into being through voice. "To begin at the beginning" is a storyteller's formula, tautological and incantatory, and it announces a work that exists as sound: the First Voice does not describe the town from outside but talks it into the listener's ear. The first long sentence proceeds by apposition, assembling the town phrase by phrase ("starless and bible-black, the cobblestreets silent"). The compound "bible-black" collides chromatic and moral registers, so that the darkness itself carries the weight of the chapel, and the play's tension between Nonconformist propriety and appetite is latent in its first adjective. The coinages "sloeblack", "crowblack" and "fishingboatbobbing" compress image into single words, and the insistent return of "black" reduces the landscape to rhythm, so that meaning shades into music. Personification then turns the town into a body in mourning: the houses "blind as moles", the shops "in mourning", the Welfare Hall "in widows' weeds". This elegiac register is undercut by comedy in the paragraph that follows, whose catalogue ("the undertaker and the fancy woman, drunkard, dressmaker, preacher, policeman") levels every social station in the democracy of sleep: the grammatical parallelism gives the preacher and the drunkard the same weight. The closing pair, "the webfoot cocklewomen and the tidy wives", completes the effect, naming the women of the town by their work and their housekeeping rather than their names, a community of types awaiting their individual dreams. Thomas's language therefore constitutes the town as a linguistic phenomenon, a place that exists in the listener's hearing, and prepares the dialectic of the whole work: the communal sleep, and the private lives that sleep cannot contain.`,
           },
           markScheme: [
             'Identifies key linguistic features',
-            'Analyzes sound patterns and effects',
+            'Analyses sound patterns and effects',
             'Discusses vocabulary and imagery',
             'Examines sentence structure',
             'Considers tone and atmosphere',
@@ -504,7 +668,7 @@ const underMilkWoodpaper: MockExamPaper = {
           },
           markScheme: [
             'Identifies key themes related to community',
-            'Analyzes character relationships and dynamics',
+            'Analyses character relationships and dynamics',
             'Discusses balance between celebration and critique',
             'Examines use of humour and irony',
             'Considers social norms and individual desires',
@@ -521,8 +685,8 @@ const underMilkWoodpaper: MockExamPaper = {
           suggestedTimeMinutes: 15,
           questionType: 'evaluation',
           modelAnswers: {
-            'Grade 4-5': `Under Milk Wood celebrates Welsh life by showing the unique character of a Welsh town and Welsh people. Thomas uses Welsh names for places and characters, which establishes the Welsh setting. He presents the people as having strong community ties, which is often seen as a Welsh value. He celebrates their language, their stories, and their way of life. However, he also suggests that Welsh life can be limited and conventional. Some of the characters feel trapped by their small-town existence, and Thomas hints that Wales might be isolated from the larger world. So while he celebrates Welsh identity and values, he also shows the constraints of Welsh life. The work is both loving and critical of Welsh culture.`,
-            'Grade 6-7': `Thomas's text is fundamentally a celebration of Welsh life, though a sophisticated and ambivalent one. The choice of Welsh language and Welsh place names establishes cultural specificity; the community is recognisably Welsh in its religious traditions (the chapel), its narrative culture (the prevalence of gossip and storytelling), and its specific forms of social cohesion. Thomas grants equal narrative authority to working-class and marginal figures, suggesting a democratic valuation of all members of the community-a stance that affirms the dignity of ordinary Welsh life. The spirituality and poetry woven throughout the text-despite its frequent irreverence-suggests a deep attachment to Welsh linguistic and cultural traditions. Yet the celebration is not uncritical. The religious hypocrisy (the reverence around the chapel combined with private transgression), the limited economic opportunities, the sense of isolation from modernity-these elements suggest that Welsh identity, while valorised, is also presented as constraining. Thomas seems to suggest that Welsh culture is valuable precisely in its particularity and resistance to modernisation, yet that particularity also produces limitations and repressions. The work thus celebrates Welsh identity while acknowledging the costs of that cultural specificity.`,
+            'Grade 4-5': `Under Milk Wood celebrates Welsh life by showing the unique character of a Welsh town and Welsh people. Thomas uses Welsh names for places and characters, which establishes the Welsh setting. He presents the people as having strong community ties, which is often seen as a Welsh value. He celebrates the way they speak, their stories, and their way of life. However, he also suggests that Welsh life can be limited and conventional. Some of the characters feel trapped by their small-town existence, and Thomas hints that Wales might be isolated from the larger world. So while he celebrates Welsh identity and values, he also shows the constraints of Welsh life. The work is both loving and critical of Welsh culture.`,
+            'Grade 6-7': `Thomas's text is fundamentally a celebration of Welsh life, though a sophisticated and ambivalent one. The play is written in English, but its Welsh names and the rhythms of Welsh English speech establish cultural specificity; the community is recognisably Welsh in its religious traditions (the chapel), its narrative culture (the prevalence of gossip and storytelling), and its specific forms of social cohesion. Thomas grants equal narrative authority to working-class and marginal figures, suggesting a democratic valuation of all members of the community-a stance that affirms the dignity of ordinary Welsh life. The spirituality and poetry woven throughout the text-despite its frequent irreverence-suggests a deep attachment to Welsh speech and cultural traditions. Yet the celebration is not uncritical. The religious hypocrisy (the reverence around the chapel combined with private transgression), the limited economic opportunities, the sense of isolation from modernity-these elements suggest that Welsh identity, while valorised, is also presented as constraining. Thomas seems to suggest that Welsh culture is valuable precisely in its particularity and resistance to modernisation, yet that particularity also produces limitations and repressions. The work thus celebrates Welsh identity while acknowledging the costs of that cultural specificity.`,
             'Grade 8-9': `Under Milk Wood's relation to Welsh identity is profoundly ambivalent, structured by a kind of nostalgic nationalism that both celebrates and mourns Welsh cultural particularity. The text's linguistic register-with its admixture of Welsh place names, biblical cadences, and working-class vernacular-constitutes a distinctly Welsh literary voice. Thomas's choice to represent Llareggub through its interior monologue suggests an anthropological commitment to understanding Welsh consciousness from within, rather than from the perspective of English metropolitan culture. The democratic narrative strategy-wherein all characters, regardless of social status, receive equal access to narrative representation-performs a kind of cultural affirmation: Welsh working-class life is worthy of poetic treatment. Moreover, Thomas's emphasis on narrative, storytelling, and oral culture affirms distinctly Welsh cultural traditions of bardic performance and communal discourse. Yet simultaneously, the text is marked by a melancholic awareness of historical loss and cultural encroachment. The isolation of Llareggub from modernity, the limited economic opportunities available to its inhabitants, the constraining nature of social convention-these suggest that Welsh particularity, while valuable, is increasingly unsustainable. The work thus performs what we might call a "vernacular modernism": it employs avant-garde narrative techniques (interior monologue, stream of consciousness, experimental syntax) to represent and preserve Welsh cultural forms that modernisation threatens. This produces an elegiac quality: the text celebrates Welsh life while mourning its inevitable transformation and loss. Thomas's nationalism is thus modernist and melancholic-he affirms Welsh identity precisely as he registers its historical precariousness.`,
           },
           markScheme: [
@@ -531,7 +695,7 @@ const underMilkWoodpaper: MockExamPaper = {
             'Acknowledges critical or ambivalent elements',
             'Uses relevant examples from the text',
             'Considers historical and cultural context',
-            'Analyzes linguistic choices',
+            'Analyses linguistic choices',
             'Develops nuanced, supported argument',
           ],
         },
@@ -550,7 +714,7 @@ const underMilkWoodpaper: MockExamPaper = {
           },
           markScheme: [
             'Identifies different narrative voices and perspectives',
-            'Analyzes the First Voice and individual voices',
+            'Analyses the First Voice and individual voices',
             'Discusses use of interior monologue',
             'Examines effects of polyphonic structure',
             'Considers dramatic irony and point of view',
@@ -582,7 +746,7 @@ const underMilkWoodpaper: MockExamPaper = {
           markScheme: [
             'Identifies appropriate comparative text',
             'Discusses rural communities in both texts',
-            'Analyzes presentation of individual identity',
+            'Analyses presentation of individual identity',
             'Examines communal belonging in both',
             'Uses detailed textual evidence',
             'Considers narrative technique in both texts',

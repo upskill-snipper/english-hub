@@ -4,6 +4,131 @@
 // Component 1: 20th Century Literature Reading + Creative Prose Writing
 // Component 2: 19th/21st Century Non-Fiction Reading + Transactional Writing
 
+/**
+ * WHAT WAS WRONG (27 September 2026). These six papers are live: they are in
+ * allMockExamPapers (src/data/mock-exams.ts), which the mock-exam pages serve.
+ * The three Component 2 papers named six writers for their sources, and not
+ * one of the six passages was by the writer named.
+ *   - Mock 1, Source B: "From an essay by Thomas Carlyle, 'The Condition of
+ *     England Question', 1847". Carlyle wrote no essay of that name in 1847:
+ *     "Condition-of-England Question" is the first chapter of his Chartism
+ *     (1839), and none of the passage's eleven sentences is in Past and
+ *     Present (1843), whose first chapter opens "The condition of England".
+ *     Its first sentence dated itself 1847, and its third marvelled at the
+ *     telegraph.
+ *   - Mocks 2 and 3, Source B: "a personal essay by Raymond Williams,
+ *     'Culture and the Working Man', 1960" and "an autobiography by Richard
+ *     Hoggart, 'The Uses of Literacy', 1957". An audit note in this file (28
+ *     April 2026, FC20) recorded that both were "paraphrase composition, not
+ *     verbatim". The second gave its narrator a stonemason for a father, which
+ *     is Carlyle's biography. Both writers are in UK copyright: had the
+ *     passages been theirs, 200 words of each would have been far beyond fair
+ *     dealing.
+ *   - Source A of all three: the same note recorded that "Dr Elena Kowalski"
+ *     and "Dr James Chen" are not real authors and that the passage labelled
+ *     Naomi Klein, "This Changes Everything", 2014, is not from her book.
+ * The note left every label printing. Students were asked "How does Naomi
+ * Klein use evidence" and "How does Dr Chen use evidence", and the model
+ * answers credited the invented words to Klein, Williams, Hoggart and Carlyle.
+ *
+ * WHAT IT IS NOW.
+ *   - Each Source B is a genuine nineteenth-century passage, cut by script
+ *     from the Project Gutenberg text and never retyped. The papers stand for
+ *     Eduqas C700QS/2, whose two sources are one nineteenth-century and one
+ *     twenty-first-century text (src/data/exam-guides/wjec-guide.ts), so the
+ *     "20th Century" Williams and Hoggart sources did not fit the paper
+ *     either. Each replacement keeps the focus of the passage it replaces:
+ *       Mock 1: Carlyle, Past and Present, book III, chapter II, "Gospel of
+ *         Mammonism" (Gutenberg #13534), from "We call it a Society" to "but
+ *         nothing more." The invented passage's isolation and indifference,
+ *         in words Carlyle did write: a society whose only bond is payment.
+ *       Mock 2: John Ruskin, Modern Painters, volume III (1856), part IV,
+ *         chapter XVII, the end of section 23 and section 24 (Gutenberg
+ *         #38923), with a French quotation, the words introducing it and the
+ *         two sentences after it cut, marked [...]. An old labourer's
+ *         patience against modern haste becomes Ruskin on impatience, novelty
+ *         and the railway.
+ *       Mock 3: William Cobbett, Rural Rides, the entry written at Reigate on
+ *         20 October 1825 (Gutenberg #34238), with four sentences cut, marked
+ *         [...]. A son writing of his father's labour becomes an eye-witness
+ *         at a farm sale, blaming a system that "has ground the labourers
+ *         down".
+ *     The Gutenberg texts mark italics with underscores; the site cannot show
+ *     italics, so they are dropped, and the labels say so.
+ *   - Each passage was compared character by character with a fresh copy
+ *     of its Gutenberg text, and word by word with scans of
+ *     nineteenth-century printings on archive.org (27 September 2026). The
+ *     scans showed that two of the Gutenberg texts are later editions, so
+ *     each label now names the one it follows. Gutenberg's Carlyle is a
+ *     later reprint that prints "woe" where the 1843 and 1890 printings have
+ *     "wo" and differs from them in a few marks, and its Cobbett is the T.
+ *     Nelson and Sons edition, which prints "Everything" and "farmhouse"
+ *     where the 1830 edition has "Every thing" and "farm-house". Neither
+ *     changes a word a student would quote. One slip in Gutenberg's Carlyle,
+ *     a missing question mark, is printed as that edition has it (see
+ *     WJEC_C2_SOURCE_B_1 for why it is not restored).
+ *   - Each Source A is kept word for word, except that Mock 2's no longer
+ *     credits an unsourced study to the University of Cambridge, and each is
+ *     labelled as specially written for the site.
+ *   - Every question, mark scheme and model answer that named those writers
+ *     or quoted those passages was rewritten for the new sources.
+ *
+ * scripts/check-mock-exam-extracts.mjs (26 September 2026), and a reading of
+ * every answer, also found model answers asserting what their extracts do not
+ * say. Each is corrected below, so that every quotation is in its extract and
+ * the analysis is true of the words quoted:
+ *   - c1-m1-q2 quoted "Now Mr Walsh shops online" (the text has "shopped")
+ *     and called "bought" and "came" present tense; c1-m1-q3 quoted "more
+ *     deliberately, she turned the sign", dropping words without marking the
+ *     cut, and gave Mr Walsh a loneliness the text never mentions; c1-m1-q4
+ *     said the piece never names the forces closing the shop, when its first
+ *     paragraph names the supermarket;
+ *   - c1-m2-q4 said Henry "can't look up" (he looks down at the soil);
+ *   - c1-m3-q2 said the smell is recycled through the building's lungs (the
+ *     air is), and c1-m3-q4 quoted "the only air that wasn't recycled",
+ *     another unmarked cut;
+ *   - c2-m1-q2 said propaganda "had to convince", which the text does not;
+ *   - c2-m2-q1 credited the passage with "likes and follower counts", which
+ *     it never mentions, and c2-m2-q2 cited figures of 70% and 62% and
+ *     quoted "a thirteen-year-old cannot eat breakfast without checking
+ *     likes", "something has gone fundamentally wrong" and "We are witnessing
+ *     a crisis", none of them in a passage whose only percentage is 14%;
+ *   - c2-m3-q2 quoted "It is not a future problem", "calculated" and a
+ *     repeated "now", none of which the passage has.
+ * A second reading, against the new sources, found more of the same kind:
+ *   - c1-m1-q1 asked for five things about "the shop and its owner" and
+ *     answered with two that are about neither (the rain, the empty
+ *     street), which a mark scheme would not credit;
+ *   - c1-m2-q4 said Henry "does not fully understand" straight after
+ *     quoting "Then he understood."; what he does not yet know is which son;
+ *   - c1-m3-q1 listed "She watches pigeons from her window", which the text
+ *     implies but does not say, in a question that asks what the text says;
+ *   - c2-m1-q2 quoted "the algorithm", which the passage always begins with
+ *     a capital, and c2-m1-q3 embedded "call it a Society" in a sentence
+ *     it made ungrammatical;
+ *   - c2-m3-q3 asked about "social inequality", which Source A never
+ *     discusses: its victims are the planet and future generations. It now
+ *     asks about the harm an economic system does and who is made to pay;
+ *   - c2-m3-q4 faulted Cobbett for "assertion rather than proof", when his
+ *     proof is the four sentences this extract cuts. A model answer must not
+ *     blame a writer for what an editor removed.
+ * The Component 1 labels said "Original literary fiction composition", which
+ * a student can read as "the original text"; they now say, as the Source A
+ * labels do, that the extracts were specially written.
+ * Component 2 Questions 1 of Mocks 2 and 3 asked for four points for five
+ * marks, and Component 1 Questions 1 of Mocks 1 and 2 pointed to line numbers
+ * the site does not print; they now ask for five points and name paragraphs.
+ * The stray quotation mark closing the third Component 1 extract is removed.
+ *
+ * NOT FIXED: the question pattern here (four reading questions of 5, 10, 10
+ * and 15 marks, one writing task of 40) is not the one the site's own Eduqas
+ * mark schemes give (src/lib/marking/mark-schemes/eduqas-lang.ts), nor is
+ * the Component 2 writing task, one of 40 marks split 20, 12 and 8, where
+ * that scheme has two tasks of 20, each marked 12 and 8. The Component 1
+ * extracts are specially written, not twentieth-century fiction, and their
+ * labels say so.
+ */
+
 // QA 2026-08-23: repointed from the aggregator to the type-only leaf so this
 // lazy loader source cannot reach `src/data/mock-exams.ts` (which statically
 // imports every bank) if the `type` keyword is ever dropped here.
@@ -23,7 +148,8 @@ Behind her, the till stood silent. The shelves held stock that nobody wanted. In
 
 She closed the door and locked it. Then, more deliberately, she turned the "Open" sign to "Closed." The sign swung in the wind, caught between two certainties: one word, then the other, then the first again.`
 
-const WJEC_C1_EXTRACT_1_SOURCE = 'Original literary fiction composition'
+const WJEC_C1_EXTRACT_1_SOURCE =
+  'Specially written for The English Hub (not a published text, and not a twentieth-century one)'
 
 const WJEC_C1_EXTRACT_2 = `The telegram arrived on a Tuesday. Henry was in the garden, turning the soil where the peas had been, when Mrs Webb from next door called over the fence. She held it at arm's length, as though the envelope itself carried contagion.
 
@@ -45,7 +171,8 @@ Henry's hands were shaking now. He pressed them into the pockets of his trousers
 
 Henry took the envelope. It was thin and pale, almost insubstantial. He could feel the words pressing against the paper from the inside, as though trying to escape.`
 
-const WJEC_C1_EXTRACT_2_SOURCE = 'Original literary fiction composition'
+const WJEC_C1_EXTRACT_2_SOURCE =
+  'Specially written for The English Hub (not a published text, and not a twentieth-century one)'
 
 const WJEC_C1_EXTRACT_3 = `The flat was wrong in ways that only became apparent in morning light. The walls were too close together. The smell - old cooking oil, something sweet underneath, mould perhaps - seemed to intensify with the hours. When Sarah first moved in, she had thought it was temporary. She would stay six months. Two years had passed.
 
@@ -55,9 +182,10 @@ The window of her bedroom overlooked an alley between two office buildings. In t
 
 One evening, returning from work, she found a pigeon in her bedroom. It had come through the window, which she kept slightly open even in winter, seeking the only air in the flat that wasn't recycled through the lungs of the building itself. The bird flew from corner to corner, knocking against the glass, its body a small projectile of panic.
 
-She watched it for a long time. She did not attempt to help it find the window, did not open the door to let it escape, did not move at all. Instead, she sat on the edge of her bed and watched the bird's desperation with a feeling that was not quite pity but not quite indifference either. It was something in between - a recognition, perhaps, or a kinship.'`
+She watched it for a long time. She did not attempt to help it find the window, did not open the door to let it escape, did not move at all. Instead, she sat on the edge of her bed and watched the bird's desperation with a feeling that was not quite pity but not quite indifference either. It was something in between - a recognition, perhaps, or a kinship.`
 
-const WJEC_C1_EXTRACT_3_SOURCE = 'Original literary fiction composition'
+const WJEC_C1_EXTRACT_3_SOURCE =
+  'Specially written for The English Hub (not a published text, and not a twentieth-century one)'
 
 // ─── Component 2 Non-Fiction Extracts ─────────────────────────────────────────
 
@@ -65,55 +193,52 @@ const WJEC_C2_SOURCE_A_1 = `The algorithm does not sleep. It works while we slee
 
 The social media platforms that mediate our public discourse employ algorithms that optimise for engagement. This might sound harmless - neutral, even - but engagement has nothing to do with truth. The algorithm cannot distinguish between a fact and a lie, but it can measure which one makes people feel more intensely. And what makes people feel most intensely? Outrage. Fear. Confirmation of their existing prejudices. The algorithm feeds us these things, not out of malice, but out of mathematical indifference. It is simply optimising for its profit model.`
 
-// AUDIT NOTE (FC20, 2026-04-28): Contemporary attributions in this file (Dr
-// Elena Kowalski 2024, Dr James Chen 2023, Naomi Klein "This Changes
-// Everything") are FABRICATED framing for original practice compositions -
-// Kowalski/Chen are not real authors; Klein's book exists but the rendered
-// passage is NOT from it. Pre-1980 attributions (Carlyle 1847, Williams 1960,
-// Hoggart 1957) name real figures and books but the rendered text is
-// paraphrase composition, not verbatim. Treat as practice stimuli only.
-
 const WJEC_C2_SOURCE_A_1_REF =
-  'Dr Elena Kowalski, "The Invisible Hand: How Algorithms Shape Reality", 2024'
+  'Specially written for The English Hub (not a published text): an article on social media algorithms'
 
-const WJEC_C2_SOURCE_B_1 = `Writing in the year of Our Lord eighteen hundred and forty-seven, I observe with a mixture of concern and wonderment the new technologies that daily emerge from the factories and workshops of our industrial cities. The railway has shrunk our country to half its former size. The telegraph promises to transmit the human voice across distances hitherto unimaginable. And yet, I confess that these marvels leave me profoundly uneasy.
+// Gutenberg #13534, the middle of one paragraph and the start of the next,
+// cut by script. KNOWN SLIP, LEFT AS THE EDITION HAS IT: Gutenberg's text has
+// no question mark after "Where is thy brother", which every printing checked
+// has (Boston and New York 1843, New York 1848, Chicago 1890, on
+// archive.org). It is not restored by hand because
+// scripts/check-mock-exam-extracts.mjs holds each extract to the edition its
+// label names, mark for mark, and has no way to accept a verified
+// correction; a hand-restored mark fails it. Restore it only together with
+// such a mechanism.
+const WJEC_C2_SOURCE_B_1 = `We call it a Society; and go about professing openly the totalest separation, isolation. Our life is not a mutual helpfulness; but rather, cloaked under due laws-of-war, named 'fair competition' and so forth, it is a mutual hostility. We have profoundly forgotten everywhere that Cash-payment is not the sole relation of human beings; we think, nothing doubting, that it absolves and liquidates all engagements of man. "My starving workers?" answers the rich Mill-owner: "Did not I hire them fairly in the market? Did I not pay them, to the last sixpence, the sum covenanted for? What have I to do with them more?"--Verily Mammon-worship is a melancholy creed. When Cain, for his own behoof, had killed Abel, and was questioned, "Where is thy brother" he too made answer, "Am I my brother's keeper?" Did I not pay my brother his wages, the thing he had merited from me?
 
-For it seems to me that we are so dazzled by what we have made that we have not paused to consider whether we should have made it at all. The factory system, which is the engine of our national prosperity, has created a class of human beings who are machines themselves - their bodies wound up each morning and set to perform their repetitive tasks until, worn out, they are replaced. The railway, which unites us geographically, has paradoxically isolated us. We sit in carriages with our fellow citizens but do not speak to them. We are connected by iron rails but separated by something far more intractable: indifference.
-
-What troubles me most is that we have become enamoured with speed itself, as though haste were synonymous with progress. We race from one place to another without pausing to consider why we are going, what we might find when we arrive, or what we have lost in our departure.`
+O sumptuous Merchant-Prince, illustrious game-preserving Duke, is there no way of 'killing' thy brother but Cain's rude way! 'A good man by the very look of him, by his very presence with us as a fellow wayfarer in this Life-pilgrimage, promises so much:' woe to him if he forget all such promises, if he never know that they were given! To a deadened soul, seared with the brute Idolatry of Sense, to whom going to Hell is equivalent to not making money, all 'promises,' and moral duties, that cannot be pleaded for in Courts of Requests, address themselves in vain. Money he can be ordered to pay, but nothing more.`
 
 const WJEC_C2_SOURCE_B_1_REF =
-  'From an essay by Thomas Carlyle, "The Condition of England Question", 1847'
+  'Thomas Carlyle, Past and Present (1843), book III, chapter II, "Gospel of Mammonism" (text of a later reprint, Project Gutenberg #13534; Carlyle\'s italics are not shown)'
 
 const WJEC_C2_SOURCE_A_2 = `The average teenager now spends seven to nine hours per day consuming some form of media. For many, this consumption happens simultaneously: scrolling TikTok while watching Netflix while texting friends while doing homework. We call this "multitasking," but the neuroscience suggests something different is happening. The brain is not multitasking. Rather, it is rapidly switching between tasks, and each switch incurs a cognitive cost. What we experience as seamless is, neurologically, profoundly fragmented.
 
-The consequences are significant. A 2023 study by the University of Cambridge found that students who use social media while studying score on average 14% lower on assessments than those who do not. But the problem goes deeper than academic performance. Young people report unprecedented levels of anxiety and depression. They report feeling "fake," performing curated versions of themselves for an audience that may include thousands of strangers. They report a constant, underlying sense that they are not enough: not pretty enough, not funny enough, not interesting enough.`
+The consequences are significant. A 2023 study found that students who use social media while studying score on average 14% lower on assessments than those who do not. But the problem goes deeper than academic performance. Young people report unprecedented levels of anxiety and depression. They report feeling "fake," performing curated versions of themselves for an audience that may include thousands of strangers. They report a constant, underlying sense that they are not enough: not pretty enough, not funny enough, not interesting enough.`
 
 const WJEC_C2_SOURCE_A_2_REF =
-  'Dr James Chen, "The Fragmented Mind: Technology and Adolescent Development", 2023'
+  'Specially written for The English Hub (not a published text): an article on young people and media. Its figures, and the study it mentions, are for practice and are not sourced'
 
-const WJEC_C2_SOURCE_B_2 = `There was in my childhood a man known as Old Tom, who worked the fields that stretched behind our village toward the river. He was ancient when I was young - or at least, he seemed so - a figure bent with the labour of sixty years of rural work. Every morning at five o'clock, I would hear him pass the cottage where we lived, his boots on the gravel road, the sound as regular as a clock. He never hurried. He never spoke unless spoken to. But there was in his movements, in his patient progression through the work of each day, a kind of wisdom that we have now, I think, entirely lost.
+// Gutenberg #38923, the end of section 23 and section 24, cut by script.
+const WJEC_C2_SOURCE_B_2 = `And if we grow impatient under it, and seek to recover the mental energy by more quickly repeated and brighter novelty, it is all over with our enjoyment. There is no cure for this evil, any more than for the weariness of the imagination already described, but in patience and rest: if we try to obtain perpetual change, change itself will become monotonous; and then we are reduced to that old despair, "If water chokes, what will you drink after it?" And the two points of practical wisdom in this matter are, first, to be content with as little novelty as possible at a time; and, secondly, to preserve, as much as possible in the world, the sources of novelty.
 
-We have become obsessed with efficiency, with optimising every moment, with the idea that a life well-lived is a life from which no productive moment has been wasted. But Old Tom's life was not efficient. He spent hours doing things that a machine could do in minutes. And yet his life had a coherence, a sense of purpose, that seems entirely absent from the rushed, fragmented existence of modern people. He knew his place. He understood the seasons. He had time for courtesy, for the small gestures that make us human.`
+I say, first, to be content with as little change as possible. If the attention is awake, and the feelings in proper train, a turn of a country road, with a cottage beside it, which we have not seen before, is as much as we need for refreshment; if we hurry past it, and take two cottages at a time, it is already too much: hence, to any person who has all his senses about him, a quiet walk along not more than ten or twelve miles of road a day, is the most amusing of all travelling; and all travelling becomes dull in exact proportion to its rapidity. Going by railroad I do not consider as travelling at all; it is merely "being sent" to a place, and very little different from becoming a parcel; the next step to it would of course be telegraphic transport [...] A man who really loves travelling would as soon consent to pack a day of such happiness into an hour of railroad, as one who loved eating would agree, if it were possible, to concentrate his dinner into a pill.`
 
 const WJEC_C2_SOURCE_B_2_REF =
-  'From a personal essay by Raymond Williams, "Culture and the Working Man", 1960'
+  'John Ruskin, Modern Painters, volume III (1856), part IV, chapter XVII, "The Moral of Landscape", from sections 23 and 24 (Project Gutenberg #38923). Ruskin has just quoted Wordsworth on "custom", the familiarity that dulls the delight of new sights'
 
 const WJEC_C2_SOURCE_A_3 = `The climate crisis is not a future problem. It is happening now. We are not preparing for a catastrophe that might occur in fifty years. We are living through the early stages of a catastrophe that is already underway. The glaciers are melting. The oceans are warming. Extreme weather events - droughts, floods, hurricanes of unprecedented intensity - are becoming routine. And yet, in the midst of this crisis, we are paralysed by inaction.
 
 The reasons for this paralysis are complex, but one factor stands out: we have constructed an economic system in which the price of a product bears no relationship to the true cost of its production. A cheap plastic bottle costs two pounds in the shop, but the true cost - measured in the carbon released in its manufacture, the energy required to transport it, the environmental damage caused by its disposal - is far higher. We have externalised the costs onto the planet and onto future generations. And because these costs do not appear on a price tag, they do not appear in our moral calculus.`
 
 const WJEC_C2_SOURCE_A_3_REF =
-  'Naomi Klein, "This Changes Everything: Capitalism vs. the Climate", 2014'
+  'Specially written for The English Hub (not a published text): an article on the climate crisis and the price of goods'
 
-const WJEC_C2_SOURCE_B_3 = `A man may love Nature, and yet find it difficult to forgive her for the circumstances of his birth. I was born the son of a stonemason, in a village whose whole existence depended upon the labour of people like my father - people who cut stone from the ground and shaped it into the buildings that housed the wealthy. My father's hands were destroyed by this work. By the time he was fifty, he could barely hold a spoon.
-
-He was not a poor man, in the sense that he had steady employment and a roof over his head. But poverty is not merely about the absence of money. It is about the absence of choice. My father could not choose to do different work. He could not choose to live somewhere else. He was bound to his labour and his place by the simple fact of his birth. The system that built the cathedrals and the great houses was the same system that ensured men like my father would never live in them.
-
-And yet, I did not hate the stones. I hated the system that distributed them so unequally. A man may love his birthright and still wish it were different.`
+// Gutenberg #34238, one paragraph with four sentences cut, cut by script.
+const WJEC_C2_SOURCE_B_3 = `Everything about this farmhouse was formerly the scene of plain manners and plentiful living. Oak clothes-chests, oak bedsteads, oak chests of drawers, and oak tables to eat on, long, strong, and well supplied with joint stools. Some of the things were many hundreds of years old. But all appeared to be in a state of decay and nearly of disuse. There appeared to have been hardly any family in that house, where formerly there were, in all probability, from ten to fifteen men, boys, and maids: and, which was the worst of all, there was a parlour. Aye, and a carpet and bell-pull too! One end of the front of this once plain and substantial house had been moulded into a "parlour;" and there was the mahogany table, and the fine chairs, and the fine glass, and all as bare-faced upstart as any stock-jobber in the kingdom can boast of. And there were the decanters, the glasses, the "dinner-set" of crockery-ware, and all just in the true stock-jobber style. And I dare say it has been 'Squire Charington and the Miss Charington's; and not plain Master Charington, and his son Hodge, and his daughter Betty Charington, all of whom this accursed system has, in all likelihood, transmuted into a species of mock gentlefolks, while it has ground the labourers down into real slaves. Why do not farmers now feed and lodge their work-people, as they did formerly? Because they cannot keep them upon so little as they give them in wages. This is the real cause of the change. There needs no more to prove that the lot of the working classes has become worse than it formerly was. This fact alone is quite sufficient to settle this point. [...] Judge, then, of the change that has taken place in the condition of these labourers! And be astonished, if you can, at the pauperism and the crimes that now disgrace this once happy and moral England.`
 
 const WJEC_C2_SOURCE_B_3_REF =
-  'From an autobiography by Richard Hoggart, "The Uses of Literacy", 1957'
+  "William Cobbett, Rural Rides (1830), from the entry written at Reigate on 20 October 1825, after Cobbett had been to the sale of a farmer's goods (T. Nelson and Sons edition, Project Gutenberg #34238; Cobbett's italics are not shown)"
 
 // ─── Mock Exam Papers ─────────────────────────────────────────────────────────
 
@@ -142,7 +267,7 @@ export const wjecMockExams: MockExamPaper[] = [
             id: 'wjec-c1-m1-q1',
             questionNumber: 1,
             questionText:
-              'Read lines 1-10. List five things you learn about the shop and its owner from these lines.',
+              'Read the first two paragraphs of the extract. List five things you learn about the shop and its owner from these paragraphs.',
             marks: 5,
             suggestedTimeMinutes: 5,
             questionType: 'short-answer',
@@ -150,7 +275,7 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: WJEC_C1_EXTRACT_1_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                '1. It is raining heavily. 2. The shop is in a village. 3. The owner is a woman. 4. She has run the shop for forty years. 5. The high street is empty.',
+                "1. The shop is in a village, on the high street. 2. Its customers now go to the supermarket on the ring road instead. 3. The owner is a woman who has run it for forty years. 4. She knows every corner of it, down to where the floorboards creak. 5. She knows her customers by what they buy, such as Mr Walsh's instant coffee and racing pages.",
             },
             markScheme: ['1 mark per valid point, maximum 5'],
           },
@@ -168,7 +293,7 @@ export const wjecMockExams: MockExamPaper[] = [
               'Grade 4-5':
                 'The writer creates isolation by showing the empty high street and the customers who have left. Words like "detritus" and "empty" emphasise loss. The list of what people used to do - "Mr Walsh bought," "Mrs Chen came" - shows what is gone. The rain intensifies the lonely mood. The sign swinging between "Open" and "Closed" symbolises her uncertainty.',
               'Grade 6-7':
-                'The writer constructs loss through systematic negation. Customers are defined by what they no longer do: "Now Mr Walsh shops online," "Mrs Chen had moved," "James had died." The present tense of the past ("bought," "came") is deliberately destabilising. The sensory knowledge ("hands knew every corner") becomes useless in a world that has moved beyond sensory knowledge - supermarkets eliminate touch, smell, human connection. The rain becomes an instrument of erasure, carrying "detritus" through the streets. The structural pivot to the office reveals the machinery of closure: unopened letters, unmaintained accounts, boxes "slowly collapsing under the weight of their own emptiness." The final image of the sign swinging "between two certainties" is brilliant because it reverses the apparent binary - both states (open and closed) are equally certain, equally inevitable. The woman is paralysed between a past that is dead and a future she cannot face.',
+                'The writer constructs loss through systematic negation. Customers are first defined by their routines, in a habitual past tense ("Mr Walsh bought," "Mrs Chen came"), and then by what they no longer do: "Now Mr Walsh shopped online," "Mrs Chen had moved," "James had died." The single word "Now" divides the paragraph that remembers from the paragraph that records each ending. Her sensory knowledge ("hands knew every corner") becomes useless in a world that has moved to the supermarket, where everything is sorted "into categories that had nothing to do with living." The rain becomes an instrument of erasure, carrying "the detritus of a world that was moving on without her." The structure then turns inward to the machinery of closure: accounts she has not looked at, a letter from the bank placed "unopened, under a pile of old magazines," and, in the back room, boxes "slowly collapsing under the weight of their own emptiness." The final image of the sign "caught between two certainties" reverses the apparent binary: open and closed are not a hope and a fear but two certainties, and the sign swinging from one to the other suggests a woman who has made her decision and cannot yet leave it.',
             },
             markScheme: [
               'Analyses language and structural techniques',
@@ -190,9 +315,9 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: WJEC_C1_EXTRACT_1_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                "The shop owner seems sad and tired. She loves her shop and knows it well, but she is helpless to save it. She avoids dealing with her problems - she hasn't opened important letters. She seems passive and defeated by the end, just accepting that she must close. She is isolated because the community has left her.",
+                'The shop owner seems sad and tired. She loves her shop and knows it well, but she is helpless to save it. She avoids dealing with her problems - she has not opened an urgent letter from the bank. She seems passive and defeated by the end, just accepting that she must close. She is isolated because the community has left her.',
               'Grade 6-7':
-                'The shop owner is characterised through the tension between intimate knowledge and powerlessness. She possesses encyclopaedic knowledge of her space ("exact temperature," "precise spot") and her customers\' interior lives (Walsh\'s loneliness, Chen\'s loyalty, James\'s solitude). This knowledge has been rendered obsolete by economic forces beyond her control. Her emotional state is one of compartmentalisation and avoidance: the unopened letter, the magazines piled strategically - these are not negligence but psychological defence. The rain, which she watches rather than acts upon, becomes an external correlative for her internal paralysis. Yet there is also a kind of dignity in her final action: she does not fight the inevitable. The deliberateness of her movements - "more deliberately, she turned the sign" - suggests acceptance rather than despair. She is not a tragic figure but a modest, unseen one, like her own customers.',
+                'The shop owner is characterised through the tension between intimate knowledge and powerlessness. She possesses encyclopaedic knowledge of her space ("exact temperature," "precise spot") and of her customers\' habits, from Mr Walsh\'s "instant coffee and the racing pages" to old James\'s "milk and solitude", a phrase that lets her notice a loneliness nobody else would. This knowledge has been rendered obsolete by economic forces beyond her control. Her emotional state is one of compartmentalisation and avoidance: the letter marked "URGENT" was placed "unopened, under a pile of old magazines", which is not negligence but psychological defence. The rain, which she watches rather than acts upon, becomes an external correlative for her internal paralysis. Yet there is also a kind of dignity in her final action: she does not fight the inevitable. The adverb in "more deliberately" marks the turning of the sign as a choice, which suggests acceptance rather than despair. She is not a tragic figure but a modest, unseen one, like her own customers.',
             },
             markScheme: [
               'Analyses character with textual support',
@@ -213,9 +338,9 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: WJEC_C1_EXTRACT_1_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                'I strongly agree. Small details like the way the papers curl in humidity and the exact spot where the floorboards creak show how well she knows her shop. These details make the loss more powerful because we understand how much the shop meant to her. The description of the empty till and collapsing boxes are small but heartbreaking. The sign swinging is a small detail that summarises the whole thing.',
+                'I strongly agree. Small details like the way the papers curl in humidity and the exact spot where the floorboards creak show how well she knows her shop. These details make the loss more powerful because we understand how much the shop meant to her. The silent till and the collapsing boxes are small details but heartbreaking. The sign swinging is a small detail that summarises the whole thing.',
               'Grade 6-7':
-                'I entirely agree, and I would argue that the small details are not supplementary but structural. The extract\'s power depends on accumulation: each specific sensory memory ("exact temperature," "newspapers curled") functions as a small theft from her. The small details create the framework through which we measure absence. When Mr Walsh is reduced to "instant coffee and the racing pages," the specificity makes his departure more poignant than abstract reference to lost customers would. The unopened letter, the sweet wrappers in the gutter, the cardboard boxes - these are the objects that reveal the vast economic and social forces (supermarkets, suburbanisation, demographic change) that have rendered her world obsolete. The genius of the piece is that it never directly names these forces. Instead, it shows their effects through things: small, concrete, irrefutable evidence of loss.',
+                'I entirely agree, and I would argue that the small details are not supplementary but structural. The extract\'s power depends on accumulation: each specific sensory memory ("exact temperature," "newspapers curled") functions as a small theft from her. The small details create the framework through which we measure absence. When Mr Walsh is reduced to "instant coffee and the racing pages," the specificity makes his departure more poignant than abstract reference to lost customers would. The unopened letter, the sweet wrappers carried down the street by the rain, the cardboard boxes - these are the objects that reveal the economic and social forces that have rendered her world obsolete. The writer names those forces only briefly, in the supermarket "out on the ring road" and in Mr Walsh shopping online, and never explains them. Instead, the extract shows their effects through things: small, concrete, irrefutable evidence of loss.',
             },
             markScheme: [
               'Evaluates with a clear, sustained personal response',
@@ -284,7 +409,7 @@ export const wjecMockExams: MockExamPaper[] = [
             id: 'wjec-c1-m2-q1',
             questionNumber: 1,
             questionText:
-              'Read lines 1-15. List five things you learn about Henry and the situation from these lines.',
+              'Read the first five paragraphs of the extract, up to "lost its blossom early this year". List five things you learn about Henry and the situation from these paragraphs.',
             marks: 5,
             suggestedTimeMinutes: 5,
             questionType: 'short-answer',
@@ -292,7 +417,7 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: WJEC_C1_EXTRACT_2_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                '1. A telegram has arrived. 2. Henry was in the garden. 3. He has sons in the war. 4. Mrs Webb brought the telegram. 5. Henry is shocked.',
+                '1. A telegram has arrived from the War Office. 2. Henry was working in his garden. 3. His neighbour, Mrs Webb, brought the telegram. 4. The news is about one of his sons. 5. Henry is shocked: the soil falls from his hands.',
             },
             markScheme: ['1 mark per valid point, maximum 5'],
           },
@@ -334,7 +459,7 @@ export const wjecMockExams: MockExamPaper[] = [
               'Grade 4-5':
                 'Mrs Webb is sympathetic but also somewhat pleased to have important news to deliver. She holds the telegram at arm\'s length as if it might be dangerous. She uses careful language like "I\'m very sorry" but the narrator says her sympathy is "borrowed" - she is rehearsing grief for something that hasn\'t touched her personally. She doesn\'t open the telegram herself, keeping some distance from what it contains.',
               'Grade 6-7':
-                'Mrs Webb is characterised as simultaneously well-meaning and morally deficient. The "faint thrill of importance" reveals how historical catastrophe becomes social currency. She holds the envelope at arm\'s length, both literally and emotionally distancing herself from its contents. The narrator\'s assessment - "the careful grief of the borrowed, the sympathy one offers for a tragedy that has not touched one personally but which one has decided to rehearse" - is devastating. Mrs Webb\'s language demonstrates this performance: "I\'m very sorry" is the appropriate phrase, delivered with appropriate intonation. But it is precisely this adequacy that condemns her. She can feel sufficient grief without feeling anything. She has not opened the telegram, maintaining plausible deniability about the specifics. Her role is to deliver news and witness the moment, but not to truly enter into Henry\'s suffering.',
+                'Mrs Webb is characterised as simultaneously well-meaning and morally deficient. The "faint thrill of importance" reveals how historical catastrophe becomes social currency. She holds the envelope at arm\'s length, both literally and emotionally distancing herself from its contents. The narrator\'s assessment - "the careful grief of the borrowed, the sympathy one offers for a tragedy that has not touched one personally but which one has decided to rehearse" - is devastating. Mrs Webb\'s language demonstrates this performance: "I\'m very sorry" is the appropriate phrase, delivered with appropriate intonation. But it is precisely this adequacy that condemns her. She can say everything grief requires without feeling it. She has not opened the telegram, maintaining plausible deniability about the specifics. Her role is to deliver news and witness the moment, but not to truly enter into Henry\'s suffering.',
             },
             markScheme: [
               'Analyses character with textual support',
@@ -355,9 +480,9 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: WJEC_C1_EXTRACT_2_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                'I agree completely. The writer doesn\'t tell us directly that Henry is devastated. Instead, we see his hands falling from the soil, his body shaking, the way he can\'t look up. These physical details are much more powerful than if the writer had just said "Henry was heartbroken." By showing his hands and body, we feel his shock more intensely.',
+                'I agree completely. The writer doesn\'t tell us directly that Henry is devastated. Instead, we see the soil falling from his hands, his hands shaking, and the way he stares down at the soil on his shoes. These physical details are much more powerful than if the writer had just said "Henry was heartbroken." By showing his hands and body, we feel his shock more intensely.',
               'Grade 6-7':
-                "I entirely agree, and I would argue this is essential to the extract's emotional integrity. Direct statements about Henry's inner life would constitute literary interpretation, imposing meaning onto his experience. By showing only his physical responses - soil falling, hands shaking, body pressing into pockets - the writer allows the reader to participate in Henry's own confusion. He does not fully understand what is happening. He is still in the moment before knowledge, and the physical details preserve this temporal liminal state. The envelope with words \"trying to escape\" suggests that Henry's emotional life is not yet available to him. The extract ends before he reads it, which is structurally crucial: we are denied the narrative satisfaction of knowing what the telegram says, just as Henry is denied the narrative of linear time - the moment before knowledge and the moment after are compressed together.",
+                'I entirely agree, and I would argue this is essential to the extract\'s emotional integrity. Direct statements about Henry\'s inner life would constitute literary interpretation, imposing meaning onto his experience. By showing mainly his physical responses - soil falling, hands shaking, hands pressed into his pockets - the writer allows the reader to participate in Henry\'s own confusion. The one direct statement, "Then he understood.", is three words long and names no feeling at all. Even then he does not know which of his sons the telegram concerns ("Which one?"), so he is still in the moment before full knowledge, and the physical details hold him there. The envelope with words "trying to escape" suggests that Henry\'s emotional life is not yet available to him. The extract ends before he reads it, which is structurally crucial: we are denied the narrative satisfaction of knowing what the telegram says, just as Henry is denied the narrative of linear time - the moment before knowledge and the moment after are compressed together.',
             },
             markScheme: [
               'Evaluates with clear personal response',
@@ -434,7 +559,7 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: WJEC_C1_EXTRACT_3_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                '1. She lives in a flat that she dislikes. 2. She works at a call centre. 3. She has been there for two years. 4. The flat smells bad. 5. She watches pigeons from her window.',
+                '1. She lives in a flat that she dislikes. 2. She works at a call centre. 3. She has been there for two years. 4. The flat smells bad. 5. Her bedroom window overlooks an alley where pigeons fight over scraps.',
             },
             markScheme: ['1 mark per valid point, maximum 5'],
           },
@@ -452,7 +577,7 @@ export const wjecMockExams: MockExamPaper[] = [
               'Grade 4-5':
                 'The writer describes the flat as "wrong" with bad smells. Sarah\'s job involves speaking to people she can\'t see, which isolates her further. The flat window overlooks only an alley with fighting pigeons, which is a bleak view. The language throughout is negative - "failure," "desperation." The pigeon trapped in her room becomes a symbol for how trapped Sarah feels.',
               'Grade 6-7':
-                'The writer constructs alienation through sustained industrial imagery. The flat is "too close," the smell recycled through "lungs of the building itself" - language that makes the architecture itself into a living organism, but one pathologically diseased. Sarah\'s work is fundamentally abstracted from human presence ("people you couldn\'t see"), and her home offers no refuge from this abstraction. The alley becomes an external correlative for her psychological state: the pigeons\' "desperate energy" is energy without purpose. The pigeon in her bedroom is the extract\'s central image: it is a living creature in a space it should not occupy, just as Sarah exists in a life she should not inhabit. Crucially, the writer does not allow her to help the pigeon. This refusal creates a moment of profound moral and emotional paralysis. The feeling "not quite pity but not quite indifference" is precisely the emotional state that defines modern alienation: she recognises kinship but cannot act on it.',
+                'The writer constructs alienation through imagery of confinement and stale air. The walls are "too close together," and the air is "recycled through the lungs of the building itself" - language that makes the architecture itself into a living organism, but one pathologically diseased. Sarah\'s work is fundamentally abstracted from human presence ("people you couldn\'t see"), and her home offers no refuge from this abstraction. The alley becomes an external correlative for her psychological state: the pigeons\' "desperate energy" is energy without purpose. The pigeon in her bedroom is the extract\'s central image: it is a living creature in a space it should not occupy, just as Sarah exists in a life she should not inhabit. Crucially, the writer does not allow her to help the pigeon. This refusal creates a moment of profound moral and emotional paralysis. The feeling "not quite pity but not quite indifference" is precisely the emotional state that defines modern alienation: she recognises kinship but cannot act on it.',
             },
             markScheme: [
               'Analyses language and imagery',
@@ -499,7 +624,7 @@ export const wjecMockExams: MockExamPaper[] = [
               'Grade 4-5':
                 "I agree completely. The pigeon is clearly meant to represent Sarah's own situation. It is trapped and panicking, just like Sarah is trapped in her flat and her life. The fact that she doesn't help it shows that she feels helpless to change her own situation. The symbolism is very effective because it makes abstract unhappiness concrete and visible.",
               'Grade 6-7':
-                'I strongly agree. The pigeon functions as a symbolic nexus, but in a way that complicates rather than resolves Sarah\'s situation. It enters the flat seeking "the only air that wasn\'t recycled" - an image that perfectly captures modern life\'s fundamental inauthenicity. The pigeon\'s "desperate energy" mirrors the energy Sarah observes in the faces of call-centre customers: energy without direction, desperation without hope. But the symbolism is not reductive. The extract doesn\'t ask us to see the pigeon "as" Sarah; rather, it suggests that a certain category of modern existence - characterised by spatial confinement, recycled experience, the absence of choice - affects multiple forms of consciousness. The pigeon is not a metaphor for Sarah but a fellow creature in a world that has stopped making sense.',
+                'I strongly agree. The pigeon functions as a symbolic nexus, but in a way that complicates rather than resolves Sarah\'s situation. It enters the flat "seeking the only air in the flat that wasn\'t recycled" - an image that captures the staleness of the life Sarah leads. The pigeons\' "desperate energy" is one Sarah recognises in "the people on the phone" and in her own reflection: energy without direction, desperation without hope. But the symbolism is not reductive. The extract doesn\'t ask us to see the pigeon "as" Sarah; rather, it suggests that a certain category of modern existence - characterised by spatial confinement, recycled experience, the absence of choice - affects multiple forms of consciousness. The pigeon is not a metaphor for Sarah but a fellow creature in a world that has stopped making sense.',
             },
             markScheme: [
               'Evaluates symbolic function with evidence',
@@ -561,7 +686,7 @@ export const wjecMockExams: MockExamPaper[] = [
         id: 'wjec-c2-m1-reading',
         title: 'Section A: Reading',
         description:
-          'Read both source texts carefully. Then answer all the questions in this section.',
+          'Read both source texts carefully. Then answer all the questions in this section.\n\nGlossary for Source B: totalest - most complete; Verily - truly; Mammon-worship - the worship of money as if it were a god (Mammon is a Bible word for riches); laws-of-war - the rules of warfare (Carlyle means that "fair competition" is war with rules); Cash-payment - payment in money; liquidates all engagements - settles every obligation, like paying off a debt; covenanted - agreed in a contract; behoof - benefit; Cain and Abel - in the Bible, Cain kills his brother Abel, and when asked where Abel is, replies "Am I my brother\'s keeper?"; game-preserving - keeping wild birds and animals on an estate for the owner to shoot; wayfarer - traveller; Idolatry of Sense - worship of what the senses enjoy; Courts of Requests - local courts that settled claims for small debts.',
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -592,9 +717,9 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: WJEC_C2_SOURCE_A_1_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses scary language like "does not sleep," "unblinking," and "creature." Words like "controlling" and "propaganda" are very dramatic. The phrase "far more controlling than any propaganda machine" compares algorithms to something historically dangerous. The repetition of "the algorithm" emphasises that this is something ever-present and inescapable.',
+                'The writer uses scary language like "does not sleep," "unblinking," and "creature." Words like "controlling" and "propaganda" are very dramatic. The phrase "far more controlling than any propaganda machine" compares algorithms to something historically dangerous. Beginning three sentences with "The algorithm" emphasises that this is something ever-present and inescapable.',
               'Grade 6-7':
-                'Kowalski constructs concern through carefully calibrated menace. The personification of the algorithm as a creature that "does not sleep" and watches with "patient, unblinking attention" anthropomorphises mathematical abstraction into something organically predatory. The comparison to twentieth-century propaganda is rhetorical leverage - by invoking historical trauma, the writer claims algorithms represent a comparable threat. But the construction is more subtle: propaganda "had to convince," whereas algorithms merely need to control information access. The paradox of "mathematical indifference" is particularly effective: the algorithm has no malice, yet its effects are totalising. The final sentence about profit models suggests that harm is neither accidental nor conspiratorial but structural - built into the system\'s incentive architecture.',
+                'The writer constructs concern through carefully calibrated menace. Personifying the algorithm as something that "does not sleep" and watches with "patient, unblinking attention" turns a piece of mathematics into something like a predator. The comparison with "any propaganda machine of the twentieth century" borrows the weight of history, and then goes further: propaganda has to persuade, whereas this system "does not need to convince us of falsehood", only to ensure "that we never encounter truth in the first place". The rhetorical question "And what makes people feel most intensely?" is answered in blunt fragments, "Outrage. Fear.", which make the danger feel certain. The paradox of "mathematical indifference" is particularly effective: the algorithm has no malice, yet its effects are total. The final sentence, "It is simply optimising for its profit model", suggests that the harm is neither accidental nor a conspiracy but built into the business itself.',
             },
             markScheme: [
               'Analyses specific language techniques',
@@ -607,7 +732,7 @@ export const wjecMockExams: MockExamPaper[] = [
             id: 'wjec-c2-m1-q3',
             questionNumber: 3,
             questionText:
-              "Now look at both texts. Compare and contrast the writers' views of technology and modernisation.\n\nYou should compare:\n- what they think about technology and progress\n- how they present their concerns\n- the reasons they give for their views.",
+              "Now look at both texts. Compare and contrast the writers' views of what drives their societies and what it does to people.\n\nYou should compare:\n- what they think has gone wrong\n- how they present their concerns\n- the reasons they give for their views.",
             marks: 10,
             suggestedTimeMinutes: 15,
             questionType: 'comparison',
@@ -615,9 +740,9 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: `Source A: ${WJEC_C2_SOURCE_A_1_REF} | Source B: ${WJEC_C2_SOURCE_B_1_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both writers are concerned about the impact of technology. Carlyle worries about factories making workers like machines and the railway creating isolation. Kowalski worries about algorithms controlling information. Both think technology is presented as progress when it actually harms people. But Carlyle focuses on workers and community, while Kowalski focuses on individual thought and freedom.',
+                'Both writers think their society is run by something that does not care about people. The 21st-century writer says algorithms feed us "Outrage. Fear." because that is what earns a profit. Carlyle says people have forgotten that "Cash-payment is not the sole relation of human beings", so a rich mill-owner thinks that paying wages is all he owes his "starving workers". The 21st-century writer uses modern examples and short, punchy sentences. Carlyle uses a story from the Bible, Cain and Abel, and speaks directly to the rich ("O sumptuous Merchant-Prince"). Both blame the pursuit of money, but Carlyle blames what people have come to believe, while the modern writer blames a system that cannot care.',
               'Grade 6-7':
-                'Both writers distinguish between technological innovation and its actual social consequences. Carlyle observes that geographic connection (railways) paradoxically produces isolation, that labour-saving machinery (factories) paradoxically dehumanises workers. Kowalski similarly notes that platforms designed to connect us actually isolate users through algorithmic curation. The key difference is temporal and epistemological: Carlyle writes with the bewilderment of a contemporary observer watching industrialisation unfold; Kowalski writes with retrospective certainty about digital systems\' mechanisms. Carlyle\'s concern is primarily structural (the factory system creates "a class of human beings who are machines themselves"), whereas Kowalski\'s is primarily informational (the algorithm controls what we can know). Both, however, identify what might be called "technological alienation": a disconnect between the liberatory promise of innovation and its constraining effects on human experience.',
+                'Both writers describe a society organised around money and indifferent to the people inside it, but they locate the indifference differently. For the 21st-century writer it is built into a machine: the algorithm acts "not out of malice, but out of mathematical indifference" because it is "simply optimising for its profit model". For Carlyle it is a creed people hold: society has forgotten that "Cash-payment is not the sole relation of human beings", and he lets a mill-owner condemn himself in his own words, "What have I to do with them more?" Both expose a paradox. The modern writer\'s "space of freedom" has become "something far more controlling"; what Carlyle\'s age calls "a Society" is in fact "the totalest separation, isolation". Their methods differ with their periods. The modern writer argues by explanation and short, emphatic fragments. Carlyle argues by accusation: he sets the mill-owner\'s excuse beside Cain\'s "Am I my brother\'s keeper?", turning a business defence into the words of the first murderer, and addresses the rich in mock-grand titles ("O sumptuous Merchant-Prince, illustrious game-preserving Duke"). The modern writer treats readers as users of the platforms who may not see the danger; Carlyle treats his as a society that must be shamed into remembering its duties.',
             },
             markScheme: [
               'Compares views from both texts',
@@ -630,7 +755,7 @@ export const wjecMockExams: MockExamPaper[] = [
             id: 'wjec-c2-m1-q4',
             questionNumber: 4,
             questionText:
-              '"Carlyle\'s 19th-century concerns about technology are more valid than Kowalski\'s 21st-century concerns because they focus on human connection, which is more important than information control."\n\nTo what extent do you agree? You should refer to both texts.',
+              '"Carlyle\'s 19th-century concerns are more valid than the 21st-century writer\'s concerns because they focus on human connection, which is more important than information control."\n\nTo what extent do you agree? You should refer to both texts.',
             marks: 15,
             suggestedTimeMinutes: 18,
             questionType: 'evaluation',
@@ -638,9 +763,9 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: `Source A: ${WJEC_C2_SOURCE_A_1_REF} | Source B: ${WJEC_C2_SOURCE_B_1_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                "I don't fully agree. Both writers have valid concerns, but for different reasons. Carlyle worries about workers and community, which is important. But Kowalski's point about control of information is also crucial because what we know shapes what we believe and how we act. I think both types of harm matter equally.",
+                'I partly agree. Carlyle\'s point that people owe each other more than money still matters: the mill-owner who asks "What have I to do with them more?" has forgotten that his workers are human beings. But the 21st-century writer\'s worry about information is also important, because if we "never encounter truth", we cannot make good choices about anything, including how we treat each other. I think both concerns matter, for different reasons.',
               'Grade 6-7':
-                'I would challenge the binary implicit in the statement. The dichotomy between "human connection" and "information control" is false: Kowalski argues that algorithms prevent authentic human connection by mediating experience. The algorithm\'s control of information is not separate from social fragmentation but constitutive of it. Furthermore, Carlyle\'s concerns are not more "valid" because they are older - they are differently valid. Carlyle articulates how technological change creates new forms of economic subordination; Kowalski articulates how digital systems create new forms of cognitive subordination. Neither can claim priority.',
+                'I would challenge the division the statement makes. Information control and human connection are not separate: the 21st-century writer argues that algorithms feed each of us whatever "makes people feel more intensely", and a public fed "Confirmation of their existing prejudices" will find it harder to connect across its differences. Nor does Carlyle deal only in feeling. His target is an economic creed, the belief that cash "absolves and liquidates all engagements of man", so that his mill-owner can ask "Did I not pay them, to the last sixpence" and believe his duty done. Both writers, in other words, describe a system that values people only for what they are worth to it. Carlyle\'s concern is not more valid because it is older, though it may prove more lasting: the phrase he quotes, "fellow wayfarer in this Life-pilgrimage", names a bond that no technology creates or removes. The 21st-century writer\'s concern is more specific to our moment, and more precise about how the harm works. Each is valid, and neither makes the other less so.',
             },
             markScheme: [
               'Evaluates both texts with personal response',
@@ -702,22 +827,22 @@ export const wjecMockExams: MockExamPaper[] = [
         id: 'wjec-c2-m2-reading',
         title: 'Section A: Reading',
         description:
-          'Read both source texts carefully. Then answer all the questions in this section.',
+          'Read both source texts carefully. Then answer all the questions in this section.\n\nGlossary for Source B: novelty - newness, the pleasure of something not seen before; "If water chokes, what will you drink after it?" - an old proverb: when the remedy itself is what harms you, there is nothing left to try; in proper train - in the right state; railroad - railway; telegraphic transport - Ruskin imagines people sent from place to place as instantly as a telegraph message.',
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'wjec-c2-m2-q1',
             questionNumber: 1,
-            questionText: `Read Source A (21st century).\n\nList four ways that the 21st century affects young people\'s sense of self, according to this text.`,
+            questionText: `Read Source A (21st century).\n\nList five things you learn about young people and their use of media, according to this text.`,
             marks: 5,
             suggestedTimeMinutes: 5,
             questionType: 'short-answer',
-            extract: `Source A (21st Century):\n${WJEC_C2_SOURCE_A_2}\n\nSource B (20th Century):\n${WJEC_C2_SOURCE_B_2}`,
+            extract: `Source A (21st Century):\n${WJEC_C2_SOURCE_A_2}\n\nSource B (19th Century):\n${WJEC_C2_SOURCE_B_2}`,
             extractSource: `Source A: ${WJEC_C2_SOURCE_A_2_REF} | Source B: ${WJEC_C2_SOURCE_B_2_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                '1. Young people build identity in public before an audience. 2. Social media makes them feel worse about their appearance. 3. Social media increases anxiety about social situations. 4. Young people measure their worth by likes and follower counts.',
+                '1. The average teenager spends seven to nine hours a day consuming media. 2. Many use several kinds of media at once, such as scrolling TikTok while watching Netflix. 3. Their brains are not really multitasking but switching rapidly between tasks, and each switch has a cognitive cost. 4. In one study, students who used social media while studying scored on average 14% lower on assessments. 5. Young people report high levels of anxiety and depression, and a sense that they are "not enough".',
             },
             markScheme: ['1 mark per valid point, maximum 5'],
           },
@@ -725,7 +850,7 @@ export const wjecMockExams: MockExamPaper[] = [
             id: 'wjec-c2-m2-q2',
             questionNumber: 2,
             questionText:
-              "How does Dr Chen use evidence and language to support her argument that social media harms young people's wellbeing?\n\nYou should comment on specific techniques and their effects.",
+              'How does the writer of Source A use evidence and language to support the argument that heavy media use harms young people?\n\nYou should comment on specific techniques and their effects.',
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'analysis',
@@ -733,9 +858,9 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: WJEC_C2_SOURCE_A_2_REF,
             modelAnswers: {
               'Grade 4-5':
-                'Dr Chen uses statistics (70% and 62% of young people) to show the scale of the problem. She uses emotional language like "paradox" and "crisis" to make the reader take it seriously. She gives specific examples like "thirteen-year-old" and "eating breakfast" to make it feel real. The rhetorical question at the end ("something has gone fundamentally wrong") emphasises her concern.',
+                'The writer uses statistics, such as "seven to nine hours per day" and a study in which students scored "14% lower", to show the size of the problem. The list "scrolling TikTok while watching Netflix while texting friends while doing homework" repeats "while" to make the reader feel how crowded a teenager\'s attention is. Words like "fragmented" and "cognitive cost" sound scientific and serious. The repetition in "not pretty enough, not funny enough, not interesting enough" makes the damage to young people\'s confidence feel personal.',
               'Grade 6-7':
-                'Chen constructs credibility through disciplinary positioning (she is a doctor) and empirical grounding: the Cambridge study is cited with specific percentages. But her most persuasive moment is the specific example: "a thirteen-year-old cannot eat breakfast without checking likes." This instantiation of abstract harm makes it visceral. The phrase "we are not witnessing normal adolescent development. We are witnessing a crisis" employs anaphoric repetition to move from observation to judgment. The paradox is emphasised through antithetical structure: platforms "designed to connect" are making people "feel more isolated." This structural reversal is a form of logical demonstration: the reader is forced to see the contradiction.',
+                'The writer moves from measurement to meaning. The opening statistic, "seven to nine hours per day", establishes scale, and the list linked by "while" enacts the overload it describes. The writer then corrects everyday language: the word "multitasking" is set against what "the neuroscience suggests", and the short declarative "The brain is not multitasking." reads as a correction of the reader. The antithesis in "What we experience as seamless is, neurologically, profoundly fragmented" sets appearance against reality. The evidence then escalates: the study\'s "14% lower" concerns marks, but "the problem goes deeper than academic performance", and the last paragraph turns to feelings. The repeated "They report" presents these as young people\'s own testimony rather than the writer\'s opinion, and the closing tricolon, "not pretty enough, not funny enough, not interesting enough", ends on the most personal harm. A critical reader might note one weakness: the study is identified only by its year, so its finding has to be taken on trust.',
             },
             markScheme: [
               'Analyses use of evidence and statistics',
@@ -756,9 +881,9 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: `Source A: ${WJEC_C2_SOURCE_A_2_REF} | Source B: ${WJEC_C2_SOURCE_B_2_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Dr Chen is concerned about the negative effects of social media on young people. Raymond Williams is concerned about the loss of traditional community life. Chen uses scientific evidence and an urgent tone. Williams uses personal memory and a nostalgic tone. Chen addresses a modern reader concerned about technology. Williams addresses a reader who remembers or values traditional ways.',
+                'Both writers worry that modern life moves too fast for people to take things in properly. The 21st-century writer is concerned about teenagers switching between screens, which leaves their minds "fragmented". Ruskin is concerned about people who "hurry past" what they see, and about railway travel, which he says is not travelling at all but "being sent" to a place. The 21st-century writer uses a serious, scientific tone with statistics. Ruskin uses a personal and sometimes humorous tone, comparing a train journey to "becoming a parcel" and to a man who would "concentrate his dinner into a pill". The modern writer expects readers to recognise the habits described, while Ruskin writes for readers who travel and enjoy the countryside.',
               'Grade 6-7':
-                'Both writers worry about fragmentation, but of different kinds. Chen identifies cognitive fragmentation ("rapidly switching between tasks," "fragmented identity"). Williams identifies temporal fragmentation (the loss of what he calls "coherence" and "patience"). Chen addresses readers who are implicitly "online" themselves; Williams addresses readers who can remember "offline" life. The tone is crucial: Chen is urgent and diagnostic (this is a problem we must recognise), while Williams is elegiac and reflective (we have lost something we should mourn). Chen positions technology as a threat to authentic identity; Williams positions the loss of manual labour and seasonal time as the threat. Both, however, assume their readers are caught between worlds - neither fully digital nor fully traditional.',
+                'Both writers argue that speed and constant novelty damage attention, and both use a paradox to say so. The 21st-century writer\'s is that "What we experience as seamless is, neurologically, profoundly fragmented"; Ruskin\'s is that "if we try to obtain perpetual change, change itself will become monotonous". Ruskin\'s image of the traveller who would "take two cottages at a time" is close to the modern writer\'s account of a brain "rapidly switching between tasks". Their evidence differs: the modern writer cites hours of media use, "the neuroscience" and a study, while Ruskin relies on his own judgement ("I say, first") and on analogy. So do their tones. The modern writer is urgent and clinical, moving from "cognitive cost" to "anxiety and depression". Ruskin is calm, witty and sure of himself: railway travel is "very little different from becoming a parcel", and a traveller who would "pack a day of such happiness into an hour of railroad" is as absurd as a diner who would "concentrate his dinner into a pill". The modern writer diagnoses without prescribing, whereas Ruskin prescribes "patience and rest" and "a quiet walk along not more than ten or twelve miles of road a day". The modern writer assumes readers who live among screens, perhaps teenagers or their parents; Ruskin assumes leisured readers free to choose how fast they travel, and appeals to "any person who has all his senses about him".',
             },
             markScheme: [
               'Compares concerns from both texts',
@@ -771,7 +896,7 @@ export const wjecMockExams: MockExamPaper[] = [
             id: 'wjec-c2-m2-q4',
             questionNumber: 4,
             questionText:
-              '"Williams\'s memory of Old Tom and traditional work is more persuasive than Chen\'s statistics because it connects emotionally with the reader."\n\nTo what extent do you agree? Support your evaluation with references to both texts.',
+              '"Ruskin\'s personal, reflective argument is more persuasive than the statistics and research in Source A because it appeals to the reader\'s own experience."\n\nTo what extent do you agree? Support your evaluation with references to both texts.',
             marks: 15,
             suggestedTimeMinutes: 18,
             questionType: 'evaluation',
@@ -779,9 +904,9 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: `Source A: ${WJEC_C2_SOURCE_A_2_REF} | Source B: ${WJEC_C2_SOURCE_B_2_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                "Williams's description of Old Tom is touching and makes the reader care about what has been lost. But Chen's statistics are more convincing as evidence of a real problem. I think they work in different ways - statistics convince you something is true, while stories make you care about it. Both are persuasive for different reasons.",
+                'I partly agree. Ruskin\'s examples, like "a turn of a country road, with a cottage beside it", are things readers can picture from their own lives, and his comparison with a dinner turned into "a pill" is memorable. But the statistics in Source A, like "seven to nine hours per day", are harder to argue with, because they suggest how many young people are affected. I think Ruskin makes you share his feelings, while Source A makes you believe there is a real problem.',
               'Grade 6-7':
-                "I would challenge the binary. Emotional connection is not a substitute for evidentiary grounding; it is a different kind of persuasive work. Williams's memory of Old Tom operates through what we might call nostalgic identification: the reader is invited to regret a past they may not have experienced but can imagine losing. This is powerful, but it is also vulnerable to the charge of sentimentality. Chen's statistics create a different kind of emotional force - the force of aggregation and scale. Fourteen percent of young people is a very different rhetorical gesture than 70% of young people. The single example of Old Tom is moving but unquantifiable. Chen's data is quantifiable but abstract. Perhaps the most effective persuasion would combine both: the specific story and the statistical claim.",
+                'I would challenge the idea that the two methods compete. Ruskin persuades through shared experience and wit: most readers have felt that "all travelling becomes dull in exact proportion to its rapidity", and the traveller who would "pack a day of such happiness into an hour of railroad" makes the opposing view look absurd rather than wrong. That is powerful, but it rests on his authority and the reader\'s agreement; a reader who enjoys fast travel has nothing to test it against. Source A offers what Ruskin cannot: figures and "the neuroscience", which claim to be true whatever the reader feels. Yet Source A also appeals to experience. The list "scrolling TikTok while watching Netflix while texting friends while doing homework" is written to be recognised, and its last paragraph turns to what young people "report" feeling. Its weakness is that its one study is identified only by its year, so its evidence must be taken on trust as much as Ruskin\'s judgement must. Ruskin is the more memorable, Source A the more testable, and Source A itself shows that the most persuasive writing combines the two.',
             },
             markScheme: [
               'Evaluates both texts with sustained response',
@@ -843,22 +968,22 @@ export const wjecMockExams: MockExamPaper[] = [
         id: 'wjec-c2-m3-reading',
         title: 'Section A: Reading',
         description:
-          'Read both source texts carefully. Then answer all the questions in this section.',
+          "Read both source texts carefully. Then answer all the questions in this section.\n\nGlossary for Source B: joint stools - simple wooden stools made by a joiner; parlour - a private sitting room, here one where the farmer's family could sit apart from their workers; bell-pull - a cord pulled to ring for a servant; stock-jobber - a dealer in stocks and shares, for Cobbett someone grown rich on money rather than work; 'Squire - a country gentleman, a title Cobbett mocks the farmer's family for taking; Hodge, Betty - plain country names (Cobbett means the family were once ordinary farming people); transmuted - changed; work-people - farm workers; pauperism - being so poor as to depend on poor relief from the parish.",
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'wjec-c2-m3-q1',
             questionNumber: 1,
-            questionText: `Read Source A (21st century).\n\nList four things the writer says about the economic system and its relationship to the climate crisis.`,
+            questionText: `Read Source A (21st century).\n\nList five things the writer says about the climate crisis and the economic system.`,
             marks: 5,
             suggestedTimeMinutes: 5,
             questionType: 'short-answer',
-            extract: `Source A (21st Century):\n${WJEC_C2_SOURCE_A_3}\n\nSource B (20th Century):\n${WJEC_C2_SOURCE_B_3}`,
+            extract: `Source A (21st Century):\n${WJEC_C2_SOURCE_A_3}\n\nSource B (19th Century):\n${WJEC_C2_SOURCE_B_3}`,
             extractSource: `Source A: ${WJEC_C2_SOURCE_A_3_REF} | Source B: ${WJEC_C2_SOURCE_B_3_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                '1. The climate crisis is happening now, not in the future. 2. Product prices do not reflect their true environmental costs. 3. The economic system externalises costs onto the planet and future generations. 4. Hidden costs do not appear in our moral thinking.',
+                '1. The climate crisis is happening now, not in the future. 2. Glaciers are melting, oceans are warming and extreme weather is becoming routine. 3. We are paralysed by inaction. 4. The price of a product bears no relationship to the true cost of making it. 5. The costs are pushed onto the planet and future generations, and because they do not appear on a price tag, they do not appear in our moral thinking.',
             },
             markScheme: ['1 mark per valid point, maximum 5'],
           },
@@ -866,7 +991,7 @@ export const wjecMockExams: MockExamPaper[] = [
             id: 'wjec-c2-m3-q2',
             questionNumber: 2,
             questionText:
-              'How does Naomi Klein use evidence, language, and rhetorical techniques to support her argument about the climate crisis and economics?\n\nYou should comment on specific techniques and their effects.',
+              'How does the writer of Source A use evidence, language and rhetorical techniques to support the argument about the climate crisis and the economy?\n\nYou should comment on specific techniques and their effects.',
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'analysis',
@@ -874,9 +999,9 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: WJEC_C2_SOURCE_A_3_REF,
             modelAnswers: {
               'Grade 4-5':
-                'Klein uses the word "now" repeatedly to create urgency. She lists specific examples of climate events (melting glaciers, warming oceans, extreme weather) to make the problem concrete. The image of the plastic bottle costing £2 but having a hidden true cost is striking because it is relatable. She uses strong language like "externalised" and "calculated" to show that the system is deliberately flawed, not accidental.',
+                'The writer uses short sentences such as "It is happening now." to create urgency. The list of climate events ("The glaciers are melting. The oceans are warming.") makes the problem concrete. The example of a plastic bottle that "costs two pounds in the shop" is striking because it is something everyone has bought. Technical words like "externalised" and "moral calculus" make the argument sound expert and show that the problem lies in the system, not in bad luck.',
               'Grade 6-7':
-                'Klein constructs urgency through temporal collapse: "It is not a future problem. It is happening now." The anaphoric repetition of "We are" in the following sentences intensifies this present-tenseness. The plastic bottle example is pedagogically brilliant: it takes an ordinary consumer object and exposes the gap between visible and true cost. The adjective "externalised" is technical, lending the argument economic credibility. But Klein\'s most effective move is her argument about moral calculus: costs that "do not appear on a price tag" do not appear "in our moral calculus." This suggests that capitalism doesn\'t merely harm the environment; it mathematically removes environmental harm from ethical consideration. The word "calculated" in this context is particularly potent: the indifference is deliberate, baked into the system.',
+                'The writer builds urgency by collapsing the future into the present: "The climate crisis is not a future problem. It is happening now." The parallel sentences that follow, "We are not preparing..." and "We are living through...", replace a comfortable assumption with an uncomfortable one. Short declaratives ("The glaciers are melting. The oceans are warming.") present the evidence as plain fact, and the list set between dashes, "droughts, floods, hurricanes of unprecedented intensity", widens it. The turn comes with "And yet": the problem is not that the crisis is unknown but that "we are paralysed by inaction". The plastic bottle is the most effective example, because it takes an everyday object and exposes the gap between the price paid and the true cost, itemised in a second list of carbon, energy and damage. The verb "externalised" is technical, lending the argument economic credibility, and the closing parallelism, in which costs that "do not appear on a price tag" also "do not appear in our moral calculus", suggests that the economy does not merely damage the planet but removes the damage from moral view.',
             },
             markScheme: [
               'Analyses rhetoric and persuasive techniques',
@@ -889,7 +1014,7 @@ export const wjecMockExams: MockExamPaper[] = [
             id: 'wjec-c2-m3-q3',
             questionNumber: 3,
             questionText:
-              'Compare and contrast how the two writers approach the question of economic systems and social inequality.\n\nYou should compare:\n- the problems they identify\n- their explanation for why these problems exist\n- the relationship between individuals and systems in their writing.',
+              'Compare and contrast how the two writers present the harm done by an economic system, and who is made to pay for it.\n\nYou should compare:\n- the problems they identify\n- their explanation for why these problems exist\n- the relationship between individuals and systems in their writing.',
             marks: 10,
             suggestedTimeMinutes: 15,
             questionType: 'comparison',
@@ -897,13 +1022,13 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: `Source A: ${WJEC_C2_SOURCE_A_3_REF} | Source B: ${WJEC_C2_SOURCE_B_3_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                "Both writers are concerned about systems that harm people. Hoggart describes how the class system trapped his father in manual labour. Klein describes how capitalism hides environmental costs. Hoggart focuses on personal experience and his family's suffering. Klein focuses on global systems and the planet. Both think the systems are deliberately structured to hide inequality.",
+                'Both writers blame an economic system for harm that ordinary people cannot see or control. The 21st-century writer says the price of a product "bears no relationship to the true cost", so the damage is pushed onto the planet and "future generations". Cobbett describes a farmhouse where the farmer\'s family had come to live like "mock gentlefolks", with a parlour and decanters, while the labourers have been ground "down into real slaves". The modern writer explains the problem through prices; Cobbett explains it through wages, saying farmers no longer feed their workers because they "cannot keep them upon so little as they give them in wages". Cobbett mocks the farmer\'s family but blames "this accursed system" for changing them, and the modern writer blames the system "we have constructed".',
               'Grade 6-7':
-                'Both writers construct a critique of systems that externalise costs - Hoggart in terms of labour, Klein in terms of environmental damage. Hoggart\'s system traps individuals through the "accident" of birth; Klein\'s system operates through mathematical opacity. Hoggart\'s argument is that systems of distribution create unequal access to goods and experiences (his father cut stone he would never live in). Klein\'s argument is that systems hide true costs in order to enable continued exploitation. The relationship to individual agency differs: Hoggart emphasises the dignity of individuals trapped by systems (the mother maintaining "desperate respectability"); Klein emphasises the way systems actively conceal harm from moral reckoning. Temporally, Hoggart writes retrospectively about systems he has escaped; Klein writes with urgency about systems still operating.',
+                'Both writers identify a hidden cost that someone else is made to pay. For the 21st-century writer it is environmental: the true cost of a product is "externalised" onto "the planet and onto future generations". For Cobbett it is human: the comfort of the new parlour, with its "mahogany table" and "decanters", is paid for by labourers who are no longer fed and lodged. Both explain the problem as the working of a system rather than the wickedness of individuals. The modern writer\'s system is one "we have constructed", in which a cost missing from the "price tag" goes missing from "our moral calculus". Cobbett\'s is "this accursed system", which has "transmuted" a farming family "into a species of mock gentlefolks, while it has ground the labourers down into real slaves"; the antithesis of "mock" and "real" shows who gains and who pays. Individuals stand in different relations to these systems. In Source A "we" are all implicated, consumers who cannot see the cost. Cobbett names individuals, "plain Master Charington, and his son Hodge", and sneers at their pretensions, yet grants that they have been changed by a force larger than themselves, while the labourers appear only as a class. Their evidence differs with their periods: the modern writer reasons from a typical plastic bottle, Cobbett from what he saw that day, oak furniture "in a state of decay and nearly of disuse". Both, finally, see moral damage: a "moral calculus" that no longer counts the cost, and "the pauperism and the crimes that now disgrace this once happy and moral England."',
             },
             markScheme: [
-              "Compares both writers's views of systems",
-              'Analyses their explanations for inequality',
+              "Compares both writers' views of systems",
+              'Analyses their explanations for the harm',
               'Comments on individual/system relationship',
               'Uses evidence from both texts',
             ],
@@ -912,7 +1037,7 @@ export const wjecMockExams: MockExamPaper[] = [
             id: 'wjec-c2-m3-q4',
             questionNumber: 4,
             questionText:
-              '"Hoggart\'s personal testimony is more effective than Klein\'s abstract economic argument because it reveals the human impact of inequality."\n\nTo what extent do you agree? Support your evaluation with detailed references to both texts.',
+              '"Cobbett\'s first-hand account of the farmhouse is more effective than the economic argument in Source A because it reveals the human impact of inequality."\n\nTo what extent do you agree? Support your evaluation with detailed references to both texts.',
             marks: 15,
             suggestedTimeMinutes: 18,
             questionType: 'evaluation',
@@ -920,9 +1045,9 @@ export const wjecMockExams: MockExamPaper[] = [
             extractSource: `Source A: ${WJEC_C2_SOURCE_A_3_REF} | Source B: ${WJEC_C2_SOURCE_B_3_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                "Hoggart's story about his father is very powerful and makes the reader care deeply about class inequality. Klein's economic argument is harder to understand but is also important because it shows why the system doesn't change. I think both are necessary - personal stories show us why we should care, and economic arguments show us what needs to change.",
+                'I mostly agree. Cobbett describes real things he saw, like the oak tables and the new "carpet and bell-pull", so the reader can picture how the farmer\'s family now live apart from their workers. His anger that the labourers have been ground "down into real slaves" makes you care about them. The economic argument in Source A is clever, and the plastic bottle is a good example, but it is harder to feel for "future generations" than for people in a real place. Still, Source A shows why the problem is so hard to fix: the costs "do not appear on a price tag".',
               'Grade 6-7':
-                'I would resist the dichotomy. Hoggart\'s personal account does reveal human impact, but it is also itself an economic argument: he shows how capitalism produces class hierarchies through distribution of labour and access to culture. His observation that his father\'s labour created buildings "he would never live in" is an economic insight expressed through personal narrative. Klein\'s economic argument is not merely abstract: it demonstrates why individual action cannot solve systemic problems - which is itself a kind of human impact. The plastic bottle is an economic argument, but it is grounded in the concrete material experience of consumption. The apparent binary between "personal" and "abstract" obscures how both texts work to connect individual experience to systematic analysis.',
+                'I would resist the dichotomy. Cobbett\'s account does reveal human impact, but it is also an economic argument: he reasons from the furniture to a cause, "Because they cannot keep them upon so little as they give them in wages. This is the real cause of the change." The unused oak tables and the new parlour are evidence of wealth shared out differently, and his irony ("Aye, and a carpet and bell-pull too!") makes the reader share his contempt. Yet its force has a limit: the labourers themselves are never seen or heard, only the rooms they no longer use, and his account of the Charingtons is partly guesswork, as "I dare say" and "in all likelihood" admit. Nor is the argument in Source A merely abstract. The plastic bottle grounds it in an ordinary purchase, and it shows why good intentions cannot solve the problem while the costs "do not appear in our moral calculus". Its victims, though, are unnamed "future generations", which is exactly why the harm is so easy to ignore. Cobbett is the more vivid and makes us feel the injustice; Source A is the more useful for explaining why it continues. Both connect individual lives to a system, one by showing and one by explaining.',
             },
             markScheme: [
               'Evaluates both texts with critical engagement',

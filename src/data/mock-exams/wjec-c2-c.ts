@@ -1,4 +1,124 @@
 // @ts-nocheck
+/**
+ * WJEC GCSE English Language Component 2 (C700U20-1), third set: papers 11 to
+ * 15, each pairing a modern opinion article (Source A) with a
+ * nineteenth-century source (Source B). Live: served through the lazy loader
+ * as 'chunk/wjec-c2-c' (src/data/mock-exam-loader.ts,
+ * src/data/mock-exams/index-data.ts).
+ *
+ * WHAT WAS WRONG (found 26 September 2026 by
+ * scripts/check-mock-exam-extracts.mjs, and checked by hand on 27 September
+ * for the three it could not read). Every Source B was printed as the words of
+ * a named nineteenth-century writer, and none was:
+ * - "William Cobbett, Rural Rides, 1830": 0 of 11 sentences are in the book.
+ * - "William Morris, 'Art and the People', a lecture delivered in Birmingham,
+ *   1879": the lecture is "The Art of the People" (Hopes and Fears for Art,
+ *   Project Gutenberg #3773), and 0 of 13 sentences are in it. It had Morris
+ *   visit an evening class of Bradford mill workers, which the lecture does
+ *   not contain.
+ * - "Elizabeth Fry (attributed), Observations on the Visiting of Female
+ *   Prisoners, 1827": a first-person tour of a women's wing, with a matron, a
+ *   woman jailed for stealing bread and a chaplain who says "We punish them
+ *   for being poor". The 1827 book is not on Gutenberg, so the checker could
+ *   not read it, and the label's own "(attributed)" admitted the doubt; 0 of
+ *   10 sentences are in E. R. Pitman's life of Fry (#16606), which prints her
+ *   evidence and journals at length.
+ * - "Charles Knight, 'In Defence of the Popular Press', The Edinburgh Review,
+ *   1855": no such article was found, and 0 of 14 sentences are in Knight's
+ *   own book on the subject, The Old Printer and the Modern Press (1854,
+ *   #59966).
+ * - "Edmund Hargraves, 'Against the Cult of Games', The Saturday Review,
+ *   1897": no trace of the writer or the article was found. It was presented
+ *   as a real Victorian source.
+ * The model answers quoted the invented lines as the writers' own (eight such
+ * quotations in Papers 13 and 15 alone), and the Paper 14 Question 3 answer
+ * misquoted even its own invented passage ("He knows... He has opinions...").
+ *
+ * The Source A articles were labelled as pieces by named writers in real
+ * publications ("Angharad Tomos, 'The Cost of Cutting Culture', Nation.Cymru,
+ * 2024" and four like it). They were written for this file. Angharad Tomos is
+ * a real Welsh author who did not write it, the other names could belong to
+ * real journalists, and the answers named them throughout. Smaller errors:
+ * two Paper 13 Question 2 answers cut "and - increasingly - without pleasure"
+ * to "and without pleasure" with no ellipsis, and one called "remarkable and
+ * terrible" an oxymoron and "labour, weather, soil, and season" a list of
+ * monosyllables; a Paper 14 Question 2 answer called "we have no idea" a
+ * passive construction; a Paper 11 Question 2 answer put "briefly and
+ * gloriously" in the final paragraph, where it is not, and called verbs from
+ * three separate sentences "syndetic listing"; a Paper 15 answer called the
+ * end-of-sentence repetition of "is not a luxury" anaphora, which is
+ * epistrophe, and with the byline gone still called the writer "she".
+ *
+ * WHAT WAS DONE (27 September 2026). Each Source B is now a genuine passage,
+ * cut by passage() (src/lib/study-guides/passage.ts) from a Project Gutenberg
+ * edition by a script and never typed, trimmed to whole sentences where it
+ * starts or ends inside a paragraph, and labelled with the edition used. The
+ * only departures from the editions are layout: the italic underscores are
+ * dropped, "--" is printed as the dash it stands for, and the double space
+ * after a full stop is printed as one. Each keeps the old passage's subject:
+ * - Paper 11: Veblen, The Theory of the Leisure Class (1899), on the love of
+ *   sport as a boyish and warlike temperament, the argument the invented
+ *   passage made, from a writer who made it.
+ * - Paper 12: Fry's own answers to a Commons committee on 27 February 1818,
+ *   about the women in Newgate, as Pitman's life of her prints them.
+ * - Paper 13: Cobbett on the Wiltshire labourers and their rented potato
+ *   plots, written at Highworth on 4 September 1826.
+ * - Paper 14: Knight's The Old Printer and the Modern Press, where he answers
+ *   doubts about cheap reading and the newspaper press.
+ * - Paper 15: "The Art of the People" itself, on the village craftsmen who
+ *   built and carved the old churches and houses.
+ * Two Question 4 statements are reworded, because the genuine passages do not
+ * argue what the old ones claimed: Paper 12's said both writers argue "that
+ * the prison system punishes poverty rather than crime", which Fry's answers
+ * do not, and Paper 15's said Morris "focuses on solutions rather than
+ * complaints", which this part of the lecture does not. Every Question 3 and
+ * Question 4 answer was rewritten for the new passages, and every quotation
+ * in every model answer was checked by script against the extract its
+ * question prints. The Source A articles are labelled as specially written,
+ * the invented names are gone from the answers, the smaller errors above are
+ * corrected, and "practiced" in Paper 14's Source A is "practised".
+ *
+ * A second reading the same day added a glossary to each Source B, printed
+ * with Questions 3 and 4 as wjec-c2-b prints its own. The word glosses moved
+ * out of the labels into it: the checker reads a label of 400 characters or
+ * more as a passage, and QUESTIONS in the glossary names keeps it from reading
+ * those. It also put right answers that said more than the passages: Fry
+ * tells two stories, not one; the city allowed no regular clothing, but the
+ * sheriffs gave some; the extract names no "committee of ladies"; in 1899
+ * "addiction" meant a habitual leaning, not a dependency; the Paper 11
+ * tricolon is dissolved by the next sentence, not its own; and Paper 13's
+ * grandmother paragraph does not end on its list, whose nouns ("labour",
+ * "season") are not concrete. Knight's label and
+ * a Paper 14 answer said "the poorest readers" want mere amusement; his words
+ * are "the great bulk of the readers of cheap books".
+ *
+ * To cut a passage again, with passage(text, section, from, to) on the whole
+ * edition as one section, then trimmed to the sentences named:
+ *   WJEC_C2_11_SOURCE_B  #833 Chapter Ten, the paragraph "It is perhaps truer", from that sentence to "borrowed from the terminology of warfare."
+ *   WJEC_C2_12_SOURCE_B  #16606 Chapter VII, the answers from "Do you know whether there is any clothing allowed by the city?" to "We sent down to the matron immediately to get her clothes."
+ *   WJEC_C2_13_SOURCE_B  #34238 "Ride from Highworth to Cricklade and thence to Malmsbury", the paragraph "In quitting Devizes yesterday morning", from "As I came on the road" to "death by the halter!"
+ *   WJEC_C2_14_SOURCE_B  #59966 Part II, Chapter VII, the paragraph "Do such considerations as these make us hopeless"
+ *   WJEC_C2_15_SOURCE_B  #3773 "The Art of the People", from "These form the mass of our architectural treasures" to "and consequently some human happiness."
+ *
+ * WHY STRINGS, NOT passage() CALLS. These editions are not held in
+ * src/data/full-texts, so there is nothing to cut from when the file loads, and
+ * scripts/check-mock-exam-extracts.mjs reads each extract here as a string
+ * literal: a constant set by a call would not be checked at all. The checker
+ * compares every sentence with the Gutenberg text (its entries
+ * veblen-leisure-class, fry-evidence-pitman, rural-rides, knight-old-printer
+ * and morris-art-of-the-people), so a passage here that drifted from its
+ * edition would be reported.
+ *
+ * NOT CHANGED: marks, timings, Section B and the substance of the Source A
+ * articles. Some of what they state as fact is out of date or was not
+ * verified, and is left for a person to decide: Paper 12's release grant of
+ * "forty-six pounds" (raised to £76 in 2021 and £82.39 in 2022, now called
+ * the subsistence payment); Paper 13's survey "published last month", whose
+ * figures resemble the British Nutrition Foundation's survey of 2017; Paper
+ * 14's teenagers who spend more time on screens than asleep; and Paper 15's
+ * closures of libraries in three South Wales councils and of a Merthyr Tydfil
+ * museum "in September".
+ */
 import type { MockExamPaper } from './types'
 
 // ─── WJEC Component 2 Source Texts ──────────────────────────────────────────
@@ -10,16 +130,15 @@ Sport does this. It takes unremarkable people and places them in circumstances w
 
 The cynics will tell you it doesn't last. They're right, of course. By Monday morning the divisions will have reasserted themselves. But I would argue that those ninety minutes matter more than the cynics allow. They remind us of a capacity for collective joy that we have almost forgotten how to access. In an age of isolation and screen-mediated experience, sport remains one of the last places where thousands of human beings share the same emotion at the same moment. That is not trivial. That is essential.`
 
-const WJEC_C2_11_SOURCE_A_REF = 'Rhodri Evans, "Why Sport Still Matters", Wales Online, 2024'
+const WJEC_C2_11_SOURCE_A_REF = 'Opinion article, specially written for this paper'
 
-const WJEC_C2_11_SOURCE_B = `I am no friend to the modern mania for athletic sports. It is my considered opinion that the cult of physical prowess, which has taken so firm a hold upon our public schools and universities, does more harm than good to the moral character of the nation. I have observed boys of fourteen and fifteen subjected to a regime of compulsory games that would exhaust a grown man, and praised or censured not according to their scholarship or their conduct, but according to their ability to strike a ball or run a measured distance in a measured time.
-
-The defenders of this system will tell you that sport builds character. I have seen little evidence of it. What I have seen is that it builds a particular kind of character - aggressive, competitive, contemptuous of intellectual achievement - and that it builds this character at the expense of qualities that a civilised society ought to value more highly: gentleness, reflection, the capacity for sustained thought. The boy who reads a book in the corner of the playing field is mocked. The boy who cannot catch is despised. These are not the lessons we should wish our children to learn.
-
-I concede that physical exercise is necessary for health. But there is a vast difference between wholesome exercise taken for its own sake and the organised, ritualised, fiercely partisan combat that passes for sport in our schools today. The former promotes well-being; the latter promotes nothing but a savage tribalism that ill prepares young men for the demands of adult life.`
+const WJEC_C2_11_SOURCE_B = `It is perhaps truer, or at least more evident, as regards sports than as regards the other expressions of predatory emulation already spoken of, that the temperament which inclines men to them is essentially a boyish temperament. The addiction to sports, therefore, in a peculiar degree marks an arrested development of the man's moral nature. This peculiar boyishness of temperament in sporting men immediately becomes apparent when attention is directed to the large element of make-believe that is present in all sporting activity. Sports share this character of make-believe with the games and exploits to which children, especially boys, are habitually inclined. Make-believe does not enter in the same proportion into all sports, but it is present in a very appreciable degree in all. It is apparently present in a larger measure in sportsmanship proper and in athletic contests than in set games of skill of a more sedentary character; although this rule may not be found to apply with any great uniformity. It is noticeable, for instance, that even very mild-mannered and matter-of-fact men who go out shooting are apt to carry an excess of arms and accoutrements in order to impress upon their own imagination the seriousness of their undertaking. These huntsmen are also prone to a histrionic, prancing gait and to an elaborate exaggeration of the motions, whether of stealth or of onslaught, involved in their deeds of exploit. Similarly in athletic sports there is almost invariably present a good share of rant and swagger and ostensible mystification—features which mark the histrionic nature of these employments. In all this, of course, the reminder of boyish make-believe is plain enough. The slang of athletics, by the way, is in great part made up of extremely sanguinary locutions borrowed from the terminology of warfare.`
 
 const WJEC_C2_11_SOURCE_B_REF =
-  'Edmund Hargraves, "Against the Cult of Games", The Saturday Review, 1897'
+  'Thorstein Veblen, The Theory of the Leisure Class (1899), from Chapter Ten, "Modern Survivals of Prowess" (Project Gutenberg #833). Veblen, an American economist, has been writing about fighting and duelling, which he calls "predatory emulation": getting the better of others by force.'
+
+const WJEC_C2_11_B_GLOSSARY_FOR_QUESTIONS =
+  'Source B glossary: arrested development: growth that stopped too soon. accoutrements: equipment. histrionic: theatrical. ostensible mystification: a show of mystery. sanguinary locutions: bloodthirsty expressions.'
 
 // Paper 12 - Justice and the Prison System
 const WJEC_C2_12_SOURCE_A = `I spent three years working as a prison teacher, and in that time I learned one thing above all others: the people we lock up are overwhelmingly the people we have already failed. Of the two hundred and thirty inmates I taught in HMP Swansea, over eighty per cent had been excluded from school before the age of fourteen. More than half were functionally illiterate. Nearly all came from the same handful of postcodes - streets where unemployment runs at forty per cent and where a criminal record is not a mark of shame but an inevitability.
@@ -28,17 +147,33 @@ We tell ourselves that prison is about justice. It is not. It is about geography
 
 I am not naive. Some people are dangerous and must be separated from society. But they are a small minority. The majority of prisoners are not dangerous - they are damaged. And locking damaged people in a concrete box for twenty-three hours a day, then releasing them with forty-six pounds and a bin bag of belongings, is not justice. It is institutional cruelty dressed in the language of law.`
 
-const WJEC_C2_12_SOURCE_A_REF =
-  'Megan Lloyd-Williams, "The Myth of Justice", The New Statesman, 2023'
+const WJEC_C2_12_SOURCE_A_REF = 'Opinion article, specially written for this paper'
 
-const WJEC_C2_12_SOURCE_B = `I was conducted through the female wing by the matron, a stout, capable woman who spoke of her charges with a mixture of firmness and compassion that I found reassuring. The cells were small but tolerably clean; each contained a bed, a stool, and a basin. Upon the whitewashed walls, some of the prisoners had pinned pictures torn from illustrated papers - images of country scenes, of children, of a world beyond the walls that most of them would not see again for years.
+const WJEC_C2_12_SOURCE_B = `"Do you know whether there is any clothing allowed by the city?"
 
-I spoke with several of the women. Their stories were remarkably similar: poverty, drink, violent husbands, children taken by the parish. One woman, convicted of stealing a loaf of bread, told me she had done so because her three children had not eaten for two days. She spoke without self-pity, but with a quiet bewilderment that was, to me, more affecting than any display of emotion. She simply could not understand how taking bread to feed hungry children could be a crime deserving of six months' imprisonment.
+"Not any. Whenever we have applied or mentioned anything about clothing, we have always found that there was no other resource but our own, excepting that the sheriffs used to clothe the prisoners occasionally. Lately, nobody has clothed them but ourselves; except that the late sheriffs sent us the other day a present of a few things to make up for them."
 
-The prison chaplain, a thoughtful man, confided to me that in his estimation fully three-quarters of the inmates were there not because of wickedness but because of want. "We punish them for being poor," he said, "and then we wonder why they do not emerge reformed." It was a remark I found myself unable to answer.`
+"There is no regular clothing allowed?"
+
+"It appears to me that there is none of any kind."
+
+"Have you never had prisoners there who have suffered materially for want of clothing?"
+
+"I could describe such scenes as I should hardly think it delicate to mention. We had a woman the other day, on the point of lying-in, brought to bed not many hours after she came in. She had hardly a covering; no stockings, and only a thin gown. Whilst we are there, we can never see a woman in that state without immediately applying to our fund."
+
+"When they come in they come naked, almost?"
+
+"Yes, this woman came in, and we had to send her up almost every article of clothing, and to clothe her baby. She could not be tried the next sessions, but after she had been tried, and when she was discharged, she went out comfortably clothed; and there are many such instances."
+
+"Has it not happened that when gentlemen have come in to see the prison, you have been obliged to stand before the women who were in the prison in a condition not fit to be seen?"
+
+"Yes, I remember one instance in which I was obliged to stand before one of the women to prevent her being seen. We sent down to the matron immediately to get her clothes."`
 
 const WJEC_C2_12_SOURCE_B_REF =
-  'Elizabeth Fry (attributed), Observations on the Visiting of Female Prisoners, 1827'
+  "Elizabeth Fry, answering a Committee of the House of Commons on the prisons of London, 27 February 1818, as printed in Emma Raymond Pitman, Elizabeth Fry, Chapter VII (Project Gutenberg #16606). The questions are the Committee's; the answers are Fry's, about the women in Newgate prison."
+
+const WJEC_C2_12_B_GLOSSARY_FOR_QUESTIONS =
+  'Source B glossary: the sheriffs: officers of the City of London, elected for a year; the late sheriffs: the previous ones. lying-in: giving birth. brought to bed: gave birth. the next sessions: the next sittings of the criminal court. discharged: set free.'
 
 // Paper 13 - Food and Agriculture
 const WJEC_C2_13_SOURCE_A = `We have, in the space of two generations, accomplished something remarkable and terrible: we have severed the connection between human beings and the food they eat. The average British child, according to a survey published last month, cannot identify a leek growing in a field. One in five believes that fish fingers are made from chicken. A quarter think that cheese comes from plants. These are not charming examples of juvenile ignorance. They are symptoms of a profound and dangerous disconnection.
@@ -47,33 +182,32 @@ When my grandmother was alive, she could name every farmer within five miles of 
 
 Today, food is a product that appears, wrapped in plastic, on a supermarket shelf. Its origins are invisible, its production methods unknowable, its true cost concealed behind a price tag that reflects neither the exploitation of the workers who grew it nor the degradation of the land on which it was grown. We eat without knowledge, without gratitude, and - increasingly - without pleasure. The industrialisation of our food supply has given us abundance, certainly. But it has taken something in return: our understanding of what it means to be nourished.`
 
-const WJEC_C2_13_SOURCE_A_REF = 'Catrin Owens, "The Disconnected Plate", BBC Wales, 2024'
+const WJEC_C2_13_SOURCE_A_REF = 'Opinion article, specially written for this paper'
 
-const WJEC_C2_13_SOURCE_B = `The labouring man eats what he can get, not what he would choose. His bread is of the coarsest kind; his cheese, when he has it, hard and tasteless; his meat a rarity reserved for Sundays, if then. I have visited cottages in which the family subsisted for weeks at a time upon potatoes and buttermilk alone, and thought themselves fortunate to have even that, for in the worst months of winter there were those who had neither.
+const WJEC_C2_13_SOURCE_B = `As I came on the road, for the first three or four miles, I saw great numbers of labourers either digging potatoes for their Sunday's dinner, or coming home with them, or going out to dig them. The land-owners, or occupiers, let small pieces of land to the labourers, and these they cultivate with the spade for their own use. They pay in all cases a high rent, and in most cases an enormous one. The practice prevails all the way from Warminster to Devizes, and from Devizes to nearly this place (Highworth). The rent is, in some places, a shilling a rod, which is, mind, 160s. or 8l. an acre! Still the poor creatures like to have the land: they work in it at their spare hours; and on Sunday mornings early: and the overseers, sharp as they may be, cannot ascertain precisely how much they get out of their plat of ground. But, good God! what a life to live! What a life to see people live; to see this sight in our own country, and to have the base vanity to boast of that country, and to talk of our "constitution" and our "liberties," and to affect to pity the Spaniards, whose working people live like gentlemen, compared with our miserable creatures. Again I say, give me the Inquisition and well-healed cheeks and ribs, rather than "civil and religious liberty," and skin and bone. But the fact is that, where honest and laborious men can be compelled to starve quietly, whether all at once or by inches, with old wheat ricks, and fat cattle under their eye, it is a mockery to talk of their "liberty," of any sort; for the sum total of their state is this, they have "liberty" to choose between death by starvation (quick or slow) and death by the halter!`
 
-And yet I observed among the rural poor a knowledge of food that their social superiors might envy. The cottager's wife knew precisely when to plant her garden, which herbs would cure a cough, how to make a nourishing broth from bones that a wealthy household would discard. She could tell by the colour of the sky whether the hay would dry; by the behaviour of the rooks whether frost was coming. Her knowledge was not learned from books but from necessity and from the accumulated wisdom of generations.
+const WJEC_C2_13_SOURCE_B_REF =
+  'William Cobbett, Rural Rides (1830), written at Highworth, Wiltshire, on 4 September 1826, of his ride there from Devizes (T. Nelson and Sons edition, Project Gutenberg #34238).'
 
-It is a bitter irony that those who grow our food are often those who have least of it. The farm labourer who tends the wheat from which our bread is made cannot himself afford the loaf. The dairymaid whose hands are raw from milking must water her own children's milk to make it last the week. We speak of agricultural prosperity, but the prosperity flows upward, away from the hands that produce it.`
-
-const WJEC_C2_13_SOURCE_B_REF = 'William Cobbett, Rural Rides, 1830'
+const WJEC_C2_13_B_GLOSSARY_FOR_QUESTIONS =
+  "Source B glossary: a rod: a small plot of land, 160 to the acre. 160s. or 8l.: 160 shillings, or eight pounds. plat: plot. the overseers: the parish officers who ran relief of the poor. the Inquisition: the Spanish Church's court for heresy, to the English the opposite of liberty. ricks: stacks of harvested wheat. the halter: the hangman's rope."
 
 // Paper 14 - Media and Technology
 const WJEC_C2_14_SOURCE_A = `My daughter is fourteen years old and she has not read a book for pleasure in over a year. This is not because she dislikes reading - she was, until the age of twelve, a voracious reader who tore through entire series in a weekend. It is because she now spends, by her own reluctant admission, between four and six hours a day on her phone. She scrolls through TikTok, watches YouTube Shorts, exchanges messages on WhatsApp, curates her Instagram feed. She does these things not because they bring her joy - she tells me, with alarming self-awareness, that they make her feel worse - but because she cannot stop.
 
-We are conducting an experiment on an entire generation, and we have no idea what the results will be. The average British teenager now spends more time looking at a screen than they spend sleeping. Their attention spans, measured by cognitive psychologists, have shortened measurably in the last decade. Rates of anxiety, depression, and self-harm among young people have risen in exact correlation with smartphone adoption. Correlation is not causation, the tech companies remind us, with the same practiced innocence that tobacco executives once deployed.
+We are conducting an experiment on an entire generation, and we have no idea what the results will be. The average British teenager now spends more time looking at a screen than they spend sleeping. Their attention spans, measured by cognitive psychologists, have shortened measurably in the last decade. Rates of anxiety, depression, and self-harm among young people have risen in exact correlation with smartphone adoption. Correlation is not causation, the tech companies remind us, with the same practised innocence that tobacco executives once deployed.
 
 I do not blame my daughter. I blame the engineers in Silicon Valley who designed these platforms to be addictive. I blame the algorithms that feed children a relentless stream of content calibrated to exploit their insecurities. And I blame myself, and every parent like me, who handed a child a device we did not understand and called it progress.`
 
-const WJEC_C2_14_SOURCE_A_REF = 'Sarah Parry, "The Stolen Childhood", The Observer, 2024'
+const WJEC_C2_14_SOURCE_A_REF = 'Opinion article, specially written for this paper'
 
-const WJEC_C2_14_SOURCE_B = `I have heard much lamentation of late concerning the pernicious influence of cheap newspapers upon the minds of the working classes. It is said that the penny press fills their heads with sensational nonsense; that it distracts them from their labour; that it inflames their passions and unsettles their contentment with their station in life. These objections, which are made with great solemnity by persons who themselves read three newspapers before breakfast, deserve to be examined with some care.
-
-The truth is that the popular press, for all its faults - and they are many - has accomplished something that centuries of charitable effort failed to achieve: it has made the working man a citizen. The man who reads his newspaper knows what Parliament has done, what wars are being fought, what prices are rising and why. He is no longer a mere beast of burden, ignorant of everything beyond his own parish. He has opinions. He argues. He votes with knowledge rather than habit. If this disturbs the comfortable classes, so much the better.
-
-I grant that much of what the popular press publishes is trivial, sensational, and occasionally false. But I would rather have a population that reads badly than one that does not read at all. The appetite for information, once awakened, refines itself over time. The man who begins with penny dreadfuls may end with Plutarch. The man who never reads at all will end where he began: in ignorance.`
+const WJEC_C2_14_SOURCE_B = `Do such considerations as these make us hopeless of the steady progress of a sound as well as cheap popular literature? Decidedly no. There is improvement all around us. The halfpenny ballad of Seven Dials is not yet extinct; but let the collectors look sharply about them, for that relic of the chap-books, with the woodcuts that have served every generation, will soon be gone. In its place has come the decent penny book of a hundred songs. The shades of Scott, and Moore, and Campbell will not quarrel with this new popularity. There are "flash" songs; but they are not for the penny buyers. Thackeray has described the dens in which these abominations are current. The whole aspect of the humbler press has changed within these few years. Unquestionably the people have changed. Visit, if you can, the interior of that marvellous human machine, the General Post-Office, on a Friday evening, from half-past five to six o'clock. Look with awe upon the tons of newspapers that are crowding in to be distributed through the habitable globe. Think silently how potent a power is this for good or for evil. You turn to one of the boxes of the letter-sorters, and your guide will tell you, "this work occupies not half the time it formerly did, for everybody writes better." General education furnishes the solution of the otherwise doubtful origin of the improvement, in all the more manifest characteristics of improvement, of all popular literature.`
 
 const WJEC_C2_14_SOURCE_B_REF =
-  'Charles Knight, "In Defence of the Popular Press", The Edinburgh Review, 1855'
+  'Charles Knight, The Old Printer and the Modern Press (1854), Part II, Chapter VII (Project Gutenberg #59966). Knight, a publisher of cheap books for working people, has just admitted that most readers of cheap books still want "mere amusement".'
+
+const WJEC_C2_14_B_GLOSSARY_FOR_QUESTIONS =
+  'Source B glossary: Seven Dials: a poor district of London. chap-books: cheap pamphlets sold by pedlars. shades: ghosts, here of three poets who had died. "flash" songs: coarse ones. current: in circulation.'
 
 // Paper 15 - Art and Culture
 const WJEC_C2_15_SOURCE_A = `The argument is always the same. When budgets are tight, the arts are the first to go. Last month, three councils in South Wales announced the closure of their public libraries. Two community theatres have lost their funding entirely. The local museum in Merthyr Tydfil - a modest but irreplaceable collection of mining artefacts, photographs, and oral histories - will shut its doors in September. The justification offered is always economic necessity: we cannot afford luxuries when essentials are under pressure.
@@ -82,16 +216,19 @@ But here is what the people who make these decisions never seem to understand: t
 
 We measure value in this country with a ruthless and reductive calculus. If it generates revenue, it matters. If it doesn't, it can be cut. By this logic, birdsong doesn't matter. Friendship doesn't matter. The view from a mountain doesn't matter. We have built an entire system of governance around the principle that the only things worth preserving are the things that can be sold, and then we wonder why so many people feel that their lives lack meaning.`
 
-const WJEC_C2_15_SOURCE_A_REF = 'Angharad Tomos, "The Cost of Cutting Culture", Nation.Cymru, 2024'
+const WJEC_C2_15_SOURCE_A_REF = 'Opinion article, specially written for this paper'
 
-const WJEC_C2_15_SOURCE_B = `It is a common error to suppose that the appreciation of beauty is the exclusive privilege of the educated and the wealthy. I have found, on the contrary, that the keenest love of art frequently exists among those who have had the fewest opportunities to cultivate it. In the manufacturing towns of the North, where I have been lecturing this past month, I have encountered working men whose passion for beauty would put many a drawing-room connoisseur to shame.
+const WJEC_C2_15_SOURCE_B = `These form the mass of our architectural treasures, the houses that everyday people lived in, the unregarded churches in which they worshipped.
 
-In Bradford, I visited an evening class where mill workers - men who had laboured since six in the morning - came after their day's work to learn the principles of design. Their hands were rough from the looms, their clothes still dusty, but the attention they gave to the arrangement of colour and form was extraordinary. One man showed me a collection of dried flowers and grasses that he had gathered from the moors and pressed between the pages of an old Bible. He had arranged them with an instinct for composition that no academy could have taught him.
+And, once more, who was it that designed and ornamented them? The great architect, carefully kept for the purpose, and guarded from the common troubles of common men? By no means. Sometimes, perhaps, it was the monk, the ploughman’s brother; oftenest his other brother, the village carpenter, smith, mason, what not—‘a common fellow,’ whose common everyday labour fashioned works that are to-day the wonder and despair of many a hard-working ‘cultivated’ architect. And did he loathe his work? No, it is impossible. I have seen, as we most of us have, work done by such men in some out-of-the-way hamlet—where to-day even few strangers ever come, and whose people seldom go five miles from their own doors; in such places, I say, I have seen work so delicate, so careful, and so inventive, that nothing in its way could go further. And I will assert, without fear of contradiction, that no human ingenuity can produce work such as this without pleasure being a third party to the brain that conceived and the hand that fashioned it. Nor are such works rare. The throne of the great Plantagenet, or the great Valois, was no more daintily carved than the seat of the village mass-john, or the chest of the yeoman’s good-wife.
 
-It is not enough to build museums and galleries and suppose that we have thereby served the cause of art. We must bring beauty into the daily lives of ordinary people - into their homes, their streets, their places of work. A factory need not be ugly. A railway station need not be dismal. Beauty is not an ornament to be added after the serious business of life is concluded. It is a fundamental human need, as essential as food or shelter, and a society that denies it to any of its members is a society that has failed in its most basic obligation.`
+So, you see, there was much going on to make life endurable in those times. Not every day, you may be sure, was a day of slaughter and tumult, though the histories read almost as if it were so; but every day the hammer chinked on the anvil, and the chisel played about the oak beam, and never without some beauty and invention being born of it, and consequently some human happiness.`
 
 const WJEC_C2_15_SOURCE_B_REF =
-  'William Morris, "Art and the People", a lecture delivered in Birmingham, 1879'
+  'William Morris, "The Art of the People", a lecture in Birmingham, 19 February 1879, in Hopes and Fears for Art (Project Gutenberg #3773). Morris has been speaking of the old village churches and houses of England.'
+
+const WJEC_C2_15_B_GLOSSARY_FOR_QUESTIONS =
+  'Source B glossary: the Plantagenets, the Valois: royal houses of England and France. mass-john: a village priest. yeoman: a farmer who owned his land. good-wife: the mistress of a household.'
 
 // ─── Mock Exam Papers ───────────────────────────────────────────────────────
 
@@ -148,7 +285,7 @@ export const wjecC2C: MockExamPaper[] = [
               'Grade 4-5':
                 'The writer uses emotive language like "briefly and gloriously" to express the joy sport brings. The phrase "seventy thousand people rose as one" shows the power of a shared moment. The word "essential" at the end emphasises how important sport is. The writer contrasts the player\'s ordinary background ("stacking shelves in Aldi") with his extraordinary achievement to show sport\'s transformative power.',
               'Grade 6-7':
-                'Evans constructs a rhetorical crescendo that enacts the emotional trajectory of the match itself. The opening sentence - "the crowd falls silent" - uses paradox: silence becomes the loudest expression of awe. The player\'s backstory ("stacking shelves in Aldi") is deployed as an economic shorthand for ordinariness, making his transformation more dramatic through stark contrast. The central paragraph builds through syndetic listing of physical responses - "rose," "grabbed," "found tears" - accelerating in emotional intensity. The tricolon "class, politics, language" names specific Welsh divisions before the sentence dissolves them into "one people." The final paragraph concedes to the cynics ("They\'re right, of course") only to reframe the argument: the adverbs "briefly and gloriously" transform transience from a weakness into a virtue. The terminal position of "essential" - isolated after the dismissal of "trivial" - carries the full rhetorical weight of the piece.',
+                'The writer builds a rhetorical crescendo that follows the emotional course of the match itself. The opening sentence - "the crowd falls silent" - uses paradox: silence becomes the loudest expression of awe. The player\'s backstory ("stacking shelves in Aldi") is an economic shorthand for ordinariness, making his transformation more dramatic through stark contrast. The central paragraph builds through a sequence of physical responses - "rose," "grabbed," "found tears" - accelerating in emotional intensity. The tricolon "class, politics, language" names the divisions of Welsh life before the next sentence dissolves them into "one people", and the adverbs "briefly and gloriously" admit that the moment was short while insisting that its shortness is part of its glory. The final paragraph concedes to the cynics ("They\'re right, of course") only to reframe the argument, and the terminal position of "essential" - isolated after the dismissal of "trivial" - carries the full rhetorical weight of the piece.',
             },
             markScheme: [
               'Analyses specific language techniques',
@@ -160,8 +297,7 @@ export const wjecC2C: MockExamPaper[] = [
           {
             id: 'wjec-c2-11-q3',
             questionNumber: 3,
-            questionText:
-              "What do you learn about the 19th-century writer's views on sport from Source B?\n\nYou should comment on what they think and feel, using evidence from the text.",
+            questionText: `What do you learn about the 19th-century writer's views on sport from Source B?\n\nYou should comment on what they think and feel, using evidence from the text.\n\n(${WJEC_C2_11_B_GLOSSARY_FOR_QUESTIONS})`,
             marks: 10,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
@@ -169,9 +305,9 @@ export const wjecC2C: MockExamPaper[] = [
             extractSource: WJEC_C2_11_SOURCE_B_REF,
             modelAnswers: {
               'Grade 4-5':
-                'Hargraves thinks sport is harmful to young people. He says it builds aggression and competition rather than gentleness and thought. He believes the boy who reads is mocked while the sporty boy is praised, which he thinks is wrong. He makes a difference between healthy exercise and competitive sport, saying only the first is good.',
+                'Veblen thinks sport is childish. He says the love of sport comes from "a boyish temperament" and that it "marks an arrested development of the man\'s moral nature", meaning that sporting men have never really grown up. He thinks sport is full of "make-believe", like the games of children. He makes fun of men who go shooting for carrying too many weapons and walking with "a histrionic, prancing gait", as if they were acting a part. He also points out that the slang of athletics is borrowed from war, which suggests he links sport with fighting.',
               'Grade 6-7':
-                'Hargraves adopts the stance of the rational dissenter, positioning himself against what he frames as a cultural "mania" - a word that medicalises enthusiasm for sport, implying collective irrationality. His central argument is not against physical activity but against the value system that organised sport promotes: "aggressive, competitive, contemptuous of intellectual achievement." The structural opposition between the mocked reader and the despised non-catcher reveals his deeper concern - that sport enforces a hierarchy of worth that punishes sensitivity. His distinction between "wholesome exercise" and "organised, ritualised, fiercely partisan combat" uses escalating modifiers to transform school sport into something almost military. The phrase "savage tribalism" in the final line connects sport not to civilisation but to its opposite, completing his rhetorical strategy of reframing the sporting establishment as a force for barbarism.',
+                'Veblen writes as a detached analyst rather than an angry critic, and the detachment is itself his weapon. His central claim is a diagnosis: the "addiction to sports" - in 1899 a strong habitual leaning rather than a dependency, but still a habit rather than a choice - "marks an arrested development of the man\'s moral nature." Because the vocabulary is borrowed from science, the charge that sporting men have never grown up sounds like a finding rather than an insult. He supports it by likening sport to the "make-believe" of children\'s games, and then, in his most concrete example, by ridicule: the "mild-mannered and matter-of-fact men who go out shooting" carry "an excess of arms and accoutrements" to persuade themselves of "the seriousness of their undertaking", and adopt "a histrionic, prancing gait". The gap between the dry vocabulary and the comic picture makes the sportsmen look absurd. He qualifies his claims ("perhaps truer"; "this rule may not be found to apply with any great uniformity"), which makes him seem fair-minded. His last observation, that the slang of athletics is "borrowed from the terminology of warfare", ties sport back to the fighting he has just discussed and implies that games keep alive an aggressive instinct that civilised adults should have outgrown.',
             },
             markScheme: [
               'Identifies key attitudes and opinions',
@@ -183,8 +319,7 @@ export const wjecC2C: MockExamPaper[] = [
           {
             id: 'wjec-c2-11-q4',
             questionNumber: 4,
-            questionText:
-              '"Both writers feel strongly about sport, but the 21st-century writer makes a more convincing case because personal experience is more persuasive than abstract argument."\n\nTo what extent do you agree? You should refer to both texts in your answer.',
+            questionText: `"Both writers feel strongly about sport, but the 21st-century writer makes a more convincing case because personal experience is more persuasive than abstract argument."\n\n(${WJEC_C2_11_B_GLOSSARY_FOR_QUESTIONS})\n\nTo what extent do you agree? You should refer to both texts in your answer.`,
             marks: 15,
             suggestedTimeMinutes: 18,
             questionType: 'evaluation',
@@ -192,9 +327,9 @@ export const wjecC2C: MockExamPaper[] = [
             extractSource: `Source A: ${WJEC_C2_11_SOURCE_A_REF} | Source B: ${WJEC_C2_11_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'I partially agree. Evans\'s description of the stadium moment is very powerful and makes you feel the excitement. However, Hargraves also uses personal observation - he has "observed boys" being exhausted by sport. Both writers use personal experience. I think Evans is more convincing because his tone is positive and inclusive, while Hargraves sounds elitist.',
+                'I partly agree. The writer of Source A describes a match they watched, and details like the boy who was "stacking shelves in Aldi" make you feel the excitement. Veblen does not describe any match or any person he knows; he makes a general argument that sport is "boyish". However, Veblen does use an example that readers can picture, the men who go out shooting with "an excess of arms and accoutrements", and it makes his point funny and memorable. I think Source A is more convincing to most readers because it is easier to relate to, but Veblen makes you think about why people love sport.',
               'Grade 6-7':
-                'The statement presents a false dichotomy. Evans\'s piece is not purely experiential - his argument depends on abstract claims about "collective joy" and the nature of modern isolation. Equally, Hargraves is not purely abstract - his image of the mocked reader in the corner of the playing field is a specific, observed detail that carries considerable emotional weight. The real difference is rhetorical strategy: Evans uses the particular to reach the universal (one match becomes a statement about human connection), while Hargraves uses the universal to indict the particular (a general philosophy exposes specific cruelties). Evans is perhaps more immediately persuasive because his rhetoric is inclusive - "we" are invited to share the emotion - while Hargraves positions himself as a solitary dissident, which is intellectually admirable but emotionally isolating. However, Hargraves\'s argument has proven remarkably prescient about the culture of competitive school sport, suggesting that "convincing" and "immediately appealing" are not the same thing.',
+                'The statement sets up a contrast that fits these two texts only in part. Source A is built on one experience - a single turnover "on his own try line" and the reaction of "seventy thousand people" - but its conclusions are abstract: sport as "one of the last places where thousands of human beings share the same emotion". Veblen\'s method is the reverse. His argument is abstract, conducted in the vocabulary of an economist ("predatory emulation", "an arrested development of the man\'s moral nature"), yet its most persuasive moment is an observed detail, the "mild-mannered and matter-of-fact men" whose "histrionic, prancing gait" gives away that they are playing a part. Personal experience gives Source A immediacy and warmth: the reader is invited to share the emotion. But it also limits the argument, since one match cannot prove that the unity it creates is "essential" rather than a pleasant ninety minutes, which the writer half admits in conceding "They\'re right, of course." Veblen is harder to read but harder to dismiss: he tries to explain why people love sport, rather than showing that they do, and his diagnosis - that its appeal is "boyish" make-believe dressed in the language of war - would account for the very scenes Source A celebrates. Source A is the more moving; whether it is the more convincing depends on whether the reader wants to be moved or persuaded.',
             },
             markScheme: [
               'Evaluates both texts with a sustained personal response',
@@ -293,7 +428,7 @@ export const wjecC2C: MockExamPaper[] = [
             extractSource: `Source A: ${WJEC_C2_12_SOURCE_A_REF} | Source B: ${WJEC_C2_12_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                '1. The writer worked as a prison teacher for three years. 2. She taught at HMP Swansea. 3. Over eighty per cent of her inmates had been excluded from school before age fourteen. 4. More than half were functionally illiterate. 5. Nearly all came from the same handful of postcodes with high unemployment.',
+                '1. The writer worked as a prison teacher for three years. 2. The writer taught at HMP Swansea. 3. Over eighty per cent of the inmates the writer taught had been excluded from school before age fourteen. 4. More than half were functionally illiterate. 5. Nearly all came from the same handful of postcodes with high unemployment.',
             },
             markScheme: ['1 mark per valid point, maximum 5'],
           },
@@ -309,9 +444,9 @@ export const wjecC2C: MockExamPaper[] = [
             extractSource: WJEC_C2_12_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses the metaphor "dominoes falling in slow motion" to show how institutions failed prisoners one after another. The phrase "institutional cruelty dressed in the language of law" suggests the system hides its cruelty behind legal words. She calls prisoners "damaged" rather than "dangerous" to make us see them differently. The detail about "forty-six pounds and a bin bag" shows how little support prisoners get on release.',
+                'The writer uses the metaphor "dominoes falling in slow motion" to show how institutions failed prisoners one after another. The phrase "institutional cruelty dressed in the language of law" suggests the system hides its cruelty behind legal words. The writer calls prisoners "damaged" rather than "dangerous" to make us see them differently. The detail about "forty-six pounds and a bin bag" shows how little support prisoners get on release.',
               'Grade 6-7':
-                'Lloyd-Williams constructs her critique through systematic redefinition. The opening sentence\'s structure - "the people we lock up are overwhelmingly the people we have already failed" - uses the repeated pronoun "we" to implicate society rather than exonerate the prisoners, creating a causal chain where failure precedes crime. The domino metaphor is carefully chosen: dominoes fall in sequence, implying that each institutional failure triggered the next, and "in slow motion" suggests these failures were visible and preventable. The paragraph\'s most devastating technique is the staccato listing of failed institutions - "Education. Social services. Mental health provision. Housing." - where the full stops isolate each one, turning them into separate indictments. The concluding image - "forty-six pounds and a bin bag of belongings" - uses bathos: the specificity of the sum exposes the absurdity of the system\'s inadequacy. The final sentence\'s metaphor of "institutional cruelty dressed in the language of law" personifies the system as something that consciously disguises itself, transforming bureaucratic failure into deliberate deception.',
+                'The writer constructs the critique through systematic redefinition. The opening sentence\'s structure - "the people we lock up are overwhelmingly the people we have already failed" - uses the repeated pronoun "we" to implicate society rather than exonerate the prisoners, creating a causal chain where failure precedes crime. The domino metaphor is carefully chosen: dominoes fall in sequence, implying that each institutional failure triggered the next, and "in slow motion" suggests these failures were visible and preventable. The paragraph\'s most devastating technique is the staccato listing of failed institutions - "Education. Social services. Mental health provision. Housing." - where the full stops isolate each one, turning them into separate indictments. The concluding image - "forty-six pounds and a bin bag of belongings" - uses bathos: the specificity of the sum exposes the absurdity of the system\'s inadequacy. The final sentence\'s metaphor of "institutional cruelty dressed in the language of law" personifies the system as something that consciously disguises itself, transforming bureaucratic failure into deliberate deception.',
             },
             markScheme: [
               'Analyses specific language techniques',
@@ -323,8 +458,7 @@ export const wjecC2C: MockExamPaper[] = [
           {
             id: 'wjec-c2-12-q3',
             questionNumber: 3,
-            questionText:
-              'What do you learn about the conditions and attitudes described in the 19th-century source (Source B)?\n\nYou should comment on what the writer thinks and feels, using evidence from the text.',
+            questionText: `What do you learn about the conditions and attitudes described in the 19th-century source (Source B)?\n\nYou should comment on what the writer thinks and feels, using evidence from the text.\n\n(${WJEC_C2_12_B_GLOSSARY_FOR_QUESTIONS})`,
             marks: 10,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
@@ -332,9 +466,9 @@ export const wjecC2C: MockExamPaper[] = [
             extractSource: WJEC_C2_12_SOURCE_B_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer visits a female prison and finds cells that are small but clean. The prisoners have pinned pictures of the outside world on their walls, showing they miss their old lives. One woman was imprisoned for stealing bread for her children. The chaplain says three-quarters of prisoners are there because of poverty, not wickedness. The writer feels sympathy for the women and seems to think the system is unfair.',
+                'The source shows that conditions for the women in Newgate were very poor. The city allowed the prisoners no regular clothing: asked whether it did, Fry answers "Not any." Some women arrived almost naked, and one gave birth only hours after arriving, when she had "hardly a covering; no stockings, and only a thin gown". Fry and the women who visited with her paid for clothes out of "our fund", which shows that they cared about the women. Fry also protects the women\'s dignity: when gentlemen visited, she had to stand in front of one woman "to prevent her being seen". The Committee\'s questions show that people in power were starting to ask about these conditions.',
               'Grade 6-7':
-                'The source reveals a prison system that punishes poverty rather than criminality. The physical details - cells "tolerably clean" with "a bed, a stool, and a basin" - establish basic but dehumanising conditions. The pinned pictures are deeply symbolic: they represent the prisoners\' attempt to maintain connection with a world from which they have been severed, and the phrase "a world beyond the walls that most of them would not see again for years" extends the pathos. The bread-thief\'s "quiet bewilderment" is more affecting than anger would be, because it reveals a woman who has internalised society\'s rules so completely that she cannot reconcile motherhood with criminality. The chaplain\'s devastating summary - "We punish them for being poor" - serves as the text\'s thesis statement, and the writer\'s admission that she was "unable to answer" it performs the speechlessness that the text hopes to produce in its readers.',
+                'The conditions emerge from Fry\'s answers almost in spite of her manner, which is calm and exact. Her first reply, "Not any", is blunt, and what follows exposes the authorities\' neglect: "there was no other resource but our own", and all the last sheriffs sent was "a present of a few things", a word that makes basic clothing sound like a kindness rather than a duty. The case of the woman "on the point of lying-in" is given plainly: she "had hardly a covering; no stockings, and only a thin gown", and the list of what she lacked does the work that no adjective could. Fry\'s own attitude is compassion shown through action: "we can never see a woman in that state without immediately applying to our fund", where "never" and "immediately" present care as a fixed rule. Her reserve is telling too. She "could describe such scenes as I should hardly think it delicate to mention", a refusal that leaves the reader to imagine worse. The Committee\'s last question reveals another attitude, that gentlemen came into the prison to look at it, and Fry\'s answer, that she had to "stand before one of the women to prevent her being seen", shows her guarding the women\'s dignity against that curiosity. The outcome she dwells on, that the mother "went out comfortably clothed", shows her belief that decent treatment could send a woman out in a better state than she came in.',
             },
             markScheme: [
               'Identifies key conditions and attitudes',
@@ -346,8 +480,7 @@ export const wjecC2C: MockExamPaper[] = [
           {
             id: 'wjec-c2-12-q4',
             questionNumber: 4,
-            questionText:
-              '"Both writers argue that the prison system punishes poverty rather than crime, but the 19th-century writer makes a more powerful case because individual stories are more moving than statistics."\n\nTo what extent do you agree? You should refer to both texts in your answer.',
+            questionText: `"Both writers show a prison system that fails the people in its care, but the 19th-century writer makes a more powerful case because individual stories are more moving than statistics."\n\n(${WJEC_C2_12_B_GLOSSARY_FOR_QUESTIONS})\n\nTo what extent do you agree? You should refer to both texts in your answer.`,
             marks: 15,
             suggestedTimeMinutes: 18,
             questionType: 'evaluation',
@@ -355,9 +488,9 @@ export const wjecC2C: MockExamPaper[] = [
             extractSource: `Source A: ${WJEC_C2_12_SOURCE_A_REF} | Source B: ${WJEC_C2_12_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                "I partially agree. Fry's story of the bread thief is very moving and makes you feel the unfairness. But Lloyd-Williams's statistics are also powerful because they show the problem is widespread. Both writers use emotion and evidence. I think they are equally effective in different ways.",
+                'I partly agree. Fry\'s story of the woman who gave birth with "hardly a covering" is very moving, because you picture one real person. The writer of Source A uses statistics, such as "over eighty per cent" of the inmates having been excluded from school, which show that the problem is widespread but are less emotional. However, Source A also has a powerful detail, prisoners released with "forty-six pounds and a bin bag of belongings". Both writers use a mixture of facts and feeling, so I think they are powerful in different ways.',
               'Grade 6-7':
-                'The statement correctly identifies the rhetorical difference but oversimplifies both texts. Lloyd-Williams does use statistics, but her most powerful moment is the concrete detail of "forty-six pounds and a bin bag" - itself a miniature story. Equally, Fry\'s account is not purely narrative: the chaplain\'s estimate that "three-quarters" of inmates are imprisoned for want is itself a statistic, albeit an informal one. The real distinction is structural. Fry builds inductively: we move from the general (the matron, the cells) to the particular (one woman, one loaf) to the universal (the chaplain\'s conclusion). This inductive structure allows the reader to arrive at the moral conclusion alongside the writer. Lloyd-Williams, by contrast, states her thesis immediately and spends the piece proving it, which is intellectually compelling but leaves less space for the reader\'s own emotional discovery. Both are powerful; the question of which is "more" powerful depends on whether one values emotional immediacy or intellectual conviction.',
+                'The statement identifies a real difference of method but oversimplifies both texts. Source A is not only statistics: its most memorable moment is the concrete image of release with "forty-six pounds and a bin bag of belongings", and its argument rests on the writer\'s own three years in a prison classroom. Fry, equally, is not only telling stories: her evidence is made of facts given to a committee ("Not any"; "It appears to me that there is none of any kind"), and the fullest story she tells, of the woman who gave birth hours after she arrived, is told to prove a point about the city\'s failure to clothe its prisoners. The real difference lies in form. Source A is an opinion article that states its thesis and argues it, naming the failures in a list ("Education. Social services. Mental health provision. Housing."). Fry\'s answers never state a thesis at all; the reader draws the conclusion from what she describes, and her restraint ("such scenes as I should hardly think it delicate to mention") makes what she leaves unsaid more powerful. That makes Fry\'s account the more moving, but Source A\'s argument reaches further, because it asks why people are in prison at all, while Fry\'s answers here are about how they are treated once they are there. Which is more powerful depends on whether the reader values the force of one case or the reach of an argument.',
             },
             markScheme: [
               'Evaluates both texts with a sustained personal response',
@@ -472,9 +605,9 @@ export const wjecC2C: MockExamPaper[] = [
             extractSource: WJEC_C2_13_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses the paired adjectives "remarkable and terrible" to show that our food change is both impressive and frightening. The phrase "severed the connection" uses a violent verb to suggest something has been cut off permanently. The list of what the grandmother knew - "labour, weather, soil, and season" - makes old food knowledge sound rich and meaningful. The triple "without knowledge, without gratitude, and without pleasure" emphasises everything we have lost.',
+                'The writer uses the paired adjectives "remarkable and terrible" to show that our food change is both impressive and frightening. The phrase "severed the connection" uses a violent verb to suggest something has been cut off permanently. The list of what food once meant - "labour, weather, soil, and season" - makes old food knowledge sound rich and meaningful. The repeated "without" in "without knowledge, without gratitude, and - increasingly - without pleasure" emphasises everything we have lost.',
               'Grade 6-7':
-                'Owens deploys a structural contrast between the grandmother\'s world and our own that functions as a lament for lost knowledge. The opening sentence\'s oxymoronic pairing - "remarkable and terrible" - establishes the piece\'s tonal complexity: this is not simple nostalgia but an acknowledgement that progress and loss are intertwined. The children\'s misconceptions (fish fingers from chicken, cheese from plants) are presented not as comedy but as diagnosis, repositioned by the sentence "These are not charming examples of juvenile ignorance" which explicitly reframes the reader\'s likely response. The grandmother passage uses syndetic listing - "labour, weather, soil, and season" - where each monosyllabic noun carries equal weight, creating a rhythmic solidity that mirrors the rootedness being described. The phrase "It had a story" personifies food itself. The final paragraph\'s anaphoric "without" - "without knowledge, without gratitude, and without pleasure" - is a rhetorical stripping away that enacts the very loss it describes. The closing sentence concedes "abundance" only to extract its cost: "our understanding of what it means to be nourished," where "nourished" reaches beyond the physical to the spiritual.',
+                'The writer deploys a structural contrast between the grandmother\'s world and our own that functions as a lament for lost knowledge. The opening sentence\'s double judgement - "remarkable and terrible" - establishes the piece\'s tonal complexity: this is not simple nostalgia but an acknowledgement that progress and loss are intertwined. The children\'s misconceptions (fish fingers from chicken, cheese from plants) are presented not as comedy but as diagnosis, repositioned by the sentence "These are not charming examples of juvenile ignorance" which explicitly reframes the reader\'s likely response. The grandmother passage builds to a plain list - "labour, weather, soil, and season" - where each short, plain noun carries equal weight, creating a rhythmic solidity that mirrors the rootedness being described. The phrase "It had a story" personifies food itself. The final paragraph\'s anaphoric "without" - "without knowledge, without gratitude, and - increasingly - without pleasure" - is a rhetorical stripping away that enacts the very loss it describes, and the interrupting "increasingly" suggests that the loss is still going on. The closing sentence concedes "abundance" only to extract its cost: "our understanding of what it means to be nourished," where "nourished" reaches beyond the physical to the spiritual.',
             },
             markScheme: [
               'Analyses specific language techniques',
@@ -486,8 +619,7 @@ export const wjecC2C: MockExamPaper[] = [
           {
             id: 'wjec-c2-13-q3',
             questionNumber: 3,
-            questionText:
-              'What do you learn about the lives of rural working people from the 19th-century source (Source B)?\n\nYou should comment on what the writer reveals, using evidence from the text.',
+            questionText: `What do you learn about the lives of rural working people from the 19th-century source (Source B)?\n\nYou should comment on what the writer reveals, using evidence from the text.\n\n(${WJEC_C2_13_B_GLOSSARY_FOR_QUESTIONS})`,
             marks: 10,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
@@ -495,9 +627,9 @@ export const wjecC2C: MockExamPaper[] = [
             extractSource: WJEC_C2_13_SOURCE_B_REF,
             modelAnswers: {
               'Grade 4-5':
-                "Rural working people ate very basic food - coarse bread and hard cheese, with meat only on Sundays if they were lucky. Some families lived on potatoes and buttermilk for weeks. However, they had great knowledge of food and nature. The cottager's wife knew when to plant, which herbs cured illness, and how to make broth from bones. The writer points out the unfairness that those who grow food cannot afford to eat well themselves.",
+                'Rural working people in Cobbett\'s time were very poor. Many labourers had to dig potatoes "for their Sunday\'s dinner" from small pieces of land that they rented from landowners. The rent was high - "a shilling a rod", which Cobbett works out at eight pounds an acre - but they still wanted the land and worked on it "at their spare hours; and on Sunday mornings early". Cobbett is angry about this and exclaims "what a life to live!" He thinks the labourers are starving even though they are surrounded by "old wheat ricks, and fat cattle".',
               'Grade 6-7':
-                'Cobbett reveals a rural working class defined by a paradox: materially impoverished but intellectually rich. The opening sentence\'s blunt pragmatism - "eats what he can get, not what he would choose" - establishes deprivation as the governing condition. The catalogue of inadequate foods (coarse bread, hard cheese, potatoes, buttermilk) builds a picture of monotonous subsistence. Yet the second paragraph performs a rhetorical reversal: the word "yet" pivots from deprivation to celebration. The cottager\'s wife possesses an embodied, practical intelligence - knowing "by the colour of the sky" and "by the behaviour of the rooks" - that Cobbett explicitly contrasts with book-learning, elevating experiential knowledge. The final paragraph\'s central irony - that food producers are food-poor - is crystallised in the parallel constructions of the farm labourer and the dairymaid, where each sentence structure mirrors the other, creating a rhetorical pattern that suggests systemic injustice rather than individual misfortune.',
+                'Cobbett reveals a rural working class that feeds the country but cannot feed itself. The opening picture is of labourers busy with potatoes on a Sunday, "either digging potatoes for their Sunday\'s dinner, or coming home with them, or going out to dig them", a list that makes the whole road seem full of hungry men. He then explains the economics: landowners let them small plots at "a high rent, and in most cases an enormous one", and the aside in "a shilling a rod, which is, mind, 160s. or 8l. an acre!" buttonholes the reader to make sure the injustice is noticed. Yet he also shows the labourers\' determination: "Still the poor creatures like to have the land", and the detail that the overseers of the poor "cannot ascertain precisely how much they get" from it suggests the plots are one of the few things the poor can keep for themselves. The second half turns from report to outrage: the exclamation "good God! what a life to live!" and the scornful quotation marks round "constitution" and "liberties" mock a national pride that ignores such poverty. His last sentence is the sharpest: men who "starve quietly" beside "old wheat ricks, and fat cattle" have only the "liberty" to choose between "death by starvation (quick or slow) and death by the halter", that is, between hunger and the gallows for a crime such as stealing food.',
             },
             markScheme: [
               'Identifies key information about rural lives',
@@ -509,8 +641,7 @@ export const wjecC2C: MockExamPaper[] = [
           {
             id: 'wjec-c2-13-q4',
             questionNumber: 4,
-            questionText:
-              '"Both writers are critical of the food system of their time, but the 21st-century writer\'s argument is weaker because we are better fed now than at any point in history."\n\nTo what extent do you agree? You should refer to both texts in your answer.',
+            questionText: `"Both writers are critical of the food system of their time, but the 21st-century writer's argument is weaker because we are better fed now than at any point in history."\n\n(${WJEC_C2_13_B_GLOSSARY_FOR_QUESTIONS})\n\nTo what extent do you agree? You should refer to both texts in your answer.`,
             marks: 15,
             suggestedTimeMinutes: 18,
             questionType: 'evaluation',
@@ -518,9 +649,9 @@ export const wjecC2C: MockExamPaper[] = [
             extractSource: `Source A: ${WJEC_C2_13_SOURCE_A_REF} | Source B: ${WJEC_C2_13_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'I disagree with the statement. Although we do have more food now, Owens is arguing about something different - she says we have lost our connection to food and the knowledge of where it comes from. Cobbett shows that even in the 19th century, poor people had food knowledge that we have lost. Both writers make valid points about different kinds of loss.',
+                'I disagree with the statement. Although we do have more food now, the writer of Source A is arguing about something different: that we have lost our connection to food and no longer know where it comes from. Cobbett writes about hunger, describing labourers who "starve quietly" while they are surrounded by food. Both writers criticise a food system that treats people unfairly, even though the problems are different.',
               'Grade 6-7':
-                'The statement\'s logic is seductive but flawed, because it assumes the only measure of a food system is caloric sufficiency. Owens explicitly anticipates this objection: "The industrialisation of our food supply has given us abundance, certainly. But it has taken something in return." Her argument operates on a different axis from Cobbett\'s - she critiques disconnection and ignorance, not hunger. Cobbett\'s critique is more materially urgent: people are starving while producing food for others. But both writers identify the same structural injustice: a system that benefits the few at the expense of the many. Cobbett\'s exploitation is economic (the dairymaid who "must water her own children\'s milk"); Owens\'s is epistemological (we eat "without knowledge"). Neither argument is "weaker" - they address different dimensions of the same problem, and reading them together reveals that while material conditions have improved, the fundamental disconnect between production and consumption has deepened rather than resolved.',
+                'The statement\'s logic is seductive but flawed, because it assumes that the only measure of a food system is whether people are fed. The writer of Source A anticipates exactly this objection: "The industrialisation of our food supply has given us abundance, certainly. But it has taken something in return." That argument works on a different axis from Cobbett\'s. Cobbett\'s complaint is material and urgent: labourers pay a rent that is often "an enormous one" for plots on which to grow potatoes, and are "compelled to starve quietly" within sight of "old wheat ricks, and fat cattle". Source A\'s complaint is about knowledge and connection: we eat "without knowledge, without gratitude". Yet the two texts share a pattern. In each, the people who produce food are cut off from its value: Cobbett\'s labourers from the harvest around them, and, in Source A, "the exploitation of the workers who grew it" hidden behind "a price tag". Being better fed does not answer that. Cobbett\'s argument is the more urgent, but Source A\'s is not weaker; it asks what abundance has cost, a question that plenty alone cannot settle.',
             },
             markScheme: [
               'Evaluates both texts with a sustained personal response',
@@ -637,7 +768,7 @@ export const wjecC2C: MockExamPaper[] = [
               'Grade 4-5':
                 'The writer uses the word "experiment" to suggest children are being treated like lab subjects, which is frightening. The phrase "she cannot stop" at the end of paragraph one shows addiction. The comparison of tech companies to "tobacco executives" implies they are lying about the harm they cause. The triple "I blame" in the final paragraph shows growing anger and guilt.',
               'Grade 6-7':
-                'Parry constructs her argument through a carefully managed emotional escalation. The opening is personal and specific: her daughter was "voracious" - a word suggesting healthy appetite - before the phone consumed that appetite. The parenthetical "with alarming self-awareness" is devastating precisely because it removes the comfort of ignorance: the child knows she is being harmed and cannot stop, which redefines the problem from ignorance to compulsion. The second paragraph shifts from the personal to the epidemiological: "We are conducting an experiment on an entire generation" repurposes scientific language to indict the tech industry, the passive construction ("we have no idea") emphasising our collective helplessness. The tobacco analogy is the piece\'s most incendiary move - it doesn\'t merely compare but equates, and the phrase "practiced innocence" oxymornically exposes the companies\' sincerity as rehearsed performance. The final paragraph\'s anaphoric "I blame" creates a tricolon of accountability that moves outward (engineers, algorithms) before turning inward (herself), and the closing phrase "called it progress" repurposes a word normally associated with improvement to function as an indictment.',
+                'The writer constructs the argument through a carefully managed emotional escalation. The opening is personal and specific: the daughter was "voracious" - a word suggesting healthy appetite - before the phone consumed that appetite. The aside "with alarming self-awareness" is devastating precisely because it removes the comfort of ignorance: the child knows she is being harmed and cannot stop, which redefines the problem from ignorance to compulsion. The second paragraph shifts from the personal to the epidemiological: "We are conducting an experiment on an entire generation" repurposes scientific language to indict the tech industry, and the admission "we have no idea what the results will be" emphasises our collective helplessness. The tobacco analogy is the piece\'s most incendiary move - it turns a comparison into an accusation - and the phrase "practised innocence" is a paradox that exposes the companies\' innocence as a rehearsed performance. The final paragraph\'s anaphoric "I blame" creates a tricolon of accountability that moves outward (engineers, algorithms) before turning inward (the writer), and the closing phrase "called it progress" repurposes a word normally associated with improvement to function as an indictment.',
             },
             markScheme: [
               'Analyses specific language techniques',
@@ -649,8 +780,7 @@ export const wjecC2C: MockExamPaper[] = [
           {
             id: 'wjec-c2-14-q3',
             questionNumber: 3,
-            questionText:
-              "What do you learn about the 19th-century writer's views on the popular press from Source B?\n\nYou should comment on what they think and feel, using evidence from the text.",
+            questionText: `What do you learn about the 19th-century writer's views on the popular press from Source B?\n\nYou should comment on what they think and feel, using evidence from the text.\n\n(${WJEC_C2_14_B_GLOSSARY_FOR_QUESTIONS})`,
             marks: 10,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
@@ -658,9 +788,9 @@ export const wjecC2C: MockExamPaper[] = [
             extractSource: WJEC_C2_14_SOURCE_B_REF,
             modelAnswers: {
               'Grade 4-5':
-                'Knight defends the popular press against its critics. He argues that newspapers have made working people into informed citizens who know about Parliament and the world. He admits the press publishes some trivial and false material but says reading badly is better than not reading at all. He believes that people who start with simple reading will eventually read more serious works.',
+                'Knight is hopeful about cheap popular reading. He admits that coarse "flash" songs still exist, but when he asks whether there is no hope for cheap reading his answer is "Decidedly no", because "There is improvement all around us." He gives examples: the old halfpenny ballads are being replaced by "the decent penny book of a hundred songs". He is amazed by the "tons of newspapers" passing through the Post Office, and warns that they are a powerful force "for good or for evil". He believes things have improved because ordinary people are better educated.',
               'Grade 6-7':
-                'Knight adopts the position of pragmatic optimist, defending the popular press not by denying its faults but by contextualising its achievement. His opening move is rhetorically astute: he exposes the hypocrisy of critics "who themselves read three newspapers before breakfast," undermining their authority through their own practice. His central argument reframes literacy as citizenship: the repeated construction "He knows... He has opinions... He argues... He votes" transforms the act of reading from passive consumption into active democratic participation. The concessive paragraph - "I grant that much... is trivial, sensational, and occasionally false" - performs intellectual honesty while the conditional "I would rather" immediately redirects the argument to the binary choice between imperfect reading and total ignorance. The final image - from "penny dreadfuls" to "Plutarch" - constructs reading as a developmental journey, an optimistic teleology that positions cheap newspapers as the first step rather than the final destination.',
+                'Knight\'s view of the popular press is a considered optimism. He has just conceded that most readers of cheap books still want amusement rather than instruction, and the passage opens by asking whether that should make him "hopeless". His answer, "Decidedly no", is abrupt and emphatic, and the short declarative that follows, "There is improvement all around us", states his thesis. He proves it with small, concrete examples rather than grand claims: the "halfpenny ballad of Seven Dials" is dying out and "the decent penny book of a hundred songs" has taken its place, where "decent" marks a moral as well as a material improvement. He does not pretend that the cheap press is pure: "flash" songs exist, but "they are not for the penny buyers", a distinction that clears the penny buyers themselves. The paragraph then widens into an invitation - "Visit, if you can" and "Look with awe upon the tons of newspapers" - where the imperatives make the reader a witness and "awe" presents the sheer scale of the press as almost sublime. Yet "Think silently how potent a power is this for good or for evil" shows that his optimism is not naive: the power could go either way. The guide\'s remark at the letter-sorters\' boxes, that "everybody writes better", supplies his evidence, and his conclusion credits "General education" with the change: the press has improved because its readers have.',
             },
             markScheme: [
               'Identifies key views and attitudes',
@@ -672,8 +802,7 @@ export const wjecC2C: MockExamPaper[] = [
           {
             id: 'wjec-c2-14-q4',
             questionNumber: 4,
-            questionText:
-              '"Both writers are concerned about how new forms of media affect people, but the 19th-century writer is more optimistic because he believes people can learn to use media wisely."\n\nTo what extent do you agree? You should refer to both texts in your answer.',
+            questionText: `"Both writers are concerned about how new forms of media affect people, but the 19th-century writer is more optimistic because he believes people can learn to use media wisely."\n\n(${WJEC_C2_14_B_GLOSSARY_FOR_QUESTIONS})\n\nTo what extent do you agree? You should refer to both texts in your answer.`,
             marks: 15,
             suggestedTimeMinutes: 18,
             questionType: 'evaluation',
@@ -681,9 +810,9 @@ export const wjecC2C: MockExamPaper[] = [
             extractSource: `Source A: ${WJEC_C2_14_SOURCE_A_REF} | Source B: ${WJEC_C2_14_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'I agree that Knight is more optimistic. He believes people will improve their reading over time, moving from penny dreadfuls to serious literature. Parry, on the other hand, sees technology as actively harmful and addictive. However, Knight is defending a simpler technology - newspapers - while Parry is dealing with platforms designed to be addictive, which is a different problem.',
+                'I agree that Knight is more optimistic. He believes that as people become better educated, what they read gets better, and he says "There is improvement all around us." The writer of Source A sees smartphones as harmful and addictive: the daughter "cannot stop". However, Knight is writing about newspapers and song-books, which people choose to buy, while Source A describes platforms that were designed to be addictive, which is a different problem.',
               'Grade 6-7':
-                "The statement is broadly accurate but obscures important nuances. Knight's optimism rests on an assumption of human agency: the reader progresses from penny dreadfuls to Plutarch through voluntary self-improvement. Parry's pessimism rests on the opposite assumption: the user is trapped by algorithms specifically designed to override agency - her daughter \"cannot stop.\" This is not merely a difference of temperament; it reflects a genuine transformation in the nature of media itself. A newspaper is a finite object that the reader controls; a smartphone feed is infinite and controls the reader. Knight's optimism may therefore be historically justified for his context but inapplicable to Parry's. However, it is worth noting that Knight's critics made arguments remarkably similar to Parry's - the press \"inflames their passions and unsettles their contentment\" - and Knight proved them wrong. The question of whether Parry's concerns will also prove overstated is genuinely open, and the parallel between the two texts should make us cautious about accepting either uncritical optimism or uncritical despair.",
+                'The statement is broadly accurate but hides an important difference. Knight\'s optimism rests on an assumption about readers: as "General education" spreads, they choose better, so the cheap press improves and the halfpenny ballad gives way to "the decent penny book of a hundred songs". The writer of Source A assumes the opposite, that the user is hardly choosing at all, since the platforms were "designed ... to be addictive" and the daughter "cannot stop". This is not merely a difference of temperament; it reflects a change in the media themselves. A newspaper is a finite object that the reader buys and puts down; a feed is endless, and its content is "calibrated to exploit" the reader. Knight\'s optimism may therefore be justified for his century without carrying over to ours. Yet he is not blind to danger: "Think silently how potent a power is this for good or for evil" could stand as the thesis of Source A. The parallel should make us cautious. Knight had to answer doubts about cheap reading, as the question that opens his paragraph shows, and he trusted education to answer them. Whether education can do the same for the smartphone is exactly the question that Source A leaves open.',
             },
             markScheme: [
               'Evaluates both texts with a sustained personal response',
@@ -798,9 +927,9 @@ export const wjecC2C: MockExamPaper[] = [
             extractSource: WJEC_C2_15_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer repeats "is not a luxury" three times to hammer home the point that the arts matter. She uses specific examples of real people - the steelworker, the teenagers, the woman in the library - to make her argument personal and emotional. The word "lifeline" suggests the arts literally keep people alive. The list "birdsong... friendship... the view from a mountain" compares the arts to things everyone values but cannot sell.',
+                'The writer repeats "is not a luxury" three times to hammer home the point that the arts matter. The writer uses specific examples of people - the steelworker, the teenagers, the woman in the library - to make the argument personal and emotional. The word "lifeline" suggests the arts literally keep people alive. The list "birdsong... friendship... the view from a mountain" compares the arts to things everyone values but cannot sell.',
               'Grade 6-7':
-                'Tomos constructs her argument through a powerful rhetorical strategy of negation and reframing. The opening paragraph establishes the facts with journalistic restraint - three councils, two theatres, one museum - before the justification is quoted in free indirect discourse: "we cannot afford luxuries when essentials are under pressure." This sets up the central rhetorical move: the anaphoric repetition of "is not a luxury," applied to three distinct individuals whose specificity (a steelworker in Port Talbot, teenagers in Rhyl, a woman in Swansea) resists abstraction. Each example escalates: from creative fulfilment to being heard to physical safety and warmth. The pivot from "luxury" to "lifeline" completes the semantic transformation. The final paragraph\'s most devastating technique is the reductio ad absurdum: "birdsong doesn\'t matter. Friendship doesn\'t matter." By placing arts funding alongside universally valued but non-commercial experiences, she exposes the absurdity of purely economic valuation. The closing sentence - "things that can be sold" - reduces the governing ideology to its most naked and least defensible formulation.',
+                'The writer constructs the argument through a powerful rhetorical strategy of negation and reframing. The opening paragraph establishes the facts with journalistic restraint - three councils, two theatres, one museum - before the justification is quoted in free indirect discourse: "we cannot afford luxuries when essentials are under pressure." This sets up the central rhetorical move: three sentences that each begin "For the" (anaphora) and end "is not a luxury" (epistrophe), each about a different person or group whose specificity (a steelworker in Port Talbot, teenagers in Rhyl, a woman in Swansea) resists abstraction. Each example escalates: from creative fulfilment to being heard to physical safety and warmth. The pivot from "luxury" to "lifeline" completes the semantic transformation. The final paragraph\'s most devastating technique is the reductio ad absurdum: "birdsong doesn\'t matter. Friendship doesn\'t matter." By placing arts funding alongside universally valued but non-commercial experiences, the writer exposes the absurdity of purely economic valuation. The closing sentence - "things that can be sold" - reduces the governing ideology to its most naked and least defensible formulation.',
             },
             markScheme: [
               'Analyses specific language techniques',
@@ -812,8 +941,7 @@ export const wjecC2C: MockExamPaper[] = [
           {
             id: 'wjec-c2-15-q3',
             questionNumber: 3,
-            questionText:
-              "What do you learn about the 19th-century writer's views on art and ordinary people from Source B?\n\nYou should comment on what they think and feel, using evidence from the text.",
+            questionText: `What do you learn about the 19th-century writer's views on art and ordinary people from Source B?\n\nYou should comment on what they think and feel, using evidence from the text.\n\n(${WJEC_C2_15_B_GLOSSARY_FOR_QUESTIONS})`,
             marks: 10,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
@@ -821,9 +949,9 @@ export const wjecC2C: MockExamPaper[] = [
             extractSource: WJEC_C2_15_SOURCE_B_REF,
             modelAnswers: {
               'Grade 4-5':
-                'Morris believes that ordinary working people love beauty just as much as wealthy people. He describes mill workers who came to evening classes after long days of work. He saw a man who arranged dried flowers with natural artistic talent. He argues that beauty should be part of everyday life - in homes, streets, and workplaces - not just in museums. He believes beauty is a "fundamental human need" like food or shelter.',
+                'Morris believes that ordinary working people made some of the finest art in England. He says the old village churches and houses were not designed by a great architect but by "the village carpenter, smith, mason" - "a common fellow". He thinks these workers enjoyed what they did, because nobody could make something so beautiful without pleasure. He says the seat of a village priest was carved as finely as a king\'s throne. He believes that making beautiful things as part of their daily work brought working people "some human happiness".',
               'Grade 6-7':
-                'Morris articulates a radical democratisation of art. His opening sentence overturns the assumed class hierarchy of aesthetic appreciation, replacing "privilege" with evidence of "passion" among those with "the fewest opportunities." The Bradford passage is carefully staged: the temporal detail ("since six in the morning") and physical markers ("hands rough from the looms, clothes still dusty") establish the workers\' exhaustion before the word "extraordinary" transforms it into devotion. The man with pressed flowers is Morris\'s exemplary figure: his "instinct for composition that no academy could have taught him" locates artistic sensibility in nature rather than education, implicitly critiquing the institutional gatekeeping of art. The final paragraph shifts from observation to manifesto: the repeated "need not be" (ugly, dismal) reimagines the built environment as a canvas. The climactic assertion - beauty is "as essential as food or shelter" - elevates aesthetics to the level of biological necessity, and the word "obligation" transforms the provision of beauty from charitable kindness into social duty.',
+                'Morris argues that art belongs to ordinary people because they made it. He builds the argument through question and answer: "who was it that designed and ornamented them?" The first answer he imagines, "The great architect, carefully kept for the purpose", is dismissed with "By no means", and the phrase "guarded from the common troubles of common men" mocks the idea of the artist as a protected, superior being. The real makers are named plainly: "the monk, the ploughman\'s brother; oftenest his other brother, the village carpenter, smith, mason". Making them brothers turns art into a family trade of ordinary people. Morris puts "a common fellow" and "cultivated" in quotation marks, holding the snobbish labels up to be questioned, and then reverses them: the common fellow\'s work is "the wonder and despair" of the cultivated architect. His strongest claim is about feeling. No one, he says, could make work "so delicate, so careful, and so inventive" without "pleasure being a third party to the brain that conceived and the hand that fashioned it", so for Morris beauty is the sign of happy work. Setting "the throne of the great Plantagenet" beside "the chest of the yeoman\'s good-wife" levels king and farmer. The last sentence gathers the argument into two pictures of work, "the hammer chinked on the anvil, and the chisel played about the oak beam", where the verb "played" suggests labour that felt like play, and it ends on "some human happiness".',
             },
             markScheme: [
               'Identifies key views and attitudes',
@@ -835,8 +963,7 @@ export const wjecC2C: MockExamPaper[] = [
           {
             id: 'wjec-c2-15-q4',
             questionNumber: 4,
-            questionText:
-              '"Both writers argue that art matters to ordinary people, but the 19th-century writer is more persuasive because he focuses on solutions rather than complaints."\n\nTo what extent do you agree? You should refer to both texts in your answer.',
+            questionText: `"Both writers argue that the arts belong to ordinary people, but the 19th-century writer is more persuasive because he celebrates what ordinary people have made rather than complaining about what they are losing."\n\n(${WJEC_C2_15_B_GLOSSARY_FOR_QUESTIONS})\n\nTo what extent do you agree? You should refer to both texts in your answer.`,
             marks: 15,
             suggestedTimeMinutes: 18,
             questionType: 'evaluation',
@@ -844,9 +971,9 @@ export const wjecC2C: MockExamPaper[] = [
             extractSource: `Source A: ${WJEC_C2_15_SOURCE_A_REF} | Source B: ${WJEC_C2_15_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                "I partially agree. Morris does suggest practical solutions - bringing beauty into factories, stations, and homes - while Tomos focuses more on what is being lost. However, Tomos's real-life examples of people affected by arts cuts are very powerful and show why the issue matters. Both writers are effective in different ways.",
+                'I partly agree. Morris is positive: he praises the village carpenters and masons whose work is "the wonder and despair" of trained architects, and this makes his argument uplifting. Source A focuses more on what is being lost, such as libraries and theatres. However, the examples in Source A, like the woman who said the library was the only place where she "felt safe and warm", are very powerful and show why the arts matter today. Both writers are persuasive in different ways.',
               'Grade 6-7':
-                'The characterisation of Tomos as merely "complaining" is reductive. Her three case studies - the steelworker, the teenagers, the library user - are not complaints but testimony: evidence of what art does for real people facing real deprivation. The fact that she names specific places (Port Talbot, Rhyl, Swansea) roots her argument in material reality in a way that Morris\'s more abstract vision does not. Morris is indeed more programmatic - "A factory need not be ugly" - but his solutions are aspirational rather than practical, and their very breadth makes them harder to act upon. The real difference is one of rhetorical genre: Tomos writes elegy (mourning what is being destroyed), Morris writes manifesto (imagining what could be built). Both are persuasive, but they address different emotional registers. Tomos makes you angry about loss; Morris makes you hopeful about possibility. A complete argument for the arts needs both: the urgency of Tomos\'s diagnosis and the ambition of Morris\'s prescription.',
+                'Calling Source A merely "complaining" is reductive. Its three cases - the steelworker, the teenagers, the library user - are not complaints but testimony: evidence of what the arts do for people now, and the named places (Port Talbot, Rhyl, Swansea) root the argument in the present. Morris, by contrast, argues from the past. His village carpenter and mason are long dead, and his evidence is the work they left, "so delicate, so careful, and so inventive". That gives his argument a hopeful tone - ordinary people once made beautiful things in their "common everyday labour" - but it also makes it harder to test. The real difference is one of genre. Source A is an elegy for what is being destroyed; Morris writes a celebration that carries an implied reproach, since the "cultivated" architect of his own day cannot match the common fellow\'s work. Both are persuasive, in different registers: Source A makes the reader angry about loss, while Morris makes the reader imagine what work could be. A complete case for the arts needs both, the urgency of the one and the vision of the other.',
             },
             markScheme: [
               'Evaluates both texts with a sustained personal response',
