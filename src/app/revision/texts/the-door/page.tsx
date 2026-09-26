@@ -7,8 +7,9 @@ import { StubStudyGuide, stubCanonical } from '../_components/stub-study-guide'
 const SLUG = 'the-door'
 
 export const metadata: Metadata = {
-  title: 'The Door - E.M. Forster',
-  description: 'The Door, with a link to the full study guide in our revision notes.',
+  title: 'The Door - Miroslav Holub',
+  description:
+    "Miroslav Holub's poem The Door, in Ian Milner's translation, with a link to the full study guide in our revision notes.",
   alternates: {
     canonical: stubCanonical(SLUG, `/revision/texts/${SLUG}`),
   },

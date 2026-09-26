@@ -718,32 +718,47 @@ export const SET_TEXTS: SetText[] = [
       'A meditation on true love as an "ever-fixed mark" that cannot be altered by time, circumstance or trouble; love that changes when it finds change is, the speaker insists, not love at all.',
   },
 
-  // Section C - Prose (10 short stories)
+  // Prose, and texts set nowhere we cover. This heading read "Section C - Prose
+  // (10 short stories)" until 26 September 2026. The anthology has no Section C
+  // (its parts are Unit 1 Section A, Unit 2 Section A and Unit 1 Section B), and
+  // several rows below are in no anthology at all: each row's own comment says
+  // where it is set.
   {
     slug: 'the-door',
     title: 'The Door',
-    author: 'E.M. Forster (1879-1970)',
-    category: 'prose',
-    // NOT PRESCRIBED BY ANY SPECIFICATION WE HAVE READ. This text carried an
-    // `edexcel-igcse-lang` tag until 19 September 2026. It is verifiably not in
-    // the Pearson Edexcel International GCSE English Anthology, Issue 8,
-    // February 2026, whose three parts are established in full, and it is not in
-    // Cambridge 0475 for 2026, 2027 or 2028-2030 either - that hypothesis was
-    // tested and falsified. Where it does belong is not established.
+    author: 'Miroslav Holub (1923-1998)',
+    category: 'poetry-anthology',
+    // CORRECTED 26 September 2026. Until then this row described a short story
+    // by E.M. Forster, dated 1911, about an office worker who finds a door in
+    // the underground onto a meadow, with a rights notice naming the Forster
+    // estate and pointing to the Pearson anthology's ISBN. Forster wrote no
+    // story called The Door (his four collections were checked), the summary
+    // matches none of his work (it reads like H.G. Wells's The Door in the
+    // Wall), and the anthology prints no such text. Every word of it was
+    // invented. The guide this slug has always led to, at
+    // /resources/revision-notes/the-door, is about Miroslav Holub's poem, so
+    // the row now describes that.
     //
-    // The tag is gone rather than left pending, because "we do not know where
-    // this belongs" and "this is on your exam" are different statements and only
-    // the first is true. A founder clicking through IGCSE Language found this
-    // text on the shelf and followed it out of the qualification entirely.
-    // The guide stays reachable at /revision/texts and from the all-texts index.
+    // Sources: Holub's dates, Wikipedia and Poetry by Heart. The translator
+    // (Ian Milner alone, tagged [IM] under the poem) from Bloodaxe's Poems
+    // Before & After (1990), p. 64. The Czech original, "Dveře", opening the
+    // collection Jdi a otevři dveře (Mladá fronta, 1961), from the Czech
+    // bibliography of Holub's work. Bloodaxe as UK publisher, from its own
+    // catalogue and the Scottish Poetry Library's permission line.
+    //
+    // NOT PRESCRIBED BY ANY SPECIFICATION WE HAVE READ, checked again on
+    // 26 September 2026 against AQA 8702, Edexcel 1ET0, the Pearson
+    // International GCSE anthology (Issue 8), OCR J352, Eduqas C720, WJEC,
+    // CCEA, Cambridge 0475 and 0992, and the IB prescribed list. Hence no
+    // boards: the guide is unseen-poetry practice, and says so.
     boards: [],
     copyrightStatus: 'copyright',
-    year: '1911',
-    keyThemes: ['Imagination', 'Reality vs fantasy', 'Office life', 'Escape'],
+    year: '1961',
+    keyThemes: ['Curiosity', 'Risk and fear', 'Freedom', 'Hope without illusion'],
     description:
-      'A weary office worker discovers a door in the underground that opens onto a luminous, otherworldly meadow - and must decide whether he can ever find it again.',
+      'A short free-verse poem that urges the reader, again and again, to open a door, while admitting honestly that there may be nothing worth seeing on the other side.',
     ukRightsNotice:
-      'Rights notice: © Society of Authors / King’s College, Cambridge on behalf of the E.M. Forster estate (1879-1970; UK copyright runs to 2040). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      "Rights notice: the poem and Ian Milner's English translation are in UK copyright (Holub died in 1998). The translation is published in the UK by Bloodaxe Books in Poems Before & After: Collected English Translations. Quotations here are short fair-dealing extracts for criticism and review under CDPA 1988 s.30; read the full poem in that collection.",
   },
   {
     slug: 'the-necklace',

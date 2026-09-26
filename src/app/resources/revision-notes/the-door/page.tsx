@@ -90,11 +90,12 @@ export default function TheDoorPage() {
           <span className="rounded-full bg-violet-500/15 px-3 py-1 text-xs font-bold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
             Poetry
           </span>
+          {/* These two badges read "GCSE" and "IGCSE" until 26 September 2026,
+              which a student reads as "this is on my exam". No specification
+              we cover sets the poem (see its row in set-texts.ts), so it is
+              labelled as what it is useful for. */}
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
-            GCSE
-          </span>
-          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
-            IGCSE
+            Unseen poetry practice
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -107,7 +108,7 @@ export default function TheDoorPage() {
           A short free-verse poem by the Czech poet and scientist Miroslav Holub, built around a
           single repeated command: go and open the door. This guide covers the poem&apos;s
           stanza-by-stanza movement, its imagery, its form, its Cold War context, and how to write
-          about it in an exam, whether it appears as a set anthology poem or as an unseen text.
+          about it in an exam as an unseen poem. No GCSE or IGCSE specification we cover sets it.
         </p>
       </div>
 
@@ -142,9 +143,10 @@ export default function TheDoorPage() {
             <div className="space-y-4">
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Because the poem is still in copyright, these notes describe and analyse it rather
-                than reprinting it. You should always work from the text in your anthology or
-                classroom edition. The poem is short, unrhymed, and structured around one repeated
-                imperative sentence addressed directly to the reader.
+                than reprinting it. Read it in a licensed copy: Ian Milner&apos;s translation is in
+                Holub&apos;s <em>Poems Before &amp; After</em> (Bloodaxe Books). The poem is short,
+                unrhymed, and structured around one repeated imperative sentence addressed directly
+                to the reader.
               </p>
 
               <div>
@@ -444,8 +446,8 @@ export default function TheDoorPage() {
           <Section title="Key Phrases with Analysis" icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
               The poem is in copyright, so only very short phrases are quoted here for the purpose
-              of analysis. Learn the full lines from your anthology copy: the poem is short enough
-              to memorise entirely.
+              of analysis. Read the full lines in a licensed copy: the poem is short enough to hold
+              in your head entirely.
             </p>
             <div className="space-y-1">
               <QuoteCard
@@ -486,9 +488,10 @@ export default function TheDoorPage() {
         <div id="exam-questions">
           <Section title="Exam-Style Questions with Planning Notes" icon="✍️">
             <p className="text-sm text-muted-foreground mb-5">
-              The poem may appear as a set text or as an unseen. Both question styles are practised
-              below. For any poetry question: argument first, then technique, then context, all
-              anchored in short quotations.
+              No specification we cover sets the poem, so in an exam it would reach you as an
+              unseen. The questions below are good practice either way: the first two are the kind
+              asked about a studied poem, and the third is unseen-style. For any poetry question:
+              argument first, then technique, then context, all anchored in short quotations.
             </p>
 
             <div className="space-y-6">
@@ -682,8 +685,9 @@ export default function TheDoorPage() {
           &ldquo;The Door&rdquo; by Miroslav Holub (1923-1998), English translation by Ian Milner,
           is <strong>in copyright</strong>. In line with fair dealing for criticism and review (CDPA
           1988 s.30), this guide quotes only brief phrases for the purpose of analysis. Students
-          should read the full poem in their anthology or a licensed edition such as the Penguin{' '}
-          <em>Selected Poems</em>.
+          should read the full poem in a licensed edition: <em>Poems Before &amp; After</em>{' '}
+          (Bloodaxe Books), or the Penguin <em>Selected Poems</em> (1967), where the translation
+          first appeared.
         </p>
       </footer>
     </>
