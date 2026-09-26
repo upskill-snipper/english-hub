@@ -130,13 +130,13 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 8,
-    quote: 'No animal shall sleep in a bed \u2014 with sheets.',
+    quote: 'No animal shall sleep in a bed with sheets.',
     speaker: 'The Commandments (altered)',
     chapter: 'Chapter 6',
     context:
       'The Fourth Commandment has been altered. Squealer claims the original always included "with sheets" and that no animal could object to sleeping in a bed without sheets.',
     analysis:
-      'The addition of two words transforms a prohibition into a permission. The dash emphasises the addition, making it visible to the reader even as it is invisible to the illiterate animals. Orwell makes propaganda concrete: this is the deliberate, manual rewriting of truth, later confirmed when Squealer is found at the barn wall with paint and a ladder.',
+      'The addition of two words transforms a prohibition into a permission. Orwell makes propaganda concrete: this is the deliberate, manual rewriting of truth, later confirmed when Squealer is found at the barn wall with paint and a ladder.',
     thematicLinks:
       'Each altered commandment is a structural marker of the revolution\u2019s corruption. The commandments function as a constitution that only the powerful can read and amend.',
     themes: ['Language & Propaganda', 'Power & Corruption'],
@@ -206,13 +206,13 @@ const QUOTES: QuoteEntry[] = [
   {
     id: 13,
     quote:
-      'Napoleon, Father of All Animals, Terror of Mankind, Protector of the Sheepfold, Ducklings\u2019 Friend.',
+      'Father of All Animals, Terror of Mankind, Protector of the Sheepfold, Ducklings\u2019 Friend.',
     speaker: 'Narrator (listing Napoleon\u2019s titles)',
     chapter: 'Chapter 8',
     context:
       'Napoleon acquires an ever-growing list of honorific titles as his cult of personality develops.',
     analysis:
-      'The accumulation of absurd titles parodies Stalin\u2019s personality cult. "Father of All Animals" echoes "Father of the Peoples," Stalin\u2019s official title. The contradiction between "Terror of Mankind" and "Ducklings\u2019 Friend" reveals the incoherence that personality cults require the public to accept without question. Orwell uses comic excess to expose the absurdity of totalitarian self-glorification.',
+      'The accumulation of absurd titles parodies Stalin\u2019s personality cult. "Father of All Animals" echoes "Father of the Peoples," an epithet Soviet propaganda gave Stalin. The contradiction between "Terror of Mankind" and "Ducklings\u2019 Friend" reveals the incoherence that personality cults require the public to accept without question. Orwell uses comic excess to expose the absurdity of totalitarian self-glorification.',
     thematicLinks:
       'Connects to the broader theme of language as power. The titles do not describe reality \u2014 they construct it. Napoleon\u2019s authority is partly built through the language used to describe him.',
     themes: ['Power & Corruption', 'Language & Propaganda'],
@@ -242,7 +242,7 @@ const QUOTES: QuoteEntry[] = [
     context:
       'Clover reflects on the revolution\u2019s failure after witnessing Napoleon\u2019s public executions. Orwell paraphrases her unspoken vision of a future free from hunger, violence and inequality, with each animal working to its capacity (Ch. 7).',
     analysis:
-      'This passage is the emotional heart of the novel. Clover\u2019s vision is modest, humane and reasonable, which makes its betrayal more painful. Orwell gives the most moving articulation of revolutionary hope to an inarticulate cart-horse, not to the intellectual pigs. The pathos lies in the distance between Clover\u2019s simple dream and the brutal reality. (Teacher note: Source: Orwell, *Animal Farm* (1945) \u2014 quoted under estate-licensed extracts. For longer extracts, students should refer to a licensed school edition.)',
+      'This passage is the emotional heart of the novel. Clover\u2019s vision is modest, humane and reasonable, which makes its betrayal more painful. Orwell gives the most moving articulation of revolutionary hope to an inarticulate cart-horse, not to the intellectual pigs. The pathos lies in the distance between Clover\u2019s simple dream and the brutal reality.',
     thematicLinks:
       'Echoes Marx\u2019s principle "from each according to his ability." Clover\u2019s vision is the revolution\u2019s purest expression, placed at the moment of its deepest violation.',
     themes: ['Revolution & Betrayal', 'Class & Inequality'],
@@ -251,13 +251,13 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 16,
-    quote: 'The milk and the windfall apples should be reserved for the pigs alone.',
-    speaker: 'Squealer',
+    quote: 'The milk and the windfall apples ... should be reserved for the pigs alone.',
+    speaker: 'Narrator',
     chapter: 'Chapter 3',
     context:
-      'Squealer justifies the pigs\u2019 first material privilege, claiming they need the nutrition for "brainwork."',
+      'The pigs\u2019 first material privilege, which Squealer justifies by claiming that pigs are "brainworkers."',
     analysis:
-      'The milk and apples are the first visible sign of inequality on Animal Farm. Orwell places this incident early to show that corruption begins with small, apparently reasonable privileges, not grand betrayals. The pseudo-scientific justification ("brainwork") parodies Soviet rhetoric about the intellectual superiority of the ruling class. Once this privilege is accepted, every subsequent one becomes easier.',
+      'The milk and apples are the first visible sign of inequality on Animal Farm. Orwell places this incident early to show that corruption begins with small, apparently reasonable privileges, not grand betrayals. The pseudo-scientific justification ("brainworkers") parodies Soviet rhetoric about the intellectual superiority of the ruling class. Once this privilege is accepted, every subsequent one becomes easier.',
     thematicLinks:
       'The thin end of the wedge. Every later privilege \u2014 beds, clothes, whisky, walking on two legs \u2014 follows the pattern established here: take the privilege, then justify it with propaganda.',
     themes: ['Power & Corruption', 'Language & Propaganda', 'Class & Inequality'],
@@ -272,12 +272,12 @@ const QUOTES: QuoteEntry[] = [
     context:
       'Description of the farm\u2019s atmosphere after Napoleon\u2019s purges and show trials: Orwell describes a climate in which animals were too frightened to speak openly while patrolling dogs intimidated the farm (Ch. 7).',
     analysis:
-      'The dogs are Orwell\u2019s equivalent of the NKVD \u2014 Stalin\u2019s secret police. "No one dared speak his mind" describes the defining condition of totalitarianism: the elimination of free thought through fear. The passive construction ("had come to a time") suggests the change was gradual and thus harder to resist \u2014 no single moment could have been identified as the point of no return.',
+      'The dogs are Orwell\u2019s equivalent of the NKVD \u2014 Stalin\u2019s secret police. "No one dared speak his mind" describes the defining condition of totalitarianism: the elimination of free thought through fear. The past perfect ("had come to a time") suggests the change was gradual and thus harder to resist \u2014 no single moment could have been identified as the point of no return.',
     thematicLinks:
       'Connects violence and silence: the dogs enforce the silence, and the silence enables further violence. This is the cycle that sustains totalitarian power.',
     themes: ['Power & Corruption', 'Language & Propaganda'],
     examTip:
-      'Analyse the passive voice ("had come to a time"). Orwell\u2019s grammar mirrors the way totalitarianism arrives \u2014 not in one dramatic moment but through a gradual, almost imperceptible erosion of freedom.',
+      'Analyse the past perfect ("had come to a time"). Orwell\u2019s grammar mirrors the way totalitarianism arrives \u2014 not in one dramatic moment but through a gradual, almost imperceptible erosion of freedom.',
   },
   {
     id: 18,

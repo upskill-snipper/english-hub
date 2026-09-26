@@ -37,8 +37,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     paragraphs: [
       {
         point: 'Simon\u2019s solitary retreat and spiritual perception',
-        evidence:
-          'Simon retreats to his hidden clearing in the forest \u2014 a "place where flowers grew on bushes" \u2014 to be alone and think.',
+        evidence: 'Simon retreats to his hidden clearing in the forest to be alone and think.',
         analysis:
           'The clearing functions as Gethsemane: a place of spiritual preparation before confrontation with evil. Simon\u2019s sensitivity to the natural world and his instinctive withdrawal from the group\u2019s violence mark him as fundamentally different from the other boys. Golding presents him not as weak but as perceptive \u2014 the only character capable of seeing beyond appearances.',
       },
@@ -104,7 +103,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     thesisStatement:
       'Golding uses the beast as a symbol that evolves from external fear to internal truth, arguing that the real source of evil is not outside humanity but within it.',
     introduction:
-      'Open by tracing the beast\u2019s evolution: from the littluns\u2019 nightmares (Chapter 2), through the "beast from water" and "beast from air" (the dead parachutist), to the Lord of the Flies\u2019 revelation that the beast is "part of you." Note that Golding structures the novel so that each manifestation of the beast brings the boys \u2014 and the reader \u2014 closer to the truth. State your thesis: the beast is not a monster but a mirror.',
+      'Open by tracing the beast\u2019s evolution: from the littluns\u2019 nightmares (Chapter 2), through the "beast from water" and "beast from air" (the dead parachutist), to the Lord of the Flies\u2019 revelation that the beast is "part of you". Note that Golding structures the novel so that each manifestation of the beast brings the boys \u2014 and the reader \u2014 closer to the truth. State your thesis: the beast is not a monster but a mirror.',
     paragraphs: [
       {
         point: 'The beast as external fear: the littluns\u2019 nightmares',
@@ -123,7 +122,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         point: 'The Lord of the Flies: the beast as inner darkness',
         evidence:
-          '"I\u2019m part of you. Close, close, close!" \u2014 The pig\u2019s head speaks to Simon.',
+          '"I\u2019m part of you? Close, close, close!" \u2014 The pig\u2019s head speaks to Simon.',
         analysis:
           'The Lord of the Flies is Golding\u2019s definitive statement on human nature. The beast is not a creature to be hunted but a condition to be acknowledged. "Part of you" eliminates the possibility of external blame. Simon understands this, but the others murder him rather than accept the truth. Golding argues that humanity would rather kill its prophets than confront its own darkness.',
       },
@@ -151,15 +150,14 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         point: 'The gradual erosion of civilised behaviour',
-        evidence:
-          '"Roger gathered a handful of stones ... Henry, throwing to miss." \u2014 Chapter 4.',
+        evidence: '"Roger gathered a handful of stones and began to throw them." (Chapter 4)',
         analysis:
           'Roger\u2019s stone-throwing is Golding\u2019s most precise image of civilisation\u2019s fragility. Roger wants to hurt Henry but is restrained by "the taboo of the old life." This taboo is not innate \u2014 it is a memory of adult authority that weakens over time. By Chapter 11, Roger drops the boulder on Piggy without hesitation. Golding charts the distance between throwing to miss and killing to show that civilisation is a habit, not an instinct.',
       },
       {
         point: 'The triumph of savagery: the hunt for Ralph',
         evidence:
-          '"They looked at each other, baffled, in love and hate." \u2014 Ralph and Jack during the final hunt.',
+          'Jack\u2019s tribe hunts Ralph across the island and sets the forest alight to drive him out of hiding (Chapter 12).',
         analysis:
           'By the final chapter, the entire island has been set on fire and every boy except Ralph has joined Jack\u2019s tribe. Civilisation has not merely weakened \u2014 it has been actively destroyed. The fire, originally a signal for rescue (civilisation), has become a weapon of destruction (savagery). Golding\u2019s structural reversal of the fire\u2019s purpose encapsulates his argument in a single symbol.',
       },
@@ -214,9 +212,9 @@ const ESSAY_PLANS: EssayPlan[] = [
     paragraphs: [
       {
         point: 'The naval officer as false rescuer',
-        evidence: '"stood on the sand, looking down at Ralph in wary ceremonial surprise."',
+        evidence: '"stood on the sand, looking down at Ralph in wary astonishment."',
         analysis:
-          '"Ceremonial" reveals the officer as a representative of the same civilised order the boys have destroyed. But he is part of a warship \u2014 an instrument of war. Golding\u2019s irony is precise: the "rescuer" is engaged in the same violence, only with better technology. The officer represents not the triumph of civilisation but its hypocrisy.',
+          'His uniform marks the officer as a representative of the same civilised order the boys have destroyed. But he is part of a warship \u2014 an instrument of war. Golding\u2019s irony is precise: the "rescuer" is engaged in the same violence, only with better technology. The officer represents not the triumph of civilisation but its hypocrisy.',
       },
       {
         point: 'The Coral Island reference and the failure of Victorian optimism',

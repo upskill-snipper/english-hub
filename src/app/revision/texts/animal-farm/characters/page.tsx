@@ -51,8 +51,8 @@ const characters: CharacterData[] = [
     description:
       "Napoleon is Orwell's study in how dictators rise. He rarely speaks in public, preferring to work through intermediaries (Squealer) and enforcers (the dogs). He contributes nothing to the intellectual life of the farm -- Snowball designs the windmill, not Napoleon -- yet he takes credit for everything. His key qualities are patience, brutality and total indifference to the animals' suffering.",
     arc: [
-      'Chapters 1-2: Quiet, unremarkable pig who listens to Old Major\'s speech. Takes the puppies to "educate" them privately.',
-      "Chapters 3-5: Opposes Snowball's windmill plan, then uses his trained dogs to expel Snowball. Seizes absolute power and abolishes democratic meetings.",
+      "Chapters 1-2: Quiet, unremarkable pig who listens to Old Major's speech.",
+      'Chapters 3-5: Takes the puppies to "educate" them privately. Opposes Snowball\'s windmill plan, then uses his trained dogs to expel Snowball. Seizes absolute power and abolishes democratic meetings.',
       "Chapters 6-8: Adopts Snowball's windmill as his own idea. Stages show-trial executions. Builds a cult of personality with titles and a poem by Minimus.",
       'Chapters 9-10: Sells Boxer to the knacker. Walks on two legs, carries a whip, dines with humans. Renames the farm "Manor Farm". He has become Mr Jones.',
     ],
@@ -62,11 +62,11 @@ const characters: CharacterData[] = [
         context: "Boxer's maxim -- shows how blind loyalty enables tyranny",
       },
       {
-        text: '"Comrade Napoleon... is a terrible and magnificent boar"',
+        text: '"Fountain of happiness!"',
         context: "Minimus's poem -- satirises personality cults",
       },
       {
-        text: '"All animals are equal, but some are more equal"',
+        text: '"All animals are equal but some animals are more equal than others"',
         context: "Final commandment -- Napoleon's regime in a single line",
       },
     ],
@@ -111,16 +111,16 @@ const characters: CharacterData[] = [
     allegorical:
       "Represents the Soviet propaganda machine, especially the newspaper Pravda. Squealer shows how language can be weaponised to control a population. He is the mechanism by which Napoleon's lies become accepted truth.",
     description:
-      'Squealer is small, fat and persuasive. Orwell says he can "turn black into white." He never holds formal power, but he is arguably the most important character in maintaining Napoleon\'s regime. Every altered commandment, every falsified production figure, every rewriting of history passes through Squealer. Without him, the animals would see the truth.',
+      'Squealer is small, fat and persuasive. The other animals say he can "turn black into white." He never holds formal power, but he is arguably the most important character in maintaining Napoleon\'s regime. Every altered commandment, every falsified production figure, every rewriting of history passes through Squealer. Without him, the animals would see the truth.',
     arc: [
       "Chapter 3: Justifies the pigs' milk and apple privilege by invoking the threat of Jones.",
       "Chapters 5-6: Rewrites history after Snowball's expulsion, claiming Napoleon always supported the windmill.",
-      'Chapter 7: Orchestrates the public confessions before the executions.',
-      'Chapters 8-10: Fabricates production statistics. Alters each commandment. Found one night lying beneath the barn wall with paint and a ladder -- the physical act of changing history.',
+      'Chapter 7: Shortly before the executions, persuades the animals that Snowball was in league with Jones from the start.',
+      'Chapters 8-10: Fabricates production statistics. Alters the commandments. Found one night lying beneath the barn wall with paint and a ladder -- the physical act of changing history.',
     ],
     keyQuotes: [
       {
-        text: '"Surely you do not want Jones back?"',
+        text: '"Surely, comrades, you do not want Jones back?"',
         context: 'His go-to threat -- deflects criticism with fear',
       },
       {
@@ -145,7 +145,7 @@ const characters: CharacterData[] = [
       'Chapters 1-3: Embraces Animalism wholeheartedly. Works harder than any other animal.',
       "Chapters 4-5: Fights bravely at the Cowshed but is distressed at the thought of killing. Accepts Napoleon's coup without question.",
       'Chapters 6-8: Works himself to exhaustion building the windmill. His health visibly declines.',
-      'Chapter 9: Collapses. Napoleon sends him to the knacker disguised as a veterinary van. Benjamin realises too late.',
+      'Chapter 9: Collapses. Napoleon sends him to the knacker, claiming he is going to hospital. Benjamin realises too late.',
     ],
     keyQuotes: [
       {
@@ -176,7 +176,7 @@ const characters: CharacterData[] = [
       'Old Major is wise, respected and 12 years old -- ancient for a pig. His speech in Chapter 1 is the ideological foundation of Animalism. He identifies the real enemy (Man), articulates the dream (equality), and gives the animals their anthem ("Beasts of England"). But he is also conveniently dead before the hard work of governing begins, which is Orwell\'s quiet suggestion that theory without practice is incomplete.',
     arc: [
       'Chapter 1: Delivers his visionary speech. Teaches "Beasts of England." Dies three nights later.',
-      'Chapters 2-10: His skull is displayed on a post in the yard -- venerated but increasingly irrelevant as the pigs distort his teachings beyond recognition.',
+      'Chapters 5-10: His skull is dug up and set on a stump by the flagstaff -- venerated but increasingly irrelevant as the pigs distort his teachings beyond recognition.',
     ],
     keyQuotes: [
       {
@@ -190,7 +190,7 @@ const characters: CharacterData[] = [
     ],
     examTips: [
       "Old Major's vision is decent but abstract. Discuss how its vagueness allows Napoleon to reshape it.",
-      "His skull on a post parallels Lenin's embalmed body in Red Square -- a revolution worshipping its dead founder while betraying his ideas.",
+      "His skull on a stump parallels Lenin's embalmed body in Red Square -- a revolution worshipping its dead founder while betraying his ideas.",
       'Note that Old Major is never tested by power. He dies with his integrity intact precisely because he never has to govern.',
     ],
   },
@@ -209,7 +209,7 @@ const characters: CharacterData[] = [
     ],
     keyQuotes: [
       {
-        text: '"Fools! Do you not see what is written?"',
+        text: '"Fools! Do you not see what is written on the side of that van?"',
         context: "The knacker's van -- the cost of waiting too long to speak",
       },
       {
@@ -233,7 +233,7 @@ const characters: CharacterData[] = [
     arc: [
       'Chapter 2: Asks about ribbons during the Animalism debates -- concerned only with personal comfort.',
       'Chapter 4: Hides in her stall during the Battle of the Cowshed.',
-      'Chapter 5: Caught fraternising with humans. Defects to Foxwood farm. Never seen again on Animal Farm.',
+      'Chapter 5: Caught fraternising with humans. Defects to the humans and is later seen near Willingdon with a new owner. Never seen again on Animal Farm.',
     ],
     keyQuotes: [
       {
@@ -257,12 +257,12 @@ const characters: CharacterData[] = [
     arc: [
       'Chapters 1-3: A warm, nurturing presence. Protects the younger animals.',
       'Chapter 7: After the executions, she gazes over the farm and senses the betrayal. She tries to think of the words but cannot.',
-      "Chapter 9: Witnesses Boxer's removal. Her grief is silent and helpless.",
-      'Chapter 10: Old and dim-sighted, she watches the pigs walk on two legs. She cannot see clearly enough to distinguish pig from man.',
+      "Chapter 9: Witnesses Boxer's removal. She cries out to warn him, but cannot save him.",
+      'Chapter 10: Old and dim-sighted, she watches the pigs walk on two legs. At the window, like the others, she can no longer tell pig from man.',
     ],
     keyQuotes: [
       {
-        text: '"These scenes of terror were not what they had looked forward to"',
+        text: '"These scenes of terror and slaughter were not what they had looked forward to"',
         context: 'Chapter 7 -- the inarticulate grief of the betrayed',
       },
     ],

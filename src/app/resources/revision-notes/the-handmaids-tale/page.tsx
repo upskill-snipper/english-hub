@@ -168,9 +168,8 @@ export default function HandmaidsTalePage() {
                   Following a widespread fertility crisis, the few fertile women are conscripted as
                   Handmaids, assigned to the households of high-ranking Commanders, and ritually
                   raped each month in the hope of producing a child. Offred has been assigned to a
-                  Commander whom she addresses as &ldquo;Fred&rdquo; and his wife, Serena Joy. Her
-                  own name, &ldquo;Of-Fred,&rdquo; is patronymic, marking her status as his
-                  property.
+                  Commander and his wife, Serena Joy. Her own name, &ldquo;Of-Fred,&rdquo; is
+                  patronymic, marking her status as his property.
                 </p>
               </div>
 
@@ -223,11 +222,11 @@ export default function HandmaidsTalePage() {
                   The Commander begins summoning Offred to his study at night, where they play
                   Scrabble &mdash; an illicit, intimate act, since women are forbidden to read. He
                   gives her old magazines and hand lotion. Serena Joy, desperate for a baby and
-                  suspecting the Commander is sterile, arranges for Offred to sleep with Nick, in
-                  exchange for news of her daughter. Offred and Nick begin an affair that becomes
-                  emotional as well as physical. The Commander takes Offred to Jezebel&apos;s, an
-                  underground brothel for officials, where she encounters Moira, who has been
-                  recaptured and chosen sex work over the Colonies.
+                  suspecting the Commander is sterile, arranges for Offred to sleep with Nick, and
+                  offers in return to try to get her a picture of her daughter. Offred and Nick
+                  begin an affair that becomes emotional as well as physical. The Commander takes
+                  Offred to Jezebel&apos;s, an underground brothel for officials, where she
+                  encounters Moira, who has been recaptured and chosen sex work over the Colonies.
                 </p>
               </div>
 
@@ -284,7 +283,7 @@ export default function HandmaidsTalePage() {
                       foregrounds questions of textual authority
                     </li>
                     <li>
-                      &bull; Pieixoto&apos;s mockery in 2195 echoes the Commanders&apos; in 2005,
+                      &bull; Pieixoto&apos;s mockery in 2195 echoes the Commanders&apos; in Gilead,
                       suggesting misogyny is not safely historical
                     </li>
                     <li>&bull; The deferred ending denies the reader the comfort of resolution</li>
@@ -301,11 +300,11 @@ export default function HandmaidsTalePage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Offred"
-                description="The narrator and protagonist, a Handmaid assigned to a Commander she addresses as Fred. Her real name is suppressed throughout the main narrative; readers have long inferred that she is the 'June' whispered among names at the Red Centre, but the novel itself never confirms this (the 2017 TV adaptation made the identification explicit). She is in her thirties, formerly married to Luke, mother to a daughter taken from her at the border, and previously worked transferring books to digital format at a library. Her voice is Atwood's central technical achievement: hesitant, self-revising, poetic, deeply ironic. She is neither hero nor martyr but a survivor - complicit at times, paralysed at others, capable of small acts of resistance through wordplay, memory, and her affair with Nick."
+                description="The narrator and protagonist, a Handmaid assigned to a Commander whose first name, Fred, is implied by her own name. Her real name is suppressed throughout the main narrative; readers have long inferred that she is the 'June' whispered among names at the Red Centre, but the novel itself never confirms this (the 2017 TV adaptation made the identification explicit). She is in her thirties, formerly married to Luke, mother to a daughter taken from her at the border, and previously worked transferring books to digital format at a library. Her voice is Atwood's central technical achievement: hesitant, self-revising, poetic, deeply ironic. She is neither hero nor martyr but a survivor - complicit at times, paralysed at others, capable of small acts of resistance through wordplay, memory, and her affair with Nick."
               />
               <CharacterCard
                 name="The Commander (Fred)"
-                description="An older, fatherly figure who is a senior official in the Gilead regime - the novel implies he was involved in its early ideological design but does not confirm a specific role. (The TV series gave him the surname 'Waterford'; the 1985 novel does not.) He summons Offred to his study at night for forbidden Scrabble games, gives her old magazines and hand lotion, and takes her to the underground brothel Jezebel's. He reveals himself as both lonely and self-pitying: he wants intimacy but not equality. Atwood uses him to show how the architects of authoritarianism rationalise their system through bureaucratic complacency."
+                description="An older, fatherly figure who is a senior official in the Gilead regime - the novel implies he was involved in its early ideological design but does not confirm a specific role. (The Historical Notes name two candidates, Frederick R. Waterford and B. Frederick Judd, and Pieixoto favours Waterford, the surname the TV series gave him.) He summons Offred to his study at night for forbidden Scrabble games, gives her old magazines and hand lotion, and takes her to the underground brothel Jezebel's. He reveals himself as both lonely and self-pitying: he wants intimacy but not equality. Atwood uses him to show how the architects of authoritarianism rationalise their system through bureaucratic complacency."
               />
               <CharacterCard
                 name="Serena Joy"
@@ -329,7 +328,7 @@ export default function HandmaidsTalePage() {
               />
               <CharacterCard
                 name="Janine / Ofwarren"
-                description="A vulnerable Handmaid who is broken by the regime's pressure. At the Red Centre she is forced to recount her gang rape and is led by Aunt Lydia and the other Handmaids in a chant that it was her fault. She becomes pregnant, is briefly feted as a successful Handmaid, then her baby is declared 'unbaby' and taken from her. By the end she is mentally adrift, holding a tuft of bloody hair after the Particicution. She represents the human cost of internalised oppression."
+                description="A vulnerable Handmaid who is broken by the regime's pressure. At the Red Centre she is forced to recount her gang rape while the other Handmaids, led by Aunt Helena, chant that it was her fault. She becomes pregnant, is briefly feted as a successful Handmaid, then her baby turns out to be a 'shredder', born with a serious deformity. By the end she is mentally adrift, holding a tuft of bloody hair after the Particicution. She represents the human cost of internalised oppression."
               />
               <CharacterCard
                 name="Luke"
@@ -361,7 +360,7 @@ export default function HandmaidsTalePage() {
               />
               <ThemeCard
                 title={tr(`Language as Power`)}
-                description="Gilead controls language to control thought. Reading and writing are forbidden to women; shop signs are replaced with pictures; the Bible is locked in a wooden box opened only by the Commander. Names are stripped (the Handmaids become 'Of-Fred,' 'Of-Glen'). Doublespeak is everywhere: rape is 'the Ceremony,' executions are 'Salvagings,' brothels are 'Jezebel's.' Offred's narrative is itself a linguistic act of resistance: she hoards words, plays with etymologies ('chair, charity, chastity'), and recites the Latin pun in her wardrobe. The novel argues, with Orwell, that 'if thought corrupts language, language can also corrupt thought' - and the inverse: that to keep language alive is to keep thought alive."
+                description="Gilead controls language to control thought. Reading and writing are forbidden to women; shop signs are replaced with pictures; the Bible is locked in a wooden box opened only by the Commander. Names are stripped (the Handmaids become 'Of-Fred,' 'Of-Glen'). Doublespeak is everywhere: rape is 'the Ceremony,' executions are 'Salvagings,' brothels are 'Jezebel's.' Offred's narrative is itself a linguistic act of resistance: she hoards words, plays with etymologies (chair as a seat, a means of execution, the first syllable of charity and the French for flesh), and recites the Latin pun in her wardrobe. The novel argues, with Orwell, that 'if thought corrupts language, language can also corrupt thought' - and the inverse: that to keep language alive is to keep thought alive."
               />
               <ThemeCard
                 title={tr(`Memory and Resistance`)}
@@ -369,11 +368,11 @@ export default function HandmaidsTalePage() {
               />
               <ThemeCard
                 title={tr(`Complicity and Survival`)}
-                description="Atwood resists the romance of pure resistance. Offred is not Moira, and she knows it. She enters into the affair with Nick partly out of desire, partly out of terror; she takes Serena's deal; she fails to ask the new Ofglen if she is Mayday, and afterwards is relieved not to know. Her refrain - 'I would like to believe this is a story I'm telling' - captures the survivor's need to distance herself from her own choices. Atwood implies that most of us, under Gilead, would not be martyrs but Offreds: 'Better' people accommodate themselves to power. The novel is unflinching about the moral costs of survival, but refuses to condemn the survivor."
+                description="Atwood resists the romance of pure resistance. Offred is not Moira, and she knows it. She enters into the affair with Nick partly out of desire, partly out of terror; she takes Serena's deal; she drops the subject when the new Ofglen warns her off Mayday. Her refrain - 'I would like to believe this is a story I'm telling' - captures the survivor's need to distance herself from her own choices. Atwood implies that most of us, under Gilead, would not be martyrs but Offreds: 'Better' people accommodate themselves to power. The novel is unflinching about the moral costs of survival, but refuses to condemn the survivor."
               />
               <ThemeCard
                 title={tr(`Religion as Justification`)}
-                description="Atwood's Gilead is not anti-religious - it is over-religious in a particular, distorted way. The regime cherry-picks Old Testament passages (Rachel and Bilhah, Jacob's wives) while ignoring Christ's ethics of mercy and the New Testament's egalitarian strands. Bible verses are quoted by the Aunts to justify Handmaid status; the Beatitudes are even rewritten ('Blessed are the silent'). Atwood's targets are not Christianity itself but the political instrumentalisation of religion. She drew specifically on the Christian Right of the Reagan era, which she watched argue for the rollback of women's rights in language indistinguishable from Aunt Lydia's. Religion here is shown as a tool - 'a thing without a hand or a face,' as Offred reflects - that can be picked up by anyone who wants power."
+                description="Atwood's Gilead is not anti-religious - it is over-religious in a particular, distorted way. The regime cherry-picks Old Testament passages (Rachel and Bilhah, Jacob's wives) while ignoring Christ's ethics of mercy and the New Testament's egalitarian strands. Bible verses are quoted by the Aunts to justify Handmaid status; the Beatitudes are even rewritten ('Blessed are the silent'). Atwood's targets are not Christianity itself but the political instrumentalisation of religion. She drew specifically on the Christian Right of the Reagan era, which she watched argue for the rollback of women's rights in language indistinguishable from Aunt Lydia's. Religion here is shown as a tool that can be picked up by anyone who wants power."
               />
             </div>
           </Section>
@@ -388,15 +387,16 @@ export default function HandmaidsTalePage() {
                   {tr(`Reagan-Era America (1980&ndash;1985)`)}
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Atwood wrote <em>{tr(`The Handmaid&apos;s Tale`)}</em> in West Berlin in 1984,
-                  then living near the Iron Curtain. Reagan&apos;s America was a period of resurgent
-                  religious conservatism: the Moral Majority, founded by Jerry Falwell in 1979, was
-                  lobbying to overturn <em>{tr(`Roe v. Wade`)}</em>, reintroduce school prayer, and
-                  roll back the Equal Rights Amendment (which failed to be ratified in 1982).
-                  Phyllis Schlafly led the STOP-ERA campaign, arguing publicly that women&apos;s
-                  liberation was destroying the family. Atwood has said in interviews that she
-                  included nothing in the novel that had not happened somewhere on Earth. Serena Joy
-                  is modelled on televangelist figures like Tammy Faye Bakker and Schlafly herself.
+                  Atwood began writing <em>{tr(`The Handmaid&apos;s Tale`)}</em> in West Berlin in
+                  1984, then living near the Iron Curtain. Reagan&apos;s America was a period of
+                  resurgent religious conservatism: the Moral Majority, founded by Jerry Falwell in
+                  1979, was lobbying to overturn <em>{tr(`Roe v. Wade`)}</em>, reintroduce school
+                  prayer, and roll back the Equal Rights Amendment (which failed to be ratified in
+                  1982). Phyllis Schlafly led the STOP-ERA campaign, arguing publicly that
+                  women&apos;s liberation was destroying the family. Atwood has said in interviews
+                  that she included nothing in the novel that had not happened somewhere on Earth.
+                  Serena Joy is modelled on televangelist figures like Tammy Faye Bakker and
+                  Schlafly herself.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -418,11 +418,11 @@ export default function HandmaidsTalePage() {
                   Puritan New England and the Salem Witch Trials
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Atwood is a descendant of Mary Webster, a 17th-century Puritan woman tried for
-                  witchcraft in Massachusetts. The novel&apos;s setting in what was Cambridge,
-                  Massachusetts is deliberate: Gilead arises in the same New England that birthed
-                  American Puritanism and the Salem trials of 1692. The novel is dedicated &ldquo;in
-                  memory of Mary Webster and Perry Miller&rdquo; (her Harvard Puritan-studies
+                  Atwood has described Mary Webster, a 17th-century Puritan woman tried for
+                  witchcraft in Massachusetts, as her ancestor. The novel&apos;s setting in what was
+                  Cambridge, Massachusetts is deliberate: Gilead arises in the same New England that
+                  birthed American Puritanism and the Salem trials of 1692. The novel is dedicated
+                  &ldquo;For Mary Webster and Perry Miller&rdquo; (her Harvard Puritan-studies
                   professor). Aunt Lydia&apos;s rhetoric, the public Salvagings, and the
                   scapegoating of women as sources of social pollution all draw on this historical
                   inheritance.
@@ -494,7 +494,7 @@ export default function HandmaidsTalePage() {
               />
               <QuoteCard
                 quote="Don't let the bastards grind you down."
-                speaker="Offred (translating the Latin)"
+                speaker="The Commander (translating the Latin)"
                 analysis="Once the Commander translates the inscription for Offred, the phrase becomes her interior mantra. The blunt English idiom, set against the elaborate Latin, foregrounds the gap between elite knowledge and ordinary endurance. Atwood uses this register-shift to suggest that survival under tyranny is at once intellectual and visceral - both the wit to encode and the stubbornness to refuse to be ground down."
               />
               <QuoteCard
@@ -505,7 +505,7 @@ export default function HandmaidsTalePage() {
               <QuoteCard
                 quote="the blank white spaces ... We lived in the gaps between the stories."
                 speaker="Offred"
-                analysis="A retrospective reflection on pre-Gilead complacency. The metaphor of 'blank white spaces' and 'gaps between stories' is deeply ironic: what felt like freedom was actually invisibility, and invisibility is what allowed the coup to succeed. Atwood is writing directly to her 1980s reader: the warning is that to be apolitical, to be 'not in the papers' (as the full passage puts it), is to be unprepared when politics comes for you."
+                analysis="A retrospective reflection on pre-Gilead complacency. The metaphor of 'blank white spaces' and 'gaps between the stories' is deeply ironic: what felt like freedom was actually invisibility, and invisibility is what allowed the coup to succeed. Atwood is writing directly to her 1980s reader: the warning is that to be apolitical, to be 'not in the papers' (as the full passage puts it), is to be unprepared when politics comes for you."
               />
               <QuoteCard
                 quote="I would like to believe ... I need to believe it. I must believe it."
@@ -549,8 +549,8 @@ export default function HandmaidsTalePage() {
               />
               <QuoteCard
                 quote="Context is all."
-                speaker="Offred / Pieixoto"
-                analysis="A pivot phrase repeated by both Offred and, in the Historical Notes, by Professor Pieixoto. In Offred's mouth it is rueful: any single act can mean its opposite depending on context. In Pieixoto's mouth it is a justification for refusing to judge Gilead. Atwood lets the same words mean almost opposite things in two voices, teaching the reader to read with attention to who is speaking and why."
+                speaker="Offred"
+                analysis="A pivot phrase Offred uses twice, once with an echo of Edgar's 'Ripeness is all' in King Lear. In her mouth it is rueful: any single act can mean its opposite depending on context. Pieixoto never says it, but his lecture in the Historical Notes turns context into a reason for refusing to judge Gilead. Atwood lets one idea mean almost opposite things in two voices, teaching the reader to read with attention to who is speaking and why."
               />
               <QuoteCard
                 quote="We are two-legged wombs, that's all: sacred vessels, ambulatory chalices."
@@ -575,7 +575,7 @@ export default function HandmaidsTalePage() {
               <QuoteCard
                 quote="As all historians know, the past is a great darkness, and filled with echoes."
                 speaker="Professor Pieixoto, Historical Notes"
-                analysis="Pieixoto's pompous opening from the 2195 conference. The line is academic in tone but functions as Atwood's meta-commentary: the past - Offred's present - is to be interpreted, archived, and joked over. The 'echoes' are the reader's: Pieixoto's own world is implicated in the patterns Gilead made literal. The line invites the question, 'Are we Pieixoto?'"
+                analysis="Pieixoto's pompous closing reflection at the 2195 conference. The line is academic in tone but functions as Atwood's meta-commentary: the past - Offred's present - is to be interpreted, archived, and joked over. The 'echoes' are the reader's: Pieixoto's own world is implicated in the patterns Gilead made literal. The line invites the question, 'Are we Pieixoto?'"
               />
               <QuoteCard
                 quote="Are there any questions?"
@@ -606,14 +606,14 @@ export default function HandmaidsTalePage() {
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">The Wall</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The Wall, where executed bodies are displayed in white sacks with placards naming
-                  their offences, is a public spectacle of state violence. Offred pauses there with
-                  Ofglen on every shopping trip, searching among the hooded faces for Luke&apos;s.
-                  The Wall encloses what is strongly implied to be a former university campus (the
-                  Historical Notes locate the action in Cambridge, Massachusetts), a sardonic
-                  juxtaposition of intellectual heritage and execution ground. The motif draws on
-                  the public displays of executed criminals at sites such as London Bridge and on
-                  the public executions of post-revolutionary Iran.
+                  The Wall, where executed bodies hang with white bags over their heads and placards
+                  showing their offences, is a public spectacle of state violence. Offred pauses
+                  there with Ofglen on every shopping trip, searching among the hooded faces for
+                  Luke&apos;s. The Wall encloses what is strongly implied to be a former university
+                  campus (the novel never names the town, but it is recognisably Cambridge,
+                  Massachusetts), a sardonic juxtaposition of intellectual heritage and execution
+                  ground. The motif draws on the public displays of executed criminals at sites such
+                  as London Bridge and on the public executions of post-revolutionary Iran.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -621,7 +621,7 @@ export default function HandmaidsTalePage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The state&apos;s secret police are called the &ldquo;Eyes,&rdquo; their vehicles
                   bear winged-eye logos, and the phrase &ldquo;Under His Eye&rdquo; is the standard
-                  greeting. Yet Handmaids&apos; bonnets are designed with white &ldquo;wings&rdquo;
+                  farewell. Yet Handmaids&apos; bonnets are designed with white &ldquo;wings&rdquo;
                   that obstruct their own peripheral vision &mdash; women cannot see, but are always
                   seen. Atwood inverts the divine providence of the Old Testament &ldquo;Eyes of the
                   Lord&rdquo; into a panoptic surveillance state.
@@ -658,7 +658,7 @@ export default function HandmaidsTalePage() {
                   Scrabble in the Commander&apos;s study is one of the novel&apos;s sharpest images:
                   a children&apos;s word game becomes erotic and dangerous, because words themselves
                   are forbidden to women. Offred describes the tiles as &ldquo;delicious&rdquo; and
-                  &ldquo;like sweets.&rdquo; The motif compresses the novel&apos;s linguistic
+                  &ldquo;like candies.&rdquo; The motif compresses the novel&apos;s linguistic
                   argument into a single domestic object: literacy as contraband, as intimacy, as
                   bribe.
                 </p>
@@ -677,7 +677,7 @@ export default function HandmaidsTalePage() {
                 <h4 className="font-bold text-foreground">{tr(`The Ceremony`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The monthly state-sanctioned rape, framed by Genesis 30 and conducted with the
-                  Wife pinning the Handmaid by the wrists, is a piece of choreographed theology. By
+                  Wife holding the Handmaid&apos;s hands, is a piece of choreographed theology. By
                   calling it the &ldquo;Ceremony,&rdquo; the regime turns rape into ritual, and
                   ritual into law. Offred&apos;s account of it is deliberately flat: she rejects,
                   one by one, each word that might soften or dignify the act, and in refusing them
@@ -688,11 +688,11 @@ export default function HandmaidsTalePage() {
                 <h4 className="font-bold text-foreground">{tr(`Cassette Tapes`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Historical Notes reveal that Offred&apos;s narrative survives as audio
-                  cassettes labelled with old pop song titles (Elvis Presley&apos;s &ldquo;Hound
-                  Dog,&rdquo; etc.) hidden in a footlocker. The medium matters: oral testimony,
-                  dependent on a particular machine, framed by trivial cultural detritus. Atwood
-                  emphasises both the precarity of women&apos;s testimony and the way 1980s pop
-                  culture itself becomes a vector for resistance.
+                  cassettes found in a footlocker and bearing the labels of old music tapes (such as
+                  <em>Elvis Presley&apos;s Golden Years</em> and <em>Folk Songs of Lithuania</em>).
+                  The medium matters: oral testimony, dependent on a particular machine, framed by
+                  trivial cultural detritus. Atwood emphasises both the precarity of women&apos;s
+                  testimony and the way 1980s pop culture itself becomes a vector for resistance.
                 </p>
               </div>
             </div>
@@ -823,7 +823,7 @@ export default function HandmaidsTalePage() {
                       Paragraph 3 &mdash; Janine
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Janine&apos;s public confession of her rape, led by Aunt Lydia and chanted by
+                      Janine&apos;s public confession of her rape, led by Aunt Helena and chanted by
                       the other Handmaids: &ldquo;Her fault, her fault, her fault.&rdquo; The rape
                       victim made to perform her own blame. Internalised oppression at its most
                       intimate.
@@ -884,9 +884,11 @@ export default function HandmaidsTalePage() {
                       Paragraph 2 &mdash; Language as resistance
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Nolite te bastardes carborundorum. Offred&apos;s wordplay (&ldquo;chair,
-                      charity, chastity&rdquo;). Scrabble. The hoarded etymologies. Atwood&apos;s
-                      argument that to keep language alive is to keep self alive.
+                      Nolite te bastardes carborundorum. Offred&apos;s wordplay on
+                      &ldquo;chair&rdquo; (a seat, the leader of a meeting, a means of execution,
+                      the first syllable of charity, the French for flesh). Scrabble. The hoarded
+                      etymologies. Atwood&apos;s argument that to keep language alive is to keep
+                      self alive.
                     </p>
                   </div>
                   <div>

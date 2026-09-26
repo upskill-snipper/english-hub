@@ -8,6 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
+import { StoryVisuals } from '@/components/study-guide/visuals/story-visuals'
+import { guide as studyGuide } from '@/data/study-guides/lord-of-the-flies'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -102,14 +104,13 @@ const chapters: ChapterData[] = [
     title: 'Huts on the Beach',
     keyEvents: [
       'Ralph and Simon struggle to build shelters while most boys play or swim.',
-      'Jack becomes obsessed with hunting, painting his face and tracking pigs through the jungle.',
+      'Jack becomes obsessed with hunting, tracking pigs through the jungle.',
       'Ralph and Jack argue about priorities: rescue versus meat.',
       'Simon slips away to a hidden clearing in the jungle, his private sanctuary.',
     ],
     symbolism: [
       'The shelters represent civilisation, community and protection but keep collapsing, reflecting fragile order.',
       "Simon's secret clearing suggests his spiritual, contemplative nature, set apart from the others.",
-      "Jack's face-paint is a mask that liberates him from civilised shame and self-consciousness.",
     ],
     characterDevelopment: [
       'Ralph grows frustrated as the gap between plans and action widens.',
@@ -257,7 +258,7 @@ const chapters: ChapterData[] = [
     title: 'A View to a Death',
     keyEvents: [
       "Simon discovers the dead parachutist on the mountain and realises the 'beast' is a dead man.",
-      "Jack's tribe holds a feast with stolen meat; even Ralph and Piggy attend, drawn by hunger.",
+      "Jack's tribe holds a feast; even Ralph and Piggy attend, drawn by hunger.",
       'A storm breaks as the boys perform their ritual dance, chanting "Kill the beast!"',
       'Simon stumbles out of the jungle to tell the truth; the boys mistake him for the beast and beat him to death.',
     ],
@@ -282,7 +283,7 @@ const chapters: ChapterData[] = [
     number: 10,
     title: 'The Shell and the Glasses',
     keyEvents: [
-      "Ralph, Piggy, Sam and Eric are the only boys left on the beach; Ralph openly calls Simon's death murder.",
+      "Ralph, Piggy, Sam and Eric are the only older boys left on the beach; Ralph openly calls Simon's death murder.",
       'Piggy insists it was an accident and tries to rationalise their guilt.',
       "Jack's tribe raids Ralph's camp in the night and steals Piggy's glasses to control fire-making.",
       "Without the glasses, Ralph's group loses the power to signal for rescue.",
@@ -399,7 +400,7 @@ export default async function LotFChaptersPage() {
               {await t('rev.texts.common.chapter_by_chapter_analysis')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              AQA / OCR / Eduqas
+              AQA / Edexcel / Eduqas
             </Badge>
           </div>
 
@@ -414,6 +415,9 @@ export default async function LotFChaptersPage() {
           </p>
         </div>
       </section>
+
+      {/* The key scenes, part by part, animated. See scripts/mount-story-visuals.mjs. */}
+      <StoryVisuals guide={studyGuide} scenesOnly />
 
       {/* Chapters */}
       {chapters.map((ch) => (

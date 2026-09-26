@@ -12,6 +12,13 @@ import { useT } from '@/lib/i18n/use-t'
 /*  Data - fragmentary fair-dealing only (≤15 words per fragment)         */
 /* ────────────────────────────────────────────────────────────────────── */
 
+// CORRECTED 26 September 2026. The JSX text below carried \' escapes, which
+// JSX prints literally, so the live page showed a backslash in "Alfieri\'s"
+// and eleven other words. "run its bloody course" is said of an earlier
+// lawyer in Caesar's time, not by Alfieri of himself. The takeaways called
+// the Greek chorus point AO3: for 4ET1 the modern drama question assesses
+// AO1 and AO2 only (specification Issue 3), and the chorus is a point of form.
+
 type WalkthroughCard = {
   id: number
   notice: string
@@ -39,7 +46,7 @@ const CARDS: WalkthroughCard[] = [
     id: 3,
     notice:
       'Alfieri stands aside, narrating, his earlier prophecy of "destiny" now visibly arriving.',
-    say: 'Alfieri\'s presence at the climax converts the fight into theatre-within-theatre. He told us at the opening that he watched it "run its bloody course"; now we watch him watch. Miller deliberately removes suspense to install inevitability - the structural signature of Greek tragedy transposed to a longshoreman\'s street.',
+    say: 'Alfieri\'s presence at the climax converts the fight into theatre-within-theatre. He told us at the opening that a lawyer before him watched such a case "run its bloody course"; now we watch him watch. Miller deliberately removes suspense to install inevitability - the structural signature of Greek tragedy transposed to a longshoreman\'s street.',
     zoomOut:
       'The chorus in Sophocles narrates and laments without intervening. Alfieri is a lawyer precisely so the chorus has a modern profession: he is the institution that knows but cannot stop.',
   },
@@ -59,16 +66,18 @@ const CARDS: WalkthroughCard[] = [
   },
   {
     id: 6,
-    // VERIFIED: Penguin Modern Classics & Bloomsbury Methuen Drama editions both render the line as "with a certain alarm" (no em-dash). Earlier draft inserted an inauthentic dash.
+    // CORRECTED 26 September 2026: this comment called "with a certain alarm"
+    // verified. The verified study guide gives the Penguin's punctuation, an
+    // ellipsis before the last word ("with a certain... alarm"), and never a dash.
     notice:
-      'Alfieri\'s closing words concede a "certain alarm" alongside reluctant admiration for Eddie.',
-    say: 'The final fragment refuses both condemnation and praise. Alfieri admits he mourns Eddie "with a certain alarm". The qualifying phrase is doing the moral work: a hesitation, a swerve, a withholding. Miller will not let the audience leave with a tidy verdict, because the play\'s argument is that absolutism is precisely what destroys Eddie.',
+      'Alfieri\'s closing words concede a "certain... alarm" alongside reluctant admiration for Eddie.',
+    say: 'The final fragment refuses both condemnation and praise. Alfieri admits he mourns Eddie "with a certain... alarm". The qualifying phrase is doing the moral work: a hesitation, a swerve, a withholding. Miller will not let the audience leave with a tidy verdict, because the play\'s argument is that absolutism is precisely what destroys Eddie.',
     zoomOut:
       'Aristotelian catharsis required the audience to feel pity and fear in balance. Alfieri\'s "alarm" is Miller\'s twentieth-century word for the same uncomfortable equilibrium.',
   },
 ]
 
-const MODEL_PARAGRAPH = `The climactic confrontation between Eddie and Marco fulfils the prophetic structure that Alfieri has been laying down since the opening monologue, in which he tells the audience he watched the case "run its bloody course". The fragment "destiny" - invoked early and abandoned - returns wordlessly when Marco turns Eddie\'s own knife back upon him: Miller obeys the Aristotelian rule that the tragic instrument must be supplied by the hero himself. Eddie\'s repeated demand, only four words long - "I want my name" - exposes the substitution at the heart of the play. He has confused reputation with identity, and the Sicilian honour code Marco embodies recognises this confusion exactly as a Theban audience would have recognised hubris. Alfieri, narrating from the side, fulfils the formal role of the Greek chorus: he knows, he warns, he cannot prevent. Miller\'s genius is to relocate the agora to the Red Hook waterfront without losing the form\'s gravity. The neighbours become the polis; the longshoreman becomes the protagonist; the lawyer becomes Tiresias. When Alfieri concedes, in the closing fragment, his "alarm" alongside admiration, Miller is staging the precise catharsis Aristotle demanded - pity and fear held in unresolved tension - and proving that tragic dignity is not a privilege of kings but is available, terribly, to a Brooklyn dock-worker who allowed himself to be wholly known.`
+const MODEL_PARAGRAPH = `The climactic confrontation between Eddie and Marco fulfils the prophetic structure that Alfieri has been laying down since the opening monologue, in which he tells the audience that a lawyer before him watched such a case "run its bloody course". The fragment "destiny" - invoked early and abandoned - returns wordlessly when Marco turns Eddie\'s own knife back upon him: Miller obeys the Aristotelian rule that the tragic instrument must be supplied by the hero himself. Eddie\'s repeated demand, only four words long - "I want my name" - exposes the substitution at the heart of the play. He has confused reputation with identity, and the Sicilian honour code Marco embodies recognises this confusion exactly as a Theban audience would have recognised hubris. Alfieri, narrating from the side, fulfils the formal role of the Greek chorus: he knows, he warns, he cannot prevent. Miller\'s genius is to relocate the agora to the Red Hook waterfront without losing the form\'s gravity. The neighbours become the polis; the longshoreman becomes the protagonist; the lawyer becomes Tiresias. When Alfieri concedes, in the closing fragment, his "alarm" alongside admiration, Miller is staging the precise catharsis Aristotle demanded - pity and fear held in unresolved tension - and proving that tragic dignity is not a privilege of kings but is available, terribly, to a Brooklyn dock-worker who allowed himself to be wholly known.`
 
 const MODEL_WORD_COUNT = MODEL_PARAGRAPH.trim().split(/\s+/).length
 
@@ -110,10 +119,10 @@ export default function ExtractWalkthroughPage() {
           </CardHeader>
           <CardContent className="space-y-3 text-sm leading-relaxed">
             <p>
-              By this point Alfieri\'s opening prophecy - that he watched the case "run its bloody
-              course" - is about to land. The neighbours are gathered. Beatrice and Catherine try to
-              hold Eddie back. Marco arrives publicly. Within minutes a knife will be drawn, turned,
-              and Eddie will die in his wife\'s arms.
+              By this point Alfieri's opening prophecy - that a lawyer before him watched such a
+              case "run its bloody course" - is about to land. The neighbours are gathered. Beatrice
+              and Catherine try to hold Eddie back. Marco arrives publicly. Within minutes a knife
+              will be drawn, turned, and Eddie will die in his wife's arms.
             </p>
             <p className="text-muted-foreground italic">
               Note on quotation: A View from the Bridge remains in copyright (© the Estate of Arthur
@@ -185,7 +194,7 @@ export default function ExtractWalkthroughPage() {
                 Brooklyn.
               </p>
               <p>
-                Reputation here is treated as moveable property. It can be taken (by Marco\'s public
+                Reputation here is treated as moveable property. It can be taken (by Marco's public
                 accusation) and, Eddie believes, returned. The tragedy is that he is asking for the
                 impossible from the wrong man, in the wrong language, in the wrong country.
               </p>
@@ -220,7 +229,7 @@ export default function ExtractWalkthroughPage() {
             </CardHeader>
             <CardContent className="text-sm leading-relaxed space-y-2">
               <p>
-                The fight is the culmination of a play-long crisis in Eddie\'s narrow definition of
+                The fight is the culmination of a play-long crisis in Eddie's narrow definition of
                 manhood. Rodolpho cooks and sings; Marco lifts a chair above his head; Eddie kisses
                 both Catherine and Rodolpho in disastrous Act Two assertions.
               </p>
@@ -239,17 +248,21 @@ export default function ExtractWalkthroughPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-sm leading-relaxed space-y-2">
-              {/* VERIFIED: Penguin Modern Classics edn - Marco's line is "In my country he would be dead by now" (the word "by" was missing in the earlier draft). */}
+              {/* CORRECTED 26 September 2026: this comment called "dead by now" verified.
+                  Both prescribed editions (Penguin Modern Classics, Bloomsbury) read
+                  "In my country he would be dead now", with no "by", as the verified
+                  study guide gives it; an exact-phrase search of both scans for the
+                  "by" form finds nothing. */}
               <p>
-                Marco\'s earlier fragment - "In my country he would be dead by now" - is fulfilled
-                in the climax. Two legal systems are visibly in collision: Alfieri\'s American
-                statute book, which has nothing to say about informing on a cousin, and the Sicilian
-                code, which demands blood.
+                Marco's earlier fragment - "In my country he would be dead now" - is fulfilled in
+                the climax. Two legal systems are visibly in collision: Alfieri's American statute
+                book, which has nothing to say about informing on a cousin, and the Sicilian code,
+                which demands blood.
               </p>
               <p>
                 Miller refuses to side with either. The American law is real but inadequate; the
                 Sicilian code is morally clear but lethal. Eddie is crushed in the gap, which is
-                where the play\'s political seriousness lives.
+                where the play's political seriousness lives.
               </p>
             </CardContent>
           </Card>
@@ -293,19 +306,19 @@ export default function ExtractWalkthroughPage() {
                 </li>
                 <li>
                   Always link Alfieri to the Greek chorus tradition when discussing structure or
-                  inevitability - this is high-value AO3 territory.
+                  inevitability - it is a point about form, which AO2 rewards.
                 </li>
                 <li>
-                  Treat "name" as a near-technical term in the play\'s honour vocabulary. Tracking
+                  Treat "name" as a near-technical term in the play's honour vocabulary. Tracking
                   its repetition is one of the cleanest AO2 routes available.
                 </li>
                 <li>
-                  Marco turning Eddie\'s own knife on him is the play\'s clearest dramatisation of
+                  Marco turning Eddie's own knife on him is the play's clearest dramatisation of
                   hamartia - the tragic instrument is supplied by the hero himself.
                 </li>
                 <li>
-                  Connect the play to Miller\'s essay "Tragedy and the Common Man" if you have read
-                  it. Working-class tragedy is the form\'s argument, not a deviation from it.
+                  Connect the play to Miller's essay "Tragedy and the Common Man" if you have read
+                  it. Working-class tragedy is the form's argument, not a deviation from it.
                 </li>
               </ul>
             </CardContent>

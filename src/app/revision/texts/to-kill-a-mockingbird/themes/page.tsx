@@ -51,9 +51,9 @@ const THEMES: ThemeData[] = [
     keyQuotes: [
       {
         text: '"People generally see what they look for, and hear what they listen for."',
-        speaker: 'Atticus - Chapter 17',
+        speaker: 'Judge Taylor - Chapter 17',
         analysis:
-          'Atticus acknowledges that perception is shaped by prejudice. Lee uses this to explain why evidence alone cannot overcome entrenched racism.',
+          'Judge Taylor acknowledges that perception is shaped by prejudice. Lee uses this to explain why evidence alone cannot overcome entrenched racism.',
       },
       {
         text: '"I felt right sorry for her."',
@@ -113,7 +113,7 @@ const THEMES: ThemeData[] = [
     keyQuotes: [
       {
         text: '"It\'s a sin to kill a mockingbird."',
-        speaker: 'Miss Maudie - Chapter 10',
+        speaker: 'Atticus, then Miss Maudie - Chapter 10',
         analysis:
           'The central symbol defined. Lee argues that innocence - in birds, in Tom, in Boo - must be protected because it does no harm.',
       },
@@ -138,12 +138,12 @@ const THEMES: ThemeData[] = [
   {
     title: 'Courage',
     overview:
-      'Atticus defines courage not as physical bravery but as "knowing you\'re licked before you begin but you begin anyway." Lee presents multiple models of courage in the novel: Atticus defending Tom, Mrs Dubose fighting her morphine addiction, Boo emerging from seclusion to save the children, and Scout confronting a mob with nothing but her voice. True courage, the novel argues, is moral persistence in the face of certain failure.',
+      'Atticus defines courage not as physical bravery but as knowing that "you\'re licked before you begin but you begin anyway." Lee presents multiple models of courage in the novel: Atticus defending Tom, Mrs Dubose fighting her morphine addiction, Boo emerging from seclusion to save the children, and Scout confronting a mob with nothing but her voice. True courage, the novel argues, is moral persistence in the face of certain failure.',
     howLeePresentsIt:
       "Lee uses the Mrs Dubose subplot to teach the children - and the reader - her definition of courage before the trial begins. This prepares them to understand Atticus's decision to defend Tom as an act of courage rather than foolishness. She also contrasts moral courage with physical courage: Atticus is the best shot in Maycomb but refuses to carry a gun, showing that restraint, not violence, is the braver choice.",
     keyQuotes: [
       {
-        text: '"Simply because we were licked a hundred years ... is no reason not to try."',
+        text: '"...licked a hundred years ... no reason for us not to try to win."',
         speaker: 'Atticus - Chapter 9',
         analysis:
           "Atticus's definition of courage. Lee argues that the value of fighting for justice lies in the fight itself, not in the outcome.",
@@ -162,7 +162,7 @@ const THEMES: ThemeData[] = [
       },
     ],
     contextLink:
-      'Lee wrote during the Civil Rights Movement, when ordinary people - Rosa Parks, the Little Rock Nine, the Freedom Riders - were displaying exactly the kind of moral courage Atticus embodies. The novel models the behaviour Lee wanted her readers to adopt.',
+      'Lee wrote during the Civil Rights Movement, when ordinary people - Rosa Parks, the Little Rock Nine - were displaying exactly the kind of moral courage Atticus embodies. The novel models the behaviour Lee wanted her readers to adopt.',
     examTip:
       "Contrast different types of courage. Examiners value candidates who discuss physical courage (the mad dog), moral courage (the trial), social courage (Scout at the mob) and endurance courage (Mrs Dubose) as Lee's layered exploration of the theme.",
   },
@@ -181,9 +181,9 @@ const THEMES: ThemeData[] = [
       },
       {
         text: '"People generally see what they look for, and hear what they listen for."',
-        speaker: 'Atticus - Chapter 17',
+        speaker: 'Judge Taylor - Chapter 17',
         analysis:
-          'Lee uses Atticus to explain how class and racial prejudice function: people confirm what they already believe and ignore what contradicts it.',
+          "Lee uses Judge Taylor's remark to explain how class and racial prejudice function: people confirm what they already believe and ignore what contradicts it.",
       },
       {
         text: '"There\'s four kinds of folks in the world."',
@@ -270,7 +270,7 @@ export default async function ToKillAMockingbirdThemesPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              Edexcel IGCSE
+              Edexcel IGCSE / Cambridge IGCSE
             </Badge>
           </div>
 

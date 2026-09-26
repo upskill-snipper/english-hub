@@ -8,6 +8,8 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/lord-of-the-flies'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Lord of the Flies GCSE - themes, characters, key quotes',
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Lord of the Flies GCSE - themes, characters, key quotes',
   description:
-    "Lord of the Flies GCSE revision - Golding's novel by chapter with characters, themes, context, key quotes and essay plans. Aligned to AQA, OCR and Eduqas.",
+    "Lord of the Flies GCSE revision - Golding's novel by chapter with characters, themes, context, key quotes and essay plans. Aligned to AQA, Edexcel and Eduqas.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/lord-of-the-flies',
   },
@@ -35,7 +37,7 @@ const data: TextGuideData = {
   author: 'William Golding',
   year: 'published 1954',
   category: 'Novel',
-  badge: 'AQA / OCR / Eduqas',
+  badge: 'AQA / Edexcel / Eduqas',
   intro:
     "William Golding's ferocious first novel strands a group of English schoolboys on a tropical island after their plane is shot down during a future war. What begins as an adventure quickly collapses into savagery as Golding tests - and rejects - the Victorian myth that civilisation is the natural state of well-bred boys.",
   quickInfo: {
@@ -47,7 +49,7 @@ const data: TextGuideData = {
   plotSummary: [
     'A plane carrying British schoolboys is shot down over a tropical island. The survivors, none older than about twelve, emerge to find no adults. Fair-haired Ralph finds a conch shell and, with the help of the plump, asthmatic Piggy, uses it to summon the others. The boys elect Ralph chief. Jack Merridew, leader of a group of choirboys, is made head of the hunters in a grudging compromise.',
     "Ralph builds shelters, insists on a signal fire and holds meetings where whoever holds the conch can speak. Jack becomes obsessed with hunting the island's pigs and gradually pulls his choir - painted, bare-chested and singing - away from Ralph's order. A rumour spreads among the younger children of a 'beast' on the mountain. What they have actually seen is the body of a dead parachutist tangled in his lines.",
-    'At the centre of the novel, the group kills a sow and mounts her head on a stake. The visionary, epileptic Simon alone climbs the mountain, discovers the parachutist, and understands that the beast is nothing more than a man and that the real evil lives inside the boys themselves. As he returns in the dark to tell them, he is mistaken for the beast and beaten to death in a frenzied circle dance.',
+    'At the centre of the novel, the group kills a sow and mounts her head on a stake. The visionary Simon alone climbs the mountain, discovers the parachutist, and understands that the beast is nothing more than a man and that the real evil lives inside the boys themselves. As he returns in the dark to tell them, he is mistaken for the beast and beaten to death in a frenzied circle dance.',
     "Jack's tribe grows dominant. They raid Ralph's camp, steal Piggy's glasses (their only source of fire), and later roll a boulder that kills Piggy and shatters the conch. Ralph is hunted across the burning island by boys who now want him dead. He collapses on the beach at the feet of a naval officer, who has come ashore because of the smoke, and weeps for the end of innocence and 'the darkness of man's heart'.",
   ],
   characters: [
@@ -108,7 +110,7 @@ const data: TextGuideData = {
     'William Golding, a schoolteacher and naval officer, served in the Royal Navy during the Second World War and participated in the D-Day landings. He later said that watching what ordinary people were willing to do during the war made it impossible for him to believe humans were innately good, and Lord of the Flies grew directly out of that disillusionment.',
     'The novel is set during a vague future war, usually read as a nuclear conflict, and the parachutist\u2019s body is a reminder that the adult world the boys trust has also descended into violence. The island is less an escape from civilisation than a tiny mirror of it.',
     'Golding was consciously writing against the Victorian tradition of R.M. Ballantyne\u2019s The Coral Island, in which stranded English boys remain cheerful, inventive and Christian. Golding\u2019s reply was that those boys were a comforting lie, and the pig on a stake is his answer to the cheerful campfire.',
-    'The novel was repeatedly rejected before it was published in 1954 and only slowly became a classroom staple. By the 1960s it was required reading in British and American schools, and it won Golding the Nobel Prize in Literature in 1983.',
+    'The novel was repeatedly rejected before it was published in 1954 and only slowly became a classroom staple. By the 1960s it was required reading in British and American schools, and in 1983 Golding was awarded the Nobel Prize in Literature for his novels.',
   ],
   quotations: [
     {
@@ -137,7 +139,7 @@ const data: TextGuideData = {
     },
     {
       quote: '"Sucks to your ass-mar!"',
-      who: 'The boys to Piggy - Chapter 1',
+      who: 'Ralph to Piggy - Chapter 1',
       analysis:
         'Cruelty begins as playground teasing. Golding shows how easily it hardens into hunting.',
     },
@@ -325,7 +327,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Roger initially throws stones but misses on purpose because "the old world\'s" rules still restrain him. By the end, with civilisation gone, he tortures and kills without hesitation. He represents the removal of social constraints on innate cruelty.',
+      'Roger initially throws stones but misses on purpose because "the taboo of the old life" still restrains him. By the end, with civilisation gone, he tortures and kills without hesitation. He represents the removal of social constraints on innate cruelty.',
     topic: 'Characters',
     difficulty: 'higher',
   },
@@ -437,7 +439,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Golding served in the Royal Navy and participated in D-Day. He later said the war made it "impossible to believe that humans were innately good." Lord of the Flies grew directly from that disillusionment - it rejects liberal optimism about human nature.',
+      'Golding served in the Royal Navy and participated in D-Day. He later said the war made it impossible for him to believe that humans were innately good. Lord of the Flies grew directly from that disillusionment - it rejects liberal optimism about human nature.',
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -627,6 +629,9 @@ export default async function LordOfTheFliesPage() {
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         {await t('rev.texts.lotf.fair_dealing_short')}
       </p>
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }

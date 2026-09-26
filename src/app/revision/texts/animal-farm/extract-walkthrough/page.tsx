@@ -19,7 +19,7 @@ import { useT } from '@/lib/i18n/use-t'
 
 /* ── Extract data ───────────────────────────────────────────────────────── */
 
-// VERIFIED: Animal Farm Ch.10 closing - Penguin Classics 2000 edn p.95 and Project Gutenberg Australia (https://gutenberg.net.au/ebooks01/0100011h.html). "Twelve" capitalised; comma after "now"; semicolon before "but already".
+// VERIFIED: Animal Farm Ch.10 closing, against Project Gutenberg Australia (https://gutenberg.net.au/ebooks01/0100011h.html), rechecked word for word 26 September 2026. "Twelve" capitalised; comma after "now"; semicolon before "but already". This comment used to cite Penguin Classics 2000 p.95 for the semicolon too, but the study-guide check of the same day reported a colon there in OCR scans of Penguin printings and of Davison's Complete Works text, and a semicolon in the 1945 printing. Neither reading has been confirmed in a physical copy; the semicolon shown is the 1945 and Gutenberg reading.
 const EXTRACT_LINES: string[] = [
   'Twelve voices were shouting in anger, and they were all alike.',
   'No question, now, what had happened to the faces of the pigs.',
@@ -69,7 +69,7 @@ const WALKTHROUGH: WalkthroughCard[] = [
     iconColour: 'text-blue-400',
     body: [
       'The triple repetition "from pig to man, and from man to pig, and from pig to man" enacts the dizzying back-and-forth of the animals\' gaze. The grammar mimics the impossibility of distinguishing them.',
-      'The blunt monosyllabic verdict - "it was impossible to say which was which" - refuses elaboration. There is no commentary, no lament, no rhetorical flourish: only the bare fact that the equation has been made.',
+      'The blunt verdict - "it was impossible to say which was which" - refuses elaboration. There is no commentary, no lament, no rhetorical flourish: only the bare fact that the equation has been made.',
       'Orwell denies the reader any comforting moral framing. The animals outside the window are us - silent, watching, too late.',
     ],
     evidence:
@@ -82,7 +82,7 @@ const WALKTHROUGH: WalkthroughCard[] = [
     iconColour: 'text-emerald-400',
     body: [
       'Old Major\'s founding doctrine was that "whatever goes upon two legs is an enemy". By the closing scene the pigs walk on two legs, wear human clothes, carry whips and host the neighbouring farmers.',
-      'Each commandment has been quietly amended - "no animal shall sleep in a bed" gained "with sheets"; "no animal shall kill any other animal" gained "without cause"; "all animals are equal" gained "but some animals are more equal than others".',
+      'Commandment after commandment has been quietly amended - "no animal shall sleep in a bed" gained "with sheets"; "no animal shall kill any other animal" gained "without cause"; "all animals are equal" gained "but some animals are more equal than others".',
       'The closing tableau is the logical endpoint of this slow erosion: not a sudden coup but the steady accretion of small betrayals, each one defensible in the moment, ruinous in sum.',
     ],
   },
@@ -93,8 +93,8 @@ const WALKTHROUGH: WalkthroughCard[] = [
     iconColour: 'text-violet-400',
     body: [
       'Orwell wrote Animal Farm in 1943-44, between the Tehran Conference and the end of the Second World War. The closing dinner deliberately echoes the meetings of Stalin, Churchill and Roosevelt - the dictator now welcomed at the same table as the capitalists he had pledged to overthrow.',
-      // VERIFIED: Orwell's 1947 preface to the Ukrainian edition is reproduced at the Orwell Foundation (https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/preface-to-the-ukrainian-edition-of-animal-farm/). The phrasing below paraphrases his stated theme rather than quoting verbatim.
-      'The novella enacts the argument Orwell set out in his 1947 preface to the Ukrainian edition: that the Soviet experiment had degenerated because its leaders were never made answerable to the people they ruled, and that a socialism worth defending would have to be built on democratic accountability.',
+      // VERIFIED: Orwell's 1947 preface to the Ukrainian edition is reproduced at the Orwell Foundation (https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/preface-to-the-ukrainian-edition-of-animal-farm/). The phrasing below paraphrases his stated theme rather than quoting verbatim. Rechecked 26 September 2026: the preface says the destruction of the Soviet myth was essential to a revival of the Socialist movement. It says nothing about leaders being answerable or accountable, which an earlier paraphrase here claimed.
+      'The novella enacts the argument Orwell set out in his 1947 preface to the Ukrainian edition: that destroying the Soviet myth was essential if the socialist movement was to revive.',
       'The final image is therefore not a despairing claim that all revolutions must fail - it is a precise, narrow indictment of one revolution in particular, and a warning about the conditions under which any revolution can be hijacked.',
     ],
   },
@@ -268,9 +268,9 @@ export default function ExtractWalkthroughPage() {
               communion with quarrel. Structurally, the novel ends where it began: Manor Farm
               restored in name and in conduct, with a drunken master inside the farmhouse and the
               animals shut out. That cyclical form is the argument. By 1943, when Orwell began
-              writing, Stalin had purged the Old Bolsheviks, signed and broken his pact with Hitler
-              and arrived at Tehran as a peer of Churchill and Roosevelt - the precise tableau
-              Orwell stages here. The novella is therefore an indictment of Stalinism as the
+              writing, Stalin had purged the Old Bolsheviks, signed a pact with Hitler that Hitler
+              then broke, and arrived at Tehran as a peer of Churchill and Roosevelt - the precise
+              tableau Orwell stages here. The novella is therefore an indictment of Stalinism as the
               betrayal of 1917, rather than of the October Revolution itself. Yet the wider thesis
               is broader: power exercised without democratic constraint will corrupt any movement,
               regardless of the ideology it began with. The pigs were never uniquely wicked, only

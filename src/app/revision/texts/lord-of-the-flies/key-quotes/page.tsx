@@ -97,7 +97,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 8,
-    quote: 'I\u2019m part of you. Close, close, close! ... Why things are what they are.',
+    quote: 'I\u2019m part of you? Close, close, close! ... Why things are what they are?',
     speaker: 'The Lord of the Flies',
     chapter: 'Chapter 8 \u2014 Gift for the Darkness',
     context:
@@ -111,19 +111,19 @@ const QUOTES: QuoteEntry[] = [
     quote: 'The mask was a thing on its own, ... liberated from shame and self-consciousness.',
     speaker: 'Narrator',
     chapter: 'Chapter 4 \u2014 Painted Faces and Long Hair',
-    context: 'Jack paints his face with clay and charcoal before the first hunt.',
+    context: 'Jack paints his face with clay and charcoal before the first successful hunt.',
     analysis:
       'The mask allows Jack to abandon the restraints of civilisation. "Liberated" is deliberately ambiguous: liberation from shame is also liberation from morality. Golding shows that the removal of social identity enables savagery. The face paint functions as the novel\u2019s most concrete symbol of decivilisation.',
     themes: ['Civilisation vs Savagery', 'Loss of Innocence', 'Power & Leadership'],
   },
   {
     id: 10,
-    quote: 'Which is better \u2014 to be a pack of painted savages ... sensible like Ralph is?',
+    quote: 'Which is better \u2014 to be a pack of painted Indians ... sensible like Ralph is?',
     speaker: 'Piggy',
     chapter: 'Chapter 11 \u2014 Castle Rock',
     context: 'Piggy\u2019s final speech before he is killed, pleading for reason and order.',
     analysis:
-      'Piggy\u2019s binary question assumes that reason will triumph if stated clearly enough. The fact that he is murdered moments later is Golding\u2019s answer: savagery does not lose arguments; it eliminates the people who make them. "Painted savages" connects to the mask imagery \u2014 the boys have become unrecognisable.',
+      'Piggy\u2019s binary question assumes that reason will triumph if stated clearly enough. The fact that he is murdered moments later is Golding\u2019s answer: savagery does not lose arguments; it eliminates the people who make them. "Painted" connects to the mask imagery: the boys have become unrecognisable.',
     themes: ['Civilisation vs Savagery', 'Power & Leadership', 'Human Nature'],
   },
   {
@@ -131,7 +131,7 @@ const QUOTES: QuoteEntry[] = [
     quote:
       'wearisomeness of this life, where every path was an improvisation ... spent watching one\u2019s feet.',
     speaker: 'Narrator (about Ralph)',
-    chapter: 'Chapter 7 \u2014 Shadows and Tall Trees',
+    chapter: 'Chapter 5 \u2014 Beast from Water',
     context: 'Ralph becomes aware of how far they have fallen from civilised standards.',
     analysis:
       'The physical detail of watching one\u2019s feet conveys exhaustion and loss of purpose. "Improvisation" replaces the structured, planned existence of civilisation. Golding uses Ralph\u2019s gradual awareness to show that the loss of civilisation is not dramatic but grinding \u2014 a slow erosion of standards that is almost impossible to resist.',
@@ -139,13 +139,13 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 12,
-    quote: 'Roger gathered a handful of stones ... Henry, throwing to miss.',
+    quote: 'Roger gathered a handful of stones and began to throw them.',
     speaker: 'Narrator',
     chapter: 'Chapter 4 \u2014 Painted Faces and Long Hair',
     context:
       'Roger throws stones near but not at a littlun, restrained by the memory of adult authority.',
     analysis:
-      'The phrase "throwing to miss" reveals the fragility of civilisation. Roger wants to hurt Henry but is held back by the "taboo of the old life." This civilised restraint will erode completely by Chapter 11, when Roger drops the boulder that kills Piggy. Golding maps Roger\u2019s progression from throwing to miss to killing without hesitation.',
+      'Roger throws to miss, and that restraint reveals the fragility of civilisation. Roger wants to hurt Henry but is held back by the "taboo of the old life." This civilised restraint will erode completely by Chapter 11, when Roger drops the boulder that kills Piggy. Golding maps Roger\u2019s progression from throwing to miss to killing without hesitation.',
     themes: ['Civilisation vs Savagery', 'Human Nature', 'Loss of Innocence'],
   },
   {
@@ -193,7 +193,7 @@ const QUOTES: QuoteEntry[] = [
     quote: 'He began to dance and his laughter became a bloodthirsty snarling.',
     speaker: 'Narrator (about Jack)',
     chapter: 'Chapter 4 \u2014 Painted Faces and Long Hair',
-    context: 'Jack sees his reflection in the pool with his face painted.',
+    context: 'Jack sees his painted face reflected in a coconut shell of water.',
     analysis:
       'The transformation from laughter to snarling marks the moment Jack crosses from play to genuine menace. "Bloodthirsty" is applied to a child \u2014 Golding insists that savagery is not an adult failing but a human one. The dance prefigures the ritual dances that will culminate in Simon\u2019s murder.',
     themes: ['Civilisation vs Savagery', 'Violence & Ritual'],
@@ -212,20 +212,20 @@ const QUOTES: QuoteEntry[] = [
     id: 19,
     quote: 'They looked at each other, baffled, in love and hate.',
     speaker: 'Narrator (about Ralph and Jack)',
-    chapter: 'Chapter 12 \u2014 Cry of the Hunters',
-    context: 'Ralph and Jack face each other during the final hunt.',
+    chapter: 'Chapter 3 \u2014 Huts on the Beach',
+    context: 'Ralph and Jack face each other after arguing over the shelters and the hunting.',
     analysis:
       'The oxymoron "love and hate" captures the complexity of their relationship. They are drawn to each other because they represent opposing but inseparable aspects of human nature: the civilising impulse and the will to dominate. Golding suggests that these forces are not enemies but twins.',
     themes: ['Power & Leadership', 'Human Nature', 'Civilisation vs Savagery'],
   },
   {
     id: 20,
-    quote: 'stood on the sand, looking down at Ralph in wary ceremonial surprise.',
+    quote: 'stood on the sand, looking down at Ralph in wary astonishment.',
     speaker: 'Narrator',
     chapter: 'Chapter 12 \u2014 Cry of the Hunters',
     context: 'The naval officer discovers the boys on the burning island.',
     analysis:
-      '"Ceremonial" is loaded with irony: the officer represents civilised authority, but he is part of a warship engaged in the same violence the boys have enacted on a smaller scale. "Wary" suggests even the adult is uncertain. Golding\u2019s ending refuses to offer rescue \u2014 it merely transfers the boys from one theatre of human violence to another.',
+      'The officer represents civilised authority, but he is part of a warship engaged in the same violence the boys have enacted on a smaller scale. "Wary" suggests even the adult is uncertain. Golding\u2019s ending refuses to offer rescue \u2014 it merely transfers the boys from one theatre of human violence to another.',
     themes: ['Civilisation vs Savagery', 'Loss of Innocence', 'Human Nature'],
   },
 ]

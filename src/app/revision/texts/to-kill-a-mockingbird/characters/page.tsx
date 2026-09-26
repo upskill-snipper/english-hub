@@ -85,7 +85,7 @@ const CHARACTERS: CharacterProfile[] = [
           "The novel's moral compass statement. Lee makes empathy the foundation of Atticus's teaching and the lesson Scout must learn across the entire book.",
       },
       {
-        text: '"Simply because we were licked a hundred years ... is no reason not to try."',
+        text: '"...licked a hundred years ... no reason for us not to try to win."',
         context: 'Chapter 9 - on defending Tom',
         analysis:
           "Atticus's definition of moral courage. Lee shows that he fights not for victory but for integrity, knowing the system is rigged against him.",
@@ -128,7 +128,7 @@ const CHARACTERS: CharacterProfile[] = [
     role: 'Reclusive neighbour and silent protector',
     overview:
       'Boo is imagined by the children as a monster - pale, insane, dangerous - but is gradually revealed as a shy, gentle man who watches over them from behind closed shutters. He is one of the novel\'s two "mockingbirds": an innocent harmed by the cruelty of others. His father locked him away as a teenager, and the town turned his seclusion into myth. Lee uses him to argue that the people society fears are often the people it has failed.',
-    arc: "Boo's arc is unusual because it happens almost entirely offstage. We learn about him through gifts in the tree, a blanket placed over Scout's shoulders during a fire, and finally through his rescue of the children from Bob Ewell. He appears physically only in the last two chapters, and his silence speaks louder than any dialogue. Sheriff Tate's refusal to expose him is the final act of empathy in the novel.",
+    arc: "Boo's arc is unusual because it happens almost entirely offstage. We learn about him through gifts in the tree, a blanket placed over Scout's shoulders during a fire, and finally through his rescue of the children from Bob Ewell. He appears physically only in the final chapters, and his silence speaks louder than any dialogue. Sheriff Tate's refusal to expose him is the final act of empathy in the novel.",
     keyQuotes: [
       {
         text: '"Boo was our neighbour. ... two soap dolls, a broken watch and chain."',
@@ -137,7 +137,7 @@ const CHARACTERS: CharacterProfile[] = [
           "Scout lists Boo's quiet gifts. Lee shows that he communicated love through small acts while the town projected horror onto him.",
       },
       {
-        text: '"To drag him into the limelight would be a sin."',
+        text: '"...draggin\' him with his shy ways into the limelight ... that\'s a sin."',
         context: 'Chapter 30 - Sheriff Tate',
         analysis:
           'Tate protects Boo from public exposure, applying the mockingbird principle. Lee shows that sometimes justice means choosing silence over truth.',
@@ -253,7 +253,7 @@ const CHARACTERS: CharacterProfile[] = [
       },
       {
         text: '"I\'m little but I\'m old."',
-        context: 'Chapter 14',
+        context: 'Chapter 1',
         analysis:
           "Dill's self-description captures his dual nature: physically small but emotionally precocious. Lee uses him to show that experience, not size, creates understanding.",
       },
@@ -302,7 +302,7 @@ export default async function ToKillAMockingbirdCharactersPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              Edexcel IGCSE
+              Edexcel IGCSE / Cambridge IGCSE
             </Badge>
           </div>
 

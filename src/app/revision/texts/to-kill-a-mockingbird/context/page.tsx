@@ -71,7 +71,7 @@ const SECTIONS: ContextSection[] = [
     title: 'The Scottsboro Boys trial',
     icon: 'users',
     content: [
-      'In March 1931, nine Black teenagers were arrested in Scottsboro, Alabama, and accused of raping two white women on a freight train. Despite flimsy evidence and the later recantation of one of the accusers, all nine were convicted by all-white juries. Several were sentenced to death.',
+      'In March 1931, nine Black teenagers were taken off a freight train at Paint Rock, Alabama, and accused of raping two white women on board. At their trials in Scottsboro, despite flimsy evidence, all-white juries convicted eight of the nine, and all eight were sentenced to death. Convictions continued at retrials even after one of the accusers recanted.',
       'The Scottsboro case became a national and international cause, exposing the injustice of the Southern legal system to audiences who had previously ignored it. The case went to the US Supreme Court twice and resulted in landmark rulings on the right to adequate defence and the exclusion of Black jurors.',
       "The parallels with Tom Robinson's case are striking: a Black man accused by a white woman, an all-white jury, overwhelming evidence of innocence ignored, and a defence lawyer who is vilified by his own community. Lee almost certainly drew on the Scottsboro case, though she never explicitly confirmed it.",
     ],
@@ -87,7 +87,7 @@ const SECTIONS: ContextSection[] = [
       "Nelle Harper Lee (1926-2016) was born in Monroeville, Alabama, a small Southern town that is widely recognised as the model for Maycomb. Her father, Amasa Coleman Lee, was a lawyer who once defended two Black men accused of murder - an experience that clearly informs Atticus's characterisation.",
       "Lee's childhood friend was Truman Capote, a small, imaginative boy who spent summers with relatives in Monroeville. Capote is the obvious model for Dill, and the two remained friends into adulthood - Lee accompanied Capote to Kansas during his research for In Cold Blood.",
       "To Kill a Mockingbird was published in 1960, at the height of the Civil Rights Movement. It won the Pulitzer Prize in 1961 and was adapted into an Academy Award-winning film starring Gregory Peck in 1962. Lee published only one other novel, Go Set a Watchman, in 2015, which was written before Mockingbird but set later in Scout's life.",
-      "Lee was a private person who gave almost no interviews after the novel's success. She lived quietly in Monroeville until her death in 2016. Her reticence has contributed to the novel's mystique and has also made biographical readings of the text both tempting and speculative.",
+      "Lee was a private person who gave almost no interviews after the novel's success. She lived quietly, dividing her time for decades between Monroeville and New York, until her death in 2016. Her reticence has contributed to the novel's mystique and has also made biographical readings of the text both tempting and speculative.",
     ],
     keyLink:
       "Lee's personal background gives the novel its authority. The small-town details - heat, porches, church suppers, gossip - are drawn from direct experience. Her father's legal career and her friendship with Capote provide the raw material from which Atticus and Dill are shaped.",
@@ -165,7 +165,7 @@ export default async function ToKillAMockingbirdContextPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              Edexcel IGCSE
+              Edexcel IGCSE / Cambridge IGCSE
             </Badge>
           </div>
 

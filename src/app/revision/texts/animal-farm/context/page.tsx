@@ -84,7 +84,7 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     title: 'Publication Difficulties in 1945',
     body: [
       'Orwell completed Animal Farm in February 1944, but the novel was rejected by four publishers before being accepted by Secker and Warburg. The reason was political: the Soviet Union was Britain\u2019s ally in the war against Nazi Germany, and publishing a savage attack on Stalin was considered diplomatically dangerous.',
-      'Jonathan Cape initially accepted the manuscript but withdrew after consulting the Ministry of Information. The publisher\u2019s reader explicitly warned that the book would damage Anglo-Soviet relations. T.S. Eliot, then an editor at Faber and Faber, rejected it on both political and literary grounds, suggesting that the pigs were made "too sympathetic" and that the novel needed "more public-spirited pigs."',
+      'Jonathan Cape initially accepted the manuscript but withdrew after a senior official at the Ministry of Information warned him against publishing it while the Soviet Union was an ally. T.S. Eliot, then an editor at Faber and Faber, praised the writing but rejected the book on political grounds, suggesting that someone might argue the farm needed not more communism but "more public-spirited pigs."',
       'The publication difficulties themselves prove Orwell\u2019s point. In his proposed preface "The Freedom of the Press" (written for the novel but not published in his lifetime), Orwell argued that censorship in Britain was not imposed by the state but was self-imposed by intellectuals who refused to criticise the Soviet Union. The novel\u2019s struggle to find a publisher is real-world evidence of the propaganda and silencing it describes.',
     ],
     keyPoint:

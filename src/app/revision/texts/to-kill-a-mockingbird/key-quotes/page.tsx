@@ -62,7 +62,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 3,
-    text: '"Simply because we were licked a hundred years ... is no reason not to try."',
+    text: '"...licked a hundred years ... no reason for us not to try to win."',
     speaker: 'Atticus',
     context: 'Chapter 9 - on defending Tom Robinson',
     analysis:
@@ -81,10 +81,10 @@ const KEY_QUOTES: KeyQuote[] = [
   {
     id: 5,
     text: '"People generally see what they look for, and hear what they listen for."',
-    speaker: 'Atticus',
+    speaker: 'Judge Taylor',
     context: 'Chapter 17 - during the trial',
     analysis:
-      'Atticus names the mechanism of prejudice: confirmation bias. Lee explains why evidence alone cannot overcome racism - people see what they have been taught to see.',
+      'Judge Taylor is speaking of the spectators, but the line also names the mechanism of prejudice: confirmation bias. Lee explains why evidence alone cannot overcome racism - people see what they have been taught to see.',
     themes: ['Racial injustice', 'Class'],
   },
   {
@@ -161,7 +161,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 14,
-    text: '"To drag him into the limelight would be a sin."',
+    text: '"...draggin\' him with his shy ways into the limelight ... that\'s a sin."',
     speaker: 'Sheriff Tate',
     context: 'Chapter 30 - protecting Boo',
     analysis:
@@ -262,10 +262,10 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 25,
     text: '"With him, life was routine; without him, life was unbearable."',
     speaker: 'Scout (narrating)',
-    context: "Chapter 12 - on Atticus's absence",
+    context: "Chapter 12 - on Dill's absence",
     analysis:
-      "Scout describes Atticus's stabilising presence. Lee shows that moral guidance is not dramatic but steady - a daily presence that children depend on without realising it.",
-    themes: ['Moral education'],
+      "Scout on missing Dill, whose summers in Maycomb have been the centre of the children's games. The balanced sentence marks a break in that shared play as Part Two turns towards the trial.",
+    themes: ['Innocence'],
   },
 ]
 
@@ -303,7 +303,7 @@ export default async function ToKillAMockingbirdKeyQuotesPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              Edexcel IGCSE
+              Edexcel IGCSE / Cambridge IGCSE
             </Badge>
           </div>
 

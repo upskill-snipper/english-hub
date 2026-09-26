@@ -33,6 +33,17 @@ export const metadata: Metadata = {
 
 /* ── Theme data ────────────────────────────────────────────────────────── */
 
+/*
+ * CORRECTED 26 September 2026, against the verified study guide and
+ * exact-phrase searches of both prescribed editions. Removed Louis's "Marco
+ * goes around shakin' hands", which is in neither edition. Also fixed: "no
+ * legal question" is not in the play (Alfieri's words are "no recourse in the
+ * law"); the settle-for-half lines labelled as the opening quoted the closing
+ * speech; "He's like a weird... he ain't right." spliced two speeches;
+ * "Blondie" had lost its "now"; Marco is not deported within the play, which
+ * ends while he is out on bail awaiting his hearing.
+ */
+
 type ThemeData = {
   title: string
   overview: string
@@ -48,10 +59,10 @@ const THEMES: ThemeData[] = [
     overview:
       "The play stages a collision between two systems of justice: American law, represented by Alfieri, and the older Sicilian honour code, represented by Marco. Eddie exists between them, invoking community codes when they suit him and the law when he feels powerless. Miller shows that neither system alone is adequate: the law cannot address Eddie's feelings, and the honour code cannot prevent his death.",
     howMillerPresentsIt:
-      "Miller uses Alfieri as the voice of the law throughout. Alfieri repeatedly tells Eddie that the law cannot help him, that there is \"no legal question\" in his situation. When Eddie calls Immigration, he turns to the law as a weapon - but the community judges him by the older code. Marco's accusation and the final knife fight represent the honour code's verdict. Miller places the audience in Alfieri's position: watching, understanding, unable to intervene.",
+      "Miller uses Alfieri as the voice of the law throughout. Alfieri repeatedly tells Eddie that the law cannot help him, that he has \"no recourse in the law\". When Eddie calls Immigration, he turns to the law as a weapon - but the community judges him by the older code. Marco's accusation and the final knife fight represent the honour code's verdict. Miller places the audience in Alfieri's position: watching, understanding, unable to intervene.",
     keyQuotes: [
       {
-        text: '"Most of the time now we settle for half, and I like it better."',
+        text: '"Now we settle for half, and I like it better."',
         speaker: 'Alfieri - opening monologue',
         analysis:
           "The play's thesis on compromise. Miller defines the law as civilisation's willingness to accept imperfect justice, and Eddie as the man who refuses to.",
@@ -88,13 +99,13 @@ const THEMES: ThemeData[] = [
           'Eddie demands the return of his reputation - the only form of masculine capital he has. Miller shows that honour, once lost, cannot be reclaimed by force.',
       },
       {
-        text: '"He\'s like a weird... he ain\'t right."',
+        text: '"I mean he ain\'t right"',
         speaker: 'Eddie on Rodolpho - Act 1',
         analysis:
           "Eddie cannot articulate his objection because it is not really about Rodolpho. Miller uses Eddie's inarticulate hostility to show that prejudice fills the space where self-knowledge should be.",
       },
       {
-        text: '"Paper Doll they call him. Blondie."',
+        text: '"Paper Doll they call him. Blondie now."',
         speaker: 'Eddie - Act 1',
         analysis:
           'Eddie feminises Rodolpho through nicknames. Miller shows how language is used to police gender boundaries and to disguise jealousy as concern.',
@@ -110,19 +121,13 @@ const THEMES: ThemeData[] = [
     overview:
       "Set among illegal Italian immigrants on the Brooklyn waterfront, the play examines what America offers and what it takes. Marco comes to feed his starving family; Rodolpho comes for a new life. Both are promised the American Dream and both are betrayed - Marco by Eddie's phone call, Rodolpho by the system that makes his status dependent on marriage. Miller shows that immigration is not a simple journey to freedom but a transaction with hidden costs.",
     howMillerPresentsIt:
-      "Miller uses the cousins' arrival as the inciting event. Their illegal status makes them vulnerable: they depend on Eddie's hospitality and silence, which gives him power over them. When Eddie betrays them, the play exposes the precariousness of immigrant life. Marco's arrest - in front of his family's only breadwinner - is Miller's sharpest image of the American Dream's failure.",
+      "Miller uses the cousins' arrival as the inciting event. Their illegal status makes them vulnerable: they depend on Eddie's hospitality and silence, which gives him power over them. When Eddie betrays them, the play exposes the precariousness of immigrant life. The arrest of Marco - his family's only breadwinner - is Miller's sharpest image of the American Dream's failure.",
     keyQuotes: [
       {
         text: '"You can quicker get back ... than a word that you gave away."',
         speaker: 'Eddie - Act 1',
         analysis:
           "Eddie defines the community's code of silence about immigrants. Miller uses the line to establish the standard Eddie will later violate.",
-      },
-      {
-        text: '"Marco goes around shakin\' hands."',
-        speaker: 'Louis - Act 2',
-        analysis:
-          "The community learns of Eddie's betrayal. Miller shows that in Red Hook, information travels through handshakes and glances, not formal announcements.",
       },
     ],
     contextLink:
@@ -169,13 +174,13 @@ const THEMES: ThemeData[] = [
           "Eddie's repeated refusal to see Catherine as adult. Miller makes clear that keeping her a child is the only way Eddie can justify his possessiveness.",
       },
       {
-        text: '"You want somethin\' else, Eddie, and you can never have her."',
+        text: '"You want somethin\' else, Eddie, and you can never have her!"',
         speaker: 'Beatrice - Act 2',
         analysis:
           "The play's most explosive line. Miller gives Beatrice the truth that Eddie, Alfieri and the audience have all known but no one has spoken aloud.",
       },
       {
-        text: '"He allowed himself to be wholly known."',
+        text: '"he allowed himself to be wholly known"',
         speaker: 'Alfieri - closing monologue',
         analysis:
           "Alfieri's final assessment suggests that Eddie's destruction made his inner life fully visible. Miller turns self-destruction into a terrible form of honesty.",
@@ -189,7 +194,7 @@ const THEMES: ThemeData[] = [
   {
     title: 'The American Dream',
     overview:
-      "The play tests the American Dream from two angles. For Marco, the dream is economic survival: earning enough money to feed his starving family in Sicily. For Rodolpho, it is a new identity: becoming American, wearing stylish clothes, driving a motorbike. Both versions fail. Marco is arrested and deported. Rodolpho can stay only through marriage to Catherine, making his dream dependent on another person's tragedy.",
+      "The play tests the American Dream from two angles. For Marco, the dream is economic survival: earning enough money to feed his starving family in Sicily. For Rodolpho, it is a new identity: becoming American, wearing stylish clothes, driving a motorbike. Both versions fail. Marco is arrested, and is free only on bail until his hearing. Rodolpho can stay only through marriage to Catherine, making his dream dependent on another person's tragedy.",
     howMillerPresentsIt:
       "Miller uses the contrast between Marco and Rodolpho to show that the American Dream means different things to different immigrants. Marco's dream is selfless - he works for his family, not himself - while Rodolpho's is personal and aspirational. Eddie weaponises this difference, accusing Rodolpho of pursuing Catherine for a green card rather than love. Miller leaves the audience uncertain, creating moral complexity rather than easy answers.",
     keyQuotes: [
@@ -200,7 +205,7 @@ const THEMES: ThemeData[] = [
           "Marco's dream - providing for his family - is destroyed by Eddie's betrayal. Miller shows that the American Dream depends on community trust, which one phone call can shatter.",
       },
       {
-        text: '"Most of the time now we settle for half."',
+        text: '"Now we settle for half, and I like it better."',
         speaker: 'Alfieri - opening',
         analysis:
           'Alfieri defines the American Dream as compromise: accepting imperfect outcomes in exchange for order. Miller suggests that this settling is itself a kind of loss.',

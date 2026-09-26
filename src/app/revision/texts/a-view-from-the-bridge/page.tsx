@@ -7,6 +7,8 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/a-view-from-the-bridge'
 export const metadata: Metadata = {
   openGraph: {
     title: 'A View from the Bridge IGCSE - themes, characters, quotes',
@@ -28,6 +30,13 @@ export const metadata: Metadata = {
   },
 }
 
+// CORRECTED 26 September 2026, against the verified study guide mounted below
+// this page and exact-phrase searches of both prescribed editions. The
+// settle-for-half line labelled as Alfieri's opening quoted his closing speech
+// ("Most of the time now..."); the opening reads "Now we settle for half".
+// Catherine's "You don't know anything" was removed: it is in neither edition.
+// Marco spits in Eddie's face indoors and accuses him in the street, so the
+// spit is not the public act. The two-act version was published in 1957.
 const data: TextGuideData = {
   slug: 'a-view-from-the-bridge',
   title: 'A View from the Bridge',
@@ -41,13 +50,13 @@ const data: TextGuideData = {
     genre: 'Modern tragedy',
     setting: 'Red Hook, Brooklyn, early 1950s',
     length: 'Two-act play',
-    published: '1955 (one-act), 1956 (revised two-act)',
+    published: '1955 (one-act), 1957 (revised two-act)',
   },
   plotSummary: [
     'Eddie Carbone, a longshoreman on the Brooklyn waterfront, lives with his wife Beatrice and his orphaned seventeen-year-old niece Catherine, whom he has raised like a daughter. Eddie is preparing the apartment to hide two of Beatrice\u2019s cousins, Marco and Rodolpho, who are arriving illegally from Italy. Alfieri, a local lawyer, steps forward as the play\u2019s narrator and warns the audience that he already knows how the story will end.',
     "The cousins arrive. Marco is serious, powerfully built, and determined to earn money to send home to his starving wife and children in Sicily. Rodolpho is blond, charming, sings beautifully and cooks. He and Catherine fall quickly in love. Eddie, watching them, reacts with growing unease. He tells Beatrice that Rodolpho is effeminate and 'ain\u2019t right', and he insists that Catherine is too young to be thinking of marriage.",
     "Eddie seeks out Alfieri in private to ask whether there is any legal way to stop the relationship. Alfieri tells him plainly that there is none, and warns him that his feelings for Catherine are not what a man should feel for a niece. Eddie refuses to hear it. Later, after drinking, Eddie kisses Catherine on the lips and then forces a kiss on Rodolpho to 'prove' him gay. The family is fractured.",
-    "Eddie makes a final, unthinkable choice: he phones the Immigration Bureau and reports the cousins. Marco and Rodolpho are arrested, and in front of the whole community Marco spits in Eddie\u2019s face and publicly accuses him. Eddie demands his 'name' back. In the play\u2019s final minutes he confronts Marco with a knife; Marco turns the blade on him and kills him. Alfieri closes the play with a troubled, reluctant admiration for a man who 'allowed himself to be wholly known'.",
+    "Eddie makes a final, unthinkable choice: he phones the Immigration Bureau and reports the cousins. Marco and Rodolpho are arrested; Marco spits in Eddie\u2019s face, then accuses him in front of the whole community. Eddie demands his 'name' back. In the play\u2019s final minutes he confronts Marco with a knife; Marco turns the blade on him and kills him. Alfieri closes the play with a troubled, reluctant admiration for a man who 'allowed himself to be wholly known'.",
   ],
   characters: [
     {
@@ -116,7 +125,7 @@ const data: TextGuideData = {
       analysis: "Eddie's own warning about the value of reputation, which he will later betray.",
     },
     {
-      quote: '"Most of the time now we settle for half, and I like it better."',
+      quote: '"Now we settle for half, and I like it better."',
       who: 'Alfieri - opening',
       analysis:
         "The play's thesis on compromise versus tragic absolutism. Eddie is incapable of settling for half.",
@@ -134,15 +143,10 @@ const data: TextGuideData = {
         "Eddie's final demand before his death. Reputation is the only currency he truly values.",
     },
     {
-      quote: '"He allowed himself to be wholly known."',
+      quote: '"he allowed himself to be wholly known"',
       who: 'Alfieri - closing monologue',
       analysis:
         'The play\u2019s reluctant final praise. Terrible and admirable in the same breath.',
-    },
-    {
-      quote: '"You don\'t know anything."',
-      who: 'Catherine to Eddie - Act 2',
-      analysis: 'Catherine\u2019s coming of age, telling the truth Beatrice has long hinted at.',
     },
     {
       quote: '"In my country he would be dead now."',
@@ -273,8 +277,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'vb-9',
-    question:
-      'What does Alfieri mean by "Most of the time now we settle for half, and I like it better"?',
+    question: 'What does Alfieri mean by "Now we settle for half, and I like it better"?',
     type: 'multiple-choice',
     options: [
       'He likes his job half the time',
@@ -284,7 +287,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Alfieri\'s opening line establishes the play\'s thesis on compromise versus absolutism. "Settling for half" means accepting imperfect reality. Eddie is incapable of this: his absolute demands for Catherine, honour, and name lead to his destruction.',
+      'Alfieri\'s opening speech establishes the play\'s thesis on compromise versus absolutism. "Settling for half" means accepting imperfect reality. Eddie is incapable of this: his absolute demands for Catherine, honour, and name lead to his destruction.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -412,7 +415,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Alfieri's closing line offers reluctant, troubled admiration. Eddie allowed his hidden desires and flaws to become fully visible - he did not hide behind compromise. This is terrible (it destroyed him) but also, Alfieri suggests, strangely admirable in its absolute refusal of self-deception.",
+      "Alfieri's closing speech offers reluctant, troubled admiration. Eddie allowed his hidden desires and flaws to become fully visible - he did not hide behind compromise. This is terrible (it destroyed him) but also, Alfieri suggests, strangely admirable in its absolute refusal of self-deception.",
     topic: "Writer's Methods",
     difficulty: 'grade-9',
   },
@@ -434,7 +437,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'vb-19',
-    question: "What is the significance of Marco spitting in Eddie's face after the arrest?",
+    question: "What is the significance of Marco's public accusation of Eddie after the arrest?",
     type: 'multiple-choice',
     options: [
       'It is a random act',
@@ -504,7 +507,7 @@ const REVISION_TOPICS = [
       '"She\'s a baby" - Eddie denies Catherine\'s adulthood',
       'The tragedy is powered by what cannot be said',
       "Eddie's aggression towards Rodolpho masks his own desires",
-      '"He allowed himself to be wholly known" - the truth emerges in destruction',
+      '"he allowed himself to be wholly known" - the truth emerges in destruction',
     ],
   },
   {
@@ -611,6 +614,9 @@ export default async function AViewFromTheBridgePage() {
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         {await t('rev.texts.grp3.common.fair_dealing_short')}
       </p>
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }

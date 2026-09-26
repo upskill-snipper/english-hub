@@ -39,7 +39,7 @@ export const STRINGS: Record<string, Bi> = {
   s20: { en: `Use comparative dystopias.`, ar: `استخدم دكتاتوريات مقارنة.` },
   s21: {
     en: `Never Let Me Go`,
-    ar: `не нуждается в переводе، هذا عنوان لكتاب بالإنجليزية ويشير إلى work titled "Never Let Me Go" by كين فوكوساكي (Ken Folksaskey in Arabic transliteration)`,
+    ar: `Never Let Me Go`,
   },
   s22: {
     en: `Distinguish Atwood&apos;s feminism from a one-note one.`,

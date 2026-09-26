@@ -75,7 +75,7 @@ const themes: ThemeData[] = [
     relevantQuotes: [
       { text: '"All animals are equal"', context: 'The original commandment -- the ideal' },
       {
-        text: '"All animals are equal, but some are more equal"',
+        text: '"All animals are equal but some animals are more equal than others"',
         context: 'The corrupted commandment -- the reality',
       },
       {
@@ -99,7 +99,7 @@ const themes: ThemeData[] = [
       'From Chapter 3 onwards, the pigs "did not actually work, but directed and supervised." The class divide is immediate.',
       "Boxer represents the exploited proletariat: he gives everything and receives nothing. His death -- sold to the knacker -- is the book's most brutal image of class betrayal.",
       'The sheep, taught to chant simplified slogans, represent how the ruling class keeps the working class intellectually passive.',
-      "The animals' inability to read (except Benjamin) leaves them dependent on the pigs for information -- literacy is a class weapon.",
+      "The animals' inability to read (except Benjamin, Muriel and the dogs) leaves them dependent on the pigs for information -- literacy is a class weapon.",
     ],
     howOrwellPresents: [
       'Allegory: The class structure of the farm directly mirrors Marxist analysis of society -- bourgeoisie (pigs), proletariat (horses, hens), lumpenproletariat (Mollie, Moses).',
@@ -110,7 +110,7 @@ const themes: ThemeData[] = [
     relevantQuotes: [
       { text: '"I will work harder"', context: 'Boxer -- devotion that the ruling class exploits' },
       {
-        text: '"Surely you do not want Jones back?"',
+        text: '"Surely, comrades, you do not want Jones back?"',
         context: 'Squealer -- class anxiety weaponised as propaganda',
       },
       {
@@ -129,13 +129,13 @@ const themes: ThemeData[] = [
     icon: Megaphone,
     iconColour: 'text-red-400',
     overview:
-      'Language is the most dangerous weapon in Animal Farm. Squealer\'s propaganda does not just support Napoleon\'s power -- it creates it. By controlling language, the pigs control reality itself. Orwell, who wrote the essay "Politics and the English Language" in the same year, regarded the corruption of language as the deepest form of political corruption.',
+      'Language is the most dangerous weapon in Animal Farm. Squealer\'s propaganda does not just support Napoleon\'s power -- it creates it. By controlling language, the pigs control reality itself. Orwell, whose essay "Politics and the English Language" appeared in 1946, regarded the corruption of language as the deepest form of political corruption.',
     keyPoints: [
       'Squealer systematically rewrites the Seven Commandments. Each alteration shows how language can be used to change history in plain sight.',
       '"Four legs good, two legs bad" reduces complex ideology to a chant. Simplified language prevents critical thought.',
       'The sheep are trained to bleat over any dissent. Language is used not to communicate but to silence.',
       'Statistics are fabricated: Squealer reads out figures showing increased production while the animals go hungry. Numbers become propaganda.',
-      'When "Beasts of England" is banned and replaced by Minimus\'s poem, the regime controls not just information but emotion and aspiration.',
+      'When "Beasts of England" is banned and replaced by Minimus\'s new song, the regime controls not just information but emotion and aspiration.',
     ],
     howOrwellPresents: [
       "Squealer as a character: He is the novel's most important structural device. Every lie in the book passes through him.",
@@ -145,7 +145,7 @@ const themes: ThemeData[] = [
     ],
     relevantQuotes: [
       {
-        text: '"Squealer could turn black into white"',
+        text: '"he could turn black into white"',
         context: 'Narrator -- the power of propaganda distilled',
       },
       { text: '"Four legs good, two legs bad"', context: 'The slogan that replaces thought' },
@@ -180,7 +180,7 @@ const themes: ThemeData[] = [
     ],
     relevantQuotes: [
       {
-        text: '"These scenes of terror were not what they had looked forward to"',
+        text: '"These scenes of terror and slaughter were not what they had looked forward to"',
         context: 'Clover -- the betrayal felt but not articulated',
       },
       {
@@ -254,7 +254,7 @@ const themes: ThemeData[] = [
         context: 'Loyalty as obedience -- dangerous and enabling',
       },
       {
-        text: '"These scenes of terror were not what they had looked forward to"',
+        text: '"These scenes of terror and slaughter were not what they had looked forward to"',
         context: 'Clover -- loyalty to the ideal, grief at its betrayal',
       },
     ],

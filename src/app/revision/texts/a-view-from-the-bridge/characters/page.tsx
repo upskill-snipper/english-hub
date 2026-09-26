@@ -33,6 +33,17 @@ export const metadata: Metadata = {
 
 /* ── Character data ────────────────────────────────────────────────────── */
 
+/*
+ * CORRECTED 26 September 2026, against the verified study guide and
+ * exact-phrase searches of both prescribed editions. Removed: Beatrice's
+ * "It's your fault, Eddie. Everything." (a garbled form of Rodolpho's
+ * apology), Catherine's "You don't know anything" (in neither edition), and
+ * an Act 1 entry for Catherine's "not gonna be a baby any more", which she
+ * says once, in Act 2. Also fixed: the settle-for-half line labelled as the
+ * opening quoted the closing speech; "I want my name!" comes before Marco
+ * arrives; Marco spits in Eddie's face indoors and accuses him in the street.
+ */
+
 type CharacterProfile = {
   name: string
   role: string
@@ -58,7 +69,7 @@ const CHARACTERS: CharacterProfile[] = [
       },
       {
         text: '"I want my name!"',
-        context: 'Act 2 - confronting Marco before his death',
+        context: 'Act 2 - the final scene, before Marco arrives',
         analysis:
           "Eddie's final demand. Miller shows that reputation is the only currency Eddie truly values, and that he has destroyed the only thing he cannot live without.",
       },
@@ -77,10 +88,10 @@ const CHARACTERS: CharacterProfile[] = [
     role: "Eddie's wife",
     overview:
       "Beatrice is the play's most clear-eyed character. She sees what Eddie refuses to see - that his obsession with Catherine is not paternal - and she names it, quietly and persistently. Miller gives her the emotional intelligence that Eddie lacks, making her both the voice of reason and the character who suffers most from being unable to change what she understands.",
-    arc: "Beatrice moves from patient wife to desperate truth-teller. In Act 1, she gently encourages Catherine to grow up and take the job. As Eddie's behaviour becomes more erratic, Beatrice confronts him directly: \"You want somethin' else, Eddie, and you can never have her.\" This is the play's most shocking line because it says aloud what everyone - including the audience - has been thinking. Her loyalty is tested to destruction, but she remains at Eddie's side even as he dies.",
+    arc: "Beatrice moves from patient wife to desperate truth-teller. In Act 1, she gently encourages Catherine to grow up and take the job. As Eddie's behaviour becomes more erratic, Beatrice confronts him directly: \"You want somethin' else, Eddie, and you can never have her!\" This is the play's most shocking line because it says aloud what everyone - including the audience - has been thinking. Her loyalty is tested to destruction, but she remains at Eddie's side even as he dies.",
     keyQuotes: [
       {
-        text: '"You want somethin\' else, Eddie, and you can never have her."',
+        text: '"You want somethin\' else, Eddie, and you can never have her!"',
         context: 'Act 2 - the confrontation',
         analysis:
           "Beatrice names the unnameable. Miller gives the play's most devastating revelation to the wife, making it an act of love and anger simultaneously.",
@@ -90,12 +101,6 @@ const CHARACTERS: CharacterProfile[] = [
         context: 'Act 1 - private conversation',
         analysis:
           "Beatrice asks about their absent intimacy. Miller uses the question to show that Eddie's fixation on Catherine has displaced Beatrice from her own marriage.",
-      },
-      {
-        text: '"It\'s your fault, Eddie. Everything."',
-        context: 'Act 2 - after the phone call',
-        analysis:
-          "Beatrice assigns blame plainly. Miller lets her simplicity carry the moral weight that Alfieri's legal language cannot.",
       },
     ],
     examTip:
@@ -109,22 +114,10 @@ const CHARACTERS: CharacterProfile[] = [
     arc: "Catherine moves from adoring niece to independent woman. At the start she seeks Eddie's approval for everything; by the end she defies him openly. Her relationship with Rodolpho forces her to choose between the man who raised her and the man she loves. Miller shows that this choice is painful but necessary, and that Eddie's tragedy is partly his refusal to allow it.",
     keyQuotes: [
       {
-        text: '"You don\'t know anything."',
-        context: 'Act 2 - to Eddie',
-        analysis:
-          "Catherine's coming of age, rejecting Eddie's authority. Miller gives her a declaration of independence that is also, unknowingly, a statement of the truth Beatrice has long hinted at.",
-      },
-      {
         text: '"I\'m not gonna be a baby any more!"',
         context: 'Act 2 - asserting herself',
         analysis:
           'Catherine directly contradicts Eddie\'s repeated "she\'s a baby." Miller shows her claiming adulthood in language that deliberately echoes and rejects his.',
-      },
-      {
-        text: '"Eddie, I\'m not gonna be a baby any more."',
-        context: 'Act 1 - on the job offer',
-        analysis:
-          "An early assertion of independence, still phrased as a request. Miller tracks Catherine's growth through her changing register - from asking permission to demanding respect.",
       },
     ],
     examTip:
@@ -135,7 +128,7 @@ const CHARACTERS: CharacterProfile[] = [
     role: 'Elder Italian cousin - strong, principled, protective',
     overview:
       "Marco is quiet, powerfully built and devoted to his starving family in Sicily. He embodies the Sicilian honour code that drives the play's final act: when Eddie betrays the cousins to Immigration, Marco responds with public accusation and physical violence because his code demands it. Miller uses Marco to represent the older justice system that Alfieri's American law cannot accommodate.",
-    arc: "Marco begins as a grateful, hardworking guest. He is largely silent in Act 1, letting Rodolpho take centre stage. But his strength is established early - the chair-lifting scene is a wordless warning to Eddie. After the betrayal, Marco becomes the agent of Eddie's destruction. His public accusation - spitting in Eddie's face, naming him as an informer - is the moment that destroys Eddie's reputation. The killing is the inevitable conclusion of a code that Eddie himself once endorsed.",
+    arc: "Marco begins as a grateful, hardworking guest. He is largely silent in Act 1, letting Rodolpho take centre stage. But his strength is established early - the chair-lifting scene is a wordless warning to Eddie. After the betrayal, Marco becomes the agent of Eddie's destruction. His response - spitting in Eddie's face, then naming him as an informer in the street - is the moment that destroys Eddie's reputation. The killing is the inevitable conclusion of a code that Eddie himself once endorsed.",
     keyQuotes: [
       {
         text: '"In my country he would be dead now."',
@@ -187,16 +180,16 @@ const CHARACTERS: CharacterProfile[] = [
     role: "Lawyer and narrator - the play's chorus",
     overview:
       "Alfieri stands between the audience and the action, part Greek chorus and part reluctant witness. He represents American law, the limits of reason and the modern audience's inability to stop a tragedy it can already see coming. His opening monologue reaches back to Roman times, placing Eddie's story in a classical tradition of inevitable destruction. Miller uses him to create distance without detachment.",
-    arc: 'Alfieri does not change. His function is to see what is coming, name it, and be unable to prevent it. He warns Eddie directly that there is no legal remedy for his feelings, and he tells the audience repeatedly that the ending is foretold. His closing line - "he allowed himself to be wholly known" - offers troubled, reluctant admiration for a man who refused to compromise. Alfieri settles for half; Eddie will not, and the play asks which response is braver.',
+    arc: 'Alfieri does not change. His function is to see what is coming, name it, and be unable to prevent it. He warns Eddie directly that there is no legal remedy for his feelings, and he tells the audience repeatedly that the ending is foretold. His closing speech - "he allowed himself to be wholly known" - offers troubled, reluctant admiration for a man who refused to compromise. Alfieri settles for half; Eddie will not, and the play asks which response is braver.',
     keyQuotes: [
       {
-        text: '"Most of the time now we settle for half, and I like it better."',
+        text: '"Now we settle for half, and I like it better."',
         context: 'Opening monologue',
         analysis:
           "The play's thesis on compromise versus tragic absolutism. Miller uses Alfieri to define civilisation as the willingness to accept less than everything.",
       },
       {
-        text: '"He allowed himself to be wholly known."',
+        text: '"he allowed himself to be wholly known"',
         context: 'Closing monologue',
         analysis:
           "Alfieri's reluctant eulogy. Miller makes Eddie's self-destruction both terrible and, in some formal sense, admirable - he held nothing back.",

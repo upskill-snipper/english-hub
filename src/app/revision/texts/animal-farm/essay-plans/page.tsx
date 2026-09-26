@@ -88,12 +88,12 @@ const essayPlans: EssayPlan[] = [
     thesisStatement:
       "Orwell presents language as the most powerful weapon in the novel -- more dangerous than Napoleon's dogs because it controls what the animals can think, remember and believe.",
     introduction:
-      'Open by noting that Orwell wrote "Politics and the English Language" in the same year as Animal Farm, arguing that corrupt language enables corrupt politics. In the novel, Squealer is the embodiment of this thesis: a character whose sole function is to turn lies into accepted truth. State your thesis: language is the primary mechanism of oppression on Animal Farm.',
+      'Open by noting that Orwell published "Politics and the English Language" in 1946, the year after Animal Farm, arguing that corrupt language enables corrupt politics. In the novel, Squealer is the embodiment of this thesis: a character whose sole function is to turn lies into accepted truth. State your thesis: language is the primary mechanism of oppression on Animal Farm.',
     paragraphs: [
       {
         point: "Squealer's manipulation of language to justify privilege",
         evidence:
-          '"Surely you do not want Jones back?" -- Squealer\'s repeated rhetorical question.',
+          '"Surely, comrades, you do not want Jones back?" -- Squealer\'s repeated rhetorical question.',
         analysis:
           'Squealer never argues on the merits. He deflects every criticism by invoking the fear of Jones. This is a classic propaganda technique: replacing logical argument with emotional manipulation. Orwell shows that propaganda does not need to be convincing -- it only needs to make the alternative seem worse.',
       },
@@ -138,7 +138,7 @@ const essayPlans: EssayPlan[] = [
       {
         point: "Boxer's death as the emotional and moral climax",
         evidence:
-          '"Fools! Do you not see what is written?" -- Benjamin, reading the knacker\'s van.',
+          '"Fools! Do you not see what is written on the side of that van?" -- Benjamin, reading the knacker\'s van.',
         analysis:
           "Boxer's death -- sold to the knacker so the pigs can buy whisky -- is Orwell's most savage image of class betrayal. The reader's grief is proportional to the injustice: a lifetime of loyalty repaid with slaughter. Orwell deliberately makes this the novel's emotional peak to ensure the reader feels, not just understands, the cost of exploitation.",
       },
@@ -194,7 +194,7 @@ const essayPlans: EssayPlan[] = [
       {
         point: 'Literacy as the basis of political control',
         evidence:
-          'The Seven Commandments are painted on the barn wall -- but only the pigs can read them fluently.',
+          'The Seven Commandments are painted on the barn wall -- but only the pigs and Benjamin can read them fluently.',
         analysis:
           "Orwell makes the commandments visible to all but readable by few. This is a precise image of how constitutions work under tyranny: the law exists on paper, but only the powerful can interpret it. The animals' illiteracy is not just a disadvantage -- it is the precondition for their oppression.",
       },
@@ -207,7 +207,7 @@ const essayPlans: EssayPlan[] = [
       {
         point: "Benjamin's literacy as wasted potential",
         evidence:
-          '"Fools! Do you not see what is written?" -- Benjamin, too late, at the knacker\'s van.',
+          '"Fools! Do you not see what is written on the side of that van?" -- Benjamin, too late, at the knacker\'s van.',
         analysis:
           "Benjamin can read as well as any pig. His choice not to use this ability is Orwell's sharpest critique of the intellectual class: education without moral courage is worthless. Benjamin's outburst at the van is the novel's most painful moment of wasted potential -- he had the tools to resist and chose not to use them until it was too late.",
       },

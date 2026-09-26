@@ -20,6 +20,8 @@ import { t } from '@/lib/i18n/t'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { StoryVisuals } from '@/components/study-guide/visuals/story-visuals'
+import { guide as studyGuide } from '@/data/study-guides/animal-farm'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -69,7 +71,7 @@ const chapters: ChapterData[] = [
     ],
     characterDevelopment: [
       'Old Major is established as the intellectual father of the revolution -- wise, respected, and idealistic.',
-      'Napoleon and Snowball are introduced as attentive listeners but their rivalry is not yet visible.',
+      'The pigs settle in front of the platform, but Napoleon and Snowball are not named until Chapter 2.',
       'Boxer and Clover listen faithfully, establishing their loyal natures.',
     ],
     allegory: [
@@ -104,10 +106,7 @@ const chapters: ChapterData[] = [
       'The Seven Commandments are the idealistic principles of early communism.',
       "Mollie's concern about ribbons represents the bourgeoisie's fear of losing luxury.",
     ],
-    quotes: [
-      { text: '"All animals are equal"', speaker: 'Seventh Commandment' },
-      { text: '"Four legs good, two legs bad"', speaker: "Snowball's simplification" },
-    ],
+    quotes: [{ text: '"All animals are equal"', speaker: 'Seventh Commandment' }],
   },
   {
     number: 3,
@@ -117,7 +116,7 @@ const chapters: ChapterData[] = [
     keyEvents: [
       'The harvest is a great success -- bigger than under Jones.',
       'The pigs direct the work but do no physical labour themselves.',
-      "The pigs take the milk and apples, claiming they need them for 'brainwork'.",
+      "The pigs take the milk and apples, claiming they need them as 'brainworkers'.",
       'Snowball organises committees and tries to educate the animals.',
     ],
     characterDevelopment: [
@@ -133,7 +132,8 @@ const chapters: ChapterData[] = [
     ],
     quotes: [
       { text: '"I will work harder"', speaker: 'Boxer' },
-      { text: '"Surely you do not want Jones back?"', speaker: 'Squealer' },
+      { text: '"Jones would come back!"', speaker: 'Squealer' },
+      { text: '"Four legs good, two legs bad"', speaker: "Snowball's simplification" },
     ],
   },
   {
@@ -169,7 +169,7 @@ const chapters: ChapterData[] = [
     icon: Wind,
     iconColour: 'text-cyan-400',
     keyEvents: [
-      'Mollie defects to a neighbouring farm, lured by sugar and ribbons.',
+      'Mollie deserts the farm for a human owner, lured by sugar and ribbons.',
       'Snowball and Napoleon clash over the windmill plan at a crucial meeting.',
       'Napoleon summons nine enormous dogs, who chase Snowball from the farm.',
       'Napoleon abolishes Sunday meetings and announces all decisions will be made by a committee of pigs.',
@@ -197,7 +197,7 @@ const chapters: ChapterData[] = [
     icon: LandPlot,
     iconColour: 'text-clay-600',
     keyEvents: [
-      'Napoleon announces the windmill will be built after all -- claiming it was his idea.',
+      'The animals build the windmill that Napoleon announced at the end of Chapter 5, now presented as his own idea.',
       'The animals work gruelling 60-hour weeks. Napoleon begins trading with neighbouring farms through a human solicitor, Mr Whymper.',
       'The pigs move into the farmhouse and begin sleeping in beds.',
       'The windmill is destroyed in a storm; Napoleon blames Snowball.',
@@ -242,13 +242,7 @@ const chapters: ChapterData[] = [
       "The hens' egg rebellion may represent the Ukrainian resistance to forced collectivisation.",
       'The concealment of famine mirrors the Soviet cover-up of the Holodomor.',
     ],
-    quotes: [
-      {
-        text: '"No animal shall kill any other animal without cause"',
-        speaker: 'Altered Commandment',
-      },
-      { text: '"If Comrade Napoleon says it, it must be right"', speaker: 'Boxer' },
-    ],
+    quotes: [{ text: '"If Comrade Napoleon says it, it must be right"', speaker: 'Boxer' }],
   },
   {
     number: 8,
@@ -276,7 +270,10 @@ const chapters: ChapterData[] = [
       "The altered Fifth Commandment (alcohol) mirrors the Soviet elite's private luxuries.",
     ],
     quotes: [
-      { text: '"Napoleon is always right"', speaker: 'Boxer (repeated)' },
+      {
+        text: '"No animal shall kill any other animal without cause"',
+        speaker: 'Altered Commandment',
+      },
       { text: '"No animal shall drink alcohol to excess"', speaker: 'Altered Commandment' },
     ],
   },
@@ -304,7 +301,10 @@ const chapters: ChapterData[] = [
     ],
     quotes: [
       { text: '"I will work harder"', speaker: "Boxer's last effort" },
-      { text: '"Fools! Do you not see what is written?"', speaker: 'Benjamin' },
+      {
+        text: '"Fools! Do you not see what is written on the side of that van?"',
+        speaker: 'Benjamin',
+      },
     ],
   },
   {
@@ -315,7 +315,7 @@ const chapters: ChapterData[] = [
     keyEvents: [
       'Years pass. Most animals who remember the Rebellion are dead.',
       'The pigs walk on two legs and carry whips.',
-      'The Seven Commandments are replaced by a single line: "All animals are equal, but some animals are more equal than others."',
+      'The Seven Commandments are replaced by a single line: "All animals are equal but some animals are more equal than others."',
       'The pigs host a dinner for the neighbouring human farmers. Napoleon renames the farm "Manor Farm".',
       'The animals look through the window and cannot tell the pigs from the humans.',
     ],
@@ -333,7 +333,7 @@ const chapters: ChapterData[] = [
     ],
     quotes: [
       {
-        text: '"All animals are equal, but some are more equal than others"',
+        text: '"All animals are equal but some animals are more equal than others"',
         speaker: 'Final Commandment',
       },
       {
@@ -393,6 +393,9 @@ export default async function ChaptersPage() {
           </p>
         </div>
       </section>
+
+      {/* The key scenes, part by part, animated. See scripts/mount-story-visuals.mjs. */}
+      <StoryVisuals guide={studyGuide} scenesOnly />
 
       {/* Chapters */}
       {chapters.map((ch) => {

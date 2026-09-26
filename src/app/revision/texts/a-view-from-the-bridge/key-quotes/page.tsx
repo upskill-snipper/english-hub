@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'A View from the Bridge - Key Quotes | The English Hub',
     description:
-      'Twenty key quotations from A View from the Bridge by Arthur Miller, each with speaker, context, analysis and theme tags for IGCSE revision.',
+      'Seventeen key quotations from A View from the Bridge by Arthur Miller, each with speaker, context, analysis and theme tags for IGCSE revision.',
     images: [
       {
         url: '/api/og?title=A+View+from+the+Bridge+-+Key+Quotes+%7C+The+English+Hub',
@@ -25,13 +25,31 @@ export const metadata: Metadata = {
   },
   title: 'A View from the Bridge - Key Quotes',
   description:
-    'Twenty key quotations from A View from the Bridge by Arthur Miller, each with speaker, context, analysis and theme tags for IGCSE revision.',
+    'Seventeen key quotations from A View from the Bridge by Arthur Miller, each with speaker, context, analysis and theme tags for IGCSE revision.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/a-view-from-the-bridge/key-quotes',
   },
 }
 
 /* ── Quote data ────────────────────────────────────────────────────────── */
+
+/*
+ * CORRECTED 26 September 2026, against the verified study guide
+ * (src/data/study-guides/a-view-from-the-bridge.ts) and exact-phrase searches
+ * of the Internet Archive scans of both prescribed editions (Penguin Modern
+ * Classics 2010, Bloomsbury). This list had twenty entries; three were removed
+ * so that no one puts them back:
+ * - Catherine's "You don't know anything": in neither edition.
+ * - Louis's "Marco goes around shakin' hands": in neither edition.
+ * - Beatrice's "It's your fault, Eddie. Everything.": a garbled form of
+ *   Rodolpho's apology, which entry 12 already quotes correctly.
+ * Also fixed: the settle-for-half line labelled as the opening quoted the
+ * closing speech's wording ("Most of the time now..."); "Animal! You go on
+ * your knees to me!" is Marco's, not Eddie's; "He's like a weird... he ain't
+ * right." spliced two separate speeches; "Blondie" had lost its "now".
+ * The dictionary strings rev.texts.avftb.quotes.intro and .count_h still say
+ * twenty and need changing to seventeen there.
+ */
 
 type KeyQuote = {
   id: number
@@ -45,7 +63,7 @@ type KeyQuote = {
 const KEY_QUOTES: KeyQuote[] = [
   {
     id: 1,
-    text: '"Most of the time now we settle for half, and I like it better."',
+    text: '"Now we settle for half, and I like it better."',
     speaker: 'Alfieri',
     context: 'Opening monologue',
     analysis:
@@ -74,14 +92,14 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 4,
     text: '"I want my name!"',
     speaker: 'Eddie',
-    context: 'Act 2 - final confrontation with Marco',
+    context: 'Act 2 - the final scene, before Marco arrives',
     analysis:
       "Eddie's last demand. Reputation is the only currency he values, and he has destroyed it himself. Miller concentrates the entire tragedy into four words.",
     themes: ['Masculinity', 'Betrayal'],
   },
   {
     id: 5,
-    text: '"He allowed himself to be wholly known."',
+    text: '"he allowed himself to be wholly known"',
     speaker: 'Alfieri',
     context: 'Closing monologue',
     analysis:
@@ -90,15 +108,6 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 6,
-    text: '"You don\'t know anything."',
-    speaker: 'Catherine to Eddie',
-    context: 'Act 2',
-    analysis:
-      "Catherine's declaration of independence. Miller gives her the line that reverses the power dynamic: she is no longer the child seeking approval.",
-    themes: ['Love and obsession', 'Masculinity'],
-  },
-  {
-    id: 7,
     text: '"In my country he would be dead now."',
     speaker: 'Marco',
     context: 'Act 2 - to Alfieri in jail',
@@ -107,8 +116,8 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Justice vs law', 'Immigration'],
   },
   {
-    id: 8,
-    text: '"You want somethin\' else, Eddie, and you can never have her."',
+    id: 7,
+    text: '"You want somethin\' else, Eddie, and you can never have her!"',
     speaker: 'Beatrice',
     context: 'Act 2 - confrontation',
     analysis:
@@ -116,7 +125,7 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Love and obsession', 'Betrayal'],
   },
   {
-    id: 9,
+    id: 8,
     text: '"His eyes were like tunnels."',
     speaker: 'Alfieri',
     context: 'Act 1 - describing Eddie',
@@ -125,7 +134,7 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Love and obsession', 'Tragedy'],
   },
   {
-    id: 10,
+    id: 9,
     text: '"The law is only a word for what has a right to happen."',
     speaker: 'Alfieri',
     context: 'Act 2',
@@ -134,8 +143,8 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Justice vs law'],
   },
   {
-    id: 11,
-    text: '"He\'s like a weird... he ain\'t right."',
+    id: 10,
+    text: '"I mean he ain\'t right"',
     speaker: 'Eddie on Rodolpho',
     context: 'Act 1',
     analysis:
@@ -143,7 +152,7 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Masculinity', 'Love and obsession'],
   },
   {
-    id: 12,
+    id: 11,
     text: '"When am I gonna be a wife again, Eddie?"',
     speaker: 'Beatrice',
     context: 'Act 1',
@@ -152,7 +161,7 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Love and obsession', 'Masculinity'],
   },
   {
-    id: 13,
+    id: 12,
     text: '"It is my fault, Eddie."',
     speaker: 'Rodolpho',
     context: "Act 2 - before Eddie's death",
@@ -161,17 +170,17 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Betrayal', 'The American Dream'],
   },
   {
-    id: 14,
+    id: 13,
     text: '"Animal! You go on your knees to me!"',
-    speaker: 'Eddie to Marco',
+    speaker: 'Marco to Eddie',
     context: 'Act 2 - final confrontation',
     analysis:
-      'Eddie demands physical submission from the man who exposed him. Miller shows that even at the end Eddie cannot see himself; he calls Marco the animal at the moment his own degradation is total.',
+      'Marco, having struck Eddie in the street, demands that the informer kneel before him. Miller lets the honour code pass its sentence in public: the insult denies that Eddie is fully human, and the kneeling recalls the chair at the end of Act 1.',
     themes: ['Masculinity', 'Tragedy'],
   },
   {
-    id: 15,
-    text: '"Paper Doll they call him. Blondie."',
+    id: 14,
+    text: '"Paper Doll they call him. Blondie now."',
     speaker: 'Eddie',
     context: 'Act 1',
     analysis:
@@ -179,7 +188,7 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Masculinity'],
   },
   {
-    id: 16,
+    id: 15,
     text: '"He degraded my brother. My blood."',
     speaker: 'Marco',
     context: 'Act 2',
@@ -188,7 +197,7 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Betrayal', 'Immigration'],
   },
   {
-    id: 17,
+    id: 16,
     text: '"I\'m not gonna be a baby any more!"',
     speaker: 'Catherine',
     context: 'Act 2',
@@ -197,31 +206,13 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Love and obsession'],
   },
   {
-    id: 18,
-    text: '"It\'s your fault, Eddie. Everything."',
-    speaker: 'Beatrice',
-    context: 'Act 2',
-    analysis:
-      "Beatrice assigns moral responsibility with painful simplicity. Miller lets her plain speech carry the weight that Alfieri's legal reasoning cannot.",
-    themes: ['Betrayal', 'Tragedy'],
-  },
-  {
-    id: 19,
+    id: 17,
     text: '"I could see every step coming."',
     speaker: 'Alfieri',
     context: 'Act 1 narration',
     analysis:
       'Alfieri tells the audience the tragedy is inevitable. Miller creates tension not from surprise but from the agony of watching someone walk toward destruction.',
     themes: ['Tragedy'],
-  },
-  {
-    id: 20,
-    text: '"Marco goes around shakin\' hands."',
-    speaker: 'Louis',
-    context: 'Act 2 - community reaction',
-    analysis:
-      "A single line showing how quickly Eddie's betrayal becomes public knowledge. Miller uses community gossip to demonstrate that Eddie's reputation is already destroyed.",
-    themes: ['Betrayal', 'Immigration'],
   },
 ]
 

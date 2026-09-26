@@ -36,7 +36,7 @@ const data: TextGuideData = {
   author: 'Tennessee Williams',
   year: '1947',
   category: 'Play',
-  badge: 'AQA A-Level / Edexcel A-Level',
+  badge: 'AQA A-Level / Edexcel A-Level / Eduqas A-Level / Edexcel IAL',
   intro:
     'A Streetcar Named Desire is about a woman who can only survive inside her own illusions, and the brother-in-law who takes them apart one by one until there is nothing of her left. Blanche DuBois arrives at her sister Stella\u2019s two-room apartment in the French Quarter of New Orleans carrying a trunk of costume jewellery, the manners of a Mississippi plantation and a past she is desperate to keep buried. Stanley Kowalski wants hard evidence, digs until he finds it, and makes sure everyone else hears it too. Across eleven scenes Tennessee Williams stages the slow public dismantling of a woman who cannot live in the world she has landed in, in the play that made American poetic realism famous when Elia Kazan staged it on Broadway in 1947.',
   quickInfo: {
@@ -47,8 +47,8 @@ const data: TextGuideData = {
   },
   plotSummary: [
     'Blanche DuBois arrives in the shabby French Quarter of New Orleans on the streetcar Desire, transferring to one named Cemeteries before reaching her sister Stella\u2019s cramped two-room apartment at Elysian Fields. From the first moment, Blanche is out of place: delicately dressed in white, carrying the manners and vocabulary of a Mississippi plantation into a noisy immigrant neighbourhood of poker nights and blues music. When Stella\u2019s husband Stanley Kowalski returns, Blanche is immediately unsettled by his physical, unpolished presence. She confesses that Belle Reve, the DuBois family estate, has been lost to the \u201cepic fornications\u201d of their ancestors. Stanley, suspicious that Blanche has swindled Stella out of her share, paws through her trunk of papers and costume jewellery, setting up the central conflict between his demand for hard evidence and her insistence on illusion.',
-    'The tensions inside the apartment escalate over the early scenes. Stanley, drunk after his poker night, hits the pregnant Stella; she flees upstairs to the Hubbels\u2019, and Stanley\u2019s anguished cries of \u201cStella! Stella!\u201d bring her back down into his arms. Blanche is horrified that her sister would return to such a man, but Stella speaks of the \u201ccoloured lights\u201d of their sexual life together. Blanche, meanwhile, begins a tentative romance with Stanley\u2019s poker friend Harold \u201cMitch\u201d Mitchell, a sensitive, mother-dominated bachelor who seems to offer her a last chance of safety. To him she reveals the trauma at the centre of her life: her young husband, Allan Grey, whom she once discovered with an older male lover and whose death by suicide she caused when she told him on the dance floor, \u201cYou disgust me.\u201d The Varsouviana polka that was playing in that moment returns in her mind whenever her past closes in.',
-    'Stanley, digging into Blanche\u2019s history, uncovers the truth she has tried to bury: after Allan\u2019s death she drifted through a series of sexual encounters in the Flamingo Hotel in Laurel, and was finally dismissed from her teaching post for an involvement with a seventeen-year-old student. He reports what he has learned to Mitch and, as a gift for her birthday, gives Blanche a one-way bus ticket back to Laurel. Mitch, wounded and humiliated, arrives later to confront her and, stripping the paper lantern from the naked bulb, forces her into the light she has spent the play avoiding. He will no longer marry her because, as he tells her, she is \u201cnot clean enough\u201d to bring home to his mother. Stella, meanwhile, is taken to the hospital to give birth. Left alone with Blanche in Scene 10, a drunk and triumphant Stanley closes in on her as she dresses in a rhinestone tiara. With the line \u201cWe\u2019ve had this date with each other from the beginning,\u201d he rapes her.',
+    'The tensions inside the apartment escalate over the early scenes. Stanley, drunk during his poker night, hits the pregnant Stella; she flees upstairs to the Hubbels\u2019, and Stanley\u2019s anguished cries of \u201cStella! Stella!\u201d bring her back down into his arms. Blanche is horrified that her sister would return to such a man, but Stella defends the sexual bond between them, which Stanley later calls their \u201ccoloured lights\u201d. Blanche, meanwhile, begins a tentative romance with Stanley\u2019s poker friend Harold \u201cMitch\u201d Mitchell, a sensitive, mother-dominated bachelor who seems to offer her a last chance of safety. To him she reveals the trauma at the centre of her life: her young husband, Allan Grey, whom she once discovered with an older male lover and whose death by suicide she caused when she told him on the dance floor, \u201cYou disgust me.\u201d The Varsouviana polka that was playing in that moment returns in her mind whenever her past closes in.',
+    'Stanley, digging into Blanche\u2019s history, uncovers the truth she has tried to bury: after Allan\u2019s death she drifted through a series of sexual encounters in the Flamingo Hotel in Laurel, and was finally dismissed from her teaching post for an involvement with a seventeen-year-old student. He reports what he has learned to Mitch and, as a gift for her birthday, gives Blanche a one-way bus ticket back to Laurel. Mitch, wounded and humiliated, arrives later to confront her and, stripping the paper lantern from the naked bulb, forces her into the light she has spent the play avoiding. He will no longer marry her because, as he tells her, she is \u201cnot clean enough\u201d to bring home to his mother. Stella, meanwhile, is taken to the hospital to give birth. Left alone with Blanche in Scene 10, a drunk and triumphant Stanley closes in on her as she dresses in a rhinestone tiara. With the line \u201cWe\u2019ve had this date with each other from the beginning!\u201d he rapes her.',
     'In Scene 11, weeks later, Stella has returned home with her new baby. Stanley and his friends play another poker game in the kitchen while Blanche, bathing and dressing in the next room, prepares for what she believes is a journey with a wealthy admirer, Shep Huntleigh. The reality is that Stella, unable to live with Blanche\u2019s accusation against Stanley and unwilling to lose her marriage, has arranged for her sister to be committed to a state asylum. A doctor and matron arrive; Blanche first recoils, then, offered gentleness by the doctor, accepts his arm with the line \u201cWhoever you are \u2014 I have always depended on the kindness of strangers.\u201d Stella weeps on the steps as her sister is led away. Stanley comforts her, and the poker game resumes. Williams leaves the audience with a closing image of cruelty and survival, domesticity rebuilt over a wound that will not be spoken of.',
   ],
   characters: [
@@ -64,13 +64,13 @@ const data: TextGuideData = {
     },
     {
       name: 'Stanley Kowalski',
-      role: 'Stella\u2019s husband; a Polish-American factory worker and war veteran',
-      body: 'Stanley is the embodiment of the new post-war America: masculine, immigrant, working-class, contemptuous of old social hierarchies and fiercely territorial. Williams writes him as physically magnetic and dangerous in equal measure, with an animalistic vocabulary of drinking, poker, bowling and sex. His demand for the \u201cstraight dope\u201d about Belle Reve, his willingness to strike Stella, and the rape in Scene 10 expose how thinly civility covers violence in the play\u2019s world.',
+      role: 'Stella\u2019s husband; a Polish-American war veteran who travels for the plant where Mitch works',
+      body: 'Stanley is the embodiment of the new post-war America: masculine, immigrant, working-class, contemptuous of old social hierarchies and fiercely territorial. Williams writes him as physically magnetic and dangerous in equal measure, with an animalistic vocabulary of drinking, poker, bowling and sex. His demand to see the papers on Belle Reve, his willingness to strike Stella, and the rape in Scene 10 expose how thinly civility covers violence in the play\u2019s world.',
     },
     {
       name: 'Harold \u201cMitch\u201d Mitchell',
       role: 'Stanley\u2019s poker friend; a bachelor living with his dying mother',
-      body: 'Mitch is gentler, clumsier and lonelier than the other men around Stanley\u2019s table, and for a time he seems to Blanche a genuine route out of her crisis. Williams gives their courtship a tender, halting rhythm, culminating in the cigarette-case inscription scene. When Stanley tells him about Blanche\u2019s past, Mitch\u2019s bruised pride turns into the humiliation of Scene 9, in which he rips the paper lantern off the bulb and judges her. He is a decent man who cannot see past the sexual double standard of his world.',
+      body: 'Mitch is gentler, clumsier and lonelier than the other men around Stanley\u2019s table, and for a time he seems to Blanche a genuine route out of her crisis. Williams gives their courtship a tender, halting rhythm, beginning with the cigarette-case inscription in Scene 3. When Stanley tells him about Blanche\u2019s past, Mitch\u2019s bruised pride turns into the humiliation of Scene 9, in which he rips the paper lantern off the bulb and judges her. He is a decent man who cannot see past the sexual double standard of his world.',
     },
     {
       name: 'Eunice Hubbel',
@@ -85,13 +85,13 @@ const data: TextGuideData = {
     {
       name: 'The Doctor and Matron',
       role: 'Asylum staff who arrive in the final scene (symbolic figures)',
-      body: 'The unnamed Doctor and Matron arrive in Scene 11 to take Blanche to the state institution. Williams writes them first as distorted, nightmarish figures \u2014 the Matron\u2019s voice echoing in Blanche\u2019s head \u201clike a bell\u201d \u2014 and then, in the Doctor\u2019s final gentleness, as unexpectedly human. They function as symbolic agents of a psychiatric system that formally ends Blanche\u2019s story, and their arrival carries the autobiographical weight of Williams\u2019s own sister Rose, who was lobotomised in 1943.',
+      body: 'The unnamed Doctor and Matron arrive in Scene 11 to take Blanche to the state institution. Williams writes them first as distorted, nightmarish figures (the Matron\u2019s voice is compared to a fire bell, and her words are echoed by voices behind the walls) and then, in the Doctor\u2019s final gentleness, as unexpectedly human. They function as symbolic agents of a psychiatric system that formally ends Blanche\u2019s story, and their arrival carries the autobiographical weight of Williams\u2019s own sister Rose, who was lobotomised in 1943.',
     },
   ],
   themes: [
     {
       title: 'Desire and destruction',
-      body: 'The streetcar named Desire that carries Blanche into the play is also the force that has already destroyed her life: desire for Allan Grey, the anonymous desires of the Flamingo Hotel, the pupil at Laurel, and finally Stanley\u2019s desire in Scene 10. Williams links sexual longing to violence and death throughout \u2014 Desire transfers to Cemeteries \u2014 and presents it as both a life-giving \u201ccoloured light\u201d between Stella and Stanley and a destructive current that carries Blanche to the asylum. The play refuses a simple moral verdict on desire; instead it shows how a society that denies and punishes desire makes it lethal.',
+      body: 'The streetcar named Desire that carries Blanche into the play is also the force that has already destroyed her life: desire for Allan Grey, the anonymous desires of the Flamingo Hotel, the pupil at Laurel, and finally Stanley\u2019s desire in Scene 10. Williams links sexual longing to violence and death throughout (Desire transfers to Cemeteries) and presents it as both the life-giving \u201ccoloured lights\u201d between Stella and Stanley and a destructive current that carries Blanche to the asylum. The play refuses a simple moral verdict on desire; instead it shows how a society that denies and punishes desire makes it lethal.',
     },
     {
       title: 'Reality vs illusion (the paper lantern)',
@@ -99,7 +99,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Fading Southern aristocracy vs industrial modernity',
-      body: 'Blanche comes from the world of Belle Reve, a Mississippi plantation whose name means \u201cbeautiful dream\u201d and which has been lost through the \u201cepic fornications\u201d and slow decay of the DuBois line. Stanley is a Polish-American factory worker, a child of the urban, immigrant, industrial America that has displaced the Old South. Williams sets the two orders against each other with careful economic precision \u2014 the Napoleonic Code, the unpaid mortgages, the scent of cheap perfume \u2014 and stages the defeat of one by the other. Blanche\u2019s snobbery (\u201cape-like,\u201d \u201cPolack\u201d) and Stanley\u2019s class resentment are two sides of the same historical shift.',
+      body: 'Blanche comes from the world of Belle Reve, a Mississippi plantation whose name means \u201cbeautiful dream\u201d and which has been lost through the \u201cepic fornications\u201d and slow decay of the DuBois line. Stanley is a Polish-American who travels for a manufacturing plant, a child of the urban, immigrant, industrial America that has displaced the Old South. Williams sets the two orders against each other with careful economic precision \u2014 the Napoleonic Code, the unpaid mortgages, the scent of cheap perfume \u2014 and stages the defeat of one by the other. Blanche\u2019s snobbery (\u201cape-like,\u201d \u201cPolack\u201d) and Stanley\u2019s class resentment are two sides of the same historical shift.',
     },
     {
       title: 'Gender and power',
@@ -111,19 +111,19 @@ const data: TextGuideData = {
     },
     {
       title: 'Violence and gentility',
-      body: 'Williams repeatedly places acts of violence inside rituals of politeness. Stanley throws the radio out of the window in the middle of a poker night; Blanche is raped in an apartment hung with her own paper lantern; the final scene is a committal in the middle of another poker game. The play insists that the forms of civility \u2014 the birthday cake, the magnolia-scented manners, the southern courtesies \u2014 do not prevent brutality but often mask it. When Blanche tells Stella that \u201cdeliberate cruelty is not forgivable,\u201d she names a moral standard that the Kowalskis\u2019 world cannot meet.',
+      body: 'Williams repeatedly places acts of violence inside rituals of politeness. Stanley throws the radio out of the window in the middle of a poker night; Blanche is raped in an apartment hung with her own paper lantern; the final scene is a committal in the middle of another poker game. The play insists that the forms of civility \u2014 the birthday cake, the magnolia-scented manners, the southern courtesies \u2014 do not prevent brutality but often mask it. When Blanche tells Stanley that \u201cdeliberate cruelty is not forgivable,\u201d she names a moral standard that the Kowalskis\u2019 world cannot meet.',
     },
   ],
   historicalContext: [
     'Williams wrote A Streetcar Named Desire in the immediate aftermath of the Second World War, and the play is steeped in the uneasy mood of late-1940s America. Stanley is a returning veteran; the cramped, hot Elysian Fields apartment reflects the post-war housing crisis in American cities; the long Depression had broken many of the old rural economies, including those of the Mississippi Delta plantations that the DuBois family represents. Blanche\u2019s arrival from Laurel to New Orleans dramatises a historical migration from an impoverished agrarian South to a rapidly industrialising urban America that no longer has room for her.',
-    'New Orleans itself is central to the play\u2019s texture. The French Quarter was a working-class, ethnically mixed neighbourhood in which Polish, Italian and African-American residents lived alongside one another; the \u201cblue piano\u201d and \u201cblues music\u201d that Williams specifies in his stage directions place the action inside a living Black and Creole musical culture. Stanley\u2019s Polish heritage \u2014 and Blanche\u2019s slurs against it (\u201cPolack,\u201d \u201cape-like\u201d) \u2014 reflect the complicated status of Eastern European immigrant communities in mid-century America, neither fully accepted nor excluded. The streetcar line called Desire really did run through the Quarter until 1948, the year after the play\u2019s premiere, before being replaced by a bus.',
-    'The play is also unmistakably autobiographical. Williams\u2019s older sister Rose suffered a severe mental breakdown in her twenties and was subjected to a prefrontal lobotomy in 1943, a decision her family consented to; Williams carried the guilt of that event for the rest of his life. Blanche\u2019s institutionalisation in Scene 11, and the symbolic figures of the Doctor and Matron, draw directly on this history. Williams himself was a gay man writing in a period of intense censorship, and the figure of Allan Grey \u2014 the young husband whose homosexuality Blanche discovers and whose death she precipitates \u2014 had to be encoded rather than stated. The Broadway production could not name his sexuality directly; later film and revival productions gradually made it explicit.',
-    'Elia Kazan\u2019s original Broadway production opened in December 1947 and ran for two years, making stars of Marlon Brando (Stanley), Jessica Tandy (Blanche), Kim Hunter (Stella) and Karl Malden (Mitch). Kazan\u2019s direction, influenced by the Actors Studio and the \u201cMethod,\u201d gave the play its charged, psychologically realistic performance style and established a new model for American theatre. Brando\u2019s torn-T-shirt Stanley became an iconic image of post-war masculinity, and the 1951 film version, also directed by Kazan, carried the play to a global audience despite heavy censorship under the Hollywood Production Code, which demanded cuts to references to homosexuality and to Stanley\u2019s punishment for the rape.',
+    'New Orleans itself is central to the play\u2019s texture. The French Quarter was a working-class, ethnically mixed neighbourhood in which Polish, Italian and African-American residents lived alongside one another; the \u201cblue piano\u201d that Williams specifies in his stage directions places the action inside a living Black and Creole musical culture. Stanley\u2019s Polish heritage \u2014 and Blanche\u2019s slurs against it (\u201cPolack,\u201d \u201cape-like\u201d) \u2014 reflect the complicated status of Eastern European immigrant communities in mid-century America, neither fully accepted nor excluded. The streetcar line called Desire really did run through the Quarter until 1948, the year after the play\u2019s premiere, before being replaced by a bus.',
+    'The play is also unmistakably autobiographical. Williams\u2019s older sister Rose suffered a severe mental breakdown in her twenties and was subjected to a prefrontal lobotomy in 1943, a decision her family consented to; Williams carried the guilt of that event for the rest of his life. Blanche\u2019s institutionalisation in Scene 11, and the symbolic figures of the Doctor and Matron, draw directly on this history. Williams himself was a gay man writing in a period of intense censorship, and the figure of Allan Grey \u2014 the young husband whose homosexuality Blanche discovers and whose death she precipitates \u2014 had to be encoded rather than stated. The Broadway production could not name his sexuality directly, and the 1951 film removed the reference altogether.',
+    'Elia Kazan\u2019s original Broadway production opened in December 1947 and ran for two years, making stars of Marlon Brando (Stanley), Jessica Tandy (Blanche), Kim Hunter (Stella) and Karl Malden (Mitch). Kazan\u2019s direction, influenced by the Actors Studio and the \u201cMethod,\u201d gave the play its charged, psychologically realistic performance style and established a new model for American theatre. Brando\u2019s torn-T-shirt Stanley became an iconic image of post-war masculinity, and the 1951 film version, also directed by Kazan, carried the play to a global audience despite heavy censorship under the Hollywood Production Code: the film removed the reference to homosexuality, cut the rape scene short and added an ending in which Stella blames Stanley and resolves to leave him.',
   ],
   quotations: [
     {
       quote:
-        '"take a streetcar named Desire, and transfer to one called Cemeteries, ... Elysian Fields!"',
+        '"take a streetcar named Desire, and then transfer to one called Cemeteries, ... Elysian Fields!"',
       who: 'Blanche \u2014 Scene 1',
       analysis:
         'Blanche\u2019s arrival line makes her journey a symbolic one: from Desire, via Cemeteries, to the afterlife of Elysian Fields. Williams loads the whole trajectory of the play \u2014 desire leading to death leading to institutional exile \u2014 into a single set of street names.',
@@ -141,7 +141,7 @@ const data: TextGuideData = {
         'Williams prefaces the famous closing phrase with \u201cWhoever you are,\u201d deepening its pathos: Blanche no longer distinguishes between doctors, lovers or captors, and her courtesy survives even as her identity dissolves.',
     },
     {
-      quote: '"Stella! Stella!"',
+      quote: '"Stella! Stella, sweetheart! Stella!"',
       who: 'Stanley \u2014 Scene 3',
       analysis:
         'Stanley\u2019s anguished cry from the foot of the outside staircase, after he has struck the pregnant Stella, is one of the play\u2019s defining images. The moment fuses violence and dependence, and Stella\u2019s return into his arms states the terms of the marriage that Blanche cannot accept.',
@@ -149,12 +149,12 @@ const data: TextGuideData = {
     {
       quote:
         '"Deliberate cruelty is not forgivable. ... thing of which I have never, never been guilty."',
-      who: 'Blanche \u2014 Scene 11',
+      who: 'Blanche \u2014 Scene 10',
       analysis:
-        'Blanche\u2019s moral statement \u2014 delivered to Mitch \u2014 sets out the single standard against which Stanley\u2019s behaviour is judged. The play tests whether the working-class, post-war world it depicts can meet any such ethical benchmark.',
+        'Blanche\u2019s moral statement, made to Stanley as part of her invented account of a visit from Mitch, sets out the single standard against which Stanley\u2019s behaviour is judged. The play tests whether the working-class, post-war world it depicts can meet any such ethical benchmark.',
     },
     {
-      quote: '"We\u2019ve had this date with each other from the beginning."',
+      quote: '"We\u2019ve had this date with each other from the beginning!"',
       who: 'Stanley \u2014 Scene 10',
       analysis:
         'Stanley\u2019s line just before the rape frames the act as fated and mutual rather than criminal. Williams places this self-serving narrative in the mouth of the perpetrator, so that the audience hears the lie as it is being told.',
@@ -163,19 +163,19 @@ const data: TextGuideData = {
       quote: '"I don\u2019t want realism. I want magic!"',
       who: 'Blanche \u2014 Scene 9',
       analysis:
-        'Blanche\u2019s cry to Mitch as he strips the paper lantern from the lightbulb is the clearest statement of her defining principle. The play invites the audience to measure the cost of \u201cmagic\u201d against the cruelty of Stanley\u2019s \u201crealism.\u201d',
+        'Blanche\u2019s cry to Mitch as he strips the paper lantern from the lightbulb is the clearest statement of her defining principle. The play invites the audience to measure the cost of \u201cmagic\u201d against the cruelty of Stanley\u2019s \u201crealism.\u201d This is the American wording, printed as one speech. In the UK Penguin and Methuen texts Mitch answers after the first sentence, and only then does Blanche say what she wants.',
     },
     {
       quote: '"A woman\u2019s charm is fifty per cent illusion."',
       who: 'Blanche \u2014 Scene 2',
       analysis:
-        'Blanche\u2019s aphorism to Stanley about her wardrobe doubles as an account of how she survives: by constructing herself. Williams lets the line sit beside Stanley\u2019s demand for documents, dramatising two opposed theories of truth.',
+        'Blanche\u2019s aphorism to Stanley about her wardrobe doubles as an account of how she survives: by constructing herself. Williams lets the line sit beside Stanley\u2019s demand for documents, dramatising two opposed theories of truth. The line is printed in American editions but not in the UK Penguin and Methuen texts.',
     },
     {
       quote: '"The Kowalskis and the DuBois have different notions."',
-      who: 'Stella \u2014 Scene 4',
+      who: 'Stanley \u2014 Scene 2',
       analysis:
-        'Stella\u2019s understatement to Blanche names the class and cultural gulf that drives the play. Williams gives her the language of diplomatic compromise \u2014 the register of a woman who has chosen Stanley\u2019s world and will not be argued out of it.',
+        'Stanley\u2019s understatement names the class and cultural gulf that drives the play. By setting the two family names side by side, Williams turns the conflict between Stanley and Blanche into a clash between two whole ways of life.',
     },
     {
       quote: '"our improvident grandfathers ... exchanged the land for their epic fornications."',
@@ -196,16 +196,16 @@ const data: TextGuideData = {
         'Stanley\u2019s account of his sexual life with Stella \u2014 the \u201ccoloured lights\u201d \u2014 offers a rival theory of desire to Blanche\u2019s paper-lantern version. Williams makes the body\u2019s pleasure a political force capable of pulling a woman down from the plantation.',
     },
     {
-      quote: '"You are not clean enough to bring in the house with my mother."',
+      quote: '"You\u2019re not clean enough to bring in the house with my mother."',
       who: 'Mitch \u2014 Scene 9',
       analysis:
         'Mitch\u2019s rejection of Blanche restates the sexual double standard of his world. Williams places his judgement inside the discourse of respectability \u2014 \u201cclean,\u201d \u201cmother\u201d \u2014 so that conventional morality becomes part of the machinery that destroys her.',
     },
     {
-      quote: '"You\u2019re not clean enough \u2014 I don\u2019t want to marry you any more."',
+      quote: '"I don\u2019t think I want to marry you any more."',
       who: 'Mitch \u2014 Scene 9',
       analysis:
-        'The blunt restatement of the rejection strips away any residual tenderness in their courtship. Mitch\u2019s withdrawal leaves Blanche in the apartment alone with Stanley\u2019s imminent return and is a structural hinge into the rape.',
+        'Mitch says this moments before the line above, and the rejection strips away any residual tenderness in their courtship. Mitch\u2019s withdrawal leaves Blanche in the apartment alone with Stanley\u2019s imminent return and is a structural hinge into the rape.',
     },
     {
       quote: '"Every man is a king! And I am the king around here"',
@@ -230,13 +230,13 @@ const data: TextGuideData = {
         '[Blanche sings a popular song of 1933 in the bath. Its lyric says that a make-believe world would become real if only someone believed in it.]',
       who: 'Blanche \u2014 Scene 7 (singing in the bath)',
       analysis:
-        'Blanche sings the Harold Arlen song from the bath as Stanley, in the next room, reveals her history to Stella. Williams sets her fragile fiction of belief against Stanley\u2019s hard narrative, so that the two scenes interrupt and indict each other.',
+        'Blanche sings the song (music by Harold Arlen, words by Yip Harburg and Billy Rose) from the bath as Stanley, in the next room, reveals her history to Stella. Williams sets her fragile fiction of belief against Stanley\u2019s hard narrative, so that the two scenes interrupt and indict each other.',
     },
     {
       quote: '"Don\u2019t ever believe it. Life has got to go on."',
       who: 'Eunice \u2014 Scene 11',
       analysis:
-        'Eunice\u2019s advice to Stella, as Blanche is being led out, names the moral compromise of the play. Williams gives it to a minor character, as if to show that it belongs to the community rather than to any one person.',
+        'Eunice\u2019s advice to Stella, given as they pack Blanche\u2019s things before the doctor arrives, names the moral compromise of the play. Williams gives it to a minor character, as if to show that it belongs to the community rather than to any one person.',
     },
   ],
 }
@@ -448,7 +448,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Blanche's statement to Mitch names the ethical line the play is interested in. Williams measures the post-war, working-class world of Elysian Fields against this standard, and finds it wanting.",
+      "Blanche's statement to Stanley in Scene 10 names the ethical line the play is interested in. Williams measures the post-war, working-class world of Elysian Fields against this standard, and finds it wanting.",
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -614,7 +614,7 @@ export default async function AStreetcarNamedDesirePage() {
     <>
       <CourseJsonLd
         name="A Streetcar Named Desire - Complete A-Level Study Guide"
-        description="In-depth study guide for A Streetcar Named Desire covering plot, characters, themes, key quotations, historical context and exam essay plans for A-Level English Literature."
+        description="In-depth study guide for A Streetcar Named Desire covering plot, characters, themes, key quotations, historical context and exam essay questions for A-Level English Literature."
       />
 
       <TextStudyHub

@@ -57,9 +57,9 @@ const CONTEXT_SECTIONS: ContextSection[] = [
   {
     title: 'Response to The Coral Island',
     body: [
-      'R.M. Ballantyne\u2019s The Coral Island (1858) is a Victorian adventure novel in which three British boys \u2014 Ralph, Jack and Peterkin \u2014 are shipwrecked on a Pacific island and thrive through courage, resourcefulness and Christian virtue. They encounter "savages" (Pacific Islanders depicted in deeply racist terms) and pirates, but the boys remain morally upright throughout. The novel reflects the supreme confidence of Victorian Britain in its own civilisation and racial superiority.',
+      'R.M. Ballantyne\u2019s The Coral Island (1857) is a Victorian adventure novel in which three British boys \u2014 Ralph, Jack and Peterkin \u2014 are shipwrecked on a Pacific island and thrive through courage, resourcefulness and Christian virtue. They encounter "savages" (Pacific Islanders depicted in deeply racist terms) and pirates, but the boys remain morally upright throughout. The novel reflects the supreme confidence of Victorian Britain in its own civilisation and racial superiority.',
       'Golding deliberately names his protagonists Ralph and Jack as a direct reference to Ballantyne\u2019s characters. Lord of the Flies is a systematic demolition of The Coral Island\u2019s assumptions. Where Ballantyne\u2019s boys maintain civilised standards, Golding\u2019s descend into savagery. Where Ballantyne locates evil in racial "others," Golding locates it within the British boys themselves.',
-      'The naval officer at the end of Lord of the Flies explicitly references The Coral Island: "I should have thought that a pack of British boys ... I mean \u2014" The officer\u2019s stammering inability to finish the sentence reveals that Ballantyne\u2019s comfortable assumptions have been proved wrong.',
+      'The naval officer at the end of Lord of the Flies breaks off a rebuke: "I should have thought that a pack of British boys ... I mean \u2014" Moments later, in a separate reply to Ralph, he explicitly compares the boys to The Coral Island. The officer\u2019s stammering inability to finish the sentence reveals that Ballantyne\u2019s comfortable assumptions have been proved wrong.',
     ],
     keyPoint:
       'Lord of the Flies is an anti-Coral Island. Golding takes the same premise \u2014 British boys stranded on a tropical island \u2014 and reaches the opposite conclusion. Where Ballantyne saw civilisation as innate, Golding sees it as learned, fragile and easily destroyed.',
@@ -116,7 +116,7 @@ type TimelineEvent = {
 
 const TIMELINE: TimelineEvent[] = [
   {
-    year: '1858',
+    year: '1857',
     event: 'R.M. Ballantyne publishes The Coral Island',
     relevance: 'The Victorian adventure novel Golding directly challenges',
   },

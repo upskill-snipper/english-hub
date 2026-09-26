@@ -17,6 +17,12 @@ type ContextSection = {
   examLink: string
 }
 
+// CORRECTED 26 September 2026. Miller's own account (Timebends) has the
+// longshoreman inform on "two brothers, his own relatives", not his wife's.
+// The three unities were formulated by Renaissance critics (Trissino,
+// Castelvetro) and attached to Aristotle's name; the Poetics insists only on
+// unity of action. The two-act version was first staged in 1956 but first
+// published in 1957, so 1956 is not "the same year it was published".
 const CONTEXT_SECTIONS: ContextSection[] = [
   {
     title: '1950s Red Hook, Brooklyn',
@@ -59,7 +65,7 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     body: [
       'Arthur Miller (1915\u20132005) was the son of Polish-Jewish immigrants and grew up in Brooklyn during the Depression. His family\u2019s experience of economic hardship and social marginality shaped his lifelong commitment to writing about ordinary people with dignity and seriousness.',
       'Before A View from the Bridge, Miller had already established himself as America\u2019s foremost dramatist with Death of a Salesman (1949), which depicted the destruction of Willy Loman by the false promises of the American Dream, and The Crucible (1953), which used the Salem witch trials as an allegory for McCarthyism. Both plays share with A View from the Bridge a concern with ordinary individuals crushed by social forces they cannot control.',
-      'Miller heard the story that became A View from the Bridge from a lawyer friend who worked in the Red Hook docks. The real incident involved a longshoreman who informed on two of his wife\u2019s relatives because one of them was having a relationship with his niece. Miller was haunted by the story and wrote the first version as a one-act play in 1955, before expanding it to two acts in 1956.',
+      'Miller heard the story that became A View from the Bridge from a lawyer friend who worked in the Red Hook docks. The real incident involved a longshoreman who informed on two of his own relatives because one of them was having a relationship with his niece. Miller was haunted by the story and wrote the first version as a one-act play in 1955, before expanding it to two acts in 1956.',
       'Miller\u2019s artistic vision was shaped by his belief that tragedy is not the exclusive property of kings and nobles. He argued in his 1949 essay "Tragedy and the Common Man" that ordinary people can achieve tragic stature when they are willing to lay down their lives rather than surrender their sense of personal dignity. Eddie Carbone is the fullest expression of this argument.',
     ],
     keyPoint:
@@ -70,7 +76,7 @@ const CONTEXT_SECTIONS: ContextSection[] = [
   {
     title: 'Greek Tragedy Influences',
     body: [
-      'Miller consciously modelled A View from the Bridge on Greek tragedy. Alfieri\u2019s opening monologue reaches back to Roman times and explicitly invokes the classical sense of fate. The play\u2019s tight structure \u2014 a single main setting, a compressed timeline, an inevitable ending \u2014 mirrors the unities of time, place and action that Aristotle prescribed for tragedy.',
+      'Miller consciously modelled A View from the Bridge on Greek tragedy. Alfieri\u2019s opening monologue reaches back to Roman times and explicitly invokes the classical sense of fate. The play\u2019s tight structure (a single main setting, a compressed timeline, an inevitable ending) mirrors the classical unities of time, place and action, rules that Renaissance critics formulated and credited to Aristotle.',
       'In Greek tragedy, the protagonist is a figure of stature who is destroyed by a flaw he cannot see: hubris (excessive pride), hamartia (a fatal error of judgment) or ate (divinely sent blindness). Eddie fits all three: his pride prevents him from seeing his own desires, his error is the phone call, and his blindness to his feelings is the engine of his destruction.',
       'Alfieri functions as the chorus of Greek drama: a commentator who stands outside the action, addresses the audience directly and provides the moral framework within which the tragedy is understood. His inability to prevent the catastrophe is central to the form \u2014 the chorus sees everything and changes nothing, forcing the audience to ask why tragedy happens rather than whether it can be stopped.',
       'The play\u2019s ending \u2014 Eddie\u2019s death at Marco\u2019s hands \u2014 echoes the violence of Greek tragedy, where the protagonist\u2019s destruction is both punishment and revelation. Miller insists that working-class characters deserve the same tragic dignity that Sophocles gave to kings.',
@@ -84,7 +90,7 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     title: 'McCarthyism and "Naming Names"',
     body: [
       'The House Un-American Activities Committee (HUAC) was established in 1938 but reached its peak influence in the late 1940s and 1950s, when Senator Joseph McCarthy led a campaign to identify and blacklist suspected Communists in American public life. Artists, writers, filmmakers and academics were called before the committee and pressured to name colleagues who had attended Communist Party meetings.',
-      'Arthur Miller was called before HUAC in 1956 \u2014 the same year the revised version of A View from the Bridge was published. He refused to name names and was found in contempt of Congress. Several of his friends and colleagues, including the director Elia Kazan, did cooperate with the committee, and the resulting betrayals destroyed friendships and careers.',
+      'Arthur Miller was called before HUAC in 1956, the same year the revised two-act version of A View from the Bridge was first staged, in London. He refused to name names and was found in contempt of Congress. Several of his friends and colleagues, including the director Elia Kazan, did cooperate with the committee, and the resulting betrayals destroyed friendships and careers.',
       'The parallel with Eddie\u2019s phone call is unmistakable. Both acts involve informing on people to a government agency, both destroy relationships and communities, and both raise the question of whether any principle can justify betraying the people who trust you. Miller said he did not write the play as a direct allegory of McCarthyism, but the connections are too precise to be accidental.',
     ],
     keyPoint:
@@ -151,14 +157,17 @@ const TIMELINE: TimelineEvent[] = [
       'Beginning of the political witch-hunt that becomes central to the play\u2019s context',
   },
   {
-    year: '1947',
-    event: 'Death of a Salesman premieres',
-    relevance: 'Miller establishes himself as dramatist of the common man',
-  },
-  {
     year: '1948',
     event: '"Crime on the Waterfront" published',
     relevance: 'Exposes corruption on the docks that form the play\u2019s setting',
+  },
+  {
+    // CORRECTED 26 September 2026: this entry said 1947. Death of a Salesman
+    // opened at the Morosco Theatre, New York, on 10 February 1949, as the body
+    // text above already said; 1947 is the year of All My Sons.
+    year: '1949',
+    event: 'Death of a Salesman premieres',
+    relevance: 'Miller establishes himself as dramatist of the common man',
   },
   {
     year: '1950\u201354',
@@ -189,10 +198,15 @@ const TIMELINE: TimelineEvent[] = [
   {
     year: '1956',
     event: 'Miller called before HUAC; refuses to name names',
-    relevance: 'Found in contempt of Congress; personal experience of the play\u2019s themes',
+    relevance:
+      'Convicted of contempt of Congress in 1957, overturned on appeal in 1958; personal experience of the play\u2019s themes',
   },
   {
-    year: '1956',
+    // CORRECTED 26 September 2026: this entry said 1956, the year the two-act
+    // version was first staged (London, 11 October 1956). It was first
+    // published in 1957 (Cresset Press, London; the Penguin copyright page
+    // reads 1955, 1957, 1960), and the contempt conviction above was May 1957.
+    year: '1957',
     event: 'Two-act version published',
     relevance: 'Expanded version allows fuller exploration of Eddie\u2019s psychology',
   },

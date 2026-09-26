@@ -8,6 +8,8 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/animal-farm'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Animal Farm revision guide - themes, characters, key quotes',
@@ -40,7 +42,7 @@ const data: TextGuideData = {
     "George Orwell's short, savage fable watches a group of farm animals overthrow their human owner and establish a free commune, only to see their revolution betrayed as one pig after another seizes power. A blistering allegory of the Russian Revolution that remains a universal warning about how ideals curdle into tyranny.",
   quickInfo: {
     genre: 'Allegorical novella / Political fable',
-    setting: 'Manor Farm (later Animal Farm), England, 1940s',
+    setting: 'Manor Farm (later Animal Farm), England',
     length: '~30,000 words, 10 chapters',
     published: '1945',
   },
@@ -48,7 +50,7 @@ const data: TextGuideData = {
     "Old Major, the prize boar, gathers the animals of Manor Farm and teaches them a song, 'Beasts of England', that dreams of a world without human masters. Three nights later he dies, and three younger pigs - the idealistic Snowball, the cunning Napoleon and the smooth-talking propagandist Squealer - turn his vision into a practical doctrine they call Animalism.",
     "When the drunken farmer Mr Jones forgets to feed the animals one night, they rise up, drive him out, and rename the farm Animal Farm. They paint Seven Commandments on the barn wall, most importantly: 'All animals are equal.' The pigs assume leadership and the first harvest is a triumph. The cart-horse Boxer becomes the revolution\u2019s muscle, vowing 'I will work harder' and 'Napoleon is always right'.",
     "Tension grows between Snowball, who wants to build a windmill to modernise the farm, and Napoleon, who secretly raises a litter of puppies as his enforcers. Napoleon uses these dogs to drive Snowball from the farm and then claims the windmill plan as his own. He begins executing 'traitors', rewriting history with Squealer's help, and trading with neighbouring farmers.",
-    "Over the years the pigs move into the farmhouse, walk on two legs and dress in human clothes. The commandments disappear one by one, until only a single amended line remains: 'All animals are equal, but some animals are more equal than others.' In the final scene the other animals peer through the window and cannot tell the pigs from the humans they once overthrew.",
+    "Over the years the pigs move into the farmhouse, walk on two legs and dress in human clothes. The commandments are quietly altered one by one, until only a single amended line remains: 'All animals are equal but some animals are more equal than others.' In the final scene the other animals peer through the window and cannot tell the pigs from the humans they once overthrew.",
   ],
   characters: [
     {
@@ -118,7 +120,7 @@ const data: TextGuideData = {
         'The founding principle of the revolution. The novel\u2019s entire tragic movement is the betrayal of this line.',
     },
     {
-      quote: '"All animals are equal, but some animals are more equal than others."',
+      quote: '"All animals are equal but some animals are more equal than others."',
       who: 'Final commandment - Chapter 10',
       analysis: 'The book\u2019s most famous line. The revolution has devoured itself.',
     },
@@ -147,7 +149,7 @@ const data: TextGuideData = {
         'The shattering closing image. Revolution has produced a mirror of the regime it replaced.',
     },
     {
-      quote: '"Comrade Napoleon... is a terrible and magnificent boar."',
+      quote: '"Fountain of happiness!"',
       who: "Minimus's poem - Chapter 8",
       analysis:
         'Satirises the personality cults that real dictatorships build around their leaders.',
@@ -233,7 +235,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Boxer is sold to the knacker when he can no longer work. Squealer claims he was taken to a vet, but the van reads "Horse Slaughterer." Napoleon uses the money to buy whisky. This is Orwell\'s most ruthless moment in the book.',
+      'Boxer is sold to the knacker when he can no longer work. Squealer claims he was taken to a vet, but the van reads "Horse Slaughterer." The pigs use the money to buy whisky. This is Orwell\'s most ruthless moment in the book.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -260,7 +262,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: [
       '"All animals are free"',
       '"Long live Napoleon"',
-      '"All animals are equal, but some animals are more equal than others"',
+      '"All animals are equal but some animals are more equal than others"',
       '"Work harder"',
     ],
     correctIndex: 2,
@@ -469,7 +471,7 @@ const REVISION_TOPICS = [
       'The dogs represent the secret police',
       "The commandments are rewritten to justify the pigs' privilege",
       'Power corrupts gradually - the pigs move into the farmhouse by degrees',
-      '"All animals are equal, but some animals are more equal than others"',
+      '"All animals are equal but some animals are more equal than others"',
     ],
   },
   {
@@ -627,6 +629,9 @@ export default async function AnimalFarmPage() {
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         {await t('rev.texts.af.rights_notice_short')}
       </p>
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }

@@ -59,7 +59,7 @@ const characters: CharacterData[] = [
     keyQuotes: [
       {
         text: '"The fire is the most important thing on the island."',
-        context: 'Ch. 2 -- prioritising rescue over hunting',
+        context: 'Ch. 5 -- prioritising rescue over hunting',
       },
       { text: '"I\'m chief. I was chosen."', context: 'Ch. 5 -- defending his democratic mandate' },
       {
@@ -81,8 +81,8 @@ const characters: CharacterData[] = [
     overview:
       'Jack arrives on the island already in a position of authority as leader of the choir. He is humiliated by losing the election to Ralph and spends the novel clawing back power through fear, spectacle and violence. Golding uses him as a portrait of how dictators rise: by exploiting fear, offering the thrill of hunting and punishing dissenters.',
     development: [
-      'In Chapter 1 he insists on rules and cannot kill the piglet, showing civilisation still restrains him.',
-      'Becomes obsessed with hunting; in Chapter 4 he paints his face and the mask "liberates him from shame and self-consciousness."',
+      'In Chapter 1 he cannot kill the piglet, and in Chapter 2 he insists on rules, showing civilisation still restrains him.',
+      'Becomes obsessed with hunting; in Chapter 4 he paints his face and the mask leaves him "liberated from shame and self-consciousness."',
       'Lets the signal fire go out while a ship passes, prioritising the hunt over rescue.',
       "In Chapter 8 he splits from Ralph's group and forms his own tribe based on meat, ritual and obedience.",
       "Presides over Simon's murder during the feast in Chapter 9 and Piggy's death in Chapter 11.",
@@ -103,7 +103,7 @@ const characters: CharacterData[] = [
       },
       {
         text: '"Sharpen a stick at both ends."',
-        context: "Ch. 12 -- planning to mount Ralph's head",
+        context: "Ch. 8 -- the stake for the sow's head",
       },
     ],
     examTip:
@@ -123,13 +123,13 @@ const characters: CharacterData[] = [
       "He dies in Chapter 11 still clutching the conch, still believing reason should prevail, killed by Roger's boulder.",
     ],
     keyQuotes: [
-      { text: '"Sucks to your ass-mar!"', context: "Ch. 1 -- the boys' immediate cruelty" },
+      { text: '"Sucks to your ass-mar!"', context: "Ch. 1 -- Ralph's careless mockery" },
       {
         text: '"Which is better -- law and rescue, or hunting and breaking things up?"',
         context: 'Ch. 11 -- final appeal to reason',
       },
       {
-        text: '"I got the conch! I got a right to speak!"',
+        text: '"I got the conch ... I got a right to speak."',
         context: 'Ch. 2 -- insisting on democratic process',
       },
     ],
@@ -141,11 +141,11 @@ const characters: CharacterData[] = [
     role: 'Visionary, prophetic outsider',
     allegoricalRole: 'Spiritual truth, innate goodness, a Christ figure',
     overview:
-      'Simon is the moral and spiritual centre of the novel. A quiet, epileptic boy, he alone understands that the beast is not an external creature but "part of" the boys themselves. His confrontation with the Lord of the Flies and his subsequent murder during the storm are staged with deliberate religious overtones -- the truth-teller sacrificed by the mob.',
+      'Simon is the moral and spiritual centre of the novel. A quiet boy prone to fainting fits, he alone understands that the beast is not an external creature but "part of" the boys themselves. His confrontation with the Lord of the Flies and his subsequent murder during the storm are staged with deliberate religious overtones -- the truth-teller sacrificed by the mob.',
     development: [
       'Established early as different: he helps the littluns reach fruit and retreats to a secret clearing for solitary contemplation.',
       'In Chapter 5 he tries to articulate the idea that the beast is internal -- "maybe it\'s only us" -- but the boys shout him down.',
-      'In Chapter 8 he hallucinates a conversation with the Lord of the Flies, which tells him "I\'m part of you."',
+      'In Chapter 8 he hallucinates a conversation with the Lord of the Flies, which tells him "I\'m part of you".',
       'In Chapter 9 he climbs the mountain alone, discovers the dead parachutist is a harmless corpse and rushes to tell the others.',
       'He is beaten to death during the ritual dance, his body washed out to sea in a passage of luminous, almost sacred imagery.',
     ],
@@ -176,8 +176,8 @@ const characters: CharacterData[] = [
       'In Chapter 4, his stone-throwing at Henry establishes the "invisible yet strong" arm of civilised conditioning.',
       "He joins Jack's tribe early and embraces the painted mask and hunting rituals.",
       "Takes an active role in Simon's murder during the frenzied dance in Chapter 9.",
-      'In Chapter 11 he deliberately kills Piggy by rolling a boulder from Castle Rock -- Golding writes that the lever moves "with a sense of delirious abandonment."',
-      'By Chapter 12 he has become Jack\'s torturer, wielding "a nameless authority" over the tribe.',
+      'In Chapter 11 he deliberately kills Piggy by rolling a boulder from Castle Rock. Golding writes that Roger leans on the lever "with a sense of delirious abandonment."',
+      'By the end of Chapter 11 he has become Jack\'s torturer, wielding "a nameless authority" over the captured twins.',
     ],
     keyQuotes: [
       {
@@ -185,7 +185,7 @@ const characters: CharacterData[] = [
         context: 'Ch. 4 -- the taboo still holds',
       },
       {
-        text: '"Roger, with a sense of delirious abandonment, leaned his weight on the lever."',
+        text: '"Roger, with a sense of delirious abandonment, leaned all his weight on the lever."',
         context: 'Ch. 11 -- the taboo broken',
       },
     ],
@@ -207,11 +207,7 @@ const characters: CharacterData[] = [
     ],
     keyQuotes: [
       {
-        text: '"They were savages it was true; but they were Samneric."',
-        context: 'Ch. 12 -- identity consumed by the tribe',
-      },
-      {
-        text: '"You got to go because it\'s not safe."',
+        text: '"You got to go because it\'s not safe"',
         context: 'Ch. 12 -- warning Ralph even after joining Jack',
       },
     ],
@@ -261,7 +257,7 @@ export default async function LotFCharactersPage() {
               {await t('rev.texts.lotf.characters.badge')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              AQA / OCR / Eduqas
+              AQA / Edexcel / Eduqas
             </Badge>
           </div>
 

@@ -8,6 +8,8 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/to-kill-a-mockingbird'
 export const metadata: Metadata = {
   openGraph: {
     title: 'To Kill a Mockingbird IGCSE - themes, characters, quotes',
@@ -35,7 +37,7 @@ const data: TextGuideData = {
   author: 'Harper Lee',
   year: 'published 1960',
   category: 'Novel',
-  badge: 'Edexcel IGCSE',
+  badge: 'Edexcel IGCSE / Cambridge IGCSE',
   intro:
     "Harper Lee's Pulitzer-winning novel follows the Finch children as their father Atticus defends a Black man falsely accused of rape in 1930s Alabama. It is a coming-of-age story, a courtroom drama and an indictment of the racism woven into the American South.",
   quickInfo: {
@@ -46,7 +48,7 @@ const data: TextGuideData = {
   },
   plotSummary: [
     "Set in the fictional town of Maycomb, Alabama, during the Depression, the novel is narrated by Jean Louise 'Scout' Finch, looking back on the summers of her sixth to ninth years. Scout, her older brother Jem and their friend Dill spend their days inventing games, most of them centred on their reclusive neighbour Arthur 'Boo' Radley, whom they imagine as a monster but who is really a wounded, kind man.",
-    'Their father Atticus, a widowed lawyer, is appointed to defend Tom Robinson, a Black field hand accused of raping a young white woman named Mayella Ewell. The town turns against the Finches. Scout fights classmates who insult her father, and Jem struggles to understand why adults he has always respected suddenly seem cruel.',
+    'Their father Atticus, a widowed lawyer, is appointed to defend Tom Robinson, a Black field hand accused of raping a young white woman named Mayella Ewell. The town turns against the Finches. Scout is taunted at school over the case, and at Christmas she hits her cousin Francis when he insults Atticus, while Jem struggles to understand why adults he has always respected suddenly seem cruel.',
     "At the trial Atticus proves conclusively that Tom could not physically have inflicted Mayella's injuries and exposes her father Bob Ewell as the real abuser. The all-white jury nevertheless convicts Tom, and he is later shot trying to escape prison. Scout begins to see that justice and law are not the same thing, and that the town she loves is capable of great evil.",
     "Humiliated by the trial, Bob Ewell attacks the Finch children on their walk home from a school pageant. In the darkness Boo Radley saves them, killing Ewell in the struggle. Sheriff Heck Tate refuses to drag the shy Boo into the spotlight, insisting Ewell 'fell on his knife'. Scout walks Boo home and finally sees Maycomb from his porch, understanding Atticus's lesson that you never really know a person until you walk around in their skin.",
   ],
@@ -89,7 +91,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Moral courage',
-      body: "Atticus defines courage not as a man with a gun but as taking on a hopeless cause 'because you see it through no matter what'. Mrs Dubose's struggle with addiction models the same lesson on a private scale.",
+      body: "Atticus defines courage not as a man with a gun but as taking on a hopeless cause: you begin anyway, and 'you see it through no matter what'. Mrs Dubose's struggle with addiction models the same lesson on a private scale.",
     },
     {
       title: 'Childhood innocence and its loss',
@@ -119,11 +121,11 @@ const data: TextGuideData = {
     },
     {
       quote: '"It\'s a sin to kill a mockingbird."',
-      who: 'Miss Maudie - Chapter 10',
+      who: 'Atticus, then Miss Maudie - Chapter 10',
       analysis: 'The central symbol. Defines the innocence that Tom and Boo share.',
     },
     {
-      quote: '"Simply because we were licked a hundred years ... is no reason not to try."',
+      quote: '"...licked a hundred years ... no reason for us not to try to win."',
       who: 'Atticus - Chapter 9',
       analysis: "Atticus's definition of courage and his justification for defending Tom.",
     },
@@ -134,8 +136,9 @@ const data: TextGuideData = {
     },
     {
       quote: '"People generally see what they look for, and hear what they listen for."',
-      who: 'Atticus - Chapter 17',
-      analysis: 'Sums up the prejudice that will decide the verdict before evidence is heard.',
+      who: 'Judge Taylor - Chapter 17',
+      analysis:
+        'Said of the spectators, it also sums up the prejudice that will decide the verdict before evidence is heard.',
     },
     {
       quote: '"Atticus, he was real nice."',
@@ -255,7 +258,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Tom is shot and killed trying to escape prison. The guards fire seventeen times, which Atticus calls "typical." Lee suggests that the system was always going to destroy Tom one way or another.',
+      'Tom is shot and killed trying to escape prison. He is hit seventeen times, and Maycomb gossip calls his escape attempt "typical." Lee suggests that the system was always going to destroy Tom one way or another.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -471,7 +474,7 @@ const REVISION_TOPICS = [
     topic: 'Moral Courage',
     summary: 'Atticus defines courage as doing right even when you know you will lose.',
     keyPoints: [
-      '"Simply because we were licked a hundred years ... is no reason not to try"',
+      '"...licked a hundred years ... no reason for us not to try to win"',
       'Mrs Dubose models courage by fighting her addiction before death',
       'Atticus takes the case knowing the town will turn against him',
       'Scout learns courage through fighting, then through restraint',
@@ -611,6 +614,9 @@ export default async function ToKillAMockingbirdPage() {
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         {await t('rev.texts2.common.fair_dealing_notice')}
       </p>
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }

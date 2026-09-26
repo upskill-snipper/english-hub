@@ -107,7 +107,7 @@ const themes: ThemeData[] = [
       },
       {
         text: '"Roger advanced upon them as one wielding a nameless authority."',
-        speaker: 'Narrator -- Ch. 12',
+        speaker: 'Narrator -- Ch. 11',
         relevance: 'Power reduced to its most primitive form: the ability to inflict pain.',
       },
     ],
@@ -197,7 +197,7 @@ const symbols: SymbolData[] = [
       'Democracy, order and the right to speak. Whoever holds the conch has the floor at assemblies. Its authority mirrors parliamentary procedure and civilised debate.',
     development: [
       "Found in Chapter 1 by Ralph and Piggy; its sound summons the boys and establishes Ralph's leadership.",
-      'Throughout the early chapters it maintains order at meetings -- "the conch counts here."',
+      'Throughout the early chapters it maintains order at meetings.',
       'Its power weakens as Jack increasingly ignores it: "And you shut up! Who are you, anyway?"',
       'It is carried to Castle Rock in Chapter 11 as a last appeal to justice.',
       'It shatters into "a thousand white fragments" when Piggy is killed, marking the death of democracy on the island.',
@@ -220,7 +220,7 @@ const symbols: SymbolData[] = [
     ],
     keyQuote: {
       text: '"The fire is the most important thing on the island."',
-      speaker: 'Ralph -- Ch. 2',
+      speaker: 'Ralph -- Ch. 5',
     },
   },
   {
@@ -231,7 +231,7 @@ const symbols: SymbolData[] = [
       'First mentioned in Chapter 2 by a littlun who sees a "snake-thing" in the jungle.',
       'In Chapter 5, the beast becomes a topic of serious debate; Simon suggests it is internal.',
       'The dead parachutist in Chapter 6 gives the beast a physical form the boys cannot explain.',
-      'In Chapter 8, the Lord of the Flies confirms to Simon that the beast is "part of you."',
+      'In Chapter 8, the Lord of the Flies confirms to Simon that the beast is "part of you".',
       "After Simon's death, the beast is never questioned again -- fear has triumphed over understanding.",
     ],
     keyQuote: {
@@ -246,7 +246,7 @@ const symbols: SymbolData[] = [
     development: [
       'Created in Chapter 8 when Jack\'s hunters mount a sow\'s head on a sharpened stake as a "gift for the beast."',
       'Simon encounters it in his secret clearing and hallucinates a conversation with it.',
-      "The head tells Simon that the beast is not something external: \"I'm part of you... I'm the reason why it's no go.\"",
+      "The head tells Simon that the beast is not something external: \"I'm part of you... I'm the reason why it's no go?\"",
       'It warns Simon that trying to share this truth will result in his death -- a prophecy fulfilled in Chapter 9.',
       "The Lord of the Flies is both literal (rotting pig's head covered in flies) and symbolic (the devil within).",
     ],
@@ -298,7 +298,7 @@ export default async function LotFThemesPage() {
               {await t('rev.texts.lotf.themes.badge')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              AQA / OCR / Eduqas
+              AQA / Edexcel / Eduqas
             </Badge>
           </div>
 
