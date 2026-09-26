@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { tMany } from '@/lib/i18n/t'
+import { linkEmails } from '@/components/common/link-emails'
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
@@ -106,7 +107,10 @@ export default async function TermsPage() {
     'terms.s15.p2_l2',
   ])
   let i = 0
-  const next = () => v[i++]
+  // Every string is rendered as JSX children, and four hold an email address
+  // mid-sentence, which Cloudflare's obfuscation breaks at hydration (React
+  // #418 on every production load until 26 September 2026). See linkEmails.
+  const next = () => linkEmails(v[i++])
 
   const title = next()
   const lastUpdatedLabel = next()
