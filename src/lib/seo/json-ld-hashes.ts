@@ -1,5 +1,22 @@
 /**
- * CSP hash-source generation for the /analysis/[...slug] JSON-LD scripts.
+ * The JSON-LD payloads for the /analysis/[...slug] pages.
+ *
+ * THE CSP HASHES THAT USED TO LIVE HERE WERE REMOVED ON 26 SEPTEMBER 2026,
+ * because they blanked every page they were for. The middleware appended a
+ * 'sha256-...' source for each JSON-LD body to script-src. Since 2 May 2026
+ * that directive has relied on 'unsafe-inline' (the nonce was dropped when
+ * Next stopped stamping it on framework scripts), and a browser ignores
+ * 'unsafe-inline' as soon as a hash or nonce source is present. So on these
+ * pages, and only these, every inline script was refused: Next's RSC stream
+ * and React's streaming reveal among them. The pages rendered blank for every
+ * visitor with JavaScript, 192 URLs in the sitemap. The hashes were never
+ * needed: a script of type application/ld+json is a data block, which the
+ * browser never executes, so script-src does not govern it.
+ *
+ * What remains is the payload builder, shared by the page so there is one
+ * definition of each script body.
+ *
+ * THE ORIGINAL RATIONALE, kept for the record:
  *
  * Why: that route is `force-static` + 24 h ISR, so the middleware cannot
  * thread a per-request nonce onto the three inline <script type="application/ld+json">
@@ -121,69 +138,4 @@ export function buildAnalysisJsonLdPayloads(
     : null
 
   return { articleJsonLd, breadcrumbJsonLd, faqJsonLd }
-}
-
-// ─── SHA-256 → base64 via Web Crypto (edge + Node 20 compatible) ────────
-
-async function sha256Base64(text: string): Promise<string> {
-  const bytes = new TextEncoder().encode(text)
-  const digest = await globalThis.crypto.subtle.digest('SHA-256', bytes)
-  // Convert ArrayBuffer → base64 without Buffer (edge-safe).
-  const view = new Uint8Array(digest)
-  let binary = ''
-  for (let i = 0; i < view.byteLength; i++) binary += String.fromCharCode(view[i])
-  // btoa is available in both edge runtime and Node 20+.
-  return btoa(binary)
-}
-
-// Per-process memoisation: first request for a slug hashes its payloads,
-// every subsequent request in the same isolate returns the cached result.
-const HASH_CACHE = new Map<string, string[]>()
-
-/**
- * Returns the CSP `'sha256-...'` source tokens for every JSON-LD script
- * rendered by `/analysis/[...slug]/page.tsx` for the given slug.
- *
- * @param slugKey 'category/subSlug' - the same string used as ANALYSIS_PAGE_MAP key
- * @returns Array of `'sha256-<base64>'` tokens (2 or 3 entries) or [] if slug unknown
- */
-export async function computeJsonLdHashes(slugKey: string): Promise<string[]> {
-  const cached = HASH_CACHE.get(slugKey)
-  if (cached) return cached
-
-  const entry = ANALYSIS_PAGE_MAP.get(slugKey)
-  if (!entry) return []
-
-  const ctx = getCategoryContext(entry.category)
-  const { articleJsonLd, breadcrumbJsonLd, faqJsonLd } = buildAnalysisJsonLdPayloads(entry, ctx)
-
-  const bodies: string[] = [JSON.stringify(articleJsonLd), JSON.stringify(breadcrumbJsonLd)]
-  if (faqJsonLd) bodies.push(JSON.stringify(faqJsonLd))
-
-  const hashes = await Promise.all(
-    bodies.map(async (body) => `'sha256-${await sha256Base64(body)}'`),
-  )
-
-  HASH_CACHE.set(slugKey, hashes)
-  return hashes
-}
-
-/**
- * Parse a request pathname and return the analysis slug key if it matches
- * the `/analysis/[category]/[sub-slug]` pattern, else null.
- *
- * Accepts paths with / without trailing slash and ignores query strings
- * (the caller already provides pathname only).
- */
-export function extractAnalysisSlugKey(pathname: string): string | null {
-  if (!pathname.startsWith('/analysis/')) return null
-  // Strip prefix, trailing slash, and any further segments beyond the
-  // two-level slug the catch-all route accepts.
-  const rest = pathname.slice('/analysis/'.length).replace(/\/$/, '')
-  const parts = rest.split('/')
-  if (parts.length !== 2) return null
-  const key = `${parts[0]}/${parts[1]}`
-  // Only return a key if we actually have that page registered - avoids
-  // wasting a hash compute on 404s and keeps CSP lean.
-  return ANALYSIS_PAGE_MAP.has(key) ? key : null
 }

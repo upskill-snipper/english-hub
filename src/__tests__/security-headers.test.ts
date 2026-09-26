@@ -143,6 +143,23 @@ describe('the content security policy', () => {
     // a list that changes legitimately whenever a vendor is added.
     expect(MIDDLEWARE_CODE).toMatch(/function buildCsp/)
   })
+
+  it("relies on 'unsafe-inline' for scripts, so carries no hash or nonce beside it", () => {
+    // A browser ignores 'unsafe-inline' as soon as script-src holds a
+    // 'sha256-...' or 'nonce-...' source, and then refuses every inline script
+    // on the page, Next's RSC stream and React's streaming reveal included.
+    // Until 26 September 2026 a per-route hash channel for the /analysis
+    // JSON-LD did exactly that: all 192 analysis pages rendered blank for
+    // visitors with JavaScript while every test here passed. Anything
+    // interpolated into script-src, other than the development-only eval,
+    // could smuggle one back in, so the directive may interpolate nothing else.
+    const line = MIDDLEWARE_CODE.split('\n').find((l) => l.includes('`script-src'))
+    expect(line, 'script-src has gone from the middleware').toBeTruthy()
+    expect(line).toContain("'unsafe-inline'")
+    expect(line).not.toMatch(/'sha(256|384|512)-|'nonce-|'strict-dynamic'/)
+    const interpolated = [...line!.matchAll(/\$\{(\w+)\}/g)].map((m) => m[1])
+    expect(interpolated).toEqual(['devEval'])
+  })
 })
 
 // ─── The dead module SEC-10 removed ─────────────────────────────────────────

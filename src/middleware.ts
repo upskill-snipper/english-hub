@@ -2,7 +2,6 @@ import { updateSession } from '@/lib/supabase/middleware'
 import ROUTE_REDIRECTS from '@/lib/seo/route-redirects.json'
 import { applyAffiliateTracking } from '@/middleware-affiliate'
 import { NextResponse, type NextRequest } from 'next/server'
-import { computeJsonLdHashes, extractAnalysisSlugKey } from '@/lib/seo/json-ld-hashes'
 import { BOARDS } from '@/lib/board/board-config'
 import { BOARD_SPECIFIC_PREFIXES } from '@/lib/board/gated-paths'
 import { boardToRememberFromPath } from '@/lib/board/remember-shelf-board'
@@ -291,9 +290,7 @@ function isBoardAllowlisted(pathname: string): boolean {
 // security drop is marginal. Re-introduce strict-dynamic once Next 15
 // ships server-side user-agent CSP tailoring, or once iOS 15.6 drops
 // below the support floor.
-function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
-  const extraSrc = extraScriptHashes.length ? ' ' + extraScriptHashes.join(' ') : ''
-
+function buildCsp(nonce: string): string {
   // ── 'unsafe-eval', IN DEVELOPMENT ONLY ────────────────────────────────────
   //
   // THE DEFECT (19 September 2026). This policy is applied on every response,
@@ -337,8 +334,14 @@ function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
   //
   // Scripts now run under `'self' 'unsafe-inline' + explicit host
   // allowlist (Stripe / Rewardful / GTM)` - same security envelope as
-  // before nonce-CSP, with the JSON-LD content-hash channel preserved
-  // for the `/analysis/[slug]` static route via `extraSrc`.
+  // before nonce-CSP.
+  //
+  // AND THEREFORE NO HASH OR NONCE SOURCE MAY EVER BE ADDED TO script-src.
+  // Either one makes the browser ignore 'unsafe-inline', and every inline
+  // script on the page is refused. That is not hypothetical: a JSON-LD
+  // content-hash channel for /analysis/[slug] survived the 2 May change and
+  // did exactly that until 26 September 2026, blanking all of those pages.
+  // JSON-LD needs no hash in any case: it is a data block, never executed.
   //
   // The unused `nonce` parameter is retained because callers still pass
   // it - re-introduce it once Next 15+ gives us reliable nonce stamping
@@ -358,7 +361,7 @@ function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
     //     (2026-08-23: all three were live in the page but silently BLOCKED by
     //     this policy - the TrustBox rendered only its fallback, review
     //     invitations never fired, and CF analytics collected nothing.)
-    `script-src 'self' 'unsafe-inline'${devEval}${extraSrc} https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com https://*.i.posthog.com https://widget.trustpilot.com https://invitejs.trustpilot.com https://static.cloudflareinsights.com`,
+    `script-src 'self' 'unsafe-inline'${devEval} https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com https://*.i.posthog.com https://widget.trustpilot.com https://invitejs.trustpilot.com https://static.cloudflareinsights.com`,
     `style-src 'self' 'unsafe-inline'`, // Tailwind JIT inlines styles; acceptable.
     `img-src 'self' data: https:`,
     `font-src 'self' data:`,
@@ -763,28 +766,6 @@ export async function middleware(request: NextRequest) {
     response = await updateSession(request)
   }
 
-  // For the `/analysis/[category]/[slug]` catch-all route we can't use the
-  // nonce (the page is `force-static`), so we append content hashes of the
-  // three JSON-LD scripts to the CSP instead. The helper memoises after the
-  // first hit per slug, so the crypto work runs at most 2-3 SHA-256 digests
-  // per cold slug and zero on warm paths.
-  let scriptHashes: string[] = []
-  // `servedPath`, not `pathname`: on /ar/analysis/... the route that renders
-  // is the stripped one, so looking the slug up by the prefixed path would
-  // miss the JSON-LD hashes and fall back to 'unsafe-inline' on exactly the
-  // pages that are force-static.
-  const analysisSlug = extractAnalysisSlugKey(servedPath)
-  if (analysisSlug) {
-    try {
-      scriptHashes = await computeJsonLdHashes(analysisSlug)
-    } catch {
-      // Hash compute should never throw for a registered slug, but if it
-      // does we degrade gracefully: the `'unsafe-inline'` fallback still
-      // carries old browsers, and we'd rather serve the page than 500.
-      scriptHashes = []
-    }
-  }
-
   // ── Remember the board a /set-texts/<board> URL names ─────────────────────
   //
   // THE DEFECT (19 September 2026). Choosing a board sends the student to
@@ -826,7 +807,7 @@ export async function middleware(request: NextRequest) {
   // Attach the per-request nonce + CSP to the response. Setting CSP here
   // lets us emit a fresh nonce per request; next.config.js only supports
   // static headers.
-  response.headers.set('Content-Security-Policy', buildCsp(nonce, scriptHashes))
+  response.headers.set('Content-Security-Policy', buildCsp(nonce))
   response.headers.set('x-nonce', nonce)
 
   // Standard security headers (complement the CSP above). These target

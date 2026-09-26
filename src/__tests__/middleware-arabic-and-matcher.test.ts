@@ -85,12 +85,15 @@ describe('the Arabic branch', () => {
     expect(calls.length).toBe(2)
   })
 
-  it('looks the analysis slug up by the route actually served', () => {
-    // On /ar/analysis/... the rendering route is the stripped one. Using the
-    // prefixed path would miss the JSON-LD hashes and drop the CSP back to
-    // 'unsafe-inline' on exactly the pages that are force-static.
-    expect(mw).toContain('extractAnalysisSlugKey(servedPath)')
-    expect(mw).not.toContain('extractAnalysisSlugKey(pathname)')
+  it('adds nothing to script-src per route, so unsafe-inline stays in force', () => {
+    // This test used to require the /analysis JSON-LD hash lookup, and called
+    // falling back to 'unsafe-inline' the failure. It was the other way round:
+    // the hashes switched 'unsafe-inline' off and blanked every analysis page
+    // (see src/lib/seo/json-ld-hashes.ts). The policy is now one string for
+    // every route.
+    expect(mw).not.toContain('extractAnalysisSlugKey')
+    expect(mw).not.toContain('computeJsonLdHashes')
+    expect(mw).toContain('buildCsp(nonce))')
   })
 
   it('keeps the Content-Language header it always set', () => {
