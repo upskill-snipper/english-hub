@@ -8,6 +8,8 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/much-ado-about-nothing'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Much Ado About Nothing GCSE - themes, characters, quotes',
@@ -713,6 +715,9 @@ export default async function MuchAdoAboutNothingPage() {
         <span>{await t('rev.texts.common.draft_guide_note_long')}</span>
       </div>
       <TextGuide data={data} />
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }

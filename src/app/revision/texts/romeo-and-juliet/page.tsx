@@ -9,6 +9,8 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
 import { t } from '@/lib/i18n/t'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/romeo-and-juliet'
 
 const RJ_FAQS: GeoFaqItem[] = [
   {
@@ -788,6 +790,9 @@ export default async function RomeoAndJulietPage() {
       <section className="mx-auto mt-12 max-w-3xl px-4">
         <GeoFaq faqs={RJ_FAQS} heading={await t('rev.texts.rj.faq_heading')} />
       </section>
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }

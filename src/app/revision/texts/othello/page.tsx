@@ -8,6 +8,8 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/othello'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Othello - Study Guide | The English Hub',
@@ -693,6 +695,9 @@ export default async function OthelloPage() {
         revisionTopics={REVISION_TOPICS}
       />
       <TextGuide data={data} />
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }

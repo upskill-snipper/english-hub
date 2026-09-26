@@ -8,6 +8,8 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/great-expectations'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Great Expectations GCSE - themes, characters, key quotes',
@@ -684,6 +686,9 @@ export default async function GreatExpectationsPage() {
         <span>{await t('rev.textgrp4.common.draft_note')}</span>
       </div>
       <TextGuide data={data} />
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }

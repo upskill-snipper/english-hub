@@ -8,6 +8,8 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/the-tempest'
 export const metadata: Metadata = {
   openGraph: {
     title: 'The Tempest revision guide - themes, characters, key quotes',
@@ -726,6 +728,9 @@ export default async function TheTempestPage() {
       </div>
 
       <TextGuide data={data} />
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }

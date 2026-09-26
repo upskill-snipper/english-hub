@@ -6,6 +6,8 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/the-merchant-of-venice'
 export const metadata: Metadata = {
   openGraph: {
     title: 'The Merchant of Venice - Study Guide | The English Hub',
@@ -250,6 +252,9 @@ export default async function TheMerchantOfVenicePage() {
         <span>{await t('rev.texts.common.draft_guide_note_long')}</span>
       </div>
       <TextGuide data={data} />
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }

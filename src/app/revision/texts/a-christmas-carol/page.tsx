@@ -9,6 +9,8 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
 import { t } from '@/lib/i18n/t'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/a-christmas-carol'
 
 const ACC_FAQS: GeoFaqItem[] = [
   {
@@ -795,6 +797,9 @@ export default async function AChristmasCarolPage() {
           .replace('{author}', 'Charles Dickens')
           .replace('{year}', '1843')}
       </p>
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }

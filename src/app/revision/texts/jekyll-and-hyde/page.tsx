@@ -9,6 +9,8 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/jekyll-and-hyde'
 
 const JH_FAQS: GeoFaqItem[] = [
   {
@@ -948,6 +950,9 @@ export default async function JekyllAndHydePage() {
           .replace('{year}', '1886')
           .replace('{author}', 'Robert Louis Stevenson')}
       </p>
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }
