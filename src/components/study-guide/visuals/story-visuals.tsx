@@ -58,9 +58,17 @@ export async function StoryVisuals({
     'theme_filter',
     'parts',
   ] as const
+  // The whole-text intro names the arc and the character map, so a page that
+  // shows the scene player alone says what it does show instead.
   const [heading, intro, ...values] = await Promise.all([
     t('study_guide.visuals.heading'),
-    t('study_guide.visuals.intro'),
+    t(
+      part
+        ? 'study_guide.visuals.intro_part'
+        : scenesOnly
+          ? 'study_guide.visuals.intro_scenes'
+          : 'study_guide.visuals.intro',
+    ),
     ...keys.map((k) => t(`study_guide.visuals.${k}`)),
   ])
   const v = Object.fromEntries(keys.map((k, i) => [k, values[i]])) as Record<

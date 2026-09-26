@@ -5,6 +5,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { t } from '@/lib/i18n/t'
+import { StoryVisuals } from '@/components/study-guide/visuals/story-visuals'
+import { guide as studyGuide } from '@/data/study-guides/an-inspector-calls'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -113,6 +115,9 @@ export default async function InspectorCallsAct3Page() {
           </p>
         </div>
       </section>
+
+      {/* The key scenes of Act 3, animated. See scripts/mount-story-visuals.mjs. */}
+      <StoryVisuals guide={studyGuide} part="Act 3" />
 
       <section className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 sm:p-5">
         <div className="flex gap-3">

@@ -97,6 +97,19 @@ export const STUDY_GUIDE_DICTIONARY: Record<string, { en: string; ar: string; es
     ar: 'شكل النص كامل، وكل لحظة مفتاحية بالترتيب، وشلون ترتبط الشخصيات ببعض.',
     es: 'La forma del texto completo, cada momento clave por turno y cómo se relacionan sus personajes.',
   },
+  // The intro above promises the arc and the character map. An act, chapter or
+  // stave page shows the scene player alone, so until 26 September 2026 it
+  // described two things the page did not have.
+  'study_guide.visuals.intro_part': {
+    en: 'Each key moment in this part of the text, in turn.',
+    ar: 'كل لحظة مفتاحية في هالجزء من النص، بالترتيب.',
+    es: 'Cada momento clave de esta parte del texto, por turno.',
+  },
+  'study_guide.visuals.intro_scenes': {
+    en: 'Each key moment in turn. Choose a part of the text to jump to it.',
+    ar: 'كل لحظة مفتاحية بالترتيب. اختار جزء من النص عشان تروح له.',
+    es: 'Cada momento clave por turno. Elige una parte del texto para ir a ella.',
+  },
   'study_guide.visuals.arc_title': {
     en: 'Tension arc',
     ar: 'منحنى التوتّر',

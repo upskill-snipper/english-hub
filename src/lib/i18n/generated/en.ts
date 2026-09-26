@@ -11962,6 +11962,9 @@ export const EN_MESSAGES: Record<string, string> = {
   'study_guide.visuals.heading': 'See it unfold',
   'study_guide.visuals.intro':
     'The shape of the whole text, each key moment in turn, and how the people in it connect.',
+  'study_guide.visuals.intro_part': 'Each key moment in this part of the text, in turn.',
+  'study_guide.visuals.intro_scenes':
+    'Each key moment in turn. Choose a part of the text to jump to it.',
   'study_guide.visuals.arc_title': 'Tension arc',
   'study_guide.visuals.arc_desc':
     'How tension rises and falls. Select a point to open that moment.',
