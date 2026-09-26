@@ -7,9 +7,11 @@
  * src/data/comics/<slug>/index.ts. The comics test checks every key has a
  * guide, and that each registry's own slug matches its key.
  *
- * Server only. The drawings are rendered on the server and reach the browser
- * as markup; nothing marked 'use client' may import this file, and the comics
- * test fails if one does.
+ * Server and build only. The drawings reach the browser as files rendered at
+ * build time (scripts/generate-comic-plates.mjs), never as markup in a page;
+ * the server reads this register for the pieces' words and sizes. Nothing
+ * marked 'use client' may import this file, directly or through another
+ * module, and the comics test fails if one does.
  */
 
 import type { ComicSet } from '@/lib/comics/types'

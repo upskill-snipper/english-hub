@@ -209,10 +209,16 @@ describe('what the suite runs in', () => {
     // mount, which only exists once a provider mounts and its effects run: run
     // against next-themes it fails the three OS-scheme mismatches, exactly the
     // combinations that made React discard the page's server HTML in a browser.
+    //
+    // Then to 25, the same day, for comics-motion-waits-for-its-drawing.test.tsx.
+    // What it guards is an ordering over time: a linocut piece in view stays
+    // armed until its fetched drawing arrives, and is released by a failure or
+    // a time limit. That is state set by effects, an observer and a settled
+    // fetch, none of which runs when a component is rendered to a string.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(24)
+    ).toBeLessThanOrEqual(25)
   })
 })
 

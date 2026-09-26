@@ -1,14 +1,20 @@
-import type { BoxAt, LinocutArt, PortraitMarker } from '@/lib/comics/types'
+import type { ReactNode } from 'react'
 
-import { PAPER, RED, SERIF } from './palette'
-import { Plate } from './plate'
-import { LinocutStyles, timing } from './styles'
+import type { BoxAt, PanelDescriptor } from '@/lib/comics/types'
+
 import { PaperGrain } from './textures'
+import { timing } from './timing'
 
 /**
- * The frames every piece is shown in: a panel on its sheet with its boxes, and
- * a portrait with its numbered markers. Server components, pure SVG, HTML and
- * CSS; the drawings they hold are the same.
+ * The frame a panel is shown in: the print on its sheet with its caption and
+ * quotation boxes. Pure HTML, SVG and CSS with no hooks and no drawing, so the
+ * browser can render it as well as the server: the key-moments player builds
+ * each panel's frame from a descriptor (see PanelDescriptor) and puts a
+ * LazyPlate inside, which fetches the drawing itself. The page's LinocutStyles
+ * supplies the styles.
+ *
+ * The drawing side, the <svg> plate, is plate.tsx, and never reaches a page's
+ * markup; see the docblock there.
  */
 
 /** A line of narration, in the guide's words. */
@@ -46,103 +52,17 @@ export function QuoteBox({ text, at = 'bottom-right' }: { text: string; at?: Box
  * with its caption and quotation pasted on. `lang="en"` because the art, its
  * alt text and its quotation are English on every locale, as the guide
  * content is.
+ *
+ * `children` is the plate: a LazyPlate on the site, the served file inlined in
+ * the preview script.
  */
-export function PanelFrame({
-  uid,
-  art,
-  alt,
-  quote,
-  quoteAt,
-  caption,
-  captionAt,
-}: {
-  uid: string
-  art: LinocutArt
-  alt: string
-  quote?: string
-  quoteAt?: BoxAt
-  caption?: string
-  captionAt?: BoxAt
-}) {
-  const Draw = art.Draw
+export function PanelFrame({ piece, children }: { piece: PanelDescriptor; children: ReactNode }) {
   return (
     <figure className="lc-sheet lc-panel" lang="en" dir="ltr">
-      <LinocutStyles />
-      <div className="lc-print lc-reveal">
-        <Plate uid={uid} width={art.width} height={art.height} label={alt}>
-          <Draw uid={uid} />
-        </Plate>
-      </div>
-      {caption && <CaptionBox text={caption} at={captionAt} />}
-      {quote && <QuoteBox text={quote} at={quoteAt} />}
-      <PaperGrain uid={uid} />
+      <div className="lc-print lc-reveal">{children}</div>
+      {piece.caption && <CaptionBox text={piece.caption} at={piece.captionAt} />}
+      {piece.quote && <QuoteBox text={piece.quote} at={piece.quoteAt} />}
+      <PaperGrain uid={piece.uid} />
     </figure>
-  )
-}
-
-/** One numbered disc, and the line to the feature it marks. */
-function Marker({ i, marker }: { i: number; marker: PortraitMarker }) {
-  const [x, y] = marker.at
-  return (
-    <g className="lc-marker" style={timing({ i })}>
-      {marker.to && (
-        <path
-          d={`M${x} ${y}L${marker.to[0]} ${marker.to[1]}`}
-          stroke={RED}
-          strokeWidth={1.5}
-          fill="none"
-        />
-      )}
-      <circle cx={x} cy={y} r={9.5} fill={RED} stroke={PAPER} strokeWidth={1.6} />
-      <text
-        x={x}
-        y={y + 4}
-        textAnchor="middle"
-        fontSize={11.5}
-        fontWeight={700}
-        fill={PAPER}
-        fontFamily={SERIF}
-      >
-        {i + 1}
-      </text>
-    </g>
-  )
-}
-
-/**
- * A portrait plate with its numbered markers, crisp above the roughened
- * drawing. The numbers are in the picture for sighted readers; the alt text
- * says what each one marks, and the card beside it prints the words.
- */
-export function PortraitFrame({
-  uid,
-  art,
-  alt,
-  markers,
-}: {
-  uid: string
-  art: LinocutArt
-  alt: string
-  markers: PortraitMarker[]
-}) {
-  const Draw = art.Draw
-  return (
-    <div className="lc-print lc-reveal">
-      <Plate
-        uid={uid}
-        width={art.width}
-        height={art.height}
-        label={alt}
-        overlay={
-          <g>
-            {markers.map((m, i) => (
-              <Marker key={m.phrase} i={i} marker={m} />
-            ))}
-          </g>
-        }
-      >
-        <Draw uid={uid} />
-      </Plate>
-    </div>
   )
 }

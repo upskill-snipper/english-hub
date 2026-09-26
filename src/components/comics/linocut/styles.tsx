@@ -1,17 +1,42 @@
-import type { CSSProperties } from 'react'
-
 import { INK, INK_SOFT, PAPER, RED, SERIF } from './palette'
+
+export { timing } from './timing'
+
+/**
+ * The finished print's own rules for two marks inside a plate: the push-in's
+ * final crop, and a shape that has faded out. Everything else inside a plate
+ * is styled by its own attributes; these two are CSS because the motion
+ * animates them.
+ *
+ * Apart from LINOCUT_CSS, which includes them, because every served plate file
+ * carries them as well (src/lib/comics/plate-file.tsx). A plate shown as an
+ * img element, to a reader with scripts off, to a crawler, or for the moment
+ * before its drawing is fetched, does not get the page's CSS; without these it
+ * would print the push-in uncropped and a faded shape still showing.
+ */
+export const PLATE_CSS =
+  '.lc-push{transform-box:view-box;transform:scale(var(--lc-push,1.035))}.lc-fade-out{opacity:0}'
 
 /**
  * Every rule a linocut piece needs: the sheet, the caption and quotation
  * boxes, the portrait card, and the shared motion. Plain CSS in one string,
  * rendered as a React 19 hoistable <style> (see LinocutStyles), so that:
  *
- * - the art stays server-rendered SVG with no client code at all;
+ * - the rules reach every drawing, including one fetched and inlined after
+ *   the page loaded (lazy-plate.tsx), because an inlined SVG is part of the
+ *   page and an img element would not be;
  * - the page carries the rules once however many pieces it shows, because
  *   React deduplicates hoisted styles by `href`;
  * - the preview script can inline exactly the same rules into a standalone
  *   page, so what an artist previews is what a student sees.
+ *
+ * A PLATE THAT NEVER ARRIVES. If its file cannot be fetched, the box keeps
+ * its image element, and a browser prints a broken image's alt text in its
+ * place. The print sets line-height 0 (so no gap opens under the drawing),
+ * and until 26 September 2026 that printed the whole description, a paragraph
+ * long, on one line over itself: an unreadable smear at the top of an empty
+ * sheet. The `.lc-art>img` rule gives that text a line height and the sheet's
+ * small print, so the reader gets the description instead of the drawing.
  *
  * Layout uses container queries on the sheet, not the viewport: a panel is
  * laid out by the width it is given, whether that is a phone or half a desktop
@@ -31,6 +56,7 @@ export const LINOCUT_CSS = `
 .lc-panel{container:lc-panel/inline-size;padding:8px}
 .lc-print{position:relative;line-height:0}
 .lc-plate{display:block;width:100%;height:auto}
+.lc-art>img{font:italic 14px/1.45 ${SERIF};color:${INK_SOFT};overflow:hidden}
 .lc-grain{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:multiply;z-index:3}
 .lc-box{position:relative;z-index:2;margin:10px 0 0;background:${PAPER};border:2px solid ${INK};box-shadow:3px 3px 0 ${INK};padding:6px 10px 7px;font-size:14px;line-height:1.35}
 .lc-box p{margin:0}
@@ -65,7 +91,7 @@ export const LINOCUT_CSS = `
 
 :is(.lc-armed,.lc-play) .lc-reveal{animation:lc-wipe .8s cubic-bezier(.3,.1,.2,1) var(--lc-delay,0s) both}
 @keyframes lc-wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
-.lc-push{transform-box:view-box;transform:scale(var(--lc-push,1.035))}
+${PLATE_CSS}
 :is(.lc-armed,.lc-play) .lc-push{animation:lc-push 3.8s ease-out var(--lc-delay,0s) both}
 @keyframes lc-push{from{transform:scale(1)}to{transform:scale(var(--lc-push,1.035))}}
 .lc-drift,.lc-drift-r{transform-box:view-box}
@@ -80,7 +106,6 @@ export const LINOCUT_CSS = `
 @keyframes lc-glow{0%,100%{opacity:1}50%{opacity:.25}}
 :is(.lc-armed,.lc-play) .lc-fade-in{animation:lc-fade-in var(--lc-dur,1s) ease-out var(--lc-delay,0s) both}
 @keyframes lc-fade-in{from{opacity:0}to{opacity:1}}
-.lc-fade-out{opacity:0}
 :is(.lc-armed,.lc-play) .lc-fade-out{animation:lc-fade-out var(--lc-dur,1.2s) ease-in var(--lc-delay,0s) both}
 @keyframes lc-fade-out{from{opacity:1}to{opacity:0}}
 .lc-rise{transform-box:fill-box;transform-origin:0 100%}
@@ -102,9 +127,15 @@ export const LINOCUT_CSS = `
 `
 
 /**
- * The rules above as a hoisted, deduplicated stylesheet. Rendered by every
- * frame, so a piece can never appear without its styles, and a page with ten
+ * The rules above as a hoisted, deduplicated stylesheet, so a page with ten
  * pieces still carries one copy.
+ *
+ * Rendered by the server wrappers that mount pieces (StoryVisuals and
+ * CharactersAsDescribed in src/components/study-guide/visuals/), not by the
+ * frames. The frames are rendered in the browser as well, and a frame that
+ * rendered this would put the whole stylesheet string into the client bundle.
+ * src/__tests__/comics-delivery.test.ts checks that both wrappers render it,
+ * so a piece cannot reach a page without its styles.
  */
 export function LinocutStyles() {
   return (
@@ -112,25 +143,4 @@ export function LinocutStyles() {
       {LINOCUT_CSS}
     </style>
   )
-}
-
-/**
- * Timing for one element, as CSS custom properties the motion rules read:
- * `delay` and `dur` in seconds, `push` for the push-in scale, `i` for a
- * marker's place in the stagger.
- */
-export function timing(t: {
-  delay?: number
-  dur?: number
-  push?: number
-  i?: number
-  origin?: [number, number]
-}): CSSProperties {
-  const s: Record<string, string | number> = {}
-  if (t.delay !== undefined) s['--lc-delay'] = `${t.delay}s`
-  if (t.dur !== undefined) s['--lc-dur'] = `${t.dur}s`
-  if (t.push !== undefined) s['--lc-push'] = t.push
-  if (t.i !== undefined) s['--lc-i'] = t.i
-  if (t.origin) s.transformOrigin = `${t.origin[0]}px ${t.origin[1]}px`
-  return s as CSSProperties
 }

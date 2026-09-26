@@ -1,10 +1,13 @@
 'use client'
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
-import type { KeyboardEvent, ReactNode, RefObject } from 'react'
+import type { KeyboardEvent, RefObject } from 'react'
 import { ChevronLeft, ChevronRight, MapPin, Pause, Play, Sparkles, Users } from 'lucide-react'
 
+import { PanelFrame } from '@/components/comics/linocut/frames'
+import { LazyPlate, PLATE_LOAD_MARGIN, prefetchPlate } from '@/components/comics/linocut/lazy-plate'
 import { PlayOnView } from '@/components/comics/linocut/play-on-view'
+import type { PanelDescriptor } from '@/lib/comics/types'
 import { partOf, showsPartChips } from '@/lib/study-guides/parts'
 import type { GuideMoment, GuideRelationship } from '@/lib/study-guides/types'
 
@@ -26,10 +29,14 @@ import type { GuideMoment, GuideRelationship } from '@/lib/study-guides/types'
  * sliding or autoplay. Autoplay never starts on its own: moving content has to
  * be started by the reader and can always be paused.
  *
- * COMIC PANELS. A moment with a linocut panel shows it above its text. The
- * panels arrive already rendered, from the server wrapper, keyed by moment
- * title; this file never imports the art (see story-visuals.tsx). Each panel's
- * own motion plays once, when it is on screen, through PlayOnView.
+ * COMIC PANELS. A moment with a linocut panel shows it above its text. This
+ * component is handed a descriptor per panel, keyed by moment title: plain
+ * data, never a drawing (see story-visuals.tsx for why, and what it cost when
+ * it was). It builds the frame from the descriptor, and a LazyPlate inside it
+ * fetches the plate file when the player nears the screen. From then on the
+ * next moment's plate is fetched ahead of the reader, so Next and autoplay
+ * find it waiting. This file never imports the art. Each panel's own motion
+ * plays once, when it is on screen, through PlayOnView.
  */
 
 export type StoryVisualsLabels = {
@@ -61,8 +68,8 @@ type Props = {
   labels: StoryVisualsLabels
   /** Scene player only, for an act or chapter page: no whole-text arc or map. */
   scenesOnly?: boolean
-  /** Server-rendered comic panels, keyed by the exact title of their moment. */
-  panels?: Record<string, ReactNode>
+  /** Comic panel descriptors, keyed by the exact title of their moment. */
+  panels?: Record<string, PanelDescriptor>
 }
 
 /** Whether the reader has asked for less motion. False on the server. */
@@ -79,8 +86,17 @@ function useReducedMotion(): boolean {
   return reduce
 }
 
-/** True once the element has been scrolled into view, and stays true. */
-function useSeen<T extends Element>(): [RefObject<T | null>, boolean] {
+const IN_VIEW: IntersectionObserverInit = { threshold: 0.25 }
+/** Near enough that its comic panels are about to be wanted: see LazyPlate. */
+const NEAR_VIEW: IntersectionObserverInit = { rootMargin: PLATE_LOAD_MARGIN }
+
+/**
+ * True once the element has been scrolled into view (or, with NEAR_VIEW,
+ * close to it), and stays true.
+ */
+function useSeen<T extends Element>(
+  init: IntersectionObserverInit = IN_VIEW,
+): [RefObject<T | null>, boolean] {
   const ref = useRef<T | null>(null)
   const [seen, setSeen] = useState(false)
   useEffect(() => {
@@ -90,18 +106,15 @@ function useSeen<T extends Element>(): [RefObject<T | null>, boolean] {
       setSeen(true)
       return
     }
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          setSeen(true)
-          io.disconnect()
-        }
-      },
-      { threshold: 0.25 },
-    )
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        setSeen(true)
+        io.disconnect()
+      }
+    }, init)
     io.observe(el)
     return () => io.disconnect()
-  }, [seen])
+  }, [seen, init])
   return [ref, seen]
 }
 
@@ -237,6 +250,19 @@ export function StoryVisualsClient({
   }, [timeline])
   const showParts = showsPartChips(timeline.map((m) => m.where))
   const currentPart = current ? partOf(current.where) : null
+
+  // ── The panels ──────────────────────────────────────────────────────────
+  // The current moment's plate loads itself (LazyPlate). Once the player is
+  // near the screen, the next moment's is fetched ahead of the reader too, so
+  // Next and autoplay find it already here and play its motion from the start.
+  const panel = current ? panels?.[current.title] : undefined
+  const [playerRef, playerNear] = useSeen<HTMLDivElement>(NEAR_VIEW)
+  useEffect(() => {
+    if (!playerNear || !panels) return
+    const next = timeline[index + 1]
+    const ahead = next ? panels[next.title] : undefined
+    if (ahead) prefetchPlate(ahead.src)
+  }, [playerNear, panels, timeline, index])
 
   const [mapRef, mapSeen] = useSeen<SVGSVGElement>()
   const mapDrawn = reduce || mapSeen
@@ -393,6 +419,7 @@ export function StoryVisualsClient({
 
       {/* ── Scene player ────────────────────────────────────────────── */}
       <div
+        ref={playerRef}
         className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-5 sm:p-6"
         onKeyDown={onKey}
       >
@@ -488,8 +515,12 @@ export function StoryVisualsClient({
             aria-live="polite"
             className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-right-6 motion-safe:duration-500"
           >
-            {panels?.[current.title] && (
-              <PlayOnView className="mb-5">{panels[current.title]}</PlayOnView>
+            {panel && (
+              <PlayOnView className="mb-5">
+                <PanelFrame piece={panel}>
+                  <LazyPlate plate={panel} />
+                </PanelFrame>
+              </PlayOnView>
             )}
             <p className="font-mono text-body-xs uppercase tracking-wider text-primary">
               {labels.momentOf} {index + 1} {labels.of} {timeline.length} &middot; {current.where}

@@ -1,10 +1,9 @@
 import type { ReactNode } from 'react'
 
-import type { Portrait } from '@/lib/comics/types'
+import type { PortraitDescriptor } from '@/lib/comics/types'
 
-import { PortraitFrame } from './frames'
-import { LinocutStyles, timing } from './styles'
 import { PaperGrain } from './textures'
+import { timing } from './timing'
 
 export type PortraitCardLabels = {
   /** Heads the numbered list of phrases: "The words the numbers point to". */
@@ -54,42 +53,42 @@ function markPassage(passage: string, phrases: string[]): ReactNode[] {
  * text the whole passage is printed with the numbers set into it; for a text
  * in copyright, the phrases alone.
  *
- * Pure and server-rendered. The one visible label comes in as a prop, already
- * translated, so the preview script can render this without a request. The
- * portrait's own words stay in English, marked `lang="en"`, as all guide
- * content is.
+ * `children` is the plate. On the site that is a LazyPlate, which fetches the
+ * drawing when the card nears the screen; in the preview script it is the
+ * served file itself, inlined, which is what the LazyPlate becomes. The card
+ * never holds the drawing, so it is safe for the browser to render: it is
+ * given a descriptor, plain data (see PortraitDescriptor), not the art.
+ *
+ * Pure, no hooks. The one visible label comes in as a prop, already
+ * translated. The portrait's own words stay in English, marked `lang="en"`, as
+ * all guide content is. The page's LinocutStyles supplies the styles.
  */
 export function PortraitCard({
-  uid,
-  portrait,
+  piece,
   labels,
   headingLevel = 'h3',
+  children,
 }: {
-  uid: string
-  portrait: Portrait
+  piece: PortraitDescriptor
   labels: PortraitCardLabels
   headingLevel?: 'h2' | 'h3' | 'h4'
+  /** The plate: a LazyPlate on the site. */
+  children: ReactNode
 }) {
   const Heading = headingLevel
-  const phrases = portrait.describedBy.map((m) => m.phrase)
+  const { uid, phrases } = piece
   return (
     <article className="lc-sheet lc-card" dir="ltr" aria-labelledby={`${uid}-name`}>
-      <LinocutStyles />
       <Heading id={`${uid}-name`} className="lc-card-name" lang="en">
-        {portrait.name}
+        {piece.name}
       </Heading>
       <div className="lc-card-body">
-        <PortraitFrame
-          uid={uid}
-          art={portrait.art}
-          alt={portrait.alt}
-          markers={portrait.describedBy}
-        />
+        <div className="lc-print lc-reveal">{children}</div>
         <div className="lc-card-text">
-          {portrait.passage ? (
+          {piece.passage ? (
             <blockquote className="lc-passage" lang="en">
-              <p style={{ margin: 0 }}>{markPassage(portrait.passage, phrases)}</p>
-              <span className="lc-source">{portrait.where}</span>
+              <p style={{ margin: 0 }}>{markPassage(piece.passage, phrases)}</p>
+              <span className="lc-source">{piece.where}</span>
             </blockquote>
           ) : (
             <>
@@ -111,18 +110,18 @@ export function PortraitCard({
                 ))}
               </ol>
               <p className="lc-source" lang="en">
-                {portrait.where}
+                {piece.where}
               </p>
             </>
           )}
-          {portrait.note && (
+          {piece.note && (
             <p className="lc-note" lang="en">
-              {portrait.note}
+              {piece.note}
             </p>
           )}
-          {portrait.artNote && (
+          {piece.artNote && (
             <p className="lc-small" lang="en">
-              {portrait.artNote}
+              {piece.artNote}
             </p>
           )}
         </div>

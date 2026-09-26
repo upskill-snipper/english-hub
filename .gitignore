@@ -56,3 +56,9 @@ __pycache__/
 
 # Operator scratch space - dumps and one-off analysis scripts, never shipped.
 scratch/
+
+# Linocut comic plates, one SVG per registered piece, rendered from
+# src/data/comics by scripts/generate-comic-plates.mjs in prebuild, predev and
+# pretest. Build output: the drawings' source is the TSX, and the manifest that
+# names these files (src/lib/comics/plates.generated.ts) is committed.
+/public/comics/

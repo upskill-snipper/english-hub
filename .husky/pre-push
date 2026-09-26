@@ -36,6 +36,25 @@ npx tsc --noEmit || {
   exit 1
 }
 
+# THE COMIC PLATES (26 September 2026). Each drawing is served as its own file
+# under public/comics/, which is generated and gitignored, so a fresh checkout
+# has none and comics-delivery.test.ts would fail on a missing file rather than
+# on anything wrong. `npm test` generates them in pretest; this hook runs vitest
+# directly, so it generates them here. And if generating rewrites the committed
+# manifest, a drawing changed without it: the tests would pass on the fresh
+# local manifest while the push carried the stale one, so that is refused.
+node scripts/generate-comic-plates.mjs || {
+  echo ""
+  echo "pre-push FAILED: scripts/generate-comic-plates.mjs"
+  exit 1
+}
+git diff --quiet -- src/lib/comics/plates.generated.ts || {
+  echo ""
+  echo "pre-push FAILED: src/lib/comics/plates.generated.ts changed when the plates were"
+  echo "generated. Commit it with the drawing that changed it."
+  exit 1
+}
+
 npx vitest run || {
   echo ""
   echo "pre-push FAILED: vitest run"

@@ -104,3 +104,44 @@ export interface ComicSet {
   panels: ComicPanel[]
   portraits: Portrait[]
 }
+
+// ── What the page is given ────────────────────────────────────────────────────
+//
+// A page never carries a drawing. Each plate is a file of its own under
+// /comics/, and the page is handed these descriptors instead: plain data, a few
+// kilobytes at most, built by src/lib/comics/descriptors.ts. The browser
+// fetches the file when the piece is about to be seen. Why: see the docblock of
+// src/components/study-guide/visuals/story-visuals.tsx.
+
+/** One served plate: where its file is, its drawing's size, and its alt text. */
+export interface PlateRef {
+  /** Same-origin and content-hashed: /comics/<slug>/<key>.<hash>.svg */
+  src: string
+  /** The drawing's own width and height, so the page reserves its shape before it arrives. */
+  width: number
+  height: number
+  /** The alt text, on the page from the first byte, whether or not the drawing ever loads. */
+  alt: string
+}
+
+/** A panel as the key-moments player is given it. */
+export interface PanelDescriptor extends PlateRef {
+  /** The piece's id prefix (pieceUid): its paper grain's filter id is built from it. */
+  uid: string
+  quote?: string
+  quoteAt?: BoxAt
+  caption?: string
+  captionAt?: BoxAt
+}
+
+/** A portrait as the gallery is given it: the card's words, and where its plate is. */
+export interface PortraitDescriptor extends PlateRef {
+  uid: string
+  name: string
+  where: string
+  /** The marker phrases, in marker order. Their positions are in the plate file. */
+  phrases: string[]
+  passage?: string
+  note?: string
+  artNote?: string
+}

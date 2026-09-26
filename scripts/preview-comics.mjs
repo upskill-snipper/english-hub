@@ -13,11 +13,21 @@
  *
  * WHAT IT DOES. It loads the registry through Vite's SSR module loader, which
  * compiles the TSX and resolves "@/" exactly as vitest does, and renders every
- * piece with react-dom/server through the same RegisteredPanel and
- * RegisteredPortrait components the site uses, into one standalone HTML page
- * carrying the same LINOCUT_CSS. Then Playwright, in the installed Chrome,
- * screenshots each piece: the finished print at desktop and phone widths, the
- * reduced-motion render, and any --at frames.
+ * piece as a student's browser ends up showing it: the frame the site builds
+ * from the piece's descriptor, with the plate file inlined where the LazyPlate
+ * was. The plate is the very file the site serves, rendered by the same
+ * src/lib/comics/plate-file.tsx that scripts/generate-comic-plates.mjs writes
+ * public/comics/ with, so what an artist previews is what is fetched. All of
+ * it goes into one standalone HTML page carrying the same LINOCUT_CSS. Then
+ * Playwright, in the installed Chrome, screenshots each piece: the finished
+ * print at desktop and phone widths, the reduced-motion render, and any --at
+ * frames. The KB it prints for each piece is the size of its plate file, the
+ * download a student's phone makes when it reaches that piece.
+ *
+ * It previews the drawing as it is in the source, whether or not the files in
+ * public/comics/ have been regenerated since; the site shows the regenerated
+ * ones, so run scripts/generate-comic-plates.mjs before checking a redrawn
+ * piece on the dev server.
  *
  * WHAT IT REFUSES. The page must log no error and request nothing over the
  * network: a piece that did would break the "nothing external" rule on the
@@ -87,14 +97,13 @@ try {
     process.exit(2)
   }
   const set = await load()
-  const { RegisteredPanel, RegisteredPortrait, LINOCUT_CSS } = await vite.ssrLoadModule(
-    '/src/components/comics/linocut/index.ts',
-  )
+  const { LINOCUT_CSS } = await vite.ssrLoadModule('/src/components/comics/linocut/styles.tsx')
+  const { panelAsSeen, panelPlateFile, portraitAsSeen, portraitPlateFile } =
+    await vite.ssrLoadModule('/src/lib/comics/plate-file.tsx')
   const { STUDY_GUIDE_DICTIONARY } = await vite.ssrLoadModule(
     '/src/lib/i18n/dictionary-study-guide.ts',
   )
-  // The same React the modules above were given: Vite leaves node_modules to Node.
-  const { createElement: h } = require('react')
+  // The same react-dom the modules above were given: Vite leaves node_modules to Node.
   const { renderToStaticMarkup } = require('react-dom/server')
 
   const match = (key) => !args.only || key.toLowerCase().includes(args.only.toLowerCase())
@@ -106,22 +115,30 @@ try {
   const pieces = [
     ...set.panels
       .filter((p) => match(p.moment))
-      .map((p, i) => ({
-        id: `panel-${i + 1}`,
-        name: p.moment,
-        width: 960,
-        mobile: 343,
-        node: h(RegisteredPanel, { slug: set.slug, panel: p }),
-      })),
+      .map((p, i) => {
+        const file = panelPlateFile(set.slug, p)
+        return {
+          id: `panel-${i + 1}`,
+          name: p.moment,
+          width: 960,
+          mobile: 343,
+          file,
+          node: panelAsSeen(set.slug, p, file),
+        }
+      }),
     ...set.portraits
       .filter((p) => match(p.name))
-      .map((p, i) => ({
-        id: `portrait-${i + 1}`,
-        name: p.name,
-        width: 760,
-        mobile: 343,
-        node: h(RegisteredPortrait, { slug: set.slug, portrait: p, labels }),
-      })),
+      .map((p, i) => {
+        const file = portraitPlateFile(set.slug, p)
+        return {
+          id: `portrait-${i + 1}`,
+          name: p.name,
+          width: 760,
+          mobile: 343,
+          file,
+          node: portraitAsSeen(set.slug, p, labels, file),
+        }
+      }),
   ]
   if (pieces.length === 0) {
     console.error(`Nothing matches --only "${args.only}".`)
@@ -164,7 +181,7 @@ ${blocks}
   const kb = (s) => (Buffer.byteLength(s) / 1024).toFixed(1)
   console.log(`wrote ${file} (${kb(page)} KB)`)
   for (const p of pieces)
-    console.log(`  ${p.id}: ${p.name}, ${kb(renderToStaticMarkup(p.node))} KB of markup`)
+    console.log(`  ${p.id}: ${p.name}, ${kb(p.file.svg)} KB plate file (${p.file.src})`)
 
   const { chromium } = require('playwright')
   const browser = await chromium.launch({ channel: 'chrome' })

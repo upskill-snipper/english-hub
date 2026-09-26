@@ -96,9 +96,12 @@
  *
  * ── ACCESSIBILITY ───────────────────────────────────────────────────────────
  * Every piece is one role="img" with its `alt` as aria-label (the Plate sets
- * both; a drawing cannot opt out). Write the alt for someone who will never
- * see it: who is there, what they are doing, where, and what the red marks. A
- * portrait's alt names what each numbered marker points to.
+ * both; a drawing cannot opt out). On the page, the box the plate is fetched
+ * into carries the same role and label from the first byte of HTML, so the
+ * description is there while the drawing loads, and if it never does. Write
+ * the alt for someone who will never see it: who is there, what they are
+ * doing, where, and what the red marks. A portrait's alt names what each
+ * numbered marker points to.
  *
  * ── MOTION (styles.tsx) ─────────────────────────────────────────────────────
  * CSS only, and only these classes, so every piece moves the same way:
@@ -115,7 +118,10 @@
  * within about four seconds of the piece arriving on screen. The finished
  * print is the base style; motion only animates towards it, so with reduced
  * motion, in print, or with scripts off, the reader gets the whole picture at
- * once. Motion starts when a piece scrolls into view (PlayOnView), once.
+ * once. Motion starts when a piece scrolls into view (PlayOnView), once. A
+ * base style for a mark INSIDE a plate (today the push-in's crop and a faded
+ * shape) belongs in PLATE_CSS, which every plate file also carries, or the
+ * file shown as an img element will not be the finished print.
  *
  * ── RULES FOR THE CODE ──────────────────────────────────────────────────────
  * - A drawing is a LinocutArt ({ width, height, Draw }) whose Draw returns SVG
@@ -124,23 +130,58 @@
  * - Nothing external: no web fonts, no image elements, no URLs, no data: URIs. The
  *   only url reference is to a fragment, one of the piece's own ids, prefixed with
  *   the `uid` prop.
- * - Weight: the whole of a piece reaches the page as markup, and the player
- *   sends every panel of a text with the page. Keep a panel under about 90 KB
- *   of markup (the preview prints the figure; the test enforces a ceiling).
+ * - Weight: a plate is fetched whole, on a phone, when the reader reaches it.
+ *   Keep a panel's file under about 90 KB (the preview prints the figure; the
+ *   test enforces a ceiling).
+ *
+ * ── HOW A PIECE REACHES THE PAGE ────────────────────────────────────────────
+ * Never as markup in the page. Each plate is rendered at build time to a file
+ * of its own, public/comics/<slug>/<key>.<hash>.svg, by
+ * scripts/generate-comic-plates.mjs (prebuild, predev and pretest run it; run
+ * it by hand after drawing or registering a piece while the dev server is up).
+ * The page is handed a descriptor per piece, plain data: the file's URL, the
+ * drawing's width and height, the alt text, and the caption, quotation or
+ * card text, which are HTML in the frame. LazyPlate (lazy-plate.tsx) shows
+ * an img element of the file until the piece nears the screen, then fetches
+ * the file and inlines it, so the page's motion CSS reaches it. The
+ * key-moments player fetches the next moment's plate ahead of the reader. A
+ * piece that comes into view before its file has arrived stays armed until it
+ * does (useHoldMotion in play-on-view.tsx), so its motion plays with the
+ * drawing and not over an empty sheet; a failed fetch, or PLATE_WAIT_MS in
+ * view, lets it play without. If the file never loads, the sheet shows the
+ * alt text in small print where the drawing would be.
+ *
+ * Why (26 September 2026): the drawings used to be rendered into the page,
+ * and the player was handed every panel of its text as React elements, so
+ * each drawing was serialised into the page's RSC payload as well as its HTML
+ * whether or not the student ever opened that moment. A Christmas Carol's page
+ * was 3.3 MB of HTML and 672 KB on the wire, against 476 KB and 58 KB for a
+ * text with no comics. src/__tests__/comics-delivery.test.ts fails if a client
+ * component is ever handed a drawing again, and checks there is one served
+ * file per piece holding that piece's plate.
+ *
+ * Which modules may reach the browser: frames.tsx, portrait-card.tsx,
+ * lazy-plate.tsx, play-on-view.tsx and what they import (timing, textures,
+ * palette). Never plate.tsx, carve.ts, this barrel or anything in
+ * src/data/comics; the comics test follows every client module's imports to
+ * check.
  *
  * ── HOW TO PREVIEW ──────────────────────────────────────────────────────────
  *   node scripts/preview-comics.mjs <slug> [--only <name>] [--at 400,1500]
- * renders the registered pieces into a standalone page and screenshots them
- * with Playwright in Chrome: desktop, phone, reduced motion and any frames
- * mid-motion. Details at the top of src/data/comics/a-christmas-carol/index.ts.
- * Look at every PNG before calling a piece done.
+ * renders the registered pieces into a standalone page, each in its frame with
+ * the very file the site serves inlined, as a student's browser ends up with
+ * it, and screenshots them with Playwright in Chrome: desktop, phone, reduced
+ * motion and any frames mid-motion. Details at the top of
+ * src/data/comics/a-christmas-carol/index.ts. Look at every PNG before calling
+ * a piece done.
  */
 
 export { INK, PAPER, RED, INK_SOFT, PALETTE, SERIF, LINE, TEXTURE_SEEDS } from './palette'
 export * from './carve'
 export { PlateFilters, PaperGrain, textureIds } from './textures'
-export { LINOCUT_CSS, LinocutStyles, timing } from './styles'
-export { Plate } from './plate'
-export { PanelFrame, PortraitFrame, CaptionBox, QuoteBox } from './frames'
+export { LINOCUT_CSS, PLATE_CSS, LinocutStyles } from './styles'
+export { timing } from './timing'
+export { Plate, PanelPlate, PortraitPlate } from './plate'
+export { PanelFrame, CaptionBox, QuoteBox } from './frames'
 export { PortraitCard, type PortraitCardLabels } from './portrait-card'
 export { RegisteredPanel, RegisteredPortrait } from './pieces'

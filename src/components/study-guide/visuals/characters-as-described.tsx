@@ -1,10 +1,12 @@
 import { ScanFace } from 'lucide-react'
 
-import { RegisteredPortrait } from '@/components/comics/linocut/pieces'
-import { PlayOnView } from '@/components/comics/linocut/play-on-view'
+import { LinocutStyles } from '@/components/comics/linocut/styles'
 import { loadComics } from '@/lib/comics/load'
+import { servedPortrait } from '@/lib/comics/served'
 import { t } from '@/lib/i18n/t'
 import type { StudyGuide } from '@/lib/study-guides/types'
+
+import { CharacterPortrait } from './character-portrait'
 
 /**
  * "Characters as described": a linocut portrait of each character the text
@@ -13,10 +15,21 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * becomes a face; for one revising quotations, the face is a way to hold the
  * words.
  *
- * A server component. The portraits come from src/data/comics/<slug>/ and are
- * rendered here; PlayOnView, the one client piece, only adds the class that
- * starts their motion when they scroll into view. Renders nothing for a text
+ * A server component that hands each card a descriptor (src/lib/comics/
+ * descriptors.ts): the character's name, the words, and the URL, size and alt
+ * text of the portrait's plate file. CharacterPortrait renders the card and
+ * fetches the plate when the card nears the screen. Renders nothing for a text
  * with no portraits yet, so GuideSupplement can mount it for every text.
+ *
+ * WHAT BROKE, AND WHY (26 September 2026). The portraits used to be rendered
+ * here in full and passed to PlayOnView as children. Children a server
+ * component hands a client component are serialised into the RSC payload as
+ * well as the HTML, so every portrait was on the page twice, whether or not
+ * the student scrolled to it: all ten of A Christmas Carol's portraits, 23 to
+ * 78 KB of markup each, were in its HTML and again in its payload. Now the
+ * page carries a few kilobytes per portrait, and
+ * src/__tests__/comics-delivery.test.ts fails if a drawing is ever handed to
+ * the client again.
  */
 export async function CharactersAsDescribed({
   guide,
@@ -36,9 +49,13 @@ export async function CharactersAsDescribed({
   const Heading = headingLevel
   const id = `guide-${guide.slug}-characters-as-described`
   const several = comics.portraits.length > 1
+  const labels = { markers }
 
   return (
     <section aria-labelledby={id}>
+      {/* The cards' stylesheet, hoisted into <head> once. The cards are
+          rendered by the client and do not carry it (see styles.tsx). */}
+      <LinocutStyles />
       <div className="mb-5 flex items-center gap-3">
         <ScanFace className="size-5 text-primary" aria-hidden="true" />
         <div>
@@ -50,14 +67,12 @@ export async function CharactersAsDescribed({
       </div>
       <div className={several ? 'grid gap-6 lg:grid-cols-2' : undefined}>
         {comics.portraits.map((portrait) => (
-          <PlayOnView key={portrait.name}>
-            <RegisteredPortrait
-              slug={guide.slug}
-              portrait={portrait}
-              labels={{ markers }}
-              headingLevel={headingLevel === 'h2' ? 'h3' : 'h4'}
-            />
-          </PlayOnView>
+          <CharacterPortrait
+            key={portrait.name}
+            piece={servedPortrait(guide.slug, portrait)}
+            labels={labels}
+            headingLevel={headingLevel === 'h2' ? 'h3' : 'h4'}
+          />
         ))}
       </div>
     </section>

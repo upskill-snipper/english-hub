@@ -41,8 +41,22 @@ describe('the shared redirect table', () => {
     // been added back inline - it just forbids ever adding a redirect. So:
     // the 21 extracted rules are still here, and next.config.js carries
     // exactly one `source:` literal, the headers block asserted below.
+    //
+    // On 26 September 2026 the same count failed a legitimate HEADER (the
+    // year-long cache for the linocut plates under /comics/), for the same
+    // reason. So it now asserts the invariant itself: redirects() writes no
+    // rule inline and returns the shared table, and every `source:` literal in
+    // the file belongs to headers().
     expect(ROUTE_REDIRECTS.redirects.length).toBeGreaterThanOrEqual(21)
-    expect((NEXT_CONFIG.match(/source: '/g) || []).length).toBe(1)
+    const redirectsAt = NEXT_CONFIG.indexOf('async redirects()')
+    const headersAt = NEXT_CONFIG.indexOf('async headers()')
+    expect(redirectsAt, 'redirects() is found').toBeGreaterThan(-1)
+    expect(headersAt, 'headers() follows it').toBeGreaterThan(redirectsAt)
+    const redirectsFn = NEXT_CONFIG.slice(redirectsAt, headersAt)
+    expect(redirectsFn).toContain('return ROUTE_REDIRECTS.redirects')
+    expect(redirectsFn, 'a redirect written inline').not.toMatch(/source:/)
+    const inHeaders = (NEXT_CONFIG.slice(headersAt).match(/source: '/g) || []).length
+    expect((NEXT_CONFIG.match(/source: '/g) || []).length).toBe(inHeaders)
   })
 
   it('is read by next.config.js rather than duplicated there', () => {

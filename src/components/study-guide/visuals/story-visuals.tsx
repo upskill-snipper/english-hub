@@ -1,8 +1,9 @@
-import type { ReactNode } from 'react'
 import { Clapperboard } from 'lucide-react'
 
-import { RegisteredPanel } from '@/components/comics/linocut/pieces'
+import { LinocutStyles } from '@/components/comics/linocut/styles'
 import { loadComics } from '@/lib/comics/load'
+import { servedPanel } from '@/lib/comics/served'
+import type { PanelDescriptor } from '@/lib/comics/types'
 import { t } from '@/lib/i18n/t'
 import { inPart, showsPartChips } from '@/lib/study-guides/parts'
 import type { StudyGuide } from '@/lib/study-guides/types'
@@ -13,13 +14,30 @@ import { StoryVisualsClient, type StoryVisualsLabels } from './story-visuals-cli
  * labels in the reader's locale and hands the guide's timeline and character
  * map to the animated client component.
  *
- * COMIC PANELS (26 September 2026). Where a text has linocut panels registered
- * in src/data/comics/<slug>/, each is rendered HERE, on the server, and handed
- * to the client as a finished React element keyed by its moment's title. The
- * client only chooses which one to show. So the drawings, and the carving code
- * that builds them, never enter the client bundle; the page carries their
- * markup instead. Only panels for moments in this timeline are sent, so an act
- * page sends that act's panels and no others.
+ * COMIC PANELS: DESCRIPTORS, NOT DRAWINGS. Where a text has linocut panels
+ * registered in src/data/comics/<slug>/, the player is handed one small
+ * descriptor per panel (src/lib/comics/descriptors.ts): the URL of the
+ * panel's plate file, its width and height, its alt text, and its caption and
+ * quotation, which are HTML in the frame. The browser fetches a plate only
+ * when it is about to be seen: the current moment's once the player nears the
+ * screen, and the next moment's ahead of the reader (lazy-plate.tsx). Only
+ * panels for moments in this timeline are described, so an act page describes
+ * that act's panels and no others.
+ *
+ * WHAT BROKE, AND WHY (measured on production, 26 September 2026). Until then
+ * every panel was rendered HERE, on the server, and handed to the client as a
+ * finished React element. The client only chose which one to show, but a
+ * server-rendered element passed to a client component is serialised into the
+ * page's RSC payload, so every drawing of the text rode in every page load
+ * whether or not the student opened that moment. A Christmas Carol's page was
+ * 3.3 MB of HTML, 2.36 MB of it that payload, 672 KB on the wire; Macbeth's
+ * 3.7 MB and 752 KB; An Inspector Calls, with no comics, 476 KB and 58 KB.
+ * Romeo and Juliet, drawn but unpublished, was 6.2 MB in development, and
+ * twenty more texts were queued. Many readers are children on phones, and
+ * these are the site's search entry pages. The plates are now files of their
+ * own, written at build time by scripts/generate-comic-plates.mjs, and a page
+ * carries a few kilobytes per panel. src/__tests__/comics-delivery.test.ts
+ * fails if the player is ever handed a drawing again.
  *
  * `headingLevel` follows the page it sits in: an h2 on a guide page, an h3
  * inside a supplement block that already has its own h2.
@@ -120,16 +138,20 @@ export async function StoryVisuals({
       : [...new Set(timeline.flatMap((m) => m.themes))]
 
   const comics = await loadComics(guide.slug)
-  const panels: Record<string, ReactNode> = {}
+  const panels: Record<string, PanelDescriptor> = {}
   for (const panel of comics?.panels ?? [])
     if (timeline.some((m) => m.title === panel.moment))
-      panels[panel.moment] = <RegisteredPanel slug={guide.slug} panel={panel} />
+      panels[panel.moment] = servedPanel(guide.slug, panel)
+  const hasPanels = Object.keys(panels).length > 0
 
   const Heading = headingLevel
   const id = `guide-${guide.slug}-visuals`
 
   return (
     <section aria-labelledby={id}>
+      {/* The panels' stylesheet, hoisted into <head> once. The frames are
+          rendered by the client and do not carry it (see styles.tsx). */}
+      {hasPanels && <LinocutStyles />}
       <div className="mb-5 flex items-center gap-3">
         <Clapperboard className="size-5 text-primary" aria-hidden="true" />
         <div>
@@ -145,7 +167,7 @@ export async function StoryVisuals({
         themes={themes}
         labels={labels}
         scenesOnly={scenesOnly}
-        panels={panels}
+        panels={hasPanels ? panels : undefined}
       />
     </section>
   )

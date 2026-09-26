@@ -137,6 +137,19 @@ const nextConfig = {
           { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
         ],
       },
+      // ─── Linocut comic plates: cache for a year ─────────────────────────────
+      //
+      // One SVG per drawing, written to public/comics/ at build time by
+      // scripts/generate-comic-plates.mjs and fetched by a page only when the
+      // drawing is about to be seen. Each name carries a hash of the file's
+      // contents (<key>.<hash>.svg), so a redrawn plate is a new URL and the
+      // old one can be kept forever. Without this header Vercel serves public
+      // files with max-age=0, and a student stepping back through the key
+      // moments would revalidate every drawing on every visit.
+      {
+        source: '/comics/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+      },
     ]
   },
 }
