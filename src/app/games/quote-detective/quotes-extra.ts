@@ -139,10 +139,8 @@ export const quoteDetectiveExtra: QuoteEntryExtra[] = [
   { quote: 'Kill the pig. Cut her throat. Spill her blood.', text: 'Lord of the Flies' },
   { quote: "Maybe there is a beast... maybe it's only us.", text: 'Lord of the Flies' },
 
-  // ── Blood Brothers / A View From The Bridge (5) ────────────────────────────
+  // ── Blood Brothers / A View From The Bridge (3; two Blood Brothers cards quoting song lyrics were removed on 26 September 2026) ────────────────────────────
   { quote: 'I wish I was, our Sammy.', text: 'Blood Brothers' },
-  { quote: "Did y' know that the devil's got your number?", text: 'Blood Brothers' },
-  { quote: "There's a full moon shining and a joker in the pack.", text: 'Blood Brothers' },
   {
     quote: 'He allowed himself to be wholly known and for that he was destroyed.',
     text: 'A View from the Bridge',

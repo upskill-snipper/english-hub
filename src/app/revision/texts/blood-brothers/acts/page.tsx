@@ -52,7 +52,7 @@ const ACT_1: SceneBlock[] = [
           'Opens as a ballad already told, creating dramatic irony. The audience watches knowing the outcome, which shifts attention from plot to cause.',
       },
       {
-        text: '"You know the devil\'s got your number."',
+        text: "[The Narrator's refrain warning that the devil has come to collect: the lyric is not reproduced here]",
         speaker: 'Narrator',
         analysis:
           'Russell layers superstitious language over social-realist drama. The "devil" functions as a metaphor for the class system that stalks both boys.',
@@ -178,7 +178,7 @@ const ACT_2: SceneBlock[] = [
           "Mickey's final cry of class rage. Russell gives him the play's thesis in ordinary speech, making the political argument viscerally human.",
       },
       {
-        text: '"Tell me it\'s not true, say it\'s just a story."',
+        text: "[Mrs Johnstone's closing song, Tell Me It's Not True: the lyric is not reproduced here]",
         speaker: 'Mrs Johnstone',
         analysis:
           'The closing song asks the audience to refuse inevitability. Russell implicates the viewers: if they are moved, they must ask why society allows this.',

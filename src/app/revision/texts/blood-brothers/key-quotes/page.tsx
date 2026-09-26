@@ -53,7 +53,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 2,
-    text: '"You know the devil\'s got your number."',
+    text: "[The Narrator's refrain warning that the devil has come to collect: the lyric is not reproduced here]",
     speaker: 'Narrator',
     context: 'Recurring refrain throughout the play',
     analysis:
@@ -91,7 +91,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 6,
     text: '"I wish I was our Sammy."',
     speaker: 'Mickey',
-    context: 'Act 1 - childhood song',
+    context: 'Act 1 - Mickey, aged seven',
     analysis:
       "An innocent wish to be older that foreshadows Mickey's devastating adult wish to have been Edward. Russell plants the theme of wanting a different life early, in a comic song, so that its tragic echo in Act 2 hits harder.",
     themes: ['Nature vs nurture', 'Childhood'],
@@ -161,7 +161,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 14,
-    text: '"If I was him, that\'s what I\'d do."',
+    text: "[Edward's half of the duet That Guy, in which each wishes he had the other's life: the lyric is not reproduced here]",
     speaker: 'Edward',
     context: 'Act 2 - song about Mickey',
     analysis:
@@ -197,7 +197,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 18,
-    text: '"Tell me it\'s not true, say it\'s just a story."',
+    text: "[Mrs Johnstone's closing song, Tell Me It's Not True: the lyric is not reproduced here]",
     speaker: 'Mrs Johnstone',
     context: 'Act 2 - closing song',
     analysis:

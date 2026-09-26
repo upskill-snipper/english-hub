@@ -51,7 +51,7 @@ const CHARACTERS: CharacterProfile[] = [
     keyQuotes: [
       {
         text: '"I wish I was our Sammy."',
-        context: 'Act 1 - childhood song',
+        context: 'Act 1 - Mickey, aged seven',
         analysis:
           "Innocent wish to be older that foreshadows Mickey's later, devastating wish to have been Edward. Russell plants the pattern of wanting a different life early.",
       },
@@ -96,7 +96,7 @@ const CHARACTERS: CharacterProfile[] = [
     arc: "Mrs Johnstone begins as a young woman abandoned by her husband, working to feed seven children. She agrees to the pact not from greed but from desperation. Throughout the play she carries guilt silently. Her final revelation of the truth to both boys is an act of honesty that arrives too late, underlining Russell's point that class structures deny working-class people the power to shape their own stories.",
     keyQuotes: [
       {
-        text: '"Tell me it\'s not true, say it\'s just a story."',
+        text: "[Mrs Johnstone's closing song, Tell Me It's Not True: the lyric is not reproduced here]",
         context: 'Act 2 - closing song',
         analysis:
           'The haunting refrain asks the audience to refuse the tragedy. Russell implicates the viewers: if they are moved, they must ask why society allows this.',
@@ -177,7 +177,7 @@ const CHARACTERS: CharacterProfile[] = [
     arc: "The Narrator is present from the first line to the last. He does not change; instead, his repeated warnings create an atmosphere of inevitability. Russell uses him to keep the audience at a critical distance, preventing pure emotional identification and forcing analytical engagement with the play's politics.",
     keyQuotes: [
       {
-        text: '"You know the devil\'s got your number."',
+        text: "[The Narrator's refrain warning that the devil has come to collect: the lyric is not reproduced here]",
         context: 'Recurring refrain',
         analysis:
           'The "devil" functions as a metaphor for systemic class forces. Russell repurposes superstitious language to critique a fatalistic society.',

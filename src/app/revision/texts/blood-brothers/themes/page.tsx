@@ -103,7 +103,7 @@ const THEMES: ThemeData[] = [
     overview:
       "Superstition runs through the play as a constant motif - shoes on the table, broken mirrors, the Narrator's devilish warnings. But Russell uses superstition to critique, not to endorse. The real forces that destroy Mickey and Edward are economic and political, not magical. Superstition is the story society tells itself to avoid responsibility.",
     howRussellPresentsIt:
-      'Mrs Lyons invents the twins superstition to control Mrs Johnstone, but it becomes a self-fulfilling prophecy not because of magic but because of the class structures that make the separation permanent. The Narrator\'s repeated refrain - "the devil\'s got your number" - sounds supernatural but functions as a metaphor for systemic injustice. In the final line, the Narrator asks the audience directly whether they blame superstition or something else.',
+      "Mrs Lyons invents the twins superstition to control Mrs Johnstone, but it becomes a self-fulfilling prophecy not because of magic but because of the class structures that make the separation permanent. The Narrator's repeated refrain about the devil sounds supernatural but functions as a metaphor for systemic injustice. In the final line, the Narrator asks the audience directly whether they blame superstition or something else.",
     keyQuotes: [
       {
         text: '"You do know what they say about twins, secretly parted, don\'t you?"',
@@ -112,7 +112,7 @@ const THEMES: ThemeData[] = [
           'An invented curse that becomes true - not through magic but through the class system Mrs Lyons exploits. Russell collapses the boundary between superstition and social power.',
       },
       {
-        text: '"You know the devil\'s got your number."',
+        text: "[The Narrator's refrain warning that the devil has come to collect: the lyric is not reproduced here]",
         speaker: 'Narrator',
         analysis:
           'The "devil" is a metaphor for systemic forces. Russell uses folk-horror language to make class oppression feel inescapable.',
@@ -193,7 +193,7 @@ const THEMES: ThemeData[] = [
           'Opens the play as a story already told, priming the audience for inevitability. Russell uses this frame to redirect attention from what happens to why.',
       },
       {
-        text: '"Tell me it\'s not true, say it\'s just a story."',
+        text: "[Mrs Johnstone's closing song, Tell Me It's Not True: the lyric is not reproduced here]",
         speaker: 'Mrs Johnstone',
         analysis:
           'The closing song begs for a different outcome. Russell makes the audience feel the desire for change while forcing them to recognise that only structural change could deliver it.',

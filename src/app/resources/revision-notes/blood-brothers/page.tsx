@@ -301,32 +301,36 @@ const keyQuotes = [
       "Mickey's most devastating line, delivered after Mrs Johnstone reveals that he and Eddie are twins. The cry expresses everything: rage at the injustice of his life, grief for the opportunities he was denied, and the agonising realisation that his suffering was not inevitable but was determined by an arbitrary decision made at birth. 'I could have been him' is the play's thesis distilled into five words. Russell ensures that the audience understands that Mickey is not angry at Eddie personally but at the system that gave one twin everything and the other nothing.",
   },
   {
-    quote: "Tell me it's not true. Say it's just a story.",
+    quote:
+      "[Mrs Johnstone's closing song, Tell Me It's Not True: the lyric is not reproduced here]",
     speaker: 'Mrs Johnstone',
     context: 'Act Two (final song)',
     analysis:
-      "Mrs Johnstone's final song, sung over her dead sons. The desperate plea to deny reality echoes her lifelong tendency to cling to hopeful narratives. 'Say it's just a story' is meta-theatrical: it acknowledges that the audience has been watching a story, but the emotions it has produced are real. Russell uses the song to unite the audience's grief with Mrs Johnstone's, creating a powerful emotional climax that reinforces the political message. The repetition of 'tell me it's not true' mirrors the repeated warnings and superstitions that have punctuated the play.",
+      "Mrs Johnstone's final song, sung over her dead sons. The desperate plea to deny reality echoes her lifelong tendency to cling to hopeful narratives. Her plea that it might all be just a story is meta-theatrical: it acknowledges that the audience has been watching a story, but the emotions it has produced are real. Russell uses the song to unite the audience's grief with Mrs Johnstone's, creating a powerful emotional climax that reinforces the political message. The song's repeated plea that it cannot be true mirrors the repeated warnings and superstitions that have punctuated the play.",
   },
   {
-    quote: "There's shoes upon the table an' a spider's been killed.",
+    quote:
+      "[The Narrator's song Shoes Upon the Table, a list of bad omens: the lyric is not reproduced here]",
     speaker: 'The Narrator',
     context: "Throughout (song: 'Shoes Upon the Table')",
     analysis:
       "The Narrator's recurring motif of bad omens creates an atmosphere of impending doom. 'Shoes upon the table' is a traditional superstition associated with death. Russell uses these folk beliefs to build tension and to comment on how working-class communities use superstition to explain misfortune that actually has social and economic causes. The song's repetition throughout the play creates a cyclical structure that reinforces the sense of inescapable fate.",
   },
   {
-    quote: "The devil's got your number, he's lookin' through the door.",
+    quote:
+      "[The Narrator's refrain warning that the devil has come to collect: the lyric is not reproduced here]",
     speaker: 'The Narrator',
-    context: "Throughout (song: 'The Devil's Got Your Number')",
+    context: 'Narrator, recurring refrain',
     analysis:
-      "This recurring line personifies fate as the devil, creating a sinister, Gothic atmosphere. 'Lookin' through the door' suggests surveillance and inevitability: the characters cannot escape their fate. Russell uses religious imagery (the devil) alongside folk superstition to create a multi-layered sense of doom. The Narrator's warnings function as a dramatic device, heightening tension while reminding the audience that the outcome is already determined.",
+      "This recurring line personifies fate as the devil, creating a sinister, Gothic atmosphere. The image of the devil watching at the door suggests surveillance and inevitability: the characters cannot escape their fate. Russell uses religious imagery (the devil) alongside folk superstition to create a multi-layered sense of doom. The Narrator's warnings function as a dramatic device, heightening tension while reminding the audience that the outcome is already determined.",
   },
   {
-    quote: "But you know the devil's got your number",
+    quote:
+      "[The Narrator's refrain warning that the devil has come to collect: the lyric is not reproduced here]",
     speaker: 'The Narrator',
     context: 'Act Two',
     analysis:
-      "The intensification of the devil motif in Act Two mirrors the escalating tragedy. In the full lines, the shift from 'lookin' through the door' to 'right behind you' creates a sense of closing distance and imminent catastrophe. Russell accelerates the Narrator's warnings as the social pressures on Mickey intensify, connecting supernatural menace with social reality. The audience understands that 'the devil' is not a supernatural entity but the class system itself.",
+      "The intensification of the devil motif in Act Two mirrors the escalating tragedy. In the full lines, the shift from the devil watching at the door to the devil standing close behind creates a sense of closing distance and imminent catastrophe. Russell accelerates the Narrator's warnings as the social pressures on Mickey intensify, connecting supernatural menace with social reality. The audience understands that 'the devil' is not a supernatural entity but the class system itself.",
   },
   {
     quote: 'That guy, I could kill that guy.',
@@ -696,7 +700,7 @@ export default function BloodBrothersStudyGuide() {
             {
               method: 'The Narrator as Greek Chorus',
               detail:
-                "The Narrator stands outside the action, commenting and warning. He reveals the ending in the prologue, creating dramatic irony. His recurring motifs ('shoes upon the table', 'the devil's got your number') build an atmosphere of inevitability. He breaks the fourth wall, preventing passive engagement. His final question forces the audience to judge: was it superstition or class? Russell uses him to ensure the play is never just entertainment but always argument.",
+                'The Narrator stands outside the action, commenting and warning. He reveals the ending in the prologue, creating dramatic irony. His recurring motifs (the shoes on the table, and the devil coming for his due) build an atmosphere of inevitability. He breaks the fourth wall, preventing passive engagement. His final question forces the audience to judge: was it superstition or class? Russell uses him to ensure the play is never just entertainment but always argument.',
             },
             {
               method: 'Symbolism of Guns',

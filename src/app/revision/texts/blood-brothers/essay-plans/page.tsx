@@ -112,7 +112,8 @@ const ESSAY_PLANS: EssayPlan[] = [
         pointHeading: 'Building atmospheric dread',
         topic:
           "The Narrator's recurring refrains create a sense of fate that Russell then critiques.",
-        quote: '"You know the devil\'s got your number."',
+        quote:
+          "[The Narrator's refrain warning that the devil has come to collect: the lyric is not reproduced here]",
         quoteContext: 'Narrator - recurring refrain',
         analysis:
           'The "devil" sounds supernatural but functions as a metaphor for class-driven determinism. Russell gives the audience a folk-horror atmosphere while simultaneously undermining it: the real forces at work are economic, not magical.',
@@ -205,7 +206,8 @@ const ESSAY_PLANS: EssayPlan[] = [
         pointHeading: 'The final revelation',
         topic:
           "Mrs Johnstone's confession of the truth triggers the catastrophe, showing that honesty arrives too late in a class-divided world.",
-        quote: '"Tell me it\'s not true, say it\'s just a story."',
+        quote:
+          "[Mrs Johnstone's closing song, Tell Me It's Not True: the lyric is not reproduced here]",
         quoteContext: 'Mrs Johnstone - closing song',
         analysis:
           "The closing song is Mrs Johnstone's testimony. Russell gives her the last word, framing the entire play as a working-class mother's plea for a world where her children could have survived.",
@@ -237,7 +239,8 @@ const ESSAY_PLANS: EssayPlan[] = [
         pointHeading: 'Songs as emotional and political commentary',
         topic:
           'Russell uses the musical form to compress time, intensify emotion and deliver political argument simultaneously.',
-        quote: '"Tell me it\'s not true, say it\'s just a story."',
+        quote:
+          "[Mrs Johnstone's closing song, Tell Me It's Not True: the lyric is not reproduced here]",
         quoteContext: 'Mrs Johnstone - closing song',
         analysis:
           "The closing song operates on two levels: emotionally, it is devastating; politically, it asks the audience to refuse inevitability. Russell exploits the directness of song to bypass intellectual resistance and reach the audience's feelings, then redirects those feelings toward political awareness.",
@@ -248,7 +251,8 @@ const ESSAY_PLANS: EssayPlan[] = [
         pointHeading: 'The Narrator as alienation device',
         topic:
           'The Narrator prevents the audience from losing themselves in emotional identification.',
-        quote: '"You know the devil\'s got your number."',
+        quote:
+          "[The Narrator's refrain warning that the devil has come to collect: the lyric is not reproduced here]",
         quoteContext: 'Narrator - recurring refrain',
         analysis:
           'The Narrator interrupts the naturalistic action with stylised, almost supernatural warnings. This keeps the audience at a critical distance, reminding them that they are watching a constructed argument, not a slice of life. Russell balances emotional engagement with analytical detachment.',

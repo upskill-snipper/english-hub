@@ -604,7 +604,8 @@ export const wjecGuide: BoardExamGuide = {
       ],
       quotations: [
         {
-          quote: "The devil's got your number",
+          quote:
+            "[The Narrator's refrain warning that the devil has come to collect: the lyric is not reproduced here]",
           analysis:
             'The Narrator\'s repeated refrain establishes fate as an inescapable force. The imperative "got" suggests predetermination, while "the devil" invokes superstition and moral judgement - key thematic concerns.',
         },

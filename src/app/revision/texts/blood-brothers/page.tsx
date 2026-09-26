@@ -112,7 +112,8 @@ const data: TextGuideData = {
   ],
   quotations: [
     {
-      quote: '"Tell me it\'s not true, say it\'s just a story."',
+      quote:
+        "[Mrs Johnstone's closing song, Tell Me It's Not True: the lyric is not reproduced here]",
       who: 'Mrs Johnstone - final song',
       analysis:
         "The haunting refrain that closes the play, asking the audience to refuse the tragedy's inevitability.",
@@ -140,7 +141,8 @@ const data: TextGuideData = {
         'A childhood song about wanting to be older. Russell uses it to track how innocence is stolen.',
     },
     {
-      quote: '"You know the devil\'s got your number."',
+      quote:
+        "[The Narrator's refrain warning that the devil has come to collect: the lyric is not reproduced here]",
       who: 'Narrator - refrain',
       analysis:
         'The play\u2019s superstitious language, which Russell repurposes to critique a fatalistic society.',
@@ -366,7 +368,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'bb-15',
-    question: 'What does "Tell me it\'s not true" express about the ending?',
+    question: "What does the closing song, Tell Me It's Not True, express about the ending?",
     type: 'multiple-choice',
     options: [
       'Mrs Johnstone is in denial',
@@ -408,7 +410,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"You know the devil\'s got your number" - the Narrator\'s supernatural language creates a sense of doom, but Russell uses it to expose a society that prefers to blame fate for problems of its own making. The real curse is unemployment and prejudice, not the Devil.',
+      "The Narrator's refrain about the devil coming for his due: his supernatural language creates a sense of doom, but Russell uses it to expose a society that prefers to blame fate for problems of its own making. The real curse is unemployment and prejudice, not the Devil.",
     topic: "Writer's Methods",
     difficulty: 'grade-9',
   },
@@ -482,7 +484,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       'Mrs Lyons invents the twin superstition to control Mrs Johnstone',
       "The Narrator's warnings create a sense of doom",
-      '"You know the devil\'s got your number"',
+      "The Narrator's refrain about the devil coming for his due",
       'The real curse is unemployment and prejudice, not fate',
       'The ending fulfils the superstition but exposes its true cause: class',
     ],
