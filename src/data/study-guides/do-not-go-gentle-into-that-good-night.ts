@@ -78,8 +78,14 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  *   reading, stated there as fact.
  * - It names assessment objectives by number throughout, which the house rule
  *   now forbids, and it quotes a far larger share of the poem than this
- *   file's limit allows (the poem is in the UK public domain from 2024, but
- *   the site treats it as in copyright because it remains so in the USA).
+ *   file's limit allowed at the time.
+ *
+ * RIGHTS. Dylan Thomas died on 9 November 1953, so the poem has been in the
+ * UK public domain since 1 January 2024. Until 26 September 2026 this guide
+ * was treated as copyrighted because the poem is still in copyright in the
+ * USA; the site works to UK law only (the founder's decision that day). The
+ * anthology still prints its permission line, which covers the edition, not a
+ * UK copyright in the words.
  */
 export const guide: StudyGuide = {
   slug: 'do-not-go-gentle-into-that-good-night',
@@ -89,9 +95,9 @@ export const guide: StudyGuide = {
   scope:
     'The whole poem, 19 lines in five three-line stanzas and a closing four-line stanza, as printed on page 69 of the Pearson Edexcel International GCSE English Anthology (Issue 8, February 2026), Part 3. Set for Pearson Edexcel International GCSE English Literature (4ET1), Paper 1 Section B, where it is compared with another Part 3 poem. Line numbers in this guide follow the anthology, which prints 5, 10 and 15 in the margin.',
   rights: {
-    status: 'copyright',
+    status: 'public-domain',
     acknowledgement:
-      '© Dylan Thomas 1952 and The Trustees for the copyright of Dylan Thomas, the notice the anthology prints; the poem first appeared in the journal Botteghe Oscure in 1951. As printed in the Pearson Edexcel International GCSE English Anthology (Issue 8, February 2026), by permission of David Higham Associates Limited and New Directions Publishing Corp. Quoted here in short phrases for criticism and review.',
+      'Dylan Thomas, first published in the journal Botteghe Oscure in 1951. Out of copyright in the UK since 1 January 2024. Line numbers follow the Pearson Edexcel International GCSE English Anthology (Issue 8, February 2026).',
   },
   workLength: {
     words: 168,

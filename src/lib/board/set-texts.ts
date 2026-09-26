@@ -207,7 +207,11 @@ export const SET_TEXTS: SetText[] = [
     author: 'George Orwell',
     category: 'modern',
     boards: ['aqa', 'edexcel', 'ocr'],
-    copyrightStatus: 'copyright',
+    // Orwell died on 21 January 1950, so the UK copyright ended on 31 December
+    // 2020. Marked 'copyright' until 26 September 2026 because the novella is
+    // still in copyright in the United States; the site works to UK law only,
+    // as it does for 'Out, Out-' the other way round.
+    copyrightStatus: 'public-domain',
   },
   {
     slug: 'of-mice-and-men',
@@ -621,7 +625,10 @@ export const SET_TEXTS: SetText[] = [
     author: 'Dylan Thomas (1914-1953)',
     category: 'poetry-anthology',
     boards: ['edexcel-igcse'],
-    copyrightStatus: 'copyright',
+    // Thomas died on 9 November 1953: out of UK copyright since 1 January 2024.
+    // Marked 'copyright' until 26 September 2026 for its US status; the site
+    // works to UK law only.
+    copyrightStatus: 'public-domain',
     year: '1951',
     keyThemes: ['Death', 'Defiance', 'Fatherhood', 'Grief'],
     description:
