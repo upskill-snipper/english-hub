@@ -54,6 +54,64 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
   'lc-a-christmas-carol-the-lonely-schoolboy':
     '/comics/a-christmas-carol/the-lonely-schoolboy.5b05a0cc9971.svg',
   'lc-a-christmas-carol-tiny-tim': '/comics/a-christmas-carol/tiny-tim.2bf71c124276.svg',
+  'lc-animal-farm-animalism': '/comics/animal-farm/animalism.7fd830cdee79.svg',
+  'lc-animal-farm-beasts-of-england': '/comics/animal-farm/beasts-of-england.7e4e5907e37a.svg',
+  'lc-animal-farm-benjamin': '/comics/animal-farm/benjamin.907e9f116d40.svg',
+  'lc-animal-farm-boxer': '/comics/animal-farm/boxer.c1ce0d50060d.svg',
+  'lc-animal-farm-boxer-falls': '/comics/animal-farm/boxer-falls.87e9db534ba8.svg',
+  'lc-animal-farm-boxer-is-taken-away': '/comics/animal-farm/boxer-is-taken-away.b3166ecb5204.svg',
+  'lc-animal-farm-clover': '/comics/animal-farm/clover.415abdea5d10.svg',
+  'lc-animal-farm-clover-s-vision': '/comics/animal-farm/clover-s-vision.cc5665e20884.svg',
+  'lc-animal-farm-from-pig-to-man': '/comics/animal-farm/from-pig-to-man.b24eae58ab70.svg',
+  'lc-animal-farm-major-s-warnings': '/comics/animal-farm/major-s-warnings.106b08a9fd42.svg',
+  'lc-animal-farm-mollie': '/comics/animal-farm/mollie.38bb8e7b3448.svg',
+  'lc-animal-farm-mollie-leaves': '/comics/animal-farm/mollie-leaves.83c18ad80bcb.svg',
+  'lc-animal-farm-moses': '/comics/animal-farm/moses.1680449a0dcb.svg',
+  'lc-animal-farm-mr-frederick': '/comics/animal-farm/mr-frederick.58bdcbfae1c4.svg',
+  'lc-animal-farm-mr-jones': '/comics/animal-farm/mr-jones.8b10dcb61f0a.svg',
+  'lc-animal-farm-mr-pilkington': '/comics/animal-farm/mr-pilkington.aa20ade208a5.svg',
+  'lc-animal-farm-mr-whymper': '/comics/animal-farm/mr-whymper.b7becd93a810.svg',
+  'lc-animal-farm-napoleon': '/comics/animal-farm/napoleon.3e1e17ef2fa8.svg',
+  'lc-animal-farm-napoleon-is-always-right':
+    '/comics/animal-farm/napoleon-is-always-right.ff37c6dd7eb3.svg',
+  'lc-animal-farm-old-major': '/comics/animal-farm/old-major.cd18aa6d8a15.svg',
+  'lc-animal-farm-old-major-s-speech': '/comics/animal-farm/old-major-s-speech.61a9cc22fc84.svg',
+  'lc-animal-farm-rations-and-the-republic':
+    '/comics/animal-farm/rations-and-the-republic.7e2c1a1b1fc1.svg',
+  'lc-animal-farm-reading-and-the-maxim':
+    '/comics/animal-farm/reading-and-the-maxim.31249e65564f.svg',
+  'lc-animal-farm-snowball': '/comics/animal-farm/snowball.3d6d40babb44.svg',
+  'lc-animal-farm-snowball-is-driven-out':
+    '/comics/animal-farm/snowball-is-driven-out.33f84aa102b6.svg',
+  'lc-animal-farm-snowball-the-traitor':
+    '/comics/animal-farm/snowball-the-traitor.5d5249cd5535.svg',
+  'lc-animal-farm-squealer': '/comics/animal-farm/squealer.d890b922f5f6.svg',
+  'lc-animal-farm-squealer-s-story': '/comics/animal-farm/squealer-s-story.21d9d95c7441.svg',
+  'lc-animal-farm-the-battle-of-the-cowshed':
+    '/comics/animal-farm/the-battle-of-the-cowshed.a0df923b493d.svg',
+  'lc-animal-farm-the-battle-of-the-windmill':
+    '/comics/animal-farm/the-battle-of-the-windmill.64cb112c2978.svg',
+  'lc-animal-farm-the-confessions': '/comics/animal-farm/the-confessions.1d1f7b5d92e7.svg',
+  'lc-animal-farm-the-dogs': '/comics/animal-farm/the-dogs.bb141cdb574c.svg',
+  'lc-animal-farm-the-first-harvest': '/comics/animal-farm/the-first-harvest.745e15d083db.svg',
+  'lc-animal-farm-the-hens-revolt': '/comics/animal-farm/the-hens-revolt.0295068ed1f0.svg',
+  'lc-animal-farm-the-milk-and-the-apples':
+    '/comics/animal-farm/the-milk-and-the-apples.1dec42407297.svg',
+  'lc-animal-farm-the-news-spreads': '/comics/animal-farm/the-news-spreads.ed3d5174902f.svg',
+  'lc-animal-farm-the-rebellion': '/comics/animal-farm/the-rebellion.f0aa83b0bb5a.svg',
+  'lc-animal-farm-the-seven-commandments-and-the-milk':
+    '/comics/animal-farm/the-seven-commandments-and-the-milk.276b0c108be3.svg',
+  'lc-animal-farm-the-single-commandment':
+    '/comics/animal-farm/the-single-commandment.437942f3571c.svg',
+  'lc-animal-farm-the-whisky': '/comics/animal-farm/the-whisky.e50e9244bd11.svg',
+  'lc-animal-farm-the-windmill-falls': '/comics/animal-farm/the-windmill-falls.e88479693def.svg',
+  'lc-animal-farm-the-windmill-plans': '/comics/animal-farm/the-windmill-plans.d8b908598212.svg',
+  'lc-animal-farm-trade-and-the-farmhouse-beds':
+    '/comics/animal-farm/trade-and-the-farmhouse-beds.bc2c3d4d8f16.svg',
+  'lc-animal-farm-walking-on-two-legs': '/comics/animal-farm/walking-on-two-legs.dda114439126.svg',
+  'lc-animal-farm-without-cause': '/comics/animal-farm/without-cause.cab910dcf077.svg',
+  'lc-animal-farm-working-like-slaves': '/comics/animal-farm/working-like-slaves.6bf29ffb7d9d.svg',
+  'lc-animal-farm-years-pass': '/comics/animal-farm/years-pass.8ebe1fa88324.svg',
   'lc-jekyll-and-hyde-dr-hastie-lanyon':
     '/comics/jekyll-and-hyde/dr-hastie-lanyon.73a56dc5b2f8.svg',
   'lc-jekyll-and-hyde-dr-henry-jekyll': '/comics/jekyll-and-hyde/dr-henry-jekyll.8f2611ebefc9.svg',
@@ -117,6 +175,48 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
   'lc-macbeth-the-witches': '/comics/macbeth/the-witches.589124f7faab.svg',
   'lc-macbeth-the-witches-meet': '/comics/macbeth/the-witches-meet.15c1c1a68696.svg',
   'lc-macbeth-tomorrow': '/comics/macbeth/tomorrow.cc703e9595d7.svg',
+  'lc-much-ado-about-nothing-at-the-tomb':
+    '/comics/much-ado-about-nothing/at-the-tomb.899c42a839db.svg',
+  'lc-much-ado-about-nothing-beatrice': '/comics/much-ado-about-nothing/beatrice.6844f5460fd8.svg',
+  'lc-much-ado-about-nothing-beatrice-in-the-bower':
+    '/comics/much-ado-about-nothing/beatrice-in-the-bower.c97d823e515f.svg',
+  'lc-much-ado-about-nothing-benedick': '/comics/much-ado-about-nothing/benedick.d4cefd5668c5.svg',
+  'lc-much-ado-about-nothing-benedick-in-the-garden':
+    '/comics/much-ado-about-nothing/benedick-in-the-garden.16e4881de17b.svg',
+  'lc-much-ado-about-nothing-borachio': '/comics/much-ado-about-nothing/borachio.a74be4a01b12.svg',
+  'lc-much-ado-about-nothing-borachio-s-plan':
+    '/comics/much-ado-about-nothing/borachio-s-plan.99a4c585ab4a.svg',
+  'lc-much-ado-about-nothing-challenges-and-confession':
+    '/comics/much-ado-about-nothing/challenges-and-confession.0cd3f10e53f7.svg',
+  'lc-much-ado-about-nothing-claudio': '/comics/much-ado-about-nothing/claudio.0a8696ac2fe0.svg',
+  'lc-much-ado-about-nothing-dogberry': '/comics/much-ado-about-nothing/dogberry.9f9151a6ce8a.svg',
+  'lc-much-ado-about-nothing-don-john': '/comics/much-ado-about-nothing/don-john.778dcdeb1247.svg',
+  'lc-much-ado-about-nothing-don-john-s-accusation':
+    '/comics/much-ado-about-nothing/don-john-s-accusation.037d470704d5.svg',
+  'lc-much-ado-about-nothing-don-john-s-discontent':
+    '/comics/much-ado-about-nothing/don-john-s-discontent.e553bf21cb69.svg',
+  'lc-much-ado-about-nothing-don-pedro':
+    '/comics/much-ado-about-nothing/don-pedro.b9d588ca9ac4.svg',
+  'lc-much-ado-about-nothing-hero': '/comics/much-ado-about-nothing/hero.569bacba1d8e.svg',
+  'lc-much-ado-about-nothing-kill-claudio':
+    '/comics/much-ado-about-nothing/kill-claudio.84daff1ec068.svg',
+  'lc-much-ado-about-nothing-leonato': '/comics/much-ado-about-nothing/leonato.98330d888d53.svg',
+  'lc-much-ado-about-nothing-margaret': '/comics/much-ado-about-nothing/margaret.e19c820bce81.svg',
+  'lc-much-ado-about-nothing-the-examination':
+    '/comics/much-ado-about-nothing/the-examination.feb670547f64.svg',
+  'lc-much-ado-about-nothing-the-masked-ball':
+    '/comics/much-ado-about-nothing/the-masked-ball.6cd5338026b2.svg',
+  'lc-much-ado-about-nothing-the-second-wedding':
+    '/comics/much-ado-about-nothing/the-second-wedding.4f3a4cabbaa8.svg',
+  'lc-much-ado-about-nothing-the-soldiers-come-home':
+    '/comics/much-ado-about-nothing/the-soldiers-come-home.daa6589a141c.svg',
+  'lc-much-ado-about-nothing-the-watch-overhear':
+    '/comics/much-ado-about-nothing/the-watch-overhear.e8cdd22fd3f7.svg',
+  'lc-much-ado-about-nothing-the-wedding':
+    '/comics/much-ado-about-nothing/the-wedding.5acb1694994d.svg',
+  'lc-much-ado-about-nothing-too-busy-to-listen':
+    '/comics/much-ado-about-nothing/too-busy-to-listen.0e6e78870288.svg',
+  'lc-much-ado-about-nothing-verges': '/comics/much-ado-about-nothing/verges.9bc5c43c7202.svg',
   'lc-romeo-and-juliet-a-brawl-in-the-streets':
     '/comics/romeo-and-juliet/a-brawl-in-the-streets.c19f882804bd.svg',
   'lc-romeo-and-juliet-a-glooming-peace':
