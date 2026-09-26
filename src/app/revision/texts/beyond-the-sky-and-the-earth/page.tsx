@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { getSetText } from '@/lib/board/set-texts'
-import { StubStudyGuide } from '../_components/stub-study-guide'
+import { StubStudyGuide, stubCanonical } from '../_components/stub-study-guide'
 
 const SLUG = 'beyond-the-sky-and-the-earth'
 
 export const metadata: Metadata = {
   title: 'Beyond the Sky and the Earth - Jamie Zeppa',
   description:
-    'Study guide stub for Beyond the Sky and the Earth by Jamie Zeppa. Pearson Edexcel International GCSE English Language A (4EA1) Section A non-fiction anthology.',
+    'Jamie Zeppa on arriving to teach in Bhutan, from the Edexcel IGCSE English Language A (4EA1) anthology, with a link to the full study guide.',
   alternates: {
-    canonical: `https://theenglishhub.app/revision/texts/${SLUG}`,
+    canonical: stubCanonical(SLUG, `/revision/texts/${SLUG}`),
   },
 }
 

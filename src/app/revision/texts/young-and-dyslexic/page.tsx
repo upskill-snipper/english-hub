@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { getSetText } from '@/lib/board/set-texts'
-import { StubStudyGuide } from '../_components/stub-study-guide'
+import { StubStudyGuide, stubCanonical } from '../_components/stub-study-guide'
 
 const SLUG = 'young-and-dyslexic'
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     'Benjamin Zephaniah on growing up labelled stupid because of dyslexia, adapted for the Edexcel IGCSE (4EA1) anthology. Use the anthology text in the exam.',
   alternates: {
-    canonical: `https://theenglishhub.app/revision/texts/${SLUG}`,
+    canonical: stubCanonical(SLUG, `/revision/texts/${SLUG}`),
   },
 }
 

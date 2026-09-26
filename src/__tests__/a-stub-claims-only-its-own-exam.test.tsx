@@ -38,15 +38,20 @@ const LANG_A_CLAIMS = [
   'href="/igcse/edexcel-lang"',
 ]
 
-async function html(slug: string) {
+async function html(slug: string, as?: string) {
   const text = SET_TEXTS.find((t) => t.slug === slug)
   if (!text) throw new Error(`${slug} is not in set-texts.ts`)
-  return renderToStaticMarkup(await StubStudyGuide({ text }))
+  // `as` renders the same row under a slug with no guide anywhere, for the
+  // in-production copy: since 26 September 2026 every 4EA1 placeholder has a
+  // finished guide on another route, so none of them shows that copy any more.
+  return renderToStaticMarkup(await StubStudyGuide({ text: as ? { ...text, slug: as } : text }))
 }
+
+const IN_PRODUCTION = 'We are currently writing a full study guide for'
 
 describe('a stub claims only its own exam', () => {
   it('a 4EA1 text keeps its Language A badge, copy and hub link', async () => {
-    const page = await html('a-passage-to-africa')
+    const page = await html('a-passage-to-africa', 'a-4ea1-text-with-no-guide-yet')
     for (const claim of LANG_A_CLAIMS) expect(page).toContain(claim)
   })
 
@@ -61,9 +66,38 @@ describe('a stub claims only its own exam', () => {
       expect(page).not.toContain('Anthology Prose')
       // Nor sends students to an anthology that does not print it.
       expect(text.ukRightsNotice).not.toMatch(/978-1-446-93108-0|Pearson Education on behalf/)
-      // And still names the text and says a guide is being written.
+      // And still names the text.
       expect(page).toContain(text.title)
-      expect(page).toContain('We are currently writing a full study guide for')
     },
   )
+
+  it.each(['the-pedestrian', 'the-man-who-loved-flowers'])(
+    '%s, with no guide anywhere yet, says one is being written',
+    async (slug) => {
+      expect(await html(slug)).toContain(IN_PRODUCTION)
+    },
+  )
+})
+
+describe('a stub whose guide is written on another route', () => {
+  // See a-placeholder-points-to-the-guide-that-exists.test.ts for the data
+  // rules. These are the rendered page: what a student actually reads.
+  it.each([
+    ['a-passage-to-africa', '/igcse/edexcel-lang/anthology/a-passage-to-africa'],
+    ['when-greek-meets-greek', '/resources/revision-notes/when-greek-meets-greek'],
+    ['the-yellow-wallpaper', '/resources/revision-notes/the-yellow-wallpaper'],
+  ])('%s links to its guide and never says it is being written', async (slug, href) => {
+    const page = await html(slug)
+    expect(page).not.toContain(IN_PRODUCTION)
+    expect(page).not.toContain('Study guide in production')
+    expect(page).toContain('The study guide is on another page')
+    expect(page).toContain(`href="${href}"`)
+  })
+
+  it('keeps the true exam claims: the 4EA1 badge stays on a 4EA1 text', async () => {
+    const page = await html('a-passage-to-africa')
+    expect(page).toContain('Pearson IGCSE Language A (4EA1)')
+    // The mark-scheme promise was part of the in-production notice, which is gone.
+    expect(page).not.toContain('English Language A (4EA1) mark scheme')
+  })
 })

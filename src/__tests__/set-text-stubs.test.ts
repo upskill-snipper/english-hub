@@ -3,6 +3,8 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { STUB_SET_TEXT_SLUGS, isStubSetText } from '@/lib/seo/set-text-stubs'
 import { SET_TEXTS } from '@/lib/board/set-texts'
+import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
+import { guideElsewhere } from '@/lib/revision/guide-href'
 
 /**
  * Twenty boilerplate pages competing with our own better ones (SEO-10).
@@ -134,11 +136,16 @@ describe('the generated sitemap', () => {
     const paths = new Set(entries.map((e) => e.url.replace('https://theenglishhub.app', '') || '/'))
     expect(paths.size).toBeGreaterThan(50)
 
+    // A placeholder whose guide is written on another route is left out too,
+    // since 26 September 2026: its canonical is that other route, and a
+    // sitemap must not list a URL whose canonical is elsewhere.
     const offenders: string[] = []
     for (const text of SET_TEXTS) {
       const path = `/revision/texts/${text.slug}`
       const listed = paths.has(path)
-      if (listed === isStubSetText(text.slug)) offenders.push(path)
+      const signpost = PLACEHOLDER_TEXT_SLUGS.has(text.slug) && guideElsewhere(text.slug) !== null
+      const shouldList = !isStubSetText(text.slug) && !signpost
+      if (listed !== shouldList) offenders.push(path)
     }
     expect(offenders).toEqual([])
   }, 30_000)

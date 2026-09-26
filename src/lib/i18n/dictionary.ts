@@ -20503,6 +20503,28 @@ export const DICTIONARY: Dictionary = {
     ar: 'رجوع للنصوص المقررة',
     es: 'Volver a los textos fijados',
   },
+  // Shown instead of the "in production" notice when the text's guide is
+  // already written on another route (26 September 2026).
+  'analysis.deep.stub.elsewhere_h3': {
+    en: 'The study guide is on another page',
+    ar: 'دليل الدراسة موجود في صفحة ثانية',
+    es: 'La guía de estudio está en otra página',
+  },
+  'analysis.deep.stub.elsewhere_p1_prefix': {
+    en: 'The full study guide for',
+    ar: 'دليل الدراسة الكامل لـ',
+    es: 'La guía de estudio completa de',
+  },
+  'analysis.deep.stub.elsewhere_p1_suffix': {
+    en: 'is written and lives on its own page.',
+    ar: 'جاهز وموجود في صفحته الخاصة.',
+    es: 'ya está escrita y tiene su propia página.',
+  },
+  'analysis.deep.stub.cta_open_guide': {
+    en: 'Open the study guide',
+    ar: 'افتح دليل الدراسة',
+    es: 'Abrir la guía de estudio',
+  },
 
   // ─── Pricing page: deep wave 2 - feature tables, FAQ, steps ─────────
   // Wires the still-hardcoded "deeper" surfaces on /pricing - competitor

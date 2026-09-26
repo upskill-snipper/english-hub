@@ -70,6 +70,12 @@ export const TEXT_NAV_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     ar: 'الدليل هذا لسه تحت الكتابة.',
     es: 'Esta guía todavía se está escribiendo.',
   },
+  // Shown instead, on a placeholder whose guide is written on another route.
+  'textnav.guide_elsewhere': {
+    en: 'Open the study guide',
+    ar: 'افتح دليل الدراسة',
+    es: 'Abrir la guía de estudio',
+  },
 
   // ── The board shelf: /set-texts/<board> ─────────────────────────────────
   //

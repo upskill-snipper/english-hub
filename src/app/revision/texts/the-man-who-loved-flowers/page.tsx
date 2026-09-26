@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { getSetText } from '@/lib/board/set-texts'
-import { StubStudyGuide } from '../_components/stub-study-guide'
+import { StubStudyGuide, stubCanonical } from '../_components/stub-study-guide'
 
 const SLUG = 'the-man-who-loved-flowers'
 
 export const metadata: Metadata = {
   title: 'The Man Who Loved Flowers - Stephen King',
   description:
-    'Study guide stub for The Man Who Loved Flowers by Stephen King. Pearson Edexcel International GCSE English Language A (4EA1) Section C prose anthology.',
+    "Stephen King's short story The Man Who Loved Flowers: what happens, its key themes and the UK rights position.",
   alternates: {
-    canonical: `https://theenglishhub.app/revision/texts/${SLUG}`,
+    canonical: stubCanonical(SLUG, `/revision/texts/${SLUG}`),
   },
 }
 

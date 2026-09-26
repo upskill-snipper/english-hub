@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next'
 import { isStubSetText } from '@/lib/seo/set-text-stubs'
+import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
+import { guideElsewhere } from '@/lib/revision/guide-href'
 import { ANALYSIS_PAGES } from '@/data/analysis'
 import { allCourses } from '@/data/courses'
 import { getBlogSlugs, hasArabicVariant } from '@/lib/blog/posts'
@@ -172,6 +174,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const text of SET_TEXTS) {
     if (isStubSetText(text.slug)) continue
     add(`/revision/texts/${text.slug}`, { priority: 0.7, changeFrequency: 'monthly' })
+  }
+
+  // A placeholder page whose text has a finished guide on another route
+  // canonicalises to that guide (stubCanonical, 26 September 2026), and a
+  // sitemap must not submit a URL whose canonical is somewhere else. Deleted
+  // here rather than skipped above because the static scan in step 1 lists
+  // these pages too: they are real page.tsx files.
+  for (const slug of PLACEHOLDER_TEXT_SLUGS) {
+    if (guideElsewhere(slug)) entries.delete(`/revision/texts/${slug}`)
   }
 
   // The board shelves: /set-texts/<board>, one per specification.

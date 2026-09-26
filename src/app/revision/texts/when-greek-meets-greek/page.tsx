@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { getSetText } from '@/lib/board/set-texts'
-import { StubStudyGuide } from '../_components/stub-study-guide'
+import { StubStudyGuide, stubCanonical } from '../_components/stub-study-guide'
 
 const SLUG = 'when-greek-meets-greek'
 
 export const metadata: Metadata = {
   title: 'When Greek Meets Greek - Sam Selvon',
   description:
-    'Study guide stub for When Greek Meets Greek by Sam Selvon. Pearson Edexcel International GCSE English Language A (4EA1) Section C prose anthology.',
+    "Sam Selvon's short story When Greek Meets Greek, with a link to the full study guide in our revision notes.",
   alternates: {
-    canonical: `https://theenglishhub.app/revision/texts/${SLUG}`,
+    canonical: stubCanonical(SLUG, `/revision/texts/${SLUG}`),
   },
 }
 

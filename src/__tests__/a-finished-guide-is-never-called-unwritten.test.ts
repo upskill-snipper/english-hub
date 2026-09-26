@@ -105,8 +105,16 @@ describe('the rail', () => {
     const at = code.indexOf("t('textnav.no_sections')")
     expect(at, 'the message has gone entirely').toBeGreaterThan(-1)
     // The guard must sit between the section-count branch and the message.
-    const before = code.slice(Math.max(0, at - 260), at)
-    expect(before, 'the message is not guarded by isPlaceholder').toMatch(/isPlaceholder/)
+    // The window runs from that branch rather than a fixed character count:
+    // on 26 September 2026 a second branch (a placeholder whose guide is on
+    // another route links to it) went in between, and a 260-character window
+    // measured the new branch instead of the guard.
+    const branch = code.lastIndexOf('nav.sectionCount === 0', at)
+    expect(branch, 'the section-count branch has gone').toBeGreaterThan(-1)
+    const before = code.slice(branch, at)
+    expect(before, 'the message is not guarded by isPlaceholder').toMatch(/isPlaceholder \?/)
+    // And not shown when the guide is written somewhere else.
+    expect(before, 'the message ignores a guide on another route').toMatch(/elsewhere \?/)
   })
 })
 

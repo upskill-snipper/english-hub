@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { getSetText } from '@/lib/board/set-texts'
-import { StubStudyGuide } from '../_components/stub-study-guide'
+import { StubStudyGuide, stubCanonical } from '../_components/stub-study-guide'
 
 const SLUG = 'the-yellow-wallpaper'
 
 export const metadata: Metadata = {
   title: 'The Yellow Wall Paper - Charlotte Perkins Gilman',
   description:
-    'Study guide stub for The Yellow Wall Paper by Charlotte Perkins Gilman. Pearson Edexcel International GCSE English Language A (4EA1) Section C prose anthology.',
+    "Charlotte Perkins Gilman's story The Yellow Wall Paper, with a link to the full study guide in our revision notes.",
   alternates: {
-    canonical: `https://theenglishhub.app/revision/texts/${SLUG}`,
+    canonical: stubCanonical(SLUG, `/revision/texts/${SLUG}`),
   },
 }
 

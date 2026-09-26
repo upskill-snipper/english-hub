@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { getSetText } from '@/lib/board/set-texts'
-import { StubStudyGuide } from '../_components/stub-study-guide'
+import { StubStudyGuide, stubCanonical } from '../_components/stub-study-guide'
 
 const SLUG = 'a-passage-to-africa'
 
 export const metadata: Metadata = {
   title: 'A Passage to Africa - George Alagiah',
   description:
-    'George Alagiah on reporting the Somali famine, from the Edexcel IGCSE English Language A (4EA1) anthology. Key themes and rights; guide in production.',
+    'George Alagiah on reporting the Somali famine, from the Edexcel IGCSE English Language A (4EA1) anthology, with a link to the full study guide.',
   alternates: {
-    canonical: `https://theenglishhub.app/revision/texts/${SLUG}`,
+    canonical: stubCanonical(SLUG, `/revision/texts/${SLUG}`),
   },
 }
 

@@ -45,6 +45,7 @@ import { buildTextNav, type TextNavIcon } from '@/lib/revision/text-nav'
 import { getSetText, textAvailableForBoard } from '@/lib/board/set-texts'
 import { canonicalTextSlug, isKnownSetText } from '@/lib/revision/text-slug-aliases'
 import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
+import { guideElsewhere } from '@/lib/revision/guide-href'
 import { markingLink } from '@/lib/marking/submit-prefill'
 import { useBoard } from '@/hooks/useBoard'
 import { textBackLink } from '@/lib/revision/text-back-href'
@@ -113,6 +114,7 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
   // Having no sub-pages is not the same as being unwritten. The generated
   // placeholder register is the only thing that actually knows, so it decides.
   const isPlaceholder = PLACEHOLDER_TEXT_SLUGS.has(canonical)
+  const elsewhere = isPlaceholder ? guideElsewhere(canonical, text?.boards) : null
   const { board, isHydrated } = useBoard()
   const back = textBackLink(canonical, isHydrated ? board : null)
 
@@ -230,8 +232,21 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
         // Twenty of the fifty-three texts are placeholders. Saying so is better
         // than rendering an empty rail that looks broken, and better than
         // rendering links to pages that are not written.
+        // A placeholder whose guide is written on another route says where,
+        // not "still being written" (26 September 2026).
         isPlaceholder ? (
-          <p className="px-2.5 text-xs text-muted-foreground">{t('textnav.no_sections')}</p>
+          elsewhere ? (
+            <SidebarLink
+              href={elsewhere.href}
+              label={t('textnav.guide_elsewhere')}
+              icon={<BookOpen className="size-3.5" aria-hidden="true" />}
+              iconColour="text-primary"
+              isActive={false}
+              onNavigate={onNavigate}
+            />
+          ) : (
+            <p className="px-2.5 text-xs text-muted-foreground">{t('textnav.no_sections')}</p>
+          )
         ) : null
       ) : (
         <nav className="flex flex-col gap-1" aria-label={title ?? undefined}>

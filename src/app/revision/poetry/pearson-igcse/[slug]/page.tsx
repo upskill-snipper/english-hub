@@ -7,7 +7,7 @@ import { SET_TEXTS, getSetText } from '@/lib/board/set-texts'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { StubStudyGuide } from '../../../texts/_components/stub-study-guide'
+import { StubStudyGuide, stubCanonical } from '../../../texts/_components/stub-study-guide'
 import { t } from '@/lib/i18n/t'
 
 type Params = { slug: string }
@@ -35,7 +35,13 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     title: `${text.title} - ${text.author} | Pearson IGCSE Poetry | The English Hub`,
     description: `Study notes for ${text.title} by ${text.author}. Pearson Edexcel International GCSE English Language A (4EA1) Section B poetry anthology.`,
     alternates: {
-      canonical: `https://theenglishhub.app/revision/poetry/pearson-igcse/${text.slug}`,
+      // Sarajevo's guide is on this route. The other four render the
+      // placeholder, which since 26 September 2026 points to their finished
+      // guides under /igcse/edexcel/poetry, so that is their canonical too.
+      canonical:
+        text.slug === 'the-bright-lights-of-sarajevo'
+          ? `https://theenglishhub.app/revision/poetry/pearson-igcse/${text.slug}`
+          : stubCanonical(text.slug, `/revision/poetry/pearson-igcse/${text.slug}`),
     },
   }
 }

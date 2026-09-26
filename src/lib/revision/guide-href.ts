@@ -19,7 +19,7 @@
  * of a guide is there - for callers that need readiness as well.
  */
 
-import { GUIDE_LOCATIONS } from './guide-locations.generated'
+import { GUIDE_LOCATIONS, type GuideLocation } from './guide-locations.generated'
 import { PLACEHOLDER_TEXT_SLUGS } from './placeholder-texts.generated'
 import { isStubSetText } from '@/lib/seo/set-text-stubs'
 
@@ -45,4 +45,23 @@ export function textGuideHref(slug: string, board?: string | null): string {
   if (!elsewhere || elsewhere.length === 0) return canonical
 
   return (elsewhere.find((g) => g.board === board) ?? elsewhere[0]).href
+}
+
+/**
+ * The guide for `slug` that lives outside /revision/texts, or null if there is
+ * none.
+ *
+ * For the placeholder itself, which has to know whether it is a text with no
+ * guide or a text whose guide is on another route. Until 26 September 2026 it
+ * could not tell the two apart, so sixteen placeholders told students a guide
+ * was "in production" while a finished one sat one route away: the nine
+ * Language A anthology extracts, four Part 2 poems and three texts in the
+ * revision-notes library.
+ * `boards` are the text's own specifications and break ties the way `board`
+ * does above.
+ */
+export function guideElsewhere(slug: string, boards: readonly string[] = []): GuideLocation | null {
+  const elsewhere = GUIDE_LOCATIONS.get(slug)
+  if (!elsewhere || elsewhere.length === 0) return null
+  return elsewhere.find((g) => g.board !== null && boards.includes(g.board)) ?? elsewhere[0]
 }
