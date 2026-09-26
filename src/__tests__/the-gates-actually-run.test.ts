@@ -203,10 +203,16 @@ describe('what the suite runs in', () => {
     // analytics event never carries what a child typed. None of that exists
     // until the component runs; its matching rules are tested in the node
     // environment in text-search.test.ts.
+    //
+    // Then to 24, the same day, for theme-context-holds-still-through-hydration.
+    // The defect is a context value changing between first render and settled
+    // mount, which only exists once a provider mounts and its effects run: run
+    // against next-themes it fails the three OS-scheme mismatches, exactly the
+    // combinations that made React discard the page's server HTML in a browser.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(23)
+    ).toBeLessThanOrEqual(24)
   })
 })
 

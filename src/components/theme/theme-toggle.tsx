@@ -3,7 +3,7 @@
 /**
  * ThemeToggle - light/dark switcher, visually paired with
  * LanguageToggle (same segmented-pill shape) so the header chrome
- * stays consistent. Uses next-themes; persistence + the `.dark` class
+ * stays consistent. Uses ThemeProvider; persistence + the `.dark` class
  * on <html> are handled by the provider.
  *
  * A mounted guard prevents a hydration mismatch: the server can't know
@@ -12,7 +12,7 @@
  */
 
 import { useEffect, useState } from 'react'
-import { useTheme } from 'next-themes'
+import { useTheme } from './theme-provider'
 import { Sun, Moon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
