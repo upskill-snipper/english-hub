@@ -18,6 +18,12 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * "whereabout" in the MIT text), the guide follows the Folger text and says so
  * in rights.acknowledgement.
  *
+ * The exception is the two extracts added on 26 September 2026 (1.3 and 5.3),
+ * which print the Gutenberg text because Folger Digital Texts are licensed for
+ * non-commercial use only; the note above the extracts says why and how. The
+ * same licence bears on everything else here that follows Folger, which has
+ * not been re-examined.
+ *
  * A fact-check pass (September 2026) searched every quotation, speaker and
  * scene against the full Folger text (Mowat and Werstine) and found them all.
  * It corrected the plot instead: Duncan does not "greet" Macbeth in 1.2 (Macbeth
@@ -42,7 +48,7 @@ export const guide: StudyGuide = {
   rights: {
     status: 'public-domain',
     acknowledgement:
-      "First printed in the First Folio (1623). Quotations and scene numbers follow the Folger Shakespeare Library's edition, edited by Barbara A. Mowat and Paul Werstine, with its editorial brackets removed, and were checked against the MIT Shakespeare text and Project Gutenberg eBook #1533. Punctuation, spelling and line numbers differ slightly between editions, so find each passage in your own copy by its opening words.",
+      "First printed in the First Folio (1623). Quotations and scene numbers follow the Folger Shakespeare Library's edition, edited by Barbara A. Mowat and Paul Werstine, with its editorial brackets removed, and were checked against the MIT Shakespeare text and Project Gutenberg eBook #1533. The two passages printed from Act 1, Scene 3 and Act 5, Scene 3, and the notes on them, follow Project Gutenberg's text instead, with its older spellings such as “wither'd”. Punctuation, spelling and line numbers differ slightly between editions, so find each passage in your own copy by its opening words.",
   },
 
   native: {
@@ -58,9 +64,77 @@ export const guide: StudyGuide = {
   },
 
   // The existing page already walks through Macbeth's "If it were done"
-  // soliloquy (1.7) line by line, so these three are chosen to complement it:
-  // Lady Macbeth at her strongest, Macbeth on the brink, Lady Macbeth broken.
+  // soliloquy (1.7) line by line, so these are chosen to complement it: the
+  // prophecies that start everything, Lady Macbeth at her strongest, Macbeth on
+  // the brink, Lady Macbeth broken, and Macbeth at bay.
+  //
+  // The first and last were added on 26 September 2026, and they print Project
+  // Gutenberg eBook #1533, not the Folger text the rest of this file follows.
+  // They were first cut from the Folger pages for 1.3 and 5.3, but Folger's
+  // copyright policy (folger.edu/copyright-policy, read 26 September 2026)
+  // licenses Folger Digital Texts under CC BY-NC 3.0 and says the texts may
+  // not be used "for commercial purposes", and this site is commercial. So
+  // each passage was cut again from the Gutenberg file by script, never
+  // retyped, and matched line for line against the Folger scene: the same 32
+  // and 31 lines, the same speakers, nothing dropped. The two differ in
+  // spelling and elision ("wither'd", "call'd", "pronounc'd", "favours",
+  // "honour"), in punctuation, in "ye" for "you" twice in 1.3 ("Are ye
+  // fantastical") and in "the inhabitants" for "th' inhabitants". The
+  // annotations, notes and pointers of these two quote Gutenberg too,
+  // including their lines from other scenes, and every quotation in them was
+  // matched against the Gutenberg file by script, case and marks included.
+  //
+  // They also carry the play's own words for the Witches, Banquo and Malcolm,
+  // which the comic portraits in src/data/comics/macbeth point to: the comics
+  // test checks every marker phrase against these quotations, so rewording a
+  // line here can unregister a portrait. The Witches' first marker is
+  // therefore "So wither'd", Gutenberg's spelling.
   extracts: [
+    {
+      title: "The witches' prophecies",
+      where: 'Act 1, Scene 3',
+      pointer:
+        "Macbeth and Banquo come upon the witches on the heath, just after Macbeth's first line, “So foul and fair a day I have not seen”: from Banquo's “How far is't call'd to Forres?” to “Banquo and Macbeth, all hail!”, just before Macbeth orders them to stay and “tell me more”.",
+      text: "BANQUO: How far is't call'd to Forres?—What are these, / So wither'd, and so wild in their attire, / That look not like the inhabitants o' th' earth, / And yet are on't?—Live you? or are you aught / That man may question? You seem to understand me, / By each at once her choppy finger laying / Upon her skinny lips. You should be women, / And yet your beards forbid me to interpret / That you are so. / MACBETH: Speak, if you can;—what are you? / FIRST WITCH: All hail, Macbeth! hail to thee, Thane of Glamis! / SECOND WITCH: All hail, Macbeth! hail to thee, Thane of Cawdor! / THIRD WITCH: All hail, Macbeth! that shalt be king hereafter! / BANQUO: Good sir, why do you start and seem to fear / Things that do sound so fair?—I' th' name of truth, / Are ye fantastical, or that indeed / Which outwardly ye show? My noble partner / You greet with present grace and great prediction / Of noble having and of royal hope, / That he seems rapt withal. To me you speak not. / If you can look into the seeds of time, / And say which grain will grow, and which will not, / Speak then to me, who neither beg nor fear / Your favours nor your hate. / FIRST WITCH: Hail! / SECOND WITCH: Hail! / THIRD WITCH: Hail! / FIRST WITCH: Lesser than Macbeth, and greater. / SECOND WITCH: Not so happy, yet much happier. / THIRD WITCH: Thou shalt get kings, though thou be none: / So all hail, Macbeth and Banquo! / FIRST WITCH: Banquo and Macbeth, all hail!",
+      annotations: [
+        {
+          phrase: "So wither'd, and so wild in their attire",
+          note: "It is Banquo, not Macbeth, who describes the witches, and after “wither'd” and “wild” he turns to what they are not: they “look not like the inhabitants o' th' earth, / And yet are on't”. Everything about them sits on a border, earthly and unearthly, living and something else. The play never settles exactly what they are, so an answer can weigh more than one reading.",
+        },
+        {
+          phrase:
+            'You should be women, / And yet your beards forbid me to interpret / That you are so',
+          note: "Banquo's sentence cannot settle: they “should be” women, and yet the beards say otherwise. The witches blur man and woman just as their chant in Act 1, Scene 1 blurs fair and foul. Two scenes later Lady Macbeth asks the spirits to “unsex me here”, so the play's two most sinister female presences both seem to unsettle what a woman was expected to be.",
+        },
+        {
+          phrase: 'All hail, Macbeth! that shalt be king hereafter!',
+          note: 'The three greetings climb: Thane of Glamis, the title Macbeth already holds; Thane of Cawdor, which Duncan has already given him in Act 1, Scene 2, though Macbeth does not yet know it; and king. The first two make the third sound like the next step. Here the witches never tell him to kill anyone. How he becomes king is left to him, and that gap is where an answer about fate and free will begins.',
+        },
+        {
+          phrase: 'why do you start and seem to fear / Things that do sound so fair?',
+          note: "Banquo sees his friend “start”, flinch, at good news, and asks the question an audience may be asking too: why should a promise of the crown frighten him? A common reading is that the prophecy names a wish Macbeth already had, and later in the scene he admits to a “horrid image” that makes his hair stand on end. “Fair” echoes the witches' “Fair is foul” and Macbeth's own first line, “So foul and fair a day I have not seen”, while “seem” touches the play's concern with appearances.",
+        },
+        {
+          phrase: 'That he seems rapt withal',
+          note: "“Rapt” means carried away, lost in thought. It is the first glimpse of the private Macbeth the soliloquies will show, and Banquo remarks on it again later in the scene: “Look, how our partner's rapt.” While Macbeth is lost inside himself, it is Banquo who questions the witches.",
+        },
+        {
+          phrase:
+            'If you can look into the seeds of time, / And say which grain will grow, and which will not',
+          note: "Banquo pictures the future as a field of seed, some of which will grow and some will not. The image suits the prophecy he is about to receive, which ends with his children, the seed of a family line: he will father kings without being one. He claims to “neither beg nor fear” their favours, a steadiness set against Macbeth's silence. Alone in Act 3, Scene 1, though, he suspects foul play (“I fear, / Thou play'dst most foully for't”), tells no one, and wonders whether the prophecies may “set me up in hope”.",
+        },
+        {
+          phrase: 'Lesser than Macbeth, and greater',
+          note: "The first two riddles are paradoxes that only make sense if a word shifts its meaning. The usual reading is that Banquo will be lower in rank than Macbeth but greater in what he leaves behind, and less fortunate (an old sense of “happy”) in his own life but “happier” in his descendants. The witches' habit of speaking in double senses becomes dangerous in Act 4, when the second and third apparitions equivocate: their words are true, but not in the sense Macbeth takes them.",
+        },
+        {
+          phrase: 'Thou shalt get kings, though thou be none',
+          note: "“Get” means beget, to father. This is the line Macbeth cannot forget: in Act 3, Scene 1, among his reasons for fearing Banquo, he broods that the witches “hail'd him father to a line of kings” and placed “a fruitless crown” on his own head, and in Act 4 he is shown that line of kings. King James I was believed in Shakespeare's day to descend from Banquo, which may be why Shakespeare's Banquo takes no part in the murder, when in Shakespeare's source, Holinshed's Chronicles, he helps Macbeth kill Duncan.",
+        },
+      ],
+      question:
+        "Starting with this extract, explore how Shakespeare presents the witches' influence on Macbeth. Write about how Shakespeare presents the witches in this extract, and how he presents their influence on Macbeth in the play as a whole.",
+    },
     {
       title: 'Lady Macbeth calls on the spirits',
       where: 'Act 1, Scene 5',
@@ -189,6 +263,45 @@ export const guide: StudyGuide = {
       ],
       question:
         'Starting with this extract, explore how Shakespeare presents the effects of guilt. Write about how Shakespeare presents Lady Macbeth in this extract, and how he presents guilt in the play as a whole.',
+    },
+    {
+      title: 'Macbeth at bay',
+      where: 'Act 5, Scene 3',
+      pointer:
+        'The opening of the scene in the castle at Dunsinane, as reports come in that his thanes are deserting to the English: from “Bring me no more reports” to “Which the poor heart would fain deny, and dare not”, as he calls again for Seyton.',
+      text: "MACBETH: Bring me no more reports; let them fly all: / Till Birnam wood remove to Dunsinane / I cannot taint with fear. What's the boy Malcolm? / Was he not born of woman? The spirits that know / All mortal consequences have pronounc'd me thus: / “Fear not, Macbeth; no man that's born of woman / Shall e'er have power upon thee.”—Then fly, false thanes, / And mingle with the English epicures: / The mind I sway by, and the heart I bear, / Shall never sag with doubt nor shake with fear. / [Enter a Servant.] / The devil damn thee black, thou cream-fac'd loon! / Where gott'st thou that goose look? / SERVANT: There is ten thousand— / MACBETH: Geese, villain? / SERVANT: Soldiers, sir. / MACBETH: Go prick thy face and over-red thy fear, / Thou lily-liver'd boy. What soldiers, patch? / Death of thy soul! those linen cheeks of thine / Are counsellors to fear. What soldiers, whey-face? / SERVANT: The English force, so please you. / MACBETH: Take thy face hence. / [Exit Servant.] / Seyton!—I am sick at heart, / When I behold—Seyton, I say!—This push / Will cheer me ever or disseat me now. / I have liv'd long enough: my way of life / Is fall'n into the sere, the yellow leaf; / And that which should accompany old age, / As honour, love, obedience, troops of friends, / I must not look to have; but, in their stead, / Curses, not loud but deep, mouth-honour, breath, / Which the poor heart would fain deny, and dare not.",
+      annotations: [
+        {
+          phrase: 'Bring me no more reports; let them fly all',
+          note: 'He opens with orders, as a king should, but the orders are to stop the news and let his thanes desert. Macbeth sounds less like a king ruling Scotland than a man waiting to be proved safe, and his confidence seems to rest entirely on the two prophecies he repeats to himself in the next lines.',
+        },
+        {
+          phrase: "What's the boy Malcolm? / Was he not born of woman?",
+          note: "Macbeth sneers at Malcolm as a “boy”, the word he throws at the servant a moment later, “Thou lily-liver'd boy”. The question is meant to be scornful, but it is a trap he sets for himself: he hears “born of woman” in its ordinary sense, while the prophecy is waiting for the one man who, as Act 5, Scene 8 reveals, was “Untimely ripp'd” from his mother's womb. An audience that has learned to distrust the witches' words may already suspect a trick he cannot see.",
+        },
+        {
+          phrase: 'Shall never sag with doubt nor shake with fear',
+          note: 'A rhyming couplet (“bear” and “fear”) that sounds final and certain, the way a speech often closes. The alliteration of “sag” and “shake” gives the boast a strong beat. It is interrupted at once by a frightened servant, and within a dozen lines the certainty has collapsed into “I am sick at heart”.',
+        },
+        {
+          phrase: "The devil damn thee black, thou cream-fac'd loon!",
+          note: "Macbeth turns on a frightened servant with insults about his pallor and cowardice: “cream-fac'd”, “linen cheeks”, “whey-face”, “lily-liver'd”. Each accuses the servant of the fear Macbeth has just said he will never feel, which suggests the fear is really his own, turned on someone who cannot answer back. It is a long way from the “brave Macbeth” of Act 1, Scene 2.",
+        },
+        {
+          phrase: 'I am sick at heart',
+          note: 'The first admission of weakness in the scene, spoken between his shouts for Seyton, the officer who attends him. The sentence is broken off by those shouts, and the bravado cracks. From here the speech turns from orders to reflection, and Macbeth looks at his own life instead of at his enemies.',
+        },
+        {
+          phrase: "my way of life / Is fall'n into the sere, the yellow leaf",
+          note: "“Sere” means dry and withered. Macbeth pictures his life as a leaf in autumn, dried out and ready to fall. In the next scene Malcolm's soldiers cut boughs from Birnam Wood to carry towards Dunsinane, so the living wood comes for a man who already feels like a dead leaf.",
+        },
+        {
+          phrase: 'As honour, love, obedience, troops of friends',
+          note: 'He lists what old age should bring, and knows he has lost all of it. In Act 1, Scene 7 he hesitated over the murder because he had “bought / Golden opinions from all sorts of people”; now he expects only “Curses, not loud but deep” and “mouth-honour”, respect that is spoken and not meant. The tyrant has the crown and none of the loyalty it should command.',
+        },
+      ],
+      question:
+        'Starting with this extract, explore how Shakespeare presents Macbeth as a tyrant. Write about how Shakespeare presents Macbeth in this extract, and how he presents Macbeth as a tyrant in the play as a whole.',
     },
   ],
 
@@ -630,9 +743,10 @@ export const guide: StudyGuide = {
       where: 'Act 5, Scene 4',
       title: 'Birnam Wood',
       summary:
-        "Near Birnam Wood, Malcolm orders “Let every soldier hew him down a bough” and carry it, so that Macbeth's scouts cannot count the army. The witches' impossible condition is about to be met by a soldier's trick.",
+        "Near Birnam Wood, Malcolm orders every soldier to cut down a bough and carry it before him, so that Macbeth's scouts cannot count the army. The witches' impossible condition is about to be met by a soldier's trick.",
       setting: 'Near Birnam Wood',
       who: ['Malcolm', 'Macduff', 'Siward'],
+      quote: 'Let every soldier hew him down a bough',
       themes: ['Appearance vs Reality', 'The Supernatural'],
       tension: 3,
       significance:

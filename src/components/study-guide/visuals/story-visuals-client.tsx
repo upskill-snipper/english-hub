@@ -1,9 +1,10 @@
 'use client'
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
-import type { KeyboardEvent, RefObject } from 'react'
+import type { KeyboardEvent, ReactNode, RefObject } from 'react'
 import { ChevronLeft, ChevronRight, MapPin, Pause, Play, Sparkles, Users } from 'lucide-react'
 
+import { PlayOnView } from '@/components/comics/linocut/play-on-view'
 import { partOf, showsPartChips } from '@/lib/study-guides/parts'
 import type { GuideMoment, GuideRelationship } from '@/lib/study-guides/types'
 
@@ -24,6 +25,11 @@ import type { GuideMoment, GuideRelationship } from '@/lib/study-guides/types'
  * motion switched on gets the finished drawings at once, with no line-drawing,
  * sliding or autoplay. Autoplay never starts on its own: moving content has to
  * be started by the reader and can always be paused.
+ *
+ * COMIC PANELS. A moment with a linocut panel shows it above its text. The
+ * panels arrive already rendered, from the server wrapper, keyed by moment
+ * title; this file never imports the art (see story-visuals.tsx). Each panel's
+ * own motion plays once, when it is on screen, through PlayOnView.
  */
 
 export type StoryVisualsLabels = {
@@ -55,6 +61,8 @@ type Props = {
   labels: StoryVisualsLabels
   /** Scene player only, for an act or chapter page: no whole-text arc or map. */
   scenesOnly?: boolean
+  /** Server-rendered comic panels, keyed by the exact title of their moment. */
+  panels?: Record<string, ReactNode>
 }
 
 /** Whether the reader has asked for less motion. False on the server. */
@@ -130,6 +138,7 @@ export function StoryVisualsClient({
   themes,
   labels,
   scenesOnly = false,
+  panels,
 }: Props) {
   const reduce = useReducedMotion()
   const [index, setIndex] = useState(0)
@@ -479,6 +488,9 @@ export function StoryVisualsClient({
             aria-live="polite"
             className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-right-6 motion-safe:duration-500"
           >
+            {panels?.[current.title] && (
+              <PlayOnView className="mb-5">{panels[current.title]}</PlayOnView>
+            )}
             <p className="font-mono text-body-xs uppercase tracking-wider text-primary">
               {labels.momentOf} {index + 1} {labels.of} {timeline.length} &middot; {current.where}
             </p>

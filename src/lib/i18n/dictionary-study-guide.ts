@@ -211,6 +211,25 @@ export const STUDY_GUIDE_DICTIONARY: Record<string, { en: string; ar: string; es
     es: 'Ir a una parte del texto',
   },
 
+  // "Characters as described": linocut portraits drawn from the text's own
+  // words, rendered by src/components/study-guide/visuals/characters-as-described.tsx.
+  // The portraits' quotations stay in English, as all guide content does.
+  'study_guide.comics.gallery_heading': {
+    en: 'Characters as described',
+    ar: 'الشخصيات مثل ما يوصفها النص',
+    es: 'Los personajes tal como se describen',
+  },
+  'study_guide.comics.gallery_intro': {
+    en: 'Each portrait is drawn from the words of the text, not from a film or a stage production. The numbers on the picture point to those words.',
+    ar: 'كل صورة مرسومة من كلمات النص نفسه، مو من فيلم ولا من عرض مسرحي. الأرقام اللي على الصورة تأشّر على هالكلمات.',
+    es: 'Cada retrato está dibujado a partir de las palabras del texto, no de una película ni de una puesta en escena. Los números de la imagen señalan esas palabras.',
+  },
+  'study_guide.comics.markers_label': {
+    en: 'The words the numbers point to',
+    ar: 'الكلمات اللي تأشّر عليها الأرقام',
+    es: 'Las palabras que señalan los números',
+  },
+
   // The word counts in these two lines are true of every page that shows them:
   // the validator holds every guide to them, and quoted_total is computed from
   // the guide it sits under. The older pages printed "15 words or fewer" above

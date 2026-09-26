@@ -1,5 +1,8 @@
+import type { ReactNode } from 'react'
 import { Clapperboard } from 'lucide-react'
 
+import { RegisteredPanel } from '@/components/comics/linocut/pieces'
+import { loadComics } from '@/lib/comics/load'
 import { t } from '@/lib/i18n/t'
 import { inPart, showsPartChips } from '@/lib/study-guides/parts'
 import type { StudyGuide } from '@/lib/study-guides/types'
@@ -9,6 +12,14 @@ import { StoryVisualsClient, type StoryVisualsLabels } from './story-visuals-cli
  * The visual-learning block for one text: server wrapper that resolves the
  * labels in the reader's locale and hands the guide's timeline and character
  * map to the animated client component.
+ *
+ * COMIC PANELS (26 September 2026). Where a text has linocut panels registered
+ * in src/data/comics/<slug>/, each is rendered HERE, on the server, and handed
+ * to the client as a finished React element keyed by its moment's title. The
+ * client only chooses which one to show. So the drawings, and the carving code
+ * that builds them, never enter the client bundle; the page carries their
+ * markup instead. Only panels for moments in this timeline are sent, so an act
+ * page sends that act's panels and no others.
  *
  * `headingLevel` follows the page it sits in: an h2 on a guide page, an h3
  * inside a supplement block that already has its own h2.
@@ -108,6 +119,12 @@ export async function StoryVisuals({
       ? guide.themes.map((th) => th.title)
       : [...new Set(timeline.flatMap((m) => m.themes))]
 
+  const comics = await loadComics(guide.slug)
+  const panels: Record<string, ReactNode> = {}
+  for (const panel of comics?.panels ?? [])
+    if (timeline.some((m) => m.title === panel.moment))
+      panels[panel.moment] = <RegisteredPanel slug={guide.slug} panel={panel} />
+
   const Heading = headingLevel
   const id = `guide-${guide.slug}-visuals`
 
@@ -128,6 +145,7 @@ export async function StoryVisuals({
         themes={themes}
         labels={labels}
         scenesOnly={scenesOnly}
+        panels={panels}
       />
     </section>
   )

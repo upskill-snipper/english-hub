@@ -11737,6 +11737,10 @@ export const AR_MESSAGES: Record<string, string> = {
   'study_guide.read.kind.audio': 'اسمعه',
   'study_guide.read.kind.board_anthology': 'في مختارات مجلس الامتحانات',
   'study_guide.visuals.parts': 'روح لجزء من النص',
+  'study_guide.comics.gallery_heading': 'الشخصيات مثل ما يوصفها النص',
+  'study_guide.comics.gallery_intro':
+    'كل صورة مرسومة من كلمات النص نفسه، مو من فيلم ولا من عرض مسرحي. الأرقام اللي على الصورة تأشّر على هالكلمات.',
+  'study_guide.comics.markers_label': 'الكلمات اللي تأشّر عليها الأرقام',
   'study_guide.rights.fair_dealing':
     'الاقتباسات قصيرة، كل واحد أقل من 15 كلمة، ويتبعه تحليل له. مذكورة مع الإشارة إلى مصدرها لغرض النقد والمراجعة ضمن بند الاستخدام العادل في قانون حقوق النشر والتصاميم وبراءات الاختراع لعام 1988 (CDPA، المادة 30). المقاطع الأطول نشير لمكانها بدل ما ننسخها. هالدليل ما يغني عن قراءة النص.',
   'study_guide.rights.quoted_total':

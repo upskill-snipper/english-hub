@@ -12003,6 +12003,10 @@ export const EN_MESSAGES: Record<string, string> = {
   'study_guide.read.kind.audio': 'Hear it',
   'study_guide.read.kind.board_anthology': 'In the exam board anthology',
   'study_guide.visuals.parts': 'Jump to a part of the text',
+  'study_guide.comics.gallery_heading': 'Characters as described',
+  'study_guide.comics.gallery_intro':
+    'Each portrait is drawn from the words of the text, not from a film or a stage production. The numbers on the picture point to those words.',
+  'study_guide.comics.markers_label': 'The words the numbers point to',
   'study_guide.rights.fair_dealing':
     'Quotations are short, each under 15 words, and each is followed by analysis of it. They are included, with acknowledgement, for the purpose of criticism and review under the fair-dealing provision of the Copyright, Designs and Patents Act 1988 (s.30). Longer passages are pointed to rather than printed. This guide is not a substitute for reading the text.',
   'study_guide.rights.quoted_total':

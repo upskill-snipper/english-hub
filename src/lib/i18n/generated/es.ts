@@ -12321,6 +12321,10 @@ export const ES_MESSAGES: Record<string, string> = {
   'study_guide.read.kind.audio': 'Escúchalo',
   'study_guide.read.kind.board_anthology': 'En la antología del tribunal examinador',
   'study_guide.visuals.parts': 'Ir a una parte del texto',
+  'study_guide.comics.gallery_heading': 'Los personajes tal como se describen',
+  'study_guide.comics.gallery_intro':
+    'Cada retrato está dibujado a partir de las palabras del texto, no de una película ni de una puesta en escena. Los números de la imagen señalan esas palabras.',
+  'study_guide.comics.markers_label': 'Las palabras que señalan los números',
   'study_guide.rights.fair_dealing':
     'Las citas son breves, de menos de 15 palabras cada una, y cada una va seguida de su análisis. Se incluyen, con reconocimiento de la fuente, con fines de crítica y reseña al amparo de la disposición de uso legítimo (fair dealing) de la Copyright, Designs and Patents Act 1988 (s.30). Los pasajes más largos se señalan en lugar de reproducirse. Esta guía no sustituye la lectura del texto.',
   'study_guide.rights.quoted_total':
