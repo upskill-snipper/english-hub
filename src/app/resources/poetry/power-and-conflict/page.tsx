@@ -245,7 +245,7 @@ const COMPARISON_DATA: {
     type: 'Modern',
     themes: 'Power, fragility, identity, control',
     tone: 'Reflective, philosophical',
-    form: "10 quatrains + final isolated single-line stanza ('turned into your skin.'), enjambment",
+    form: 'Nine quatrains + final isolated single-line stanza (line 37), enjambment',
   },
   {
     poem: 'The Émigrée',
@@ -269,7 +269,7 @@ const COMPARISON_DATA: {
     type: 'Modern',
     themes: 'Conflict, honour, shame, family',
     tone: 'Reflective, ambiguous',
-    form: 'Seven sestets + couplet, third-person narrative',
+    form: "Seven sestets, third-person narrative framing the daughter's voice",
   },
 ]
 
@@ -644,8 +644,11 @@ export default function PowerAndConflictPage() {
                     technique="Visual imagery / synecdoche"
                     analysis="The statue is reduced to disconnected body parts, symbolising how Ozymandias's power has been fragmented by time. The adjective 'trunkless' emphasises destruction and incompleteness, undermining any sense of grandeur."
                   />
+                  {/* Checked on 26 September 2026 against poets.org, whose text this
+                      section follows (capitals as in Works and Wreck). The comma after
+                      the opening two words had been dropped. */}
                   <Quote
-                    text="Half sunk a shattered visage lies, whose frown, / And wrinkled lip, and sneer of cold command"
+                    text="Half sunk, a shattered visage lies, whose frown, / And wrinkled lip, and sneer of cold command"
                     technique="Tricolon / characterisation"
                     analysis="The three facial expressions ('frown,' 'wrinkled lip,' 'sneer') characterise Ozymandias as cruel and tyrannical. Even in ruin, his arrogance is preserved. The phrase 'cold command' suggests power exercised without compassion."
                   />
@@ -743,13 +746,17 @@ export default function PowerAndConflictPage() {
                     technique="Metaphor / compound adjective"
                     analysis="One of Blake's most powerful images: the people are mentally imprisoned, not just physically oppressed. 'Mind-forg'd' suggests that people have been conditioned to accept their oppression, making the chains psychological as well as social."
                   />
+                  {/* Checked on 26 September 2026 against poets.org, whose spelling
+                      this section follows (thro', charter'd, mind-forg'd, blackning).
+                      Two possessive apostrophes, here and in the next quotation, had
+                      been dropped; the AQA anthology prints both too. */}
                   <Quote
-                    text="How the Chimney-sweepers cry / Every blackning Church appalls"
+                    text="How the Chimney-sweeper's cry / Every blackning Church appalls"
                     technique="Juxtaposition / symbolism"
                     analysis="Blake juxtaposes the suffering of child chimney sweepers with the Church, which should protect the vulnerable but instead ignores their plight. 'Blackning' suggests both the soot and moral corruption. 'Appalls' means both to horrify and, literally, to make pale (like a funeral pall)."
                   />
                   <Quote
-                    text="Blasts the new-born Infants tear"
+                    text="Blasts the new-born Infant's tear"
                     technique="Violent imagery / semantic field of disease"
                     analysis="The final stanza presents a cycle of suffering where disease passes from generation to generation. The verb 'blasts' is violent and destructive, suggesting that innocence is destroyed from birth. The new-born infant inherits the corruption of the society."
                   />
@@ -1179,49 +1186,55 @@ export default function PowerAndConflictPage() {
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The speaker describes a remote island community preparing for and enduring a
-                  violent storm. The inhabitants initially appear confident in their preparations
-                  &mdash; their houses are solidly built, they have no trees that could fall.
-                  However, as the storm intensifies, the poem reveals that nature&apos;s power is
-                  terrifying precisely because it is invisible and uncontrollable. The poem can also
-                  be read as an allegory for the political conflict in Northern Ireland (the first
-                  eight letters spell &ldquo;STORMONT,&rdquo; the seat of the Northern Irish
-                  government).
+                  violent storm. The inhabitants initially appear confident in their preparations:
+                  their houses are low and solidly built, and the bare land has no haystacks to lose
+                  and no trees for shelter. However, as the storm intensifies, the poem reveals that
+                  nature&apos;s power is terrifying precisely because it is invisible and
+                  uncontrollable. The poem can also be read as an allegory for the political
+                  conflict in Northern Ireland (the first eight letters of the title spell
+                  &ldquo;STORMONT,&rdquo; the seat of the Northern Irish government).
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Written in blank verse (unrhymed iambic pentameter) in a single continuous stanza,
-                  the form reflects both the relentless force of the storm and conversational,
-                  seemingly casual speech (&ldquo;We are prepared: we build our houses
-                  squat&rdquo;). The poem moves from confident preparation to growing unease, and
-                  the final lines reveal a profound shift: what was dismissed as
-                  &ldquo;nothing&rdquo; becomes terrifying. The enjambment mirrors the
-                  unpredictable, unstoppable force of the wind.
+                  Written in blank verse (unrhymed iambic pentameter) in a single continuous stanza
+                  of 19 lines, the form reflects both the relentless force of the storm and
+                  conversational, seemingly casual speech, from the confident declaration of the
+                  opening line to the aside addressed to the listener (line 7). The poem moves from
+                  confident preparation to growing unease, and the final line reveals a profound
+                  shift: the enemy is named as nothing at all, and yet it is feared (line 19). The
+                  enjambment mirrors the unpredictable, unstoppable force of the wind.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
+                  {/* Checked word for word against the AQA anthology (AQA's own copy,
+                      filestore.aqa.org.uk/resources/english/AQA-8702-TG-POEMS.PDF, printed by
+                      permission of Faber and Faber) on 26 September 2026. The strafing note
+                      said "the next two lines (17 and 18)" carry on the metaphor, but the
+                      quotation itself ends in line 17: the artillery image is the rest of that
+                      line, and the bombardment is line 18. */}
                   <Quote
-                    text="We are prepared: we build our houses squat"
+                    text="we build our houses squat"
                     technique="Declarative / collective pronoun"
-                    analysis="The opening statement is confident and assertive. The collective 'we' creates a sense of community solidarity. 'Squat' suggests low, sturdy buildings designed to withstand nature. Yet this confidence is gradually undermined as the poem progresses."
+                    analysis="The opening line is confident and assertive, beginning with a declaration that the islanders are ready. The collective 'we' creates a sense of community solidarity. 'Squat' suggests low, sturdy buildings designed to withstand nature. Yet this confidence is gradually undermined as the poem progresses."
                   />
                   <Quote
-                    text="spits like a tame cat / Turned savage"
+                    text="a tame cat / Turned savage"
                     technique="Simile / semantic shift"
-                    analysis="The sea is compared to a domestic cat that becomes wild, suggesting that familiar, seemingly safe things can turn dangerous without warning. The enjambment across 'tame cat / Turned savage' enacts the sudden transformation from safety to danger."
+                    analysis="The spray the sea flings at the windows (lines 14 to 16) is compared to a domestic cat that becomes wild, suggesting that familiar, seemingly safe things can turn dangerous without warning. The enjambment across the line break enacts the sudden transformation from safety to danger."
                   />
                   <Quote
-                    text="We just sit tight while wind dives / And strafes invisibly"
+                    text="wind dives / And strafes invisibly"
                     technique="Military metaphor / violent verbs"
-                    analysis="The military vocabulary ('dives,' 'strafes') transforms the storm into an aerial attack, linking natural power to conflict. If read as an allegory for Northern Ireland, the military language takes on a literal dimension. 'Invisibly' suggests an enemy that cannot be seen or fought."
+                    analysis="The military vocabulary ('dives,' 'strafes') transforms the storm into an aerial attack, linking natural power to conflict, and the rest of line 17 and all of line 18 continue it with the language of artillery and bombardment. If read as an allegory for Northern Ireland, the military language takes on a literal dimension. 'Invisibly' suggests an enemy that cannot be seen or fought."
                   />
                   <Quote
-                    text="It is a huge nothing that we fear"
+                    text="a huge nothing"
                     technique="Oxymoron / paradox"
-                    analysis="The poem's conclusion is paradoxical: the islanders fear 'nothing,' yet this nothing is 'huge.' The absence of a tangible enemy makes the fear worse, not better. This captures the nature of anxiety and, potentially, the invisible threat of political violence."
+                    analysis="The poem's final line (line 19) is paradoxical: the islanders fear 'nothing,' yet this nothing is 'huge.' The absence of a tangible enemy makes the fear worse, not better. This captures the nature of anxiety and, potentially, the invisible threat of political violence."
                   />
                 </div>
               </SubSection>
@@ -1268,14 +1281,15 @@ export default function PowerAndConflictPage() {
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The poem imagines a single soldier&apos;s experience during a WWI-style bayonet
-                  charge. (Ted Hughes, 1930-1998, was born in 1930 and never fought in any war - he
-                  drew on his father William&apos;s WWI accounts, and William survived Gallipoli as
-                  one of only seventeen survivors of his Lancashire Fusiliers regiment.) It begins
-                  in medias res (in the middle of action) with the soldier already running. He is
-                  overwhelmed by terror and confusion, and the second stanza sees him freeze as
-                  patriotic ideals (&ldquo;King, honour, human dignity, etcetera&rdquo;) dissolve
-                  under the reality of combat. The final stanza presents him as reduced to a
-                  terrified animal, driven by raw survival instinct rather than any noble cause.
+                  charge. (Ted Hughes, 1930-1998, never fought in any war - he drew on his father
+                  William&apos;s WWI accounts, and William survived Gallipoli as one of only
+                  seventeen survivors of his Lancashire Fusiliers regiment.) It begins in medias res
+                  (in the middle of action) with the soldier already running. He is overwhelmed by
+                  terror and confusion, and in the second stanza he almost stops, bewildered, asking
+                  what vast, impersonal system has made him its instrument. In the third stanza a
+                  hare flung up by the gunfire writhes in agony, and as he plunges on, the patriotic
+                  ideals named in line 20 fall away under the reality of combat. He ends reduced to
+                  a terrified animal, driven by raw survival instinct rather than any noble cause.
                 </p>
               </SubSection>
 
@@ -1296,19 +1310,19 @@ export default function PowerAndConflictPage() {
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="Suddenly he awoke and was running - raw"
+                    text="Suddenly he awoke"
                     technique="In medias res / adjective"
-                    analysis="The poem opens mid-action, disorientating the reader just as the soldier is disorientated. 'Awoke' suggests the soldier has been jolted from safety into terrifying reality. 'Raw' is placed at the end of the line for emphasis, suggesting vulnerability, exposure, and pain."
+                    analysis="The poem opens mid-action: by the end of the first line he is already running, which disorientates the reader just as the soldier is disorientated. 'Awoke' suggests the soldier has been jolted from safety into terrifying reality. The adjective 'raw' is placed at the end of line 1 for emphasis, suggesting vulnerability, exposure, and pain."
                   />
                   <Quote
-                    text="raw / In raw-seamed hot khaki"
+                    text="raw-seamed hot khaki"
                     technique="Repetition / tactile imagery"
-                    analysis="The repetition of 'raw' connects the soldier's emotional state to his physical discomfort. The uniform that should protect him is instead painful, its rough seams chafing. The detail makes the experience visceral and immediate."
+                    analysis="Repeated straight after the end of line 1, 'raw' connects the soldier's emotional state to his physical discomfort. The uniform that should protect him is instead painful, its rough seams chafing. The detail makes the experience visceral and immediate."
                   />
                   <Quote
                     text="King, honour, human dignity, etcetera / Dropped like luxuries"
                     technique="Bathos / simile"
-                    analysis="Hughes writes 'etcetera' once - cite exactly as printed; do not abbreviate to 'etc.', and don't double the word. The single, dismissive 'etcetera' reduces patriotic ideals to throwaway filler, stripping them of meaning. These abstract concepts are compared to 'luxuries' - pleasant but non-essential things that are abandoned when survival is at stake. Hughes devastatingly critiques the ideals used to justify war."
+                    analysis="The single, dismissive 'etcetera' reduces patriotic ideals to throwaway filler, stripping them of meaning. These abstract concepts are compared to 'luxuries' - pleasant but non-essential things that are abandoned when survival is at stake. They fall away in the third stanza, as he plunges on with his bayonet, not in the moment of stillness before it. Hughes devastatingly critiques the ideals used to justify war."
                   />
                   <Quote
                     text="a yellow hare that rolled like a flame"
@@ -1357,11 +1371,12 @@ export default function PowerAndConflictPage() {
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Based on the real testimony of a soldier, the speaker describes shooting a looter
-                  while on patrol. The soldier and his colleagues open fire, and the man is left
-                  dying in the road. The speaker is then haunted by the memory: the dead man&apos;s
-                  image stays with him, appearing when he tries to sleep, walk, or even think. The
-                  poem explores how a single act of violence can cause lasting psychological trauma,
-                  presenting the reality of PTSD (post-traumatic stress disorder).
+                  while on patrol. He and two other soldiers open fire together, the man is killed,
+                  and his body is carted away. That should be the end of the story, but it is not:
+                  the dead man&apos;s image stays with him on patrol and at home on leave, returning
+                  whenever he blinks, sleeps or dreams, and neither drink nor drugs can remove it.
+                  The poem explores how a single act of violence can cause lasting psychological
+                  trauma, presenting the reality of PTSD (post-traumatic stress disorder).
                 </p>
               </SubSection>
 
@@ -1372,8 +1387,12 @@ export default function PowerAndConflictPage() {
                   occasion,&rdquo; as if this is just one of many stories, but this ordinariness
                   makes the content more disturbing. The stanzas are mostly regular quatrains until
                   the final couplet, where the structure breaks down, mirroring the soldier&apos;s
-                  psychological disintegration. The shift from past tense (the event) to present
-                  tense (the haunting) shows the trauma is ongoing and inescapable.
+                  psychological disintegration. After the opening line, the killing itself is told
+                  in the present tense, as though it is still happening, and the turn at the start
+                  of stanza 5 carries the poem from the event into its aftermath. The patrol&apos;s
+                  shared pronouns, which run through the first four stanzas, fall away after the
+                  turn, leaving a lone first person: three soldiers fired, but the poem ends with
+                  one man alone with the guilt, and the trauma is ongoing and inescapable.
                 </p>
               </SubSection>
 
@@ -1382,27 +1401,27 @@ export default function PowerAndConflictPage() {
                   <Quote
                     text="probably armed, possibly not"
                     technique="Hedging language / moral ambiguity"
-                    analysis="The words 'probably' and 'possibly' reveal the soldier's uncertainty about whether the shooting was justified. This ambiguity is the source of his guilt: he can never know if the man was a genuine threat. The casual tone makes the moral weight even more unsettling."
+                    analysis="The words 'probably' and 'possibly' reveal the soldier's uncertainty about whether the shooting was justified. This ambiguity is the source of his guilt: he can never know if the man was a genuine threat. The casual tone makes the moral weight even more unsettling, and the same doubt returns in his sleep in stanza 6 (line 22)."
                   />
                   <Quote
-                    text="And one of them legs it up the road"
+                    text="legs it"
                     technique="Colloquial language / slang"
-                    analysis="The informal 'legs it' is strikingly casual for a moment of life-or-death violence. This reflects how soldiers use everyday language to process extraordinary events, and how military culture can normalise violence."
+                    analysis="The informal slang for running off (line 3) is strikingly casual for a moment of life-or-death violence. This reflects how soldiers use everyday language to process extraordinary events, and how military culture can normalise violence."
                   />
                   <Quote
-                    text="his blood-shadow stays on the street"
+                    text="blood-shadow"
                     technique="Imagery / double meaning"
-                    analysis="The bloodstain literally remains on the road, but 'shadow' also suggests the dead man's presence lingers as a ghost or memory. The image foreshadows the psychological haunting that dominates the second half of the poem."
+                    analysis="The bloodstain literally remains on the street he goes on patrolling (line 18), but 'shadow' also suggests the dead man's presence lingers as a ghost or memory. The image foreshadows the psychological haunting that dominates the second half of the poem."
                   />
                   <Quote
                     text="his bloody life in my bloody hands"
                     technique="Pun / repetition"
-                    analysis="'Bloody' works as both a swear word (reflecting the soldier's colloquial voice) and a literal description (his hands are stained with blood). The double meaning captures the collision of casual language and profound guilt. The responsibility is inescapable: 'my' hands."
+                    analysis="The poem's final line. 'Bloody' works as both a swear word (reflecting the soldier's colloquial voice) and a literal description (his hands are stained with blood). The double meaning captures the collision of casual language and profound guilt. The responsibility is inescapable: 'my' hands."
                   />
                   <Quote
-                    text="he's here in my head when I close my eyes"
-                    technique="Present tense / psychological imagery"
-                    analysis="The shift to present tense shows the trauma is not in the past but ongoing. The dead man has moved from the street into the soldier's mind, where he cannot be escaped. Closing your eyes should bring rest, but for this soldier it brings the image closer."
+                    text="he's here in my head"
+                    technique="Psychological imagery / military metaphor"
+                    analysis="The trauma is not in the past but ongoing. The dead man has moved from the street into the soldier's mind, and the next line pictures him entrenched there like an enemy soldier who cannot be dislodged. Closing your eyes should bring rest, but for this soldier it brings the image closer (line 25)."
                   />
                 </div>
               </SubSection>
@@ -1428,7 +1447,7 @@ export default function PowerAndConflictPage() {
                   />
                   <ComparisonSuggestion
                     poem="Poppies"
-                    reason="Both explore the human cost of war, but from different perspectives: the soldier who inflicts violence and the mother who loses a child to it."
+                    reason="Both explore the human cost of war, but from different perspectives: the soldier who inflicts violence and the mother who watches her child leave for it."
                   />
                 </ul>
               </SubSection>
@@ -1445,8 +1464,9 @@ export default function PowerAndConflictPage() {
             >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  A mother describes the experience of her son leaving for military service. The
-                  poem moves between different moments in time: pinning a poppy to his lapel,
+                  A mother describes the experience of her son leaving for military service. It
+                  opens just before Armistice Sunday, with poppies already laid on the war graves,
+                  and moves between different moments in time: pinning a poppy to his lapel,
                   smoothing his collar, and later visiting a war memorial. Through domestic imagery
                   and sensory details, Weir captures the private, personal grief of a mother whose
                   loss is set against the public rituals of remembrance. The poem does not confirm
@@ -1470,27 +1490,27 @@ export default function PowerAndConflictPage() {
                   <Quote
                     text="Sellotape bandaged around my hand"
                     technique="Domestic imagery / metaphor"
-                    analysis="The Sellotape from craft activities becomes a 'bandage,' transforming an innocent domestic object into a symbol of injury and healing. The mother's emotional wounds are expressed through everyday objects, grounding the poem in the personal and domestic."
+                    analysis="The Sellotape she uses to lift cat hairs from his clothes is 'bandaged' around her hand, transforming an innocent domestic object into a symbol of injury and healing. The mother's emotional wounds are expressed through everyday objects, grounding the poem in the personal and domestic."
                   />
                   <Quote
-                    text="the world overflowing"
-                    technique="Simile / enjambment"
-                    analysis="This simile captures the mother's memory of her son's childhood wonder and excitement. The enjambment across lines mirrors the 'overflowing' quality. It contrasts painfully with the present moment of loss, making the grief more acute."
-                  />
-                  <Quote
-                    text="three days before Armistice Sunday"
+                    text="the front door"
                     technique="Military language / double meaning"
-                    analysis="'Brave' and 'front' carry military connotations, but are used in a domestic context. The mother must be as courageous as a soldier to let her son go. 'The front door' also echoes 'the front' (the front line), blurring the boundary between home and battlefield."
+                    analysis="Just before this she says she was 'brave' as she walked him there (line 18). 'Brave' and 'front' carry military connotations, but are used in a domestic context. The mother must be as courageous as a soldier to let her son go. 'The front door' also echoes 'the front' (the front line), blurring the boundary between home and battlefield."
                   />
                   <Quote
-                    text="released a song bird from its cage"
+                    text="like a treasure chest"
+                    technique="Simile / enjambment"
+                    analysis="When the door is thrown open, the world beyond seems to spill over with riches and adventure, and the image itself spills across the line break (lines 20 to 21). This is the excitement that draws the son away, and it contrasts painfully with the emptiness the mother is left with, making the grief more acute."
+                  />
+                  <Quote
+                    text="released a song bird"
                     technique="Metaphor / symbolism"
-                    analysis="The metaphor of releasing a caged bird captures both the freedom of the son leaving and the mother's act of letting go. There is tenderness but also loss: the bird is free, but the cage-holder is left empty. It also suggests the irreversibility of the departure."
+                    analysis="After he has gone, she goes into his bedroom and frees a caged bird (line 24). The metaphor captures both the freedom of the son leaving and the mother's act of letting go. There is tenderness but also loss: the bird is free, but the cage-holder is left empty. It also suggests the irreversibility of the departure."
                   />
                   <Quote
-                    text="leaned against it like a bird"
-                    technique="Simile / structural echo"
-                    analysis="At the war memorial, the mother leans against it 'like a bird,' echoing the earlier caged-bird metaphor but now she is the vulnerable one. The role reversal is poignant: the son has flown; the mother is left exposed and fragile."
+                    text="like a wishbone"
+                    technique="Simile"
+                    analysis="At the top of the hill she leans against the war memorial (line 32). A wishbone is fragile and made to be snapped, so her body is pictured as bent and close to breaking, and the image carries a wish, perhaps for her son's safe return, that may not be granted. The dove she has followed is now high in the sky above her, while she is left exposed and alone."
                   />
                 </div>
               </SubSection>
@@ -1538,12 +1558,14 @@ export default function PowerAndConflictPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   A war photographer develops his photographs in a darkroom after returning from a
                   conflict zone. As the images emerge, he remembers the suffering he witnessed. The
-                  poem contrasts the horror of war zones (Belfast, Phnom Penh, somewhere from which
-                  the &ldquo;running children in a nightmare heat&rdquo; come) with &ldquo;Rural
-                  England&rdquo; and its comfortable indifference. Duffy explores the
-                  photographer&apos;s moral conflict: he records suffering for a living, but the
-                  public barely engages with the images before moving on. The poem ends with him
-                  boarding a plane to another war zone, trapped in a cycle.
+                  poem contrasts the horror of the war zones it names in line 6 (Belfast, Beirut,
+                  Phnom Penh) with the safety of home in England (line 9), whose fields, unlike
+                  theirs, do not explode under fleeing children, and with its comfortable
+                  indifference. Duffy explores the photographer&apos;s moral conflict: he records
+                  suffering for a living, but the public barely engages with the images before
+                  moving on. The poem ends with him on an aeroplane, looking down without
+                  expression, which many readers take as him setting off on his next assignment,
+                  trapped in a cycle.
                 </p>
               </SubSection>
 
@@ -1553,23 +1575,23 @@ export default function PowerAndConflictPage() {
                   controlled, ordered structure that mirrors the photographer&apos;s attempt to
                   impose order on chaotic, traumatic memories. The regularity contrasts with the
                   disturbing content, just as the neat rows of photographs contrast with the chaos
-                  they depict. The poem moves from the darkroom to the war zone and back, with a
-                  cyclical ending as the photographer prepares to leave again &mdash; suggesting the
-                  cycle of violence and indifference is unbroken.
+                  they depict. The poem moves from the darkroom to the war zone and back, and ends
+                  with the photographer on an aeroplane, most readers assume heading out again,
+                  which suggests the cycle of violence and indifference is unbroken.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="In his darkroom he is finally alone / with spools of suffering set out in ordered rows"
+                    text="spools of suffering"
                     technique="Alliteration / juxtaposition"
-                    analysis="The sibilance in 'spools of suffering' creates a hissing, unsettling sound. 'Ordered rows' echoes graves in a military cemetery, but also the neat filing of photographs. The juxtaposition of 'suffering' and 'ordered' highlights the tension between raw human pain and its careful, clinical documentation."
+                    analysis="Alone in his darkroom (line 1), he sets out his film. The sibilance in 'spools of suffering' creates a hissing, unsettling sound. The spools lie in 'ordered rows' (line 2), which echoes graves in a military cemetery, but also the neat filing of photographs. The juxtaposition of 'suffering' and 'ordered' highlights the tension between raw human pain and its careful, clinical documentation."
                   />
                   <Quote
                     text="All flesh is grass"
                     technique="Biblical allusion"
-                    analysis="This quotation from Isaiah emphasises the fragility and brevity of human life. In the context of war photography, it reminds the reader that the subjects of these photographs were living people, not just images. The allusion gives the photographer's work a spiritual or moral weight."
+                    analysis="This quotation from Isaiah, set straight after the three war zones named in line 6, emphasises the fragility and brevity of human life. In the context of war photography, it reminds the reader that the subjects of these photographs were living people, not just images. The allusion gives the photographer's work a spiritual or moral weight."
                   />
                   <Quote
                     text="a half-formed ghost"
@@ -1578,13 +1600,13 @@ export default function PowerAndConflictPage() {
                   />
                   <Quote
                     text="Rural England"
-                    technique="Proper noun / contrast"
-                    analysis="The capitalisation of 'Rural England' makes it a specific, named place, set against the unnamed war zones. The phrase evokes comfort, safety, and green countryside - everything that the war zones are not. Duffy uses this contrast to critique British complacency."
+                    technique="Minor sentence / contrast"
+                    analysis="A two-word sentence (line 9) abruptly returns him home, straight after he admits his hands now seem to tremble. Like the war zones listed in line 6, home is named, but this name evokes comfort, safety, and green countryside - everything that the war zones are not. Duffy uses this contrast to critique British complacency."
                   />
                   <Quote
-                    text="The reader's eyeballs prick / with tears between the bath and pre-lunch beers"
+                    text="between the bath and pre-lunch beers"
                     technique="Bathos / contrast"
-                    analysis="The public's emotional response is fleeting and shallow: they feel momentary pity but quickly return to comfortable routines. The domestic details ('bath,' 'pre-lunch beers') trivialise the suffering. Duffy critiques a society that can observe atrocities and remain fundamentally unmoved."
+                    analysis="Of a hundred images, his editor will choose only a handful for a Sunday supplement, and its readers are moved to tears only briefly (lines 19 to 22). The public's emotional response is fleeting and shallow: they feel momentary pity but quickly return to comfortable routines. The domestic details ('bath', 'pre-lunch beers') trivialise the suffering. Duffy critiques a society that can observe atrocities and remain fundamentally unmoved."
                   />
                 </div>
               </SubSection>
@@ -1628,49 +1650,49 @@ export default function PowerAndConflictPage() {
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Dharker uses paper as an extended metaphor to explore the structures humans create
-                  &mdash; maps, religious texts, receipts, architecture &mdash; and how fragile
-                  these constructs really are. The poem suggests that the things we use to organise,
-                  record, and control life (borders, money, buildings) are as thin and temporary as
-                  tissue paper. In the final stanza, the poem shifts to the human body itself,
-                  suggesting that human life is the most important &ldquo;tissue&rdquo; of all, more
-                  significant than any constructed system.
+                  (maps, religious texts, receipts, architecture) and how fragile these constructs
+                  really are. The poem suggests that the things we use to organise, record, and
+                  control life (borders, money, buildings) are as thin and temporary as tissue
+                  paper. In the closing lines (33 to 37), the poem shifts to living tissue and the
+                  human body itself, suggesting that human life is the most important
+                  &ldquo;tissue&rdquo; of all, more significant than any constructed system.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  10 quatrains followed by a final isolated single-line stanza (&ldquo;turned into
-                  your skin.&rdquo;) create a structure that itself feels thin and fragile, like
-                  layers of tissue. The heavy use of enjambment (both within and between stanzas)
-                  means ideas flow across boundaries, mirroring the poem&apos;s argument that
-                  human-made borders and structures are artificial. The final isolated line is
-                  structurally significant &mdash; Dharker breaks the regularity of the quatrains to
-                  emphasise the volta from paper to flesh. The lack of rhyme and loose metre create
-                  a reflective, philosophical tone.
+                  Nine quatrains followed by a final isolated single-line stanza (line 37) create a
+                  structure that itself feels thin and fragile, like layers of tissue. The heavy use
+                  of enjambment (both within and between stanzas) means ideas flow across
+                  boundaries, mirroring the poem&apos;s argument that human-made borders and
+                  structures are artificial. The final isolated line is structurally significant:
+                  Dharker breaks the regularity of the quatrains to emphasise the volta from paper
+                  to flesh. The mostly unrhymed lines and loose metre create a reflective,
+                  philosophical tone.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="Paper that lets the light / shine through"
+                    text="lets the light / shine through"
                     technique="Enjambment / symbolism"
-                    analysis="Light shining through paper suggests transparency, truth, and fragility. The enjambment across lines enacts the light passing through, as meaning flows beyond the line boundary. Paper is positioned as something that reveals rather than conceals."
+                    analysis="The poem opens (lines 1 and 2) with paper that light can pass through. Light shining through paper suggests transparency, truth, and fragility. The enjambment across lines enacts the light passing through, as meaning flows beyond the line boundary. Paper is positioned as something that reveals rather than conceals."
                   />
                   <Quote
-                    text="the sun shines through / their borderlines"
+                    text="The sun shines through / their borderlines"
                     technique="Double meaning / imagery"
-                    analysis="'Borderlines' refers literally to lines on a map but also to national borders. The sun shining through them suggests these divisions are artificial and impermanent. Dharker questions the human need to divide and control the world through arbitrary boundaries."
+                    analysis="'Borderlines' (lines 17 and 18) refers literally to lines on a map but also to national borders. The sun shining through them suggests these divisions are artificial and impermanent, and the same thin paper also records the courses of rivers. Dharker questions the human need to divide and control the world through arbitrary boundaries."
                   />
                   <Quote
-                    text="might fly our lives like paper kites"
+                    text="like paper kites"
                     technique="Simile / symbolism"
-                    analysis="The image of lives as paper kites suggests both freedom (kites soaring) and fragility (paper tearing). It imagines a world where we hold our structures lightly, accepting their impermanence rather than clinging to them."
+                    analysis="The grocery slips and credit-card records of lines 21 to 23 are imagined steering our lives, as a flyer steers a kite (line 24). The simile makes lives as light as paper and suggests how much power money and its records hold over us, while the fragility of a kite hints that this power could tear as easily."
                   />
                   <Quote
                     text="turned into your skin."
                     technique="Isolated single-line stanza / direct address / volta"
-                    analysis="This is the final isolated single-line stanza, deliberately separated from the ten preceding quatrains. The structural break is significant -- Dharker disrupts the regularity of the quatrains to emphasise the volta from paper to flesh. 'Your skin' is the most fragile tissue of all, yet also the most important. The direct address ('your') involves the reader personally, suggesting that human identity and the body matter more than any paper structure."
+                    analysis="This is the final isolated single-line stanza (line 37), deliberately separated from the nine preceding quatrains. The structural break is significant: Dharker disrupts the regularity of the quatrains to emphasise the volta from paper to flesh. 'Your skin' is the most fragile tissue of all, yet also the most important. The direct address ('your') involves the reader personally, suggesting that human identity and the body matter more than any paper structure."
                   />
                 </div>
               </SubSection>
@@ -1716,39 +1738,46 @@ export default function PowerAndConflictPage() {
             >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker reflects on a country they left as a child. Despite knowing the place
-                  has been affected by conflict or political oppression (&ldquo;There once was a
-                  country... I left it as a child&rdquo;), their memory of it remains sunlit and
-                  idealised. External forces &mdash; &ldquo;they&rdquo; who are &ldquo;at the
-                  door&rdquo; &mdash; try to intimidate and erase the speaker&apos;s connection to
-                  their homeland, but the speaker defiantly clings to their memories and identity.
-                  The poem explores how memory, language, and identity persist even under threat.
+                  The speaker reflects on a country they left as a child, opening like a fairy tale.
+                  Despite knowing the place may now be at war or ruled by tyrants, their memory of
+                  it remains sunlit and idealised. In the final stanza a faceless group the speaker
+                  never names accuse and circle the speaker in the new city, but the speaker
+                  defiantly clings to their memories and identity. The poem explores how memory,
+                  language, and identity persist even under threat.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Three stanzas of eight to nine lines with no regular rhyme scheme. Each stanza
-                  ends with a refrain about the city being &ldquo;sunlight,&rdquo; creating a
-                  defiant, resilient structure that resists the threats described. The poem moves
-                  from childhood memory to present-day threat, but the consistent light imagery
-                  shows that the speaker&apos;s inner world remains unbroken. The unnamed country
-                  and vague threats create a sense of universality: this could be any displaced
+                  ends on the word &ldquo;sunlight&rdquo;, a near-refrain that creates a defiant,
+                  resilient structure that resists the threats described. The poem moves from
+                  childhood memory to present-day threat, but the consistent light imagery shows
+                  that the speaker&apos;s inner world remains unbroken. The unnamed country and
+                  vague threats create a sense of universality: this could be any displaced
                   person&apos;s experience.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
+                  {/* Checked word for word against the AQA anthology (AQA's own copy,
+                      filestore.aqa.org.uk/resources/english/AQA-8702-TG-POEMS.PDF, printed by
+                      permission of Carol Rumens) on 26 September 2026. Cut to 30 distinct words
+                      of the poem's 231, under the fair-dealing share of 34. A VERIFY note here
+                      had the fifth quotation backwards: it called the line that runs on into
+                      "city / of walls" fabricated and replaced it with a "streets" version,
+                      which is the one the poem does not contain. The summary also quoted a
+                      "they" who were "at the door", which the poem does not say. */}
                   <Quote
-                    text="There once was a country... I left it as a child"
+                    text="There once was a country..."
                     technique="Fairy-tale opening / ellipsis"
-                    analysis="The fairy-tale phrasing ('There once was') creates a dreamlike, nostalgic quality but also suggests the country may no longer exist as the speaker knew it. The ellipsis creates a pause, hinting at loss and the difficulty of articulating the experience of displacement."
+                    analysis="The fairy-tale phrasing creates a dreamlike, nostalgic quality but also suggests the country may no longer exist as the speaker knew it. The ellipsis creates a pause, hinting at loss and the difficulty of articulating the experience of displacement, before the line admits that the speaker left as a child."
                   />
                   <Quote
-                    text="my memory of it is sunlight-clear"
+                    text="sunlight-clear"
                     technique="Compound adjective / light imagery"
-                    analysis="The compound adjective 'sunlight-clear' presents the memory as vivid and untarnished. Sunlight suggests warmth, happiness, and clarity. Despite time and distance, the speaker's memory remains bright and positive, defying the reality of what the country has become."
+                    analysis="The compound adjective presents the speaker's memory as vivid and untarnished. Sunlight suggests warmth, happiness, and clarity. Despite time and distance, the memory remains bright and positive, defying the reality of what the country has become."
                   />
                   <Quote
                     text="I have no passport, there's no way back at all"
@@ -1756,15 +1785,14 @@ export default function PowerAndConflictPage() {
                     analysis="The blunt statements acknowledge the permanence of exile. Having no passport means having no official identity or right to return. Yet despite this, the speaker's emotional and imaginative connection to their homeland persists, suggesting identity is not dependent on documents."
                   />
                   <Quote
-                    text="They accuse me of being dark in their free city"
+                    text="being dark in their free city"
                     technique="Ambiguity / irony"
-                    analysis="'Dark' is ambiguous: it could refer to skin colour (racial prejudice), secretiveness, or being 'unenlightened.' The irony of 'free city' is sharp: a place that claims to be free yet discriminates against outsiders. The pronoun 'they' creates a faceless, threatening force."
+                    analysis="The accusation of being dark is ambiguous: it could refer to skin colour (racial prejudice), secretiveness, or being unenlightened. The irony of 'free city' is sharp: a place that claims to be free yet discriminates against outsiders. The accusers are never named: a faceless, threatening force."
                   />
-                  {/* VERIFY: previous quote "my city takes me dancing through the city / of walls" was FABRICATED - actual Rumens line is just "My city takes me dancing through the streets". The phrase "city of walls" does not appear in The Émigrée. */}
                   <Quote
-                    text="My city takes me dancing through the streets"
-                    technique="Personification"
-                    analysis="The speaker's remembered city is personified as a joyful companion that actively 'takes me dancing,' creating an image of intimate, embodied belonging. The personification gives memory the agency political force has stripped away - the homeland reaches back for her. Memory becomes an act of resistance."
+                    text="My city takes me dancing"
+                    technique="Personification / enjambment"
+                    analysis="The speaker's remembered city is personified as a joyful companion, creating an image of intimate, embodied belonging. The personification gives memory the agency political force has stripped away: the homeland reaches back for her. The sentence runs on across the line break into 'of walls', so the dance takes place inside a city of barriers, and that same line turns straight to accusation. Memory becomes an act of resistance."
                   />
                 </div>
               </SubSection>
@@ -1805,18 +1833,19 @@ export default function PowerAndConflictPage() {
             <Section
               id="checking-out-me-history"
               title="Checking Out Me History"
-              poet="John Agard (1996)"
+              poet="John Agard (2004)"
               studyHref="/revision/poetry/power-and-conflict/checking-out-me-history"
             >
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Agard, a Guyanese-British poet, protests against a Eurocentric education system
-                  that taught him about British historical figures (Guy Fawkes, Lord Nelson,
-                  Florence Nightingale) while ignoring the achievements of Black and Caribbean
-                  figures (Toussaint L&apos;Ouverture, Nanny de Maroon, Mary Seacole). The poem
-                  alternates between mocking the British history he was taught and celebrating the
-                  figures who were hidden from him. It is a powerful statement about identity,
-                  education, and the politics of who controls historical narratives.
+                  that taught him about British history, legend and nursery rhyme (1066, Dick
+                  Whittington, Lord Nelson, Florence Nightingale) while ignoring the achievements of
+                  Black and Caribbean figures (Toussaint L&apos;Ouverture, Nanny of the Maroons,
+                  Shaka, Mary Seacole). The poem alternates between mocking the British history he
+                  was taught and celebrating the figures who were hidden from him. It is a powerful
+                  statement about identity, education, and the politics of who controls historical
+                  narratives.
                 </p>
               </SubSection>
 
@@ -1826,28 +1855,38 @@ export default function PowerAndConflictPage() {
                   Black historical figures and non-italicised stanzas about the British education
                   system. This structural division physically enacts the separation between the two
                   histories. The poem uses Caribbean dialect (&ldquo;dem,&rdquo; &ldquo;me,&rdquo;
-                  &ldquo;dat&rdquo;) as an act of linguistic resistance against Standard English. No
-                  regular rhyme scheme, but heavy use of rhythm and repetition creates a
-                  spoken-word, performance quality.
+                  &ldquo;dat&rdquo;) as an act of linguistic resistance against Standard English.
+                  The stanzas about the British curriculum run in rhyming couplets with a
+                  nursery-rhyme jingle, which mocks what he was taught; the italic stanzas are built
+                  from very short lines, mostly one to four words. Rhythm and repetition give the
+                  whole poem a spoken-word, performance quality.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
+                  {/* Checked word for word against the AQA anthology (AQA's own copy,
+                      filestore.aqa.org.uk/resources/english/AQA-8702-TG-POEMS.PDF, printed by
+                      permission of John Agard c/o Caroline Sheldon Literary Agency) and the
+                      Poetry Archive's page, on 26 September 2026. The Mary Seacole quotation ran
+                      to four lines, over the two-line limit; and its note credited the stanza's
+                      Creole to a "de" in "to de Crimean War", where both copies print "the".
+                      The date was 1996, the year of Half-caste; the Poetry Archive credits this
+                      poem to Half-Caste and Other Poems (Hodder Children's, 2004). */}
                   <Quote
-                    text="Dem tell me / Dem tell me"
+                    text="Dem tell me"
                     technique="Repetition / pronoun"
                     analysis="The repeated refrain 'Dem tell me' establishes a clear opposition between 'dem' (the colonial education system, those in power) and 'me' (the speaker, the colonised). The repetition creates an angry, rhythmic insistence that builds throughout the poem."
                   />
                   <Quote
                     text="Bandage up me eye with me own history"
                     technique="Metaphor / violent imagery"
-                    analysis="The metaphor of blindfolding suggests that the colonial education system deliberately prevents the speaker from seeing his own heritage. 'Bandage' implies injury: his identity has been wounded by the erasure of his history. Using 'me own history' as the blindfold is deeply ironic - his history is used against him."
+                    analysis="The metaphor of blindfolding suggests that the colonial education system deliberately prevents the speaker from seeing his own heritage. 'Bandage' implies injury: his identity has been wounded by the erasure of his history. Using 'me own history' as the blindfold is deeply ironic: his history is used against him."
                   />
                   <Quote
-                    text="From Jamaica / she travel far / to de Crimean War / she volunteer to go"
+                    text="From Jamaica / she travel far"
                     technique="Short reverent lines / dialect"
-                    analysis="Mary Seacole's stanza uses short, hymn-like lines that elevate her above the British figures listed dismissively elsewhere. The Caribbean Creole 'de' and the simplicity of 'she travel far' give her story dignity and weight, contrasting with the mocking tone used for the British curriculum."
+                    analysis="Mary Seacole's italic stanza uses short, hymn-like lines that elevate her above the British figures listed dismissively elsewhere. The Creole verb in 'she travel far' keeps her story in the speaker's own voice, and the images of light and healing that follow, 'a healing star' and 'a yellow sunrise', give her dignity and weight, contrasting with the mocking nursery-rhyme tone used for the British curriculum."
                   />
                   <Quote
                     text="But now I checking out me own history"
@@ -1900,54 +1939,63 @@ export default function PowerAndConflictPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The poem tells the story of a Japanese kamikaze pilot who turns his plane around
                   instead of completing his suicide mission. As he flies towards his target, he sees
-                  the sea below and is reminded of his childhood &mdash; fishing with his father,
-                  the beauty of the natural world. These memories overpower his sense of duty, and
-                  he returns home. However, his family and community treat him as if he were dead:
-                  his wife refuses to speak to him, his children learn to act as if he does not
-                  exist. The poem ends ambiguously, questioning whether his decision was an act of
-                  courage or cowardice.
+                  the sea below and is reminded of his childhood: waiting on the shore with his
+                  brothers for their father&apos;s fishing boat, the beauty of the natural world.
+                  These memories overpower his sense of duty, and he returns home. However, his
+                  family and community treat him as if he were dead: his wife refuses to speak to
+                  him, his children learn to act as if he does not exist. The poem ends ambiguously,
+                  questioning whether his decision was an act of courage or cowardice.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Seven sestets (six-line stanzas) followed by a final couplet. The poem is narrated
-                  in the third person by the pilot&apos;s daughter, creating distance and suggesting
-                  the story has been passed down. The regular stanza length contrasts with the
-                  emotional turbulence of the content. The shift from third person to first person
-                  in the final lines (&ldquo;he must have wondered / which had been the better way
-                  to die&rdquo;) is devastating, as the daughter imagines her father&apos;s
-                  perspective. Enjambment creates a flowing, reflective quality that mirrors the act
-                  of remembering.
+                  Seven sestets (six-line stanzas), with no closing couplet. A third-person narrator
+                  reports the story as the pilot&apos;s daughter told it to her own children,
+                  creating distance and suggesting the story has been passed down. The regular
+                  stanza length contrasts with the emotional turbulence of the content. In the sixth
+                  stanza the voice shifts into the daughter&apos;s own first person, so the
+                  family&apos;s rejection is told from inside it; the closing lines return to
+                  reported speech, leaving the pilot&apos;s view as something she can only imagine.
+                  Enjambment, running even across stanza breaks, creates a flowing, reflective
+                  quality that mirrors the act of remembering.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
+                  {/* Checked word for word against the AQA anthology (AQA's own copy,
+                      filestore.aqa.org.uk/resources/english/AQA-8702-TG-POEMS.PDF, printed by
+                      permission of Templar Poetry) on 26 September 2026. Cut to 29 distinct
+                      words of the poem's 224, under the fair-dealing share of 33: the shoals
+                      quotation ran to three lines, and the last line was quoted in full twice.
+                      The notes had the form wrong (seven sestets and no couplet), put the shift
+                      to the first person in the final lines when it comes in the sixth stanza,
+                      and called the closing statement a rhetorical question. */}
                   <Quote
-                    text="her father embarked at sunrise"
+                    text="embarked at sunrise"
                     technique="Third-person narration / imagery"
                     analysis="The third-person narration immediately creates distance: this is a story told by someone who was not there. 'Sunrise' symbolises a new beginning but is ironic, as the pilot was flying towards death. The daughter reconstructs her father's experience from fragments."
                   />
                   <Quote
-                    text="a shaven head / full of powerful incantations"
+                    text="full of powerful incantations"
                     technique="Imagery / cultural context"
-                    analysis="The 'shaven head' marks the ritual preparation for death, and 'powerful incantations' refers to the prayers and ideology that were meant to sustain his resolve. The phrase 'full of' suggests these were forced into him, filling his mind and leaving no room for doubt - until nature intervenes."
+                    analysis="The pilot's 'shaven head' marks the ritual preparation for death, and the incantations are the prayers and ideology that were meant to sustain his resolve. The phrase 'full of' suggests these were forced into him, filling his mind and leaving no room for doubt, until nature intervenes."
                   />
                   <Quote
-                    text="the dark shoals of fishes / flashing silver as their bellies / swivelled towards the sun"
+                    text="flashing silver"
                     technique="Natural imagery / colour contrast"
-                    analysis="The vivid description of fish catching the sunlight is beautiful and life-affirming. The movement from 'dark' to 'silver' to 'sun' mirrors the pilot's shift from duty (darkness, death) to life. Nature's beauty becomes more powerful than military ideology."
+                    analysis="The vivid description of the shoals of fish catching the sunlight in the third stanza is beautiful and life-affirming. The movement from 'dark' shoals to flashing silver to the 'sun' mirrors the pilot's shift from duty (darkness, death) to life. Nature's beauty becomes more powerful than military ideology."
                   />
                   <Quote
-                    text="they treated him / as though he no longer existed"
-                    technique="Social death / simile"
-                    analysis="The pilot's family enact a social death: he is alive but treated as if dead. This is arguably worse than the physical death he avoided. The phrase captures the devastating irony: he chose life, but was punished with a living death."
+                    text="as though he no longer existed"
+                    technique="Social death / comparison"
+                    analysis="The pilot's wife, neighbours and in time his children enact a social death: he is alive but treated as if dead. This is arguably worse than the physical death he avoided. The phrase captures the devastating irony: he chose life, but was punished with a living death."
                   />
                   <Quote
-                    text="he must have wondered / which had been the better way to die"
-                    technique="Ambiguity / rhetorical question"
-                    analysis="The final lines are devastating in their ambiguity. 'Which had been the better way to die' implies both options led to death: physical death in the mission or social death at home. The daughter's speculation ('must have') shows she can never fully know her father's experience."
+                    text="which had been the better way to die"
+                    technique="Ambiguity / reported speculation"
+                    analysis="The final line is devastating in its ambiguity. It implies both options led to death: physical death in the mission or social death at home. It is a statement, not a question, and it is reported speculation: the daughter imagines that her father 'must have' wondered, and can never fully know his experience."
                   />
                 </div>
               </SubSection>
@@ -1970,7 +2018,7 @@ export default function PowerAndConflictPage() {
                   />
                   <ComparisonSuggestion
                     poem="Poppies"
-                    reason="Both explore the impact of conflict on families. Weir's mother loses her son to war; Garland's pilot loses his family by refusing to die."
+                    reason="Both explore the impact of conflict on families. Weir's mother watches her son leave for war; Garland's pilot loses his family by refusing to die."
                   />
                   <ComparisonSuggestion
                     poem="The Émigrée"
@@ -2204,10 +2252,12 @@ export default function PowerAndConflictPage() {
           <em>Storm on the Island</em> (&copy; Faber &amp; Faber), Armitage&rsquo;s <em>Remains</em>{' '}
           (&copy; Faber &amp; Faber), Weir&rsquo;s <em>Poppies</em> (&copy; Templar Poetry),
           Duffy&rsquo;s <em>War Photographer</em> (&copy; Picador / Pan Macmillan and Rogers
-          Coleridge &amp; White) and Garland&rsquo;s <em>Kamikaze</em> (&copy; Enitharmon Press).
-          Quotations are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review,
-          quotation). For full text, students should consult the board-licensed AQA Power &amp;
-          Conflict anthology.
+          Coleridge &amp; White), Garland&rsquo;s <em>Kamikaze</em> (&copy; Templar Poetry),
+          Dharker&rsquo;s <em>Tissue</em> (&copy; Imtiaz Dharker, by permission of Bloodaxe Books),
+          Rumens&rsquo;s <em>The &Eacute;migr&eacute;e</em> (&copy; Carol Rumens) and Agard&rsquo;s{' '}
+          <em>Checking Out Me History</em> (&copy; John Agard). Quotations are short fair-dealing
+          extracts under CDPA 1988 &sect;30 (criticism, review, quotation). For full text, students
+          should consult the board-licensed AQA Power &amp; Conflict anthology.
         </div>
       </section>
 

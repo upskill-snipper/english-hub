@@ -6,6 +6,7 @@ import { join } from 'node:path'
 
 import { FAIR_DEALING } from '@/lib/study-guides/fair-dealing'
 import { wordCount } from '@/lib/study-guides/validate'
+import { POETS, POEM_WORDS, inCopyright } from './helpers/poets'
 
 /**
  * No page prints a copyrighted poem, whole or in bulk, line by line.
@@ -25,74 +26,13 @@ import { wordCount } from '@/lib/study-guides/validate'
  * form the Emigree page set) and bracketed pointers ("[See anthology ...]")
  * are not the poem's words.
  *
- * FAIL-CLOSED. Every poet with a line-by-line page must be listed below with a
- * death year, or the test fails: a new poem page cannot pass by being unknown.
- * UK copyright lasts until the end of the 70th year after the poet's death, so
- * in 2026 a poet who died in 1956 or later is in copyright.
+ * FAIL-CLOSED. Every poet with a line-by-line page must be listed in POETS with
+ * a death year, or the test fails: a new poem page cannot pass by being
+ * unknown. UK copyright lasts until the end of the 70th year after the poet's
+ * death, so in 2026 a poet who died in 1956 or later is in copyright. POETS and
+ * POEM_WORDS live in helpers/poets.ts since 26 September 2026, shared with
+ * no-poem-quoted-beyond-fair-dealing.test.ts.
  */
-
-/** Year of death, or null for a living poet. */
-const POETS: Record<string, number | null> = {
-  'Alfred Lord Tennyson': 1892,
-  'Andrew Waterhouse': 2001,
-  'Beatrice Garland': null,
-  'C. Day-Lewis': 1972,
-  'Carol Ann Duffy': null,
-  'Carol Rumens': null,
-  'Charles Causley': 2003,
-  'Charlotte Mew': 1928,
-  'Christina Rossetti': 1894,
-  'D.H. Lawrence': 1930,
-  'Daljit Nagra': null,
-  'Elizabeth Barrett Browning': 1861,
-  'Emily Dickinson': 1886,
-  'Imtiaz Dharker': null,
-  'Jane Weir': null,
-  'John Agard': null,
-  'John Keats': 1821,
-  'Lord Byron': 1824,
-  'Maura Dooley': null,
-  'Owen Sheers': null,
-  'Percy Bysshe Shelley': 1822,
-  'Robert Browning': 1889,
-  'Rudyard Kipling': 1936,
-  'Rupert Brooke': 1915,
-  'Seamus Heaney': 2013,
-  'Simon Armitage': null,
-  'Ted Hughes': 1998,
-  'Thomas Hardy': 1928,
-  'Wilfred Owen': 1918,
-  'William Blake': 1827,
-  'William Shakespeare': 1616,
-  'William Wordsworth': 1850,
-}
-const inCopyright = (poet: string) => {
-  const died = POETS[poet]
-  return died === null || died >= new Date().getFullYear() - 70
-}
-
-/**
- * Words in each copyrighted poem, counted on 25 September 2026 from the full
- * text these pages then printed (git history holds it), so the share can be
- * measured after the text is gone. A poem not listed gets a floor of 20 words.
- */
-const POEM_WORDS: Record<string, number> = {
-  'Before You Were Mine': 375,
-  'Checking Out Me History': 269,
-  Kamikaze: 224,
-  Remains: 201,
-  'Bayonet Charge': 192,
-  'War Photographer': 187,
-  'Storm on the Island': 158,
-  Follower: 153,
-  'Letters from Yorkshire': 148,
-  Poppies: 147,
-  Tissue: 141,
-  'Walking Away': 137,
-  'Climbing My Grandfather': 135,
-  'Winter Swans': 130,
-  'Mother, any distance': 111,
-}
 
 function files(dir: string, out: string[] = []): string[] {
   for (const e of readdirSync(dir, { withFileTypes: true })) {

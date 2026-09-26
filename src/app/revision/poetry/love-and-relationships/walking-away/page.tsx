@@ -29,8 +29,19 @@ const walkingAwayPoem: PoemData = {
   // students the invented lines, so the array now follows the published poem, one entry
   // per line in order, and each annotation sits on the line it discusses; notes written
   // for invented lines were rewritten for the real ones. The languageDevices lineRefs
-  // below were moved to match. The paraphrases were written from the poem's sense and
-  // have not been checked against a primary edition.
+  // below were moved to match. The paraphrases were written from the poem's sense; on
+  // 26 September 2026 they were checked line by line against the text AQA prints, by
+  // permission, in its sample anthology (filestore.aqa.org.uk/resources/english/AQA-8702-TG-POEMS.PDF).
+  //
+  // Also fixed on 26 September 2026: the rest of the page quoted 84 distinct words of this
+  // 137-word poem, many of them several times over, and some of what it quoted was not the
+  // poem. Two key quotations and a revision point were invented, one device example misread
+  // line 2, and the page called the poem five stanzas, its rhymes imperfect, its similes
+  // metaphors and its penultimate line the last. It now quotes a few short phrases, 20
+  // distinct words in all (the cap no-poem-quoted-beyond-fair-dealing.test.ts sets for a poem
+  // of this length), and points to line numbers for everything else. Every quotation left
+  // was then checked word for word against the AQA text; the one device example that
+  // capitalised a word the poem prints in lower case now matches it.
   lines: [
     // Stanza 1
     {
@@ -54,7 +65,7 @@ const walkingAwayPoem: PoemData = {
       annotations: [
         {
           type: 'Simile',
-          note: 'The cosmic comparison elevates a personal moment to universal significance. "Wrenched" conveys the violence of separation, while "orbit" implies the child was once held in the parent\'s gravitational pull.',
+          note: 'The cosmic comparison raises a personal moment to universal significance. "Wrenched", which opens line 5, conveys the violence of separation, and the image of an orbit implies the child was once held by the parent\'s gravitational pull.',
           color: '#10b981',
         },
       ],
@@ -99,7 +110,7 @@ const walkingAwayPoem: PoemData = {
       annotations: [
         {
           type: 'Simile / natural imagery',
-          note: 'The organic image reframes separation as natural and necessary for growth - a seed must leave the plant that grew it to take root elsewhere. "Loosened" suggests gradual release rather than violent rupture.',
+          note: 'The organic image reframes separation as natural and necessary for growth: a seed must leave the plant that grew it to take root elsewhere. Here the seed comes loose rather than being torn away, which suggests gradual release, in contrast with the violent wrench of line 5.',
           color: '#10b981',
         },
       ],
@@ -155,27 +166,27 @@ const walkingAwayPoem: PoemData = {
     },
   ],
   context:
-    '<p><strong>C. Day-Lewis</strong> (1904\u20131972) was UK <strong>Poet Laureate from 1968 until his death in 1972</strong>. The poem was published in 1962 in <em>The Gate and Other Poems</em> and is dedicated to his eldest son <strong>Sean Day-Lewis</strong> (the journalist). The poem looks back \u2014 "eighteen years ago, almost to the day" \u2014 to a memory of watching young Sean walk away from his father at the start of a school football match.</p><p>(Note: this is <em>not</em> Daniel Day-Lewis the actor \u2014 Daniel was the poet\'s youngest son, born in 1957.)</p><p>Written eighteen years after the event, the poem explores the universal experience of a <strong>parent letting go</strong> of a child. The specific memory \u2014 a football match \u2014 becomes a metaphor for every moment a child steps further into independence.</p><p>The poem grapples with the <strong>paradox of parental love</strong>: that truly loving someone means allowing them to leave. This connects to broader themes of <strong>growing up</strong>, <strong>identity formation</strong>, and the <strong>pain of separation</strong> that is inherent in all loving relationships.</p><p>Day-Lewis wrote the poem in mature middle age, giving it the quality of <strong>mature reflection</strong> rather than immediate emotion. The distance of time allows him to articulate what he could not express in the moment.</p>',
+    '<p><strong>C. Day-Lewis</strong> (1904–1972) was UK <strong>Poet Laureate from 1968 until his death in 1972</strong>. The poem was published in 1962 in <em>The Gate and Other Poems</em> and is dedicated to his eldest son <strong>Sean Day-Lewis</strong> (the journalist). It looks back eighteen years, "almost to the day", to a memory of watching young Sean play his first football match and then leave his father behind as he set off for the school.</p><p>(Note: this is <em>not</em> Daniel Day-Lewis the actor. Daniel was the poet\'s youngest son, born in 1957.)</p><p>Written eighteen years after the event, the poem explores the universal experience of a <strong>parent letting go</strong> of a child. The specific memory, a football match, becomes a metaphor for every moment a child steps further into independence.</p><p>The poem grapples with the <strong>paradox of parental love</strong>: that truly loving someone means allowing them to leave. This connects to broader themes of <strong>growing up</strong>, <strong>identity formation</strong>, and the <strong>pain of separation</strong> that is inherent in all loving relationships.</p><p>Day-Lewis wrote the poem in mature middle age, giving it the quality of <strong>mature reflection</strong> rather than immediate emotion. The distance of time allows him to articulate what he could not express in the moment.</p>',
 
   contextAr:
-    '<p><strong>C. Day-Lewis</strong> (1904\u20131972) \u0643\u0627\u0646 <strong>\u0634\u0627\u0639\u0631 \u0628\u0631\u064a\u0637\u0627\u0646\u064a\u0627 \u0627\u0644\u0631\u0633\u0645\u064a (Poet Laureate) \u0645\u0646 \u0633\u0646\u0629 1968 \u0644\u064a\u0646 \u0648\u0641\u0627\u062a\u0647 \u0633\u0646\u0629 1972</strong>. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0637\u0644\u0639\u062a \u0633\u0646\u0629 1962 \u0641\u064a \u062f\u064a\u0648\u0627\u0646 <em>The Gate and Other Poems</em>\u060c \u0648\u0645\u0647\u062f\u0627\u0629 \u0644\u0648\u0644\u062f\u0647 \u0627\u0644\u0623\u0643\u0628\u0631 <strong>Sean Day-Lewis</strong> (\u0627\u0644\u0635\u062d\u0641\u064a). \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0631\u062c\u0639 \u0628\u0627\u0644\u0630\u0627\u0643\u0631\u0629 \u2014 "eighteen years ago, almost to the day" \u2014 \u0644\u0630\u0643\u0631\u0649 \u0627\u0644\u0623\u0628 \u0648\u0647\u0648 \u064a\u062a\u0641\u0631\u0651\u062c \u0639\u0644\u0649 Sean \u0627\u0644\u0635\u063a\u064a\u0631 \u0644\u0645\u0651\u0627 \u0645\u0634\u0649 \u0639\u0646\u0647 \u0641\u064a \u0628\u062f\u0627\u064a\u0629 \u0645\u0628\u0627\u0631\u0627\u0629 \u0643\u0631\u0629 \u0642\u062f\u0645 \u0645\u062f\u0631\u0633\u064a\u0629.</p><p>(\u0645\u0644\u0627\u062d\u0638\u0629: \u0647\u0630\u0627 <em>\u0645\u0648</em> Daniel Day-Lewis \u0627\u0644\u0645\u0645\u062b\u0651\u0644 \u2014 Daniel \u0647\u0648 \u0648\u0644\u062f \u0627\u0644\u0634\u0627\u0639\u0631 \u0627\u0644\u0623\u0635\u063a\u0631\u060c \u0645\u0648\u0627\u0644\u064a\u062f 1957.)</p><p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0643\u062a\u0648\u0628\u0629 \u0628\u0639\u062f 18 \u0633\u0646\u0629 \u0645\u0646 \u0627\u0644\u062d\u062f\u062b\u060c \u062a\u0633\u062a\u0643\u0634\u0641 \u062a\u062c\u0631\u0628\u0629 \u0625\u0646\u0633\u0627\u0646\u064a\u0629 \u064a\u0645\u0631 \u0641\u064a\u0647\u0627 \u0643\u0644 \u0623\u0628 \u0623\u0648 \u0623\u0645: <strong>\u0625\u0646 \u0627\u0644\u0648\u0627\u062d\u062f \u064a\u062e\u0644\u0651\u064a \u0648\u0644\u062f\u0647 \u064a\u0645\u0634\u064a</strong>. \u0627\u0644\u0630\u0643\u0631\u0649 \u0627\u0644\u0645\u062d\u062f\u0651\u062f\u0629 \u2014 \u0645\u0628\u0627\u0631\u0627\u0629 \u0643\u0631\u0629 \u0642\u062f\u0645 \u2014 \u062a\u062a\u062d\u0648\u0651\u0644 \u0644\u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0639\u0646 \u0643\u0644 \u0644\u062d\u0638\u0629 \u064a\u062e\u0637\u0648 \u0641\u064a\u0647\u0627 \u0627\u0644\u0639\u064a\u0627\u0644 \u062e\u0637\u0648\u0629 \u062c\u062f\u064a\u062f\u0629 \u0628\u0627\u062a\u062c\u0627\u0647 \u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644.</p><p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0635\u0627\u0631\u0639 <strong>\u0645\u0641\u0627\u0631\u0642\u0629 \u0627\u0644\u062d\u0628 \u0627\u0644\u0623\u0628\u0648\u064a</strong>: \u0625\u0646 \u0627\u0644\u0648\u0627\u062d\u062f \u0644\u0645\u0651\u0627 \u064a\u062d\u0628 \u0648\u0644\u062f\u0647 \u0641\u0639\u0644\u0627\u064b\u060c \u0644\u0627\u0632\u0645 \u064a\u062e\u0644\u0651\u064a\u0647 \u064a\u0645\u0634\u064a. \u0648\u0647\u0630\u0627 \u064a\u0631\u0628\u0637 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0628\u0645\u0648\u0627\u0636\u064a\u0639 \u0623\u0648\u0633\u0639: <strong>\u0627\u0644\u0643\u0628\u0631</strong>\u060c \u0648<strong>\u062a\u0643\u0648\u064a\u0646 \u0627\u0644\u0647\u0648\u064a\u0629</strong>\u060c \u0648<strong>\u0623\u0644\u0645 \u0627\u0644\u0641\u0631\u0627\u0642</strong> \u0627\u0644\u0644\u064a \u0645\u0627 \u064a\u0637\u0644\u0639 \u0645\u0646\u0647 \u0623\u064a \u0639\u0644\u0627\u0642\u0629 \u0645\u062d\u0628\u0651\u0629.</p><p>Day-Lewis \u0643\u062a\u0628 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0648\u0647\u0648 \u0641\u064a \u0645\u0646\u062a\u0635\u0641 \u0627\u0644\u0639\u0645\u0631 \u0627\u0644\u0646\u0627\u0636\u062c\u060c \u0648\u0647\u0630\u0627 \u064a\u0639\u0637\u064a\u0647\u0627 \u0637\u0627\u0628\u0639 <strong>\u062a\u0623\u0645\u0651\u0644 \u0646\u0627\u0636\u062c</strong> \u0623\u0643\u062b\u0631 \u0645\u0646 \u0631\u062f\u0629 \u0641\u0639\u0644 \u0644\u062d\u0638\u064a\u0651\u0629. \u0628\u064f\u0639\u062f \u0627\u0644\u0648\u0642\u062a \u0633\u0645\u062d \u0644\u0647 \u064a\u0635\u064a\u063a \u0645\u0627 \u0639\u062c\u0632 \u064a\u0642\u0648\u0644\u0647 \u0641\u064a \u062a\u0644\u0643 \u0627\u0644\u0644\u062d\u0638\u0629.</p>',
+    '<p><strong>C. Day-Lewis</strong> (1904\u20131972) \u0643\u0627\u0646 <strong>\u0634\u0627\u0639\u0631 \u0628\u0631\u064a\u0637\u0627\u0646\u064a\u0627 \u0627\u0644\u0631\u0633\u0645\u064a (Poet Laureate) \u0645\u0646 \u0633\u0646\u0629 1968 \u0644\u064a\u0646 \u0648\u0641\u0627\u062a\u0647 \u0633\u0646\u0629 1972</strong>. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0637\u0644\u0639\u062a \u0633\u0646\u0629 1962 \u0641\u064a \u062f\u064a\u0648\u0627\u0646 <em>The Gate and Other Poems</em>\u060c \u0648\u0645\u0647\u062f\u0627\u0629 \u0644\u0648\u0644\u062f\u0647 \u0627\u0644\u0623\u0643\u0628\u0631 <strong>Sean Day-Lewis</strong> (\u0627\u0644\u0635\u062d\u0641\u064a). \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0631\u062c\u0639 \u0628\u0627\u0644\u0630\u0627\u0643\u0631\u0629 \u2014 "almost to the day" \u2014 \u0644\u0630\u0643\u0631\u0649 \u0627\u0644\u0623\u0628 \u0648\u0647\u0648 \u064a\u062a\u0641\u0631\u0651\u062c \u0639\u0644\u0649 Sean \u0627\u0644\u0635\u063a\u064a\u0631 \u0644\u0645\u0651\u0627 \u0645\u0634\u0649 \u0639\u0646\u0647 \u0641\u064a \u0628\u062f\u0627\u064a\u0629 \u0645\u0628\u0627\u0631\u0627\u0629 \u0643\u0631\u0629 \u0642\u062f\u0645 \u0645\u062f\u0631\u0633\u064a\u0629.</p><p>(\u0645\u0644\u0627\u062d\u0638\u0629: \u0647\u0630\u0627 <em>\u0645\u0648</em> Daniel Day-Lewis \u0627\u0644\u0645\u0645\u062b\u0651\u0644 \u2014 Daniel \u0647\u0648 \u0648\u0644\u062f \u0627\u0644\u0634\u0627\u0639\u0631 \u0627\u0644\u0623\u0635\u063a\u0631\u060c \u0645\u0648\u0627\u0644\u064a\u062f 1957.)</p><p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0643\u062a\u0648\u0628\u0629 \u0628\u0639\u062f 18 \u0633\u0646\u0629 \u0645\u0646 \u0627\u0644\u062d\u062f\u062b\u060c \u062a\u0633\u062a\u0643\u0634\u0641 \u062a\u062c\u0631\u0628\u0629 \u0625\u0646\u0633\u0627\u0646\u064a\u0629 \u064a\u0645\u0631 \u0641\u064a\u0647\u0627 \u0643\u0644 \u0623\u0628 \u0623\u0648 \u0623\u0645: <strong>\u0625\u0646 \u0627\u0644\u0648\u0627\u062d\u062f \u064a\u062e\u0644\u0651\u064a \u0648\u0644\u062f\u0647 \u064a\u0645\u0634\u064a</strong>. \u0627\u0644\u0630\u0643\u0631\u0649 \u0627\u0644\u0645\u062d\u062f\u0651\u062f\u0629 \u2014 \u0645\u0628\u0627\u0631\u0627\u0629 \u0643\u0631\u0629 \u0642\u062f\u0645 \u2014 \u062a\u062a\u062d\u0648\u0651\u0644 \u0644\u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0639\u0646 \u0643\u0644 \u0644\u062d\u0638\u0629 \u064a\u062e\u0637\u0648 \u0641\u064a\u0647\u0627 \u0627\u0644\u0639\u064a\u0627\u0644 \u062e\u0637\u0648\u0629 \u062c\u062f\u064a\u062f\u0629 \u0628\u0627\u062a\u062c\u0627\u0647 \u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644.</p><p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0635\u0627\u0631\u0639 <strong>\u0645\u0641\u0627\u0631\u0642\u0629 \u0627\u0644\u062d\u0628 \u0627\u0644\u0623\u0628\u0648\u064a</strong>: \u0625\u0646 \u0627\u0644\u0648\u0627\u062d\u062f \u0644\u0645\u0651\u0627 \u064a\u062d\u0628 \u0648\u0644\u062f\u0647 \u0641\u0639\u0644\u0627\u064b\u060c \u0644\u0627\u0632\u0645 \u064a\u062e\u0644\u0651\u064a\u0647 \u064a\u0645\u0634\u064a. \u0648\u0647\u0630\u0627 \u064a\u0631\u0628\u0637 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0628\u0645\u0648\u0627\u0636\u064a\u0639 \u0623\u0648\u0633\u0639: <strong>\u0627\u0644\u0643\u0628\u0631</strong>\u060c \u0648<strong>\u062a\u0643\u0648\u064a\u0646 \u0627\u0644\u0647\u0648\u064a\u0629</strong>\u060c \u0648<strong>\u0623\u0644\u0645 \u0627\u0644\u0641\u0631\u0627\u0642</strong> \u0627\u0644\u0644\u064a \u0645\u0627 \u064a\u0637\u0644\u0639 \u0645\u0646\u0647 \u0623\u064a \u0639\u0644\u0627\u0642\u0629 \u0645\u062d\u0628\u0651\u0629.</p><p>Day-Lewis \u0643\u062a\u0628 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0648\u0647\u0648 \u0641\u064a \u0645\u0646\u062a\u0635\u0641 \u0627\u0644\u0639\u0645\u0631 \u0627\u0644\u0646\u0627\u0636\u062c\u060c \u0648\u0647\u0630\u0627 \u064a\u0639\u0637\u064a\u0647\u0627 \u0637\u0627\u0628\u0639 <strong>\u062a\u0623\u0645\u0651\u0644 \u0646\u0627\u0636\u062c</strong> \u0623\u0643\u062b\u0631 \u0645\u0646 \u0631\u062f\u0629 \u0641\u0639\u0644 \u0644\u062d\u0638\u064a\u0651\u0629. \u0628\u064f\u0639\u062f \u0627\u0644\u0648\u0642\u062a \u0633\u0645\u062d \u0644\u0647 \u064a\u0635\u064a\u063a \u0645\u0627 \u0639\u062c\u0632 \u064a\u0642\u0648\u0644\u0647 \u0641\u064a \u062a\u0644\u0643 \u0627\u0644\u0644\u062d\u0638\u0629.</p>',
 
   summary:
-    "The speaker recalls watching his young son walk away to play his first football match eighteen years ago. He remembers the physical wrench of separation as the child moved into the world independently for the first time. Using metaphors of satellites and fledgling birds, he captures the child's vulnerability and his own helplessness. In the final stanza, the father reflects that although he has experienced worse partings since, this one still haunts him because it represents the fundamental truth that love requires letting go.",
+    "The speaker recalls watching his young son play his first football match eighteen years ago, and then leave him behind as he set off for the school. He remembers the physical wrench of separation as the child moved into the world independently for the first time. Using the simile of a satellite and the image of a young bird not yet able to fly, he captures the child's vulnerability and his own helplessness. In the final stanza, the father reflects that although he has experienced harder partings since, this one still haunts him because it represents the fundamental truth that love requires letting go.",
 
   summaryAr:
-    '\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0627\u0644\u0623\u0628) \u064a\u062a\u0630\u0643\u0651\u0631 \u0625\u0646\u0647 \u0642\u0628\u0644 18 \u0633\u0646\u0629 \u0634\u0627\u0641 \u0648\u0644\u062f\u0647 \u0627\u0644\u0635\u063a\u064a\u0631 \u0648\u0647\u0648 \u064a\u0645\u0634\u064a \u0639\u0646\u0647 \u0639\u0634\u0627\u0646 \u064a\u0644\u0639\u0628 \u0623\u0648\u0644 \u0645\u0628\u0627\u0631\u0627\u0629 \u0643\u0631\u0629 \u0642\u062f\u0645 \u0641\u064a \u062d\u064a\u0627\u062a\u0647. \u064a\u0630\u0643\u0631 \u0627\u0644\u0623\u0644\u0645 \u0627\u0644\u062c\u0633\u062f\u064a \u0644\u0644\u0641\u0631\u0627\u0642 \u0644\u0645\u0651\u0627 \u0627\u0644\u0648\u0644\u062f \u062e\u0637\u0649 \u0644\u0644\u0639\u0627\u0644\u0645 \u0627\u0644\u062e\u0627\u0631\u062c\u064a \u0628\u0634\u0643\u0644 \u0645\u0633\u062a\u0642\u0644 \u0644\u0623\u0648\u0644 \u0645\u0631\u0651\u0629. \u0639\u0646 \u0637\u0631\u064a\u0642 \u0627\u0633\u062a\u0639\u0627\u0631\u0627\u062a \u0627\u0644\u0640satellite \u0648\u0627\u0644\u0637\u064a\u0648\u0631 \u0627\u0644\u0635\u063a\u064a\u0631\u0629 (fledgling)\u060c \u0627\u0644\u0623\u0628 \u064a\u0635\u0648\u0651\u0631 \u0647\u0634\u0627\u0634\u0629 \u0627\u0644\u0648\u0644\u062f \u0648\u0639\u062c\u0632 \u0627\u0644\u0623\u0628 \u0646\u0641\u0633\u0647. \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u0623\u062e\u064a\u0631\u060c \u0627\u0644\u0623\u0628 \u064a\u062a\u0623\u0645\u0651\u0644 \u0625\u0646\u0647 \u0639\u0627\u0634 \u0641\u0631\u0627\u0642\u0627\u062a \u0623\u0635\u0639\u0628 \u0628\u0639\u062f \u0630\u064a\u0643 \u0627\u0644\u0633\u0646\u0629\u060c \u0628\u0633 \u0647\u0630\u0627 \u0627\u0644\u0641\u0631\u0627\u0642 \u0627\u0644\u0635\u063a\u064a\u0631 \u0647\u0648 \u0627\u0644\u0644\u064a \u0644\u064a\u0646 \u0627\u0644\u062d\u064a\u0646 \u064a\u0644\u0627\u062d\u0642\u0647\u060c \u0644\u0623\u0646\u0647 \u064a\u0645\u062b\u0651\u0644 \u0627\u0644\u062d\u0642\u064a\u0642\u0629 \u0627\u0644\u062c\u0648\u0647\u0631\u064a\u0651\u0629: \u0625\u0646 \u0627\u0644\u062d\u0628 \u064a\u0642\u062a\u0636\u064a \u0625\u0646 \u0627\u0644\u0648\u0627\u062d\u062f \u064a\u062e\u0644\u0651\u064a.',
+    'المتكلّم (الأب) يتذكّر إنه قبل 18 سنة شاف ولده الصغير وهو يمشي عنه عشان يلعب أول مباراة كرة قدم في حياته. يذكر الألم الجسدي للفراق لمّا الولد خطى للعالم الخارجي بشكل مستقل لأول مرّة. عن طريق تشبيه الـsatellite وصورة الطير الصغير (fledgling)، الأب يصوّر هشاشة الولد وعجز الأب نفسه. في المقطع الأخير، الأب يتأمّل إنه عاش فراقات أصعب بعد ذيك السنة، بس هذا الفراق الصغير هو اللي لين الحين يلاحقه، لأنه يمثّل الحقيقة الجوهريّة: إن الحب يقتضي إن الواحد يخلّي.',
 
   formAndStructure:
-    'Form: Five quintains (five-line stanzas) with a loose ABACA rhyme scheme, giving the poem a gentle, reflective rhythm without rigidity.\n\nStructure: Chronological movement from past memory (stanzas 1\u20133) to present reflection (stanzas 4\u20135), mirroring the process of understanding that comes with time.\n\nRhyme: Partial, imperfect rhymes reflect the imperfect, painful nature of the separation being described.\n\nTense: Shifts from past ("I watched") to present ("I can see now"), enacting the movement from experience to understanding.\n\nEnjambment: Lines frequently run on, particularly across stanza breaks, mirroring the continuous, unresolved nature of parental anxiety.\n\nTone: Reflective and measured, with an undertone of persistent grief. The calm surface conceals deep emotional pain.',
+    'Form: Four quintains (five-line stanzas), twenty lines in all, rhymed ABACA: the first, third and fifth lines of each stanza share a rhyme, giving the poem a gentle, reflective rhythm without rigidity.\n\nStructure: The first two stanzas recall the memory, the third turns to what it means, and the fourth reflects from the present and closes on a two-line conclusion, mirroring the understanding that comes with time.\n\nRhyme: The A rhymes are full and hold each stanza together, while the second and fourth lines of each stanza do not rhyme, so no stanza sounds entirely neat or resolved.\n\nTense: Shifts from the past tense of line 3, where the father watched his son play, to the present tense from line 6 onwards, enacting the movement from experience to understanding.\n\nEnjambment: Lines frequently run on, and the first stanza runs straight into the second, mirroring the continuous, unresolved nature of parental anxiety.\n\nTone: Reflective and measured, with an undertone of persistent grief. The calm surface conceals deep emotional pain.',
 
   formAndStructureAr:
-    'Form (\u0627\u0644\u0634\u0643\u0644): \u062e\u0645\u0633 \u0645\u0642\u0627\u0637\u0639\u060c \u0643\u0644 \u0645\u0642\u0637\u0639 quintain (\u062e\u0645\u0633\u0629 \u0623\u0628\u064a\u0627\u062a)\u060c \u0628\u0646\u0638\u0627\u0645 \u0642\u0627\u0641\u064a\u0629 \u0645\u0631\u0646 ABACA\u060c \u064a\u0639\u0637\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0625\u064a\u0642\u0627\u0639 \u0644\u0637\u064a\u0641 \u0648\u062a\u0623\u0645\u0651\u0644\u064a \u0628\u062f\u0648\u0646 \u062a\u0635\u0644\u0651\u0628.\n\n\u0627\u0644\u0628\u0646\u064a\u0629: \u062d\u0631\u0643\u0629 \u0632\u0645\u0646\u064a\u0629 \u0645\u062a\u0633\u0644\u0633\u0644\u0629 \u0645\u0646 \u0630\u0643\u0631\u0649 \u0627\u0644\u0645\u0627\u0636\u064a (\u0627\u0644\u0645\u0642\u0627\u0637\u0639 1\u20133) \u0644\u062a\u0623\u0645\u0651\u0644 \u0627\u0644\u062d\u0627\u0636\u0631 (\u0627\u0644\u0645\u0642\u0627\u0637\u0639 4\u20135)\u060c \u062a\u0639\u0643\u0633 \u0639\u0645\u0644\u064a\u0629 \u0627\u0644\u0641\u0647\u0645 \u0627\u0644\u0644\u064a \u062a\u064a\u064a\u064a \u0645\u0639 \u0627\u0644\u0648\u0642\u062a.\n\n\u0627\u0644\u0642\u0627\u0641\u064a\u0629 (Rhyme): \u0642\u0648\u0627\u0641\u064a \u062c\u0632\u0626\u064a\u0629 \u0648\u063a\u064a\u0631 \u062a\u0627\u0645\u0651\u0629 (half-rhyme)\u060c \u062a\u0639\u0643\u0633 \u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u0627\u0644\u0646\u0627\u0642\u0635\u0629 \u0648\u0627\u0644\u0645\u0624\u0644\u0645\u0629 \u0644\u0644\u0641\u0631\u0627\u0642 \u0627\u0644\u0644\u064a \u062a\u0648\u0635\u0641\u0647 \u0627\u0644\u0642\u0635\u064a\u062f\u0629.\n\n\u0627\u0644\u0632\u0645\u0646 (Tense): \u064a\u062a\u0646\u0642\u0651\u0644 \u0645\u0646 \u0627\u0644\u0645\u0627\u0636\u064a ("I watched") \u0644\u0644\u062d\u0627\u0636\u0631 ("I can see now")\u060c \u0648\u0647\u0630\u0627 \u0627\u0644\u0627\u0646\u062a\u0642\u0627\u0644 \u064a\u062c\u0633\u0651\u062f \u0627\u0644\u062d\u0631\u0643\u0629 \u0645\u0646 \u0627\u0644\u062a\u062c\u0631\u0628\u0629 \u0644\u0644\u0641\u0647\u0645.\n\nEnjambment: \u0627\u0644\u0623\u0628\u064a\u0627\u062a \u062a\u0646\u0633\u0627\u0628 \u0644\u0628\u0639\u0636\u0647\u0627 \u0628\u0634\u0643\u0644 \u0645\u062a\u0643\u0631\u0651\u0631\u060c \u062e\u0635\u0648\u0635\u0627\u064b \u0639\u0628\u0631 \u0641\u0648\u0627\u0635\u0644 \u0627\u0644\u0645\u0642\u0627\u0637\u0639\u060c \u0648\u0647\u0630\u0627 \u064a\u0639\u0643\u0633 \u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u0627\u0644\u0645\u062a\u0648\u0627\u0635\u0644\u0629 \u0648\u063a\u064a\u0631 \u0627\u0644\u0645\u062d\u0644\u0648\u0644\u0629 \u0644\u0642\u0644\u0642 \u0627\u0644\u0623\u0628\u0648\u0651\u0629.\n\n\u0627\u0644\u0646\u0628\u0631\u0629 (Tone): \u062a\u0623\u0645\u0651\u0644\u064a\u0629 \u0648\u0645\u062a\u0632\u0646\u0629\u060c \u0645\u0639 \u0637\u0628\u0642\u0629 \u0645\u0633\u062a\u062a\u0631\u0629 \u0645\u0646 \u062d\u0632\u0646 \u062f\u0627\u0626\u0645. \u0627\u0644\u0633\u0637\u062d \u0627\u0644\u0647\u0627\u062f\u0626 \u064a\u062e\u0641\u064a \u0623\u0644\u0645 \u0646\u0641\u0633\u064a \u0639\u0645\u064a\u0642.',
+    'Form (الشكل): أربعة مقاطع، كل مقطع quintain (خمسة أبيات)، يعني عشرين بيت، بنظام قافية ABACA: البيت الأول والثالث والخامس في كل مقطع يتقفّون مع بعض، وهذا يعطي القصيدة إيقاع لطيف وتأمّلي بدون تصلّب.\n\nالبنية: أول مقطعين يسترجعون الذكرى، والمقطع الثالث ينتقل لمعناها، والمقطع الرابع يتأمّل من الحاضر ويختم بخلاصة في بيتين، وهذا يعكس عملية الفهم اللي تجي مع الوقت.\n\nالقافية (Rhyme): قوافي الـA تامّة وتربط كل مقطع، بينما البيت الثاني والرابع في كل مقطع بدون قافية، فما في مقطع يطلع مرتّب أو محلول بالكامل.\n\nالزمن (Tense): يتنقّل من الماضي في البيت 3، لمّا الأب كان يتفرّج على ولده يلعب، للحاضر من البيت 6 وطالع، وهذا الانتقال يجسّد الحركة من التجربة للفهم.\n\nEnjambment: الأبيات تنساب لبعضها بشكل متكرّر، والمقطع الأول يدخل على طول في الثاني، وهذا يعكس الطبيعة المتواصلة وغير المحلولة لقلق الأبوّة.\n\nالنبرة (Tone): تأمّلية ومتزنة، مع طبقة مستترة من حزن دائم. السطح الهادئ يخفي ألم نفسي عميق.',
   keyQuotes: [
     {
-      quote: 'It is eighteen years ago, almost to the day',
+      quote: 'almost to the day',
       analysis:
-        'The precision shows this memory has been relived repeatedly. "Almost to the day" suggests an unwilled anniversary \u2014 the pain returns annually.',
+        'Dating the memory eighteen years back, to the day, shows it has been relived again and again. The phrase suggests an unwilled anniversary: the pain returns every year.',
       themes: ['Memory', 'Time', 'Loss'],
       analysisAr:
         '\u0627\u0644\u062f\u0642\u0651\u0629 \u0641\u064a \u0627\u0644\u062a\u0627\u0631\u064a\u062e \u062a\u0628\u064a\u0651\u0646 \u0625\u0646 \u0627\u0644\u0630\u0643\u0631\u0649 \u0627\u0646\u0639\u0627\u0634\u062a \u0641\u064a \u0628\u0627\u0644\u0647 \u0645\u0631\u0651\u0629 \u0628\u0639\u062f \u0645\u0631\u0651\u0629. \u0639\u0628\u0627\u0631\u0629 "almost to the day" \u062a\u0644\u0645\u0651\u062d \u0628\u0630\u0643\u0631\u0649 \u0633\u0646\u0648\u064a\u0651\u0629 \u0645\u0627 \u064a\u0642\u062f\u0631 \u0627\u0644\u0623\u0628 \u064a\u062a\u062d\u0643\u0651\u0645 \u0641\u064a\u0647\u0627 \u2014 \u0627\u0644\u0623\u0644\u0645 \u064a\u0631\u062c\u0639\u0644\u0647 \u0643\u0644 \u0633\u0646\u0629.',
@@ -186,22 +197,18 @@ const walkingAwayPoem: PoemData = {
       ],
     },
     {
-      quote: 'my heart went with you as you walked away',
+      quote: 'winged seed',
       analysis:
-        "The father's heart literally departing with the child is both metaphor and felt truth. It establishes that separation is a form of physical loss.",
-      themes: ['Parental love', 'Separation', 'Pain'],
+        'The simile in line 12 pictures the boy as a seed carried off from the plant that grew it. Separation is shown as natural and necessary: a seed has to leave to take root, however much the parent plant is left behind.',
+      themes: ['Growing up', 'Separation', 'Nature'],
       analysisAr:
-        '\u0642\u0644\u0628 \u0627\u0644\u0623\u0628 \u0627\u0644\u0644\u064a \u064a\u0645\u0634\u064a \u062d\u0631\u0641\u064a\u0627\u064b \u0645\u0639 \u0648\u0644\u062f\u0647 \u0647\u0648 \u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a \u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0648\u062d\u0642\u064a\u0642\u0629 \u0645\u062d\u0633\u0648\u0633\u0629. \u0648\u0647\u0630\u0627 \u0627\u0644\u062a\u0635\u0648\u064a\u0631 \u064a\u062b\u0628\u0651\u062a \u0625\u0646 \u0627\u0644\u0641\u0631\u0627\u0642 \u0646\u0648\u0639 \u0645\u0646 \u0627\u0644\u0641\u0642\u062f \u0627\u0644\u062c\u0633\u062f\u064a.',
-      themesAr: [
-        '\u0627\u0644\u062d\u0628 \u0627\u0644\u0623\u0628\u0648\u064a',
-        '\u0627\u0644\u0641\u0631\u0627\u0642',
-        '\u0627\u0644\u0623\u0644\u0645',
-      ],
+        'التشبيه في البيت 12 يصوّر الولد كأنه بذرة طايرة انفصلت عن النبتة اللي طلّعتها. الفراق هنا طبيعي وضروري: البذرة لازم تبتعد عشان تنبت، حتى لو النبتة الأم تنترك وراها.',
+      themesAr: ['الكبر', 'الفراق', 'الطبيعة'],
     },
     {
-      quote: 'Like a satellite wrenched from its orbit',
+      quote: 'satellite / Wrenched',
       analysis:
-        'The cosmic simile elevates a small domestic moment to universal significance. "Wrenched" conveys violence and pain \u2014 this separation is not gentle.',
+        'The cosmic simile across lines 4 and 5 raises a small domestic moment to universal significance. "Wrenched" conveys violence and pain: this separation is not gentle.',
       themes: ['Separation', 'Pain', 'Growing up'],
       analysisAr:
         '\u0627\u0644\u0640simile \u0627\u0644\u0643\u0648\u0646\u064a \u064a\u0631\u0641\u0639 \u0644\u062d\u0638\u0629 \u0645\u0646\u0632\u0644\u064a\u0651\u0629 \u0635\u063a\u064a\u0631\u0629 \u0644\u0645\u0633\u062a\u0648\u0649 \u0645\u0639\u0646\u0649 \u0643\u0648\u0646\u064a \u0648\u0639\u0627\u0645. \u0643\u0644\u0645\u0629 "wrenched" \u062a\u0646\u0642\u0644 \u0627\u0644\u0639\u0646\u0641 \u0648\u0627\u0644\u0623\u0644\u0645 \u2014 \u0647\u0630\u0627 \u0627\u0644\u0641\u0631\u0627\u0642 \u0645\u0648 \u0641\u0631\u0627\u0642 \u0644\u0637\u064a\u0641.',
@@ -212,12 +219,12 @@ const walkingAwayPoem: PoemData = {
       ],
     },
     {
-      quote: 'Half-fledged, half-knowing',
+      quote: 'half-fledged',
       analysis:
-        'Bird imagery presents the child as not yet ready to fly independently. The repetition of "half" emphasises incompleteness and vulnerability.',
+        'Bird imagery in line 8 presents the child as a young bird whose flight feathers have only half grown, not yet ready to fly on its own. "Half" stresses incompleteness and vulnerability, yet the boy is released into the world regardless.',
       themes: ['Vulnerability', 'Growing up', 'Protection'],
       analysisAr:
-        '\u0635\u0648\u0631 \u0627\u0644\u0637\u064a\u0648\u0631 \u062a\u0642\u062f\u0651\u0645 \u0627\u0644\u0648\u0644\u062f \u0639\u0644\u0649 \u0625\u0646\u0647 \u0644\u064a\u0646 \u0627\u0644\u062d\u064a\u0646 \u0645\u0627 \u0647\u0648 \u062c\u0627\u0647\u0632 \u064a\u0637\u064a\u0631 \u0644\u062d\u0627\u0644\u0647. \u0648\u062a\u0643\u0631\u0627\u0631 \u0643\u0644\u0645\u0629 "half" \u064a\u0623\u0643\u0651\u062f \u0639\u0644\u0649 \u0646\u0642\u0635 \u0627\u0644\u0646\u0636\u062c \u0648\u0639\u0644\u0649 \u0627\u0644\u0647\u0634\u0627\u0634\u0629.',
+        'صور الطيور تقدّم الولد على إنه لين الحين ما هو جاهز يطير لحاله. وكلمة "half" تأكّد على نقص النضج وعلى الهشاشة.',
       themesAr: [
         '\u0627\u0644\u0647\u0634\u0627\u0634\u0629',
         '\u0627\u0644\u0643\u0628\u0631',
@@ -225,9 +232,9 @@ const walkingAwayPoem: PoemData = {
       ],
     },
     {
-      quote: 'I have had worse partings',
+      quote: 'worse partings',
       analysis:
-        'This understated acknowledgement makes the final revelation more powerful \u2014 that this small parting haunts him most of all.',
+        'This understated admission in line 16 makes the conclusion more powerful: this small parting haunts him more than any other.',
       themes: ['Loss', 'Memory', 'Perspective'],
       analysisAr:
         '\u0647\u0630\u0627 \u0627\u0644\u0627\u0639\u062a\u0631\u0627\u0641 \u0627\u0644\u0645\u062a\u062d\u0641\u0651\u0638 (understatement) \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0643\u0634\u0641 \u0627\u0644\u0623\u062e\u064a\u0631 \u0623\u0642\u0648\u0649 \u0628\u0643\u062b\u064a\u0631 \u2014 \u0625\u0646 \u0647\u0630\u0627 \u0627\u0644\u0641\u0631\u0627\u0642 \u0627\u0644\u0635\u063a\u064a\u0631 \u0647\u0648 \u0627\u0644\u0644\u064a \u064a\u0644\u0627\u062d\u0642 \u0627\u0644\u0623\u0628 \u0623\u0643\u062b\u0631 \u0645\u0646 \u063a\u064a\u0631\u0647.',
@@ -238,9 +245,9 @@ const walkingAwayPoem: PoemData = {
       ],
     },
     {
-      quote: 'Gnaws at my mind still',
+      quote: 'Gnaws',
       analysis:
-        'The verb "gnaws" is visceral and animalistic, suggesting the memory is a persistent, consuming pain that erodes him from within.',
+        'The verb "gnaws", placed at the start of line 17, is visceral and animalistic, suggesting the memory is a persistent, consuming pain that erodes him from within.',
       themes: ['Memory', 'Pain', 'Persistence'],
       analysisAr:
         '\u0627\u0644\u0641\u0639\u0644 "gnaws" \u062d\u0633\u0651\u064a \u0648\u062d\u064a\u0648\u0627\u0646\u064a\u060c \u064a\u0644\u0645\u0651\u062d \u0625\u0646 \u0627\u0644\u0630\u0643\u0631\u0649 \u0623\u0644\u0645 \u0645\u0633\u062a\u0645\u0631 \u064a\u0642\u0636\u0645 \u0627\u0644\u0623\u0628 \u0645\u0646 \u062c\u0648\u0651\u0627\u0647 \u0648\u064a\u0633\u062a\u0646\u0632\u0641\u0647 \u0639\u0644\u0649 \u0645\u0631\u0651 \u0627\u0644\u0633\u0646\u064a\u0646.',
@@ -251,9 +258,9 @@ const walkingAwayPoem: PoemData = {
       ],
     },
     {
-      quote: 'selfhood begins with a walking away',
+      quote: 'selfhood',
       analysis:
-        'The child must separate from the parent to become an individual. Identity requires independence, which requires distance.',
+        'Line 19 places the start of selfhood in the act of leaving. The child must separate from the parent to become an individual: identity requires independence, which requires distance.',
       themes: ['Identity', 'Independence', 'Growing up'],
       analysisAr:
         '\u0627\u0644\u0648\u0644\u062f \u0644\u0627\u0632\u0645 \u064a\u0646\u0641\u0635\u0644 \u0639\u0646 \u0623\u0628\u0648\u0647 \u0639\u0634\u0627\u0646 \u064a\u0635\u064a\u0631 \u0625\u0646\u0633\u0627\u0646 \u0645\u0633\u062a\u0642\u0644 \u0628\u0630\u0627\u062a\u0647. \u0627\u0644\u0647\u0648\u064a\u0629 \u062a\u062a\u0637\u0644\u0651\u0628 \u0627\u0633\u062a\u0642\u0644\u0627\u0644\u060c \u0648\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644 \u064a\u062a\u0637\u0644\u0651\u0628 \u0645\u0633\u0627\u0641\u0629.',
@@ -264,7 +271,7 @@ const walkingAwayPoem: PoemData = {
       ],
     },
     {
-      quote: 'love is proved in the letting go',
+      quote: 'proved in the letting go',
       analysis:
         'The poem\'s concluding aphorism: real love is demonstrated not by holding on but by releasing. "Proved" means both tested and demonstrated.',
       themes: ['Love', 'Sacrifice', 'Parental love'],
@@ -280,16 +287,16 @@ const walkingAwayPoem: PoemData = {
   languageDevices: [
     {
       device: 'Simile',
-      example: 'Like a satellite wrenched from its orbit',
+      example: 'satellite / Wrenched',
       effect:
-        'The cosmic comparison elevates a personal moment to universal significance. "Wrenched" conveys the violence of separation, while "orbit" implies the child was once held in the parent\'s gravitational pull.',
+        'The cosmic comparison raises a personal moment to universal significance. "Wrenched" conveys the violence of separation, while the image of an orbit implies the child was once held in the parent\'s gravitational pull.',
       lineRef: 3,
       effectAr:
-        'المقارنة الكونية ترفع لحظة شخصية لمستوى معنى عام وكوني. كلمة "wrenched" تنقل عنف الفراق، بينما "orbit" تلمّح إن الولد كان أصلاً ممسوك بجاذبية أبوه.',
+        'المقارنة الكونية ترفع لحظة شخصية لمستوى معنى عام وكوني. كلمة "wrenched" تنقل عنف الفراق، بينما صورة المدار تلمّح إن الولد كان أصلاً ممسوك بجاذبية أبوه.',
     },
     {
       device: 'Metaphor',
-      example: 'Half-fledged',
+      example: 'half-fledged',
       effect:
         "Bird imagery presents the child as a young bird not yet ready to fly, emphasising vulnerability and the parent's anxiety about whether they can survive independently.",
       lineRef: 8,
@@ -297,17 +304,17 @@ const walkingAwayPoem: PoemData = {
         'صور الطيور تقدّم الولد كأنه طير صغير لين الحين ما هو جاهز يطير، وتأكّد على هشاشته وعلى قلق الأب: هل ولده يقدر يعيش بدونه؟',
     },
     {
-      device: 'Sensory language',
-      example: 'Gnaws at my mind still',
+      device: 'Verb choice and enjambment',
+      example: 'Gnaws',
       effect:
-        'The visceral, animalistic verb "gnaws" makes the abstract concept of memory physically painful, suggesting persistent, consuming grief.',
+        'The visceral, animalistic verb "gnaws" makes the abstract concept of memory physically painful, suggesting persistent, consuming grief. Enjambment carries the sentence over from line 16, so the verb lands at the start of line 17 with extra force, as the memory catches him unawares.',
       lineRef: 19,
       effectAr:
-        'الفعل الحسّي والحيواني "gnaws" يحوّل المفهوم المجرّد (الذكرى) إلى ألم مادي محسوس، ويلمّح بحزن مستمر يقضم الأب من جوّاه.',
+        'الفعل الحسّي والحيواني "gnaws" يحوّل المفهوم المجرّد (الذكرى) إلى ألم مادي محسوس، ويلمّح بحزن مستمر يقضم الأب من جوّاه. والـenjambment يكمّل الجملة من البيت 16، فيطيح الفعل في بداية البيت 17 بوقع أقوى، مثل ما الذكرى تباغت الأب بدون مقدّمات.',
     },
     {
       device: 'Aphorism',
-      example: 'love is proved in the letting go',
+      example: 'proved in the letting go',
       effect:
         "The final line condenses the poem's meaning into a memorable, universal statement. Its simplicity and balance give it proverbial authority.",
       lineRef: 22,
@@ -315,17 +322,8 @@ const walkingAwayPoem: PoemData = {
         'البيت الأخير يكثّف معنى القصيدة في عبارة عامّة لافتة. بساطته وتوازنه يعطونه سلطة الحكمة الشعبيّة (proverbial authority).',
     },
     {
-      device: 'Enjambment',
-      example: 'so / Gnaws at my mind still',
-      effect:
-        'The line break isolates "Gnaws" at the start of the line, giving it greater impact and enacting the way the memory catches him unexpectedly.',
-      lineRef: 18,
-      effectAr:
-        'كسر البيت يعزل كلمة "Gnaws" في بداية السطر الجديد، فيعطيها وقع أقوى ويجسّد كيف إن الذكرى تباغت الأب بدون مقدّمات.',
-    },
-    {
       device: 'Religious allusion',
-      example: 'what God alone could perfectly show',
+      example: '[Paraphrase, line 18] a truth only the divine could reveal in full',
       effect:
         'Elevates parental love to something divine and beyond full human expression, suggesting the letting-go is a sacred, almost spiritual act.',
       lineRef: 20,
@@ -333,13 +331,14 @@ const walkingAwayPoem: PoemData = {
         'يرفع الحب الأبوي لمنزلة قريبة من الإلهي، وأكبر من قدرة اللغة البشريّة على التعبير عنه. ويلمّح إن فعل التخلية فعل مقدّس، قريب من الروحي.',
     },
     {
-      device: 'Pathetic fallacy',
-      example: 'A sunny day with the leaves just turning',
+      device: 'Seasonal imagery',
+      example:
+        '[Paraphrase, line 2] bright weather in early autumn, the leaves starting to change colour',
       effect:
-        'The autumn setting mirrors the transition from childhood to independence. "Just turning" parallels the child who is just beginning to change.',
+        'The autumn setting mirrors the transition from childhood to independence. The leaves have only begun to change, as the child is only beginning to change.',
       lineRef: 1,
       effectAr:
-        'مشهد الخريف يعكس الانتقال من الطفولة للاستقلال. عبارة "just turning" (الورق توّه يتغيّر لونه) توازي حالة الولد اللي توّه يبدأ يتغيّر.',
+        'مشهد الخريف يعكس الانتقال من الطفولة للاستقلال. الورق اللي توّه بدأ يتغيّر لونه يوازي حالة الولد اللي توّه يبدأ يتغيّر.',
     },
   ],
 }
@@ -365,7 +364,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'wa-2',
-    question: 'What does "like a satellite wrenched from its orbit" suggest?',
+    question: 'What does the satellite simile in lines 4 and 5 suggest?',
     type: 'multiple-choice',
     options: [
       'The son enjoys space',
@@ -381,7 +380,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'wa-3',
-    question: 'What does the final line "selfhood begins with a walking away" mean?',
+    question: 'What does line 19, on where "selfhood" begins, mean?',
     type: 'multiple-choice',
     options: [
       'Walking is good exercise',
@@ -397,17 +396,17 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'wa-4',
-    question: 'What is the seed metaphor about?',
+    question: 'What is the seed simile in line 12 about?',
     type: 'multiple-choice',
     options: [
       'Gardening advice',
-      '"Like a winged seed loosened from its parent stem" - the child must be released to grow independently, like a seed dispersing',
+      'The child must be released to grow independently, like a seed carried away from the plant that grew it',
       'The son plants a garden',
       'Seeds represent food',
     ],
     correctIndex: 1,
     explanation:
-      'The seed metaphor shows separation as natural and necessary. A seed must leave its parent plant to grow. The father understands this intellectually but still finds it emotionally painful.',
+      'The seed simile shows separation as natural and necessary. A seed must leave its parent plant to grow. The father understands this intellectually but still finds it emotionally painful.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -433,13 +432,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Free verse',
-      'Five quintains (five-line stanzas) with a loose ABACA rhyme scheme',
+      'Four quintains (five-line stanzas) rhymed ABACA',
       'A sonnet',
       'Blank verse',
     ],
     correctIndex: 1,
     explanation:
-      "Five quintains (five-line stanzas) with a loose ABACA rhyme scheme. The regular structure reflects the father's attempt to understand and contain his emotions, while the half-rhymes suggest things not quite resolved.",
+      "Four quintains (five-line stanzas) rhymed ABACA. The regular structure reflects the father's attempt to understand and contain his emotions, while the unrhymed second and fourth lines keep each stanza from sounding neatly resolved.",
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -449,19 +448,19 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It was a bad football match',
-      '"Eighteen years ago, almost to the day" - the moment symbolises the larger, ongoing process of letting go',
+      'The moment, eighteen years before, stands for the larger, ongoing process of letting go',
       'He forgot something',
       'The weather was bad',
     ],
     correctIndex: 1,
     explanation:
-      'The specific detail "eighteen years ago" shows this small moment has haunted the father for years. It represents not just one day but the entire process of watching a child become independent.',
+      'Line 1 dates the memory precisely, eighteen years back to within a day or so, which shows this small moment has haunted the father ever since. It represents not just one day but the entire process of watching a child become independent.',
     topic: 'Meaning',
     difficulty: 'higher',
   },
   {
     id: 'wa-8',
-    question: 'What does "love is proved in the letting go" mean?',
+    question: 'What does the last line mean, where love is "proved in the letting go"?',
     type: 'multiple-choice',
     options: [
       'Love means holding on tightly',
@@ -487,7 +486,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Day-Lewis balances genuine pain ("wrenched from its orbit") with mature acceptance ("selfhood begins with a walking away"). The poem does not pretend separation is easy, but recognises its necessity.',
+      'Day-Lewis balances genuine pain (the satellite "Wrenched" out of its path in line 5) with mature acceptance (the claim about selfhood in line 19). The poem does not pretend separation is easy, but recognises its necessity.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -516,7 +515,7 @@ const REVISION_TOPICS = [
       'Walking Away explores the pain of parental love, the necessity of letting go, and how independence is the ultimate gift a parent gives.',
     keyPoints: [
       'Letting go - the hardest act of love',
-      '"Selfhood begins with a walking away" - independence requires separation',
+      'Line 19: selfhood starts with leaving - independence requires separation',
       'Memory - one small moment haunts the father for 18 years',
       'Love is proved in release, not possession',
     ],
@@ -524,23 +523,23 @@ const REVISION_TOPICS = [
   {
     topic: 'Language & Imagery',
     summary:
-      'Day-Lewis uses satellite and seed metaphors to present separation as both painful and natural.',
+      'Day-Lewis uses satellite and seed similes to present separation as both painful and natural.',
     keyPoints: [
-      '"Satellite wrenched from its orbit" - violent, unnatural separation',
-      '"Winged seed loosened from its parent stem" - natural, necessary dispersal',
-      '"Dazed" - the father\'s bewilderment at losing control',
-      '"Proved in the letting go" - love defined by release',
+      'The satellite "Wrenched" out of place (lines 4 to 5) - violent, unnatural separation',
+      'The "winged seed" (line 12) - natural, necessary dispersal',
+      '"Gnaws" (line 17) - the memory still eats away at him',
+      'The last line (line 20) - love defined by release',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Five quintains (five-line stanzas) with a loose ABACA rhyme scheme moving from specific memory to philosophical reflection on the nature of love.',
+      'Four quintains (five-line stanzas) rhymed ABACA, moving from specific memory to philosophical reflection on the nature of love.',
     keyPoints: [
-      'Five quintains - orderly structure containing complex emotion',
-      'ABACA loose rhyme - things not quite resolved, like parental worry',
+      'Four quintains - orderly structure containing complex emotion',
+      'ABACA rhyme, with the second and fourth lines unrhymed - things not quite resolved, like parental worry',
       'Progression from memory to philosophy',
-      '"Eighteen years ago" - the specific opening grounds the universal theme',
+      'Line 1 dates the memory to within a day - the specific opening grounds the universal theme',
     ],
   },
 ]

@@ -38,15 +38,19 @@ const poem: PoemData = {
   // NOTE: "Storm on the Island" (Seamus Heaney, from Death of a Naturalist,
   // Faber & Faber, 1966) remains in copyright. To avoid reproducing the poem
   // verbatim, each line below is given as a PARAPHRASE in the site's own
-  // words rather than the poet's exact text, and the annotations quote only
-  // short phrases (21 words across all of them, under 15 per cent of the
-  // poem's 158). Students must read the full original in the AQA Power &
-  // Conflict anthology.
+  // words rather than the poet's exact text. Students must read the full
+  // original in the AQA Power & Conflict anthology.
   //
-  // Until 25 September 2026 this array printed the whole poem. Its entry 15
-  // appears to have lost a word from the published line, so its paraphrase
-  // follows the published line instead. Check the paraphrases against the
-  // anthology before relying on them.
+  // Until 25 September 2026 this array printed the whole poem. On 26
+  // September 2026 the page as a whole still quoted 97 distinct words of the
+  // poem's 158 (the fair-dealing cap is 23), across the key quotes, device
+  // examples, form notes, quiz and revision cards, and two of its quotations
+  // were wrong: "as you can see" (the poem has no "can") and "bombards" (the
+  // poem's verb is passive). Every quotation left on this page was then
+  // checked word for word against the text Poetry By Heart publishes by
+  // permission of Faber, and cut to the short phrases the analysis discusses.
+  // Anything else is described in the site's own words or cited by line.
+  // Lines are cited from 1; a language device's lineRef is 0-based.
   lines: [
     {
       text: '[Paraphrase] We islanders are ready for it: our homes are built low and solid,',
@@ -153,7 +157,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Violence',
-          note: '"Pummels" is a violent verb suggesting repeated, aggressive blows - the storm is personified as an attacker.',
+          note: 'The verb for what the gale does to your own house is violent, suggesting repeated, aggressive blows - the storm is personified as an attacker.',
           color: '#ef4444',
         },
       ],
@@ -248,7 +252,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Paradox',
-          note: 'Being bombarded by "empty air" means they are attacked by nothing. The greatest threat is invisible and intangible, reflecting how fear itself is the true enemy.',
+          note: 'Being bombarded by the air itself means they are attacked by nothing. The greatest threat is invisible and intangible, reflecting how fear itself is the true enemy.',
           color: '#f59e0b',
         },
         {
@@ -276,129 +280,111 @@ const poem: PoemData = {
   ],
 
   context: `<p><strong>Seamus Heaney</strong> (1939-2013) was a Northern Irish poet and Nobel Prize laureate (1995). He grew up in rural County Derry during the political tensions known as <strong>the Troubles</strong> - a period of sectarian conflict between Unionists and Nationalists in Northern Ireland.</p>
-<p><strong>"Stormont" in the title:</strong> The first eight letters of "Storm on the Island" spell <em>Stormont</em>, the seat of the Northern Irish parliament. This hidden word transforms the poem from a simple nature piece into a political allegory about the instability and fear experienced by communities during the Troubles.</p>
+<p><strong>Stormont in the title:</strong> The first eight letters of "Storm on the Island" spell <em>Stormont</em>, the seat of the Northern Irish parliament. This hidden word transforms the poem from a simple nature piece into a political allegory about the instability and fear experienced by communities during the Troubles.</p>
 <p><strong>Rural community:</strong> The poem is set on an exposed island off the Irish coast, where a close-knit community faces brutal Atlantic storms. The collective "we" voice reflects the shared experience of enduring hardship together.</p>
 <p><strong>Nature's power:</strong> Heaney uses the storm as an extended metaphor for political violence. Just as the islanders prepare for storms they cannot control, communities in Northern Ireland lived under the constant threat of violence - an invisible, overwhelming force.</p>
 <p><strong>Publication:</strong> The poem was published in Heaney's debut collection <em>Death of a Naturalist</em> (1966), at the beginning of the Troubles. Heaney often explored the relationship between the Irish landscape and political identity.</p>`,
 
   contextAr: `<p><strong>Seamus Heaney</strong> (1939-2013) شاعر من أيرلندا الشمالية، نال جائزة نوبل سنة 1995. كبر في الريف في County Derry في فترة التوتّر السياسي اللي تعرف بـ<strong>the Troubles</strong> - فترة صراع طائفي بين الـUnionists والـNationalists في أيرلندا الشمالية.</p>
-<p><strong>"Stormont" في العنوان:</strong> أول ثمان حروف من "Storm on the Island" تتهجّى كلمة <em>Stormont</em>، اللي هي مقر برلمان أيرلندا الشمالية. هذي الكلمة المخفية تحوّل القصيدة من مجرّد وصف طبيعة إلى رمزية سياسية عن عدم الاستقرار والخوف اللي عاشته المجتمعات في أيام الـTroubles.</p>
+<p><strong>كلمة Stormont في العنوان:</strong> أول ثمان حروف من "Storm on the Island" تتهجّى كلمة <em>Stormont</em>، اللي هي مقر برلمان أيرلندا الشمالية. هذي الكلمة المخفية تحوّل القصيدة من مجرّد وصف طبيعة إلى رمزية سياسية عن عدم الاستقرار والخوف اللي عاشته المجتمعات في أيام الـTroubles.</p>
 <p><strong>المجتمع الريفي:</strong> الأحداث في جزيرة مكشوفة قبالة الساحل الأيرلندي، فيها مجتمع متماسك يواجه عواصف الأطلسي العنيفة. صيغة "we" الجماعية تعكس التجربة المشتركة في تحمّل المحن.</p>
 <p><strong>قوة الطبيعة:</strong> Heaney يستخدم العاصفة كاستعارة ممتدّة للعنف السياسي. مثل ما سكّان الجزيرة يستعدّون لعواصف ما يقدرون يسيطرون عليها، المجتمعات في أيرلندا الشمالية كانت تعيش تحت تهديد عنف مستمر - قوّة خفيّة وكاسحة.</p>
 <p><strong>النشر:</strong> القصيدة طلعت في ديوان Heaney الأول <em>Death of a Naturalist</em> (1966)، في بداية الـTroubles. Heaney كان وايد يستكشف العلاقة بين المنظر الطبيعي الأيرلندي والهوية السياسية.</p>`,
 
   summary: `The speaker, using a collective "we", describes how an island community prepares for violent storms. They build strong, squat houses from rock and slate, and the barren landscape offers no shelter - no hay, no trees. The speaker reflects on how trees might provide company during a gale, but they are absent.
 
-The poem shifts when the speaker considers the sea: it seems like a companion, "exploding comfortably" on the cliffs, but when the storm truly begins, the sea turns hostile - spraying and spitting like a tame cat turned savage. The wind attacks with military force: it "dives", "strafes", and "bombards" the community.
+The poem shifts when the speaker considers the sea: it seems like a companion, "exploding comfortably" on the cliffs, but when the storm truly begins, the sea turns hostile, flinging water at the windows like a pet cat gone wild. The wind attacks with military force: it "dives" and "strafes", and the community is "bombarded".
 
-The poem ends with a paradox: despite all their physical preparation, the community fears something invisible and intangible - "a huge nothing". The real threat is not a physical object but the terrifying power of empty space and air.
+The poem ends with a paradox: despite all their physical preparation, the community fears something invisible and intangible, a "huge nothing". The real threat is not a physical object but the terrifying power of empty space and air.
 
 On a deeper level, the poem is an allegory for life during the Northern Irish Troubles, where communities lived in constant fear of unpredictable violence from familiar sources.`,
 
   summaryAr: `المتكلّم، بصيغة الجمع "we"، يوصف كيف إن مجتمع جزيرة يستعد لعواصف عنيفة. يبنون بيوت قوية ومنخفضة (squat) من حجر وحجر السلت (slate)، والأرض القاحلة ما تعطيهم أي ملجأ - ما فيه قش ولا أشجار. المتكلّم يفكّر إن الأشجار ممكن تعطي رفقة وقت العاصفة، بس الأشجار غايبة.
 
-القصيدة تتحوّل لمّا المتكلّم يفكّر في البحر: يبدو وكأنه رفيق، "exploding comfortably" على المنحدرات، بس لمّا تبدأ العاصفة فعلاً، البحر ينقلب عدو - يرشّ ويبصق مثل قط أليف انقلب وحشي. والريح تهاجم بقوة عسكرية: تـ"dives"، وتـ"strafes"، وتـ"bombards" المجتمع.
+القصيدة تتحوّل لمّا المتكلّم يفكّر في البحر: يبدو وكأنه رفيق، "exploding comfortably" على المنحدرات، بس لمّا تبدأ العاصفة فعلاً، البحر ينقلب عدو - يرشّ ويبصق مثل قط أليف انقلب وحشي. والريح تهاجم بقوة عسكرية: تـ"dives"، وتـ"strafes"، والمجتمع "bombarded".
 
-القصيدة تنتهي بمفارقة: رغم كل استعدادهم المادي، المجتمع يخاف من شي مو موجود مادياً ومو محسوس - "a huge nothing". التهديد الحقيقي مو شي ملموس، بل قوة مرعبة في الفراغ وفي الهواء.
+القصيدة تنتهي بمفارقة: رغم كل استعدادهم المادي، المجتمع يخاف من شي مو موجود مادياً ومو محسوس - "huge nothing". التهديد الحقيقي مو شي ملموس، بل قوة مرعبة في الفراغ وفي الهواء.
 
 على مستوى أعمق، القصيدة رمزية للحياة في أيام الـTroubles في أيرلندا الشمالية، لين المجتمعات كانت تعيش بخوف دائم من عنف ما يقدر يتوقّع، ييي من مصادر مألوفة.`,
 
   formAndStructure: `BLANK VERSE: Written in unrhymed iambic pentameter (ten syllables per line), giving the poem a steady, measured rhythm that reflects the islanders' stoic determination.
 
-SINGLE STANZA: The entire poem is one continuous stanza of 19 lines, mirroring the relentless, unbroken assault of the storm. There is no visual "shelter" or pause in the form.
+SINGLE STANZA: The entire poem is one continuous stanza of 19 lines, mirroring the relentless, unbroken assault of the storm. There is no visual shelter or pause in the form.
 
-ENJAMBMENT: Frequent run-on lines ("there are no stacks / Or stooks", "wind dives / And strafes") create momentum and mirror the unstoppable force of the storm, refusing to let the reader rest.
+ENJAMBMENT: Frequent run-on lines (lines 4 to 5, 6 to 7, and 16 to 17, where the wind "dives" at the end of one line and "strafes" at the start of the next) create momentum and mirror the unstoppable force of the storm, refusing to let the reader rest.
 
-CONVERSATIONAL OPENING: "We are prepared" begins with quiet confidence. The direct address ("you can see", "you know what I mean") creates intimacy, as if the speaker is guiding us through their experience.
+CONVERSATIONAL OPENING: "We are prepared" begins with quiet confidence. The asides to the reader in lines 4 and 7 are direct address: they create intimacy, as if the speaker is guiding us through their experience.
 
 VOLTA / TURNING POINT: "But no:" (line 14) marks a dramatic shift. The speaker corrects the assumption that the sea is safe. From here, the poem escalates into violent military imagery.
 
-CAESURA: Strategic pauses ("full / Blast:", "But no:") create moments of tension and disruption within the steady rhythm, like the lulls and surges of a storm.
+CAESURA: Strategic pauses (the colon after the first word of line 7, and "But no:" in line 14) create moments of tension and disruption within the steady rhythm, like the lulls and surges of a storm.
 
-CYCLICAL STRUCTURE: The poem begins with "We are prepared" (confidence) and ends with "a huge nothing that we fear" (vulnerability), showing that preparation cannot eliminate fear.`,
+CYCLICAL STRUCTURE: The poem begins with "We are prepared" (confidence) and ends with the "huge nothing" the islanders fear (vulnerability), showing that preparation cannot eliminate fear.`,
 
   formAndStructureAr: `BLANK VERSE: مكتوبة في iambic pentameter بدون قافية (عشر مقاطع في كل بيت)، يعطي القصيدة إيقاع ثابت ومتزن، يعكس عزيمة سكّان الجزيرة الصبورة.
 
-مقطع واحد (SINGLE STANZA): القصيدة كلها مقطع متواصل من 19 بيت، يعكس هجوم العاصفة المتواصل بلا توقّف. ما فيه "ملجأ" بصري ولا توقّف في الشكل.
+مقطع واحد (SINGLE STANZA): القصيدة كلها مقطع متواصل من 19 بيت، يعكس هجوم العاصفة المتواصل بلا توقّف. ما فيه ملجأ بصري ولا توقّف في الشكل.
 
-ENJAMBMENT: تسلسل الأبيات بدون توقّف ("there are no stacks / Or stooks"، "wind dives / And strafes") يخلق زخم، ويعكس قوة العاصفة اللي ما تتوقّف، ويرفض إنه يعطي القارئ راحة.
+ENJAMBMENT: تسلسل الأبيات بدون توقّف (من البيت 4 للبيت 5، ومن 6 لـ7، ومن 16 لـ17، لين الريح "dives" في آخر بيت و"strafes" في أول البيت اللي بعده) يخلق زخم، ويعكس قوة العاصفة اللي ما تتوقّف، ويرفض إنه يعطي القارئ راحة.
 
-افتتاحية حوارية: عبارة "We are prepared" تبدأ بثقة هادئة. والمخاطبة المباشرة ("you can see"، "you know what I mean") تخلق ألفة، وكأن المتكلّم يقود القارئ في تجربته.
+افتتاحية حوارية: عبارة "We are prepared" تبدأ بثقة هادئة. والكلام الجانبي الموجّه للقارئ في البيتين 4 و7 مخاطبة مباشرة، تخلق ألفة، وكأن المتكلّم يقود القارئ في تجربته.
 
 VOLTA / نقطة التحوّل: "But no:" (البيت 14) يأشّر لتحوّل درامي. المتكلّم يصحّح الافتراض إن البحر آمن. ومن هنا، تتصاعد القصيدة لصور عسكرية عنيفة.
 
-CAESURA: توقّفات استراتيجية ("full / Blast:"، "But no:") تخلق لحظات توتّر واضطراب داخل الإيقاع الثابت، مثل لحظات السكون والاندفاع في العاصفة نفسها.
+CAESURA: توقّفات استراتيجية (النقطتين بعد أول كلمة في البيت 7، و"But no:" في البيت 14) تخلق لحظات توتّر واضطراب داخل الإيقاع الثابت، مثل لحظات السكون والاندفاع في العاصفة نفسها.
 
-البنية الدائرية (CYCLICAL STRUCTURE): القصيدة تبدأ بـ"We are prepared" (ثقة) وتنتهي بـ"a huge nothing that we fear" (هشاشة)، وتبيّن إن الاستعداد ما يقدر يلغي الخوف.`,
+البنية الدائرية (CYCLICAL STRUCTURE): القصيدة تبدأ بـ"We are prepared" (ثقة) وتنتهي بالـ"huge nothing" اللي يخافون منه (هشاشة)، وتبيّن إن الاستعداد ما يقدر يلغي الخوف.`,
 
   keyQuotes: [
     {
-      quote: 'We are prepared: we build our houses squat',
+      quote: 'We are prepared',
       analysis:
-        'The confident, declarative opening establishes communal resilience. "Squat" suggests low, sturdy buildings designed to withstand force - practical and defensive. The collective "we" creates solidarity.',
+        'The confident, declarative opening establishes communal resilience. The houses are built "squat": low, sturdy buildings designed to withstand force - practical and defensive. The collective "we" creates solidarity.',
       themes: ['Power of nature', 'Community', 'Conflict'],
       analysisAr:
-        'الافتتاحية الواثقة والتقريرية تثبّت فكرة الصمود الجماعي. كلمة "squat" توحي ببيوت منخفضة وقوية، مصمّمة عشان تتحمّل الضربات - عملية ودفاعية. والصيغة الجماعية "we" تخلق إحساس بالتضامن.',
+        'الافتتاحية الواثقة والتقريرية تثبّت فكرة الصمود الجماعي. البيوت مبنية "squat"، يعني منخفضة وقوية، مصمّمة عشان تتحمّل الضربات - عملية ودفاعية. والصيغة الجماعية "we" تخلق إحساس بالتضامن.',
       themesAr: ['قوة الطبيعة', 'المجتمع', 'الصراع'],
     },
     {
-      quote: 'there are no stacks / Or stooks that can be lost',
+      quote: 'tragic chorus',
       analysis:
-        'The absence of crops and shelter emphasises the barren, inhospitable landscape. "Can be lost" implies previous experience of destruction - they have learned from past suffering.',
-      themes: ['Power of nature', 'Loss', 'Vulnerability'],
+        'An allusion to Greek tragedy where the chorus comments on unfolding disaster. The foliage of trees, if the island had any, would become performers in a drama of destruction, elevating the storm to something theatrical and fatalistic. The next line (line 9) turns this into psychological fear: the noise makes you listen to what frightens you.',
+      themes: ['Power of nature', 'Fear', 'Psychological conflict'],
       analysisAr:
-        'غياب المحاصيل والملاجئ يأكّد على قسوة الأرض وعدم ضيافتها. وعبارة "can be lost" تلمّح بتجربة دمار سابقة - هم تعلّموا من معاناة قديمة.',
-      themesAr: ['قوة الطبيعة', 'الخسارة', 'الهشاشة'],
-    },
-    {
-      quote: 'tragic chorus in a gale',
-      analysis:
-        'An allusion to Greek tragedy where the chorus comments on unfolding disaster. The trees become performers in a drama of destruction, elevating the storm to something theatrical and fatalistic.',
-      themes: ['Power of nature', 'Fear'],
-      analysisAr:
-        'إشارة (allusion) إلى التراجيديا اليونانية، اللي فيها الـchorus يعلّق على الكارثة وهي تنكشف. الأشجار تتحوّل لمؤدّين في مسرحية دمار، وهذا يرفع العاصفة لمستوى مسرحي وقدري.',
-      themesAr: ['قوة الطبيعة', 'الخوف'],
-    },
-    {
-      quote: 'you listen to the thing you fear',
-      analysis:
-        'Fear is presented as something psychological - it is about anticipation and helpless listening rather than physical confrontation. The "thing" remains unnamed, increasing its menace.',
-      themes: ['Fear', 'Psychological conflict'],
-      analysisAr:
-        'الخوف يُقدَّم كحالة نفسية - الموضوع موضوع ترقّب وإصغاء عاجز، مو مواجهة جسدية. وكلمة "thing" ما تتسمّى، وعدم التسمية يزيد التهديد.',
-      themesAr: ['الخوف', 'الصراع النفسي'],
+        'إشارة (allusion) إلى التراجيديا اليونانية، اللي فيها الـchorus يعلّق على الكارثة وهي تنكشف. أوراق وأغصان الأشجار، لو كان في الجزيرة أشجار، بتتحوّل لمؤدّين في مسرحية دمار، وهذا يرفع العاصفة لمستوى مسرحي وقدري. والبيت اللي بعده (البيت 9) يحوّلها لخوف نفسي: الصوت يخلّيك تصغي للشي اللي يخوّفك.',
+      themesAr: ['قوة الطبيعة', 'الخوف', 'الصراع النفسي'],
     },
     {
       quote: 'Exploding comfortably',
       analysis:
-        'A powerful oxymoron showing how violence has been normalised. The islanders have grown so accustomed to the sea\'s violence that it feels "comfortable" - a disturbing commentary on living with constant threat.',
+        "A powerful oxymoron showing how violence has been normalised. The islanders have grown so accustomed to the sea's violence that it feels comfortable - a disturbing commentary on living with constant threat.",
       themes: ['Power of nature', 'Conflict', 'Normalisation of violence'],
       analysisAr:
-        'oxymoron قوي يبيّن كيف إن العنف صار طبيعي. سكّان الجزيرة تعوّدوا على عنف البحر لدرجة إنه يحسّ "comfortable" - تعليق مزعج عن العيش تحت تهديد دائم.',
+        'oxymoron قوي يبيّن كيف إن العنف صار طبيعي. سكّان الجزيرة تعوّدوا على عنف البحر لدرجة إنه صار مريح لهم - تعليق مزعج عن العيش تحت تهديد دائم.',
       themesAr: ['قوة الطبيعة', 'الصراع', 'تطبيع العنف'],
     },
     {
-      quote: 'spits like a tame cat / Turned savage',
+      quote: 'tame cat / Turned savage',
       analysis:
-        'The simile compares the sea to a domesticated animal becoming feral. The enjambment places "Turned savage" at the start of a new line for maximum shock. Allegorically, it reflects how neighbours turned on each other during the Troubles.',
+        'The simile in lines 15 to 16 compares the spray to a domesticated animal becoming feral. The enjambment places "Turned savage" at the start of a new line for maximum shock. Allegorically, it reflects how neighbours turned on each other during the Troubles.',
       themes: ['Power of nature', 'Conflict', 'Betrayal'],
       analysisAr:
-        'التشبيه (simile) يقارن البحر بحيوان أليف انقلب وحشي. والـenjambment يحط "Turned savage" في بداية بيت جديد لأقصى صدمة. ورمزياً، يعكس كيف إن الجيران انقلبوا على بعضهم في أيام الـTroubles.',
+        'التشبيه (simile) في البيتين 15 و16 يقارن رذاذ البحر بحيوان أليف انقلب وحشي. والـenjambment يحط "Turned savage" في بداية بيت جديد لأقصى صدمة. ورمزياً، يعكس كيف إن الجيران انقلبوا على بعضهم في أيام الـTroubles.',
       themesAr: ['قوة الطبيعة', 'الصراع', 'الخيانة'],
     },
     {
-      quote: 'Space is a salvo',
+      quote: 'salvo',
       analysis:
-        'A metaphor equating empty space with a volley of gunfire. The military term "salvo" makes the abstract physical - even emptiness becomes weaponised. The sibilance creates a hissing, threatening sound.',
+        'In line 17 space itself is called a "salvo", a volley of gunfire. The military term makes the abstract physical - even emptiness becomes weaponised. The sibilance of the line creates a hissing, threatening sound.',
       themes: ['Conflict', 'Fear', 'Power of nature'],
       analysisAr:
-        'استعارة تساوي بين الفراغ ورشقة نار. المصطلح العسكري "salvo" يحوّل المجرّد إلى ملموس - حتى الفراغ يصير سلاح. والـsibilance تخلق صوت يهسّ ومهدّد.',
+        'في البيت 17 الفراغ نفسه يتسمّى "salvo"، يعني رشقة نار. المصطلح العسكري يحوّل المجرّد إلى ملموس - حتى الفراغ يصير سلاح. والـsibilance في البيت تخلق صوت يهسّ ومهدّد.',
       themesAr: ['الصراع', 'الخوف', 'قوة الطبيعة'],
     },
     {
-      quote: 'it is a huge nothing that we fear',
+      quote: 'huge nothing',
       analysis:
-        'The poem\'s closing oxymoron. "Huge nothing" captures the paradox of fearing something invisible and intangible. Despite all preparation, the real enemy cannot be seen, fought, or resisted - a powerful metaphor for the Troubles.',
+        "The poem's closing oxymoron, in its last line, captures the paradox of fearing something invisible and intangible. Despite all preparation, the real enemy cannot be seen, fought, or resisted - a powerful metaphor for the Troubles.",
       themes: ['Fear', 'Psychological conflict', 'Power of nature'],
       analysisAr:
         'oxymoron ختامي للقصيدة. "Huge nothing" يلتقط مفارقة الخوف من شي ما يُرى ولا يُلمَس. رغم كل الاستعداد، العدو الحقيقي ما يُشاف، ما يُحارب، ما يُقاوم - استعارة قوية عن الـTroubles.',
@@ -409,30 +395,30 @@ CAESURA: توقّفات استراتيجية ("full / Blast:"، "But no:") تخ�
   languageDevices: [
     {
       device: 'Military metaphor (sustained)',
-      example: 'strafes invisibly. Space is a salvo, / We are bombarded',
+      example: 'dives ... strafes ... salvo ... bombarded',
       effect:
-        'The sustained military language ("strafes", "salvo", "bombarded", "dives", "exploding") transforms the storm into a military assault. This links the natural event to the political violence of the Troubles and suggests the community is under siege.',
+        'The sustained military language of lines 16 to 18, prepared for by the sea "exploding" in line 13, transforms the storm into a military assault. This links the natural event to the political violence of the Troubles and suggests the community is under siege.',
       lineRef: 16,
       effectAr:
-        'اللغة العسكرية المتواصلة ("strafes"، "salvo"، "bombarded"، "dives"، "exploding") تحوّل العاصفة لهجوم عسكري. هذا يربط الحدث الطبيعي بالعنف السياسي في الـTroubles، ويلمّح إن المجتمع تحت حصار.',
+        'اللغة العسكرية المتواصلة في الأبيات 16 لين 18، واللي يمهّد لها البحر "exploding" في البيت 13، تحوّل العاصفة لهجوم عسكري. هذا يربط الحدث الطبيعي بالعنف السياسي في الـTroubles، ويلمّح إن المجتمع تحت حصار.',
     },
     {
       device: 'Personification',
-      example: 'This wizened earth has never troubled us',
+      example: 'wizened',
       effect:
-        '"Wizened" gives the earth human qualities of age and experience, while "troubled" (with its echo of "the Troubles") subtly links the landscape to political conflict.',
+        '"Wizened" gives the earth human qualities of age and experience, while the verb for what the earth has never done to the islanders in line 3 echoes the name of the Troubles and subtly links the landscape to political conflict.',
       lineRef: 2,
       effectAr:
-        'كلمة "wizened" تعطي الأرض صفات بشرية من ناحية العمر والخبرة، بينما "troubled" (بصدى كلمة "the Troubles") تربط المنظر الطبيعي بالصراع السياسي بشكل خفي.',
+        'كلمة "wizened" تعطي الأرض صفات بشرية من ناحية العمر والخبرة، بينما الفعل اللي يقول إن الأرض ما سبّبت لهم مشاكل في البيت 3 فيه صدى لاسم الـTroubles، ويربط المنظر الطبيعي بالصراع السياسي بشكل خفي.',
     },
     {
       device: 'Simile',
-      example: 'spits like a tame cat / Turned savage',
+      example: 'tame cat / Turned savage',
       effect:
-        "The domestic-to-wild transformation captures the shock of something familiar becoming dangerous. The simile works on two levels: literally (the sea's violence) and allegorically (communities turning against each other).",
+        "The sea spray is compared to a pet that has gone wild. The domestic-to-wild transformation captures the shock of something familiar becoming dangerous. The simile works on two levels: literally (the sea's violence) and allegorically (communities turning against each other).",
       lineRef: 14,
       effectAr:
-        'التحوّل من الأليف للوحشي يلتقط صدمة الشي المألوف لمّا يصير خطر. الـsimile يشتغل على مستويين: حرفياً (عنف البحر) ورمزياً (المجتمعات اللي ينقلب بعضها على بعض).',
+        'رذاذ البحر يتشبّه بحيوان أليف توحّش. التحوّل من الأليف للوحشي يلتقط صدمة الشي المألوف لمّا يصير خطر. الـsimile يشتغل على مستويين: حرفياً (عنف البحر) ورمزياً (المجتمعات اللي ينقلب بعضها على بعض).',
     },
     {
       device: 'Oxymoron',
@@ -445,7 +431,7 @@ CAESURA: توقّفات استراتيجية ("full / Blast:"، "But no:") تخ�
     },
     {
       device: 'Oxymoron',
-      example: 'a huge nothing',
+      example: 'huge nothing',
       effect:
         "The final oxymoron encapsulates the poem's central paradox: the greatest fear is caused by something that is simultaneously vast and empty. Fear itself - shapeless and invisible - is the true antagonist.",
       lineRef: 18,
@@ -453,31 +439,13 @@ CAESURA: توقّفات استراتيجية ("full / Blast:"، "But no:") تخ�
         'الـoxymoron الختامي يلخّص المفارقة الجوهرية في القصيدة: أعظم خوف يسبّبه شي شاسع وفاضي في نفس الوقت. الخوف نفسه - اللي ما له شكل ولا يُرى - هو الخصم الحقيقي.',
     },
     {
-      device: 'Alliteration',
-      example: 'Sink walls... good slate... sit tight... Space is a salvo',
+      device: 'Volta and caesura',
+      example: 'But no',
       effect:
-        'Plosive alliteration ("b", "s", "t" sounds) throughout the poem creates a percussive, battering rhythm that mirrors the physical impact of the storm on the buildings and the community.',
-      lineRef: 1,
+        "The blunt contradiction in line 14 is the poem's turning point: the speaker overturns the idea that the sea keeps them company, and the colon after it makes a caesura, a sharp pause before the attack. From here the language becomes violent and military. Earlier asides to the reader (lines 4 and 7) had used direct address to draw us into the community's calm; this line breaks that calm.",
+      lineRef: 13,
       effectAr:
-        'الـalliteration بأصوات الـplosive ("b"، "s"، "t") عبر القصيدة كلها تخلق إيقاع قارع يشبه قرع الطبل، يعكس التأثير المادي للعاصفة على المباني والمجتمع.',
-    },
-    {
-      device: 'Caesura',
-      example: 'Blast: you know what I mean',
-      effect:
-        'The colon creates a dramatic pause mid-line, mimicking the sudden impact of the storm\'s "blast". The caesura disrupts the iambic pentameter, reflecting how the storm disrupts the islanders\' lives.',
-      lineRef: 6,
-      effectAr:
-        'النقطتين تخلقان توقّف درامي في نص البيت، يحاكي ضربة العاصفة المفاجئة "blast". والـcaesura تكسر الـiambic pentameter، وتعكس كيف إن العاصفة تكسر حياة سكان الجزيرة.',
-    },
-    {
-      device: 'Direct address',
-      example: 'as you can see... you know what I mean',
-      effect:
-        "The conversational, second-person address draws the reader into the community's experience, making us complicit witnesses. It creates intimacy and a sense of shared vulnerability.",
-      lineRef: 3,
-      effectAr:
-        'المخاطبة الحوارية بضمير المخاطب تجرّ القارئ لتجربة المجتمع، وتخلّيه شاهد متورّط في المعاناة. وتخلق ألفة وإحساس مشترك بالهشاشة.',
+        'التناقض الصريح في البيت 14 هو نقطة التحوّل (volta) في القصيدة: المتكلّم ينقض فكرة إن البحر رفيق، والنقطتين بعده تخلق caesura، يعني وقفة حادّة قبل الهجوم. ومن هنا تصير اللغة عنيفة وعسكرية. قبلها، الكلام الجانبي الموجّه للقارئ (البيتين 4 و7) كان مخاطبة مباشرة تجرّنا لهدوء المجتمع، وهذا البيت يكسر هالهدوء.',
     },
   ],
 }
@@ -555,19 +523,19 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is about climate change',
-      'The word "Stormont" is hidden in the title, linking to the political turmoil of Northern Ireland',
+      'The word Stormont is hidden in the title, linking to the political turmoil of Northern Ireland',
       'It describes a real hurricane',
       'It is about the Scottish independence movement',
     ],
     correctIndex: 1,
     explanation:
-      'The title contains "Stormont" - the seat of Northern Ireland\'s government. Heaney wrote during the Troubles, and the poem can be read as an allegory for living under the constant threat of political violence.',
+      "The title contains the word Stormont - the seat of Northern Ireland's government. Heaney wrote during the Troubles, and the poem can be read as an allegory for living under the constant threat of political violence.",
     topic: 'Context',
     difficulty: 'higher',
   },
   {
     id: 'soti-6',
-    question: 'What is the effect of "It is a huge nothing that we fear"?',
+    question: 'What is the effect of the "huge nothing" in the final line?',
     type: 'multiple-choice',
     options: [
       'The storm is not actually dangerous',
@@ -616,7 +584,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: 'soti-9',
     question:
-      'How does the shift from "We are prepared" to "it is a huge nothing that we fear" chart the poem\'s emotional journey?',
+      'How does the shift from "We are prepared" in line 1 to the "huge nothing" feared in line 19 chart the poem\'s emotional journey?',
     type: 'multiple-choice',
     options: [
       'The community becomes more confident',
@@ -656,9 +624,9 @@ const REVISION_TOPICS = [
       'Storm on the Island explores the power of nature, the limits of human preparation, fear of the invisible, and (allegorically) the political turmoil of Northern Ireland.',
     keyPoints: [
       'Power of nature - the storm overwhelms despite human preparation',
-      'Fear of the intangible - "a huge nothing that we fear"',
+      'Fear of the intangible - the "huge nothing" of the final line',
       'Community and resilience - "We" shows collective experience',
-      'Political allegory - "Stormont" hidden in title links to Northern Ireland\'s Troubles',
+      "Political allegory - Stormont hidden in the title links to Northern Ireland's Troubles",
     ],
   },
   {
@@ -668,8 +636,8 @@ const REVISION_TOPICS = [
     keyPoints: [
       '"Exploding comfortably" - oxymoron showing normalised danger',
       'Military semantic field: "bombarded", "strafes", "salvo"',
-      '"A huge nothing that we fear" - paradox at the poem\'s climax',
-      'Conversational tone ("as you can see") shifts to terror',
+      '"Huge nothing" - paradox at the poem\'s climax',
+      'Conversational asides to the reader (lines 4 and 7) shift to terror',
     ],
   },
   {

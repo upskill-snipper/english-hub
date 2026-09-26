@@ -84,10 +84,11 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         point:
           'Both poets present powerful figures who believe they have absolute authority over others.',
-        evidence1: '"My name is Ozymandias, King of Kings"',
+        // Lower case as AQA's anthology and poets.org print it; this had capitals.
+        evidence1: '"My name is Ozymandias, king of kings"',
         evidence1poem: 'Ozymandias',
         analysis1:
-          'The superlative title "King of Kings" (echoing biblical language used for God) reveals Ozymandias\'s blasphemous arrogance. He claims dominion over all other rulers, yet the irony is that his empire no longer exists. Shelley uses the inscription to let the tyrant condemn himself with his own words.',
+          'The superlative title "king of kings" (echoing biblical language used for God) reveals Ozymandias\'s blasphemous arrogance. He claims dominion over all other rulers, yet the irony is that his empire no longer exists. Shelley uses the inscription to let the tyrant condemn himself with his own words.',
         evidence2: '"That\'s my last Duchess painted on the wall"',
         evidence2poem: 'My Last Duchess',
         analysis2:
@@ -123,7 +124,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     conclusion:
       'Both poets present power as dangerous and self-serving. Shelley ultimately offers a reassuring message -- even the mightiest tyrant is forgotten -- while Browning is more unsettling because his tyrant is still in control. The reader is left to judge the Duke, just as history has judged Ozymandias.',
     grade5approach:
-      'Identify that both poems are about powerful men. Quote "King of Kings" and "my last Duchess" and explain what each shows about power. Comment on the irony in Ozymandias. Make a basic comparison: "Similarly, the Duke also shows power."',
+      'Identify that both poems are about powerful men. Quote "king of kings" and "my last Duchess" and explain what each shows about power. Comment on the irony in Ozymandias. Make a basic comparison: "Similarly, the Duke also shows power."',
     grade9approach:
       "Analyse how each poet uses form to embody their ideas about power (irregular sonnet vs. controlled couplets). Explore the effect of specific techniques (caesura, enjambment, dramatic irony). Compare the poets' contexts and purposes: Shelley's Romantic radicalism vs. Browning's Victorian social critique. Evaluate which presentation is more effective and why.",
   },
@@ -158,22 +159,28 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         point:
           'Both poets use structure and rhythm to reflect the disorienting experience of conflict.',
-        evidence1: '"I see broad daylight on the other side"',
+        // Until 26 September 2026 this analysis described a shift from past-tense
+        // narration to the present. Remains is told in the present tense from its
+        // first line, like a spoken anecdote, and its stanzas are seven quatrains
+        // and a closing couplet, not unstructured verse; the claim and the
+        // quotation were both cut back.
+        evidence1: '"I see broad daylight"',
         evidence1poem: 'Remains',
         analysis1:
-          "The poem's shift from past tense narration to present tense in the final stanzas mirrors how the memory of killing has become an inescapable, ever-present reality. The colloquial, unstructured free verse reflects the rawness of a real soldier's testimony -- this is not polished literary language but an authentic, traumatic account.",
+          "Armitage tells the killing in the present tense, in the manner of a spoken anecdote, so it never settles into the past. The graphic image on line 10, of daylight seen through the looter's body, is delivered in the same casual voice as the rest of the story. The poem then moves from the patrol on the street to the speaker at home on leave, where the memory keeps replaying. Seven quatrains and a closing couplet hold a colloquial voice with no regular rhyme scheme, which reflects the rawness of a real soldier's testimony: this is not polished literary language but an authentic, traumatic account.",
         evidence2: '"But nothing happens"',
         evidence2poem: 'Exposure',
         analysis2:
           "Owen's devastating refrain -- repeated at the end of multiple stanzas -- uses anti-climax to capture the agonising boredom and futility of trench warfare. The regular stanza structure and consistent half-rhyme create a monotonous rhythm that mimics the endless, repetitive suffering. The contrast between the structured form and the formless waiting is itself a kind of torment.",
-        link: 'Where Armitage uses irregular, conversational form to show the chaos of modern warfare, Owen uses rigid, repetitive structure to convey the grinding tedium that is equally destructive. Both demonstrate that conflict damages through what it forces soldiers to endure repeatedly.',
+        link: 'Where Armitage uses a conversational voice, with no regular rhyme or metre, to show the chaos of modern warfare, Owen uses rigid, repetitive structure to convey the grinding tedium that is equally destructive. Both demonstrate that conflict damages through what it forces soldiers to endure repeatedly.',
       },
       {
         point: 'Both poets challenge romanticised views of war by foregrounding its human cost.',
-        evidence1: '"his blood-shadow stays on the street"',
+        // Line 18 opens with a capital: the evidence had lower-cased it.
+        evidence1: '"His blood-shadow"',
         evidence1poem: 'Remains',
         analysis1:
-          "Armitage presents the looter's death as a stain the soldier can never wash away. The poem is based on a real testimony from a soldier suffering PTSD, grounding the poem in documented reality. By using a conversational register, Armitage makes the suffering feel immediate and contemporary -- this is not historical war poetry but a living wound.",
+          "Armitage's compound noun presents the looter's death as a stain the soldier can never wash away: on lines 18 and 19 he has to walk over the same spot on every patrol, so the dead man is never behind him. The poem is based on a real testimony from a soldier suffering PTSD, grounding the poem in documented reality. By using a conversational register, Armitage makes the suffering feel immediate and contemporary -- this is not historical war poetry but a living wound.",
         evidence2: '"For love of God seems dying"',
         evidence2poem: 'Exposure',
         analysis2:
@@ -184,9 +191,9 @@ const ESSAY_PLANS: EssayPlan[] = [
     conclusion:
       'Armitage and Owen, separated by nearly a century, reach the same conclusion: conflict destroys those who survive it. Remains shows the private, individual guilt of a modern soldier; Exposure shows the collective, numbing suffering of a generation. Together they demonstrate that the psychological reality of war has remained unchanged.',
     grade5approach:
-      'Identify that both poems are about the suffering caused by war. Quote key lines and explain what they mean. Comment that Armitage uses informal language while Owen uses formal poetry. State: "Both poets show that war is horrible."',
+      'Identify that both poems are about the suffering caused by war. Quote key lines and explain what they mean. Comment that Armitage uses informal language while Owen uses formal poetry. Make a simple overall point, for example that both poets show war is horrible.',
     grade9approach:
-      "Analyse how each poet uses tense shifts and structural devices to replicate psychological trauma. Compare the poets' relationships to conflict (Armitage as documentarian vs. Owen as participant). Explore how form embodies meaning: free verse reflecting chaos vs. structured stanzas reflecting entrapment. Evaluate how each poem challenges the reader's assumptions about soldiers.",
+      "Analyse how each poet uses tense and structure to replicate psychological trauma: Armitage's present-tense anecdote that will not stay in the past, Owen's returning refrain. Compare the poets' relationships to conflict (Armitage as documentarian vs. Owen as participant). Explore how form embodies meaning: Armitage's unrhymed, conversational lines reflecting chaos vs. Owen's structured stanzas reflecting entrapment. Evaluate how each poem challenges the reader's assumptions about soldiers.",
   },
 
   // ────────────────────────────────────────── 3
@@ -206,11 +213,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         point:
           'Both poets establish initial human confidence that nature then systematically destroys.',
-        evidence1: '"We are prepared: we build our houses squat"',
+        evidence1: '"We are prepared"',
         evidence1poem: 'Storm on the Island',
         analysis1:
-          'The opening declarative sentence conveys collective confidence. The practical, monosyllabic language ("squat", "rock", "slate") suggests solid pragmatism. However, this preparation proves inadequate against the storm -- the colon after "prepared" introduces a list of defences that will ultimately fail, making the confidence ironic.',
-        evidence2: '"lustily I dipped my oars into the silent lake"',
+          'The opening declarative sentence conveys collective confidence. The blunt monosyllables of the first two lines ("squat", "slate") suggest solid pragmatism. However, this preparation proves inadequate against the storm: the colon after "prepared" introduces a list of defences that will ultimately fail, making the confidence ironic.',
+        // The line ends after "lustily"; the evidence ran the two lines together.
+        evidence2: '"lustily / I dipped my oars into the silent lake"',
         evidence2poem: 'The Prelude',
         analysis2:
           'Wordsworth\'s speaker is youthfully confident, rowing out with energy and pleasure. The adverb "lustily" conveys vigour and enjoyment. The "silent lake" seems peaceful, controlled -- nature appears compliant. But this tranquillity is shattered when the mountain appears, revealing that nature was never under human control.',
@@ -219,10 +227,10 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         point:
           'Both poets use sensory language and personification to present nature as a conscious, threatening force.',
-        evidence1: '"We just sit tight while wind dives / And strafes invisibly"',
+        evidence1: '"wind dives / And strafes invisibly"',
         evidence1poem: 'Storm on the Island',
         analysis1:
-          'Heaney uses military language -- "dives" and "strafes" are terms for aerial bombardment -- to present the wind as an invisible attacker. This transforms a natural event into warfare, connecting to Northern Ireland\'s political context (the first eight letters spell "Stormont"). The invisibility of the threat makes it more terrifying: the community cannot fight what they cannot see.',
+          'Heaney uses military language to present the wind as an invisible attacker: "dives" and "strafes" are terms for aerial bombardment, and the vocabulary of attack continues through lines 17 and 18. This transforms a natural event into warfare, connecting to Northern Ireland\'s political context (the first eight letters of the title spell Stormont, the seat of the Northern Ireland parliament). The invisibility of the threat makes it more terrifying: the community cannot fight what they cannot see.',
         evidence2: '"a huge peak, black and huge... / Strode after me"',
         evidence2poem: 'The Prelude',
         analysis2:
@@ -232,11 +240,14 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         point:
           "Both poems end with a fundamental shift in the speaker's understanding of humanity's place in the natural world.",
-        evidence1: '"It is a huge nothing that we fear"',
+        evidence1: '"a huge nothing that we fear"',
         evidence1poem: 'Storm on the Island',
         analysis1:
-          'Heaney\'s concluding paradox -- fearing "nothing" -- captures the existential terror of nature\'s power. The storm is invisible, intangible, yet devastating. The pronoun shift from confident "we" to fearful "we" marks a transformation: the community\'s collective strength has become collective vulnerability. "Huge nothing" is an oxymoron that encapsulates the sublime.',
-        evidence2: '"and after I had seen / That spectacle... / huge and mighty forms"',
+          'Heaney\'s concluding paradox, fearing "nothing", captures the existential terror of nature\'s power. The storm is invisible, intangible, yet devastating. The poem ends on the same collective "we" that opened it on line 1, but the confident "we" who were prepared has become a "we" that fears: the community\'s collective strength has become collective vulnerability. "Huge nothing" is an oxymoron that encapsulates the sublime.',
+        // Wordsworth wrote "but after I had seen": the evidence began with "and".
+        // Line 42 of AQA's extract opens with a word before "huge", so no line
+        // break can stand between the ellipsis and it.
+        evidence2: '"after I had seen / That spectacle... huge and mighty forms"',
         evidence2poem: 'The Prelude',
         analysis2:
           'Wordsworth describes how the encounter permanently changed his relationship with nature. The "huge and mighty forms" haunted his imagination for days, representing the Romantic concept of the sublime -- an experience of awe and terror that reveals nature\'s superiority. This is a formative, transformative moment that shapes the poet\'s entire worldview.',
@@ -246,7 +257,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     conclusion:
       "Heaney and Wordsworth both present nature's power as humbling and transformative, but their responses differ. Heaney is pragmatic and communal -- the islanders endure together but are left fearful. Wordsworth is personal and spiritual -- the individual is permanently changed by the sublime experience. Both poets argue that nature is ultimately beyond human control.",
     grade5approach:
-      'Identify that both poems are about nature being powerful. Quote "strafes" and "strode after me" and explain how nature is described as threatening. Make a basic link: "Both poets show nature is more powerful than humans."',
+      'Identify that both poems are about nature being powerful. Quote Heaney\'s verb "strafes" and Wordsworth\'s "strode" and explain how nature is described as threatening. Make a basic link, for example that both poets show nature is more powerful than humans.',
     grade9approach:
       "Analyse how each poet uses personification differently (military vs. physical pursuit) and connect this to context (Northern Irish politics vs. Romantic sublime). Explore how form mirrors content: blank verse in both poems reflecting nature's uncontainable energy. Evaluate the significance of the endings -- communal fear vs. individual transformation -- and what each reveals about the poet's philosophy.",
   },
@@ -268,16 +279,19 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         point:
           'Both poets present individuals who are trapped between the world of conflict and everyday life.',
-        evidence1: '"a stranger\'s features / faintly start to twist before his eyes"',
+        evidence1: '"faintly start to twist before his eyes"',
         evidence1poem: 'War Photographer',
         analysis1:
-          'The image developing in the darkroom forces the photographer to re-encounter suffering he witnessed. The verb "twist" suggests pain being replayed, as though the victim is dying again in front of him. Duffy conveys the photographer\'s inability to separate professional detachment from human empathy -- the images will not let him forget.',
-        // VERIFY: previous quote "the world had tilted" is FABRICATED - does not appear in Duffy's War Photographer. Replaced with verified line from the same poem.
-        evidence2:
-          '"He has a job to do. Solutions slop in trays / beneath his hands, which did not tremble then / though seem to now"',
+          'As a stranger\'s face forms in the developing tray (lines 13 to 15), the image forces the photographer to re-encounter suffering he witnessed. The verb "twist" suggests pain being replayed, as though the victim is dying again in front of him. Duffy conveys the photographer\'s inability to separate professional detachment from human empathy -- the images will not let him forget.',
+        // This is the Poppies evidence. It held an invented Weir line about the
+        // world tilting, and then, "corrected", 22 words of War Photographer:
+        // the wrong poem, over the quotation limit, under an analysis of a
+        // metaphor Poppies does not contain. Replaced on 26 September 2026 with a
+        // phrase checked against the AQA anthology and an analysis of it.
+        evidence2: '"the front door"',
         evidence2poem: 'Poppies',
         analysis2:
-          "Weir's metaphor captures how conflict destabilises a mother's entire reality. The world has literally shifted on its axis since her son left. This is not dramatic battlefield imagery but a quiet, domestic expression of how conflict reaches into homes and families, tilting the ordinary world into something unrecognisable.",
+          "Weir's speaker walks her son only as far as the front door (line 19), the threshold between home and the world he is leaving for. The phrase carries an echo of the military front, so the boundary between domestic life and war collapses into one ordinary household word. This is not dramatic battlefield imagery but a quiet, domestic expression of how conflict reaches into homes and families: as he steps out, she stays on the home side of the door.",
         link: 'Both poets show that conflict does not only affect those who fight. The photographer and the mother are both permanently altered by their proximity to war, trapped in a distorted version of normal life.',
       },
       {
@@ -290,7 +304,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence2: '"Sellotape bandaged around my hand"',
         evidence2poem: 'Poppies',
         analysis2:
-          'Weir uses the domestic detail of Sellotape to evoke a childhood memory, connecting the mother\'s present grief to the innocence her son has lost. The word "bandaged" foreshadows potential injury, transforming an innocent childhood scene into a premonition of war. Every domestic object becomes charged with loss.',
+          'Weir takes an ordinary task, wrapping Sellotape around her hand to lift cat hairs from her son\'s clothes before he leaves, and describes it with the word "bandaged". It foreshadows injury, turning a mother\'s last small act of care into a premonition of war. A few lines later a memory of his early childhood (lines 11 to 14) sets the innocence she remembers against the soldier he has become. Every domestic object becomes charged with loss.',
         link: 'Both poets anchor the effects of conflict in small, tangible details -- a developing photograph, a strip of tape. This technique makes the emotional impact more powerful because it shows how conflict infiltrates ordinary, everyday moments.',
       },
       {
@@ -299,10 +313,13 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence1poem: 'War Photographer',
         analysis1:
           "Duffy's blunt final assessment indicts the British public for their indifference. The photographer's suffering is compounded by the knowledge that his work -- intended to provoke empathy -- is consumed and forgotten. The final image of the plane taking him back to a warzone suggests an endless, futile cycle. His pain is private and unacknowledged.",
-        evidence2: '"leaned against it like a bird"',
+        // Until 26 September 2026 this quoted a simile of a bird, which is not in
+        // Poppies: the simile on line 32 is of a wishbone, and the analysis was
+        // written for the wrong image.
+        evidence2: '"like a wishbone"',
         evidence2poem: 'Poppies',
         analysis2:
-          'The poem ends with the mother at a war memorial, pressing herself against cold stone, hoping to hear her son\'s voice. The simile "like a bird" suggests fragility and freedom simultaneously -- she is both vulnerable and yearning to fly to her son. The poem offers no resolution; the grief is ongoing, the loss permanent.',
+          'The poem ends with the mother at a war memorial on a hilltop (lines 30 to 35), leaning against the stone and listening for her son\'s voice. The simile "like a wishbone" suggests fragility, a body that could snap, and also a wish: she is still hoping for his safe return. The poem offers no resolution; the grief is ongoing and the ending is left open.',
         link: "Neither poem offers comfort or closure. Duffy's photographer and Weir's mother are both left carrying their private burdens alone, suggesting that the effects of conflict are permanent and largely invisible to others.",
       },
     ],
@@ -330,29 +347,30 @@ const ESSAY_PLANS: EssayPlan[] = [
     paragraphs: [
       {
         point: 'Both poets present identity as being threatened by powerful external forces.',
-        evidence1: '"Dem tell me / Dem tell me / Wha dem want to tell me"',
+        evidence1: '"Dem tell me / Dem tell me"',
         evidence1poem: 'Checking Out Me History',
         analysis1:
-          'The pronoun "Dem" creates a clear division between the powerful (the colonial curriculum) and the oppressed speaker. The repetition of "tell me" emphasises the one-directional imposition of a selective version of history. The use of Creole dialect is itself an act of resistance -- Agard refuses to write in Standard English, asserting his Caribbean identity through language.',
-        // VERIFY: previous evidence quote "They blocked the sunlight in my city of words" is FABRICATED - does not appear in Rumens's The Émigrée. Replaced with verified line.
-        evidence2:
-          '"It may be at war, it may be sick with tyrants, / but I am branded by an impression of sunlight"',
+          'The pronoun "Dem" creates a clear division between the powerful (the colonial curriculum) and the oppressed speaker. The repetition of "tell me", followed in the third line by the complaint that they teach only what they choose to, emphasises the one-directional imposition of a selective version of history. The use of Creole dialect is itself an act of resistance: Agard refuses to write in Standard English, asserting his Caribbean identity through language.',
+        // Checked against AQA's published anthology, 26 September 2026. An earlier line here was
+        // invented.
+        evidence2: '"branded by an impression of sunlight"',
         evidence2poem: 'The Émigrée',
         analysis2:
-          'Rumens balances the speaker\'s acknowledgment of political darkness ("at war", "sick with tyrants") against the unshakeable refrain of "sunlight". The metaphor "branded" presents memory as something painful but indelible - like a cattle brand burnt into her. External force can destroy the city, but it cannot remove the impression of light from her.',
+          'Rumens balances the speaker\'s admission that her homeland may now be at war and ruled by tyrants against the unshakeable refrain of "sunlight", the word that closes every stanza. The metaphor "branded" presents memory as something painful but indelible, like a brand burnt into her. External force can damage the city, but it cannot remove the impression of light from her.',
         link: 'Both poets use pronouns ("Dem"/"They") to identify oppressive forces that threaten individual identity. Both speakers resist these forces -- Agard through angry reclamation, Rumens\'s speaker through stubborn, luminous memory.',
       },
       {
         point: 'Both poets use contrasting imagery to highlight what has been lost or suppressed.',
-        evidence1: '"Bandage up me eye with me own history / and blind me to me own identity"',
+        evidence1: '"Bandage up me eye with me own history"',
         evidence1poem: 'Checking Out Me History',
         analysis1:
-          'The metaphor of blindfolding is violent and visceral. The education system does not simply fail to teach -- it actively "bandages" and "blinds", suggesting deliberate suppression. The repetition of "me own" asserts ownership and challenges the theft of heritage. Agard presents the recovery of identity as removing a blindfold, an act of seeing clearly for the first time.',
-        // VERIFY: previous evidence quote "my city takes me dancing through the city of walls" is FABRICATED - actual Rumens line is just "My city takes me dancing through the streets". The phrase "city of walls" does not appear in The Émigrée.
-        evidence2: '"My city takes me dancing through the streets"',
+          'The metaphor of blindfolding is violent and visceral. The education system does not simply fail to teach: it actively bandages the speaker\'s eye and, in the next line, blinds him to his own identity, suggesting deliberate suppression. The repetition of "me own" across the two lines asserts ownership and challenges the theft of heritage. Agard presents the recovery of identity as removing a blindfold, an act of seeing clearly for the first time.',
+        // Checked against AQA's published anthology, 26 September 2026. The line here before, and
+        // the VERIFY note that corrected it, were both wrong.
+        evidence2: '"My city takes me dancing"',
         evidence2poem: 'The Émigrée',
         analysis2:
-          'Rumens personifies the lost city as a dance partner. The remembered homeland actively embraces and accompanies the speaker - a private, joyful intimacy that political force cannot reach. The personification of memory "dancing" suggests defiance: the remembered homeland is so powerful it can overcome present-day oppression. Identity rooted in memory proves stronger than political reality.',
+          'Rumens personifies the lost city as a dance partner that leads the speaker "through the city / of walls". The remembered homeland actively embraces and accompanies her, a private, joyful intimacy set against the barriers around her that political force cannot reach. The personification of memory as dancing suggests defiance: the remembered homeland is so powerful it can overcome present-day oppression. Identity rooted in memory proves stronger than political reality.',
         link: "Both poets structure their poems around contrasts: colonial curriculum vs. suppressed heritage; remembered city vs. present reality. In both cases, the speaker's true identity exists in the suppressed or remembered version, not the imposed one.",
       },
       {
@@ -362,17 +380,19 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence1poem: 'Checking Out Me History',
         analysis1:
           'The final metaphor of "carving" suggests identity is something the speaker must actively create -- it is hard, deliberate work, like sculpture. This echoes the earlier references to historical figures who carved their own paths. The present continuous tense ("I carving") indicates this is an ongoing process of self-determination, not a completed act.',
-        evidence2: '"My city hides behind me. I am its ambassador"',
+        // Checked against AQA's published anthology, 26 September 2026. The sentence that followed
+        // this one here is not in the poem.
+        evidence2: '"My city hides behind me"',
         evidence2poem: 'The Émigrée',
         analysis2:
-          'The speaker takes on the role of ambassador -- a representative who carries the homeland\'s identity within herself. The city "hides behind" her, suggesting both protection and internalisation. Rumens presents identity as portable and resilient: even if the physical homeland is lost, its essence survives within the individual.',
+          'The city hides behind the speaker, as if she now shelters it from the hostile voices around her. In the final line her own shadow becomes "evidence of sunlight": even the darkness she casts proves the light she carries. Rumens presents identity as portable and resilient: even if the physical homeland is lost, its essence survives within the individual.',
         link: "Both poets end with empowering statements of self-definition. Agard's speaker is actively constructing identity; Rumens's speaker is carrying it forward. Both reject the idea that identity can be permanently suppressed or erased.",
       },
     ],
     conclusion:
       "Agard and Rumens both present identity as something precious that is threatened by external forces but ultimately resilient. Agard's approach is political and confrontational; Rumens's is personal and lyrical. Both conclude that identity, whether rooted in heritage or memory, can survive suppression.",
     grade5approach:
-      'Identify that both poems are about identity being threatened. Quote "blind me to me own identity" (Agard) and "branded by an impression of sunlight" (Rumens) and explain the imagery. State: "Both speakers fight for their identity."',
+      'Identify that both poems are about identity being threatened. Quote "Bandage up me eye" (Agard) and "branded" (Rumens) and explain the imagery. Then make a simple link, such as that both speakers fight for their identity.',
     grade9approach:
       "Analyse how each poet uses language itself as an identity marker (Creole vs. lyrical English). Compare the tonal registers (anger vs. nostalgia) and what they reveal about different identity struggles. Explore how form embodies content: Agard's fractured, visual layout vs. Rumens's flowing, dream-like stanzas. Evaluate whether identity is shown as something recovered (Agard) or preserved (Rumens).",
   },
@@ -394,14 +414,17 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         point:
           'Both poets use rhythm and pace to convey the intensity of a charge, but to different effects.',
-        evidence1: '"Suddenly he awoke and was running -- raw"',
+        evidence1: '"Suddenly he awoke and was running – raw"',
         evidence1poem: 'Bayonet Charge',
+        // The poem is free verse; this analysis and the grade 9 approach had called it disrupted
+        // iambic pentameter.
         analysis1:
-          'Hughes plunges the reader into the middle of action with "Suddenly". The dash after "running" creates a breathless pause before "raw", which could describe raw flesh, raw emotion, or raw terror. The disrupted iambic pentameter mirrors the soldier\'s stumbling, panicked movement -- this is not a controlled advance but chaotic flight.',
+          'Hughes plunges the reader into the middle of action with "Suddenly". The dash after "running" creates a breathless pause before "raw", which could describe raw flesh, raw emotion, or raw terror. The poem is free verse with no settled metre, and its uneven rhythm mirrors the soldier\'s stumbling, panicked movement: this is not a controlled advance but chaotic flight.',
         evidence2: '"Half a league, half a league, / Half a league onward"',
         evidence2poem: 'The Charge of the Light Brigade',
+        // Dactylic, as the grade 9 approach says: this had called the metre anapaestic.
         analysis2:
-          'Tennyson\'s driving rhythm - predominantly anapaestic dimeter (da-da-DUM da-da-DUM) with a dactylic refrain ("Rode the six hundred") - mimics the thundering hooves of cavalry. The repetition and end-stopped lines create momentum and a sense of unstoppable forward movement. Unlike Hughes\'s chaos, this rhythm is ordered and purposeful -- it glorifies the charge as collective heroism. The regularity of the metre reflects the disciplined obedience of the soldiers.',
+          "Tennyson's driving rhythm, dactylic dimeter (DUM-da-da DUM-da-da), mimics the thundering hooves of cavalry. The repetition and end-stopped lines create momentum and a sense of unstoppable forward movement. Unlike Hughes's chaos, this rhythm is ordered and purposeful: it glorifies the charge as collective heroism. The regularity of the metre reflects the disciplined obedience of the soldiers.",
         link: "Hughes uses broken rhythm to convey individual terror; Tennyson uses driving rhythm to convey collective heroism. The contrast reveals how poetic technique shapes the reader's emotional response to conflict.",
       },
       {
@@ -409,8 +432,10 @@ const ESSAY_PLANS: EssayPlan[] = [
           "Both poets explore the soldier's relationship with duty and patriotism, but reach opposite conclusions.",
         evidence1: '"King, honour, human dignity, etcetera / Dropped like luxuries"',
         evidence1poem: 'Bayonet Charge',
+        // An authoring note about how to cite this word had been printed to readers as part of the
+        // analysis.
         analysis1:
-          'Hughes dismisses patriotic ideals with a devastating single "etcetera" -- Hughes writes "etcetera" once, so cite exactly as printed (do not abbreviate to "etc.", and don\'t double the word). Noble concepts are reduced to throwaway filler. The simile "dropped like luxuries" suggests that in the moment of real violence, abstract values are worthless burdens the soldier cannot afford to carry. Hughes argues that battlefield reality strips away all ideology.',
+          'Hughes dismisses patriotic ideals with a single, throwaway "etcetera": noble concepts are reduced to filler at the end of a list. The simile "Dropped like luxuries" suggests that in the moment of real violence, abstract values are worthless burdens the soldier cannot afford to carry. Hughes argues that battlefield reality strips away all ideology.',
         evidence2: '"Theirs not to reason why, / Theirs but to do and die"',
         evidence2poem: 'The Charge of the Light Brigade',
         analysis2:
@@ -420,12 +445,13 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         point:
           'Both poets present the physical reality of battle, but with different levels of intimacy.',
-        // VERIFY: previous quote "his foot hung like a survey of the field" is FABRICATED - actual Hughes line is "his foot hung like / Statuary in mid-stride".
-        evidence1: '"his foot hung like / Statuary in mid-stride"',
+        // Checked against AQA's published anthology, 26 September 2026. The analysis still
+        // described the invented simile an earlier fix removed from this quotation.
+        evidence1: '"hung like / Statuary in mid-stride"',
         evidence1poem: 'Bayonet Charge',
         analysis1:
-          "Hughes focuses on a single, almost hallucinatory moment -- the soldier's foot suspended mid-stride. The bizarre simile (a foot like \"a survey\") suggests dissociation, as though the soldier's body and mind have separated under extreme stress. Hughes brings the reader uncomfortably close to one individual's physical and psychological experience.",
-        evidence2: '"Into the jaws of Death, / Into the mouth of hell"',
+          "Hughes focuses on a single, almost hallucinatory moment: the soldier's foot suspended in the air. The bizarre simile, comparing a living foot to a piece of sculpture, freezes time in the middle of the charge and suggests dissociation, as though the soldier's body and mind have separated under extreme stress. Hughes brings the reader uncomfortably close to one individual's physical and psychological experience.",
+        evidence2: '"Into the jaws of Death, / Into the mouth of Hell"',
         evidence2poem: 'The Charge of the Light Brigade',
         analysis2:
           'Tennyson uses grand, biblical metaphor (personifying death as a devouring creature) to describe the battle. The imagery is impressive but distanced -- we see the charge from above, not from within. The scale is collective ("six hundred"), not individual. This elevated perspective allows Tennyson to present war as tragic but magnificent.',
@@ -435,9 +461,9 @@ const ESSAY_PLANS: EssayPlan[] = [
     conclusion:
       'Hughes and Tennyson present the same action -- a charge into enemy fire -- but reach fundamentally different conclusions about its meaning. Tennyson sees heroic duty; Hughes sees meaningless terror. Their contrasting visions reflect the cultural shift in attitudes to war between the Victorian era and the twentieth century.',
     grade5approach:
-      'Identify that both poems are about soldiers charging into battle. Quote "raw" and "valley of Death" and explain what each shows. State: "Hughes shows war as scary while Tennyson shows it as brave."',
+      'Identify that both poems are about soldiers charging into battle. Quote "raw" and "valley of Death" and explain what each shows. Then make a simple contrast, such as that Hughes shows war as frightening while Tennyson shows it as brave.',
     grade9approach:
-      "Analyse how metre and rhythm create opposing effects (disrupted pentameter vs. driving dactyls). Compare the poets' perspectives on duty (dismissal vs. celebration) and connect to historical context. Explore the significance of individual vs. collective focus. Evaluate how poetic form shapes ideological response to conflict.",
+      "Analyse how metre and rhythm create opposing effects (irregular free verse vs. driving dactyls). Compare the poets' perspectives on duty (dismissal vs. celebration) and connect to historical context. Explore the significance of individual vs. collective focus. Evaluate how poetic form shapes ideological response to conflict.",
   },
 
   // ────────────────────────────────────────── 7
@@ -458,21 +484,25 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence1: '"probably armed, possibly not"',
         evidence1poem: 'Remains',
         analysis1:
-          'The shift from "probably" to the weaker "possibly" reveals growing moral uncertainty. What begins as a matter-of-fact anecdote becomes a source of agonising doubt. Armitage shows that memory does not fade -- it interrogates. The soldier cannot confirm the killing was justified, and this uncertainty becomes the foundation of his guilt.',
+          'The shift from "probably" to the weaker "possibly" reveals growing moral uncertainty. What begins as a matter-of-fact anecdote becomes a source of agonising doubt, and the phrase returns on line 22, now in the speaker\'s sleep. Armitage shows that memory does not fade: it interrogates. The soldier cannot confirm the killing was justified, and this uncertainty becomes the foundation of his guilt.',
         evidence2: '"All flesh is grass"',
         evidence2poem: 'War Photographer',
         analysis2:
-          'Duffy opens with a biblical allusion (Isaiah 40:6) that frames all human life as fragile and temporary. The photographer approaches his work with philosophical detachment -- but this composure crumbles as the images develop and specific faces emerge. Memory, initially ordered in "spools", becomes chaotic and personal.',
+          'Duffy closes her first stanza with a biblical allusion (Isaiah 40:6) that frames all human life as fragile and temporary. The photographer approaches his work with philosophical detachment -- but this composure crumbles as the images develop and specific faces emerge. Memory, initially ordered in "spools", becomes chaotic and personal.',
         link: 'Both poets trace a journey from apparent control to emotional collapse. Both speakers initially try to maintain professional distance from suffering but are ultimately overwhelmed by the specificity of individual human pain.',
       },
       {
         point:
           'Both poets use vivid, visual imagery to show how memory replays traumatic experiences.',
-        evidence1: '"his bloody life in my bloody hands"',
+        // Remains line 30 and War Photographer line 14 are quoted once, in Plans 2
+        // and 4, and cited here by line. Line 13 is not quoted anywhere on this
+        // page: the second citation said both lines were, until 26 September 2026.
+        evidence1: 'Line 30, the final line (quoted in Plan 2)',
         evidence1poem: 'Remains',
         analysis1:
-          'The dual meaning of "bloody" (literal blood and expletive) captures the soldier\'s oscillation between clinical description and emotional breakdown. The possessive "my hands" makes the guilt inescapably personal -- the soldier cannot attribute the killing to the group. The image of holding a life in one\'s hands suggests both responsibility and irreversibility.',
-        evidence2: '"a stranger\'s features / faintly start to twist before his eyes"',
+          'The dual meaning of "bloody" (literal blood and expletive) captures the soldier\'s oscillation between clinical description and emotional breakdown. The possessive in "my bloody hands" makes the guilt inescapably personal: three soldiers opened fire (line 7), yet by the end he holds the dead man\'s life alone. The image of holding a life in one\'s hands suggests both responsibility and irreversibility.',
+        evidence2:
+          "Lines 13 to 14, the stranger's face forming in the developing tray (line 14 is quoted in Plan 4)",
         evidence2poem: 'War Photographer',
         analysis2:
           'The photograph developing becomes a metaphor for memory surfacing. The verb "twist" suggests pain, and "faintly" implies the image is ghostly, spectral. Duffy forces the photographer to watch death replay in slow motion. The phrase "before his eyes" echoes the cliche of witnessing horror firsthand, given literal meaning through the developing photograph.',
@@ -481,21 +511,21 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         point:
           'Both poems suggest that society fails to acknowledge the psychological cost of witnessing conflict.',
-        evidence1: '"and the drink and the drugs won\'t flush him out"',
+        evidence1: '"won\'t flush him out"',
         evidence1poem: 'Remains',
         analysis1:
-          'Armitage reveals that the soldier turns to substance abuse to escape the memory -- and fails. The colloquial language ("flush him out") normalises this coping mechanism, suggesting it is tragically common among veterans. The poem, based on a real testimony, highlights the inadequacy of support for soldiers with PTSD.',
-        evidence2: '"they do not care"',
+          'Armitage reveals that the soldier turns to drink and drugs to escape the memory, and fails. "Flush him out" is a military idiom for driving an enemy from cover, so even his attempt to forget is phrased as a combat operation, and on lines 25 and 26 the dead man is entrenched in his head like an enemy position. The casual register normalises this coping mechanism, suggesting it is tragically common among veterans. The poem, based on a real testimony, highlights the inadequacy of support for soldiers with PTSD.',
+        evidence2: 'Line 24, the final clause (quoted in Plan 4)',
         evidence2poem: 'War Photographer',
         analysis2:
-          "Duffy's blunt indictment of the newspaper-reading public suggests that the photographer's suffering is compounded by indifference. His moral burden is invisible to those who glance at the images over \"Sunday's supplement\". The short, emphatic sentence carries Duffy's anger at a society that consumes war as entertainment.",
+          "Duffy's blunt indictment of the newspaper-reading public suggests that the photographer's suffering is compounded by indifference. His moral burden is invisible to those who glance at the images over \"Sunday's supplement\". The short, emphatic final clause carries Duffy's anger at a society that consumes war as entertainment.",
         link: 'Both poets present their speakers as isolated by their experiences. Society either does not understand (Remains) or does not care (War Photographer). Both poems function as acts of witness, giving voice to suffering that would otherwise remain hidden.',
       },
     ],
     conclusion:
       "Armitage and Duffy both present memory and guilt as permanent, inescapable consequences of witnessing conflict. Armitage's soldier is consumed by one specific act; Duffy's photographer is overwhelmed by a lifetime of accumulated suffering. Both poets challenge the reader to acknowledge the hidden cost of war.",
     grade5approach:
-      'Identify that both poems are about guilt from witnessing conflict. Quote "bloody hands" and "a stranger\'s features" and explain what they show. State: "Both speakers are haunted by what they have seen."',
+      'Identify that both poems are about guilt from witnessing conflict. Quote the final line of Remains and the developing photograph in the third stanza of War Photographer, and explain what they show. Make a simple overall point, for example that both speakers are haunted by what they have seen.',
     grade9approach:
       "Analyse how each poet uses imagery of developing or surfacing to replicate the involuntary nature of traumatic memory. Compare the speakers' relationships to conflict (participant vs. observer) and how this shapes the nature of their guilt. Explore how the final lines of each poem implicate the reader in the cycle of indifference. Evaluate whether guilt is presented as a moral failing or a sign of humanity.",
   },
@@ -520,10 +550,10 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence1poem: 'London',
         analysis1:
           'Blake\'s relentless repetition of "every" creates a sense of universal, inescapable suffering. The inclusion of infants emphasises that oppression begins at birth -- it is systemic, not individual. The "marks of weakness, marks of woe" Blake sees on every face suggest that institutional power has physically and psychologically scarred the population.',
-        evidence2: '"Dem tell me bout 1066 and all dat"',
+        evidence2: '"1066 and all dat"',
         evidence2poem: 'Checking Out Me History',
         analysis2:
-          'Agard presents the colonial curriculum as a tool of control -- the pronoun "Dem" (unnamed authorities) decides what history is taught and what is suppressed. The dismissive "and all dat" mimics the irrelevance of the imposed curriculum to the speaker. By deliberately using Creole, Agard resists the linguistic norms of the system that oppresses him.',
+          'Agard presents the colonial curriculum as a tool of control: the pronoun "Dem" that opens the line (unnamed authorities) decides what history is taught and what is suppressed. The dismissive "and all dat" mimics the irrelevance of the imposed curriculum to the speaker. By deliberately using Creole, Agard resists the linguistic norms of the system that oppresses him.',
         link: "Both poets identify institutional systems (Blake: Church, Crown; Agard: education) as mechanisms for maintaining power through control of people's minds and experiences. Both use repetitive structures to convey the relentless, systematic nature of this oppression.",
       },
       {
@@ -532,7 +562,10 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence1poem: 'London',
         analysis1:
           'Blake\'s metaphor of "mind-forg\'d manacles" is one of the most important images in the poem. Manacles are physical restraints, but these are forged (created) in the mind -- suggesting that institutional power operates by making people internalise their own oppression. The people of London are enslaved not by literal chains but by ideology, deference, and fear.',
-        evidence2: '"Bandage up me eye with me own history / and blind me to me own identity"',
+        // Cited, not quoted again. Plan 5 quotes line 4 and describes line 5 in
+        // its own words; until 26 September 2026 this said it quoted both.
+        evidence2:
+          'Lines 4 to 5 (the second stanza): the bandage and blindness metaphor; line 4 is quoted in Plan 5',
         evidence2poem: 'Checking Out Me History',
         analysis2:
           'Agard\'s metaphor of blindfolding is equally powerful. The education system uses "me own history" as the bandage -- it is not simply absent information but actively weaponised ignorance. The emphasis on "me own" (repeated insistently) asserts that the heritage being suppressed belongs to the speaker. Blindness here represents a deliberate, enforced loss of identity.',
@@ -545,17 +578,17 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence1poem: 'London',
         analysis1:
           "Blake's final image is devastating: a young sex worker's disease destroys the next generation. The cycle of poverty and exploitation is presented as self-perpetuating. Blake does not offer a direct solution, but his unflinching portrayal of suffering is itself a political act -- the poem dares the reader to look at what society prefers to ignore.",
-        evidence2: '"But now I checking out me own history / I carving out me identity"',
+        evidence2: '"But now I checking out me own history"',
         evidence2poem: 'Checking Out Me History',
         analysis2:
-          'Agard\'s ending is more overtly empowering. The present continuous tense ("I checking", "I carving") shows active, ongoing resistance. The verbs "checking out" (investigating) and "carving" (creating) present identity reclamation as both intellectual discovery and creative labour. Unlike Blake\'s bleak conclusion, Agard offers a model for liberation.',
+          'Agard\'s ending is more overtly empowering. The present continuous tense ("I checking" here, "I carving" in the final line) shows active, ongoing resistance. The verbs "checking out" (investigating) and "carving" (creating) present identity reclamation as both intellectual discovery and creative labour. Unlike Blake\'s bleak conclusion, Agard offers a model for liberation.',
         link: 'Blake presents oppression as a devastating cycle with no easy escape; Agard presents it as a force that can be actively resisted and overcome. Both, however, use poetry itself as a weapon against institutional power -- challenging readers to see injustice clearly.',
       },
     ],
     conclusion:
       "Blake and Agard, writing centuries apart, identify the same fundamental mechanism of power: controlling what people know and believe. Blake's tone is prophetic and despairing; Agard's is angry and defiant. Together, they show that the abuse of institutional power is persistent but not invulnerable -- poetry can expose and challenge it.",
     grade5approach:
-      'Identify that both poems criticise powerful institutions. Quote "mind-forg\'d manacles" and "bandage up me eye" and explain their meaning. State: "Both poets are angry about how power is used to control people."',
+      'Identify that both poems criticise powerful institutions. Quote "mind-forg\'d manacles" and "Bandage up me eye" and explain their meaning. Then state clearly that both poets are angry about how power is used to control people.',
     grade9approach:
       "Analyse how each poet uses extended metaphors (mental chains vs. blindfolding) to conceptualise different forms of oppression. Compare the poets' contexts and purposes: Blake's 18th-century radical Christianity vs. Agard's post-colonial identity politics. Explore how form and language are themselves political acts: Blake's hymn-like regularity as ironic commentary vs. Agard's Creole as linguistic resistance. Evaluate the effectiveness of despair (Blake) vs. defiance (Agard) as responses to power.",
   },
@@ -583,20 +616,23 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence2: '"Paper that lets the light / shine through"',
         evidence2poem: 'Tissue',
         analysis2:
-          'Dharker\'s paper is deliberately fragile -- it "lets the light shine through", suggesting transparency and impermanence are positive qualities. Unlike Ozymandias\'s stone, which tried to resist decay, paper embraces its fragility. Dharker suggests that human structures should be flexible and temporary, not rigid monuments to power.',
+          'Dharker\'s paper is deliberately fragile -- it "lets the light / shine through", suggesting transparency and impermanence are positive qualities. Unlike Ozymandias\'s stone, which tried to resist decay, paper embraces its fragility. Dharker suggests that human structures should be flexible and temporary, not rigid monuments to power.',
         link: 'Shelley uses stone to show that even the most durable materials fail; Dharker uses paper to suggest that fragility might be a strength. Both poets question the human desire for permanence, but reach different conclusions about what should replace it.',
       },
       {
         point: 'Both poets critique the human desire to build lasting monuments to power.',
-        evidence1: '"Look on my Works, ye Mighty, and despair!"',
+        // AQA's anthology and poets.org print "works" in lower case. The analysis
+        // rested on a capital W that the exam text does not have.
+        evidence1: '"Look on my works, ye Mighty, and despair!"',
         evidence1poem: 'Ozymandias',
         analysis1:
-          'Ozymandias\'s inscription is a command to future generations to admire his achievements. The dramatic irony -- "Nothing beside remains" -- devastates this ambition. Shelley presents the desire for permanent legacy as fundamentally deluded. The capitalized "Works" emphasizes the grandiosity of the claim.',
-        // VERIFY: previous quote "drift through fingertips" is FABRICATED - does not appear in Dharker's Tissue. Replaced with verified text fragment.
-        evidence2: '"Fine slips from grocery shops"',
+          'Ozymandias\'s inscription is a command to future generations to admire his achievements. The dramatic irony -- "Nothing beside remains" -- devastates this ambition. Shelley presents the desire for permanent legacy as fundamentally deluded. The address to "ye Mighty", other rulers ordered to despair at his "works", emphasises the grandiosity of the claim.',
+        // Checked against AQA's published anthology, 26 September 2026. An earlier line here was
+        // invented.
+        evidence2: '"might fly our lives like paper kites"',
         evidence2poem: 'Tissue',
         analysis2:
-          'Dharker presents the records of daily commerce -- receipts, lists -- as ephemeral. They "might fly our lives like paper kites", refusing to be held permanently. This is presented not as loss but as natural, organic movement. Dharker implies that the human structures built on paper (borders, money, identity) are less substantial than we believe.',
+          'Dharker turns to the flimsiest records of daily life: shop receipts showing what was bought and how it was paid for. The simile suggests that these slips can steer our lives the way a kite is flown, yet they are only paper, light enough to blow away. Dharker implies that the human structures built on paper (borders, money, identity) are less substantial than we believe.',
         link: 'Both poets argue that human monuments are more fragile than their creators intended. Shelley shows this as tragic irony; Dharker presents it as a liberating truth. Both challenge the reader to reconsider what truly endures.',
       },
       {
@@ -608,15 +644,16 @@ const ESSAY_PLANS: EssayPlan[] = [
           'Shelley gives the last word to the desert -- nature has completely erased Ozymandias\'s empire. The alliterative "l" and sibilant "s" sounds create a soft, whispering quality that contrasts with the harsh "sneer of cold command". Nature is quiet but absolute in its victory over human ambition.',
         evidence2: '"turned into your skin."',
         evidence2poem: 'Tissue',
+        // Nine quatrains precede the last line, not ten.
         analysis2:
-          'Dharker\'s final isolated single-line stanza ("turned into your skin.") stands alone, breaking the regularity of the ten preceding quatrains to emphasise the volta from paper to flesh. The poem suggests that our true identity is not found in the structures we build but in our own bodies, our own humanity. This is both a celebration of human fragility and a rejection of the artificial power structures (borders, money) that paper represents.',
+          'Dharker\'s final isolated single-line stanza ("turned into your skin.") stands alone, breaking the regularity of the nine preceding quatrains to emphasise the volta from paper to flesh. The poem suggests that our true identity is not found in the structures we build but in our own bodies, our own humanity. This is both a celebration of human fragility and a rejection of the artificial power structures (borders, money) that paper represents.',
         link: "Both poets conclude that the organic world -- desert sands, human skin -- is more authentic and enduring than human constructions. Shelley emphasises nature's destructive power; Dharker emphasises its liberating simplicity.",
       },
     ],
     conclusion:
       "Shelley and Dharker both reveal that human power is fragile, but their perspectives differ. Shelley presents impermanence as a punishment for arrogance -- the tyrant's legacy is justly destroyed. Dharker presents impermanence as a positive quality -- fragility connects us to our shared humanity. Together, they offer complementary critiques of the human desire for permanent power.",
     grade5approach:
-      'Identify that both poems are about human power not lasting. Quote about the ruined statue and paper, explaining what each symbolises. State: "Both poets show that human achievements do not last forever."',
+      'Identify that both poems are about human power not lasting. Quote about the ruined statue and paper, explaining what each symbolises. Then state clearly that both poets show that human achievements do not last forever.',
     grade9approach:
       "Analyse how each poet uses a central extended metaphor (stone statue vs. paper) to explore impermanence. Compare the poets' attitudes: Shelley's ironic critique of tyranny vs. Dharker's philosophical acceptance of fragility. Explore how form reflects content: Shelley's fractured sonnet vs. Dharker's flowing, unrhymed stanzas. Evaluate whether impermanence is presented as tragic (Shelley) or liberating (Dharker).",
   },
@@ -644,7 +681,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence2: '"they treated him / as though he no longer existed"',
         evidence2poem: 'Kamikaze',
         analysis2:
-          'Garland shows the devastating consequence of defying duty: the pilot\'s own family erases him. The phrase "no longer existed" is a social death sentence -- he is physically alive but culturally dead. This presents duty not as personal choice but as cultural obligation so powerful that rejecting it carries worse consequences than death itself.',
+          'Garland shows the devastating consequence of defying duty: his wife never speaks in his presence again, the neighbours shun him, and in time his own children learn to do the same. The phrase "no longer existed" is a social death sentence -- he is physically alive but culturally dead. This presents duty not as personal choice but as cultural obligation so powerful that rejecting it carries worse consequences than death itself.',
         link: "Both poets show that duty in wartime leaves no room for individual will. Tennyson's soldiers accept this and die; Garland's pilot rejects it and suffers a living death. Neither outcome offers freedom.",
       },
       {
@@ -654,10 +691,13 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence1poem: 'The Charge of the Light Brigade',
         analysis1:
           "Tennyson's repetitive structure surrounds the soldiers with danger on all sides, creating a sense of entrapment that makes their continued advance seem more heroic. The third-person narration positions the reader as an admiring observer -- we watch the charge from a distance that enables admiration. The driving rhythm makes retreat feel impossible.",
-        evidence2: '"her father / embarked at sunrise"',
+        // Until 26 September 2026 this evidence split the poem's first line in two,
+        // and the analysis quoted a first-person line that is not in the poem.
+        // Checked against the AQA anthology sample, AQA-8702-TG-POEMS.PDF.
+        evidence2: '"Her father embarked at sunrise"',
         evidence2poem: 'Kamikaze',
         analysis2:
-          'Garland tells the story through a daughter\'s retrospective narration, creating layers of distance and uncertainty. The third-person-to-first-person shift ("they treated him" to "I wondered") reveals the daughter\'s conflicted feelings -- she has participated in shunning her father but now questions whether it was right. This ambiguous perspective prevents the reader from reaching a simple judgement.',
+          "Garland tells the story through an outside narrator retelling the daughter's account, creating layers of distance and uncertainty. The shift from the third person of the opening line to the daughter's own first person in stanzas 6 and 7 reveals her conflicted feelings -- she took part in shunning her father, and the closing lines, in which she imagines his doubt, suggest she now questions whether it was right. This ambiguous perspective prevents the reader from reaching a simple judgement.",
         link: "Tennyson's clear, heroic perspective makes duty feel right; Garland's layered, uncertain narration makes duty feel like a trap. The structural choices reveal each poet's attitude: celebration vs. questioning.",
       },
       {
@@ -667,18 +707,19 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence1poem: 'The Charge of the Light Brigade',
         analysis1:
           'Tennyson\'s final imperative commands the reader to honour the soldiers. The adjective "Noble" and the exclamation mark create an unambiguous call to admiration. Yet Tennyson also acknowledges "Some one had blunder\'d" -- the charge was a mistake. This tension between celebrating obedience and acknowledging futility runs through the poem and complicates the surface message of heroism.',
-        // VERIFY: previous quote "which was the better way to die" - actual Garland phrasing is "which had been the better way to die". Corrected.
+        // Checked word for word on 26 September 2026 against the AQA anthology
+        // sample. The link below misquoted it until then, and is now paraphrased.
         evidence2: '"which had been the better way to die"',
         evidence2poem: 'Kamikaze',
         analysis2:
           'The poem\'s devastating final line presents two forms of death: the literal death of the kamikaze mission, or the social death of being shunned. Garland refuses to answer which is "better", leaving the reader to grapple with an impossible question. The quiet, reflective ending contrasts with Tennyson\'s rousing celebration, suggesting that there are no good answers when duty demands self-destruction.',
-        link: 'Tennyson ends with certainty ("Honour them"); Garland ends with an unanswerable question ("which was the better way to die"). Together, they bracket the full range of responses to duty: from admiration to doubt.',
+        link: 'Tennyson ends with certainty, commanding the reader to honour the soldiers; Garland ends with an unanswerable question about which death was better. Together, they bracket the full range of responses to duty: from admiration to doubt.',
       },
     ],
     conclusion:
       "Tennyson and Garland present duty from opposing perspectives but both reveal its crushing power over individuals. Tennyson's Victorian celebration of military obedience contrasts with Garland's modern exploration of its human cost. Together, they ask a question that neither fully answers: is unquestioning duty heroic or tragic?",
     grade5approach:
-      'Identify that both poems are about duty in war. Quote "do and die" and "no longer existed" and explain what each shows about duty. State: "Tennyson sees duty as heroic but Garland shows it can be destructive."',
+      'Identify that both poems are about duty in war. Quote "do and die" and "no longer existed" and explain what each shows about duty. Then state your overall view, for example that Tennyson sees duty as heroic but Garland shows it can be destructive.',
     grade9approach:
       "Analyse how each poet uses narrative perspective to shape the reader's attitude to duty (external celebration vs. internal questioning). Compare the cultural contexts: Victorian military honour vs. Japanese bushido. Explore how the ending of each poem either closes down or opens up interpretation. Evaluate whether either poet offers a satisfactory answer to the question of duty's value.",
   },

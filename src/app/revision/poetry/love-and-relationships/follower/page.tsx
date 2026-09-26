@@ -18,12 +18,29 @@ const followerPoem: PoemData = {
   // NOTE: "Follower" (Seamus Heaney, from Death of a Naturalist, Faber &
   // Faber, 1966) remains in copyright. To avoid reproducing the poem
   // verbatim, each line below is given as a PARAPHRASE in the site's own
-  // words rather than the poet's exact text, and the annotations quote only
-  // short phrases (22 words across all of them, within 15 per cent of the
-  // poem's 153). Students must read the full original in the AQA Love &
-  // Relationships anthology. Until 25 September 2026 this array printed the
-  // whole poem. Check the paraphrases against the anthology before relying
-  // on them.
+  // words rather than the poet's exact text. Students must read the full
+  // original in the AQA Love & Relationships anthology. Until 25 September
+  // 2026 this array printed the whole poem. Check the paraphrases against the
+  // anthology before relying on them.
+  //
+  // WHAT THE PAGE QUOTES (26 September 2026). Until then the key quotes, the
+  // device examples, the quiz and the revision notes between them quoted 108
+  // distinct words of a 153-word poem, including whole lines, a
+  // "shoulders" line given twice with different first words, and a verb the
+  // poem does not use ("stumbles"). The whole page, in every language, now
+  // quotes twelve short phrases, 22 words counted once, which is the cap of
+  // 15 per cent: globed like a full sail (2), An expert (5), headrig (8),
+  // Mapping and exactly (12), stumbled and wake (13), broad shadow (20),
+  // nuisance (21), But today (22), stumbling (23), will not go away (24).
+  // Each was checked word for word against the Poetry Foundation text
+  // (used by permission of Farrar, Straus and Giroux) and against the poem as
+  // AQA prints it, by permission of Faber and Faber, in its published
+  // anthology (filestore.aqa.org.uk/resources/english/AQA-8702-TG-POEMS.PDF).
+  // The two differ in one word: the American text closes up the hyphen in
+  // the boots of line 13, the AQA text keeps it, so neither form is quoted
+  // here. Anything else is cited by line number or put in the site's own
+  // words. Adding a quotation takes the page over the cap:
+  // no-poem-quoted-beyond-fair-dealing.test.ts fails it.
   lines: [
     // Stanza 1
     {
@@ -66,7 +83,7 @@ const followerPoem: PoemData = {
       annotations: [
         {
           type: 'Technical language',
-          note: 'Precise ploughing terminology ("wing," "sock," "headrig") demonstrates the father\'s mastery and the son\'s close, admiring observation of his craft.',
+          note: "Precise ploughing terminology for the parts of the plough (lines 5 to 6) demonstrates the father's mastery and the son's close, admiring observation of his craft.",
           color: '#8b5cf6',
         },
       ],
@@ -81,7 +98,7 @@ const followerPoem: PoemData = {
       annotations: [
         {
           type: 'Enjambment',
-          note: 'The line break between "pluck" and "Of reins" mimics the turning motion of the plough team at the headrig, enacting what it describes.',
+          note: 'The tug on the reins is split across the stanza break between lines 8 and 9. The run-on mimics the turning motion of the plough team at the end of the field, enacting what it describes.',
           color: '#10b981',
         },
       ],
@@ -147,7 +164,7 @@ const followerPoem: PoemData = {
       annotations: [
         {
           type: 'Listing',
-          note: 'The accumulation of clumsy participles ("tripping, falling, yapping") emphasises the child\'s persistent, awkward presence against the father\'s steady skill.',
+          note: "The pile-up of clumsy -ing verbs across lines 21 and 22 emphasises the child's persistent, awkward presence against the father's steady skill.",
           color: '#8b5cf6',
         },
       ],
@@ -158,7 +175,7 @@ const followerPoem: PoemData = {
       annotations: [
         {
           type: 'Volta',
-          note: 'The dramatic reversal: "But today" pivots the entire poem. Now the father "stumbles" - the same verb used for the child earlier. Ageing has reversed their roles.',
+          note: 'The dramatic reversal: "But today" (line 22) pivots the entire poem. Now the father is "stumbling", the verb used for the child at line 13. Ageing has reversed their roles.',
           color: '#ef4444',
         },
       ],
@@ -168,7 +185,7 @@ const followerPoem: PoemData = {
       annotations: [
         {
           type: 'Ambiguity',
-          note: '"Will not go away" resists simple interpretation: frustration, guilt, love, or the haunting presence of memory and family obligation. The monosyllabic finality is devastating.',
+          note: '"Will not go away" resists simple interpretation: frustration, guilt, love, or the haunting presence of memory and family obligation. The plain, short words give the ending a devastating finality.',
           color: '#f59e0b',
         },
       ],
@@ -187,20 +204,20 @@ const followerPoem: PoemData = {
   summaryAr:
     'المتكلّم يتذكّر إنه كان يتبع أبوه في المزرعة وهو صغير، ويراقب بإعجاب وانذهال كيف أبوه يتحكّم بالـhorse-plough بمهارة عالية. الولد كان يتعثّر بشكل أخرق ورا أبوه، ويتمنى يكبر ويصير مثله، بس دائماً يقصّر. في المقطع الأخير، القصيدة تنتقل بشكل دراماتيكي للحاضر: الحين الأب الكبير في السن هو اللي يتعثّر ورا ابنه، ما يقدر أو ما يبي يبتعد. الانقلاب في الأدوار حنون ومقلق في نفس الوقت، يلمّح للإحساس بالذنب، والحب، وثقل العائلة اللي ما يمكن الهروب منه.',
   formAndStructure:
-    'Form: Six quatrains with an ABAB rhyme scheme (plough/furrow, strung/tongue), giving the poem a steady, measured rhythm that mirrors the regular back-and-forth of ploughing.\n\nStructure: The first five stanzas describe the past (childhood); the final stanza pivots sharply to the present, creating a dramatic volta.\n\nRhyme: Full rhymes and half-rhymes alternate. The half-rhymes create subtle unease beneath the surface regularity.\n\nMonosyllables: The poem is dominated by short, Anglo-Saxon words ("worked," "set," "fit," "fell"), reflecting the plain, physical world of farming.\n\nEnjambment: Lines frequently run on across stanza breaks (e.g. "pluck / Of reins"), mirroring the continuous motion of ploughing and the unbroken chain of family.\n\nVolta: The turn at "But today" in the final stanza is one of the most powerful in GCSE poetry, reversing everything that came before.',
+    'Form: Six quatrains with an ABAB rhyme scheme, giving the poem a steady, measured rhythm that mirrors the regular back-and-forth of ploughing.\n\nStructure: The first five stanzas describe the past (childhood); the final stanza pivots sharply to the present, creating a dramatic volta.\n\nRhyme: Full rhymes and half-rhymes are mixed, and most of the pairs are half-rhymes. They create subtle unease beneath the surface regularity.\n\nMonosyllables: The poem is dominated by short, plain verbs of physical work, especially in the first four stanzas, reflecting the practical world of farming.\n\nEnjambment: Many lines run on, and once a sentence runs across a stanza break (lines 8 to 9, where the tug on the reins is split), mirroring the continuous motion of ploughing and the unbroken chain of family.\n\nVolta: The turn at "But today" in the final stanza is one of the most powerful in GCSE poetry, reversing everything that came before.',
 
   formAndStructureAr:
-    'الشكل (Form): ستة quatrain، بنظام قافية ABAB (plough/furrow، strung/tongue)، يعطي القصيدة إيقاع ثابت ومقيّس يحاكي حركة المحراث (back-and-forth) المنتظمة.\n\n' +
+    'الشكل (Form): ستة quatrain، بنظام قافية ABAB، يعطي القصيدة إيقاع ثابت ومقيّس يحاكي حركة المحراث (back-and-forth) المنتظمة.\n\n' +
     'البنية (Structure): خمسة مقاطع تصف الماضي (الطفولة)؛ والمقطع الأخير ينقلب بشكل حاد إلى الحاضر، فيخلق volta دراماتيكي.\n\n' +
-    'القافية (Rhyme): قوافي كاملة وhalf-rhymes تتناوب. الـhalf-rhymes تخلق قلق خفيف تحت سطح الانتظام الظاهر.\n\n' +
-    'الكلمات أحادية المقطع (Monosyllables): القصيدة يسيطر عليها كلمات قصيرة من أصل أنجلو-ساكسوني ("worked"، "set"، "fit"، "fell")، تعكس عالم الفلاحة البسيط والجسدي.\n\n' +
-    'Enjambment: الأبيات تنساب عبر فواصل المقاطع بشكل متكرّر (مثل "pluck / Of reins")، تحاكي حركة الحرث المستمرّة وسلسلة العائلة اللي ما تنقطع.\n\n' +
+    'القافية (Rhyme): القوافي الكاملة والـhalf-rhymes مختلطة، وأغلب الأزواج half-rhymes. تخلق قلق خفيف تحت سطح الانتظام الظاهر.\n\n' +
+    'الكلمات أحادية المقطع (Monosyllables): القصيدة يسيطر عليها أفعال قصيرة وبسيطة عن الشغل الجسدي، خصوصاً في أول أربع مقاطع، تعكس عالم الفلاحة العملي.\n\n' +
+    'Enjambment: أبيات كثيرة تنساب للبيت اللي بعده، ومرة وحدة الجملة تعبر فاصل المقطع (الأبيات 8 إلى 9، وين جذبة اللجام تنقسم بين مقطعين)، تحاكي حركة الحرث المستمرّة وسلسلة العائلة اللي ما تنقطع.\n\n' +
     'Volta: التحوّل عند "But today" في المقطع الأخير من أقوى الـvoltas في شعر GCSE، يقلب كل اللي بناه القارئ قبله.',
   keyQuotes: [
     {
-      quote: 'The shoulders globed like a full sail strung',
+      quote: 'globed like a full sail',
       analysis:
-        'The nautical simile presents the father as powerful and commanding, his shoulders billowing like sails. It elevates manual labour to something heroic and grand.',
+        'The nautical simile in line 2 presents the father as powerful and commanding, his shoulders billowing like sails. It elevates manual labour to something heroic and grand.',
       themes: ['Admiration', 'Power', 'Father'],
       analysisAr:
         '\u0627\u0644\u0640simile \u0627\u0644\u0628\u062d\u0631\u064a\u0629 \u062a\u0642\u062f\u0651\u0645 \u0627\u0644\u0623\u0628 \u0639\u0644\u0649 \u0625\u0646\u0647 \u0642\u0648\u064a \u0648\u0622\u0645\u0631\u060c \u0648\u0643\u062a\u0627\u0641\u0647 \u062a\u0646\u062a\u0641\u062e \u0645\u062b\u0644 \u0627\u0644\u0623\u0634\u0631\u0639\u0629. \u0647\u0630\u0627 \u064a\u0631\u0641\u0639 \u0627\u0644\u0634\u063a\u0644 \u0627\u0644\u064a\u062f\u0648\u064a \u0625\u0644\u0649 \u0645\u0631\u062a\u0628\u0629 \u0628\u0637\u0648\u0644\u064a\u0629 \u0648\u0639\u0638\u064a\u0645\u0629.',
@@ -224,9 +241,9 @@ const followerPoem: PoemData = {
       ],
     },
     {
-      quote: 'Mapping the furrow exactly',
+      quote: 'Mapping ... exactly',
       analysis:
-        '"Mapping" elevates ploughing to a precise, intellectual skill. "Exactly" reinforces the father\'s perfectionism and mastery of his craft.',
+        'In line 12, "Mapping" elevates ploughing to a precise, intellectual skill, and "exactly", the last word of the stanza, reinforces the father\'s perfectionism and mastery of his craft.',
       themes: ['Skill', 'Precision', 'Admiration'],
       analysisAr:
         '\u0643\u0644\u0645\u0629 "mapping" \u062a\u0631\u0641\u0639 \u0627\u0644\u062d\u0631\u062b \u0625\u0644\u0649 \u0645\u0631\u062a\u0628\u0629 \u0645\u0647\u0627\u0631\u0629 \u062f\u0642\u064a\u0642\u0629 \u0648\u0630\u0647\u0646\u064a\u0629. \u0648\u0643\u0644\u0645\u0629 "exactly" \u062a\u0642\u0648\u0651\u064a \u0625\u062d\u0633\u0627\u0633 \u0625\u0646 \u0627\u0644\u0623\u0628 \u0643\u0645\u0627\u0644\u064a \u0648\u0645\u062a\u0642\u0646 \u0644\u062d\u0631\u0641\u062a\u0647.',
@@ -237,12 +254,12 @@ const followerPoem: PoemData = {
       ],
     },
     {
-      quote: 'I stumbled in his hobnailed wake',
+      quote: 'stumbled ... wake',
       analysis:
-        '"Stumbled" captures the child\'s clumsiness contrasting the father\'s control. "Wake" continues the nautical metaphor \u2014 the father is a ship, the child trailing behind.',
+        'In line 13, "Stumbled" captures the child\'s clumsiness, in contrast with the father\'s control. "Wake" continues the nautical imagery: the father is a ship, the child trailing behind.',
       themes: ['Following', 'Inadequacy', 'Father-son'],
       analysisAr:
-        '\u0643\u0644\u0645\u0629 "stumbled" \u062a\u0644\u062a\u0642\u0637 \u0639\u062f\u0645 \u0627\u062a\u0632\u0627\u0646 \u0627\u0644\u0648\u0644\u062f\u060c \u0627\u0644\u0644\u064a \u064a\u062a\u0646\u0627\u0642\u0636 \u0645\u0639 \u0633\u064a\u0637\u0631\u0629 \u0627\u0644\u0623\u0628. \u0648\u0643\u0644\u0645\u0629 "wake" (\u0623\u062b\u0631 \u0627\u0644\u0633\u0641\u064a\u0646\u0629 \u0641\u064a \u0627\u0644\u0645\u0627\u0621) \u062a\u0643\u0645\u0651\u0644 \u0627\u0644\u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0627\u0644\u0628\u062d\u0631\u064a\u0629 \u2014 \u0627\u0644\u0623\u0628 \u0633\u0641\u064a\u0646\u0629\u060c \u0648\u0627\u0644\u0648\u0644\u062f \u0642\u0627\u0631\u0628 \u0635\u063a\u064a\u0631 \u064a\u062c\u0631\u0651\u0647 \u0623\u062b\u0631\u0647\u0627.',
+        '\u0643\u0644\u0645\u0629 "stumbled" \u062a\u0644\u062a\u0642\u0637 \u0639\u062f\u0645 \u0627\u062a\u0632\u0627\u0646 \u0627\u0644\u0648\u0644\u062f\u060c \u0627\u0644\u0644\u064a \u064a\u062a\u0646\u0627\u0642\u0636 \u0645\u0639 \u0633\u064a\u0637\u0631\u0629 \u0627\u0644\u0623\u0628. \u0648\u0643\u0644\u0645\u0629 "wake" (\u0623\u062b\u0631 \u0627\u0644\u0633\u0641\u064a\u0646\u0629 \u0641\u064a \u0627\u0644\u0645\u0627\u0621) \u062a\u0643\u0645\u0651\u0644 \u0627\u0644\u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0627\u0644\u0628\u062d\u0631\u064a\u0629\u060c \u0627\u0644\u0623\u0628 \u0633\u0641\u064a\u0646\u0629\u060c \u0648\u0627\u0644\u0648\u0644\u062f \u0642\u0627\u0631\u0628 \u0635\u063a\u064a\u0631 \u064a\u062c\u0631\u0651\u0647 \u0623\u062b\u0631\u0647\u0627.',
       themesAr: [
         '\u0627\u0644\u0627\u062a\u0628\u0627\u0639',
         '\u0627\u0644\u0642\u0635\u0648\u0631',
@@ -250,38 +267,25 @@ const followerPoem: PoemData = {
       ],
     },
     {
-      quote: 'All I ever did was follow',
+      quote: 'broad shadow',
       analysis:
-        '"All I ever did" suggests futility and disappointment. The child could only imitate, never match, his father\'s skill. "Follow" becomes the poem\'s key verb.',
-      themes: ['Identity', 'Following', 'Aspiration'],
+        "In lines 19 to 20 the speaker admits that all he ever managed was to trail behind his father, so following, the poem's key idea, becomes a sign of futility: the child could only imitate, never match, his father's skill. The father's \"broad shadow\" represents both his physical dominance and his overwhelming influence on the child's identity.",
+      themes: ['Influence', 'Identity', 'Following'],
       analysisAr:
-        '\u0639\u0628\u0627\u0631\u0629 "all I ever did" \u062a\u0648\u062d\u064a \u0628\u0627\u0644\u0639\u0642\u0645 \u0648\u062e\u064a\u0628\u0629 \u0627\u0644\u0623\u0645\u0644. \u0627\u0644\u0648\u0644\u062f \u0645\u0627 \u0642\u062f\u0631 \u0625\u0644\u0627 \u064a\u0642\u0644\u0651\u062f\u060c \u0623\u0628\u062f \u0645\u0627 \u0642\u062f\u0631 \u064a\u0637\u0627\u0628\u0642 \u0645\u0647\u0627\u0631\u0629 \u0623\u0628\u0648\u0647. \u0648\u0641\u0639\u0644 "follow" \u064a\u0635\u064a\u0631 \u0627\u0644\u0641\u0639\u0644 \u0627\u0644\u0645\u0641\u062a\u0627\u062d\u064a \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629.',
-      themesAr: [
-        '\u0627\u0644\u0647\u0648\u064a\u0629',
-        '\u0627\u0644\u0627\u062a\u0628\u0627\u0639',
-        '\u0627\u0644\u0637\u0645\u0648\u062d',
-      ],
-    },
-    {
-      quote: 'In his broad shadow round the farm',
-      analysis:
-        'The father\'s "broad shadow" represents both his physical dominance and his overwhelming influence on the child\'s identity.',
-      themes: ['Influence', 'Identity', 'Father'],
-      analysisAr:
-        '"broad shadow" (\u0627\u0644\u0638\u0644 \u0627\u0644\u0648\u0627\u0633\u0639) \u0644\u0644\u0623\u0628 \u064a\u0631\u0645\u0632 \u0644\u0637\u063a\u064a\u0627\u0646\u0647 \u0627\u0644\u062c\u0633\u062f\u064a \u0648\u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a \u0644\u062a\u0623\u062b\u064a\u0631\u0647 \u0627\u0644\u0637\u0627\u063a\u064a \u0639\u0644\u0649 \u0647\u0648\u064a\u0629 \u0627\u0644\u0648\u0644\u062f.',
+        '\u0641\u064a \u0627\u0644\u0623\u0628\u064a\u0627\u062a 19 \u0625\u0644\u0649 20 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0639\u062a\u0631\u0641 \u0625\u0646 \u0643\u0644 \u0627\u0644\u0644\u064a \u0642\u062f\u0631 \u0639\u0644\u064a\u0647 \u0625\u0646\u0647 \u064a\u0645\u0634\u064a \u0648\u0631\u0627 \u0623\u0628\u0648\u0647\u060c \u0641\u0627\u0644\u0627\u062a\u0651\u0628\u0627\u0639\u060c \u0627\u0644\u0641\u0643\u0631\u0629 \u0627\u0644\u0645\u0641\u062a\u0627\u062d\u064a\u0629 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629\u060c \u064a\u0635\u064a\u0631 \u0639\u0644\u0627\u0645\u0629 \u0639\u0644\u0649 \u0627\u0644\u0639\u0642\u0645 \u0648\u062e\u064a\u0628\u0629 \u0627\u0644\u0623\u0645\u0644: \u0627\u0644\u0648\u0644\u062f \u0645\u0627 \u0642\u062f\u0631 \u0625\u0644\u0627 \u064a\u0642\u0644\u0651\u062f\u060c \u0623\u0628\u062f \u0645\u0627 \u0642\u062f\u0631 \u064a\u0637\u0627\u0628\u0642 \u0645\u0647\u0627\u0631\u0629 \u0623\u0628\u0648\u0647. \u0648"broad shadow" (\u0627\u0644\u0638\u0644 \u0627\u0644\u0648\u0627\u0633\u0639) \u0644\u0644\u0623\u0628 \u064a\u0631\u0645\u0632 \u0644\u0637\u063a\u064a\u0627\u0646\u0647 \u0627\u0644\u062c\u0633\u062f\u064a \u0648\u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a \u0644\u062a\u0623\u062b\u064a\u0631\u0647 \u0627\u0644\u0637\u0627\u063a\u064a \u0639\u0644\u0649 \u0647\u0648\u064a\u0629 \u0627\u0644\u0648\u0644\u062f.',
       themesAr: [
         '\u0627\u0644\u062a\u0623\u062b\u064a\u0631',
         '\u0627\u0644\u0647\u0648\u064a\u0629',
-        '\u0627\u0644\u0623\u0628',
+        '\u0627\u0644\u0627\u062a\u0628\u0627\u0639',
       ],
     },
     {
-      quote: 'I was a nuisance, tripping, falling',
+      quote: 'nuisance',
       analysis:
-        "The self-deprecating tone and accumulation of clumsy participles reveal the speaker's sense of inadequacy. He defines his childhood self as a burden.",
+        "In line 21 the self-deprecating label, and the pile-up of clumsy -ing verbs that follows it, reveal the speaker's sense of inadequacy. He defines his childhood self as a burden.",
       themes: ['Guilt', 'Inadequacy', 'Childhood'],
       analysisAr:
-        '\u0646\u0628\u0631\u0629 \u062c\u0644\u062f \u0627\u0644\u0630\u0627\u062a\u060c \u0645\u0639 \u062a\u0631\u0627\u0643\u0645 participles \u062a\u0648\u0635\u0641 \u0627\u0644\u062e\u0631\u0642 ("tripping, falling")\u060c \u062a\u0643\u0634\u0641 \u0625\u062d\u0633\u0627\u0633 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0628\u0627\u0644\u0642\u0635\u0648\u0631. \u0647\u0648 \u064a\u0639\u0631\u0651\u0641 \u0646\u0641\u0633\u0647 \u0627\u0644\u0637\u0641\u0644 \u0639\u0644\u0649 \u0625\u0646\u0647 \u0639\u0628\u0621.',
+        '\u0646\u0628\u0631\u0629 \u062c\u0644\u062f \u0627\u0644\u0630\u0627\u062a \u0641\u064a \u0627\u0644\u0628\u064a\u062a 21\u060c \u0645\u0639 \u062a\u0631\u0627\u0643\u0645 participles \u062a\u0648\u0635\u0641 \u0627\u0644\u062e\u0631\u0642 \u0628\u0639\u062f\u0647\u0627\u060c \u062a\u0643\u0634\u0641 \u0625\u062d\u0633\u0627\u0633 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0628\u0627\u0644\u0642\u0635\u0648\u0631. \u0647\u0648 \u064a\u0639\u0631\u0651\u0641 \u0646\u0641\u0633\u0647 \u0627\u0644\u0637\u0641\u0644 \u0639\u0644\u0649 \u0625\u0646\u0647 \u0639\u0628\u0621.',
       themesAr: [
         '\u0627\u0644\u0625\u062d\u0633\u0627\u0633 \u0628\u0627\u0644\u0630\u0646\u0628',
         '\u0627\u0644\u0642\u0635\u0648\u0631',
@@ -289,12 +293,12 @@ const followerPoem: PoemData = {
       ],
     },
     {
-      quote: 'It is my father who keeps stumbling / Behind me, and will not go away',
+      quote: 'stumbling ... will not go away',
       analysis:
-        'The devastating reversal: the father\'s verbs echo the child\'s earlier clumsiness. "Will not go away" is ambiguous \u2014 frustration, guilt, love, or haunting memory.',
+        'The devastating reversal in lines 23 to 24: the father\'s verb echoes the child\'s earlier clumsiness. "Will not go away" is ambiguous: frustration, guilt, love, or haunting memory.',
       themes: ['Role reversal', 'Ageing', 'Guilt', 'Memory'],
       analysisAr:
-        '\u0627\u0644\u0627\u0646\u0639\u0643\u0627\u0633 \u0627\u0644\u0645\u062f\u0645\u0651\u0631: \u0627\u0644\u0623\u0641\u0639\u0627\u0644 \u0627\u0644\u0644\u064a \u062a\u062a\u0646\u0633\u0628 \u0644\u0644\u0623\u0628 \u0627\u0644\u062d\u064a\u0646 \u062a\u0635\u062f\u0651\u0649 \u0644\u062e\u0631\u0642 \u0627\u0644\u0648\u0644\u062f \u0627\u0644\u0633\u0627\u0628\u0642. \u0648\u0639\u0628\u0627\u0631\u0629 "will not go away" \u063a\u0627\u0645\u0636\u0629 \u2014 \u064a\u062d\u062a\u0645\u0644 \u062a\u0643\u0648\u0646 \u0625\u062d\u0628\u0627\u0637\u060c \u0623\u0648 \u0625\u062d\u0633\u0627\u0633 \u0628\u0627\u0644\u0630\u0646\u0628\u060c \u0623\u0648 \u062d\u0628\u060c \u0623\u0648 \u0630\u0627\u0643\u0631\u0629 \u062a\u0637\u0627\u0631\u062f \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645.',
+        '\u0627\u0644\u0627\u0646\u0639\u0643\u0627\u0633 \u0627\u0644\u0645\u062f\u0645\u0651\u0631: \u0627\u0644\u0623\u0641\u0639\u0627\u0644 \u0627\u0644\u0644\u064a \u062a\u062a\u0646\u0633\u0628 \u0644\u0644\u0623\u0628 \u0627\u0644\u062d\u064a\u0646 \u062a\u0635\u062f\u0651\u0649 \u0644\u062e\u0631\u0642 \u0627\u0644\u0648\u0644\u062f \u0627\u0644\u0633\u0627\u0628\u0642. \u0648\u0639\u0628\u0627\u0631\u0629 "will not go away" \u063a\u0627\u0645\u0636\u0629: \u064a\u062d\u062a\u0645\u0644 \u062a\u0643\u0648\u0646 \u0625\u062d\u0628\u0627\u0637\u060c \u0623\u0648 \u0625\u062d\u0633\u0627\u0633 \u0628\u0627\u0644\u0630\u0646\u0628\u060c \u0623\u0648 \u062d\u0628\u060c \u0623\u0648 \u0630\u0627\u0643\u0631\u0629 \u062a\u0637\u0627\u0631\u062f \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645.',
       themesAr: [
         '\u0642\u0644\u0628 \u0627\u0644\u0623\u062f\u0648\u0627\u0631',
         '\u0627\u0644\u0634\u064a\u062e\u0648\u062e\u0629',
@@ -306,7 +310,7 @@ const followerPoem: PoemData = {
   languageDevices: [
     {
       device: 'Nautical imagery',
-      example: 'globed like a full sail strung / hobnailed wake',
+      example: 'globed like a full sail ... wake',
       effect:
         'Comparing the father to a ship elevates him to something powerful and commanding. The child follows in his "wake" like a small vessel trailing a great one.',
       lineRef: 1,
@@ -315,25 +319,16 @@ const followerPoem: PoemData = {
     },
     {
       device: 'Technical jargon',
-      example: 'wing / sock / headrig',
+      example: 'headrig',
       effect:
-        "Precise farming terminology demonstrates the son's intimate knowledge of his father's craft and his deep, admiring observation of the work.",
-      lineRef: 6,
+        "Precise farming terminology, from the names for parts of the plough in lines 5 to 6 to the word for the strip where the team turns in line 8, demonstrates the son's intimate knowledge of his father's craft and his deep, admiring observation of the work. The short, plain verbs of these stanzas reflect the father's practical, unadorned character.",
+      lineRef: 8,
       effectAr:
-        'المفردات الدقيقة من مفردات الفلاحة تبيّن معرفة الابن الحميمة بحرفة أبوه، وتدلّ على مراقبة عميقة وإعجاب عميق بشغله.',
-    },
-    {
-      device: 'Monosyllabic diction',
-      example: 'worked / set / fit / fell / plod',
-      effect:
-        "Short, blunt Anglo-Saxon words reflect the physical, no-nonsense world of farming and the father's practical, unadorned character.",
-      lineRef: 0,
-      effectAr:
-        'كلمات أنجلو-ساكسونية قصيرة وحادّة تعكس عالم الفلاحة الجسدي اللي ما يتزخرف، وشخصية الأب العملية المباشرة.',
+        'المفردات الدقيقة من مفردات الفلاحة، من أسماء أجزاء المحراث في الأبيات 5 إلى 6 إلى الكلمة اللي تعني طرف الحقل وين يلفّ الفريق في البيت 8، تبيّن معرفة الابن الحميمة بحرفة أبوه، وتدلّ على مراقبة عميقة وإعجاب عميق بشغله. والأفعال القصيرة البسيطة في هذي المقاطع تعكس شخصية الأب العملية المباشرة.',
     },
     {
       device: 'Enjambment',
-      example: 'single pluck / Of reins',
+      example: '[Lines 8 to 9: the tug on the reins runs across the stanza break]',
       effect:
         'The line break enacts the sharp pulling motion of the reins, making the reader physically experience the turn of the plough team.',
       lineRef: 8,
@@ -342,18 +337,18 @@ const followerPoem: PoemData = {
     },
     {
       device: 'Volta',
-      example: 'But today / It is my father who keeps stumbling',
+      example: 'But today',
       effect:
-        'The conjunction "But" and the shift to present tense create a dramatic reversal. Everything the poem has built is inverted in two lines.',
+        'The conjunction "But" and the shift to present tense in line 22 create a dramatic reversal. Everything the poem has built is inverted in its last three lines.',
       lineRef: 26,
       effectAr:
-        'حرف العطف "But" والانتقال للزمن الحاضر يخلقون انعكاس دراماتيكي. كل اللي بنته القصيدة قبل ينقلب في بيتين.',
+        'حرف العطف "But" والانتقال للزمن الحاضر في البيت 22 يخلقون انعكاس دراماتيكي. كل اللي بنته القصيدة قبل ينقلب في آخر ثلاث أبيات.',
     },
     {
       device: 'Repetition with reversal',
-      example: 'stumbled (child) / stumbling (father)',
+      example: 'stumbled ... stumbling',
       effect:
-        "The same verb applied to both generations enacts the role reversal structurally. The child's past clumsiness becomes the father's present frailty.",
+        "The same verb applied to both generations, to the child in line 13 and to the father in line 23, enacts the role reversal structurally. The child's past clumsiness becomes the father's present frailty.",
       lineRef: 27,
       effectAr:
         'نفس الفعل يطبّق على الجيلين، عشان يجسّد قلب الأدوار بنيوياً. خرق الولد في الماضي يصير ضعف الأب في الحاضر.',
@@ -391,7 +386,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'fol-2',
-    question: 'What does the metaphor "His shoulders globed like a full sail strung" suggest?',
+    question: 'What does the simile "globed like a full sail" (line 2) suggest about the father?',
     type: 'multiple-choice',
     options: [
       'The father is overweight',
@@ -401,7 +396,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The sail metaphor presents the father as powerful, commanding, and in perfect control of his work. He moves through the landscape like a ship through water - strong and purposeful.',
+      'The sail simile presents the father as powerful, commanding, and in perfect control of his work. He moves through the landscape like a ship through water - strong and purposeful.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -450,7 +445,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'fol-6',
-    question: 'What does "I stumbled in his hob-nailed wake" suggest about the child?',
+    question: 'What does the verb "stumbled" in line 13 suggest about the child?',
     type: 'multiple-choice',
     options: [
       'The child is clumsy',
@@ -470,13 +465,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is affectionate',
-      'It is ambiguous - it could refer to the child being a nuisance in the past OR the father being a nuisance now, suggesting guilt and discomfort',
-      'It is clearly about the child only',
+      'The speaker uses it of his child self, but the reversal two lines later implies the father has become the burden now, suggesting guilt and discomfort',
+      'It shows the father was angry with the boy',
       'It is a compliment',
     ],
     correctIndex: 1,
     explanation:
-      '"Nuisance" shifts meaning. In childhood, the boy was a nuisance following his father. Now the roles are reversed - and calling the ageing father a nuisance carries uncomfortable guilt.',
+      'In line 21 the word describes the speaker as a child, following his father. Two lines later the roles are reversed, so the reader carries the idea over to the ageing father - and feeling that a parent is a burden carries uncomfortable guilt.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -486,13 +481,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'To confuse the reader',
-      'Words like "sod", "furrow", "headrig" convey expert knowledge and deep respect for the father\'s skill',
+      'Terms like "headrig", and the names for parts of the plough, convey expert knowledge and deep respect for the father\'s skill',
       'To show off his own knowledge',
       'It is accidental jargon',
     ],
     correctIndex: 1,
     explanation:
-      'The precise farming vocabulary - "sod rolled over", "headrig", "furrow" - shows the speaker truly understood and admired his father\'s work. The technical language is a form of respect.',
+      'The precise farming vocabulary of stanzas 2 and 3, such as "headrig" in line 8, shows the speaker truly understood and admired his father\'s work. The technical language is a form of respect.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -547,9 +542,9 @@ const REVISION_TOPICS = [
     summary:
       'Heaney uses agricultural metaphor, precise technical vocabulary, and physical imagery to convey admiration and its reversal.',
     keyPoints: [
-      '"Shoulders globed like a full sail" - the father as powerful ship',
+      '"Globed like a full sail" (line 2) - the father as a powerful ship',
       'Technical farming vocabulary - respect through knowledge',
-      '"Stumbled in his hob-nailed wake" - the child cannot match the father',
+      '"Stumbled" and "wake" (line 13) - the child cannot match the father',
       '"Will not go away" - the aged father follows, reversing childhood',
     ],
   },

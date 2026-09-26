@@ -53,12 +53,12 @@ const stanzaSummaries = [
   {
     n: 'Lines 10-14',
     label: 'The day stretches on',
-    body: 'The narrator wishes someone had called the boy off work just half an hour earlier - a "boy\'s" half-hour, which would have given him "the half hour / That a boy counts so much when saved from work". The line breaks the calm: the speaker now intervenes to tell us, in retrospect, that the day went on too long. The sister is introduced calling the family to supper.',
+    body: 'The narrator wishes someone had called the boy off work just half an hour earlier, giving him the spare half-hour that means so much to a boy let off work. The line breaks the calm: the speaker now intervenes to tell us, in retrospect, that the day went on too long. The sister is introduced calling the family to supper.',
   },
   {
     n: 'Lines 15-22',
     label: 'The accident',
-    body: 'At the moment the sister calls "Supper", the saw - as if alive - leaps out and strikes the boy\'s hand. Frost personifies the saw heavily, refusing to settle the question of whether the boy slipped or whether the machine, in some sense, knew. The boy gives a "rueful laugh" - an extraordinary, painful detail - before he holds up the hand "as if to keep / The life from spilling".',
+    body: 'At the moment the sister calls "Supper", the saw - as if alive - leaps out and strikes the boy\'s hand. Frost personifies the saw heavily, refusing to settle the question of whether the boy slipped or whether the machine, in some sense, knew. The boy gives a "rueful laugh" - an extraordinary, painful detail - before he holds up the hand as though he could stop his life escaping from it.',
   },
   {
     n: 'Lines 23-28',
@@ -68,7 +68,7 @@ const stanzaSummaries = [
   {
     n: 'Lines 29-34',
     label: 'The pulse fails',
-    body: 'The boy\'s pulse weakens. Those watching cannot believe it: he is too young, the injury too small to kill. The line "Little - less - nothing!" condenses dying into three words. After his death, the watchers - "since they / Were not the one dead" - turn back to their daily affairs. The poem ends in cold indifference, not lament.',
+    body: 'The boy\'s pulse weakens. Those watching cannot believe it: he is too young, the injury too small to kill. The line "Little - less - nothing!" condenses dying into three words. After his death the watchers, because they are not the ones who died, turn back to their daily affairs. The poem ends in cold indifference, not lament.',
   },
 ]
 
@@ -97,7 +97,7 @@ const formAndStructure = [
   },
   {
     label: 'Closing turn',
-    body: 'The poem refuses to mourn. After the boy\'s death, the bystanders return to their work in a single, devastating sentence. The flat closing line "they / Were not the one dead, turned to their affairs" is the moral centre: life rebuilds around the dead immediately, and indifferently.',
+    body: 'The poem refuses to mourn. After the boy\'s death, the bystanders return to their work in a single, devastating sentence. The flat close, in which the living "turned to their affairs", is the moral centre: life rebuilds around the dead immediately, and indifferently.',
   },
 ]
 

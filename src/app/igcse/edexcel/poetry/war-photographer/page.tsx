@@ -47,7 +47,7 @@ const stanzaSummaries = [
   {
     n: 'Stanza 1',
     label: 'In the darkroom',
-    body: 'Duffy opens with the photographer alone in his darkroom developing the day\'s film. The image of the lit-up tray of chemicals is described in religious terms - the room becomes a kind of chapel, and the photographer a priest performing a careful ritual. The opening line is widely quoted: "In his darkroom he is finally alone." A short list of conflict cities - including "Belfast. Beirut. Phnom Penh." - establishes the geographic range of his recent work and roots the poem in the wars of the late 1970s and early 1980s.',
+    body: 'Duffy opens with the photographer alone in his darkroom developing the day\'s film. The image of the lit-up tray of chemicals is described in religious terms - the room becomes a kind of chapel, and the photographer a priest performing a careful ritual. The opening line finds him alone in the darkroom at last, and the word for that solitude is final. A short list of conflict cities - including "Belfast. Beirut. Phnom Penh." - establishes the geographic range of his recent work and roots the poem in the wars of the late 1970s and early 1980s.',
   },
   {
     n: 'Stanza 2',
@@ -183,9 +183,9 @@ export default function WarPhotographerPage() {
               text.
             </p>
             <p className="text-body-xs text-muted-foreground">
-              Short fair-dealing reference is made below to the poem&rsquo;s widely-attested opening
-              (&ldquo;In his darkroom he is finally alone&rdquo;) and its list of war zones
-              (&ldquo;Belfast. Beirut. Phnom Penh.&rdquo;) under CDPA s.30 (criticism and review).
+              Short fair-dealing reference is made below to the poem&rsquo;s opening and to its list
+              of war zones, under CDPA s.30 (criticism and review). The poem itself is not
+              reproduced.
             </p>
           </div>
         </div>

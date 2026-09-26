@@ -17,290 +17,325 @@ const edenRockPoem: PoemData = {
   poet: 'Charles Causley',
   // NOTE: "Eden Rock" (Charles Causley, 1988) remains in copyright; the rights
   // are administered by David Higham Associates. To avoid reproducing the poem,
-  // the entries below are in the site's own words: each [Paraphrase] entry
-  // stands for a line of the poem, and the bracketed entries summarise the
-  // lines between them. The notes quote only short phrases. Students must read
+  // every entry below is a paraphrase in the site's own words, one entry per
+  // line of the poem, and the notes quote only short phrases. Students must read
   // the full original text in the AQA Love and Relationships anthology (or
-  // Causley, "Collected Poems 1951-1997", Macmillan).
+  // Causley, "Collected Poems 1951-2000", Picador).
   //
   // Until 25 September 2026 this array printed five lines or part-lines of the
-  // poem verbatim, and its bracketed summaries carried longer runs of it, one of
-  // them a nine-word quotation. Those entries are now paraphrased or rewritten.
-  // The array is still not one entry per line: its three stanza breaks are kept
-  // where they stood, and they do not fall where the published poem's do (four
-  // quatrains, a tercet and a closing single line). The viewer numbers entries
-  // by position, so its numbers here are not the poem's line numbers.
+  // poem verbatim, and its bracketed summaries carried longer runs of it.
+  // Until 26 September 2026 it was still not one entry per line: bracketed
+  // summaries stood in for groups of lines, its stanza breaks did not fall where
+  // the poem's do, and four of the languageDevices lineRefs pointed past the end
+  // of the array. The page also quoted a line break inside line 19 that the poem
+  // does not have, and a repeated verb that is not in it. It now follows the
+  // poem as printed by AQA (Past and present: poetry anthology, sample,
+  // filestore.aqa.org.uk AQA-8702-TG-POEMS.PDF) and the Poetry Archive, which
+  // prints it by permission of the Causley estate: four quatrains, a tercet and
+  // a closing single line. Every quotation on the page was checked against both,
+  // and the page quotes 24 of the poem's words in all, counted once, against a
+  // cap of 25 (no-poem-quoted-beyond-fair-dealing.test.ts). The viewer numbers
+  // entries by position, stanza breaks included, so from the second stanza its
+  // numbers run ahead of the poem's; the prose below cites the poem's own.
   lines: [
-    // Stanza 1: the opening line, paraphrased, then a summary
+    // Stanza 1
     {
       text: '[Paraphrase] The speaker says that people he has not yet named are expecting him somewhere past Eden Rock.',
       annotations: [
         {
           type: 'Biblical allusion',
-          note: '"Eden" evokes the Garden of Eden \u2014 paradise, innocence, and a place before death. "Beyond" suggests the afterlife or a threshold between worlds. "Eden Rock" is an invented place \u2014 Causley confirmed in interview: "I have no idea, I mean I made it up!" Some interpretations link it to the biblical Eden + Causley\'s Cornish landscape, but the place itself is fictional.',
+          note: 'The name recalls the Garden of Eden: paradise, innocence, a place before death. "Beyond" puts the people waiting on the far side of a threshold the speaker has not crossed. Eden Rock is not a place on any map: Causley is widely reported to have said, when asked, that he had invented it. It draws on the biblical Eden and on the Cornish landscape Causley knew, but the place itself is fictional.',
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: '[Stanza 1 continues: the speaker pictures his father as a young man in a tweed suit, with his terrier beside him. Full text omitted for copyright.]',
+      text: '[Paraphrase] His father is there, aged twenty-five, dressed in the suit he is always remembered in,',
       annotations: [
         {
           type: 'Precise detail',
-          note: 'The opening stanza pins the father at a specific age (twenty-five) and dresses him in carefully named fabric and a named pet. The photographic specificity makes the vision feel like a treasured snapshot or impossibly vivid memory.',
+          note: 'The opening stanza pins the father at a specific age (twenty-five), names the fabric of his suit and names his dog. The photographic specificity makes the vision feel like a treasured snapshot or an impossibly vivid memory.',
           color: '#8b5cf6',
         },
       ],
     },
-    // Stanza break
-    { text: '' },
-    // Stanza 2: its first line paraphrased, then a summary that runs on into stanza 3
+    { text: '[Paraphrase] a suit of real Irish tweed, and his terrier, Jack, is with him,' },
     {
-      text: '[Paraphrase] His mother is there as well, twenty-three years old and wearing a dress patterned with little sprays of flowers.',
+      text: "[Paraphrase] the dog still only two and quivering by his master's feet.",
       annotations: [
         {
-          type: 'Colour imagery',
-          note: 'The precise colours and textures \u2014 the sprigged dress, the ribbon at her hat, hair "the colour of wheat" \u2014 create an almost hyper-real portrait. The specificity suggests this is more than ordinary memory.',
+          type: 'Time stopped',
+          note: 'The dog is still two years old, as the father is still twenty-five: nothing in the scene has aged. The parents and even the pet are held at one moment, as if in a photograph.',
           color: '#10b981',
         },
       ],
     },
+    // Stanza break
+    { text: '' },
+    // Stanza 2
     {
-      text: '[The scene continues: her dress has a fitted waist and she wears a straw hat trimmed with ribbon; she has laid a crisp white cloth on the lawn, and her wheat-coloured hair catches the light. She serves tea out of a flask, the milk carried in a used sauce bottle corked with a twist of paper. Full text omitted for copyright.]',
+      text: '[Paraphrase] His mother is there as well, twenty-three years old and wearing a dress patterned with little sprays of flowers',
+      annotations: [
+        {
+          type: 'Colour imagery',
+          note: 'The precise colours and textures (the flowered dress, the ribbon on her hat, hair the colour of ripe wheat) create an almost hyper-real portrait. The specificity suggests this is more than ordinary memory.',
+          color: '#10b981',
+        },
+      ],
+    },
+    { text: '[Paraphrase] gathered in at the waist, and a straw hat trimmed with ribbon.' },
+    {
+      text: '[Paraphrase] She has laid a crisp white cloth out across the lawn.',
       annotations: [
         {
           type: 'Sacramental detail',
-          note: 'The careful, ritual laying-out of a picnic \u2014 cloth, tea, milk \u2014 turns an ordinary scene into something quietly sacramental, as though preparing a Communion table.',
+          note: 'The careful, ritual laying-out of a picnic (cloth, tea, milk) turns an ordinary scene into something quietly sacramental, as though a Communion table were being prepared.',
           color: '#f59e0b',
+        },
+      ],
+    },
+    { text: '[Paraphrase] Her hair, wheat-coloured, catches the light.' },
+    // Stanza break
+    { text: '' },
+    // Stanza 3
+    { text: '[Paraphrase] She pours tea from a flask, with the milk coming straight' },
+    { text: '[Paraphrase] out of an old sauce bottle, stoppered with a twist' },
+    { text: '[Paraphrase] of paper. Unhurriedly, she lays out' },
+    {
+      text: '[Paraphrase] the familiar three plates and the blue-painted tin cups.',
+      annotations: [
+        {
+          type: 'Listing',
+          note: 'The careful enumeration of picnic items creates a ritual quality: each object is precisely observed. "Three" recurs (three plates here, three suns in the next line), a quietly Trinitarian pattern, and "the same" of line 2 returns: the plates are the ones they always used.',
+          color: '#8b5cf6',
         },
       ],
     },
     // Stanza break
     { text: '' },
-    // Lines 11 to 13 paraphrased, then a summary of the rest of stanza 4
-    {
-      text: '[Paraphrase] Unhurriedly, she lays out the familiar three plates and the blue-painted tin cups.',
-      annotations: [
-        {
-          type: 'Listing',
-          note: 'The careful enumeration of picnic items creates a ritual quality. Each object is precisely observed, lending the scene sacramental significance. "Three" recurs (three plates, three suns) \u2014 a quietly Trinitarian pattern.',
-          color: '#8b5cf6',
-        },
-      ],
-    },
+    // Stanza 4
     {
       text: '[Paraphrase] The sky goes white, as though three suns were blazing at once.',
       annotations: [
         {
           type: 'Supernatural imagery',
-          note: 'The impossible three suns create an otherworldly, dreamlike atmosphere. The whitening sky suggests a threshold between life and death \u2014 the natural world tipping into vision.',
+          note: 'The impossible three suns create an otherworldly, dreamlike atmosphere. The whitening sky suggests a threshold between life and death: the natural world tipping into vision.',
           color: '#3b82f6',
         },
       ],
     },
+    { text: '[Paraphrase] Shielding her eyes with a hand, his mother gazes towards him' },
     {
-      text: '[The scene continues: shielding her eyes with a hand, the mother gazes across the stream towards the speaker, while the father sends a pebble skipping over the surface. Full text omitted for copyright.]',
+      text: '[Paraphrase] across the stream. His father sends a pebble',
       annotations: [
         {
           type: 'Symbolism',
-          note: "The water-skimming stone and the mother's shaded gaze together fix the parents on the far side of a stream \u2014 a traditional boundary-of-the-dead image (cf. the River Styx). The actions are calm, domestic, unhurried.",
+          note: "The skimming stone and the mother's shaded gaze together fix the parents on the far side of a stream, a traditional image of the boundary of the dead (compare the River Styx). Their actions are calm, domestic and unhurried.",
           color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: '[Paraphrase] skipping over the water. Without any hurry,',
+      annotations: [
+        {
+          type: 'Enjambment',
+          note: 'The stanza ends on a single unhurried adverb, and its sentence runs on over the stanza break into the next line. The pause in the white space is itself leisurely: the parents are in no rush, and neither is the poem.',
+          color: '#8b5cf6',
         },
       ],
     },
     // Stanza break
     { text: '' },
-    // Stanza 5 summarised, then the one-line final stanza paraphrased
+    // Stanza 5
+    { text: '[Paraphrase] they wave to him from the far bank, inviting him over.' },
+    { text: '[Paraphrase] He hears them calling to him to look for the path along the stream,' },
     {
-      text: '[Penultimate stanza: at their ease, the parents wave him over from the far bank. He hears them calling to him to look for the path along the stream, and telling him that getting across is easier than he might expect. Full text omitted for copyright.]',
+      text: '[Paraphrase] and telling him that getting across is easier than he might expect.',
       annotations: [
         {
-          type: 'Direct address',
-          note: 'The casual, reassuring tone transforms death from something feared into something surprisingly gentle. The reported speech pulls the reader into the experience of being called across.',
+          type: 'Direct speech',
+          note: 'The parents’ words are given in their own voice, casual and reassuring, and turn death from something feared into something surprisingly gentle. The speech pulls the reader into the experience of being called across.',
           color: '#f59e0b',
         },
       ],
     },
+    // Stanza break
+    { text: '' },
+    // Final line
     {
       text: '[Paraphrase] The speaker admits he never expected it to be this way.',
       annotations: [
         {
           type: 'Understated revelation',
-          note: 'The poem\'s emotional climax. "It" is never named \u2014 death, the afterlife, reunion \u2014 leaving the meaning open and deeply moving. The understatement is devastating.',
+          note: 'The poem\'s emotional climax. "It" is never named (death, the afterlife, reunion), which leaves the meaning open and deeply moving. The understatement is devastating.',
           color: '#ef4444',
         },
       ],
     },
   ],
   context:
-    '<p><strong>Charles Causley</strong> (1917\u20132003) was a Cornish poet who lost his father when he was young and was deeply affected by his mother\'s death. "Eden Rock" was published in 1988 and is widely read as a poem about <strong>approaching death</strong> and the hope of being reunited with deceased parents.</p><p>The poem recreates a childhood <strong>memory or vision</strong> of his parents as young people at a place called Eden Rock. The extraordinary precision of detail \u2014 specific ages, colours, fabrics \u2014 gives the scene a <strong>hyper-real, dreamlike</strong> quality, as though the speaker is seeing his parents more clearly than memory alone could allow.</p><p><strong>Important:</strong> "Eden Rock" is <strong>invented by Causley</strong> \u2014 it is NOT a real place. Causley confirmed in interview: "I have no idea, I mean I made it up!" Some revision sites incorrectly identify it with a Cornish location. Causley was Cornish, but Eden Rock itself is fictional, drawing on the biblical Garden of Eden and the dream-vision tradition.</p><p>The title alludes to the <strong>Garden of Eden</strong> \u2014 a lost paradise. The poem suggests that death may not be an ending but a <strong>return to an innocent, perfect state</strong> where loved ones wait. Causley never married and lived with his mother until her death, making the poem intensely personal.</p><p>Key themes include <strong>memory and nostalgia</strong>, the <strong>boundary between life and death</strong>, <strong>parental love</strong>, and the possibility of <strong>reunion after death</strong>.</p>',
+    '<p><strong>Charles Causley</strong> (1917\u20132003) was a Cornish poet who lost his father when he was young and was deeply affected by his mother\'s death. "Eden Rock" was published in 1988 and is widely read as a poem about <strong>approaching death</strong> and the hope of being reunited with deceased parents.</p><p>The poem recreates a childhood <strong>memory or vision</strong> of his parents as young people at a place called Eden Rock. The extraordinary precision of detail \u2014 specific ages, colours, fabrics \u2014 gives the scene a <strong>hyper-real, dreamlike</strong> quality, as though the speaker is seeing his parents more clearly than memory alone could allow.</p><p><strong>Important:</strong> "Eden Rock" is <strong>invented by Causley</strong>: it is NOT a real place. Causley is widely reported to have said, when asked where it was, that he had made it up. Some revision sites incorrectly identify it with a Cornish location. Causley was Cornish, but Eden Rock itself is fictional, drawing on the biblical Garden of Eden and the dream-vision tradition.</p><p>The title alludes to the <strong>Garden of Eden</strong> \u2014 a lost paradise. The poem suggests that death may not be an ending but a <strong>return to an innocent, perfect state</strong> where loved ones wait. Causley never married and lived with his mother until her death, making the poem intensely personal.</p><p>Key themes include <strong>memory and nostalgia</strong>, the <strong>boundary between life and death</strong>, <strong>parental love</strong>, and the possibility of <strong>reunion after death</strong>.</p>',
 
   contextAr:
-    '<p><strong>Charles Causley</strong> (1917\u20132003) \u0634\u0627\u0639\u0631 \u0645\u0646 Cornwall\u060c \u0641\u0642\u062f \u0623\u0628\u0648\u0647 \u0648\u0647\u0648 \u0635\u063a\u064a\u0631\u060c \u0648\u062a\u0623\u062b\u0651\u0631 \u0648\u0627\u064a\u062f \u0628\u0648\u0641\u0627\u0629 \u0623\u0645\u0647. \u0642\u0635\u064a\u062f\u0629 "Eden Rock" \u0627\u0646\u062a\u0634\u0631\u062a \u0633\u0646\u0629 1988\u060c \u0648\u064a\u064f\u0642\u0631\u0623 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0639\u0644\u0649 \u0646\u0637\u0627\u0642 \u0648\u0627\u0633\u0639 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0642\u0635\u064a\u062f\u0629 \u0639\u0646 <strong>\u0627\u0644\u0627\u0642\u062a\u0631\u0627\u0628 \u0645\u0646 \u0627\u0644\u0645\u0648\u062a</strong> \u0648\u0639\u0646 \u0627\u0644\u0623\u0645\u0644 \u0641\u064a \u0627\u0644\u0644\u0642\u0627\u0621 \u0645\u0639 \u0627\u0644\u0648\u0627\u0644\u062f\u064a\u0646 \u0627\u0644\u0645\u062a\u0648\u0641\u0651\u064a\u064a\u0646.</p><p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0639\u064a\u062f \u0628\u0646\u0627\u0621 <strong>\u0630\u0643\u0631\u0649 \u0645\u0646 \u0627\u0644\u0637\u0641\u0648\u0644\u0629 \u0623\u0648 \u0631\u0624\u064a\u0629</strong> \u0644\u0648\u0627\u0644\u062f\u064a\u0647 \u0648\u0647\u0645 \u0634\u0628\u0627\u0628 \u0641\u064a \u0645\u0643\u0627\u0646 \u0627\u0633\u0645\u0647 Eden Rock. \u0627\u0644\u062f\u0642\u0651\u0629 \u0627\u0644\u0627\u0633\u062a\u062b\u0646\u0627\u0626\u064a\u0629 \u0641\u064a \u0627\u0644\u062a\u0641\u0627\u0635\u064a\u0644 \u2014 \u0623\u0639\u0645\u0627\u0631 \u0645\u062d\u062f\u0651\u062f\u0629\u060c \u0623\u0644\u0648\u0627\u0646\u060c \u0623\u0642\u0645\u0634\u0629 \u2014 \u062a\u0639\u0637\u064a \u0627\u0644\u0645\u0634\u0647\u062f \u0637\u0627\u0628\u0639 <strong>\u062d\u0642\u064a\u0642\u064a \u0628\u0634\u0643\u0644 \u0645\u0641\u0631\u0637\u060c \u062d\u0644\u0645\u064a</strong>\u060c \u0643\u0623\u0646 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0634\u0648\u0641 \u0648\u0627\u0644\u062f\u064a\u0647 \u0628\u0648\u0636\u0648\u062d \u0623\u0643\u0628\u0631 \u0645\u0646 \u0627\u0644\u0644\u064a \u062a\u0633\u0645\u062d \u0641\u064a\u0647 \u0627\u0644\u0630\u0627\u0643\u0631\u0629 \u0627\u0644\u0639\u0627\u062f\u064a\u0629.</p><p><strong>\u0645\u0644\u0627\u062d\u0638\u0629 \u0645\u0647\u0645\u0629:</strong> "Eden Rock" \u0645\u0643\u0627\u0646 <strong>\u0627\u062e\u062a\u0631\u0639\u0647 Causley</strong> \u2014 \u0645\u0648 \u0645\u0643\u0627\u0646 \u062d\u0642\u064a\u0642\u064a. Causley \u0646\u0641\u0633\u0647 \u0623\u0643\u0651\u062f \u0641\u064a \u0645\u0642\u0627\u0628\u0644\u0629: "I have no idea, I mean I made it up!" \u0628\u0639\u0636 \u0645\u0648\u0627\u0642\u0639 \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0629 \u062a\u062e\u0637\u0626 \u0648\u062a\u0631\u0628\u0637 \u0627\u0644\u0627\u0633\u0645 \u0628\u0645\u0643\u0627\u0646 \u0641\u064a Cornwall. \u0635\u062d\u064a\u062d \u0625\u0646 Causley \u0645\u0646 Cornwall\u060c \u0628\u0633 Eden Rock \u0646\u0641\u0633\u0647 \u062e\u064a\u0627\u0644\u064a\u060c \u064a\u0633\u062a\u0644\u0647\u0645 \u0645\u0646 Garden of Eden \u0641\u064a \u0627\u0644\u0643\u062a\u0627\u0628 \u0627\u0644\u0645\u0642\u062f\u0651\u0633 \u0648\u0645\u0646 \u062a\u0642\u0644\u064a\u062f \u0631\u0624\u0649 \u0627\u0644\u0623\u062d\u0644\u0627\u0645.</p><p>\u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u0641\u064a\u0647 allusion \u0644\u0640<strong>Garden of Eden</strong> \u2014 \u0627\u0644\u0641\u0631\u062f\u0648\u0633 \u0627\u0644\u0645\u0641\u0642\u0648\u062f. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0644\u0645\u0651\u062d \u0625\u0646 \u0627\u0644\u0645\u0648\u062a \u064a\u062d\u062a\u0645\u0644 \u0645\u0627 \u064a\u0643\u0648\u0646 \u0646\u0647\u0627\u064a\u0629\u060c \u0628\u0644 <strong>\u0631\u062c\u0648\u0639 \u0644\u062d\u0627\u0644 \u0628\u0631\u064a\u0621 \u0643\u0627\u0645\u0644</strong> \u0641\u064a\u0647 \u0623\u062d\u0628\u0651\u0627\u0624\u0643 \u064a\u0646\u062a\u0638\u0631\u0648\u0646\u0643. Causley \u0645\u0627 \u062a\u0632\u0648\u0651\u062c \u0623\u0628\u062f\u060c \u0648\u0639\u0627\u0634 \u0645\u0639 \u0623\u0645\u0647 \u0644\u064a\u0646 \u062a\u0648\u0641\u0651\u062a\u060c \u0648\u0647\u0630\u0627 \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0634\u062e\u0635\u064a\u0629 \u0648\u0627\u064a\u062f.</p><p>\u0623\u0647\u0645 \u0627\u0644\u0645\u0648\u0627\u0636\u064a\u0639: <strong>\u0627\u0644\u0630\u0627\u0643\u0631\u0629 \u0648\u0627\u0644\u062d\u0646\u064a\u0646</strong>\u060c \u0648<strong>\u0627\u0644\u062d\u062f\u0651 \u0628\u064a\u0646 \u0627\u0644\u062d\u064a\u0627\u0629 \u0648\u0627\u0644\u0645\u0648\u062a</strong>\u060c \u0648<strong>\u0627\u0644\u062d\u0628 \u0627\u0644\u0623\u0628\u0648\u064a</strong>\u060c \u0648\u0625\u0645\u0643\u0627\u0646\u064a\u0629 <strong>\u0627\u0644\u0644\u0642\u0627\u0621 \u0628\u0639\u062f \u0627\u0644\u0645\u0648\u062a</strong>.</p>',
+    '<p><strong>Charles Causley</strong> (1917\u20132003) \u0634\u0627\u0639\u0631 \u0645\u0646 Cornwall\u060c \u0641\u0642\u062f \u0623\u0628\u0648\u0647 \u0648\u0647\u0648 \u0635\u063a\u064a\u0631\u060c \u0648\u062a\u0623\u062b\u0651\u0631 \u0648\u0627\u064a\u062f \u0628\u0648\u0641\u0627\u0629 \u0623\u0645\u0647. \u0642\u0635\u064a\u062f\u0629 "Eden Rock" \u0627\u0646\u062a\u0634\u0631\u062a \u0633\u0646\u0629 1988\u060c \u0648\u064a\u064f\u0642\u0631\u0623 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0639\u0644\u0649 \u0646\u0637\u0627\u0642 \u0648\u0627\u0633\u0639 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0642\u0635\u064a\u062f\u0629 \u0639\u0646 <strong>\u0627\u0644\u0627\u0642\u062a\u0631\u0627\u0628 \u0645\u0646 \u0627\u0644\u0645\u0648\u062a</strong> \u0648\u0639\u0646 \u0627\u0644\u0623\u0645\u0644 \u0641\u064a \u0627\u0644\u0644\u0642\u0627\u0621 \u0645\u0639 \u0627\u0644\u0648\u0627\u0644\u062f\u064a\u0646 \u0627\u0644\u0645\u062a\u0648\u0641\u0651\u064a\u064a\u0646.</p><p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0639\u064a\u062f \u0628\u0646\u0627\u0621 <strong>\u0630\u0643\u0631\u0649 \u0645\u0646 \u0627\u0644\u0637\u0641\u0648\u0644\u0629 \u0623\u0648 \u0631\u0624\u064a\u0629</strong> \u0644\u0648\u0627\u0644\u062f\u064a\u0647 \u0648\u0647\u0645 \u0634\u0628\u0627\u0628 \u0641\u064a \u0645\u0643\u0627\u0646 \u0627\u0633\u0645\u0647 Eden Rock. \u0627\u0644\u062f\u0642\u0651\u0629 \u0627\u0644\u0627\u0633\u062a\u062b\u0646\u0627\u0626\u064a\u0629 \u0641\u064a \u0627\u0644\u062a\u0641\u0627\u0635\u064a\u0644 \u2014 \u0623\u0639\u0645\u0627\u0631 \u0645\u062d\u062f\u0651\u062f\u0629\u060c \u0623\u0644\u0648\u0627\u0646\u060c \u0623\u0642\u0645\u0634\u0629 \u2014 \u062a\u0639\u0637\u064a \u0627\u0644\u0645\u0634\u0647\u062f \u0637\u0627\u0628\u0639 <strong>\u062d\u0642\u064a\u0642\u064a \u0628\u0634\u0643\u0644 \u0645\u0641\u0631\u0637\u060c \u062d\u0644\u0645\u064a</strong>\u060c \u0643\u0623\u0646 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0634\u0648\u0641 \u0648\u0627\u0644\u062f\u064a\u0647 \u0628\u0648\u0636\u0648\u062d \u0623\u0643\u0628\u0631 \u0645\u0646 \u0627\u0644\u0644\u064a \u062a\u0633\u0645\u062d \u0641\u064a\u0647 \u0627\u0644\u0630\u0627\u0643\u0631\u0629 \u0627\u0644\u0639\u0627\u062f\u064a\u0629.</p><p><strong>\u0645\u0644\u0627\u062d\u0638\u0629 \u0645\u0647\u0645\u0629:</strong> "Eden Rock" \u0645\u0643\u0627\u0646 <strong>\u0627\u062e\u062a\u0631\u0639\u0647 Causley</strong> \u2014 \u0645\u0648 \u0645\u0643\u0627\u0646 \u062d\u0642\u064a\u0642\u064a. Causley يُنقَل عنه على نطاق واسع إنه لما انسأل وين المكان، قال إنه اخترعه. \u0628\u0639\u0636 \u0645\u0648\u0627\u0642\u0639 \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0629 \u062a\u062e\u0637\u0626 \u0648\u062a\u0631\u0628\u0637 \u0627\u0644\u0627\u0633\u0645 \u0628\u0645\u0643\u0627\u0646 \u0641\u064a Cornwall. \u0635\u062d\u064a\u062d \u0625\u0646 Causley \u0645\u0646 Cornwall\u060c \u0628\u0633 Eden Rock \u0646\u0641\u0633\u0647 \u062e\u064a\u0627\u0644\u064a\u060c \u064a\u0633\u062a\u0644\u0647\u0645 \u0645\u0646 Garden of Eden \u0641\u064a \u0627\u0644\u0643\u062a\u0627\u0628 \u0627\u0644\u0645\u0642\u062f\u0651\u0633 \u0648\u0645\u0646 \u062a\u0642\u0644\u064a\u062f \u0631\u0624\u0649 \u0627\u0644\u0623\u062d\u0644\u0627\u0645.</p><p>\u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u0641\u064a\u0647 allusion \u0644\u0640<strong>Garden of Eden</strong> \u2014 \u0627\u0644\u0641\u0631\u062f\u0648\u0633 \u0627\u0644\u0645\u0641\u0642\u0648\u062f. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0644\u0645\u0651\u062d \u0625\u0646 \u0627\u0644\u0645\u0648\u062a \u064a\u062d\u062a\u0645\u0644 \u0645\u0627 \u064a\u0643\u0648\u0646 \u0646\u0647\u0627\u064a\u0629\u060c \u0628\u0644 <strong>\u0631\u062c\u0648\u0639 \u0644\u062d\u0627\u0644 \u0628\u0631\u064a\u0621 \u0643\u0627\u0645\u0644</strong> \u0641\u064a\u0647 \u0623\u062d\u0628\u0651\u0627\u0624\u0643 \u064a\u0646\u062a\u0638\u0631\u0648\u0646\u0643. Causley \u0645\u0627 \u062a\u0632\u0648\u0651\u062c \u0623\u0628\u062f\u060c \u0648\u0639\u0627\u0634 \u0645\u0639 \u0623\u0645\u0647 \u0644\u064a\u0646 \u062a\u0648\u0641\u0651\u062a\u060c \u0648\u0647\u0630\u0627 \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0634\u062e\u0635\u064a\u0629 \u0648\u0627\u064a\u062f.</p><p>\u0623\u0647\u0645 \u0627\u0644\u0645\u0648\u0627\u0636\u064a\u0639: <strong>\u0627\u0644\u0630\u0627\u0643\u0631\u0629 \u0648\u0627\u0644\u062d\u0646\u064a\u0646</strong>\u060c \u0648<strong>\u0627\u0644\u062d\u062f\u0651 \u0628\u064a\u0646 \u0627\u0644\u062d\u064a\u0627\u0629 \u0648\u0627\u0644\u0645\u0648\u062a</strong>\u060c \u0648<strong>\u0627\u0644\u062d\u0628 \u0627\u0644\u0623\u0628\u0648\u064a</strong>\u060c \u0648\u0625\u0645\u0643\u0627\u0646\u064a\u0629 <strong>\u0627\u0644\u0644\u0642\u0627\u0621 \u0628\u0639\u062f \u0627\u0644\u0645\u0648\u062a</strong>.</p>',
   summary:
-    'The speaker describes a vision of his parents as young people waiting for him at Eden Rock, a picnic spot. His father is twenty-five, his mother twenty-three \u2014 ages they could only have been decades before the poem was written. Every detail of the scene is described with impossible precision: clothing, food, colours. As the vision intensifies, the sky whitens unnaturally, lit by three suns. A stream separates the speaker from his parents, but crossing it is "not as hard as you might think." The speaker accepts what is happening with quiet wonder: "I had not thought that it would be like this."',
+    'Lines 1–4: The speaker says his parents are waiting for him "beyond" Eden Rock. His father is twenty-five, in his tweed suit, with his terrier Jack at his feet.\n\n' +
+    'Lines 5–12: His mother, twenty-three, in a "sprigged" dress and a straw hat, lays a cloth on the lawn, serves tea from a flask with milk from an old sauce bottle, and sets out "the same" three plates and blue tin cups. Every detail is described with impossible precision.\n\n' +
+    'Lines 13–16: The sky whitens unnaturally, lit by "three suns". His mother shields her eyes to look across to him over the "drifted stream", and his father skims a stone.\n\n' +
+    'Lines 17–20: The parents wave him over from the far bank and call to him that crossing is easier than he might expect (line 19). The poem ends on a single line of quiet wonder (line 20), in which the speaker admits he had not expected it to be this way.',
 
   summaryAr:
-    '\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0648\u0635\u0641 \u0631\u0624\u064a\u0629 \u0644\u0648\u0627\u0644\u062f\u064a\u0647 \u0648\u0647\u0645 \u0634\u0628\u0627\u0628\u060c \u064a\u0646\u062a\u0638\u0631\u0648\u0646\u0647 \u0641\u064a Eden Rock\u060c \u0645\u0643\u0627\u0646 \u0645\u062e\u0635\u0651\u0635 \u0644\u0644\u0646\u0632\u0647\u0629 (picnic). \u0627\u0644\u0623\u0628 \u0639\u0645\u0631\u0647 \u062e\u0645\u0633\u0629 \u0648\u0639\u0634\u0631\u064a\u0646\u060c \u0648\u0627\u0644\u0623\u0645 \u062b\u0644\u0627\u062b\u0629 \u0648\u0639\u0634\u0631\u064a\u0646 \u2014 \u0648\u0647\u064a \u0623\u0639\u0645\u0627\u0631 \u0645\u0627 \u0643\u0627\u0646\u0648\u0627 \u0641\u064a\u0647\u0627 \u0625\u0644\u0627 \u0642\u0628\u0644 \u0639\u0642\u0648\u062f \u0645\u0646 \u0632\u0645\u0646 \u0643\u062a\u0627\u0628\u0629 \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u0643\u0644 \u062a\u0641\u0635\u064a\u0644\u0629 \u0641\u064a \u0627\u0644\u0645\u0634\u0647\u062f \u0645\u0648\u0635\u0648\u0641\u0629 \u0628\u062f\u0642\u0651\u0629 \u0645\u0633\u062a\u062d\u064a\u0644\u0629: \u0627\u0644\u0645\u0644\u0627\u0628\u0633\u060c \u0627\u0644\u0623\u0643\u0644\u060c \u0627\u0644\u0623\u0644\u0648\u0627\u0646. \u0648\u0645\u0639 \u062a\u0643\u062b\u0651\u0641 \u0627\u0644\u0631\u0624\u064a\u0629\u060c \u0627\u0644\u0633\u0645\u0627\u0621 \u062a\u0628\u064a\u0636\u0651 \u0628\u0634\u0643\u0644 \u063a\u064a\u0631 \u0637\u0628\u064a\u0639\u064a\u060c \u0643\u0623\u0646 \u062b\u0644\u0627\u062b \u0634\u0645\u0648\u0633 \u062a\u0646\u0648\u0651\u0631\u0647\u0627. \u0633\u0627\u0642\u064a\u0629 \u062a\u0641\u0635\u0644 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0639\u0646 \u0648\u0627\u0644\u062f\u064a\u0647\u060c \u0628\u0633 \u0639\u0628\u0648\u0631\u0647\u0627 "not as hard as you might think" (\u0645\u0648 \u0635\u0639\u0628 \u0645\u062b\u0644 \u0645\u0627 \u062a\u062a\u062e\u064a\u0651\u0644). \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0642\u0628\u0644 \u0627\u0644\u0644\u064a \u064a\u0635\u064a\u0631 \u0628\u062f\u0647\u0634\u0629 \u0647\u0627\u062f\u0626\u0629: "I had not thought that it would be like this".',
+    'الأبيات 1–4: المتكلّم يقول إن والديه ينتظرونه "beyond" (ورا) Eden Rock. أبوه عمره خمسة وعشرين، لابس بدلته من قماش tweed، وكلبه Jack عند رجوله.\n\n' +
+    'الأبيات 5–12: أمه، عمرها ثلاثة وعشرين، لابسة فستان "sprigged" (منقوش بورود صغيرة) وقبعة قش، تفرش مفرش على العشب، وتصب الشاي من ترمس والحليب من قارورة صلصة قديمة، وتحط "the same" الثلاث صحون والأكواب الزرقا. كل تفصيلة موصوفة بدقّة مستحيلة.\n\n' +
+    'الأبيات 13–16: السما تبيضّ بشكل غير طبيعي، كأن "three suns" (ثلاث شموس) تنوّرها. أمه تظلّل عيونها عشان تشوفه عبر "drifted stream" (الساقية المنجرفة)، وأبوه يزحلق حجر على الماي.\n\n' +
+    'الأبيات 17–20: الوالدين يأشّرون له من الضفة الثانية وينادونه إن العبور أسهل مما يتوقّع (البيت 19). والقصيدة تخلص ببيت واحد فيه دهشة هادئة (البيت 20)، يعترف فيه المتكلّم إنه ما توقّع إن الشي بيكون كذا.',
   formAndStructure:
-    "Form: Four quatrains followed by shorter standalone lines, creating a structure that moves steadily toward a climactic final revelation.\n\nStructure: The poem builds from precise, grounded description to increasingly dreamlike, supernatural imagery, mirroring the speaker's crossing from life toward death.\n\nTense: Present tense throughout creates immediacy and collapses past and present, making the dead parents seem alive and present now.\n\nRhyme: No regular rhyme scheme, but subtle echoes and half-rhymes create a gentle, lulling musicality that avoids harshness.\n\nLine lengths: Relatively regular, creating a calm, measured pace that contrasts with the extraordinary subject matter.\n\nThe final short lines \u2014 separated by stanza breaks \u2014 create pauses before the poem's devastating, understated conclusions.",
+    'Form: Four quatrains, then a tercet, then a single closing line. The stanzas shrink as the poem nears its end, moving steadily towards a climactic final revelation.\n\n' +
+    "Structure: The poem builds from precise, grounded description to increasingly dreamlike, supernatural imagery, mirroring the speaker's crossing from life towards death.\n\n" +
+    'Tense: The present tense runs from the first line to the nineteenth, which creates immediacy and collapses past and present, so the dead parents seem alive and present now. Only the last line turns to the past perfect, as the speaker looks back on what he had expected.\n\n' +
+    'Rhyme: No regular rhyme scheme, but subtle echoes and half-rhymes create a gentle, lulling musicality that avoids harshness.\n\n' +
+    'Line lengths: Relatively regular, creating a calm, measured pace that contrasts with the extraordinary subject matter.\n\n' +
+    "The last line stands alone, cut off from the tercet by a stanza break, and the white space before it creates a pause before the poem's understated conclusion.",
 
   formAndStructureAr:
-    '\u0627\u0644\u0634\u0643\u0644 (Form): \u0623\u0631\u0628\u0639\u0629 quatrain \u064a\u062a\u0628\u0639\u0647\u0627 \u0623\u0628\u064a\u0627\u062a \u0642\u0635\u064a\u0631\u0629 \u0645\u0646\u0641\u0635\u0644\u0629\u060c \u0648\u0647\u0630\u0627 \u064a\u062e\u0644\u0642 \u0628\u0646\u064a\u0629 \u062a\u062a\u062d\u0631\u0651\u0643 \u0628\u062b\u0628\u0627\u062a \u0644\u0648\u0631\u0627 \u0627\u0644\u0643\u0634\u0641 \u0627\u0644\u0646\u0647\u0627\u0626\u064a.\n\n' +
-    '\u0627\u0644\u0628\u0646\u064a\u0629 (Structure): \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0628\u0646\u0649 \u0645\u0646 \u0648\u0635\u0641 \u062f\u0642\u064a\u0642 \u0648\u0645\u0631\u0633\u0651\u062e \u0641\u064a \u0627\u0644\u0623\u0631\u0636\u060c \u0644\u064a\u0646 \u062a\u0646\u062a\u0642\u0644 \u0644\u0635\u0648\u0631 \u062d\u0644\u0645\u064a\u0629 \u0648\u0641\u0648\u0642 \u0637\u0628\u064a\u0639\u064a\u0629\u060c \u0648\u0647\u0630\u0627 \u064a\u0639\u0643\u0633 \u0639\u0628\u0648\u0631 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0645\u0646 \u0627\u0644\u062d\u064a\u0627\u0629 \u0644\u0648\u0631\u0627 \u0627\u0644\u0645\u0648\u062a.\n\n' +
-    '\u0627\u0644\u0632\u0645\u0646 (Tense): \u0627\u0644\u0632\u0645\u0646 \u0627\u0644\u062d\u0627\u0636\u0631 \u0637\u0648\u0644 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u064a\u062e\u0644\u0642 \u0625\u062d\u0633\u0627\u0633 \u0628\u0627\u0644\u0645\u0628\u0627\u0634\u0631\u0629\u060c \u0648\u064a\u062f\u0645\u062c \u0627\u0644\u0645\u0627\u0636\u064a \u0645\u0639 \u0627\u0644\u062d\u0627\u0636\u0631\u060c \u0639\u0634\u0627\u0646 \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0648\u0627\u0644\u062f\u064a\u0646 \u0627\u0644\u0645\u062a\u0648\u0641\u0651\u064a\u064a\u0646 \u064a\u0628\u0627\u0646\u0648\u0646 \u0623\u062d\u064a\u0627\u0621 \u0648\u062d\u0627\u0636\u0631\u064a\u0646 \u0641\u064a \u0647\u0627\u0644\u0644\u062d\u0638\u0629.\n\n' +
-    '\u0627\u0644\u0642\u0627\u0641\u064a\u0629 (Rhyme): \u0645\u0627 \u0641\u064a\u0647 \u0646\u0638\u0627\u0645 \u0642\u0627\u0641\u064a\u0629 \u0645\u0646\u062a\u0638\u0645\u060c \u0628\u0633 \u0623\u0635\u062f\u0627\u0621 \u062e\u0641\u064a\u0641\u0629 \u0648half-rhymes \u062a\u062e\u0644\u0642 \u0645\u0648\u0633\u064a\u0642\u0649 \u0644\u0637\u064a\u0641\u0629 \u0648\u0645\u064f\u0647\u062f\u0651\u0626\u0629\u060c \u062a\u062a\u062c\u0646\u0651\u0628 \u0627\u0644\u0642\u0633\u0648\u0629.\n\n' +
-    '\u0637\u0648\u0644 \u0627\u0644\u0623\u0628\u064a\u0627\u062a: \u0634\u0628\u0647 \u0645\u0646\u062a\u0638\u0645\u060c \u064a\u062e\u0644\u0642 \u0625\u064a\u0642\u0627\u0639 \u0647\u0627\u062f\u0626 \u0648\u0645\u0642\u064a\u0651\u0633\u060c \u064a\u062a\u0646\u0627\u0642\u0636 \u0645\u0639 \u0627\u0644\u0645\u0648\u0636\u0648\u0639 \u0627\u0644\u0627\u0633\u062a\u062b\u0646\u0627\u0626\u064a.\n\n' +
-    '\u0627\u0644\u0623\u0628\u064a\u0627\u062a \u0627\u0644\u0642\u0635\u064a\u0631\u0629 \u0641\u064a \u0627\u0644\u0646\u0647\u0627\u064a\u0629 \u2014 \u0645\u0641\u0635\u0648\u0644\u0629 \u0628\u0641\u0648\u0627\u0635\u0644 \u0628\u064a\u0646 \u0627\u0644\u0645\u0642\u0627\u0637\u0639 \u2014 \u062a\u062e\u0644\u0642 \u062a\u0648\u0642\u0651\u0641\u0627\u062a \u0642\u0628\u0644 \u062e\u0627\u062a\u0645\u0629 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0627\u0644\u0645\u062f\u0645\u0651\u0631\u0629 \u0627\u0644\u0645\u064f\u0642\u062a\u0635\u062f\u0629 \u0641\u064a \u0627\u0644\u0643\u0644\u0627\u0645.',
+    'الشكل (Form): أربعة quatrain، بعدها tercet، بعدها بيت أخير لحاله. المقاطع تقصر كل ما قرّبت القصيدة من نهايتها، وتتحرّك بثبات لين الكشف الأخير.\n\n' +
+    'البنية (Structure): القصيدة تبنى من وصف دقيق ومرسّخ في الأرض، لين تنتقل لصور حلمية وفوق طبيعية، وهذا يعكس عبور المتكلّم من الحياة نحو الموت.\n\n' +
+    'الزمن (Tense): الزمن الحاضر يمشي من البيت الأول لين البيت التاسع عشر، وهذا يخلق إحساس بالمباشرة ويدمج الماضي مع الحاضر، فيبانون الوالدين المتوفّيين أحياء وحاضرين في هاللحظة. والبيت الأخير بس يتحوّل للـpast perfect، والمتكلّم يطالع لورا على اللي كان يتوقّعه.\n\n' +
+    'القافية (Rhyme): ما فيه نظام قافية منتظم، بس أصداء خفيفة وhalf-rhymes تخلق موسيقى لطيفة ومُهدّئة، تتجنّب القسوة.\n\n' +
+    'طول الأبيات: شبه منتظم، يخلق إيقاع هادئ ومقيّس، يتناقض مع الموضوع الاستثنائي.\n\n' +
+    'البيت الأخير واقف لحاله، مفصول عن الـtercet بفاصل مقطع، والمساحة البيضا قبله تخلق توقّف قبل خاتمة القصيدة المُقتصدة في الكلام.',
   keyQuotes: [
     {
-      quote: 'They are waiting for me somewhere beyond Eden Rock:',
+      quote: 'beyond',
       analysis:
-        '"Beyond" places the parents past a threshold the speaker has not yet crossed. "Eden" evokes paradise and innocence, suggesting death is a return to a perfect state. "Eden Rock" is an invented threshold place - Causley confirmed: "I have no idea, I mean I made it up!"',
+        'The first line places the parents "beyond" Eden Rock, past a threshold the speaker has not yet crossed. The name recalls the Garden of Eden, paradise and innocence, suggesting that death is a return to a perfect state. Eden Rock is an invented place: Causley is widely reported to have said he made it up.',
       themes: ['Death', 'Paradise', 'Reunion'],
       analysisAr:
-        'كلمة "beyond" تحط الوالدين بعد عتبة المتكلّم لين الحين ما عبرها. وكلمة "Eden" تستدعي الفردوس والبراءة، وتلمّح إن الموت رجوع لحال كامل. واسم "Eden Rock" مكان عتبة اخترعه Causley - هو نفسه أكّد: "I have no idea, I mean I made it up!"',
+        'البيت الأول يحط الوالدين "beyond" (ورا) Eden Rock، يعني بعد عتبة المتكلّم لين الحين ما عبرها. والاسم يستدعي Garden of Eden، الفردوس والبراءة، ويلمّح إن الموت رجوع لحال كامل. وEden Rock مكان مخترَع: يُنقَل عن Causley على نطاق واسع إنه قال إنه اخترعه.',
       themesAr: ['الموت', 'الفردوس', 'اللقاء بعد الفراق'],
     },
     {
-      quote: 'My father, twenty-five',
+      quote: 'the same',
       analysis:
-        "Specifying the father's age makes him younger than the speaker writing the poem, creating a poignant reversal where the child outlives the parent's youth.",
+        'The father wears "the same" suit (line 2) and the mother sets out "the same" three plates (line 12). The repetition suggests an unchanging scene: the father is twenty-five and the mother twenty-three, younger than the speaker who remembers them, and nothing about them has aged. The child has outlived his parents’ youth.',
       themes: ['Memory', 'Time', 'Loss'],
       analysisAr:
-        'تحديد عمر الأب يخلّيه أصغر من المتكلّم وقت كتابة القصيدة، وهذا يخلق انعكاس مؤثّر: الابن عاش أطول من شباب أبوه.',
+        'الأب لابس "the same" (نفس) البدلة (البيت 2)، والأم تحط "the same" الثلاث صحون (البيت 12). التكرار يوحي بمشهد ما يتغيّر: الأب عمره خمسة وعشرين والأم ثلاثة وعشرين، أصغر من المتكلّم اللي يتذكّرهم، وما شي فيهم كبر. الابن عاش أطول من شباب والديه.',
       themesAr: ['الذاكرة', 'الزمن', 'الفقد'],
     },
     {
-      quote: 'looks and looks',
+      quote: 'three suns',
       analysis:
-        "The simple repetition conveys deep, wordless love between the parents. The present tense makes their love eternal \u2014 still happening in the speaker's vision.",
-      themes: ['Love', 'Memory', 'Permanence'],
-      analysisAr:
-        '\u0627\u0644\u062a\u0643\u0631\u0627\u0631 \u0627\u0644\u0628\u0633\u064a\u0637 \u064a\u0646\u0642\u0644 \u062d\u0628 \u0639\u0645\u064a\u0642 \u0648\u0635\u0627\u0645\u062a \u0628\u064a\u0646 \u0627\u0644\u0648\u0627\u0644\u062f\u064a\u0646. \u0648\u0627\u0644\u0632\u0645\u0646 \u0627\u0644\u062d\u0627\u0636\u0631 \u064a\u062e\u0644\u0651\u064a \u062d\u0628\u0651\u0647\u0645 \u0623\u0628\u062f\u064a \u2014 \u0644\u064a\u0646 \u0627\u0644\u062d\u064a\u0646 \u064a\u0635\u064a\u0631 \u0641\u064a \u0631\u0624\u064a\u0629 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645.',
-      themesAr: [
-        '\u0627\u0644\u062d\u0628',
-        '\u0627\u0644\u0630\u0627\u0643\u0631\u0629',
-        '\u0627\u0644\u062f\u0648\u0627\u0645',
-      ],
-    },
-    {
-      quote: 'The sky whitens as if lit by three suns',
-      analysis:
-        'The impossible, supernatural light marks the shift from memory to vision, from earthly to otherworldly. Three suns may allude to the Trinity.',
+        'The impossible, supernatural light of line 13 marks the shift from memory to vision, from earthly to otherworldly. Three suns may allude to the Trinity, and the number echoes the three plates of the line before.',
       themes: ['Supernatural', 'Death', 'Transcendence'],
       analysisAr:
-        'الضوء المستحيل وفوق الطبيعي يأشّر على الانتقال من الذاكرة للرؤية، ومن الأرضي للعالم الآخر. والثلاث شموس يحتمل إنها allusion للـTrinity.',
+        'الضوء المستحيل وفوق الطبيعي في البيت 13 يأشّر على الانتقال من الذاكرة للرؤية، ومن الأرضي للعالم الآخر. والثلاث شموس يحتمل إنها allusion للـTrinity، والرقم يردّد صدى الثلاث صحون في البيت اللي قبله.',
       themesAr: ['ما فوق الطبيعي', 'الموت', 'التسامي'],
     },
     {
-      quote: 'My mother shades her eyes and looks my way',
+      quote: 'drifted stream',
       analysis:
-        "The mother's gesture of shading her eyes suggests she is looking across a great distance or a blinding light \u2014 the boundary between life and death.",
-      themes: ['Motherhood', 'Death', 'Boundary'],
-      analysisAr:
-        '\u062d\u0631\u0643\u0629 \u0627\u0644\u0623\u0645 \u0648\u0647\u064a \u062a\u0638\u0644\u0651\u0644 \u0639\u064a\u0648\u0646\u0647\u0627 \u062a\u0648\u062d\u064a \u0625\u0646\u0647\u0627 \u062a\u062a\u0637\u0644\u0651\u0639 \u0639\u0628\u0631 \u0645\u0633\u0627\u0641\u0629 \u0628\u0639\u064a\u062f\u0629 \u0623\u0648 \u0636\u0648\u0621 \u064a\u0639\u0645\u064a \u2014 \u0627\u0644\u062d\u062f\u0651 \u0628\u064a\u0646 \u0627\u0644\u062d\u064a\u0627\u0629 \u0648\u0627\u0644\u0645\u0648\u062a.',
-      themesAr: [
-        '\u0627\u0644\u0623\u0645\u0648\u0645\u0629',
-        '\u0627\u0644\u0645\u0648\u062a',
-        '\u0627\u0644\u062d\u062f\u0651 \u0627\u0644\u0641\u0627\u0635\u0644',
-      ],
-    },
-    {
-      quote: 'Over the drifted stream',
-      analysis:
-        'The stream is a traditional symbol of the boundary between life and death (the River Styx). "Drifted" suggests it has shifted, perhaps become easier to cross.',
+        'The stream of line 15 is a traditional symbol of the boundary between life and death (compare the River Styx). "Drifted" suggests it has shifted or silted, perhaps become easier to cross, and the mother has to shield her eyes to see across it.',
       themes: ['Death', 'Crossing', 'Symbolism'],
       analysisAr:
-        'الساقية رمز تقليدي للحدّ بين الحياة والموت (نهر Styx في الأسطورة اليونانية). وكلمة "drifted" توحي إنها انزاحت، يحتمل إنها صارت أسهل في العبور.',
+        'الساقية في البيت 15 رمز تقليدي للحدّ بين الحياة والموت (قارن نهر Styx في الأسطورة اليونانية). وكلمة "drifted" توحي إنها انزاحت أو ترسّبت، يحتمل إنها صارت أسهل في العبور، والأم لازم تظلّل عيونها عشان تشوف الضفة الثانية.',
       themesAr: ['الموت', 'العبور', 'الرمزية'],
     },
     {
-      quote: 'Crossing is / Not as hard as you might think',
+      quote: 'Leisurely',
       analysis:
-        'Enjambment isolates "Crossing is" at the line end, creating suspense. The reassuring tone transforms death from terror into gentle acceptance.',
+        'The adverb ends the fourth stanza (line 16), and its sentence runs on over the break into the next line, where the parents invite him over from the far side. They are in no hurry: the calm of the gesture makes the invitation to cross feel gentle rather than urgent.',
+      themes: ['Calm', 'Crossing', 'Death'],
+      analysisAr:
+        'هالظرف يختم المقطع الرابع (البيت 16)، والجملة تكمل عبر الفاصل للبيت اللي بعده، وهناك الوالدين يأشّرون له من الضفة الثانية. ما عندهم عجلة: هدوء الحركة يخلّي دعوة العبور لطيفة مو مستعجلة.',
+      themesAr: ['الهدوء', 'العبور', 'الموت'],
+    },
+    {
+      quote: 'Crossing is not as hard',
+      analysis:
+        'The parents’ own words, the only speech in the poem, reassure the speaker in line 19 that the crossing (to death, or to them) is easy. The line is not broken: the reassurance comes whole and unhesitating, in plain, conversational language that turns death from terror into gentle acceptance.',
       themes: ['Death', 'Acceptance', 'Comfort'],
       analysisAr:
-        'الـenjambment يعزل "Crossing is" في نهاية البيت، فيخلق تشويق. والنبرة المُطمئنة تحوّل الموت من رعب إلى قبول لطيف.',
+        'كلام الوالدين بصوتهم، وهو الكلام المباشر الوحيد في القصيدة، يطمّن المتكلّم في البيت 19 إن العبور (للموت، أو لهم) سهل. والبيت ما فيه كسر: الطمأنينة تجي كاملة وبدون تردّد، بلغة بسيطة وحوارية تحوّل الموت من رعب إلى قبول لطيف.',
       themesAr: ['الموت', 'القبول', 'الراحة'],
     },
     {
       quote: 'I had not thought that it would be like this',
       analysis:
-        'The most devastating line. "It" is never named \u2014 death, the afterlife, reunion. The understatement makes it more powerful than any dramatic exclamation.',
+        'The most devastating line, set apart as a stanza of its own. "It" is never named: it may be death, the afterlife or reunion. The understatement makes it more powerful than any dramatic exclamation.',
       themes: ['Death', 'Acceptance', 'Wonder'],
       analysisAr:
-        '\u0623\u0643\u062b\u0631 \u0628\u064a\u062a \u064a\u0647\u062f\u0651 \u0627\u0644\u0642\u0627\u0631\u0626 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u0643\u0644\u0645\u0629 "it" \u0623\u0628\u062f \u0645\u0627 \u062a\u062a\u0633\u0645\u0651\u0649 \u2014 \u0627\u0644\u0645\u0648\u062a\u060c \u0627\u0644\u062d\u064a\u0627\u0629 \u0627\u0644\u062b\u0627\u0646\u064a\u0629\u060c \u0627\u0644\u0644\u0642\u0627\u0621. \u0648\u0627\u0644\u0640understatement (\u0627\u0644\u0627\u0642\u062a\u0635\u0627\u062f \u0641\u064a \u0627\u0644\u0643\u0644\u0627\u0645) \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0628\u064a\u062a \u0623\u0642\u0648\u0649 \u0645\u0646 \u0623\u064a \u0635\u0631\u062e\u0629 \u062f\u0631\u0627\u0645\u064a\u0629.',
-      themesAr: [
-        '\u0627\u0644\u0645\u0648\u062a',
-        '\u0627\u0644\u0642\u0628\u0648\u0644',
-        '\u0627\u0644\u062f\u0647\u0634\u0629',
-      ],
+        'أكثر بيت يهدّ القارئ في القصيدة، وهو مقطع لحاله. كلمة "it" أبد ما تتسمّى: يمكن الموت، أو الحياة الثانية، أو اللقاء. والـunderstatement (الاقتصاد في الكلام) يخلّي البيت أقوى من أي صرخة درامية.',
+      themesAr: ['الموت', 'القبول', 'الدهشة'],
     },
   ],
+  // lineRef is the entry's index in `lines` above, stanza breaks included, so
+  // the viewer highlights the right entry; until 26 September 2026 four of these
+  // pointed past the end of the array.
   languageDevices: [
     {
       device: 'Biblical allusion',
       example: 'Eden Rock',
       effect:
-        'The title evokes the Garden of Eden \u2014 a lost paradise of innocence. It frames death not as an ending but as a return to a perfect, prelapsarian state.',
+        'The title evokes the Garden of Eden, a lost paradise of innocence. It frames death not as an ending but as a return to a perfect, prelapsarian state.',
       lineRef: 0,
       effectAr:
-        '\u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u064a\u0633\u062a\u062f\u0639\u064a Garden of Eden \u2014 \u0627\u0644\u0641\u0631\u062f\u0648\u0633 \u0627\u0644\u0645\u0641\u0642\u0648\u062f \u0627\u0644\u0644\u064a \u064a\u0631\u0645\u0632 \u0644\u0644\u0628\u0631\u0627\u0621\u0629. \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0635\u0648\u0651\u0631 \u0627\u0644\u0645\u0648\u062a \u0645\u0648 \u0639\u0644\u0649 \u0625\u0646\u0647 \u0646\u0647\u0627\u064a\u0629\u060c \u0628\u0644 \u0639\u0644\u0649 \u0625\u0646\u0647 \u0631\u062c\u0648\u0639 \u0644\u062d\u0627\u0644 \u0643\u0627\u0645\u0644 \u0642\u0628\u0644 \u0627\u0644\u0633\u0642\u0648\u0637 (prelapsarian).',
+        'العنوان يستدعي Garden of Eden، الفردوس المفقود اللي يرمز للبراءة. يخلّي القصيدة تصوّر الموت مو على إنه نهاية، بل على إنه رجوع لحال كامل قبل السقوط (prelapsarian).',
     },
     {
       device: 'Present tense narration',
-      example: 'They are waiting / My father... in the same suit',
+      example: 'I had not thought',
       effect:
-        'Using present tense for a memory (or vision) collapses time, making the dead parents seem alive and present. It creates dreamlike immediacy.',
-      lineRef: 0,
+        'Every verb until the last line is in the present tense (the parents are waiting, the mother pours, the sky whitens), which collapses time and makes the dead parents seem alive and present. The final line breaks the pattern: its past perfect looks back, as if the crossing had already begun.',
+      lineRef: 24,
       effectAr:
-        'استخدام الزمن الحاضر لذكرى (أو رؤية) يدمج الأزمنة مع بعض، ويخلّي الوالدين المتوفّيين يبانون أحياء وحاضرين. هذا يخلق إحساس مباشر يشبه الحلم.',
+        'كل الأفعال لين البيت الأخير في الزمن الحاضر (الوالدين ينتظرون، الأم تصب الشاي، السما تبيضّ)، وهذا يدمج الأزمنة ويخلّي الوالدين المتوفّيين يبانون أحياء وحاضرين. والبيت الأخير يكسر النمط: الـpast perfect فيه يطالع لورا، كأن العبور بدأ خلاص.',
     },
     {
       device: 'Precise visual detail',
-      example: 'twenty-five, in the same suit',
+      example: 'sprigged',
       effect:
-        'The photographic specificity of ages, colours, and clothing creates hyper-real clarity, suggesting this is more than ordinary memory \u2014 perhaps a vision.',
-      lineRef: 1,
+        'The photographic specificity of ages, colours and clothing (a dress printed with small sprays of flowers, a straw hat with a ribbon, a tweed suit) creates hyper-real clarity, suggesting this is more than ordinary memory: perhaps a vision.',
+      lineRef: 5,
       effectAr:
-        '\u0627\u0644\u062f\u0642\u0651\u0629 \u0627\u0644\u0641\u0648\u062a\u0648\u063a\u0631\u0627\u0641\u064a\u0629 \u0641\u064a \u0627\u0644\u0623\u0639\u0645\u0627\u0631 \u0648\u0627\u0644\u0623\u0644\u0648\u0627\u0646 \u0648\u0627\u0644\u0645\u0644\u0627\u0628\u0633 \u062a\u062e\u0644\u0642 \u0648\u0636\u0648\u062d \u062d\u0642\u064a\u0642\u064a \u0628\u0634\u0643\u0644 \u0645\u0641\u0631\u0637\u060c \u0648\u064a\u0644\u0645\u0651\u062d \u0625\u0646 \u0647\u0630\u064a \u0645\u0648 \u0630\u0627\u0643\u0631\u0629 \u0639\u0627\u062f\u064a\u0629 \u2014 \u064a\u062d\u062a\u0645\u0644 \u062a\u0643\u0648\u0646 \u0631\u0624\u064a\u0629.',
+        'الدقّة الفوتوغرافية في الأعمار والألوان والملابس (فستان بنقشة ورود صغيرة، قبعة قش بشريطة، بدلة tweed) تخلق وضوح حقيقي بشكل مفرط، وتلمّح إن هذي مو ذاكرة عادية: يحتمل تكون رؤية.',
     },
     {
       device: 'Supernatural imagery',
-      example: 'The sky whitens as if lit by three suns',
+      example: 'three suns',
       effect:
         'The impossible light signals a shift from the natural to the transcendent. The scene is no longer a memory but a threshold experience.',
-      lineRef: 16,
+      lineRef: 15,
       effectAr:
         'الضوء المستحيل يأشّر على انتقال من الطبيعي إلى المتسامي. المشهد ما عاد ذاكرة، بل تجربة عند العتبة بين عالمين.',
     },
     {
       device: 'Symbolism',
-      example: 'the drifted stream',
+      example: 'drifted stream',
       effect:
-        'The stream separating the speaker from his parents echoes the mythological River Styx \u2014 the boundary between the living and the dead.',
-      lineRef: 18,
+        'The stream separating the speaker from his parents echoes the mythological River Styx: the boundary between the living and the dead.',
+      lineRef: 17,
       effectAr:
-        '\u0627\u0644\u0633\u0627\u0642\u064a\u0629 \u0627\u0644\u0644\u064a \u062a\u0641\u0635\u0644 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0639\u0646 \u0648\u0627\u0644\u062f\u064a\u0647 \u062a\u0635\u062f\u0651\u0649 \u0644\u0646\u0647\u0631 Styx \u0641\u064a \u0627\u0644\u0645\u064a\u062b\u0648\u0644\u0648\u062c\u064a\u0627 \u0627\u0644\u064a\u0648\u0646\u0627\u0646\u064a\u0629 \u2014 \u0627\u0644\u062d\u062f\u0651 \u0627\u0644\u0641\u0627\u0635\u0644 \u0628\u064a\u0646 \u0627\u0644\u0623\u062d\u064a\u0627\u0621 \u0648\u0627\u0644\u0623\u0645\u0648\u0627\u062a.',
+        'الساقية اللي تفصل المتكلّم عن والديه تصدّى لنهر Styx في الميثولوجيا اليونانية: الحدّ الفاصل بين الأحياء والأموات.',
     },
     {
       device: 'Understatement',
-      example: 'I had not thought that it would be like this',
+      example: 'like this',
       effect:
-        'The restrained, conversational tone at the poem\'s climax is more emotionally devastating than dramatic language would be. The unnamed "it" resonates with mystery.',
-      lineRef: 23,
+        'The restrained, conversational tone of the last line is more emotionally devastating than dramatic language would be. The unnamed "it" resonates with mystery, and the closing words point at an experience the poem never describes.',
+      lineRef: 24,
       effectAr:
-        'النبرة المنضبطة والحوارية في ذروة القصيدة تهدّ القارئ عاطفياً أكثر مما تهده اللغة الدرامية. وكلمة "it" اللي ما تتسمّى تتردّد بصدى من الغموض.',
+        'النبرة المنضبطة والحوارية في البيت الأخير تهدّ القارئ عاطفياً أكثر مما تهده اللغة الدرامية. وكلمة "it" اللي ما تتسمّى تتردّد بصدى من الغموض، والكلمات الأخيرة تأشّر على تجربة القصيدة أبد ما توصفها.',
     },
     {
       device: 'Enjambment',
-      example: 'Crossing is / Not as hard as you might think',
+      example: 'Leisurely',
       effect:
-        'The line break isolates "Crossing is" and forces a pause before the reassurance, enacting the hesitation before the final step across the threshold.',
-      lineRef: 19,
+        'The fourth stanza ends on this single adverb, and the sentence runs on over the stanza break into the fifth, where the parents wave him over. The pause in the white space enacts the unhurried calm of the scene, and delays the invitation to cross.',
+      lineRef: 18,
       effectAr:
-        'كسر السطر يعزل "Crossing is" ويفرض توقّف قبل عبارة الطمأنينة، فيمثّل التردّد قبل الخطوة الأخيرة عبر العتبة.',
+        'المقطع الرابع يخلص على هالظرف الوحيد، والجملة تكمل عبر الفاصل بين المقطعين للمقطع الخامس، وهناك الوالدين يأشّرون له. التوقّف في المساحة البيضا يمثّل هدوء المشهد اللي ما فيه عجلة، ويأجّل دعوة العبور.',
     },
   ],
 }
@@ -336,7 +371,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The stream is a powerful symbol of the divide between the living and the dead. The parents are on the other side, beckoning the speaker to "cross" - a metaphor for death.',
+      'The stream is a powerful symbol of the divide between the living and the dead. The parents are on the other side, calling the speaker to cross over - a metaphor for death.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -352,13 +387,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The precise details - the "H.P. Sauce bottle", the mother\'s dress, the father\'s tweed suit - make the memory intensely vivid. The scene feels more real than a dream, suggesting it may be a vision of the afterlife.',
+      "The precise details - the old sauce bottle used as a milk jug, the mother's dress, the father's tweed suit - make the memory intensely vivid. The scene feels more real than a dream, suggesting it may be a vision of the afterlife.",
     topic: 'Language',
     difficulty: 'higher',
   },
   {
     id: 'er-4',
-    question: 'What does the final line "I had not thought that it would be like this" suggest?',
+    question: 'What does the final line of the poem (line 20) suggest?',
     type: 'multiple-choice',
     options: [
       'Disappointment',
@@ -394,19 +429,19 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A sonnet',
-      'Four quatrains followed by a single final line - the isolation of the last line is significant',
+      'Four quatrains, a tercet and a single final line - the isolation of the last line is significant',
       'Free verse',
       'Rhyming couplets',
     ],
     correctIndex: 1,
     explanation:
-      'Four quatrains followed by a standalone final line. The isolated last line stands apart, like the speaker standing alone on one side of the stream, about to cross.',
+      'Four quatrains, then a three-line stanza, then a standalone final line. The stanzas shrink towards the end, and the isolated last line stands apart, like the speaker standing alone on one side of the stream, about to cross.',
     topic: 'Structure',
     difficulty: 'higher',
   },
   {
     id: 'er-7',
-    question: 'What does "They are waiting for me somewhere beyond Eden Rock" suggest?',
+    question: 'What does the first line suggest by placing the parents "beyond" Eden Rock?',
     type: 'multiple-choice',
     options: [
       'They are hiding',
@@ -416,7 +451,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"Beyond Eden Rock" suggests a place beyond the physical world. "Eden" echoes the Garden of Eden - a paradise. The parents wait in a realm beyond ordinary reality.',
+      'The word suggests a place past the physical world, and the name Eden echoes the Garden of Eden - a paradise. The parents wait in a realm beyond ordinary reality.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -479,7 +514,7 @@ const REVISION_TOPICS = [
       'Death as reunion - crossing the stream to join loved ones',
       'Memory as vision - the scene is too vivid to be mere memory',
       'The enduring parent-child bond - love persists beyond death',
-      'Acceptance - "I had not thought that it would be like this"',
+      'Acceptance - the quiet surprise of the final line (line 20)',
     ],
   },
   {
@@ -488,15 +523,15 @@ const REVISION_TOPICS = [
       'Causley uses precise sensory detail, light imagery, water symbolism, and a calm, nostalgic tone to present death as gentle and natural.',
     keyPoints: [
       'Stream as boundary between life and death',
-      'Precise details (H.P. Sauce, dress colour) make the vision vivid',
-      '"Beyond Eden Rock" - paradise beyond the physical world',
+      'Precise details (the sauce bottle, the flowered dress) make the vision vivid',
+      'Eden Rock, and the "beyond" of line 1 - paradise past the physical world',
       'Light and whiteness - the scene is illuminated, heavenly',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Four quatrains followed by a standalone final line - the isolated last line enacts the moment of crossing or decision.',
+      'Four quatrains, a tercet and a standalone final line - the isolated last line enacts the moment of crossing or decision.',
     keyPoints: [
       'Isolated final line - stands alone like the speaker at the boundary',
       'Present tense - the vision is happening now, not in the past',
@@ -614,8 +649,8 @@ export default function EdenRockPage() {
           >
             Poetry Archive
           </a>{' '}
-          for the full text. Lines marked [Paraphrase] and the bracketed summaries are in our own
-          words; the analysis quotes only short extracts, for criticism under CDPA 1988 s.30.
+          for the full text. Every line marked [Paraphrase] is in our own words; the analysis quotes
+          only short extracts, for criticism under CDPA 1988 s.30.
         </p>
       </aside>
 
@@ -663,8 +698,8 @@ export default function EdenRockPage() {
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground space-y-2">
         <p>
-          Quotations from <em>Eden Rock</em> are short estate-licensed extracts. &copy; David Higham
-          Associates on behalf of the Causley estate.
+          Quotations from <em>Eden Rock</em> are short extracts for criticism and review. &copy; the
+          Causley estate; rights administered by David Higham Associates.
         </p>
         <p>
           The poem is paraphrased here, not reproduced; it is printed in full in the AQA Love and

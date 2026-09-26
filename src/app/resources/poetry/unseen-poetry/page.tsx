@@ -68,20 +68,64 @@ function Warning({ children }: { children: React.ReactNode }) {
   )
 }
 
-/* ─── Poem display ───────────────────────────────────────────── */
+/* ─── A practice poem still in copyright ─────────────────────── */
 
-function PoemBlock({ title, author, lines }: { title: string; author: string; lines: string[] }) {
+/**
+ * A practice poem that is still in copyright: named, not printed, with the
+ * model response and commentary about it passed as children.
+ *
+ * WHY. Until 26 September 2026 Practice Poem 1 printed Storm on the Island in
+ * a PoemBlock as an "adapted extract": 141 of the poem's 158 words, far past
+ * what fair dealing allows. Checked against the AQA anthology, its last seven
+ * lines were not Heaney's at all, and the model response analysed them (a
+ * "nothing" repeated through the final lines, which the poem says once). This
+ * names the poem and sends the student to a copy the rights-holder licensed.
+ * The children sit inside an element that names the poem and its poet, so
+ * no-poem-quoted-beyond-fair-dealing.test.ts measures every quotation in the
+ * model response against the poem, as it would a card.
+ */
+function PracticePoemInCopyright({
+  title,
+  author,
+  readAt,
+  readHref,
+  children,
+}: {
+  title: string
+  author: string
+  readAt: string
+  /**
+   * AQA's own copy of its anthology. Optional: Nettles is not in it, and no
+   * copy of Nettles that its rights-holder licensed could be confirmed online,
+   * so that card names the printed anthology and the exam paper instead.
+   */
+  readHref?: string
+  children: React.ReactNode
+}) {
   return (
-    <div className="my-6 rounded-xl border border-border bg-muted p-6">
-      <p className="font-bold text-foreground text-lg">{title}</p>
-      <p className="text-sm text-muted-foreground mb-4">by {author}</p>
-      <div className="space-y-1 font-serif text-foreground leading-relaxed">
-        {lines.map((line, i) => (
-          <p key={i} className={line === '' ? 'h-4' : ''}>
-            {line || '\u00A0'}
-          </p>
-        ))}
+    <div>
+      <div className="my-6 rounded-xl border border-border bg-muted p-6">
+        <p className="font-bold text-foreground text-lg">{title}</p>
+        <p className="text-sm text-muted-foreground mb-4">by {author}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          This poem is still in copyright, so we do not print it here. Read it in {readAt}
+          {readHref ? (
+            <>
+              :{' '}
+              <a
+                href={readHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline underline-offset-2"
+              >
+                AQA&apos;s own copy of the anthology
+              </a>
+            </>
+          ) : null}
+          . Read it twice and annotate it before you look at the model response.
+        </p>
       </div>
+      {children}
     </div>
   )
 }
@@ -137,8 +181,8 @@ export default async function UnseenPoetryPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             A comprehensive, step-by-step approach to tackling unseen poetry in your GCSE exam. The
-            READ method, PEEL paragraphs, comparison technique, and three full practice poems with
-            model responses.
+            READ method, PEEL paragraphs, comparison technique, and three practice poems with model
+            responses.
           </p>
         </div>
       </section>
@@ -406,6 +450,13 @@ export default async function UnseenPoetryPage() {
               <h3 className="mt-8 mb-4 text-lg font-bold text-foreground">
                 Example PEEL Paragraph
               </h3>
+              {/* The line analysed below is the site's own, written to show the method: it is
+                  not in Storm on the Island, and a web search on 26 September 2026 found it in
+                  no poem. Say so on the page, so that a student does not learn it, or cite it,
+                  as a real quotation. */}
+              <p className="mb-3 text-sm text-muted-foreground">
+                The line analysed here was written for this example. It is not from a real poem.
+              </p>
               <div className="rounded-xl border border-border bg-card p-5">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   <span className="font-bold text-foreground">[P]</span> The poet presents nature as
@@ -592,231 +643,209 @@ export default async function UnseenPoetryPage() {
 
             {/* ── Practice Poem 1 ──────────────────────────────────── */}
             <Section id="practice-1" title="6a. Practice Poem 1">
-              <PoemBlock
+              {/* Every quotation below was checked word for word against the AQA anthology
+                  (AQA's own copy, linked below, printing the poem by permission of Faber and
+                  Faber) on 26 September 2026: 17 distinct words of the poem's 158, under the
+                  fair-dealing share of 23. */}
+              <PracticePoemInCopyright
                 title={_tr(`Storm on the Island`)}
-                author="Seamus Heaney (adapted extract)"
-                lines={[
-                  'We are prepared: we build our houses squat,',
-                  'Sink walls in rock and roof them with good slate.',
-                  'This wizened earth has never troubled us',
-                  'With hay, so, as you see, there are no stacks',
-                  'Or stooks that can be lost. Nor are there trees',
-                  'Which might prove company when it blows full',
-                  'Blast: you know what I mean -- leaves and branches',
-                  'Can raise a tragic chorus in a gale',
-                  'So that you listen to the thing you fear',
-                  'Forgetting that it pummels your house too.',
-                  '',
-                  'But no: we are sheltered by the rock, by the familiar',
-                  'Arrangement of the landscape. But a huge nothing',
-                  'That we fear, a space in which we hear nothing,',
-                  'Nothing that a space can hold -- a fear',
-                  'That is both real and nothing. Strange, it is a huge nothing',
-                  'That we fear.',
-                ]}
-              />
-
-              <p className="mb-4 text-sm font-semibold text-foreground">
-                Question: How does the poet present the power of nature in this poem?
-              </p>
-
-              <ModelResponse label="Model Response (Grade 8/9)">
-                <p>
-                  <span className="font-bold text-foreground">[P]</span> Heaney initially presents
-                  the islanders as confident in their ability to withstand nature&apos;s power.{' '}
-                  <span className="font-bold text-foreground">[E]</span> The declarative opening,
-                  &ldquo;We are prepared&rdquo;, establishes a tone of collective assurance,
-                  reinforced by the practical, monosyllabic language of &ldquo;squat&rdquo;,
-                  &ldquo;rock&rdquo;, and &ldquo;slate&rdquo;.{' '}
-                  <span className="font-bold text-primary">[E]</span> The heavy, grounded consonants
-                  mirror the solidity of the buildings, suggesting a community that has shaped
-                  itself around the threat. The verb &ldquo;sink&rdquo; implies permanence, as
-                  though the walls are embedded in the landscape itself.{' '}
-                  <span className="font-bold text-primary/80">[L]</span> However, this confidence is
-                  gradually undermined, suggesting that Heaney is questioning whether human
-                  preparation can ever truly match the scale of natural force.
+                author="Seamus Heaney"
+                readAt="the Power and Conflict cluster of your AQA anthology"
+                readHref="https://filestore.aqa.org.uk/resources/english/AQA-8702-TG-POEMS.PDF"
+              >
+                <p className="mb-4 text-sm font-semibold text-foreground">
+                  Question: How does the poet present the power of nature in this poem?
                 </p>
-                <p>
-                  <span className="font-bold text-foreground">[P]</span> The poem&apos;s conclusion
-                  reveals that the true power of nature lies not in physical destruction but in
-                  psychological fear. <span className="font-bold text-foreground">[E]</span> The
-                  repetition of &ldquo;nothing&rdquo; in the final lines -- &ldquo;a huge nothing /
-                  That we fear&rdquo; -- creates a paradox that is deeply unsettling.{' '}
-                  <span className="font-bold text-primary">[E]</span> The oxymoron &ldquo;huge
-                  nothing&rdquo; defies logic: how can emptiness be vast? This reflects the
-                  irrational nature of fear itself. The caesura after &ldquo;But no:&rdquo; enacts
-                  the moment of psychological rupture, the point at which the islanders&apos;
-                  confidence fractures. <span className="font-bold text-primary/80">[L]</span>{' '}
-                  Alternatively, the &ldquo;huge nothing&rdquo; could be read as a political
-                  metaphor, with Heaney -- writing in the context of the Northern Irish Troubles --
-                  exploring how communities live in fear of an intangible but ever-present threat.
-                </p>
-              </ModelResponse>
 
-              <ExaminerCommentary>
-                <p>
-                  This response demonstrates several top-band qualities: it tracks the poem&apos;s
-                  structural shift from confidence to fear; it zooms in on individual words
-                  (&ldquo;squat&rdquo;, &ldquo;sink&rdquo;, &ldquo;nothing&rdquo;); it analyses
-                  sound effects (plosive consonants); it explores the paradox of &ldquo;huge
-                  nothing&rdquo;; and it offers an alternative contextual interpretation. The
-                  candidate never paraphrases -- every sentence analyses.
-                </p>
-              </ExaminerCommentary>
+                <ModelResponse label="Model Response (Grade 8/9)">
+                  <p>
+                    <span className="font-bold text-foreground">[P]</span> Heaney initially presents
+                    the islanders as confident in their ability to withstand nature&apos;s power.{' '}
+                    <span className="font-bold text-foreground">[E]</span> The declarative opening,
+                    &ldquo;We are prepared&rdquo;, establishes a tone of collective assurance,
+                    reinforced by the practical, monosyllabic language of &ldquo;squat&rdquo;,
+                    &ldquo;rock&rdquo;, and &ldquo;slate&rdquo;.{' '}
+                    <span className="font-bold text-primary">[E]</span> The heavy, grounded
+                    consonants mirror the solidity of the buildings, suggesting a community that has
+                    shaped itself around the threat. The verb &ldquo;sink&rdquo; implies permanence,
+                    as though the walls are embedded in the landscape itself.{' '}
+                    <span className="font-bold text-primary/80">[L]</span> However, this confidence
+                    is gradually undermined, suggesting that Heaney is questioning whether human
+                    preparation can ever truly match the scale of natural force.
+                  </p>
+                  <p>
+                    <span className="font-bold text-foreground">[P]</span> The poem&apos;s
+                    conclusion reveals that the true power of nature lies not in physical
+                    destruction but in psychological fear.{' '}
+                    <span className="font-bold text-foreground">[E]</span> Heaney turns to the
+                    vocabulary of warfare: the wind &ldquo;strafes&rdquo;, and the islanders are
+                    &ldquo;bombarded by the empty air&rdquo;.{' '}
+                    <span className="font-bold text-primary">[E]</span> The military verbs make the
+                    storm an attacking army, yet the enemy cannot be seen, and the final line names
+                    it a &ldquo;huge nothing&rdquo;. The oxymoron defies logic: how can emptiness be
+                    vast? This reflects the irrational nature of fear itself. Earlier, the caesura
+                    after &ldquo;But no&rdquo; marks the turn, the point at which the comforting
+                    idea of the sea as company is overturned and the islanders&apos; confidence
+                    fractures. <span className="font-bold text-primary/80">[L]</span> Alternatively,
+                    the &ldquo;huge nothing&rdquo; could be read as a political metaphor. The poem
+                    was published in 1966, and its military language has been read as sensing the
+                    sectarian tension in Northern Ireland that would erupt into the Troubles within
+                    a few years: a community living in fear of an intangible but ever-present
+                    threat.
+                  </p>
+                </ModelResponse>
+
+                <ExaminerCommentary>
+                  <p>
+                    This response demonstrates several top-band qualities: it tracks the poem&apos;s
+                    structural shift from confidence to fear; it zooms in on individual words
+                    (&ldquo;squat&rdquo;, &ldquo;sink&rdquo;, &ldquo;strafes&rdquo;); it analyses
+                    sound effects (plosive consonants); it explores the paradox of &ldquo;huge
+                    nothing&rdquo;; and it links the military vocabulary to an alternative
+                    contextual interpretation. The candidate never paraphrases: every sentence
+                    analyses.
+                  </p>
+                </ExaminerCommentary>
+              </PracticePoemInCopyright>
             </Section>
 
             {/* ── Practice Poem 2 ──────────────────────────────────── */}
             <Section id="practice-2" title="6b. Practice Poem 2">
-              <PoemBlock
+              {/* Until 26 September 2026 this section printed Nettles whole, with stanza breaks
+                  the poem does not have and a last line that is not Scannell's, and the model
+                  response analysed a word from that invented line. Every quotation below was
+                  checked word for word on that date against the Pearson Edexcel GCSE Poetry
+                  Anthology (printed by permission of the Estate of Vernon Scannell) and the Eduqas
+                  May 2023 Component 2 paper (C720U20-1, sat on 24 May 2023; this note and the
+                  card below said June until a second check that day), which agree; line numbers
+                  are theirs. */}
+              <PracticePoemInCopyright
                 title="Nettles"
                 author="Vernon Scannell"
-                lines={[
-                  'My son aged three fell in the nettle bed.',
-                  '"Bed" seemed a curious name for those green spears,',
-                  'That regiment of spite behind the shed:',
-                  'It was no place for rest. With sobs and tears',
-                  'The boy came seeking comfort and I saw',
-                  'White blisters beaded on his tender skin.',
-                  'We soothed him till his pain was not so raw.',
-                  '',
-                  'At last he offered us a watery grin,',
-                  'And then I took my billhook, honed the blade',
-                  'And went outside and slashed in fury with it',
-                  'Till not a nettle in that fierce parade',
-                  'Stood upright any more. And then I lit',
-                  'A funeral pyre to burn the fallen dead.',
-                  '',
-                  'But in two weeks the busy sun and rain',
-                  'Had called up tall recruits behind the shed:',
-                  'My son would often come with fresh wounds again.',
-                ]}
-              />
-
-              <p className="mb-4 text-sm font-semibold text-foreground">
-                Question: How does the poet present the feelings of a parent in this poem?
-              </p>
-
-              <ModelResponse label="Model Response (Grade 8/9)">
-                <p>
-                  <span className="font-bold text-foreground">[P]</span> Scannell presents
-                  parenthood as a battle the parent can never ultimately win.{' '}
-                  <span className="font-bold text-foreground">[E]</span> The sustained military
-                  metaphor -- &ldquo;green spears&rdquo;, &ldquo;regiment of spite&rdquo;,
-                  &ldquo;fierce parade&rdquo;, &ldquo;tall recruits&rdquo; -- transforms the
-                  domestic scene of a child falling into nettles into a battlefield.{' '}
-                  <span className="font-bold text-primary">[E]</span> The word
-                  &ldquo;regiment&rdquo; implies the threats are organised, disciplined, and
-                  numerous -- far beyond what a single parent can defeat. The personification of the
-                  nettles as soldiers elevates the father&apos;s protective instinct from an
-                  everyday reaction to something heroic, yet simultaneously futile.{' '}
-                  <span className="font-bold text-primary/80">[L]</span> This may reflect
-                  Scannell&apos;s own experience as a war veteran, where the language of combat
-                  becomes the only vocabulary adequate to express the intensity of parental love and
-                  protectiveness.
+                readAt="the Relationships collection of the Pearson Edexcel GCSE English Literature Poetry Anthology, or in the Eduqas GCSE English Literature Component 2 paper of May 2023, which set it as the unseen poem"
+              >
+                <p className="mb-4 text-sm font-semibold text-foreground">
+                  Question: How does the poet present the feelings of a parent in this poem?
                 </p>
-                <p>
-                  <span className="font-bold text-foreground">[P]</span> The poem&apos;s final line
-                  conveys a devastating sense of parental helplessness.{' '}
-                  <span className="font-bold text-foreground">[E]</span> The statement &ldquo;My son
-                  would often come with fresh wounds again&rdquo; uses the conditional
-                  &ldquo;would&rdquo; to suggest an ongoing, inescapable cycle.{' '}
-                  <span className="font-bold text-primary">[E]</span> The adjective
-                  &ldquo;fresh&rdquo; is particularly poignant -- it implies both new pain and
-                  renewed suffering, as though the child&apos;s hurt is perpetually raw. The
-                  finality of the end-stopped line, standing alone as a single-line conclusion,
-                  mirrors the parent&apos;s resigned acceptance that he cannot protect his child
-                  forever. <span className="font-bold text-primary/80">[L]</span> On a deeper level,
-                  the &ldquo;nettles&rdquo; may symbolise all the pain that life will inevitably
-                  inflict upon a child -- a parent&apos;s love is fierce, but it cannot shield a
-                  child from the world permanently.
-                </p>
-              </ModelResponse>
 
-              <ExaminerCommentary>
-                <p>
-                  This response excels through its analysis of the sustained military metaphor and
-                  its connection to the poet&apos;s biographical context. The candidate analyses
-                  individual word choices (&ldquo;regiment&rdquo;, &ldquo;fresh&rdquo;,
-                  &ldquo;would&rdquo;) and links structural features (the isolated final line) to
-                  meaning. The alternative interpretation in the final sentence lifts the response
-                  from analysis into evaluation.
-                </p>
-              </ExaminerCommentary>
+                <ModelResponse label="Model Response (Grade 8/9)">
+                  <p>
+                    <span className="font-bold text-foreground">[P]</span> Scannell presents
+                    parenthood as a battle the parent can never finally win.{' '}
+                    <span className="font-bold text-foreground">[E]</span> The sustained military
+                    metaphor, from the &ldquo;green spears&rdquo; and the &ldquo;regiment of
+                    spite&rdquo; of lines 2 and 3 to the &ldquo;fierce parade&rdquo; of line 11 and
+                    the &ldquo;tall recruits&rdquo; of line 15, turns a small domestic accident into
+                    a war. <span className="font-bold text-primary">[E]</span> The word
+                    &ldquo;regiment&rdquo; implies that the threat is organised, disciplined and
+                    numerous, far more than one parent can defeat. Treating the nettles as soldiers
+                    raises the father&apos;s protective anger from an everyday reaction to something
+                    heroic, and at the same time shows it to be out of proportion: he answers a
+                    sting with a billhook and a &ldquo;funeral pyre&rdquo;.{' '}
+                    <span className="font-bold text-primary/80">[L]</span> This may reflect
+                    Scannell&apos;s own experience as a soldier in the Second World War, where the
+                    language of combat becomes the only vocabulary strong enough for the intensity
+                    of a parent&apos;s love.
+                  </p>
+                  <p>
+                    <span className="font-bold text-foreground">[P]</span> The poem&apos;s final
+                    line conveys a parent&apos;s helplessness.{' '}
+                    <span className="font-bold text-foreground">[E]</span> The words &ldquo;would
+                    often&rdquo; make the son&apos;s pain habitual, a pattern rather than a single
+                    event, and the closing words, &ldquo;sharp wounds again&rdquo;, keep the
+                    language of battle to the very end.{' '}
+                    <span className="font-bold text-primary">[E]</span> The last word rhymes with
+                    the rain of line 14 that brought the nettles back, binding the child&apos;s hurt
+                    to a natural cycle the father cannot stop. The poem is a single sixteen-line
+                    stanza, and the sentence in which he burns the nettles runs straight on into
+                    their return two weeks later, so there is no pause between his victory and its
+                    undoing. <span className="font-bold text-primary/80">[L]</span> On a deeper
+                    level, the nettles may stand for all the pain the world will inflict on a child:
+                    a parent&apos;s love is fierce, but it cannot shield a child from the world for
+                    ever.
+                  </p>
+                </ModelResponse>
+
+                <ExaminerCommentary>
+                  <p>
+                    This response excels through its analysis of the sustained military metaphor and
+                    its connection to the poet&apos;s biographical context. The candidate analyses
+                    individual word choices (&ldquo;regiment&rdquo;, &ldquo;would often&rdquo;) and
+                    links structural features (the single unbroken stanza, the rhyme on the final
+                    word) to meaning. The alternative interpretation in the final sentence lifts the
+                    response from analysis into evaluation.
+                  </p>
+                </ExaminerCommentary>
+              </PracticePoemInCopyright>
             </Section>
 
             {/* ── Practice Poem 3 ──────────────────────────────────── */}
             <Section id="practice-3" title="6c. Practice Poem 3">
-              {/* VERIFY: previous PoemBlock contained heavily fabricated lines presented as Carol Rumens's The Émigrée (e.g. "its hills are paperwhite", "its sky shines like a coin", "my city comes to me in its own white plane", "It lies down in front of me, docile as paper", "city of walls"). These do NOT appear in the real Rumens poem and are dangerous in an "unseen poetry" practice section because students preparing for AQA P&C would mistake them for the set text. Replaced with the verified opening of The Émigrée + a note flagging the rest of the practice extract for re-verification against the primary source before any further use. */}
-              <PoemBlock
+              {/* Until 26 September 2026 this section printed the first stanza, and the model
+                  response analysed phrases that are not in the poem. Every quotation below was
+                  checked word for word on that date against AQA's own copy of the anthology,
+                  linked below, printing the poem by permission of Carol Rumens, and against the
+                  Pearson Edexcel GCSE Poetry Anthology Supplement; line numbers are theirs. */}
+              <PracticePoemInCopyright
                 title={_tr(`The Émigrée`)}
-                author="Carol Rumens (verified opening only - full extract under review)"
-                lines={[
-                  'There once was a country... I left it as a child',
-                  'but my memory of it is sunlight-clear,',
-                  'for it seems I never saw it in that November',
-                  'which, I am told, comes to the mildest city.',
-                  'The worst news I receive of it cannot break',
-                  'my original view, the bright, filled paperweight.',
-                  'It may be at war, it may be sick with tyrants,',
-                  'but I am branded by an impression of sunlight.',
-                  '',
-                  '[Practice extract paused: remaining lines flagged for primary-source verification - restore from your AQA Power & Conflict anthology / Rumens, Thinking of Skins (Bloodaxe, 1993).]',
-                ]}
-              />
-
-              <p className="mb-4 text-sm font-semibold text-foreground">
-                Question: How does the poet present the speaker&apos;s relationship with their
-                homeland?
-              </p>
-
-              <ModelResponse label="Model Response (Grade 8/9)">
-                <p>
-                  <span className="font-bold text-foreground">[P]</span> Rumens presents the
-                  speaker&apos;s homeland as an idealised, almost mythical place that exists more
-                  powerfully in memory than in reality.{' '}
-                  <span className="font-bold text-foreground">[E]</span> The compound adjective
-                  &ldquo;sunlight-clear&rdquo; describes the speaker&apos;s memory, while the
-                  semantic field of light -- &ldquo;paperwhite&rdquo;, &ldquo;luminous&rdquo;,
-                  &ldquo;shines like a coin&rdquo; -- suffuses the homeland in radiance.{' '}
-                  <span className="font-bold text-primary">[E]</span> The simile &ldquo;shines like
-                  a coin&rdquo; is carefully chosen: a coin is small, tangible, and precious --
-                  something to be treasured and held close. Yet coins are also common, suggesting
-                  that this idealised homeland may be a universal experience shared by all
-                  emigrants, not just this speaker.{' '}
-                  <span className="font-bold text-primary/80">[L]</span> The pervasive imagery of
-                  light may also function as a defence mechanism: by refusing to see the homeland
-                  &ldquo;in bad light&rdquo;, the speaker preserves a version of it that can never
-                  be damaged by political reality.
+                author="Carol Rumens"
+                readAt="the Power and Conflict cluster of your AQA anthology"
+                readHref="https://filestore.aqa.org.uk/resources/english/AQA-8702-TG-POEMS.PDF"
+              >
+                <p className="mb-4 text-sm font-semibold text-foreground">
+                  Question: How does the poet present the speaker&apos;s relationship with their
+                  homeland?
                 </p>
-                <p>
-                  <span className="font-bold text-foreground">[P]</span> The poem suggests that the
-                  relationship between the speaker and their homeland transcends physical
-                  separation. <span className="font-bold text-foreground">[E]</span> The
-                  personification of the city -- &ldquo;It lies down in front of me, docile as
-                  paper; / I stroke it&rdquo; -- presents the homeland as a living, intimate
-                  companion. <span className="font-bold text-primary">[E]</span> The verb
-                  &ldquo;stroke&rdquo; implies tenderness and gentleness, as though the speaker is
-                  soothing a beloved animal or child. The simile &ldquo;docile as paper&rdquo;
-                  carries a dual meaning: paper is gentle and submissive, but it is also fragile and
-                  easily destroyed. This hints that the speaker&apos;s cherished memory is more
-                  vulnerable than it appears. <span className="font-bold text-primary/80">[L]</span>{' '}
-                  The repeated refrain, &ldquo;My city takes me dancing&rdquo;, positions the
-                  homeland as an active, joyful presence rather than a passive loss, suggesting that
-                  for the émigrée, identity and belonging are carried within, not tied to physical
-                  borders.
-                </p>
-              </ModelResponse>
 
-              <ExaminerCommentary>
-                <p>
-                  This response demonstrates sophisticated analytical skills. The candidate
-                  identifies the semantic field of light and explores its psychological function;
-                  analyses similes at word level (&ldquo;coin&rdquo;, &ldquo;paper&rdquo;);
-                  considers dual meanings; and connects the imagery to the wider theme of exile and
-                  identity. The response moves fluidly between close analysis and broader thematic
-                  interpretation -- exactly what top-band answers require.
-                </p>
-              </ExaminerCommentary>
+                <ModelResponse label="Model Response (Grade 8/9)">
+                  <p>
+                    <span className="font-bold text-foreground">[P]</span> Rumens presents the
+                    speaker&apos;s homeland as an idealised place that exists more powerfully in
+                    memory than in reality. <span className="font-bold text-foreground">[E]</span>{' '}
+                    The compound adjective &ldquo;sunlight-clear&rdquo; (line 2) describes the
+                    speaker&apos;s memory, and the metaphor of the &ldquo;bright, filled
+                    paperweight&rdquo; (line 6) captures what that memory is like.{' '}
+                    <span className="font-bold text-primary">[E]</span> A paperweight is small,
+                    precious and sealed: it can be held in the hand, but the scene inside it is
+                    fixed under glass and cannot change. The city is preserved rather than lived in,
+                    frozen at the moment she left it as a child. The verb &ldquo;branded&rdquo;
+                    (line 8) goes further: a brand is burnt in, permanent and even painful, so the
+                    memory is something done to her as well as something she treasures.{' '}
+                    <span className="font-bold text-primary/80">[L]</span> Sunlight closes each of
+                    the poem&apos;s three stanzas, so light becomes a defence: whatever news reaches
+                    her, the speaker keeps a version of the city that political reality cannot
+                    damage.
+                  </p>
+                  <p>
+                    <span className="font-bold text-foreground">[P]</span> The poem suggests that
+                    the speaker&apos;s bond with her homeland outlasts physical separation.{' '}
+                    <span className="font-bold text-foreground">[E]</span> In the third stanza the
+                    city is personified: it lies at her feet, &ldquo;docile as paper&rdquo; (line
+                    19), and she tells us &ldquo;I comb its hair&rdquo; (line 20).{' '}
+                    <span className="font-bold text-primary">[E]</span> The simile carries a dual
+                    meaning: paper is gentle and submissive, but it is also fragile and easily torn,
+                    and it is what memories and stories are written on. Combing a child&apos;s hair
+                    is a parent&apos;s care, so the speaker now looks after the city that once
+                    raised her. <span className="font-bold text-primary/80">[L]</span> In the next
+                    line, &ldquo;My city takes me dancing&rdquo;, the city takes the active part, a
+                    joyful presence rather than a passive loss, even as the dance leads into the
+                    walled, hostile city where she is treated as an outsider. For the émigrée,
+                    identity and belonging are carried within, not tied to physical borders.
+                  </p>
+                </ModelResponse>
+
+                <ExaminerCommentary>
+                  <p>
+                    This response demonstrates sophisticated analytical skills. The candidate traces
+                    the pattern of light and explores its psychological function; analyses imagery
+                    at word level (&ldquo;paperweight&rdquo;, &ldquo;branded&rdquo;,
+                    &ldquo;docile&rdquo;); considers dual meanings; and connects the imagery to the
+                    wider theme of exile and identity. The response moves fluidly between close
+                    analysis and broader thematic interpretation, exactly what top-band answers
+                    require.
+                  </p>
+                </ExaminerCommentary>
+              </PracticePoemInCopyright>
             </Section>
 
             {/* ─── 7. COMMON MISTAKES ─────────────────────────────── */}

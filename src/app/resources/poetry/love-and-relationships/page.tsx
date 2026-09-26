@@ -157,7 +157,7 @@ const COMPARISON_DATA: {
     type: 'Romantic',
     themes: 'Loss, betrayal, secrecy',
     tone: 'Bitter, sorrowful',
-    form: 'Regular quatrains, ABAB rhyme',
+    form: 'Four eight-line stanzas, ABAB rhyme',
   },
   {
     poem: "Love's Philosophy",
@@ -197,7 +197,7 @@ const COMPARISON_DATA: {
     type: 'Modern',
     themes: 'Distance, connection, nature vs technology',
     tone: 'Reflective, admiring',
-    form: 'Free verse, no rhyme',
+    form: 'Five tercets, free verse, no rhyme',
   },
   {
     poem: "The Farmer's Bride",
@@ -213,7 +213,7 @@ const COMPARISON_DATA: {
     type: 'Modern',
     themes: 'Parent-child love, letting go',
     tone: 'Nostalgic, accepting',
-    form: 'Five quintains, loose ABACA rhyme',
+    form: 'Four quintains, loose ABACA rhyme',
   },
   {
     poem: 'Eden Rock',
@@ -221,7 +221,7 @@ const COMPARISON_DATA: {
     type: 'Modern',
     themes: 'Memory, family, death',
     tone: 'Serene, dreamlike',
-    form: 'Free verse, varied stanzas',
+    form: 'Four quatrains, a tercet, a lone last line; ABAB half-rhyme',
   },
   {
     poem: 'Follower',
@@ -237,7 +237,7 @@ const COMPARISON_DATA: {
     type: 'Modern',
     themes: 'Parent-child bond, independence',
     tone: 'Uncertain, bittersweet',
-    form: 'Extended sonnet (16 lines)',
+    form: 'Extended sonnet (15 lines)',
   },
   {
     poem: 'Before You Were Mine',
@@ -630,12 +630,12 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Four regular quatrains with an ABAB rhyme scheme create a controlled, restrained
-                  tone that mirrors the secrecy of the affair. The anapaestic metre creates a
-                  mournful, rhythmic quality. The cyclical structure (the final stanza echoes the
-                  first) reinforces that the speaker is trapped in grief. Short, monosyllabic words
-                  (&ldquo;pale,&rdquo; &ldquo;cold,&rdquo; &ldquo;half&rdquo;) emphasise emotional
-                  numbness.
+                  Four regular eight-line stanzas with an alternating ABAB rhyme create a
+                  controlled, restrained tone that mirrors the secrecy of the affair. The anapaestic
+                  metre creates a mournful, rhythmic quality. The cyclical structure (the final
+                  stanza echoes the first) reinforces that the speaker is trapped in grief. Short,
+                  monosyllabic words (&ldquo;pale,&rdquo; &ldquo;cold,&rdquo; &ldquo;half&rdquo;)
+                  emphasise emotional numbness.
                 </p>
               </SubSection>
 
@@ -656,8 +656,11 @@ export default function LoveAndRelationshipsPage() {
                     technique="Semantic field of death / comparative adjective"
                     analysis="The imagery of paleness and coldness associates the end of the relationship with death, foreshadowing emotional death. The comparative 'colder' intensifies the imagery, suggesting physical and emotional withdrawal."
                   />
+                  {/* Checked on 26 September 2026 against the AQA sample anthology
+                      (AQA-8702-TG-POEMS), which prints 'in mine ear' where many
+                      other editions have 'to'. Quote the board's text. */}
                   <Quote
-                    text="A knell to mine ear"
+                    text="A knell in mine ear"
                     technique="Metaphor / auditory imagery"
                     analysis="A knell is a funeral bell, so hearing the former lover's name spoken is likened to a death. This suggests the relationship has died and each mention reopens the grief."
                   />
@@ -750,10 +753,15 @@ export default function LoveAndRelationshipsPage() {
                     technique="Declarative statement / hyperbole"
                     analysis="This bold declaration is the central premise of the speaker's argument: being alone is unnatural. The absolute 'nothing' is hyperbolic, strengthening the persuasion but also revealing a degree of desperation."
                   />
+                  {/* Checked on 26 September 2026 against the AQA sample anthology
+                      (AQA-8702-TG-POEMS) and poets.org. The second line of this
+                      quotation was a variant printed in neither, and the analysis
+                      rested on a word it does not have; it now quotes the line as
+                      AQA prints it. */}
                   <Quote
-                    text="All things by a law divine / In one spirit meet and mingle"
-                    technique="Religious imagery / sibilance"
-                    analysis="The speaker elevates his argument from nature to God, claiming divine authority for union. The sibilance in 'spirit' and 'mingle' creates a soft, seductive sound quality that reinforces the persuasive tone."
+                    text="All things by a law divine / In one another's being mingle"
+                    technique="Religious imagery / inversion"
+                    analysis="The speaker elevates his argument from nature to God, claiming divine authority for union. The inverted 'law divine' has a solemn, scriptural ring, and 'one another's being' suggests that lovers share their very existence, not just their company."
                   />
                   <Quote
                     text="See the mountains kiss high heaven"
@@ -765,10 +773,20 @@ export default function LoveAndRelationshipsPage() {
                     technique="Personification / tactile imagery"
                     analysis="'Clasps' implies a possessive, physical embrace, escalating from the gentler 'kiss' above. The personification of sunlight holding the earth suggests love is as essential as sunlight itself."
                   />
+                  {/* Checked on 26 September 2026. Line 15 of Shelley's poem has
+                      three readings in print, and AQA's own two copies disagree:
+                      the teaching-resource sample (AQA-8702-TG-POEMS, Version 1.2)
+                      prints 'kisses', and the typeset anthology (Past and present,
+                      Version 1.0 June 2015, page 7, checked on the rendered page)
+                      prints 'kissings'. poets.org prints a third, 'sweet work'. Two
+                      fixes on this day each quoted one AQA copy as if it were the
+                      only one. The quotation is now the final line, which every
+                      copy prints alike, and line 15 is described, not quoted,
+                      until someone confirms which copy students are given. */}
                   <Quote
-                    text="What is all this sweet work worth / If thou kiss not me?"
+                    text="If thou kiss not me?"
                     technique="Rhetorical question / volta"
-                    analysis="The final rhetorical question is the poem's emotional climax. All the natural beauty described is declared worthless without reciprocated love. 'Thou' directly addresses the beloved, making the plea personal and urgent."
+                    analysis="The final rhetorical question is the poem's emotional climax. The line before it asks what all this kissing in nature is worth, gathering every image of nature touching nature, the mountains and heaven, the moonbeams and the sea, into one question, and the answer is that all of it is worthless without reciprocated love. 'Thou' directly addresses the beloved, making the plea personal and urgent."
                   />
                 </div>
               </SubSection>
@@ -840,15 +858,15 @@ export default function LoveAndRelationshipsPage() {
                   scheme. The continuous form mirrors the speaker&apos;s unbroken, obsessive thought
                   process. Enjambment and caesura create an unsettling, conversational rhythm that
                   contrasts with the horrific content. The rhyme scheme is subtly irregular,
-                  reflecting the speaker&apos;s unstable mind. The turning point (the murder) occurs
-                  exactly at the poem&apos;s centre, around line 30.
+                  reflecting the speaker&apos;s unstable mind. The turning point (the murder) comes
+                  just past the poem&apos;s centre, in lines 36 to 41.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="The rain set early in tonight, / The sullen wind was soon awake"
+                    text="The rain set early in to-night, / The sullen wind was soon awake"
                     technique="Pathetic fallacy / personification"
                     analysis="The storm mirrors the speaker's turbulent emotional state. The personification of 'sullen' wind creates a hostile, brooding atmosphere that foreshadows the violence to come."
                   />
@@ -1135,40 +1153,51 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Free verse with no regular rhyme scheme, reflecting the conversational,
-                  letter-like quality of the poem. The varied line lengths mirror the natural
-                  rhythms of thought. The poem alternates between descriptions of his life and her
-                  reflections, structurally enacting the back-and-forth of correspondence.
-                  Enjambment connects ideas across lines, just as letters connect the two people.
+                  Five three-line stanzas of free verse with no regular rhyme scheme, reflecting the
+                  conversational, letter-like quality of the poem. The varied line lengths mirror
+                  the natural rhythms of thought. The poem alternates between descriptions of his
+                  life and her reflections, structurally enacting the back-and-forth of
+                  correspondence, and its pronouns move from he, to you, to our in the final stanza.
+                  Enjambment connects ideas across lines and stanzas, just as letters connect the
+                  two people.
                 </p>
               </SubSection>
 
+              {/* Checked on 26 September 2026 against the poem as AQA prints it in
+                  its sample anthology (AQA-8702-TG-POEMS, reprinted with Bloodaxe's
+                  permission). Three of the five quotations here were corrupted and
+                  one was not in the poem at all; each is now a short phrase the
+                  analysis discusses, and the invented one is replaced. Cut again
+                  the same day: POEM_WORDS records the poem as 148 words, but AQA's
+                  text is 120 by the validator's count, so the 21 distinct words
+                  these quotations took were over the 15 per cent cap of 18 while
+                  the test passed. The first and fourth are now shorter. */}
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="In February, digging his garden, planting potatoes"
+                    text="planting potatoes"
                     technique="Present participles / listing"
-                    analysis="The present participles ('digging,' 'planting') create a sense of ongoing, physical activity. The listing of everyday tasks elevates them, suggesting that simple, purposeful work has dignity and meaning."
+                    analysis="The present participles ('digging', 'planting') in the opening line create a sense of ongoing, physical activity. The listing of everyday tasks elevates them, suggesting that simple, purposeful work has dignity and meaning."
                   />
                   <Quote
-                    text="he saw the first lapwings return and drew me / seasons ahead into his new year"
-                    technique="Enjambment / metaphor"
-                    analysis="The enjambment across 'drew me' physically pulls the reader (and the speaker) into his world. The metaphor suggests his letters have the power to transport her, bridging not just distance but time itself."
+                    text="the first lapwings"
+                    technique="Natural imagery / enjambment"
+                    analysis="The return of the lapwings (line 2) marks the turn from winter towards spring, and he notices it and comes inside at once to write to her. The sentence runs on across the line break, as his news runs on from the garden to the page: his letters carry the seasons to her."
                   />
                   <Quote
-                    text="Is his life more real because he digs and plants?"
-                    technique="Rhetorical question / caesura"
-                    analysis="This pivotal question challenges assumptions about authentic living. The speaker wrestles with whether physical labour is more 'real' than intellectual work. The question is left unanswered, reflecting genuine uncertainty."
+                    text="heartful of headlines"
+                    technique="Alliteration / contrast"
+                    analysis="Her own life (line 7) is filled with news rather than soil. The alliterative phrase, a play on a handful, suggests she carries other people's stories while he handles the earth, and the next line sets her at a computer, putting words on a screen: indoor, second-hand work set against his direct contact with the seasons."
                   />
                   <Quote
-                    text="our souls tap out messages across the ether"
+                    text="more real"
+                    technique="Rhetorical question / direct address"
+                    analysis="Line 9, addressed directly to him, asks whether his life is more real because of the physical work he does: a pivotal question that challenges assumptions about authentic living. The speaker wrestles with whether physical labour is more 'real' than her work with words. The next line gives his likely answer, that he would not say so, which leaves her doubt about her own life unresolved rather than settled."
+                  />
+                  <Quote
+                    text="our souls tap out messages"
                     technique="Metaphor / spiritual imagery"
-                    analysis="'Souls' elevates their communication beyond the mundane, suggesting a deep, spiritual connection. 'Tap out' evokes Morse code, implying their bond is urgent and essential. 'Ether' suggests both technology and the spiritual realm."
-                  />
-                  <Quote
-                    text="poised as if to fly or fall"
-                    technique="Simile / antithesis"
-                    analysis="The contrasting possibilities of 'fly or fall' capture the vulnerability and excitement of emotional connection. The speaker is balanced between hope and fear, reflecting the precariousness of long-distance intimacy."
+                    analysis="In the final line, 'Souls' elevates their communication beyond the mundane, suggesting a deep, spiritual connection. 'Tap out' evokes Morse code and typing, implying their bond is urgent and essential. The line ends by measuring the distance between them in cold miles, so the connection is made across the gap, not by closing it."
                   />
                 </div>
               </SubSection>
@@ -1236,19 +1265,24 @@ export default function LoveAndRelationshipsPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   A dramatic monologue with irregular stanza lengths and varied rhyme, reflecting
                   the farmer&apos;s agitated, uneven emotional state. The stanzas grow shorter
-                  towards the end, building tension and urgency. The shift from third person
-                  (&ldquo;we&rdquo;) to first person (&ldquo;I&rdquo;) in the final stanza isolates
-                  the farmer with his desires. Dialect words (&ldquo;maid,&rdquo;
-                  &ldquo;abed&rdquo;) ground the poem in rural life.
+                  towards the end, building tension and urgency. The pronouns move between the
+                  collective &ldquo;we&rdquo; of the chase, when the neighbours hunt her with him,
+                  and the farmer&apos;s lone &ldquo;I&rdquo;, which isolates him with his desires.
+                  Dialect words (&ldquo;maid,&rdquo; &ldquo;abed&rdquo;) ground the poem in rural
+                  life.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
+                  {/* Checked on 26 September 2026 against the AQA sample anthology
+                      (AQA-8702-TG-POEMS). This quotation fused two separate lines
+                      into one the poem does not have, and the analysis
+                      below misquoted the leveret simile; both now follow the text. */}
                   <Quote
-                    text="We chased her, caught her"
+                    text="We chased her ... We caught her, fetched her home at last"
                     technique="Short clauses / violent verbs"
-                    analysis="The abrupt, monosyllabic clauses mirror the brutal efficiency of the chase. The language of hunting ('chased,' 'caught') reduces the bride to prey, revealing how the community treats her as something to be captured and controlled."
+                    analysis="The abrupt, monosyllabic clauses mirror the brutal efficiency of the chase. The language of hunting ('chased,' then 'caught' three lines later) reduces the bride to prey, revealing how the community treats her as something to be captured and controlled."
                   />
                   <Quote
                     text="Too young maybe"
@@ -1258,7 +1292,7 @@ export default function LoveAndRelationshipsPage() {
                   <Quote
                     text="She does the work about the house / As well as most, but like a mouse"
                     technique="Simile / animal imagery"
-                    analysis="The simile compares the bride to a mouse, emphasising her fear, smallness, and silence. Throughout the poem she is associated with animals ('like a leveret,' 'like a mouse'), dehumanising her and emphasising the power imbalance."
+                    analysis="The simile compares the bride to a mouse, emphasising her fear, smallness, and silence. Throughout the poem she is associated with animals ('shy as a leveret,' 'like a mouse'), dehumanising her and emphasising the power imbalance."
                   />
                   <Quote
                     text="Her eyes, her hair, her hair!"
@@ -1315,64 +1349,73 @@ export default function LoveAndRelationshipsPage() {
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   C. Day-Lewis (1904&ndash;1972) was UK Poet Laureate from 1968 until his death. The
-                  poem was published in 1956 in <em>The Gate and Other Poems</em> and is dedicated
-                  to his eldest son <strong>Sean Day-Lewis</strong> (the journalist), who at age 18
-                  had just started boarding school. (Note: this is <em>not</em> Daniel Day-Lewis the
-                  actor &mdash; Daniel was the poet&apos;s youngest son and was not yet born when
-                  the poem was written in 1956.) Written eighteen years after the event, the poem
-                  explores how a parent&apos;s love means learning to let go, and how that moment of
-                  separation remains vivid and painful years later.
+                  poem was written in 1956, published in 1962 in <em>The Gate and Other Poems</em>,
+                  and is addressed to his eldest son <strong>Sean Day-Lewis</strong> (later a
+                  journalist). It recalls a day about eighteen years earlier, when Sean was a young
+                  boy playing his first game of football at school. (Note: this is <em>not</em>{' '}
+                  Daniel Day-Lewis the actor: Daniel was the poet&apos;s youngest son and was not
+                  yet born when the poem was written in 1956.) Written eighteen years after the
+                  event, the poem explores how a parent&apos;s love means learning to let go, and
+                  how that moment of separation remains vivid and painful years later.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker recalls watching his son walk away to his first football game at
-                  school, 18 years earlier. The child looked uncertain, &ldquo;like a satellite /
-                  Wrenched from its orbit.&rdquo; The father reflects on how painful it was to let
-                  his child go, but acknowledges that love must allow independence. The poem
-                  concludes that &ldquo;selfhood begins with a walking away&rdquo; &mdash;
-                  independence requires separation.
+                  The speaker recalls watching his young son play his first game of football at
+                  school, eighteen years earlier, and then drift off towards the school among the
+                  other boys. The child looked uncertain, and the father compares him to a satellite
+                  forced out of its orbit (lines 4 and 5). The father reflects on how painful it was
+                  to let his child go, but acknowledges that love must allow independence. The poem
+                  concludes (lines 19 and 20) that a self is formed by leaving, and that love shows
+                  itself in releasing: independence requires separation.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Five quintains (five-line stanzas) with a loose ABACA rhyme scheme. The regular
-                  form provides stability, reflecting the parent&apos;s steady, enduring love.
-                  Enjambment across stanzas mimics the ongoing, unresolved nature of parental
-                  anxiety. The poem moves chronologically from the specific memory (stanzas
-                  1&ndash;3) to broader philosophical reflection (stanzas 4&ndash;5), showing how
-                  the father has processed the experience over time.
+                  Four quintains (five-line stanzas), 20 lines in all, with a loose ABACA rhyme
+                  scheme. The regular form provides stability, reflecting the parent&apos;s steady,
+                  enduring love. The sentence that runs on from the first stanza into the second
+                  mimics the ongoing, unresolved nature of parental anxiety. The poem moves from the
+                  specific memory (stanzas 1 and 2), through the image of the seed (stanza 3), to
+                  broader philosophical reflection (stanza 4), showing how the father has processed
+                  the experience over time.
                 </p>
               </SubSection>
 
+              {/* Checked on 26 September 2026 against the poem as AQA printed it in
+                  full in the June 2020 GCSE English Literature Paper 2 (8702/2). This
+                  section once quoted 42 distinct words of a 20-line poem, and said it
+                  had five stanzas (it has four) and that Sean was 18 at the time (the
+                  poem looks back eighteen years to his childhood). Each quotation is
+                  now the phrase its analysis discusses. */}
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="like a satellite / Wrenched from its orbit"
+                    text="Wrenched from its orbit"
                     technique="Simile / violent verb"
-                    analysis="The space imagery suggests the child was once in the parent's gravitational pull. 'Wrenched' is a violent, painful verb, conveying the force required to let go. The child must leave the parent's orbit to find their own path."
+                    analysis="The simile across lines 4 and 5 compares the boy to a satellite: the space imagery suggests the child was once in the parent's gravitational pull. 'Wrenched' is a violent, painful verb, conveying the force required to let go. The child must leave the parent's orbit to find their own path."
                   />
                   <Quote
-                    text="like a winged seed loosened from its parent stem"
+                    text="winged seed"
                     technique="Simile / natural imagery"
-                    analysis="This organic simile presents separation as natural and necessary for growth. Unlike 'wrenched,' this image is gentler, suggesting the father is coming to terms with the separation. The seed must leave to grow into something new."
+                    analysis="This organic simile (line 12) presents separation as natural and necessary for growth. The seed is loosened from the plant that bore it rather than torn away: unlike 'wrenched,' this image is gentler, suggesting the father is coming to terms with the separation. The seed must leave to grow into something new."
                   />
                   <Quote
-                    text="How selfhood begins with a walking away"
+                    text="selfhood begins with a walking away"
                     technique="Philosophical statement / title echo"
-                    analysis="The poem's central message: identity requires independence. 'Selfhood' is a weighty, abstract noun that elevates the everyday moment of a child leaving into something existentially significant."
+                    analysis="The poem's central message (line 19): identity requires independence. 'Selfhood' is a weighty, abstract noun that elevates the everyday moment of a child leaving into something existentially significant, and the line ends by echoing the title."
                   />
                   <Quote
-                    text="And love is proved in the letting go"
+                    text="the letting go"
                     technique="Paradox / concluding aphorism"
-                    analysis="The poem's final line is a paradox: true love is demonstrated not by holding on, but by releasing. This inverts the expected definition of love (as closeness) and redefines it as the courage to allow freedom."
+                    analysis="The poem's final line (line 20) is a paradox: true love is demonstrated not by holding on, but by releasing. This inverts the expected definition of love (as closeness) and redefines it as the courage to allow freedom."
                   />
                   <Quote
-                    text="I can see / You walking away from me towards the school"
+                    text="I can see"
                     technique="Present tense / enjambment"
-                    analysis="Although describing a past event, the present tense 'I can see' makes the memory vivid and immediate, suggesting it has never faded. The enjambment across 'I can see / You' mimics the act of watching and the reluctance to let the moment go."
+                    analysis="Although describing a past event, the present tense of line 6 makes the memory vivid and immediate, suggesting it has never faded. The sentence runs on into line 7, where the boy heads off to school, and the line break mimics the act of watching and the reluctance to let the moment go."
                   />
                 </div>
               </SubSection>
@@ -1421,61 +1464,67 @@ export default function LoveAndRelationshipsPage() {
                   Charles Causley was a Cornish poet who wrote this poem late in life, after both
                   his parents had died. His father died when Causley was young, and his mother
                   later. The poem imagines a reunion with his parents in an idealised, Eden-like
-                  landscape. &ldquo;Eden Rock&rdquo; is an invented threshold place. Causley
-                  confirmed: &ldquo;I have no idea, I mean I made it up!&rdquo; Some interpretations
-                  link it to the biblical Eden + Causley&rsquo;s Cornish landscape, but the place
-                  itself is fictional. The poem is widely read as being about approaching death.
+                  landscape. Eden Rock is usually read as an invented threshold place rather than
+                  one on a map: its name joins the biblical Eden to the Cornish landscape Causley
+                  grew up in. The poem is widely read as being about approaching death.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The speaker describes his parents at a picnic by a stream, depicted with precise,
-                  loving detail &mdash; his mother&apos;s hair, his father&apos;s suit, the specific
-                  items in the picnic. His parents beckon him to cross the stream to join them. The
-                  final line, &ldquo;I had not thought that it would be like this,&rdquo; suggests
-                  the speaker is approaching death and finding it calmer and more peaceful than
-                  expected.
+                  loving detail: his mother&apos;s hair, his father&apos;s suit, the specific items
+                  in the picnic. His parents beckon him to cross the stream to join them. The final
+                  line (line 20), set apart on its own, suggests the speaker is approaching death
+                  and finding it calmer and more peaceful than expected.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Free verse with varied stanza lengths. The precise, concrete details (his mother
-                  is &ldquo;twenty-three,&rdquo; wearing a &ldquo;sprigged dress&rdquo;) create a
-                  hyper-real quality that paradoxically makes the scene feel dreamlike. The final
-                  single-line stanza stands alone, separated like the speaker from his parents
-                  &mdash; or like the boundary between life and death. The calm, measured tone
-                  creates serenity rather than grief.
+                  Four quatrains, a three-line stanza and a single final line, 20 lines in all, held
+                  together by a loose ABAB pattern of half-rhymes rather than written in free verse.
+                  The precise, concrete details (his mother&apos;s exact age and the pattern of her
+                  dress, line 5) create a hyper-real quality that paradoxically makes the scene feel
+                  dreamlike. The final single-line stanza stands alone, separated like the speaker
+                  from his parents, or like the boundary between life and death. The calm, measured
+                  tone creates serenity rather than grief.
                 </p>
               </SubSection>
 
+              {/* Checked on 26 September 2026 against the Poetry Archive text
+                  (poetryarchive.org/poem/eden-rock, used by permission of the
+                  Causley Estate) and the AQA sample anthology. This section once
+                  quoted five whole lines, 54 distinct words, called the poem free
+                  verse, and printed a remark attributed to Causley that no source
+                  found could confirm. Each quotation is now the phrase its
+                  analysis discusses. */}
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="They are waiting for me somewhere beyond Eden Rock:"
+                    text="somewhere beyond Eden Rock"
                     technique="Biblical allusion / spatial metaphor"
-                    analysis="'Eden' evokes paradise, suggesting the afterlife. 'Beyond' implies something past the boundary of the known world. The present tense 'are waiting' makes the vision feel real and ongoing, as though his parents genuinely exist somewhere, waiting."
+                    analysis="'Eden' evokes paradise, suggesting the afterlife. 'Beyond' implies something past the boundary of the known world. The present tense of the opening line makes the vision feel real and ongoing, as though his parents genuinely exist somewhere, waiting for him."
                   />
                   <Quote
-                    text="My mother, twenty-three, in a sprigged dress"
+                    text="My mother, twenty-three"
                     technique="Precise detail / present tense"
-                    analysis="The specific age and clothing create a photograph-like clarity. By presenting his mother at 23, Causley restores her to youth, reversing time and death. The present tense makes the past feel eternally present."
+                    analysis="The specific age, and the 'sprigged dress' that follows in line 5, create a photograph-like clarity. By presenting his mother at 23, Causley restores her to youth, reversing time and death. The present tense of the stanza makes the past feel eternally present."
                   />
                   <Quote
-                    text="The sky whitens as if lit by three suns"
+                    text="lit by three suns"
                     technique="Simile / light imagery"
-                    analysis="The intensifying light suggests something supernatural or transcendent. 'Three suns' creates an otherworldly atmosphere, moving the poem from realistic memory into visionary territory. The whiteness may represent the threshold between life and death."
+                    analysis="The simile in line 13, as the sky whitens, suggests something supernatural or transcendent. 'Three suns' creates an otherworldly atmosphere, moving the poem from realistic memory into visionary territory. The whiteness may represent the threshold between life and death."
                   />
                   <Quote
-                    text="My father, twenty-five, in the same suit"
+                    text="the same suit"
                     technique="Specific detail / parallelism"
-                    analysis="The parallel construction with the mother's description ('My mother, twenty-three') creates symmetry and completeness. 'The same suit' suggests this is a perfect, unchanging memory, fixed forever at a specific moment."
+                    analysis="Line 2 gives the father's age and clothing in the same pattern as the mother's description ('My mother, twenty-three') three lines later, creating symmetry and completeness. 'The same suit' suggests this is a perfect, unchanging memory, fixed forever at a specific moment."
                   />
                   <Quote
-                    text="I had not thought that it would be like this"
+                    text="it would be like this"
                     technique="Understatement / ambiguity"
-                    analysis="The poem's final line is deliberately ambiguous. 'This' could refer to death, the afterlife, or the experience of memory. The understatement - no grand emotion, just quiet surprise - makes the moment deeply moving. The past tense 'had not thought' suggests the crossing has already begun."
+                    analysis="The poem's final line (line 20) is deliberately ambiguous. 'This' could refer to death, the afterlife, or the experience of memory. The understatement, no grand emotion, just quiet surprise, makes the moment deeply moving. The past perfect that opens the line suggests the crossing has already begun."
                   />
                 </div>
               </SubSection>
@@ -1534,50 +1583,46 @@ export default function LoveAndRelationshipsPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The speaker remembers following his father as he ploughed the fields, admiring his
                   skill and strength. The young Heaney stumbled behind, wanting to be just like his
-                  father but always falling short. The poem&apos;s final stanza reverses the
-                  relationship: now the ageing father follows the adult son, and the speaker feels
-                  the burden of this role reversal, closing with the blunt, guilty admission that
-                  his father &ldquo;will not go away.&rdquo;
+                  father but always falling short: in the fifth stanza he says he longed to become a
+                  ploughman himself, yet all he managed was to trail behind. The poem&apos;s final
+                  stanza reverses the relationship: now the ageing father follows the adult son, and
+                  the speaker feels the burden of this role reversal, closing on a blunt, guilty
+                  admission in the last line (line 24).
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Six quatrains with an ABAB half-rhyme scheme. The regular, sturdy form mirrors the
-                  disciplined, rhythmic work of ploughing. The poem is structured chronologically,
-                  with the final stanza creating a sudden reversal. Half-rhymes
-                  (&ldquo;plough/follow,&rdquo; &ldquo;sock/pluck&rdquo;) create a sense of things
-                  not quite fitting together, reflecting the son&apos;s inability to match his
-                  father.
+                  Six quatrains rhyming ABAB, mixing full rhymes with half-rhymes. The regular,
+                  sturdy form mirrors the disciplined, rhythmic work of ploughing. The poem is
+                  structured chronologically, with the final stanza creating a sudden reversal.
+                  Half-rhymes (&ldquo;plough/follow&rdquo;, lines 17 and 19;
+                  &ldquo;sock/pluck&rdquo;, lines 6 and 8) create a sense of things not quite
+                  fitting together, reflecting the son&apos;s inability to match his father.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="My father worked with a horse-plough, / His shoulders globed like a full sail strung"
+                    text="globed like a full sail strung"
                     technique="Simile / visual imagery"
-                    analysis="The nautical simile presents the father as powerful and commanding, like a ship at full sail. 'Globed' emphasises the rounded, muscular physicality of his shoulders. The father is presented as heroic and larger-than-life through the child's admiring gaze."
+                    analysis="The nautical simile in line 2 presents the father's shoulders as powerful and commanding, swelling like the sail of a ship. The verb 'globed' emphasises the rounded, muscular physicality of his body. The father is presented as heroic and larger-than-life through the child's admiring gaze."
                   />
                   <Quote
-                    text="An expert. He would set the wing / And fit the bright steel-pointed sock"
-                    technique="Technical vocabulary / enjambment"
-                    analysis="The agricultural vocabulary ('wing,' 'sock,' 'headrig') demonstrates the father's expertise and the speaker's deep familiarity with his world. The short sentence 'An expert' is a direct, emphatic declaration of admiration."
+                    text="An expert."
+                    technique="Minor sentence / technical vocabulary"
+                    analysis="The two-word sentence that opens the second stanza (line 5) is a direct, emphatic declaration of admiration. The rest of the stanza names the parts of the plough and the 'headrig', the strip at the end of the field where the team turns, showing the father's expertise and the speaker's deep familiarity with his world."
                   />
                   <Quote
-                    text="I stumbled in his hob-nailed wake"
+                    text="hob-nailed wake"
                     technique="Nautical metaphor / verb choice"
-                    analysis="'Wake' continues the nautical imagery, placing the father as a great ship and the child bobbing behind. 'Stumbled' emphasises the child's clumsiness and inability to keep up, creating a poignant gap between aspiration and reality."
+                    analysis="'Wake' (line 13) continues the nautical imagery, placing the father as a great ship and the child bobbing behind in the track of his heavy boots. The verb 'stumbled' in the same line emphasises the child's clumsiness and inability to keep up, creating a poignant gap between aspiration and reality."
                   />
                   <Quote
-                    text="I wanted to grow up and plough"
-                    technique="Simple declarative / childhood desire"
-                    analysis="The simple, direct statement captures childhood ambition with touching honesty. The desire to 'plough' is both literal (to farm) and metaphorical (to be as capable and strong as his father)."
-                  />
-                  <Quote
-                    text="But today / It is my father who keeps stumbling / Behind me, and will not go away"
+                    text="keeps stumbling ... will not go away"
                     technique="Role reversal / volta"
-                    analysis="The devastating final reversal uses the same verb 'stumbling' now applied to the father, completing the role reversal. 'Will not go away' is deliberately ambiguous: it conveys both the father's physical persistence and the speaker's guilt, which will not leave him."
+                    analysis="The devastating final reversal (lines 23 to 24) reuses the verb of line 13, now applied to the father, completing the role reversal. The last clause is deliberately ambiguous: it conveys both the father's physical persistence and the speaker's guilt, which will not leave him."
                   />
                 </div>
               </SubSection>
@@ -1639,35 +1684,36 @@ export default function LoveAndRelationshipsPage() {
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The speaker asks his mother to help him measure his new home using a tape measure.
-                  She holds the base (the &ldquo;zero-end&rdquo;) while he walks further and further
-                  away, up the stairs, to the loft. The tape measure becomes a metaphor for the
-                  umbilical cord connecting them. As he reaches the skylight, he is at the point of
-                  breaking free, caught between the safety of his mother and the freedom of the open
-                  sky.
+                  She holds the end of the tape at the starting point (line 5) while he walks
+                  further and further away, up the stairs, to the loft. The tape measure becomes a
+                  metaphor for the umbilical cord connecting them. As he reaches a hatch in the
+                  roof, with nothing but sky beyond it, he is at the point of breaking free, caught
+                  between the safety of his mother and the freedom of the open air.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  An extended sonnet of 16 lines (two lines beyond the traditional 14), reflecting
+                  An extended sonnet of 15 lines (one line beyond the traditional 14), reflecting
                   how the speaker stretches beyond the conventional form just as he stretches beyond
                   his mother&apos;s reach. The near-sonnet form connects the poem to the tradition
-                  of love poetry. The poem moves spatially upward through the house (ground floor,
-                  stairs, loft, skylight), mirroring the child&apos;s growth toward independence.
+                  of love poetry. The poem moves spatially upward through the house (rooms, stairs,
+                  loft, the hatch to the sky), mirroring the child&apos;s growth toward
+                  independence.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="Mother, any distance greater than a single span / requires a second pair of hands"
+                    text="a single span"
                     technique="Direct address / metaphor"
-                    analysis="The opening directly addresses the mother, establishing intimacy. The practical observation about measuring becomes a metaphor: for any significant life distance, the speaker needs his mother's support. 'Single span' puns on the hand measurement and a lifetime."
+                    analysis="The opening line directly addresses the mother, establishing intimacy. The practical observation about measuring becomes a metaphor: for any significant life distance, the speaker still needs his mother's help, the extra pair of hands the second line asks for. A span is the width of an outstretched hand, and the word also suggests a lifespan."
                   />
                   <Quote
-                    text="You at the zero-end, me with the spool of tape"
+                    text="zero-end"
                     technique="Spatial metaphor"
-                    analysis="The mother anchors the 'zero-end' - the starting point, the origin. The speaker moves away with the 'spool,' which can extend but is still connected. This precisely captures the parent-child dynamic: she is the fixed foundation; he is the explorer."
+                    analysis="In line 5 the mother holds the 'zero-end' of the tape - the starting point, the origin. The speaker moves away with the 'spool', which can extend but is still connected. This precisely captures the parent-child dynamic: she is the fixed foundation; he is the explorer."
                   />
                   <Quote
                     text="Anchor. Kite."
@@ -1675,14 +1721,14 @@ export default function LoveAndRelationshipsPage() {
                     analysis="These two stripped-back metaphors are the poem's most powerful moment. The mother is the 'anchor' (steady, grounding, safe) and the child is the 'kite' (soaring, free, but tethered). The full stop between them enacts the tension between connection and separation."
                   />
                   <Quote
-                    text="I space-walk through the empty bedrooms"
+                    text="space-walk"
                     technique="Metaphor / verb choice"
-                    analysis="'Space-walk' suggests the son is an astronaut exploring unknown territory, making the new home feel alien and exciting. It also implies weightlessness and vulnerability - he is untethered and in unfamiliar space."
+                    analysis="In line 9 the son moves through the empty rooms of the new house like an astronaut on a space-walk, exploring unknown territory and making the new home feel alien and exciting. It also implies weightlessness and vulnerability, with the tape unwinding behind him as his lifeline."
                   />
                   <Quote
                     text="to fall or fly"
                     technique="Alliteration / antithesis"
-                    analysis="The alliterative pair encapsulates the poem's central tension: independence brings both the possibility of failure ('fall') and freedom ('fly'). The ambiguity is deliberate - the outcome is uncertain, and that uncertainty is the cost of growing up."
+                    analysis="The alliterative pair in the last line (line 15) encapsulates the poem's central tension: independence brings both the possibility of failure ('fall') and freedom ('fly'). The ambiguity is deliberate - the outcome is uncertain, and that uncertainty is the cost of growing up."
                   />
                 </div>
               </SubSection>
@@ -1733,7 +1779,7 @@ export default function LoveAndRelationshipsPage() {
                   point. Duffy reimagines her mother as a glamorous, carefree young woman and
                   expresses a possessive, retrospective longing for a version of her mother she
                   never knew. The title reverses the usual parent-child dynamic: it is the child who
-                  &ldquo;owns&rdquo; the parent.
+                  claims to own the parent.
                 </p>
               </SubSection>
 
@@ -1742,9 +1788,9 @@ export default function LoveAndRelationshipsPage() {
                   The speaker imagines her mother ten years before her birth: laughing with friends
                   on a Glasgow street, dancing, being glamorous. She contrasts this carefree youth
                   with the reality of motherhood, suggesting that becoming a parent meant her mother
-                  lost some of her sparkle. The poem is possessive &mdash; the speaker repeatedly
-                  claims her mother (&ldquo;you were mine&rdquo;) and suggests that even before
-                  birth, the mother somehow belonged to the future child.
+                  lost some of her sparkle. The poem is possessive: the speaker repeatedly claims
+                  her mother (the title&apos;s phrase returns in lines 9 and 20) and suggests that
+                  even before birth, the mother somehow belonged to the future child.
                 </p>
               </SubSection>
 
@@ -1753,38 +1799,37 @@ export default function LoveAndRelationshipsPage() {
                   Four quintains (five-line stanzas) in free verse, each stanza roughly
                   corresponding to a different time period or photograph. The poem moves
                   non-chronologically, jumping between past and present, mimicking how we browse
-                  photographs. The consistent use of second person (&ldquo;you&rdquo;) throughout
-                  creates intimacy and a sense of direct address, as though speaking to the
-                  photograph.
+                  photographs. The consistent use of second-person address throughout creates
+                  intimacy and a sense of direct address, as though speaking to the photograph.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="I'm ten years away from the corner you laugh on"
+                    text="I'm ten years away"
                     technique="Temporal distortion / spatial metaphor"
-                    analysis="The speaker describes time as physical distance, as though she is approaching through space toward her mother. 'Ten years away' suggests the child is already moving toward existence, creating a sense of fate and inevitability."
+                    analysis="The opening line describes time as physical distance, as though the speaker is approaching through space towards the street corner where her mother stands laughing with her friends. 'Ten years away' suggests the child is already moving toward existence, creating a sense of fate and inevitability."
                   />
                   <Quote
-                    text="The decade ahead of my loud, possessive yell was the best one, eh?"
+                    text="loud, possessive yell"
                     technique="Colloquial language / self-awareness"
-                    analysis="'Loud, possessive yell' is a strikingly honest description of a baby's cry, acknowledging that the child's arrival was demanding and possessive. The rhetorical 'eh?' creates an intimate, conversational tone. The speaker recognises that motherhood cost her mother something."
+                    analysis="Line 11 gives a strikingly honest description of a baby's cry, acknowledging that the child's arrival was demanding and possessive. The line ends on the colloquial question tag 'eh?', as the speaker asks whether the decade before her birth was her mother's best, which creates an intimate, conversational tone. The speaker recognises that motherhood cost her mother something."
                   />
                   <Quote
-                    text="your polka-dot dress blows round your legs. Marilyn"
+                    text="polka-dot dress"
                     technique="Pop culture allusion / visual imagery"
-                    analysis="The comparison to Marilyn Monroe elevates the mother to iconic status. The polka-dot dress blowing in the wind recreates the famous Monroe image, presenting the mother as glamorous and desirable - an identity she had before becoming 'just' a mother."
+                    analysis="Line 5 ends on the single name 'Marilyn', comparing the mother to Marilyn Monroe and elevating her to iconic status. The dress caught by the wind recalls the famous image of Monroe's skirt billowing over a subway grating, presenting the mother as glamorous and desirable - an identity she had before becoming simply a mother."
                   />
                   <Quote
-                    text="I knew you would dance like that"
+                    text="I knew you would dance"
                     technique="Dramatic irony / temporal manipulation"
-                    analysis="The speaker claims knowledge of her mother's past self from a position of future existence, creating an eerie temporal collapse. It asserts a deep, almost supernatural connection between mother and child."
+                    analysis="At the end of line 8 the speaker claims knowledge of her mother's past self from a position of future existence, creating an eerie temporal collapse. It asserts a deep, almost supernatural connection between mother and child."
                   />
                   <Quote
-                    text="Even then I wanted the bold girl / winking in Portobello, somewhere in France"
+                    text="I wanted the bold girl"
                     technique="Possessive desire / enjambment"
-                    analysis="'Even then' implies the speaker's possessive love existed before she was born, which is both tender and unsettling. The enjambment across 'bold girl' emphasises the mother's confidence and freedom. The speaker wants the young, bold version of her mother."
+                    analysis="The line before ends on 'Even then', which implies the speaker's possessive love existed before she was born, both tender and unsettling; the line break makes the reader wait to learn what she wanted. Line 18 then places the young, confident mother at Portobello, the seaside at Edinburgh, before running on into the next line. The speaker wants the young, bold version of her mother."
                   />
                 </div>
               </SubSection>
@@ -1834,8 +1879,9 @@ export default function LoveAndRelationshipsPage() {
                   an argument, who observe swans and find reconciliation in the natural world. Swans
                   are traditionally symbols of lifelong fidelity (they mate for life), and the poem
                   uses this symbolism to suggest that the couple&apos;s bond, though strained, is
-                  enduring. The poem comes from his 2005 collection <em>Skirrid Hill</em> (skirrid
-                  meaning &ldquo;divorce&rdquo; or &ldquo;separation&rdquo; in Welsh).
+                  enduring. The poem comes from his 2005 collection <em>Skirrid Hill</em>, named
+                  after a mountain in Monmouthshire whose Welsh name, Ysgyryd, is traced to a word
+                  meaning divorce or separation.
                 </p>
               </SubSection>
 
@@ -1844,8 +1890,9 @@ export default function LoveAndRelationshipsPage() {
                   After two days of rain (and implied arguments), a couple walk silently by a lake.
                   They observe swans tipping their bodies into the water and resurfacing. The sight
                   of the swans prompts a reconnection: the couple&apos;s hands eventually find each
-                  other &ldquo;like a pair of wings settling after flight.&rdquo; The poem traces a
-                  journey from distance and tension to quiet reconciliation.
+                  other and fold together, and the final line compares them to a bird&apos;s wings
+                  at rest (line 20). The poem traces a journey from distance and tension to quiet
+                  reconciliation.
                 </p>
               </SubSection>
 
@@ -1862,29 +1909,24 @@ export default function LoveAndRelationshipsPage() {
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="The clouds had given their all - two days of rain and then a break"
+                    text="a break"
                     technique="Pathetic fallacy / double meaning"
-                    analysis="The weather mirrors the relationship: 'two days of rain' suggests a period of emotional turmoil, and 'a break' is ambiguous - both a break in the weather and a relationship break. 'Given their all' personifies the clouds, implying exhaustion after conflict."
+                    analysis="The weather mirrors the relationship. The opening line personifies the clouds as having exhausted themselves, and the rain that has lasted two days suggests a period of emotional turmoil. The pause that ends line 2 is ambiguous: both a break in the weather and a break in the relationship."
                   />
                   <Quote
-                    text="waterlogged earth / gulping for breath"
+                    text="gulping for breath"
                     technique="Personification / enjambment"
-                    analysis="The earth is personified as struggling to breathe, mirroring the couple's emotional suffocation during their argument. The enjambment across 'earth / gulping' enacts the gasping, with the line break creating a pause before 'gulping.'"
+                    analysis="The sodden ground is personified as struggling to breathe, mirroring the couple's emotional suffocation during their argument. The line breaks just before this phrase (lines 4 to 5), so the reader pauses as if catching a breath."
                   />
                   <Quote
-                    text="they halved themselves in the water, / icebergs of white feather"
+                    text="icebergs of white feather"
                     technique="Metaphor / visual imagery"
-                    analysis="The swans are 'halved' - half visible, half hidden - like the couple, who have hidden emotions beneath the surface. The 'iceberg' metaphor reinforces this: there is much more beneath the surface than is visible."
+                    analysis="As the swans tip under, the previous line describes them as 'halved' by the water (line 10): half visible, half hidden, like the couple, who have hidden emotions beneath the surface. The iceberg metaphor in line 11 reinforces this: there is much more beneath the surface than is visible."
                   />
                   <Quote
-                    text="and I noticed our hands, that had moved somehow, / palm to palm"
-                    technique="Tactile imagery / religious allusion"
-                    analysis="'Somehow' suggests the reconnection was unconscious and natural, not forced. 'Palm to palm' echoes Romeo and Juliet's first meeting (a 'holy palmers' kiss'), elevating the mundane gesture to something sacred."
-                  />
-                  <Quote
-                    text="like a pair of wings settling after flight"
+                    text="a pair of wings"
                     technique="Simile / structural shift"
-                    analysis="The final simile compares their joined hands to wings, connecting them to the swans. 'Settling after flight' implies the turbulence is over. The couplet form (after tercets) physically enacts the coming together."
+                    analysis="The final simile (line 20) compares their joined hands to wings, connecting them to the swans. Just before it, in line 17, the speaker notices that their hands had 'somehow' crossed the gap between them, which suggests the reconnection was unconscious and natural, not forced. 'Settling after flight' implies the turbulence is over. The couplet form (after tercets) physically enacts the coming together."
                   />
                 </div>
               </SubSection>
@@ -1954,41 +1996,43 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Free verse with no regular rhyme scheme, but a strong internal musicality created
-                  by phonetic spelling and repetition. The alternation between customers&apos;
-                  complaints (italicised) and the speaker&apos;s voice creates a comic, rhythmic
-                  contrast. The poem&apos;s structure mirrors the speaker&apos;s life: shuttling
-                  between shop duties and love. Refrain-like repetitions (&ldquo;my bride&rdquo;)
-                  create a song-like quality, fitting the title.
+                  Free verse with irregular, comic rhyme rather than a fixed scheme, and a strong
+                  musicality created by phonetic spelling and repetition. The alternation between
+                  the customers&apos; complaints (italicised) and the speaker&apos;s voice creates a
+                  comic, rhythmic contrast. The poem&apos;s structure mirrors the speaker&apos;s
+                  life: shuttling between shop duties and love. Refrains create a song-like quality,
+                  fitting the title: the shoppers&apos; question returns at lines 12 and 37, the
+                  same two words introduce the bride three times (lines 22, 27 and 30), and four
+                  closing couplets open with the same phrase (lines 51 to 57).
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="I run my daddy's shop"
-                    technique="Colloquial diction / cultural context"
-                    analysis="The informal 'daddy' immediately establishes the familial duty and cultural context. The present tense 'I run' suggests routine, but also implies the father's expectations. The speaker's identity is defined partly by family obligation."
+                    text="just one ov my daddy's shops"
+                    technique="Colloquial diction / phonetic spelling"
+                    analysis="The opening line establishes family duty at once. The informal 'daddy's' is affectionate but also points to the father's authority, and 'just one' hints that the father owns several shops, so the son runs only one part of a family business. The phonetic 'ov' puts the speaker's Punjabi-English voice on the page from the start."
                   />
                   <Quote
-                    text="my bride / she effing at my mum / in all di colours of Punjabi"
-                    technique="Code-switching / humour"
-                    analysis="The wife swears at his mother 'in all di colours of Punjabi,' which is both shocking and celebratory. The phrase 'all di colours' transforms her anger into something vibrant and beautiful. The wife is rebellious and unconventional, challenging expectations."
+                    text="Hey Singh, ver yoo bin?"
+                    technique="Phonetic spelling / comic chorus"
+                    analysis="The shoppers' question (lines 12 and 37) is spelt as they speak it, so the whole multicultural community is heard, not just the speaker. Each time it is followed by a list of the shop's failings: lemons that are really limes, bananas that are plantain, a dirty floor, out-of-date milk and stale bread. The italicised chorus is comic, setting worldly complaints against the speaker's romantic priorities."
                   />
                   <Quote
-                    text="she is di milk dat is churn / she is di bread dat is bake"
-                    technique="Metaphor / phonetic spelling"
-                    analysis="The wife is described through shop imagery - milk and bread - humorously blending romance with the everyday world of the shop. The phonetic spelling ('dat,' 'di') captures the speaker's accent and cultural identity. She is essential sustenance."
+                    text="in all di colours of Punjabi"
+                    technique="Metaphor / humour"
+                    analysis="Introduced by the refrain 'my bride' (line 22), the wife swears at his mother (line 23), which is both shocking and comic. The speaker does not condemn her: 'all di colours' turns her anger into something vibrant, almost a rainbow of language. She is rebellious and unconventional, challenging the expectations placed on a daughter-in-law."
                   />
                   <Quote
-                    text="from di stool each ov us say / dat moon is a yoyo"
-                    technique="Metaphor / shared perspective"
-                    analysis="The shared observation of the moon as a yoyo is playful and intimate, showing the couple's unique, private language of love. The yoyo metaphor makes the cosmic seem toylike, reflecting their youthful, joyful love."
+                    text="she wear a Tartan sari"
+                    technique="Juxtaposition / cultural hybridity"
+                    analysis="The bride wears Scottish tartan made into an Indian sari (line 32), and the same stanza gives her a red crew cut and a donkey jacket. The image joins British and Indian cultures in one garment, so she embodies the mixed identity the poem celebrates. The speaker lists her unconventional style with delight, not embarrassment."
                   />
                   <Quote
-                    text="Hey Singh, ver is yoo muder?"
-                    technique="Phonetic spelling / dialogue"
-                    analysis="The phonetic spelling of the customer's complaint captures the multicultural community's voices. The italicised customer complaints serve as a comic chorus, contrasting worldly concerns with the speaker's romantic priorities."
+                    text="Is priceless baby"
+                    technique="Refrain / the language of the shop"
+                    analysis="The poem ends with four couplets (lines 51 to 58) in which the bride asks the price of the moon and the speaker answers in the shop's language of prices, valuing it at half of what she is worth. When she asks for the total, his last answer puts her beyond price, so love outweighs every complaint about the shop. The closing refrain gives the poem the shape of a song, fitting the title."
                   />
                 </div>
               </SubSection>
@@ -2034,63 +2078,67 @@ export default function LoveAndRelationshipsPage() {
             >
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Andrew Waterhouse was a young British poet and ecologist who died in 2001. This
-                  poem uses an extended metaphor of mountain climbing to describe exploring and
-                  understanding his grandfather. The grandfather is presented as a vast,
-                  awe-inspiring landscape to be scaled, suggesting the child&apos;s sense of the
-                  grandfather as monumental and enduring. The poem is a celebration of familial love
-                  and the desire to truly know another person.
+                  Andrew Waterhouse was a British poet and environmentalist who died in 2001. This
+                  poem is from his first collection, <em>In</em> (2000). It uses an extended
+                  metaphor of mountain climbing to describe exploring and understanding his
+                  grandfather. The grandfather is presented as a vast, awe-inspiring landscape to be
+                  scaled, suggesting the child&apos;s sense of the grandfather as monumental and
+                  enduring. The poem is a celebration of familial love and the desire to truly know
+                  another person.
                 </p>
               </SubSection>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The speaker describes climbing their grandfather as though he were a mountain.
-                  Starting at the foot (his shoes), the speaker ascends via his legs, belt, chest,
-                  and face, using features like wrinkles and liver spots as handholds. The journey
-                  culminates at the summit &mdash; the grandfather&apos;s head &mdash; where the
-                  speaker feels his heartbeat and the &ldquo;slow pulse of his good heart.&rdquo;
-                  The climb represents getting to know someone deeply.
+                  Starting at his shoes, the speaker scrambles up his trousers, traverses his belt
+                  to his hand, and climbs on by his arm, shoulder, neck, mouth, cheek and eyes to
+                  his forehead and hair, using his nails, the stitches of an old scar and his
+                  wrinkles as holds. The journey ends at the summit, the grandfather&apos;s head,
+                  where the breathless speaker lies feeling his warmth and his heartbeat (lines 24
+                  to 27). The climb represents getting to know someone deeply.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  A single continuous stanza in free verse, reflecting the unbroken, sustained
-                  effort of the climb. The lack of stanza breaks mirrors the continuous, intimate
-                  journey of exploring the grandfather. The poem moves logically upward through the
-                  body, creating spatial coherence. Enjambment propels the reader forward, mimicking
-                  the climber&apos;s momentum. The absence of punctuation at the end suggests the
-                  relationship is ongoing and unfinished.
+                  A single continuous stanza of 27 lines in free verse, reflecting the unbroken,
+                  sustained effort of the climb. The lack of stanza breaks mirrors the continuous,
+                  intimate journey of exploring the grandfather. The poem moves logically upward
+                  through the body, creating spatial coherence, and the present tense makes the
+                  climb happen as we read. Enjambment propels the reader forward, mimicking the
+                  climber&apos;s momentum. The last sentence runs unbroken from the forehead to the
+                  summit (lines 20 to 27) and closes with a full stop on the heart: the climb ends
+                  in rest and in knowing him.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="I decide to do it free, without a rope or net"
+                    text="without a rope or net"
                     technique="Climbing metaphor / risk"
-                    analysis="'Free' climbing (without safety equipment) implies vulnerability and trust. The speaker approaches the relationship without defences, willing to take emotional risks. This suggests that true intimacy requires openness and courage."
+                    analysis="The first line announces a free climb, without safety equipment, which implies vulnerability and trust. The speaker approaches the relationship without defences, willing to take emotional risks. This suggests that true intimacy requires openness and courage."
                   />
                   <Quote
-                    text="the dusty earth / that gathers in the crosshatch of his palms"
+                    text="earth-stained hand"
                     technique="Visual detail / metaphor"
-                    analysis="The 'crosshatch' of the palms is both the lines on the grandfather's hands and the texture of a weathered landscape. 'Dusty earth' connects the grandfather to the land, suggesting he is rooted, natural, and enduring."
+                    analysis="The grandfather's hand (line 7) carries the soil of a working life, so the mountain he has become is literally made of earth. The detail connects him to the land, suggesting he is rooted, natural and enduring, and his broken nails offer the climber a grip (line 8)."
                   />
                   <Quote
-                    text="the soft leather of his belly"
-                    technique="Tactile imagery / metaphor"
-                    analysis="'Soft leather' is wonderfully specific - it suggests something worn, warm, and comfortable. Leather is strong but yielding, capturing the grandfather's combination of toughness and tenderness."
+                    text="like warm ice"
+                    technique="Oxymoron / tactile imagery"
+                    analysis="The simile describing the skin of his finger (lines 9 and 10) is an oxymoron: ice is hard and cold, yet this ice is warm. It captures the grandfather's combination of toughness and tenderness, a hard surface with warmth beneath it."
                   />
                   <Quote
-                    text="his still firm chin"
+                    text="still firm shoulder"
                     technique="Adjective choice"
-                    analysis="'Still firm' works on two levels: the chin is physically firm (strong-jawed) and 'still' firm despite age. This quiet acknowledgement of ageing within a celebration of strength is deeply moving."
+                    analysis="'Still firm' works on two levels: the shoulder (line 13) is physically strong enough to rest on, and it is 'still' firm despite his age. This quiet acknowledgement of ageing within a celebration of strength is deeply moving. The speaker rests here before going on, aware of the risk of falling."
                   />
                   <Quote
-                    text="the ridge of his brow / I put my ear to his mouth / and I can hear the distant / pull of his good heart"
-                    technique="Auditory imagery / enjambment"
-                    analysis="The 'distant pull' of the heartbeat is heard from the summit, as though from deep within a mountain. 'Good' is a simple, childlike adjective that is powerfully affecting in its plainness. The enjambment across 'distant / pull' enacts the effort of listening carefully."
+                    text="his good heart"
+                    technique="Tactile imagery / ending"
+                    analysis="At the summit, out of breath, the speaker feels the grandfather's warmth and his steady, slow heartbeat (lines 26 and 27). The climb ends not at the top of his head but at his heart: to know him fully is to know his character. 'Good' is a simple, childlike adjective that is powerfully affecting in its plainness."
                   />
                 </div>
               </SubSection>
@@ -2326,12 +2374,14 @@ export default function LoveAndRelationshipsPage() {
         <div className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
           <strong className="text-foreground">Rights notice.</strong> Several AQA Love &amp;
           Relationships poems remain in copyright &mdash; including Heaney&rsquo;s <em>Follower</em>{' '}
-          (&copy; Faber &amp; Faber), Sheers&rsquo;s <em>Winter Swans</em> (&copy; Seren Books),
-          Duffy&rsquo;s <em>Before You Were Mine</em> (&copy; Picador / Pan Macmillan and Rogers
-          Coleridge &amp; White), Nagra&rsquo;s <em>Singh Song!</em> (&copy; Faber &amp; Faber) and
-          Waterhouse&rsquo;s <em>Climbing My Grandfather</em> (&copy; Faber &amp; Faber). Quotations
-          are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review, quotation).
-          For full text, students should consult the board-licensed AQA Love &amp; Relationships
+          (from <em>Death of a Naturalist</em>, Faber &amp; Faber, 1966), Armitage&rsquo;s{' '}
+          <em>Mother, any distance</em> (from <em>Book of Matches</em>, Faber &amp; Faber, 1993),
+          Sheers&rsquo;s <em>Winter Swans</em> (from <em>Skirrid Hill</em>, Seren, 2005),
+          Duffy&rsquo;s <em>Before You Were Mine</em> (from <em>Mean Time</em>, Anvil, 1993),
+          Nagra&rsquo;s <em>Singh Song!</em> (&copy; Faber &amp; Faber) and Waterhouse&rsquo;s{' '}
+          <em>Climbing My Grandfather</em> (from <em>In</em>, The Rialto, 2000). Quotations are
+          short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review, quotation). For
+          full text, students should consult the board-licensed AQA Love &amp; Relationships
           anthology.
         </div>
       </section>

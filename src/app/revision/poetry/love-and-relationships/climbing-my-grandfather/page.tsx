@@ -28,8 +28,13 @@ const climbingMyGrandfatherPoem: PoemData = {
   // contain. It now follows the published poem, one entry per line in order, as a single
   // unbroken stanza. Each annotation sits on the line it discusses; notes written for the
   // invented lines were rewritten for the real ones, and the languageDevices lineRefs
-  // below were moved to match. The paraphrases were written from the poem's sense and
-  // have not been checked against a primary edition.
+  // below were moved to match. On 26 September 2026 the paraphrases were checked against
+  // the text AQA prints in its published anthology (Past and present: poetry anthology,
+  // sample, filestore.aqa.org.uk AQA-8702-TG-POEMS.PDF, p. 18), and the rest of the page
+  // was brought into line with it (see the note above keyQuotes). The page now quotes 19
+  // of the poem's words, counted once, against the guard's cap of 20. That cap is low:
+  // POEM_WORDS in src/__tests__/helpers/poets.ts records the poem as 135 words when the
+  // anthology text runs to about 196.
   lines: [
     {
       text: '[Paraphrase] The speaker chooses to climb with no safety equipment at all, neither rope nor net.',
@@ -56,7 +61,7 @@ const climbingMyGrandfatherPoem: PoemData = {
         },
         {
           type: 'Structure',
-          note: '"First" signals the beginning of a methodical, bottom-to-top ascent. The poem will move steadily upward through the grandfather\'s body.',
+          note: "The opening word of the line signals the beginning of a methodical, bottom-to-top ascent. The poem will move steadily upward through the grandfather's body.",
           color: '#8b5cf6',
         },
       ],
@@ -126,7 +131,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       annotations: [
         {
           type: 'Tactile imagery',
-          note: '"Splintered" nails are like cracked rock, and "good purchase" is climbing terminology for a reliable handhold. The body is presented as solid, dependable terrain.',
+          note: 'The broken nails are like cracked rock, and "good purchase" is climbing terminology for a reliable handhold. The body is presented as solid, dependable terrain.',
           color: '#10b981',
         },
       ],
@@ -151,7 +156,7 @@ const climbingMyGrandfatherPoem: PoemData = {
         },
         {
           type: 'Verb choice',
-          note: '"Discover" frames the climb as exploration. The grandfather is uncharted territory; each new feature is a discovery. The body is a continent to be mapped.',
+          note: 'The verb of discovery frames the climb as exploration. The grandfather is uncharted territory; each new feature is a discovery. The body is a continent to be mapped.',
           color: '#3b82f6',
         },
       ],
@@ -213,7 +218,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       annotations: [
         {
           type: 'Metaphor',
-          note: '"Screed" suggests scree, the loose broken rock on a mountain slope, so the cheek becomes a slope to cross with care. The face is mapped with the same geological precision as the rest of the body.',
+          note: 'The word the poem uses for the cheek suggests scree, the loose broken rock on a mountain slope, so the cheek becomes a slope to cross with care. The face is mapped with the same geological precision as the rest of the body.',
           color: '#ef4444',
         },
       ],
@@ -245,7 +250,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       annotations: [
         {
           type: 'Climax',
-          note: '"Summit" completes the metaphor: the highest point of the climb is the top of the grandfather\'s head, where the white hair reads like snow at altitude. The deep look into his eyes just before is the most intimate moment of the ascent.',
+          note: '"Summit" completes the metaphor: the highest point of the climb is the top of the grandfather\'s head, where the white hair reads like snow at altitude. The long look into his eyes a few lines earlier is the most intimate moment of the ascent.',
           color: '#ec4899',
         },
       ],
@@ -275,7 +280,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       annotations: [
         {
           type: 'Intimacy',
-          note: 'Sensing the grandfather\'s body heat is extraordinarily close: warmth like this is felt only at very intimate distances. "Knowing" is left dangling; the line break delays what is known.',
+          note: "Sensing the grandfather's body heat is extraordinarily close: warmth like this is felt only at very intimate distances. The line ends on the verb of knowing and leaves it hanging; the line break delays what is known.",
           color: '#ec4899',
         },
       ],
@@ -307,7 +312,7 @@ const climbingMyGrandfatherPoem: PoemData = {
     '<p><strong>"Climbing My Grandfather"</strong> was published in <em>In</em> (2000). The poem uses a single sustained metaphor \u2014 climbing a mountain \u2014 to explore the speaker\'s relationship with his grandfather.</p>' +
     "<p>The <strong>extended metaphor of mountaineering</strong> transforms the act of getting to know a grandparent into a physical journey. The grandfather's body becomes a landscape to explore, with clothing as terrain and features as geological formations.</p>" +
     '<p>The poem is <strong>entirely positive</strong>. Unlike many poems in the anthology that explore conflict, loss, or difficulty, "Climbing My Grandfather" presents family love as a source of wonder, warmth, and discovery.</p>' +
-    '<p>Given Waterhouse\'s <strong>posthumous publication</strong> and early death, the poem has acquired additional layers of meaning. The final image of "sky" can be read as the grandfather looking towards heaven, or as the infinite, ungraspable nature of truly knowing another person.</p>' +
+    "<p>Given Waterhouse's <strong>posthumous publication</strong> and early death, the poem has acquired additional layers of meaning. The view from the summit, of open sky and wheeling birds, can be read as the grandfather looking towards heaven, or as the infinite, ungraspable nature of truly knowing another person.</p>" +
     '<p>The poem may also reflect on <strong>intergenerational connection</strong> \u2014 how a grandchild can bridge the gap between generations through patient, loving attention to physical detail.</p>',
 
   contextAr:
@@ -315,177 +320,140 @@ const climbingMyGrandfatherPoem: PoemData = {
     '<p>\u0642\u0635\u064a\u062f\u0629 <strong>"Climbing My Grandfather"</strong> \u0627\u0646\u062a\u0634\u0631\u062a \u0641\u064a \u062f\u064a\u0648\u0627\u0646 <em>In</em> (2000). \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0634\u062a\u063a\u0644 \u0639\u0644\u0649 extended metaphor \u0648\u0627\u062d\u062f\u0629 \u2014 \u062a\u0633\u0644\u0651\u0642 \u062c\u0628\u0644 \u2014 \u0639\u0634\u0627\u0646 \u062a\u0633\u062a\u0643\u0634\u0641 \u0639\u0644\u0627\u0642\u0629 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0628\u062c\u062f\u0651\u0647.</p>' +
     '<p>\u0627\u0644\u0640<strong>extended metaphor</strong> \u0644\u062a\u0633\u0644\u0651\u0642 \u0627\u0644\u062c\u0628\u0627\u0644 \u062a\u062d\u0648\u0651\u0644 \u0641\u0639\u0644 \u0627\u0644\u062a\u0639\u0631\u0651\u0641 \u0639\u0644\u0649 \u0627\u0644\u062c\u062f\u0651 \u0625\u0644\u0649 \u0631\u062d\u0644\u0629 \u062c\u0633\u062f\u064a\u0629. \u062c\u0633\u0645 \u0627\u0644\u062c\u062f\u0651 \u064a\u0635\u064a\u0631 \u0645\u0646\u0638\u0631 \u0637\u0628\u064a\u0639\u064a \u064a\u0633\u062a\u0643\u0634\u0641\u060c \u0648\u0627\u0644\u0645\u0644\u0627\u0628\u0633 \u062a\u0635\u064a\u0631 \u062a\u0636\u0627\u0631\u064a\u0633\u060c \u0648\u0645\u0644\u0627\u0645\u062d \u0627\u0644\u0648\u062c\u0647 \u062a\u0635\u064a\u0631 \u062a\u0643\u0648\u064a\u0646\u0627\u062a \u062c\u064a\u0648\u0644\u0648\u062c\u064a\u0629.</p>' +
     '<p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 <strong>\u0625\u064a\u062c\u0627\u0628\u064a\u0629 \u0628\u0627\u0644\u0643\u0627\u0645\u0644</strong>. \u0639\u0643\u0633 \u0648\u0627\u064a\u062f \u0642\u0635\u0627\u064a\u062f \u062b\u0627\u0646\u064a\u0629 \u0641\u064a \u0627\u0644\u0623\u0646\u0637\u0648\u0644\u0648\u062c\u064a\u0627 \u0627\u0644\u0644\u064a \u062a\u0634\u062a\u063a\u0644 \u0639\u0644\u0649 \u0627\u0644\u0635\u0631\u0627\u0639 \u0648\u0627\u0644\u0641\u0642\u062f \u0648\u0627\u0644\u0635\u0639\u0648\u0628\u0627\u062a\u060c "Climbing My Grandfather" \u062a\u0642\u062f\u0651\u0645 \u062d\u0628 \u0627\u0644\u0639\u0627\u0626\u0644\u0629 \u0643\u0645\u0635\u062f\u0631 \u062f\u0647\u0634\u0629 \u0648\u062f\u0641\u0621 \u0648\u0627\u0643\u062a\u0634\u0627\u0641.</p>' +
-    '<p>\u0628\u062d\u0643\u0645 <strong>\u0646\u0634\u0631 \u0627\u0644\u062f\u064a\u0648\u0627\u0646 \u0642\u0631\u064a\u0628 \u0645\u0646 \u0631\u062d\u064a\u0644 Waterhouse \u0627\u0644\u0645\u0628\u0643\u0651\u0631</strong>\u060c \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0627\u0643\u062a\u0633\u0628\u062a \u0637\u0628\u0642\u0627\u062a \u0645\u0639\u0627\u0646\u064a \u0625\u0636\u0627\u0641\u064a\u0629. \u0627\u0644\u0635\u0648\u0631\u0629 \u0627\u0644\u0623\u062e\u064a\u0631\u0629 \u0644\u0640"sky" \u064a\u062d\u062a\u0645\u0644 \u0642\u0631\u0627\u0621\u062a\u064a\u0646: \u0627\u0644\u062c\u062f\u0651 \u064a\u062a\u0637\u0644\u0651\u0639 \u0644\u0648\u0631\u0627 \u0641\u0648\u0642 \u0646\u062d\u0648 \u0627\u0644\u0633\u0645\u0627\u0621\u060c \u0623\u0648 \u0625\u0646 \u0645\u0639\u0631\u0641\u0629 \u0627\u0644\u0625\u0646\u0633\u0627\u0646 \u0627\u0644\u062b\u0627\u0646\u064a \u0641\u0639\u0644\u0627\u064b \u0634\u064a \u0644\u0627 \u0645\u062d\u062f\u0648\u062f \u0648\u0644\u0627 \u064a\u062f\u0631\u0643\u0647 \u0623\u062d\u062f.</p>' +
+    '<p>بحكم <strong>نشر الديوان قريب من رحيل Waterhouse المبكّر</strong>، القصيدة اكتسبت طبقات معاني إضافية. المنظر من القمة، السما المفتوحة والطيور اللي تحوم، يحتمل قراءتين: الجدّ يتطلّع لورا فوق نحو السماء، أو إن معرفة الإنسان الثاني فعلاً شي لا محدود ولا يدركه أحد.</p>' +
     '<p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0630\u0644\u0643 \u064a\u062d\u062a\u0645\u0644 \u0625\u0646\u0647\u0627 \u062a\u062a\u0623\u0645\u0651\u0644 \u0641\u064a <strong>\u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0628\u064a\u0646 \u0627\u0644\u0623\u062c\u064a\u0627\u0644</strong> \u2014 \u0643\u064a\u0641 \u0627\u0644\u062d\u0641\u064a\u062f \u064a\u0642\u062f\u0631 \u064a\u0633\u062f \u0627\u0644\u0641\u062c\u0648\u0629 \u0628\u064a\u0646 \u062c\u064a\u0644\u064a\u0646 \u0639\u0646 \u0637\u0631\u064a\u0642 \u0627\u0644\u0627\u0646\u062a\u0628\u0627\u0647 \u0627\u0644\u0635\u0628\u0648\u0631 \u0648\u0627\u0644\u0645\u062d\u0628\u0651 \u0644\u0643\u0644 \u062a\u0641\u0635\u064a\u0644\u0629 \u062c\u0633\u062f\u064a\u0629.</p>',
 
   summary:
-    'Opening (lines 1\u20135): The speaker decides to "climb" his grandfather "free, without a rope or net". He begins at the "old brogues, dusty and cracked" and scrambles onto the trousers, "pushing into the weave, trying to get a grip".\n\n' +
-    'Mid-climb (lines 6\u201315): He navigates the overhanging shirt, traverses the belt, and reaches the "earth-stained hand" whose splintered nails "give good purchase". The skin of the finger is "smooth and thick / like warm ice". On the arm he discovers "the glassy ridge of a scar".\n\n' +
-    'Pause near the summit (lines 16\u201320): "Gasping for breath", the speaker stops and watches "clouds and birds circle", "feeling his heat, knowing / the slow pulse of his good heart". This intimate rest is the emotional heart of the poem.\n\n' +
-    'Summit (lines 21\u201325): Climbing the "cliff of the face", resting his feet in "the bristle of his chin", the speaker reaches the summit and gazes into the grandfather\'s eyes. The grandfather is "grinning back" \u2014 the climb has been a shared, conscious moment all along.',
+    'Lines 1–4: The speaker decides to climb his grandfather "free", with no rope or net, starting at the old, cracked shoes and making an easy "scramble" onto the trousers, where he digs his fingers into the cloth for a hold.\n\n' +
+    'Lines 5–12: Where the shirt overhangs he changes direction and moves sideways along the belt (a "traverse") to an "earth-stained" hand, whose broken nails give "good purchase". A finger feels icy-smooth yet warm (line 10), and on the arm he finds a scar, a "glassy ridge", and sets his feet carefully in the marks of its old stitches.\n\n' +
+    'Lines 13–17: He rests in the shadow of the still-strong shoulder, keeping his eyes off the drop because climbing is risky, then hauls himself up the slack skin of the neck to the grandfather\'s "smiling mouth", where he stops to drink.\n\n' +
+    'Lines 18–27: Revived, he crosses the cheek, looks into the grandfather\'s eyes and sees one pupil widen and narrow, then climbs over the evenly lined forehead to the thick white hair, reaching for the "summit". At the top, out of breath, he can only lie and watch birds and clouds wheel overhead, feeling the grandfather\'s warmth and knowing the "slow pulse" of his "good heart". The poem ends not on conquest but on rest and closeness.',
 
   summaryAr:
-    '\u0627\u0644\u0628\u062f\u0627\u064a\u0629 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 1\u20135): \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0642\u0631\u0651\u0631 \u064a\u0640"\u062a\u0633\u0644\u0651\u0642" \u062c\u062f\u0651\u0647 "free, without a rope or net" (\u0628\u062f\u0648\u0646 \u062d\u0628\u0644 \u0648\u0644\u0627 \u0634\u0628\u0643\u0629 \u0623\u0645\u0627\u0646). \u064a\u0628\u062f\u0623 \u0645\u0646 "old brogues, dusty and cracked" (\u062d\u0630\u0627\u0621 \u0642\u062f\u064a\u0645 \u0645\u062a\u063a\u0628\u0651\u0631 \u0648\u0645\u062a\u0634\u0642\u0651\u0642) \u0648\u064a\u062a\u0633\u0644\u0651\u0642 \u0641\u0648\u0642 \u0639\u0644\u0649 \u0627\u0644\u0628\u0646\u0637\u0644\u0648\u0646\u060c \u0648\u0647\u0648 "pushing into the weave, trying to get a grip" (\u064a\u0636\u063a\u0637 \u0641\u064a \u0627\u0644\u0646\u0633\u064a\u062c \u0648\u064a\u062d\u0627\u0648\u0644 \u064a\u0645\u0633\u0643).\n\n' +
-    '\u0646\u0635 \u0627\u0644\u062a\u0633\u0644\u0651\u0642 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 6\u201315): \u064a\u062a\u062c\u0627\u0648\u0632 \u0642\u0645\u064a\u0635 \u0646\u0627\u062a\u064a ("overhanging shirt")\u060c \u0648\u064a\u0645\u0634\u064a \u0639\u0631\u0636\u064a\u0627\u064b (traverse) \u0641\u0648\u0642 \u0627\u0644\u062d\u0632\u0627\u0645\u060c \u0648\u064a\u0648\u0635\u0644 \u0644\u0640"earth-stained hand" (\u064a\u062f \u0645\u0644\u0637\u0651\u062e\u0629 \u0628\u062a\u0631\u0627\u0628) \u0623\u0638\u0627\u0641\u0631\u0647\u0627 \u0645\u062a\u0634\u0642\u0651\u0642\u0629 \u0648"give good purchase" (\u062a\u0639\u0637\u064a \u0642\u0628\u0636\u0629 \u0632\u064a\u0646\u0629). \u062c\u0644\u062f \u0627\u0644\u0625\u0635\u0628\u0639 "smooth and thick / like warm ice" (\u0646\u0627\u0639\u0645 \u0648\u0633\u0645\u064a\u0643 / \u0645\u062b\u0644 \u062b\u0644\u062c \u062f\u0627\u0641\u064a). \u0648\u0639\u0644\u0649 \u0627\u0644\u0630\u0631\u0627\u0639 \u064a\u0643\u062a\u0634\u0641 "the glassy ridge of a scar" (\u0646\u062a\u0648\u0621 \u0632\u062c\u0627\u062c\u064a \u0644\u062c\u0631\u062d \u0642\u062f\u064a\u0645).\n\n' +
-    '\u0627\u0644\u0627\u0633\u062a\u0631\u0627\u062d\u0629 \u0642\u0631\u064a\u0628 \u0645\u0646 \u0627\u0644\u0642\u0645\u0629 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 16\u201320): \u0648\u0647\u0648 "gasping for breath" (\u064a\u0644\u0647\u062b)\u060c \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0648\u0642\u0641 \u0648\u064a\u0631\u0627\u0642\u0628 "clouds and birds circle" (\u0627\u0644\u0633\u062d\u0627\u0628 \u0648\u0627\u0644\u0637\u064a\u0648\u0631 \u064a\u062f\u0648\u0631\u0648\u0646)\u060c \u0648\u0647\u0648 "feeling his heat, knowing / the slow pulse of his good heart" (\u064a\u062d\u0633\u0651 \u0628\u062d\u0631\u0627\u0631\u0629 \u062c\u062f\u0651\u0647 \u0648\u064a\u0639\u0631\u0641 \u0646\u0628\u0636 \u0642\u0644\u0628\u0647 \u0627\u0644\u0637\u064a\u0651\u0628 \u0627\u0644\u0628\u0637\u064a\u0621). \u0647\u0630\u064a \u0627\u0644\u0627\u0633\u062a\u0631\u0627\u062d\u0629 \u0627\u0644\u062d\u0645\u064a\u0645\u0629 \u0647\u064a \u0642\u0644\u0628 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0627\u0644\u0639\u0627\u0637\u0641\u064a.\n\n' +
-    '\u0627\u0644\u0642\u0645\u0629 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 21\u201325): \u064a\u062a\u0633\u0644\u0651\u0642 "cliff of the face" (\u062c\u0631\u0641 \u0627\u0644\u0648\u062c\u0647)\u060c \u0648\u064a\u0631\u062a\u0627\u062d \u0628\u0631\u062c\u0648\u0644\u064a\u0646\u0647 \u0641\u064a "bristle of his chin" (\u0634\u0639\u0631 \u0627\u0644\u0644\u062d\u064a\u0629)\u060c \u0648\u064a\u0648\u0635\u0644 \u0644\u0644\u0642\u0645\u0629 \u0648\u064a\u063a\u0631\u0632 \u0646\u0638\u0631\u0647 \u0641\u064a \u0639\u064a\u0648\u0646 \u062c\u062f\u0651\u0647. \u0627\u0644\u062c\u062f\u0651 "grinning back" (\u064a\u0628\u062a\u0633\u0645 \u0644\u0647) \u2014 \u0627\u0644\u062a\u0633\u0644\u0651\u0642 \u0643\u0627\u0646 \u0645\u0646 \u0627\u0644\u0628\u062f\u0627\u064a\u0629 \u0644\u062d\u0638\u0629 \u0645\u0634\u062a\u0631\u0643\u0629 \u0648\u0648\u0627\u0639\u064a\u0629 \u0628\u064a\u0646 \u0627\u0644\u0627\u062b\u0646\u064a\u0646.',
+    'البداية (الأبيات 1–4): المتكلّم يقرّر يتسلّق جدّه "free" (بدون معدّات أمان)، بلا حبل ولا شبكة. يبدأ من الحذاء القديم المتشقّق، ويسوّي "scramble" (تسلّق سهل) على البنطلون، ويغرز أصابعه في القماش عشان يمسك.\n\n' +
+    'نص التسلّق (الأبيات 5–12): عند القميص البارز يغيّر اتجاهه ويمشي عرضياً على الحزام ("traverse")، لين يوصل ليد "earth-stained" (ملطّخة بتراب)، أظافرها المتكسّرة تعطي "good purchase" (قبضة زينة). جلد الإصبع أملس مثل الثلج بس دافي (البيت 10)، وعلى الذراع يلقى أثر جرح، "glassy ridge" (نتوء زجاجي)، ويحط رجوله بحذر في آثار الغرز القديمة.\n\n' +
+    'الاستراحة (الأبيات 13–17): يرتاح في ظل الكتف اللي لين الحين قوي، ويبعد عيونه عن الهاوية لأن التسلّق فيه خطر، وبعدين يسحب نفسه على جلد الرقبة المرتخي لين "smiling mouth" (الفم المبتسم)، ويوقف يشرب.\n\n' +
+    'القمة (الأبيات 18–27): يعبر الخد، ويطالع في عيون جدّه ويشوف البؤبؤ يتّسع ويضيق، وبعدين يتسلّق الجبهة وتجاعيدها المتباعدة لين الشعر الأبيض الكثيف، ويمد يده لـ"summit" (القمة). هناك، وهو لاهث، ما يقدر إلا يستلقي ويطالع الطيور والسحاب تحوم، ويحسّ بدفء جدّه ويعرف "slow pulse" (النبض البطيء) لـ"good heart" (قلبه الطيّب). القصيدة تخلص مو على انتصار، بل على راحة وقرب.',
 
   formAndStructure:
-    'Form: A single, unbroken stanza of free verse \u2014 25 lines, no regular rhyme scheme or metre. The lack of formal constraints mirrors the free, exploratory nature of the climb \u2014 the speaker discovers the grandfather without a predetermined path.\n\n' +
-    'Single stanza: The poem is written as one continuous block of text, reflecting the unbroken, sustained effort of the climb. There are no stanza breaks \u2014 the journey is continuous and committed, with no convenient resting points.\n\n' +
-    'Sustained metaphor: The entire poem is built on a single extended metaphor: the grandfather as a mountain. This metaphor is maintained with remarkable consistency from "scramble" and "traverse" to "summit", giving the poem structural coherence.\n\n' +
-    "Ascending structure: The poem physically moves upward through the grandfather's body: brogues \u2192 trousers \u2192 belt \u2192 hand \u2192 arm \u2192 chest \u2192 neck \u2192 face \u2192 eyes. The reader ascends with the speaker, creating a sense of building momentum and discovery.\n\n" +
-    'Enjambment: Lines frequently run into each other, mimicking the continuous, hand-over-hand movement of climbing. The reader cannot pause \u2014 they must keep moving upward.\n\n' +
-    'Present tense: The climb is narrated in present tense, making it feel immediate and ongoing. The speaker is discovering his grandfather in real time, and the reader discovers alongside him.\n\n' +
-    'Pace variation: The poem slows at "gasping for breath" before the final push to the summit, mirroring the rhythm of an actual climb. The final "grinning back" provides a quietly comic reveal.',
+    'Form: A single, unbroken stanza of free verse, 27 lines long, with no regular rhyme scheme or metre. The lack of formal constraint mirrors the free, exploratory nature of the climb: the speaker finds his way over his grandfather without a set route.\n\n' +
+    'Single stanza: The poem is one continuous block of text, reflecting the unbroken, sustained effort of the climb. There are no stanza breaks, although the speaker does rest twice: at the shoulder (line 13) and at the summit (line 24).\n\n' +
+    'Sustained metaphor: The whole poem is built on a single extended metaphor, the grandfather as a mountain, held with remarkable consistency from "scramble" (line 3) and "traverse" (line 6) to "summit" (line 23), which gives the poem its structural coherence.\n\n' +
+    "Ascending structure: The poem moves upward through the grandfather's body: shoes, trousers, shirt, belt, hand, arm, shoulder, neck, mouth, cheek, eyes, forehead, hair. The reader ascends with the speaker, and the momentum builds towards the top.\n\n" +
+    'Enjambment: Lines frequently run into each other, mimicking the continuous, hand-over-hand movement of climbing. Line 26 ends on the verb of knowing, and the break holds back what is known until the last line.\n\n' +
+    'Present tense: The climb is narrated in the present tense, making it feel immediate and ongoing. The speaker discovers his grandfather in real time, and the reader discovers him alongside.\n\n' +
+    'Pace: The climb slows twice. The rest in the shade of the shoulder, with its warning that climbing is risky, comes near the middle; at the summit the speaker is out of breath and can only lie still, so the poem ends in stillness and closeness rather than triumph.',
 
   formAndStructureAr:
-    '\u0627\u0644\u0634\u0643\u0644 (Form): \u0645\u0642\u0637\u0639 \u0648\u0627\u062d\u062f \u0645\u062a\u0648\u0627\u0635\u0644 \u0645\u0646 free verse \u2014 25 \u0628\u064a\u062a\u060c \u0628\u062f\u0648\u0646 \u0646\u0638\u0627\u0645 \u0642\u0627\u0641\u064a\u0629 \u0645\u0646\u062a\u0638\u0645 \u0648\u0644\u0627 metre \u062b\u0627\u0628\u062a. \u063a\u064a\u0627\u0628 \u0627\u0644\u0642\u064a\u0648\u062f \u0627\u0644\u0634\u0643\u0644\u064a\u0629 \u064a\u0639\u0643\u0633 \u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u0627\u0644\u062d\u0631\u0651\u0629 \u0627\u0644\u0627\u0633\u062a\u0643\u0634\u0627\u0641\u064a\u0629 \u0644\u0644\u062a\u0633\u0644\u0651\u0642 \u2014 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0643\u062a\u0634\u0641 \u062c\u062f\u0651\u0647 \u0628\u062f\u0648\u0646 \u0645\u0633\u0627\u0631 \u0645\u062d\u062f\u0651\u062f \u0645\u0646 \u0642\u0628\u0644.\n\n' +
-    '\u0645\u0642\u0637\u0639 \u0648\u0627\u062d\u062f (Single stanza): \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0643\u062a\u0648\u0628\u0629 \u0643\u0643\u062a\u0644\u0629 \u0646\u0635 \u0648\u0627\u062d\u062f\u0629 \u0645\u062a\u0648\u0627\u0635\u0644\u0629\u060c \u0639\u0634\u0627\u0646 \u062a\u0639\u0643\u0633 \u0627\u0644\u062c\u0647\u062f \u0627\u0644\u0645\u062a\u0648\u0627\u0635\u0644 \u0627\u0644\u0644\u064a \u0645\u0627 \u064a\u0646\u0642\u0637\u0639 \u0644\u0644\u062a\u0633\u0644\u0651\u0642. \u0645\u0627 \u0641\u064a\u0647 \u0641\u0648\u0627\u0635\u0644 \u0628\u064a\u0646 \u0627\u0644\u0645\u0642\u0627\u0637\u0639 \u2014 \u0627\u0644\u0631\u062d\u0644\u0629 \u0645\u0633\u062a\u0645\u0631\u0651\u0629 \u0648\u0645\u0644\u062a\u0632\u0645\u0629\u060c \u0648\u0645\u0627 \u0641\u064a\u0647 \u0646\u0642\u0627\u0637 \u0627\u0633\u062a\u0631\u0627\u062d\u0629 \u0645\u0631\u064a\u062d\u0629.\n\n' +
-    '\u0627\u0644\u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0627\u0644\u0645\u0645\u062a\u062f\u0629 (Sustained metaphor): \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0647\u0627 \u0645\u0628\u0646\u064a\u0629 \u0639\u0644\u0649 extended metaphor \u0648\u0627\u062d\u062f\u0629: \u0627\u0644\u062c\u062f\u0651 \u0643\u0623\u0646\u0647 \u062c\u0628\u0644. \u0647\u0630\u064a \u0627\u0644\u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u062a\u062a\u0645\u0633\u0651\u0643 \u0641\u064a\u0647\u0627 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0628\u062b\u0628\u0627\u062a \u0645\u0644\u0641\u062a \u0645\u0646 "scramble" \u0648"traverse" \u0644\u064a\u0646 "summit"\u060c \u0648\u0647\u0630\u0627 \u064a\u0639\u0637\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0645\u0627\u0633\u0643 \u0628\u0646\u064a\u0648\u064a.\n\n' +
-    '\u0627\u0644\u0628\u0646\u064a\u0629 \u0627\u0644\u0635\u0627\u0639\u062f\u0629 (Ascending structure): \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u062a\u062d\u0631\u0651\u0643 \u062c\u0633\u062f\u064a\u0627\u064b \u0644\u0648\u0631\u0627 \u0641\u0648\u0642 \u0639\u0628\u0631 \u062c\u0633\u0645 \u0627\u0644\u062c\u062f\u0651: brogues \u2190 trousers \u2190 belt \u2190 hand \u2190 arm \u2190 chest \u2190 neck \u2190 face \u2190 eyes. \u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u0635\u0639\u062f \u0645\u0639 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u060c \u0648\u0647\u0630\u0627 \u064a\u0639\u0637\u064a \u0625\u062d\u0633\u0627\u0633 \u0628\u0632\u062e\u0645 \u0645\u062a\u0631\u0627\u0643\u0645 \u0648\u0627\u0643\u062a\u0634\u0627\u0641.\n\n' +
-    'Enjambment: \u0627\u0644\u0623\u0628\u064a\u0627\u062a \u062a\u0646\u0633\u0627\u0628 \u0645\u0646 \u0648\u0627\u062d\u062f \u0644\u0644\u062b\u0627\u0646\u064a \u0628\u0634\u0643\u0644 \u0645\u062a\u0643\u0631\u0651\u0631\u060c \u062a\u062d\u0627\u0643\u064a \u062d\u0631\u0643\u0629 \u0627\u0644\u062a\u0633\u0644\u0651\u0642 \u0627\u0644\u0645\u0633\u062a\u0645\u0631\u0651\u0629 (\u064a\u062f \u0641\u0648\u0642 \u064a\u062f). \u0627\u0644\u0642\u0627\u0631\u0626 \u0645\u0627 \u064a\u0642\u062f\u0631 \u064a\u0648\u0642\u0641 \u2014 \u0644\u0627\u0632\u0645 \u064a\u0633\u062a\u0645\u0631 \u064a\u0635\u0639\u062f.\n\n' +
-    '\u0627\u0644\u0632\u0645\u0646 \u0627\u0644\u062d\u0627\u0636\u0631 (Present tense): \u0627\u0644\u062a\u0633\u0644\u0651\u0642 \u0645\u0631\u0648\u064a \u0641\u064a \u0627\u0644\u0632\u0645\u0646 \u0627\u0644\u062d\u0627\u0636\u0631\u060c \u0641\u064a\u062d\u0633 \u0628\u0647 \u0627\u0644\u0642\u0627\u0631\u0626 \u0643\u0623\u0646\u0647 \u0645\u0628\u0627\u0634\u0631 \u0648\u0645\u0633\u062a\u0645\u0631. \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0643\u062a\u0634\u0641 \u062c\u062f\u0651\u0647 \u0641\u064a \u0627\u0644\u0648\u0642\u062a \u0627\u0644\u0641\u0639\u0644\u064a\u060c \u0648\u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u0643\u062a\u0634\u0641 \u0645\u0639\u0627\u0647.\n\n' +
-    '\u062a\u0646\u0648\u0651\u0639 \u0627\u0644\u0625\u064a\u0642\u0627\u0639 (Pace variation): \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0628\u0637\u0651\u0626 \u0639\u0646\u062f "gasping for breath" \u0642\u0628\u0644 \u0627\u0644\u062f\u0641\u0639\u0629 \u0627\u0644\u0623\u062e\u064a\u0631\u0629 \u0644\u0644\u0642\u0645\u0629\u060c \u062a\u062d\u0627\u0643\u064a \u0625\u064a\u0642\u0627\u0639 \u062a\u0633\u0644\u0651\u0642 \u062d\u0642\u064a\u0642\u064a. \u0648\u0627\u0644\u0640"grinning back" \u0641\u064a \u0627\u0644\u0646\u0647\u0627\u064a\u0629 \u064a\u0643\u0634\u0641 \u0644\u062d\u0638\u0629 \u0647\u0627\u062f\u0626\u0629 \u0641\u064a\u0647\u0627 \u0643\u0648\u0645\u064a\u062f\u064a\u0627 \u062e\u0641\u064a\u0641\u0629.',
+    'الشكل (Form): مقطع واحد متواصل من free verse، طوله 27 بيت، بدون نظام قافية منتظم ولا metre ثابت. غياب القيود الشكلية يعكس الطبيعة الحرّة الاستكشافية للتسلّق: المتكلّم يلقى طريقه على جسم جدّه بدون مسار محدّد من قبل.\n\n' +
+    'مقطع واحد (Single stanza): القصيدة مكتوبة ككتلة نص واحدة متواصلة، عشان تعكس الجهد المتواصل اللي ما ينقطع للتسلّق. ما فيه فواصل بين المقاطع، مع إن المتكلّم يرتاح مرتين: عند الكتف (البيت 13) وعند القمة (البيت 24).\n\n' +
+    'الاستعارة الممتدة (Sustained metaphor): القصيدة كلها مبنية على extended metaphor واحدة: الجدّ كأنه جبل، والقصيدة تتمسّك فيها بثبات ملفت من "scramble" (البيت 3) و"traverse" (البيت 6) لين "summit" (البيت 23)، وهذا يعطيها تماسك بنيوي.\n\n' +
+    'البنية الصاعدة (Ascending structure): القصيدة تتحرّك لفوق عبر جسم الجدّ: الحذاء، البنطلون، القميص، الحزام، اليد، الذراع، الكتف، الرقبة، الفم، الخد، العيون، الجبهة، الشعر. القارئ يصعد مع المتكلّم، والزخم يتراكم لين القمة.\n\n' +
+    'Enjambment: الأبيات تنساب من واحد للثاني بشكل متكرّر، تحاكي حركة التسلّق المستمرّة (يد فوق يد). والبيت 26 يخلص على فعل المعرفة، والكسر يأجّل الشي المعروف لين البيت الأخير.\n\n' +
+    'الزمن الحاضر (Present tense): التسلّق مروي في الزمن الحاضر، فيحس به القارئ كأنه مباشر ومستمر. المتكلّم يكتشف جدّه في الوقت الفعلي، والقارئ يكتشفه معاه.\n\n' +
+    'الإيقاع (Pace): التسلّق يبطّئ مرتين. الاستراحة في ظل الكتف، مع التنبيه إن التسلّق فيه خطر، تجي قريب من النص؛ وعند القمة المتكلّم لاهث وما يقدر إلا يستلقي بدون حركة، فالقصيدة تخلص على سكون وقرب مو على انتصار.',
 
+  // NOTE: the viewer prints `quote` and `example` between quotation marks. Until
+  // 26 September 2026 these quoted lines the poem does not contain (a cliff of
+  // the face, a bristled chin, a grandfather grinning back), gave it 25 lines
+  // when it has 27, placed the rest at the shoulder near the summit, and quoted
+  // 135 words of it in all against a cap of 20. Each quotation is now a short
+  // phrase checked word for word against the AQA anthology (Past and present:
+  // poetry anthology, sample, filestore.aqa.org.uk AQA-8702-TG-POEMS.PDF, p. 18).
   keyQuotes: [
     {
-      quote: 'I decide to do it free, without a rope or net',
+      quote: 'free',
       analysis:
-        'Free climbing without safety equipment requires trust and courage. The speaker approaches his grandfather without emotional barriers or protection \u2014 he is willing to be vulnerable.',
+        'The poem opens on a decision: the speaker will climb his grandfather "free", which in climbing means with no ropes or other protection, and line 1 names both the rope and the net he does without. Free climbing needs trust and courage: he approaches his grandfather with no emotional barriers, willing to be vulnerable.',
       themes: ['Family', 'Trust', 'Vulnerability'],
       analysisAr:
-        '\u0627\u0644\u0640free climbing \u0628\u062f\u0648\u0646 \u0645\u0639\u062f\u0651\u0627\u062a \u0623\u0645\u0627\u0646 \u064a\u0637\u0644\u0628 \u062b\u0642\u0629 \u0648\u0634\u062c\u0627\u0639\u0629. \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0642\u062a\u0631\u0628 \u0645\u0646 \u062c\u062f\u0651\u0647 \u0628\u062f\u0648\u0646 \u062d\u0648\u0627\u062c\u0632 \u0639\u0627\u0637\u0641\u064a\u0629 \u0648\u0644\u0627 \u062d\u0645\u0627\u064a\u0629 \u2014 \u0647\u0648 \u0645\u0633\u062a\u0639\u062f \u0625\u0646\u0647 \u064a\u0643\u0648\u0646 \u0639\u0631\u0636\u0629 \u0644\u0644\u0623\u0630\u0649.',
-      themesAr: [
-        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
-        '\u0627\u0644\u062b\u0642\u0629',
-        '\u0627\u0644\u0627\u0646\u0643\u0634\u0627\u0641 \u0627\u0644\u0639\u0627\u0637\u0641\u064a',
-      ],
+        'القصيدة تبدأ بقرار: المتكلّم بيتسلّق جدّه "free"، وهذا في التسلّق معناه بدون حبال ولا أي حماية، والبيت الأول يسمّي الحبل والشبكة اللي بيستغني عنهم. والتسلّق الحرّ يطلب ثقة وشجاعة: المتكلّم يقترب من جدّه بدون حواجز عاطفية، مستعد إنه يكون عرضة للأذى.',
+      themesAr: ['العائلة', 'الثقة', 'الانكشاف العاطفي'],
     },
     {
-      quote: 'First, the old brogues, dusty and cracked',
+      quote: 'traverse',
       analysis:
-        'The climb begins at the feet \u2014 the grandfather\'s shoes. "Old", "dusty" and "cracked" hint at age, wear, and a life of work. The grandfather is grounded, weathered, and real.',
-      themes: ['Family', 'Age', 'Detail'],
+        '"Traverse" (line 6) is precise climbing vocabulary for moving sideways across a rock face, as "scramble" (line 3) is for easy ground between walking and climbing. The exact terms make the metaphor precise, not decorative: the shirt becomes an overhang and the belt a ledge.',
+      themes: ['Extended Metaphor', 'Effort', 'Precision'],
       analysisAr:
-        '\u0627\u0644\u062a\u0633\u0644\u0651\u0642 \u064a\u0628\u062f\u0623 \u0645\u0646 \u0627\u0644\u0631\u062c\u0644\u064a\u0646 \u2014 \u062d\u0630\u0627\u0621 \u0627\u0644\u062c\u062f\u0651. \u0643\u0644\u0645\u0627\u062a "old"\u060c "dusty"\u060c \u0648"cracked" \u062a\u0644\u0645\u0651\u062d \u0644\u0644\u0639\u0645\u0631\u060c \u0648\u0627\u0644\u0627\u0633\u062a\u0647\u0644\u0627\u0643\u060c \u0648\u062d\u064a\u0627\u0629 \u0634\u063a\u0644 \u0637\u0648\u064a\u0644. \u0627\u0644\u062c\u062f\u0651 \u0645\u0631\u0633\u0651\u062e \u0641\u064a \u0627\u0644\u0623\u0631\u0636\u060c \u0639\u0627\u0634 \u0648\u062f\u062e\u0644 \u062a\u062c\u0627\u0631\u0628\u060c \u0648\u062d\u0642\u064a\u0642\u064a.',
-      themesAr: [
-        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
-        '\u0627\u0644\u0639\u0645\u0631',
-        '\u0627\u0644\u062a\u0641\u0635\u064a\u0644',
-      ],
+        '"traverse" (البيت 6) مفردة دقيقة من تسلّق الجبال، معناها التحرّك جانبياً على وجه الصخر، مثل ما "scramble" (البيت 3) معناها التسلّق السهل بين المشي والتسلّق الحقيقي. والمصطلحات الدقيقة تخلّي الاستعارة محكمة مو مجرّد زينة: القميص يصير نتوء صخري والحزام يصير حافّة.',
+      themesAr: ['Extended Metaphor', 'الجهد', 'الدقّة'],
     },
     {
-      quote: 'an easy scramble onto his trousers, / pushing into the weave, trying to get a grip',
+      quote: 'earth-stained',
       analysis:
-        '"Scramble" is technical mountaineering language. The corduroy weave becomes a rock face the speaker tries to grip. Mundane fabric is translated into climbable terrain.',
-      themes: ['Extended Metaphor', 'Effort', 'Touch'],
+        '"Earth-stained" (line 7) places the grandfather in nature, perhaps a gardener or an outdoor worker, and so reinforces the landscape metaphor: even the soil on his hand belongs to the mountain.',
+      themes: ['Work', 'Identity', 'Nature'],
       analysisAr:
-        '\u0643\u0644\u0645\u0629 "scramble" \u0647\u064a \u0645\u0641\u0631\u062f\u0629 \u062a\u0642\u0646\u064a\u0629 \u0645\u0646 \u0645\u0641\u0631\u062f\u0627\u062a \u062a\u0633\u0644\u0651\u0642 \u0627\u0644\u062c\u0628\u0627\u0644. \u0646\u0633\u064a\u062c \u0627\u0644\u0628\u0646\u0637\u0644\u0648\u0646 \u0645\u0646 corduroy \u064a\u0635\u064a\u0631 \u0648\u062c\u0647 \u0635\u062e\u0631\u064a \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u062d\u0627\u0648\u0644 \u064a\u0645\u0633\u0643 \u0641\u064a\u0647. \u0642\u0645\u0627\u0634 \u0639\u0627\u062f\u064a \u064a\u062a\u062d\u0648\u0651\u0644 \u0625\u0644\u0649 \u062a\u0636\u0627\u0631\u064a\u0633 \u0642\u0627\u0628\u0644\u0629 \u0644\u0644\u062a\u0633\u0644\u0651\u0642.',
-      themesAr: [
-        'Extended Metaphor',
-        '\u0627\u0644\u062c\u0647\u062f',
-        '\u0627\u0644\u0644\u0645\u0633',
-      ],
+        'كلمة "earth-stained" (البيت 7) تحط الجدّ في الطبيعة، يحتمل إنه مزارع أو رجّال يشتغل برّا، وهذا يقوّي استعارة المنظر الطبيعي: حتى التراب اللي على يده جزء من الجبل.',
+      themesAr: ['الشغل', 'الهوية', 'الطبيعة'],
     },
     {
-      quote: 'traverse along his belt / to an earth-stained hand',
+      quote: 'good purchase',
       analysis:
-        '"Traverse" is precise climbing vocabulary for moving sideways across a face. "Earth-stained" places the grandfather in nature \u2014 perhaps a gardener or outdoor worker \u2014 reinforcing the landscape metaphor.',
-      themes: ['Extended Metaphor', 'Work', 'Identity'],
-      analysisAr:
-        '"Traverse" \u0645\u0641\u0631\u062f\u0629 \u062f\u0642\u064a\u0642\u0629 \u0645\u0646 \u062a\u0633\u0644\u0651\u0642 \u0627\u0644\u062c\u0628\u0627\u0644\u060c \u0645\u0639\u0646\u0627\u0647\u0627 \u0627\u0644\u062a\u062d\u0631\u0651\u0643 \u062c\u0627\u0646\u0628\u064a\u0627\u064b \u0639\u0644\u0649 \u0648\u062c\u0647 \u0627\u0644\u0635\u062e\u0631. \u0648\u0643\u0644\u0645\u0629 "earth-stained" \u062a\u062d\u0637 \u0627\u0644\u062c\u062f\u0651 \u0641\u064a \u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u2014 \u064a\u062d\u062a\u0645\u0644 \u0625\u0646\u0647 \u0645\u0632\u0627\u0631\u0639 \u0623\u0648 \u0631\u062c\u0651\u0627\u0644 \u064a\u0634\u062a\u063a\u0644 \u0628\u0631\u0651\u0627 \u2014 \u0648\u0647\u0630\u0627 \u064a\u0642\u0648\u0651\u064a \u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0627\u0644\u0645\u0646\u0638\u0631 \u0627\u0644\u0637\u0628\u064a\u0639\u064a.',
-      themesAr: [
-        'Extended Metaphor',
-        '\u0627\u0644\u0634\u063a\u0644',
-        '\u0627\u0644\u0647\u0648\u064a\u0629',
-      ],
-    },
-    {
-      quote: 'The nails / are splintered and give good purchase',
-      analysis:
-        '"Splintered" nails like cracked rock; "give good purchase" is climbing terminology for a reliable handhold. The body is presented as solid, dependable terrain.',
+        'The grandfather’s broken nails give "good purchase" (line 8), the climber’s term for a reliable hold. Damage becomes help: what time has worn rough is exactly what lets the grandchild hold on, and the body is presented as solid, dependable terrain.',
       themes: ['Dependability', 'Trust', 'Family'],
       analysisAr:
-        '\u0627\u0644\u0623\u0638\u0627\u0641\u0631 "splintered" (\u0645\u062a\u0634\u0642\u0651\u0642\u0629) \u0645\u062b\u0644 \u0635\u062e\u0631 \u0645\u0643\u0633\u0651\u0631\u061b \u0648"give good purchase" \u0645\u0635\u0637\u0644\u062d \u062a\u0633\u0644\u0651\u0642 \u0645\u0639\u0646\u0627\u0647 \u0642\u0628\u0636\u0629 \u0645\u0648\u062b\u0648\u0642\u0629. \u0627\u0644\u062c\u0633\u0645 \u0645\u0642\u062f\u0651\u0645 \u0639\u0644\u0649 \u0625\u0646\u0647 \u062a\u0636\u0627\u0631\u064a\u0633 \u0635\u0644\u0628\u0629 \u064a\u0645\u0643\u0646 \u0627\u0644\u0627\u0639\u062a\u0645\u0627\u062f \u0639\u0644\u064a\u0647\u0627.',
-      themesAr: [
-        '\u0627\u0644\u0627\u0639\u062a\u0645\u0627\u062f\u064a\u0629',
-        '\u0627\u0644\u062b\u0642\u0629',
-        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
-      ],
+        'أظافر الجدّ المتكسّرة تعطي "good purchase" (البيت 8)، وهو مصطلح المتسلّقين للقبضة الموثوقة. الضرر يصير مساعدة: اللي خشّنه الزمن هو بالضبط اللي يخلّي الحفيد يقدر يمسك، والجسم مقدّم على إنه تضاريس صلبة يعتمد عليها.',
+      themesAr: ['الاعتمادية', 'الثقة', 'العائلة'],
     },
     {
-      quote: 'smooth and thick / like warm ice',
+      quote: 'like warm ice',
       analysis:
-        '"Warm ice" is an oxymoron. Ice is cold and smooth, but the grandfather\'s skin has the smoothness of ice with the warmth of life. The phrase captures the strangeness and tenderness of an old body.',
+        '"Warm ice" (line 10) is an oxymoron. Ice is cold and smooth, but the grandfather’s skin has the smoothness of ice with the warmth of life. The simile captures the strangeness and tenderness of an old body.',
       themes: ['Age', 'Tenderness', 'Touch'],
       analysisAr:
-        '"Warm ice" oxymoron (\u062a\u0646\u0627\u0642\u0636 \u0638\u0627\u0647\u0631\u064a). \u0627\u0644\u062b\u0644\u062c \u0628\u0627\u0631\u062f \u0648\u0623\u0645\u0644\u0633\u060c \u0628\u0633 \u062c\u0644\u062f \u0627\u0644\u062c\u062f\u0651 \u0639\u0646\u062f\u0647 \u0646\u0639\u0648\u0645\u0629 \u0627\u0644\u062b\u0644\u062c \u0645\u0639 \u062f\u0641\u0621 \u0627\u0644\u062d\u064a\u0627\u0629. \u0627\u0644\u0639\u0628\u0627\u0631\u0629 \u062a\u0644\u062a\u0642\u0637 \u063a\u0631\u0627\u0628\u0629 \u0627\u0644\u062c\u0633\u0645 \u0627\u0644\u0643\u0628\u064a\u0631 \u0641\u064a \u0627\u0644\u0633\u0646 \u0648\u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a \u062d\u0646\u0627\u0646\u0647.',
-      themesAr: [
-        '\u0627\u0644\u0639\u0645\u0631',
-        '\u0627\u0644\u062d\u0646\u0627\u0646',
-        '\u0627\u0644\u0644\u0645\u0633',
-      ],
+        '"warm ice" (البيت 10) oxymoron (تناقض ظاهري). الثلج بارد وأملس، بس جلد الجدّ عنده نعومة الثلج مع دفء الحياة. والتشبيه يلتقط غرابة الجسم الكبير في السن وفي نفس الوقت حنانه.',
+      themesAr: ['العمر', 'الحنان', 'اللمس'],
     },
     {
-      quote: 'the glassy ridge of a scar',
+      quote: 'glassy ridge',
       analysis:
-        'A scar is a record of a wound and a piece of history written on the body. "Glassy ridge" makes it sound geological \u2014 even injury becomes part of the landscape.',
+        'A scar is a record of an old wound, a piece of history written on the body. "Glassy ridge" (line 11) makes it sound geological, so even injury becomes part of the landscape, and the speaker sets his feet gently in the marks of its stitches: he treads carefully on his grandfather’s past.',
       themes: ['History', 'Body', 'Memory'],
       analysisAr:
-        '\u0627\u0644\u062c\u0631\u062d \u0647\u0648 \u0633\u062c\u0644 \u0644\u062c\u0631\u062d \u0642\u062f\u064a\u0645\u060c \u0648\u0642\u0637\u0639\u0629 \u062a\u0627\u0631\u064a\u062e \u0645\u0643\u062a\u0648\u0628\u0629 \u0639\u0644\u0649 \u0627\u0644\u062c\u0633\u0645. \u0648\u0639\u0628\u0627\u0631\u0629 "glassy ridge" \u062a\u062e\u0644\u0651\u064a\u0647 \u064a\u0637\u0644\u0639 \u0643\u0623\u0646\u0647 \u0634\u064a \u062c\u064a\u0648\u0644\u0648\u062c\u064a \u2014 \u062d\u062a\u0649 \u0627\u0644\u0625\u0635\u0627\u0628\u0629 \u062a\u0635\u064a\u0631 \u062c\u0632\u0621 \u0645\u0646 \u0627\u0644\u0645\u0646\u0638\u0631 \u0627\u0644\u0637\u0628\u064a\u0639\u064a.',
-      themesAr: [
-        '\u0627\u0644\u062a\u0627\u0631\u064a\u062e',
-        '\u0627\u0644\u062c\u0633\u0645',
-        '\u0627\u0644\u0630\u0627\u0643\u0631\u0629',
-      ],
+        'الجرح سجل لإصابة قديمة، قطعة تاريخ مكتوبة على الجسم. وعبارة "glassy ridge" (البيت 11) تخلّيه يطلع كأنه شي جيولوجي، فحتى الإصابة تصير جزء من المنظر الطبيعي، والمتكلّم يحط رجوله بلطف في آثار الغرز: يمشي بحذر على ماضي جدّه.',
+      themesAr: ['التاريخ', 'الجسم', 'الذاكرة'],
     },
     {
-      quote: 'feeling his heat, knowing / the slow pulse of his good heart',
+      quote: 'smiling mouth',
       analysis:
-        '"Feeling his heat" is extraordinarily intimate \u2014 body heat is felt only at very close distances. "Good heart" works literally (a steady, healthy beat) and metaphorically (the grandfather\'s kind nature) \u2014 the two meanings fuse.',
-      themes: ['Intimacy', 'Love', 'Character'],
-      analysisAr:
-        '"Feeling his heat" \u062d\u0645\u064a\u0645\u064a\u0629 \u0627\u0633\u062a\u062b\u0646\u0627\u0626\u064a\u0629 \u2014 \u062d\u0631\u0627\u0631\u0629 \u0627\u0644\u062c\u0633\u0645 \u0645\u0627 \u062a\u0646\u062d\u0633 \u0625\u0644\u0627 \u0645\u0646 \u0645\u0633\u0627\u0641\u0629 \u0642\u0631\u064a\u0628\u0629 \u0648\u0627\u064a\u062f. \u0648"good heart" \u062a\u0634\u062a\u063a\u0644 \u062d\u0631\u0641\u064a\u0627\u064b (\u0646\u0628\u0636 \u062b\u0627\u0628\u062a \u0648\u0635\u062d\u064a) \u0648\u0645\u062c\u0627\u0632\u064a\u0627\u064b (\u0637\u0628\u064a\u0639\u0629 \u0627\u0644\u062c\u062f\u0651 \u0627\u0644\u0637\u064a\u0651\u0628\u0629) \u2014 \u0648\u0627\u0644\u0645\u0639\u0646\u064a\u064a\u0646 \u064a\u0646\u062f\u0645\u062c\u0648\u0646 \u0645\u0639 \u0628\u0639\u0636.',
-      themesAr: [
-        '\u0627\u0644\u062d\u0645\u064a\u0645\u064a\u0629',
-        '\u0627\u0644\u062d\u0628',
-        '\u0627\u0644\u0634\u062e\u0635\u064a\u0629',
-      ],
-    },
-    {
-      quote: 'reach the summit, gaze into his eyes, / and grinning back',
-      analysis:
-        '"Summit" completes the climbing metaphor. The reveal that the grandfather is "grinning back" transforms the poem: the climb has not been a one-way exploration but a shared, conscious moment all along.',
+        'The grandfather’s smile (line 17) shows that he is awake and enjoying the game, and a few lines later the speaker watches one of his pupils widen and narrow. The climb is not a one-way exploration of a still body but a shared, living moment.',
       themes: ['Reciprocity', 'Love', 'Family'],
       analysisAr:
-        '"Summit" \u064a\u0643\u0645\u0644 \u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0627\u0644\u062a\u0633\u0644\u0651\u0642. \u0648\u0627\u0643\u062a\u0634\u0627\u0641 \u0625\u0646 \u0627\u0644\u062c\u062f\u0651 "grinning back" (\u064a\u0628\u062a\u0633\u0645 \u0644\u0647) \u064a\u062d\u0648\u0651\u0644 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0647\u0627: \u0627\u0644\u062a\u0633\u0644\u0651\u0642 \u0645\u0627 \u0643\u0627\u0646 \u0627\u0633\u062a\u0643\u0634\u0627\u0641 \u0645\u0646 \u0637\u0631\u0641 \u0648\u0627\u062d\u062f\u060c \u0628\u0644 \u0643\u0627\u0646 \u0645\u0646 \u0627\u0644\u0628\u062f\u0627\u064a\u0629 \u0644\u062d\u0638\u0629 \u0645\u0634\u062a\u0631\u0643\u0629 \u0648\u0648\u0627\u0639\u064a\u0629 \u0628\u064a\u0646 \u0627\u0644\u0627\u062b\u0646\u064a\u0646.',
-      themesAr: [
-        '\u0627\u0644\u062a\u0628\u0627\u062f\u0644',
-        '\u0627\u0644\u062d\u0628',
-        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
-      ],
+        'ابتسامة الجدّ (البيت 17) تبيّن إنه صاحي ومستانس باللعبة، وبعد كم بيت المتكلّم يشوف بؤبؤ عينه يتّسع ويضيق. التسلّق مو استكشاف من طرف واحد لجسم ساكن، بل لحظة حيّة مشتركة.',
+      themesAr: ['التبادل', 'الحب', 'العائلة'],
+    },
+    {
+      quote: 'good heart',
+      analysis:
+        'At the summit, lying still against the grandfather’s warmth, the speaker feels the "slow pulse" of his "good heart" (line 27). "Good heart" works literally (a steady, healthy beat) and metaphorically (the grandfather’s kind nature), and the two meanings fuse.',
+      themes: ['Intimacy', 'Love', 'Character'],
+      analysisAr:
+        'عند القمة، وهو مستلقي بدون حركة على دفء جدّه، المتكلّم يحسّ بـ"slow pulse" (النبض البطيء) لـ"good heart" (البيت 27). و"good heart" تشتغل حرفياً (نبض ثابت وصحي) ومجازياً (طبيعة الجدّ الطيّبة)، والمعنيين يندمجون مع بعض.',
+      themesAr: ['الحميمية', 'الحب', 'الشخصية'],
     },
   ],
 
+  // lineRef is the entry's index in `lines`: one entry per line, so line N is N - 1.
   languageDevices: [
     {
       device: 'Extended metaphor',
-      example: 'scramble / traverse / good purchase / cliff / summit',
+      example: 'summit',
       effect:
-        'The grandfather-as-mountain metaphor is sustained throughout the entire poem using genuine climbing vocabulary. Every physical detail of the grandfather is translated into mountaineering terminology, creating a unified, coherent conceit.',
-      lineRef: 0,
+        'The grandfather-as-mountain metaphor is sustained throughout the poem with genuine climbing vocabulary, from "scramble" and "traverse" to "summit" (line 23). Every physical detail of the grandfather is translated into the terms of mountaineering, creating a unified, coherent conceit.',
+      lineRef: 22,
       effectAr:
-        '\u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0627\u0644\u062c\u062f\u0651-\u0643\u0623\u0646\u0647-\u062c\u0628\u0644 \u0645\u0645\u062a\u062f\u0651\u0629 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0647\u0627\u060c \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0645\u0641\u0631\u062f\u0627\u062a \u062a\u0633\u0644\u0651\u0642 \u0641\u0639\u0644\u064a\u0629. \u0643\u0644 \u062a\u0641\u0635\u064a\u0644\u0629 \u062c\u0633\u062f\u064a\u0629 \u0641\u064a \u0627\u0644\u062c\u062f\u0651 \u062a\u062a\u062a\u0631\u062c\u0645 \u0625\u0644\u0649 \u0645\u0635\u0637\u0644\u062d\u0627\u062a \u062a\u0633\u0644\u0651\u0642 \u062c\u0628\u0627\u0644\u060c \u0648\u0647\u0630\u0627 \u064a\u062e\u0644\u0642 conceit \u0645\u0648\u062d\u0651\u062f \u0648\u0645\u062a\u0645\u0627\u0633\u0643.',
+        'استعارة الجدّ-كأنه-جبل ممتدّة في القصيدة كلها، بمفردات تسلّق فعلية من "scramble" و"traverse" لين "summit" (البيت 23). كل تفصيلة جسدية في الجدّ تتترجم إلى مصطلحات تسلّق جبال، وهذا يخلق conceit موحّد ومتماسك.',
     },
     {
       device: 'Tactile imagery',
-      example: 'pushing into the weave / smooth and thick / bristle of his chin',
+      example: 'good purchase',
       effect:
-        'The poem is dominated by the sense of touch. The speaker understands his grandfather through physical contact \u2014 the textures of clothing, skin, and stubble. Touch becomes a language of love.',
-      lineRef: 3,
+        'The poem is dominated by the sense of touch. The speaker understands his grandfather through physical contact: the cloth of the trousers, the broken nails, the smooth skin, the stitched scar. Touch becomes a language of love.',
+      lineRef: 7,
       effectAr:
-        '\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u064a\u0633\u064a\u0637\u0631 \u0639\u0644\u064a\u0647\u0627 \u062d\u0627\u0633\u0651\u0629 \u0627\u0644\u0644\u0645\u0633. \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0641\u0647\u0645 \u062c\u062f\u0651\u0647 \u0639\u0646 \u0637\u0631\u064a\u0642 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0627\u0644\u062c\u0633\u062f\u064a \u2014 \u0645\u0644\u0627\u0645\u0633 \u0627\u0644\u0645\u0644\u0627\u0628\u0633\u060c \u0648\u0627\u0644\u062c\u0644\u062f\u060c \u0648\u0634\u0639\u0631 \u0627\u0644\u0644\u062d\u064a\u0629. \u0627\u0644\u0644\u0645\u0633 \u064a\u0635\u064a\u0631 \u0644\u063a\u0629 \u0645\u0646 \u0644\u063a\u0627\u062a \u0627\u0644\u062d\u0628.',
+        'القصيدة يسيطر عليها حاسّة اللمس. المتكلّم يفهم جدّه عن طريق التواصل الجسدي: قماش البنطلون، والأظافر المتكسّرة، والجلد الأملس، والجرح المخيّط. اللمس يصير لغة من لغات الحب.',
     },
     {
       device: 'Oxymoron',
@@ -494,52 +462,52 @@ const climbingMyGrandfatherPoem: PoemData = {
         "Ice is cold; the grandfather's skin is warm. The contradiction holds together the smoothness of aged skin and the warmth of a living body in one perfect phrase.",
       lineRef: 9,
       effectAr:
-        '\u0627\u0644\u062b\u0644\u062c \u0628\u0627\u0631\u062f\u061b \u0648\u062c\u0644\u062f \u0627\u0644\u062c\u062f\u0651 \u062f\u0627\u0641\u064a. \u0627\u0644\u062a\u0646\u0627\u0642\u0636 \u064a\u062c\u0645\u0639 \u0646\u0639\u0648\u0645\u0629 \u0627\u0644\u062c\u0644\u062f \u0627\u0644\u0643\u0628\u064a\u0631 \u0641\u064a \u0627\u0644\u0633\u0646 \u0645\u0639 \u062f\u0641\u0621 \u062c\u0633\u0645 \u062d\u064a\u0651\u060c \u0641\u064a \u0639\u0628\u0627\u0631\u0629 \u0648\u0627\u062d\u062f\u0629 \u0643\u0627\u0645\u0644\u0629.',
+        'الثلج بارد؛ وجلد الجدّ دافي. التناقض يجمع نعومة الجلد الكبير في السن مع دفء جسم حيّ، في عبارة واحدة كاملة.',
     },
     {
       device: 'Climbing diction',
-      example: 'scramble / traverse / purchase / summit',
+      example: 'traverse',
       effect:
         'Waterhouse uses authentic mountaineering vocabulary rather than vague metaphor. The technical precision makes the conceit feel honest and earned, not decorative.',
-      lineRef: 2,
+      lineRef: 5,
       effectAr:
-        'Waterhouse \u064a\u0633\u062a\u062e\u062f\u0645 \u0645\u0641\u0631\u062f\u0627\u062a \u062a\u0633\u0644\u0651\u0642 \u062d\u0642\u064a\u0642\u064a\u0629\u060c \u0645\u0648 \u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0641\u0636\u0641\u0627\u0636\u0629. \u0627\u0644\u062f\u0642\u0651\u0629 \u0627\u0644\u062a\u0642\u0646\u064a\u0629 \u062a\u062e\u0644\u0651\u064a \u0627\u0644\u0640conceit \u064a\u062d\u0633\u0651 \u0627\u0644\u0642\u0627\u0631\u0626 \u0625\u0646\u0647 \u0635\u0627\u062f\u0642 \u0648\u0645\u0633\u062a\u062d\u064e\u0642\u060c \u0645\u0648 \u0645\u062c\u0631\u0651\u062f \u0632\u064a\u0646\u0629.',
+        'Waterhouse يستخدم مفردات تسلّق حقيقية، مو استعارة فضفاضة. الدقّة التقنية تخلّي الـconceit يحسّ القارئ إنه صادق ومستحَق، مو مجرّد زينة.',
     },
     {
       device: 'Enjambment',
-      example: 'feeling his heat, knowing / the slow pulse of his good heart',
+      example: 'slow pulse',
       effect:
-        'Lines run into each other, mimicking the continuous, hand-over-hand motion of climbing. The line break across "knowing / the slow pulse" delays the moment of intimate knowledge.',
+        'Lines run into each other, mimicking the continuous, hand-over-hand motion of climbing. Line 26 ends on the verb of knowing, so the object of that knowledge, the "slow pulse" of the last line, arrives only after a pause.',
       lineRef: 25,
       effectAr:
-        '\u0627\u0644\u0623\u0628\u064a\u0627\u062a \u062a\u0646\u0633\u0627\u0628 \u0645\u0646 \u0648\u0627\u062d\u062f \u0644\u0644\u062b\u0627\u0646\u064a\u060c \u0639\u0634\u0627\u0646 \u062a\u062d\u0627\u0643\u064a \u062d\u0631\u0643\u0629 \u0627\u0644\u062a\u0633\u0644\u0651\u0642 \u0627\u0644\u0645\u0633\u062a\u0645\u0631\u0651\u0629 (\u064a\u062f \u0641\u0648\u0642 \u064a\u062f). \u0648\u0627\u0644\u0643\u0633\u0631 \u0628\u064a\u0646 "knowing / the slow pulse" \u064a\u0623\u062c\u0651\u0644 \u0644\u062d\u0638\u0629 \u0627\u0644\u0645\u0639\u0631\u0641\u0629 \u0627\u0644\u062d\u0645\u064a\u0645\u0629.',
+        'الأبيات تنساب من واحد للثاني، عشان تحاكي حركة التسلّق المستمرّة (يد فوق يد). والبيت 26 يخلص على فعل المعرفة، فالشي المعروف، "slow pulse" في البيت الأخير، ما يوصل إلا بعد توقّف.',
     },
     {
       device: 'Double meaning',
-      example: 'the slow pulse of his good heart',
+      example: 'good heart',
       effect:
-        '"Good heart" works literally (a healthy heartbeat) and metaphorically (the grandfather\'s kind nature). The two meanings fuse \u2014 physical and moral worth become inseparable.',
+        '"Good heart" works literally (a healthy heartbeat) and metaphorically (the grandfather’s kind nature). The two meanings fuse: physical and moral worth become inseparable.',
       lineRef: 26,
       effectAr:
-        '"Good heart" \u062a\u0634\u062a\u063a\u0644 \u062d\u0631\u0641\u064a\u0627\u064b (\u0646\u0628\u0636 \u0642\u0644\u0628 \u0635\u062d\u064a) \u0648\u0645\u062c\u0627\u0632\u064a\u0627\u064b (\u0637\u0628\u064a\u0639\u0629 \u0627\u0644\u062c\u062f\u0651 \u0627\u0644\u0637\u064a\u0651\u0628\u0629). \u0648\u0627\u0644\u0645\u0639\u0646\u064a\u064a\u0646 \u064a\u0646\u062f\u0645\u062c\u0648\u0646 \u2014 \u0627\u0644\u0642\u064a\u0645\u0629 \u0627\u0644\u062c\u0633\u062f\u064a\u0629 \u0648\u0627\u0644\u0623\u062e\u0644\u0627\u0642\u064a\u0629 \u062a\u0635\u064a\u0631 \u0645\u0627 \u062a\u0646\u0641\u0635\u0644 \u0639\u0646 \u0628\u0639\u0636\u0647\u0627.',
+        '"Good heart" تشتغل حرفياً (نبض قلب صحي) ومجازياً (طبيعة الجدّ الطيّبة). والمعنيين يندمجون: القيمة الجسدية والأخلاقية تصير ما تنفصل عن بعضها.',
     },
     {
       device: 'Personification (reversed)',
-      example: 'earth-stained hand / glassy ridge of a scar / cliff of the face',
+      example: 'glassy ridge',
       effect:
-        'Rather than personifying nature, Waterhouse "geographifies" the human body. The grandfather becomes a landscape, suggesting he is as vast, ancient, and worthy of exploration as a mountain.',
-      lineRef: 6,
+        'Rather than giving nature human qualities, Waterhouse turns the human body into geography. The grandfather becomes a landscape, suggesting he is as vast, ancient and worthy of exploration as a mountain.',
+      lineRef: 10,
       effectAr:
-        '\u0628\u062f\u0644 \u0645\u0627 \u064a\u0639\u0637\u064a \u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u0635\u0641\u0627\u062a \u0625\u0646\u0633\u0627\u0646\u064a\u0629 (personification)\u060c Waterhouse \u064a\u0639\u0643\u0633 \u0627\u0644\u0639\u0645\u0644\u064a\u0629 \u0648\u064a\u062d\u0648\u0651\u0644 \u0627\u0644\u062c\u0633\u0645 \u0627\u0644\u0628\u0634\u0631\u064a \u0625\u0644\u0649 \u062c\u063a\u0631\u0627\u0641\u064a\u0627. \u0627\u0644\u062c\u062f\u0651 \u064a\u0635\u064a\u0631 \u0645\u0646\u0638\u0631 \u0637\u0628\u064a\u0639\u064a\u060c \u0648\u0647\u0630\u0627 \u064a\u0644\u0645\u0651\u062d \u0625\u0646\u0647 \u0634\u0627\u0633\u0639 \u0648\u0642\u062f\u064a\u0645 \u0648\u064a\u0633\u062a\u062d\u0642 \u0627\u0644\u0627\u0633\u062a\u0643\u0634\u0627\u0641 \u0645\u062b\u0644 \u0623\u064a \u062c\u0628\u0644.',
+        'بدل ما يعطي الطبيعة صفات إنسانية (personification)، Waterhouse يعكس العملية ويحوّل الجسم البشري إلى جغرافيا. الجدّ يصير منظر طبيعي، وهذا يلمّح إنه شاسع وقديم ويستحق الاستكشاف مثل أي جبل.',
     },
     {
       device: 'Reciprocity',
-      example: 'gaze into his eyes, / and grinning back',
+      example: 'smiling mouth',
       effect:
-        'The final reveal that the grandfather is "grinning back" reframes the entire climb as a shared moment. The exploration has not been one-way \u2014 the grandfather has known he was being known.',
-      lineRef: 18,
+        'The grandfather is not a passive mountain: his mouth is smiling (line 17), and his pupil widens and narrows as the speaker looks into his eyes (lines 19 to 20). The climb becomes a shared moment; the grandfather knows he is being known.',
+      lineRef: 16,
       effectAr:
-        '\u0627\u0644\u0643\u0634\u0641 \u0627\u0644\u0623\u062e\u064a\u0631 \u0625\u0646 \u0627\u0644\u062c\u062f\u0651 "grinning back" (\u064a\u0628\u062a\u0633\u0645 \u0644\u0647) \u064a\u0639\u064a\u062f \u0635\u064a\u0627\u063a\u0629 \u0627\u0644\u062a\u0633\u0644\u0651\u0642 \u0643\u0644\u0647 \u0643\u0644\u062d\u0638\u0629 \u0645\u0634\u062a\u0631\u0643\u0629. \u0627\u0644\u0627\u0633\u062a\u0643\u0634\u0627\u0641 \u0645\u0627 \u0643\u0627\u0646 \u0645\u0646 \u0637\u0631\u0641 \u0648\u0627\u062d\u062f \u2014 \u0627\u0644\u062c\u062f\u0651 \u0643\u0627\u0646 \u0639\u0627\u0631\u0641 \u0645\u0646 \u0627\u0644\u0628\u062f\u0627\u064a\u0629 \u0625\u0646\u0647 \u064a\u064f\u0639\u0631\u064e\u0641.',
+        'الجدّ مو جبل ساكن: فمه يبتسم (البيت 17)، وبؤبؤه يتّسع ويضيق لمن المتكلّم يطالع في عيونه (الأبيات 19 و20). التسلّق يصير لحظة مشتركة؛ الجدّ عارف إنه يُعرَف.',
     },
   ],
 }
@@ -597,7 +565,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'cmg-4',
-    question: 'What does "the slow pulse of his good heart" achieve?',
+    question: 'What does the phrase "good heart" in the final line achieve?',
     type: 'multiple-choice',
     options: [
       'It suggests the grandfather has a heart condition',
@@ -607,7 +575,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Pausing near the summit and feeling the heartbeat represents the deepest possible knowledge. "Good heart" works literally (a steady, healthy beat) and metaphorically (his kind nature) - the double meaning is the line\'s power.',
+      'Lying still at the summit and feeling the heartbeat represents the deepest possible knowledge. "Good heart" works literally (a steady, healthy beat) and metaphorically (his kind nature) - the double meaning is the line\'s power.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -629,7 +597,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'cmg-6',
-    question: 'What does "without a rope or net" suggest?',
+    question: 'What does the decision to climb "free", with no rope or net, suggest?',
     type: 'multiple-choice',
     options: [
       'The speaker is reckless',
@@ -639,7 +607,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"Without a rope or net" suggests the speaker approaches the relationship with complete trust. There is vulnerability in truly knowing someone, but the speaker chooses openness.',
+      'Climbing "free" means climbing with no safety equipment, so the speaker approaches the relationship with complete trust. There is vulnerability in truly knowing someone, but the speaker chooses openness.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -655,7 +623,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The poem progresses upward from feet through knees, chest, and face to the summit of the head. Each body part reveals something about the grandfather - his work-roughened hands, kind eyes, warm skin.',
+      'The poem progresses upward from the shoes through the trousers, belt, hand, arm, shoulder, neck and face to the summit of the head. Each body part reveals something about the grandfather - his earth-marked hands, an old scar, his smile, his warm skin.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -716,7 +684,7 @@ const REVISION_TOPICS = [
       'Climbing My Grandfather explores familial love, the process of truly knowing someone, trust, and the enduring presence of family.',
     keyPoints: [
       'Getting to know someone - the climb represents deepening understanding',
-      'Trust and vulnerability - "without a rope or net"',
+      'Trust and vulnerability - climbing "free", with no rope or net (line 1)',
       'Physical closeness as emotional intimacy',
       'The grandfather as enduring, solid, and worth knowing',
     ],
@@ -727,9 +695,9 @@ const REVISION_TOPICS = [
       'Waterhouse uses an extended mountain-climbing metaphor, tactile body imagery, and warmth to celebrate familial intimacy.',
     keyPoints: [
       'Extended metaphor - grandfather as mountain to be climbed',
-      '"Without a rope or net" - trust and openness',
-      'Body parts as landscape features - hands like ridges, skin like earth',
-      '"The slow pulse of his good heart" - literal and metaphorical warmth',
+      'Climbing "free" (line 1) - trust and openness',
+      'Body parts as landscape features - an "earth-stained" hand, a scar as a "glassy ridge"',
+      'The "good heart" of the final line - literal and metaphorical warmth',
     ],
   },
   {
@@ -896,8 +864,8 @@ export default function ClimbingMyGrandfatherPage() {
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground space-y-2">
         <p>
-          <strong>Rights notice:</strong> &copy; Faber &amp; Faber on behalf of the Andrew
-          Waterhouse estate (1958–2001). Quotations from
+          <strong>Rights notice:</strong> &copy; the Andrew Waterhouse estate (1958–2001). The poem
+          is from his collection <em>In</em> (The Rialto, 2000). Quotations from
           <em>Climbing My Grandfather</em> are short fair-dealing extracts under CDPA 1988 &sect;30
           (criticism, review, quotation). For full text, students should consult the board-licensed
           AQA Love &amp; Relationships anthology or Waterhouse&rsquo;s collection <em>In</em>{' '}

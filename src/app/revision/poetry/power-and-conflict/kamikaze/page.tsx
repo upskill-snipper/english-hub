@@ -24,6 +24,16 @@ const kamikazeData: PoemData = {
   // not in the poem, and the stanza breaks fell in the wrong places. The viewer
   // numbers entries by position, so the entries below follow the poem's own
   // shape: seven stanzas of six lines.
+  //
+  // Until 26 September 2026 the key quotes, devices, summary and quiz below
+  // still quoted lines that are not in the poem (about fish, rain, pigeons, a
+  // flight into the sun and the ocean's selvedges), misdescribed its stanzas
+  // and voices, and quoted 127 distinct words of it against a fair-dealing
+  // share of 33. Every quotation left on this page was checked word for word
+  // that day against AQA's published anthology sample
+  // (filestore.aqa.org.uk/resources/english/AQA-8702-TG-POEMS.PDF), which
+  // prints the poem by permission of Templar Poetry. What the page no longer
+  // quotes it describes in its own words, by stanza.
   lines: [
     // Stanza 1
     {
@@ -36,7 +46,7 @@ const kamikazeData: PoemData = {
         },
         {
           type: 'Imagery',
-          note: '"sunrise" suggests hope, a new beginning -- ironic given the mission is one of death.',
+          note: 'Setting out at sunrise suggests hope and a new beginning, which is ironic when the mission is one of death.',
           color: '#f59e0b',
         },
       ],
@@ -46,7 +56,7 @@ const kamikazeData: PoemData = {
       annotations: [
         {
           type: 'Juxtaposition',
-          note: 'The ordinary "flask of water" is placed alongside the ceremonial "samurai sword", blending the domestic with the militaristic.',
+          note: 'An everyday water flask is listed beside a ceremonial samurai sword, blending the domestic with the militaristic.',
           color: '#a78bfa',
         },
       ],
@@ -57,7 +67,7 @@ const kamikazeData: PoemData = {
       annotations: [
         {
           type: 'Religious imagery',
-          note: '"Powerful incantations" suggests ritualistic, almost religious preparation - the pilot is sealed inside cultural and ceremonial language.',
+          note: 'The chants that fill his shaved head (see Key Quotes) suggest ritualistic, almost religious preparation: the pilot is sealed inside cultural and ceremonial language.',
           color: '#34d399',
         },
       ],
@@ -68,7 +78,7 @@ const kamikazeData: PoemData = {
       annotations: [
         {
           type: 'Euphemism',
-          note: '"One-way journey into history" is a chilling euphemism for the suicide mission - death reframed as historical immortality.',
+          note: 'The trip into history, begun on the line before, is a chilling euphemism for the suicide mission: death reframed as historical immortality (see Key Quotes).',
           color: '#f59e0b',
         },
       ],
@@ -101,7 +111,7 @@ const kamikazeData: PoemData = {
       annotations: [
         {
           type: 'Perspective',
-          note: '"far down" -- the pilot gains literal and figurative perspective, seeing the world from above, reconsidering his mission.',
+          note: 'Looking a long way down, the pilot gains literal and figurative perspective: he sees the world from above and begins to reconsider his mission.',
           color: '#60a5fa',
         },
       ],
@@ -111,7 +121,7 @@ const kamikazeData: PoemData = {
       annotations: [
         {
           type: 'Diminutive',
-          note: '"little" makes the fishing boats seem small, vulnerable and precious from the air, contrasting with the enormity of the suicide mission.',
+          note: 'Calling the fishing boats small makes them seem vulnerable and precious from the air, in contrast with the enormity of the suicide mission.',
           color: '#34d399',
         },
       ],
@@ -121,7 +131,7 @@ const kamikazeData: PoemData = {
       annotations: [
         {
           type: 'Simile',
-          note: 'The boats are compared to "bunting", the strings of small flags hung up for celebrations: from the air the scene looks festive and full of life, the opposite of his mission.',
+          note: 'The boats are compared to the strings of small flags hung up for celebrations (see Language Devices): from the air the scene looks festive and full of life, the opposite of his mission.',
           color: '#34d399',
         },
       ],
@@ -131,7 +141,7 @@ const kamikazeData: PoemData = {
       annotations: [
         {
           type: 'Colour imagery',
-          note: '"green-blue translucent" is vivid and beautiful, evoking the sensory richness of life that the pilot would sacrifice.',
+          note: 'The colours of the sea (see Key Quotes) are vivid and beautiful, evoking the sensory richness of life that the pilot would sacrifice.',
           color: '#f59e0b',
         },
       ],
@@ -167,7 +177,7 @@ const kamikazeData: PoemData = {
       annotations: [
         {
           type: 'Nature imagery',
-          note: 'Sibilance in "silver" and "swivelled" across these two lines creates a flowing, mesmerising sound that mirrors the beauty of the natural world.',
+          note: 'The repeated s-sounds across this line and the one before create a flowing, mesmerising sound that mirrors the beauty of the natural world.',
           color: '#34d399',
         },
         {
@@ -284,7 +294,7 @@ const kamikazeData: PoemData = {
   ],
 
   context: `<p><strong>Beatrice Garland</strong> is a contemporary British poet and NHS researcher. <em>Kamikaze</em> was published in her 2013 collection <em>The Invention of Fireworks</em>.</p>
-<p>The poem is inspired by the <strong>Japanese kamikaze pilots</strong> of World War II -- young men who flew suicide missions, deliberately crashing their planes into Allied warships. The word <em>kamikaze</em> translates as <strong>"divine wind"</strong>, referencing a typhoon that saved Japan from Mongol invasion in 1281.</p>
+<p>The poem is inspired by the <strong>Japanese kamikaze pilots</strong> of World War II -- young men who flew suicide missions, deliberately crashing their planes into Allied warships. The word <em>kamikaze</em> translates as <strong><em>divine wind</em></strong>, referencing a typhoon that saved Japan from Mongol invasion in 1281.</p>
 <p>In Japanese culture, the kamikaze missions were bound up with <strong>honour, duty, and sacrifice</strong>. Pilots were celebrated as heroes; their deaths were seen as the ultimate act of loyalty to the Emperor. To refuse or fail in a mission brought profound <strong>shame</strong> (<em>haji</em>) -- not just on the individual, but on the entire family.</p>
 <p>Garland has said she was fascinated by accounts of the very few pilots who <strong>turned back</strong> from their missions. These men were shunned by their families and communities, treated as if they were already dead. The poem explores the impossible choice between <strong>duty to country</strong> and the <strong>instinct to live</strong>, and asks whether survival can be worse than death.</p>
 <p>The poem connects to broader themes of <strong>conflict, identity, and the power of nature</strong> to remind us of what matters most.</p>`,
@@ -295,136 +305,117 @@ const kamikazeData: PoemData = {
 <p>Garland قالت إنها انبهرت بقصص الطيّارين القلائل اللي <strong>رجعوا</strong> من مهمّاتهم. هؤلاء الرجال نبذتهم عوائلهم ومجتمعاتهم، وتعاملوا معاهم كأنهم ميّتين أصلاً. القصيدة تستكشف الخيار المستحيل بين <strong>الواجب تجاه الوطن</strong> و<strong>غريزة البقاء</strong>، وتسأل: هل ممكن إن العيش يكون أسوأ من الموت؟</p>
 <p>القصيدة تتّصل بمواضيع أوسع: <strong>الصراع، الهويّة، وقوة الطبيعة</strong> اللي تذكّرنا بشنو اللي يهمّ فعلاً.</p>`,
 
-  summary: `The poem tells the story of a Japanese kamikaze pilot during World War II who sets out on his suicide mission at sunrise but turns back before reaching his target. The daughter narrates the story in third person, piecing together what she has been told.
+  summary: `The poem tells the story of a Japanese kamikaze pilot during World War II who sets out on his suicide mission at sunrise but turns back before reaching his target. An outside narrator retells, in the third person, the account his daughter later gave her own children.
 
-As the pilot flies, he looks down and sees the natural beauty below -- fish gleaming silver in the sea, wood pigeons over mountain passes. These images trigger memories of his childhood: fishing with his brothers and father in the "green-blue translucent sea."
+Halfway there, the daughter imagines, he looked down at the natural beauty below: the small fishing boats, the clear sea, and great masses of fish flashing as they turned in the light. The view takes him back to his childhood, waiting by the sea with his brothers for their father's boat to come home safe with its catch.
 
-The beauty of the natural world and the pull of memory overwhelm his sense of military duty. He turns the plane around and returns home.
+The beauty of the natural world and the pull of memory overwhelm his sense of military duty. He turns back and returns home.
 
-However, his survival brings no relief. His family, bound by the culture of honour and shame, treat him as if he no longer exists. His children and grandchildren learn never to speak of him. He becomes a ghost in his own home -- physically alive but socially dead.
+However, his survival brings no relief. His family, bound by the culture of honour and shame, treat him as if he had ceased to exist: his wife will not speak to him or look at him, and the neighbours shun him too. At first the children still chatter and laugh, but gradually they learn silence as well. He becomes a ghost in his own home, physically alive but socially dead.
 
-The poem ends with a devastating, unanswered question: "which had been the better way to die" -- the quick death of the kamikaze mission, or the slow, living death of being erased by his own family?`,
+The poem ends with a devastating, unanswered question in its last line: which death would have been better, the quick death of the kamikaze mission, or the slow, living death of being erased by his own family?`,
 
-  summaryAr: `القصيدة تحكي قصة طيّار kamikaze ياباني في الحرب العالمية الثانية، يطلع في مهمّته الانتحارية مع شروق الشمس، بس يرجع قبل ما يوصل هدفه. البنت تروي القصة بصيغة الغائب، وهي ترتّب الحكاية من اللي سمعته.
+  summaryAr: `القصيدة تحكي قصة طيّار kamikaze ياباني في الحرب العالمية الثانية، يطلع في مهمّته الانتحارية مع شروق الشمس، بس يرجع قبل ما يوصل هدفه. راوٍ من برّا يعيد بصيغة الغائب الحكاية اللي حكتها بنته لعيالها بعد سنين.
 
-الطيّار وهو طاير، يطالع تحت ويشوف جمال الطبيعة - السمك يلمع بلون الفضّة في البحر، وحمام البر فوق ممرّات الجبال. هالمناظر تفجّر فيه ذكريات طفولته: لمّا كان يصطاد السمك مع إخوانه وأبوه في "green-blue translucent sea".
+في نص الطريق، على حسب تخيّل البنت، طالع الطيّار تحت وشاف جمال الطبيعة: قوارب الصيد الصغيرة، والبحر الصافي، وأسراب السمك الداكنة تلمع وهي تلفّ في الضوء. هالمنظر يرجّعه لطفولته، لمّا كان ينتظر مع إخوانه على الشاطئ رجوع قارب أبوهم سالم ومعاه صيده.
 
-جمال الطبيعة وقوة الذاكرة يطغون على إحساسه بالواجب العسكري. فيقلب طيّارته ويرجع البيت.
+جمال الطبيعة وقوة الذاكرة يطغون على إحساسه بالواجب العسكري. فيرجع بطيّارته للبيت.
 
-بس بقاؤه على قيد الحياة ما يجيب أي راحة. عائلته، اللي مكبّلة بثقافة الشرف والعار، يتعاملون معاه كأنه ما عاد موجود. عياله وأحفاده يتعلّمون إنهم ما يذكرونه أبداً. ويصير شبح في بيته - حيّ جسدياً، بس ميّت اجتماعياً.
+بس بقاؤه على قيد الحياة ما يجيب أي راحة. عائلته، اللي مكبّلة بثقافة الشرف والعار، تتعامل معاه كأنه ما عاد موجود: زوجته ما تكلّمه ولا تطالع في عيونه، والجيران نفس الشي. العيال في البداية يسولفون ويضحكون، بس بالتدريج يتعلّمون السكوت هم بعد. ويصير شبح في بيته - حيّ جسدياً، بس ميّت اجتماعياً.
 
-القصيدة تنتهي بسؤال مدمّر بلا إجابة: "which had been the better way to die" - موت سريع في مهمّة الـkamikaze، ولا موت بطيء وحيّ تحت محو عائلته؟`,
+القصيدة تنتهي في بيتها الأخير بسؤال مدمّر بلا إجابة: أيّ الموتتين كان أفضل، موت سريع في مهمّة الـkamikaze، ولا موت بطيء وحيّ تحت محو عائلته؟`,
 
   formAndStructure: `FORM:
 - Free verse with no regular rhyme scheme, reflecting the fragmented, retold nature of the story
-- The poem is a dramatic monologue delivered by the pilot's daughter, though it reads more like a narrative
+- A framed narrative: an outside narrator retells the daughter's account, and in stanzas 6 and 7 the daughter speaks in her own first-person voice
 - Enjambment is used extensively throughout, creating a flowing, continuous movement that mirrors the pilot's flight and the unstoppable pull of memory
 
 STRUCTURE:
-- 7 stanzas of varying length, moving from the mission to memories to consequences
-- The poem begins in third person ("Her father") and shifts perspective throughout
-- Stanzas 1-6 describe the pilot's journey and the natural imagery that changes his mind
-- The final section shifts to the family's response and the consequences of his return
-- The italicised section in the original text marks a shift to a more intimate, internal voice
-- Cyclical structure: the poem ends where it begins emotionally, with the unanswered question about "the better way to die"
+- 7 stanzas of six lines each, moving from the mission to memories to consequences
+- The poem begins in the third person, introducing the pilot only as her father, and shifts perspective later
+- Stanzas 1 to 5 describe the pilot's flight, the natural imagery below him and the childhood memory it stirs, all in one long sentence
+- Stanzas 6 and 7 turn to the family's response and the consequences of his return
+- In the anthology the daughter's own words, from the start of stanza 6 to the fourth line of stanza 7, are printed in italics, marking a shift to a more intimate, internal voice
+- Cyclical structure: the last two lines return to the outside narrator of the opening, and the poem ends on its unanswered question about which death was better
 
 KEY STRUCTURAL FEATURES:
-- Enjambment across stanza breaks (e.g. "the fish / swivelled") creates continuous motion and mirrors the pilot's unbroken thought process
-- Caesura is used sparingly but effectively, e.g. "And sometimes, she said" -- the inserted "she said" reminds us this is a secondhand account
+- Enjambment across stanza breaks (stanza 1 into stanza 2, and stanza 4 into stanza 5) creates continuous motion and mirrors the pilot's unbroken thought process
+- Caesura is used sparingly but effectively: in the fifth line of the last stanza the inserted reporting clause reminds us this is a secondhand account
 - The shift from narrative to direct reflection in the final lines creates emotional impact
 - No speech marks are used, blurring the boundary between the daughter's voice and the father's experience`,
 
   formAndStructureAr: `الشكل (FORM):
 - شعر حرّ (free verse) بلا نظام قافية ثابت، يعكس طبيعة القصة المجزّأة المروية من فم لفم.
-- القصيدة monologue درامي على لسان بنت الطيّار، بس قراءتها أقرب لسرد قصصي.
+- سرد قصصي بإطار: راوٍ من برّا يعيد حكاية البنت، وفي المقطعين 6 و7 البنت تتكلّم بصوتها هي، بضمير المتكلّم.
 - الـenjambment مستخدم بكثرة عبر القصيدة كلها، يخلق حركة سايلة متواصلة تحاكي طيران الطيّار وقوّة جذب الذاكرة اللي ما توقف.
 
 البنية (STRUCTURE):
-- 7 مقاطع بأطوال مختلفة، تنقّل القارئ من المهمّة، للذكريات، للعواقب.
-- القصيدة تبدأ بصيغة الغائب ("Her father")، ووجهة النظر تتبدّل عبرها.
-- المقاطع 1-6 توصف رحلة الطيّار وصور الطبيعة اللي تغيّر قراره.
-- القسم الأخير ينتقل لرد فعل العائلة وعواقب رجوعه.
-- القسم المكتوب italicised في النص الأصلي يأشّر على انتقال لصوت داخلي وأكثر حميمية.
-- بنية دائرية (cyclical): القصيدة تنتهي عاطفياً وين بدأت، بنفس السؤال غير المجاب عنه: "the better way to die".
+- 7 مقاطع، كل مقطع ستّة أبيات، تنقّل القارئ من المهمّة، للذكريات، للعواقب.
+- القصيدة تبدأ بصيغة الغائب، وتقدّم الطيّار بس على إنه أبوها، وبعدين وجهة النظر تتبدّل.
+- المقاطع 1-5 توصف رحلة الطيّار، والطبيعة اللي تحته، وذكرى الطفولة اللي تصحى فيه، وكلها جملة وحدة طويلة.
+- المقطعان 6 و7 ينتقلون لرد فعل العائلة وعواقب رجوعه.
+- في الـanthology، كلام البنت نفسها، من بداية المقطع 6 لين البيت الرابع من المقطع 7، مكتوب italic، ويأشّر على انتقال لصوت داخلي وأكثر حميمية.
+- بنية دائرية (cyclical): آخر بيتين يرجعون للراوي اللي من برّا مثل البداية، والقصيدة تنتهي بسؤالها اللي بلا جواب: أيّ موت كان أفضل.
 
 أبرز السمات البنيوية:
-- الـenjambment اللي يقطع المقاطع (مثل "the fish / swivelled") يخلق حركة متواصلة، يحاكي تيّار فكر الطيّار اللي ما ينقطع.
-- الـcaesura مستخدمة بقلّة، بس بفعالية، مثل "And sometimes, she said" - كلمة "she said" المقحومة تذكّرنا إن الحكاية يد ثانية (secondhand).
+- الـenjambment اللي يعبر فواصل المقاطع (من المقطع 1 للمقطع 2، ومن المقطع 4 للمقطع 5) يخلق حركة متواصلة، يحاكي تيّار فكر الطيّار اللي ما ينقطع.
+- الـcaesura مستخدمة بقلّة، بس بفعالية: في البيت الخامس من المقطع الأخير، جملة الإسناد المقحومة تذكّرنا إن الحكاية يد ثانية (secondhand).
 - التحوّل من السرد للتأمّل المباشر في الأبيات الأخيرة يخلق أثر عاطفي قوي.
 - ما فيه علامات اقتباس (speech marks)، فتختلط حدود صوت البنت وتجربة الأب.`,
 
   keyQuotes: [
-    // VERIFY: removed key quote 'a sheath of purpose' - this phrase does NOT appear in Garland's Kamikaze. The actual phrase is 'a shaven head / full of powerful incantations'.
     {
-      quote: 'a shaven head / full of powerful incantations',
+      quote: 'one-way / journey into history',
       analysis:
-        'The shaved head and ritual incantations evoke samurai/military religious preparation. The pilot is wrapped in ceremonial language that has prepared him for sacrifice - culture, not personal will, drives the mission.',
+        'A chilling euphemism for the suicide mission: death is recast as an entry into history, as if the pilot were already a monument. The line break falls inside the phrase, so the reader, like the pilot, is carried past the point of no return.',
+      themes: ['Duty', 'Conflict', 'Death'],
+      analysisAr:
+        'euphemism مخيفة لمهمّة الانتحار: الموت يتقدّم على إنه دخول للتاريخ، كأن الطيّار صار من الحين نصب تذكاري. وفاصل البيت يطيح في نص العبارة، فالقارئ، مثل الطيّار، ينسحب لورا نقطة اللاعودة.',
+      themesAr: ['الواجب', 'الصراع', 'الموت'],
+    },
+    {
+      quote: 'powerful incantations',
+      analysis:
+        'The pilot’s shaved head is filled with ritual chants, evoking religious and military preparation. He is wrapped in ceremonial language that has readied him for sacrifice: culture, not personal will, drives the mission.',
       themes: ['Duty', 'Conflict', 'Identity'],
       analysisAr:
-        'الرأس الحليق والتلاوات الطقسية تستحضر تحضيراً ديني/عسكري على طريقة الـsamurai. الطيّار ملفوف بلغة طقوسية حضّرته للتضحية - الثقافة، مو الإرادة الشخصية، هي اللي تسيّر المهمّة.',
+        'راس الطيّار الحليق مليان تلاوات طقسية، تستحضر تحضير ديني وعسكري. الطيّار ملفوف بلغة طقوسية حضّرته للتضحية: الثقافة، مو الإرادة الشخصية، هي اللي تسيّر المهمّة.',
       themesAr: ['الواجب', 'الصراع', 'الهويّة'],
-    },
-    {
-      quote: 'the fish swivelled their silver bodies',
-      analysis:
-        'Nature imagery with sibilance creates a hypnotic, beautiful sound. The fish represent the vitality of the natural world -- their movement is free and instinctive, contrasting with the rigid, prescribed path of the kamikaze mission.',
-      themes: ['Nature', 'Freedom', 'Beauty vs Death'],
-      analysisAr:
-        'صور طبيعية مع sibilance تخلق صوت ساحر وجميل. السمك يمثّل حيوية الطبيعة - حركته حرّة وغريزية، تتناقض مع المسار الصارم المرسوم لمهمّة الـkamikaze.',
-      themesAr: ['الطبيعة', 'الحريّة', 'الجمال مقابل الموت'],
-    },
-    {
-      quote: 'dark, metallic rain',
-      analysis:
-        'Simile comparing the fish to rain. "Dark" and "metallic" introduce sinister, military connotations into the natural imagery, blurring the line between beauty and destruction.',
-      themes: ['Nature', 'Conflict', 'Ambiguity'],
-      analysisAr:
-        'simile تشبّه السمك بالمطر. كلمتين "dark" و"metallic" يدخلون إيحاءات شريرة وعسكرية على الصور الطبيعية، ويطمسون الخط بين الجمال والدمار.',
-      themesAr: ['الطبيعة', 'الصراع', 'الغموض'],
     },
     {
       quote: 'green-blue translucent sea',
       analysis:
-        'Rich colour imagery evoking the vivid beauty of the Japanese coastline. "Translucent" suggests clarity and openness -- the opposite of the murky moral situation the pilot faces.',
+        'Rich colour imagery evoking the vivid beauty of the Japanese coastline. "Translucent" suggests clarity and openness, the opposite of the murky moral situation the pilot faces.',
       themes: ['Nature', 'Memory', 'Beauty vs Death'],
       analysisAr:
         'صور لونية غنية تستحضر جمال الساحل الياباني الزاهي. كلمة "translucent" توحي بالصفاء والانفتاح - عكس الموقف الأخلاقي الضبابي اللي يواجهه الطيّار.',
       themesAr: ['الطبيعة', 'الذاكرة', 'الجمال مقابل الموت'],
     },
     {
-      quote: 'the cloud-marked mackerel',
+      quote: 'cloud-marked mackerel',
       analysis:
-        'A precise, tender detail from the natural world. The specificity of "cloud-marked" shows the pilot truly seeing the world around him, reconnecting with life rather than death.',
+        'A precise, tender detail from the catch his father’s boat brought home (stanza 5). The compound adjective shows the pilot truly seeing, and remembering, the world around him, reconnecting with life rather than death.',
       themes: ['Nature', 'Memory', 'Identity'],
       analysisAr:
-        'تفصيل دقيق وحنون من العالم الطبيعي. الدقّة في كلمة "cloud-marked" تبيّن إن الطيّار صار فعلاً يشوف العالم اللي حوله، ويعيد ربط نفسه بالحياة، مو بالموت.',
+        'تفصيل دقيق وحنون من صيد قارب أبوه لمّا رجع للشاطئ (المقطع 5). الصفة المركّبة تبيّن إن الطيّار صار فعلاً يشوف، ويتذكّر، العالم اللي حوله، ويعيد ربط نفسه بالحياة، مو بالموت.',
       themesAr: ['الطبيعة', 'الذاكرة', 'الهويّة'],
     },
     {
-      quote: 'as though he no longer existed',
+      quote: 'no longer existed',
       analysis:
-        'The family enacts a social death -- the pilot is physically present but treated as invisible. The simile "as though" emphasises that this is a deliberate, chosen act of erasure.',
+        'His wife and the neighbours enact a social death: the pilot is physically present but treated as if he were gone. The comparison (stanza 6) presents this as a deliberate, chosen act of erasure, and in stanza 7 the children are taught it too, so the silence is learned, not natural.',
       themes: ['Shame', 'Family', 'Identity'],
       analysisAr:
-        'العائلة تنفّذ موت اجتماعي - الطيّار حاضر جسدياً، بس يتعاملون معاه كأنه ما يتشاف. والـsimile في "as though" تأكّد إن هذا فعل محو متعمّد ومختار.',
+        'زوجته والجيران ينفّذون موت اجتماعي: الطيّار حاضر جسدياً، بس يتعاملون معاه كأنه راح. والتشبيه (المقطع 6) يقدّم هالشي كفعل محو متعمّد ومختار، وفي المقطع 7 العيال يتعلّمونه هم بعد، يعني الصمت شي يتعلّمونه، مو شي طبيعي.',
       themesAr: ['العار', 'العائلة', 'الهويّة'],
     },
     {
-      quote: 'learned not to speak of him',
+      quote: 'the better way to die',
       analysis:
-        'The verb "learned" is devastating -- the silence is not natural but taught. Children are actively trained to erase their own father, showing how cultural expectations override family bonds.',
-      themes: ['Shame', 'Family', 'Power'],
-      analysisAr:
-        'الفعل "learned" مدمّر - الصمت مو طبيعي، هو شي يتعلّمونه. العيال يتدرّبون فعلياً على محو أبوهم، ويبيّن هالشي كيف توقّعات الثقافة تتغلّب على روابط العائلة.',
-      themesAr: ['العار', 'العائلة', 'القوّة'],
-    },
-    {
-      quote: 'which had been the better way to die',
-      analysis:
-        'The poem\'s final, unanswered question. The word "better" is bitterly ironic -- neither option offers a good outcome. The pilot must choose between physical death and social death.',
+        'The last words of the poem leave its question unanswered. The word "better" is bitterly ironic: neither option offers a good outcome. The pilot must choose between physical death and social death.',
       themes: ['Conflict', 'Identity', 'Shame'],
       analysisAr:
-        'السؤال الأخير في القصيدة، اللي ما له إجابة. كلمة "better" مفعمة بسخرية مرّة - ولا خيار من الاثنين يقدّم نتيجة طيّبة. الطيّار مضطر يختار بين الموت الجسدي والموت الاجتماعي.',
+        'آخر كلمات القصيدة تخلّي سؤالها بلا إجابة. كلمة "better" مفعمة بسخرية مرّة - ولا خيار من الاثنين يقدّم نتيجة طيّبة. الطيّار مضطر يختار بين الموت الجسدي والموت الاجتماعي.',
       themesAr: ['الصراع', 'الهويّة', 'العار'],
     },
   ],
@@ -432,59 +423,61 @@ KEY STRUCTURAL FEATURES:
   languageDevices: [
     {
       device: 'Nature imagery',
-      example: 'fish swivelled their silver bodies... wood pigeons were fanning out their tails',
+      example:
+        '[Stanzas 2 to 5: the fishing boats, the sea and the shoals below him, then the catch his father’s boat brought home]',
       effect:
-        'The natural world is presented as beautiful, free, and alive -- a direct contrast to the death-mission. Nature becomes the force that pulls the pilot back to life, representing everything he would lose.',
-      lineRef: 8,
+        'The natural world is presented as beautiful, free and alive, a direct contrast to the death mission. What the pilot sees from the air stirs a memory of home, and together they pull him back to life, representing everything he would lose.',
+      lineRef: 17,
       effectAr:
-        'العالم الطبيعي يُقدَّم جميل، حر، وفيه حياة - تناقض مباشر لمهمّة الموت. الطبيعة تصير القوّة اللي تسحب الطيّار يرجع للحياة، وتمثّل كل شي راح يخسره.',
+        'العالم الطبيعي يُقدَّم جميل، حر، وفيه حياة - تناقض مباشر لمهمّة الموت. اللي يشوفه الطيّار من الجو يصحّي فيه ذكرى البيت، والاثنين مع بعض يسحبونه يرجع للحياة، ويمثّلون كل شي راح يخسره.',
     },
     {
       device: 'Colour imagery',
-      example: 'silver... green-blue translucent... dark',
+      example: 'silver ... dark',
       effect:
-        'Garland uses a palette of colours to contrast life and death. "Silver" and "green-blue" evoke beauty and vitality, while "dark" introduces threat. The recurring "silver" creates a motif linking nature to hope.',
-      lineRef: 14,
+        'Garland uses a palette of colours to contrast life and death. The flashes of "silver" (stanzas 3 and 5) and the green-blue sea of stanza 2 evoke beauty and vitality, while "dark" (the shoals, and the tuna at the end of stanza 5) introduces threat. The recurring silver creates a motif linking nature to hope.',
+      lineRef: 18,
       effectAr:
-        'Garland تستخدم لوحة ألوان عشان تقابل بين الحياة والموت. "silver" و"green-blue" يستحضرون الجمال والحيوية، بينما "dark" يدخل التهديد. وتكرار "silver" يخلق motif يربط الطبيعة بالأمل.',
+        'Garland تستخدم لوحة ألوان عشان تقابل بين الحياة والموت. لمعات "silver" (المقطعين 3 و5) والبحر الأخضر المزرق في المقطع 2 يستحضرون الجمال والحيوية، بينما "dark" (أسراب السمك، وسمكة التونة في آخر المقطع 5) يدخل التهديد. وتكرار الفضّي يخلق motif يربط الطبيعة بالأمل.',
     },
     {
       device: 'Simile',
-      example: 'like a shower of dark, metallic rain',
+      example: 'like bunting',
       effect:
-        'The fish are compared to rain, but the adjectives "dark" and "metallic" introduce military connotations. This simile sits at the boundary between beauty and violence, mirroring the poem\'s central tension.',
-      lineRef: 22,
+        'Seen from the air, the fishing boats are compared to strings of festive flags: the scene below looks like a celebration of life, the opposite of his mission. In stanza 3 a second simile likens the moving shoals to an enormous flag swinging from side to side, which may recall the national flag he flies for.',
+      lineRef: 11,
       effectAr:
-        'السمك يتشبّه بالمطر، بس الصفات "dark" و"metallic" يدخلون إيحاءات عسكرية. الـsimile هذي تجلس على الحد الفاصل بين الجمال والعنف، وتعكس التوتّر المركزي في القصيدة.',
+        'من الجو، قوارب الصيد تتشبّه بحبال الأعلام الصغيرة اللي تتعلّق في الاحتفالات: المنظر تحت يبان مثل احتفال بالحياة، عكس مهمّته. وفي المقطع 3 فيه simile ثاني يشبّه أسراب السمك المتحرّكة بعلم ضخم يتمايل يمين ويسار، وممكن يذكّر بعلم الوطن اللي يطير عشانه.',
     },
-    // VERIFY: removed device example 'a sheath of purpose' - phrase not in primary text.
     {
       device: 'Shift in perspective',
-      example: 'From "Her father embarked" to "she said" to "he must have wondered"',
+      example:
+        '[Stanzas 1, 6 and 7: the outside narrator, then the daughter’s own voice, then the narrator again]',
       effect:
-        "The poem moves between the daughter's narration, reported speech, and speculative reconstruction of the father's thoughts. This layering of perspectives shows how the story has been passed down, fragmented and incomplete.",
-      lineRef: 38,
+        "The poem moves from an outside narrator's retelling, through the daughter's imagining as she tells the story to her children (stanza 2), to her own first-person voice (stanzas 6 and 7), and back to the narrator for the last two lines. This layering of perspectives shows how the story has been passed down, fragmented and incomplete.",
+      lineRef: 36,
       effectAr:
-        'القصيدة تتنقّل بين سرد البنت، والكلام المنقول، وإعادة بناء افتراضية لأفكار الأب. هالتطبيق الطبقي لوجهات النظر يبيّن كيف انتقلت الحكاية من جيل لجيل، مجزّأة وغير مكتملة.',
+        'القصيدة تتنقّل من سرد راوٍ من برّا، لتخيّل البنت وهي تحكي القصة لعيالها (المقطع 2)، لصوتها هي بضمير المتكلّم (المقطعين 6 و7)، وترجع للراوي في آخر بيتين. هالتطبيق الطبقي لوجهات النظر يبيّن كيف انتقلت الحكاية من جيل لجيل، مجزّأة وغير مكتملة.',
     },
     {
       device: 'Contrast',
-      example: 'Sunrise mission vs social death; beauty of nature vs duty to die',
+      example:
+        '[Whole poem: the mission begun at sunrise against the social death at home; the beauty of nature against the duty to die]',
       effect:
         'The poem is structured around contrasts: life vs death, duty vs instinct, honour vs shame. These oppositions create the moral tension at the heart of the poem and resist simple resolution.',
       lineRef: 0,
       effectAr:
         'القصيدة مبنية على تناقضات: الحياة مقابل الموت، الواجب مقابل الغريزة، الشرف مقابل العار. هالثنائيات تخلق التوتّر الأخلاقي في قلب القصيدة، وتقاوم أي حل سهل.',
     },
-    // VERIFY: removed device example 'and he flew into the sun / and he flew into the sun' - these duplicated lines are NOT in Garland's Kamikaze. The opening sequence is 'a flask of water, a samurai sword / in the cockpit, a shaven head / full of powerful incantations / and enough fuel for a one-way / journey into history'.
     {
       device: 'Enjambment',
-      example: 'the fish / swivelled... the weights and selvedges / of the ocean',
+      example:
+        '[Stanzas 1 to 5: one sentence runs on across all four stanza breaks, as from stanza 4 into stanza 5]',
       effect:
-        "Lines run into each other without pause, creating a flowing, continuous movement. This mirrors the pilot's unbroken train of thought and the relentless pull of memory and nature.",
-      lineRef: 7,
+        "Lines run into each other without pause, creating a flowing, continuous movement: the first five stanzas are a single sentence. This mirrors the pilot's unbroken train of thought and the relentless pull of memory and nature.",
+      lineRef: 4,
       effectAr:
-        'الأبيات تنساب بدون توقّف، وتخلق حركة متواصلة سايلة. هالشي يحاكي تيّار فكر الطيّار المتواصل، وقوّة جذب الذاكرة والطبيعة اللي ما تنقطع.',
+        'الأبيات تنساب بدون توقّف، وتخلق حركة متواصلة سايلة: أول خمس مقاطع جملة وحدة. هالشي يحاكي تيّار فكر الطيّار المتواصل، وقوّة جذب الذاكرة والطبيعة اللي ما تنقطع.',
     },
   ],
 }
@@ -520,7 +513,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "The poem is narrated by the pilot's daughter, who pieces together the story from what she was told. The final stanza shifts to her own first-person reflection on the consequences.",
+      "The story is the daughter's: an outside narrator reports how she retold it to her own children, piecing it together from what she was told, and in stanzas 6 and 7 she speaks in her own first-person voice about the consequences.",
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -530,13 +523,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Engine failure',
-      'The beauty of nature - fish, birds, and the sea - reminds him of life and his childhood',
+      'The beauty of nature - the boats, the sea and the fish - reminds him of life and his childhood',
       'A radio message from his family',
       'Fear of the enemy',
     ],
     correctIndex: 1,
     explanation:
-      'The pilot is pulled back by the beauty of the natural world - fish "swivelling their silver bodies", wood pigeons, the "green-blue translucent sea". Nature and childhood memories of fishing with his father represent life over death.',
+      "The pilot is pulled back by the beauty of the natural world: the fishing boats, the sea and the shoals below him (stanzas 2 and 3), and the memory they stir of waiting by the sea for his father's boat to come home (stanzas 4 and 5). Nature and childhood memory represent life over death.",
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -552,13 +545,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The family treats the pilot as though he no longer exists. In Japanese culture, a kamikaze pilot who turned back brought profound shame. His wife and children refuse to speak to him - he becomes socially dead.',
+      'The family treats the pilot as if he had ceased to exist. In Japanese culture, a kamikaze pilot who turned back brought profound shame. His wife never speaks to him again and the children learn to be silent too - he becomes socially dead.',
     topic: 'Themes',
     difficulty: 'foundation',
   },
   {
     id: 'kam-5',
-    question: 'What does the nature imagery (fish, birds, sea) represent in the poem?',
+    question: 'What does the nature imagery (boats, fish, sea) represent in the poem?',
     type: 'multiple-choice',
     options: [
       'The dangers of the ocean',
@@ -568,29 +561,30 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Nature represents life itself - vivid, beautiful, and precious. The fish, birds, and translucent sea offer a sensory counterweight to the abstract concept of duty. Life is tangible; honour is not.',
+      'Nature represents life itself - vivid, beautiful, and precious. The boats, the fish and the clear sea offer a sensory counterweight to the abstract concept of duty. Life is tangible; honour is not.',
     topic: 'Language',
     difficulty: 'higher',
   },
   {
     id: 'kam-6',
-    question: "What is the effect of the final stanza being in the daughter's first-person voice?",
+    question:
+      'What is the effect of the daughter speaking in her own first-person voice in stanzas 6 and 7?',
     type: 'multiple-choice',
     options: [
       'It distances the reader from the story',
-      'It shifts from retelling to personal reflection, showing the lasting impact on the family - "he must have wondered which had been the better way to die"',
+      'It shifts from retelling to personal testimony, showing the lasting impact on the family, before the last two lines return to the outside narrator',
       'It introduces a new character',
       'It resolves the conflict happily',
     ],
     correctIndex: 1,
     explanation:
-      'The shift to first person makes the final stanza deeply personal. The daughter speculates that her father must have wondered if social death (being shunned) was worse than the physical death he avoided.',
+      'The shift to first person makes these stanzas deeply personal: the daughter took part in the silence herself. In the closing lines, reported again by the narrator, she imagines her father wondering whether social death (being shunned) was worse than the physical death he avoided.',
     topic: 'Structure',
     difficulty: 'higher',
   },
   {
     id: 'kam-7',
-    question: 'What is the significance of the "samurai sword" in the opening?',
+    question: 'What is the significance of the samurai sword in the opening?',
     type: 'multiple-choice',
     options: [
       'It shows the pilot is dangerous',
@@ -606,17 +600,21 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'kam-8',
-    question: 'What does "he flew into the sun" symbolise?',
+    // Until 26 September 2026 this question asked about a line, repeated, of the
+    // pilot flying into the sun. The poem has no such line. It now asks about the
+    // two places the sun does appear: the departure at sunrise (stanza 1) and the
+    // fish turning towards the sun (stanza 3).
+    question: 'Why might it matter that the fish in stanza 3 turn towards the sun?',
     type: 'multiple-choice',
     options: [
-      'He flew east towards the sunrise',
-      'The sun symbolises Japan (the Rising Sun flag) - flying into the sun represents devotion to the nation unto death',
-      'He was blinded by sunlight',
-      'The sun caused engine problems',
+      'It simply tells us the time of day',
+      'It echoes the sunrise at which he set out, but now the fish turn towards life and light, pulling him away from the mission',
+      'It shows the fish are frightened of the plane',
+      'It explains why the pilot could not see his target',
     ],
     correctIndex: 1,
     explanation:
-      'The sun is a central symbol of Japan itself (the Rising Sun). "Flying into the sun" represents the pilot\'s devotion to his nation - literally heading towards death for his country. The repetition emphasises the inevitability of his mission.',
+      'The sun is a symbol of Japan itself (the Rising Sun), and the pilot set out at sunrise on a mission of death. In stanza 3 the fish turn towards the sun and flash in its light, an image of life that begins to pull him back. The same symbol now points away from duty.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -626,13 +624,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It celebrates honour above all else',
-      'It shows that the "honourable" choice (death) and the "dishonourable" choice (life) both lead to a form of death - raising the question of which is truly worse',
+      'It shows that the honourable choice (death) and the dishonourable choice (life) both lead to a form of death - raising the question of which is truly worse',
       'It ignores honour entirely',
       'It defines honour clearly',
     ],
     correctIndex: 1,
     explanation:
-      'The poem creates a devastating paradox: dying would have brought honour; living brought social death. The daughter\'s final reflection - "which had been the better way to die" - suggests both paths led to a form of death, questioning whether honour is worth the cost.',
+      'The poem creates a devastating paradox: dying would have brought honour; living brought social death. The question the poem ends on, in its last line, suggests both paths led to a form of death, questioning whether honour is worth the cost.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -672,19 +670,19 @@ const REVISION_TOPICS = [
     summary:
       'Garland uses vivid nature imagery, symbolism of the sun and samurai sword, and a narrative voice that shifts from third person to intimate first person.',
     keyPoints: [
-      'Nature imagery: "silver bodies", "green-blue translucent sea" - life\'s beauty',
-      "Sun symbolism - represents Japan and the pilot's devotion to his nation",
-      '"Samurai sword" - the weight of warrior tradition and honour culture',
-      'Colour imagery: "silver", "green-blue" - vivid life contrasting with the death mission',
+      "Nature imagery: the boats, sea and fish of stanzas 2 and 3 - life's beauty",
+      'Sun symbolism - the sunrise departure stands for Japan and duty; the fish turning to the sun stand for life',
+      'The samurai sword - the weight of warrior tradition and honour culture',
+      'Colour imagery: silver and green-blue set against dark - vivid life contrasting with the death mission',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Seven stanzas narrated mostly in third person, with a crucial shift to first person in the final stanza as the daughter reflects personally on the consequences.',
+      "Seven six-line stanzas narrated mostly in the third person, with a crucial shift to the daughter's own first person in stanzas 6 and 7 as she speaks personally about the consequences.",
     keyPoints: [
-      'Third-person narration - the daughter retells what she was told, creating distance',
-      'Final stanza shifts to first person - intimate, personal reflection',
+      'Third-person narration - an outside voice retells what the daughter told, creating distance',
+      'Stanzas 6 and 7 shift to first person - intimate, personal testimony - before the narrator returns in the last two lines',
       'Enjambment across stanzas - the story flows without neat resolution',
       "No regular rhyme - reflecting the unresolved nature of the family's pain",
     ],
@@ -728,7 +726,7 @@ const comparisons = [
     link: '/revision/poetry/power-and-conflict/the-emigree',
     points: [
       'Both explore the tension between personal identity and external pressures',
-      'Both use light imagery ("sunlight" in The Émigrée, "sun" in Kamikaze) as symbols of hope and belonging',
+      'Both use light imagery (the sunlit city of The Émigrée, the sun the fish turn towards in Kamikaze) as symbols of hope and belonging',
       "The Émigrée's speaker clings to memory of a homeland; the kamikaze pilot's memories pull him away from duty",
       'Both poems show how individuals can be caught between two worlds with no easy resolution',
     ],
@@ -858,11 +856,15 @@ export default function KamikazePage() {
       </div>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <strong>Rights notice:</strong> &copy; Enitharmon Press on behalf of Beatrice Garland (b.
-        1938). Quotations from &ldquo;Kamikaze&rdquo; are short fair-dealing extracts under CDPA
-        1988 &sect;30 (criticism, review, quotation). For full text, students should consult the
-        board-licensed AQA Power &amp; Conflict anthology or Garland&rsquo;s collection{' '}
-        <em>The Invention of Fireworks</em> (2013).
+        {/* Until 26 September 2026 this credited Enitharmon Press. The AQA anthology
+            prints the poem from The Invention of Fireworks by permission of Templar
+            Poetry, its publisher. */}
+        <strong>Rights notice:</strong> &copy; Beatrice Garland (b. 1938), from{' '}
+        <em>The Invention of Fireworks</em> (Templar Poetry, 2013). The poem is paraphrased line by
+        line here, not printed. Quotations from &ldquo;Kamikaze&rdquo; are short fair-dealing
+        extracts under CDPA 1988 &sect;30 (criticism, review, quotation). For full text, students
+        should consult the board-licensed AQA Power &amp; Conflict anthology or Garland&rsquo;s
+        collection.
       </p>
     </div>
   )

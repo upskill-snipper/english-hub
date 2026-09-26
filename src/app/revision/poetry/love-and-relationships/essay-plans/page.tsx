@@ -54,7 +54,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemBPoint:
           'Shelley catalogues natural pairings (rivers/ocean, winds/each other) to argue that union is the law of nature.',
         poemBQuote: '"nothing in the world is single"',
-        link: 'Both poets root desire in the natural world, but Barrett Browning shows nature as dangerous (vines that "hide the wood") while Shelley presents it as harmonious evidence for his argument.',
+        link: 'Both poets root desire in the natural world, but Barrett Browning shows nature as dangerous (the "straggling green which hides the wood") while Shelley presents it as harmonious evidence for his argument.',
       },
       {
         topic: "The speaker's agency and control",
@@ -63,7 +63,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemAQuote: '"Renew thy presence"',
         poemBPoint:
           "Shelley's speaker never gains control; the poem ends on a rhetorical question that receives no answer, leaving him powerless.",
-        poemBQuote: '"What is all this sweet work worth / If thou kiss not me?"',
+        poemBQuote: '"If thou kiss not me?"',
         link: "Barrett Browning presents female desire as assertive and ultimately fulfilled, subverting Victorian gender norms. Shelley's male speaker, by contrast, remains in a position of supplication -- the desired kiss never comes.",
       },
       {
@@ -72,7 +72,7 @@ const ESSAY_PLANS: EssayPlan[] = [
           'The Petrarchan sonnet form gives Barrett Browning a volta at line 6, structurally enacting the shift from fantasy to reality.',
         poemAQuote: '"I do not think of thee"',
         poemBPoint:
-          'Shelley uses two mirrored stanzas with an identical closing question, creating a circular structure that suggests desire is stuck in repetition.',
+          'Shelley uses two mirrored stanzas, each closing on a rhetorical question, creating a circular structure that suggests desire is stuck in repetition.',
         poemBQuote: 'The repeated rhetorical question structure',
         link: "Barrett Browning's form moves towards resolution; Shelley's circles back, reinforcing the difference between desire answered and desire endlessly deferred.",
       },
@@ -117,7 +117,7 @@ const ESSAY_PLANS: EssayPlan[] = [
           '"The smile on your mouth was the deadest thing / Alive enough to have strength to die"',
         poemBPoint:
           "Byron's tone is mournful rather than bitter; his grief is sharpened by the impossibility of publicly naming his loss.",
-        poemBQuote: '"They name thee before me, / A knell to mine ear"',
+        poemBQuote: '"They name thee before me, / A knell in mine ear"',
         link: "Hardy arrives at a kind of nihilistic clarity, while Byron remains trapped in unresolvable sorrow. The difference is structural: Hardy's love ended mutually, while Byron's was a secret that society can still weaponise against him.",
       },
     ],
@@ -136,11 +136,11 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         topic: 'Physical imagery of closeness and distance',
         poemAPoint:
-          'Day-Lewis tracks his son physically walking away, using the image of a "satellite / Wrenched from its orbit" to convey the gravitational pull of parental love being broken.',
-        poemAQuote: '"like a satellite / Wrenched from its orbit"',
+          'Day-Lewis tracks his son physically walking away, comparing him to a satellite torn out of its orbit (lines 4 to 5) to convey the gravitational pull of parental love being broken.',
+        poemAQuote: '"satellite / Wrenched from its orbit"',
         poemBPoint:
-          'Heaney uses precise physical detail -- his father\'s shoulders, the plough, the "polished sod" -- to evoke a childhood closeness defined by admiration of the father\'s body at work.',
-        poemBQuote: '"His shoulders globed like a full sail strung"',
+          "Heaney uses precise physical detail -- his father's shoulders, the plough, the turned earth -- to evoke a childhood closeness defined by admiration of the father's body at work.",
+        poemBQuote: '"globed like a full sail"',
         link: 'Both poets use physical imagery to express emotional bonds, but Day-Lewis shows separation as cosmic violence while Heaney shows closeness through earthly, tactile detail. The contrast in register reveals different aspects of family love.',
       },
       {
@@ -149,18 +149,18 @@ const ESSAY_PLANS: EssayPlan[] = [
           'The reversal in Walking Away is a single, decisive moment: the father watches the son leave and must accept that love means releasing control.',
         poemAQuote: '"love is proved in the letting go"',
         poemBPoint:
-          'Heaney\'s reversal is gradual and unsettling -- the final couplet\'s confession that his father now "keeps stumbling / Behind me" transforms admiration into guilt.',
-        poemBQuote: '"It is my father who keeps stumbling / Behind me, and will not go away"',
+          "Heaney's reversal is gradual and unsettling -- the confession in the last two lines (23 to 24) that his father now trails behind him transforms admiration into guilt.",
+        poemBQuote: '"keeps stumbling / Behind me" and "will not go away"',
         link: 'Day-Lewis presents the reversal as noble sacrifice; Heaney presents it as uncomfortable obligation. This difference reveals two very different emotional truths about family: that letting go can be an act of love, and that being followed can feel like a burden.',
       },
       {
         topic: 'Time and memory as structural devices',
         poemAPoint:
-          'Day-Lewis anchors the poem in a single remembered afternoon ("eighteen years ago") and draws a direct line from that moment to a present understanding.',
-        poemAQuote: '"eighteen years ago, almost to the day"',
+          'Day-Lewis anchors the poem in a single remembered day, dated in the opening line, and draws a direct line from that moment to a present understanding.',
+        poemAQuote: '"eighteen years ago"',
         poemBPoint:
-          "Heaney's poem moves from childhood memory to present tense in the final two lines, with the shift happening abruptly and without preparation.",
-        poemBQuote: 'The sudden present tense of the final couplet',
+          "Heaney's poem stays in childhood memory until the turn at the end of line 22, then moves into the present tense for the last two lines, and the shift is abrupt.",
+        poemBQuote: 'The sudden present tense of the last two lines (23 to 24)',
         link: 'Day-Lewis uses time to build wisdom; Heaney uses it to deliver a shock. The structural handling of memory reveals whether the speaker has made peace with the parent-child shift or remains troubled by it.',
       },
     ],
@@ -179,7 +179,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         topic: 'The objectification of the beloved',
         poemAPoint:
-          'Browning\'s speaker reduces Porphyria to a beautiful object after death -- her head rests on his shoulder "as a shut bud that holds a bee", and he treats her corpse as a doll to be arranged.',
+          'Browning\'s speaker reduces Porphyria to a beautiful object after death -- he opens her eyelids as warily as he would "a shut bud that holds a bee", then props her head on his shoulder and treats her corpse as a doll to be arranged.',
         poemAQuote: '"I propped her head up as before"',
         poemBPoint:
           'Mew\'s farmer describes his wife through animal and nature imagery -- she is "like a hare", "shy as a leveret" -- never as a thinking person with interiority.',
@@ -232,10 +232,10 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'Silence versus persuasion',
         poemAPoint:
           'The couple in Winter Swans barely speak -- their reconciliation happens through shared observation and the instinctive reaching of hands, not through declarations.',
-        poemAQuote: '"our hands swum water over water"',
+        poemAQuote: '"swum the distance between us"',
         poemBPoint:
           "Shelley's speaker is entirely verbal -- the poem is an extended argument aimed at persuading the beloved, ending with a direct question.",
-        poemBQuote: '"What is all this sweet work worth / If thou kiss not me?"',
+        poemBQuote: '"If thou kiss not me?"',
         link: 'Sheers suggests that genuine emotional repair happens below language; Shelley relies on language entirely. This contrast reveals two fundamentally different models of how love communicates.',
       },
       {
@@ -244,7 +244,7 @@ const ESSAY_PLANS: EssayPlan[] = [
           'Sheers uses tercets (three-line stanzas) throughout but ends with a couplet -- the formal shift from three to two enacts the couple coming together.',
         poemAQuote: 'The closing couplet form',
         poemBPoint:
-          "Shelley's two identical stanzas circle back to the same unanswered question, creating a structure of frustrated repetition.",
+          "Shelley's two parallel stanzas each circle back to an unanswered question, creating a structure of frustrated repetition.",
         poemBQuote: 'The repeated stanza structure',
         link: "Sheers's form resolves; Shelley's does not. The structural contrast mirrors the emotional outcome: reconciliation achieved versus desire unfulfilled.",
       },
@@ -268,7 +268,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemAQuote: '"I\'m ten years away from the corner you laugh on"',
         poemBPoint:
           'Causley describes his parents at Eden Rock with luminous, hyper-specific detail, but he remains on the opposite side of the stream -- present as an observer but separated.',
-        poemBQuote: '"They are waiting for me somewhere beyond Eden Rock"',
+        poemBQuote: '"They are waiting for me"',
         link: "Duffy crosses the boundary between present and past by force of imagination; Causley respects the boundary and watches from the other side. Both are acts of love, but Duffy's is possessive while Causley's is accepting.",
       },
       {
@@ -277,17 +277,17 @@ const ESSAY_PLANS: EssayPlan[] = [
           'Duffy\'s imagery is vivid and sensory -- the "polka-dot dress", the "thousand eyes" of the dance hall, the "high-heeled red shoes" -- recreating her mother\'s glamour with cinematic intensity.',
         poemAQuote: '"your polka-dot dress blows round your legs. Marilyn"',
         poemBPoint:
-          'Causley\'s imagery is precise but dreamlike -- the "white cloth" spread over grass, the "thermos" -- ordinary details made luminous by the knowledge that these parents are dead.',
-        poemBQuote: '"the same three plates, the tin cups painted blue"',
+          'Causley\'s imagery is precise but dreamlike -- the "white cloth" spread over grass, the "Thermos" -- ordinary details made luminous by the knowledge that these parents are dead.',
+        poemBQuote: '"the tin cups painted blue"',
         link: "Duffy's imagery is glamorous and public; Causley's is domestic and private. Both use specificity to make the past feel real, but the emotional register differs -- Duffy envies; Causley yearns.",
       },
       {
         topic: "The poem's emotional destination",
         poemAPoint:
-          'Duffy ends by literally possessing her mother -- "your ghost clatters toward me" in the mother\'s old shoes. The daughter has taken ownership of the mother\'s past.',
+          'In the last two stanzas Duffy takes possession of her mother -- "your ghost clatters toward me" (line 13) in the mother\'s old shoes. The daughter has taken ownership of the mother\'s past.',
         poemAQuote: '"your ghost clatters toward me"',
         poemBPoint:
-          'Causley ends with the enigmatic "I had not thought that it would be like this" -- a quiet acceptance of crossing over towards his parents, towards death.',
+          'Causley ends with an enigmatic one-line final stanza (line 20) -- a quiet acceptance of crossing over towards his parents, towards death.',
         poemBQuote: '"I had not thought that it would be like this"',
         link: "Duffy's ending is an act of possession; Causley's is an act of release. Both poems use memory as a bridge between living and dead, but Duffy pulls the past towards her while Causley moves towards it.",
       },
@@ -354,7 +354,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemAQuote: '"In February, digging his garden"',
         poemBPoint:
           'Armitage uses the extended metaphor of a tape measure stretching between mother and son -- a physical line of connection that must eventually be broken.',
-        poemBQuote: '"unreeling years between us"',
+        poemBQuote: '"unreeling / years between us"',
         link: "Both poets use concrete, physical images to embody emotional distance, but Dooley's image (the letter) sustains connection while Armitage's (the tape measure) dramatises its stretching to breaking point.",
       },
       {
@@ -363,19 +363,19 @@ const ESSAY_PLANS: EssayPlan[] = [
           'The distance in Letters from Yorkshire is geographic and perhaps permanent, but Dooley presents it as the condition under which genuine communication thrives.',
         poemAQuote: '"our souls tap out messages"',
         poemBPoint:
-          'Armitage\'s distance is developmental and necessary -- the son must separate to become independent, even though the mother "still pinch / the last one-hundredth of an inch... between her finger and thumb".',
-        poemBQuote: '"to fall or fly"',
+          "Armitage's distance is developmental and necessary -- the son must separate to become independent, even though his mother is still holding on to the very end of the tape (lines 12 to 13).",
+        poemBQuote: '"one-hundredth of an inch"',
         link: 'Dooley accepts distance as enriching; Armitage presents it as a necessary rupture. Both suggest that some distance is essential to love, but they differ on whether that distance costs or benefits the relationship.',
       },
       {
         topic: 'The ending and emotional resolution',
         poemAPoint:
-          'Dooley ends with affirming images of shared communication and a shared sky, suggesting invisible emotional connection is stronger than physical presence.',
+          "Dooley ends with an affirming image of shared communication, the two of them following one night's bulletins in separate homes, suggesting invisible emotional connection is stronger than physical presence.",
         poemAQuote: '"our souls tap out messages"',
         poemBPoint:
-          'Armitage ends with the vertiginous image of being at the "hatch" of independence, facing the choice to "fall or fly" -- the outcome deliberately left unresolved.',
+          'Armitage ends with the vertiginous image of being at the "hatch" of independence (line 14), facing the choice set out in the final line -- the outcome deliberately left unresolved.',
         poemBQuote: '"to fall or fly"',
-        link: 'Dooley resolves into connection; Armitage leaves the reader in suspense. The difference reflects the nature of each relationship: sustained adult friendship versus the irreversible moment of a child leaving home.',
+        link: 'Dooley resolves into connection; Armitage leaves the reader in suspense. The difference reflects the nature of each relationship: a sustained adult bond, which Dooley never names, versus the irreversible moment of a child leaving home.',
       },
     ],
     conclusion:
@@ -392,9 +392,8 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         topic: 'Tone and register',
         poemAPoint:
-          'Nagra uses phonetic Punjabi-English, humour, and bathos -- the customers are "di worst Indian shop" while the lovers are consumed by each other. The comedy makes the love feel warm and real.',
-        poemAQuote:
-          '"my bride... she say to me / is di worst Indian shop / on di whole Indian road"',
+          'Nagra uses phonetic Punjabi-English, humour, and bathos -- downstairs the customers complain about the shop (lines 12 to 17) while upstairs the lovers are consumed by each other. The comedy makes the love feel warm and real.',
+        poemAQuote: '"di worst Indian shop / on di whole Indian road"',
         poemBPoint:
           "Barrett Browning's tone is passionate and earnest -- there is no irony or comedy, only the intensity of a speaker rejecting fantasy for physical reality.",
         poemBQuote: '"burst, shattered, everywhere!"',
@@ -404,7 +403,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'Cultural context and subversion',
         poemAPoint:
           'Nagra subverts stereotypes about arranged marriage by presenting a couple giddy with desire and tenderness, using the corner shop as an unlikely romantic setting.',
-        poemAQuote: '"my bride... effing at my mum"',
+        poemAQuote: '"my bride / she effing at my mum"',
         poemBPoint:
           "Barrett Browning subverts Victorian expectations of female passivity by writing a woman's desire openly, using imperatives and sensual imagery.",
         poemBQuote: '"burst, shattered, everywhere!"',
@@ -437,7 +436,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'The parent as a figure of admiration',
         poemAPoint:
           "Heaney's father is presented in heroic, physical terms -- his expertise with the plough is rendered with precise, reverent detail.",
-        poemAQuote: '"His shoulders globed like a full sail strung"',
+        poemAQuote: 'The sail simile for his shoulders (line 2), quoted in Plan 3',
         poemBPoint:
           "Duffy's mother is presented as glamorous and free -- dancing, laughing, compared to Marilyn Monroe in a pre-motherhood life of excitement.",
         poemBQuote: '"your polka-dot dress blows round your legs. Marilyn"',
@@ -446,8 +445,8 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         topic: "The child's position",
         poemAPoint:
-          'Heaney presents himself as a clumsy child who "stumbled" and was "a nuisance" -- he could never match his father\'s mastery, and this inadequacy shadows the poem.',
-        poemAQuote: '"I stumbled in his hob-nailed wake"',
+          'Heaney presents himself as a clumsy child who trailed behind his father and was "a nuisance" (line 21) -- he could never match his father\'s mastery, and this inadequacy shadows the poem.',
+        poemAQuote: '"stumbled in his hob-nailed wake"',
         poemBPoint:
           'Duffy positions herself as an absence who will eventually claim the mother -- "I\'m ten years away" -- her future existence is already consuming the mother\'s freedom.',
         poemBQuote: '"I\'m ten years away from the corner you laugh on"',
@@ -456,8 +455,8 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         topic: 'How time reverses the relationship',
         poemAPoint:
-          'The final couplet delivers a devastating reversal: the father who once led now "keeps stumbling / Behind me", and the tone shifts from admiration to discomfort.',
-        poemAQuote: '"It is my father who keeps stumbling / Behind me, and will not go away"',
+          'The last two lines deliver a devastating reversal: the father who once led now follows the son (lines 23 to 24), and the tone shifts from admiration to discomfort.',
+        poemAQuote: 'The closing reversal (lines 23 to 24), quoted in Plan 3',
         poemBPoint:
           "Duffy's mother becomes a \"ghost\" whose glamorous past only exists through the daughter's memory and imagination -- the mother has been absorbed into the child's narrative.",
         poemBQuote: '"your ghost clatters toward me"',

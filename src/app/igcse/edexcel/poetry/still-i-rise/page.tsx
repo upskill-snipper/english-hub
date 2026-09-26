@@ -58,7 +58,7 @@ const stanzaSummaries = [
   {
     n: 'Ancestral movement',
     label: 'The history of slavery',
-    body: 'The poem widens to address centuries of African-American history. The speaker carries the &ldquo;huts of history&rsquo;s shame&rdquo; with her: the legacies of slavery, segregation, and racial violence. She is &ldquo;the dream and the hope of the slave&rdquo; &mdash; she is what the enslaved ancestors imagined for the future. Her rising is collective as well as personal.',
+    body: 'The poem widens to address centuries of African-American history. The speaker carries that shameful past with her: the legacies of slavery, segregation, and racial violence. She is &ldquo;the dream and the hope of the slave&rdquo; &mdash; she is what the enslaved ancestors imagined for the future. Her rising is collective as well as personal.',
   },
   {
     n: 'Closing stanzas',

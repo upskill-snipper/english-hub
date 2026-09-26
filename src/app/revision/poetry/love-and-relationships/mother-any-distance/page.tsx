@@ -26,17 +26,36 @@ const motherAnyDistancePoem: PoemData = {
   // lines 9 to 11 of the published poem belong, so the stanza had six entries
   // and the poem fourteen. Those three lines are now paraphrased from the
   // published text, one entry each, giving the fifteen lines the form notes
-  // describe. The languageDevices "Neologism" entry still quotes the invented
-  // compound and needs the same correction, as do the summary's stanza 3 line
-  // range and the quiz (mad-9) and revision-topic references to a window, which
-  // came from the same invented lines.
+  // describe.
+  //
+  // THE REST OF THE PAGE, 26 September 2026. Until then the key quotes,
+  // devices, form notes, quiz and revision notes quoted 84 distinct words of a
+  // poem of about 111, including its whole first line, the whole of line 4 and
+  // most of lines 12 and 13. They also kept four errors from the invented
+  // lines or from nowhere: a "Neologism" device quoting a compound and a
+  // landing the poem does not have, a window at the top of the house where the
+  // poem has a hatch, a third stanza said to run to line 12 (it runs from 9 to
+  // 15, so the stanzas are 4, 4 and 7 lines, not about 4, 8 and 3), and two
+  // full rhymes (lines 3 and 4, 14 and 15) called half-rhymes. Six of the
+  // eight device lineRefs pointed at the wrong entry, one at a stanza break. The
+  // page now quotes ten short phrases, 16 words counted once, the cap of 15
+  // per cent: prairies (4), zero-end (5), base and leaving (6), feeding (7),
+  // Anchor. Kite. (8), space-walk (9), pinch (12), endless sky (14), fall or
+  // fly (15). Each was checked word for word against the poem as AQA prints
+  // it, by permission of Faber and Faber, in its published anthology
+  // (filestore.aqa.org.uk/resources/english/AQA-8702-TG-POEMS.PDF). Anything
+  // else is cited by line number or put in the site's own words. lineRef is a
+  // lines-array index, stanza breaks included: line n of the poem is entry
+  // n - 1 in stanza 1, n in stanza 2 and n + 1 in stanza 3. Adding a quotation
+  // takes the page over the cap: no-poem-quoted-beyond-fair-dealing.test.ts
+  // fails it.
   lines: [
     {
       text: '[Paraphrase] The speaker tells his mother that measuring anything longer than one person can stretch across',
       annotations: [
         {
           type: 'Direct address',
-          note: 'Opening with "Mother" makes this intimate and personal, as though the speaker is calling out to her directly.',
+          note: 'Opening with a direct address to his mother makes this intimate and personal, as though the speaker is calling out to her.',
           color: '#3b82f6',
         },
         {
@@ -61,7 +80,7 @@ const motherAnyDistancePoem: PoemData = {
       annotations: [
         {
           type: 'Domestic imagery',
-          note: 'The list of household features grounds the poem in a real, specific moment \u2014 moving into a new home \u2014 while the measuring tape becomes an extended metaphor.',
+          note: 'The list of household features grounds the poem in a real, specific moment (moving into a new home) while the measuring tape becomes an extended metaphor.',
           color: '#10b981',
         },
       ],
@@ -71,12 +90,12 @@ const motherAnyDistancePoem: PoemData = {
       annotations: [
         {
           type: 'Hyperbole',
-          note: '"Acres" and "prairies" exaggerate the size of the new home, reflecting the speaker\'s sense of the vastness and daunting nature of independence.',
+          note: 'Measuring the walls like farmland and calling the floors "prairies" exaggerates the size of the new home, reflecting the speaker\'s sense of the vastness and daunting nature of independence.',
           color: '#f59e0b',
         },
         {
           type: 'Metaphor',
-          note: 'The rooms become wide open landscapes \u2014 exciting but intimidating. The new space represents the adult world the speaker is entering.',
+          note: 'The rooms become wide open landscapes: exciting but intimidating. The new space represents the adult world the speaker is entering.',
           color: '#ef4444',
         },
       ],
@@ -93,7 +112,7 @@ const motherAnyDistancePoem: PoemData = {
         },
         {
           type: 'Extended metaphor',
-          note: 'The measuring tape represents the umbilical cord connecting mother and child \u2014 a lifeline that stretches but has not yet been cut.',
+          note: 'The measuring tape represents the umbilical cord connecting mother and child, a lifeline that stretches but has not yet been cut.',
           color: '#ec4899',
         },
       ],
@@ -103,7 +122,7 @@ const motherAnyDistancePoem: PoemData = {
       annotations: [
         {
           type: 'Military language',
-          note: 'Calling the figures down to "base" sounds like a military or mission report, suggesting the mother is a safe headquarters and the speaker is venturing into unknown territory.',
+          note: 'Calling out the figures to "base" sounds like a military or mission report, suggesting the mother is a safe headquarters and the speaker is venturing into unknown territory.',
           color: '#3b82f6',
         },
         {
@@ -201,7 +220,7 @@ const motherAnyDistancePoem: PoemData = {
       annotations: [
         {
           type: 'Imagery',
-          note: 'The "hatch" opens onto a sky without limits: a thrilling image of infinite possibility but also of danger. There is nothing to hold onto in a sky that never ends.',
+          note: 'The loft hatch opens onto a sky without limits: a thrilling image of infinite possibility but also of danger. There is nothing to hold onto in a sky that never ends.',
           color: '#10b981',
         },
         {
@@ -216,7 +235,7 @@ const motherAnyDistancePoem: PoemData = {
       annotations: [
         {
           type: 'Ambiguity',
-          note: 'The final line offers two outcomes: falling (failure, danger) or flying (freedom, success). The poem ends on this unresolved tension \u2014 independence is both exhilarating and terrifying.',
+          note: 'The final line offers two outcomes: falling (failure, danger) or flying (freedom, success). The poem ends on this unresolved tension: independence is both exhilarating and terrifying.',
           color: '#f59e0b',
         },
         {
@@ -231,224 +250,183 @@ const motherAnyDistancePoem: PoemData = {
   context:
     '<p><strong>Simon Armitage (b. 1963)</strong> is a contemporary British poet from Marsden, West Yorkshire. He has been UK Poet Laureate since May 2019, succeeding Carol Ann Duffy (2009-2019). He originally trained as a probation officer, is now a professor at Leeds University, and served as Oxford Professor of Poetry from 2015 to 2019. His poetry is known for its colloquial language, dry humour, and exploration of everyday life. (Note: although his anthology poems include war pieces such as <em>Remains</em> and <em>The Manhunt</em>, Armitage never served in any military or combat role - those poems are based on interviews with veterans.)</p>' +
     '<p><strong>"Mother, any distance"</strong> was published in <em>Book of Matches</em> (1993), a collection where each poem was designed to last the time it takes a match to burn. The poem draws on Armitage\'s own experience of leaving home.</p>' +
-    '<p><strong>The extended metaphor</strong> of a measuring tape connects to the <strong>umbilical cord</strong> \u2014 the physical link between mother and child. As the speaker moves through his new house, the tape stretches and eventually must be released, just as a child must eventually separate from their parent.</p>' +
-    '<p>The poem explores the <strong>emotional complexity of growing up</strong>: the desire for independence battling against the security of parental love. It captures a universal moment \u2014 leaving home \u2014 with tenderness and honesty.</p>' +
-    '<p>Armitage has described the poem as being about <strong>the point at which you have to let go</strong>, acknowledging that both parent and child find this difficult.</p>',
+    '<p><strong>The extended metaphor</strong> of a measuring tape connects to the <strong>umbilical cord</strong>, the physical link between mother and child. As the speaker moves through his new house, the tape stretches and eventually must be released, just as a child must eventually separate from their parent.</p>' +
+    '<p>The poem explores the <strong>emotional complexity of growing up</strong>: the desire for independence battling against the security of parental love. It captures a universal moment, leaving home, with tenderness and honesty.</p>' +
+    '<p>The poem is often read as being about <strong>the point at which you have to let go</strong>, and it acknowledges that both parent and child find this difficult.</p>',
 
   contextAr:
     '<p><strong>Simon Armitage (مواليد 1963)</strong> شاعر بريطاني معاصر من Marsden في West Yorkshire. هو UK Poet Laureate من مايو 2019، خلف Carol Ann Duffy (2009-2019). أصلاً تدرّب كموظف مراقبة المفرج عنهم، والحين أستاذ في جامعة Leeds، وخدم كأستاذ الشعر في Oxford من 2015 إلى 2019. شعره معروف بلغته العاميّة، وحسّ الفكاهة الجاف، واستكشاف الحياة اليوميّة. (ملاحظة: على الرغم إن قصائده في الـanthology تشمل قطع حرب مثل <em>Remains</em> و<em>The Manhunt</em>، Armitage أبد ما خدم في أي دور عسكري أو قتالي - هذي القصائد مبنيّة على مقابلات مع جنود سابقين.)</p>' +
     '<p>قصيدة <strong>"Mother, any distance"</strong> انتشرت في ديوان <em>Book of Matches</em> (1993)، مجموعة كل قصيدة فيها مصمّمة عشان تطول قد ما يطول اشتعال عود ثقاب. القصيدة مستوحاة من تجربة Armitage الشخصيّة في مغادرة بيت الأهل.</p>' +
     '<p><strong>الاستعارة الممتدّة</strong> (extended metaphor) عن شريط القياس تربطه بـ<strong>الحبل السرّي</strong> - الرابط الجسدي بين الأم والابن. مع تنقّل المتكلّم (ذكر) في بيته الجديد، الشريط يتمدّد، ولازم في النهاية ينحرّر، تماماً مثل الابن لازم في النهاية ينفصل عن والديه.</p>' +
     '<p>القصيدة تستكشف <strong>التعقيد العاطفي للنضوج</strong>: الرغبة في الاستقلال تتصارع مع أمان الحب الأبوي. تلتقط لحظة عامّة كل واحد فينا يمرّ فيها - مغادرة بيت الأهل - بحنان وصدق.</p>' +
-    '<p>Armitage وصف القصيدة على إنها عن <strong>اللحظة اللي لازم تخلّي يدك تنفلت فيها</strong>، ويعترف إن الأم والابن كلاهما يلقى هالشي صعب.</p>',
+    '<p>القصيدة تنقرأ كثير على إنها عن <strong>اللحظة اللي لازم تخلّي يدك تنفلت فيها</strong>، وتعترف إن الأم والابن كلاهما يلقى هالشي صعب.</p>',
 
   summary:
-    'Stanza 1 (lines 1\u20134): The speaker asks his mother to help him measure his new home. The domestic task is grounded in reality but the exaggerated language ("acres", "prairies") hints at the daunting scale of adult independence.\n\n' +
-    'Stanza 2 (lines 5\u20138): The mother holds the "zero-end" of the tape while the speaker moves away. The tape becomes an umbilical cord, stretching through the house. The stanza ends with "Anchor. Kite." \u2014 two powerful metaphors for the mother\u2019s stability and the speaker\u2019s desire for freedom.\n\n' +
-    'Stanza 3 (lines 9\u201312): The speaker reaches the top of the house and looks out through a hatch at "an endless sky". The poem ends with the unresolved phrase "to fall or fly" \u2014 independence could bring triumph or disaster, and the speaker stands on the threshold between the two.',
+    'Stanza 1 (lines 1-4): The speaker asks his mother to help him measure his new home: anything longer than his own reach needs a second person. The domestic task is grounded in reality, but the exaggerated language (the walls measured like farmland, the floors like "prairies") hints at the daunting scale of adult independence.\n\n' +
+    'Stanza 2 (lines 5-8): The mother holds the "zero-end" of the tape while the speaker moves away, calling the measurements back to "base". The tape becomes an umbilical cord, stretching through the house. The stanza ends with "Anchor. Kite.", two metaphors for the mother’s stability and the speaker’s desire for freedom.\n\n' +
+    'Stanza 3 (lines 9-15): The speaker climbs to the loft, stretching the tape as far as it will go, while two floors below his mother still holds its very end. He reaches towards a trapdoor that opens on an "endless sky". The poem ends with the unresolved choice to "fall or fly": independence could bring triumph or disaster, and the speaker stands on the threshold between the two.',
 
   summaryAr:
-    '\u0627\u0644\u0645\u0642\u0637\u0639 1 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 1\u20134): \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u064a\u0637\u0644\u0628 \u0645\u0646 \u0648\u0627\u0644\u062f\u062a\u0647 \u0625\u0646\u0647\u0627 \u062a\u0633\u0627\u0639\u062f\u0647 \u064a\u0642\u064a\u0633 \u0628\u064a\u062a\u0647 \u0627\u0644\u062c\u062f\u064a\u062f. \u0627\u0644\u0645\u0647\u0645\u0651\u0629 \u0627\u0644\u0639\u0627\u062f\u064a\u0651\u0629 \u0627\u0644\u0628\u064a\u062a\u064a\u0651\u0629 \u062a\u0631\u0633\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0641\u064a \u0627\u0644\u0648\u0627\u0642\u0639\u060c \u0628\u0633 \u0627\u0644\u0644\u063a\u0629 \u0627\u0644\u0645\u0628\u0627\u0644\u063a \u0641\u064a\u0647\u0627 ("acres"\u060c "prairies") \u062a\u0644\u0645\u0651\u062d \u0644\u062d\u062c\u0645 \u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644 \u0627\u0644\u0628\u0627\u0644\u063a \u0627\u0644\u0645\u0631\u0639\u0628.\n\n' +
-    '\u0627\u0644\u0645\u0642\u0637\u0639 2 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 5\u20138): \u0627\u0644\u0648\u0627\u0644\u062f\u0629 (\u0623\u0646\u062b\u0649) \u062a\u0645\u0633\u0643 "zero-end" \u0645\u0646 \u0627\u0644\u0634\u0631\u064a\u0637\u060c \u0648\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u064a\u0628\u062a\u0639\u062f. \u0627\u0644\u0634\u0631\u064a\u0637 \u064a\u062a\u062d\u0648\u0651\u0644 \u0625\u0644\u0649 \u062d\u0628\u0644 \u0633\u0631\u0651\u064a\u060c \u064a\u062a\u0645\u062f\u0651\u062f \u0639\u0628\u0631 \u0627\u0644\u0628\u064a\u062a. \u0627\u0644\u0645\u0642\u0637\u0639 \u064a\u062e\u062a\u0645 \u0628\u0640"Anchor. Kite." \u2014 \u0627\u0633\u062a\u0639\u0627\u0631\u062a\u064a\u0646 \u0642\u0648\u064a\u0651\u062a\u064a\u0646 \u0644\u062b\u0628\u0627\u062a \u0627\u0644\u0648\u0627\u0644\u062f\u0629 (\u0623\u0646\u062b\u0649) \u0648\u0631\u063a\u0628\u0629 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u0641\u064a \u0627\u0644\u062d\u0631\u064a\u0651\u0629.\n\n' +
-    '\u0627\u0644\u0645\u0642\u0637\u0639 3 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 9\u201312): \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u064a\u0648\u0635\u0644 \u0642\u0645\u0651\u0629 \u0627\u0644\u0628\u064a\u062a \u0648\u064a\u0637\u0644\u0651 \u0645\u0646 \u0641\u062a\u062d\u0629 \u0633\u0642\u0641 \u0639\u0644\u0649 "an endless sky". \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u062e\u062a\u0645 \u0628\u0639\u0628\u0627\u0631\u0629 \u0645\u0639\u0644\u0651\u0642\u0629 "to fall or fly" \u2014 \u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644 \u064a\u0645\u0643\u0646 \u064a\u062c\u064a\u0628 \u0646\u0635\u0631 \u0623\u0648 \u0643\u0627\u0631\u062b\u0629\u060c \u0648\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u064a\u0642\u0641 \u0639\u0644\u0649 \u0639\u062a\u0628\u0629 \u0628\u064a\u0646 \u0627\u0644\u0627\u062b\u0646\u064a\u0646.',
+    'المقطع 1 (الأبيات 1-4): المتكلّم (ذكر) يطلب من والدته إنها تساعده يقيس بيته الجديد: أي مسافة أطول من مدّ يده تحتاج شخص ثاني. المهمّة العاديّة البيتيّة ترسي القصيدة في الواقع، بس اللغة المبالغ فيها (الجدران تنقاس كأنها أراضي زراعية، والأرضيات كأنها "prairies") تلمّح لحجم الاستقلال البالغ المرعب.\n\n' +
+    'المقطع 2 (الأبيات 5-8): الوالدة (أنثى) تمسك "zero-end" من الشريط، والمتكلّم (ذكر) يبتعد ويبلّغ القياسات للـ"base". الشريط يتحوّل إلى حبل سرّي، يتمدّد عبر البيت. المقطع يختم بـ"Anchor. Kite."، استعارتين قويّتين لثبات الوالدة (أنثى) ورغبة المتكلّم (ذكر) في الحريّة.\n\n' +
+    'المقطع 3 (الأبيات 9-15): المتكلّم (ذكر) يطلع للعلّية ويمدّ الشريط لآخر حدّ، والوالدة تحت بطابقين للحين ماسكة آخر طرف منه. يمدّ يده لفتحة في السقف تطلّ على "endless sky". القصيدة تختم بالخيار المعلّق "fall or fly": الاستقلال يمكن يجيب نصر أو كارثة، والمتكلّم (ذكر) يقف على عتبة بين الاثنين.',
 
   formAndStructure:
-    'Form: A loose, extended sonnet \u2014 the poem has 15 lines (one more than the traditional 14-line sonnet), echoing the love-sonnet tradition while exceeding it. Its irregular line lengths and lack of a strict rhyme scheme reflect the messy, imperfect reality of this parent-child relationship.\n\n' +
-    'Stanza structure: Three stanzas of unequal length (roughly 4, 8 and 3 lines), with the final line "to fall or fly" set apart for emphasis. The asymmetry mirrors the way the measuring tape stretches and the gradual separation it enacts.\n\n' +
-    'Enjambment: Used extensively throughout, especially "then leaving / up the stairs" and "recording / length". Lines run into each other just as the tape runs through the house, creating a sense of continuous movement away from the mother.\n\n' +
+    'Form: A loose, extended sonnet: the poem has 15 lines (one more than the traditional 14-line sonnet), echoing the love-sonnet tradition while exceeding it. Its irregular line lengths and lack of a strict rhyme scheme reflect the messy, imperfect reality of this parent-child relationship.\n\n' +
+    'Stanza structure: Two quatrains followed by a longer final stanza of seven lines. The last stanza stretches out as the tape does, and the poem ends on a short line that stands out for emphasis.\n\n' +
+    'Enjambment: Used extensively throughout, especially across lines 5 to 7, where line 6 ends on "leaving" before the stairs arrive. Lines run into each other just as the tape runs through the house, creating a sense of continuous movement away from the mother.\n\n' +
     'Caesura: "Anchor. Kite." uses dramatic full stops mid-line to create two punchy, contrasting images that encapsulate the poem\'s central tension.\n\n' +
-    'Rhyme: Occasional half-rhymes ("doors/floors", "sky/fly") create a sense of almost-connection, reflecting the bond that is stretching but not yet broken.\n\n' +
-    'End-stopped final line: "to fall or fly" ends the poem with a stark choice, leaving the outcome unresolved \u2014 the speaker is suspended between two possibilities.\n\n' +
+    'Rhyme: There is no regular scheme, but full rhymes surface at lines 3 and 4 and in the last two lines, like moments of connection in a bond that is stretching but not yet broken.\n\n' +
+    'End-stopped final line: "fall or fly" ends the poem with a stark choice, leaving the outcome unresolved: the speaker is suspended between two possibilities.\n\n' +
     'Extended metaphor: The measuring tape/umbilical cord metaphor is sustained throughout the entire poem, giving it structural and thematic coherence.',
 
   formAndStructureAr:
-    'Form: sonnet ممتدّ ومرخّى - القصيدة 15 بيت (بيت زيادة عن الـsonnet التقليدي اللي هو 14 بيت)، فيها صدى لتقليد love-sonnet بس تتعدّاه. أطوال الأبيات غير المنتظمة وغياب نظام قافية صارم يعكسان الواقع الفوضوي وغير المثالي لهالعلاقة بين الأم والابن.\n\n' +
-    'بنية المقاطع: ثلاث مقاطع بأطوال غير متساوية (تقريباً 4، 8، و3 أبيات)، مع وضع البيت الأخير "to fall or fly" بشكل مستقل عشان التأكيد. عدم التماثل يحاكي طريقة تمدّد شريط القياس والانفصال التدريجي اللي يجسّده.\n\n' +
-    'Enjambment: مستخدم بكثافة طول القصيدة، خصوصاً في "then leaving / up the stairs" و"recording / length". الأبيات تنساب لبعضها، تماماً مثل ما ينساب الشريط عبر البيت، فتخلق إحساس بحركة متواصلة بعيداً عن الوالدة (أنثى).\n\n' +
+    'Form: sonnet ممتدّ ومرخّى: القصيدة 15 بيت (بيت زيادة عن الـsonnet التقليدي اللي هو 14 بيت)، فيها صدى لتقليد love-sonnet بس تتعدّاه. أطوال الأبيات غير المنتظمة وغياب نظام قافية صارم يعكسان الواقع الفوضوي وغير المثالي لهالعلاقة بين الأم والابن.\n\n' +
+    'بنية المقاطع: مقطعين من أربع أبيات (quatrains)، وبعدهم مقطع أخير أطول من سبع أبيات. المقطع الأخير يتمدّد مثل ما يتمدّد الشريط، والقصيدة تختم ببيت قصير يبرز عشان التأكيد.\n\n' +
+    'Enjambment: مستخدم بكثافة طول القصيدة، خصوصاً في الأبيات 5 إلى 7، وين البيت 6 ينتهي بـ"leaving" قبل ما توصل الدرج. الأبيات تنساب لبعضها، تماماً مثل ما ينساب الشريط عبر البيت، فتخلق إحساس بحركة متواصلة بعيداً عن الوالدة (أنثى).\n\n' +
     'Caesura: "Anchor. Kite." يستخدم نقاط دراماتيكيّة في نص البيت عشان يخلق صورتين قويّتين متضادّتين، تختصران التوتر المركزي في القصيدة.\n\n' +
-    'Rhyme: half-rhymes متقطّعة ("doors/floors"، "sky/fly") تخلق إحساس باتّصال شبه مكتمل، تعكس الرابط اللي يتمدّد بس ما انقطع.\n\n' +
-    'البيت الأخير المنغلق: "to fall or fly" يختم القصيدة بخيار حادّ، يترك النتيجة معلّقة بدون حلّ - المتكلّم (ذكر) معلّق بين احتمالين.\n\n' +
+    'Rhyme: ما فيه نظام قافية منتظم، بس تطلع قوافي كاملة في البيتين 3 و4 وفي آخر بيتين، مثل لحظات اتّصال في رابط يتمدّد بس ما انقطع.\n\n' +
+    'البيت الأخير المنغلق: "fall or fly" يختم القصيدة بخيار حادّ، يترك النتيجة معلّقة بدون حلّ: المتكلّم (ذكر) معلّق بين احتمالين.\n\n' +
     'الاستعارة الممتدّة (extended metaphor): استعارة شريط القياس / الحبل السرّي تستمر طول القصيدة، فتعطيها تماسك بنيوي وموضوعي.',
 
   keyQuotes: [
     {
-      quote: 'Mother, any distance greater than a single span',
+      quote: 'prairies',
       analysis:
-        'The direct address and reference to "a single span" (an arm\'s length) establishes the poem\'s core idea: the speaker has outgrown the close physical proximity of childhood and must now navigate greater distances alone.',
-      themes: ['Family', 'Growing Up', 'Independence'],
-      analysisAr:
-        '\u0627\u0644\u0646\u062f\u0627\u0621 \u0627\u0644\u0645\u0628\u0627\u0634\u0631 \u0648\u0627\u0644\u0625\u0634\u0627\u0631\u0629 \u0625\u0644\u0649 "a single span" (\u0637\u0648\u0644 \u0627\u0644\u0630\u0631\u0627\u0639) \u062a\u0631\u0633\u064a \u0627\u0644\u0641\u0643\u0631\u0629 \u0627\u0644\u062c\u0648\u0647\u0631\u064a\u0651\u0629 \u0644\u0644\u0642\u0635\u064a\u062f\u0629: \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u062a\u062c\u0627\u0648\u0632 \u0642\u0631\u0628 \u0627\u0644\u0637\u0641\u0648\u0644\u0629 \u0627\u0644\u062c\u0633\u062f\u064a\u060c \u0648\u0644\u0627\u0632\u0645 \u064a\u062a\u0646\u0642\u0651\u0644 \u0627\u0644\u062d\u064a\u0646 \u0641\u064a \u0645\u0633\u0627\u0641\u0627\u062a \u0623\u0643\u0628\u0631 \u0628\u0631\u0648\u062d\u0647.',
-      themesAr: [
-        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
-        '\u0627\u0644\u0646\u0636\u0648\u062c',
-        '\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644',
-      ],
-    },
-    {
-      quote: 'the acres of the walls, the prairies of the floors',
-      analysis:
-        "Hyperbolic metaphors that transform a domestic interior into a vast landscape. The new home feels overwhelmingly large, reflecting the speaker's anxiety about the scale of adult responsibility.",
+        "The poem opens by saying that anything longer than one person's reach needs two people to measure it, so from the first lines the speaker admits he still needs his mother. Line 4 then measures the walls like farmland and the floors like prairies: hyperbolic metaphors that turn a domestic interior into a vast landscape, reflecting the speaker's anxiety about the scale of adult responsibility.",
       themes: ['Independence', 'Fear', 'Growing Up'],
       analysisAr:
-        '\u0627\u0633\u062a\u0639\u0627\u0631\u0627\u062a \u0645\u0628\u0627\u0644\u063a \u0641\u064a\u0647\u0627 \u062a\u062d\u0648\u0651\u0644 \u0627\u0644\u0641\u0636\u0627\u0621 \u0627\u0644\u0628\u064a\u062a\u064a \u0627\u0644\u062f\u0627\u062e\u0644\u064a \u0625\u0644\u0649 \u0645\u0634\u0647\u062f \u0637\u0628\u064a\u0639\u064a \u0634\u0627\u0633\u0639. \u0627\u0644\u0628\u064a\u062a \u0627\u0644\u062c\u062f\u064a\u062f \u064a\u0628\u064a\u0651\u0646 \u0636\u062e\u0645 \u0628\u0634\u0643\u0644 \u0633\u0627\u062d\u0642\u060c \u0648\u064a\u0639\u0643\u0633 \u0642\u0644\u0642 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u0645\u0646 \u062d\u062c\u0645 \u0645\u0633\u0624\u0648\u0644\u064a\u0651\u0629 \u0627\u0644\u0628\u0627\u0644\u063a\u064a\u0646.',
-      themesAr: [
-        '\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644',
-        '\u0627\u0644\u062e\u0648\u0641',
-        '\u0627\u0644\u0646\u0636\u0648\u062c',
-      ],
+        'القصيدة تبدأ بإن أي مسافة أطول من مدّ يد شخص واحد تحتاج شخصين عشان تنقاس، فمن أول الأبيات المتكلّم (ذكر) يعترف إنه للحين يحتاج أمّه. وبعدين البيت 4 يقيس الجدران كأنها أراضي زراعية والأرضيات كأنها prairies: استعارات مبالغ فيها تحوّل الفضاء البيتي الداخلي إلى مشهد طبيعي شاسع، وتعكس قلق المتكلّم (ذكر) من حجم مسؤوليّة البالغين.',
+      themesAr: ['الاستقلال', 'الخوف', 'النضوج'],
     },
     {
-      quote: 'You at the zero-end',
+      quote: 'zero-end',
       analysis:
-        'The mother is at the origin point \u2014 where everything begins. "Zero" suggests she is the foundation, the starting point of the speaker\'s entire life. He measures his distance from her.',
+        'In line 5 the mother holds the start of the tape, the origin point where everything begins. She is the foundation of the speaker\'s entire life, and he measures his distance from her. As he moves away he reports the figures back to "base" (line 6), military language that casts him as an explorer venturing into unknown territory and her as the safe point to return to.',
       themes: ['Family', 'Dependence', 'Origins'],
       analysisAr:
-        '\u0627\u0644\u0648\u0627\u0644\u062f\u0629 (\u0623\u0646\u062b\u0649) \u062a\u0642\u0641 \u0639\u0646\u062f \u0646\u0642\u0637\u0629 \u0627\u0644\u0623\u0635\u0644 \u2014 \u062d\u064a\u062b \u064a\u0628\u062f\u0623 \u0643\u0644 \u0634\u064a. \u0643\u0644\u0645\u0629 "zero" \u062a\u0648\u062d\u064a \u0625\u0646\u0647\u0627 \u0647\u064a (\u0623\u0646\u062b\u0649) \u0627\u0644\u0623\u0633\u0627\u0633\u060c \u0646\u0642\u0637\u0629 \u0627\u0646\u0637\u0644\u0627\u0642 \u062d\u064a\u0627\u0629 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u0643\u0644\u0651\u0647\u0627. \u0647\u0648 \u064a\u0642\u064a\u0633 \u0628\u064f\u0639\u062f\u0647 \u0639\u0646\u0647\u0627.',
-      themesAr: [
-        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
-        '\u0627\u0644\u0627\u0639\u062a\u0645\u0627\u062f',
-        '\u0627\u0644\u0623\u0635\u0648\u0644',
-      ],
+        'في البيت 5 الوالدة (أنثى) تمسك بداية الشريط، نقطة الأصل اللي يبدأ منها كل شي. هي الأساس لحياة المتكلّم (ذكر) كلّها، وهو يقيس بُعده عنها. ولما يبتعد يبلّغ الأرقام للـ"base" (البيت 6)، لغة عسكريّة الطابع تصوّره كمستكشف يخوض في أرض مجهولة، وتصوّرها هي كالنقطة الآمنة اللي يرجع لها.',
+      themesAr: ['العائلة', 'الاعتماد', 'الأصول'],
     },
     {
-      quote: 'reporting metres, centimetres back to base',
+      quote: 'feeding',
       analysis:
-        'Military-style language casts the speaker as an explorer or soldier venturing into unknown territory, with the mother as "base" \u2014 the safe point to return to.',
-      themes: ['Independence', 'Security', 'Family'],
-      analysisAr:
-        '\u0644\u063a\u0629 \u0639\u0633\u0643\u0631\u064a\u0651\u0629 \u0627\u0644\u0637\u0627\u0628\u0639 \u062a\u0635\u0648\u0651\u0631 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u0643\u0645\u0633\u062a\u0643\u0634\u0641 \u0623\u0648 \u062c\u0646\u062f\u064a \u064a\u062e\u0648\u0636 \u0641\u064a \u0623\u0631\u0636 \u0645\u062c\u0647\u0648\u0644\u0629\u060c \u0648\u0627\u0644\u0648\u0627\u0644\u062f\u0629 (\u0623\u0646\u062b\u0649) \u0647\u064a \u0627\u0644\u0640"base" \u2014 \u0627\u0644\u0646\u0642\u0637\u0629 \u0627\u0644\u0622\u0645\u0646\u0629 \u0627\u0644\u0644\u064a \u064a\u0631\u062c\u0639 \u0644\u0647\u0627.',
-      themesAr: [
-        '\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644',
-        '\u0627\u0644\u0623\u0645\u0627\u0646',
-        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
-      ],
-    },
-    {
-      quote: 'the line still feeding out, unreeling',
-      analysis:
-        'The tape/umbilical cord continues to unspool. "Feeding" echoes a mother nourishing her child. The connection sustains the speaker even at a distance, but it is thinning.',
+        'In line 7 the tape, like an umbilical cord, keeps unspooling behind him. "Feeding" echoes a mother nourishing her child: the connection sustains the speaker even at a distance, but it is thinning.',
       themes: ['Family', 'Connection', 'Separation'],
       analysisAr:
-        '\u0627\u0644\u0634\u0631\u064a\u0637 / \u0627\u0644\u062d\u0628\u0644 \u0627\u0644\u0633\u0631\u0651\u064a \u064a\u0633\u062a\u0645\u0631 \u0628\u0627\u0644\u0627\u0646\u0641\u0643\u0627\u0643. \u0643\u0644\u0645\u0629 "feeding" \u062a\u0633\u062a\u062d\u0636\u0631 \u0635\u0648\u0631\u0629 \u0627\u0644\u0623\u0645 (\u0623\u0646\u062b\u0649) \u0648\u0647\u064a \u062a\u063a\u0630\u0651\u064a \u0627\u0628\u0646\u0647\u0627. \u0627\u0644\u0627\u062a\u0635\u0627\u0644 \u064a\u062f\u064a\u0645 \u0648\u062c\u0648\u062f \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u062d\u062a\u0649 \u0639\u0646 \u0628\u064f\u0639\u062f\u060c \u0628\u0633 \u064a\u0635\u064a\u0631 \u0623\u0631\u0642\u0651 \u0648\u064a\u0631\u0642\u0651.',
-      themesAr: [
-        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
-        '\u0627\u0644\u0627\u062a\u0635\u0627\u0644',
-        '\u0627\u0644\u0627\u0646\u0641\u0635\u0627\u0644',
-      ],
+        'في البيت 7 الشريط، مثل الحبل السرّي، يستمر بالانفكاك وراه. كلمة "feeding" تستحضر صورة الأم (أنثى) وهي تغذّي ابنها. الاتصال يديم وجود المتكلّم (ذكر) حتى عن بُعد، بس يصير أرقّ وأرقّ.',
+      themesAr: ['العائلة', 'الاتصال', 'الانفصال'],
     },
     {
       quote: 'Anchor. Kite.',
       analysis:
-        "Two single-word sentences that crystallise the poem's central conflict. The mother is an anchor (grounding, stable, heavy) and the speaker is a kite (airborne, free, but dependent on the string). The tension between these is never resolved.",
+        "Two single-word sentences in line 8 that crystallise the poem's central conflict. The mother is an anchor (grounding, stable, heavy) and the speaker is a kite (airborne, free, but dependent on the string). The tension between these is never resolved.",
       themes: ['Family', 'Independence', 'Tension'],
       analysisAr:
-        '\u062c\u0645\u0644\u062a\u064a\u0646 \u0643\u0644 \u0648\u062d\u062f\u0629 \u0643\u0644\u0645\u0629 \u0648\u0627\u062d\u062f\u0629\u060c \u062a\u062e\u062a\u0635\u0631\u0627\u0646 \u0627\u0644\u0635\u0631\u0627\u0639 \u0627\u0644\u0645\u0631\u0643\u0632\u064a \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u0627\u0644\u0648\u0627\u0644\u062f\u0629 (\u0623\u0646\u062b\u0649) \u0647\u064a \u0645\u0631\u0633\u0627\u0629 (\u062a\u062b\u0628\u0651\u062a\u060c \u062a\u0633\u062a\u0642\u0631\u060c \u062b\u0642\u064a\u0644\u0629)\u060c \u0648\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u0637\u064a\u0651\u0627\u0631\u0629 \u0648\u0631\u0642 (\u0645\u062d\u0644\u0651\u0642\u060c \u062d\u0631\u060c \u0628\u0633 \u0645\u0639\u062a\u0645\u062f \u0639\u0644\u0649 \u0627\u0644\u062e\u064a\u0637). \u0627\u0644\u062a\u0648\u062a\u0631 \u0628\u064a\u0646 \u0627\u0644\u0627\u062b\u0646\u064a\u0646 \u0645\u0627 \u064a\u0646\u062d\u0644\u0651 \u0623\u0628\u062f\u0627\u064b.',
-      themesAr: [
-        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
-        '\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644',
-        '\u0627\u0644\u062a\u0648\u062a\u0651\u0631',
-      ],
+        'جملتين كل وحدة كلمة واحدة في البيت 8، تختصران الصراع المركزي في القصيدة. الوالدة (أنثى) هي مرساة (تثبّت، تستقر، ثقيلة)، والمتكلّم (ذكر) طيّارة ورق (محلّق، حر، بس معتمد على الخيط). التوتر بين الاثنين ما ينحلّ أبداً.',
+      themesAr: ['العائلة', 'الاستقلال', 'التوتّر'],
     },
     {
-      quote: 'an endless sky',
+      quote: 'space-walk',
       analysis:
-        'The sky represents limitless possibility and freedom, but "endless" also implies a void \u2014 without boundaries or safety. Independence is exciting but terrifying.',
+        "In line 9 the speaker turns an astronaut's weightless drift into his own verb as he moves through the empty bedrooms. The tape becomes the cable tethering him to his mother: he is floating free, but only because she holds the other end.",
+      themes: ['Independence', 'Connection'],
+      analysisAr:
+        'في البيت 9 المتكلّم (ذكر) يحوّل سبح رائد الفضاء بلا وزن إلى فعل خاص فيه وهو يتنقّل في غرف النوم الفاضية. الشريط يصير الكابل اللي يربطه بأمّه: هو يطفو بحرّية، بس لأنها هي ماسكة الطرف الثاني.',
+      themesAr: ['الاستقلال', 'الاتصال'],
+    },
+    {
+      quote: 'pinch',
+      analysis:
+        'Two floors below him in line 12, the mother is still holding on. "Pinch" suggests a careful, precarious grip on the tiniest fraction of the tape: she is reluctant to let go, and the tape is almost at its end.',
+      themes: ['Family', 'Letting go'],
+      analysisAr:
+        'تحت بطابقين في البيت 12، الوالدة (أنثى) للحين ماسكة. كلمة "pinch" توحي بمسكة حذرة ومهزوزة لأصغر جزء من الشريط: هي ما تبي تفلت، والشريط تقريباً وصل لآخره.',
+      themesAr: ['العائلة', 'التخلّي'],
+    },
+    {
+      quote: 'endless sky',
+      analysis:
+        'The sky beyond the loft hatch in line 14 represents limitless possibility and freedom, but "endless" also implies a void, without boundaries or safety. Independence is exciting but terrifying.',
       themes: ['Independence', 'Fear', 'Freedom'],
       analysisAr:
-        '\u0627\u0644\u0633\u0645\u0627\u0621 \u062a\u0631\u0645\u0632 \u0644\u0644\u0625\u0645\u0643\u0627\u0646\u064a\u0651\u0627\u062a \u0627\u0644\u0644\u064a \u0645\u0627 \u0644\u0647\u0627 \u062d\u062f\u0648\u062f \u0648\u0644\u0644\u062d\u0631\u064a\u0651\u0629\u060c \u0628\u0633 \u0643\u0644\u0645\u0629 "endless" \u062a\u0648\u062d\u064a \u0643\u0645\u0627\u0646 \u0628\u0641\u0631\u0627\u063a \u2014 \u0628\u062f\u0648\u0646 \u062d\u062f\u0648\u062f \u0648\u0644\u0627 \u0623\u0645\u0627\u0646. \u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644 \u0645\u062b\u064a\u0631 \u0648\u0645\u0631\u0639\u0628 \u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a.',
-      themesAr: [
-        '\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644',
-        '\u0627\u0644\u062e\u0648\u0641',
-        '\u0627\u0644\u062d\u0631\u064a\u0651\u0629',
-      ],
+        'السماء ورا فتحة العلّية في البيت 14 ترمز للإمكانيّات اللي ما لها حدود وللحريّة، بس كلمة "endless" توحي كمان بفراغ: بدون حدود ولا أمان. الاستقلال مثير ومرعب في نفس الوقت.',
+      themesAr: ['الاستقلال', 'الخوف', 'الحريّة'],
     },
     {
-      quote: 'to fall or fly',
+      quote: 'fall or fly',
       analysis:
-        "The poem's final line presents two outcomes with equal weight. There is no reassurance \u2014 the speaker genuinely does not know whether independence will bring success or failure. The ambiguity is deliberate and powerful.",
+        "The poem's final line presents two outcomes with equal weight. There is no reassurance: the speaker genuinely does not know whether independence will bring success or failure. The ambiguity is deliberate and powerful.",
       themes: ['Independence', 'Growing Up', 'Uncertainty'],
       analysisAr:
-        '\u0627\u0644\u0628\u064a\u062a \u0627\u0644\u0623\u062e\u064a\u0631 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u064a\u0642\u062f\u0651\u0645 \u0627\u062d\u062a\u0645\u0627\u0644\u064a\u0646 \u0628\u0648\u0632\u0646 \u0645\u062a\u0633\u0627\u0648\u064a. \u0645\u0627 \u0641\u064a\u0647 \u0637\u0645\u0623\u0646\u064a\u0646\u0629 \u2014 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u0635\u0627\u062f\u0642\u0627\u064b \u0645\u0627 \u064a\u062f\u0631\u064a \u0625\u0630\u0627 \u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644 \u0631\u0627\u062d \u064a\u062c\u064a\u0628 \u0644\u0647 \u0646\u062c\u0627\u062d \u0623\u0648 \u0641\u0634\u0644. \u0627\u0644\u063a\u0645\u0648\u0636 \u0645\u0642\u0635\u0648\u062f \u0648\u0642\u0648\u064a.',
-      themesAr: [
-        '\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644',
-        '\u0627\u0644\u0646\u0636\u0648\u062c',
-        '\u0639\u062f\u0645 \u0627\u0644\u064a\u0642\u064a\u0646',
-      ],
+        'البيت الأخير في القصيدة يقدّم احتمالين بوزن متساوي. ما فيه طمأنينة: المتكلّم (ذكر) صادقاً ما يدري إذا الاستقلال راح يجيب له نجاح أو فشل. الغموض مقصود وقوي.',
+      themesAr: ['الاستقلال', 'النضوج', 'عدم اليقين'],
     },
   ],
 
   languageDevices: [
     {
       device: 'Extended metaphor',
-      example: 'the spool of tape / the line still feeding out, unreeling',
+      example: 'zero-end ... feeding',
       effect:
-        'The measuring tape represents the umbilical cord connecting mother and child. As the speaker moves through the house, the tape stretches \u2014 just as the emotional bond stretches when a child leaves home. This metaphor unifies the entire poem.',
+        'The measuring tape represents the umbilical cord connecting mother and child, from the end she holds in line 5 to the tape still unspooling in line 7. As the speaker moves through the house, the tape stretches, just as the emotional bond stretches when a child leaves home. This metaphor unifies the entire poem.',
       lineRef: 5,
       effectAr:
-        '\u0634\u0631\u064a\u0637 \u0627\u0644\u0642\u064a\u0627\u0633 \u064a\u0645\u062b\u0651\u0644 \u0627\u0644\u062d\u0628\u0644 \u0627\u0644\u0633\u0631\u0651\u064a \u0627\u0644\u0644\u064a \u064a\u0631\u0628\u0637 \u0627\u0644\u0623\u0645 \u0628\u0627\u0644\u0627\u0628\u0646. \u0645\u0639 \u062a\u0646\u0642\u0651\u0644 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u0641\u064a \u0627\u0644\u0628\u064a\u062a\u060c \u0627\u0644\u0634\u0631\u064a\u0637 \u064a\u062a\u0645\u062f\u0651\u062f \u2014 \u062a\u0645\u0627\u0645\u0627\u064b \u0645\u062b\u0644 \u0645\u0627 \u064a\u062a\u0645\u062f\u0651\u062f \u0627\u0644\u0631\u0627\u0628\u0637 \u0627\u0644\u0639\u0627\u0637\u0641\u064a \u0644\u0645\u0627 \u0627\u0644\u0627\u0628\u0646 \u064a\u063a\u0627\u062f\u0631 \u0628\u064a\u062a \u0627\u0644\u0623\u0647\u0644. \u0647\u0627\u0644\u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u062a\u0648\u062d\u0651\u062f \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0627\u0645\u0644\u0629.',
+        'شريط القياس يمثّل الحبل السرّي اللي يربط الأم بالابن، من الطرف اللي تمسكه في البيت 5 إلى الشريط اللي للحين ينفكّ في البيت 7. مع تنقّل المتكلّم (ذكر) في البيت، الشريط يتمدّد، تماماً مثل ما يتمدّد الرابط العاطفي لما الابن يغادر بيت الأهل. هالاستعارة توحّد القصيدة كاملة.',
     },
     {
       device: 'Hyperbole',
-      example: 'the acres of the walls, the prairies of the floors',
+      example: 'prairies',
       effect:
-        'Exaggerating the size of the rooms makes the new home feel overwhelmingly vast, reflecting the speaker\'s anxiety. "Prairies" evokes the American frontier \u2014 uncharted, wild territory.',
+        "Measuring the walls like farmland and the floors like prairies makes the new home feel overwhelmingly vast, reflecting the speaker's anxiety. The prairies evoke the American frontier: uncharted, wild territory.",
       lineRef: 3,
       effectAr:
-        '\u0627\u0644\u0645\u0628\u0627\u0644\u063a\u0629 \u0641\u064a \u062d\u062c\u0645 \u0627\u0644\u063a\u0631\u0641 \u062a\u062e\u0644\u0651\u064a \u0627\u0644\u0628\u064a\u062a \u0627\u0644\u062c\u062f\u064a\u062f \u064a\u0628\u064a\u0651\u0646 \u0634\u0627\u0633\u0639 \u0628\u0634\u0643\u0644 \u0633\u0627\u062d\u0642\u060c \u0648\u062a\u0639\u0643\u0633 \u0642\u0644\u0642 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631). \u0643\u0644\u0645\u0629 "prairies" \u062a\u0633\u062a\u062d\u0636\u0631 \u0633\u0647\u0648\u0644 \u0627\u0644\u062d\u062f\u0648\u062f \u0627\u0644\u0623\u0645\u0631\u064a\u0643\u064a\u0629 \u2014 \u0623\u0631\u0636 \u063a\u064a\u0631 \u0645\u0643\u062a\u0634\u0641\u0629 \u0648\u0628\u0631\u0651\u064a\u0629.',
+        'قياس الجدران كأنها أراضي زراعية والأرضيات كأنها prairies يخلّي البيت الجديد يبيّن شاسع بشكل ساحق، ويعكس قلق المتكلّم (ذكر). والـprairies تستحضر سهول الحدود الأمريكية: أرض غير مكتشفة وبرّية.',
     },
     {
-      device: 'Metaphor',
+      device: 'Metaphor and caesura',
       example: 'Anchor. Kite.',
       effect:
-        'Two contrasting metaphors compressed into two words. The anchor grounds and restricts; the kite soars but needs a string. Together they capture the push-and-pull of the parent-child relationship during separation.',
-      lineRef: 7,
+        'Two contrasting metaphors compressed into two words. The anchor grounds and restricts; the kite soars but needs a string. The full stops create dramatic pauses, so each word lands with impact as a separate, weighty idea. Together they capture the push-and-pull of the parent-child relationship during separation.',
+      lineRef: 8,
       effectAr:
-        '\u0627\u0633\u062a\u0639\u0627\u0631\u062a\u064a\u0646 \u0645\u062a\u0636\u0627\u062f\u0651\u062a\u064a\u0646 \u0645\u0643\u062b\u0651\u0641\u062a\u064a\u0646 \u0641\u064a \u0643\u0644\u0645\u062a\u064a\u0646. \u0627\u0644\u0645\u0631\u0633\u0627\u0629 \u062a\u062b\u0628\u0651\u062a \u0648\u062a\u0642\u064a\u0651\u062f\u061b \u0648\u0627\u0644\u0637\u064a\u0651\u0627\u0631\u0629 \u0627\u0644\u0648\u0631\u0642 \u062a\u062d\u0644\u0651\u0642 \u0628\u0633 \u062a\u062d\u062a\u0627\u062c \u062e\u064a\u0637. \u0645\u0639 \u0628\u0639\u0636 \u064a\u0644\u062a\u0642\u0637\u0627\u0646 \u0634\u062f \u0648\u062c\u0630\u0628 \u0627\u0644\u0639\u0644\u0627\u0642\u0629 \u0628\u064a\u0646 \u0627\u0644\u0623\u0645 \u0648\u0627\u0644\u0627\u0628\u0646 \u0648\u0642\u062a \u0627\u0644\u0627\u0646\u0641\u0635\u0627\u0644.',
+        'استعارتين متضادّتين مكثّفتين في كلمتين. المرساة تثبّت وتقيّد؛ والطيّارة الورق تحلّق بس تحتاج خيط. والنقاط تخلق توقّفات دراماتيكيّة، فكل كلمة تنزل بأثر كفكرة منفصلة ثقيلة الوزن. مع بعض يلتقطان شد وجذب العلاقة بين الأم والابن وقت الانفصال.',
     },
     {
       device: 'Enjambment',
-      example: 'then leaving / up the stairs',
+      example: 'leaving',
       effect:
-        'The line break physically enacts the separation. "Leaving" hangs at the end of the line before the reader discovers it is just "up the stairs" \u2014 momentarily, it feels like leaving for good.',
-      lineRef: 5,
+        'Line 6 ends on "leaving", and the break physically enacts the separation. The word hangs at the end of the line before the reader discovers, in line 7, that he is only going upstairs: momentarily, it feels like leaving for good.',
+      lineRef: 6,
       effectAr:
-        '\u0627\u0646\u0643\u0633\u0627\u0631 \u0627\u0644\u0628\u064a\u062a \u064a\u062c\u0633\u0651\u062f \u0627\u0644\u0627\u0646\u0641\u0635\u0627\u0644 \u062c\u0633\u062f\u064a\u0627\u064b. \u0643\u0644\u0645\u0629 "leaving" \u062a\u062a\u0639\u0644\u0651\u0642 \u0641\u064a \u0622\u062e\u0631 \u0627\u0644\u0628\u064a\u062a \u0642\u0628\u0644 \u0645\u0627 \u064a\u0643\u062a\u0634\u0641 \u0627\u0644\u0642\u0627\u0631\u0626 \u0625\u0646\u0647\u0627 \u0628\u0633 "up the stairs" \u2014 \u0644\u0644\u062d\u0638\u0629\u060c \u064a\u062d\u0633\u0651 \u0643\u0623\u0646\u0647 \u0645\u063a\u0627\u062f\u0631\u0629 \u0646\u0647\u0627\u0626\u064a\u0629.',
+        'البيت 6 ينتهي بكلمة "leaving"، وانكسار البيت يجسّد الانفصال جسدياً. الكلمة تتعلّق في آخر البيت قبل ما يكتشف القارئ في البيت 7 إنه بس طالع الدرج: للحظة، يحسّ كأنه مغادرة نهائية.',
     },
     {
-      device: 'Ambiguity',
-      example: 'to fall or fly',
+      device: 'Verb coinage',
+      example: 'space-walk',
       effect:
-        'The final line refuses to resolve the poem\'s tension. "Fall" and "fly" are given equal weight, reflecting the genuine uncertainty of growing up. The reader is left suspended, just like the speaker.',
-      lineRef: 11,
+        "An astronaut's space-walk becomes something the speaker does, weightless and tethered, as he drifts through the empty bedrooms. The coinage shows him actively making space between himself and his mother, while the tape, like an astronaut's cable, still keeps him attached.",
+      lineRef: 10,
       effectAr:
-        '\u0627\u0644\u0628\u064a\u062a \u0627\u0644\u0623\u062e\u064a\u0631 \u064a\u0631\u0641\u0636 \u0625\u0646\u0647 \u064a\u062d\u0644\u0651 \u0627\u0644\u062a\u0648\u062a\u0631 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629. "fall" \u0648"fly" \u062a\u0639\u0637\u0649 \u0644\u0643\u0644 \u0648\u062d\u062f\u0629 \u0648\u0632\u0646 \u0645\u062a\u0633\u0627\u0648\u064a\u060c \u0641\u064a\u0639\u0643\u0633\u0627\u0646 \u0639\u062f\u0645 \u0627\u0644\u064a\u0642\u064a\u0646 \u0627\u0644\u0635\u0627\u062f\u0642 \u0641\u064a \u0627\u0644\u0646\u0636\u0648\u062c. \u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u0628\u0642\u0649 \u0645\u0639\u0644\u0651\u0642\u060c \u062a\u0645\u0627\u0645\u0627\u064b \u0645\u062b\u0644 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631).',
+        'السبح في الفضاء حق رائد الفضاء يصير فعل يسوّيه المتكلّم (ذكر)، بلا وزن ومربوط، وهو يطفو في غرف النوم الفاضية. هالكلمة المبتكرة تبيّن إنه يصنع مسافة بينه وبين أمّه بشكل نشط، والشريط، مثل كابل رائد الفضاء، للحين يربطه.',
     },
     {
       device: 'Symbolism',
-      example: 'a hatch that opens on an endless sky',
+      example: 'endless sky',
       effect:
-        'The hatch is a threshold between childhood (the house, the mother) and adulthood (the open sky). Stepping through it means leaving safety behind. The "endless sky" symbolises infinite possibility and vulnerability.',
-      lineRef: 10,
+        'The loft hatch in line 14 is a threshold between childhood (the house, the mother) and adulthood (the open sky). Stepping through it means leaving safety behind. The endless sky symbolises infinite possibility and vulnerability.',
+      lineRef: 15,
       effectAr:
-        '\u0641\u062a\u062d\u0629 \u0627\u0644\u0633\u0642\u0641 \u0639\u062a\u0628\u0629 \u0628\u064a\u0646 \u0627\u0644\u0637\u0641\u0648\u0644\u0629 (\u0627\u0644\u0628\u064a\u062a\u060c \u0627\u0644\u0648\u0627\u0644\u062f\u0629 (\u0623\u0646\u062b\u0649)) \u0648\u0627\u0644\u0628\u0644\u0648\u063a (\u0627\u0644\u0633\u0645\u0627\u0621 \u0627\u0644\u0645\u0641\u062a\u0648\u062d\u0629). \u0627\u0644\u062e\u0637\u0648\u0629 \u0645\u0646 \u062e\u0644\u0627\u0644\u0647\u0627 \u062a\u0639\u0646\u064a \u062a\u0631\u0643 \u0627\u0644\u0623\u0645\u0627\u0646 \u0648\u0631\u0627\u0621 \u0627\u0644\u0638\u0647\u0631. "endless sky" \u062a\u0631\u0645\u0632 \u0644\u0644\u0625\u0645\u0643\u0627\u0646\u064a\u0651\u0627\u062a \u0627\u0644\u0644\u0627 \u0646\u0647\u0627\u0626\u064a\u0629 \u0648\u0644\u0644\u0627\u0646\u0643\u0634\u0627\u0641.',
+        'فتحة العلّية في البيت 14 عتبة بين الطفولة (البيت، الوالدة (أنثى)) والبلوغ (السماء المفتوحة). الخطوة من خلالها تعني ترك الأمان وراء الظهر. والسماء اللي ما لها نهاية ترمز للإمكانيّات اللا نهائية وللانكشاف.',
     },
     {
-      device: 'Caesura',
-      example: 'years between us. Anchor. Kite.',
+      device: 'Ambiguity',
+      example: 'fall or fly',
       effect:
-        'The full stops create dramatic pauses, breaking the flowing rhythm of the poem. Each word lands with impact, forcing the reader to consider "Anchor" and "Kite" as separate, weighty ideas.',
-      lineRef: 7,
+        'The final line refuses to resolve the poem\'s tension. "Fall" and "fly" are given equal weight, reflecting the genuine uncertainty of growing up. The reader is left suspended, just like the speaker.',
+      lineRef: 16,
       effectAr:
-        '\u0627\u0644\u0646\u0642\u0627\u0637 \u062a\u062e\u0644\u0642 \u062a\u0648\u0642\u0651\u0641\u0627\u062a \u062f\u0631\u0627\u0645\u0627\u062a\u064a\u0643\u064a\u0651\u0629\u060c \u062a\u0643\u0633\u0631 \u0627\u0644\u0625\u064a\u0642\u0627\u0639 \u0627\u0644\u0645\u0646\u0633\u0627\u0628 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u0643\u0644 \u0643\u0644\u0645\u0629 \u062a\u0646\u0632\u0644 \u0628\u0623\u062b\u0631\u060c \u0648\u062a\u0641\u0631\u0636 \u0639\u0644\u0649 \u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u0641\u0643\u0651\u0631 \u0641\u064a "Anchor" \u0648"Kite" \u0643\u0623\u0641\u0643\u0627\u0631 \u0645\u0646\u0641\u0635\u0644\u0629 \u062b\u0642\u064a\u0644\u0629 \u0627\u0644\u0648\u0632\u0646.',
-    },
-    {
-      device: 'Neologism',
-      example: 'I space-making across the landing',
-      effect:
-        '"Space-making" is a coined compound word. The speaker is actively creating distance \u2014 it is a deliberate, effortful action, not passive drifting. Language itself bends to express this new experience.',
-      lineRef: 9,
-      effectAr:
-        '"Space-making" \u0643\u0644\u0645\u0629 \u0645\u0631\u0643\u0651\u0628\u0629 \u0645\u0646\u062d\u0648\u062a\u0629. \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u064a\u0646\u0634\u0626 \u0627\u0644\u0645\u0633\u0627\u0641\u0629 \u0628\u0641\u0639\u0644 \u0646\u0634\u0637 \u2014 \u0647\u0648 \u0641\u0639\u0644 \u0645\u0642\u0635\u0648\u062f \u0648\u062c\u0647\u062f\u060c \u0645\u0648 \u0627\u0646\u062c\u0631\u0627\u0641 \u0633\u0644\u0628\u064a. \u0627\u0644\u0644\u063a\u0629 \u0646\u0641\u0633\u0647\u0627 \u062a\u0646\u062d\u0646\u064a \u0639\u0634\u0627\u0646 \u062a\u0639\u0628\u0651\u0631 \u0639\u0646 \u0647\u0630\u064a \u0627\u0644\u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u062c\u062f\u064a\u062f\u0629.',
+        'البيت الأخير يرفض إنه يحلّ التوتر في القصيدة. "fall" و"fly" تعطى لكل وحدة وزن متساوي، فيعكسان عدم اليقين الصادق في النضوج. القارئ يبقى معلّق، تماماً مثل المتكلّم (ذكر).',
     },
   ],
 }
@@ -538,7 +516,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'mad-6',
-    question: 'What does "to fall or fly" suggest about independence?',
+    question: 'What does "fall or fly" (line 15) suggest about independence?',
     type: 'multiple-choice',
     options: [
       'The speaker is afraid of heights',
@@ -570,7 +548,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'mad-8',
-    question: 'What does "your fingertips still pinch the last one-hundredth of an inch" suggest?',
+    question: 'What does the verb "pinch" (line 12) suggest about the mother?',
     type: 'multiple-choice',
     options: [
       'The mother has strong hands',
@@ -580,7 +558,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The precise measurement "one-hundredth of an inch" shows how little connection remains - and yet the mother still holds on. The image captures the painful reluctance of letting go.',
+      'She is gripping only the tiniest fraction of the tape, measured precisely in line 13, which shows how little connection remains - and yet the mother still holds on. The image captures the painful reluctance of letting go.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -596,7 +574,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The poem charts a progression from the shared, secure activity of measuring together to the speaker alone at the open window, facing the terrifying choice of independence.',
+      'The poem charts a progression from the shared, secure activity of measuring together to the speaker alone at the hatch in the loft, facing the terrifying choice of independence.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -638,7 +616,7 @@ const REVISION_TOPICS = [
       'Tape measure as umbilical cord - physical bond stretching',
       '"Anchor. Kite." - one-word sentences encapsulate the dynamic',
       '"Fall or fly" - independence as both risk and freedom',
-      '"Last one-hundredth of an inch" - the mother\'s reluctance to release',
+      '"Pinch" (line 12) - the mother\'s reluctance to release',
     ],
   },
   {
@@ -648,8 +626,8 @@ const REVISION_TOPICS = [
     keyPoints: [
       '15 lines - almost but not quite a sonnet',
       'Upward movement through the house mirrors growing independence',
-      'Half-rhymes - partial connections, like the stretching bond',
-      'Final image of the open window - freedom and danger',
+      'Occasional full rhymes - moments of connection in a stretching bond',
+      'Final image of the hatch onto an "endless sky" (line 14) - freedom and danger',
     ],
   },
 ]
@@ -786,10 +764,9 @@ export default function MotherAnyDistancePage() {
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
         The poem is paraphrased here, not reproduced; it is printed in full in the AQA Love and
-        Relationships anthology. Short quotations are used for private study and educational
-        criticism under UK fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30).
-        No commercial use is intended. All quotations remain the intellectual property of the
-        respective rights holders.
+        Relationships anthology. Short quotations are used for criticism and review under UK
+        fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). All quotations
+        remain the intellectual property of the respective rights holders.
       </footer>
     </div>
   )

@@ -49,6 +49,22 @@ const POEM: PoemData = {
   // of its 53 lines were missing, six of them from the Mary Seacole stanza. The
   // viewer numbers entries by position, so the entries below follow the poem's
   // own order and stanza breaks.
+  //
+  // 26 September 2026: the paraphrases were checked line by line against the
+  // text AQA prints, by permission, in its sample anthology
+  // (filestore.aqa.org.uk/resources/english/AQA-8702-TG-POEMS.PDF): 53 lines in
+  // ten stanzas, as below. The rest of the page did not hold to the notes'
+  // limit. It quoted 161 distinct words of this 269-word poem, printed two
+  // device examples over the two-line limit, and ran up to six lines of a hero
+  // stanza together as if they were one. It also called the closing two lines a
+  // refrain that grows with each repetition; they appear once, at the end. Four
+  // device lineRefs pointed at the wrong line. The page now quotes 39 distinct
+  // words, under the cap of 40 that no-poem-quoted-beyond-fair-dealing.test.ts
+  // sets for a poem of this length, and points to line numbers for the rest.
+  // Every quotation left was then checked word for word against that text. The
+  // Ending note, in both languages, still said the poem ends with the refrain,
+  // which contradicted the corrected Refrain note; it now says the last stanza
+  // returns to the refrain and answers it.
   lines: [
     // Stanza 1
     {
@@ -159,7 +175,7 @@ const POEM: PoemData = {
       annotations: [
         {
           type: 'Heroic language',
-          note: "\"Lick back Napoleon\" - Caribbean dialect for beating an enemy back. L'Ouverture's forces defeated Napoleon's army, one of the most powerful in the world. The colloquial language makes the achievement feel personal and immediate.",
+          note: "\"Lick back\" (line 13) is Caribbean dialect for beating an enemy back. L'Ouverture's forces defeated Napoleon's army, one of the most powerful in the world. The colloquial language makes the achievement feel personal and immediate.",
           color: '#f59e0b',
         },
       ],
@@ -231,7 +247,7 @@ const POEM: PoemData = {
       annotations: [
         {
           type: 'Nursery rhyme',
-          note: 'From "Hey Diddle Diddle" - the descent into pure nonsense underscores Agard\'s argument that the British education he received was meaningless compared to the history he was denied.',
+          note: "From the nursery rhyme Hey Diddle Diddle: the descent into pure nonsense underscores Agard's argument that the British education he received was meaningless compared to the history he was denied.",
           color: '#ec4899',
         },
       ],
@@ -265,7 +281,7 @@ const POEM: PoemData = {
       annotations: [
         {
           type: 'Metaphor',
-          note: '"Mountain dream" - the Blue Mountains of Jamaica where the Maroons lived. The word "dream" elevates their resistance into something visionary and aspirational.',
+          note: 'Line 28 places her dream in the mountains: the Blue Mountains of Jamaica where the Maroons lived. Tying their resistance to a dream elevates it into something visionary and aspirational.',
           color: '#ef4444',
         },
       ],
@@ -368,7 +384,7 @@ const POEM: PoemData = {
       annotations: [
         {
           type: 'Allusion - Caribbean hero',
-          note: 'Mary Seacole (1805-1881) - a Jamaican-born nurse who set up the "British Hotel" near the Crimean War front to care for wounded soldiers, despite being rejected by the British War Office. She was largely forgotten until recent decades.',
+          note: 'Mary Seacole (1805-1881) - a Jamaican-born nurse who set up the British Hotel near the Crimean War front to care for wounded soldiers, despite being rejected by the British War Office. She was largely forgotten until recent decades.',
           color: '#10b981',
         },
       ],
@@ -453,7 +469,7 @@ const POEM: PoemData = {
 
 <p><strong>Caribbean history:</strong> The poem celebrates three key figures: <strong>Toussaint L'Ouverture</strong>, who led the Haitian Revolution (the only successful slave revolt); <strong>Nanny of the Maroons</strong>, a Jamaican resistance leader; and <strong>Mary Seacole</strong>, a Jamaican nurse in the Crimean War. All three were largely absent from British school curricula when Agard was educated.</p>
 
-<p><strong>British education system:</strong> The poem critiques how the National Curriculum prioritised a narrow, Eurocentric view of history. When Agard was at school, figures like Toussaint and Seacole were not taught, while nursery rhymes and British military heroes dominated. The poem argues this was a deliberate act of cultural erasure.</p>
+<p><strong>British education system:</strong> The poem critiques how the curriculum he was taught prioritised a narrow, Eurocentric view of history. When Agard was at school, figures like Toussaint and Seacole were not taught, while nursery rhymes and British military heroes dominated. The poem argues this was a deliberate act of cultural erasure.</p>
 
 <p><strong>Language as resistance:</strong> Agard writes in Caribbean Creole rather than Standard English, which is itself an act of defiance - he refuses to use the coloniser's language to discuss the coloniser's failings.</p>`,
 
@@ -465,7 +481,7 @@ const POEM: PoemData = {
 
 <p><strong>التاريخ الكاريبي:</strong> القصيدة تحتفي بثلاث شخصيات مفتاحية: <strong>Toussaint L'Ouverture</strong>، اللي قاد الثورة الهايتية (الثورة الوحيدة الناجحة للعبيد في التاريخ)؛ و<strong>Nanny of the Maroons</strong>، قائدة المقاومة في جامايكا؛ و<strong>Mary Seacole</strong>، الممرّضة الجامايكية اللي خدمت في حرب القرم. الثلاثة كانوا غائبين تقريباً من المناهج المدرسية البريطانية أيام دراسة Agard.</p>
 
-<p><strong>النظام التعليمي البريطاني:</strong> القصيدة تنتقد كيف إن المنهج الوطني يعطي الأولوية لرؤية ضيّقة متمحورة حول أوروبا. أيام ما كان Agard في المدرسة، شخصيات مثل Toussaint وSeacole ما كانت تُدرَّس، بينما القوافي الأطفال (nursery rhymes) والأبطال العسكريين البريطانيين يستحوذون على المنهج. القصيدة تطرح إن هذا الشيء كان فعل مقصود لمحو ثقافي.</p>
+<p><strong>النظام التعليمي البريطاني:</strong> القصيدة تنتقد كيف إن المنهج اللي درسه يعطي الأولوية لرؤية ضيّقة متمحورة حول أوروبا. أيام ما كان Agard في المدرسة، شخصيات مثل Toussaint وSeacole ما كانت تُدرَّس، بينما القوافي الأطفال (nursery rhymes) والأبطال العسكريين البريطانيين يستحوذون على المنهج. القصيدة تطرح إن هذا الشيء كان فعل مقصود لمحو ثقافي.</p>
 
 <p><strong>اللغة كمقاومة:</strong> Agard يكتب بلهجة الكريول الكاريبية بدل English standard، وهذا بحدّ ذاته فعل تحدّي - يرفض إنه يستخدم لغة المستعمِر علشان يحكي عن أخطاء المستعمِر نفسه.</p>`,
 
@@ -473,7 +489,7 @@ const POEM: PoemData = {
 
 The poem alternates between dismissive stanzas about British education - mixing real history with nursery rhymes to show how trivial it felt - and reverent, hymn-like stanzas celebrating Caribbean heroes. The British stanzas are written in a sing-song, mocking rhythm, while the Caribbean stanzas use short, powerful lines that feel almost sacred.
 
-The poem builds towards a repeated refrain: "But now I checking out me own history / I carving out me identity." The speaker rejects the passive role of being "told" what to know and instead takes active control of his own education and selfhood. The "carving" metaphor suggests this is difficult, deliberate work - identity must be fought for, not passively received.
+The poem builds towards its final two lines (lines 52 to 53), where the speaker announces that "now" he is "checking out me own history" and "carving out me identity". He rejects the passive role of being told what to know and instead takes active control of his own education and selfhood. The carving metaphor suggests this is difficult, deliberate work - identity must be fought for, not passively received.
 
 Ultimately, the poem argues that controlling a people's history is a form of oppression ("Bandage up me eye"), and that reclaiming that history is essential to building a free and authentic identity.`,
 
@@ -481,25 +497,25 @@ Ultimately, the poem argues that controlling a people's history is a form of opp
 
 القصيدة تتناوب بين مقاطع ساخرة عن التعليم البريطاني - تخلط التاريخ الحقيقي مع قوافي الأطفال علشان تبيّن كم كان تافه يحسّه - ومقاطع موقّرة، شبيهة بالترانيم، تحتفي بالأبطال الكاريبيين. المقاطع البريطانية مكتوبة بإيقاع غنائي ساخر، أما المقاطع الكاريبية فتستخدم أبيات قصيرة قوية تحسّ إنها تقريباً مقدّسة.
 
-القصيدة تبني نحو لازمة (refrain) متكرّرة: "But now I checking out me own history / I carving out me identity". المتكلّم يرفض الدور السلبي اللي يخلّيه يستقبل "ما يُقال له"، ويأخذ زمام تعليمه وذاته بنفسه. استعارة "carving" تلمّح إن هذا شغل صعب ومقصود - الهوية لازم تتحارب عشانها، ما تُستلَم بشكل سلبي.
+القصيدة تبني نحو آخر بيتين فيها (الأبيات 52–53)، لمّا المتكلّم يعلن إنه "now" صار "checking out me own history" و"carving out me identity". المتكلّم يرفض الدور السلبي اللي يخلّيه يستقبل "ما يُقال له"، ويأخذ زمام تعليمه وذاته بنفسه. استعارة "carving" تلمّح إن هذا شغل صعب ومقصود - الهوية لازم تتحارب عشانها، ما تُستلَم بشكل سلبي.
 
 في النهاية، القصيدة تطرح إن السيطرة على تاريخ شعب نوع من أنواع الظلم ("Bandage up me eye")، وإن استرداد هذا التاريخ شرط أساسي لبناء هوية حرّة وأصيلة.`,
 
   formAndStructure: `STRUCTURE:
 The poem alternates between two types of stanza:
-1. "British education" stanzas - written in a mocking, sing-song rhythm that mixes real historical events (1066, Lord Nelson) with nursery rhymes (Dick Whittington, Old King Cole), suggesting the education was trivial and patronising.
-2. "Caribbean hero" stanzas - originally italicised in print, written in short, reverent lines that feel like hymns or prayers, celebrating Toussaint L'Ouverture, Nanny of the Maroons, and Mary Seacole.
+1. British education stanzas - written in a mocking, sing-song rhythm that mixes real historical events (1066, Lord Nelson) with nursery rhymes (Dick Whittington, Old King Cole), suggesting the education was trivial and patronising.
+2. Caribbean hero stanzas - originally italicised in print, written in short, reverent lines that feel like hymns or prayers, celebrating Toussaint L'Ouverture, Nanny of the Maroons, and Mary Seacole.
 
 This alternating structure creates a powerful visual and rhythmic contrast on the page.
 
 FORM:
 - Free verse with no regular rhyme scheme - Agard rejects the formal structures of English poetry just as he rejects the English curriculum.
 - The irregular form mirrors the speaker's refusal to conform to British expectations.
-- Occasional half-rhymes and internal rhymes ("balloon/moon/spoon") appear in the British stanzas, mimicking nursery rhyme patterns to mock them.
+- The British stanzas rhyme insistently at their line ends (balloon, moon, spoon and maroon in lines 22 to 25; Waterloo, Zulu, 1492 and too in lines 32 to 35), mimicking nursery rhyme patterns to mock them.
 
 REFRAIN:
 "Dem tell me" opens most British stanzas, creating an insistent, accusatory rhythm.
-"But now I checking out me own history / I carving out me identity" is the poem's refrain, growing in power with each repetition.
+The closing lines (52 to 53) are not repeated: they answer the refrain once, at the very end, which gives the speaker the last word.
 
 VISUAL LAYOUT:
 - The Caribbean hero stanzas use shorter lines, creating white space on the page that forces the reader to slow down and give each fact weight.
@@ -509,7 +525,7 @@ PHONETIC SPELLING:
 - "Dem", "me", "bout", "dat", "de" - Agard spells words phonetically to represent Caribbean Creole pronunciation, making the poem a performance piece that sounds like spoken dialect rather than written Standard English.
 
 ENDING:
-The poem ends with the refrain, giving the speaker the final word. The shift from "Dem tell me" (passive, past tense) to "I checking out" and "I carving" (active, present continuous) shows the speaker's transformation from passive recipient to active agent of his own identity.`,
+The last stanza returns to the refrain and then answers it, giving the speaker the final word. The shift from "Dem tell me" (passive) to "I checking out" and "carving" (active, present continuous) shows the speaker's transformation from passive recipient to active agent of his own identity.`,
 
   formAndStructureAr: `البنية:
 القصيدة تتناوب بين نوعين من المقاطع:
@@ -521,11 +537,11 @@ The poem ends with the refrain, giving the speaker the final word. The shift fro
 الشكل:
 - شعر حر (free verse) بلا نظام قافية منتظم - Agard يرفض الأشكال الرسمية للشعر الإنجليزي مثل ما يرفض المنهج الإنجليزي.
 - الشكل غير المنتظم يعكس رفض المتكلّم إنه يطابق التوقّعات البريطانية.
-- في بعض القوافي الناقصة والقوافي الداخلية ("balloon/moon/spoon") تطلع في المقاطع البريطانية، تقلّد نمط قوافي الأطفال علشان تسخر منها.
+- المقاطع البريطانية تتقفّى بإلحاح في نهايات أبياتها (balloon وmoon وspoon وmaroon في الأبيات 22–25؛ وWaterloo وZulu و1492 وtoo في الأبيات 32–35)، تقلّد نمط قوافي الأطفال علشان تسخر منها.
 
 اللازمة (refrain):
 "Dem tell me" يفتح أغلب المقاطع البريطانية، ويخلق إيقاع متّهِم مُلِحّ.
-"But now I checking out me own history / I carving out me identity" هي لازمة القصيدة، وتزيد قوّتها مع كل تكرار.
+البيتين الأخيرين (52–53) ما يتكرّرون: يردّون على اللازمة مرّة وحدة في آخر القصيدة، وهذا يعطي المتكلّم الكلمة الأخيرة.
 
 التخطيط البصري:
 - مقاطع الأبطال الكاريبيين تستخدم أبيات قصيرة، وتخلق فراغ أبيض على الصفحة يجبر القارئ إنه يتمهّل ويعطي كل معلومة وزنها.
@@ -535,7 +551,7 @@ The poem ends with the refrain, giving the speaker the final word. The shift fro
 - "Dem"، "me"، "bout"، "dat"، "de" - Agard يهجّي الكلمات صوتياً علشان يمثّل النطق الكريولي الكاريبي، وهذا يخلّي القصيدة قطعة أداء (performance piece) تحسّ إنها لهجة منطوقة مو إنجليزية مكتوبة standard.
 
 النهاية:
-القصيدة تنتهي باللازمة، وتعطي المتكلّم الكلمة الأخيرة. الانتقال من "Dem tell me" (سلبي، ماضي) إلى "I checking out" و"I carving" (فاعل، مضارع مستمر) يبيّن تحوّل المتكلّم من مستقبِل سلبي إلى فاعل نشط لهويته نفسها.`,
+المقطع الأخير يرجع للازمة وبعدين يردّ عليها، وهذا يعطي المتكلّم الكلمة الأخيرة. الانتقال من "Dem tell me" (سلبي) إلى "I checking out" و"carving" (فاعل، مضارع مستمر) يبيّن تحوّل المتكلّم من مستقبِل سلبي إلى فاعل نشط لهويته نفسها.`,
 
   keyQuotes: [
     {
@@ -548,25 +564,25 @@ The poem ends with the refrain, giving the speaker the final word. The shift fro
       themesAr: ['سلطة التعليم', 'القمع الثقافي', 'الهوية'],
     },
     {
-      quote: 'Bandage up me eye with me own history',
+      quote: 'Bandage up me eye',
       analysis:
-        'The central metaphor of the poem. The speaker has been deliberately blinded - not with a foreign material, but with his "own history" twisted into a tool of oppression. The bandage prevents sight (understanding), and the fact that it is made from "me own history" suggests that colonial education weaponised Caribbean identity against Caribbean people.',
+        'The central metaphor of the poem, in line 4. The speaker has been deliberately blinded - not with a foreign material, but with his "own history" twisted into a tool of oppression. The bandage prevents sight (understanding), and the fact that it is made from "me own history" suggests that colonial education weaponised Caribbean identity against Caribbean people.',
       themes: ['Oppression', 'Identity', 'Power of education', 'Colonialism'],
       analysisAr:
         'الاستعارة المركزية في القصيدة. المتكلّم انعمى بشكل مقصود - مو بمادة أجنبية، بل بـ"تاريخه نفسه" بعد ما لُوي وحُوّل لأداة قمع. الضمادة تمنع البصر (الفهم)، وحقيقة إنها مصنوعة من "me own history" تلمّح إن التعليم الاستعماري سلّح الهوية الكاريبية ضد الناس الكاريبيين أنفسهم.',
       themesAr: ['الظلم', 'الهوية', 'سلطة التعليم', 'الاستعمار'],
     },
     {
-      quote: 'Toussaint a slave with vision lick back Napoleon battalion',
+      quote: 'lick back',
       analysis:
-        'Celebrates Toussaint L\'Ouverture as a visionary who defeated one of the most powerful armies in the world. "Lick back" is Caribbean Creole for "defeated" - the use of dialect makes the victory feel personal and triumphant. The contrast between "slave" and "vision" emphasises that greatness is not determined by social status.',
+        'Celebrates Toussaint L\'Ouverture as a visionary who defeated one of the most powerful armies in the world. "Lick back" (line 13) is Caribbean Creole for beating an enemy back - the use of dialect makes the victory feel personal and triumphant. Lines 11 and 12 set his enslavement against his vision, emphasising that greatness is not determined by social status.',
       themes: ['Resistance', 'Heroism', 'Pride', 'Power'],
       analysisAr:
-        'تحتفي بـToussaint L\'Ouverture كرجل بصيرة قدر يهزم وحد من أقوى الجيوش في العالم. "Lick back" بالكريول الكاريبية تعني "هزم" - استخدام اللهجة يخلّي النصر يحسّ شخصي ومنتصِر. التباين بين "slave" و"vision" يأكّد إن العظمة ما تتحدّد بالمكانة الاجتماعية.',
+        'تحتفي بـToussaint L\'Ouverture كرجل بصيرة قدر يهزم وحد من أقوى الجيوش في العالم. "Lick back" بالكريول الكاريبية تعني "هزم" - استخدام اللهجة يخلّي النصر يحسّ شخصي ومنتصِر. التباين بين العبودية والبصيرة (البيتين 11–12) يأكّد إن العظمة ما تتحدّد بالمكانة الاجتماعية.',
       themesAr: ['المقاومة', 'البطولة', 'الفخر', 'السلطة'],
     },
     {
-      quote: 'Toussaint de thorn to de French / Toussaint de beacon of de Haitian Revolution',
+      quote: 'de thorn ... de beacon',
       analysis:
         'A dual metaphor: Toussaint is both a "thorn" (a source of pain and irritation to oppressors) and a "beacon" (a guiding light for the oppressed). This contrast shows how the same figure can represent threat and hope depending on perspective.',
       themes: ['Resistance', 'Heroism', 'Dual perspective'],
@@ -575,34 +591,34 @@ The poem ends with the refrain, giving the speaker the final word. The shift fro
       themesAr: ['المقاومة', 'البطولة', 'وجهة النظر المزدوجة'],
     },
     {
-      quote: 'Nanny see-far woman of mountain dream',
+      quote: 'see-far woman',
       analysis:
-        'Nanny of the Maroons is described with reverent, almost mythical language. "See-far woman" suggests prophetic vision and wisdom. "Mountain dream" elevates the Jamaican Blue Mountains - where the Maroons made their stand - into a place of aspiration and spiritual significance.',
+        'Nanny of the Maroons is described with reverent, almost mythical language. "See-far woman" (line 27) suggests prophetic vision and wisdom. The next line places her dream in the mountains, elevating the Jamaican Blue Mountains - where the Maroons made their stand - into a place of aspiration and spiritual significance.',
       themes: ['Heroism', 'Pride', 'Resistance', 'Nature'],
       analysisAr:
-        'Nanny of the Maroons موصوفة بلغة موقّرة، تقريباً أسطورية. عبارة "see-far woman" توحي بالبصيرة النبوية والحكمة. و"mountain dream" ترفع الـBlue Mountains في جامايكا - اللي وقفت فيها الـMaroons موقفها - لمكان طموح وذو دلالة روحية.',
+        'Nanny of the Maroons موصوفة بلغة موقّرة، تقريباً أسطورية. عبارة "see-far woman" توحي بالبصيرة النبوية والحكمة. والبيت اللي بعده، اللي يربط حلمها بالجبال، يرفع الـBlue Mountains في جامايكا - اللي وقفت فيها الـMaroons موقفها - لمكان طموح وذو دلالة روحية.',
       themesAr: ['البطولة', 'الفخر', 'المقاومة', 'الطبيعة'],
     },
     {
-      quote: 'Mary Seacole / From Jamaica she travel far',
+      quote: 'healing star',
       analysis:
-        'Mary Seacole is presented as someone who crossed vast distances - both physical and cultural - to help others. The simplicity of "she travel far" underscores the quiet determination and sacrifice that went unrecognised by the British establishment, which celebrated Florence Nightingale instead.',
+        'Mary Seacole is presented in line 46 as a star, a source of light and healing for the wounded. With the sunrise of line 48, the image answers the lamp given to Florence Nightingale in line 36: the British story has its lamp, but Seacole is given a star. The establishment celebrated Nightingale instead; the poem restores the balance.',
       themes: ['Heroism', 'Injustice', 'Cultural erasure'],
       analysisAr:
-        'Mary Seacole تتقدّم كشخصية قطعت مسافات هائلة - بدنية وثقافية في نفس الوقت - علشان تساعد الآخرين. بساطة عبارة "she travel far" تأكّد على الإصرار الصامت والتضحية اللي ما حصلوا على اعتراف من المؤسسة البريطانية، اللي احتفت بـFlorence Nightingale بدلاً منها.',
+        'Mary Seacole تتقدّم في البيت 46 كنجمة، مصدر نور وشفاء للجرحى ("healing star"). وهذي الصورة، مع شروق الشمس في البيت 48، تردّ على مصباح Florence Nightingale في البيت 36: القصة البريطانية عندها مصباح، بس Seacole تنعطى نجمة. المؤسسة البريطانية احتفت بـFlorence Nightingale بدلاً منها، والقصيدة ترجّع التوازن.',
       themesAr: ['البطولة', 'الظلم', 'المحو الثقافي'],
     },
     {
       quote: 'But now I checking out me own history',
       analysis:
-        'The poem\'s refrain and turning point. "But now" marks the shift from passive acceptance to active resistance. "Checking out" is deliberately casual and modern - this is not an academic exercise but a personal journey of discovery. The present continuous tense suggests the process is ongoing and unstoppable.',
+        'The poem\'s turning point, held back until the last stanza (line 52). "But now" marks the shift from passive acceptance to active resistance. "Checking out" is deliberately casual and modern - this is not an academic exercise but a personal journey of discovery. The present continuous tense suggests the process is ongoing and unstoppable.',
       themes: ['Identity', 'Resistance', 'Empowerment', 'Self-discovery'],
       analysisAr:
-        'لازمة القصيدة ونقطة تحوّلها. "But now" تشير لتحوّل من القبول السلبي إلى المقاومة الفاعلة. عبارة "checking out" عاميّة وعصرية بقصد - هذي مو مهمة أكاديمية، بل رحلة اكتشاف شخصية. صيغة المضارع المستمر (present continuous) توحي إن العملية مستمرة ولا تتوقّف.',
+        'نقطة تحوّل القصيدة، مؤجّلة لآخر مقطع (البيت 52). "But now" تشير لتحوّل من القبول السلبي إلى المقاومة الفاعلة. عبارة "checking out" عاميّة وعصرية بقصد - هذي مو مهمة أكاديمية، بل رحلة اكتشاف شخصية. صيغة المضارع المستمر (present continuous) توحي إن العملية مستمرة ولا تتوقّف.',
       themesAr: ['الهوية', 'المقاومة', 'التمكين', 'اكتشاف الذات'],
     },
     {
-      quote: 'I carving out me identity',
+      quote: 'carving out me identity',
       analysis:
         'The final line of the poem. "Carving" is a powerful verb - it suggests something permanent (like sculpture or inscription), deliberate, and requiring great effort against resistant material. Identity is not given or inherited; it must be actively created. The speaker has moved from object (being told) to subject (carving).',
       themes: ['Identity', 'Empowerment', 'Resistance', 'Self-determination'],
@@ -615,58 +631,59 @@ The poem ends with the refrain, giving the speaker the final word. The shift fro
   languageDevices: [
     {
       device: 'Phonetic Dialect (Caribbean Creole)',
-      example: 'Dem tell me / Wha dem want to tell me',
+      example: 'Dem tell me',
       effect:
-        'Agard writes in Caribbean Creole throughout the poem, using "Dem" for "They", "me" for "my", "bout" for "about", and "de" for "the". This is a deliberate act of linguistic resistance - by refusing to write in Standard English, Agard asserts his Caribbean identity in the very fabric of the poem. The language is inseparable from the message.',
+        'Agard writes in Caribbean Creole throughout the poem, using "Dem" for the standard pronoun they, "me" for my, "bout" for about, and "de" for the article. This is a deliberate act of linguistic resistance - by refusing to write in Standard English, Agard asserts his Caribbean identity in the very fabric of the poem. The language is inseparable from the message.',
       lineRef: 0,
     },
     {
       device: 'Anaphora',
-      example: 'Dem tell me / Dem tell me / Dem tell me bout...',
+      example: 'Dem tell me bout',
       effect:
         'The relentless repetition of "Dem tell me" at the start of lines creates an insistent, accusatory rhythm - like a witness giving testimony or a prosecutor building a case. Each repetition adds another charge against the education system, building cumulative anger and frustration.',
-      lineRef: 2,
+      lineRef: 7,
     },
     {
       device: 'Metaphor of Blindness',
-      example: 'Bandage up me eye with me own history / Blind me to me own identity',
+      example: 'Bandage up me eye ... Blind me',
       effect:
         'Education is presented as an act of deliberate blinding. The metaphor suggests that the curriculum was not simply incomplete but actively harmful - designed to prevent the speaker from seeing the truth about his own heritage. The bandage both conceals and constrains.',
       lineRef: 4,
     },
     {
       device: 'Contrast / Juxtaposition',
-      example: 'Dem tell me bout Florence Nightingale... but dem never tell me bout Mary Seacole',
+      example: '[Lines 36 and 39] Florence Nightingale taught, Mary Seacole never mentioned',
       effect:
         'The poem repeatedly juxtaposes celebrated British figures with forgotten Caribbean ones. Nightingale vs. Seacole is particularly pointed because both were nurses in the same war, yet only the white British woman was remembered. The contrast exposes the racial bias embedded in the curriculum.',
-      lineRef: 49,
+      lineRef: 45,
     },
     {
-      device: 'Repetition (Refrain)',
-      example: 'But now I checking out me own history / I carving out me identity',
+      device: 'Refrain',
+      example: 'Dem tell me',
       effect:
-        "The refrain grows in power each time it appears. It marks the poem's structural turning points, shifting from complaint to celebration, from passivity to agency. The repetition also gives the poem a song-like or chant-like quality, connecting it to oral Caribbean storytelling traditions.",
-      lineRef: 12,
+        'The refrain opens the poem and returns in the last stanza (lines 50 to 51), so the poem is framed by what "Dem" chose to tell. This time the refrain is answered: the closing lines replace their telling with the speaker\'s own "checking out" and "carving". The repetition also gives the poem a chant-like quality, connecting it to oral Caribbean storytelling traditions.',
+      lineRef: 58,
     },
     {
       device: 'Allusion',
-      example: "Toussaint L'Ouverture... Nanny de maroon... Mary Seacole... Shaka de great Zulu",
+      example:
+        "[Lines 8, 25, 33 and 39] Toussaint L'Ouverture, Nanny of the Maroons, Shaka and Mary Seacole",
       effect:
         "Agard fills the poem with allusions to real historical figures who were excluded from his British education. Each allusion serves a dual purpose: it educates the reader about these figures while simultaneously proving that the British curriculum's omission of them was a choice, not an oversight.",
-      lineRef: 19,
+      lineRef: 9,
     },
     {
       device: 'Nursery Rhyme Parody',
-      example: 'de dish ran away with de spoon / de cow who jump over de moon',
+      example: '[Lines 23 to 24] the cow and the moon, the dish and the spoon',
       effect:
         'By weaving nursery rhymes into stanzas about British education, Agard suggests that the history he was taught was as trivial and childish as fairy tales. The blurring of real history with fantasy undermines the authority of the British curriculum.',
-      lineRef: 10,
+      lineRef: 26,
     },
     {
       device: 'Semantic Field of Vision',
-      example: 'Bandage up me eye / Blind me / see-far woman / beacon',
+      example: 'Blind me ... see-far woman ... de beacon',
       effect:
-        'The poem builds a sustained semantic field around sight and blindness. The British system "bandages" and "blinds", while the Caribbean heroes are associated with vision ("see-far woman") and light ("beacon"). Reclaiming history is presented as an act of recovering sight.',
+        'The poem builds a sustained semantic field around sight and blindness. The British system bandages and blinds, while the Caribbean heroes are associated with vision ("see-far woman") and light ("beacon"). Reclaiming history is presented as an act of recovering sight.',
       lineRef: 4,
     },
   ],
@@ -693,7 +710,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'com-2',
-    question: 'What does "Bandage up me eye with me own history" mean?',
+    question: 'What does "Bandage up me eye" in line 4 mean, when the bandage is his own history?',
     type: 'multiple-choice',
     options: [
       'The speaker has an eye injury',
@@ -719,7 +736,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Agard deliberately mixes historical references (1066, Lord Nelson) with nursery rhymes (Dick Whittington, Old King Cole, "the dish ran away with the spoon") to show how equally meaningless and irrelevant both felt to someone denied their own history.',
+      'Agard deliberately mixes historical references (1066, Lord Nelson) with nursery rhymes (Dick Whittington, Old King Cole, the dish and the spoon) to show how equally meaningless and irrelevant both felt to someone denied their own history.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -751,13 +768,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Writing in Caribbean Creole is itself an act of resistance. By using "Dem" instead of "They" and "me" instead of "my", Agard refuses to conform to Standard English, asserting his cultural identity through his very language.',
+      'Writing in Caribbean Creole is itself an act of resistance. By using "Dem" instead of they and "me" instead of my, Agard refuses to conform to Standard English, asserting his cultural identity through his very language.',
     topic: 'Language',
     difficulty: 'higher',
   },
   {
     id: 'com-6',
-    question: 'What does "I carving out me identity" suggest about the process of self-discovery?',
+    question: 'What does "carving out me identity" suggest about the process of self-discovery?',
     type: 'multiple-choice',
     options: [
       'Identity is given to you automatically',
@@ -799,7 +816,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Nanny of the Maroons (c.1686-c.1755) was a Jamaican national hero who led resistance against British colonisers through guerrilla warfare. She is one of only two women named as a National Hero of Jamaica.',
+      'Nanny of the Maroons (c.1686-c.1755) was a Jamaican national hero who led resistance against British colonisers through guerrilla warfare. She is the only woman among the National Heroes of Jamaica.',
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -844,9 +861,9 @@ const REVISION_TOPICS = [
     summary:
       'Checking Out Me History explores identity, cultural erasure, the power of education, resistance, and the reclaiming of suppressed heritage.',
     keyPoints: [
-      'Identity - "Blind me to me own identity" - knowing your history is knowing yourself',
+      'Identity - "Blind me" (line 5) - knowing your history is knowing yourself',
       'Cultural erasure - Caribbean and African history deliberately excluded from education',
-      'Resistance - "I carving out me identity" - active self-education and protest',
+      'Resistance - "carving out me identity" (line 53) - active self-education and protest',
       'Power of education - those who control what is taught control identity itself',
     ],
   },
@@ -869,7 +886,7 @@ const REVISION_TOPICS = [
       'Two visual styles - typographical separation mirrors the separation of histories',
       'Anaphora ("Dem tell me") - creates a chant-like protest rhythm',
       'Short lines in hero stanzas - reverential, almost prayer-like',
-      'Refrain "But now I checking out me own history" - the poem\'s thesis statement',
+      'Line 52, "But now I checking out me own history" - the poem\'s thesis statement, held back until the end',
     ],
   },
 ]
@@ -889,7 +906,7 @@ const COMPARISONS = [
     link: '/revision/poetry/power-and-conflict/london',
     points: [
       'Both poets criticise powerful institutions - Agard attacks the education system, Blake attacks the Church, monarchy, and government.',
-      'Both use repetition to build a sense of injustice - "Dem tell me" echoes Blake\'s "In every" anaphora.',
+      'Both use repetition to build a sense of injustice - "Dem tell me" echoes the anaphora of the second stanza of London.',
       'Both poems give voice to the powerless and marginalised in society.',
       'Blake writes in strict quatrains (working within English tradition) while Agard rejects English poetic form entirely.',
     ],
@@ -1044,9 +1061,9 @@ export default function CheckingOutMeHistoryPage() {
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         &ldquo;Checking Out Me History&rdquo; by John Agard is published by Hodder Children&rsquo;s
         Books in <em>Half-Caste and Other Poems</em> (2005) and is reproduced in the AQA Power &amp;
-        Conflict anthology by permission of Hodder &amp; Stoughton Limited. Short quotations are
-        reproduced here under the fair dealing provision of the CDPA 1988 for criticism and review.
-        Full text available in your AQA anthology.
+        Conflict anthology by kind permission of John Agard c/o Caroline Sheldon Literary Agency.
+        Short quotations are reproduced here under the fair dealing provision of the CDPA 1988 for
+        criticism and review. Full text available in your AQA anthology.
       </p>
     </div>
   )

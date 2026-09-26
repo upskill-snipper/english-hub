@@ -27,10 +27,19 @@ const poppiesData: PoemData = {
   // copy of the poem. The viewer numbers entries by position, stanza breaks
   // included, so after the first stanza its numbers run ahead of the
   // anthology's. Annotations that described invented lines or repetitions the
-  // poem does not make were rewritten or trimmed. The summary, key quotes,
-  // devices, form notes and quiz below were not rebuilt and still quote some
-  // invented lines; each device lineRef was re-pointed only where its example
-  // is, or garbles, a line of the poem.
+  // poem does not make were rewritten or trimmed.
+  //
+  // The summary, key quotes, devices, form notes and quiz were rebuilt on 26
+  // September 2026. Until then they quoted lines that are not in the poem (a
+  // bird simile where Weir has a wishbone, white crosses where she has war
+  // graves, a stroke of the top of his head where she has the tip of his nose,
+  // a breaking-off sentence, war-torn nerves, a line about taste and breath),
+  // put a line break inside a line, and quoted 99 distinct words of a 35-line
+  // poem against a fair-dealing share of 22. Every quotation left was checked
+  // word for word that day against AQA's published anthology sample
+  // (filestore.aqa.org.uk/resources/english/AQA-8702-TG-POEMS.PDF), which
+  // prints the poem by permission of Templar Poetry. The page now quotes 22
+  // distinct words; everything else is described in its own words, by line.
   lines: [
     // Stanza 1
     {
@@ -69,7 +78,7 @@ const poppiesData: PoemData = {
       annotations: [
         {
           type: 'Tactile imagery',
-          note: '"Spasms" suggests involuntary, painful movement - the artificial poppy\'s crepe paper becomes a metaphor for the mother\'s convulsive grief.',
+          note: "The noun for the paper petals' movement (see Key Quotes) suggests involuntary, painful movement - the artificial poppy's crepe paper becomes a metaphor for the mother's convulsive grief.",
           color: '#f59e0b',
         },
       ],
@@ -87,7 +96,7 @@ const poppiesData: PoemData = {
       annotations: [
         {
           type: 'Repetition',
-          note: 'Repeating "nose" dwells on one small physical detail, giving the memory a cyclical, obsessive quality: the mother replays it.',
+          note: "Naming her own nose and then her son's in consecutive lines dwells on one small physical detail, giving the memory a cyclical, obsessive quality: the mother replays it.",
           color: '#f472b6',
         },
       ],
@@ -115,7 +124,7 @@ const poppiesData: PoemData = {
       annotations: [
         {
           type: 'Sensory detail',
-          note: '"The world overflowing" conveys the overwhelming nature of grief - emotions flood beyond containment, mirroring the enjambment that runs throughout the poem.',
+          note: 'The world brimming over as the door opens (see Key Quotes) conveys the overwhelming nature of grief - emotions flood beyond containment, mirroring the enjambment that runs throughout the poem.',
           color: '#34d399',
         },
       ],
@@ -160,19 +169,19 @@ const poppiesData: PoemData = {
 <p>على عكس كثير من قصائد الحرب اللي تكتب من زاوية الجندي، "Poppies" تركّز على <strong>التكلفة المنزلية والعاطفية</strong> للصراع - الحزن والقلق والفقد اللي يعيشه أهل المقاتل في البيت. القصيدة عن قصد تطمس الفترات الزمنية: ممكن تكون في الحرب العالمية الأولى، أو الثانية، أو أي نزاع حديث، وهذا الشي يخلّي تجربة الأم خالدة وعالمية.</p>
 <p>من أهم الخيوط السياقية: التوتّر بين <strong>عالم البيت</strong> (تثبيت الـlapels، البليزرات المدرسية، أصوات الملعب) و<strong>عالم العسكر</strong> (Armistice Sunday، قبور الجنود، الـpoppies)، وأسلوب <strong>صور المنسوجات</strong> - felt، bias binding، tucks، darts، pleats - اللي تحاك في القصيدة كاستعارة لمحاولة الأم إنها تخيّط مع بعض شظايا الذكرى والحزن.</p>`,
 
-  summary: `"Poppies" traces a mother's experience of letting her son go to war, structured around the rituals of Remembrance Day. The poem opens three days before Armistice Sunday, with the mother pinning a poppy to her son's lapel - an act that merges the domestic ritual of preparing a child for school with the formal act of military remembrance.
+  summary: `"Poppies" traces a mother's experience of letting her son go to war, structured around the rituals of Remembrance. The poem is set just before Armistice Sunday, with the mother fixing a poppy to her son's lapel - an act that merges the domestic ritual of preparing a child for school with the formal act of military remembrance.
 
 As the son departs, the mother is left with fragments of memory: childhood games, the texture of his hair, his playground voice. The poem moves between past and present, blurring the timeline so that the child leaving for school and the soldier leaving for war become indistinguishable.
 
-After her son has gone, the mother releases a songbird from its cage - a symbolic act of letting go. She visits the war memorial, where she leans against it "like a bird," listening for her son's voice on the wind. The poem ends with this image of desperate, fragile hope - the mother still searching for connection to her absent child.
+After her son has gone, the mother goes into his bedroom and sets a caged bird free - a symbolic act of letting go. She follows a dove to the war memorial on the hill and leans against it, her body bent into the shape of a wishbone, listening for her son's voice on the wind. The poem ends with this image of desperate, fragile hope - the mother still searching for connection to her absent child.
 
 Throughout, Weir uses textile imagery (felt, bias binding, tucks, darts, pleats) to convey the mother's attempt to hold things together, and sensory, tactile language to express grief that is physical and overwhelming rather than abstract.`,
 
-  summaryAr: `قصيدة "Poppies" تتبع تجربة أم وهي تخلّي ابنها يروح للحرب، والقصيدة مبنية على طقوس Remembrance Day. تفتتح القصيدة قبل Armistice Sunday بثلاثة أيام، والأم تثبّت "poppy" على lapel ابنها - فعل يدمج بين الطقس البيتي اللي تجهّز فيه طفلها للمدرسة وبين المراسم العسكرية الرسمية لإحياء ذكرى الشهداء.
+  summaryAr: `قصيدة "Poppies" تتبع تجربة أم وهي تخلّي ابنها يروح للحرب، والقصيدة مبنية على طقوس Remembrance. أحداثها قبل Armistice Sunday بأيام قليلة، والأم تثبّت الـpoppy على lapel ابنها - فعل يدمج بين الطقس البيتي اللي تجهّز فيه طفلها للمدرسة وبين المراسم العسكرية الرسمية لإحياء ذكرى الشهداء.
 
 ولمّا الابن يطلع، الأم تتبقّى مع شظايا الذكرى: ألعاب الطفولة، ملمس شعره، صوته في الملعب. القصيدة تتنقّل بين الماضي والحاضر، وتطمس الجدول الزمني، عشان الطفل اللي طالع للمدرسة والجندي اللي طالع للحرب يصيرون شي واحد ما تقدر تفرّق بينهم.
 
-بعد ما يروح الابن، الأم تفك "songbird" من القفص - فعل رمزي للتخلية والإفلات. وتزور النصب التذكاري للحرب، وتميل عليه "like a bird"، تنصت لصوت ابنها مع الهواء. القصيدة تنتهي بهالصورة من الأمل اليائس والهش - الأم لساتها تدوّر على وصل مع طفلها الغايب.
+بعد ما يروح الابن، الأم تدخل غرفته وتطلق طير محبوس في قفص - فعل رمزي للتخلية والإفلات. وتلحق حمامة لين النصب التذكاري للحرب فوق التلّ، وتميل عليه وجسمها منحني على شكل wishbone (عظمة الأماني)، تنصت لصوت ابنها مع الهواء. القصيدة تنتهي بهالصورة من الأمل اليائس والهش - الأم لساتها تدوّر على وصل مع طفلها الغايب.
 
 على طول القصيدة، Weir تستخدم صور المنسوجات (felt، bias binding، tucks، darts، pleats) عشان توصّل محاولة الأم إنها تمسك الأشياء مع بعض، ولغة حسّية وملموسة عشان تعبّر عن حزن جسدي طاغي مو مجرّد فكرة مجرّدة.`,
 
@@ -180,91 +189,76 @@ Throughout, Weir uses textile imagery (felt, bias binding, tucks, darts, pleats)
 
 STRUCTURE: The poem moves associatively rather than chronologically, drifting between past memories and present grief. Long, flowing sentences run across line and stanza breaks through extensive enjambment, enacting the way memories and emotions spill uncontrollably from one moment to the next.
 
-ENJAMBMENT: This is the poem's most important structural feature. Lines break mid-phrase ("I pinned one / onto your lapel"), mid-clause, and even mid-word-group, creating a sense of breathlessness and emotional overflow. The enjambment across stanza breaks is particularly powerful - thoughts refuse to be contained within neat boundaries.
+ENJAMBMENT: This is the poem's most important structural feature. Lines break mid-phrase (lines 5 to 6 split the military word from the school-uniform trim it describes; lines 10 to 11 split her steeling of her face), mid-clause, and even mid-word-group, creating a sense of breathlessness and emotional overflow. The enjambment across stanza breaks is particularly powerful - from stanza 2 into stanza 3 her flattened words run on without a pause, and thoughts refuse to be contained within neat boundaries.
 
-SENTENCE LENGTH: Weir uses long, complex sentences that mirror the mother's stream of consciousness. Lists ("tucks, darts, pleats") accumulate details obsessively. The contrast between these flowing sentences and the short, broken fragments near the end ("I think I-") conveys the mother's increasing emotional fragmentation.
+SENTENCE LENGTH: Weir uses long, complex sentences that mirror the mother's stream of consciousness. Lists, such as the three sewing terms of line 28, accumulate details obsessively. Against them, short statements (her claim to have been brave, line 18) and full stops that fall mid-line in stanzas 2 and 3 interrupt the flow, showing what it costs her to stay composed.
 
-STANZAS: The poem's four uneven stanzas (of varying length) reject regularity. There is no neat pattern - the poem's shape on the page is itself disrupted and asymmetric, reflecting the disruption of loss.
+STANZAS: The poem's four uneven stanzas, of 6, 11, 12 and 6 lines, reject regularity. There is no neat pattern - the poem's shape on the page is itself disrupted and asymmetric, reflecting the disruption of loss.
 
-TENSE SHIFTS: The poem shifts between past and present tense, blurring the boundary between memory and the present moment. This temporal instability suggests the mother is trapped between past happiness and present grief.`,
+TENSE SHIFTS: The poem is told mostly in the past tense, but in stanza 3 it moves into the present perfect as she says where the dove has led her (line 26), bringing the reader into her present. This temporal instability suggests the mother is trapped between past happiness and present grief.`,
 
   formAndStructureAr: `FORM (الشكل): free verse بدون قافية ثابتة ولا وزن منتظم. غياب البناء الرسمي يعكس الحالة العاطفية للأم - منفلتة، غير متوقّعة، وترفض أي حلّ مرتّب. القصيدة مكتوبة بضمير المتكلّم، وهذا يعطينا منفذ مباشر لعالم الأم الداخلي.
 
 STRUCTURE (البناء): القصيدة تتحرّك بالترابط الذهني مو بالترتيب الزمني، وتتنقّل بين ذكريات الماضي وحزن الحاضر. الجمل طويلة ومتدفّقة، تعبر فواصل الأبيات والمقاطع عن طريق enjambment مكثّف، وهذا يجسّد كيف الذكريات والمشاعر تطفح بدون سيطرة من لحظة لثانية.
 
-ENJAMBMENT: هذا أهم ميزة بنيوية في القصيدة. الأبيات تنكسر في نص العبارة ("I pinned one / onto your lapel")، في نص الجملة، حتى في نص المجموعة اللفظية، وهذا يخلق إحساس بانقطاع النفس وفيضان عاطفي. الـenjambment عبر فواصل المقاطع له ثقل خاص - الأفكار ترفض إنها تنحبس داخل حدود مرتّبة.
+ENJAMBMENT: هذا أهم ميزة بنيوية في القصيدة. الأبيات تنكسر في نص العبارة (البيتين 5 و6 يفصلون الكلمة العسكرية عن حاشية الزي المدرسي اللي توصفها؛ والبيتين 10 و11 يفصلون عبارة تماسك وجهها)، في نص الجملة، حتى في نص المجموعة اللفظية، وهذا يخلق إحساس بانقطاع النفس وفيضان عاطفي. الـenjambment عبر فواصل المقاطع له ثقل خاص - من المقطع 2 للمقطع 3 كلماتها المسطّحة تكمل بدون وقفة، والأفكار ترفض إنها تنحبس داخل حدود مرتّبة.
 
-SENTENCE LENGTH (طول الجملة): Weir تستخدم جمل طويلة ومعقّدة تعكس تيّار وعي الأم. القوائم ("tucks, darts, pleats") تتراكم تفاصيل بطريقة هوسية. التباين بين هالجمل المتدفّقة والشظايا القصيرة المكسّرة في آخر القصيدة ("I think I-") يوصّل تشظّي الأم العاطفي المتزايد.
+SENTENCE LENGTH (طول الجملة): Weir تستخدم جمل طويلة ومعقّدة تعكس تيّار وعي الأم. القوائم، مثل مصطلحات الخياطة الثلاثة في البيت 28، تتراكم تفاصيل بطريقة هوسية. وقبالها، الجمل القصيرة (لمّا تقول إنها كانت شجاعة، البيت 18) والنقاط اللي تطيح في نص البيت في المقطعين 2 و3 تقطع التدفّق، وتبيّن قدّيش يكلّفها إنها تتماسك.
 
-STANZAS (المقاطع): مقاطع القصيدة الأربعة غير المنتظمة (بأطوال مختلفة) ترفض الانتظام. ولا نمط مرتّب - شكل القصيدة على الصفحة نفسه مضطرب وغير متناظر، وهذا يعكس اضطراب الفقد.
+STANZAS (المقاطع): مقاطع القصيدة الأربعة غير المنتظمة، 6 و11 و12 و6 أبيات، ترفض الانتظام. ولا نمط مرتّب - شكل القصيدة على الصفحة نفسه مضطرب وغير متناظر، وهذا يعكس اضطراب الفقد.
 
-TENSE SHIFTS (تبدّل الأزمنة): القصيدة تتنقّل بين الماضي والحاضر، وتطمس الحدود بين الذكرى واللحظة الحاضرة. هالاضطراب الزمني يلمّح إن الأم محبوسة بين سعادة الماضي وحزن الحاضر.`,
+TENSE SHIFTS (تبدّل الأزمنة): أغلب القصيدة بالماضي، بس في المقطع 3 تنتقل للـpresent perfect لمّا تقول وين وصّلتها الحمامة (البيت 26)، وتجيب القارئ لحاضرها. هالاضطراب الزمني يلمّح إن الأم محبوسة بين سعادة الماضي وحزن الحاضر.`,
 
   keyQuotes: [
     {
-      quote: 'three days before Armistice Sunday',
-      analysis:
-        'The specific temporal marker grounds the poem in the rituals of remembrance. "Three days before" creates anticipation and dread - the mother is already preparing for the formal acknowledgment of loss. The reference to Armistice Sunday connects individual grief to collective, national mourning.',
-      themes: ['Loss and absence', 'Memory', 'War and conflict'],
-      analysisAr:
-        'الإشارة الزمنية المحدّدة تثبّت القصيدة في طقوس التذكّر. عبارة "three days before" تخلق ترقّب وخوف - الأم من الحين تجهّز نفسها للاعتراف الرسمي بالفقد. والإشارة لـArmistice Sunday تربط الحزن الفردي بالحداد الجماعي الوطني.',
-      themesAr: ['الفقد والغياب', 'الذكرى', 'الحرب والصراع'],
-    },
-    {
       quote: 'spasms of paper red',
       analysis:
-        'The word "spasms" transforms the artificial poppy into something visceral and bodily - it suggests involuntary pain, convulsions, even death throes. "Paper red" is a transferred epithet: the redness belongs to blood and poppies, but is applied to paper, collapsing the boundary between the symbolic poppy and real bloodshed.',
+        'The noun "spasms" transforms the artificial poppy into something visceral and bodily - it suggests involuntary pain, convulsions, even death throes. "Paper red" is often read as a transferred epithet: the redness belongs to blood and poppies, but is applied to paper, collapsing the boundary between the symbolic poppy and real bloodshed.',
       themes: ['War and conflict', 'Grief', 'Symbolism'],
       analysisAr:
-        'كلمة "spasms" تحوّل الـpoppy الاصطناعية إلى شي حسّي وجسدي - تلمّح بألم لا إرادي، تشنّجات، حتى نزع روح. وعبارة "paper red" هي transferred epithet: الاحمرار في الأصل صفة للدم والـpoppies، بس تُنسب للورق، وهذا يطمس الحدود بين الـpoppy الرمزية وبين سفك دم حقيقي.',
+        'كلمة "spasms" تحوّل الـpoppy الاصطناعية إلى شي حسّي وجسدي - تلمّح بألم لا إرادي، تشنّجات، حتى نزع روح. وعبارة "paper red" وايد يقرونها كـtransferred epithet: الاحمرار في الأصل صفة للدم والـpoppies، بس تُنسب للورق، وهذا يطمس الحدود بين الـpoppy الرمزية وبين سفك دم حقيقي.',
       themesAr: ['الحرب والصراع', 'الحزن', 'الرمزية'],
     },
     {
-      quote: 'I pinned one onto your lapel',
+      quote: 'bias binding',
       analysis:
-        'The tender, domestic act of pinning a poppy carries enormous weight. It evokes a mother pinning a name badge on a school blazer, but also the formal ritual of wearing a poppy for Remembrance. The verb "pinned" suggests both attachment and the sharp pain of a pin - love and hurt are inseparable.',
-      themes: ['Loss and absence', 'Family', 'Domestic vs military'],
+        'A sewing term for the yellow trim on the edge of his school blazer. The line before calls it a "blockade", a military word, so war intrudes into the domestic scene even as the mother adjusts his uniform: the language of the home and the language of war are stitched together.',
+      themes: ['Domestic vs military', 'Family', 'War and conflict'],
       analysisAr:
-        'فعل تثبيت الـpoppy، رغم إنه حنون وبيتي، يحمل ثقل عاطفي كبير. يستحضر صورة الأم وهي تثبّت بطاقة الاسم على blazer مدرسي، بس في نفس الوقت يستحضر الطقس الرسمي للبس الـpoppy في Remembrance. الفعل "pinned" يلمّح بالتعلّق والتلاحم، بس يلمّح كمان بألم وخز الدبّوس - المحبة والوجع ما تفرّقهم عن بعض.',
-      themesAr: ['الفقد والغياب', 'الأسرة', 'البيتي مقابل العسكري'],
+        'مصطلح خياطة للحاشية الصفرا على طرف blazer المدرسة. والبيت اللي قبله يسمّيها "blockade"، كلمة عسكرية، يعني الحرب تقتحم المشهد البيتي والأم تعدّل زيّه: لغة البيت ولغة الحرب تنخاط مع بعض.',
+      themesAr: ['البيتي مقابل العسكري', 'الأسرة', 'الحرب والصراع'],
     },
     {
-      quote: 'released a song bird from its cage',
+      quote: 'song bird',
       analysis:
-        'A central metaphor for letting go. The caged bird represents the child held safe at home; releasing it symbolises the mother allowing her son to leave for war. The "song bird" implies beauty and fragility, while the cage suggests both protection and confinement. The act is both generous and devastating.',
+        'A central metaphor for letting go. After he has gone she frees the caged bird in his bedroom (lines 23 to 24): the caged bird represents the child held safe at home, and releasing it symbolises the mother allowing her son to leave for war. A bird that sings implies beauty and fragility, while the cage suggests both protection and confinement. The act is both generous and devastating.',
       themes: ['Loss and absence', 'Freedom', 'Family'],
       analysisAr:
-        'استعارة محورية للتخلية والإفلات. الطير المسجون في القفص يمثّل الطفل اللي تخبّيه الأم وتحفظه في البيت؛ وإطلاقه يرمز للأم وهي تخلّي ابنها يطلع للحرب. كلمة "song bird" تلمّح بالجمال والهشاشة، والـcage يلمّح بالحماية وكمان بالحبس. الفعل سخي ومدمّر في نفس الوقت.',
+        'استعارة محورية للتخلية والإفلات. بعد ما يروح، تطلق الطير المحبوس في غرفته (البيتين 23 و24): الطير المحبوس يمثّل الطفل اللي تحفظه الأم في البيت؛ وإطلاقه يرمز للأم وهي تخلّي ابنها يطلع للحرب. طير يغنّي يلمّح بالجمال والهشاشة، والقفص يلمّح بالحماية وكمان بالحبس. الفعل سخي ومدمّر في نفس الوقت.',
       themesAr: ['الفقد والغياب', 'الحرية', 'الأسرة'],
     },
     {
-      quote: 'the world overflowing',
+      quote: 'overflowing',
       analysis:
-        'This phrase captures the mother\'s sense of being overwhelmed - her grief is so vast that it cannot be contained. "Overflowing" connects to the enjambment throughout the poem: emotions, like the verse itself, refuse to stay within boundaries. It also suggests abundance - the world is full of things that remind her of her son.',
+        "As she flings the front door open, the world beyond is brimming over (line 20). The word captures the mother's sense of being overwhelmed - her grief is so vast that it cannot be contained - and it connects to the enjambment throughout the poem: emotions, like the verse itself, refuse to stay within boundaries. For her son, by contrast, the simile of line 21 makes the world outside a store of riches.",
       themes: ['Grief', 'Memory', 'Nature'],
       analysisAr:
-        'هالعبارة تلتقط إحساس الأم إنها مغمورة وما عاد تتحمّل - حزنها واسع لدرجة إنها ما تقدر تحتويه. كلمة "overflowing" تتربط بالـenjambment اللي يجري في كل القصيدة: المشاعر، مثل الأبيات نفسها، ترفض تنحبس داخل الحدود. وكمان تلمّح بوفرة - الدنيا مليانة أشياء تذكّرها بابنها.',
+        'لمّا تفتح باب البيت على وسعه، الدنيا برّا طافحة (البيت 20). الكلمة تلتقط إحساس الأم إنها مغمورة - حزنها واسع لدرجة إنها ما تقدر تحتويه - وتتربط بالـenjambment اللي يجري في كل القصيدة: المشاعر، مثل الأبيات نفسها، ترفض تنحبس داخل الحدود. وبالنسبة لابنها، على العكس، التشبيه في البيت 21 يخلّي الدنيا برّا كنز مليان.',
       themesAr: ['الحزن', 'الذكرى', 'الطبيعة'],
     },
     {
-      quote: 'leaned against it like a bird',
+      quote: 'like a wishbone',
       analysis:
-        'The simile compares the mother to a bird - small, fragile, vulnerable. She leans against the war memorial seeking support, just as a bird might press against a branch for shelter. The bird imagery connects to the earlier songbird and dove, creating a symbolic thread: the mother, like the birds, is caught between freedom and loss.',
-      themes: ['Loss and absence', 'Vulnerability', 'Nature'],
+        'At the war memorial the mother leans her body against the stone in the shape of a wishbone (line 32). A wishbone is pulled apart to make a wish, so the simile suggests both longing - she wishes for her son to return - and a body close to breaking, pulled two ways between hope and loss.',
+      themes: ['Loss and absence', 'Vulnerability', 'Memory'],
       analysisAr:
-        'التشبيه يقارن الأم بطير - صغيرة، هشّة، ضعيفة. تميل على النصب التذكاري تطلب سند، تماماً مثل ما الطير ممكن يستند على فرع عشان يستظل. صور الطيور تتربط بالـsongbird والـdove اللي ذكرتهم القصيدة من قبل، وتخلق خيط رمزي مستمر: الأم، مثل الطيور، عالقة بين الحرية والفقد.',
-      themesAr: ['الفقد والغياب', 'الهشاشة', 'الطبيعة'],
+        'عند النصب التذكاري، الأم تسند جسمها على الحجر بشكل wishbone (عظمة الأماني) (البيت 32). الـwishbone تنكسر بين اثنين عشان يتمنّون أمنية، فالتشبيه يلمّح بالشوق - تتمنّى ابنها يرجع - وبجسم قريب من الانكسار، مشدود بين الأمل والفقد.',
+      themesAr: ['الفقد والغياب', 'الهشاشة', 'الذكرى'],
     },
     {
-      quote: 'to graze my nose across the top of your head',
+      quote: 'playground voice',
       analysis:
-        'Intensely physical and intimate. The verb "graze" is tactile - it suggests the lightest possible touch, a gesture of tenderness. This sensory memory (smell, touch) conveys a mother\'s love more powerfully than any abstract statement could. The specificity of "the top of your head" makes the absence achingly concrete.',
-      themes: ['Family', 'Memory', 'Grief'],
-    },
-    {
-      quote: 'your playground voice catching on the wind',
-      analysis:
-        'The final image of the poem. "Playground voice" collapses the son back into childhood - he is not a soldier but a playing child. "Catching on the wind" suggests something barely audible, fleeting, almost lost. The mother strains to hear a voice that may no longer exist, an image of hope and despair in equal measure.',
+        'The final image of the poem. The phrase collapses the son back into childhood - he is not a soldier but a playing child. She hopes to hear it carried on the wind (line 35), something barely audible, fleeting, almost lost. The mother strains to hear a voice that may no longer exist, an image of hope and despair in equal measure.',
       themes: ['Loss and absence', 'Memory', 'Childhood vs adulthood'],
     },
   ],
@@ -272,59 +266,61 @@ TENSE SHIFTS (تبدّل الأزمنة): القصيدة تتنقّل بين ا�
   languageDevices: [
     {
       device: 'Tactile / sensory imagery',
-      example: 'crimped petals, trembling, slowly melting on my tongue',
+      example: 'crimped petals',
       effect:
-        'Weir saturates the poem with physical sensation - touch, taste, texture. Grief in this poem is not abstract but felt in the body. The "crimped petals" are both the poppy and the mother\'s crumpled emotions; "melting on my tongue" suggests words dissolving before they can be spoken.',
+        "Weir saturates the poem with physical sensation - touch and texture above all. Grief in this poem is not abstract but felt in the body. The crinkled paper petals are both the poppy and the mother's crumpled emotions; later her words are pressed flat like felt until they dissolve (lines 16 to 18).",
       lineRef: 3,
     },
     {
       device: 'Metaphor - textile imagery',
       example: 'tucks, darts, pleats',
       effect:
-        "The sewing terminology reflects Weir's background as a textile designer and becomes a metaphor for the mother's attempt to hold herself together. \"Tucks, darts, pleats\" are techniques for shaping fabric - the mother is trying to shape and contain her unravelling grief, but the list's accumulation suggests the effort is overwhelming.",
+        "The sewing terminology reflects Weir's background as a textile designer and becomes a metaphor for the mother's attempt to hold herself together: as she walks, her stomach folds itself into them (lines 27 to 28). They are techniques for shaping fabric - the mother is trying to shape and contain her unravelling grief, but the list's accumulation suggests the effort is overwhelming.",
       lineRef: 29,
     },
     {
       device: 'Symbolism - poppies',
-      example: 'poppies had already been placed on individual white crosses',
+      example: '[Stanza 1: the poppies laid on soldiers’ graves before Remembrance has even come]',
       effect:
-        'The poppy operates on multiple symbolic levels: it represents remembrance of the war dead, the blood of sacrifice, the fragility of life (petals fall easily), and the mother\'s own bleeding grief. The "white crosses" reinforce the association with death and graves.',
+        "The poppy operates on multiple symbolic levels: it represents remembrance of the war dead, the blood of sacrifice, the fragility of life (petals fall easily), and the mother's own bleeding grief. Laying them on each soldier’s grave before Remembrance has even arrived reinforces the association with death and anticipates her loss.",
       lineRef: 1,
     },
     {
       device: 'Domestic language',
-      example: 'blockade of yellow bias binding around your blazer',
+      example: 'pinned',
       effect:
-        '"Bias binding" is a sewing term, and "blazer" belongs to school uniform. This domestic vocabulary pulls the poem away from the battlefield and into the home, reinforcing that this is a mother\'s perspective. The word "blockade" - a military term - intrudes into the domestic scene, showing how war infiltrates everyday life.',
-      lineRef: 4,
-    },
-    {
-      device: 'Enjambment',
-      example: 'I pinned one / onto your lapel',
-      effect:
-        'The line break between "one" and "onto" forces the reader to pause, then continue - mimicking the mother\'s hesitation and emotional catch. Enjambment throughout the poem creates a breathless, flowing quality that mirrors the uncontrollable stream of memory and grief.',
+        "She pins the poppy onto his lapel (line 4), and later smooths his shirt collar and picks cat hairs off him: this domestic vocabulary pulls the poem away from the battlefield and into the home, reinforcing that this is a mother's perspective. The verb suggests both attachment and the sharp pain of a pin - love and hurt are inseparable - while the military word in the next line shows how war infiltrates everyday life.",
       lineRef: 3,
     },
     {
-      device: 'Sensory detail - smell and taste',
-      example: 'to breathe you in, to taste the graze of your skin',
+      device: 'Enjambment',
+      example:
+        '[Stanzas 2 to 3: the sentence about her flattened words runs on across the stanza break]',
       effect:
-        'The mother\'s longing is expressed through the most intimate senses - smell and taste. "Breathe you in" and "taste" suggest she wants to absorb her son completely, to possess him again through the body. These are primal, almost animal instincts of maternal connection.',
-      lineRef: 33,
+        "The sentence refuses to stop where the stanza does, so the reader is carried over the gap - mimicking the mother's emotional overflow. Enjambment throughout the poem, as at lines 5 to 6 and 10 to 11, creates a breathless, flowing quality that mirrors the uncontrollable stream of memory and grief.",
+      lineRef: 17,
     },
     {
-      device: 'Transferred epithet',
-      example: 'war-torn nerves',
+      device: 'Sensory detail - touch',
+      example: 'graze',
       effect:
-        'The compound "war-torn" transfers the violence of war directly into the mother\'s body. Her nerves are not just anxious - they are specifically damaged by war. The hyphenated compound fuses the public (war) and the private (nerves) into a single term.',
-      lineRef: 25,
+        "The mother wants to graze her nose against the end of her son's, as in the nose-rubbing game they played when he was small (lines 11 to 14), and holds back, as she stops herself from ruffling his stiff, gelled hair (lines 14 to 16). The lightest possible touch, held back, conveys a mother's love more powerfully than any abstract statement could.",
+      lineRef: 11,
     },
     {
-      device: 'Fragmentation',
-      example: 'I think I-',
+      device: 'Metaphor - the dove',
+      example:
+        '[Stanza 4: the dove tugging its way across the sky, pictured as a decorative stitch]',
       effect:
-        "The dash and incomplete sentence near the poem's end enact the mother's emotional breakdown. She literally cannot finish her thought. This fragmentation contrasts with the poem's earlier long, flowing sentences, showing how grief eventually overwhelms even the attempt to articulate it.",
-      lineRef: 37,
+        "The dove, a symbol of peace and of the spirit, is free where the mother is not. Picturing it as a stitch against the sky returns to the textile imagery: even her hope is sewn into the fabric of her grief, and the image may suggest the son's soul, or the fragile thread that still connects them.",
+      lineRef: 35,
+    },
+    {
+      device: 'Caesura',
+      example: '[Stanzas 2 and 3: full stops fall mid-line, as when he is gone in an instant]',
+      effect:
+        "Sentences that end part-way through a line (lines 11, 14, 16, 18 and 21) break the flow of the long, run-on sentences around them. The abrupt stops enact the suddenness of the son's departure and the mother's effort to hold herself together.",
+      lineRef: 22,
     },
   ],
 }
@@ -376,29 +372,30 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Weir uses a sustained semantic field of textiles and sewing: "crimped petals", "bias binding", "tucks, darts, pleats". This domestic language reflects the mother\'s world and how she processes grief through familiar, tangible activities.',
+      "Weir uses a sustained semantic field of textiles and sewing: the trim on his blazer (line 6), words pressed into felt (line 17), the folds her stomach makes (line 28) and the dove as a stitch (line 34). This domestic language reflects the mother's world and how she processes grief through familiar, tangible activities.",
     topic: 'Language',
     difficulty: 'foundation',
   },
   {
     id: 'pop-4',
-    question: 'What does "spasms of paper red" suggest about the mother\'s emotional state?',
+    question:
+      "What does the description of the poppy in line 5 suggest about the mother's emotional state?",
     type: 'multiple-choice',
     options: [
       'She is calm and composed',
-      'The word "spasms" suggests involuntary, convulsive grief - her emotions are beyond her control',
+      'Its suggestion of involuntary, convulsive movement shows grief beyond her control',
       'She is angry at her son',
       'She is decorating the house',
     ],
     correctIndex: 1,
     explanation:
-      '"Spasms" suggests involuntary, painful physical reactions - the mother\'s grief manifests in bodily convulsions. The repetition of "paper red" mimics the stuttering of someone in distress.',
+      "The paper petals are described as if they were convulsing: involuntary, painful physical reactions, so the mother's grief shows itself in the body. Placing the colour after the noun, rather than before it, makes the red stand out, as blood would (see Key Quotes).",
     topic: 'Language',
     difficulty: 'higher',
   },
   {
     id: 'pop-5',
-    question: 'What does the metaphor of the "songbird from its cage" represent?',
+    question: 'What does the bird the mother sets free in stanza 3 represent?',
     type: 'multiple-choice',
     options: [
       "The mother's pet bird escaping",
@@ -419,13 +416,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'She describes school uniform and military uniform separately',
-      'Through domestic imagery like "pinned" a poppy and "blazer" - the same maternal gestures apply to both',
+      'Through domestic details such as fixing a poppy to his school blazer - the same maternal gestures apply to both',
       'She explicitly compares school and war',
       'She does not blur this line at all',
     ],
     correctIndex: 1,
     explanation:
-      'The intimate maternal act of pinning something onto a "blazer" and smoothing a "lapel" could apply to a school uniform or military dress. This ambiguity powerfully blurs the boundary between childhood and warfare.',
+      "The intimate maternal acts of fixing a poppy to his lapel, picking hairs off him and smoothing down his shirt collar (stanzas 1 and 2) could belong to a school morning or a soldier's departure. This ambiguity powerfully blurs the boundary between childhood and warfare.",
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -464,17 +461,17 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: 'pop-9',
     question:
-      'What is the effect of the sensory detail "longing to graze my nose across the top of your head"?',
+      "What is the effect of the mother's wish, in lines 11 to 14, to rub noses with her son as she did when he was little?",
     type: 'multiple-choice',
     options: [
       'It shows the mother is angry',
       'It creates an intensely physical, intimate memory - the mother craves the specific sensory experience of closeness',
-      'It describes a childhood game',
+      'It shows her son is injured',
       'It is a metaphor for time passing',
     ],
     correctIndex: 1,
     explanation:
-      'This deeply intimate sensory detail conveys the visceral, physical nature of maternal love and loss. The mother does not miss her son abstractly - she misses the specific smell and feel of his presence.',
+      'This deeply intimate sensory detail conveys the visceral, physical nature of maternal love and loss. The mother does not miss her son abstractly - she longs for the specific touch of his presence, and holds back because he is no longer a small child.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -514,10 +511,10 @@ const REVISION_TOPICS = [
     summary:
       'Weir uses a sustained semantic field of textiles and domestic imagery to process grief through familiar, tangible objects.',
     keyPoints: [
-      'Textile imagery: "crimped petals", "bias binding", "tucks, darts, pleats"',
-      '"Spasms of paper red" - involuntary, convulsive grief',
-      '"Songbird from its cage" - metaphor for letting a child go',
-      'Sensory detail: "longing to graze my nose across the top of your head"',
+      'Textile imagery: the blazer trim (line 6), felt (line 17), the sewing folds of line 28',
+      'The convulsing paper poppy (line 5) - involuntary, convulsive grief',
+      'The caged bird set free (line 24) - metaphor for letting a child go',
+      'Sensory detail: the nose-rubbing she longs for and resists (lines 11 to 14)',
     ],
   },
   {
@@ -527,7 +524,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       'Free verse - no regular rhyme or metre, reflecting the unstructured nature of grief',
       'Enjambment across stanza breaks - emotions overflow all boundaries',
-      'First person direct address ("you") - creates intimacy between mother and absent son',
+      'First person, addressing the absent son directly - creates intimacy between mother and son',
       'Non-linear time - the poem moves between past and present as memory intrudes',
     ],
   },
