@@ -19,8 +19,6 @@ export const PLACEHOLDER_TEXT_SLUGS: ReadonlySet<string> = new Set([
   'the-danger-of-a-single-story',
   'the-door',
   'the-explorers-daughter',
-  'the-man-who-loved-flowers',
-  'the-pedestrian',
   'the-yellow-wallpaper',
   'when-greek-meets-greek',
   'young-and-dyslexic',

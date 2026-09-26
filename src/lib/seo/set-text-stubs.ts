@@ -41,7 +41,6 @@
 
 export const STUB_SET_TEXT_SLUGS: ReadonlySet<string> = new Set([
   'antony-and-cleopatra',
-  'the-waste-land',
   'the-handmaids-tale',
   'a-dolls-house',
   'disabled',
@@ -50,7 +49,6 @@ export const STUB_SET_TEXT_SLUGS: ReadonlySet<string> = new Set([
   'the-bright-lights-of-sarajevo',
   'still-i-rise',
   'do-not-go-gentle-into-that-good-night',
-  'refugee-blues',
   'war-photographer',
   'if',
   'piano',
@@ -76,36 +74,8 @@ export const STUB_SET_TEXT_SLUGS: ReadonlySet<string> = new Set([
   // prescribes and our data did not hold, including both 2024 additions.
   // None has a guide anywhere yet, so unlike the anthology seven these land on
   // the catch-all and stay there until someone writes them.
-  'the-whale-rider',
-  'the-joy-luck-club',
-  'klara-and-the-sun',
-  'western-lane',
-  'kindertransport',
-  'death-and-the-kings-horseman',
-  'the-scarlet-letter',
   // ── Added 19 September 2026: UK GCSE texts the "100%" figure hid ──────────
-  'dna',
-  'a-taste-of-honey',
-  'telling-tales',
-  'princess-and-the-hustler',
-  'leave-taking',
-  'my-name-is-leon',
-  'hobsons-choice',
-  'journeys-end',
-  'the-woman-in-black',
-  'the-empress',
-  'refugee-boy',
-  'coram-boy',
-  'boys-dont-cry',
-  'oranges-are-not-the-only-fruit',
-  'the-history-boys',
   // ── Added 19 September 2026: Cambridge 0475, a board that read as empty ───
-  'blues-for-an-alabama-sky',
-  'a-midsummer-nights-dream',
-  'what-it-means-when-a-man-falls-from-the-sky',
-  'fire-on-the-mountain',
-  'hullaballoo-in-the-guava-orchard',
-  'im-the-king-of-the-castle',
 ])
 
 /**

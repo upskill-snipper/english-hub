@@ -135,8 +135,21 @@ describe('the search box', () => {
   })
 
   it('labels a text whose guide is not written', () => {
-    const none = INDEX.find((e) => e.status === 'none')!
-    const { type } = setup()
+    // Synthetic: since 26 September 2026 no real set text is unwritten.
+    const none = {
+      ...INDEX.find((e) => e.kind === 'text')!,
+      title: 'Zzyzx Unwritten',
+      href: '/revision/texts/zzyzx',
+      status: 'none' as const,
+      terms: 'zzyzx unwritten',
+    }
+    cleanup()
+    render(<TextSearch index={[...INDEX, none]} copy={COPY} />)
+    const input = screen.getByRole('combobox')
+    const type = (value: string) => {
+      fireEvent.focus(input)
+      fireEvent.change(input, { target: { value } })
+    }
     type(none.title)
     const option = screen.getAllByRole('option').find((o) => o.textContent?.includes(none.title))!
     expect(option.textContent).toContain('Not written yet')

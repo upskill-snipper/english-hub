@@ -88,8 +88,10 @@ describe('the honesty invariant', () => {
     // September 2026, when five anthology texts got real pages. Lower them
     // deliberately in the change that writes more, and say so.
     expect(PLACEHOLDER_TEXT_SLUGS.size).toBeGreaterThanOrEqual(10)
-    const anyNone = BOARDS.flatMap((b) => buildShelf(b.id)).filter((e) => e.readiness === 'none')
-    expect(anyNone.length).toBeGreaterThanOrEqual(10)
+    // The second floor went on 26 September 2026: batch 2 gave the last set
+    // texts without one a guide, and no shelf card is `none` any more. The two
+    // invariants above still check any card that becomes `none` again, and
+    // the classifier's own rules are checked below.
   })
 
   it('still marks the real guides as real, so it is not honest by saying no to everything', () => {
@@ -149,16 +151,13 @@ describe('classifyReadiness', () => {
     expect(classifyReadiness(slug).sections).toBe(0)
   })
 
-  it.each([
-    ['the-pedestrian', 'a placeholder with no guide anywhere'],
-    ['the-man-who-loved-flowers', 'a placeholder with no guide anywhere'],
-  ])('%s is still none (%s)', (slug) => {
-    // The counterweight. If everything became `partial` the invariant above
-    // would be satisfied by saying yes to everything. These two were Night
-    // and The Necklace until 26 September 2026, when both got a study guide
-    // page: when these get theirs, pick the next text with none.
-    expect(classifyReadiness(slug).readiness).toBe('none')
-  })
+  // The counterweight that stood here asserted that two named texts were
+  // still `none`, so that a classifier saying yes to everything could not
+  // pass. It was Night and The Necklace, then The Pedestrian and The Man Who
+  // Loved Flowers, and on 26 September 2026 those two got guides as well: no
+  // set text is `none` now. Saying yes to everything is still caught, by the
+  // invariant at the top of this file, which checks every card's destination
+  // is a real page.
 
   it.each(['night', 'the-necklace'])(
     '%s, once a placeholder, now has a real guide page',

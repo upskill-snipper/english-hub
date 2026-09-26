@@ -6,6 +6,7 @@ import { BOARDS } from '@/lib/board/board-config'
 import { unverifiedShelves } from '@/lib/board/shelf-provenance'
 import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
 import { guideElsewhere } from '@/lib/revision/guide-href'
+import { resolveGuide } from '@/lib/revision/shelf'
 import { NOT_POEMS, POEM_COLLECTIONS, POEM_PAGES, POEM_ROOTS } from '@/lib/search/poem-pages'
 import { buildTextSearchIndex } from '@/lib/search/text-search-index'
 import { normalise, searchTexts } from '@/lib/search/match-texts'
@@ -122,10 +123,18 @@ describe('the index', () => {
     }
   })
 
-  it('labels the texts whose guide is not written', () => {
-    const none = INDEX.filter((e) => e.status === 'none')
-    expect(none.length).toBeGreaterThan(0)
-    for (const e of none) expect(e.href).toMatch(/^\/revision\/texts\//)
+  it('labels every text by the readiness the shelf gives it', () => {
+    // "Full guide" and "Not written yet" must say what the shelf says. Since
+    // 26 September 2026 no set text is unwritten, so this checks the label on
+    // all of them rather than on the unwritten ones alone.
+    const texts = INDEX.filter((e) => e.kind === 'text')
+    expect(texts.length).toBeGreaterThan(90)
+    for (const e of texts) {
+      const slug = SET_TEXTS.find((t) => resolveGuide(t.slug).href === e.href)!.slug
+      const r = resolveGuide(slug).readiness
+      expect(e.status, e.title).toBe(r === 'full' ? 'full' : r === 'none' ? 'none' : undefined)
+    }
+    expect(texts.some((e) => e.status === 'full')).toBe(true)
   })
 })
 

@@ -85,7 +85,7 @@ describe('the stub list', () => {
     // stubs by the same definition as the other twenty. Four of the anthology
     // seven already had a real guide under /igcse/edexcel/poetry that nothing
     // could reach; none of the 4ET1 seven has a guide anywhere yet.
-    expect(STUB_SET_TEXT_SLUGS.size).toBe(50)
+    expect(STUB_SET_TEXT_SLUGS.size).toBe(20)
     expect(SET_TEXTS.length).toBeGreaterThan(70)
   })
 })
