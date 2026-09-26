@@ -12,6 +12,16 @@ import StudyTools from '@/components/study/StudyTools'
 
 /* ── Poem data ────────────────────────────────────────────────────── */
 
+// The text follows the Pearson Edexcel International GCSE English Anthology
+// (Issue 8, February 2026), Part 3, page 59, word for word and mark for mark.
+// Until 26 September 2026 it followed another edition: a full stop and
+// capital in line 2, a colon ending line 4, an exclamation mark after "O no"
+// and no accent on "fixed" in line 5, and an elided "wandering" in line 7.
+// The anthology has a semicolon, a full stop, "O no," and "ever-fixèd" (the
+// accent sounds the -ed, so the line has a regular ten syllables), and
+// "wandering" in full. Notes that treated line 5 as the poem's only
+// exclamation, or as a break in the metre, were built on the wrong text and
+// have gone. Time carries a sickle in line 10, not a scythe.
 const poem: PoemData = {
   title: 'Sonnet 116',
   poet: 'William Shakespeare',
@@ -32,16 +42,19 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Admit impediments. Love is not love',
+      text: 'Admit impediments; love is not love',
       annotations: [
         {
           type: 'Allusion',
-          note: '"Admit impediments" echoes the Book of Common Prayer marriage service - "if any of you know cause or just impediment". Shakespeare turns the priest\'s question into a personal vow.',
+          // "If any of you know cause, or just impediment" is the 1662 banns
+          // wording, later than the 1609 sonnet; the 1559 service, in use in
+          // Shakespeare's time, speaks of "any impediment". Corrected 26 September 2026.
+          note: '"Admit impediments" echoes the Book of Common Prayer marriage service, which speaks of "any impediment" to a marriage. Shakespeare turns the priest\'s question into a personal vow.',
           color: '#a855f7',
         },
         {
           type: 'Definition by negation',
-          note: 'The speaker defines love by saying what it is NOT. "Love is not love" is a paradox - it sets up the definition that follows. Real love cannot change.',
+          note: 'The speaker defines love by saying what it is NOT. The phrase "love is not love" is a paradox - it sets up the definition that follows. Real love cannot change.',
           color: '#10b981',
         },
       ],
@@ -62,7 +75,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Or bends with the remover to remove:',
+      text: 'Or bends with the remover to remove.',
       annotations: [
         {
           type: 'Polyptoton',
@@ -77,16 +90,16 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'O no! it is an ever-fixed mark',
+      text: 'O no, it is an ever-fixèd mark',
       annotations: [
         {
           type: 'Key quote',
-          note: '"O no!" is a sudden emotional outburst - the only exclamation in the poem. Shakespeare abandons his lawyer\'s tone to insist on love\'s permanence.',
+          note: '"O no" is a sudden, emphatic denial. Shakespeare abandons his lawyer\'s tone to insist on love\'s permanence.',
           color: '#f59e0b',
         },
         {
           type: 'Metaphor',
-          note: '"Ever-fixed mark" is a navigational image - a seamark or lighthouse that never moves, regardless of what storms or tides do around it. Love is the fixed point that lets you navigate.',
+          note: '"Ever-fixèd mark" is a navigational image - a seamark or lighthouse that never moves, regardless of what storms or tides do around it. Love is the fixed point that lets you navigate.',
           color: '#10b981',
         },
       ],
@@ -107,11 +120,11 @@ const poem: PoemData = {
       ],
     },
     {
-      text: "It is the star to every wand'ring bark,",
+      text: 'It is the star to every wandering bark,',
       annotations: [
         {
           type: 'Metaphor',
-          note: '"Star" - the North Star or Polaris, used by sailors to navigate. "Wand\'ring bark" is a small, lost ship. Love becomes the guiding star that orients lost travellers. This is one of the most famous metaphors in Shakespeare.',
+          note: '"Star" - the North Star or Polaris, used by sailors to navigate. "Wandering bark" is a small, lost ship. Love becomes the guiding star that orients lost travellers. This is one of the most famous metaphors in Shakespeare.',
           color: '#10b981',
         },
         {
@@ -141,7 +154,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Personification',
-          note: '"Time" is personified as a jester or master - and love refuses to be his "fool" (his servant / plaything). The capitalised "Time" becomes a mythological figure, almost Father Time with his scythe.',
+          note: '"Time" is personified as a jester or master - and love refuses to be his "fool" (his servant / plaything). The capitalised "Time" becomes a mythological figure, almost Father Time, carrying the sickle of the next line.',
           color: '#10b981',
         },
         {
@@ -242,14 +255,14 @@ const poem: PoemData = {
     <p>The Elizabethans inherited two main traditions of love poetry: <strong>courtly love</strong> (the distant, idealised lady of medieval romance) and <strong>Petrarchan love</strong> (the tortured lover writing sonnets to an unattainable beauty). Shakespeare often plays with - and against - these conventions. Sonnet 116 takes the Petrarchan ideal of eternal devotion and strips it of flattery, turning it into a stark philosophical claim.</p>
 
     <h3>Navigation and the North Star</h3>
-    <p>The "ever-fixed mark" and "the star to every wand\'ring bark" are references to navigation. In the Elizabethan age of exploration (Drake had circumnavigated the globe in 1577-80, the East India Company was founded in 1600), sailors guided their ships by the <strong>Pole Star</strong> - a fixed point that never moved across the sky. Shakespeare\'s metaphor takes cutting-edge technology and turns it into a spiritual image.</p>
+    <p>The "ever-fixèd mark" and "the star to every wandering bark" are references to navigation. In the Elizabethan age of exploration (Drake had circumnavigated the globe in 1577-80, the East India Company was founded in 1600), sailors guided their ships by the <strong>Pole Star</strong> - a fixed point that never moved across the sky. Shakespeare\'s metaphor takes cutting-edge technology and turns it into a spiritual image.</p>
   `,
 
   summary: `Lines 1-4: The speaker argues that he will not permit any "impediments" (obstacles) to the "marriage of true minds". Real love is not love if it changes when it encounters change, or if it bends away when something tries to pull it away. Real love is defined by its constancy.
 
-Lines 5-8: Shakespeare then offers metaphors for what love IS. It is an "ever-fixed mark" (a sea-mark or lighthouse) that stands firm even when storms rage around it. It is "the star to every wand\'ring bark" - the Pole Star that guides lost ships. Sailors can measure its height but cannot understand its true worth.
+Lines 5-8: Shakespeare then offers metaphors for what love IS. It is an "ever-fixèd mark" (a sea-mark or lighthouse) that stands firm even when storms rage around it. It is "the star to every wandering bark" - the Pole Star that guides lost ships. Sailors can measure its height but cannot understand its true worth.
 
-Lines 9-12: Love is also not subject to Time. "Rosy lips and cheeks" will fade under Time\'s scythe, but love is outside Time\'s reach. Love does not change with the passing of hours and weeks - it endures until "the edge of doom" (the Last Judgement).
+Lines 9-12: Love is also not subject to Time. "Rosy lips and cheeks" will fade under Time\'s sickle, but love is outside Time\'s reach. Love does not change with the passing of hours and weeks - it endures until "the edge of doom" (the Last Judgement).
 
 Lines 13-14: In the final couplet, the speaker stakes his credibility on his definition. If his argument can be proved wrong, then he never wrote anything and no man ever truly loved. It is a grand rhetorical gamble - the speaker insists so strongly on the truth of his definition that he is willing to erase himself if he is wrong.
 
@@ -264,14 +277,14 @@ Metre: Iambic pentameter - ten syllables per line in five iambs (unstressed-stre
 Three-part argument: Each quatrain advances the claim.
 • Quatrain 1: Negative definition (love is not love which alters).
 • Quatrain 2: Positive definition via metaphor (love is a fixed mark, a guiding star).
-• Quatrain 3: Love vs. Time (love is not subject to time\'s scythe).
+• Quatrain 3: Love vs. Time (love is not subject to Time\'s sickle).
 • Couplet: The speaker stakes his own credibility on the truth of the argument.
 
-Rhetorical devices: Shakespeare uses polyptoton (alter / alteration / remover / remove) and paradox ("Love is not love") to make his logic feel airtight. The poem reads almost like a legal brief defending a client.
+Rhetorical devices: Shakespeare uses polyptoton (alter / alteration / remover / remove) and paradox ("love is not love") to make his logic feel airtight. The poem reads almost like a legal brief defending a client.
 
-Volta: Two possible turns. The first is at line 5 ("O no!") - the speaker breaks from his legalistic definition into emotional insistence. The second is at line 13 - the traditional Shakespearean volta where the couplet challenges the reader directly.
+Volta: Two possible turns. The first is at line 5 ("O no") - the speaker breaks from his legalistic definition into emotional insistence. The second is at line 13 - the traditional Shakespearean volta where the couplet challenges the reader directly.
 
-Tone: The poem moves from cool definition (lines 1-4) to passionate insistence ("O no!") to navigational metaphor to defiant gamble. It is arguing as much as describing - trying to prove, not just illustrate.
+Tone: The poem moves from cool definition (lines 1-4) to passionate insistence ("O no") to navigational metaphor to defiant gamble. It is arguing as much as describing - trying to prove, not just illustrate.
 
 Enjambment: Shakespeare uses enjambment sparingly, letting most lines end on natural pauses. This gives the poem the feel of deliberate, considered argument rather than rushed emotion.`,
 
@@ -279,14 +292,14 @@ Enjambment: Shakespeare uses enjambment sparingly, letting most lines end on nat
     {
       quote: 'Let me not to the marriage of true minds / Admit impediments',
       analysis:
-        'The opening is famously ceremonial, echoing the Book of Common Prayer\'s marriage service ("if any of you know cause or just impediment"). The speaker turns the priest\'s question into a private vow: I will not permit anything to obstruct true love. "Marriage of true minds" defines love as spiritual and intellectual, not merely physical. The formal tone signals that a serious argument is about to begin.',
+        'The opening is famously ceremonial, echoing the Book of Common Prayer\'s marriage service, which speaks of "any impediment" to a marriage. The speaker turns the priest\'s question into a private vow: I will not permit anything to obstruct true love. "Marriage of true minds" defines love as spiritual and intellectual, not merely physical. The formal tone signals that a serious argument is about to begin.',
       themes: ['Constancy', 'Marriage', 'True love'],
       analysisAr:
-        'مفتتحٌ احتفاليّ ذائع الصيت، يرنُّ فيه صدى قدّاس الزواج في Book of Common Prayer ("if any of you know cause or just impediment"). يُحوّل المتكلّمُ سؤالَ الكاهن إلى عهدٍ خاصّ: لن أسمح لشيءٍ بأن يعترض الحبّ الصادق. وتعريفُ الحبّ بأنّه "marriage of true minds" يجعله اقتراناً روحيّاً عقليّاً لا جسديّاً فحسب. والنبرة الرسميّة تُنبئ بأنّ حُجّةً جادّةً على وشك الانطلاق.',
+        'مفتتحٌ احتفاليّ ذائع الصيت، يرنُّ فيه صدى قدّاس الزواج في Book of Common Prayer ("any impediment"). يُحوّل المتكلّمُ سؤالَ الكاهن إلى عهدٍ خاصّ: لن أسمح لشيءٍ بأن يعترض الحبّ الصادق. وتعريفُ الحبّ بأنّه "marriage of true minds" يجعله اقتراناً روحيّاً عقليّاً لا جسديّاً فحسب. والنبرة الرسميّة تُنبئ بأنّ حُجّةً جادّةً على وشك الانطلاق.',
       themesAr: ['الثبات', 'الزواج', 'الحبّ الصادق'],
     },
     {
-      quote: 'Love is not love / Which alters when it alteration finds',
+      quote: 'love is not love / Which alters when it alteration finds',
       analysis:
         'The paradox - "love is not love" - is the poem\'s definitional claim. Real love cannot change in response to change. The polyptoton ("alters / alteration") ties the two parts of the line together grammatically: if something can alter, it is not love. Shakespeare is narrowing the definition of love to exclude anything that shifts with circumstance.',
       themes: ['Constancy', 'Definition of love', 'Change'],
@@ -295,21 +308,21 @@ Enjambment: Shakespeare uses enjambment sparingly, letting most lines end on nat
       themesAr: ['الثبات', 'تعريف الحبّ', 'التبدّل'],
     },
     {
-      quote: 'O no! it is an ever-fixed mark / That looks on tempests and is never shaken',
+      quote: 'O no, it is an ever-fixèd mark / That looks on tempests and is never shaken',
       analysis:
-        'The sudden exclamation "O no!" breaks the poem\'s cool tone and reveals the speaker\'s emotional investment. The "ever-fixed mark" is a nautical metaphor - a seamark or lighthouse that stands firm while storms rage. "Looks on tempests" personifies the fixed mark as calm, unmoved, almost aloof. The repetition of "ever" and "never" makes the constancy feel absolute.',
+        'The sudden, emphatic denial "O no" breaks the poem\'s cool tone and reveals the speaker\'s emotional investment. The "ever-fixèd mark" is a nautical metaphor - a seamark or lighthouse that stands firm while storms rage. "Looks on tempests" personifies the fixed mark as calm, unmoved, almost aloof. The repetition of "ever" and "never" makes the constancy feel absolute.',
       themes: ['Endurance', 'Storms of life', 'Steadfastness'],
       analysisAr:
-        'صيحةُ "O no!" المفاجئة تكسر برودَ القصيدة وتكشف عن انخراطِ المتكلّم العاطفيّ. أمّا "ever-fixed mark" فاستعارةٌ بحريّة - علامةٌ ملاحيّة أو منارة تظلّ راسخة في وجه العواصف. وعبارة "looks on tempests" تُشخّص هذه العلامة الراسخة بأنّها هادئةٌ غير مهتزّة، شبهُ متعالية. ويُكسب تكرارُ "ever" و"never" الثباتَ معنى المطلق.',
+        'النفيُ المؤكَّد المفاجئ "O no" يكسر برودَ القصيدة ويكشف عن انخراطِ المتكلّم العاطفيّ. أمّا "ever-fixèd mark" فاستعارةٌ بحريّة - علامةٌ ملاحيّة أو منارة تظلّ راسخة في وجه العواصف. وعبارة "looks on tempests" تُشخّص هذه العلامة الراسخة بأنّها هادئةٌ غير مهتزّة، شبهُ متعالية. ويُكسب تكرارُ "ever" و"never" الثباتَ معنى المطلق.',
       themesAr: ['الصمود', 'عواصف الحياة', 'الرسوخ'],
     },
     {
-      quote: "It is the star to every wand'ring bark",
+      quote: 'It is the star to every wandering bark',
       analysis:
-        'One of Shakespeare\'s most famous metaphors. Love becomes the North Star that guides every lost ship ("wand\'ring bark"). This is navigation imagery, turning love into a fixed external reference point that you steer by when everything else is moving. The implication is that love is not just felt internally - it is a guiding force outside the self.',
+        'One of Shakespeare\'s most famous metaphors. Love becomes the North Star that guides every lost ship ("wandering bark"). This is navigation imagery, turning love into a fixed external reference point that you steer by when everything else is moving. The implication is that love is not just felt internally - it is a guiding force outside the self.',
       themes: ['Guidance', 'Love as compass', 'Navigation'],
       analysisAr:
-        'من أشهر استعارات Shakespeare. يصير الحبّ نجمَ الشمال الذي يهدي كلّ سفينةٍ تائهة ("wand\'ring bark"). هذه صورةٌ ملاحيّة، تُحوّل الحبّ إلى مرجعٍ خارجيّ ثابت تستدلّ به حين يتحرّك كلّ ما عداه. ومدلولُها أنّ الحبّ ليس إحساساً داخليّاً فقط، بل قوّةٌ هاديةٌ خارج الذات.',
+        'من أشهر استعارات Shakespeare. يصير الحبّ نجمَ الشمال الذي يهدي كلّ سفينةٍ تائهة ("wandering bark"). هذه صورةٌ ملاحيّة، تُحوّل الحبّ إلى مرجعٍ خارجيّ ثابت تستدلّ به حين يتحرّك كلّ ما عداه. ومدلولُها أنّ الحبّ ليس إحساساً داخليّاً فقط، بل قوّةٌ هاديةٌ خارج الذات.',
       themesAr: ['الهداية', 'الحبّ بوصلةً', 'الملاحة'],
     },
     {
@@ -363,7 +376,7 @@ Enjambment: Shakespeare uses enjambment sparingly, letting most lines end on nat
     },
     {
       device: 'Metaphor (navigation)',
-      example: "ever-fixed mark… star to every wand'ring bark",
+      example: 'ever-fixèd mark… star to every wandering bark',
       effect:
         'Shakespeare draws on the cutting-edge technology of his age - sea navigation by fixed stars - to give love a concrete image. Love becomes an external, observable reference point, not just a private feeling. This metaphor grounds an abstract argument in physical reality.',
       lineRef: 4,
@@ -381,7 +394,7 @@ Enjambment: Shakespeare uses enjambment sparingly, letting most lines end on nat
     },
     {
       device: 'Paradox',
-      example: 'Love is not love / Which alters when it alteration finds',
+      example: 'love is not love / Which alters when it alteration finds',
       effect:
         'The self-contradicting statement forces the reader to stop and think. How can love not be love? The paradox is really a definition: anything we call "love" but which changes is not the real thing. The paradox does definitional work while sounding philosophical.',
       lineRef: 1,
@@ -392,10 +405,10 @@ Enjambment: Shakespeare uses enjambment sparingly, letting most lines end on nat
       device: 'Iambic pentameter',
       example: 'Let ME / not TO / the MAR / riage OF / true MINDS',
       effect:
-        'The regular ten-beat metre gives the poem a calm, formal, almost legal quality. The steadiness of the rhythm matches the steadiness of the love being described. Where Shakespeare breaks the metre ("O no!"), the disruption is emotionally charged.',
+        'The regular ten-beat metre gives the poem a calm, formal, almost legal quality. The steadiness of the rhythm matches the steadiness of the love being described. Even the emphatic "O no" of line 5 keeps to ten syllables: the accent on "fixèd" means its "-ed" is sounded.',
       lineRef: 0,
       effectAr:
-        'يُكسب الـ iambic pentameter المنتظم القصيدةَ هدوءاً ورزانةً وطابعاً شبهَ قانونيّ. ثبات الإيقاع يحاكي ثبات الحبّ الموصوف. وحين يكسر Shakespeare الوزنَ ("O no!") يكون كسرُه مشحوناً بالعاطفة.',
+        'يُكسب الـ iambic pentameter المنتظم القصيدةَ هدوءاً ورزانةً وطابعاً شبهَ قانونيّ. ثبات الإيقاع يحاكي ثبات الحبّ الموصوف. وحتّى النفيُ المؤكَّد "O no" في السطر الخامس يحافظ على المقاطع العشرة: فالعلامة فوق "fixèd" تعني أنّ "-ed" تُنطق مقطعاً مستقلّاً.',
     },
     {
       device: 'Hyperbole',
@@ -422,12 +435,12 @@ Enjambment: Shakespeare uses enjambment sparingly, letting most lines end on nat
     <p>ورث الإليزابيثيّون تقليدين رئيسين في شعر الحبّ: <strong>الحبّ البلاطيّ</strong> (السيّدة المتعالية المثاليّة في الرومانس القرسطيّ)، و<strong>الحبّ البتراركيّ</strong> (المحبّ المعذَّب الذي يكتب السونيتات إلى جمالٍ منيع). ويتلاعب Shakespeare كثيراً بهذين العُرفين، تأييداً ومخالفة. وتأخذ Sonnet 116 المثالَ البتراركيّ في الإخلاص الأبديّ، فتنزع عنه التودّد، وتحيله ادّعاءً فلسفيّاً صارماً.</p>
 
     <h3>الملاحة ونجم الشمال</h3>
-    <p>إشارات "ever-fixed mark" و"the star to every wand\'ring bark" تعود إلى الملاحة. في عصر الاستكشاف الإليزابيثيّ (طاف Drake حول العالم بين 1577 و1580، وتأسّست East India Company سنة 1600)، كان البحّارة يهتدون بسفنهم على <strong>نجم القطب</strong> - نقطةٍ راسخة لا تتحرّك في السماء. تأخذ استعارةُ Shakespeare التقنيةَ المتقدّمة في عصره فتحوّلها صورةً روحيّة.</p>
+    <p>إشارات "ever-fixèd mark" و"the star to every wandering bark" تعود إلى الملاحة. في عصر الاستكشاف الإليزابيثيّ (طاف Drake حول العالم بين 1577 و1580، وتأسّست East India Company سنة 1600)، كان البحّارة يهتدون بسفنهم على <strong>نجم القطب</strong> - نقطةٍ راسخة لا تتحرّك في السماء. تأخذ استعارةُ Shakespeare التقنيةَ المتقدّمة في عصره فتحوّلها صورةً روحيّة.</p>
   `,
 
   summaryAr: `السطور 1-4: يُحاجج المتكلّم بأنّه لن يُجيز أيّ "impediments" (عوائق) أمام "marriage of true minds". الحبّ الحقيقيّ ليس حبّاً إن تبدّل حين يصادف التبدّل، أو انحنى حين يحاول مَن يَنزعه أن ينزعه. الحبّ الحقيقيّ تعريفُه الثباتُ.
 
-السطور 5-8: ثمّ يقدّم Shakespeare استعاراتٍ لما يكونه الحبّ. هو "ever-fixed mark" (علامةٌ بحريّة أو منارة) تثبت أمام عصف العواصف. هو "the star to every wand\'ring bark" - نجمُ القطب الذي يهدي السفن التائهة. يقدر البحّارة على قياس ارتفاعه، لكنّهم لا يفقهون قدرَه الحقيقيّ.
+السطور 5-8: ثمّ يقدّم Shakespeare استعاراتٍ لما يكونه الحبّ. هو "ever-fixèd mark" (علامةٌ بحريّة أو منارة) تثبت أمام عصف العواصف. هو "the star to every wandering bark" - نجمُ القطب الذي يهدي السفن التائهة. يقدر البحّارة على قياس ارتفاعه، لكنّهم لا يفقهون قدرَه الحقيقيّ.
 
 السطور 9-12: ليس الحبّ كذلك خاضعاً للزمن. "Rosy lips and cheeks" ستذبل تحت منجل الزمن، لكنّ الحبّ خارج مرماه. لا يتبدّل الحبّ بمرور الساعات والأسابيع - بل يصمد إلى "the edge of doom" (يومِ الحساب الأخير).
 
@@ -447,11 +460,11 @@ Enjambment: Shakespeare uses enjambment sparingly, letting most lines end on nat
 • الرباعيّة الثالثة: الحبّ في مواجهة الزمن (الحبّ ليس خاضعاً لمنجل الزمن).
 • البيت الختاميّ: يُراهن المتكلّمُ بمصداقيّته على صحّة الحجّة.
 
-الأساليب البلاغيّة: يستعمل Shakespeare الـ polyptoton (alter / alteration / remover / remove) والمفارقة ("Love is not love") لإحكام منطقه. تكاد القصيدة تُقرأ مرافعةً قانونيّة.
+الأساليب البلاغيّة: يستعمل Shakespeare الـ polyptoton (alter / alteration / remover / remove) والمفارقة ("love is not love") لإحكام منطقه. تكاد القصيدة تُقرأ مرافعةً قانونيّة.
 
-الـ volta: ثمّة انعطافتان محتملتان. الأولى عند السطر الخامس ("O no!") - حيث يكسر المتكلّم تعريفَه القانونيّ النبرة بإصرارٍ عاطفيّ. والثانية عند السطر الثالث عشر - الـ volta الشيكسبيريّ التقليديّ حيث يتحدّى البيت الختاميّ القارئ مباشرةً.
+الـ volta: ثمّة انعطافتان محتملتان. الأولى عند السطر الخامس ("O no") - حيث يكسر المتكلّم تعريفَه القانونيّ النبرة بإصرارٍ عاطفيّ. والثانية عند السطر الثالث عشر - الـ volta الشيكسبيريّ التقليديّ حيث يتحدّى البيت الختاميّ القارئ مباشرةً.
 
-النبرة: تتحرّك القصيدة من تعريفٍ بارد (السطور 1-4) إلى إصرارٍ متّقد ("O no!") إلى استعارةٍ ملاحيّة، إلى مراهنةٍ متحدّية. تُحاجج بقدر ما تصف - تسعى إلى البرهنة لا إلى الإيضاح فحسب.
+النبرة: تتحرّك القصيدة من تعريفٍ بارد (السطور 1-4) إلى إصرارٍ متّقد ("O no") إلى استعارةٍ ملاحيّة، إلى مراهنةٍ متحدّية. تُحاجج بقدر ما تصف - تسعى إلى البرهنة لا إلى الإيضاح فحسب.
 
 الـ enjambment: يستعمل Shakespeare الـ enjambment باعتدال، إذ تنتهي معظم الأسطر عند وقفاتٍ طبيعيّة. وهذا يكسب القصيدةَ نبرةَ حُجّةٍ متأنّيةٍ لا انفعالٍ متسرّع.`,
 }
@@ -478,7 +491,8 @@ const comparisons = [
   {
     title: 'Poem at Thirty-Nine',
     poet: 'Alice Walker',
-    href: '/igcse/edexcel/poetry',
+    // Linked to the anthology index until 26 September 2026; this is the poem's own guide.
+    href: '/revision/texts/poem-at-thirty-nine',
     reason:
       'Both poems celebrate a kind of love that outlasts time. Walker\'s daughterly love for her dead father persists across years, just as Shakespeare\'s true love persists "to the edge of doom". Compare how each writer imagines love surviving death.',
     themes: ['Enduring love', 'Memory', 'Time'],

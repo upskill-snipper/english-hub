@@ -406,7 +406,13 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       "Detached, observational language reflects the photographer's professional distance. Sensory and visual imagery ('focus', 'frame') foregrounds the camera as an instrument of mediation. The poem questions whether photographs of suffering can produce empathy or only numb the viewer.",
     structure:
       "Measured stanzas with a controlled rhythm reflect the photographer's disciplined, technical work. The form contrasts with the chaos witnessed, creating an unsettling distance between subject and treatment.",
-    keyQuotes: ['"images develop"', '"a hundred agonies"', '"the photographer composes the world"'],
+    // These three quotations were removed on 26 September 2026. "A hundred
+    // agonies" is from Carol Ann Duffy's War Photographer, not this poem, and the
+    // other two could not be checked against Satyamurti's text, which is in
+    // copyright and not held here. A key quotation a student learns must be real.
+    keyQuotes: [
+      '[Not quoted here: the poem is in copyright. Choose your own key quotations from the anthology.]',
+    ],
     comparisonLinks:
       "Compare with 'Exposure' (suffering in war), 'What Were They Like?' (the impact of war on civilians), or 'Poppies' (personal response to war).",
     rightsNotice:
@@ -455,22 +461,27 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     title: 'Half-caste',
     poet: 'John Agard',
     summary:
-      "Agard challenges the term 'half-caste' (used to describe mixed-race people) by showing its absurdity. If being mixed makes you 'half,' then Picasso, Tchaikovsky, and the English weather are all 'half-caste' too. A powerful poem about racism, identity, and language.",
+      "Agard challenges the term 'half-caste' (used to describe mixed-race people) by showing its absurdity. If being mixed makes you 'half,' then Picasso, the English weather, and Tchaikovsky are all 'half-caste' too. A powerful poem about racism, identity, and language.",
     themes: 'Racism, identity, language and power, cultural pride',
     language:
-      "Caribbean dialect and phonetic spelling ('Explain yuself / wha yu mean') assert cultural identity and reject Standard English as the only valid form. Humour and irony ('I close half-a-eye') expose the absurdity of racial categorisation. Extended metaphor of 'half' challenges the logic of prejudice.",
+      "Caribbean dialect and phonetic spelling ('Explain yuself / wha yu mean') assert cultural identity and reject Standard English as the only valid form. Humour and irony (a speaker who can only close half an eye) expose the absurdity of racial categorisation. Extended metaphor of 'half' challenges the logic of prejudice.",
     structure:
       "No punctuation, minimal capitalisation, and run-on lines create a flowing, speech-like rhythm. The poem demands to be read aloud. The lack of full stops suggests the speaker's argument is ongoing and unresolved.",
+    // Until 26 September 2026 these were four quotations that each ran several
+    // of the poem's short lines together, with a capital on picasso, a question
+    // mark and commas the poem does not have (it prints names in lower case and
+    // uses no commas or question marks). The poem is in copyright, so the page now quotes only
+    // the two-line refrain, checked against the anthology, and describes the rest.
     keyQuotes: [
-      '"Explain yuself, wha yu mean when yu say half-caste"',
-      '"yu mean when Picasso mix red an green is a half-caste canvas?"',
-      '"I half-caste human being, cast half-a-shadow"',
-      '"come back tomorrow wid de whole of yu eye an de whole of yu ear"',
+      '"Explain yuself / wha yu mean"',
+      'The painter analogy: mixing red and green on a canvas (quote the exact wording from your anthology)',
+      'The literal half person, casting half a shadow (quote the exact wording from your anthology)',
+      'The closing challenge to come back tomorrow with the whole eye and the whole ear (quote the exact wording from your anthology)',
     ],
     comparisonLinks:
       "Compare with 'No Problem' (racism and identity), 'The Class Game' (prejudice based on class), or 'Catrin' (identity and conflict).",
     rightsNotice:
-      "Rights notice: © Hodder & Stoughton on behalf of John Agard (b. 1949). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology (Issue 2 prints 'yu' rather than 'you').",
+      "Rights notice: © 1996 John Agard (b. 1949), c/o Caroline Sheldon Literary Agency Ltd. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology (Agard's spelling is 'yu', not 'you').",
   },
   {
     title: 'A Poison Tree',

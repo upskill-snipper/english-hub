@@ -43,26 +43,33 @@ const themes = [
 
 /* ── Stanza summaries (paraphrase only) ───────────────────────────── */
 
+// Corrected 26 September 2026. These summaries invented details (a tray of
+// chemicals in stanza 1, a working face and a kitchen in stanza 2, a dying
+// man and a wife "approving" in stanza 3) and quoted words of the poem that
+// the study-guide supplement mounted below this page does not. That
+// supplement already uses the page's whole quotation budget (28 words of a
+// 190-word poem), so keep these sections in paraphrase: adding a quotation
+// here puts the URL over the share.
 const stanzaSummaries = [
   {
     n: 'Stanza 1',
     label: 'In the darkroom',
-    body: 'Duffy opens with the photographer alone in his darkroom developing the day\'s film. The image of the lit-up tray of chemicals is described in religious terms - the room becomes a kind of chapel, and the photographer a priest performing a careful ritual. The opening line finds him alone in the darkroom at last, and the word for that solitude is final. A short list of conflict cities - including "Belfast. Beirut. Phnom Penh." - establishes the geographic range of his recent work and roots the poem in the wars of the late 1970s and early 1980s.',
+    body: 'Duffy opens with the photographer in his darkroom, where the spools of film he has brought home are set out in rows. The opening line finds him alone there at last, and the word for that solitude is final. The red light of the darkroom is described in religious terms - the room becomes a kind of church, and the photographer a priest preparing for Mass. A short list of three conflict cities - Belfast, Beirut and Phnom Penh - establishes the geographic range of his recent work and roots the poem in the wars of the late 1970s and early 1980s.',
   },
   {
     n: 'Stanza 2',
     label: 'Hands and trembling',
-    body: "The photographer's hands, which did not tremble in the war zone, now shake at home. The professional calm of the journalist breaks down in the safety of England. Duffy contrasts the phlegmatic working face he wore abroad with the private grief he allows himself in his own kitchen. Rural England is described as ordered, peaceful - a place where suffering only arrives as a photograph.",
+    body: "The photographer's hands, which did not tremble in the war zone, now seem to shake at home as he works over the trays of developing solution. The professional calm of the journalist breaks down in the safety of England. Rural England is described as ordered, peaceful - a place where suffering only arrives as a photograph.",
   },
   {
     n: 'Stanza 3',
     label: 'A face emerging',
-    body: 'A specific image surfaces in the chemicals: the face of a dying or grieving man. Duffy paraphrases the moment when the photographer remembers the man\'s wife "approving" his decision to take the picture. The memory of the photograph\'s subject becoming visible in the developing tray is rendered with painful slowness - the violence is replayed, frame by frame.',
+    body: "A specific image surfaces in the developing tray: a stranger's features begin to appear, like a ghost. The photographer remembers the cries of this man's wife, and how he silently sought her approval to do what someone had to do. The poem never says she gave it. The memory of the photograph's subject becoming visible in the developing tray is rendered with painful slowness - the violence is replayed, frame by frame.",
   },
   {
     n: 'Stanza 4',
     label: 'Sunday-supplement readers',
-    body: 'The closing stanza pulls back to the editor\'s desk and to the readers of the Sunday paper. Out of "a hundred agonies" the editor will choose just five or six. Readers will glance at the images "between the bath and pre-lunch beers" - a brutal image of comfortable England flicking past suffering. The poem ends with the photographer flying out again, looking down impassively at the country that does not really see what he brings home.',
+    body: "The closing stanza pulls back to the editor's desk and to the Sunday paper. Out of about a hundred pictures of suffering, the editor will choose just five or six. The reader, singular, is moved to tears for a moment, somewhere between a bath and a drink before lunch - a brutal image of comfortable England passing quickly over suffering. The poem ends with the photographer on an aeroplane, staring without expression at the place where he makes his living. Duffy does not say whether he is flying out again, or whether that place is the England below or the wars his work depends on.",
   },
 ]
 
@@ -79,7 +86,7 @@ const formAndStructure = [
   },
   {
     label: 'Religious imagery',
-    body: 'Duffy turns the darkroom into a religious space. The red light glows like a sanctuary lamp; the chemicals are arranged in "ordered rows" like communion vessels; the photographer works in a hush, like a priest. By framing the journalism as a sacrament, Duffy elevates the photographer\'s work - and indicts the readers who consume the images casually.',
+    body: "Duffy turns the darkroom into a religious space. The red light glows as though the room were a church; the spools of film are set out in neat rows, as if for a ritual; the photographer is compared to a priest preparing for Mass. By framing the journalism as a sacrament, Duffy elevates the photographer's work - and indicts the readers who consume the images casually.",
   },
   {
     label: 'Contrast and juxtaposition',
@@ -91,28 +98,32 @@ const formAndStructure = [
   },
   {
     label: 'Closing volta',
-    body: 'The poem turns at the last stanza when it widens out from the photographer to the editor and the reader. The volta makes the moral point explicit: the photographer is no longer the sole subject - the indifferent public is. The final image of him in the aeroplane "stares impassively" at the England below, a country he can no longer fully belong to.',
+    body: 'The poem turns at the last stanza when it widens out from the photographer to the editor and the reader. The volta makes the moral point explicit: the photographer is no longer the sole subject - the indifferent public is. In the final image he stares, expressionless, from an aeroplane at the place where he makes his living. Duffy leaves open whether that is the England below or the wars his work depends on.',
   },
 ]
 
 /* ── Comparison poems ─────────────────────────────────────────────── */
 
+// Corrected 26 September 2026: this list paired the poem with Disabled and
+// The Bright Lights of Sarajevo, which are in Part 2 of the anthology
+// (Language A). 4ET1 Paper 1 compares two Part 3 poems, so every pairing
+// here must come from Part 3.
 const comparisons = [
   {
-    title: 'Disabled',
-    poet: 'Wilfred Owen',
-    href: '/igcse/edexcel/poetry/disabled',
+    title: 'Blessing',
+    poet: 'Imtiaz Dharker',
+    href: '/revision/texts/blessing',
     reason:
-      "Both poems sit on the home front and look at the human cost of war. Owen forces us to look at one wounded soldier on English soil; Duffy's photographer mediates suffering through images that the public will quickly forget. Compare how each poem indicts the indifference of those at home.",
-    themes: ['War', 'Witness', 'Indifference'],
+      "Both poems are built on powerful images of people living through hardship far from the reader's own comfort. Dharker shows a whole community rushing with pots to catch the water from a burst pipe; Duffy's photographer brings home pictures of suffering that readers at home barely pause over. Compare how each poet makes the reader look, and what each image asks of us.",
+    themes: ['Suffering', 'Imagery', 'Witness'],
   },
   {
-    title: 'The Bright Lights of Sarajevo',
-    poet: 'Tony Harrison',
-    href: '/igcse/edexcel/poetry/the-bright-lights-of-sarajevo',
+    title: 'Piano',
+    poet: 'D.H. Lawrence',
+    href: '/igcse/edexcel/poetry/piano',
     reason:
-      'Both poems are by major English poets writing about specific late-20th-century wars. Duffy reports war from the safety of England; Harrison stays in the besieged city. Compare two journalistic-poetic registers and the question of where the witness should stand.',
-    themes: ['War', 'Witness', 'Reportage'],
+      "Both poems show a man's composure under pressure. Lawrence's speaker is overwhelmed by memory until he weeps like a child; Duffy's photographer, steady in the war zones, finds his hands seem to tremble at home, yet ends the poem showing nothing. Compare how each poem presents emotion and self-control.",
+    themes: ['Emotion', 'Self-control', 'Memory'],
   },
   {
     title: 'If-',
@@ -202,15 +213,16 @@ export default function WarPhotographerPage() {
         <div className="space-y-3 text-body-sm text-muted-foreground leading-relaxed">
           <p>
             Carol Ann Duffy is a Scottish-born British poet who served as the{' '}
-            <strong className="text-foreground">UK Poet Laureate from 2009 to 2019</strong> &mdash;
-            the first woman, the first Scot, and the first openly LGBT poet to hold the post. Her
-            work is known for its accessible voice, dramatic monologues, and political engagement.
+            <strong className="text-foreground">UK Poet Laureate from 2009 to 2019</strong>, the
+            first woman, the first Scot, and the first openly LGBT poet to hold the post. Her work
+            is known for its accessible voice, dramatic monologues, and political engagement.
           </p>
+          {/* Not "her second collection" (corrected 26 September 2026): the Scottish
+              Poetry Library lists three earlier publications, from 1974 to 1982. */}
           <p>
             <strong className="text-foreground">Publication:</strong> &ldquo;War Photographer&rdquo;
-            first appeared in Duffy&rsquo;s second collection, <em>Standing Female Nude</em> (Anvil
-            Press, 1985). It has since been reprinted in her <em>Selected Poems</em> (Penguin, 1994)
-            and
+            first appeared in Duffy&rsquo;s collection <em>Standing Female Nude</em> (Anvil Press,
+            1985). It has since been reprinted in her <em>Selected Poems</em> (Penguin, 1994) and
             <em> New Selected Poems</em> (Picador). UK book rights are currently held by Picador /
             Pan Macmillan; permissions enquiries go through the author&rsquo;s agent, Rogers,
             Coleridge &amp; White.
@@ -221,8 +233,7 @@ export default function WarPhotographerPage() {
             <strong className="text-foreground">Don McCullin</strong>, whose images of the Vietnam
             War, the Troubles in Northern Ireland and the Lebanese Civil War made him one of the
             most important war photographers of the twentieth century. McCullin&rsquo;s ethical
-            struggles &mdash; about the morality of photographing dying people &mdash; lie behind
-            the poem.
+            struggles, about the morality of photographing dying people, lie behind the poem.
           </p>
         </div>
       </section>

@@ -61,6 +61,10 @@ const poem: PoemData = {
       ],
     },
     { text: '' },
+    // The analogies come in the poem's order: painter (lines 7-9), weather
+    // (13-22), piano (26-30). Until 26 September 2026 this page put the piano
+    // second and the weather third, and called the weather "sun and cloud";
+    // what mixes in the poem's sky is light and shadow.
     {
       text: '[See anthology - Picasso analogy: mixing paint colours]',
       annotations: [
@@ -72,21 +76,21 @@ const poem: PoemData = {
       ],
     },
     {
-      text: '[See anthology - Tchaikovsky analogy: black and white piano keys]',
+      text: '[See anthology - weather analogy: light and shadow mixing in the sky]',
       annotations: [
         {
-          type: 'Analogy - Music',
-          note: 'A second analogy: Tchaikovsky combined black and white piano keys to create beautiful music. Nobody calls a symphony "half-caste". Agard shows that mixing is natural and beautiful in every field except racial identity, where prejudice distorts our judgement. Refer to the anthology for the exact wording.',
+          type: 'Analogy - Weather',
+          note: "A second, humorous analogy: light and shadow mix in the sky, so by the listener's logic English weather, so often grey and cloudy, would be half-caste nearly all the time. The bathos of comparing racial prejudice to weather is deliberately comic, making the term look silly and small. Refer to the anthology for the exact wording.",
           color: '#10b981',
         },
       ],
     },
     {
-      text: '[See anthology - English weather analogy: sun and cloud]',
+      text: '[See anthology - Tchaikovsky analogy: black and white piano keys]',
       annotations: [
         {
-          type: 'Analogy - Weather',
-          note: 'A third, humorous analogy: English weather is a mix of sun and cloud. The bathos of comparing racial prejudice to weather is deliberately comic, making the term look silly and small. Refer to the anthology for the exact wording.',
+          type: 'Analogy - Music',
+          note: 'A third analogy: Tchaikovsky combined black and white piano keys to create beautiful music. Nobody calls a symphony "half-caste". Agard shows that mixing is natural and beautiful in every field except racial identity, where prejudice distorts our judgement. Refer to the anthology for the exact wording.',
           color: '#10b981',
         },
       ],
@@ -118,7 +122,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Key phrase',
-          note: 'The poem ends with a challenge to look with the whole eye. The speaker tells the listener to return with their full humanity - whole eye, whole ear, whole mind - and then the speaker will tell them "de other half / of my story". The implication: you can only understand me when you see me as a whole person.',
+          note: 'The poem ends with a challenge to look with the whole eye. The speaker tells the listener to return with their full humanity - whole eye, whole ear, whole mind - and then the speaker will tell them the other half of his story. The implication: you can only understand me when you see me as a whole person.',
           color: '#f59e0b',
         },
       ],
@@ -156,7 +160,7 @@ const poem: PoemData = {
 
 The speaker then demands that the listener explain what they mean by "half-caste". This demand - "Explain yuself / wha yu mean" - is repeated throughout the poem as a refrain, turning the burden of explanation onto the person who used the word.
 
-Agard uses three analogies to show that mixing is valued everywhere except in racial identity. Picasso mixed red and green paint - nobody called his art "half-caste". Tchaikovsky mixed black and white piano keys - nobody called his music "half-caste". English weather mixes sun and cloud - nobody calls the sky "half-caste".
+Agard uses three analogies to show that mixing is valued everywhere except in racial identity. Picasso mixed red and green paint - nobody called his art "half-caste". Light and shadow mix in the sky - by that logic English weather, so often cloudy, would be "half-caste" nearly all the time. Tchaikovsky mixed black and white piano keys - nobody called his music "half-caste".
 
 The speaker then literalises the metaphor of "half". If he is only half a person, he must cast half a shadow, dream half a dream, see with half an eye, listen with half an ear. The accumulation of physical impossibilities makes the term look increasingly stupid.
 
@@ -174,12 +178,12 @@ Repetition: "Explain yuself / wha yu mean" is repeated as a refrain, creating a 
 
 Structure - three movements:
 • Movement 1 (opening): The speaker introduces himself with mock humility and announces the topic.
-• Movement 2 (middle): Three analogies - Picasso, Tchaikovsky, English weather - each showing that mixing is valued in art, music and nature.
+• Movement 2 (middle): Three analogies - Picasso, English weather, Tchaikovsky - each showing that mixing is valued in art, nature and music.
 • Movement 3 (ending): Literalisation of "half" (half a shadow, half a dream, half an eye) and the final challenge to the listener.
 
 Tone: Mock-polite, ironic, confrontational, humorous, angry. The humour is essential - Agard makes the listener laugh at the absurdity of the term, then feel the anger beneath the laughter.
 
-No punctuation or capitalisation: The poem uses minimal punctuation and no capital letters (except for proper nouns). This removes the hierarchies of Standard English grammar - another act of linguistic resistance.
+No punctuation or capitalisation: The poem uses minimal punctuation and almost no capital letters. Even the names are printed in lower case (picasso, england, tchaikovsky); the only capitals are the pronoun I and a few words that open a line, such as Excuse, Explain and Ah. This removes the hierarchies of Standard English grammar - another act of linguistic resistance.
 
 Enjambment: Lines flow into each other without stops, creating a sense of rapid, unstoppable speech. The speaker will not be silenced or interrupted.`,
 
@@ -270,12 +274,12 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
     },
     {
       device: 'Analogy',
-      example: '[See anthology: Picasso paint, Tchaikovsky piano keys, English weather]',
+      example: '[See anthology: Picasso paint, English weather, Tchaikovsky piano keys]',
       effect:
-        'Three analogies (art, music, weather) show that mixing is celebrated everywhere except race. Each analogy adds another layer of evidence that the term "half-caste" is intellectually bankrupt. The analogies move from high culture (Picasso, Tchaikovsky) to everyday life (weather), showing that the principle applies universally.',
+        'Three analogies (art, weather, music) show that mixing is celebrated everywhere except race. Each analogy adds another layer of evidence that the term "half-caste" is intellectually bankrupt. The analogies move from high culture (Picasso) to everyday life (weather) and back to high culture (Tchaikovsky), showing that the principle applies universally.',
       lineRef: 6,
       effectAr:
-        'مماثلاتٌ ثلاث (الفنّ، الموسيقى، الطقس) تُري أنّ الخلطَ محتفىً به في كلّ مكانٍ إلّا في العِرق. كلّ مماثلةٍ تُضيف برهاناً جديداً على إفلاس مصطلح "half-caste". وتنتقل المماثلاتُ من الثقافة الرفيعة (Picasso وTchaikovsky) إلى الحياة اليوميّة (الطقس)، فتُري أنّ المبدأ يسري على كلّ شيء.',
+        'مماثلاتٌ ثلاث (الفنّ، الطقس، الموسيقى) تُري أنّ الخلطَ محتفىً به في كلّ مكانٍ إلّا في العِرق. كلّ مماثلةٍ تُضيف برهاناً جديداً على إفلاس مصطلح "half-caste". وتنتقل المماثلاتُ من الثقافة الرفيعة (Picasso) إلى الحياة اليوميّة (الطقس) ثمّ تعود إلى الثقافة الرفيعة (Tchaikovsky)، فتُري أنّ المبدأ يسري على كلّ شيء.',
     },
     {
       device: 'Caribbean Creole dialect',
@@ -336,7 +340,7 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
 
 ثمّ يطالب المتكلّمُ السامعَ بأن يشرح ما يقصده بـ"half-caste". وهذا الطلب - "Explain yuself / wha yu mean" - يتكرّر على امتداد القصيدة لازمةً، فيُلقي عبءَ الشرح على من استعمل الكلمة.
 
-يستعمل Agard ثلاث مماثلاتٍ ليُري أنّ الخلطَ محتفىً به في كلّ مكانٍ إلّا في الهُويّة العِرقيّة. خلط Picasso الأحمر والأخضر - لم يصف أحدٌ فنّه بـ"half-caste". خلط Tchaikovsky مفاتيح البيانو السوداء والبيضاء - لم يصف أحدٌ موسيقاه بـ"half-caste". وخلطُ الطقس الإنجليزيّ بين شمسٍ وغيمٍ - لم يصف أحدٌ السماء بـ"half-caste".
+يستعمل Agard ثلاث مماثلاتٍ ليُري أنّ الخلطَ محتفىً به في كلّ مكانٍ إلّا في الهُويّة العِرقيّة. خلط Picasso الأحمر والأخضر - لم يصف أحدٌ فنّه بـ"half-caste". ويمتزج الضوءُ والظلّ في السماء - وبهذا المنطق يكون الطقسُ الإنجليزيّ الغائمُ غالباً "half-caste" في معظم الأوقات. وخلط Tchaikovsky مفاتيح البيانو السوداء والبيضاء - لم يصف أحدٌ موسيقاه بـ"half-caste".
 
 ثمّ يُحرفي المتكلّمُ استعارةَ "half". لو كان نصفَ إنسانٍ لألقى نصفَ ظِلّ، وحَلَم نصفَ حُلم، ورأى بنصف عين، وأصغى بنصف أُذن. وتراكمُ الاستحالات الجسديّة يجعل المصطلحَ يبدو أسخف وأسخف.
 
@@ -354,12 +358,12 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
 
 البنية في ثلاث حركات:
 • الحركة الأولى (الافتتاح): يُقدّم المتكلّمُ نفسَه بتواضعٍ متصنّع ويُعلن الموضوع.
-• الحركة الثانية (الوسط): ثلاثُ مماثلاتٍ - Picasso، Tchaikovsky، الطقس الإنجليزيّ - تُري كلٌّ منها أنّ الخلطَ محتفىً به في الفنّ والموسيقى والطبيعة.
+• الحركة الثانية (الوسط): ثلاثُ مماثلاتٍ - Picasso، الطقس الإنجليزيّ، Tchaikovsky - تُري كلٌّ منها أنّ الخلطَ محتفىً به في الفنّ والطبيعة والموسيقى.
 • الحركة الثالثة (الختام): حرفنةُ "half" (نصفُ ظِلّ، نصفُ حُلم، نصفُ عين) ثمّ التحدّي الختاميّ للسامع.
 
 النبرة: تأدّبٌ متصنّع، مفارقة، مواجهة، فُكاهة، غضب. والفُكاهة جوهريّة - يجعل Agard السامعَ يضحك من سخف المصطلح، ثمّ يُحسّ بالغضب تحت الضحك.
 
-غياب الترقيم والحروف الكبيرة: تستعمل القصيدة ترقيماً ضئيلاً ولا حروفَ كبيرة (إلّا في أسماء الأعلام). وهذا ينزع هرميّات نحو الفصحى الإنجليزيّة - فِعل مقاومةٍ لغويٍّ آخر.
+غياب الترقيم والحروف الكبيرة: تستعمل القصيدة ترقيماً ضئيلاً وتكاد تخلو من الحروف الكبيرة. حتى أسماء الأعلام تُطبع بحروفٍ صغيرة (picasso، england، tchaikovsky)؛ ولا ترد الحروف الكبيرة إلّا في الضمير I وفي كلماتٍ قليلة تفتتح السطر، مثل Excuse وExplain وAh. وهذا ينزع هرميّات نحو الفصحى الإنجليزيّة - فِعل مقاومةٍ لغويٍّ آخر.
 
 الـ enjambment: تنساب الأسطرُ بعضُها في بعضٍ دون وقفات، فيتولّد إحساسٌ بكلامٍ سريعٍ لا يُقطع. لن يُسكَت المتكلّمُ ولن يُقاطَع.`,
 }
@@ -433,10 +437,15 @@ export default function HalfCastePage() {
           <strong className="text-foreground">Copyright notice:</strong> &quot;Half-Caste&quot; by
           John Agard is in copyright. Only short extracts (key phrases) are reproduced here for the
           purpose of criticism, review and study, in accordance with fair dealing provisions
-          (Copyright, Designs and Patents Act 1988, s.30). The full poem is published by{' '}
-          <strong className="text-foreground">Hodder Education</strong> in the
-          <em> Edexcel International GCSE English Anthology (Issue 2, ISBN 978-1-446-93108-0)</em>.
-          For the full text, refer to your Edexcel IGCSE anthology.
+          (Copyright, Designs and Patents Act 1988, s.30). The full poem is printed in the{' '}
+          <em>
+            Pearson Edexcel International GCSE English Anthology (Issue 8, February 2026, ISBN
+            978-1-446-93108-0)
+          </em>
+          , published by <strong className="text-foreground">Pearson Education Limited</strong>,
+          which acknowledges it as copyright &copy; 1996 by John Agard, reproduced by permission of
+          John Agard c/o Caroline Sheldon Literary Agency Ltd. For the full text, refer to your
+          Edexcel IGCSE anthology.
         </p>
       </div>
 
@@ -445,7 +454,7 @@ export default function HalfCastePage() {
         <BookOpen className="mt-0.5 size-4 shrink-0 text-purple-500" />
         <div className="text-xs leading-relaxed text-muted-foreground">
           <p className="mb-1">
-            <strong className="text-foreground">Teacher note — on the spelling:</strong>
+            <strong className="text-foreground">Teacher note: on the spelling</strong>
           </p>
           <p>
             Agard&apos;s Caribbean creole spelling (<strong>&quot;yu&quot;</strong> for
@@ -454,8 +463,8 @@ export default function HalfCastePage() {
             <strong className="text-foreground">
               deliberate and central to the poem&apos;s meaning
             </strong>
-            . Do not &quot;correct&quot; to Standard English — the creole is itself a political
-            statement. The Edexcel IGCSE Anthology (Issue 2) preserves Agard&apos;s spelling, and
+            . Do not &quot;correct&quot; to Standard English: the creole is itself a political
+            statement. The Edexcel IGCSE Anthology (Issue 8) preserves Agard&apos;s spelling, and
             students should quote it exactly as printed. &quot;Correcting&quot; the dialect in an
             essay loses marks for accuracy and misses the poem&apos;s argument that mixed languages,
             like mixed identities, are valid in their own right.
@@ -468,7 +477,7 @@ export default function HalfCastePage() {
         <AlertTriangle className="mt-0.5 size-4 shrink-0 text-sky-500" />
         <p className="text-xs leading-relaxed text-muted-foreground">
           <strong className="text-foreground">Page audited April 2026:</strong> Direct quotations
-          from mid-poem analogies (Picasso, Tchaikovsky, weather, half-a-shadow, accumulating
+          from mid-poem analogies (Picasso, weather, Tchaikovsky, half-a-shadow, accumulating
           &quot;halves&quot;) and other passages we could not verify against a primary source have
           been replaced with paraphrases or pointers to the anthology. On 26 September 2026 the page
           was cut again to the share of the poem fair dealing allows: only the opening and the

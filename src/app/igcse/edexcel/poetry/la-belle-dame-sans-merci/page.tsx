@@ -339,7 +339,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'And there she wept, and sighed full sore,',
+      text: 'And there she wept and sighed full sore,',
       annotations: [
         {
           type: 'Mystery',
@@ -370,7 +370,7 @@ const poem: PoemData = {
     },
     { text: '' },
     {
-      text: 'And there she lullèd me asleep,',
+      text: 'And there she lullèd me asleep',
       annotations: [
         {
           type: 'Turning point',
@@ -415,7 +415,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Vision',
-          note: 'The dream-vision shows him previous victims - "pale kings and princes". He is not the first. The lady has destroyed powerful men before him, and he is simply the latest.',
+          note: 'The dream-vision shows him previous victims - "pale kings, and princes too". He is not the first. The lady has destroyed powerful men before him, and he is simply the latest.',
           color: '#ef4444',
         },
       ],
@@ -446,7 +446,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: "Hath thee in thrall!'",
+      text: "Thee hath in thrall!'",
       annotations: [
         {
           type: 'Key quote',
@@ -498,7 +498,7 @@ const poem: PoemData = {
     },
     { text: '' },
     {
-      text: 'And this is why I sojourn here,',
+      text: 'And this is why I sojourn here',
       annotations: [
         {
           type: 'Explanation',
@@ -539,14 +539,23 @@ const poem: PoemData = {
     },
   ],
 
+  // Corrected 26 September 2026. The version note and the composition section
+  // had the two texts the wrong way round: they called the anthology's
+  // knight-at-arms text the 1820 Indicator version and the wretched-wight text
+  // a later 1848 revision. The Indicator printed the REVISED, wretched-wight
+  // text; the anthology (Issue 8, pages 60 to 61) prints the earlier text from
+  // Keats's letter, first published by Milnes in 1848. The note's "death's
+  // lily" reading is not in the Indicator text either. The letter entry is
+  // dated 21 April by some editors and 28 April by Scudder (1899), so the
+  // date is given as April 1819.
   context: `
-    <div class="version-note"><strong>Version note:</strong> The Edexcel IGCSE anthology uses the 1820 <em>Indicator</em> version of the poem (the version printed here, with "knight-at-arms"). Some online sources reproduce Keats's later 1848 (Milnes) revision, which differs in several lines - most notably replacing "knight-at-arms" with "wretched wight" and "I see a lily on thy brow" with "I see death's lily on thy brow". Always quote from the anthology version when answering Edexcel questions.</div>
+    <div class="version-note"><strong>Version note:</strong> The Edexcel IGCSE anthology prints the earlier text of the poem, the one Keats wrote out in a letter in April 1819, in which the knight is a "knight-at-arms" (the version printed here). The revised text printed in Leigh Hunt's <em>Indicator</em> in May 1820 differs in several lines - most notably calling him a "wretched wight". Some online sources reproduce that 1820 text, and others differ from the anthology in smaller ways, such as "Hath thee in thrall" for the anthology's "Thee hath in thrall". Always quote from the anthology version when answering Edexcel questions.</div>
 
     <h3>John Keats (1795-1821)</h3>
     <p>Keats was one of the great English Romantic poets, alongside Shelley, Byron, Wordsworth and Coleridge. He trained as a surgeon before dedicating himself to poetry. He wrote a series of masterpieces - including this poem, "Ode to a Nightingale", "To Autumn" and "Ode on a Grecian Urn" - in a single astonishing year (1819), before dying of tuberculosis in Rome at the age of 25.</p>
 
     <h3>Composition and date</h3>
-    <p>"La Belle Dame sans Merci" was written on 21 April 1819 - part of the "Great Year" of Keats\'s creativity. The poem exists in <strong>two distinct versions</strong>: the earlier text published in Leigh Hunt's <em>Indicator</em> in May 1820 (which Keats prepared for press himself) and a revised text published posthumously in Richard Monckton Milnes\'s 1848 <em>Life, Letters and Literary Remains</em>. The Edexcel anthology prints the <strong>1820 Indicator version</strong> - the one used here. Keats\'s brother Tom had died of tuberculosis the previous December, and Keats himself was already unwell. <strong>Illness and the fear of death</strong> shadow the poem.</p>
+    <p>"La Belle Dame sans Merci" was written in April 1819 - part of the "Great Year" of Keats\'s creativity. The poem exists in <strong>two distinct versions</strong>: the earlier text, which Keats wrote out in a long journal letter to his brother George and sister-in-law Georgiana and which was first published posthumously in Richard Monckton Milnes\'s 1848 <em>Life, Letters and Literary Remains</em>, and a revised text published in Leigh Hunt's <em>Indicator</em> in May 1820. The Edexcel anthology prints the <strong>earlier, knight-at-arms text</strong> - the one used here. Keats\'s brother Tom had died of tuberculosis the previous December, and Keats himself was already unwell. <strong>Illness and the fear of death</strong> shadow the poem.</p>
 
     <h3>Fanny Brawne</h3>
     <p>In 1819 Keats fell passionately in love with his neighbour <strong>Fanny Brawne</strong>, but their engagement was impossible - he had no money and knew his health was failing. Many critics read the poem as an expression of Keats\'s own sense that love itself was dangerous for him: a beautiful woman would only lead him, like the knight, to wasted isolation. Keats called himself "half in love with easeful Death".</p>
@@ -561,23 +570,25 @@ const poem: PoemData = {
     <p>Scholars disagree about who the real victim is. Is the lady a cruel seducer? Or is she a supernatural being trapped in a cycle she cannot control? We never hear her own side - everything comes through the knight\'s account. Keats leaves her motives deliberately unexplained.</p>
   `,
 
-  summary: `Stanza 1 (lines 1-4): An unnamed speaker sees a knight "alone and palely loitering" in an autumn landscape where the marsh grass has withered and no birds sing. The speaker asks what is wrong with him.
+  summary: `Line numbers here follow the anthology, whose margin numbers count the Roman numeral above each stanza as a line, so stanza I is lines 2-5 and the poem ends at line 60.
 
-Stanzas 2-3 (lines 5-12): The speaker describes the knight\'s appearance - he is haggard, woe-begone, with a "lily" (death symbol) on his brow, feverish sweat, and a "fading rose" on his cheeks. The squirrels have already stored their winter food; nature has moved on, but the knight has not.
+Stanza 1 (lines 2-5): An unnamed speaker sees a knight "alone and palely loitering" in an autumn landscape where the marsh grass has withered and no birds sing. The speaker asks what is wrong with him.
 
-Stanzas 4-5 (lines 13-20): The knight begins his story. He met a beautiful lady, a "faery\'s child", with long hair and wild eyes, in the meadows. He made her garlands, bracelets and a flower belt. She looked at him as if she loved him and made "sweet moan".
+Stanzas 2-3 (lines 7-15): The speaker describes the knight\'s appearance - he is haggard, woe-begone, with a "lily" (death symbol) on his brow, feverish sweat, and a "fading rose" on his cheeks. The squirrels have already stored their winter food; nature has moved on, but the knight has not.
 
-Stanzas 6-7 (lines 21-28): He set her on his horse and saw nothing else all day, while she sang fairy songs. She fed him "roots of relish sweet", wild honey and "manna-dew", and said something in a "language strange" that he interpreted as "I love thee true".
+Stanzas 4-5 (lines 17-25): The knight begins his story. He met a beautiful lady, a "faery\'s child", with long hair and wild eyes, in the meadows. He made her garlands, bracelets and a flower belt. She looked at him as if she loved him and made "sweet moan".
 
-Stanzas 8-9 (lines 29-36): She took him to her "elfin grot" (fairy cave). There she wept and sighed, and he shut her "wild wild eyes" with four kisses. She lulled him asleep - and there he had the most terrible dream of his life, on the cold hill side.
+Stanzas 6-7 (lines 27-35): He set her on his horse and saw nothing else all day, while she sang fairy songs. She fed him "roots of relish sweet", wild honey and "manna-dew", and said something in a "language strange" that he interpreted as "I love thee true".
 
-Stanzas 10-11 (lines 37-44): In the dream he saw "pale kings and princes" and "pale warriors" - previous victims of the lady. They warned him, crying "La Belle Dame sans Merci / Hath thee in thrall!" ("The beautiful lady without mercy has you in her power"). Their starved lips gaped open in silent warning.
+Stanzas 8-9 (lines 37-45): She took him to her "elfin grot" (fairy cave). There she wept and sighed, and he shut her "wild wild eyes" with four kisses. She lulled him asleep - and there he had the most terrible dream of his life, on the cold hill side.
 
-Stanza 12 (lines 45-48): He awoke and found himself alone on the cold hill side. This is why he now lingers there, "alone and palely loitering", in a landscape where the sedge is withered and no birds sing. He cannot leave.
+Stanzas 10-11 (lines 47-55): In the dream he saw "pale kings, and princes too" and "pale warriors" - previous victims of the lady. They warned him, crying "La Belle Dame sans Merci / Thee hath in thrall!" ("The beautiful lady without mercy has you in her power"). Their starved lips gaped open in silent warning, and he awoke to find himself on the cold hillside.
+
+Stanza 12 (lines 57-60): This is why he now lingers there, "alone and palely loitering", in a landscape where the sedge is withered and no birds sing. He cannot leave.
 
 Overall meaning: The poem is a chilling ballad about destructive love. A knight is seduced by a beautiful, supernatural woman and left drained and alone, unable to return to normal life. Keats leaves many questions unanswered: was she deliberately cruel or simply fairy-natured? Was the knight a fool, a victim, or both? The poem is partly about love as enchantment - and the danger of being taken over by desire.`,
 
-  formAndStructure: `Form: A literary ballad - 12 stanzas of four lines each (48 lines total). Keats imitates the medieval English and Scottish ballad tradition.
+  formAndStructure: `Form: A literary ballad - 12 stanzas of four lines each (48 lines of verse; the anthology numbers them up to 60 because its margin count includes the Roman numeral above each stanza). Keats imitates the medieval English and Scottish ballad tradition.
 
 Stanza structure: Each stanza has three long lines in iambic tetrameter (four beats) followed by a much shorter fourth line - often just two or three feet. The short final line creates a dying-away effect, like a breath running out. This is unusual for the ballad form: Keats has borrowed the tradition and added his own dying-fall signature.
 
@@ -630,7 +641,7 @@ Archaic diction: Keats uses words like "ail", "thee", "haggard", "woe-begone", "
       themes: ['Misunderstanding', 'Projection', 'Unreliable narrator'],
     },
     {
-      quote: 'La Belle Dame sans Merci / Hath thee in thrall!',
+      quote: 'La Belle Dame sans Merci / Thee hath in thrall!',
       analysis:
         'The title appears in direct speech - cried out by the ghostly kings in the knight\'s dream. "Sans merci" means "without mercy"; "in thrall" means enslaved or bewitched. The fact that the warning comes from previous victims, in a dream, and in French, gives it the weight of inherited folklore. They know what has happened because they lived it. The dream-warning is the closest the poem comes to revealing the lady\'s true nature.',
       themes: ['Warning', 'Enslavement', 'Femme fatale'],
@@ -642,7 +653,7 @@ Archaic diction: Keats uses words like "ail", "thee", "haggard", "woe-begone", "
       themes: ['Universal danger', 'Power defeated', 'Pallor'],
     },
     {
-      quote: 'And this is why I sojourn here, / Alone and palely loitering',
+      quote: 'And this is why I sojourn here / Alone and palely loitering',
       analysis:
         'The closing answer to the opening question. "Sojourn" means to stay temporarily, but the knight has been here permanently - he has turned a sojourn into an eternity. Repeating "alone and palely loitering" confirms that his state has not changed and will not change. The story has been told, but nothing has been resolved. The knight is trapped in his own narrative.',
       themes: ['Entrapment', 'Eternal loss', 'Circular fate'],
@@ -711,13 +722,14 @@ const comparisons = [
     poet: 'William Shakespeare',
     href: '/igcse/edexcel/poetry/sonnet-116',
     reason:
-      'Shakespeare presents love as constant, steady, a "fixed mark". Keats presents love as enchantment that leaves you ruined. Compare two utterly opposite visions of what love is and does - ideal versus destructive.',
+      'Shakespeare presents love as constant, steady, an "ever-fixèd mark". Keats presents love as enchantment that leaves you ruined. Compare two utterly opposite visions of what love is and does - ideal versus destructive.',
     themes: ['Nature of love', 'Constancy vs. destruction'],
   },
   {
     title: 'Prayer Before Birth',
     poet: 'Louis MacNeice',
-    href: '/igcse/edexcel/poetry',
+    // Linked to the anthology index until 26 September 2026; this is the poem's own guide.
+    href: '/revision/texts/prayer-before-birth',
     reason:
       "Both poems feature speakers who cannot escape their fate - the knight trapped on the hillside, the unborn child dreading the adult world. Compare the ballad's circular entrapment with MacNeice's modernist pleading.",
     themes: ['Trapped speakers', 'Fate', 'Helplessness'],

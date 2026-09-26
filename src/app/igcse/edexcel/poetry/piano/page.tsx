@@ -2,7 +2,7 @@
 // [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
 import Link from 'next/link'
-import { ArrowLeft, BookOpen, GitCompare, AlertTriangle } from 'lucide-react'
+import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
 import { useT } from '@/lib/i18n/use-t'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -138,7 +138,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Turning point',
-          note: '"So now" marks a turn - the speaker returns to the present. The adult singer, with her professional voice, can no longer move him the way his mother\'s amateur playing does.',
+          note: '"So now" marks a turn - the speaker returns to the present. The singer in the present, however loudly she performs, can no longer move him the way his mother\'s playing at home once did.',
           color: '#a855f7',
         },
         {
@@ -153,12 +153,12 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Key quote',
-          note: '"Great black piano appassionato" is striking - the black colour, the Italian musical term "appassionato" (passionately), and the capital-P Piano all make the present-day instrument feel grand, theatrical, a bit overdone.',
+          note: '"Great black piano appassionato" is striking - the black colour and the Italian musical term "appassionato" (passionately) together make the present-day instrument feel grand, theatrical, a bit overdone.',
           color: '#f59e0b',
         },
         {
           type: 'Juxtaposition',
-          note: '"Great black piano" in the present is juxtaposed with the "tinkling piano" of childhood. One is professional and showy; the other is domestic and loving. The adult Lawrence prefers the second.',
+          note: '"Great black piano" in the present is juxtaposed with the "tinkling piano" of childhood. One is grand and showy; the other is domestic and loving. The adult Lawrence prefers the second.',
           color: '#10b981',
         },
       ],
@@ -246,7 +246,7 @@ Volta: The soft volta comes at the start of stanza 3 ("So now it is vain…"). T
     {
       quote: 'pressing the small, poised feet of a mother who smiles as she sings',
       analysis:
-        'The poem\'s warmest, most tactile memory. The child is physically touching his mother\'s feet as she plays. "Small, poised feet" is a careful, precise image - Lawrence sees her mother as a complete person, not a generic figure. "Smiles as she sings" is a picture of pure, unguarded happiness - the thing that the adult speaker most wants to belong to again.',
+        'The poem\'s warmest, most tactile memory. The child is physically touching his mother\'s feet as she plays. "Small, poised feet" is a careful, precise image - Lawrence sees his mother as a complete person, not a generic figure. "Smiles as she sings" is a picture of pure, unguarded happiness - the thing that the adult speaker most wants to belong to again.',
       themes: ['Mother-child bond', 'Memory', 'Innocence'],
     },
     {
@@ -264,7 +264,7 @@ Volta: The soft volta comes at the start of stanza 3 ("So now it is vain…"). T
     {
       quote: 'the great black piano appassionato',
       analysis:
-        'The present-day singer and her grand black piano are deliberately made to sound showy and theatrical. "Great" (large), "black" (dramatic) and the Italian musical term "appassionato" (passionately) all combine to give the present performance a showroom quality. The implicit contrast with the "tinkling piano" of his childhood is devastating: the professional performance cannot compete with the amateur, loving domesticity of his mother.',
+        'The present-day singer and her grand black piano are deliberately made to sound showy and theatrical. "Great" (large), "black" (dramatic) and the Italian musical term "appassionato" (passionately) all combine to give the present performance a showroom quality. The implicit contrast with the "tinkling piano" of his childhood is devastating: the grand present-day performance cannot compete with the loving domesticity of his mother at the piano.',
       themes: ['Present vs. past', 'Performance vs. sincerity'],
     },
     {
@@ -281,6 +281,10 @@ Volta: The soft volta comes at the start of stanza 3 ("So now it is vain…"). T
     },
   ],
 
+  // lineRef is an index into `lines` above, blank stanza-break rows included:
+  // the viewer highlights poem.lines[lineRef]. Four of these pointed at blank
+  // rows or the wrong line until 26 September 2026 (personification 4, now 5;
+  // juxtaposition 9, now 11; flood and circular structure 11, now 13).
   languageDevices: [
     {
       device: 'Metaphor (memory as vista)',
@@ -301,44 +305,46 @@ Volta: The soft volta comes at the start of stanza 3 ("So now it is vain…"). T
       example: 'the insidious mastery of song / Betrays me back',
       effect:
         'The song is personified as a manipulative, almost malicious agent - "insidious", "mastery", "betrays". Giving music a human will lets Lawrence excuse his own loss of control: he is not being weak, he is being overpowered. It also captures how sneaky nostalgia can be.',
-      lineRef: 4,
+      lineRef: 5,
     },
     {
       device: 'Juxtaposition',
       example: 'tinkling piano (memory) vs. great black piano appassionato (present)',
       effect:
-        'The two pianos are set directly against each other. "Tinkling" is light, amateur, domestic; "great black piano" is serious, theatrical, professional. The contrast makes the point that the present cannot compete with the past. The adjectives do all the work.',
-      lineRef: 9,
+        'The two pianos are set directly against each other. "Tinkling" is light, homely, domestic; "great black piano" is serious, theatrical, grand. The contrast makes the point that the present cannot compete with the past. The adjectives do all the work.',
+      lineRef: 11,
     },
     {
       device: 'Metaphor (flood)',
       example: 'Down in the flood of remembrance',
       effect:
         'Memory is imagined as a flood that knocks him off his feet. The flood metaphor is powerful because it is uncontrollable - you cannot resist water rising. Lawrence\'s "manhood is cast down" the way a building is cast down in a real flood. The metaphor makes the collapse feel natural, not weak.',
-      lineRef: 11,
+      lineRef: 13,
     },
     {
       device: 'Circular structure',
       example: 'A child sitting under the piano… I weep like a child for the past',
       effect:
         "The poem begins with an image of the child and ends with the adult speaker returning to the same state. The circularity is the poem's quiet argument: time does not move in a line. Memory and music can put you back exactly where you started.",
-      lineRef: 11,
+      lineRef: 13,
     },
   ],
 }
 
 /* ── Comparison poems ─────────────────────────────────────────────── */
 
-// Note: Piano is NOT in the current Edexcel IGCSE 4ET1 anthology (see scope notice
-// above). These comparisons are with poems that ARE in the 4ET1 anthology - useful
-// only as wider-reading practice, not as exam-ready pairings.
+// Piano IS a 4ET1 poem: Part 3 of the Pearson Edexcel International GCSE
+// English Anthology (Issue 8, February 2026), page 57. Until 26 September 2026
+// this page carried a banner saying it was not in the 4ET1 anthology, and it
+// paired Piano with An Unknown Girl, a Part 2 (Language A) poem that 4ET1 does
+// not set. Every pairing here must come from Part 3.
 const comparisons = [
   {
     title: 'If-',
     poet: 'Rudyard Kipling',
     href: '/igcse/edexcel/poetry/if',
     reason:
-      'Piano is the emotional opposite of If-. Where Kipling insists that a man must "keep his head" and never "breathe a word about your loss", Lawrence lets his "manhood" be "cast down" and weeps openly. Compare two very different models of masculine emotion.',
+      'Piano is the emotional opposite of If-. Where Kipling tells his son to "keep your head" and never "breathe a word about your loss", Lawrence lets his "manhood" be "cast down" and weeps openly. Compare two very different models of masculine emotion.',
     themes: ['Masculinity', 'Emotion', 'Self-control'],
   },
   {
@@ -350,12 +356,12 @@ const comparisons = [
     themes: ['Memory', 'Love', 'Loss'],
   },
   {
-    title: 'An Unknown Girl',
-    poet: 'Moniza Alvi',
-    href: '/igcse/edexcel/poetry/an-unknown-girl',
+    title: 'Poem at Thirty-Nine',
+    poet: 'Alice Walker',
+    href: '/revision/texts/poem-at-thirty-nine',
     reason:
-      'Both poems explore an adult’s longing for a moment of belonging. Lawrence is pulled back to childhood domesticity; Alvi is pulled into a culture she only partly belongs to. Compare how each speaker uses sensory memory to express identity and yearning.',
-    themes: ['Identity', 'Belonging', 'Memory'],
+      'Both poems are an adult’s memory of a parent. Lawrence is carried back by a song to his mother at the piano; Walker’s speaker, at thirty-nine, misses her father and recalls what he taught her, seeing how much of him lives on in her. Compare how each poet presents memory, longing and the bond between parent and child.',
+    themes: ['Memory', 'Parents', 'Longing'],
   },
 ]
 
@@ -392,25 +398,6 @@ export default function PianoPage() {
         </div>
       </div>
 
-      <section
-        aria-label="Anthology scope notice"
-        className="rounded-xl border border-amber-500/40 bg-amber-500/[0.08] p-5 text-body-sm text-card-foreground"
-      >
-        <div className="flex items-start gap-3">
-          <AlertTriangle className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
-          <div>
-            <p>
-              <strong className="text-foreground">
-                This poem is not in the current Edexcel IGCSE 4ET1 anthology.
-              </strong>{' '}
-              It may have been included in earlier syllabus cycles or is provided as wider-reading
-              content. Confirm via the official Pearson Edexcel anthology before relying on it for
-              assessment.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <InteractivePoemViewer poem={poem} />
 
       <StudyTools textName="Piano" textType="poem" examBoard="Edexcel" variant="compact" />
@@ -423,9 +410,8 @@ export default function PianoPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Piano is not in the current 4ET1 anthology, so these are wider-reading pairings rather
-          than exam-ready comparisons. Each poem listed here <em>is</em> in the 4ET1 anthology, so
-          you can practise the comparison skill while staying within the prescribed set.
+          Piano is one of the Part 3 poems in the Edexcel anthology, and the 4ET1 exam asks you to
+          compare two Part 3 poems. Each poem listed here is from Part 3 as well.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
