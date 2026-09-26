@@ -363,3 +363,35 @@ describe('a returning reader', () => {
     container.remove()
   })
 })
+
+/**
+ * On a phone the text has the width of the screen.
+ *
+ * WHAT BROKE (found 26 September 2026, there since 10 April). The contents
+ * sidebar's wrapper was a fixed w-64 at every width while the list inside it
+ * is hidden below lg, so on a 390px phone the text column was 68px wide, one
+ * word to a line, on every reader. jsdom has no layout, so this pins the
+ * mechanism: below lg the wrapper is not displayed at all, and the height cap
+ * sits on the row, not on the text, so the text fills its box.
+ */
+describe('the reader on a narrow screen', () => {
+  it('gives the contents column no width below lg, and caps the row, not the text', () => {
+    const { container } = render(
+      <InteractiveTextViewer
+        data={{
+          title: 'A Test',
+          author: 'An Author',
+          type: 'novella',
+          sections: [{ id: 'one', title: 'Chapter One', content: '<p>Text.</p>' }],
+        }}
+        storageKey="test-narrow"
+      />,
+    )
+    const text = container.querySelector('[data-reader-text]') as HTMLElement
+    const sidebar = text.previousElementSibling as HTMLElement
+    const row = text.parentElement as HTMLElement
+    expect(sidebar.className.split(/\s+/)).toEqual(expect.arrayContaining(['hidden', 'lg:block']))
+    expect(text.style.maxHeight).toBe('')
+    expect(row.style.maxHeight).toBe('70vh')
+  })
+})

@@ -491,7 +491,7 @@ function SectionSidebar({
   const t = useT()
   return (
     <nav
-      className="hidden lg:flex flex-col gap-0.5 overflow-y-auto border-e border-border bg-card p-3"
+      className="hidden lg:flex min-h-full flex-col gap-0.5 border-e border-border bg-card p-3"
       aria-label={t('text_viewer.section_nav_label')}
     >
       <h2 className="mb-2 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -1107,10 +1107,19 @@ function InteractiveTextViewer({
         />
       </div>
 
-      {/* ── Body: sidebar + reader ──────────────────────────────────────── */}
-      <div className="flex flex-1 overflow-hidden">
-        {/* Desktop sidebar */}
-        <div className="w-64 flex-shrink-0 overflow-hidden">
+      {/* ── Body: sidebar + reader ──────────────────────────────────────────
+          THE DEFECT, found 26 September 2026 and there since 10 April. The
+          sidebar's wrapper was a fixed w-64 at every width while the list
+          inside it is hidden below lg, so on a 390px phone 256px of empty
+          column sat beside the text, which got 68px: one word to a line, cut
+          off at the edge, on every reader. And the 70vh cap was on the text
+          alone while a long contents list set the height of the row, so on a
+          computer the text stopped two thirds of the way down its box above an
+          empty band. The wrapper now exists only from lg, and the cap is on
+          the row: the text fills it, and a long contents list scrolls in it. */}
+      <div className="flex flex-1 overflow-hidden" style={{ maxHeight: '70vh' }}>
+        {/* Desktop sidebar (the dropdown above serves narrower screens) */}
+        <div className="hidden w-64 flex-shrink-0 overflow-y-auto lg:block">
           <SectionSidebar
             sections={data.sections}
             activeSectionId={activeSectionId}
@@ -1122,8 +1131,8 @@ function InteractiveTextViewer({
         {/* Reading area */}
         <div
           ref={contentRef}
-          className="flex-1 overflow-y-auto px-4 py-6 sm:px-8 md:px-12 lg:px-16"
-          style={{ maxHeight: '70vh' }}
+          data-reader-text=""
+          className="min-w-0 flex-1 overflow-y-auto px-4 py-6 sm:px-8 md:px-12 lg:px-16"
         >
           {data.sections.map((section) => (
             <section
