@@ -9,11 +9,13 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { t } from '@/lib/i18n/t'
+import { StoryVisuals } from '@/components/study-guide/visuals/story-visuals'
+import { guide as studyGuide } from '@/data/study-guides/jane-eyre'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Jane Eyre Key Chapters Analysed | The English Hub',
     description:
-      'In-depth analysis of the most important chapters in Jane Eyre by Charlotte Bronte for AQA and OCR GCSE English Literature.',
+      'In-depth analysis of the most important chapters in Jane Eyre by Charlotte Bronte for AQA, Edexcel, OCR and Eduqas GCSE English Literature.',
     images: [
       {
         url: '/api/og?title=Jane+Eyre+Key+Chapters+Analysed+%7C+The+English+Hub',
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
   },
   title: 'Jane Eyre Key Chapters Analysed',
   description:
-    'In-depth analysis of the most important chapters in Jane Eyre by Charlotte Bronte for AQA and OCR GCSE English Literature.',
+    'In-depth analysis of the most important chapters in Jane Eyre by Charlotte Bronte for AQA, Edexcel, OCR and Eduqas GCSE English Literature.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/jane-eyre/chapters',
   },
@@ -54,11 +56,6 @@ const chapters: ChapterAnalysis[] = [
     ],
     keyQuotes: [
       {
-        quote: '"I was a discord in Gateshead Hall; I was like nobody there."',
-        analysis:
-          'The musical metaphor of "discord" suggests Jane disrupts the harmony of the household simply by existing. This positions her as fundamentally incompatible with the Reed family, foreshadowing her lifelong search for belonging. The phrase "like nobody" conveys both isolation and erasure of identity.',
-      },
-      {
         quote:
           '"You are like a murderer -- you are like a slave-driver -- you are like the Roman emperors!"',
         analysis:
@@ -81,13 +78,18 @@ const chapters: ChapterAnalysis[] = [
     ],
     keyQuotes: [
       {
+        quote: '"I was a discord in Gateshead Hall; I was like nobody there."',
+        analysis:
+          'The musical metaphor of "discord" suggests Jane disrupts the harmony of the household simply by existing. This positions her as fundamentally incompatible with the Reed family, foreshadowing her lifelong search for belonging. The phrase "like nobody" conveys both isolation and erasure of identity.',
+      },
+      {
         quote:
           '"Unjust! -- unjust!" said my reason, forced by the agonising stimulus into precocious though transitory power.',
         analysis:
           'The exclamatory repetition of "Unjust" captures the raw intensity of Jane\'s moral outrage. The narrator\'s self-aware description of her "reason" as "precocious" shows the adult Jane reflecting on the child\'s unusual intellectual maturity. This passage crystallises the novel\'s central tension: Jane perceives injustice clearly but lacks the social power to challenge it.',
       },
       {
-        quote: '"I was a heterogeneous thing... a noxious thing."',
+        quote: '"a heterogeneous thing... a noxious thing"',
         analysis:
           'Jane internalises the Reed family\'s view of her as something alien and poisonous. The dehumanising word "thing" (used twice) reflects how the powerless adopt the language of their oppressors. Bronte uses this moment to show the psychological damage of being told you do not belong.',
       },
@@ -124,7 +126,7 @@ const chapters: ChapterAnalysis[] = [
       "This chapter is excellent for exploring the theme of independence and Jane's development as a speaker. Compare her verbal power here with her later confrontations with Rochester and St John.",
   },
   {
-    chapter: 'Chapters 5-8',
+    chapter: 'Chapters 5-9',
     title: 'Lowood School',
     significance:
       "Lowood represents a new form of institutional oppression, governed by the hypocritical Brocklehurst, who starves the girls while preaching Christian humility. However, it also provides Jane with her first meaningful relationships: Helen Burns and Miss Temple. Helen's stoic Christianity offers Jane an alternative to her own fierce resistance, while Miss Temple models female authority grounded in compassion rather than cruelty. The typhus epidemic that kills Helen exposes the material conditions of poverty and class inequality that Bronte critiques throughout the novel.",
@@ -133,7 +135,7 @@ const chapters: ChapterAnalysis[] = [
       "Brocklehurst publicly humiliates Jane by calling her a liar, echoing Mrs Reed's accusation.",
       'Jane befriends Helen Burns, who teaches her patience and Christian forgiveness.',
       "Miss Temple clears Jane's name by writing to Mr Lloyd, restoring her reputation.",
-      "A typhus epidemic sweeps Lowood; Helen dies of consumption in Jane's arms.",
+      'A typhus epidemic sweeps Lowood; Helen dies of consumption in the night, while Jane sleeps beside her with her arms round her.',
     ],
     keyQuotes: [
       {
@@ -231,10 +233,9 @@ const chapters: ChapterAnalysis[] = [
     ],
     keyQuotes: [
       {
-        quote:
-          '"I was no longer the same individual: I had become another person... I felt myself another woman."',
+        quote: '"It was a grand boon doubtless; and independence would be glorious"',
         analysis:
-          'Jane\'s transformation after inheriting money shows how financial independence reshapes identity. The repetition of "another" signals genuine change rather than superficial adjustment. Bronte makes a pointed social observation: Jane\'s character has not changed, but money has given her the freedom to express the self she always was.',
+          'Jane\'s response to her inheritance shows how financial independence reshapes her prospects. The word "glorious" shows how much independence means to her, even though the legacy comes "to my isolated self" rather than to a family. Bronte makes a pointed social observation: Jane\'s character has not changed, but money has given her the freedom to express the self she always was.',
       },
       {
         quote:
@@ -253,7 +254,7 @@ const chapters: ChapterAnalysis[] = [
       'The final chapter resolves every tension in the novel. Jane returns to find Thornfield burned down and Rochester blinded and maimed. Their reunion reverses the power dynamic: Jane now has money and independence, while Rochester is physically dependent. Bronte is careful to establish that Jane marries Rochester as an equal, not a subordinate. The famous opening line of the chapter -- "Reader, I married him" -- uses the active voice to make Jane the agent of her own story. Rochester\'s partial recovery of sight when their first child is born suggests that moral redemption can restore what sin destroyed.',
     keyEvents: [
       'Jane arrives at Thornfield to find it a blackened ruin, destroyed by a fire set by Bertha Mason.',
-      'She learns that Bertha died in the fire and that Rochester lost his sight and one hand trying to save the servants.',
+      'She learns that Bertha died in the fire and that Rochester, having got the servants out and gone back for Bertha, lost his sight and one hand when the house fell in as he came down the great staircase.',
       'Jane finds Rochester at Ferndean Manor and they are reunited.',
       'They marry as equals; Jane has her inheritance and Rochester respects her independence.',
       'Rochester eventually recovers partial sight in one eye; they have a son.',
@@ -268,7 +269,7 @@ const chapters: ChapterAnalysis[] = [
         quote:
           '"I am my husband\'s life as fully as he is mine... we are precisely suited in character -- perfect concord is the result."',
         analysis:
-          'Jane describes a marriage of absolute equality and mutual dependence. The phrase "precisely suited" suggests complementarity rather than hierarchy, and "perfect concord" recalls the "discord" of Chapter 1, bringing the novel full circle. Jane has found the belonging she sought from the first page, but only on terms that preserve her selfhood.',
+          'Jane describes a marriage of absolute equality and mutual dependence. The phrase "precisely suited" suggests complementarity rather than hierarchy, and "perfect concord" recalls the "discord" of Chapter 2, bringing the novel full circle. Jane has found the belonging she sought from the first page, but only on terms that preserve her selfhood.',
       },
     ],
     examTip:
@@ -316,7 +317,7 @@ export default async function JaneEyreChaptersPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              AQA / OCR
+              AQA / Edexcel / OCR / Eduqas / AQA A-Level / OCR A-Level
             </Badge>
           </div>
 
@@ -331,6 +332,9 @@ export default async function JaneEyreChaptersPage() {
           </p>
         </div>
       </section>
+
+      {/* The key scenes, part by part, animated. See scripts/mount-story-visuals.mjs. */}
+      <StoryVisuals guide={studyGuide} scenesOnly />
 
       {/* Chapters */}
       {chapters.map((ch, i) => (

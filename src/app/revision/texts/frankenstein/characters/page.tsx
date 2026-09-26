@@ -87,7 +87,7 @@ const CHARACTERS: CharacterStudy[] = [
       },
       {
         quote:
-          'I ought to be thy Adam, but I am rather the fallen angel, whom thou drivest from joy for no misdeed.',
+          'I ought to be thy Adam; but I am rather the fallen angel, whom thou drivest from joy for no misdeed.',
         context: 'Chapter 10 -- addressing Victor',
         analysis:
           'The allusion to Paradise Lost positions Victor as a negligent God. The crucial phrase "for no misdeed" distinguishes the Creature from Milton\'s Satan: Satan fell through pride and rebellion, but the Creature was cast out despite his innocence. This inverts the expected moral framework and implicates the creator, not the creation.',
@@ -248,7 +248,7 @@ export default async function FrankensteinCharactersPage() {
               {await t('rev.texts.common.character_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              AQA / Edexcel / OCR
+              AQA / Edexcel / Edexcel IAL / Edexcel A-Level / OCR A-Level
             </Badge>
           </div>
 

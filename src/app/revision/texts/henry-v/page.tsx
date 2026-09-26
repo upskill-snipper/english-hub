@@ -38,7 +38,7 @@ const data: TextGuideData = {
   author: 'William Shakespeare',
   year: 'c. 1599',
   category: 'Play',
-  badge: 'Eduqas',
+  badge: 'Wider reading',
   intro:
     'Henry V is the final play in Shakespeare\u2019s second Henriad, following Richard II and the two parts of Henry IV. Written and first performed around 1599, it dramatises the young king\u2019s invasion of France and his unlikely victory at the Battle of Agincourt in 1415. The play is famous for its soaring patriotic rhetoric \u2014 the St Crispin\u2019s Day speech, the rallying cry at Harfleur \u2014 but it also interrogates the cost of war, the theatricality of kingship, and the moral ambiguity of a ruler who threatens civilian slaughter one scene and walks disguised among his troops the next. A Chorus opens each act, apologising for the inadequacy of the stage and inviting the audience to piece out the play\u2019s imperfections with their thoughts. The result is a drama that is at once a celebration of English national identity and a sustained examination of the rhetoric that creates it.',
   quickInfo: {
@@ -50,14 +50,14 @@ const data: TextGuideData = {
   plotSummary: [
     'The play opens with the Chorus inviting the audience to imagine the vast sweep of events the stage cannot show. In the first act, the Archbishop of Canterbury and the Bishop of Ely discuss a bill that threatens church lands, and Canterbury offers Henry a detailed legal justification (the Salic law speech) for pressing his claim to the French throne. The young king, newly transformed from the tavern-haunting Prince Hal of Henry IV, questions the clergy closely before committing to war. A contemptuous gift of tennis balls from the Dauphin of France seals Henry\u2019s resolve, and he promises that the Dauphin\u2019s mockery will be answered with an invasion.',
     'Act 2 moves between the court and the Eastcheap tavern world of Henry\u2019s old companions. Bardolph, Pistol and Nym \u2014 veterans of the Henry IV plays \u2014 prepare to join the French campaign, while Mistress Quickly reports the offstage death of Sir John Falstaff, Henry\u2019s former surrogate father, now rejected and dying of a broken heart. At Southampton, Henry exposes and condemns three English traitors \u2014 Cambridge, Scroop and Grey \u2014 who have been bribed by France to kill him. The army sails, and Act 3 opens at the siege of Harfleur. Henry rouses his soldiers with the famous "Once more unto the breach, dear friends" before the walls, and when the town hesitates he delivers a chilling speech threatening the massacre of infants and the rape of women if Harfleur does not surrender. The governor yields.',
-    'As dysentery thins the English ranks, the exhausted army marches towards Calais and is intercepted by a vastly larger French force at Agincourt. The Chorus before Act 4 describes the night before the battle, with the "creeping murmur and the poring dark" of the two camps. Henry borrows a cloak and walks in disguise among his soldiers, arguing with the common man Williams about a king\u2019s responsibility for the souls of his men. Alone, he delivers the "Upon the king!" soliloquy, the most introspective speech of the play, on the burden of ceremony and command. At dawn he answers his cousin Westmoreland\u2019s wish for more troops with the St Crispin\u2019s Day speech \u2014 "We few, we happy few, we band of brothers" \u2014 promising that those who fight with him will be remembered forever.',
-    'The English archers destroy the French cavalry and the battle becomes a slaughter. When the French regroup and attack the English baggage train, killing the boys left to guard it, Henry orders the execution of the French prisoners \u2014 a decision the play presents without comment. The losses, as announced, are grotesquely one-sided: thousands of French nobility dead, only a handful of English. Henry credits God for the victory and forbids boasting. In Act 5 the Chorus carries the audience back to England and then across to France for the peace treaty. Henry woos the French Princess Katherine in a mixture of broken French and plain soldier\u2019s English, agreeing the marriage that will make him heir to the French throne. The Chorus closes the play with a sonnet reminding the audience that Henry\u2019s triumph was short-lived: his son Henry VI would lose all his father had won.',
+    'As dysentery thins the English ranks, the exhausted army marches towards Calais and is intercepted by a vastly larger French force at Agincourt. The Chorus before Act 4 describes the night before the battle, with the "creeping murmur and the poring dark" of the two camps. Henry borrows a cloak and walks in disguise among his soldiers, arguing with the common man Williams about a king\u2019s responsibility for the souls of his men. Alone, he delivers the "Upon the King!" soliloquy, the most introspective speech of the play, on the burden of ceremony and command. At dawn he answers his cousin Westmoreland\u2019s wish for more troops with the St Crispin\u2019s Day speech \u2014 "We few, we happy few, we band of brothers" \u2014 promising that those who fight with him will be remembered forever.',
+    'The English archers destroy the French cavalry and the battle becomes a slaughter. When a new alarm signals that the French have reinforced their scattered men, Henry orders every soldier to kill his prisoners. The next scene reports that French runaways have killed the boys guarding the English baggage; Gower calls the order the act of a gallant king, and Fluellen condemns the boys\u2019 killing as against the law of arms. The losses, as announced, are grotesquely one-sided: thousands of French nobility dead, only a handful of English. Henry credits God for the victory and forbids boasting. In Act 5 the Chorus carries the audience back to England and then across to France for the peace treaty. Henry woos the French Princess Katherine in a mixture of broken French and plain soldier\u2019s English, agreeing the marriage that will make him heir to the French throne. The Chorus closes the play with a sonnet reminding the audience that Henry\u2019s triumph was short-lived: his son Henry VI would lose all his father had won.',
   ],
   characters: [
     {
       name: 'King Henry V',
       role: 'King of England; the protagonist',
-      body: 'Henry is the reformed Prince Hal of the Henry IV plays, now a king who combines political cunning, religious conviction and extraordinary rhetorical power. Shakespeare presents him as both the ideal warrior-king celebrated by the Chorus and a more ambiguous figure capable of threatening civilian atrocity at Harfleur, ordering the execution of prisoners, and placing responsibility for the war on the French and the clergy. His night-time soliloquy "Upon the king!" reveals the private burden beneath the public performance, while the wooing scene with Katherine shows a softer, self-consciously plain-speaking register.',
+      body: 'Henry is the reformed Prince Hal of the Henry IV plays, now a king who combines political cunning, religious conviction and extraordinary rhetorical power. Shakespeare presents him as both the ideal warrior-king celebrated by the Chorus and a more ambiguous figure capable of threatening civilian atrocity at Harfleur, ordering the execution of prisoners, and placing responsibility for the war on the French and the clergy. His night-time soliloquy "Upon the King!" reveals the private burden beneath the public performance, while the wooing scene with Katherine shows a softer, self-consciously plain-speaking register.',
     },
     {
       name: 'The Chorus',
@@ -72,17 +72,17 @@ const data: TextGuideData = {
     {
       name: 'Princess Katherine',
       role: 'Daughter of the French king; Henry\u2019s eventual wife',
-      body: 'Katherine appears in two scenes: a comic English lesson with her lady-in-waiting Alice, and the final wooing scene. Shakespeare gives her limited French dialogue with bawdy linguistic comedy, but also a quiet intelligence that sees through Henry\u2019s charm. Her acceptance of the marriage is political \u2014 her father has already signed the treaty \u2014 and her character raises questions about the human cost of dynastic conquest that the triumphal Chorus cannot address.',
+      body: 'Katherine appears in two scenes: a comic English lesson with her lady-in-waiting Alice, and the final wooing scene. Shakespeare gives her limited French dialogue with bawdy linguistic comedy, but also a quiet intelligence that sees through Henry\u2019s charm. Her acceptance of the marriage is political: she is Henry\u2019s "capital demand" in the treaty her father and his council are reviewing while Henry woos her, and her character raises questions about the human cost of dynastic conquest that the triumphal Chorus cannot address.',
     },
     {
       name: 'Fluellen',
       role: 'A Welsh captain in Henry\u2019s army',
-      body: 'Fluellen is pedantic, proud and fiercely loyal, forever comparing Henry\u2019s campaigns to the classical wars of Alexander. His Welsh accent and scholarly enthusiasm provide comic energy, but Shakespeare also uses him to celebrate Henry as a multi-national British king: the English, Welsh, Scottish and Irish captains serve side by side. His insistence that Henry punish Bardolph for theft, despite the old friendship, shows the army\u2019s harsh discipline.',
+      body: 'Fluellen is pedantic, proud and fiercely loyal, forever comparing Henry\u2019s campaigns to the classical wars of Alexander. His Welsh accent and scholarly enthusiasm provide comic energy, but Shakespeare also uses him to celebrate Henry as a multi-national British king: the English, Welsh, Scottish and Irish captains serve side by side. His refusal to plead for Bardolph, whom Exeter has sentenced to death for theft, and Henry\u2019s approval of the sentence despite their old friendship, show the army\u2019s harsh discipline.',
     },
     {
       name: 'Pistol',
       role: 'A braggart soldier; survivor of the Eastcheap tavern world',
-      body: 'Pistol speaks in bombastic parody-verse and carries the Falstaffian comic energy into the French campaign. He cheats, loots and boasts his way through the play, is humiliated by Fluellen into eating a leek, and finally slinks home after news that his wife Mistress Quickly has died. Shakespeare uses him to show the ugly underside of war: the common soldier\u2019s motives are plunder and survival, not the Chorus\u2019s glory.',
+      body: 'Pistol speaks in bombastic parody-verse and carries the Falstaffian comic energy into the French campaign. He cheats, loots and boasts his way through the play, is humiliated by Fluellen into eating a leek, and finally slinks home after news that "my Doll is dead" (some editions read "my Nell", which would make it his wife, Mistress Quickly). Shakespeare uses him to show the ugly underside of war: the common soldier\u2019s motives are plunder and survival, not the Chorus\u2019s glory.',
     },
     {
       name: 'Exeter',
@@ -93,7 +93,7 @@ const data: TextGuideData = {
   themes: [
     {
       title: 'Kingship and leadership',
-      body: 'Henry V is Shakespeare\u2019s most sustained study of what it means to be a king. Henry is shown as deliberative in council, terrifying in the field, charismatic with his soldiers and guarded in private. The "Upon the king!" soliloquy exposes the gap between the ceremonial body and the suffering man beneath it, while the disguised conversation with Williams dramatises the question of a king\u2019s responsibility for the souls of his men. Shakespeare does not settle the question of whether Henry is an ideal ruler or a ruthless political actor, and the play\u2019s power lies in holding both possibilities open.',
+      body: 'Henry V is Shakespeare\u2019s most sustained study of what it means to be a king. Henry is shown as deliberative in council, terrifying in the field, charismatic with his soldiers and guarded in private. The "Upon the King!" soliloquy exposes the gap between the ceremonial body and the suffering man beneath it, while the disguised conversation with Williams dramatises the question of a king\u2019s responsibility for the souls of his men. Shakespeare does not settle the question of whether Henry is an ideal ruler or a ruthless political actor, and the play\u2019s power lies in holding both possibilities open.',
     },
     {
       title: 'War and its cost',
@@ -101,7 +101,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Nationalism and English identity',
-      body: 'Henry V is the most overtly patriotic of Shakespeare\u2019s histories, and its St Crispin\u2019s Day rhetoric has been quoted in English propaganda from the Armada to the Second World War. Yet the play\u2019s nationalism is carefully constructed rather than simply asserted. The multi-national army \u2014 English, Welsh, Scottish, Irish \u2014 presents a British rather than narrowly English identity, while the French characters are given their own language and dignity. The final Chorus\u2019s reminder that Henry VI lost France deflates the triumph, inviting the audience to view national glory as a performance that cannot be sustained.',
+      body: 'Henry V is the most overtly patriotic of Shakespeare\u2019s histories, and its St Crispin\u2019s Day rhetoric has been quoted in English propaganda as late as the Second World War. Yet the play\u2019s nationalism is carefully constructed rather than simply asserted. The multi-national army \u2014 English, Welsh, Scottish, Irish \u2014 presents a British rather than narrowly English identity, while the French characters are given their own language and dignity. The final Chorus\u2019s reminder that Henry VI lost France deflates the triumph, inviting the audience to view national glory as a performance that cannot be sustained.',
     },
     {
       title: 'Performance and persuasion',
@@ -109,7 +109,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Honour',
-      body: 'Honour runs through the play in competing forms: the aristocratic honour the French lords defend with their lives, the soldierly honour Henry offers his men ("He which hath no stomach to this fight, / Let him depart"), and the tavern-world scepticism about honour inherited from Falstaff in Henry IV Part 1. Shakespeare sets Fluellen\u2019s scholarly honour, Williams\u2019s blunt soldier\u2019s honour and the Dauphin\u2019s vain aristocratic honour against each other, letting the audience see how the same word covers radically different values.',
+      body: 'Honour runs through the play in competing forms: the aristocratic honour the French lords defend with their lives, the soldierly honour Henry offers his men ("he which hath no stomach to this fight, / Let him depart"), and the tavern-world scepticism about honour inherited from Falstaff in Henry IV Part 1. Shakespeare sets Fluellen\u2019s scholarly honour, Williams\u2019s blunt soldier\u2019s honour and the Dauphin\u2019s vain aristocratic honour against each other, letting the audience see how the same word covers radically different values.',
     },
     {
       title: 'Divine right and providence',
@@ -118,26 +118,26 @@ const data: TextGuideData = {
   ],
   historicalContext: [
     'The historical Battle of Agincourt took place on 25 October 1415, during the Hundred Years\u2019 War between England and France. Henry V, aged around 28, had landed in Normandy earlier that year and captured Harfleur after a gruelling siege. His army, reduced by dysentery, was intercepted on a muddy field near the village of Agincourt by a French force perhaps three times its size. The English longbow and the narrow, waterlogged terrain produced a one-sided slaughter of the French nobility. The victory made Henry a legendary figure in English memory and eventually led, by the Treaty of Troyes in 1420, to his marriage to Princess Katherine of Valois and his recognition as heir to the French throne. He died of dysentery in 1422, and his infant son Henry VI inherited both crowns but lost France within a generation \u2014 the collapse that Shakespeare\u2019s closing Chorus anticipates.',
-    'Shakespeare\u2019s primary source was Raphael Holinshed\u2019s Chronicles of England, Scotland, and Ireland (second edition, 1587), which he had already used for Richard II and the Henry IV plays. Holinshed supplied the Salic law arguments, the Southampton plot, the siege of Harfleur, the Agincourt casualty figures and the Treaty of Troyes. Shakespeare also drew on Edward Hall\u2019s Union of the Two Noble Families (1548) and on a popular earlier play, The Famous Victories of Henry V, which survives only in a corrupt 1598 text but supplied the Eastcheap characters and the tennis-ball episode. Shakespeare compresses the campaign\u2019s timeline, invents the wooing scene and adds the Chorus, turning chronicle material into theatre.',
-    'The play was written in 1599, late in the reign of Elizabeth I, at a moment of national anxiety. England faced the threat of a renewed Spanish invasion, and the Earl of Essex was leading an ill-fated expedition against rebels in Ireland \u2014 an expedition the Chorus before Act 5 explicitly compares to Henry\u2019s return from France. An Elizabethan audience watching Henry V in the newly opened Globe Theatre would have seen both a celebration of English martial identity and a commentary on their own uncertain campaigns. The Chorus convention \u2014 a single speaker who addresses the audience directly between acts \u2014 was unusual for the public stage, and Shakespeare uses it to draw attention to the limits of theatrical representation, asking the audience to "piece out our imperfections with your thoughts" and so become collaborators in the nation-building the play performs.',
+    'Shakespeare\u2019s primary source was Raphael Holinshed\u2019s Chronicles of England, Scotland, and Ireland (second edition, 1587), which he had already used for Richard II and the Henry IV plays. Holinshed supplied the Salic law arguments, the Southampton plot, the siege of Harfleur, the Agincourt casualty figures and the Treaty of Troyes. Shakespeare also drew on Edward Hall\u2019s Union of the Two Noble Families (1548) and on a popular earlier play, The Famous Victories of Henry V, which survives only in a corrupt 1598 text but supplied the Eastcheap characters and the tennis-ball episode. Shakespeare compresses the campaign\u2019s timeline, reworks the wooing scene and adds the Chorus, turning chronicle material into theatre.',
+    'The play was written in 1599, late in the reign of Elizabeth I, at a moment of national anxiety. England faced the threat of a renewed Spanish invasion, and the Earl of Essex was leading an ill-fated expedition against rebels in Ireland. The Chorus before Act 5 compares Henry\u2019s return from France to the hoped-for return of "the general of our gracious empress" from Ireland, usually taken to mean Essex. An Elizabethan audience watching Henry V in 1599, perhaps at the newly opened Globe Theatre or at the Curtain, would have seen both a celebration of English martial identity and a commentary on their own uncertain campaigns. The Chorus convention \u2014 a single speaker who addresses the audience directly between acts \u2014 was unusual for the public stage, and Shakespeare uses it to draw attention to the limits of theatrical representation, asking the audience to "piece out our imperfections with your thoughts" and so become collaborators in the nation-building the play performs.',
   ],
   quotations: [
     {
       quote:
-        '"O for a muse of fire, that would ascend / The brightest heaven of invention, / A kingdom for a stage, princes to act / And monarchs to behold the swelling scene!"',
+        '"O for a Muse of fire, that would ascend / The brightest heaven of invention, / A kingdom for a stage, princes to act, / And monarchs to behold the swelling scene!"',
       who: 'Chorus \u2014 Prologue',
       analysis:
         'The opening lines ask for epic poetic power while apologising for the bare Globe stage, framing the play\u2019s self-conscious theatricality from the first moment.',
     },
     {
       quote:
-        '"Piece out our imperfections with your thoughts; / Into a thousand parts divide one man, / And make imaginary puissance."',
+        '"Piece out our imperfections with your thoughts. / Into a thousand parts divide one man, / And make imaginary puissance."',
       who: 'Chorus \u2014 Prologue',
       analysis:
         'The Chorus invites the audience to collaborate in creating the play\u2019s world, making imagination itself a patriotic act and drawing attention to the artifice of history.',
     },
     {
-      quote: '"Consideration like an angel came / And whipp\u2019d the offending Adam out of him."',
+      quote: '"Consideration like an angel came / And whipped th\u2019 offending Adam out of him."',
       who: 'Archbishop of Canterbury \u2014 Act 1, Scene 1',
       analysis:
         'Canterbury describes Henry\u2019s transformation from Prince Hal into king in biblical terms, establishing the play\u2019s interest in Henry as a reformed and providentially chosen ruler.',
@@ -151,21 +151,21 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"Once more unto the breach, dear friends, once more; / Or close the wall up with our English dead."',
+        '"Once more unto the breach, dear friends, once more, / Or close the wall up with our English dead."',
       who: 'King Henry \u2014 Act 3, Scene 1',
       analysis:
         'The Harfleur rallying cry fuses exhortation with the stark image of English bodies as building material, showing Henry\u2019s ability to make sacrifice sound heroic.',
     },
     {
       quote:
-        '"I see you stand like greyhounds in the slips, / Straining upon the start. The game\u2019s afoot: / Follow your spirit, and upon this charge / Cry \u2018God for Harry, England, and Saint George!\u2019"',
+        '"I see you stand like greyhounds in the slips, / Straining upon the start. The game\u2019s afoot! / Follow your spirit, and upon this charge / Cry, \u2018God for Harry! England and Saint George!\u2019"',
       who: 'King Henry \u2014 Act 3, Scene 1',
       analysis:
         'The hunting imagery turns soldiers into hounds and war into sport, while the rallying cry fuses monarch, nation and saint into a single patriotic utterance.',
     },
     {
       quote:
-        '"Take pity of your town and of your people / Whiles yet my soldiers are in my command ... / Your naked infants spitted upon pikes."',
+        '"Take pity of your town and of your people, / Whiles yet my soldiers are in my command ... / Your naked infants spitted upon pikes."',
       who: 'King Henry \u2014 Act 3, Scene 3',
       analysis:
         'Henry\u2019s threat to the governor of Harfleur shows the dark counterpart to the heroic rhetoric: the same voice that rallies the "band of brothers" can threaten civilian atrocity.',
@@ -179,28 +179,28 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"For he to-day that sheds his blood with me / Shall be my brother; be he ne\u2019er so vile, / This day shall gentle his condition."',
+        '"For he today that sheds his blood with me / Shall be my brother; be he ne\u2019er so vile, / This day shall gentle his condition."',
       who: 'King Henry \u2014 Act 4, Scene 3',
       analysis:
         'Part of the St Crispin\u2019s Day speech, promising that shared sacrifice dissolves class distinction \u2014 a radical claim delivered as battlefield motivation.',
     },
     {
       quote:
-        '"We few, we happy few, we band of brothers; / For he to-day that sheds his blood with me / Shall be my brother."',
+        '"We few, we happy few, we band of brothers. / For he today that sheds his blood with me / Shall be my brother."',
       who: 'King Henry \u2014 Act 4, Scene 3',
       analysis:
         'The most famous line in the play turns numerical disadvantage into moral superiority, and has been quoted in English military rhetoric ever since.',
     },
     {
       quote:
-        '"And gentlemen in England now a-bed / Shall think themselves accurs\u2019d they were not here, / And hold their manhoods cheap whiles any speaks / That fought with us upon Saint Crispin\u2019s day."',
+        '"And gentlemen in England now abed / Shall think themselves accurs\u2019d they were not here, / And hold their manhoods cheap whiles any speaks / That fought with us upon Saint Crispin\u2019s day."',
       who: 'King Henry \u2014 Act 4, Scene 3',
       analysis:
         'Henry promises enduring fame as the reward for risk, using the imagined envy of future generations to bind his soldiers to the coming battle.',
     },
     {
       quote:
-        '"Upon the king! Let us our lives, our souls, / Our debts, our careful wives, / Our children, and our sins, lay on the king!"',
+        '"Upon the King! Let us our lives, our souls, / Our debts, our careful wives, / Our children, and our sins lay on the King!"',
       who: 'King Henry \u2014 Act 4, Scene 1',
       analysis:
         'Alone at night in the borrowed cloak, Henry voices the private burden of ceremony: every subject\u2019s suffering is laid on his conscience, exposing the hollow cost of royal public performance.',
@@ -213,7 +213,7 @@ const data: TextGuideData = {
         'Henry displaces responsibility for the threatened sack of Harfleur onto its defenders, a rhetorical manoeuvre that raises hard questions about the ethics of his war.',
     },
     {
-      quote: '"If his cause be not good, the king himself hath a heavy reckoning to make."',
+      quote: '"But if the cause be not good, the King himself hath a heavy reckoning to make."',
       who: 'Williams \u2014 Act 4, Scene 1',
       analysis:
         'The common soldier argues with the disguised Henry that a king bears the souls of all his dead, forcing Henry to defend the morality of his war on equal terms.',
@@ -232,14 +232,14 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"\u2019A made a finer end, and went away and it had been any christom child ... his nose was as sharp as a pen, and \u2019a babbled of green fields."',
+        '"\u2019A made a finer end and went away an it had been any christom child ... his nose was as sharp as a pen, and \u2019a babbled of green fields."',
       who: 'Mistress Quickly \u2014 Act 2, Scene 3',
       analysis:
         'Mistress Quickly\u2019s report of Falstaff\u2019s death is one of the play\u2019s most tender moments, quietly indicting the king who rejected his old companion and carrying the Henry IV plays into Henry V.',
     },
     {
       quote:
-        '"Small time, but in that small most greatly lived / This star of England ... / Whose state so many had the managing / That they lost France and made his England bleed."',
+        '"Small time, but in that small most greatly lived / This star of England ... / Whose state so many had the managing, / That they lost France and made his England bleed."',
       who: 'Chorus \u2014 Epilogue',
       analysis:
         'The final sonnet undercuts the play\u2019s triumph by reminding the audience that Henry VI would lose everything his father won, framing national glory as fleeting.',
@@ -282,7 +282,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"Once more unto the breach, dear friends, once more; / Or close the wall up with our English dead" is delivered before the walls of Harfleur in Act 3, Scene 1.',
+      '"Once more unto the breach, dear friends, once more, / Or close the wall up with our English dead" is delivered before the walls of Harfleur in Act 3, Scene 1.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -390,7 +390,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'h5-11',
-    question: 'What does the "Upon the king!" soliloquy reveal?',
+    question: 'What does the "Upon the King!" soliloquy reveal?',
     type: 'multiple-choice',
     options: [
       'Henry\u2019s joy at being king',
@@ -449,7 +449,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Pistol\u2019s bombastic parody-verse, his looting, his humiliation by Fluellen and his final sneaking home after Mistress Quickly\u2019s death give the play its anti-heroic counter-voice.',
+      'Pistol\u2019s bombastic parody-verse, his looting, his humiliation by Fluellen and his final sneaking home after news that "my Doll is dead" give the play its anti-heroic counter-voice.',
     topic: 'Characters',
     difficulty: 'higher',
   },
@@ -466,7 +466,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Fluellen (Welsh), Gower (English), Jamy (Scottish) and Macmorris (Irish) serve Henry side by side. Shakespeare uses them to present a unified British army in a play written during a Scottish king\u2019s eventual succession.',
+      'Fluellen (Welsh), Gower (English), Jamy (Scottish) and Macmorris (Irish) serve Henry side by side. Shakespeare uses them to present a unified British army in a play written four years before James VI of Scotland succeeded to the English throne.',
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -498,7 +498,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The wooing happens after the Treaty of Troyes is effectively signed, so Katherine has no real choice. Henry\u2019s self-conscious "plain soldier" performance is another rhetorical mode in a play obsessed with persuasion.',
+      'The wooing happens while the French King and his council review the treaty, in which Katherine is Henry\u2019s "capital demand", so she has no real choice. Henry\u2019s self-conscious "plain soldier" performance is another rhetorical mode in a play obsessed with persuasion.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -508,7 +508,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It abolishes the aristocracy',
-      'It promises that "he to-day that sheds his blood with me / Shall be my brother; be he ne\u2019er so vile, / This day shall gentle his condition" \u2014 claiming that shared risk dissolves class distinction within the battle',
+      'It promises that "he today that sheds his blood with me / Shall be my brother; be he ne\u2019er so vile, / This day shall gentle his condition" \u2014 claiming that shared risk dissolves class distinction within the battle',
       'It is a warning about rebellion',
       'It mocks the common soldier',
     ],
@@ -525,13 +525,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It denounces the Queen',
-      'It explicitly compares Henry\u2019s victorious return from France to the Earl of Essex\u2019s anticipated return from the Irish campaign, dating the play to 1599 and linking it directly to contemporary English military hopes',
+      'It compares Henry\u2019s victorious return from France to the hoped-for return of a general from Ireland, usually identified as the Earl of Essex, which is why the play is dated to 1599, and links it to contemporary English military hopes',
       'It refers to the Spanish Armada only',
       'It quotes a French source',
     ],
     correctIndex: 1,
     explanation:
-      'The Chorus imagines Henry returning to London "as, by a lower but loving likelihood, / Were now the general of our gracious empress, / ... from Ireland coming." This is the clearest topical reference in any Shakespeare play.',
+      'The Chorus imagines Henry returning to London "as, by a lower but loving likelihood, / Were now the general of our gracious empress, / ... from Ireland coming." The general is usually identified as the Earl of Essex.',
     topic: 'Context',
     difficulty: 'grade-9',
   },
@@ -560,7 +560,7 @@ const REVISION_TOPICS = [
       'Shakespeare presents Henry as both ideal warrior-king and calculating political actor, holding both possibilities open rather than settling the question.',
     keyPoints: [
       'Henry is the transformed Prince Hal of the Henry IV plays',
-      'Public orations vs. the private "Upon the king!" soliloquy',
+      'Public orations vs. the private "Upon the King!" soliloquy',
       'The disguised conversation with Williams tests the king\u2019s responsibility for his men',
       'Harfleur threats and Agincourt prisoner-killing complicate the heroic frame',
       'Shakespeare lets the audience judge rather than telling them what to think',
@@ -586,7 +586,7 @@ const REVISION_TOPICS = [
       'St Crispin\u2019s Day rhetoric has shaped English military identity ever since',
       'Multi-national army: English, Welsh, Scottish, Irish captains serve together',
       'French characters are given their own language and dignity',
-      'The Chorus before Act 5 links Henry to Essex\u2019s 1599 Irish campaign',
+      'The Chorus before Act 5 is usually read as linking Henry to Essex\u2019s 1599 Irish campaign',
       'The Epilogue\u2019s sonnet undercuts the triumph by foreshadowing Henry VI\u2019s loss of France',
     ],
   },
@@ -637,7 +637,6 @@ export default async function HenryVPage() {
       <TextStudyHub
         textName="Henry V"
         textType="play"
-        examBoard="Eduqas"
         basePath="/revision/texts/henry-v"
         subPages={[
           {

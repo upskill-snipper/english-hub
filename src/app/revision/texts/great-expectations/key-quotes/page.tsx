@@ -59,7 +59,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     quote:
-      '"He calls the knaves, Jacks, this boy! And what coarse hands he has! And what thick boots!"',
+      '"He calls the knaves Jacks, this boy! ... And what coarse hands he has! And what thick boots!"',
     speaker: 'Estella',
     chapter: 'Chapter 8',
     themes: ['Social Class', 'Identity'],
@@ -68,7 +68,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     quote:
-      '"I took the opportunity of being alone in the court-yard, to look at my coarse hands and my common boots. My opinion of those accessories was not favourable. They had never troubled me before, but they troubled me now, as vulgar appendages."',
+      '"I took the opportunity of being alone in the courtyard to look at my coarse hands and my common boots. My opinion of those accessories was not favourable. They had never troubled me before, but they troubled me now, as vulgar appendages."',
     speaker: 'Pip (narrator)',
     chapter: 'Chapter 8',
     themes: ['Social Class', 'Identity'],
@@ -97,7 +97,7 @@ const KEY_QUOTES: KeyQuote[] = [
     chapter: 'Chapter 17',
     themes: ['Ambition', 'Love', 'Identity'],
     analysis:
-      'Biddy cuts to the heart of Pip\'s motivation with surgical precision. Her question exposes that Pip\'s ambition is not self-generated but Estella-driven - reactive rather than authentic. The alternatives she offers ("spite" or "gain over") are both forms of emotional manipulation. Biddy sees what Pip cannot: his desire for self-improvement is really a desire for someone else\'s approval.',
+      'Biddy cuts to the heart of Pip\'s motivation with surgical precision. Her question exposes that Pip\'s ambition is not self-generated but Estella-driven - reactive rather than authentic. The alternatives she offers ("spite" or "gain her over") are both forms of emotional manipulation. Biddy sees what Pip cannot: his desire for self-improvement is really a desire for someone else\'s approval.',
   },
   {
     quote:
@@ -106,7 +106,7 @@ const KEY_QUOTES: KeyQuote[] = [
     chapter: 'Chapter 19',
     themes: ['Identity', 'Loyalty', 'Ambition'],
     analysis:
-      'Pip\'s body rebels against his conscious decision. He tries to walk away briskly, performing confidence, but the landscape overwhelms him. The mists "rising as if to show me the world" suggest a revelation he is not ready for: that what he is leaving is more valuable than what he is going towards. Dickens uses the marshes as a symbol of Pip\'s authentic self - the self he is about to suppress.',
+      'Pip\'s body rebels against his conscious decision. He tries to walk away briskly, performing confidence, but the landscape overwhelms him. The mists "rising, as if to show me the world" suggest a revelation he is not ready for: that what he is leaving is more valuable than what he is going towards. Dickens uses the marshes as a symbol of Pip\'s authentic self - the self he is about to suppress.',
   },
   {
     quote:
@@ -118,7 +118,7 @@ const KEY_QUOTES: KeyQuote[] = [
       'Pip wishes for a different upbringing - effectively wishing to be a different person. The conditional "should have been" reveals how deeply he has internalised the belief that identity is determined by class. Rather than changing himself, he wishes his guardian had been changed for him. Dickens shows class ideology distorting not just perception but imagination.',
   },
   {
-    quote: '"Break their hearts, my pride and hope, break their hearts and have no mercy!"',
+    quote: '"Break their hearts my pride and hope, break their hearts and have no mercy!"',
     speaker: 'Miss Havisham',
     chapter: 'Chapter 12',
     themes: ['Love', 'Identity'],
@@ -135,7 +135,7 @@ const KEY_QUOTES: KeyQuote[] = [
       'Joe uses the language of his trade to express a truth about social division. The metalwork metaphor ("partings welded together") turns a painful social reality into something crafted and purposeful. The list of smiths - blacksmith, whitesmith, goldsmith, coppersmith - acknowledges that different people work at different levels without assigning moral value to any. Joe accepts class division without bitterness, demonstrating the grace that Pip lacks.',
   },
   {
-    quote: '"Ever the best of friends, ain\'t us, Pip?"',
+    quote: '"Ever the best of friends; ain\'t us, Pip?"',
     speaker: 'Joe',
     chapter: 'Multiple chapters',
     themes: ['Loyalty', 'Love'],
@@ -143,7 +143,7 @@ const KEY_QUOTES: KeyQuote[] = [
       "Joe's repeated question is both a statement of loyalty and a plea. The non-standard grammar (\"ain't us\") marks his class, but the sentiment - consistent, undemanding, forgiving - represents the novel's highest moral ideal. Every time Joe says this, the gap between his unconditional love and Pip's conditional loyalty widens, making the reader feel Pip's ingratitude more acutely.",
   },
   {
-    quote: '"You must know that I have no heart - if that has anything to do with my memory."',
+    quote: '"You must know... that I have no heart - if that has anything to do with my memory."',
     speaker: 'Estella',
     chapter: 'Chapter 29',
     themes: ['Love', 'Identity'],
@@ -179,11 +179,11 @@ const KEY_QUOTES: KeyQuote[] = [
   {
     quote:
       '"I was always treated as if I had insisted on being born in opposition to the dictates of reason, religion, and morality."',
-    speaker: 'Magwitch',
-    chapter: 'Chapter 42',
+    speaker: 'Pip (narrator)',
+    chapter: 'Chapter 4',
     themes: ['Crime and Justice', 'Social Class'],
     analysis:
-      'Magwitch mimics the legalistic language of the courts that condemned him, quoting the system back at itself with devastating irony. The suggestion that he "insisted on being born" treats his very existence as a crime. Dickens exposes the Victorian assumption that poverty is a moral failing rather than a social condition. The elaborate phrasing contrasts with Magwitch\'s usual rough speech.',
+      'Pip describes his childhood in the mock-legal language of a trial ("in opposition to the dictates of reason, religion, and morality"). The suggestion that he "insisted on being born" treats his very existence as an offence, which links the orphan Pip to the convict Magwitch, whom society also treated as guilty from the start. Dickens exposes the Victorian habit of treating the poor and the dependent as moral failures rather than people.',
   },
   {
     quote: '"Take nothing on its looks; take everything on evidence. There\'s no better rule."',
@@ -221,7 +221,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     quote:
-      '"I took her hand in mine, and we went out of the ruined place; and, as the morning mists had risen long ago when I first left the forge, so, the evening mists were rising now, and in all the broad expanse of tranquil light they showed to me, I saw no shadow of another parting from her."',
+      '"I took her hand in mine, and we went out of the ruined place; and, as the morning mists had risen long ago when I first left the forge, so the evening mists were rising now, and in all the broad expanse of tranquil light they showed to me, I saw no shadow of another parting from her."',
     speaker: 'Pip (narrator)',
     chapter: 'Chapter 59',
     themes: ['Love', 'Identity'],
@@ -229,29 +229,29 @@ const KEY_QUOTES: KeyQuote[] = [
       'The novel\'s final sentence is deliberately ambiguous. "No shadow of another parting" could mean they will never part, or it could mean Pip cannot yet see the parting ahead. The mist motif connects back to Chapter 19 - the same image of revelation, but now evening rather than morning. The "ruined place" is both Satis House and the ruins of their former selves. Dickens leaves the reader to decide.',
   },
   {
-    quote: '"Which I meantersay, Pip, as I would in preference have carried you there."',
+    quote: '"Which dear old Pip, old chap... you and me was ever friends."',
     speaker: 'Joe',
     chapter: 'Chapter 57',
     themes: ['Loyalty', 'Love'],
     analysis:
-      'Joe\'s quiet declaration of love after nursing Pip through his fever. The non-standard "meantersay" is pure Joe - humble, inarticulate, and devastatingly sincere. He would have physically carried Pip, like a parent carrying a child. Dickens distils Joe\'s entire character into one sentence: steadfast, protective, asking nothing in return.',
+      'Joe\'s quiet declaration of love as he nurses Pip through his fever. The non-standard "you and me was" is pure Joe - humble, inarticulate, and devastatingly sincere. Dickens distils Joe\'s entire character into one sentence: steadfast, protective, asking nothing in return.',
   },
   {
     quote: '"I am not angry, but I am hurt."',
-    speaker: 'Biddy',
-    chapter: 'Chapter 19',
+    speaker: 'Pip, to Biddy',
+    chapter: 'Chapter 35',
     themes: ['Loyalty', 'Love'],
     analysis:
-      'Biddy responds to Pip\'s condescension with quiet dignity. The distinction between "angry" and "hurt" is emotionally precise: anger would give Pip an excuse to dismiss her, but hurt appeals to his conscience. Dickens uses Biddy\'s emotional intelligence to shame Pip - and the reader - more effectively than any outburst could.',
+      'Pip says this at parting after Biddy doubts that he will come back often to see Joe. The distinction between "angry" and "hurt" sounds dignified, but it is wounded pride: Biddy answers "let only me be hurt, if I have been ungenerous", and the older narrator admits that she "was quite right". Dickens lets Pip\'s own words condemn him.',
   },
   {
     quote:
-      "\"If I ain't a gentleman, nor yet ain't got no learning, I'll make a better gentleman nor ever I was!\"",
+      "\"I'm making a better gentleman nor ever you'll be!... If I ain't a gentleman, nor yet ain't got no learning, I'm the owner of such.\"",
     speaker: 'Magwitch',
     chapter: 'Chapter 39',
     themes: ['Social Class', 'Ambition', 'Loyalty'],
     analysis:
-      'The double negative ("ain\'t... nor yet ain\'t") and non-standard comparative ("nor ever I was") mark Magwitch as uneducated, yet the sentiment is noble: he will create through Pip what society denied him. The word "better" is key - Magwitch believes that a gentleman is something you can manufacture with money. Dickens uses this to expose and then demolish the Victorian myth that class can be bought.',
+      'The double negative ("ain\'t... nor yet ain\'t") and non-standard comparative ("nor ever you\'ll be") mark Magwitch as uneducated, yet the sentiment is noble: he will create through Pip what society denied him. The word "better" is key - Magwitch believes that a gentleman is something you can manufacture with money. Dickens uses this to expose and then demolish the Victorian myth that class can be bought.',
   },
 ]
 
@@ -283,7 +283,7 @@ export default async function GreatExpectationsKeyQuotesPage() {
               {await t('rev.texts2.common.c19_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              AQA
+              AQA / Edexcel / OCR / Edexcel IGCSE / Edexcel IAL
             </Badge>
           </div>
 

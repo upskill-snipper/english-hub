@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Great Expectations GCSE - themes, characters, key quotes',
   description:
-    "Great Expectations GCSE revision - Dickens's bildungsroman by chapter with characters, themes, key quotes and essay plans. Aligned to the AQA spec.",
+    "Great Expectations GCSE revision - Dickens's bildungsroman by chapter, characters, themes, key quotes and essays. AQA, Edexcel, OCR, Edexcel IGCSE and IAL.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/great-expectations',
   },
@@ -37,7 +37,7 @@ const data: TextGuideData = {
   author: 'Charles Dickens',
   year: '1860\u201361',
   category: 'Novel',
-  badge: 'AQA',
+  badge: 'AQA / Edexcel / OCR / Edexcel IGCSE / Edexcel IAL',
   intro:
     'Charles Dickens\u2019s thirteenth novel is a first-person bildungsroman narrated by Philip Pirrip \u2014 universally known as Pip \u2014 who looks back on his own journey from an impoverished orphan in the Kent marshes to a young gentleman in London. Published in weekly instalments in All the Year Round between 1860 and 1861, Great Expectations traces the moral cost of social mobility in Victorian England. Pip\u2019s life is transformed by a mysterious benefactor whose fortune allows him to be educated as a gentleman, but the true identity of that benefactor \u2014 and the psychology of the people who shape his ambitions \u2014 lies at the heart of the novel\u2019s moral questioning. Through the frozen household of Miss Havisham, the steady decency of Joe Gargery, the convict Abel Magwitch returning from transportation, and the cold beauty of Estella, Dickens anatomises the Victorian myths of self-improvement, inheritance and respectability. The novel is preoccupied with guilt, hidden origins and what a person owes to those who loved them before they became ambitious, and its retrospective voice allows Pip to judge his younger self with painful honesty.',
   quickInfo: {
@@ -50,7 +50,7 @@ const data: TextGuideData = {
     'The novel opens on the bleak Kent marshes on Christmas Eve, where the seven-year-old orphan Pip is visiting his parents\u2019 graves. He is ambushed by an escaped convict, Abel Magwitch, who terrifies the boy into stealing food and a file from the forge of his brother-in-law Joe Gargery, the gentle blacksmith who has raised him alongside his sharp-tempered sister, Mrs Joe. Pip obeys, helping the starving man on the marshes, but the soldiers soon recapture Magwitch, who tells them he stole the food himself, shielding Pip. Some time later, Pip is summoned to Satis House, the decaying mansion of the eccentric Miss Havisham, to "play" for her entertainment. There he meets the beautiful, cold-hearted Estella, who mocks his coarse hands and thick boots. Humiliated, Pip leaves Satis House ashamed of the forge and of Joe, and begins to long to become a gentleman so that he might one day be worthy of Estella.',
     'Pip is apprenticed to Joe at the forge, a prospect that once pleased him but now feels like a prison. The household is shaken when Mrs Joe is savagely attacked and left speechless and dependent; she is cared for by Biddy, a kind, intelligent girl whom Pip treats with casual condescension. Years pass and Pip\u2019s discontent grows. Suddenly the London lawyer Mr Jaggers arrives with astonishing news: Pip has "great expectations" from an anonymous benefactor, who wishes him to be brought up as a gentleman. Pip assumes, against all evidence, that the benefactor must be Miss Havisham and that she is preparing him to marry Estella. He leaves for London full of snobbish embarrassment about Joe, a guilt that the older narrator recalls with shame.',
     'In London, Pip lodges with Herbert Pocket, Miss Havisham\u2019s distant relative, who becomes his closest friend and nicknames him "Handel." Under Jaggers\u2019s stern supervision Pip runs up debts, joins the absurd Finches of the Grove club, and ignores Joe\u2019s rare visits. He loves Estella against all reason \u2014 she is being trained to break men\u2019s hearts \u2014 and watches helplessly as she agrees to marry the brutish Bentley Drummle. One stormy night, a weather-beaten stranger climbs the stairs to Pip\u2019s rooms. It is Magwitch, returned illegally from transportation in Australia, where a lifetime of hard work has made him rich. The convict reveals that he, not Miss Havisham, is Pip\u2019s benefactor: every penny of Pip\u2019s gentlemanly income has been earned by a hunted criminal who wanted the boy who once showed him kindness to become everything he himself could not. Pip\u2019s expectations collapse in an instant.',
-    'Hiding Magwitch in Herbert\u2019s rooms, Pip plans to smuggle him out of England by river. He confronts Miss Havisham, who breaks down in remorse for the way she has used him and Estella; her wedding dress catches fire and she dies soon after from her burns. Pip discovers through Jaggers that Estella is Magwitch\u2019s daughter by Jaggers\u2019s housekeeper Molly, a revelation withheld from Estella herself. On the evening of the planned escape, Magwitch is intercepted by his old enemy Compeyson. In the struggle Compeyson drowns, Magwitch is fatally injured, and Pip sits with him in prison until he dies \u2014 telling the old man at last that his daughter lives and that Pip loves her. Pip falls dangerously ill, ruined financially, and is nursed back to health by Joe, who quietly pays off his debts and slips away when Pip is well. Pip returns to the forge intending to propose to Biddy, only to find that she has already married Joe. He goes abroad to work for Herbert\u2019s firm, and years later returns to the ruins of Satis House at twilight, where he meets a chastened Estella, widowed and changed. In the revised ending Dickens published, Pip takes her hand and sees "no shadow of another parting."',
+    'Hiding Magwitch in lodgings at Mill Pond Bank, by the river, Pip plans to smuggle him out of England by river. He confronts Miss Havisham, who breaks down in remorse for the way she has used him and Estella; her wedding dress catches fire and she dies soon after from her burns. Pip discovers through Jaggers that Estella is Magwitch\u2019s daughter by Jaggers\u2019s housekeeper Molly, a revelation withheld from Estella herself. On the evening of the planned escape, Magwitch is intercepted by his old enemy Compeyson. In the struggle Compeyson drowns, Magwitch is fatally injured, and Pip sits with him in prison until he dies \u2014 telling the old man at last that his daughter lives and that Pip loves her. Pip falls dangerously ill, ruined financially, and is nursed back to health by Joe, who quietly pays off his debts and slips away when Pip is well. Pip returns to the forge intending to propose to Biddy, only to find that she has already married Joe. He goes abroad to work for Herbert\u2019s firm, and years later returns to the ruins of Satis House at twilight, where he meets a chastened Estella, widowed and changed. In the revised ending Dickens published, Pip takes her hand and sees "no shadow of another parting."',
   ],
   characters: [
     {
@@ -76,7 +76,7 @@ const data: TextGuideData = {
     {
       name: 'Joe Gargery',
       role: 'Village blacksmith; Pip\u2019s brother-in-law and surrogate father',
-      body: 'Joe is the forge\u2019s gentle giant, a barely literate blacksmith married to Pip\u2019s violent sister. His refrain "Ever the best of friends, Pip, old chap" runs through the novel as a moral baseline that Pip strays from and eventually returns to. Joe is the book\u2019s true gentleman \u2014 honest, patient, incapable of cruelty \u2014 and Dickens places him at the moral centre as a living rebuke to the snobbery of London. His quiet nursing of Pip through illness, and his marriage to Biddy, complete the book\u2019s redemptive arc.',
+      body: 'Joe is the forge\u2019s gentle giant, a barely literate blacksmith married to Pip\u2019s violent sister. His refrain "Ever the best of friends" runs through the novel as a moral baseline that Pip strays from and eventually returns to. Joe is the book\u2019s true gentleman \u2014 honest, patient, incapable of cruelty \u2014 and Dickens places him at the moral centre as a living rebuke to the snobbery of London. His quiet nursing of Pip through illness, and his marriage to Biddy, complete the book\u2019s redemptive arc.',
     },
     {
       name: 'Mrs Joe Gargery',
@@ -122,7 +122,7 @@ const data: TextGuideData = {
   ],
   historicalContext: [
     'Dickens wrote Great Expectations between 1860 and 1861, at the height of Victorian debates about class, education and the making of a gentleman. The British class system of the mid-nineteenth century was stratified and publicly performed \u2014 through accent, clothing, handwriting, table manners and hands \u2014 but also newly permeable. Industrial wealth, colonial fortunes and railway capital were creating a cohort of men who had acquired money without inheriting status, and who wanted their sons educated out of the trades that produced them. Pip\u2019s story speaks directly to that anxiety: a boy of the forge being shaped into a chamber-suited gentleman on the income of a transported convict.',
-    'The novel is also saturated with the realities of Victorian criminal justice. From the 1780s until 1868, convicted felons could be sentenced to transportation to the Australian colonies, and returning to Britain before the end of one\u2019s sentence was itself a capital offence. Magwitch\u2019s backstory \u2014 the prison hulks in the Thames estuary, the years of sheep-farming in New South Wales, the secret voyage home \u2014 reflects exactly the system Dickens knew from his journalism. Readers in 1861 would have understood that Magwitch risks hanging every day he spends in Pip\u2019s rooms, and that Pip\u2019s gentlemanly life is funded, quite literally, by colonial labour forced on a criminal underclass.',
+    'The novel is also saturated with the realities of Victorian criminal justice. From the 1780s until 1868, convicted felons could be sentenced to transportation to the Australian colonies, and returning to Britain before the end of one\u2019s sentence was itself a capital offence. Magwitch\u2019s backstory \u2014 the prison hulks in the Thames estuary, the years of sheep-farming in New South Wales, the secret voyage home \u2014 reflects exactly the system Dickens knew from his journalism. Readers in 1861 would have understood that Magwitch risks hanging every day he spends in England, and that Pip\u2019s gentlemanly life is funded, quite literally, by colonial labour forced on a criminal underclass.',
     'Dickens\u2019s own trajectory shadows the novel. His father\u2019s imprisonment for debt in 1824 forced the twelve-year-old Dickens into a blacking factory, an experience of class humiliation he never wrote about directly but which informs Pip\u2019s shame on his first visit to Satis House. Dickens rose, through journalism and fiction, into a wealthy and nationally celebrated writer, and Great Expectations can be read as a very personal essay on what that rise costs. The novel is also part of the bildungsroman tradition \u2014 the "novel of education" popularised by Goethe, Austen and the Brontes \u2014 and is in close conversation with Dickens\u2019s own David Copperfield (1849\u201350), whose more affirmative treatment of self-making Great Expectations revises in a darker key.',
     'Finally, the novel set old rural England against new urban capital. The Kent marshes of Pip\u2019s childhood are semi-pre-industrial: forge, churchyard, tides, soldiers on the heath. London, when Pip arrives, is Newgate Prison, Little Britain, the Temple, the Thames busy with shipping \u2014 a city of lawyers, clerks, speculators and convicts. Dickens holds the two worlds in deliberate tension, and the book\u2019s final image of Pip back at the ruined Satis House gathers both into a single mournful landscape of what the century has cost.',
   ],
@@ -141,7 +141,7 @@ const data: TextGuideData = {
         'Magwitch\u2019s terrifying first words cast him as the Gothic threat of the marshes, but the novel will later reframe this moment as the beginning of a long, hidden act of gratitude.',
     },
     {
-      quote: '"Break their hearts, my pride and hope, break their hearts and have no mercy!"',
+      quote: '"Break their hearts my pride and hope, break their hearts and have no mercy!"',
       who: 'Miss Havisham \u2014 Chapter 12',
       analysis:
         'The triple imperative exposes Miss Havisham\u2019s use of Estella as an instrument of revenge, and the word "pride" admits that she is investing her own wounded self in her adopted daughter.',
@@ -154,7 +154,7 @@ const data: TextGuideData = {
         'The insistent anaphora of "against" makes clear that Pip\u2019s love is self-destructive and chosen in defiance of his own judgement \u2014 a portrait of romantic obsession as a form of willed suffering.',
     },
     {
-      quote: '"Ever the best of friends, ain\'t us, Pip?"',
+      quote: '"Ever the best of friends; ain\'t us, Pip?"',
       who: 'Joe Gargery',
       analysis:
         'Joe\u2019s repeated refrain is the novel\u2019s moral keynote: a constant, unconditional loyalty that Pip betrays in London and has to earn the right to hear again.',
@@ -166,7 +166,7 @@ const data: TextGuideData = {
         'The metalworking image links Estella to the forge she has always despised and acknowledges that suffering has, at last, made her capable of feeling. The tentative "I hope" refuses full certainty.',
     },
     {
-      quote: '"What larks, Pip!"',
+      quote: '"What larks!"',
       who: 'Joe Gargery',
       analysis:
         'Joe\u2019s cheerful catchphrase stands for a pre-ambition innocence Pip keeps trying to recover. Its return in the final chapters signals the possibility of restored simplicity and friendship.',
@@ -185,23 +185,16 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"I think it was the first time I had ever seen her with a look such as she gave me; the look of one who is recalling something she has been accustomed to despise."',
-      who: 'Pip on Estella',
-      analysis:
-        'The layered perception \u2014 Pip observing Estella remembering \u2014 captures the retrospective narrator\u2019s technique and foreshadows Estella\u2019s eventual change.',
-    },
-    {
-      quote:
         '"Pause you who read this, and think for a moment of the long chain of iron or gold, of thorns or flowers, that would never have bound you, but for the formation of the first link on one memorable day."',
       who: 'Pip \u2014 Chapter 9',
       analysis:
         'The older narrator addresses the reader directly. The four-part "chain" image (iron/gold, thorns/flowers) captures how a single meeting at Satis House determines the whole shape of Pip\u2019s life.',
     },
     {
-      quote: '"Yes, dear Biddy, I have a very particular reason for wishing to be a gentleman."',
+      quote: '"I have particular reasons for wanting to be a gentleman."',
       who: 'Pip \u2014 Chapter 17',
       analysis:
-        'The embarrassed euphemism "a very particular reason" is Pip confessing, without quite saying so, that his social ambition is driven by love of Estella \u2014 a confession Biddy immediately understands.',
+        'The embarrassed euphemism "particular reasons" is Pip confessing, without quite saying so, that his social ambition is driven by love of Estella, a confession he makes plain a moment later ("I want to be a gentleman on her account").',
     },
     {
       quote:
@@ -212,20 +205,13 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"So throughout life, our worst weaknesses and meannesses are usually committed for the sake of the people whom we most despise."',
+        '"So, throughout life, our worst weaknesses and meannesses are usually committed for the sake of the people whom we most despise."',
       who: 'Pip',
       analysis:
         'A generalising maxim from the older narrator. Pip has learned that the meanness he showed Joe was driven by Estella\u2019s scorn \u2014 by caring for the judgement of people he should not have valued.',
     },
     {
-      quote:
-        '"He was a Tartar, and he had a court-yard in him, and a flag-staff, and his name was Drummle."',
-      who: 'Herbert Pocket on Bentley Drummle',
-      analysis:
-        'Herbert\u2019s comic architectural metaphor makes Drummle a pompous fortress of a man. The joke conceals a real warning, since Drummle will later marry and brutalise Estella.',
-    },
-    {
-      quote: '"You are in every line I have ever read."',
+      quote: '"You have been in every line I have ever read."',
       who: 'Pip to Estella \u2014 Chapter 44',
       analysis:
         'A declaration of love as literary haunting: Estella has become part of how Pip reads the world. The quotation captures the novel\u2019s linking of love, reading and self-knowledge.',
@@ -370,7 +356,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: [
       'He is hanged',
       'He escapes to America',
-      'He is fatally injured in the struggle with Compeyson and dies awaiting trial',
+      'He is fatally injured in the struggle with Compeyson and dies in prison after being sentenced to death',
       'He is poisoned by Jaggers',
     ],
     correctIndex: 2,
@@ -386,13 +372,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['"Young master"', '"Old chap"', '"My boy"', '"Sir"'],
     correctIndex: 1,
     explanation:
-      'Joe\'s refrain is "Ever the best of friends, Pip, old chap," a phrase that marks the unchanging loyalty Pip strays from and returns to.',
+      'Joe calls Pip "old chap" again and again, alongside his refrain "Ever the best of friends", marking the unchanging loyalty Pip strays from and returns to.',
     topic: 'Characters',
     difficulty: 'foundation',
   },
   {
     id: 'ge-13',
-    question: 'What does Miss Havisham mean by "Break their hearts, my pride and hope"?',
+    question: 'What does Miss Havisham mean by "Break their hearts my pride and hope"?',
     type: 'multiple-choice',
     options: [
       'She is encouraging Estella to be kind',

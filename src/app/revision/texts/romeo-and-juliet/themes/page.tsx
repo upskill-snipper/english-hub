@@ -32,7 +32,7 @@ const THEMES: ThemeStudy[] = [
     keyQuotes: [
       {
         quote:
-          'If I profane with my unworthiest hand / This holy shrine, the gentle sin is this: / My lips, two blushing pilgrims, ready stand / To smooth that rough touch with a tender kiss.',
+          'If I profane with my unworthiest hand / This holy shrine, the gentle sin is this, / My lips, two blushing pilgrims, ready stand / To smooth that rough touch with a tender kiss.',
         speaker: 'Romeo -- Act 1, Scene 5',
         analysis:
           'The pilgrim-and-saint conceit elevates physical attraction into religious experience. By structuring their first exchange as a shared sonnet, Shakespeare shows the lovers completing each other\'s thoughts. The religious language ("shrine," "pilgrims," "saints") sanctifies their love, setting it apart from Mercutio\'s bawdy reductions.',
@@ -66,13 +66,13 @@ const THEMES: ThemeStudy[] = [
     keyQuotes: [
       {
         quote:
-          'What, drawn and talk of peace? I hate the word, / As I hate hell, all Montagues, and thee.',
+          'What, drawn, and talk of peace? I hate the word / As I hate hell, all Montagues, and thee.',
         speaker: 'Tybalt -- Act 1, Scene 1',
         analysis:
           'Tybalt cannot tolerate even the concept of peace. The escalating triple object (hell, Montagues, Benvolio) shows hatred intensifying with each breath. Shakespeare establishes from the opening scene that the feud has produced individuals for whom violence is an identity.',
       },
       {
-        quote: "A plague o' both your houses! They have made worms' meat of me.",
+        quote: "A plague o' both your houses. / They have made worms' meat of me.",
         speaker: 'Mercutio -- Act 3, Scene 1',
         analysis:
           'Mercutio\'s dying curse blames both families equally. "Worms\' meat" is brutally physical, reducing a vibrant life to decomposing flesh. The curse functions as both prophecy and moral verdict: the feud will indeed bring plague-like destruction to both houses.',
@@ -104,7 +104,7 @@ const THEMES: ThemeStudy[] = [
       },
       {
         quote:
-          'I fear, too early; for my mind misgives / Some consequence yet hanging in the stars.',
+          'I fear too early: for my mind misgives / Some consequence yet hanging in the stars.',
         speaker: 'Romeo -- Act 1, Scene 4',
         analysis:
           'Romeo senses disaster before the Capulet feast. "Hanging in the stars" suggests fate is poised, ready to fall. But Romeo goes to the feast anyway, making his premonition both a prophecy and a demonstration of the reckless courage that defines his character.',
@@ -130,7 +130,7 @@ const THEMES: ThemeStudy[] = [
     keyQuotes: [
       {
         quote:
-          "What's in a name? That which we call a rose / By any other word would smell as sweet.",
+          "What's in a name? That which we call a rose / By any other name would smell as sweet.",
         speaker: 'Juliet -- Act 2, Scene 2',
         analysis:
           'Juliet\'s argument is philosophically radical: she claims identity is inherent, not imposed by family labels. If Romeo were not called "Montague," he would be the same person. But the play proves her wrong in practice: the name "Montague" is powerful enough to kill them both.',
@@ -144,7 +144,7 @@ const THEMES: ThemeStudy[] = [
       },
       {
         quote:
-          "Hang thee, young baggage! Disobedient wretch! / I tell thee what: get thee to church o' Thursday, / Or never after look me in the face.",
+          'Hang thee young baggage, disobedient wretch! / ... get thee to church a Thursday, / Or never after look me in the face.',
         speaker: 'Lord Capulet -- Act 3, Scene 5',
         analysis:
           'Capulet\'s rage reveals the violence underlying patriarchal authority. "Baggage" and "wretch" reduce Juliet to worthless property. The ultimatum -- obey or be disowned -- shows how family love becomes tyranny when challenged. Shakespeare exposes the gap between Capulet\'s earlier claim to value Juliet\'s consent and his actual exercise of power.',
@@ -160,7 +160,7 @@ const THEMES: ThemeStudy[] = [
     overview:
       "The play dramatises a generational divide: the young lovers' passion and idealism clash with the older generation's pragmatism, authority and entrenched hatreds.",
     detailed:
-      "Romeo and Juliet is, among other things, a play about the failure of the older generation. The parents have created and sustained the feud; the Friar's schemes are catastrophically flawed; the Nurse betrays Juliet's trust by advising pragmatic compromise. Every adult in the play fails the young people they are supposed to protect. Shakespeare consistently aligns youth with intensity, authenticity and risk-taking, and age with caution, compromise and rigidity. The lovers' speed (they meet, marry and die within four days) is set against the adults' slowness to act and their inability to understand what is happening. Lord Capulet's changing attitude to Juliet's marriage -- from patient (\"Let two more summers wither in their pride\") to authoritarian (\"Get thee to church o' Thursday\") -- encapsulates the older generation's failure: they offer guidance when it is not needed and coercion when guidance is required. The play's ending, in which the parents finally reconcile over their children's corpses, is Shakespeare's bleakest commentary on the generational divide: the old learn from the young, but only through the young's destruction.",
+      "Romeo and Juliet is, among other things, a play about the failure of the older generation. The parents have created and sustained the feud; the Friar's schemes are catastrophically flawed; the Nurse betrays Juliet's trust by advising pragmatic compromise. Every adult in the play fails the young people they are supposed to protect. Shakespeare consistently aligns youth with intensity, authenticity and risk-taking, and age with caution, compromise and rigidity. The lovers' speed (they meet, marry and die within four days) is set against the adults' slowness to act and their inability to understand what is happening. Lord Capulet's changing attitude to Juliet's marriage -- from patient (\"Let two more summers wither in their pride\") to authoritarian (\"Get thee to church a Thursday\") -- encapsulates the older generation's failure: they offer guidance when it is not needed and coercion when guidance is required. The play's ending, in which the parents finally reconcile over their children's corpses, is Shakespeare's bleakest commentary on the generational divide: the old learn from the young, but only through the young's destruction.",
     keyQuotes: [
       {
         quote: 'These violent delights have violent ends.',
@@ -192,7 +192,7 @@ const THEMES: ThemeStudy[] = [
     overview:
       "Shakespeare uses a sustained pattern of light and dark imagery to characterise the lovers' relationship and to link love with danger.",
     detailed:
-      'Romeo and Juliet is built on a paradox of light and dark. The lovers consistently associate each other with light: Romeo calls Juliet the sun, the east, a "bright angel," a "jewel" hanging "upon the cheek of night"; Juliet wants Romeo cut out in "little stars." Yet their love can only exist in darkness. They meet at a night-time feast, declare love on a darkened balcony, marry in secret, consummate their marriage at night, and die in a dark tomb. Every significant encounter takes place in shadow. Shakespeare uses this pattern to argue that in Verona\'s corrupt daylight world -- the world of the feud, of patriarchal authority, of public honour -- genuine love has no place. It must hide in darkness to survive, and ultimately darkness becomes the only space where it can be permanently preserved (the tomb). The imagery also foreshadows death throughout: Juliet is "rich" enough to be a jewel only against the "cheek of night," and Romeo shines "like a snowy dove trooping with crows" -- beautiful but conspicuous and vulnerable.',
+      'Romeo and Juliet is built on a paradox of light and dark. The lovers consistently associate each other with light: Romeo calls Juliet the sun, the east, a "bright angel," a "jewel" hanging "upon the cheek of night"; Juliet wants Romeo cut out in "little stars." Yet their love can only exist in darkness. They meet at a night-time feast, declare love on a darkened balcony, marry in secret, consummate their marriage at night, and die in a dark tomb. Every significant encounter takes place in shadow. Shakespeare uses this pattern to argue that in Verona\'s corrupt daylight world -- the world of the feud, of patriarchal authority, of public honour -- genuine love has no place. It must hide in darkness to survive, and ultimately darkness becomes the only space where it can be permanently preserved (the tomb). The imagery also foreshadows death throughout: Juliet is "rich" enough to be a jewel only against the "cheek of night," and Romeo sees Juliet as "a snowy dove trooping with crows": beautiful but conspicuous and vulnerable.',
     keyQuotes: [
       {
         quote:
@@ -203,7 +203,7 @@ const THEMES: ThemeStudy[] = [
       },
       {
         quote:
-          "O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / Like a rich jewel in an Ethiop's ear.",
+          "O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / As a rich jewel in an Ethiop's ear.",
         speaker: 'Romeo -- Act 1, Scene 5',
         analysis:
           'Juliet outshines artificial light ("torches"). The jewel image makes her beautiful but also precious and possessable. "Cheek of night" personifies darkness as a backdrop that enhances her brilliance. Shakespeare presents love as something that shines brightest against the darkest background.',
@@ -225,7 +225,7 @@ const THEMES: ThemeStudy[] = [
     overview:
       "Death pervades the play from the Prologue's spoiler to the final tomb scene. Shakespeare presents the lovers' deaths as simultaneously tragic waste and necessary sacrifice.",
     detailed:
-      'The play is saturated with death from its opening lines. The Prologue announces that "a pair of star-cross\'d lovers take their life," removing all suspense about the outcome. Characters constantly foreshadow death: Romeo sees "some consequence yet hanging in the stars"; Juliet sees Romeo "as one dead in the bottom of a tomb"; the Friar warns of "violent ends." Death imagery infects even the love language: Juliet imagines Romeo cut into stars after death; Romeo drinks poison as a toast "to my love." Shakespeare links death and love so tightly that they become inseparable: in Verona, the only way to love purely is to die. The lovers\' deaths function as a sacrifice that redeems the community. Their bodies in the tomb become the evidence that finally persuades the patriarchs to end the feud. Shakespeare draws on Christian imagery of redemptive sacrifice (the lovers die to save others) while simultaneously refusing to romanticise the deaths. The Prince\'s final line -- "All are punished" -- insists that the deaths are a tragedy, not a triumph. The play holds both readings in tension: the deaths are both meaningless waste and meaningful sacrifice.',
+      'The play is saturated with death from its opening lines. The Prologue announces that "a pair of star-cross\'d lovers take their life," removing all suspense about the outcome. Characters constantly foreshadow death: Romeo sees "some consequence yet hanging in the stars"; Juliet sees Romeo "as one dead in the bottom of a tomb"; the Friar warns of "violent ends." Death imagery infects even the love language: Juliet imagines Romeo cut into stars after death; Romeo drinks poison as a toast "to my love." Shakespeare links death and love so tightly that they become inseparable: in Verona, the only way to love purely is to die. The lovers\' deaths function as a sacrifice that redeems the community. Their bodies in the tomb become the evidence that finally persuades the patriarchs to end the feud. Shakespeare draws on Christian imagery of redemptive sacrifice (the lovers die to save others) while simultaneously refusing to romanticise the deaths. The Prince\'s verdict, "All are punish\'d", insists that the deaths are a tragedy, not a triumph. The play holds both readings in tension: the deaths are both meaningless waste and meaningful sacrifice.',
     keyQuotes: [
       {
         quote: 'For never was a story of more woe / Than this of Juliet and her Romeo.',
@@ -235,13 +235,13 @@ const THEMES: ThemeStudy[] = [
       },
       {
         quote:
-          "Death, that hath suck'd the honey of thy breath, / Hath had no power yet upon thy beauty.",
+          "Death that hath suck'd the honey of thy breath, / Hath had no power yet upon thy beauty.",
         speaker: 'Romeo -- Act 5, Scene 3',
         analysis:
           'Romeo personifies Death as a vampire-lover, creating a disturbing love triangle between himself, Juliet and Death. The dramatic irony is devastating: Juliet\'s beauty is preserved because she is not dead. "Honey" makes her breath sweet and sensual even in apparent death.',
       },
       {
-        quote: 'All are punished.',
+        quote: "All are punish'd.",
         speaker: 'Prince -- Act 5, Scene 3',
         analysis:
           "Three words that refuse a comfortable ending. No one is innocent; no one escapes the consequences. Shakespeare distributes guilt across the entire community. The line prevents the audience from finding consolation in the patriarchs' reconciliation.",

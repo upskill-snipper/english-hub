@@ -120,7 +120,7 @@ const essayPlans: EssayPlan[] = [
         point:
           "In Stave 1, Dickens presents Scrooge's attitude to poverty as representative of the Victorian establishment, using his language to expose the cruelty of utilitarian economics.",
         evidence:
-          '"Are there no prisons? Are there no workhouses?" and "If they would rather die, they had better do it, and decrease the surplus population." Scrooge uses the language of policy to dismiss real suffering.',
+          '"Are there no prisons?", "And the Union workhouses?" and "If they would rather die... they had better do it, and decrease the surplus population." Scrooge uses the language of policy to dismiss real suffering.',
         analysis:
           'Dickens gives Scrooge Malthusian arguments -- not because Scrooge has studied Malthus, but because these attitudes were so widespread they had become casual. The rhetorical questions are designed to shut down conversation. By putting these words in the mouth of a clearly unsympathetic character, Dickens forces the reader to hear how cruel they sound.',
       },
@@ -128,7 +128,7 @@ const essayPlans: EssayPlan[] = [
         point:
           "In Stave 3, Dickens presents the Cratchit family's poverty with warmth and dignity, showing that the poor are morally superior to the rich.",
         evidence:
-          'The Cratchit dinner -- the small goose, the tiny pudding, Bob\'s fifteen shillings a week. Despite everything, Bob calls Scrooge "the Founder of the Feast" and Tiny Tim says "God bless Us, Every One!" The family\'s love transforms poverty into abundance.',
+          'The Cratchit dinner -- the small goose, the tiny pudding, Bob\'s fifteen shillings a week. Despite everything, Bob calls Scrooge "the Founder of the Feast" and Tiny Tim says "God bless us every one!" The family\'s love transforms poverty into abundance.',
         analysis:
           'Dickens refuses to present the poor as pitiful or degraded. The Cratchits are joyful, generous, and dignified. Their pudding is small, but "nobody said or thought it was at all a small pudding." Dickens argues that moral wealth (love, gratitude) is more valuable than financial wealth. This subverts the Victorian assumption that poverty indicates moral failure.',
       },
@@ -237,7 +237,7 @@ const essayPlans: EssayPlan[] = [
         point:
           "Marley's chain is the novella's central symbol, making the abstract consequences of greed tangibly physical.",
         evidence:
-          '"I wear the chain I forged in life. I made it link by link, and yard by yard." The chain is made of "cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel."',
+          '"I wear the chain I forged in life... I made it link by link, and yard by yard." The chain is made of "cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel."',
         analysis:
           'Every component of the chain is an instrument of commerce -- Dickens literally transforms the tools of capitalism into instruments of eternal punishment. The craftsmanship language ("forged," "link by link") makes greed feel deliberate and cumulative. The chain gives weight to an abstract concept: selfishness is not just wrong but heavy. Scrooge\'s own chain, unseen but growing, hangs over the entire novella.',
       },
@@ -245,7 +245,7 @@ const essayPlans: EssayPlan[] = [
         point:
           "The Ghost of Christmas Past's light symbolises truth and memory -- things that cannot be permanently suppressed.",
         evidence:
-          'The Ghost emits "a bright clear jet of light" from its head. Scrooge forces the extinguisher cap over it, "but he could not hide the light: which streamed from under it, in an unbroken flood upon the ground."',
+          'The Ghost emits "a bright clear jet of light" from its head. Scrooge forces the extinguisher cap over it, but "he could not hide the light: which streamed from under it, in an unbroken flood upon the ground."',
         analysis:
           "Light versus darkness is the novella's most sustained symbolic opposition. Scrooge's preference for darkness (\"Darkness is cheap, and Scrooge liked it\") represents his moral blindness. The Ghost's inextinguishable light proves that truth cannot be permanently hidden -- memory will always reassert itself. The extinguisher cap symbolises Scrooge's years of suppressing uncomfortable self-knowledge.",
       },
@@ -316,7 +316,7 @@ const essayPlans: EssayPlan[] = [
         point:
           "Scrooge's language in Stave 1 is cold, clipped, and transactional, reflecting his reduction of all human relationships to economic calculations.",
         evidence:
-          '"Bah! Humbug!" -- a monosyllabic dismissal. "Are there no prisons? Are there no workhouses?" -- rhetorical questions that shut down conversation. "Decrease the surplus population" -- the language of economics applied to human life.',
+          '"Bah! Humbug!" -- a monosyllabic dismissal. "Are there no prisons?" and "And the Union workhouses?" -- rhetorical questions that shut down conversation. "Decrease the surplus population" -- the language of economics applied to human life.',
         analysis:
           'Dickens gives Scrooge the language of policy and commerce. His words are designed to end conversations, not begin them. "Humbug!" dismisses without engaging. The rhetorical questions are not genuine inquiries but verbal barriers. "Surplus population" is the most chilling example: it turns people into economic data. Dickens shows how language can dehumanise.',
       },
@@ -332,9 +332,9 @@ const essayPlans: EssayPlan[] = [
         point:
           "Scrooge's language transforms dramatically in Stave 5, shifting from monosyllabic dismissal to breathless, joyful excess, proving that language itself changes when the heart changes.",
         evidence:
-          "\"I am as light as a feather, I am as happy as an angel, I am as merry as a school-boy. I don't know anything. I'm quite a baby. Never mind. I don't care.\" -- short, giddy, fragmented sentences replacing the cold precision of Stave 1.",
+          "\"I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy... I don't know anything. I'm quite a baby. Never mind. I don't care.\" -- short, giddy, fragmented sentences replacing the cold precision of Stave 1.",
         analysis:
-          'The transformation in Scrooge\'s language mirrors his moral transformation. The triple simile ("light... happy... merry") is expansive and generous -- the opposite of "Bah! Humbug!" The breathless short sentences show a man who has lost his need for control and embraced vulnerability. "I\'m quite a baby" is the most un-Scrooge-like thing he could say: he admits ignorance, accepts helplessness, and finds joy in both.',
+          'The transformation in Scrooge\'s language mirrors his moral transformation. The triple simile ("light... happy... merry"), soon followed by a fourth ("giddy"), is expansive and generous -- the opposite of "Bah! Humbug!" The breathless short sentences show a man who has lost his need for control and embraced vulnerability. "I\'m quite a baby" is the most un-Scrooge-like thing he could say: he admits ignorance, accepts helplessness, and finds joy in both.',
       },
     ],
     conclusion:
@@ -375,7 +375,7 @@ export default function EssayPlansPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              AQA / Edexcel / Eduqas
+              AQA / Edexcel / OCR / Eduqas
             </Badge>
           </div>
 

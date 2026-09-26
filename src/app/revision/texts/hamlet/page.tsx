@@ -32,13 +32,22 @@ export const metadata: Metadata = {
   },
 }
 
+/**
+ * Corrected on 26 September 2026, because the guide mounted below contradicted
+ * this page. Quotations follow the held edition, Project Gutenberg #1524
+ * (src/data/full-texts/hamlet.ts), whose readings include "is man", "protests"
+ * and "Good night", even where other editions differ. Gertrude reports
+ * Ophelia's drowning as an accident; the suicide question comes from the
+ * gravediggers and the Priest in 5.1. The Ghost appears in four scenes, and
+ * Hamlet never reaches England.
+ */
 const data: TextGuideData = {
   slug: 'hamlet',
   title: 'Hamlet',
   author: 'William Shakespeare',
   year: 'c. 1599\u20131601',
   category: 'Play',
-  badge: 'AQA A-Level / Edexcel A-Level / OCR A-Level / Eduqas A-Level',
+  badge: 'AQA A-Level / Edexcel A-Level / OCR A-Level / Eduqas A-Level / Edexcel IAL',
   intro:
     'Shakespeare\u2019s longest and most philosophically searching tragedy, Hamlet follows a young prince of Denmark commanded by his father\u2019s ghost to avenge a secret murder. Written around 1599\u20131601, at the turn of a new century and the end of the Elizabethan age, the play takes the conventions of the revenge tragedy and turns them inwards, producing a protagonist who cannot simply act. Hamlet delays, philosophises, stages a play, feigns madness, and agonises over the meaning of existence itself. The play explores the collapse of a court corrupted from within, the unstable boundary between performance and truth, and the tension between moral thought and violent action. Its central soliloquies \u2014 including "To be, or not to be" \u2014 have become defining statements of existential crisis in Western literature. Hamlet appears on every major A-Level specification and remains Shakespeare\u2019s most quoted and most debated play.',
   quickInfo: {
@@ -50,7 +59,7 @@ const data: TextGuideData = {
   plotSummary: [
     'The play opens on the battlements of Elsinore Castle, where guards have seen the ghost of the recently deceased King Hamlet. Prince Hamlet, still in mourning, is bitter about his mother Gertrude\u2019s hasty remarriage to his uncle Claudius, who has taken the throne. The Ghost appears to Hamlet and reveals that Claudius poisoned him while he slept in the orchard, demanding that Hamlet take revenge \u2014 but spare Gertrude. Shaken and uncertain whether the Ghost is honest or a demonic trick, Hamlet resolves to feign an "antic disposition" to conceal his intentions while he investigates.',
     'As Hamlet\u2019s erratic behaviour unsettles the court, Polonius, the lord chamberlain, decides it is love-madness caused by his daughter Ophelia, whom Hamlet has been courting. Polonius and Claudius spy on the couple, and Hamlet cruelly rejects Ophelia, telling her to "get thee to a nunnery." To test the Ghost\u2019s story, Hamlet stages a play \u2014 "The Mousetrap" \u2014 that re-enacts the murder. Claudius\u2019s guilty reaction confirms his guilt. Shortly afterwards, Hamlet confronts Gertrude in her closet; hearing a noise behind the arras and assuming it is Claudius, he stabs and kills Polonius. Claudius, now alarmed, sends Hamlet to England with his childhood friends Rosencrantz and Guildenstern, carrying sealed orders for Hamlet\u2019s execution.',
-    'In Hamlet\u2019s absence, Ophelia descends into genuine madness, singing fragmented songs and distributing symbolic flowers. She drowns in a brook under circumstances Gertrude describes as possibly accidental, possibly suicidal. Laertes, Ophelia\u2019s brother, returns from France burning for revenge against Hamlet for killing his father. Claudius manipulates his grief, proposing a fencing match in which Laertes will use a poison-tipped sword. Meanwhile Hamlet, having discovered the death warrant at sea, rewrites it to condemn Rosencrantz and Guildenstern instead and escapes back to Denmark after a pirate encounter.',
+    'In Hamlet\u2019s absence, Ophelia descends into genuine madness, singing fragmented songs and distributing symbolic flowers. She drowns in a brook. Gertrude reports the death as an accident, but the gravediggers and the Priest later treat it as a possible suicide. Laertes, Ophelia\u2019s brother, returns from France burning for revenge against Hamlet for killing his father. Claudius manipulates his grief, proposing a fencing match in which Laertes will use a poison-tipped sword. Meanwhile Hamlet, having discovered the death warrant at sea, rewrites it to condemn Rosencrantz and Guildenstern instead and escapes back to Denmark after a pirate encounter.',
     'Hamlet returns to find gravediggers preparing Ophelia\u2019s grave. In the famous graveyard scene he contemplates the skull of Yorick, the court jester, and meditates on the universal levelling power of death. Ophelia\u2019s funeral procession arrives; Hamlet and Laertes grapple in her grave. The duel is arranged. In the final scene, Gertrude drinks from a poisoned cup Claudius intended for Hamlet. Laertes wounds Hamlet with the envenomed blade; the swords are switched and Hamlet wounds Laertes in turn. As they die, Laertes confesses the plot. Hamlet stabs Claudius and forces him to drink the poison. Hamlet dies in Horatio\u2019s arms, asking him to "tell my story." The Norwegian prince Fortinbras arrives to find the Danish court destroyed and claims the throne.',
   ],
   characters: [
@@ -92,7 +101,7 @@ const data: TextGuideData = {
     {
       name: 'The Ghost',
       role: 'The spirit of the murdered King Hamlet',
-      body: 'The Ghost sets the plot in motion, commanding Hamlet to revenge his "foul and most unnatural murder." Shakespeare leaves his status deliberately uncertain: Hamlet wonders whether the spirit is truly his father or a devil tempting him to damnation, a question rooted in the theological anxieties of post-Reformation England. The Ghost appears three times, finally reappearing in Gertrude\u2019s closet \u2014 unseen by her \u2014 to sharpen Hamlet\u2019s resolve. He is both grieving father and terrifying messenger from beyond.',
+      body: 'The Ghost sets the plot in motion, commanding Hamlet to revenge his "foul and most unnatural murder." Shakespeare leaves his status deliberately uncertain: Hamlet wonders whether the spirit is truly his father or a devil tempting him to damnation, a question rooted in the theological anxieties of post-Reformation England. The Ghost appears in four scenes, the last time in Gertrude\u2019s closet, unseen by her, to sharpen Hamlet\u2019s resolve. He is both grieving father and terrifying messenger from beyond.',
     },
   ],
   themes: [
@@ -146,7 +155,7 @@ const data: TextGuideData = {
         'Polonius registers the central ambiguity of Hamlet\u2019s behaviour, unintentionally voicing the audience\u2019s question about whether the prince is feigning or breaking.',
     },
     {
-      quote: '"The lady doth protest too much, methinks."',
+      quote: '"The lady protests too much, methinks."',
       who: 'Gertrude \u2014 Act 3, Scene 2',
       analysis:
         'Watching the Player Queen swear fidelity, Gertrude\u2019s comment lands with ironic weight given her own hasty remarriage; Shakespeare makes her the unwitting critic of herself.',
@@ -158,31 +167,31 @@ const data: TextGuideData = {
         'Hamlet\u2019s cruel dismissal of Ophelia has a double edge \u2014 "nunnery" was Elizabethan slang for brothel \u2014 fusing rejection with bitter misogyny about female sexuality.',
     },
     {
-      quote: '"Alas, poor Yorick! I knew him, Horatio."',
+      quote: '"Alas, poor Yorick. I knew him, Horatio."',
       who: 'Hamlet \u2014 Act 5, Scene 1',
       analysis:
         'Holding the jester\u2019s skull, Hamlet confronts death as the great leveller; memory and laughter are reduced to bone, setting up the philosophical tone of the final act.',
     },
     {
-      quote: '"Goodnight, sweet prince, / And flights of angels sing thee to thy rest."',
+      quote: '"Good night, sweet prince, / And flights of angels sing thee to thy rest."',
       who: 'Horatio \u2014 Act 5, Scene 2',
       analysis:
         'Horatio\u2019s farewell grants Hamlet a Christian blessing denied to almost everyone else in the play, letting the audience say goodbye to the protagonist with tenderness.',
     },
     {
-      quote: '"O, what a rogue and peasant slave am I!"',
+      quote: '"O what a rogue and peasant slave am I!"',
       who: 'Hamlet \u2014 Act 2, Scene 2',
       analysis:
         'Comparing himself to the actor who can weep for Hecuba, Hamlet turns his self-contempt into performance criticism, exposing the gap between feeling and action that defines him.',
     },
     {
-      quote: '"What a piece of work is a man."',
+      quote: '"What a piece of work is man."',
       who: 'Hamlet \u2014 Act 2, Scene 2',
       analysis:
         'The great Renaissance paean to human dignity is placed in the mouth of a man who no longer believes it \u2014 Hamlet ends the speech calling humanity a "quintessence of dust."',
     },
     {
-      quote: '"Frailty, thy name is woman."',
+      quote: '"Frailty, thy name is woman!"',
       who: 'Hamlet \u2014 Act 1, Scene 2',
       analysis:
         'Hamlet\u2019s disgust at Gertrude\u2019s remarriage is generalised into a misogynistic aphorism; Shakespeare shows the prince\u2019s grief curdling into contempt for female sexuality.',
@@ -194,8 +203,7 @@ const data: TextGuideData = {
         'Hamlet\u2019s dying words refuse the long speeches that have defined him, leaving the play\u2019s unanswered metaphysical questions deliberately unspoken.',
     },
     {
-      quote:
-        '"The time is out of joint \u2014 O cursed spite, / That ever I was born to set it right!"',
+      quote: '"The time is out of joint. O cursed spite, / That ever I was born to set it right."',
       who: 'Hamlet \u2014 Act 1, Scene 5',
       analysis:
         'Immediately after the Ghost\u2019s revelation, Hamlet frames his mission as restoring a dislocated world \u2014 an impossibly large task that foreshadows his paralysis.',
@@ -219,7 +227,7 @@ const data: TextGuideData = {
         'Hamlet finds Claudius apparently at prayer and refuses to kill him, fearing he would send his soul to heaven \u2014 a theological reasoning that becomes his fatal delay.',
     },
     {
-      quote: '"How all occasions do inform against me, / And spur my dull revenge!"',
+      quote: '"How all occasions do inform against me, / And spur my dull revenge."',
       who: 'Hamlet \u2014 Act 4, Scene 4',
       analysis:
         'Watching Fortinbras\u2019s army march for a worthless patch of ground, Hamlet measures himself against a man of action and finds himself intolerably wanting.',
@@ -228,10 +236,10 @@ const data: TextGuideData = {
       quote: '"There\u2019s a divinity that shapes our ends, / Rough-hew them how we will."',
       who: 'Hamlet \u2014 Act 5, Scene 2',
       analysis:
-        'After surviving the voyage to England, Hamlet arrives at a calmer providential view; his philosophical restlessness gives way to a kind of religious acceptance before the final scene.',
+        'After escaping from the voyage to England, Hamlet arrives at a calmer providential view; his philosophical restlessness gives way to a kind of religious acceptance before the final scene.',
     },
     {
-      quote: '"There is nothing either good or bad, but thinking makes it so."',
+      quote: '"There is nothing either good or bad but thinking makes it so."',
       who: 'Hamlet \u2014 Act 2, Scene 2',
       analysis:
         'Spoken to Rosencrantz and Guildenstern, the line captures Hamlet\u2019s relativism and his tendency to dissolve moral certainties under analysis \u2014 a mindset that hinders revenge.',

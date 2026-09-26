@@ -18342,7 +18342,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'rev.texts.acc.extract.where_sits_h': 'موقع هذا المقتطف',
   'rev.texts.acc.extract.where_sits_desc': 'Stave 1، "Marley\'s Ghost"',
   'rev.texts.acc.extract.the_extract_desc':
-    'من "Oh! But he was a tight-fisted hand..." إلى "Solitary as an oyster." نص ضمن الملكية العامة، Dickens، 1843.',
+    'من "Oh! But he was a tight-fisted hand..." إلى "...what the knowing ones call \'nuts\' to Scrooge." نص ضمن الملكية العامة، Dickens، 1843.',
   'rev.texts.acc.extract.walkthrough_h': 'شرح أسلوباً بأسلوب',
   'rev.texts.acc.extract.walkthrough_intro':
     'لكل مقطع: Notice يحدّد الميكانيكا على الصفحة؛ Say ينمذج الجملة التحليلية اللي يكتبها رد AO2 القوي؛ وZoom out يربط اللحظة بالقوس الأوسع وبسياق الإصلاح في 1843 اللي كان يكتب فيه Dickens.',
@@ -18744,7 +18744,7 @@ export const AR_MESSAGES: Record<string, string> = {
     'ستة محاور رئيسية مدروسة بعمق مع أساليب Steinbeck، والروابط السياقية، وإرشادات المصحّح. كل الاقتباسات 15 كلمة أو أقل.',
   'rev.texts2.omam.themes.how_steinbeck': 'شلون يقدّمه Steinbeck',
   'rev.texts2.omam.key_quotes.intro':
-    'خمسة وعشرون اقتباساً أساسياً للمراجعة قبل الامتحان. كل اقتباس 15 كلمة أو أقل، مع المتحدّث، والسياق، والتحليل، ووسوم المحاور للرجوع السريع.',
+    'أربعة وعشرون اقتباساً أساسياً للمراجعة قبل الامتحان. كل اقتباس 15 كلمة أو أقل، مع المتحدّث، والسياق، والتحليل، ووسوم المحاور للرجوع السريع.',
   'rev.texts2.tkam.characters.intro':
     'ملفّات معمّقة لكل شخصية رئيسية: نظرة عامة، والمسار، والاقتباسات المفتاحية، ونصائح المصحّح. كل الاقتباسات 15 كلمة أو أقل.',
   'rev.texts2.tkam.themes.intro':

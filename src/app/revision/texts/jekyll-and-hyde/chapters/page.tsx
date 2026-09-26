@@ -10,6 +10,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 import { t } from '@/lib/i18n/t'
+import { StoryVisuals } from '@/components/study-guide/visuals/story-visuals'
+import { guide as studyGuide } from '@/data/study-guides/jekyll-and-hyde'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
@@ -102,16 +104,10 @@ const chapters: ChapterData[] = [
           "Enfield's inability to articulate his revulsion introduces the motif of Hyde being indescribable. Evil resists rational categorisation, reflecting Victorian anxiety about threats that cannot be classified or controlled.",
       },
       {
-        technique: 'Pathetic fallacy',
+        technique: 'Simile',
         quote: '"street shone out in contrast to its dingy neighbourhood, like a fire in a forest"',
         effect:
           'The description of the street creates a deceptive brightness that contrasts with the dark events about to unfold. Stevenson establishes London as a city of contrasts, mirroring the duality theme.',
-      },
-      {
-        technique: 'Simile',
-        quote: '"like a district of some city in a nightmare"',
-        effect:
-          "The simile comparing the London streets to a nightmare blurs the boundary between reality and the subconscious. The Gothic atmosphere is rooted in psychological unease rather than supernatural events, foreshadowing the novella's exploration of the hidden self.",
       },
     ],
     structuralSignificance:
@@ -142,14 +138,14 @@ const chapters: ChapterData[] = [
       },
       {
         technique: 'Pun / paronomasia',
-        quote: '"If he be Mr Hyde, I shall be Mr Seek"',
+        quote: '"If he be Mr. Hyde... I shall be Mr. Seek"',
         effect:
           'Utterson\'s darkly comic pun reveals his determination but also foreshadows the danger of seeking hidden truths. The wordplay on "hide" and "seek" frames the entire novella as a deadly game of concealment and pursuit.',
       },
       {
         technique: 'Gothic description',
         quote:
-          '"Mr Hyde was pale and dwarfish, he gave an impression of deformity without any nameable malformation"',
+          '"Mr. Hyde was pale and dwarfish, he gave an impression of deformity without any nameable malformation"',
         effect:
           'The paradox of deformity without a "nameable" defect makes Hyde uncanny. He is wrong in a way that defies rational description, tapping into fears of the unknowable. The effect can be retrospectively analysed using Freud\'s later concept of the "uncanny" (das Unheimliche), though Freud was writing decades after Stevenson.',
       },
@@ -160,12 +156,6 @@ const chapters: ChapterData[] = [
         effect:
           "The faceless figure in Utterson's nightmare symbolises the unknowability of evil. The absence of features makes Hyde a blank screen for Victorian fears about degeneracy, the primitive, and the repressed.",
       },
-      {
-        technique: 'Dramatic irony',
-        quote: '"the moment I choose, I can be rid of Mr Hyde"',
-        effect:
-          "Jekyll's reassurance is loaded with dramatic irony for the reader who knows (or will learn) that Hyde cannot be controlled. Jekyll's overconfidence mirrors the hubris of classical tragedy and foreshadows his downfall.",
-      },
     ],
     structuralSignificance:
       'This chapter deepens the mystery by providing clues without answers. Stevenson uses Utterson as a surrogate reader, piecing together fragments. The rift between Lanyon and Jekyll introduces the theme of science versus orthodoxy, which will become crucial in the final revelations. The chapter moves from public investigation (reading the will, visiting Lanyon) to private encounter (meeting Hyde), narrowing the focus towards the truth.',
@@ -174,9 +164,9 @@ const chapters: ChapterData[] = [
     number: 3,
     title: 'Dr Jekyll Was Quite at Ease',
     summary:
-      'Two weeks later, Jekyll hosts a dinner party attended by Utterson and other old friends. After the guests leave, Utterson raises his concerns about Hyde and the will. Jekyll becomes visibly agitated but assures Utterson that he can "be rid of Mr Hyde" whenever he chooses. He asks Utterson, as his lawyer and friend, to honour the will and look after Hyde\'s interests if anything should happen to him. Jekyll describes his situation as "painful" but insists it can be resolved at any moment. Utterson reluctantly agrees.',
+      'Two weeks later, Jekyll hosts a dinner party attended by Utterson and other old friends. After the guests leave, Utterson raises his concerns about Hyde and the will. Jekyll becomes visibly agitated but assures Utterson that he can "be rid of Mr. Hyde" whenever he chooses. He asks Utterson, as his lawyer and friend, to honour the will and look after Hyde\'s interests if anything should happen to him. Jekyll describes his situation as "painful" but insists it can be resolved at any moment. Utterson reluctantly agrees.',
     summaryAr:
-      'بعد أسبوعين، Jekyll يستضيف عشاء يحضره Utterson وأصدقاء قدامى. بعد ما يطلع الضيوف، Utterson يطرح قلقه عن Hyde والوصية. Jekyll يصير عصبي ويبيّن عليه الاضطراب، لكنه يطمئن Utterson إنه يقدر "be rid of Mr Hyde" متى ما يبا. يطلب من Utterson، باعتباره محاميه وصديقه، يحترم الوصية ويعتني بمصالح Hyde لو صار له شي. Jekyll يصف وضعه بأنه "painful"، لكنه يصرّ إن المسألة قابلة للحل بأي لحظة. Utterson يوافق على مضض.',
+      'بعد أسبوعين، Jekyll يستضيف عشاء يحضره Utterson وأصدقاء قدامى. بعد ما يطلع الضيوف، Utterson يطرح قلقه عن Hyde والوصية. Jekyll يصير عصبي ويبيّن عليه الاضطراب، لكنه يطمئن Utterson إنه يقدر "be rid of Mr. Hyde" متى ما يبا. يطلب من Utterson، باعتباره محاميه وصديقه، يحترم الوصية ويعتني بمصالح Hyde لو صار له شي. Jekyll يصف وضعه بأنه "painful"، لكنه يصرّ إن المسألة قابلة للحل بأي لحظة. Utterson يوافق على مضض.',
     keyEvents: [
       'Jekyll hosts a dinner party, appearing his usual sociable self',
       'Utterson confronts Jekyll about Hyde after the other guests leave',
@@ -190,35 +180,28 @@ const chapters: ChapterData[] = [
       {
         technique: 'Juxtaposition',
         quote:
-          '"the large handsome face of Dr Jekyll grew pale to the very lips, and there came a blackness about his eyes"',
+          '"the large handsome face of Dr. Jekyll grew pale to the very lips, and there came a blackness about his eyes"',
         effect:
           'The shift from "handsome" to "pale" and "blackness" within a single sentence physically enacts the Jekyll-to-Hyde duality. The darkness "about his eyes" suggests Hyde lurking beneath Jekyll\'s composed exterior, threatening to surface.',
       },
       {
         technique: 'Dramatic irony',
-        quote: '"the moment I choose, I can be rid of Mr Hyde. I give you my hand upon that"',
+        quote: '"the moment I choose, I can be rid of Mr. Hyde. I give you my hand upon that"',
         effect:
           "Jekyll's confidence that he is in control is deeply ironic. The handshake sealing the promise is a gesture of trust between gentlemen, yet the reader senses that this trust is misplaced. The phrase foreshadows Jekyll's ultimate loss of control.",
       },
       {
         technique: 'Euphemism',
-        quote: '"my position is a very strange one - a very strange one"',
+        quote: '"my position is a very strange - a very strange one"',
         effect:
           'Jekyll uses vague, evasive language to avoid naming his predicament. The repetition of "very strange" signals emotional distress beneath the surface. Stevenson demonstrates how Victorian propriety forces characters to speak around the truth rather than confronting it.',
       },
       {
-        technique: 'Imperative mood',
+        technique: 'Repetition (anaphora)',
         quote:
           '"I only ask for justice; I only ask you to help him for my sake, when I am no longer here"',
         effect:
-          'Jekyll\'s plea shifts from commanding to desperate. The phrase "when I am no longer here" foreshadows his death or disappearance, while the word "justice" ironically aligns Hyde with a moral concept he utterly lacks.',
-      },
-      {
-        technique: 'Symbolism',
-        quote:
-          '"the fire burned in the grate... and Jekyll, looking deadly sick, did not rise to meet them"',
-        effect:
-          "The domestic fire suggests warmth and respectability, but Jekyll's sickly appearance undermines the comfort of the setting. The refusal to rise breaks social convention, signalling that Jekyll's inner turmoil is beginning to erode his public performance.",
+          'The repeated "I only ask" makes Jekyll\'s plea insistent and desperate. The phrase "when I am no longer here" foreshadows his death or disappearance, while the word "justice" ironically aligns Hyde with a moral concept he utterly lacks.',
       },
     ],
     structuralSignificance:
@@ -249,19 +232,13 @@ const chapters: ChapterData[] = [
           'The simile "ape-like" connects Hyde to Darwinian fears of evolutionary regression, suggesting that beneath civilisation lurks a primitive beast. The metaphor "storm of blows" frames the violence as an uncontrollable natural force, removing human agency and implying Hyde is beyond reason.',
       },
       {
-        technique: 'Pathetic fallacy',
-        quote: '"the fog still slept on the wing above the drowned city"',
-        effect:
-          'The personified fog "sleeping" over a "drowned" city creates a suffocating Gothic atmosphere. London is submerged in darkness and concealment, mirroring the characters\' inability to see the truth. The verb "drowned" foreshadows destruction.',
-      },
-      {
         technique: 'Contrast',
-        quote: '"an aged and beautiful gentleman with white hair"',
+        quote: '"an aged beautiful gentleman with white hair"',
         effect:
           "Carew is presented as the epitome of innocence and respectability. His beauty, age, and white hair emphasise his vulnerability and make Hyde's attack even more horrifying. Stevenson uses the contrast to clarify that Hyde targets goodness itself.",
       },
       {
-        technique: 'Onomatopoeia and violent imagery',
+        technique: 'Auditory and violent imagery',
         quote: '"the bones were audibly shattered and the body jumped upon the roadway"',
         effect:
           'The word "audibly" forces the reader to hear the violence; "jumped" gives the corpse an unnatural animation. The graphic physicality refuses to let the reader look away, breaking the novella\'s usual pattern of gentlemanly restraint.',
@@ -269,9 +246,15 @@ const chapters: ChapterData[] = [
       {
         technique: 'Symbolism (the cane)',
         quote:
-          '"the stick with which the deed had been done... was one which Utterson... had himself presented many years before to Henry Jekyll"',
+          '"the stick with which the deed had been done... he recognised it for one that he had himself presented many years before to Henry Jekyll"',
         effect:
           "The cane is a symbol of gentlemanly respectability repurposed as a murder weapon. That it was a gift from Utterson to Jekyll creates a chain of complicity linking the respectable world to Hyde's violence. The broken cane suggests the shattering of Victorian propriety.",
+      },
+      {
+        technique: 'Simile',
+        quote: '"like a district of some city in a nightmare"',
+        effect:
+          "The simile comparing the London streets to a nightmare blurs the boundary between reality and the subconscious. The Gothic atmosphere is rooted in psychological unease rather than supernatural events, foreshadowing the novella's exploration of the hidden self.",
       },
     ],
     structuralSignificance:
@@ -281,9 +264,9 @@ const chapters: ChapterData[] = [
     number: 5,
     title: 'Incident of the Letter',
     summary:
-      'Utterson visits Jekyll, who appears "deadly sick." Jekyll swears he is finished with Hyde and will never see him again. He shows Utterson a letter apparently from Hyde, promising to disappear and assuring Jekyll he has a means of escape. Jekyll claims it was delivered by hand but will not explain further. On his way out, Utterson asks Poole about the letter; Poole says nothing came by hand that day, only regular post. Later, Utterson\'s head clerk, Mr Guest, who is an expert in handwriting, notices that Hyde\'s letter bears a striking resemblance to Jekyll\'s own handwriting, albeit with a different slope. Utterson realises with a "chill" that Jekyll may have forged the letter on Hyde\'s behalf.',
+      'Utterson visits Jekyll, who appears "deathly sick." Jekyll swears he is finished with Hyde and will never see him again. He shows Utterson a letter apparently from Hyde, promising to disappear and assuring Jekyll he has a means of escape. Jekyll claims it was delivered by hand but will not explain further. On his way out, Utterson asks Poole about the letter; Poole says nothing came by hand that day, only regular post. Later, Utterson\'s head clerk, Mr Guest, who is an expert in handwriting, notices that Hyde\'s letter bears a striking resemblance to Jekyll\'s own handwriting, albeit with a different slope. Utterson realises with a "chill" that Jekyll may have forged the letter on Hyde\'s behalf.',
     summaryAr:
-      'Utterson يزور Jekyll، اللي يبيّن عليه إنه "deadly sick". Jekyll يحلف إنه خلّص من Hyde وما يباه يشوفه ثاني مرة. يوري Utterson رسالة من ظاهرها إنها من Hyde، تعد بالاختفاء وتطمئن Jekyll إن عنده وسيلة هرب. Jekyll يدّعي إن الرسالة وصلت باليد، لكن ما يشرح أكثر. وهو طالع، Utterson يسأل Poole عن الرسالة؛ Poole يقول ما وصل شي باليد ذيك الساعة، بس البريد العادي. بعدها، كاتب Utterson الأول Mr Guest، اللي خبير في خطوط اليد، يلاحظ إن رسالة Hyde تشبه خط Jekyll بشكل ملفت، بس الميلان مختلف. Utterson يدرك بـ "chill" إن Jekyll يمكن زوّر الرسالة باسم Hyde.',
+      'Utterson يزور Jekyll، اللي يبيّن عليه إنه "deathly sick". Jekyll يحلف إنه خلّص من Hyde وما يباه يشوفه ثاني مرة. يوري Utterson رسالة من ظاهرها إنها من Hyde، تعد بالاختفاء وتطمئن Jekyll إن عنده وسيلة هرب. Jekyll يدّعي إن الرسالة وصلت باليد، لكن ما يشرح أكثر. وهو طالع، Utterson يسأل Poole عن الرسالة؛ Poole يقول ما وصل شي باليد ذيك الساعة، بس البريد العادي. بعدها، كاتب Utterson الأول Mr Guest، اللي خبير في خطوط اليد، يلاحظ إن رسالة Hyde تشبه خط Jekyll بشكل ملفت، بس الميلان مختلف. Utterson يدرك بـ "chill" إن Jekyll يمكن زوّر الرسالة باسم Hyde.',
     keyEvents: [
       'Utterson visits a sick and frightened Jekyll in his laboratory',
       'Jekyll produces a letter supposedly from Hyde, pledging to vanish',
@@ -296,9 +279,9 @@ const chapters: ChapterData[] = [
     languageAnalysis: [
       {
         technique: 'Foreshadowing',
-        quote: '"the two hands are in many points identical; only differently sloped"',
+        quote: '"the two hands are in many points identical: only differently sloped"',
         effect:
-          'The near-identical handwriting is the strongest clue yet that Jekyll and Hyde are the same person. The "different slope" is a brilliant metaphor: the same fundamental identity, tilted in a different moral direction. This foreshadows the full revelation in Chapter 10.',
+          'The near-identical handwriting is the strongest clue yet that Jekyll and Hyde are the same person. The different slope is a brilliant metaphor: the same fundamental identity, tilted in a different moral direction. This foreshadows the full revelation in Chapter 10.',
       },
       {
         technique: 'Symbolism (the laboratory)',
@@ -309,13 +292,13 @@ const chapters: ChapterData[] = [
       },
       {
         technique: 'Adjectives suggesting decay',
-        quote: '"looking deadly sick... he did not rise to welcome his visitor"',
+        quote: '"looking deathly sick. He did not rise to meet his visitor"',
         effect:
-          'The phrase "deadly sick" foreshadows Jekyll\'s eventual death. His failure to rise breaches Victorian social etiquette, signalling that his inner turmoil has begun to overpower his ability to perform respectability.',
+          'The phrase "deathly sick" foreshadows Jekyll\'s eventual death. His failure to rise breaches Victorian social etiquette, signalling that his inner turmoil has begun to overpower his ability to perform respectability.',
       },
       {
-        technique: 'Epistolary form',
-        quote: '"Dear Dr Jekyll... You have been too generous. I am unworthy"',
+        technique: 'Reported letter',
+        quote: '"whom he had long so unworthily repaid for a thousand generosities"',
         effect:
           "Hyde's supposed letter is polite and deferential, creating a jarring disconnect with his violent actions. If Jekyll forged the letter, the politeness becomes a performance of repentance. The epistolary form adds a layer of unreliability that deepens the mystery.",
       },
@@ -325,6 +308,12 @@ const chapters: ChapterData[] = [
         effect:
           "This Gothic cliche is deliberately deployed at a moment of genuine revelation. Utterson's physical response to the handwriting evidence shows that even a rational lawyer can be overcome by horror when confronted with truths he has tried to avoid.",
       },
+      {
+        technique: 'Pathetic fallacy',
+        quote: '"the fog still slept on the wing above the drowned city"',
+        effect:
+          'The personified fog "sleeping" over a "drowned" city creates a suffocating Gothic atmosphere. London is submerged in darkness and concealment, mirroring the characters\' inability to see the truth. The verb "drowned" foreshadows destruction.',
+      },
     ],
     structuralSignificance:
       "Chapter 5 is the pivotal chapter for clues. The handwriting evidence is Stevenson's most direct hint at the truth before the final revelations. Structurally, the chapter shifts the narrative into epistolary mode (letters and documents), anticipating the two narrative letters that conclude the novella. Utterson's decision to suppress the evidence rather than act on it also reinforces the theme of Victorian secrecy.",
@@ -333,9 +322,9 @@ const chapters: ChapterData[] = [
     number: 6,
     title: 'Remarkable Incident of Dr Lanyon',
     summary:
-      'With Hyde seemingly gone, Jekyll appears to return to his old self. For more than two months he is sociable, charitable, and religious, hosting dinners and renewing his friendship with Lanyon. Then, abruptly, Jekyll shuts his door again. When Utterson visits Lanyon, he is shocked to find him gravely ill, with the look of death upon him. Lanyon refuses to discuss Jekyll and says: "I wish to see or hear no more of Dr Jekyll." He says he has had a shock from which he will not recover. Within weeks, Lanyon is dead. He leaves Utterson a sealed letter marked "not to be opened till the death or disappearance of Dr Henry Jekyll." Utterson, true to his professional honour, resists the temptation to open it.',
+      'With Hyde seemingly gone, Jekyll appears to return to his old self. For more than two months he is sociable, charitable, and religious, hosting dinners and renewing his friendship with Lanyon. Then, abruptly, Jekyll shuts his door again. When Utterson visits Lanyon, he is shocked to find him gravely ill, with the look of death upon him. Lanyon refuses to discuss Jekyll and says: "I wish to see or hear no more of Dr. Jekyll." He says he has had a shock from which he will not recover. Within weeks, Lanyon is dead. He leaves Utterson a sealed letter marked "not to be opened till the death or disappearance of Dr. Henry Jekyll." Utterson, true to his professional honour, resists the temptation to open it.',
     summaryAr:
-      'بمجرد ما يبيّن Hyde إنه راح، Jekyll يبيّن إنه رجع لطبيعته القديمة. لأكثر من شهرين هو اجتماعي وكريم ومتديّن، يستضيف عشاءات ويجدّد صداقته مع Lanyon. ثم، فجأة، Jekyll يسكّر بابه ثاني مرة. لمن يزور Utterson Lanyon، يتفاجأ إنه مريض بشكل خطر، وعليه شبح الموت. Lanyon يرفض يتكلّم عن Jekyll ويقول: "I wish to see or hear no more of Dr Jekyll". يقول إنه أصابته صدمة ما يقدر يتعافى منها. خلال أسابيع، Lanyon يموت. يترك لـ Utterson رسالة مختومة مكتوب عليها "not to be opened till the death or disappearance of Dr Henry Jekyll". Utterson، وفياً لشرف مهنته، يقاوم إغراء فتحها.',
+      'بمجرد ما يبيّن Hyde إنه راح، Jekyll يبيّن إنه رجع لطبيعته القديمة. لأكثر من شهرين هو اجتماعي وكريم ومتديّن، يستضيف عشاءات ويجدّد صداقته مع Lanyon. ثم، فجأة، Jekyll يسكّر بابه ثاني مرة. لمن يزور Utterson Lanyon، يتفاجأ إنه مريض بشكل خطر، وعليه شبح الموت. Lanyon يرفض يتكلّم عن Jekyll ويقول: "I wish to see or hear no more of Dr. Jekyll". يقول إنه أصابته صدمة ما يقدر يتعافى منها. خلال أسابيع، Lanyon يموت. يترك لـ Utterson رسالة مختومة مكتوب عليها "not to be opened till the death or disappearance of Dr. Henry Jekyll". Utterson، وفياً لشرف مهنته، يقاوم إغراء فتحها.',
     keyEvents: [
       'Jekyll returns to social life for over two months, apparently free of Hyde',
       'Jekyll suddenly becomes a recluse again, refusing all visitors',
@@ -355,27 +344,27 @@ const chapters: ChapterData[] = [
       {
         technique: 'Tricolon',
         quote:
-          '"He had always been known for charities; he was now no less distinguished for religion. He was busy, he was much in the open air, he did good"',
+          '"He had always been known for charities, he was now no less distinguished for religion. He was busy, he was much in the open air, he did good"',
         effect:
           'The tricolon "busy... open air... did good" creates a rhythm of frenetic activity. Jekyll\'s exaggerated virtue is overcompensation for Hyde\'s crimes. Stevenson ironically highlights Victorian hypocrisy: public goodness is used as a mask for private sin.',
       },
       {
         technique: 'Repetition',
-        quote: '"I wish to see or hear no more of Dr Jekyll... I am quite done with that person"',
+        quote: '"I wish to see or hear no more of Dr. Jekyll... I am quite done with that person"',
         effect:
           'Lanyon\'s repetitive, absolute refusal reveals deep psychological trauma. The formal phrase "that person" dehumanises Jekyll and creates distance, suggesting Lanyon cannot process what he has witnessed.',
       },
       {
         technique: 'Gothic motif (sealed documents)',
         quote:
-          '"a sealed enclosure... not to be opened till the death or disappearance of Dr Henry Jekyll"',
+          '"another enclosure, likewise sealed... not to be opened till the death or disappearance of Dr. Henry Jekyll"',
         effect:
           'The sealed letter is a classic Gothic device. It prolongs suspense, defers revelation, and symbolises the culture of secrecy. The word "disappearance" echoes Jekyll\'s will and suggests that those closest to him always anticipated a mysterious end.',
       },
       {
         technique: 'Sensory decay',
         quote:
-          '"he looked deadly pale... his flesh had fallen away; he was visibly balder and older"',
+          '"The rosy man had grown pale; his flesh had fallen away; he was visibly balder and older"',
         effect:
           'The physical description of Lanyon mirrors his psychological collapse. The verb "fallen away" suggests something has been stripped from him, while "visibly" forces the reader to see the transformation. Lanyon becomes a visual warning of what happens when the truth is confronted.',
       },
@@ -415,7 +404,8 @@ const chapters: ChapterData[] = [
       },
       {
         technique: 'Silence as characterisation',
-        quote: '"they said nothing, but walked on once more in silence"',
+        quote:
+          '"Mr. Enfield only nodded his head very seriously, and walked on once more in silence"',
         effect:
           'The silence that closes the chapter is more eloquent than any dialogue. Stevenson demonstrates that some experiences are beyond language. The silence also reflects the Victorian compulsion to avoid naming uncomfortable truths.',
       },
@@ -429,7 +419,7 @@ const chapters: ChapterData[] = [
       {
         technique: 'Dramatic irony',
         quote:
-          '"Come now; I am very low in spirits, and I will stay here... but indeed, Utterson, I am very glad to see you"',
+          '"I should like to very much; but no, no, no, it is quite impossible; I dare not. But indeed, Utterson, I am very glad to see you"',
         effect:
           "Jekyll's attempt at warmth and social connection is devastatingly undercut by what follows. The audience understands that Jekyll is trying to hold onto his identity, but the transformation is taking over. His gladness at seeing friends emphasises his isolation.",
       },
@@ -441,14 +431,14 @@ const chapters: ChapterData[] = [
     number: 8,
     title: 'The Last Night',
     summary:
-      "Jekyll's butler Poole arrives at Utterson's house in a state of terror. He believes his master has been murdered and replaced by someone else, because the voice behind the locked laboratory door no longer sounds like Jekyll. Together they return to Jekyll's house, where the servants are huddled in the hallway, terrified. Poole describes how the figure behind the door has been desperately sending him out for a particular chemical salt, rejecting every batch as impure. They hear a voice crying and weeping behind the door. Poole is convinced he once caught a glimpse of the occupant and saw a creature wearing a mask who \"cried out like a rat\" and fled. Utterson and Poole break down the door with an axe. Inside they find the body of Edward Hyde, still twitching in Jekyll's oversized clothes, dead by suicide from a vial of poison. Jekyll is nowhere to be found. On the desk they discover an updated will naming Utterson as beneficiary, a short note from Jekyll, and Lanyon's sealed letter.",
+      "Jekyll's butler Poole arrives at Utterson's house in a state of terror. He believes his master has been murdered and replaced by someone else, because the voice behind the locked laboratory door no longer sounds like Jekyll. Together they return to Jekyll's house, where the servants are huddled in the hallway, terrified. Poole describes how the figure behind the door has been desperately sending him out for a particular chemical salt, rejecting every batch as impure. They hear a voice crying and weeping behind the door. Poole is convinced he once caught a glimpse of the occupant and saw a creature wearing a mask that, in his words, would \"cry out like a rat, and run\". Utterson and Poole break down the door with an axe. Inside they find the body of Edward Hyde, still twitching in Jekyll's oversized clothes, dead by suicide from a vial of poison. Jekyll is nowhere to be found. On the desk they discover an updated will naming Utterson as beneficiary, a short note from Jekyll, and Lanyon's sealed letter.",
     summaryAr:
-      'Poole خدّام Jekyll ييي بيت Utterson في حالة رعب. مقتنع إن سيده قد قُتل وحد ثاني صار مكانه، لأن الصوت اللي وراء باب المختبر المسكّر ما عاد يشبه صوت Jekyll. سوا يرجعون لبيت Jekyll، والخدم ملتمّين في الرواق وخايفين. Poole يصف شلون الشخص اللي وراء الباب يطلّبه بإلحاح ملح كيميائي معيّن، ويرفض كل دفعة ويقول عنها مغشوشة. يسمعون صوت يبكي وراء الباب. Poole مقتنع إنه شاف لمحة من الشخص ولاحظ إنه مخلوق لابس قناع و"cried out like a rat" وهرب. Utterson وPoole يكسرون الباب بفأس. داخل المختبر يلقون جثة Edward Hyde، لسّى تترعش، لابس ثياب Jekyll اللي وايد أكبر من حجمه، منتحر بقارورة سم. Jekyll مو موجود في أي مكان. على المكتب يحصّلون وصية محدّثة باسم Utterson كمستفيد، وملاحظة قصيرة من Jekyll، ورسالة Lanyon المختومة.',
+      'Poole خدّام Jekyll ييي بيت Utterson في حالة رعب. مقتنع إن سيده قد قُتل وحد ثاني صار مكانه، لأن الصوت اللي وراء باب المختبر المسكّر ما عاد يشبه صوت Jekyll. سوا يرجعون لبيت Jekyll، والخدم ملتمّين في الرواق وخايفين. Poole يصف شلون الشخص اللي وراء الباب يطلّبه بإلحاح ملح كيميائي معيّن، ويرفض كل دفعة ويقول عنها مغشوشة. يسمعون صوت يبكي وراء الباب. Poole مقتنع إنه شاف لمحة من الشخص ولاحظ إنه مخلوق لابس قناع و"cry out like a rat, and run". Utterson وPoole يكسرون الباب بفأس. داخل المختبر يلقون جثة Edward Hyde، لسّى تترعش، لابس ثياب Jekyll اللي وايد أكبر من حجمه، منتحر بقارورة سم. Jekyll مو موجود في أي مكان. على المكتب يحصّلون وصية محدّثة باسم Utterson كمستفيد، وملاحظة قصيرة من Jekyll، ورسالة Lanyon المختومة.',
     keyEvents: [
       "Poole arrives at Utterson's door in a panic, believing Jekyll has been murdered",
       'The servants are gathered in terror, sensing something is terribly wrong',
       'The voice behind the locked door has changed and no longer sounds like Jekyll',
-      'Poole describes a masked figure who "cried out like a rat"',
+      'Poole describes a masked figure who would "cry out like a rat"',
       'Utterson and Poole break down the door with an axe',
       "They find Hyde dead by suicide in Jekyll's clothes; Jekyll has vanished",
     ],
@@ -457,9 +447,9 @@ const chapters: ChapterData[] = [
     languageAnalysis: [
       {
         technique: 'Animalistic imagery',
-        quote: '"it cried out like a rat when it came to light"',
+        quote: '"why did he cry out like a rat, and run from me?"',
         effect:
-          'Poole describes Hyde as "it" rather than "he," stripping him of humanity. The simile "like a rat" continues the pattern of animal imagery associated with Hyde, suggesting he has degenerated even further from humanity. Rats connote disease, concealment, and parasitism.',
+          'Elsewhere Poole calls the figure "it" ("why it stays there"), stripping him of humanity. The simile "like a rat" continues the pattern of animal imagery associated with Hyde, suggesting he has degenerated even further from humanity. Rats connote disease, concealment, and parasitism.',
       },
       {
         technique: 'Gothic atmosphere',
@@ -471,21 +461,21 @@ const chapters: ChapterData[] = [
       {
         technique: 'Clothing symbolism',
         quote:
-          '"the clothes, although of the doctor\'s bigness, were enormously too large for him in every measurement"',
+          '"He was dressed in clothes far too large for him, clothes of the doctor\'s bigness"',
         effect:
           "Hyde wearing Jekyll's oversized clothes is one of the novella's most powerful visual images. The ill-fitting garments symbolise Hyde's parasitic relationship with Jekyll: he inhabits Jekyll's life but does not fill it. The detail also provides the physical evidence that confirms the truth.",
       },
       {
         technique: 'Suspense through pacing',
         quote:
-          '"\'Down with the door, Poole!\' Utterson cried... and the red baize door leaped against the lock and hinges"',
+          '"\'Down with the door, Poole!\'... the red baize door leaped against the lock and hinges"',
         effect:
           'The imperative and exclamation mark break with Utterson\'s usual measured tone, showing the gravity of the situation. The personification of the door "leaping" against its frame creates violent, kinetic energy. The colour "red" carries connotations of blood and danger.',
       },
       {
         technique: 'Sensory detail',
         quote:
-          '"right in the midst there lay the body of a man sorely contorted and still twitching"',
+          '"Right in the middle there lay the body of a man sorely contorted and still twitching"',
         effect:
           'The word "contorted" suggests pain and distortion, while "still twitching" implies they have arrived moments too late. The present participle "twitching" creates an unnerving sense of life persisting in death, blurring the boundary between the living and the dead.',
       },
@@ -527,7 +517,7 @@ const chapters: ChapterData[] = [
       {
         technique: 'Visual transformation',
         quote:
-          '"he put the glass to his lips and drank at one gulp... there before my eyes - pale and shaken, and half fainting - there stood Henry Jekyll!"',
+          '"he put the glass to his lips and drank at one gulp... there before my eyes - pale and shaken, and half fainting, and groping before him with his hands, like a man restored from death - there stood Henry Jekyll!"',
         effect:
           'The dashes create breathless, interrupted syntax that mimics Lanyon\'s shock. The detail "at one gulp" shows Hyde\'s desperate haste. The repetition of "there" emphasises the impossibility of what Lanyon is seeing: the familiar Jekyll standing where the monstrous Hyde was moments before.',
       },
@@ -542,7 +532,7 @@ const chapters: ChapterData[] = [
         quote:
           '"he reeled, staggered, clutched at the table and held on, staring with injected eyes, gasping with open mouth"',
         effect:
-          'The rapid sequence of verbs ("reeled, staggered, clutched, held, staring, gasping") creates a cinematic, almost slow-motion description of the transformation. The "injected eyes" (bloodshot) and "open mouth" reduce the figure to raw physicality, stripped of all social performance.',
+          'The rapid sequence of verbs (reeled, staggered, clutched, held on, staring, gasping) creates a cinematic, almost slow-motion description of the transformation. The "injected eyes" (bloodshot) and "open mouth" reduce the figure to raw physicality, stripped of all social performance.',
       },
     ],
     structuralSignificance:
@@ -578,7 +568,7 @@ const chapters: ChapterData[] = [
         quote:
           '"I was slowly losing hold of my original and better self, and becoming slowly incorporated with my second and worse"',
         effect:
-          'The passive construction ("losing hold," "becoming incorporated") makes the process sound involuntary and irreversible, mirroring the language of addiction. The repetition of "slowly" creates a creeping, insidious pace. The moral vocabulary ("better," "worse") frames the transformation as spiritual decline.',
+          'The passive construction ("losing hold," "becoming slowly incorporated") makes the process sound involuntary and irreversible, mirroring the language of addiction. The repetition of "slowly" creates a creeping, insidious pace. The moral vocabulary ("better," "worse") frames the transformation as spiritual decline.',
       },
       {
         technique: 'Biblical imagery',
@@ -588,11 +578,11 @@ const chapters: ChapterData[] = [
           'The "slime of the pit" is a direct reference to Hell. Hyde is characterised as something that has crawled from the underworld. The verb "utter" gives evil its own voice and agency, suggesting it is a living force that demands expression rather than a passive condition.',
       },
       {
-        technique: 'Oxymoron',
+        technique: 'Tricolon of comparatives',
         quote:
           '"I felt younger, lighter, happier in body; within I was conscious of a heady recklessness"',
         effect:
-          'Jekyll describes becoming Hyde with genuinely positive language ("younger, lighter, happier"), creating an oxymoron with the moral horror of what Hyde represents. The word "heady" suggests intoxication, while "recklessness" hints at the loss of moral compass. Stevenson shows why evil is seductive.',
+          'Jekyll describes becoming Hyde with genuinely positive language ("younger, lighter, happier"), a pleasure at odds with the moral horror of what Hyde represents. The word "heady" suggests intoxication, while "recklessness" hints at the loss of moral compass. Stevenson shows why evil is seductive.',
       },
       {
         technique: 'Third-person self-reference',
@@ -671,6 +661,9 @@ export default async function JekyllChaptersPage() {
           </p>
         </div>
       </section>
+
+      {/* The key scenes, part by part, animated. See scripts/mount-story-visuals.mjs. */}
+      <StoryVisuals guide={studyGuide} scenesOnly />
 
       {/* Chapter navigation */}
       <section>

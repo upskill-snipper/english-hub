@@ -27,7 +27,8 @@ const quotes: KeyQuote[] = [
     quote: '"Old Marley was as dead as a door-nail."',
     speaker: 'Narrator',
     stave: 'Stave 1',
-    context: "The opening line of the novella, establishing the fact of Marley's death.",
+    context:
+      "The last sentence of the novella's opening paragraph, establishing the fact of Marley's death.",
     analysis:
       "The famous opening uses a common simile to establish a conversational, almost conspiratorial tone. Dickens immediately addresses the reader directly, creating the intimate storytelling voice that runs through the entire novella. The matter-of-fact declaration also sets up the supernatural shock of Marley's later appearance -- if we accept he is truly dead, his ghost becomes genuinely unsettling.",
     themes: ['Death and Mortality'],
@@ -37,7 +38,7 @@ const quotes: KeyQuote[] = [
   {
     id: 2,
     quote:
-      '"Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"',
+      '"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"',
     speaker: 'Narrator',
     stave: 'Stave 1',
     context: "The narrator's first description of Scrooge's character.",
@@ -87,12 +88,12 @@ const quotes: KeyQuote[] = [
   },
   {
     id: 6,
-    quote: '"Are there no prisons? Are there no workhouses?"',
+    quote: '"Are there no prisons?" ... "And the Union workhouses?"',
     speaker: 'Scrooge',
     stave: 'Stave 1',
     context: "Scrooge's response to charity collectors asking for donations for the poor.",
     analysis:
-      'Scrooge parrots the language of Victorian utilitarian policy. The rhetorical questions dismiss personal responsibility -- if institutions exist, why should he help? Dickens makes the reader hear how cruel this reasoning sounds from an individual. The Ghost of Christmas Present throws these exact words back at Scrooge in Stave 3, transforming them from dismissal into accusation.',
+      'Scrooge parrots the language of Victorian utilitarian policy. The rhetorical questions dismiss personal responsibility -- if institutions exist, why should he help? Dickens makes the reader hear how cruel this reasoning sounds from an individual. The Ghost of Christmas Present throws his own words back at Scrooge in Stave 3, transforming them from dismissal into accusation.',
     themes: ['Social Responsibility', 'Greed and Capitalism'],
     examTip:
       'Link to the Poor Law Amendment Act of 1834 and workhouse conditions for strong contextual marks. Track how the quote echoes back in Stave 3.',
@@ -100,7 +101,7 @@ const quotes: KeyQuote[] = [
   {
     id: 7,
     quote:
-      '"If they would rather die, they had better do it, and decrease the surplus population."',
+      '"If they would rather die... they had better do it, and decrease the surplus population."',
     speaker: 'Scrooge',
     stave: 'Stave 1',
     context: "Scrooge's dismissal of the poor when asked to donate to charity.",
@@ -112,7 +113,7 @@ const quotes: KeyQuote[] = [
   },
   {
     id: 8,
-    quote: '"I wear the chain I forged in life. I made it link by link, and yard by yard."',
+    quote: '"I wear the chain I forged in life... I made it link by link, and yard by yard."',
     speaker: "Marley's Ghost",
     stave: 'Stave 1',
     context: 'Marley explains the chain he wears in death, made from the instruments of commerce.',
@@ -125,7 +126,7 @@ const quotes: KeyQuote[] = [
   {
     id: 9,
     quote:
-      '"Mankind was my business. The common welfare was my business; charity, mercy, forbearance, and benevolence were, all, my business."',
+      '"Mankind was my business. The common welfare was my business; charity, mercy, forbearance, and benevolence, were, all, my business."',
     speaker: "Marley's Ghost",
     stave: 'Stave 1',
     context: "Marley's anguished declaration about what his true purpose in life should have been.",
@@ -138,7 +139,7 @@ const quotes: KeyQuote[] = [
   {
     id: 10,
     quote: '"A solitary child, neglected by his friends, is left there still."',
-    speaker: 'Narrator',
+    speaker: 'Ghost of Christmas Past',
     stave: 'Stave 2',
     context: 'The vision of young Scrooge alone at boarding school during Christmas holidays.',
     analysis:
@@ -187,7 +188,7 @@ const quotes: KeyQuote[] = [
   {
     id: 14,
     quote:
-      '"You fear the world too much. All your other hopes have merged into the hope of being beyond the chance of its sordid reproach."',
+      '"You fear the world too much... All your other hopes have merged into the hope of being beyond the chance of its sordid reproach."',
     speaker: 'Belle',
     stave: 'Stave 2',
     context: "Belle diagnoses the psychology behind Scrooge's greed.",
@@ -199,12 +200,12 @@ const quotes: KeyQuote[] = [
   },
   {
     id: 15,
-    quote: '"God bless Us, Every One!"',
+    quote: '"God bless us every one!"',
     speaker: 'Tiny Tim',
     stave: 'Stave 3',
     context: "Tiny Tim's words at the Cratchit family Christmas dinner.",
     analysis:
-      'The novella\'s most famous line is a prayer for universal blessing. "Every One" does not exclude -- it includes Scrooge, the rich, the poor, the cruel and the kind. The fact that this prayer comes from the poorest, most vulnerable character is Dickens\'s sharpest moral point: those with the least give the most.',
+      'The novella\'s most famous line is a prayer for universal blessing. "Every one" does not exclude -- it includes Scrooge, the rich, the poor, the cruel and the kind. The fact that this prayer comes from the poorest, most vulnerable character is Dickens\'s sharpest moral point: those with the least give the most.',
     themes: ['Christmas Spirit', 'Social Responsibility'],
     examTip:
       "Short but essential. Use it to discuss Tiny Tim's symbolic function and the irony that the most generous spirit belongs to the most vulnerable character.",
@@ -212,12 +213,12 @@ const quotes: KeyQuote[] = [
   {
     id: 16,
     quote:
-      '"Oh, a wonderful pudding! Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs Cratchit since their marriage."',
+      '"Oh, a wonderful pudding! Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs. Cratchit since their marriage."',
     speaker: 'Narrator',
     stave: 'Stave 3',
     context: 'The Cratchit family celebrates their modest Christmas dinner.',
     analysis:
-      'The comedy and warmth of Bob\'s deadpan compliment disguises real poverty. The pudding is "a small one for so large a family," but the Cratchits\' love transforms it into a triumph. "Calmly" adds humour -- Bob performs solemnity to honour his wife\'s effort. Dickens argues that wealth and happiness are not the same thing.',
+      'The comedy and warmth of Bob\'s deadpan compliment disguises real poverty. No Cratchit would call it "a small pudding for a large family", and the Cratchits\' love transforms it into a triumph. "Calmly" adds humour -- Bob performs solemnity to honour his wife\'s effort. Dickens argues that wealth and happiness are not the same thing.',
     themes: ['Family', 'Christmas Spirit', 'Social Responsibility'],
     examTip:
       "Use this to discuss how Dickens portrays the Cratchits' poverty with warmth rather than despair. The tone is crucial to the moral argument.",
@@ -262,7 +263,7 @@ const quotes: KeyQuote[] = [
   {
     id: 20,
     quote:
-      '"Are these the shadows of the things that Will be, or are they shadows of the things that May be, only?"',
+      '"Are these the shadows of the things that Will be, or are they shadows of things that May be, only?"',
     speaker: 'Scrooge',
     stave: 'Stave 4',
     context:
@@ -287,12 +288,12 @@ const quotes: KeyQuote[] = [
   },
   {
     id: 22,
-    quote: '"My little, little child! My little child!"',
+    quote: '"My little, little child! ... My little child!"',
     speaker: 'Bob Cratchit',
     stave: 'Stave 4',
     context: 'Bob mourns Tiny Tim in the vision of the future.',
     analysis:
-      'The heartbreaking simplicity of this line is its power. The fourfold repetition of "little" conveys grief too deep for elaborate language. Bob\'s pain is raw and unadorned. The diminutive "little" reminds the reader of how small and vulnerable Tiny Tim was, making society\'s failure to protect him feel criminal.',
+      'The heartbreaking simplicity of this line is its power. The threefold repetition of "little" conveys grief too deep for elaborate language. Bob\'s pain is raw and unadorned. The diminutive "little" reminds the reader of how small and vulnerable Tiny Tim was, making society\'s failure to protect him feel criminal.',
     themes: ['Family', 'Death and Mortality', 'Social Responsibility'],
     examTip:
       'Analyse the power of simple diction. Compare this with the elaborate language used to describe Scrooge -- grief strips away all artifice.',
@@ -311,13 +312,12 @@ const quotes: KeyQuote[] = [
   },
   {
     id: 24,
-    quote:
-      '"I am as light as a feather, I am as happy as an angel, I am as merry as a school-boy."',
+    quote: '"I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy."',
     speaker: 'Scrooge',
     stave: 'Stave 5',
     context: 'Scrooge wakes on Christmas morning, transformed.',
     analysis:
-      'The triple simile mirrors the triple ghostly visitation. "Light" undoes his heaviness, "happy" undoes his misery, "merry" undoes his hostility. "School-boy" echoes the lonely child of Stave 2 -- Scrooge reclaims childhood joy. The anaphoric "I am" asserts a new identity with confidence. The rhythm is giddy and breathless.',
+      'The triple simile (a fourth, "I am as giddy as a drunken man", follows in the next sentence) mirrors the triple ghostly visitation. "Light" undoes his heaviness, "happy" undoes his misery, "merry" undoes his hostility. "Schoolboy" echoes the lonely child of Stave 2 -- Scrooge reclaims childhood joy. The anaphoric "I am" asserts a new identity with confidence. The rhythm is giddy and breathless.',
     themes: ['Redemption', 'Christmas Spirit'],
     examTip:
       'The triple structure echoes the three ghosts. Each simile reverses a specific quality of the old Scrooge. Analyse this symmetry.',
@@ -409,7 +409,7 @@ export default function KeyQuotesPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              AQA / Edexcel / Eduqas
+              AQA / Edexcel / OCR / Eduqas
             </Badge>
           </div>
 

@@ -583,7 +583,9 @@ export default async function ToKillAMockingbirdPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          // The labels read 'Name - Chapter n' with a spaced hyphen; splitting
+          // on the em dash alone left the chapter in every option of the quiz.
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

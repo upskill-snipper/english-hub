@@ -37,7 +37,7 @@ const data: TextGuideData = {
   author: 'Jane Austen',
   year: '1813',
   category: 'Novel',
-  badge: 'AQA / OCR / Eduqas',
+  badge: 'AQA / Edexcel / OCR / Eduqas / Edexcel IGCSE / Cambridge IGCSE',
   intro:
     "Jane Austen's most celebrated novel follows Elizabeth Bennet as she navigates love, class and social expectation in Regency England. Through the spirited Elizabeth and the proud Mr Darcy, Austen explores how first impressions deceive, how pride blinds and how prejudice distorts judgement. At once a sharp social comedy and a deeply moral novel, Pride and Prejudice remains one of the most widely read works in the English language.",
   quickInfo: {
@@ -114,7 +114,7 @@ const data: TextGuideData = {
 
     "For women of the gentry class, marriage was the only route to financial security. Under the law of entail, the Bennet estate will pass to the nearest male relative, Mr Collins, leaving the five daughters with nothing. This legal reality is not merely a plot device but the engine of Mrs Bennet's desperation and Elizabeth's vulnerability.",
 
-    'Austen published her novels anonymously, identified only as "a Lady." The literary establishment of the time did not take women novelists seriously, yet Austen\'s sharp social observation and psychological insight have made her one of the most enduring writers in the English canon.',
+    'Austen published her novels anonymously: Sense and Sensibility was credited to "a Lady", and Pride and Prejudice to "the Author of Sense and Sensibility". The literary establishment of the time did not take women novelists seriously, yet Austen\'s sharp social observation and psychological insight have made her one of the most enduring writers in the English canon.',
 
     'The novel was originally drafted as "First Impressions" in 1796-97 and substantially revised before publication in 1813. Its witty dialogue, free indirect discourse and ironic narrative voice were innovative for the period and influenced generations of novelists.',
   ],
@@ -127,7 +127,7 @@ const data: TextGuideData = {
         'The novel\'s famous opening sentence is pure irony. The "truth" is really the assumption of matchmaking mothers, not a universal law.',
     },
     {
-      quote: '"She is tolerable, but not handsome enough to tempt me."',
+      quote: '"She is tolerable; but not handsome enough to tempt me."',
       who: 'Mr Darcy - Chapter 3',
       analysis:
         "Darcy's dismissive remark at the first ball establishes Elizabeth's prejudice against him and his pride in his own judgement.",
@@ -140,7 +140,7 @@ const data: TextGuideData = {
         "Darcy's first proposal is undermined by his emphasis on the social gulf between them. He confesses love while insulting her family.",
     },
     {
-      quote: '"Till this moment I never knew myself."',
+      quote: '"Till this moment, I never knew myself."',
       who: 'Elizabeth - Chapter 36',
       analysis:
         "Elizabeth's moment of self-recognition after reading Darcy's letter. She realises her pride in her own judgement has been her greatest flaw.",
@@ -202,7 +202,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       '"She is beautiful"',
-      '"She is tolerable, but not handsome enough to tempt me"',
+      '"She is tolerable; but not handsome enough to tempt me"',
       '"I must ask her to dance"',
       '"She is the prettiest girl here"',
     ],
@@ -456,7 +456,7 @@ const REVISION_TOPICS = [
       'The entail means the estate passes to Mr Collins',
       "Charlotte's marriage shows the harsh economics of women's dependence",
       'Elizabeth refuses to marry without love or respect',
-      '"I am only resolved to act in that manner which will constitute my happiness"',
+      '"I am only resolved to act in that manner, which will, in my own opinion, constitute my happiness"',
       "Austen shows the injustice while celebrating Elizabeth's resistance",
     ],
   },
@@ -536,7 +536,9 @@ export default async function PrideAndPrejudicePage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          // The labels read 'Name - Chapter n' with a spaced hyphen; splitting
+          // on the em dash alone left the chapter in every option of the quiz.
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

@@ -414,7 +414,7 @@ The monster saw my determination in my face and gnashed his teeth in the impoten
         {
           type: 'language',
           text: 'trembling with passion, tore to pieces the thing on which I was engaged',
-          note: 'Victor "tears to pieces" the female creature - violent, destructive language that mirrors the Creature\'s murders. Victor\'s act of destruction is as visceral as any killing in the novel.',
+          note: 'Victor "tore to pieces" the female creature - violent, destructive language that mirrors the Creature\'s murders. Victor\'s act of destruction is as visceral as any killing in the novel.',
         },
         {
           type: 'character',
@@ -587,7 +587,7 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
         {
           type: 'context',
           text: 'I am returning to England. I have lost my hopes of utility and glory; I have lost my friend',
-          note: "Walton heeds Victor's warning and turns back - the only character who learns from the story. His retreat represents the novel's moral resolution: some ambitions must be abandoned.",
+          note: "Walton turns back, though because his crew demand it rather than by his own choice. His retreat represents the novel's moral resolution: some ambitions must be abandoned.",
         },
       ],
     },
@@ -618,7 +618,7 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
     {
       name: 'Robert Walton',
       description:
-        "An Arctic explorer whose letters frame the entire novel. Walton mirrors Victor in his dangerous ambition and loneliness, but ultimately heeds the warning of Victor's story and turns his ship back. He is the only character who learns from the tragedy, making him the novel's moral compass and surrogate for the reader.",
+        "An Arctic explorer whose letters frame the entire novel. Walton mirrors Victor in his dangerous ambition and loneliness, but ultimately turns his ship back, at his crew's demand. He is the only character who learns from the tragedy, making him the novel's moral compass and surrogate for the reader.",
       keyQuotes: [
         '"I have no friend, Margaret."',
         '"I am returning to England. I have lost my hopes of utility and glory."',
@@ -651,10 +651,7 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
       name: 'Justine Moritz',
       description:
         "A servant in the Frankenstein household, wrongly convicted and executed for William's murder. Justine is the novel's clearest example of institutional injustice - she confesses under pressure from her confessor and is executed despite Elizabeth's defence. Her death implicates both the legal system and Victor, who knows the truth but stays silent.",
-      keyQuotes: [
-        '"I am the cousin of the unhappy child who was murdered."',
-        '"God knows how entirely I am innocent."',
-      ],
+      keyQuotes: ['"God knows... how entirely I am innocent."'],
     },
   ],
 
@@ -663,11 +660,11 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
     {
       name: 'Dangerous Ambition & Hubris',
       description:
-        "Victor's relentless pursuit of forbidden knowledge leads to catastrophe. Shelley draws on the Prometheus myth (referenced in the subtitle) to warn against human overreach. The desire to rival God is presented not as heroic but as reckless and destructive. Walton's parallel ambition provides a contrast: he alone chooses to turn back.",
+        "Victor's relentless pursuit of forbidden knowledge leads to catastrophe. Shelley draws on the Prometheus myth (referenced in the subtitle) to warn against human overreach. The desire to rival God is presented not as heroic but as reckless and destructive. Walton's parallel ambition provides a contrast: he alone turns back.",
       evidence: [
         '"Learn from me... how dangerous is the acquirement of knowledge." (Ch. 4)',
         'Victor compares himself to an "archangel who aspired to omnipotence" (Ch. 24)',
-        "Walton abandons his polar voyage after hearing Victor's story - the only character who heeds the warning",
+        "Walton abandons his polar voyage after hearing Victor's story, though at his crew's demand",
       ],
     },
     {
@@ -687,7 +684,7 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
       evidence: [
         'Walton\'s opening letter: "I have no friend, Margaret" (Letter I)',
         'Victor: "I seemed to have lost all soul or sensation but for this one pursuit" (Ch. 4)',
-        'The Creature: "Shall each man find a wife... and I be alone?" (Ch. 20)',
+        'The Creature: "Shall each man... find a wife for his bosom... and I be alone?" (Ch. 20)',
       ],
     },
     {

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'The Tempest revision guide - themes, characters, key quotes',
   description:
-    "The Tempest GCSE revision - Shakespeare's late romance with plot, characters, themes, context and key quotes. Aligned to AQA and OCR English Literature.",
+    "The Tempest GCSE revision - Shakespeare's late romance with plot, characters, themes, context and key quotes. Aligned to AQA and Edexcel English Literature.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/the-tempest',
   },
@@ -37,9 +37,9 @@ const data: TextGuideData = {
   author: 'William Shakespeare',
   year: 'c. 1610\u201311',
   category: 'Play',
-  badge: 'AQA / OCR',
+  badge: 'AQA / Edexcel / OCR A-Level / Eduqas A-Level',
   intro:
-    'The Tempest is about a man who finally gets his enemies at his mercy and decides to forgive them rather than destroy them. Prospero, the rightful Duke of Milan, has spent twelve years exiled on a remote island with his daughter Miranda, the spirit Ariel and Caliban, and has learned a magic strong enough to raise the storm that drives his brother\u2019s ship onto his shore. Probably Shakespeare\u2019s last solo-authored play, first performed at court in 1611, it has been read as a farewell to the stage, a study of forgiveness and, since the twentieth century, a central text for arguing about colonialism, slavery and who has the right to rule an island.',
+    'The Tempest is about a man who finally gets his enemies at his mercy and decides to forgive them rather than destroy them. Prospero, the rightful Duke of Milan, has spent twelve years exiled on a remote island with his daughter Miranda, the spirit Ariel and Caliban, and has learned a magic strong enough to raise the storm that drives his brother\u2019s ship onto his shore. Probably Shakespeare\u2019s last solo-authored play, first recorded in performance at court in 1611, it has been read as a farewell to the stage, a study of forgiveness and, since the twentieth century, a central text for arguing about colonialism, slavery and who has the right to rule an island.',
   quickInfo: {
     genre: 'Romance / late play',
     setting: 'A remote island (Mediterranean), one afternoon',
@@ -47,7 +47,7 @@ const data: TextGuideData = {
     published: 'First folio 1623',
   },
   plotSummary: [
-    'The play opens in the middle of a violent storm at sea. A ship carrying Alonso, King of Naples, his son Ferdinand, his brother Sebastian, the counsellor Gonzalo and Antonio, Duke of Milan, is tossed towards a rocky island and appears to be wrecked. The scene then shifts to the island itself, where Miranda watches the storm in distress and begs her father Prospero to calm the waters. Prospero reveals to her for the first time that he was once Duke of Milan, and that twelve years earlier his brother Antonio, helped by Alonso, usurped his throne and set him and the three-year-old Miranda adrift in a rotten boat. They survived only because of the kindness of Gonzalo, who secretly stocked the vessel with food, clothes and, crucially, Prospero\u2019s books of magic. Since reaching the island, Prospero has become its ruler, served by the airy spirit Ariel \u2014 whom he freed from a tree in which the witch Sycorax had imprisoned him \u2014 and by Caliban, Sycorax\u2019s son, whom Prospero first tried to educate and now treats as a slave. The storm, Prospero explains, was raised by his art to bring his enemies within reach.',
+    'The play opens in the middle of a violent storm at sea. A ship carrying Alonso, King of Naples, his son Ferdinand, his brother Sebastian, the counsellor Gonzalo and Antonio, Duke of Milan, is tossed towards a rocky island and appears to be wrecked. The scene then shifts to the island itself, where Miranda watches the storm in distress and begs her father Prospero to calm the waters. Prospero reveals to her for the first time that he was once Duke of Milan, and that twelve years earlier his brother Antonio, helped by Alonso, usurped his throne and set him and the three-year-old Miranda adrift in a rotten boat. They survived only because of the kindness of Gonzalo, who, appointed to carry out the plot, stocked the vessel out of charity with food, clothes and, crucially, Prospero\u2019s books of magic. Since reaching the island, Prospero has become its ruler, served by the airy spirit Ariel \u2014 whom he freed from a tree in which the witch Sycorax had imprisoned him \u2014 and by Caliban, Sycorax\u2019s son, whom Prospero first tried to educate and now treats as a slave. The storm, Prospero explains, was raised by his art to bring his enemies within reach.',
     'Ariel has scattered the survivors in groups across the island. Ferdinand, believing his father drowned, is drawn by Ariel\u2019s music to Prospero\u2019s cell, where he and Miranda fall in love at first sight. Prospero, though secretly delighted, pretends to suspect Ferdinand of being a spy and sets him to hard labour carrying logs to test his devotion. Elsewhere, Alonso wanders the island in grief for his lost son, accompanied by Gonzalo (who imagines a utopian commonwealth he would found on the island), the cynical Sebastian and the treacherous Antonio. Ariel casts a sleep on most of the party, and Antonio tempts Sebastian to murder Alonso and seize the crown of Naples, just as Antonio once seized Milan from Prospero. Their attempt is interrupted at the last moment by Ariel.',
     'In a parallel comic plot, the drunken butler Stephano and the jester Trinculo, washed up separately, meet Caliban. Intoxicated by the wine Stephano carries, Caliban takes him for a god and swears allegiance, promising to help the pair murder Prospero in his sleep, seize Miranda and take over the island. Meanwhile Prospero, satisfied with Ferdinand\u2019s constancy, blesses the young couple\u2019s betrothal and stages a masque of classical goddesses \u2014 Iris, Ceres and Juno \u2014 performed by his spirits to celebrate the match. In the middle of the masque Prospero suddenly remembers Caliban\u2019s conspiracy, breaks off the revels and delivers his meditation on the dreamlike transience of all things. Ariel leads Caliban, Stephano and Trinculo through briars and into a stinking pool, then distracts them with rich garments left out as bait, and they are driven off by spirit-hounds.',
     'In the final act Prospero confronts his enemies. Ariel has held Alonso, Antonio and Sebastian in a charmed circle, and when Prospero hears that even his airy spirit pities them, he chooses mercy over vengeance: \u201Cthe rarer action is / In virtue than in vengeance.\u201D He reveals himself to Alonso, who repents and restores Milan, and forgives Antonio and Sebastian while reclaiming his dukedom. Ferdinand and Miranda are discovered playing chess, to Alonso\u2019s joy and Miranda\u2019s wonder at the \u201Cbrave new world\u201D before her. The Boatswain reports that the ship is miraculously whole, and the conspirators Stephano, Trinculo and Caliban are brought in to be shamed and pardoned. Prospero renounces his magic, promising to drown his book, and gives Ariel his long-promised freedom. In the Epilogue, Prospero addresses the audience directly, asking their applause to release him from the island.',
@@ -61,7 +61,7 @@ const data: TextGuideData = {
     {
       name: 'Miranda',
       role: 'Prospero\u2019s daughter; raised on the island since she was three',
-      body: 'Miranda has grown up seeing no human being other than her father and Caliban, and Shakespeare uses her innocence to defamiliarise the adult world the shipwreck brings ashore. She is compassionate \u2014 her first act is to beg her father to calm the storm \u2014 and quick to fall in love with Ferdinand, proposing marriage with startling directness. Her famous cry \u201CO brave new world, / That has such people in\u2019t!\u201D is often played ironically against her father\u2019s weary \u201C\u2019Tis new to thee.\u201D Feminist readings note that Miranda is both a token of exchange between men and a character of real moral courage, defying her father to name Ferdinand and to speak on Caliban\u2019s behalf earlier in Act 1.',
+      body: 'Miranda has grown up seeing no human being other than her father and Caliban, and Shakespeare uses her innocence to defamiliarise the adult world the shipwreck brings ashore. She is compassionate \u2014 her first act is to beg her father to calm the storm \u2014 and quick to fall in love with Ferdinand, proposing marriage with startling directness. Her famous cry \u201CO brave new world / That has such people in\u2019t!\u201D is often played ironically against her father\u2019s weary \u201C\u2019Tis new to thee.\u201D Feminist readings note that Miranda is both a token of exchange between men and a character of real moral courage, pleading with her father for Ferdinand in Act 1 and defying him to tell Ferdinand her name in Act 3.',
     },
     {
       name: 'Ariel',
@@ -71,22 +71,22 @@ const data: TextGuideData = {
     {
       name: 'Caliban',
       role: 'Son of the witch Sycorax; Prospero\u2019s enslaved servant',
-      body: 'Caliban is the island\u2019s original inhabitant after his mother\u2019s death, and claims the land by maternal inheritance: \u201CThis island\u2019s mine by Sycorax my mother.\u201D Prospero first tried to educate him and was, he says, kindly treated until Caliban attempted to rape Miranda, after which he was enslaved. Caliban\u2019s speeches mix bitter complaint (\u201CYou taught me language, and my profit on\u2019t / Is, I know how to curse\u201D) with unexpected lyricism, most famously the \u201Cisle is full of noises\u201D speech. Since the twentieth century he has been read as a figure for the colonised subject, and productions from the Caribbean and Africa have reclaimed him as a victim of occupation rather than a villain.',
+      body: 'Caliban is the island\u2019s original inhabitant after his mother\u2019s death, and claims the land by maternal inheritance: \u201CThis island\u2019s mine, by Sycorax my mother.\u201D Prospero first tried to educate him and was, he says, kindly treated until Caliban attempted to rape Miranda, after which he was enslaved. Caliban\u2019s speeches mix bitter complaint (\u201CYou taught me language, and my profit on\u2019t / Is, I know how to curse\u201D) with unexpected lyricism, most famously the \u201Cisle is full of noises\u201D speech. Since the twentieth century he has been read as a figure for the colonised subject, and productions from the Caribbean and Africa have reclaimed him as a victim of occupation rather than a villain.',
     },
     {
       name: 'Ferdinand',
       role: 'Prince of Naples; son of Alonso; Miranda\u2019s future husband',
-      body: 'Ferdinand is washed ashore believing his father has drowned and is led by Ariel\u2019s music to Prospero\u2019s cell, where he and Miranda fall in love almost instantly. Shakespeare characterises him as courteous, patient and governed by honour: he accepts Prospero\u2019s log-carrying as a trial gladly, because he has \u201Csome mistress sweet\u201D to think of. His language of chaste love, shared with Miranda in Act 3, contrasts pointedly with Caliban\u2019s earlier attempt on her. Ferdinand\u2019s marriage to Miranda symbolically reconciles Milan and Naples and secures Prospero\u2019s restoration, making him the mechanism by which the political wrongs of the past generation are healed.',
+      body: 'Ferdinand is washed ashore believing his father has drowned and is led by Ariel\u2019s music to Prospero\u2019s cell, where he and Miranda fall in love almost instantly. Shakespeare characterises him as courteous, patient and governed by honour: he accepts Prospero\u2019s log-carrying as a trial gladly, because \u201CThe mistress which I serve quickens what\u2019s dead, / And makes my labours pleasures.\u201D His language of chaste love, shared with Miranda in Act 3, contrasts pointedly with Caliban\u2019s earlier attempt on her. Ferdinand\u2019s marriage to Miranda symbolically reconciles Milan and Naples and secures Prospero\u2019s restoration, making him the mechanism by which the political wrongs of the past generation are healed.',
     },
     {
       name: 'Alonso',
       role: 'King of Naples; complicit in Prospero\u2019s overthrow',
-      body: 'Alonso helped Antonio to usurp Prospero twelve years before the action, and the play punishes him through the apparent loss of his son Ferdinand. Grief rather than magic is what transforms him: he wanders the island in despair, hears Ariel\u2019s accusatory voice naming him as one who has offended \u201Cagainst peace,\u201D and by Act 5 is ready to kneel before Prospero and beg pardon. His reconciliation with Prospero and joyful discovery of Ferdinand with Miranda show Shakespeare\u2019s romance pattern at its clearest: lost children are restored, fathers are reunited, and the cost of political crime is paid in suffering rather than blood.',
+      body: 'Alonso helped Antonio to usurp Prospero twelve years before the action, and the play punishes him through the apparent loss of his son Ferdinand. Grief rather than magic is what transforms him: he wanders the island in despair, hears Ariel\u2019s accusatory voice tell him that the powers have incensed the seas and shores \u201CAgainst your peace,\u201D and by Act 5 resigns Prospero\u2019s dukedom and begs his pardon. His reconciliation with Prospero and joyful discovery of Ferdinand with Miranda show Shakespeare\u2019s romance pattern at its clearest: lost children are restored, fathers are reunited, and the cost of political crime is paid in suffering rather than blood.',
     },
     {
       name: 'Antonio and Sebastian',
       role: 'Prospero\u2019s usurping brother and Alonso\u2019s ambitious brother',
-      body: 'Antonio and Sebastian form the play\u2019s dark political centre. Antonio once seized the dukedom of Milan while Prospero was absorbed in his books; on the island he tempts Sebastian to repeat the crime by murdering the sleeping Alonso, offering an almost casual philosophy of conscience as a \u201Ccandy\u201D that need not trouble ambition. Their whispered plotting is interrupted by Ariel, but they remain unpunished by law and, strikingly, almost silent at the end. Antonio does not reply to Prospero\u2019s forgiveness, and many modern productions stage this silence as the play\u2019s most unsettling moment, questioning whether reconciliation is really possible or simply imposed.',
+      body: 'Antonio and Sebastian form the play\u2019s dark political centre. Antonio once seized the dukedom of Milan while Prospero was absorbed in his books; on the island he tempts Sebastian to repeat the crime by murdering the sleeping Alonso, offering an almost casual philosophy in which conscience need not trouble ambition (\u201Ctwenty consciences / That stand \u2019twixt me and Milan, candied be they / And melt ere they molest!\u201D). Their whispered plotting is interrupted by Ariel, but they remain unpunished by law and, strikingly, almost silent at the end. Antonio does not reply to Prospero\u2019s forgiveness, and many modern productions stage this silence as the play\u2019s most unsettling moment, questioning whether reconciliation is really possible or simply imposed.',
     },
     {
       name: 'Stephano and Trinculo',
@@ -96,7 +96,7 @@ const data: TextGuideData = {
     {
       name: 'Gonzalo',
       role: 'Honest old counsellor; once saved Prospero\u2019s and Miranda\u2019s lives',
-      body: 'Gonzalo is the moral ballast of the play. Twelve years earlier he defied orders by quietly stocking the boat of the banished Prospero with food, clothes and books. On the island he tries to comfort Alonso, offers his famous \u201Ccommonwealth\u201D speech imagining an ideal society without work, wealth or hierarchy (echoing Montaigne\u2019s essay \u201COf Cannibals\u201D), and is mocked by Antonio and Sebastian for his optimism. At the end he names the play\u2019s romance pattern: \u201CIn one voyage / Did Claribel her husband find at Tunis, / And Ferdinand, her brother, found a wife / Where he himself was lost; Prospero his dukedom / In a poor isle; and all of us ourselves, / When no man was his own.\u201D',
+      body: 'Gonzalo is the moral ballast of the play. Twelve years earlier, appointed to carry out the banishment, he stocked the boat of the banished Prospero with food, clothes and books out of charity. On the island he tries to comfort Alonso, offers his famous \u201Ccommonwealth\u201D speech imagining an ideal society without work, wealth or hierarchy (echoing Montaigne\u2019s essay \u201COf Cannibals\u201D), and is mocked by Antonio and Sebastian for his optimism. At the end he names the play\u2019s romance pattern: \u201CIn one voyage / Did Claribel her husband find at Tunis, / And Ferdinand, her brother, found a wife / Where he himself was lost; Prospero his dukedom / In a poor isle; and all of us ourselves, / When no man was his own.\u201D',
     },
   ],
   themes: [
@@ -110,7 +110,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Colonialism and otherness',
-      body: 'Read in the shadow of the 1609 Sea Venture wreck on Bermuda and the early English colonial voyages, The Tempest dramatises the encounter between a European ruler and the non-European inhabitant of a land he takes over. Caliban was the island\u2019s only human occupant when Prospero arrived; he is taught European language and religion, then enslaved after his attempt on Miranda. His protest \u201CThis island\u2019s mine by Sycorax my mother, / Which thou tak\u2019st from me\u201D has become a touchstone of post-colonial criticism since Aim\u00E9 C\u00E9saire\u2019s 1969 Une Temp\u00EAte. Gonzalo\u2019s utopian \u201Ccommonwealth\u201D speech echoes Montaigne\u2019s \u201COf Cannibals,\u201D and Miranda\u2019s \u201Cbrave new world\u201D exclamation is repeatedly read ironically. The play is neither a straightforward celebration nor a straightforward critique of empire: it gives colonisation memorable imaginative life and also puts it on trial.',
+      body: 'Read in the shadow of the 1609 Sea Venture wreck on Bermuda and the early English colonial voyages, The Tempest dramatises the encounter between a European ruler and the non-European inhabitant of a land he takes over. Caliban was the island\u2019s only human occupant when Prospero arrived; he is taught European language, then enslaved after his attempt on Miranda. His protest \u201CThis island\u2019s mine, by Sycorax my mother, / Which thou tak\u2019st from me\u201D has become a touchstone of post-colonial criticism since Aim\u00E9 C\u00E9saire\u2019s 1969 Une Temp\u00EAte. Gonzalo\u2019s utopian \u201Ccommonwealth\u201D speech echoes Montaigne\u2019s \u201COf Cannibals,\u201D and Miranda\u2019s \u201Cbrave new world\u201D exclamation is repeatedly read ironically. The play is neither a straightforward celebration nor a straightforward critique of empire: it gives colonisation memorable imaginative life and also puts it on trial.',
     },
     {
       title: 'Illusion and reality',
@@ -126,7 +126,7 @@ const data: TextGuideData = {
     },
   ],
   historicalContext: [
-    'The Tempest was written around 1610\u201311, near the end of Shakespeare\u2019s working life. It was first performed at court before King James I on 1 November 1611, and again in 1612\u201313 as part of the celebrations for the wedding of the King\u2019s daughter Princess Elizabeth. By this point Shakespeare had moved from the public Globe to the indoor Blackfriars theatre, whose smaller, candle-lit auditorium suited the play\u2019s music, masque and atmospheric effects. The Tempest is often grouped with Pericles, Cymbeline and The Winter\u2019s Tale as one of Shakespeare\u2019s late \u201Cromances\u201D \u2014 tragicomedies in which lost children, long separations and near-tragedies are resolved through forgiveness and near-miraculous restoration.',
+    'The Tempest was written around 1610\u201311, near the end of Shakespeare\u2019s working life. Its first recorded performance was at court before King James I on 1 November 1611, and it was acted again in 1612\u201313 as part of the celebrations for the wedding of the King\u2019s daughter Princess Elizabeth. By this point Shakespeare\u2019s company, the King\u2019s Men, had been playing since 1609 at the indoor Blackfriars theatre in winter as well as the Globe in summer, and Blackfriars\u2019 smaller, candle-lit auditorium suited the play\u2019s music, masque and atmospheric effects. The Tempest is often grouped with Pericles, Cymbeline and The Winter\u2019s Tale as one of Shakespeare\u2019s late \u201Cromances\u201D \u2014 tragicomedies in which lost children, long separations and near-tragedies are resolved through forgiveness and near-miraculous restoration.',
     'The play draws vividly on England\u2019s early colonial encounters with the New World. In 1609 a ship called the Sea Venture, bound for the fledgling English colony at Jamestown, Virginia, was driven onto the reefs of Bermuda by a hurricane; its passengers were presumed dead but survived for nine months on the island before rebuilding smaller boats and sailing on. Pamphlets by William Strachey and Sylvester Jourdain describing the wreck reached London in 1610, and Shakespeare clearly read them: details of \u201Cstill-vex\u2019d Bermoothes,\u201D St Elmo\u2019s fire on the rigging and the seemingly enchanted island come directly from these accounts. Montaigne\u2019s essay \u201COf Cannibals\u201D, translated into English by John Florio in 1603, supplies the language of Gonzalo\u2019s utopian \u201Ccommonwealth\u201D speech and frames the play\u2019s interest in what \u201Csavage\u201D and \u201Ccivilised\u201D mean.',
     'The masque staged for Ferdinand and Miranda in Act 4 reflects the fashionable Jacobean court entertainment developed by Ben Jonson and Inigo Jones: allegorical spectacles combining music, dance, scenic machinery and classical deities. That the play incorporates a full masque suggests it was designed partly for court performance and for the technical resources of Blackfriars. Finally, The Tempest has long been read as Shakespeare\u2019s self-conscious farewell to the stage. Prospero\u2019s speech drowning his book, breaking his staff and releasing his spirits has been heard since the early nineteenth century as the dramatist\u2019s own retirement, though modern scholarship is more cautious; Shakespeare went on to collaborate with John Fletcher on Henry VIII, The Two Noble Kinsmen and the lost Cardenio before his death in 1616.',
   ],
@@ -144,35 +144,35 @@ const data: TextGuideData = {
         'Prospero explains to Miranda why he lost Milan: he preferred his books to the daily business of government, leaving a vacuum his brother filled. The quiet pun on \u201Cdukedom\u201D captures both his intellectual vocation and his political failure, and Shakespeare uses the line to raise the play\u2019s larger question of whether the magician-scholar, who once neglected rule for study, has now earned the right to reclaim his throne at the end of the play.',
     },
     {
-      quote: '"This island\'s mine by Sycorax my mother, / Which thou tak\'st from me."',
+      quote: '"This island\'s mine, by Sycorax my mother, / Which thou tak\'st from me."',
       who: 'Caliban \u2014 Act 1, Scene 2',
       analysis:
-        'Caliban grounds his claim to the island on maternal inheritance, the only form of property available to him against Prospero\u2019s superior magic. Since the second half of the twentieth century this couplet has been treated as the play\u2019s central colonial text, framing Prospero as an occupier rather than a rescuer and Caliban as a dispossessed native rather than a monster. It is the line most often cited in productions that want to foreground the politics of land and sovereignty.',
+        'Caliban grounds his claim to the island on maternal inheritance, the only form of property available to him against Prospero\u2019s superior magic. Since the second half of the twentieth century these lines have been treated as the play\u2019s central colonial text, framing Prospero as an occupier rather than a rescuer and Caliban as a dispossessed native rather than a monster. It is the line most often cited in productions that want to foreground the politics of land and sovereignty.',
     },
     {
       quote: '"You taught me language, and my profit on\'t / Is, I know how to curse."',
       who: 'Caliban \u2014 Act 1, Scene 2',
       analysis:
-        'Caliban turns the gift of European education violently against the giver. Shakespeare captures in two lines the paradox of colonial pedagogy: the subject acquires the master\u2019s tongue and finds that the only use he can make of it is rage at his own oppression. Post-colonial writers from Aim\u00E9 C\u00E9saire to Ng\u0169g\u0129 wa Thiong\u2019o have treated this couplet as a founding statement of the problem of writing back against power in a language that is not one\u2019s own.',
+        'Caliban turns the gift of European education violently against the giver. Shakespeare captures in two lines the paradox of colonial pedagogy: the subject acquires the master\u2019s tongue and finds that the only use he can make of it is rage at his own oppression. Post-colonial writers from Aim\u00E9 C\u00E9saire to Ng\u0169g\u0129 wa Thiong\u2019o have treated these lines as a founding statement of the problem of writing back against power in a language that is not one\u2019s own.',
     },
     {
       quote:
-        '"Full fathom five thy father lies; / Of his bones are coral made; / Those are pearls that were his eyes."',
+        '"Full fathom five thy father lies. / Of his bones are coral made. / Those are pearls that were his eyes."',
       who: 'Ariel (song) \u2014 Act 1, Scene 2',
       analysis:
         'Ariel\u2019s song lures Ferdinand towards Miranda\u2019s cell while falsely telling him that his father has drowned. The rich \u201Csea-change\u201D imagery \u2014 bones turned to coral, eyes into pearls \u2014 introduces the play\u2019s defining motif of transformation: drowning becomes decoration, loss becomes beauty, grief is reshaped into art. The song is also the audience\u2019s first sign that music on this island is a moral and magical instrument for reordering feeling, not simply atmospheric ornament.',
     },
     {
-      quote: '"I might call him / A thing divine, for nothing natural / I ever saw so noble."',
+      quote: '"I might call him / A thing divine; for nothing natural / I ever saw so noble."',
       who: 'Miranda (of Ferdinand) \u2014 Act 1, Scene 2',
       analysis:
         'Miranda\u2019s first sight of a young man who is neither her father nor Caliban leads her to misread Ferdinand as supernatural. The line quietly prepares the ironic force of her later \u201Cbrave new world\u201D exclamation in Act 5 and shows how her sheltered upbringing has made ordinary humanity look miraculous to her. Shakespeare uses her wonder to let the audience see the familiar anew, while also gently warning how easily a first love can mistake a young man for a god.',
     },
     {
-      quote: '"I\'th\' commonwealth I would by contraries / Execute all things."',
+      quote: '"I\' th\' commonwealth I would by contraries / Execute all things."',
       who: 'Gonzalo \u2014 Act 2, Scene 1',
       analysis:
-        'Gonzalo\u2019s utopian speech, drawn almost verbatim from John Florio\u2019s 1603 translation of Montaigne\u2019s essay \u201COf Cannibals,\u201D imagines a society without trade, labour or hierarchy. Antonio and Sebastian mock him as a fool, but Shakespeare sets the speech deliberately against their simultaneous plot to murder Alonso, implying that even a na\u00EFve utopian fantasy is morally preferable to the cynical, self-interested calculation of realpolitik. The passage also quietly roots the play in the New World debates of 1610\u201311.',
+        'Gonzalo\u2019s utopian speech, drawn closely from John Florio\u2019s 1603 translation of Montaigne\u2019s essay \u201COf Cannibals,\u201D imagines a society without trade, labour or hierarchy. Antonio and Sebastian mock him as a fool, but Shakespeare sets the speech deliberately against their simultaneous plot to murder Alonso, implying that even a na\u00EFve utopian fantasy is morally preferable to the cynical, self-interested calculation of realpolitik. The passage also quietly roots the play in the New World debates of 1610\u201311.',
     },
     {
       quote: '"My strong imagination sees a crown / Dropping upon thy head."',
@@ -182,7 +182,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"Be not afeard; the isle is full of noises, / Sounds and sweet airs, that give delight and hurt not."',
+        '"Be not afeard. The isle is full of noises, / Sounds, and sweet airs, that give delight, and hurt not."',
       who: 'Caliban \u2014 Act 3, Scene 2',
       analysis:
         'Caliban calms the drunken Stephano and Trinculo with an unexpected description of the island\u2019s music. The lyricism of the speech \u2014 its gentle \u201Csweet airs,\u201D its sleeping \u201Criches ready to drop\u201D \u2014 complicates Prospero\u2019s claim that Caliban is irredeemably savage. The figure most abused by the play\u2019s hierarchy turns out to have the deepest imaginative response to the place itself, and Shakespeare invites audiences to hear in his voice the sound of the island itself.',
@@ -211,7 +211,7 @@ const data: TextGuideData = {
       quote: '"A devil, a born devil, on whose nature / Nurture can never stick."',
       who: 'Prospero (of Caliban) \u2014 Act 4, Scene 1',
       analysis:
-        'Prospero asserts in his most extreme language that Caliban is incurably evil by nature, a claim the play both voices and tests. The rhyming \u201Cnature / nurture\u201D coinage is the clearest statement of one of the play\u2019s central questions and has entered the wider English tradition. Crucially, Shakespeare does not endorse the judgement: the audience is invited to weigh it against Caliban\u2019s lyrical \u201Cnoises\u201D speech and his final promise to \u201Cseek for grace,\u201D so the line reveals as much about Prospero\u2019s rage as about Caliban.',
+        'Prospero asserts in his most extreme language that Caliban is incurably evil by nature, a claim the play both voices and tests. The alliterative \u201Cnature / nurture\u201D pairing is the clearest statement of one of the play\u2019s central questions and has entered the wider English tradition. Crucially, Shakespeare does not endorse the judgement: the audience is invited to weigh it against Caliban\u2019s lyrical \u201Cnoises\u201D speech and his final promise to \u201Cseek for grace,\u201D so the line reveals as much about Prospero\u2019s rage as about Caliban.',
     },
     {
       quote:
@@ -235,7 +235,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"O, wonder! / How many goodly creatures are there here! / How beauteous mankind is! O brave new world, / That has such people in\'t!"',
+        '"O, wonder! / How many goodly creatures are there here! / How beauteous mankind is! O brave new world / That has such people in\'t!"',
       who: 'Miranda \u2014 Act 5, Scene 1',
       analysis:
         'Miranda greets the shipwrecked nobles with unguarded delight, seeing for the first time in her life people who are neither her father nor Caliban. Prospero\u2019s dry reply \u2014 \u201C\u2019Tis new to thee\u201D \u2014 lets the audience hear the irony: the \u201Cgoodly creatures\u201D before her include the usurpers Antonio and Sebastian. The line gave Aldous Huxley the title Brave New World in 1932 and has since become shorthand for innocent optimism that is about to meet the real world.',
@@ -244,10 +244,10 @@ const data: TextGuideData = {
       quote: '"I\'ll be wise hereafter, / And seek for grace."',
       who: 'Caliban \u2014 Act 5, Scene 1',
       analysis:
-        'Caliban\u2019s final line registers a moral development rarely granted to Shakespearean villains, and it is delivered after he has recognised Stephano and Trinculo as the fools they are. Whether the couplet shows genuine repentance, forced submission under Prospero\u2019s power, or Shakespeare\u2019s reluctance to leave Caliban simply as a monster is a central question for any production. The word \u201Cgrace\u201D pulls the colonial plot into the play\u2019s larger religious vocabulary of forgiveness and mercy.',
+        'Caliban\u2019s final line registers a moral development rarely granted to Shakespearean villains, and it is delivered after he has recognised Stephano and Trinculo as the fools they are. Whether the lines show genuine repentance, forced submission under Prospero\u2019s power, or Shakespeare\u2019s reluctance to leave Caliban simply as a monster is a central question for any production. The word \u201Cgrace\u201D pulls the colonial plot into the play\u2019s larger religious vocabulary of forgiveness and mercy.',
     },
     {
-      quote: '"To the elements / Be free, and fare thou well."',
+      quote: '"To the elements / Be free, and fare thou well!"',
       who: 'Prospero (to Ariel) \u2014 Act 5, Scene 1',
       analysis:
         'Prospero finally fulfils his twelve-year-old promise and dissolves the bond that has structured almost every scene of the play. Ariel has been promised freedom repeatedly \u2014 the audience has heard him ask for it in Act 1 \u2014 and the release placed here at the climax rather than at the beginning of the action gives freedom the weight of a reward. The short, unadorned line also makes a striking contrast with Prospero\u2019s previous grand invocations of spiritual power.',
@@ -570,7 +570,7 @@ const REVISION_TOPICS = [
     summary:
       "The play stages the encounter between a European ruler and the island's only inhabitant, and has become a central text for post-colonial thought.",
     keyPoints: [
-      'Caliban\'s "This island\'s mine by Sycorax my mother" is the core colonial claim',
+      'Caliban\'s "This island\'s mine, by Sycorax my mother" is the core colonial claim',
       'Prospero teaches then enslaves Caliban after the attempt on Miranda',
       'Gonzalo\'s commonwealth echoes Montaigne\'s "Of Cannibals"',
       'Bermuda pamphlets (1609 Sea Venture) feed the island setting',

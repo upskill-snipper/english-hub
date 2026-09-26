@@ -30,7 +30,7 @@ type WalkthroughChunk = {
 const extractLines: ExtractLine[] = [
   {
     number: 1,
-    text: 'Oh! But he was a tight-fisted hand at the grindstone, Scrooge!',
+    text: 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!',
   },
   {
     number: 2,
@@ -162,7 +162,7 @@ const extractLines: ExtractLine[] = [
   },
   {
     number: 34,
-    text: 'knowing ones call "nuts" to Scrooge. Solitary as an oyster.',
+    text: 'knowing ones call "nuts" to Scrooge.',
   },
 ]
 
@@ -175,7 +175,7 @@ const walkthrough: WalkthroughChunk[] = [
     // VERIFIED: Project Gutenberg #46, Stave 1 - list reads "squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!" - five present participles followed by two adjectives ("covetous", "old")
     notice:
       'Dickens piles up five present participles and two adjectives without conjunctions (asyndetic listing). The five "-ing" verbs at the head of the list keep the rhythm relentless and ongoing, and almost every one names an act of physical force or theft: squeezing, wrenching, grasping, scraping, clutching.',
-    say: 'Dickens uses an asyndetic list of violent participles to characterise Scrooge as a man defined by perpetual extraction, the breathless rhythm of "squeezing, wrenching, grasping" mimicking the unending, grinding labour of the miser at his "grindstone".',
+    say: 'Dickens uses an asyndetic list of violent participles to characterise Scrooge as a man defined by perpetual extraction, the breathless rhythm of "squeezing, wrenching, grasping" mimicking the unending, grinding labour of the miser at his "grind-stone".',
     zoomOut:
       'In 1843 Dickens was writing in direct response to a parliamentary report on child labour and the lived effects of the 1834 New Poor Law. By opening with a portrait of a man whose entire being is reduced to acts of taking, Dickens establishes Scrooge as an embodiment of laissez-faire capitalism, the very mindset the novella will set out to reform.',
   },
@@ -229,15 +229,15 @@ const walkthrough: WalkthroughChunk[] = [
   },
   {
     id: 'oyster-frame',
-    heading: '6. "Solitary as an oyster" (return)',
+    heading: '6. "Nuts" to Scrooge',
     lines: 'Lines 31-34',
     excerpt:
-      '"To edge his way along the crowded paths of life, warning all human sympathy to keep its distance, was what the knowing ones call \'nuts\' to Scrooge. Solitary as an oyster."',
+      '"But what did Scrooge care! It was the very thing he liked. To edge his way along the crowded paths of life, warning all human sympathy to keep its distance, was what the knowing ones call \'nuts\' to Scrooge."',
     notice:
-      'Dickens closes the passage by repeating the oyster simile from line 5, framing the whole portrait in a structural envelope. The colloquial phrase "nuts to Scrooge" introduces an ironic, almost amused narrator who treats Scrooge\'s self-imposed isolation as a perverse pleasure.',
-    say: "The ring composition closes with the oyster simile that opened the passage, reinforcing Scrooge's self-enclosure as the defining feature of his character; the narrator's sardonic register, \"what the knowing ones call 'nuts' to Scrooge\", invites the reader to view his isolation not with pity but with critical distance.",
+      'Dickens closes the passage not with a simile but with Scrooge\'s own preference: his isolation is "the very thing he liked". The colloquial phrase "nuts to Scrooge" introduces an ironic, almost amused narrator who treats Scrooge\'s self-imposed isolation as a perverse pleasure.',
+    say: "The portrait closes by presenting Scrooge's self-enclosure, first pictured in the oyster simile, as something he chooses and enjoys; the narrator's sardonic register, \"what the knowing ones call 'nuts' to Scrooge\", invites the reader to view his isolation not with pity but with critical distance.",
     zoomOut:
-      'The framing simile establishes a structural promise the novella will later keep: an oyster, after all, contains a pearl. Dickens hints from the very first description that something valuable lies hidden inside Scrooge, waiting to be prised open. The reformist purpose of the novella, written in part to advocate for education and welfare for the Victorian poor, depends on that quiet possibility.',
+      'The oyster simile of line 5 carries a promise the novella will later keep: an oyster, after all, contains a pearl. Dickens hints from the very first description that something valuable lies hidden inside Scrooge, waiting to be prised open. The reformist purpose of the novella, written in part to advocate for education and welfare for the Victorian poor, depends on that quiet possibility.',
   },
 ]
 
@@ -272,7 +272,7 @@ export default function ExtractWalkthroughPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              AQA / Edexcel / Eduqas
+              AQA / Edexcel / OCR / Eduqas
             </Badge>
           </div>
 
@@ -426,7 +426,7 @@ export default function ExtractWalkthroughPage() {
                 most damning portrait, the conditions of his eventual change. The asyndetic list of
                 participles, "squeezing, wrenching, grasping, scraping, clutching, covetous",
                 reduces Scrooge to a sequence of extractive verbs, each one an act of taking from
-                another; the breathless rhythm enacts the very grinding labour of the "grindstone"
+                another; the breathless rhythm enacts the very grinding labour of the "grind-stone"
                 Dickens compares him to. The simile that follows, "hard and sharp as flint, from
                 which no steel had ever struck out generous fire", is more ambivalent than it first
                 appears: flint is hard, but flint is also the source of fire, and the conditional
@@ -435,12 +435,12 @@ export default function ExtractWalkthroughPage() {
                 pathetic fallacy so that Scrooge's inner coldness physically deforms him, "froze his
                 old features, nipped his pointed nose, shrivelled his cheek", insisting that
                 emotional withdrawal leaves bodily traces a Victorian readership trained in
-                physiognomy could not miss. The framing simile, "solitary as an oyster", repeated at
-                the end of the passage, seals the portrait while also pointing past it: oysters,
-                after all, contain pearls. Written in 1843 against the backdrop of the New Poor Law
-                and Dickens's campaign for the education of the poor, this opening is engineered to
-                make Scrooge's isolation feel both culpable and curable, the necessary darkness
-                against which the novella's reformist hope can shine.
+                physiognomy could not miss. The simile "solitary as an oyster" seals the portrait
+                while also pointing past it: oysters, after all, contain pearls. Written in 1843
+                against the backdrop of the New Poor Law and Dickens's campaign for the education of
+                the poor, this opening is engineered to make Scrooge's isolation feel both culpable
+                and curable, the necessary darkness against which the novella's reformist hope can
+                shine.
               </p>
             </div>
           </CardContent>

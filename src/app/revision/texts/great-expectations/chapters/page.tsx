@@ -7,6 +7,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { t } from '@/lib/i18n/t'
+import { StoryVisuals } from '@/components/study-guide/visuals/story-visuals'
+import { guide as studyGuide } from '@/data/study-guides/great-expectations'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -82,7 +84,7 @@ const CHAPTERS: ChapterAnalysis[] = [
       'The house itself is a symbol: "Satis" means "enough" in Latin, but nothing in the house is sufficient - it is a monument to emotional starvation.',
     ],
     keyQuote: {
-      text: '"He calls the knaves, Jacks, this boy!" said Estella with disdain, before our first game was out. "And what coarse hands he has! And what thick boots!"',
+      text: '"He calls the knaves Jacks, this boy!" said Estella with disdain, before our first game was out. "And what coarse hands he has! And what thick boots!"',
       analysis:
         'Estella reduces Pip to his class markers - his language and his clothing. The word "knaves" versus "Jacks" reveals how arbitrary social distinctions are, yet they have enormous power to wound. Estella has been trained to despise the lower classes, and Pip internalises her contempt, beginning the self-rejection that drives his ambition. Dickens exposes how class snobbery is taught, not natural.',
     },
@@ -108,7 +110,7 @@ const CHAPTERS: ChapterAnalysis[] = [
     keyQuote: {
       text: '"I walked away at a good pace, thinking it was easier to go than I had supposed it would be... But the village was very peaceful and quiet, and the light mists were solemnly rising, as if to show me the world, and I had been so innocent and little there, and all beyond was so unknown and great, that in a moment with a strong heave and sob I broke into tears."',
       analysis:
-        'The passage captures Pip\'s divided self. He tries to walk away briskly, performing confidence, but the landscape he has known since childhood overwhelms him with its innocence. The mists "rising as if to show me the world" suggest a revelation he is not yet ready to accept: that what he is leaving behind - simplicity, love, moral clarity - is more valuable than what he is going towards. The "strong heave and sob" breaks through his pretence.',
+        'The passage captures Pip\'s divided self. He tries to walk away briskly, performing confidence, but the landscape he has known since childhood overwhelms him with its innocence. The mists "rising, as if to show me the world" suggest a revelation he is not yet ready to accept: that what he is leaving behind - simplicity, love, moral clarity - is more valuable than what he is going towards. The "strong heave and sob" breaks through his pretence.',
     },
     writersMethods: [
       'Dramatic irony - the reader senses Pip is wrong about Miss Havisham, but Dickens withholds the truth for maximum impact later.',
@@ -130,7 +132,7 @@ const CHAPTERS: ChapterAnalysis[] = [
       "The storm mirrors the upheaval in Pip's understanding of himself and anticipates the moral storm he must now navigate.",
     ],
     keyQuote: {
-      text: "\"Yes, Pip, dear boy, I've made a gentleman on you! It's me wot has done it! I swore that time, sure as ever I earned a guinea, that guinea should go to you... 'If I ain't a gentleman, nor yet ain't got no learning, I'll make a better gentleman nor ever I was!'\"",
+      text: "\"Yes, Pip, dear boy, I've made a gentleman on you! It's me wot has done it! I swore that time, sure as ever I earned a guinea, that guinea should go to you... 'If I ain't a gentleman, nor yet ain't got no learning, I'm the owner of such.'\"",
       analysis:
         'Magwitch\'s dialect ("wot," "nor") and his grammar mark him as uneducated and lower-class, yet his speech overflows with devotion and generosity. The irony is devastating: the man who cannot speak like a gentleman has spent his life creating one. Dickens forces the reader to see that moral worth and social status are entirely separate things. Magwitch\'s pride in Pip is simultaneously touching and troubling - he has treated Pip as a project, a living proof of his own worth.',
     },
@@ -154,7 +156,7 @@ const CHAPTERS: ChapterAnalysis[] = [
       'Dickens resists a simple happy ending - even the revised version is suffused with sadness, loss and the passage of time.',
     ],
     keyQuote: {
-      text: '"I took her hand in mine, and we went out of the ruined place; and, as the morning mists had risen long ago when I first left the forge, so, the evening mists were rising now, and in all the broad expanse of tranquil light they showed to me, I saw no shadow of another parting from her."',
+      text: '"I took her hand in mine, and we went out of the ruined place; and, as the morning mists had risen long ago when I first left the forge, so the evening mists were rising now, and in all the broad expanse of tranquil light they showed to me, I saw no shadow of another parting from her."',
       analysis:
         'The final sentence is deliberately ambiguous. "I saw no shadow of another parting" could mean they will never part again, or it could mean Pip simply cannot yet see the parting that awaits. The mists connect back to Chapter 19, when Pip left the forge in tears - the same image of mist and revelation, but now suffused with evening light rather than morning uncertainty. The "ruined place" is both Satis House and the ruins of their former selves. Dickens leaves the reader to decide whether this is a happy ending or a bittersweet one.',
     },
@@ -197,7 +199,7 @@ export default async function GreatExpectationsChaptersPage() {
               {await t('rev.texts2.common.c19_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              AQA
+              AQA / Edexcel / OCR / Edexcel IGCSE / Edexcel IAL
             </Badge>
           </div>
 
@@ -212,6 +214,9 @@ export default async function GreatExpectationsChaptersPage() {
           </p>
         </div>
       </section>
+
+      {/* The key scenes, part by part, animated. See scripts/mount-story-visuals.mjs. */}
+      <StoryVisuals guide={studyGuide} scenesOnly />
 
       {/* Chapter Cards */}
       <div className="space-y-8">

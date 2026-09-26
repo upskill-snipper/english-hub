@@ -32,7 +32,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
     colour: 'bg-rose-400',
     quotes: [
       {
-        quote: 'O brawling love, O loving hate, / O anything of nothing first create!',
+        quote: 'O brawling love! O loving hate! / O anything, of nothing first create!',
         speaker: 'Romeo',
         act: 'Act 1, Scene 1',
         analysis:
@@ -40,7 +40,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
       },
       {
         quote:
-          'If I profane with my unworthiest hand / This holy shrine, the gentle sin is this: / My lips, two blushing pilgrims, ready stand / To smooth that rough touch with a tender kiss.',
+          'If I profane with my unworthiest hand / This holy shrine, the gentle sin is this, / My lips, two blushing pilgrims, ready stand / To smooth that rough touch with a tender kiss.',
         speaker: 'Romeo',
         act: 'Act 1, Scene 5',
         analysis:
@@ -56,7 +56,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
       },
       {
         quote:
-          'Give me my Romeo; and when I shall die, / Take him and cut him out in little stars, / And he will make the face of heaven so fine / That all the world will be in love with night.',
+          'Give me my Romeo, and when I shall die, / Take him and cut him out in little stars, / And he will make the face of heaven so fine / That all the world will be in love with night.',
         speaker: 'Juliet',
         act: 'Act 3, Scene 2',
         analysis:
@@ -64,7 +64,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
       },
       {
         quote:
-          'These violent delights have violent ends / And in their triumph die, like fire and powder, / Which as they kiss consume.',
+          'These violent delights have violent ends, / And in their triumph die; like fire and powder, / Which as they kiss consume.',
         speaker: 'Friar Lawrence',
         act: 'Act 2, Scene 6',
         analysis:
@@ -78,14 +78,14 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
     quotes: [
       {
         quote:
-          'What, drawn and talk of peace? I hate the word, / As I hate hell, all Montagues, and thee.',
+          'What, drawn, and talk of peace? I hate the word / As I hate hell, all Montagues, and thee.',
         speaker: 'Tybalt',
         act: 'Act 1, Scene 1',
         analysis:
           "Tybalt's opening line defines the feud as an active choice, not a passive inheritance. The triple escalation (hell, Montagues, Benvolio) intensifies hatred with each item. Even the concept of peace is repulsive to him.",
       },
       {
-        quote: "A plague o' both your houses! They have made worms' meat of me.",
+        quote: "A plague o' both your houses. / They have made worms' meat of me.",
         speaker: 'Mercutio',
         act: 'Act 3, Scene 1',
         analysis:
@@ -100,7 +100,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
       },
       {
         quote:
-          'Romeo, the love I bear thee can afford / No better term than this: thou art a villain.',
+          'Romeo, the love I bear thee can afford / No better term than this: Thou art a villain.',
         speaker: 'Tybalt',
         act: 'Act 3, Scene 1',
         analysis:
@@ -129,7 +129,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
       },
       {
         quote:
-          'I fear, too early; for my mind misgives / Some consequence yet hanging in the stars.',
+          'I fear too early: for my mind misgives / Some consequence yet hanging in the stars.',
         speaker: 'Romeo',
         act: 'Act 1, Scene 4',
         analysis:
@@ -165,14 +165,14 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
     quotes: [
       {
         quote:
-          "What's in a name? That which we call a rose / By any other word would smell as sweet.",
+          "What's in a name? That which we call a rose / By any other name would smell as sweet.",
         speaker: 'Juliet',
         act: 'Act 2, Scene 2',
         analysis:
           'Juliet\'s philosophical argument challenges the social structure of the feud. Identity is inherent, not imposed by family names. But the play proves her wrong in practice: the name "Montague" is powerful enough to destroy them both.',
       },
       {
-        quote: 'Hang thee, young baggage! Disobedient wretch!',
+        quote: 'Hang thee young baggage, disobedient wretch!',
         speaker: 'Lord Capulet',
         act: 'Act 3, Scene 5',
         analysis:
@@ -180,7 +180,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
       },
       {
         quote:
-          'My will to her consent is but a part; / An she agree, within her scope of choice / Lies my consent.',
+          'My will to her consent is but a part; / And she agree, within her scope of choice / Lies my consent.',
         speaker: 'Lord Capulet',
         act: 'Act 1, Scene 2',
         analysis:
@@ -210,7 +210,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
       },
       {
         quote:
-          "O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / Like a rich jewel in an Ethiop's ear.",
+          "O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / As a rich jewel in an Ethiop's ear.",
         speaker: 'Romeo',
         act: 'Act 1, Scene 5',
         analysis:
@@ -224,7 +224,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
           'As dawn forces Romeo to leave, Juliet recognises daylight as the enemy. The chiastic structure mirrors the inverse relationship between physical light and emotional darkness. The entire light-dark motif crystallises in one line.',
       },
       {
-        quote: "Come, gentle night; come, loving, black-brow'd night, / Give me my Romeo.",
+        quote: "Come gentle night, come loving black-brow'd night, / Give me my Romeo.",
         speaker: 'Juliet',
         act: 'Act 3, Scene 2',
         analysis:
@@ -238,14 +238,14 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
     quotes: [
       {
         quote:
-          "Here's to my love! O true apothecary, / Thy drugs are quick. Thus with a kiss I die.",
+          "Here's to my love! O true apothecary! / Thy drugs are quick. Thus with a kiss I die.",
         speaker: 'Romeo',
         act: 'Act 5, Scene 3',
         analysis:
           'Romeo dies with a kiss, linking love and death in a single act. "Quick" means both fast-acting and alive -- a painful pun. "True apothecary" is bitterly ironic: the poison-seller is more reliable than fate or fortune.',
       },
       {
-        quote: 'O happy dagger, / This is thy sheath. There rust, and let me die.',
+        quote: 'O happy dagger. / This is thy sheath. There rest, and let me die.',
         speaker: 'Juliet',
         act: 'Act 5, Scene 3',
         analysis:
@@ -253,14 +253,14 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
       },
       {
         quote:
-          "Death, that hath suck'd the honey of thy breath, / Hath had no power yet upon thy beauty.",
+          "Death that hath suck'd the honey of thy breath, / Hath had no power yet upon thy beauty.",
         speaker: 'Romeo',
         act: 'Act 5, Scene 3',
         analysis:
           'Romeo personifies Death as a vampire-lover. The dramatic irony is devastating: Juliet looks alive because she is alive. "Honey" makes her breath sweet and sensual even in apparent death.',
       },
       {
-        quote: 'Death is my son-in-law, Death is my heir.',
+        quote: 'Death is my son-in-law, death is my heir.',
         speaker: 'Lord Capulet',
         act: 'Act 4, Scene 5',
         analysis:
@@ -274,7 +274,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
           'The final couplet is deliberately simple, as if the enormity of tragedy can only be expressed in the plainest language. "Her Romeo" gives Juliet possession in death that was denied to her in life.',
       },
       {
-        quote: 'All are punished.',
+        quote: "All are punish'd.",
         speaker: 'Prince',
         act: 'Act 5, Scene 3',
         analysis:

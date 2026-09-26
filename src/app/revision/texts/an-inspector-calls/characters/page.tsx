@@ -64,7 +64,7 @@ const CHARACTERS: CharacterStudy[] = [
       },
       {
         quote: '"Public men, Mr Birling, have responsibilities as well as privileges."',
-        act: 'Act 1',
+        act: 'Act 2',
         analysis:
           'The Inspector directly challenges the capitalist assumption that wealth entitles its holders to immunity from scrutiny. The balanced phrasing frames social duty as non-negotiable, immediately inverting the power dynamic between the Inspector and Birling.',
       },
@@ -98,7 +98,7 @@ const CHARACTERS: CharacterStudy[] = [
     arc: 'Birling begins the play in a position of absolute confidence and authority. The Inspector\u2019s investigation progressively undermines his self-assurance, but unlike Sheila and Eric, Birling does not change. By Act 3, he is desperately trying to prove the Inspector was a hoax, clinging to the hope that no real consequences will follow. He represents the older generation\u2019s refusal to learn from history.',
     keyQuotes: [
       {
-        quote: '"The Titanic \u2014 unsinkable, absolutely unsinkable."',
+        quote: '"The Titanic ... unsinkable, absolutely unsinkable."',
         act: 'Act 1',
         analysis:
           'Dramatic irony at its sharpest. The audience knows the Titanic sank in April 1912. Birling\u2019s absolute certainty immediately marks him as a man whose judgment cannot be trusted, inviting the audience to reject everything else he says \u2014 including his capitalist philosophy.',
@@ -111,7 +111,7 @@ const CHARACTERS: CharacterStudy[] = [
       },
       {
         quote: '"If we were all responsible for everything ... it would be very awkward."',
-        act: 'Act 3',
+        act: 'Act 1',
         analysis:
           'Birling reduces a moral question to a practical inconvenience. The word "awkward" reveals the hollowness of his position \u2014 he cannot engage with the ethics of responsibility, only with its personal cost. Priestley uses understatement to expose moral emptiness.',
       },
@@ -146,10 +146,10 @@ const CHARACTERS: CharacterStudy[] = [
     arc: 'Sybil is the character who changes least. She enters the play confident in her social superiority and leaves it the same way. Even the revelation that her own son is the father of Eva\u2019s child does not produce genuine moral reflection \u2014 only embarrassment and deflection. Priestley presents her as the most hardened product of the class system: someone so insulated by privilege that moral awakening is impossible.',
     keyQuotes: [
       {
-        quote: '"I was quite justified."',
+        quote: '"In the circumstances I think I was justified."',
         act: 'Act 2',
         analysis:
-          'Sybil\u2019s stubborn self-righteousness compressed into four words. She refuses to accept guilt even when confronted with the consequences of her actions. "Justified" reveals a person whose moral framework is built entirely on class position rather than human empathy.',
+          'Sybil\u2019s stubborn self-righteousness compressed into one sentence. She refuses to accept guilt even when confronted with the consequences of her actions. "Justified" reveals a person whose moral framework is built entirely on class position rather than human empathy.',
       },
       {
         quote: '"Girls of that class\u2014"',
@@ -164,7 +164,7 @@ const CHARACTERS: CharacterStudy[] = [
           'Sybil unknowingly condemns her own son. Priestley constructs the scene so that her desire for punishment rebounds on her family, punishing her moral hypocrisy through dramatic irony. The phrase "dealt with very severely" reveals her punitive instinct toward the working class.',
       },
       {
-        quote: '"the father of the child \u2026 is entirely responsible"',
+        quote: '"Then he\u2019d be entirely responsible"',
         act: 'Act 2',
         analysis:
           'Sybil deflects blame from herself onto the unknown father, not knowing it is Eric. Her insistence makes her the architect of her own exposure. "Entirely" is an absolute that she will desperately wish to retract once the truth emerges.',
@@ -203,12 +203,6 @@ const CHARACTERS: CharacterStudy[] = [
         act: 'Act 3',
         analysis:
           'Sheila accuses Gerald and her parents of moral regression. The short, accusing sentences convey frustrated disappointment and position her as the play\u2019s moral centre. "Stopped" implies a deliberate choice to retreat from uncomfortable truth.',
-      },
-      {
-        quote: '"what happened to the girl and what we all did to her that matters."',
-        act: 'Act 3',
-        analysis:
-          'Sheila cuts through her parents\u2019 evasion with devastating clarity. "We all" insists on collective guilt. "Matters" is a simple, emphatic word that refuses to let the family reduce Eva\u2019s death to a question of the Inspector\u2019s identity.',
       },
       {
         quote: '"I remember what he said, how he looked, and what he made me feel."',
@@ -256,6 +250,12 @@ const CHARACTERS: CharacterStudy[] = [
         act: 'Act 3',
         analysis:
           'Eric challenges his father\u2019s attempt to dismiss the evening as "nonsense." The blunt reference to suicide forces the family to confront the human cost. Eric\u2019s plain language cuts through his father\u2019s euphemisms.',
+      },
+      {
+        quote: '"what happened to the girl and what we all did to her that matters."',
+        act: 'Act 3',
+        analysis:
+          'Eric cuts through his parents\u2019 evasion with devastating clarity. "We all" insists on collective guilt. "Matters" is a simple, emphatic word that refuses to let the family reduce Eva\u2019s death to a question of the Inspector\u2019s identity.',
       },
     ],
     themeLinks: [

@@ -78,7 +78,7 @@ const CHARACTERS: CharacterStudy[] = [
           'I was slowly losing hold of my original and better self, and becoming slowly incorporated with my second and worse.',
         chapter: "Chapter 10 -- Henry Jekyll's Full Statement",
         analysis:
-          'The passive constructions ("losing hold," "becoming incorporated") suggest the process has become involuntary, like addiction. The repetition of "slowly" creates a creeping, insidious rhythm. Jekyll is no longer choosing to become Hyde -- it is happening to him.',
+          'The passive constructions ("losing hold," "becoming slowly incorporated") suggest the process has become involuntary, like addiction. The repetition of "slowly" creates a creeping, insidious rhythm. Jekyll is no longer choosing to become Hyde -- it is happening to him.',
       },
       {
         quote: 'I bring the life of that unhappy Henry Jekyll to an end.',
@@ -109,9 +109,9 @@ const CHARACTERS: CharacterStudy[] = [
     role: "Jekyll's dark alter ego; embodiment of pure evil",
     roleAr: 'النصف المظلم الثاني لـ Jekyll؛ تجسيد الشر الصرف',
     analysis:
-      'Hyde is younger, smaller, and filled with pure malice. Every character who meets him feels an instinctive revulsion they cannot quite explain -- Enfield calls it "something downright detestable," Utterson describes "Satan\'s signature" on his face, and the doctor at the trampling scene turns "sick and white with the desire to kill him." Hyde represents the primal, id-driven self freed from conscience and social restraint. Significantly, he is described as smaller than Jekyll because, as Jekyll explains, his evil side has been "less exercised" -- it has been repressed, not eliminated, and it is stunted from disuse. Stevenson\'s most unsettling achievement with Hyde is making his horror unnameable. Characters struggle to articulate what repels them about him, suggesting that the evil he represents is beyond rational description -- it is felt, not understood.',
+      'Hyde is younger, smaller, and filled with pure malice. Every character who meets him feels an instinctive revulsion they cannot quite explain -- Enfield calls it "something down-right detestable," Utterson describes "Satan\'s signature" on his face, and the doctor at the trampling scene turns "sick and white with the desire to kill him." Hyde represents the primal, id-driven self freed from conscience and social restraint. Significantly, he is described as smaller than Jekyll because, as Jekyll explains, his evil side has been "less exercised" -- it has been repressed, not eliminated, and it is stunted from disuse. Stevenson\'s most unsettling achievement with Hyde is making his horror unnameable. Characters struggle to articulate what repels them about him, suggesting that the evil he represents is beyond rational description -- it is felt, not understood.',
     analysisAr:
-      'Hyde أصغر، وأقصر، ومليان حقد صرف. كل شخصية تقابله تحس بنفور غريزي ما تقدر تفسّره - Enfield يسميه "something downright detestable"، Utterson يصف وجهه بأنه "Satan\'s signature"، والطبيب اللي حضر مشهد الدوس يصير "sick and white with the desire to kill him". Hyde يمثّل النفس البدائية المدفوعة بالغرائز، متحرّرة من الضمير والقيود الاجتماعية. الملحوظ إنه موصوف بأنه أصغر من Jekyll لأن، كما يشرح Jekyll، جانبه الشرير كان "less exercised" - مكبوت، مو منعدم، ضعيف من قلّة الاستعمال. أعظم إنجاز مزعج لـ Stevenson مع Hyde إنه يخلّي رعبه بلا اسم. الشخصيات تكافح عشان تعبّر عن اللي ينفّرهم منه، وهذا يلمّح إن الشر اللي يمثّله فوق الوصف العقلاني - يتم الإحساس فيه، مو فهمه.',
+      'Hyde أصغر، وأقصر، ومليان حقد صرف. كل شخصية تقابله تحس بنفور غريزي ما تقدر تفسّره - Enfield يسميه "something down-right detestable"، Utterson يصف وجهه بأنه "Satan\'s signature"، والطبيب اللي حضر مشهد الدوس يصير "sick and white with the desire to kill him". Hyde يمثّل النفس البدائية المدفوعة بالغرائز، متحرّرة من الضمير والقيود الاجتماعية. الملحوظ إنه موصوف بأنه أصغر من Jekyll لأن، كما يشرح Jekyll، جانبه الشرير كان "less exercised" - مكبوت، مو منعدم، ضعيف من قلّة الاستعمال. أعظم إنجاز مزعج لـ Stevenson مع Hyde إنه يخلّي رعبه بلا اسم. الشخصيات تكافح عشان تعبّر عن اللي ينفّرهم منه، وهذا يلمّح إن الشر اللي يمثّله فوق الوصف العقلاني - يتم الإحساس فيه، مو فهمه.',
     development:
       'Hyde grows larger and stronger as the novella progresses, suggesting that evil, once indulged, becomes increasingly dominant. His violence escalates from trampling a child to the frenzied murder of Sir Danvers Carew. Early on, he is cautious and cooperative (producing the cheque after the trampling); by Chapter 4, he is consumed by uncontrolled rage. This escalation mirrors the trajectory of addiction: the initial thrill requires increasing extremes to satisfy. By the end, Hyde has essentially consumed Jekyll, appearing spontaneously and requiring ever larger doses of the potion to be suppressed.',
     developmentAr:
@@ -119,7 +119,7 @@ const CHARACTERS: CharacterStudy[] = [
     keyQuotes: [
       {
         quote:
-          'There was something wrong with his appearance; something displeasing, something downright detestable.',
+          'There is something wrong with his appearance; something displeasing, something down-right detestable.',
         chapter: 'Chapter 1 -- Story of the Door',
         analysis:
           'Enfield\'s inability to name what repels him about Hyde is central to the novella\'s Gothic horror. The triple repetition ("something... something... something") creates escalating unease. Stevenson suggests that evil defies rational categorisation -- it is felt instinctively.',
@@ -132,7 +132,7 @@ const CHARACTERS: CharacterStudy[] = [
       },
       {
         quote:
-          'With ape-like fury, he was trampling his victim underfoot and hailing down a storm of blows.',
+          'With ape-like fury, he was trampling his victim under foot and hailing down a storm of blows.',
         chapter: 'Chapter 4 -- The Carew Murder Case',
         analysis:
           'The simile "ape-like fury" connects Hyde to Darwin\'s theory of evolution, suggesting he represents the animal within the civilised man. "Trampling" and "storm of blows" convey uncontrolled, bestial violence. Stevenson presents Hyde\'s violence as de-evolution -- a regression to a primitive state.',
@@ -170,7 +170,7 @@ const CHARACTERS: CharacterStudy[] = [
       'قوس Utterson هو انزعاج يكبر. ينتقل من فضول هادي تجاه Hyde إلى تحقيق فعلي، من ثقة بـ Jekyll إلى شك، وأخيراً من سؤال محسوب إلى الفعل العنيف بكسر باب Jekyll. هالمسار يعكس رحلة القارئ عبر الرواية. Utterson ما يتخلّى تماماً عن منظوره العقلاني، ولهذا الكشوف الأخيرة مدمّرة بهالقدر: الحقيقة تتجاوز أي شي يقدر عقله المنظّم يتصوّره.',
     keyQuotes: [
       {
-        quote: 'If he be Mr Hyde, I shall be Mr Seek.',
+        quote: 'If he be Mr. Hyde... I shall be Mr. Seek.',
         chapter: 'Chapter 2 -- Search for Mr Hyde',
         analysis:
           'Utterson\'s pun frames the narrative as a game of concealment and detection. "Hyde/Seek" encapsulates the entire structure of the novella: truth is hidden, and the reader must seek it out alongside Utterson. The pun is also characteristically Victorian -- it uses humour to defuse anxiety.',
@@ -183,7 +183,7 @@ const CHARACTERS: CharacterStudy[] = [
       },
       {
         quote:
-          'Mr Utterson the lawyer was a man of a rugged countenance, that was never lighted by a smile.',
+          'Mr. Utterson the lawyer was a man of a rugged countenance that was never lighted by a smile.',
         chapter: 'Chapter 1 -- Story of the Door',
         analysis:
           'The opening sentence establishes Utterson as austere and emotionally restrained. "Never lighted by a smile" suggests he has suppressed his own pleasures -- a milder version of Jekyll\'s repression. Stevenson implies that all the novella\'s characters exist on a spectrum of self-denial.',
@@ -209,13 +209,13 @@ const CHARACTERS: CharacterStudy[] = [
       'أهم تطوّر في Lanyon يصير خارج المشهد: ما يعرف القارئ إلا من خلال رسالته بعد موته إنه شهد التحوّل. قبلها، يبيّن كشخصية مرحة وتقليدية تستهين بعمل Jekyll. التضاد بين Lanyon "hearty, healthy, dapper" في الفصل الثاني والرجل "pale" اللي عليه "death-warrant written legibly upon his face" في الفصل السادس هو أكثر تحوّل شخصي درامي عند Stevenson. الرعب اللي يقتل Lanyon مو جسدي بل معرفي: فهمه للواقع كله تشظّى.',
     keyQuotes: [
       {
-        quote: 'I have had a shock and I shall never recover.',
+        quote: 'I have had a shock... and I shall never recover.',
         chapter: 'Chapter 6 -- Remarkable Incident of Dr Lanyon',
         analysis:
           'Lanyon\'s flat, clinical language ("shock," "recover") uses medical terminology to describe a spiritual crisis. The finality of "never" shows that this is not ordinary trauma: it is the destruction of a worldview. Stevenson suggests that confronting duality requires a psychological resilience that Lanyon lacks.',
       },
       {
-        quote: 'I wish to see or hear no more of Dr Jekyll... I am quite done with that person.',
+        quote: 'I wish to see or hear no more of Dr. Jekyll... I am quite done with that person.',
         chapter: 'Chapter 6 -- Remarkable Incident of Dr Lanyon',
         analysis:
           'Lanyon severs his friendship with Jekyll because the truth is unbearable. "That person" depersonalises Jekyll, suggesting Lanyon can no longer recognise him as the friend he knew. His response mirrors the wider Victorian strategy: if you cannot face a truth, refuse to acknowledge it.',
@@ -239,9 +239,9 @@ const CHARACTERS: CharacterStudy[] = [
     role: "Utterson's cousin and walking companion",
     roleAr: 'قريب Utterson ورفيقه في المشي',
     analysis:
-      'Enfield is a man-about-town who witnesses Hyde trampling the young girl in the opening chapter. His role is primarily structural: he introduces the mystery and models the Victorian gentleman\'s instinct to suppress scandalous knowledge. His agreement with Utterson to "never refer to this again" after their first conversation reflects the culture of silence and repression that pervades the novella. Enfield is described as "well-known" and "a man about town," suggesting a social ease that contrasts with Utterson\'s austerity. Their unlikely friendship ("it was a nut to crack for many") mirrors the theme of duality: even the most mismatched surfaces can conceal deep connections.',
+      'Enfield is a man-about-town who witnesses Hyde trampling the young girl in the opening chapter. His role is primarily structural: he introduces the mystery and models the Victorian gentleman\'s instinct to suppress scandalous knowledge. His agreement with Utterson to make "a bargain never to refer to this again" after their first conversation reflects the culture of silence and repression that pervades the novella. Enfield is described as "well-known" and "a man about town," suggesting a social ease that contrasts with Utterson\'s austerity. Their unlikely friendship ("it was a nut to crack for many") mirrors the theme of duality: even the most mismatched surfaces can conceal deep connections.',
     analysisAr:
-      'Enfield رجل اجتماعي يعرف المدينة، يشهد Hyde وهو يدوس البنت الصغيرة في الفصل الأول. دوره أساساً بنيوي: يقدّم اللغز ويجسّد غريزة الجنتلمان الفيكتوري بكبت أي معلومات مفضوحة. اتفاقه مع Utterson إنهم "never refer to this again" بعد أول محادثة يعكس ثقافة الصمت والكبت اللي تسود الرواية كلها. Enfield موصوف بأنه "well-known" و"a man about town"، يلمّح بسهولة اجتماعية تتضاد مع صرامة Utterson. صداقتهم غير المتوقّعة ("it was a nut to crack for many") تعكس محور الازدواجية: حتى أكثر السطوح اختلافاً يقدر يخفي روابط عميقة.',
+      'Enfield رجل اجتماعي يعرف المدينة، يشهد Hyde وهو يدوس البنت الصغيرة في الفصل الأول. دوره أساساً بنيوي: يقدّم اللغز ويجسّد غريزة الجنتلمان الفيكتوري بكبت أي معلومات مفضوحة. اتفاقه مع Utterson إنهم "never to refer to this again" بعد أول محادثة يعكس ثقافة الصمت والكبت اللي تسود الرواية كلها. Enfield موصوف بأنه "well-known" و"a man about town"، يلمّح بسهولة اجتماعية تتضاد مع صرامة Utterson. صداقتهم غير المتوقّعة ("it was a nut to crack for many") تعكس محور الازدواجية: حتى أكثر السطوح اختلافاً يقدر يخفي روابط عميقة.',
     development:
       'Enfield does not develop significantly as a character. His function is to introduce the central mystery and to demonstrate the code of secrecy that governs Victorian male relationships. His second appearance (Chapter 7) repeats the pattern of his first: he encounters disturbing information about Jekyll and immediately suppresses it. Stevenson uses this repetition to show how deeply ingrained the habit of silence is.',
     developmentAr:
@@ -256,10 +256,10 @@ const CHARACTERS: CharacterStudy[] = [
       },
       {
         quote:
-          'The two men put a very black look on him... we were keeping the women off him as best we could, for they were as wild as harpies.',
+          'killing being out of the question, we did the next best... we were keeping the women off him as best we could for they were as wild as harpies.',
         chapter: 'Chapter 1 -- Story of the Door',
         analysis:
-          'Enfield\'s account of the trampling reveals gendered reactions to Hyde. The men control their disgust ("a very black look"); the women are openly hostile ("wild as harpies"). Stevenson suggests that women, less constrained by the male code of suppression, respond more honestly to evil.',
+          'Enfield\'s account of the trampling reveals gendered reactions to Hyde. The men control their disgust ("killing being out of the question, we did the next best"); the women are openly hostile ("wild as harpies"). Stevenson suggests that women, less constrained by the male code of suppression, respond more honestly to evil.',
       },
     ],
     themeLinks: ['Secrecy & Silence', 'Repression & Victorian Society'],
@@ -270,7 +270,7 @@ const CHARACTERS: CharacterStudy[] = [
     name: 'Poole',
     role: "Jekyll's loyal head butler",
     analysis:
-      "Poole is Jekyll's most faithful servant, and it is his desperate visit to Utterson in Chapter 8 that triggers the novella's climax. Poole's loyalty transcends the master-servant relationship: he is genuinely terrified for Jekyll's safety and brave enough to act on his fear by breaking the code of deference. His observation that the voice behind the locked door \"has changed\" -- that it no longer sounds like his master -- provides the most chilling evidence that something fundamental has gone wrong. Stevenson uses Poole to show that the transformation is not merely internal but has become externally observable, even to those without scientific understanding.",
+      "Poole is Jekyll's most faithful servant, and it is his desperate visit to Utterson in Chapter 8 that triggers the novella's climax. Poole's loyalty transcends the master-servant relationship: he is genuinely terrified for Jekyll's safety and brave enough to act on his fear by breaking the code of deference. His observation that the voice behind the locked door has \"changed\" -- that it no longer sounds like his master -- provides the most chilling evidence that something fundamental has gone wrong. Stevenson uses Poole to show that the transformation is not merely internal but has become externally observable, even to those without scientific understanding.",
     development:
       "Poole moves from dutiful service to frightened disobedience. His decision to seek help from Utterson and to break down Jekyll's door represents a rupture in the Victorian social order: a servant overriding his master's explicit instructions. That Poole is driven to this extreme demonstrates how completely the situation has spiralled beyond normal social conventions.",
     keyQuotes: [
@@ -302,7 +302,7 @@ const CHARACTERS: CharacterStudy[] = [
     keyQuotes: [
       {
         quote:
-          'An aged and beautiful gentleman with white hair, drew near... and bowed... with a very pretty manner of politeness.',
+          'An aged beautiful gentleman with white hair, drawing near along the lane... bowed and accosted the other with a very pretty manner of politeness.',
         chapter: 'Chapter 4 -- The Carew Murder Case',
         analysis:
           'Carew\'s gentle courtesy makes the subsequent murder all the more horrific. "Beautiful," "white hair," and "pretty manner" cast him as the innocent victim of a random, savage attack. Stevenson maximises the contrast between victim and attacker to heighten the Gothic horror.',

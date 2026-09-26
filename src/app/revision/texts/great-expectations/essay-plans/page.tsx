@@ -59,7 +59,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic:
           "Dickens shows that Pip's dissatisfaction with his class is not natural but planted by others. Before visiting Satis House, Pip is content at the forge. After meeting Estella, he is consumed by shame about his origins.",
         quote:
-          '"He calls the knaves, Jacks, this boy! And what coarse hands he has! And what thick boots!"',
+          '"He calls the knaves Jacks, this boy! ... And what coarse hands he has! And what thick boots!"',
         analysis:
           'Estella reduces Pip to a set of class markers - his vocabulary, his hands, his boots. The tricolon structure ("knaves... hands... boots") creates a relentless accumulation of contempt. The difference between "knaves" and "Jacks" is trivial, yet it carries enormous social power. Dickens exposes how arbitrary these distinctions are: class snobbery is a learned behaviour, taught by Miss Havisham to Estella and now transmitted to Pip.',
         context:
@@ -102,7 +102,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic:
           'Pip\'s earliest experiences are shaped by guilt imposed on him by Mrs Joe and the adult world. He is made to feel that his very existence is a burden, and when he helps Magwitch by stealing food, his guilt is wildly disproportionate to his "crime."',
         quote:
-          '"I was in mortal terror of the young man who wanted my heart and liver; I was in mortal terror of my interlocutor with the ironed leg; I was in mortal terror of myself, from whom an awful promise had been extracted."',
+          '"I was in mortal terror of the young man who wanted my heart and liver; I was in mortal terror of my interlocutor with the iron leg; I was in mortal terror of myself, from whom an awful promise had been extracted."',
         analysis:
           'The triple repetition of "I was in mortal terror" creates a claustrophobic sense of fear closing in from every direction. Crucially, the third terror is of himself - Pip has been made to fear his own capacity for transgression. Dickens shows that guilt is not about what Pip has done but about what society has taught him to feel. The child who shows compassion to a starving man is made to experience himself as a criminal.',
         context:
@@ -113,7 +113,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic:
           'Dickens structures the novel so that guilt attaches to the wrong people. Pip carries guilt throughout his life for minor transgressions, while Compeyson - who swindles Miss Havisham and betrays Magwitch - operates without remorse.',
         quote:
-          '"I do not recall that I felt any tenderness of conscience in reference to Mrs Joe, when the fear of being found out was lifted off me."',
+          '"I do not recall that I felt any tenderness of conscience in reference to Mrs. Joe, when the fear of being found out was lifted off me."',
         analysis:
           "The adult Pip admits, with characteristic honesty, that his guilt about stealing was really fear of punishment, not moral awareness. Dickens distinguishes between genuine conscience and socialised fear: Pip's guilt is manufactured by a punitive upbringing, not by moral sensitivity. The retrospective narration allows Dickens to critique his younger self while also critiquing the system that shaped him.",
         context:
@@ -156,7 +156,8 @@ const ESSAY_PLANS: EssayPlan[] = [
         pointHeading: 'Estella as weapon and victim',
         topic:
           "Dickens presents Estella as both the instrument of Miss Havisham's revenge and its most tragic victim. She is raised to attract and destroy men, but this programming destroys her own capacity for happiness.",
-        quote: '"You must know that I have no heart - if that has anything to do with my memory."',
+        quote:
+          '"You must know... that I have no heart - if that has anything to do with my memory."',
         analysis:
           'Estella\'s self-diagnosis is clinically precise: she identifies her own emotional absence with detached accuracy. The qualifying clause "if that has anything to do with my memory" adds a layer of uncertainty - she is not sure whether her inability to feel is a deficiency or simply a different way of being. Dickens makes her both honest and unknowing: she can describe her condition but cannot feel its horror. The reader feels the tragedy she cannot.',
         context:
@@ -191,9 +192,9 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic:
           "Dickens carefully constructs Magwitch's backstory to show that he was criminalised by poverty, not by moral deficiency. Magwitch was orphaned, starved and punished for existing before he ever committed a crime.",
         quote:
-          '"I was always treated as if I had insisted on being born in opposition to the dictates of reason, religion, and morality."',
+          '"So fur as I could find, there warn\'t a soul that see young Abel Magwitch, with us little on him as in him, but wot caught fright at him, and either drove him off, or took him up."',
         analysis:
-          'The elaborate, legalistic phrasing ("in opposition to the dictates of reason, religion, and morality") mimics the language of the courts that condemned Magwitch. He is quoting the system back at itself with devastating irony. The suggestion that he "insisted on being born" makes his very existence a crime - Dickens shows that society punishes the poor for being poor, treating poverty as a moral choice rather than a social condition. The polysyllabic formality contrasts with Magwitch\'s usual rough speech, suggesting he has memorised these words from his own trial.',
+          'Magwitch speaks of his boyhood self in the third person, as the authorities saw him: "young Abel Magwitch" is a case, not a child. Being "took up" (arrested) is what happens to him simply for being seen, which makes his very existence a crime - Dickens shows that society punishes the poor for being poor, treating poverty as a moral choice rather than a social condition. The rough dialect ("warn\'t", "wot") marks him as one of the class the law was built to police.',
         context:
           "The Victorian penal system was notoriously harsh. Transportation to Australia - Magwitch's punishment - was used for offences as minor as theft of food. Dickens campaigned throughout his career for penal reform, arguing that the system created criminals rather than deterring crime.",
       },
@@ -212,9 +213,9 @@ const ESSAY_PLANS: EssayPlan[] = [
         pointHeading: 'The convict as moral superior',
         topic:
           'By the end of the novel, Dickens has reversed the moral hierarchy entirely. Magwitch - the convict, the outcast, the man the law says is worthless - demonstrates greater loyalty, generosity and love than any character of higher social standing.',
-        quote: '"Dear boy and Pip\'s comrade. You\'re a noble Handel."',
+        quote: '"You\'ve never deserted me, dear boy."',
         analysis:
-          'Magwitch\'s use of the word "noble" to describe Herbert is deeply significant: he, the man society calls base, is the one who recognises true nobility. His affectionate "dear boy" reveals the genuine love behind his patronage. Dickens forces the reader to accept that moral worth has nothing to do with legal status or social position. Magwitch dies in prison, but he dies loved and at peace - a resolution that the class system would never permit.',
+          'Magwitch\'s deathbed gratitude is deeply significant: he, the man society calls base, is the one who values loyalty above everything. His affectionate "dear boy" reveals the genuine love behind his patronage. Dickens forces the reader to accept that moral worth has nothing to do with legal status or social position. Magwitch dies in prison, but he dies loved and at peace - a resolution that the class system would never permit.',
         context:
           'Dickens was influenced by the Romantic tradition that associated virtue with the poor and corruption with the wealthy. But Great Expectations goes beyond simple inversion: Dickens shows that class corrupts everyone it touches, including the well-meaning Pip.',
       },
@@ -308,7 +309,7 @@ export default async function GreatExpectationsEssayPlansPage() {
               {await t('rev.texts2.common.c19_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              AQA
+              AQA / Edexcel / OCR / Edexcel IGCSE / Edexcel IAL
             </Badge>
           </div>
 

@@ -92,6 +92,13 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth' },
 }
 
+/**
+ * Corrected on 26 September 2026, because the guide mounted below contradicted
+ * this page: the castle Duncan praises in 1.6 is Macbeth's, not his own, and
+ * the Porter never calls his gate "the other devil's name" (he imagines an
+ * equivocator at hell's gate). "Look like th' innocent flower" now reads the
+ * same everywhere on the page, as in the site's reader and the Folger text.
+ */
 const data: TextGuideData = {
   slug: 'macbeth',
   title: 'Macbeth',
@@ -175,7 +182,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Appearance vs Reality',
-      body: 'The gap between appearance and reality is announced in the play\'s first scene: "Fair is foul, and foul is fair." Nothing in Macbeth is what it seems. The witches\' prophecies appear to promise glory but deliver destruction. Macbeth appears to be a loyal subject while plotting regicide. Lady Macbeth instructs her husband to "look like the innocent flower, / But be the serpent under\'t," articulating the play\'s central deception. Duncan\'s castle, which he praises for its pleasant atmosphere, becomes the site of his murder.\n\nShakespeare explores this theme through the motif of equivocation, which had particular resonance for Jacobean audiences. The Gunpowder Plot trials of 1606 had exposed the Jesuit doctrine of equivocation, the idea that one could mislead without technically lying. The witches are the play\'s great equivocators: every prophecy is literally true but deliberately misleading. "None of woman born" excludes caesarean birth; Birnam Wood "moves" through soldiers carrying branches. The Porter\'s comic scene explicitly references equivocation, calling his gate "the other devil\'s name" for an equivocator.\n\nThe theme extends to self-deception. Macbeth convinces himself that each murder will be the last, that security can be achieved through further violence. Lady Macbeth believes she can commit murder and simply wash her hands of it. Both discover that the reality of guilt cannot be concealed by the appearance of composure.',
+      body: 'The gap between appearance and reality is announced in the play\'s first scene: "Fair is foul, and foul is fair." Nothing in Macbeth is what it seems. The witches\' prophecies appear to promise glory but deliver destruction. Macbeth appears to be a loyal subject while plotting regicide. Lady Macbeth instructs her husband to "look like th\' innocent flower, / But be the serpent under\'t," articulating the play\'s central deception. Macbeth\'s castle, which Duncan praises for its pleasant atmosphere, becomes the site of his murder.\n\nShakespeare explores this theme through the motif of equivocation, which had particular resonance for Jacobean audiences. The Gunpowder Plot trials of 1606 had exposed the Jesuit doctrine of equivocation, the idea that one could mislead without technically lying. The witches are the play\'s great equivocators: every prophecy is literally true but deliberately misleading. "None of woman born" excludes caesarean birth; Birnam Wood "moves" through soldiers carrying branches. The Porter\'s comic scene explicitly references equivocation, imagining an equivocator at the gate of hell who "could not equivocate to heaven".\n\nThe theme extends to self-deception. Macbeth convinces himself that each murder will be the last, that security can be achieved through further violence. Lady Macbeth believes she can commit murder and simply wash her hands of it. Both discover that the reality of guilt cannot be concealed by the appearance of composure.',
     },
     {
       title: 'Gender and Masculinity',
@@ -549,7 +556,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: 'mac-16',
     question:
-      'What literary term describes Lady Macbeth\'s instruction to "look like the innocent flower, / But be the serpent under\'t"?',
+      "What literary term describes Lady Macbeth's instruction to \"look like th' innocent flower, / But be the serpent under't\"?",
     type: 'multiple-choice',
     options: [
       'Pathetic fallacy',
@@ -699,7 +706,7 @@ const REVISION_TOPICS = [
       "Nothing in Macbeth is what it seems, from the witches' equivocations to the characters' deceptions.",
     keyPoints: [
       '"Fair is foul, and foul is fair" establishes moral instability',
-      '"Look like the innocent flower, / But be the serpent under\'t"',
+      '"Look like th\' innocent flower, / But be the serpent under\'t"',
       'The Gunpowder Plot trials exposed the Jesuit doctrine of equivocation',
       "The witches' prophecies are literally true but deliberately misleading",
       'Self-deception: both Macbeths believe they can commit murder without lasting consequence',
@@ -796,7 +803,9 @@ export default async function MacbethPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          // The labels read 'Name - Act n' with a spaced hyphen; splitting
+          // on the em dash alone left the act in every option of the quiz.
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

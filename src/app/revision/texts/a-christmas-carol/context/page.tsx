@@ -59,7 +59,7 @@ const sections: ContextSection[] = [
     content: [
       'The Poor Law Amendment Act of 1834 was one of the most controversial pieces of legislation in Victorian England. It replaced the old system of parish-level poor relief with a centralised national system based on workhouses. The principle behind the new law was "less eligibility" -- conditions inside the workhouse must be worse than the worst conditions outside it, so that only the truly desperate would seek help. The aim was to discourage what the authorities called "pauperism" -- dependency on public assistance.',
       'Workhouses were deliberately designed to be unpleasant. Families were separated upon entry: husbands from wives, parents from children. Inmates wore uniforms, ate minimal food, and were required to perform grinding, repetitive work such as breaking stones or picking oakum (unravelling old rope). The regime was intended to be humiliating. The message was clear: being poor was shameful, and the workhouse was a punishment for failure.',
-      'When Scrooge says "Are there no prisons? Are there no workhouses?", he is echoing the prevailing attitude of many wealthy Victorians. The workhouse and the prison were considered sufficient provision for the poor. Those who refused to enter were deemed responsible for their own suffering. Scrooge\'s suggestion that the poor should die to "decrease the surplus population" reflects the influence of Thomas Malthus, who argued that poverty and famine were natural checks on overpopulation and that charity only made the problem worse.',
+      'When Scrooge asks "Are there no prisons?" and whether the Union workhouses are "still in operation", he is echoing the prevailing attitude of many wealthy Victorians. The workhouse and the prison were considered sufficient provision for the poor. Those who refused to enter were deemed responsible for their own suffering. Scrooge\'s suggestion that the poor should die to "decrease the surplus population" reflects the influence of Thomas Malthus, who argued that poverty and famine were natural checks on overpopulation and that charity only made the problem worse.',
     ],
     keyFacts: [
       'The 1834 Poor Law created a national network of workhouses, managed by elected Boards of Guardians.',
@@ -69,7 +69,7 @@ const sections: ContextSection[] = [
       'Thomas Malthus (1766-1834) argued in An Essay on the Principle of Population that helping the poor would only increase their numbers and worsen their suffering.',
     ],
     textLinks: [
-      'Scrooge\'s "Are there no prisons? Are there no workhouses?" directly references the institutions created by the 1834 Act.',
+      'Scrooge\'s "Are there no prisons?" and "And the Union workhouses?" directly reference the institutions created by the 1834 Act.',
       '"Decrease the surplus population" echoes Malthusian population theory. The Ghost of Christmas Present throws this line back at Scrooge in Stave 3.',
       'Marley\'s anguished cry that "Mankind was my business" is a direct rebuttal to the utilitarian argument that charity was not an individual\'s concern.',
     ],
@@ -222,7 +222,7 @@ export default function ContextPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              AQA / Edexcel / Eduqas
+              AQA / Edexcel / OCR / Eduqas
             </Badge>
           </div>
 

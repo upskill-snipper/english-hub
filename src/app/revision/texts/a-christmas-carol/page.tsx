@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   title: 'A Christmas Carol GCSE - themes, characters, key quotes',
   description:
-    "A Christmas Carol GCSE revision - Dickens's novella by stave with characters, themes, context, key quotes and essays. Aligned to AQA, Edexcel and Eduqas.",
+    "A Christmas Carol GCSE revision - Dickens's novella by stave with characters, themes, context, key quotes and essays. Aligned to AQA, Edexcel, OCR and Eduqas.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/a-christmas-carol',
   },
@@ -72,7 +72,7 @@ const data: TextGuideData = {
   author: 'Charles Dickens',
   year: 'published 19 December 1843 (Chapman & Hall)',
   category: 'Novella',
-  badge: 'AQA / Edexcel / Eduqas',
+  badge: 'AQA / Edexcel / OCR / Eduqas',
   intro:
     'A Christmas Carol asks whether a hard, selfish man can genuinely change, and Dickens answers that he can, so long as he is made to look honestly at what his choices have cost other people. Over a single Christmas Eve night, three spirits take the miser Ebenezer Scrooge through his own past, the poverty going on in the houses around him, and the lonely death waiting for him if nothing changes. It is one of the most influential works in English literature, and it helped shape the way Christmas is celebrated today.',
   quickInfo: {
@@ -84,7 +84,7 @@ const data: TextGuideData = {
   plotSummary: [
     "Stave One opens on Christmas Eve with the declaration that Jacob Marley is dead. His former business partner, Ebenezer Scrooge, is a cold, tight-fisted moneylender who despises Christmas and all human warmth. He refuses his nephew Fred's dinner invitation, dismisses two charity collectors with the suggestion that the poor should go to prisons and workhouses, and grudgingly allows his underpaid clerk Bob Cratchit a day off for Christmas. That night, Marley's ghost appears in Scrooge's chambers, bound in heavy chains forged from his own greed, and warns Scrooge that he will share the same fate unless he changes. Three spirits will visit him.",
 
-    'In Stave Two, the Ghost of Christmas Past - a strange, flickering figure - takes Scrooge back through his memories. He sees himself as a lonely boy left at school over Christmas, then as a young apprentice enjoying the warmth and generosity of his employer, Mr Fezziwig. Most painfully, he watches his younger self lose Belle, the woman he loved, because his obsession with money replaced his capacity for affection. Belle tells him that "a golden idol" has displaced her, and Scrooge begs the spirit to show him no more. In Stave Three, the Ghost of Christmas Present - a jolly giant robed in green, seated on a throne of food - shows Scrooge how others celebrate despite their poverty. The Cratchit family enjoy a modest Christmas dinner with enormous love, and Scrooge is moved by the sight of Tiny Tim, Bob\'s disabled youngest son. The spirit warns that without change, the child will die. The ghost also reveals two wretched children hidden beneath his robes - Ignorance and Want - and tells Scrooge to beware them both, "but most of all beware this boy, for on his brow I see that written which is Doom."',
+    'In Stave Two, the Ghost of Christmas Past - a strange, flickering figure - takes Scrooge back through his memories. He sees himself as a lonely boy left at school over Christmas, then as a young apprentice enjoying the warmth and generosity of his employer, Mr Fezziwig. Most painfully, he watches his younger self lose Belle, the woman he loved, because his obsession with money replaced his capacity for affection. Belle tells him that "another idol" has displaced her, "a golden one", and Scrooge begs the spirit to show him no more. In Stave Three, the Ghost of Christmas Present - a jolly giant robed in green, seated on a throne of food - shows Scrooge how others celebrate despite their poverty. The Cratchit family enjoy a modest Christmas dinner with enormous love, and Scrooge is moved by the sight of Tiny Tim, Bob\'s disabled youngest son. The spirit warns that without change, the child will die. The ghost also reveals two wretched children hidden beneath his robes - Ignorance and Want - and tells Scrooge to beware them both, "but most of all beware this boy, for on his brow I see that written which is Doom."',
 
     'Stave Four introduces the Ghost of Christmas Yet to Come, a silent, hooded phantom who shows Scrooge a possible future. Businessmen joke callously about a recent death; thieves pawn a dead man\'s belongings, even his bed curtains; and a body lies alone and uncared for. Scrooge discovers that the dead man is himself. Meanwhile, the Cratchit family mourn the death of Tiny Tim, and Bob can barely speak through his grief. Scrooge clings to the phantom\'s robes and begs for the chance to change, promising "I will honour Christmas in my heart, and try to keep it all the year."',
 
@@ -94,12 +94,12 @@ const data: TextGuideData = {
     {
       name: 'Ebenezer Scrooge',
       role: 'Protagonist, miserly moneylender',
-      body: 'Scrooge begins as "a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner" - Dickens heaps adjectives to make his coldness overwhelming. His transformation is the entire arc of the novella: from a man who sees other people only as obstacles or opportunities for profit to one who recognises his connection to the rest of humanity. Dickens uses Scrooge to argue that no one is beyond redemption, and that empathy is a choice that can be made at any point in life.',
+      body: 'Scrooge begins as "a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner" - Dickens heaps adjectives to make his coldness overwhelming. His transformation is the entire arc of the novella: from a man who sees other people only as obstacles or opportunities for profit to one who recognises his connection to the rest of humanity. Dickens uses Scrooge to argue that no one is beyond redemption, and that empathy is a choice that can be made at any point in life.',
     },
     {
       name: 'Bob Cratchit',
       role: "Scrooge's underpaid clerk",
-      body: 'Bob earns fifteen shillings a week and works in a freezing office with a "very small fire." He represents the honest, hard-working poor who are exploited by employers like Scrooge. Despite his poverty, he is generous, loving and loyal. Dickens uses him to show that wealth has nothing to do with moral worth, and his devotion to Tiny Tim makes the reader feel the human cost of economic cruelty.',
+      body: 'Bob earns fifteen shillings a week and works in a freezing office by a fire so small "that it looked like one coal." He represents the honest, hard-working poor who are exploited by employers like Scrooge. Despite his poverty, he is generous, loving and loyal. Dickens uses him to show that wealth has nothing to do with moral worth, and his devotion to Tiny Tim makes the reader feel the human cost of economic cruelty.',
     },
     {
       name: 'Tiny Tim',
@@ -109,12 +109,12 @@ const data: TextGuideData = {
     {
       name: 'Fred',
       role: "Scrooge's nephew",
-      body: 'Fred is everything Scrooge is not: warm, cheerful and forgiving. He insists on inviting Scrooge to Christmas dinner every year despite being rebuffed. He argues that Christmas is "a good time: a kind, forgiving, charitable, pleasant time." Fred provides a living example that generosity and happiness are available to Scrooge if he will only accept them.',
+      body: 'Fred is everything Scrooge is not: warm, cheerful and forgiving. He insists on inviting Scrooge to Christmas dinner every year despite being rebuffed. He argues that Christmas is "a good time; a kind, forgiving, charitable, pleasant time." Fred provides a living example that generosity and happiness are available to Scrooge if he will only accept them.',
     },
     {
       name: 'Jacob Marley',
       role: "Scrooge's dead business partner",
-      body: 'Marley\'s ghost is a terrifying warning: he wears the chain "I forged in life," made "link by link, and yard by yard." He tells Scrooge that his own chain was "as heavy and as long as this" seven Christmases ago and has grown since. Marley represents the consequences of a life lived without compassion. His most important line is his cry that "Mankind was my business!" - the duty he ignored while alive.',
+      body: 'Marley\'s ghost is a terrifying warning: he wears the chain "I forged in life," made "link by link, and yard by yard." He tells Scrooge that his own chain was "as heavy and as long as this" seven Christmases ago and has grown since. Marley represents the consequences of a life lived without compassion. His most important line is his cry that "Mankind was my business" - the duty he ignored while alive.',
     },
     {
       name: 'Belle',
@@ -134,7 +134,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Poverty and social injustice',
-      body: 'Dickens wrote A Christmas Carol partly as a direct response to the 1843 parliamentary report on child labour. When Scrooge asks whether there are "no prisons? no workhouses?", Dickens puts the callous language of Victorian political economy into his mouth to expose its cruelty. The Cratchit family live in real poverty - their Christmas pudding is tiny, Martha must work away from home, and Tiny Tim may die for want of proper care. The children Ignorance and Want, hidden beneath the Ghost of Christmas Present\'s robe, are Dickens\'s most explicit social message: "Are there no prisons?" the spirit throws back at Scrooge, using his own words against him.',
+      body: 'Dickens wrote A Christmas Carol partly as a direct response to the 1843 parliamentary report on child labour. When Scrooge asks "Are there no prisons?" and whether the Union workhouses are "still in operation", Dickens puts the callous language of Victorian political economy into his mouth to expose its cruelty. The Cratchit family live in real poverty - their Christmas pudding is tiny, Martha must work away from home, and Tiny Tim may die for want of proper care. The children Ignorance and Want, hidden beneath the Ghost of Christmas Present\'s robe, are Dickens\'s most explicit social message: "Are there no prisons?" the spirit throws back at Scrooge, using his own words against him.',
     },
     {
       title: 'Family and togetherness',
@@ -146,13 +146,13 @@ const data: TextGuideData = {
     },
     {
       title: 'Greed versus generosity',
-      body: 'Dickens sets up a stark moral opposition. Scrooge\'s wealth makes him wretched; the Cratchits\' poverty does not prevent their joy. Fezziwig spends only "three or four pounds" on his party but creates enormous happiness. Marley\'s chains are forged from "cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel" - the very instruments of commerce become instruments of punishment. Dickens insists that money spent on others creates happiness, while money hoarded creates only isolation and spiritual death.',
+      body: 'Dickens sets up a stark moral opposition. Scrooge\'s wealth makes him wretched; the Cratchits\' poverty does not prevent their joy. Fezziwig spends only "a few pounds" on his party but creates enormous happiness. Marley\'s chains are forged from "cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel" - the very instruments of commerce become instruments of punishment. Dickens insists that money spent on others creates happiness, while money hoarded creates only isolation and spiritual death.',
     },
   ],
   historicalContext: [
     'A Christmas Carol was published on 19 December 1843 by Chapman & Hall, during a period of extreme economic inequality in Victorian England. The Industrial Revolution had created enormous wealth for factory owners and financiers while driving millions of working-class families into grinding poverty. Cities like London were overcrowded, polluted and disease-ridden. The gap between rich and poor was vast and growing, and Dickens saw this injustice at first hand throughout his life.',
 
-    'The Poor Law Amendment Act of 1834 had established the workhouse system, designed to make poverty so unpleasant that people would do anything to avoid it. Families were separated, conditions were deliberately harsh, and the poor were treated as morally deficient rather than economically disadvantaged. When Scrooge says that the poor should go to prisons and workhouses, and suggests they had better die "and decrease the surplus population," Dickens is quoting the utilitarian philosophy of Thomas Malthus, who argued that poverty was a natural check on overpopulation.',
+    'The Poor Law Amendment Act of 1834 had established the workhouse system, designed to make poverty so unpleasant that people would do anything to avoid it. Families were separated, conditions were deliberately harsh, and the poor were treated as morally deficient rather than economically disadvantaged. When Scrooge says that the poor should go to prisons and workhouses, and suggests they had better die "and decrease the surplus population," Dickens is echoing the ideas of Thomas Malthus, who argued that poverty was a natural check on overpopulation.',
 
     "Dickens had personal experience of poverty and its humiliations. When he was twelve years old, his father was imprisoned in the Marshalsea debtors' prison, and the young Charles was sent to work in Warren's Blacking Factory, pasting labels on bottles of boot polish. This traumatic experience shaped his entire literary career and gave him a lifelong empathy with the poor and a fury at those who dismissed their suffering. A Christmas Carol was partly inspired by a visit to the ragged schools of Field Lane and by the government report on child labour that he read in 1843.",
 
@@ -161,40 +161,40 @@ const data: TextGuideData = {
   quotations: [
     {
       quote:
-        '"Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"',
+        '"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"',
       who: 'Narrator - Stave One',
       analysis:
         'Dickens opens with a barrage of violent adjectives, each one an act of physical cruelty. The listing creates a sense of relentless, mechanical greed - Scrooge is defined entirely by what he takes from others.',
     },
     {
-      quote: '"Are there no prisons? Are there no workhouses?"',
+      quote: '"Are there no prisons?" ... "And the Union workhouses?"',
       who: 'Scrooge - Stave One',
       analysis:
         'Scrooge echoes the utilitarian arguments of the Victorian establishment. Dickens makes the reader hear how cruel these words sound when spoken aloud, turning political policy into personal callousness.',
     },
     {
       quote:
-        '"If they would rather die, they had better do it, and decrease the surplus population."',
+        '"If they would rather die... they had better do it, and decrease the surplus population."',
       who: 'Scrooge - Stave One',
       analysis:
         "A direct allusion to Malthus's theory of population. The Ghost of Christmas Present throws this line back at Scrooge in Stave Three, forcing him - and the reader - to confront its inhumanity.",
     },
     {
-      quote: '"I wear the chain I forged in life. I made it link by link, and yard by yard."',
+      quote: '"I wear the chain I forged in life... I made it link by link, and yard by yard."',
       who: "Marley's Ghost - Stave One",
       analysis:
         'The chain is Dickens\'s most powerful metaphor: every selfish act in life becomes a physical weight in death. The imagery of craftsmanship - "link by link" - makes greed feel deliberate and cumulative.',
     },
     {
       quote:
-        '"Mankind was my business. The common welfare was my business; charity, mercy, forbearance, and benevolence were, all, my business."',
+        '"Mankind was my business. The common welfare was my business; charity, mercy, forbearance, and benevolence, were, all, my business."',
       who: "Marley's Ghost - Stave One",
       analysis:
         'Marley redefines "business" from commerce to compassion. This is Dickens\'s thesis statement: every person\'s true business is the welfare of others, and ignoring that duty has consequences.',
     },
     {
       quote: '"A solitary child, neglected by his friends, is left there still."',
-      who: 'Narrator - Stave Two',
+      who: 'Ghost of Christmas Past - Stave Two',
       analysis:
         "The image of young Scrooge alone at school is the emotional key to his character. Dickens shows that cruelty often begins as a response to suffering, and that understanding someone's past is the first step toward changing their future.",
     },
@@ -206,20 +206,20 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"A small matter to make these silly folks so full of gratitude... He has the power to render us happy or unhappy."',
-      who: 'Narrator / Scrooge - Stave Two (on Fezziwig)',
+        '"A small matter... to make these silly folks so full of gratitude... He has the power to render us happy or unhappy."',
+      who: 'Ghost of Christmas Past / Scrooge - Stave Two (on Fezziwig)',
       analysis:
         "Scrooge himself recognises that an employer's small kindness can create enormous happiness. Fezziwig spent little money but gave generously of his spirit - the opposite of Scrooge's treatment of Bob Cratchit.",
     },
     {
       quote:
-        '"Oh, a wonderful pudding! Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs Cratchit since their marriage."',
+        '"Oh, a wonderful pudding! Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs. Cratchit since their marriage."',
       who: 'Narrator - Stave Three',
       analysis:
         "The Cratchit Christmas dinner is modest by any standard, but Dickens describes it with such warmth that it becomes a feast. The family's gratitude and love transform poverty into abundance.",
     },
     {
-      quote: '"God bless us, every one!"',
+      quote: '"God bless us every one!"',
       who: 'Tiny Tim - Stave Three',
       analysis:
         "The novella's most famous line is a prayer for universal blessing. Tiny Tim asks for grace not just for his own family but for everyone - the generosity of spirit that Scrooge must learn to share.",
@@ -239,7 +239,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"Are these the shadows of the things that Will be, or are they shadows of the things that May be, only?"',
+        '"Are these the shadows of the things that Will be, or are they shadows of things that May be, only?"',
       who: 'Scrooge - Stave Four',
       analysis:
         "Scrooge grasps the central moral of the novella: the future is not fixed. This question transforms the Ghost's visions from prophecy to warning, and gives Scrooge - and the reader - agency and hope.",
@@ -268,7 +268,7 @@ const data: TextGuideData = {
       quote: '"Old Marley was as dead as a door-nail."',
       who: 'Narrator - Stave One',
       analysis:
-        'The famous opening line uses a common simile to establish a matter-of-fact, conversational tone. Dickens immediately addresses the reader directly, establishing the intimate storytelling voice that runs through the entire novella.',
+        'The first paragraph ends on this common simile, which establishes a matter-of-fact, conversational tone. Dickens immediately addresses the reader directly, establishing the intimate storytelling voice that runs through the entire novella.',
     },
     {
       quote:
@@ -279,10 +279,10 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"I am as light as a feather, I am as happy as an angel, I am as merry as a school-boy."',
+        '"I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy."',
       who: 'Scrooge - Stave Five',
       analysis:
-        'The triple simile mirrors the triple structure of the ghostly visits. Each comparison - lightness, happiness, merriment - undoes one of the qualities that defined the old Scrooge: heaviness of spirit, misery and hostility to joy.',
+        'The triple simile (a fourth, "I am as giddy as a drunken man", follows in the next sentence) mirrors the triple structure of the ghostly visits. Each comparison - lightness, happiness, merriment - undoes one of the qualities that defined the old Scrooge: heaviness of spirit, misery and hostility to joy.',
     },
     {
       quote:
@@ -334,7 +334,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       '"A kind and generous old man"',
-      '"A squeezing, wrenching, grasping, scraping, clutching, covetous old sinner"',
+      '"A squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner"',
       '"A quiet, modest gentleman"',
       '"A lonely but respectable businessman"',
     ],
@@ -432,7 +432,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['Joy and Sorrow', 'Ignorance and Want', 'Hunger and Cold', 'Sin and Virtue'],
     correctIndex: 1,
     explanation:
-      'The wretched children Ignorance and Want are hidden beneath the ghost\'s robes. The ghost warns Scrooge to "beware them both, but most of all beware this boy" (Ignorance), "for on his brow I see that written which is Doom." Dickens argues that society\'s refusal to educate the poor will destroy everyone.',
+      'The wretched children Ignorance and Want are hidden beneath the ghost\'s robes. The ghost warns Scrooge to "beware them both, and all of their degree, but most of all beware this boy" (Ignorance), "for on his brow I see that written which is Doom." Dickens argues that society\'s refusal to educate the poor will destroy everyone.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -471,7 +471,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'acc-13',
-    question: 'What does Marley\'s cry that "Mankind was my business!" mean?',
+    question: 'What does Marley\'s cry that "Mankind was my business" mean?',
     type: 'multiple-choice',
     options: [
       'He regrets not expanding his company',
@@ -529,7 +529,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The 1834 Poor Law forced the destitute into brutal workhouses designed to be as unpleasant as possible. Scrooge\'s suggestion that the poor should go to "prisons and workhouses" echoes this cruel policy, which Dickens campaigned against throughout his career.',
+      "The 1834 Poor Law forced the destitute into brutal workhouses designed to be as unpleasant as possible. Scrooge's suggestion that the poor should go to prisons and workhouses echoes this cruel policy, which Dickens campaigned against throughout his career.",
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -618,8 +618,8 @@ const REVISION_TOPICS = [
     summary:
       "Dickens attacks Victorian society's treatment of the poor and argues for collective responsibility.",
     keyPoints: [
-      'Scrooge\'s "prisons and workhouses" echoes the cruel 1834 Poor Law',
-      'Marley\'s cry: "Mankind was my business!"',
+      "Scrooge's talk of prisons and workhouses echoes the cruel 1834 Poor Law",
+      'Marley\'s cry: "Mankind was my business."',
       "Ignorance and Want beneath the ghost's robes represent society's hidden suffering",
       'Tiny Tim represents thousands of poor children dying from neglect',
       'Dickens wrote the novella partly as social campaigning',
@@ -704,7 +704,7 @@ export default async function AChristmasCarolPage() {
           Forced to confront his cold past, the suffering around him and his lonely death, Scrooge
           wakes transformed into a generous man. It is a moral fable about redemption, social
           responsibility and the possibility of change, structured in five staves and aligned to the
-          AQA, Edexcel and Eduqas GCSE specifications.
+          AQA, Edexcel, OCR and Eduqas GCSE specifications.
         </p>
       </section>
       <TextStudyHub
@@ -765,7 +765,9 @@ export default async function AChristmasCarolPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          // The labels read 'Name - Stave n' with a spaced hyphen; splitting
+          // on the em dash alone left the stave in every option of the quiz.
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

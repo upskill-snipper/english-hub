@@ -38,18 +38,18 @@ const data: TextGuideData = {
   author: 'George Eliot',
   year: '1861',
   category: 'Novel',
-  badge: 'AQA / Edexcel / Eduqas',
+  badge: 'Edexcel / Eduqas',
   intro:
-    'Silas Marner is about a man who loses his faith, puts money in its place, loses the money too, and is brought back to life by a child. George Eliot\u2019s shortest novel follows a linen weaver framed for theft by his closest friend and driven out of his chapel community, who then spends fifteen years hoarding gold under the floorboards of a cottage outside the village of Raveloe. When the gold is stolen and a golden-haired orphan wanders out of the snow to his fireside one New Year\u2019s Eve, Silas keeps her, and raising her slowly returns him to the village and to human feeling. Published in 1861, it reads like a moral fable, but underneath the simple surface Eliot is examining faith, chance, class, money and what makes someone a parent.',
+    'Silas Marner is about a man who loses his faith, puts money in its place, loses the money too, and is brought back to life by a child. George Eliot\u2019s shortest novel follows a linen weaver framed for theft by his closest friend and driven out of his chapel community, who then spends fifteen years hoarding gold under the brick floor of a cottage outside the village of Raveloe. When the gold is stolen and a golden-haired orphan wanders out of the snow to his fireside one New Year\u2019s Eve, Silas keeps her, and raising her slowly returns him to the village and to human feeling. Published in 1861, it reads like a moral fable, but underneath the simple surface Eliot is examining faith, chance, class, money and what makes someone a parent.',
   quickInfo: {
     genre: 'Realist fable / moral fiction',
     setting: 'Raveloe (rural English village), early 19th century',
-    length: '~55,000 words / 21 chapters',
+    length: '~71,000 words / 21 chapters',
     published: '1861',
   },
   plotSummary: [
     'The novel opens with Silas Marner, a young linen-weaver living in the Dissenting chapel community of Lantern Yard in a northern industrial town. Silas is devout, trusting and engaged to a servant girl named Sarah. His closest friend, William Dane, conspires to frame him for the theft of the dying senior deacon\u2019s money. The congregation draws lots to determine guilt and the lots declare Silas guilty. His faith in both God and humankind shatters. Sarah breaks off the engagement and later marries William. Silas leaves Lantern Yard and walks south until he settles on the outskirts of Raveloe, a sleepy agricultural village cut off from the currents of modern life.',
-    'For fifteen years Silas lives as a half-human creature in the eyes of Raveloe\u2019s villagers. He weaves at his loom day and night and hoards the gold coins he earns, counting them in secret beneath the floorboards of his stone cottage. The narrative then turns to the Cass family at the Red House, the first family of Raveloe. Squire Cass has two grown sons. The elder, Godfrey, is weak, well-meaning and trapped by a secret marriage to Molly Farren, a drug-addicted woman who has borne him a daughter. The younger, Dunstan (Dunsey), is a cruel wastrel who blackmails Godfrey over the secret. Sent to sell Godfrey\u2019s horse Wildfire, Dunstan kills the animal, and on his walk back through the dark stumbles across Silas\u2019s cottage while Silas is briefly out. He steals the gold and vanishes into the night.',
+    'For fifteen years Silas lives as a half-human creature in the eyes of Raveloe\u2019s villagers. He weaves at his loom day and night and hoards the gold coins he earns, counting them in secret and hiding them under the bricks of his stone cottage floor. The narrative then turns to the Cass family at the Red House, the first family of Raveloe. Squire Cass has four sons. The eldest, Godfrey, is weak, well-meaning and trapped by a secret marriage to Molly Farren, a drug-addicted woman who has borne him a daughter. The second, Dunstan (Dunsey), is a cruel wastrel who blackmails Godfrey over the secret. Sent to sell Godfrey\u2019s horse Wildfire, Dunstan kills the animal, and on his walk back through the dark stumbles across Silas\u2019s cottage while Silas is briefly out. He steals the gold and vanishes into the night.',
     'Silas is devastated by the loss of his treasure. For the first time he is forced to seek help from his neighbours, and a tentative contact with the life of the village begins. On New Year\u2019s Eve, while a dance is being held at the Red House, Molly Farren sets out through the snow to expose Godfrey as her husband, carrying their child. She collapses in the snow and dies from cold and opium. The toddler, drawn by the firelight of Silas\u2019s open door, wanders inside and falls asleep at his hearth. Silas, still grieving for his gold, mistakes her golden curls for his returned coins. When Godfrey arrives with a search party, he recognises the dead woman as his wife but does not claim the child. Silas insists on keeping her and names her Eppie.',
     'Part Two opens sixteen years later. Silas has been transformed by the task of raising Eppie. He is now an accepted, even loved member of Raveloe, integrated through the child into the life of the church and the village. Godfrey has married Nancy Lammeter but remains childless. When the old stone-pit behind Silas\u2019s cottage is drained, Dunstan\u2019s skeleton is found with the stolen gold, forcing the past into the open. Godfrey confesses to Nancy that Eppie is his daughter, and together they go to Silas\u2019s cottage to claim her, offering Eppie a life as a gentleman\u2019s daughter. Eppie refuses and chooses Silas, saying she cannot think of any father but him. The novel ends with Eppie\u2019s marriage in the village, and Silas, once a broken outcast, fully restored to human community.',
   ],
@@ -61,7 +61,7 @@ const data: TextGuideData = {
     },
     {
       name: 'Godfrey Cass',
-      role: 'Elder son of Squire Cass; heir to the Red House',
+      role: 'Eldest son of Squire Cass; heir to the Red House',
       body: 'Godfrey is weak rather than wicked. Trapped by a reckless secret marriage to Molly Farren, he drifts through the first half of the novel hoping that chance will release him from his mistake. When Molly dies in the snow he seizes his freedom silently, refusing to claim his own daughter. Eliot treats him with moral seriousness: he is not punished with disgrace but with the quieter retribution of a childless marriage to Nancy. His late attempt to reclaim Eppie exposes the gentleman\u2019s assumption that money and class can undo years of neglect, and his defeat in that scene is one of the novel\u2019s sharpest moral judgements.',
     },
     {
@@ -101,11 +101,11 @@ const data: TextGuideData = {
     },
     {
       title: 'Parenthood: nature versus nurture',
-      body: 'The novel\u2019s central moral argument is that fatherhood is something earned, not inherited. Godfrey is Eppie\u2019s biological father, but he conceals her for sixteen years while Silas feeds her, dresses her, teaches her to speak and loves her. When Godfrey finally tries to reclaim her in the confrontation of Chapter 19, Eliot gives Eppie the decisive words: she cannot think of any father but Silas, and she will not leave him. The scene is one of the most openly argumentative in the novel, pushing against the Victorian assumption that blood and class determine family. Eliot\u2019s case is that the daily labour of care is what creates a parent, and that a child\u2019s loyalty rightly follows that labour rather than the biological tie. Aaron Winthrop\u2019s willingness to join the household, rather than take Eppie out of it, extends the argument into the next generation.',
+      body: 'The novel\u2019s central moral argument is that fatherhood is something earned, not inherited. Godfrey is Eppie\u2019s biological father, but he conceals her for sixteen years while Silas feeds her, dresses her and loves her. When Godfrey finally tries to reclaim her in the confrontation of Chapter 19, Eliot gives Eppie the decisive words: she cannot think of any father but Silas, and she will not leave him. The scene is one of the most openly argumentative in the novel, pushing against the Victorian assumption that blood and class determine family. Eliot\u2019s case is that the daily labour of care is what creates a parent, and that a child\u2019s loyalty rightly follows that labour rather than the biological tie. Aaron Winthrop\u2019s willingness to join the household, rather than take Eppie out of it, extends the argument into the next generation.',
     },
     {
       title: 'Money and human bonds',
-      body: 'The gold coins that Silas hoards are the novel\u2019s most important symbol. In his years of isolation they substitute for human contact: he talks to them, counts them, spreads them on his table and loves them as "companions." Their theft is a catastrophe precisely because they are the only relationship he has. When Eppie arrives, Eliot draws a deliberate visual parallel between her golden hair and the lost coins, so that Silas literally mistakes one for the other, but the substitution transforms their meaning. The coins bought nothing and demanded nothing; the child demands everything and gives everything. When the gold is eventually recovered in Part Two, Silas is strikingly indifferent to it. The novel\u2019s economic logic is explicit: money accumulated without human use deforms the hoarder, and no amount of it can buy back the years of love Silas has given Eppie.',
+      body: 'The gold coins that Silas hoards are the novel\u2019s most important symbol. In his years of isolation they substitute for human contact: he counts them, spreads them out in heaps and draws them out at night "to enjoy their companionship." Their theft is a catastrophe precisely because they are the only relationship he has. When Eppie arrives, Eliot draws a deliberate visual parallel between her golden hair and the lost coins, so that Silas literally mistakes one for the other, but the substitution transforms their meaning. The coins bought nothing and demanded nothing; the child demands everything and gives everything. When the gold is eventually recovered in Part Two, Silas is strikingly indifferent to it. The novel\u2019s economic logic is explicit: money accumulated without human use deforms the hoarder, and no amount of it can buy back the years of love Silas has given Eppie.',
     },
     {
       title: 'Justice and retribution',
@@ -117,14 +117,14 @@ const data: TextGuideData = {
     },
   ],
   historicalContext: [
-    'George Eliot was the pen name of Mary Ann Evans (1819\u20131880), one of the most intellectually ambitious novelists of the Victorian period. A translator of German theology and a former assistant editor of the Westminster Review, she began writing fiction in her late thirties and quickly became the leading voice of English realism. Silas Marner was her fourth work of fiction, published in 1861 between Adam Bede (1859) and The Mill on the Floss (1860) and the much larger Middlemarch (1871\u201372). Eliot described the idea of Silas Marner as arriving suddenly as a vision of a linen-weaver with a bag on his back, and she wrote the short novel quickly while setting aside the longer Romola. It sits at the intersection of her realist project and her love of older, fable-like narrative shapes.',
+    'George Eliot was the pen name of Mary Ann Evans (1819\u20131880), one of the most intellectually ambitious novelists of the Victorian period. A translator of German theology and a former assistant editor of the Westminster Review, she began writing fiction in her late thirties and quickly became the leading voice of English realism. Silas Marner was her fourth work of fiction, published in 1861 after Adam Bede (1859) and The Mill on the Floss (1860) and before the much larger Middlemarch (1871\u201372). Eliot described the idea of Silas Marner as arriving suddenly as a vision of a linen-weaver with a bag on his back, and she wrote the short novel quickly while setting aside the longer Romola. It sits at the intersection of her realist project and her love of older, fable-like narrative shapes.',
     'The novel is set in the opening years of the nineteenth century, roughly a generation before its 1861 publication, and its world is consciously pre-industrial. Raveloe is described as lying in a rich agricultural pocket untouched by the railways, the factories and the religious and political upheavals that were transforming England during Eliot\u2019s own lifetime. Lantern Yard, by contrast, belongs to the new industrial north, and when Silas returns to look for it late in the novel he finds it has been demolished and a factory stands in its place. Eliot uses this contrast deliberately: the displacement of rural life by industrial expansion is part of what the novel mourns, even as it refuses to idealise the village.',
     'Religion is central to the novel\u2019s moral landscape. Lantern Yard represents Dissenting Christianity, the strict chapel-based tradition of Nonconformist sects outside the Church of England, and Eliot treats it with a mixture of respect and unease: it offers community but is capable of catastrophic error, as in the drawing of lots that condemns Silas. Raveloe\u2019s Church of England piety is quieter and more practical, expressed in figures like Dolly Winthrop rather than in doctrine. Eliot herself had broken with evangelical Christianity in her twenties and was by 1861 a religious humanist who nonetheless took religious experience seriously. Silas Marner can be read as her attempt to imagine what it might look like for a man of lost faith to recover a meaningful moral life without returning to the beliefs that had failed him.',
   ],
   quotations: [
     {
       quote:
-        '"In the days when the spinning-wheels hummed busily in the farmhouses\u2014and even great ladies, clothed in silk and thread-lace, had their toy spinning-wheels of polished oak\u2014there might be seen, in districts far away among the lanes, or deep in the bosom of the hills, certain pallid undersized men, who, by the side of the brawny country-folk, looked like the remnants of a disinherited race."',
+        '"In the days when the spinning-wheels hummed busily in the farmhouses\u2014and even great ladies, clothed in silk and thread-lace, had their toy spinning-wheels of polished oak\u2014there might be seen in districts far away among the lanes, or deep in the bosom of the hills, certain pallid undersized men, who, by the side of the brawny country-folk, looked like the remnants of a disinherited race."',
       who: 'Narrator \u2014 Chapter 1, opening',
       analysis:
         'The famous opening places the novel in a vanished pre-industrial world of spinning-wheels and handloom weaving, and it introduces the weavers as marginal, alien, almost ghostly figures. Eliot\u2019s long, flowing sentence and the phrase "remnants of a disinherited race" prepare the reader for a story about exile and outsider status, and locate Silas within a wider social change that the Victorian reader was already living through.',
@@ -145,10 +145,10 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"He had seemed to love it little in the years when every penny bore a distinct recognisable face to him; he loved it more since it had become his companion."',
+        '"He had seemed to love it little in the years when every penny had its purpose for him; for he loved the purpose then."',
       who: 'Narrator \u2014 Chapter 2',
       analysis:
-        'Eliot tracks the psychological shift by which Silas\u2019s gold moves from ordinary earnings to beloved hoard. The phrase "his companion" is the key: in the absence of human relationships the coins have taken a relational role and fill a space that should be occupied by a person. The quiet horror of the sentence is that Silas himself no longer seems to recognise the difference, which tells us how far his isolation has damaged him.',
+        'Eliot tracks the psychological shift by which Silas\u2019s gold moves from ordinary earnings to beloved hoard. The word "then" is the key: once the purpose has gone, the coins take a relational role, which Eliot calls their "companionship", and fill a space that should be occupied by a person. The quiet horror of the sentence is that Silas himself no longer seems to recognise the difference, which tells us how far his isolation has damaged him.',
     },
     {
       quote:
@@ -166,10 +166,10 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"She\u2019s a lone thing\u2014and I\u2019m a lone thing. My money\u2019s gone, I don\u2019t know where\u2014and this is come from I don\u2019t know where."',
+        '"it\u2019s a lone thing\u2014and I\u2019m a lone thing. My money\u2019s gone, I don\u2019t know where\u2014and this is come from I don\u2019t know where."',
       who: 'Silas Marner \u2014 Chapter 13',
       analysis:
-        'Silas\u2019s plain-speaking claim to the child on the night of her arrival at the Red House. The parallel of "lone thing" and the deliberate echo between the lost gold and the found child crystallise the novel\u2019s central substitution, while the repeated "I don\u2019t know where" gives his grief and wonder equal weight. Eliot writes Silas\u2019s speech in a restrained dialect register that gives moral weight to his simplicity and contrasts with Godfrey\u2019s polished evasiveness in the same scene.',
+        'Silas\u2019s plain-speaking claim to the child on the night of her arrival, made to Godfrey at the cottage hearth. The parallel of "lone thing" and the deliberate echo between the lost gold and the found child crystallise the novel\u2019s central substitution, while the repeated "I don\u2019t know where" gives his grief and wonder equal weight. Eliot writes Silas\u2019s speech in a restrained dialect register that gives moral weight to his simplicity and contrasts with Godfrey\u2019s polished evasiveness in the same scene.',
     },
     {
       quote:
@@ -186,24 +186,24 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"I\u2019m promised to marry a working-man, as\u2019ll live with father, and help me take care of him."',
+        '"I\u2019m promised to marry a working-man, as\u2019ll live with father, and help me to take care of him."',
       who: 'Eppie \u2014 Chapter 19',
       analysis:
         'Eppie follows her refusal with a social as well as personal commitment: she will marry inside her class, and her future husband Aaron will join the household rather than take her out of it. Eliot is careful to make the decision economic and social as well as emotional, so that it cannot be reduced to sentimental loyalty. The working life with Aaron is shown as a positive choice rather than a sacrifice, which is a significant departure from Victorian narratives of rising in society.',
     },
     {
       quote:
-        '"There\u2019s good i\u2019 this world\u2014I\u2019ve a feeling o\u2019 that now; and it makes a man feel as there\u2019s a good more than he can see, i\u2019 spite o\u2019 the trouble and the wickedness."',
+        '"There\u2019s good i\u2019 this world\u2014I\u2019ve a feeling o\u2019 that now; and it makes a man feel as there\u2019s a good more nor he can see, i\u2019 spite o\u2019 the trouble and the wickedness."',
       who: 'Silas Marner \u2014 Chapter 16',
       analysis:
-        'Silas\u2019s recovered faith is expressed in carefully modest terms. He does not reclaim the theology of Lantern Yard or any particular creed; he describes a feeling, rooted in experience, that there is good beyond what he can see, even "in spite of the trouble and the wickedness" he has suffered. Eliot uses the weaver\u2019s dialect to give the claim weight without overstating it, and the sentence is a key statement of the novel\u2019s humanist theology.',
+        'Silas\u2019s recovered faith is expressed in carefully modest terms. He does not reclaim the theology of Lantern Yard or any particular creed; he describes a feeling, rooted in experience, that there is good beyond what he can see, even "i’ spite o’ the trouble and the wickedness" he has suffered. Eliot uses the weaver\u2019s dialect to give the claim weight without overstating it, and the sentence is a key statement of the novel\u2019s humanist theology.',
     },
     {
       quote:
         '"The sense of security more frequently springs from habit than from conviction, and for this reason it often subsists after such a change in the conditions as might have been expected to suggest alarm."',
-      who: 'Narrator \u2014 Chapter 9',
+      who: 'Narrator \u2014 Chapter 5',
       analysis:
-        'One of Eliot\u2019s sharpest aphorisms about moral self-deception. The sentence explains how Godfrey can go on living as if his secret will somehow resolve itself, and it reaches beyond him to a general claim about human psychology: people keep feeling safe long after the reasons for safety have disappeared. Eliot\u2019s narrator regularly lifts a local situation into a universal observation in this way, which is characteristic of the essayistic voice of her mature fiction.',
+        'One of Eliot\u2019s sharpest aphorisms about false security. The sentence explains how Silas can walk home at ease on the night his gold is stolen, and it reaches beyond him to a general claim about human psychology: people keep feeling safe long after the reasons for safety have disappeared. Eliot\u2019s narrator regularly lifts a local situation into a universal observation in this way, which is characteristic of the essayistic voice of her mature fiction.',
     },
     {
       quote:
@@ -220,10 +220,10 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"It\u2019s the will o\u2019 Them above as many things should be dark to us; but there\u2019s some things as I\u2019ve never felt i\u2019 the dark about, and they\u2019re mostly what comes i\u2019 the day\u2019s work."',
-      who: 'Dolly Winthrop \u2014 Chapter 16',
+        '"It\u2019s the will o\u2019 Them above as a many things should be dark to us; but there\u2019s some things as I\u2019ve never felt i\u2019 the dark about, and they\u2019re mostly what comes i\u2019 the day\u2019s work."',
+      who: 'Dolly Winthrop \u2014 Chapter 21',
       analysis:
-        'Dolly\u2019s rough village theology condenses the novel\u2019s moral position. Big metaphysical questions may be dark, but the daily work of care and kindness is clear enough, and that is where moral life is actually lived. Eliot gives this central statement to an uneducated woman, not a clergyman or the narrator, and the reader is meant to take Dolly\u2019s practical authority entirely seriously. The line also prepares for Silas\u2019s own recovered faith in Chapter 16.',
+        'Dolly\u2019s rough village theology condenses the novel\u2019s moral position. Big metaphysical questions may be dark, but the daily work of care and kindness is clear enough, and that is where moral life is actually lived. Eliot gives this central statement to an uneducated woman, not a clergyman or the narrator, and the reader is meant to take Dolly\u2019s practical authority entirely seriously. The line also echoes the recovered faith Silas voices to her in Chapter 16.',
     },
     {
       quote: '"The past becomes dreamy because its symbols have all vanished."',
@@ -232,8 +232,9 @@ const data: TextGuideData = {
         'A short extract from the longer passage about exile, often cited on its own. The line explains why Silas\u2019s Lantern Yard life fades from him during his years in Raveloe: without the chapel, the familiar faces, the streets and the hymns, memory itself loses hold. It also anticipates his final visit to the demolished Lantern Yard in Part Two, where the "symbols" have literally vanished beneath a new factory and he is forced to accept that there is nothing left to return to.',
     },
     {
-      quote: '"O father, what a pretty home ours is! I think nobody could be happier than we are."',
-      who: 'Eppie \u2014 Chapter 21, closing lines',
+      quote:
+        '"O father," said Eppie, "what a pretty home ours is! I think nobody could be happier than we are."',
+      who: 'Eppie \u2014 Conclusion, closing lines',
       analysis:
         'Eliot ends the novel on an exchange of simple domestic happiness rather than a grand moral pronouncement. Eppie\u2019s line values the modest cottage above the Red House and closes the theme of class choice begun in the confrontation of Chapter 19. The deliberate understatement of the final scene is characteristic of Eliot\u2019s restrained realism: the transformed world of the novel is summed up not in rhetoric but in a quiet domestic sentence spoken by a young woman to the father who has raised her.',
     },
@@ -286,7 +287,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Silas weaves linen at his loom day and night and hoards the gold coins he earns beneath his floorboards, living in almost total isolation from the village.',
+      'Silas weaves linen at his loom day and night and hoards the gold coins he earns under the bricks of his floor, living in almost total isolation from the village.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -578,7 +579,7 @@ const REVISION_TOPICS = [
     summary:
       'The gold coins are the central symbol: a substitute for human connection that deforms the hoarder.',
     keyPoints: [
-      'Silas talks to and counts his coins as if they were companions',
+      'Silas counts his coins and enjoys their "companionship"',
       'Eppie\u2019s golden hair is deliberately paralleled with the lost gold',
       'When the gold is recovered, Silas is indifferent',
       'Money is consistently shown as inferior to love',
@@ -591,7 +592,7 @@ const REVISION_TOPICS = [
       'Raveloe is a world in which the Cass family dominates, and Eliot is alert to the costs and assumptions of that hierarchy.',
     keyPoints: [
       'The Red House represents lazy, indulgent gentry',
-      'Squire Cass has failed as a father of his two sons',
+      'Squire Cass has failed as a father of his four sons',
       'The New Year\u2019s Eve dance is a carefully observed class set-piece',
       'Godfrey\u2019s attempt to reclaim Eppie is framed as a class confrontation',
       'Eppie\u2019s refusal is a statement of class loyalty as well as love',
@@ -626,7 +627,6 @@ export default async function SilasMarnerPage() {
       <TextStudyHub
         textName="Silas Marner"
         textType="novel"
-        examBoard="AQA"
         basePath="/revision/texts/silas-marner"
         subPages={[
           {

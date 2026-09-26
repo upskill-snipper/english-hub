@@ -113,7 +113,7 @@ const CHARACTERS: CharacterProfile[] = [
     keyQuotes: [
       {
         quote:
-          '"I do not pretend to be anything extraordinary now. I was tempted to be so by the circumstances, but I hope I am not."',
+          '"I was very much flattered by his asking me to dance a second time. I did not expect such a compliment."',
         analysis:
           "Jane's modesty is genuine and touching, but also reveals her vulnerability. In a society that rewards performance and display, her quiet integrity risks being overlooked.",
       },
@@ -121,7 +121,7 @@ const CHARACTERS: CharacterProfile[] = [
         quote:
           '"There are few people whom I really love, and still fewer of whom I think well. The more I see of the world, the more am I dissatisfied with it."',
         analysis:
-          "Elizabeth's words, but spoken about Jane. This quote illuminates the contrast between the sisters: Elizabeth is disillusioned by the world, while Jane maintains her faith in human goodness despite evidence to the contrary.",
+          "Elizabeth's words, spoken to Jane. This quote illuminates the contrast between the sisters: Elizabeth is disillusioned by the world, while Jane maintains her faith in human goodness despite evidence to the contrary.",
       },
     ],
     examTip:
@@ -138,7 +138,7 @@ const CHARACTERS: CharacterProfile[] = [
     keyQuotes: [
       {
         quote:
-          '"He is just what a young man ought to be - sensible, good humoured, lively; and I never saw such happy manners!"',
+          '"He is just what a young man ought to be ... sensible, good humoured, lively; and I never saw such happy manners!"',
         analysis:
           'Jane\'s assessment of Bingley, which also reveals her own values. Bingley\'s "happy manners" make him universally popular, but Austen will show that manner is not the same as substance.',
       },
@@ -150,7 +150,7 @@ const CHARACTERS: CharacterProfile[] = [
     name: 'Mr Wickham (George Wickham)',
     role: "Militia officer - the novel's antagonist",
     overview:
-      "Wickham is charming, handsome and an accomplished liar. He is the son of old Mr Darcy's steward and was raised alongside Darcy, but squandered every advantage he was given. He attempted to elope with Darcy's fifteen-year-old sister Georgiana for her fortune, and later seduces and runs away with the fifteen-year-old Lydia Bennet. Wickham is Austen's most dangerous character precisely because he is the most likeable on first acquaintance.",
+      "Wickham is charming, handsome and an accomplished liar. He is the son of old Mr Darcy's steward and was raised alongside Darcy, but squandered every advantage he was given. He attempted to elope with Darcy's fifteen-year-old sister Georgiana for her fortune, and later seduces and runs away with Lydia Bennet, who marries him at sixteen. Wickham is Austen's most dangerous character precisely because he is the most likeable on first acquaintance.",
     keyTraits: ['Charming', 'Dishonest', 'Mercenary', 'Manipulative', 'Superficially agreeable'],
     development:
       "Wickham does not change. His function is to test other characters' judgement. Elizabeth believes him because his easy manners match her prejudice against the reserved Darcy. Only after Darcy's letter does she recognise that Wickham's charm was a calculated performance. Austen uses him to argue that the most dangerous people are those who seem the most pleasant.",
@@ -159,11 +159,11 @@ const CHARACTERS: CharacterProfile[] = [
         quote:
           '"Mr Wickham is blessed with such happy manners as may ensure his making friends - whether he may be equally capable of retaining them, is less certain."',
         analysis:
-          'Darcy\'s measured assessment in the letter contrasts with Wickham\'s self-serving narrative. The distinction between "making friends" and "retaining them" captures the difference between surface charm and genuine character.',
+          'Darcy\'s measured assessment, made to Elizabeth at the Netherfield ball (Chapter 18), contrasts with Wickham\'s self-serving narrative. The distinction between "making friends" and "retaining them" captures the difference between surface charm and genuine character.',
       },
       {
         quote:
-          '"Wickham\'s chief object was unquestionably my sister\'s fortune, which is thirty thousand pounds."',
+          '"Mr Wickham\'s chief object was unquestionably my sister\'s fortune, which is thirty thousand pounds."',
         analysis:
           "Darcy's revelation about Wickham's attempted elopement with Georgiana exposes his true motive: money. Austen shows that mercenary behaviour is not limited to women seeking wealthy husbands - men could be equally calculating.",
       },
@@ -213,7 +213,7 @@ const CHARACTERS: CharacterProfile[] = [
       },
       {
         quote:
-          '"Oh! my dear Lydia! - she will be married at sixteen! - My good, kind brother! - How I long to see her! and to see dear Wickham too!"',
+          '"My dear, dear Lydia! ... She will be married at sixteen! - My good, kind brother! ... How I long to see her! and to see dear Wickham too!"',
         analysis:
           "Mrs Bennet's ecstatic response to Lydia's forced marriage reveals her inability to grasp the moral dimension of the crisis. She sees only the social outcome - marriage - and not the disgrace or the cost. Austen uses her to satirise a society that values the appearance of respectability over genuine virtue.",
       },
@@ -300,7 +300,7 @@ export default async function PrideAndPrejudiceCharactersPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              AQA / Edexcel / OCR / Eduqas
+              AQA / Edexcel / OCR / Eduqas / Edexcel IGCSE / Cambridge IGCSE
             </Badge>
           </div>
 

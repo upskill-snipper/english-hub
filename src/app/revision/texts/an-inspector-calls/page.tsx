@@ -252,7 +252,7 @@ const data: TextGuideData = {
         'إشارة نبوءية للحربين العالميتين اللي يعرفهن الجمهور أصلاً، تمنح المفتش سلطة شبه خارقة للطبيعة.',
     },
     {
-      quote: '"The Titanic \u2014 unsinkable, absolutely unsinkable."',
+      quote: '"The Titanic ... unsinkable, absolutely unsinkable."',
       who: 'Arthur Birling - Act 1',
       whoAr: 'Arthur Birling \u2014 \u0627\u0644\u0641\u0635\u0644 1',
       analysis:
@@ -262,8 +262,8 @@ const data: TextGuideData = {
     },
     {
       quote: '"If we were all responsible for everything ... it would be very awkward."',
-      who: 'Arthur Birling - Act 3',
-      whoAr: 'Arthur Birling - الفصل 3',
+      who: 'Arthur Birling - Act 1',
+      whoAr: 'Arthur Birling - الفصل 1',
       analysis:
         'Birling reduces a moral question to a practical inconvenience, revealing the hollowness of capitalist individualism.',
       analysisAr:
@@ -307,8 +307,8 @@ const data: TextGuideData = {
     },
     {
       quote: '"Public men, Mr Birling, have responsibilities as well as privileges."',
-      who: 'Inspector Goole - Act 1',
-      whoAr: 'Inspector Goole \u2014 \u0627\u0644\u0641\u0635\u0644 1',
+      who: 'Inspector Goole - Act 2',
+      whoAr: 'Inspector Goole \u2014 \u0627\u0644\u0641\u0635\u0644 2',
       analysis:
         'The Inspector directly challenges Birling\u2019s belief that wealth entitles him to immunity from scrutiny.',
       analysisAr:
@@ -316,15 +316,15 @@ const data: TextGuideData = {
     },
     {
       quote: '"what happened to the girl and what we all did to her that matters."',
-      who: 'Sheila Birling - Act 3',
-      whoAr: 'Sheila Birling \u2014 \u0627\u0644\u0641\u0635\u0644 3',
+      who: 'Eric Birling - Act 3',
+      whoAr: 'Eric Birling \u2014 \u0627\u0644\u0641\u0635\u0644 3',
       analysis:
-        'Sheila cuts through her parents\u2019 evasion, insisting that the moral lesson matters regardless of the Inspector\u2019s identity.',
+        'Eric cuts through his parents\u2019 evasion, insisting that the moral lesson matters regardless of the Inspector\u2019s identity.',
       analysisAr:
-        'Sheila \u062a\u0642\u0637\u0639 \u062a\u0647\u0631\u0651\u0628 \u0623\u0628\u0648\u0647\u0627 \u0648\u0623\u0645\u0651\u0647\u0627\u060c \u0648\u062a\u0635\u0631\u0651 \u0625\u0646 \u0627\u0644\u062f\u0631\u0633 \u0627\u0644\u0623\u062e\u0644\u0627\u0642\u064a \u064a\u0647\u0645\u0651 \u0628\u063a\u0636\u0651 \u0627\u0644\u0646\u0638\u0631 \u0639\u0646 \u0647\u0648\u064a\u0629 \u0627\u0644\u0645\u0641\u062a\u0634.',
+        'Eric \u064a\u0642\u0637\u0639 \u062a\u0647\u0631\u0651\u0628 \u0623\u0628\u0648\u0647 \u0648\u0623\u0645\u0651\u0647\u060c \u0648\u064a\u0635\u0631\u0651 \u0625\u0646 \u0627\u0644\u062f\u0631\u0633 \u0627\u0644\u0623\u062e\u0644\u0627\u0642\u064a \u064a\u0647\u0645\u0651 \u0628\u063a\u0636\u0651 \u0627\u0644\u0646\u0638\u0631 \u0639\u0646 \u0647\u0648\u064a\u0629 \u0627\u0644\u0645\u0641\u062a\u0634.',
     },
     {
-      quote: '"I was quite justified."',
+      quote: '"In the circumstances I think I was justified."',
       who: 'Sybil Birling - Act 2',
       whoAr: 'Sybil Birling \u2014 \u0627\u0644\u0641\u0635\u0644 2',
       analysis:
@@ -860,7 +860,9 @@ export default async function AnInspectorCallsPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          // The labels read 'Name - Act n' with a spaced hyphen; splitting on
+          // the em dash alone left the act in every option of the quiz.
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

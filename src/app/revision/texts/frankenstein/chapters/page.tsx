@@ -7,6 +7,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { t } from '@/lib/i18n/t'
+import { StoryVisuals } from '@/components/study-guide/visuals/story-visuals'
+import { guide as studyGuide } from '@/data/study-guides/frankenstein'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -110,7 +112,7 @@ const CHAPTERS: ChapterAnalysis[] = [
       },
     ],
     writersMethods: [
-      'Gothic atmosphere: Chapter 5 is set on "a dreary night of November" with "the rain pattering dismally against the panes." Shelley uses pathetic fallacy to externalise Victor\'s psychological horror and to create the quintessential Gothic creation scene.',
+      'Gothic atmosphere: Chapter 5 is set on "a dreary night of November" with "the rain pattered dismally against the panes." Shelley uses pathetic fallacy to externalise Victor\'s psychological horror and to create the quintessential Gothic creation scene.',
       'Allusion to Prometheus: Victor\'s attempt to "infuse a spark of being" directly evokes the Promethean myth (the novel\'s subtitle is "The Modern Prometheus"). Like Prometheus, Victor steals creative power from the gods and suffers terrible consequences.',
       "Irresponsible parenthood: Shelley draws a sustained parallel between creation and parenthood. Victor's immediate rejection of his \"child\" is presented as the originating sin that causes all subsequent suffering, reflecting Shelley's engagement with her own mother Mary Wollstonecraft's arguments about parental duty.",
     ],
@@ -147,7 +149,7 @@ const CHAPTERS: ChapterAnalysis[] = [
       },
       {
         quote:
-          '"Remember that I am thy creature; I ought to be thy Adam, but I am rather the fallen angel, whom thou drivest from joy for no misdeed."',
+          '"Remember that I am thy creature; I ought to be thy Adam; but I am rather the fallen angel, whom thou drivest from joy for no misdeed."',
         analysis:
           'The allusion to Paradise Lost is explicit: the Creature compares himself to both Adam (the innocent first creation) and Satan (the outcast). The crucial phrase is "for no misdeed" -- unlike Milton\'s Satan, the Creature did not rebel. His fall was caused entirely by his creator\'s rejection, making Victor, not the Creature, the source of evil.',
       },
@@ -173,7 +175,7 @@ const CHAPTERS: ChapterAnalysis[] = [
     keyQuotes: [
       {
         quote:
-          '"Shall each man find a wife for his bosom, and each beast have his mate, and I be alone?"',
+          '"Shall each man... find a wife for his bosom, and each beast have his mate, and I be alone?"',
         analysis:
           'The Creature\'s rhetorical question places his demand within the natural order: every creature has a companion except him. The escalating list ("each man," "each beast") reduces the request to a basic biological and emotional norm, making Victor\'s eventual refusal seem all the more unjust.',
       },
@@ -186,7 +188,7 @@ const CHAPTERS: ChapterAnalysis[] = [
       {
         quote: '"If I have no ties and no affections, hatred and vice must be my portion."',
         analysis:
-          'The Creature presents his moral trajectory as an inevitable consequence of rejection. "Ties and affections" are not luxuries but necessities for moral behaviour. This is Shelley\'s most direct statement of the nature-versus-nurture argument: without love, even a being who was "benevolent and good" will become a "fiend."',
+          'The Creature presents his moral trajectory as an inevitable consequence of rejection. "Ties" and "affections" are not luxuries but necessities for moral behaviour. This is Shelley\'s most direct statement of the nature-versus-nurture argument: without love, even a being who was "benevolent and good" will become a "fiend."',
       },
       {
         quote: '"If I cannot inspire love, I will cause fear."',
@@ -211,7 +213,7 @@ const CHAPTERS: ChapterAnalysis[] = [
     heading: 'Chapters 20-24: Destruction of the Female and the Pursuit',
     subtitle: "Victor breaks his promise and the Creature's vengeance",
     summary:
-      'Victor travels to a remote island in Orkney to construct the female creature, but as he works he is paralysed by doubt. He fears that the female might have "feelings and desires of her own" and refuse to comply with the Creature\'s plan. He fears they might breed and create "a race of devils." Looking up, he sees the Creature watching him through the window with a "ghastly grin." In a moment of horror and revulsion, Victor tears the half-finished female to pieces before the Creature\'s eyes. The Creature, devastated, delivers his most chilling threat: "I shall be with you on your wedding-night." Victor interprets this as a threat to his own life, but the Creature means Elizabeth. Victor disposes of the remains at sea, drifts to Ireland, and is arrested for the murder of Henry Clerval, whom the Creature has strangled. After his acquittal, Victor marries Elizabeth, but on their wedding night the Creature fulfils his promise and murders her. Victor\'s father dies of grief shortly afterwards. Victor, now as isolated and wretched as the Creature, dedicates his remaining life to pursuing the Creature across Europe and into the Arctic, where Walton finds him. The pursuit ends with Victor\'s death aboard Walton\'s ship and the Creature\'s final appearance: he mourns over Victor\'s body, expressing genuine grief and self-loathing, then declares he will travel to the "most northern extremity of the globe" and burn himself on a funeral pyre. These closing chapters complete the cycle of creation, abandonment, revenge, and mutual destruction that defines the novel.',
+      'Victor travels to a remote island in Orkney to construct the female creature, but as he works he is paralysed by doubt. He fears that the female, likely "to become a thinking and reasoning animal", "might refuse to comply with a compact made before her creation". He fears they might breed and create "a race of devils." Looking up, he sees the Creature watching him through the window with a "ghastly grin." In a moment of horror and revulsion, Victor tears the half-finished female to pieces before the Creature\'s eyes. The Creature, devastated, delivers his most chilling threat: "I shall be with you on your wedding-night." Victor interprets this as a threat to his own life, but the Creature means Elizabeth. Victor disposes of the remains at sea, drifts to Ireland, and is arrested for the murder of Henry Clerval, whom the Creature has strangled. After his acquittal, Victor marries Elizabeth, but on their wedding night the Creature fulfils his promise and murders her. Victor\'s father dies of grief shortly afterwards. Victor, now as isolated and wretched as the Creature, dedicates his remaining life to pursuing the Creature across Europe and into the Arctic, where Walton finds him. The pursuit ends with Victor\'s death aboard Walton\'s ship and the Creature\'s final appearance: he mourns over Victor\'s body, expressing genuine grief and self-loathing, then declares he will travel to the "most northern extremity of the globe" and burn himself on a funeral pyre. These closing chapters complete the cycle of creation, abandonment, revenge, and mutual destruction that defines the novel.',
     keyQuotes: [
       {
         quote:
@@ -237,7 +239,7 @@ const CHAPTERS: ChapterAnalysis[] = [
       },
       {
         quote:
-          '"I, the miserable and abandoned, am an abortion, to be spurned at, and kicked, and trampled on."',
+          '"I, the miserable and the abandoned, am an abortion, to be spurned at, and kicked, and trampled on."',
         analysis:
           "Repeated from the Creature's earlier speech, this line gains devastating weight in its final context. The Creature's self-description as an \"abortion\" -- something that should never have existed -- becomes his epitaph, a final indictment of Victor's failure as creator and parent.",
       },
@@ -290,7 +292,7 @@ export default async function FrankensteinChaptersPage() {
               {await t('rev.texts.common.c19_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              AQA / Edexcel / OCR
+              AQA / Edexcel / Edexcel IAL / Edexcel A-Level / OCR A-Level
             </Badge>
           </div>
 
@@ -305,6 +307,9 @@ export default async function FrankensteinChaptersPage() {
           </p>
         </div>
       </section>
+
+      {/* The key scenes, part by part, animated. See scripts/mount-story-visuals.mjs. */}
+      <StoryVisuals guide={studyGuide} scenesOnly />
 
       {/* Chapter sections */}
       {CHAPTERS.map((ch, idx) => (

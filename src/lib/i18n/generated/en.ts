@@ -18838,7 +18838,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'rev.texts.acc.extract.where_sits_h': 'Where this extract sits',
   'rev.texts.acc.extract.where_sits_desc': 'Stave 1, "Marley\'s Ghost"',
   'rev.texts.acc.extract.the_extract_desc':
-    'From "Oh! But he was a tight-fisted hand..." to "Solitary as an oyster." Public domain text, Dickens, 1843.',
+    'From "Oh! But he was a tight-fisted hand..." to "...what the knowing ones call \'nuts\' to Scrooge." Public domain text, Dickens, 1843.',
   'rev.texts.acc.extract.walkthrough_h': 'Method-by-Method Walkthrough',
   'rev.texts.acc.extract.walkthrough_intro':
     'For each chunk: Notice identifies the mechanics on the page; Say models the analytical sentence a strong AO2 response would write; and Zoom out connects the moment to the wider arc and to the 1843 reformist context in which Dickens was writing.',
@@ -19242,7 +19242,7 @@ export const EN_MESSAGES: Record<string, string> = {
     "Six major themes explored in depth with Steinbeck's methods, contextual links and examiner guidance. All quotes are 15 words or fewer.",
   'rev.texts2.omam.themes.how_steinbeck': 'How Steinbeck presents it',
   'rev.texts2.omam.key_quotes.intro':
-    'Twenty-five essential quotations for exam revision. Each quote is 15 words or fewer, with speaker, context, analysis and theme tags for quick reference.',
+    'Twenty-four essential quotations for exam revision. Each quote is 15 words or fewer, with speaker, context, analysis and theme tags for quick reference.',
   'rev.texts2.tkam.characters.intro':
     'Deep profiles for every major character: overview, arc, key quotations and examiner tips. All quotes are 15 words or fewer.',
   'rev.texts2.tkam.themes.intro':

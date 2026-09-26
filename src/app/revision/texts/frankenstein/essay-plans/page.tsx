@@ -71,7 +71,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         point:
           'The Creature articulates the rights of a creation and the duties of a creator, positioning Victor as a negligent God.',
         quote:
-          'I ought to be thy Adam, but I am rather the fallen angel, whom thou drivest from joy for no misdeed.',
+          'I ought to be thy Adam; but I am rather the fallen angel, whom thou drivest from joy for no misdeed.',
         quoteSource: 'The Creature -- Chapter 10',
         analysis:
           'The allusion to Paradise Lost transforms the Creature\'s complaint into a theological argument. Victor is cast as a creator-God who has failed his creation; the Creature should be his "Adam" (innocent, beloved) but has been treated as his Satan (rejected, punished). The phrase "for no misdeed" is the key ethical distinction: Milton\'s Satan fell through pride and rebellion, but the Creature was cast out for the crime of being born. Shelley uses the Miltonic framework to argue that creation without love is worse than no creation at all.',
@@ -174,7 +174,7 @@ const ESSAY_PLANS: EssayPlan[] = [
           'I desire the company of a man who could sympathise with me, whose eyes would reply to mine.',
         quoteSource: 'Walton -- Letter II',
         analysis:
-          "Walton's loneliness mirrors both Victor's and the Creature's, establishing isolation as a universal condition in the novel. The specific desire for \"eyes that would reply to mine\" expresses the need for recognition and emotional reciprocity. However, Walton's isolation, unlike Victor's or the Creature's, is ultimately resolved: he agrees to turn his ship around at his crew's request, choosing human connection over solitary ambition. Shelley suggests that isolation is not inevitable -- it can be overcome by listening to others and accepting the limits of individual aspiration.",
+          "Walton's loneliness mirrors both Victor's and the Creature's, establishing isolation as a universal condition in the novel. The specific desire for a man \"whose eyes would reply to mine\" expresses the need for recognition and emotional reciprocity. However, Walton's isolation, unlike Victor's or the Creature's, is ultimately resolved: he agrees to turn his ship around at his crew's request, choosing human connection over solitary ambition. Shelley suggests that isolation is not inevitable -- it can be overcome by listening to others and accepting the limits of individual aspiration.",
         contextLink:
           'The Arctic setting functions as a symbol of ultimate isolation: frozen, lifeless, devoid of human civilisation. Shelley uses it to represent the endpoint of unchecked ambition -- a place where nothing grows and no one can survive alone.',
       },
@@ -307,7 +307,7 @@ export default async function FrankensteinEssayPlansPage() {
               {await t('rev.texts.common.essay_plans')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              AQA / Edexcel / OCR
+              AQA / Edexcel / Edexcel IAL / Edexcel A-Level / OCR A-Level
             </Badge>
           </div>
 

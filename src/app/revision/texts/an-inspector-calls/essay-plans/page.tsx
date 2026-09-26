@@ -97,7 +97,7 @@ const essayPlans: EssayPlan[] = [
           'The telephone call at the end forces the cycle to repeat, denying the audience comfortable closure.',
         quote: '"what happened to the girl and what we all did to her that matters."',
         analysis:
-          'Sheila insists the moral lesson matters regardless of the Inspector\u2019s identity. The cyclical structure \u2014 a new inspector is coming \u2014 suggests that moral reckoning cannot be evaded, only postponed.',
+          'Eric insists the moral lesson matters regardless of the Inspector\u2019s identity. The cyclical structure \u2014 a new inspector is coming \u2014 suggests that moral reckoning cannot be evaded, only postponed.',
         link: 'The ending is directed at the audience: if the Birlings refuse to learn, will you?',
       },
     ],
@@ -207,7 +207,7 @@ const essayPlans: EssayPlan[] = [
           'The Inspector reveals information one character at a time, constructing a chain of collective guilt.',
         quote: '"what happened to the girl and what we all did to her that matters."',
         analysis:
-          'Although Sheila says this, it summarises the Inspector\u2019s method: each character\u2019s individual action is connected to every other. The Inspector\u2019s sequential revelations build the play\u2019s argument that responsibility is shared, not individual.',
+          'Although Eric says this, it summarises the Inspector\u2019s method: each character\u2019s individual action is connected to every other. The Inspector\u2019s sequential revelations build the play\u2019s argument that responsibility is shared, not individual.',
         link: 'Priestley\u2019s structural choice \u2014 one confession triggering the next \u2014 dramatises the interconnectedness the Inspector preaches.',
       },
       {

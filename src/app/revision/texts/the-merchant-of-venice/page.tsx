@@ -36,7 +36,7 @@ const data: TextGuideData = {
   author: 'William Shakespeare',
   year: 'c. 1596\u201397',
   category: 'Play',
-  badge: 'AQA / Edexcel / OCR / Eduqas',
+  badge: 'AQA / Edexcel / OCR / Eduqas / Edexcel IGCSE',
   intro:
     'Written in the late 1590s, The Merchant of Venice is one of Shakespeare\u2019s most disputed plays. Labelled a comedy in the First Folio yet often studied as a \u201Cproblem play,\u201D it yokes a romantic courtship plot to a much darker legal drama in which a Jewish moneylender, Shylock, demands a pound of flesh from the Christian merchant Antonio. The play\u2019s central trial scene, its eloquent speeches on mercy and justice, and its uneasy treatment of prejudice have made it both enduringly popular and persistently controversial. Shakespeare interweaves three story lines \u2014 Antonio\u2019s bond with Shylock, Bassanio\u2019s wooing of the heiress Portia through her father\u2019s casket test, and the elopement of Shylock\u2019s daughter Jessica with the Christian Lorenzo \u2014 before binding them together in a comic fifth act about marriage rings. It is studied at GCSE and beyond for its layered language, its interrogation of identity and otherness, and the ethical questions it refuses to resolve.',
   quickInfo: {
@@ -48,8 +48,8 @@ const data: TextGuideData = {
   plotSummary: [
     'The play opens in Venice, where the merchant Antonio confesses an unexplained sadness to his friends. His young kinsman Bassanio arrives to ask for a loan: he wishes to travel to Belmont to court the wealthy heiress Portia, whom he loves. Antonio\u2019s capital is tied up in merchant ships at sea, so he agrees to stand surety while Bassanio seeks a loan from the Jewish moneylender Shylock. Shylock, who has long been abused and spat upon by Antonio in the Rialto, proposes an apparently \u201Cmerry bond\u201D: three thousand ducats for three months, forfeit to be a pound of Antonio\u2019s flesh if the loan is not repaid. Antonio agrees, confident his ships will return in time.',
     'At Belmont, Portia is bound by her dead father\u2019s will to marry whichever suitor correctly chooses between three caskets of gold, silver and lead. The Prince of Morocco picks the gold casket, which contains a skull and the scroll \u201CAll that glisters is not gold.\u201D The Prince of Arragon chooses the silver casket and finds the portrait of a blinking idiot. When Bassanio arrives he reasons past outward show, selects the humble lead casket and wins Portia\u2019s hand. Portia gives him a ring as a token of her love, making him swear never to part with it. At the same time, Shylock\u2019s daughter Jessica elopes with the Christian Lorenzo, taking a casket of her father\u2019s ducats and jewels. Shylock\u2019s fury at losing both daughter and money is sharpened by the news that Antonio\u2019s ships are reported lost at sea, so that the bond is now forfeit.',
-    'The action returns to Venice for the trial in Act 4. Shylock, refusing all offers of repayment, demands the pound of flesh before the Duke\u2019s court. Portia arrives in disguise as a young lawyer, Balthazar, accompanied by her waiting-woman Nerissa disguised as a clerk. Portia first appeals to Shylock in the famous speech beginning \u201CThe quality of mercy is not strained,\u201D urging him to temper justice with mercy. When he refuses, she allows that he may take the flesh \u2014 but she then traps him on the letter of the bond: he may shed no drop of Christian blood, and must cut exactly one pound, no more and no less. Shylock is defeated. The court strips him of half his wealth, forces him to leave the rest to Jessica and Lorenzo, and compels him to convert to Christianity.',
-    'In Act 5 the play returns to the comic mode of Belmont. Portia and Nerissa, still disguised, persuade Bassanio and Gratiano to give up the rings their wives gave them, as payment for saving Antonio\u2019s life. Bassanio parts with his ring only reluctantly, after Antonio urges him to let his wife\u2019s commandment stand second to the debt owed to the lawyer. Back at Belmont, the women accuse their husbands of disloyalty and threaten to be as free with their own affections as the men have been with their rings, before revealing that they themselves were the lawyer and the clerk all along. The couples are reconciled, news arrives that Antonio\u2019s ships have safely returned to harbour after all, and Nerissa hands Jessica and Lorenzo the signed deed of gift making them heirs to Shylock\u2019s remaining estate. The play ends in music, moonlight and apparent comic harmony at Belmont \u2014 though Shylock\u2019s forced absence and the terms of that final deed of gift continue to trouble audiences long after the curtain falls.',
+    'The action returns to Venice for the trial in Act 4. Shylock, refusing all offers of repayment, demands the pound of flesh before the Duke\u2019s court. Portia arrives in disguise as a young lawyer, Balthazar, accompanied by her waiting-woman Nerissa disguised as a clerk. Portia first appeals to Shylock in the famous speech beginning \u201CThe quality of mercy is not strain\u2019d,\u201D urging him to temper justice with mercy. When he refuses, she allows that he may take the flesh \u2014 but she then traps him on the letter of the bond: he may shed no drop of Christian blood, and must cut exactly one pound, no more and no less. Shylock is defeated. The court strips him of half his wealth, forces him to leave the rest to Jessica and Lorenzo, and compels him to convert to Christianity.',
+    'Before the play returns to the comic mode of Belmont in Act 5, Portia and Nerissa, still disguised, persuade Bassanio and Gratiano to give up the rings their wives gave them, as payment for saving Antonio\u2019s life. Bassanio parts with his ring only reluctantly, after Antonio urges him to let his wife\u2019s commandment stand second to the debt owed to the lawyer. Back at Belmont, the women accuse their husbands of disloyalty and threaten to be as free with their own affections as the men have been with their rings, before revealing that they themselves were the lawyer and the clerk all along. The couples are reconciled, news arrives that Antonio\u2019s ships have safely returned to harbour after all, and Nerissa hands Jessica and Lorenzo the signed deed of gift making them heirs to Shylock\u2019s remaining estate. The play ends in music, moonlight and apparent comic harmony at Belmont \u2014 though Shylock\u2019s forced absence and the terms of that final deed of gift continue to trouble audiences long after the curtain falls.',
   ],
   characters: [
     {
@@ -65,12 +65,12 @@ const data: TextGuideData = {
     {
       name: 'Portia',
       role: 'A wealthy heiress of Belmont; Bassanio\u2019s beloved',
-      body: 'Portia is witty, resourceful and constrained by her father\u2019s will, which forces her to marry whoever solves the casket test. Once married, she takes command of the play: disguised as the young lawyer Balthazar, she rescues Antonio with the argument that mercy \u201Cis not strained\u201D and then outmanoeuvres Shylock on the letter of the bond. Her control of the ring plot in Act 5 lets her reassert authority over Bassanio. Portia embodies both the play\u2019s idealism about mercy and its hard-edged legalism.',
+      body: 'Portia is witty, resourceful and constrained by her father\u2019s will, which forces her to marry whoever solves the casket test. Once married, she takes command of the play: disguised as the young lawyer Balthazar, she rescues Antonio with the argument that mercy \u201Cis not strain\u2019d\u201D and then outmanoeuvres Shylock on the letter of the bond. Her control of the ring plot in Act 5 lets her reassert authority over Bassanio. Portia embodies both the play\u2019s idealism about mercy and its hard-edged legalism.',
     },
     {
       name: 'Bassanio',
       role: 'A young Venetian gentleman; Antonio\u2019s friend and Portia\u2019s suitor',
-      body: 'Bassanio is a charming but financially reckless nobleman who asks Antonio for yet another loan to fund his courtship of Portia. He is the suitor who correctly reads the caskets, choosing lead over gold and silver and arguing that \u201Cthe world is still deceived with ornament.\u201D His giving away of Portia\u2019s ring at the trial sets up the comic test in Act 5. Bassanio is sincere and affectionate but also dependent on richer, stronger figures \u2014 first Antonio, then Portia \u2014 which complicates any simple reading of him as a romantic hero.',
+      body: 'Bassanio is a charming but financially reckless nobleman who asks Antonio for yet another loan to fund his courtship of Portia. He is the suitor who correctly reads the caskets, choosing lead over gold and silver and arguing that \u201Cthe world is still deceiv\u2019d with ornament.\u201D His giving away of Portia\u2019s ring at the trial sets up the comic test in Act 5. Bassanio is sincere and affectionate but also dependent on richer, stronger figures \u2014 first Antonio, then Portia \u2014 which complicates any simple reading of him as a romantic hero.',
     },
     {
       name: 'Jessica',
@@ -91,7 +91,7 @@ const data: TextGuideData = {
   themes: [
     {
       title: 'Mercy and justice',
-      body: 'The play\u2019s most quoted speech, Portia\u2019s \u201CThe quality of mercy is not strained,\u201D sets up mercy as an almost divine attribute that \u201Cblesseth him that gives and him that takes.\u201D Yet the trial scene complicates the theme: Shylock refuses mercy, Portia defeats him on the strictest letter of the law, and the \u201Cmerciful\u201D outcome imposed on Shylock includes forced conversion and the loss of his estate. Shakespeare tests whether Christian mercy in practice is truly different from legal vengeance, or whether it can shade into another form of coercion. Mercy is preached eloquently and applied unevenly, and the audience is invited to weigh rhetoric against action.',
+      body: 'The play\u2019s most quoted speech, Portia\u2019s \u201CThe quality of mercy is not strain\u2019d,\u201D sets up mercy as an almost divine attribute that \u201Cblesseth him that gives and him that takes.\u201D Yet the trial scene complicates the theme: Shylock refuses mercy, Portia defeats him on the strictest letter of the law, and the \u201Cmerciful\u201D outcome imposed on Shylock includes forced conversion and the loss of his estate. Shakespeare tests whether Christian mercy in practice is truly different from legal vengeance, or whether it can shade into another form of coercion. Mercy is preached eloquently and applied unevenly, and the audience is invited to weigh rhetoric against action.',
     },
     {
       title: 'Prejudice and otherness',
@@ -121,14 +121,14 @@ const data: TextGuideData = {
   ],
   quotations: [
     {
-      quote: '"In sooth, I know not why I am so sad."',
+      quote: '"In sooth I know not why I am so sad."',
       who: 'Antonio \u2014 Act 1, Scene 1',
       analysis:
         'The play\u2019s opening line establishes Antonio\u2019s unexplained melancholy and sets a muted, uneasy tone beneath the comic surface. Critics have read the sadness as premonition, as grief over losing Bassanio to Portia, or as the existential cost of mercantile life. Shakespeare withholds the cause, so the line invites the audience to watch Antonio closely and to sense from the outset that this \u201Ccomedy\u201D will be shadowed by something harder to name.',
     },
     {
       quote:
-        '"I hate him for he is a Christian; / But more for that in low simplicity / He lends out money gratis, and brings down / The rate of usance here with us in Venice."',
+        '"I hate him for he is a Christian, / But more for that in low simplicity / He lends out money gratis, and brings down / The rate of usance here with us in Venice."',
       who: 'Shylock \u2014 Act 1, Scene 3',
       analysis:
         'Shylock\u2019s aside when he first meets Antonio reveals motives that are both religious and commercial. Shakespeare makes Shylock\u2019s grievance rational as well as vindictive: Antonio undercuts him economically by lending without interest. The blunt \u201CI hate him\u201D is shocking, but placed inside a reasoned economic analysis it complicates a purely villainous reading and sets up the play\u2019s entanglement of faith and money.',
@@ -160,24 +160,24 @@ const data: TextGuideData = {
         'Spoken during the \u201CHath not a Jew eyes?\u201D sequence, the bare declaration refuses the euphemisms and insults that surround him. Shakespeare strips the line of ornament so that it lands as simple fact, reclaiming the identity that the Christians use as an insult. Coming from a character constantly addressed as \u201Cthe Jew\u201D rather than by name, the first-person assertion is itself an act of resistance.',
     },
     {
-      quote: '"All that glisters is not gold; / Often have you heard that told."',
+      quote: '"All that glisters is not gold, / Often have you heard that told."',
       who: 'Scroll in Morocco\u2019s gold casket \u2014 Act 2, Scene 7',
       analysis:
         'The proverb inside the gold casket rebukes Morocco for choosing by outward splendour and states the play\u2019s central warning in miniature. Shakespeare uses the scroll\u2019s bouncy rhyme to give a moral truism the feel of ancient wisdom. The line has passed into everyday English and anchors the play\u2019s repeated motif of ornament concealing emptiness \u2014 a pattern that reaches beyond the caskets into disguise, rhetoric and the trial itself.',
     },
     {
       quote:
-        '"So may the outward shows be least themselves. / The world is still deceived with ornament."',
+        '"So may the outward shows be least themselves. / The world is still deceiv\u2019d with ornament."',
       who: 'Bassanio \u2014 Act 3, Scene 2',
       analysis:
-        'Bassanio\u2019s reasoning before he chooses the lead casket makes the play\u2019s theme of appearance explicit. The pithy sentence \u201CThe world is still deceived with ornament\u201D applies well beyond the casket trial \u2014 to legal rhetoric, to Christian courtesy, to the disguises worn in Act 4. Shakespeare gives Bassanio, often dismissed as a fortune-hunter, a moment of genuine ethical insight and uses it to justify his winning Portia.',
+        'Bassanio\u2019s reasoning before he chooses the lead casket makes the play\u2019s theme of appearance explicit. The pithy sentence \u201CThe world is still deceiv\u2019d with ornament\u201D applies well beyond the casket trial \u2014 to legal rhetoric, to Christian courtesy, to the disguises worn in Act 4. Shakespeare gives Bassanio, often dismissed as a fortune-hunter, a moment of genuine ethical insight and uses it to justify his winning Portia.',
     },
     {
       quote:
-        '"The quality of mercy is not strained. / It droppeth as the gentle rain from heaven / Upon the place beneath."',
+        '"The quality of mercy is not strain\u2019d, / It droppeth as the gentle rain from heaven / Upon the place beneath."',
       who: 'Portia \u2014 Act 4, Scene 1',
       analysis:
-        'Portia\u2019s speech as \u201CBalthazar\u201D is the most quoted passage in the play. \u201CStrained\u201D means forced: mercy must be freely given. The image of rain falling on everything beneath gives mercy a cosmic, almost sacramental generosity, and the speech argues that mercy \u201Cblesseth him that gives and him that takes.\u201D Yet it is aimed at a man who has been denied mercy all his life, and the gap between the speech and the sentence that follows troubles the scene\u2019s apparent moral clarity.',
+        'Portia\u2019s speech as \u201CBalthazar\u201D is the most quoted passage in the play. \u201CStrain\u2019d\u201D means forced: mercy must be freely given. The image of rain falling on everything beneath gives mercy a cosmic, almost sacramental generosity, and the speech argues that mercy \u201Cblesseth him that gives and him that takes.\u201D Yet it is aimed at a man who has been denied mercy all his life, and the gap between the speech and the sentence that follows troubles the scene\u2019s apparent moral clarity.',
     },
     {
       quote: '"And earthly power doth then show likest God\u2019s / When mercy seasons justice."',
@@ -186,14 +186,14 @@ const data: TextGuideData = {
         'Portia argues that law and mercy must work together, not in opposition. The culinary metaphor of \u201Cseasoning\u201D keeps the theological argument concrete: justice without mercy is unpalatable. The lines articulate a Christian ideal that the play then tests by action. Because Shylock refuses this vision and Portia then uses strict law to defeat him, the speech becomes both the play\u2019s moral peak and the marker of its most difficult irony.',
     },
     {
-      quote: '"I stand for judgment. Answer: shall I have it?"',
+      quote: '"I stand for judgment. Answer; shall I have it?"',
       who: 'Shylock \u2014 Act 4, Scene 1',
       analysis:
-        'Shylock\u2019s blunt demand cuts through Portia\u2019s extended rhetoric with the force of law. The short, largely monosyllabic line, with its courtroom formality, shows him refusing the emotional register of mercy and insisting on procedural fact. Shakespeare uses the contrast in rhythm and diction between Portia\u2019s fluent, image-rich verse and Shylock\u2019s stripped, legalistic speech to dramatise two incompatible ideas of what justice is, and the direct question \u201CAnswer: shall I have it?\u201D forces the court to commit.',
+        'Shylock\u2019s blunt demand cuts through Portia\u2019s extended rhetoric with the force of law. The short, largely monosyllabic line, with its courtroom formality, shows him refusing the emotional register of mercy and insisting on procedural fact. Shakespeare uses the contrast in rhythm and diction between Portia\u2019s fluent, image-rich verse and Shylock\u2019s stripped, legalistic speech to dramatise two incompatible ideas of what justice is, and the direct question \u201CAnswer; shall I have it?\u201D forces the court to commit.',
     },
     {
       quote:
-        '"This bond doth give thee here no jot of blood; / The words expressly are \u2018a pound of flesh\u2019."',
+        '"This bond doth give thee here no jot of blood. / The words expressly are \u2018a pound of flesh\u2019."',
       who: 'Portia \u2014 Act 4, Scene 1',
       analysis:
         'Portia\u2019s turning point in the trial uses the letter of the law against Shylock. Having invoked mercy and been refused, she now out-legalises the legalist: the bond specifies flesh, not blood, and demands exactly one pound. Shakespeare shows mercy and literalism collapsing into one another, and the audience is left to decide whether Portia has delivered justice or trapped Shylock in a technicality.',
@@ -220,7 +220,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"The man that hath no music in himself, / Nor is not moved with concord of sweet sounds, / Is fit for treasons, stratagems, and spoils."',
+        '"The man that hath no music in himself, / Nor is not mov\u2019d with concord of sweet sounds, / Is fit for treasons, stratagems, and spoils."',
       who: 'Lorenzo \u2014 Act 5, Scene 1',
       analysis:
         'Back at Belmont, Lorenzo\u2019s meditation on music sets the comic mode of Act 5 against the harsh legalism of Act 4. Shakespeare uses music as a sign of moral harmony, and the lines quietly exclude those who lack it \u2014 a pointed phrase so soon after Shylock\u2019s humiliation. The speech is beautiful and, read closely, unsettling: the restored harmony of Belmont depends on an absence.',

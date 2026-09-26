@@ -147,7 +147,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Light and darkness',
-      body: 'Shakespeare fills the play with imagery of light against darkness. Romeo compares Juliet to the sun, to a jewel shining against an dark cheek, and to a snowy dove among crows. Their love scenes happen at night, hidden from the hostile daylight world of the feud. This pattern inverts the usual associations: for the lovers, darkness is safety and intimacy, while the bright public world brings violence and separation. The motif intensifies as the play moves towards the tomb, where the lovers\u2019 final light is extinguished.',
+      body: 'Shakespeare fills the play with imagery of light against darkness. Romeo compares Juliet to the sun, to a jewel shining against a dark cheek, and to a snowy dove among crows. Their love scenes happen at night, hidden from the hostile daylight world of the feud. This pattern inverts the usual associations: for the lovers, darkness is safety and intimacy, while the bright public world brings violence and separation. The motif intensifies as the play moves towards the tomb, where the lovers\u2019 final light is extinguished.',
     },
   ],
   historicalContext: [
@@ -173,7 +173,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / As a rich jewel in an Ethiope\'s ear."',
+        '"O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / As a rich jewel in an Ethiop\'s ear."',
       who: 'Romeo - Act 1, Scene 5',
       analysis:
         'Romeo\u2019s first sight of Juliet, using light and dark imagery to elevate her above the ordinary world.',
@@ -194,14 +194,14 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"What\'s in a name? That which we call a rose / By any other word would smell as sweet."',
+        '"What\'s in a name? That which we call a rose / By any other name would smell as sweet."',
       who: 'Juliet - Act 2, Scene 2',
       analysis:
         'Juliet challenges the idea that identity is determined by family name, striking at the root of the feud.',
     },
     {
       quote:
-        '"These violent delights have violent ends / And in their triumph die, like fire and powder, / Which as they kiss consume."',
+        '"These violent delights have violent ends, / And in their triumph die; like fire and powder, / Which as they kiss consume."',
       who: 'Friar Lawrence - Act 2, Scene 6',
       analysis:
         'The Friar\u2019s warning foreshadows the lovers\u2019 destruction and links passion directly to self-annihilation.',
@@ -226,13 +226,13 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"Hang thee, young baggage! Disobedient wretch! / I tell thee what: get thee to church o\' Thursday, / Or never after look me in the face."',
+        '"Hang thee young baggage, disobedient wretch! / ... get thee to church a Thursday, / Or never after look me in the face."',
       who: 'Lord Capulet - Act 3, Scene 5',
       analysis:
         'Capulet\u2019s fury at Juliet\u2019s refusal exposes the patriarchal violence beneath his earlier reasonableness.',
     },
     {
-      quote: '"Is there no pity sitting in the clouds / That sees into the bottom of my grief?"',
+      quote: '"Is there no pity sitting in the clouds, / That sees into the bottom of my grief?"',
       who: 'Juliet - Act 3, Scene 5',
       analysis:
         'Juliet\u2019s appeal to heaven after being abandoned by the Nurse emphasises her total isolation.',
@@ -250,13 +250,13 @@ const data: TextGuideData = {
         'Romeo\u2019s defiant reaction to the news of Juliet\u2019s death, asserting free will against the fate that has governed the play.',
     },
     {
-      quote: '"O true apothecary, / Thy drugs are quick. Thus with a kiss I die."',
+      quote: '"O true apothecary! / Thy drugs are quick. Thus with a kiss I die."',
       who: 'Romeo - Act 5, Scene 3',
       analysis:
         'Romeo\u2019s last words unite love ("a kiss") and death in a single line, encapsulating the play\u2019s central paradox.',
     },
     {
-      quote: '"O happy dagger, / This is thy sheath; there rust, and let me die."',
+      quote: '"O happy dagger. / This is thy sheath. There rest, and let me die."',
       who: 'Juliet - Act 5, Scene 3',
       analysis:
         'Juliet\u2019s suicide is deliberate and decisive, contrasting with Romeo\u2019s impulsive action and completing their tragic symmetry.',
@@ -274,7 +274,7 @@ const data: TextGuideData = {
         'Proverbial advice that the Friar himself fails to follow, adding irony to his role as counsellor.',
     },
     {
-      quote: '"O serpent heart hid with a flow\'ring face! / Did ever dragon keep so fair a cave?"',
+      quote: '"O serpent heart, hid with a flowering face! / Did ever dragon keep so fair a cave?"',
       who: 'Juliet - Act 3, Scene 2',
       analysis:
         'Juliet\u2019s use of oxymoron when she learns Romeo killed Tybalt captures her agonising conflict between love and family loyalty.',
@@ -288,13 +288,13 @@ const data: TextGuideData = {
     },
     {
       quote: '"O, what learning is! / My lord, I\'ll tell my lady you will come."',
-      who: 'Nurse - Act 2, Scene 4',
+      who: 'Nurse - Act 3, Scene 3',
       analysis:
         'The Nurse\u2019s comic admiration for the Friar\u2019s learning contrasts with her practical, bawdy worldview and adds warmth to the middle acts.',
     },
     {
       quote:
-        '"Give me my Romeo, and when I shall die / Take him and cut him out in little stars, / And he will make the face of heaven so fine / That all the world will be in love with night."',
+        '"Give me my Romeo, and when I shall die, / Take him and cut him out in little stars, / And he will make the face of heaven so fine / That all the world will be in love with night."',
       who: 'Juliet - Act 3, Scene 2',
       analysis:
         'Juliet\u2019s epithalamium imagines love as cosmic and eternal, but the word "die" carries a dark premonition alongside its Elizabethan double meaning.',
@@ -377,7 +377,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: 'rj-7',
     question:
-      'What does Juliet mean by "What\'s in a name? That which we call a rose / By any other word would smell as sweet"?',
+      'What does Juliet mean by "What\'s in a name? That which we call a rose / By any other name would smell as sweet"?',
     type: 'multiple-choice',
     options: [
       'She loves flowers',
@@ -447,7 +447,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Capulet initially tells Paris to wait and win Juliet\'s consent, but later threatens to disown her when she refuses the match. His rage ("Hang thee, young baggage! Disobedient wretch!") exposes the patriarchal power controlling Juliet\'s life.',
+      'Capulet initially tells Paris to wait and win Juliet\'s consent, but later threatens to disown her when she refuses the match. His rage ("Hang thee young baggage, disobedient wretch!") exposes the patriarchal power controlling Juliet\'s life.',
     topic: 'Characters',
     difficulty: 'higher',
   },
@@ -764,7 +764,9 @@ export default async function RomeoAndJulietPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          // The labels read 'Name - Act n' with a spaced hyphen; splitting
+          // on the em dash alone left the act in every option of the quiz.
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

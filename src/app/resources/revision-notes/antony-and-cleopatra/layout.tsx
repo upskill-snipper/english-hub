@@ -5,7 +5,7 @@ import { guide } from '@/data/study-guides/antony-and-cleopatra'
 export const metadata: Metadata = {
   title: 'Antony and Cleopatra Notes | A-Level',
   description:
-    "A-Level notes on Shakespeare's Antony and Cleopatra: the Rome and Egypt opposition, character profiles, themes, First Folio quotations and exam essay plans.",
+    "A-Level notes on Shakespeare's Antony and Cleopatra: the Rome and Egypt opposition, character profiles, themes, key quotations and exam essay plans.",
   alternates: { canonical: '/resources/revision-notes/antony-and-cleopatra' },
 }
 

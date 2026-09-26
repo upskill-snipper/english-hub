@@ -8,6 +8,8 @@ import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { t } from '@/lib/i18n/t'
+import { StoryVisuals } from '@/components/study-guide/visuals/story-visuals'
+import { guide as studyGuide } from '@/data/study-guides/pride-and-prejudice'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Pride and Prejudice - Key Chapters Analysed',
@@ -77,7 +79,7 @@ const CHAPTERS: ChapterAnalysis[] = [
       },
       {
         quote:
-          '"He is just what a young man ought to be - sensible, good humoured, lively; and I never saw such happy manners!"',
+          '"He is just what a young man ought to be ... sensible, good humoured, lively; and I never saw such happy manners!"',
         analysis:
           "Jane's praise of Bingley is characteristically generous and unguarded. Her openness contrasts with Darcy's reserve and with Elizabeth's sharper judgement. Austen uses Jane to demonstrate a kind of goodness that, while admirable, also leaves her vulnerable to being hurt.",
       },
@@ -114,7 +116,7 @@ const CHAPTERS: ChapterAnalysis[] = [
     keyQuotes: [
       {
         quote:
-          '"I can much more easily believe Mr Bingley to be imposed on, than that Mr Wickham should invent such a history of himself as he gave me last night."',
+          '"I can much more easily believe Mr Bingley\'s being imposed on, than that Mr Wickham should invent such a history of himself as he gave me last night."',
         analysis:
           'Elizabeth reveals the core of her prejudice: she interprets all evidence through her initial dislike of Darcy. She cannot conceive that Wickham - who is pleasant and flattering - might be dishonest. Austen dramatises how charm and agreeableness are poor indicators of character.',
       },
@@ -141,7 +143,7 @@ const CHAPTERS: ChapterAnalysis[] = [
           "Darcy's honesty is genuinely shocking. He lays bare the class prejudice that governs Regency society - and that he has internalised completely. Austen forces the reader to see how even sincere love can be distorted by snobbery.",
       },
       {
-        quote: '"You are the last man in the world whom I could ever be prevailed on to marry."',
+        quote: '"you were the last man in the world whom I could ever be prevailed on to marry."',
         analysis:
           'Elizabeth\'s rejection is absolute and devastating. The superlative "last man in the world" matches Darcy\'s extremism. Both characters are at their most proud and most prejudiced in this scene - their worst selves fully exposed.',
       },
@@ -150,19 +152,14 @@ const CHAPTERS: ChapterAnalysis[] = [
       "The Hunsford proposal is the structural and thematic turning point of the novel. It brings the twin faults of pride and prejudice into direct collision. Darcy's pride makes him insult the woman he loves; Elizabeth's prejudice makes her misread a man whose faults are real but whose virtues she has entirely overlooked. From this point, both characters must change.",
   },
   {
-    chapter: 'Volume II, Chapter 12 (Chapter 35)',
+    chapter: 'Volume II, Chapters 12-13 (Chapters 35-36)',
     title: "Darcy's letter",
     summary:
       "The morning after the proposal, Darcy gives Elizabeth a long letter. He explains that he separated Jane and Bingley because he genuinely believed Jane did not return Bingley's feelings, and he provides the true history of Wickham - including Wickham's attempted elopement with Darcy's fifteen-year-old sister, Georgiana. Elizabeth reads the letter twice and is forced to confront the extent of her own misjudgement.",
     keyQuotes: [
       {
-        quote: '"I have been a selfish being all my life, in practice, though not in principle."',
-        analysis:
-          "Darcy's self-assessment in the letter shows the beginning of genuine self-knowledge. He distinguishes between what he was taught (good principles) and how he actually behaved (selfishly). This admission is the first sign of the humility that will transform him.",
-      },
-      {
         quote:
-          '"How despicably have I acted! I, who have prided myself on my discernment! - I, who have valued myself on my abilities!"',
+          '"How despicably have I acted! ... I, who have prided myself on my discernment! - I, who have valued myself on my abilities!"',
         analysis:
           'Elizabeth\'s self-reproach is one of Austen\'s greatest moments. The repetition of "I" dramatises her recognition that her pride in her own intelligence was itself a form of vanity. She realises that her prejudice was not evidence-based but emotional, and that she has been as blind as the people she mocked.',
       },
@@ -182,13 +179,13 @@ const CHAPTERS: ChapterAnalysis[] = [
       "Elizabeth tours Darcy's estate with the Gardiners during their Derbyshire trip. She is deeply impressed by the beauty and taste of the house and grounds, and even more by the housekeeper Mrs Reynolds, who speaks of Darcy with genuine warmth and respect. Darcy himself arrives unexpectedly and treats the Gardiners - Elizabeth's trade-connected relatives - with perfect courtesy, a dramatic reversal of his earlier snobbery.",
     keyQuotes: [
       {
-        quote: '"And of this place, thought she, I might have been mistress!"',
+        quote: '"And of this place," thought she, "I might have been mistress!"',
         analysis:
           "Elizabeth's thought is not simply mercenary - Pemberley represents taste, responsibility and stewardship. Her admiration for the house mirrors her growing admiration for its owner. Austen uses the estate as an outward expression of Darcy's inner character: well-ordered, generous and beautiful.",
       },
       {
         quote:
-          '"He is the best landlord, and the best master that ever lived... There is not one of his tenants or servants but what will give him a good name."',
+          '"He is the best landlord, and the best master," said she, "that ever lived... There is not one of his tenants or servants but what will give him a good name."',
         analysis:
           "Mrs Reynolds's testimony is crucial evidence. A man's treatment of those who depend on him - tenants and servants - reveals his true character more reliably than his behaviour in a ballroom. Austen privileges domestic virtue over social performance.",
       },
@@ -204,15 +201,15 @@ const CHAPTERS: ChapterAnalysis[] = [
     keyQuotes: [
       {
         quote:
-          '"I am afraid Mr Darcy - you must be gone. I can conceal it no longer. Lydia is - gone off - to Scotland, perhaps. She is gone off with Wickham!"',
+          '"My youngest sister has left all her friends - has eloped; - has thrown herself into the power of - of Mr Wickham."',
         analysis:
           "Elizabeth's broken, fragmented speech reveals genuine distress - a sharp contrast to her usual eloquence. The dashes mimic her inability to process the catastrophe. That she turns instinctively to Darcy, the man she once despised, shows how completely her feelings have changed.",
       },
       {
         quote:
-          '"How Wickham and Lydia were to be supported in tolerable independence, she could not imagine... She had never perceived, while the regiment was in Hertfordshire, that Lydia had any partiality for him."',
+          '"How Wickham and Lydia were to be supported in tolerable independence, she could not imagine."',
         analysis:
-          "Austen examines the practical economic reality behind the scandal. An elopement without marriage means destitution for Lydia and disgrace for her sisters. Austen never lets the reader forget that in Regency England, a woman's reputation was her only social currency.",
+          "In Chapter 50 Austen examines the practical economic reality behind the scandal. An elopement without marriage means destitution for Lydia and disgrace for her sisters. Austen never lets the reader forget that in Regency England, a woman's reputation was her only social currency.",
       },
     ],
     significance:
@@ -229,6 +226,11 @@ const CHAPTERS: ChapterAnalysis[] = [
           '"You taught me a lesson, hard indeed at first, but most advantageous. By you, I was properly humbled."',
         analysis:
           "Darcy's language has completely changed from the first proposal. Instead of emphasising Elizabeth's inferiority, he acknowledges his own debt to her. \"Properly humbled\" - not crushed or degraded, but rightly brought to self-knowledge. This is Austen's model of moral education: painful but ultimately liberating.",
+      },
+      {
+        quote: '"I have been a selfish being all my life, in practice, though not in principle."',
+        analysis:
+          "Darcy's self-assessment, spoken to Elizabeth on this walk rather than written in his letter, shows genuine self-knowledge. He distinguishes between what he was taught (good principles) and how he actually behaved (selfishly). This admission shows the humility that has transformed him.",
       },
       {
         quote:
@@ -275,7 +277,7 @@ export default async function PrideAndPrejudiceChaptersPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              AQA / Edexcel / OCR / Eduqas
+              AQA / Edexcel / OCR / Eduqas / Edexcel IGCSE / Cambridge IGCSE
             </Badge>
           </div>
 
@@ -290,6 +292,9 @@ export default async function PrideAndPrejudiceChaptersPage() {
           </p>
         </div>
       </section>
+
+      {/* The key scenes, part by part, animated. See scripts/mount-story-visuals.mjs. */}
+      <StoryVisuals guide={studyGuide} scenesOnly />
 
       {/* ── Chapters ─────────────────────────────────────────────────── */}
       <section className="space-y-6">

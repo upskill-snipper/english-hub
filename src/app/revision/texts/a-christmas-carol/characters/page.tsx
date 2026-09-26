@@ -44,13 +44,13 @@ const characters: CharacterData[] = [
     ],
     keyQuotes: [
       {
-        text: '"Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"',
+        text: '"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"',
         stave: 'Stave 1 (Narrator)',
         analysis:
           'Dickens uses a listing technique with seven consecutive adjectives, each an act of physical violence or theft. The progressive participles ("-ing" endings) create a relentless, grinding rhythm. Scrooge is defined entirely by what he extracts from the world.',
       },
       {
-        text: '"If they would rather die, they had better do it, and decrease the surplus population."',
+        text: '"If they would rather die... they had better do it, and decrease the surplus population."',
         stave: 'Stave 1 (Scrooge)',
         analysis:
           "A direct allusion to Malthus's theory of population. Dickens makes the reader hear how cruel utilitarian philosophy sounds when applied to real people. The Ghost of Christmas Present throws this line back in Stave 3, transforming it from dismissal to accusation.",
@@ -68,10 +68,10 @@ const characters: CharacterData[] = [
           'Scrooge\'s vow at the gravestone. "Try" adds humility and realism -- he commits to effort, not perfection. "All the year" extends Christmas from a single day to a permanent moral principle.',
       },
       {
-        text: '"I am as light as a feather, I am as happy as an angel, I am as merry as a school-boy."',
+        text: '"I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy."',
         stave: 'Stave 5 (Scrooge)',
         analysis:
-          'The triple simile mirrors the triple visitation. Each comparison undoes one quality of the old Scrooge: lightness replaces heaviness, happiness replaces misery, merriment replaces hostility. The anaphoric "I am" asserts a new identity.',
+          'The triple simile (a fourth, "I am as giddy as a drunken man", follows in the next sentence) mirrors the triple visitation. Each comparison undoes one quality of the old Scrooge: lightness replaces heaviness, happiness replaces misery, merriment replaces hostility. The anaphoric "I am" asserts a new identity.',
       },
     ],
     themeLinks: [
@@ -91,7 +91,7 @@ const characters: CharacterData[] = [
     name: 'Bob Cratchit',
     role: "Scrooge's underpaid clerk; devoted father",
     description:
-      'Bob Cratchit earns fifteen shillings a week and works in a freezing office with a "very small fire." He represents the honest, hard-working poor who are exploited by employers like Scrooge. Despite his poverty, Bob is generous, loving and loyal. He even proposes a toast to Scrooge at Christmas dinner, much to Mrs Cratchit\'s annoyance. Dickens uses Bob to demonstrate that wealth has nothing to do with moral worth -- Bob is richer in spirit than Scrooge is in money. His devotion to Tiny Tim makes the reader feel the human cost of economic cruelty at its most personal and painful.',
+      'Bob Cratchit earns fifteen shillings a week and works in a freezing office by a fire so small "that it looked like one coal." He represents the honest, hard-working poor who are exploited by employers like Scrooge. Despite his poverty, Bob is generous, loving and loyal. He even proposes a toast to Scrooge at Christmas dinner, much to Mrs Cratchit\'s annoyance. Dickens uses Bob to demonstrate that wealth has nothing to do with moral worth -- Bob is richer in spirit than Scrooge is in money. His devotion to Tiny Tim makes the reader feel the human cost of economic cruelty at its most personal and painful.',
     represents:
       "Bob represents the Victorian working class -- decent, hard-working people trapped in poverty not through any moral failing but through an unjust economic system. His loyalty to Scrooge despite mistreatment shows the power imbalance between employer and employee. His eventual reward (a raised salary) embodies Dickens's argument that employers bear moral responsibility for their workers' wellbeing.",
     arc: [
@@ -102,19 +102,19 @@ const characters: CharacterData[] = [
     ],
     keyQuotes: [
       {
-        text: '"Bob had but fifteen bob a week himself; he pocketed on Saturdays but fifteen copies of his Christian name."',
-        stave: 'Stave 1 (Narrator)',
+        text: '"Bob had but fifteen \'Bob\' a-week himself; he pocketed on Saturdays but fifteen copies of his Christian name."',
+        stave: 'Stave 3 (Narrator)',
         analysis:
           'Dickens puns on "bob" (a slang term for a shilling) to connect Bob\'s name to his poverty. The wordplay adds warmth and humour but also underlines how little he earns. The casual tone makes the poverty seem normalised -- which is Dickens\'s point.',
       },
       {
-        text: '"My little, little child! My little child!"',
+        text: '"My little, little child! ... My little child!"',
         stave: 'Stave 4 (Bob Cratchit)',
         analysis:
           'The heartbreaking simplicity of this line is its power. The repetition of "little" conveys overwhelming grief. There are no elaborate words -- Bob\'s pain is too raw for eloquence. The diminutive reminds us of Tiny Tim\'s vulnerability.',
       },
       {
-        text: '"Mr Scrooge! the Founder of the Feast!"',
+        text: '"I\'ll give you Mr. Scrooge, the Founder of the Feast!"',
         stave: 'Stave 3 (Bob Cratchit)',
         analysis:
           'Bob toasts Scrooge despite his employer\'s cruelty, demonstrating his generous spirit and forgiving nature. The title "Founder of the Feast" is deeply ironic -- Scrooge has contributed nothing to the Cratchits\' happiness.',
@@ -139,16 +139,16 @@ const characters: CharacterData[] = [
     represents:
       'Tiny Tim represents the thousands of poor Victorian children who died because society refused to care for them. His disability makes him dependent on others -- he cannot save himself, and his survival depends entirely on whether Scrooge (representing the wealthy) will act. Dickens uses him to argue that social indifference has a body count.',
     arc: [
-      'Stave 3: Sits beside his father at Christmas dinner. Says "God bless Us, Every One!" The Ghost warns that without change, he will die.',
+      'Stave 3: Sits beside his father at Christmas dinner. Says "God bless us every one!" The Ghost warns that without change, he will die.',
       'Stave 4: His death is shown in the alternative future. The family mourns him. Bob visits his grave and promises to walk there every Sunday.',
       'Stave 5: Survives because of Scrooge\'s transformation. Scrooge becomes "a second father" to him.',
     ],
     keyQuotes: [
       {
-        text: '"God bless Us, Every One!"',
+        text: '"God bless us every one!"',
         stave: 'Stave 3 (Tiny Tim)',
         analysis:
-          'The novella\'s most famous line is a prayer for universal blessing. "Every One" includes Scrooge, the rich, the poor, the cruel and the kind. The fact that this prayer comes from the poorest, most vulnerable character is Dickens\'s sharpest moral point: those with the least give the most.',
+          'The novella\'s most famous line is a prayer for universal blessing. "Every one" includes Scrooge, the rich, the poor, the cruel and the kind. The fact that this prayer comes from the poorest, most vulnerable character is Dickens\'s sharpest moral point: those with the least give the most.',
       },
       {
         text: '"If these shadows remain unaltered by the Future, the child will die."',
@@ -194,7 +194,7 @@ const characters: CharacterData[] = [
           'The contradictory description reflects the nature of memory: it is both ancient (from the past) and perpetually fresh (memories feel immediate). The Ghost defies categorisation, just as the past defies neat interpretation.',
       },
       {
-        text: '"What the Ghost pointed out... were shadows of the things that have been. They are what they are, do not blame me!"',
+        text: '"I told you these were shadows of the things that have been... That they are what they are, do not blame me!"',
         stave: 'Stave 2 (Ghost of Christmas Past)',
         analysis:
           "The Ghost insists it shows only truth, not judgement. The past cannot be altered or argued with. Scrooge's discomfort comes from his own guilt, not from the spirit's cruelty. Dickens establishes that honesty is painful but necessary.",
@@ -275,19 +275,19 @@ const characters: CharacterData[] = [
     ],
     keyQuotes: [
       {
-        text: '"Ghost of the Future! I fear you more than any spectre I have seen."',
+        text: '"Ghost of the Future! ... I fear you more than any spectre I have seen."',
         stave: 'Stave 4 (Scrooge)',
         analysis:
           "Scrooge names his own fear. The future is more terrifying than the past or present because it is still undecided. Fear is the final and most powerful motivator in Scrooge's moral education.",
       },
       {
-        text: '"Are these the shadows of the things that Will be, or are they shadows of the things that May be, only?"',
+        text: '"Are these the shadows of the things that Will be, or are they shadows of things that May be, only?"',
         stave: 'Stave 4 (Scrooge)',
         analysis:
           'The philosophical pivot of the novella. The distinction between "Will be" and "May be" is crucial. The moral of the story depends on the answer being "may be" -- free will exists, and redemption is always possible.',
       },
       {
-        text: '"Spirit! hear me! I am not the man I was!"',
+        text: '"Spirit! ... hear me! I am not the man I was."',
         stave: 'Stave 4 (Scrooge)',
         analysis:
           "Scrooge's desperate plea claims transformation in the present tense. He has separated the person he was from the person he chooses to be. The exclamatory urgency shows his desperation; the silent spirit creates a powerful one-sided dialogue.",
@@ -308,7 +308,7 @@ const characters: CharacterData[] = [
     name: 'Jacob Marley',
     role: "Scrooge's dead business partner; appears as a ghost to deliver the first warning",
     description:
-      'Marley\'s ghost appears in Stave 1 as a terrifying supernatural warning. He wears a heavy chain "made of cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel" -- each link representing a selfish act committed during life. His jawbone is bound shut with a bandage (as was customary for the Victorian dead), and when he unties it, his jaw drops, creating a horrifying image. Marley is crucial because he establishes the supernatural rules of the novella: selfishness in life leads to eternal punishment, but Scrooge still has a chance to escape that fate.',
+      'Marley\'s ghost appears in Stave 1 as a terrifying supernatural warning. He wears a heavy chain made "of cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel" -- each link representing a selfish act committed during life. His jawbone is bound shut with a bandage (as was customary for the Victorian dead), and when he unties it, his jaw drops, creating a horrifying image. Marley is crucial because he establishes the supernatural rules of the novella: selfishness in life leads to eternal punishment, but Scrooge still has a chance to escape that fate.',
     represents:
       "Marley represents the consequences of a life without compassion. His chain is Dickens's central metaphor: every selfish act adds physical weight. He also represents the possibility of too-late realisation -- Marley sees the truth only after death, when he can no longer change. His warning to Scrooge is an act of posthumous generosity, the one selfless thing he does.",
     arc: [
@@ -318,13 +318,13 @@ const characters: CharacterData[] = [
     ],
     keyQuotes: [
       {
-        text: '"I wear the chain I forged in life. I made it link by link, and yard by yard."',
+        text: '"I wear the chain I forged in life... I made it link by link, and yard by yard."',
         stave: 'Stave 1 (Marley)',
         analysis:
           'The chain is Dickens\'s most powerful metaphor. The craftsmanship language -- "forged," "link by link" -- makes greed feel deliberate and cumulative. Each selfish act adds weight. The first-person ownership emphasises personal responsibility.',
       },
       {
-        text: '"Mankind was my business. The common welfare was my business; charity, mercy, forbearance, and benevolence were, all, my business."',
+        text: '"Mankind was my business. The common welfare was my business; charity, mercy, forbearance, and benevolence, were, all, my business."',
         stave: 'Stave 1 (Marley)',
         analysis:
           'Marley redefines "business" from commerce to compassion. This is Dickens\'s thesis statement for the novella. The listing of virtues -- charity, mercy, forbearance, benevolence -- contrasts with the listing of Scrooge\'s vices in the opening paragraph.',
@@ -351,7 +351,7 @@ const characters: CharacterData[] = [
     name: 'Fred',
     role: "Scrooge's nephew; represents warmth, forgiveness and the Christmas spirit",
     description:
-      'Fred is everything Scrooge is not: warm, cheerful, and forgiving. He insists on inviting Scrooge to Christmas dinner every year despite being rudely rebuffed. He argues passionately that Christmas is "a good time: a kind, forgiving, charitable, pleasant time" and refuses to be angered by his uncle\'s hostility. Fred provides a living example that generosity and happiness are available to Scrooge if he will only accept them. His party in Stave 3 is one of the novella\'s warmest scenes, full of laughter and games.',
+      'Fred is everything Scrooge is not: warm, cheerful, and forgiving. He insists on inviting Scrooge to Christmas dinner every year despite being rudely rebuffed. He argues passionately that Christmas is "a good time; a kind, forgiving, charitable, pleasant time" and refuses to be angered by his uncle\'s hostility. Fred provides a living example that generosity and happiness are available to Scrooge if he will only accept them. His party in Stave 3 is one of the novella\'s warmest scenes, full of laughter and games.',
     represents:
       "Fred represents the true spirit of Christmas -- unconditional generosity and the refusal to give up on others. He is the son of Scrooge's beloved sister Fan, which makes his rejection by Scrooge even more painful. His warmth is Dickens's counterargument to Scrooge's \"Bah! Humbug!\" Fred proves that you can choose joy regardless of circumstance.",
     arc: [
@@ -409,7 +409,7 @@ const characters: CharacterData[] = [
           'This brief line reveals a history of domestic cruelty. "Than he used to be" implies Scrooge\'s father was once harsh -- explaining, though not excusing, Scrooge\'s own coldness. The simile "like Heaven" is poignant given Fan\'s early death.',
       },
       {
-        text: '"She had a large heart... she died a woman, and had, as I think, children."',
+        text: '"She had a large heart... She died a woman... and had, as I think, children."',
         stave: 'Stave 2 (Ghost of Christmas Past)',
         analysis:
           'The Ghost links Fan\'s generosity ("large heart") to her motherhood. Her child is Fred, whose warmth is inherited. The phrase reminds Scrooge that by rejecting Fred, he is rejecting Fan\'s memory.',
@@ -430,7 +430,7 @@ const characters: CharacterData[] = [
     name: 'Fezziwig',
     role: "Scrooge's former employer; a generous master who creates joy through small acts of kindness",
     description:
-      'Old Fezziwig appears in Stave 2 as a vision of Christmas Past. He is Scrooge\'s former employer who throws a lavish Christmas party for his workers and family. Crucially, Fezziwig spends only "three or four pounds" on the party but creates enormous joy. He is the anti-Scrooge: an employer who understands that his power extends beyond the economic to the moral and emotional. Scrooge himself recognises the lesson: "He has the power to render us happy or unhappy; to make our service light or burdensome."',
+      'Old Fezziwig appears in Stave 2 as a vision of Christmas Past. He is Scrooge\'s former employer who throws a lavish Christmas party for his workers and family. Crucially, Fezziwig spends only "a few pounds" on the party but creates enormous joy. He is the anti-Scrooge: an employer who understands that his power extends beyond the economic to the moral and emotional. Scrooge himself recognises the lesson: "He has the power to render us happy or unhappy; to make our service light or burdensome."',
     represents:
       "Fezziwig represents the ideal employer -- generous, kind, and aware of his moral responsibility toward those who work for him. He is Dickens's model of ethical capitalism: profit is acceptable, but employers must also invest in their workers' wellbeing. Fezziwig proves that generosity does not require great wealth.",
     arc: [
@@ -482,7 +482,7 @@ const characters: CharacterData[] = [
           'Belle identifies money as Scrooge\'s false god. The word "idol" carries biblical weight -- the worship of a golden idol is one of the most condemned sins in the Old Testament. "Displaced" is precise: love has not disappeared but has been physically pushed aside by gold.',
       },
       {
-        text: '"You fear the world too much. All your other hopes have merged into the hope of being beyond the chance of its sordid reproach."',
+        text: '"You fear the world too much... All your other hopes have merged into the hope of being beyond the chance of its sordid reproach."',
         stave: 'Stave 2 (Belle)',
         analysis:
           "Belle diagnoses Scrooge's psychology with devastating accuracy. His greed is rooted in fear -- fear of poverty, of vulnerability, of the world's judgement. She sees that his pursuit of money is defensive, not ambitious. This insight makes Scrooge's character psychologically complex.",
@@ -494,7 +494,7 @@ const characters: CharacterData[] = [
       'Time and Memory -- Belle exists only in the past, a permanent reminder of what might have been.',
     ],
     examTips: [
-      'Belle\'s "golden idol" line is one of the most quotable in the novella. Use it in any essay about greed or isolation.',
+      'Belle\'s "Another idol has displaced me" line is one of the most quotable in the novella. Use it in any essay about greed or isolation.',
       "Her diagnosis of Scrooge's fear is crucial -- it gives psychological depth to his greed. He hoards money as a defence against the world.",
       "The vision of Belle's happy family is the emotional climax of Stave 2. Scrooge sees in concrete detail the life he sacrificed.",
     ],
@@ -532,7 +532,7 @@ export default function CharactersPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              AQA / Edexcel / Eduqas
+              AQA / Edexcel / OCR / Eduqas
             </Badge>
           </div>
 

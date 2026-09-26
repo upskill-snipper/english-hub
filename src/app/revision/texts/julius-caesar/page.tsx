@@ -48,16 +48,16 @@ const data: TextGuideData = {
     published: 'First folio 1623',
   },
   plotSummary: [
-    'The play opens in Rome during the Feast of Lupercal in February 44 BCE. Julius Caesar has returned victorious from civil war against Pompey, and the streets are crowded with citizens celebrating him. The tribunes Flavius and Marullus rebuke the commoners for their fickle loyalty, stripping decorations from Caesar\u2019s statues. A soothsayer warns Caesar to "beware the ides of March," but Caesar dismisses him as a dreamer. In the same act, Cassius begins working on Brutus, flattering him with comparisons to his famous ancestor who helped expel the last Roman king, and planting the suggestion that Caesar has grown dangerously powerful. Omens multiply across the city: a storm rages, lions walk the streets, and graves are said to yield up their dead.',
+    'The play opens in Rome during the Feast of Lupercal in February 44 BCE. Julius Caesar has returned victorious from civil war against Pompey, and the streets are crowded with citizens celebrating him. The tribunes Flavius and Marullus rebuke the commoners for their fickle loyalty, stripping decorations from Caesar\u2019s statues. A soothsayer warns Caesar to "beware the Ides of March," but Caesar dismisses him as a dreamer. In the same act, Cassius begins working on Brutus, flattering him with comparisons to his famous ancestor who helped expel the last Roman king, and planting the suggestion that Caesar has grown dangerously powerful. Omens multiply across the city: a storm rages, a lion walks near the Capitol, and graves are said to yield up their dead.',
     'Cassius recruits a group of senators to join the conspiracy, and Brutus \u2014 torn between his love for Caesar and his fear of tyranny \u2014 finally agrees to lead them. On the night before the ides of March, Calpurnia dreams of Caesar\u2019s statue running with blood and begs him to stay home. Caesar is persuaded to remain, but the conspirator Decius reinterprets the dream as a sign of Rome\u2019s rebirth through Caesar and flatters him into going to the Capitol. There, on 15 March, Casca strikes the first blow and the other conspirators follow. Caesar, seeing Brutus among them, utters "Et tu, Brute?" and dies at the foot of Pompey\u2019s statue.',
     'Mark Antony, Caesar\u2019s ally, pretends to make peace with the conspirators and asks permission to speak at the funeral. Brutus addresses the crowd first, explaining in measured prose that he killed Caesar not because he loved him less but because he loved Rome more. The citizens are convinced \u2014 until Antony rises. In one of the most famous speeches in English drama, Antony repeatedly calls Brutus "an honourable man" while showing the crowd Caesar\u2019s wounds and reading his will, inciting the mob to fury. The city erupts into riot. In the chaos, Cinna the poet is mistaken for Cinna the conspirator and torn apart in the street. Antony joins Octavius and Lepidus to form a new triumvirate, coolly agreeing to political murders, and marches against the conspirators.',
-    'The final acts take place at Philippi in 42 BCE, where the armies of Brutus and Cassius face Antony and Octavius. Tensions between the two conspirators almost break their alliance, and Brutus receives news that his wife Portia has killed herself by swallowing hot coals. The ghost of Caesar appears to Brutus, announcing they will meet again at Philippi. In the battle that follows, Cassius mistakenly believes his friend Titinius has been captured and orders his servant to kill him. Brutus, defeated in the second engagement, runs onto his own sword held by Strato. Antony enters and delivers the final judgement that Brutus was "the noblest Roman of them all," the only conspirator who acted for the common good rather than from envy.',
+    'The action then moves to the conspirators\u2019 camp near Sardis and finally to Philippi in 42 BCE, where the armies of Brutus and Cassius face Antony and Octavius. Tensions between the two conspirators almost break their alliance, and Brutus receives news that his wife Portia has killed herself by swallowing fire. The ghost of Caesar appears to Brutus, announcing they will meet again at Philippi. In the battle that follows, Cassius mistakenly believes his friend Titinius has been captured and orders his servant to kill him. Brutus, defeated in the second engagement, runs onto his own sword held by Strato. Antony enters and delivers the final judgement that Brutus was "the noblest Roman of them all," the only conspirator who acted for the common good rather than from envy.',
   ],
   characters: [
     {
       name: 'Julius Caesar',
       role: 'Roman general and dictator; the title character',
-      body: 'Caesar appears in only three scenes before his death, yet dominates the play. Shakespeare presents him as simultaneously great and vulnerable: a supreme public figure who speaks of himself in the third person and compares himself to the Northern Star, while privately suffering epileptic fits and deafness in one ear. His refusal of the crown three times at the Lupercal is ambiguous \u2014 calculated modesty or genuine restraint? After his assassination, his spirit continues to shape events, appearing as a ghost to Brutus and inspiring the triumvirate\u2019s revenge.',
+      body: 'Caesar appears in only three scenes before his death, yet dominates the play. Shakespeare presents him as simultaneously great and vulnerable: a supreme public figure who speaks of himself in the third person and compares himself to the Northern Star, while suffering epileptic fits and deafness in one ear. His refusal of the crown three times at the Lupercal is ambiguous \u2014 calculated modesty or genuine restraint? After his assassination, his spirit continues to shape events, appearing as a ghost to Brutus and inspiring the triumvirate\u2019s revenge.',
     },
     {
       name: 'Marcus Brutus',
@@ -77,12 +77,12 @@ const data: TextGuideData = {
     {
       name: 'Calpurnia',
       role: 'Caesar\u2019s wife',
-      body: 'Calpurnia appears briefly but memorably. On the morning of the ides of March she describes a terrifying dream in which Caesar\u2019s statue runs with blood and Romans bathe their hands in it (2.2). She kneels and begs him to stay home, and for a moment he agrees. Her warning is dismissed when Decius reinterprets the dream flatteringly. Shakespeare uses her to dramatise the play\u2019s interest in omens and the cost of ignoring private counsel in favour of public flattery. She also highlights the male political world that systematically excludes women\u2019s voices.',
+      body: 'Calpurnia appears briefly but memorably. On the morning of the ides of March she describes the horrors seen by the watch, and Caesar reports her dream in which his statue runs with blood and Romans bathe their hands in it (2.2). She kneels and begs him to stay home, and for a moment he agrees. Her warning is dismissed when Decius reinterprets the dream flatteringly. Shakespeare uses her to dramatise the play\u2019s interest in omens and the cost of ignoring private counsel in favour of public flattery. She also highlights the male political world that systematically excludes women\u2019s voices.',
     },
     {
       name: 'Portia',
       role: 'Brutus\u2019s wife; daughter of Cato the Younger',
-      body: 'Portia is intelligent, Stoic and proud of her philosophical lineage. In a striking scene (2.1) she presses Brutus to share the secret weighing on him, and as proof of her strength she reveals she has gashed her own thigh to prove she can bear pain without speaking. Shakespeare gives her more political seriousness than most of his wives. Her offstage suicide \u2014 she swallows burning coals, according to the report in 4.3 \u2014 comes as Brutus is cracking under the strain of civil war, and he hears the news with shattered composure.',
+      body: 'Portia is intelligent, Stoic and proud of her philosophical lineage. In a striking scene (2.1) she presses Brutus to share the secret weighing on him, and as proof of her strength she reveals she has gashed her own thigh to prove she can bear pain without speaking. Shakespeare gives her more political seriousness than most of his wives. Her offstage suicide (she "swallow\u2019d fire", according to the report in 4.3) comes as Brutus is cracking under the strain of civil war, and he hears the news with shattered composure.',
     },
     {
       name: 'Casca',
@@ -97,7 +97,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Fate versus free will',
-      body: 'Omens saturate the play: the soothsayer\u2019s warning, Calpurnia\u2019s dream, the storm, the supernatural lions, Caesar\u2019s ghost. Characters disagree sharply about what these portents mean. Cassius insists, "Men at some time are masters of their fates," treating omens as political tools. Caesar oscillates between fatalism ("What can be avoided / Whose end is purposed by the mighty gods?") and bravado. Shakespeare leaves the question open: events seem fated in retrospect, yet every disaster follows from a specific human choice \u2014 Caesar ignoring his wife, Brutus sparing Antony, Cassius giving in to Brutus.',
+      body: 'Omens saturate the play: the soothsayer\u2019s warning, Calpurnia\u2019s dream, the storm, the supernatural lions, Caesar\u2019s ghost. Characters disagree sharply about what these portents mean. Cassius insists, "Men at some time are masters of their fates," treating omens as political tools. Caesar oscillates between fatalism ("What can be avoided / Whose end is purpos\u2019d by the mighty gods?") and bravado. Shakespeare leaves the question open: events seem fated in retrospect, yet every disaster follows from a specific human choice \u2014 Caesar ignoring his wife, Brutus sparing Antony, Cassius giving in to Brutus.',
     },
     {
       title: 'Rhetoric and persuasion',
@@ -105,7 +105,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Honour',
-      body: 'Honour is the word Brutus and Antony both use most. Brutus kills Caesar because his conception of honour demands it, then refuses to be seen breaking his word even when pragmatism would save him. Antony weaponises the word in the funeral speech, repeating "Brutus is an honourable man" until the repetition itself becomes accusation. Shakespeare makes the audience feel how honour can be a sincere ethical compass and a hollow slogan at the same time. The play\u2019s final tribute \u2014 "This was the noblest Roman of them all" \u2014 grants Brutus the honour he sought, yet at the cost of his life and of Rome itself.',
+      body: 'Honour is a word Brutus and Antony both keep returning to. Brutus kills Caesar because his conception of honour demands it, then refuses to be seen breaking his word even when pragmatism would save him. Antony weaponises the word in the funeral speech, repeating "Brutus is an honourable man" until the repetition itself becomes accusation. Shakespeare makes the audience feel how honour can be a sincere ethical compass and a hollow slogan at the same time. The play\u2019s final tribute \u2014 "This was the noblest Roman of them all" \u2014 grants Brutus the honour he sought, yet at the cost of his life and of Rome itself.',
     },
     {
       title: 'Public versus private duty',
@@ -118,13 +118,13 @@ const data: TextGuideData = {
   ],
   historicalContext: [
     'Shakespeare\u2019s principal source was Sir Thomas North\u2019s 1579 translation of Plutarch\u2019s Parallel Lives, in particular the lives of Caesar, Brutus and Antony. North\u2019s English was already vivid and speech-filled, and Shakespeare lifted whole passages, reshaping dialogue and compressing timelines. The assassination took place on 15 March 44 BCE; the battles of Philippi followed in October 42 BCE. Shakespeare telescopes these events so they appear almost continuous, heightening the sense that one act of political violence leads directly to civil war.',
-    'Julius Caesar was probably the first play performed at the newly built Globe Theatre in 1599. A Swiss visitor, Thomas Platter, recorded seeing it there in September of that year. Elizabeth I was in her late sixties with no direct heir, and the English political elite was openly anxious about the succession \u2014 a topic it was effectively illegal to discuss. A Roman play about the assassination of a ruler, the overthrow of a republic, and the dangers of mob rhetoric allowed Shakespeare to explore live political questions with some protective distance.',
+    'Julius Caesar was probably one of the first plays performed at the newly built Globe Theatre in 1599. A Swiss visitor, Thomas Platter, recorded seeing a tragedy of Julius Caesar at a Bankside playhouse on 21 September that year, most likely this play. Elizabeth I was in her late sixties with no direct heir, and the English political elite was openly anxious about the succession \u2014 a topic it was effectively illegal to discuss. A Roman play about the assassination of a ruler, the overthrow of a republic, and the dangers of mob rhetoric allowed Shakespeare to explore live political questions with some protective distance.',
     'Classical republicanism was central to the Elizabethan grammar-school curriculum. Educated playgoers would have read Cicero, Plutarch and Livy in Latin, and knew the standard Tudor interpretation of Roman history: that Caesar had destroyed the republic, that Brutus was a noble liberator, and that the resulting civil wars showed the dangers of ambition. Shakespeare complicates this inherited reading. His Brutus is sympathetic but politically naive; his Caesar is arrogant but not clearly tyrannical; his Antony is both heroic and ruthless. The play invites the audience to weigh the arguments rather than accept the schoolroom verdict.',
     'The violence of the play also reflected the real precariousness of Elizabethan public order. The Essex Rebellion of 1601 \u2014 in which a faction including Shakespeare\u2019s own patron tried to seize power from the Queen \u2014 occurred less than two years after Julius Caesar was first performed. In the interval between assassination and battle, Shakespeare\u2019s Rome slips into mob violence, property seizure and political murder by list. His audience, living under a government nervous about plots, exiles and the unknown succession, would have recognised these anxieties as their own.',
   ],
   quotations: [
     {
-      quote: '"Beware the ides of March."',
+      quote: '"Beware the Ides of March."',
       who: 'Soothsayer - Act 1, Scene 2',
       analysis:
         'The play\u2019s most famous warning, compressed into a single metrical line. Caesar dismisses the speaker as "a dreamer," establishing the pattern of ignored omens.',
@@ -144,7 +144,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"Let me have men about me that are fat, / Sleek-headed men and such as sleep a-nights. / Yond Cassius has a lean and hungry look; / He thinks too much: such men are dangerous."',
+        '"Let me have men about me that are fat, / Sleek-headed men, and such as sleep a-nights: / Yond Cassius has a lean and hungry look; / He thinks too much: such men are dangerous."',
       who: 'Caesar - Act 1, Scene 2',
       analysis:
         'Caesar\u2019s private assessment of Cassius, combining shrewd political instinct with the self-confident claim that he fears no one.',
@@ -171,13 +171,13 @@ const data: TextGuideData = {
         'Calpurnia reads the storm as a sign that Caesar is uniquely endangered. Her imagery links political rank to cosmic order, a hierarchy the play will shatter.',
     },
     {
-      quote: '"Et tu, Brute? Then fall, Caesar."',
+      quote: '"Et tu, Brute?\u2014Then fall, Caesar!"',
       who: 'Caesar - Act 3, Scene 1',
       analysis:
-        'Shakespeare\u2019s own wording, not historical Latin. The shock is that betrayal by Brutus ends Caesar\u2019s will to resist; the public man accepts the verdict of his friend.',
+        'No ancient historian gives Caesar these words (Suetonius says some claimed he spoke to Brutus in Greek), and the Latin phrase was already in an English play printed in 1595. The shock is that betrayal by Brutus ends Caesar\u2019s will to resist; the public man accepts the verdict of his friend.',
     },
     {
-      quote: '"Cry \'Havoc!\' and let slip the dogs of war."',
+      quote: '"Cry havoc and let slip the dogs of war."',
       who: 'Antony - Act 3, Scene 1',
       analysis:
         'Antony\u2019s soliloquy over Caesar\u2019s body announces that civil war is now inevitable. "Havoc" was a military order permitting unrestricted killing and plunder.',
@@ -196,7 +196,7 @@ const data: TextGuideData = {
         'The opening of the funeral oration. The tricolon address flatters the crowd into listening, and the apparent disclaimer sets up a speech that will do the opposite.',
     },
     {
-      quote: '"For Brutus is an honourable man; / So are they all, all honourable men."',
+      quote: '"For Brutus is an honourable man, / So are they all, all honourable men."',
       who: 'Antony - Act 3, Scene 2',
       analysis:
         'The refrain that Antony repeats until it turns into accusation. Shakespeare makes verbal irony into political weapon, eroding the crowd\u2019s trust in the conspirators line by line.',
@@ -250,13 +250,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Trust no senator',
-      'Beware the ides of March',
+      'Beware the Ides of March',
       'Fear the storm at night',
       'Do not wear a crown',
     ],
     correctIndex: 1,
     explanation:
-      'The Soothsayer warns Caesar to "beware the ides of March" (15 March). Caesar dismisses him as "a dreamer," setting up the play\'s pattern of ignored omens.',
+      'The Soothsayer warns Caesar to "beware the Ides of March" (15 March). Caesar dismisses him as "a dreamer," setting up the play\'s pattern of ignored omens.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -289,7 +289,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['"Havoc!"', '"Et tu, Brute?"', '"The ides have come"', '"Traitor!"'],
     correctIndex: 1,
     explanation:
-      '"Et tu, Brute? Then fall, Caesar." Shakespeare\'s wording, not a historical record. The betrayal by Brutus ends Caesar\'s will to resist.',
+      '"Et tu, Brute?\u2014Then fall, Caesar!" No ancient historian records these words, and the Latin was already in an English play printed in 1595. The betrayal by Brutus ends Caesar\'s will to resist.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -341,15 +341,10 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'jc-8',
     question: 'How does Portia die?',
     type: 'multiple-choice',
-    options: [
-      'Killed in battle',
-      'Swallows burning coals',
-      'Drinks poison',
-      "Stabbed by Antony's soldiers",
-    ],
+    options: ['Killed in battle', 'Swallows fire', 'Drinks poison', "Stabbed by Antony's soldiers"],
     correctIndex: 1,
     explanation:
-      "Portia's suicide is reported in Act 4 Scene 3. She swallows hot coals while Brutus is away fighting the civil war, overcome by grief and the strain of his absence.",
+      'Portia\'s suicide is reported in Act 4 Scene 3: she "swallow\'d fire" while Brutus was away fighting the civil war, overcome by grief and the strain of his absence. The burning coals often mentioned come from Plutarch, not the play.',
     topic: 'Plot',
     difficulty: 'higher',
   },
@@ -702,7 +697,9 @@ export default async function JuliusCaesarPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          // The labels read 'Name - Act n' with a spaced hyphen; splitting
+          // on the em dash alone left the act in every option of the quiz.
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

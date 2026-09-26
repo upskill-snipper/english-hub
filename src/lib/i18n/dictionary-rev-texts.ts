@@ -759,10 +759,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     ar: 'Stave 1، "Marley\'s Ghost"',
     es: 'Stave 1, "Marley\'s Ghost"',
   },
+  // The walkthrough's extract ended with an extra 'Solitary as an oyster.' that
+  // the novella does not print there; corrected 26 September 2026.
   'rev.texts.acc.extract.the_extract_desc': {
-    en: 'From "Oh! But he was a tight-fisted hand..." to "Solitary as an oyster." Public domain text, Dickens, 1843.',
-    ar: 'من "Oh! But he was a tight-fisted hand..." إلى "Solitary as an oyster." نص ضمن الملكية العامة، Dickens، 1843.',
-    es: 'Desde "Oh! But he was a tight-fisted hand..." hasta "Solitary as an oyster." Texto de dominio público, Dickens, 1843.',
+    en: 'From "Oh! But he was a tight-fisted hand..." to "...what the knowing ones call \'nuts\' to Scrooge." Public domain text, Dickens, 1843.',
+    ar: 'من "Oh! But he was a tight-fisted hand..." إلى "...what the knowing ones call \'nuts\' to Scrooge." نص ضمن الملكية العامة، Dickens، 1843.',
+    es: 'Desde "Oh! But he was a tight-fisted hand..." hasta "...what the knowing ones call \'nuts\' to Scrooge." Texto de dominio público, Dickens, 1843.',
   },
   'rev.texts.acc.extract.walkthrough_h': {
     en: 'Method-by-Method Walkthrough',

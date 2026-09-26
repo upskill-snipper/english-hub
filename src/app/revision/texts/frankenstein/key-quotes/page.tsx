@@ -68,7 +68,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
       },
       {
         quote:
-          'I ought to be thy Adam, but I am rather the fallen angel, whom thou drivest from joy for no misdeed.',
+          'I ought to be thy Adam; but I am rather the fallen angel, whom thou drivest from joy for no misdeed.',
         speaker: 'The Creature',
         chapter: 'Chapter 10',
         analysis:
@@ -116,7 +116,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
         speaker: 'The Creature',
         chapter: 'Chapter 17',
         analysis:
-          'The word "must" is deterministic: without love, evil is inevitable. "Ties and affections" are not luxuries but the foundations of moral life. Shelley argues that morality requires a social context to function.',
+          'The word "must" is deterministic: without love, evil is inevitable. "Ties" and "affections" are not luxuries but the foundations of moral life. Shelley argues that morality requires a social context to function.',
       },
       {
         quote:
@@ -138,7 +138,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
         speaker: 'Walton',
         chapter: 'Letter II',
         analysis:
-          "Walton's loneliness foreshadows both Victor's and the Creature's isolation. \"Eyes that would reply to mine\" expresses the need for emotional reciprocity -- the fundamental human requirement that the Creature is permanently denied.",
+          "Walton's loneliness foreshadows both Victor's and the Creature's isolation. The wish for a friend \"whose eyes would reply to mine\" expresses the need for emotional reciprocity -- the fundamental human requirement that the Creature is permanently denied.",
       },
       {
         quote:
@@ -251,7 +251,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
         quote:
           'I was the slave, not the master, of an impulse which I detested yet could not disobey.',
         speaker: 'The Creature',
-        chapter: 'Chapter 16',
+        chapter: 'Chapter 24',
         analysis:
           'The Creature describes murder as compulsive rather than deliberate. The master/slave imagery reverses the creator-creation power dynamic and suggests that violence, once provoked by total rejection, becomes uncontrollable.',
       },
@@ -304,7 +304,7 @@ export default async function FrankensteinKeyQuotesPage() {
               {await t('rev.texts.common.key_quotations')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              AQA / Edexcel / OCR
+              AQA / Edexcel / Edexcel IAL / Edexcel A-Level / OCR A-Level
             </Badge>
           </div>
 

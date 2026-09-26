@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Much Ado About Nothing GCSE - themes, characters, quotes',
   description:
-    "Much Ado About Nothing GCSE revision - Shakespeare's comedy with plot, characters, themes, context and key quotes. AQA, Edexcel, OCR, Eduqas, IGCSE.",
+    "Much Ado About Nothing GCSE revision - Shakespeare's comedy with plot, characters, themes, context and key quotes. AQA, Edexcel, OCR, Eduqas.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/much-ado-about-nothing',
   },
@@ -37,7 +37,7 @@ const data: TextGuideData = {
   author: 'William Shakespeare',
   year: 'c. 1598\u201399',
   category: 'Play',
-  badge: 'AQA / Edexcel / OCR / Eduqas / Edexcel iGCSE',
+  badge: 'AQA / Edexcel / OCR / Eduqas',
   intro:
     'Much Ado About Nothing is a comedy about how completely people believe whatever they think they have overheard. One staged conversation tricks Beatrice and Benedick, who have both sworn never to marry, into admitting they are in love; another convinces Claudio that his bride Hero has been unfaithful, and he shames her at the altar in front of her own father. Shakespeare builds both plots on the pun hidden in his title, since \u201cnothing\u201d and \u201cnoting\u201d, meaning watching and overhearing, sounded alike in Elizabethan English. Written in the late 1590s and set in sunlit Messina, the play keeps its laughter and its cruelty in the same room, which is why directors still argue about how convincing its happy ending really is.',
   quickInfo: {
@@ -48,8 +48,8 @@ const data: TextGuideData = {
   },
   plotSummary: [
     'The play opens in Messina, where Leonato, the governor, prepares to welcome home Don Pedro, Prince of Aragon, and his soldiers after a successful military campaign. Among Don Pedro\u2019s company are the young Florentine lord Claudio, the witty Benedick of Padua, and Don Pedro\u2019s illegitimate brother Don John, a sullen malcontent recently reconciled with the Prince following a failed rebellion. Claudio quickly falls in love with Leonato\u2019s gentle daughter, Hero, and Don Pedro offers to woo her on his behalf at that evening\u2019s masked ball. Meanwhile, Leonato\u2019s niece Beatrice and Benedick resume their long-running \u201cmerry war\u201d of witty insults, each loudly swearing they will never marry and each refusing to acknowledge any previous affection. At the ball, Don Pedro successfully secures Hero\u2019s hand for Claudio, but Don John, working with his followers Borachio and Conrade, briefly tricks Claudio into believing the Prince has wooed Hero for himself. Claudio\u2019s readiness to believe the worst on no real evidence foreshadows the far more serious deception still to come.',
-    'With a week to wait before the wedding, Don Pedro proposes a playful second plot: to trick Beatrice and Benedick into falling in love with each other. In Act 2, the men arrange for Benedick, hidden in the orchard, to overhear a staged conversation in which Don Pedro, Claudio and Leonato discuss how deeply Beatrice secretly loves him and fears he will mock her. In Act 3, Hero and her gentlewomen Ursula and Margaret perform the mirror trick for Beatrice, letting her overhear how Benedick pines for her and how his friends fear he will die of unrequited love. Both characters, convinced they are loved and anxious not to be cruel, reassess their opposition to marriage and begin to soften. At the same time, Don John, resentful of his brother\u2019s favour and of Claudio\u2019s happiness, plots a malicious parallel deception. His follower Borachio arranges for Claudio and Don Pedro to watch at night as Borachio appears to woo \u201cHero\u201d at her chamber window \u2014 in fact, Hero\u2019s waiting-gentlewoman Margaret, dressed in Hero\u2019s clothes and entirely unaware that she is being used.',
-    'The next morning, at what should have been a joyful wedding, Claudio publicly rejects Hero at the altar, accusing her of being a \u201crotten orange\u201d and denouncing her as unchaste in front of family and priest. Hero faints and is believed dead, and even her own father Leonato initially wishes the shame were true. The kindly Friar Francis, convinced of her innocence, proposes that the family pretend she has died until the truth emerges, hoping Claudio\u2019s grief will rekindle his love and flush out the real culprits. In the shocked aftermath, Beatrice and Benedick finally confess their love to each other, and Beatrice charges Benedick with a devastating command: \u201cKill Claudio.\u201d Benedick, torn between loyalty to his closest friend and love for Beatrice, accepts and formally challenges Claudio to a duel. Meanwhile, entirely by accident, the bumbling constable Dogberry and his incompetent night watch have overheard Borachio boasting about the plot and have arrested him.',
+    'With a week to wait before the wedding, Don Pedro proposes a playful second plot: to trick Beatrice and Benedick into falling in love with each other. In Act 2, the men arrange for Benedick, hidden in the orchard, to overhear a staged conversation in which Don Pedro, Claudio and Leonato discuss how deeply Beatrice secretly loves him and fears he will mock her. In Act 3, Hero and her gentlewoman Ursula perform the mirror trick for Beatrice, whom Margaret has sent to hide in the bower, letting her overhear how Benedick pines for her and how his friends fear he will die of unrequited love. Both characters, convinced they are loved and anxious not to be cruel, reassess their opposition to marriage and begin to soften. At the same time, Don John, resentful of his brother\u2019s favour and of Claudio\u2019s happiness, plots a malicious parallel deception. His follower Borachio arranges for Claudio and Don Pedro to watch at night as Borachio appears to woo \u201cHero\u201d at her chamber window \u2014 in fact, Hero\u2019s waiting-gentlewoman Margaret, dressed in Hero\u2019s clothes and entirely unaware that she is being used.',
+    'The next morning, at what should have been a joyful wedding, Claudio publicly rejects Hero at the altar, accusing her of being a \u201crotten orange\u201d and denouncing her as unchaste in front of family and priest. Hero faints and is believed dead, and even her own father Leonato believes the charge and wishes her dead. The kindly Friar Francis, convinced of her innocence, proposes that the family pretend she has died until the truth emerges, hoping Claudio\u2019s grief will rekindle his love and flush out the real culprits. In the shocked aftermath, Beatrice and Benedick finally confess their love to each other, and Beatrice charges Benedick with a devastating command: \u201cKill Claudio.\u201d Benedick, torn between loyalty to his closest friend and love for Beatrice, accepts and formally challenges Claudio to a duel. Meanwhile, entirely by accident, the incompetent night watch of the bumbling constable Dogberry have overheard Borachio boasting about the plot and have arrested him.',
     'In Act 5, Borachio is dragged before Don Pedro and Claudio and confesses the full deception. Stricken with remorse, Claudio agrees to Leonato\u2019s penance: to mourn publicly at Hero\u2019s tomb, to post an epitaph clearing her name, and then to marry a mysterious \u201cniece\u201d of Leonato\u2019s, said to be almost identical to Hero. At the second wedding, the veiled bride is revealed to be Hero herself, restored to life, honour and her betrothed in a single stage image. Beatrice and Benedick, after one last comic round of denial in which each claims they only accepted the other out of pity, acknowledge their love when their friends produce sonnets they had secretly written to each other. Don John has fled Messina but is reported captured and returned for punishment. The play ends with music, dancing and the promise of two marriages, though the shadow of what was nearly a tragedy \u2014 a shamed bride, a willing executioner, a forgiven betrayer \u2014 lingers beneath the festive surface of the celebration.',
   ],
   characters: [
@@ -112,11 +112,11 @@ const data: TextGuideData = {
     },
     {
       title: 'Language and wit',
-      body: 'Much Ado About Nothing is one of Shakespeare\u2019s most linguistically playful plays. The prose sparring between Beatrice and Benedick, the malapropisms of Dogberry (\u201ccomparisons are odorous\u201d; \u201cI am a wise fellow; and which is more, an officer\u201d), the Petrarchan clich\u00e9s of Claudio\u2019s early love-making, Balthasar\u2019s teasing song about deceiving men, and the formal rhetoric of the wedding scene all draw attention to how language shapes experience in Messina. Shakespeare contrasts the honesty that can live inside wit \u2014 Beatrice and Benedick gradually trick themselves into saying what they really mean \u2014 with the way high-flown rhetoric can be weaponised, as when Claudio turns a wedding into a public denunciation dressed up in classical imagery. The play celebrates wit as a form of moral intelligence, but also warns that a society so in love with performative words can be fatally slow to check the plain facts behind them.',
+      body: 'Much Ado About Nothing is one of Shakespeare\u2019s most linguistically playful plays. The prose sparring between Beatrice and Benedick, the malapropisms of Dogberry (\u201ccomparisons are odorous\u201d; \u201cI am a wise fellow; and, which is more, an officer\u201d), the Petrarchan clich\u00e9s of Claudio\u2019s early love-making, Balthasar\u2019s teasing song about deceiving men, and the formal rhetoric of the wedding scene all draw attention to how language shapes experience in Messina. Shakespeare contrasts the honesty that can live inside wit \u2014 Beatrice and Benedick gradually trick themselves into saying what they really mean \u2014 with the way high-flown rhetoric can be weaponised, as when Claudio turns a wedding into a public denunciation dressed up in classical imagery. The play celebrates wit as a form of moral intelligence, but also warns that a society so in love with performative words can be fatally slow to check the plain facts behind them.',
     },
   ],
   historicalContext: [
-    'Shakespeare wrote Much Ado About Nothing in the late 1590s, during the reign of Elizabeth I. By this point he was the leading playwright of the Lord Chamberlain\u2019s Men, performing in open-air playhouses such as the newly built Globe to audiences drawn from every level of London society. The play belongs to a cluster of \u201cmature comedies\u201d \u2014 with As You Like It and Twelfth Night \u2014 in which festive endings are shadowed by darker material. Its first recorded performances date from around 1598\u20139, and it was printed in quarto in 1600 before being collected in the First Folio of 1623.',
+    'Shakespeare wrote Much Ado About Nothing in the late 1590s, during the reign of Elizabeth I. By this point he was the leading playwright of the Lord Chamberlain\u2019s Men, performing in open-air playhouses such as the newly built Globe to audiences drawn from every level of London society. The play belongs to a cluster of \u201cmature comedies\u201d \u2014 with As You Like It and Twelfth Night \u2014 in which festive endings are shadowed by darker material. Its first performances probably date from around 1598\u20139, and it was printed in quarto in 1600 before being collected in the First Folio of 1623.',
     'The Messina setting and the main Hero-Claudio plot are drawn from a rich European tradition of stories about slandered brides, including Matteo Bandello\u2019s Italian novella (1554) and Ariosto\u2019s Orlando Furioso (1516), which Shakespeare knew in English translation. Italy, for Elizabethan audiences, was associated with sophistication, intrigue and passionate honour codes, and the Italian setting allowed Shakespeare to stage a crisis of female reputation at a slight remove from English life. The Beatrice\u2013Benedick plot, by contrast, appears to be largely Shakespeare\u2019s own invention, grafted onto the inherited story.',
     'The play\u2019s treatment of female chastity, male honour and the public shaming of women reflects real anxieties of Elizabethan society. A woman\u2019s value on the marriage market depended heavily on her perceived virtue, and accusations of unchastity could destroy not only the woman but her family\u2019s standing. At the same time, the play was written in the reign of a powerful unmarried queen who had made her own virginity a political symbol, and it belongs to a period in which Shakespeare repeatedly dramatised bold, articulate women. The presence of the incompetent watch, led by Dogberry, also nods to the everyday realities of Elizabethan urban policing, where ordinary citizens served as amateur constables with variable success.',
   ],
@@ -161,7 +161,7 @@ const data: TextGuideData = {
         'Two words that shift the tone of the play from romantic comedy to something far more dangerous. Beatrice\u2019s demand, arriving in the scene in which Benedick has just sworn his love, exposes the violence of the honour culture that has just destroyed her cousin and tests the sincerity of his affection by asking him to choose between loyalty to his closest friend and loyalty to her. Shakespeare deliberately places this devastating monosyllabic order inside a love scene, collapsing comedy, revenge and romance into a single moment and forcing the audience to feel how close the play has come to tragedy.',
     },
     {
-      quote: '"O, that I were a man! I would eat his heart in the market-place."',
+      quote: '"O God, that I were a man! I would eat his heart in the market-place."',
       who: 'Beatrice \u2014 Act 4, Scene 1',
       analysis:
         'Beatrice\u2019s explosive speech after the wedding lays bare the frustration of a woman who is barred from the duelling and military codes through which men are allowed to defend honour. The grotesque, cannibalistic image \u2014 eating Claudio\u2019s heart in a public square \u2014 gives her rage a physical, almost revenge-tragedy violence that comic heroines rarely voice on stage. Shakespeare uses her fury to critique a society that leaves women unable to answer public slander in their own right and must therefore push men like Benedick to act as their deputies if justice is to be done at all.',
@@ -173,7 +173,7 @@ const data: TextGuideData = {
         'Don John\u2019s flat, almost proud self-description is unusually honest for a Shakespearean villain. By refusing to disguise his malice from the audience \u2014 delivered in prose, with no elaborate rhetoric \u2014 he makes the deceptions he then engineers feel all the more disturbing: the audience is warned of his intentions from the start, but the characters onstage, trusting Don Pedro\u2019s reconciled brother and unable to imagine such unprovoked spite, never see him clearly. The line works as a structural warning, asking why none of the supposedly clever men of Messina take his declared hostility seriously until it is too late.',
     },
     {
-      quote: '"Let me be that I am and seek not to alter me."',
+      quote: '"Let me be that I am, and seek not to alter me."',
       who: 'Don John \u2014 Act 1, Scene 3',
       analysis:
         'Don John defines himself by his refusal to perform sociability, in stark contrast to the witty self-presentation of Beatrice and Benedick, who are eventually willing to revise who they are in the light of love. The line is a blunt rejection of the festive, transformative spirit that drives Shakespearean comedy. Shakespeare uses his deliberate refusal of change to mark him as the play\u2019s source of disorder, since comedy depends on characters being open to being surprised and reshaped by events; the insistence on being fixed is itself, in this world, a form of villainy.',
@@ -194,14 +194,14 @@ const data: TextGuideData = {
       quote: '"Some Cupid kills with arrows, some with traps."',
       who: 'Hero \u2014 Act 3, Scene 1',
       analysis:
-        'Hero\u2019s line as she and Ursula prepare to trick Beatrice in the garden neatly sums up the play\u2019s methods. Love here is never simply a natural feeling but a scheme, and Hero \u2014 who is usually portrayed as passive \u2014 enjoys a rare moment of directorial agency as she plans her own overhearing scene. Shakespeare blurs the distinction between kind and cruel traps by letting the same metaphor cover benign matchmaking and, by implication, the malicious window plot that will soon be laid for Claudio, warning us that the same engine can drive both happiness and disaster.',
+        'Hero\u2019s exit line, as she and Ursula leave the garden with the trick on Beatrice complete, neatly sums up the play\u2019s methods. Love here is never simply a natural feeling but a scheme, and Hero \u2014 who is usually portrayed as passive \u2014 enjoys a rare moment of directorial agency as she stages her own overhearing scene. Shakespeare blurs the distinction between kind and cruel traps by letting the same metaphor cover benign matchmaking and, by implication, the malicious window plot that will soon be laid for Claudio, warning us that the same engine can drive both happiness and disaster.',
     },
     {
       quote:
         '"Friendship is constant in all other things / Save in the office and affairs of love."',
       who: 'Claudio \u2014 Act 2, Scene 1',
       analysis:
-        'Claudio\u2019s neat couplet, spoken when he briefly believes Don Pedro has wooed Hero for himself, foreshadows the bigger crisis to come and introduces his habit of speaking in sententious, generalising rhyme whenever he is unsure. Shakespeare plants the idea that even close male bonds wobble under the faintest breath of romantic suspicion, preparing the audience for the much more damaging misjudgement at the wedding, where a different false picture will lead him to turn on both Hero and, implicitly, on the Prince who has stood beside him. The couplet form gives his anxiety a false sense of authority.',
+        'Claudio\u2019s neat pair of lines, spoken when he briefly believes Don Pedro has wooed Hero for himself, foreshadows the bigger crisis to come and introduces his habit of speaking in sententious, generalising maxims whenever he is unsure. Shakespeare plants the idea that even close male bonds wobble under the faintest breath of romantic suspicion, preparing the audience for the much more damaging misjudgement at the wedding, where a different false picture will lead him to turn on both Hero and, implicitly, on the Prince who has stood beside him. The maxim form gives his anxiety a false sense of authority.',
     },
     {
       quote: '"Comparisons are odorous."',
@@ -210,7 +210,7 @@ const data: TextGuideData = {
         'Dogberry\u2019s malapropism (for \u201codious\u201d) is typical of the comic language Shakespeare gives the watch, where a constable\u2019s insistence on his own dignity collapses into accidental nonsense the moment he opens his mouth. The muddled pomposity of the constables is itself a kind of \u201cnoting\u201d gone wrong \u2014 an inept misreading of both the situation and the language used to describe it. And yet, crucially, this bungling policing is what eventually overhears and exposes Don John\u2019s plot and rescues the play from tragedy, suggesting that luck and honest accident can succeed where clever courtly judgement has failed.',
     },
     {
-      quote: '"O, what men dare do! What men may do! What men daily do, not knowing what they do!"',
+      quote: '"O! what men dare do! what men may do! what men daily do, not knowing what they do!"',
       who: 'Claudio \u2014 Act 4, Scene 1',
       analysis:
         'Claudio\u2019s rhetorical outburst at the altar universalises his accusation, presenting Hero\u2019s supposed sin as a symptom of male disillusionment with womanhood in general rather than a specific event he has allegedly witnessed. Shakespeare uses the rising repetition \u2014 \u201cdare\u2026 may\u2026 daily\u201d \u2014 to stage how a private suspicion, once voiced in public, can swell into categorical condemnation of an entire sex. The sentence structure mimics the contagion of slander itself, each clause amplifying the last, and helps explain how an entire wedding party comes to accept Hero\u2019s guilt on almost no evidence at all.',
@@ -309,7 +309,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['Borachio', 'Verges', 'Dogberry', 'Friar Francis'],
     correctIndex: 2,
     explanation:
-      'Dogberry, the malapropism-prone constable, and his incompetent watchmen overhear Borachio boasting about the deception and arrest him, ultimately rescuing the play from tragedy.',
+      'Dogberry is the malapropism-prone constable. His incompetent watchmen overhear Borachio boasting about the deception and arrest him, ultimately rescuing the play from tragedy.',
     topic: 'Characters',
     difficulty: 'foundation',
   },
@@ -379,7 +379,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'ma-11',
-    question: 'What does Beatrice mean when she cries "O, that I were a man!" after the wedding?',
+    question: 'What does Beatrice mean when she cries "O! that I were a man" after the wedding?',
     type: 'multiple-choice',
     options: [
       'She literally wants to change gender',
@@ -584,7 +584,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       'Hero is talked about, tricked and "killed off" by others',
       'Beatrice refuses marriage and mocks male courtship',
-      '"O, that I were a man!" exposes her exclusion from male justice',
+      '"O! that I were a man" exposes her exclusion from male justice',
       'Beatrice must rely on Benedick to act for her',
       'Reformed Beatrice/Benedick partnership models more equal love',
     ],

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Jane Eyre Key Quotes - 25 Essential Quotations',
     description:
-      'Twenty-five key quotations from Jane Eyre by Charlotte Bronte with analysis, context and theme links, for AQA and OCR GCSE English Literature.',
+      'Twenty-five key quotations from Jane Eyre by Charlotte Bronte with analysis, context and theme links, for AQA, Edexcel, OCR and Eduqas GCSE English Literature.',
     images: [
       {
         url: '/api/og?title=Jane+Eyre+Key+Quotes+-+25+Essential+Quotations',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Jane Eyre Key Quotes - 25 Essential Quotations',
   description:
-    'Twenty-five key quotations from Jane Eyre by Charlotte Bronte with analysis, context and theme links, for AQA and OCR GCSE English Literature.',
+    'Twenty-five key quotations from Jane Eyre by Charlotte Bronte with analysis, context and theme links, for AQA, Edexcel, OCR and Eduqas GCSE English Literature.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/jane-eyre/key-quotes',
   },
@@ -89,7 +89,7 @@ const quotes: KeyQuote[] = [
   },
   {
     quote: '"I was a discord in Gateshead Hall; I was like nobody there."',
-    speaker: 'Jane (narration) -- Chapter 1',
+    speaker: 'Jane (narration) -- Chapter 2',
     context: 'Jane reflects on her position as an unwanted dependent in the Reed household.',
     analysis:
       'The musical metaphor of "discord" suggests Jane disrupts the Reed family\'s harmony simply by existing. "Like nobody" conveys both isolation and the erasure of identity. Bronte establishes from the opening pages that Jane\'s story is a search for belonging that does not require the sacrifice of selfhood.',
@@ -153,8 +153,8 @@ const quotes: KeyQuote[] = [
   },
   {
     quote: '"I would always rather be happy than dignified."',
-    speaker: 'Jane -- Chapter 24',
-    context: 'Jane tells Rochester that she values genuine feeling over social propriety.',
+    speaker: 'Jane (narration) -- Chapter 34',
+    context: 'Jane sets her pride aside and runs after St John so that they can part as friends.',
     analysis:
       'This deceptively simple statement challenges the Victorian prioritisation of outward respectability. "Dignified" implies the stiff, performative virtue expected of women; "happy" implies authentic emotional fulfilment. Bronte suggests that true morality is about genuine feeling, not social display.',
     themes: ['Independence', 'Love', 'Gender'],
@@ -309,7 +309,7 @@ export default async function JaneEyreKeyQuotesPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              AQA / OCR
+              AQA / Edexcel / OCR / Eduqas / AQA A-Level / OCR A-Level
             </Badge>
           </div>
 

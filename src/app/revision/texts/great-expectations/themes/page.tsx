@@ -50,12 +50,12 @@ const THEMES: ThemeAnalysis[] = [
       'Pip\'s shame about his "coarse hands" and "thick boots" after visiting Satis House shows how class consciousness is externally imposed, not innate.',
       'Joe\'s discomfort in London - calling Pip "sir" and unable to manage his hat - reveals how social environments are designed to exclude.',
       "Magwitch's revelation demolishes the fantasy of genteel patronage: Pip's gentleman status is built on a convict's money, proving class is a construction.",
-      'Compeyson receives a lighter sentence than Magwitch for the same crime because he "looks like a gentleman" - Dickens shows the justice system is rigged by class.',
+      'Compeyson receives a lighter sentence than Magwitch for the same crime because he looks like a gentleman - Dickens shows the justice system is rigged by class.',
       'Herbert Pocket, born genteel but penniless, is a genuine gentleman in manner, while Bentley Drummle, rich and titled, is a brute - birth guarantees nothing.',
     ],
     linkedQuotes: [
       {
-        text: '"He calls the knaves, Jacks, this boy!"',
+        text: '"He calls the knaves Jacks, this boy!"',
         who: 'Estella',
         link: 'Estella reduces Pip to his class markers. The difference between "knaves" and "Jacks" is trivial, but social power makes it devastating.',
       },
@@ -65,7 +65,7 @@ const THEMES: ThemeAnalysis[] = [
         link: 'The adult Pip recognises that class shame poisoned his most important relationships.',
       },
       {
-        text: "\"If I ain't a gentleman, nor yet ain't got no learning, I'll make a better gentleman nor ever I was!\"",
+        text: "\"If I ain't a gentleman, nor yet ain't got no learning, I'm the owner of such.\"",
         who: 'Magwitch',
         link: 'Magwitch\'s grammar betrays his class, but his generosity exceeds that of any "real" gentleman in the novel.',
       },
@@ -127,8 +127,8 @@ const THEMES: ThemeAnalysis[] = [
     linkedQuotes: [
       {
         text: '"I was always treated as if I had insisted on being born in opposition to the dictates of reason, religion, and morality."',
-        who: 'Magwitch',
-        link: 'Magwitch was criminalised from birth - society treated his very existence as an offence.',
+        who: 'Pip (narrator), Chapter 4',
+        link: 'Pip is treated as an offender simply for being born, as Magwitch was before him.',
       },
       {
         text: '"Take nothing on its looks; take everything on evidence."',
@@ -164,12 +164,12 @@ const THEMES: ThemeAnalysis[] = [
         link: "Pip's love for Estella is defined entirely by what it opposes - it is an act of will against his own wellbeing.",
       },
       {
-        text: '"You must know that I have no heart - if that has anything to do with my memory."',
+        text: '"You must know... that I have no heart - if that has anything to do with my memory."',
         who: 'Estella',
         link: "Estella's self-awareness is itself a tragedy: she knows she has been emotionally destroyed but cannot repair herself.",
       },
       {
-        text: '"Ever the best of friends, ain\'t us, Pip?"',
+        text: '"Ever the best of friends; ain\'t us, Pip?"',
         who: 'Joe',
         link: "Joe's simple declaration of friendship is the novel's purest expression of love - consistent, undemanding and resilient.",
       },
@@ -230,14 +230,9 @@ const THEMES: ThemeAnalysis[] = [
     ],
     linkedQuotes: [
       {
-        text: '"Ever the best of friends, ain\'t us, Pip?"',
+        text: '"Ever the best of friends; ain\'t us, Pip?"',
         who: 'Joe',
         link: "Joe's repeated question is both a statement of loyalty and a plea - he knows Pip is drifting away but refuses to abandon him.",
-      },
-      {
-        text: '"Dear boy and Pip\'s comrade. You\'re a noble Handel."',
-        who: 'Magwitch, speaking of Herbert',
-        link: 'Even Magwitch, who sees the world through the lens of self-interest, recognises Herbert\'s loyal friendship as "noble."',
       },
     ],
     keyMoments: [
@@ -283,7 +278,7 @@ export default async function GreatExpectationsThemesPage() {
               {await t('rev.texts2.common.c19_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              AQA
+              AQA / Edexcel / OCR / Edexcel IGCSE / Edexcel IAL
             </Badge>
           </div>
 

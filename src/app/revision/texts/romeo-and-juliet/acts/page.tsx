@@ -8,6 +8,8 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 import { t } from '@/lib/i18n/t'
+import { StoryVisuals } from '@/components/study-guide/visuals/story-visuals'
+import { guide as studyGuide } from '@/data/study-guides/romeo-and-juliet'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Romeo and Juliet - Act-by-Act Analysis | The English Hub',
@@ -72,9 +74,9 @@ const acts: ActData[] = [
         summary:
           "Servants of the Capulet and Montague households brawl in the street. Benvolio tries to keep the peace but Tybalt escalates the fight. Prince Escalus arrives and threatens death to anyone who disturbs Verona's peace again. Romeo is revealed to be lovesick over Rosaline, a woman who has rejected him.",
         language:
-          'The servants\' crude puns ("I will push Montague\'s men from the wall, and thrust his maids to the wall") ground the feud in low, physical violence before Shakespeare elevates it to the aristocratic level. Romeo\'s speeches about Rosaline are packed with conventional Petrarchan oxymorons - "O brawling love, O loving hate" - which sound hollow and rehearsed, contrasting sharply with the genuine emotion he will feel for Juliet.',
+          'The servants\' crude puns ("I will push Montague\'s men from the wall, and thrust his maids to the wall") ground the feud in low, physical violence before Shakespeare elevates it to the aristocratic level. Romeo\'s speeches about Rosaline are packed with conventional Petrarchan oxymorons - "O brawling love! O loving hate" - which sound hollow and rehearsed, contrasting sharply with the genuine emotion he will feel for Juliet.',
         keyQuote: {
-          text: 'O brawling love, O loving hate, / O anything of nothing first create!',
+          text: 'O brawling love! O loving hate! / O anything, of nothing first create!',
           speaker: 'Romeo',
         },
       },
@@ -85,7 +87,7 @@ const acts: ActData[] = [
         language:
           'Capulet\'s metaphor "Earth hath swallowed all my hopes but she" reveals past bereavements and explains his protectiveness. His description of Juliet as "the hopeful lady of my earth" is poignant given the tragedy ahead. The dramatic irony is that Romeo goes to the feast hoping to see Rosaline but will find Juliet instead.',
         keyQuote: {
-          text: 'My child is yet a stranger in the world; / She hath not seen the change of fourteen years.',
+          text: 'My child is yet a stranger in the world, / She hath not seen the change of fourteen years.',
           speaker: 'Lord Capulet',
         },
       },
@@ -96,7 +98,7 @@ const acts: ActData[] = [
         language:
           "Lady Capulet uses an extended conceit comparing Paris to a book (\"Read o'er the volume of young Paris' face\"), treating marriage as an intellectual exercise. The Nurse's earthy prose and sexual innuendo (\"thou wilt fall backward when thou hast more wit\") contrast with Lady Capulet's formality, establishing the two different models of womanhood surrounding Juliet. Juliet's careful, non-committal reply shows early intelligence.",
         keyQuote: {
-          text: "I'll look to like, if looking liking move; / But no more deep will I endart mine eye / Than your consent gives strength to make it fly.",
+          text: "I'll look to like, if looking liking move: / But no more deep will I endart mine eye / Than your consent gives strength to make it fly.",
           speaker: 'Juliet',
         },
       },
@@ -107,7 +109,7 @@ const acts: ActData[] = [
         language:
           'The Queen Mab speech begins as playful fantasy but darkens into images of soldiers dreaming of "cutting foreign throats" and courtiers\' corruption. Mercutio\'s escalating intensity reveals a mind that veers between comedy and nihilism. Romeo\'s prophetic aside - "my mind misgives / Some consequence yet hanging in the stars" - explicitly links fate to the celestial imagery that will recur throughout the play.',
         keyQuote: {
-          text: 'I fear too early, for my mind misgives / Some consequence yet hanging in the stars.',
+          text: 'I fear too early: for my mind misgives / Some consequence yet hanging in the stars.',
           speaker: 'Romeo',
         },
       },
@@ -118,7 +120,7 @@ const acts: ActData[] = [
         language:
           'Romeo and Juliet\'s first exchange is structured as a shared sonnet with a pilgrim-and-saint conceit: Romeo\'s "lips, two blushing pilgrims" approach Juliet\'s "holy shrine." The religious language elevates their attraction above the bawdy love of the Nurse and the commercial match-making of Paris. The shared sonnet form shows them completing each other\'s thoughts. Juliet\'s oxymoron "My only love sprung from my only hate" encapsulates the paradox that will destroy them.',
         keyQuote: {
-          text: "O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / As a rich jewel in an Ethiope's ear.",
+          text: "O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / As a rich jewel in an Ethiop's ear.",
           speaker: 'Romeo',
         },
       },
@@ -161,7 +163,7 @@ const acts: ActData[] = [
         language:
           "Romeo's cosmic imagery - \"It is the east, and Juliet is the sun\" - elevates Juliet to a celestial force. Juliet's \"What's in a name?\" speech is philosophical and questioning: she dismantles the social structures that divide them by arguing that identity is not determined by a surname. Her language is more rational and grounded than Romeo's, establishing her as the more mature lover. The scene's beauty is undercut by its danger: Romeo risks death by being in the orchard.",
         keyQuote: {
-          text: "What's in a name? That which we call a rose / By any other word would smell as sweet.",
+          text: "What's in a name? That which we call a rose / By any other name would smell as sweet.",
           speaker: 'Juliet',
         },
       },
@@ -203,9 +205,9 @@ const acts: ActData[] = [
         summary:
           "Romeo and Juliet meet at Friar Lawrence's cell and are married. The Friar warns that passionate love may have violent consequences.",
         language:
-          "The Friar's warning \"These violent delights have violent ends\" uses a chiasmus linking passion to destruction. Romeo's defiant declaration that he does not care if death comes, so long as he may call Juliet his, foreshadows his actual death. The scene is unusually brief for a wedding, emphasising the speed and secrecy that characterise the lovers' relationship.",
+          'The Friar\'s warning "These violent delights have violent ends" repeats "violent" to link passion to destruction. Romeo\'s defiant declaration that he does not care if death comes, so long as he may call Juliet his, foreshadows his actual death. The scene is unusually brief for a wedding, emphasising the speed and secrecy that characterise the lovers\' relationship.',
         keyQuote: {
-          text: 'These violent delights have violent ends / And in their triumph die, like fire and powder, / Which as they kiss consume.',
+          text: 'These violent delights have violent ends, / And in their triumph die; like fire and powder, / Which as they kiss consume.',
           speaker: 'Friar Lawrence',
         },
       },
@@ -226,7 +228,7 @@ const acts: ActData[] = [
         language:
           'Mercutio\'s dying words "A plague o\' both your houses!" function as the play\'s moral verdict on the feud. His bitter pun "Ask for me tomorrow, and you shall find me a grave man" shows wit surviving even at the point of death. Romeo\'s agonised cry "O, I am fortune\'s fool!" acknowledges that fate and his own impulsiveness have combined to destroy him. The shift from prose wit to violent action marks the genre change from comedy to tragedy.',
         keyQuote: {
-          text: "A plague o' both your houses! / They have made worms' meat of me.",
+          text: "A plague o' both your houses. / They have made worms' meat of me.",
           speaker: 'Mercutio',
         },
       },
@@ -235,9 +237,9 @@ const acts: ActData[] = [
         summary:
           "Juliet eagerly awaits her wedding night, unaware of the day's events. The Nurse arrives with confused and contradictory news. Juliet eventually learns that Romeo has killed Tybalt and been banished. After an initial outburst against Romeo, her love overwhelms her grief for Tybalt.",
         language:
-          'Juliet\'s epithalamium ("Gallop apace, you fiery-footed steeds") is a passionate invocation of night that uses classical imagery to express sexual desire. When she hears the news, her oxymorons - "O serpent heart hid with a flow\'ring face! / Did ever dragon keep so fair a cave?" - express the psychological torment of loving the man who killed her cousin. Her rapid shift from condemnation to loyalty dramatises the depth of her love.',
+          'Juliet\'s epithalamium ("Gallop apace, you fiery-footed steeds") is a passionate invocation of night that uses classical imagery to express sexual desire. When she hears the news, her oxymorons - "O serpent heart, hid with a flowering face! / Did ever dragon keep so fair a cave?" - express the psychological torment of loving the man who killed her cousin. Her rapid shift from condemnation to loyalty dramatises the depth of her love.',
         keyQuote: {
-          text: "O serpent heart hid with a flow'ring face! / Did ever dragon keep so fair a cave?",
+          text: 'O serpent heart, hid with a flowering face! / Did ever dragon keep so fair a cave?',
           speaker: 'Juliet',
         },
       },
@@ -259,7 +261,7 @@ const acts: ActData[] = [
         language:
           "This short, businesslike scene contrasts starkly with the emotional intensity of the surrounding scenes. Capulet's casual disposal of his daughter's future - \"I think she will be rul'd / In all respects by me\" - dramatises the patriarchal power that treats Juliet as property. The dramatic irony is devastating: Juliet is at that very moment spending her wedding night with Romeo.",
         keyQuote: {
-          text: "I think she will be rul'd / In all respects by me; nay, more, I doubt it not.",
+          text: "I think she will be rul'd / In all respects by me; nay more, I doubt it not.",
           speaker: 'Lord Capulet',
         },
       },
@@ -268,9 +270,9 @@ const acts: ActData[] = [
         summary:
           'Romeo and Juliet wake after their wedding night and part at dawn. Lady Capulet tells Juliet she must marry Paris. Juliet refuses and Lord Capulet erupts in fury, threatening to disown her. The Nurse advises Juliet to forget Romeo and marry Paris. Juliet is devastated and resolves to seek help from Friar Lawrence.',
         language:
-          'The aubade (dawn song) debate - "It was the nightingale, and not the lark" - extends the play\'s light/dark imagery: for the lovers, dawn brings danger and separation, inverting the natural association of light with safety. Capulet\'s abusive language ("Hang thee, young baggage! Disobedient wretch!") exposes the violence beneath his earlier indulgence. Juliet\'s aside after the Nurse\'s betrayal - "Thou and my bosom henceforth shall be twain" - marks her final isolation from every adult who might have protected her.',
+          'The aubade (dawn song) debate - "It was the nightingale, and not the lark" - extends the play\'s light/dark imagery: for the lovers, dawn brings danger and separation, inverting the natural association of light with safety. Capulet\'s abusive language ("Hang thee young baggage, disobedient wretch!") exposes the violence beneath his earlier indulgence. Juliet\'s aside after the Nurse\'s betrayal - "Thou and my bosom henceforth shall be twain" - marks her final isolation from every adult who might have protected her.',
         keyQuote: {
-          text: 'Is there no pity sitting in the clouds / That sees into the bottom of my grief?',
+          text: 'Is there no pity sitting in the clouds, / That sees into the bottom of my grief?',
           speaker: 'Juliet',
         },
       },
@@ -289,7 +291,7 @@ const acts: ActData[] = [
         summary:
           "Juliet goes to the Friar's cell, where Paris is also visiting. She speaks to Paris with skilful ambiguity. Once alone with the Friar, she threatens to kill herself rather than marry Paris. The Friar proposes his plan: Juliet will drink a potion that mimics death for forty-two hours. Romeo will be told and will collect her from the tomb.",
         language:
-          'Juliet\'s dialogue with Paris is loaded with double meanings: "I will confess to you that I love him" appears to refer to Paris but actually means Romeo. This equivocation mirrors the play\'s broader theme of appearance versus reality. Her willingness to "leap from off the battlements of any tower" or "walk in thievish ways" shows absolute determination. The Friar\'s plan, with its many points of failure, reveals his over-confidence in his own cleverness.',
+          'Juliet\'s dialogue with Paris is loaded with double meanings: "I will confess to you that I love him" appears to refer to Paris but actually means Romeo. This equivocation mirrors the play\'s broader theme of appearance versus reality. Her willingness to leap "From off the battlements of yonder tower" or "walk in thievish ways" shows absolute determination. The Friar\'s plan, with its many points of failure, reveals his over-confidence in his own cleverness.',
         keyQuote: {
           text: 'O, bid me leap, rather than marry Paris, / From off the battlements of yonder tower.',
           speaker: 'Juliet',
@@ -300,7 +302,7 @@ const acts: ActData[] = [
         summary:
           "Juliet returns home and pretends to submit to her father's wishes, agreeing to marry Paris. Capulet is delighted and brings the wedding forward to Wednesday.",
         language:
-          'Juliet\'s performance of obedience - "Henceforward I am ever rul\'d by you" - is a masterful piece of deception that echoes Lady Capulet\'s earlier instruction to "look like the innocent flower." Capulet\'s response, advancing the wedding date, is a tragic acceleration: every attempt to fix the situation makes it worse. The dramatic irony is intense, as the audience knows what Juliet intends.',
+          "Juliet's performance of obedience - \"Henceforward I am ever rul'd by you\" - is a masterful piece of deception. Capulet's response, advancing the wedding date, is a tragic acceleration: every attempt to fix the situation makes it worse. The dramatic irony is intense, as the audience knows what Juliet intends.",
         keyQuote: {
           text: "Henceforward I am ever rul'd by you.",
           speaker: 'Juliet',
@@ -322,9 +324,9 @@ const acts: ActData[] = [
         summary:
           'A brief domestic scene. The Capulet household prepares for the wedding. Capulet stays up all night supervising. Paris arrives at dawn and Capulet sends the Nurse to wake Juliet.',
         language:
-          'This scene of bustling normality, with Capulet fussing about cooks and spits, creates ironic contrast with the horror of what the Nurse is about to discover. The domestic comedy of Capulet calling himself "a mouse" (meaning a quiet, retiring person) is darkly humorous given his recent tyranny towards Juliet.',
+          'This scene of bustling normality, with Capulet fussing about cooks and spits, creates ironic contrast with the horror of what the Nurse is about to discover. The domestic comedy of Lady Capulet calling her husband "a mouse-hunt" (a chaser of women) in his youth is darkly humorous given his recent tyranny towards Juliet.',
         keyQuote: {
-          text: 'Make haste, make haste. / The County will be here with music straight, / For so he said he would.',
+          text: 'The County will be here with music straight, / For so he said he would.',
           speaker: 'Lord Capulet',
         },
       },
@@ -354,9 +356,9 @@ const acts: ActData[] = [
         summary:
           'In Mantua, Romeo dreams that Juliet found him dead and kissed him back to life. His servant Balthasar arrives with the news that Juliet is dead. Romeo immediately decides to return to Verona and die beside her. He buys poison from a desperate Apothecary.',
         language:
-          'Romeo\'s dream eerily inverts what will actually happen: Juliet will find him dead but will not be able to revive him. His exclamation "Then I defy you, stars!" is a pivotal moment of free will asserting itself against fate. The Apothecary scene explores poverty and desperation: the Apothecary knows selling poison is illegal but "My poverty, but not my will, consents." Romeo\'s observation that gold is a worse "poison" than the drug inverts social values, suggesting the real sickness lies in Verona\'s society.',
+          'Romeo\'s dream eerily inverts what will actually happen: Juliet will find him dead but will not be able to revive him. His exclamation "Then I defy you, stars!" is a pivotal moment of free will asserting itself against fate. The Apothecary scene explores poverty and desperation: the Apothecary knows selling poison is illegal but "My poverty, but not my will consents." Romeo\'s observation that gold is a worse "poison" than the drug inverts social values, suggesting the real sickness lies in Verona\'s society.',
         keyQuote: {
-          text: "Is it e'en so? Then I defy you, stars!",
+          text: 'Is it even so? Then I defy you, stars!',
           speaker: 'Romeo',
         },
       },
@@ -367,7 +369,7 @@ const acts: ActData[] = [
         language:
           "This short scene is the hinge of catastrophe. The reason for the letter's failure - plague quarantine - introduces an impersonal force of nature that neither character could control. It is the play's clearest example of fate as arbitrary misfortune. Friar Lawrence's alarm (\"Unhappy fortune!\") mirrors Romeo's \"fortune's fool,\" connecting the two men through the same cruel mechanism.",
         keyQuote: {
-          text: 'Unhappy fortune! The letter was not nice but full of charge, / Of dear import.',
+          text: 'Unhappy fortune! By my brotherhood, / The letter was not nice, but full of charge, / Of dear import.',
           speaker: 'Friar Lawrence',
         },
       },
@@ -376,7 +378,7 @@ const acts: ActData[] = [
         summary:
           "Paris is at Juliet's tomb strewing flowers. Romeo arrives, and they fight; Romeo kills Paris. Romeo enters the tomb, delivers his final speech, drinks the poison and dies. Friar Lawrence arrives moments too late. Juliet wakes, finds Romeo dead, and stabs herself with his dagger. The Watch arrives. The Prince, the Montagues, and the Capulets assemble. Friar Lawrence confesses the whole story. The two fathers agree to end the feud and raise gold statues to each other's child.",
         language:
-          'Romeo\'s final speech is rich with tragic irony: he notes that Juliet still looks alive - "Death, that hath suck\'d the honey of thy breath, / Hath had no power yet upon thy beauty" - because she is alive, but he cannot know it. His "Thus with a kiss I die" unites love and death in a single gesture. Juliet\'s suicide is swift and decisive - "O happy dagger, / This is thy sheath" - using a sexual metaphor that links consummation with death. The Prince\'s closing couplet, "For never was a story of more woe / Than this of Juliet and her Romeo," transforms the private tragedy into a public lesson.',
+          'Romeo\'s final speech is rich with tragic irony: he notes that Juliet still looks alive - "Death that hath suck\'d the honey of thy breath, / Hath had no power yet upon thy beauty" - because she is alive, but he cannot know it. His "Thus with a kiss I die" unites love and death in a single gesture. Juliet\'s suicide is swift and decisive - "O happy dagger. / This is thy sheath" - using a sexual metaphor that links consummation with death. The Prince\'s closing couplet, "For never was a story of more woe / Than this of Juliet and her Romeo," transforms the private tragedy into a public lesson.',
         keyQuote: {
           text: 'For never was a story of more woe / Than this of Juliet and her Romeo.',
           speaker: 'Prince Escalus',
@@ -436,6 +438,9 @@ export default async function RomeoAndJulietActsPage() {
           </p>
         </div>
       </section>
+
+      {/* The key scenes, part by part, animated. See scripts/mount-story-visuals.mjs. */}
+      <StoryVisuals guide={studyGuide} scenesOnly />
 
       {/* Acts */}
       {acts.map((act) => (

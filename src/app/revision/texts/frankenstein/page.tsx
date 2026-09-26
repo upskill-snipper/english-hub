@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Frankenstein revision guide - themes, characters, key quotes',
   description:
-    "Frankenstein GCSE revision - Shelley's Gothic novel by chapter with characters, themes, key quotes and essay plans. Aligned to AQA, Edexcel, OCR.",
+    "Frankenstein GCSE revision - Shelley's Gothic novel by chapter, characters, themes, key quotes and essays. AQA, Edexcel (GCSE, IAL, A-Level), OCR A-Level.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/frankenstein',
   },
@@ -37,13 +37,13 @@ const data: TextGuideData = {
   author: 'Mary Shelley',
   year: '1818',
   category: 'Novel',
-  badge: 'AQA / OCR / Eduqas / Edexcel iGCSE',
+  badge: 'AQA / Edexcel / Edexcel IAL / Edexcel A-Level / OCR A-Level',
   intro:
     "Mary Shelley's Gothic masterpiece tells the story of Victor Frankenstein, an ambitious young scientist who creates a living creature from dead matter and then abandons it in horror. The novel explores the consequences of unchecked ambition, the dangers of playing God, and what it means to be human. Written when Shelley was just eighteen, Frankenstein remains one of the most influential novels in English literature and is widely considered the first work of science fiction.",
   quickInfo: {
     genre: 'Gothic novel / Science fiction',
     setting: 'Geneva, Ingolstadt, the Arctic, late 18th century',
-    length: '~75,000 words, 3 volumes / 23 chapters',
+    length: '~75,000 words, 4 letters and 24 chapters (1831 text)',
     published: '1818 (revised 1831)',
   },
   plotSummary: [
@@ -53,7 +53,7 @@ const data: TextGuideData = {
 
     'Victor retreats to the Alps, where the Creature finds him and tells his own story. After being abandoned, the Creature wandered alone, learning to speak and read by secretly observing a cottager family, the De Laceys. When he finally revealed himself to them, they were horrified and drove him away. Rejected by everyone, the Creature turned to violence and murdered William. He demands that Victor create a female companion to end his loneliness.',
 
-    "Victor reluctantly begins work on a second creature but, fearing a race of monsters, destroys it before the Creature's eyes. The Creature vows revenge: \"I will be with you on your wedding night.\" He kills Clerval, and on Victor's wedding night he murders Elizabeth. Victor's father dies of grief. Victor pursues the Creature to the Arctic, where Walton finds him. Victor dies on Walton's ship. The Creature appears, mourns his creator, and vows to end his own life on a funeral pyre.",
+    "Victor reluctantly begins work on a second creature but, fearing a race of monsters, destroys it before the Creature's eyes. The Creature vows revenge: \"I shall be with you on your wedding-night.\" He kills Clerval, and on Victor's wedding night he murders Elizabeth. Victor's father dies of grief. Victor pursues the Creature to the Arctic, where Walton finds him. Victor dies on Walton's ship. The Creature appears, mourns his creator, and vows to end his own life on a funeral pyre.",
   ],
   characters: [
     {
@@ -69,7 +69,7 @@ const data: TextGuideData = {
     {
       name: 'Robert Walton',
       role: 'Arctic explorer and frame narrator',
-      body: "Walton mirrors Victor in his dangerous ambition and isolation. His letters frame the entire novel, and Victor's story serves as a warning that Walton ultimately heeds, turning his ship back from the ice.",
+      body: "Walton mirrors Victor in his dangerous ambition and isolation. His letters frame the entire novel, and Victor's story serves as a warning. Walton does turn his ship back from the ice, but because his crew demand it, while the dying Victor urges them on.",
     },
     {
       name: 'Elizabeth Lavenza',
@@ -115,7 +115,7 @@ const data: TextGuideData = {
   ],
   quotations: [
     {
-      quote: '"I ought to be thy Adam, but I am rather the fallen angel."',
+      quote: '"I ought to be thy Adam; but I am rather the fallen angel."',
       who: 'The Creature - Chapter 10',
       analysis:
         "The Creature uses Milton's Paradise Lost to articulate his abandonment. He should have been loved as a first creation but has been cast out like Satan.",
@@ -213,7 +213,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['A castle', 'A female companion', 'A cure for his appearance', 'A new identity'],
     correctIndex: 1,
     explanation:
-      'The Creature demands that Victor create a female companion to end his terrible loneliness. Victor reluctantly begins but then destroys the female creature, fearing a "race of monsters."',
+      'The Creature demands that Victor create a female companion to end his terrible loneliness. Victor reluctantly begins but then destroys the female creature, fearing a "race of devils."',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -241,7 +241,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'fr-8',
-    question: 'Who says "I ought to be thy Adam, but I am rather the fallen angel"?',
+    question: 'Who says "I ought to be thy Adam; but I am rather the fallen angel"?',
     type: 'multiple-choice',
     options: ['Victor', 'The Creature', 'Walton', 'Clerval'],
     correctIndex: 1,
@@ -273,13 +273,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'They look similar',
-      "Both are driven by dangerous ambition and isolation - Victor's story serves as a warning Walton heeds",
+      "Both are driven by dangerous ambition and isolation - Victor's story serves as a warning to Walton",
       'They are from the same city',
       'They share the same profession',
     ],
     correctIndex: 1,
     explanation:
-      "Walton mirrors Victor in his dangerous ambition and isolation, pursuing glory in the Arctic. Victor's story serves as a cautionary tale, and Walton ultimately heeds the warning by turning his ship back from the ice.",
+      "Walton mirrors Victor in his dangerous ambition and isolation, pursuing glory in the Arctic. Victor's story serves as a cautionary tale, and Walton does turn his ship back from the ice, though at his crew's demand rather than by his own choice.",
     topic: 'Characters',
     difficulty: 'higher',
   },
@@ -311,7 +311,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The Creature murders Elizabeth on their wedding night, fulfilling his vow "I will be with you on your wedding night." Victor failed to understand the threat was directed at Elizabeth, showing his fatal self-absorption.',
+      'The Creature murders Elizabeth on their wedding night, fulfilling his vow "I shall be with you on your wedding-night." Victor failed to understand the threat was directed at Elizabeth, showing his fatal self-absorption.',
     topic: 'Plot',
     difficulty: 'higher',
   },
@@ -353,7 +353,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He runs out of materials',
-      'He fears creating a "race of monsters" that could threaten humanity',
+      'He fears creating a "race of devils" that could threaten humanity',
       'The Creature tells him to stop',
       'He is arrested',
     ],
@@ -453,7 +453,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       'Victor sacrifices health, relationships, and morality for his goal',
       '"Learn from me... how dangerous is the acquirement of knowledge"',
-      "Walton mirrors Victor's ambition but heeds the warning",
+      "Walton mirrors Victor's ambition but turns back when his crew demand it",
       'The subtitle "The Modern Prometheus" frames ambition as divine transgression',
       'Shelley critiques the Romantic ideal of the solitary genius',
     ],
@@ -584,7 +584,9 @@ export default async function FrankensteinPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          // The labels read 'Name - Chapter n' with a spaced hyphen; splitting
+          // on the em dash alone left the chapter in every option of the quiz.
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

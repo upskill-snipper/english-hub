@@ -49,7 +49,7 @@ const CHARACTERS: CharacterProfile[] = [
       "Pip's moral education is the spine of the novel. His arc moves from innocence through corruption to hard-won self-knowledge. The revelation that Magwitch - not Miss Havisham - is his benefactor forces him to confront his own snobbery: he has valued people according to class rather than character. His gradual acceptance of Magwitch, his return to the forge to ask Joe's forgiveness, and his years of honest work abroad represent a genuine moral reformation. Dickens uses Pip to argue that true gentility lies in conduct, not in birth or wealth. The adult narrator's ironic, self-critical voice ensures the reader always sees more than the younger Pip can.",
     keyQuotes: [
       {
-        text: '"I took the opportunity of being alone in the court-yard, to look at my coarse hands and my common boots. My opinion of those accessories was not favourable. They had never troubled me before, but they troubled me now, as vulgar appendages."',
+        text: '"I took the opportunity of being alone in the courtyard to look at my coarse hands and my common boots. My opinion of those accessories was not favourable. They had never troubled me before, but they troubled me now, as vulgar appendages."',
         context:
           "After his first visit to Satis House - Pip begins to see himself through Estella's eyes and internalises class shame.",
       },
@@ -71,7 +71,7 @@ const CHARACTERS: CharacterProfile[] = [
       'Estella\'s arc is one of the novel\'s most painful. She marries the brutal Bentley Drummle, not from love but because she literally cannot feel love - Miss Havisham has removed that capacity. Her marriage is unhappy and Drummle dies. In the revised ending, she tells Pip that "suffering has been stronger than all other teaching," suggesting that pain has restored the emotional capacity Miss Havisham destroyed. Dickens uses Estella to argue that emotional cruelty is a form of child abuse: she is both weapon and victim.',
     keyQuotes: [
       {
-        text: '"You must know that I have no heart - if that has anything to do with my memory."',
+        text: '"You must know... that I have no heart - if that has anything to do with my memory."',
         context:
           "Estella's self-awareness is itself tragic: she knows she has been damaged but cannot undo the damage.",
       },
@@ -93,7 +93,7 @@ const CHARACTERS: CharacterProfile[] = [
       'Miss Havisham\'s arc is one of belated recognition. She encourages Pip\'s belief that she is his benefactor because it serves her purposes, but she eventually realises the monstrous consequences of her revenge project. When she sees that Estella cannot love even her, she is devastated: "What have I done! What have I done!" Her attempt to help Pip financially and her desperate plea for forgiveness come too late - she catches fire from the hearth and dies from her injuries. Dickens uses her death by fire as both literal consequence and symbolic justice: the woman consumed by bitterness is literally consumed by flames.',
     keyQuotes: [
       {
-        text: '"Break their hearts, my pride and hope, break their hearts and have no mercy!"',
+        text: '"Break their hearts my pride and hope, break their hearts and have no mercy!"',
         context:
           "Miss Havisham's instruction to Estella reveals her as a manipulator who has weaponised a child.",
       },
@@ -142,9 +142,9 @@ const CHARACTERS: CharacterProfile[] = [
           'Joe uses the language of his trade to express a profound truth about social division, accepting it without bitterness.',
       },
       {
-        text: '"Which I meantersay, Pip, as I would in preference have carried you there."',
+        text: '"Which dear old Pip, old chap... you and me was ever friends."',
         context:
-          "After nursing Pip back to health, Joe's quiet devotion - he would have carried Pip bodily - demonstrates love without conditions.",
+          "Nursing Pip through his fever, Joe's first words when Pip knows him are of their friendship - love without conditions.",
       },
     ],
     examFocus:
@@ -159,12 +159,12 @@ const CHARACTERS: CharacterProfile[] = [
       "Herbert represents what a \"gentleman\" should actually be: considerate, loyal and industrious. While Pip wastes his allowance, Herbert dreams of becoming a merchant and eventually succeeds through honest work. He helps Pip hide and protect Magwitch, risking his own safety out of friendship. Pip's secret arrangement to buy Herbert a partnership in Clarriker's business is one of Pip's few genuinely selfless acts during his London years and foreshadows his moral recovery. Herbert's steady goodness provides a counterpoint to Pip's instability.",
     keyQuotes: [
       {
-        text: '"Handel, my good fellow... I want to say something to you. You look rather pale."',
+        text: '"Handel, my good fellow... I have been thinking since we have been talking with our feet on this fender, that Estella surely cannot be a condition of your inheritance"',
         context:
-          "Herbert's gentle concern for Pip after the revelation about Magwitch - his friendship is constant regardless of Pip's changing circumstances.",
+          'Herbert is willing to make himself "seriously disagreeable" to warn Pip about Estella - his friendship puts Pip\'s welfare before his own comfort.',
       },
       {
-        text: '"A gentleman must not be too ready with his fists."',
+        text: '"in London it is not the custom to put the knife in the mouth"',
         context:
           "Herbert teaches Pip social graces without condescension - a genuine act of friendship that contrasts with Estella's humiliation.",
       },
@@ -208,7 +208,7 @@ const CHARACTERS: CharacterProfile[] = [
           "Wemmick's defining principle - the enforced separation of public and private selves that Dickens sees as a symptom of modern life.",
       },
       {
-        text: '"Walworth sentiments. Get hold of portable property."',
+        text: '"My Walworth sentiments must be taken at Walworth; none but my official sentiments can be taken in this office."',
         context:
           'Wemmick\'s practical advice - his "Walworth sentiments" are always more humane than his office pronouncements.',
       },
@@ -220,7 +220,7 @@ const CHARACTERS: CharacterProfile[] = [
     name: 'Biddy',
     role: "Pip's childhood friend; later Joe's wife",
     overview:
-      "Biddy is intelligent, practical, kind and perceptive - everything Estella is not. She is Pip's contemporary at Mr Wopsle's great-aunt's school and later helps care for Mrs Joe after her attack. She sees through Pip's pretensions more clearly than anyone: when he tells her he wants to become a gentleman, she asks the devastating question, \"Wouldn't it be better to be a gentleman at heart?\" She represents the authentic, loving life that Pip rejects in pursuit of false gentility.",
+      "Biddy is intelligent, practical, kind and perceptive - everything Estella is not. She is Pip's contemporary at Mr Wopsle's great-aunt's school and later helps care for Mrs Joe after her attack. She sees through Pip's pretensions more clearly than anyone: when he tells her he wants to become a gentleman, she asks the devastating question, \"Do you want to be a gentleman, to spite her or to gain her over?\" She represents the authentic, loving life that Pip rejects in pursuit of false gentility.",
     development:
       "Biddy remains constant, like Joe, and serves as a moral compass that Pip ignores. She tries to warn him that his ambitions will make him unhappy, but he patronises her. She marries Joe, forming the loving domestic partnership that represents Dickens's ideal. When Pip returns to the forge intending to propose to Biddy (having failed with Estella), he finds her already married to Joe - a final, gentle reminder that the world does not wait for him to learn his lesson. Biddy's quiet dignity is Dickens's answer to Estella's cold beauty.",
     keyQuotes: [
@@ -230,13 +230,13 @@ const CHARACTERS: CharacterProfile[] = [
           "Biddy cuts to the heart of Pip's motivation with one question, exposing that his ambition is driven by Estella rather than genuine self-improvement.",
       },
       {
-        text: '"I am not angry, but I am hurt."',
+        text: '"No, don\'t be hurt... let only me be hurt, if I have been ungenerous."',
         context:
-          'When Pip condescends to her, Biddy responds with quiet dignity that shames him more than anger would.',
+          'When Pip, offended, tells her he is "not angry" but "hurt", Biddy responds with quiet dignity that shames him more than anger would.',
       },
     ],
     examFocus:
-      "Biddy functions as a foil to Estella: she is everything Pip should value but doesn't. In an exam, contrast her emotional intelligence with Estella's emotional absence. Her question about being \"a gentleman at heart\" encapsulates the novel's central argument. She also represents the role of women in Victorian society - intelligent and capable but limited by class and gender.",
+      "Biddy functions as a foil to Estella: she is everything Pip should value but doesn't. In an exam, contrast her emotional intelligence with Estella's emotional absence. Her question about whether he wants to be a gentleman \"to spite her or to gain her over\" encapsulates the novel's central argument. She also represents the role of women in Victorian society - intelligent and capable but limited by class and gender.",
   },
 ]
 
@@ -272,7 +272,7 @@ export default async function GreatExpectationsCharactersPage() {
               {await t('rev.texts2.common.c19_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              AQA
+              AQA / Edexcel / OCR / Edexcel IGCSE / Edexcel IAL
             </Badge>
           </div>
 

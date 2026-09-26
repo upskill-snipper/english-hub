@@ -31,13 +31,23 @@ export const metadata: Metadata = {
   },
 }
 
+/*
+ * Corrected 26 September 2026, checked against the novel (Project Gutenberg
+ * #64317, and the 1925 readings the study guide records). The badge named
+ * Edexcel, which does not set the novel (see set-texts.ts). The Myrtle
+ * quotation opened with words that are not in the novel. Gatsby's shirts cover
+ * the table, not the bed; his house imitates a Norman Hotel de Ville, not a
+ * chateau. "They're a rotten crowd" is Nick's only compliment to Gatsby, not
+ * his last words. Nick breaks with Jordan by telephone on the day Gatsby dies.
+ * That Myrtle took the car for Tom's is an inference, and is now worded as one.
+ */
 const data: TextGuideData = {
   slug: 'the-great-gatsby',
   title: 'The Great Gatsby',
   author: 'F. Scott Fitzgerald',
   year: '1925',
   category: 'Novel',
-  badge: 'Edexcel A-Level / OCR A-Level / Eduqas A-Level / AQA A-Level',
+  badge: 'OCR A-Level / Eduqas A-Level / AQA A-Level',
   intro:
     'F. Scott Fitzgerald\u2019s The Great Gatsby is the defining novel of the American Jazz Age and one of the most studied texts at A-Level. Published in 1925, it follows the mysterious millionaire Jay Gatsby and his obsessive pursuit of Daisy Buchanan, a love he lost five years earlier. Narrated by Nick Carraway in retrospective first person, the novel moves through lavish Long Island parties, sweltering afternoons in New York hotels, and a catastrophic car accident in the ash-choked valley between West Egg and the city. Fitzgerald dissects the American Dream at the moment of its greatest economic expansion, revealing the moral emptiness beneath the glitter of new wealth. The novel is a compact, lyrical tragedy about time, longing and self-invention: about a man who tries to buy his way back into the past and is destroyed by the people he tried to join.',
   quickInfo: {
@@ -48,8 +58,8 @@ const data: TextGuideData = {
   },
   plotSummary: [
     'Nick Carraway, a young Midwesterner recently returned from the First World War, moves east to learn the bond business and rents a modest cottage in West Egg, Long Island, next door to the enormous mansion of the mysterious Jay Gatsby. Across the bay in East Egg live Nick\u2019s cousin Daisy Buchanan and her wealthy, arrogant husband Tom, a former Yale football star with a mistress in the city. Over dinner Nick meets Jordan Baker, a professional golfer and Daisy\u2019s friend, who first hints that Tom is unfaithful. Returning home that night, Nick sees Gatsby for the first time, stretching his arms towards a single green light at the end of Daisy\u2019s dock. Soon afterwards Tom takes Nick to meet his mistress Myrtle Wilson, who lives above a garage in the Valley of Ashes, a desolate industrial wasteland overlooked by the giant fading eyes of Doctor T. J. Eckleburg on a weathered billboard.',
-    'Nick begins to attend Gatsby\u2019s famous parties, where hundreds of strangers pour through the gardens every weekend drinking champagne and speculating about their host\u2019s fortune. Jordan tells Nick the truth: Gatsby and Daisy had a romance in Louisville in 1917 before he was shipped to France, and he has bought the mansion across the bay specifically to win her back. At Gatsby\u2019s request Nick arranges a reunion over tea, and the two are awkwardly, then ecstatically, reunited. Gatsby shows Daisy around his house, throwing his monogrammed shirts onto the bed until she weeps into them. He has invented himself \u2014 his real name is James Gatz, a poor farm boy from North Dakota \u2014 and has made his money through bootlegging and other shadowy enterprises connected to the gambler Meyer Wolfshiem, who is said to have fixed the 1919 World Series.',
-    'On the hottest day of the summer the Buchanans, Gatsby, Nick and Jordan drive into New York and take a suite at the Plaza Hotel, where the tension finally breaks. Tom confronts Gatsby, exposes his criminal business dealings, and forces Daisy to admit that she cannot say she never loved her husband. The party drives home in two cars. Daisy is at the wheel of Gatsby\u2019s yellow car when it strikes and kills Myrtle Wilson, who has run out into the road believing it to be Tom. Gatsby takes the blame to protect Daisy and keeps vigil outside her house that night, while inside Tom and Daisy reconcile over cold chicken. The next afternoon Myrtle\u2019s grief-stricken husband George, convinced by Tom that Gatsby was the driver, walks to West Egg, shoots Gatsby dead in his swimming pool, and then kills himself.',
+    'Nick begins to attend Gatsby\u2019s famous parties, where hundreds of strangers pour through the gardens every weekend drinking champagne and speculating about their host\u2019s fortune. Jordan tells Nick the truth: Gatsby and Daisy had a romance in Louisville in 1917 before he was shipped to France, and he has bought the mansion across the bay specifically to win her back. At Gatsby\u2019s request Nick arranges a reunion over tea, and the two are awkwardly, then ecstatically, reunited. Gatsby shows Daisy around his house, throwing his monogrammed shirts onto the table until she weeps into them. He has invented himself \u2014 his real name is James Gatz, a poor farm boy from North Dakota \u2014 and has made his money through bootlegging and other shadowy enterprises connected to the gambler Meyer Wolfshiem, who is said to have fixed the 1919 World Series.',
+    'On the hottest day of the summer the Buchanans, Gatsby, Nick and Jordan drive into New York and take a suite at the Plaza Hotel, where the tension finally breaks. Tom confronts Gatsby, exposes his criminal business dealings, and forces Daisy to admit that she cannot say she never loved her husband. The party drives home in two cars. Daisy is at the wheel of Gatsby\u2019s yellow car when it strikes and kills Myrtle Wilson, who has run out into the road, probably believing it to be Tom, whom she saw driving it that afternoon. Gatsby takes the blame to protect Daisy and keeps vigil outside her house that night, while inside Tom and Daisy reconcile over cold chicken. The next afternoon Myrtle\u2019s grief-stricken husband George, convinced by Tom that Gatsby was the driver, walks to West Egg, shoots Gatsby dead in his swimming pool, and then kills himself.',
     'Gatsby\u2019s funeral is attended by almost no one. Daisy and Tom have left town without forwarding address; Gatsby\u2019s business associates vanish; only Nick, Gatsby\u2019s elderly father Henry Gatz, a handful of servants and a man Nick calls Owl Eyes stand at the graveside in the rain. Disillusioned with the East, Nick moves back to the Midwest. In the novel\u2019s closing pages he reflects on Gatsby\u2019s extraordinary capacity for hope, on the green light he reached for, and on the impossibility of recapturing the past. Tom and Daisy, he concludes, were careless people who smashed up things and creatures and retreated into their money, leaving other people to clean up the mess they had made.',
   ],
   characters: [
@@ -76,7 +86,7 @@ const data: TextGuideData = {
     {
       name: 'Jordan Baker',
       role: 'Professional golfer; Daisy\u2019s friend and Nick\u2019s summer romance',
-      body: 'Cool, cynical and "incurably dishonest," Jordan represents the new generation of independent, sporting women of the 1920s. She is rumoured to have cheated to win a golf tournament, and Nick finds her attractive but untrustworthy. Through Jordan, Fitzgerald explores the moral carelessness of the Jazz Age elite and the limits of the so-called liberation offered to women by new wealth. Nick ends the relationship after Gatsby\u2019s death when he realises he cannot stomach the East any longer.',
+      body: 'Cool, cynical and "incurably dishonest," Jordan represents the new generation of independent, sporting women of the 1920s. She is rumoured to have cheated to win a golf tournament, and Nick finds her attractive but untrustworthy. Through Jordan, Fitzgerald explores the moral carelessness of the Jazz Age elite and the limits of the so-called liberation offered to women by new wealth. Nick breaks with her in a telephone call on the day Gatsby dies, and sees her once more before he leaves the East.',
     },
     {
       name: 'Myrtle Wilson',
@@ -101,7 +111,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Wealth: old money versus new money',
-      body: 'Fitzgerald structures the geography of the novel around the division between East Egg (old, inherited money) and West Egg (new, self-made money). Tom and Daisy\u2019s East Egg mansion is "white palaces" gleaming on the water; Gatsby\u2019s West Egg house is a gaudy imitation of a French chateau. No matter how vast his fortune, Gatsby can never cross the bay, and the Buchanans\u2019 final retreat into their money after the disaster reveals how class insulates the already privileged. Wealth in the novel is never just money: it is manners, accent, history, and access.',
+      body: 'Fitzgerald structures the geography of the novel around the division between East Egg (old, inherited money) and West Egg (new, self-made money). Tom and Daisy\u2019s East Egg mansion is "white palaces" gleaming on the water; Gatsby\u2019s West Egg house is an imitation of "some H\u00f4tel de Ville in Normandy", a French town hall. No matter how vast his fortune, Gatsby can never cross the bay, and the Buchanans\u2019 final retreat into their money after the disaster reveals how class insulates the already privileged. Wealth in the novel is never just money: it is manners, accent, history, and access.',
     },
     {
       title: 'Love and idealisation',
@@ -205,7 +215,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"Her face was smeared with a mixture of blood and dust \u2026 her left breast was swinging loose like a flap."',
+        '"\u2026 knelt in the road and mingled her thick dark blood with the dust \u2026 her left breast was swinging loose like a flap."',
       who: 'Nick describing Myrtle\u2019s death \u2014 Chapter 7',
       analysis:
         'The violence of the passage \u2014 shocking in its graphic bodily detail \u2014 makes unavoidable the human cost of the Buchanans\u2019 carelessness and Gatsby\u2019s silk-shirt fantasies.',
@@ -263,7 +273,7 @@ const data: TextGuideData = {
         '"They\u2019re a rotten crowd \u2026 You\u2019re worth the whole damn bunch put together."',
       who: 'Nick to Gatsby \u2014 Chapter 8',
       analysis:
-        'Nick\u2019s last words to Gatsby, shouted across a lawn on the morning of his death, mark the point at which his claim to reserve all judgements finally breaks down.',
+        'Nick\u2019s only compliment to Gatsby, shouted across a lawn on the morning of his death, mark the point at which his claim to reserve all judgements finally breaks down.',
     },
   ],
 }
@@ -593,7 +603,7 @@ const REVISION_TOPICS = [
       'West Egg = new self-made money (Gatsby)',
       'No amount of wealth lets Gatsby cross the bay',
       "Tom exposes Gatsby's criminal origins at the Plaza",
-      'The Buchanans "retreat back into their money" at the end',
+      'The Buchanans "retreated back into their money" at the end',
     ],
   },
   {
@@ -601,11 +611,11 @@ const REVISION_TOPICS = [
     summary:
       'Gatsby loves an idea of Daisy he has cultivated for five years, and the real woman cannot match the fantasy.',
     keyPoints: [
-      'The reunion scene: Gatsby throws shirts onto the bed',
+      'The reunion scene: Gatsby throws shirts onto the table',
       '"Her voice is full of money" - love and wealth are inseparable',
       'Daisy cannot say she never loved Tom',
       "Gatsby takes the blame for Myrtle's death",
-      'His dream "must have seemed so close he could hardly fail to grasp it"',
+      'His dream "must have seemed so close that he could hardly fail to grasp it"',
     ],
   },
   {

@@ -38,7 +38,7 @@ const data: TextGuideData = {
   author: 'William Shakespeare',
   year: 'c. 1601\u201302',
   category: 'Play',
-  badge: 'Edexcel',
+  badge: 'Edexcel / Eduqas / Edexcel A-Level / Edexcel IAL',
   intro:
     'Shakespeare\u2019s festive comedy Twelfth Night, or What You Will was written around 1601\u201302 at the height of his creative powers. Set in the imagined Mediterranean court of Illyria, it is a play of shipwrecks, mistaken identities and sudden loves. A young woman, Viola, washes ashore believing her twin brother Sebastian has drowned. Disguising herself as a boy called Cesario, she enters the service of Duke Orsino and is sent to woo the mourning Countess Olivia on his behalf. The result is one of Shakespeare\u2019s most ingenious love triangles. Yet beneath the laughter runs a melancholy undertow: Feste\u2019s songs insist that \u201cyouth\u2019s a stuff will not endure,\u201d Malvolio is humiliated to the edge of cruelty, and the play ends with one character promising revenge and another walking alone into the rain. Twelfth Night explores gender, desire, class and festive misrule with a tenderness that sits strangely alongside its darker notes, making it one of the richest of Shakespeare\u2019s comedies for study.',
   quickInfo: {
@@ -51,7 +51,7 @@ const data: TextGuideData = {
     'The play opens in Duke Orsino\u2019s court, where he indulges his melancholy passion for the Countess Olivia with the famous line, \u201cIf music be the food of love, play on.\u201d Olivia, mourning her dead brother, has sworn to avoid all male company for seven years. On a nearby coast, Viola is washed ashore after a shipwreck and fears her twin brother Sebastian has drowned. With the help of a Sea Captain, she decides to disguise herself as a young man named Cesario and seek employment at Orsino\u2019s court. Orsino quickly grows fond of his new page and sends Cesario to carry his love messages to Olivia. The plan misfires spectacularly: Olivia rejects Orsino yet falls in love with Cesario, while Viola, in her disguise, falls silently in love with Orsino.',
     'A parallel plot unfolds in Olivia\u2019s household. Her drunken uncle Sir Toby Belch is sponging off his foolish friend Sir Andrew Aguecheek, whom he has persuaded is a suitor for Olivia. Her steward Malvolio, a pompous Puritan-leaning figure, disapproves of the late-night revels and is loathed by the household. Maria, Olivia\u2019s quick-witted servingwoman, hatches a revenge: she forges a letter in Olivia\u2019s handwriting to make Malvolio believe his mistress loves him. The conspiracy draws in Toby, Sir Andrew and Fabian. The letter instructs Malvolio to smile constantly, wear yellow stockings cross-gartered and behave with haughty superiority. Reading that \u201csome are born great, some achieve greatness, and some have greatness thrust upon \u2019em,\u201d he believes himself singled out by fortune.',
     'When Malvolio appears before Olivia in this absurd costume, she assumes he has gone mad and entrusts his care to Sir Toby, who locks him in a dark room and torments him further, with Feste the clown disguising himself as a curate called Sir Topas. Meanwhile, Sebastian has in fact survived the shipwreck, rescued by the sea-captain Antonio, who follows him devotedly to Illyria. The twins\u2019 identical appearance produces a cascade of confusion: Sir Andrew, goaded by Toby into challenging Cesario, instead meets Sebastian and is beaten; Antonio, seeing Cesario, believes Sebastian has betrayed him; and Olivia, encountering Sebastian, sweeps him into an immediate betrothal that the astonished but delighted young man accepts.',
-    'In the final act, all the strands converge before Orsino. Antonio is brought in as a prisoner, Olivia arrives calling Cesario her husband, and Sir Andrew and Sir Toby stagger in wounded. The confusion breaks when Sebastian enters and sees Viola: the twins are reunited and the disguise is revealed. Orsino, realising that Cesario is a woman who has loved him all along, offers Viola his hand with the words \u201cCesario, come\u2014/ For so you shall be while you are a man.\u201d Olivia is happily matched with Sebastian, and Maria and Toby have secretly married. Malvolio is released, realises he has been gulled by the forged letter and storms off crying \u201cI\u2019ll be revenged on the whole pack of you.\u201d The play closes not with wedding songs but with Feste\u2019s haunting solo about wind and rain, leaving the comedy\u2019s happiness tinged with loss.',
+    'In the final act, all the strands converge before Orsino. Antonio is brought in as a prisoner, Olivia arrives calling Cesario her husband, and Sir Andrew and Sir Toby stagger in wounded. The confusion breaks when Sebastian enters and sees Viola: the twins are reunited and the disguise is revealed. Orsino, realising that Cesario is a woman who has loved him all along, offers Viola his hand: \u201cHere is my hand; you shall from this time be / Your master\u2019s mistress.\u201d Olivia is happily matched with Sebastian, and Maria and Toby have secretly married. Malvolio is released, realises he has been gulled by the forged letter and storms off crying \u201cI\u2019ll be revenged on the whole pack of you.\u201d The play closes not with wedding songs but with Feste\u2019s haunting solo about wind and rain, leaving the comedy\u2019s happiness tinged with loss.',
   ],
   characters: [
     {
@@ -77,17 +77,17 @@ const data: TextGuideData = {
     {
       name: 'Feste',
       role: 'Olivia\u2019s clown; a licensed fool',
-      body: 'Feste moves between Olivia\u2019s and Orsino\u2019s households as the play\u2019s sharpest observer. His wordplay exposes the self-deceptions of the lovers, and his songs provide the play\u2019s emotional counter-current: \u201cwhat is love? \u2019tis not hereafter,\u201d \u201cyouth\u2019s a stuff will not endure.\u201d He is also the engine of some of the darkest comedy, impersonating Sir Topas to torment the imprisoned Malvolio. The final song about wind and rain leaves him alone on stage and gives the comedy its melancholy close.',
+      body: 'Feste moves between Olivia\u2019s and Orsino\u2019s households as the play\u2019s sharpest observer. His wordplay exposes the self-deceptions of the lovers, and his songs provide the play\u2019s emotional counter-current: \u201cwhat is love? \u2019Tis not hereafter,\u201d \u201cyouth\u2019s a stuff will not endure.\u201d He is also the engine of some of the darkest comedy, impersonating Sir Topas to torment the imprisoned Malvolio. The final song about wind and rain leaves him alone on stage and gives the comedy its melancholy close.',
     },
     {
       name: 'Sir Toby Belch',
       role: 'Olivia\u2019s uncle; a drunken reveller',
-      body: 'Toby embodies the Lord of Misrule spirit of the play\u2019s title. He drinks through the night, fleeces Sir Andrew of his money, and leads the conspiracy against Malvolio. His defence of cakes and ale against Malvolio\u2019s puritanism voices one of the play\u2019s central oppositions. Yet Shakespeare also shows his cruelty: he takes the prank against Malvolio further than Maria intends, and his treatment of Sir Andrew is blunt and mercenary. He eventually marries Maria, rewarding her wit with a place in the family.',
+      body: 'Toby embodies the Lord of Misrule spirit of the play\u2019s title. He drinks through the night, fleeces Sir Andrew of his money, and leads the conspiracy against Malvolio. His defence of cakes and ale against Malvolio\u2019s puritanism voices one of the play\u2019s central oppositions. Yet Shakespeare also shows his cruelty: it is he who proposes having Malvolio “in a dark room and bound”, and his treatment of Sir Andrew is blunt and mercenary. He eventually marries Maria, rewarding her wit with a place in the family.',
     },
     {
       name: 'Sebastian',
       role: 'Viola\u2019s twin brother, believed drowned',
-      body: 'Sebastian\u2019s arrival in Illyria in Act 4 unlocks the plot. Rescued from the wreck by the devoted sea-captain Antonio, he is bewildered to find himself attacked by Sir Andrew, embraced by Olivia and married within hours. Shakespeare uses him to double and complete Viola: where she must disguise and wait, he acts immediately, accepting Olivia\u2019s offer on the spot. His reunion with Viola is the emotional climax of the final scene.',
+      body: 'Sebastian\u2019s arrival in Illyria unlocks the plot. Rescued from the wreck by the devoted sea-captain Antonio, he is bewildered to find himself attacked by Sir Andrew, embraced by Olivia and married within hours. Shakespeare uses him to double and complete Viola: where she must disguise and wait, he acts immediately, accepting Olivia\u2019s offer on the spot. His reunion with Viola is the emotional climax of the final scene.',
     },
   ],
   themes: [
@@ -118,13 +118,13 @@ const data: TextGuideData = {
   ],
   historicalContext: [
     'Twelfth Night takes its name from the twelfth night of Christmas, celebrated on 5 or 6 January as the eve of Epiphany. In Elizabethan England this was the climax of the Christmas holidays, marked by feasting, music, cross-dressing games and the appointment of a \u201cLord of Misrule\u201d who presided over an inverted social order for the night. Servants were briefly served by masters, and the normal rules of dignity and deference were suspended. Shakespeare\u2019s play absorbs this festive atmosphere into its plot: Sir Toby\u2019s revels, Feste\u2019s licensed mockery, Viola\u2019s cross-dressing and Malvolio\u2019s humiliation all echo the rhythms of the Twelfth Night feast. The subtitle \u201cWhat You Will\u201d reinforces the mood of holiday freedom.',
-    'On the Elizabethan stage, all female roles were played by boys, since women were forbidden from acting publicly. This convention shapes the gender play of Twelfth Night at every level. When Viola dresses as Cesario, the audience watches a boy actor playing a woman playing a young man - a layering that the play explicitly draws attention to in moments like Viola\u2019s reference to \u201cmy little body.\u201d The first audience would have found the device less jarring than a modern one, and the fluidity between male and female roles was part of the theatrical pleasure. When Orsino addresses Viola as \u201cCesario\u201d at the close of the play, the line acknowledges that the boy-actor on stage has not, in fact, changed costume.',
+    'On the Elizabethan stage, all female roles were played by boys, since women were forbidden from acting publicly. This convention shapes the gender play of Twelfth Night at every level. When Viola dresses as Cesario, the audience watches a boy actor playing a woman playing a young man - a layering that the play explicitly draws attention to in moments like Viola\u2019s aside, \u201cA little thing would make me tell them how much I lack of a man.\u201d The first audience would have found the device less jarring than a modern one, and the fluidity between male and female roles was part of the theatrical pleasure. When Orsino addresses Viola as \u201cCesario\u201d at the close of the play, the line acknowledges that the boy-actor on stage has not, in fact, changed costume.',
     'Shakespeare also drew on the long tradition of Italian commedia erudita and commedia dell\u2019arte for the play\u2019s structure. A direct source is the Italian play Gl\u2019Ingannati (\u201cThe Deceived\u201d, 1531), which features separated twins, a disguised heroine who falls in love with her employer, and a mistaken-identity resolution. Shipwrecked twins and cross-dressing heroines were staples of Italian comedy, and English dramatists borrowed freely. Shakespeare adds the melancholy songs, the sub-plot of Malvolio\u2019s gulling and the figure of Feste, transforming the conventional comic formula into something unusually reflective. Twelfth Night was performed at the Inns of Court in February 1602 and is thought to have been written in the preceding months, placing it alongside Hamlet as one of the plays of Shakespeare\u2019s great transitional period.',
   ],
   quotations: [
     {
       quote:
-        '"If music be the food of love, play on, / Give me excess of it, that, surfeiting, / The appetite may sicken and so die."',
+        '"If music be the food of love, play on, / Give me excess of it; that, surfeiting, / The appetite may sicken and so die."',
       who: 'Orsino \u2014 Act 1, Scene 1',
       analysis:
         'The play\u2019s opening line establishes Orsino\u2019s self-indulgent, performative melancholy: he wants love to exhaust itself like an over-fed appetite.',
@@ -150,7 +150,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"She never told her love, / But let concealment, like a worm i\' the bud, / Feed on her damask cheek."',
+        '"She never told her love, / But let concealment, like a worm i’ th’ bud, / Feed on her damask cheek."',
       who: 'Viola \u2014 Act 2, Scene 4',
       analysis:
         'Viola describes her own hidden love for Orsino in the third person, using the image of a canker-worm to capture the self-consuming pain of silence.',
@@ -169,7 +169,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"Cesario, come\u2014 / For so you shall be while you are a man; / But when in other habits you are seen, / Orsino\'s mistress and his fancy\'s queen."',
+        '"Cesario, come: / For so you shall be while you are a man; / But when in other habits you are seen, / Orsino\'s mistress, and his fancy\'s queen."',
       who: 'Orsino \u2014 Act 5, Scene 1',
       analysis:
         'Orsino\u2019s closing offer keeps addressing Viola as \u201cCesario,\u201d suggesting that the desire formed under her disguise persists beyond the reveal.',
@@ -190,7 +190,7 @@ const data: TextGuideData = {
       quote: '"If this were played upon a stage now, I could condemn it as an improbable fiction."',
       who: 'Fabian \u2014 Act 3, Scene 4',
       analysis:
-        'Fabian\u2019s metatheatrical aside winks at the audience, acknowledging how contrived the comic machinery has become.',
+        'Fabian\u2019s metatheatrical remark winks at the audience, acknowledging how contrived the comic machinery has become.',
     },
     {
       quote: '"Better a witty fool than a foolish wit."',
@@ -200,7 +200,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"O mistress mine, where are you roaming? / O stay and hear, your true-love\'s coming, / That can sing both high and low."',
+        '"O mistress mine, where are you roaming? / O stay and hear, your true love\'s coming, / That can sing both high and low."',
       who: 'Feste \u2014 Act 2, Scene 3',
       analysis:
         'Feste\u2019s song to the revellers is gentle on the surface but insists that present joy must be seized before it fades.',
@@ -212,7 +212,7 @@ const data: TextGuideData = {
         'Viola\u2019s first line establishes her as a stranger and frames Illyria as an unknown, almost dreamlike country shaped by her arrival.',
     },
     {
-      quote: '"Disguise, I see thou art a wickedness, / Wherein the pregnant enemy does much."',
+      quote: '"Disguise, I see thou art a wickedness / Wherein the pregnant enemy does much."',
       who: 'Viola \u2014 Act 2, Scene 2',
       analysis:
         'Viola recognises that her own disguise has unintentionally ensnared Olivia, acknowledging the moral danger of pretence.',
@@ -468,7 +468,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: 'tn-17',
     question:
-      'What does Orsino\u2019s closing line \u201cCesario, come \u2014 for so you shall be while you are a man\u201d suggest about desire in the play?',
+      'What does Orsino\u2019s closing line \u201cCesario, come: / For so you shall be while you are a man\u201d suggest about desire in the play?',
     type: 'multiple-choice',
     options: [
       'Orsino is confused and cannot remember her name',

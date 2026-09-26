@@ -24,6 +24,15 @@ import { useState } from 'react'
  * marks; both are now described. POEM_WORDS does not record the poem, so the
  * measure caps it at 20; recorded at 89 words, the cap would be 13, and this
  * page would be over it.
+ *
+ * Corrected again the same day, removing claims rather than adding quotation.
+ * The paraphrase card called the stanza 4 wind empty; the poem's adjective is
+ * hollow. The remark that Holub wanted poems read "without feeling tricked"
+ * had no source; his documented remark (Vecerni Praha, 1963) is about writing
+ * for people who do not read poetry, and the page now paraphrases that. The
+ * footer said the translation first appeared in the 1967 Penguin; Holub was
+ * first published in English in the Observer in 1962, so that claim is gone.
+ * The layout's title no longer ends in GCSE, which the badges above deny.
  */
 
 /* ─── Expandable Section Component ─────────────────────────── */
@@ -408,9 +417,9 @@ export default function TheDoorPage() {
                   Holub wrote in Czech; the version studied in English schools is Ian Milner&apos;s
                   translation. This is worth a sentence in an essay (AO3): the plain, conversational
                   English diction reflects both Holub&apos;s own anti-ornamental style and the
-                  translator&apos;s choices. Holub himself approved of plainness; he said he wanted
-                  poems that ordinary people, including scientists, could read without feeling
-                  tricked.
+                  translator&apos;s choices. Holub himself approved of plainness; he said he
+                  preferred to write for people who did not read poetry, and wanted them to read
+                  poems as plainly as they would read a newspaper.
                 </p>
               </div>
             </div>
@@ -506,9 +515,9 @@ export default function TheDoorPage() {
               />
               <QuoteCard
                 paraphrase
-                quote="A wind described as empty"
+                quote="A wind described as hollow"
                 speaker="Stanza 4"
-                analysis="Describing the wind itself as empty transfers emptiness from the world to the wind: even what moves out there may be vacant. This is the poem at its bleakest, conceding the worst case honestly. The concession is strategic: because the speaker has admitted the possibility of nothing, the final command cannot be dismissed as wishful thinking. The honesty buys the optimism."
+                analysis="Describing the wind itself as hollow transfers emptiness from the world to the wind: even what moves out there may be vacant. This is the poem at its bleakest, conceding the worst case honestly. The concession is strategic: because the speaker has admitted the possibility of nothing, the final command cannot be dismissed as wishful thinking. The honesty buys the optimism."
               />
               <QuoteCard
                 quote="there'll be a draught"
@@ -721,8 +730,7 @@ export default function TheDoorPage() {
           is <strong>in copyright</strong>. In line with fair dealing for criticism and review (CDPA
           1988 s.30), this guide quotes only brief phrases for the purpose of analysis. Students
           should read the full poem in a licensed edition: <em>Poems Before &amp; After</em>{' '}
-          (Bloodaxe Books), or the Penguin <em>Selected Poems</em> (1967), where the translation
-          first appeared.
+          (Bloodaxe Books), or the Penguin <em>Selected Poems</em> (1967).
         </p>
       </footer>
     </>

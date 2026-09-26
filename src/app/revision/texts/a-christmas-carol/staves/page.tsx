@@ -7,6 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { t } from '@/lib/i18n/t'
+import { StoryVisuals } from '@/components/study-guide/visuals/story-visuals'
+import { guide as studyGuide } from '@/data/study-guides/a-christmas-carol'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -61,10 +63,10 @@ const staves: StaveData[] = [
     title: "Marley's Ghost",
     subtitle: "Establishing Scrooge's isolation and the supernatural warning",
     summary: [
-      'The novella opens with the blunt declaration that "Old Marley was as dead as a door-nail." Dickens establishes an intimate, conversational relationship with the reader from the first paragraph, directly addressing us and debating the aptness of the simile. This technique makes the reader feel personally involved in the moral lesson to come.',
+      'The novella\'s first paragraph ends with the blunt declaration that "Old Marley was as dead as a door-nail." Dickens establishes an intimate, conversational relationship with the reader from the first paragraph, directly addressing us and debating the aptness of the simile. This technique makes the reader feel personally involved in the moral lesson to come.',
       'We are introduced to Ebenezer Scrooge on Christmas Eve at his counting-house. Dickens uses an extraordinary barrage of negative adjectives to define him: "a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!" The listing technique creates a sense of relentless, mechanical greed. Scrooge is cold in every sense -- he keeps his office freezing, refuses to spend money on coal, and has frozen out all human warmth from his life. The pathetic fallacy is explicit: "The cold within him froze his old features, nipped his pointed nose, shrivelled his cheek, stiffened his gait."',
       'Three encounters establish Scrooge\'s hostility to Christmas and humanity. His nephew Fred visits with a cheerful invitation to dinner, which Scrooge dismisses with his famous "Bah! Humbug!" Fred\'s speech defending Christmas as "the only time I know of, in the long calendar of the year, when men and women seem by one consent to open their shut-up hearts freely" provides the novella\'s moral thesis in miniature. Two charity collectors ask for donations for the poor, and Scrooge responds with the callous suggestion that the poor should go to prisons and workhouses, and if they would rather die, "they had better do it, and decrease the surplus population." This directly echoes the Malthusian economics that Dickens despised. Finally, Scrooge grudgingly allows Bob Cratchit a single day off for Christmas, complaining about paying "a day\'s wages for no work."',
-      'That evening, Marley\'s ghost appears. The ghost wears a heavy chain "made of cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel." Each link represents a selfish act committed during life. Marley delivers the novella\'s most important moral message: "Mankind was my business. The common welfare was my business; charity, mercy, forbearance, and benevolence were, all, my business." He warns Scrooge that three spirits will visit him, offering the chance to escape Marley\'s fate.',
+      'That evening, Marley\'s ghost appears. The ghost wears a heavy chain made "of cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel." Each link represents a selfish act committed during life. Marley delivers the novella\'s most important moral message: "Mankind was my business. The common welfare was my business; charity, mercy, forbearance, and benevolence, were, all, my business." He warns Scrooge that three spirits will visit him, offering the chance to escape Marley\'s fate.',
     ],
     keyMoments: [
       "The opening declaration of Marley's death establishes the narrative voice",
@@ -77,7 +79,7 @@ const staves: StaveData[] = [
     quotes: [
       {
         quote:
-          '"Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"',
+          '"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"',
         context: "The narrator's introduction of Scrooge in the opening pages.",
         analysis:
           'Dickens uses a listing technique with seven consecutive adjectives, each suggesting a different type of physical violence or theft. The progressive participles ("-ing" endings) create a relentless, grinding rhythm that mirrors Scrooge\'s mechanical approach to life. The exclamatory sentence and direct address ("Scrooge!") involve the reader as witness. Notice that every adjective describes taking -- Scrooge is defined entirely by what he extracts from the world, never by what he gives.',
@@ -92,14 +94,14 @@ const staves: StaveData[] = [
         devices: ['Pathetic fallacy', 'Metaphor', 'Foreshadowing', 'Verb choice'],
       },
       {
-        quote: '"Are there no prisons? Are there no workhouses?"',
+        quote: '"Are there no prisons?" ... "And the Union workhouses?"',
         context: "Scrooge's response to the charity collectors.",
         analysis:
-          'Scrooge parrots the language of Victorian utilitarian policy. The rhetorical questions are intended to dismiss responsibility -- if institutions exist, why should he personally help? Dickens makes the reader hear how cruel this reasoning sounds when spoken aloud by an individual. The Ghost of Christmas Present throws these exact words back at Scrooge in Stave Three, transforming them from dismissal into accusation.',
+          'Scrooge parrots the language of Victorian utilitarian policy. The rhetorical questions are intended to dismiss responsibility -- if institutions exist, why should he personally help? Dickens makes the reader hear how cruel this reasoning sounds when spoken aloud by an individual. The Ghost of Christmas Present throws his own words back at Scrooge in Stave Three, transforming them from dismissal into accusation.',
         devices: ['Rhetorical questions', 'Dramatic irony', 'Political allusion'],
       },
       {
-        quote: '"I wear the chain I forged in life. I made it link by link, and yard by yard."',
+        quote: '"I wear the chain I forged in life... I made it link by link, and yard by yard."',
         context: "Marley's ghost explaining the chain he wears.",
         analysis:
           'The chain is Dickens\'s central metaphor for the consequences of selfishness. The craftsmanship language -- "forged," "link by link," "yard by yard" -- makes greed feel deliberate and cumulative. Each selfish act adds weight. The first-person ownership ("I forged," "I made") emphasises personal responsibility. The chain is composed of "cash-boxes, keys, padlocks, ledgers, deeds" -- the very tools of commerce become instruments of eternal punishment.',
@@ -107,7 +109,7 @@ const staves: StaveData[] = [
       },
       {
         quote:
-          '"Mankind was my business. The common welfare was my business; charity, mercy, forbearance, and benevolence were, all, my business."',
+          '"Mankind was my business. The common welfare was my business; charity, mercy, forbearance, and benevolence, were, all, my business."',
         context: "Marley's anguished cry to Scrooge.",
         analysis:
           'Marley redefines the word "business" from commerce to compassion. This is Dickens\'s thesis statement for the entire novella. The repetition of "my business" with increasing moral weight creates an anaphoric pattern that hammers home the message. The listing of virtues -- "charity, mercy, forbearance, and benevolence" -- contrasts sharply with the earlier listing of Scrooge\'s vices. Marley has learned too late what his true occupation should have been.',
@@ -143,7 +145,7 @@ const staves: StaveData[] = [
       "The Ghost of Christmas Past appears as an extraordinary, contradictory figure: it is both old and young, both strong and gentle, with a bright light shining from its head. The spirit carries a cap shaped like an extinguisher, which can dim its light. This light symbolises truth and memory -- things Scrooge has tried to suppress. The ghost's physical ambiguity reflects the nature of memory itself: it belongs to every age simultaneously.",
       'The spirit takes Scrooge back to his childhood. The first vision shows young Scrooge as "a solitary child, neglected by his friends," left alone at boarding school during the Christmas holidays while other boys went home. Scrooge weeps at the sight of his younger self. This is the emotional key to the entire novella: Dickens shows that Scrooge\'s cruelty did not emerge from nowhere but grew from loneliness and neglect. Understanding the past is the necessary first step toward transformation.',
       "Scrooge then sees his beloved sister Fan arriving to bring him home, declaring that \"Father is so much kinder than he used to be.\" This brief mention of Scrooge's harsh father suggests a cycle of emotional coldness passed down through generations. Fan's warmth and love are the antithesis of Scrooge's current isolation, and her early death (she is Fred's mother) adds poignancy -- Scrooge has rejected the one living link to the person who loved him most.",
-      'The vision of Fezziwig\'s warehouse party is crucial. Old Fezziwig, Scrooge\'s former employer, spends only "three or four pounds" on a Christmas party but creates enormous joy. Scrooge himself recognises the power an employer holds: "He has the power to render us happy or unhappy; to make our service light or burdensome." This is a direct comment on Scrooge\'s own treatment of Bob Cratchit and foreshadows his eventual decision to raise Bob\'s salary.',
+      'The vision of Fezziwig\'s warehouse party is crucial. Old Fezziwig, Scrooge\'s former employer, spends only "a few pounds" on a Christmas party but creates enormous joy. Scrooge himself recognises the power an employer holds: "He has the power to render us happy or unhappy; to make our service light or burdensome." This is a direct comment on Scrooge\'s own treatment of Bob Cratchit and foreshadows his eventual decision to raise Bob\'s salary.',
       'The final and most painful vision shows Belle, Scrooge\'s former fiancee, releasing him from their engagement because "another idol has displaced me... a golden one." The word "idol" carries religious weight -- Scrooge has committed idolatry by worshipping money instead of love. Belle is then shown years later, happily married with children in a warm, loving home. Scrooge sees the domestic happiness he sacrificed for wealth. He begs the spirit to show him no more and forces the extinguisher cap over the ghost\'s head, trying to suppress the light of truth -- but the light cannot be fully extinguished.',
     ],
     keyMoments: [
@@ -157,7 +159,8 @@ const staves: StaveData[] = [
     quotes: [
       {
         quote: '"A solitary child, neglected by his friends, is left there still."',
-        context: 'The narrator describes the vision of young Scrooge alone at school.',
+        context:
+          'The Ghost of Christmas Past describes the vision of young Scrooge alone at school.',
         analysis:
           'This is the emotional key to Scrooge\'s entire character. "Solitary" and "neglected" show that his adult isolation began in childhood -- he was not born cold but was made cold by abandonment. "Left there still" is devastating: the child is still waiting, still alone. Dickens implies that the lonely boy is still inside the old miser, buried but not gone. This moment generates the reader\'s sympathy and makes Scrooge\'s redemption feel psychologically real rather than merely magical.',
         devices: ['Pathos', 'Characterisation', 'Symbolism'],
@@ -199,7 +202,7 @@ const staves: StaveData[] = [
       },
       {
         heading: 'Emotional register and pathos',
-        body: 'Stave Two shifts the tone from the satirical comedy of Stave One to genuine emotional depth. When Scrooge sees his younger self, he weeps; his "lip was trembling." Dickens allows the reader to see vulnerability beneath the hard exterior. This shift is essential to the novella\'s project: we cannot wish for Scrooge\'s redemption unless we first understand his pain. The pathos is never sentimental -- it is grounded in specific, psychologically credible memories.',
+        body: 'Stave Two shifts the tone from the satirical comedy of Stave One to genuine emotional depth. When Scrooge sees his younger self, he weeps; even before that, the Ghost has noticed "Your lip is trembling." Dickens allows the reader to see vulnerability beneath the hard exterior. This shift is essential to the novella\'s project: we cannot wish for Scrooge\'s redemption unless we first understand his pain. The pathos is never sentimental -- it is grounded in specific, psychologically credible memories.',
       },
       {
         heading: 'Antithesis and moral contrast',
@@ -220,14 +223,14 @@ const staves: StaveData[] = [
     summary: [
       'The Ghost of Christmas Present is a "jolly Giant" dressed in a green robe bordered with white fur, seated on a throne made of turkeys, geese, sausages, mince-pies, plum-puddings, barrels of oysters, cherry-cheeked apples, and immense twelfth-cakes. The abundance is deliberate: this spirit embodies generosity, celebration, and the sharing of plenty. Its torch, shaped like Plenty\'s horn (cornucopia), sprinkles a special incense on the food of the poor, improving their meagre dinners. This detail is Dickens\'s metaphor for the transformative power of the Christmas spirit.',
       'The spirit takes Scrooge to the streets of London on Christmas morning, where even the poorest families are celebrating. The extended description of the food markets, the church bells, and the families hurrying to dinner creates a panoramic portrait of a city united by shared festivity. Dickens is careful to show that joy does not require wealth -- the poorest households celebrate with as much spirit as the richest.',
-      'The centrepiece of Stave Three is the Cratchit family\'s Christmas dinner. Bob Cratchit earns only fifteen shillings a week -- desperately poor even by Victorian standards. Their goose is small, their pudding tiny, and the entire family works to prepare the meal. Yet Dickens describes the dinner with such warmth and love that it becomes a feast: "There never was such a goose." The family\'s gratitude transforms poverty into abundance. Tiny Tim, Bob\'s youngest son, sits close to his father, supported by a crutch. His famous line -- "God bless Us, Every One!" -- is a prayer for universal blessing that embodies the selfless generosity Scrooge must learn.',
+      'The centrepiece of Stave Three is the Cratchit family\'s Christmas dinner. Bob Cratchit earns only fifteen shillings a week -- desperately poor even by Victorian standards. Their goose is small, their pudding tiny, and the entire family works to prepare the meal. Yet Dickens describes the dinner with such warmth and love that it becomes a feast: "There never was such a goose." The family\'s gratitude transforms poverty into abundance. Tiny Tim, Bob\'s youngest son, sits close to his father, supported by a crutch. His famous line -- "God bless us every one!" -- is a prayer for universal blessing that embodies the selfless generosity Scrooge must learn.',
       'The Ghost warns Scrooge that "if these shadows remain unaltered by the Future, the child will die." The conditional "if" places moral responsibility squarely on Scrooge -- and on the reader. Tiny Tim\'s death is not inevitable; it will happen only if society refuses to care for its most vulnerable. When Scrooge protests, the Ghost throws his own earlier words back at him: "If he be like to die, he had better do it, and decrease the surplus population." This repetition is devastating -- Scrooge is forced to hear his own callousness applied to a specific, loveable child.',
-      'The stave\'s most politically charged moment comes near the end. The Ghost reveals two children hidden beneath his robe: "They were a boy and a girl. Yellow, meagre, ragged, scowling, wolfish." They are named Ignorance (the boy) and Want (the girl). The Ghost warns: "Beware them both, and all of their degree, but most of all beware this boy, for on his brow I see that written which is Doom." This is Dickens\'s most explicit social message, aimed directly at the Victorian ruling class: if you ignore poverty and deny education, the consequences will destroy society.',
+      'The stave\'s most politically charged moment comes near the end. The Ghost reveals two children hidden beneath his robe: "They were a boy and girl. Yellow, meagre, ragged, scowling, wolfish." They are named Ignorance (the boy) and Want (the girl). The Ghost warns: "Beware them both, and all of their degree, but most of all beware this boy, for on his brow I see that written which is Doom." This is Dickens\'s most explicit social message, aimed directly at the Victorian ruling class: if you ignore poverty and deny education, the consequences will destroy society.',
     ],
     keyMoments: [
       'The Ghost of Christmas Present surrounded by abundance',
       "The Cratchit family's Christmas dinner",
-      'Tiny Tim\'s "God bless Us, Every One!"',
+      'Tiny Tim\'s "God bless us every one!"',
       "The Ghost's warning about Tiny Tim's death",
       "Scrooge's own words thrown back at him",
       "The children Ignorance and Want beneath the Ghost's robe",
@@ -236,10 +239,10 @@ const staves: StaveData[] = [
     quotes: [
       {
         quote:
-          '"Oh, a wonderful pudding! Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs Cratchit since their marriage."',
+          '"Oh, a wonderful pudding! Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs. Cratchit since their marriage."',
         context: 'The Cratchit family celebrates their modest Christmas dinner.',
         analysis:
-          'The comedy and warmth of Bob\'s deadpan compliment disguises the family\'s real poverty. Their pudding is objectively tiny -- Dickens tells us it was "a small one for so large a family" -- but the Cratchits\' love and gratitude transform it into a triumph. Dickens uses this moment to argue that wealth is not the source of happiness; generosity of spirit is. The word "calmly" adds humour -- Bob is performing gravity to honour his wife\'s effort.',
+          'The comedy and warmth of Bob\'s deadpan compliment disguises the family\'s real poverty. Their pudding is objectively tiny -- Dickens tells us that nobody "said or thought it was at all a small pudding for a large family" -- but the Cratchits\' love and gratitude transform it into a triumph. Dickens uses this moment to argue that wealth is not the source of happiness; generosity of spirit is. The word "calmly" adds humour -- Bob is performing gravity to honour his wife\'s effort.',
         devices: ['Irony', 'Hyperbole', 'Pathos', 'Characterisation'],
       },
       {
@@ -300,8 +303,8 @@ const staves: StaveData[] = [
     summary: [
       'The Ghost of Christmas Yet to Come is the most terrifying of the three spirits. It is described as a "solemn Phantom, draped and hooded" in a deep black garment that conceals everything except one outstretched hand. It does not speak a single word throughout the entire stave. Its silence makes it more frightening than either of the previous ghosts -- it offers no comfort, no explanation, and no reassurance. The phantom represents death itself, and its silence reflects the absolute finality of death.',
       'The phantom takes Scrooge to the City of London, where a group of businessmen discuss a recent death with callous indifference. "It\'s likely to be a very cheap funeral," one says, "for upon my life I don\'t know of anybody to go to it." No one mourns the dead man; no one cares. The conversation is chillingly casual -- these men, who are Scrooge\'s peers, treat death as a minor inconvenience. Scrooge does not yet realise they are discussing him.',
-      "In a darker scene, Scrooge is taken to Old Joe's shop, where a laundress, a charwoman, and an undertaker's assistant are selling items stolen from a dead man's house. The charwoman has taken his bed curtains -- \"he wasn't likely to catch cold without 'em\" -- and even the shirt he was to be buried in. This grotesque comedy reveals the total absence of love or respect for the dead man. His possessions, accumulated through a lifetime of greed, are picked over by thieves before his body is even cold.",
-      'Scrooge begs to see "some tenderness connected with a death" and is shown the Cratchit family mourning Tiny Tim. The contrast is devastating. Where the unknown dead man is robbed and mocked, Tiny Tim is genuinely mourned. Bob can barely speak: "My little, little child! My little child!" The repetition of "little" is heartbreaking in its simplicity. Dickens uses the juxtaposition to prove his point: a life of love is remembered with grief; a life of greed is remembered with contempt.',
+      "In a darker scene, Scrooge is taken to Old Joe's shop, where a laundress, a charwoman, and an undertaker's assistant are selling items stolen from a dead man's house. The charwoman has taken his bed curtains and his blankets (\"He isn't likely to take cold without 'em\"), and even the shirt he was to be buried in. This grotesque comedy reveals the total absence of love or respect for the dead man. His possessions, accumulated through a lifetime of greed, are picked over by thieves before his body is even cold.",
+      'Scrooge begs to see "some tenderness connected with a death" and is shown the Cratchit family mourning Tiny Tim. The contrast is devastating. Where the unknown dead man is robbed and mocked, Tiny Tim is genuinely mourned. Bob can barely speak: "My little, little child! ... My little child!" The repetition of "little" is heartbreaking in its simplicity. Dickens uses the juxtaposition to prove his point: a life of love is remembered with grief; a life of greed is remembered with contempt.',
       'Finally, Scrooge is led to a churchyard and shown a gravestone bearing his own name. The revelation is the stave\'s climax. Scrooge clings to the phantom\'s robe and makes his desperate vow: "I will honour Christmas in my heart, and try to keep it all the year. I will live in the Past, the Present, and the Future. The Spirits of all Three shall strive within me." The word "try" is significant -- it acknowledges that change requires ongoing effort, not a single dramatic gesture.',
     ],
     keyMoments: [
@@ -316,7 +319,7 @@ const staves: StaveData[] = [
     quotes: [
       {
         quote:
-          '"Are these the shadows of the things that Will be, or are they shadows of the things that May be, only?"',
+          '"Are these the shadows of the things that Will be, or are they shadows of things that May be, only?"',
         context: 'Scrooge pleads with the Ghost of Christmas Yet to Come.',
         analysis:
           'This question is the philosophical pivot of the entire novella. Scrooge is asking whether the future is fixed or can be changed. The distinction between "Will be" (definite) and "May be" (conditional) is crucial. The novella\'s moral depends on the answer being "may be" -- free will exists, and redemption is always possible. Dickens uses this moment to reject fatalism and assert that every person has the agency to choose a better path.',
@@ -337,17 +340,17 @@ const staves: StaveData[] = [
         devices: ['Self-recognition', 'Dramatic irony', 'Foreshadowing'],
       },
       {
-        quote: '"Spirit! hear me! I am not the man I was!"',
+        quote: '"Spirit! ... hear me! I am not the man I was."',
         context: 'Scrooge pleads at his own gravestone.',
         analysis:
           'The exclamatory urgency shows Scrooge\'s desperation. "I am not the man I was" claims transformation in the present tense -- he has already begun to change. The journey through past, present, and future has worked. Scrooge no longer identifies with his former self; he has separated the person he was from the person he chooses to be. The direct address to the silent spirit creates a powerful one-sided dialogue that emphasises Scrooge\'s isolation -- he is pleading with something that cannot or will not answer.',
         devices: ['Exclamatory sentence', 'Present tense', 'Direct address', 'Irony'],
       },
       {
-        quote: '"My little, little child! My little child!"',
+        quote: '"My little, little child! ... My little child!"',
         context: 'Bob Cratchit mourns Tiny Tim.',
         analysis:
-          'The heartbreaking simplicity of this line is its power. The repetition of "little" -- four times in two short phrases -- conveys the overwhelming grief of a parent losing a child. There are no elaborate words, no literary flourishes; Bob\'s grief is too raw for eloquence. Dickens uses simple language to create maximum emotional impact. The diminutive "little" also reminds the reader of how small and vulnerable Tiny Tim was, making society\'s failure to protect him feel even more criminal.',
+          'The heartbreaking simplicity of this line is its power. The repetition of "little" -- three times in two short phrases -- conveys the overwhelming grief of a parent losing a child. There are no elaborate words, no literary flourishes; Bob\'s grief is too raw for eloquence. Dickens uses simple language to create maximum emotional impact. The diminutive "little" also reminds the reader of how small and vulnerable Tiny Tim was, making society\'s failure to protect him feel even more criminal.',
         devices: ['Repetition', 'Pathos', 'Simple diction', 'Diminutive'],
       },
     ],
@@ -395,10 +398,10 @@ const staves: StaveData[] = [
     quotes: [
       {
         quote:
-          '"I am as light as a feather, I am as happy as an angel, I am as merry as a school-boy."',
+          '"I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy."',
         context: 'Scrooge wakes on Christmas morning, transformed.',
         analysis:
-          'The triple simile mirrors the triple structure of the ghostly visits. Each comparison undoes one quality of the old Scrooge: "light" replaces heaviness of spirit, "happy" replaces misery, "merry" replaces hostility to joy. The choice of "school-boy" is particularly resonant -- it echoes the lonely child of Stave Two, now reclaimed as a source of joy rather than pain. The anaphoric "I am" repeated three times asserts a new identity with confidence and delight.',
+          'The triple simile (a fourth, "I am as giddy as a drunken man", follows in the next sentence) mirrors the triple structure of the ghostly visits. Each comparison undoes one quality of the old Scrooge: "light" replaces heaviness of spirit, "happy" replaces misery, "merry" replaces hostility to joy. The choice of "schoolboy" is particularly resonant -- it echoes the lonely child of Stave Two, now reclaimed as a source of joy rather than pain. The anaphoric "I am" repeated three times asserts a new identity with confidence and delight.',
         devices: ['Triple structure', 'Simile', 'Anaphora', 'Structural echo'],
       },
       {
@@ -436,7 +439,7 @@ const staves: StaveData[] = [
     languageAnalysis: [
       {
         heading: 'Pace, rhythm, and breathless joy',
-        body: 'The language of Stave Five is fast, breathless, and joyful. Short sentences pile up: "He dressed himself all in his best, and at last got out into the streets." Exclamation marks multiply. Scrooge\'s speech is giddy and fragmented. The pace contrasts sharply with the slow, heavy dread of Stave Four. Dickens uses rhythm to make the reader feel Scrooge\'s liberation -- the prose itself seems lighter and faster, as if it has been freed from a weight.',
+        body: "The language of Stave Five is fast, breathless, and joyful. Short sentences pile up: \"He dressed himself 'all in his best,' and at last got out into the streets.\" Exclamation marks multiply. Scrooge's speech is giddy and fragmented. The pace contrasts sharply with the slow, heavy dread of Stave Four. Dickens uses rhythm to make the reader feel Scrooge's liberation -- the prose itself seems lighter and faster, as if it has been freed from a weight.",
       },
       {
         heading: 'Comedy and humour',
@@ -492,7 +495,7 @@ export default async function StavesPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              AQA / Edexcel / Eduqas
+              AQA / Edexcel / OCR / Eduqas
             </Badge>
           </div>
 
@@ -507,6 +510,9 @@ export default async function StavesPage() {
           </p>
         </div>
       </section>
+
+      {/* The key scenes, part by part, animated. See scripts/mount-story-visuals.mjs. */}
+      <StoryVisuals guide={studyGuide} scenesOnly />
 
       {/* Table of contents */}
       <section>

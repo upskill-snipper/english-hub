@@ -60,7 +60,7 @@ const essayPlans: EssayPlan[] = [
       {
         point:
           "Shakespeare initially presents Romeo's love for Rosaline as conventional and shallow, using Petrarchan cliches to show love as a performance rather than a genuine emotion.",
-        quotation: '"O brawling love, O loving hate, / O anything of nothing first create!"',
+        quotation: '"O brawling love! O loving hate! / O anything, of nothing first create!"',
         analysis:
           'The stacked oxymorons sound rehearsed and artificial, revealing that Romeo is performing the role of a lover rather than experiencing real feeling. The paradoxes cancel each other out, suggesting this "love" is empty. Shakespeare uses this as a foil so the audience can measure the depth of Romeo\'s later love for Juliet against this hollow starting point.',
       },
@@ -68,7 +68,7 @@ const essayPlans: EssayPlan[] = [
         point:
           'The love between Romeo and Juliet is presented as mutual, transformative and sacred through the shared sonnet at their first meeting.',
         quotation:
-          '"If I profane with my unworthiest hand / This holy shrine, the gentle sin is this: / My lips, two blushing pilgrims, ready stand / To smooth that rough touch with a tender kiss."',
+          '"If I profane with my unworthiest hand / This holy shrine, the gentle sin is this, / My lips, two blushing pilgrims, ready stand / To smooth that rough touch with a tender kiss."',
         analysis:
           'The pilgrim-and-saint conceit elevates physical attraction into a religious experience. By structuring their first exchange as a shared sonnet - Romeo speaks the first quatrain, Juliet responds with the second, they share the third and the couplet - Shakespeare shows them completing each other\'s thoughts. The religious language ("shrine," "pilgrims," "saints") sanctifies their love, setting it apart from Mercutio\'s bawdy reductions and the Nurse\'s pragmatism.',
       },
@@ -76,7 +76,7 @@ const essayPlans: EssayPlan[] = [
         point:
           "Juliet's love matures her from obedient daughter to courageous, independent woman, and Shakespeare presents this love as intellectually sophisticated rather than merely emotional.",
         quotation:
-          '"What\'s in a name? That which we call a rose / By any other word would smell as sweet."',
+          '"What\'s in a name? That which we call a rose / By any other name would smell as sweet."',
         analysis:
           "Juliet's philosophical questioning of names challenges the entire social structure that sustains the feud. Her argument - that identity is inherent, not imposed by family labels - is logically rigorous and radical for a thirteen-year-old girl in a patriarchal society. Shakespeare uses love as the catalyst for intellectual awakening, showing that genuine passion stimulates thought rather than silencing it.",
       },
@@ -84,7 +84,7 @@ const essayPlans: EssayPlan[] = [
         point:
           'Shakespeare links love and death throughout the play, suggesting that in a society poisoned by hatred, true love can only be fully expressed through self-destruction.',
         quotation:
-          '"These violent delights have violent ends / And in their triumph die, like fire and powder, / Which as they kiss consume."',
+          '"These violent delights have violent ends, / And in their triumph die; like fire and powder, / Which as they kiss consume."',
         analysis:
           'The Friar\'s simile of "fire and powder" presents love as a chemical reaction: beautiful in its intensity but inherently self-destructive. The verb "consume" means both to fulfil and to destroy. Shakespeare foreshadows the lovers\' deaths while also arguing that the speed and intensity of their love is inseparable from its tragedy - you cannot have one without the other.',
       },
@@ -114,7 +114,7 @@ const essayPlans: EssayPlan[] = [
         point:
           'Tybalt embodies the feud at its most dangerous: he actively seeks violence as a matter of personal honour, transforming inherited hatred into individual aggression.',
         quotation:
-          '"What, drawn, and talk of peace! I hate the word, / As I hate hell, all Montagues, and thee."',
+          '"What, drawn, and talk of peace? I hate the word / As I hate hell, all Montagues, and thee."',
         analysis:
           'The tricolon places hatred of the Montagues between hatred of hell and hatred of Benvolio (a peacemaker), equating family enmity with damnation. Tybalt\'s contempt for "peace" as a concept reveals how the honour code has distorted values: violence is virtuous, peace is cowardly. Shakespeare presents him as the feud\'s most willing instrument.',
       },
@@ -122,7 +122,7 @@ const essayPlans: EssayPlan[] = [
         point:
           'The conflict between parent and child mirrors the public feud, showing that patriarchal power within the family is as destructive as violence in the streets.',
         quotation:
-          '"Hang thee, young baggage! Disobedient wretch! / I tell thee what: get thee to church o\' Thursday, / Or never after look me in the face."',
+          '"Hang thee young baggage, disobedient wretch! / ... get thee to church a Thursday, / Or never after look me in the face."',
         analysis:
           'Capulet\'s shift from indulgent father to domestic tyrant is abrupt and shocking. The insults "baggage" and "wretch" dehumanise Juliet, reducing her to an object that has failed to fulfil its function. His ultimatum - marry or be disowned - weaponises economic dependence. Shakespeare draws a direct parallel between the public violence of the feud and the private violence of patriarchal authority.',
       },
@@ -153,7 +153,7 @@ const essayPlans: EssayPlan[] = [
         point:
           "Juliet is initially presented as an obedient daughter who defines herself in relation to her parents' wishes.",
         quotation:
-          '"I\'ll look to like, if looking liking move; / But no more deep will I endart mine eye / Than your consent gives strength to make it fly."',
+          '"I\'ll look to like, if looking liking move: / But no more deep will I endart mine eye / Than your consent gives strength to make it fly."',
         analysis:
           'Juliet\'s careful, conditional phrasing ("if looking liking move") is deferential but not passive: she agrees to look but reserves the right to feel nothing. The archery metaphor ("endart mine eye") is controlled and precise, suggesting intelligence beneath her compliance. Shakespeare shows a young woman navigating patriarchal expectations with quiet skill.',
       },
@@ -161,7 +161,7 @@ const essayPlans: EssayPlan[] = [
         point:
           "Meeting Romeo catalyses Juliet's intellectual independence; she begins to question the social structures that define her world.",
         quotation:
-          '"What\'s in a name? That which we call a rose / By any other word would smell as sweet."',
+          '"What\'s in a name? That which we call a rose / By any other name would smell as sweet."',
         analysis:
           "The balcony speech marks Juliet's philosophical awakening. She challenges the idea that identity is determined by a family name - an argument that strikes at the root of the patriarchal system, which assigns women to families and transfers them like property through marriage. Her reasoning is logical, systematic, and far more intellectually mature than Romeo's romantic effusions in the same scene.",
       },
@@ -169,7 +169,7 @@ const essayPlans: EssayPlan[] = [
         point:
           "Juliet's defiance of her father represents a direct challenge to patriarchal authority, and Shakespeare makes the cost of that defiance brutally clear.",
         quotation:
-          '"Is there no pity sitting in the clouds / That sees into the bottom of my grief?"',
+          '"Is there no pity sitting in the clouds, / That sees into the bottom of my grief?"',
         analysis:
           'After being abandoned by both parents and the Nurse, Juliet appeals directly to heaven, bypassing all human authority. The phrase "bottom of my grief" suggests a depth of suffering that no one around her can reach. Shakespeare isolates Juliet completely at this moment: the patriarchal world offers her no support because she has defied its central demand - obedience.',
       },
@@ -206,7 +206,7 @@ const essayPlans: EssayPlan[] = [
         point:
           'Shakespeare builds fate through a pattern of ominous premonitions that the characters recognise but cannot act upon.',
         quotation:
-          '"I fear too early, for my mind misgives / Some consequence yet hanging in the stars."',
+          '"I fear too early: for my mind misgives / Some consequence yet hanging in the stars."',
         analysis:
           'Romeo senses his fate before the Capulet feast but goes anyway, establishing a pattern in which characters perceive their doom but are unable to change course. The phrase "hanging in the stars" literalises the astrological metaphor: Romeo\'s destiny is written above him. Shakespeare uses these premonitions to create dramatic irony and to suggest that the characters are drawn towards their destruction by a force they can feel but not resist.',
       },
@@ -214,14 +214,14 @@ const essayPlans: EssayPlan[] = [
         point:
           "The play's catastrophe depends on a sequence of unlucky coincidences - the undelivered letter, Romeo's timing - that can be read as either fate or sheer bad luck.",
         quotation:
-          '"Unhappy fortune! The letter was not nice but full of charge, / Of dear import."',
+          '"Unhappy fortune! By my brotherhood, / The letter was not nice, but full of charge, / Of dear import."',
         analysis:
           'Friar Lawrence\'s exclamation when he learns the letter failed uses the word "fortune," connecting the plot mechanism to the play\'s larger fate motif. The cause - a plague quarantine - is utterly arbitrary, raising the question of whether fate is a deliberate force or simply random chance. Shakespeare refuses to answer definitively, leaving the audience to weigh cosmic design against human error.',
       },
       {
         point:
           'Romeo\'s final act of defiance - "Then I defy you, stars!" - asserts free will at the moment fate seems most powerful, but his defiance only accelerates the very outcome fate has decreed.',
-        quotation: '"Is it e\'en so? Then I defy you, stars!"',
+        quotation: '"Is it even so? Then I defy you, stars!"',
         analysis:
           'The monosyllabic force of "Then I defy you, stars!" is the play\'s most dramatic assertion of human agency. Romeo chooses to act rather than accept what fate has apparently dictated. But the tragic irony is devastating: his act of defiance - racing to the tomb to die beside Juliet - is exactly what fate requires for the prophecy to be fulfilled. Shakespeare suggests that free will and fate may not be opposites but collaborators in the tragic outcome.',
       },
@@ -259,7 +259,7 @@ const essayPlans: EssayPlan[] = [
         point:
           "Lord Capulet's shift from apparently reasonable father to domestic tyrant dramatises how adult authority, when challenged by youthful independence, reveals itself as raw power.",
         quotation:
-          '"Hang thee, young baggage! Disobedient wretch! / I tell thee what: get thee to church o\' Thursday, / Or never after look me in the face."',
+          '"Hang thee young baggage, disobedient wretch! / ... get thee to church a Thursday, / Or never after look me in the face."',
         analysis:
           'Capulet\'s fury is triggered by disobedience, not by concern for Juliet\'s happiness. The insults reduce her from beloved daughter to disposable property. Shakespeare shows that the surface indulgence of Act 1 ("my will to her consent is but a part") was conditional: the moment Juliet exercises genuine autonomy, the patriarchal mask drops. The scene exposes the generational contract as one-sided: youth must obey, or be destroyed.',
       },
@@ -267,7 +267,7 @@ const essayPlans: EssayPlan[] = [
         point:
           "The Nurse's betrayal - advising Juliet to forget Romeo and marry Paris - shows even the most sympathetic adult prioritising safety and convention over youthful passion.",
         quotation:
-          '"I think it best you married with the County. / O, he\'s a lovely gentleman! / Romeo\'s a dishclout to him."',
+          '"I think it best you married with the County. / O, he\'s a lovely gentleman. / Romeo\'s a dishclout to him."',
         analysis:
           'The Nurse\'s advice is pragmatic and, from an adult perspective, sensible: Paris is wealthy, available, and legitimate. But Shakespeare frames it as a devastating betrayal because it values security over love. The crude comparison of Romeo to a "dishclout" (dishcloth) shows the Nurse reducing transcendent passion to a practical calculation. Her abandonment leaves Juliet completely alone, with no adult ally.',
       },

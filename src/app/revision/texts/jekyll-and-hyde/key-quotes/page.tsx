@@ -99,7 +99,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
       },
       {
         quote:
-          'Mr Utterson the lawyer was a man of a rugged countenance, that was never lighted by a smile... lean, long, dusty, dreary.',
+          'Mr. Utterson the lawyer was a man of a rugged countenance that was never lighted by a smile... lean, long, dusty, dreary...',
         speaker: 'Narrator',
         chapter: 'Chapter 1',
         analysis:
@@ -173,7 +173,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
       },
       {
         quote:
-          'There was something wrong with his appearance; something displeasing, something downright detestable.',
+          'There is something wrong with his appearance; something displeasing, something down-right detestable.',
         speaker: 'Enfield',
         chapter: 'Chapter 1',
         analysis:
@@ -193,7 +193,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
     colour: 'bg-violet-400',
     quotes: [
       {
-        quote: 'If he be Mr Hyde, I shall be Mr Seek.',
+        quote: 'If he be Mr. Hyde... I shall be Mr. Seek.',
         speaker: 'Utterson',
         chapter: 'Chapter 2',
         analysis:
@@ -216,7 +216,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
       },
       {
         quote:
-          'I have had a shock and I shall never recover... I sometimes think if we knew all, we should be more glad to get away.',
+          'I have had a shock... and I shall never recover... I sometimes think if we knew all, we should be more glad to get away.',
         speaker: 'Lanyon',
         chapter: 'Chapter 6',
         analysis:
@@ -230,11 +230,11 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
     quotes: [
       {
         quote:
-          'With ape-like fury, he was trampling his victim underfoot and hailing down a storm of blows.',
+          'With ape-like fury, he was trampling his victim under foot and hailing down a storm of blows.',
         speaker: 'Narrator',
         chapter: 'Chapter 4',
         analysis:
-          '"Ape-like" connects Hyde to Darwinian regression -- the animal within the civilised man. "Storm of blows" makes violence elemental. "Trampling" and "underfoot" reduce the victim to something beneath Hyde\'s feet. Stevenson presents the murder as de-evolution.',
+          '"Ape-like" connects Hyde to Darwinian regression -- the animal within the civilised man. "Storm of blows" makes violence elemental. "Trampling" and "under foot" reduce the victim to something beneath Hyde\'s feet. Stevenson presents the murder as de-evolution.',
       },
       {
         quote: 'The stick... had broken in the middle under the stress of this insensate cruelty.',

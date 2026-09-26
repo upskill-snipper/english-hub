@@ -38,7 +38,7 @@ const data: TextGuideData = {
   author: 'William Shakespeare',
   year: 'c. 1605\u201306',
   category: 'Play',
-  badge: 'Edexcel A-Level / AQA A-Level / OCR A-Level',
+  badge: 'Edexcel A-Level / AQA A-Level / OCR A-Level / Eduqas A-Level / Edexcel IAL',
   intro:
     'King Lear is about a king who gives away his power in exchange for flattery and then finds out what he is worth without it. Lear divides his kingdom between the two daughters who tell him what he wants to hear and disinherits Cordelia, the one who refuses, and within two acts the elder sisters have stripped him of every attendant and turned him out into a storm. Shakespeare tells the same story twice over: the Earl of Gloucester is also tricked into rejecting the child who loves him, and is blinded on stage for helping the King. It is his bleakest tragedy, and it asks what holds a family, a society or a mind together once authority has gone.',
   quickInfo: {
@@ -51,7 +51,7 @@ const data: TextGuideData = {
     'The play opens in the court of the ageing King Lear, who intends to divide his realm between his three daughters and retire. He stages a love test: whichever daughter professes to love him most will receive the largest share. Goneril and Regan, his elder daughters, deliver extravagant speeches of flattery and are rewarded. Cordelia, his youngest and favourite, refuses to perform. Her answer \u2014 "Nothing, my lord" \u2014 enrages Lear, who disinherits her on the spot. The Earl of Kent defends her and is banished. Cordelia leaves with the King of France, who marries her without a dowry. The kingdom is split between Goneril (married to the Duke of Albany) and Regan (married to the Duke of Cornwall). In a parallel subplot, the Earl of Gloucester is deceived by his illegitimate son Edmund into believing that his legitimate son Edgar is plotting against him. Edgar is forced to flee and disguises himself as "Poor Tom", a mad beggar.',
     'Lear attempts to keep his royal retinue of one hundred knights, moving first to Goneril\u2019s household. She rapidly demands he reduce the number, provoking Lear\u2019s first great explosion of rage. The loyal Kent, disguised as the servant Caius, attaches himself to the King, and the Fool accompanies Lear with riddling, melancholy truth-telling. Lear flees to Regan, only to find she is even harsher, and the two sisters together strip him of every attendant. Humiliated, exposed and beginning to unravel, Lear rushes out onto the heath as a great storm breaks. He rages against the elements \u2014 "Blow, winds, and crack your cheeks!" \u2014 and against filial ingratitude. On the heath he encounters Edgar as Poor Tom, whose wild speeches seem to mirror and accelerate his own descent into madness.',
     'The storm scenes form the moral heart of the play. Gloucester, still loyal to the King, helps smuggle him toward Dover, where Cordelia has landed with a French army to rescue her father. For this act of loyalty Gloucester is captured by Cornwall and Regan, who put out his eyes on stage \u2014 one of the most shocking moments in the Shakespearean canon. In the struggle a servant mortally wounds Cornwall. The blinded Gloucester, cast out onto the heath, is led by Edgar (still disguised) and, despairing, asks to be guided to the cliffs of Dover so that he may kill himself. Edgar saves him through a staged fall that teaches Gloucester a painful patience. Lear, meanwhile, wanders the fields half-mad, crowned with wild flowers, uttering fragmentary truths about justice, authority and human nature.',
-    'Cordelia\u2019s forces meet Lear, and father and daughter are briefly reconciled in one of the most tender scenes Shakespeare ever wrote. The French army is nonetheless defeated by the British forces under Edmund, and Lear and Cordelia are captured. Edmund secretly orders their execution. In the final act the subplots converge: Edgar, still disguised, challenges Edmund in single combat and mortally wounds him; Goneril, having poisoned Regan out of jealous rivalry over Edmund, kills herself; the dying Edmund repents and tries to rescind the execution order, but too late. Lear enters carrying the hanged body of Cordelia, howling five times "Never, never, never, never, never" before dying of grief over her. Kent, the Fool having long since vanished from the play, indicates he will follow his master. Albany and Edgar are left to restore a shattered kingdom.',
+    'Cordelia\u2019s forces meet Lear, and father and daughter are briefly reconciled in one of the most tender scenes Shakespeare ever wrote. The French army is nonetheless defeated by the British forces under Edmund, and Lear and Cordelia are captured. Edmund secretly orders their execution. In the final act the subplots converge: Edgar, still disguised, challenges Edmund in single combat and mortally wounds him; Goneril, having poisoned Regan out of jealous rivalry over Edmund, kills herself; the dying Edmund repents and tries to rescind the execution order, but too late. Lear enters carrying the hanged body of Cordelia, crying "Howl, howl, howl, howl!", and later says "Never, never, never, never, never!" before dying of grief over her. Kent, the Fool having long since vanished from the play, indicates he will follow his master. Albany and Edgar are left to restore a shattered kingdom.',
   ],
   characters: [
     {
@@ -72,7 +72,7 @@ const data: TextGuideData = {
     {
       name: 'Regan',
       role: 'Lear\u2019s middle daughter; Duchess of Cornwall',
-      body: 'Regan matches Goneril in cruelty and often exceeds her in performative sadism. She is complicit in the blinding of Gloucester, urging her husband on and physically striking the bound old man. After Cornwall\u2019s death she too pursues Edmund, setting her in fatal competition with her sister. Shakespeare presents the sisters as a pair whose alliance dissolves the moment self-interest diverges, illustrating how loveless power structures destroy themselves.',
+      body: 'Regan matches Goneril in cruelty and often exceeds her in performative sadism. She is complicit in the blinding of Gloucester, urging her husband on and plucking the bound old man by the beard. After Cornwall\u2019s death she too pursues Edmund, setting her in fatal competition with her sister. Shakespeare presents the sisters as a pair whose alliance dissolves the moment self-interest diverges, illustrating how loveless power structures destroy themselves.',
     },
     {
       name: 'Edmund',
@@ -114,7 +114,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Nature and order',
-      body: 'The word "nature" recurs in almost every scene, and each character defines it differently. For Lear, nature means the patriarchal and cosmic order in which children owe fathers unconditional duty. For Edmund, nature is a self-interested force that disregards legitimacy: "Thou, Nature, art my goddess". The storm is both a meteorological event and a symbolic rupture of the natural hierarchy \u2014 the heavens themselves protesting the inversions of the opening scene. Shakespeare draws on contemporary debates about whether the universe is benign, indifferent or actively malign; Gloucester\u2019s appalled "As flies to wanton boys are we to th\u2019 gods; / They kill us for their sport" articulates the bleakest answer the play contains.',
+      body: 'The word "nature" recurs throughout the play, and each character defines it differently. For Lear, nature means the patriarchal and cosmic order in which children owe fathers unconditional duty. For Edmund, nature is a self-interested force that disregards legitimacy: "Thou, Nature, art my goddess". The storm is both a meteorological event and a symbolic rupture of the natural hierarchy \u2014 the heavens themselves protesting the inversions of the opening scene. Shakespeare draws on contemporary debates about whether the universe is benign, indifferent or actively malign; Gloucester\u2019s appalled "As flies to wanton boys are we to the gods, / They kill us for their sport" articulates the bleakest answer the play contains.',
     },
     {
       title: 'Suffering and redemption',
@@ -147,19 +147,19 @@ const data: TextGuideData = {
         'Lear\u2019s curse on Goneril condenses Jacobean anxieties about filial ingratitude into a single image. The biblical resonance of the serpent hints that he reads disobedience as cosmic sin rather than family conflict.',
     },
     {
-      quote: '"Thou shouldst not have been old before thou hadst been wise."',
+      quote: '"Thou shouldst not have been old till thou hadst been wise."',
       who: 'The Fool \u2014 Act 1, Scene 5',
       analysis:
         'The Fool diagnoses Lear\u2019s tragedy in a single line: wisdom has arrived after power has been given away. The proverbial form gives the judgement the weight of folk truth.',
     },
     {
-      quote: '"Blow, winds, and crack your cheeks! rage! blow!"',
+      quote: '"Blow, winds, and crack your cheeks! Rage! blow!"',
       who: 'King Lear \u2014 Act 3, Scene 2',
       analysis:
         'Lear addresses the storm as a sentient participant in his ordeal, personifying the heavens as allies in his rage. The imperative verbs blur internal fury with external weather, dramatising a collapse of the boundary between self and cosmos.',
     },
     {
-      quote: '"I am a man / More sinned against than sinning."',
+      quote: '"I am a man / More sinn\u2019d against than sinning."',
       who: 'King Lear \u2014 Act 3, Scene 2',
       analysis:
         'Lear\u2019s appeal for moral recognition is ambiguous: the audience has seen him behave tyrannically in the opening scene. The line captures his partial self-awareness and the play\u2019s refusal to let him fully own his share of blame.',
@@ -183,7 +183,7 @@ const data: TextGuideData = {
         'Cornwall\u2019s grotesque address to Gloucester\u2019s torn-out eye enacts the play\u2019s motif of blindness in the most literal and violent form imaginable. The contrast between "jelly" and "lustre" captures Shakespeare\u2019s willingness to render horror in physical detail.',
     },
     {
-      quote: '"As flies to wanton boys are we to th\' gods; / They kill us for their sport."',
+      quote: '"As flies to wanton boys are we to the gods, / They kill us for their sport."',
       who: 'Gloucester \u2014 Act 4, Scene 1',
       analysis:
         'Gloucester\u2019s despair articulates the bleakest cosmology of the play: not a benign providence but an arbitrary, cruel divinity. The domestic image of boys and flies makes the injustice unbearably familiar.',
@@ -208,7 +208,7 @@ const data: TextGuideData = {
         'The closing couplet of the play, attributed differently in the two texts, demands a new, painful honesty in the ruined kingdom. It signals a moral code earned only through catastrophe.',
     },
     {
-      quote: '"Pray you, undo this button."',
+      quote: '"Pray you undo this button."',
       who: 'King Lear \u2014 Act 5, Scene 3',
       analysis:
         'Lear\u2019s quietly domestic request as he dies beside Cordelia\u2019s body is one of the most devastating lines in Shakespeare. The smallness of the request against the enormity of the grief exposes the limits of language under extreme feeling.',
@@ -217,7 +217,7 @@ const data: TextGuideData = {
       quote: '"Never, never, never, never, never!"',
       who: 'King Lear \u2014 Act 5, Scene 3',
       analysis:
-        'Five identical monosyllables in iambic pentameter render grief as a rhythmic blow. The absolute finality of the word stands against any redemptive reading of the ending.',
+        'Five repetitions of a two-syllable word, each stressed on its first syllable, make a line of trochees, the reverse of the iambic beat of blank verse, and render grief as a rhythmic blow (the five come from the Folio; the 1608 Quarto has three). The absolute finality of the word stands against any redemptive reading of the ending.',
     },
     {
       quote: '"Thou, Nature, art my goddess; to thy law / My services are bound."',
@@ -226,7 +226,7 @@ const data: TextGuideData = {
         'Edmund\u2019s opening soliloquy replaces patriarchal and providential order with a self-serving "nature" that honours no hierarchy. The line crystallises his ideological challenge to the world of the play.',
     },
     {
-      quote: '"Kill thy physician, and the fee bestow / Upon thy foul disease."',
+      quote: '"Kill thy physician, and the fee bestow / Upon the foul disease."',
       who: 'Kent \u2014 Act 1, Scene 1',
       analysis:
         'Kent\u2019s blunt defence of Cordelia casts Lear\u2019s rejection of her as self-harming folly. The medical metaphor elevates Kent\u2019s loyalty to a kind of moral surgery.',
@@ -333,7 +333,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: 'Which of these lines is spoken during the storm on the heath?',
     type: 'multiple-choice',
     options: [
-      '"Pray you, undo this button"',
+      '"Pray you undo this button"',
       '"Blow, winds, and crack your cheeks!"',
       '"Never, never, never, never, never"',
       '"The weight of this sad time we must obey"',
@@ -378,7 +378,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'kl-9',
-    question: 'What does Gloucester mean by "As flies to wanton boys are we to th\u2019 gods"?',
+    question: 'What does Gloucester mean by "As flies to wanton boys are we to the gods"?',
     type: 'multiple-choice',
     options: [
       'The gods protect the innocent',
@@ -478,14 +478,14 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
       'What is the dramatic significance of Lear\u2019s final "Never, never, never, never, never"?',
     type: 'multiple-choice',
     options: [
-      'Five monosyllables in iambic pentameter render grief as rhythmic absolute, refusing any redemptive closure',
+      'Five trochees, the reverse of the iambic beat, render grief as rhythmic absolute, refusing any redemptive closure',
       'It is a prayer for Cordelia\u2019s soul',
       'It is a curse on his enemies',
       'It predicts the return of Kent',
     ],
     correctIndex: 0,
     explanation:
-      'The five identical stressed words form a perfect line of iambic pentameter. Their metrical blankness and semantic finality stand against any consoling reading of the ending and leave the audience with the full weight of loss.',
+      'Each "never" is stressed on its first syllable, so the five form a line of trochees, the exact reverse of the iambic rhythm of blank verse (the five come from the Folio; the 1608 Quarto has three). Their metrical blankness and semantic finality stand against any consoling reading of the ending and leave the audience with the full weight of loss.',
     topic: "Writer's Methods",
     difficulty: 'grade-9',
   },

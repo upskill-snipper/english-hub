@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Of Mice and Men - Key Quotes | The English Hub',
     description:
-      'Twenty-five key quotations from Of Mice and Men by John Steinbeck, each with speaker, context, analysis and theme tags for IGCSE revision.',
+      'Twenty-four key quotations from Of Mice and Men by John Steinbeck, each with speaker, context, analysis and theme tags for IGCSE revision.',
     images: [
       {
         url: '/api/og?title=Of+Mice+and+Men+-+Key+Quotes+%7C+The+English+Hub',
@@ -24,13 +24,21 @@ export const metadata: Metadata = {
   },
   title: 'Of Mice and Men - Key Quotes',
   description:
-    'Twenty-five key quotations from Of Mice and Men by John Steinbeck, each with speaker, context, analysis and theme tags for IGCSE revision.',
+    'Twenty-four key quotations from Of Mice and Men by John Steinbeck, each with speaker, context, analysis and theme tags for IGCSE revision.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/of-mice-and-men/key-quotes',
   },
 }
 
 /* ── Quote data ────────────────────────────────────────────────────────── */
+
+// Corrected 26 September 2026 (see the main page's note). "Tell about the
+// rabbits, George" is not in the novel and was removed, so there are 24 cards,
+// not 25. Also corrected: "so easy and so nice" (omission now marked), "nobody
+// but Curley", "ya big bastard", "whole damn world", "We gonna get a little
+// place" (George, Chapter 6), "I want you to stay with me, Lennie" (Chapter 1,
+// not the last words before the shot), the water snake line (Chapter 6 only),
+// and two quotations cut without a mark or over fourteen words.
 
 type KeyQuote = {
   id: number
@@ -71,7 +79,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 4,
-    text: '"I could get along so easy if I didn\'t have you on my tail."',
+    text: '"I could get along so easy … if I didn\'t have you on my tail."',
     speaker: 'George',
     context: 'Chapter 1 - frustration with Lennie',
     analysis:
@@ -80,7 +88,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 5,
-    text: '"I get lonely. You can talk to people, but I can\'t talk to nobody."',
+    text: '"You can talk to people, but I can\'t talk to nobody but Curley."',
     speaker: "Curley's Wife",
     context: 'Chapter 5 - to Lennie in the barn',
     analysis:
@@ -98,15 +106,6 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 7,
-    text: '"Tell about the rabbits, George."',
-    speaker: 'Lennie',
-    context: 'Recurring - Chapters 1, 3, 6',
-    analysis:
-      "The dream's refrain. Each repetition carries more weight: hope in Chapter 1, conviction in Chapter 3, heartbreak in Chapter 6. Steinbeck uses repetition to measure the distance between innocence and tragedy.",
-    themes: ['The American Dream', 'Friendship'],
-  },
-  {
-    id: 8,
     text: '"You hadda, George. I swear you hadda."',
     speaker: 'Slim',
     context: 'Chapter 6 - final lines',
@@ -115,7 +114,7 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Friendship', 'Power'],
   },
   {
-    id: 9,
+    id: 8,
     text: "\"S'pose you didn't have nobody... A guy goes nuts if he ain't got nobody.\"",
     speaker: 'Crooks',
     context: 'Chapter 4 - reflecting on isolation',
@@ -124,16 +123,16 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Loneliness', 'Prejudice'],
   },
   {
-    id: 10,
-    text: '"We\'re gonna get a little place."',
+    id: 9,
+    text: '"We gonna get a little place."',
     speaker: 'George',
-    context: 'Chapter 1 - the dream',
+    context: 'Chapter 6 - the last telling of the dream',
     analysis:
       'The dream in its purest form. "Little" is key - Steinbeck shows that even the most modest ambitions are unreachable for workers at the bottom of the Depression economy.',
     themes: ['The American Dream'],
   },
   {
-    id: 11,
+    id: 10,
     text: '"every damn one of \'em\'s got a little piece of land in his head."',
     speaker: 'Crooks',
     context: 'Chapter 4',
@@ -142,7 +141,7 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['The American Dream', 'Prejudice'],
   },
   {
-    id: 12,
+    id: 11,
     text: '"Coulda been in the movies, an\' had nice clothes."',
     speaker: "Curley's Wife",
     context: 'Chapter 5 - to Lennie',
@@ -151,7 +150,7 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['The American Dream', 'Prejudice'],
   },
   {
-    id: 13,
+    id: 12,
     text: '"S\'pose I went in with you guys."',
     speaker: 'Candy',
     context: 'Chapter 3 - offering savings',
@@ -160,8 +159,8 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['The American Dream', 'Friendship'],
   },
   {
-    id: 14,
-    text: '"I could get you strung up on a tree so easy."',
+    id: 13,
+    text: '"I could get you strung up on a tree so easy …"',
     speaker: "Curley's Wife to Crooks",
     context: 'Chapter 4',
     analysis:
@@ -169,16 +168,16 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Power', 'Prejudice'],
   },
   {
-    id: 15,
+    id: 14,
     text: '"A water snake glided smoothly up the pool."',
     speaker: 'Narrator',
-    context: 'Chapter 1 and Chapter 6',
+    context: 'Chapter 6 - the pool (in Chapter 1 a water snake swims past unharmed)',
     analysis:
       "The repeated image creates circularity. Nature continues indifferently while human tragedy unfolds. Steinbeck frames Lennie's death within a cycle that neither mourns nor judges.",
     themes: ['Nature and animals'],
   },
   {
-    id: 16,
+    id: 15,
     text: "\"He ain't no good to himself. Why'n't you shoot him?\"",
     speaker: "Carlson on Candy's dog",
     context: 'Chapter 3',
@@ -187,7 +186,7 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Nature and animals', 'Power'],
   },
   {
-    id: 17,
+    id: 16,
     text: '"What stake you got in this guy?"',
     speaker: 'The Boss',
     context: 'Chapter 2 - interviewing George',
@@ -196,8 +195,8 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Friendship', 'Power'],
   },
   {
-    id: 18,
-    text: '"I knowed from the very first. I think I knowed we\'d never do her."',
+    id: 17,
+    text: '"I think I knowed we\'d never do her."',
     speaker: 'George',
     context: "Chapter 5 - after Curley's wife's death",
     analysis:
@@ -205,7 +204,7 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['The American Dream', 'Friendship'],
   },
   {
-    id: 19,
+    id: 18,
     text: '"They left all the weak ones here."',
     speaker: "Curley's Wife",
     context: "Chapter 4 - in Crooks's room",
@@ -214,8 +213,8 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Power', 'Prejudice'],
   },
   {
-    id: 20,
-    text: '"Come on, ya big son-of-a-bitch."',
+    id: 19,
+    text: '"Come on, ya big bastard."',
     speaker: 'Curley',
     context: 'Chapter 3 - picking a fight with Lennie',
     analysis:
@@ -223,8 +222,8 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Power', 'Prejudice'],
   },
   {
-    id: 21,
-    text: '"Maybe ever\'body in the whole world is scared of each other."',
+    id: 20,
+    text: '"Maybe ever\'body in the whole damn world is scared of each other."',
     speaker: 'Slim',
     context: 'Chapter 3',
     analysis:
@@ -232,7 +231,7 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Loneliness', 'Friendship'],
   },
   {
-    id: 22,
+    id: 21,
     text: '"I ain\'t wanted in the bunk house."',
     speaker: 'Crooks',
     context: 'Chapter 4',
@@ -241,7 +240,7 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Prejudice', 'Loneliness'],
   },
   {
-    id: 23,
+    id: 22,
     text: "\"I don't know why I can't keep it. It ain't nobody's mouse.\"",
     speaker: 'Lennie',
     context: 'Chapter 1',
@@ -250,16 +249,16 @@ const KEY_QUOTES: KeyQuote[] = [
     themes: ['Nature and animals'],
   },
   {
-    id: 24,
+    id: 23,
     text: '"I want you to stay with me, Lennie."',
     speaker: 'George',
-    context: 'Chapter 6 - final scene',
+    context: "Chapter 1 - refusing Lennie's offer to live alone in a cave",
     analysis:
-      "George's last tender words before pulling the trigger. Steinbeck fuses love and violence in a single sentence, making the mercy killing an act of unbearable intimacy.",
+      "George's tenderness breaks through his complaints. The line is often misremembered as his last words before the shot; Chapter 6 echoes this scene at the pool, so the mercy killing recalls this moment of intimacy.",
     themes: ['Friendship'],
   },
   {
-    id: 25,
+    id: 24,
     text: '"Now what the hell ya suppose is eatin\' them two guys?"',
     speaker: 'Carlson',
     context: 'Chapter 6 - closing line',

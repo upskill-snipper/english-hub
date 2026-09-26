@@ -2,6 +2,23 @@
 
 import { useState } from 'react'
 
+/*
+ * Corrected 26 September 2026. This page said every quotation was William
+ * Archer's 1889 translation. Checked against R. Farquharson Sharp's (Project
+ * Gutenberg #2542), Archer's early text (Lovell, 1890) and his revised text
+ * (Scribner, 1908), it quotes both: the lark, "It was I who saved...", "stand
+ * quite alone" and "the most wonderful thing" are Sharp's, and the Archer lines
+ * follow his revised wording ("not for what threatened me"). Each card now
+ * names its translation. Two lines matched neither and now match one ("It was
+ * like being a man", Sharp; "the ruins, the shreds, the show", Archer), and
+ * "play-room" is Sharp's "playroom". Also fixed: the 1898 speech quotations
+ * (Speeches and New Letters, 1910), Helmer plays the tarantella and then
+ * corrects Nora rather than beating time, Rank's black cross is the sign he
+ * told Nora of, not a known convention, and OCR sets the play only in
+ * comparison with a pre-1900 poem (H472 specification), so questions 2 and 4
+ * are no longer labelled OCR-style. AQA sets Meyer's translation.
+ */
+
 /* ─── Expandable Section Component ─────────────────────────── */
 
 function Section({
@@ -104,7 +121,8 @@ export default function ADollsHousePage() {
           A Doll&apos;s House &mdash; Complete A-Level Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">
-          Henrik Ibsen, 1879 &mdash; quotations from William Archer&apos;s 1889 English translation
+          Henrik Ibsen, 1879. Quotations from the English translations of William Archer and R.
+          Farquharson Sharp
         </p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Substantive A-Level revision notes for Ibsen&apos;s landmark realist drama. Act-by-act
@@ -114,11 +132,13 @@ export default function ADollsHousePage() {
           exam-style questions with planning notes.
         </p>
         <p className="mt-3 max-w-3xl text-xs text-muted-foreground italic">
-          A note on translation: every quotation on this page is taken from William Archer&apos;s
-          1889 English translation, which is in the public domain. Other widely used English
-          translations (Michael Meyer, Rolf Fjelde, James McFarlane) phrase several of these lines
-          differently. When you cite the play in an exam, name the translation you have read; this
-          page consistently uses Archer.
+          A note on translation: the quotations on this page come from two public-domain English
+          translations, William Archer&apos;s (first published in 1889, quoted here in his later
+          revised text) and R. Farquharson Sharp&apos;s (1910), and each key quotation names which.
+          Other widely used English translations (Michael Meyer, Rolf Fjelde, James McFarlane)
+          phrase several of these lines differently. AQA sets Michael Meyer&apos;s translation and
+          its exam is open book, so AQA students should quote Meyer. Otherwise, when you cite the
+          play in an exam, name the translation you have read.
         </p>
       </div>
 
@@ -229,8 +249,8 @@ export default function ADollsHousePage() {
                   blackmail letter into the locked letterbox in the hall, to which only Torvald has
                   the key. Mrs Linde, hearing this, promises to intercede with Krogstad &mdash; her
                   old lover. Desperate, Nora begs Torvald to coach her tarantella; she dances
-                  wildly, increasingly hysterically, while Torvald beats time, in order to keep him
-                  from the letterbox until after the ball.
+                  wildly, increasingly hysterically, while Torvald plays for her and then calls out
+                  corrections, in order to keep him from the letterbox until after the ball.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -335,7 +355,7 @@ export default function ADollsHousePage() {
               />
               <CharacterCard
                 name="Anne-Marie (the Nurse)"
-                description="The Helmers' nurse and Nora's own former nanny, who long ago gave up her own daughter to take service with Nora's father. Her quiet sacrifice mirrors and complicates Mrs Linde's: working women have always been expected to surrender their own family ties to maintain other people's homes. When Nora asks her how she could give up her child, Anne-Marie replies, in Archer's translation, that a poor girl in her position must be glad of any place she can get. She represents the unseen infrastructure of bourgeois domestic comfort and is the only mother-figure Nora's children will have once Nora leaves."
+                description="The Helmers' nurse and Nora's own former nanny, who long ago gave up her own daughter to take service with Nora's father. Her quiet sacrifice mirrors and complicates Mrs Linde's: working women have always been expected to surrender their own family ties to maintain other people's homes. When Nora asks her how she could give up her child, Anne-Marie replies that a poor girl in her position must be glad of any place she can get. She represents the unseen infrastructure of bourgeois domestic comfort and is the only mother-figure Nora's children will have once Nora leaves."
               />
               <CharacterCard
                 name="Helene (the Maid)"
@@ -367,11 +387,11 @@ export default function ADollsHousePage() {
               />
               <ThemeCard
                 title="Sacrifice - Male and Female Forms"
-                description="Sacrifice is gendered in this play. Mrs Linde sacrifices love for family duty; Anne-Marie sacrifices her own child; Nora sacrifices her health, sleep and savings to repay the loan that paid for Torvald's recovery in Italy. These are quiet, ongoing, often invisible sacrifices. Torvald's promised sacrifice is rhetorical: he tells Nora he would gladly work day and night for her, would risk his life. When the actual moment arrives in Act 3 he behaves quite differently. Ibsen exposes how the male language of grand sacrifice often disguises an ego that will not bear the smaller, daily cost of solidarity. Nora's dry observation that millions of women have done what Torvald insists no woman has ever done is one of the play's hardest-edged feminist points."
+                description="Sacrifice is gendered in this play. Mrs Linde sacrifices love for family duty; Anne-Marie sacrifices her own child; Nora sacrifices her health, sleep and savings to repay the loan that paid for Torvald's recovery in Italy. These are quiet, ongoing, often invisible sacrifices. Torvald's promised sacrifice is rhetorical: he tells Nora he would gladly work day and night for her, would risk his life. When the actual moment arrives in Act 3 he behaves quite differently. Ibsen exposes how the male language of grand sacrifice often disguises an ego that will not bear the smaller, daily cost of solidarity. Nora's dry observation that millions of women have done what Torvald insists no man would do is one of the play's hardest-edged feminist points."
               />
               <ThemeCard
                 title="Performance and the Tarantella"
-                description="The play is full of performance: Nora's chatter, her play-acting at being a child, her dancing, her costume. The tarantella in Act 2 condenses this. The dance was traditionally performed in southern Italy by women supposed to have been bitten by the tarantula spider - a frenzied dance to expel the venom. Ibsen has Nora dance it in a Neapolitan fisher-girl's costume, on the brink of exposure, increasingly wildly, while Torvald beats time and corrects her steps. The poison she is dancing to expel is, in the play's logic, the lie at the heart of her marriage. When in Act 3 she changes out of the costume, the dance is over and the woman emerges. The tarantella stages the entire problem of femininity-as-performance in a single scene."
+                description="The play is full of performance: Nora's chatter, her play-acting at being a child, her dancing, her costume. The tarantella in Act 2 condenses this. The dance was traditionally performed in southern Italy by women supposed to have been bitten by the tarantula spider - a frenzied dance to expel the venom. Ibsen has Nora dance it in a Neapolitan fisher-girl's costume, on the brink of exposure, increasingly wildly, while Torvald first plays for her and then corrects her steps. The poison she is dancing to expel is, in the play's logic, the lie at the heart of her marriage. When in Act 3 she changes out of the costume, the dance is over and the woman emerges. The tarantella stages the entire problem of femininity-as-performance in a single scene."
               />
               <ThemeCard
                 title="Heredity and the Sins of the Fathers"
@@ -462,12 +482,12 @@ export default function ADollsHousePage() {
                   identity was &ldquo;covered&rdquo; by her husband&apos;s. Nora&apos;s predicament
                   is shaped exactly by such a regime. Ibsen, however, in his speech to the Norwegian
                   Women&apos;s Rights League in 1898, distanced himself from the &ldquo;first
-                  feminist play&rdquo; framing &mdash; he said he had been &ldquo;not even quite
-                  clear as to just what the woman question really is&rdquo; and that he had written
-                  about &ldquo;mankind in general.&rdquo; A-Level responses should treat the
-                  &ldquo;feminist play&rdquo; label as an interpretive question rather than a
-                  settled fact: the play dramatises consequences feminism would later articulate,
-                  but Ibsen himself disclaimed the programmatic reading.
+                  feminist play&rdquo; framing: he said he was &ldquo;not even quite clear as to
+                  just what this women&apos;s rights movement really is&rdquo;, and that to him it
+                  had seemed &ldquo;a problem of humanity in general.&rdquo; A-Level responses
+                  should treat the &ldquo;feminist play&rdquo; label as an interpretive question
+                  rather than a settled fact: the play dramatises consequences feminism would later
+                  articulate, but Ibsen himself disclaimed the programmatic reading.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -481,7 +501,7 @@ export default function ADollsHousePage() {
                   Ibsen&apos;s English champion was George Bernard Shaw, whose The Quintessence of
                   Ibsenism (1891) made A Doll&apos;s House central to the &ldquo;new drama&rdquo; in
                   Britain. The Scottish critic William Archer produced the major early English
-                  translation in 1889, the version used for quotations on this page.
+                  translation in 1889, one of the two translations quoted on this page.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -508,91 +528,93 @@ export default function ADollsHousePage() {
         <div id="key-quotations">
           <Section title="Key Quotations with Analysis" icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
-              All quotations on this page are taken from William Archer&apos;s 1889 English
-              translation, which is in the public domain. Other published English translations
-              (Michael Meyer, Rolf Fjelde, James McFarlane, Simon Stephens) phrase several of these
-              lines differently &mdash; cite whichever translation you have studied.
+              The quotations below come from two public-domain English translations, William
+              Archer&apos;s (first published 1889, quoted in his later revised text) and R.
+              Farquharson Sharp&apos;s (1910); each card names which. Other published English
+              translations (Michael Meyer, Rolf Fjelde, James McFarlane, Simon Stephens) phrase
+              several of these lines differently: cite whichever translation you have studied, and
+              for AQA, which sets Meyer, quote Meyer.
             </p>
             <div className="space-y-1">
               <QuoteCard
                 quote="Is that my little lark twittering out there?"
-                speaker="Helmer (Act 1, opening exchange)"
-                analysis="The play's opening exchange in Archer's translation. The diminutive bird name &mdash; one of several across the play (lark, squirrel, songbird) &mdash; encodes the entire marriage in a single phrase. Animal vocabulary infantilises Nora and frames her as an exotic, decorative pet. The possessive &lsquo;my&rsquo; reveals ownership; &lsquo;twittering&rsquo; reduces her speech to charming pointlessness. Ibsen establishes the &lsquo;doll' relationship before any plot has developed."
+                speaker="Helmer (Act 1, opening exchange; Sharp)"
+                analysis="The play's opening exchange in Sharp's translation. The diminutive bird name &mdash; one of several across the play (lark, squirrel, songbird) &mdash; encodes the entire marriage in a single phrase. Animal vocabulary infantilises Nora and frames her as an exotic, decorative pet. The possessive &lsquo;my&rsquo; reveals ownership; &lsquo;twittering&rsquo; reduces her speech to charming pointlessness. Ibsen establishes the &lsquo;doll' relationship before any plot has developed."
               />
               <QuoteCard
                 quote="It was I who saved Torvald's life."
-                speaker="Nora to Mrs Linde (Act 1)"
+                speaker="Nora to Mrs Linde (Act 1; Sharp)"
                 analysis="Nora's first revelation of the secret. Pride here is exhilarating: she has done something serious, made a real sacrifice, acted as agent rather than ornament. Yet the law and her husband would call this very pride a crime. Ibsen sets up the gap between female moral experience and male public morality that the play will widen across all three acts."
               />
               <QuoteCard
-                quote="It was almost like being a man."
-                speaker="Nora to Mrs Linde (Act 1)"
+                quote="It was like being a man."
+                speaker="Nora to Mrs Linde (Act 1; Sharp)"
                 analysis="Describing the years of secret saving and copying-work she did to repay the loan, Nora compares competent earning to masculinity itself. The line shows how thoroughly &lsquo;agency&rsquo; was gendered male in nineteenth-century Norway. To act, to budget, to make decisions in the world is, in this society's grammar, almost to be a man. Ibsen exposes the absurdity of that linguistic equation."
               />
               <QuoteCard
-                quote="Our home has been nothing but a play-room."
-                speaker="Nora to Helmer (Act 3)"
-                analysis="One of the play's defining lines. The &lsquo;home&rsquo; that Torvald imagined as moral sanctuary is reclassified as a place of childish make-believe. &lsquo;Play-room&rsquo; combines the play's key symbols &mdash; doll, dance, costume &mdash; under one roof, and subverts the domestic ideal of Patmore and Ruskin: the angel in the house is in fact a child playing with adults."
+                quote="Our home has been nothing but a playroom."
+                speaker="Nora to Helmer (Act 3; Sharp)"
+                analysis="One of the play's defining lines. The &lsquo;home&rsquo; that Torvald imagined as moral sanctuary is reclassified as a place of childish make-believe. &lsquo;Playroom&rsquo; combines the play's key symbols &mdash; doll, dance, costume &mdash; under one roof, and subverts the domestic ideal of Patmore and Ruskin: the angel in the house is in fact a child playing with adults."
               />
               <QuoteCard
                 quote="I have been your doll-wife, just as at home I used to be papa's doll-child."
-                speaker="Nora to Helmer (Act 3)"
+                speaker="Nora to Helmer (Act 3; Archer)"
                 analysis="The single most important sentence of Nora's self-analysis. She locates the marriage in a continuous lineage of infantilisation, passed from father to husband. The hyphenated coinages &lsquo;doll-wife&rsquo; and &lsquo;doll-child&rsquo; underline that for Nora, womanhood under patriarchy has never had two distinct phases &mdash; she has always been the toy. The line gives the play's title its full force."
               />
               <QuoteCard
                 quote="I must stand quite alone, if I am to understand myself and everything about me."
-                speaker="Nora to Helmer (Act 3)"
+                speaker="Nora to Helmer (Act 3; Sharp)"
                 analysis="The thesis of Nora's departure. &lsquo;Stand quite alone&rsquo; positions independence as an existential condition rather than a sentimental wish. Pairing &lsquo;myself&rsquo; with &lsquo;everything about me&rsquo; is crucial: she needs to learn both interior and world. This is why the children, however loved, cannot now be the answer &mdash; she cannot find herself while still defined by her duties to others."
               />
               <QuoteCard
                 quote="I must try to educate myself."
-                speaker="Nora to Helmer (Act 3)"
+                speaker="Nora to Helmer (Act 3; Archer)"
                 analysis="A devastatingly simple line in context. Nora is in her late twenties, the mother of three, the supposed mistress of a household, and she announces that her education has not yet begun. The word &lsquo;try&rsquo; concedes that she does not know whether she will succeed. Ibsen presents self-education as the precondition of adult selfhood, an explicitly Enlightenment-feminist position."
               />
               <QuoteCard
                 quote="I believe that before all else I am a human being, just as much as you are."
-                speaker="Nora to Helmer (Act 3)"
+                speaker="Nora to Helmer (Act 3; Archer)"
                 analysis="Often quoted as the play's humanist core. &lsquo;Human being&rsquo; (Norwegian menneske) is the play's key term. Nora does not assert female superiority or special female nature &mdash; she demands the most basic recognition that she belongs to the same category as Torvald. The phrase &lsquo;just as much as you are&rsquo; is grammatically modest but historically charged: it places wife and husband on identical ontological footing, a premise nineteenth-century law did not always concede."
               />
               <QuoteCard
                 quote="Millions of women have done so."
-                speaker="Nora to Helmer (Act 3)"
+                speaker="Nora to Helmer (Act 3; Archer)"
                 analysis="When Helmer protests that no man would sacrifice his honour for love, Nora's reply &mdash; that millions of women have done so &mdash; punctures his rhetoric. He has been speaking as if female sacrifice is unthinkable; she informs him it is the daily condition of half the population. Ibsen signals here that Nora's individual story is the most ordinary story in the world."
               />
               <QuoteCard
                 quote="I am saved!"
-                speaker="Helmer (Act 3, on the second letter)"
+                speaker="Helmer (Act 3, on the second letter; Archer and Sharp)"
                 analysis="On reading Krogstad's second letter, Torvald's first thought is for himself. The exclamation and the singular pronoun &mdash; &lsquo;I&rsquo; rather than &lsquo;we&rsquo; &mdash; expose the quality of his earlier marital protestations. Ibsen lets Torvald condemn himself in his own dialogue: he never claims to have saved Nora, only to have escaped scandal. This is the moment Nora sees the marriage clearly."
               />
               <QuoteCard
                 quote="No man sacrifices his honour, even for one he loves."
-                speaker="Helmer to Nora (Act 3)"
+                speaker="Helmer to Nora (Act 3; Archer)"
                 analysis="A line that hands Nora her best argument. Helmer has just elevated &lsquo;honour&rsquo; (a public, masculine, abstract value) above love. Nora replies that millions of women have done exactly that &mdash; sacrificed their reputation, their private comfort, even their bodies, for those they love. Ibsen exposes &lsquo;honour&rsquo; as a male ideology that exempts men from the very sacrifices women are required to make."
               />
               <QuoteCard
                 quote="The most wonderful thing of all &mdash; ?"
-                speaker="Nora and Helmer (Act 3)"
-                analysis="The play's final exchange before the door slam, in Archer's translation. Nora has hoped throughout for &lsquo;the wonderful thing&rsquo; &mdash; the moment when Torvald would step forward and accept the consequences of her crime as theirs together. He did not. Now she names the further wonder: that their life together might become a real marriage. The em-dashed unfinished phrase, taken up by both speakers, leaves the future suspended. The door slam is the only answer."
+                speaker="Nora and Helmer (Act 3; Sharp)"
+                analysis="The play's final exchange before the door slam, in Sharp's translation. Nora has hoped throughout for &lsquo;the wonderful thing&rsquo; &mdash; the moment when Torvald would step forward and accept the consequences of her crime as theirs together. He did not. Now she names the further wonder: that their life together might become a real marriage. The em-dashed unfinished phrase, taken up by both speakers, leaves the future suspended. The door slam is the only answer."
               />
               <QuoteCard
                 quote="From below is heard the reverberation of a heavy door closing."
-                speaker="Final stage direction (Act 3)"
+                speaker="Final stage direction (Act 3; Archer)"
                 analysis="The final stage direction in Archer's translation &mdash; the &lsquo;door slam heard around the world.&rsquo; The reverberation is acoustic but also political: a sound that travelled across European theatres and provoked the social panic of the 1880s. Ibsen ends not with speech but with a sound effect, refusing to give Helmer &mdash; or society &mdash; the last word. The slam is irreversible: a door that slams cannot be unslammed."
               />
               <QuoteCard
-                quote="A room comfortably and tastefully, but not expensively, furnished."
-                speaker="Opening stage direction (Act 1)"
+                quote="A room, comfortably and tastefully, but not expensively, furnished."
+                speaker="Opening stage direction (Act 1; Archer)"
                 analysis="Archer's translation of Ibsen's opening description of the Helmer drawing room. The carefully poised qualifier &lsquo;but not expensively&rsquo; sets the social register: this is bourgeois respectability, not aristocracy &mdash; a household trying to look right within its means. Realist drama begins with such precise stage directions; the room itself is a character, the &lsquo;doll's house&rsquo; of the title."
               />
               <QuoteCard
                 quote="When your terror was over &mdash; not for what threatened me, but for yourself &mdash; when there was nothing more to fear &mdash; then it seemed to you as though nothing had happened."
-                speaker="Nora to Helmer (Act 3)"
+                speaker="Nora to Helmer (Act 3; Archer)"
                 analysis="Nora's clearest description of Helmer's reversal between the two letters. The structure of the sentence &mdash; the negative inserted parenthetical &lsquo;not for what threatened me, but for yourself&rsquo; &mdash; performs the analytic move of separating his self-interest from his rhetoric of love. This is Nora at her most lucid and is the moment she ceases to be the doll."
               />
               <QuoteCard
-                quote="From this moment, it is no question of happiness, but merely of saving the remnants, the appearance &mdash; "
-                speaker="Helmer to Nora (Act 3, on reading the first letter)"
-                analysis="Helmer's outburst before the second letter arrives. The triple noun chain &mdash; happiness, remnants, appearance &mdash; descends from the inner to the outer: by the third noun he has admitted that what he is trying to save is reputation. Ibsen's realism allows Helmer to expose himself in dialogue more devastatingly than any third-person narrator could."
+                quote="Henceforward there can be no question of happiness, but merely of saving the ruins, the shreds, the show"
+                speaker="Helmer to Nora (Act 3, on reading the first letter; Archer)"
+                analysis="Helmer's outburst before the second letter arrives. The triple noun chain (ruins, shreds, show) descends from the inner to the outer: by the third noun he has admitted that what he is trying to save is reputation. Ibsen's realism allows Helmer to expose himself in dialogue more devastatingly than any third-person narrator could."
               />
             </div>
           </Section>
@@ -634,10 +656,10 @@ export default function ADollsHousePage() {
                   spider. Nora is to perform it at the Stenborgs&apos; ball in a Neapolitan
                   fisher-girl&apos;s costume Torvald has chosen for her. The dance in Act 2
                   condenses the play&apos;s gender politics: she performs increasingly wildly while
-                  he beats time and corrects her. The tarantella is also a metaphor for the entire
-                  marriage: Nora is dancing to expel a poison (the lie of the loan, the lie of the
-                  marriage), and only the dance lets her delay Torvald from reading the letter. When
-                  she changes out of the costume in Act 3, the dance is over.
+                  he plays for her and then corrects her. The tarantella is also a metaphor for the
+                  entire marriage: Nora is dancing to expel a poison (the lie of the loan, the lie
+                  of the marriage), and only the dance lets her delay Torvald from reading the
+                  letter. When she changes out of the costume in Act 3, the dance is over.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -697,13 +719,13 @@ export default function ADollsHousePage() {
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">Dr Rank&apos;s Black-Crossed Card</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  In Act 3, Rank leaves visiting cards with a black cross above his name &mdash; the
-                  Scandinavian convention for announcing one&apos;s own death. The card is one of
-                  the play&apos;s most economical objects: a single small stage property that
-                  announces a man&apos;s end with restraint and dignity. It contrasts with
-                  Helmer&apos;s loud public emotional reactions and reinforces the theme of
-                  inherited disease that runs alongside Nora&apos;s inherited infantilisation. Rank
-                  dies offstage, quietly; Nora leaves audibly, with a slam.
+                  In Act 3, Rank leaves visiting cards with a black cross above his name, the sign
+                  he told Nora in Act 2 he would send when his end had begun. The card is one of the
+                  play&apos;s most economical objects: a single small stage property that announces
+                  a man&apos;s end with restraint and dignity. It contrasts with Helmer&apos;s loud
+                  public emotional reactions and reinforces the theme of inherited disease that runs
+                  alongside Nora&apos;s inherited infantilisation. Rank dies offstage, quietly; Nora
+                  leaves audibly, with a slam.
                 </p>
               </div>
             </div>
@@ -714,9 +736,11 @@ export default function ADollsHousePage() {
         <div id="exam-questions">
           <Section title="A-Level Exam-Style Questions with Planning Notes" icon="✍️">
             <p className="text-sm text-muted-foreground mb-5">
-              Five A-Level style questions modelled on AQA and OCR specifications. Each includes a
-              thesis, paragraph plan, and contextual angles. Question 5 is comparative, against
-              another play exploring gender.
+              Five A-Level practice questions. Questions 1, 3 and 5 follow AQA&apos;s 25-mark essay
+              format; OCR examines the play only in comparison with a pre-1900 poetry text, so use
+              questions 2 and 4 to build material for that comparison. Each includes a thesis,
+              paragraph plan, and contextual angles. Question 5 is comparative, against another play
+              exploring gender.
             </p>
 
             <div className="space-y-6">
@@ -755,10 +779,11 @@ export default function ADollsHousePage() {
                       Paragraph 2 &mdash; Performance under pressure (Act 2)
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The tarantella scene: Nora dances increasingly wildly while Helmer beats time.
-                      Identity here is choreographed by the husband. A useful AO5 reading is Toril
-                      Moi&apos;s argument (Henrik Ibsen and the Birth of Modernism) that this is the
-                      moment Ibsen turns drama from external action towards interior recognition.
+                      The tarantella scene: Nora dances increasingly wildly while Helmer plays for
+                      her and then corrects her. Identity here is choreographed by the husband. A
+                      useful AO5 reading is Toril Moi&apos;s argument (Henrik Ibsen and the Birth of
+                      Modernism) that this is the moment Ibsen turns drama from external action
+                      towards interior recognition.
                     </p>
                   </div>
                   <div>
@@ -788,9 +813,9 @@ export default function ADollsHousePage() {
                       Conclusion
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The view in the question is partly right: in his 1898 speech Ibsen claimed to
-                      have written about &lsquo;mankind in general,&rsquo; not exclusively about
-                      wives. But the route to that humanism runs through the dismantling of a
+                      The view in the question is partly right: in his 1898 speech Ibsen said his
+                      task had been &lsquo;the description of humanity,&rsquo; not the cause of
+                      wives alone. But the route to that humanism runs through the dismantling of a
                       specific bourgeois marriage. Identity and marriage are the same problem seen
                       from different angles.
                     </p>
@@ -801,8 +826,8 @@ export default function ADollsHousePage() {
               {/* Essay 2 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  2. Examine the dramatic significance of money in A Doll&apos;s House. (OCR-style
-                  close drama analysis, 30 marks)
+                  2. Examine the dramatic significance of money in A Doll&apos;s House. (Single-text
+                  practice essay)
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -950,8 +975,8 @@ export default function ADollsHousePage() {
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   4. &ldquo;The tarantella is the play in miniature.&rdquo; Examine how Ibsen uses
-                  the dance to dramatise the central concerns of A Doll&apos;s House. (OCR-style
-                  close analysis, 30 marks)
+                  the dance to dramatise the central concerns of A Doll&apos;s House. (Single-text
+                  practice essay)
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -1190,11 +1215,11 @@ export default function ADollsHousePage() {
                 6. Translation Matters
               </h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Different English translations of A Doll&apos;s House (Archer 1889, Meyer, Fjelde,
-                McFarlane, Stephens) make different choices about Nora&apos;s register, the pet
-                names and the famous lines. Acknowledging the translation you are quoting is good
-                A-Level practice and shows AO5 awareness that the text you read is itself an
-                interpretive act. This page uses Archer.
+                Different English translations of A Doll&apos;s House (Archer 1889, Sharp 1910,
+                Meyer, Fjelde, McFarlane, Stephens) make different choices about Nora&apos;s
+                register, the pet names and the famous lines. Acknowledging the translation you are
+                quoting is good A-Level practice and shows AO5 awareness that the text you read is
+                itself an interpretive act. This page quotes Archer and Sharp.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1216,15 +1241,16 @@ export default function ADollsHousePage() {
               </h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 In his 1898 speech to the Norwegian Women&apos;s Rights League, Ibsen distanced
-                himself from the &ldquo;first feminist play&rdquo; framing. He said he had
-                &ldquo;not even quite clear as to just what the woman question really is&rdquo; and
-                that he had written about &ldquo;mankind in general,&rdquo; not about the
-                women&apos;s movement. A subtle response notes that this is an authorial disclaimer
-                to be read carefully &mdash; either as evasion, or as the universalist humanism the
-                play in fact dramatises, or as a strategic move to defend the play&apos;s artistic
-                seriousness against its political reception. Toril Moi&apos;s Henrik Ibsen and the
-                Birth of Modernism is a useful AO5 source on this question, reading the play as
-                foundational to dramatic modernism rather than narrowly to feminism.
+                himself from the &ldquo;first feminist play&rdquo; framing. He said he was
+                &ldquo;not even quite clear as to just what this women&apos;s rights movement really
+                is&rdquo; and that his task had been &ldquo;the description of humanity,&rdquo; not
+                the women&apos;s movement. A subtle response notes that this is an authorial
+                disclaimer to be read carefully &mdash; either as evasion, or as the universalist
+                humanism the play in fact dramatises, or as a strategic move to defend the
+                play&apos;s artistic seriousness against its political reception. Toril Moi&apos;s
+                Henrik Ibsen and the Birth of Modernism is a useful AO5 source on this question,
+                reading the play as foundational to dramatic modernism rather than narrowly to
+                feminism.
               </p>
             </div>
           </div>
@@ -1304,9 +1330,10 @@ export default function ADollsHousePage() {
           <em>A Doll&apos;s House</em> (Et dukkehjem) by Henrik Ibsen was first published in
           Copenhagen on 4 December 1879 and first performed at the Royal Theatre, Copenhagen, on 21
           December 1879. Ibsen died in 1906; the original Norwegian text and the early English
-          translations (including William Archer&apos;s 1889 translation, used for all quotations on
-          this page) are in the <strong>public domain</strong>. When you cite the play in an exam,
-          name the translation you have read.
+          translations (including William Archer&apos;s, first published in 1889, and R. Farquharson
+          Sharp&apos;s of 1910, the two quoted on this page) are in the{' '}
+          <strong>public domain</strong>. When you cite the play in an exam, name the translation
+          you have read.
         </p>
       </footer>
     </>

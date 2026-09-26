@@ -27,6 +27,24 @@ export const metadata: Metadata = {
   },
 }
 
+/*
+ * Corrected 26 September 2026. The novel is in copyright and no copy is held,
+ * so claims were checked against the published opening extract (pages 3 to 17),
+ * the Internet Archive's full-text search of six scanned copies of the novel,
+ * the fact-checked study guide, GradeSaver, LitCharts and Kelman's own
+ * Guardian piece of 11 November 2011. Removed as not in the novel: four of the
+ * seven quotations ("Hutious means scary...", "I just wanted to help", "I'm not
+ * even scared, I promise", "Advantage!"), a "blood brothers" ritual, a
+ * chewing-gum trial and a long sequence at a fair (the novel has a May
+ * carnival). "The dead boy's mother wouldn't stop crying"
+ * contradicted the opening, where she is not crying; it is now the novel's own
+ * sentence. Also fixed: the dead boy went to a different school; the ending
+ * (the pigeon speaks to Harri, and his last thoughts are of Agnes); Dean and
+ * Jordan are two boys; Mamma is never named; Sonia burned her fingerprints;
+ * Lydia is in Year 9 (GradeSaver), not fifteen; the knife is taken
+ * from under the bins; the Guardian First Book Award shortlisted the novel.
+ * Do not add quotations here: the guide below holds the checked ones.
+ */
 const data: TextGuideData = {
   slug: 'pigeon-english',
   title: 'Pigeon English',
@@ -43,24 +61,24 @@ const data: TextGuideData = {
     published: '2011 (Bloomsbury)',
   },
   plotSummary: [
-    'Harrison \u2018Harri\u2019 Opoku, aged eleven, has recently arrived in London from Ghana with his older sister Lydia and their mother (\u2018Mamma\u2019). Their father, baby sister Agnes and grandmother remain in Accra, and the family hopes to be reunited once there is money for the flights. They live in a high-rise flat on the Dell Farm estate, a fictional composite of the tower-block estates Kelman grew up near in Luton. The novel opens with the stabbing of a boy from Harri\u2019s school outside a chicken shop; the victim is never named, referred to only as \u2018the dead boy\u2019. Inspired by police tape, television detectives and his own eager conscience, Harri teams up with his classmate Dean to investigate. They dust for fingerprints with sellotape, follow suspects and keep a notebook of \u2018clues\u2019. For Harri the case is at first another of the bright, baffling games of his new life, not so different from running races, collecting Haribo or trying to talk to the girl he likes, Poppy.',
-    'Alongside the murder plot, Kelman builds a dense picture of Harri\u2019s daily world. He narrates school in the voice of a child who notices everything and explains it to himself as he goes: the hierarchies of the playground, the terror of the older boys, the rituals of lunchtime, the boredom and violence of the Dell Farm Crew, a gang of teenagers led by the frightening X-Fire and his lieutenant Killa. Harri is pressured to \u2018prove himself\u2019 to the Crew, to run errands, to keep quiet. At home his mother works long shifts as a midwife and Auntie Sonia, glamorous and secretive, moves in and out of the flat with men whom Mamma distrusts. Lydia is fifteen, tired, often furious, and trying to fit in with a group of girls whose values frighten her mother. Through it all Harri keeps up a running conversation with a pigeon that visits his balcony; short italicised passages from the pigeon\u2019s point of view punctuate the novel, offering a cool, adult counter-voice to Harri\u2019s breathless narration.',
-    'As the investigation continues, Harri\u2019s discoveries begin to matter. He notices a bloodstain, a discarded knife, a suspicious movement; he sees that members of the Dell Farm Crew know more about the murder than they are saying. At the same time his own life becomes more dangerous. He is forced into a confrontation with Killa; a chewing-gum trial, a \u2018blood brothers\u2019 ritual with Dean, and a long sequence at a local fair all tighten the novel\u2019s emotional grip. Auntie Sonia is revealed to be involved with a man called Julius, whose violence hangs over the second half of the novel. Mamma\u2019s faith, Lydia\u2019s protective anger and Harri\u2019s loyalty to his friends are all tested. Kelman paces the book so that the reader, like Harri, half-forgets the threat of the opening chapter until it returns.',
-    'In the closing pages Harri\u2019s amateur investigation attracts the Crew\u2019s direct attention. Warnings turn into threats and then, with devastating speed, into violence. The novel ends with a sudden stabbing \u2014 deliberately echoing the killing that opened the book \u2014 and with the pigeon rising above the estate in a final italicised flight. Kelman offers no neat resolution: no arrest, no redemptive epiphany, no lesson drawn. The reader is left instead with the freshness of what has been lost and with the shock of how quickly a child\u2019s hopeful voice can be silenced. The ending is widely discussed in classrooms because of its ambiguity and its refusal to sentimentalise either Harri or the estate that has shaped him.',
+    'Harrison \u2018Harri\u2019 Opoku, aged eleven, has recently arrived in London from Ghana with his older sister Lydia and their mother (\u2018Mamma\u2019). Their father, baby sister Agnes and grandmother remain in Accra, and the family hopes to be reunited once there is money for the flights. They live in a high-rise flat on the Dell Farm estate, a fictional composite of the tower-block estates Kelman grew up near in Luton. The novel opens with the stabbing of an older boy from a different school outside a chicken shop; the victim is never named, referred to only as \u2018the dead boy\u2019. Inspired by police tape, television detectives and his own eager conscience, Harri teams up with his classmate Dean to investigate. They dust for fingerprints with sellotape, follow suspects and keep a notebook of \u2018clues\u2019. For Harri the case is at first another of the bright, baffling games of his new life, not so different from running races, collecting Haribo or trying to talk to the girl he likes, Poppy.',
+    'Alongside the murder plot, Kelman builds a dense picture of Harri\u2019s daily world. He narrates school in the voice of a child who notices everything and explains it to himself as he goes: the hierarchies of the playground, the terror of the older boys, the rituals of lunchtime, the boredom and violence of the Dell Farm Crew, a gang of teenagers led by the frightening X-Fire and his lieutenant Killa. Harri is pressured to \u2018prove himself\u2019 to the Crew, to run errands, to keep quiet. At home his mother works long shifts as a midwife and Auntie Sonia, glamorous and secretive, moves in and out of the flat with men whom Mamma distrusts. Lydia, in Year 9, is tired, often furious, and trying to fit in with a group of girls whose values frighten her mother. Through it all Harri keeps up a running conversation with a pigeon that visits his balcony; short italicised passages from the pigeon\u2019s point of view punctuate the novel, offering a cool, adult counter-voice to Harri\u2019s breathless narration.',
+    'As the investigation continues, Harri\u2019s discoveries begin to matter. He notices a bloodstain, a man taking a knife from under the bins, a suspicious movement; he sees that members of the Dell Farm Crew know more about the murder than they are saying. At the same time his own life becomes more dangerous. He is forced into a confrontation with Killa, and the Crew\u2019s dares tighten the novel\u2019s emotional grip. Auntie Sonia is revealed to be involved with a man called Julius, whose violence hangs over the second half of the novel. Mamma\u2019s faith, Lydia\u2019s protective anger and Harri\u2019s loyalty to his friends are all tested. Kelman paces the book so that the reader, like Harri, half-forgets the threat of the opening chapter until it returns.',
+    'In the closing pages Harri\u2019s amateur investigation attracts the Crew\u2019s direct attention. Warnings turn into threats and then, with devastating speed, into violence. The novel ends with a sudden stabbing, which deliberately echoes the killing that opened the book. The pigeon speaks to Harri as he lies on the ground, and his last thoughts are of his baby sister Agnes. Kelman offers no neat resolution: no arrest, no redemptive epiphany, no lesson drawn. The reader is left instead with the freshness of what has been lost and with the shock of how quickly a child\u2019s hopeful voice can be silenced. The ending is widely discussed in classrooms because of its ambiguity and its refusal to sentimentalise either Harri or the estate that has shaped him.',
   ],
   characters: [
     {
       name: 'Harrison \u2018Harri\u2019 Opoku',
       role: 'Eleven-year-old narrator and protagonist',
-      body: 'Harri is curious, gentle, fast on his feet and almost painfully hopeful. His voice \u2014 a mixture of Ghanaian English, playground London slang and his own invented vocabulary \u2014 is Kelman\u2019s greatest technical achievement and the engine of the novel\u2019s emotional force. \u2018Asweh\u2019 (meaning \u2018I swear\u2019) is his verbal tic; \u2018hutious\u2019 is his word for scary; he sorts the world into what is \u2018brutal\u2019, \u2018advantage\u2019 or \u2018bo-styles\u2019. Harri\u2019s moral instincts \u2014 to help, to pray, to believe the best of people \u2014 run directly against the logic of the estate around him, and Kelman makes the reader feel the cost of that mismatch without ever breaking the child\u2019s perspective.',
+      body: 'Harri is curious, gentle, fast on his feet and almost painfully hopeful. His voice \u2014 a mixture of Ghanaian English, playground London slang and his own invented vocabulary \u2014 is Kelman\u2019s greatest technical achievement and the engine of the novel\u2019s emotional force. \u2018Asweh\u2019 (meaning \u2018I swear\u2019) is his verbal tic; \u2018hutious\u2019 is his word for scary; he sorts the world into what is \u2018brutal\u2019 or \u2018bo-styles\u2019. Harri\u2019s moral instincts \u2014 to help, to pray, to believe the best of people \u2014 run directly against the logic of the estate around him, and Kelman makes the reader feel the cost of that mismatch without ever breaking the child\u2019s perspective.',
     },
     {
       name: 'Lydia Opoku',
       role: 'Harri\u2019s older sister',
-      body: 'Fifteen, tougher and angrier than Harri, Lydia is trying to fit in with an older, sharper world than her brother\u2019s. She rolls her eyes at him, confides in him, protects him and snaps at him by turns. Her friendships with Miquita and Chanelle frighten Mamma, and her exhaustion hints at how much adolescent migrant girls are expected to carry. Lydia\u2019s tenderness towards Harri is one of the novel\u2019s quietest gifts.',
+      body: 'In Year 9, tougher and angrier than Harri, Lydia is trying to fit in with an older, sharper world than her brother\u2019s. She rolls her eyes at him, confides in him, protects him and snaps at him by turns. Her friendships with Miquita and Chanelle frighten Mamma, and her exhaustion hints at how much adolescent migrant girls are expected to carry. Lydia\u2019s tenderness towards Harri is one of the novel\u2019s quietest gifts.',
     },
     {
-      name: 'Mamma (Grace)',
+      name: 'Mamma',
       role: 'Harri\u2019s mother',
       body: 'Mamma works long night shifts as a midwife and holds the family together through prayer, discipline and a love that is sometimes expressed through scolding. She has left her own mother, her husband and her baby daughter behind in Ghana and is saving for the flights that will reunite them. Her absences from the flat mean that Harri is often unsupervised on a dangerous estate, and her faith \u2014 evangelical, practical, loud \u2014 shapes the family\u2019s moral vocabulary.',
     },
@@ -72,10 +90,10 @@ const data: TextGuideData = {
     {
       name: 'Auntie Sonia',
       role: 'Mamma\u2019s younger sister',
-      body: 'Glamorous, charming and secretive, Auntie Sonia lives a riskier life than Mamma. She is tangled up with a man called Julius, whose money and menace eventually catch up with her. Sonia\u2019s story shows what happens when migration is not underwritten by the stability Mamma has fought to build, and her fingerprint-burning ritual \u2014 she files off her fingerprints for fear of deportation \u2014 is one of the novel\u2019s most haunting images.',
+      body: 'Glamorous, charming and secretive, Auntie Sonia lives a riskier life than Mamma. She is tangled up with a man called Julius, whose money and menace eventually catch up with her. Sonia\u2019s story shows what happens when migration is not underwritten by the stability Mamma has fought to build, and her burned fingertips (she destroyed her fingerprints on a stove for fear of deportation) are one of the novel\u2019s most haunting images.',
     },
     {
-      name: 'Jordan (Dean)',
+      name: 'Dean',
       role: 'Harri\u2019s best friend at school',
       body: 'Harri\u2019s white classmate, obsessed with CSI and convinced he can solve the murder, drives the investigation forward. He teaches Harri playground rules and slang; Harri teaches him loyalty. Their friendship offers Harri a way into British childhood and, by the end of the novel, a glimpse of its limits.',
     },
@@ -113,14 +131,14 @@ const data: TextGuideData = {
     },
     {
       title: 'Friendship and loyalty',
-      body: 'Friendships in the novel are both ordinary and load-bearing: Harri and Dean swear \u2018blood brothers\u2019; Harri protects Lydia; Lydia protects Harri; the Dell Farm Crew offer a dark mirror of loyalty in which belonging is paid for in silence and violence. Kelman is interested in how children work out who is worth trusting, and in the moments when loyalty tips from protection into danger.',
+      body: 'Friendships in the novel are both ordinary and load-bearing: Harri and Dean turn detective together; Harri protects Lydia; Lydia protects Harri; the Dell Farm Crew offer a dark mirror of loyalty in which belonging is paid for in silence and violence. Kelman is interested in how children work out who is worth trusting, and in the moments when loyalty tips from protection into danger.',
     },
   ],
   historicalContext: [
     'Pigeon English was directly inspired by the 2000 killing of Damilola Taylor, a ten-year-old Nigerian boy who bled to death in a stairwell on the North Peckham estate after being attacked on his way home from a library. Stephen Kelman has said in interviews that he wanted to imagine the inner life of a child like Damilola \u2014 not as a victim but as a narrator \u2014 and the final chapters echo the real case deliberately. The novel is not a reconstruction of the Taylor case but a fictional response to it, and readers and critics have discussed at length the ethics of using such a recent killing as material for a children\u2019s-voice novel.',
     'The novel\u2019s London setting belongs to a specific urban history. The tower-block estates built in the post-war decades had, by the early twenty-first century, become shorthand in the British press for poverty, crime and social failure. Kelman grew up near estates of this kind in Luton and draws on the textures of that childhood \u2014 the lifts that do not work, the stairwells, the fried-chicken shops, the nicknames, the local geography of safety and threat \u2014 rather than treating the estate as an abstraction. Dell Farm is invented but grounded in observed detail.',
-    'Ghanaian migration to the UK has a long history, and the Opokus are part of an established diaspora. The family speaks Twi at home while Harri and Lydia learn to code-switch into playground English at school. Kelman researched Ghanaian speech, custom and food carefully and consulted Ghanaian readers during drafting; the novel\u2019s cultural detail is carried lightly but deliberately. The voice is the result of months of listening rather than invention.',
-    'Published in 2011 by Bloomsbury, Pigeon English appeared during a decade of heightened public anxiety about knife crime in London. It was shortlisted for the Man Booker Prize, longlisted for the Guardian First Book Award and widely reviewed as an unusually formally ambitious debut. Kelman \u2014 who had worked as a warehouseman and care worker before publication \u2014 became one of the most discussed new British voices of the year. The novel\u2019s place on the AQA GCSE specification has introduced it to a generation of students, and it is now taught alongside the Damilola Taylor case in many classrooms.',
+    'Ghanaian migration to the UK has a long history, and the Opokus are part of an established diaspora. The family speaks Twi at home while Harri and Lydia learn to code-switch into playground English at school. Kelman has said that a growing Ghanaian community where he lived let him take in its everyday life and overhear its conversations; the novel\u2019s cultural detail is carried lightly but deliberately. The voice draws on that listening as well as on invention.',
+    'Published in 2011 by Bloomsbury, Pigeon English appeared during a decade of heightened public anxiety about knife crime in London. It was shortlisted for the Man Booker Prize and for the Guardian First Book Award, and widely reviewed as an unusually formally ambitious debut. Kelman \u2014 who had worked as a warehouseman and care worker before publication \u2014 became one of the most discussed new British voices of the year. The novel\u2019s place on the AQA GCSE specification has introduced it to a generation of students, and it is now taught alongside the Damilola Taylor case in many classrooms.',
   ],
   quotations: [
     {
@@ -136,34 +154,10 @@ const data: TextGuideData = {
         '\u2018Asweh\u2019 (I swear) is Harri\u2019s signature Ghanaian interjection and anchors his voice throughout the novel. Paired with the street-English \u2018brutal\u2019 it shows how his vocabulary is constantly code-switching between home and London.',
     },
     {
-      quote: '"Hutious means scary, in case you didn\'t know."',
-      who: 'Harri \u2014 passim',
-      analysis:
-        'Kelman lets Harri define his own slang on the page, turning the reader into a pupil. Vocabulary becomes an act of identity and a small assertion of power over a world that keeps trying to define him.',
-    },
-    {
-      quote: '"The dead boy\'s mother wouldn\'t stop crying."',
+      quote: '"The dead boy\'s mamma was guarding the blood."',
       who: 'Harri \u2014 early chapters',
       analysis:
         'The victim is never named, only \u2018the dead boy\u2019. Calling his mother into the sentence gives the murder its adult weight while keeping the child narrator\u2019s perspective intact.',
-    },
-    {
-      quote: '"I just wanted to help."',
-      who: 'Harri \u2014 throughout',
-      analysis:
-        'Harri\u2019s motivation, stated simply and repeatedly. Kelman insists on honouring it rather than mocking it, and the line acquires a tragic weight by the final chapters.',
-    },
-    {
-      quote: '"I\'m not even scared, I promise."',
-      who: 'Harri \u2014 late in the novel',
-      analysis:
-        'A reassurance Harri offers himself more than the reader. The repetition has the opposite of its intended effect, intensifying the reader\u2019s sense of his vulnerability.',
-    },
-    {
-      quote: '"Advantage!"',
-      who: 'Harri \u2014 recurring exclamation',
-      analysis:
-        'Harri\u2019s word for anything good or lucky. It functions almost as a charm: saying it is a small ritual of hope in a world that keeps offering him its opposite.',
     },
   ],
 }

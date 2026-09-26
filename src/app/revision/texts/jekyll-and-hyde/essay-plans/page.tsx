@@ -85,7 +85,7 @@ const essayPlans: EssayPlan[] = [
           '"I was slowly losing hold of my original and better self, and becoming slowly incorporated with my second and worse"',
         ],
         analysis:
-          'The initial transformation is described with positive language ("younger, lighter, happier"), creating an oxymoron with the moral horror of Hyde. This shows why duality is dangerous: the evil side feels liberating. The later quotation uses passive constructions ("losing hold," "becoming incorporated") to suggest the process has become involuntary, like addiction. The repetition of "slowly" creates a creeping, insidious rhythm.',
+          'The initial transformation is described with positive language ("younger, lighter, happier"), a pleasure at odds with the moral horror of Hyde. This shows why duality is dangerous: the evil side feels liberating. The later quotation uses passive constructions ("losing hold," "becoming slowly incorporated") to suggest the process has become involuntary, like addiction. The repetition of "slowly" creates a creeping, insidious rhythm.',
         context:
           "Relate to Victorian double lives: many outwardly respectable gentlemen frequented opium dens and prostitutes. Jekyll's potion is a chemical version of the double life already being lived across London.",
       },
@@ -105,7 +105,7 @@ const essayPlans: EssayPlan[] = [
         pointLabel: 'Point 4',
         topic: "Structural duality - the novella's form",
         quotations: [
-          '"If he be Mr Hyde, I shall be Mr Seek"',
+          '"If he be Mr. Hyde... I shall be Mr. Seek"',
           '"I bring the life of that unhappy Henry Jekyll to an end"',
         ],
         analysis:
@@ -133,11 +133,11 @@ const essayPlans: EssayPlan[] = [
         pointLabel: 'Point 1',
         topic: "Hyde's indefinability - evil that cannot be named",
         quotations: [
-          '"He is not easy to describe. There is something wrong with his appearance; something displeasing, something downright detestable"',
+          '"He is not easy to describe. There is something wrong with his appearance; something displeasing, something down-right detestable"',
           '"I never saw a man I so disliked, and yet I scarce know why"',
         ],
         analysis:
-          'Enfield\'s inability to describe Hyde is itself the source of terror. The tricolon "displeasing... something downright detestable" escalates from mild to extreme, yet each term remains vague. The phrase "I scarce know why" suggests Hyde triggers an instinctive, pre-rational revulsion that language cannot capture. Stevenson makes the reader\'s imagination do the work, which is always more effective than explicit description.',
+          'Enfield\'s inability to describe Hyde is itself the source of terror. The tricolon "displeasing... something down-right detestable" escalates from mild to extreme, yet each term remains vague. The phrase "I scarce know why" suggests Hyde triggers an instinctive, pre-rational revulsion that language cannot capture. Stevenson makes the reader\'s imagination do the work, which is always more effective than explicit description.',
         context:
           "Link to Victorian physiognomy - the pseudo-science of reading character from facial features. Hyde's face should be readable, but it resists interpretation. This challenges the Victorian belief that evil can be identified, classified, and controlled.",
       },
@@ -169,13 +169,13 @@ const essayPlans: EssayPlan[] = [
         pointLabel: 'Point 4',
         topic: "Hyde's physical smallness and deformity",
         quotations: [
-          '"Mr Hyde was pale and dwarfish, he gave an impression of deformity without any nameable malformation"',
+          '"Mr. Hyde was pale and dwarfish, he gave an impression of deformity without any nameable malformation"',
           '"the man seems hardly human! Something troglodytic"',
         ],
         analysis:
           'Hyde\'s small size is significant: he is "dwarfish" because he represents the part of Jekyll that has been repressed and underdeveloped. The paradox of "deformity without any nameable malformation" makes Hyde uncanny - wrong in a way that defies categorisation. The word "troglodytic" (cave-dwelling) suggests Hyde is a throwback to a pre-civilised state, connecting to anxieties about degeneration and racial decline.',
         context:
-          "Link to Victorian fears about degeneration - the theory that civilised humans could regress to earlier evolutionary stages. Hyde's smallness grows throughout the novella as he becomes more dominant, suggesting evil expands when fed.",
+          'Link to Victorian fears about degeneration - the theory that civilised humans could regress to earlier evolutionary stages. Late in his statement Jekyll feels that Hyde\'s body "had grown in stature" as he becomes more dominant, suggesting evil expands when fed.',
       },
     ],
     conclusion:
@@ -234,10 +234,10 @@ const essayPlans: EssayPlan[] = [
         topic: 'The laboratory - Gothic space of transgression',
         quotations: [
           '"the theatre... once crowded with eager students and now lying gaunt and silent"',
-          '"the cabinet... furnished, among other things, with a cheval glass... the fire burned in the grate... and on the table lay the remains of an altered experiment"',
+          '"the doctor\'s cabinet. It was a large room fitted round with glass presses, furnished, among other things, with a cheval-glass and a business table"',
         ],
         analysis:
-          'The laboratory is a classic Gothic space: isolated, secret, and associated with forbidden knowledge. The word "theatre" carries a double meaning (medical lecture theatre and stage for transformation). Its emptiness ("gaunt and silent") makes it tomb-like. The "cheval glass" (full-length mirror) is symbolically crucial - it is where Jekyll confronts his transformed reflection. Stevenson concentrates the novella\'s horror in this single room, making it the physical location of duality.',
+          'The laboratory is a classic Gothic space: isolated, secret, and associated with forbidden knowledge. The word "theatre" carries a double meaning (medical lecture theatre and stage for transformation). Its emptiness ("gaunt and silent") makes it tomb-like. The "cheval-glass" (full-length mirror) is symbolically crucial - it is where Jekyll confronts his transformed reflection. Stevenson concentrates the novella\'s horror in this single room, making it the physical location of duality.',
         context:
           "Link to Mary Shelley's Frankenstein (1818): both texts feature scientists whose private laboratories become sites of monstrous creation. Stevenson updates the Gothic laboratory from a remote castle to a London townhouse, making the horror mundane and domestic.",
       },
@@ -274,10 +274,10 @@ const essayPlans: EssayPlan[] = [
         topic: 'Phase 2: Dependency - the balance shifts',
         quotations: [
           '"I was slowly losing hold of my original and better self, and becoming slowly incorporated with my second and worse"',
-          '"the moment I choose, I can be rid of Mr Hyde"',
+          '"the moment I choose, I can be rid of Mr. Hyde"',
         ],
         analysis:
-          'The relationship shifts from choice to compulsion. The passive constructions ("losing hold," "becoming incorporated") make the process sound involuntary - Jekyll is being absorbed by Hyde, not the other way around. The dramatic irony of "the moment I choose, I can be rid of Mr Hyde" is devastating: Jekyll believes he is in control at the very moment he is losing it. The repetition of "slowly" creates a creeping sense of inevitability.',
+          'The relationship shifts from choice to compulsion. The passive constructions ("losing hold," "becoming slowly incorporated") make the process sound involuntary - Jekyll is being absorbed by Hyde, not the other way around. The dramatic irony of "the moment I choose, I can be rid of Mr. Hyde" is devastating: Jekyll believes he is in control at the very moment he is losing it. The repetition of "slowly" creates a creeping sense of inevitability.',
         context:
           'Stevenson drew on contemporary awareness of addiction, particularly to laudanum (opium dissolved in alcohol), which was widely available and increasingly recognised as destructive. The pattern of initial pleasure, growing dependency, and loss of control mirrors the trajectory of substance addiction.',
       },
@@ -326,10 +326,10 @@ const essayPlans: EssayPlan[] = [
         topic: "Characters' complicity in secrecy",
         quotations: [
           '"let us make a bargain never to refer to this again"',
-          '"If he be Mr Hyde, I shall be Mr Seek"',
+          '"If he be Mr. Hyde... I shall be Mr. Seek"',
         ],
         analysis:
-          'Enfield\'s proposal to "never refer to this again" after witnessing Hyde\'s assault reveals the reflexive Victorian instinct to suppress scandal. Both gentlemen agree to silence, prioritising discretion over justice. Utterson\'s pun "Mr Seek" is darkly ironic: he wants to uncover Hyde\'s secret, but throughout the novella he also avoids confronting the truths he finds. Every gentleman in the story keeps secrets - Utterson suppresses the handwriting evidence, Lanyon seals his letter, Jekyll conceals his double life.',
+          'Enfield\'s proposal of "a bargain never to refer to this again" after witnessing Hyde\'s assault reveals the reflexive Victorian instinct to suppress scandal. Both gentlemen agree to silence, prioritising discretion over justice. Utterson\'s pun "Mr Seek" is darkly ironic: he wants to uncover Hyde\'s secret, but throughout the novella he also avoids confronting the truths he finds. Every gentleman in the story keeps secrets - Utterson suppresses the handwriting evidence, Lanyon seals his letter, Jekyll conceals his double life.',
         context:
           "Victorian society operated on codes of discretion. Gentlemen's clubs, private dinners, and professional confidentiality created a structure in which uncomfortable truths could be buried. Stevenson dramatises how this culture of silence enables evil to flourish unchecked.",
       },
@@ -338,7 +338,7 @@ const essayPlans: EssayPlan[] = [
         topic: 'Locked doors and sealed documents as symbols of secrecy',
         quotations: [
           '"the door, which was equipped with neither bell nor knocker, was blistered and distained"',
-          '"a sealed enclosure... not to be opened till the death or disappearance of Dr Henry Jekyll"',
+          '"another enclosure, likewise sealed... not to be opened till the death or disappearance of Dr. Henry Jekyll"',
         ],
         analysis:
           "The novella is full of physical barriers to truth: locked doors, sealed letters, closed drawers. The sinister back door has no bell or knocker - it resists contact and scrutiny. Lanyon's sealed letter defers revelation beyond death, reflecting a society where truth can only emerge when it is too late to act on it. These physical objects embody the psychological barriers characters maintain against self-knowledge and honest communication.",

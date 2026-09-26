@@ -33,7 +33,7 @@ const CHARACTERS: CharacterStudy[] = [
       'Romeo develops from a self-indulgent boy wallowing in lovesickness to a young man capable of profound, selfless love. However, he never fully outgrows his impulsiveness. His decision to buy poison and race to the tomb mirrors his earlier recklessness. Shakespeare suggests that while love has matured Romeo emotionally, it cannot cure the fatal speed at which he acts. His arc is a trajectory of escalating intensity that ends in self-destruction.',
     keyQuotes: [
       {
-        quote: 'O brawling love, O loving hate, / O anything of nothing first create!',
+        quote: 'O brawling love! O loving hate! / O anything, of nothing first create!',
         act: 'Act 1, Scene 1',
         analysis:
           'The stacked oxymorons reveal Romeo performing the role of a lover rather than experiencing genuine feeling. The paradoxes cancel each other out, suggesting this love for Rosaline is empty and artificial -- a foil for his later authentic passion for Juliet.',
@@ -53,7 +53,7 @@ const CHARACTERS: CharacterStudy[] = [
       },
       {
         quote:
-          "Here's to my love! O true apothecary, / Thy drugs are quick. Thus with a kiss I die.",
+          "Here's to my love! O true apothecary! / Thy drugs are quick. Thus with a kiss I die.",
         act: 'Act 5, Scene 3',
         analysis:
           'Romeo dies with a kiss, linking love and death in a single gesture. "Quick" means both fast-acting and alive, creating a painful pun. His final act mirrors his character throughout: passionate, decisive, and fatally premature.',
@@ -73,7 +73,7 @@ const CHARACTERS: CharacterStudy[] = [
     keyQuotes: [
       {
         quote:
-          "What's in a name? That which we call a rose / By any other word would smell as sweet.",
+          "What's in a name? That which we call a rose / By any other name would smell as sweet.",
         act: 'Act 2, Scene 2',
         analysis:
           "Juliet's philosophical questioning challenges the entire social structure that sustains the feud. Her argument -- that identity is inherent, not imposed by family labels -- is logically rigorous and radical for a thirteen-year-old girl in a patriarchal society. Shakespeare uses love as the catalyst for intellectual awakening.",
@@ -87,13 +87,13 @@ const CHARACTERS: CharacterStudy[] = [
       },
       {
         quote:
-          'Give me my Romeo; and when I shall die, / Take him and cut him out in little stars.',
+          'Give me my Romeo, and when I shall die, / Take him and cut him out in little stars.',
         act: 'Act 3, Scene 2',
         analysis:
           'Juliet\'s epithalamium (wedding-night speech) is bold, sensual and imaginative. She claims ownership of Romeo ("my Romeo") and transforms him into a cosmic image. The verb "die" carries an Elizabethan double meaning (sexual climax), linking love, sex and death in a single image.',
       },
       {
-        quote: 'O happy dagger, / This is thy sheath. There rust, and let me die.',
+        quote: 'O happy dagger. / This is thy sheath. There rest, and let me die.',
         act: 'Act 5, Scene 3',
         analysis:
           'Juliet\'s final words are brief, decisive and unsentimental -- the opposite of Romeo\'s elaborate dying speech. "Happy dagger" personifies the weapon as willing. Her suicide is an act of agency: she chooses death on her own terms rather than submitting to a life controlled by others.',
@@ -112,19 +112,19 @@ const CHARACTERS: CharacterStudy[] = [
       "Mercutio does not undergo conventional character development; he is consistent in his wit and courage from start to finish. His dramatic function is to be the hinge of the plot: his death transforms comedy into tragedy. When he fights Tybalt and is fatally stabbed under Romeo's arm, the play's tone shifts permanently. His dying curse, \"A plague o' both your houses,\" becomes the play's moral verdict on the feud.",
     keyQuotes: [
       {
-        quote: 'O, then I see Queen Mab hath been with you.',
+        quote: 'O, then, I see Queen Mab hath been with you.',
         act: 'Act 1, Scene 4',
         analysis:
           'The Queen Mab speech begins as playful mockery of Romeo\'s dreams but escalates into a dark vision of human corruption. Mab brings soldiers dreams of "cutting foreign throats" and women dreams of sex. Mercutio reveals that beneath his humour lies a bleak understanding of human nature.',
       },
       {
-        quote: "A plague o' both your houses! They have made worms' meat of me.",
+        quote: "A plague o' both your houses. / They have made worms' meat of me.",
         act: 'Act 3, Scene 1',
         analysis:
           "Mercutio's dying curse blames both families equally. \"Worms' meat\" is brutally physical, reducing his body to food for decay. The curse resonates through the rest of the play, functioning as both prophecy and moral judgement. Shakespeare makes the audience feel the waste of Mercutio's death.",
       },
       {
-        quote: 'Ask for me tomorrow and you shall find me a grave man.',
+        quote: 'Ask for me tomorrow, and you shall find me a grave man.',
         act: 'Act 3, Scene 1',
         analysis:
           'Even dying, Mercutio puns: "grave" means both serious and a burial place. This characteristic wit-in-extremis shows his refusal to be sentimental about death, but also reveals the horror beneath the joke. His humour makes his death more, not less, devastating.',
@@ -138,20 +138,20 @@ const CHARACTERS: CharacterStudy[] = [
     name: 'Tybalt',
     role: "Juliet's cousin; a Capulet firebrand",
     analysis:
-      'Tybalt is aggressive, honour-obsessed and skilled with a sword. He represents the feud at its most dangerous because he actively seeks conflict rather than simply inheriting it. From his very first line ("What, drawn and talk of peace? I hate the word") he is defined by violence. Shakespeare uses Tybalt to show how the culture of honour and masculinity in Verona perpetuates the cycle of bloodshed. His killing of Mercutio is the turning point of the play, transforming comedy into tragedy.',
+      'Tybalt is aggressive, honour-obsessed and skilled with a sword. He represents the feud at its most dangerous because he actively seeks conflict rather than simply inheriting it. From his very first line ("What, drawn, and talk of peace? I hate the word") he is defined by violence. Shakespeare uses Tybalt to show how the culture of honour and masculinity in Verona perpetuates the cycle of bloodshed. His killing of Mercutio is the turning point of the play, transforming comedy into tragedy.',
     development:
       "Tybalt does not develop in a conventional sense -- he is a fixed point of aggression. His function is structural: he is the agent of the play's catastrophe. His challenge to Romeo at the feast (Act 1, Scene 5) and his street fight (Act 3, Scene 1) are the two moments that seal the lovers' fate. Even after death, his presence haunts the play through Juliet's grief and the escalating consequences of Romeo's banishment.",
     keyQuotes: [
       {
         quote:
-          'What, drawn and talk of peace? I hate the word, / As I hate hell, all Montagues, and thee.',
+          'What, drawn, and talk of peace? I hate the word / As I hate hell, all Montagues, and thee.',
         act: 'Act 1, Scene 1',
         analysis:
           'Tybalt\'s first line establishes his character completely. The triple object of hatred (hell, Montagues, Benvolio) escalates with each item. "I hate the word" -- even the concept of peace is repulsive to him. Shakespeare presents Tybalt as a man for whom violence is an identity, not merely a response.',
       },
       {
         quote:
-          'Romeo, the love I bear thee can afford / No better term than this: thou art a villain.',
+          'Romeo, the love I bear thee can afford / No better term than this: Thou art a villain.',
         act: 'Act 3, Scene 1',
         analysis:
           'Tybalt\'s challenge to Romeo is formal and deliberate. "Villain" was a serious insult demanding a response. The irony is that Romeo now loves Tybalt as family, but Tybalt\'s code of honour cannot accommodate this. Shakespeare shows how rigid social codes make peace impossible.',
@@ -171,20 +171,20 @@ const CHARACTERS: CharacterStudy[] = [
     keyQuotes: [
       {
         quote:
-          "Thou wast the prettiest babe that e'er I nursed. / An I might live to see thee married once, I have my wish.",
+          "Thou wast the prettiest babe that e'er I nurs'd: / And I might live to see thee married once, I have my wish.",
         act: 'Act 1, Scene 3',
         analysis:
           "The Nurse's love for Juliet is genuine and maternal. Her wish to see Juliet married seems benign but becomes ironic: marriage to Romeo will ultimately cause Juliet's death. Shakespeare foreshadows how good intentions lead to catastrophe.",
       },
       {
         quote:
-          "I think it best you married with the County. / O, he's a lovely gentleman! / Romeo's a dishclout to him.",
+          "I think it best you married with the County. / O, he's a lovely gentleman. / Romeo's a dishclout to him.",
         act: 'Act 3, Scene 5',
         analysis:
           'The Nurse\'s advice to marry Paris is well-meaning but devastating. "Dishclout" (dishcloth) reduces Romeo to a worthless rag. For Juliet, this is the ultimate betrayal: the one adult she trusted has chosen pragmatism over loyalty. Shakespeare shows how the Nurse\'s limited understanding of love makes her unable to support Juliet when it matters most.',
       },
       {
-        quote: 'O woeful day! O woeful day!',
+        quote: 'O woeful day, O woeful day.',
         act: 'Act 4, Scene 5',
         analysis:
           "The Nurse's grief at Juliet's apparent death is repetitive and formulaic, contrasting with the deep, private grief the audience knows Juliet would feel. Shakespeare uses this to distinguish genuine emotion from performed sorrow.",
@@ -204,20 +204,20 @@ const CHARACTERS: CharacterStudy[] = [
     keyQuotes: [
       {
         quote:
-          'My will to her consent is but a part; / An she agree, within her scope of choice / Lies my consent and fair according voice.',
+          'My will to her consent is but a part; / And she agree, within her scope of choice / Lies my consent and fair according voice.',
         act: 'Act 1, Scene 2',
         analysis:
           'Capulet appears progressive, suggesting Juliet should have a voice in choosing her husband. But "scope of choice" implies boundaries -- her choice must fall within limits he defines. Shakespeare reveals how patriarchal control can masquerade as freedom.',
       },
       {
         quote:
-          "Hang thee, young baggage! Disobedient wretch! / I tell thee what: get thee to church o' Thursday, / Or never after look me in the face.",
+          'Hang thee young baggage, disobedient wretch! / ... get thee to church a Thursday, / Or never after look me in the face.',
         act: 'Act 3, Scene 5',
         analysis:
           'Capulet\'s violent language ("baggage," "wretch") reduces Juliet to property. The ultimatum -- marry or be disowned -- reveals the absolute power fathers held over daughters. Shakespeare forces the audience to see how patriarchal authority creates the conditions for tragedy.',
       },
       {
-        quote: 'Death is my son-in-law, Death is my heir.',
+        quote: 'Death is my son-in-law, death is my heir.',
         act: 'Act 4, Scene 5',
         analysis:
           'Capulet personifies Death as a family member, replacing the future he planned for Juliet. The repetition of "Death" hammers home the consequences of his rigidity. The irony is devastating: by trying to control Juliet\'s marriage, he has given her to the one bridegroom he cannot defeat.',
@@ -264,7 +264,7 @@ const CHARACTERS: CharacterStudy[] = [
     keyQuotes: [
       {
         quote:
-          'These violent delights have violent ends / And in their triumph die, like fire and powder, / Which as they kiss consume.',
+          'These violent delights have violent ends, / And in their triumph die; like fire and powder, / Which as they kiss consume.',
         act: 'Act 2, Scene 6',
         analysis:
           'The Friar warns that intense passion is self-destructive. The simile of "fire and powder" presents love as a chemical reaction: beautiful but explosive. "As they kiss consume" links the physical act of kissing to mutual destruction. The Friar accurately predicts the tragedy but cannot prevent it.',
@@ -277,7 +277,7 @@ const CHARACTERS: CharacterStudy[] = [
       },
       {
         quote:
-          "In one respect I'll thy assistant be; / For this alliance may so happy prove / To turn your households' rancour to pure love.",
+          "In one respect I'll thy assistant be; / For this alliance may so happy prove, / To turn your households' rancour to pure love.",
         act: 'Act 2, Scene 3',
         analysis:
           "The Friar's motive for marrying the lovers is political, not spiritual. He hopes the marriage will end the feud, using Romeo and Juliet as instruments of peace. Shakespeare suggests that even good intentions can be exploitative when they treat individuals as means to an end.",
@@ -297,14 +297,14 @@ const CHARACTERS: CharacterStudy[] = [
     keyQuotes: [
       {
         quote:
-          'I do but keep the peace. Put up thy sword, / Or manage it to part these men with me.',
+          'I do but keep the peace, put up thy sword, / Or manage it to part these men with me.',
         act: 'Act 1, Scene 1',
         analysis:
           'Benvolio\'s first action is to try to stop the fighting. "Keep the peace" defines his character entirely. But the paradox of drawing a sword to enforce peace illustrates how violence permeates even peaceful intentions in Verona.',
       },
       {
         quote:
-          "Tybalt, here slain, whom Romeo's hand did slay -- / Romeo, that spoke him fair, bade him bethink / How nice the quarrel was.",
+          "Tybalt, here slain, whom Romeo's hand did slay; / Romeo, that spoke him fair, bid him bethink / How nice the quarrel was.",
         act: 'Act 3, Scene 1',
         analysis:
           "Benvolio gives a factual, even-handed account of the fight to the Prince. His objectivity contrasts with Lady Capulet's call for Romeo's execution. Shakespeare uses Benvolio to represent truth and fairness in a world dominated by bias and rage.",
@@ -323,7 +323,7 @@ const CHARACTERS: CharacterStudy[] = [
       'Paris remains consistent throughout the play. His final appearance at the tomb, where he fights Romeo and dies, gives him a tragic dignity he previously lacked. His dying request to be laid beside Juliet is genuinely moving and reminds the audience that the feud destroys those on its periphery as well as those at its centre.',
     keyQuotes: [
       {
-        quote: 'These times of woe afford no times to woo.',
+        quote: 'These times of woe afford no tune to woo.',
         act: 'Act 3, Scene 4',
         analysis:
           'Paris is sensitive enough to recognise that Juliet is grieving (though he thinks she grieves for Tybalt, not Romeo). The neat alliteration of "woe" and "woo" reveals a man who expresses even empathy in controlled, conventional language. He lacks Romeo\'s passionate authenticity.',
@@ -355,7 +355,7 @@ const CHARACTERS: CharacterStudy[] = [
           "The Prince's ultimatum establishes the stakes from the play's opening. \"Forfeit of the peace\" makes peace a commodity that must be paid for in blood. The threat of death foreshadows the play's ending: ultimately, it is the lovers' lives that pay the price.",
       },
       {
-        quote: 'All are punished.',
+        quote: "All are punish'd.",
         act: 'Act 5, Scene 3',
         analysis:
           "The Prince's final verdict is devastating in its simplicity. Three words convey the universal scope of the tragedy: no one escapes guilt, no one escapes suffering. Shakespeare refuses a comfortable resolution -- there are no winners, only varying degrees of loss.",

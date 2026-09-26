@@ -100,13 +100,13 @@ export default function AntonyAndCleopatraPage() {
             Shakespearean Tragedy
           </span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
-            AQA
+            Edexcel A-Level
           </span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
-            OCR
+            Eduqas A-Level
           </span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
-            Edexcel
+            Cambridge IGCSE
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -117,9 +117,9 @@ export default function AntonyAndCleopatraPage() {
         </p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Comprehensive A-Level notes covering plot through the Rome/Egypt opposition, character
-          profiles, thematic essays, Jacobean and classical context, verbatim quotations from the
-          First Folio with analysis, symbolic patterns, and exam question plans with comparative
-          angles for paper-2 and coursework essays.
+          profiles, thematic essays, Jacobean and classical context, key quotations with analysis,
+          symbolic patterns, and exam question plans with comparative angles for paper-2 and
+          coursework essays.
         </p>
       </div>
 
@@ -169,7 +169,7 @@ export default function AntonyAndCleopatraPage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The play opens in Alexandria with Philo lamenting that Antony&apos;s
                   &ldquo;captain&apos;s heart&rdquo; has become &ldquo;the bellows and the fan / To
-                  cool a gypsy&apos;s lust.&rdquo; Antony and Cleopatra flirt and quarrel; Antony
+                  cool a gipsy&apos;s lust.&rdquo; Antony and Cleopatra flirt and quarrel; Antony
                   refuses to hear messengers from Rome until news of his wife Fulvia&apos;s death
                   and Pompey&apos;s rebellion compels him to return. Cleopatra alternately mocks and
                   pines for him. In Rome, Octavius Caesar criticises Antony&apos;s dissolution to
@@ -262,10 +262,10 @@ export default function AntonyAndCleopatraPage() {
                   Caesar at sea to please Cleopatra. At the battle of Actium, Cleopatra&apos;s
                   flagship flees and Antony follows &ldquo;like a doting mallard,&rdquo; abandoning
                   his fleet. The defeat is catastrophic. Antony rages at Cleopatra, then forgives
-                  her. He sends Cleopatra&apos;s schoolmaster as ambassador to Caesar; Caesar sends
-                  Thidias, who flatters Cleopatra. Antony has Thidias whipped and challenges Caesar
-                  to single combat. Enobarbus begins to question his loyalty: &ldquo;I&apos;ll seek
-                  some way to leave him.&rdquo;
+                  her. He sends his schoolmaster as ambassador to Caesar; Caesar sends Thidias, who
+                  flatters Cleopatra. Antony has Thidias whipped and challenges Caesar to single
+                  combat. Enobarbus begins to question his loyalty: &ldquo;I will seek / Some way to
+                  leave him.&rdquo;
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -303,8 +303,8 @@ export default function AntonyAndCleopatraPage() {
                   hearing this, asks his servant Eros to kill him; Eros kills himself instead, and
                   Antony falls on his own sword but botches the wound. He is hauled up to Cleopatra
                   in her monument and dies in her arms with Roman dignity recovered. Cleopatra
-                  laments that &ldquo;the crown o&apos; the earth doth melt&rdquo; and resolves to
-                  die &ldquo;after the high Roman fashion.&rdquo;
+                  laments that &ldquo;the crown o&apos; th&apos; earth doth melt&rdquo; and resolves
+                  to die &ldquo;after the high Roman fashion.&rdquo;
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -379,7 +379,7 @@ export default function AntonyAndCleopatraPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Mark Antony"
-                description="The Roman triumvir torn between Egypt and Rome, between Cleopatra and Caesar's sister Octavia, between the soldier he was and the lover he is becoming. Shakespeare draws on Plutarch's portrait of Antony as a man of immense capacity and equally immense weakness. Roman characters describe him through the language of erosion and dissolution: he 'reels' the world about, his 'goodly eyes' once 'glow'd like plated Mars'. His tragedy is that the very magnanimity which makes him heroic - generosity, sensual openness, refusal of cold calculation - is what unfits him for the new Augustan world. His botched suicide is one of Shakespeare's most painful ironies: the soldier cannot even die a soldier's death."
+                description="The Roman triumvir torn between Egypt and Rome, between Cleopatra and Caesar's sister Octavia, between the soldier he was and the lover he is becoming. Shakespeare draws on Plutarch's portrait of Antony as a man of immense capacity and equally immense weakness. Roman characters describe him through the language of erosion and dissolution: he would 'reel the streets at noon', his 'goodly eyes' once 'glowed like plated Mars'. His tragedy is that the very magnanimity which makes him heroic - generosity, sensual openness, refusal of cold calculation - is what unfits him for the new Augustan world. His botched suicide is one of Shakespeare's most painful ironies: the soldier cannot even die a soldier's death."
               />
               <CharacterCard
                 name="Cleopatra"
@@ -439,7 +439,7 @@ export default function AntonyAndCleopatraPage() {
               />
               <ThemeCard
                 title={tr(`Roman Stoicism vs Egyptian Sensuality`)}
-                description="The play's geography is also a moral and aesthetic dialectic. Rome stands for restraint, hierarchy, military discipline, and the language of measurement; Egypt stands for excess, fluidity, sensual abundance, and the language of metaphor. The opening scene literalises this opposition: Philo's stern tetrameter judgement collides with Antony's expansive 'new heaven, new earth'. Shakespeare avoids endorsing either pole: Roman virtue is also coldness, Egyptian variety is also infidelity. The tragedy occurs in the impossible space between the two worlds."
+                description="The play's geography is also a moral and aesthetic dialectic. Rome stands for restraint, hierarchy, military discipline, and the language of measurement; Egypt stands for excess, fluidity, sensual abundance, and the language of metaphor. The opening scene literalises this opposition: Philo's stern blank-verse judgement collides with Antony's expansive 'new heaven, new earth'. Shakespeare avoids endorsing either pole: Roman virtue is also coldness, Egyptian variety is also infidelity. The tragedy occurs in the impossible space between the two worlds."
               />
               <ThemeCard
                 title={tr(`Power and Empire`)}
@@ -463,7 +463,7 @@ export default function AntonyAndCleopatraPage() {
               />
               <ThemeCard
                 title={tr(`Gender and Political Identity`)}
-                description="Antony complains that he is 'unqualitied' by emotion, that Cleopatra has 'unmanned' him; Cleopatra dresses Antony in her 'tires and mantles' while she wears his sword; the play repeatedly stages the porousness of gender categories. Roman discourse polices manhood through restraint and continence, and its own anxieties about Antony are framed as anxieties about gender. Cleopatra in her final scene calls herself 'fire and air', surrendering her 'baser' elements - even her gendered embodiment is reconstructed in death. A-Level candidates often profitably read the play through gender criticism."
+                description="Iras says Antony is 'unqualitied with very shame' after Actium; Cleopatra dresses Antony in her 'tires and mantles' while she wears his sword; the play repeatedly stages the porousness of gender categories. Roman discourse polices manhood through restraint and continence, and its own anxieties about Antony are framed as anxieties about gender. Cleopatra in her final scene calls herself 'fire and air', surrendering her 'baser' elements - even her gendered embodiment is reconstructed in death. A-Level candidates often profitably read the play through gender criticism."
               />
             </div>
           </Section>
@@ -473,14 +473,14 @@ export default function AntonyAndCleopatraPage() {
         <div id="key-quotations">
           <Section title={tr(`Key Quotations with Analysis`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
-              Verbatim quotations from the First Folio (1623), the only authoritative early text.
-              Modern editions sometimes differ in punctuation and line-break.
+              Quotations follow a modern-spelling edition; the only authoritative early text is the
+              First Folio (1623). Modern editions sometimes differ in punctuation and line-break.
             </p>
             <div className="space-y-1">
               <QuoteCard
-                quote="Let Rome in Tiber melt, and the wide arch / Of the rang'd empire fall!"
+                quote="Let Rome in Tiber melt, and the wide arch / Of the ranged empire fall!"
                 speaker="Antony, Act 1 Scene 1"
-                analysis="Antony's first major utterance is a hyperbolic renunciation of empire. The verb 'melt' will recur throughout the play as the dominant image of dissolution; Rome here is not merely abandoned but liquefied into its own river. 'Rang'd empire' (with its image of imperial order) and 'wide arch' (architectural permanence) make the renunciation cosmically vast. Shakespeare immediately establishes that this love operates on the scale that destroys, not the scale that compromises."
+                analysis="Antony's first major utterance is a hyperbolic renunciation of empire. The verb 'melt' will recur throughout the play as the dominant image of dissolution; Rome here is not merely abandoned but liquefied into its own river. 'Ranged empire' (with its image of imperial order) and 'wide arch' (architectural permanence) make the renunciation cosmically vast. Shakespeare immediately establishes that this love operates on the scale that destroys, not the scale that compromises."
               />
               <QuoteCard
                 quote="There's beggary in the love that can be reckoned."
@@ -498,9 +498,9 @@ export default function AntonyAndCleopatraPage() {
                 analysis="Cleopatra's dismissive description of her affair with Julius Caesar. 'Green' connects youthfulness to immaturity through vegetable imagery; 'cold in blood' recalls Roman stoic rhetoric only to disown it. The phrase has entered standard English; its self-mocking irony shows Cleopatra's distance from her own past, and underlines how the play presents her as a constructed self rather than a fixed identity."
               />
               <QuoteCard
-                quote="The barge she sat in, like a burnish'd throne, / Burn'd on the water."
+                quote="The barge she sat in, like a burnished throne, / Burned on the water."
                 speaker="Enobarbus, Act 2 Scene 2"
-                analysis="The opening of the Cydnus speech. The simile 'like a burnish'd throne' converts a vessel into royalty; the verb 'burn'd' literalises the gleam into combustion. Cleopatra is presented before she is described - Shakespeare delays her appearance with a stage of objects (barge, sails, oars) all heightened by metaphor. Enobarbus, the play's choric realist, is the speaker, which authenticates the spectacle: even the Roman cynic cannot escape the rhetorical pull of Egyptian display."
+                analysis="The opening of the Cydnus speech. The simile 'like a burnished throne' converts a vessel into royalty; the verb 'burned' literalises the gleam into combustion. Cleopatra is presented before she is described - Shakespeare delays her appearance with a stage of objects (barge, sails, oars) all heightened by metaphor. Enobarbus, the play's choric realist, is the speaker, which authenticates the spectacle: even the Roman cynic cannot escape the rhetorical pull of Egyptian display."
               />
               <QuoteCard
                 quote="Age cannot wither her, nor custom stale / Her infinite variety."
@@ -518,29 +518,29 @@ export default function AntonyAndCleopatraPage() {
                 analysis="Antony's most famous dying line. 'Egypt' is his vocative for Cleopatra: he addresses her as the country itself, completing the play's identification of Cleopatra with her kingdom. The repetition 'dying... dying' makes the line spondaic and slow, a long exhalation. The reduction of the play's vast political world to the intimate scene at the monument is concentrated in this one address: Egypt is no longer the geopolitical other-place but the beloved person."
               />
               <QuoteCard
-                quote="O, see, my women, / The crown o' the earth doth melt."
+                quote="O, see, my women, / The crown o' th' earth doth melt."
                 speaker="Cleopatra on Antony's death, Act 4 Scene 15"
-                analysis="Cleopatra's grief uses the play's signature dissolution-imagery. 'The crown o' the earth' makes Antony cosmic; 'doth melt' returns to Antony's own first-act verb. Antony's death is not an event within the world but a partial collapse of the world. The imperative 'see' invites her women - and the audience - to witness a metaphysical not just political loss. This line completes a circuit begun with 'Let Rome in Tiber melt'."
+                analysis="Cleopatra's grief uses the play's signature dissolution-imagery. 'The crown o' th' earth' makes Antony cosmic; 'doth melt' returns to Antony's own first-act verb. Antony's death is not an event within the world but a partial collapse of the world. The imperative 'see' invites her women - and the audience - to witness a metaphysical not just political loss. This line completes a circuit begun with 'Let Rome in Tiber melt'."
               />
               <QuoteCard
-                quote="Husband, I come."
+                quote="Husband, I come!"
                 speaker="Cleopatra, Act 5 Scene 2"
                 analysis="Two stressed monosyllables. 'Husband' is significant: Cleopatra and Antony were never legally married, and her use of the word in death rewrites the relationship as marriage rather than affair. The verb 'come' with its erotic double-meaning fuses death with consummation. The compression of the line to four syllables in a play of expansive verse marks it as a moment of arrival and finality."
               />
               <QuoteCard
-                quote="Dost thou not see my baby at my breast, / That sucks the nurse asleep?"
+                quote="Dost thou not see my baby at my breast / That sucks the nurse asleep?"
                 speaker="Cleopatra, Act 5 Scene 2"
                 analysis="As the asp bites her. The transformation of poison into infant, killer into nurseling, is one of Shakespeare's most disturbing tropes. The asp becomes Cleopatra's child; the nurse (Cleopatra) is rocked into death by the suckling baby. Maternity, eroticism, and self-destruction collapse into a single image. Critics have read the line through psychoanalytic, gender, and theological lenses; its ambiguity is foundational."
               />
               <QuoteCard
-                quote="Give me my robe, put on my crown; I have / Immortal longings in me."
+                quote="Give me my robe. Put on my crown. I have / Immortal longings in me."
                 speaker="Cleopatra, Act 5 Scene 2"
                 analysis="The full death-preparation couplet. The two imperatives ('give', 'put on') are stage-direction-like commands that organise the visual tableau: Cleopatra is being dressed by her women into a queen for her last appearance. She is staging her death as a coronation, a wedding, and a theatrical entrance simultaneously. The act of robing literalises the play's interest in performance: dying is a costumed role."
               />
               <QuoteCard
                 quote="O Antony!"
                 speaker="Enobarbus, Act 4 Scene 9"
-                analysis="Enobarbus's dying cry, the only words he speaks before death. The exclamation is reduced to two words and a vocative. After the long speeches of the 'barge' description, Enobarbus's death is verbally minimal - a contraction that mirrors the moral collapse of the speaker. Loyalty, having been severed by reason, returns as inarticulate grief. The sentry who hears him notes 'his face is downward'; even his physical posture obeys the gravity of repentance."
+                analysis="Enobarbus's dying cry, the last words of his speech of repentance. The exclamation is reduced to two words and a vocative. After the long speeches of the 'barge' description, and after his own confession, Enobarbus's final words contract to a name - a contraction that mirrors the moral collapse of the speaker. Loyalty, having been severed by reason, returns as inarticulate grief."
               />
               <QuoteCard
                 quote="No grave upon the earth shall clip in it / A pair so famous."
@@ -600,23 +600,24 @@ export default function AntonyAndCleopatraPage() {
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">{tr(`The Dolphin`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  In Cleopatra&apos;s great Act 5 dream of Antony, she describes him as &ldquo;a
-                  dolphin-like&rdquo; figure who &ldquo;showed his back above / The element they
-                  lived in.&rdquo; The dolphin is classical iconography for transcendence and the
-                  bridge between elements. Cleopatra&apos;s Antony rises above the medium of
-                  ordinary mortality. The image is part of the play&apos;s posthumous mythologising:
-                  Antony in life was flawed, but in Cleopatra&apos;s narrative he becomes a colossus
-                  that bestrides the ocean. The dolphin functions as a counter-symbol to
-                  Caesar&apos;s prosaic land-and-paperwork imagery.
+                  In Cleopatra&apos;s great Act 5 dream of Antony, she says that &ldquo;His delights
+                  / Were dolphin-like; they showed his back above / The element they lived
+                  in.&rdquo; The dolphin is classical iconography for transcendence and the bridge
+                  between elements. Cleopatra&apos;s Antony rises above the medium of ordinary
+                  mortality. The image is part of the play&apos;s posthumous mythologising: Antony
+                  in life was flawed, but in Cleopatra&apos;s narrative he becomes a colossus that
+                  bestrides the ocean. The dolphin functions as a counter-symbol to Caesar&apos;s
+                  prosaic land-and-paperwork imagery.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">The Moon</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Cleopatra is repeatedly associated with lunar imagery, in line with the classical
-                  identification of Egyptian queens with Isis (a moon goddess). In her death speech
-                  she renounces the moon along with her &ldquo;baser&rdquo; elements: &ldquo;I am
-                  fire and air; my other elements / I give to baser life.&rdquo; The play sets
+                  identification of Egyptian queens with Isis (a moon goddess). Resolving on death,
+                  she renounces the moon: &ldquo;Now the fleeting moon / No planet is of
+                  mine.&rdquo; In her death speech she gives up her other elements: &ldquo;I am fire
+                  and air; my other elements / I give to baser life.&rdquo; The play sets
                   Cleopatra&apos;s mutability against Caesar&apos;s solar steadiness. The
                   moon&apos;s phases mirror her &ldquo;infinite variety&rdquo;: a satellite that is
                   never the same shape twice, yet always recognisable.
@@ -673,8 +674,9 @@ export default function AntonyAndCleopatraPage() {
                   near-verbatim, especially in Enobarbus&apos;s &ldquo;barge&rdquo; speech, which
                   paraphrases North closely. Comparative reading of Plutarch and Shakespeare is
                   fundamental to A-Level analysis: Shakespeare retains Plutarch&apos;s narrative
-                  skeleton but invents Enobarbus as a structural choric figure and expands
-                  Cleopatra&apos;s death scene from a paragraph to a 300-line set-piece.
+                  skeleton but turns Enobarbus, whose desertion and death Plutarch records in a few
+                  lines, into a structural choric figure, and expands Cleopatra&apos;s death scene
+                  from a paragraph to a 300-line set-piece.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -746,7 +748,7 @@ export default function AntonyAndCleopatraPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   In Shakespeare&apos;s theatre Cleopatra would have been played by a young male
                   actor. When Cleopatra fears that Roman captors will display her in a triumph where
-                  some &ldquo;squeaking Cleopatra boy my greatness&rdquo; in &ldquo;the posture of a
+                  some &ldquo;squeaking Cleopatra boy my greatness / I&apos; th&apos; posture of a
                   whore,&rdquo; the line is metatheatrical: a boy actor speaks the line about a boy
                   actor playing Cleopatra. This collapses the levels of fiction in a way
                   characteristic of Jacobean theatre&apos;s self-consciousness.
@@ -776,12 +778,11 @@ export default function AntonyAndCleopatraPage() {
                 <h4 className="font-bold text-foreground">Forty-Scene Cinema-Like Structure</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The play has more than forty scenes, ricocheting between Egypt, Rome, Athens,
-                  Misenum, Actium, Syria, and Parthia. This violates the neoclassical unity of place
-                  and gives the play a panoramic, almost cinematic feel. The constant scene-change
-                  forces the audience to undergo the same rhetorical disorientation that the
-                  protagonists experience: every emotional commitment in Egypt is undercut by a
-                  Roman scene of cold judgement, and vice versa. The structure is itself a thematic
-                  device.
+                  Misenum, Actium and Syria. This violates the neoclassical unity of place and gives
+                  the play a panoramic, almost cinematic feel. The constant scene-change forces the
+                  audience to undergo the same rhetorical disorientation that the protagonists
+                  experience: every emotional commitment in Egypt is undercut by a Roman scene of
+                  cold judgement, and vice versa. The structure is itself a thematic device.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -902,7 +903,7 @@ export default function AntonyAndCleopatraPage() {
                       Paragraph 3 &mdash; The death scenes
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      &ldquo;I am dying, Egypt, dying&rdquo; and &ldquo;Husband, I come.&rdquo;
+                      &ldquo;I am dying, Egypt, dying&rdquo; and &ldquo;Husband, I come!&rdquo;
                       Argue that the rhetorical performance becomes most intense at the moments of
                       greatest sincerity. The lovers convert their deaths into rhetoric without
                       thereby cheapening them.
@@ -957,8 +958,8 @@ export default function AntonyAndCleopatraPage() {
                       Paragraph 1 &mdash; The case for the death
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      &ldquo;I have / Immortal longings in me&rdquo;; &ldquo;Give me my robe, put on
-                      my crown&rdquo;; &ldquo;Husband, I come.&rdquo; The death is staged with
+                      &ldquo;I have / Immortal longings in me&rdquo;; &ldquo;Give me my robe. Put on
+                      my crown&rdquo;; &ldquo;Husband, I come!&rdquo; The death is staged with
                       theatrical complexity, dressing-as-coronation, asp-as-baby. Acknowledge the
                       strength of the case.
                     </p>
@@ -1114,9 +1115,9 @@ export default function AntonyAndCleopatraPage() {
                       Paragraph 2 &mdash; Egyptian celebrant
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The Cydnus speech: &ldquo;The barge she sat in, like a burnish&apos;d throne,
-                      / Burn&apos;d on the water&rdquo; and &ldquo;Age cannot wither her, nor custom
-                      stale / Her infinite variety.&rdquo; Cynical Enobarbus can also produce the
+                      The Cydnus speech: &ldquo;The barge she sat in, like a burnished throne, /
+                      Burned on the water&rdquo; and &ldquo;Age cannot wither her, nor custom stale
+                      / Her infinite variety.&rdquo; Cynical Enobarbus can also produce the
                       play&apos;s most baroque imagery.
                     </p>
                   </div>
@@ -1188,8 +1189,8 @@ export default function AntonyAndCleopatraPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Egyptian verse uses hyperbole, dissolution-imagery (&ldquo;the crown o&apos;
-                      the earth doth melt&rdquo;), mythological reference. Roman verse is terser,
-                      transactional, focused on tactics. Style is geography.
+                      th&apos; earth doth melt&rdquo;), mythological reference. Roman verse is
+                      terser, transactional, focused on tactics. Style is geography.
                     </p>
                   </div>
                   <div>
@@ -1245,13 +1246,14 @@ export default function AntonyAndCleopatraPage() {
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The verb &ldquo;melt&rdquo; appears in Antony&apos;s &ldquo;Let Rome in Tiber
-                  melt&rdquo; (Act 1.1) and recurs in Cleopatra&apos;s &ldquo;the crown o&apos; the
-                  earth doth melt&rdquo; (Act 4.15). The same word marks Antony&apos;s opening
-                  renunciation and his death. The play&apos;s vocabulary of dissolution &mdash;
-                  melting, drowning, fading &mdash; is structurally circular: what Antony invokes
-                  hyperbolically as gesture in Act 1 is enacted literally in Act 4. An A* candidate
-                  can trace the verb across the play and argue that Shakespeare&apos;s tragic
-                  mechanism is to make the metaphors of love come true as the metaphors of death.
+                  melt&rdquo; (Act 1.1) and recurs in Cleopatra&apos;s &ldquo;the crown o&apos;
+                  th&apos; earth doth melt&rdquo; (Act 4.15). The same word marks Antony&apos;s
+                  opening renunciation and his death. The play&apos;s vocabulary of dissolution
+                  &mdash; melting, drowning, fading &mdash; is structurally circular: what Antony
+                  invokes hyperbolically as gesture in Act 1 is enacted literally in Act 4. An A*
+                  candidate can trace the verb across the play and argue that Shakespeare&apos;s
+                  tragic mechanism is to make the metaphors of love come true as the metaphors of
+                  death.
                 </p>
               </div>
               <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1262,7 +1264,7 @@ export default function AntonyAndCleopatraPage() {
                   When Cleopatra applies the asp, the moment carries three superimposed
                   identifications: the asp as instrument of suicide, the asp as the Egyptian uraeus
                   (royal serpent on the Pharaoh&apos;s crown), and the asp as the imagined infant at
-                  her breast. The line &ldquo;Dost thou not see my baby at my breast, / That sucks
+                  her breast. The line &ldquo;Dost thou not see my baby at my breast / That sucks
                   the nurse asleep?&rdquo; performs all three at once: queen, mother, suicide. A
                   top-band reading explores the simultaneity rather than choosing one meaning, and
                   connects the multivalence to the play&apos;s wider commitment to &ldquo;infinite
@@ -1369,9 +1371,9 @@ export default function AntonyAndCleopatraPage() {
         <div id="practice-questions">
           <Section title="A-Level Practice Questions" icon="📝">
             <p className="text-sm text-muted-foreground mb-4">
-              Exam-style questions in the style of AQA, OCR, and Edexcel A-Level. Plan a 45-minute
-              response using the structure: thesis &rarr; four PEEL paragraphs each with verbatim
-              quotation &rarr; comparative angle &rarr; brief conclusion.
+              Exam-style essay questions on the play. Plan a 45-minute response using the structure:
+              thesis &rarr; four PEEL paragraphs each with verbatim quotation &rarr; comparative
+              angle &rarr; brief conclusion.
             </p>
             <div className="space-y-3">
               {[

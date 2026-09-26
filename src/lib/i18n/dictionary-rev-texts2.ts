@@ -539,10 +539,12 @@ export const REV_TEXTS2_DICTIONARY: Record<string, { en: string; ar?: string; es
     ar: 'شلون يقدّمه Steinbeck',
     es: 'Cómo lo presenta Steinbeck',
   },
+  // Twenty-five until 26 September 2026, when a card quoting a line that is not
+  // in the novel was removed from the page.
   'rev.texts2.omam.key_quotes.intro': {
-    en: 'Twenty-five essential quotations for exam revision. Each quote is 15 words or fewer, with speaker, context, analysis and theme tags for quick reference.',
-    ar: 'خمسة وعشرون اقتباساً أساسياً للمراجعة قبل الامتحان. كل اقتباس 15 كلمة أو أقل، مع المتحدّث، والسياق، والتحليل، ووسوم المحاور للرجوع السريع.',
-    es: 'Veinticinco citas esenciales para repasar para el examen. Cada cita tiene 15 palabras o menos, con hablante, contexto, análisis y etiquetas de tema para consulta rápida.',
+    en: 'Twenty-four essential quotations for exam revision. Each quote is 15 words or fewer, with speaker, context, analysis and theme tags for quick reference.',
+    ar: 'أربعة وعشرون اقتباساً أساسياً للمراجعة قبل الامتحان. كل اقتباس 15 كلمة أو أقل، مع المتحدّث، والسياق، والتحليل، ووسوم المحاور للرجوع السريع.',
+    es: 'Veinticuatro citas esenciales para repasar para el examen. Cada cita tiene 15 palabras o menos, con hablante, contexto, análisis y etiquetas de tema para consulta rápida.',
   },
 
   // ─── To Kill a Mockingbird (rev.texts2.tkam.*) ───────────────────────────

@@ -19335,7 +19335,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'rev.texts.acc.extract.where_sits_h': 'Dónde se sitúa este extracto',
   'rev.texts.acc.extract.where_sits_desc': 'Stave 1, "Marley\'s Ghost"',
   'rev.texts.acc.extract.the_extract_desc':
-    'Desde "Oh! But he was a tight-fisted hand..." hasta "Solitary as an oyster." Texto de dominio público, Dickens, 1843.',
+    'Desde "Oh! But he was a tight-fisted hand..." hasta "...what the knowing ones call \'nuts\' to Scrooge." Texto de dominio público, Dickens, 1843.',
   'rev.texts.acc.extract.walkthrough_h': 'Recorrido método por método',
   'rev.texts.acc.extract.walkthrough_intro':
     'Para cada fragmento: Notice identifica los mecanismos en la página; Say modela la frase analítica que escribiría una respuesta AO2 sólida; y Zoom out conecta el momento con el arco más amplio y con el contexto reformista de 1843 en el que escribía Dickens.',
@@ -19745,7 +19745,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Seis temas principales explorados en profundidad con los métodos de Steinbeck, vínculos contextuales y orientación del examinador. Todas las citas tienen 15 palabras o menos.',
   'rev.texts2.omam.themes.how_steinbeck': 'Cómo lo presenta Steinbeck',
   'rev.texts2.omam.key_quotes.intro':
-    'Veinticinco citas esenciales para repasar para el examen. Cada cita tiene 15 palabras o menos, con hablante, contexto, análisis y etiquetas de tema para consulta rápida.',
+    'Veinticuatro citas esenciales para repasar para el examen. Cada cita tiene 15 palabras o menos, con hablante, contexto, análisis y etiquetas de tema para consulta rápida.',
   'rev.texts2.tkam.characters.intro':
     'Perfiles detallados de cada personaje principal: resumen, arco, citas clave y consejos del examinador. Todas las citas tienen 15 palabras o menos.',
   'rev.texts2.tkam.themes.intro':

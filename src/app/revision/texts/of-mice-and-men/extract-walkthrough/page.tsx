@@ -11,6 +11,9 @@ type WalkthroughCard = {
   body: string
 }
 
+// Corrected 26 September 2026: the heron takes a snake only in Chapter 6, and
+// "tell about the rabbits, George" is not in the novel (see the main page's
+// note), so neither this card list nor the model paragraph claims otherwise.
 const WALKTHROUGH: WalkthroughCard[] = [
   {
     kind: 'Notice',
@@ -22,19 +25,21 @@ const WALKTHROUGH: WalkthroughCard[] = [
     kind: 'Notice',
     title: 'A predatory natural world',
     fragment: 'a silent head and beak lanced down',
-    body: "A heron eats a water snake in the opening pages and again here. Nature's indifference reframes the human tragedy as one small predation among many - Lennie is simply next.",
+    body: "In the opening pages a water snake swims past unharmed; here a heron eats one. Nature's indifference reframes the human tragedy as one small predation among many - Lennie is simply next.",
   },
   {
     kind: 'Say',
     title: "Lennie's last refrain",
-    fragment: 'tell about the rabbits, George',
-    body: "The childlike refrain returns one final time. Steinbeck weaponises repetition: a line that has bonded the men for the whole novella becomes the soundtrack to George's preparation to kill. Tenderness and horror coexist in a single sentence.",
+    body: "The childlike refrain returns one final time, as George tells the dream once more while Lennie looks across the river. Steinbeck weaponises repetition: the recitation that has bonded the men for the whole novella becomes the soundtrack to George's preparation to kill. Tenderness and horror coexist in a single sentence.",
   },
   {
     kind: 'Zoom Out',
     title: "Candy's dog as rehearsal",
-    // VERIFIED: original Steinbeck text reads "I oughtta of shot that dog myself, George" - dialect 'oughtta' preserved (Penguin Modern Classics edn).
-    fragment: 'I oughtta of shot that dog myself',
+    // CORRECTED 26 September 2026. This comment claimed the text reads "oughtta";
+    // it does not. The study guide, checked against three scanned editions,
+    // has "I ought to of shot that dog myself, George." (Chapter 3), and the
+    // Internet Archive's full-text search finds no "oughtta of" in any edition.
+    fragment: 'I ought to of shot that dog myself',
     body: "Carlson's earlier execution of Candy's dog is the template for what George must now do. Candy's regret - that he let a stranger end his companion - becomes George's instruction manual. The novella has been preparing this bullet for fifty pages.",
   },
   {
@@ -67,7 +72,7 @@ const WALKTHROUGH: WalkthroughCard[] = [
   },
 ]
 
-const MODEL_PARAGRAPH = `The ending of Of Mice and Men earns its tragic inevitability because Steinbeck has, from the first page, been quietly nailing the coffin shut. The cyclical return to the Salinas pool tells the reader that nothing the men attempted ever altered their trajectory; the heron devouring the water snake confirms that the natural world was always indifferent to their plans. Carlson's execution of Candy's dog functions as a structural rehearsal - Candy's lament that he should have done it himself becomes George's blueprint, and the same Luger reappears as the instrument of mercy. Lennie's final 'tell about the rabbits, George' weaponises tenderness: the refrain that defined their friendship now scores its execution. Crucially, Steinbeck offers no alternative refuge. The ranch is not a community but a marketplace; Crooks is segregated, Curley's wife is property, Candy is one accident from disposable. In a world stripped of solidarity, friendship is the only insurance the powerless can purchase, and the novella's bleakness lies in showing that even that insurance cannot survive economic precarity. George's slow trigger is therefore not weakness but love budgeted against horror: better a friend's bullet than a mob's rope. Slim's quiet absolution - 'You hadda, George' - locates the ethical verdict inside the fellowship of labour, suggesting that in 1930s America, mercy and murder had collapsed into the same gesture.`
+const MODEL_PARAGRAPH = `The ending of Of Mice and Men earns its tragic inevitability because Steinbeck has, from the first page, been quietly nailing the coffin shut. The cyclical return to the Salinas pool tells the reader that nothing the men attempted ever altered their trajectory; the heron devouring the water snake confirms that the natural world was always indifferent to their plans. Carlson's execution of Candy's dog functions as a structural rehearsal - Candy's lament that he should have done it himself becomes George's blueprint, and the same Luger reappears as the instrument of mercy. George's last telling of the dream weaponises tenderness: the refrain that defined their friendship now scores its execution. Crucially, Steinbeck offers no alternative refuge. The ranch is not a community but a marketplace; Crooks is segregated, Curley's wife is property, Candy is one accident from disposable. In a world stripped of solidarity, friendship is the only insurance the powerless can purchase, and the novella's bleakness lies in showing that even that insurance cannot survive economic precarity. George's slow trigger is therefore not weakness but love budgeted against horror: better a friend's bullet than a mob's rope. Slim's quiet absolution - 'You hadda, George' - locates the ethical verdict inside the fellowship of labour, suggesting that in 1930s America, mercy and murder had collapsed into the same gesture.`
 
 function CardBlock({ card }: { card: WalkthroughCard }) {
   const tone =

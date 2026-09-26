@@ -47,7 +47,7 @@ const THEMES: ThemeStudy[] = [
           'I was slowly losing hold of my original and better self, and becoming slowly incorporated with my second and worse.',
         speaker: 'Jekyll -- Chapter 10',
         analysis:
-          'Passive constructions ("losing hold," "becoming incorporated") suggest the process has become involuntary. The repetition of "slowly" creates a creeping rhythm that mirrors the gradual takeover. Jekyll is no longer choosing Hyde; Hyde is consuming Jekyll.',
+          'Passive constructions ("losing hold," "becoming slowly incorporated") suggest the process has become involuntary. The repetition of "slowly" creates a creeping rhythm that mirrors the gradual takeover. Jekyll is no longer choosing Hyde; Hyde is consuming Jekyll.',
       },
     ],
     contextLink:
@@ -137,10 +137,10 @@ const THEMES: ThemeStudy[] = [
       },
       {
         quote:
-          'I felt younger, lighter, happier in body; within I was conscious of a heady recklessness, a current of disordered sensual images running like a mill-race in my fancy.',
+          'I felt younger, lighter, happier in body; within I was conscious of a heady recklessness, a current of disordered sensual images running like a millrace in my fancy.',
         speaker: 'Jekyll as Hyde -- Chapter 10',
         analysis:
-          'The first transformation is described in positive, even exhilarating terms. Evil feels good. "Heady recklessness" suggests intoxication; "sensual images running like a mill-race" conveys wild, uncontrollable pleasure. Stevenson makes evil seductive to explain why it is so hard to resist.',
+          'The first transformation is described in positive, even exhilarating terms. Evil feels good. "Heady recklessness" suggests intoxication; "sensual images running like a millrace" conveys wild, uncontrollable pleasure. Stevenson makes evil seductive to explain why it is so hard to resist.',
       },
       {
         quote:
@@ -163,7 +163,7 @@ const THEMES: ThemeStudy[] = [
       "Every major character in the novella keeps secrets. Jekyll hides his experiment. Utterson suppresses his suspicions. Enfield makes it a rule not to ask questions. Lanyon seals his account in a letter not to be opened until Jekyll's death or disappearance. The culture of secrecy is not presented as evil in itself but as a social mechanism that enables evil to flourish. The novella's structure replicates this culture of concealment: information is withheld from the reader just as it is withheld by the characters. We learn the truth only in the final two chapters, through posthumous documents. Stevenson embeds the theme in the physical setting too: Jekyll's house has a public front and a private back; his laboratory is a locked room; the door Hyde uses has \"neither bell nor knocker.\" Locked doors, sealed envelopes, and private cabinets are the architecture of secrecy. The novella asks whether the Victorian gentleman's code of discretion -- which values reputation above truth -- is complicit in the crimes it refuses to investigate. Utterson's loyalty to Jekyll is admirable, but it also delays the revelation that might have saved lives.",
     keyQuotes: [
       {
-        quote: 'If he be Mr Hyde, I shall be Mr Seek.',
+        quote: 'If he be Mr. Hyde... I shall be Mr. Seek.',
         speaker: 'Utterson -- Chapter 2',
         analysis:
           "The pun encapsulates the novella's structure: Hyde hides, and the reader must seek. The children's game reference trivialises the search, which is ironic given its deadly stakes. Stevenson uses wordplay to embed the theme of concealment in the very language of the text.",
@@ -192,11 +192,11 @@ const THEMES: ThemeStudy[] = [
     overview:
       "Hyde's violence shatters the surface of Victorian respectability, revealing the savagery that civilisation conceals.",
     detailed:
-      'The two major acts of violence in the novella -- the trampling of the girl and the murder of Sir Danvers Carew -- are positioned against backgrounds of extreme respectability. Hyde tramples the child in a "quiet" street and then enters a "respectable" door to produce a cheque signed by a "well-known" gentleman. Carew is murdered while apparently asking for directions in a "particularly quiet" neighbourhood. Stevenson creates a pattern of violence erupting from calm surfaces, mirroring the central metaphor of Hyde erupting from Jekyll. Hyde\'s violence also escalates, tracking the novella\'s darkening tone. The trampling is cruel but survivable; the Carew murder is savage and fatal. The maid\'s description -- "with ape-like fury, he was trampling his victim underfoot and hailing down a storm of blows" -- connects Hyde to the evolutionary anxiety of the period: the ape within the gentleman. The broken cane, snapping in half from the force of the blows, becomes a physical symbol of civilised restraint shattered by uncontrollable rage. Stevenson argues that violence is not an aberration in Victorian society but a suppressed constant, always present beneath the polished surface.',
+      'The two major acts of violence in the novella -- the trampling of the girl and the murder of Sir Danvers Carew -- are positioned against backgrounds of extreme respectability. Hyde tramples the child in a "quiet" street and then enters a neglected door to produce a cheque signed with a name "very well known and often printed". Carew is murdered while apparently asking for directions, on a lane "brilliantly lit by the full moon". Stevenson creates a pattern of violence erupting from calm surfaces, mirroring the central metaphor of Hyde erupting from Jekyll. Hyde\'s violence also escalates, tracking the novella\'s darkening tone. The trampling is cruel but survivable; the Carew murder is savage and fatal. The maid\'s description -- "with ape-like fury, he was trampling his victim under foot and hailing down a storm of blows" -- connects Hyde to the evolutionary anxiety of the period: the ape within the gentleman. The broken cane, snapping in half from the force of the blows, becomes a physical symbol of civilised restraint shattered by uncontrollable rage. Stevenson argues that violence is not an aberration in Victorian society but a suppressed constant, always present beneath the polished surface.',
     keyQuotes: [
       {
         quote:
-          'With ape-like fury, he was trampling his victim underfoot and hailing down a storm of blows, under which the bones were audibly shattered.',
+          'With ape-like fury, he was trampling his victim under foot and hailing down a storm of blows, under which the bones were audibly shattered.',
         speaker: 'Narrator -- Chapter 4',
         analysis:
           '"Ape-like" connects Hyde to evolutionary regression. "Storm of blows" uses a natural disaster metaphor, presenting violence as an elemental force. "Audibly shattered" forces the reader to hear the violence. Stevenson makes the murder visceral and inescapable.',

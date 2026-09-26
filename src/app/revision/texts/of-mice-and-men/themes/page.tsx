@@ -32,6 +32,11 @@ export const metadata: Metadata = {
 
 /* ── Theme data ────────────────────────────────────────────────────────── */
 
+// Corrected 26 September 2026 (see the main page's note): the heron takes a
+// water snake only in Chapter 6; "We gonna get a little place" is George's in
+// Chapter 6; "whole damn world" had lost "damn"; and two quotations are now
+// marked where cut or held to fourteen words.
+
 type ThemeData = {
   title: string
   overview: string
@@ -50,8 +55,8 @@ const THEMES: ThemeData[] = [
       'Steinbeck structures the dream as a call-and-response ritual between George and Lennie, giving it the rhythm of scripture. When Candy adds his savings, the dream shifts from fantasy to realistic possibility - Steinbeck briefly lets the reader hope too. This makes the destruction more painful. The dream is never achieved because the economic system makes it impossible: wages are spent in cat houses, workers are atomised, and one mistake erases everything.',
     keyQuotes: [
       {
-        text: '"We\'re gonna get a little place."',
-        speaker: 'George - Chapter 1',
+        text: '"We gonna get a little place."',
+        speaker: 'George - Chapter 6',
         analysis:
           'The dream in its simplest form. Steinbeck uses repetition to make it feel like a ritual of survival, not a plan.',
       },
@@ -62,7 +67,7 @@ const THEMES: ThemeData[] = [
           'Crooks has seen hundreds of men with the same dream and none who achieved it. Steinbeck uses him to expose the dream as a collective delusion.',
       },
       {
-        text: '"I knowed from the very first. I think I knowed we\'d never do her."',
+        text: '"I think I knowed we\'d never do her."',
         speaker: 'George - Chapter 5',
         analysis:
           'George admits the dream was always impossible. Steinbeck collapses hope and self-awareness in a single devastating line.',
@@ -112,7 +117,7 @@ const THEMES: ThemeData[] = [
       "Steinbeck uses physical settings to signal power: the Boss has his own house, the workers share a bunkhouse, Crooks is confined to the harness room. He also uses Curley's gloved hand as a symbol of insecure masculinity and borrowed power. The crushing of that hand by Lennie briefly overturns the hierarchy, but the restoration is swift and violent.",
     keyQuotes: [
       {
-        text: '"I could get you strung up on a tree so easy."',
+        text: '"I could get you strung up on a tree so easy …"',
         speaker: "Curley's Wife to Crooks - Chapter 4",
         analysis:
           'The powerless woman uses racial violence as a weapon against the only person lower in the hierarchy. Steinbeck shows how oppression is reproduced within oppressed groups.',
@@ -155,7 +160,7 @@ const THEMES: ThemeData[] = [
           'George believes it when he says it. Steinbeck makes the reader believe it too, which is what makes the ending unbearable.',
       },
       {
-        text: '"Maybe ever\'body in the whole world is scared of each other."',
+        text: '"Maybe ever\'body in the whole damn world is scared of each other."',
         speaker: 'Slim - Chapter 3',
         analysis:
           'In the full passage, Slim identifies both what is special about the friendship and what destroys it in everyone else: fear. Steinbeck uses Slim as the voice of structural analysis.',
@@ -202,11 +207,11 @@ const THEMES: ThemeData[] = [
     overview:
       "The novella opens and closes at the same pool by the Salinas River, creating a circular structure that suggests nature's indifference to human suffering. Animals recur throughout: Lennie's dead mice, the puppy, Candy's dog, the heron eating the water snake. Steinbeck draws a consistent parallel between the natural world's casual violence and the social world's treatment of vulnerable people.",
     howSteinbeckPresentsIt:
-      "Steinbeck uses the pastoral opening to establish a brief Eden before the ranch intrudes. The pool is a place of safety - Lennie is told to return there if he gets into trouble - but it is also the place of his death. The heron kills a water snake in both the opening and closing chapters, a repeated image that frames human tragedy within natural cycles of predation. Candy's dog is shot in a scene that foreshadows and structurally mirrors Lennie's death.",
+      "Steinbeck uses the pastoral opening to establish a brief Eden before the ranch intrudes. The pool is a place of safety - Lennie is told to return there if he gets into trouble - but it is also the place of his death. A water snake crosses the pool unharmed in the opening chapter, and in the closing chapter a heron seizes one, a repeated image that frames human tragedy within natural cycles of predation. Candy's dog is shot in a scene that foreshadows and structurally mirrors Lennie's death.",
     keyQuotes: [
       {
         text: '"A water snake glided smoothly up the pool."',
-        speaker: 'Narrator - Chapter 1 and Chapter 6',
+        speaker: 'Narrator - Chapter 6',
         analysis:
           "The repeated image creates circularity. Nature continues regardless of human suffering. Steinbeck uses the snake's indifference to underscore the novella's tragic determinism.",
       },

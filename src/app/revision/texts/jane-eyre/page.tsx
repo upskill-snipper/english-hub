@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Jane Eyre revision guide - themes, characters, key quotes',
   description:
-    "Jane Eyre GCSE revision - Charlotte Brontë's Gothic bildungsroman by chapter with key quotes. Aligned to AQA, OCR and Edexcel International A Level.",
+    "Jane Eyre GCSE revision - Charlotte Brontë's Gothic bildungsroman by chapter with key quotes. For AQA, Edexcel, OCR and Eduqas, and AQA and OCR A-Level.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/jane-eyre',
   },
@@ -37,7 +37,7 @@ const data: TextGuideData = {
   author: 'Charlotte Bront\u00eb',
   year: '1847',
   category: 'Novel',
-  badge: 'AQA / OCR / Eduqas',
+  badge: 'AQA / Edexcel / OCR / Eduqas / AQA A-Level / OCR A-Level',
   intro:
     "Charlotte Bront\u00eb's groundbreaking novel follows the orphan Jane Eyre from a cruel childhood through her education at the harsh Lowood school to her position as governess at Thornfield Hall, where she falls in love with the brooding Mr Rochester. A passionate exploration of independence, morality, class and gender, Jane Eyre shocked Victorian readers with its fierce first-person voice and its insistence that a plain, poor woman could be the equal of any man.",
   quickInfo: {
@@ -125,7 +125,7 @@ const data: TextGuideData = {
       quote: '"Reader, I married him."',
       who: 'Jane - Chapter 38',
       analysis:
-        "The novel's iconic closing line. Jane addresses the reader directly, asserting her agency: she married him, not the other way around.",
+        'The famous opening of the final chapter. Jane addresses the reader directly, asserting her agency: she married him, not the other way around.',
     },
     {
       quote:
@@ -156,7 +156,7 @@ const data: TextGuideData = {
     },
     {
       quote: '"I would always rather be happy than dignified."',
-      who: 'Jane - Chapter 24',
+      who: 'Jane - Chapter 34',
       analysis:
         "A quieter declaration of Jane's values. She prizes genuine feeling over social propriety.",
     },
@@ -273,7 +273,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The novel\'s iconic closing line has Jane addressing the reader directly and placing herself as the active agent: "I married him" - not "he married me." This asserts her agency and independence to the very last line.',
+      'The famous opening of the final chapter has Jane addressing the reader directly and placing herself as the active agent: "I married him" - not "he married me." This asserts her agency and independence as the story closes.',
     topic: "Writer's Methods",
     difficulty: 'higher',
   },
@@ -521,7 +521,9 @@ export default async function JaneEyrePage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          // The labels read 'Name - Chapter n' with a spaced hyphen; splitting
+          // on the em dash alone left the chapter in every option of the quiz.
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

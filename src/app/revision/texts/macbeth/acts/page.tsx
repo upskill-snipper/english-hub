@@ -283,12 +283,8 @@ const ACTS: Act[] = [
             analysis:
               'Lady Macbeth adopts the language of feudal submission while planning regicide. The gap between her words and her intentions is absolute, dramatising the theme of appearance versus reality in its starkest form.',
           },
-          {
-            name: 'Religious language',
-            quote: '"God\'s benison go with you."',
-            analysis:
-              "Duncan invokes God's blessing as he enters the castle where he will be murdered. The religious language amplifies the horror of the coming crime: this is not merely a political murder but a violation of divine law and sacred hospitality.",
-          },
+          // "God's benison go with you" was listed here as Duncan's. It is the
+          // Old Man's, in 2.4, where it already appears below.
         ],
       },
       {
@@ -1144,12 +1140,6 @@ const ACTS: Act[] = [
               'Macbeth compares himself to a bear tied to a post in a bear-baiting arena, forced to fight dogs. The image is simultaneously pathetic and fierce: he is trapped but will fight with animal desperation. The bear-baiting metaphor also dehumanises him, aligning his final stand with bestial instinct rather than human courage.',
           },
           {
-            name: 'Death of youth / pathos',
-            quote: '"Why should I play the Roman fool, and die / On mine own sword?"',
-            analysis:
-              'Macbeth rejects the Roman (Stoic) tradition of suicide, choosing to fight rather than take the honourable way out. This refusal to follow classical precedent marks him as neither noble villain nor tragic hero in the traditional sense, but something more primal and desperate.',
-          },
-          {
             name: "Macduff's determination",
             quote: '"That way the noise is. Tyrant, show thy face!"',
             analysis:
@@ -1168,6 +1158,14 @@ const ACTS: Act[] = [
         summary:
           'Macbeth and Macduff face each other. Macbeth boasts that no man born of woman can harm him. Macduff reveals he was delivered by caesarean section. Macbeth briefly despairs but refuses to yield. They fight; Macduff kills Macbeth. Malcolm is hailed as King of Scotland.',
         techniques: [
+          // Moved from 5.7: this line opens 5.8 in the Folger and MIT texts and
+          // in the site's own reader.
+          {
+            name: 'Classical allusion',
+            quote: '"Why should I play the Roman fool and die / On mine own sword?"',
+            analysis:
+              'Macbeth rejects the Roman (Stoic) tradition of suicide, choosing to fight rather than take the honourable way out. This refusal to follow classical precedent marks him as neither noble villain nor tragic hero in the traditional sense, but something more primal and desperate.',
+          },
           {
             name: 'Revelation / equivocation exposed',
             quote: '"Macduff was from his mother\'s womb / Untimely ripp\'d."',

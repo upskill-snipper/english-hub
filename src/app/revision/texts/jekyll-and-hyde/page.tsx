@@ -31,7 +31,7 @@ const JH_FAQS: GeoFaqItem[] = [
   {
     question: 'Why is Mr Hyde described as repulsive and what does he represent?',
     answer:
-      'Every character who meets Hyde feels an instinctive revulsion they cannot explain; Enfield calls him "something downright detestable" and Utterson senses "Satan’s signature" on his face. Hyde represents the primal, amoral self freed from conscience and social restraint. He grows larger and stronger as the novella progresses, suggesting that evil, once indulged, becomes increasingly dominant.',
+      'Every character who meets Hyde feels an instinctive revulsion they cannot explain; Enfield calls him "something down-right detestable" and Utterson senses "Satan’s signature" on his face. Hyde represents the primal, amoral self freed from conscience and social restraint. He grows larger and stronger as the novella progresses, suggesting that evil, once indulged, becomes increasingly dominant.',
   },
   {
     question: 'How does the context of Victorian society shape Jekyll and Hyde?',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   title: 'Jekyll and Hyde GCSE revision - themes, characters, quotes',
   description:
-    "Jekyll and Hyde GCSE revision - Stevenson's Gothic novella with chapter analysis, characters, themes, context and key quotes. Aligned to AQA, Edexcel, OCR.",
+    "Jekyll and Hyde GCSE revision - Stevenson's Gothic novella with chapter analysis, characters, themes, context and key quotes. AQA, Edexcel, OCR, Eduqas.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/jekyll-and-hyde',
   },
@@ -127,9 +127,9 @@ const data: TextGuideData = {
       role: "Jekyll's dark alter ego",
       roleAr:
         '\u0627\u0644\u0646\u0635\u0641 \u0627\u0644\u0645\u0638\u0644\u0645 \u0627\u0644\u062b\u0627\u0646\u064a \u0644\u0640 Jekyll',
-      body: 'Hyde is younger, smaller, and filled with pure malice. Every character who meets him feels an instinctive revulsion they cannot quite explain \u2014 Enfield calls it "something downright detestable," and Utterson describes "Satan\'s signature" on his face. Hyde represents the primal, id-driven self freed from conscience and social restraint. Significantly, he grows larger and stronger as the novella progresses, suggesting that evil, once indulged, becomes increasingly dominant. His violence escalates from trampling a child to the frenzied murder of Sir Danvers Carew.',
+      body: 'Hyde is younger, smaller, and filled with pure malice. Every character who meets him feels an instinctive revulsion they cannot quite explain \u2014 Enfield calls it "something down-right detestable," and Utterson describes "Satan\'s signature" on his face. Hyde represents the primal, id-driven self freed from conscience and social restraint. Significantly, he grows larger and stronger as the novella progresses, suggesting that evil, once indulged, becomes increasingly dominant. His violence escalates from trampling a child to the frenzied murder of Sir Danvers Carew.',
       bodyAr:
-        'Hyde \u0623\u0635\u063a\u0631\u060c \u0648\u0623\u0642\u0635\u0631\u060c \u0648\u0645\u0644\u064a\u0627\u0646 \u062d\u0642\u062f \u0635\u0631\u0641. \u0643\u0644 \u0634\u062e\u0635\u064a\u0629 \u062a\u0642\u0627\u0628\u0644\u0647 \u062a\u062d\u0633 \u0628\u0646\u0641\u0648\u0631 \u063a\u0631\u064a\u0632\u064a \u0645\u0627 \u062a\u0642\u062f\u0631 \u062a\u0641\u0633\u0651\u0631\u0647 \u2014 Enfield \u064a\u0633\u0645\u064a\u0647 "something downright detestable"\u060c \u0648Utterson \u064a\u0635\u0641 \u0648\u062c\u0647\u0647 \u0628\u0623\u0646\u0647 "Satan\'s signature". Hyde \u064a\u0645\u062b\u0651\u0644 \u0627\u0644\u0646\u0641\u0633 \u0627\u0644\u0628\u062f\u0627\u0626\u064a\u0629 \u0627\u0644\u0645\u062f\u0641\u0648\u0639\u0629 \u0628\u0627\u0644\u063a\u0631\u0627\u0626\u0632\u060c \u0645\u062a\u062d\u0631\u0651\u0631\u0629 \u0645\u0646 \u0627\u0644\u0636\u0645\u064a\u0631 \u0648\u0627\u0644\u0642\u064a\u0648\u062f \u0627\u0644\u0627\u062c\u062a\u0645\u0627\u0639\u064a\u0629. \u0627\u0644\u0645\u0644\u062d\u0648\u0638 \u0625\u0646\u0647 \u064a\u0643\u0628\u0631 \u0648\u064a\u0642\u0648\u0649 \u0643\u0644 \u0645\u0627 \u062a\u0642\u062f\u0651\u0645\u062a \u0627\u0644\u0631\u0648\u0627\u064a\u0629\u060c \u0648\u0647\u0630\u0627 \u064a\u0644\u0645\u0651\u062d \u0625\u0646 \u0627\u0644\u0634\u0631\u060c \u0644\u0648 \u062e\u0644\u0651\u064a\u0646\u0627\u0647 \u064a\u0637\u0644\u0639\u060c \u064a\u0635\u064a\u0631 \u0645\u0633\u064a\u0637\u0631 \u0623\u0643\u062b\u0631 \u0641\u0623\u0643\u062b\u0631. \u0639\u0646\u0641\u0647 \u064a\u062a\u0635\u0627\u0639\u062f \u0645\u0646 \u062f\u0648\u0633 \u0628\u0646\u062a \u0635\u063a\u064a\u0631\u0629 \u0644\u064a\u0646 \u0642\u062a\u0644 Sir Danvers Carew \u0628\u0634\u0643\u0644 \u0647\u0633\u062a\u064a\u0631\u064a.',
+        'Hyde \u0623\u0635\u063a\u0631\u060c \u0648\u0623\u0642\u0635\u0631\u060c \u0648\u0645\u0644\u064a\u0627\u0646 \u062d\u0642\u062f \u0635\u0631\u0641. \u0643\u0644 \u0634\u062e\u0635\u064a\u0629 \u062a\u0642\u0627\u0628\u0644\u0647 \u062a\u062d\u0633 \u0628\u0646\u0641\u0648\u0631 \u063a\u0631\u064a\u0632\u064a \u0645\u0627 \u062a\u0642\u062f\u0631 \u062a\u0641\u0633\u0651\u0631\u0647 \u2014 Enfield \u064a\u0633\u0645\u064a\u0647 "something down-right detestable"\u060c \u0648Utterson \u064a\u0635\u0641 \u0648\u062c\u0647\u0647 \u0628\u0623\u0646\u0647 "Satan\'s signature". Hyde \u064a\u0645\u062b\u0651\u0644 \u0627\u0644\u0646\u0641\u0633 \u0627\u0644\u0628\u062f\u0627\u0626\u064a\u0629 \u0627\u0644\u0645\u062f\u0641\u0648\u0639\u0629 \u0628\u0627\u0644\u063a\u0631\u0627\u0626\u0632\u060c \u0645\u062a\u062d\u0631\u0651\u0631\u0629 \u0645\u0646 \u0627\u0644\u0636\u0645\u064a\u0631 \u0648\u0627\u0644\u0642\u064a\u0648\u062f \u0627\u0644\u0627\u062c\u062a\u0645\u0627\u0639\u064a\u0629. \u0627\u0644\u0645\u0644\u062d\u0648\u0638 \u0625\u0646\u0647 \u064a\u0643\u0628\u0631 \u0648\u064a\u0642\u0648\u0649 \u0643\u0644 \u0645\u0627 \u062a\u0642\u062f\u0651\u0645\u062a \u0627\u0644\u0631\u0648\u0627\u064a\u0629\u060c \u0648\u0647\u0630\u0627 \u064a\u0644\u0645\u0651\u062d \u0625\u0646 \u0627\u0644\u0634\u0631\u060c \u0644\u0648 \u062e\u0644\u0651\u064a\u0646\u0627\u0647 \u064a\u0637\u0644\u0639\u060c \u064a\u0635\u064a\u0631 \u0645\u0633\u064a\u0637\u0631 \u0623\u0643\u062b\u0631 \u0641\u0623\u0643\u062b\u0631. \u0639\u0646\u0641\u0647 \u064a\u062a\u0635\u0627\u0639\u062f \u0645\u0646 \u062f\u0648\u0633 \u0628\u0646\u062a \u0635\u063a\u064a\u0631\u0629 \u0644\u064a\u0646 \u0642\u062a\u0644 Sir Danvers Carew \u0628\u0634\u0643\u0644 \u0647\u0633\u062a\u064a\u0631\u064a.',
     },
     {
       name: 'Mr Gabriel John Utterson',
@@ -154,9 +154,9 @@ const data: TextGuideData = {
       role: "Utterson's cousin and walking companion",
       roleAr:
         '\u0642\u0631\u064a\u0628 Utterson \u0648\u0631\u0641\u064a\u0642\u0647 \u0641\u064a \u0627\u0644\u0645\u0634\u064a',
-      body: 'Enfield is a man-about-town who witnesses Hyde trampling the young girl in the opening chapter. His role is primarily structural: he introduces the mystery and models the Victorian gentleman\'s instinct to suppress scandalous knowledge. His agreement with Utterson to "never refer to this again" after their first conversation reflects the culture of silence and repression that pervades the novella.',
+      body: 'Enfield is a man-about-town who witnesses Hyde trampling the young girl in the opening chapter. His role is primarily structural: he introduces the mystery and models the Victorian gentleman\'s instinct to suppress scandalous knowledge. His agreement with Utterson to make "a bargain never to refer to this again" after their first conversation reflects the culture of silence and repression that pervades the novella.',
       bodyAr:
-        'Enfield \u0631\u062c\u0644 \u0627\u062c\u062a\u0645\u0627\u0639\u064a \u064a\u0639\u0631\u0641 \u0627\u0644\u0645\u062f\u064a\u0646\u0629\u060c \u064a\u0634\u0647\u062f Hyde \u0648\u0647\u0648 \u064a\u062f\u0648\u0633 \u0627\u0644\u0628\u0646\u062a \u0627\u0644\u0635\u063a\u064a\u0631\u0629 \u0641\u064a \u0627\u0644\u0641\u0635\u0644 \u0627\u0644\u0623\u0648\u0644. \u062f\u0648\u0631\u0647 \u0623\u0633\u0627\u0633\u0627\u064b \u0628\u0646\u064a\u0648\u064a: \u064a\u0642\u062f\u0651\u0645 \u0627\u0644\u0644\u063a\u0632 \u0648\u064a\u062c\u0633\u0651\u062f \u063a\u0631\u064a\u0632\u0629 \u0627\u0644\u062c\u0646\u062a\u0644\u0645\u0627\u0646 \u0627\u0644\u0641\u064a\u0643\u062a\u0648\u0631\u064a \u0628\u0643\u0628\u062a \u0623\u064a \u0645\u0639\u0644\u0648\u0645\u0627\u062a \u0645\u0641\u0636\u0648\u062d\u0629. \u0627\u062a\u0641\u0627\u0642\u0647 \u0645\u0639 Utterson \u0625\u0646\u0647\u0645 "never refer to this again" \u0628\u0639\u062f \u0623\u0648\u0644 \u0645\u062d\u0627\u062f\u062b\u0629 \u064a\u0639\u0643\u0633 \u062b\u0642\u0627\u0641\u0629 \u0627\u0644\u0635\u0645\u062a \u0648\u0627\u0644\u0643\u0628\u062a \u0627\u0644\u0644\u064a \u062a\u0633\u0648\u062f \u0627\u0644\u0631\u0648\u0627\u064a\u0629 \u0643\u0644\u0647\u0627.',
+        'Enfield \u0631\u062c\u0644 \u0627\u062c\u062a\u0645\u0627\u0639\u064a \u064a\u0639\u0631\u0641 \u0627\u0644\u0645\u062f\u064a\u0646\u0629\u060c \u064a\u0634\u0647\u062f Hyde \u0648\u0647\u0648 \u064a\u062f\u0648\u0633 \u0627\u0644\u0628\u0646\u062a \u0627\u0644\u0635\u063a\u064a\u0631\u0629 \u0641\u064a \u0627\u0644\u0641\u0635\u0644 \u0627\u0644\u0623\u0648\u0644. \u062f\u0648\u0631\u0647 \u0623\u0633\u0627\u0633\u0627\u064b \u0628\u0646\u064a\u0648\u064a: \u064a\u0642\u062f\u0651\u0645 \u0627\u0644\u0644\u063a\u0632 \u0648\u064a\u062c\u0633\u0651\u062f \u063a\u0631\u064a\u0632\u0629 \u0627\u0644\u062c\u0646\u062a\u0644\u0645\u0627\u0646 \u0627\u0644\u0641\u064a\u0643\u062a\u0648\u0631\u064a \u0628\u0643\u0628\u062a \u0623\u064a \u0645\u0639\u0644\u0648\u0645\u0627\u062a \u0645\u0641\u0636\u0648\u062d\u0629. \u0627\u062a\u0641\u0627\u0642\u0647 \u0645\u0639 Utterson \u0625\u0646\u0647\u0645 "never to refer to this again" \u0628\u0639\u062f \u0623\u0648\u0644 \u0645\u062d\u0627\u062f\u062b\u0629 \u064a\u0639\u0643\u0633 \u062b\u0642\u0627\u0641\u0629 \u0627\u0644\u0635\u0645\u062a \u0648\u0627\u0644\u0643\u0628\u062a \u0627\u0644\u0644\u064a \u062a\u0633\u0648\u062f \u0627\u0644\u0631\u0648\u0627\u064a\u0629 \u0643\u0644\u0647\u0627.',
     },
   ],
 
@@ -224,7 +224,7 @@ const data: TextGuideData = {
   // ── Key Quotations (20+) ───────────────────────────────────────────────────
   quotations: [
     {
-      quote: '"If he be Mr Hyde, I shall be Mr Seek."',
+      quote: '"If he be Mr. Hyde... I shall be Mr. Seek."',
       who: 'Utterson',
       whoAr: 'Utterson',
       analysis:
@@ -256,13 +256,13 @@ const data: TextGuideData = {
       who: 'Jekyll (Full Statement)',
       whoAr: 'Jekyll (Full Statement)',
       analysis:
-        'Demonstrates the gradual loss of control. The passive construction ("losing hold," "becoming incorporated") suggests Hyde is not something Jekyll does but something that happens to him, reflecting addiction and moral decline.',
+        'Demonstrates the gradual loss of control. The passive construction ("losing hold," "becoming slowly incorporated") suggests Hyde is not something Jekyll does but something that happens to him, reflecting addiction and moral decline.',
       analysisAr:
-        'يبيّن فقدان السيطرة بشكل تدريجي. صيغة المبني للمجهول ("losing hold" و"becoming incorporated") تلمّح إن Hyde مو شي يسوّيه Jekyll، بل شي يصير له، ويعكس الإدمان والانحدار الأخلاقي.',
+        'يبيّن فقدان السيطرة بشكل تدريجي. صيغة المبني للمجهول ("losing hold" و"becoming slowly incorporated") تلمّح إن Hyde مو شي يسوّيه Jekyll، بل شي يصير له، ويعكس الإدمان والانحدار الأخلاقي.',
     },
     {
       quote:
-        '"He is not easy to describe. There is something wrong with his appearance; something displeasing, something downright detestable."',
+        '"He is not easy to describe. There is something wrong with his appearance; something displeasing, something down-right detestable."',
       who: 'Enfield',
       whoAr: 'Enfield',
       analysis:
@@ -290,7 +290,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"The large handsome face of Dr Jekyll grew pale to the very lips, and there came a blackness about his eyes."',
+        '"The large handsome face of Dr. Jekyll grew pale to the very lips, and there came a blackness about his eyes."',
       who: 'Narrator',
       whoAr: '\u0627\u0644\u0631\u0627\u0648\u064a',
       analysis:
@@ -300,12 +300,12 @@ const data: TextGuideData = {
     },
     {
       quote: '"All human beings, as we meet them, are commingled out of good and evil."',
-      who: 'Utterson',
-      whoAr: 'Utterson',
+      who: 'Jekyll (Full Statement)',
+      whoAr: 'Jekyll (Full Statement)',
       analysis:
-        'Utterson\'s rational version of the duality theme. The word "commingled" (mixed together) is crucial: unlike Jekyll, Utterson understands that good and evil cannot be neatly separated.',
+        'Jekyll\'s own statement of the duality theme. The word "commingled" (mixed together) is crucial: Jekyll admits that every human being mixes good and evil, and claims that only Hyde, "alone in the ranks of mankind, was pure evil".',
       analysisAr:
-        '\u0627\u0644\u0646\u0633\u062e\u0629 \u0627\u0644\u0639\u0642\u0644\u0627\u0646\u064a\u0629 \u0644\u0645\u062d\u0648\u0631 \u0627\u0644\u0627\u0632\u062f\u0648\u0627\u062c\u064a\u0629 \u0645\u0646 Utterson. \u0643\u0644\u0645\u0629 "commingled" (\u0645\u062e\u0644\u0648\u0637 \u0645\u0639 \u0628\u0639\u0636) \u062c\u0648\u0647\u0631\u064a\u0629: \u0639\u0644\u0649 \u0639\u0643\u0633 Jekyll\u060c Utterson \u0641\u0627\u0647\u0645 \u0625\u0646 \u0627\u0644\u062e\u064a\u0631 \u0648\u0627\u0644\u0634\u0631 \u0645\u0627 \u064a\u062a\u0641\u0635\u0644\u0648\u0646 \u0628\u0646\u0638\u0627\u0641\u0629.',
+        'كلام Jekyll نفسه عن محور الازدواجية في Full Statement. كلمة "commingled" (مخلوط مع بعض) جوهرية: Jekyll يعترف إن كل إنسان خليط من الخير والشر، ويقول إن Hyde وحده "alone in the ranks of mankind, was pure evil".',
     },
     {
       quote: '"I bring the life of that unhappy Henry Jekyll to an end."',
@@ -378,7 +378,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"He had always been known for charities; he was now no less distinguished for religion."',
+        '"He had always been known for charities, he was now no less distinguished for religion."',
       who: 'Narrator',
       whoAr: '\u0627\u0644\u0631\u0627\u0648\u064a',
       analysis:
@@ -415,7 +415,7 @@ const data: TextGuideData = {
         'Jekyll \u064a\u062d\u0627\u0648\u0644 \u064a\u0639\u0641\u064a \u0646\u0641\u0633\u0647 \u0628\u0625\u0644\u0642\u0627\u0621 \u0627\u0644\u0644\u0648\u0645 \u0639\u0644\u0649 Hyde\u060c \u0644\u0643\u0646 Stevenson \u064a\u0628\u064a\u0651\u0646 \u0625\u0646 \u0647\u0630\u0627 \u062e\u062f\u0627\u0639 \u0644\u0644\u0646\u0641\u0633. \u0627\u0644\u0642\u0648\u0629 \u0627\u0644\u0623\u062e\u0644\u0627\u0642\u064a\u0629 \u0644\u0644\u0631\u0648\u0627\u064a\u0629 \u062a\u0639\u062a\u0645\u062f \u0639\u0644\u0649 \u0641\u0647\u0645 \u0627\u0644\u0642\u0627\u0631\u0626 \u0625\u0646 Jekyll \u0648Hyde \u0646\u0641\u0633 \u0627\u0644\u0634\u062e\u0635.',
     },
     {
-      quote: '"The moment I choose, I can be rid of Mr Hyde."',
+      quote: '"The moment I choose, I can be rid of Mr. Hyde."',
       who: 'Jekyll',
       whoAr: 'Jekyll',
       analysis:
@@ -425,7 +425,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"He put the glass to his lips and drank at one gulp... and there before my eyes \u2014 pale and shaken, and half fainting \u2014 there stood Henry Jekyll!"',
+        '"He put the glass to his lips and drank at one gulp... for there before my eyes \u2014 pale and shaken, and half fainting... there stood Henry Jekyll!"',
       who: 'Lanyon (narrative letter)',
       whoAr:
         'Lanyon (\u0627\u0644\u0631\u0633\u0627\u0644\u0629 \u0627\u0644\u0633\u0631\u062f\u064a\u0629)',
@@ -521,7 +521,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Every character who meets Hyde feels inexplicable revulsion. Enfield calls it "something downright detestable" and Utterson describes "Satan\'s signature upon a face." Evil resists rational categorisation.',
+      'Every character who meets Hyde feels inexplicable revulsion. Enfield calls it "something down-right detestable" and Utterson describes "Satan\'s signature upon a face." Evil resists rational categorisation.',
     topic: 'Characters',
     difficulty: 'foundation',
   },
@@ -764,7 +764,7 @@ const REVISION_TOPICS = [
       '"Man is not truly one, but truly two"',
       "Jekyll's experiment attempts to divide good from evil but fails",
       'Hyde grows stronger over time, suggesting evil is not easily controlled',
-      'Utterson\'s wisdom: good and evil are "commingled" and cannot be neatly separated',
+      'Jekyll\'s own words: all human beings are "commingled out of good and evil"',
       "The horror is not Hyde's existence but Jekyll's belief he can divide the self",
     ],
   },

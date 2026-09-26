@@ -2,6 +2,16 @@
 
 import { useState } from 'react'
 
+/*
+ * Corrected 26 September 2026 against the 1892 New England Magazine text (as
+ * the study guide transcribes it) and Project Gutenberg #1952. The hero carried
+ * "Edexcel IGCSE" and "Prose Anthology" badges; no specification we cover sets
+ * the story (see set-texts.ts). Three quotations were wrong: "exhaust me a good
+ * deal" had lost three words, "repellant" is Gilman's spelling, and the final
+ * speech had dropped "said I" unmarked and printed "Jane." where 1892 has
+ * "Jane?". "For her own good" was in quotation marks but is not in the story.
+ */
+
 /* ─── Expandable Section Component ─────────────────────────── */
 
 function Section({
@@ -89,12 +99,6 @@ export default function YellowWallpaperPage() {
         <div className="flex flex-wrap items-center gap-3 mb-2">
           <span className="rounded-full bg-violet-500/15 px-3 py-1 text-xs font-bold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
             Short Story
-          </span>
-          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
-            Edexcel IGCSE
-          </span>
-          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
-            Prose Anthology
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -211,8 +215,7 @@ export default function YellowWallpaperPage() {
                       little goose&rdquo;: infantilising language
                     </li>
                     <li>
-                      &bull; Her pleas to leave the house are overruled &ldquo;for her own
-                      good&rdquo;
+                      &bull; Her pleas to leave the house are overruled, supposedly for her own good
                     </li>
                   </ul>
                 </div>
@@ -413,13 +416,13 @@ export default function YellowWallpaperPage() {
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">Symbolism of the Wallpaper</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The wallpaper is the most analysed symbol in American short fiction: a domestic
-                  decoration that becomes a text, a prison, and a mirror. Its surface pattern
-                  (convention, the rules of feminine behaviour) imprisons the figure beneath (the
-                  woman&apos;s self). Its yellow is described in terms of sickness and uncleanness;
-                  its smell invades the whole house. The narrator&apos;s progression from reading
-                  the paper, to watching it, to tearing it down maps her relationship to the role it
-                  represents.
+                  The wallpaper is one of the most analysed symbols in American short fiction: a
+                  domestic decoration that becomes a text, a prison, and a mirror. Its surface
+                  pattern (convention, the rules of feminine behaviour) imprisons the figure beneath
+                  (the woman&apos;s self). Its yellow is described in terms of sickness and
+                  uncleanness; its smell invades the whole house. The narrator&apos;s progression
+                  from reading the paper, to watching it, to tearing it down maps her relationship
+                  to the role it represents.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -515,14 +518,14 @@ export default function YellowWallpaperPage() {
                 analysis="The minimising modifiers 'temporary' and 'slight' shrink the narrator's suffering to something barely worth treating, while 'hysterical' genders it (hysteria was a diagnosis applied to women). Because John is both husband and 'physician of high standing', the label is unanswerable. Note the irony: the trivialising diagnosis licenses a treatment of total control."
               />
               <QuoteCard
-                quote="I did write for a while in spite of them; but it does exhaust me, having to be so sly about it."
+                quote="I did write for a while in spite of them; but it does exhaust me a good deal—having to be so sly about it"
                 speaker="The narrator, opening entry"
                 analysis="'In spite of them' establishes writing as resistance from the very first page, and 'sly' shows how a sanctioned activity has been criminalised. The exhaustion is the point: the cost of the cure is the constant labour of concealment. Use this to argue the journal form is not a frame but the story's central conflict."
               />
               <QuoteCard
-                quote="The color is repellent, almost revolting; a smouldering unclean yellow"
+                quote="The color is repellant, almost revolting; a smouldering unclean yellow"
                 speaker="The narrator, first describing the wallpaper"
-                analysis="The wallpaper is introduced through disgust imagery: 'repellent', 'revolting', 'unclean'. 'Smouldering' is the key word, suggesting suppressed fire, anger that burns without flame, exactly the narrator's own condition. The colour yellow accumulates associations of sickness and decay as the story proceeds, until even the smell of it fills the house."
+                analysis="The wallpaper is introduced through disgust imagery: 'repellant', 'revolting', 'unclean'. 'Smouldering' is the key word, suggesting suppressed fire, anger that burns without flame, exactly the narrator's own condition. The colour yellow accumulates associations of sickness and decay as the story proceeds, until even the smell of it fills the house."
               />
               <QuoteCard
                 quote="like a woman stooping down and creeping about behind that pattern"
@@ -545,7 +548,7 @@ export default function YellowWallpaperPage() {
                 analysis="The quiet horror of the verb: the narrator now creeps too, and has a routine for it. The matter-of-fact tone ('I always') shows how completely the abnormal has been normalised inside her secret life. The locked door reverses its meaning here: earlier others locked her in; now she locks others out, claiming the confinement as her own territory."
               />
               <QuoteCard
-                quote="I've got out at last, in spite of you and Jane. And I've pulled off most of the paper, so you can't put me back!"
+                quote="I've got out at last … in spite of you and Jane? And I've pulled off most of the paper, so you can't put me back!"
                 speaker="The narrator to John, final scene"
                 analysis="The climactic speech fuses narrator and wallpaper-woman: 'got out' refers at once to the paper, the room and the role. 'Jane' is the famous crux: most critics read it as the narrator's own name, so that she announces escape from her sane, obedient self. 'You can't put me back' is triumphant and devastating: the only victory available is one from which there is no return."
               />

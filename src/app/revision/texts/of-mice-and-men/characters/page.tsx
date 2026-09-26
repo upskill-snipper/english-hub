@@ -32,6 +32,12 @@ export const metadata: Metadata = {
 
 /* ── Character data ────────────────────────────────────────────────────── */
 
+// Corrected 26 September 2026 (see the main page's note): "Tell about the
+// rabbits, George" is not in the novel and was removed; "I want you to stay
+// with me, Lennie" is Chapter 1, not George's last words; Curley says "ya big
+// bastard"; and "so easy and so nice", "nobody but Curley" and "whole damn
+// world" now match the text.
+
 type CharacterProfile = {
   name: string
   role: string
@@ -56,16 +62,16 @@ const CHARACTERS: CharacterProfile[] = [
           'Introduces the theme of isolation and immediately positions George and Lennie as exceptions. The word "loneliest" foreshadows the ending when George becomes exactly that.',
       },
       {
-        text: '"I could get along so easy if I didn\'t have you on my tail."',
+        text: '"I could get along so easy … if I didn\'t have you on my tail."',
         context: 'Chapter 1 - frustration with Lennie',
         analysis:
           "Reveals the strain of responsibility. Steinbeck makes George's sacrifice visible: he knows what freedom looks like but chooses loyalty instead.",
       },
       {
         text: '"I want you to stay with me, Lennie."',
-        context: 'Chapter 6 - final scene',
+        context: "Chapter 1 - refusing Lennie's offer to live alone in a cave",
         analysis:
-          "George's last words to Lennie before pulling the trigger. The tenderness makes the violence unbearable and confirms their bond as the novella's emotional centre.",
+          "George's tenderness breaks through his complaints and confirms their bond as the novella's emotional centre. The line is often misremembered as his last words before the shot: Chapter 6 echoes this scene, which makes the ending harder to bear.",
       },
     ],
     examTip:
@@ -85,12 +91,6 @@ const CHARACTERS: CharacterProfile[] = [
           'Captures the childlike clarity of their bond. The mutual dependence is the emotional core of the novella, even though it is George who does most of the protecting.',
       },
       {
-        text: '"Tell about the rabbits, George."',
-        context: 'Recurring - Chapters 1, 3, 6',
-        analysis:
-          "The repeated refrain of the dream. Its final appearance, seconds before Lennie's death, is the novella's most devastating line. The rabbits symbolise innocence that can never be realised.",
-      },
-      {
         text: '"I done a bad thing."',
         context: "Chapter 5 - after killing Curley's wife",
         analysis:
@@ -108,7 +108,7 @@ const CHARACTERS: CharacterProfile[] = [
     arc: 'Curley begins as a bully looking for fights and ends as a vengeful husband leading a lynch mob. His broken hand - crushed by Lennie in self-defence - humiliates him publicly and drives his need for revenge. He never develops self-awareness; he remains a small man wielding borrowed authority throughout.',
     keyQuotes: [
       {
-        text: '"Come on, ya big son-of-a-bitch."',
+        text: '"Come on, ya big bastard."',
         context: 'Chapter 3 - picking a fight with Lennie',
         analysis:
           'Curley targets the largest, most vulnerable man to assert dominance. Steinbeck exposes how bullies choose victims who cannot or will not fight back.',
@@ -131,7 +131,7 @@ const CHARACTERS: CharacterProfile[] = [
     arc: "Curley's wife moves from apparent threat to sympathetic victim. Her confession to Lennie in the barn - about her dream of being in pictures - humanises her moments before her death. Steinbeck delays this vulnerability so the reader reappraises her posthumously, forcing a reckoning with the sexism that silenced her throughout.",
     keyQuotes: [
       {
-        text: '"I get lonely. You can talk to people, but I can\'t talk to nobody."',
+        text: '"You can talk to people, but I can\'t talk to nobody but Curley."',
         context: 'Chapter 5 - to Lennie in the barn',
         analysis:
           "Humanises her just before her death and reframes her as a victim of isolation rather than a cause of trouble. Steinbeck uses her loneliness to universalise the novella's central theme.",
@@ -224,7 +224,7 @@ const CHARACTERS: CharacterProfile[] = [
           "The respected moral voice validates George's impossible choice and closes the novella with painful compassion. Steinbeck uses Slim to give the ending moral weight.",
       },
       {
-        text: '"Maybe ever\'body in the whole world is scared of each other."',
+        text: '"Maybe ever\'body in the whole damn world is scared of each other."',
         context: 'Chapter 3 - to George',
         analysis:
           'Slim identifies the universal fear that prevents human connection. Steinbeck uses him to articulate what the other characters feel but cannot express.',

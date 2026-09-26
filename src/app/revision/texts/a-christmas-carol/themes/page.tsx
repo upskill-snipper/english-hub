@@ -123,12 +123,12 @@ const themes: ThemeData[] = [
     definition:
       'The moral obligation of the wealthy and powerful to care for the poor and vulnerable in society.',
     overview:
-      'Dickens wrote A Christmas Carol partly as a direct response to the 1843 parliamentary report on child labour and to the 1834 New Poor Law (Poor Law Amendment Act), which had created the brutal workhouse system. When Scrooge asks "Are there no prisons? Are there no workhouses?", Dickens puts the callous language of Victorian political economy directly into his mouth -- the workhouses created by the 1834 Act were deliberately harsh under the principle of "less eligibility," designed to make poverty so unpleasant that families would do anything to avoid them. The novella argues that poverty is a social failure, not a personal one, and that the wealthy have a duty to help those less fortunate. The children Ignorance and Want are Dickens\'s most explicit statement: society\'s neglect of the poor leads to collective doom.',
+      'Dickens wrote A Christmas Carol partly as a direct response to the 1843 parliamentary report on child labour and to the 1834 New Poor Law (Poor Law Amendment Act), which had created the brutal workhouse system. When Scrooge asks "Are there no prisons?" and whether the Union workhouses are "still in operation", Dickens puts the callous language of Victorian political economy directly into his mouth -- the workhouses created by the 1834 Act were deliberately harsh under the principle of "less eligibility," designed to make poverty so unpleasant that families would do anything to avoid them. The novella argues that poverty is a social failure, not a personal one, and that the wealthy have a duty to help those less fortunate. The children Ignorance and Want are Dickens\'s most explicit statement: society\'s neglect of the poor leads to collective doom.',
     staveEvidence: [
       {
         stave: 'Stave 1',
         evidence:
-          'Scrooge dismisses the charity collectors with "Are there no prisons? Are there no workhouses?" -- echoing the utilitarian arguments of the Victorian establishment. His suggestion that the poor should die to "decrease the surplus population" references Malthus directly.',
+          'Scrooge dismisses the charity collectors with "Are there no prisons?" and "And the Union workhouses?" -- echoing the utilitarian arguments of the Victorian establishment. His suggestion that the poor should die to "decrease the surplus population" references Malthus directly.',
       },
       {
         stave: 'Stave 2',
@@ -153,7 +153,7 @@ const themes: ThemeData[] = [
     ],
     keyQuotes: [
       {
-        text: '"Are there no prisons? Are there no workhouses?"',
+        text: '"Are there no prisons?" ... "And the Union workhouses?"',
         speaker: 'Scrooge',
         stave: 'Stave 1',
       },
@@ -203,7 +203,7 @@ const themes: ThemeData[] = [
       {
         stave: 'Stave 2',
         evidence:
-          'Fezziwig\'s party demonstrates that generosity does not require great wealth -- "three or four pounds" creates enormous joy. Christmas celebrations at the school show communal warmth.',
+          'Fezziwig\'s party demonstrates that generosity does not require great wealth -- "a few pounds" creates enormous joy. Christmas celebrations at the school show communal warmth.',
       },
       {
         stave: 'Stave 3',
@@ -228,12 +228,12 @@ const themes: ThemeData[] = [
         stave: 'Stave 1',
       },
       {
-        text: '"God bless Us, Every One!"',
+        text: '"God bless us every one!"',
         speaker: 'Tiny Tim',
         stave: 'Stave 3',
       },
       {
-        text: '"I am as light as a feather, I am as happy as an angel, I am as merry as a school-boy."',
+        text: '"I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy."',
         speaker: 'Scrooge',
         stave: 'Stave 5',
       },
@@ -287,7 +287,7 @@ const themes: ThemeData[] = [
     keyQuotes: [
       {
         text: '"A solitary child, neglected by his friends, is left there still."',
-        speaker: 'Narrator',
+        speaker: 'Ghost of Christmas Past',
         stave: 'Stave 2',
       },
       {
@@ -339,7 +339,7 @@ const themes: ThemeData[] = [
       {
         stave: 'Stave 4',
         evidence:
-          'The future is conditional, not fixed: "the shadows of the things that May be." Dickens rejects fatalism -- the future can be changed by present action.',
+          'The future is conditional, not fixed: Scrooge asks whether he has seen "shadows of things that May be, only". Dickens rejects fatalism -- the future can be changed by present action.',
       },
       {
         stave: 'Stave 5',
@@ -354,12 +354,12 @@ const themes: ThemeData[] = [
         stave: 'Stave 4',
       },
       {
-        text: '"Are these the shadows of the things that Will be, or are they shadows of the things that May be, only?"',
+        text: '"Are these the shadows of the things that Will be, or are they shadows of things that May be, only?"',
         speaker: 'Scrooge',
         stave: 'Stave 4',
       },
       {
-        text: '"These are but shadows of the things that have been. They are what they are, do not blame me!"',
+        text: '"I told you these were shadows of the things that have been... That they are what they are, do not blame me!"',
         speaker: 'Ghost of Christmas Past',
         stave: 'Stave 2',
       },
@@ -387,7 +387,7 @@ const themes: ThemeData[] = [
       {
         stave: 'Stave 1',
         evidence:
-          'The novella opens with the declaration "Old Marley was as dead as a door-nail." Marley\'s ghost -- chained and wailing -- shows the consequences of dying without having lived compassionately.',
+          'The novella\'s first paragraph ends with the declaration "Old Marley was as dead as a door-nail." Marley\'s ghost -- chained and wailing -- shows the consequences of dying without having lived compassionately.',
       },
       {
         stave: 'Stave 2',
@@ -422,7 +422,7 @@ const themes: ThemeData[] = [
         stave: 'Stave 4',
       },
       {
-        text: '"Spirit! hear me! I am not the man I was!"',
+        text: '"Spirit! ... hear me! I am not the man I was."',
         speaker: 'Scrooge',
         stave: 'Stave 4',
       },
@@ -445,7 +445,7 @@ const themes: ThemeData[] = [
     definition:
       "Dickens's critique of the idea that the pursuit of individual wealth should take priority over collective welfare.",
     overview:
-      'Dickens sets up a stark moral opposition throughout the novella. Scrooge\'s wealth makes him wretched; the Cratchits\' poverty does not prevent their joy. Fezziwig spends only "three or four pounds" but creates enormous happiness. Marley\'s chains are forged from "cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel" -- the instruments of commerce become instruments of eternal punishment. Dickens does not argue against wealth itself but against the hoarding of wealth at the expense of others. Money spent on others creates happiness; money hoarded creates only isolation and spiritual death.',
+      'Dickens sets up a stark moral opposition throughout the novella. Scrooge\'s wealth makes him wretched; the Cratchits\' poverty does not prevent their joy. Fezziwig spends only "a few pounds" but creates enormous happiness. Marley\'s chains are forged from "cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel" -- the instruments of commerce become instruments of eternal punishment. Dickens does not argue against wealth itself but against the hoarding of wealth at the expense of others. Money spent on others creates happiness; money hoarded creates only isolation and spiritual death.',
     staveEvidence: [
       {
         stave: 'Stave 1',
@@ -455,7 +455,7 @@ const themes: ThemeData[] = [
       {
         stave: 'Stave 2',
         evidence:
-          "Belle identifies money as Scrooge's \"golden idol\" -- he has committed idolatry by worshipping wealth. The contrast between Fezziwig's modest spending and Scrooge's hoarding highlights the moral failure of greed.",
+          'Belle identifies money as the idol that has displaced her ("a golden one"): Scrooge has committed idolatry by worshipping wealth. The contrast between Fezziwig\'s modest spending and Scrooge\'s hoarding highlights the moral failure of greed.',
       },
       {
         stave: 'Stave 3',
@@ -480,12 +480,12 @@ const themes: ThemeData[] = [
         stave: 'Stave 2',
       },
       {
-        text: '"I wear the chain I forged in life. I made it link by link, and yard by yard."',
+        text: '"I wear the chain I forged in life... I made it link by link, and yard by yard."',
         speaker: 'Marley',
         stave: 'Stave 1',
       },
       {
-        text: '"If they would rather die, they had better do it, and decrease the surplus population."',
+        text: '"If they would rather die... they had better do it, and decrease the surplus population."',
         speaker: 'Scrooge',
         stave: 'Stave 1',
       },
@@ -499,7 +499,7 @@ const themes: ThemeData[] = [
       "Marley's chain is the central symbol of greed's consequences. Always analyse its components -- the instruments of commerce become instruments of punishment.",
       'Dickens does not condemn wealth itself -- Scrooge is still wealthy in Stave 5. He condemns the hoarding of wealth. Make this distinction.',
       "Compare Fezziwig (ethical employer) with Scrooge (exploitative employer) to demonstrate Dickens's vision of how capitalism should work.",
-      'Belle\'s "golden idol" line uses biblical allusion. Discuss how Dickens frames greed as spiritual corruption, not just a personality flaw.',
+      'Belle\'s "Another idol has displaced me" line uses biblical allusion. Discuss how Dickens frames greed as spiritual corruption, not just a personality flaw.',
     ],
   },
 ]
@@ -535,7 +535,7 @@ export default function ThemesPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              AQA / Edexcel / Eduqas
+              AQA / Edexcel / OCR / Eduqas
             </Badge>
           </div>
 

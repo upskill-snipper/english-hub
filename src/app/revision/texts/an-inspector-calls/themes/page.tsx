@@ -64,7 +64,7 @@ const THEMES: ThemeStudy[] = [
       {
         quote: '"If we were all responsible for everything ... it would be very awkward."',
         speaker: 'Arthur Birling',
-        act: 'Act 3',
+        act: 'Act 1',
         analysis:
           'Birling reduces morality to inconvenience. "Awkward" trivialises what the Inspector has shown to be a matter of life and death. Priestley uses Birling\u2019s register to expose the moral emptiness of capitalist individualism.',
       },
@@ -281,7 +281,7 @@ const THEMES: ThemeStudy[] = [
       {
         quote: '"Public men, Mr Birling, have responsibilities as well as privileges."',
         speaker: 'Inspector Goole',
-        act: 'Act 1',
+        act: 'Act 2',
         analysis:
           'The Inspector insists that power and responsibility are inseparable. The balanced phrasing frames this as a permanent truth, not a debatable opinion. He immediately challenges Birling\u2019s assumption that wealth entitles him to immunity.',
       },
@@ -293,7 +293,7 @@ const THEMES: ThemeStudy[] = [
           'Birling describes sacking Eva as a routine exercise of employer power. "Far too much" measures speech by class entitlement: a working-class woman demanding fair wages is automatically saying too much. Power silences dissent.',
       },
       {
-        quote: '"I was quite justified."',
+        quote: '"In the circumstances I think I was justified."',
         speaker: 'Sybil Birling',
         act: 'Act 2',
         analysis:
@@ -345,13 +345,13 @@ const THEMES: ThemeStudy[] = [
       },
       {
         quote: '"what happened to the girl and what we all did to her that matters."',
-        speaker: 'Sheila Birling',
+        speaker: 'Eric Birling',
         act: 'Act 3',
         analysis:
-          'Sheila insists that moral guilt exists regardless of the Inspector\u2019s identity. "We all" distributes guilt collectively. "Matters" is a simple, emphatic word that refuses to let the family trivialise Eva\u2019s death.',
+          'Eric insists that moral guilt exists regardless of the Inspector\u2019s identity. "We all" distributes guilt collectively. "Matters" is a simple, emphatic word that refuses to let the family trivialise Eva\u2019s death.',
       },
       {
-        quote: '"I was quite justified."',
+        quote: '"In the circumstances I think I was justified."',
         speaker: 'Sybil Birling',
         act: 'Act 2',
         analysis:

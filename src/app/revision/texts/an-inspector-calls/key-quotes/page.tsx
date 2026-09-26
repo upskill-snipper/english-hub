@@ -26,7 +26,7 @@ const QUOTES: QuoteEntry[] = [
   /* ── Act 1 ──────────────────────────────────────────────────────────── */
   {
     id: 1,
-    quote: '"The Titanic \u2014 unsinkable, absolutely unsinkable."',
+    quote: '"The Titanic ... unsinkable, absolutely unsinkable."',
     speaker: 'Arthur Birling',
     act: 'Act 1',
     context: 'Birling\u2019s after-dinner speech, predicting a future of progress and peace.',
@@ -100,8 +100,8 @@ const QUOTES: QuoteEntry[] = [
     id: 6,
     quote: '"Public men, Mr Birling, have responsibilities as well as privileges."',
     speaker: 'Inspector Goole',
-    act: 'Act 1',
-    context: 'The Inspector\u2019s first direct challenge to Birling\u2019s authority.',
+    act: 'Act 2',
+    context: 'The Inspector\u2019s reply when Birling demands an apology to Sybil.',
     ao2Analysis:
       'The balanced phrasing of "responsibilities as well as privileges" frames social duty as non-negotiable. The Inspector speaks to Birling as a moral equal \u2014 or superior \u2014 despite Birling\u2019s wealth and status.',
     ao3Context:
@@ -155,17 +155,17 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 10,
-    quote: '"I was quite justified."',
+    quote: '"In the circumstances I think I was justified."',
     speaker: 'Sybil Birling',
     act: 'Act 2',
     context: 'Sybil defends her decision to refuse Eva\u2019s appeal at the charity committee.',
     ao2Analysis:
-      'Four words that capture complete moral blindness. "Quite" reinforces her certainty; "justified" frames her class prejudice as rational decision-making. Sybil sees no gap between her position and her morality.',
+      'Eight words that capture complete moral blindness. "In the circumstances" makes her decision sound measured; "justified" frames her class prejudice as rational decision-making. Sybil sees no gap between her position and her morality.',
     ao3Context:
       'Charitable organisations in Edwardian England were often run by upper-class women and could be instruments of class control rather than genuine aid. Sybil\u2019s committee reflects this dynamic.',
     themes: ['Class & Inequality', 'Guilt & Morality', 'Power & Abuse of Power'],
     examTip:
-      'This is the shortest and most powerful quote for Sybil. Use it to argue that Priestley presents her class prejudice as so deeply embedded that she genuinely cannot see it as wrong.',
+      'This is one of the most powerful quotes for Sybil. Use it to argue that Priestley presents her class prejudice as so deeply embedded that she genuinely cannot see it as wrong.',
   },
   {
     id: 11,
@@ -197,12 +197,12 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 13,
-    quote: '"the father of the child \u2026 is entirely responsible"',
+    quote: '"Then he\u2019d be entirely responsible"',
     speaker: 'Sybil Birling',
     act: 'Act 2',
     context: 'Sybil deflects blame onto the unknown father, about to be revealed as Eric.',
     ao2Analysis:
-      '"Entirely" is an absolute that Sybil will desperately wish to retract. She attempts to shift all responsibility away from herself, but Priestley ensures her words rebound. The ellipsis marks the moment when Sybil seals her family\u2019s exposure.',
+      '"Entirely" is an absolute that Sybil will desperately wish to retract. She attempts to shift all responsibility away from herself, but Priestley ensures her words rebound. With this line Sybil seals her family\u2019s exposure.',
     ao3Context:
       'The Edwardian class system allowed the wealthy to deflect blame downward. Sybil\u2019s instinct to blame the father reflects a system where responsibility always flowed away from those with power.',
     themes: ['Guilt & Morality', 'Power & Abuse of Power'],
@@ -311,13 +311,13 @@ const QUOTES: QuoteEntry[] = [
   {
     id: 21,
     quote: '"what happened to the girl and what we all did to her that matters."',
-    speaker: 'Sheila Birling',
+    speaker: 'Eric Birling',
     act: 'Act 3',
-    context: 'Sheila insists the moral lesson stands regardless of the Inspector\u2019s identity.',
+    context: 'Eric insists the moral lesson stands regardless of the Inspector\u2019s identity.',
     ao2Analysis:
-      '"We all" distributes guilt collectively. "Matters" is a simple, emphatic monosyllable that refuses to let the family trivialise Eva\u2019s death. Sheila cuts through her parents\u2019 evasion with a clarity that marks her as the play\u2019s moral centre.',
+      '"We all" distributes guilt collectively. "Matters" is a simple, emphatic word that refuses to let the family trivialise Eva\u2019s death. Eric cuts through his parents\u2019 evasion, and Sheila at once says he is right.',
     ao3Context:
-      'Priestley addresses the audience through Sheila: the lesson of the play matters regardless of its fictional status. Art can deliver moral truth even when the "inspector" is not real.',
+      'Priestley addresses the audience through Eric: the lesson of the play matters regardless of its fictional status. Art can deliver moral truth even when the "inspector" is not real.',
     themes: ['Guilt & Morality', 'Social Responsibility'],
     examTip:
       'This quote works in almost any essay on the play. It articulates Priestley\u2019s core argument: moral responsibility exists independently of legal or factual verification.',
@@ -354,8 +354,9 @@ const QUOTES: QuoteEntry[] = [
     id: 24,
     quote: '"If we were all responsible for everything ... it would be very awkward."',
     speaker: 'Arthur Birling',
-    act: 'Act 3',
-    context: 'Birling tries to dismiss the Inspector\u2019s message after his departure.',
+    act: 'Act 1',
+    context:
+      'Birling refuses any responsibility for sacking Eva, early in the Inspector\u2019s questioning.',
     ao2Analysis:
       'Birling reduces a moral question to a practical inconvenience. "Awkward" trivialises what the Inspector has shown to be a matter of life and death. The conditional "If" reveals that Birling still treats responsibility as hypothetical, not real.',
     ao3Context:

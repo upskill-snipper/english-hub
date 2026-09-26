@@ -99,7 +99,7 @@ const acts: ActData[] = [
     ],
     quotes: [
       {
-        quote: '"The Titanic \u2014 unsinkable, absolutely unsinkable."',
+        quote: '"The Titanic ... unsinkable, absolutely unsinkable."',
         speaker: 'Arthur Birling',
         analysis:
           'The audience knows the Titanic sank in 1912. Birling\u2019s certainty is immediately discredited, and Priestley invites the audience to distrust everything else he says. The dramatic irony functions as a political argument: if Birling is wrong about facts, he is wrong about values.',
@@ -121,12 +121,6 @@ const acts: ActData[] = [
         speaker: 'Sheila Birling',
         analysis:
           'The repetition of "never" conveys genuine remorse. Sheila is the first character to accept guilt fully, modelling the moral change Priestley wants from his audience.',
-      },
-      {
-        quote: '"Public men, Mr Birling, have responsibilities as well as privileges."',
-        speaker: 'Inspector Goole',
-        analysis:
-          'The Inspector directly challenges the idea that wealth entitles its holders to immunity. The balanced phrasing of "responsibilities as well as privileges" frames social duty as non-negotiable.',
       },
     ],
     languageTechniques: [
@@ -206,10 +200,16 @@ const acts: ActData[] = [
           'Gerald\u2019s admission reveals the power imbalance in his relationship with Daisy. He had the freedom to leave; she did not. The asymmetry of feeling exposes how class privilege allows emotional exploitation.',
       },
       {
-        quote: '"I was quite justified."',
+        quote: '"Public men, Mr Birling, have responsibilities as well as privileges."',
+        speaker: 'Inspector Goole',
+        analysis:
+          'The Inspector directly challenges the idea that wealth entitles its holders to immunity. The balanced phrasing of "responsibilities as well as privileges" frames social duty as non-negotiable.',
+      },
+      {
+        quote: '"In the circumstances I think I was justified."',
         speaker: 'Sybil Birling',
         analysis:
-          'Sybil\u2019s stubborn self-righteousness in three words. She refuses to accept guilt even when confronted with the consequences. The phrase reveals a person whose moral framework is built entirely on class position.',
+          'Sybil\u2019s stubborn self-righteousness in a single sentence. She refuses to accept guilt even when confronted with the consequences. The phrase reveals a person whose moral framework is built entirely on class position.',
       },
       {
         quote: '"Girls of that class\u2014"',
@@ -224,7 +224,7 @@ const acts: ActData[] = [
           'Sybil unknowingly condemns her own son. Priestley constructs the scene so that Sybil\u2019s desire for punishment will rebound on her family, punishing her moral hypocrisy with dramatic irony.',
       },
       {
-        quote: '"the father of the child \u2026 is entirely responsible"',
+        quote: '"Then he\u2019d be entirely responsible"',
         speaker: 'Sybil Birling',
         analysis:
           'Sybil attempts to deflect blame from herself onto the unknown father. The audience and Sheila already suspect the father is Eric. Sybil\u2019s insistence turns her into the architect of her own exposure.',
@@ -320,9 +320,9 @@ const acts: ActData[] = [
       },
       {
         quote: '"what happened to the girl and what we all did to her that matters."',
-        speaker: 'Sheila Birling',
+        speaker: 'Eric Birling',
         analysis:
-          'Sheila insists that the moral lesson matters regardless of the Inspector\u2019s identity. She cuts through her parents\u2019 evasion with a clarity that marks her as the play\u2019s moral centre alongside the Inspector.',
+          'Eric insists that the moral lesson matters regardless of the Inspector\u2019s identity. He cuts through his parents\u2019 evasion, and Sheila at once says he is right.',
       },
       {
         quote: '"You began to learn something. And now you\u2019ve stopped."',

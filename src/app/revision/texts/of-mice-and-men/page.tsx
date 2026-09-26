@@ -31,6 +31,19 @@ export const metadata: Metadata = {
   },
 }
 
+/*
+ * Corrected 26 September 2026 (here and on the characters, themes, key-quotes
+ * and extract-walkthrough pages), against the fact-checked study guide and the
+ * Internet Archive's full-text search of scanned editions. A heron does not
+ * kill a water snake in Chapter 1: there a snake swims past unharmed, and only
+ * in Chapter 6 does a heron take one. "Tell about the rabbits, George" is not
+ * in the novel, so it is gone. George's complaint is "so easy and so nice"
+ * (the omission is now marked), Curley's wife "can't talk to nobody but
+ * Curley", and in Weed the girl told the law she had been raped, not that
+ * there was an attempt. That Crooks is segregated "by law" on the ranch was
+ * not supported by the text, which shows the ranch's custom. The novella is in
+ * copyright: correct a quotation to fourteen words or fewer, never add one.
+ */
 const data: TextGuideData = {
   slug: 'of-mice-and-men',
   title: 'Of Mice and Men',
@@ -47,7 +60,7 @@ const data: TextGuideData = {
     published: '1937',
   },
   plotSummary: [
-    "The novella opens with George Milton and Lennie Small resting by a pool of the Salinas River. George is small, quick and sharp-featured; Lennie is a huge man with the mental age of a child and a compulsion to stroke soft things. They are migrant ranch workers on the way to a new job at a ranch near Soledad, having fled the town of Weed after Lennie was accused of attempted rape for touching a woman's dress. George makes Lennie rehearse their dream: one day they will own a small farm where Lennie can tend rabbits.",
+    "The novella opens with George Milton and Lennie Small resting by a pool of the Salinas River. George is small, quick and sharp-featured; Lennie is a huge man with the mental age of a child and a compulsion to stroke soft things. They are migrant ranch workers on the way to a new job at a ranch near Soledad, having fled the town of Weed after Lennie was accused of rape for touching a woman's dress. George makes Lennie rehearse their dream: one day they will own a small farm where Lennie can tend rabbits.",
     "At the ranch they meet the old swamper Candy and his ancient dog, the black stable hand Crooks, the aggressive son of the boss Curley, and Curley's flirtatious and isolated wife. Lennie attracts Curley's hostility almost immediately. Slim, the calm and respected mule driver, gives Lennie one of his new puppies. When Candy overhears George and Lennie discussing their dream, he offers his life savings to join them, and for the first time the dream feels genuinely within reach.",
     "Tension rises when Curley picks a fight with Lennie and Lennie, on George's order, crushes his hand. Later, in the stable, Lennie accidentally kills his puppy by stroking it too hard. Curley's wife finds him and invites him to stroke her soft hair. When she tries to pull away, Lennie panics and breaks her neck. Terrified, he flees back to the pool where the novella began.",
     "A lynch mob forms, led by the vengeful Curley. George reaches Lennie first, retells the dream of the farm one last time, and shoots him in the back of the head with Carlson's Luger to spare him a brutal death. The novella ends with George numbly walking away with Slim, the dream dead and his companion gone.",
@@ -103,13 +116,13 @@ const data: TextGuideData = {
     },
     {
       title: 'Nature and circularity',
-      body: "The novella opens and closes at the same pool by the Salinas River, creating a circular structure. Nature is indifferent: a heron kills a water snake in both the opening and the closing chapter, foreshadowing and then sealing Lennie's fate.",
+      body: "The novella opens and closes at the same pool by the Salinas River, creating a circular structure. Nature is indifferent: in the opening chapter a water snake swims across the pool unharmed, but in the closing chapter a heron seizes one, just before Lennie's death.",
     },
   ],
   historicalContext: [
     'Steinbeck wrote Of Mice and Men in 1937, at the height of the Great Depression that began with the 1929 Wall Street Crash. Millions of Americans lost their jobs, homes and farms. In rural California, where Steinbeck grew up, tens of thousands of displaced workers drifted from ranch to ranch in search of any work that would feed them.',
     "The Dust Bowl of the 1930s drove waves of 'Okies' westward to California, creating a brutal surplus of cheap labour. Wages were low, workers were disposable and the promise of upward mobility that had defined American identity for a century felt like a cruel joke. Steinbeck, influenced by the socialist thinking of his day, used fiction to bear witness to these people.",
-    "Segregation was still legal and widespread: Crooks sleeps in the harness room not by choice but by law and custom. Women had limited legal rights and even more limited economic ones, which helps explain why Curley's wife is trapped in a marriage she did not want. Attitudes to learning disability were harsh and uninformed, and people like Lennie were often institutionalised or exploited.",
+    "Segregation was still legal and widespread: Crooks sleeps in the harness room not by choice but by the custom of the ranch. Women had limited legal rights and even more limited economic ones, which helps explain why Curley's wife is trapped in a marriage she did not want. Attitudes to learning disability were harsh and uninformed, and people like Lennie were often institutionalised or exploited.",
     "Steinbeck's title quotes Robert Burns's poem 'To a Mouse', a fitting literary anchor for a book about small dreams crushed by enormous forces. The novella was adapted for the stage almost immediately and has been taught in schools across the English-speaking world ever since.",
   ],
   quotations: [
@@ -132,13 +145,13 @@ const data: TextGuideData = {
         'Reveals the devastating loneliness of segregation and universalises it to all workers under capitalism.',
     },
     {
-      quote: '"I could get along so easy if I didn\'t have you on my tail."',
+      quote: '"I could get along so easy … if I didn\'t have you on my tail."',
       who: 'George - Chapter 1',
       analysis:
         'Shows the strain of caring for Lennie. Makes the final act even more heartbreaking because it is freely chosen.',
     },
     {
-      quote: '"I get lonely. You can talk to people, but I can\'t talk to nobody."',
+      quote: '"You can talk to people, but I can\'t talk to nobody but Curley."',
       who: "Curley's wife - Chapter 5",
       analysis:
         'Humanises her just before her death and reframes her as a victim rather than a threat.',
@@ -147,12 +160,6 @@ const data: TextGuideData = {
       quote: '"I ought to of shot that dog myself, George."',
       who: 'Candy - Chapter 3',
       analysis: 'Foreshadows the ending and teaches George the lesson he will act on at the pool.',
-    },
-    {
-      quote: '"Tell about the rabbits, George."',
-      who: 'Lennie - Chapter 6',
-      analysis:
-        "The repeated refrain of the dream. Its last appearance, seconds before Lennie's death, is the book's most devastating line.",
     },
     {
       quote: '"You hadda, George. I swear you hadda."',
@@ -192,7 +199,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Lennie was accused of attempted rape for touching a woman's dress in Weed. He was simply stroking the soft fabric, but his inability to let go terrified the woman. This foreshadows the tragic events at the ranch.",
+      "Lennie was accused of rape for touching a woman's dress in Weed. He was simply stroking the soft fabric, but his inability to let go terrified the woman. This foreshadows the tragic events at the ranch.",
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -295,7 +302,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "The circular structure creates a sense of inevitability. Nature is indifferent: a heron kills a water snake in both the opening and closing chapters, foreshadowing and then sealing Lennie's fate. The dream returns to where it started - nowhere.",
+      "The circular structure creates a sense of inevitability. Nature is indifferent: a water snake swims unharmed in the opening chapter, but in the closing chapter a heron seizes one, just before Lennie's death. The dream returns to where it started - nowhere.",
     topic: "Writer's Methods",
     difficulty: 'higher',
   },
@@ -424,7 +431,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Nature is portrayed as indifferent: a heron kills a water snake in both the opening and closing scenes. The natural cycle continues regardless of human tragedy, suggesting the workers' suffering is invisible to the larger world.",
+      "Nature is portrayed as indifferent: in the closing scene a heron seizes a water snake from the pool, and then waits for the next one. The natural cycle continues regardless of human tragedy, suggesting the workers' suffering is invisible to the larger world.",
     topic: "Writer's Methods",
     difficulty: 'grade-9',
   },
@@ -530,7 +537,7 @@ const REVISION_TOPICS = [
     summary:
       'The novella opens and closes at the same pool, suggesting the dream was always doomed.',
     keyPoints: [
-      'The heron killing the water snake appears in both opening and closing',
+      'A water snake swims unharmed in the opening; a heron takes one in the closing',
       'Nature is indifferent to human suffering',
       'The circular structure creates a sense of inevitability',
       'Steinbeck uses the natural world to comment on human futility',
@@ -605,7 +612,7 @@ export default async function OfMiceAndMenPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[
