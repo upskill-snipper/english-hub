@@ -265,7 +265,31 @@ function QuotesPanel({ quotes, locale }: { quotes: KeyQuote[]; locale: Locale })
   )
 }
 
-function LanguagePanel({ devices, locale }: { devices: LanguageDevice[]; locale: Locale }) {
+/**
+ * The number a reader would give each line: blank rows are stanza breaks, not
+ * lines, so they get null and do not advance the count.
+ *
+ * ADDED 26 September 2026. The viewer numbered rows by their index in
+ * `poem.lines`, which includes the blank row between stanzas, so every line
+ * after a stanza break was numbered one too high per break: Piano, twelve lines
+ * in three stanzas, ran to 14. A student citing a line number from the viewer
+ * cited the wrong line. `lineRef` stays an index into `poem.lines`, which is
+ * what the highlighting needs; only what is displayed changes.
+ */
+export function poemLineNumbers(lines: readonly PoemLine[]): (number | null)[] {
+  let n = 0
+  return lines.map((line) => (line.text.trim() === '' ? null : ++n))
+}
+
+function LanguagePanel({
+  devices,
+  locale,
+  lineNumbers,
+}: {
+  devices: LanguageDevice[]
+  locale: Locale
+  lineNumbers: (number | null)[]
+}) {
   return (
     <div className="space-y-3">
       {devices.map((d, i) => {
@@ -278,7 +302,9 @@ function LanguagePanel({ devices, locale }: { devices: LanguageDevice[]; locale:
               <span className="text-sm font-medium text-emerald-700" dir="ltr">
                 {d.device}
               </span>
-              <span className="text-xs text-muted-foreground">Line {d.lineRef + 1}</span>
+              {lineNumbers[d.lineRef] != null && (
+                <span className="text-xs text-muted-foreground">Line {lineNumbers[d.lineRef]}</span>
+              )}
             </div>
             <p className="text-sm text-card-foreground italic mb-1" dir="ltr" lang="en">
               &ldquo;{d.example}&rdquo;
@@ -358,6 +384,7 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
   )
 
   const hasAnyActive = activeTabs.size > 0
+  const lineNumbers = poemLineNumbers(poem.lines)
 
   /* Which panel to show on the right - the most recently toggled, or first active */
   const activePanelTab = (() => {
@@ -423,7 +450,7 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
                     tabIndex={hasAnnotations ? 0 : undefined}
                     aria-label={
                       hasAnnotations
-                        ? `${t('poem_viewer.line')} ${idx + 1}: ${t('poem_viewer.show')} ${line.annotations!.length} ${line.annotations!.length > 1 ? t('poem_viewer.annotation_plural') : t('poem_viewer.annotation_singular')}`
+                        ? `${t('poem_viewer.line')} ${lineNumbers[idx] ?? idx + 1}: ${t('poem_viewer.show')} ${line.annotations!.length} ${line.annotations!.length > 1 ? t('poem_viewer.annotation_plural') : t('poem_viewer.annotation_singular')}`
                         : undefined
                     }
                     aria-expanded={hasAnnotations ? popoverLine === idx : undefined}
@@ -442,7 +469,7 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
                   >
                     {/* Line number */}
                     <span className="w-6 shrink-0 select-none text-end text-xs tabular-nums text-muted-foreground-subtle">
-                      {isBlank ? '' : idx + 1}
+                      {isBlank ? '' : lineNumbers[idx]}
                     </span>
 
                     {/* Line text */}
@@ -570,7 +597,11 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
               <QuotesPanel quotes={poem.keyQuotes} locale={locale} />
             </div>
             <div hidden={activePanelTab !== 'language'}>
-              <LanguagePanel devices={poem.languageDevices} locale={locale} />
+              <LanguagePanel
+                devices={poem.languageDevices}
+                locale={locale}
+                lineNumbers={lineNumbers}
+              />
             </div>
           </div>
         </div>
