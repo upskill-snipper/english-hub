@@ -135,6 +135,21 @@ const BOOKS = [
     label: (n) => `Chapter ${n}`,
     expect: 12,
   },
+  {
+    // Out of UK copyright since 1 January 2021 (Orwell died in 1950), but not
+    // on Project Gutenberg, which works to US law, where the novella is in
+    // copyright until 2041. Project Gutenberg Australia carries it, as an
+    // ISO-8859-1 HTML page with each chapter under an <h2>; see pgaHtmlToText.
+    slug: 'animal-farm',
+    pga: 'https://gutenberg.net.au/ebooks01/0100011h.html',
+    title: 'Animal Farm',
+    displayTitle: 'Animal Farm',
+    author: 'George Orwell',
+    type: 'novella',
+    heading: /^Chapter\s+([IVXLC]+)\s*(.*)$/,
+    label: (n) => `Chapter ${n}`,
+    expect: 10,
+  },
 ]
 
 const MIN_CHARS = 8000
@@ -237,6 +252,46 @@ function parseSections(body, book) {
   return out
 }
 
+/**
+ * A Project Gutenberg Australia HTML edition to the plain text parseSections
+ * reads: each <h2> becomes its own line, each paragraph a block separated by a
+ * blank line, and entities are decoded. Everything before the first chapter
+ * heading (PGA's header, licence and contents list) is left for the front
+ * matter rule to drop; everything from "THE END" on (PGA's closing licence) is
+ * cut here, so it cannot be folded into the last chapter.
+ */
+function pgaHtmlToText(html) {
+  const body = html.slice(html.search(/<body[^>]*>/i))
+  const end = body.search(/<h2[^>]*>\s*THE END\s*<\/h2>/i)
+  if (end === -1) throw new Error('no "THE END" heading - edition changed shape')
+  const named = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', mdash: '—', ndash: '–', lsquo: '‘', rsquo: '’', ldquo: '“', rdquo: '”', hellip: '…' }
+  const decode = (s) =>
+    s
+      .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
+      .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCharCode(parseInt(h, 16)))
+      .replace(/&([a-z]+);/gi, (m, n) => named[n.toLowerCase()] ?? m)
+  return decode(
+    body
+      .slice(0, end)
+      // Verse and lists are set in <pre>: Beasts of England, the Seven
+      // Commandments, Minimus's poem. Each line becomes its own block, or the
+      // paragraph rule below would run the Commandments together as one line.
+      .replace(/<pre[^>]*>([\s\S]*?)<\/pre>/gi, (_, p) =>
+        `\n\n${p
+          .replace(/<[^>]+>/g, '')
+          .split('\n')
+          .map((l) => l.trim())
+          .filter(Boolean)
+          .join('\n\n')}\n\n`,
+      )
+      .replace(/<h2[^>]*>([\s\S]*?)<\/h2>/gi, (_, h) => `\n\n${h.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()}\n\n`)
+      .replace(/<\/p>|<br\s*\/?>/gi, '\n\n')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/[ \t]+/g, ' ')
+      .replace(/ *\n */g, '\n'),
+  )
+}
+
 /** Plain text to the HTML the viewer renders. Prose is paragraphs. */
 function toHtml(sectionLines) {
   return sectionLines
@@ -254,7 +309,18 @@ function toHtml(sectionLines) {
     .join('\n\n')
 }
 
-async function build(book) {
+async function fetchBody(book) {
+  if (book.pga) {
+    const res = await fetch(book.pga, { headers: { 'User-Agent': 'TheEnglishHub-fetch/1.0' } })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const html = new TextDecoder('iso-8859-1').decode(await res.arrayBuffer())
+    const title = /<title>\s*([^<]*?)\s*<\/title>/i.exec(html)
+    if (!title || title[1] !== book.title) {
+      throw new Error(`expected title "${book.title}", got "${title ? title[1] : 'none'}" - URL now points elsewhere`)
+    }
+    return pgaHtmlToText(html)
+  }
+
   const url = `https://www.gutenberg.org/cache/epub/${book.id}/pg${book.id}.txt`
   const res = await fetch(url)
   if (!res.ok) throw new Error(`HTTP ${res.status}`)
@@ -268,8 +334,11 @@ async function build(book) {
   if (/PROOFING METHODS AND TOOLS WERE NOT WELL DEVELOPED/.test(raw)) {
     throw new Error(`Gutenberg marks id ${book.id} as poorly proofed`)
   }
+  return stripGutenberg(raw)
+}
 
-  const all = parseSections(stripGutenberg(raw), book)
+async function build(book) {
+  const all = parseSections(await fetchBody(book), book)
 
   // DROP THE TABLE OF CONTENTS, by substance rather than by position.
   //
@@ -312,12 +381,18 @@ async function build(book) {
 // ${book.displayTitle}, by ${book.author}. Out of UK copyright.
 //
 // The text is a byte copy of a published edition, not typed and not reproduced
-// from memory, so it cannot contain invented sentences. Source edition: Project
+// from memory, so it cannot contain invented sentences. Source edition: ${
+    book.pga
+      ? `Project
+// Gutenberg Australia, ${book.pga}, whose header and licence text are stripped;
+// the underlying work is out of UK copyright.`
+      : `Project
 // Gutenberg #${book.id}, whose branding and licence text are stripped per their
-// terms; the underlying work is out of copyright.
+// terms; the underlying work is out of copyright.`
+  }
 //
 // Re-run the generator to refresh. It refuses to write if the edition's own
-// Title line stops matching, if Gutenberg has flagged the edition as poorly
+// title stops matching, if Gutenberg has flagged the edition as poorly
 // proofed, or if the section count is not exactly ${book.expect}.
 
 import type { TextData } from '@/components/study/InteractiveTextViewer'

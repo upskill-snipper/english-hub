@@ -98,7 +98,18 @@ const fullTextCache = new Map<string, string | null>()
 function fullText(slug: string): string | null {
   if (fullTextCache.has(slug)) return fullTextCache.get(slug)!
   const p = join('src/data/full-texts', `${slug}.ts`)
-  const v = existsSync(p) ? norm(readFileSync(p, 'utf8')) : null
+  // The edition is read as source, where each section is one string literal:
+  // paragraph breaks are the two characters \n and some letters are \u
+  // escapes. Undecoded, norm() turned each \n into a stray word "n", so any
+  // quotation running over a paragraph break, and every printed passage of
+  // more than one paragraph, could never be found (found 26 September 2026,
+  // printing Animal Farm's passages).
+  const decoded = (s: string) =>
+    s
+      .replace(/\\u([0-9a-fA-F]{4})/g, (_, h: string) => String.fromCharCode(parseInt(h, 16)))
+      .replace(/\\[nrt]/g, ' ')
+      .replace(/\\(.)/g, '$1')
+  const v = existsSync(p) ? norm(decoded(readFileSync(p, 'utf8'))) : null
   fullTextCache.set(slug, v)
   return v
 }
@@ -158,14 +169,25 @@ describe.each(slugs)('guide: %s', (slug) => {
     for (const q of quotationsOf(guide)) {
       for (const f of fragments(q)) if (!text.includes(f)) missing.push(q)
     }
+    const elsewhere = new Set((guide.quotesFromElsewhere ?? []).map((q) => norm(q)))
     for (const e of guide.extracts ?? []) {
+      // The phrases a close reading annotates are quotations too. types.ts says
+      // each "must appear" in the held edition, and until 26 September 2026
+      // nothing checked it for an extract printed without its text: Animal
+      // Farm's annotations were never compared with the novella. A phrase the
+      // guide declares it takes from another printing (La Belle Dame quotes the
+      // anthology's "Thee hath in thrall") is excused, as in prose below.
+      for (const a of e.annotations ?? []) {
+        if (elsewhere.has(norm(a.phrase))) continue
+        for (const f of fragments(a.phrase))
+          if (!text.includes(f)) missing.push(`annotation in ${e.title}: ${a.phrase}`)
+      }
       if (!e.text) continue
       for (const f of fragments(e.text)) if (!text.includes(f)) missing.push(`extract: ${e.title}`)
     }
     // And every phrase quoted inside the guide's own prose, unless the guide
     // declares it comes from somewhere else. The pilot's draft quoted
     // "dethroned" in an otherwise accurate sentence; the novel never says it.
-    const elsewhere = new Set((guide.quotesFromElsewhere ?? []).map((q) => norm(q)))
     for (const span of proseOf(guide).flatMap((s) => quotedSpans(s))) {
       if (elsewhere.has(norm(span))) continue
       for (const f of fragments(span)) if (!text.includes(f)) missing.push(`in prose: ${span}`)
@@ -393,6 +415,15 @@ describe('the validator itself', () => {
     const wrong = fragments('Sherlock Holmes took his pipe from the corner of the mantel-piece')
     expect(real.every((f) => sign.includes(f))).toBe(true)
     expect(wrong.every((f) => sign.includes(f))).toBe(false)
+  })
+})
+
+describe('reading a held edition', () => {
+  it('reads paragraph breaks as breaks, not as the letter n', () => {
+    const text = fullText('animal-farm')
+    expect(text).not.toBeNull()
+    // Undecoded, every "</p>\n\n<p>" left " n n " in the normalised text.
+    expect(text).not.toMatch(/ n n /)
   })
 })
 

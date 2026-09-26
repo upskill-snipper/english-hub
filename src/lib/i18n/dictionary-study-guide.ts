@@ -240,4 +240,50 @@ export const STUDY_GUIDE_DICTIONARY: Record<string, { en: string; ar: string; es
     ar: 'هالنص خارج حقوق النشر في المملكة المتحدة.',
     es: 'Este texto está libre de derechos de autor en el Reino Unido.',
   },
+
+  // ─── Chapter guides: one chapter of a text, read closely ─────────────────
+  // Headings for src/components/study-guide/chapter-guide-page.tsx.
+  'chapter_guide.eyebrow': { en: 'Chapter guide', ar: 'دليل الفصل', es: 'Guía del capítulo' },
+  'chapter_guide.open': {
+    en: 'Open the full chapter guide',
+    ar: 'افتح دليل الفصل كامل',
+    es: 'Abre la guía completa del capítulo',
+  },
+  'chapter_guide.read_in_full': {
+    en: 'Read this chapter in full',
+    ar: 'اقرا هالفصل كامل',
+    es: 'Lee este capítulo completo',
+  },
+  'chapter_guide.all_chapters': { en: 'All chapters', ar: 'كل الفصول', es: 'Todos los capítulos' },
+  'chapter_guide.previous': { en: 'Previous chapter', ar: 'الفصل السابق', es: 'Capítulo anterior' },
+  'chapter_guide.next': { en: 'Next chapter', ar: 'الفصل التالي', es: 'Capítulo siguiente' },
+  'chapter_guide.nav_label': {
+    en: 'In this chapter guide',
+    ar: 'في دليل هالفصل',
+    es: 'En esta guía',
+  },
+  'chapter_guide.summary': { en: 'What happens', ar: 'شنو يصير', es: 'Qué pasa' },
+  'chapter_guide.key_events': {
+    en: 'Key events and turning points',
+    ar: 'الأحداث المهمة ونقاط التحوّل',
+    es: 'Hechos clave y puntos de giro',
+  },
+  'chapter_guide.close_reading': { en: 'Close reading', ar: 'قراءة متأنية', es: 'Lectura atenta' },
+  'chapter_guide.technique': { en: 'Technique', ar: 'الأسلوب', es: 'Técnica' },
+  'chapter_guide.characters': {
+    en: 'Characters in this chapter',
+    ar: 'الشخصيات في هالفصل',
+    es: 'Personajes en este capítulo',
+  },
+  'chapter_guide.themes': { en: 'Themes', ar: 'المحاور', es: 'Temas' },
+  'chapter_guide.context': { en: 'Context', ar: 'السياق', es: 'Contexto' },
+  'chapter_guide.structure': { en: 'Structure', ar: 'البنية', es: 'Estructura' },
+  'chapter_guide.vocabulary': { en: 'Vocabulary', ar: 'المفردات', es: 'Vocabulario' },
+  'chapter_guide.exam': { en: 'Exam practice', ar: 'تمرين امتحان', es: 'Práctica de examen' },
+  'chapter_guide.quiz': { en: 'Check yourself', ar: 'اختبر نفسك', es: 'Ponte a prueba' },
+  'chapter_guide.show_answer': {
+    en: 'Show the answer',
+    ar: 'اعرض الجواب',
+    es: 'Mostrar la respuesta',
+  },
 }

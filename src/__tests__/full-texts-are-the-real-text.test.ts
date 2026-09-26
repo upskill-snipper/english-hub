@@ -111,10 +111,13 @@ function dataFor(slug: string): string {
 }
 
 describe('the texts are there', () => {
-  it('has twelve plays, six prose works and eight poems', () => {
+  it('has twelve plays, seven prose works and nine poems', () => {
+    // 26 September 2026: Animal Farm (from Project Gutenberg Australia) and Do
+    // not go gentle (from the Pearson anthology) joined, once the site began
+    // judging copyright by UK law only.
     expect(PLAYS).toHaveLength(12)
-    expect(PROSE).toHaveLength(6)
-    expect(POEMS).toHaveLength(8)
+    expect(PROSE).toHaveLength(7)
+    expect(POEMS).toHaveLength(9)
   })
 
   it('and every file is classified, so none can sit in a default bucket', () => {
@@ -304,6 +307,8 @@ describe('the poems are whole, and are the poem', () => {
     ['sonnet-116', 14],
     ['the-tyger', 24],
     ['my-last-duchess', 56],
+    // A villanelle: five tercets and a quatrain.
+    ['do-not-go-gentle-into-that-good-night', 19],
   ])('%s is exactly %i lines', (slug, count) => {
     // Counted from the file rather than by parsing the escaped JSON string out
     // of it: the data file holds exactly one poem, so every line break in it

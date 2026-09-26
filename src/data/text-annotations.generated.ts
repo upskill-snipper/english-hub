@@ -755,6 +755,311 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
     ],
   },
+  'animal-farm': {
+    'section-10': [
+      {
+        type: 'quote',
+        text: 'ALL ANIMALS ARE EQUAL\n\nBUT SOME ANIMALS ARE MORE EQUAL THAN OTHERS',
+        note: 'Final commandment - Chapter 10. The book’s most famous line. The revolution has devoured itself.',
+      },
+      {
+        type: 'quote',
+        text: 'The creatures outside looked from pig to man, and from man to pig',
+        note: 'Narrator - final chapter. The shattering closing image. Revolution has produced a mirror of the regime it replaced.',
+      },
+      {
+        type: 'theme',
+        text: 'SOME ANIMALS ARE MORE EQUAL THAN OTHERS',
+        note: 'Irony: The final commandment -- "some animals are more equal than others" -- is an oxymoron.',
+      },
+      {
+        type: 'theme',
+        text: 'ALL ANIMALS ARE EQUAL\n\nBUT SOME ANIMALS ARE MORE EQUAL THAN OTHERS',
+        note: '"All animals are equal but some animals are more equal than others"',
+      },
+      {
+        type: 'character',
+        text: 'ALL ANIMALS ARE EQUAL\n\nBUT SOME ANIMALS ARE MORE EQUAL THAN OTHERS',
+        note: '"All animals are equal but some animals are more equal than others"',
+      },
+      {
+        type: 'language',
+        text: 'Twelve voices were shouting in anger, and they were all alike',
+        note: '"Twelve voices were shouting in anger, and they were all alike."',
+      },
+      {
+        type: 'language',
+        text: 'from pig to man, and from man to pig, and from pig to man',
+        note: 'The triple repetition "from pig to man, and from man to pig, and from pig to man" enacts the dizzying back-and-forth of the animals\' gaze.',
+      },
+      {
+        type: 'language',
+        text: 'it was impossible to say which was which',
+        note: 'The blunt verdict - "it was impossible to say which was which" - refuses elaboration.',
+      },
+      {
+        type: 'language',
+        text: 'BUT SOME ANIMALS ARE MORE EQUAL THAN OTHERS',
+        note: 'Commandment after commandment has been quietly amended - "no animal shall sleep in a bed" gained "with sheets"; "no animal shall kill any other animal" gained "without cause"; "all animals are equal" gained "but some animals are more equal than others".',
+      },
+      {
+        type: 'language',
+        text: 'ALL ANIMALS ARE EQUAL\n\nBUT SOME ANIMALS ARE MORE EQUAL THAN OTHERS',
+        note: 'oxymoron. The oxymoron "more equal" is logically impossible, which is Orwell’s point: totalitarian language does not need to make sense, it only needs to go unchallenged. The sentence structurally mirrors the corruption of the revolution — the original principle still appears, but its meaning has been inverted by the qualifier. Orwell shows that tyranny does not abolish ideals; it redefines them.',
+      },
+      {
+        type: 'quote',
+        text: 'Four legs good, two legs BETTER',
+        note: 'The Sheep (retrained by Squealer) - Chapter 10. The ease with which the slogan is reversed reveals how hollow the original was. "Better" replaces "bad" with no resistance because the sheep never understood either version. Orwell demonstrates that propaganda creates obedience, not understanding, and that obedient subjects can be redirected at will.',
+      },
+      {
+        type: 'theme',
+        text: 'Four legs good, two legs BETTER',
+        note: 'Language & Propaganda. The ease with which the slogan is reversed reveals how hollow the original was. "Better" replaces "bad" with no resistance because the sheep never understood either version. Orwell demonstrates that propaganda creates obedience, not understanding, and that obedient subjects can be redirected at will.',
+      },
+      {
+        type: 'quote',
+        text: 'Twelve voices were shouting in anger, and they were all alike',
+        note: 'Narrator - Chapter 10. The final confrontation is between two groups of oppressors, not between oppressor and oppressed. The animals are reduced to silent spectators of a dispute between their new masters and their old ones. "All alike" is Orwell’s final condemnation: the revolution has not failed because of one bad leader but because the structure of power itself produces identical outcomes regardless of who holds it.',
+      },
+      {
+        type: 'theme',
+        text: 'Twelve voices were shouting in anger, and they were all alike',
+        note: 'Power & Corruption. The final confrontation is between two groups of oppressors, not between oppressor and oppressed. The animals are reduced to silent spectators of a dispute between their new masters and their old ones. "All alike" is Orwell’s final condemnation: the revolution has not failed because of one bad leader but because the structure of power itself produces identical outcomes regardless of who holds it.',
+      },
+    ],
+    'section-5': [
+      {
+        type: 'quote',
+        text: 'Napoleon is always right',
+        note: 'Boxer - Chapter 5. The dangerous loyalty that allows a dictator to consolidate power without challenge.',
+      },
+      {
+        type: 'theme',
+        text: 'Napoleon is always right',
+        note: 'Boxer\'s two maxims define the tragedy: "I will work harder" (selfless devotion) and "Napoleon is always right" (uncritical obedience).',
+      },
+      {
+        type: 'character',
+        text: 'Napoleon is always right',
+        note: 'His two maxims capture the tragedy: "I will work harder" (selfless devotion) and "Napoleon is always right" (uncritical obedience).',
+      },
+      {
+        type: 'character',
+        text: 'life would go on as it had always gone on—that is, badly',
+        note: 'He claims that "life would go on as it had always gone on -- that is, badly." He is the only animal who can read as well as the pigs, yet he refuses to use this ability to help the others.',
+      },
+      {
+        type: 'character',
+        text: 'between the shafts of a smart dogcart',
+        note: 'She is found being stroked by a man from a neighbouring farm and eventually defects, reappearing "between the shafts of a smart dogcart" with a new owner.',
+      },
+      {
+        type: 'quote',
+        text: 'life would go on as it had always gone on—that is, badly',
+        note: 'Narrator (reporting Benjamin’s view) - Chapter 5. Benjamin’s cynicism is Orwell’s sharpest critique of the educated class. He sees through the propaganda but refuses to act on his understanding. The parenthetical "that is, badly" reduces all political change to futility. Orwell presents Benjamin not as wise but as complicit: his refusal to engage enables the tyranny he privately deplores.',
+      },
+      {
+        type: 'theme',
+        text: 'life would go on as it had always gone on—that is, badly',
+        note: 'Education & Awareness. Benjamin’s cynicism is Orwell’s sharpest critique of the educated class. He sees through the propaganda but refuses to act on his understanding. The parenthetical "that is, badly" reduces all political change to futility. Orwell presents Benjamin not as wise but as complicit: his refusal to engage enables the tyranny he privately deplores.',
+      },
+      {
+        type: 'quote',
+        text: 'Surely, comrades, you do not want Jones back',
+        note: 'Squealer - Chapter 5 (repeated throughout). This rhetorical question is the pigs’ most effective propaganda tool. It replaces reasoned argument with fear, deflecting every criticism by invoking the spectre of the old regime. Orwell shows that propaganda does not need to be convincing — it only needs to make the alternative seem worse. The repetition throughout the novel demonstrates how a single fear-based technique can sustain tyranny indefinitely.',
+      },
+      {
+        type: 'theme',
+        text: 'Surely, comrades, you do not want Jones back',
+        note: 'Language & Propaganda. This rhetorical question is the pigs’ most effective propaganda tool. It replaces reasoned argument with fear, deflecting every criticism by invoking the spectre of the old regime. Orwell shows that propaganda does not need to be convincing — it only needs to make the alternative seem worse. The repetition throughout the novel demonstrates how a single fear-based technique can sustain tyranny indefinitely.',
+      },
+      {
+        type: 'language',
+        text: 'Surely, comrades, you do not want Jones back',
+        note: 'rhetorical question. This rhetorical question is the pigs’ most effective propaganda tool. It replaces reasoned argument with fear, deflecting every criticism by invoking the spectre of the old regime. Orwell shows that propaganda does not need to be convincing — it only needs to make the alternative seem worse. The repetition throughout the novel demonstrates how a single fear-based technique can sustain tyranny indefinitely.',
+      },
+      {
+        type: 'quote',
+        text: 'SEEMED to oppose the windmill, simply as a manoeuvre to get rid of Snowball',
+        note: 'Narrator - Chapter 5. This is one of Orwell’s clearest Stalin parallels: Stalin adopted Trotsky’s industrialisation programme after exiling him. The sentence reveals that Napoleon’s opposition was never ideological but purely strategic — he opposed the windmill not because it was wrong but because Snowball supported it. Power, not policy, is what matters.',
+      },
+      {
+        type: 'theme',
+        text: 'SEEMED to oppose the windmill, simply as a manoeuvre to get rid of Snowball',
+        note: 'Power & Corruption. This is one of Orwell’s clearest Stalin parallels: Stalin adopted Trotsky’s industrialisation programme after exiling him. The sentence reveals that Napoleon’s opposition was never ideological but purely strategic — he opposed the windmill not because it was wrong but because Snowball supported it. Power, not policy, is what matters.',
+      },
+    ],
+    'section-3': [
+      {
+        type: 'quote',
+        text: 'Four legs good, two legs bad',
+        note: 'The sheep - Chapter 3. The simplified slogan that replaces debate. Orwell’s warning about the death of nuance.',
+      },
+      {
+        type: 'theme',
+        text: 'did not actually work, but directed and supervised',
+        note: 'From Chapter 3 onwards, the pigs "did not actually work, but directed and supervised." The class divide is immediate.',
+      },
+      {
+        type: 'theme',
+        text: 'Four legs good, two legs bad',
+        note: '"Four legs good, two legs bad" reduces complex ideology to a chant.',
+      },
+      {
+        type: 'character',
+        text: 'Four legs good, two legs bad',
+        note: 'But Orwell refuses to idealise him: Snowball also participates in the pigs\' early privileges (milk and apples) and simplifies Animalism into the reductive slogan "Four legs good, two legs bad." His exile marks the death of honest debate on the farm.',
+      },
+      {
+        type: 'language',
+        text: 'Four legs good, two legs bad',
+        note: 'repetition. The binary slogan replaces complex principles with mindless repetition. Orwell shows that simplification of ideology is the first step toward its corruption. The sheep’s inability to think beyond the slogan makes them perfect instruments of propaganda — they will drown out any dissent by bleating it endlessly.',
+      },
+    ],
+    'section-7': [
+      {
+        type: 'theme',
+        text: 'These scenes of terror and slaughter were not what they had looked forward to',
+        note: '"These scenes of terror and slaughter were not what they had looked forward to"',
+      },
+      {
+        type: 'character',
+        text: 'this was not what they had aimed at',
+        note: 'She shields the ducklings during Old Major\'s speech, comforts Boxer, and after the executions in Chapter 7 looks out over the farm with tears in her eyes, feeling that "this was not what they had aimed at." She is the character closest to the reader\'s own grief -- she knows something is wrong but cannot name it.',
+      },
+      {
+        type: 'character',
+        text: 'These scenes of terror and slaughter were not what they had looked forward to',
+        note: '"These scenes of terror and slaughter were not what they had looked forward to"',
+      },
+      {
+        type: 'quote',
+        text: 'a society of animals set free from hunger and the whip, all equal',
+        note: 'Narrator (about Clover) - Chapter 7. This passage is the emotional heart of the novel. Clover’s vision is modest, humane and reasonable, which makes its betrayal more painful. Orwell gives the most moving articulation of revolutionary hope to an inarticulate cart-horse, not to the intellectual pigs. The pathos lies in the distance between Clover’s simple dream and the brutal reality.',
+      },
+      {
+        type: 'theme',
+        text: 'a society of animals set free from hunger and the whip, all equal',
+        note: 'Revolution & Betrayal. This passage is the emotional heart of the novel. Clover’s vision is modest, humane and reasonable, which makes its betrayal more painful. Orwell gives the most moving articulation of revolutionary hope to an inarticulate cart-horse, not to the intellectual pigs. The pathos lies in the distance between Clover’s simple dream and the brutal reality.',
+      },
+      {
+        type: 'quote',
+        text: 'no one dared speak his mind',
+        note: 'Narrator - Chapter 7. The dogs are Orwell’s equivalent of the NKVD — Stalin’s secret police. "No one dared speak his mind" describes the defining condition of totalitarianism: the elimination of free thought through fear. The past perfect ("had come to a time") suggests the change was gradual and thus harder to resist — no single moment could have been identified as the point of no return.',
+      },
+      {
+        type: 'theme',
+        text: 'no one dared speak his mind',
+        note: 'Power & Corruption. The dogs are Orwell’s equivalent of the NKVD — Stalin’s secret police. "No one dared speak his mind" describes the defining condition of totalitarianism: the elimination of free thought through fear. The past perfect ("had come to a time") suggests the change was gradual and thus harder to resist — no single moment could have been identified as the point of no return.',
+      },
+    ],
+    'section-9': [
+      {
+        type: 'character',
+        text: 'Fools! Do you not see what is written on the side of that van',
+        note: '"Fools! Do you not see what is written on the side of that van?"',
+      },
+      {
+        type: 'quote',
+        text: 'Fools! Do you not see what is written on the side of that van',
+        note: '"Fools! Do you not see what is written on the side of that van?"',
+      },
+      {
+        type: 'theme',
+        text: 'Fools! Do you not see what is written on the side of that van',
+        note: 'Loyalty & Exploitation. Benjamin’s outburst is the novel’s most agonising moment. He has always been able to read but has chosen silence and disengagement. His cry comes too late to save Boxer. In the full line, the repetition of "Fools" — directed at the other animals — is also directed at himself. Orwell’s sharpest critique falls not on the powerful but on the educated who refuse to act until it is too late.',
+      },
+      {
+        type: 'language',
+        text: 'Fools! Do you not see what is written on the side of that van',
+        note: 'repetition. Benjamin’s outburst is the novel’s most agonising moment. He has always been able to read but has chosen silence and disengagement. His cry comes too late to save Boxer. In the full line, the repetition of "Fools" — directed at the other animals — is also directed at himself. Orwell’s sharpest critique falls not on the powerful but on the educated who refuse to act until it is too late.',
+      },
+    ],
+    'section-1': [
+      {
+        type: 'language',
+        text: 'Whatever goes upon two legs is an enemy',
+        note: 'Old Major\'s founding doctrine was that "whatever goes upon two legs is an enemy".',
+      },
+      {
+        type: 'quote',
+        text: 'Man is the only creature that consumes without producing',
+        note: 'Old Major - Chapter 1. Old Major’s critique identifies exploitation as the defining feature of human rule. The irony is devastating: the pigs will replicate this exact behaviour, consuming the milk, apples, whisky and produce while the other animals labour. Orwell uses Old Major’s speech to establish the ideals against which Napoleon’s corruption will be measured.',
+      },
+      {
+        type: 'theme',
+        text: 'Man is the only creature that consumes without producing',
+        note: 'Revolution & Betrayal. Old Major’s critique identifies exploitation as the defining feature of human rule. The irony is devastating: the pigs will replicate this exact behaviour, consuming the milk, apples, whisky and produce while the other animals labour. Orwell uses Old Major’s speech to establish the ideals against which Napoleon’s corruption will be measured.',
+      },
+      {
+        type: 'language',
+        text: 'Man is the only creature that consumes without producing',
+        note: 'irony. Old Major’s critique identifies exploitation as the defining feature of human rule. The irony is devastating: the pigs will replicate this exact behaviour, consuming the milk, apples, whisky and produce while the other animals labour. Orwell uses Old Major’s speech to establish the ideals against which Napoleon’s corruption will be measured.',
+      },
+      {
+        type: 'quote',
+        text: 'Beasts of England, beasts of Ireland,\n\nBeasts of every land and clime',
+        note: 'Old Major (teaching the revolutionary anthem) - Chapter 1. "Beasts of England" functions as the Internationale of Animal Farm — the revolutionary anthem that gives the movement its emotional power. Its later banning by Napoleon in Chapter 7 signals the moment when the regime officially repudiates its own origins. Orwell shows that totalitarian regimes must suppress their own founding ideals once those ideals become an embarrassment.',
+      },
+      {
+        type: 'theme',
+        text: 'Beasts of England, beasts of Ireland,\n\nBeasts of every land and clime',
+        note: 'Revolution & Betrayal. "Beasts of England" functions as the Internationale of Animal Farm — the revolutionary anthem that gives the movement its emotional power. Its later banning by Napoleon in Chapter 7 signals the moment when the regime officially repudiates its own origins. Orwell shows that totalitarian regimes must suppress their own founding ideals once those ideals become an embarrassment.',
+      },
+    ],
+    'section-2': [
+      {
+        type: 'language',
+        text: 'No animal shall sleep in a bed',
+        note: 'Commandment after commandment has been quietly amended - "no animal shall sleep in a bed" gained "with sheets"; "no animal shall kill any other animal" gained "without cause"; "all animals are equal" gained "but some animals are more equal than others".',
+      },
+      {
+        type: 'language',
+        text: 'No animal shall kill any other animal',
+        note: 'Commandment after commandment has been quietly amended - "no animal shall sleep in a bed" gained "with sheets"; "no animal shall kill any other animal" gained "without cause"; "all animals are equal" gained "but some animals are more equal than others".',
+      },
+    ],
+    'section-6': [
+      {
+        type: 'quote',
+        text: 'No animal shall sleep in a bed with sheets',
+        note: 'The Commandments (altered) - Chapter 6. The addition of two words transforms a prohibition into a permission. Orwell makes propaganda concrete: this is the deliberate, manual rewriting of truth, later confirmed when Squealer is found at the barn wall with paint and a ladder.',
+      },
+      {
+        type: 'theme',
+        text: 'No animal shall sleep in a bed with sheets',
+        note: 'Language & Propaganda. The addition of two words transforms a prohibition into a permission. Orwell makes propaganda concrete: this is the deliberate, manual rewriting of truth, later confirmed when Squealer is found at the barn wall with paint and a ladder.',
+      },
+      {
+        type: 'quote',
+        text: 'All that year the animals worked like slaves',
+        note: 'Narrator - Chapter 6. The simile is devastating in its irony. The revolution was fought to end slavery, yet the animals are now compared to the very thing they sought to escape. Orwell’s narrator is not ironic by accident — the word "slaves" forces the reader to confront the revolution’s failure at its most basic level.',
+      },
+      {
+        type: 'theme',
+        text: 'All that year the animals worked like slaves',
+        note: 'Revolution & Betrayal. The simile is devastating in its irony. The revolution was fought to end slavery, yet the animals are now compared to the very thing they sought to escape. Orwell’s narrator is not ironic by accident — the word "slaves" forces the reader to confront the revolution’s failure at its most basic level.',
+      },
+      {
+        type: 'language',
+        text: 'All that year the animals worked like slaves',
+        note: 'simile. The simile is devastating in its irony. The revolution was fought to end slavery, yet the animals are now compared to the very thing they sought to escape. Orwell’s narrator is not ironic by accident — the word "slaves" forces the reader to confront the revolution’s failure at its most basic level.',
+      },
+    ],
+    'section-8': [
+      {
+        type: 'quote',
+        text: "Father of All Animals, Terror of Mankind, Protector of the Sheep-fold, Ducklings' Friend",
+        note: 'Narrator (listing Napoleon’s titles) - Chapter 8. The accumulation of absurd titles parodies Stalin’s personality cult. "Father of All Animals" echoes "Father of the Peoples," an epithet Soviet propaganda gave Stalin. The contradiction between "Terror of Mankind" and "Ducklings’ Friend" reveals the incoherence that personality cults require the public to accept without question. Orwell uses comic excess to expose the absurdity of totalitarian self-glorification.',
+      },
+      {
+        type: 'theme',
+        text: "Father of All Animals, Terror of Mankind, Protector of the Sheep-fold, Ducklings' Friend",
+        note: 'Power & Corruption. The accumulation of absurd titles parodies Stalin’s personality cult. "Father of All Animals" echoes "Father of the Peoples," an epithet Soviet propaganda gave Stalin. The contradiction between "Terror of Mankind" and "Ducklings’ Friend" reveals the incoherence that personality cults require the public to accept without question. Orwell uses comic excess to expose the absurdity of totalitarian self-glorification.',
+      },
+    ],
+  },
   'antony-and-cleopatra': {
     'acti-scenei': [
       {
@@ -843,6 +1148,40 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'theme',
         text: 'unqualitied with very shame',
         note: "Iras says Antony is 'unqualitied with very shame' after Actium; Cleopatra dresses Antony in her 'tires and mantles' while she wears his sword; the play repeatedly stages the porousness of gender categories.",
+      },
+    ],
+  },
+  'do-not-go-gentle-into-that-good-night': {
+    poem: [
+      {
+        type: 'theme',
+        text: 'had forked no lightning',
+        note: "Regret and the Unfinished Life. The wise know their words 'had forked no lightning'; the good see their 'frail deeds' might have shone brighter; the wild learn 'too late' that they grieved the sun they sang; the grave men realise even failing eyes 'could blaze like meteors'.",
+      },
+      {
+        type: 'context',
+        text: 'rage against the dying of the light',
+        note: 'Overview of the Poem The poem urges the dying - and specifically the poet\'s father - not to accept death passively but to "rage against the dying of the light." Thomas presents four types of men (wise men, good men, wild men, grave men) who each have reasons to resist death.',
+      },
+      {
+        type: 'context',
+        text: 'And you, my father, there on the sad height,\nCurse, bless, me now with your fierce tears, I pray',
+        note: 'The poem builds through these examples to the final, raw, personal stanza in which Thomas directly addresses his father: "And you, my father, there on the sad height, / Curse, bless, me now with your fierce tears, I pray." Key Themes Death and resistance: The poem refuses to accept death quietly.',
+      },
+      {
+        type: 'context',
+        text: 'Rage, rage against the dying of the light',
+        note: 'The repeating refrains - "Do not go gentle into that good night" and "Rage, rage against the dying of the light" - create a desperate, incantatory quality, as though repetition alone could hold death at bay.',
+      },
+      {
+        type: 'language',
+        text: 'Blind eyes could blaze like meteors',
+        note: 'Examiner Tip: The oxymorons ("Curse, bless," "fierce tears," "blind eyes could blaze like meteors") are crucial.',
+      },
+      {
+        type: 'language',
+        text: 'Rage, rage against the dying of the light',
+        note: 'The form comprises: 19 lines total Five tercets (three-line stanzas) followed by one quatrain (four-line stanza) Two refrains: Line 1 ("Do not go gentle into that good night") and Line 3 ("Rage, rage against the dying of the light") alternate as the final line of each tercet and then combine as the final couplet of the quatrain Two rhymes only: The entire poem uses just two rhyme sounds - "night/right/light/flight/sight/height" and "day/they/way/bay/pray/gay" Why the Villanelle Form Matters The villanelle\'s rigid structure creates a sense of obsessive repetition - the two refrains return again and again, like a mantra or prayer.',
       },
     ],
   },

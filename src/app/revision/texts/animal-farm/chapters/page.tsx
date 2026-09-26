@@ -354,6 +354,7 @@ export default async function ChaptersPage() {
   const tCharDev = await t('rev.texts.common.character_development')
   const tAllegory = await t('rev.texts.common.allegorical_parallels')
   const tKeyQuotes = await t('rev.texts.common.key_quotes')
+  const tOpenGuide = await t('chapter_guide.open')
 
   return (
     <div className="space-y-10 pb-16">
@@ -409,6 +410,13 @@ export default async function ChaptersPage() {
                 {ch.title}
               </h2>
             </div>
+            <Link
+              href={`/revision/texts/animal-farm/chapter-${ch.number}`}
+              className="-mt-2 mb-5 inline-flex items-center gap-1.5 text-body-sm font-medium text-primary hover:underline"
+            >
+              {tOpenGuide}
+              <span aria-hidden="true">&rarr;</span>
+            </Link>
 
             <div className="grid gap-4 lg:grid-cols-2">
               {/* Key Events */}
