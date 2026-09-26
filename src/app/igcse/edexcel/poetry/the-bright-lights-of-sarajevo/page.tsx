@@ -73,30 +73,41 @@ const themes = [
 // promenade (the "korzo"), a couple meeting by candlelight in a café, and an
 // ending that "looks up" at a clear sky. None of that is in the poem. The boy
 // and girl meet in the dark by the flare of a light for a cigarette; the stars
-// are seen in rain-filled shell holes; and the poem ends with the two of them
-// hand in hand in one candlelit café, behind sandbags made from aid flour
-// sacks. Each claim below was checked against the Issue 8 anthology text,
-// page 28, by script, without reproducing it.
+// are seen in flooded shell holes; and the poem ends with the two of them in a
+// café lit by candles, behind sandbags made from sacks of aid flour. Each
+// claim below was checked against the Issue 8 anthology text, page 28, by
+// script, without reproducing it.
+//
+// CHECKED AGAIN, later on 26 September 2026, by script against the same page.
+// Four more errors had survived. The opening sent people to queue for water
+// at distribution points; the poem's queues are for gas and bread, the water
+// is carried upstairs, and no distribution point is mentioned. The middle
+// said shells were still falling that evening; the poem sets the evening
+// against what the shelling would lead you to expect. The closing put the
+// rain on the same day and the holes at the boy's feet alone, and made the
+// café, not the coffee the couple share, the single thing. The rain fell the
+// day before, and the flooded holes are the couple's, made in 1992 when Serb
+// mortars hit a bread queue on the very spot the two now stand on.
 const stanzaSummaries = [
   {
     n: 'Opening movement',
     label: 'A daytime city under siege',
-    body: 'Harrison opens with the daily reality of besieged Sarajevo. Citizens queue for hours to draw rationed water and bread from the few places that still distribute supplies. The poet describes the practical effort it takes simply to survive a day under shellfire and sniper attack. The opening establishes a context of hardship: this is not the romantic city, but a city where ordinary life has been stripped down to queueing and waiting.',
+    body: 'Harrison opens with the daily reality of besieged Sarajevo. People spend hours in queues, in one with empty gas containers and in another for their bread ration; they dodge sniper fire and haul water upstairs. The poet describes the practical effort it takes simply to survive a day under shellfire and sniper attack. The opening establishes a context of hardship: this is not the romantic city, but a city where ordinary life has been stripped down to queueing, carrying and waiting.',
   },
   {
     n: 'Middle movement',
     label: 'Evening falls and the young come out',
-    body: 'As darkness comes, the city changes. The young people of Sarajevo, who have been queueing or sheltering all day, come out in the evening and walk the dark streets, where a boy and a girl are no more than shapes to each other. The shells are still falling somewhere - but the city refuses to disappear.',
+    body: 'As darkness comes, the city changes. Streets wrecked by Serb shelling might be expected to empty after dark, but tonight they do not: the young people of Sarajevo come out for an evening walk. In the blackout nobody can tell who is Muslim, Croat or Serb, and a boy and a girl are no more than shapes to each other. The siege has not emptied the city.',
   },
   {
     n: 'Central encounter',
     label: 'A light in the dark',
-    body: "The poem narrows in on a particular moment: a boy and a girl meeting in the blacked-out street. A cigarette is the boy's chance to see her, because the brief flare of a match or lighter shows him her eyes. Harrison treats this small private encounter as a full-scale political statement - the city has not been killed, and the next generation is still falling in love. This is the emotional centre of the poem.",
+    body: "The poem narrows in on a particular moment: a boy and a girl meeting in the blacked-out street. A cigarette is the boy's chance to see her, because the brief flare of a match or a lighter shows him her eyes. Harrison treats this small private encounter as a full-scale political statement - the city has not been killed, and the next generation is still falling in love. This is the emotional centre of the poem.",
   },
   {
     n: 'Closing movement',
-    label: 'Stars in the shell holes, and a candlelit café',
-    body: 'The day&rsquo;s rain has filled the holes the shells left, and the boy sees the evening sky, now full of stars, reflected in them, at his feet rather than overhead. The poem ends in one candlelit café, where he holds the girl&rsquo;s hand behind sandbags made from sacks that once held aid flour. Harrison closes with an image of resilience without sentimentalising the war: the shelter itself is made of the siege.',
+    label: 'Stars in the shell holes, and a café by candlelight',
+    body: 'The two are standing on the scars of the 1992 attack in which Serb mortars killed people queueing for bread. Yesterday&rsquo;s rain has flooded the craters that attack left beside them. The sky has cleared and the stars are out, which, Harrison notes, is exactly the weather bombers want. The boy can make out the stars, broken up, in two of those flooded craters: below him rather than overhead. The last image is indoors. In a café lit only by candles the couple share a single coffee, sheltered by sandbags that are really sacks of aid flour filled with sand, and the boy holds the girl&rsquo;s hand until it is time for curfew. Harrison closes with an image of resilience without sentimentalising the war: the shelter itself is made of the siege.',
   },
 ]
 
@@ -109,7 +120,7 @@ const formAndStructure = [
   },
   {
     label: 'Rhyme',
-    body: 'Mostly heroic couplets &mdash; rhyming pairs of pentameter lines. Couplets carry an air of completion and balance. Harrison uses them to suggest that the city, in spite of everything, is finding moments of order and equilibrium each evening.',
+    body: 'Mostly heroic couplets, that is, rhyming pairs of pentameter lines. Couplets carry an air of completion and balance. Harrison uses them to suggest that the city, in spite of everything, is finding moments of order and equilibrium each evening.',
   },
   {
     label: 'Anthology Issue 8 layout',
@@ -117,15 +128,22 @@ const formAndStructure = [
   },
   {
     label: 'Reportage in verse',
-    body: 'In 1995 The Guardian commissioned Harrison to write poems from the war in Bosnia, and this is one of them, written during the Siege of Sarajevo. The piece moves like a despatch: a wide opening on city-wide hardship, a narrowing into one encounter, a closing image. The poem is journalism in heroic couplets &mdash; the unusual register is part of its power.',
+    body: 'In 1995 The Guardian commissioned Harrison to write poems from the war in Bosnia, and this is one of them, written during the Siege of Sarajevo. The piece moves like a despatch: a wide opening on city-wide hardship, a narrowing into one encounter, a closing image. The poem is journalism in heroic couplets, and the unusual register is part of its power.',
   },
   {
     label: 'Light imagery',
-    body: "Light recurs throughout, and most of it is small: the flare of a match or lighter in the dark, a candlelit café, the stars. Harrison's contrast is between human-made light (a match, a candle: fragile and brief) and natural light (stars, distant and constant), and even the stars are seen reflected in shell holes. Both are forms of resistance to the dark of the siege. The title &mdash; &ldquo;Bright Lights&rdquo; &mdash; is partly ironic (these are not Las Vegas lights, and the city is blacked out) and partly literal (these small lights really do shine in the dark).",
+    // The title is quoted whole, as a name: until 26 September 2026 this
+    // quoted two of its words on their own, which the mounted guide does not
+    // quote, and that put the route over its fair-dealing share.
+    //
+    // The stars were called a form of resistance until later on 26 September
+    // 2026. The poem makes the clear, starry sky the one bombers want, and the
+    // boy makes out the stars only in pieces, in flooded shell holes.
+    body: 'Light recurs, and most of it is small: the brief flare of a match or a lighter in the dark, a café lit by candlelight, the stars. Harrison sets the light people make for themselves (a match, a candle: fragile and brief) against the stars, and the stars are no simple comfort: a clear, starry night is what bombers want, and the boy glimpses the stars only as broken reflections in flooded shell holes. The small human lights are the ones that resist the dark of the siege. The title, &ldquo;The Bright Lights of Sarajevo&rdquo;, is partly ironic (these are not Las Vegas lights, and the city is blacked out) and partly literal (these small lights really do shine in the dark).',
   },
   {
     label: 'Tone',
-    body: 'Restrained and observational. Harrison does not editorialise about the war; he reports. The political force of the poem comes from the contrast between the brutal context and the unremarkable beauty of two young people finding each other in the dark and ending up hand in hand in a candlelit café.',
+    body: 'Restrained and observational. Harrison does not editorialise about the war; he reports. The political force of the poem comes from the contrast between the brutal context and the unremarkable beauty of two young people finding each other in the dark and ending up hand in hand in a café lit by candlelight.',
   },
 ]
 
@@ -235,7 +253,17 @@ export default function BrightLightsOfSarajevoPage() {
       {/* ── Rights notice ───────────────────────────────────────────────
           Until 26 September 2026 this named Bloodaxe Books as the rights
           holder. The Issue 8 acknowledgements (page 72) credit the permission
-          to Tony Harrison and name no publisher. */}
+          to Tony Harrison and name no publisher.
+
+          FAIR DEALING, 26 September 2026. It also said that this guide
+          reproduced no quoted lines of the poem, while the study guide the
+          layout mounts through GuideSupplement
+          (src/data/study-guides/the-bright-lights-of-sarajevo.ts) prints its
+          key quotations, two of them whole lines. The route shares one
+          fair-dealing budget with that guide, measured by
+          no-poem-quoted-beyond-fair-dealing.test.ts, so this page quotes only
+          what the guide already quotes, plus at most a few words. Today it
+          quotes nothing but the title. */}
       <section
         aria-label="Rights notice"
         className="rounded-xl border border-amber-500/40 bg-amber-500/[0.08] p-5 text-body-sm text-card-foreground"
@@ -247,9 +275,9 @@ export default function BrightLightsOfSarajevoPage() {
               <strong className="text-foreground">Rights notice.</strong> &ldquo;The Bright Lights
               of Sarajevo&rdquo; is in copyright. The Edexcel anthology reproduces it by kind
               permission of Tony Harrison himself, and names no publisher. For that reason this
-              study guide does not reproduce any quoted lines from the body of the poem. Use the
-              official Edexcel anthology (Pearson Education, ISBN 978-1-446-93108-0) when reading
-              the text.
+              study guide quotes the poem only briefly, within fair dealing, and never prints it
+              whole or at length. Use the official Edexcel anthology (Pearson Education, ISBN
+              978-1-446-93108-0) when reading the text.
             </p>
           </div>
         </div>

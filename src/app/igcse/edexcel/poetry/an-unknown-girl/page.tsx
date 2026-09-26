@@ -61,22 +61,43 @@ const themes = [
 // in quotation marks as though they were. Every detail below was checked
 // against the Issue 8 anthology text, page 27, by script, without reproducing
 // it. The only pattern the poem names is a peacock, and it ends with the
-// speaker reaching across a country towards the girl, not dreaming of her.
+// speaker reaching out over a whole country towards the girl, not dreaming of
+// her.
+//
+// A second check the same day, for the poem's words left unmarked: the
+// summaries and notes below carried four runs of three words straight from the
+// poem without quotation marks, which no quotation measure can see, and are now
+// paraphrased. Three claims were also wrong or unsupported: satin was listed as
+// bazaar imagery, but the poem uses it of the girl's knee; the speaker was said
+// to keep still and submit, which the poem does not say; and "modern editions"
+// were said to print the poem in sections, which nothing here can show. The
+// anthology prints it as one unbroken column of 48 lines, so the four sections
+// on this page are its own division, and the Form note now says so.
+//
+// ONE BUDGET WITH THE GUIDE, 26 September 2026. The layout mounts the study
+// guide (src/data/study-guides/an-unknown-girl.ts) beneath this page, so the
+// route shares one fair-dealing allowance with it: 15 per cent of the poem, 28
+// words, and the guide's verified quotations use all of it. This page therefore
+// quotes only what the guide already quotes. It used to quote the opening line
+// as well, in the first summary and the rights notice, which took the route to
+// 32 words; the setting is now described, not quoted. A new quotation here has
+// to come out of the guide's share. The measure is
+// src/__tests__/no-poem-quoted-beyond-fair-dealing.test.ts.
 const stanzaSummaries = [
   {
     n: 'Section 1',
-    label: 'In the evening bazaar',
-    body: "The poem opens in an Indian street market &mdash; the widely-quoted phrase &ldquo;In the evening bazaar&rdquo; sets the scene. The bazaar is bright with electric light: the imagery is &ldquo;studded with neon&rdquo;. An unnamed young woman is decorating the speaker's hand with henna paste (mehndi), squeezing it from a nozzle as if icing a cake and steadying the speaker's hand against her own knee.",
+    label: 'The market at dusk',
+    body: "The poem opens as evening falls in a South Asian street market bright with electric light: the bazaar is &ldquo;studded with neon&rdquo;. An unnamed young woman is decorating the speaker's hand with henna paste (mehndi), piping it through a nozzle as if icing a cake and steadying the speaker's hand against her own knee.",
   },
   {
     n: 'Section 2',
     label: 'The henna pattern emerges',
-    body: "The henna costs the speaker very little. As the girl works, a peacock spreads across the speaker's palm: it is the one pattern the poem names. The speaker is still - she submits to the decoration. Around them the bazaar goes on, with its colours, its shops and its cloth and banners.",
+    body: "The henna costs the speaker very little. As the girl works, a peacock design opens out over the speaker's palm: it is the one pattern the poem names. Around them the street market carries on, full of colour, with its shops, lengths of fabric and banners advertising a national beauty contest.",
   },
   {
     n: 'Section 3',
     label: 'The refrain returns',
-    body: "The opening comes round again like a refrain: the evening bazaar, the unknown girl, the hennaing of the speaker's hand. The speaker admits she is clinging on, and the peacock appears again. A small transaction in a market has quietly turned into something more than commerce.",
+    body: "The opening scene comes round again like a refrain: the lit-up market at dusk, the anonymous girl, the henna going on to the speaker's hand. The speaker admits she is clinging on, and the peacock appears again. A small transaction in a market has quietly turned into something more than commerce.",
   },
   {
     n: 'Section 4',
@@ -90,7 +111,7 @@ const stanzaSummaries = [
 const formAndStructure = [
   {
     label: 'Form',
-    body: "A single block of free verse, with no consistent stanza pattern. Modern editions sometimes break the poem into uneven sections; the Edexcel anthology prints it as one flowing piece. The visual irregularity matches the speaker's sense of being between two cultures, fitting neatly into neither.",
+    body: "Free verse with no stanza breaks: the Edexcel anthology prints it as one unbroken column of 48 short lines. The four sections on this page are this guide's own division, not the poet's. The uneven line lengths match the speaker's sense of being between two cultures, fitting neatly into neither.",
   },
   {
     label: 'Line breaks and pace',
@@ -98,19 +119,19 @@ const formAndStructure = [
   },
   {
     label: 'Imagery: light, colour, body',
-    body: "The bazaar imagery is electric and sensory: neon, satin, colours, cloth and banners. The body imagery is intimate: the hand steadied on the girl's knee, the peacock spreading across the palm, a pattern the speaker knows will fade. Alvi places the personal body inside the public market, and lets the henna become a symbol of cultural inscription.",
+    body: "The bazaar imagery is electric and sensory: neon, colours, cloth and banners. The body imagery is intimate: the speaker's hand steadied on the girl's knee, which the poem likens to satin, and the peacock opening out over the palm, a pattern the speaker knows will fade. Alvi places the personal body inside the public market, and lets the henna become a symbol of cultural inscription.",
   },
   {
     label: 'Symbolism of mehndi',
-    body: 'Mehndi (henna painting) is traditionally applied to brides in South Asian cultures &mdash; here, the bride-imagery is pulled into a moment of tourist transaction. The henna becomes a symbol both of cultural belonging (it lasts on the skin for weeks) and of cultural distance (it fades, and the poem ends with the speaker reaching back across a country).',
+    body: 'Mehndi (henna painting) is traditionally applied to brides in South Asian cultures; here a decoration with those associations is bought for small change in a street market. The henna becomes a symbol both of cultural belonging (it marks the speaker&rsquo;s skin) and of cultural distance (she knows it will be gone within a week, and the poem ends with her reaching out over a whole country).',
   },
   {
     label: 'Repetition',
-    body: "&ldquo;An unknown girl&rdquo; recurs in the poem like a refrain. The speaker keeps returning to the figure of the henna painter, who is anonymous yet intensely present. The repetition creates a yearning rhythm: the unknown girl becomes a symbol for the parts of the speaker's heritage she does not fully know.",
+    body: "&ldquo;An unknown girl&rdquo; recurs in the poem like a refrain. The speaker keeps returning to the figure of the henna painter, who is anonymous yet intensely present. The repetition creates a yearning rhythm: the nameless girl becomes a symbol for the parts of the speaker's heritage she does not fully know.",
   },
   {
     label: 'Closing image',
-    body: 'The poem ends in an imagined future, with the speaker reaching out across a whole country towards the girl she met in the bazaar. The hands the girl decorated now stretch towards someone out of reach. The image is tender and unresolved - the connection the henna made is also a measure of distance.',
+    body: 'The poem ends in an imagined future, with the speaker reaching out across a whole country towards the girl she met in the bazaar. The hand the girl once held steady now stretches towards someone out of reach. The image is tender and unresolved: the connection the henna made is also a measure of distance.',
   },
 ]
 
@@ -198,9 +219,8 @@ export default function AnUnknownGirlPage() {
               <em>Split World: Poems 1990&ndash;2005</em> (Bloodaxe, 2008) when reading the text.
             </p>
             <p className="text-body-xs text-muted-foreground">
-              Short fair-dealing reference is made below to the poem&rsquo;s widely-attested opening
-              setting (&ldquo;In the evening bazaar&rdquo;, &ldquo;studded with neon&rdquo;) under
-              CDPA s.30 (criticism and review).
+              Short phrases from the poem are quoted on this page and in the study guide below for
+              criticism and review, under CDPA s.30 (fair dealing).
             </p>
           </div>
         </div>
@@ -228,12 +248,12 @@ export default function AnUnknownGirlPage() {
             Bloodaxe Books.
           </p>
           <p>
-            <strong className="text-foreground">Context:</strong> The poem draws on Alvi&rsquo;s
-            first adult visits to South Asia. Mehndi &mdash; henna painting on the hands and feet
-            &mdash; is a traditional decoration applied to brides at South Asian weddings, and is
-            also offered casually to passers-by at street stalls. The poem positions the speaker
-            between tourist and returnee: she is not exactly a stranger, and not exactly a daughter
-            of the place.
+            <strong className="text-foreground">Context:</strong> The poem is set in a bazaar in
+            India and draws on Alvi&rsquo;s visits to South Asia as an adult. Mehndi, henna painting
+            on the hands and feet, is a traditional decoration applied to brides at South Asian
+            weddings, and is also offered casually to passers-by at street stalls. The poem
+            positions the speaker between tourist and returnee: she is not exactly a stranger, and
+            not exactly a daughter of the place.
           </p>
         </div>
       </section>
@@ -264,8 +284,8 @@ export default function AnUnknownGirlPage() {
         </div>
         <p className="text-body-sm text-muted-foreground mb-4">
           The poem is a single free-verse piece. The summaries below describe the action in plain
-          English and refer only to widely-attested opening phrases. The full text is in copyright
-          and is not reproduced here.
+          English and quote only one short phrase. The full text is in copyright and is not
+          reproduced here.
         </p>
         <div className="space-y-4">
           {stanzaSummaries.map((s) => (
@@ -290,8 +310,8 @@ export default function AnUnknownGirlPage() {
           <h2 className="text-heading-sm font-heading text-foreground">Form &amp; structure</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-4">
-          A paraphrased account of the poem&rsquo;s shape and main techniques. No primary text is
-          reproduced.
+          A paraphrased account of the poem&rsquo;s shape and main techniques. Apart from the title
+          phrase, which the poem repeats, no primary text is quoted.
         </p>
         <div className="space-y-3">
           {formAndStructure.map((f) => (

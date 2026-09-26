@@ -50,26 +50,38 @@ const themes = [
 // supplement already uses the page's whole quotation budget (28 words of a
 // 190-word poem), so keep these sections in paraphrase: adding a quotation
 // here puts the URL over the share.
+//
+// Cut again 26 September 2026, when no-poem-quoted-beyond-fair-dealing.test.ts
+// began counting the whole route. The route shares one fair-dealing budget
+// with the guide layout.tsx mounts, so this page quotes only what the guide
+// already quotes, which costs nothing, plus at most a few words; with the
+// guide at 28 of 28 that means none. The measure had found five more: two
+// pronouns quoted in the form section, and a quotation from If- in a
+// comparison card, which counts against this poem because it sits on this
+// page. Wording these summaries reproduced without quotation marks (the
+// church simile, the steady hands, the wife's cries, the editor's pick, the
+// pain the weather eases, the hands that only appear to shake) is paraphrased
+// too, since leaving the marks off does not make it a paraphrase.
 const stanzaSummaries = [
   {
     n: 'Stanza 1',
     label: 'In the darkroom',
-    body: 'Duffy opens with the photographer in his darkroom, where the spools of film he has brought home are set out in rows. The opening line finds him alone there at last, and the word for that solitude is final. The red light of the darkroom is described in religious terms - the room becomes a kind of church, and the photographer a priest preparing for Mass. A short list of three conflict cities - Belfast, Beirut and Phnom Penh - establishes the geographic range of his recent work and roots the poem in the wars of the late 1970s and early 1980s.',
+    body: 'Duffy opens with the photographer at work in the darkroom, where the spools of film he has brought back from the wars are lined up in neat rows. The opening line finds him alone there at last, which suggests he has been waiting for that solitude. The room is given religious overtones: its red light makes it seem a church, with the photographer as a priest about to say Mass. A short list of three conflict cities - Belfast, Beirut and Phnom Penh - establishes the geographic range of his recent work and roots the poem in the wars of the late 1970s and early 1980s.',
   },
   {
     n: 'Stanza 2',
     label: 'Hands and trembling',
-    body: "The photographer's hands, which did not tremble in the war zone, now seem to shake at home as he works over the trays of developing solution. The professional calm of the journalist breaks down in the safety of England. Rural England is described as ordered, peaceful - a place where suffering only arrives as a photograph.",
+    body: 'The photographer\'s hands were steady in the war zones, but now, at home, they appear to shake as he works over the trays of developing solution. The poem is careful to say only that they appear to: the calm he kept abroad is slipping in the safety of England. He is back in "rural England", where the only suffering is the everyday kind that a change of weather is enough to lift. The stanza ends by setting its safe fields against the war zones, where the ground could blow up under children as they ran through a "nightmare heat".',
   },
   {
     n: 'Stanza 3',
     label: 'A face emerging',
-    body: "A specific image surfaces in the developing tray: a stranger's features begin to appear, like a ghost. The photographer remembers the cries of this man's wife, and how he silently sought her approval to do what someone had to do. The poem never says she gave it. The memory of the photograph's subject becoming visible in the developing tray is rendered with painful slowness - the violence is replayed, frame by frame.",
+    body: 'After a short, uneasy opening sentence, an image surfaces in the developing tray: the face of a man the photographer did not know takes shape, blurred and distorted, a "half-formed ghost". Then he recalls the man\'s wife crying out, and how he silently "sought approval", most naturally from her, for a duty that somebody had to carry out. The poem never says the approval was given. The stanza ends on blood soaking into the dust of a faraway country: as the image develops, the violence comes back to him.',
   },
   {
     n: 'Stanza 4',
     label: 'Sunday-supplement readers',
-    body: "The closing stanza pulls back to the editor's desk and to the Sunday paper. Out of about a hundred pictures of suffering, the editor will choose just five or six. The reader, singular, is moved to tears for a moment, somewhere between a bath and a drink before lunch - a brutal image of comfortable England passing quickly over suffering. The poem ends with the photographer on an aeroplane, staring without expression at the place where he makes his living. Duffy does not say whether he is flying out again, or whether that place is the England below or the wars his work depends on.",
+    body: 'The closing stanza moves from the darkroom to the newspaper. Of a hundred pictures of suffering, only a handful will make it into the Sunday supplement, chosen by his editor. The reader, singular, is moved for a moment - the "eyeballs prick" - but the tears are squeezed in after a bath and before the "pre-lunch beers": a brutal image of comfortable England passing quickly over suffering. The poem ends in the air, as the photographer "stares impassively" from an aeroplane at the place his income comes from. Duffy does not say whether he is flying out again, or whether that place is the England below or the wars his work depends on. The last words, "they do not care", switch to the plural and widen the charge to everyone at home.',
   },
 ]
 
@@ -86,7 +98,7 @@ const formAndStructure = [
   },
   {
     label: 'Religious imagery',
-    body: "Duffy turns the darkroom into a religious space. The red light glows as though the room were a church; the spools of film are set out in neat rows, as if for a ritual; the photographer is compared to a priest preparing for Mass. By framing the journalism as a sacrament, Duffy elevates the photographer's work - and indicts the readers who consume the images casually.",
+    body: "Duffy turns the darkroom into a religious space. Its red light makes the room seem like a church; the spools of film are lined up in neat rows, as if for a ritual; the photographer is likened to a priest about to say Mass. By framing the journalism as a sacrament, Duffy elevates the photographer's work - and indicts the readers who consume the images casually.",
   },
   {
     label: 'Contrast and juxtaposition',
@@ -94,11 +106,11 @@ const formAndStructure = [
   },
   {
     label: 'Pace and detachment',
-    body: 'Duffy mostly uses an impersonal third-person voice - "he", not "I". The tone is restrained, almost clinical. This detachment lets the brutality of the images do the work; the speaker refuses to dramatise. The third-person voice also keeps the photographer at a distance, as if he is being observed working alone.',
+    body: 'Duffy uses an impersonal third-person voice throughout: the photographer never speaks for himself, and even his memories are reported by the narrator rather than voiced. The tone is restrained, almost clinical. This detachment lets the brutality of the images do the work; the speaker refuses to dramatise. The third-person voice also keeps the photographer at a distance, as if he is being observed working alone.',
   },
   {
     label: 'Closing volta',
-    body: 'The poem turns at the last stanza when it widens out from the photographer to the editor and the reader. The volta makes the moral point explicit: the photographer is no longer the sole subject - the indifferent public is. In the final image he stares, expressionless, from an aeroplane at the place where he makes his living. Duffy leaves open whether that is the England below or the wars his work depends on.',
+    body: 'The poem turns at the last stanza when it widens out from the photographer to the editor and the reader. The volta makes the moral point explicit: the photographer is no longer the sole subject - the indifferent public is. In the final image he looks out from an aeroplane, showing nothing, at the place his income comes from. Duffy leaves open whether that is the England below or the wars his work depends on.',
   },
 ]
 
@@ -122,7 +134,7 @@ const comparisons = [
     poet: 'D.H. Lawrence',
     href: '/igcse/edexcel/poetry/piano',
     reason:
-      "Both poems show a man's composure under pressure. Lawrence's speaker is overwhelmed by memory until he weeps like a child; Duffy's photographer, steady in the war zones, finds his hands seem to tremble at home, yet ends the poem showing nothing. Compare how each poem presents emotion and self-control.",
+      "Both poems show a man's composure under pressure. Lawrence's speaker is overwhelmed by memory until he weeps like a child; Duffy's photographer, steady in the war zones, appears to lose that steadiness at home, yet ends the poem showing nothing. Compare how each poem presents emotion and self-control.",
     themes: ['Emotion', 'Self-control', 'Memory'],
   },
   {
@@ -130,7 +142,7 @@ const comparisons = [
     poet: 'Rudyard Kipling',
     href: '/igcse/edexcel/poetry/if',
     reason:
-      'Both poems are about moral codes under pressure. Kipling argues for stoic self-control in the face of "Triumph and Disaster"; Duffy shows that her photographer\'s professional self-control collapses once he gets home. Compare the Edwardian ideal with the late-twentieth-century reality.',
+      "Both poems are about moral codes under pressure. Kipling argues for stoic self-control, meeting success and failure with the same calm; Duffy's photographer keeps his composure in the war zones but seems to lose it once he gets home. Compare the Edwardian ideal with the late-twentieth-century reality.",
     themes: ['Moral codes', 'Stoicism', 'Conscience'],
   },
 ]
@@ -194,8 +206,8 @@ export default function WarPhotographerPage() {
               text.
             </p>
             <p className="text-body-xs text-muted-foreground">
-              Short fair-dealing reference is made below to the poem&rsquo;s opening and to its list
-              of war zones, under CDPA s.30 (criticism and review). The poem itself is not
+              Short phrases of the poem are quoted below, on this page and in the study guide
+              beneath it, for criticism and review under CDPA s.30. The poem itself is not
               reproduced.
             </p>
           </div>
@@ -227,13 +239,18 @@ export default function WarPhotographerPage() {
             Pan Macmillan; permissions enquiries go through the author&rsquo;s agent, Rogers,
             Coleridge &amp; White.
           </p>
+          {/* Corrected 26 September 2026: this gave the inspiration as Duffy's own
+              statement about McCullin alone. The WJEC Eduqas teaching notes, the source
+              the study guide below cites, name two photographers. */}
           <p>
-            <strong className="text-foreground">Inspiration:</strong> Duffy has said that the poem
-            was inspired by her friendship with the photojournalist{' '}
-            <strong className="text-foreground">Don McCullin</strong>, whose images of the Vietnam
-            War, the Troubles in Northern Ireland and the Lebanese Civil War made him one of the
-            most important war photographers of the twentieth century. McCullin&rsquo;s ethical
-            struggles, about the morality of photographing dying people, lie behind the poem.
+            <strong className="text-foreground">Inspiration:</strong> Teaching notes from the exam
+            board WJEC Eduqas say the poem was inspired by Duffy&rsquo;s friendships with two
+            British war photographers, <strong className="text-foreground">Don McCullin</strong> and{' '}
+            <strong className="text-foreground">Philip Jones Griffiths</strong>, and that she was
+            interested in how war photographers had to record horrifying events without being able
+            to help the people in them. McCullin&rsquo;s images of the Vietnam War, the Troubles in
+            Northern Ireland and the Lebanese Civil War made him one of the most important war
+            photographers of the twentieth century.
           </p>
         </div>
       </section>
@@ -264,8 +281,8 @@ export default function WarPhotographerPage() {
         </div>
         <p className="text-body-sm text-muted-foreground mb-4">
           The poem is four six-line stanzas. The summaries below describe the action in plain
-          English and refer only to widely-attested opening phrases. The full text is in copyright
-          and is not reproduced here.
+          English and quote only a few short phrases. The full text is in copyright and is not
+          reproduced here.
         </p>
         <div className="space-y-4">
           {stanzaSummaries.map((s) => (

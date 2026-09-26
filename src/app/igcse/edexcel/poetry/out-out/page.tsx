@@ -58,33 +58,54 @@ const themes = [
 // the yard in Vermont (the poem only looks towards Vermont; the real accident
 // was in New Hampshire), have the boy beg the doctor (he begs his sister),
 // give reasons nobody believed he was dying (the poem gives none) and ask
-// whether he "slipped" (the poem says he must have given the hand). Each claim
-// below was checked against the Issue 8 anthology text, page 26.
+// whether he "slipped" (the speaker concludes the boy offered the hand
+// himself). Each claim below was checked against the Issue 8 anthology text,
+// page 26.
+//
+// ONE BUDGET FOR THE ROUTE, 26 September 2026. The layout mounts the study
+// guide (src/data/study-guides/out-out.ts) on this same URL through
+// <GuideSupplement />, so the page and the guide share one fair-dealing
+// budget: 45 distinct words of the poem's 301, counted once across the route
+// by no-poem-quoted-beyond-fair-dealing.test.ts. A phrase the guide already
+// quotes costs nothing here, so this page quotes only phrases the guide
+// quotes and adds nothing to the count. Until today it also quoted line 15
+// whole, four words more than the guide's version, and several passages on
+// the page repeated the poem almost word for word without quotation marks
+// (the mountain view, the wish for an early finish, the given hand, the
+// raised hand, the survivors' reason). A second pass the same day found
+// closer echoes still (the sister's errand, the saw's leap across the line
+// break, the given hand with one word swapped, what time off means to a boy)
+// and a saw said to be personified throughout, though it drops out of the
+// poem after the accident. Those are now in the site's own words and were
+// checked again against the anthology, which also retired a comparison
+// card's "neighbours": the poem never says who the onlookers are. The Macbeth
+// lines are Shakespeare's, excused by name in the test's OTHER_WORKS, and do
+// not count.
 const stanzaSummaries = [
   {
     n: 'Lines 1-9',
     label: 'The saw and the mountain valley',
-    body: 'Frost opens with the buzz-saw at work in a yard, scattering sawdust and cutting firewood. The setting is sharply localised: five mountain ranges visible under the sunset, stretching far into Vermont, the smell of wood, the snarl of the machine. The sensory detail is vivid and pastoral - until the saw\'s sound is given an animal personality (a "snarled" rattle) and the reader is quietly warned that something living is at work in the metal.',
+    body: 'Frost opens with the buzz-saw at work in a yard, throwing up dust and cutting logs small enough for the stove. The setting is sharply placed: a view across range after range of mountains towards Vermont as the sun goes down, the smell of the cut wood carried on the wind, the noise of the machine. The sensory detail is vivid and pastoral, yet the saw has "snarled" from the very first line, an animal\'s sound that comes back once the view has been described, and the reader is quietly warned that something living is at work in the metal.',
   },
   {
     n: 'Lines 10-14',
     label: 'The day stretches on',
-    body: 'The narrator wishes someone had called the boy off work just half an hour earlier, giving him the spare half-hour that means so much to a boy let off work. The line breaks the calm: the speaker now intervenes to tell us, in retrospect, that the day went on too long. The sister is introduced calling the family to supper.',
+    body: "The narrator wishes someone had ended the working day half an hour early, as a treat, because time let off work means a great deal to a boy. The wish breaks the calm: the speaker steps in, looking back, to suggest that the day went on too long. Then the boy's sister appears beside the workers to call them in for supper.",
   },
   {
     n: 'Lines 15-22',
     label: 'The accident',
-    body: 'At the moment the sister calls "Supper", the saw - as if alive - leaps out and strikes the boy\'s hand. Frost personifies the saw heavily and will not settle whether it really leapt or only seemed to, though the speaker adds that the boy must have given the hand. The boy gives a "rueful laugh" - an extraordinary, painful detail - before he holds up the hand as though he could stop his life escaping from it.',
+    body: 'At the moment the sister calls "Supper", the saw seems to come alive and spring at the boy, catching his hand. Frost personifies the saw heavily and will not settle whether it really leapt or only seemed to, though the speaker then concludes that the boy himself, in some way, held his hand out to it. What he utters first is a "rueful laugh" - an extraordinary, painful detail - before he turns to the others with the injured hand raised, partly asking them for help and partly as though raising it could hold his life in.',
   },
   {
     n: 'Lines 23-28',
     label: 'The doctor and the dark',
-    body: "The boy realises, very fast, what the loss of his hand will mean. He begs his sister not to let the doctor cut his hand off, but the hand is already lost. The doctor administers ether and the boy slips into unconsciousness. The narrator's tone is calm and clinical - the medical procedure is described in plain, professional language.",
+    body: "Now he grasps what the injury will cost him: he is doing an adult's job, so he can see it, though inside he is still a child. He pleads with his sister not to let the doctor take his hand when he arrives, but it is already past saving. The doctor gives him ether and he goes under. The narration stays level and unemotional: the anaesthetic takes a single line, and the poem does not linger on the medical detail.",
   },
   {
     n: 'Lines 29-34',
     label: 'The pulse fails',
-    body: 'The boy\'s pulse weakens, and the person checking it is suddenly afraid. No one can believe it. The line "Little—less—nothing!" condenses dying into three words. After his death the watchers, because they are not the ones who died, turn back to their daily affairs. The poem ends in cold indifference, not lament.',
+    body: 'The person keeping watch on the boy\'s pulse is suddenly afraid. Nobody believes it. They listen for his heartbeat, and the words "Little—less—nothing!" condense his dying into three steps. Once he is dead, the others, who are still living, go back to their own concerns. The poem ends in cold indifference, not lament.',
   },
 ]
 
@@ -93,19 +114,19 @@ const stanzaSummaries = [
 const formAndStructure = [
   {
     label: 'Form',
-    body: "34 lines of unrhymed blank verse - loose iambic pentameter without a regular rhyme scheme. The plain, unrhymed verse fits Frost's rural-American voice: there is nothing decorative about the poem.",
+    body: "34 lines of blank verse: unrhymed, loosely iambic pentameter. The plain verse fits Frost's rural New England voice, which stays close to ordinary speech even when it describes the view.",
   },
   {
     label: 'Title and allusion',
-    body: "The title is a direct quotation from Macbeth's soliloquy in Act 5 Scene 5: \"Out, out, brief candle! / Life's but a walking shadow…\" Frost's reference is heavy - by borrowing Shakespeare's words about a brief, meaningless life, Frost casts the boy's death as another candle blown out without ceremony.",
+    body: "The title is a direct quotation from Macbeth's soliloquy in Act 5 Scene 5: \"Out, out, brief candle! / Life's but a walking shadow…\" Frost's reference is pointed - by borrowing Shakespeare's words about a brief, meaningless life, Frost casts the boy's death as another candle blown out without ceremony.",
   },
   {
     label: 'Caesura and enjambment',
-    body: 'Frost uses heavy mid-line punctuation - full stops and dashes inside lines - to break the rhythm. The accident itself is split across line-breaks, as if the verse cannot stay still. Long enjambments draw the reader past horror into the next clinical phrase.',
+    body: 'Frost uses heavy mid-line punctuation - full stops and dashes inside lines - to break the rhythm. The accident itself is split across line-breaks, as if the verse cannot stay still. Long enjambments draw the reader past horror into the next flat, matter-of-fact phrase.',
   },
   {
     label: 'Personification of the saw',
-    body: 'The buzz-saw is personified throughout. It "snarled and rattled", and at the moment of the accident it appears to leap "as if to prove saws knew what supper meant". Frost will not let us decide whether the machine leapt or only seemed to, and the speaker\'s answer, that the boy must have given the hand, only deepens the question - the ambiguity is part of the poem\'s horror.',
+    body: 'From the first line to the accident, the buzz-saw is personified. It "snarled and rattled", and at the moment of the accident it seems to spring at the boy, as though it wanted to show that "saws knew what supper meant". Frost will not let us decide whether the machine leapt or only seemed to, and the speaker\'s verdict, that the boy himself somehow held his hand out to it, only deepens the question - the ambiguity is part of the poem\'s horror. After the accident the saw is never mentioned again.',
   },
   {
     label: 'Pace',
@@ -113,7 +134,7 @@ const formAndStructure = [
   },
   {
     label: 'Closing turn',
-    body: 'The poem refuses to mourn. After the boy\'s death, the bystanders return to their work in a single, devastating sentence. The flat close, in which the living "turned to their affairs", is the moral centre: life rebuilds around the dead immediately, and indifferently.',
+    body: 'The poem refuses to mourn. After the boy\'s death, a single, devastating sentence sends the others back to their own lives. That flat close, in which the living "turned to their affairs", is the moral centre: life moves on from the dead immediately, and indifferently.',
   },
 ]
 
@@ -129,7 +150,7 @@ const comparisons = [
     poet: 'Wilfred Owen',
     href: '/igcse/edexcel/poetry/disabled',
     reason:
-      "Both poems describe a young person whose life is destroyed by a single moment. Frost's farm boy loses his hand to a saw; Owen's soldier loses his legs to a shell. Both poems end in indifference - the world simply moves on. Compare how each poet uses understatement to expose this indifference.",
+      "Both poems describe a young person whose life is destroyed by a single moment. Frost's country boy loses his hand to a saw; Owen's soldier loses his legs in the war. Both poems end in indifference - the world simply moves on. Compare how each poet uses understatement to expose this indifference.",
     themes: ['Mortality', 'Youth', 'Indifference'],
   },
   {
@@ -137,7 +158,7 @@ const comparisons = [
     poet: 'Kate Chopin',
     href: '/revision/texts/the-story-of-an-hour',
     reason:
-      "A prose pairing. Both texts end in a sudden death and in what the people left behind make of it. Frost's bystanders turn back to their affairs; Chopin's doctors decide that Louise Mallard died of joy, when the reader knows better. Compare how each writer uses a flat, brief ending to expose the living.",
+      "A prose pairing. Both texts end in a sudden death and in what the people left behind make of it. Frost's bystanders go back to their own lives; Chopin's doctors decide that Louise Mallard died of joy, when the reader knows better. Compare how each writer uses a flat, brief ending to expose the living.",
     themes: ['Sudden death', 'Onlookers', 'Irony'],
   },
   {
@@ -145,7 +166,7 @@ const comparisons = [
     poet: 'Tony Harrison',
     href: '/igcse/edexcel/poetry/the-bright-lights-of-sarajevo',
     reason:
-      'Both poems explore how life carries on around violence. Harrison shows young people defying war by walking out in the dark; Frost shows neighbours moving back to work after a death. Compare resilient continuation against numb continuation.',
+      'Both poems explore how life carries on around violence. Harrison shows young people defying war by walking out in the dark; Frost shows the people around a dead boy turning back to their own concerns. Compare resilient continuation against numb continuation.',
     themes: ['Indifference', 'Resilience', 'Continuation'],
   },
 ]
@@ -200,20 +221,24 @@ export default function OutOutPage() {
           <Lock className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-2">
             <p>
-              <strong className="text-foreground">Rights notice.</strong> Robert Frost (d. 1963) is
-              in the public domain in the United States but{' '}
+              <strong className="text-foreground">Rights notice.</strong> Published in 1916, this
+              poem is in the public domain in the United States but{' '}
               <strong className="text-foreground">
                 remains in copyright in the United Kingdom until the end of 2033
               </strong>{' '}
-              (life + 70 years). For that reason this study guide does not reproduce the poem in
-              full. Use the official Edexcel anthology (Pearson Education, ISBN 978-1-446-93108-0)
-              or a licensed edition such as Henry Holt&rsquo;s <em>Mountain Interval</em> when
-              reading the text.
+              (Frost died in 1963; life + 70 years). For that reason this study guide does not
+              reproduce the poem in full. Use the official Edexcel anthology (Pearson Education,
+              ISBN 978-1-446-93108-0) or a licensed edition such as{' '}
+              <em>The Poetry of Robert Frost</em>, edited by Edward Connery Lathem (Henry Holt),
+              when reading the text.
             </p>
+            {/* Until 26 September 2026 this said the Frost estate was run by a
+                Robert Frost Copyright Trust and that Pearson licenses UK
+                anthology rights, neither of which the anthology says. What it
+                does say, in its acknowledgements, is below. */}
             <p className="text-body-xs text-muted-foreground">
-              UK rights enquiries: Henry Holt / Macmillan Publishers (US); the Frost estate is
-              administered by the Robert Frost Copyright Trust. UK anthology rights are licensed
-              through Pearson Education.
+              Copyright Henry Holt and Company (1916, 1969) and Robert Frost (1944). The anthology
+              prints the poem by arrangement with Henry Holt and Company, LLC.
             </p>
           </div>
         </div>
@@ -236,18 +261,18 @@ export default function OutOutPage() {
           </p>
           <p>
             <strong className="text-foreground">Publication:</strong> &ldquo;Out, Out&mdash;&rdquo;
-            was first published in 1916 in Frost&rsquo;s third collection,{' '}
-            <em>Mountain Interval</em> (Henry Holt &amp; Co., New York). The poem is based on a real
-            event: in March 1910 a teenage neighbour of Frost&rsquo;s,{' '}
-            <strong className="text-foreground">Raymond Tracy Fitzgerald</strong>, died after a
-            buzz-saw accident on a farm in Bethlehem, New Hampshire. Frost knew the family and wrote
-            the poem six years later.
+            first appeared in <em>McClure&rsquo;s</em> magazine in July 1916 and was collected later
+            that year in Frost&rsquo;s third collection, <em>Mountain Interval</em> (Henry Holt
+            &amp; Co., New York). The poem is based on a real event: in March 1910{' '}
+            <strong className="text-foreground">Raymond Tracy Fitzgerald</strong>, a teenager from
+            Bethlehem, New Hampshire, whose family Frost knew, died after his hand was badly hurt in
+            a sawing machine. The poem was published six years later.
           </p>
           <p>
             <strong className="text-foreground">Title:</strong> The title quotes Macbeth&rsquo;s
-            famous soliloquy in <em>Macbeth</em> Act 5 Scene 5 &mdash; &ldquo;Out, out, brief
-            candle!&rdquo; &mdash; in which Macbeth, on hearing of his wife&rsquo;s death, calls
-            life &ldquo;a tale told by an idiot, full of sound and fury, signifying nothing&rdquo;.
+            famous soliloquy in <em>Macbeth</em> Act 5 Scene 5, &ldquo;Out, out, brief
+            candle!&rdquo;, in which Macbeth, on hearing of his wife&rsquo;s death, calls life
+            &ldquo;a tale told by an idiot, full of sound and fury, signifying nothing&rdquo;.
             Frost&rsquo;s allusion frames the boy&rsquo;s death as another candle abruptly blown
             out.
           </p>

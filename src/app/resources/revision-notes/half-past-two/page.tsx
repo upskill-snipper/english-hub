@@ -2,6 +2,40 @@
 
 import { useState } from 'react'
 
+/*
+ * 26 September 2026: brought within the fair-dealing share. Half-past Two is in
+ * UK copyright (Fanthorpe died in 2009), and this page quoted 74 distinct words
+ * of its 199 against a cap of 29 (15 per cent, as
+ * no-poem-quoted-beyond-fair-dealing.test.ts measures it). It now quotes a few
+ * short phrases where the analysis leans on them hardest, each in one card; the
+ * other cards describe their moment in the site's own words, and the rest of
+ * the page refers back. It sits at its cap, so do not add quotations: that test
+ * counts every quoted word, in any string on the page.
+ *
+ * A paraphrase must be the site's words, not the poem's with a word swapped. The
+ * first pass left a card that was a poem line with two words changed, printed in
+ * bold where the quotation used to be, and lists that spelled out the boy's
+ * coinages with the spaces put back; the measure cannot see either, since
+ * neither is in quotation marks. Both are now described instead. A quotation
+ * also keeps the poem's case: the final-stanza card once opened sentences with
+ * its phrases capitalised, which the poem prints in lower case.
+ *
+ * ONE BUDGET FOR THE ROUTE (26 September 2026, later the same day). layout.tsx
+ * mounts GuideSupplement with src/data/study-guides/half-past-two.ts, which
+ * prints its own short quotations on this route. The test once followed only
+ * this file's imports, so the two were counted apart; it now follows the layout
+ * too, and the route as served quoted 44 distinct words against the cap of 29.
+ * The guide takes all 29 on its own: 25 in its verified quotations, and 4 from
+ * the route path in its `native.keyQuotes`, a quotation field the scanner reads
+ * like any other. So this page quotes only phrases the guide already quotes,
+ * which cost nothing counted once: the opening line is described rather than
+ * quoted, and the cards on the teacher's return and the final line quote only
+ * the single words the guide quotes.
+ * Before adding a quotation here, check that the guide quotes the same phrase
+ * or a longer one containing it: a phrase that merely shares words with the
+ * guide's is counted in full.
+ */
+
 /* ─── Expandable Section Component ─────────────────────────── */
 
 function Section({
@@ -41,20 +75,27 @@ function Section({
   )
 }
 
+/** A quotation, or where the poem is not quoted, the moment described in our own words. */
 function QuoteCard({
   quote,
+  moment,
   speaker,
   analysis,
 }: {
-  quote: string
+  quote?: string
+  moment?: string
   speaker?: string
   analysis: string
 }) {
   return (
     <div className="rounded-lg border-s-4 border-violet-400 bg-violet-500/5 p-4 mb-3">
-      <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
-        &ldquo;{quote}&rdquo;
-      </p>
+      {quote ? (
+        <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
+          &ldquo;{quote}&rdquo;
+        </p>
+      ) : (
+        <p className="text-sm font-semibold text-violet-800 dark:text-violet-200">{moment}</p>
+      )}
       {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -95,10 +136,10 @@ export default function HalfPastTwoPage() {
           U. A. Fanthorpe, from <em>Neck-Verse</em>, 1992
         </p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
-          A complete GCSE guide to Fanthorpe&apos;s gently subversive poem about a small boy kept
-          behind after school who cannot tell the time: the child&apos;s-eye narration, the invented
-          compound words, themes of time, authority and escape, key quotations with analysis,
-          context and exam tips.
+          A complete International GCSE guide to Fanthorpe&apos;s gently subversive poem about a
+          small boy kept in the schoolroom as a punishment who cannot tell the time: the
+          child&apos;s-eye narration, the invented compound words, themes of time, authority and
+          escape, key quotations with analysis, context and exam tips.
         </p>
       </div>
 
@@ -134,21 +175,22 @@ export default function HalfPastTwoPage() {
             <div className="space-y-4">
               <p className="text-sm text-muted-foreground leading-relaxed">
                 <strong>Half-past Two</strong> tells a small, true-feeling story. A young boy does
-                &ldquo;Something Very Wrong&rdquo; at school (so trivial that the adult narrator
-                admits to having forgotten what it was) and his teacher tells him to stay in the
-                schoolroom &ldquo;till half-past two&rdquo;. But she forgets one thing: she has
-                never taught him how to read a clock. Left alone, unable to find half-past two
-                anywhere in his world of named times (getting-up time, TV time, kiss time), the boy
-                slips out of measured time altogether into a dreamy, timeless present, until the
-                teacher rushes back, releases him, and normal scheduled life resumes.
+                something wrong at school, an offence the poem dignifies with capital letters but so
+                trivial that the adult narrator admits it has slipped from memory, and his teacher
+                keeps him behind in the classroom as a punishment until half-past two. But she has
+                overlooked one thing: she has never shown him how to read a clock. Left alone,
+                unable to find half-past two anywhere in his world of named times, each called after
+                what happens in it (getting up, television, a kiss), the boy slips out of measured
+                time altogether into a dreamy, timeless present, until the teacher rushes back,
+                releases him, and normal scheduled life resumes.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 The punishment accidentally becomes a gift. For a few unmeasured minutes the boy
-                lives where &ldquo;time hides tick-less&rdquo;, fully absorbed in smells, sounds and
-                stillness, an escape the adult world rarely allows. The final stanza tells us he
-                &ldquo;never forgot&rdquo; it (AO1). Fanthorpe, who spent years as a teacher, writes
-                with double vision: the poem is funny about adult forgetfulness and bureaucratic
-                time, and quietly serious about what children know that adults have lost.
+                lives beyond the clock&apos;s ticking, fully absorbed in smells, sounds and
+                stillness, an escape the adult world rarely allows. The final stanza tells us the
+                memory never left him. Fanthorpe, who spent years as a teacher, writes with double
+                vision: the poem is funny about adult forgetfulness and bureaucratic time, and
+                quietly serious about what children know that adults have lost.
               </p>
               <div className="rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -157,12 +199,14 @@ export default function HalfPastTwoPage() {
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>&bull; Eleven three-line stanzas (tercets) of free verse, no rhyme scheme</li>
                   <li>&bull; Third-person narration filtered through the child&apos;s mind</li>
-                  <li>&bull; Fairy-tale opening: &ldquo;Once upon a schooltime&rdquo;</li>
+                  <li>&bull; Fairy-tale opening line, grafted onto the school day</li>
                   <li>&bull; Invented compound words mimic how the child names his day</li>
                   <li>&bull; Core idea: clock time versus lived, timeless experience</li>
+                  {/* 26 September 2026: this said English Language A as well. Half-past Two is
+                      a Part 3 poem, set for English Literature (4ET1) only. */}
                   <li>
-                    &bull; Set in the Pearson Edexcel International GCSE Anthology (English Language
-                    A and Literature)
+                    &bull; In Part 3 of the Pearson Edexcel International GCSE English Anthology:
+                    set for English Literature (4ET1) only, not English Language A
                   </li>
                 </ul>
               </div>
@@ -175,7 +219,7 @@ export default function HalfPastTwoPage() {
           <Section title="Form & Structure" icon="🏗️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Free Verse in Neat Tercets (AO2)</h4>
+                <h4 className="font-bold text-primary">Free Verse in Neat Tercets</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The poem is written in regular three-line stanzas but without rhyme or fixed
                   metre. The visual regularity suggests the ordered, timetabled world of school,
@@ -187,13 +231,13 @@ export default function HalfPastTwoPage() {
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">A Story Shape: Once Upon a Time</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The opening line, &ldquo;Once upon a schooltime&rdquo;, splices the fairy-tale
-                  formula onto the school day. This does several things at once: it signals that we
-                  are entering a child&apos;s way of understanding the world; it makes the teacher a
-                  fairy-tale authority figure; and it hints that the event belongs to a distant,
-                  mythic past, a memory the grown narrator is retelling. The narrative arc is simple
-                  and satisfying: transgression, sentence, strange enchanted interlude, rescue,
-                  return, and a closing moral-shaped stanza about what was never forgotten.
+                  The opening line (see Key Quotations) splices the fairy-tale formula onto the
+                  school day. This does several things at once: it signals that we are entering a
+                  child&apos;s way of understanding the world; it makes the teacher a fairy-tale
+                  authority figure; and it hints that the event belongs to a distant, mythic past, a
+                  memory the grown narrator is retelling. The narrative arc is simple and
+                  satisfying: transgression, sentence, strange enchanted interlude, rescue, return,
+                  and a closing moral-shaped stanza about what he has remembered all his life.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -201,22 +245,21 @@ export default function HalfPastTwoPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The poem moves through three time-worlds: the schoolroom&apos;s adult clock time
                   (which the boy cannot enter), the child&apos;s home catalogue of named times (the
-                  famous run of compound words), and the timeless &ldquo;clockless land of
-                  ever&rdquo; into which he escapes. The teacher&apos;s return snaps him back: she
-                  &ldquo;slotted him back into schooltime&rdquo;, a mechanical verb that treats the
-                  boy like a component returned to its machine (AO2). The final stanza steps outside
-                  the story into reflective adult retrospect, preserving the escape as a permanent
-                  memory.
+                  famous run of compound words), and the timeless country without clocks into which
+                  he escapes. The teacher&apos;s return snaps him back with a mechanical verb (see
+                  Key Quotations) that treats the boy like a component returned to its machine. The
+                  final stanza steps outside the story into reflective adult retrospect, preserving
+                  the escape as a permanent memory.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">Parenthesis and Aside</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Fanthorpe drops adult asides into brackets, such as the admission that the
-                  narrator forgets what the boy&apos;s crime actually was. The brackets create a
-                  second, wry voice alongside the child&apos;s perspective, gently mocking the
-                  solemnity of school justice: if the offence cannot even be remembered, how
-                  &ldquo;Very Wrong&rdquo; can it really have been?
+                  narrator can no longer recall the boy&apos;s crime. The brackets create a second,
+                  wry voice alongside the child&apos;s perspective, gently mocking the solemnity of
+                  school justice: if the offence cannot even be remembered, how grave, for all its
+                  capital letters, can it really have been?
                 </p>
               </div>
             </div>
@@ -229,21 +272,21 @@ export default function HalfPastTwoPage() {
             <div className="space-y-4">
               <p className="text-sm text-muted-foreground leading-relaxed">
                 The poem is told in the third person, but the point of view belongs almost entirely
-                to the child: we get his capital letters (&ldquo;Something Very Wrong&rdquo;,
-                &ldquo;She&rdquo;, &ldquo;Time&rdquo;), his coinages, his awe of the teacher and his
-                ignorance of what clocks mean. This technique (sometimes called child-focalised
-                narration) lets Fanthorpe be in two places at once: inside the boy&apos;s confusion
-                and slightly above it, with an adult&apos;s amused, rueful hindsight (AO1).
+                to the child: we get his capital letters (on the offence, on the pronoun for the
+                teacher and on time itself), his coinages, his awe of the teacher and his ignorance
+                of what clocks mean. This technique (sometimes called child-focalised narration)
+                lets Fanthorpe be in two places at once: inside the boy&apos;s confusion and
+                slightly above it, with an adult&apos;s amused, rueful hindsight.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                The capitalisation is a precise piece of voice-work (AO2). To the boy,
-                &ldquo;She&rdquo; is not a person with a name but a power, almost a deity;
-                &ldquo;Time&rdquo; is a mysterious adult subject, like a god he has not been
+                The capitalisation is a precise piece of voice-work. To the boy, the capitalised
+                pronoun makes the teacher not a person with a name but a power, almost a deity;
+                time, capitalised too, is a mysterious adult subject, like a god he has not been
                 introduced to; his offence is not described but labelled with the official gravity
-                adults gave it. Meanwhile the teacher is fallible: she is &ldquo;cross&rdquo;, she
-                forgets things, and she is too &ldquo;scuttling&rdquo; and busy to notice what her
-                punishment has actually done. The power imbalance between child and adult is the
-                poem&apos;s quiet subject, handled with comedy rather than anger.
+                adults gave it. Meanwhile the teacher is fallible: she is short-tempered, she
+                forgets things, and she is too hurried and busy to notice what her punishment has
+                actually done. The power imbalance between child and adult is the poem&apos;s quiet
+                subject, handled with comedy rather than anger.
               </p>
               <div className="rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -265,19 +308,19 @@ export default function HalfPastTwoPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title="Two Kinds of Time"
-                description="The poem opposes measured, adult clock time (timetables, half-past two, schooltime) to lived time as a child experiences it: a sequence of meaningful events like getting up, tea and a goodnight kiss. The boy's named times are warm, bodily and relational; the clock's time is abstract and empty. When he cannot attach 'half-past two' to anything, time simply dissolves, and the poem suggests that this timeless absorption, not the clock, is the deeper reality. Adults have traded 'ever' for a timetable."
+                description="The poem opposes measured, adult clock time (timetables, half-past two, the school day) to lived time as a child experiences it: a sequence of events that matter to him, such as getting up, going home, television, tea and a kiss. The boy's named times are warm, bodily and relational; the clock's time is abstract and empty. When he cannot attach 'half-past two' to anything, time simply dissolves, and the poem suggests that this timeless absorption, not the clock, is the deeper reality. Adults have traded that timelessness for a timetable."
               />
               <ThemeCard
                 title="Childhood Innocence and Adult Power"
-                description="The boy is punished within a system whose rules he cannot fully read, by an authority he holds in religious awe. He is too frightened of being 'wicked' to explain that he cannot tell the time, so the punishment quietly becomes absurd: a sentence the prisoner cannot measure. Fanthorpe is gentle with the teacher (she is forgetful, not cruel) but sharp about institutions: school turns a small child's day into offences, sentences and slots, and never notices what it cannot timetable."
+                description="The boy is punished within a system whose rules he cannot fully read, by an authority he holds in religious awe. Already in disgrace and afraid of making things worse, he never mentions that she has not shown him how to read a clock, so the punishment quietly becomes absurd: a sentence the prisoner cannot measure. Fanthorpe is gentle with the teacher (she is forgetful, not cruel) but sharp about institutions: school turns a small child's day into offences, sentences and slots, and never notices what it cannot timetable."
               />
               <ThemeCard
                 title="Escape and Transcendence"
-                description="Left beyond the reach of the clock, the boy slips 'into the clockless land of ever', a state of pure present-tense attention to smells, faint sounds and silence. The poem treats this as a kind of accidental mysticism: the moment is out of time the way deep absorption always is. Crucially, the escape is never repeated; the adult world recaptures him and teaches him time. But the memory persists for life, which is the poem's quiet claim about what childhood experience gives us and what schooling takes away."
+                description="Left beyond the reach of the clock, the boy slips into a country without clocks (see Key Quotations), a state of pure present-tense attention to smells, faint sounds and silence. The poem treats this as a kind of accidental mysticism: the moment is out of time the way deep absorption always is. Crucially, the final stanza presents the escape as a single occasion, possible only while he could not read a clock; the adult world recaptures him and, the ending implies, he learns to read one like everyone else. But the memory persists for life, which is the poem's quiet claim about what childhood experience gives us and what schooling takes away."
               />
               <ThemeCard
                 title="Language and Understanding"
-                description="The poem is fascinated by how we name the world. The boy's compound coinages show him building time out of language he does own; the clock, whose face and hands he can see but whose 'language' he cannot 'click', shows meaning locked behind a code he has not been taught. Fanthorpe, a poet who loved giving voice to the overlooked, makes the child's homemade vocabulary more vivid and more truthful than the official vocabulary of school."
+                description="The poem is fascinated by how we name the world. The boy's compound coinages show him building time out of language he does own; the clock, whose face he knows but whose speech he cannot make sense of, shows meaning locked behind a code he has not been taught. Fanthorpe, a poet who loved giving voice to the overlooked, makes the child's homemade vocabulary more vivid and more truthful than the official vocabulary of school."
               />
             </div>
           </Section>
@@ -287,54 +330,59 @@ export default function HalfPastTwoPage() {
         <div id="key-quotations">
           <Section title="Key Quotations with Analysis" icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
-              Short phrases only are quoted here (the poem is in copyright). Learn a handful and tie
-              each to a method: coinage, capitalisation, personification or sensory imagery (AO2).
+              The poem is in copyright, so only a few short phrases are quoted here, and the rest of
+              this page refers back to them. A card without quotation marks describes its moment in
+              our own words: read those lines in your anthology. Learn the quotations and tie each
+              to a method: coinage, capitalisation, personification or sensory imagery.
             </p>
             <div className="space-y-1">
               <QuoteCard
-                quote="Once upon a schooltime"
+                moment="The poem opens with the fairy-tale formula, its last word turned into a school word"
                 speaker="Opening line"
-                analysis="The fairy-tale formula is hijacked and given a school uniform. The blend signals immediately that we are in a child's imaginative register, where school is as strange and absolute as a kingdom in a story. It also frames the whole incident as legend: something that happened long ago and has been retold into myth by the adult remembering it."
+                analysis="The fairy-tale formula is hijacked and given a school uniform: the story opening every child knows keeps its shape, but school has moved into it. The blend signals immediately that we are in a child's imaginative register, where school is as strange and absolute as a kingdom in a story. It also frames the whole incident as legend: something that happened long ago and has been retold into myth by the adult remembering it."
               />
               <QuoteCard
                 quote="Something Very Wrong"
                 speaker="Stanzas 1-2"
-                analysis="The capitals reproduce the way the adults' words landed on the child: not a description but a Title, an official category of sin. He 'must never forget' it, yet the narrator confesses in brackets to having forgotten what it was. The gap between the huge label and the vanished offence is the poem's funniest and sharpest irony about school discipline (AO2: irony and capitalisation working together)."
+                analysis="The capitals reproduce the way the adults' words landed on the child: not a description but a Title, an official category of sin. He is kept behind in the classroom for it, yet the narrator confesses in brackets to no longer remembering the offence. The gap between the huge label and the vanished offence is the poem's funniest and sharpest irony about school discipline (irony and capitalisation working together)."
               />
               <QuoteCard
-                quote="She hadn't taught him Time"
+                moment="In her anger the teacher has overlooked something: she never showed him how to read a clock"
                 speaker="Stanza 3"
-                analysis="The hinge of the plot, delivered with deadpan simplicity. 'Time' is capitalised because, to the boy, it is a school subject and a mystery, something owned by adults. There is also a larger resonance: no one can really be 'taught' time; the teacher herself only knows the clock-face code. Her forgetting is comic, but it exposes how much of adult authority rests on systems a child has simply not been initiated into."
+                analysis="The hinge of the plot, delivered with deadpan simplicity, and with time itself given a capital letter because, to the boy, it is a school subject and a mystery, something owned by adults. There is also a larger resonance: no one can really be taught time; the teacher herself only knows the clock-face code. Her forgetting is comic, but it exposes how much of adult authority rests on systems a child has simply not been initiated into."
               />
               <QuoteCard
-                quote="timeformykisstime (that was Grantime)"
+                quote="Timeformykisstime"
                 speaker="The catalogue of named times"
-                analysis="The run-together compound words are the poem's signature device. The boy's day is told in homemade units: getting-up time, time to go home, TV time, kiss time. Squashing the words together mimics how a child hears adult phrases as single magic sounds, and each names a relationship or comfort rather than a number. The bracketed gloss about Gran is wonderfully tender: his time system is made of people who love him. Against this warm vocabulary, 'half-past two' means nothing at all."
+                analysis="The run-together compound words are the poem's signature device. The boy's day is told in homemade units, each named for what happens in it: getting up, going home, television, a kiss. Squashing the words together mimics how a child hears adult phrases as single magic sounds, and each names a relationship or comfort rather than a number. The bracketed aside that follows, renaming this one after his gran, is wonderfully tender: his time system is made of people who love him. Against this warm vocabulary, 'half-past two' means nothing at all."
               />
               <QuoteCard
-                quote="the little eyes / And two long legs for walking"
-                speaker="The clock, central stanzas"
-                analysis="The boy personifies the clock-face: numbers become eyes, hands become legs. He 'knew' the creature's face 'But he couldn't click its language'. The image is exact child-logic, charming on the surface and pointed underneath: the clock is a living gatekeeper speaking a foreign tongue. 'Click' is brilliantly chosen, suggesting both the clock's ticking and the moment of comprehension that refuses to come (AO2: personification plus onomatopoeia)."
+                moment="The clock's face is familiar to him, and he sees a creature in it, but he cannot understand what it says"
+                speaker="The clock, stanza 6"
+                analysis="The boy personifies the clock: it has eyes and a pair of legs where an adult would see a dial and hands. He knows the creature by sight, but the verb the poem chooses for his failure to understand it, 'click', is brilliant, suggesting both the clock's ticking and the moment of comprehension that refuses to come (personification plus onomatopoeia). The image is exact child-logic, charming on the surface and pointed underneath: the clock is a living gatekeeper speaking a foreign tongue."
               />
+              {/* 26 September 2026: this card quoted the line as ending "land of ever" and
+                  read "ever" as a child's word; the anthology has "for ever", in the final
+                  stanza. The misreading was also in the time and escape cards and an exam tip. */}
               <QuoteCard
-                quote="He escaped into the clockless land of ever"
-                speaker="The escape stanzas"
-                analysis="'Escaped' recasts the detention: the prisoner gets free not from the room but from time itself. 'Clockless land' makes timelessness a place, a country reachable only by those who cannot read clocks, and 'ever' (a child's fragment of 'forever' and of fairy-tale 'ever after') names eternity in a child's word. This is the poem's still centre: punishment transformed into the purest freedom in the poem."
-              />
-              <QuoteCard
-                quote="into the smell of old chrysanthemums on Her desk"
-                speaker="The escape stanzas"
-                analysis="Once outside time, the boy lives through his senses: the fading flowers on the teacher's desk, tiny sounds, the silence beyond the window. The sensory catalogue slows the poem's pace to match his absorption; even the slightly stale smell of 'old' chrysanthemums becomes fascinating when attention is total. The capitalised 'Her' keeps the teacher godlike even in her absence, while the boy quietly experiences something she has lost the ability to notice."
-              />
-              <QuoteCard
-                quote="slotted him back into schooltime"
-                speaker="The teacher's return"
-                analysis="The verb 'slotted' is mechanical: the boy is a piece returned to its slot in the timetable machine. After the open 'land of ever', the word lands with a small clunk of confinement. The teacher means well (she comes 'scuttling' back, flustered and apologetic in her busyness), but the verb tells us what institutions do to children: they file them into time."
-              />
-              <QuoteCard
-                quote="time hides tick-less waiting to be born"
+                quote="clockless land for ever"
                 speaker="Final stanza"
-                analysis="The poem's closing image, and its most haunting. Outside the clock's tick, time is not absent but unborn: a waiting, pregnant stillness. The coinage 'tick-less' defines that state by the absence of the clock's sound, and 'waiting to be born' suggests every measured moment is hatched out of this deeper timelessness. The adult narrator confirms the boy 'never forgot' the place he found; the memory of escaping time outlives the learning of it (AO1: link to the theme of transcendence)."
+                analysis="The line around this phrase makes him an escapee, which recasts the detention: the prisoner gets free not from the room but from time itself. The phrase 'clockless land' makes timelessness a place, a country reachable only by those who cannot read clocks. The closing 'for ever' is quietly paradoxical: the escape lasted only until the teacher came back, yet the adult narrator calls it permanent, because the memory never left him. This is the poem's still centre: punishment transformed into the purest freedom in the poem."
+              />
+              <QuoteCard
+                moment="Alone and outside time, he is absorbed in what he can smell and hear, starting with the teacher's chrysanthemums, which are past their best"
+                speaker="The escape stanzas"
+                analysis="Once outside time, the boy lives through his senses: the fading flowers on the teacher's desk, tiny sounds, whatever lies beyond the window. The sensory catalogue slows the poem's pace to match his absorption; even the slightly stale smell of flowers past their best becomes fascinating when attention is total. The poem capitalises the pronoun that marks the desk as the teacher's, which keeps her godlike even in her absence, while the boy quietly experiences something she has lost the ability to notice."
+              />
+              <QuoteCard
+                quote="slotted"
+                speaker="The teacher's return"
+                analysis="The verb 'slotted' is mechanical: releasing him, the teacher files the boy away into the school day like a component returned to its place in the timetable machine. After the open timelessness of the escape, the word lands with a small clunk of confinement, and the line it sits in brings back the school word from the opening line, closing the fairy tale. The teacher means well (she comes hurrying in, flustered, exclaiming that he had slipped her mind), but the verb tells us what institutions do to children: they file them into time."
+              />
+              <QuoteCard
+                quote="tick-less"
+                speaker="Final line"
+                analysis="The poem's closing image, and its most haunting. In the last line, time itself lies concealed in that clockless land, still unborn. Outside the clock's tick, time is not absent but not yet delivered: a pregnant stillness. The coinage 'tick-less' defines that state by the absence of the clock's sound, and the birth image suggests every measured moment is brought into the world out of this deeper timelessness. The same stanza says the place he found stayed with him always; the memory of escaping time outlives the learning of it. Link it to the theme of transcendence."
               />
             </div>
           </Section>
@@ -347,44 +395,45 @@ export default function HalfPastTwoPage() {
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">Invented Compound Words</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The fused coinages (getting-up time, TV time, kiss time, run together without
-                  spaces) are the poem&apos;s most distinctive technique. They turn the boy&apos;s
-                  schedule into a private language learned by ear from adults, each unit anchored to
-                  an event or a person rather than a number. When you analyse them (AO2), stress the
-                  contrast: his vocabulary of time is concrete, loving and human; &ldquo;half-past
-                  two&rdquo; is abstract and empty. The form of the words enacts the theme.
+                  The fused coinages (the boy&apos;s own names for the times of getting up, going
+                  home, television and a kiss, each run together without spaces) are the poem&apos;s
+                  most distinctive technique. They turn the boy&apos;s schedule into a private
+                  language learned by ear from adults, each unit anchored to an event or a person
+                  rather than a number. When you analyse them, stress the contrast: his vocabulary
+                  of time is concrete, loving and human; &ldquo;half-past two&rdquo; is abstract and
+                  empty. The form of the words enacts the theme.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">Capitalisation as Child&apos;s-Eye Myth</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  &ldquo;Something Very Wrong&rdquo;, &ldquo;She&rdquo;, &ldquo;Her desk&rdquo;,
-                  &ldquo;Time&rdquo;: the capitals convert ordinary school nouns into mythic proper
-                  names, exactly reproducing the scale of things in a small child&apos;s world,
-                  where the teacher is a goddess and a misdemeanour is a named Sin. The device also
-                  lets the adult narrator smile over the child&apos;s head without ever mocking him.
+                  The capitals on the offence (see Key Quotations), on the pronouns for the teacher
+                  and on time itself convert ordinary school words into mythic proper names, exactly
+                  reproducing the scale of things in a small child&apos;s world, where the teacher
+                  is a goddess and a misdemeanour is a named Sin. The device also lets the adult
+                  narrator smile over the child&apos;s head without ever mocking him.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">Sensory Imagery of the Timeless Moment</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  In the escape stanzas the imagery shifts from labels to senses: the smell of
-                  fading chrysanthemums, minute sounds magnified by stillness (even a hangnail
-                  becomes audible in the famous oxymoron of its &ldquo;silent noise&rdquo;), the air
-                  beyond the window. Synaesthetic and paradoxical phrasing slows reading speed and
-                  immerses us in the boy&apos;s absorption: language strains to record an experience
-                  that exists below or before language.
+                  In the escape stanzas the imagery shifts from labels to senses: the scent of the
+                  teacher&apos;s fading chrysanthemums, minute sounds magnified by stillness (even a
+                  hangnail becomes audible in the famous oxymoron of its &ldquo;silent
+                  noise&rdquo;), and whatever lies beyond the window. Synaesthetic and paradoxical
+                  phrasing slows reading speed and immerses us in the boy&apos;s absorption:
+                  language strains to record an experience that exists below or before language.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">Register Contrast: Officialese vs Wonder</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The school&apos;s language is procedural (wrongdoing, instructions, the clock,
-                  being slotted back); the boy&apos;s language is narrative and sensuous. Fanthorpe
-                  spent much of her career, in her own phrase, listening to the voiceless; here the
-                  contrast of registers does the arguing. The institution speaks in categories, the
-                  child in experience, and the poem sides with experience while staying
-                  affectionately fair to the flustered teacher.
+                  being filed back into the timetable); the boy&apos;s language is narrative and
+                  sensuous. Fanthorpe&apos;s poetry repeatedly listens to people with little power;
+                  here the contrast of registers does the arguing. The institution speaks in
+                  categories, the child in experience, and the poem sides with experience while
+                  staying affectionately fair to the flustered teacher.
                 </p>
               </div>
             </div>
@@ -396,15 +445,15 @@ export default function HalfPastTwoPage() {
           <Section title="Context" icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">U. A. Fanthorpe (1929-2009) (AO3)</h4>
+                <h4 className="font-bold text-primary">U. A. Fanthorpe (1929-2009)</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Ursula Askham Fanthorpe taught English for sixteen years, becoming Head of English
                   at Cheltenham Ladies&apos; College, before deliberately walking away from
-                  seniority to work as a clerk and receptionist in a Bristol neuropsychiatric
-                  hospital. There, recording other people&apos;s case histories, she began
-                  publishing poetry in middle age (her first collection, <em>Side Effects</em>,
-                  appeared in 1978). Her work consistently gives voice to people on the wrong side
-                  of institutional power: patients, children, the overlooked.
+                  seniority to work as a clerk and receptionist in a Bristol neurological hospital.
+                  There, recording other people&apos;s case histories, she began publishing poetry
+                  in middle age (her first collection, <em>Side Effects</em>, appeared in 1978). Her
+                  work consistently gives voice to people on the wrong side of institutional power:
+                  patients, children, the overlooked.
                   <em> Half-past Two</em> comes from her 1992 collection <em>Neck-Verse</em>.
                 </p>
               </div>
@@ -416,8 +465,9 @@ export default function HalfPastTwoPage() {
                   tyrant but an overworked adult running on timetable logic; the harm done is
                   systemic, not personal. Several of Fanthorpe&apos;s poems revisit school scenes
                   with the same double awareness of how institutions look from above and feel from
-                  below; exam answers can use this biographical angle briefly to sharpen a point
-                  about perspective (AO3).
+                  below; exam answers can use this biographical angle in a clause to sharpen a point
+                  about perspective, though the anthology poetry question does not award marks for
+                  context itself.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -468,7 +518,7 @@ export default function HalfPastTwoPage() {
                 <h4 className="font-bold text-primary">If- (Rudyard Kipling)</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   A sharp contrast in direction of address: Kipling is an adult instructing a child
-                  in adult virtues, including filling &ldquo;the unforgiving minute&rdquo; with
+                  in adult virtues, including making every second of every minute count with
                   purposeful effort; Fanthorpe shows a child whose finest moment comes from doing
                   nothing measurable at all. Set Kipling&apos;s mastery of time against
                   Fanthorpe&apos;s escape from it.
@@ -488,31 +538,35 @@ export default function HalfPastTwoPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>AO2: name the signature techniques.</strong> Compound coinages,
-              capitalisation, fairy-tale framing, personification of the clock and the oxymoronic
-              sensory details. Always pair the device with its effect on perspective.
+              <strong>Name the signature techniques.</strong> Compound coinages, capitalisation,
+              fairy-tale framing, personification of the clock and the oxymoronic sensory details.
+              Always pair the device with its effect on perspective.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>AO1: keep the double perspective in view.</strong> Child focalisation plus
-              adult retrospect. The brackets and the final stanza are where the adult voice
-              surfaces; quote them when discussing tone.
+              <strong>Keep the double perspective in view.</strong> Child focalisation plus adult
+              retrospect. The brackets and the final stanza are where the adult voice surfaces;
+              quote them when discussing tone.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
               <strong>Structure questions: use the three time-worlds.</strong> Clock time, named
-              event-time, and the timeless &ldquo;land of ever&rdquo;, with the teacher&apos;s
-              return as the structural snap back.
+              event-time, and the timeless country without clocks, with the teacher&apos;s return as
+              the structural snap back.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>AO3: deploy Fanthorpe&apos;s biography in one sentence.</strong> A former
+              {/* 26 September 2026: the AO3 labels on this page named context. In 4ET1, AO3
+                  is links between texts, and the anthology poetry section assesses AO2 and AO3
+                  only (specification, Paper 1 Section B), so context earns no marks there. */}
+              <strong>Keep Fanthorpe&apos;s biography to one sentence, if you use it.</strong> The
+              anthology poetry question rewards analysis and comparison, not context. A former
               teacher who left to record the voices of the powerless; it explains the poem&apos;s
               fairness to the teacher and sympathy for the child.
             </span>
@@ -521,7 +575,7 @@ export default function HalfPastTwoPage() {
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
               <strong>Avoid the common misreading.</strong> The poem is not a cruelty story. The
-              teacher is forgetful, not wicked, and the detention becomes a gift. Nuanced answers
+              teacher is forgetful, not malicious, and the detention becomes a gift. Nuanced answers
               hold the comedy and the seriousness together.
             </span>
           </li>

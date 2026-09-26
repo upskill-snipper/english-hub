@@ -99,6 +99,9 @@ export const POETS: Record<string, number | null> = {
   'Tony Harrison': null,
   'U.A. Fanthorpe': 2009,
   'Vernon Scannell': 2007,
+  // Added 26 September 2026 with the revision-notes guide to The Door; his
+  // translator, Ian Milner, is in copyright too.
+  'Miroslav Holub': 1998,
   'W.B. Yeats': 1939,
   'W.H. Auden': 1973,
   'Wilfred Owen': 1918,
@@ -147,6 +150,9 @@ export const POEM_WORDS: Record<string, number> = {
   'Still I Rise': 240,
   'The Bright Lights of Sarajevo': 351,
   Blessing: 100,
+  // Issue 8, counted for src/data/study-guides/hide-and-seek.ts (its
+  // workLength.basis gives the method), 26 September 2026.
+  'Hide and Seek': 233,
   'Search For My Tongue': 194,
   'Poem at Thirty-Nine': 168,
   'Half-past Two': 199,

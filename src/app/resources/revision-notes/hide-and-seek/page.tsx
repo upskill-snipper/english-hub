@@ -2,6 +2,27 @@
 
 import { useState } from 'react'
 
+/* 26 September 2026: brought within the fair-dealing share. Hide and Seek is in UK copyright
+   and this page quoted 63 distinct words of it against a cap of 34 (15 per cent of the poem,
+   measured by src/__tests__/no-poem-quoted-beyond-fair-dealing.test.ts). A first pass cut it to
+   the seaside simile, the line of commands, winner, the watching garden, the bushes and the
+   closing question. The measure then began counting the whole route, and the layout mounts the
+   study guide (src/data/study-guides/hide-and-seek.ts) through GuideSupplement: the route has
+   ONE budget, the guide's verified quotations already spend 32 words of it, and page and guide
+   together quoted 54. So this page now quotes only phrases the guide also quotes (winner, the
+   whispering at the door, the command about blindness, the watching garden, the bushes holding
+   their breath and they who sought you), which cost nothing because a span inside a longer one
+   is counted once. The seaside simile, the first three commands of line 11, the two-word
+   sentence of line 25 and the whole final question are described instead. Do not quote a word
+   the guide does not quote: at most two more fit, and the guide may change. The measure counts
+   only words in quotation marks, so a description that repeats the poem's wording unmarked is
+   still a taking it cannot see. The same day a check against the anthology text found several
+   (an imperative from the emergence, a two-word image of the shed, the commands repeated in
+   Voice & Speaker) and they were reworded. A second check found a run hidden by a changed
+   pronoun (the cold and the coat, in the long-wait card) and the seekers' approach retold in
+   the poem's own verbs in the whispering card; both were reworded too. Change a pronoun or a
+   determiner and the wording is still the poem's. Keep descriptions in the site's own words. */
+
 /* ─── Expandable Section Component ─────────────────────────── */
 
 function Section({
@@ -41,20 +62,32 @@ function Section({
   )
 }
 
+/** A paraphrased card prints no quotation marks: its words are the site's, not the poem's. */
 function QuoteCard({
   quote,
   speaker,
   analysis,
+  paraphrase = false,
 }: {
   quote: string
   speaker?: string
   analysis: string
+  paraphrase?: boolean
 }) {
   return (
     <div className="rounded-lg border-s-4 border-violet-400 bg-violet-500/5 p-4 mb-3">
-      <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
-        &ldquo;{quote}&rdquo;
-      </p>
+      {paraphrase ? (
+        <p className="text-sm font-semibold text-violet-800 dark:text-violet-200">
+          <span className="me-2 rounded bg-violet-500/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-violet-700 dark:text-violet-300">
+            Paraphrase
+          </span>
+          {quote}
+        </p>
+      ) : (
+        <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
+          &ldquo;{quote}&rdquo;
+        </p>
+      )}
       {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -93,9 +126,10 @@ export default function HideAndSeekPage() {
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">Vernon Scannell (1922-2007)</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
-          A complete GCSE guide to Scannell&apos;s unsettling poem about a children&apos;s game that
-          turns into abandonment: the second-person voice, the single block of present-tense verse,
-          themes of isolation and betrayal, key quotations with analysis, context and exam tips.
+          A complete International GCSE guide to Scannell&apos;s unsettling poem about a
+          children&apos;s game that turns into abandonment: the second-person voice, the single
+          block of present-tense verse, themes of isolation and betrayal, key quotations with
+          analysis, context and exam tips.
         </p>
       </div>
 
@@ -131,23 +165,23 @@ export default function HideAndSeekPage() {
             <div className="space-y-4">
               <p className="text-sm text-muted-foreground leading-relaxed">
                 <strong>Hide and Seek</strong> drops us into the middle of a children&apos;s game. A
-                boy finds a brilliant hiding place among the sacks in a garden toolshed, calls out
-                the challenge (&ldquo;I&apos;m ready! Come and find me!&rdquo;) and settles down to
-                outlast the seekers. We follow his tactics in real time: keep still, don&apos;t
-                sneeze, ignore the cold, wait them out even when their whispers fade. At last,
-                certain of victory, he pushes out of the shed to claim his triumph, and finds the
-                garden dark, cold and empty. The seekers stopped seeking long ago. The poem ends on
-                his unanswered question: where are they?
+                child finds a brilliant hiding place among the sacks of a garden toolshed, calls out
+                the ritual challenge, announcing that he is ready and daring the others to find him,
+                and settles down to outlast the seekers. We follow his tactics in real time: keep
+                still, don&apos;t sneeze, ignore the cold, wait them out even when their whispers
+                fade. At last, certain of victory, he bursts from his hiding place to claim his
+                triumph, and finds the garden growing dark, silent and empty. The seekers stopped
+                seeking long ago. The poem ends on his unanswered question about where everyone has
+                gone.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 On the surface this is a perfectly observed slice of childhood. Underneath, it is a
-                small parable (AO1): the hider wins the game and loses everything that made the game
-                worth playing. Skill, patience and cleverness are rewarded with solitude. Many
-                readers take the game as a metaphor for experiences that come later in life: the
-                discovery that the world has moved on without you, that triumph can be
-                indistinguishable from abandonment, that hiding too well is a way of being
-                forgotten. Scannell keeps every detail literal and childlike, which is exactly why
-                the ending lands so hard.
+                small parable: the hider wins the game and loses everything that made the game worth
+                playing. Skill, patience and cleverness are rewarded with solitude. Many readers
+                take the game as a metaphor for experiences that come later in life: the discovery
+                that the world has moved on without you, that triumph can be indistinguishable from
+                abandonment, that hiding too well is a way of being forgotten. Scannell keeps every
+                detail literal and childlike, which is exactly why the ending lands so hard.
               </p>
               <div className="rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -159,9 +193,17 @@ export default function HideAndSeekPage() {
                   <li>&bull; Second-person address (&ldquo;you&rdquo;) with imperative commands</li>
                   <li>&bull; Irregular, intermittent rhyme beneath a conversational surface</li>
                   <li>&bull; Core idea: a child&apos;s game becomes a lesson in abandonment</li>
+                  {/* 26 September 2026: these notes called the child a boy as if the poem said
+                      so. It never does; it only says "you". The convention is now stated. */}
                   <li>
-                    &bull; Set in the Pearson Edexcel International GCSE Anthology (English Language
-                    A and Literature)
+                    &bull; The child is never named or called a boy or a girl: the poem only says
+                    &ldquo;you&rdquo;. These notes use <em>he</em> for ease of reading
+                  </li>
+                  {/* 26 September 2026: this said English Language A as well. Hide and Seek is
+                      a Part 3 poem, set for English Literature (4ET1) only. */}
+                  <li>
+                    &bull; In Part 3 of the Pearson Edexcel International GCSE English Anthology:
+                    set for English Literature (4ET1) only, not English Language A
                   </li>
                 </ul>
               </div>
@@ -174,7 +216,7 @@ export default function HideAndSeekPage() {
           <Section title="Form & Structure" icon="🏗️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">One Unbroken Block (AO2)</h4>
+                <h4 className="font-bold text-primary">One Unbroken Block</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The poem has no stanza breaks: a single paragraph of verse that mirrors the single
                   unbroken stretch of the boy&apos;s hiding. There is no white space to rest in,
@@ -186,12 +228,12 @@ export default function HideAndSeekPage() {
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">Real-Time Present Tense</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Everything happens in the present: call out, crouch, hold your breath, push off
-                  the sacks. The present tense removes the safety net of retrospect (compare the
+                  Everything happens in the present: shout, crouch, stop breathing, shove the sacks
+                  aside. The present tense removes the safety net of retrospect (compare the
                   remembering adult narrators of Half-past Two or Piano). No one is looking back on
                   this and telling us it turned out fine; we are shut in the shed with the child as
                   time passes and the light goes. The tense is the poem&apos;s main engine of
-                  suspense (AO2).
+                  suspense.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -203,9 +245,9 @@ export default function HideAndSeekPage() {
                   through the middle: the seekers come whispering, fail to find him, and their
                   voices recede; the boy congratulates himself on his cleverness and endures cold
                   and stiffness as the price of victory. The turn comes in the final few lines, when
-                  he bursts out to claim his win and the poem abruptly widens its lens: a dark
-                  garden, cold air, silence. The last line is a question with no one left to answer
-                  it, an open ending that refuses the consolation of resolution.
+                  he bursts out to claim his win and the poem abruptly widens its lens: a garden
+                  going dark, the sun gone, silence. The last line is a question with no one left to
+                  answer it, an open ending that refuses the consolation of resolution.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -228,22 +270,22 @@ export default function HideAndSeekPage() {
             <div className="space-y-4">
               <p className="text-sm text-muted-foreground leading-relaxed">
                 The poem&apos;s most distinctive choice is its second-person voice. The child is
-                &ldquo;you&rdquo;, and the lines are largely commands: call out, don&apos;t breathe,
-                don&apos;t move. The voice can be heard in several ways, and good answers explore
-                more than one (AO1). It may be the boy&apos;s own inner voice, coaching himself
-                through the game in the way children narrate their own play. It may be the voice of
-                the game itself, the rule-book of hide and seek issuing its instructions. Or it may
-                be an older, knowing voice, almost a fate, guiding the child step by step towards a
-                disillusionment it can foresee and he cannot.
+                &ldquo;you&rdquo;, and many of the lines are commands: shout, stop breathing, keep
+                still. The voice can be heard in several ways, and good answers explore more than
+                one. It may be the boy&apos;s own inner voice, coaching himself through the game in
+                the way children narrate their own play. It may be the voice of the game itself, the
+                rule-book of hide and seek issuing its instructions. Or it may be an older, knowing
+                voice, almost a fate, guiding the child step by step towards a disillusionment it
+                can foresee and he cannot.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 The second person also conscripts the reader. &ldquo;You&rdquo; are the one
-                crouching in the salty dark, &ldquo;your&rdquo; legs stiffen, and at the end the
-                question of where everyone has gone is addressed to &ldquo;you&rdquo;. The grammar
-                makes the abandonment universal: this is not one boy&apos;s bad afternoon but an
-                experience the poem insists we recognise as our own. The tone modulates from gleeful
-                (the boast of the opening call) through tense practical cunning, to the flat,
-                exposed quiet of the ending.
+                crouching in the dark among the sacks, the stiffening legs are the reader&apos;s
+                own, and at the end the question of where everyone has gone is addressed to
+                &ldquo;you&rdquo;. The grammar makes the abandonment universal: this is not one
+                child&apos;s bad afternoon but an experience the poem insists we recognise as our
+                own. The tone modulates from gleeful (the boast of the opening call) through tense
+                practical cunning, to the flat, exposed quiet of the ending.
               </p>
               <div className="rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -287,55 +329,60 @@ export default function HideAndSeekPage() {
         <div id="key-quotations">
           <Section title="Key Quotations with Analysis" icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
-              Short phrases only are quoted here (the poem is in copyright). Pair each with a
-              method: imperative voice, sensory imagery, personification or the structural turn
-              (AO2).
+              The poem is in copyright, so only a few short phrases are quoted here; the other key
+              moments are described in paraphrase, and you should find their exact words in your
+              anthology. Pair each with a method: imperative voice, sensory imagery, personification
+              or the structural turn.
             </p>
             <div className="space-y-1">
               <QuoteCard
-                quote="I'm ready! Come and find me!"
-                speaker="Opening line (after the stacked commands to call out, and loudly)"
-                analysis="The poem begins at full volume with imperatives and the ritual cry of the game. The confidence is total: the boy wants to be sought, because being sought is being wanted. Dramatic irony begins here too: the only moment he makes himself easy to find is the moment the poem opens, and he will spend the rest of it perfecting his own disappearance. The exclamation marks will have no echo at the end, when his shouts meet silence."
+                paraphrase
+                quote="The ritual cry of the game: he tells the others he is ready and dares them to find him"
+                speaker="Line 1, after the two commands that open the poem"
+                analysis="The poem begins at full volume, with commands and the ritual cry of the game. The confidence is total: the boy wants to be sought, because being sought is being wanted. Dramatic irony begins here too: he opens the poem inviting the others to find him, then spends most of it perfecting his own disappearance. The cry ends in exclamation marks, and they return when he bursts from his hiding place to claim his win; this time nothing answers them."
               />
               <QuoteCard
-                quote="The sacks in the toolshed smell like the seaside"
-                speaker="Early lines"
-                analysis="A child's simile, and a brilliant one: the sandy, salty sacks turn the dark shed into a holiday memory. The association makes the hiding place feel safe and even pleasurable at first, all adventure and familiarity. Scannell then slowly sours the same sensory channel: the seaside smell becomes a dark, damp saltiness that catches in the throat as time drags on. Tracking this one image across the poem is a ready-made AO2 paragraph on how atmosphere is transformed."
+                paraphrase
+                quote="The first image is a simile of smell: the sacks the child hides among have a smell that recalls the sea"
+                speaker="Line 2"
+                analysis="A child's simile, and a brilliant one: with the salt the next line adds, the sacks turn the dark shed into a holiday memory. The association makes the hiding place feel safe and even pleasurable at first, all adventure and familiarity. Scannell returns to the same sense late in the wait, when the smell is of damp sand and it catches in the child's throat. Tracking this one image across the poem is a ready-made paragraph on how atmosphere is transformed."
               />
               <QuoteCard
-                quote="Don't breathe. Don't move. Stay dumb."
-                speaker="As the seekers approach"
-                analysis="Clipped imperatives, hammering like a held heartbeat as footsteps and whispers come close. The commands ask the boy to erase himself sense by sense: no breath, no motion, no voice, and then, in the line's final command, to 'hide in your blindness'. That last phrase is the most striking: his closed-eyes child logic (if I can't see them, they can't see me) becomes an image of wilful unseeing. He is so good at not being found that he cannot see what is actually happening: the seekers are about to give up."
+                quote="Hide in your blindness"
+                speaker="Line 11, as the seekers approach"
+                analysis="Line 11 is four clipped commands, hammering like a held heartbeat as the seekers come close enough to be heard. The first three ask the boy to erase himself piece by piece: no breath, no movement, no sound. The fourth, quoted here, is the most striking of all: in the dark of the shed he cannot see, and the command makes that blindness his hiding place, as if not seeing were a way of not being seen. It is also a picture of what he misses. He is so good at not being found that he cannot see what is actually happening: within a few lines the seekers have gone, and, it turns out, they never come back."
               />
               <QuoteCard
                 quote="whispering at the door"
-                speaker="The seekers' closest approach"
-                analysis="The high point of the game's thrill. The seekers' hushed voices just beyond the shed door create the delicious tension hide and seek exists for: nearness without discovery. It is also the last contact the boy has with other human beings in the poem. After the prowling and whispering fade, every sound that remains is environmental: wind, cold, silence. The poem lets companionship exit quietly, through a door that never opens."
+                speaker="The seekers arrive"
+                analysis="The high point of the game's thrill. The seekers' hushed voices just beyond the shed door create the delicious tension hide and seek exists for: nearness without discovery. It is also the last time they are close: they edge nearer, one of them trips, and a line later they have gone. From then on the seekers exist only in the boy's guesses about where they are searching, and what remains is the shed and the body: cold, damp, stiffness and, at the end, a stillness nobody breaks. Companionship leaves the poem almost as soon as it arrives."
               />
               <QuoteCard
-                quote="The cold bites through your coat"
+                paraphrase
+                quote="As the wait drags on, his body pays for it: his legs stiffen, the cold gnaws at him, and a damp, sandy smell reaches his throat"
                 speaker="The long wait"
-                analysis="As the wait stretches, the body starts filing complaints: stiff legs, numb feet, cold with teeth. The personification of the biting cold makes the environment an active aggressor, the first hint that the setting has turned hostile. Time is passing in the only way the hidden boy can measure it, through discomfort, and the reader grasps what he refuses to: nobody stays this cold, this long, in a game that is still being played."
+                analysis="As the wait stretches, the body starts filing complaints. Scannell gives the cold a verb of attack, as if it had teeth, and that personification makes the environment an active aggressor, the first hint that the setting has turned hostile. Time is passing in the only way the hidden boy can measure it, through discomfort, and the reader grasps what he refuses to: nobody stays this cold, this long, in a game that is still being played."
               />
               <QuoteCard
-                quote="It's time to let them know that you're the winner"
+                paraphrase
+                quote="He decides the moment has come to show the others that he has won"
                 speaker="The decision to emerge"
-                analysis="The boy ends his vigil not because he doubts, but because he is sure: he has won and now wants the payoff, the faces of the defeated seekers. 'Winner' is the poem's most ironic word (AO2): he is technically correct, since no one found him, and the technicality is worthless. The line's jaunty rhythm walks him straight into the poem's trap. Victory in the game and defeat in the world arrive in the same instant."
+                analysis="The boy ends his vigil not because he doubts, but because he is sure: he has won and now wants the payoff, the faces of the defeated seekers. The line's key word, 'winner', is the poem's most ironic: he is technically correct, since no one found him, and the technicality is worthless. His jaunty confidence walks him straight into the poem's trap. Victory in the game and defeat in the world arrive in the same instant."
               />
               <QuoteCard
-                quote="The darkening garden watches. Nothing stirs."
-                speaker="The ending"
-                analysis="The emergence. Two short sentences drain all the warmth from the poem. The personified garden 'watches', but with none of the playful attention of seekers; this is the blank, indifferent gaze of a world that was not waiting for him. 'Darkening' tells us how much time has truly passed. The full stop after 'Nothing stirs' is one of the bleakest in GCSE poetry: the game's noisy, peopled world has been replaced by stillness."
+                quote="The darkening garden watches"
+                speaker="Line 25, what he finds when he emerges"
+                analysis="Line 25 is two short sentences, and they drain all the warmth from the poem. The personified garden 'watches', but with none of the playful attention of seekers; this is the blank, indifferent gaze of a world that was not waiting for him. The word 'darkening' tells us how much time has truly passed. The second sentence is only two words long and reports that there is no movement anywhere; the full stop that ends it is one of the bleakest in the anthology: the game's noisy, peopled world has been replaced by stillness."
               />
               <QuoteCard
-                quote="The bushes hold their breath"
-                speaker="The ending"
-                analysis="A devastating transfer of imagery. Earlier, the boy held his breath so as not to be found; now the bushes hold theirs. The hiding behaviour he performed inside the shed has spread to the whole garden, as if the entire world is now hiding from him. The personification keeps the child's imaginative way of seeing intact even at the moment it turns against him, which is far more painful than a plain description of an empty garden would be."
+                quote="hold their breath"
+                speaker="Line 26: the bushes"
+                analysis="A devastating transfer of imagery. Earlier, the boy was ordered to stop breathing so as not to be found; now it is the bushes that do so. The hiding behaviour he performed inside the shed has spread to the whole garden, as if the entire world is now hiding from him. The personification keeps the child's imaginative way of seeing intact even at the moment it turns against him, which is far more painful than a plain description of an empty garden would be."
               />
               <QuoteCard
-                quote="But where are they who sought you?"
+                quote="they who sought you"
                 speaker="Final line"
-                analysis="The poem ends on an unanswered, unanswerable question. The formal, almost archaic phrasing ('they who sought you') elevates the moment from playground to parable: this is no longer about one game but about anyone who has ever been sought, and then no longer sought. Addressed to 'you', the question lands on the reader as much as the boy. No comfort, no adult arriving, no lesson stated: just the question, and the dark."
+                analysis="The poem ends on its only question, asking where the seekers are, and nobody is left to answer it. The formal, almost archaic phrasing elevates the moment from playground to parable: this is no longer about one game but about anyone who has ever been sought, and then no longer sought. The past tense of sought tells the reader that the seeking ended before the child knew. Addressed to 'you', the question lands on the reader as much as the boy. No comfort, no adult arriving, no lesson stated: just the question, and the dark."
               />
             </div>
           </Section>
@@ -347,31 +394,33 @@ export default function HideAndSeekPage() {
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">Sensory Immersion</h4>
+                {/* 26 September 2026: this said he hid with his eyes shut, and the quotation
+                    card above called it closed-eyes logic. The poem says neither; the dark of
+                    the shed is what blinds him. */}
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The poem works through the body: the salty smell of the sacks, the cold floor,
                   stiff legs, held breath, whispers through a door, sand in the throat. Because the
-                  boy cannot use his eyes (he is hiding in the dark with them shut), smell, touch
-                  and hearing carry the narrative, which is why the imagery feels so claustrophobic
-                  and immediate (AO2). When sight finally returns at the end, what it delivers is
-                  emptiness.
+                  boy cannot see in the dark of the shed, smell, touch and hearing carry the
+                  narrative, which is why the imagery feels so claustrophobic and immediate. When
+                  sight finally returns at the end, what it delivers is emptiness.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">The Seaside Motif Turned Sour</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The opening simile links the sacks to the seaside: holidays, pleasure, safety. As
-                  the wait lengthens, the same sandy saltiness becomes uncomfortable, dark and damp,
-                  moving in the throat. One image system, charted from delight to oppression, gives
-                  you the poem&apos;s whole emotional arc in miniature, and examiners reward
-                  candidates who track an image across a text rather than spotting it once.
+                  the wait lengthens, the smell comes back as damp sand and catches in the throat.
+                  One image system, charted from delight to oppression, gives you the poem&apos;s
+                  whole emotional arc in miniature, and examiners reward candidates who track an
+                  image across a text rather than spotting it once.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">Personification of the Setting</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Scannell animates the world around the boy: cold that bites, a garden that
-                  watches, bushes that hold their breath, sun gone from the sky. Early in the poem
-                  the animated world is an accomplice in the game; by the end it is a witness,
+                  watches, bushes as breathless as the boy was, sun gone from the sky. Early in the
+                  poem the animated world is an accomplice in the game; by the end it is a witness,
                   silent and unhelpful. The technique keeps us inside a child&apos;s animistic
                   imagination while quietly reversing its emotional charge.
                 </p>
@@ -381,9 +430,9 @@ export default function HideAndSeekPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The poem&apos;s syntax is built from commands and brief declaratives. During the
                   game, the short sentences are tactical, a checklist of survival. At the end, the
-                  same clipped syntax becomes desolate: stillness described in full-stopped
-                  fragments. The grammar barely changes; the world it describes changes completely.
-                  That contrast is a subtle, high-reward point for structure questions (AO2).
+                  same clipped syntax becomes desolate: stillness described in short, full-stopped
+                  sentences. The grammar barely changes; the world it describes changes completely.
+                  That contrast is a subtle, high-reward point for structure questions.
                 </p>
               </div>
             </div>
@@ -395,7 +444,7 @@ export default function HideAndSeekPage() {
           <Section title="Context" icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Vernon Scannell (1922-2007) (AO3)</h4>
+                <h4 className="font-bold text-primary">Vernon Scannell (1922-2007)</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Scannell&apos;s life was as turbulent as his poems are controlled. He served as an
                   infantryman in the Second World War, fought through North Africa and was wounded
@@ -411,8 +460,8 @@ export default function HideAndSeekPage() {
                 <h4 className="font-bold text-primary">A Poet of Aftermath and Hiding</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   It is hard not to notice that a man who spent years of his life literally in
-                  hiding wrote one of the great poems about a hider. Use this carefully (AO3): the
-                  poem never mentions war or desertion, and it must be analysed as the childhood
+                  hiding wrote one of the great poems about a hider. Use this carefully: the poem
+                  never mentions war or desertion, and it must be analysed as the childhood
                   narrative it is. But Scannell&apos;s recurring preoccupations, the cost of
                   self-concealment, the moment the world stops looking for you, the discovery that
                   safety and abandonment can be the same condition, plainly inform the poem&apos;s
@@ -489,9 +538,9 @@ export default function HideAndSeekPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>AO2: lead with voice and tense.</strong> Second-person imperatives plus
-              real-time present tense are the poem&apos;s defining methods; explain how they create
-              immersion, suspense and universality before discussing individual images.
+              <strong>Lead with voice and tense.</strong> Second-person imperatives plus real-time
+              present tense are the poem&apos;s defining methods; explain how they create immersion,
+              suspense and universality before discussing individual images.
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -505,7 +554,7 @@ export default function HideAndSeekPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>AO1: argue an interpretation of the ending.</strong> Casual forgetfulness,
+              <strong>Argue an interpretation of the ending.</strong> Casual forgetfulness,
               deliberate desertion, or a parable about self-concealment: commit to a reading,
               support it, and acknowledge the poem&apos;s deliberate ambiguity.
             </span>
@@ -513,7 +562,11 @@ export default function HideAndSeekPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>AO3: one sentence of Scannell is enough.</strong> Soldier, deserter, boxer,
+              {/* 26 September 2026: the AO3 labels on this page named context. In 4ET1, AO3
+                  is links between texts, and the anthology poetry section assesses AO2 and AO3
+                  only (specification, Paper 1 Section B), so context earns no marks there. */}
+              <strong>One sentence of Scannell is enough, if any.</strong> The anthology poetry
+              question rewards analysis and comparison, not context. Soldier, deserter, boxer,
               unsentimental poet of childhood fear; connect it to the poem&apos;s refusal of
               comfort, not to biographical speculation.
             </span>

@@ -14,6 +14,17 @@ import StudyTools from '@/components/study/StudyTools'
 /* Only short extracts (key phrases, ≤15 words per annotation) are   */
 /* used here for the purpose of criticism, review and study under    */
 /* fair dealing (Copyright, Designs and Patents Act 1988, s.30).     */
+/*                                                                   */
+/* 26 September 2026: the route shares one fair-dealing budget with  */
+/* the study guide the layout mounts (src/data/study-guides/         */
+/* half-caste.ts), and the guide's seven quotations come to the 35   */
+/* distinct words the poem allows. So this page quotes only phrases  */
+/* the guide already quotes, which cost nothing, and describes       */
+/* everything else. Before this change the route quoted 51 words:    */
+/* the page added the third line, glosses and scare quotes, and      */
+/* printed the weather, dream and closing lines unquoted in          */
+/* near-verbatim Standard English. Check a new quotation with        */
+/* no-poem-quoted-beyond-fair-dealing.test.ts before adding it.      */
 
 const poem: PoemData = {
   title: 'Half-Caste',
@@ -30,17 +41,17 @@ const poem: PoemData = {
       ],
     },
     {
-      text: '[Paraphrase] He strikes a one-legged pose, acting out being only half a person.',
+      text: 'standing on one leg',
       annotations: [
         {
           type: 'Key phrase',
-          note: 'The one-legged pose: the speaker mockingly performs the literal meaning of "half". If he is only half a person, then he can only stand on one leg. This physical absurdity exposes the absurdity of the label "half-caste".',
+          note: 'The one-legged pose: the speaker mockingly performs the literal meaning of "half". If he is only half a person, then he can manage only half a stance. This physical absurdity exposes the absurdity of the label "half-caste".',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: "I'm half-caste",
+      text: '[Paraphrase] He names himself with the label.',
       annotations: [
         {
           type: 'Irony',
@@ -64,7 +75,7 @@ const poem: PoemData = {
     // The analogies come in the poem's order: painter (lines 7-9), weather
     // (13-22), piano (26-30). Until 26 September 2026 this page put the piano
     // second and the weather third, and called the weather "sun and cloud";
-    // what mixes in the poem's sky is light and shadow.
+    // what mixes in the poem's sky is brightness and shade.
     {
       text: '[See anthology - Picasso analogy: mixing paint colours]',
       annotations: [
@@ -76,11 +87,11 @@ const poem: PoemData = {
       ],
     },
     {
-      text: '[See anthology - weather analogy: light and shadow mixing in the sky]',
+      text: '[See anthology - weather analogy: brightness and shade meeting overhead]',
       annotations: [
         {
           type: 'Analogy - Weather',
-          note: "A second, humorous analogy: light and shadow mix in the sky, so by the listener's logic English weather, so often grey and cloudy, would be half-caste nearly all the time. The bathos of comparing racial prejudice to weather is deliberately comic, making the term look silly and small. Refer to the anthology for the exact wording.",
+          note: "A second, humorous analogy: brightness and shade meet overhead to make the weather, so by the listener's logic England's changeable weather would hardly ever escape the label. The bathos of comparing racial prejudice to weather is deliberately comic, making the term look silly and small. Refer to the anthology for the exact wording.",
           color: '#10b981',
         },
       ],
@@ -97,32 +108,32 @@ const poem: PoemData = {
     },
     { text: '' },
     {
-      text: '[See anthology - literalisation: casting half-a-shadow]',
+      text: '[See anthology - literalisation: a partial shadow by moonlight]',
       annotations: [
         {
           type: 'Literalisation',
-          note: 'Agard takes "half" literally: if he is only half a person, he casts half a shadow. The physical impossibility exposes the linguistic cruelty of the word. The technique of literalising the metaphor runs throughout the poem. Refer to the anthology for the exact wording.',
+          note: 'Agard takes "half" literally: if he is only half a person, then by moonlight he must "cast half-a-shadow". The physical impossibility exposes the linguistic cruelty of the word. The technique of literalising the metaphor runs throughout the poem.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: '[See anthology - accumulating list of "halves": dream, eye, ear]',
+      text: '[See anthology - the accumulating list of halves: hearing, sight, sleep, dreams]',
       annotations: [
         {
           type: 'Accumulation',
-          note: 'The speaker lists more "halves" - half a dream, half an eye, half an ear. The list accumulates until the idea becomes obviously absurd. This rhetorical strategy of piling up examples overwhelms the reader with the foolishness of the term. Refer to the anthology for the exact wording.',
+          note: 'The speaker carries the halving through his whole body and his whole day: his hearing, his sight, his sleep and even his dreams. The list accumulates until the idea becomes obviously absurd. This rhetorical strategy of piling up examples overwhelms the reader with the foolishness of the term. Refer to the anthology for the exact wording.',
           color: '#a855f7',
         },
       ],
     },
     { text: '' },
     {
-      text: '[Paraphrase] The speaker tells the listener to come back the next day, looking with their full attention.',
+      text: '[Paraphrase] The speaker tells the listener to return the next day, looking with their full attention.',
       annotations: [
         {
           type: 'Key phrase',
-          note: 'The poem ends with a challenge to look with the whole eye. The speaker tells the listener to return with their full humanity - whole eye, whole ear, whole mind - and then the speaker will tell them the other half of his story. The implication: you can only understand me when you see me as a whole person.',
+          note: 'The poem ends with a challenge to look "wid de whole of yu eye". The word whole returns in three consecutive lines, for sight, then hearing, then thought: the listener must bring their full humanity, and only then will the speaker tell them the rest of his story. The implication: you can only understand me when you see me as a whole person.',
           color: '#f59e0b',
         },
       ],
@@ -132,7 +143,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Final reversal',
-          note: 'The final lines cleverly reverse "half". Now it is the listener who is incomplete - seeing with half an eye, hearing with half an ear. The speaker has a whole story; it is the listener who is only offering half their attention. The power has shifted entirely.',
+          note: 'The final lines cleverly reverse "half": the speaker promises "de other half / of my story". Now it is the listener who is incomplete, looking and listening only partly. The speaker has a whole story; it is the listener who is only offering half their attention. The power has shifted entirely.',
           color: '#f59e0b',
         },
       ],
@@ -144,10 +155,10 @@ const poem: PoemData = {
     <p>John Agard is a Guyanese-British poet, playwright and children's writer. He was born in British Guiana (now Guyana) and moved to England in 1977. His work frequently explores themes of <strong>cultural identity</strong>, <strong>race</strong> and <strong>language</strong>. He writes in both Standard English and Caribbean Creole, often mixing them within a single poem. In 2012 he won the Queen's Gold Medal for Poetry.</p>
 
     <h3>The term "half-caste"</h3>
-    <p>The word "caste" comes from the Portuguese/Spanish <em>casta</em>, meaning "race" or "lineage". "Half-caste" was historically used to describe people of mixed racial heritage, implying they were <strong>incomplete</strong> or <strong>lesser</strong> - literally "half" a person. The term is now widely regarded as offensive. Agard wrote this poem to dismantle the word and expose its cruelty.</p>
+    <p>The word "caste" comes from the Portuguese/Spanish <em>casta</em>, meaning race or lineage. "Half-caste" was historically used to describe people of mixed racial heritage, implying they were <strong>incomplete</strong> or <strong>lesser</strong> - literally "half" a person. The term is now widely regarded as offensive. Agard wrote this poem to dismantle the word and expose its cruelty.</p>
 
     <h3>Multicultural Britain</h3>
-    <p>The poem was written in the context of <strong>multicultural Britain</strong> in the late twentieth century. Immigration from the Caribbean (the "Windrush generation" from 1948 onwards) brought new communities to Britain, but also racial tension, discrimination and casual prejudice. Agard's poem confronts everyday racism - not violent attacks, but the thoughtless use of labels that diminish people.</p>
+    <p>The poem was written in the context of <strong>multicultural Britain</strong> in the late twentieth century. Immigration from the Caribbean (the Windrush generation, from 1948 onwards) brought new communities to Britain, but also racial tension, discrimination and casual prejudice. Agard's poem confronts everyday racism - not violent attacks, but the thoughtless use of labels that diminish people.</p>
 
     <h3>Language and power</h3>
     <p>Agard deliberately writes in <strong>Caribbean Creole English</strong> - "yu", "wid", "dem", "wha". This is a political choice. Standard English is the language of the colonial power that once ruled Guyana. By writing in Creole, Agard asserts the value and beauty of his own linguistic heritage. The dialect IS the argument: mixing languages, like mixing races, produces something richer, not lesser.</p>
@@ -156,15 +167,15 @@ const poem: PoemData = {
     <p>"Half-Caste" is a <strong>performance poem</strong> - written to be spoken aloud. Agard is a celebrated performer, and the poem's rhythms, repetitions and direct address all work best when heard. The confrontational "Explain yuself" is addressed to a live audience, making every listener feel the challenge personally.</p>
   `,
 
-  summary: `The poem opens with mock politeness - "Excuse me ... I'm half-caste". The speaker adopts the offensive label in order to dismantle it, performing its literal meaning to show how absurd it is.
+  summary: `The poem opens with mock politeness and a comic pose - "Excuse me / standing on one leg" - and in the third line the speaker names himself with the offensive label. He adopts it in order to dismantle it, performing its literal meaning to show how absurd it is.
 
 The speaker then demands that the listener explain what they mean by "half-caste". This demand - "Explain yuself / wha yu mean" - is repeated throughout the poem as a refrain, turning the burden of explanation onto the person who used the word.
 
-Agard uses three analogies to show that mixing is valued everywhere except in racial identity. Picasso mixed red and green paint - nobody called his art "half-caste". Light and shadow mix in the sky - by that logic English weather, so often cloudy, would be "half-caste" nearly all the time. Tchaikovsky mixed black and white piano keys - nobody called his music "half-caste".
+Agard uses three analogies to show that mixing is valued everywhere except in racial identity. Picasso blends two colours on a canvas - nobody would call his painting "half-caste". Brightness and shade meet overhead to make the weather - by that logic England's changeable weather would hardly ever escape the label. Tchaikovsky combines black and white piano keys in a symphony - nobody calls his music "half-caste".
 
-The speaker then literalises the metaphor of "half". If he is only half a person, he must cast half a shadow, dream half a dream, see with half an eye, listen with half an ear. The accumulation of physical impossibilities makes the term look increasingly stupid.
+The speaker then literalises the metaphor of "half". If he is only half a person, the halving must reach his hearing, his sight, his sleep and even his dreams, until by moonlight he must "cast half-a-shadow". The accumulation of physical impossibilities makes the term look increasingly stupid.
 
-The poem ends with a powerful challenge. The speaker tells the listener to come back the next day with their whole eye, ear and mind. Only when the listener approaches as a whole, unprejudiced person will the speaker share the rest of the story. The reversal is complete: it is the listener, not the speaker, who has been incomplete all along.
+The poem ends with a powerful challenge. The speaker tells the listener to return the next day and give him their complete attention, seeing, hearing and thinking. Only when the listener approaches as a whole, unprejudiced person will the speaker share the rest of the story. The reversal is complete: it is the listener, not the speaker, who has been incomplete all along.
 
 Overall meaning: "Half-Caste" is a poem that uses humour, irony and Caribbean dialect to confront racial prejudice. Agard reclaims an offensive word, exposes its absurdity through analogies and literalisation, and ultimately shifts power from the labeller to the labelled.`,
 
@@ -179,7 +190,7 @@ Repetition: "Explain yuself / wha yu mean" is repeated as a refrain, creating a 
 Structure - three movements:
 • Movement 1 (opening): The speaker introduces himself with mock humility and announces the topic.
 • Movement 2 (middle): Three analogies - Picasso, English weather, Tchaikovsky - each showing that mixing is valued in art, nature and music.
-• Movement 3 (ending): Literalisation of "half" (half a shadow, half a dream, half an eye) and the final challenge to the listener.
+• Movement 3 (ending): Literalisation of "half" (his sight, his sleep, his dreams and even his shadow are halved) and the final challenge to the listener.
 
 Tone: Mock-polite, ironic, confrontational, humorous, angry. The humour is essential - Agard makes the listener laugh at the absurdity of the term, then feel the anger beneath the laughter.
 
@@ -189,12 +200,12 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
 
   keyQuotes: [
     {
-      quote: "Excuse me ... I'm half-caste",
+      quote: 'Excuse me / standing on one leg',
       analysis:
-        'The opening is brilliantly ironic. "Excuse me" is mock-polite - the speaker pretends to apologise for existing. The one-legged pose in the line between them literalises "half" immediately, showing that if the term were true, the speaker would be physically incomplete. The absurdity is deliberate and sets the tone for the whole poem.',
+        'The opening is brilliantly ironic. "Excuse me" is mock-polite - the speaker pretends to apologise for existing. The one-legged pose literalises "half" immediately, showing that if the term were true, the speaker would be physically incomplete. Only then, in the third line, does he name himself with the label. The absurdity is deliberate and sets the tone for the whole poem.',
       themes: ['Identity', 'Irony', 'Absurdity'],
       analysisAr:
-        'مفتتحٌ ساخرٌ ببراعة. عبارة "Excuse me" متأدّبةٌ تأدّباً متصنّعاً - يتظاهر المتكلّم بأنّه يعتذر عن وجوده. أمّا صورةُ الوقوف على ساقٍ واحدة في السطر الواقع بينهما فتُحرفي "half" فوراً، لتُري أنّ كلمة "half-caste" لو كانت صحيحة لكان المتكلّم ناقصاً جسديّاً. والعبثيّةُ مقصودة، وتضبط نبرة القصيدة كلّها.',
+        'مفتتحٌ ساخرٌ ببراعة. عبارة "Excuse me" متأدّبةٌ تأدّباً متصنّعاً - يتظاهر المتكلّم بأنّه يعتذر عن وجوده. أمّا صورةُ الوقوف على ساقٍ واحدة فتُحرفي "half" فوراً، لتُري أنّ كلمة "half-caste" لو كانت صحيحة لكان المتكلّم ناقصاً جسديّاً. ثمّ يُسمّي نفسَه بالوَسم في السطر الثالث. والعبثيّةُ مقصودة، وتضبط نبرة القصيدة كلّها.',
       themesAr: ['الهويّة', 'المفارقة', 'العبثيّة'],
     },
     {
@@ -225,34 +236,34 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
       themesAr: ['الموسيقى', 'العِرق', 'الانسجام'],
     },
     {
-      quote: '[See anthology - half-a-shadow literalisation]',
+      quote: 'cast half-a-shadow',
       analysis:
-        'The literalisation of "half" reaches its most powerful point. If the speaker is truly half a person, he would cast half a shadow - a physical impossibility. By making the metaphor literal, Agard reveals it as nonsense. The image is both comic and chilling: to call someone "half-caste" is to deny them their full humanity. Refer to your Edexcel IGCSE anthology for the exact wording.',
+        'The literalisation of "half" reaches its most powerful point. If the speaker is truly half a person, his shadow by moonlight would be only partial - a physical impossibility. By making the metaphor literal, Agard reveals it as nonsense. The image is both comic and chilling: to call someone "half-caste" is to deny them their full humanity.',
       themes: ['Dehumanisation', 'Literalisation', 'Identity'],
       analysisAr:
         'تبلغ حرفنةُ كلمة "half" أوجها هنا. لو كان المتكلّمُ حقّاً نصفَ إنسان لألقى نصفَ ظِلٍّ - وهذا مستحيلٌ جسديّاً. وبإحالة الاستعارة إلى الحرف يكشف Agard أنّها بلا معنى. والصورة هزليّة ومخيفةٌ معاً: مَن يصف الآخرَ بـ"half-caste" يُنكر إنسانيّته الكاملة. ارجع إلى الـEdexcel IGCSE anthology للنصّ الكامل.',
       themesAr: ['نزع الإنسانيّة', 'الحرفنة', 'الهويّة'],
     },
     {
-      quote: '[See anthology - accumulating list of "halves"]',
+      quote: '[See anthology - the accumulating list of halves]',
       analysis:
-        'The accumulation of "halves" builds to a crescendo of absurdity. Half a dream, half an eye, half an ear - each image is more ridiculous than the last. The list overwhelms the listener with evidence that the concept of "half" a person makes no sense. The technique is rhetorically powerful: quantity becomes quality. Refer to your Edexcel IGCSE anthology for the exact wording.',
+        'The accumulation of halves builds to a crescendo of absurdity. His hearing, his sight, his sleep and even his dreams are halved - each image is more ridiculous than the last. The list overwhelms the listener with evidence that the concept of "half" a person makes no sense. The technique is rhetorically powerful: quantity becomes quality. Refer to your Edexcel IGCSE anthology for the exact wording.',
       themes: ['Accumulation', 'Absurdity', 'Rhetoric'],
       analysisAr:
-        'يتراكم الـ"halves" حتى يبلغ ذروةَ السخف. نصفُ حلم، نصفُ عين، نصفُ أُذن - كلّ صورةٍ أسخف من سابقتها. تُغرق القائمةُ السامعَ بالبراهين على أنّ فكرة "نصف إنسان" بلا معنى. تقنيّةٌ بلاغيّة قويّة: الكَمّ يصير كيفاً. ارجع إلى الـEdexcel IGCSE anthology للنصّ الكامل.',
+        'يتراكم التنصيف حتى يبلغ ذروةَ السخف. سمعُه وبصرُه ونومُه، بل أحلامُه، كلّها منصَّفة - كلّ صورةٍ أسخف من سابقتها. تُغرق القائمةُ السامعَ بالبراهين على أنّ فكرة "نصف إنسان" بلا معنى. تقنيّةٌ بلاغيّة قويّة: الكَمّ يصير كيفاً. ارجع إلى الـEdexcel IGCSE anthology للنصّ الكامل.',
       themesAr: ['التراكم', 'العبثيّة', 'البلاغة'],
     },
     {
-      quote: '[See anthology - the closing command to return with the whole eye]',
+      quote: 'wid de whole of yu eye',
       analysis:
-        'The command to come back the next day turns the tables completely. Now it is the listener who is incomplete - they have been looking with half an eye, listening with half an ear. The speaker will only share his full story when the listener brings their full, unprejudiced attention. The challenge is direct, confident and empowering.',
+        'The command to return the next day turns the tables completely. After a stanza of halves, the word whole arrives, and it is repeated for eye, then ear, then mind. Now it is the listener who is incomplete - they have been looking and listening with only part of their attention. The speaker will only share his full story when the listener brings their full, unprejudiced attention. The challenge is direct, confident and empowering.',
       themes: ['Challenge', 'Wholeness', 'Power reversal'],
       analysisAr:
-        'يقلب الأمرُ بالعودة في الغد الطاولةَ تماماً. صار السامعُ هو الناقص - كان ينظر بنصف عينٍ ويُصغي بنصف أُذن. ولن يُشاركه المتكلّمُ كاملَ قصّته إلّا متى أحضر انتباهه كاملاً غيرَ مُتحيّز. والتحدّي مباشرٌ واثقٌ مُمكِّن.',
+        'يقلب الأمرُ بالعودة في الغد الطاولةَ تماماً. فبعد مقطعٍ من الأنصاف تأتي كلمة whole، وتتكرّر للعين ثمّ للأُذن ثمّ للعقل. صار السامعُ هو الناقص - كان ينظر ويُصغي بجزءٍ من انتباهه فقط. ولن يُشاركه المتكلّمُ كاملَ قصّته إلّا متى أحضر انتباهه كاملاً غيرَ مُتحيّز. والتحدّي مباشرٌ واثقٌ مُمكِّن.',
       themesAr: ['التحدّي', 'الكمال', 'انقلاب موازين القوى'],
     },
     {
-      quote: '[See anthology - the final two lines, on the other half of the story]',
+      quote: 'de other half / of my story',
       analysis:
         'The final words reclaim "half" one last time. The speaker has a complete identity - a whole story - but the listener has only heard half of it because they have been too prejudiced to listen properly. The poem ends with a promise and a challenge: there is more to the speaker than a label. The listener must earn the right to hear it.',
       themes: ['Identity', 'Completeness', 'Empowerment'],
@@ -265,12 +276,12 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
   languageDevices: [
     {
       device: 'Literalisation of metaphor',
-      example: '[See anthology: the one-legged pose at the opening, and the half-a-shadow image]',
+      example: 'standing on one leg ... cast half-a-shadow',
       effect:
-        'Agard takes the word "half" literally: if "half-caste" is true, the speaker can only stand on one leg, cast half a shadow, dream half a dream. By making the metaphor literal, the poet exposes it as absurd and cruel. This is the poem\'s central technique.',
+        'Agard takes the word "half" literally: if "half-caste" is true, the speaker can manage only half a stance, his dreams are halved and even his shadow is partial. By making the metaphor literal, the poet exposes it as absurd and cruel. This is the poem\'s central technique.',
       lineRef: 1,
       effectAr:
-        'يأخذ Agard كلمة "half" بحرفيّتها: لو كان "half-caste" تعبيراً صحيحاً، لما استطاع المتكلّم إلّا الوقوفَ على ساقٍ واحدة، وإلقاءَ نصف ظِلّ، وحُلمَ نصف حُلم. وبإحالة الاستعارة إلى الحرف يكشف الشاعرُ سخفَها وقسوتَها. وهذه تقنيّةُ القصيدة المحوريّة.',
+        'يأخذ Agard كلمة "half" بحرفيّتها: لو كان "half-caste" تعبيراً صحيحاً، لما استطاع المتكلّم إلّا نصفَ وقفة، ولتنصّفت أحلامُه، بل ظِلُّه نفسُه. وبإحالة الاستعارة إلى الحرف يكشف الشاعرُ سخفَها وقسوتَها. وهذه تقنيّةُ القصيدة المحوريّة.',
     },
     {
       device: 'Analogy',
@@ -303,7 +314,7 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
       device: 'Rhetorical questions',
       example: '[See anthology: Agard frames each analogy as a rhetorical question]',
       effect:
-        'The rhetorical questions force the listener to answer "no" - of course a painting isn\'t "half-caste". Each "no" builds the logical case that a person isn\'t "half-caste" either. The questions are unanswerable, which is the point: the term cannot be defended.',
+        'The rhetorical questions force the listener to answer no - of course a painting isn\'t "half-caste". Each denial builds the logical case that a person isn\'t "half-caste" either. The questions are unanswerable, which is the point: the term cannot be defended.',
       lineRef: 6,
       effectAr:
         'الأسئلةُ البلاغيّة تُجبر السامعَ على الإجابة بـ"لا" - فاللوحةُ بالطبع ليست "half-caste". وكلّ "لا" تبني الحُجّةَ المنطقيّة على أنّ الإنسانَ كذلك ليس "half-caste". الأسئلةُ بلا جوابٍ ممكن، وهذا هو المقصد: المصطلحُ لا يُدافَع عنه.',
@@ -312,10 +323,10 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
       device: 'Direct address and imperative verbs',
       example: 'Excuse me ... Explain yuself',
       effect:
-        'The poem is addressed directly to "yu" - the person who used the term. This makes the poem feel confrontational and personal. The imperatives ("explain", "come back") are commands, not requests. The speaker takes authority over the conversation, reversing the power dynamic that the label tried to impose.',
+        'The poem is addressed directly to "yu" - the person who used the term. This makes the poem feel confrontational and personal. The imperatives ("Explain yuself", and the closing order to return the next day) are commands, not requests. The speaker takes authority over the conversation, reversing the power dynamic that the label tried to impose.',
       lineRef: 0,
       effectAr:
-        'القصيدة موجَّهةٌ مباشرةً إلى "yu" - الشخص الذي استعمل المصطلح. وهذا يكسبها طابعاً مواجِهاً شخصيّاً. وصِيَغُ الأمر ("explain"، "come back") أوامرٌ لا طلبات. يستولي المتكلّم على سُلطة الحوار، فيقلب موازين القوى التي حاول الوَسمُ فرضَها.',
+        'القصيدة موجَّهةٌ مباشرةً إلى "yu" - الشخص الذي استعمل المصطلح. وهذا يكسبها طابعاً مواجِهاً شخصيّاً. وصِيَغُ الأمر ("Explain yuself"، والأمرُ الختاميّ بالعودة في الغد) أوامرٌ لا طلبات. يستولي المتكلّم على سُلطة الحوار، فيقلب موازين القوى التي حاول الوَسمُ فرضَها.',
     },
   ],
 
@@ -327,7 +338,7 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
     <p>كلمة "caste" من البرتغاليّة/الإسبانيّة <em>casta</em>، بمعنى "العِرق" أو "النسب". واستُعمل "half-caste" تاريخيّاً لوصف ذوي التراث العِرقيّ المختلط، بإيحاءٍ أنّهم <strong>ناقصون</strong> أو <strong>أدنى</strong> - حرفيّاً "نصفُ" إنسان. وقد صار المصطلح اليوم مرفوضاً على نطاقٍ واسع بوصفه مهيناً. كتب Agard هذه القصيدةَ ليُفكّك الكلمة ويكشف قسوتها.</p>
 
     <h3>بريطانيا المتعدّدة الثقافات</h3>
-    <p>كُتبت القصيدة في سياق <strong>بريطانيا المتعدّدة الثقافات</strong> في أواخر القرن العشرين. جاءت الهجرة من الكاريبي (جيلُ "Windrush" منذ 1948 فصاعداً) بمجتمعاتٍ جديدة إلى بريطانيا، وجاءت معها كذلك توتّراتٌ عِرقيّة وتمييزٌ وتحاملٌ يوميّ. تواجه قصيدةُ Agard العنصريّةَ اليوميّة - لا الاعتداءات العنيفة، بل الاستعمال الطائش لوَسمٍ يُقلّل الإنسان.</p>
+    <p>كُتبت القصيدة في سياق <strong>بريطانيا المتعدّدة الثقافات</strong> في أواخر القرن العشرين. جاءت الهجرة من الكاريبي (جيلُ Windrush، منذ 1948 فصاعداً) بمجتمعاتٍ جديدة إلى بريطانيا، وجاءت معها كذلك توتّراتٌ عِرقيّة وتمييزٌ وتحاملٌ يوميّ. تواجه قصيدةُ Agard العنصريّةَ اليوميّة - لا الاعتداءات العنيفة، بل الاستعمال الطائش لوَسمٍ يُقلّل الإنسان.</p>
 
     <h3>اللغة والسلطة</h3>
     <p>يكتب Agard قصدياً بالـ<strong>Caribbean Creole English</strong> - "yu"، "wid"، "dem"، "wha". خيارٌ سياسيّ. الفصحى الإنجليزيّة لغةُ القوّة الاستعماريّة التي حكمت Guyana في الماضي. وبالكتابة بالكريول يُثبت Agard قيمةَ تراثه اللغويّ وجماله. اللهجةُ نفسُها هي الحُجّة: خلطُ اللغات، كخلط الأعراق، يُنتج ما هو أغنى لا أنقص.</p>
@@ -336,15 +347,15 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
     <p>"Half-Caste" قصيدةُ <strong>أداءٍ</strong> - كُتبت لتُلقى صوتاً. وAgard مُؤدٍّ معروف، وإيقاعات القصيدة وتكرارها ونداؤها المباشر تعمل كلّها في أبهى صورها متى سُمعت. ونداءُ "Explain yuself" المواجِه موجَّهٌ إلى جمهورٍ حيّ، فيُحسّ كلُّ سامعٍ بأنّ التحدّي شخصيّ.</p>
   `,
 
-  summaryAr: `تبدأ القصيدة بتأدّبٍ متصنّع - "Excuse me ... I\'m half-caste". يتقمّص المتكلّم الوَسمَ المهين ليُفكّكه، مؤدّياً معناه الحرفيّ ليُبيّن سخفه.
+  summaryAr: `تبدأ القصيدة بتأدّبٍ متصنّع ووقفةٍ هزليّة - "Excuse me / standing on one leg" - ثمّ يُسمّي المتكلّمُ نفسَه بالوَسم المهين في السطر الثالث. يتقمّص الوَسمَ ليُفكّكه، مؤدّياً معناه الحرفيّ ليُبيّن سخفه.
 
 ثمّ يطالب المتكلّمُ السامعَ بأن يشرح ما يقصده بـ"half-caste". وهذا الطلب - "Explain yuself / wha yu mean" - يتكرّر على امتداد القصيدة لازمةً، فيُلقي عبءَ الشرح على من استعمل الكلمة.
 
-يستعمل Agard ثلاث مماثلاتٍ ليُري أنّ الخلطَ محتفىً به في كلّ مكانٍ إلّا في الهُويّة العِرقيّة. خلط Picasso الأحمر والأخضر - لم يصف أحدٌ فنّه بـ"half-caste". ويمتزج الضوءُ والظلّ في السماء - وبهذا المنطق يكون الطقسُ الإنجليزيّ الغائمُ غالباً "half-caste" في معظم الأوقات. وخلط Tchaikovsky مفاتيح البيانو السوداء والبيضاء - لم يصف أحدٌ موسيقاه بـ"half-caste".
+يستعمل Agard ثلاث مماثلاتٍ ليُري أنّ الخلطَ محتفىً به في كلّ مكانٍ إلّا في الهُويّة العِرقيّة. يمزج Picasso لونين على لوحة - ولن يصف أحدٌ لوحتَه بـ"half-caste". ويلتقي السطوعُ والظلّ في الأعلى فيصنعان الطقس - وبهذا المنطق لا يكاد الطقسُ الإنجليزيّ المتقلّب ينجو من الوَسم. ويجمع Tchaikovsky مفاتيح البيانو السوداء والبيضاء في سيمفونيّة - ولا يصف أحدٌ موسيقاه بـ"half-caste".
 
-ثمّ يُحرفي المتكلّمُ استعارةَ "half". لو كان نصفَ إنسانٍ لألقى نصفَ ظِلّ، وحَلَم نصفَ حُلم، ورأى بنصف عين، وأصغى بنصف أُذن. وتراكمُ الاستحالات الجسديّة يجعل المصطلحَ يبدو أسخف وأسخف.
+ثمّ يُحرفي المتكلّمُ استعارةَ "half". لو كان نصفَ إنسانٍ لبلغ التنصيفُ سمعَه وبصرَه ونومَه، بل أحلامَه، حتى يغدو ظِلُّه في ضوء القمر ناقصاً: "cast half-a-shadow". وتراكمُ الاستحالات الجسديّة يجعل المصطلحَ يبدو أسخف وأسخف.
 
-تختم القصيدة بتحدٍّ قويّ. يأمر المتكلّمُ السامعَ بأن يعود في الغد بعينه كلّها وأُذنه وعقله. ولن يُشاركه بقيّةَ قصّته إلّا متى أقبل إنساناً كاملاً غيرَ مُتحيّز. وانقلابُ الموازين تامّ: السامعُ، لا المتكلّم، هو الناقص طوال الوقت.
+تختم القصيدة بتحدٍّ قويّ. يأمر المتكلّمُ السامعَ بأن يعود في الغد ويمنحه انتباهه كاملاً، رؤيةً وسمعاً وتفكيراً. ولن يُشاركه بقيّةَ قصّته إلّا متى أقبل إنساناً كاملاً غيرَ مُتحيّز. وانقلابُ الموازين تامّ: السامعُ، لا المتكلّم، هو الناقص طوال الوقت.
 
 المعنى الإجماليّ: "Half-Caste" قصيدةٌ تستعمل الفُكاهة والمفارقة واللهجة الكاريبيّة لمواجهة التحيّز العِرقيّ. يستردّ Agard كلمةً مهينة، ويكشف سخفها بالمماثلة والحرفنة، ثمّ ينقل السلطةَ في النهاية من الواسم إلى الموسوم.`,
 
@@ -359,7 +370,7 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
 البنية في ثلاث حركات:
 • الحركة الأولى (الافتتاح): يُقدّم المتكلّمُ نفسَه بتواضعٍ متصنّع ويُعلن الموضوع.
 • الحركة الثانية (الوسط): ثلاثُ مماثلاتٍ - Picasso، الطقس الإنجليزيّ، Tchaikovsky - تُري كلٌّ منها أنّ الخلطَ محتفىً به في الفنّ والطبيعة والموسيقى.
-• الحركة الثالثة (الختام): حرفنةُ "half" (نصفُ ظِلّ، نصفُ حُلم، نصفُ عين) ثمّ التحدّي الختاميّ للسامع.
+• الحركة الثالثة (الختام): حرفنةُ "half" (يتنصّف بصرُه ونومُه وأحلامُه، بل ظِلُّه) ثمّ التحدّي الختاميّ للسامع.
 
 النبرة: تأدّبٌ متصنّع، مفارقة، مواجهة، فُكاهة، غضب. والفُكاهة جوهريّة - يجعل Agard السامعَ يضحك من سخف المصطلح، ثمّ يُحسّ بالغضب تحت الضحك.
 
@@ -457,17 +468,17 @@ export default function HalfCastePage() {
             <strong className="text-foreground">Teacher note: on the spelling</strong>
           </p>
           <p>
-            Agard&apos;s Caribbean creole spelling (<strong>&quot;yu&quot;</strong> for
-            &quot;you&quot;, <strong>&quot;wha&quot;</strong> for &quot;what&quot;,
-            <strong> &quot;yuself&quot;</strong> for &quot;yourself&quot;) is{' '}
+            Agard&apos;s Caribbean creole spelling (<strong>&quot;yu&quot;</strong> for <em>you</em>
+            , <strong>&quot;wha&quot;</strong> for <em>what</em>,
+            <strong> &quot;yuself&quot;</strong> for <em>yourself</em>) is{' '}
             <strong className="text-foreground">
               deliberate and central to the poem&apos;s meaning
             </strong>
-            . Do not &quot;correct&quot; to Standard English: the creole is itself a political
-            statement. The Edexcel IGCSE Anthology (Issue 8) preserves Agard&apos;s spelling, and
-            students should quote it exactly as printed. &quot;Correcting&quot; the dialect in an
-            essay loses marks for accuracy and misses the poem&apos;s argument that mixed languages,
-            like mixed identities, are valid in their own right.
+            . Do not change it to Standard English: the creole is itself a political statement. The
+            Edexcel IGCSE Anthology (Issue 8) preserves Agard&apos;s spelling, and students should
+            quote it exactly as printed. Standardising the dialect in an essay loses marks for
+            accuracy and misses the poem&apos;s argument that mixed languages, like mixed
+            identities, are valid in their own right.
           </p>
         </div>
       </div>
@@ -477,12 +488,13 @@ export default function HalfCastePage() {
         <AlertTriangle className="mt-0.5 size-4 shrink-0 text-sky-500" />
         <p className="text-xs leading-relaxed text-muted-foreground">
           <strong className="text-foreground">Page audited April 2026:</strong> Direct quotations
-          from mid-poem analogies (Picasso, weather, Tchaikovsky, half-a-shadow, accumulating
-          &quot;halves&quot;) and other passages we could not verify against a primary source have
-          been replaced with paraphrases or pointers to the anthology. On 26 September 2026 the page
-          was cut again to the share of the poem fair dealing allows: only the opening and the
-          refrain are still quoted, and the closing lines are described. Quote from your Edexcel
-          IGCSE Anthology for the exact wording of every passage.
+          from mid-poem analogies (Picasso, weather, Tchaikovsky, the accumulating halves) and other
+          passages we could not verify against a primary source have been replaced with paraphrases
+          or pointers to the anthology. On 26 September 2026 the page was cut again to the share of
+          the poem fair dealing allows. This page and the study guide below it draw on that one
+          allowance, so the page now quotes only the short phrases the guide also quotes, all
+          checked against the anthology, and describes the rest. Quote from your Edexcel IGCSE
+          Anthology for the exact wording of every passage.
         </p>
       </div>
 

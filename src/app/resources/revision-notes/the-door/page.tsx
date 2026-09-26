@@ -2,6 +2,30 @@
 
 import { useState } from 'react'
 
+/*
+ * 26 September 2026: brought within the fair-dealing share. The poem and Ian
+ * Milner's translation are in UK copyright, and this page quoted 34 distinct
+ * words of it against the cap of 20 that no-poem-quoted-beyond-fair-dealing
+ * measures. It now quotes six things only: the refrain, the two repeated
+ * openers the Form section analyses, the magic city, the ticking darkness and
+ * the closing line. The copy-of-a-copy image and the empty wind are described
+ * in the page's own words (the paraphrase cards), and the Prague Spring slogan,
+ * which the measure also counts against the poem, is no longer in quotation
+ * marks. The page sits at the cap, so a new quotation must replace one.
+ *
+ * Checked the same day against the poem's lineation (the Scottish Poetry
+ * Library's text of the Bloodaxe translation: five stanzas of 5, 6, 3, 9 and 3
+ * lines, 89 words). The last stanza is three lines, not the "two-line stanza"
+ * and "couplet" this page called it in six places, so quoting all of it was a
+ * three-line quotation that the measure could not see, because the page prints
+ * it on one line. The card now quotes its last two lines only (18 words in
+ * total). Only one line of stanza 4 is a single word, not several. The
+ * overview had also reproduced the opening list and a stanza 4 phrase without
+ * marks; both are now described. POEM_WORDS does not record the poem, so the
+ * measure caps it at 20; recorded at 89 words, the cap would be 13, and this
+ * page would be over it.
+ */
+
 /* ─── Expandable Section Component ─────────────────────────── */
 
 function Section({
@@ -45,16 +69,27 @@ function QuoteCard({
   quote,
   speaker,
   analysis,
+  paraphrase,
 }: {
   quote: string
   speaker?: string
   analysis: string
+  paraphrase?: boolean
 }) {
   return (
     <div className="rounded-lg border-s-4 border-violet-400 bg-violet-500/5 p-4 mb-3">
-      <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
-        &ldquo;{quote}&rdquo;
-      </p>
+      {paraphrase ? (
+        <p className="text-sm font-semibold text-violet-800 dark:text-violet-200">
+          <span className="me-2 rounded bg-violet-500/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-violet-600">
+            Paraphrase
+          </span>
+          {quote}
+        </p>
+      ) : (
+        <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
+          &ldquo;{quote}&rdquo;
+        </p>
+      )}
       {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -157,13 +192,13 @@ export default function TheDoorPage() {
                   Opening stanza: the widening list of possibilities
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  The poem opens with its central command, then imagines what might lie outside:
-                  perhaps a tree, or a wood, or a garden, or even &ldquo;a magic city&rdquo;. Notice
-                  the structure of the list: it begins with a single ordinary object (a tree),
-                  expands to a larger natural space (a wood), then to a cultivated, human space (a
-                  garden), and finally leaps into pure fantasy. The word &ldquo;Maybe&rdquo; governs
-                  everything: nothing is promised, only possibility. The speaker is not telling you
-                  what you will find; the point is that you cannot know unless you act.
+                  The poem opens with its central command, then imagines what might lie outside, in
+                  a list that grows as it goes and ends on the magic city. Notice the structure of
+                  the list: it begins with a single ordinary object (a tree), expands to a larger
+                  natural space (a wood), then to a cultivated, human space (a garden), and finally
+                  leaps into pure fantasy. Every item is offered only as a maybe: nothing is
+                  promised, only possibility. The speaker is not telling you what you will find; the
+                  point is that you cannot know unless you act.
                 </p>
               </div>
 
@@ -177,11 +212,11 @@ export default function TheDoorPage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The second stanza repeats the command and offers a new set of possibilities, but
                   they are now odder and harder to interpret: a dog searching through something, a
-                  face, an eye, or &ldquo;the picture of a picture&rdquo;. The images shrink and
-                  fragment: from a whole creature, to a face, to a single eye, to an image of an
-                  image, copies of copies receding away from anything solid. The world beyond the
-                  door is not guaranteed to be beautiful or even comprehensible. Holub is honest:
-                  openness to experience includes openness to the strange and the unreadable.
+                  human face, a lone eye, or an image that is only a copy of another image. The
+                  images shrink and fragment: from a whole creature, to a face, to a single eye, to
+                  a copy of a copy, receding away from anything solid. The world beyond the door is
+                  not guaranteed to be beautiful or even comprehensible. Holub is honest: openness
+                  to experience includes openness to the strange and the unreadable.
                 </p>
               </div>
 
@@ -193,11 +228,11 @@ export default function TheDoorPage() {
                   Third stanza: the shortest promise
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  The third stanza is only a few lines long: if there is fog outside, it will clear.
-                  This is the poem&apos;s one genuine reassurance, and it is significant that it is
-                  attached to the one image of obscurity. Fog stands for confusion, uncertainty, not
-                  being able to see ahead. The stanza&apos;s brevity mirrors its message: confusion
-                  is temporary; do not let it stop you.
+                  The third stanza is only three lines long: after the command, it promises that any
+                  fog will not last. This is the poem&apos;s first genuine reassurance, and it is
+                  significant that it is attached to the one image of obscurity. Fog stands for
+                  confusion, uncertainty, not being able to see ahead. The stanza&apos;s brevity
+                  mirrors its message: confusion is temporary; do not let it stop you.
                 </p>
               </div>
 
@@ -206,16 +241,16 @@ export default function TheDoorPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     4
                   </span>
-                  Fourth stanza: even if there is nothing
+                  Fourth stanza: the worst case
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  The longest stanza confronts the worst case. Even if outside there is only
-                  &ldquo;the darkness ticking&rdquo;, only &ldquo;the hollow wind&rdquo;, even if
-                  nothing at all is there, the command still stands: go and open the door. The
-                  repeated concessive phrase (even if... even if... even if) builds like a series of
+                  The longest stanza confronts the worst case: beyond the door there may be nothing
+                  but a darkness that ticks, or an empty wind, or nothing at all. The command still
+                  stands. The repeated concessive phrase builds, clause by clause, like a series of
                   objections being overruled one by one. The lines thin out as the possibilities
-                  empty, until single words sit alone on the line, and then the imperative returns,
-                  unchanged, to close the stanza. Action is worthwhile regardless of outcome.
+                  empty, until a single word sits alone on its line, and then the imperative
+                  returns, unchanged, to close the stanza. Action is worthwhile regardless of
+                  outcome.
                 </p>
               </div>
 
@@ -227,7 +262,7 @@ export default function TheDoorPage() {
                   The coda: the draught
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  The poem ends with a tiny two-line stanza: at the very least, there will be a
+                  The poem ends with a tiny three-line stanza that promises, as the bare minimum, a
                   draught. On the surface this is bathos, a deliberate anticlimax: after magic
                   cities and ticking darkness, all you are guaranteed is a current of cold air. But
                   the draught is also the poem&apos;s quiet triumph. A draught means the air has
@@ -241,12 +276,10 @@ export default function TheDoorPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; The repeated imperative that opens four stanzas</li>
-                    <li>
-                      &bull; The list that escalates from a tree to &ldquo;a magic city&rdquo;
-                    </li>
+                    <li>&bull; The list that escalates from a tree to the magic city</li>
                     <li>&bull; The shift from inviting images to strange, fragmented ones</li>
-                    <li>&bull; The concessive build-up: even if... even if... even if</li>
-                    <li>&bull; The two-line coda and its double-edged anticlimax</li>
+                    <li>&bull; The concessive build-up of the fourth stanza</li>
+                    <li>&bull; The three-line coda and its double-edged anticlimax</li>
                   </ul>
                 </div>
               </div>
@@ -260,11 +293,11 @@ export default function TheDoorPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="The speaker"
-                description="An anonymous, insistent voice that never identifies itself and never explains its authority. It speaks entirely in imperatives and possibilities: it commands, then speculates, then commands again. The tone is not bullying but encouraging, like a friend or mentor coaxing someone out of fear or apathy. Crucially, the speaker promises nothing specific. Its honesty (admitting there may be nothing outside at all) is what makes its final insistence persuasive rather than naive."
+                description="An anonymous, insistent voice that never identifies itself and never explains its authority. It speaks almost entirely in imperatives and possibilities: it commands, then speculates, then commands again. The tone is not bullying but encouraging, like a friend or mentor coaxing someone out of fear or apathy. Crucially, the speaker promises very little: only that fog will not last and that opening the door will let in a draught. Its honesty (admitting there may be nothing outside at all) is what makes its final insistence persuasive rather than naive."
               />
               <CharacterCard
-                name="The addressee: 'you'"
-                description="The poem is addressed to an unnamed 'you', which means it is addressed to the reader. The 'you' is imagined as someone on the inside of a closed door: someone settled, sealed off, perhaps fearful or simply passive. The poem never describes this person, which keeps the address universal. Every reader becomes the person being urged to act. For exam purposes, the direct address is one of the poem's most important techniques: it turns a private lyric into a challenge."
+                name="The addressee: the reader"
+                description="The poem speaks in the second person to someone it never names, which means it is addressed to the reader. The person addressed is imagined as someone on the inside of a closed door: someone settled, sealed off, perhaps fearful or simply passive. The poem never describes this person, which keeps the address universal. Every reader becomes the person being urged to act. For exam purposes, the direct address is one of the poem's most important techniques: it turns a private lyric into a challenge."
               />
               <CharacterCard
                 name="The door"
@@ -272,7 +305,7 @@ export default function TheDoorPage() {
               />
               <CharacterCard
                 name="The images beyond the door"
-                description="The possibilities form a deliberate sequence: natural and lovely (tree, wood, garden), fantastical (a magic city), animal and mundane (a rummaging dog), human but partial (a face, an eye), unstable and self-referential (the picture of a picture), obscure (fog), and finally empty (ticking darkness, hollow wind, nothing). The sequence matters more than any single image: it maps the full range of what openness might bring, from wonder to bafflement to emptiness, and insists the command holds across all of it."
+                description="The possibilities form a deliberate sequence: natural and lovely (tree, wood, garden), fantastical (a magic city), animal and mundane (a dog searching through something), human but partial (a face, an eye), unstable and self-referential (a copy of a copy), obscure (fog), and finally empty (ticking darkness, an empty wind, nothing). The sequence matters more than any single image: it maps the full range of what openness might bring, from wonder to bafflement to emptiness, and insists the command holds across all of it."
               />
             </div>
           </Section>
@@ -284,7 +317,7 @@ export default function TheDoorPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title="Curiosity and openness to experience"
-                description="The poem's core argument is that the act of opening, of looking, of risking, matters more than what is found. The repeated 'Maybe' refuses certainty on purpose: curiosity is only curiosity when the outcome is unknown. Holub was a working research scientist (an immunologist), and many readers hear a scientist's ethic in the poem: form the hypothesis, run the experiment, accept whatever the result is. Knowledge begins with the willingness to look."
+                description="The poem's core argument is that the act of opening, of looking, of risking, matters more than what is found. What lies beyond the door is offered only as a possibility, and that refusal of certainty is deliberate: curiosity is only curiosity when the outcome is unknown. Holub was a working research scientist (an immunologist), and many readers hear a scientist's ethic in the poem: form the hypothesis, run the experiment, accept whatever the result is. Knowledge begins with the willingness to look."
               />
               <ThemeCard
                 title="Risk, fear, and the closed life"
@@ -304,7 +337,7 @@ export default function TheDoorPage() {
               />
               <ThemeCard
                 title="Uncertainty and perception"
-                description="The second stanza's images (a face, an eye, the picture of a picture) raise questions about what we can actually know. An eye might be looking at you; a picture of a picture is a copy at two removes from reality. Even when you open the door, what you see may be partial, mediated, or ambiguous. The poem accepts this: it does not claim that opening the door delivers truth, only that refusing to open it guarantees ignorance."
+                description="The second stanza's images (a face, an eye, a copy of a copy) raise questions about what we can actually know. An eye might be looking at you; a copy of a copy stands at two removes from reality. Even when you open the door, what you see may be partial, mediated, or ambiguous. The poem accepts this: it does not claim that opening the door delivers truth, only that refusing to open it guarantees ignorance."
               />
             </div>
           </Section>
@@ -318,10 +351,10 @@ export default function TheDoorPage() {
                 <h4 className="font-bold text-primary">Free verse and irregular stanzas</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The poem has no rhyme scheme and no regular metre, and its stanzas are of
-                  noticeably different lengths, ending with a stanza of just two lines. Free verse
-                  suits the subject: a poem about refusing confinement does not confine itself in a
-                  fixed form. The variation in stanza length also controls pace: the long fourth
-                  stanza accumulates pressure, while the abrupt final couplet lands like a dry
+                  noticeably different lengths, ending with a stanza of three very short lines. Free
+                  verse suits the subject: a poem about refusing confinement does not confine itself
+                  in a fixed form. The variation in stanza length also controls pace: the long
+                  fourth stanza accumulates pressure, while the abrupt final stanza lands like a dry
                   punchline. (AO2: always link the form to the meaning, not just label it.)
                 </p>
               </div>
@@ -340,23 +373,22 @@ export default function TheDoorPage() {
                 <h4 className="font-bold text-primary">Anaphora and listing</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The poem is built from two repeated sentence-openers: the speculative
-                  &ldquo;Maybe&rdquo; and the concessive &ldquo;even if&rdquo;. The
-                  &ldquo;Maybe&rdquo; lists open possibility upward (toward the garden and the magic
-                  city); the &ldquo;even if&rdquo; list strips possibility away (toward darkness,
-                  wind, nothing). The poem&apos;s whole argument is carried by the pivot from one
-                  anaphora to the other: from what you might gain to what you might not, with the
-                  command unchanged on both sides.
+                  &ldquo;Maybe&rdquo; and the concessive &ldquo;even if&rdquo;. The first opens
+                  possibility upward (toward the garden and the magic city); the second strips it
+                  away (toward darkness, wind, nothing). The poem&apos;s whole argument is carried
+                  by the pivot from one anaphora to the other: from what you might gain to what you
+                  might not, with the command unchanged on both sides.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">Enjambment and the thinning line</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Holub breaks his lines so that items of the lists fall away one per line, and in
-                  the fourth stanza the lines shorten until single words stand alone. On the page,
-                  the stanza visibly empties out, performing the very nothingness it describes. This
-                  is a strong AO2 point: the poem&apos;s layout enacts its meaning. The white space
-                  around the final two-line stanza similarly isolates the draught, making the
-                  smallest image in the poem the one the eye rests on last.
+                  Holub breaks his lines so that items of the lists fall away mostly one to a line,
+                  and in the fourth stanza the lines shorten until a single word stands alone. On
+                  the page, the stanza visibly empties out, performing the very nothingness it
+                  describes. This is a strong AO2 point: the poem&apos;s layout enacts its meaning.
+                  The white space around the final three-line stanza similarly isolates the draught,
+                  making the smallest image in the poem the one the eye rests on last.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -406,10 +438,10 @@ export default function TheDoorPage() {
                   Holub wrote in Czechoslovakia under a one-party communist state in which
                   publishing was censored and intellectual life was policed. The poem dates from the
                   early 1960s, a period of cautious cultural thaw that would lead to the Prague
-                  Spring of 1968, when reformers tried to create &ldquo;socialism with a human
-                  face&rdquo;. That movement was crushed by a Soviet-led invasion in August 1968,
-                  and in the repression that followed Holub fell out of official favour and was for
-                  years unable to publish freely in his own country. Read against this history, the
+                  Spring of 1968, when reformers tried to build a freer, more humane socialism. That
+                  movement was crushed by a Soviet-led invasion in August 1968, and in the
+                  repression that followed Holub fell out of official favour and was for years
+                  unable to publish freely in his own country. Read against this history, the
                   poem&apos;s quiet insistence on opening what is closed carries an unmistakable
                   political charge, though it is delivered entirely through images.
                 </p>
@@ -445,8 +477,9 @@ export default function TheDoorPage() {
         <div id="key-phrases">
           <Section title="Key Phrases with Analysis" icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
-              The poem is in copyright, so only very short phrases are quoted here for the purpose
-              of analysis. Read the full lines in a licensed copy: the poem is short enough to hold
+              The poem is in copyright, so only four short phrases are quoted here for the purpose
+              of analysis, and two further images are described in our own words (marked
+              Paraphrase). Read the full lines in a licensed copy: the poem is short enough to hold
               in your head entirely.
             </p>
             <div className="space-y-1">
@@ -461,9 +494,10 @@ export default function TheDoorPage() {
                 analysis="The climax of the opening list and the poem's one leap into outright fantasy. The escalation (tree, wood, garden, magic city) moves from the natural to the cultivated to the impossible, training the reader to expand expectation. The flat, childlike simplicity of the phrase is deliberate: the speaker offers wonder in the vocabulary of a fairy tale, then immediately undercuts it in later stanzas. Aspiration is permitted, but it is not the argument."
               />
               <QuoteCard
-                quote="the picture of a picture"
+                paraphrase
+                quote="A copy of a copy: an image of something that is itself only an image"
                 speaker="Stanza 2"
-                analysis="The strangest image in the poem: a representation of a representation, two removes from anything real. It unsettles the neat idea that opening the door reveals truth; what you find may be mediated, secondhand, or unreadable. Some readers link it to life under propaganda, where images of reality replace reality itself; others read it as a comment on perception generally. Its ambiguity is the point, and acknowledging that ambiguity is a high-level move (AO2)."
+                analysis="The strangest image in the poem, and the end point of the second stanza's shrinking list: a representation of a representation, two removes from anything real. It unsettles the neat idea that opening the door reveals truth; what you find may be mediated, secondhand, or unreadable. Some readers link it to life under propaganda, where images of reality replace reality itself; others read it as a comment on perception generally. Its ambiguity is the point, and acknowledging that ambiguity is a high-level move (AO2)."
               />
               <QuoteCard
                 quote="the darkness ticking"
@@ -471,14 +505,15 @@ export default function TheDoorPage() {
                 analysis="A compressed, synaesthetic image: darkness given the sound of a clock. It fuses two fears, the dark and passing time, into three words. Even emptiness, the image implies, is not static; time runs on whether or not you act, which quietly strengthens the case for acting. The phrase shows Holub's method in miniature: no decoration, just two ordinary words placed together until they spark."
               />
               <QuoteCard
-                quote="the hollow wind"
+                paraphrase
+                quote="A wind described as empty"
                 speaker="Stanza 4"
-                analysis="'Hollow' transfers emptiness from the world to the wind itself: even what moves out there may be vacant. This is the poem at its bleakest, conceding the worst case honestly. The concession is strategic: because the speaker has admitted the possibility of nothing, the final command cannot be dismissed as wishful thinking. The honesty buys the optimism."
+                analysis="Describing the wind itself as empty transfers emptiness from the world to the wind: even what moves out there may be vacant. This is the poem at its bleakest, conceding the worst case honestly. The concession is strategic: because the speaker has admitted the possibility of nothing, the final command cannot be dismissed as wishful thinking. The honesty buys the optimism."
               />
               <QuoteCard
-                quote="at least there'll be a draught"
+                quote="there'll be a draught"
                 speaker="The closing lines"
-                analysis="The famous ending: bathos with a sting of affirmation. 'At least' openly admits this is the minimum result, and 'draught' is deliberately tiny, domestic, even uncomfortable (draughts are what people seal doors against). Yet a draught is empirical proof that inside and outside are now connected. The closed system has been broken open. Many essays end where the poem ends: the reward for openness may be small, but it is real, and it is guaranteed."
+                analysis="The famous ending: bathos with a sting of affirmation. The final stanza openly frames this as the minimum result, and 'draught' is deliberately tiny, domestic, even uncomfortable (draughts are what people seal doors against). Yet a draught is empirical proof that inside and outside are now connected. The closed system has been broken open. Many essays end where the poem ends: the reward for openness may be small, but it is real, and it is guaranteed."
               />
             </div>
           </Section>
@@ -516,8 +551,8 @@ export default function TheDoorPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The imperative refrain and direct address: command repeated, reader
-                      conscripted. The speculative &ldquo;Maybe&rdquo; list escalates to &ldquo;a
-                      magic city&rdquo;, modelling expanding possibility.
+                      conscripted. The speculative list escalates from a tree to the magic city,
+                      modelling expanding possibility.
                     </p>
                   </div>
                   <div>
@@ -525,9 +560,9 @@ export default function TheDoorPage() {
                       Paragraph 2
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      New experience is not sanitised: the strange second stanza (the eye, the
-                      picture of a picture) and the empty fourth stanza concede risk and
-                      disappointment. The &ldquo;even if&rdquo; anaphora overrules each objection.
+                      New experience is not sanitised: the strange second stanza (the eye, the copy
+                      of a copy) and the empty fourth stanza concede risk and disappointment. The
+                      concessive anaphora overrules each objection.
                     </p>
                   </div>
                   <div>
@@ -563,7 +598,7 @@ export default function TheDoorPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Free verse and uneven stanzas as formal openness: a poem against confinement
-                      refuses a confining form. Contrast stanza lengths and the isolated two-line
+                      refuses a confining form. Contrast stanza lengths and the isolated three-line
                       coda.
                     </p>
                   </div>
@@ -572,9 +607,9 @@ export default function TheDoorPage() {
                       Paragraph 2
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The two anaphoras as the poem&apos;s hinge: &ldquo;Maybe&rdquo; building
-                      possibility, &ldquo;even if&rdquo; dismantling it, refrain constant across
-                      both. Lines thinning to single words enact emptiness on the page.
+                      The two anaphoras as the poem&apos;s hinge: the speculative opener building
+                      possibility, the concessive one dismantling it, refrain constant across both.
+                      Lines thinning to a single word enact emptiness on the page.
                     </p>
                   </div>
                   <div>
@@ -612,7 +647,7 @@ export default function TheDoorPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Note what the poem withholds: no setting, no reason the door is shut, no
-                      identity for &ldquo;you&rdquo;. Withholding universalises. Track how the
+                      identity for the person addressed. Withholding universalises. Track how the
                       possibilities behind the door change in character stanza by stanza. Finish
                       with the draught: the symbol&apos;s meaning is settled not by what is found
                       but by the fact of connection.

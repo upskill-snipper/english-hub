@@ -544,7 +544,21 @@ const read = (file: string): Source => ({ file, src: readFileSync(join(ROOT, fil
 const IGCSE = readdirSync(join(ROOT, 'src/app/igcse'), { withFileTypes: true })
   .filter((e) => e.isDirectory() && existsSync(join(ROOT, 'src/app/igcse', e.name, 'poetry')))
   .map((e) => `src/app/igcse/${e.name}/poetry`)
-const ROOTS = ['src/app/revision/poetry', ...IGCSE, 'src/app/resources/poetry']
+// The revision-notes library holds guides to poems too: Half-past Two, Hide
+// and Seek, Do not go gentle and The Door. Until 26 September 2026 this file
+// never looked there, and the first two quoted about a third and a quarter of
+// poems still in copyright. Only directories named after a registered poem are
+// taken: the rest of the library is novels and plays, which the sweep test
+// covers.
+const NOTES = 'src/app/resources/revision-notes'
+const NOTE_POEMS = readdirSync(join(ROOT, NOTES), { withFileTypes: true })
+  .filter(
+    (e) =>
+      e.isDirectory() &&
+      SET_TEXTS.some((t) => t.slug === e.name && t.category === 'poetry-anthology'),
+  )
+  .map((e) => `${NOTES}/${e.name}`)
+const ROOTS = ['src/app/revision/poetry', ...IGCSE, 'src/app/resources/poetry', ...NOTE_POEMS]
 const IN_SCOPE = ROOTS.flatMap((r) => sourcesUnder(join(ROOT, r))).sort()
 
 /** A module specifier resolved to a source file under src/app or src/data. */
@@ -571,9 +585,18 @@ function resolveImport(from: string, spec: string): string | undefined {
 function filesOf(page: string): string[] {
   const out = new Set<string>()
   const dir = dirname(page)
-  for (const f of ['layout.tsx', 'loading.tsx', 'error.tsx'])
-    if (existsSync(join(ROOT, dir, f))) out.add(`${dir}/${f}`)
-  const stack = [page]
+  const beside = ['layout.tsx', 'loading.tsx', 'error.tsx']
+    .map((f) => `${dir}/${f}`)
+    .filter((f) => existsSync(join(ROOT, f)))
+  // The files beside the page are walked for imports too, not only listed.
+  // Until 26 September 2026 only the page's imports were followed, so a
+  // layout that mounts <GuideSupplement guide={guide} /> from
+  // src/data/study-guides/<slug>.ts put the guide's quotations on the route
+  // unmeasured: Half-past Two's page and supplement together quoted about 42
+  // distinct words of a poem whose share is 29, and Hide and Seek's 54 of 34.
+  // The whole guide file is counted, including sections the supplement leaves
+  // to the page (its `native` claims), which errs towards counting.
+  const stack = [page, ...beside]
   const seen = new Set<string>()
   while (stack.length) {
     const f = stack.pop()!
@@ -694,7 +717,12 @@ const inside = (small: string[], big: string[]) => {
   return false
 }
 
-const isTitle = (text: string) => TITLES.has(titleKey(text))
+// A registered set text's title is a name too, whatever its form. Until
+// 26 September 2026 only poem titles were: the Out, Out- guide recommends "The
+// Story of an Hour" for comparison, and those five words were counted as five
+// words taken from Frost's poem, putting the route one word over its share.
+const SET_TEXT_TITLES = new Set(SET_TEXTS.map((t) => titleKey(t.title)))
+const isTitle = (text: string) => TITLES.has(titleKey(text)) || SET_TEXT_TITLES.has(titleKey(text))
 
 /** Distinct words taken, counted once: a span inside a longer one adds nothing. */
 function countedOnce(texts: string[]): number {
@@ -816,6 +844,19 @@ describe('every poetry page, on every board', () => {
   ])('measures %s for %s', (page, title) => {
     const row = ROWS.find((r) => r.page === page && titleKey(r.poem) === titleKey(title))
     expect(row?.quoted ?? 0).toBeGreaterThanOrEqual(10)
+  })
+
+  it('reaches the poem guides in the revision-notes library', () => {
+    // What this file reported before it looked there: nothing, and two pages
+    // over their share.
+    expect(NOTE_POEMS).toEqual(
+      expect.arrayContaining([`${NOTES}/half-past-two`, `${NOTES}/hide-and-seek`]),
+    )
+    for (const dir of NOTE_POEMS)
+      expect(
+        PAGES.some((p) => p.page.startsWith(`${dir}/`)),
+        dir,
+      ).toBe(true)
   })
 
   it('reaches every source file under the poetry trees', () => {

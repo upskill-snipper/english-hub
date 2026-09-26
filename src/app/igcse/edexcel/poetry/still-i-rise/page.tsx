@@ -60,26 +60,44 @@ const themes = [
 // the triple refrain), and printed "back yard" for the anthology's single word.
 // Four quotations the mounted guide does not already use were also cut, to
 // keep the page within its share of a copyrighted poem.
+//
+// ONE BUDGET WITH THE GUIDE, 26 September 2026. The fair-dealing test now
+// measures the route, not the page: the layout mounts the study guide in
+// src/data/study-guides/still-i-rise.ts beneath this page, so the two share
+// one fair-dealing budget of 36 distinct words, and the guide's verified
+// quotations spend 34 of them. Measured together they came to 40. So this page
+// quotes only what the guide already quotes (the opening line, the oil wells,
+// the sassiness, the refrain and the slave's dream), plus at most a few words.
+// What was over: the title of Angelou's inaugural poem, printed in quotation
+// marks and so counted as five words of this one (it is now in italics), and
+// scare quotes round "rising", which is not a word of the poem.
+// The same pass rewrote three summaries whose unquoted wording ran close to
+// the poem's own (the oil wells' living room), or said what it does not: the
+// opening concedes what the enemy may do rather than saying it was done, and
+// the speaker rises from the shameful past rather than carrying it. A second
+// check the same day found the ancestral summary still echoing the eighth
+// stanza's opening line, and the form note calling the closing stanzas' lines
+// shorter: only the refrain's are, and the rest are as long as the quatrains'.
 const stanzaSummaries = [
   {
     n: 'Opening stanzas',
     label: 'Addressing the oppressor',
-    body: 'The poem opens by addressing an unspecified &ldquo;you&rdquo; who has tried to write the speaker&rsquo;s history with hatred and lies. The widely-quoted opening line &mdash; &ldquo;You may write me down in history&rdquo; &mdash; sets the poem up as a direct, defiant address. Whatever the oppressor does to record, distort, or attack the speaker, she will rise.',
+    body: 'The poem opens by speaking to an unspecified &ldquo;you&rdquo; who may record the speaker in history as a set of lies, or trample her underfoot. The opening line, &ldquo;You may write me down in history&rdquo;, concedes what the enemy can do, and the end of the stanza answers it: whatever the oppressor does to record, distort or attack her, she will rise.',
   },
   {
     n: 'Middle stanzas',
     label: 'Confidence, sass and the female body',
-    body: 'Angelou shifts to celebrating the speaker&rsquo;s confidence: she walks as if she has &ldquo;oil wells&rdquo; pumping in her living room and laughs as if she owned a gold mine (these images of private riches are the poem&rsquo;s standard rhetorical signature). She embraces sensuality and pride in her body, daring the oppressor to be offended. The tone is playful as well as fierce &mdash; &ldquo;sassiness&rdquo; is part of the resilience.',
+    body: 'Angelou shifts to celebrating the speaker&rsquo;s confidence. She walks as though she had &ldquo;oil wells&rdquo; in her own home and laughs as though she owned a gold mine: comic boasts of private wealth, which say that her worth is her own, not something granted by anyone&rsquo;s approval. She asks whether the addressee wanted to see her crushed and humbled, and imagines being attacked with words, looks and hatred, only to answer that she will rise all the same, as air does. She takes pride in her body too, daring the oppressor to be offended by it. The tone is playful as well as fierce: her &ldquo;sassiness&rdquo; is part of the resilience.',
   },
   {
     n: 'Ancestral movement',
     label: 'The history of slavery',
-    body: 'The poem widens to address centuries of African-American history. The speaker carries that shameful past with her: the legacies of slavery, segregation, and racial violence. She is &ldquo;the dream and the hope of the slave&rdquo; &mdash; she is what the enslaved ancestors imagined for the future. Her rising is collective as well as personal.',
+    body: 'The poem widens to take in centuries of African-American history. The speaker rises from the shame and suffering of that past, the legacy of slavery, and leaves its fear behind for a new dawn. She carries forward what her ancestors handed down: she is &ldquo;the dream and the hope of the slave&rdquo;, what the enslaved imagined for the future. Her rising is collective as well as personal.',
   },
   {
     n: 'Closing stanzas',
     label: 'I rise',
-    body: 'The poem ends in a chant. The phrase &ldquo;I rise&rdquo; is repeated in short, hammered lines &mdash; closing with the famous triple repetition of &ldquo;I rise&rdquo;. The repetition turns the poem into something close to a song or a prayer. Earlier images of moons, suns, tides and air have prepared for it: by the end, the rising sounds like a natural force that cannot be stopped.',
+    body: 'The poem ends in a chant. The phrase &ldquo;I rise&rdquo; is repeated in short, hammered lines, and the poem closes on it three times running. The repetition turns the poem into something close to a song or a prayer. Earlier images of moons, suns, tides and air have prepared for it: by the end, the rising sounds like a natural force that cannot be stopped.',
   },
 ]
 
@@ -88,11 +106,11 @@ const stanzaSummaries = [
 const formAndStructure = [
   {
     label: 'Form',
-    body: 'Nine stanzas in total: seven of four lines (quatrains) followed by two longer closing stanzas with shorter lines, ending in the chant of &ldquo;I rise&rdquo;. The change of shape at the end &mdash; from regular quatrains into broken, repeating short lines &mdash; performs the rising itself: the lines literally lift off the page.',
+    body: 'Nine stanzas in total: seven of four lines (quatrains), then two longer closing stanzas of six and nine lines, in which the two-word refrain &ldquo;I rise&rdquo; breaks in between the long lines and at last takes over. The change of shape at the end, from regular quatrains to stanzas broken up by the refrain, enacts the rising itself: the short lines seem to lift off the page.',
   },
   {
     label: 'Rhyme',
-    body: 'The quatrains use an ABCB rhyme scheme (only the second and fourth lines rhyme). The pattern is reminiscent of ballads, hymns and gospel songs &mdash; forms with deep roots in African-American oral tradition. The familiar rhyme scheme makes the poem feel singable.',
+    body: 'The quatrains use an ABCB rhyme scheme (only the second and fourth lines rhyme). The pattern recalls the ballad stanza, and the hymns and gospel songs of African-American oral tradition. The familiar rhyme scheme makes the poem feel singable.',
   },
   {
     label: 'Repetition',
@@ -100,7 +118,10 @@ const formAndStructure = [
   },
   {
     label: 'Direct address',
-    body: 'Angelou addresses an unspecified &ldquo;you&rdquo; throughout. The &ldquo;you&rdquo; is the oppressor &mdash; bigot, slave-owner, distorted historian, anyone who has tried to demean the speaker. Angelou turns the lyric inside out: instead of confessing to a private listener, she confronts a public enemy.',
+    // Until 26 September 2026 this said the "you" is addressed throughout. It
+    // is addressed in six of the seven quatrains (not the third) and in
+    // neither closing stanza.
+    body: 'Angelou addresses an unspecified &ldquo;you&rdquo; in six of the seven quatrains. The &ldquo;you&rdquo; is the oppressor: bigot, slave-owner, distorted historian, anyone who has tried to demean the speaker. In the last two stanzas the &ldquo;you&rdquo; drops away, and she speaks only of herself, her history and her ancestors. Angelou turns the lyric inside out: instead of confessing to a private listener, she confronts a public enemy.',
   },
   {
     label: 'Imagery: natural and material',
@@ -213,10 +234,14 @@ export default function StillIRisePage() {
               <em> And Still I Rise</em> (1978) or{' '}
               <em>The Complete Collected Poems of Maya Angelou</em> (1994) when reading the text.
             </p>
+            {/* Until 26 September 2026 this said only the opening line and the
+                closing chant were quoted, while the page also quoted three
+                other phrases and the guide below it several more. */}
             <p className="text-body-xs text-muted-foreground">
-              Short fair-dealing reference is made below to the poem&rsquo;s widely-attested opening
-              line (&ldquo;You may write me down in history&rdquo;) and to its famous closing chant
-              (&ldquo;I rise&rdquo;) under CDPA s.30 (criticism and review).
+              This page and the study guide below it quote the poem only in short phrases, for
+              criticism and review under CDPA s.30 (fair dealing): among them its opening line
+              (&ldquo;You may write me down in history&rdquo;) and its closing refrain (&ldquo;I
+              rise&rdquo;).
             </p>
           </div>
         </div>
@@ -234,11 +259,11 @@ export default function StillIRisePage() {
           <p>
             Maya Angelou was an American poet, memoirist and civil-rights activist. Born Marguerite
             Annie Johnson in St. Louis, Missouri, she grew up in Stamps, Arkansas, and went on to
-            write seven autobiographies &mdash; beginning with the landmark{' '}
-            <em>I Know Why the Caged Bird Sings</em> (Random House, 1969) &mdash; alongside her
-            poetry. She worked closely with Martin Luther King Jr. and Malcolm X, and read her poem
-            &ldquo;On the Pulse of Morning&rdquo; at Bill Clinton&rsquo;s presidential inauguration
-            in 1993.
+            write seven autobiographies, beginning with the landmark{' '}
+            <em>I Know Why the Caged Bird Sings</em> (Random House, 1969), alongside her poetry. She
+            worked closely with Martin Luther King Jr. and Malcolm X, and read her poem{' '}
+            <em>On the Pulse of Morning</em> at Bill Clinton&rsquo;s presidential inauguration in
+            1993.
           </p>
           <p>
             <strong className="text-foreground">Publication:</strong> &ldquo;Still I Rise&rdquo;
@@ -248,14 +273,17 @@ export default function StillIRisePage() {
             <em>And Still I Rise</em> was published by Virago Press (1986), and the anthology
             reproduces the poem by permission of Little, Brown Book Group as well as Random House.
           </p>
+          {/* Until 26 September 2026 this also said the poem was read at
+              Nelson Mandela's 1994 inauguration. The study guide's audit
+              flagged that as unverified, and a search the same day found no
+              source for it, so it is gone. */}
           <p>
             <strong className="text-foreground">Context:</strong> The poem grew out of
             Angelou&rsquo;s engagement with the Civil Rights movement and her witness to the long
-            aftermath of slavery and segregation in the American South. The speaker&rsquo;s
-            &ldquo;rising&rdquo; is at once personal &mdash; one woman&rsquo;s self-respect &mdash;
-            and historical &mdash; the rising of an entire community out of the legacy of slavery.
-            The poem became an anthem of the late twentieth century and was read at Nelson
-            Mandela&rsquo;s 1994 inauguration as President of South Africa.
+            aftermath of slavery and segregation in the American South. The speaker&rsquo;s rising
+            is at once personal (one woman&rsquo;s self-respect) and historical (the rising of an
+            entire community from the legacy of slavery). The poem became an anthem of the late
+            twentieth century.
           </p>
         </div>
       </section>
@@ -286,8 +314,8 @@ export default function StillIRisePage() {
         </div>
         <p className="text-body-sm text-muted-foreground mb-4">
           The poem is nine stanzas of rhymed verse, ending in a chant. The summaries below describe
-          the action in plain English and refer only to widely-attested opening and closing phrases.
-          The full text is in copyright and is not reproduced here.
+          the action in plain English and quote only a few short phrases. The full text is in
+          copyright and is not reproduced here.
         </p>
         <div className="space-y-4">
           {stanzaSummaries.map((s) => (
@@ -312,8 +340,8 @@ export default function StillIRisePage() {
           <h2 className="text-heading-sm font-heading text-foreground">Form &amp; structure</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-4">
-          A paraphrased account of the poem&rsquo;s shape and main techniques. No primary text is
-          reproduced.
+          A paraphrased account of the poem&rsquo;s shape and main techniques. Of the poem&rsquo;s
+          own words, it quotes only the refrain and the &ldquo;you&rdquo; it addresses.
         </p>
         <div className="space-y-3">
           {formAndStructure.map((f) => (
