@@ -3,8 +3,11 @@
 // Source: the Pearson OLS Qualification standardisation ePACKs for paper
 // 4EA1_01, series 2606GQ, generated 27 May 2026, covering questions 1 to 7
 // with five candidate responses each. The question paper is 4EA1/01, Thursday
-// 21 May 2026 (P79647A), whose Text One is an extract from Aron Ralston's
-// "Between a Rock and a Hard Place", the source of the film 127 Hours.
+// 21 May 2026 (P79647A), whose Text Two, the anthology text, is the extract
+// from Aron Ralston's "Between a Rock and a Hard Place", the source of the film
+// 127 Hours. Text One is an unseen article. (This line said Ralston was Text
+// One until 26 September 2026; the Summer 2026 mark scheme and the taskContext
+// below both put him at Text Two, Q4.)
 //
 // Every mark below is the mark a Pearson examiner awarded to that response in
 // standardisation, and every quoted note is that examiner's own margin

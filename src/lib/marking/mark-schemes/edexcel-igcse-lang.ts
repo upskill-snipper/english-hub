@@ -3,8 +3,19 @@
 //   Section A - Reading (45 marks)
 //     Q1  AO1  2   - retrieval from Text One (point-marked)
 //     Q2  AO1  4   - explain in own words, Text One (point-marked)
-//     Q3  AO1  5   - select and explain, Text Two (point-marked)
+//     Q3  AO1  5   - select and explain, Text One (point-marked)
 //     Q4  AO2  12  - language & structure analysis, Text Two (5-level grid)
+//
+//   Text One is always the unseen extract and Text Two always the Part 1
+//   anthology text: Q1-Q3 are on Text One, Q4 on Text Two, Q5 compares them.
+//   CORRECTED 26 September 2026 against every 4EA1/01 paper, mark scheme and
+//   examiners' report Pearson publishes from the 2016 SAMs to Summer 2026 (the
+//   June 2019 report: Q4 "will always be on Text Two, the Anthology text").
+//   Until then this file put Q3 on Text Two, restricted Q4 to "the specified
+//   lines" (Q4 has no line range; the whole extract is in scope, and answers
+//   were being told material from elsewhere was not credited), and its Q4 grid
+//   sat one level out: its Level 4 described Pearson's Level 3, so a clear but
+//   not thorough answer was marked 8-10 where Pearson marks it 5-7.
 //     Q5  AO3  22  - comparison of both texts (5-level grid)
 //   Section B - Transactional Writing (45 marks) - answer ONE of Q6/Q7
 //     AO4 27 + AO5 18 (both 5-level grids; identical for Q6 and Q7)
@@ -79,45 +90,50 @@ const ao2Bands: BandDescriptor[] = [
     indicators: ['Spots an obvious feature without explaining its effect', 'Few or no references'],
   },
   {
+    // The level words below (some, clear, thorough, perceptive) are Pearson's
+    // own; everything around them is ours. See the header for what was wrong.
     band: 'Level 2',
     minMarks: 3,
     maxMarks: 4,
-    label: 'Limited',
+    label: 'Some',
     descriptor:
-      'Some awareness of the writer’s use of language and structure, with simple comments on effect. The selection of references is limited and not developed.',
-    indicators: ['Simple comment on the effect of a named feature', 'References are limited'],
+      'Some understanding of, and comment on, how the writer uses language and structure (including vocabulary) to achieve effects. References are valid but not developed.',
+    indicators: ['Comments on the effect of named features', 'Valid references, not developed'],
   },
   {
     band: 'Level 3',
     minMarks: 5,
     maxMarks: 7,
-    label: 'Sound',
+    label: 'Clear',
     descriptor:
-      'Sound understanding of, and comment on, how language and structure (including vocabulary) are used to achieve effects. The selection of references is valid and relevant, if not fully developed.',
-    indicators: ['Explains how features create effects', 'Valid, relevant references used'],
+      'Clear understanding and explanation of how language and structure (including vocabulary and sentence structure) achieve effects. References are appropriate and relevant.',
+    indicators: [
+      'Explains how language and structure create effects',
+      'Appropriate, relevant references',
+    ],
   },
   {
     band: 'Level 4',
     minMarks: 8,
     maxMarks: 10,
-    label: 'Clear',
+    label: 'Thorough',
     descriptor:
-      'Clear understanding and explanation of how language and structure (including vocabulary and sentence structure) achieve effects. References are appropriate, relevant and well chosen.',
+      'Thorough understanding and exploration of how language and structure (including vocabulary, sentence structure and other language features) achieve effects. References are detailed and fully support the points made.',
     indicators: [
-      'Clear explanation of language and structure together',
-      'Appropriate, well-chosen references',
+      'Explores method and effect across the extract',
+      'Detailed references that fully support each point',
     ],
   },
   {
     band: 'Level 5',
     minMarks: 11,
     maxMarks: 12,
-    label: 'Thorough',
+    label: 'Perceptive',
     descriptor:
-      'Thorough, sustained analysis of how language and structure achieve effects, with accurate, purposeful use of subject terminology. Discriminating references are integrated to support the analysis.',
+      'Perceptive understanding and analysis of how language and structure (including vocabulary, sentence structure and other language features) achieve effects. References are discriminating and sharpen the points made.',
     indicators: [
-      'Sustained analysis of method and effect',
-      'Discriminating, fully integrated references',
+      'Perceptive analysis of method and effect',
+      'Discriminating references that clarify each point',
     ],
   },
 ]
@@ -336,7 +352,7 @@ export const edexcelIgcseLangPaper1: MarkScheme = {
       id: 'Q3',
       questionType: 'Reading: select and explain (AO1)',
       taskDescription:
-        'From the specified lines of Text Two, select relevant evidence and explain what the writer tells the reader, as the question directs.',
+        'From the specified lines of Text One, select relevant evidence and explain what the writer tells the reader, as the question directs.',
       totalMarks: 5,
       assessmentObjectives: [ao('AO1', 'AO1 - Read and understand', 5, 5, pointBands(5))],
       examinerNotes:
@@ -346,11 +362,11 @@ export const edexcelIgcseLangPaper1: MarkScheme = {
       id: 'Q4',
       questionType: 'Language and structure analysis (AO2)',
       taskDescription:
-        'Analyse how the writer uses language and structure to convey ideas, thoughts and feelings in the specified lines of Text Two. Support your views with examples.',
+        'Analyse how the writer of Text Two, the anthology text, uses language and structure to achieve the effect the question names. The whole extract is in scope. Support your views with close reference to the text, including brief quotations.',
       totalMarks: 12,
       assessmentObjectives: [ao('AO2', 'AO2 - Analyse language and structure', 12, 12, ao2Bands)],
       examinerNotes:
-        'Level-marked (best fit) against the AO2 grid. Reward analysis of BOTH language and structure (including vocabulary and sentence structure) and the effects created. Material analysed from outside the directed lines is not credited.',
+        'Level-marked (best fit) against the AO2 grid. Reward analysis of BOTH language and structure (including vocabulary and sentence structure) and the effects created. Q4 has no line range: credit relevant analysis from anywhere in Text Two. No comparison with Text One is needed.',
     },
     {
       id: 'Q5',
