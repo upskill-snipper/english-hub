@@ -50,6 +50,28 @@ function walk(dir, out = []) {
 const norm = (s) => s.replace(/\s+/g, ' ').trim()
 
 /**
+ * The name a page gives the STRINGS it imports from its sibling content.ts.
+ *
+ * 2 October 2026: pages were found by the literal `Object.values(STRINGS)`.
+ * Twenty-two import the same strings as `import { STRINGS as _EAL_STRINGS }
+ * from './content'` and one as `_MC_STRINGS`, so this check never read them:
+ * 727 literals, among them the Edexcel, AQA, OCR and Cambridge literature
+ * resource pages and two legal pages, could lose their Arabic with every test
+ * green. One of the 23 also casts the result (`Object.values(_EAL_STRINGS) as
+ * Array<...>`), which the old pattern would have missed even under the right
+ * name. A page is now read when it imports STRINGS from './content' under any
+ * name and loops over Object.values of that name.
+ */
+const STRINGS_IMPORT = /import\s*\{[^}]*\bSTRINGS\b(?:\s+as\s+(\w+))?[^}]*\}\s*from\s*['"]\.\/content['"]/
+
+function loopsOverItsStrings(source) {
+  const m = STRINGS_IMPORT.exec(source)
+  if (!m) return false
+  const local = m[1] ?? 'STRINGS'
+  return new RegExp(`for \\(const \\w+ of Object\\.values\\(${local}\\)`).test(source)
+}
+
+/**
  * Every page using the local-STRINGS pattern, with the tr() literals that have
  * no matching `.en`. Exported so the vitest and this CLI cannot drift apart.
  */
@@ -57,14 +79,16 @@ export function findOrphans(root = 'src/app') {
   const pages = walk(root)
   let checked = 0
   const report = []
+  const examined = []
 
   for (const page of pages) {
     const source = readFileSync(page, 'utf8')
-    if (!/for \(const v of Object\.values\(STRINGS\)\)/.test(source)) continue
+    if (!loopsOverItsStrings(source)) continue
 
     const contentPath = join(dirname(page), 'content.ts')
     if (!existsSync(contentPath)) continue
     const content = readFileSync(contentPath, 'utf8')
+    examined.push(page.split('\\').join('/'))
 
     const translated = new Set()
     for (const m of content.matchAll(EN_FIELD)) {
@@ -82,12 +106,17 @@ export function findOrphans(root = 'src/app') {
     if (missing.length) report.push({ page: page.split('\\').join('/'), missing })
   }
 
-  return { checked, report, orphans: report.reduce((a, r) => a + r.missing.length, 0) }
+  return {
+    checked,
+    examined,
+    report,
+    orphans: report.reduce((a, r) => a + r.missing.length, 0),
+  }
 }
 
 // CLI only when run directly, so importing this from a test runs nothing.
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const { checked, report, orphans } = findOrphans()
+  const { checked, examined, report, orphans } = findOrphans()
   if (!process.argv.includes('--quiet')) {
     for (const { page, missing } of report) {
       console.log('')
@@ -103,7 +132,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   }
   console.log('')
   console.log(
-    `${checked} tr() literals checked; ${orphans} have no Arabic, across ${report.length} page(s).`,
+    `${checked} tr() literals checked on ${examined.length} pages; ${orphans} have no Arabic, across ${report.length} page(s).`,
   )
   // Reporting tool, not a gate. The vitest beside it is the gate, so that a
   // new orphan fails a push rather than printing a line nobody reads.

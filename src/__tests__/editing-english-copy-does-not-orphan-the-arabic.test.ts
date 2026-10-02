@@ -32,9 +32,23 @@ import { findOrphans } from '../../scripts/check-tr-literals-have-translations.m
  * NEW, which is the only way a number like this keeps being read.
  *
  * If you fix some, lower the pin. If you add a tr() literal, add its Arabic.
+ *
+ * RAISED FROM 74 TO 118 ON 2 OCTOBER 2026, because the check could finally
+ * see. It found pages by the literal `Object.values(STRINGS)`, and 23 pages
+ * import the same strings as `_EAL_STRINGS` or `_MC_STRINGS`: the Edexcel,
+ * AQA, OCR and Cambridge literature pages, two legal pages, the three Macbeth
+ * act pages among them. It read none of their 727 literals. Reading them adds
+ * 44 orphans on six pages:
+ * - Macbeth act 1, 16; act 2, 7; act 3, 7.
+ * - The AI feedback head-to-head, 7.
+ * - The AQA poetry page, 5; the Edexcel poetry page, 2.
+ * None was orphaned by an edit: checked against the pages and content files as
+ * they stood before 1 October, none of the 44 ever had Arabic. The entity
+ * clean-up (50da380c) decoded the pages and their content files together. They
+ * want translating, which is not this item.
  */
 
-const PINNED_ORPHANS = 74
+const PINNED_ORPHANS = 118
 
 /** The pages corrected under EXAM-3, which must stay at zero. */
 const MUST_BE_COMPLETE = 'src/app/resources/english-language/edexcel'
@@ -45,8 +59,24 @@ describe('the local-STRINGS pages are actually being checked', () => {
     // matched no pages at all, which is how this kind of check goes quiet: the
     // pattern it greps for gets refactored and the report stays green forever.
     const { checked, report } = findOrphans()
-    expect(checked).toBeGreaterThan(3000)
+    // 4,392 on 2 October 2026. The floor sits above the 3,665 the check read
+    // before it learned the other import names, so losing them fails here.
+    expect(checked).toBeGreaterThan(4000)
     expect(report.length).toBeGreaterThan(0)
+  })
+
+  it('reads the pages that import STRINGS under another name', () => {
+    // Until 2 October 2026 none of these was read (see the docblock). One per
+    // form: the alias, the alias with a cast on the loop, the other alias.
+    const { examined } = findOrphans()
+    for (const page of [
+      'src/app/resources/english-literature/edexcel/paper-2/page.tsx',
+      'src/app/legal/complaints/page.tsx',
+      'src/app/analysis/ai-feedback-head-to-head/page.tsx',
+      'src/app/demo/school/analytics/page.tsx',
+    ]) {
+      expect(examined, page).toContain(page)
+    }
   })
 })
 
