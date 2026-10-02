@@ -50,12 +50,17 @@ export function BoardGate({ children }: BoardGateProps) {
   const isBoardRoute = isBoardSpecificPath(pathname)
   const t = useT()
 
-  // Pre-hydration fallback: read the cookie directly so we don't flash the
-  // gate on returning visitors before zustand finishes rehydrating.
-  const [cookieBoard, setCookieBoard] = React.useState<string | null>(null)
-  React.useEffect(() => {
-    setCookieBoard(readBoardCookie())
-  }, [])
+  // The cookie is read on every render, not once on mount (2 October 2026).
+  // The middleware writes it when a navigation carries ?setBoard=, and a
+  // client-side navigation does not rehydrate the zustand store, so a value
+  // read only on mount could be stale: the visitor would have chosen a board,
+  // the cookie would hold it, and the next board-filtered page would still
+  // ask. The card clicks checked on production that day were full page loads,
+  // which rehydrate the store, so this closes a gap rather than a reported
+  // failure. Reading during render also removes the frame in which an old value
+  // could show the modal before an effect updated it. On the server isHydrated
+  // is false and nothing is read, as before.
+  const cookieBoard = isHydrated ? readBoardCookie() : null
 
   // Dismissal resets on navigation, so the nudge can reappear when the
   // visitor moves to a different board-filtered page - but it is always

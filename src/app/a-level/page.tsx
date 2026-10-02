@@ -31,6 +31,15 @@ export const metadata: Metadata = {
 
 type BoardSlug = 'aqa' | 'edexcel' | 'ocr' | 'eduqas'
 
+/**
+ * The four cards under "Choose your exam board".
+ *
+ * Each carries ?setBoard=<id> since 2 October 2026. Until then they were plain
+ * links: choosing a board here saved nothing, and the very next page asked
+ * "Which exam board do you study?" (confirmed on production: AQA chosen here,
+ * /a-level/aqa opened with no cookie and the modal over it). The same defect,
+ * in the same form, as the /igcse hub's cards.
+ */
 const boards: {
   slug: BoardSlug
   nameKey: string
@@ -43,28 +52,28 @@ const boards: {
     nameKey: 'alevel.board.aqa.name',
     examCode: '7712 / 7702',
     descriptionKey: 'alevel.board.aqa.description',
-    href: '/a-level/aqa',
+    href: '/a-level/aqa?setBoard=aqa-a-level',
   },
   {
     slug: 'edexcel',
     nameKey: 'alevel.board.edexcel.name',
     examCode: '9ET0 / 9EN0',
     descriptionKey: 'alevel.board.edexcel.description',
-    href: '/a-level/edexcel',
+    href: '/a-level/edexcel?setBoard=edexcel-a-level',
   },
   {
     slug: 'ocr',
     nameKey: 'alevel.board.ocr.name',
     examCode: 'H472 / H470',
     descriptionKey: 'alevel.board.ocr.description',
-    href: '/a-level/ocr',
+    href: '/a-level/ocr?setBoard=ocr-a-level',
   },
   {
     slug: 'eduqas',
     nameKey: 'alevel.board.eduqas.name',
     examCode: 'Eduqas',
     descriptionKey: 'alevel.board.eduqas.description',
-    href: '/a-level/eduqas',
+    href: '/a-level/eduqas?setBoard=eduqas-a-level',
   },
 ]
 

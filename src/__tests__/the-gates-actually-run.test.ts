@@ -221,10 +221,17 @@ describe('what the suite runs in', () => {
     // the reader shows "&c." exists only in what the component renders: the
     // decoder passing its own unit tests would not show the viewer calls it,
     // and the mutation that removes that call fails only the render assertion.
+    //
+    // Then to 27, the same day, for src/components/board/BoardGate.test.tsx.
+    // The board modal read its cookie once, on mount, so a board the
+    // middleware saved during a client-side navigation went unseen and the
+    // next page asked again. That is a mounted component re-rendering with a
+    // cookie that changed in between; rendered to a string there is no mount,
+    // no re-render and no document.cookie, and the old component passes.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(26)
+    ).toBeLessThanOrEqual(27)
   })
 })
 

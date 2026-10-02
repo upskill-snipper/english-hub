@@ -63,6 +63,19 @@ describe('isBoardSpecificPath - routes that must never gate', () => {
     // Board-agnostic long-tail content.
     '/analysis/macbeth/ambition',
     '/resources/revision-notes/hamlet',
+    // Pages whose URL already names the board (2 October 2026). A visitor
+    // who chose IGCSE, then Edexcel Language, then opened an anthology text
+    // was asked for their board again here, on a page no answer could change.
+    '/igcse',
+    '/igcse/edexcel-lang',
+    '/igcse/edexcel-lang/anthology/a-passage-to-africa',
+    '/igcse/edexcel',
+    '/igcse/edexcel/poetry/out-out',
+    '/igcse/cambridge',
+    '/igcse/cambridge/0500',
+    '/igcse/cambridge/0990/paper-1',
+    '/a-level',
+    '/a-level/aqa',
   ]
 
   for (const path of mustNotGate) {
@@ -82,8 +95,6 @@ describe('isBoardSpecificPath - routes whose content is board-filtered', () => {
     '/games',
     '/assessment/reading',
     '/courses',
-    '/igcse/cambridge/0500',
-    '/a-level/aqa',
     '/learn/gcse-lit/module-1',
     '/marking',
     '/marking/submit',

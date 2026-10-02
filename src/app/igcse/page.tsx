@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getIgcseHubUrl } from '@/app/igcse/_lib/guard'
+import type { ExamBoard } from '@/lib/board/board-config'
 import { ArrowRight, BookOpen, Sparkles, Feather, Globe, GraduationCap } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -40,42 +41,70 @@ export const metadata: Metadata = {
 }
 
 type CourseDef = {
-  slug: string
-  nameKey: string
+  board: ExamBoard
+  /** A proper noun, shown as it is in every language. */
+  awardingBody: string
+  labelKey: string
+  examCode: string
   descKey: string
   icon: typeof Feather
-  iconBg: string
-  iconText: string
   href: string
 }
 
+/**
+ * The IGCSE courses this site covers, one card each.
+ *
+ * THE DEFECT (2 October 2026). This page offered three cards - "IGCSE
+ * Literature", "IGCSE Language A" and "IGCSE Language B" - as plain links that
+ * saved nothing. "Language A" is the name of Pearson Edexcel's 4EA1, but that
+ * card led to Cambridge 0500, "Language B" led to Cambridge 0990, and Edexcel's
+ * Language A had no card at all. And because nothing was saved, the very next
+ * page asked "Which exam board do you study?" (confirmed on production:
+ * Pearson Edexcel chosen here, /igcse/edexcel opened with no cookie and the
+ * modal over it), and so did every page after it, the texts included, since
+ * dismissing the modal lasts only until the next navigation.
+ *
+ * Each card now names its awarding body and exam code, with the labels the
+ * board picker itself uses, and carries ?setBoard=<id> so the middleware saves
+ * the choice, as every other picker's cards do. Each still leads to its
+ * course's hub, as these cards always did.
+ */
 const COURSE_DEFS: CourseDef[] = [
   {
-    slug: 'literature',
-    nameKey: 'igcse.course.literature.name',
-    descKey: 'igcse.course.literature.desc',
+    board: 'edexcel-igcse',
+    awardingBody: 'Pearson Edexcel',
+    labelKey: 'board.paper.literature',
+    examCode: '4ET1',
+    descKey: 'board.paper_subtitle.edexcel_igcse_lit',
     icon: Feather,
-    iconBg: 'bg-primary/10',
-    iconText: 'text-primary',
-    href: '/igcse/edexcel',
+    href: '/igcse/edexcel?setBoard=edexcel-igcse',
   },
   {
-    slug: 'language-a',
-    nameKey: 'igcse.course.language_a.name',
-    descKey: 'igcse.course.language_a.desc',
-    icon: Globe,
-    iconBg: 'bg-primary/10',
-    iconText: 'text-primary',
-    href: '/igcse/cambridge/0500',
-  },
-  {
-    slug: 'language-b',
-    nameKey: 'igcse.course.language_b.name',
-    descKey: 'igcse.course.language_b.desc',
+    board: 'edexcel-igcse-lang',
+    awardingBody: 'Pearson Edexcel',
+    labelKey: 'board.paper.language',
+    examCode: '4EA1',
+    descKey: 'board.paper_subtitle.edexcel_igcse_lang',
     icon: GraduationCap,
-    iconBg: 'bg-primary/10',
-    iconText: 'text-primary',
-    href: '/igcse/cambridge/0990',
+    href: '/igcse/edexcel-lang?setBoard=edexcel-igcse-lang',
+  },
+  {
+    board: 'cambridge-0500',
+    awardingBody: 'Cambridge',
+    labelKey: 'board.paper.language_a',
+    examCode: '0500',
+    descKey: 'board.paper_subtitle.cambridge_0500',
+    icon: Globe,
+    href: '/igcse/cambridge/0500?setBoard=cambridge-0500',
+  },
+  {
+    board: 'cambridge-0990',
+    awardingBody: 'Cambridge',
+    labelKey: 'board.paper.language_b',
+    examCode: '0990',
+    descKey: 'board.paper_subtitle.cambridge_0990',
+    icon: Globe,
+    href: '/igcse/cambridge/0990?setBoard=cambridge-0990',
   },
 ]
 
@@ -100,7 +129,7 @@ export default async function IgcseHubPage() {
     }
   }
   // No board set - show the course selector hub below.
-  const courseKeys = COURSE_DEFS.flatMap((c) => [c.nameKey, c.descKey])
+  const courseKeys = COURSE_DEFS.flatMap((c) => [c.labelKey, c.descKey])
   const t = await tMany([
     'igcse.crumb.home',
     'igcse.crumb.self',
@@ -168,25 +197,26 @@ export default async function IgcseHubPage() {
           <h2 className="text-heading-lg font-heading text-foreground">{tChooseH2}</h2>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2">
           {courses.map((course) => {
             const Icon = course.icon
             return (
               <Card
-                key={course.slug}
+                key={course.board}
                 className="group relative flex flex-col overflow-hidden transition-all duration-200 hover:border-border hover:shadow-card-hover"
               >
                 <CardHeader className="pb-3">
                   <div className="mb-3">
-                    <div
-                      className={`flex size-11 items-center justify-center rounded-xl ${course.iconBg}`}
-                    >
-                      <Icon className={`size-5 ${course.iconText}`} />
+                    <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10">
+                      <Icon className="size-5 text-primary" />
                     </div>
                   </div>
                   <CardTitle className="text-heading-md font-heading leading-tight">
-                    {course.name}
+                    {course.awardingBody} {course.name}
                   </CardTitle>
+                  <p className="mt-1 font-mono text-body-xs text-muted-foreground">
+                    {course.examCode}
+                  </p>
                   <CardDescription className="text-body-sm">{course.description}</CardDescription>
                 </CardHeader>
 

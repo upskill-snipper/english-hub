@@ -20,7 +20,21 @@
  * demo pages do not - they are board-agnostic by design.
  */
 
-/** Route trees whose content is filtered by the visitor's exam board. */
+/**
+ * Route trees whose content is filtered by the visitor's exam board.
+ *
+ * NOT /igcse OR /a-level (2 October 2026). Both were listed, so a visitor with
+ * no board saved met the full-screen "Which exam board do you study?" modal on
+ * every page beneath them - an IGCSE Language anthology text, a Cambridge 0500
+ * paper guide - although each of those URLs already names its board and shows
+ * the same page whatever the visitor answers. The two hubs' own course cards
+ * did not save the choice either, so a student who chose a course on /igcse,
+ * opened a text and was asked again had done nothing wrong. Nothing in either
+ * tree reads the visitor's board (only the /igcse root does, on the server, to
+ * send a visitor who has one to their hub), so by the rule above they never
+ * belonged here. The middleware already let both through without a cookie, so
+ * removing them changes only the modal.
+ */
 export const BOARD_SPECIFIC_PREFIXES: readonly string[] = [
   '/revision',
   '/practice',
@@ -28,8 +42,6 @@ export const BOARD_SPECIFIC_PREFIXES: readonly string[] = [
   '/games',
   '/assessment',
   '/courses',
-  '/igcse',
-  '/a-level',
   '/learn',
   '/marking',
   '/toolkit',
