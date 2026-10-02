@@ -202,7 +202,9 @@ const lovePairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-love-08',
     theme: 'Love',
-    quote: 'Nothing in the world is single; ... in one spirit meet and mingle.',
+    // 2 October 2026: was "in one spirit meet and mingle", the version most websites carry;
+    // AQA's anthology, the book students are given, prints "in one another's being mingle".
+    quote: "Nothing in the world is single; ... in one another's being mingle.",
     text: 'Love’s Philosophy',
     board: ['AQA', 'Eduqas'],
   },
@@ -216,7 +218,9 @@ const lovePairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-love-10',
     theme: 'Love',
-    quote: 'What is all this sweet work worth if thou kiss not me?',
+    // 2 October 2026: was "What is all this sweet work worth", the version poets.org carries;
+    // AQA's anthology prints "what are all these kissings worth".
+    quote: 'What are all these kissings worth, if thou kiss not me?',
     text: 'Love’s Philosophy',
     board: ['AQA', 'Eduqas'],
   },
@@ -630,7 +634,9 @@ const mortalityPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-mortality-08',
     theme: 'Mortality',
-    quote: 'To-night, this frost will fasten on this mud and us',
+    // 2 October 2026: was "To-night"; AQA's anthology, the book students are given, prints
+    // "Tonight".
+    quote: 'Tonight, this frost will fasten on this mud and us',
     text: 'Exposure',
     board: ['AQA'],
   },

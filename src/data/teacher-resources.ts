@@ -1136,6 +1136,9 @@ STAVE 5: THE END OF IT
     ],
   },
   {
+    // 2 October 2026: the London and Ozymandias quotations follow AQA's anthology, the book
+    // students are given ("mind-forged", "black'ning church appalls", "works"). They had
+    // Blake's "Mind-forg'd", "Church appals" (AQA has "appalls") and the capital "Works".
     id: 'quotes-power-conflict-anthology',
     title: 'Power & Conflict Poetry - Key Quotes by Poem',
     category: 'Key Quotes Banks',
@@ -1149,7 +1152,7 @@ STAVE 5: THE END OF IT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 OZYMANDIAS - Percy Bysshe Shelley
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"Look on my Works, ye Mighty, and despair!" → Dramatic irony. The "Works" are gone.
+"Look on my works, ye Mighty, and despair!" → Dramatic irony. The "works" are gone.
 "The lone and level sands stretch far away" → Alliteration. Nature defeats human power.
 "Half sunk, a shattered visage lies" → "Shattered" - both the statue and his legacy.
 
@@ -1157,8 +1160,8 @@ OZYMANDIAS - Percy Bysshe Shelley
 LONDON - William Blake
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 "Marks of weakness, marks of woe" → Anaphora. "Marks" = visible suffering on faces.
-"Mind-forg'd manacles" → Metaphor. People are mentally imprisoned - oppression is internalised.
-"Every black'ning Church appals" → Church should offer hope but is complicit in suffering.
+"Mind-forged manacles" → Metaphor. People are mentally imprisoned - oppression is internalised.
+"Every black'ning church appalls" → The Church should offer hope but is complicit in suffering.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 MY LAST DUCHESS - Robert Browning

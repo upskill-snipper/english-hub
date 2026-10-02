@@ -925,7 +925,10 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Analysis: London by William Blake',
         duration: '18 minutes',
         instructions:
-          "Read 'London' aloud with emphasis on the repetitive, incantatory rhythm. Students annotate focusing on: (1) 'charter'd' - repeated to show everything in London is controlled, owned, mapped out - even the river, which should be free; (2) the anaphora of 'In every' - 'In every cry of every Man, / In every Infants cry of fear, / In every voice: in every ban' - building an overwhelming sense of universal suffering; (3) 'mind-forg'd manacles' - a powerful metaphor suggesting people are imprisoned by their own acceptance of oppression; (4) the final stanza - 'the youthful Harlots curse' blighting 'the new-born Infant's tear' - corruption passes from one generation to the next. Students write a PEEL paragraph. Context: Blake was a Romantic poet and social critic writing during the Industrial Revolution. He opposed the Church, monarchy, and institutions that exploited the poor.",
+          // 2 October 2026: London is quoted as AQA's anthology, the book students are given,
+          // prints it ("chartered", "infant's", "mind-forged", "harlot's", lower-case nouns). This had
+          // Blake's engraved spelling, and gave "blighting" for the poem's "Blasts".
+          "Read 'London' aloud with emphasis on the repetitive, incantatory rhythm. Students annotate focusing on: (1) 'chartered' - repeated to show everything in London is controlled, owned, mapped out - even the river, which should be free; (2) the anaphora of 'In every' - 'In every cry of every man, / In every infant's cry of fear, / In every voice, in every ban' - building an overwhelming sense of universal suffering; (3) 'mind-forged manacles' - a powerful metaphor suggesting people are imprisoned by their own acceptance of oppression; (4) the final stanza - 'the youthful harlot's curse' blasting 'the new-born infant's tear' - corruption passes from one generation to the next. Students write a PEEL paragraph. Context: Blake was a Romantic poet and social critic writing during the Industrial Revolution. He opposed the Church, monarchy, and institutions that exploited the poor.",
         differentiation: {
           support:
             'Provide a stanza-by-stanza paraphrase alongside the poem and highlight three key quotations to analyse.',
@@ -991,7 +994,8 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         question: "How does Blake use repetition in 'London' to build his argument?",
         lines: 5,
         modelAnswer:
-          "Blake repeats 'In every' four times in the second stanza - 'In every cry of every Man, / In every Infants cry of fear, / In every voice: in every ban'. This anaphora creates a cumulative effect, hammering home the idea that suffering in London is universal and inescapable. The repetition of 'every' emphasises that no one is exempt - men, infants, and all voices are affected. The relentless rhythm mirrors the relentless oppression Blake is describing.",
+          // 2 October 2026: quoted as AQA prints the stanza; this had Blake's engraved text.
+          "Blake repeats 'In every' four times in the second stanza - 'In every cry of every man, / In every infant's cry of fear, / In every voice, in every ban'. This anaphora creates a cumulative effect, hammering home the idea that suffering in London is universal and inescapable. The repetition of 'every' emphasises that no one is exempt - men, infants, and all voices are affected. The relentless rhythm mirrors the relentless oppression Blake is describing.",
         marks: 4,
       },
       {
@@ -999,7 +1003,10 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "Which poem do you find more powerful in its presentation of place - 'Storm on the Island' or 'London'? Explain your choice with evidence.",
         lines: 6,
         modelAnswer:
-          "Answers will vary. A strong response might argue: 'London' is more powerful because Blake identifies specific, man-made causes of suffering - 'charter'd streets', 'the Church', 'the Palace' - which makes his critique politically actionable. The final image of the 'youthful Harlots curse' blighting a newborn child is devastating because it shows how corruption passes through generations with no escape. Alternatively, 'Storm on the Island' is more powerful because the threat is invisible and unpredictable - 'bombarded by the empty air' - which captures the psychological toll of living in fear more effectively.",
+          // 2 October 2026: "charter'd streets", "the Church", "the Palace" and "youthful Harlots
+          // curse" are not AQA's words; the poem has "chartered street", "church", "palace walls"
+          // and "youthful harlot's curse".
+          "Answers will vary. A strong response might argue: 'London' is more powerful because Blake identifies specific, man-made causes of suffering - 'chartered street', 'church', 'palace walls' - which makes his critique politically actionable. The final image of the 'youthful harlot's curse' blighting a newborn child is devastating because it shows how corruption passes through generations with no escape. Alternatively, 'Storm on the Island' is more powerful because the threat is invisible and unpredictable - 'bombarded by the empty air' - which captures the psychological toll of living in fear more effectively.",
         marks: 5,
       },
     ],

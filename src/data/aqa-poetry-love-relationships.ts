@@ -21,6 +21,9 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       id: 'aqa-lr-m1',
       title: 'When We Two Parted - Lord Byron',
       duration: '40 min',
+      // 2 October 2026: the quotations were checked against AQA's anthology, the book
+      // students are given. One read "A knell to mine ear", the reading most websites carry;
+      // AQA prints "A knell in mine ear".
       content: `
 <h2>When We Two Parted - Lord Byron</h2>
 
@@ -56,7 +59,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 <div class="text-extract">"Pale grew thy cheek and cold"<div class="source">Stanza 1</div></div>
 <p>The adjectives <strong>"pale"</strong> and <strong>"cold"</strong> evoke death, suggesting the relationship was already dying at the moment of parting. The physical description externalises inner emotional withdrawal.</p>
 
-<div class="text-extract">"A knell to mine ear"<div class="source">Stanza 3</div></div>
+<div class="text-extract">"A knell in mine ear"<div class="source">Stanza 3</div></div>
 <p>A <strong>knell</strong> is a funeral bell. Hearing the beloved's name tolls like a death announcement, reinforcing that the end of the relationship is experienced as a bereavement.</p>
 
 <div class="text-extract">"thy vows are all broken"<div class="source">Stanza 3</div></div>
@@ -144,6 +147,11 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       id: 'aqa-lr-m2',
       title: "Love's Philosophy - Percy Bysshe Shelley",
       duration: '40 min',
+      // 2 October 2026: the quotations were checked against AQA's anthology, the book
+      // students are given. Line 15 was quoted as "What is all this sweet work worth", the
+      // reading poets.org carries; AQA prints "what are all these kissings worth". The form
+      // note gave the last line of stanza 1 as "If thou not me", which is not in the poem:
+      // stanza 1 ends "Why not I with thine?".
       content: `
 <h2>Love's Philosophy - Percy Bysshe Shelley</h2>
 
@@ -155,7 +163,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Two octets</strong> (eight-line stanzas) with a regular <strong>ABABCDCD</strong> rhyme scheme, giving the poem a song-like, persuasive rhythm.</li>
   <li>Each stanza builds a <strong>logical argument</strong> using examples from nature, then ends with a <strong>rhetorical question</strong> that challenges the beloved's resistance.</li>
   <li><strong>Listing technique:</strong> Shelley accumulates natural pairings (rivers/ocean, winds/each other, mountains/heaven) to create a sense of overwhelming, irrefutable evidence.</li>
-  <li>The <strong>monosyllabic final line</strong> of each stanza ("If thou kiss not me" / "If thou not me") is blunt and direct after the flowing natural imagery.</li>
+  <li>The <strong>monosyllabic final line</strong> of each stanza ("Why not I with thine?" / "If thou kiss not me?") is blunt and direct after the flowing natural imagery.</li>
 </ul>
 
 <h3>Key Themes</h3>
@@ -186,8 +194,8 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 <div class="text-extract">"See the mountains kiss high heaven"<div class="source">Stanza 2</div></div>
 <p>The personification verb <strong>"kiss"</strong> projects human romance onto nature. Mountains touching the sky becomes an image of physical intimacy, hinting at the speaker's desire.</p>
 
-<div class="text-extract">"What is all this sweet work worth"<div class="source">Stanza 2</div></div>
-<p>The rhetorical question challenges the beloved: if all of nature embraces union, what is the point of its beauty if humans do not follow suit? <strong>"Sweet work"</strong> frames nature as deliberately crafted for love.</p>
+<div class="text-extract">"what are all these kissings worth"<div class="source">Stanza 2</div></div>
+<p>The rhetorical question challenges the beloved: if all of nature embraces union, what is the point of its beauty if humans do not follow suit? <strong>"Kissings"</strong> gathers every embrace in the poem into one word, so that the last line can ask for one more.</p>
 
 <div class="text-extract">"If thou kiss not me?"<div class="source">Stanza 2</div></div>
 <p>The blunt, monosyllabic ending contrasts with the flowing imagery above. The direct address <strong>"thou"</strong> and the simple demand strip away all poetic decoration - revealing raw, urgent desire beneath the philosophical argument.</p>
@@ -273,6 +281,8 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       id: 'aqa-lr-m3',
       title: "Porphyria's Lover - Robert Browning",
       duration: '45 min',
+      // 2 October 2026: the first line was quoted as "The rain set early in tonight"; AQA's
+      // anthology, the book students are given, prints "to-night".
       content: `
 <h2>Porphyria's Lover - Robert Browning</h2>
 
@@ -300,7 +310,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 
 <h3>Key Quotations &amp; Analysis</h3>
 
-<div class="text-extract">"The rain set early in tonight"<div class="source">Line 1</div></div>
+<div class="text-extract">"The rain set early in to-night"<div class="source">Line 1</div></div>
 <p>The <strong>pathetic fallacy</strong> of the storm externalises the speaker's inner turmoil. The mundane, conversational opening disguises the horror to come.</p>
 
 <div class="text-extract">"she shut the cold out and the storm"<div class="source">Line 7</div></div>
@@ -402,13 +412,25 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       id: 'aqa-lr-m4',
       title: 'Sonnet 29 - Elizabeth Barrett Browning',
       duration: '90 min',
+      // 2 October 2026: the quotations were checked against AQA's anthology, the book students
+      // are given. Several were not in the poem at all: "Thy sweetness steals as noiseless as
+      // a thief", "too near, too far", "What are the thoughts? - they are not thoughts, but
+      // sighs", "It were a grave offence to love thee less; / Yet it were also much to love
+      // thee more", "Subdued", "shadow-like", "Too warm" and "Renew thy presence!" (the poem
+      // has a semicolon), and "Anchor. Kite." is from Armitage's "Mother, any distance". The
+      // line-by-line analysis described lines the poem does not have, five line numbers were
+      // wrong, and the sestet's rhyme scheme was given as CDECDE (it is CDCDCD). All were
+      // rewritten from the poem's own lines. The context also said the couple fell in love
+      // without meeting and married later in Italy: Robert Browning visited her at Wimpole
+      // Street from May 1845, and they married in London in September 1846, a week before
+      // leaving for Italy.
       content: `
 <h2>Sonnet 29 - "I think of thee!" (Elizabeth Barrett Browning)</h2>
 
 <h3>Detailed Poet Context</h3>
 <p><strong>Elizabeth Barrett Browning (1806-1861)</strong> was one of the most celebrated poets of the Victorian era, yet her personal life was heavily constrained. Born into an aristocratic family, she suffered a spinal injury that left her partially paralysed and dependent on laudanum (opium). Her father, Edward Moulton-Barrett, was tyrannically controlling, forbidding all his children from marrying. Elizabeth's literary reputation grew internationally, but she remained confined at her family home in Wimpole Street, London.</p>
 
-<p>In 1845, poet <strong>Robert Browning</strong> wrote to her expressing admiration. Their relationship began through letters, conducted in secret from her father. For 18 months, they exchanged passionate correspondence, falling in love without ever meeting in person. When Elizabeth's father discovered the courtship, he was furious and threatened to disinherit her. In September 1846, at age 40, Elizabeth and Robert eloped to Italy, where they lived together and eventually married, away from her father's tyranny.</p>
+<p>In January 1845, the poet <strong>Robert Browning</strong> wrote to her expressing admiration. Their relationship began through letters, conducted in secret from her father, and from May 1845 he visited her at home in Wimpole Street. For twenty months they wrote to each other almost daily. In September 1846, at the age of 40, Elizabeth married Robert in secret in London, and a week later they left for Italy, away from her father's tyranny. Her father disinherited her and never spoke to her again.</p>
 
 <p><em>Sonnets from the Portuguese</em> (1850) is a sequence of 44 love sonnets disguising their autobiographical courtship. Even after publication, Barrett Browning claimed they were "translations from the Portuguese" - even a bold, published poet felt the need to mask female passion. Sonnet 29 captures the specific agony of their separation during the letter-writing phase.</p>
 
@@ -418,7 +440,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 <ul>
   <li><strong>Petrarchan sonnet:</strong> 14 lines with a clear <strong>octave</strong> (first 8 lines) and <strong>sestet</strong> (final 6 lines), turning at line 7-8.</li>
   <li>The <strong>volta</strong> (turn) shifts from passive thinking to active desire - from "I think of thee" to demanding his real presence.</li>
-  <li><strong>Exclamatory tone:</strong> Frequent exclamation marks ("I think of thee!", "Renew thy presence!") convey urgency and passion.</li>
+  <li><strong>Exclamatory tone:</strong> Exclamation marks ("I think of thee!", "Who art dearer, better!", "burst, shattered, everywhere!") convey urgency and passion.</li>
   <li><strong>Enjambment</strong> throughout suggests thoughts spilling over uncontrollably - the speaker cannot contain her feelings within neat lines.</li>
 </ul>
 
@@ -427,30 +449,24 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 <p>The octave presents the speaker trapped in endless thought about the beloved. The rhyme scheme (ABBAABBA) creates a closed feeling - like thoughts spiralling within a tight structure. The volta at lines 7-8 marks when the speaker demands a shift.</p>
 
 <p><strong>The Sestet (Lines 9-14): Release and Presence</strong></p>
-<p>The sestet shifts from abstract thought to physical presence. The final paradox shows that resolution is impossible: thought persists even when presence should eliminate it.</p>
+<p>The sestet shifts from abstract thought to physical presence. The final line answers the first: once he is near, she no longer needs to think of him.</p>
 
 <h3>Line-by-Line Analysis</h3>
-<p><strong>Lines 1-2:</strong> The exclamation establishes emotional intensity. <strong>"Subdued"</strong> suggests uncontrollable thoughts. They exist in a half-real state ("shadow-like").</p>
+<p><strong>Lines 1-4:</strong> The exclamation "I think of thee!" establishes emotional intensity. Her thoughts "twine and bud / About thee, as wild vines, about a tree", and put out "broad leaves" until "soon there's nought to see / Except the straggling green which hides the wood". The beloved is the <strong>tree</strong> (solid, rooted, real); her thoughts are <strong>wild vines</strong> that grow so thick they hide the man they grew around.</p>
 
-<p><strong>Line 3:</strong> The beloved's face invades her imagination uninvited. She is not in control of her own mind.</p>
+<p><strong>Lines 5-7:</strong> "Yet, O my palm-tree" turns to address him directly. The palm-tree is exotic and majestic, and she refuses a substitute for it: "I will not have my thoughts instead of thee / Who art dearer, better!"</p>
 
-<p><strong>Lines 4-5:</strong> Love is personified as a <strong>"thief"</strong> - it steals into the speaker without consent. <strong>"Noiseless"</strong> contrasts with the violation of having one's mind invaded.</p>
+<p><strong>Lines 7-11 (volta):</strong> "Rather, instantly / Renew thy presence" - the imperatives demand that he return. Like "a strong tree", he is to "Rustle thy boughs and set thy trunk all bare", shaking off the vines of thought, and let them "Drop heavily down, – burst, shattered, everywhere!" The violent verbs make his return a release.</p>
 
-<p><strong>Lines 6-8:</strong> Thoughts circle endlessly without progress. The beloved is a <strong>tree</strong> (solid, rooted, real), while the speaker's thoughts are <strong>wild vines</strong> (growing, tangling, obscuring). This extended metaphor reveals the speaker's fear: her thinking prevents her from seeing the real man.</p>
-
-<p><strong>Lines 9-10 (volta):</strong> The speaker questions the nature of her thoughts. She realizes that what she calls "thoughts" are not intellectual but emotional - <strong>"sighs"</strong> represent longing, desire, breath.</p>
-
-<p><strong>Lines 11-12:</strong> The speaker asks whether she loves "too much" - full of anxiety. <strong>"Too warm"</strong> suggests her passion is excessive (a Victorian concern). She has planted him deep in her heart like a tree rooted in soil.</p>
-
-<p><strong>Lines 13-14 (conclusion):</strong> This final paradox captures her impossible position. She cannot love him less (it would be wrong), yet loving him more is dangerous. She is trapped between two impossibilities.</p>
+<p><strong>Lines 12-14 (conclusion):</strong> His presence is felt through the senses: "this deep joy to see and hear thee / And breathe within thy shadow a new air". The final line, "I do not think of thee – I am too near thee", reverses the opening: close to him, she has no need to think of him.</p>
 
 <h3>Technique Identification &amp; Effect Analysis</h3>
 <table border="1">
 <tr><th>Technique</th><th>Example</th><th>Effect</th></tr>
 <tr><td><strong>Exclamation</strong></td><td>"I think of thee!"</td><td>Establishes urgency and passion. The speaker cannot contain her feelings.</td></tr>
 <tr><td><strong>Extended Metaphor</strong></td><td>"Wild vines, about a tree"</td><td>Shows how thoughts obscure the real beloved. Beautiful but suffocating.</td></tr>
-<tr><td><strong>Personification</strong></td><td>"Thy sweetness steals as noiseless as a thief"</td><td>Love is an invasion - something that enters without permission.</td></tr>
-<tr><td><strong>Paradox</strong></td><td>"too near, too far"</td><td>Captures the contradiction of long-distance love.</td></tr>
+<tr><td><strong>Imperative</strong></td><td>"Renew thy presence"</td><td>She commands rather than waits: desire spoken with authority, unusual for a Victorian woman.</td></tr>
+<tr><td><strong>Paradox</strong></td><td>"I do not think of thee – I am too near thee"</td><td>The last line reverses the first: nearness makes thought unnecessary.</td></tr>
 <tr><td><strong>Volta (Petrarchan)</strong></td><td>Lines 7-8 shift</td><td>Marks turn from passive longing to active demand for presence.</td></tr>
 <tr><td><strong>Enjambment</strong></td><td>Lines running across breaks</td><td>Thoughts spill uncontrollably. Form enacts meaning.</td></tr>
 </table>
@@ -468,50 +484,50 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 <div class="text-extract">"I think of thee!"<div class="source">Line 1</div></div>
 <p>The opening exclamation establishes the poem's <strong>urgency</strong>. The direct address and exclamation mark convey passion that cannot be restrained.</p>
 
-<div class="text-extract">"my thoughts do twine and bud"<div class="source">Line 2</div></div>
+<div class="text-extract">"my thoughts do twine and bud"<div class="source">Line 1</div></div>
 <p>The <strong>vine metaphor</strong> presents thoughts as living, growing things. <strong>"Twine"</strong> suggests they are clinging and entangling, while <strong>"bud"</strong> implies something beautiful but not yet bloomed.</p>
 
-<div class="text-extract">"wild vines, about a tree"<div class="source">Line 3</div></div>
+<div class="text-extract">"wild vines, about a tree"<div class="source">Line 2</div></div>
 <p>The beloved is the <strong>tree</strong> - strong, rooted, real - while the speaker's thoughts are "wild vines" that obscure him. The extended metaphor shows that excessive thinking <strong>hides</strong> the real person.</p>
 
-<div class="text-extract">"too near, too far"<div class="source">Line 4</div></div>
-<p>This <strong>paradox</strong> captures the frustration of the relationship: her thoughts are constantly with him (too near) yet he is physically absent (too far).</p>
+<div class="text-extract">"the straggling green which hides the wood"<div class="source">Line 4</div></div>
+<p>The vines of thought have grown so thick that they <strong>hide</strong> the tree: thinking about him has come to stand in for him. <strong>"Straggling"</strong> makes the growth untidy and unwanted.</p>
 
-<div class="text-extract">"Renew thy presence"<div class="source">Line 7</div></div>
+<div class="text-extract">"Renew thy presence"<div class="source">Line 8</div></div>
 <p>The imperative <strong>"Renew"</strong> marks the volta. The speaker shifts from passive longing to active demand - she wants his real, physical presence, not a mental substitute.</p>
 
-<div class="text-extract">"burst, shattered, everywhere!"<div class="source">Line 8</div></div>
-<p>Three violent verbs in rapid succession. The vines of thought are destroyed by the beloved's actual arrival - reality is more powerful than imagination. The violence suggests overwhelming, almost ecstatic release.</p>
+<div class="text-extract">"burst, shattered, everywhere!"<div class="source">Line 11</div></div>
+<p>Two violent verbs and a sweeping adverb in rapid succession. The vines of thought are destroyed by the beloved's actual arrival - reality is more powerful than imagination. The violence suggests overwhelming, almost ecstatic release.</p>
 
-<div class="text-extract">"I do not think of thee"<div class="source">Line 11</div></div>
+<div class="text-extract">"I do not think of thee"<div class="source">Line 14</div></div>
 <p>A dramatic reversal of the opening. The speaker now rejects thought in favour of <strong>presence</strong>. This structural contrast between first and final lines shows emotional progression.</p>
 
-<div class="text-extract">"strong tree"<div class="source">Line 12</div></div>
+<div class="text-extract">"strong tree"<div class="source">Line 8</div></div>
 <p>The beloved as <strong>"strong tree"</strong> conveys stability, reliability and rootedness. Barrett Browning reverses typical Victorian gender roles - the man is the passive, grounding presence while the woman is the active, desiring voice.</p>
 
 <h3>Grade 9 Model Paragraphs</h3>
 
 <p><strong>Model Paragraph 1: Technique &amp; Effect</strong></p>
-<p>"Barrett Browning uses the extended metaphor of wild vines growing around a tree to convey how the speaker's obsessive thoughts actually obscure the real beloved. The vines begin positively ('twine and bud'), suggesting something beautiful and organic. However, by line 3, they become problematic: they are 'wild' and 'about a tree,' implying that the speaker's thoughts entangle and hide the beloved rather than helping her know him. This metaphor captures a psychological reality: when we think too much about someone, our mental image becomes distorted and divorced from reality. The vines represent the gap between imagined love and physical presence, which is the poem's central tension. The technique is effective because it shows rather than tells - the reader understands the speaker's frustration through the metaphor itself."</p>
+<p>"Barrett Browning uses the extended metaphor of wild vines growing around a tree to convey how the speaker's obsessive thoughts actually obscure the real beloved. The vines begin positively ('twine and bud'), suggesting something beautiful and organic. However, the growth soon becomes a problem: the vines are 'wild', and they put out leaves until 'there's nought to see / Except the straggling green which hides the wood', implying that the speaker's thoughts entangle and hide the beloved rather than helping her know him. This metaphor captures a psychological reality: when we think too much about someone, our mental image becomes distorted and divorced from reality. The vines represent the gap between imagined love and physical presence, which is the poem's central tension. The technique is effective because it shows rather than tells - the reader understands the speaker's frustration through the metaphor itself."</p>
 
 <p><strong>Model Paragraph 2: Context &amp; Interpretation</strong></p>
-<p>"Understanding Barrett Browning's autobiographical context greatly enriches the poem's meaning. She and Robert Browning conducted their entire courtship through letters because her father forbade marriage. Sonnet 29 is not an abstract meditation but a desperate cry from a woman separated from her beloved by circumstances beyond her control. The 'shadow-like' thoughts and wild vines express real anguish. The volta, where the speaker demands 'Renew thy presence,' is not merely a formal turn but an emotional plea for the physical reality of their relationship. Knowing that the couple eventually eloped to Italy makes the final paradox ('It were also much to love thee more') painfully real - she cannot intensify her love beyond what it is, yet they cannot escape their separation without dramatic action. The poem is therefore not just about longing but about the transgressive nature of female desire in the Victorian period."</p>
+<p>"Understanding Barrett Browning's autobiographical context greatly enriches the poem's meaning. She and Robert Browning conducted their courtship largely through letters, in secret, because her father forbade marriage. Sonnet 29 is not an abstract meditation but a desperate cry from a woman separated from her beloved by circumstances beyond her control. The 'wild vines' and the 'straggling green' express real frustration. The volta, where the speaker demands 'Renew thy presence,' is not merely a formal turn but an emotional plea for the physical reality of their relationship. Knowing that the couple eventually eloped to Italy gives the final line ('I do not think of thee – I am too near thee') its force: the nearness she imagines was something they could reach only by dramatic action. The poem is therefore not just about longing but about the transgressive nature of female desire in the Victorian period."</p>
 
 <p><strong>Model Paragraph 3: Form &amp; Meaning</strong></p>
-<p>"The Petrarchan sonnet form shapes the poem's meaning. The octave's tight rhyme scheme (ABBAABBA) creates an enclosed feeling that mirrors the speaker's mental entrapment. She circles within the octave's structure, her thoughts returning again and again like the rhyme scheme's returns. The volta at lines 7-8 marks a formal and emotional shift. The sestet's different rhyme pattern (CDECDE) opens out slightly, suggesting movement towards resolution. Yet the final paradox shows that resolution is impossible. The form enacts meaning: the speaker remains trapped even as the sestet attempts escape. This makes Barrett Browning's refusal of resolution more powerful. This is not a love story with an ending but an ongoing condition."</p>
+<p>"The Petrarchan sonnet form shapes the poem's meaning. The octave's tight rhyme scheme (ABBAABBA) creates an enclosed feeling that mirrors the speaker's mental entrapment. She circles within the octave's structure, her thoughts returning again and again like the rhyme scheme's returns. The volta at lines 7-8 marks a formal and emotional shift. The sestet's different rhyme pattern (CDCDCD) opens out, and the vines come down: 'burst, shattered, everywhere!' The final line answers the first, as 'I think of thee!' becomes 'I do not think of thee – I am too near thee'. Yet the reunion is imagined, a command not yet obeyed, so the resolution exists only in the speaker's wish. The form enacts meaning: the octave traps her in thought, and the sestet imagines the escape."</p>
 
 <h3>Key Quotation Bank for Essays</h3>
 <ul>
   <li>"I think of thee!" - Opening passion and urgency</li>
   <li>"my thoughts do twine and bud" - Thoughts as living, organic things</li>
   <li>"wild vines, about a tree" - Central metaphor of thoughts obscuring reality</li>
-  <li>"Thy sweetness steals as noiseless as a thief" - Love as invasion</li>
-  <li>"What are the thoughts? - they are not thoughts, but sighs" - Volta: thoughts are emotional, not intellectual</li>
+  <li>"Put out broad leaves, and soon there's nought to see" - The thoughts grow until they hide him</li>
+  <li>"I will not have my thoughts instead of thee" - She refuses a substitute for him</li>
   <li>"I do not think of thee" - Paradox: presence eliminates thought</li>
-  <li>"It were a grave offence to love thee less; / Yet it were also much to love thee more" - Final paradox</li>
+  <li>"Who art dearer, better!" - He is worth more than any thought of him</li>
   <li>"Renew thy presence" - Active demand for physical presence (marks volta)</li>
-  <li>"too near, too far" - Paradox of long-distance love</li>
-  <li>"Anchor. Kite." - (from sonnet sequence) metaphor for relationship dynamics</li>
+  <li>"Drop heavily down, – burst, shattered, everywhere!" - Violent release when he returns</li>
+  <li>"And breathe within thy shadow a new air" - His presence as new life</li>
 </ul>
 
 <h3>Comparison Links</h3>
@@ -907,17 +923,27 @@ export const aqaLoveRelationshipsCourse: CourseData = {
       id: 'aqa-lr-m7',
       title: "The Farmer's Bride - Charlotte Mew",
       duration: '45 min',
+      // 2 October 2026: the quotations were checked against AQA's anthology, the book students
+      // are given. Four in the quotation bank are not in the poem ("Three Sundays - that's
+      // nothing at all.", "like a mouse / When she first came", "like a leveret caught in a
+      // snare", "And she'll not come down"); three quotations were placed in the wrong
+      // stanza; the similes were listed out of order (the poem has hare, then mouse, then
+      // leveret); and model paragraph 3 quoted the last line before the two lines that come
+      // before it. "Not near, not near!" was called the bride's one utterance, but it is what
+      // "her eyes beseech": she does not say it. The dialect examples were "'Tis" and "maid",
+      // which are not dialect. The context dated the poem 1916; it first appeared in The Nation
+      // in 1912, and 1916 is the year of the collection named after it.
       content: `
 <h2>The Farmer's Bride - Charlotte Mew</h2>
 
 <h3>Context</h3>
-<p>Published in 1916, this poem is by <strong>Charlotte Mew</strong>, a poet who lived a largely isolated life and struggled with her mental health and sexuality. The poem is a <strong>dramatic monologue</strong> spoken by a farmer whose young bride has become terrified of him and all men. Set in a rural community, it reflects <strong>Victorian and Edwardian attitudes</strong> to marriage - women had limited rights and were often treated as property. The bride's fear may suggest <strong>trauma</strong>, possibly sexual, though Mew leaves this ambiguous.</p>
+<p>This poem by <strong>Charlotte Mew</strong>, a poet who lived a largely isolated life and struggled with her mental health and sexuality, first appeared in 1912 and gave its title to her first collection in 1916. The poem is a <strong>dramatic monologue</strong> spoken by a farmer whose young bride has become terrified of him and all men. Set in a rural community, it reflects <strong>Victorian and Edwardian attitudes</strong> to marriage - women had limited rights and were often treated as property. The bride's fear may suggest <strong>trauma</strong>, possibly sexual, though Mew leaves this ambiguous.</p>
 
 <h3>Form &amp; Structure</h3>
 <ul>
   <li><strong>Dramatic monologue:</strong> The farmer speaks, but the bride is <strong>voiceless</strong> throughout - her silence mirrors her powerlessness.</li>
   <li><strong>Irregular stanza lengths</strong> and shifting rhythms reflect the farmer's unstable emotional state - he swings between sympathy, frustration and desire.</li>
-  <li><strong>Ballad-like elements:</strong> The storytelling quality and rural dialect ("'Tis", "maid") give it a folk tradition feel, grounding it in rural community life.</li>
+  <li><strong>Ballad-like elements:</strong> The storytelling quality and rural dialect ("When us was wed", "she runned away", "'Out 'mong the sheep, her be'") give it a folk tradition feel, grounding it in rural community life.</li>
   <li>The final stanza shortens dramatically and becomes increasingly <strong>urgent and disturbing</strong>, ending with a desperate exclamation.</li>
 </ul>
 
@@ -938,17 +964,17 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 <div class="text-extract">"Too young maybe"<div class="source">Stanza 1</div></div>
 <p>A rare moment of <strong>self-awareness</strong>. The caesura and qualifier "maybe" suggest guilt, but the farmer quickly moves past it - he acknowledges the problem without taking responsibility.</p>
 
-<div class="text-extract">"like a mouse"<div class="source">Stanza 1</div></div>
-<p>The first of several <strong>animal similes</strong>. A mouse is small, frightened, prey. The bride is being dehumanised - seen as a creature to be caught rather than a person to be understood.</p>
+<div class="text-extract">"like a mouse"<div class="source">Stanza 3</div></div>
+<p>One of several <strong>animal similes</strong>, after "flying like a hare" in stanza 2. A mouse is small, frightened, prey. The bride is being dehumanised - seen as a creature to be caught rather than a person to be understood.</p>
 
 <div class="text-extract">"We caught her, fetched her home"<div class="source">Stanza 2</div></div>
 <p>The collective <strong>"we"</strong> is chilling - the whole community helped recapture her. <strong>"Caught"</strong> and <strong>"fetched"</strong> are verbs used for animals, reinforcing her dehumanisation and the community's complicity.</p>
 
-<div class="text-extract">"she sleeps up in the attic there"<div class="source">Stanza 3</div></div>
+<div class="text-extract">"She sleeps up in the attic there"<div class="source">Final stanza</div></div>
 <p>The bride has been physically <strong>separated</strong> within the home. The attic is the highest, most remote room - she has retreated as far from the farmer as possible while remaining trapped.</p>
 
-<div class="text-extract">"Not near, not near!"<div class="source">Stanza 4</div></div>
-<p>The bride's one reported utterance - and it is a <strong>refusal</strong>. The repetition and exclamation convey terror. Her voice, though brief, is the poem's most powerful moment of resistance.</p>
+<div class="text-extract">"'Not near, not near!' her eyes beseech"<div class="source">Stanza 3</div></div>
+<p>A <strong>refusal</strong>, but not a spoken one: these are the words the farmer reads in her eyes, and he admits "I've hardly heard her speak at all". The repetition and exclamation convey terror. Even her one moment of resistance reaches us only through his interpretation.</p>
 
 <div class="text-extract">"her eyes, her hair, her hair!"<div class="source">Final stanza</div></div>
 <p>The repetition of <strong>"her hair"</strong> is deeply disturbing. The farmer's focus narrows to physical features, his language fragmenting with <strong>escalating desire</strong>. The exclamation mark suggests he is losing control.</p>
@@ -966,26 +992,26 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 <h3>Grade 9 Model Paragraphs</h3>
 
 <p><strong>Model Paragraph 1: Dehumanisation Through Animal Imagery</strong></p>
-<p>"Mew's repeated animal similes function as a deliberate dehumanisation of the bride. She is compared to a mouse, then a hare, then a leveret - all small, prey animals hunted by predators. By using these comparisons, Mew reveals the farmer's perception: he does not see a woman but a creature to be caught, possessed and controlled. The collective verb 'We caught her, fetched her home' reinforces this - the community participated in recapturing her, treating her as property rather than a person. The similes are not merely decorative but structurally central to understanding the power dynamic. The farmer's language strips away the bride's humanity, and by extension, her agency and dignity. By the final stanza, when his language fragments into exclamatory fragments about 'the soft young down,' the dehumanisation is complete - she has become merely an object of desire. Mew's genius is in using the farmer's own language and perspective to condemn him."</p>
+<p>"Mew's repeated animal similes function as a deliberate dehumanisation of the bride. She is compared to a hare, then a mouse, then a leveret - all small, prey animals hunted by predators. By using these comparisons, Mew reveals the farmer's perception: he does not see a woman but a creature to be caught, possessed and controlled. The collective verb 'We caught her, fetched her home' reinforces this - the community participated in recapturing her, treating her as property rather than a person. The similes are not merely decorative but structurally central to understanding the power dynamic. The farmer's language strips away the bride's humanity, and by extension, her agency and dignity. By the final stanza, when his language fragments into exclamatory fragments about 'the soft young down,' the dehumanisation is complete - she has become merely an object of desire. Mew's genius is in using the farmer's own language and perspective to condemn him."</p>
 
 <p><strong>Model Paragraph 2: Voicelessness as Powerlessness</strong></p>
-<p>"The bride's complete voicelessness in the poem is structurally significant. She is the subject but never the speaker - we never hear her perspective, her feelings, or her voice except for the single reported cry 'Not near, not near!' This linguistic absence mirrors her social and marital powerlessness. She is discussed, observed, pursued, but never given agency through speech. Her only moment of resistance - the denial 'Not near!' - is reported by the farmer, filtered through his perspective. Even her refusal is not directly heard but relayed to us. This structural silencing reflects the historical reality of women in marriage: they were possessed legally and socially, stripped of identity, and denied voice. The poem's power lies in its form reflecting its meaning - the bride's silence is not a stylistic choice but a depiction of oppression. A Grade 9 response recognises that Mew's choice to silence the bride is a political statement about women's powerlessness."</p>
+<p>"The bride's complete voicelessness in the poem is structurally significant. She is the subject but never the speaker - we never hear her perspective, her feelings, or her voice: even 'Not near, not near!' is what 'her eyes beseech', words the farmer reads in her look, and he admits, 'I've hardly heard her speak at all.' This linguistic absence mirrors her social and marital powerlessness. She is discussed, observed, pursued, but never given agency through speech. Her only moment of resistance is not spoken at all: it is the farmer's reading of her eyes, filtered through his perspective. This structural silencing reflects the historical reality of women in marriage: they were possessed legally and socially, stripped of identity, and denied voice. The poem's power lies in its form reflecting its meaning - the bride's silence is not a stylistic choice but a depiction of oppression. A Grade 9 response recognises that Mew's choice to silence the bride is a political statement about women's powerlessness."</p>
 
 <p><strong>Model Paragraph 3: Escalating Danger and Fragmentation</strong></p>
-<p>"The final stanza represents a psychological and linguistic collapse. The farmer's language disintegrates into fragmented exclamations: 'her eyes, her hair, her hair! / Oh! my God! the down, the soft young down.' The repeated 'hair' and the escalating intensity suggest his control is slipping, his desire spiralling out of control. The repetition and exclamatory tone convey mounting sexual intensity and implicit threat. The phrase 'soft young down' - suggesting the bride's youth and vulnerability - combined with his fragmenting language, creates an atmosphere of imminent violence. Mew leaves the poem unresolved: we do not know what the farmer will do next, but the linguistic breakdown suggests he may be on the verge of acting on his desire. The ambiguity is part of the horror - the poem ends not with closure but with a sense of impending danger. This is not a love story but a tragedy of possession and potential violence."</p>
+<p>"The final stanza represents a psychological and linguistic collapse. The farmer's language disintegrates into fragmented exclamations: 'Oh! my God! the down, / The soft young down of her, the brown, / The brown of her – her eyes, her hair, her hair!' The repeated 'hair' and the escalating intensity suggest his control is slipping, his desire spiralling out of control. The repetition and exclamatory tone convey mounting sexual intensity and implicit threat. The phrase 'soft young down' - suggesting the bride's youth and vulnerability - combined with his fragmenting language, creates an atmosphere of imminent violence. Mew leaves the poem unresolved: we do not know what the farmer will do next, but the linguistic breakdown suggests he may be on the verge of acting on his desire. The ambiguity is part of the horror - the poem ends not with closure but with a sense of impending danger. This is not a love story but a tragedy of possession and potential violence."</p>
 
 <h3>Key Quotation Bank for Essays</h3>
 <ul>
-  <li>"Three Sundays - that's nothing at all." - Acceptance of the brief courtship period</li>
-  <li>"'Chose' her like a commodity" - Opening verb reveals possession</li>
-  <li>"like a mouse / When she first came" - Animal simile; dehumanisation begins</li>
+  <li>"Too young maybe – but more's to do / At harvest-time than bide and woo." - The farm comes before courtship</li>
+  <li>"Three Summers since I chose a maid" - Opening verb reveals possession</li>
+  <li>"She does the work about the house / As well as most, but like a mouse" - Animal simile; valued for her work</li>
   <li>"We caught her, fetched her home" - Collective hunting metaphor; community complicity</li>
   <li>"her eyes, her hair, her hair!" - Repetition; escalating fragmentation</li>
-  <li>"Not near, not near!" - Bride's only reported utterance; refusal and terror</li>
-  <li>"she sleeps up in the attic there" - Physical separation; retreat and isolation</li>
-  <li>"like a leveret caught in a snare" - Trapped animal; helplessness</li>
+  <li>"'Not near, not near!' her eyes beseech" - Refusal and terror, read in her eyes, not spoken</li>
+  <li>"She sleeps up in the attic there" - Physical separation; retreat and isolation</li>
+  <li>"Shy as a leveret, swift as he" - Wild, timid young creature</li>
   <li>"Oh! my God! the down, the soft young down" - Escalating sexual intensity; danger</li>
-  <li>"And she'll not come down" - Bride's resistance continues; power dynamic unresolved</li>
+  <li>"'Tis but a stair / Betwixt us." - One stair between them; the threat becomes physical</li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Feeling sympathy only for the farmer because he narrates the poem. Remember that the bride is <strong>voiceless and trapped</strong>. The strongest responses interrogate the farmer's perspective and consider what the poem might look like from her point of view.</div>
@@ -1002,7 +1028,7 @@ export const aqaLoveRelationshipsCourse: CourseData = {
           ],
           correct: 1,
           explanation:
-            "The repeated animal similes (mouse, hare, leveret) dehumanise the bride, reducing her to a frightened creature. This reflects the farmer's inability to see her as a full person with her own agency.",
+            "The repeated animal similes (hare, mouse, leveret) dehumanise the bride, reducing her to a frightened creature. This reflects the farmer's inability to see her as a full person with her own agency.",
         },
         {
           id: 'aqa-lr-m7-q2',

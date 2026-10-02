@@ -173,7 +173,9 @@ export const quoteDetectiveExtra: QuoteEntryExtra[] = [
     text: 'London',
   },
   { quote: "The mind-forg'd manacles I hear.", text: 'London' },
-  { quote: 'Every blackning Church appalls.', text: 'London' },
+  // 2 October 2026: was "blackning", Blake's engraved spelling, which no exam board prints;
+  // Edexcel and Eduqas print "black'ning Church", AQA "black'ning church".
+  { quote: "Every black'ning Church appalls.", text: 'London' },
   {
     quote: 'Suddenly he awoke and was running, raw in raw-seamed hot khaki.',
     text: 'Bayonet Charge',

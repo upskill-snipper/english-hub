@@ -283,7 +283,9 @@ export const poetryLoveRelationshipsLessons: LessonPlan[] = [
           "What is the overall mood of 'When We Two Parted'? How does Byron create this mood through language?",
         lines: 5,
         modelAnswer:
-          "The overall mood is one of grief, betrayal, and silent suffering. Byron creates this through the semantic field of death and coldness: 'pale grew thy cheek and cold' associates the beloved with a corpse, while 'a knell to mine ear' compares hearing her name to a funeral bell. The repeated motif of 'silence and tears' in the opening and closing stanzas creates a mood of suppressed emotion, as though the pain is too great to articulate.",
+          // 2 October 2026: "a knell to mine ear" is the reading most websites carry; AQA's
+          // anthology, the book students are given, prints "in".
+          "The overall mood is one of grief, betrayal, and silent suffering. Byron creates this through the semantic field of death and coldness: 'pale grew thy cheek and cold' associates the beloved with a corpse, while 'a knell in mine ear' compares hearing her name to a funeral bell. The repeated motif of 'silence and tears' in the opening and closing stanzas creates a mood of suppressed emotion, as though the pain is too great to articulate.",
         marks: 4,
       },
       {
@@ -307,7 +309,8 @@ export const poetryLoveRelationshipsLessons: LessonPlan[] = [
           "Compare how Byron and Shelley present the speakers' attitudes to love. Who suffers more?",
         lines: 6,
         modelAnswer:
-          "Byron's speaker suffers from love that has been lost and betrayed - the pain is retrospective and tinged with bitterness ('they name thee before me, / A knell to mine ear'). Shelley's speaker suffers from love that is unrequited - the pain is present and driven by frustrated desire. Arguably Byron's speaker suffers more deeply because the loss is permanent and involves betrayal, whereas Shelley's speaker still has hope. However, both are united by their powerlessness: neither can control whether they are loved in return.",
+          // 2 October 2026: "A knell to mine ear" corrected to AQA's "A knell in mine ear".
+          "Byron's speaker suffers from love that has been lost and betrayed - the pain is retrospective and tinged with bitterness ('they name thee before me, / A knell in mine ear'). Shelley's speaker suffers from love that is unrequited - the pain is present and driven by frustrated desire. Arguably Byron's speaker suffers more deeply because the loss is permanent and involves betrayal, whereas Shelley's speaker still has hope. However, both are united by their powerlessness: neither can control whether they are loved in return.",
         marks: 5,
       },
       {
@@ -389,7 +392,9 @@ export const poetryLoveRelationshipsLessons: LessonPlan[] = [
       title: 'Would You Trust This Speaker? First Impressions',
       duration: '8 minutes',
       instructions:
-        "Display the opening five lines of 'Porphyria's Lover' ('The rain set in early tonight...') without title or poet. Students read silently and answer: 'What kind of person is speaking? What clues does the language give you?' Students share predictions on whiteboards. Then reveal that this speaker murders the woman he loves. Discuss: can we trust what a speaker tells us in a poem? Introduce the concept of the dramatic monologue and the unreliable narrator.",
+        // 2 October 2026: the first line was quoted as "The rain set in early tonight"; AQA's
+        // anthology prints "The rain set early in to-night".
+        "Display the opening five lines of 'Porphyria's Lover' ('The rain set early in to-night...') without title or poet. Students read silently and answer: 'What kind of person is speaking? What clues does the language give you?' Students share predictions on whiteboards. Then reveal that this speaker murders the woman he loves. Discuss: can we trust what a speaker tells us in a poem? Introduce the concept of the dramatic monologue and the unreliable narrator.",
       differentiation: {
         support:
           "Provide three guided questions to scaffold response: 'What is the setting? What is the mood? What does the speaker seem to be feeling?'",
@@ -500,7 +505,9 @@ export const poetryLoveRelationshipsLessons: LessonPlan[] = [
           'Compare how the two speakers objectify the women in these poems. Use quotations from both.',
         lines: 6,
         modelAnswer:
-          "Both speakers reduce women to objects they can control. In 'Porphyria's Lover', the speaker describes her after death as having 'smooth white shoulder bare' and 'her smiling rosy little head' - she becomes a beautiful doll to be admired. In 'My Last Duchess', the Duke has literally turned the Duchess into a painting: 'That's my last Duchess painted on the wall, / Looking as if she were alive.' For both speakers, the women are only satisfactory when silenced and still - love is not about connection but possession.",
+          // 2 October 2026: "her smiling rosy little head" corrected to the poem's "The smiling rosy
+          // little head".
+          "Both speakers reduce women to objects they can control. In 'Porphyria's Lover', the speaker describes her after death as having 'smooth white shoulder bare' and 'the smiling rosy little head' - she becomes a beautiful doll to be admired. In 'My Last Duchess', the Duke has literally turned the Duchess into a painting: 'That's my last Duchess painted on the wall, / Looking as if she were alive.' For both speakers, the women are only satisfactory when silenced and still - love is not about connection but possession.",
         marks: 5,
       },
       {

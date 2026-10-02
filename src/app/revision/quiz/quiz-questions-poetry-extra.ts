@@ -58,8 +58,9 @@ export const poetryExtraQuestions: QuizQuestion[] = [
       'In Blake\'s "London", the repetition of "every" in lines such as "In every cry of every Man" is an example of which technique?',
     options: ['Volta', 'Anaphora', 'Caesura', 'Sibilance'],
     correctIndex: 1,
+    // 2 October 2026: "every Infant" is not AQA's text, which prints "every infant's cry".
     explanation:
-      'Anaphora is the repetition of a word at the start of successive phrases or clauses. Blake hammers "every" through stanza two ("every cry…every Infant…every voice…every ban") to suggest that suffering in London is universal and inescapable, reinforcing his Romantic critique of institutional oppression (AO2).',
+      'Anaphora is the repetition of a word at the start of successive phrases or clauses. Blake hammers "every" through stanza two ("every cry…every infant\'s cry…every voice…every ban") to suggest that suffering in London is universal and inescapable, reinforcing his Romantic critique of institutional oppression (AO2).',
     boards: ['aqa'],
   },
   {
@@ -398,8 +399,10 @@ export const poetryExtraQuestions: QuizQuestion[] = [
       'To mourn a lost lover',
     ],
     correctIndex: 1,
+    // 2 October 2026: "all this sweet work" is the version poets.org carries; AQA's anthology,
+    // the book students are given, prints "what are all these kissings worth" and "Heaven".
     explanation:
-      'The poem is a witty seduction: if "fountains mingle with the river" and "the winds of heaven mix for ever", what worth is "all this sweet work" if the beloved will not kiss him? Shelley uses natural law as rhetorical proof, ending with an unanswered rhetorical question (AO2).',
+      'The poem is a witty seduction: if "fountains mingle with the river" and "the winds of Heaven mix for ever", what are "all these kissings" worth if the beloved will not kiss him? Shelley uses natural law as rhetorical proof, ending with an unanswered rhetorical question (AO2).',
     boards: ['aqa'],
   },
   {
@@ -552,8 +555,10 @@ export const poetryExtraQuestions: QuizQuestion[] = [
       'It moves into hopeful future tense',
     ],
     correctIndex: 1,
+    // 2 October 2026: "grayish" is the Pearson Edexcel anthology's spelling; AQA's prints
+    // "greyish".
     explanation:
-      'The poem cycles back to the opening scene, but now distilled into a "lesson". The bleak pond and "tree, / And a pond edged with grayish leaves" become a fixed image of betrayal-Hardy uses circular structure to suggest the experience has shaped his whole worldview (AO2).',
+      'The poem cycles back to the opening scene, but now distilled into a "lesson". The bleak pond and "tree, / And a pond edged with greyish leaves" become a fixed image of betrayal-Hardy uses circular structure to suggest the experience has shaped his whole worldview (AO2).',
     boards: ['aqa'],
   },
   {

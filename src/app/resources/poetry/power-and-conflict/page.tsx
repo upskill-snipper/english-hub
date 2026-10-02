@@ -652,13 +652,15 @@ export default function PowerAndConflictPage() {
                     technique="Tricolon / characterisation"
                     analysis="The three facial expressions ('frown,' 'wrinkled lip,' 'sneer') characterise Ozymandias as cruel and tyrannical. Even in ruin, his arrogance is preserved. The phrase 'cold command' suggests power exercised without compassion."
                   />
+                  {/* 2 October 2026: AQA's anthology prints "works" and "wreck" in lower
+                      case; these two quotations had the capitals most websites carry. */}
                   <Quote
-                    text="Look on my Works, ye Mighty, and despair!"
+                    text="Look on my works, ye Mighty, and despair!"
                     technique="Imperative / dramatic irony"
                     analysis="Ozymandias commands other rulers to admire his achievements, but the dramatic irony is that nothing remains. The imperative 'Look' and 'despair' now carry an unintended meaning: despair because even the greatest power is impermanent."
                   />
                   <Quote
-                    text="Nothing beside remains. Round the decay / Of that colossal Wreck, boundless and bare"
+                    text="Nothing beside remains. Round the decay / Of that colossal wreck, boundless and bare"
                     technique="Alliteration / juxtaposition"
                     analysis="The blunt declarative 'Nothing beside remains' delivers the poem's central message with devastating simplicity. The alliteration of 'boundless and bare' emphasises the vast emptiness of the desert, contrasting with Ozymandias's boastful claims."
                   />
@@ -724,17 +726,24 @@ export default function PowerAndConflictPage() {
                   poem is structured as a walk through London, with each stanza presenting a new
                   scene of misery. The use of first person (&ldquo;I wander&rdquo;) makes the
                   speaker a direct witness, increasing authenticity. The repetition of
-                  &ldquo;every&rdquo; and &ldquo;charter&apos;d&rdquo; creates a sense of universal,
+                  &ldquo;every&rdquo; and &ldquo;chartered&rdquo; creates a sense of universal,
                   inescapable oppression.
                 </p>
               </SubSection>
 
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
+                  {/* Checked on 2 October 2026 against AQA's anthology, the book students
+                      are given (Past and present: poetry anthology, Version 1.0 June 2015,
+                      p. 27), which these quotations follow. From 26 September they followed
+                      poets.org, Blake's engraved spelling (thro', charter'd, mind-forg'd,
+                      blackning, with capitals on Chimney-sweeper's, Church and Infant's).
+                      AQA modernises "through", "chartered" and "mind-forged", keeps
+                      "black'ning" and prints those nouns in lower case. */}
                   <Quote
-                    text="I wander thro' each charter'd street, / Near where the charter'd Thames does flow"
+                    text="I wander through each chartered street, / Near where the chartered Thames does flow"
                     technique="Repetition / political language"
-                    analysis="The repetition of 'charter'd' is deeply ironic: charters supposedly grant freedoms, but here they represent restriction and control. Even the river Thames, a natural feature, has been claimed and controlled by those in power."
+                    analysis="The repetition of 'chartered' is deeply ironic: charters supposedly grant freedoms, but here they represent restriction and control. Even the river Thames, a natural feature, has been claimed and controlled by those in power."
                   />
                   <Quote
                     text="Marks of weakness, marks of woe"
@@ -742,21 +751,17 @@ export default function PowerAndConflictPage() {
                     analysis="The repetition of 'marks' suggests both visible signs of suffering and permanent stains or scars. The parallel structure creates a relentless catalogue of misery that feels unavoidable."
                   />
                   <Quote
-                    text="The mind-forg'd manacles"
+                    text="The mind-forged manacles"
                     technique="Metaphor / compound adjective"
-                    analysis="One of Blake's most powerful images: the people are mentally imprisoned, not just physically oppressed. 'Mind-forg'd' suggests that people have been conditioned to accept their oppression, making the chains psychological as well as social."
+                    analysis="One of Blake's most powerful images: the people are mentally imprisoned, not just physically oppressed. 'Mind-forged' suggests that people have been conditioned to accept their oppression, making the chains psychological as well as social."
                   />
-                  {/* Checked on 26 September 2026 against poets.org, whose spelling
-                      this section follows (thro', charter'd, mind-forg'd, blackning).
-                      Two possessive apostrophes, here and in the next quotation, had
-                      been dropped; the AQA anthology prints both too. */}
                   <Quote
-                    text="How the Chimney-sweeper's cry / Every blackning Church appalls"
+                    text="How the chimney-sweeper's cry / Every black'ning church appalls"
                     technique="Juxtaposition / symbolism"
-                    analysis="Blake juxtaposes the suffering of child chimney sweepers with the Church, which should protect the vulnerable but instead ignores their plight. 'Blackning' suggests both the soot and moral corruption. 'Appalls' means both to horrify and, literally, to make pale (like a funeral pall)."
+                    analysis="Blake juxtaposes the suffering of child chimney sweepers with the Church, which should protect the vulnerable but instead ignores their plight. 'Black'ning' suggests both the soot and moral corruption. 'Appalls' means both to horrify and, literally, to make pale (like a funeral pall)."
                   />
                   <Quote
-                    text="Blasts the new-born Infant's tear"
+                    text="Blasts the new-born infant's tear"
                     technique="Violent imagery / semantic field of disease"
                     analysis="The final stanza presents a cycle of suffering where disease passes from generation to generation. The verb 'blasts' is violent and destructive, suggesting that innocence is destroyed from birth. The new-born infant inherits the corruption of the society."
                   />

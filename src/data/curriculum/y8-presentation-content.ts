@@ -599,12 +599,14 @@ export const y8Presentations: LessonPresentation[] = [
           'The charge was a catastrophic military blunder that killed 278 out of 637 men',
           'Tennyson was Poet Laureate -- his role was partly to celebrate national events',
           "The poem praises the soldiers' obedience and courage despite the command being an error",
-          "Repeated phrase: 'Someone had blunder'd' -- the only acknowledgement of failure",
+          // 2 October 2026: Tennyson wrote "Some one had blunder'd", as AQA prints it, once; this
+          // had "Someone" and called the phrase repeated.
+          "Key phrase: 'Some one had blunder'd' -- the only acknowledgement of failure",
         ],
         teacherNotes:
           "Compare Tennyson's role as Poet Laureate with Owen's position as a soldier -- their social positions shape their perspectives. Ask: whose account of war is more trustworthy? This is a productive but nuanced question.",
         activity:
-          "Tennyson includes 'someone had blunder'd' but does not dwell on it. Why might he have made this choice? What does it tell us about his purpose?",
+          "Tennyson includes 'Some one had blunder'd' but does not dwell on it. Why might he have made this choice? What does it tell us about his purpose?",
       },
       {
         id: 'y8-t2-p2-s4',

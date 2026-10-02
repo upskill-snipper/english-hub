@@ -21,6 +21,9 @@ export const aqaPowerConflictCourse: CourseData = {
       id: 'aqa-pc-m1',
       title: 'Ozymandias - Percy Bysshe Shelley',
       duration: '55 min',
+      // 2 October 2026: AQA's anthology, the book students are given, prints "king of kings"
+      // and "Look on my works" in lower case; quotations 6 and 7 had the capitals most
+      // websites carry.
       content: `
 <h2>Ozymandias - Percy Bysshe Shelley (1818)</h2>
 
@@ -68,11 +71,11 @@ The sculptor <em>read</em> and replicated the king's character. Art captures the
 <p><strong>5. "The hand that mocked them, and the heart that fed"</strong><br/>
 <em>Mocked</em> carries a double meaning - to ridicule and to imitate. The sculptor's <em>hand</em> both copied and ridiculed the king's passions; the king's <em>heart</em> fed those cruel emotions.</p>
 
-<p><strong>6. "My name is Ozymandias, King of Kings"</strong><br/>
-The self-aggrandising title <em>King of Kings</em> (a biblical superlative) reveals extreme hubris. First-person address makes it feel like a direct, arrogant command.</p>
+<p><strong>6. "My name is Ozymandias, king of kings"</strong><br/>
+The self-aggrandising title <em>king of kings</em> (a biblical superlative) reveals extreme hubris. First-person address makes it feel like a direct, arrogant command.</p>
 
-<p><strong>7. "Look on my Works, ye Mighty, and despair!"</strong><br/>
-The imperative <em>Look</em> and the exclamation create a tone of absolute authority. The dramatic irony is devastating: there are no <em>Works</em> left to see.</p>
+<p><strong>7. "Look on my works, ye Mighty, and despair!"</strong><br/>
+The imperative <em>Look</em> and the exclamation create a tone of absolute authority. The dramatic irony is devastating: there are no <em>works</em> left to see.</p>
 
 <p><strong>8. "Nothing beside remains"</strong><br/>
 A stark, monosyllabic sentence that flatly contradicts the bombastic inscription. The caesura before it creates a pause that amplifies the emptiness.</p>
@@ -153,11 +156,11 @@ Sibilance (<em>sands stretch</em>) and the long vowels in <em>lone</em> and <em>
         {
           id: 'aqa-pc-m1-q2',
           question:
-            'What technique is created by the inscription boasting of great "Works" while nothing remains?',
+            'What technique is created by the inscription boasting of great "works" while nothing remains?',
           options: ['Pathetic fallacy', 'Dramatic irony', 'Onomatopoeia', 'Oxymoron'],
           correct: 1,
           explanation:
-            'The reader understands that the "Works" have completely vanished, but the inscription still boasts about them - this gap between the king\'s words and reality is dramatic irony.',
+            'The reader understands that the "works" have completely vanished, but the inscription still boasts about them - this gap between the king\'s words and reality is dramatic irony.',
         },
         {
           id: 'aqa-pc-m1-q3',
@@ -205,6 +208,12 @@ Sibilance (<em>sands stretch</em>) and the long vowels in <em>lone</em> and <em>
       id: 'aqa-pc-m2',
       title: 'London - William Blake',
       duration: '55 min',
+      // 2 October 2026: the quotations follow AQA's anthology, the book students are given,
+      // which modernises Blake ("through", "chartered", "mind-forged") and prints "church",
+      // "soldier's", "palace", "harlot's", "infant's" and "marriage" in lower case. Until then
+      // they followed Blake's own spelling and capitals, as the Edexcel and Eduqas
+      // anthologies print them, and the marker tip told students to write about capitals
+      // their anthology does not show.
       content: `
 <h2>London - William Blake (1794)</h2>
 
@@ -227,7 +236,7 @@ Sibilance (<em>sands stretch</em>) and the long vowels in <em>lone</em> and <em>
 <ul>
   <li><strong>Abuse of institutional power:</strong> The Church, monarchy, and government are all implicated in the suffering of the people.</li>
   <li><strong>Loss of innocence:</strong> Children (chimney sweepers), soldiers, and young women are all exploited.</li>
-  <li><strong>Individual vs the state:</strong> The individual is powerless against "mind-forg'd manacles."</li>
+  <li><strong>Individual vs the state:</strong> The individual is powerless against "mind-forged manacles."</li>
   <li><strong>Suffering and hopelessness:</strong> The poem's tone is unrelentingly bleak - there is no redemption offered.</li>
 </ul>
 
@@ -236,37 +245,37 @@ Sibilance (<em>sands stretch</em>) and the long vowels in <em>lone</em> and <em>
 
 <h3>Key Quotations &amp; Analysis</h3>
 
-<p><strong>1. "I wander thro' each charter'd street"</strong><br/>
-<em>Charter'd</em> means legally mapped and owned - even the streets and the Thames are controlled by the wealthy. Blake turns a word associated with rights and freedom into one of restriction.</p>
+<p><strong>1. "I wander through each chartered street"</strong><br/>
+<em>Chartered</em> means legally mapped and owned - even the streets and the Thames are controlled by the wealthy. Blake turns a word associated with rights and freedom into one of restriction.</p>
 
-<p><strong>2. "Near where the charter'd Thames does flow"</strong><br/>
-Repeating <em>charter'd</em> emphasises that even nature (the river) has been claimed and commodified by those in power.</p>
+<p><strong>2. "Near where the chartered Thames does flow"</strong><br/>
+Repeating <em>chartered</em> emphasises that even nature (the river) has been claimed and commodified by those in power.</p>
 
 <p><strong>3. "Marks of weakness, marks of woe"</strong><br/>
 The repetition of <em>marks</em> (used as both verb and noun in the stanza) highlights that suffering is literally visible on people's faces. It also implies a branding - as if they have been marked by the system.</p>
 
-<p><strong>4. "mind-forg'd manacles"</strong><br/>
+<p><strong>4. "mind-forged manacles"</strong><br/>
 A powerful metaphor: the chains are <em>mental</em>, forged in people's own minds. Blake suggests that oppression is partly maintained because people have been conditioned to accept it. <em>Manacles</em> evokes slavery.</p>
 
-<p><strong>5. "How the Chimney-sweeper's cry"</strong><br/>
+<p><strong>5. "How the chimney-sweeper's cry"</strong><br/>
 Child chimney sweepers were among the most exploited in Georgian England. The <em>cry</em> is both literal (the child's call) and a cry of pain.</p>
 
-<p><strong>6. "Every black'ning Church appalls"</strong><br/>
+<p><strong>6. "Every black'ning church appalls"</strong><br/>
 <em>Black'ning</em> refers to soot on church walls but also implies moral corruption. <em>Appalls</em> contains a pun: "pall" is a funeral cloth - the Church is associated with death rather than salvation.</p>
 
-<p><strong>7. "the hapless Soldier's sigh / Runs in blood down Palace walls"</strong><br/>
-A shocking synaesthetic image: a <em>sigh</em> (sound) becomes <em>blood</em> (visual) that runs down the <em>Palace walls</em>. Blake directly blames the monarchy for soldiers' deaths.</p>
+<p><strong>7. "the hapless soldier's sigh / Runs in blood down palace walls"</strong><br/>
+A shocking synaesthetic image: a <em>sigh</em> (sound) becomes <em>blood</em> (visual) that runs down the <em>palace walls</em>. Blake directly blames the monarchy for soldiers' deaths.</p>
 
-<p><strong>8. "the youthful Harlot's curse"</strong><br/>
-The <em>Harlot</em> is young - another lost innocent. <em>Curse</em> means both her swearing in anger and the curse of sexually transmitted disease that spreads to the next generation.</p>
+<p><strong>8. "the youthful harlot's curse"</strong><br/>
+The <em>harlot</em> is young - another lost innocent. <em>Curse</em> means both her swearing in anger and the curse of sexually transmitted disease that spreads to the next generation.</p>
 
-<p><strong>9. "blasts the new-born Infant's tear"</strong><br/>
+<p><strong>9. "Blasts the new-born infant's tear"</strong><br/>
 <em>Blasts</em> suggests destruction and disease. The cycle of suffering passes from mother to child - the poem ends with a devastating image of corrupted birth.</p>
 
-<p><strong>10. "the Marriage hearse"</strong><br/>
+<p><strong>10. "the marriage hearse"</strong><br/>
 A shocking oxymoron that fuses marriage (life, hope) with a hearse (death). Blake implies that even love and family are poisoned by the society he describes.</p>
 
-<div class="examiner-tip"><strong>Marker Tip:</strong> Blake's capitalisation of words like <em>Church</em>, <em>Soldier</em>, and <em>Palace</em> is deliberate - it turns individuals into symbols of whole institutions. Mention this in your essay to show awareness of the writer's craft.</div>
+<div class="examiner-tip"><strong>Marker Tip:</strong> AQA's anthology prints <em>church</em>, <em>soldier's</em> and <em>palace</em> in lower case, so quote them that way. Blake's own text capitalises them, turning individuals into symbols of whole institutions; if you make that point, say it is about Blake's original, not the text in front of you.</div>
 
 <h3>Structural Analysis: Form as Chaos</h3>
 <ul>
@@ -320,12 +329,12 @@ A shocking oxymoron that fuses marriage (life, hope) with a hearse (death). Blak
   <li><strong>Exposure</strong> - Both present suffering caused by those in power - Blake's victims are Londoners; Owen's are soldiers.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Treating "mind-forg'd manacles" as literal chains. The whole point of the metaphor is that oppression is <em>psychological</em> - people are mentally imprisoned. Always explain the figurative meaning.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Treating "mind-forged manacles" as literal chains. The whole point of the metaphor is that oppression is <em>psychological</em> - people are mentally imprisoned. Always explain the figurative meaning.</div>
 `,
       quiz: [
         {
           id: 'aqa-pc-m2-q1',
-          question: 'What does "charter\'d" suggest about London in Blake\'s poem?',
+          question: 'What does "chartered" suggest about London in Blake\'s poem?',
           options: [
             'The streets are beautifully designed',
             'Everything is owned and controlled by the powerful',
@@ -334,20 +343,20 @@ A shocking oxymoron that fuses marriage (life, hope) with a hearse (death). Blak
           ],
           correct: 1,
           explanation:
-            '"Charter\'d" suggests that even the streets and river have been mapped, sold, and controlled by the wealthy - turning what should be public spaces into property of the powerful.',
+            '"Chartered" suggests that even the streets and river have been mapped, sold, and controlled by the wealthy - turning what should be public spaces into property of the powerful.',
         },
         {
           id: 'aqa-pc-m2-q2',
           question: 'What is the oxymoron at the end of the poem?',
           options: [
-            '"mind-forg\'d manacles"',
-            '"youthful Harlot"',
-            '"Marriage hearse"',
-            '"charter\'d Thames"',
+            '"mind-forged manacles"',
+            '"youthful harlot"',
+            '"marriage hearse"',
+            '"chartered Thames"',
           ],
           correct: 2,
           explanation:
-            '"Marriage hearse" fuses marriage (life, love, hope) with a hearse (death, grief). This oxymoron encapsulates Blake\'s argument that every aspect of London life - even love - has been corrupted.',
+            'The "marriage hearse" fuses marriage (life, love, hope) with a hearse (death, grief). This oxymoron encapsulates Blake\'s argument that every aspect of London life - even love - has been corrupted.',
         },
         {
           id: 'aqa-pc-m2-q3',
@@ -750,6 +759,10 @@ The final image: a bronze of the god Neptune (power) <em>taming</em> a sea-horse
       id: 'aqa-pc-m5',
       title: 'The Charge of the Light Brigade - Alfred, Lord Tennyson',
       duration: '55 min',
+      // 2 October 2026: three quotations did not match AQA's anthology, the book students are
+      // given, which prints Tennyson's "Some one had blunder'd", "Storm'd at with shot and
+      // shell" and "Flash'd all their sabres bare"; these had "Someone", "Stormed" and
+      // "Flashed".
       content: `
 <h2>The Charge of the Light Brigade - Alfred, Lord Tennyson (1854)</h2>
 
@@ -789,7 +802,7 @@ The repetition creates the galloping rhythm and a sense of relentless forward mo
 <p><strong>2. "Into the valley of Death"</strong><br/>
 An allusion to Psalm 23 ("the valley of the shadow of death"). The capitalised <em>Death</em> personifies it as a presence waiting in the valley, elevating the charge to a biblical or mythic scale.</p>
 
-<p><strong>3. "Someone had blunder'd"</strong><br/>
+<p><strong>3. "Some one had blunder'd"</strong><br/>
 An unusually blunt, colloquial admission that the order was a mistake. Tennyson briefly acknowledges the failure of command before returning to praise of the soldiers.</p>
 
 <p><strong>4. "Theirs not to make reply, / Theirs not to reason why, / Theirs but to do and die"</strong><br/>
@@ -798,11 +811,11 @@ The triple structure, parallel syntax, and internal rhyme (<em>reply / why / die
 <p><strong>5. "Cannon to right of them, / Cannon to left of them, / Cannon in front of them"</strong><br/>
 The anaphora (repetition of <em>Cannon</em>) and the spatial language create a sense of total encirclement - the soldiers are surrounded by death.</p>
 
-<p><strong>6. "Stormed at with shot and shell"</strong><br/>
-Sibilance and plosive sounds mimic the noise of battle. <em>Stormed at</em> personifies the gunfire as a natural force attacking them.</p>
+<p><strong>6. "Storm'd at with shot and shell"</strong><br/>
+Sibilance and plosive sounds mimic the noise of battle. <em>Storm'd at</em> personifies the gunfire as a natural force attacking them.</p>
 
-<p><strong>7. "Flashed all their sabres bare"</strong><br/>
-A vivid, almost heroic image. <em>Flashed</em> and <em>bare</em> convey both bravery and vulnerability - sabres against cannons.</p>
+<p><strong>7. "Flash'd all their sabres bare"</strong><br/>
+A vivid, almost heroic image. <em>Flash'd</em> and <em>bare</em> convey both bravery and vulnerability - sabres against cannons.</p>
 
 <p><strong>8. "Then they rode back, but not / Not the six hundred"</strong><br/>
 The painful repetition of <em>not</em> forces the reader to confront the losses. Many did not ride back. The broken rhythm reflects the shattered brigade.</p>
@@ -905,7 +918,7 @@ The imperative directly addresses the reader, demanding respect and remembrance.
           ],
           correct: 1,
           explanation:
-            "Tennyson both celebrates the soldiers' heroic obedience and acknowledges that \"Someone had blunder'd.\" This creates a tension between glorifying duty and criticising the commanders' incompetence.",
+            "Tennyson both celebrates the soldiers' heroic obedience and acknowledges that \"Some one had blunder'd.\" This creates a tension between glorifying duty and criticising the commanders' incompetence.",
         },
         {
           id: 'aqa-pc-m5-q4',

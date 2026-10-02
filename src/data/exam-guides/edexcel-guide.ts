@@ -890,7 +890,8 @@ export const edexcelGuide: BoardExamGuide = {
       topComparison: 'Bayonet Charge',
       formAnalysis:
         'Predominantly anapaestic dimeter (da-da-DUM da-da-DUM) with a dactylic refrain ("Rode the six hundred") - the galloping rhythm imitates horses charging. End-stopped lines, anaphora and repetition create relentless, driving momentum across six irregular stanzas.',
-      keyQuotation: '"Theirs not to reason why, / Theirs but to do and die"',
+      // 2 October 2026: the Pearson Edexcel anthology prints "Their's"; this had AQA's "Theirs".
+      keyQuotation: '"Their\'s not to reason why, / Their\'s but to do and die"',
     },
     {
       title: 'To His Coy Mistress',

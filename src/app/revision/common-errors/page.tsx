@@ -91,10 +91,13 @@ const ERROR_GROUPS: ErrorGroup[] = [
     errors: [
       {
         number: 1,
-        text: 'Ozymandias (AQA Power & Conflict) - "Look ON my Works"',
+        // 2 October 2026: AQA's anthology, the book students are given, prints "works" in
+        // lower case; this had the capital most websites carry, while telling students to cite
+        // the line exactly.
+        text: 'Ozymandias (AQA Power & Conflict) - "Look ON my works"',
         wrong: '"Look UPON my works, ye Mighty, and despair!"',
-        right: '"Look ON my Works, ye Mighty, and despair!"',
-        why: 'Applies to: AQA Power & Conflict cluster. Shelley wrote "on" - not "upon". This is one of the single most-misquoted lines in GCSE Literature. Cite it exactly: "Look on my Works, ye Mighty, and despair!"',
+        right: '"Look ON my works, ye Mighty, and despair!"',
+        why: 'Applies to: AQA Power & Conflict cluster. Shelley wrote "on" - not "upon". This is one of the single most-misquoted lines in GCSE Literature. Cite it exactly: "Look on my works, ye Mighty, and despair!"',
       },
       {
         number: 2,

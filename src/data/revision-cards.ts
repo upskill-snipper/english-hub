@@ -1689,7 +1689,9 @@ export const revisionCardSets: RevisionCardSet[] = [
       {
         id: 'pw018',
         front: "How does Browning present the speaker's power and control?",
-        back: 'The speaker exerts absolute power: controlling her life and death. His justification is twisted: "she is mine forever." Browning shows how patriarchal power can justify violence.',
+        // 2 October 2026: "she is mine forever" is not in the poem; the line is "That moment she
+        // was mine, mine, fair, / Perfectly pure and good".
+        back: 'The speaker exerts absolute power: controlling her life and death. His justification is twisted: "That moment she was mine, mine, fair, / Perfectly pure and good". Browning shows how patriarchal power can justify violence.',
         category: 'Literary Analysis',
         difficulty: 'hard',
       },

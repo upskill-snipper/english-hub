@@ -74,7 +74,10 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       "Two short stanzas with an ABAB rhyme scheme. The regular rhythm creates a song-like, persuasive tone. Each stanza builds an argument then ends with a rhetorical question, mirroring the speaker's repeated attempts.",
     keyQuotes: [
       '"The fountains mingle with the river and the rivers with the ocean"',
-      '"Nothing in the world is single; all things by a law divine in another\'s being mingle"',
+      // 2 October 2026: "in another's being mingle" lacked "one", as AQA prints the line.
+      // Love's Philosophy is not in the Pearson Edexcel anthology (Issue 4, Collection A);
+      // its place on this page is a separate error, not corrected here.
+      '"Nothing in the world is single; all things by a law divine in one another\'s being mingle"',
       '"What are all these kissings worth, if thou kiss not me?"',
     ],
     comparisonLinks:
@@ -344,13 +347,16 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       'Tennyson commemorates the disastrous cavalry charge at the Battle of Balaclava (1854) during the Crimean War. 600 British soldiers charged into Russian cannon fire due to a miscommunicated order. The poem honours their bravery while implicitly criticising the military blunder.',
     themes: 'War, heroism, duty, the futility of war, honour',
     language:
-      "Repetition ('Cannon to the right... left... in front') creates the surrounding danger. Onomatopoeia ('Volleyed and thundered') evokes the noise of battle. The rhetorical question 'When can their glory fade?' demands the reader honour the soldiers.",
+      "Repetition ('Cannon to right of them... left of them... in front of them') creates the surrounding danger. Onomatopoeia ('Volley'd and thunder'd') evokes the noise of battle. The rhetorical question 'When can their glory fade?' demands the reader honour the soldiers.",
     structure:
       "Predominantly anapaestic dimeter (da-da-DUM da-da-DUM) with a dactylic refrain ('Rode the six hundred'); the galloping rhythm mimics horses charging. Largely end-stopped lines reinforce the drumbeat regularity. Six stanzas of varying length create an irregular feel reflecting battle. Repetition of 'the six hundred' memorialises the soldiers as a collective.",
+    // 2 October 2026: quoted as the Pearson Edexcel anthology prints the poem: "Their's",
+    // "Volley'd and thunder'd", "Cannon to right of them". These had AQA's "Theirs", and
+    // "Volleyed and thundered" and "Cannon to the right of them", which no anthology prints.
     keyQuotes: [
       '"Into the valley of Death rode the six hundred"',
-      '"Theirs not to reason why, theirs but to do and die"',
-      '"Cannon to the right of them, cannon to the left of them"',
+      '"Their\'s not to reason why, their\'s but to do and die"',
+      '"Cannon to right of them, cannon to left of them"',
       '"When can their glory fade?"',
     ],
     comparisonLinks:
@@ -490,13 +496,15 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       'The speaker describes how unexpressed anger grows into something deadly. When angry with a friend, he talks it out and the anger ends. When angry with a foe, he suppresses it - the anger grows into a poisonous tree that kills the enemy. An allegory about the dangers of repression.',
     themes: 'Anger, repression, deception, revenge, the corruption of innocence',
     language:
-      "Extended metaphor of a tree transforms anger into something organic that grows when 'watered' with fears and tears. Biblical allusion to the Garden of Eden (the apple, the tree) suggests that repressed anger is a form of original sin. Simple, nursery-rhyme language creates a deceptively innocent surface.",
+      "Extended metaphor of a tree transforms anger into something organic that grows when 'water'd' with fears and tears. Biblical allusion to the Garden of Eden (the apple, the tree) suggests that repressed anger is a form of original sin. Simple, nursery-rhyme language creates a deceptively innocent surface.",
     structure:
       "Four quatrains with an AABB rhyme scheme. The sing-song quality creates an unsettling contrast with the dark content. The regular structure mirrors the methodical, deliberate nature of the speaker's deception.",
+    // 2 October 2026: "waterd" is Blake's engraved spelling; the Pearson Edexcel anthology
+    // prints "water'd", as quoted here and in the language note.
     keyQuotes: [
       '"I was angry with my friend: I told my wrath, my wrath did end"',
       '"I was angry with my foe: I told it not, my wrath did grow"',
-      '"And I waterd it in fears, night and morning with my tears"',
+      '"And I water\'d it in fears, night and morning with my tears"',
       '"And my foe beheld it shine, and he knew that it was mine"',
     ],
     comparisonLinks:
@@ -527,11 +535,14 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       'A fallen woman addresses her cousin Kate, who married the lord who seduced and abandoned the speaker. Despite her shame, the speaker has something Kate does not - a son and heir. The poem critiques Victorian sexual double standards and male power over women.',
     themes: 'Betrayal, gender inequality, sexual double standards, power, motherhood',
     language:
-      "Natural imagery ('dove' vs 'unclean thing') reflects the speaker's fall from innocence. Bitter, accusatory tone ('You grew more fair than I') reveals jealousy and hurt. The lord is compared to a hunter who 'lured' the speaker - she is prey, not a willing participant.",
+      "Natural imagery ('dove' vs 'unclean thing') reflects the speaker's fall from innocence. Bitter, accusatory tone ('You grow more fair than I') reveals jealousy and hurt. The lord is compared to a hunter who 'lured' the speaker - she is prey, not a willing participant.",
     structure:
       "Six octave stanzas with a regular rhyme scheme. The ballad form suits the storytelling nature. The final stanza's triumphant tone ('my fair-haired son') offers a twist - the rejected woman holds the ultimate power.",
+    // 2 October 2026: quoted as the Pearson Edexcel anthology prints the poem: "You grow
+    // more fair", "palace-home" and "golden knot". These had "grew" and "silken knot", the
+    // readings most websites carry, and Eduqas prints.
     keyQuotes: [
-      '"He lured me to his palace home... he wore me like a silken knot, he changed me like a glove"',
+      '"He lured me to his palace-home... he wore me like a golden knot, he changed me like a glove"',
       '"So now I moan, an unclean thing, who might have been a dove"',
       '"Yet I\'ve a gift you have not got, and seem not like to get"',
     ],

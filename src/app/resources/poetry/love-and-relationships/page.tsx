@@ -781,8 +781,10 @@ export default function LoveAndRelationshipsPage() {
                       prints 'kissings'. poets.org prints a third, 'sweet work'. Two
                       fixes on this day each quoted one AQA copy as if it were the
                       only one. The quotation is now the final line, which every
-                      copy prints alike, and line 15 is described, not quoted,
-                      until someone confirms which copy students are given. */}
+                      copy prints alike, and line 15 is described, not quoted.
+                      On 2 October 2026 the site settled on the typeset book, the
+                      copy students are given; its line 15 reads "what are all
+                      these kissings worth,". */}
                   <Quote
                     text="If thou kiss not me?"
                     technique="Rhetorical question / volta"

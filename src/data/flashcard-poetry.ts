@@ -20,7 +20,8 @@ export const poetryFlashcardDecks: FlashcardDeck[] = [
       },
       {
         id: 'pc-2',
-        front: '"Look on my Works… and despair!" - Ozymandias',
+        // 2 October 2026: AQA's anthology prints "works" in lower case.
+        front: '"Look on my works… and despair!" - Ozymandias',
         back: 'Poet: Percy Bysshe Shelley\n\nTechnique: Dramatic irony / imperative\n\nMeaning: The command was meant to intimidate rivals, but now the "Works" are gone. The reader despairs at the futility of power, not its greatness.\n\nTheme: Power of nature over human power; impermanence.\n\nComparison: Compare with "Storm on the Island" - both show nature overpowering human constructs.',
       },
       // 2. London - William Blake
@@ -196,7 +197,9 @@ export const poetryFlashcardDecks: FlashcardDeck[] = [
       },
       {
         id: 'lr-2',
-        front: '"A knell to mine ear" - When We Two Parted',
+        // 2 October 2026: was "A knell to mine ear", the reading most websites carry; AQA's
+        // anthology, the book students are given, prints "A knell in mine ear".
+        front: '"A knell in mine ear" - When We Two Parted',
         back: "Poet: Lord Byron\n\nTechnique: Metaphor / auditory imagery\n\nMeaning: A knell is a funeral bell - hearing his former lover's name feels like a death. The love is dead, and each mention of her is a painful reminder.\n\nTheme: Loss; grief for a living person.\n\nComparison: Compare with \"Walking Away\" - both speakers suffer from separation, but Byron's is romantic loss while Day-Lewis's is parental.",
       },
       // 2. Love's Philosophy - Percy Bysshe Shelley
@@ -257,7 +260,10 @@ export const poetryFlashcardDecks: FlashcardDeck[] = [
       // 7. The Farmer's Bride - Charlotte Mew
       {
         id: 'lr-13',
-        front: '"like a mouse… a leveret… a fay" - The Farmer\'s Bride',
+        // 2 October 2026: the images were listed out of the poem's order and without their
+        // words; the poem has the fay in stanza 1, the hare in 2, the mouse in 3, the leveret in 4.
+        front:
+          '"a little frightened fay… like a hare… like a mouse… Shy as a leveret" - The Farmer\'s Bride',
         back: 'Poet: Charlotte Mew\n\nTechnique: Simile cluster / semantic field of nature\n\nMeaning: The farmer describes his wife through animal imagery - she is wild, frightened, not fully human in his eyes. The comparisons reveal his inability to understand her as a person.\n\nTheme: Failed love; objectification; miscommunication.\n\nComparison: Compare with "Porphyria\'s Lover" - both men view women as objects rather than equals, leading to destructive relationships.',
       },
       {

@@ -198,7 +198,8 @@ export const QUOTE_MATCHES: QuoteMatch[] = [
     source: 'Ozymandias',
   },
   {
-    quote: 'One huge peak, black and huge, as if with voluntary power instinct',
+    // 2 October 2026: was "One huge peak"; Wordsworth wrote "a huge peak, black and huge".
+    quote: 'a huge peak, black and huge, as if with voluntary power instinct',
     source: 'The Prelude',
   },
   {

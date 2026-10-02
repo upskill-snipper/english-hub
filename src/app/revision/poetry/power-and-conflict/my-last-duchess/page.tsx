@@ -874,10 +874,13 @@ const comparisons: Comparison[] = [
     poem: 'The Charge of the Light Brigade',
     link: '/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade',
     points: [
-      'Both explore the consequences of unchecked authority - the Duke\'s commands kill his wife; the military "blunder" kills six hundred soldiers.',
+      // 2 October 2026: Tennyson wrote "Some one had blunder'd", as AQA prints it; this quoted
+      // "someone had blundered". It also said the blunder killed six hundred soldiers, which the
+      // poem does not: "they rode back, but not / Not the six hundred".
+      'Both explore the consequences of unchecked authority - the Duke\'s commands kill his wife; the military "blunder" sends six hundred soldiers into "the valley of Death".',
       "Tennyson critiques those who give orders from a distance; Browning's Duke is himself the one giving lethal commands.",
       "The Light Brigade's soldiers are celebrated; the Duchess is silenced and forgotten - both poems question who holds power and who suffers.",
-      'Both use euphemism to distance the powerful from violence: "someone had blundered" and "I gave commands."',
+      'Both use euphemism to distance the powerful from violence: "Some one had blunder\'d" and "I gave commands."',
     ],
   },
 ]

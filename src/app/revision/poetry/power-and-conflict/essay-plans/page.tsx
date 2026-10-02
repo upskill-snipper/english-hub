@@ -546,7 +546,9 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         point:
           'Both poets present power as a system that controls people by limiting their freedom and knowledge.',
-        evidence1: '"In every cry of every Man, / In every Infant\'s cry of fear"',
+        // 2 October 2026: London is quoted as AQA's anthology, the book students are given, prints
+        // it, with lower-case nouns and "mind-forged"; these had Blake's capitals and spelling.
+        evidence1: '"In every cry of every man, / In every infant\'s cry of fear"',
         evidence1poem: 'London',
         analysis1:
           'Blake\'s relentless repetition of "every" creates a sense of universal, inescapable suffering. The inclusion of infants emphasises that oppression begins at birth -- it is systemic, not individual. The "marks of weakness, marks of woe" Blake sees on every face suggest that institutional power has physically and psychologically scarred the population.',
@@ -558,7 +560,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         point: 'Both poets use powerful imagery to show the damage caused by institutional power.',
-        evidence1: '"the mind-forg\'d manacles"',
+        evidence1: '"the mind-forged manacles"',
         evidence1poem: 'London',
         analysis1:
           'Blake\'s metaphor of "mind-forg\'d manacles" is one of the most important images in the poem. Manacles are physical restraints, but these are forged (created) in the mind -- suggesting that institutional power operates by making people internalise their own oppression. The people of London are enslaved not by literal chains but by ideology, deference, and fear.',
@@ -574,7 +576,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         point:
           'Both poets channel their anger into a call for change, though they differ in tone and directness.',
-        evidence1: '"the youthful Harlot\'s curse / Blasts the new-born Infant\'s tear"',
+        evidence1: '"the youthful harlot\'s curse / Blasts the new-born infant\'s tear"',
         evidence1poem: 'London',
         analysis1:
           "Blake's final image is devastating: a young sex worker's disease destroys the next generation. The cycle of poverty and exploitation is presented as self-perpetuating. Blake does not offer a direct solution, but his unflinching portrayal of suffering is itself a political act -- the poem dares the reader to look at what society prefers to ignore.",
