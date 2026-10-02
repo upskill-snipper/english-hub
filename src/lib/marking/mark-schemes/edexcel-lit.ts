@@ -452,8 +452,11 @@ export const edexcelLitPaper2: MarkScheme = {
     {
       id: 'Section B Part 2',
       questionType: 'Unseen poetry',
+      // Until 2 October 2026 this read "Respond to one unseen poem, then compare it with a
+      // second", the two-step shape of AQA's unseen section. Pearson sets ONE question comparing
+      // two unseen contemporary poems linked by a theme (1ET0 specification, Issue 2).
       taskDescription:
-        'Respond to one unseen poem, then compare it with a second unseen poem. 20 marks: AO1 8 and AO2 12.',
+        'Compare two unseen contemporary poems, linked by a theme, in one response. 20 marks: AO1 8 and AO2 12.',
       totalMarks: 20,
       assessmentObjectives: [scaleAO(ao1Base, 8, 8 / 80), scaleAO(ao2Base, 12, 12 / 80)],
       examinerNotes:
