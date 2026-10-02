@@ -328,14 +328,17 @@ export default function UnseenPoetryHubPage() {
                 "Explore connections across texts, evaluating similarities and differences in writers' methods and effects.",
             },
           ].map((item) => (
+            // Badge above the text: these badges are phrases ("Analysing language
+            // and structure"), not "AO1", so side by side they squeezed the text
+            // to 70px on a phone and pushed one card's heading under the clip.
             <div
               key={item.ao}
-              className="flex gap-3 rounded-xl border border-border/40 bg-background/50 p-4"
+              className="flex flex-col items-start gap-2 rounded-xl border border-border/40 bg-background/50 p-4"
             >
               <Badge variant="secondary" className="h-fit shrink-0 text-xs">
                 {item.ao}
               </Badge>
-              <div>
+              <div className="min-w-0">
                 <p className="text-sm font-semibold text-foreground">{item.label}</p>
                 <p className="mt-0.5 text-xs text-muted-foreground leading-relaxed">
                   {item.detail}
