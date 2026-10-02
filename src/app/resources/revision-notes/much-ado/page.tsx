@@ -1056,9 +1056,7 @@ export default function MuchAdoRevisionPage() {
               </div>
 
               <div>
-                <h3 className="font-bold text-foreground">
-                  {tr(`The Play&apos;s Italian Setting`)}
-                </h3>
+                <h3 className="font-bold text-foreground">{tr(`The Play's Italian Setting`)}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Setting the play in Messina, Sicily, follows a common Elizabethan convention:
                   Italy was associated with passion, intrigue, romance, and danger. Audiences
@@ -1094,7 +1092,7 @@ export default function MuchAdoRevisionPage() {
                 <div className="mt-3 space-y-3 text-sm text-muted-foreground">
                   <div className="rounded bg-muted p-3">
                     <p className="font-semibold text-foreground">
-                      {tr(`Paragraph 1: Conventional love &mdash; Claudio and Hero`)}
+                      {tr(`Paragraph 1: Conventional love - Claudio and Hero`)}
                     </p>
                     <p>
                       Claudio&apos;s love is based on appearance: &ldquo;Can the world buy such a
@@ -1105,7 +1103,7 @@ export default function MuchAdoRevisionPage() {
                   </div>
                   <div className="rounded bg-muted p-3">
                     <p className="font-semibold text-foreground">
-                      {tr(`Paragraph 2: Unconventional love &mdash; Beatrice and Benedick`)}
+                      {tr(`Paragraph 2: Unconventional love - Beatrice and Benedick`)}
                     </p>
                     <p>
                       Their &ldquo;merry war&rdquo; (1.1) masks genuine connection. Love is
@@ -1116,7 +1114,7 @@ export default function MuchAdoRevisionPage() {
                   </div>
                   <div className="rounded bg-muted p-3">
                     <p className="font-semibold text-foreground">
-                      {tr(`Paragraph 3: Love tested &mdash; &ldquo;Kill Claudio&rdquo;`)}
+                      {tr(`Paragraph 3: Love tested - “Kill Claudio”`)}
                     </p>
                     <p>
                       Beatrice&apos;s demand (4.1) tests whether Benedick&apos;s love extends to
@@ -1158,7 +1156,7 @@ export default function MuchAdoRevisionPage() {
                   </div>
                   <div className="rounded bg-muted p-3">
                     <p className="font-semibold text-foreground">
-                      {tr(`Paragraph 2: The shaming scene &mdash; patriarchy&apos;s violence`)}
+                      {tr(`Paragraph 2: The shaming scene - patriarchy's violence`)}
                     </p>
                     <p>
                       Claudio&apos;s &ldquo;rotten orange&rdquo; (4.1) reduces Hero to damaged
@@ -1181,7 +1179,7 @@ export default function MuchAdoRevisionPage() {
                   </div>
                   <div className="rounded bg-muted p-3">
                     <p className="font-semibold text-foreground">
-                      {tr(`Paragraph 4: Resolution &mdash; does the ending satisfy?`)}
+                      {tr(`Paragraph 4: Resolution - does the ending satisfy?`)}
                     </p>
                     <p>
                       Hero forgives Claudio; Beatrice marries Benedick (&ldquo;Peace! I will stop
@@ -1201,7 +1199,7 @@ export default function MuchAdoRevisionPage() {
                 <div className="mt-3 space-y-3 text-sm text-muted-foreground">
                   <div className="rounded bg-muted p-3">
                     <p className="font-semibold text-foreground">
-                      {tr(`Paragraph 1: Benign deception &mdash; the gulling plots`)}
+                      {tr(`Paragraph 1: Benign deception - the gulling plots`)}
                     </p>
                     <p>
                       Don Pedro&apos;s plot to unite Beatrice and Benedick uses deception for good.
@@ -1212,7 +1210,7 @@ export default function MuchAdoRevisionPage() {
                   </div>
                   <div className="rounded bg-muted p-3">
                     <p className="font-semibold text-foreground">
-                      {tr(`Paragraph 2: Malicious deception &mdash; Don John&apos;s plot`)}
+                      {tr(`Paragraph 2: Malicious deception - Don John's plot`)}
                     </p>
                     <p>
                       Don John creates a false appearance of Hero&apos;s infidelity. &ldquo;Are our
@@ -1234,9 +1232,7 @@ export default function MuchAdoRevisionPage() {
                   </div>
                   <div className="rounded bg-muted p-3">
                     <p className="font-semibold text-foreground">
-                      {tr(
-                        `Paragraph 4: &ldquo;Nothing&rdquo; / &ldquo;noting&rdquo; &mdash; the title&apos;s significance`,
-                      )}
+                      {tr(`Paragraph 4: “Nothing” / “noting” - the title's significance`)}
                     </p>
                     <p>
                       The title puns on &ldquo;noting&rdquo; (overhearing). The entire plot is
@@ -1268,7 +1264,7 @@ export default function MuchAdoRevisionPage() {
                   </div>
                   <div className="rounded bg-muted p-3">
                     <p className="font-semibold text-foreground">
-                      {tr(`Paragraph 2: Claudio&apos;s honour code`)}
+                      {tr(`Paragraph 2: Claudio's honour code`)}
                     </p>
                     <p>
                       &ldquo;Give not this rotten orange to your friend&rdquo; (4.1) &mdash; public

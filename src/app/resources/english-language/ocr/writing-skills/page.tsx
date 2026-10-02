@@ -379,9 +379,7 @@ export default async function OCRWritingSkillsPage() {
 
             {/* Show don't tell */}
             <div>
-              <h3 className="text-xl font-semibold text-foreground">
-                {tr(`Show, Don&rsquo;t Tell`)}
-              </h3>
+              <h3 className="text-xl font-semibold text-foreground">{tr(`Show, Don’t Tell`)}</h3>
               <p className="mt-2">
                 The single most important principle in creative writing. Instead of telling the
                 reader what a character feels or what a place is like, show them through action,
@@ -608,7 +606,7 @@ export default async function OCRWritingSkillsPage() {
                   </p>
                 </div>
                 <div className="rounded-lg border border-border bg-muted p-4">
-                  <p className="font-medium text-foreground">{tr(`Dash ( &mdash; )`)}</p>
+                  <p className="font-medium text-foreground">{tr(`Dash ( — )`)}</p>
                   <p className="mt-1 text-sm">
                     Creates a dramatic pause, interruption, or afterthought. Can be used in pairs
                     for parenthetical information. &ldquo;The door opened &mdash; and there she
@@ -616,7 +614,7 @@ export default async function OCRWritingSkillsPage() {
                   </p>
                 </div>
                 <div className="rounded-lg border border-border bg-muted p-4">
-                  <p className="font-medium text-foreground">{tr(`Ellipsis ( &hellip; )`)}</p>
+                  <p className="font-medium text-foreground">{tr(`Ellipsis ( … )`)}</p>
                   <p className="mt-1 text-sm">
                     Suggests trailing off, hesitation, or the passage of time. &ldquo;She wanted to
                     say something, but&hellip;&rdquo;
@@ -678,11 +676,7 @@ export default async function OCRWritingSkillsPage() {
                 Tense consistency: don&rsquo;t switch between past and present unintentionally
               </li>
               <li>Paragraphs are clearly separated</li>
-              <li>
-                {tr(
-                  `Form conventions are correct (e.g., letter has &ldquo;Yours sincerely&rdquo;)`,
-                )}
-              </li>
+              <li>{tr(`Form conventions are correct (e.g., letter has “Yours sincerely”)`)}</li>
             </ul>
           </div>
         </section>

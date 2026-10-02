@@ -12,7 +12,7 @@ export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
   s1: { en: `The Jazz Age`, ar: `عصر الجاز` },
-  s2: { en: `Prohibition (1920&ndash;1933)`, ar: `التحريم (1920-1933)` },
+  s2: { en: `Prohibition (1920-1933)`, ar: `التحريم (1920-1933)` },
   s3: { en: `Post-War Disillusionment`, ar: `الخيبة بعد الحرب` },
   s4: { en: `The Lost Generation`, ar: `الجيل الضائع` },
   s5: { en: `The Great Gatsby`, ar: `الغاتبي GREAT (اسم الكتاب)` },
@@ -22,7 +22,7 @@ export const STRINGS: Record<string, Bi> = {
   s10: { en: `The Valley of Ashes`, ar: `وادي الرماد` },
   s11: { en: `The Eyes of Doctor T. J. Eckleburg`, ar: `عيون دكتور تي. جي. إكليبورغ` },
   s12: { en: `The Colour Gold (and Yellow)`, ar: `اللون الأصفر (والذهبي)` },
-  s13: { en: `Gatsby&apos;s Parties`, ar: `أعياد جاتسيب` },
+  s13: { en: `Gatsby's Parties`, ar: `أعياد جاتسيب` },
   s14: { en: `East Egg and West Egg`, ar: `بيج إيغ والويست إيغ` },
   s15: { en: `The Owl-Eyed Man`, ar: `الرجل ذو العينين مثل الحبارى` },
   s16: { en: `Exam Tips for The Great Gatsby`, ar: `نصائح للامتحان حول ذا غريت جاتسي` },

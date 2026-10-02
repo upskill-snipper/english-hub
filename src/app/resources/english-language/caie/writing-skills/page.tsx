@@ -360,7 +360,7 @@ export default async function WritingSkillsPage() {
                 Template
               </p>
               <div className="space-y-2 text-sm text-muted-foreground font-mono">
-                <p>{_tr(`Good morning/afternoon, [audience] &mdash;`)}</p>
+                <p>{_tr(`Good morning/afternoon, [audience].`)}</p>
                 <p className="italic text-muted-foreground mt-2">
                   [Opening: introduce yourself and your topic. Hook the audience.]
                 </p>
@@ -703,7 +703,7 @@ export default async function WritingSkillsPage() {
           </h3>
           <div className="mt-4 space-y-3">
             <div className="rounded-lg border border-border p-4">
-              <p className="text-sm font-semibold text-primary">{_tr(`Show, Don&rsquo;t Tell`)}</p>
+              <p className="text-sm font-semibold text-primary">{_tr(`Show, Don’t Tell`)}</p>
               <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                 Instead of stating emotions directly, reveal them through actions, dialogue, and
                 physical details.

@@ -129,7 +129,7 @@ export default function FrankensteinPage() {
         <div className="space-y-5">
           <div>
             <h4 className="font-bold text-foreground text-base mb-2">
-              {tr(`Walton&apos;s Letters (Frame Narrative)`)}
+              {tr(`Walton's Letters (Frame Narrative)`)}
             </h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Captain Robert Walton writes letters to his sister Margaret Saville from a ship
@@ -143,12 +143,12 @@ export default function FrankensteinPage() {
 
           <div>
             <h4 className="font-bold text-foreground text-base mb-2">
-              {tr(`Volume I (Chapters 1&ndash;7)`)}
+              {tr(`Volume I (Chapters 1-7)`)}
             </h4>
             <div className="space-y-3">
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 1&ndash;2: Victor&apos;s Childhood`)}
+                  {tr(`Chapters 1-2: Victor's Childhood`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Victor describes his idyllic childhood in Geneva with his devoted parents, his
@@ -160,7 +160,7 @@ export default function FrankensteinPage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 3&ndash;4: University and Obsession`)}
+                  {tr(`Chapters 3-4: University and Obsession`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Victor attends the University of Ingolstadt, where Professor Waldman inspires him
@@ -183,7 +183,7 @@ export default function FrankensteinPage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 6&ndash;7: William&apos;s Murder`)}
+                  {tr(`Chapters 6-7: William's Murder`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Victor receives a letter from his father: his youngest brother William has been
@@ -200,12 +200,12 @@ export default function FrankensteinPage() {
 
           <div>
             <h4 className="font-bold text-foreground text-base mb-2">
-              {tr(`Volume II (Chapters 8&ndash;16)`)}
+              {tr(`Volume II (Chapters 8-16)`)}
             </h4>
             <div className="space-y-3">
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 8&ndash;10: The Creature Speaks`)}
+                  {tr(`Chapters 8-10: The Creature Speaks`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Victor retreats to the Alps to find solace. On the Mer de Glace glacier, the
@@ -217,7 +217,7 @@ export default function FrankensteinPage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 11&ndash;12: The Creature&apos;s Early Life`)}
+                  {tr(`Chapters 11-12: The Creature's Early Life`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The Creature describes his first experiences: sensory confusion, hunger, cold, and
@@ -229,7 +229,7 @@ export default function FrankensteinPage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 13&ndash;14: Education and the De Laceys`)}
+                  {tr(`Chapters 13-14: Education and the De Laceys`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Safie, a Turkish woman, arrives at the cottage. As the De Laceys teach her French,
@@ -243,7 +243,7 @@ export default function FrankensteinPage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 15&ndash;16: Rejection and Revenge`)}
+                  {tr(`Chapters 15-16: Rejection and Revenge`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The Creature approaches the blind old De Lacey, who responds kindly. But when
@@ -259,12 +259,12 @@ export default function FrankensteinPage() {
 
           <div>
             <h4 className="font-bold text-foreground text-base mb-2">
-              {tr(`Volume III (Chapters 17&ndash;24)`)}
+              {tr(`Volume III (Chapters 17-24)`)}
             </h4>
             <div className="space-y-3">
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 17&ndash;18: The Bargain`)}
+                  {tr(`Chapters 17-18: The Bargain`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The Creature demands that Victor create a female companion. He promises to
@@ -275,7 +275,7 @@ export default function FrankensteinPage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 19&ndash;20: Destruction of the Female`)}
+                  {tr(`Chapters 19-20: Destruction of the Female`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   On a remote Orkney island, Victor begins building the female creature but is
@@ -288,7 +288,7 @@ export default function FrankensteinPage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 21&ndash;22: Clerval&apos;s Death and Marriage`)}
+                  {tr(`Chapters 21-22: Clerval's Death and Marriage`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The murder victim is Henry Clerval, strangled by the Creature. Victor suffers
@@ -300,7 +300,7 @@ export default function FrankensteinPage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 23&ndash;24: The Pursuit`)}
+                  {tr(`Chapters 23-24: The Pursuit`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Victor vows to hunt the Creature to the ends of the earth. The pursuit takes him
@@ -623,7 +623,7 @@ export default function FrankensteinPage() {
       <Section title="Historical and Social Context" icon="🏛️">
         <div className="space-y-4">
           <div className="rounded-lg bg-primary/10 p-4">
-            <h4 className="font-bold text-primary">{tr(`Mary Shelley&apos;s Life`)}</h4>
+            <h4 className="font-bold text-primary">{tr(`Mary Shelley's Life`)}</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Mary Shelley (1797&ndash;1851) wrote <em>Frankenstein</em> when she was just 18,
               beginning it during the famous &ldquo;ghost story competition&rdquo; at Lake Geneva in
@@ -720,27 +720,27 @@ export default function FrankensteinPage() {
                 responsibility is the novel&apos;s driving tragedy.
               </p>
               <p>
-                <strong>{tr(`Paragraph 1 &mdash; Victor as negligent creator:`)}</strong> &ldquo;I
-                had worked hard for nearly two years&rdquo; shows obsessive creation without thought
-                for consequences. He abandons the Creature at birth. Link to Shelley&apos;s own
+                <strong>{tr(`Paragraph 1 - Victor as negligent creator:`)}</strong> &ldquo;I had
+                worked hard for nearly two years&rdquo; shows obsessive creation without thought for
+                consequences. He abandons the Creature at birth. Link to Shelley&apos;s own
                 experience of motherlessness and Wollstonecraft&apos;s ideas about parental duty.
               </p>
               <p>
-                <strong>{tr(`Paragraph 2 &mdash; Silence over Justine:`)}</strong> Victor knows the
+                <strong>{tr(`Paragraph 2 - Silence over Justine:`)}</strong> Victor knows the
                 Creature killed William but allows Justine to be executed. His responsibility
                 extends beyond creation to active moral cowardice. Connect to Shelley&apos;s
                 critique of male passivity.
               </p>
               <p>
-                <strong>{tr(`Paragraph 3 &mdash; The Creature&apos;s argument:`)}</strong> &ldquo;I
-                ought to be thy Adam&rdquo; &mdash; the Creature uses biblical language to frame
-                responsibility as a creator&apos;s <em>duty</em>. Link to Paradise Lost and the idea
-                that God has obligations to his creations.
+                <strong>{tr(`Paragraph 3 - The Creature's argument:`)}</strong> &ldquo;I ought to be
+                thy Adam&rdquo; &mdash; the Creature uses biblical language to frame responsibility
+                as a creator&apos;s <em>duty</em>. Link to Paradise Lost and the idea that God has
+                obligations to his creations.
               </p>
               <p>
-                <strong>{tr(`Paragraph 4 &mdash; Walton as contrast:`)}</strong> Walton ultimately
-                takes responsibility for his crew and turns back. He is the character who learns
-                from Victor&apos;s failure. Structural significance: the frame narrative allows the
+                <strong>{tr(`Paragraph 4 - Walton as contrast:`)}</strong> Walton ultimately takes
+                responsibility for his crew and turns back. He is the character who learns from
+                Victor&apos;s failure. Structural significance: the frame narrative allows the
                 reader to see what responsible choice looks like.
               </p>
               <p>
@@ -764,27 +764,27 @@ export default function FrankensteinPage() {
                 &ldquo;monster.&rdquo;
               </p>
               <p>
-                <strong>{tr(`Paragraph 1 &mdash; The Creature&apos;s appearance:`)}</strong>{' '}
-                &ldquo;dull yellow eye&rdquo; &mdash; Victor judges entirely on looks. Discuss how
-                the novel critiques prejudice. Only the blind De Lacey shows kindness. Link to
-                contemporary debates about physiognomy.
+                <strong>{tr(`Paragraph 1 - The Creature's appearance:`)}</strong> &ldquo;dull yellow
+                eye&rdquo; &mdash; Victor judges entirely on looks. Discuss how the novel critiques
+                prejudice. Only the blind De Lacey shows kindness. Link to contemporary debates
+                about physiognomy.
               </p>
               <p>
-                <strong>{tr(`Paragraph 2 &mdash; Victor&apos;s moral monstrosity:`)}</strong> Victor
-                abandons his creation, allows Justine to die, and destroys the female creature out
-                of selfish fear. &ldquo;I compassionated him&rdquo; but revulsion overrides
-                compassion &mdash; appearance defeats morality.
+                <strong>{tr(`Paragraph 2 - Victor's moral monstrosity:`)}</strong> Victor abandons
+                his creation, allows Justine to die, and destroys the female creature out of selfish
+                fear. &ldquo;I compassionated him&rdquo; but revulsion overrides compassion &mdash;
+                appearance defeats morality.
               </p>
               <p>
-                <strong>{tr(`Paragraph 3 &mdash; The Creature&apos;s transformation:`)}</strong>{' '}
-                &ldquo;I was benevolent and good; misery made me a fiend.&rdquo; Nature vs nurture
-                &mdash; monstrosity is created by society, not born. Link to Rousseau and Romantic
+                <strong>{tr(`Paragraph 3 - The Creature's transformation:`)}</strong> &ldquo;I was
+                benevolent and good; misery made me a fiend.&rdquo; Nature vs nurture &mdash;
+                monstrosity is created by society, not born. Link to Rousseau and Romantic
                 philosophy.
               </p>
               <p>
-                <strong>{tr(`Paragraph 4 &mdash; Structural presentation:`)}</strong> The frame
-                narrative places the Creature&apos;s voice at the centre &mdash; the heart of the
-                novel. Shelley gives him the most eloquent speech, undermining Victor&apos;s
+                <strong>{tr(`Paragraph 4 - Structural presentation:`)}</strong> The frame narrative
+                places the Creature&apos;s voice at the centre &mdash; the heart of the novel.
+                Shelley gives him the most eloquent speech, undermining Victor&apos;s
                 characterisation of him as a &ldquo;wretch.&rdquo;
               </p>
               <p>
@@ -806,28 +806,28 @@ export default function FrankensteinPage() {
                 presents it as the root cause of tragedy for both Victor and the Creature.
               </p>
               <p>
-                <strong>{tr(`Paragraph 1 &mdash; Victor&apos;s self-imposed isolation:`)}</strong>{' '}
-                He cuts himself off for two years during creation. &ldquo;I shunned my fellow
-                creatures as if I had been guilty of a crime.&rdquo; His isolation mirrors the
-                Creature&apos;s later exclusion. Link to Romantic ideas about solitary genius.
+                <strong>{tr(`Paragraph 1 - Victor's self-imposed isolation:`)}</strong> He cuts
+                himself off for two years during creation. &ldquo;I shunned my fellow creatures as
+                if I had been guilty of a crime.&rdquo; His isolation mirrors the Creature&apos;s
+                later exclusion. Link to Romantic ideas about solitary genius.
               </p>
               <p>
-                <strong>{tr(`Paragraph 2 &mdash; The Creature&apos;s enforced isolation:`)}</strong>{' '}
+                <strong>{tr(`Paragraph 2 - The Creature's enforced isolation:`)}</strong>{' '}
                 &ldquo;Every where I see bliss, from which I alone am irrevocably excluded.&rdquo;
                 He is isolated by his unique existence and by human prejudice. His loneliness drives
                 him to demand a companion.
               </p>
               <p>
-                <strong>{tr(`Paragraph 3 &mdash; Walton&apos;s loneliness:`)}</strong> &ldquo;I
-                desire the company of a man who could sympathise with me.&rdquo; Walton&apos;s
-                isolation at sea parallels both Victor and the Creature. The three narrators are all
-                fundamentally alone.
+                <strong>{tr(`Paragraph 3 - Walton's loneliness:`)}</strong> &ldquo;I desire the
+                company of a man who could sympathise with me.&rdquo; Walton&apos;s isolation at sea
+                parallels both Victor and the Creature. The three narrators are all fundamentally
+                alone.
               </p>
               <p>
-                <strong>{tr(`Paragraph 4 &mdash; Structural isolation:`)}</strong> The nested
-                narrative itself enacts isolation &mdash; each voice is contained within another,
-                unable to speak directly to the reader. The Arctic setting symbolises ultimate
-                isolation: cold, empty, lifeless.
+                <strong>{tr(`Paragraph 4 - Structural isolation:`)}</strong> The nested narrative
+                itself enacts isolation &mdash; each voice is contained within another, unable to
+                speak directly to the reader. The Arctic setting symbolises ultimate isolation:
+                cold, empty, lifeless.
               </p>
               <p>
                 <strong>Conclusion:</strong> Shelley presents isolation as both a cause and
@@ -839,7 +839,7 @@ export default function FrankensteinPage() {
 
           <div className="rounded-lg bg-muted p-4">
             <h4 className="font-bold text-foreground">
-              {tr(`Key Verbs for Discussing Shelley&apos;s Methods`)}
+              {tr(`Key Verbs for Discussing Shelley's Methods`)}
             </h4>
             <div className="mt-2 flex flex-wrap gap-2">
               {[
@@ -872,7 +872,7 @@ export default function FrankensteinPage() {
       </Section>
 
       {/* Writer's Methods */}
-      <Section title={tr(`Writer&rsquo;s Methods &amp; Techniques`)} icon="&#9997;">
+      <Section title={tr(`Writer’s Methods & Techniques`)} icon="&#9997;">
         <div className="space-y-4">
           {[
             {
@@ -961,8 +961,8 @@ export default function FrankensteinPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Use Shelley&apos;s context.`)}</strong> Her mother&apos;s death, the
-              Galvanism debates, and the Romantic movement are all directly relevant.
+              <strong>{tr(`Use Shelley's context.`)}</strong> Her mother&apos;s death, the Galvanism
+              debates, and the Romantic movement are all directly relevant.
             </span>
           </li>
           <li className="flex items-start gap-2">

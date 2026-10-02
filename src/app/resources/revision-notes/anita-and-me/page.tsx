@@ -602,9 +602,7 @@ export default function AnitaAndMePage() {
           <Section title="Context" icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">
-                  {tr(`Meera Syal &mdash; Author Biography`)}
-                </h4>
+                <h4 className="font-bold text-primary">{tr(`Meera Syal - Author Biography`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Meera Syal was born in 1961 in Wolverhampton and grew up in Essington, a small
                   former mining village in Staffordshire on which Tollington is closely based. She
@@ -686,7 +684,7 @@ export default function AnitaAndMePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">{tr(`Genre &mdash; The Bildungsroman`)}</h4>
+                <h4 className="font-bold text-primary">{tr(`Genre - The Bildungsroman`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Anita and Me is a Bildungsroman (a coming-of-age novel) in the tradition of
                   <em> Great Expectations</em>, <em>{tr(`To Kill a Mockingbird`)}</em>, and Maya
@@ -1137,9 +1135,9 @@ export default function AnitaAndMePage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Refer to Syal&apos;s methods explicitly.`)}</strong> The bilingual
-              narrative voice, the retrospective adult narrator, food motifs, dialect, free indirect
-              style. Don&apos;t just say &ldquo;Syal shows.&rdquo;
+              <strong>{tr(`Refer to Syal's methods explicitly.`)}</strong> The bilingual narrative
+              voice, the retrospective adult narrator, food motifs, dialect, free indirect style.
+              Don&apos;t just say &ldquo;Syal shows.&rdquo;
             </span>
           </li>
           <li className="flex items-start gap-2">

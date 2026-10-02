@@ -228,7 +228,7 @@ export default async function OCRInspectorCallsPage() {
             <div className="space-y-3">
               <div className="rounded-lg border border-border bg-muted p-4">
                 <p className="font-semibold text-foreground">
-                  {_tr(`Act 1: The Engagement and the Inspector&rsquo;s Arrival`)}
+                  {_tr(`Act 1: The Engagement and the Inspector’s Arrival`)}
                 </p>
                 <p className="mt-2 text-sm">
                   The Birling family are celebrating Sheila&rsquo;s engagement to Gerald Croft. Mr
@@ -254,7 +254,7 @@ export default async function OCRInspectorCallsPage() {
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
                 <p className="font-semibold text-foreground">
-                  {_tr(`Act 3: Eric&rsquo;s Confession and the Aftermath`)}
+                  {_tr(`Act 3: Eric’s Confession and the Aftermath`)}
                 </p>
                 <p className="mt-2 text-sm">
                   Eric confesses he got Eva pregnant, stole money from his father&rsquo;s firm to
@@ -594,9 +594,7 @@ export default async function OCRInspectorCallsPage() {
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="font-semibold text-foreground">
-                  {_tr(`Priestley&rsquo;s Socialism`)}
-                </h3>
+                <h3 className="font-semibold text-foreground">{_tr(`Priestley’s Socialism`)}</h3>
                 <p className="mt-2 text-sm">
                   J.B. Priestley was a committed socialist who believed in collective
                   responsibility, workers&rsquo; rights, and social equality. He served in World War
@@ -620,7 +618,7 @@ export default async function OCRInspectorCallsPage() {
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="font-semibold text-foreground">{_tr(`Women&rsquo;s Rights`)}</h3>
+                <h3 className="font-semibold text-foreground">{_tr(`Women’s Rights`)}</h3>
                 <p className="mt-2 text-sm">
                   In 1912, women could not vote and had limited legal rights. Working-class women
                   like Eva were especially powerless. The suffragette movement was active but had
@@ -648,9 +646,7 @@ export default async function OCRInspectorCallsPage() {
             </p>
             <div className="space-y-3">
               <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
-                <p className="font-semibold text-primary">
-                  {_tr(`Introduction (3&ndash;4 sentences)`)}
-                </p>
+                <p className="font-semibold text-primary">{_tr(`Introduction (3-4 sentences)`)}</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Address the question directly. State Priestley&rsquo;s overall message about the
                   theme/character. Briefly mention the 1945/1912 time frame and why it matters.

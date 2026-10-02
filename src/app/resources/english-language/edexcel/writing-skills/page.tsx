@@ -466,7 +466,7 @@ export default async function WritingSkillsPage() {
                 </span>
                 <div>
                   <p className="font-semibold text-foreground">
-                    {tr(`Conclusion &amp; Recommendation`)}
+                    {tr(`Conclusion & Recommendation`)}
                   </p>
                   <p className="text-sm text-muted-foreground">
                     Summarise your overall verdict. Would you recommend it? To whom? A star rating

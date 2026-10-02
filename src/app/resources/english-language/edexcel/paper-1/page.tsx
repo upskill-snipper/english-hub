@@ -134,7 +134,7 @@ export default async function Paper1Page() {
       <section className="bg-muted px-4 py-12">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-            {tr(`Section A: Reading &mdash; Question Breakdown`)}
+            {tr(`Section A: Reading - Question Breakdown`)}
           </h2>
           <p className="mt-3 text-muted-foreground">
             Each question targets a different skill. Here is the exact structure you will see in the
@@ -240,7 +240,7 @@ export default async function Paper1Page() {
               </div>
               <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="text-sm font-semibold text-primary">
-                  {tr(`Marking guide &mdash; Level descriptors:`)}
+                  {tr(`Marking guide - Level descriptors:`)}
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>
@@ -295,7 +295,7 @@ export default async function Paper1Page() {
               </div>
               <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="text-sm font-semibold text-primary">
-                  {tr(`Marking guide &mdash; Level descriptors:`)}
+                  {tr(`Marking guide - Level descriptors:`)}
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>
@@ -483,7 +483,7 @@ export default async function Paper1Page() {
           {/* Q3 example */}
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
             <h3 className="text-lg font-bold text-foreground">
-              {tr(`Question 3 &mdash; Language Analysis (Level 3 / 6 marks)`)}
+              {tr(`Question 3 - Language Analysis (Level 3 / 6 marks)`)}
             </h3>
             <div className="mt-3 rounded-lg bg-muted p-4">
               <p className="text-sm font-medium text-muted-foreground">Question:</p>
@@ -539,7 +539,7 @@ export default async function Paper1Page() {
           {/* Q4 example */}
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
             <h3 className="text-lg font-bold text-foreground">
-              {tr(`Question 4 &mdash; Critical Evaluation (Level 4-5 / 13-15 marks)`)}
+              {tr(`Question 4 - Critical Evaluation (Level 4-5 / 13-15 marks)`)}
             </h3>
             <div className="mt-3 rounded-lg bg-muted p-4">
               <p className="text-sm font-medium text-muted-foreground">Question:</p>
@@ -586,7 +586,7 @@ export default async function Paper1Page() {
           {/* Section B example */}
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
             <h3 className="text-lg font-bold text-foreground">
-              {tr(`Section B &mdash; Imaginative Writing (Level 4 opening)`)}
+              {tr(`Section B - Imaginative Writing (Level 4 opening)`)}
             </h3>
             <div className="mt-3 rounded-lg bg-muted p-4">
               <p className="text-sm font-medium text-muted-foreground">Task:</p>
@@ -625,7 +625,7 @@ export default async function Paper1Page() {
                   &bull; <strong>{tr(`One-line paragraph opener`)}</strong> for impact
                 </li>
                 <li>
-                  &bull; <strong>{tr(`Metaphor &amp; personification:`)}</strong> &ldquo;the sky had
+                  &bull; <strong>{tr(`Metaphor & personification:`)}</strong> &ldquo;the sky had
                   been wounded,&rdquo; &ldquo;cold whispers&rdquo;
                 </li>
                 <li>
@@ -657,7 +657,7 @@ export default async function Paper1Page() {
       <section className="px-4 py-12">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-            {tr(`Exam Strategy &amp; Timing`)}
+            {tr(`Exam Strategy & Timing`)}
           </h2>
           <div className="mt-6 overflow-x-auto rounded-xl border border-border bg-card shadow-md">
             <table className="w-full text-start text-sm">

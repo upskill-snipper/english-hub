@@ -127,7 +127,7 @@ export default function JaneEyrePage() {
         <div className="space-y-5">
           <div>
             <h4 className="font-bold text-foreground text-base mb-2">
-              {tr(`Gateshead (Chapters 1&ndash;4)`)}
+              {tr(`Gateshead (Chapters 1-4)`)}
             </h4>
             <div className="space-y-3">
               <div>
@@ -151,7 +151,7 @@ export default function JaneEyrePage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 3&ndash;4: Escape from Gateshead`)}
+                  {tr(`Chapters 3-4: Escape from Gateshead`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The apothecary Mr Lloyd suggests Jane be sent to school. Jane confronts Mrs Reed
@@ -166,12 +166,12 @@ export default function JaneEyrePage() {
 
           <div>
             <h4 className="font-bold text-foreground text-base mb-2">
-              {tr(`Lowood Institution (Chapters 5&ndash;10)`)}
+              {tr(`Lowood Institution (Chapters 5-10)`)}
             </h4>
             <div className="space-y-3">
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 5&ndash;6: Arrival and Helen Burns`)}
+                  {tr(`Chapters 5-6: Arrival and Helen Burns`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane arrives at Lowood, a charity school for orphans. Conditions are harsh: burnt
@@ -184,7 +184,7 @@ export default function JaneEyrePage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 7&ndash;8: Public Humiliation`)}
+                  {tr(`Chapters 7-8: Public Humiliation`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Brocklehurst visits Lowood and publicly brands Jane a liar, making her stand on a
@@ -197,7 +197,7 @@ export default function JaneEyrePage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapter 9: The Typhus Epidemic and Helen&apos;s Death`)}
+                  {tr(`Chapter 9: The Typhus Epidemic and Helen's Death`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   A typhus epidemic sweeps Lowood, killing many pupils due to the school&apos;s
@@ -225,12 +225,12 @@ export default function JaneEyrePage() {
 
           <div>
             <h4 className="font-bold text-foreground text-base mb-2">
-              {tr(`Thornfield Hall (Chapters 11&ndash;27)`)}
+              {tr(`Thornfield Hall (Chapters 11-27)`)}
             </h4>
             <div className="space-y-3">
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 11&ndash;12: Arrival and Restlessness`)}
+                  {tr(`Chapters 11-12: Arrival and Restlessness`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane arrives at Thornfield and meets Mrs Fairfax, the housekeeper, and
@@ -243,7 +243,7 @@ export default function JaneEyrePage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 13&ndash;15: Meeting Rochester`)}
+                  {tr(`Chapters 13-15: Meeting Rochester`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane meets Edward Rochester when his horse slips on ice and she helps him. He is
@@ -256,7 +256,7 @@ export default function JaneEyrePage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 16&ndash;18: Blanche Ingram and Jealousy`)}
+                  {tr(`Chapters 16-18: Blanche Ingram and Jealousy`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Rochester leaves and returns with a party of fashionable guests, including the
@@ -269,7 +269,7 @@ export default function JaneEyrePage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 19&ndash;20: The Gypsy and Mason&apos;s Attack`)}
+                  {tr(`Chapters 19-20: The Gypsy and Mason's Attack`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Rochester disguises himself as a gypsy fortune-teller to probe Jane&apos;s
@@ -281,7 +281,7 @@ export default function JaneEyrePage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 21&ndash;22: Return to Gateshead`)}
+                  {tr(`Chapters 21-22: Return to Gateshead`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane returns to Gateshead where Mrs Reed lies dying. Mrs Reed confesses that she
@@ -305,7 +305,7 @@ export default function JaneEyrePage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 24&ndash;25: Wedding Preparations and Omens`)}
+                  {tr(`Chapters 24-25: Wedding Preparations and Omens`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Rochester showers Jane with gifts and tries to dress her in finery; Jane resists,
@@ -318,7 +318,7 @@ export default function JaneEyrePage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 26&ndash;27: The Impediment and Departure`)}
+                  {tr(`Chapters 26-27: The Impediment and Departure`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   At the altar, a solicitor halts the wedding: Rochester is already married to
@@ -336,12 +336,12 @@ export default function JaneEyrePage() {
 
           <div>
             <h4 className="font-bold text-foreground text-base mb-2">
-              {tr(`Moor House / Morton (Chapters 28&ndash;35)`)}
+              {tr(`Moor House / Morton (Chapters 28-35)`)}
             </h4>
             <div className="space-y-3">
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 28&ndash;29: Destitution and Rescue`)}
+                  {tr(`Chapters 28-29: Destitution and Rescue`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane wanders the moors, starving and sleeping outdoors. She begs for food and is
@@ -367,7 +367,7 @@ export default function JaneEyrePage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 33&ndash;34: The Inheritance and St John&apos;s Proposal`)}
+                  {tr(`Chapters 33-34: The Inheritance and St John's Proposal`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   St John discovers Jane&apos;s true identity and reveals that their uncle, John
@@ -381,7 +381,7 @@ export default function JaneEyrePage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapter 35: &ldquo;Jane! Jane! Jane!&rdquo;`)}
+                  {tr(`Chapter 35: “Jane! Jane! Jane!”`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   St John intensifies his pressure on Jane to accept his proposal, using religion as
@@ -397,7 +397,7 @@ export default function JaneEyrePage() {
 
           <div>
             <h4 className="font-bold text-foreground text-base mb-2">
-              {tr(`Ferndean (Chapters 36&ndash;38)`)}
+              {tr(`Ferndean (Chapters 36-38)`)}
             </h4>
             <div className="space-y-3">
               <div>
@@ -414,7 +414,7 @@ export default function JaneEyrePage() {
               </div>
               <div>
                 <h5 className="font-semibold text-foreground">
-                  {tr(`Chapters 37&ndash;38: Reunion and Marriage`)}
+                  {tr(`Chapters 37-38: Reunion and Marriage`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane and Rochester are reunited. The power dynamic has shifted &mdash; Jane is now
@@ -629,7 +629,7 @@ export default function JaneEyrePage() {
         <div className="space-y-4">
           <div className="rounded-lg bg-muted p-4">
             <h4 className="font-bold text-foreground">
-              {tr(`Victorian Women and the &ldquo;Angel in the House&rdquo;`)}
+              {tr(`Victorian Women and the “Angel in the House”`)}
             </h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Victorian ideology confined middle-class women to the domestic sphere. Coventry
@@ -670,7 +670,7 @@ export default function JaneEyrePage() {
             </p>
           </div>
           <div className="rounded-lg bg-muted p-4">
-            <h4 className="font-bold text-foreground">{tr(`The Bront&euml; Sisters`)}</h4>
+            <h4 className="font-bold text-foreground">{tr(`The Brontë Sisters`)}</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Charlotte, Emily, and Anne Bront&euml; published under male pseudonyms (Currer, Ellis,
               and Acton Bell) to avoid the prejudice faced by female authors. <em>Jane Eyre</em> was
@@ -772,7 +772,7 @@ export default function JaneEyrePage() {
               </p>
               <p>
                 {tr(
-                  `Strange laughter, nocturnal attacks, the ripped veil. Bertha as Gothic double for Jane (uncontrolled passion vs. disciplined self-control). Explore postcolonial readings of Bertha&apos;s confinement.`,
+                  `Strange laughter, nocturnal attacks, the ripped veil. Bertha as Gothic double for Jane (uncontrolled passion vs. disciplined self-control). Explore postcolonial readings of Bertha's confinement.`,
                 )}
               </p>
               <p className="font-semibold text-foreground">
@@ -780,7 +780,7 @@ export default function JaneEyrePage() {
               </p>
               <p>
                 {tr(
-                  `The split chestnut tree, storms during emotional crises, the fire that destroys Thornfield. Nature reflects and foreshadows the characters&apos; fates. Link to Romantic and Gothic traditions.`,
+                  `The split chestnut tree, storms during emotional crises, the fire that destroys Thornfield. Nature reflects and foreshadows the characters' fates. Link to Romantic and Gothic traditions.`,
                 )}
               </p>
               <p className="font-semibold text-foreground">
@@ -796,7 +796,7 @@ export default function JaneEyrePage() {
 
           <div className="rounded-lg bg-muted p-4">
             <h4 className="font-bold text-foreground">
-              {tr(`How does Bront&euml; present the relationship between Jane and Rochester?`)}
+              {tr(`How does Brontë present the relationship between Jane and Rochester?`)}
             </h4>
             <div className="mt-2 space-y-2 text-sm text-muted-foreground leading-relaxed">
               <p className="font-semibold text-foreground">
@@ -841,7 +841,7 @@ export default function JaneEyrePage() {
             </h4>
             <div className="mt-2 space-y-2 text-sm text-muted-foreground leading-relaxed">
               <p className="font-semibold text-foreground">
-                {tr(`Paragraph 1: Brocklehurst &mdash; Evangelical hypocrisy`)}
+                {tr(`Paragraph 1: Brocklehurst - Evangelical hypocrisy`)}
               </p>
               <p>
                 Uses religion to control and punish. Preaches austerity for orphans while his family
@@ -849,7 +849,7 @@ export default function JaneEyrePage() {
                 oppression. Link to Dickens&apos;s similar critiques.
               </p>
               <p className="font-semibold text-foreground">
-                {tr(`Paragraph 2: Helen Burns &mdash; Christian endurance`)}
+                {tr(`Paragraph 2: Helen Burns - Christian endurance`)}
               </p>
               <p>
                 Genuine faith that offers comfort but accepts suffering too passively. &ldquo;If all
@@ -865,7 +865,7 @@ export default function JaneEyrePage() {
                 Jane recognises that his religion lacks warmth and humanity.
               </p>
               <p className="font-semibold text-foreground">
-                {tr(`Paragraph 4: Jane&apos;s personal faith`)}
+                {tr(`Paragraph 4: Jane's personal faith`)}
               </p>
               <p>
                 Jane develops a moral code rooted in conscience, not doctrine. She prays but trusts
@@ -894,7 +894,7 @@ export default function JaneEyrePage() {
           </div>
           <div className="rounded-lg bg-muted p-4">
             <h4 className="font-bold text-foreground">
-              {tr(`Structure Your Essay Around the Author&apos;s Intentions`)}
+              {tr(`Structure Your Essay Around the Author's Intentions`)}
             </h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Always frame your analysis as &ldquo;Bront&euml;

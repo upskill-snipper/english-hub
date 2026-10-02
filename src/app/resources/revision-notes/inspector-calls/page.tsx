@@ -195,7 +195,7 @@ export default function InspectorCallsRevisionPage() {
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                    {tr(`Key Moments &amp; Stage Directions`)}
+                    {tr(`Key Moments & Stage Directions`)}
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
@@ -245,7 +245,7 @@ export default function InspectorCallsRevisionPage() {
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                    {tr(`Key Moments &amp; Stage Directions`)}
+                    {tr(`Key Moments & Stage Directions`)}
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Gerald&apos;s confession about his affair with Daisy Renton</li>
@@ -298,7 +298,7 @@ export default function InspectorCallsRevisionPage() {
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                    {tr(`Key Moments &amp; Stage Directions`)}
+                    {tr(`Key Moments & Stage Directions`)}
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Eric&apos;s confession about the forced encounter and theft</li>
@@ -940,7 +940,7 @@ export default function InspectorCallsRevisionPage() {
           >
             <p className="text-sm text-muted-foreground mb-4">
               {tr(
-                `Essential quotations organised by character. Learn these for your exam &mdash; short quotations embedded in analytical sentences score highest.`,
+                `Essential quotations organised by character. Learn these for your exam: short quotations embedded in analytical sentences score highest.`,
               )}
             </p>
 

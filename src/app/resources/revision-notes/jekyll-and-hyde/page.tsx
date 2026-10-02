@@ -704,7 +704,7 @@ export default function JekyllAndHydePage() {
               </div>
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">
-                  {tr(`The Monstrous Double (Doppelg&auml;nger)`)}
+                  {tr(`The Monstrous Double (Doppelgänger)`)}
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The doppelg&auml;nger is a classic Gothic device &mdash; the idea of a dark twin
@@ -810,7 +810,7 @@ export default function JekyllAndHydePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">{tr(`The Doppelg&auml;nger Tradition`)}</h4>
+                <h4 className="font-bold text-primary">{tr(`The Doppelgänger Tradition`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Stevenson draws on a rich literary tradition of the &ldquo;double.&rdquo; The
                   German word
@@ -931,7 +931,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 1 &mdash; Jekyll&apos;s confession`)}
+                      {tr(`Paragraph 1 - Jekyll's confession`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Man is not truly one, but truly two.&rdquo; Analyse the thesis
@@ -941,7 +941,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 2 &mdash; Hyde&apos;s physical appearance`)}
+                      {tr(`Paragraph 2 - Hyde's physical appearance`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;He gave an impression of deformity without any nameable
@@ -951,7 +951,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 3 &mdash; The setting as duality`)}
+                      {tr(`Paragraph 3 - The setting as duality`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;The door, which was equipped with neither bell nor knocker, was
@@ -962,7 +962,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 4 &mdash; Loss of control`)}
+                      {tr(`Paragraph 4 - Loss of control`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;My devil had been long caged, he came out roaring.&rdquo; Discuss how
@@ -997,13 +997,13 @@ export default function JekyllAndHydePage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       {tr(
-                        `Stevenson presents Hyde as frightening precisely because he cannot be categorised or understood &mdash; he exists outside the boundaries of rational Victorian society, embodying everything it represses.`,
+                        `Stevenson presents Hyde as frightening precisely because he cannot be categorised or understood: he exists outside the boundaries of rational Victorian society, embodying everything it represses.`,
                       )}
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 1 &mdash; Indescribable appearance`)}
+                      {tr(`Paragraph 1 - Indescribable appearance`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;There is something wrong with his appearance; something displeasing,
@@ -1014,7 +1014,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 2 &mdash; Animalistic and primitive`)}
+                      {tr(`Paragraph 2 - Animalistic and primitive`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Something troglodytic&rdquo; and &ldquo;ape-like fury.&rdquo; Connect
@@ -1025,7 +1025,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 3 &mdash; Escalating violence`)}
+                      {tr(`Paragraph 3 - Escalating violence`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;With a transport of glee, I mauled the unresisting body.&rdquo; Trace
@@ -1036,7 +1036,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 4 &mdash; Hyde as internal, not external`)}
+                      {tr(`Paragraph 4 - Hyde as internal, not external`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;He, I say &mdash; I cannot say, I.&rdquo; Argue that Hyde&apos;s
@@ -1066,7 +1066,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 1 &mdash; Jekyll&apos;s secret pleasures`)}
+                      {tr(`Paragraph 1 - Jekyll's secret pleasures`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;I concealed my pleasures&rdquo; and &ldquo;I stood already committed to
@@ -1078,7 +1078,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 2 &mdash; The caged devil`)}
+                      {tr(`Paragraph 2 - The caged devil`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;My devil had been long caged, he came out roaring.&rdquo; The metaphor
@@ -1089,7 +1089,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 3 &mdash; Secrecy as social norm`)}
+                      {tr(`Paragraph 3 - Secrecy as social norm`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Utterson &ldquo;inclined to Cain&apos;s heresy&rdquo; of letting others go
@@ -1100,7 +1100,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 4 &mdash; The inevitability of eruption`)}
+                      {tr(`Paragraph 4 - The inevitability of eruption`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;I felt younger, lighter, happier in body.&rdquo; When repression
@@ -1131,7 +1131,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 1 &mdash; Jekyll&apos;s house as symbol`)}
+                      {tr(`Paragraph 1 - Jekyll's house as symbol`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The grand front entrance vs the &ldquo;blistered and distained&rdquo; back
@@ -1143,7 +1143,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 2 &mdash; Fog and darkness`)}
+                      {tr(`Paragraph 2 - Fog and darkness`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;The fog still slept on the wing above the drowned city.&rdquo; Pathetic
@@ -1154,7 +1154,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 3 &mdash; Soho`)}
+                      {tr(`Paragraph 3 - Soho`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Hyde&apos;s Soho lodgings represent the underside of respectable London. The
@@ -1166,7 +1166,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 4 &mdash; Night-time London`)}
+                      {tr(`Paragraph 4 - Night-time London`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Almost all significant events occur at night. Darkness enables Hyde&apos;s
@@ -1197,7 +1197,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 1 &mdash; Jekyll as Promethean scientist`)}
+                      {tr(`Paragraph 1 - Jekyll as Promethean scientist`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Jekyll attempts to separate good from evil &mdash; a power that belongs to
@@ -1208,7 +1208,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 2 &mdash; Lanyon as orthodox science`)}
+                      {tr(`Paragraph 2 - Lanyon as orthodox science`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Unscientific balderdash.&rdquo; Lanyon represents mainstream,
@@ -1232,7 +1232,7 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      {tr(`Paragraph 4 &mdash; Darwin and degeneration`)}
+                      {tr(`Paragraph 4 - Darwin and degeneration`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Something troglodytic.&rdquo; Hyde&apos;s appearance reflects Darwinian
@@ -1446,16 +1446,16 @@ export default function JekyllAndHydePage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Use Stevenson&apos;s methods.`)}</strong> Discuss symbolism (the door,
-              fog, the cane), structure (multiple narrators), and language techniques (pathetic
-              fallacy, semantic fields).
+              <strong>{tr(`Use Stevenson's methods.`)}</strong> Discuss symbolism (the door, fog,
+              the cane), structure (multiple narrators), and language techniques (pathetic fallacy,
+              semantic fields).
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Refer to the writer&apos;s intentions.`)}</strong> &ldquo;Stevenson
-              perhaps suggests...&rdquo; or &ldquo;Stevenson uses Hyde to critique...&rdquo;
+              <strong>{tr(`Refer to the writer's intentions.`)}</strong> &ldquo;Stevenson perhaps
+              suggests...&rdquo; or &ldquo;Stevenson uses Hyde to critique...&rdquo;
             </span>
           </li>
           <li className="flex items-start gap-2">

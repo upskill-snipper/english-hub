@@ -16,7 +16,7 @@ export const STRINGS: Record<string, Bi> = {
   s2: { en: `Love and Relationships`, ar: `الحب والعلاقات` },
   s3: { en: `How the AQA Poetry Exam Works`, ar: `كيف يعمل امتحان الشعر حسب أQA` },
   s4: {
-    en: `AQA&apos;s comparison question typically follows this format:`,
+    en: `AQA's comparison question typically follows this format:`,
     ar: `سُؤال المقارنة في امتحان أكاديميا (AQA) يأخذ عادة هذا الشكل:`,
   },
   s5: {
@@ -24,7 +24,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `المهارات الأساسية - ماذا يبحث عنه المصححون`,
   },
   s6: { en: `Relating to context (6 marks)`, ar: `في سياق الموضوع (6 نقاط)` },
-  s7: { en: `Timing &amp; Exam Strategy`, ar: `استراتيجية الوقت والخطة الامتحانية` },
+  s7: { en: `Timing & Exam Strategy`, ar: `استراتيجية الوقت والخطة الامتحانية` },
   s8: { en: `Suggested Time Split (45 mins)`, ar: `وقت مقترح للتقسيم (٤٥ دقيقة)` },
   s9: {
     en: `Write your comparative essay (aim for 3-4 developed paragraphs).`,
@@ -52,16 +52,16 @@ export const STRINGS: Record<string, Bi> = {
   s18: { en: `Similarly, [poet] also...`, ar: `مثلًا، [الشاعر] أيضًا...` },
   s19: { en: `Both poets present...`, ar: `يقدّم كلا الشاعرين...` },
   s20: {
-    en: `Like &lsquo;[poem A]&rsquo;, &lsquo;[poem B]&rsquo; also...`,
+    en: `Like ‘[poem A]’, ‘[poem B]’ also...`,
     ar: ``,
   },
   s21: { en: `In the same way...`, ar: `على نفس الطريقة...` },
   s23: { en: `In contrast, [poet]...`, ar: `في المقابل، [الشاعر]...` },
   s24: {
-    en: `Whereas &lsquo;[poem A]&rsquo;..., &lsquo;[poem B]&rsquo;...`,
+    en: `Whereas ‘[poem A]’..., ‘[poem B]’...`,
     ar: `&[-poem A]-..., &[-poem B]-...`,
   },
-  s26: { en: `Unlike &lsquo;[poem A]&rsquo;...`, ar: `عكس &[lsquo;القصيدة أ]&rsquo;...` },
+  s26: { en: `Unlike ‘[poem A]’...`, ar: `عكس &[lsquo;القصيدة أ]’...` },
   s27: { en: `On the other hand...`, ar: `من ناحية أخرى...` },
   s28: { en: `Strong Comparison Pairings`, ar: `paring قوية` },
   s29: { en: `My Last Duchess`, ar: `دوقتي الأخيرة` },
@@ -71,9 +71,9 @@ export const STRINGS: Record<string, Bi> = {
   s34: { en: `Checking Out Me History`, ar: `` },
   s35: { en: `When We Two Parted`, ar: `` },
   s36: { en: `Neutral Tones`, ar: `نبرات محايدة` },
-  s37: { en: `Love&apos;s Philosophy`, ar: `فلسفة الحب` },
-  s38: { en: `Porphyria&apos;s Lover`, ar: `عاشق پورفيريا` },
-  s39: { en: `The Farmer&apos;s Bride`, ar: `عروس المزارع` },
+  s37: { en: `Love's Philosophy`, ar: `فلسفة الحب` },
+  s38: { en: `Porphyria's Lover`, ar: `عاشق پورفيريا` },
+  s39: { en: `The Farmer's Bride`, ar: `عروس المزارع` },
   s40: { en: `Walking Away`, ar: `هروب` },
   s41: { en: `Mother, any distance`, ar: `أمي، أي بعد` },
 }

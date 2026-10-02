@@ -31,7 +31,7 @@ export const STRINGS: Record<string, Bi> = {
   s13: { en: `How climate change affects the UK`, ar: `كيف يؤثر تغير المناخ على المملكة المتحدة` },
   s14: { en: `The history and impact of a cultural movement`, ar: `تاريخ وتأثير حركة ثقافية` },
   s15: { en: `How AI is changing education`, ar: `كيف تغيرت التعليم بسبب الذكاء الاصطناعي` },
-  s17: { en: `Main points (3&ndash;4)`, ar: `نقاط رئيسية (3-4)` },
+  s17: { en: `Main points (3-4)`, ar: `نقاط رئيسية (3-4)` },
   s18: { en: `Eye Contact`, ar: `` },
   s19: { en: `Volume and Projection`, ar: `حجم وتقديم` },
   s20: { en: `Tone and Expression`, ar: `تÓN و الاستثارة` },
@@ -40,7 +40,7 @@ export const STRINGS: Record<string, Bi> = {
   s23: { en: `Listen to the full question`, ar: `شوف السؤال كله الحين` },
   s24: { en: `Take a moment to think`, ar: `لحظة، دوّر في أفكارك الحين` },
   s25: { en: `Answer in full sentences`, ar: `أجب بالجمل كاملة` },
-  s26: { en: `If you don&rsquo;t know the answer`, ar: `إذا كنت لا تعرف الجواب` },
+  s26: { en: `If you don’t know the answer`, ar: `إذا كنت لا تعرف الجواب` },
   s27: { en: `Refer back to your presentation`, ar: `راجع عرضك` },
   s28: { en: `Engage with challenging questions`, ar: `DEAL WITH COMPLEX QUESTIONS` },
   s29: {

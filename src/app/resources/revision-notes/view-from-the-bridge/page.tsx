@@ -697,7 +697,7 @@ export default function ViewFromTheBridgeRevisionPage() {
 
               <div>
                 <h3 className="font-bold text-foreground">
-                  {tr(`Greek Tragedy and &ldquo;Tragedy and the Common Man&rdquo;`)}
+                  {tr(`Greek Tragedy and “Tragedy and the Common Man”`)}
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Miller deliberately structures the play as a modern Greek tragedy. Key conventions

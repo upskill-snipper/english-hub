@@ -65,7 +65,7 @@ export const STRINGS: Record<string, Bi> = {
   s34: { en: `Warning: do not overdo it`, ar: `حذار من الإفراط فيه` },
   s35: { en: `Full stop (.)`, ar: `نقطة (_)` },
   s36: {
-    en: `Creates finality. Short sentences ending with full stops create a staccato rhythm: &ldquo;He stopped. Listened. Nothing.&rdquo;`,
+    en: `Creates finality. Short sentences ending with full stops create a staccato rhythm: “He stopped. Listened. Nothing.”`,
     ar: `يخلق نهاية. الجمل القصيرة التي تنتهي بنقطة كاملة تخلق إيقاعًا مقطعًا: "هناك توقف. استمع. لا شيء.`,
   },
   s38: { en: `Semicolon (;)`, ar: `نقطة وفاصلة` },

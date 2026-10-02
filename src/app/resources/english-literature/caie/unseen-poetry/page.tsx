@@ -120,9 +120,7 @@ export default function UnseenPoetryPage() {
             <Card>
               <CardHeader>
                 <CardTitle>
-                  {tr(
-                    `Step 1: First Reading &mdash; Overall Meaning &amp; Tone (3&ndash;4 minutes)`,
-                  )}
+                  {tr(`Step 1: First Reading - Overall Meaning & Tone (3-4 minutes)`)}
                 </CardTitle>
                 <CardDescription>
                   {tr(`Read the poem through without writing. Get the big picture.`)}
@@ -166,9 +164,7 @@ export default function UnseenPoetryPage() {
             <Card>
               <CardHeader>
                 <CardTitle>
-                  {tr(
-                    `Step 2: Second Reading &mdash; Annotate Language, Imagery &amp; Form (5&ndash;6 minutes)`,
-                  )}
+                  {tr(`Step 2: Second Reading - Annotate Language, Imagery & Form (5-6 minutes)`)}
                 </CardTitle>
                 <CardDescription>
                   Read again with a pen. Mark everything that creates an effect.
@@ -210,11 +206,9 @@ export default function UnseenPoetryPage() {
             {/* Step 3 */}
             <Card>
               <CardHeader>
-                <CardTitle>
-                  {tr(`Step 3: Planning &mdash; Group Observations (3&ndash;4 minutes)`)}
-                </CardTitle>
+                <CardTitle>{tr(`Step 3: Planning - Group Observations (3-4 minutes)`)}</CardTitle>
                 <CardDescription>
-                  {tr(`Organise your annotations into 3&ndash;4 coherent points.`)}
+                  {tr(`Organise your annotations into 3-4 coherent points.`)}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -252,9 +246,7 @@ export default function UnseenPoetryPage() {
             <Card>
               <CardHeader>
                 <CardTitle>
-                  {tr(
-                    `Step 4: Writing &mdash; Structured Response Hitting All 4 skills (55&ndash;60 minutes)`,
-                  )}
+                  {tr(`Step 4: Writing - Structured Response Hitting All 4 skills (55-60 minutes)`)}
                 </CardTitle>
                 <CardDescription>
                   {tr(`Write a sustained, analytical commentary. Quality over quantity.`)}
@@ -392,7 +384,7 @@ export default function UnseenPoetryPage() {
           <div className="mt-6 space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle>{tr(`Form: The &ldquo;Shape&rdquo; of the Poem`)}</CardTitle>
+                <CardTitle>{tr(`Form: The “Shape” of the Poem`)}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm text-muted-foreground">
@@ -812,8 +804,8 @@ the harbour holds its breath. And waits. For no one.`}
                     with well-selected, embedded quotations analysed at word level.
                   </li>
                   <li>
-                    &bull; <strong>{tr(`Clear awareness of the poet&rsquo;s methods`)}</strong> and
-                    their effects on the reader, explained with precision and nuance.
+                    &bull; <strong>{tr(`Clear awareness of the poet’s methods`)}</strong> and their
+                    effects on the reader, explained with precision and nuance.
                   </li>
                   <li>
                     &bull; <strong>{tr(`Confident personal response`)}</strong> that offers

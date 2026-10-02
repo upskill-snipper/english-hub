@@ -713,9 +713,7 @@ export default function WomanInBlackRevisionPage() {
               </div>
 
               <div>
-                <h3 className="font-bold text-foreground mb-3">
-                  {tr(`Arthur&apos;s Transformation`)}
-                </h3>
+                <h3 className="font-bold text-foreground mb-3">{tr(`Arthur's Transformation`)}</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Beat
                     moment="Early Arthur: defiant, almost exhilarated by the assignment"

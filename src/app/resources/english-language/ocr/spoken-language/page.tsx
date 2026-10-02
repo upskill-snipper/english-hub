@@ -210,7 +210,7 @@ export default async function OCRSpokenLanguagePage() {
                 the voting age should be lowered to sixteen.&rdquo;
               </li>
               <li>
-                <strong>{tr(`Main points (3&ndash;4)`)}</strong> &mdash; Each main point should be
+                <strong>{tr(`Main points (3-4)`)}</strong> &mdash; Each main point should be
                 supported with evidence, examples, or statistics. Organise them logically, with the
                 strongest point either first (for immediate impact) or last (for a powerful
                 conclusion).
@@ -327,7 +327,7 @@ export default async function OCRSpokenLanguagePage() {
                 one-word answers or informal language.
               </li>
               <li>
-                <strong>{tr(`If you don&rsquo;t know the answer`)}</strong>, say so honestly:
+                <strong>{tr(`If you don’t know the answer`)}</strong>, say so honestly:
                 &ldquo;That&rsquo;s an interesting question. I haven&rsquo;t researched that
                 specific aspect, but based on what I do know, I would suggest&hellip;&rdquo;
               </li>

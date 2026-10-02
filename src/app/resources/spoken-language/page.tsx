@@ -227,9 +227,7 @@ export default async function SpokenLanguagePage() {
             </h3>
             <div className="space-y-4">
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h4 className="font-semibold text-foreground">
-                  {tr(`Strand 1 &mdash; Presenting`)}
-                </h4>
+                <h4 className="font-semibold text-foreground">{tr(`Strand 1 - Presenting`)}</h4>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Demonstrate presentation skills in a formal setting. Speak clearly, maintain
                   appropriate pace and volume, use gestures and eye contact effectively, and
@@ -239,7 +237,7 @@ export default async function SpokenLanguagePage() {
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
                 <h4 className="font-semibold text-foreground">
-                  {tr(`Strand 2 &mdash; Listening and Responding`)}
+                  {tr(`Strand 2 - Listening and Responding`)}
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground">
                   After your presentation, you will answer questions from your teacher and/or
@@ -250,7 +248,7 @@ export default async function SpokenLanguagePage() {
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
                 <h4 className="font-semibold text-foreground">
-                  {tr(`Strand 3 &mdash; Using Standard English`)}
+                  {tr(`Strand 3 - Using Standard English`)}
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Use spoken Standard English effectively throughout your presentation and when
@@ -350,7 +348,7 @@ export default async function SpokenLanguagePage() {
             <div className="mt-3 space-y-3">
               <div className="rounded-lg border-s-4 border-[primary] bg-muted p-4">
                 <p className="font-semibold text-foreground">
-                  {tr(`Introduction (30&ndash;45 seconds)`)}
+                  {tr(`Introduction (30-45 seconds)`)}
                 </p>
                 <p className="mt-1 text-sm">
                   Hook your audience with a compelling opening: a rhetorical question, a surprising
@@ -359,9 +357,7 @@ export default async function SpokenLanguagePage() {
                 </p>
               </div>
               <div className="rounded-lg border-s-4 border-primary bg-muted p-4">
-                <p className="font-semibold text-primary">
-                  {tr(`Main Points (2&ndash;3 minutes)`)}
-                </p>
+                <p className="font-semibold text-primary">{tr(`Main Points (2-3 minutes)`)}</p>
                 <p className="mt-1 text-sm">
                   Present 3&ndash;4 well-developed points, each supported with evidence, examples,
                   or statistics. Use clear signposting: &ldquo;My first point is&hellip;&rdquo;,
@@ -370,7 +366,7 @@ export default async function SpokenLanguagePage() {
               </div>
               <div className="rounded-lg border-s-4 border-amber-500 bg-muted p-4">
                 <p className="font-semibold text-amber-700">
-                  {tr(`Counter-Argument (30&ndash;45 seconds)`)}
+                  {tr(`Counter-Argument (30-45 seconds)`)}
                 </p>
                 <p className="mt-1 text-sm">
                   Acknowledge the opposing viewpoint and explain why your position is stronger. This
@@ -380,7 +376,7 @@ export default async function SpokenLanguagePage() {
               </div>
               <div className="rounded-lg border-s-4 border-emerald-500 bg-muted p-4">
                 <p className="font-semibold text-emerald-700 dark:text-emerald-300">
-                  {tr(`Conclusion (30&ndash;45 seconds)`)}
+                  {tr(`Conclusion (30-45 seconds)`)}
                 </p>
                 <p className="mt-1 text-sm">
                   Summarise your key points, restate your argument, and end with a memorable closing
@@ -714,20 +710,14 @@ export default async function SpokenLanguagePage() {
             <ul className="ms-6 mt-4 list-disc space-y-2">
               <li>
                 {tr(
-                  `Use formal vocabulary: &ldquo;furthermore&rdquo; rather than &ldquo;also&rdquo;; &ldquo;however&rdquo; rather than &ldquo;but&rdquo;`,
+                  `Use formal vocabulary: “furthermore” rather than “also”; “however” rather than “but”`,
                 )}
               </li>
               <li>{tr(`Speak in complete sentences, not fragments`)}</li>
-              <li>
-                {tr(
-                  `Avoid filler words: &ldquo;um&rdquo;, &ldquo;er&rdquo;, &ldquo;like&rdquo;, &ldquo;you know&rdquo;`,
-                )}
-              </li>
+              <li>{tr(`Avoid filler words: “um”, “er”, “like”, “you know”`)}</li>
               <li>{tr(`Use subject-verb agreement correctly`)}</li>
               <li>
-                {tr(
-                  `Avoid double negatives: say &ldquo;I do not have any&rdquo; not &ldquo;I don&rsquo;t have none&rdquo;`,
-                )}
+                {tr(`Avoid double negatives: say “I do not have any” not “I don’t have none”`)}
               </li>
             </ul>
           </div>
@@ -918,7 +908,7 @@ export default async function SpokenLanguagePage() {
                     techniques is used effectively and deliberately.
                   </li>
                   <li>
-                    <strong>{tr(`Listening &amp; Responding:`)}</strong> Responds to questions and
+                    <strong>{tr(`Listening & Responding:`)}</strong> Responds to questions and
                     feedback perceptively, with authority and in considerable detail. Demonstrates
                     sophisticated critical thinking and the ability to develop and extend ideas
                     spontaneously.
@@ -942,9 +932,9 @@ export default async function SpokenLanguagePage() {
                     with success.
                   </li>
                   <li>
-                    <strong>{tr(`Listening &amp; Responding:`)}</strong> Responds to questions
-                    clearly, with some detail and development. Shows the ability to engage with
-                    ideas and offer reasoned responses.
+                    <strong>{tr(`Listening & Responding:`)}</strong> Responds to questions clearly,
+                    with some detail and development. Shows the ability to engage with ideas and
+                    offer reasoned responses.
                   </li>
                   <li>
                     <strong>{tr(`Standard English:`)}</strong> Standard English is used securely and
@@ -965,7 +955,7 @@ export default async function SpokenLanguagePage() {
                     techniques.
                   </li>
                   <li>
-                    <strong>{tr(`Listening &amp; Responding:`)}</strong> Responds to questions with
+                    <strong>{tr(`Listening & Responding:`)}</strong> Responds to questions with
                     simple, relevant answers but may lack development or detail.
                   </li>
                   <li>

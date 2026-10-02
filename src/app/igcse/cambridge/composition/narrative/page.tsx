@@ -84,7 +84,7 @@ const sections = [
   {
     title: '30 practice prompts',
     description:
-      'Cambridge-style narrative titles with hooks and planning tips, from &ldquo;The Visitor&rdquo; to &ldquo;Too Late&rdquo;.',
+      'Cambridge-style narrative titles with hooks and planning tips, from “The Visitor” to “Too Late”.',
     href: '/igcse/cambridge/composition/narrative/practice-prompts',
     icon: ListChecks,
     level: 'All levels',

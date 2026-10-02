@@ -69,7 +69,7 @@ const THEMES = [
     summary:
       "Shakespeare stages a cascading contrast between Duncan (pious, trusting, generous), the off-stage English Edward the Confessor (a 'holy' healer king), and Macbeth (a paranoid butcher). The play argues that legitimate kingship brings fertility and order, while usurpation brings barrenness and chaos. This was pointed commentary for James I, who believed in the Divine Right of Kings.",
     how_it_develops:
-      "Duncan models good kingship in Acts 1&ndash;2; Macbeth's coronation brings tyranny in Acts 3&ndash;4; Malcolm's restoration in Act 5 signals the return of order.",
+      "Duncan models good kingship in Acts 1-2; Macbeth's coronation brings tyranny in Acts 3-4; Malcolm's restoration in Act 5 signals the return of order.",
     quotes: [
       '"He was a gentleman on whom I built an absolute trust" (1.4)',
       '"Bleed, bleed, poor country!" (4.3)',
@@ -81,7 +81,7 @@ const THEMES = [
     summary:
       "The witches' opening paradox - 'Fair is foul, and foul is fair' - sets the pattern. Lady Macbeth tells her husband to 'look like the innocent flower, but be the serpent under't'. The witches' later prophecies are literally true but functionally deceptive (equivocation). The play's world is one where surfaces cannot be trusted.",
     how_it_develops:
-      "Established in 1.1, weaponised by the Macbeths in 1.5&ndash;1.7, turned back on Macbeth by the witches' equivocations in 4.1, and resolved only in Act 5 when reality finally catches up.",
+      "Established in 1.1, weaponised by the Macbeths in 1.5-1.7, turned back on Macbeth by the witches' equivocations in 4.1, and resolved only in Act 5 when reality finally catches up.",
     quotes: [
       '"Look like the innocent flower, but be the serpent under\'t" (1.5)',
       '"False face must hide what the false heart doth know" (1.7)',

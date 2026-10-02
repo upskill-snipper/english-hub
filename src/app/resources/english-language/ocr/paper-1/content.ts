@@ -33,7 +33,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s11: { en: `Read the questions first`, ar: `اقرأ الأسئلة أولًا` },
   s12: { en: `Annotate as you read`, ar: `دوّر واعنّن enquanto تقرأ` },
-  s14: { en: `Track the writer&rsquo;s argument`, ar: `اتبع حجة الكاتب` },
+  s14: { en: `Track the writer’s argument`, ar: `اتبع حجة الكاتب` },
   s15: { en: `Note shifts in tone or focus`, ar: `لاحظ التحولات في لهجة أو تركيز_EDEFAULTmaktb` },
   s16: { en: `An article for a newspaper or magazine`, ar: `مقال لصحيفة أو مجلة` },
   s17: { en: `Formal Letter`, ar: `carta رسمية` },
@@ -51,7 +51,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s24: { en: `Short paragraphs with clear topic sentences`, ar: `فقرات قصيرة مع جمل موضوع واضحة` },
   s26: {
-    en: `Address the audience directly (&ldquo;Ladies and gentlemen&rdquo;)`,
+    en: `Address the audience directly (“Ladies and gentlemen”)`,
     ar: `يا سيداتي وسادتي`,
   },
   s27: {

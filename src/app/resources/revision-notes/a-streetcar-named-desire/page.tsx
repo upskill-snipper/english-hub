@@ -799,7 +799,7 @@ export default function StreetcarNamedDesirePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">{tr(`Blanche&apos;s Costumes`)}</h4>
+                <h4 className="font-bold text-foreground">{tr(`Blanche's Costumes`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Williams describes Blanche&apos;s costumes with care. She enters in a &lsquo;white
                   suit with a fluffy bodice, necklace and earrings of pearl,&rsquo; an ensemble that
@@ -838,9 +838,7 @@ export default function StreetcarNamedDesirePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">
-                  {tr(`The &lsquo;Blue Piano&rsquo; and Jazz`)}
-                </h4>
+                <h4 className="font-bold text-foreground">{tr(`The ‘Blue Piano’ and Jazz`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Williams&apos;s opening stage directions describe a &lsquo;blue piano&rsquo;
                   &lsquo;expressing the spirit of the life which goes on here.&rsquo; A jazz piano

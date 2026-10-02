@@ -50,7 +50,7 @@ However, considering the context and the instruction to lean towards a more coll
     ar: ``,
   },
   s18: { en: `Holmes vs the Official Police`, ar: `هولمز ضد الشرطة الرسمية` },
-  s19: { en: `Limitations of Holmes&apos;s Method`, ar: `حدود طريقة هولمز` },
+  s19: { en: `Limitations of Holmes's Method`, ar: `حدود طريقة هولمز` },
   s20: { en: `Victorian Detective Fiction`, ar: `رواية اDetection في عصر فكتوريا` },
   s21: {
     en: `The Sign of the Four`,
@@ -69,7 +69,7 @@ For direct translation without context:
     ar: `كيف ي presente Conan Doyle موضوع العدل؟`,
   },
   s29: {
-    en: `Paragraph 1 &mdash; The failure of official justice`,
+    en: `Paragraph 1 - The failure of official justice`,
     ar: `.FAILURE OF OFFICIAL JUSTICE
 
 ال_failure_of_official_justice_
@@ -77,15 +77,15 @@ For direct translation without context:
 (الرجوع إلى الفصحى مطلوب للاستخدام الرسمي: _فشل العدالة الرسمية_)`,
   },
   s30: {
-    en: `Paragraph 2 &mdash; Jonathan Small&apos;s sense of justice`,
+    en: `Paragraph 2 - Jonathan Small's sense of justice`,
     ar: `جوناثان سمول حسّه بالعدل`,
   },
   s31: {
-    en: `Paragraph 3 &mdash; Colonial justice and moral debt`,
+    en: `Paragraph 3 - Colonial justice and moral debt`,
     ar: `عدالة الاستعمار والدين الأخلاقي`,
   },
   s32: {
-    en: `Paragraph 4 &mdash; Poetic justice and the resolution`,
+    en: `Paragraph 4 - Poetic justice and the resolution`,
     ar: `عدالة شعرية وال-resolution`,
   },
   s33: {
@@ -93,36 +93,36 @@ For direct translation without context:
     ar: `شنو الطريقة اللي استخدمها كونان دويل عشان ي présent the relation بين هولمز وواتسون؟`,
   },
   s34: {
-    en: `Paragraph 1 &mdash; Complementary opposites`,
+    en: `Paragraph 1 - Complementary opposites`,
     ar: ``,
   },
   s35: {
-    en: `Paragraph 2 &mdash; Watson as narrator and mediator`,
+    en: `Paragraph 2 - Watson as narrator and mediator`,
     ar: `واطنzas نarrator و mediator`,
   },
   s36: {
-    en: `Paragraph 3 &mdash; The Mary Morstan disruption`,
-    ar: `الفقرة الثالثة &mdash; اضطراب ماري مورستن`,
+    en: `Paragraph 3 - The Mary Morstan disruption`,
+    ar: `الفقرة الثالثة - اضطراب ماري مورستن`,
   },
   s37: {
-    en: `Paragraph 4 &mdash; The ending: divergent paths`,
+    en: `Paragraph 4 - The ending: divergent paths`,
     ar: `الفقرة الرابعة - الختام: مسارات مختلفة`,
   },
   s38: {
     en: `Sample Question 3: How does Conan Doyle explore the theme of empire and colonialism?`,
     ar: `سؤال نموذجي 3: كيف يستكشف كونان دويل موضوع الإمبراطورية والاستعمار؟`,
   },
-  s39: { en: `Paragraph 1 &mdash; The Agra treasure as symbol`, ar: `المال في أغرا كرمز` },
+  s39: { en: `Paragraph 1 - The Agra treasure as symbol`, ar: `المال في أغرا كرمز` },
   s40: {
-    en: `Paragraph 2 &mdash; Jonathan Small&apos;s backstory`,
+    en: `Paragraph 2 - Jonathan Small's backstory`,
     ar: ``,
   },
-  s41: { en: `Paragraph 3 &mdash; The treatment of Tonga`, ar: `علاج تونغا` },
-  s42: { en: `Paragraph 4 &mdash; Empire in England`, ar: `الإمبراطورية في إنجلترا` },
+  s41: { en: `Paragraph 3 - The treatment of Tonga`, ar: `علاج تونغا` },
+  s42: { en: `Paragraph 4 - Empire in England`, ar: `الإمبراطورية في إنجلترا` },
   s43: { en: `Exam Tips for The Sign of the Four`, ar: `نصائح للامتحانات ل(sign of the four)` },
   s44: { en: `Always link to context.`, ar: `` },
-  s45: { en: `Use Conan Doyle&apos;s methods.`, ar: `استخدم طرق كونان دويل` },
-  s46: { en: `Refer to the writer&apos;s intentions.`, ar: `اشفط نيات الكاتب` },
+  s45: { en: `Use Conan Doyle's methods.`, ar: `استخدم طرق كونان دويل` },
+  s46: { en: `Refer to the writer's intentions.`, ar: `اشفط نيات الكاتب` },
   s47: { en: `Compare characters deliberately.`, ar: `.compare بين الشخصيات عمداً.` },
   s48: { en: `Address problematic elements.`, ar: `عالج العناصر المشكو منها.` },
   s49: { en: `Link multiple themes.`, ar: `اربط عدة موضوعات.` },
@@ -148,6 +148,6 @@ For direct translation without context:
     ar: `الرواية تبحث في أنواع مختلفة من الولاء. هولمز وواتسون`,
   },
   s66: { en: `Key Quotations with Analysis`, ar: `اقتباسات رئيسية مع تحليل` },
-  s67: { en: `Holmes&rsquo;s Methods and Deduction`, ar: `طرائق هولمز وتقديراته` },
+  s67: { en: `Holmes’s Methods and Deduction`, ar: `طرائق هولمز وتقديراته` },
   s69: { en: `Essay Planning`, ar: `hoạchtlة المقال` },
 }

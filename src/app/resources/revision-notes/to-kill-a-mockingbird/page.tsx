@@ -371,7 +371,7 @@ export default function ToKillAMockingbirdPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">{tr(`Harper Lee&apos;s Biography`)}</h4>
+                <h4 className="font-bold text-primary">{tr(`Harper Lee's Biography`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Nelle Harper Lee (1926&ndash;2016) grew up in Monroeville, Alabama. Her father
                   A.C. Lee was a lawyer who once defended two Black men accused of murder; both were
@@ -542,7 +542,7 @@ export default function ToKillAMockingbirdPage() {
               </div>
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">
-                  {tr(`Boo&apos;s Gifts in the Tree-Knothole`)}
+                  {tr(`Boo's Gifts in the Tree-Knothole`)}
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Throughout Part One, the children find small gifts in the knothole of an oak tree
@@ -557,7 +557,7 @@ export default function ToKillAMockingbirdPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">{tr(`Atticus&apos;s Glasses`)}</h4>
+                <h4 className="font-bold text-foreground">{tr(`Atticus's Glasses`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Atticus is repeatedly described as bookish and bespectacled; the children consider
                   him &ldquo;feeble&rdquo; because he wears glasses, does not hunt, and does not
@@ -597,7 +597,7 @@ export default function ToKillAMockingbirdPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">{tr(`Mayella&apos;s Geraniums`)}</h4>
+                <h4 className="font-bold text-foreground">{tr(`Mayella's Geraniums`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Among the squalor of the Ewell yard &mdash; described as a dump &mdash; Mayella
                   tends red geraniums in chipped pots. The geraniums are a symbol of her stunted
@@ -1226,9 +1226,9 @@ export default function ToKillAMockingbirdPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Use Lee&apos;s methods.`)}</strong> Discuss the dual narrative voice
-              (child Scout / adult Jean Louise), symbolism (the mockingbird, the rabid dog), and
-              structural choices (Part One Boo plot / Part Two Tom plot).
+              <strong>{tr(`Use Lee's methods.`)}</strong> Discuss the dual narrative voice (child
+              Scout / adult Jean Louise), symbolism (the mockingbird, the rabid dog), and structural
+              choices (Part One Boo plot / Part Two Tom plot).
             </span>
           </li>
           <li className="flex items-start gap-2">

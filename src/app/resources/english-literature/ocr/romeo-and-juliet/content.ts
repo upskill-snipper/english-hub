@@ -30,7 +30,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Italian Setting and Civil Disorder`,
     ar: ``,
   },
-  s16: { en: `Introduction (3&ndash;4 sentences)`, ar: `مقدمة (ثلاثة إلى أربع جمل)` },
+  s16: { en: `Introduction (3-4 sentences)`, ar: `مقدمة (ثلاثة إلى أربع جمل)` },
   s17: { en: `Paragraph 1: Extract analysis`, ar: `تحليل الاستخراج` },
   s18: { en: `Paragraph 2: Extract analysis (continued)`, ar: `تحليل الاستخراج (مستمر)` },
   s19: { en: `Paragraph 3: Wider play (earlier in the text)`, ar: `الفصل الأعرض (في بداية النص)` },

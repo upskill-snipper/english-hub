@@ -34,8 +34,8 @@ Actually, that's not in Khaleeji Arabic and it seems there was a misunderstandin
   s14: { en: `Distinguish novel from play.`, ar: `dintiguish الرواية من المسرحية.` },
   s15: { en: `Handle representation carefully.`, ar: `ا HANDLE التمثيل WITH CAUTION ا` },
   s16: { en: `Embed exact quotations.`, ar: `اقرء الآيات دقيقة بدون تغيير كلمة واحدة.` },
-  s17: { en: `Use Haddon&apos;s methods.`, ar: `استخدم طرق هاددون.` },
-  s18: { en: `Refer to the writer&apos;s intentions.`, ar: `اشفط نوايا الكاتب.` },
+  s17: { en: `Use Haddon's methods.`, ar: `استخدم طرق هاددون.` },
+  s18: { en: `Refer to the writer's intentions.`, ar: `اشفط نوايا الكاتب.` },
   s19: { en: `Link the title to Sherlock Holmes.`, ar: `` },
   s20: { en: `Use precise terminology.`, ar: `استخدم لغة دقيقة.` },
   s21: {

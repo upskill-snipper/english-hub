@@ -22,6 +22,8 @@
  * navigates.
  */
 
+import { decodeHtmlEntities } from '@/lib/html/decode-entities'
+
 export type HtmlNode =
   | { kind: 'text'; text: string; start: number }
   | {
@@ -43,20 +45,20 @@ const INLINE_TAGS = new Set(['strong', 'b', 'em', 'i', 'u', 'span'])
 const VOID_TAGS = new Set(['br'])
 
 /**
- * The entities the play editions escape, back to the characters they stand for.
+ * The entities in a section's HTML, back to the characters they stand for.
  *
  * An entity left in plain text is shown to the student as written. Macbeth's
  * Act 4, Scene 1 prints a stage direction ending "&amp;c.", and once the scene
  * carried notes it read "Black Spirits, &amp;c." on the page (26 September
- * 2026). `&amp;` goes last, so "&amp;lt;" becomes "&lt;" and not "<".
+ * 2026). This first decoded five references by hand, so a scene with notes
+ * still printed "&ldquo;" and "&rsquo;" as written while the same scene without
+ * notes, which the browser decodes, printed the characters. Found on 2 October
+ * 2026, when the-reader-decodes-what-it-strips.test.tsx (written on 26 September
+ * against the shared decoder) finally reached main. It now uses that decoder:
+ * named and numeric references, decoded once, so "&amp;lt;" is "&lt;".
  */
 export function decodeEntities(s: string): string {
-  return s
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&amp;/g, '&')
+  return decodeHtmlEntities(s)
 }
 
 /** The HTML as a tree, and the plain text its positions refer to. */

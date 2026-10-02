@@ -22,7 +22,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `اقرأ القصيدة مرتين: مرة للفهم، ومرة للتقنية.`,
   },
   s8: {
-    en: `Show personal response: &ldquo;I find this particularly striking because...&rdquo;`,
+    en: `Show personal response: “I find this particularly striking because...”`,
     ar: `أجد هذا مثيراً للانتباه لأن...`,
   },
   s9: { en: `Section B: Prose (25 marks)`, ar: `SECTION B: الرواية (25 نقطة)` },

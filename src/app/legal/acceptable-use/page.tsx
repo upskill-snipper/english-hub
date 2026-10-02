@@ -105,8 +105,8 @@ export default async function AcceptableUsePolicyPage() {
         <h3 className="text-lg font-semibold mb-2">4.1 Academic Dishonesty</h3>
         <ul className="list-disc ps-6 space-y-2 mb-4">
           <li>
-            <strong>{_tr(`Submitting someone else&apos;s work as your own.`)}</strong> Every essay
-            you submit must be written by you.
+            <strong>{_tr(`Submitting someone else's work as your own.`)}</strong> Every essay you
+            submit must be written by you.
           </li>
           <li>
             <strong>Using AI feedback to produce essays for school submission.</strong> The feedback
@@ -126,7 +126,7 @@ export default async function AcceptableUsePolicyPage() {
         <h3 className="text-lg font-semibold mb-2">4.3 Account and Security Violations</h3>
         <ul className="list-disc ps-6 space-y-2 mb-4">
           <li>{_tr(`Sharing your account credentials with others`)}</li>
-          <li>{_tr(`Attempting to access other users&apos; data`)}</li>
+          <li>{_tr(`Attempting to access other users' data`)}</li>
           <li>Circumventing age verification or providing false identity information</li>
         </ul>
 

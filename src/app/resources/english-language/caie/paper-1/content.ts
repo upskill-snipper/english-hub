@@ -16,13 +16,13 @@ export const STRINGS: Record<string, Bi> = {
   s2: { en: `Question 1`, ar: `السؤال الأول` },
   s4: { en: `Question 2`, ar: `السؤال الثاني` },
   s5: {
-    en: `Summary &mdash; select and organise ideas from one or both passages`,
+    en: `Summary - select and organise ideas from one or both passages`,
     ar: ``,
   },
   s6: { en: `Question 3`, ar: `السؤال الثالث` },
   s7: {
-    en: `Language analysis &mdash; how the writer uses language to create effects`,
-    ar: `تحليل اللغة &mdash; كيف يستخدم الكاتب اللغة لخلق تأثيرات`,
+    en: `Language analysis - how the writer uses language to create effects`,
+    ar: `تحليل اللغة - كيف يستخدم الكاتب اللغة لخلق تأثيرات`,
   },
   s8: { en: `How to answer`, ar: `كيف تجيب` },
   s9: { en: `Read the question first`, ar: `اقرأ السؤال أولًا` },
@@ -47,9 +47,9 @@ It seems there was a misunderstanding as the response provided is in Thai. Let's
 
 بنية الجملة`,
   },
-  s21: { en: `Tone &amp; Mood`, ar: `تÓN و مOOD` },
+  s21: { en: `Tone & Mood`, ar: `تÓN و مOOD` },
   s22: { en: `Sound Devices`, ar: `الأدوات الصوتية` },
-  s23: { en: `Contrast &amp; Juxtaposition`, ar: `المقابلة والتقابل` },
+  s23: { en: `Contrast & Juxtaposition`, ar: `المقابلة والتقابل` },
   s24: { en: `Skim-read the entire passage`, ar: `انظر في toàn đoạn văn` },
   s25: { en: `Read the questions`, ar: `اقرأ الأسئلة` },
   s26: { en: `Re-read the passage carefully`, ar: `اقرأ الأبيات جيدًا مرة أخرى` },

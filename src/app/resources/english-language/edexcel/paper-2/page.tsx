@@ -144,7 +144,7 @@ export default async function Paper2Page() {
       <section className="bg-muted px-4 py-12">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-            {tr(`Section A: Reading &mdash; Question Breakdown`)}
+            {tr(`Section A: Reading - Question Breakdown`)}
           </h2>
 
           <div className="mt-8 space-y-6">
@@ -155,7 +155,7 @@ export default async function Paper2Page() {
                   1
                 </span>
                 <h3 className="text-lg font-bold text-foreground">
-                  {tr(`Short Retrieval &mdash; Text 1 (2 marks)`)}
+                  {tr(`Short Retrieval - Text 1 (2 marks)`)}
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
@@ -186,7 +186,7 @@ export default async function Paper2Page() {
                   2
                 </span>
                 <h3 className="text-lg font-bold text-foreground">
-                  {tr(`Short Retrieval &mdash; Text 1 (2 marks)`)}
+                  {tr(`Short Retrieval - Text 1 (2 marks)`)}
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
@@ -217,7 +217,7 @@ export default async function Paper2Page() {
                   3
                 </span>
                 <h3 className="text-lg font-bold text-foreground">
-                  {tr(`Language and Structure &mdash; Text 1 (15 marks)`)}
+                  {tr(`Language and Structure - Text 1 (15 marks)`)}
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
@@ -250,7 +250,7 @@ export default async function Paper2Page() {
                   4
                 </span>
                 <h3 className="text-lg font-bold text-foreground">
-                  {tr(`Short Retrieval &mdash; Text 2 (1 mark)`)}
+                  {tr(`Short Retrieval - Text 2 (1 mark)`)}
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
@@ -281,7 +281,7 @@ export default async function Paper2Page() {
                   5
                 </span>
                 <h3 className="text-lg font-bold text-foreground">
-                  {tr(`Short Retrieval &mdash; Text 2 (1 mark)`)}
+                  {tr(`Short Retrieval - Text 2 (1 mark)`)}
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
@@ -312,7 +312,7 @@ export default async function Paper2Page() {
                   6
                 </span>
                 <h3 className="text-lg font-bold text-foreground">
-                  {tr(`Critical Evaluation &mdash; Text 2 (15 marks)`)}
+                  {tr(`Critical Evaluation - Text 2 (15 marks)`)}
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
@@ -382,7 +382,7 @@ export default async function Paper2Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Compare writers&rsquo; ideas and perspectives (AO3)`)}</strong> &mdash;
+                <strong>{tr(`Compare writers’ ideas and perspectives (AO3)`)}</strong> &mdash;
                 Compare how the writers of Text 1 and Text 2 present their ideas and perspectives,
                 and how these are conveyed.
               </p>
@@ -407,7 +407,7 @@ export default async function Paper2Page() {
             <div className="mt-8 rounded-lg border border-border bg-card p-5">
               <p className="text-sm text-muted-foreground">
                 {tr(
-                  `Section A is worth 56 of the 96 marks on this paper. The level descriptors used by the marking engine follow Pearson&rsquo;s published band structure, but for the exact wording of each level always work from the mark scheme for your own series.`,
+                  `Section A is worth 56 of the 96 marks on this paper. The level descriptors used by the marking engine follow Pearson’s published band structure, but for the exact wording of each level always work from the mark scheme for your own series.`,
                 )}
               </p>
             </div>
@@ -555,7 +555,7 @@ export default async function Paper2Page() {
           {/* Q7(b) Comparison example */}
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
             <h3 className="text-lg font-bold text-foreground">
-              {tr(`Question 7(b) &mdash; Comparison (a high-level response)`)}
+              {tr(`Question 7(b) - Comparison (a high-level response)`)}
             </h3>
             <div className="mt-3 rounded-lg bg-muted p-4">
               <p className="text-sm font-medium text-muted-foreground">Question:</p>
@@ -610,7 +610,7 @@ export default async function Paper2Page() {
           {/* Writing for real purposes example */}
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
             <h3 className="text-lg font-bold text-foreground">
-              {tr(`Section B &mdash; Speech Writing (Level 4 opening)`)}
+              {tr(`Section B - Speech Writing (Level 4 opening)`)}
             </h3>
             <div className="mt-3 rounded-lg bg-muted p-4">
               <p className="text-sm font-medium text-muted-foreground">Task:</p>
@@ -679,7 +679,7 @@ export default async function Paper2Page() {
       <section className="px-4 py-12">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-            {tr(`Exam Strategy &amp; Timing`)}
+            {tr(`Exam Strategy & Timing`)}
           </h2>
           <div className="mt-6 overflow-x-auto rounded-xl border border-border bg-card shadow-md">
             <table className="w-full text-start text-sm">

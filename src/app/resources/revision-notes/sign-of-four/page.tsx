@@ -494,7 +494,7 @@ export default function SignOfFourPage() {
         </Section>
 
         {/* ─── Holmes's Methods ────────────────────────────────── */}
-        <Section title={tr(`Holmes&rsquo;s Methods and Deduction`)} icon="🔍">
+        <Section title={tr(`Holmes’s Methods and Deduction`)} icon="🔍">
           <div className="space-y-4" id="holmes-s-methods">
             <div className="rounded-lg bg-muted p-4">
               <h4 className="font-bold text-foreground">{tr(`Observation and Deduction`)}</h4>
@@ -560,9 +560,7 @@ export default function SignOfFourPage() {
               </p>
             </div>
             <div className="rounded-lg bg-muted p-4">
-              <h4 className="font-bold text-foreground">
-                {tr(`Limitations of Holmes&apos;s Method`)}
-              </h4>
+              <h4 className="font-bold text-foreground">{tr(`Limitations of Holmes's Method`)}</h4>
               <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                 Despite his brilliance, Holmes&apos;s purely rational approach has blind spots. He
                 cannot understand Watson&apos;s love for Mary; he dismisses women as untrustworthy;
@@ -679,7 +677,7 @@ export default function SignOfFourPage() {
               <div className="mt-3 space-y-3 text-sm text-muted-foreground">
                 <div>
                   <p className="font-semibold text-foreground">
-                    {tr(`Paragraph 1 &mdash; The failure of official justice`)}
+                    {tr(`Paragraph 1 - The failure of official justice`)}
                   </p>
                   <p>
                     Athelney Jones arrests the innocent Thaddeus Sholto. Conan Doyle presents the
@@ -690,7 +688,7 @@ export default function SignOfFourPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">
-                    {tr(`Paragraph 2 &mdash; Jonathan Small&apos;s sense of justice`)}
+                    {tr(`Paragraph 2 - Jonathan Small's sense of justice`)}
                   </p>
                   <p>
                     Small believes the treasure is rightfully his. His decision to throw it into the
@@ -702,7 +700,7 @@ export default function SignOfFourPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">
-                    {tr(`Paragraph 3 &mdash; Colonial justice and moral debt`)}
+                    {tr(`Paragraph 3 - Colonial justice and moral debt`)}
                   </p>
                   <p>
                     The treasure was originally stolen from Achmet through murder. Major Sholto then
@@ -713,7 +711,7 @@ export default function SignOfFourPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">
-                    {tr(`Paragraph 4 &mdash; Poetic justice and the resolution`)}
+                    {tr(`Paragraph 4 - Poetic justice and the resolution`)}
                   </p>
                   <p>
                     The treasure is lost, Small is captured, and Watson finds love. Conan Doyle
@@ -734,7 +732,7 @@ export default function SignOfFourPage() {
               <div className="mt-3 space-y-3 text-sm text-muted-foreground">
                 <div>
                   <p className="font-semibold text-foreground">
-                    {tr(`Paragraph 1 &mdash; Complementary opposites`)}
+                    {tr(`Paragraph 1 - Complementary opposites`)}
                   </p>
                   <p>
                     Holmes represents reason; Watson represents emotion. &ldquo;You really are an
@@ -745,7 +743,7 @@ export default function SignOfFourPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">
-                    {tr(`Paragraph 2 &mdash; Watson as narrator and mediator`)}
+                    {tr(`Paragraph 2 - Watson as narrator and mediator`)}
                   </p>
                   <p>
                     Watson translates Holmes&apos;s genius for the reader. His admiration
@@ -756,7 +754,7 @@ export default function SignOfFourPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">
-                    {tr(`Paragraph 3 &mdash; The Mary Morstan disruption`)}
+                    {tr(`Paragraph 3 - The Mary Morstan disruption`)}
                   </p>
                   <p>
                     Watson&apos;s love for Mary introduces a tension. Holmes fears losing Watson and
@@ -766,7 +764,7 @@ export default function SignOfFourPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">
-                    {tr(`Paragraph 4 &mdash; The ending: divergent paths`)}
+                    {tr(`Paragraph 4 - The ending: divergent paths`)}
                   </p>
                   <p>
                     Watson gains a wife; Holmes gains the cocaine bottle. The contrast at the
@@ -787,7 +785,7 @@ export default function SignOfFourPage() {
               <div className="mt-3 space-y-3 text-sm text-muted-foreground">
                 <div>
                   <p className="font-semibold text-foreground">
-                    {tr(`Paragraph 1 &mdash; The Agra treasure as symbol`)}
+                    {tr(`Paragraph 1 - The Agra treasure as symbol`)}
                   </p>
                   <p>
                     The treasure originates in India and brings death to everyone who possesses it.
@@ -798,7 +796,7 @@ export default function SignOfFourPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">
-                    {tr(`Paragraph 2 &mdash; Jonathan Small&apos;s backstory`)}
+                    {tr(`Paragraph 2 - Jonathan Small's backstory`)}
                   </p>
                   <p>
                     Small&apos;s narrative in Chapter 12 immerses the reader in colonial India
@@ -809,7 +807,7 @@ export default function SignOfFourPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">
-                    {tr(`Paragraph 3 &mdash; The treatment of Tonga`)}
+                    {tr(`Paragraph 3 - The treatment of Tonga`)}
                   </p>
                   <p>
                     Tonga is the most visible victim of colonial attitudes. Described in
@@ -820,7 +818,7 @@ export default function SignOfFourPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">
-                    {tr(`Paragraph 4 &mdash; Empire in England`)}
+                    {tr(`Paragraph 4 - Empire in England`)}
                   </p>
                   <p>
                     Colonial influence permeates London: Pondicherry Lodge (named after an Indian
@@ -853,7 +851,7 @@ export default function SignOfFourPage() {
             <li className="flex items-start gap-2">
               <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
               <span>
-                <strong>{tr(`Use Conan Doyle&apos;s methods.`)}</strong> Discuss narrative structure
+                <strong>{tr(`Use Conan Doyle's methods.`)}</strong> Discuss narrative structure
                 (Watson as first-person narrator), symbolism (the treasure, the fog, the Thames),
                 language techniques (pathetic fallacy, juxtaposition), and the significance of the
                 detective genre.
@@ -862,7 +860,7 @@ export default function SignOfFourPage() {
             <li className="flex items-start gap-2">
               <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
               <span>
-                <strong>{tr(`Refer to the writer&apos;s intentions.`)}</strong> Use phrases like
+                <strong>{tr(`Refer to the writer's intentions.`)}</strong> Use phrases like
                 &ldquo;Conan Doyle perhaps suggests...&rdquo; or &ldquo;Conan Doyle uses Small to
                 critique...&rdquo; to demonstrate awareness of authorial purpose.
               </span>

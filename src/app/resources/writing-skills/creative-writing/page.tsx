@@ -298,9 +298,7 @@ export default async function CreativeWritingPage() {
               </div>
 
               {/* Show Don't Tell -- 10 examples */}
-              <h3 className="mb-4 text-lg font-bold text-foreground">
-                {tr(`Show, Don&apos;t Tell`)}
-              </h3>
+              <h3 className="mb-4 text-lg font-bold text-foreground">{tr(`Show, Don't Tell`)}</h3>
               <p className="mb-4 text-sm text-muted-foreground">
                 This is the single most important principle in creative writing. Instead of naming
                 an emotion or state directly, you <strong>demonstrate</strong> it through actions,
@@ -437,7 +435,7 @@ export default async function CreativeWritingPage() {
                   <h4 className="font-bold text-foreground">{tr(`Layer Your Senses`)}</h4>
                   <p className="mt-1 text-sm text-muted-foreground">
                     {tr(
-                      `Do not describe only what you see. Begin with sight, then add sound, then smell or touch. Each new sense deepens the reader&apos;s immersion.`,
+                      `Do not describe only what you see. Begin with sight, then add sound, then smell or touch. Each new sense deepens the reader's immersion.`,
                     )}
                   </p>
                   <div className="mt-3 rounded-lg bg-muted px-4 py-3">
@@ -487,7 +485,7 @@ export default async function CreativeWritingPage() {
                   </h4>
                   <p className="mt-1 text-sm text-muted-foreground">
                     {tr(
-                      `The best settings suggest a past without explaining it. A scratched floor, a child&apos;s height marks on a doorframe, a faded sign -- these imply stories the reader can imagine.`,
+                      `The best settings suggest a past without explaining it. A scratched floor, a child's height marks on a doorframe, a faded sign -- these imply stories the reader can imagine.`,
                     )}
                   </p>
                   <div className="mt-3 rounded-lg bg-muted px-4 py-3">
@@ -783,7 +781,7 @@ export default async function CreativeWritingPage() {
                   <h4 className="font-bold text-foreground">{tr(`Delay the Reveal`)}</h4>
                   <p className="mt-1 text-sm text-muted-foreground">
                     {tr(
-                      `When something important is about to happen, slow down. Describe the character&apos;s hand reaching for the handle. The creak of the floorboard. The way the light shifts. Make the reader wait.`,
+                      `When something important is about to happen, slow down. Describe the character's hand reaching for the handle. The creak of the floorboard. The way the light shifts. Make the reader wait.`,
                     )}
                   </p>
                 </div>
@@ -818,13 +816,13 @@ export default async function CreativeWritingPage() {
                   <h4 className="font-bold text-foreground">{tr(`The Rule of Three`)}</h4>
                   <p className="mt-1 text-sm text-muted-foreground">
                     {tr(
-                      `Build in three stages: first hint, second hint (stronger), then the reveal. The pattern creates expectation. &ldquo;A creak. A shadow. Then the door swung open.&rdquo;`,
+                      `Build in three stages: first hint, second hint (stronger), then the reveal. The pattern creates expectation. “A creak. A shadow. Then the door swung open.”`,
                     )}
                   </p>
                 </div>
                 <div className="rounded-xl border border-border bg-card p-5 shadow-md">
                   <h4 className="font-bold text-foreground">
-                    {tr(`Limit the Character&apos;s Knowledge`)}
+                    {tr(`Limit the Character's Knowledge`)}
                   </h4>
                   <p className="mt-1 text-sm text-muted-foreground">
                     {tr(
@@ -1134,7 +1132,7 @@ export default async function CreativeWritingPage() {
               </p>
 
               <h3 className="mb-4 text-lg font-bold text-foreground">
-                {tr(`Tier 2 &amp; Tier 3 Words`)}
+                {tr(`Tier 2 & Tier 3 Words`)}
               </h3>
               <div className="mb-6 rounded-xl border border-border bg-card p-5">
                 <p className="text-sm text-muted-foreground mb-3">
@@ -1409,11 +1407,7 @@ export default async function CreativeWritingPage() {
                     Engages all five senses: sight (wallpaper, cracks), sound (pipe ticking), touch
                     (cold glass), smell/taste (air of endings), implied sound (silence)
                   </li>
-                  <li>
-                    {tr(
-                      `Sustained &ldquo;show, don&apos;t tell&rdquo; -- no emotions are named directly`,
-                    )}
-                  </li>
+                  <li>{tr(`Sustained “show, don't tell” -- no emotions are named directly`)}</li>
                   <li>
                     Figurative language is varied and purposeful: simile, metaphor, personification,
                     synaesthesia
@@ -1423,11 +1417,9 @@ export default async function CreativeWritingPage() {
                       `Structural control: zoom-in from room to chair to hand; shift from external observation to internal reflection`,
                     )}
                   </li>
-                  <li>{tr(`Circular structure: opens and closes with &ldquo;stillness&rdquo;`)}</li>
+                  <li>{tr(`Circular structure: opens and closes with “stillness”`)}</li>
                   <li>
-                    {tr(
-                      `Vocabulary is precise, not showy: &ldquo;threadbare,&rdquo; &ldquo;tributaries,&rdquo; &ldquo;indent&rdquo;`,
-                    )}
+                    {tr(`Vocabulary is precise, not showy: “threadbare,” “tributaries,” “indent”`)}
                   </li>
                   <li>{tr(`Varied sentence lengths create rhythm and pace`)}</li>
                 </ul>
@@ -1559,15 +1551,11 @@ export default async function CreativeWritingPage() {
                   <li>
                     {tr(`Opens in medias res with immediate intrigue (the pre-opened letter)`)}
                   </li>
-                  <li>
-                    {tr(`Uses flashback structure: present &rarr; three days ago &rarr; present`)}
-                  </li>
-                  <li>
-                    {tr(`Foreshadowing: hiding the envelope, the &ldquo;gravity&rdquo; metaphor`)}
-                  </li>
+                  <li>{tr(`Uses flashback structure: present → three days ago → present`)}</li>
+                  <li>{tr(`Foreshadowing: hiding the envelope, the “gravity” metaphor`)}</li>
                   <li>
                     {tr(
-                      `Information is deliberately withheld -- the letter&apos;s content is never revealed`,
+                      `Information is deliberately withheld -- the letter's content is never revealed`,
                     )}
                   </li>
                   <li>
@@ -1586,7 +1574,7 @@ export default async function CreativeWritingPage() {
                   </li>
                   <li>
                     {tr(
-                      `Show, don&apos;t tell: the narrator&apos;s emotions are conveyed through actions (pressing hands against eyes, making tea) not labels`,
+                      `Show, don't tell: the narrator's emotions are conveyed through actions (pressing hands against eyes, making tea) not labels`,
                     )}
                   </li>
                   <li>
@@ -1780,7 +1768,7 @@ export default async function CreativeWritingPage() {
             </Section>
 
             {/* ─── COMMON MISTAKES ───────────────────────────────── */}
-            <Section id="mistakes" title={tr(`Common Mistakes &amp; How to Avoid Them`)}>
+            <Section id="mistakes" title={tr(`Common Mistakes & How to Avoid Them`)}>
               <p className="mb-6 text-muted-foreground leading-relaxed">
                 Even strong writers fall into these traps. Recognising these patterns in your own
                 work is the fastest way to improve. Each mistake below includes a concrete fix and a

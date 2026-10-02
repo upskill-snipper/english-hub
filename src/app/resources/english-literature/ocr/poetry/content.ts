@@ -37,7 +37,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `متى كُتِب الشَّعر دا؟ شلون كان الوضع التَاريخي وقتها؟`,
   },
   s16: {
-    en: `What was the poet&rsquo;s background and experiences?`,
+    en: `What was the poet’s background and experiences?`,
     ar: `شنو خلفية الشاعر وتجاربه؟`,
   },
   s17: {
@@ -54,8 +54,8 @@ export const STRINGS: Record<string, Bi> = {
   },
   s20: { en: `What to Compare`, ar: `ما تقارن شلون` },
   s21: {
-    en: `Compare across multiple layers &mdash; not just theme:`,
-    ar: `قارن عبر طبقات متعددة &mdash; ليس فقط الموضوع:`,
+    en: `Compare across multiple layers, not just theme:`,
+    ar: `قارن عبر طبقات متعددة - ليس فقط الموضوع:`,
   },
   s22: { en: `Themes and Ideas`, ar: `chủات وفكار` },
   s23: { en: `Language and Imagery`, ar: `لغة وتصورات` },

@@ -30,8 +30,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `اقرأ الجزء المحدد من النص بعناية قبل النظر في العبارات.`,
   },
   s12: {
-    en: `Go through each statement one at a time and check it against the text. Be precise &mdash; a statement might be`,
-    ar: `دوري على كل جملة واحدة تلو الأخرى وشوفها بالنص. كوني دقيقة &mdash; الجملة قد تكون`,
+    en: `Go through each statement one at a time and check it against the text. Be precise: a statement might be`,
+    ar: `دوري على كل جملة واحدة تلو الأخرى وشوفها بالنص. كوني دقيقة - الجملة قد تكون`,
   },
   s13: {
     en: `If you shade more than four boxes, you will receive zero marks. Make sure you only select exactly four.`,
@@ -43,11 +43,11 @@ export const STRINGS: Record<string, Bi> = {
     ar: `عبارات صحيحة بشكل عام لكن النص لا يدعمها.`,
   },
   s17: {
-    en: `Statements that change a small detail (e.g., &ldquo;three children&rdquo; when the text says &ldquo;two children&rdquo;).`,
-    ar: `DECLARATIONS تغير تفاصيل صغيرة (مثل: &ldquo;ثلاثة أطفال&rdquo; عندما يقول النص &ldquo;اثنين من الأطفال&rdquo;).`,
+    en: `Statements that change a small detail (e.g., “three children” when the text says “two children”).`,
+    ar: `DECLARATIONS تغير تفاصيل صغيرة (مثل: “ثلاثة أطفال” عندما يقول النص “اثنين من الأطفال”).`,
   },
   s18: {
-    en: `Statements that go beyond what the text actually says &mdash; they add an interpretation that is not in the source.`,
+    en: `Statements that go beyond what the text actually says: they add an interpretation that is not in the source.`,
     ar: `statements التي تتجاوز ما يقوله النص فعليًا - تضيف تفسيرًا ليس موجودًا في المصدر.`,
   },
   s19: { en: `Reading and retrieval (AO1)`, ar: `قراءة واسترجاع (AO1)` },
@@ -64,7 +64,7 @@ export const STRINGS: Record<string, Bi> = {
   s26: { en: `Infer, do not just describe.`, ar: `استدل، لا تصف فقط.` },
   s28: { en: `Language and structure analysis (AO2)`, ar: `تحليل اللغة والبنية (AO2)` },
   s29: {
-    en: `Perceptive, detailed analysis. Analyses effects of writer&rsquo;s language choices. Judicious examples. Sophisticated, accurate subject terminology.`,
+    en: `Perceptive, detailed analysis. Analyses effects of writer’s language choices. Judicious examples. Sophisticated, accurate subject terminology.`,
     ar: `تحليل حساس ومفصل. يحلل تأثيرات خيارات لغة الكاتب. أمثلة منصفة. مصطلح موضوعي معقد ودقيق.`,
   },
   s30: {
@@ -79,7 +79,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Simple, limited comment. Simple references. Simple subject terminology.`,
     ar: `تعليق بسيط ومحدود. مراجعات بسيطة. مصطلحات موضوعية بسيطة.`,
   },
-  s33: { en: `What &rarr; How &rarr; Why`, ar: `شنو &rarr; شلون &rarr; ليش` },
+  s33: { en: `What → How → Why`, ar: `شنو → شلون → ليش` },
   s34: {
     en: `Embed short quotations into your sentences rather than quoting large blocks of text.`,
     ar: `.embed شلون تبغى تستخدمن قOTES داخل الجمل بدلاً من نقل كتل كبيرة من النص. استخدم عبارة مثل "قال الشاعر في قصيدته، إن الطبيعة جميلة" بدلًا من كتابة القصيدة كاملة. اembed شفاف وايد أمثلة صغيرة وواضحة.`,
@@ -89,8 +89,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `دورو على الاختيارات الكلامية الخاصة واستكشف دلالاتها.`,
   },
   s36: {
-    en: `Name techniques accurately &mdash; but only when you can explain their effect.`,
-    ar: `أذكر التقنيات بدقة &mdash; لكن فقط عندما تستطيع شرح تأثيرها.`,
+    en: `Name techniques accurately, but only when you can explain their effect.`,
+    ar: `أذكر التقنيات بدقة - لكن فقط عندما تستطيع شرح تأثيرها.`,
   },
   s37: {
     en: `Dealing with 19th-century texts`,
@@ -165,7 +165,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s68: { en: `May address the reader directly`, ar: `Addressي القارئ مباشرة` },
   s70: {
-    en: `Include addresses (top right: yours; below left: recipient&rsquo;s) and date`,
+    en: `Include addresses (top right: yours; below left: recipient’s) and date`,
     ar: `شوف إلخاطة (يمين الأعلى: ليك؛ يسار الأسفل: للي ماكتبه له) وال DATE الحين`,
   },
   s71: { en: `Formal register throughout`, ar: `الRegister formal خلال toàn bộtexto` },
@@ -174,8 +174,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: ``,
   },
   s73: {
-    en: `Address the audience directly: &ldquo;Ladies and gentlemen,&rdquo; or &ldquo;Fellow students,&rdquo;`,
-    ar: `&ldquo;سادتي وساداتي،&rdquo;" أو "&ldquo;أعزائي الطلاب،&rdquo;`,
+    en: `Address the audience directly: “Ladies and gentlemen,” or “Fellow students,”`,
+    ar: `“سادتي وساداتي،”" أو "“أعزائي الطلاب،”`,
   },
   s74: {
     en: `Use rhetorical questions, tricolon, and direct address throughout`,
@@ -206,8 +206,8 @@ export const STRINGS: Record<string, Bi> = {
   s84: { en: `Imperative verbs:`, ar: `اقرأ، حلِّل، اكتب، راجع` },
   s85: { en: `Planning your response (5 minutes)`, ar: `hoạchتك ردك (5 دقائق)` },
   s86: {
-    en: `Decide your viewpoint &mdash; you must take a clear position.`,
-    ar: `قرّر رؤيتك &mdash; يجب أن تتخذ موقفًا واضحًا.`,
+    en: `Decide your viewpoint: you must take a clear position.`,
+    ar: `قرّر رؤيتك - يجب أن تتخذ موقفًا واضحًا.`,
   },
   s88: {
     en: `Note the form and adapt your tone, layout, and register accordingly.`,
@@ -218,8 +218,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `مثال لبداية مقال (مستوى الصف الثامن والتاسع)`,
   },
   s92: {
-    en: `Ignoring the form. If the question says &ldquo;Write a speech,&rdquo; your response must read like a speech, with direct address and rhetorical features.`,
-    ar: `تجاهل الشكل المطلوب. إذا قال السؤال &ldquo;اكتب خطابا&rdquo; فيجب أن تُقرأ إجابتك كخطاب، بمخاطبة مباشرة وأساليب بلاغية.`,
+    en: `Ignoring the form. If the question says “Write a speech,” your response must read like a speech, with direct address and rhetorical features.`,
+    ar: `تجاهل الشكل المطلوب. إذا قال السؤال “اكتب خطابا” فيجب أن تُقرأ إجابتك كخطاب، بمخاطبة مباشرة وأساليب بلاغية.`,
   },
   s93: {
     en: `Not taking a clear position. Sitting on the fence earns fewer marks than a well-argued viewpoint.`,
@@ -230,8 +230,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `استخدام تقنية واحدة بشكل مفرط (مثل أسئلة الدعابة في كل فقرة).`,
   },
   s95: {
-    en: `Forgetting technical accuracy. Technical accuracy (AO6) is worth 16 marks &mdash; proofread carefully.`,
-    ar: `نسيان الدقة التقنية. الدقة التقنية (AO6) تساوي 16 نقطة &mdash; اقرأ بعناية لتصحيح الأخطاء.`,
+    en: `Forgetting technical accuracy. Technical accuracy (AO6) is worth 16 marks. Proofread carefully.`,
+    ar: `نسيان الدقة التقنية. الدقة التقنية (AO6) تساوي 16 نقطة - اقرأ بعناية لتصحيح الأخطاء.`,
   },
   s96: {
     en: `Not planning, which leads to repetitive or disorganised arguments.`,

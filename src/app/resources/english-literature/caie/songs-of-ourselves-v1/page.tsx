@@ -549,7 +549,7 @@ export default function SongsOfOurselvesV1Page() {
           </p>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             <strong className="text-foreground">
-              {tr(`Verified Vol&nbsp;1 Part&nbsp;4 poems:`)}
+              {tr(`Verified Vol\u00a01 Part\u00a04 poems:`)}
             </strong>{' '}
             <em>{tr(`The City Planners`)}</em> (Margaret Atwood, in copyright),{' '}
             <em>{tr(`Funeral Blues`)}</em> (W&nbsp;H Auden &mdash; the 1940 revised version, Faber,
@@ -603,7 +603,7 @@ export default function SongsOfOurselvesV1Page() {
           </h2>
           <Card className="mt-6">
             <CardHeader>
-              <CardTitle>{tr(`Songs of Ourselves &mdash; Volume 1`)}</CardTitle>
+              <CardTitle>{tr(`Songs of Ourselves - Volume 1`)}</CardTitle>
               <CardDescription>{tr(`Cambridge International Poetry Anthology`)}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4 text-sm text-muted-foreground">
@@ -735,7 +735,7 @@ export default function SongsOfOurselvesV1Page() {
                   {/* Form & Structure */}
                   <div>
                     <h4 className="text-sm font-semibold text-foreground">
-                      {tr(`Form &amp; Structure`)}
+                      {tr(`Form & Structure`)}
                     </h4>
                     <p className="mt-1 text-sm text-muted-foreground">
                       <strong className="text-foreground">Form:</strong> {poem.form}

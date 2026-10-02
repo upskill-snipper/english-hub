@@ -12,12 +12,12 @@ export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
   s1: { en: `Key Moments`, ar: `لحظات حاسمة` },
-  s2: { en: `Miranda &amp; Ferdinand`, ar: `ميراندا و فرناند` },
+  s2: { en: `Miranda & Ferdinand`, ar: `ميراندا و فرناند` },
   s3: { en: `Other Characters`, ar: `شخصيات أخرى` },
   s4: { en: `Colonialism and the New World`, ar: `الاستعمار والعالم الجديد` },
   s5: { en: `The Tempest`, ar: `العاصفة` },
   s6: { en: `Sea Venture`, ar: `سفينة البحر` },
-  s7: { en: `Shakespeare&apos;s Farewell to the Theatre`, ar: `وداع شكسبير للمسرح` },
+  s7: { en: `Shakespeare's Farewell to the Theatre`, ar: `وداع شكسبير للمسرح` },
   s8: { en: `Henry VIII`, ar: `هنري الثامن` },
   s9: { en: `The Two Noble Kinsmen`, ar: `الرجلين الكريمين` },
   s10: { en: `The Jacobean Masque`, ar: `الماسك الياكوبية` },

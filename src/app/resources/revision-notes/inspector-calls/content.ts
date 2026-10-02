@@ -11,7 +11,7 @@
 export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
-  s1: { en: `Key Moments &amp; Stage Directions`, ar: `لحظات حاسمة وتعليمات المشاهد` },
+  s1: { en: `Key Moments & Stage Directions`, ar: `لحظات حاسمة وتعليمات المشاهد` },
   s2: { en: `Inspector Goole`, ar: `Inspector Goole` },
   s3: { en: `Mouthpiece for Priestley`, ar: `متحدث عن برستلي` },
   s4: { en: `Moral Authority`, ar: `السلطة الأخلاقية` },
@@ -28,8 +28,8 @@ export const STRINGS: Record<string, Bi> = {
   s15: { en: `Absent Presence`, ar: `الحضور الغائب` },
   s16: { en: `Minor Role`, ar: `دور ثانوي` },
   s17: {
-    en: `Essential quotations organised by character. Learn these for your exam &mdash; short quotations embedded in analytical sentences score highest.`,
-    ar: `اقتباسات أساسية مrganized حسب الشخصية. تعلم هذه للامتحان &mdash; الاقتباسات القصيرة المدمجة في الجمل التحليلية تحصل على أعلى النقاط.`,
+    en: `Essential quotations organised by character. Learn these for your exam: short quotations embedded in analytical sentences score highest.`,
+    ar: `اقتباسات أساسية مrganized حسب الشخصية. تعلم هذه للامتحان - الاقتباسات القصيرة المدمجة في الجمل التحليلية تحصل على أعلى النقاط.`,
   },
   s18: { en: `About Eva / Key Stage Directions`, ar: `حول إيڤا / إرشادات مرحلة المراحل الرئيسية` },
   s19: {

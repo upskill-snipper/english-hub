@@ -26,7 +26,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: ``,
   },
   s8: {
-    en: `Compelling, convincing writing that sustains the reader&rsquo;s interest throughout.`,
+    en: `Compelling, convincing writing that sustains the reader’s interest throughout.`,
     ar: `كتابة مثيرة وقاطعة تحافظ على اهتمام القارئ خلال كل الحين.`,
   },
   s9: {
@@ -37,7 +37,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Varied, inventive structural choices that shape meaning (e.g., cyclical structure, deliberate shifts in pace).`,
     ar: `اختيارات بنائية متنوعة ومبتكرة التي تشكل المعنى (مثل الهيكل الدوري، والتغييرات المتعمدة في الوتيرة).`,
   },
-  s12: { en: `Grades 7-8 &mdash; Strong`, ar: `المستوى seventh إلى eighth &mdash; قوي` },
+  s12: { en: `Grades 7-8 - Strong`, ar: `المستوى seventh إلى eighth - قوي` },
   s13: {
     en: `Detailed, well-developed analysis with clear explanations of effects.`,
     ar: `تحليل مفصل ومتطور مع تفسيرات واضحة لتأثيرات القصة.`,
@@ -51,7 +51,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `terminologia الصحيحة مستخدمة بشكل_consistent`,
   },
   s16: {
-    en: `Thoughtful evaluation that engages with the statement and writer&rsquo;s methods.`,
+    en: `Thoughtful evaluation that engages with the statement and writer’s methods.`,
     ar: `تقييم Thoughtful يتعامل مع	statement والطرق التي يستخدمها الكاتب.`,
   },
   s18: {
@@ -74,7 +74,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Mostly accurate spelling and punctuation with only minor errors.`,
     ar: `إملاء وعلامات ترقيم صحيحة في معظمها مع أخطاء طفيفة فقط.`,
   },
-  s23: { en: `Grades 5-6 &mdash; Secure`, ar: `الصفوف fifth إلى sixth &mdash; موثوق` },
+  s23: { en: `Grades 5-6 - Secure`, ar: `الصفوف fifth إلى sixth - موثوق` },
   s24: {
     en: `Clear explanations of language and structural effects.`,
     ar: `توضيحات واضحة لتأثيرات اللغة والبنية"structural" هنا تعني "الهياكل" في السياق الأدبي أو اللغوي، لكن الاصطلاح يستخدم كما هو: تأثيرات اللغة والهيكل.`,
@@ -85,7 +85,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `استُخدمت المصطلحات المتخصصة بدقة في معظمها.`,
   },
   s27: {
-    en: `Analysis may lack depth or consistency &mdash; some points developed well, others more surface-level.`,
+    en: `Analysis may lack depth or consistency: some points developed well, others more surface-level.`,
     ar: `قد يفتقر التحليل إلى العمق أو الاتساق - بعض النقاط مطوّرة جيدا وأخرى سطحية.`,
   },
   s28: {
@@ -105,7 +105,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Generally accurate spelling and punctuation with some errors on more complex words.`,
     ar: ``,
   },
-  s33: { en: `Grade 4 &mdash; Standard pass`, ar: `الدرجة الرابعة &ndash; المعيار المعتمد للنجاح` },
+  s33: { en: `Grade 4 - Standard pass`, ar: `الدرجة الرابعة - المعيار المعتمد للنجاح` },
   s34: {
     en: `Some understanding of language effects, but explanations may be thin.`,
     ar: `بعض الفهم لتأثيرات اللغة، لكن التفسيرات قد تكون ضعيفة.`,
@@ -141,8 +141,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `SPELLING OF BASIC WORDS ACCURATE؛ ERRORS WITH MORE COMPLEX VOCABULARY`,
   },
   s44: {
-    en: `Grades 1-3 &mdash; Below standard pass`,
-    ar: `المستوى الأول حتى الثالث &mdash; دون المعدل للنجاح`,
+    en: `Grades 1-3 - Below standard pass`,
+    ar: `المستوى الأول حتى الثالث - دون المعدل للنجاح`,
   },
   s45: {
     en: `Simple comments on language with limited or no analysis.`,
@@ -167,9 +167,9 @@ export const STRINGS: Record<string, Bi> = {
     en: `Simple sentence forms; frequent errors in spelling and punctuation.`,
     ar: ``,
   },
-  s53: { en: `Grade 4 &rarr; Grade 5`, ar: `الصف الرابع إلى الصف الخامس` },
-  s54: { en: `Grade 5 &rarr; Grade 7`, ar: `الصف الخامس إلى الصف السابع` },
-  s55: { en: `Grade 7 &rarr; Grade 9`, ar: `السابع&rarr;الثامن والتاسع` },
+  s53: { en: `Grade 4 → Grade 5`, ar: `الصف الرابع إلى الصف الخامس` },
+  s54: { en: `Grade 5 → Grade 7`, ar: `الصف الخامس إلى الصف السابع` },
+  s55: { en: `Grade 7 → Grade 9`, ar: `السابع→الثامن والتاسع` },
   s56: { en: `Reading widely:`, ar: `قراءة واسعة:` },
   s58: { en: `Reading and retrieval (AO1)`, ar: `قراءة واسترجاع (AO1)` },
   s59: { en: `Language and structure analysis (AO2)`, ar: `تحليل اللغة والبنية (AO2)` },

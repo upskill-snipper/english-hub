@@ -17,13 +17,13 @@ export const STRINGS: Record<string, Bi> = {
     ar: `مطلوب لجميع طلبة اللغة الإنجليزية في الشهادة العامة للتعليم الثانوي`,
   },
   s2: {
-    en: `Reported separately &mdash; does`,
-    ar: `.reported separately &mdash; يreported separately &mdash; 
+    en: `Reported separately: does`,
+    ar: `.reported separately - يreported separately -
 
-(Translation note: The "&mdash;" is kept as-is since it's a formatting element, and "does" was not provided in context for translation.) 
+(Translation note: The " - " is kept as-is since it's a formatting element, and "does" was not provided in context for translation.) 
 
 Since the input text seems incomplete, here’s a possible full sentence translation based on common usage:
-.reported separately &mdash; يتم الإبلاغ عنهما بشكل منفصل &mdash;`,
+.reported separately - يتم الإبلاغ عنهما بشكل منفصل.`,
   },
   s3: {
     en: `Assessed by your teacher, moderated by your exam board`,
@@ -48,13 +48,13 @@ Since the input text seems incomplete, here’s a possible full sentence transla
     ar: ``,
   },
   s10: { en: `Requirements not met`, ar: `متطلبات ما شافهاش` },
-  s11: { en: `Strand 1 &mdash; Presenting`, ar: `السند الأول &mdash; العرض` },
+  s11: { en: `Strand 1 - Presenting`, ar: `السند الأول - العرض` },
   s12: {
-    en: `Strand 2 &mdash; Listening and Responding`,
-    ar: `السند الثاني &mdash; الاستماع والرد عليه`,
+    en: `Strand 2 - Listening and Responding`,
+    ar: `السند الثاني - الاستماع والرد عليه`,
   },
   s13: {
-    en: `Strand 3 &mdash; Using Standard English`,
+    en: `Strand 3 - Using Standard English`,
     ar: `السند الثالث - استخدام الإنجليزية القياسية`,
   },
   s14: { en: `Want more ideas?`, ar: `أبغى أفكار تانية؟` },
@@ -64,10 +64,10 @@ Since the input text seems incomplete, here’s a possible full sentence transla
   s19: { en: `Create cue cards`, ar: `صنّر بطاقات إرشادية` },
   s20: { en: `Anticipate questions`, ar: `توقع أسئلة` },
   s21: { en: `Practise aloud`, ar: `اقرأ بصوت عالي` },
-  s22: { en: `Introduction (30&ndash;45 seconds)`, ar: `مقدمة (30 إلى 45 ثانية)` },
-  s23: { en: `Main Points (2&ndash;3 minutes)`, ar: `نقاط_principal_(2-3 دقائق)` },
-  s24: { en: `Counter-Argument (30&ndash;45 seconds)`, ar: `phản_argument (30 إلى 45 ثانية)` },
-  s25: { en: `Conclusion (30&ndash;45 seconds)`, ar: `خاتمة (30 إلى 45 ثانية)` },
+  s22: { en: `Introduction (30-45 seconds)`, ar: `مقدمة (30 إلى 45 ثانية)` },
+  s23: { en: `Main Points (2-3 minutes)`, ar: `نقاط_principal_(2-3 دقائق)` },
+  s24: { en: `Counter-Argument (30-45 seconds)`, ar: `phản_argument (30 إلى 45 ثانية)` },
+  s25: { en: `Conclusion (30-45 seconds)`, ar: `خاتمة (30 إلى 45 ثانية)` },
   s26: {
     en: `Key words and short phrases, not full sentences`,
     ar: `كلمات رئيسية وعبارات قصيرة، لا جمل كاملة`,
@@ -95,21 +95,21 @@ Since the input text seems incomplete, here’s a possible full sentence transla
   s43: { en: `Avoid (Non-Standard)`, ar: `` },
   s44: { en: `Use Instead (Standard English)`, ar: `استخدم بدلاً من (ال.Standard English)` },
   s45: {
-    en: `Use formal vocabulary: &ldquo;furthermore&rdquo; rather than &ldquo;also&rdquo;; &ldquo;however&rdquo; rather than &ldquo;but&rdquo;`,
-    ar: `استخدم لغة.formal: "&laquo;علاوة على ذلك&raquo;" بدلاً من "&laquo;أيضا&raquo;; "&laquo;ومع ذلك&raquo;" بدلاً من "&laquo;لكن&raquo;`,
+    en: `Use formal vocabulary: “furthermore” rather than “also”; “however” rather than “but”`,
+    ar: `استخدم لغة.formal: "«علاوة على ذلك»" بدلاً من "«أيضا»; "«ومع ذلك»" بدلاً من "«لكن»`,
   },
   s46: {
     en: `Speak in complete sentences, not fragments`,
     ar: `تكلم بالجمل الكاملة، لا التFragmentationragments มกรἀ`,
   },
   s47: {
-    en: `Avoid filler words: &ldquo;um&rdquo;, &ldquo;er&rdquo;, &ldquo;like&rdquo;, &ldquo;you know&rdquo;`,
+    en: `Avoid filler words: “um”, “er”, “like”, “you know”`,
     ar: `تجنب استخدام الكلمات الزائدة: "أمم"، "إر"، "كما"، " знаешь`,
   },
   s48: { en: `Use subject-verb agreement correctly`, ar: `استخدم تماشى الضمير مع الفعل بشكل صحيح` },
   s49: {
-    en: `Avoid double negatives: say &ldquo;I do not have any&rdquo; not &ldquo;I don&rsquo;t have none&rdquo;`,
-    ar: `تجنب سوءات النفي المزدوج: قول &ldquo;لست عندي أي شيء&rdquo; وليس &ldquo;ما عندي_none&rdquo;`,
+    en: `Avoid double negatives: say “I do not have any” not “I don’t have none”`,
+    ar: `تجنب سوءات النفي المزدوج: قول “لست عندي أي شيء” وليس “ما عندي_none”`,
   },
   s50: { en: `Point 1: Taxation and representation`, ar: `النقطة الأولى: الضرائب والتمثيل` },
   s51: { en: `Point 2: Legal responsibilities`, ar: `المسؤوليات القانونية` },
@@ -119,7 +119,7 @@ Since the input text seems incomplete, here’s a possible full sentence transla
   },
   s54: { en: `Point 2: Cyberbullying`, ar: `نقاط 2: التنمر الإلكتروني` },
   s55: { en: `Point 3: Sleep disruption and anxiety`, ar: `نقطة 3: اضطراب النوم والقلق` },
-  s56: { en: `Listening &amp; Responding:`, ar: `الاستماع والرد:` },
+  s56: { en: `Listening & Responding:`, ar: `الاستماع والرد:` },
   s57: { en: `Standard English:`, ar: `المواضيع المعتادة في اللغة الإنجليزية:` },
   s58: {
     en: `Use this checklist to make sure you are fully prepared:`,

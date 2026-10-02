@@ -104,11 +104,11 @@ export default async function MacbethAct2Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
-                  `Banquo&apos;s restlessness and dream about the witches show his moral awareness &mdash; he senses something wrong.`,
+                  `Banquo's restlessness and dream about the witches show his moral awareness: he senses something wrong.`,
                 )}
               </li>
               <li>
@@ -118,7 +118,7 @@ export default async function MacbethAct2Page() {
               </li>
               <li>
                 {_tr(
-                  `The bell signals the transition from planning to execution &mdash; the irreversible step.`,
+                  `The bell signals the transition from planning to execution: the irreversible step.`,
                 )}
               </li>
             </ul>
@@ -224,7 +224,7 @@ export default async function MacbethAct2Page() {
             <h4 className="font-semibold mb-1">{_tr(`Links to Themes`)}</h4>
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline">{_tr(`The Supernatural`)}</Badge>
-              <Badge variant="outline">{_tr(`Guilt &amp; Conscience`)}</Badge>
+              <Badge variant="outline">{_tr(`Guilt & Conscience`)}</Badge>
               <Badge variant="outline">{_tr(`Appearance vs Reality`)}</Badge>
             </div>
           </div>
@@ -252,16 +252,16 @@ export default async function MacbethAct2Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
-                  `The murder of Duncan occurs offstage &mdash; Shakespeare focuses on psychological aftermath rather than physical act.`,
+                  `The murder of Duncan occurs offstage: Shakespeare focuses on psychological aftermath rather than physical act.`,
                 )}
               </li>
               <li>
                 {_tr(
-                  `Macbeth&apos;s immediate guilt is overwhelming; he is already beginning to unravel.`,
+                  `Macbeth's immediate guilt is overwhelming; he is already beginning to unravel.`,
                 )}
               </li>
               <li>
@@ -378,8 +378,8 @@ export default async function MacbethAct2Page() {
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Links to Themes`)}</h4>
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline">{_tr(`Guilt &amp; Conscience`)}</Badge>
-              <Badge variant="outline">{_tr(`Gender &amp; Masculinity`)}</Badge>
+              <Badge variant="outline">{_tr(`Guilt & Conscience`)}</Badge>
+              <Badge variant="outline">{_tr(`Gender & Masculinity`)}</Badge>
               <Badge variant="outline">{_tr(`The Supernatural`)}</Badge>
               <Badge variant="outline">{_tr(`Appearance vs Reality`)}</Badge>
             </div>
@@ -409,7 +409,7 @@ export default async function MacbethAct2Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
@@ -418,17 +418,17 @@ export default async function MacbethAct2Page() {
               </li>
               <li>
                 {_tr(
-                  `Macduff discovers the murder &mdash; his horror is genuine and will fuel his later vengeance.`,
+                  `Macduff discovers the murder. His horror is genuine and will fuel his later vengeance.`,
                 )}
               </li>
               <li>
                 {_tr(
-                  `Macbeth&apos;s killing of the grooms eliminates potential witnesses but creates suspicion.`,
+                  `Macbeth's killing of the grooms eliminates potential witnesses but creates suspicion.`,
                 )}
               </li>
               <li>
                 {_tr(
-                  `Malcolm and Donalbain&apos;s flight inadvertently casts suspicion on them, clearing Macbeth&apos;s path to the throne.`,
+                  `Malcolm and Donalbain's flight inadvertently casts suspicion on them, clearing Macbeth's path to the throne.`,
                 )}
               </li>
             </ul>
@@ -517,8 +517,8 @@ export default async function MacbethAct2Page() {
             <h4 className="font-semibold mb-1">{_tr(`Links to Themes`)}</h4>
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline">{_tr(`Appearance vs Reality`)}</Badge>
-              <Badge variant="outline">{_tr(`Kingship &amp; Power`)}</Badge>
-              <Badge variant="outline">{_tr(`Guilt &amp; Conscience`)}</Badge>
+              <Badge variant="outline">{_tr(`Kingship & Power`)}</Badge>
+              <Badge variant="outline">{_tr(`Guilt & Conscience`)}</Badge>
             </div>
           </div>
         </CardContent>
@@ -529,7 +529,7 @@ export default async function MacbethAct2Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-red-400" />
-            {_tr(`Scene 4 - Unnatural Events and Macbeth&apos;s Coronation`)}
+            {_tr(`Scene 4 - Unnatural Events and Macbeth's Coronation`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -545,26 +545,22 @@ export default async function MacbethAct2Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
-                  `The natural world reflects the moral disorder caused by regicide &mdash; the Great Chain of Being is disrupted.`,
+                  `The natural world reflects the moral disorder caused by regicide: the Great Chain of Being is disrupted.`,
                 )}
               </li>
               <li>
-                {_tr(
-                  `Malcolm and Donalbain are blamed for the murder, clearing Macbeth&apos;s path.`,
-                )}
+                {_tr(`Malcolm and Donalbain are blamed for the murder, clearing Macbeth's path.`)}
+              </li>
+              <li>
+                {_tr(`Macbeth is crowned king: the prophecy is fulfilled, but at terrible cost.`)}
               </li>
               <li>
                 {_tr(
-                  `Macbeth is crowned king &mdash; the prophecy is fulfilled, but at terrible cost.`,
-                )}
-              </li>
-              <li>
-                {_tr(
-                  `Macduff&apos;s refusal to attend the coronation signals his suspicion and future opposition.`,
+                  `Macduff's refusal to attend the coronation signals his suspicion and future opposition.`,
                 )}
               </li>
             </ul>
@@ -628,7 +624,7 @@ export default async function MacbethAct2Page() {
             <h4 className="font-semibold mb-1">{_tr(`Links to Themes`)}</h4>
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline">{_tr(`The Supernatural`)}</Badge>
-              <Badge variant="outline">{_tr(`Kingship &amp; Power`)}</Badge>
+              <Badge variant="outline">{_tr(`Kingship & Power`)}</Badge>
               <Badge variant="outline">{_tr(`Appearance vs Reality`)}</Badge>
             </div>
           </div>

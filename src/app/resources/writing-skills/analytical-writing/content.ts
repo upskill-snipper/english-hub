@@ -17,11 +17,11 @@ export const STRINGS: Record<string, Bi> = {
   s3: { en: `Mid-Sentence Embedding`, ar: `توسيط الجملة` },
   s4: { en: `Instead of:`, ar: `بدلاً من:` },
   s5: {
-    en: `Scrooge is presented as miserly. &ldquo;He was a tight-fisted hand at the grindstone.&rdquo;`,
-    ar: `سكروج م Presented كريمًا. "&ldquo;كان يدًا قاسية على الرحى.&rdquo;`,
+    en: `Scrooge is presented as miserly. “He was a tight-fisted hand at the grindstone.”`,
+    ar: `سكروج م Presented كريمًا. "“كان يدًا قاسية على الرحى.”`,
   },
   s6: {
-    en: `Dickens presents Scrooge as a &ldquo;tight-fisted hand at the grindstone&rdquo;, immediately establishing his miserly and unfeeling nature.`,
+    en: `Dickens presents Scrooge as a “tight-fisted hand at the grindstone”, immediately establishing his miserly and unfeeling nature.`,
     ar: `ديكنز ي presente سكروج كـ "يد قوية على الرحى"، م-establishing طبيعته البخلية والغير شعراءة فورًا.`,
   },
   s7: { en: `Single Word / Short Phrase Embedding`, ar: `توصيف كلمة أو جملة قصيرة` },
@@ -50,8 +50,8 @@ export const STRINGS: Record<string, Bi> = {
   s19: { en: `With evaluation`, ar: `بالطبع، لاحظ عند التقييم` },
   s20: { en: `Three Rules for Context`, ar: `ثلاث قواعد للسياق` },
   s21: {
-    en: `Never write a &ldquo;context paragraph&rdquo;`,
-    ar: `لا تكتب&auml;&sup1;&ccedil;&raquo;فقرة سياق&laquo;`,
+    en: `Never write a “context paragraph”`,
+    ar: `لا تكتبä¹ç»فقرة سياق«`,
   },
   s23: {
     en: `Use context to deepen analysis, not replace it`,
@@ -60,18 +60,18 @@ export const STRINGS: Record<string, Bi> = {
   s24: { en: `Weak vs. Strong Context Integration`, ar: `دمج السياق الضعيف مقابل القوي` },
   s25: { en: `Bolted on (weak)`, ar: `مسنود عليه (ضعيف)` },
   s26: { en: `Woven in (strong)`, ar: `منسوج من (قوي)` },
-  s27: { en: `Paragraph 1 &mdash; Extract Analysis`, ar: `تحليل الفقرة الأولى` },
-  s28: { en: `Paragraph 2 &mdash; Wider Play`, ar: `الفصل الثاني &mdash; المسرحية الأوسع` },
-  s29: { en: `Paragraph 3 &mdash; Wider Play`, ar: `الفصل الثالث - المسرحية الأوسع` },
+  s27: { en: `Paragraph 1 - Extract Analysis`, ar: `تحليل الفقرة الأولى` },
+  s28: { en: `Paragraph 2 - Wider Play`, ar: `الفصل الثاني - المسرحية الأوسع` },
+  s29: { en: `Paragraph 3 - Wider Play`, ar: `الفصل الثالث - المسرحية الأوسع` },
   s30: {
     en: `Source text (extract):`,
     ar: `متى بدأتم في دراسة المنهج الخاص بك للامتحانات(gcse أو igcse)؟ هل أنت مستعد للفحص القادم؟ تذكر أنك تحتاج إلى مراجعة المواد بشكل منتظم. اقرأ النصوص والأعمال الأدبية بعناية وحل`,
   },
-  s31: { en: `Paragraph 1 &mdash; Word Level`, ar: `الفقرة الأولى &mdash; مستوى الكلمة` },
-  s32: { en: `Paragraph 2 &mdash; Imagery and Figurative Language`, ar: `الصور واللغة المجازية` },
+  s31: { en: `Paragraph 1 - Word Level`, ar: `الفقرة الأولى - مستوى الكلمة` },
+  s32: { en: `Paragraph 2 - Imagery and Figurative Language`, ar: `الصور واللغة المجازية` },
   s33: {
-    en: `Paragraph 3 &mdash; Sentence Level and Structure`,
-    ar: `الفقرة الثالثة &mdash; مستوى الجملة والبنية`,
+    en: `Paragraph 3 - Sentence Level and Structure`,
+    ar: `الفقرة الثالثة - مستوى الجملة والبنية`,
   },
   s34: { en: `The Integrated Comparison Method`, ar: `المنهاج المقارن الموحد` },
   s36: { en: `Analyse Text A with evidence`, ar: `حلل النص أ مع تقديم أدلة` },
@@ -89,12 +89,12 @@ export const STRINGS: Record<string, Bi> = {
     ar: `بعض التفسير عن اللغة، لكن يبقى على مستوى السطح فقط`,
   },
   s44: {
-    en: `Context is mentioned but feels &ldquo;bolted on&rdquo; (&ldquo;in those days&rdquo;)`,
-    ar: `السياق مذكور لكنه يبدو وكأنه ملحوق (&quot;في تلك الأيام&quot;)`,
+    en: `Context is mentioned but feels “bolted on” (“in those days”)`,
+    ar: `السياق مذكور لكنه يبدو وكأنه ملحوق ("في تلك الأيام")`,
   },
   s45: {
-    en: `Limited evaluative vocabulary &mdash; &ldquo;shows&rdquo; is repeated`,
-    ar: `لغة تقييمية محدودة &mdash; كلمة &ldquo;تظهر&rdquo; متكررة`,
+    en: `Limited evaluative vocabulary: “shows” is repeated`,
+    ar: `لغة تقييمية محدودة - كلمة “تظهر” متكررة`,
   },
   s47: { en: `Thoughtful, developed response`, ar: `رد منظم ومتعمق` },
   s48: { en: `What makes this Grade 7:`, ar: `شنو ماكو في هذه المرتبة السابعة؟` },
@@ -104,7 +104,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `اقرأ واستعرض هذا الاقتباس بالتفصيل ثم حلله`,
   },
   s51: {
-    en: `Zooms in on specific words (&ldquo;direst&rdquo;, &ldquo;top-full&rdquo;)`,
+    en: `Zooms in on specific words (“direst”, “top-full”)`,
     ar: `يركز على كلمات معينة ("direst", "top-full")`,
   },
   s53: {
@@ -118,7 +118,7 @@ export const STRINGS: Record<string, Bi> = {
   s55: { en: `Convincing, critical, conceptualised response`, ar: `رد مقنع ونقدي ومفاهيميmaktb` },
   s56: { en: `What makes this Grade 9:`, ar: `شنو مايش م.Subject هاد ninth grade؟` },
   s58: {
-    en: `Analyses the writer&apos;s craft, not just the character`,
+    en: `Analyses the writer's craft, not just the character`,
     ar: `تحليل فن الكتابة، لا فقط الشخصية`,
   },
   s59: { en: `Zooms into individual words`, ar: `دورة في الكلمات الفردية` },
@@ -127,16 +127,16 @@ export const STRINGS: Record<string, Bi> = {
     ar: `السياق متوافر بشكل متداخل، ليس منفصلًا`,
   },
   s61: {
-    en: `Offers a counter-interpretation (&ldquo;Arguably, however...&rdquo;)`,
-    ar: `يقدم تفسيرًا معاكسًا (&ldquo;بالطبع، ومع ذلك...&rdquo;)`,
+    en: `Offers a counter-interpretation (“Arguably, however...”)`,
+    ar: `يقدم تفسيرًا معاكسًا (“بالطبع، ومع ذلك...”)`,
   },
   s62: {
     en: `Tracks ideas across the whole play (links to Act 5)`,
     ar: `traced ideas throughout the entire play (linked to Act 5)`,
   },
   s64: {
-    en: `Explores the idea that language itself is significant (the coinage &ldquo;unsex&rdquo;)`,
-    ar: `يشكّل فكرة أن اللغة ذاتها مهمة (إنشاء كلمة &ldquo;انثوي&rdquo;)`,
+    en: `Explores the idea that language itself is significant (the coinage “unsex”)`,
+    ar: `يشكّل فكرة أن اللغة ذاتها مهمة (إنشاء كلمة “انثوي”)`,
   },
   s65: { en: `Key Differences at a Glance`, ar: `différences الرئيسية في نظرة سريعة` },
   s66: { en: `Valid but simple`, ar: `سليم لكن سهل` },
@@ -166,7 +166,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s76: { en: `Integrated into analysis`, ar: `مدمج في التحليل` },
   s77: {
-    en: `Seamlessly woven; explains writer&apos;s choices`,
+    en: `Seamlessly woven; explains writer's choices`,
     ar: `متداخل بشكل سلس؛ يشرح خيارات الكاتب`,
   },
   s78: { en: `Some evaluative adverbs`, ar: `بعض الأدJECTIVES التقييمية` },

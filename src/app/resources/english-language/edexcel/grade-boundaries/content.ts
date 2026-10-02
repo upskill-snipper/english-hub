@@ -27,7 +27,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `terminologia موضوعية متقنة تستخدم بدقة وغرضية.`,
   },
   s8: {
-    en: `Critical evaluation that explores multiple interpretations and considers the writer&rsquo;s intentions and wider purpose.`,
+    en: `Critical evaluation that explores multiple interpretations and considers the writer’s intentions and wider purpose.`,
     ar: `تقويم نقدي يستكشف تفسيرات متعددة ويتناول نوايا الكاتب والغرض الأوسع منه`,
   },
   s9: {
@@ -35,7 +35,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: ``,
   },
   s11: {
-    en: `Compelling, convincing writing that sustains the reader&rsquo;s interest throughout.`,
+    en: `Compelling, convincing writing that sustains the reader’s interest throughout.`,
     ar: `كتابة مقنعة ومشجعة تحافظ على اهتمام القارئ خلال toàn bộ النص.`,
   },
   s12: {
@@ -46,7 +46,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Varied, inventive structural choices that shape meaning (e.g., cyclical structure, deliberate shifts in pace or focus).`,
     ar: `اختيارات بنائية متنوعة ومبتكرة التي تشكل المعنى (مثل الهيكل الدوري، التحولات المتعمدة في الوتيرة أو التركيز).`,
   },
-  s15: { en: `Grades 7-8 &mdash; Strong`, ar: `المستوى seventh إلى eighth &mdash; قوي` },
+  s15: { en: `Grades 7-8 - Strong`, ar: `المستوى seventh إلى eighth - قوي` },
   s16: {
     en: `Detailed, well-developed analysis with clear explanations of effects on the reader.`,
     ar: `تحليل مفصل ومتطور مع تفسيرات واضحة لتأثيرات القارئ.`,
@@ -60,7 +60,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `terminologia الصحيحة مستخدمة بطريقة منتظمة وغرضية.`,
   },
   s19: {
-    en: `Thoughtful evaluation that engages with the text critically and considers writer&rsquo;s methods.`,
+    en: `Thoughtful evaluation that engages with the text critically and considers writer’s methods.`,
     ar: `تقييم Thoughtful الذي يتعامل مع النص بانتقادية ويتناول طرق الكاتب وايد. الحين، أبغى أحط رأي بشكل موضوعي ويشارك مع النص بطريقة تعمق من فهمك للنص والتكتيكات اللي استخدمها الكاتب.`,
   },
   s20: {
@@ -87,7 +87,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Mostly accurate spelling and punctuation with only minor, infrequent errors.`,
     ar: `معظمًاSPELLING AND PUNCTUATION صحيحة مع أخطاء طفيفة نادرة`,
   },
-  s26: { en: `Grades 5-6 &mdash; Secure`, ar: `الصفوف fifth إلى sixth &mdash; موثوق` },
+  s26: { en: `Grades 5-6 - Secure`, ar: `الصفوف fifth إلى sixth - موثوق` },
   s27: {
     en: `Clear explanations of language and structural effects with relevant examples.`,
     ar: `توضيحات واضحة لتأثيرات اللغة والبنية مع أمثلة متعلقة.`,
@@ -97,7 +97,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `اقتباسات مختارة ذات صلة مع تعليقات وتحليل بعضها البعض.`,
   },
   s30: {
-    en: `Analysis may lack depth or consistency &mdash; some points developed well, others more surface-level.`,
+    en: `Analysis may lack depth or consistency: some points developed well, others more surface-level.`,
     ar: `قد يفتقر التحليل إلى العمق أو الاتساق - بعض النقاط مطوّرة جيدا وأخرى سطحية.`,
   },
   s31: {
@@ -120,7 +120,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Generally accurate spelling and punctuation with some errors on more complex words.`,
     ar: ``,
   },
-  s36: { en: `Grade 4 &mdash; Standard pass`, ar: `الدرجة الرابعة &ndash; المعيار الموافقة عليه` },
+  s36: { en: `Grade 4 - Standard pass`, ar: `الدرجة الرابعة - المعيار الموافقة عليه` },
   s37: {
     en: `Some understanding of language effects, but explanations may be thin or underdeveloped.`,
     ar: `بعض الفهم لتأثيرات اللغة، لكن التفسيرات قد تكون رقيقة أو غير مكتملة.`,
@@ -158,8 +158,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `SPELLING OF BASIC WORDS ACCURATE؛ ERRORS WITH MORE COMPLEX VOCABULARY`,
   },
   s47: {
-    en: `Grades 1-3 &mdash; Below standard pass`,
-    ar: `المستوى الأول حتى الثالث &mdash; دون المعدل للنجاح`,
+    en: `Grades 1-3 - Below standard pass`,
+    ar: `المستوى الأول حتى الثالث - دون المعدل للنجاح`,
   },
   s48: {
     en: `Simple comments on language with limited or no analysis.`,
@@ -189,28 +189,28 @@ export const STRINGS: Record<string, Bi> = {
     en: `Simple sentence forms; frequent errors in spelling and punctuation that hinder communication.`,
     ar: `تراكيب جمل بسيطة؛ أخطاء متكررة في الإملاء وعلامات الترقيم تعيق إيصال المعنى.`,
   },
-  s56: { en: `Grade 4 &rarr; Grade 5`, ar: `الصف الرابع إلى الصف الخامس` },
+  s56: { en: `Grade 4 → Grade 5`, ar: `الصف الرابع إلى الصف الخامس` },
   s57: { en: `Paper 2 Q7 (summary):`, ar: `ورقة 2 سؤال 7 (ملخص)` },
-  s58: { en: `Grade 5 &rarr; Grade 7`, ar: `الصف الخامس إلى الصف السابع` },
+  s58: { en: `Grade 5 → Grade 7`, ar: `الصف الخامس إلى الصف السابع` },
   s59: { en: `Paper 1 Q4 (evaluation):`, ar: `ورقتي الأولى سؤال 4 (التقييم):` },
-  s60: { en: `Grade 7 &rarr; Grade 9`, ar: `الصف السابع إلى الصف التاسع` },
+  s60: { en: `Grade 7 → Grade 9`, ar: `الصف السابع إلى الصف التاسع` },
   s62: { en: `Reading widely:`, ar: `قراءة واسعة:` },
   s63: {
     en: `Paper 1: Fiction and Imaginative Writing (1h 45m)`,
     ar: `ورقية واحد: القصة والكتابة الخيالية (١ ساعة و٤٥ دقيقة)`,
   },
   s65: {
-    en: `Short response &mdash; identify explicit information from the extract`,
+    en: `Short response - identify explicit information from the extract`,
     ar: `ا identif ي info explيcit من الاست خراج`,
   },
   s66: { en: `Reading and retrieval (AO1)`, ar: `قراءة واسترجاع (AO1)` },
   s68: { en: `Language and structure analysis (AO2)`, ar: `تحليل اللغة والStructure (AO2)` },
   s69: {
-    en: `Structure &mdash; explain how the writer structures the text for effect`,
+    en: `Structure - explain how the writer structures the text for effect`,
     ar: `اشرح كيف ي arrange الكاتب النص للتأثير`,
   },
   s70: {
-    en: `Evaluation &mdash; critically evaluate the text with reference to a statement`,
+    en: `Evaluation - critically evaluate the text with reference to a statement`,
     ar: `اقيِم وحدَه شفافًا معتمدًا على declarative statement`,
   },
   s71: { en: `Critical evaluation (AO4)`, ar: `التقييم النقدي (AO4)` },
@@ -224,19 +224,19 @@ export const STRINGS: Record<string, Bi> = {
     ar: `ورقية 2: الأدب غير الخيالي والكتابة لأغراض واقعية (2 ساعة وخمس دقائق)`,
   },
   s75: {
-    en: `Short response &mdash; identify true statements from Source A`,
+    en: `Short response - identify true statements from Source A`,
     ar: `اقرأstatements الصحيحة من المصدر أ`,
   },
   s77: {
-    en: `Short response &mdash; identify explicit information from one source`,
+    en: `Short response - identify explicit information from one source`,
     ar: `ا identifi شلون وايد معلومات صريحة من مصدر واحد فقط`,
   },
   s78: {
-    en: `Summary &mdash; synthesise and compare ideas from both sources`,
+    en: `Summary - synthesise and compare ideas from both sources`,
     ar: `.summary و(compare and synthesize ideas from both sources)`,
   },
   s79: {
-    en: `Language analysis &mdash; analyse how language is used in one source`,
+    en: `Language analysis - analyse how language is used in one source`,
     ar: `تحليل الاستخدام اللغوي في مصدر واحد`,
   },
   s80: {
@@ -267,16 +267,16 @@ export const STRINGS: Record<string, Bi> = {
   s90: { en: `Per-paper boundaries`, ar: `حدود الدرجات لكل ورقة` },
   s91: { en: `Paper 2 Q7(a) (summary):`, ar: `الورقة 2 السؤال 7(أ) (التلخيص):` },
   s92: {
-    en: `Short response &mdash; identify one piece of explicit information`,
+    en: `Short response - identify one piece of explicit information`,
     ar: `إجابة قصيرة - استخرج معلومة صريحة واحدة`,
   },
   s93: {
-    en: `Short response &mdash; give two pieces of information from named lines`,
+    en: `Short response - give two pieces of information from named lines`,
     ar: `إجابة قصيرة - اذكر معلومتين من الأسطر المحددة`,
   },
   s94: { en: `Q5 or Q6`, ar: `السؤال 5 أو 6` },
   s95: {
-    en: `Imaginative writing &mdash; answer one task`,
+    en: `Imaginative writing - answer one task`,
     ar: `الكتابة الإبداعية - أجب عن مهمة واحدة`,
   },
   s96: {
@@ -284,40 +284,40 @@ export const STRINGS: Record<string, Bi> = {
     ar: `المحتوى والتنظيم (AO5، 24) + الدقة اللغوية (AO6، 16)`,
   },
   s97: {
-    en: `Short response &mdash; two pieces of information from Text 1`,
+    en: `Short response - two pieces of information from Text 1`,
     ar: `إجابة قصيرة - معلومتان من النص 1`,
   },
   s98: {
-    en: `Short response &mdash; one piece of explicit information from Text 2`,
+    en: `Short response - one piece of explicit information from Text 2`,
     ar: `إجابة قصيرة - معلومة صريحة واحدة من النص 2`,
   },
   s99: {
-    en: `Summary &mdash; the ideas both texts present`,
+    en: `Summary - the ideas both texts present`,
     ar: `التلخيص - الأفكار التي يطرحها النصان`,
   },
   s100: { en: `Comparison across texts (AO3)`, ar: `المقارنة بين النصوص (AO3)` },
   s101: {
-    en: `Transactional writing &mdash; answer one task`,
+    en: `Transactional writing - answer one task`,
     ar: `الكتابة الوظيفية - أجب عن مهمة واحدة`,
   },
   s102: {
-    en: `Language and structure &mdash; analyse how the writer achieves effects in the named lines`,
+    en: `Language and structure - analyse how the writer achieves effects in the named lines`,
     ar: `اللغة والبنية - حلل كيف يحقق الكاتب التأثيرات في الأسطر المحددة`,
   },
   s103: {
-    en: `Evaluation &mdash; evaluate how successfully the writer achieves a stated effect`,
+    en: `Evaluation - evaluate how successfully the writer achieves a stated effect`,
     ar: `التقييم - قيّم مدى نجاح الكاتب في تحقيق تأثير محدد`,
   },
   s104: {
-    en: `Language and structure &mdash; analyse how the writer achieves effects in Text 1`,
+    en: `Language and structure - analyse how the writer achieves effects in Text 1`,
     ar: `اللغة والبنية - حلل كيف يحقق الكاتب التأثيرات في النص 1`,
   },
   s105: {
-    en: `Evaluation &mdash; evaluate how successfully the writer achieves a stated effect in Text 2`,
+    en: `Evaluation - evaluate how successfully the writer achieves a stated effect in Text 2`,
     ar: `التقييم - قيّم مدى نجاح الكاتب في تحقيق تأثير محدد في النص 2`,
   },
   s106: {
-    en: `Comparison &mdash; compare how the two writers present their ideas and perspectives`,
+    en: `Comparison - compare how the two writers present their ideas and perspectives`,
     ar: `المقارنة - قارن كيف يعرض الكاتبان أفكارهما ووجهات نظرهما`,
   },
 }

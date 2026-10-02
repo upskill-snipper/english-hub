@@ -235,7 +235,7 @@ export default async function OCRPaper1Page() {
                   the intended audience? What was the writer&rsquo;s purpose?
                 </li>
                 <li>
-                  <strong>{tr(`Track the writer&rsquo;s argument`)}</strong> &mdash; especially in
+                  <strong>{tr(`Track the writer’s argument`)}</strong> &mdash; especially in
                   non-fiction, identify the main argument and how the writer builds and supports it.
                 </li>
                 <li>
@@ -371,9 +371,7 @@ export default async function OCRPaper1Page() {
                 <div className="rounded-lg border border-border bg-muted p-5">
                   <h4 className="font-semibold text-foreground">Speech</h4>
                   <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
-                    <li>
-                      {tr(`Address the audience directly (&ldquo;Ladies and gentlemen&rdquo;)`)}
-                    </li>
+                    <li>{tr(`Address the audience directly (“Ladies and gentlemen”)`)}</li>
                     <li>{tr(`Rhetorical devices: tricolon, anaphora, rhetorical questions`)}</li>
                     <li>{tr(`Emotive language and personal anecdotes`)}</li>
                     <li>{tr(`Strong, memorable conclusion with a call to action`)}</li>

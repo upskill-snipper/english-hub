@@ -11,7 +11,7 @@
 export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
-  s3: { en: `Maxed out - you&apos;re a Gold partner`, ar: `وصلت للحد الأقصى - أنت شريك ذهبي` },
+  s3: { en: `Maxed out - you're a Gold partner`, ar: `وصلت للحد الأقصى - أنت شريك ذهبي` },
   s4: { en: `Share your link`, ar: `شوف رابطنا` },
   s5: { en: `How does tracking work?`, ar: `كيف تعمل عملية المتابعة؟` },
   s6: {

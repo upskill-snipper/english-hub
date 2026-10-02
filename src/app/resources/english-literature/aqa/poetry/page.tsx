@@ -332,7 +332,7 @@ export default async function AqaPoetryPage() {
               or feeling. This section is worth <strong>30 marks</strong> and you should spend
               approximately <strong>45 minutes</strong> on it (including planning time).
             </p>
-            <p>{_tr(`AQA&apos;s comparison question typically follows this format:`)}</p>
+            <p>{_tr(`AQA's comparison question typically follows this format:`)}</p>
             <div className="mt-2 rounded-lg border border-primary bg-card p-4 italic text-muted-foreground">
               &ldquo;Compare how poets present [theme/idea] in &lsquo;[named poem]&rsquo; and in one
               other poem from your anthology.&rdquo;
@@ -401,9 +401,7 @@ export default async function AqaPoetryPage() {
 
         {/* ── Timing advice ───────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-foreground">
-            {_tr(`Timing &amp; Exam Strategy`)}
-          </h2>
+          <h2 className="text-2xl font-bold text-foreground">{_tr(`Timing & Exam Strategy`)}</h2>
           <div className="mt-4 rounded-xl border-2 border-primary bg-blue-500/10 p-6 text-sm text-muted-foreground leading-relaxed space-y-3">
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
@@ -581,7 +579,7 @@ export default async function AqaPoetryPage() {
                   <ul className="mt-2 space-y-1">
                     <li>{_tr(`Similarly, [poet] also...`)}</li>
                     <li>{_tr(`Both poets present...`)}</li>
-                    <li>{_tr(`Like &lsquo;[poem A]&rsquo;, &lsquo;[poem B]&rsquo; also...`)}</li>
+                    <li>{_tr(`Like ‘[poem A]’, ‘[poem B]’ also...`)}</li>
                     <li>{_tr(`In the same way...`)}</li>
                     <li>{_tr(`This idea is echoed in...`)}</li>
                   </ul>
@@ -590,9 +588,9 @@ export default async function AqaPoetryPage() {
                   <h4 className="font-semibold text-foreground">Differences</h4>
                   <ul className="mt-2 space-y-1">
                     <li>{_tr(`In contrast, [poet]...`)}</li>
-                    <li>{_tr(`Whereas &lsquo;[poem A]&rsquo;..., &lsquo;[poem B]&rsquo;...`)}</li>
+                    <li>{_tr(`Whereas ‘[poem A]’..., ‘[poem B]’...`)}</li>
                     <li>{_tr(`However, [poet] takes a different approach...`)}</li>
-                    <li>{_tr(`Unlike &lsquo;[poem A]&rsquo;...`)}</li>
+                    <li>{_tr(`Unlike ‘[poem A]’...`)}</li>
                     <li>{_tr(`On the other hand...`)}</li>
                   </ul>
                 </div>
@@ -650,12 +648,12 @@ export default async function AqaPoetryPage() {
                       <strong>{_tr(`Neutral Tones`)}</strong> - end of love, bitterness
                     </li>
                     <li>
-                      <strong>{_tr(`Love&apos;s Philosophy`)}</strong> + <strong>Sonnet 29</strong>{' '}
-                      - desire and longing
+                      <strong>{_tr(`Love's Philosophy`)}</strong> + <strong>Sonnet 29</strong> -
+                      desire and longing
                     </li>
                     <li>
-                      <strong>{_tr(`Porphyria&apos;s Lover`)}</strong> +{' '}
-                      <strong>{_tr(`The Farmer&apos;s Bride`)}</strong> - obsession, power imbalance
+                      <strong>{_tr(`Porphyria's Lover`)}</strong> +{' '}
+                      <strong>{_tr(`The Farmer's Bride`)}</strong> - obsession, power imbalance
                     </li>
                     <li>
                       <strong>{_tr(`Walking Away`)}</strong> + <strong>Follower</strong> -
@@ -670,7 +668,7 @@ export default async function AqaPoetryPage() {
                     </li>
                     <li>
                       <strong>{_tr(`Singh Song!`)}</strong> +{' '}
-                      <strong>{_tr(`Love&apos;s Philosophy`)}</strong> - joyful desire, devotion
+                      <strong>{_tr(`Love's Philosophy`)}</strong> - joyful desire, devotion
                     </li>
                   </ul>
                 </div>

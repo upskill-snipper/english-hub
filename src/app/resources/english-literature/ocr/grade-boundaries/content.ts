@@ -22,7 +22,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `استخدام حكيم لreferences دقيق لدعم حجة مقنعة.`,
   },
   s5: {
-    en: `Sophisticated analysis of the writer&rsquo;s methods with subject terminology used judiciously.`,
+    en: `Sophisticated analysis of the writer’s methods with subject terminology used judiciously.`,
     ar: `تحليل متطور لأساليب الكاتب مع استخدام دقيق للمصطلحات الخاصة بالمضمون.`,
   },
   s6: {
@@ -39,7 +39,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Confident, original response to unseen poetry showing mature critical engagement.`,
     ar: `ردود الفعل الواثقة والمبتكرة على الشعر غير المعلومة التي تظهر مشاركة نقدية متقدمة.`,
   },
-  s9: { en: `Grades 7-8 &mdash; Strong`, ar: `المستوى seventh إلى eighth &mdash; قوي` },
+  s9: { en: `Grades 7-8 - Strong`, ar: `المستوى seventh إلى eighth - قوي` },
   s10: {
     en: `Thoughtful, developed response to texts with a clear personal voice.`,
     ar: `ردthoughtful ومطور مع صوت شخصي واضح. (ترجمة لـ "Thoughtful, developed response to texts with a clear personal voice." بأسلوب The English Hub، حيث يتم ترك الأجزاء المهمة دون ترجمة) 
@@ -52,28 +52,28 @@ export const STRINGS: Record<string, Bi> = {
     ar: `مراجع مناسبة مدمجة في التفسيرات لبناء حجة متماسكة.`,
   },
   s12: {
-    en: `Detailed examination of the writer&rsquo;s methods with subject terminology used effectively.`,
+    en: `Detailed examination of the writer’s methods with subject terminology used effectively.`,
     ar: ``,
   },
   s13: {
-    en: `Clear understanding of the effects of the writer&rsquo;s choices on the reader.`,
+    en: `Clear understanding of the effects of the writer’s choices on the reader.`,
     ar: `فهم واضح لتأثير خيارات الكاتب على القارئ.`,
   },
   s15: {
     en: `Confident analysis of unseen poetry exploring language, form, and structure.`,
     ar: `تحليل واثق للشعر غير المعروف مستكشفًا اللغة، الشكل، والتركيب.`,
   },
-  s16: { en: `Grades 5-6 &mdash; Secure`, ar: `الصفوف fifth إلى sixth &mdash; موثوق` },
+  s16: { en: `Grades 5-6 - Secure`, ar: `الصفوف fifth إلى sixth - موثوق` },
   s18: {
     en: `References used effectively to support explanations.`,
     ar: `المراجع المستخدمة Effectively لدعم التفسيرات.`,
   },
   s19: {
-    en: `Clear explanation of writer&rsquo;s methods with appropriate use of subject terminology.`,
+    en: `Clear explanation of writer’s methods with appropriate use of subject terminology.`,
     ar: `توضيح واضح لطرق الكاتب مع استخدام مناسب للمصطلحات الخاصة بالTopic_terms`,
   },
   s20: {
-    en: `Understanding of some effects of the writer&rsquo;s methods on the reader.`,
+    en: `Understanding of some effects of the writer’s methods on the reader.`,
     ar: `فهم بعض آثار طرق الكاتب على القارئ.`,
   },
   s21: {
@@ -85,7 +85,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `رد مناسب وم.COMPLETE ANSWER:
 رد مناسب ومحلل لقصيدة غير معروفة مع تحليل للغة وโครง trúc.`,
   },
-  s23: { en: `Grade 4 &mdash; Standard pass`, ar: `الدرجة الرابعة &mdash; مستوي اجتياز القياسية` },
+  s23: { en: `Grade 4 - Standard pass`, ar: `الدرجة الرابعة - مستوي اجتياز القياسية` },
   s24: {
     en: `Some explained response to texts, though may lack consistency or development.`,
     ar: `بعض التفسيرات للمواضيع مع وجود نقص فيconsistency أو التطوير.`,
@@ -95,11 +95,11 @@ export const STRINGS: Record<string, Bi> = {
     ar: `المراجع المستخدمة لدعم بعض النقاط، رغم أنها لا تختار دائمًا بشكل جيد.`,
   },
   s26: {
-    en: `Some awareness of the writer&rsquo;s methods; some subject terminology used.`,
+    en: `Some awareness of the writer’s methods; some subject terminology used.`,
     ar: `بعض الوعي بطرق الكاتب؛ بعض المصطلح الموضوعي مستخدم.`,
   },
   s27: {
-    en: `Some comment on the effects of the writer&rsquo;s choices.`,
+    en: `Some comment on the effects of the writer’s choices.`,
     ar: `بعض التعليقات حول آثار خيارات الكاتب.`,
   },
   s28: {
@@ -111,8 +111,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `بعض الردود على الشعر غير المعروف مع تحديد أساسي للمميزات.`,
   },
   s30: {
-    en: `Grades 1-3 &mdash; Below standard pass`,
-    ar: `المستوى الأول حتى الثالث &mdash; دون المعدل للنجاح`,
+    en: `Grades 1-3 - Below standard pass`,
+    ar: `المستوى الأول حتى الثالث - دون المعدل للنجاح`,
   },
   s31: {
     en: `Simple, limited comments on texts with little development.`,
@@ -131,16 +131,16 @@ export const STRINGS: Record<string, Bi> = {
     en: `Simple comments on unseen poetry with little analysis.`,
     ar: `تعليقات سهلة على الشعر غير المعروف مع قليل من التحليل.`,
   },
-  s37: { en: `Grade 4 &rarr; Grade 5`, ar: `الصف الرابع إلى الصف الخامس` },
-  s38: { en: `Grade 5 &rarr; Grade 7`, ar: `الصف الخامس إلى الصف السابع` },
+  s37: { en: `Grade 4 → Grade 5`, ar: `الصف الرابع إلى الصف الخامس` },
+  s38: { en: `Grade 5 → Grade 7`, ar: `الصف الخامس إلى الصف السابع` },
   s39: { en: `Analysis depth:`, ar: `عمق التحليل:` },
   s40: { en: `Poetry comparison:`, ar: `مقارنة الشعر:` },
-  s41: { en: `Grade 7 &rarr; Grade 9`, ar: `السابع&rarr;الثامن والتاسع` },
+  s41: { en: `Grade 7 → Grade 9`, ar: `السابع→الثامن والتاسع` },
   s43: { en: `Alternative interpretations:`, ar: `تفسيرات بديلة:` },
-  s44: { en: `Writer&rsquo;s craft:`, ar: `مهارة الكتابة` },
+  s44: { en: `Writer’s craft:`, ar: `مهارة الكتابة` },
   s45: { en: `Wider reading:`, ar: `قراءة أوسع:` },
   s46: {
-    en: `Paper 1 &mdash; Exploring Modern and Literary Heritage Texts (50%)`,
+    en: `Paper 1 - Exploring Modern and Literary Heritage Texts (50%)`,
     ar: `ورقة الامتحان الأولى - استكشاف النصوص الأدبية الحديثة والتراثية (50%)`,
   },
   s47: { en: `Extract + essay`, ar: `استخرج وكتابة مقالة` },

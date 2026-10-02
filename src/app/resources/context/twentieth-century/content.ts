@@ -18,7 +18,7 @@ export const STRINGS: Record<string, Bi> = {
   s4: { en: `Blood Brothers`, ar: `دماء الأخوة` },
   s5: { en: `World War I (1914-1918)`, ar: `حرب العالم الأولى (1914-1918)` },
   s6: { en: `World War II (1939-1945)`, ar: `الحرب العالمية الثانية (1939-1945)` },
-  s7: { en: `Margaret Thatcher&apos;s`, ar: `مارغريت تاتشر` },
+  s7: { en: `Margaret Thatcher's`, ar: `مارغريت تاتشر` },
   s8: { en: `George Orwell`, ar: `جورج أورويل` },
   s9: { en: `Beveridge Report (1942)`, ar: `` },
   s10: { en: `Margaret Thatcher`, ar: `مارغريت ثاتشر` },

@@ -12,8 +12,8 @@ export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
   s0: {
-    en: `Step 1: First Reading &mdash; Overall Meaning &amp; Tone (3&ndash;4 minutes)`,
-    ar: `الخطوة الأولى: القراءة الأولية &mdash; المعنى العام والعاطفة (3 إلى 4 دقائق)`,
+    en: `Step 1: First Reading - Overall Meaning & Tone (3-4 minutes)`,
+    ar: `الخطوة الأولى: القراءة الأولية - المعنى العام والعاطفة (3 إلى 4 دقائق)`,
   },
   s1: {
     en: `Read the poem through without writing. Get the big picture.`,
@@ -24,20 +24,20 @@ export const STRINGS: Record<string, Bi> = {
     ar: `شنو هاد الشعر عنه بالظاهر؟ مين اللي بحكي؟ ويلي بيحكي له؟ وما هي الحالة؟`,
   },
   s3: {
-    en: `Step 2: Second Reading &mdash; Annotate Language, Imagery &amp; Form (5&ndash;6 minutes)`,
-    ar: `خطوة 2: القراءة الثانية &mdash; أضف ملاحظات على اللغة، الصور والأسلوب (5 إلى 6 دقائق)`,
+    en: `Step 2: Second Reading - Annotate Language, Imagery & Form (5-6 minutes)`,
+    ar: `خطوة 2: القراءة الثانية - أضف ملاحظات على اللغة، الصور والأسلوب (5 إلى 6 دقائق)`,
   },
   s5: {
-    en: `Step 3: Planning &mdash; Group Observations (3&ndash;4 minutes)`,
-    ar: `خطوة 3: التخطيط &mdash; ملاحظات المجموعة (3 إلى 4 دقائق)`,
+    en: `Step 3: Planning - Group Observations (3-4 minutes)`,
+    ar: `خطوة 3: التخطيط - ملاحظات المجموعة (3 إلى 4 دقائق)`,
   },
   s6: {
-    en: `Organise your annotations into 3&ndash;4 coherent points.`,
+    en: `Organise your annotations into 3-4 coherent points.`,
     ar: `rganize yallah tawkheebatk fee 3 wa 4 mukhtalifat ba'eedah.`,
   },
   s7: {
-    en: `Step 4: Writing &mdash; Structured Response Hitting All 4 skills (55&ndash;60 minutes)`,
-    ar: `خطوة 4: الكتابة &mdash; ردّة فعالة مبنية تشمل جميع 4 مهارات (55 إلى 60 دقيقة)`,
+    en: `Step 4: Writing - Structured Response Hitting All 4 skills (55-60 minutes)`,
+    ar: `خطوة 4: الكتابة - ردّة فعالة مبنية تشمل جميع 4 مهارات (55 إلى 60 دقيقة)`,
   },
   s8: {
     en: `Write a sustained, analytical commentary. Quality over quantity.`,
@@ -54,7 +54,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Personal response:`,
     ar: `_personal response_ هذا ليس جزءًا من النص الذي يجب ترجمته، هل لديك نص آخر تريدني أن أترجمه؟`,
   },
-  s14: { en: `Form: The &ldquo;Shape&rdquo; of the Poem`, ar: `شكل القصيدة` },
+  s14: { en: `Form: The “Shape” of the Poem`, ar: `شكل القصيدة` },
   s16: { en: `Free verse:`, ar: `شعر حر:` },
   s17: { en: `Dramatic monologue:`, ar: `مونولوج درامي` },
   s18: { en: `Stanza length:`, ar: `طول القصيدة` },
@@ -74,7 +74,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Detailed discussion of language, form, and structure`,
     ar: `نقاش مفصل حول اللغة، الشكل، والبنية`,
   },
-  s35: { en: `Clear awareness of the poet&rsquo;s methods`, ar: `awareness واضحة عن طرق الشاعر` },
+  s35: { en: `Clear awareness of the poet’s methods`, ar: `awareness واضحة عن طرق الشاعر` },
   s36: { en: `Confident personal response`, ar: `رد شخصي ثقة` },
   s37: { en: `Sound understanding`, ar: `الفهم السليم` },
   s38: { en: `Some discussion of techniques`, ar: `بعض المناقشات حول التقنيات` },

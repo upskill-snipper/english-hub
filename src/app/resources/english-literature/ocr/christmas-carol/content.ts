@@ -16,7 +16,7 @@ export const STRINGS: Record<string, Bi> = {
   s3: { en: `Language, form and structure:`, ar: `لغة، شكل وStructure` },
   s4: { en: `Contextual understanding:`, ar: `الفهم السياقي` },
   s5: { en: `Written accuracy:`, ar: `دقة الكتابة:` },
-  s6: { en: `Stave 1: Marley&rsquo;s Ghost`, ar: `ال_ghost_ لمارلي` },
+  s6: { en: `Stave 1: Marley’s Ghost`, ar: `ال_ghost_ لمارلي` },
   s7: {
     en: `Stave 2: The Ghost of Christmas Past`,
     ar: `ال_ghost_of_christmas_past_(الساعة_ثانية)_روح_كريسماس_الماضي`,
@@ -39,13 +39,13 @@ export const STRINGS: Record<string, Bi> = {
   s19: { en: `Christianity and Christmas`, ar: `المسيحية وعيد الميلاد` },
   s20: { en: `Dickens as Social Reformer`, ar: `ديكنز كمصلح اجتماعي` },
   s21: { en: `The Novella Form`, ar: `الشكل النovellical` },
-  s22: { en: `Introduction (3&ndash;4 sentences)`, ar: `مقدمة (ثلاثة إلى أربع جمل)` },
+  s22: { en: `Introduction (3-4 sentences)`, ar: `مقدمة (ثلاثة إلى أربع جمل)` },
   s23: {
     en: `Paragraph 1: Beginning of the novella (Stave 1)`,
     ar: `بداية الرواية القصيرة (الفرع الأول)`,
   },
   s24: {
-    en: `Paragraph 2: Middle of the novella (Staves 2&ndash;3)`,
+    en: `Paragraph 2: Middle of the novella (Staves 2-3)`,
     ar: `وسط الرواية القصيرة (الأقسام 2 و 3)`,
   },
   s25: { en: `Paragraph 3: Climax (Stave 4)`, ar: `` },

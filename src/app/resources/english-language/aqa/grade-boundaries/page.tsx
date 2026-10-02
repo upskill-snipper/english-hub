@@ -167,7 +167,7 @@ export default function GradeBoundariesPage() {
                 <ul className="ms-5 list-disc space-y-1">
                   <li>
                     {tr(
-                      `Compelling, convincing writing that sustains the reader&rsquo;s interest throughout.`,
+                      `Compelling, convincing writing that sustains the reader’s interest throughout.`,
                     )}
                   </li>
                   <li>{tr(`Extensive, ambitious vocabulary used precisely and naturally.`)}</li>
@@ -186,7 +186,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-primary/50 bg-primary/10/30 p-5">
-              <h3 className="text-lg font-bold text-primary">{tr(`Grades 7-8 &mdash; Strong`)}</h3>
+              <h3 className="text-lg font-bold text-primary">{tr(`Grades 7-8 - Strong`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
                   <strong>Reading:</strong>
@@ -203,7 +203,7 @@ export default function GradeBoundariesPage() {
                   <li>{tr(`Accurate subject terminology used consistently.`)}</li>
                   <li>
                     {tr(
-                      `Thoughtful evaluation that engages with the statement and writer&rsquo;s methods.`,
+                      `Thoughtful evaluation that engages with the statement and writer’s methods.`,
                     )}
                   </li>
                   <li>Some exploration of alternative interpretations.</li>
@@ -228,7 +228,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-primary bg-primary/10/30 p-5">
-              <h3 className="text-lg font-bold text-primary">{tr(`Grades 5-6 &mdash; Secure`)}</h3>
+              <h3 className="text-lg font-bold text-primary">{tr(`Grades 5-6 - Secure`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
                   <strong>Reading:</strong>
@@ -242,7 +242,7 @@ export default function GradeBoundariesPage() {
                   </li>
                   <li>
                     {tr(
-                      `Analysis may lack depth or consistency &mdash; some points developed well, others more surface-level.`,
+                      `Analysis may lack depth or consistency: some points developed well, others more surface-level.`,
                     )}
                   </li>
                 </ul>
@@ -270,9 +270,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-yellow-400 bg-yellow-500/10/30 p-5">
-              <h3 className="text-lg font-bold text-yellow-700">
-                {tr(`Grade 4 &mdash; Standard pass`)}
-              </h3>
+              <h3 className="text-lg font-bold text-yellow-700">{tr(`Grade 4 - Standard pass`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
                   <strong>Reading:</strong>
@@ -311,7 +309,7 @@ export default function GradeBoundariesPage() {
 
             <div className="rounded-lg border-s-4 border-border bg-muted/50 p-5">
               <h3 className="text-lg font-bold text-muted-foreground">
-                {tr(`Grades 1-3 &mdash; Below standard pass`)}
+                {tr(`Grades 1-3 - Below standard pass`)}
               </h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
@@ -345,7 +343,7 @@ export default function GradeBoundariesPage() {
 
           <div className="mt-4 space-y-5">
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-primary">{tr(`Grade 4 &rarr; Grade 5`)}</h3>
+              <h3 className="font-bold text-primary">{tr(`Grade 4 → Grade 5`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Stop feature-spotting. Every time you identify a
@@ -366,7 +364,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-primary">{tr(`Grade 5 &rarr; Grade 7`)}</h3>
+              <h3 className="font-bold text-primary">{tr(`Grade 5 → Grade 7`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Move from explaining effects to analysing <em>why</em>{' '}
@@ -388,7 +386,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-primary">{tr(`Grade 7 &rarr; Grade 9`)}</h3>
+              <h3 className="font-bold text-primary">{tr(`Grade 7 → Grade 9`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Develop a critical, evaluative voice. Consider

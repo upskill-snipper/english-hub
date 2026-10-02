@@ -228,7 +228,7 @@ export default async function OCRPoetryPage() {
               </p>
               <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                 <li>{tr(`When was the poem written? What was happening historically?`)}</li>
-                <li>{tr(`What was the poet&rsquo;s background and experiences?`)}</li>
+                <li>{tr(`What was the poet’s background and experiences?`)}</li>
                 <li>{tr(`What literary movement or tradition does the poem belong to?`)}</li>
                 <li>{tr(`How might the original audience have responded?`)}</li>
                 <li>{tr(`How might a modern reader respond differently?`)}</li>
@@ -280,7 +280,7 @@ export default async function OCRPoetryPage() {
             {/* What to compare */}
             <div>
               <h3 className="text-xl font-semibold text-foreground">{tr(`What to Compare`)}</h3>
-              <p className="mt-2">{tr(`Compare across multiple layers &mdash; not just theme:`)}</p>
+              <p className="mt-2">{tr(`Compare across multiple layers, not just theme:`)}</p>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">{tr(`Themes and Ideas`)}</p>

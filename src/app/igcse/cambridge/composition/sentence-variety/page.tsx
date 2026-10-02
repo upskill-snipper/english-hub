@@ -80,14 +80,14 @@ const rhetorical = [
   {
     name: 'Asyndeton',
     definition:
-      'A list without conjunctions - commas only, no &ldquo;and&rdquo; before the final item. Speeds the sentence up.',
+      'A list without conjunctions - commas only, no “and” before the final item. Speeds the sentence up.',
     example: 'The room smelled of rain, old dust, peppermints, fear.',
     note: 'Opposite of the rule of three - this lands like a blow.',
   },
   {
     name: 'Polysyndeton',
     definition:
-      'The opposite of asyndeton: putting &ldquo;and&rdquo; between every item in a list. Slows the sentence down and feels deliberate.',
+      'The opposite of asyndeton: putting “and” between every item in a list. Slows the sentence down and feels deliberate.',
     example: 'She walked and she thought and she counted and she kept on walking.',
     note: 'Builds rhythm; useful for descriptive and reflective passages.',
   },

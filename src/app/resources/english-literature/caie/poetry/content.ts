@@ -18,7 +18,7 @@ export const STRINGS: Record<string, Bi> = {
   s4: { en: `Cluster rights:`, ar: `حقوق التجمعات` },
   s5: { en: `What markers look for`, ar: `ما يبحثون عنه المARKERS` },
   s6: { en: `Close reading:`, ar: `قراءة دقيقة:` },
-  s7: { en: `Writer&rsquo;s methods:`, ar: `طرق الكتابة:` },
+  s7: { en: `Writer’s methods:`, ar: `طرق الكتابة:` },
   s8: {
     en: `Personal response:`,
     ar: `شخصيًا: شنو رأيك في هاد الموضوع؟ وايد مهتم بمعرفة أفكارك. الحين أبغى تدوّر بالكتاب وتراجع النصوص اللي قرأناها وتحللها. إذا حليت التمارين دي، راح`,
@@ -31,7 +31,7 @@ export const STRINGS: Record<string, Bi> = {
   s14: { en: `Speaker and perspective:`, ar: `المتحدث والمنظور من خلاله:` },
   s15: { en: `Example Comparison Pairings`, ar: `مثال للزوجات المقارنة` },
   s18: { en: `Power and nature:`, ar: `القوة والطبيعة:` },
-  s20: { en: `Form &amp; Structure`, ar: `شكل وStructure` },
+  s20: { en: `Form & Structure`, ar: `شكل وStructure` },
   s21: { en: `Detailed Analysis`, ar: `تحليل مفصل` },
   s22: { en: `Key Quotes`, ar: `المقاطع الرئيسية` },
 }

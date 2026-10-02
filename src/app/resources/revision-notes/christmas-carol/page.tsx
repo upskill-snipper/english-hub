@@ -163,10 +163,10 @@ export default function ChristmasCarolRevisionPage() {
           <div className="space-y-6">
             <div className="rounded-lg bg-amber-500/10 border border-amber-500/30 p-3 mb-4">
               <p className="text-sm text-amber-700">
-                <strong>{tr(`Why &ldquo;Staves&rdquo;?`)}</strong> Dickens deliberately called his
-                chapters &ldquo;staves&rdquo; (the lines of a musical staff) to reinforce the
-                musical, carol-like structure of the novella. This reminds the reader that the story
-                is, at heart, a song of Christmas and redemption.
+                <strong>{tr(`Why “Staves”?`)}</strong> Dickens deliberately called his chapters
+                &ldquo;staves&rdquo; (the lines of a musical staff) to reinforce the musical,
+                carol-like structure of the novella. This reminds the reader that the story is, at
+                heart, a song of Christmas and redemption.
               </p>
             </div>
 
@@ -440,7 +440,7 @@ export default function ChristmasCarolRevisionPage() {
                     Supernatural
                   </span>
                   <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-                    {tr(`Memory &amp; Truth`)}
+                    {tr(`Memory & Truth`)}
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
@@ -488,7 +488,7 @@ export default function ChristmasCarolRevisionPage() {
                     Supernatural
                   </span>
                   <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-                    {tr(`Abundance &amp; Warning`)}
+                    {tr(`Abundance & Warning`)}
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
@@ -536,7 +536,7 @@ export default function ChristmasCarolRevisionPage() {
                     Supernatural
                   </span>
                   <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-                    {tr(`Death &amp; Consequence`)}
+                    {tr(`Death & Consequence`)}
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
@@ -659,7 +659,7 @@ export default function ChristmasCarolRevisionPage() {
               {/* Fred */}
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">
-                  {tr(`Fred (Scrooge&apos;s Nephew)`)}
+                  {tr(`Fred (Scrooge's Nephew)`)}
                 </h3>
                 <div className="mt-2 flex flex-wrap gap-2">
                   <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
@@ -700,7 +700,7 @@ export default function ChristmasCarolRevisionPage() {
               {/* Fan */}
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">
-                  {tr(`Fan (Scrooge&apos;s Sister)`)}
+                  {tr(`Fan (Scrooge's Sister)`)}
                 </h3>
                 <div className="mt-2 flex flex-wrap gap-2">
                   <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
@@ -819,7 +819,7 @@ export default function ChristmasCarolRevisionPage() {
                     Supernatural
                   </span>
                   <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-                    {tr(`Warning &amp; Catalyst`)}
+                    {tr(`Warning & Catalyst`)}
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
@@ -1323,7 +1323,7 @@ export default function ChristmasCarolRevisionPage() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-base font-bold text-foreground mb-2">
-                  {tr(`The Poor Laws &amp; Workhouses`)}
+                  {tr(`The Poor Laws & Workhouses`)}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The Poor Law Amendment Act of 1834 replaced outdoor relief (giving money to the
@@ -1374,7 +1374,7 @@ export default function ChristmasCarolRevisionPage() {
 
               <div>
                 <h3 className="text-base font-bold text-foreground mb-2">
-                  {tr(`Dickens&apos;s Own Childhood`)}
+                  {tr(`Dickens's Own Childhood`)}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Charles Dickens (1812&ndash;1870) experienced poverty and hardship personally.
@@ -1391,7 +1391,7 @@ export default function ChristmasCarolRevisionPage() {
 
               <div>
                 <h3 className="text-base font-bold text-foreground mb-2">
-                  {tr(`Social Reform &amp; the Purpose of the Novella`)}
+                  {tr(`Social Reform & the Purpose of the Novella`)}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Dickens originally planned to write a political pamphlet about poverty after
@@ -1447,7 +1447,7 @@ export default function ChristmasCarolRevisionPage() {
 
               <div>
                 <h3 className="text-base font-bold text-foreground mb-2">
-                  {tr(`Darkness &amp; Light`)}
+                  {tr(`Darkness & Light`)}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Darkness is associated with Scrooge, ignorance, and moral blindness. His offices
@@ -1462,9 +1462,7 @@ export default function ChristmasCarolRevisionPage() {
               </div>
 
               <div>
-                <h3 className="text-base font-bold text-foreground mb-2">
-                  {tr(`Weather &amp; Cold`)}
-                </h3>
+                <h3 className="text-base font-bold text-foreground mb-2">{tr(`Weather & Cold`)}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The cold, foggy weather of Stave One reflects Scrooge&apos;s emotional state
                   (pathetic fallacy). &ldquo;No warmth could warm&rdquo; him &mdash; Scrooge is

@@ -42,7 +42,7 @@ export const STRINGS: Record<string, Bi> = {
   s29: { en: `Methods on every quote`, ar: `طرق لكل اقتباس` },
   s30: { en: `Reader-effect on every method`, ar: `تأثير القراء على كل طريقة` },
   s31: { en: `Mistake to avoid`, ar: `خطأ يجب تجنبه` },
-  s32: { en: `Don&rsquo;t add context`, ar: `لا ت thêm سياق` },
-  s33: { en: `Don&rsquo;t over-historicise`, ar: `ماتفرط في التأريخ` },
+  s32: { en: `Don’t add context`, ar: `لا ت thêm سياق` },
+  s33: { en: `Don’t over-historicise`, ar: `ماتفرط في التأريخ` },
   s34: { en: `This is the wedge.`, ar: `هذا هو الشقclidriver` },
 }

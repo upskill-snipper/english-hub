@@ -26,7 +26,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `terminologia مصطلحات موضوعية معقدة مستخدمة بدقة وغرضية.`,
   },
   s6: {
-    en: `Critical evaluation that explores multiple interpretations and considers the writer&rsquo;s intentions.`,
+    en: `Critical evaluation that explores multiple interpretations and considers the writer’s intentions.`,
     ar: `تقويم نقدي يستكشف تفسيرات متعددة ويتناول نوايا الكاتب.`,
   },
   s7: {
@@ -34,7 +34,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: ``,
   },
   s8: {
-    en: `Compelling, convincing writing that sustains the reader&rsquo;s interest throughout.`,
+    en: `Compelling, convincing writing that sustains the reader’s interest throughout.`,
     ar: `كتابة مقنعة ومؤثرة تحافظ على اهتمام القارئ طوال الوقت.`,
   },
   s9: {
@@ -45,7 +45,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Varied, inventive structural choices that shape meaning (e.g., cyclical structure, deliberate shifts in pace).`,
     ar: `اختيارات بنائية متنوعة ومبتكرة التي تشكل المعنى (مثل الهيكل الدوري، والتغييرات المتعمدة في الوتيرة).`,
   },
-  s12: { en: `Grades 7-8 &mdash; Strong`, ar: `الصفوف seventh إلى eighth &mdash; قوي` },
+  s12: { en: `Grades 7-8 - Strong`, ar: `الصفوف seventh إلى eighth - قوي` },
   s13: {
     en: `Detailed, well-developed analysis with clear explanations of effects.`,
     ar: ``,
@@ -78,14 +78,14 @@ export const STRINGS: Record<string, Bi> = {
     en: `Mostly accurate spelling and punctuation with only minor errors.`,
     ar: `إملاء وعلامات ترقيم صحيحة في معظمها مع أخطاء طفيفة فقط.`,
   },
-  s23: { en: `Grades 5-6 &mdash; Secure`, ar: `الصفوف fifth إلى sixth &mdash; موثوق` },
+  s23: { en: `Grades 5-6 - Secure`, ar: `الصفوف fifth إلى sixth - موثوق` },
   s24: {
     en: `Clear explanations of language and structural effects.`,
     ar: `توضيحات واضحة لتأثيرات اللغة والبنية"structural" هنا تعني "هيكلي" في العربية، لكن نتركها كما هي لأنها مصطلح أدبي معروف: تأثيرات الهيكل.`,
   },
   s25: { en: `Relevant quotations selected and commented on.`, ar: `اقتباسات مختارة وعلق عليها.` },
   s27: {
-    en: `Analysis may lack depth or consistency &mdash; some points developed well, others more surface-level.`,
+    en: `Analysis may lack depth or consistency: some points developed well, others more surface-level.`,
     ar: `قد يفتقر التحليل إلى العمق أو الاتساق - بعض النقاط مطوّرة جيدا وأخرى سطحية.`,
   },
   s28: {
@@ -105,7 +105,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Generally accurate spelling and punctuation with some errors on more complex words.`,
     ar: `SPELLING و الترقيم دقيقان بشكل عام مع بعض الأخطاء في الكلمات المعقدة.`,
   },
-  s33: { en: `Grade 4 &mdash; Standard pass`, ar: `الدرجة الرابعة &ndash; المعيار الموافقة عليه` },
+  s33: { en: `Grade 4 - Standard pass`, ar: `الدرجة الرابعة - المعيار الموافقة عليه` },
   s34: {
     en: `Some understanding of language effects, but explanations may be thin.`,
     ar: `بعض الفهم لتأثيرات اللغة، لكن التفسيرات قد تكون خفيفة.`,
@@ -139,8 +139,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `SPELLING OF BASIC WORDS ACCURATE؛ ERRORS WITH MORE COMPLEX VOCABULARY`,
   },
   s44: {
-    en: `Grades 1-3 &mdash; Below standard pass`,
-    ar: `المستوى الأول حتى الثالث &mdash; دون المعدل للنجاح`,
+    en: `Grades 1-3 - Below standard pass`,
+    ar: `المستوى الأول حتى الثالث - دون المعدل للنجاح`,
   },
   s45: {
     en: `Simple comments on language with limited or no analysis.`,
@@ -164,13 +164,13 @@ export const STRINGS: Record<string, Bi> = {
     en: `Simple sentence forms; frequent errors in spelling and punctuation.`,
     ar: `أشكال جملة بسيطة؛ أخطاء متكررة في الإملاء والتوقيع.`,
   },
-  s53: { en: `Grade 4 &rarr; Grade 5`, ar: `الصف الرابع إلى الصف الخامس` },
-  s54: { en: `Grade 5 &rarr; Grade 7`, ar: `الصف الخامس إلى الصف السابع` },
-  s55: { en: `Grade 7 &rarr; Grade 9`, ar: `الصف السابع إلى الصف التاسع` },
+  s53: { en: `Grade 4 → Grade 5`, ar: `الصف الرابع إلى الصف الخامس` },
+  s54: { en: `Grade 5 → Grade 7`, ar: `الصف الخامس إلى الصف السابع` },
+  s55: { en: `Grade 7 → Grade 9`, ar: `الصف السابع إلى الصف التاسع` },
   s56: { en: `Reading widely:`, ar: `قراءة واسعة:` },
   s57: {
-    en: `Paper 1 &mdash; 20th Century Literature Reading and Creative Prose Writing (40%)`,
-    ar: `ورقية 1 &ndash; قراءة وأسلوب إبداعي في الأدب القرن العشرين (40%)`,
+    en: `Paper 1 - 20th Century Literature Reading and Creative Prose Writing (40%)`,
+    ar: `ورقية 1 - قراءة وأسلوب إبداعي في الأدب القرن العشرين (40%)`,
   },
   s58: { en: `Retrieval / comprehension`, ar: `استرجاع / فهم` },
   s59: { en: `Inference / impressions`, ar: `الاستنتاجات / الانطباعات` },
@@ -180,8 +180,8 @@ export const STRINGS: Record<string, Bi> = {
   s63: { en: `Creative prose writing`, ar: `كتابة قصة خيالية` },
   s64: { en: `Paper 1 Total`, ar: `ورقة 1 كاملة` },
   s65: {
-    en: `Paper 2 &mdash; 19th and 21st Century Non-Fiction Reading and Writing for Real Purposes (60%)`,
-    ar: `ورقية 2 &mdash; القراءة والكتابة فيCentury التاسع والتقويم الحقيقي للقرن الحادي والعشرين (60%)`,
+    en: `Paper 2 - 19th and 21st Century Non-Fiction Reading and Writing for Real Purposes (60%)`,
+    ar: `ورقية 2 - القراءة والكتابة فيCentury التاسع والتقويم الحقيقي للقرن الحادي والعشرين (60%)`,
   },
   s66: { en: `Inference / summary`, ar: `استنتاج / ملخص` },
   s67: { en: `Comparison of texts`, ar: `مقارنة النصوص` },

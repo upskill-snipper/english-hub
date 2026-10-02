@@ -18,7 +18,7 @@ export const STRINGS: Record<string, Bi> = {
   s5: { en: `Arthur Miller and McCarthyism`, ar: `ARTHUR MILLER و المكارثية` },
   s6: { en: `Italian Immigration to America`, ar: `` },
   s7: {
-    en: `Greek Tragedy and &ldquo;Tragedy and the Common Man&rdquo;`,
+    en: `Greek Tragedy and “Tragedy and the Common Man”`,
     ar: `tragédia اليونانية و "tragédia والرجل العادي`,
   },
   s8: { en: `General Tips for A View from the Bridge`, ar: `نصائح عامة لوجهة نظر من الجسر` },

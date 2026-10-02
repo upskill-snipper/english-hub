@@ -231,7 +231,7 @@ export default function GradeBoundariesPage() {
                   </li>
                   <li>
                     {tr(
-                      `Sophisticated analysis of the writer&rsquo;s methods with subject terminology used judiciously.`,
+                      `Sophisticated analysis of the writer’s methods with subject terminology used judiciously.`,
                     )}
                   </li>
                   <li>
@@ -254,7 +254,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-primary bg-blue-500/10/30 p-5">
-              <h3 className="text-lg font-bold text-primary">{tr(`Grades 7-8 &mdash; Strong`)}</h3>
+              <h3 className="text-lg font-bold text-primary">{tr(`Grades 7-8 - Strong`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ms-5 list-disc space-y-1">
                   <li>
@@ -267,12 +267,12 @@ export default function GradeBoundariesPage() {
                   </li>
                   <li>
                     {tr(
-                      `Detailed examination of the writer&rsquo;s methods with subject terminology used effectively.`,
+                      `Detailed examination of the writer’s methods with subject terminology used effectively.`,
                     )}
                   </li>
                   <li>
                     {tr(
-                      `Clear understanding of the effects of the writer&rsquo;s choices on the reader.`,
+                      `Clear understanding of the effects of the writer’s choices on the reader.`,
                     )}
                   </li>
                   <li>Thoughtful consideration of ideas, perspectives, and contextual factors.</li>
@@ -286,9 +286,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-primary bg-blue-500/10/20 p-5">
-              <h3 className="text-lg font-bold text-foreground">
-                {tr(`Grades 5-6 &mdash; Secure`)}
-              </h3>
+              <h3 className="text-lg font-bold text-foreground">{tr(`Grades 5-6 - Secure`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ms-5 list-disc space-y-1">
                   <li>
@@ -297,13 +295,11 @@ export default function GradeBoundariesPage() {
                   <li>{tr(`References used effectively to support explanations.`)}</li>
                   <li>
                     {tr(
-                      `Clear explanation of writer&rsquo;s methods with appropriate use of subject terminology.`,
+                      `Clear explanation of writer’s methods with appropriate use of subject terminology.`,
                     )}
                   </li>
                   <li>
-                    {tr(
-                      `Understanding of some effects of the writer&rsquo;s methods on the reader.`,
-                    )}
+                    {tr(`Understanding of some effects of the writer’s methods on the reader.`)}
                   </li>
                   <li>
                     {tr(`Some understanding of ideas, perspectives, and contextual factors.`)}
@@ -318,9 +314,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-yellow-400 bg-yellow-500/10/30 p-5">
-              <h3 className="text-lg font-bold text-yellow-700">
-                {tr(`Grade 4 &mdash; Standard pass`)}
-              </h3>
+              <h3 className="text-lg font-bold text-yellow-700">{tr(`Grade 4 - Standard pass`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ms-5 list-disc space-y-1">
                   <li>
@@ -332,11 +326,9 @@ export default function GradeBoundariesPage() {
                     {tr(`References used to support some points, though not always well-selected.`)}
                   </li>
                   <li>
-                    {tr(
-                      `Some awareness of the writer&rsquo;s methods; some subject terminology used.`,
-                    )}
+                    {tr(`Some awareness of the writer’s methods; some subject terminology used.`)}
                   </li>
-                  <li>{tr(`Some comment on the effects of the writer&rsquo;s choices.`)}</li>
+                  <li>{tr(`Some comment on the effects of the writer’s choices.`)}</li>
                   <li>
                     {tr(
                       `Some awareness of contextual factors, though may be superficial or bolted on.`,
@@ -351,7 +343,7 @@ export default function GradeBoundariesPage() {
 
             <div className="rounded-lg border-s-4 border-border bg-muted/50 p-5">
               <h3 className="text-lg font-bold text-muted-foreground">
-                {tr(`Grades 1-3 &mdash; Below standard pass`)}
+                {tr(`Grades 1-3 - Below standard pass`)}
               </h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ms-5 list-disc space-y-1">
@@ -376,7 +368,7 @@ export default function GradeBoundariesPage() {
 
           <div className="mt-4 space-y-5">
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-foreground">{tr(`Grade 4 &rarr; Grade 5`)}</h3>
+              <h3 className="font-bold text-foreground">{tr(`Grade 4 → Grade 5`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Quotations:</strong> Move beyond retelling the story. Select short,
@@ -397,7 +389,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-foreground">{tr(`Grade 5 &rarr; Grade 7`)}</h3>
+              <h3 className="font-bold text-foreground">{tr(`Grade 5 → Grade 7`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>{tr(`Analysis depth:`)}</strong> Move from explaining what a quotation
@@ -423,7 +415,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-foreground">{tr(`Grade 7 &rarr; Grade 9`)}</h3>
+              <h3 className="font-bold text-foreground">{tr(`Grade 7 → Grade 9`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Conceptualised response:</strong> Frame your essay around a clear argument
@@ -437,7 +429,7 @@ export default function GradeBoundariesPage() {
                   this&hellip;&rdquo;
                 </li>
                 <li>
-                  <strong>{tr(`Writer&rsquo;s craft:`)}</strong> Go beyond individual techniques to
+                  <strong>{tr(`Writer’s craft:`)}</strong> Go beyond individual techniques to
                   consider how the whole text is constructed. How does the opening relate to the
                   ending? How does the structure mirror the themes?
                 </li>
@@ -460,7 +452,7 @@ export default function GradeBoundariesPage() {
           </p>
 
           <h3 className="font-bold text-foreground mb-2">
-            {tr(`Paper 1 &mdash; Exploring Modern and Literary Heritage Texts (50%)`)}
+            {tr(`Paper 1 - Exploring Modern and Literary Heritage Texts (50%)`)}
           </h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">

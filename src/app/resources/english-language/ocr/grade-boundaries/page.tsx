@@ -277,9 +277,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-primary/50 bg-primary/10/30 p-5">
-              <h3 className="text-lg font-bold text-primary">
-                {tr(`Grades 7&ndash;8 &mdash; Strong`)}
-              </h3>
+              <h3 className="text-lg font-bold text-primary">{tr(`Grades 7-8 - Strong`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
                   <strong>Reading:</strong>
@@ -287,7 +285,7 @@ export default function GradeBoundariesPage() {
                 <ul className="ms-5 list-disc space-y-1">
                   <li>
                     {tr(
-                      `Detailed, well-developed analysis with clear explanations of writers&rsquo; effects.`,
+                      `Detailed, well-developed analysis with clear explanations of writers’ effects.`,
                     )}
                   </li>
                   <li>
@@ -315,9 +313,7 @@ export default function GradeBoundariesPage() {
                   <li>
                     {tr(`Increasingly sophisticated vocabulary and phrasing chosen for effect.`)}
                   </li>
-                  <li>
-                    {tr(`Effective structural features that shape the reader&rsquo;s experience.`)}
-                  </li>
+                  <li>{tr(`Effective structural features that shape the reader’s experience.`)}</li>
                   <li>{tr(`Wide range of sentence structures used consciously for effect.`)}</li>
                   <li>
                     {tr(
@@ -329,9 +325,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-primary bg-primary/10/30 p-5">
-              <h3 className="text-lg font-bold text-primary">
-                {tr(`Grades 5&ndash;6 &mdash; Secure`)}
-              </h3>
+              <h3 className="text-lg font-bold text-primary">{tr(`Grades 5-6 - Secure`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
                   <strong>Reading:</strong>
@@ -351,7 +345,7 @@ export default function GradeBoundariesPage() {
                   </li>
                   <li>
                     {tr(
-                      `Analysis may lack depth or consistency &mdash; some points well developed, others more surface-level.`,
+                      `Analysis may lack depth or consistency: some points well developed, others more surface-level.`,
                     )}
                   </li>
                 </ul>
@@ -383,9 +377,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-yellow-400 bg-yellow-500/10/30 p-5">
-              <h3 className="text-lg font-bold text-yellow-700">
-                {tr(`Grade 4 &mdash; Standard pass`)}
-              </h3>
+              <h3 className="text-lg font-bold text-yellow-700">{tr(`Grade 4 - Standard pass`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
                   <strong>Reading:</strong>
@@ -440,7 +432,7 @@ export default function GradeBoundariesPage() {
 
             <div className="rounded-lg border-s-4 border-border bg-muted/50 p-5">
               <h3 className="text-lg font-bold text-muted-foreground">
-                {tr(`Grades 1&ndash;3 &mdash; Below standard pass`)}
+                {tr(`Grades 1-3 - Below standard pass`)}
               </h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
@@ -455,9 +447,7 @@ export default function GradeBoundariesPage() {
                   </li>
                   <li>Little or no subject terminology.</li>
                   <li>
-                    {tr(
-                      `May retell or describe events rather than analyse the writer&rsquo;s craft.`,
-                    )}
+                    {tr(`May retell or describe events rather than analyse the writer’s craft.`)}
                   </li>
                 </ul>
                 <p className="mt-3">
@@ -489,7 +479,7 @@ export default function GradeBoundariesPage() {
 
           <div className="mt-4 space-y-5">
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-primary">{tr(`Grade 4 &rarr; Grade 5`)}</h3>
+              <h3 className="font-bold text-primary">{tr(`Grade 4 → Grade 5`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Stop feature-spotting. Every time you identify a
@@ -517,7 +507,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-primary">{tr(`Grade 5 &rarr; Grade 7`)}</h3>
+              <h3 className="font-bold text-primary">{tr(`Grade 5 → Grade 7`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Move from explaining effects to analysing <em>why</em>{' '}
@@ -547,7 +537,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-primary">{tr(`Grade 7 &rarr; Grade 9`)}</h3>
+              <h3 className="font-bold text-primary">{tr(`Grade 7 → Grade 9`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Develop a critical, evaluative voice. Consider
@@ -585,7 +575,7 @@ export default function GradeBoundariesPage() {
 
         {/* Marks per question - Component 01 */}
         <Section
-          title={tr(`Marks per question: Component 01 &mdash; Communicating Information and Ideas`)}
+          title={tr(`Marks per question: Component 01 - Communicating Information and Ideas`)}
         >
           <p>
             Component 01 tests reading and writing of non-fiction texts. It is worth{' '}
@@ -690,9 +680,7 @@ export default function GradeBoundariesPage() {
         </Section>
 
         {/* Marks per question - Component 02 */}
-        <Section
-          title={tr(`Marks per question: Component 02 &mdash; Exploring Effects and Impact`)}
-        >
+        <Section title={tr(`Marks per question: Component 02 - Exploring Effects and Impact`)}>
           <p>
             Component 02 tests reading and writing of fiction and literary non-fiction. It is worth{' '}
             <strong>80 marks</strong> and makes up <strong>50%</strong> of the qualification. You

@@ -39,8 +39,8 @@ export const STRINGS: Record<string, Bi> = {
   s22: { en: `Jekyll and Hyde`, ar: `جايكل و هايد` },
   s23: { en: `Empire and colonialism`, ar: `الإمبراطورية والمستعمرات` },
   s24: {
-    en: `Read the text multiple times &mdash; familiarity reduces difficulty`,
-    ar: `اقرأ النص عدة مرات &mdash; التعود يقلل من الصعوبة`,
+    en: `Read the text multiple times: familiarity reduces difficulty`,
+    ar: `اقرأ النص عدة مرات - التعود يقلل من الصعوبة`,
   },
   s25: {
     en: `Look up archaic words and make a glossary`,

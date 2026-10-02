@@ -853,7 +853,7 @@ export default async function PersuasiveWritingPage() {
                     <div>
                       <p className="font-semibold text-primary">Byline</p>
                       <p className="text-muted-foreground">
-                        {tr(`The author&apos;s name. Optional in exams but shows form awareness.`)}
+                        {tr(`The author's name. Optional in exams but shows form awareness.`)}
                       </p>
                       <p className="mt-1 italic text-muted-foreground">
                         &ldquo;By [Your Name]&rdquo;
@@ -870,7 +870,7 @@ export default async function PersuasiveWritingPage() {
                       <p className="font-semibold text-success">Addresses</p>
                       <p className="text-muted-foreground">
                         {tr(
-                          `Your address (top right), recipient&apos;s address (left, below yours), date below that.`,
+                          `Your address (top right), recipient's address (left, below yours), date below that.`,
                         )}
                       </p>
                     </div>
@@ -905,9 +905,7 @@ export default async function PersuasiveWritingPage() {
                     <div>
                       <p className="font-semibold text-accent">{tr(`Direct Address`)}</p>
                       <p className="text-muted-foreground">
-                        {tr(
-                          `Address your audience directly throughout. &ldquo;You,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our.&rdquo;`,
-                        )}
+                        {tr(`Address your audience directly throughout. “You,” “we,” “us,” “our.”`)}
                       </p>
                       <p className="mt-1 italic text-muted-foreground">
                         &ldquo;I stand before you today because I believe we can do better.&rdquo;
@@ -928,9 +926,7 @@ export default async function PersuasiveWritingPage() {
                     <div>
                       <p className="font-semibold text-accent">{tr(`Inclusive Language`)}</p>
                       <p className="text-muted-foreground">
-                        {tr(
-                          `Use &ldquo;we&rdquo; and &ldquo;together&rdquo; to unite the audience with the speaker.`,
-                        )}
+                        {tr(`Use “we” and “together” to unite the audience with the speaker.`)}
                       </p>
                     </div>
                     <div>
@@ -954,14 +950,14 @@ export default async function PersuasiveWritingPage() {
                     <div>
                       <p className="font-semibold text-secondary">Title</p>
                       <p className="text-muted-foreground">
-                        {tr(`Clear and factual: &ldquo;Report on [Topic] for [Audience]&rdquo;`)}
+                        {tr(`Clear and factual: “Report on [Topic] for [Audience]”`)}
                       </p>
                     </div>
                     <div>
                       <p className="font-semibold text-secondary">{tr(`Formal Tone`)}</p>
                       <p className="text-muted-foreground">
                         {tr(
-                          `Third person, impersonal, no emotional language. &ldquo;It was observed that...&rdquo;`,
+                          `Third person, impersonal, no emotional language. “It was observed that...”`,
                         )}
                       </p>
                     </div>
@@ -976,9 +972,7 @@ export default async function PersuasiveWritingPage() {
                     <div>
                       <p className="font-semibold text-secondary">Recommendations</p>
                       <p className="text-muted-foreground">
-                        {tr(
-                          `End with actionable suggestions: &ldquo;It is recommended that...&rdquo;`,
-                        )}
+                        {tr(`End with actionable suggestions: “It is recommended that...”`)}
                       </p>
                     </div>
                   </div>
@@ -1002,7 +996,7 @@ export default async function PersuasiveWritingPage() {
                       </p>
                       <p className="text-muted-foreground">
                         {tr(
-                          `Optional but shows form awareness. A clear final verdict: &ldquo;Worth seeing&rdquo; or &ldquo;Give it a miss.&rdquo;`,
+                          `Optional but shows form awareness. A clear final verdict: “Worth seeing” or “Give it a miss.”`,
                         )}
                       </p>
                     </div>
@@ -1033,7 +1027,7 @@ export default async function PersuasiveWritingPage() {
                       <p className="font-semibold text-destructive">Recommendation</p>
                       <p className="text-muted-foreground">
                         {tr(
-                          `End with a clear recommendation to a specific audience: &ldquo;Perfect for fans of...&rdquo; or &ldquo;Avoid if you...&rdquo;`,
+                          `End with a clear recommendation to a specific audience: “Perfect for fans of...” or “Avoid if you...”`,
                         )}
                       </p>
                     </div>
@@ -1051,7 +1045,7 @@ export default async function PersuasiveWritingPage() {
             </Section>
 
             {/* ─── FORMAT TEMPLATES ──────────────────────────────── */}
-            <Section id="format-templates" title={tr(`Format Templates &amp; Example Openings`)}>
+            <Section id="format-templates" title={tr(`Format Templates & Example Openings`)}>
               <p className="mb-6 text-muted-foreground leading-relaxed">
                 Below are full templates for each format, including key conventions checklists and
                 example opening paragraphs you can adapt.
@@ -1859,9 +1853,7 @@ export default async function PersuasiveWritingPage() {
                     )}
                   </li>
                   <li>
-                    {tr(
-                      `Circular structure: opens and closes with the &ldquo;35,000 hours&rdquo; statistic`,
-                    )}
+                    {tr(`Circular structure: opens and closes with the “35,000 hours” statistic`)}
                   </li>
                   <li>{tr(`Direct address shifts the argument from abstract to personal`)}</li>
                   <li>{tr(`Vocabulary is precise and ambitious without being overwrought`)}</li>
@@ -1992,7 +1984,7 @@ export default async function PersuasiveWritingPage() {
                   </li>
                   <li>
                     {tr(
-                      `Clear structure: hook &rarr; evidence &rarr; shared experience &rarr; counter-argument &rarr; anecdote &rarr; call to action`,
+                      `Clear structure: hook → evidence → shared experience → counter-argument → anecdote → call to action`,
                     )}
                   </li>
                   <li>
@@ -2009,7 +2001,7 @@ export default async function PersuasiveWritingPage() {
                   </li>
                   <li>
                     {tr(
-                      `Circular structure: &ldquo;I am tired&rdquo; opens and closes the speech, but the meaning deepens`,
+                      `Circular structure: “I am tired” opens and closes the speech, but the meaning deepens`,
                     )}
                   </li>
                   <li>

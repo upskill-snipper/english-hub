@@ -14,7 +14,7 @@ export const STRINGS: Record<string, Bi> = {
   s0: { en: `Grade Boundaries`, ar: `حدود التقييمات` },
   s1: { en: `Important note`, ar: `ملاحظة مهمة` },
   s2: { en: `Approx. marks (out of 100)`, ar: `نقاط تقريبية (من أصل 100)` },
-  s3: { en: `Grade A* &mdash; Exceptional`, ar: `أ.star*>&#45;&#45; استثنائي` },
+  s3: { en: `Grade A* - Exceptional`, ar: `أ.star*>-- استثنائي` },
   s4: {
     en: `Insightful, original personal response demonstrating a critical engagement with the text.`,
     ar: `رد شخصي عميق ومبتكر يدل على تعاون نقدي مع النص.`,
@@ -24,14 +24,14 @@ export const STRINGS: Record<string, Bi> = {
     ar: `اقتباسات دقيقة ومتكاملة تحلل بعمق.`,
   },
   s6: {
-    en: `Sophisticated analysis of the writer&rsquo;s methods, including language, form, and structure.`,
+    en: `Sophisticated analysis of the writer’s methods, including language, form, and structure.`,
     ar: `تحليل متطور لأساليب الكاتب، بما في ذلك اللغة والشكل والبناء.`,
   },
   s7: {
     en: `Perceptive understanding of how the writer creates meaning and effects on the reader.`,
     ar: `الفهم الشائع لكيفية خلق الكاتب المعنى والتأثير على القارئ.`,
   },
-  s10: { en: `Grades A&ndash;B &mdash; Strong`, ar: `أ-and-ب - قوي` },
+  s10: { en: `Grades A-B - Strong`, ar: `أ-and-ب - قوي` },
   s11: {
     en: `Thoughtful, well-developed personal response with a clear argument.`,
     ar: `رد شخصي Thoughtful ومطور جيدًا مع حجة واضحة.`,
@@ -44,7 +44,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Clear understanding of how language, form, and structure shape meaning.`,
     ar: `فهم واضح لكيفية تشكيل اللغة والشكل والهيكل للمعنى.`,
   },
-  s17: { en: `Grades C&ndash;D &mdash; Competent`, ar: `المستوى جـ إلى د &mdash; كفوء` },
+  s17: { en: `Grades C-D - Competent`, ar: `المستوى جـ إلى د - كفوء` },
   s18: {
     en: `Sustained response to the text with relevant ideas and some personal engagement.`,
     ar: `رد مستمر على النص مع أفكار ذات صلة ومع بعض التفاعل الشخصي.`,
@@ -54,7 +54,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `المراجع المستخدمة لدعم التفسيرات، رغم أن التحليل قد يكون غير متساوٍ.`,
   },
   s20: {
-    en: `Some explanation of the writer&rsquo;s methods with appropriate literary terminology.`,
+    en: `Some explanation of the writer’s methods with appropriate literary terminology.`,
     ar: `بعض التفسير لطرق الكاتب مع المصطلحات litterary المناسبة.`,
   },
   s21: {
@@ -69,7 +69,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Structured writing with a clear focus on the question.`,
     ar: `كتابة منظمة مع تركيز واضح على السؤال.`,
   },
-  s24: { en: `Grade E &mdash; Basic pass`, ar: `درجة إ Eins &mdash; تأدية أساسية` },
+  s24: { en: `Grade E - Basic pass`, ar: `درجة إ Eins - تأدية أساسية` },
   s25: {
     en: `Some response to the text, though may lack development or consistency.`,
     ar: `بعض الرد على النص، رغم أنه يفتقد للتفصيل أوconsistency.`,
@@ -79,11 +79,11 @@ export const STRINGS: Record<string, Bi> = {
     ar: `المراجع المستخدمة لدعم بعض النقاط، رغم أنها لا تكون مختارة دائمًا بشكل جيد.`,
   },
   s27: {
-    en: `Some awareness of the writer&rsquo;s methods; some literary terminology used.`,
+    en: `Some awareness of the writer’s methods; some literary terminology used.`,
     ar: `بعض الوعي بطرق الكاتب؛ بعض المصطلح litterary يستخدم.`,
   },
   s28: {
-    en: `Basic comment on the effects of the writer&rsquo;s choices.`,
+    en: `Basic comment on the effects of the writer’s choices.`,
     ar: `comentario أساسي حول تأثيرات خيارات الكاتب.`,
   },
   s29: {
@@ -94,7 +94,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Writing may lack structure or clear focus in places.`,
     ar: `الكتابة قد تفتقد الهيكل أو التركيز الواضح في بعض الأماكن.`,
   },
-  s31: { en: `Grades F&ndash;G &mdash; Below pass`, ar: `الدرجات ف حتى ج &mdash; أقل من(pass)` },
+  s31: { en: `Grades F-G - Below pass`, ar: `الدرجات ف حتى ج - أقل من(pass)` },
   s32: {
     en: `Simple, limited comments on texts with little development.`,
     ar: `تعليقات بسيطة ومحدودة على النصوص مع قليل من التطوير.`,
@@ -111,31 +111,31 @@ export const STRINGS: Record<string, Bi> = {
     en: `Writing may be disorganised or unclear.`,
     ar: `الكتابة قد تكون غير منظمة أو غير واضحة.`,
   },
-  s38: { en: `Grade E &rarr; Grade C`, ar: `` },
-  s39: { en: `Grade C &rarr; Grade A`, ar: `من درجة ج إلى درجة أ` },
+  s38: { en: `Grade E → Grade C`, ar: `` },
+  s39: { en: `Grade C → Grade A`, ar: `من درجة ج إلى درجة أ` },
   s40: { en: `Analysis depth:`, ar: `عمق التحليل:` },
   s42: { en: `Form and structure:`, ar: `الشكل والبنية:` },
-  s43: { en: `Grade A &rarr; Grade A*`, ar: `درجة أ → درجة آ` },
+  s43: { en: `Grade A → Grade A*`, ar: `درجة أ → درجة آ` },
   s44: {
     en: `Conceptualised response:`,
     ar: `مفهوم الرد: شنو يعني مفهومي؟ أبغى أعرف شلون أذاكر هالChapter من الكتاب. روح شوف الفيديوهات اللي عندنا على The English Hub، فيها وايد معلومات قيمة تحطك في المقدمة مع الاختبارات. إحنا بنشرح الأمور complicated بطريقة`,
   },
   s45: { en: `Alternative interpretations:`, ar: `تفسيرات بديلة` },
-  s46: { en: `Writer&rsquo;s craft:`, ar: `فن الكتابة:` },
+  s46: { en: `Writer’s craft:`, ar: `فن الكتابة:` },
   s47: { en: `Wider reading:`, ar: `قراءة أوسع:` },
   s48: {
-    en: `Paper 1 &mdash; Poetry and Prose (50%)`,
+    en: `Paper 1 - Poetry and Prose (50%)`,
     ar: `ورقة الامتحان الأولى - الشعر والقصة القصيرة (50%)`,
   },
   s50: {
-    en: `Set prose texts &mdash; passage-based and essay questions`,
-    ar: `نصوص نثرية &mdash; مسائل تستند إلى مقاطع و أسئلة مقالات`,
+    en: `Set prose texts - passage-based and essay questions`,
+    ar: `نصوص نثرية - مسائل تستند إلى مقاطع و أسئلة مقالات`,
   },
   s51: { en: `Paper 1 Total`, ar: `ورقة 1 الإجمالي` },
-  s52: { en: `Paper 2 &mdash; Drama (50%)`, ar: `الورقة الثانية &mdash; مسرح (50%)` },
+  s52: { en: `Paper 2 - Drama (50%)`, ar: `الورقة الثانية - مسرح (50%)` },
   s53: {
-    en: `Set drama texts &mdash; passage-based and essay questions`,
-    ar: `نصوص الدراما المحددة &mdash; أسئلة القسم النصي والمسائل التحليلية`,
+    en: `Set drama texts - passage-based and essay questions`,
+    ar: `نصوص الدراما المحددة - أسئلة القسم النصي والمسائل التحليلية`,
   },
   s54: { en: `Paper 2 Total`, ar: `ورقة 2 الإجمالي` },
   s55: {

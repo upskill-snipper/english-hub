@@ -45,9 +45,9 @@ export const STRINGS: Record<string, Bi> = {
     en: `Writing that feels crafted and original rather than formulaic.`,
     ar: `كتابة تشعر بأنها مصنوعة ومبتكرة بدلاً من أنها ملتزمة بقالب معين.`,
   },
-  s13: { en: `Grades 7&ndash;8 &mdash; Strong`, ar: `الصفوف السابع والثامن &mdash; قوي` },
+  s13: { en: `Grades 7-8 - Strong`, ar: `الصفوف السابع والثامن - قوي` },
   s14: {
-    en: `Detailed, well-developed analysis with clear explanations of writers&rsquo; effects.`,
+    en: `Detailed, well-developed analysis with clear explanations of writers’ effects.`,
     ar: `تحليل مفصل ومطور مع تفسيرات واضحة لتأثيرات الكتاب.`,
   },
   s15: {
@@ -71,7 +71,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `لغة ومعجم متطوران اختيرتا لتأثيرهما.`,
   },
   s21: {
-    en: `Effective structural features that shape the reader&rsquo;s experience.`,
+    en: `Effective structural features that shape the reader’s experience.`,
     ar: `مميزات بنائية فعالة تشكّل تجربة القارئ.`,
   },
   s22: {
@@ -82,7 +82,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Mostly accurate spelling, punctuation, and grammar with only minor slips.`,
     ar: `إملاء وعلامات ترقيم وقواعد صحيحة في معظمها مع هفوات طفيفة فقط.`,
   },
-  s24: { en: `Grades 5&ndash;6 &mdash; Secure`, ar: `الصفوف fifth إلى sixth &mdash; موثوق` },
+  s24: { en: `Grades 5-6 - Secure`, ar: `الصفوف fifth إلى sixth - موثوق` },
   s25: {
     en: `Clear explanations of language and structural effects with relevant detail.`,
     ar: `توضيحات واضحة لتأثيرات اللغة والبنية مع التفاصيل ذات الصلة.`,
@@ -96,8 +96,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `استُخدمت المصطلحات المتخصصة بدقة في معظمها.`,
   },
   s28: {
-    en: `Analysis may lack depth or consistency &mdash; some points well developed, others more surface-level.`,
-    ar: `التحليل قد يفتقر إلى العمق أوconsistency &mdash; بعض النقاط مطورة بشكل جيد، في حين أن البعض الآخر يكون أكثر سطحية.`,
+    en: `Analysis may lack depth or consistency: some points well developed, others more surface-level.`,
+    ar: `التحليل قد يفتقر إلى العمق أوconsistency - بعض النقاط مطورة بشكل جيد، في حين أن البعض الآخر يكون أكثر سطحية.`,
   },
   s29: {
     en: `Writing communicates effectively with some engaging moments and awareness of audience.`,
@@ -119,7 +119,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Generally accurate spelling and punctuation with errors on more complex words.`,
     ar: ``,
   },
-  s34: { en: `Grade 4 &mdash; Standard pass`, ar: `الدرجة الرابعة &ndash; المعيار الأساسي للنجاح` },
+  s34: { en: `Grade 4 - Standard pass`, ar: `الدرجة الرابعة - المعيار الأساسي للنجاح` },
   s35: {
     en: `Some understanding of language effects, but explanations may be thin or underdeveloped.`,
     ar: `بعض الفهم لتأثيرات اللغة، لكن التفسيرات قد تكون رقيقة أو غير مكتملة.`,
@@ -153,8 +153,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `التقسيم بين الجمل آمن بشكل كبير ولكن هناك بعض الترابط الزائد بعلامة الفاصلة أو الجمل الطويلة المفرطة.`,
   },
   s45: {
-    en: `Grades 1&ndash;3 &mdash; Below standard pass`,
-    ar: `درجات 1 إلى 3 &mdash; دون المعدل للم.pass`,
+    en: `Grades 1-3 - Below standard pass`,
+    ar: `درجات 1 إلى 3 - دون المعدل للم.pass`,
   },
   s46: {
     en: `Simple comments on language with limited or no analysis of effects.`,
@@ -165,7 +165,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `مراجعات سهلة قد ت/copyleft أو تستنسخ بدلاً من التحليل.`,
   },
   s49: {
-    en: `May retell or describe events rather than analyse the writer&rsquo;s craft.`,
+    en: `May retell or describe events rather than analyse the writer’s craft.`,
     ar: `يمكن أن يعيد وصف الأحداث أو يرويها بدلاً من تحليل فن الكتابة.`,
   },
   s50: {
@@ -180,10 +180,10 @@ export const STRINGS: Record<string, Bi> = {
     en: `Limited structural features; paragraphing may be absent or random.`,
     ar: `مميزات بنائية محدودة؛ قد يغيب الترقيم أو يكون عشوائيًا.`,
   },
-  s54: { en: `Grade 4 &rarr; Grade 5`, ar: `الصف الرابع إلى الصف الخامس` },
+  s54: { en: `Grade 4 → Grade 5`, ar: `الصف الرابع إلى الصف الخامس` },
   s55: { en: `Component 01 tip:`, ar: `نصيحة ل componente 01:` },
-  s56: { en: `Grade 5 &rarr; Grade 7`, ar: `الصف الخامس إلى الصف السابع` },
-  s57: { en: `Grade 7 &rarr; Grade 9`, ar: `السابع&rarr;الثاني عشر` },
+  s56: { en: `Grade 5 → Grade 7`, ar: `الصف الخامس إلى الصف السابع` },
+  s57: { en: `Grade 7 → Grade 9`, ar: `السابع→الثاني عشر` },
   s58: { en: `Component 02 mastery:`, ar: `المastery للجزء 02:` },
   s59: { en: `Reading widely:`, ar: `قراءة واسعة:` },
   s60: { en: `What it tests`, ar: `ماعنده شنو يختبر` },
@@ -253,11 +253,11 @@ export const STRINGS: Record<string, Bi> = {
   },
   s83: { en: `What each grade looks like in practice`, ar: `كيف تبدو كل درجة في الممارسة` },
   s85: {
-    en: `Marks per question: Component 01 &mdash; Communicating Information and Ideas`,
-    ar: `نقاط لكل سؤال: المكون 01 &mdash; تبادل المعلومات والأفكار`,
+    en: `Marks per question: Component 01 - Communicating Information and Ideas`,
+    ar: `نقاط لكل سؤال: المكون 01 - تبادل المعلومات والأفكار`,
   },
   s86: {
-    en: `Marks per question: Component 02 &mdash; Exploring Effects and Impact`,
-    ar: `نقاط لكل سؤال: المكون 02 &ndash; استكشاف التأثيرات والتأثير`,
+    en: `Marks per question: Component 02 - Exploring Effects and Impact`,
+    ar: `نقاط لكل سؤال: المكون 02 - استكشاف التأثيرات والتأثير`,
   },
 }

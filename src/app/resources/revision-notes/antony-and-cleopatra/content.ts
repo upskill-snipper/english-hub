@@ -11,12 +11,12 @@
 export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
-  s0: { en: `William Shakespeare, c.1606&ndash;1607`, ar: `ويليام شكسبير، circa 1606-1607` },
-  s2: { en: `Cleopatra&apos;s Barge`, ar: `برج كليوباترا` },
+  s0: { en: `William Shakespeare, c.1606-1607`, ar: `ويليام شكسبير، circa 1606-1607` },
+  s2: { en: `Cleopatra's Barge`, ar: `برج كليوباترا` },
   s3: { en: `Roman Armour and the Sword`, ar: `دروع الرومان والسيف` },
   s4: { en: `The Dolphin`, ar: `الدلفين` },
   s5: { en: `Egypt vs Rome as Geographic Poles`, ar: `مصر ضد روما كقطبين جغرافيين` },
-  s6: { en: `Composition Date: 1606&ndash;1607`, ar: `التاريخ: 1606&ndash;1607` },
+  s6: { en: `Composition Date: 1606-1607`, ar: `التاريخ: 1606-1607` },
   s7: { en: `The Roman Plays Sequence`, ar: `السلسلة الرومانية من المسرحيات` },
   s8: { en: `Antony and Cleopatra`, ar: `أنتونيو وقليوباترا` },
   s9: { en: `Titus Andronicus`, ar: `` },
@@ -36,7 +36,7 @@ export const STRINGS: Record<string, Bi> = {
   s26: { en: `Connect Jacobean context.`, ar: `` },
   s27: { en: `Reference critical positions.`, ar: `أ refere أوضاع هامة` },
   s28: { en: `Trace verbal patterns.`, ar: `تتبع أنماط الكلام` },
-  s29: { en: `Don&apos;t simplify the binary.`, ar: `لا تبسّط الثنائية.` },
+  s29: { en: `Don't simplify the binary.`, ar: `لا تبسّط الثنائية.` },
   s30: {
     en: `Act-by-Act Summary: The Rome/Egypt Opposition`,
     ar: `ملخص المشاهدات: المعارضة بين روما وEgypt`,

@@ -31,7 +31,7 @@ PLEASE NOTE: THIS IS AN ADAPTED VERSION AND MAY NEED REVIEW BY A LOCAL EXPERT FO
     ar: `UK GDPR و قانون حماية البيانات لعام 2018`,
   },
   s7: {
-    en: `ICO Age Appropriate Design Code (Children&apos;s Code)`,
+    en: `ICO Age Appropriate Design Code (Children's Code)`,
     ar: `ال Código التصميمي الملائم للفئة العمرية (كود الأطفال)`,
   },
   s8: { en: `Online Safety Act 2023`, ar: `قانون السلامة الإلكترونية 2023` },
@@ -56,7 +56,7 @@ PLEASE NOTE: THIS IS AN ADAPTED VERSION AND MAY NEED REVIEW BY A LOCAL EXPERT FO
     ar: `لا تدّور في شنون الحماية بنفسك`,
   },
   s21: {
-    en: `Record accurately using the individual&apos;s own words`,
+    en: `Record accurately using the individual's own words`,
     ar: `سجل بدقة باستخدام كلمات الشخص ذاتها`,
   },
   s22: { en: `External Reporting (UK)`, ar: `التقارير الخارجية (بريطانيا)` },

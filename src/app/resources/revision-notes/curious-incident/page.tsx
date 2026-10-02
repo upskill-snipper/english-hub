@@ -1710,7 +1710,7 @@ export default function CuriousIncidentPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Use Haddon&apos;s methods.`)}</strong> Discuss first-person narration,
+              <strong>{tr(`Use Haddon's methods.`)}</strong> Discuss first-person narration,
               prime-numbered chapters, embedded diagrams, the appendix, the borrowed Holmes title,
               and the flat tone as deliberate craft choices.
             </span>
@@ -1718,7 +1718,7 @@ export default function CuriousIncidentPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Refer to the writer&apos;s intentions.`)}</strong> &ldquo;Haddon perhaps
+              <strong>{tr(`Refer to the writer's intentions.`)}</strong> &ldquo;Haddon perhaps
               suggests&hellip;&rdquo; or &ldquo;Haddon uses Christopher&apos;s voice
               to&hellip;&rdquo;
             </span>

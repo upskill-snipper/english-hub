@@ -11,48 +11,48 @@
 export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
-  s0: { en: `Act 3 - Paranoia &amp; Tyranny`, ar: `الatto 3 - الشعور بالParanoia وtyranny` },
+  s0: { en: `Act 3 - Paranoia & Tyranny`, ar: `الatto 3 - الشعور بالParanoia وtyranny` },
   s1: {
     en: `Macbeth - Act 3: Scene-by-Scene Analysis`,
     ar: `ماكبث - تحليل المشاهد مشهدًا بعد مشهد في الفصل الثالث`,
   },
   s2: {
-    en: `Scene 1 - Macbeth Plans Banquo&apos;s Murder`,
+    en: `Scene 1 - Macbeth Plans Banquo's Murder`,
     ar: `مشهد واحد - ماكبث يخطط لقتل بانكواو`,
   },
-  s3: { en: `Key Events &amp; Turning Points`, ar: `` },
+  s3: { en: `Key Events & Turning Points`, ar: `` },
   s4: {
-    en: `Macbeth acts independently for the first time, ordering murder without Lady Macbeth&apos;s involvement.`,
+    en: `Macbeth acts independently for the first time, ordering murder without Lady Macbeth's involvement.`,
     ar: ``,
   },
   s5: {
-    en: `His motivation shifts from ambition to fear &mdash; he kills not to gain the throne but to keep it.`,
+    en: `His motivation shifts from ambition to fear - he kills not to gain the throne but to keep it.`,
     ar: `مotiveهتو تتغيّر مِن الطَّموح إللى الخوف - هو ما يقتَل عشان يكتسِب العرش بَس عشان يحتفظ بِه.`,
   },
   s6: {
-    en: `He uses the same technique Lady Macbeth used on him: questioning the murderers&apos; manhood.`,
+    en: `He uses the same technique Lady Macbeth used on him: questioning the murderers' manhood.`,
     ar: ``,
   },
   s7: {
-    en: `Banquo&apos;s suspicion that Macbeth &ldquo;play&rsquo;dst most foully&rdquo; makes him a threat to the regime.`,
+    en: `Banquo's suspicion that Macbeth “play’dst most foully” makes him a threat to the regime.`,
     ar: `شكّ Banquo أن Macbeth «لعبت بطريقة شريرة» يجعله تهديدًا للنظام.`,
   },
   s8: { en: `Language Analysis`, ar: `تحليل اللغة` },
   s9: { en: `Character Development`, ar: `تطور الشخصية` },
   s10: { en: `Structural Analysis`, ar: `تحليل البنية` },
   s11: { en: `Links to Themes`, ar: `روابط بالمواضيع` },
-  s12: { en: `Kingship &amp; Power`, ar: `الملكية والسلطة` },
+  s12: { en: `Kingship & Power`, ar: `الملكية والسلطة` },
   s14: { en: `The Supernatural`, ar: `` },
   s15: {
-    en: `Scene 2 - &ldquo;Naught’s Had, All’s Spent&rdquo;`,
+    en: `Scene 2 - “Naught’s Had, All’s Spent”`,
     ar: `الشِّهَادَةُ 2 - "نُوتٍ حَد، أَلٍّ سُپِنت`,
   },
   s16: {
-    en: `Lady Macbeth&apos;s private admission of unhappiness shows the crown has brought no satisfaction.`,
+    en: `Lady Macbeth's private admission of unhappiness shows the crown has brought no satisfaction.`,
     ar: ``,
   },
   s17: {
-    en: `Macbeth excludes Lady Macbeth from his plans &mdash; their partnership is fracturing.`,
+    en: `Macbeth excludes Lady Macbeth from his plans - their partnership is fracturing.`,
     ar: ``,
   },
   s18: {
@@ -60,27 +60,27 @@ export const STRINGS: Record<string, Bi> = {
     ar: `يتغير التوازن القوي: ماكbeth هو الآن المخطط النشط، بينما لداي ماكbeth هي المشاهدة السلبية.`,
   },
   s19: { en: `Lady Macbeth`, ar: `` },
-  s20: { en: `Guilt &amp; Conscience`, ar: `الذنب والضمير` },
-  s21: { en: `Scene 3 - Banquo&apos;s Murder`, ar: `مشهد 3 - مقتل بانكو` },
+  s20: { en: `Guilt & Conscience`, ar: `الذنب والضمير` },
+  s21: { en: `Scene 3 - Banquo's Murder`, ar: `مشهد 3 - مقتل بانكو` },
   s22: {
-    en: `Banquo is murdered &mdash; Macbeth&apos;s descent into tyranny deepens.`,
+    en: `Banquo is murdered - Macbeth's descent into tyranny deepens.`,
     ar: `بنقوو مقتول - هبوط ماكbeth في الديكتاتورية يزداد وايد`,
   },
   s23: {
-    en: `Fleance&apos;s escape is crucial: the witches&apos; prophecy that Banquo&apos;s descendants will be kings remains intact.`,
+    en: `Fleance's escape is crucial: the witches' prophecy that Banquo's descendants will be kings remains intact.`,
     ar: `فرانسنس هروبه مهم: تنبؤات الساحرات التي تقول إن أحفاد بانكوا سيصبحون ملوكاً لا يزال ساري المفعول.`,
   },
-  s25: { en: `Scene 4 - The Banquet and Banquo&apos;s Ghost`, ar: `الحفلة وروح بنقو` },
+  s25: { en: `Scene 4 - The Banquet and Banquo's Ghost`, ar: `الحفلة وروح بنقو` },
   s26: {
-    en: `Banquo&apos;s ghost appears &mdash; either supernatural visitation or Macbeth&apos;s guilt made visible.`,
+    en: `Banquo's ghost appears - either supernatural visitation or Macbeth's guilt made visible.`,
     ar: ``,
   },
   s27: {
-    en: `Macbeth&apos;s public breakdown reveals his guilt to the Scottish lords, undermining his authority.`,
+    en: `Macbeth's public breakdown reveals his guilt to the Scottish lords, undermining his authority.`,
     ar: `انهيار ماكbeth العلني يكشف ذنبه للملوك الاسكتلنديين، مهددا سلطته.`,
   },
   s28: {
-    en: `Lady Macbeth&apos;s attempt to maintain appearances fails &mdash; she is losing control of her husband and the situation.`,
+    en: `Lady Macbeth's attempt to maintain appearances fails - she is losing control of her husband and the situation.`,
     ar: ``,
   },
   s29: {
@@ -88,7 +88,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `يعقد ماكبث العزم على زيارة الساحرات مرة أخرى، ساعيا إلى الأمان عبر انخراط أعمق في ما وراء الطبيعة.`,
   },
   s31: { en: `Appearance vs Reality`, ar: `` },
-  s32: { en: `Scene 5 - Hecate&apos;s Intervention`, ar: `مشهد 5 - تدخل هيكات` },
+  s32: { en: `Scene 5 - Hecate's Intervention`, ar: `مشهد 5 - تدخل هيكات` },
   s34: { en: `Practice Exam Questions - Act 3`, ar: `أسئلة الامتحان التدريبية - المشهد الثالث` },
   s35: {
     en: `How does Shakespeare present Macbeth as an increasingly isolated and paranoid ruler in Act 3? Refer closely to language, form, and structure in your answer.`,

@@ -577,9 +577,7 @@ export default function ToKillAMockingbirdStudyGuide() {
               </p>
             </div>
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <h3 className="font-semibold text-foreground">
-                {tr(`Harper Lee&rsquo;s Biography`)}
-              </h3>
+              <h3 className="font-semibold text-foreground">{tr(`Harper Lee’s Biography`)}</h3>
               <p className="mt-2">
                 Lee grew up in Monroeville, Alabama, the model for Maycomb. Her father, Amasa
                 Coleman Lee, was a lawyer who defended Black clients - a clear inspiration for
@@ -838,9 +836,7 @@ export default function ToKillAMockingbirdStudyGuide() {
                   the novel&rsquo;s structure and how it develops themes.
                 </li>
                 <li>
-                  <strong className="text-foreground">
-                    {tr(`Always use the author&rsquo;s name:`)}
-                  </strong>{' '}
+                  <strong className="text-foreground">{tr(`Always use the author’s name:`)}</strong>{' '}
                   Write &ldquo;Lee presents...&rdquo; or &ldquo;Lee uses...&rdquo; rather than
                   &ldquo;the novel shows...&rdquo;. This demonstrates awareness of authorial intent
                   and helps you discuss methods (Writer's Methods).
@@ -861,7 +857,7 @@ export default function ToKillAMockingbirdStudyGuide() {
                 </li>
                 <li>
                   <strong className="text-foreground">
-                    {tr(`Link everything to Lee&rsquo;s purpose:`)}
+                    {tr(`Link everything to Lee’s purpose:`)}
                   </strong>{' '}
                   The strongest answers connect analysis to Lee&rsquo;s moral message. Why does she
                   use a child narrator? Why does Tom die off-stage? Why does Scout end up on

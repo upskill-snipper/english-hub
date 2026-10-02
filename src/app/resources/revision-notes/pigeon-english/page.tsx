@@ -393,11 +393,11 @@ export default function PigeonEnglishPage() {
                 description="The central tension of the novel. Harri narrates with a child's freshness - finding joy in a sweet, a race, a girl, a pigeon - while moving through a landscape of stabbings, gangs, and domestic abuse. Kelman writes the collision of these registers without sentimentality. Harri's very innocence is what makes the violence so unbearable, and what makes it possible: he cannot believe people will really hurt him for asking honest questions. The novel argues that childhood and street violence cannot coexist; one will eventually destroy the other, and it is almost always the child who loses."
               />
               <ThemeCard
-                title={tr(`Migration &amp; Belonging`)}
+                title={tr(`Migration & Belonging`)}
                 description="Harri is in the middle of becoming English. He absorbs slang, copies fashion, befriends Dean and crushes on Poppy - but he also says 'Asweh' and 'Adjei', misses Ghana, and remains visibly different. The family is split across continents, with Papa and Agnes still in Accra. Auntie Sonia's burnt fingerprints dramatise the immigration system's cruelty. Kelman shows belonging as a long, difficult, often violent process - and asks what it means that English society's first major gift to Harri is murder."
               />
               <ThemeCard
-                title={tr(`Faith &amp; Hope`)}
+                title={tr(`Faith & Hope`)}
                 description="Mamma's Christianity is sincere, daily, and load-bearing. Prayer structures the Opoku household in London. Harri tries to keep faith - speaking to God, hoping for miracles, believing the world is fair. The pigeon, with its aerial, almost angelic perspective, gives the novel a religious texture even where its world is faithless. Kelman is too honest to let faith save anyone, but he refuses to mock it; faith is presented as a real force of survival, even when it cannot prevent tragedy."
               />
               <ThemeCard
@@ -405,11 +405,11 @@ export default function PigeonEnglishPage() {
                 description="Family in the novel is plural and stretched: Mamma in London, Papa in Ghana, Lydia bossing and shielding, Auntie Sonia loving and battered, the absent baby Agnes. Kelman shows family as the strongest defence Harri has against the estate's violence - and shows how the demands of immigration tear at that defence. Mamma's working hours, Papa's absence, Sonia's exposure to Julius - each rip in the family fabric corresponds to a danger that creeps closer to Harri. The novel asks whether the immigrant family can ever be reassembled, and whether London allows time."
               />
               <ThemeCard
-                title={tr(`Friendship &amp; Group Dynamics`)}
+                title={tr(`Friendship & Group Dynamics`)}
                 description="Friendship has two faces in the novel. With Dean, friendship is play, loyalty, shared imagination - the detective game, the running, the in-jokes. With the Dell Farm Crew, group dynamics turn predatory: belonging means initiation, hierarchy, violence, and silence. Kelman shows the same human need - to be part of something - producing wildly different outcomes depending on what is available. For boys without strong adult presence, the gang's offer of belonging is dangerously seductive."
               />
               <ThemeCard
-                title={tr(`Storytelling &amp; Voice`)}
+                title={tr(`Storytelling & Voice`)}
                 description="Harri's voice is the novel's main achievement and its central theme. He mixes Pidgin English ('Asweh' - meaning 'I swear'), Ghanaian exclamations, BBC English from school, and London street slang into a single, shifting register. Through this voice, Kelman explores how language carries identity, how a child arrives at an idiom for a world that is too big and too violent for him. The pigeon's poetic interludes form a counter-voice - and when Harri's voice ends, the pigeon's is what is left. Storytelling, in the novel, is what makes a child a person; the loss of that voice at the end is the loss of Harri himself."
               />
             </div>
@@ -1227,7 +1227,7 @@ export default function PigeonEnglishPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Use Kelman&apos;s methods.`)}</strong> Discuss the hybrid voice (Pidgin
+              <strong>{tr(`Use Kelman's methods.`)}</strong> Discuss the hybrid voice (Pidgin
               English, slang, first-person present tense), the pigeon&apos;s italicised interludes,
               the circular structure, and the closing tonal shift.
             </span>
@@ -1235,7 +1235,7 @@ export default function PigeonEnglishPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Refer to Kelman&apos;s intentions.`)}</strong> &lsquo;Kelman perhaps
+              <strong>{tr(`Refer to Kelman's intentions.`)}</strong> &lsquo;Kelman perhaps
               suggests...&rsquo; or &lsquo;Kelman uses Harri&apos;s voice to...&rsquo; &mdash; treat
               the novel as a designed object.
             </span>

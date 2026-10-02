@@ -367,9 +367,7 @@ export default async function OCRLitPaper1Page() {
                     analysis. Some tips:
                   </p>
                   <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
-                    <li>
-                      {tr(`Read the text multiple times &mdash; familiarity reduces difficulty`)}
-                    </li>
+                    <li>{tr(`Read the text multiple times: familiarity reduces difficulty`)}</li>
                     <li>{tr(`Look up archaic words and make a glossary`)}</li>
                     <li>
                       Pay attention to sentence structure: many Victorian writers use long, complex

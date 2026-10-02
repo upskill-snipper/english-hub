@@ -13,7 +13,7 @@ export type Bi = { en: string; ar: string }
 export const STRINGS: Record<string, Bi> = {
   s0: { en: `Grade Boundaries`, ar: `حدود الدرجات` },
   s1: { en: `Important note`, ar: `ملاحظة مهمة` },
-  s2: { en: `Grade 9 &mdash; Exceptional`, ar: `التاسع &ndash; ممتاز` },
+  s2: { en: `Grade 9 - Exceptional`, ar: `التاسع - ممتاز` },
   s3: {
     en: `Critical, exploratory, conceptualised response to texts.`,
     ar: ``,
@@ -23,11 +23,11 @@ export const STRINGS: Record<string, Bi> = {
     ar: `استخدام حكيم لreferences دقيق لدعم التفسير.`,
   },
   s5: {
-    en: `Analysis of the writer&rsquo;s methods with subject terminology used judiciously.`,
+    en: `Analysis of the writer’s methods with subject terminology used judiciously.`,
     ar: `تحليل طرق الكاتب باستخدام المصطلح الموضوعي بحكمة`,
   },
   s6: {
-    en: `Exploration of the effects of the writer&rsquo;s methods on the reader.`,
+    en: `Exploration of the effects of the writer’s methods on the reader.`,
     ar: `استكشاف تأثيرات أساليب الكاتب على القارئ.`,
   },
   s7: {
@@ -38,7 +38,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Sophisticated exploration of unseen poetry, considering form, structure, and language with originality.`,
     ar: `استكشاف متطور للشعر غير المعروف، مع التفكير في الشكل والโครง trúc واللغة بطريقةOriginale (وايد شفافة)`,
   },
-  s10: { en: `Grades 7-8 &mdash; Strong`, ar: `الصفوف seventh إلى eighth &mdash; قوي` },
+  s10: { en: `Grades 7-8 - Strong`, ar: `الصفوف seventh إلى eighth - قوي` },
   s11: {
     en: `Thoughtful, developed response to texts with a clear personal voice.`,
     ar: `ردًّا Thoughtful ومُرَبًّى مع صوت شخصي واضح.`,
@@ -48,11 +48,11 @@ export const STRINGS: Record<string, Bi> = {
     ar: `مراجع مناسبة مدمجة في التفسيرات.`,
   },
   s13: {
-    en: `Examination of the writer&rsquo;s methods with subject terminology used effectively.`,
+    en: `Examination of the writer’s methods with subject terminology used effectively.`,
     ar: `’examination tutub al-kotob bil-agyud al-lugawiya mufassira mulaaheza shuuria’`,
   },
   s14: {
-    en: `Understanding of the effects of the writer&rsquo;s methods on the reader.`,
+    en: `Understanding of the effects of the writer’s methods on the reader.`,
     ar: `فهم تأثير أساليب الكاتب على القارئ.`,
   },
   s16: {
@@ -63,7 +63,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Confident analysis of unseen poetry exploring form, structure, and language choices.`,
     ar: `تحليل واثق للشعر غير المدروس يستكشف الشكل والبنية والاختيارات اللغوية.`,
   },
-  s18: { en: `Grades 5-6 &mdash; Secure`, ar: `الصفوف fifth إلى sixth &mdash; موثوق` },
+  s18: { en: `Grades 5-6 - Secure`, ar: `الصفوف fifth إلى sixth - موثوق` },
   s19: {
     en: `Clear, explained response to texts with relevant ideas.`,
     ar: `رد واضح مع شرح ومعاودة الأفكار ذات الصلة`,
@@ -73,11 +73,11 @@ export const STRINGS: Record<string, Bi> = {
     ar: `المراجع المستخدمة Effectively لدعم التفسيرات.`,
   },
   s21: {
-    en: `Clear explanation of writer&rsquo;s methods with appropriate use of subject terminology.`,
+    en: `Clear explanation of writer’s methods with appropriate use of subject terminology.`,
     ar: `توضيح واضح لطرق الكاتب مع استخدام مناسب للمصطلحات الخاصة بالTopic_terms`,
   },
   s22: {
-    en: `Understanding of some effects of the writer&rsquo;s methods.`,
+    en: `Understanding of some effects of the writer’s methods.`,
     ar: `فهم بعض آثار طرق الكاتب`,
   },
   s23: {
@@ -92,13 +92,13 @@ export const STRINGS: Record<string, Bi> = {
     en: `Competent response to unseen poetry with some analysis of language and structure.`,
     ar: `رد كفوء على الشعر غير المعروف مع تحليل بعضه للغة وโครง trúc`,
   },
-  s26: { en: `Grade 4 &mdash; Standard pass`, ar: `الدرجة الرابعة &ndash; المعيار المعتمد للنجاح` },
+  s26: { en: `Grade 4 - Standard pass`, ar: `الدرجة الرابعة - المعيار المعتمد للنجاح` },
   s29: {
-    en: `Some awareness of the writer&rsquo;s methods; some subject terminology used.`,
+    en: `Some awareness of the writer’s methods; some subject terminology used.`,
     ar: `بعض الوعي بطرق الكاتب؛ بعض المصطلح الموضوعي مستخدم.`,
   },
   s30: {
-    en: `Some comment on the effects of the writer&rsquo;s choices.`,
+    en: `Some comment on the effects of the writer’s choices.`,
     ar: `بعض التعليق على آثار خيارات الكاتب.`,
   },
   s31: {
@@ -114,8 +114,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `بعض الردود على الشعر غير المعروف مع تحديد أساسي للمميزات.`,
   },
   s34: {
-    en: `Grades 1-3 &mdash; Below standard pass`,
-    ar: `المستوى الأول حتى الثالث &mdash; دون المعدل للنجاح`,
+    en: `Grades 1-3 - Below standard pass`,
+    ar: `المستوى الأول حتى الثالث - دون المعدل للنجاح`,
   },
   s35: {
     en: `Simple, limited comments on texts with little development.`,
@@ -138,16 +138,16 @@ export const STRINGS: Record<string, Bi> = {
     en: `Simple comments on unseen poetry with little analysis.`,
     ar: `تعليقات سهلة على الشعر غير المعروف مع قليل من التحليل.`,
   },
-  s42: { en: `Grade 4 &rarr; Grade 5`, ar: `الصف الرابع إلى الصف الخامس` },
-  s43: { en: `Grade 5 &rarr; Grade 7`, ar: `الصف الخامس إلى الصف السابع` },
+  s42: { en: `Grade 4 → Grade 5`, ar: `الصف الرابع إلى الصف الخامس` },
+  s43: { en: `Grade 5 → Grade 7`, ar: `الصف الخامس إلى الصف السابع` },
   s44: { en: `Analysis depth:`, ar: `عمق التحليل:` },
   s45: { en: `Poetry anthology:`, ar: `مختارات الشعر:` },
   s46: { en: `Unseen poetry:`, ar: `شعر غير المعروف:` },
-  s47: { en: `Grade 7 &rarr; Grade 9`, ar: `الصف السابع إلى الصف التاسع` },
-  s50: { en: `Writer&rsquo;s craft:`, ar: `craftsmanship of the writer:` },
+  s47: { en: `Grade 7 → Grade 9`, ar: `الصف السابع إلى الصف التاسع` },
+  s50: { en: `Writer’s craft:`, ar: `craftsmanship of the writer:` },
   s51: { en: `Wider reading:`, ar: `قراءة أوسع:` },
   s52: {
-    en: `Paper 1 &mdash; Shakespeare and Post-1914 Literature (50%)`,
+    en: `Paper 1 - Shakespeare and Post-1914 Literature (50%)`,
     ar: `الورقة 1 - شكسبير وأدب ما بعد 1914 (50%)`,
   },
   s53: { en: `Extract + essay`, ar: `استخرج واستعمرEssay` },
@@ -161,7 +161,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s56: { en: `Paper 1 Total`, ar: `ورقة 1 الإجمالي` },
   s57: {
-    en: `Paper 2 &mdash; 19th-Century Novel, Poetry Anthology &amp; Unseen Poetry (50%)`,
+    en: `Paper 2 - 19th-Century Novel, Poetry Anthology & Unseen Poetry (50%)`,
     ar: `ورق الامتحان 2 - رواية قرن العشرين، مختارات الشعر، وشعر غير المعهود (50%)`,
   },
   s58: {

@@ -228,9 +228,7 @@ export default async function OCRChristmasCarolPage() {
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <div className="space-y-3">
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">
-                  {_tr(`Stave 1: Marley&rsquo;s Ghost`)}
-                </p>
+                <p className="font-semibold text-foreground">{_tr(`Stave 1: Marley’s Ghost`)}</p>
                 <p className="mt-2 text-sm">
                   On Christmas Eve, the miserly Ebenezer Scrooge refuses charity, dismisses his
                   nephew Fred&rsquo;s Christmas invitation, and grudgingly allows his clerk Bob
@@ -625,9 +623,7 @@ export default async function OCRChristmasCarolPage() {
             </p>
             <div className="space-y-3">
               <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
-                <p className="font-semibold text-primary">
-                  {_tr(`Introduction (3&ndash;4 sentences)`)}
-                </p>
+                <p className="font-semibold text-primary">{_tr(`Introduction (3-4 sentences)`)}</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Address the question directly. State Dickens&rsquo;s overall purpose and how the
                   theme/character relates to his message about social responsibility. Briefly
@@ -645,7 +641,7 @@ export default async function OCRChristmasCarolPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">
-                  {_tr(`Paragraph 2: Middle of the novella (Staves 2&ndash;3)`)}
+                  {_tr(`Paragraph 2: Middle of the novella (Staves 2-3)`)}
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   How does the theme/character develop through the ghostly visitations? Consider the

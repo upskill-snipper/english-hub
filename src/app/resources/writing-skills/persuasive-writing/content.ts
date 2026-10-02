@@ -36,17 +36,17 @@ export const STRINGS: Record<string, Bi> = {
     ar: `فكّر في تقسيم النص إلى أجزاء صغيرة وشروحات لكل جزء تكون مفيدة للقارئ. لا تجعلها غامضة بل واضحة ومحددة.`,
   },
   s19: {
-    en: `The author&apos;s name. Optional in exams but shows form awareness.`,
+    en: `The author's name. Optional in exams but shows form awareness.`,
     ar: `اسم الكاتب. اختياري في الامتحانات لكن يظهر وعى الشكل.`,
   },
   s20: { en: `Formal Letter`, ar: `carta رسمية` },
   s21: {
-    en: `Your address (top right), recipient&apos;s address (left, below yours), date below that.`,
+    en: `Your address (top right), recipient's address (left, below yours), date below that.`,
     ar: `عنوانك (في اليمين العلوي)، عنوان المستلم (يسارًا، تحت عنوانك)، التاريخ أسفله.`,
   },
   s23: { en: `Direct Address`, ar: `التحية المباشرة` },
   s24: {
-    en: `Address your audience directly throughout. &ldquo;You,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our.&rdquo;`,
+    en: `Address your audience directly throughout. “You,” “we,” “us,” “our.”`,
     ar: `إحنا بن.addressكم مباشرة خلال كل شيء. إحنا، أنت، إحنا، إحنا، أونا.`,
   },
   s25: { en: `Rhetorical Pauses`, ar: `تقطيعات رhetorical` },
@@ -56,8 +56,8 @@ export const STRINGS: Record<string, Bi> = {
   },
   s27: { en: `Inclusive Language`, ar: `لغة شاملة` },
   s28: {
-    en: `Use &ldquo;we&rdquo; and &ldquo;together&rdquo; to unite the audience with the speaker.`,
-    ar: `استخدم &ldquo; إحنا &rdquo; و &ldquo; مع بعض &rdquo; لتوحيد الجمهور مع المتحدث.`,
+    en: `Use “we” and “together” to unite the audience with the speaker.`,
+    ar: `استخدم “ إحنا ” و “ مع بعض ” لتوحيد الجمهور مع المتحدث.`,
   },
   s29: { en: `Repetition / Anaphora`, ar: `تكرار / أنانافورا` },
   s30: {
@@ -65,15 +65,15 @@ export const STRINGS: Record<string, Bi> = {
     ar: `ặphta الكلمات في بداية الجمل التالية لتأثير ترتيبي وذاكراني:`,
   },
   s31: {
-    en: `Clear and factual: &ldquo;Report on [Topic] for [Audience]&rdquo;`,
-    ar: `-&ldquo;تقرير عن [الموضوع] لـ [الجمهور]&rdquo;`,
+    en: `Clear and factual: “Report on [Topic] for [Audience]”`,
+    ar: `-“تقرير عن [الموضوع] لـ [الجمهور]”`,
   },
   s32: {
     en: `Formal Tone`,
     ar: `لهجتك الرسمية شلون؟ ابغى أتأكد إنو ما في مشكلة. إذا كان عندك موضوع معين تحب نتكلم عنه بال لهجة الرسمية، قول لي شنو.`,
   },
   s33: {
-    en: `Third person, impersonal, no emotional language. &ldquo;It was observed that...&rdquo;`,
+    en: `Third person, impersonal, no emotional language. “It was observed that...”`,
     ar: `شوف إنو ملاحظ إنه...`,
   },
   s34: {
@@ -81,8 +81,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `انظم النتائج بشكل واضح: مقدمة، نتائج، خاتمة، توصيات.`,
   },
   s35: {
-    en: `End with actionable suggestions: &ldquo;It is recommended that...&rdquo;`,
-    ar: `يجب أن تنتهي بتوصيات عملية: "من المستحسن أن... "&ldquo;`,
+    en: `End with actionable suggestions: “It is recommended that...”`,
+    ar: `يجب أن تنتهي بتوصيات عملية: "من المستحسن أن... "“`,
   },
   s36: { en: `Balanced Opinion`, ar: `رأي متوازن` },
   s37: {
@@ -91,8 +91,8 @@ export const STRINGS: Record<string, Bi> = {
   },
   s38: { en: `Star Rating / Verdict`, ar: `تقييم النجمة / الحكم` },
   s39: {
-    en: `Optional but shows form awareness. A clear final verdict: &ldquo;Worth seeing&rdquo; or &ldquo;Give it a miss.&rdquo;`,
-    ar: `&wla;&njl; مشهود له بأشكاله&rdquo; أو &wla;&njl; خلوها تعديك&rdquo;.`,
+    en: `Optional but shows form awareness. A clear final verdict: “Worth seeing” or “Give it a miss.”`,
+    ar: `&wla;&njl; مشهود له بأشكاله” أو &wla;&njl; خلوها تعديك”.`,
   },
   s40: { en: `Descriptive Detail`, ar: `تفاصيل وصفية` },
   s41: {
@@ -101,7 +101,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s42: { en: `Personal Voice`, ar: `الصوت الشخصي` },
   s44: {
-    en: `End with a clear recommendation to a specific audience: &ldquo;Perfect for fans of...&rdquo; or &ldquo;Avoid if you...&rdquo;`,
+    en: `End with a clear recommendation to a specific audience: “Perfect for fans of...” or “Avoid if you...”`,
     ar: `Ideal lii lbabati min...`,
   },
   s45: {
@@ -178,8 +178,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `لهجتك متنوعة: قوية في البداية، حماسية في الوسط، عاجلة في النهاية`,
   },
   s79: {
-    en: `Circular structure: opens and closes with the &ldquo;35,000 hours&rdquo; statistic`,
-    ar: `بنية دائرية: تبدأ وتنتهي بإحصائية &ldquo;35,000 ساعة&rdquo;`,
+    en: `Circular structure: opens and closes with the “35,000 hours” statistic`,
+    ar: `بنية دائرية: تبدأ وتنتهي بإحصائية “35,000 ساعة”`,
   },
   s80: {
     en: `Direct address shifts the argument from abstract to personal`,
@@ -205,8 +205,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: ``,
   },
   s90: {
-    en: `Clear structure: hook &rarr; evidence &rarr; shared experience &rarr; counter-argument &rarr; anecdote &rarr; call to action`,
-    ar: `estructure واضحة: جذب &rarr; دليل &rarr; تجربة مشتركة &rarr; حجة مخالفة &rarr; قصة شخصية &rarr; نداء إلى العملactionDate：2023-10-14 18:15:06 UTC`,
+    en: `Clear structure: hook → evidence → shared experience → counter-argument → anecdote → call to action`,
+    ar: `estructure واضحة: جذب → دليل → تجربة مشتركة → حجة مخالفة → قصة شخصية → نداء إلى العملactionDate：2023-10-14 18:15:06 UTC`,
   },
   s91: {
     en: `AFOREST techniques woven in naturally: statistics, rhetorical questions, emotive language, rule of three`,
@@ -225,8 +225,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: ``,
   },
   s95: {
-    en: `Circular structure: &ldquo;I am tired&rdquo; opens and closes the speech, but the meaning deepens`,
-    ar: `โครงสร้างวงกลม: "&ldquo;أنا متعب"&rdquo; يفتح ويكمل الخطاب، لكن المعنى يتعمق`,
+    en: `Circular structure: “I am tired” opens and closes the speech, but the meaning deepens`,
+    ar: `โครงสร้างวงกลม: "“أنا متعب"” يفتح ويكمل الخطاب، لكن المعنى يتعمق`,
   },
   s97: { en: `AFOREST Techniques`, ar: `تقنيات أفورست` },
   s98: { en: `Counter-Argument Technique`, ar: `TECHNIQUE للرد على الحجة` },
@@ -234,7 +234,7 @@ export const STRINGS: Record<string, Bi> = {
   s100: { en: `Structural Approaches`, ar: `` },
   s101: { en: `Format Conventions`, ar: `` },
   s102: {
-    en: `Format Templates &amp; Example Openings`,
+    en: `Format Templates & Example Openings`,
     ar: `قالت المعلمة: «هلاً بيك! شلونك اليوم؟ أبغى أساعدك في أي شيء من دروس الإنجليزي؟»
 
 هنا بعض القوالب اللي يمكن استخدامها:

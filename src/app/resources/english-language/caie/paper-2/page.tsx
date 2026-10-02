@@ -102,7 +102,7 @@ export default async function Paper2Page() {
                   <td className="py-3 pe-4 font-medium">Section 1</td>
                   <td className="py-3 pe-4">
                     {tr(
-                      `Directed Writing &mdash; write in a specified format using ideas from a passage and your own ideas`,
+                      `Directed Writing - write in a specified format using ideas from a passage and your own ideas`,
                     )}
                   </td>
                   <td className="py-3 pe-4">40 (25 content + 15 language)</td>
@@ -112,7 +112,7 @@ export default async function Paper2Page() {
                   <td className="py-3 pe-4 font-medium">Section 2</td>
                   <td className="py-3 pe-4">
                     {tr(
-                      `Composition &mdash; choose one from a selection of narrative OR descriptive titles`,
+                      `Composition - choose one from a selection of narrative OR descriptive titles`,
                     )}
                   </td>
                   <td className="py-3 pe-4">40 (16 content/structure + 24 language/style)</td>
@@ -398,8 +398,8 @@ export default async function Paper2Page() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Show, don&rsquo;t tell`)}</strong> &mdash; instead of &ldquo;She
-                    was scared&rdquo;, write &ldquo;Her hands trembled as she reached for the
+                    <strong>{tr(`Show, don’t tell`)}</strong> &mdash; instead of &ldquo;She was
+                    scared&rdquo;, write &ldquo;Her hands trembled as she reached for the
                     handle&rdquo;.
                   </li>
                   <li className="flex items-start gap-2">
@@ -528,16 +528,14 @@ export default async function Paper2Page() {
                   6
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">
-                    {tr(`Outstanding (35&ndash;40 marks)`)}
-                  </p>
+                  <p className="font-semibold text-foreground">{tr(`Outstanding (35-40 marks)`)}</p>
                   <p className="text-xs text-primary">A* / Grade 9 standard</p>
                 </div>
               </div>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 <div>
                   <p className="text-xs font-semibold uppercase text-muted-foreground">
-                    {tr(`Content &amp; Structure`)}
+                    {tr(`Content & Structure`)}
                   </p>
                   <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>
@@ -570,16 +568,14 @@ export default async function Paper2Page() {
                   5
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">
-                    {tr(`Very Good (29&ndash;34 marks)`)}
-                  </p>
+                  <p className="font-semibold text-foreground">{tr(`Very Good (29-34 marks)`)}</p>
                   <p className="text-xs text-primary">A / Grade 7&ndash;8 standard</p>
                 </div>
               </div>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 <div>
                   <p className="text-xs font-semibold uppercase text-muted-foreground">
-                    {tr(`Content &amp; Structure`)}
+                    {tr(`Content & Structure`)}
                   </p>
                   <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Effective content that is well-developed and sustained</li>
@@ -607,14 +603,14 @@ export default async function Paper2Page() {
                   4
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">{tr(`Good (22&ndash;28 marks)`)}</p>
+                  <p className="font-semibold text-foreground">{tr(`Good (22-28 marks)`)}</p>
                   <p className="text-xs text-muted-foreground">B / Grade 5&ndash;6 standard</p>
                 </div>
               </div>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 <div>
                   <p className="text-xs font-semibold uppercase text-muted-foreground">
-                    {tr(`Content &amp; Structure`)}
+                    {tr(`Content & Structure`)}
                   </p>
                   <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Relevant content that is developed with some detail</li>
@@ -644,16 +640,14 @@ export default async function Paper2Page() {
                   3
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">
-                    {tr(`Adequate (15&ndash;21 marks)`)}
-                  </p>
+                  <p className="font-semibold text-foreground">{tr(`Adequate (15-21 marks)`)}</p>
                   <p className="text-xs text-muted-foreground">C / Grade 4 standard</p>
                 </div>
               </div>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 <div>
                   <p className="text-xs font-semibold uppercase text-muted-foreground">
-                    {tr(`Content &amp; Structure`)}
+                    {tr(`Content & Structure`)}
                   </p>
                   <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Some relevant content but may lack development</li>
@@ -681,9 +675,7 @@ export default async function Paper2Page() {
                   2
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">
-                    {tr(`Limited (8&ndash;14 marks)`)}
-                  </p>
+                  <p className="font-semibold text-foreground">{tr(`Limited (8-14 marks)`)}</p>
                   <p className="text-xs text-muted-foreground">
                     D&ndash;E / Grade 2&ndash;3 standard
                   </p>
@@ -705,7 +697,7 @@ export default async function Paper2Page() {
                   1
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">{tr(`Poor (1&ndash;7 marks)`)}</p>
+                  <p className="font-semibold text-foreground">{tr(`Poor (1-7 marks)`)}</p>
                   <p className="text-xs text-muted-foreground">F&ndash;G / Grade 1 standard</p>
                 </div>
               </div>

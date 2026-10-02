@@ -513,7 +513,7 @@ export default function TheGreatGatsbyPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">{tr(`Prohibition (1920&ndash;1933)`)}</h4>
+                <h4 className="font-bold text-primary">{tr(`Prohibition (1920-1933)`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Eighteenth Amendment banned the manufacture and sale of alcohol in the United
                   States from January 1920. The result was not sobriety but the largest
@@ -735,7 +735,7 @@ export default function TheGreatGatsbyPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">{tr(`Gatsby&apos;s Parties`)}</h4>
+                <h4 className="font-bold text-foreground">{tr(`Gatsby's Parties`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Saturday-night spectacles thrown by Gatsby in the hope that Daisy will one day
                   wander in. They are exhaustively catalogued in Chapter 3 &mdash; the orchestra,

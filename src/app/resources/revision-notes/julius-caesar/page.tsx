@@ -562,7 +562,7 @@ export default function JuliusCaesarPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">{tr(`Caesar&apos;s Mantle`)}</h4>
+                <h4 className="font-bold text-foreground">{tr(`Caesar's Mantle`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The bloodied cloak Caesar wore at the assassination becomes Antony&apos;s most
                   powerful prop. He displays it to the crowd, pointing to specific tears made by
@@ -1497,7 +1497,7 @@ export default function JuliusCaesarPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Use Shakespeare&apos;s methods.`)}</strong> Discuss verse vs prose
+              <strong>{tr(`Use Shakespeare's methods.`)}</strong> Discuss verse vs prose
               (Brutus&apos;s prose vs Antony&apos;s verse oration), soliloquy, dramatic irony,
               omens, and rhetorical devices (anaphora, irony, tricolon, antithesis).
             </span>
@@ -1505,8 +1505,8 @@ export default function JuliusCaesarPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Refer to the writer&apos;s intentions.`)}</strong> &ldquo;Shakespeare
-              perhaps suggests...&rdquo; or &ldquo;Shakespeare uses Antony&apos;s rhetoric to
+              <strong>{tr(`Refer to the writer's intentions.`)}</strong> &ldquo;Shakespeare perhaps
+              suggests...&rdquo; or &ldquo;Shakespeare uses Antony&apos;s rhetoric to
               expose...&rdquo;
             </span>
           </li>

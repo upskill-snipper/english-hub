@@ -122,7 +122,7 @@ export default function CancelSubscriptionPage() {
                   the worst possible place to be caught doing it: they are
                   already deciding whether this product was honest with them. */}
               {[
-                'AI marking on your essays, against your exam board&#39;s mark scheme',
+                "AI marking on your essays, against your exam board's mark scheme",
                 'Detailed grammar, structure and vocabulary analysis',
                 'The examiner marking tool for full papers',
                 'Exam preparation resources and tools',

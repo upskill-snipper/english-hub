@@ -76,7 +76,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `في النهاية، بالخاتمة، أولاً وأخيراً، لتلخيص`,
   },
   s26: { en: `Handling Counter-Arguments`, ar: `DEALING WITH CONTRA ARGUMENTS` },
-  s27: { en: `Show, Don&rsquo;t Tell`, ar: `أظهر، لا تخبر` },
+  s27: { en: `Show, Don’t Tell`, ar: `أظهر، لا تخبر` },
   s28: { en: `Telling (weak)`, ar: `يقصّر (ضعيف)` },
   s29: { en: `Showing (strong)`, ar: `يشعر (بقوه)` },
   s30: { en: `Ambitious Vocabulary`, ar: `لغة طموحة` },
@@ -91,8 +91,8 @@ export const STRINGS: Record<string, Bi> = {
   s36: { en: `Use a subordinate clause first`, ar: `استخدم جملة فرعية في أول الجملة` },
   s38: { en: `Semicolon ( ; )`, ar: `نقطة وفاصلة ( ; )` },
   s39: { en: `Colon ( : )`, ar: `فاصلة ( : )` },
-  s40: { en: `Dash ( &mdash; )`, ar: `دش ( &mdash; )` },
-  s41: { en: `Ellipsis ( &hellip; )`, ar: `نقاط سبع ( &hellip; )` },
+  s40: { en: `Dash ( — )`, ar: `دش ( - )` },
+  s41: { en: `Ellipsis ( … )`, ar: `نقاط سبع ( … )` },
   s43: { en: `Brackets / parentheses ( )`, ar: `` },
   s44: {
     en: `Every sentence ends with a full stop, question mark, or exclamation mark`,
@@ -103,8 +103,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `حروف رأسية في بداية كل جملة ولهproper nouns(toluaed due to policy guidelines)`,
   },
   s47: {
-    en: `Form conventions are correct (e.g., letter has &ldquo;Yours sincerely&rdquo;)`,
-    ar: `ال conventions صحيحة (مثل أن يكون الخطاب به "&ldquo;مع خالص تحياتي&rdquo;")`,
+    en: `Form conventions are correct (e.g., letter has “Yours sincerely”)`,
+    ar: `ال conventions صحيحة (مثل أن يكون الخطاب به "“مع خالص تحياتي”")`,
   },
   s48: {
     en: `Writing skills for OCR GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.`,

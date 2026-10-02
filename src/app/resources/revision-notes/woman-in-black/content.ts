@@ -16,7 +16,7 @@ export const STRINGS: Record<string, Bi> = {
   s3: { en: `Isolation and Setting`, ar: `العزلة والمكان` },
   s4: { en: `Fear and the Supernatural`, ar: `` },
   s5: { en: `Grief and Revenge`, ar: `الحزن والثأر` },
-  s6: { en: `Arthur&apos;s Transformation`, ar: `Transformation أرثر` },
+  s6: { en: `Arthur's Transformation`, ar: `Transformation أرثر` },
   s7: { en: `The Gothic Tradition`, ar: `التراث góthic` },
   s8: { en: `The Turn of the Screw`, ar: `The_turn_of_the_screw` },
   s9: { en: `The Role of Women`, ar: `دور المرأة` },

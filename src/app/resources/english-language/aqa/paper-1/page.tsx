@@ -306,7 +306,7 @@ export default function Paper1Page() {
 
           <h3 className="mt-4 font-bold text-primary">{tr(`How to structure your answer`)}</h3>
           <p>
-            Use a <strong>{tr(`What &rarr; How &rarr; Why`)}</strong> approach for each point:
+            Use a <strong>{tr(`What → How → Why`)}</strong> approach for each point:
           </p>
           <ol className="ms-5 list-decimal space-y-2 mt-2">
             <li>
@@ -560,7 +560,7 @@ export default function Paper1Page() {
                   <td className="py-2 pe-4">11-15</td>
                   <td className="py-2 pe-4">
                     {tr(
-                      `Clear, relevant evaluation. Thoughtful response. Apt textual references. Clear understanding of writer&rsquo;s methods with subject terminology used accurately.`,
+                      `Clear, relevant evaluation. Thoughtful response. Apt textual references. Clear understanding of writer’s methods with subject terminology used accurately.`,
                     )}
                   </td>
                 </tr>
@@ -569,7 +569,7 @@ export default function Paper1Page() {
                   <td className="py-2 pe-4">6-10</td>
                   <td className="py-2 pe-4">
                     {tr(
-                      `Some evaluation. Some response to the statement. Some appropriate references. Some understanding of writer&rsquo;s methods.`,
+                      `Some evaluation. Some response to the statement. Some appropriate references. Some understanding of writer’s methods.`,
                     )}
                   </td>
                 </tr>
@@ -578,7 +578,7 @@ export default function Paper1Page() {
                   <td className="py-2 pe-4">1-5</td>
                   <td className="py-2 pe-4">
                     {tr(
-                      `Simple, limited evaluation. Simple, limited response. Simple references. Limited awareness of writer&rsquo;s methods.`,
+                      `Simple, limited evaluation. Simple, limited response. Simple references. Limited awareness of writer’s methods.`,
                     )}
                   </td>
                 </tr>
@@ -775,13 +775,11 @@ export default function Paper1Page() {
               <h4 className="font-bold text-accent">{tr(`For descriptive writing`)}</h4>
               <ul className="mt-2 ms-5 list-disc space-y-1 text-sm">
                 <li>
-                  {tr(
-                    `Choose 4-5 &ldquo;zoom points&rdquo; &mdash; specific details you will describe in depth`,
-                  )}
+                  {tr(`Choose 4-5 “zoom points”: specific details you will describe in depth`)}
                 </li>
                 <li>
                   {tr(
-                    `Plan a structural journey: e.g., wide shot &rarr; close up &rarr; sensory detail &rarr; shift in mood &rarr; return to wide shot`,
+                    `Plan a structural journey: e.g., wide shot → close up → sensory detail → shift in mood → return to wide shot`,
                   )}
                 </li>
                 <li>{tr(`Decide on a dominant mood or atmosphere`)}</li>
@@ -792,12 +790,8 @@ export default function Paper1Page() {
             <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">{tr(`For narrative writing`)}</h4>
               <ul className="mt-2 ms-5 list-disc space-y-1 text-sm">
-                <li>{tr(`Keep the plot simple &mdash; one event, one setting, 1-2 characters`)}</li>
-                <li>
-                  {tr(
-                    `Plan a clear arc: situation &rarr; complication &rarr; climax &rarr; resolution`,
-                  )}
-                </li>
+                <li>{tr(`Keep the plot simple: one event, one setting, 1-2 characters`)}</li>
+                <li>{tr(`Plan a clear arc: situation → complication → climax → resolution`)}</li>
                 <li>Decide on your narrative perspective (first or third person)</li>
                 <li>{tr(`Plan a strong opening hook and a satisfying ending`)}</li>
                 <li>{tr(`Include moments of descriptive detail to slow the pace`)}</li>

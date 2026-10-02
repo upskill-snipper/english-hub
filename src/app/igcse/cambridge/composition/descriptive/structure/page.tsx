@@ -58,7 +58,7 @@ const zoomStages = [
     stage: 'Inner shot',
     length: '~1 paragraph',
     description:
-      'Pull back into the narrator - or into the felt mood of the scene. Return, subtly, to the image you opened with. This is how the piece earns the word &ldquo;crafted&rdquo;.',
+      'Pull back into the narrator - or into the felt mood of the scene. Return, subtly, to the image you opened with. This is how the piece earns the word “crafted”.',
     example:
       'I walked out through the far edge of the square. Behind me, the market was already folding itself up for the evening, the dropped blanket being quietly gathered in.',
   },

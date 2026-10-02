@@ -581,10 +581,9 @@ export default async function Paper1Page() {
                     3
                   </span>
                   <span>
-                    <strong>{_tr(`Use the writer&apos;s name`)}</strong> - phrases like
-                    &quot;Priestley presents...&quot; or &quot;Golding suggests...&quot; show you
-                    understand the text is a construct with a deliberate message (analysis of
-                    methods).
+                    <strong>{_tr(`Use the writer's name`)}</strong> - phrases like &quot;Priestley
+                    presents...&quot; or &quot;Golding suggests...&quot; show you understand the
+                    text is a construct with a deliberate message (analysis of methods).
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -592,8 +591,8 @@ export default async function Paper1Page() {
                     4
                   </span>
                   <span>
-                    <strong>{_tr(`Explore the writer&apos;s purpose`)}</strong> - why did they write
-                    this text? What message are they conveying to the audience? This secures context
+                    <strong>{_tr(`Explore the writer's purpose`)}</strong> - why did they write this
+                    text? What message are they conveying to the audience? This secures context
                     marks.
                   </span>
                 </li>

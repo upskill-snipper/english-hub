@@ -113,7 +113,7 @@ export default function AntonyAndCleopatraPage() {
           Antony and Cleopatra &mdash; Complete A-Level Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">
-          {tr(`William Shakespeare, c.1606&ndash;1607`)}
+          {tr(`William Shakespeare, c.1606-1607`)}
         </p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Comprehensive A-Level notes covering plot through the Rome/Egypt opposition, character
@@ -573,7 +573,7 @@ export default function AntonyAndCleopatraPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">{tr(`Cleopatra&apos;s Barge`)}</h4>
+                <h4 className="font-bold text-foreground">{tr(`Cleopatra's Barge`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The barge at Cydnus, narrated rather than staged, is the play&apos;s defining
                   symbol of Egyptian aesthetic excess. Enobarbus&apos;s description converts every
@@ -647,9 +647,7 @@ export default function AntonyAndCleopatraPage() {
           <Section title={tr(`Historical and Literary Context`)} icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">
-                  {tr(`Composition Date: 1606&ndash;1607`)}
-                </h4>
+                <h4 className="font-bold text-primary">{tr(`Composition Date: 1606-1607`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The play was composed in 1606&ndash;1607, in the central period of
                   Shakespeare&apos;s major tragedies (after <em>Macbeth</em> and <em>King Lear</em>,
@@ -1468,9 +1466,9 @@ export default function AntonyAndCleopatraPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Don&apos;t simplify the binary.`)}</strong> Egypt and Rome are
-              imaginative geographies, not historical ones. The opposition is the play&apos;s
-              structuring device but Shakespeare repeatedly destabilises it.
+              <strong>{tr(`Don't simplify the binary.`)}</strong> Egypt and Rome are imaginative
+              geographies, not historical ones. The opposition is the play&apos;s structuring device
+              but Shakespeare repeatedly destabilises it.
             </span>
           </li>
         </ul>

@@ -18,7 +18,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `The Civil Rights Movement (1950s-60s)`,
     ar: `حركة الحقوق المدنية (الخمسينيات والستينيات)`,
   },
-  s4: { en: `Harper Lee&rsquo;s Biography`, ar: `BIOGRAPHY هاربر لي` },
+  s4: { en: `Harper Lee’s Biography`, ar: `BIOGRAPHY هاربر لي` },
   s5: { en: `How to approach:`, ar: `كيف تتعامل مع:` },
   s6: { en: `Skills demonstrated:`, ar: `مهارات مبينة:` },
   s7: { en: `Textual Knowledge:`, ar: `المعرفة النصية:` },
@@ -26,12 +26,12 @@ export const STRINGS: Record<string, Bi> = {
   s9: { en: `Personal Response:`, ar: `رد شخصي:` },
   s10: { en: `Passage-based (a) questions:`, ar: `أسئلة نوعية (أ) بناءً على النص:` },
   s11: { en: `Essay (b) questions:`, ar: `أسئلة الواجب (ب):` },
-  s12: { en: `Always use the author&rsquo;s name:`, ar: `استخدم دائمًا اسم الكاتب:` },
+  s12: { en: `Always use the author’s name:`, ar: `استخدم دائمًا اسم الكاتب:` },
   s13: {
     en: `The 1930s setting and 1960 publication:`,
     ar: ``,
   },
   s14: { en: `Quote precisely:`, ar: `اقتبس بدقة:` },
-  s15: { en: `Link everything to Lee&rsquo;s purpose:`, ar: `ربط كل شيء بأهداف لاي์` },
+  s15: { en: `Link everything to Lee’s purpose:`, ar: `ربط كل شيء بأهداف لاي์` },
   s16: { en: `Page sections`, ar: `صفحات)sectionص` },
 }

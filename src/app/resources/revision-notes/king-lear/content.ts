@@ -11,7 +11,7 @@
 export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
-  s0: { en: `William Shakespeare, c.1605&ndash;1606`, ar: `ويليام شكسبير، circa 1605-1606` },
+  s0: { en: `William Shakespeare, c.1605-1606`, ar: `ويليام شكسبير، circa 1605-1606` },
   s2: { en: `Jacobean England under James I`, ar: `إنجلترا الجاكوبية تحت جيمس الأول` },
   s3: { en: `The Divine Right of Kings`, ar: `حق الله في الملوك` },
   s4: { en: `The Trew Law of Free Monarchies`, ar: `قانون الحرية في الملكيات الحرة` },
@@ -25,7 +25,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Clothing and Nakedness`,
     ar: `الملابس وال NUDENESS (استخدموا كلمة "عري" بدلاً من NUDENESS)`,
   },
-  s12: { en: `Lear&apos;s Crown`, ar: `تاج لير` },
+  s12: { en: `Lear's Crown`, ar: `تاج لير` },
   s15: { en: `Shakespeare Our Contemporary`, ar: `شكسبير زماننا الحاضر` },
   s16: {
     en: `Exam Tips for King Lear at A-Level`,
@@ -34,7 +34,7 @@ export const STRINGS: Record<string, Bi> = {
   s17: { en: `Use the parallel plots.`, ar: `استخدم القصص المتوازية.` },
   s18: { en: `Engage with critical readings (AO5).`, ar: `DEAL WITH CRITICAL READINGS (AO5).` },
   s19: { en: `Anchor context (AO3) precisely.`, ar: `anchorage السياق (AO3) بدقة.` },
-  s20: { en: `Discuss Shakespeare&apos;s craft (AO2).`, ar: `.discuss صناعة شكسبير (AO2)` },
+  s20: { en: `Discuss Shakespeare's craft (AO2).`, ar: `.discuss صناعة شكسبير (AO2)` },
   s22: { en: `Use precise terminology.`, ar: `استخدم لغة دقيقة.` },
   s23: {
     en: `Act-by-Act Plot Summary (with Gloucester Subplot)`,
@@ -51,7 +51,7 @@ export const STRINGS: Record<string, Bi> = {
   s33: { en: `Suffering and Redemption`, ar: `المعاناة والتنقية` },
   s34: { en: `Justice and Injustice`, ar: `العدالة والظلم` },
   s35: {
-    en: `The play repeatedly asks whether the gods are just, and repeatedly refuses to answer. Gloucester famously cries &lsquo;As flies to wanton boys are we to th`,
+    en: `The play repeatedly asks whether the gods are just, and repeatedly refuses to answer. Gloucester famously cries ‘As flies to wanton boys are we to th`,
     ar: `المسرحية تسأل مراراً إن كانت الآلهة عادلة، وترفض الإجابة مراراً. يصرخ غلوستر شهيرة: "كما نحن للصبيان المتهوّرين كالذباب`,
   },
   s36: { en: `Historical and Literary Context`, ar: `` },

@@ -231,7 +231,7 @@ export default async function OCRJekyllAndHydePage() {
             <div className="space-y-3">
               <div className="rounded-lg border border-border bg-muted p-4">
                 <p className="font-semibold text-foreground">
-                  {tr(`Chapters 1&ndash;2: The Door and the Search`)}
+                  {tr(`Chapters 1-2: The Door and the Search`)}
                 </p>
                 <p className="mt-2 text-sm">
                   Mr Utterson and Mr Enfield are walking in London when Enfield tells the story of a
@@ -244,7 +244,7 @@ export default async function OCRJekyllAndHydePage() {
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
                 <p className="font-semibold text-foreground">
-                  {tr(`Chapters 3&ndash;4: Jekyll&rsquo;s Dinner Party and the Carew Murder`)}
+                  {tr(`Chapters 3-4: Jekyll’s Dinner Party and the Carew Murder`)}
                 </p>
                 <p className="mt-2 text-sm">
                   Utterson raises his concerns with Jekyll, who dismisses them and asks Utterson to
@@ -257,7 +257,7 @@ export default async function OCRJekyllAndHydePage() {
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
                 <p className="font-semibold text-foreground">
-                  {tr(`Chapters 5&ndash;7: Jekyll&rsquo;s Withdrawal`)}
+                  {tr(`Chapters 5-7: Jekyll’s Withdrawal`)}
                 </p>
                 <p className="mt-2 text-sm">
                   Jekyll appears reformed and becomes sociable and charitable. However, he suddenly
@@ -279,7 +279,7 @@ export default async function OCRJekyllAndHydePage() {
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
                 <p className="font-semibold text-foreground">
-                  {tr(`Chapters 9&ndash;10: The Revelations`)}
+                  {tr(`Chapters 9-10: The Revelations`)}
                 </p>
                 <p className="mt-2 text-sm">
                   Lanyon&rsquo;s letter reveals that he witnessed Hyde transforming into Jekyll, and
@@ -628,9 +628,7 @@ export default async function OCRJekyllAndHydePage() {
             </p>
             <div className="space-y-3">
               <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
-                <p className="font-semibold text-primary">
-                  {tr(`Introduction (3&ndash;4 sentences)`)}
-                </p>
+                <p className="font-semibold text-primary">{tr(`Introduction (3-4 sentences)`)}</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Address the question directly. State Stevenson&rsquo;s overall message about the
                   theme/character. Briefly reference the Victorian context and the concept of
@@ -658,7 +656,7 @@ export default async function OCRJekyllAndHydePage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">
-                  {tr(`Paragraph 3: The revelations (Chapters 9&ndash;10)`)}
+                  {tr(`Paragraph 3: The revelations (Chapters 9-10)`)}
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   How is the theme/character illuminated by the final revelations? Analyse

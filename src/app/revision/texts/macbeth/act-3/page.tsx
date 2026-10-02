@@ -61,7 +61,7 @@ export default async function MacbethAct3Page() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="me-1 size-3 text-clay-600" />
-              {_tr(`Act 3 - Paranoia &amp; Tyranny`)}
+              {_tr(`Act 3 - Paranoia & Tyranny`)}
             </Badge>
             <Badge variant="outline">6 scenes</Badge>
           </div>
@@ -86,7 +86,7 @@ export default async function MacbethAct3Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-clay-600" />
-            {_tr(`Scene 1 - Macbeth Plans Banquo&apos;s Murder`)}
+            {_tr(`Scene 1 - Macbeth Plans Banquo's Murder`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -103,26 +103,26 @@ export default async function MacbethAct3Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
-                  `Macbeth acts independently for the first time, ordering murder without Lady Macbeth&apos;s involvement.`,
+                  `Macbeth acts independently for the first time, ordering murder without Lady Macbeth's involvement.`,
                 )}
               </li>
               <li>
                 {_tr(
-                  `His motivation shifts from ambition to fear &mdash; he kills not to gain the throne but to keep it.`,
+                  `His motivation shifts from ambition to fear - he kills not to gain the throne but to keep it.`,
                 )}
               </li>
               <li>
                 {_tr(
-                  `He uses the same technique Lady Macbeth used on him: questioning the murderers&apos; manhood.`,
+                  `He uses the same technique Lady Macbeth used on him: questioning the murderers' manhood.`,
                 )}
               </li>
               <li>
                 {_tr(
-                  `Banquo&apos;s suspicion that Macbeth &ldquo;play&rsquo;dst most foully&rdquo; makes him a threat to the regime.`,
+                  `Banquo's suspicion that Macbeth “play’dst most foully” makes him a threat to the regime.`,
                 )}
               </li>
             </ul>
@@ -209,8 +209,8 @@ export default async function MacbethAct3Page() {
             <h4 className="font-semibold mb-1">{_tr(`Links to Themes`)}</h4>
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline">Ambition</Badge>
-              <Badge variant="outline">{_tr(`Kingship &amp; Power`)}</Badge>
-              <Badge variant="outline">{_tr(`Gender &amp; Masculinity`)}</Badge>
+              <Badge variant="outline">{_tr(`Kingship & Power`)}</Badge>
+              <Badge variant="outline">{_tr(`Gender & Masculinity`)}</Badge>
               <Badge variant="outline">{_tr(`The Supernatural`)}</Badge>
             </div>
           </div>
@@ -222,7 +222,7 @@ export default async function MacbethAct3Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-clay-600" />
-            {_tr(`Scene 2 - &ldquo;Naught’s Had, All’s Spent&rdquo;`)}
+            {_tr(`Scene 2 - “Naught’s Had, All’s Spent”`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -238,16 +238,16 @@ export default async function MacbethAct3Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
-                  `Lady Macbeth&apos;s private admission of unhappiness shows the crown has brought no satisfaction.`,
+                  `Lady Macbeth's private admission of unhappiness shows the crown has brought no satisfaction.`,
                 )}
               </li>
               <li>
                 {_tr(
-                  `Macbeth excludes Lady Macbeth from his plans &mdash; their partnership is fracturing.`,
+                  `Macbeth excludes Lady Macbeth from his plans - their partnership is fracturing.`,
                 )}
               </li>
               <li>
@@ -335,9 +335,9 @@ export default async function MacbethAct3Page() {
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Links to Themes`)}</h4>
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline">{_tr(`Guilt &amp; Conscience`)}</Badge>
+              <Badge variant="outline">{_tr(`Guilt & Conscience`)}</Badge>
               <Badge variant="outline">Ambition</Badge>
-              <Badge variant="outline">{_tr(`Gender &amp; Masculinity`)}</Badge>
+              <Badge variant="outline">{_tr(`Gender & Masculinity`)}</Badge>
             </div>
           </div>
         </CardContent>
@@ -348,7 +348,7 @@ export default async function MacbethAct3Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-clay-600" />
-            {_tr(`Scene 3 - Banquo&apos;s Murder`)}
+            {_tr(`Scene 3 - Banquo's Murder`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -361,19 +361,17 @@ export default async function MacbethAct3Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
-              <li>
-                {_tr(`Banquo is murdered &mdash; Macbeth&apos;s descent into tyranny deepens.`)}
-              </li>
+              <li>{_tr(`Banquo is murdered - Macbeth's descent into tyranny deepens.`)}</li>
               <li>
                 {_tr(
-                  `Fleance&apos;s escape is crucial: the witches&apos; prophecy that Banquo&apos;s descendants will be kings remains intact.`,
+                  `Fleance's escape is crucial: the witches' prophecy that Banquo's descendants will be kings remains intact.`,
                 )}
               </li>
               <li>
                 {_tr(
-                  `The third murderer&apos;s identity is never explained, creating interpretive ambiguity.`,
+                  `The third murderer's identity is never explained, creating interpretive ambiguity.`,
                 )}
               </li>
             </ul>
@@ -417,7 +415,7 @@ export default async function MacbethAct3Page() {
             <h4 className="font-semibold mb-1">{_tr(`Links to Themes`)}</h4>
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline">{_tr(`The Supernatural`)}</Badge>
-              <Badge variant="outline">{_tr(`Kingship &amp; Power`)}</Badge>
+              <Badge variant="outline">{_tr(`Kingship & Power`)}</Badge>
             </div>
           </div>
         </CardContent>
@@ -428,7 +426,7 @@ export default async function MacbethAct3Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-clay-600" />
-            {_tr(`Scene 4 - The Banquet and Banquo&apos;s Ghost`)}
+            {_tr(`Scene 4 - The Banquet and Banquo's Ghost`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -446,21 +444,21 @@ export default async function MacbethAct3Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
-                  `Banquo&apos;s ghost appears &mdash; either supernatural visitation or Macbeth&apos;s guilt made visible.`,
+                  `Banquo's ghost appears - either supernatural visitation or Macbeth's guilt made visible.`,
                 )}
               </li>
               <li>
                 {_tr(
-                  `Macbeth&apos;s public breakdown reveals his guilt to the Scottish lords, undermining his authority.`,
+                  `Macbeth's public breakdown reveals his guilt to the Scottish lords, undermining his authority.`,
                 )}
               </li>
               <li>
                 {_tr(
-                  `Lady Macbeth&apos;s attempt to maintain appearances fails &mdash; she is losing control of her husband and the situation.`,
+                  `Lady Macbeth's attempt to maintain appearances fails - she is losing control of her husband and the situation.`,
                 )}
               </li>
               <li>
@@ -468,9 +466,7 @@ export default async function MacbethAct3Page() {
                   `Macbeth resolves to visit the witches again, seeking security through deeper engagement with the supernatural.`,
                 )}
               </li>
-              <li>
-                {_tr(`Macduff&apos;s absence is noted, marking him as Macbeth&apos;s next target.`)}
-              </li>
+              <li>{_tr(`Macduff's absence is noted, marking him as Macbeth's next target.`)}</li>
             </ul>
           </div>
           <div>
@@ -560,11 +556,11 @@ export default async function MacbethAct3Page() {
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Links to Themes`)}</h4>
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline">{_tr(`Guilt &amp; Conscience`)}</Badge>
+              <Badge variant="outline">{_tr(`Guilt & Conscience`)}</Badge>
               <Badge variant="outline">{_tr(`The Supernatural`)}</Badge>
               <Badge variant="outline">{_tr(`Appearance vs Reality`)}</Badge>
-              <Badge variant="outline">{_tr(`Kingship &amp; Power`)}</Badge>
-              <Badge variant="outline">{_tr(`Gender &amp; Masculinity`)}</Badge>
+              <Badge variant="outline">{_tr(`Kingship & Power`)}</Badge>
+              <Badge variant="outline">{_tr(`Gender & Masculinity`)}</Badge>
             </div>
           </div>
         </CardContent>
@@ -575,7 +571,7 @@ export default async function MacbethAct3Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-clay-600" />
-            {_tr(`Scene 5 - Hecate&apos;s Intervention`)}
+            {_tr(`Scene 5 - Hecate's Intervention`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -630,7 +626,7 @@ export default async function MacbethAct3Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-clay-600" />
-            {_tr(`Scene 6 - Lennox&apos;s Suspicions`)}
+            {_tr(`Scene 6 - Lennox's Suspicions`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -675,7 +671,7 @@ export default async function MacbethAct3Page() {
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Links to Themes`)}</h4>
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline">{_tr(`Kingship &amp; Power`)}</Badge>
+              <Badge variant="outline">{_tr(`Kingship & Power`)}</Badge>
               <Badge variant="outline">{_tr(`Appearance vs Reality`)}</Badge>
             </div>
           </div>

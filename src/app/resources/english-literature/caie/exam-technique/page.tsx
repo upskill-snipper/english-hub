@@ -164,7 +164,7 @@ export default function CAIEExamTechniquePage() {
                 <tbody className="text-muted-foreground">
                   <tr className="border-b border-border/50">
                     <td className="py-2 pe-4 font-medium text-foreground">Paper 1</td>
-                    <td className="py-2 pe-4">{tr(`Poetry &amp; Prose`)}</td>
+                    <td className="py-2 pe-4">{tr(`Poetry & Prose`)}</td>
                     <td className="py-2 pe-4">1 h 30 min</td>
                     <td className="py-2">50</td>
                   </tr>
@@ -248,9 +248,7 @@ export default function CAIEExamTechniquePage() {
                 </li>
                 <li>Quote precisely and keep quotations short (phrases, not stanzas).</li>
                 <li>
-                  {tr(
-                    `Show personal response: &ldquo;I find this particularly striking because...&rdquo;`,
-                  )}
+                  {tr(`Show personal response: “I find this particularly striking because...”`)}
                 </li>
               </ol>
             </TipCard>

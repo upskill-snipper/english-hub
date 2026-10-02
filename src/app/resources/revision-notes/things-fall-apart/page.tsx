@@ -113,7 +113,7 @@ export default function ThingsFallApartPage() {
           Things Fall Apart &mdash; Complete Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">
-          {tr(`Chinua Achebe (1930&ndash;2013), 1958`)}
+          {tr(`Chinua Achebe (1930-2013), 1958`)}
         </p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Everything you need for your IGCSE or A-Level English Literature exam on Achebe&rsquo;s
@@ -179,10 +179,10 @@ export default function ThingsFallApartPage() {
                 <em> Ikemefuna</em>, who is placed in Okonkwo&rsquo;s household.
               </li>
               <li>
-                <strong>{tr(`Chapters 3&ndash;4.`)}</strong> Flashback to Okonkwo borrowing yam
-                seeds from <em>Nwakibie</em> as a young man, surviving a disastrous farming year,
-                and building his wealth despite his father&rsquo;s ruin. His impatience and quick
-                temper are flagged early.
+                <strong>{tr(`Chapters 3-4.`)}</strong> Flashback to Okonkwo borrowing yam seeds from{' '}
+                <em>Nwakibie</em> as a young man, surviving a disastrous farming year, and building
+                his wealth despite his father&rsquo;s ruin. His impatience and quick temper are
+                flagged early.
               </li>
               <li>
                 <strong>{tr(`Chapter 5.`)}</strong> The Feast of the New Yam. Okonkwo, restless
@@ -206,9 +206,9 @@ export default function ThingsFallApartPage() {
                 rebukes him: the killing was a thing the Earth would not approve.
               </li>
               <li>
-                <strong>{tr(`Chapters 9&ndash;11.`)}</strong> Ezinma, Ekwefi&rsquo;s only surviving
-                child, falls ill. The priestess <em>Chielo</em> carries her through the night to the
-                cave of Agbala. Ekwefi follows in terror; Okonkwo joins her. The scene is one of the
+                <strong>{tr(`Chapters 9-11.`)}</strong> Ezinma, Ekwefi&rsquo;s only surviving child,
+                falls ill. The priestess <em>Chielo</em> carries her through the night to the cave
+                of Agbala. Ekwefi follows in terror; Okonkwo joins her. The scene is one of the
                 novel&rsquo;s most lyrical.
               </li>
               <li>
@@ -381,7 +381,7 @@ export default function ThingsFallApartPage() {
               description="Igbo society is shown as resilient, internally argued, capable of self-criticism. Twins are abandoned; osu are excluded; women can be beaten in some circumstances; the killing of Ikemefuna is contested even before the missionaries arrive. The novel does not stage a pure tradition versus a pure modernity. It shows a society whose own tensions the missionaries are able to exploit. The collapse is double-acted: by Smith-style mission, and by the gaps the clan already had."
             />
             <ThemeCard
-              title={tr(`Colonialism, language, and the &lsquo;civilising&rsquo; story`)}
+              title={tr(`Colonialism, language, and the ‘civilising’ story`)}
               description="The District Commissioner&rsquo;s book title is the theme spelled out: an entire civilisation reduced to &lsquo;Primitive Tribes of the Lower Niger&rsquo;, and conquest reframed as &lsquo;pacification&rsquo;. Achebe&rsquo;s 1958 reply is the rest of the novel itself. Where Conrad&rsquo;s Heart of Darkness (1899) makes Africans inarticulate, Achebe gives Umuofia a full language of proverbs, kinship terms, ritual, and naming. The form of the novel is the argument."
             />
             <ThemeCard
@@ -563,7 +563,7 @@ export default function ThingsFallApartPage() {
 
         {/* ─── Context ─── */}
         <div id="context">
-          <Section title={tr(`Historical &amp; Literary Context`)} icon="📜">
+          <Section title={tr(`Historical & Literary Context`)} icon="📜">
             <CharacterCard
               name="Chinua Achebe (1930-2013)"
               description="Born Albert Chinualumogu Achebe in Ogidi, eastern Nigeria. His father was an early Igbo Christian convert; his grandfather kept traditional Igbo beliefs. Educated at the Government College Umuahia and University College Ibadan; first worked at the Nigerian Broadcasting Service. Things Fall Apart (1958) was his first novel. Later novels include Arrow of God (1964) and A Man of the People (1966). Survived the Biafran War (1967-1970) as a propagandist for the secessionist state; afterwards taught at universities in Nigeria and the United States. Died in Boston in 2013."
@@ -601,7 +601,7 @@ export default function ThingsFallApartPage() {
 
         {/* ─── Structure ─── */}
         <div id="structure">
-          <Section title={tr(`Structure &amp; Narrative Technique`)} icon="🏛️">
+          <Section title={tr(`Structure & Narrative Technique`)} icon="🏛️">
             <CharacterCard
               name="Three-part architecture"
               description="Part One (chapters 1-13) is the longest and slowest: the novel takes nearly two-thirds of its length to present Igbo life in Umuofia before any white man appears. Part Two (chapters 14-19) is the exile, where the missionaries enter the frame. Part Three (chapters 20-25) is the return and rapid collapse. The asymmetry is deliberate: the culture takes a long time to build and almost no time to fall."
@@ -791,7 +791,7 @@ export default function ThingsFallApartPage() {
                 terms.
               </li>
               <li>
-                <strong>{tr(`The novel&rsquo;s argument with Yeats.`)}</strong> The title borrows
+                <strong>{tr(`The novel’s argument with Yeats.`)}</strong> The title borrows
                 Yeats&rsquo;s &lsquo;Things fall apart; the centre cannot hold&rsquo;, but
                 Yeats&rsquo;s poem also imagines the &lsquo;rough beast slouching towards
                 Bethlehem&rsquo; &mdash; an image of post-imperial dread that colonialism would
@@ -805,7 +805,7 @@ export default function ThingsFallApartPage() {
                 apart, which is why a Western free-will-versus-fate frame mishandles the novel.
               </li>
               <li>
-                <strong>{tr(`Achebe&rsquo;s 1965 essay on language as evidence.`)}</strong>
+                <strong>{tr(`Achebe’s 1965 essay on language as evidence.`)}</strong>
                 &lsquo;The African Writer and the English Language&rsquo; defends the use of English
                 &lsquo;altered to suit new African surroundings&rsquo;. The novel&rsquo;s proverbial
                 style is the practice of the theory; both are part of the answer to colonial
@@ -826,7 +826,7 @@ export default function ThingsFallApartPage() {
                 the church as such.
               </li>
               <li>
-                <strong>{tr(`The novel&rsquo;s internal critique of Igbo society.`)}</strong>
+                <strong>{tr(`The novel’s internal critique of Igbo society.`)}</strong>
                 Twins are abandoned; osu are excluded; Ikemefuna is killed; women are beaten. Achebe
                 does not present a paradisal pre-colonial society. The colonial argument is not that
                 Umuofia was perfect, but that it was articulate enough to argue with itself before
@@ -834,7 +834,7 @@ export default function ThingsFallApartPage() {
                 had been arguing about for generations.
               </li>
               <li>
-                <strong>{tr(`The Earth (Ani) as the novel&rsquo;s ethical centre.`)}</strong>
+                <strong>{tr(`The Earth (Ani) as the novel’s ethical centre.`)}</strong>
                 Each of Okonkwo&rsquo;s major transgressions &mdash; killing Ikemefuna, killing
                 Ezeudu&rsquo;s son, his suicide &mdash; is read explicitly as an offence against
                 Ani. The deity who matters most in the moral accounting is female. This complicates
@@ -894,25 +894,25 @@ export default function ThingsFallApartPage() {
               Ani. Don&rsquo;t cluster them ornamentally; use them where the novel uses them.
             </li>
             <li>
-              <strong>{tr(`Quote the title&rsquo;s source line and explain the irony.`)}</strong>
+              <strong>{tr(`Quote the title’s source line and explain the irony.`)}</strong>
               Most candidates know the title comes from Yeats. Few explain that Yeats&rsquo;s poem
               is itself the kind of European framing the novel is writing against. Doing so signals
               AO3 confidence.
             </li>
             <li>
-              <strong>{tr(`Cite the closing chapter&rsquo;s point-of-view shift.`)}</strong> If a
-              question lets you, end on it: 240 pages of interiority collapsed into &lsquo;a
-              reasonable paragraph&rsquo;. The form is the argument.
+              <strong>{tr(`Cite the closing chapter’s point-of-view shift.`)}</strong> If a question
+              lets you, end on it: 240 pages of interiority collapsed into &lsquo;a reasonable
+              paragraph&rsquo;. The form is the argument.
             </li>
             <li>
-              <strong>{tr(`Don&rsquo;t idealise Igbo society.`)}</strong> Achebe doesn&rsquo;t. The
+              <strong>{tr(`Don’t idealise Igbo society.`)}</strong> Achebe doesn&rsquo;t. The
               strongest essays read the novel&rsquo;s own internal criticisms of twins, <em>osu</em>
               , the killing of Ikemefuna &mdash; and use them to show Achebe&rsquo;s argument is
               documentary, not nostalgic.
             </li>
             <li>
-              <strong>{tr(`Use Achebe&rsquo;s essays for AO3.`)}</strong> &lsquo;The African Writer
-              and the English Language&rsquo; (1965) and &lsquo;An Image of Africa&rsquo; (1975) are
+              <strong>{tr(`Use Achebe’s essays for AO3.`)}</strong> &lsquo;The African Writer and
+              the English Language&rsquo; (1965) and &lsquo;An Image of Africa&rsquo; (1975) are
               both short and quotable. Examiners recognise them as canonical context.
             </li>
             <li>

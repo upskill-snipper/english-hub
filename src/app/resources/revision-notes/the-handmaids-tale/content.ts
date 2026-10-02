@@ -12,15 +12,15 @@ export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
   s0: { en: `Margaret Atwood, 1985`, ar: `مارغريت أتوود، 1985` },
-  s2: { en: `Reagan-Era America (1980&ndash;1985)`, ar: `أمريكا عهد ريجان (1980-1985)` },
-  s3: { en: `The Handmaid&apos;s Tale`, ar: `قصة اليدmaids tale` },
+  s2: { en: `Reagan-Era America (1980-1985)`, ar: `أمريكا عهد ريجان (1980-1985)` },
+  s3: { en: `The Handmaid's Tale`, ar: `قصة اليدmaids tale` },
   s4: { en: `Roe v. Wade`, ar: `Roe v. Wade` },
   s5: { en: `Iran and Religious Fundamentalism`, ar: `إيران والمحافظة الدينية` },
   s6: { en: `The Genre of Dystopia: Orwell and Huxley`, ar: `género للديستوبيا: أورويل وهكسلي` },
   s7: { en: `Brave New World`, ar: `عالم جديد م_heroic` },
   s8: { en: `The Colour Red`, ar: `اللون الأحمر` },
   s9: { en: `Eyes / Wings`, ar: `عيون / أجنحة` },
-  s10: { en: `Flowers and Serena&apos;s Garden`, ar: `.Flowers و سيرينا جاردن` },
+  s10: { en: `Flowers and Serena's Garden`, ar: `.Flowers و سيرينا جاردن` },
   s11: { en: `Latin Graffiti`, ar: `الجرافitti اللاتينية` },
   s12: { en: `The Ceremony`, ar: `الحفلة` },
   s13: { en: `Cassette Tapes`, ar: `شرائط الكاسيت` },
@@ -29,7 +29,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `The Dispossessed`,
     ar: `المنزوعين حقوقهمPropertyParams:classCallCheckFieldPropertyParams:`,
   },
-  s16: { en: `Use Atwood&apos;s own framing.`, ar: `استخدم إطار أتودو الخاص بها.` },
+  s16: { en: `Use Atwood's own framing.`, ar: `استخدم إطار أتودو الخاص بها.` },
   s17: { en: `Quote precisely.`, ar: `اقتبس بدقة.` },
   s18: {
     en: `Always include the Historical Notes.`,
@@ -42,7 +42,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `Never Let Me Go`,
   },
   s22: {
-    en: `Distinguish Atwood&apos;s feminism from a one-note one.`,
+    en: `Distinguish Atwood's feminism from a one-note one.`,
     ar: `اشتكي Feminism لاتونى أطلال_Atwood من feminism واحد الملل.`,
   },
   s24: { en: `Character Profiles`, ar: `Profiles للشخصيات` },

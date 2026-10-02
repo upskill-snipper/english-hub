@@ -262,7 +262,7 @@ export default function RevisionBuilderPage() {
                   <option value="Persuasive Writing">{tr(`Persuasive Writing`)}</option>
                   <option value="Transactional Writing">{tr(`Transactional Writing`)}</option>
                   <option value="Analytical Writing">{tr(`Analytical Writing`)}</option>
-                  <option value="Show Don't Tell">{tr(`Show Don&apos;t Tell`)}</option>
+                  <option value="Show Don't Tell">{tr(`Show Don't Tell`)}</option>
                   <option value="Sensory Language">{tr(`Sensory Language`)}</option>
                   <option value="Dialogue and Voice">{tr(`Dialogue and Voice`)}</option>
                   <option value="Story Openings and Endings">

@@ -61,10 +61,8 @@ export default function PicnicAtHangingRockPage() {
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
                   The novel is set on{' '}
-                  <strong className="text-foreground">
-                    {tr(`St Valentine&rsquo;s Day, 1900`)}
-                  </strong>
-                  , at the cusp of Australian Federation (1901). This liminal moment &mdash; between
+                  <strong className="text-foreground">{tr(`St Valentine’s Day, 1900`)}</strong>, at
+                  the cusp of Australian Federation (1901). This liminal moment &mdash; between
                   colonial rule and nationhood &mdash; mirrors the novel&rsquo;s preoccupation with
                   thresholds, transitions, and the unknowable.
                 </p>
@@ -126,7 +124,7 @@ export default function PicnicAtHangingRockPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Miranda</CardTitle>
-                <CardDescription>{tr(`The golden girl &mdash; Botticelli angel`)}</CardDescription>
+                <CardDescription>{tr(`The golden girl - Botticelli angel`)}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
@@ -153,7 +151,7 @@ export default function PicnicAtHangingRockPage() {
             <Card>
               <CardHeader>
                 <CardTitle>{tr(`Irma Leopold`)}</CardTitle>
-                <CardDescription>{tr(`The survivor &mdash; wealth and trauma`)}</CardDescription>
+                <CardDescription>{tr(`The survivor - wealth and trauma`)}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
@@ -204,7 +202,7 @@ export default function PicnicAtHangingRockPage() {
               <CardHeader>
                 <CardTitle>{tr(`Miss Greta McCraw`)}</CardTitle>
                 <CardDescription>
-                  {tr(`Mathematics teacher &mdash; rational authority undone`)}
+                  {tr(`Mathematics teacher - rational authority undone`)}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
@@ -231,7 +229,7 @@ export default function PicnicAtHangingRockPage() {
             <Card>
               <CardHeader>
                 <CardTitle>{tr(`Sara Waybourne`)}</CardTitle>
-                <CardDescription>{tr(`The orphan &mdash; devotion and tragedy`)}</CardDescription>
+                <CardDescription>{tr(`The orphan - devotion and tragedy`)}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
@@ -287,9 +285,7 @@ export default function PicnicAtHangingRockPage() {
             <Card>
               <CardHeader>
                 <CardTitle>{tr(`Michael Fitzhubert`)}</CardTitle>
-                <CardDescription>
-                  {tr(`The Honourable &mdash; obsession and privilege`)}
-                </CardDescription>
+                <CardDescription>{tr(`The Honourable - obsession and privilege`)}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
@@ -316,9 +312,7 @@ export default function PicnicAtHangingRockPage() {
             <Card>
               <CardHeader>
                 <CardTitle>{tr(`Albert Crundall`)}</CardTitle>
-                <CardDescription>
-                  {tr(`The coachman &mdash; working-class outsider`)}
-                </CardDescription>
+                <CardDescription>{tr(`The coachman - working-class outsider`)}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
@@ -351,7 +345,7 @@ export default function PicnicAtHangingRockPage() {
             {/* Mystery */}
             <Card>
               <CardHeader>
-                <CardTitle>{tr(`Mystery &amp; the Unknowable`)}</CardTitle>
+                <CardTitle>{tr(`Mystery & the Unknowable`)}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
@@ -392,7 +386,7 @@ export default function PicnicAtHangingRockPage() {
             {/* Repression & Sexuality */}
             <Card>
               <CardHeader>
-                <CardTitle>{tr(`Repression &amp; Sexuality`)}</CardTitle>
+                <CardTitle>{tr(`Repression & Sexuality`)}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
@@ -414,7 +408,7 @@ export default function PicnicAtHangingRockPage() {
             {/* Time */}
             <Card>
               <CardHeader>
-                <CardTitle>{tr(`Time &amp; Timelessness`)}</CardTitle>
+                <CardTitle>{tr(`Time & Timelessness`)}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
@@ -434,7 +428,7 @@ export default function PicnicAtHangingRockPage() {
             {/* Loss & Grief */}
             <Card>
               <CardHeader>
-                <CardTitle>{tr(`Loss &amp; Grief`)}</CardTitle>
+                <CardTitle>{tr(`Loss & Grief`)}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
@@ -455,7 +449,7 @@ export default function PicnicAtHangingRockPage() {
             {/* Colonialism */}
             <Card>
               <CardHeader>
-                <CardTitle>{tr(`Colonialism &amp; Landscape`)}</CardTitle>
+                <CardTitle>{tr(`Colonialism & Landscape`)}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
@@ -718,7 +712,7 @@ export default function PicnicAtHangingRockPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             <Card>
               <CardHeader>
-                <CardTitle>{tr(`Part (a) &mdash; Passage-Based Questions`)}</CardTitle>
+                <CardTitle>{tr(`Part (a) - Passage-Based Questions`)}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
@@ -755,7 +749,7 @@ export default function PicnicAtHangingRockPage() {
 
             <Card>
               <CardHeader>
-                <CardTitle>{tr(`Part (b) &mdash; Essay Questions`)}</CardTitle>
+                <CardTitle>{tr(`Part (b) - Essay Questions`)}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
@@ -860,7 +854,7 @@ export default function PicnicAtHangingRockPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle>{tr(`Sample Question (Part b &mdash; Essay)`)}</CardTitle>
+              <CardTitle>{tr(`Sample Question (Part b - Essay)`)}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-5 text-muted-foreground leading-relaxed">
               <div className="rounded-lg bg-muted/50 p-4 border border-border/40">

@@ -11,20 +11,20 @@
 export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
-  s0: { en: `William Shakespeare, c.1601&ndash;1602`, ar: `ويليام شكسبير، circa 1601-1602` },
+  s0: { en: `William Shakespeare, c.1601-1602`, ar: `ويليام شكسبير، circa 1601-1602` },
   s2: { en: `Yellow Stockings and Cross-Garters`, ar: `المخيط الأصفر والمربوطات الصليبية` },
   s3: { en: `The Forged Letter`, ar: `ال LETTER المزورة` },
   s4: { en: `The Dark Room`, ar: `الغرفة المظلمة` },
-  s5: { en: `Composition (c.1601&ndash;1602)`, ar: `الكتابة (حوالي 1601-1602)` },
+  s5: { en: `Composition (c.1601-1602)`, ar: `الكتابة (حوالي 1601-1602)` },
   s6: { en: `The Twelfth Night Holiday`, ar: `ليلة عيد الميلاد الثانية عشرة` },
   s7: { en: `Illyria as Italianate Setting`, ar: `` },
   s8: { en: `Boy Actors and the Cross-Dressing Stage`, ar: `ممثلين البنات والمسرح بتغيير الجنس` },
   s9: { en: `Measure for Measure`, ar: `ميسير و ميزان` },
-  s10: { en: `All&apos;s Well That Ends Well`, ar: `كل شيء بخير ما longsift "Well That Ends Well` },
+  s10: { en: `All's Well That Ends Well`, ar: `كل شيء بخير ما longsift "Well That Ends Well` },
   s12: { en: `Will in the World`, ar: `في العالم` },
   s13: { en: `Festive Comedy: C. L. Barber`, ar: `Humor الشتوي: س. إل. باربر` },
   s14: {
-    en: `Shakespeare&apos;s Festive Comedy`,
+    en: `Shakespeare's Festive Comedy`,
     ar: `Humour شكسبير في المسرحية الكوميدية الاحتفالية`,
   },
   s15: { en: `Puritanism and the Stage`, ar: `البروتستانتية والمسرح` },

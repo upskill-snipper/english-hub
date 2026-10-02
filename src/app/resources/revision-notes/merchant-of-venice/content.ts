@@ -31,21 +31,21 @@ export const STRINGS: Record<string, Bi> = {
   s16: { en: `What Happens`, ar: `ماhtub7 يصير` },
   s17: { en: `Key Techniques`, ar: `TECHNIQUES الرئيسية` },
   s18: {
-    en: `The Duke appeals to Shylock for mercy. Shylock refuses, citing the law and his &ldquo;humour.&rdquo;`,
+    en: `The Duke appeals to Shylock for mercy. Shylock refuses, citing the law and his “humour.”`,
     ar: `الدوكن يسألك شيلوك على رحمه. شيلوك ما يقبل، معتمد على القانون وHumourه.`,
   },
   s19: {
-    en: `Shylock&apos;s animal imagery (rats, pigs) dehumanises his own position. The Duke&apos;s bias is clear.`,
+    en: `Shylock's animal imagery (rats, pigs) dehumanises his own position. The Duke's bias is clear.`,
     ar: `صور شيلوك الحيوانية (الفئران، الخنازير) تقلل من إنسانيته في موقفه. التحيز للدوق واضح.`,
   },
-  s20: { en: `Bassanio&apos;s offer`, ar: `عرض باسانيو` },
+  s20: { en: `Bassanio's offer`, ar: `عرض باسانيو` },
   s22: {
-    en: `The escalating offers show desperation. Shylock&apos;s refusal proves this is about principle (revenge), not profit.`,
+    en: `The escalating offers show desperation. Shylock's refusal proves this is about principle (revenge), not profit.`,
     ar: `العروض المتصاعدة تدل على اليأس. رفض شايلوك يثبت أن هذا عن مبدأ (الثأر)، وليس ربح.`,
   },
-  s23: { en: `Portia&apos;s mercy speech`, ar: `خطبة برتشا عن الرحمة` },
+  s23: { en: `Portia's mercy speech`, ar: `خطبة برتشا عن الرحمة` },
   s24: {
-    en: `Disguised as Balthazar, Portia delivers the &ldquo;quality of mercy&rdquo; speech.`,
+    en: `Disguised as Balthazar, Portia delivers the “quality of mercy” speech.`,
     ar: `Maskanā fī sharīʿat Balthazar, Portia tudkhiru kalam al-kamāl al-raʾfah.`,
   },
   s25: {
@@ -57,21 +57,21 @@ export const STRINGS: Record<string, Bi> = {
     ar: `بورتيا تبدو كأنها تحكم لشيلوك، ثمتكشف عن التفاصيل الفنية: لحم لكن بدون دم، بوصة واحدة بالضبط.`,
   },
   s27: {
-    en: `Peripeteia (reversal of fortune). Legal wordplay. Portia mirrors Shylock&apos;s own insistence on the letter of the law.`,
+    en: `Peripeteia (reversal of fortune). Legal wordplay. Portia mirrors Shylock's own insistence on the letter of the law.`,
     ar: `التحول في الحظ (تبدل الحظوظ). لعب قانوني بالكلمات. بورشيا تعكس إصرار شايلوك على حرفية القانون.`,
   },
-  s28: { en: `Shylock&apos;s defeat`, ar: `` },
+  s28: { en: `Shylock's defeat`, ar: `` },
   s30: {
     en: `Ironic reversal: the law Shylock championed now destroys him. Pathos as he loses everything.`,
     ar: `عكس إرهيقي: القانون اللي شايلوك كان يدافع عنه دمره الآن. تعاطف لما يفقد كل شي.`,
   },
-  s31: { en: `The &ldquo;mercy&rdquo;`, ar: `الرحمة` },
+  s31: { en: `The “mercy”`, ar: `الرحمة` },
   s32: {
-    en: `Antonio &ldquo;mercifully&rdquo; allows Shylock to keep half his wealth if he converts to Christianity and leaves his estate to Jessica.`,
+    en: `Antonio “mercifully” allows Shylock to keep half his wealth if he converts to Christianity and leaves his estate to Jessica.`,
     ar: `أنتونيو يسمح لشيلوك &ldquo؛بMercifully&rdquo؛ بأن يحتفظ بنصف ثروته إذا تحول إلى المسيحية وترك ميراثه جيسيكا.`,
   },
   s33: {
-    en: `Deeply ironic &ldquo;mercy.&rdquo; The forced conversion strips Shylock of his identity. His final line: &ldquo;I am not well.&rdquo;`,
+    en: `Deeply ironic “mercy.” The forced conversion strips Shylock of his identity. His final line: “I am not well.”`,
     ar: `م Mercerية حادة. التحول القسري يسلب شايلوك هويته. سطره الأخيرة: "أنا لست بخير.`,
   },
   s34: { en: `Key Arguments About the Trial`, ar: `نقاط principal حول المحاكمة` },
@@ -96,7 +96,7 @@ export const STRINGS: Record<string, Bi> = {
   s47: { en: `Paragraph 1 (Villain):`, ar: `فقرة 1 (الشيطان أو الشرير)` },
   s48: { en: `Paragraph 2 (Victim):`, ar: `فقرة 2 (الضحية)` },
   s49: { en: `Paragraph 3 (Both):`, ar: `فقرة 3 (لكلا الجنسين)` },
-  s50: { en: `Paragraph 4 (Context/Writer&apos;s intent):`, ar: `فقرة 4 (السياق/نوايا الكاتب)` },
+  s50: { en: `Paragraph 4 (Context/Writer's intent):`, ar: `فقرة 4 (السياق/نوايا الكاتب)` },
   s51: {
     en: `Paragraph 1:`,
     ar: ``,
@@ -121,15 +121,15 @@ export const STRINGS: Record<string, Bi> = {
   },
   s58: { en: `Embed short quotations`, ar: `ادمج استشهادات قصيرة` },
   s59: {
-    en: `Use 2-5 word quotations woven into your sentences rather than long block quotes. E.g., &ldquo;Shylock&apos;s plea that Jews have &lsquo;hands, organs, dimensions&rsquo; asserts shared humanity.&rdquo;`,
+    en: `Use 2-5 word quotations woven into your sentences rather than long block quotes. E.g., “Shylock's plea that Jews have ‘hands, organs, dimensions’ asserts shared humanity.”`,
     ar: `استخدم اقتباسات بـ 2 إلى 5 كلمات داخل جملك بدلاً من كتل طويلة. مثلاً، "ال HANDS ORGANS DIMENSIONS" لشيلوك يؤكد على الإنسانية المشتركة.`,
   },
   s62: { en: `Integrate context naturally`, ar: `أدخل السياق بشكل طبيعي` },
-  s63: { en: `Analyse Shakespeare&apos;s methods`, ar: `تحليل أساليب شكسبير` },
+  s63: { en: `Analyse Shakespeare's methods`, ar: `تحليل أساليب شكسبير` },
   s64: { en: `Focus on what Shakespeare`, ar: `ركز على ما شكسبير` },
   s65: { en: `Track character across the play`, ar: `ات follower لشخصية خلال المسرحية` },
   s66: {
-    en: `Show how characters change. Shylock moves from resigned patience to vengeful fury. Portia moves from obedient daughter to courtroom authority. Track the arc, don&apos;t just describe a snapshot.`,
+    en: `Show how characters change. Shylock moves from resigned patience to vengeful fury. Portia moves from obedient daughter to courtroom authority. Track the arc, don't just describe a snapshot.`,
     ar: `أظهر كيف يتغير الشخصيات. شايلوك ينتقل من الصبر المكتوم إلى الغضب الثأري. بورتيا تنتقل من ابنة مطيعة إلى سلطة محكمة. اتبع المنحنى، لا تصف فقط لقطة واحدة.`,
   },
   s67: { en: `The Merchant of Venice`, ar: `Merchant_of_Venice` },
@@ -137,8 +137,8 @@ export const STRINGS: Record<string, Bi> = {
   s69: { en: `Character Profiles`, ar: `Profiles للشخصيات` },
   s70: { en: `Key Quotations with Analysis`, ar: `اقتباسات رئيسية مع تحليل` },
   s72: {
-    en: `The Trial Scene &mdash; Detailed Analysis`,
-    ar: `الحانوت القانوني &mdash; تحليل مفصل`,
+    en: `The Trial Scene - Detailed Analysis`,
+    ar: `الحانوت القانوني - تحليل مفصل`,
   },
   s73: {
     en: `Essay Planning and Exam Technique`,

@@ -11,14 +11,14 @@
 export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
-  s0: { en: `Act 1 - Exposition &amp; Temptation`, ar: `الatto 1 - التعريفي و التحريض` },
+  s0: { en: `Act 1 - Exposition & Temptation`, ar: `الatto 1 - التعريفي و التحريض` },
   s1: {
     en: `Macbeth - Act 1: Scene-by-Scene Analysis`,
     ar: `ماكبث - تحليل المشاهد بالمشهد للمشهد في الفصل الأول`,
   },
-  s3: { en: `Key Events &amp; Turning Points`, ar: `أحداث رئيسية ونقاط تحول` },
+  s3: { en: `Key Events & Turning Points`, ar: `أحداث رئيسية ونقاط تحول` },
   s5: {
-    en: `Macbeth is named before he appears, immediately linking him to the witches&apos; world.`,
+    en: `Macbeth is named before he appears, immediately linking him to the witches' world.`,
     ar: ``,
   },
   s7: { en: `Language Analysis`, ar: `تحليل اللغة` },
@@ -29,25 +29,25 @@ export const STRINGS: Record<string, Bi> = {
   s12: { en: `Fate vs Free Will`, ar: `الم destino مقابل الإرادة الحرة` },
   s13: { en: `Scene 2 - The Battlefield Report`, ar: `-scene 2 - التقرير من ساحة المعركة-` },
   s14: {
-    en: `Macbeth is praised as &ldquo;brave Macbeth&rdquo; and &ldquo;Bellona&rsquo;s bridegroom&rdquo; before we meet him.`,
-    ar: `ماكبث يُمدح كـ "&ldquo;ماكبث الشجاع&rdquo;" و "&ldquo;عروس Bellona&rdquo;" قبل أن نلتقي به.`,
+    en: `Macbeth is praised as “brave Macbeth” and “Bellona’s bridegroom” before we meet him.`,
+    ar: `ماكبث يُمدح كـ "“ماكبث الشجاع”" و "“عروس Bellona”" قبل أن نلتقي به.`,
   },
   s15: {
-    en: `Duncan&apos;s transfer of the Cawdor title unknowingly fulfils the witches&apos; first prophecy.`,
+    en: `Duncan's transfer of the Cawdor title unknowingly fulfils the witches' first prophecy.`,
     ar: `تحويل دانكان لقب كورددون دون علمه يتحقق منhecy الأولى للساحرات.`,
   },
   s17: { en: `Character Development`, ar: `تطور الشخصية` },
-  s18: { en: `Kingship &amp; Power`, ar: `الملكية والسلطة` },
+  s18: { en: `Kingship & Power`, ar: `الملكية والسلطة` },
   s22: {
     en: `The Cawdor title is confirmed, lending credibility to the kingship prophecy.`,
     ar: `تم تأكيد لقب كورد، مما يضيف مصداقية للتنبوءة بعرش المملكة.`,
   },
   s24: {
-    en: `Banquo&apos;s cautious response provides a moral contrast to Macbeth&apos;s excited reaction.`,
+    en: `Banquo's cautious response provides a moral contrast to Macbeth's excited reaction.`,
     ar: `رد بنكو الحذر يوفّر تضادًا أخلاقيًّا مع رد فعل مكbeth المندفع.`,
   },
   s25: { en: `Scene 4 - Duncan Names His Heir`, ar: `مشهد 4 - دانكان يعين وارثه` },
-  s29: { en: `Scene 5 - Lady Macbeth&apos;s Ambition`, ar: `` },
+  s29: { en: `Scene 5 - Lady Macbeth's Ambition`, ar: `` },
   s30: {
     en: `Lady Macbeth is introduced as a force of will who immediately grasps the opportunity and its obstacles.`,
     ar: `luder مكbeth م introducitu كقوة إرادة تفهم الفرصة وأ(obstacles) وايد سريعاً.`,
@@ -57,7 +57,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `استدعاؤها للأرواح يوازي فعل الساحرات، مما يضعها في صف الشر الخارق للطبيعة.`,
   },
   s32: {
-    en: `She takes charge of the murder plot, instructing Macbeth to &ldquo;look like the innocent flower, / But be the serpent under’t.&rdquo;`,
+    en: `She takes charge of the murder plot, instructing Macbeth to “look like the innocent flower, / But be the serpent under’t.”`,
     ar: `تستحوذ على خطة القتل، وتوجه مكbeth لـ "يشبhim في صورة الزهرة البريئة، / لكن كن الحية تحته.`,
   },
   s34: { en: `Lady Macbeth`, ar: `` },
@@ -66,19 +66,19 @@ export const STRINGS: Record<string, Bi> = {
     ar: `الشِّن ستمعة - دانكان ي arrivé في إنفيرنيس`,
   },
   s36: {
-    en: `Duncan&apos;s praise of the castle is deeply ironic &mdash; he is entering the site of his murder.`,
-    ar: `مديح دانكان للقلاع عميق الحدادة &ndash; هو يدخل موقع مقتله.`,
+    en: `Duncan's praise of the castle is deeply ironic - he is entering the site of his murder.`,
+    ar: `مديح دانكان للقلاع عميق الحدادة - هو يدخل موقع مقتله.`,
   },
   s37: {
     en: `Lady Macbeth successfully performs the role of gracious host, demonstrating her skill at deception.`,
     ar: ``,
   },
   s39: {
-    en: `Scene 7 - &ldquo;If It Were Done&rdquo; &mdash; The Decision`,
+    en: `Scene 7 - “If It Were Done” - The Decision`,
     ar: `الشِّهَادَةُ السَّابِعَةُ - "إذا كان مفعولاً" - اتِّخَاذُ الْحُكْمِ`,
   },
   s40: {
-    en: `Macbeth decides against the murder &mdash; then is persuaded back by Lady Macbeth.`,
+    en: `Macbeth decides against the murder - then is persuaded back by Lady Macbeth.`,
     ar: ``,
   },
   s41: {
@@ -86,17 +86,17 @@ export const STRINGS: Record<string, Bi> = {
     ar: `هذا هو نقطة التحول في الفعل الأول: قرار قتل دنكان يتخذ.`,
   },
   s42: {
-    en: `Lady Macbeth&apos;s manipulation of gender expectations is at its most powerful.`,
+    en: `Lady Macbeth's manipulation of gender expectations is at its most powerful.`,
     ar: `يبلغ تلاعب الليدي ماكبث بتوقعات النوع الاجتماعي أقوى صوره هنا.`,
   },
   s43: {
     en: `The practical plan for the murder is established.`,
     ar: `خطة ارتكاب الجريمة ت-established`,
   },
-  s44: { en: `Guilt &amp; Conscience`, ar: `الذنب والضمير` },
+  s44: { en: `Guilt & Conscience`, ar: `الذنب والضمير` },
   s45: { en: `Practice Exam Questions - Act 1`, ar: `أسئلة الامتحان التدريبية - المشهد الأول` },
   s46: {
-    en: `Starting with the witches&apos; opening scene, explore how Shakespeare uses the supernatural to create a sense of moral disorder in Act 1. Refer closely to the language of the text in your answer.`,
+    en: `Starting with the witches' opening scene, explore how Shakespeare uses the supernatural to create a sense of moral disorder in Act 1. Refer closely to the language of the text in your answer.`,
     ar: `بالبدء من مشهد الساحرات في البداية، شوف كيف يستخدم شكسبير العالم الغيبي لإنشاء حس من الفوضى الأخلاقية في الفصل الأول. استند بقوة على لغة النص في إجابتك.`,
   },
 }

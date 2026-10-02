@@ -17,15 +17,15 @@ export const STRINGS: Record<string, Bi> = {
     ar: `الاقتباسات الأساسية التي يجب حفظها. كل واحدة منها ترتبط بمواضيع متعددة.`,
   },
   s2: {
-    en: `Romeo&apos;s shift from Petrarchan clich&eacute;s to genuine poetry. The shared sonnet (1.5) as collaborative love. &ldquo;Did my heart love till now?&rdquo;`,
+    en: `Romeo's shift from Petrarchan clichés to genuine poetry. The shared sonnet (1.5) as collaborative love. “Did my heart love till now?”`,
     ar: `تحول روميو من نكتة بيتارشية إلى شعر حقيقي. السوناتا المشتركة (١.٥) كحب تعاوني. "هل أحب قلبي قبل الآن؟`,
   },
   s3: {
-    en: `The deaths end the feud. &ldquo;All are punish&apos;d.&rdquo; Love achieves what authority could not.`,
+    en: `The deaths end the feud. “All are punish'd.” Love achieves what authority could not.`,
     ar: `تنتهي الحرب بسبب هذه الوفيات. "كلهم عذبوا." الحب يحقق ما لا يستطيع السلطة تحقيقه.`,
   },
   s4: {
-    en: `Opening brawl. Prince&apos;s failed authority. &ldquo;Ancient grudge&rdquo; -- cause forgotten, hatred persists.`,
+    en: `Opening brawl. Prince's failed authority. “Ancient grudge” -- cause forgotten, hatred persists.`,
     ar: `مباراة قتال في البداية. سلطة الأمير الم失败的翻译结果不正确，我来重新生成正确的翻译。
 
 正确的翻译应该是：
@@ -33,11 +33,11 @@ export const STRINGS: Record<string, Bi> = {
 مباراة قتال في البداية. سلطة الأمير الفاشلة. "عداوة قديمة" -- السبب نُسي، لكن الحقد استمر.`,
   },
   s5: {
-    en: `Tybalt as honour personified. Mercutio&apos;s death. Romeo torn between love and revenge.`,
+    en: `Tybalt as honour personified. Mercutio's death. Romeo torn between love and revenge.`,
     ar: ``,
   },
   s6: {
-    en: `Juliet&apos;s oxymorons. Romeo&apos;s conflict between pacifism and revenge. The Friar&apos;s conflict between caution and action.`,
+    en: `Juliet's oxymorons. Romeo's conflict between pacifism and revenge. The Friar's conflict between caution and action.`,
     ar: `أوكسيمورونات جولييت. تناقض روميو بين السلمية والثأر. تضارب الكاهن بين الحذر والعمل.`,
   },
   s7: { en: `Question 1`, ar: `السؤال الأول` },

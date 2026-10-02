@@ -15,27 +15,27 @@ export const STRINGS: Record<string, Bi> = {
   s1: { en: `Section A: Reading`, ar: `قسم أ: القراءة` },
   s2: { en: `Section B: Writing for Real Purposes`, ar: `SECTION B: الكتابة لأغراض حقيقية` },
   s3: {
-    en: `Section A: Reading &mdash; Question Breakdown`,
-    ar: `قسم أ: القراءة &mdash; تحليل الأسئلة`,
+    en: `Section A: Reading - Question Breakdown`,
+    ar: `قسم أ: القراءة - تحليل الأسئلة`,
   },
-  s4: { en: `Short Retrieval &mdash; Text 1 (1 mark)`, ar: `استرجاع قصير 1 ( نقطة )` },
+  s4: { en: `Short Retrieval - Text 1 (1 mark)`, ar: `استرجاع قصير 1 ( نقطة )` },
   s5: { en: `Reading and retrieval (AO1)`, ar: `قراءة واسترجاع (AO1)` },
   s6: {
-    en: `Short Retrieval &mdash; Text 2 (2 marks)`,
-    ar: `استرجاع قصير &mdash; النص 2 (2 نقاط)`,
+    en: `Short Retrieval - Text 2 (2 marks)`,
+    ar: `استرجاع قصير - النص 2 (2 نقاط)`,
   },
-  s7: { en: `Language Analysis &mdash; Text 1 (6 marks)`, ar: `تحليل اللغة (6 نقاط)` },
+  s7: { en: `Language Analysis - Text 1 (6 marks)`, ar: `تحليل اللغة (6 نقاط)` },
   s8: { en: `Language and structure analysis (AO2)`, ar: `تحليل اللغة والبنية (AO2)` },
   s9: { en: `Example question:`, ar: `مثال على سؤال:` },
   s10: { en: `Marking guide levels:`, ar: `مستويات دليل التقييم:` },
   s11: { en: `Level 1 (1-2):`, ar: `مستوى 1 (1-2)` },
   s12: { en: `Level 2 (3-4):`, ar: `مستوى 2 (3-4)` },
   s13: { en: `Level 3 (5-6):`, ar: `مستوى 3 (5-6)` },
-  s14: { en: `Language Analysis &mdash; Text 2 (6 marks)`, ar: `تحليل اللغة (6 نقاط)` },
+  s14: { en: `Language Analysis - Text 2 (6 marks)`, ar: `تحليل اللغة (6 نقاط)` },
   s15: { en: `Key difference from Q3:`, ar: `différence الرئيسية من السؤال الثالث:` },
   s16: {
-    en: `Critical Evaluation &mdash; Text 2 (15 marks)`,
-    ar: `التقييم النقدي &mdash; النص 2 (15 نقاط)`,
+    en: `Critical Evaluation - Text 2 (15 marks)`,
+    ar: `التقييم النقدي - النص 2 (15 نقاط)`,
   },
   s17: { en: `Critical evaluation (AO4)`, ar: `التقييم النقدي (AO4)` },
   s18: { en: `Level 1 (1-3):`, ar: `مستوى 1 (1-3)` },
@@ -45,16 +45,16 @@ export const STRINGS: Record<string, Bi> = {
   s22: { en: `Level 5 (13-15):`, ar: `المستوى الخامس (١٣-١٥)` },
   s24: { en: `Comparing writers (AO3)`, ar: `مقارنة الكتاب (AO3)` },
   s26: {
-    en: `Identify each writer&rsquo;s viewpoint clearly (&ldquo;Writer 1 believes... whereas Writer 2 argues...&rdquo;)`,
+    en: `Identify each writer’s viewpoint clearly (“Writer 1 believes... whereas Writer 2 argues...”)`,
     ar: `ا indentify رؤية كل كاتب بوضوح (يعتقد الكاتب الأول... بينما ي)argue) الكاتب الثاني...).`,
   },
   s27: {
-    en: `Compare using connectives: &ldquo;Similarly,&rdquo; &ldquo;In contrast,&rdquo; &ldquo;However,&rdquo; &ldquo;Conversely&rdquo;`,
+    en: `Compare using connectives: “Similarly,” “In contrast,” “However,” “Conversely”`,
     ar: `قارن باستخدام الرابطات: "بالمثل"، "في المقابل"، "ومع ذلك"، "على العكس`,
   },
   s28: { en: `Support each point with evidence from`, ar: `أدعم كل نقطة bằng أدلة من` },
   s29: {
-    en: `Analyse how each writer&rsquo;s methods differ (e.g., one uses emotive language while the other uses statistics)`,
+    en: `Analyse how each writer’s methods differ (e.g., one uses emotive language while the other uses statistics)`,
     ar: ``,
   },
   s31: { en: `Level 4 (7-8):`, ar: `مستوى 4 (7-8)` },
@@ -106,8 +106,8 @@ export const STRINGS: Record<string, Bi> = {
 إذا كنت تريد شرح شيء بطريقة بسيطة، يمكنك استخدام أم`,
   },
   s45: {
-    en: `Question 6 &mdash; Comparison (Level 4-5 / 9-10 marks)`,
-    ar: `سؤال 6 &ndash; المقارنة (المستوى 4-5 / 9-10 نقاط)`,
+    en: `Question 6 - Comparison (Level 4-5 / 9-10 marks)`,
+    ar: `سؤال 6 - المقارنة (المستوى 4-5 / 9-10 نقاط)`,
   },
   s46: {
     en: `Example paragraph:`,
@@ -118,8 +118,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `شنو اللي ماعندش حظ يفهم، هذا الشي ماكو لازم يعمل الناس انطباع إيجابي. الحين إحنا نبي نشرح شنو هذا العمل كده ومفيد كيف.`,
   },
   s48: {
-    en: `Section B &mdash; Speech Writing (Level 4 opening)`,
-    ar: `SECTION B &mdash; كتابة الخطاب (بداية مستوى 4)`,
+    en: `Section B - Speech Writing (Level 4 opening)`,
+    ar: `SECTION B - كتابة الخطاب (بداية مستوى 4)`,
   },
   s49: { en: `Example opening:`, ar: `مثال لبداية:` },
   s51: { en: `Direct address:`, ar: `المراسلة المباشرة:` },
@@ -127,7 +127,7 @@ export const STRINGS: Record<string, Bi> = {
   s53: { en: `Short sentence for impact:`, ar: `Sentence قصيرة لتأثير مباشِر:` },
   s54: { en: `Counter-argument acknowledged`, ar: `الرأي المضاد مقبول` },
   s55: { en: `Emotive language:`, ar: `لغة عاطفية:` },
-  s56: { en: `Exam Strategy &amp; Timing`, ar: `استراتيجية الامتحان و التوقيت` },
+  s56: { en: `Exam Strategy & Timing`, ar: `استراتيجية الامتحان و التوقيت` },
   s57: { en: `Suggested Time`, ar: `الوقت المقترح` },
   s58: { en: `Key Advice`, ar: `نصائح مهمة` },
   s60: { en: `Two separate points. No analysis needed.`, ar: `نقطتين منفصلين. لا داعي للتحليل.` },
@@ -165,13 +165,13 @@ export const STRINGS: Record<string, Bi> = {
   // for every one of them: the loop found no match, returned the English, and
   // the Arabic page quietly lost the section. Nothing failed. These entries
   // restore it for the corrected wording.
-  s69: { en: `Short Retrieval &mdash; Text 1 (2 marks)`, ar: `استرجاع قصير - النص 1 (نقطتان)` },
+  s69: { en: `Short Retrieval - Text 1 (2 marks)`, ar: `استرجاع قصير - النص 1 (نقطتان)` },
   s70: {
-    en: `Language and Structure &mdash; Text 1 (15 marks)`,
+    en: `Language and Structure - Text 1 (15 marks)`,
     ar: `تحليل اللغة والبنية - النص 1 (15 نقطة)`,
   },
   s71: {
-    en: `Short Retrieval &mdash; Text 2 (1 mark)`,
+    en: `Short Retrieval - Text 2 (1 mark)`,
     ar: `استرجاع قصير - النص 2 (نقطة واحدة)`,
   },
   s72: { en: `Synthesis across both texts (6 marks)`, ar: `التجميع من النصين (6 نقاط)` },
@@ -180,15 +180,15 @@ export const STRINGS: Record<string, Bi> = {
     ar: `مقارنة الأفكار ووجهات النظر (14 نقطة)`,
   },
   s74: {
-    en: `Compare writers&rsquo; ideas and perspectives (AO3)`,
+    en: `Compare writers’ ideas and perspectives (AO3)`,
     ar: `مقارنة أفكار الكاتبين ووجهات نظرهما (AO3)`,
   },
   s75: {
-    en: `Question 7(b) &mdash; Comparison (a high-level response)`,
+    en: `Question 7(b) - Comparison (a high-level response)`,
     ar: `السؤال 7(ب) - المقارنة (إجابة من مستوى عالٍ)`,
   },
   s76: {
-    en: `Section A is worth 56 of the 96 marks on this paper. The level descriptors used by the marking engine follow Pearson&rsquo;s published band structure, but for the exact wording of each level always work from the mark scheme for your own series.`,
+    en: `Section A is worth 56 of the 96 marks on this paper. The level descriptors used by the marking engine follow Pearson’s published band structure, but for the exact wording of each level always work from the mark scheme for your own series.`,
     ar: `القسم أ يساوي 56 نقطة من أصل 96 في هذه الورقة. تتبع أوصاف المستويات المستخدمة في محرك التصحيح بنية النطاقات المنشورة من Pearson، لكن للاطلاع على الصياغة الدقيقة لكل مستوى ارجع دائما إلى مخطط التصحيح الخاص بدورتك.`,
   },
 }

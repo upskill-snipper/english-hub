@@ -28,8 +28,8 @@ export const STRINGS: Record<string, Bi> = {
   s14: { en: `Ghostly Return`, ar: `عودة شبحية` },
   s15: { en: `Exam Tips for Julius Caesar`, ar: `نصائح للامتحان حول يوليوس قيصر` },
   s16: { en: `Always link to context.`, ar: `` },
-  s17: { en: `Use Shakespeare&apos;s methods.`, ar: `استخدم طرق شكسبير.` },
-  s18: { en: `Refer to the writer&apos;s intentions.`, ar: `انظر إلى نوايا الكاتب.` },
+  s17: { en: `Use Shakespeare's methods.`, ar: `استخدم طرق شكسبير.` },
+  s18: { en: `Refer to the writer's intentions.`, ar: `انظر إلى نوايا الكاتب.` },
   s19: { en: `Acknowledge ambiguity.`, ar: `اعترف بالغموض.` },
   s20: { en: `Use precise terminology.`, ar: `استخدم لغة دقيقة.` },
   s21: {

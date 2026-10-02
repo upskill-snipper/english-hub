@@ -319,7 +319,7 @@ export default async function AnalyticalWritingPage() {
                     <p className="text-xs font-semibold text-red-600 mb-1">{tr(`Instead of:`)}</p>
                     <p className="text-sm text-muted-foreground">
                       {tr(
-                        `Scrooge is presented as miserly. &ldquo;He was a tight-fisted hand at the grindstone.&rdquo;`,
+                        `Scrooge is presented as miserly. “He was a tight-fisted hand at the grindstone.”`,
                       )}
                     </p>
                   </div>
@@ -329,7 +329,7 @@ export default async function AnalyticalWritingPage() {
                     </p>
                     <p className="text-sm text-muted-foreground">
                       {tr(
-                        `Dickens presents Scrooge as a &ldquo;tight-fisted hand at the grindstone&rdquo;, immediately establishing his miserly and unfeeling nature.`,
+                        `Dickens presents Scrooge as a “tight-fisted hand at the grindstone”, immediately establishing his miserly and unfeeling nature.`,
                       )}
                     </p>
                   </div>
@@ -738,7 +738,7 @@ export default async function AnalyticalWritingPage() {
                   </span>
                   <div>
                     <p className="font-semibold text-foreground">
-                      {tr(`Never write a &ldquo;context paragraph&rdquo;`)}
+                      {tr(`Never write a “context paragraph”`)}
                     </p>
                     <p className="text-sm text-muted-foreground mt-1">
                       Context should appear within your analytical paragraphs, usually in the Link
@@ -840,7 +840,7 @@ export default async function AnalyticalWritingPage() {
                 {/* Paragraph 1 */}
                 <div>
                   <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                    {tr(`Paragraph 1 &mdash; Extract Analysis`)}
+                    {tr(`Paragraph 1 - Extract Analysis`)}
                   </p>
                   <p className="text-foreground leading-relaxed">
                     <Annotation note="POINT: Specific, arguable claim about guilt">
@@ -884,7 +884,7 @@ export default async function AnalyticalWritingPage() {
                 {/* Paragraph 2 */}
                 <div>
                   <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                    {tr(`Paragraph 2 &mdash; Wider Play`)}
+                    {tr(`Paragraph 2 - Wider Play`)}
                   </p>
                   <p className="text-foreground leading-relaxed">
                     <Annotation note="POINT: New aspect of guilt, moving beyond the extract">
@@ -918,7 +918,7 @@ export default async function AnalyticalWritingPage() {
                 {/* Paragraph 3 */}
                 <div>
                   <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                    {tr(`Paragraph 3 &mdash; Wider Play`)}
+                    {tr(`Paragraph 3 - Wider Play`)}
                   </p>
                   <p className="text-foreground leading-relaxed">
                     <Annotation note="POINT: Third angle - guilt and the supernatural">
@@ -999,7 +999,7 @@ export default async function AnalyticalWritingPage() {
                 {/* Paragraph 1 */}
                 <div>
                   <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                    {tr(`Paragraph 1 &mdash; Word Level`)}
+                    {tr(`Paragraph 1 - Word Level`)}
                   </p>
                   <p className="text-foreground leading-relaxed">
                     <Annotation note="POINT: About the writer's language choices">
@@ -1032,7 +1032,7 @@ export default async function AnalyticalWritingPage() {
                 {/* Paragraph 2 */}
                 <div>
                   <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                    {tr(`Paragraph 2 &mdash; Imagery and Figurative Language`)}
+                    {tr(`Paragraph 2 - Imagery and Figurative Language`)}
                   </p>
                   <p className="text-foreground leading-relaxed">
                     <Annotation note="POINT: About the writer's use of simile and metaphor">
@@ -1062,7 +1062,7 @@ export default async function AnalyticalWritingPage() {
                 {/* Paragraph 3 */}
                 <div>
                   <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                    {tr(`Paragraph 3 &mdash; Sentence Level and Structure`)}
+                    {tr(`Paragraph 3 - Sentence Level and Structure`)}
                   </p>
                   <p className="text-foreground leading-relaxed">
                     <Annotation note="POINT: About structural and sentence-level choices">
@@ -1268,14 +1268,8 @@ export default async function AnalyticalWritingPage() {
                   <ul className="list-disc ps-5 text-sm text-amber-700 space-y-1">
                     <li>{tr(`Makes a valid point and uses quotations`)}</li>
                     <li>{tr(`Some explanation of language, but stays surface-level`)}</li>
-                    <li>
-                      {tr(
-                        `Context is mentioned but feels &ldquo;bolted on&rdquo; (&ldquo;in those days&rdquo;)`,
-                      )}
-                    </li>
-                    <li>
-                      {tr(`Limited evaluative vocabulary &mdash; &ldquo;shows&rdquo; is repeated`)}
-                    </li>
+                    <li>{tr(`Context is mentioned but feels “bolted on” (“in those days”)`)}</li>
+                    <li>{tr(`Limited evaluative vocabulary: “shows” is repeated`)}</li>
                     <li>Does not explore connotations or alternative interpretations</li>
                   </ul>
                 </div>
@@ -1315,11 +1309,7 @@ export default async function AnalyticalWritingPage() {
                   <ul className="list-disc ps-5 text-sm text-blue-700 dark:text-blue-300 space-y-1">
                     <li>{tr(`Clear, arguable topic sentence`)}</li>
                     <li>{tr(`Longer quotation that is embedded and analysed in detail`)}</li>
-                    <li>
-                      {tr(
-                        `Zooms in on specific words (&ldquo;direst&rdquo;, &ldquo;top-full&rdquo;)`,
-                      )}
-                    </li>
+                    <li>{tr(`Zooms in on specific words (“direst”, “top-full”)`)}</li>
                     <li>Context is integrated, not bolted on</li>
                     <li>{tr(`Some evaluative language, but could be more varied`)}</li>
                     <li>{tr(`Could explore alternative interpretations or a counter-argument`)}</li>
@@ -1369,19 +1359,17 @@ export default async function AnalyticalWritingPage() {
                   </p>
                   <ul className="list-disc ps-5 text-sm text-purple-700 dark:text-purple-300 space-y-1">
                     <li>Conceptualised argument (&ldquo;fundamentally transgressive&rdquo;)</li>
-                    <li>{tr(`Analyses the writer&apos;s craft, not just the character`)}</li>
+                    <li>{tr(`Analyses the writer's craft, not just the character`)}</li>
                     <li>
                       Zooms into individual words <em>and</em> zooms out to structural parallels
                     </li>
                     <li>{tr(`Context is seamlessly woven throughout, not separated`)}</li>
-                    <li>
-                      {tr(`Offers a counter-interpretation (&ldquo;Arguably, however...&rdquo;)`)}
-                    </li>
+                    <li>{tr(`Offers a counter-interpretation (“Arguably, however...”)`)}</li>
                     <li>{tr(`Tracks ideas across the whole play (links to Act 5)`)}</li>
                     <li>Rich evaluative language throughout</li>
                     <li>
                       {tr(
-                        `Explores the idea that language itself is significant (the coinage &ldquo;unsex&rdquo;)`,
+                        `Explores the idea that language itself is significant (the coinage “unsex”)`,
                       )}
                     </li>
                   </ul>
@@ -1444,7 +1432,7 @@ export default async function AnalyticalWritingPage() {
                         {tr(`Integrated into analysis`)}
                       </td>
                       <td className="px-4 py-3 text-muted-foreground">
-                        {tr(`Seamlessly woven; explains writer&apos;s choices`)}
+                        {tr(`Seamlessly woven; explains writer's choices`)}
                       </td>
                     </tr>
                     <tr className="bg-card">

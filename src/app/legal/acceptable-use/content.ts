@@ -31,12 +31,12 @@ export const STRINGS: Record<string, Bi> = {
   s8: { en: `Accessing study resources`, ar: `وصول لمواردstudystudy الدراسية` },
   s9: { en: `Collaborating appropriately`, ar: `تعاون بشكل مناسب` },
   s10: {
-    en: `Submitting someone else&apos;s work as your own.`,
+    en: `Submitting someone else's work as your own.`,
     ar: `تقديم عمل غيرك كأنه عملك الخاص`,
   },
   s11: { en: `Sharing your account credentials with others`, ar: `تشارك بيانات حسابك مع الآخرين` },
   s12: {
-    en: `Attempting to access other users&apos; data`,
+    en: `Attempting to access other users' data`,
     ar: `محاولة الوصول إلى بيانات مستخدمين آخرين`,
   },
   s13: {

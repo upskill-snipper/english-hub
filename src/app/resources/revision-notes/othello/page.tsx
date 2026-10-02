@@ -998,7 +998,7 @@ export default function OthelloRevisionPage() {
 
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">
-                  {tr(`Women&apos;s Roles in Elizabethan/Jacobean Society`)}
+                  {tr(`Women's Roles in Elizabethan/Jacobean Society`)}
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Women in Shakespeare&apos;s time had very limited legal and social autonomy. They
@@ -1186,7 +1186,7 @@ export default function OthelloRevisionPage() {
                     <p className="font-bold text-primary text-sm">L &mdash; Link</p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       {tr(
-                        `Link to context, the wider text, another interpretation, or the writer&apos;s purpose.`,
+                        `Link to context, the wider text, another interpretation, or the writer's purpose.`,
                       )}
                     </p>
                   </div>
@@ -1220,8 +1220,8 @@ export default function OthelloRevisionPage() {
                           2
                         </span>
                         <p className="text-sm text-muted-foreground">
-                          <strong>{tr(`Othello&apos;s transformation:`)}</strong> Track his language
-                          from controlled verse to fragmented, bestial imagery. &ldquo;Farewell the
+                          <strong>{tr(`Othello's transformation:`)}</strong> Track his language from
+                          controlled verse to fragmented, bestial imagery. &ldquo;Farewell the
                           tranquil mind&rdquo; &mdash; jealousy destroys his identity. Link to his
                           insecurity as an outsider.
                         </p>
@@ -1275,11 +1275,11 @@ export default function OthelloRevisionPage() {
                           2
                         </span>
                         <p className="text-sm text-muted-foreground">
-                          <strong>{tr(`Othello&apos;s dignity vs prejudice:`)}</strong> &ldquo;Keep
-                          up your bright swords&rdquo; and the Senate speech show Othello
-                          transcending racial prejudice through eloquence and authority. He is
-                          valued for his service but never fully accepted &mdash; Venice&apos;s
-                          tolerance has limits.
+                          <strong>{tr(`Othello's dignity vs prejudice:`)}</strong> &ldquo;Keep up
+                          your bright swords&rdquo; and the Senate speech show Othello transcending
+                          racial prejudice through eloquence and authority. He is valued for his
+                          service but never fully accepted &mdash; Venice&apos;s tolerance has
+                          limits.
                         </p>
                       </div>
                       <div className="flex gap-2">
@@ -1298,11 +1298,11 @@ export default function OthelloRevisionPage() {
                           4
                         </span>
                         <p className="text-sm text-muted-foreground">
-                          <strong>{tr(`Shakespeare&apos;s purpose:`)}</strong> By making his tragic
-                          hero a Moor, Shakespeare forces the audience to empathise across racial
-                          lines. The tragedy is not that Othello is different but that society
-                          cannot accept his difference. Link to James I&apos;s court and racial
-                          anxieties of the period.
+                          <strong>{tr(`Shakespeare's purpose:`)}</strong> By making his tragic hero
+                          a Moor, Shakespeare forces the audience to empathise across racial lines.
+                          The tragedy is not that Othello is different but that society cannot
+                          accept his difference. Link to James I&apos;s court and racial anxieties
+                          of the period.
                         </p>
                       </div>
                     </div>
@@ -1374,8 +1374,8 @@ export default function OthelloRevisionPage() {
                           1
                         </span>
                         <p className="text-sm text-muted-foreground">
-                          <strong>{tr(`Desdemona&apos;s agency and its limits:`)}</strong> She
-                          defies her father and speaks in the Senate, yet is gradually silenced by
+                          <strong>{tr(`Desdemona's agency and its limits:`)}</strong> She defies her
+                          father and speaks in the Senate, yet is gradually silenced by
                           Othello&apos;s jealousy. Her dying words (&ldquo;Nobody; I myself&rdquo;)
                           can be read as devotion or as the tragic internalisation of a system that
                           teaches women to protect men.
@@ -1386,11 +1386,11 @@ export default function OthelloRevisionPage() {
                           2
                         </span>
                         <p className="text-sm text-muted-foreground">
-                          <strong>{tr(`Emilia&apos;s defiance:`)}</strong> Her Act 4 speech
-                          challenges the sexual double standard. &ldquo;I will not charm my
-                          tongue&rdquo; in Act 5 shows her choosing truth over obedience. She dies
-                          for speaking out &mdash; Shakespeare shows the lethal cost of female
-                          resistance in a patriarchal world.
+                          <strong>{tr(`Emilia's defiance:`)}</strong> Her Act 4 speech challenges
+                          the sexual double standard. &ldquo;I will not charm my tongue&rdquo; in
+                          Act 5 shows her choosing truth over obedience. She dies for speaking out
+                          &mdash; Shakespeare shows the lethal cost of female resistance in a
+                          patriarchal world.
                         </p>
                       </div>
                       <div className="flex gap-2">
@@ -1429,7 +1429,7 @@ export default function OthelloRevisionPage() {
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <div className="rounded-lg bg-primary/10 border border-accent/20 p-4">
                     <p className="text-sm font-semibold text-primary">
-                      {tr(`Always use &ldquo;Shakespeare presents...&rdquo;`)}
+                      {tr(`Always use “Shakespeare presents...”`)}
                     </p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       Remember, characters are constructs. Don&apos;t write &ldquo;Othello is

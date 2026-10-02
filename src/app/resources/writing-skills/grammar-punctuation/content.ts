@@ -13,7 +13,7 @@ export type Bi = { en: string; ar: string }
 export const STRINGS: Record<string, Bi> = {
   s0: { en: `Writing Skills`, ar: `مهارات الكتابة` },
   s1: {
-    en: `Grammar &amp; Punctuation`,
+    en: `Grammar & Punctuation`,
     ar: `القواعد وعلامات الترقيم`,
   },
   s2: {
@@ -50,18 +50,18 @@ export const STRINGS: Record<string, Bi> = {
     en: `Collective nouns (team, class, government):`,
     ar: `أسماء المجموعات (الفريق، الصف، الحكومة) :`,
   },
-  s21: { en: `Always singular: &quot;Each of the students`, ar: `كل طالب من الطلاب` },
+  s21: { en: `Always singular: "Each of the students`, ar: `كل طالب من الطلاب` },
   s22: {
-    en: `Compound subjects with &quot;or&quot; / &quot;nor&quot;:`,
+    en: `Compound subjects with "or" / "nor":`,
     ar: `Subjects مركّبين بـ "أو" / "نور":`,
   },
   s23: {
-    en: `Verb agrees with the nearest subject: &quot;Neither the teacher nor the students`,
-    ar: `&quot; neither the teacher nor the students &quot; يتفق الفعل مع أقرب مושא، يعني لو كان التلاميذ هم الأقرب يكون الفعل مرفوعاً للمذكرين كمثال.`,
+    en: `Verb agrees with the nearest subject: "Neither the teacher nor the students`,
+    ar: `" neither the teacher nor the students " يتفق الفعل مع أقرب مושא، يعني لو كان التلاميذ هم الأقرب يكون الفعل مرفوعاً للمذكرين كمثال.`,
   },
   s24: { en: `Phrases between subject and verb:`, ar: `الفصل بين الم.Subject والVerbverb` },
   s25: {
-    en: `Ignore the phrase: &quot;The box of chocolates`,
+    en: `Ignore the phrase: "The box of chocolates`,
     ar: `.IGNORE THE PHRASE: "The box of chocolates`,
   },
   s26: { en: `Singular possession:`, ar: `الملكية الفردية:` },
@@ -72,8 +72,8 @@ export const STRINGS: Record<string, Bi> = {
   },
   s29: { en: `Names ending in S:`, ar: `الأسماء التي تنتهي bằng سين:` },
   s30: {
-    en: `Both &quot;James&apos;s book&quot; and &quot;James&apos; book&quot; are acceptable. Be consistent.`,
-    ar: `كلا &quot;كتاب جيمس&quot; و &quot;كتاب جيمس&quot; هما مقبولان. كوني_consistent.`,
+    en: `Both "James's book" and "James' book" are acceptable. Be consistent.`,
+    ar: `كلا "كتاب جيمس" و "كتاب جيمس" هما مقبولان. كوني_consistent.`,
   },
   s32: { en: `Punctuation goes`, ar: `النقاط والفاصلة تروح` },
   s33: { en: `If speech comes`, ar: `إذا جاءت الكلام` },

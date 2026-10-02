@@ -211,12 +211,12 @@ export default function Paper2Page() {
             <li>{tr(`Statements that are true in general but not supported by the text.`)}</li>
             <li>
               {tr(
-                `Statements that change a small detail (e.g., &ldquo;three children&rdquo; when the text says &ldquo;two children&rdquo;).`,
+                `Statements that change a small detail (e.g., “three children” when the text says “two children”).`,
               )}
             </li>
             <li>
               {tr(
-                `Statements that go beyond what the text actually says &mdash; they add an interpretation that is not in the source.`,
+                `Statements that go beyond what the text actually says: they add an interpretation that is not in the source.`,
               )}
             </li>
           </ul>
@@ -347,7 +347,7 @@ export default function Paper2Page() {
                   <td className="py-2 pe-4">10-12</td>
                   <td className="py-2 pe-4">
                     {tr(
-                      `Perceptive, detailed analysis. Analyses effects of writer&rsquo;s language choices. Judicious examples. Sophisticated, accurate subject terminology.`,
+                      `Perceptive, detailed analysis. Analyses effects of writer’s language choices. Judicious examples. Sophisticated, accurate subject terminology.`,
                     )}
                   </td>
                 </tr>
@@ -382,8 +382,8 @@ export default function Paper2Page() {
 
           <h3 className="mt-4 font-bold text-primary">{tr(`How to answer`)}</h3>
           <p>
-            Use the same <strong>{tr(`What &rarr; How &rarr; Why`)}</strong> approach as Paper 1 Q2.
-            Aim for <strong>4-5 well-developed analytical points</strong>.
+            Use the same <strong>{tr(`What → How → Why`)}</strong> approach as Paper 1 Q2. Aim for{' '}
+            <strong>4-5 well-developed analytical points</strong>.
           </p>
           <ul className="ms-5 list-disc space-y-2 mt-2">
             <li>
@@ -392,9 +392,7 @@ export default function Paper2Page() {
               )}
             </li>
             <li>{tr(`Zoom in on specific word choices and explore their connotations.`)}</li>
-            <li>
-              {tr(`Name techniques accurately &mdash; but only when you can explain their effect.`)}
-            </li>
+            <li>{tr(`Name techniques accurately, but only when you can explain their effect.`)}</li>
             <li>
               Because the text is often from the 19th century, you may encounter unfamiliar
               vocabulary. Use context clues to work out meaning, and comment on how the formality or
@@ -590,9 +588,7 @@ export default function Paper2Page() {
               <h4 className="font-bold text-accent">Letter (formal)</h4>
               <ul className="mt-2 ms-5 list-disc space-y-1 text-sm">
                 <li>
-                  {tr(
-                    `Include addresses (top right: yours; below left: recipient&rsquo;s) and date`,
-                  )}
+                  {tr(`Include addresses (top right: yours; below left: recipient’s) and date`)}
                 </li>
                 <li>&ldquo;Dear Sir/Madam&rdquo; or &ldquo;Dear [Name]&rdquo;</li>
                 <li>
@@ -608,7 +604,7 @@ export default function Paper2Page() {
               <ul className="mt-2 ms-5 list-disc space-y-1 text-sm">
                 <li>
                   {tr(
-                    `Address the audience directly: &ldquo;Ladies and gentlemen,&rdquo; or &ldquo;Fellow students,&rdquo;`,
+                    `Address the audience directly: “Ladies and gentlemen,” or “Fellow students,”`,
                   )}
                 </li>
                 <li>{tr(`Use rhetorical questions, tricolon, and direct address throughout`)}</li>
@@ -689,7 +685,7 @@ export default function Paper2Page() {
             {tr(`Planning your response (5 minutes)`)}
           </h3>
           <ol className="ms-5 list-decimal space-y-2 mt-2">
-            <li>{tr(`Decide your viewpoint &mdash; you must take a clear position.`)}</li>
+            <li>{tr(`Decide your viewpoint: you must take a clear position.`)}</li>
             <li>Plan 4-5 paragraphs, each with a distinct argument or point.</li>
             <li>{tr(`Note the form and adapt your tone, layout, and register accordingly.`)}</li>
             <li>
@@ -722,7 +718,7 @@ export default function Paper2Page() {
           <ul className="ms-5 list-disc space-y-2">
             <li>
               {tr(
-                `Ignoring the form. If the question says &ldquo;Write a speech,&rdquo; your response must read like a speech, with direct address and rhetorical features.`,
+                `Ignoring the form. If the question says “Write a speech,” your response must read like a speech, with direct address and rhetorical features.`,
               )}
             </li>
             <li>
@@ -735,7 +731,7 @@ export default function Paper2Page() {
             </li>
             <li>
               {tr(
-                `Forgetting technical accuracy. Technical accuracy (AO6) is worth 16 marks &mdash; proofread carefully.`,
+                `Forgetting technical accuracy. Technical accuracy (AO6) is worth 16 marks. Proofread carefully.`,
               )}
             </li>
             <li>{tr(`Not planning, which leads to repetitive or disorganised arguments.`)}</li>

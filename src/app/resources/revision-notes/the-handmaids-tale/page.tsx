@@ -383,20 +383,17 @@ export default function HandmaidsTalePage() {
           <Section title={tr(`Historical and Literary Context`)} icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">
-                  {tr(`Reagan-Era America (1980&ndash;1985)`)}
-                </h4>
+                <h4 className="font-bold text-primary">{tr(`Reagan-Era America (1980-1985)`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Atwood began writing <em>{tr(`The Handmaid&apos;s Tale`)}</em> in West Berlin in
-                  1984, then living near the Iron Curtain. Reagan&apos;s America was a period of
-                  resurgent religious conservatism: the Moral Majority, founded by Jerry Falwell in
-                  1979, was lobbying to overturn <em>{tr(`Roe v. Wade`)}</em>, reintroduce school
-                  prayer, and roll back the Equal Rights Amendment (which failed to be ratified in
-                  1982). Phyllis Schlafly led the STOP-ERA campaign, arguing publicly that
-                  women&apos;s liberation was destroying the family. Atwood has said in interviews
-                  that she included nothing in the novel that had not happened somewhere on Earth.
-                  Serena Joy is modelled on televangelist figures like Tammy Faye Bakker and
-                  Schlafly herself.
+                  Atwood began writing <em>{tr(`The Handmaid's Tale`)}</em> in West Berlin in 1984,
+                  then living near the Iron Curtain. Reagan&apos;s America was a period of resurgent
+                  religious conservatism: the Moral Majority, founded by Jerry Falwell in 1979, was
+                  lobbying to overturn <em>{tr(`Roe v. Wade`)}</em>, reintroduce school prayer, and
+                  roll back the Equal Rights Amendment (which failed to be ratified in 1982).
+                  Phyllis Schlafly led the STOP-ERA campaign, arguing publicly that women&apos;s
+                  liberation was destroying the family. Atwood has said in interviews that she
+                  included nothing in the novel that had not happened somewhere on Earth. Serena Joy
+                  is modelled on televangelist figures like Tammy Faye Bakker and Schlafly herself.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -628,9 +625,7 @@ export default function HandmaidsTalePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">
-                  {tr(`Flowers and Serena&apos;s Garden`)}
-                </h4>
+                <h4 className="font-bold text-foreground">{tr(`Flowers and Serena's Garden`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Serena Joy tends an immaculate garden of tulips and irises &mdash; one of the few
                   activities available to her. The flowers are described in language that
@@ -713,8 +708,8 @@ export default function HandmaidsTalePage() {
               {/* Q1 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  1. &ldquo;In <em>{tr(`The Handmaid&apos;s Tale`)}</em>, Atwood exposes the dangers
-                  of theocratic government.&rdquo; To what extent do you agree?
+                  1. &ldquo;In <em>{tr(`The Handmaid's Tale`)}</em>, Atwood exposes the dangers of
+                  theocratic government.&rdquo; To what extent do you agree?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -784,7 +779,7 @@ export default function HandmaidsTalePage() {
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   2. Discuss Atwood&apos;s presentation of women as both victims and perpetrators in{' '}
-                  <em>{tr(`The Handmaid&apos;s Tale`)}</em>.
+                  <em>{tr(`The Handmaid's Tale`)}</em>.
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -856,7 +851,7 @@ export default function HandmaidsTalePage() {
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   3. Explore the significance of language and storytelling in{' '}
-                  <em>{tr(`The Handmaid&apos;s Tale`)}</em>.
+                  <em>{tr(`The Handmaid's Tale`)}</em>.
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -918,7 +913,7 @@ export default function HandmaidsTalePage() {
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   4. Compare and contrast Atwood&apos;s presentation of dystopia in{' '}
-                  <em>{tr(`The Handmaid&apos;s Tale`)}</em> with that of Orwell in{' '}
+                  <em>{tr(`The Handmaid's Tale`)}</em> with that of Orwell in{' '}
                   <em>{tr(`Nineteen Eighty-Four`)}</em>.
                 </h4>
                 <div className="mt-3 space-y-3">
@@ -1056,7 +1051,7 @@ export default function HandmaidsTalePage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Use Atwood&apos;s own framing.`)}</strong> She insists the novel is
+              <strong>{tr(`Use Atwood's own framing.`)}</strong> She insists the novel is
               &ldquo;speculative&rdquo; not &ldquo;science&rdquo; fiction &mdash; nothing in it has
               not happened on Earth. Cite this for AO3.
             </span>
@@ -1095,9 +1090,8 @@ export default function HandmaidsTalePage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Distinguish Atwood&apos;s feminism from a one-note one.`)}</strong>{' '}
-              Serena Joy and the Aunts complicate any simple &ldquo;men bad / women good&rdquo;
-              reading.
+              <strong>{tr(`Distinguish Atwood's feminism from a one-note one.`)}</strong> Serena Joy
+              and the Aunts complicate any simple &ldquo;men bad / women good&rdquo; reading.
             </span>
           </li>
         </ul>
@@ -1106,8 +1100,8 @@ export default function HandmaidsTalePage() {
       {/* Public-domain notice */}
       <footer className="mt-8 text-xs text-muted-foreground">
         <p>
-          <em>{tr(`The Handmaid&apos;s Tale`)}</em> by Margaret Atwood was first published in 1985.
-          The novel is in copyright; quotations are reproduced for educational purposes under
+          <em>{tr(`The Handmaid's Tale`)}</em> by Margaret Atwood was first published in 1985. The
+          novel is in copyright; quotations are reproduced for educational purposes under
           fair-dealing provisions for criticism and review.
         </p>
       </footer>

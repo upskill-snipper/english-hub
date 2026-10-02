@@ -810,7 +810,7 @@ export default function RomeoAndJulietRevisionPage() {
               <p className="font-semibold text-foreground">P1: Love as transformation</p>
               <p>
                 {tr(
-                  `Romeo&apos;s shift from Petrarchan clich&eacute;s to genuine poetry. The shared sonnet (1.5) as collaborative love. &ldquo;Did my heart love till now?&rdquo;`,
+                  `Romeo's shift from Petrarchan clichés to genuine poetry. The shared sonnet (1.5) as collaborative love. “Did my heart love till now?”`,
                 )}
               </p>
             </div>
@@ -832,7 +832,7 @@ export default function RomeoAndJulietRevisionPage() {
               <p className="font-semibold text-foreground">P4: Love as sacrifice that heals</p>
               <p>
                 {tr(
-                  `The deaths end the feud. &ldquo;All are punish&apos;d.&rdquo; Love achieves what authority could not.`,
+                  `The deaths end the feud. “All are punish'd.” Love achieves what authority could not.`,
                 )}
               </p>
             </div>
@@ -845,7 +845,7 @@ export default function RomeoAndJulietRevisionPage() {
               <p className="font-semibold text-foreground">P1: Public conflict</p>
               <p>
                 {tr(
-                  `Opening brawl. Prince&apos;s failed authority. &ldquo;Ancient grudge&rdquo; -- cause forgotten, hatred persists.`,
+                  `Opening brawl. Prince's failed authority. “Ancient grudge” -- cause forgotten, hatred persists.`,
                 )}
               </p>
             </div>
@@ -853,7 +853,7 @@ export default function RomeoAndJulietRevisionPage() {
               <p className="font-semibold text-foreground">P2: Honour-driven conflict</p>
               <p>
                 {tr(
-                  `Tybalt as honour personified. Mercutio&apos;s death. Romeo torn between love and revenge.`,
+                  `Tybalt as honour personified. Mercutio's death. Romeo torn between love and revenge.`,
                 )}
               </p>
             </div>
@@ -861,7 +861,7 @@ export default function RomeoAndJulietRevisionPage() {
               <p className="font-semibold text-foreground">P3: Internal conflict</p>
               <p>
                 {tr(
-                  `Juliet&apos;s oxymorons. Romeo&apos;s conflict between pacifism and revenge. The Friar&apos;s conflict between caution and action.`,
+                  `Juliet's oxymorons. Romeo's conflict between pacifism and revenge. The Friar's conflict between caution and action.`,
                 )}
               </p>
             </div>

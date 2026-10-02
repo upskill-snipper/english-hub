@@ -70,7 +70,7 @@ export default async function ComplaintsProcedurePage() {
           <div className="border-s-4 border-primary ps-4">
             <h3 className="font-semibold">{_tr(`Using the In-Platform Form`)}</h3>
             <p className="text-sm">
-              Log in and go to <strong>{_tr(`Help &gt; Make a Complaint`)}</strong>
+              Log in and go to <strong>{_tr(`Help > Make a Complaint`)}</strong>
             </p>
           </div>
           <div className="border-s-4 border-primary ps-4">

@@ -111,7 +111,7 @@ export default async function Paper1ReadingPage() {
                 <tr>
                   <td className="py-3 pe-4 font-medium">{_tr(`Question 2`)}</td>
                   <td className="py-3 pe-4">
-                    {_tr(`Summary &mdash; select and organise ideas from one or both passages`)}
+                    {_tr(`Summary - select and organise ideas from one or both passages`)}
                   </td>
                   <td className="py-3 pe-4">25</td>
                   <td className="py-3">30 minutes</td>
@@ -119,9 +119,7 @@ export default async function Paper1ReadingPage() {
                 <tr>
                   <td className="py-3 pe-4 font-medium">{_tr(`Question 3`)}</td>
                   <td className="py-3 pe-4">
-                    {_tr(
-                      `Language analysis &mdash; how the writer uses language to create effects`,
-                    )}
+                    {_tr(`Language analysis - how the writer uses language to create effects`)}
                   </td>
                   <td className="py-3 pe-4">25</td>
                   <td className="py-3">55 minutes</td>
@@ -572,7 +570,7 @@ export default async function Paper1ReadingPage() {
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">
-              <p className="text-sm font-semibold text-primary">{_tr(`Tone &amp; Mood`)}</p>
+              <p className="text-sm font-semibold text-primary">{_tr(`Tone & Mood`)}</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 How does the passage make you feel? Identify the overall tone and explain how
                 specific language choices create it.
@@ -587,7 +585,7 @@ export default async function Paper1ReadingPage() {
             </div>
             <div className="rounded-lg border border-border p-4">
               <p className="text-sm font-semibold text-primary">
-                {_tr(`Contrast &amp; Juxtaposition`)}
+                {_tr(`Contrast & Juxtaposition`)}
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
                 Does the writer place opposing ideas side by side to emphasise a point or create

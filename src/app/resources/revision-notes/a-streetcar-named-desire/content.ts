@@ -20,7 +20,7 @@ export const STRINGS: Record<string, Bi> = {
   s8: { en: `The 1947 Production and Marlon Brando`, ar: `الإنتاج عام 1947 ومارلون براندو` },
   s9: { en: `The Paper Lantern`, ar: `المنارة الورقية` },
   s10: { en: `The Varsouviana / Polka Music`, ar: `موسيقى البولكا الفارسوبيانا` },
-  s11: { en: `Blanche&apos;s Costumes`, ar: `ملابس بلانش` },
+  s11: { en: `Blanche's Costumes`, ar: `ملابس بلانش` },
   s12: { en: `Bathing and Cleansing`, ar: `الغسل والتنظيف` },
   s14: { en: `The Poker Game`, ar: `اللعبة بالبوكر` },
   s15: { en: `Treat the play as a play.`, ar: `امل العرض على أنه مسرحية.` },

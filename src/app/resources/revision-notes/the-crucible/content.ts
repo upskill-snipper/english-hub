@@ -31,7 +31,7 @@ export const STRINGS: Record<string, Bi> = {
   s13: { en: `The Crucible`, ar: `الكرسيبيل` },
   s14: { en: `The Salem Witch Trials (1692)`, ar: `تجربة سalem من سحر (1692)` },
   s15: { en: `Puritanism and Theocracy`, ar: `البروتستانتية والطغيان الديني` },
-  s16: { en: `The Title: &ldquo;The Crucible&rdquo;`, ar: `العنوان: &ldquo;القِداحة&rdquo;` },
+  s16: { en: `The Title: “The Crucible”`, ar: `العنوان: “القِداحة”` },
   s17: { en: `General Tips for The Crucible`, ar: `نصائح عامة للكواسح` },
   s18: { en: `Always link to McCarthyism:`, ar: `دائماً اربطه بمكارثية:` },
   s19: { en: `Refer to Miller as the dramatist:`, ar: `أ refere إلى ميلر كالمؤلف المسرحي:` },

@@ -28,7 +28,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Mixing senses for striking effect`,
     ar: `MIXING SENSES FOR STRIKING EFFECT  (الحواس المختلطة لتأثير قوي)`,
   },
-  s15: { en: `Show, Don&apos;t Tell`, ar: `أشعر، لا تخبر` },
+  s15: { en: `Show, Don't Tell`, ar: `أشعر، لا تخبر` },
   s16: { en: `Telling (Weak)`, ar: `القصة (ضعيفة)` },
   s17: { en: `Showing (Strong)`, ar: `الแสดง (قوي)` },
   s18: { en: `Figurative Language`, ar: `لغة مجازية` },
@@ -38,7 +38,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `اجمع بين الحواس`,
   },
   s21: {
-    en: `Do not describe only what you see. Begin with sight, then add sound, then smell or touch. Each new sense deepens the reader&apos;s immersion.`,
+    en: `Do not describe only what you see. Begin with sight, then add sound, then smell or touch. Each new sense deepens the reader's immersion.`,
     ar: ``,
   },
   s22: { en: `Use the Setting to Reflect Mood`, ar: `استخدم الإعداد لتعكس المزاج` },
@@ -48,7 +48,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s26: { en: `Imply History Through Detail`, ar: `اIMPLIED عبر التفاصيل التاريخ` },
   s27: {
-    en: `The best settings suggest a past without explaining it. A scratched floor, a child&apos;s height marks on a doorframe, a faded sign -- these imply stories the reader can imagine.`,
+    en: `The best settings suggest a past without explaining it. A scratched floor, a child's height marks on a doorframe, a faded sign -- these imply stories the reader can imagine.`,
     ar: `البيئة الأفضل تقترح ماضٍ بدون شرحه. سجادة محروقة على الأرض، علامات ارتفاع الأطفال على الإطار، إشارة مُتَسَخّرة - كل هذه تلمح إلى قصص يمكن للقارئ تخيلها.`,
   },
   s28: { en: `Character Description`, ar: `وصف الشخصية` },
@@ -74,7 +74,7 @@ export const STRINGS: Record<string, Bi> = {
   s45: { en: `Building Suspense`, ar: `إنشاء التشويق` },
   s46: { en: `Delay the Reveal`, ar: `دلّع الكشف الحين` },
   s47: {
-    en: `When something important is about to happen, slow down. Describe the character&apos;s hand reaching for the handle. The creak of the floorboard. The way the light shifts. Make the reader wait.`,
+    en: `When something important is about to happen, slow down. Describe the character's hand reaching for the handle. The creak of the floorboard. The way the light shifts. Make the reader wait.`,
     ar: `إذا كان هناك شيء مهم سيحدث، ابطئي. وصف يد الشخصية وهي تReach for the handle. صوت الخشخشة للأخشاب تحت القدمين. كيف يتغير الضوء. جعل القارئة تنتظر. 
 
 (ملاحظة: في الجملة الأولى "Reach for the handle" أبقت الأصل إنجليزية لأنها وصف دقيق لحركة يد الشخصية، والعبارة "وصف يد الشخصية وهي تReach for the handle" هي الطريقة المثلى للتعبير عنها باللغة العربية مع الحفاظ على الدقة.) 
@@ -98,10 +98,10 @@ export const STRINGS: Record<string, Bi> = {
   },
   s53: { en: `The Rule of Three`, ar: `` },
   s54: {
-    en: `Build in three stages: first hint, second hint (stronger), then the reveal. The pattern creates expectation. &ldquo;A creak. A shadow. Then the door swung open.&rdquo;`,
+    en: `Build in three stages: first hint, second hint (stronger), then the reveal. The pattern creates expectation. “A creak. A shadow. Then the door swung open.”`,
     ar: `شوف شنو، إحنا بنبنه في ثلاث مراحل: إشارة أولى، ثم إشارة ثانية أقوى، وبعدين الافشال. هذا النمط بيخلق توقع. "ضوضاء خفيفة. ظل. ثم فتحت الباب.`,
   },
-  s55: { en: `Limit the Character&apos;s Knowledge`, ar: `حدّد معرفة الشخصية` },
+  s55: { en: `Limit the Character's Knowledge`, ar: `حدّد معرفة الشخصية` },
   s56: {
     en: `If the character does not understand what is happening, neither does the reader. Confusion, misinterpretation, and partial information all heighten tension.`,
     ar: `إذا لم يفهم الشخصaje ما يحدث، فلن يفهمه القارئ أيضاً. الالتباس، التفسير الخاطئ، والمعلومات الجزئية كلها تزيد من التوتر.`,
@@ -112,7 +112,7 @@ export const STRINGS: Record<string, Bi> = {
 
 شو اللي ماكو فهم له؟ الحين`,
   },
-  s58: { en: `Tier 2 &amp; Tier 3 Words`, ar: `كلمات المستوى الثاني والثالث` },
+  s58: { en: `Tier 2 & Tier 3 Words`, ar: `كلمات المستوى الثاني والثالث` },
   s59: { en: `Tier 1 words`, ar: `كلمات المستوى الأول` },
   s61: { en: `Alternatives to Overused Words`, ar: `بدائل لألفاظ مستهلكة` },
   s62: { en: `Instead of...`, ar: `بدلاً من...` },
@@ -130,19 +130,19 @@ export const STRINGS: Record<string, Bi> = {
     ar: `يبدأ bằng جملة واحدة كلمة فقط تablish فوراًclimateบรรยากاة`,
   },
   s68: {
-    en: `Sustained &ldquo;show, don&apos;t tell&rdquo; -- no emotions are named directly`,
-    ar: `المواصلة في &ldquo;.shows، لا .tells&rdquo; -- لا تذكر المشاعر مباشرة`,
+    en: `Sustained “show, don't tell” -- no emotions are named directly`,
+    ar: `المواصلة في “.shows، لا .tells” -- لا تذكر المشاعر مباشرة`,
   },
   s70: {
     en: `Structural control: zoom-in from room to chair to hand; shift from external observation to internal reflection`,
     ar: `التحكم"structural": تصغير من الغرفة إلى الكرسي إلى اليد؛ تحول من الملاحظة الخارجية إلى التأمل الداخلي`,
   },
   s71: {
-    en: `Circular structure: opens and closes with &ldquo;stillness&rdquo;`,
+    en: `Circular structure: opens and closes with “stillness”`,
     ar: `โครงสร้างวงกลม: يبدأ وينتهي بـ "الهدوء`,
   },
   s72: {
-    en: `Vocabulary is precise, not showy: &ldquo;threadbare,&rdquo; &ldquo;tributaries,&rdquo; &ldquo;indent&rdquo;`,
+    en: `Vocabulary is precise, not showy: “threadbare,” “tributaries,” “indent”`,
     ar: `اللغة دقيقة ولا تكترث بالتفاخر: "threadbare," "tributaries," "indent`,
   },
   s73: {
@@ -154,15 +154,15 @@ export const STRINGS: Record<string, Bi> = {
     ar: `يبدأ في وسط الأحداث مع إثارة فورية (الرسالة المفتوحة مسبقاً)`,
   },
   s75: {
-    en: `Uses flashback structure: present &rarr; three days ago &rarr; present`,
-    ar: `استخدم بنية الفlashback: الحاضر &rarr; قبل ثلاثة أيام &rarr; الحاضر`,
+    en: `Uses flashback structure: present → three days ago → present`,
+    ar: `استخدم بنية الفlashback: الحاضر → قبل ثلاثة أيام → الحاضر`,
   },
   s76: {
-    en: `Foreshadowing: hiding the envelope, the &ldquo;gravity&rdquo; metaphor`,
+    en: `Foreshadowing: hiding the envelope, the “gravity” metaphor`,
     ar: `التلميح: إخفاءEnvelope، المثلGravity`,
   },
   s77: {
-    en: `Information is deliberately withheld -- the letter&apos;s content is never revealed`,
+    en: `Information is deliberately withheld -- the letter's content is never revealed`,
     ar: `المعلومات مخفية عمدا -- محتوى الرسالة nunca يكشف عنها`,
   },
   s78: {
@@ -174,7 +174,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `الوتيرة تختلف: مقاطع نافذة للتأمل بطيئة تتغير مع جمل قصيرة وقوية`,
   },
   s81: {
-    en: `Show, don&apos;t tell: the narrator&apos;s emotions are conveyed through actions (pressing hands against eyes, making tea) not labels`,
+    en: `Show, don't tell: the narrator's emotions are conveyed through actions (pressing hands against eyes, making tea) not labels`,
     ar: `أشعر بدلاً من إخبار: مشاعر الكاتب تنقل عبر الأفعال ( pressing hands against eyes، صنع الشاي) لا بالكلمات المكتوبة`,
   },
   s83: { en: `Spider Diagram (Descriptive Writing)`, ar: `DIAGRAM*spider* (الكتابة التصويرية)` },
@@ -193,5 +193,5 @@ export const STRINGS: Record<string, Bi> = {
   s94: { en: `Model Response: Descriptive Writing`, ar: `نموذج الإجابة: الكتابة التصويرية` },
   s95: { en: `Model Response: Narrative Writing`, ar: `نموذج للإجابة: الكتابة السردية` },
   s96: { en: `Planning Templates`, ar: `قوالب التخطيط` },
-  s97: { en: `Common Mistakes &amp; How to Avoid Them`, ar: `الأخطاء الشائعة وكيفية تجنبها` },
+  s97: { en: `Common Mistakes & How to Avoid Them`, ar: `الأخطاء الشائعة وكيفية تجنبها` },
 }

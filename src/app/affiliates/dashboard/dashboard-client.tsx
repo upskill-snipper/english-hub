@@ -563,7 +563,7 @@ function TierProgressCard({ progress }: { progress: TierProgress }) {
         ) : (
           <div className="mt-5 flex items-center gap-2 rounded-lg bg-yellow-500/10 px-3 py-2 text-sm text-yellow-900">
             <Trophy className="h-4 w-4" />
-            <span className="font-medium">{_tr(`Maxed out - you&apos;re a Gold partner`)}</span>
+            <span className="font-medium">{_tr(`Maxed out - you're a Gold partner`)}</span>
           </div>
         )}
       </CardContent>

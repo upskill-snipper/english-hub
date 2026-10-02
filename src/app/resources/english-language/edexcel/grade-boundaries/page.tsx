@@ -189,7 +189,7 @@ export default function GradeBoundariesPage() {
                   </li>
                   <li>
                     {tr(
-                      `Critical evaluation that explores multiple interpretations and considers the writer&rsquo;s intentions and wider purpose.`,
+                      `Critical evaluation that explores multiple interpretations and considers the writer’s intentions and wider purpose.`,
                     )}
                   </li>
                   <li>
@@ -207,7 +207,7 @@ export default function GradeBoundariesPage() {
                 <ul className="ms-5 list-disc space-y-1">
                   <li>
                     {tr(
-                      `Compelling, convincing writing that sustains the reader&rsquo;s interest throughout.`,
+                      `Compelling, convincing writing that sustains the reader’s interest throughout.`,
                     )}
                   </li>
                   <li>{tr(`Extensive, ambitious vocabulary used precisely and naturally.`)}</li>
@@ -229,7 +229,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-primary/50 bg-primary/10/30 p-5">
-              <h3 className="text-lg font-bold text-primary">{tr(`Grades 7-8 &mdash; Strong`)}</h3>
+              <h3 className="text-lg font-bold text-primary">{tr(`Grades 7-8 - Strong`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
                   <strong>Reading:</strong>
@@ -248,7 +248,7 @@ export default function GradeBoundariesPage() {
                   <li>{tr(`Accurate subject terminology used consistently and purposefully.`)}</li>
                   <li>
                     {tr(
-                      `Thoughtful evaluation that engages with the text critically and considers writer&rsquo;s methods.`,
+                      `Thoughtful evaluation that engages with the text critically and considers writer’s methods.`,
                     )}
                   </li>
                   <li>
@@ -281,7 +281,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-primary bg-primary/10/30 p-5">
-              <h3 className="text-lg font-bold text-primary">{tr(`Grades 5-6 &mdash; Secure`)}</h3>
+              <h3 className="text-lg font-bold text-primary">{tr(`Grades 5-6 - Secure`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
                   <strong>Reading:</strong>
@@ -300,7 +300,7 @@ export default function GradeBoundariesPage() {
                   </li>
                   <li>
                     {tr(
-                      `Analysis may lack depth or consistency &mdash; some points developed well, others more surface-level.`,
+                      `Analysis may lack depth or consistency: some points developed well, others more surface-level.`,
                     )}
                   </li>
                 </ul>
@@ -336,9 +336,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-yellow-400 bg-yellow-500/10/30 p-5">
-              <h3 className="text-lg font-bold text-yellow-700">
-                {tr(`Grade 4 &mdash; Standard pass`)}
-              </h3>
+              <h3 className="text-lg font-bold text-yellow-700">{tr(`Grade 4 - Standard pass`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
                   <strong>Reading:</strong>
@@ -391,7 +389,7 @@ export default function GradeBoundariesPage() {
 
             <div className="rounded-lg border-s-4 border-border bg-muted/50 p-5">
               <h3 className="text-lg font-bold text-muted-foreground">
-                {tr(`Grades 1-3 &mdash; Below standard pass`)}
+                {tr(`Grades 1-3 - Below standard pass`)}
               </h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
@@ -430,7 +428,7 @@ export default function GradeBoundariesPage() {
 
           <div className="mt-4 space-y-5">
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-primary">{tr(`Grade 4 &rarr; Grade 5`)}</h3>
+              <h3 className="font-bold text-primary">{tr(`Grade 4 → Grade 5`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Stop feature-spotting. Every time you identify a
@@ -458,7 +456,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-primary">{tr(`Grade 5 &rarr; Grade 7`)}</h3>
+              <h3 className="font-bold text-primary">{tr(`Grade 5 → Grade 7`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Move from explaining effects to analysing <em>why</em>{' '}
@@ -485,7 +483,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-primary">{tr(`Grade 7 &rarr; Grade 9`)}</h3>
+              <h3 className="font-bold text-primary">{tr(`Grade 7 → Grade 9`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Develop a critical, evaluative voice. Consider
@@ -545,7 +543,7 @@ export default function GradeBoundariesPage() {
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q1</td>
                   <td className="py-2 pe-4">
-                    {tr(`Short response &mdash; identify one piece of explicit information`)}
+                    {tr(`Short response - identify one piece of explicit information`)}
                   </td>
                   <td className="py-2 pe-4">1 mark</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
@@ -553,7 +551,7 @@ export default function GradeBoundariesPage() {
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q2</td>
                   <td className="py-2 pe-4">
-                    {tr(`Short response &mdash; give two pieces of information from named lines`)}
+                    {tr(`Short response - give two pieces of information from named lines`)}
                   </td>
                   <td className="py-2 pe-4">2 marks</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
@@ -562,7 +560,7 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pe-4 font-semibold">Q3</td>
                   <td className="py-2 pe-4">
                     {tr(
-                      `Language and structure &mdash; analyse how the writer achieves effects in the named lines`,
+                      `Language and structure - analyse how the writer achieves effects in the named lines`,
                     )}
                   </td>
                   <td className="py-2 pe-4">6 marks</td>
@@ -572,7 +570,7 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pe-4 font-semibold">Q4</td>
                   <td className="py-2 pe-4">
                     {tr(
-                      `Evaluation &mdash; evaluate how successfully the writer achieves a stated effect`,
+                      `Evaluation - evaluate how successfully the writer achieves a stated effect`,
                     )}
                   </td>
                   <td className="py-2 pe-4">15 marks</td>
@@ -580,7 +578,7 @@ export default function GradeBoundariesPage() {
                 </tr>
                 <tr className="bg-primary/10">
                   <td className="py-2 pe-4 font-semibold">{tr(`Q5 or Q6`)}</td>
-                  <td className="py-2 pe-4">{tr(`Imaginative writing &mdash; answer one task`)}</td>
+                  <td className="py-2 pe-4">{tr(`Imaginative writing - answer one task`)}</td>
                   <td className="py-2 pe-4">40 marks</td>
                   <td className="py-2 pe-4">
                     {tr(`Content and organisation (AO5, 24) + Technical accuracy (AO6, 16)`)}
@@ -613,7 +611,7 @@ export default function GradeBoundariesPage() {
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q1</td>
                   <td className="py-2 pe-4">
-                    {tr(`Short response &mdash; two pieces of information from Text 1`)}
+                    {tr(`Short response - two pieces of information from Text 1`)}
                   </td>
                   <td className="py-2 pe-4">2 marks</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
@@ -621,7 +619,7 @@ export default function GradeBoundariesPage() {
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q2</td>
                   <td className="py-2 pe-4">
-                    {tr(`Short response &mdash; two pieces of information from Text 1`)}
+                    {tr(`Short response - two pieces of information from Text 1`)}
                   </td>
                   <td className="py-2 pe-4">2 marks</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
@@ -630,7 +628,7 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pe-4 font-semibold">Q3</td>
                   <td className="py-2 pe-4">
                     {tr(
-                      `Language and structure &mdash; analyse how the writer achieves effects in Text 1`,
+                      `Language and structure - analyse how the writer achieves effects in Text 1`,
                     )}
                   </td>
                   <td className="py-2 pe-4">15 marks</td>
@@ -639,7 +637,7 @@ export default function GradeBoundariesPage() {
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q4</td>
                   <td className="py-2 pe-4">
-                    {tr(`Short response &mdash; one piece of explicit information from Text 2`)}
+                    {tr(`Short response - one piece of explicit information from Text 2`)}
                   </td>
                   <td className="py-2 pe-4">1 mark</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
@@ -647,7 +645,7 @@ export default function GradeBoundariesPage() {
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q5</td>
                   <td className="py-2 pe-4">
-                    {tr(`Short response &mdash; one piece of explicit information from Text 2`)}
+                    {tr(`Short response - one piece of explicit information from Text 2`)}
                   </td>
                   <td className="py-2 pe-4">1 mark</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
@@ -656,7 +654,7 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pe-4 font-semibold">Q6</td>
                   <td className="py-2 pe-4">
                     {tr(
-                      `Evaluation &mdash; evaluate how successfully the writer achieves a stated effect in Text 2`,
+                      `Evaluation - evaluate how successfully the writer achieves a stated effect in Text 2`,
                     )}
                   </td>
                   <td className="py-2 pe-4">15 marks</td>
@@ -664,9 +662,7 @@ export default function GradeBoundariesPage() {
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q7(a)</td>
-                  <td className="py-2 pe-4">
-                    {tr(`Summary &mdash; the ideas both texts present`)}
-                  </td>
+                  <td className="py-2 pe-4">{tr(`Summary - the ideas both texts present`)}</td>
                   <td className="py-2 pe-4">6 marks</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
                 </tr>
@@ -674,7 +670,7 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pe-4 font-semibold">Q7(b)</td>
                   <td className="py-2 pe-4">
                     {tr(
-                      `Comparison &mdash; compare how the two writers present their ideas and perspectives`,
+                      `Comparison - compare how the two writers present their ideas and perspectives`,
                     )}
                   </td>
                   <td className="py-2 pe-4">14 marks</td>
@@ -682,9 +678,7 @@ export default function GradeBoundariesPage() {
                 </tr>
                 <tr className="bg-primary/10">
                   <td className="py-2 pe-4 font-semibold">Q8 or Q9</td>
-                  <td className="py-2 pe-4">
-                    {tr(`Transactional writing &mdash; answer one task`)}
-                  </td>
+                  <td className="py-2 pe-4">{tr(`Transactional writing - answer one task`)}</td>
                   <td className="py-2 pe-4">40 marks</td>
                   <td className="py-2 pe-4">
                     {tr(`Content and organisation (AO5, 24) + Technical accuracy (AO6, 16)`)}

@@ -215,10 +215,16 @@ describe('what the suite runs in', () => {
     // armed until its fetched drawing arrives, and is released by a failure or
     // a time limit. That is state set by effects, an observer and a settled
     // fetch, none of which runs when a component is rendered to a string.
+    // Then to 26, landed on 2 October 2026, for the-reader-decodes-what-it-strips.test.tsx.
+    // The full-text reader strips tags from each play's HTML and hands the rest
+    // to React as text, so "&amp;c." reached eight live pages literally. Whether
+    // the reader shows "&c." exists only in what the component renders: the
+    // decoder passing its own unit tests would not show the viewer calls it,
+    // and the mutation that removes that call fails only the render assertion.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(25)
+    ).toBeLessThanOrEqual(26)
   })
 })
 

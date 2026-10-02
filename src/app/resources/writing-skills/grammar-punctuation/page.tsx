@@ -149,7 +149,7 @@ export default async function GrammarPunctuationPage() {
             </Link>
           </li>
           <li>/</li>
-          <li className="font-medium text-foreground">{tr(`Grammar &amp; Punctuation`)}</li>
+          <li className="font-medium text-foreground">{tr(`Grammar & Punctuation`)}</li>
         </ol>
       </nav>
 
@@ -780,7 +780,7 @@ export default async function GrammarPunctuationPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-foreground text-sm">
-                        {tr(`Compound subjects with &quot;or&quot; / &quot;nor&quot;:`)}
+                        {tr(`Compound subjects with "or" / "nor":`)}
                       </p>
                       <p className="text-sm mt-1">
                         Verb agrees with the nearest subject: &quot;Neither the teacher nor the
@@ -863,9 +863,7 @@ export default async function GrammarPunctuationPage() {
                         {tr(`Names ending in S:`)}
                       </p>
                       <p className="text-sm">
-                        {tr(
-                          `Both &quot;James&apos;s book&quot; and &quot;James&apos; book&quot; are acceptable. Be consistent.`,
-                        )}
+                        {tr(`Both "James's book" and "James' book" are acceptable. Be consistent.`)}
                       </p>
                     </div>
                   </div>

@@ -995,7 +995,7 @@ export default function MerchantOfVeniceRevisionPage() {
         <div id="the-trial-scene">
           <Section
             id="trial"
-            title={tr(`The Trial Scene &mdash; Detailed Analysis`)}
+            title={tr(`The Trial Scene - Detailed Analysis`)}
             badge="Act 4, Scene 1"
             colour="bg-red-600"
           >
@@ -1029,18 +1029,18 @@ export default function MerchantOfVeniceRevisionPage() {
                         <td className="px-4 py-2 font-medium text-foreground">Opening</td>
                         <td className="px-4 py-2 text-muted-foreground">
                           {tr(
-                            `The Duke appeals to Shylock for mercy. Shylock refuses, citing the law and his &ldquo;humour.&rdquo;`,
+                            `The Duke appeals to Shylock for mercy. Shylock refuses, citing the law and his “humour.”`,
                           )}
                         </td>
                         <td className="px-4 py-2 text-muted-foreground">
                           {tr(
-                            `Shylock&apos;s animal imagery (rats, pigs) dehumanises his own position. The Duke&apos;s bias is clear.`,
+                            `Shylock's animal imagery (rats, pigs) dehumanises his own position. The Duke's bias is clear.`,
                           )}
                         </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-2 font-medium text-foreground">
-                          {tr(`Bassanio&apos;s offer`)}
+                          {tr(`Bassanio's offer`)}
                         </td>
                         <td className="px-4 py-2 text-muted-foreground">
                           Bassanio offers twice and then three times the sum. Shylock refuses all
@@ -1048,17 +1048,17 @@ export default function MerchantOfVeniceRevisionPage() {
                         </td>
                         <td className="px-4 py-2 text-muted-foreground">
                           {tr(
-                            `The escalating offers show desperation. Shylock&apos;s refusal proves this is about principle (revenge), not profit.`,
+                            `The escalating offers show desperation. Shylock's refusal proves this is about principle (revenge), not profit.`,
                           )}
                         </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-2 font-medium text-foreground">
-                          {tr(`Portia&apos;s mercy speech`)}
+                          {tr(`Portia's mercy speech`)}
                         </td>
                         <td className="px-4 py-2 text-muted-foreground">
                           {tr(
-                            `Disguised as Balthazar, Portia delivers the &ldquo;quality of mercy&rdquo; speech.`,
+                            `Disguised as Balthazar, Portia delivers the “quality of mercy” speech.`,
                           )}
                         </td>
                         <td className="px-4 py-2 text-muted-foreground">
@@ -1076,13 +1076,13 @@ export default function MerchantOfVeniceRevisionPage() {
                         </td>
                         <td className="px-4 py-2 text-muted-foreground">
                           {tr(
-                            `Peripeteia (reversal of fortune). Legal wordplay. Portia mirrors Shylock&apos;s own insistence on the letter of the law.`,
+                            `Peripeteia (reversal of fortune). Legal wordplay. Portia mirrors Shylock's own insistence on the letter of the law.`,
                           )}
                         </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-2 font-medium text-foreground">
-                          {tr(`Shylock&apos;s defeat`)}
+                          {tr(`Shylock's defeat`)}
                         </td>
                         <td className="px-4 py-2 text-muted-foreground">
                           Shylock tries to take the money instead. Portia refuses &mdash; he has
@@ -1096,16 +1096,16 @@ export default function MerchantOfVeniceRevisionPage() {
                       </tr>
                       <tr>
                         <td className="px-4 py-2 font-medium text-foreground">
-                          {tr(`The &ldquo;mercy&rdquo;`)}
+                          {tr(`The “mercy”`)}
                         </td>
                         <td className="px-4 py-2 text-muted-foreground">
                           {tr(
-                            `Antonio &ldquo;mercifully&rdquo; allows Shylock to keep half his wealth if he converts to Christianity and leaves his estate to Jessica.`,
+                            `Antonio “mercifully” allows Shylock to keep half his wealth if he converts to Christianity and leaves his estate to Jessica.`,
                           )}
                         </td>
                         <td className="px-4 py-2 text-muted-foreground">
                           {tr(
-                            `Deeply ironic &ldquo;mercy.&rdquo; The forced conversion strips Shylock of his identity. His final line: &ldquo;I am not well.&rdquo;`,
+                            `Deeply ironic “mercy.” The forced conversion strips Shylock of his identity. His final line: “I am not well.”`,
                           )}
                         </td>
                       </tr>
@@ -1285,10 +1285,9 @@ export default function MerchantOfVeniceRevisionPage() {
                         pathos. The forced conversion is &ldquo;mercy&rdquo; that reads as cruelty.
                       </p>
                       <p>
-                        <strong>{tr(`Paragraph 4 (Context/Writer&apos;s intent):`)}</strong> Compare
-                        with Marlowe&apos;s Barabas. Shakespeare gives Shylock complexity and
-                        humanity. Whether Shakespeare intended sympathy or not, the play now
-                        provokes it.
+                        <strong>{tr(`Paragraph 4 (Context/Writer's intent):`)}</strong> Compare with
+                        Marlowe&apos;s Barabas. Shakespeare gives Shylock complexity and humanity.
+                        Whether Shakespeare intended sympathy or not, the play now provokes it.
                       </p>
                       <p>
                         <strong>Conclusion:</strong> The ambiguity is the point &mdash; Shakespeare
@@ -1396,7 +1395,7 @@ export default function MerchantOfVeniceRevisionPage() {
                     </p>
                     <p className="text-xs text-muted-foreground">
                       {tr(
-                        `Use 2-5 word quotations woven into your sentences rather than long block quotes. E.g., &ldquo;Shylock&apos;s plea that Jews have &lsquo;hands, organs, dimensions&rsquo; asserts shared humanity.&rdquo;`,
+                        `Use 2-5 word quotations woven into your sentences rather than long block quotes. E.g., “Shylock's plea that Jews have ‘hands, organs, dimensions’ asserts shared humanity.”`,
                       )}
                     </p>
                   </div>
@@ -1423,7 +1422,7 @@ export default function MerchantOfVeniceRevisionPage() {
                   </div>
                   <div className="rounded-lg bg-muted p-4">
                     <p className="text-sm font-semibold text-foreground mb-1">
-                      {tr(`Analyse Shakespeare&apos;s methods`)}
+                      {tr(`Analyse Shakespeare's methods`)}
                     </p>
                     <p className="text-xs text-muted-foreground">
                       Focus on what Shakespeare <em>does</em> as a writer: &ldquo;Shakespeare uses
@@ -1437,7 +1436,7 @@ export default function MerchantOfVeniceRevisionPage() {
                     </p>
                     <p className="text-xs text-muted-foreground">
                       {tr(
-                        `Show how characters change. Shylock moves from resigned patience to vengeful fury. Portia moves from obedient daughter to courtroom authority. Track the arc, don&apos;t just describe a snapshot.`,
+                        `Show how characters change. Shylock moves from resigned patience to vengeful fury. Portia moves from obedient daughter to courtroom authority. Track the arc, don't just describe a snapshot.`,
                       )}
                     </p>
                   </div>

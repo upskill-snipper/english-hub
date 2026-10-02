@@ -536,9 +536,9 @@ export default async function AIFeedbackHeadToHeadPage() {
                 <td className="py-3 pe-4 font-medium text-foreground">{_tr(`Mistake to avoid`)}</td>
                 <td className="py-3 pe-4">-</td>
                 <td className="py-3 pe-4 text-amber-500 font-semibold">
-                  {_tr(`Don&rsquo;t add context`)}
+                  {_tr(`Don’t add context`)}
                 </td>
-                <td className="py-3">{_tr(`Don&rsquo;t over-historicise`)}</td>
+                <td className="py-3">{_tr(`Don’t over-historicise`)}</td>
               </tr>
             </tbody>
           </table>

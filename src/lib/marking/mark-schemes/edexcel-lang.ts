@@ -172,7 +172,7 @@ function ao2Language(max: number, paperMax: number, levels: 3 | 5): AssessmentOb
     {
       label: 'Perceptive analysis',
       descriptor:
-        'Perceptive, detailed analysis of layered meanings and the cumulative effect of the writer&#39;s choices. Terminology is used with precision throughout.',
+        "Perceptive, detailed analysis of layered meanings and the cumulative effect of the writer's choices. Terminology is used with precision throughout.",
       indicators: [
         'Analyses connotation and implication, not only device',
         'References are exact and integrated',
@@ -225,7 +225,7 @@ function ao3Comparison(max: number, paperMax: number): AssessmentObjective {
       {
         label: 'Perceptive comparison',
         descriptor:
-          'Perceptive comparison that discriminates between the writers&#39; positions and the effects of their methods.',
+          "Perceptive comparison that discriminates between the writers' positions and the effects of their methods.",
         indicators: ['Comparison drives the argument', 'Evidence is precise and integrated'],
       },
     ]),
@@ -256,7 +256,7 @@ function ao4Evaluation(max: number, paperMax: number): AssessmentObjective {
       {
         label: 'Clear evaluation',
         descriptor:
-          'Clear and relevant evaluation of the text, supported by appropriate references, showing understanding of the writer&#39;s methods.',
+          "Clear and relevant evaluation of the text, supported by appropriate references, showing understanding of the writer's methods.",
         indicators: [
           'Responds to the statement in the question',
           'References chosen to support judgement',
@@ -272,10 +272,7 @@ function ao4Evaluation(max: number, paperMax: number): AssessmentObjective {
         label: 'Perceptive evaluation',
         descriptor:
           'Perceptive, critical evaluation of how the writer achieves effects, with precisely chosen references.',
-        indicators: [
-          'Discriminating judgement on the writer&#39;s choices',
-          'Argument is cumulative',
-        ],
+        indicators: ["Discriminating judgement on the writer's choices", 'Argument is cumulative'],
       },
     ]),
   }

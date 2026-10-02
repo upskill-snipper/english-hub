@@ -497,9 +497,7 @@ export default async function OCRMacbethPage() {
             </p>
             <div className="space-y-3">
               <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
-                <p className="font-semibold text-primary">
-                  {_tr(`Introduction (3&ndash;4 sentences)`)}
-                </p>
+                <p className="font-semibold text-primary">{_tr(`Introduction (3-4 sentences)`)}</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Address the question directly. State how Shakespeare presents the theme/character
                   in the extract and across the play. Mention relevant context briefly.

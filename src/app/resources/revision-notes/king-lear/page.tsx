@@ -113,7 +113,7 @@ export default function KingLearPage() {
           King Lear &mdash; Complete A-Level Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">
-          {tr(`William Shakespeare, c.1605&ndash;1606`)}
+          {tr(`William Shakespeare, c.1605-1606`)}
         </p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Substantive A-Level notes for one of Shakespeare&apos;s greatest tragedies. Act-by-act
@@ -605,7 +605,7 @@ export default function KingLearPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">{tr(`Lear&apos;s Crown`)}</h4>
+                <h4 className="font-bold text-foreground">{tr(`Lear's Crown`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The crown is given away in I.i and never literally returned. In its place, Lear in
                   IV.vi wears a crown of weeds and wild flowers - &lsquo;crown&apos;d with rank
@@ -616,7 +616,7 @@ export default function KingLearPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">{tr(`Gloucester&apos;s Blinding`)}</h4>
+                <h4 className="font-bold text-foreground">{tr(`Gloucester's Blinding`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The on-stage gouging of Gloucester&apos;s eyes in III.vii is the play&apos;s most
                   violent symbol: a literal enactment of the metaphor that has run through both
@@ -999,7 +999,7 @@ export default function KingLearPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Discuss Shakespeare&apos;s craft (AO2).`)}</strong> Verse vs prose; the
+              <strong>{tr(`Discuss Shakespeare's craft (AO2).`)}</strong> Verse vs prose; the
               breakdown of iambic pentameter in Lear&apos;s mad speeches; the Fool&apos;s shift
               between rhyme and prose; the absence of soliloquy from Lear after Act III.
             </span>
@@ -1007,9 +1007,9 @@ export default function KingLearPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Don&apos;t soften the ending.`)}</strong> Cordelia&apos;s death is meant
-              to be shocking. Avoid the temptation to rescue the play with a moralising conclusion;
-              engage with the open question of whether the ending is redemptive or nihilistic.
+              <strong>{tr(`Don't soften the ending.`)}</strong> Cordelia&apos;s death is meant to be
+              shocking. Avoid the temptation to rescue the play with a moralising conclusion; engage
+              with the open question of whether the ending is redemptive or nihilistic.
             </span>
           </li>
           <li className="flex items-start gap-2">

@@ -15,8 +15,8 @@ export const STRINGS: Record<string, Bi> = {
   s1: { en: `Section A: Reading`, ar: `قسم أ: القراءة` },
   s2: { en: `Section B: Imaginative Writing`, ar: `SECTION B: الكتابة الخيالية` },
   s3: {
-    en: `Section A: Reading &mdash; Question Breakdown`,
-    ar: `SECTION A: القراءة &mdash; تحليل الأسئلة`,
+    en: `Section A: Reading - Question Breakdown`,
+    ar: `SECTION A: القراءة - تحليل الأسئلة`,
   },
   s4: { en: `Short Retrieval (1 mark)`, ar: `استرجاع قصير ( نقطة )` },
   s5: { en: `Reading and retrieval (AO1)`, ar: `قراءة واسترجاع (AO1)` },
@@ -24,7 +24,7 @@ export const STRINGS: Record<string, Bi> = {
   s7: { en: `Short Retrieval / Summary (2 marks)`, ar: `استرجاع قصير / ملخص (2 نقطة)` },
   s8: { en: `Language Analysis (6 marks)`, ar: `تحليل اللغة (6 نقاط)` },
   s9: { en: `Language and structure analysis (AO2)`, ar: `تحليل اللغة والبنية (AO2)` },
-  s10: { en: `Marking guide &mdash; Level descriptors:`, ar: `دليل التقييم وعلامات المستويات:` },
+  s10: { en: `Marking guide - Level descriptors:`, ar: `دليل التقييم وعلامات المستويات:` },
   s11: { en: `Level 1 (1-2 marks):`, ar: `مستوى 1 (1-2 نقاط)` },
   s12: { en: `Level 2 (3-4 marks):`, ar: `مستوى 2 (3-4 نقاط)` },
   s13: { en: `Level 3 (5-6 marks):`, ar: `مستوى 3 (5-6 نقاط)` },
@@ -86,8 +86,8 @@ export const STRINGS: Record<string, Bi> = {
 للتمرين الثاني، حلِّل`,
   },
   s38: {
-    en: `Question 3 &mdash; Language Analysis (Level 3 / 6 marks)`,
-    ar: `السؤال الثالث &mdash; تحليل اللغة (المستوى 3 / 6 نقاط)`,
+    en: `Question 3 - Language Analysis (Level 3 / 6 marks)`,
+    ar: `السؤال الثالث - تحليل اللغة (المستوى 3 / 6 نقاط)`,
   },
   s39: { en: `Extract context (imagined):`, ar: `استدل على السياق (متخيل)` },
   s40: {
@@ -95,8 +95,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `مثلًا: إذا كنت أبغى أذاكر عن الرواية اللي لستيفنسون، شلون أبدأ؟ الحين إحنا نقول لك. أول شيء، اقرأ الفصل الأول بتركيز وايد. بعد كده، حلِّل الأفكار الرئيسية وتذكر الشخصيات`,
   },
   s42: {
-    en: `Question 5 &mdash; Critical Evaluation (Level 4-5 / 13-15 marks)`,
-    ar: `السؤال الخامس &mdash; تقييم ناقد (مستوى 4-5 / 13-15 نقطة)`,
+    en: `Question 5 - Critical Evaluation (Level 4-5 / 13-15 marks)`,
+    ar: `السؤال الخامس - تقييم ناقد (مستوى 4-5 / 13-15 نقطة)`,
   },
   s43: {
     en: `Example opening paragraph:`,
@@ -107,15 +107,15 @@ export const STRINGS: Record<string, Bi> = {
     ar: `شنو اللي ماعندش حظ معه، الحين له فايدة شفناها. هذا يعمل لأنّه...`,
   },
   s45: {
-    en: `Section B &mdash; Imaginative Writing (Level 4 opening)`,
-    ar: `SECTION B &mdash; الكتابة الإبداعية (مستوى 4 البداية)`,
+    en: `Section B - Imaginative Writing (Level 4 opening)`,
+    ar: `SECTION B - الكتابة الإبداعية (مستوى 4 البداية)`,
   },
   s46: {
     en: `Example opening:`,
     ar: `مثلاً، إذا كنت أبغى دراسة قصة ماكبث من قبل شكسبير، إحنا نبدأ بالتركيز على الشخصيات الرئيسية وال eventos المهمة. اقرأ المشاهد الأولى وتذكر الأشياء الأساسية اللي تحدث فيها. بعد كذا، حلِّل`,
   },
   s48: { en: `One-line paragraph opener`, ar: `فقرة مفتاحية واحدة-lined` },
-  s49: { en: `Metaphor &amp; personification:`, ar: `المétaphore و الت personnification` },
+  s49: { en: `Metaphor & personification:`, ar: `المétaphore و الت personnification` },
   s50: { en: `Minor sentences:`, ar: `جمل صغيرة:` },
   s51: { en: `Sensory detail:`, ar: `تفاصيل حسية:` },
   s52: {
@@ -127,7 +127,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Semicolons and dashes`,
     ar: `تستخدم الفاصلة والسطر المستقيم لربط الجمل التي تكون ذات صلة لكنها يمكن أن تشكل جملًا منفصلة ب herself. السطر المستقيم يستخدم أيضًا لإدخال فقرات داخل الجمل أو لجعل الجمل أكثر وضوحًا وإحكامًا`,
   },
-  s55: { en: `Exam Strategy &amp; Timing`, ar: `استراتيجية الامتحان و التوقيت` },
+  s55: { en: `Exam Strategy & Timing`, ar: `استراتيجية الامتحان و التوقيت` },
   s56: { en: `Suggested Time`, ar: `الوقت المقترح` },
   s57: { en: `Key Advice`, ar: `نصائح مهمة` },
   s59: {
@@ -146,7 +146,7 @@ export const STRINGS: Record<string, Bi> = {
   // the critical-evaluation card and the worked example. `tr()` keys on the
   // English text itself, so both lost their Arabic until these were added.
   s63: {
-    en: `Question 4 &mdash; Critical Evaluation (Level 4-5 / 13-15 marks)`,
+    en: `Question 4 - Critical Evaluation (Level 4-5 / 13-15 marks)`,
     ar: `السؤال 4 - التقييم النقدي (المستوى 4-5 / 13-15 نقطة)`,
   },
   s64: { en: `Q5 or Q6 (Writing)`, ar: `السؤال 5 أو 6 (الكتابة)` },

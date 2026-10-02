@@ -25,7 +25,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `أغلب المدارس الدولية تسجل طلابها في الامتداد`,
   },
   s9: {
-    en: `Paper 1 (Reading) + Paper 3 (Directed Writing &amp; Composition)`,
+    en: `Paper 1 (Reading) + Paper 3 (Directed Writing & Composition)`,
     ar: `ورقية 1 (القراءة) + ورقة 3 (الكتابة الموجهة والتأليف)`,
   },
   s11: { en: `Maximum achievable grade is C`, ar: `الدرجة القصوى هي جCCCCCC (Grade C)` },
@@ -44,8 +44,8 @@ export const STRINGS: Record<string, Bi> = {
   s15: { en: `Good understanding with some strong analysis`, ar: `فهما جيد مع تحليل قوي` },
   s16: { en: `Sound understanding of the basics`, ar: `` },
   s18: {
-    en: `Exceptional &mdash; the very highest level of achievement`,
-    ar: `استثنائي &mdash; المستوى الأعلى من الإنجاز`,
+    en: `Exceptional - the very highest level of achievement`,
+    ar: `استثنائي - المستوى الأعلى من الإنجاز`,
   },
   s19: { en: `Low A* / High A`, ar: `أ*A / ب*A` },
   s20: {
@@ -58,20 +58,20 @@ export const STRINGS: Record<string, Bi> = {
   },
   s23: { en: `Low B / High C`, ar: `دوبلاي ب / هاي سي` },
   s24: {
-    en: `Above average &mdash; solid understanding with some analysis`,
+    en: `Above average - solid understanding with some analysis`,
     ar: `فوق المعدل - فهم جيد مع بعض التحليلات`,
   },
   s25: {
-    en: `Standard pass &mdash; demonstrates basic competence`,
+    en: `Standard pass - demonstrates basic competence`,
     ar: `يDemonstrate القدرة الأساسية والمقبوليةitori ي(show basic competence and proficiency)itori`,
   },
   s26: {
-    en: `Below average &mdash; some understanding but inconsistent`,
+    en: `Below average - some understanding but inconsistent`,
     ar: `دون المعدل - بعض الفهم لكن غير مستقر`,
   },
   s27: { en: `Limited understanding and weak expression`, ar: `فهما محدودة وتعبير ضعيف` },
   s28: { en: `Minimal evidence of understanding`, ar: `أدلّة قليلة على الفهم` },
-  s29: { en: `Grade A* (9) &mdash; Exceptional`, ar: `درجة أستاذية (9) - استثنائية` },
+  s29: { en: `Grade A* (9) - Exceptional`, ar: `درجة أستاذية (9) - استثنائية` },
   s30: { en: `Reading (Paper 2 / Paper 1):`, ar: `قراءة (الورقة 2 / الورقة 1) :` },
   s31: {
     en: `Perceptive, original analysis that goes beyond the surface meaning of the text.`,
@@ -98,16 +98,16 @@ export const STRINGS: Record<string, Bi> = {
     ar: `كتابة موجهة تكون مقنعة تمامًا في الصوت والشكل المتبني، مع أفكار تتجاوز ما في النص.`,
   },
   s39: {
-    en: `Extensive, ambitious vocabulary used precisely and naturally &mdash; every word earns its place.`,
-    ar: `لغة واسعة وأماني طموحة مستخدمة بدقة وطبيعية &mdash; كل كلمة تستحق مكانها.`,
+    en: `Extensive, ambitious vocabulary used precisely and naturally: every word earns its place.`,
+    ar: `لغة واسعة وأماني طموحة مستخدمة بدقة وطبيعية - كل كلمة تستحق مكانها.`,
   },
   s40: {
     en: `Varied, inventive structural choices that shape meaning (e.g., cyclical structure, deliberate shifts in pace).`,
     ar: `اختيارات بنائية متنوعة ومبتكرة التي تشكّل المعنى (مثل الهيكل الدوري، والتغييرات المقصودة في وتيرة السرد)`,
   },
   s42: {
-    en: `Grades A&ndash;B (7&ndash;8) &mdash; Strong`,
-    ar: `المستوى أ إلى ب (7 إلى 8) &mdash; قوي`,
+    en: `Grades A-B (7-8) - Strong`,
+    ar: `المستوى أ إلى ب (7 إلى 8) - قوي`,
   },
   s43: {
     en: `Detailed, well-developed analysis with clear explanations of language effects.`,
@@ -138,8 +138,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `مدى واسع من بنية الجمل يستخدم لتحقيق التأثير.`,
   },
   s52: {
-    en: `Grades C&ndash;D (4&ndash;5) &mdash; Competent`,
-    ar: `المستوى الـC إلى D (4 إلى 5) &mdash; كفوء`,
+    en: `Grades C-D (4-5) - Competent`,
+    ar: `المستوى الـC إلى D (4 إلى 5) - كفوء`,
   },
   s53: {
     en: `Some understanding of language effects, but explanations may be thin or general.`,
@@ -170,7 +170,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `التقسيم النحوي للجملة آمن بشكل كبير ولكن هناك بعض التراكب في استخدام الفواصل أو الجمل الطويلة المفرطة.`,
   },
   s62: {
-    en: `Grades E&ndash;F (2&ndash;3) &mdash; Developing`,
+    en: `Grades E-F (2-3) - Developing`,
     ar: `المستوى دوّر و الروشحة (2-3) - قيد التطور`,
   },
   s63: {
@@ -198,7 +198,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Simple sentence forms; frequent errors in spelling and punctuation.`,
     ar: ``,
   },
-  s71: { en: `Grade G (1) &mdash; Elementary`, ar: `درجة ج (1) &mdash; أساسية` },
+  s71: { en: `Grade G (1) - Elementary`, ar: `درجة ج (1) - أساسية` },
   s72: {
     en: `Minimal engagement with the text; may misunderstand the question.`,
     ar: `ítigation بالحد minimal معاملة مع النص؛ شلون فهمت السؤال وايد خطأ.`,
@@ -217,32 +217,32 @@ export const STRINGS: Record<string, Bi> = {
     ar: `لا هيكل واضح؛ الأخطاء تعيق الفهم بشكل كبير.`,
   },
   s79: {
-    en: `Comprehension, language analysis, summary, writer&rsquo;s effect`,
+    en: `Comprehension, language analysis, summary, writer’s effect`,
     ar: `الفهم، تحليل اللغة، الملخص، أثر الكاتب`,
   },
   s80: {
-    en: `Paper 4 &mdash; Directed Writing &amp; Composition`,
-    ar: `ورق الامتحان 4 &ndash; الكتابة الموجهة والتأليف`,
+    en: `Paper 4 - Directed Writing & Composition`,
+    ar: `ورق الامتحان 4 - الكتابة الموجهة والتأليف`,
   },
   s81: {
     en: `Directed writing (from passage), narrative or descriptive composition`,
     ar: `Composition السردية أو الوصفية (من النص)`,
   },
-  s82: { en: `Paper 1 &mdash; Reading`, ar: `ورقية الأولى - القراءة` },
+  s82: { en: `Paper 1 - Reading`, ar: `ورقية الأولى - القراءة` },
   s83: { en: `Comprehension, language analysis, summary`, ar: `الفهم، تحليل اللغة، ملخص` },
   s84: {
-    en: `Paper 3 &mdash; Directed Writing &amp; Composition`,
-    ar: `ورقية 3 &ndash; الكتابة الموجهة والتأليف`,
+    en: `Paper 3 - Directed Writing & Composition`,
+    ar: `ورقية 3 - الكتابة الموجهة والتأليف`,
   },
   s85: {
     en: `Directed writing, narrative or descriptive composition`,
     ar: `Composition السردية أو الوصفية`,
   },
-  s86: { en: `Grade D &rarr; Grade C`, ar: `من الفئة د إلى الفئة سي` },
-  s87: { en: `Grade C &rarr; Grade B`, ar: `من درجة ج إلى درجة ب` },
+  s86: { en: `Grade D → Grade C`, ar: `من الفئة د إلى الفئة سي` },
+  s87: { en: `Grade C → Grade B`, ar: `من درجة ج إلى درجة ب` },
   s88: { en: `Directed writing:`, ar: `كتابة موجهة:` },
-  s89: { en: `Grade B &rarr; Grade A`, ar: `من الدرجة ب إلى الدرجة أ` },
-  s90: { en: `Writer&rsquo;s effect:`, ar: `تأثير الكاتب:` },
+  s89: { en: `Grade B → Grade A`, ar: `من الدرجة ب إلى الدرجة أ` },
+  s90: { en: `Writer’s effect:`, ar: `تأثير الكاتب:` },
   s92: { en: `Reading widely:`, ar: `قراءة واسعة:` },
   s93: { en: `Reading responses`, ar: `ردود على القراءة` },
   s94: { en: `Retelling the story`, ar: `رواية القصة` },
@@ -265,7 +265,7 @@ However, if you want this translated into a more natural Khaleeji Arabic equival
   s107: { en: `Comprehension, summary, and language analysis`, ar: `الفهم، الملخص، وتحليل اللغة` },
   s108: { en: `Paper 2: Reading (Extended)`, ar: `ورقتي 2: القراءة (الموسعة)` },
   s109: {
-    en: `Comprehension, summary, language analysis, and writer&rsquo;s effect`,
+    en: `Comprehension, summary, language analysis, and writer’s effect`,
     ar: `الفهم، الملخص، تحليل اللغة، وتأثير كاتب`,
   },
   s110: { en: `Language Techniques`, ar: `TECHNIQUES AL-LISANIYYAH` },

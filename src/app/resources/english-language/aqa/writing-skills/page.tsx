@@ -436,7 +436,7 @@ export default function WritingSkillsPage() {
               <h4 className="font-bold text-accent">{tr(`Full stop (.)`)}</h4>
               <p className="mt-1 text-sm">
                 {tr(
-                  `Creates finality. Short sentences ending with full stops create a staccato rhythm: &ldquo;He stopped. Listened. Nothing.&rdquo;`,
+                  `Creates finality. Short sentences ending with full stops create a staccato rhythm: “He stopped. Listened. Nothing.”`,
                 )}
               </p>
             </div>

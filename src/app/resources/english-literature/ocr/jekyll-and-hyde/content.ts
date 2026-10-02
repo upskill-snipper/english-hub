@@ -18,17 +18,17 @@ export const STRINGS: Record<string, Bi> = {
   s4: { en: `Contextual understanding:`, ar: `الفهم السياقي` },
   s5: { en: `Written accuracy:`, ar: `دقة الكتابة:` },
   s6: {
-    en: `Chapters 1&ndash;2: The Door and the Search`,
+    en: `Chapters 1-2: The Door and the Search`,
     ar: `الفصلان الأول والثاني: الباب والبحث`,
   },
   s7: {
-    en: `Chapters 3&ndash;4: Jekyll&rsquo;s Dinner Party and the Carew Murder`,
+    en: `Chapters 3-4: Jekyll’s Dinner Party and the Carew Murder`,
     ar: `الفصلين الثالث والرابع: حفلة جيكل وجريمة مقتل كيرو`,
   },
-  s8: { en: `Chapters 5&ndash;7: Jekyll&rsquo;s Withdrawal`, ar: `الفصول 5 إلى 7: انسحاب جايلك` },
+  s8: { en: `Chapters 5-7: Jekyll’s Withdrawal`, ar: `الفصول 5 إلى 7: انسحاب جايلك` },
   s9: { en: `Chapter 8: The Last Night`, ar: `الفصل الثامن: الليلة الأخيرة` },
   s10: {
-    en: `Chapters 9&ndash;10: The Revelations`,
+    en: `Chapters 9-10: The Revelations`,
     ar: `الفصول 9 و 10: الكشوفات وال Révelations`,
   },
   s11: { en: `Dr Henry Jekyll`, ar: `دكتور هنري جيكيل` },
@@ -44,7 +44,7 @@ export const STRINGS: Record<string, Bi> = {
   s22: { en: `Victorian London`, ar: `لندن في عهد فيكتوريا` },
   s23: { en: `Science and Religion`, ar: `العلم والدين` },
   s24: { en: `Robert Louis Stevenson`, ar: `روبرت لويس ستيفنسون` },
-  s25: { en: `Introduction (3&ndash;4 sentences)`, ar: `مقدمة (ثلاثة إلى أربع جمل)` },
+  s25: { en: `Introduction (3-4 sentences)`, ar: `مقدمة (ثلاثة إلى أربع جمل)` },
   s26: {
     en: `Paragraph 1: How the theme/character is introduced`,
     ar: `كيف ي Introduced the موضوع/الشخصية`,
@@ -54,7 +54,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `تطور خلال الفصول الوسطى`,
   },
   s28: {
-    en: `Paragraph 3: The revelations (Chapters 9&ndash;10)`,
+    en: `Paragraph 3: The revelations (Chapters 9-10)`,
     ar: `الDisclosureات (الفصول 9 إلى 10)`,
   },
   s30: { en: `OCR Exam Technique Tips`, ar: `نصائح تقنية للاختبارات الخاصة بـ OCR` },

@@ -24,7 +24,7 @@ export const STRINGS: Record<string, Bi> = {
   s10: { en: `The Divine Right of Kings`, ar: `حق الله في الملوك` },
   s11: { en: `Jacobean Attitudes to Witchcraft`, ar: `اتجاهات العصر الجاكوبيني تجاه السحر` },
   s12: { en: `Gender Roles`, ar: `Roles الجنسية` },
-  s13: { en: `Introduction (3&ndash;4 sentences)`, ar: `مقدمة (ثلاث إلى أربع جمل)` },
+  s13: { en: `Introduction (3-4 sentences)`, ar: `مقدمة (ثلاث إلى أربع جمل)` },
   s14: { en: `Paragraph 1: Extract analysis`, ar: `تحليل الاستخراج` },
   s15: { en: `Paragraph 2: Extract analysis (continued)`, ar: `تحليل الاستخراج (مُستمر)` },
   s16: {

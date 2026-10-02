@@ -22,7 +22,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s6: { en: `Step-by-step approach:`, ar: `خطوات منهجية:` },
   s7: {
-    en: `Identify the poem&apos;s subject matter, tone, and overall message.`,
+    en: `Identify the poem's subject matter, tone, and overall message.`,
     ar: `ا indentify موضوع القصيدة، وتونها، ورسالتها الكلية.`,
   },
   s8: { en: `Tips for comparison:`, ar: `نصائح للمقارنة:` },
@@ -31,7 +31,7 @@ export const STRINGS: Record<string, Bi> = {
   s12: { en: `Tone and register`, ar: `توني وRegistro` },
   s14: { en: `Symbolism and imagery`, ar: `simbolية والتصوير الحسي` },
   s15: { en: `Repetition and listing`, ar: `التكرار وال liệtsts` },
-  s16: { en: `Structure &amp; Form`, ar: `الهيئة والشكل` },
+  s16: { en: `Structure & Form`, ar: `الهيئة والشكل` },
   s17: { en: `Stanza arrangement`, ar: `ترتيب الأبيات` },
   s18: { en: `Enjambment and caesura`, ar: `anjeimant و قيصرة` },
   s19: { en: `Rhyme scheme`, ar: `النظام الشعري` },

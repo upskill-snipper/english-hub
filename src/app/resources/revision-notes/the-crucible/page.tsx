@@ -819,9 +819,7 @@ export default function CrucibleRevisionPage() {
               </div>
 
               <div>
-                <h3 className="font-bold text-foreground">
-                  {tr(`The Title: &ldquo;The Crucible&rdquo;`)}
-                </h3>
+                <h3 className="font-bold text-foreground">{tr(`The Title: “The Crucible”`)}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   A crucible is a container used to heat metals to extreme temperatures in order to
                   purify them, separating valuable metal from impurities. The title is a metaphor

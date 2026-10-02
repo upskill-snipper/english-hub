@@ -197,7 +197,7 @@ export default async function Paper1Page() {
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <h3 className="font-semibold text-foreground">{_tr(`Section A &mdash; Poetry`)}</h3>
+              <h3 className="font-semibold text-foreground">{_tr(`Section A - Poetry`)}</h3>
               <p className="mt-1 text-sm text-muted-foreground">25 marks</p>
               <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 <li>
@@ -217,7 +217,7 @@ export default async function Paper1Page() {
               </ul>
             </div>
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <h3 className="font-semibold text-foreground">{_tr(`Section B &mdash; Prose`)}</h3>
+              <h3 className="font-semibold text-foreground">{_tr(`Section B - Prose`)}</h3>
               <p className="mt-1 text-sm text-muted-foreground">25 marks</p>
               <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 <li>

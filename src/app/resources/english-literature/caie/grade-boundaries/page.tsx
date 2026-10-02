@@ -192,9 +192,7 @@ export default function GradeBoundariesPage() {
 
           <div className="mt-4 space-y-6">
             <div className="rounded-lg border-s-4 border-success-500 bg-success-50/30 p-5">
-              <h3 className="text-lg font-bold text-success-700">
-                {tr(`Grade A* &mdash; Exceptional`)}
-              </h3>
+              <h3 className="text-lg font-bold text-success-700">{tr(`Grade A* - Exceptional`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ms-5 list-disc space-y-1">
                   <li>
@@ -205,7 +203,7 @@ export default function GradeBoundariesPage() {
                   <li>{tr(`Precise, well-integrated quotations that are analysed in depth.`)}</li>
                   <li>
                     {tr(
-                      `Sophisticated analysis of the writer&rsquo;s methods, including language, form, and structure.`,
+                      `Sophisticated analysis of the writer’s methods, including language, form, and structure.`,
                     )}
                   </li>
                   <li>
@@ -223,9 +221,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-primary bg-blue-500/10/30 p-5">
-              <h3 className="text-lg font-bold text-primary">
-                {tr(`Grades A&ndash;B &mdash; Strong`)}
-              </h3>
+              <h3 className="text-lg font-bold text-primary">{tr(`Grades A-B - Strong`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ms-5 list-disc space-y-1">
                   <li>
@@ -250,9 +246,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-primary bg-blue-500/10/20 p-5">
-              <h3 className="text-lg font-bold text-foreground">
-                {tr(`Grades C&ndash;D &mdash; Competent`)}
-              </h3>
+              <h3 className="text-lg font-bold text-foreground">{tr(`Grades C-D - Competent`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ms-5 list-disc space-y-1">
                   <li>
@@ -265,7 +259,7 @@ export default function GradeBoundariesPage() {
                   </li>
                   <li>
                     {tr(
-                      `Some explanation of the writer&rsquo;s methods with appropriate literary terminology.`,
+                      `Some explanation of the writer’s methods with appropriate literary terminology.`,
                     )}
                   </li>
                   <li>{tr(`General understanding of how the writer creates effects.`)}</li>
@@ -278,9 +272,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-s-4 border-yellow-400 bg-yellow-500/10/30 p-5">
-              <h3 className="text-lg font-bold text-yellow-700">
-                {tr(`Grade E &mdash; Basic pass`)}
-              </h3>
+              <h3 className="text-lg font-bold text-yellow-700">{tr(`Grade E - Basic pass`)}</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ms-5 list-disc space-y-1">
                   <li>
@@ -290,11 +282,9 @@ export default function GradeBoundariesPage() {
                     {tr(`References used to support some points, though not always well-selected.`)}
                   </li>
                   <li>
-                    {tr(
-                      `Some awareness of the writer&rsquo;s methods; some literary terminology used.`,
-                    )}
+                    {tr(`Some awareness of the writer’s methods; some literary terminology used.`)}
                   </li>
-                  <li>{tr(`Basic comment on the effects of the writer&rsquo;s choices.`)}</li>
+                  <li>{tr(`Basic comment on the effects of the writer’s choices.`)}</li>
                   <li>{tr(`Limited awareness of context, which may appear bolted on.`)}</li>
                   <li>{tr(`Writing may lack structure or clear focus in places.`)}</li>
                 </ul>
@@ -303,7 +293,7 @@ export default function GradeBoundariesPage() {
 
             <div className="rounded-lg border-s-4 border-border bg-muted/50 p-5">
               <h3 className="text-lg font-bold text-muted-foreground">
-                {tr(`Grades F&ndash;G &mdash; Below pass`)}
+                {tr(`Grades F-G - Below pass`)}
               </h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ms-5 list-disc space-y-1">
@@ -328,7 +318,7 @@ export default function GradeBoundariesPage() {
 
           <div className="mt-4 space-y-5">
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-foreground">{tr(`Grade E &rarr; Grade C`)}</h3>
+              <h3 className="font-bold text-foreground">{tr(`Grade E → Grade C`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Quotations:</strong> Move beyond retelling the story. Select short,
@@ -353,7 +343,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-foreground">{tr(`Grade C &rarr; Grade A`)}</h3>
+              <h3 className="font-bold text-foreground">{tr(`Grade C → Grade A`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>{tr(`Analysis depth:`)}</strong> Move from explaining what a quotation
@@ -379,7 +369,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border border-border p-5">
-              <h3 className="font-bold text-foreground">{tr(`Grade A &rarr; Grade A*`)}</h3>
+              <h3 className="font-bold text-foreground">{tr(`Grade A → Grade A*`)}</h3>
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>{tr(`Conceptualised response:`)}</strong> Frame your essay around a clear
@@ -393,7 +383,7 @@ export default function GradeBoundariesPage() {
                   this&hellip;&rdquo;
                 </li>
                 <li>
-                  <strong>{tr(`Writer&rsquo;s craft:`)}</strong> Go beyond individual techniques to
+                  <strong>{tr(`Writer’s craft:`)}</strong> Go beyond individual techniques to
                   consider how the whole text is constructed. How does the opening relate to the
                   ending? How does the structure mirror the themes?
                 </li>
@@ -415,7 +405,7 @@ export default function GradeBoundariesPage() {
           </p>
 
           <h3 className="font-bold text-foreground mb-2">
-            {tr(`Paper 1 &mdash; Poetry and Prose (50%)`)}
+            {tr(`Paper 1 - Poetry and Prose (50%)`)}
           </h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -442,7 +432,7 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pe-4 font-semibold">Prose</td>
                   <td className="py-2 pe-4">25 marks</td>
                   <td className="py-2 pe-4">
-                    {tr(`Set prose texts &mdash; passage-based and essay questions`)}
+                    {tr(`Set prose texts - passage-based and essay questions`)}
                   </td>
                 </tr>
                 <tr className="font-bold">
@@ -455,9 +445,7 @@ export default function GradeBoundariesPage() {
             </table>
           </div>
 
-          <h3 className="font-bold text-foreground mt-6 mb-2">
-            {tr(`Paper 2 &mdash; Drama (50%)`)}
-          </h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">{tr(`Paper 2 - Drama (50%)`)}</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -474,7 +462,7 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pe-4">50 marks</td>
                   <td className="py-2 pe-4">1h 30m</td>
                   <td className="py-2 pe-4">
-                    {tr(`Set drama texts &mdash; passage-based and essay questions`)}
+                    {tr(`Set drama texts - passage-based and essay questions`)}
                   </td>
                 </tr>
                 <tr className="font-bold">

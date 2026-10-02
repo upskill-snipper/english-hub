@@ -19,7 +19,7 @@ Note: The word "Procedure" is kept in Latin as it's a technical term and there i
   },
   s1: { en: `The English Hub`, ar: `The English Hub` },
   s2: { en: `Using the In-Platform Form`, ar: `استخدام الشكل داخل المنصة` },
-  s3: { en: `Help &gt; Make a Complaint`, ar: `مساعدة &gt; شكوِّع` },
+  s3: { en: `Help > Make a Complaint`, ar: `مساعدة > شكوِّع` },
   s4: {
     en: `Your name (or you can complain anonymously)`,
     ar: `اسمك (أو يمكنك الشكوى بأمانة دون ذكر اسم)`,

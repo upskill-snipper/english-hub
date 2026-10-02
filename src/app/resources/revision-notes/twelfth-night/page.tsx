@@ -116,7 +116,7 @@ export default function TwelfthNightPage() {
           Twelfth Night, or What You Will &mdash; Complete Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">
-          {tr(`William Shakespeare, c.1601&ndash;1602`)}
+          {tr(`William Shakespeare, c.1601-1602`)}
         </p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Everything you need for your A-Level and GCSE English Literature exam. Act-by-act plot,
@@ -675,7 +675,7 @@ export default function TwelfthNightPage() {
           <Section title={tr(`Historical and Literary Context`)} icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">{tr(`Composition (c.1601&ndash;1602)`)}</h4>
+                <h4 className="font-bold text-primary">{tr(`Composition (c.1601-1602)`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Twelfth Night was probably written in 1601&ndash;1602. The first recorded
                   performance is in the diary of John Manningham, a law student at the Middle
@@ -735,7 +735,7 @@ export default function TwelfthNightPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Twelfth Night sits at the end of Shakespeare&apos;s great romantic comedy phase,
                   just before the &ldquo;problem plays&rdquo; (<em>{tr(`Measure for Measure`)}</em>,{' '}
-                  <em>{tr(`All&apos;s Well That Ends Well`)}</em>) and the great tragedies (
+                  <em>{tr(`All's Well That Ends Well`)}</em>) and the great tragedies (
                   <em>Hamlet</em> was probably written within a year either side of Twelfth Night).
                   The play already shows the darkening edge of the later comedies: Malvolio&apos;s
                   humiliation, Antonio&apos;s exclusion, and Feste&apos;s closing song push the
@@ -763,10 +763,10 @@ export default function TwelfthNightPage() {
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">{tr(`Festive Comedy: C. L. Barber`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  C. L. Barber&apos;s <em>{tr(`Shakespeare&apos;s Festive Comedy`)}</em> (1959)
-                  defined the dominant twentieth-century reading of Twelfth Night. Barber argued
-                  that Shakespeare&apos;s comedies follow a pattern of &ldquo;saturnalian release
-                  and clarification&rdquo; &mdash; festive inversion temporarily releases social
+                  C. L. Barber&apos;s <em>{tr(`Shakespeare's Festive Comedy`)}</em> (1959) defined
+                  the dominant twentieth-century reading of Twelfth Night. Barber argued that
+                  Shakespeare&apos;s comedies follow a pattern of &ldquo;saturnalian release and
+                  clarification&rdquo; &mdash; festive inversion temporarily releases social
                   pressure, then releases its participants back into a reformed normal. Twelfth
                   Night fits the pattern, but it also strains it: Malvolio&apos;s refusal of
                   resolution, Feste&apos;s closing song, and Antonio&apos;s pain mark the limits of

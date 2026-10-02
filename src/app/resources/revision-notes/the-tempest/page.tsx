@@ -984,7 +984,7 @@ export default function TheTempestRevisionPage() {
               </div>
 
               <div>
-                <h3 className="font-bold text-foreground mb-3">{tr(`Miranda &amp; Ferdinand`)}</h3>
+                <h3 className="font-bold text-foreground mb-3">{tr(`Miranda & Ferdinand`)}</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Quote
                     text="I would not wish / Any companion in the world but you"
@@ -1053,7 +1053,7 @@ export default function TheTempestRevisionPage() {
 
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">
-                  {tr(`Shakespeare&apos;s Farewell to the Theatre`)}
+                  {tr(`Shakespeare's Farewell to the Theatre`)}
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   <em>{tr(`The Tempest`)}</em> is widely considered Shakespeare&apos;s last

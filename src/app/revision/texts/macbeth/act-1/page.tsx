@@ -70,7 +70,7 @@ export default async function MacbethAct1Page() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="me-1 size-3 text-violet-400" />
-              {_tr(`Act 1 - Exposition &amp; Temptation`)}
+              {_tr(`Act 1 - Exposition & Temptation`)}
             </Badge>
             <Badge variant="outline">7 scenes</Badge>
           </div>
@@ -93,7 +93,7 @@ export default async function MacbethAct1Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-violet-400" />
-            {_tr(`Scene 1 - The Witches&apos; Opening`)}
+            {_tr(`Scene 1 - The Witches' Opening`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -107,7 +107,7 @@ export default async function MacbethAct1Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
@@ -116,12 +116,12 @@ export default async function MacbethAct1Page() {
               </li>
               <li>
                 {_tr(
-                  `Macbeth is named before he appears, immediately linking him to the witches&apos; world.`,
+                  `Macbeth is named before he appears, immediately linking him to the witches' world.`,
                 )}
               </li>
               <li>
                 {_tr(
-                  `The paradox &ldquo;when the battle&rsquo;s lost and won&rdquo; introduces the theme of equivocation.`,
+                  `The paradox “when the battle’s lost and won” introduces the theme of equivocation.`,
                 )}
               </li>
             </ul>
@@ -200,20 +200,20 @@ export default async function MacbethAct1Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
-                  `Macbeth is praised as &ldquo;brave Macbeth&rdquo; and &ldquo;Bellona&rsquo;s bridegroom&rdquo; before we meet him.`,
+                  `Macbeth is praised as “brave Macbeth” and “Bellona’s bridegroom” before we meet him.`,
                 )}
               </li>
               <li>
                 {_tr(
-                  `Duncan&apos;s transfer of the Cawdor title unknowingly fulfils the witches&apos; first prophecy.`,
+                  `Duncan's transfer of the Cawdor title unknowingly fulfils the witches' first prophecy.`,
                 )}
               </li>
               <li>
-                {_tr(`The treason of the original Cawdor foreshadows Macbeth&apos;s own betrayal.`)}
+                {_tr(`The treason of the original Cawdor foreshadows Macbeth's own betrayal.`)}
               </li>
             </ul>
           </div>
@@ -279,9 +279,9 @@ export default async function MacbethAct1Page() {
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Links to Themes`)}</h4>
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline">{_tr(`Kingship &amp; Power`)}</Badge>
+              <Badge variant="outline">{_tr(`Kingship & Power`)}</Badge>
               <Badge variant="outline">{_tr(`Appearance vs Reality`)}</Badge>
-              <Badge variant="outline">{_tr(`Gender &amp; Masculinity`)}</Badge>
+              <Badge variant="outline">{_tr(`Gender & Masculinity`)}</Badge>
             </div>
           </div>
         </CardContent>
@@ -308,7 +308,7 @@ export default async function MacbethAct1Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(`The central prophecy is delivered, setting the entire plot in motion.`)}
@@ -320,12 +320,12 @@ export default async function MacbethAct1Page() {
               </li>
               <li>
                 {_tr(
-                  `Macbeth&apos;s aside reveals that the thought of murder is already forming &mdash; he is not purely a victim of manipulation.`,
+                  `Macbeth's aside reveals that the thought of murder is already forming - he is not purely a victim of manipulation.`,
                 )}
               </li>
               <li>
                 {_tr(
-                  `Banquo&apos;s cautious response provides a moral contrast to Macbeth&apos;s excited reaction.`,
+                  `Banquo's cautious response provides a moral contrast to Macbeth's excited reaction.`,
                 )}
               </li>
             </ul>
@@ -449,22 +449,20 @@ export default async function MacbethAct1Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
-                  `Duncan names Malcolm as his heir, blocking Macbeth&apos;s path to the throne and forcing him to consider active intervention rather than passive waiting.`,
+                  `Duncan names Malcolm as his heir, blocking Macbeth's path to the throne and forcing him to consider active intervention rather than passive waiting.`,
                 )}
               </li>
               <li>
                 {_tr(
-                  `Duncan&apos;s comments about the treacherous Cawdor create devastating dramatic irony &mdash; the new Cawdor stands before him, already contemplating murder.`,
+                  `Duncan's comments about the treacherous Cawdor create devastating dramatic irony - the new Cawdor stands before him, already contemplating murder.`,
                 )}
               </li>
               <li>
-                {_tr(
-                  `Macbeth shifts from &ldquo;chance may crown me&rdquo; to actively desiring dark action.`,
-                )}
+                {_tr(`Macbeth shifts from “chance may crown me” to actively desiring dark action.`)}
               </li>
             </ul>
           </div>
@@ -537,7 +535,7 @@ export default async function MacbethAct1Page() {
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline">{_tr(`Appearance vs Reality`)}</Badge>
               <Badge variant="outline">Ambition</Badge>
-              <Badge variant="outline">{_tr(`Kingship &amp; Power`)}</Badge>
+              <Badge variant="outline">{_tr(`Kingship & Power`)}</Badge>
             </div>
           </div>
         </CardContent>
@@ -548,7 +546,7 @@ export default async function MacbethAct1Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-violet-400" />
-            {_tr(`Scene 5 - Lady Macbeth&apos;s Ambition`)}
+            {_tr(`Scene 5 - Lady Macbeth's Ambition`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -564,7 +562,7 @@ export default async function MacbethAct1Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
@@ -578,12 +576,10 @@ export default async function MacbethAct1Page() {
               </li>
               <li>
                 {_tr(
-                  `She takes charge of the murder plot, instructing Macbeth to &ldquo;look like the innocent flower, / But be the serpent under’t.&rdquo;`,
+                  `She takes charge of the murder plot, instructing Macbeth to “look like the innocent flower, / But be the serpent under’t.”`,
                 )}
               </li>
-              <li>
-                {_tr(`Duncan&apos;s visit to their castle creates the opportunity for murder.`)}
-              </li>
+              <li>{_tr(`Duncan's visit to their castle creates the opportunity for murder.`)}</li>
             </ul>
           </div>
           <div>
@@ -678,7 +674,7 @@ export default async function MacbethAct1Page() {
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Links to Themes`)}</h4>
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline">{_tr(`Gender &amp; Masculinity`)}</Badge>
+              <Badge variant="outline">{_tr(`Gender & Masculinity`)}</Badge>
               <Badge variant="outline">Ambition</Badge>
               <Badge variant="outline">{_tr(`The Supernatural`)}</Badge>
               <Badge variant="outline">{_tr(`Appearance vs Reality`)}</Badge>
@@ -706,11 +702,11 @@ export default async function MacbethAct1Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
-                  `Duncan&apos;s praise of the castle is deeply ironic &mdash; he is entering the site of his murder.`,
+                  `Duncan's praise of the castle is deeply ironic - he is entering the site of his murder.`,
                 )}
               </li>
               <li>
@@ -720,7 +716,7 @@ export default async function MacbethAct1Page() {
               </li>
               <li>
                 {_tr(
-                  `The scene&apos;s tranquil surface contrasts with the violence planned beneath it.`,
+                  `The scene's tranquil surface contrasts with the violence planned beneath it.`,
                 )}
               </li>
             </ul>
@@ -767,7 +763,7 @@ export default async function MacbethAct1Page() {
             <h4 className="font-semibold mb-1">{_tr(`Links to Themes`)}</h4>
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline">{_tr(`Appearance vs Reality`)}</Badge>
-              <Badge variant="outline">{_tr(`Kingship &amp; Power`)}</Badge>
+              <Badge variant="outline">{_tr(`Kingship & Power`)}</Badge>
             </div>
           </div>
         </CardContent>
@@ -778,7 +774,7 @@ export default async function MacbethAct1Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-violet-400" />
-            {_tr(`Scene 7 - &ldquo;If It Were Done&rdquo; &mdash; The Decision`)}
+            {_tr(`Scene 7 - “If It Were Done” - The Decision`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -795,20 +791,18 @@ export default async function MacbethAct1Page() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
+            <h4 className="font-semibold mb-1">{_tr(`Key Events & Turning Points`)}</h4>
             <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
-                  `Macbeth decides against the murder &mdash; then is persuaded back by Lady Macbeth.`,
+                  `Macbeth decides against the murder - then is persuaded back by Lady Macbeth.`,
                 )}
               </li>
               <li>
                 {_tr(`This is the turning point of Act 1: the decision to kill Duncan is made.`)}
               </li>
               <li>
-                {_tr(
-                  `Lady Macbeth&apos;s manipulation of gender expectations is at its most powerful.`,
-                )}
+                {_tr(`Lady Macbeth's manipulation of gender expectations is at its most powerful.`)}
               </li>
               <li>{_tr(`The practical plan for the murder is established.`)}</li>
             </ul>
@@ -924,8 +918,8 @@ export default async function MacbethAct1Page() {
             <h4 className="font-semibold mb-1">{_tr(`Links to Themes`)}</h4>
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline">Ambition</Badge>
-              <Badge variant="outline">{_tr(`Gender &amp; Masculinity`)}</Badge>
-              <Badge variant="outline">{_tr(`Guilt &amp; Conscience`)}</Badge>
+              <Badge variant="outline">{_tr(`Gender & Masculinity`)}</Badge>
+              <Badge variant="outline">{_tr(`Guilt & Conscience`)}</Badge>
               <Badge variant="outline">{_tr(`Appearance vs Reality`)}</Badge>
             </div>
           </div>
@@ -944,7 +938,7 @@ export default async function MacbethAct1Page() {
           <ol className="list-decimal ps-5 space-y-3 text-muted-foreground">
             <li>
               {_tr(
-                `Starting with the witches&apos; opening scene, explore how Shakespeare uses the supernatural to create a sense of moral disorder in Act 1. Refer closely to the language of the text in your answer.`,
+                `Starting with the witches' opening scene, explore how Shakespeare uses the supernatural to create a sense of moral disorder in Act 1. Refer closely to the language of the text in your answer.`,
               )}
             </li>
             <li>

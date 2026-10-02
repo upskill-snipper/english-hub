@@ -537,7 +537,7 @@ export default async function PoetryAnalysisPage() {
                   phrases, not just general themes
                 </li>
                 <li>
-                  &bull; <strong>{_tr(`Writer&rsquo;s methods:`)}</strong> how form, structure, and
+                  &bull; <strong>{_tr(`Writer’s methods:`)}</strong> how form, structure, and
                   language create meaning
                 </li>
                 <li>
@@ -689,7 +689,7 @@ export default async function PoetryAnalysisPage() {
                   {/* Form */}
                   <div>
                     <h4 className="text-sm font-semibold text-foreground">
-                      {_tr(`Form &amp; Structure`)}
+                      {_tr(`Form & Structure`)}
                     </h4>
                     <p className="mt-1 text-sm text-muted-foreground">{poem.form}</p>
                   </div>

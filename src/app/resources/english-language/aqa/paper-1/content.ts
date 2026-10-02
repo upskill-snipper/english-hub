@@ -46,7 +46,7 @@ export const STRINGS: Record<string, Bi> = {
   s22: { en: `Some understanding.`, ar: `بعض الفهم.` },
   s23: { en: `Simple, limited comment.`, ar: `comentario وايد سهل ومت Limted` },
   s24: { en: `How to structure your answer`, ar: `كيفية بناء جوابك` },
-  s25: { en: `What &rarr; How &rarr; Why`, ar: `شنو &rarr; شلون &rarr; ليش` },
+  s25: { en: `What → How → Why`, ar: `شنو → شلون → ليش` },
   s26: { en: `Top tips from markers`, ar: `نصائح;top tips من المصححين(markers)` },
   s27: { en: `Zoom in on individual words.`, ar: `ركز على الكلمات الفردية.` },
   s28: { en: `Avoid feature-spotting.`, ar: `تجنب ملاحظة المميزات.` },
@@ -82,15 +82,15 @@ export const STRINGS: Record<string, Bi> = {
   },
   s45: { en: `Critical evaluation (AO4)`, ar: `التقييم النقدي (AO4)` },
   s46: {
-    en: `Clear, relevant evaluation. Thoughtful response. Apt textual references. Clear understanding of writer&rsquo;s methods with subject terminology used accurately.`,
+    en: `Clear, relevant evaluation. Thoughtful response. Apt textual references. Clear understanding of writer’s methods with subject terminology used accurately.`,
     ar: `تقييم واضح ومتعلق بالTopic. ردود فعل معتبرة. إشارة نصية مناسبة. فهم واضح لطرق الكاتب مع استخدام المصطلح الخاص بالموضوع بدقة.`,
   },
   s47: {
-    en: `Some evaluation. Some response to the statement. Some appropriate references. Some understanding of writer&rsquo;s methods.`,
+    en: `Some evaluation. Some response to the statement. Some appropriate references. Some understanding of writer’s methods.`,
     ar: `بعض التقييم. بعض الرد على البيان. بعض الإحالات المناسبة. فهم مناسب لطرق الكاتب.`,
   },
   s48: {
-    en: `Simple, limited evaluation. Simple, limited response. Simple references. Limited awareness of writer&rsquo;s methods.`,
+    en: `Simple, limited evaluation. Simple, limited response. Simple references. Limited awareness of writer’s methods.`,
     ar: `تقييم بسيط ومحدود. ردود فعل بسيطة ومحدودة. مراجعات بسيطة. وعي محدود بطريقة كاتب.`,
   },
   s49: { en: `Open with your position.`, ar: `انفتح بموقعك.` },
@@ -131,12 +131,12 @@ export const STRINGS: Record<string, Bi> = {
   s67: { en: `Planning your response (5 minutes)`, ar: `hoạchتك ردك (5 دقائق)` },
   s68: { en: `For descriptive writing`, ar: `للكتابة الوصفية` },
   s69: {
-    en: `Choose 4-5 &ldquo;zoom points&rdquo; &mdash; specific details you will describe in depth`,
-    ar: `اختر 4-5 نقاط تكبير &mdash; تفاصيل محددة ستشرحها بالتفصيل`,
+    en: `Choose 4-5 “zoom points”: specific details you will describe in depth`,
+    ar: `اختر 4-5 نقاط تكبير - تفاصيل محددة ستشرحها بالتفصيل`,
   },
   s70: {
-    en: `Plan a structural journey: e.g., wide shot &rarr; close up &rarr; sensory detail &rarr; shift in mood &rarr; return to wide shot`,
-    ar: `خطة رحلة بنائية: مثل، لقطة عريضة &rarr; لقطة قريبة &rarr; تفاصيل حسية &rarr; تحول في المزاج &rarr; العودة إلى اللقطة العريضة`,
+    en: `Plan a structural journey: e.g., wide shot → close up → sensory detail → shift in mood → return to wide shot`,
+    ar: `خطة رحلة بنائية: مثل، لقطة عريضة → لقطة قريبة → تفاصيل حسية → تحول في المزاج → العودة إلى اللقطة العريضة`,
   },
   s71: { en: `Decide on a dominant mood or atmosphere`, ar: `حدّد مزاجًا أو جوًّا سائداً` },
   s72: {
@@ -145,12 +145,12 @@ export const STRINGS: Record<string, Bi> = {
   },
   s74: { en: `For narrative writing`, ar: `للكتابة السردية` },
   s75: {
-    en: `Keep the plot simple &mdash; one event, one setting, 1-2 characters`,
-    ar: `kepplot tansif &mdash; wadood, mishwat wahida, majlis wahid, nasabat waheed aw ikhteen`,
+    en: `Keep the plot simple: one event, one setting, 1-2 characters`,
+    ar: `kepplot tansif - wadood, mishwat wahida, majlis wahid, nasabat waheed aw ikhteen`,
   },
   s76: {
-    en: `Plan a clear arc: situation &rarr; complication &rarr; climax &rarr; resolution`,
-    ar: `خطة قصة واضحة: الحالة &rarr; التعقيد &rarr; ذروة &rarr; الحل`,
+    en: `Plan a clear arc: situation → complication → climax → resolution`,
+    ar: `خطة قصة واضحة: الحالة → التعقيد → ذروة → الحل`,
   },
   s78: {
     en: `Plan a strong opening hook and a satisfying ending`,

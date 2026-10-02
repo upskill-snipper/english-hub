@@ -509,7 +509,7 @@ export default async function Paper2Page() {
                       2
                     </span>
                     <span>
-                      {_tr(`Identify the poem&apos;s subject matter, tone, and overall message.`)}
+                      {_tr(`Identify the poem's subject matter, tone, and overall message.`)}
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -592,7 +592,7 @@ export default async function Paper2Page() {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-foreground">
-                    {_tr(`Structure &amp; Form`)}
+                    {_tr(`Structure & Form`)}
                   </h4>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>{_tr(`Stanza arrangement`)}</li>

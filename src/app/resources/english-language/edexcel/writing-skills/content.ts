@@ -55,7 +55,7 @@ export const STRINGS: Record<string, Bi> = {
   s24: { en: `Review Structure`, ar: `راجع structure` },
   s25: { en: `Detailed Evaluation`, ar: `تقييم مفصل` },
   s26: { en: `Personal Voice`, ar: `الصوت الشخصي` },
-  s27: { en: `Conclusion &amp; Recommendation`, ar: `خاتمة وتقديرات` },
+  s27: { en: `Conclusion & Recommendation`, ar: `خاتمة وتقديرات` },
   s29: { en: `Rating: 3/5`, ar: `تقييم: 3 من 5` },
   s30: { en: `The problem is, it tastes ordinary.`, ar: `المشكلة إنها طعمها عادي.` },
   s31: { en: `Essay Writing`, ar: `كتابة المقالات` },
