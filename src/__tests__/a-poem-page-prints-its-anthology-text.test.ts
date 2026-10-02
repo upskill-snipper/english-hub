@@ -307,6 +307,14 @@ const VERIFIED: Verified[] = [
     shape: '56',
     words: 'b8a9f1120b554aae',
   },
+  // Printed paraphrase in place of the poem until 2 October 2026, and restored from AQA's
+  // text the same day. AQA's words are those of the Poetry Bookshop edition (1921).
+  {
+    page: 'src/app/revision/poetry/love-and-relationships/the-farmers-bride/page.tsx',
+    source: 'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF), pp. 9-10',
+    shape: '9,10,10,4,8,5',
+    words: 'b624f65e0d0096fc',
+  },
 ]
 
 /**
@@ -314,8 +322,6 @@ const VERIFIED: Verified[] = [
  * the reason. A page leaves this list when it has been checked and pinned.
  */
 const NOT_PINNED: Record<string, string> = {
-  'src/app/revision/poetry/love-and-relationships/the-farmers-bride/page.tsx':
-    'its rows describe each section in our own words; AQA prints the poem (pp. 9-10), so it can now be restored from that',
   'src/app/revision/poetry/ocr/love-and-relationships/she-dwelt-among-the-untrodden-ways/page.tsx':
     'wider reading: none of the anthologies the site covers prints it, so there is no board text to check it against',
   'src/app/revision/poetry/ocr/power-and-natural-world/the-eagle/page.tsx':
