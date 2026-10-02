@@ -3,60 +3,72 @@ import type { CourseModule } from './courses'
 
 export const litP2Modules: CourseModule[] = [
   // ──────────────────────────────────────────────
-  // MODULE 1 - Paper 2 Overview & Assessment Objectives
+  // MODULE 1 - Paper 2 Overview & what markers look for
   // ──────────────────────────────────────────────
   {
+    // Rewritten 2 October 2026. This overview described a paper Pearson does not set: Section B
+    // open book with a clean anthology, Part 1 a single named poem, Part 2 an unseen poem
+    // compared with an anthology poem, context (AO3) in Section A and 4 AO4 marks in Section B.
+    // The 1ET0 specification (Issue 2) has Paper 2 closed book; Section A one two-part question,
+    // (a) an extract for AO2 20 and (b) the whole novel for AO1 20; Section B Part 1 the named
+    // poem, printed, compared with another from the same collection (AO2 15, AO3 5); Part 2 two
+    // unseen poems compared (AO1 8, AO2 12); no AO4 anywhere on the paper. Modules 6 to 10 and
+    // the assessment questions are corrected to match. Modules 2 to 5, on the novel, still teach
+    // context as if Section A assessed it: that is a separate correction. The same text is in
+    // edexcel-lit-p2-modules.ts, which nothing imports.
     id: 'edx-lt2-m1',
-    title: 'Paper 2 Overview & Assessment Objectives',
+    title: 'Paper 2 Overview & what markers look for',
     duration: '45 min',
     content: `
 <h2>Edexcel GCSE English Literature - Paper 2</h2>
 
-<p>Paper 2 is worth <strong>80 marks</strong> and accounts for <strong>50%</strong> of your total Literature GCSE. You have <strong>2 hours and 15 minutes</strong> to complete two sections covering the 19th-century novel and the poetry anthology. This paper tests your ability to write analytically about prose fiction and poetry, respond to an extract, sustain a longer essay argument, and compare poems - all under timed conditions.</p>
+<p>Paper 2 is worth <strong>80 marks</strong> and accounts for <strong>50%</strong> of your total Literature GCSE. You have <strong>2 hours and 15 minutes</strong> to complete two sections: the 19th-century novel, and poetry. You answer four questions, each worth 20 marks. The paper tests your ability to analyse an extract closely, write about a novel as a whole, and compare poems: two from your anthology collection, and two you have never seen before.</p>
 
-<div class="key-term"><strong>Key Term: Open Book (Poetry Anthology)</strong> - In Section B, you are provided with a clean copy of the Edexcel poetry anthology. You may refer to it during the exam, but it must not contain any annotations, highlights, or notes. This means you do not need to memorise poems word-for-word, but you <em>must</em> know them well enough to navigate them quickly.</div>
+<div class="key-term"><strong>Key Term: Closed Book</strong> - Texts are not allowed in the exam. The paper prints an extract of about 400 words from your novel, the named poem from your anthology collection and the two unseen poems. Everything else - the rest of the novel, and the second anthology poem you choose to write about - you must know well enough to quote from memory.</div>
 
 <h3>Paper Structure at a Glance</h3>
 <ul>
-  <li><strong>Section A - 19th-Century Novel (40 marks):</strong> One question on your studied text. You are given an extract and must write an essay that analyses the extract <em>and</em> explores the wider novel. This section is <strong>closed book</strong> - no text is provided beyond the printed extract.</li>
-  <li><strong>Section B Part 1 - Poetry Anthology (20 marks):</strong> One named poem from the anthology. You write an analytical response exploring how the poet presents a theme or idea.</li>
-  <li><strong>Section B Part 2 - Unseen Poetry Comparison (20 marks):</strong> You are given an unseen poem and must compare it with one poem from the anthology. The comparison must cover both content and method.</li>
+  <li><strong>Section A - 19th-Century Novel (40 marks):</strong> One two-part question on your novel. Part (a) asks you to explore an extract of about 400 words, printed on the paper (20 marks). Part (b) is an essay on the novel as a whole (20 marks).</li>
+  <li><strong>Section B Part 1 - Anthology Poetry (20 marks):</strong> One question on the collection you studied. One poem is named and printed on the paper, and you compare it with another poem of your choice from the same collection.</li>
+  <li><strong>Section B Part 2 - Unseen Poetry (20 marks):</strong> One question comparing two contemporary poems you have not seen before. Both are printed on the paper, and they are linked by a theme.</li>
 </ul>
 
-<h3>Assessment Objectives Tested</h3>
+<h3>What Markers Look For</h3>
 <ul>
-  <li><strong>AO1 (Section A &amp; B)</strong> - Read, understand and respond to texts. Use textual references, including quotations, to support and illustrate interpretations.</li>
-  <li><strong>AO2 (Section A &amp; B)</strong> - Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.</li>
-  <li><strong>AO3 (Section A only)</strong> - Show understanding of the relationships between texts and the contexts in which they were written.</li>
-  <li><strong>AO4 (Section B Part 2)</strong> - Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation. <em>4 of the 20 marks in the comparison question are awarded for AO4.</em></li>
+  <li><strong>AO1</strong> - Read, understand and respond to texts: maintain a critical style, develop an informed personal response, and use textual references, including quotations, to support and illustrate interpretations. Assessed in Section A part (b) and in Section B Part 2.</li>
+  <li><strong>AO2</strong> - Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology. Assessed in Section A part (a) and in both parts of Section B.</li>
+  <li><strong>AO3</strong> - Show understanding of the relationships between texts and the contexts in which they were written. Assessed in Section B Part 1 only.</li>
+  <li><strong>AO4</strong> (spelling, punctuation and grammar) is <em>not</em> assessed on Paper 2. All 8 of its marks are on Paper 1.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Section A is worth half the paper, so it deserves half your time. A common error is spending too long on the novel and rushing the poetry. Stick to the timing plan below - practise it under timed conditions before the exam so it becomes automatic.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Section A and Section B are worth 40 marks each, so they deserve roughly equal time. A common error is spending too long on the novel and rushing the poetry. Stick to the timing plan below - practise it under timed conditions before the exam so it becomes automatic.</div>
 
 <h3>Mark Distribution by AO</h3>
 <ul>
-  <li><strong>Section A (Novel):</strong> AO1 - 20 marks, AO2 - 20 marks, AO3 - woven throughout (no separate allocation; examiners reward context where it enhances analysis).</li>
-  <li><strong>Section B Part 1 (Single Poem):</strong> AO1 - 10 marks, AO2 - 10 marks.</li>
-  <li><strong>Section B Part 2 (Comparison):</strong> AO1 - 6 marks, AO2 - 6 marks, AO3 - 4 marks, AO4 - 4 marks.</li>
+  <li><strong>Section A part (a) (Extract):</strong> Writer's methods (AO2) - 20 marks.</li>
+  <li><strong>Section A part (b) (Whole novel):</strong> AO1 - 20 marks.</li>
+  <li><strong>Section B Part 1 (Anthology comparison):</strong> Writer's methods (AO2) - 15 marks, Context (AO3) - 5 marks.</li>
+  <li><strong>Section B Part 2 (Unseen comparison):</strong> AO1 - 8 marks, Writer's methods (AO2) - 12 marks.</li>
 </ul>
 
+<p>Two things follow. Context earns marks only in Section B Part 1, so in Section A use it only where it helps you explain the novel. And no marks on this paper are given for spelling, punctuation and grammar, though clear writing is still how your ideas reach the marker.</p>
+
 <h3>Recommended Timing Plan</h3>
+<p>Pearson sets only the total time. This plan divides it roughly by marks, with a little extra for Section B, where you have three poems on the paper to read.</p>
 <ol>
-  <li><strong>0-5 min:</strong> Read the novel extract carefully. Annotate key words, literary devices, and links to wider themes.</li>
-  <li><strong>5-55 min:</strong> Write your Section A essay (40 marks). Spend roughly half on the extract and half on the wider novel.</li>
-  <li><strong>55-60 min:</strong> Read the named anthology poem in Section B Part 1. Plan three or four analytical points.</li>
-  <li><strong>60-85 min:</strong> Write your single-poem response (20 marks).</li>
-  <li><strong>85-90 min:</strong> Read the unseen poem. Identify points of comparison with the anthology poem.</li>
-  <li><strong>90-125 min:</strong> Write your comparison essay (20 marks). Structure around similarities and differences in theme, language, and form.</li>
-  <li><strong>125-135 min:</strong> Review all answers. Check quotation accuracy, spelling of authors' names, and paragraph coherence.</li>
+  <li><strong>0-30 min:</strong> Section A part (a). Read the extract and the question, annotate key words and methods, and write about the extract (20 marks).</li>
+  <li><strong>30-60 min:</strong> Section A part (b). Plan, then write about the novel as a whole (20 marks).</li>
+  <li><strong>60-95 min:</strong> Section B Part 1. Read the named poem, choose the poem you will compare it with, plan three or four points of comparison and write (20 marks).</li>
+  <li><strong>95-130 min:</strong> Section B Part 2. Read both unseen poems twice, annotate them, then plan and write your comparison (20 marks).</li>
+  <li><strong>130-135 min:</strong> Review all four answers. Check quotation accuracy, the spelling of writers' names, and that every poetry paragraph compares.</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Treating Section A as two separate tasks - one on the extract and one on the rest of the novel. The examiner wants a <em>unified</em> essay that moves fluidly between the extract and the wider text. Use the extract as your launchpad, then broaden your argument with references from elsewhere in the novel, before returning to the extract to reinforce your points.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Treating Section A as one essay. Parts (a) and (b) are separate questions, marked separately for different things: part (a) for close analysis of the extract's language, form and structure (AO2), part (b) for your response to the novel as a whole, supported by references (AO1). Answer each question as it is asked.</div>
 
 <h3>What "Explore" and "Analyse" Mean on This Paper</h3>
 <p>The command words on Paper 2 are precise. <strong>"Explore"</strong> means you should investigate the text in depth, considering multiple interpretations and layers of meaning. <strong>"Analyse"</strong> means you should break down the writer's choices - examining <em>how</em> language, structure, and form create specific effects on the reader. Both require you to go beyond description and engage critically with the text.</p>
 
-<p>In Section B Part 2, the word <strong>"compare"</strong> is critical. You must write about both poems throughout your response - not one and then the other. Integrated comparison is what distinguishes a top-band answer from a mid-range one.</p>
+<p>In both parts of Section B, the word <strong>"compare"</strong> is critical. You must write about both poems throughout your response - not one and then the other. Integrated comparison is what distinguishes a top-band answer from a mid-range one.</p>
 `,
     quiz: [
       {
@@ -76,33 +88,33 @@ export const litP2Modules: CourseModule[] = [
       {
         id: 'edx-lt2-m1-q2',
         question:
-          'Which Assessment Objective is tested ONLY in Section A (the 19th-century novel)?',
+          'Which assessment objective is tested ONLY in Section B Part 1 (the anthology comparison)?',
         options: ['AO1', 'AO2', 'AO3', 'AO4'],
         correct: 2,
         explanation:
-          'AO3 (context) is assessed in Section A, where students must show understanding of the relationship between the novel and the context in which it was written. AO1 and AO2 appear across both sections, and AO4 appears only in Section B Part 2.',
+          'Context (AO3) is worth 5 marks on Paper 2, all of them in Section B Part 1, where you compare two poems from your anthology collection. Section A assesses AO2 (the extract) and AO1 (the whole novel), Section B Part 2 assesses AO1 and AO2, and AO4 is not assessed on Paper 2 at all.',
       },
       {
         id: 'edx-lt2-m1-q3',
         question:
-          'In Section B Part 2 (the comparison question), how many of the 20 marks are awarded for AO4 (quality of written expression)?',
-        options: ['0 marks', '2 marks', '4 marks', '8 marks'],
-        correct: 2,
+          'How many marks on Paper 2 are awarded for spelling, punctuation and grammar (AO4)?',
+        options: ['0 marks', '4 marks', '5 marks', '8 marks'],
+        correct: 0,
         explanation:
-          'Four of the 20 marks on the comparison question are awarded for AO4: vocabulary, sentence structure, spelling, and punctuation. This is the only place on Paper 2 where the quality of your written English is separately assessed.',
+          'None. AO4 is assessed only on Paper 1, where it is worth 8 marks. On Paper 2, clear and accurate writing still helps the marker follow your argument, but it earns no separate marks.',
       },
       {
         id: 'edx-lt2-m1-q4',
-        question: 'Which section of Paper 2 is "open book", and what does that mean in practice?',
+        question: 'Which texts will you have in front of you in the Paper 2 exam?',
         options: [
-          'Section A - you receive the full novel text',
-          'Section B - you receive a clean, unannotated copy of the poetry anthology',
-          'Both sections - you may bring your own annotated texts',
-          'Neither section - the entire paper is closed book',
+          'A clean copy of the whole poetry anthology',
+          'Your own annotated copies of the novel and the anthology',
+          'Only what the paper prints: the novel extract, the named anthology poem and the two unseen poems',
+          'The whole novel, but no poems',
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          'Section B is open book: you are given a clean copy of the Edexcel poetry anthology with no annotations. Section A (the novel) is closed book - you only see the printed extract.',
+          'Paper 2 is closed book: texts are not allowed in the exam. The paper prints an extract of about 400 words from your novel, the named poem from your collection and the two unseen poems. The rest of the novel, and the second anthology poem you choose, you quote from memory.',
       },
     ],
   },
@@ -580,21 +592,35 @@ export const litP2Modules: CourseModule[] = [
   // MODULE 6 - Poetry Anthology: Approaching Anthology Poems
   // ──────────────────────────────────────────────
   {
+    // Until 2 October 2026 this module said the school chooses one of two clusters,
+    // Relationships or Conflict, while listing Conflict and Time and Place, and that the exam
+    // asks for one named poem, not printed, analysed from memory. Pearson's anthology (Issue 4)
+    // has four collections, and Section B Part 1 prints the named poem and asks for a comparison
+    // with another from the same collection; see module 1. Sonnet 43 is now quoted as the
+    // anthology prints it, and the Charge's metre is dactylic, not anapaestic.
     id: 'edx-lt2-m6',
     title: 'Poetry Anthology: Approaching Anthology Poems',
     duration: '55 min',
     content: `
 <h2>The Edexcel Poetry Anthology - How It Works</h2>
 
-<p>Section B tests your <strong>poetry anthology</strong>. Your school chooses one cluster - <strong>Relationships</strong> or <strong>Conflict</strong>. In the exam you analyse <strong>one named poem</strong> for <strong>20 marks</strong>. You are provided with a clean, unannotated copy of the anthology, so you do not need to memorise poems word-for-word - but you must know them well enough to navigate them quickly.</p>
+<p>Section B Part 1 tests your <strong>poetry anthology</strong>. Pearson's anthology has four collections of 15 poems - <strong>Relationships</strong>, <strong>Conflict</strong>, <strong>Time and Place</strong> and <strong>Belonging</strong> - and your school chooses one. In the exam, one poem from your collection is <strong>named and printed</strong> on the paper, and you compare it with <strong>another poem of your choice from the same collection</strong>, for <strong>20 marks</strong>. Your second poem is <em>not</em> printed: the paper is closed book, so you must know it well enough to quote from memory.</p>
 
-<div class="key-term"><strong>Key Term: Poetry Cluster</strong> - A thematic grouping of poems where each poet approaches the theme differently in form, voice, and perspective.</div>
+<div class="key-term"><strong>Key Term: Collection</strong> - Pearson's name for each thematic group of 15 poems in the anthology. Each poet approaches the theme differently in form, voice and perspective, which is what gives you something to compare.</div>
 
-<h3>The Two Clusters (15 Poems Each)</h3>
+<h3>The Four Collections (15 Poems Each)</h3>
+
+<p><strong>Relationships:</strong> La Belle Dame Sans Merci (Keats), A Child to his Sick Grandfather (Baillie), She Walks in Beauty (Byron), A Complaint (Wordsworth), Neutral Tones (Hardy), Sonnet 43 (Barrett Browning), My Last Duchess (Robert Browning), 1st Date - She and 1st Date - He (Cope), Valentine (Duffy), One Flesh (Jennings), i wanna be yours (Cooper Clarke), Love's Dog (Hadfield), Nettles (Scannell), The Manhunt (Armitage), My Father Would Not Show Us (de Kok).</p>
 
 <p><strong>Conflict:</strong> A Poison Tree (Blake), The Destruction of Sennacherib (Byron), Extract from The Prelude (Wordsworth), The Man He Killed (Hardy), Cousin Kate (Rossetti), Half-caste (Agard), Exposure (Owen), The Charge of the Light Brigade (Tennyson), Catrin (Clarke), War Photographer (Satyamurti), Belfast Confetti (Carson), The Class Game (Casey), Poppies (Weir), No Problem (Zephaniah), What Were They Like? (Levertov).</p>
 
-<p><strong>Time and Place:</strong> To Autumn (Keats), Composed Upon Westminster Bridge (Wordsworth), London (Blake), I started Early - Took my Dog (Dickinson), Where the Picnic was (Hardy), Adlestrop (Thomas), Home Thoughts from Abroad (Browning), First Flight (Fanthorpe), Stewart Island (Adcock), Presents from my Aunts in Pakistan (Alvi), Hurricane Hits England (Nichols), Nothing's Changed (Afrika), Postcard from a Travel Snob (Hannah), In Romney Marsh (Davidson), Absence (Jennings).</p>
+<p><strong>Time and Place:</strong> To Autumn (Keats), Composed upon Westminster Bridge (Wordsworth), London (Blake), I started Early - Took my Dog (Dickinson), Where the Picnic was (Hardy), Adlestrop (Thomas), Home Thoughts from Abroad (Browning), First Flight (Fanthorpe), Stewart Island (Adcock), Presents from my Aunts in Pakistan (Alvi), Hurricane Hits England (Nichols), Nothing's Changed (Afrika), Postcard from a Travel Snob (Hannah), In Romney Marsh (Davidson), Absence (Jennings).</p>
+
+<p><strong>Belonging:</strong> Peckham Rye Lane (Blakemore), Us (Kunial), In Wales, wanting to be Italian (Dharker), Kumukanda (Chingonyi), Jamaican British (Antrobus), My Mother's Kitchen (Hardi), The Émigrée (Rumens), To My Sister (Wordsworth), Sunday Dip (Clare), Mild the Mist Upon the Hill (Emily Brontë), Captain Cook (To My Brother) (Landon), Clear and Gentle Stream (Bridges), I Remember, I Remember (Hood), Island Man (Nichols), We Refugees (Zephaniah).</p>
+
+<h3>Choosing Your Second Poem</h3>
+
+<p>You cannot know in advance which poem will be named, so prepare pairings. For every poem in your collection, know two or three others you could compare it with, and why: a shared theme handled through contrasting methods, or a similar method put to different ends. In the exam, choose the partner that gives you the most to say about the question's theme, not simply your favourite poem. You need context for both poems, because 5 of the 20 marks are for context (AO3).</p>
 
 <h3>The SMILE Framework</h3>
 <ol>
@@ -605,19 +631,19 @@ export const litP2Modules: CourseModule[] = [
   <li><strong>E - Effect:</strong> What response is the poet provoking - sympathy, anger, admiration, unease?</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Always start with literal meaning. If you misread the poem, every analytical point crumbles. Spend the first minute understanding the surface story.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Always start with literal meaning. If you misread the poem, every analytical point crumbles. Spend the first minute understanding the surface story.</div>
 
 <h3>Annotating a Poem</h3>
 <p>Three passes: first write a one-sentence summary, then circle images and note techniques in the margin, finally connect ideas with arrows and mark tone shifts.</p>
 
 <h3>Practice - "Sonnet 43" (Relationships)</h3>
 
-<div class="text-extract"><em>How do I love thee? Let me count the ways.<br/>
+<div class="text-extract"><em>How do I love thee? Let me count the ways! –<br/>
 I love thee to the depth and breadth and height<br/>
 My soul can reach, when feeling out of sight<br/>
-For the ends of being and ideal grace.</em><div class="source">Barrett Browning, <em>Sonnets from the Portuguese</em> (1850)</div></div>
+For the ends of Being and Ideal Grace.</em><div class="source">Barrett Browning, <em>Sonnets from the Portuguese</em> (1850)</div></div>
 
-<p><strong>S:</strong> Petrarchan sonnet; iambic pentameter mirrors certainty. <strong>I:</strong> "Depth and breadth and height" - spatial imagery fills every dimension. <strong>L:</strong> Anaphora ("I love thee") creates prayer-like incantation; religious register ("soul", "grace"). <strong>Context:</strong> Written during Barrett Browning's secret courtship, defying her father.</p>
+<p><strong>S:</strong> Petrarchan sonnet; iambic pentameter mirrors certainty. <strong>I:</strong> "Depth and breadth and height" - spatial imagery fills every dimension. <strong>L:</strong> Anaphora ("I love thee") creates prayer-like incantation; religious register ("soul", "Grace"). <strong>Context:</strong> Written during Barrett Browning's secret courtship, defying her father.</p>
 
 <h3>Practice - "The Charge of the Light Brigade" (Conflict)</h3>
 
@@ -626,18 +652,23 @@ Half a league onward,<br/>
 All in the valley of Death<br/>
 Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></div>
 
-<p><strong>S:</strong> Anapaestic dimeter (mostly) with dactylic refrain ("Rode the six hundred") - together they create the galloping rhythm; end-stopped lines and repetition propel the reader forward. <strong>I:</strong> "Valley of Death" alludes to Psalm 23; capitalised "Death" personifies a waiting presence. <strong>L:</strong> "Half a league" repeated - relentless motion; "onward" reinforces duty. <strong>Context:</strong> Battle of Balaclava, 25 October 1854 (Crimean War) - a miscommunicated order sent the Light Brigade into Russian artillery. Tennyson, then Poet Laureate, wrote the poem within weeks, turning a military blunder into a celebration of courage.</p>
+<p><strong>S:</strong> Dactylic dimeter - two beats a line, each a stressed syllable followed by two unstressed ("HALF a league, HALF a league") - creates the galloping rhythm; end-stopped lines and repetition propel the reader forward. <strong>I:</strong> "Valley of Death" alludes to Psalm 23; capitalised "Death" personifies a waiting presence. <strong>L:</strong> "Half a league" repeated - relentless motion; "onward" reinforces duty. <strong>Context:</strong> Battle of Balaclava, 25 October 1854 (Crimean War) - a miscommunicated order sent the Light Brigade into Russian artillery. Tennyson, then Poet Laureate, wrote the poem within weeks, turning a military blunder into a celebration of courage.</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating every poem identically. Some are best approached through imagery, others through voice or structure. Use SMILE as a checklist, but let the poem guide your focus.</div>
 `,
     quiz: [
       {
         id: 'edx-lt2-m6-q1',
-        question: 'How many marks is the single-poem anthology question worth on Edexcel Paper 2?',
-        options: ['10 marks', '15 marks', '20 marks', '30 marks'],
-        correct: 2,
+        question: 'In Section B Part 1, what does the question ask you to do?',
+        options: [
+          'Analyse one named anthology poem on its own, from memory',
+          'Compare the named poem, printed on the paper, with another poem of your choice from the same collection',
+          'Compare an anthology poem with an unseen poem',
+          'Choose any two poems from a clean copy of the anthology',
+        ],
+        correct: 1,
         explanation:
-          'The anthology question is worth 20 marks. You are given the name of one poem and a clean copy of the anthology to refer to, but you must know the poems well enough to locate quotations quickly under timed conditions.',
+          'One poem from your collection is named and printed on the paper. You compare it with a second poem of your choice from the same collection, which is not printed, so you quote it from memory. The question is worth 20 marks: 15 for language, form and structure (AO2) and 5 for context (AO3).',
       },
       {
         id: 'edx-lt2-m6-q2',
@@ -649,11 +680,11 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       },
       {
         id: 'edx-lt2-m6-q3',
-        question: 'Which cluster does "Sonnet 43" by Elizabeth Barrett Browning belong to?',
-        options: ['Conflict', 'Relationships', 'Power and Identity', 'Time and Place'],
+        question: 'Which collection does "Sonnet 43" by Elizabeth Barrett Browning belong to?',
+        options: ['Conflict', 'Relationships', 'Belonging', 'Time and Place'],
         correct: 1,
         explanation:
-          '"Sonnet 43" is part of the Relationships cluster. It is a Petrarchan sonnet exploring the depth and nature of romantic love, written during Barrett Browning\'s courtship with Robert Browning.',
+          '"Sonnet 43" is in the Relationships collection. It is a Petrarchan sonnet exploring the depth and nature of romantic love, written during Barrett Browning\'s courtship with Robert Browning.',
       },
       {
         id: 'edx-lt2-m6-q4',
@@ -675,15 +706,19 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
   // MODULE 7 - Poetry: Language, Form & Structure
   // ──────────────────────────────────────────────
   {
+    // Until 2 October 2026 the practice extract quoted six lines of Half-caste in words that
+    // are not Agard's as Pearson's anthology prints them: it opened "Half-caste? Explain
+    // yuself," and ended on a question mark where the poem has none. It is now two short
+    // quotations from the anthology.
     id: 'edx-lt2-m7',
     title: 'Poetry: Language, Form & Structure',
     duration: '55 min',
     content: `
 <h2>Poetry: Language, Form &amp; Structure - AO2</h2>
 
-<p>AO2 asks you to <strong>analyse how writers use language, form and structure to create meanings and effects</strong>. Examiners reward candidates who explain <em>why</em> a poet made a choice and <em>how</em> it shapes the reader's experience - not those who spot features.</p>
+<p>Writer's methods (AO2) asks you to <strong>analyse how writers use language, form and structure to create meanings and effects</strong>. Markers reward students who explain <em>why</em> a poet made a choice and <em>how</em> it shapes the reader's experience - not those who spot features.</p>
 
-<div class="key-term"><strong>Key Term: AO2</strong> - Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.</div>
+<div class="key-term"><strong>Key Term: Writer's Methods (AO2)</strong> - Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.</div>
 
 <h3>Language: The Poet's Toolkit</h3>
 
@@ -699,7 +734,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
   <li><strong>Onomatopoeia</strong> - words imitating sounds ("crackle", "hiss") - the reader <em>hears</em> the poem.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Never just name a device - explain its effect. "The sibilance in 'softly she slipped away' creates a hushed tone mirroring stealth." Without effect, you are describing, not analysing.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Never just name a device - explain its effect. "The sibilance in 'softly she slipped away' creates a hushed tone mirroring stealth." Without effect, you are describing, not analysing.</div>
 
 <h3>Form: How the Poem Is Shaped</h3>
 <ul>
@@ -727,9 +762,9 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
 
 <h3>Practice: Annotate This Extract</h3>
 
-<div class="text-extract">Half-caste? Explain yuself,<br/>wha yu mean<br/>when yu say half-caste -<br/>yu mean when Picasso<br/>mix red an green<br/>is a half-caste canvas?<div class="source">John Agard, 'Half-Caste'</div></div>
+<div class="text-extract">Explain yuself<br/>wha yu mean<div class="source">John Agard, 'Half-caste'</div></div>
 
-<p>Consider: the rhetorical questions' effect; how phonetic dialect creates voice; the Picasso analogy; enjambment across short lines building confrontational rhythm.</p>
+<p>Consider: the questions the speaker puts to the listener, which the poem prints without question marks; how phonetic spelling creates a spoken voice; the Picasso analogy ("mix red an green / is a half-caste canvas/"); the slashes where you might expect full stops; and enjambment across short lines building a confrontational rhythm.</p>
 `,
     quiz: [
       {
@@ -743,7 +778,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
         ],
         correct: 1,
         explanation:
-          'AO2 focuses on analysing how writers use language, form and structure to create meanings and effects. It is the key assessment objective for the poetry questions on Paper 2.',
+          "Writer's methods (AO2) focuses on analysing how writers use language, form and structure to create meanings and effects. It is the key skill tested in the poetry questions on Paper 2.",
       },
       {
         id: 'edx-lt2-m7-q2',
@@ -775,14 +810,14 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
         id: 'edx-lt2-m7-q4',
         question: 'Why is "feature-spotting" considered a weak approach in poetry analysis?',
         options: [
-          'Because examiners only want you to discuss content, not technique',
+          'Because markers only want you to discuss content, not technique',
           'Because it identifies techniques without explaining their effect on meaning',
           'Because you should only discuss one technique per paragraph',
           'Because sound devices are not relevant to AO2',
         ],
         correct: 1,
         explanation:
-          'Feature-spotting means listing techniques without analysing their effect. Examiners reward responses that explain how and why a technique creates meaning, not responses that simply name devices like a checklist.',
+          'Feature-spotting means listing techniques without analysing their effect. Markers reward responses that explain how and why a technique creates meaning, not responses that simply name devices like a checklist.',
       },
       {
         id: 'edx-lt2-m7-q5',
@@ -804,25 +839,28 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
   // MODULE 8 - Poetry: Comparison Techniques
   // ──────────────────────────────────────────────
   {
+    // Until 2 October 2026 this module said the 20-mark question compares a named anthology
+    // poem with an unseen poem, and its model paragraph quoted Armitage's Remains, which is in
+    // AQA's anthology, not Pearson's. Section B has two comparisons; see module 1.
     id: 'edx-lt2-m8',
     title: 'Poetry: Comparison Techniques',
     duration: '55 min',
     content: `
-<h2>Poetry: Comparison Techniques - The 20-Mark Question</h2>
+<h2>Poetry: Comparison Techniques - The Two 20-Mark Questions</h2>
 
-<p>This <strong>20-mark</strong> question asks you to compare a <strong>named anthology poem</strong> with an <strong>unseen poem</strong>. You must analyse a poem you have never seen, then build an integrated comparison under timed conditions.</p>
+<p>Both questions in Section B are comparisons, each worth <strong>20 marks</strong>. In <strong>Part 1</strong> you compare the <strong>named anthology poem</strong>, printed on the paper, with <strong>another poem from your collection</strong>, quoted from memory. In <strong>Part 2</strong> you compare <strong>two unseen poems</strong>, both printed on the paper, which you have never read before. The same comparison skills serve both questions.</p>
 
 <div class="key-term"><strong>Key Term: Integrated Comparison</strong> - Discussing both poems within the same paragraphs, moving fluently between them, rather than writing about each separately.</div>
 
-<h3>Approaching the Unseen Poem</h3>
+<h3>Approaching the Unseen Poems (Part 2)</h3>
 
-<p>Spend <strong>3-4 minutes reading</strong> before you plan or write:</p>
+<p>Spend about <strong>5 minutes reading</strong> before you plan or write. Read each poem twice:</p>
 <ol>
   <li><strong>First read - meaning:</strong> What is this about? What is the speaker's situation and mood? Do not worry about techniques yet.</li>
-  <li><strong>Second read - technique:</strong> Underline key choices - imagery, tone shifts, structural features, sound patterns. Note connections to the named poem.</li>
+  <li><strong>Second read - technique:</strong> Underline key choices - imagery, tone shifts, structural features, sound patterns. Note where the two poems meet and where they differ.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If a phrase puzzles you, move on and analyse what you <em>can</em>. Examiners want thoughtful analysis, not a perfect paraphrase.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> If a phrase puzzles you, move on and analyse what you <em>can</em>. Markers are looking for thoughtful analysis, not a perfect paraphrase.</div>
 
 <h3>Comparison Frameworks</h3>
 
@@ -839,26 +877,26 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
   <li><strong>Nuance:</strong> although both poets explore..., they differ in...; while X presents..., Y instead suggests...</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Vague comparisons - "Both poems are about nature." Be specific: "Both use natural imagery, but Wordsworth presents renewal while Hughes depicts predation." Compare <em>treatment</em>, not topic.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Vague comparisons - "Both poems are about war." Be specific: "Both poets write about soldiers under orders, but Tennyson honours the charge as glorious while Owen shows men freezing as they wait, where 'nothing happens'." Compare <em>treatment</em>, not topic.</div>
 
 <h3>Integrated Paragraph Structure</h3>
 <ol>
   <li><strong>Comparative topic sentence</strong> - "Both poets explore separation, but through contrasting structures."</li>
   <li><strong>Evidence + analysis, Poem A</strong> - embed a quotation, analyse method and effect.</li>
-  <li><strong>Pivot to Poem B</strong> - "In contrast, the unseen poet..."</li>
+  <li><strong>Pivot to Poem B</strong> - "In contrast, the second poet..."</li>
   <li><strong>Evidence + analysis, Poem B</strong> - quotation, method, different or similar effect.</li>
   <li><strong>Concluding comment</strong> - what does the comparison reveal?</li>
 </ol>
 
-<div class="text-extract"><strong>Model:</strong> Both poets present memory as haunting. Armitage repeats "probably armed, possibly not" - uncertainty suggests guilt festers because truth cannot be confirmed. Similarly, the unseen poet's "photograph curling at the edges" implies memories deteriorate, yet "cannot stop turning it over" uses enjambment to propel the reader forward. While Armitage's torment stems from a single violent act, the unseen poet's grief is quieter, rooted in slow erosion.<div class="source">Grade 8/9 model comparison paragraph</div></div>
+<div class="text-extract"><strong>Model (Part 1, Conflict):</strong> Both poets present soldiers who obey without question, but to opposite ends. Tennyson turns obedience into heroism: the anaphora of "Their's not to reason why, / Their's but to do and die" makes duty sound like a law, and the galloping rhythm carries the men forward as if the poem itself were cheering them on. Owen's soldiers obey too, yet their only duty is to wait: the refrain "But nothing happens" closes four of the poem's eight stanzas, so the structure enacts the waiting that kills them. Where Tennyson, writing as Poet Laureate weeks after Balaclava, calls on the reader to "Honour the Light Brigade", Owen, an officer who had served on the Western Front, denies his men even a battle: it is the frost, not the enemy, that kills them, and "All their eyes are ice".<div class="source">Grade 8/9 model comparison paragraph</div></div>
 
 <h3>Planning in 5 Minutes</h3>
 
-<p><strong>Venn Diagram:</strong> Left = anthology poem, right = unseen, overlap = shared themes/methods. Paragraphs draw from the overlap; unique features highlight contrasts.</p>
+<p><strong>Venn Diagram:</strong> Left = first poem, right = second poem, overlap = shared themes/methods. Paragraphs draw from the overlap; unique features highlight contrasts.</p>
 
 <p><strong>Comparison Grid:</strong> Columns: <strong>Aspect</strong> | <strong>Poem A</strong> | <strong>Poem B</strong>. List 3-4 aspects (imagery, tone, structure) with brief notes - a ready-made plan.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Aim for 3-4 developed paragraphs, not 5-6 thin ones. Depth outscores breadth. Each paragraph needs a quotation from each poem and a clear comparative point.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Aim for 3-4 developed paragraphs, not 5-6 thin ones. Depth outscores breadth. Each paragraph needs a quotation from each poem and a clear comparative point.</div>
 `,
     quiz: [
       {
@@ -876,11 +914,11 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       },
       {
         id: 'edx-lt2-m8-q2',
-        question: 'What should your first reading of the unseen poem focus on?',
+        question: 'What should your first reading of each unseen poem focus on?',
         options: [
           'Identifying every poetic technique used',
           'Understanding the overall meaning, situation, and mood',
-          'Finding quotations that link to the named poem',
+          'Finding quotations that link the two poems',
           'Counting the number of stanzas and working out the rhyme scheme',
         ],
         correct: 1,
@@ -921,13 +959,19 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
   // MODULE 9 - Poetry: Writing the Comparison Essay
   // ──────────────────────────────────────────────
   {
+    // Until 2 October 2026 this module said the 20-mark comparison sets an anthology poem
+    // against an unseen poem, and its model introduction gave 'War Photographer' to Duffy:
+    // Edexcel's is Carole Satyamurti's (Duffy's is in AQA's anthology). Section B asks for two
+    // comparisons, Part 1 the named anthology poem with another from the same collection and
+    // Part 2 two unseen poems; see module 1. The examples now pair two Conflict poems, quoted as
+    // Pearson's anthology prints them.
     id: 'edx-lt2-m9',
     title: 'Poetry: Writing the Comparison Essay',
     duration: '55 min',
     content: `
 <h2>Writing the 20-Mark Comparison Essay</h2>
 
-<p>The comparison question on Edexcel GCSE English Literature Paper 2 is worth <strong>20 marks</strong> and asks you to compare an anthology poem you have studied with an <strong>unseen poem</strong> printed on the paper. This is the question that separates competent responses from truly impressive ones - and it all comes down to <strong>structure, balance, and genuine comparison</strong>.</p>
+<p>Section B of Edexcel GCSE English Literature Paper 2 asks for two comparison essays, each worth <strong>20 marks</strong>. In <strong>Part 1</strong> you compare the named anthology poem, printed on the paper, with another poem from the same collection; the marks are for language, form and structure (AO2, 15 marks) and context (AO3, 5 marks). In <strong>Part 2</strong> you compare two <strong>unseen poems</strong>, both printed on the paper; the marks are for your response, supported by references (AO1, 8 marks), and for language, form and structure (AO2, 12 marks). The same essay shape serves both, and it all comes down to <strong>structure, balance, and genuine comparison</strong>.</p>
 
 <div class="key-term"><strong>Key Term: Comparison</strong> - A comparison essay does not simply analyse two poems one after the other. It identifies points of similarity and difference and weaves both poems together throughout every paragraph.</div>
 
@@ -936,48 +980,50 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
 <p>A strong comparison essay follows a clear, efficient structure:</p>
 
 <ol>
-  <li><strong>Brief introduction (2-3 sentences):</strong> Name both poems, identify the shared theme or subject, and offer a thesis statement about how the poets approach the subject similarly or differently. For example: <em>"Both 'War Photographer' and the unseen poem explore the aftermath of conflict, yet Duffy focuses on the psychological toll on a civilian observer while the unseen poet foregrounds the physical landscape of destruction."</em></li>
+  <li><strong>Brief introduction (2-3 sentences):</strong> Name both poems, identify the shared theme or subject, and offer a thesis statement about how the poets approach the subject similarly or differently. For example: <em>"Both 'The Charge of the Light Brigade' and 'Exposure' show soldiers carrying out orders, yet Tennyson celebrates their obedience as glorious while Owen exposes the slow suffering of men who can only wait."</em></li>
   <li><strong>3-4 comparative paragraphs:</strong> Each paragraph tackles one point of comparison (e.g. tone, imagery, structure, perspective) and draws evidence from <strong>both</strong> poems. This is where most of your marks are earned.</li>
   <li><strong>Brief conclusion (2-3 sentences):</strong> Summarise how the poets' approaches differ or align, and offer a final evaluative comment about the overall effect on the reader.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Do not write a long introduction. Two or three sentences are enough. The examiner wants to see comparison and analysis, not scene-setting. Get into your first comparative point by the end of the first third of a page.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Do not write a long introduction. Two or three sentences are enough. Markers are looking for comparison and analysis, not scene-setting. Get into your first comparative point by the end of the first third of a page.</div>
 
 <h3>The PETER Framework for Comparison</h3>
 
-<p>Use the <strong>PETER</strong> framework to build each comparative paragraph:</p>
+<p>Use the <strong>PETER</strong> framework to build each comparative paragraph. The example compares two poems from the Conflict collection, as Part 1 asks you to:</p>
 
 <ul>
-  <li><strong>P - Point:</strong> State your comparative point clearly. <em>"Both poets use natural imagery to convey loss, but they do so to very different effect."</em></li>
-  <li><strong>E - Evidence from Poem 1:</strong> Embed a quotation from the anthology poem. <em>"In 'Exposure', Owen describes 'the merciless iced east winds that knive us', where the invented verb 'knive' turns the weather into a weapon."</em></li>
+  <li><strong>P - Point:</strong> State your comparative point clearly. <em>"Both poets show soldiers under attack, but they disagree about who, or what, the enemy is."</em></li>
+  <li><strong>E - Evidence from Poem 1:</strong> Embed a quotation from the first poem. <em>"In 'Exposure', Owen describes 'the merciless iced east winds that knive us', where the invented verb 'knive' turns the weather into a weapon."</em></li>
   <li><strong>T - Technique:</strong> Identify and analyse the method. <em>"Making a verb of 'knive' gives the wind the violence of an attacker, so that the soldiers' real enemy is the weather rather than the men opposite."</em></li>
-  <li><strong>E - Evidence from Poem 2:</strong> Now bring in the unseen poem with a quotation and analysis. <em>"By contrast, the unseen poet writes of 'petals falling like shrapnel', using a simile that inverts expectations - beauty becomes violence."</em></li>
-  <li><strong>R - Response / Comparison:</strong> Draw the two together. <em>"While Owen makes nature itself the soldiers' enemy, the unseen poet turns natural beauty into an image of violence, creating a more detached but equally haunting effect."</em></li>
+  <li><strong>E - Evidence from Poem 2:</strong> Now bring in the second poem with a quotation and analysis. <em>"Tennyson's enemy is human and on every side: 'Cannon to right of them, / Cannon to left of them' hems the riders in with repetition, as the guns hem in the men."</em></li>
+  <li><strong>R - Response / Comparison:</strong> Draw the two together. <em>"Tennyson's soldiers face an enemy they can charge, so they can be heroes; Owen, who served on the Western Front, gives his men an enemy they cannot fight, and leaves them nothing to do but endure."</em></li>
 </ul>
+
+<p>In Part 2 the shape is the same, but both quotations come from the unseen poems on the paper, and context earns no marks there: put your effort into the poets' methods and your own response.</p>
 
 <div class="key-term"><strong>Key Term: Connectives of Comparison</strong> - Use linking phrases to signal comparison: <em>similarly, likewise, in the same way, both poets</em> (for similarity); <em>however, by contrast, whereas, conversely, on the other hand</em> (for difference). These words are the glue that holds a comparison essay together.</div>
 
-<h3>Balancing the Known and the Unseen</h3>
+<h3>Balancing the Two Poems</h3>
 
-<p>One of the biggest challenges is balancing your <strong>anthology poem</strong> (where you have prepared quotations and context) with the <strong>unseen poem</strong> (which you are reading for the first time). Here is how to manage it:</p>
+<p>Each question brings its own risk of imbalance. Here is how to manage it:</p>
 
 <ul>
-  <li><strong>Anthology poem:</strong> You can deploy pre-learned quotations and contextual knowledge. Use this confidence to anchor each paragraph - start with the poem you know, then pivot to the unseen.</li>
-  <li><strong>Unseen poem:</strong> Read it twice before writing. On the first read, identify the subject and tone. On the second, underline striking words, images, and structural features. You do not need to identify every technique - two or three well-analysed quotations are enough.</li>
-  <li><strong>Aim for roughly equal coverage.</strong> If you write fifteen lines on the anthology poem and three lines on the unseen, the examiner will see an unbalanced response. Each PETER paragraph should give comparable space to both texts.</li>
+  <li><strong>Part 1 - the printed poem and the remembered one:</strong> The named poem is in front of you, so it is easy to quote it at length and neglect your second poem, which you must quote from memory. Learn short quotations from every poem in your collection, and bring in context for both poems where it explains a poet's choices: that is where the 5 context marks come from.</li>
+  <li><strong>Part 2 - two unseen poems:</strong> Read each poem twice before writing. On the first read, identify the subject and tone. On the second, underline striking words, images, and structural features. You do not need to identify every technique - two or three well-analysed quotations from each poem are enough. Context is not assessed in this part.</li>
+  <li><strong>Aim for roughly equal coverage.</strong> If you write fifteen lines on one poem and three lines on the other, markers will see an unbalanced response. Each PETER paragraph should give comparable space to both texts.</li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing two separate mini-essays - one on each poem - and calling it a comparison. This "poem A then poem B" approach will cap your mark. Every paragraph must discuss both poems and make explicit comparative points.</div>
 
 <h3>Time Management</h3>
 
-<p>You have approximately <strong>40 minutes</strong> for this question. Divide your time like this:</p>
+<p>You have about <strong>35 minutes</strong> for each question. Divide your time like this:</p>
 
 <table>
   <tr><th>Phase</th><th>Time</th><th>What to do</th></tr>
-  <tr><td>Read &amp; Plan</td><td>5 min</td><td>Read the unseen poem twice. Annotate both poems. Jot down 3-4 comparison points.</td></tr>
-  <tr><td>Write</td><td>30 min</td><td>Introduction + 3-4 PETER paragraphs + conclusion.</td></tr>
-  <tr><td>Review</td><td>5 min</td><td>Check that every paragraph compares both poems. Fix any missing connectives or unclear analysis.</td></tr>
+  <tr><td>Read &amp; Plan</td><td>7 min</td><td>Part 1: read the named poem and the question, choose your second poem, and jot down 3-4 comparison points with a contextual link for each poem. Part 2: read both poems twice, annotate them, and jot down 3-4 comparison points.</td></tr>
+  <tr><td>Write</td><td>25 min</td><td>Introduction + 3-4 PETER paragraphs + conclusion.</td></tr>
+  <tr><td>Review</td><td>3 min</td><td>Check that every paragraph compares both poems. Fix any missing connectives or unclear analysis.</td></tr>
 </table>
 
 <h3>Grade 5 vs Grade 9: What Is the Difference?</h3>
@@ -986,15 +1032,15 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
 
 <ul>
   <li><strong>Grade 5</strong> responses identify similarities and differences and support points with quotations, but the comparison may feel mechanical - "Poem A does this. Poem B does that." Analysis tends to name techniques without fully exploring their effects.</li>
-  <li><strong>Grade 7</strong> responses integrate comparison throughout, use the PETER structure fluently, and begin to explore how context and form shape meaning. Connectives of comparison appear naturally rather than being bolted on.</li>
+  <li><strong>Grade 7</strong> responses integrate comparison throughout, use the PETER structure fluently, and begin to explore how form shapes meaning - and, in Part 1, how context does. Connectives of comparison appear naturally rather than being bolted on.</li>
   <li><strong>Grade 9</strong> responses offer a <strong>conceptualised</strong> comparison - a sophisticated argument about how and why the poets' approaches differ. They explore ambiguity, alternative interpretations, and the effect of structural choices. The comparison feels like a genuine conversation between the two poems, not a checklist.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> To push from Grade 7 to Grade 9, try opening a paragraph with a conceptual point rather than a technique: <em>"Both poets interrogate the idea that memory is a burden, yet they arrive at opposing conclusions."</em> This shows the examiner you are thinking about the poems as whole texts, not just hunting for devices.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> To push from Grade 7 to Grade 9, try opening a paragraph with a conceptual point rather than a technique: <em>"Both poets interrogate the idea that memory is a burden, yet they arrive at opposing conclusions."</em> This shows markers you are thinking about the poems as whole texts, not just hunting for devices.</div>
 
 <h3>Quick Practice</h3>
 
-<p>Take any anthology poem you have studied and imagine comparing it with a poem on a similar theme. Write a single PETER paragraph in no more than eight minutes. Check: does your paragraph mention both poems? Does it include at least one quotation from each? Does it end with a genuine comparative statement? If all three answers are yes, you are on the right track.</p>
+<p>Take any poem from your collection and choose a second poem from the same collection to compare it with. Write a single PETER paragraph in no more than eight minutes. Check: does your paragraph mention both poems? Does it include at least one quotation from each? Does it end with a genuine comparative statement? If all three answers are yes, you are on the right track.</p>
 `,
     quiz: [
       {
@@ -1010,7 +1056,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
         question: 'What is the biggest structural mistake students make in the comparison essay?',
         options: [
           'Writing too many paragraphs',
-          'Using too many quotations from the unseen poem',
+          'Using too many quotations from one poem',
           'Writing two separate mini-essays instead of integrating comparison throughout',
           'Spending too long on the conclusion',
         ],
@@ -1021,18 +1067,18 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       {
         id: 'edx-lt2-m9-q3',
         question:
-          'According to the recommended timing, how long should you spend writing the comparison essay (excluding reading and review)?',
+          'According to the recommended timing, how long should you spend writing each comparison essay (excluding reading and review)?',
         options: ['20 minutes', '25 minutes', '30 minutes', '35 minutes'],
-        correct: 2,
+        correct: 1,
         explanation:
-          'The recommended writing phase is 30 minutes, with 5 minutes for reading and planning the unseen poem and 5 minutes for reviewing your response.',
+          'The recommended writing phase is 25 of the 35 minutes for each question, with 7 minutes for reading and planning and 3 minutes for reviewing your response.',
       },
       {
         id: 'edx-lt2-m9-q4',
         question: 'What distinguishes a Grade 9 comparison from a Grade 5 comparison?',
         options: [
           'A Grade 9 response uses longer quotations',
-          'A Grade 9 response analyses only the unseen poem in detail',
+          'A Grade 9 response analyses only one of the two poems in detail',
           'A Grade 9 response offers a conceptualised argument exploring ambiguity and alternative interpretations',
           'A Grade 9 response always includes historical context for both poems',
         ],
@@ -1047,13 +1093,16 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
   // MODULE 10 - Paper 2 Exam Strategy & Practice
   // ──────────────────────────────────────────────
   {
+    // Until 2 October 2026 this module gave Paper 2 96 marks and an open-book poetry section,
+    // timed a single novel essay, a single anthology poem and an anthology-and-unseen
+    // comparison, and advised bookmarking an annotated anthology. See module 1 for the paper.
     id: 'edx-lt2-m10',
     title: 'Paper 2 Exam Strategy & Practice',
     duration: '60 min',
     content: `
 <h2>Paper 2 Exam Strategy &amp; Practice</h2>
 
-<p>Edexcel GCSE English Literature Paper 2 lasts <strong>2 hours 15 minutes</strong> and covers your 19th-century novel, the poetry anthology, and an unseen poem comparison. With <strong>80 marks</strong> across three distinct tasks, time management is everything. This module gives you a complete timing plan, open-book strategy, common pitfalls, and a revision toolkit to take into exam season.</p>
+<p>Edexcel GCSE English Literature Paper 2 lasts <strong>2 hours 15 minutes</strong> and covers your 19th-century novel, a comparison of two poems from your anthology collection, and a comparison of two unseen poems. With <strong>80 marks</strong> across four 20-mark questions, time management is everything. This module gives you a complete timing plan, a strategy for a closed-book paper, common pitfalls, and a revision toolkit to take into exam season.</p>
 
 <h3>Full Paper 2 Timing Plan</h3>
 
@@ -1061,47 +1110,48 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
 
 <table>
   <tr><th>Section</th><th>Task</th><th>Marks</th><th>Time</th><th>Breakdown</th></tr>
-  <tr><td>A - Novel</td><td>19th-century novel response</td><td>40</td><td>55 min</td><td>5 min plan, 45 min write, 5 min check</td></tr>
-  <tr><td>B Part 1</td><td>Single anthology poem</td><td>20</td><td>30 min</td><td>5 min read/plan, 22 min write, 3 min check</td></tr>
-  <tr><td>B Part 2</td><td>Comparison (anthology + unseen)</td><td>20</td><td>40 min</td><td>8 min read unseen + plan, 28 min write, 4 min check</td></tr>
-  <tr><td colspan="3"><strong>Final review</strong></td><td>10 min</td><td>Re-read all three responses; fix SPaG errors and add missing analysis</td></tr>
+  <tr><td>A (a)</td><td>The extract</td><td>20</td><td>30 min</td><td>5 min read and annotate, 22 min write, 3 min check</td></tr>
+  <tr><td>A (b)</td><td>The novel as a whole</td><td>20</td><td>30 min</td><td>5 min plan, 22 min write, 3 min check</td></tr>
+  <tr><td>B Part 1</td><td>Anthology comparison (named poem + one of your choice)</td><td>20</td><td>35 min</td><td>7 min read and plan, 25 min write, 3 min check</td></tr>
+  <tr><td>B Part 2</td><td>Unseen comparison (two unseen poems)</td><td>20</td><td>35 min</td><td>7 min read both poems and plan, 25 min write, 3 min check</td></tr>
+  <tr><td colspan="3"><strong>Final review</strong></td><td>5 min</td><td>Re-read all four answers; fix slips and add missing analysis</td></tr>
 </table>
 
-<p>This totals <strong>135 minutes</strong> - exactly the time available. There is no spare time built in, which is why discipline with the plan is critical.</p>
+<p>This totals <strong>135 minutes</strong> - exactly the time available. Pearson sets only the total; this split follows the marks, with a little extra for Section B, where three poems on the paper have to be read. There is no spare time built in, which is why discipline with the plan is critical.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Wear a watch or position yourself to see a clock. Write your target finish times at the top of each section before you begin. For example: "Novel - finish by 10:20. Single poem - finish by 10:50. Comparison - finish by 11:30."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Wear a watch or position yourself to see a clock. Write your target finish times at the top of each section before you begin. For example, for a 9:00 start: "Extract - 9:30. Whole novel - 10:00. Anthology comparison - 10:35. Unseen comparison - 11:10."</div>
 
-<h3>Open-Book Strategy</h3>
+<h3>Closed-Book Strategy</h3>
 
-<p>Paper 2 is an <strong>open-book exam</strong> for the poetry section - you will have the anthology in front of you. This is a double-edged sword: it removes the pressure of memorising every quotation, but it can also waste your time if you are not strategic.</p>
+<p>Paper 2 is <strong>closed book</strong>: you may not take the novel or the anthology into the exam. The paper prints the novel extract, the named anthology poem and the two unseen poems; everything else comes from memory.</p>
 
 <ul>
-  <li><strong>Know your poems' page locations.</strong> The clean anthology is given to you in the exam room. Familiarise yourself with the order and page numbers during revision so you can turn straight to the right poem without wasting time searching.</li>
-  <li><strong>Do not re-read familiar poems line by line.</strong> You should already know them well enough to locate quotations quickly. A quick scan to refresh is fine - a full re-read is wasted time.</li>
-  <li><strong>Use the anthology as a reference, not a crutch.</strong> The best responses demonstrate that you have internalised the poems. Glancing down to check a word or line number is efficient; hunting for quotations you have never noticed before is not.</li>
-  <li><strong>For the unseen poem,</strong> you have no prior knowledge - read it twice, annotate heavily, and trust your analytical instincts.</li>
+  <li><strong>Learn short quotations.</strong> For the novel and for every poem in your collection, learn a handful of short, versatile quotations that work for more than one theme. Three words you remember exactly are worth more than a line you half-remember.</li>
+  <li><strong>Prepare your pairings.</strong> For each poem in your collection, know two or three others you could compare it with. Whichever poem is named, you will have a partner ready.</li>
+  <li><strong>Use what is printed.</strong> The extract and the named poem are in front of you, so quote them closely and precisely. Save your memorised quotations for the rest of the novel and for the poem you choose.</li>
+  <li><strong>For the unseen poems,</strong> you have no prior knowledge - read each twice, annotate heavily, and trust your analytical instincts.</li>
 </ul>
 
 <h3>Section A: Novel - Getting It Right</h3>
 
-<p>The 19th-century novel question is worth <strong>40 marks</strong> - the single biggest chunk of the paper. You will be given an extract and asked to analyse a character, theme, or relationship, then extend your discussion to the wider novel.</p>
+<p>Section A is worth <strong>40 marks</strong> - half the paper - in two parts of 20 marks. Part (a) gives you an extract of about 400 words and asks you to explore it; part (b) asks an essay question about the novel as a whole.</p>
 
 <ul>
-  <li><strong>Start with the extract:</strong> Spend your first two paragraphs on close language analysis of the printed passage. Embed quotations and analyse methods.</li>
-  <li><strong>Move to the wider novel:</strong> Your next two or three paragraphs should explore how the theme or character develops elsewhere. Reference specific moments - chapter, scene, key quotation.</li>
-  <li><strong>Context matters:</strong> Weave in relevant social, historical, or literary context where it illuminates the text. Do not bolt on context as a separate paragraph - integrate it naturally.</li>
+  <li><strong>Part (a), the extract:</strong> Stay with the printed passage. Close-read its language, form and structure (AO2): embed short quotations and explain the effect of the writer's choices.</li>
+  <li><strong>Part (b), the whole novel:</strong> Range across the novel. Build an argument that answers the question and support it with specific moments - scenes, chapters, key quotations - from the beginning, middle and end (AO1).</li>
+  <li><strong>Context:</strong> Section A carries no marks for context (AO3). A brief reference that helps you explain the novel does no harm, but it should never replace analysis. The place context earns marks on this paper is Section B Part 1.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Spending too long on the novel and rushing the poetry. The novel is worth 40 marks, but the two poetry questions together are worth 40 marks too. If you spend 70 minutes on the novel, you have only 55 minutes for two poetry essays - a recipe for underperformance.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Spending too long on the novel and rushing the poetry. The novel is worth 40 marks, but the two poetry questions together are worth 40 marks too. If you spend 70 minutes on the novel, you have about an hour left for two poetry comparisons, one of them on poems you have never seen - a recipe for underperformance.</div>
 
 <h3>Common Mistakes to Avoid</h3>
 
 <ul>
-  <li><strong>Unbalanced comparisons:</strong> In the comparison essay, writing extensively about the anthology poem and barely mentioning the unseen poem (or vice versa). Aim for roughly equal coverage in every paragraph.</li>
+  <li><strong>Unbalanced comparisons:</strong> In either comparison, writing extensively about one poem and barely mentioning the other - in Part 1, usually the printed poem at the expense of the one you chose. Aim for roughly equal coverage in every paragraph.</li>
   <li><strong>Feature-spotting without analysis:</strong> Identifying a metaphor or simile but not explaining its effect on the reader. Always ask: <em>so what? What does this make the reader think or feel?</em></li>
   <li><strong>Ignoring structure:</strong> Students often focus on language and forget about structural features - enjambment, stanza breaks, volta, narrative arc. These are easy marks if you address them.</li>
-  <li><strong>Running out of time on the final question:</strong> The comparison essay is last, and fatigued students often write half a response. Stick to the timing plan.</li>
-  <li><strong>Retelling the story:</strong> In the novel section, narrating the plot instead of analysing how the writer creates meaning. The examiner knows the story - they want to see your analytical skill.</li>
+  <li><strong>Running out of time on the final question:</strong> The unseen comparison is last, and fatigued students often write half a response. Stick to the timing plan.</li>
+  <li><strong>Retelling the story:</strong> In the novel section, narrating the plot instead of analysing how the writer creates meaning. Markers know the story - they want to see your analytical skill.</li>
 </ul>
 
 <h3>Revision Techniques</h3>
@@ -1111,29 +1161,29 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
 <ol>
   <li><strong>Quotation flash cards:</strong> For each anthology poem, create cards with 5-6 key quotations on one side and analysis (technique + effect) on the other. For the novel, create cards for key themes with supporting quotations.</li>
   <li><strong>Theme grids:</strong> Draw a grid with poems along the top and themes down the side (power, conflict, identity, nature, loss). Tick where each poem connects. This makes it easy to find comparison pairs for any theme the exam might ask about.</li>
-  <li><strong>Timed practice:</strong> Write at least two full Paper 2 responses under timed conditions before exam day. Mark them against the mark scheme or swap with a study partner.</li>
-  <li><strong>Examiner reports:</strong> Read the published examiner reports for past Edexcel Literature papers. They tell you exactly what students did well and where they lost marks - this is insider knowledge freely available.</li>
+  <li><strong>Timed practice:</strong> Write at least two full Paper 2 responses under timed conditions before exam day. Mark them against the marking guide or swap with a study partner.</li>
+  <li><strong>Marker reports:</strong> Read the published marker reports for past Edexcel Literature papers. They tell you exactly what students did well and where they lost marks - this is insider knowledge freely available.</li>
   <li><strong>Quotation reduction:</strong> Can you express your analysis of a poem in just three quotations? Forcing yourself to select the most versatile quotations builds the kind of focused thinking the exam rewards.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The single most effective revision activity is <strong>timed practice under exam conditions</strong>. Reading notes and highlighting textbooks feels productive, but it does not prepare you for the pressure of writing three essays in 135 minutes. Practise the way you will perform.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The single most effective revision activity is <strong>timed practice under exam conditions</strong>. Reading notes and highlighting textbooks feels productive, but it does not prepare you for the pressure of writing four answers in 135 minutes. Practise the way you will perform.</div>
 
 <h3>Final Exam Day Checklist</h3>
 
 <ul>
-  <li>Black ink pen (plus a spare) and a watch. You will be given a clean, unannotated copy of the poetry anthology in the exam.</li>
+  <li>Black ink pen (plus a spare) and a watch. No texts: the paper is closed book.</li>
   <li>Write your timing targets at the top of the answer booklet before the exam starts.</li>
   <li>Read every question fully before you begin writing - underline command words and key terms.</li>
-  <li>For the novel: start with the extract, then move to the wider text. Do not skip the extract.</li>
-  <li>For the single poem: plan before you write. Identify 3-4 key points and supporting quotations.</li>
-  <li>For the comparison: read the unseen poem twice. Annotate it. Plan your comparison points before writing.</li>
-  <li>In the final 10 minutes: re-read all three responses. Fix spelling errors, add missing connectives, and check that every paragraph includes analysis - not just quotation.</li>
+  <li>For the novel: answer part (a) on the extract and part (b) on the novel as a whole. Each part is marked on its own.</li>
+  <li>For the anthology comparison: read the named poem closely, choose your second poem, and plan 3-4 points of comparison before you write.</li>
+  <li>For the unseen comparison: read both poems twice. Annotate them. Plan your comparison points before writing.</li>
+  <li>In the final 5 minutes: re-read all four answers. Fix slips, add missing connectives, and check that every paragraph includes analysis - not just quotation.</li>
   <li>If you finish early, add an extra analytical point to your weakest response rather than sitting idle.</li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Leaving the exam hall early. Use every minute. Even five minutes of proofreading can catch errors that cost marks - a missing comparative connective, a misspelled character name, or an incomplete sentence at the end of a paragraph.</div>
 
-<p>You have studied the texts, practised the skills, and learned the frameworks. Trust your preparation, manage your time, and show the examiner what you know. Good luck.</p>
+<p>You have studied the texts, practised the skills, and learned the frameworks. Trust your preparation, manage your time, and show markers what you know. Good luck.</p>
 `,
     quiz: [
       {
@@ -1142,29 +1192,29 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
         options: ['1 hour 45 minutes', '2 hours', '2 hours 15 minutes', '2 hours 30 minutes'],
         correct: 2,
         explanation:
-          'Paper 2 is 2 hours 15 minutes (135 minutes). Every minute must be accounted for across the novel response, single poem analysis, and comparison essay.',
+          'Paper 2 is 2 hours 15 minutes (135 minutes). Every minute must be accounted for across the extract question, the whole-novel essay and the two poetry comparisons.',
       },
       {
         id: 'edx-lt2-m10-q2',
         question:
-          'According to the timing plan, how long should you spend reading the unseen poem and planning your comparison essay?',
-        options: ['3 minutes', '5 minutes', '8 minutes', '12 minutes'],
+          'According to the timing plan, how long should you spend reading the two unseen poems and planning your comparison?',
+        options: ['3 minutes', '5 minutes', '7 minutes', '12 minutes'],
         correct: 2,
         explanation:
-          'The recommended plan allocates 8 minutes to reading the unseen poem twice, annotating it, and planning your comparison points before you begin writing.',
+          'The recommended plan allocates 7 minutes to reading both unseen poems twice, annotating them, and planning your comparison points before you begin writing.',
       },
       {
         id: 'edx-lt2-m10-q3',
         question: 'What is the most common timing mistake students make on Paper 2?',
         options: [
-          'Spending too long on the single poem and rushing the novel',
+          'Spending too long on the anthology comparison and rushing the novel',
           'Spending too long on the novel and rushing the poetry questions',
           'Spending too long on the comparison and skipping the final review',
-          'Spending too long reading the unseen poem',
+          'Spending too long reading the unseen poems',
         ],
         correct: 1,
         explanation:
-          'The novel section (40 marks) tempts students to overwrite, but the two poetry questions are also worth 40 marks combined. Sticking to the 55-minute novel allocation is essential.',
+          'The novel section (40 marks) tempts students to overwrite, but the two poetry questions are also worth 40 marks combined. Keep Section A to about an hour.',
       },
       {
         id: 'edx-lt2-m10-q4',
