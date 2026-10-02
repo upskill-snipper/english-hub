@@ -34,7 +34,9 @@ import DoNotGoGentlePage from '@/app/resources/revision-notes/do-not-go-gentle-i
  * last, "the ash tree", is not Hardy's: he wrote "an ash".
  *
  * WHAT IT CHECKS, for every PoemData under src/app that has language devices:
- *  1. lineRef is a row of the poem that is a line, not a stanza break.
+ *  1. lineRef is a row of the poem that is a line, or a part heading the poem
+ *     prints (`heading: true`, which the viewer shows unnumbered), not a
+ *     stanza break.
  *  2. Where that row prints the poem's words, the example's opening words are on
  *     it: its first part, up to an ellipsis, a " / ", an arrow or "vs", as whole
  *     words. Where that part is in no line of the poem, the example is a list of
@@ -110,7 +112,8 @@ const EXCUSED: Record<string, Record<string, string>> = {}
 // ── Reading the pages ───────────────────────────────────────────────────────
 
 type Device = { device: string; example: string; lineRef: number }
-type Poem = { file: string; rows: string[]; devices: Device[] }
+/** `headings`: the rows that are part headings, which the viewer does not number. */
+type Poem = { file: string; rows: string[]; headings: number[]; devices: Device[] }
 
 function sourcesUnder(dir: string): string[] {
   return readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
@@ -137,9 +140,12 @@ function read(file: string, o: ts.ObjectLiteralExpression): Poem | null {
   if (!lines || !devices || !ts.isArrayLiteralExpression(lines)) return null
   if (!ts.isArrayLiteralExpression(devices)) return null
   const rows: string[] = []
+  const headings: number[] = []
   for (const e of lines.elements) {
     const text = ts.isObjectLiteralExpression(e) ? literal(prop(e, 'text')) : undefined
     if (text === undefined) return null
+    if (prop(e as ts.ObjectLiteralExpression, 'heading')?.kind === ts.SyntaxKind.TrueKeyword)
+      headings.push(rows.length)
     rows.push(text)
   }
   const out: Device[] = []
@@ -150,7 +156,7 @@ function read(file: string, o: ts.ObjectLiteralExpression): Poem | null {
     if (!ref || !ts.isNumericLiteral(ref) || example === undefined) return null
     out.push({ device: literal(prop(e, 'device')) ?? '', example, lineRef: Number(ref.text) })
   }
-  return { file, rows, devices: out }
+  return { file, rows, headings, devices: out }
 }
 
 /** Every object literal in the file with both `lines` and `languageDevices`. */
@@ -175,7 +181,12 @@ function rendered(file: string): Poem {
   renderToStaticMarkup(createElement(COMPUTED[file]))
   if (given.length !== 1) throw new Error(`${file} gave the viewer ${given.length} poems`)
   const poem = given[0]
-  return { file, rows: poem.lines.map((l) => l.text), devices: poem.languageDevices }
+  return {
+    file,
+    rows: poem.lines.map((l) => l.text),
+    headings: poem.lines.flatMap((l, i) => (l.heading ? [i] : [])),
+    devices: poem.languageDevices,
+  }
 }
 
 const FILES = sourcesUnder(join(ROOT, 'src/app')).filter((f) =>
@@ -270,11 +281,15 @@ function stanzas(rows: string[]): number[] {
   })
 }
 
-const numbers = (p: Poem) => poemLineNumbers(p.rows.map((text) => ({ text })))
+/** The number the viewer shows on each row: none on a stanza break or a part heading. */
+const numbers = (p: Poem) =>
+  poemLineNumbers(p.rows.map((text, i) => ({ text, heading: p.headings.includes(i) })))
 
 function where(p: Poem, phrase: string): string {
   const n = numbers(p)
-  const at = startRows(p.rows, phrase).map((i) => `row ${i} (line ${n[i]})`)
+  const at = startRows(p.rows, phrase).map(
+    (i) => `row ${i} (${n[i] === null ? 'a heading' : `line ${n[i]}`})`,
+  )
   return `its opening words are on ${at.join(', ')}`
 }
 
@@ -283,9 +298,10 @@ function fault(p: Poem, d: Device): string | null {
   const row = p.rows[d.lineRef]
   if (!Number.isInteger(d.lineRef) || row === undefined) return 'points past the poem'
   if (row.trim() === '') return 'points at a stanza break'
-  const line = numbers(p)[d.lineRef]!
+  const line = numbers(p)[d.lineRef]
   const lines = named(d.example, 'line')
-  if (lines.length && !lines.includes(line)) return `shows line ${line}, names ${lines.join(', ')}`
+  if (lines.length && (line === null || !lines.includes(line)))
+    return `shows ${line === null ? 'no line' : `line ${line}`}, names ${lines.join(', ')}`
   const stanza = stanzas(p.rows)[d.lineRef]
   const inStanzas = named(d.example, 'stanza')
   if (inStanzas.length && !inStanzas.includes(stanza))
@@ -334,6 +350,7 @@ describe('a language-device card', () => {
         '',
         'Nothing beside.',
       ],
+      headings: [],
       devices: [],
     }
     const check = (example: string, lineRef: number) =>
@@ -364,6 +381,25 @@ describe('a language-device card', () => {
     expect(check('[Stanza 2: the ruin]', 0)).toBe('is in stanza 1, names 2')
     expect(check('[Stanza 2: the ruin]', 3)).toBeNull()
     expect(check('Nothing beside (echoing stanza 1)', 3)).toBeNull()
+    // A part heading is not numbered, so a line after it keeps its own number.
+    const parts: Poem = {
+      file: 'fixture',
+      rows: [
+        'I - The Tragedy',
+        'She sits in the tawny vapour',
+        '',
+        'II - The Irony',
+        'Tis the morrow',
+      ],
+      headings: [0, 3],
+      devices: [],
+    }
+    const card = (example: string, lineRef: number) =>
+      fault(parts, { device: 'x', example, lineRef })
+    expect(card('I - The Tragedy / II - The Irony', 0)).toBeNull()
+    expect(card('[Line 2] the morrow', 4)).toBeNull()
+    expect(card('[Line 3] the morrow', 4)).toBe('shows line 2, names 3')
+    expect(card('[Line 1] the heading', 0)).toBe('shows no line, names 1')
   })
 
   it('cites the line its example comes from', () => {

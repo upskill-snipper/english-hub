@@ -37,6 +37,11 @@ export interface PoemAnnotation {
 export interface PoemLine {
   text: string
   annotations?: PoemAnnotation[]
+  /**
+   * A heading the poem prints between its parts ("I - The Tragedy" in A Wife
+   * in London): shown without a line number and not counted as a line.
+   */
+  heading?: boolean
 }
 
 export interface KeyQuote {
@@ -291,10 +296,15 @@ function QuotesPanel({ quotes, locale }: { quotes: KeyQuote[]; locale: Locale })
  * in three stanzas, ran to 14. A student citing a line number from the viewer
  * cited the wrong line. `lineRef` stays an index into `poem.lines`, which is
  * what the highlighting needs; only what is displayed changes.
+ *
+ * A part heading is not a line either. Until 2 October 2026 A Wife in London
+ * printed its two headings, "I - The Tragedy" and "II - The Irony", as rows
+ * like any other, so the viewer numbered the first line of the poem 2 and
+ * every line after the second heading two too high.
  */
 export function poemLineNumbers(lines: readonly PoemLine[]): (number | null)[] {
   let n = 0
-  return lines.map((line) => (line.text.trim() === '' ? null : ++n))
+  return lines.map((line) => (line.text.trim() === '' || line.heading ? null : ++n))
 }
 
 function LanguagePanel({
@@ -462,7 +472,7 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
                     tabIndex={hasAnnotations ? 0 : undefined}
                     aria-label={
                       hasAnnotations
-                        ? `${t('poem_viewer.line')} ${lineNumbers[idx] ?? idx + 1}: ${t('poem_viewer.show')} ${line.annotations!.length} ${line.annotations!.length > 1 ? t('poem_viewer.annotation_plural') : t('poem_viewer.annotation_singular')}`
+                        ? `${line.heading ? line.text : `${t('poem_viewer.line')} ${lineNumbers[idx] ?? idx + 1}`}: ${t('poem_viewer.show')} ${line.annotations!.length} ${line.annotations!.length > 1 ? t('poem_viewer.annotation_plural') : t('poem_viewer.annotation_singular')}`
                         : undefined
                     }
                     aria-expanded={hasAnnotations ? popoverLine === idx : undefined}
@@ -475,11 +485,12 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
                     className={cn(
                       'group flex items-baseline gap-4 rounded-sm px-2 py-0.5 transition-colors duration-100',
                       isBlank ? 'h-5' : '',
+                      line.heading && idx > 0 && 'mt-3',
                       hasAnnotations && 'cursor-pointer hover:bg-muted/40',
                       ...highlights,
                     )}
                   >
-                    {/* Line number */}
+                    {/* Line number: none for a stanza break or a part heading */}
                     <span className="w-6 shrink-0 select-none text-end text-xs tabular-nums text-muted-foreground-subtle">
                       {isBlank ? '' : lineNumbers[idx]}
                     </span>
@@ -488,6 +499,7 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
                     <span
                       className={cn(
                         'text-sm sm:text-base leading-7 text-foreground',
+                        line.heading && 'font-semibold',
                         hasAnnotations &&
                           'underline decoration-dotted decoration-muted-foreground/30 underline-offset-4',
                       )}

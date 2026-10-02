@@ -13,6 +13,15 @@ import { useT } from '@/lib/i18n/use-t'
 const poemData: PoemData = {
   title: 'When We Two Parted',
   poet: 'Lord Byron',
+  // The poem as the AQA anthology prints it (Love and Relationships; AQA, Past
+  // and present: poetry anthology, sample, filestore.aqa.org.uk
+  // AQA-8702-TG-POEMS.PDF), checked line by line against the PDF on 2 October
+  // 2026. Until then this array held 28 lines: the first four of the last
+  // stanza, "In secret we met" to "Thy spirit deceive", were missing, though the
+  // form note has always said four stanzas of eight. It also printed "Sunk chill
+  // on my brow" and "A knell to mine ear" where the anthology has "Sank" and
+  // "in", and some marks that are not the anthology's. The quotations on this
+  // page now follow it too.
   lines: [
     {
       text: 'When we two parted',
@@ -106,7 +115,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'Sunk chill on my brow--',
+      text: 'Sank chill on my brow –',
       annotations: [
         {
           type: 'Sensory imagery',
@@ -146,7 +155,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'And light is thy fame:',
+      text: 'And light is thy fame;',
       annotations: [
         {
           type: 'Double meaning',
@@ -187,7 +196,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'A knell to mine ear;',
+      text: 'A knell in mine ear;',
       annotations: [
         {
           type: 'Metaphor',
@@ -197,7 +206,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: "A shudder comes o'er me--",
+      text: "A shudder comes o'er me –",
       annotations: [
         {
           type: 'Physical reaction',
@@ -227,7 +236,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'Who knew thee too well:--',
+      text: 'Who knew thee too well –',
       annotations: [
         {
           type: 'Ambiguity',
@@ -258,6 +267,46 @@ const poemData: PoemData = {
     },
     { text: '' },
     {
+      text: 'In secret we met –',
+      annotations: [
+        {
+          type: 'Secrecy',
+          note: 'The last stanza names the secret outright. "In secret we met" and "In silence I grieve" are set side by side: because the love was hidden, the grief must be hidden too.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'In silence I grieve,',
+      annotations: [
+        {
+          type: 'Parallelism',
+          note: 'The line mirrors the one before ("In secret ... / In silence ..."), and "silence" looks back to the second line of the poem and forward to its last.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'That thy heart could forget,',
+      annotations: [
+        {
+          type: 'Accusation',
+          note: 'Grief turns to blame: he mourns that her heart could forget him, as stanza 2 said "Thy vows are all broken".',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'Thy spirit deceive.',
+      annotations: [
+        {
+          type: 'Betrayal',
+          note: '"Deceive" goes further than forgetting: it accuses her of falsehood. After it the stanza turns to an imagined future meeting.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
       text: 'If I should meet thee',
       annotations: [
         {
@@ -278,7 +327,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'How should I greet thee?--',
+      text: 'How should I greet thee? –',
       annotations: [
         {
           type: 'Rhetorical question',
@@ -304,8 +353,8 @@ const poemData: PoemData = {
   contextAr: `<p><strong>القصيدة مكتوبة سنة 1816</strong>، وتعكس علاقة سرّية لـByron، يعتقد على نطاق واسع إنها كانت مع <strong>Lady Frances Webster</strong>. العلاقة كان لازم تبقى مخفيّة بسبب الأعراف الاجتماعية في تلك الفترة، يعني Byron ما قدر يعبّر عن حزنه بشكل علني لمّا انتهت.</p>
 <p>التحفّظ العاطفي في القصيدة من السمات المميّزة لأسلوب Byron - هو يصرّف العاطفة العميقة عبر قوالب شعرية مضبوطة، مو عبر فيض عاطفي صريح. <strong>العصر الرومانسي</strong> كان يقدّر العاطفة الفرديّة الكثيفة، بس Byron كثير ما يعبّر عنها عبر السخريّة والـunderstatement.</p>
 <p>السياق الشخصي يضيف طبقات: Byron نفسه كان معروف بفضائحه العاطفية، ومع ذلك هنا يقدّم نفسه على إنه الطرف المظلوم. القصيدة تستكشف كيف إن <strong>السرّية تكبّر الألم</strong> - ما يقدر يشارك حزنه مع أحد.</p>`,
-  summary: `The speaker reflects on a painful parting from a former lover. The relationship was secret, and its ending brought silence rather than public mourning. He recalls the coldness of their final kiss and the signs that foreshadowed future sorrow.\n\nIn the present, hearing the lover's name spoken by others causes him physical pain -- like a funeral bell. He must hide his reaction because nobody knows of their connection. The poem ends with a hypothetical future meeting, but nothing has changed: he would greet them the same way they parted -- with silence and tears.\n\nThe circular structure reinforces the idea that the speaker is trapped in grief, unable to move forward or find closure.`,
-  summaryAr: `المتكلّم (Byron) يتأمّل في فراق مؤلم عن حبيبته السابقة. العلاقة كانت سرّيّة، ونهايتها جابت صمت بدل العزاء العلني. يتذكّر برودة آخر قبلة بينهم، والعلامات اللي توقّعت الحزن اللي راح يعيشه.\n\nفي الحاضر، لمّا الناس يذكرون اسمها، يحسّ بألم جسدي - مثل صوت ناقوس جنازة. ولازم يخفي ردة فعله لأن ما حد يدري عن علاقتهم. القصيدة تنتهي بمشهد افتراضي للقاء مستقبلي، بس ما تغيّر شي: راح يستقبلها بنفس الطريقة اللي افترقوا بها - "with silence and tears".\n\nالبنية الدائرية تأكّد إن المتكلّم محاصر في حزنه، ما يقدر يمشي خطوة لقدّام ولا يلقى خاتمة.`,
+  summary: `The speaker reflects on a painful parting from a former lover. The relationship was secret, and its ending brought silence rather than public mourning. He recalls the coldness of their final kiss and the signs that foreshadowed future sorrow.\n\nIn the present, hearing the lover's name spoken by others causes him physical pain -- like a funeral bell. He must hide his reaction because nobody knows of their connection. In the last stanza he says it outright: they met in secret, and he grieves in silence that her heart could forget and her spirit deceive. The poem ends with a hypothetical future meeting, but nothing has changed: he would greet them the same way they parted -- with silence and tears.\n\nThe circular structure reinforces the idea that the speaker is trapped in grief, unable to move forward or find closure.`,
+  summaryAr: `المتكلّم (Byron) يتأمّل في فراق مؤلم عن حبيبته السابقة. العلاقة كانت سرّيّة، ونهايتها جابت صمت بدل العزاء العلني. يتذكّر برودة آخر قبلة بينهم، والعلامات اللي توقّعت الحزن اللي راح يعيشه.\n\nفي الحاضر، لمّا الناس يذكرون اسمها، يحسّ بألم جسدي - مثل صوت ناقوس جنازة. ولازم يخفي ردة فعله لأن ما حد يدري عن علاقتهم. وفي المقطع الأخير يقولها صريحة: التقوا في السرّ ("In secret we met")، وهو يحزن بصمت لأن قلبها قدر ينسى وروحها قدرت تخدع. القصيدة تنتهي بمشهد افتراضي للقاء مستقبلي، بس ما تغيّر شي: راح يستقبلها بنفس الطريقة اللي افترقوا بها - "with silence and tears".\n\nالبنية الدائرية تأكّد إن المتكلّم محاصر في حزنه، ما يقدر يمشي خطوة لقدّام ولا يلقى خاتمة.`,
   formAndStructure: `Form: Four stanzas of eight lines each, with a tight ABAB rhyme scheme throughout.\n\nShort lines: Predominantly monosyllabic and disyllabic words create a clipped, restrained rhythm that mirrors emotional suppression.\n\nCyclical structure: The final line ("With silence and tears") echoes the second line ("In silence and tears"), creating a circular poem that traps the speaker in perpetual grief.\n\nRhyme scheme: The regular ABAB pattern creates a sense of control and formality, contrasting with the raw emotion beneath.\n\nEnjambment is minimal -- most lines are end-stopped, creating a halting, measured pace as if the speaker is carefully controlling each word.\n\nTemporal shifts: The poem moves between past (the parting), present (hearing the name), and future (hypothetical meeting), showing grief transcends time.`,
   formAndStructureAr: `Form (الشكل): أربع مقاطع، كل مقطع ثمانية أبيات، بنظام قافية ABAB ثابت طوال القصيدة.\n\nأبيات قصيرة: معظم الكلمات أحاديّة المقطع أو ثنائيّة، تخلق إيقاع مقتطف ومتحفّظ يعكس كبت العاطفة.\n\nالبنية الدائرية (Cyclical structure): البيت الأخير "With silence and tears" يردّد البيت الثاني "In silence and tears"، فيخلق قصيدة دائرية تحبس المتكلّم في حزن لا ينتهي.\n\nنظام القافية: نمط ABAB المنتظم يخلق إحساس بالسيطرة والرسميّة، يتناقض مع العاطفة الخام تحت السطح.\n\nEnjambment قليل - معظم الأبيات end-stopped (تنتهي بعلامة ترقيم)، وهذا يخلق إيقاع متقطّع وحذِر، كأن المتكلّم يقيس كل كلمة قبل ما يقولها.\n\nالانتقالات الزمنيّة (Temporal shifts): القصيدة تتحرّك بين الماضي (لحظة الفراق)، والحاضر (سماع الاسم)، والمستقبل (اللقاء الافتراضي)، تبيّن إن الحزن يتجاوز الزمن.`,
   keyQuotes: [
@@ -346,7 +395,7 @@ const poemData: PoemData = {
       themesAr: ['فقد الشغف', 'الخيانة'],
     },
     {
-      quote: 'A knell to mine ear',
+      quote: 'A knell in mine ear',
       analysis:
         "A knell is a funeral bell -- hearing the lover's name is equated with death. The metaphor transforms everyday conversation into a source of profound grief.",
       themes: ['Death imagery', 'Memory', 'Grief'],
@@ -399,7 +448,7 @@ const poemData: PoemData = {
     },
     {
       device: 'Pathetic fallacy',
-      example: 'The dew of the morning / Sunk chill on my brow',
+      example: 'The dew of the morning / Sank chill on my brow',
       effect:
         'Nature mirrors human emotion -- the cold dew represents the chill of grief. The natural world becomes a reflection of internal suffering.',
       lineRef: 9,
@@ -408,7 +457,7 @@ const poemData: PoemData = {
     },
     {
       device: 'Metaphor (death)',
-      example: 'A knell to mine ear',
+      example: 'A knell in mine ear',
       effect:
         "Hearing the lover's name is compared to a funeral bell, transforming ordinary conversation into a death knell for their relationship. Elevates personal grief to something solemn and final.",
       lineRef: 19,
@@ -498,7 +547,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'wwtp-3',
-    question: 'What does "A knell to mine ear" mean?',
+    question: 'What does "A knell in mine ear" mean?',
     type: 'multiple-choice',
     options: [
       'A pleasant sound',
@@ -645,7 +694,7 @@ const REVISION_TOPICS = [
       'Byron uses a semantic field of coldness, death imagery, understatement, and monosyllabic diction to convey restrained but profound grief.',
     keyPoints: [
       '"Pale... cold... Colder... chill" - sustained coldness imagery',
-      '"A knell to mine ear" - funeral bell metaphor for hearing her name',
+      '"A knell in mine ear" - funeral bell metaphor for hearing her name',
       '"Half broken-hearted" - understatement masking deep pain',
       'Monosyllabic words create blunt, clipped emotional restraint',
     ],

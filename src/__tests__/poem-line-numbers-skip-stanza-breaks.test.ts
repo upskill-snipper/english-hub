@@ -30,6 +30,18 @@ describe('poemLineNumbers', () => {
     const numbers = poemLineNumbers(piano).filter((n) => n !== null)
     expect(numbers.at(-1)).toBe(12)
   })
+
+  it('does not count a part heading as a line', () => {
+    // A Wife in London, 2 October 2026: its headings were numbered 1 and 12.
+    const lines = [
+      { text: 'I - The Tragedy', heading: true },
+      { text: 'one' },
+      { text: '' },
+      { text: 'II - The Irony', heading: true },
+      { text: 'two' },
+    ]
+    expect(poemLineNumbers(lines)).toEqual([null, 1, null, null, 2])
+  })
 })
 
 describe('the viewer', () => {

@@ -14,9 +14,19 @@ import { useT } from '@/lib/i18n/use-t'
 const wifeInLondon: PoemData = {
   title: 'A Wife in London',
   poet: 'Thomas Hardy',
+  // The poem as the WJEC Eduqas GCSE Poetry Anthology (2014) prints it, checked
+  // line by line against the PDF on 2 October 2026. That anthology was examined
+  // for the last time in summer 2026, and the one that replaces it does not
+  // include this poem. Until then the two part headings were rows like any
+  // other, so the viewer numbered the first line 2 and every line of Part II two
+  // too high, and the four stanzas ran together with no breaks; line 18 also
+  // read "jaunts of brake and burn" for "jaunts by brake and burn", and a note
+  // quoted it so. The headings now carry `heading: true`, which the viewer
+  // shows unnumbered.
   lines: [
     {
-      text: 'I - The Tragedy',
+      text: 'I – The Tragedy',
+      heading: true,
       annotations: [
         {
           type: 'Structure',
@@ -85,8 +95,9 @@ const wifeInLondon: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
-      text: "A messenger's knock cracks smartly,",
+      text: 'A messenger’s knock cracks smartly,',
       annotations: [
         {
           type: 'Onomatopoeia',
@@ -126,11 +137,11 @@ const wifeInLondon: PoemData = {
       ],
     },
     {
-      text: 'He - has fallen - in the far South Land...',
+      text: 'He – has fallen – in the far South Land …',
       annotations: [
         {
           type: 'Punctuation',
-          note: 'The dashes mimic her breathless, fragmented reading. She struggles to take in the words. "Has fallen" is a euphemism for "died in battle".',
+          note: 'The dashes mimic her breathless, fragmented reading. She struggles to take in the words. "Has fallen" is a euphemism for dying in battle.',
           color: '#a855f7',
         },
         {
@@ -145,8 +156,10 @@ const wifeInLondon: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
-      text: 'II - The Irony',
+      text: 'II – The Irony',
+      heading: true,
       annotations: [
         {
           type: 'Structure',
@@ -156,7 +169,7 @@ const wifeInLondon: PoemData = {
       ],
     },
     {
-      text: "'Tis the morrow; the fog hangs thicker,",
+      text: '’Tis the morrow; the fog hangs thicker,',
       annotations: [
         {
           type: 'Time shift',
@@ -210,8 +223,9 @@ const wifeInLondon: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
-      text: 'Fresh - firm - penned in highest feather -',
+      text: 'Fresh – firm – penned in highest feather –',
       annotations: [
         {
           type: 'Diction',
@@ -231,11 +245,11 @@ const wifeInLondon: PoemData = {
       ],
     },
     {
-      text: 'And of home-planned jaunts of brake and burn',
+      text: 'And of home-planned jaunts by brake and burn',
       annotations: [
         {
           type: 'Imagery',
-          note: '"Jaunts of brake and burn" - he plans country walks ("brake" = thicket; "burn" = stream). The pastoral imagery of innocent English pleasures contrasts with the harsh reality of his death in the colonies.',
+          note: '"Jaunts by brake and burn" - he plans country walks ("brake" = thicket; "burn" = stream). The pastoral imagery of innocent English pleasures contrasts with the harsh reality of his death in the colonies.',
           color: '#10b981',
         },
       ],
@@ -251,7 +265,7 @@ const wifeInLondon: PoemData = {
       ],
     },
     {
-      text: 'And of new love that they would learn.',
+      text: 'And of new love that they would learn. thomas hardy',
       annotations: [
         {
           type: 'Closing image',
@@ -418,7 +432,7 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين - "the fo
     {
       quote: 'new love that they would learn',
       analysis:
-        'The closing line is the husband\'s voice, full of love and plans for deepening their relationship. He imagined growing closer, "learning" new love together. The poem ends with his living voice, even though he is dead. The cruelty is exquisite: the dead man\'s last hopes echo on after he is gone.',
+        'The closing line is the husband\'s voice, full of love and plans for deepening their relationship. He imagined growing closer, the "new love that they would learn". The poem ends with his living voice, even though he is dead. The cruelty is exquisite: the dead man\'s last hopes echo on after he is gone.',
       themes: ['Love', 'Lost future', 'Closing voice'],
       analysisAr:
         'البيت الختامي هو صوت الزوج، مليان حب وخطط لتعميق علاقتهم. كان يتخيّل إنهم يقربون من بعض، "يتعلّمون" حباً جديداً مع بعض. القصيدة تنتهي بصوته الحي، مع إنه ميت. القسوة فيها لطف غريب: آمال الرجل الميتة الأخيرة تتردّد بعد ما راح.',
@@ -446,7 +460,7 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين - "the fo
       example: 'His hand, whom the worm now knows ... Page-full of his hoped return',
       effect:
         'The reader knows what the wife knows: the husband is dead. So when we read his hopeful letter, we feel the irony - his plans are impossible. The structure of two sections creates the irony by separating the moment of knowledge from the moment of his hope.',
-      lineRef: 16,
+      lineRef: 18,
       effectAr:
         'القارئ يعرف اللي تعرفه الزوجة: إن الزوج ميت. ولمّا نقرأ رسالته المفعمة بالأمل، نحسّ بالمفارقة - خططه مستحيلة. بنية القسمين تخلق المفارقة عبر فصل لحظة المعرفة عن لحظة أمله.',
     },
@@ -455,7 +469,7 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين - "the fo
       example: 'He - has fallen - in the far South Land ... Fresh - firm - penned',
       effect:
         "The dashes mimic the wife's halting, breathless speech and reading. They mark moments of shock where she cannot continue. The visual fragmentation on the page enacts the emotional fragmentation of grief.",
-      lineRef: 10,
+      lineRef: 11,
       effectAr:
         'الـdashes تحاكي كلام وقراءة الزوجة المتقطّعة واللاهثة. وتعلّم لحظات صدمة ما تقدر تكمل عندها. والتفكّك البصري على الصفحة يجسّد التفكّك الانفعالي للحزن.',
     },

@@ -14,6 +14,13 @@ import { useT } from '@/lib/i18n/use-t'
 const neutralTones: PoemData = {
   title: 'Neutral Tones',
   poet: 'Thomas Hardy',
+  // The poem as the Pearson Edexcel GCSE (9-1) English Literature Poetry
+  // Anthology prints it (Issue 4, January 2023, page 10), which keeps Hardy's
+  // "gray" and "grayish" (the AQA anthology prints "grey"). Neutral Tones is not
+  // in OCR's anthology, Towards a World Unknown, so there is no OCR printing to
+  // follow. Until 2 October 2026 this array ran the four stanzas together with
+  // no breaks, and line 4 stopped at "fallen from an ash.", leaving out "and
+  // were gray". Checked against the PDF on 2 October 2026.
   lines: [
     {
       text: 'We stood by a pond that winter day,',
@@ -61,7 +68,7 @@ const neutralTones: PoemData = {
       ],
     },
     {
-      text: '- They had fallen from an ash.',
+      text: '– They had fallen from an ash, and were gray.',
       annotations: [
         {
           type: 'Symbolism',
@@ -75,6 +82,7 @@ const neutralTones: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: 'Your eyes on me were as eyes that rove',
       annotations: [
@@ -125,6 +133,7 @@ const neutralTones: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: 'The smile on your mouth was the deadest thing',
       annotations: [
@@ -161,7 +170,7 @@ const neutralTones: PoemData = {
       ],
     },
     {
-      text: 'Like an ominous bird a-wing....',
+      text: 'Like an ominous bird a-wing…',
       annotations: [
         {
           type: 'Simile',
@@ -175,6 +184,7 @@ const neutralTones: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: 'Since then, keen lessons that love deceives,',
       annotations: [
@@ -326,10 +336,10 @@ Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: 
     {
       quote: 'tedious riddles of years ago',
       analysis:
-        'The relationship has become a "tedious riddle" -- a boring puzzle from the past. "Tedious" is brutal: love is now dull and exhausting. "Years ago" tells us this love has been dying for a long time; nothing in the present matters anymore.',
+        'The relationship has become one of the "tedious riddles" -- boring puzzles from the past. "Tedious" is brutal: love is now dull and exhausting. "Years ago" tells us this love has been dying for a long time; nothing in the present matters anymore.',
       themes: ['Boredom', 'Time', 'End of love'],
       analysisAr:
-        'العلاقة صارت "tedious riddle" - لغز ممل من الماضي. كلمة "tedious" قاسية: الحب الحين بليد ومتعب. وعبارة "years ago" تقول لنا إن هالحب يموت من زمان؛ ولا شي في الحاضر يهمّ.',
+        'العلاقة صارت من الـ"tedious riddles" - ألغاز مملّة من الماضي. كلمة "tedious" قاسية: الحب الحين بليد ومتعب. وعبارة "years ago" تقول لنا إن هالحب يموت من زمان؛ ولا شي في الحاضر يهمّ.',
       themesAr: ['الملل', 'الوقت', 'نهاية الحب'],
     },
     {
@@ -376,7 +386,7 @@ Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: 
       example: 'eyes that rove / Over tedious riddles',
       effect:
         'Her eyes are compared to wandering, distracted gazes. The simile dramatises emotional absence: she is physically present but mentally elsewhere. Love has become a tedious puzzle.',
-      lineRef: 4,
+      lineRef: 5,
       effectAr:
         'عيونها مشبّهة بنظرات شاردة تايهة. الـsimile يدرمج الغياب العاطفي: هي حاضرة بجسمها بس ذهنها في مكان ثاني. الحب صار لغز ممل.',
     },
@@ -386,7 +396,7 @@ Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: 
         'The smile on your mouth was the deadest thing / Alive enough to have strength to die',
       effect:
         'A devastating contradiction: a smile that is the deadest thing yet still alive enough to die. The paradox captures the limbo of a relationship that is technically still going but emotionally finished.',
-      lineRef: 8,
+      lineRef: 10,
       effectAr:
         'تناقض مدمّر: ابتسامة هي أموت من كل شي، ومع ذلك حية بما يكفي عشان تموت. الـparadox يلتقط حالة "البرزخ" في علاقة شكلياً لتوّها مستمرة، بس عاطفياً انتهت.',
     },
@@ -404,7 +414,7 @@ Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: 
       example: 'a pond edged with grayish leaves (echoing the opening pond)',
       effect:
         'The poem ends where it began. This circular structure traps the speaker in the memory -- he cannot move on. The repetition of the image shows that this moment has become permanently fixed in his mind.',
-      lineRef: 15,
+      lineRef: 18,
       effectAr:
         'القصيدة تنتهي من حيث بدأت. هالبنية الدائرية تحبس المتكلّم في الذكرى - ما يقدر يتجاوزها. تكرار الصورة يبيّن إن هاللحظة انغرست في ذهنه بشكل دائم.',
     },

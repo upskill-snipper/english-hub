@@ -90,7 +90,10 @@ const cousinKate: PoemData = {
     { text: 'For all your clothes and wedding-ring' },
     { text: '  I’ve little doubt you fret.' },
     { text: 'My fair-haired son, my shame, my pride,' },
-    { text: '  Cling closest to my neck;' },
+    // Read "Cling closest to my neck;" until 2 October 2026, words in neither
+    // printing of the poem: the Eduqas anthology (2027, page 6) has "Cling
+    // closer, closer yet:", and so does the Pearson Edexcel GCSE anthology.
+    { text: '  Cling closer, closer yet:' },
     { text: 'Your father would give lands for one' },
     { text: '  To wear his coronet.' },
   ],

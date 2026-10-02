@@ -260,6 +260,17 @@ const exposureData: PoemData = {
   title: 'Exposure',
   poet: 'Wilfred Owen',
 
+  // The poem as the AQA anthology prints it (Power and Conflict; AQA, Past and
+  // present: poetry anthology, sample, filestore.aqa.org.uk AQA-8702-TG-POEMS.PDF),
+  // checked line by line against the PDF on 2 October 2026, with the one
+  // exception noted at line 37. Until then the last stanza had seven lines: its
+  // second was not Owen's ("Shrugging wide shoulders out of cold crucifix"), and
+  // four lines of stanza 6 were repeated in place of lines 37 to 39. The notes on
+  // those rows, and the form section, described a crucifix and a repetition the
+  // poem does not have, and the form section put the refrain at the end of the
+  // wrong stanzas. Line 32 had "Nor" and line 36 "To-night" where the anthology
+  // has "Now" and "Tonight". "Now ever suns smile true" is the anthology's
+  // reading, kept on purpose; the Pearson Edexcel anthology prints "Nor".
   lines: [
     // Stanza 1
     {
@@ -318,7 +329,6 @@ const exposureData: PoemData = {
       ],
     },
     { text: '' },
-
     // Stanza 2
     {
       text: 'Watching, we hear the mad gusts tugging on the wire,',
@@ -371,7 +381,6 @@ const exposureData: PoemData = {
       ],
     },
     { text: '' },
-
     // Stanza 3
     {
       text: 'The poignant misery of dawn begins to grow ...',
@@ -399,7 +408,7 @@ const exposureData: PoemData = {
       annotations: [
         {
           type: 'Structure',
-          note: '"Ranks on ranks" creates ambiguity -- it could describe rows of clouds or rows of soldiers. The repetition emphasises the relentless, wave-like assault of cold.',
+          note: '"Ranks on shivering ranks" creates ambiguity -- it could describe rows of clouds or rows of soldiers. The repetition emphasises the relentless, wave-like assault of cold.',
           color: '#a78bfa',
         },
       ],
@@ -409,13 +418,12 @@ const exposureData: PoemData = {
       annotations: [
         {
           type: 'Refrain',
-          note: 'Repeated refrain reinforces the cyclical, pointless nature of their suffering. Despite dawn\'s "attack", the stalemate continues.',
+          note: 'Repeated refrain reinforces the cyclical, pointless nature of their suffering. Dawn "Attacks once more", and still the stalemate continues.',
           color: '#ef4444',
         },
       ],
     },
     { text: '' },
-
     // Stanza 4
     {
       text: 'Sudden successive flights of bullets streak the silence.',
@@ -438,7 +446,7 @@ const exposureData: PoemData = {
       ],
     },
     {
-      text: 'With sidelong flowing flakes that flock, pause, and renew;',
+      text: 'With sidelong flowing flakes that flock, pause, and renew,',
       annotations: [
         {
           type: 'Language',
@@ -468,14 +476,13 @@ const exposureData: PoemData = {
       ],
     },
     { text: '' },
-
     // Stanza 5
     {
-      text: 'Pale flakes with fingering stealth come feeling for our faces --',
+      text: 'Pale flakes with fingering stealth come feeling for our faces -',
       annotations: [
         {
           type: 'Personification',
-          note: '"Fingering stealth" personifies the snow as a creeping, almost sinister presence. The flakes "feel" for the soldiers\' faces like an attacker probing for weakness.',
+          note: '"Fingering stealth" personifies the snow as a creeping, almost sinister presence. The flakes "come feeling for our faces" like an attacker probing for weakness.',
           color: '#f59e0b',
         },
       ],
@@ -502,7 +509,7 @@ const exposureData: PoemData = {
       ],
     },
     {
-      text: 'Is it that we are dying?',
+      text: '– Is it that we are dying?',
       annotations: [
         {
           type: 'Language',
@@ -512,7 +519,6 @@ const exposureData: PoemData = {
       ],
     },
     { text: '' },
-
     // Stanza 6
     {
       text: 'Slowly our ghosts drag home: glimpsing the sunk fires, glozed',
@@ -545,7 +551,7 @@ const exposureData: PoemData = {
       ],
     },
     {
-      text: 'Shutters and doors, all closed: on us the doors are closed, --',
+      text: 'Shutters and doors, all closed: on us the doors are closed, -',
       annotations: [
         {
           type: 'Structure',
@@ -565,7 +571,6 @@ const exposureData: PoemData = {
       ],
     },
     { text: '' },
-
     // Stanza 7
     {
       text: 'Since we believe not otherwise can kind fires burn;',
@@ -578,7 +583,7 @@ const exposureData: PoemData = {
       ],
     },
     {
-      text: 'Nor ever suns smile true on child, or field, or fruit.',
+      text: 'Now ever suns smile true on child, or field, or fruit.',
       annotations: [
         {
           type: 'Language',
@@ -618,10 +623,9 @@ const exposureData: PoemData = {
       ],
     },
     { text: '' },
-
     // Stanza 8
     {
-      text: 'To-night, His frost will fasten on this mud and us,',
+      text: 'Tonight, His frost will fasten on this mud and us,',
       annotations: [
         {
           type: 'Imagery',
@@ -630,29 +634,38 @@ const exposureData: PoemData = {
         },
       ],
     },
+    // The AQA anthology prints a full stop after "hands" and "puckering" in lower
+    // case, a misprint; this has the comma the Pearson Edexcel anthology prints.
     {
-      text: 'Shrugging wide shoulders out the cold, and crucifix.',
+      text: 'Shrivelling many hands, puckering foreheads crisp.',
       annotations: [
         {
-          type: 'Religious imagery',
-          note: '"Crucifix" connects the soldiers\' suffering to Christ\'s. They are sacrificed in the cold; their bodies will be marked like the crucified Christ.',
-          color: '#a78bfa',
+          type: 'Imagery',
+          note: 'The frost does to the men what time does: hands shrivel and foreheads pucker, as if one night aged them. The present participles, "Shrivelling" and "puckering", keep it happening as we read.',
+          color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'Slowly our ghosts drag home: glimpsing the sunk fires, glozed',
+      text: 'The burying-party, picks and shovels in their shaking grasp,',
       annotations: [
         {
-          type: 'Structure',
-          note: 'The near-exact repetition of stanza 6 creates a haunting, cyclical effect -- the soldiers are trapped in an endless loop of suffering with no resolution.',
-          color: '#a78bfa',
+          type: 'Imagery',
+          note: 'Men come to bury the dead, and their own hands shake on the picks and shovels: the living are only a little better off than those they bury.',
+          color: '#f59e0b',
         },
       ],
     },
-    { text: 'With crusted dark-red jewels; crickets jingle there;' },
-    { text: 'For hours the innocent mice rejoice: the house is theirs;' },
-    { text: 'Shutters and doors, all closed: on us the doors are closed, --' },
+    {
+      text: 'Pause over half-known faces. All their eyes are ice,',
+      annotations: [
+        {
+          type: 'Key idea',
+          note: '"Half-known faces": the dead are comrades, half recognised now the frost has changed them. "All their eyes are ice" can be read of the dead, frozen where they lie, or of the burying party, too numb to weep.',
+          color: '#ef4444',
+        },
+      ],
+    },
     {
       text: 'But nothing happens.',
       annotations: [
@@ -701,13 +714,13 @@ RHYME:
 - Pararhyme was Owen's signature technique. The consonant sounds match but the vowels shift, producing an unsettling, discordant effect.
 
 REFRAIN:
-- "But nothing happens" is repeated at the end of stanzas 1, 3, 5 (as a variation: "For love of God seems dying"), and 6, and echoed in the closing lines. It is the poem's structural backbone and thematic core.
+- "But nothing happens" ends stanzas 1, 3 and 4, and the poem itself. The other four stanzas end on short lines of their own, three of them on the word "dying" ("Is it that we are dying?", "We turn back to our dying.", "For love of God seems dying."), so the refrain and the dying take turns. It is the poem's structural backbone and thematic core.
 
 ELLIPSIS:
 - Owen uses ellipses ("...") at the ends of several lines, trailing off into silence. This mirrors the soldiers' exhaustion, their inability to finish thoughts, and the endless waiting.
 
 CYCLICAL STRUCTURE:
-- Stanzas 7 and 8 repeat almost identical lines, creating a loop. The poem has no resolution or climax -- it enacts the very stalemate it describes.`,
+- The poem ends where it began: its last line is the refrain that closes the first stanza. Between them the men wait through a night, a dawn and a snowfall, and the only change is the frost that will kill some of them. The poem has no resolution or climax -- it enacts the very stalemate it describes.`,
 
   formAndStructureAr: `الشكل (FORM):
 - 8 مقاطع، كل واحد فيها 5 أبيات (quintains)، وهالشي يعطي القصيدة مظهر منتظم ومنضبط، يتناقض مع الفوضى والمعاناة اللي توصفها.
@@ -719,13 +732,13 @@ CYCLICAL STRUCTURE:
 - الـpararhyme كانت توقيع Owen الأسلوبي. الأصوات الساكنة تتطابق بس الحركات تتغيّر، فينتج صوت مزعج وغير منسجم.
 
 اللازمة (REFRAIN):
-- "But nothing happens" تتكرّر في نهاية المقاطع 1 و3 و5 (مع تنويع: "For love of God seems dying") و6، ويتردّد صداها في الأبيات الختامية. هي العمود الفقري البنيوي والنواة الفكرية للقصيدة.
+- "But nothing happens" تختم المقاطع 1 و3 و4، وتختم القصيدة نفسها. المقاطع الأربعة الباقية تنتهي بأبيات قصيرة خاصّة فيها، ثلاثة منها على كلمة "dying" ("Is it that we are dying?" و"We turn back to our dying." و"For love of God seems dying.")، فاللازمة والموت يتناوبون. هي العمود الفقري البنيوي والنواة الفكرية للقصيدة.
 
 ELLIPSIS:
 - Owen يستخدم نقاط الحذف ("...") في نهاية كثير من الأبيات، يخلّيها تتلاشى في الصمت. هذا يعكس إرهاق الجنود، عجزهم عن إكمال أفكارهم، والانتظار اللي ما يخلص.
 
 البنية الدائرية (CYCLICAL STRUCTURE):
-- المقطعين 7 و8 يكرّرون أبيات تكاد تكون متطابقة، ويخلقون حلقة مغلقة. القصيدة ما لها حل ولا ذروة - هي تجسّد الجمود اللي توصفه.`,
+- القصيدة تنتهي من حيث بدأت: بيتها الأخير هو اللازمة اللي تختم المقطع الأول. وبين الاثنين ينتظر الرجال ليل وفجر وثلج، والتغيير الوحيد هو الصقيع اللي راح يقتل بعضهم. القصيدة ما لها حل ولا ذروة - هي تجسّد الجمود اللي توصفه.`,
 
   keyQuotes: [
     {
