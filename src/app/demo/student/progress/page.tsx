@@ -389,9 +389,10 @@ export default function StudentProgressPage() {
                 </div>
               </div>
 
-              {/* Grade info */}
+              {/* Grade info. The grade boxes wrap on a phone: three in a row were
+                  455px in a 262px column, and "Working At" was cut off. */}
               <div className="flex flex-col items-center gap-4 md:items-start">
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center justify-center gap-3 md:justify-start">
                   <div
                     className={`rounded-xl bg-primary/10 border border-primary/20 px-4 py-3 text-center`}
                   >
@@ -444,7 +445,8 @@ export default function StudentProgressPage() {
             {statCards.map((s) => (
               <GlassPanel key={s.label} accent={s.accent} className="p-4">
                 <PanelEyebrow>{s.label}</PanelEyebrow>
-                <div className="mt-2 flex items-end justify-between">
+                {/* Wraps in a narrow card: "improving" was cut off at the edge. */}
+                <div className="mt-2 flex flex-wrap items-end justify-between gap-x-2">
                   <p className="font-heading text-3xl font-bold tracking-tight text-foreground">
                     {s.value}
                   </p>

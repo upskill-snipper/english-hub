@@ -480,9 +480,9 @@ export default function EngagementPage() {
                   <Link
                     key={student.id}
                     href={`/demo/school/students/${student.id}`}
-                    className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-muted transition-colors group"
+                    className="flex items-center justify-between gap-3 py-2 px-3 rounded-lg hover:bg-muted transition-colors group"
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex min-w-0 items-center gap-3">
                       <span className="w-6 text-center text-sm font-bold text-muted-foreground">
                         {idx + 1}
                       </span>
@@ -496,7 +496,8 @@ export default function EngagementPage() {
                         {student.name}
                       </span>
                     </div>
-                    <div className="flex items-center gap-4">
+                    {/* Stacks on a phone: side by side, the session count ran off the card. */}
+                    <div className="flex shrink-0 flex-col items-end gap-1 sm:flex-row sm:items-center sm:gap-4">
                       <Badge
                         variant="outline"
                         className="border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs"
@@ -531,7 +532,8 @@ export default function EngagementPage() {
                 {INACTIVE_STUDENTS.map((student) => (
                   <div
                     key={student.id}
-                    className="flex items-center justify-between py-2.5 px-3 rounded-lg bg-red-500/5 border border-red-500/10"
+                    // Wraps on a phone: the Send Reminder button was cut off at the card edge.
+                    className="flex flex-wrap items-center justify-between gap-2 py-2.5 px-3 rounded-lg bg-red-500/5 border border-red-500/10"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center text-xs font-bold text-red-700 dark:text-red-300">

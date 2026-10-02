@@ -378,9 +378,11 @@ export default function AnalyticsPage() {
 
         {/* ── Tabbed Navigation ──────────────────────────────── */}
         <Tabs defaultValue="overview">
+          {/* Swipes sideways on a phone: the tabs cannot all fit at 360px, and
+              without a scroller the last ones were cut off at the edge. */}
           <TabsList
             variant="line"
-            className="w-full justify-start border-b border-border rounded-none mb-8 gap-0 bg-transparent"
+            className="w-full max-w-full justify-start overflow-x-auto border-b border-border rounded-none mb-8 gap-0 bg-transparent"
           >
             <TabsTrigger
               value="overview"

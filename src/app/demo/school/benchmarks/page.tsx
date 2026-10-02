@@ -158,7 +158,8 @@ export default function BenchmarksPage() {
       <DemoBanner />
 
       {/* ── Header ──────────────────────────────────────────────────────────── */}
-      <div className="flex items-center justify-between">
+      {/* Wraps on a phone: the download button was cut off at the edge. */}
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-3xl font-bold text-foreground flex items-center gap-3">
             <BarChart3 className="h-8 w-8 text-primary" />
@@ -359,7 +360,8 @@ export default function BenchmarksPage() {
         </CardHeader>
         <CardContent>
           <ChartFrame height={260}>
-            <RLineChart data={termTrend} margin={{ top: 8, right: 12, bottom: 0, left: -16 }}>
+            {/* left -12, not -16: the "100" tick was cut off by 3px at the edge. */}
+            <RLineChart data={termTrend} margin={{ top: 8, right: 12, bottom: 0, left: -12 }}>
               <RCartesianGrid {...GRID} />
               <RXAxis dataKey="term" {...AXIS} />
               <RYAxis domain={[0, 100]} {...AXIS} width={40} />

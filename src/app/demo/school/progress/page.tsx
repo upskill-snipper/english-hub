@@ -619,9 +619,10 @@ export default function SchoolProgressPage() {
 
         {/* ── Active Year Details ──────────────────────────────────── */}
         <div className="space-y-6">
-          {/* Year header */}
-          <div className="flex items-center justify-between">
-            <h2 className="text-xl font-semibold flex items-center gap-2">
+          {/* Year header. Wraps on a phone: the title and its three grade figures
+              did not fit side by side, and the Target figure was cut off. */}
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h2 className="text-xl font-semibold flex flex-wrap items-center gap-2">
               <GraduationCap className="h-5 w-5 text-primary" />
               {activeYearData.label} Progress
               <Badge variant="secondary" className="ms-2">

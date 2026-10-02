@@ -506,7 +506,9 @@ export default function TeacherDemoDashboard() {
                   (s) => s.className === cls.name && s.atRisk,
                 ).length
                 return (
-                  <li key={cls.id} className="flex items-center gap-4 text-sm">
+                  // Wraps on a phone: after the 176px class name the student count was
+                  // cut off at the card edge.
+                  <li key={cls.id} className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
                     <Link
                       href={`/demo/teacher/classes/${cls.id}`}
                       className="w-44 shrink-0 text-muted-foreground hover:text-primary transition-colors truncate"

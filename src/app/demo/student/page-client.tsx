@@ -1740,9 +1740,12 @@ export default function StudentDemoPage() {
                       onClick={() => setOpenSkillId(isOpen ? null : s.id)}
                       aria-expanded={isOpen}
                       aria-controls={`ao-detail-${s.id}`}
-                      className="flex w-full items-center gap-4 text-start"
+                      // On a phone the label takes its own line and the bar, score and
+                      // status sit under it: in one row the 224px label left the status
+                      // pill 79px, and "On track" was cut off.
+                      className="flex w-full flex-wrap items-center gap-x-4 gap-y-2 text-start sm:flex-nowrap"
                     >
-                      <div className="w-56 shrink-0">
+                      <div className="w-full shrink-0 sm:w-56">
                         <p className="text-sm font-medium text-foreground">{s.label}</p>
                       </div>
                       <div className="relative h-3 flex-1 overflow-hidden rounded-full bg-foreground/[0.06]">
@@ -1761,7 +1764,7 @@ export default function StudentDemoPage() {
                           aria-hidden
                         />
                       </div>
-                      <div className="flex w-32 items-center justify-end gap-2">
+                      <div className="flex shrink-0 items-center justify-end gap-2 sm:w-32">
                         <span className="font-heading text-sm font-semibold tabular-nums text-foreground">
                           {s.score}
                         </span>

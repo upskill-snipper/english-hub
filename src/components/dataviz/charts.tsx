@@ -116,7 +116,9 @@ export function TrendArea({
 }) {
   return (
     <ChartFrame height={height}>
-      <AreaChart data={data} margin={{ top: 8, right: 8, bottom: 0, left: -16 }}>
+      {/* left -12, not -16: with the default 0-100 domain the "100" tick was cut
+          off by 3px at the chart edge. */}
+      <AreaChart data={data} margin={{ top: 8, right: 8, bottom: 0, left: -12 }}>
         <defs>
           <linearGradient id={GRAD.area} x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor={color} stopOpacity={0.45} />

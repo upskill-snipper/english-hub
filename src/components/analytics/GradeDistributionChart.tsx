@@ -259,7 +259,9 @@ export function GradeDistributionChart({
             <ChartFrame height={barHeight}>
               <BarChart
                 data={chartData}
-                margin={{ top: 24, right: 8, bottom: 4, left: -16 }}
+                // left -12, not -16: a three-digit count ("100") was cut off by 3px
+                // at the chart edge.
+                margin={{ top: 24, right: 8, bottom: 4, left: -12 }}
                 barCategoryGap="18%"
               >
                 <CartesianGrid {...GRID} />

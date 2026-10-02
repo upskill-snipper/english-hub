@@ -51,7 +51,8 @@ export function WeeklyActivityChart({ data, className }: WeeklyActivityChartProp
 
       {/* Chart */}
       <ChartFrame height={180}>
-        <AreaChart data={chartData} margin={{ top: 8, right: 8, bottom: 0, left: -16 }}>
+        {/* left -12, not -16: a three-digit count would lose 3px at the edge. */}
+        <AreaChart data={chartData} margin={{ top: 8, right: 8, bottom: 0, left: -12 }}>
           <defs>
             <linearGradient id={GRAD.area} x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor={SERIES[0]} stopOpacity={0.45} />

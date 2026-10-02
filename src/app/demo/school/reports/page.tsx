@@ -876,7 +876,8 @@ export default function ReportsPage() {
                   ].map((schedule) => (
                     <div
                       key={schedule.title}
-                      className="flex items-center justify-between bg-muted/50 rounded-lg p-4 border border-border/50"
+                      // Wraps on a phone: the Generate Now button was cut off at the edge.
+                      className="flex flex-wrap items-center justify-between gap-3 bg-muted/50 rounded-lg p-4 border border-border/50"
                     >
                       <div className="flex items-start gap-3">
                         <div className="mt-0.5">{schedule.icon}</div>
@@ -887,7 +888,7 @@ export default function ReportsPage() {
                           <p className="text-xs text-muted-foreground-subtle mt-0.5">
                             {schedule.description}
                           </p>
-                          <div className="flex items-center gap-2 mt-2">
+                          <div className="flex flex-wrap items-center gap-2 mt-2">
                             <Badge className="bg-muted text-foreground/80 border-border text-[10px]">
                               <Mail className="h-3 w-3 me-1" />
                               {schedule.recipient}

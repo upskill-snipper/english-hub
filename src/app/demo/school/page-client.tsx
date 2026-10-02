@@ -166,14 +166,14 @@ export default function DemoSchoolDashboardPage() {
         </div>
       </div>
 
-      {/* Header */}
-      <div className="mb-8 flex items-start justify-between gap-4">
+      {/* Header. Wraps on a phone: the Analytics button was cut off at the edge. */}
+      <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
         <div>
           <div className="flex items-center gap-3">
             <LayoutDashboard className="h-7 w-7 text-primary" />
             <h1 className="text-2xl font-bold text-foreground">School Dashboard</h1>
           </div>
-          <p className="mt-1 flex items-center gap-2 text-muted-foreground">
+          <p className="mt-1 flex flex-wrap items-center gap-2 text-muted-foreground">
             <School className="h-4 w-4" />
             {DEMO_SCHOOL.name}
             <Badge
