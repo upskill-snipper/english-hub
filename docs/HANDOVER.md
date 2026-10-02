@@ -461,6 +461,12 @@ everything in the directory around it.
 - **Commit by explicit path. Never `git add -A`.**
 - **Mutation-check any structural test.** Break the code deliberately and
   confirm the test fails. A test that passes without the fix is worse than none.
+- **Look at a layout at 360px before calling it done**, and run
+  `node scripts/check-phone-width.mjs` over the sitemap (or `--base` a local
+  server). Many users are children on phones. The sweep it replaced compared
+  page width with `window.innerWidth`, which under mobile emulation grows to
+  fit a page that is too wide, so it reported every page clean while 70 were
+  too wide (2 October 2026). Shape 5 of §4, in a tool built to find faults.
 - **Money is the owner's.** Prepare exact steps; do not execute.
 - **Write the defect into the docblock** when you fix one. Every file you will
   read here that explains a past incident does so because that was done. It is
