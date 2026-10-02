@@ -18,59 +18,67 @@ const edexcelLitPaper1: CourseData = {
   duration: '14 weeks',
   level: 'GCSE (Years 10-11)',
   description:
-    "Master Edexcel Literature Paper 1: Shakespeare (Macbeth) and Post-1914 Literature (An Inspector Calls). Extract-based responses with context, character analysis, and writer's methods.",
+    "Master Edexcel Literature Paper 1: Shakespeare (Macbeth) and Post-1914 Literature (An Inspector Calls). Extract analysis and whole-play essays, context, character analysis, and writer's methods.",
   color: '#e11d48',
   moduleList: [
     // ──────────────────────────────────────────────
     // MODULE 1 - Paper 1 Overview & what markers look for
     // ──────────────────────────────────────────────
     {
+      // Rewritten 2 October 2026. This overview described both sections as extract-based
+      // essays, weighted about AO1 15, AO2 15 and AO3 10 each, with "up to 4" AO4 marks on the
+      // Shakespeare essay. The 1ET0 specification (Issue 2) has Section A one two-part question:
+      // (a) an extract of about 30 lines, AO2 20; (b) how a theme from it is explored elsewhere
+      // in the play, AO1 15 and AO3 5. Section B is ONE essay question from a choice of two,
+      // opened by a short quotation rather than an extract: AO1 16, AO3 16 and AO4 8. AO4 is
+      // marked on the post-1914 essay only, and AO2 not at all in Section B. Modules 3, 5 and 7
+      // to 10 and the assessment questions are corrected to match.
       id: 'edx-lt1-m1',
       title: 'Paper 1 Overview & what markers look for',
       duration: '45 min',
       content: `
 <h2>Edexcel GCSE English Literature - Paper 1</h2>
 
-<p>Paper 1 is titled <strong>Shakespeare and Post-1914 Literature</strong>. It is worth <strong>80 marks</strong> and accounts for <strong>50%</strong> of the total GCSE. You have <strong>1 hour and 45 minutes</strong> to complete two sections, each worth equal marks.</p>
+<p>Paper 1 is titled <strong>Shakespeare and Post-1914 Literature</strong>. It is worth <strong>80 marks</strong> and accounts for <strong>50%</strong> of the total GCSE. You have <strong>1 hour and 45 minutes</strong> to complete two sections, each worth 40 marks. The paper is <strong>closed book</strong>: texts are not allowed in the exam.</p>
 
-<div class="key-term"><strong>Key Term: Extract-Based Question</strong> - A question that prints a passage from the studied text and asks you to use it as a starting point for your response. You must refer to the extract <em>and</em> the wider text in your answer.</div>
+<div class="key-term"><strong>Key Term: Two-Part Question</strong> - Section A asks two separate questions on your Shakespeare play. Part (a) prints an extract of about 30 lines and asks you to analyse it closely; part (b) asks how a theme from the extract is explored elsewhere in the play. Each part is marked on its own, for different things.</div>
 
 <h3>Paper Structure at a Glance</h3>
 <ul>
-  <li><strong>Section A - Shakespeare (40 marks):</strong> One extract-based essay on your studied Shakespeare play. You are given a passage and a question that asks you to explore a theme, character, or idea within the extract and the play as a whole.</li>
-  <li><strong>Section B - Post-1914 Literature (40 marks):</strong> One extract-based essay on your studied post-1914 text. The same format applies - respond to the printed extract and then range across the wider text.</li>
+  <li><strong>Section A - Shakespeare (40 marks):</strong> One two-part question on your play. Part (a): close analysis of the language, form and structure of a printed extract of about 30 lines (20 marks). Part (b): how a theme from the extract is explored elsewhere in the play, with its context (20 marks).</li>
+  <li><strong>Section B - Post-1914 British Play or Novel (40 marks):</strong> ONE essay question from a choice of two on your studied text. Each question opens with a short quotation from the text as a stimulus - there is no extract - and asks you to explore plot, setting, character or theme in relation to context. Your spelling, punctuation and grammar are marked here.</li>
 </ul>
 
-<h3>what markers look for</h3>
-<p>Four AOs are tested across Paper 1, but they carry different weight depending on the section:</p>
+<h3>What Markers Look For</h3>
+<p>Four AOs are tested across Paper 1, but each part of the paper assesses a different mix:</p>
 <ul>
-  <li><strong>Personal response (AO1)</strong> - Read, understand and respond to texts. Maintain a critical style and develop an informed personal response. Use textual references, including quotations, to support and illustrate interpretations.</li>
-  <li><strong>Writer's methods (AO2)</strong> - Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.</li>
-  <li><strong>Context (AO3)</strong> - Show understanding of the relationships between texts and the contexts in which they were written.</li>
-  <li><strong>Technical accuracy (AO4)</strong> - Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation. <em>This is assessed on one essay only</em> (typically the Shakespeare section) and is worth up to 4 marks.</li>
+  <li><strong>Personal response (AO1)</strong> - Read, understand and respond to texts. Maintain a critical style and develop an informed personal response. Use textual references, including quotations, to support and illustrate interpretations. Assessed in Section A part (b) and in Section B.</li>
+  <li><strong>Writer's methods (AO2)</strong> - Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate. Assessed in Section A part (a) only.</li>
+  <li><strong>Context (AO3)</strong> - Show understanding of the relationships between texts and the contexts in which they were written. Assessed in Section A part (b) and in Section B.</li>
+  <li><strong>Technical accuracy (AO4)</strong> - Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation. <em>Assessed on the post-1914 essay only</em>, for 8 marks.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Top Tip:</strong> Technical accuracy (AO4) marks are easy to lose through carelessness. Because they are only assessed on one essay, every spelling slip and missing full stop in that response costs you. Leave two minutes at the end of your Shakespeare essay purely for proofreading.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Technical accuracy (AO4) marks are easy to lose through carelessness, and they all sit on your Section B essay. Leave a few minutes at the end of the paper purely for proofreading it.</div>
 
 <h3>How Marks Break Down</h3>
-<p>Each 40-mark section is typically weighted as follows:</p>
 <ul>
-  <li><strong>Personal response (AO1):</strong> approximately 15 marks per section - rewarding your ideas and use of references.</li>
-  <li><strong>Writer's methods (AO2):</strong> approximately 15 marks per section - rewarding analysis of the writer's craft.</li>
-  <li><strong>Context (AO3):</strong> approximately 10 marks per section - rewarding contextual understanding.</li>
-  <li><strong>Technical accuracy (AO4):</strong> up to 4 additional marks on the Shakespeare essay only.</li>
+  <li><strong>Section A part (a), the extract:</strong> Writer's methods (AO2) - 20 marks.</li>
+  <li><strong>Section A part (b), the wider play:</strong> Personal response (AO1) - 15 marks, Context (AO3) - 5 marks.</li>
+  <li><strong>Section B, the post-1914 essay:</strong> Personal response (AO1) - 16 marks, Context (AO3) - 16 marks, Technical accuracy (AO4) - 8 marks.</li>
 </ul>
+<p>So the extract question rewards close analysis of language, while the Section B essay rewards your argument about the whole text and its context, written accurately. Writer's methods (AO2) earn no marks of their own in Section B, though noticing how the writer shapes the text can still strengthen your argument.</p>
 
 <h3>Recommended Timing Plan</h3>
+<p>Pearson sets only the total time. This plan divides it roughly by marks.</p>
 <ol>
-  <li><strong>0-5 min:</strong> Read the Shakespeare extract carefully. Annotate key words, literary devices and contextual links.</li>
-  <li><strong>5-50 min:</strong> Write your Shakespeare essay (40 marks + 4 SPaG marks). Spend roughly 5 minutes planning and 40 minutes writing.</li>
-  <li><strong>50-55 min:</strong> Read the Post-1914 extract. Annotate in the same way.</li>
-  <li><strong>55-95 min:</strong> Write your Post-1914 essay (40 marks). Again, 5 minutes planning and 35 minutes writing.</li>
-  <li><strong>95-105 min:</strong> Review both essays. Prioritise checking the Shakespeare response for technical accuracy (AO4).</li>
+  <li><strong>0-25 min:</strong> Section A part (a). Read the extract and the question, annotate key words and methods, and write about the extract (20 marks).</li>
+  <li><strong>25-50 min:</strong> Section A part (b). Plan, then write about the theme elsewhere in the play, with its context (20 marks).</li>
+  <li><strong>50-55 min:</strong> Section B. Read both questions, choose one, and plan your argument.</li>
+  <li><strong>55-100 min:</strong> Write your post-1914 essay (40 marks), weaving context into your argument.</li>
+  <li><strong>100-105 min:</strong> Proofread the Section B essay for spelling, punctuation and grammar (AO4).</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing only about the printed extract and ignoring the wider text. Both sections ask you to use the extract as a <em>starting point</em>. At least a third of your essay should discuss moments, themes, or character development from elsewhere in the text, otherwise you cannot access the top mark bands.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Answering Section A as one essay. Part (a) is marked only on your analysis of the extract; part (b) is about the rest of the play and its context. Write about the extract in part (a) and move beyond it in part (b), answering each question as it is asked.</div>
 
 <h3>What "Top Band" Responses Look Like</h3>
 <p>Markers describe the highest-level answers as <strong>critical, exploratory</strong> responses that:</p>
@@ -81,7 +89,7 @@ const edexcelLitPaper1: CourseData = {
   <li>Use <strong>judiciously selected</strong> quotations - short, punchy references woven into sentences.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Conceptualised Response</strong> - An essay built around a central argument or interpretation, rather than working through the extract line by line. For example, arguing that Lady Macbeth's apparent strength is Shakespeare's device for exploring the destructive nature of unchecked ambition.</div>
+<div class="key-term"><strong>Key Term: Conceptualised Response</strong> - An essay built around a central argument or interpretation, rather than working through the text point by point. For example, arguing that Lady Macbeth's apparent strength is Shakespeare's device for exploring the destructive nature of unchecked ambition.</div>
 `,
       quiz: [
         {
@@ -90,28 +98,28 @@ const edexcelLitPaper1: CourseData = {
           options: ['1 hour 30 minutes', '1 hour 45 minutes', '2 hours', '2 hours 15 minutes'],
           correct: 1,
           explanation:
-            'Paper 1 is 1 hour and 45 minutes long. This must be split carefully between the Shakespeare section (approximately 50 minutes) and the Post-1914 Literature section (approximately 50 minutes), with 5 minutes for review.',
+            'Paper 1 is 1 hour and 45 minutes long. This must be split carefully between the Shakespeare section (about 50 minutes, across its two parts) and the post-1914 essay (about 50 minutes), with 5 minutes to proofread.',
         },
         {
           id: 'edx-lt1-m1-q2',
-          question: 'Which what markers look for tests spelling, punctuation and grammar (SPaG)?',
+          question: 'Which assessment objective tests spelling, punctuation and grammar (SPaG)?',
           options: ['AO1', 'AO2', 'AO3', 'AO4'],
           correct: 3,
           explanation:
-            'Technical accuracy (AO4) assesses SPaG and is worth up to 4 additional marks. It is tested on one essay only - typically the Shakespeare response.',
+            'Technical accuracy (AO4) assesses SPaG. It is worth 8 marks and is marked on the post-1914 essay in Section B only.',
         },
         {
           id: 'edx-lt1-m1-q3',
-          question: 'What does it mean that both Paper 1 questions are "extract-based"?',
+          question: 'How is the Section B post-1914 question set?',
           options: [
-            'You must only write about the printed extract',
-            'You are given a passage as a starting point but must also discuss the wider text',
-            'You choose your own extract to write about',
-            'The question prints two extracts for comparison',
+            'As an extract to analyse, then the wider text',
+            'As one essay question from a choice of two, opening with a short quotation',
+            'As two short questions on two extracts',
+            'As a comparison with the Shakespeare play',
           ],
           correct: 1,
           explanation:
-            'Extract-based means a passage is printed for you to use as a starting point. You must analyse the extract and then range across the wider text to access the higher mark bands.',
+            'Section B has no extract. You answer ONE essay question from a choice of two on your text; each opens with a short quotation as a stimulus. You must explore the question in relation to context, and your spelling, punctuation and grammar are marked.',
         },
         {
           id: 'edx-lt1-m1-q4',
@@ -134,7 +142,7 @@ const edexcelLitPaper1: CourseData = {
       content: `
 <h2>Macbeth - Themes &amp; Jacobean Context</h2>
 
-<p><em>Macbeth</em> is the most widely studied Shakespeare text for Edexcel GCSE English Literature. This module maps the play's <strong>seven major themes</strong> onto the historical context you need for context (AO3) - and shows you how to weave context into your analysis without "bolting it on".</p>
+<p><em>Macbeth</em> is the most widely studied Shakespeare text for Edexcel GCSE English Literature. This module maps the play's <strong>seven major themes</strong> onto the historical context you need for context (AO3), which earns marks in part (b) of the Shakespeare question (5 of its 20) - not in part (a), which is marked on the extract's language alone. It also shows you how to weave context into your argument without "bolting it on".</p>
 
 <div class="key-term"><strong>Key Term: Jacobean</strong> - Relating to the reign of King James I of England (1603-1625). <em>Macbeth</em> was written c. 1606, shortly after James came to the throne. Understanding Jacobean beliefs and politics is essential for context (AO3).</div>
 
@@ -282,7 +290,7 @@ const edexcelLitPaper1: CourseData = {
       content: `
 <h2>Character Analysis &amp; Development in <em>Macbeth</em></h2>
 
-<p>For the Shakespeare question on Paper 1, go beyond describing what a character does - explain <em>how</em> Shakespeare constructs them (writer's methods, AO2) and <em>why</em> they matter thematically and contextually (context, AO3).</p>
+<p>For the Shakespeare question on Paper 1, go beyond describing what a character does. In part (a), explain <em>how</em> Shakespeare constructs them in the extract (writer's methods, AO2); in part (b), argue <em>why</em> they matter across the play, thematically and contextually (personal response and context, AO1 and AO3).</p>
 
 <div class="key-term"><strong>Key Term: Character Arc</strong> - The transformation a character undergoes across a text. In tragedy, the protagonist's arc traces a rise followed by a catastrophic fall.</div>
 
@@ -332,7 +340,7 @@ const edexcelLitPaper1: CourseData = {
 <strong>Act 5, Scene 5 (Despair):</strong> "Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day" - Nihilism. Meaning dissolves; life becomes meaningless repetition.
 </div>
 
-<div class="grade-9-insight"><strong>Grade 9 Insight:</strong> Trace a single image's evolution across the entire play. Blood begins as honour ("brave Macbeth"), becomes transgression (Duncan's murder), then guilt ("Will all great Neptune's ocean wash this blood / Clean from my hand?"), and finally numbness ("Out, damned spot!" in Lady Macbeth's mad scene). This unified analysis demonstrates sophisticated writer's methods (AO2) understanding and conceptual mastery of the play's psychological arc.</div>
+<div class="grade-9-insight"><strong>Grade 9 Insight:</strong> Trace a single image's evolution across the entire play. Blood begins as honour ("brave Macbeth"), becomes transgression (Duncan's murder), then guilt ("Will all great Neptune's ocean wash this blood / Clean from my hand?"), and finally numbness ("Out, damned spot!" in Lady Macbeth's mad scene). This unified analysis shows conceptual mastery of the play's psychological arc - the kind of argument across the play that part (b) rewards.</div>
 
 <h3>Worked Example: Lady Macbeth's Transgression</h3>
 <p><strong>Extract:</strong> "Come, you spirits / That tend on mortal thoughts, unsex me here"</p>
@@ -407,7 +415,7 @@ const edexcelLitPaper1: CourseData = {
 <div class="text-extract">
 <strong>Sample Question:</strong> "Explore how Shakespeare presents Macbeth's change from loyal warrior to paranoid tyrant."<br><br>
 <strong>Model Response (c. 280 words):</strong> Shakespeare's presentation of Macbeth's moral descent is central to the tragedy's exploration of ambition's corrupting nature. In Act 1 Scene 2, the bleeding sergeant hails "brave Macbeth," establishing him as a loyal warrior whose violence serves rightful order - blood here symbolises martial honour. Yet by Act 1 Scene 7, Macbeth's soliloquy reveals internal fracture: "I have no spur / To prick the sides of my intent, but only / Vaulting ambition." The noun "spur" traditionally signified duty or honour, but Macbeth finds only "ambition" - selfish desire divorced from legitimate cause. The verb "vaulting" (arching, overleaping) suggests ambition that exceeds its proper bounds and will inevitably collapse, foreshadowing his downfall. Lady Macbeth's manipulation - "When you durst do it, then you were a man" - weaponises masculinity against him, forcing the murder. Following Duncan's death, blood's imagery inverts. The hyperbolic "Will all great Neptune's ocean wash this blood / Clean from my hand?" reveals Macbeth's recognition that moral transgression cannot be undone by physical action. This psychological unraveling accelerates through Acts 3-5. By Act 3, Macbeth orders further murders to feel secure ("We have scorch'd the snake, not kill'd it"), revealing paranoia and moral numbness. The Act 5 soliloquy sees meaning itself dissolve: "Tomorrow, and tomorrow, and tomorrow." Shakespeare's arc demonstrates that unchecked ambition doesn't elevate; it destroys, leaving the protagonist isolated and nihilistic. For a Jacobean audience steeped in the divine right of kings, Macbeth's fall would serve as a cosmic warning: those who violate God's ordained order face not mere earthly punishment but psychological annihilation.
-<div class="source">Grade 8-9 exemplar: ~320 words integrating personal response (AO1), writer's methods (AO2, language analysis of "vaulting," "spur," hyperbole), and context (AO3, divine right)</div>
+<div class="source">Grade 8-9 exemplar for a part (b)-style question: ~320 words of personal response (AO1) ranging across the play, supported by close reference ("vaulting," "spur"), with context (AO3, divine right)</div>
 </div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing about characters as real people. Avoid "Macbeth feels angry" - instead write "Shakespeare presents Macbeth as consumed by paranoia, reflecting the consequences of tyranny."</div>
@@ -480,7 +488,7 @@ const edexcelLitPaper1: CourseData = {
       content: `
 <h2>Language, Form &amp; Structure in <em>Macbeth</em></h2>
 
-<p>Writer's methods (AO2) requires you to analyse <em>how</em> writers use language and structure to achieve effects - not just what is said, but how and why.</p>
+<p>Writer's methods (AO2) - the whole of part (a) of the Shakespeare question, 20 marks - requires you to analyse <em>how</em> writers use language and structure to achieve effects - not just what is said, but how and why.</p>
 
 <div class="key-term"><strong>Key Term: Writer's Methods</strong> - Deliberate choices in language, form and structure to shape meaning: verse form, imagery, soliloquy, dramatic irony, structural patterning.</div>
 
@@ -610,28 +618,46 @@ const edexcelLitPaper1: CourseData = {
     },
 
     // ──────────────────────────────────────────────
-    // MODULE 5 - Shakespeare: Writing the Extract-Based Response
+    // MODULE 5 - Shakespeare: Answering Parts (a) and (b)
     // ──────────────────────────────────────────────
     {
+      // Rewritten 2 October 2026. This module taught the Shakespeare question as one 40-mark essay
+      // moving from the extract to the wider play, about 60 per cent to 40, with all four AOs
+      // marked and time kept to proofread for AO4. Pearson sets two parts, marked separately:
+      // (a) the extract, AO2 20; (b) a theme elsewhere in the play, AO1 15 and AO3 5; AO4 is not
+      // marked in Section A (see module 1). Two lines in its quotation bank, "I am settled: I will
+      // rule in fear" and "There's none of my people know", are not in Macbeth; they are replaced
+      // by lines checked against the held text (Project Gutenberg #1533).
       id: 'edx-lt1-m5',
-      title: 'Shakespeare: Writing the Extract-Based Response',
+      title: 'Shakespeare: Answering Parts (a) and (b)',
       duration: '55 min',
       content: `
-<h2>The Edexcel Shakespeare Question - Extract to Whole Play</h2>
+<h2>The Edexcel Shakespeare Question - Two Parts, Two Tasks</h2>
 
-<p>The Shakespeare question on Edexcel Paper 1 is worth <strong>40 marks</strong> and you should spend approximately <strong>50 minutes</strong> on it. You are given a printed extract alongside a question about a <strong>theme or character</strong>. You must discuss <strong>both the extract and the wider play</strong> - students who only analyse the extract will cap their mark severely. All four AOs are assessed: <strong>personal response (AO1)</strong>, <strong>writer's methods (AO2)</strong>, <strong>context (AO3)</strong>, and <strong>technical accuracy (AO4)</strong>.</p>
+<p>Section A of Paper 1 is worth <strong>40 marks</strong> and you should spend about <strong>50 minutes</strong> on it. It is <strong>one question in two parts</strong>, each worth 20 marks and each marked on its own:</p>
+<ul>
+  <li><strong>Part (a)</strong> prints an extract of about 30 lines and asks how Shakespeare presents a theme, character or idea <em>in the extract</em>. It is marked for writer's methods (AO2) alone: close analysis of language, form and structure.</li>
+  <li><strong>Part (b)</strong> asks how a theme from the extract is explored <em>elsewhere in the play</em>. It is marked for personal response (AO1, 15 marks) and context (AO3, 5 marks).</li>
+</ul>
+<p>Spelling, punctuation and grammar (AO4) are not marked in Section A: they are marked in your Section B essay.</p>
 
-<div class="key-term"><strong>Key Term: Extract-to-Whole</strong> - The Edexcel requirement that your response moves from close analysis of the given passage outward to the rest of the play, showing how the theme or character develops across the full text.</div>
+<div class="key-term"><strong>Key Term: Two-Part Question</strong> - Part (a) is a close reading of the printed extract; part (b) follows the same theme into the rest of the play. The two are marked separately, for different assessment objectives, so answer each on its own terms.</div>
 
-<h3>Recommended Response Structure</h3>
+<h3>Part (a): Analysing the Extract (20 marks, AO2)</h3>
 <ol>
-  <li><strong>Introduction (3-4 sentences):</strong> State a clear thesis addressing the question. Reference context briefly.</li>
-  <li><strong>Extract paragraphs (2-3):</strong> Close analysis - embed quotations, analyse language, imagery and dramatic techniques.</li>
-  <li><strong>Wider play paragraphs (2-3):</strong> Link to other scenes showing how the idea evolves. Weave in context.</li>
-  <li><strong>Conclusion (2-3 sentences):</strong> A final evaluative statement on Shakespeare's purpose or the audience's response.</li>
+  <li><strong>Read the question</strong> and underline its focus - a theme, character or idea.</li>
+  <li><strong>Annotate the extract:</strong> key words, imagery, dramatic techniques, shifts in tone or structure.</li>
+  <li><strong>Write 3-4 analytical paragraphs,</strong> each built on a short embedded quotation from the extract and what its language, form or structure does.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Top Tip:</strong> Aim for roughly 60% on the extract and 40% on the wider play. The extract is your launchpad, but the wider play paragraphs lift you into the top bands.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> In part (a), stay with the extract. The marks are for how closely you read Shakespeare's language, form and structure; context and the rest of the play belong in part (b).</div>
+
+<h3>Part (b): Elsewhere in the Play (20 marks, AO1 and AO3)</h3>
+<ol>
+  <li><strong>Choose 3-4 moments</strong> from other parts of the play where the theme develops, complicates or resolves.</li>
+  <li><strong>Build an argument across them,</strong> supported by short quotations you have memorised.</li>
+  <li><strong>Bring in context</strong> where it explains why Shakespeare presents the theme as he does - it is worth 5 of the 20 marks.</li>
+</ol>
 
 <h3>The PETAL Framework</h3>
 <ul>
@@ -639,76 +665,73 @@ const edexcelLitPaper1: CourseData = {
   <li><strong>E - Evidence:</strong> An embedded quotation from the text.</li>
   <li><strong>T - Technique:</strong> The literary or dramatic device used.</li>
   <li><strong>A - Analysis:</strong> The effect - what it suggests, implies, or reveals. Explore connotations.</li>
-  <li><strong>L - Link to context:</strong> Connect to the social, historical or literary context.</li>
+  <li><strong>L - Link to context:</strong> Connect to the social, historical or literary context - in part (b). In part (a), link back to the question instead.</li>
 </ul>
 
-<h3>Model Opening - Grade 8-9</h3>
-<div class="text-extract">Shakespeare presents Macbeth's ambition as a corrosive force that dismantles his moral identity. In this extract from Act 1 Scene 7, Macbeth's soliloquy reveals a man aware of the transgression he contemplates, yet unable to resist his desire for power. Across the play, unchecked ambition - fuelled by supernatural manipulation and spousal pressure - leads to tyranny, resonating with a Jacobean audience alert to regicide and divine right.<div class="source">Model introduction - Grade 8-9</div></div>
-
-<h3>Model Body Paragraph - Grade 8-9</h3>
-<div class="text-extract">Shakespeare uses the metaphor "vaulting ambition, which o'erleaps itself" to convey Macbeth's reckless desire. "O'erleaps" suggests a horseman jumping too far - foreshadowing his downfall. "Vaulting" carries connotations of arrogance, reinforcing that his aspirations have moved into hubris. For a Jacobean audience steeped in the Great Chain of Being, this signals disruption of the divinely ordained social order.<div class="source">Model extract paragraph - Grade 8-9</div></div>
+<h3>Model Part (a) Paragraph - Grade 8-9</h3>
+<div class="text-extract">Shakespeare uses the metaphor "vaulting ambition, which o'erleaps itself" to convey Macbeth's reckless desire. "O'erleaps" suggests a horseman jumping too far - foreshadowing his downfall. "Vaulting" carries connotations of arrogance, reinforcing that his aspirations have moved into hubris, and the soliloquy form lets the audience watch him reason his way towards a crime he knows is wrong.<div class="source">Model part (a) paragraph - Grade 8-9</div></div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing everything you know without linking it to the question. Every paragraph must connect to the named theme or character. Narrative retelling will not reach the top bands.</div>
 
-<h3>Quotation Bank for Macbeth Extract Questions</h3>
+<h3>Quotation Bank for Macbeth</h3>
 <div class="text-extract">
-<strong>For Ambition:</strong> "Vaulting ambition, which o'erleaps itself" (Act 1.7) | "I have no spur / To prick the sides of my intent" (Act 1.7) | "None of woman born shall harm Macbeth" (Act 4.1, false security)<br><br>
+<strong>For Ambition:</strong> "Vaulting ambition, which o'erleaps itself" (Act 1.7) | "I have no spur / To prick the sides of my intent" (Act 1.7) | "none of woman born / Shall harm Macbeth" (Act 4.1, false security)<br><br>
 <strong>For Guilt & Conscience:</strong> "Will all great Neptune's ocean wash this blood / Clean from my hand?" (Act 2.2) | "Out, damned spot!" (Act 5.1, Lady Macbeth sleepwalking)<br><br>
-<strong>For Power & Masculinity:</strong> "When you durst do it, then you were a man" (Act 1.7, Lady Macbeth goads) | "I am settled: I will rule in fear" (Act 4.1, post-witches)<br><br>
-<strong>For Appearance vs Reality:</strong> "Look like the innocent flower, / But be the serpent under't" (Act 1.5) | "There's none of my people know" (Act 3.2, before Banquo murder)<br><br>
+<strong>For Power & Masculinity:</strong> "When you durst do it, then you were a man" (Act 1.7, Lady Macbeth goads) | "I am settled, and bend up / Each corporal agent to this terrible feat" (Act 1.7)<br><br>
+<strong>For Appearance vs Reality:</strong> "Look like the innocent flower, / But be the serpent under't" (Act 1.5) | "False face must hide what the false heart doth know" (Act 1.7)<br><br>
 <strong>For the Supernatural:</strong> "Fair is foul, and foul is fair" (Act 1.1, witches) | "By the pricking of my thumbs, / Something wicked this way comes" (Act 4.1)
 </div>
 
-<h3>Grade 9 Insight: Moving Beyond the Extract</h3>
-<div class="grade-9-insight"><strong>Grade 9 Approach:</strong> Spend roughly 60% of your essay on close analysis of the printed extract (writer's methods (AO2): language techniques, dramatic effects). However, the final 40% must move decisively into the wider play. Don't just mention other scenes - show how they <em>develop, complicate, or culminate</em> the idea from the extract. For example, if the extract shows Macbeth's hesitation about regicide, move to Act 2 (the murder), then Act 3 (paranoia), then Act 5 (nihilism). This progression demonstrates that you understand the thematic arc of the play and can integrate evidence strategically.</div>
+<h3>Grade 9 Insight: Making Part (b) an Argument</h3>
+<div class="grade-9-insight"><strong>Grade 9 Approach:</strong> Don't just mention other scenes - show how they <em>develop, complicate, or culminate</em> the idea the extract raised. For example, if the extract shows Macbeth's hesitation about regicide, move to Act 2 (the murder), then Act 3 (paranoia), then Act 5 (nihilism). This progression demonstrates that you understand the thematic arc of the play and can integrate evidence strategically, with context where it explains Shakespeare's choices.</div>
 
-<h3>Worked Example: Extractto-Whole Analysis</h3>
+<h3>Worked Example: Both Parts</h3>
 <p><strong>Extract (Act 1.7):</strong> "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on th'other."</p>
-<p><strong>Question:</strong> "How does Shakespeare present the role of ambition in leading to downfall?"</p>
+<p><strong>Questions:</strong> (a) "Explore how Shakespeare presents Macbeth's ambition in this extract." (b) "In this extract, Macbeth's ambition leads him towards murder. Explain how ambition leads to downfall elsewhere in the play."</p>
 <div class="text-extract">
-<strong>Extract Analysis (2 paragraphs):</strong><br>
-This soliloquy reveals Macbeth's moral awareness. The metaphor of "spur" (a rider's tool for motivating a horse) signals that legitimate motives (duty, honour) should drive action. Yet Macbeth finds only "ambition" - selfish desire. The verb "vaulting" (arching too far) and the paradox "o'erleaps itself / And falls on th'other" foreshadow inevitable collapse. For a Jacobean audience, this self-awareness makes the subsequent regicide doubly damning: Macbeth knows his transgression violates divine order.<br><br>
-<strong>Wider Play Integration (2 paragraphs):</strong><br>
-The prophecy itself fuels this ambition. The witches' "All hail, Macbeth, that shalt be king hereafter" (Act 1.3) plants the idea; Lady Macbeth weaponises it with "When you durst do it, then you were a man" (Act 1.7). But the play demonstrates that this ambition cannot be sated. Post-murder, Macbeth's paranoia forces him to order Banquo's death ("We have scorch'd the snake, not kill'd it," Act 3.2), then Macduff's family's slaughter. Each crime deepens isolation and psychological decay. By Act 5, the nihilistic soliloquy ("Tomorrow, and tomorrow, and tomorrow") shows that ambition has destroyed not just Macbeth's morality but his capacity for meaning. Shakespeare's point: ambition as isolated personal desire, unchecked by conscience or loyalty, is self-consuming. Macduff's eventual victory and Malcolm's restoration of order reassert that the kingdom itself rejects the tyranny ambition produced.
+<strong>Part (a):</strong><br>
+This soliloquy reveals Macbeth's moral awareness. The metaphor of "spur" (a rider's tool for motivating a horse) signals that legitimate motives (duty, honour) should drive action. Yet Macbeth finds only "ambition" - selfish desire. The verb "vaulting" (arching too far) and the paradox "o'erleaps itself / And falls on th'other" foreshadow inevitable collapse, and because Macbeth speaks alone, the audience hears him condemn the act before he commits it.<br><br>
+<strong>Part (b):</strong><br>
+The prophecy itself fuels this ambition. The witches' "All hail, Macbeth, that shalt be king hereafter" (Act 1.3) plants the idea; Lady Macbeth weaponises it with "When you durst do it, then you were a man" (Act 1.7). But the play demonstrates that this ambition cannot be sated. Post-murder, Macbeth's paranoia forces him to order Banquo's death ("We have scorch'd the snake, not kill'd it," Act 3.2), then Macduff's family's slaughter. By Act 5, the nihilistic soliloquy ("Tomorrow, and tomorrow, and tomorrow") shows that ambition has destroyed not just Macbeth's morality but his capacity for meaning. For a Jacobean audience who believed kings ruled by divine right, Malcolm's coronation restores a God-given order that the tyrant's ambition broke.
 </div>
 
 <h3>PETAL Framework: Worked Practice</h3>
-<p><strong>Question Extract:</strong> "By the pricking of my thumbs, / Something wicked this way comes" (Act 4.1)</p>
+<p><strong>Quotation:</strong> "By the pricking of my thumbs, / Something wicked this way comes" (Act 4.1)</p>
 <div class="text-extract">
 <strong>P - Point:</strong> Shakespeare uses the supernatural to externalise Macbeth's psychological corruption.<br><br>
 <strong>E - Evidence:</strong> The witches' spellcraft ("By the pricking of my thumbs") creates an ominous atmosphere that precedes Macbeth's entry.<br><br>
 <strong>T - Technique:</strong> Personification ("something wicked this way comes") treats evil as an external force approaching; supernatural imagery blurs reality and illusion.<br><br>
 <strong>A - Analysis:</strong> For the audience, the witches' supernatural awareness suggests their manipulation of events. Yet Macbeth arrives immediately after, suggesting he is drawn by his own dark desires. The technique creates ambiguity: are the witches controlling Macbeth, or do they simply reveal what he already wants? This fits the play's thematic question of fate vs free will.<br><br>
-<strong>L - Link to Context:</strong> A Jacobean audience familiar with James I's <em>Daemonologie</em> would recognise witches as real threats. Yet Shakespeare makes their power ambiguous, perhaps suggesting Macbeth's own agency in his downfall. This subtlety may reflect anxieties about witchcraft trials' reliability.
+<strong>L - Link to Context (part (b)):</strong> A Jacobean audience familiar with James I's <em>Daemonologie</em> would recognise witches as real threats. Yet Shakespeare makes their power ambiguous, perhaps suggesting Macbeth's own agency in his downfall.
 </div>
 
-<h3>Timing (50 minutes)</h3>
+<h3>Timing (about 50 minutes)</h3>
 <ol>
-  <li><strong>0-5 min:</strong> Read extract carefully. Annotate key words, literary devices, character tone.</li>
-  <li><strong>5-8 min:</strong> Plan - write a one-sentence thesis, 3-4 extract points (using PETAL), 3-4 wider-play moments (showing development).</li>
-  <li><strong>8-42 min:</strong> Write response. Aim for 2-3 extract-focused paragraphs (60%), then 2-3 wider-play paragraphs (40%). Use embedded quotations (3-6 words each).</li>
-  <li><strong>42-50 min:</strong> Proofread for technical accuracy (AO4). Check for SPaG errors that lose easy marks.</li>
+  <li><strong>0-3 min:</strong> Read the extract and both questions. Annotate key words, literary devices and character tone.</li>
+  <li><strong>3-25 min:</strong> Write part (a): 3-4 paragraphs on the extract, with short embedded quotations (3-6 words each).</li>
+  <li><strong>25-28 min:</strong> Plan part (b): a one-sentence thesis and 3-4 moments from elsewhere in the play.</li>
+  <li><strong>28-50 min:</strong> Write part (b), weaving in context where it explains Shakespeare's choices.</li>
 </ol>
 
-<h3>Model Opening - Extract-to-Whole (Grade 8-9)</h3>
+<h3>Model Opening for Part (b) - Grade 8-9</h3>
 <div class="text-extract">
-<strong>Question:</strong> "Explore how Shakespeare uses the witches to explore the theme of ambition."<br><br>
+<strong>Question:</strong> "Explain how Shakespeare uses the witches to explore the theme of ambition elsewhere in the play."<br><br>
 <strong>Model Introduction:</strong> Shakespeare presents the witches as agents of temptation who tap into Macbeth's latent ambition, raising the question of whether they cause his downfall or merely reveal his underlying desires. The witches' prophecies - particularly "All hail, Macbeth, that shalt be king hereafter" (Act 1.3) - plant ambition in Macbeth's mind, yet Lady Macbeth must drive him to act. Across the play, the supernatural becomes increasingly tied to Macbeth's psychological deterioration, suggesting that ambition, once awakened, becomes self-perpetuating. Ultimately, Shakespeare suggests that while external temptation exists, individuals remain responsible for their moral choices.
-<div class="source">Grade 8-9: Establishes a conceptualised argument, references context (James I's beliefs about witchcraft), and indicates the essay's direction</div>
+<div class="source">Grade 8-9: establishes a conceptualised argument and indicates the essay's direction</div>
 </div>
 
-<h3>Extract Paragraph Model (Grade 8-9)</h3>
+<h3>Part (a) Paragraph Model (Grade 8-9)</h3>
 <div class="text-extract">
 <strong>From Act 1.7 - "I have no spur / To prick the sides of my intent, but only / Vaulting ambition"</strong><br><br>
-Shakespeare's use of equestrian metaphor reveals Macbeth's moral self-awareness. The "spur" traditionally signifies duty or honour - legitimate reasons to act - yet Macbeth identifies only "ambition" as his motivator. The verb "vaulting" (leaping, arching) carries connotations of reckless overreach; the paradoxical "o'erleaps itself / And falls on th'other" foreshadows inevitable collapse. Notably, Macbeth does not excuse his ambition as imposed by fate or witches - he owns it. For a Jacobean audience steeped in the Great Chain of Being, this self-aware transgression is damning: Macbeth understands the cosmic disorder his actions will produce, yet cannot resist. The metaphor's specificity - the concrete image of a horse and rider - makes abstract ambition visceral, inviting the audience to feel the tragedy of a man who recognises his own doom.
-<div class="source">Grade 8-9 Extract Paragraph: ~180 words, demonstrating AO2 (metaphor analysis, connotations, paradox), personal response (AO1), context (AO3, Jacobean)</div>
+Shakespeare's use of equestrian metaphor reveals Macbeth's moral self-awareness. The "spur" traditionally signifies duty or honour - legitimate reasons to act - yet Macbeth identifies only "ambition" as his motivator. The verb "vaulting" (leaping, arching) carries connotations of reckless overreach; the paradoxical "o'erleaps itself / And falls on th'other" foreshadows inevitable collapse. Notably, Macbeth does not excuse his ambition as imposed by fate or witches - he owns it. The metaphor's specificity - the concrete image of a horse and rider - makes abstract ambition visceral, inviting the audience to feel the tragedy of a man who recognises his own doom.
+<div class="source">Grade 8-9 part (a) paragraph: writer's methods (AO2) - metaphor analysis, connotations, paradox</div>
 </div>
 
-<h3>Wider Play Paragraph Model (Grade 8-9)</h3>
+<h3>Part (b) Paragraph Model (Grade 8-9)</h3>
 <div class="text-extract">
 <strong>Developing the theme into Acts 2-5:</strong><br><br>
-Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the play demonstrates how ambition mutates into paranoia and tyranny. Following Duncan's murder, Macbeth's language shifts from reflection to ruthlessness. "We have scorch'd the snake, not kill'd it" (Act 3.2) reveals that one murder cannot satiate ambition - Banquo remains a threat. This compulsion drives Macbeth to orchestrate Banquo's death and, by Act 4, to order the slaughter of Macduff's innocent family. Each crime distances him further from his initial moral awareness. By Act 5, the nihilistic "Tomorrow, and tomorrow, and tomorrow" soliloquy shows that ambition has consumed all meaning - Macbeth is no longer driven by desire but hollowed by it. Shakespeare's arc demonstrates that unchecked ambition does not elevate; it destroys the ambition-driven self. The restoration of order through Macduff's victory and Malcolm's coronation reasserts that the kingdom itself rejects the tyrant ambition produced.
-<div class="source">Grade 8-9 Wider Play Paragraph: ~200 words, integrating multiple scenes to show thematic development and providing conceptualised interpretation</div>
+Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the play demonstrates how ambition mutates into paranoia and tyranny. Following Duncan's murder, Macbeth's language shifts from reflection to ruthlessness. "We have scorch'd the snake, not kill'd it" (Act 3.2) reveals that one murder cannot satiate ambition - Banquo remains a threat. This compulsion drives Macbeth to orchestrate Banquo's death and, by Act 4, to order the slaughter of Macduff's innocent family. By Act 5, the nihilistic "Tomorrow, and tomorrow, and tomorrow" soliloquy shows that ambition has consumed all meaning. For a Jacobean audience steeped in the Great Chain of Being, the restoration of order through Macduff's victory and Malcolm's coronation reasserts that the kingdom itself rejects the tyrant ambition produced.
+<div class="source">Grade 8-9 part (b) paragraph: personal response (AO1) across several scenes, with context (AO3)</div>
 </div>
 `,
       quiz: [
@@ -718,20 +741,20 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
           options: ['20 marks', '30 marks', '40 marks', '50 marks'],
           correct: 2,
           explanation:
-            'The Edexcel Shakespeare question is worth 40 marks and should take approximately 50 minutes to complete.',
+            'Section A is worth 40 marks: 20 for part (a) on the extract and 20 for part (b) on the rest of the play. Spend about 50 minutes on it.',
         },
         {
           id: 'edx-lt1-m5-q2',
-          question: 'What must you discuss in their response to the Shakespeare question?',
+          question: 'What does part (b) of the Shakespeare question ask you to write about?',
           options: [
-            'Only the given extract in close detail',
-            'Only the wider play with brief reference to the extract',
-            'Both the extract and the wider play',
+            'The printed extract, in close detail',
+            'How the theme from the extract is explored elsewhere in the play',
             'A comparison between two Shakespeare plays',
+            'Your own experience of the theme',
           ],
-          correct: 2,
+          correct: 1,
           explanation:
-            'The Edexcel question requires you to analyse both the given extract and the wider play. Focusing on only one will limit the mark significantly.',
+            'Part (a) is about the extract; part (b) follows the same theme into the rest of the play, and is marked for your response (AO1) and context (AO3).',
         },
         {
           id: 'edx-lt1-m5-q3',
@@ -739,20 +762,20 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
           options: ['Language', 'Link to context', 'Literary device', 'Line reference'],
           correct: 1,
           explanation:
-            'In PETAL, the L stands for "Link to context" - connecting your analysis to the social, historical, or literary context of the text (AO3).',
+            'In PETAL, the L stands for "Link to context" - connecting your analysis to the social, historical, or literary context of the text (AO3). Context earns marks in part (b); in part (a), link back to the question instead.',
         },
         {
           id: 'edx-lt1-m5-q4',
-          question: 'Which what markers look for are tested in the Edexcel Shakespeare question?',
+          question: 'Which assessment objectives are tested in the Edexcel Shakespeare question?',
           options: [
+            'AO2 in part (a); AO1 and AO3 in part (b)',
+            'AO1, AO2, AO3 and AO4 in one essay',
             'AO1 and AO2 only',
-            'AO1, AO2, and AO3 only',
-            'AO1, AO2, AO3, and AO4',
-            'AO2, AO3, and AO4 only',
+            'AO2, AO3 and AO4',
           ],
-          correct: 2,
+          correct: 0,
           explanation:
-            "All four AOs are assessed: personal response (AO1), writer's methods (AO2), context (AO3), and technical accuracy (AO4).",
+            "Part (a) is marked for writer's methods (AO2, 20 marks); part (b) for personal response (AO1, 15) and context (AO3, 5). Technical accuracy (AO4) is marked in Section B, not here.",
         },
       ],
     },
@@ -761,6 +784,8 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
     // MODULE 6 - Post-1914 Literature: Themes & Context (An Inspector Calls Focus)
     // ──────────────────────────────────────────────
     {
+      // 2 October 2026: the Inspector's "Public men, Mr Birling, have responsibilities as well as
+      // privileges" is quoted in full; "Mr Birling" had been dropped from its middle unmarked.
       id: 'edx-lt1-m6',
       title: 'Post-1914 Literature: Themes & Context (An Inspector Calls Focus)',
       duration: '55 min',
@@ -797,7 +822,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
   <li><strong>"I was quite justified"</strong> - Mrs Birling measures behaviour by class, not compassion.</li>
   <li><strong>"We all helped to kill her"</strong> - "we all" distributes responsibility across the family.</li>
   <li><strong>"A man has to make his own way"</strong> - Birling's individualist creed, opposite to the Inspector's collectivism.</li>
-  <li><strong>"Public men have responsibilities as well as privileges"</strong> - balanced syntax mirrors the balance Priestley demands.</li>
+  <li><strong>"Public men, Mr Birling, have responsibilities as well as privileges"</strong> - balanced syntax mirrors the balance Priestley demands.</li>
   <li><strong>"You're squiffy"</strong> - Eric's drinking hints at dysfunction beneath the respectable surface.</li>
 </ul>
 
@@ -877,6 +902,10 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
     // MODULE 7 - Post-1914 Literature: Character Analysis
     // ──────────────────────────────────────────────
     {
+      // 2 October 2026: Sheila's "That's a beautiful dress! Isn't it, Mummy? I love it!" is not in
+      // the play (in Act 1 she says of her engagement ring "isn't it a beauty?"), nor is "You're
+      // pretending everything's all right" (Act 3 has "you're pretending everything's just as it
+      // was before"). Section B does not assess writer's methods (AO2); see module 1.
       id: 'edx-lt1-m7',
       title: 'Post-1914 Literature: Character Analysis',
       duration: '55 min',
@@ -898,7 +927,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
   <li><strong>Gerald</strong> - Upper class, represents patriarchy. His affair with Daisy Renton is built on power imbalance. Key quote: <em>"intensely grateful"</em> reveals the transactional nature. Sides with the older Birlings by Act 3, closing ranks.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Top Tip:</strong> Sheila is the safest exam choice - her clear arc naturally generates personal response (AO1), writer's methods (AO2), and context (AO3) marks in a single paragraph. Eric is equally strong but slightly weaker because his motivation is less clear.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Sheila is the safest exam choice - her clear arc naturally generates personal response (AO1) and context (AO3) marks in a single paragraph. Eric is equally strong but slightly weaker because his motivation is less clear.</div>
 
 <h3>Quotation Bank: Key Character Moments with Analysis</h3>
 <div class="text-extract">
@@ -910,13 +939,13 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 </div>
 
 <h3>Grade 9 Insight: Character as Ideological Vehicle</h3>
-<div class="grade-9-insight"><strong>Grade 9 Approach:</strong> Avoid treating characters as psychologically realistic people. Instead, recognise that Priestley constructs each character to embody a political position: Birling = capitalist individualism; Mrs Birling = aristocratic snobbery; Sheila/Eric = socialist potential; Inspector = moral authority. Show how their dialogue and stage actions express these ideologies. For instance, Sheila's early consumerism ("That's a beautiful dress") contrasts with her later recognition of workers' humanity. This ideological shift is Priestley's argument for social change, not a realistic character "journey." Top-band responses will frame characters as constructs that dramatise political debate.</div>
+<div class="grade-9-insight"><strong>Grade 9 Approach:</strong> Avoid treating characters as psychologically realistic people. Instead, recognise that Priestley constructs each character to embody a political position: Birling = capitalist individualism; Mrs Birling = aristocratic snobbery; Sheila/Eric = socialist potential; Inspector = moral authority. Show how their dialogue and stage actions express these ideologies. For instance, Sheila's early delight in her engagement ring ("isn't it a beauty?") contrasts with her later recognition of workers' humanity. This ideological shift is Priestley's argument for social change, not a realistic character "journey." Top-band responses will frame characters as constructs that dramatise political debate.</div>
 
 <h3>Worked Example: Sheila's Transformation</h3>
-<p><strong>Extract (Act 1):</strong> "That's a beautiful dress! Isn't it, Mummy? I love it!"</p>
+<p><strong>Act 1, on her engagement ring:</strong> "Oh - it's wonderful! Look - mummy - isn't it a beauty?"</p>
 <p><strong>Later (Act 2):</strong> "But these girls aren't cheap labour - they're people."</p>
 <div class="text-extract">
-<strong>Analysis:</strong> Priestley constructs Sheila as the play's moral barometer, moving from shallow materialism to ethical consciousness. In Act 1, her enthusiasm for her dress - infantilised by stage direction "very pleased with life" - shows her isolation in bourgeois comfort. She has never considered the labour or ethics behind her possessions. However, when she learns that her vanity led to Eva's dismissal from Milwards (out of jealousy at a pretty girl in the shop), Sheila undergoes radical reorientation. Her assertion that girls "aren't cheap labour - they're people" employs the simple plural noun "people" to assert a shared humanity her parents cannot acknowledge. The deliberate simplicity - no fancy adjectives, no hedging - makes the statement all the more powerful. By Act 3, Sheila has become the family's moral conscience, openly challenging her parents: "You're pretending everything's all right." The present continuous "pretending" shows her refusal of moral amnesia. For Priestley, writing in 1945 after World War II, Sheila embodies the younger generation's capacity for social conscience - a hopeful vision that post-war Britain could be rebuilt on principles of collective responsibility rather than pre-war class complacency.
+<strong>Analysis:</strong> Priestley constructs Sheila as the play's moral barometer, moving from shallow materialism to ethical consciousness. In Act 1, her delight in her engagement ring - and the stage direction "very pleased with life" - shows her isolation in bourgeois comfort. She has never considered the labour or ethics behind her possessions. However, when she learns that her vanity led to Eva's dismissal from Milwards (out of jealousy at a pretty girl in the shop), Sheila undergoes radical reorientation. Her assertion that girls "aren't cheap labour - they're people" employs the simple plural noun "people" to assert a shared humanity her parents cannot acknowledge. The deliberate simplicity - no fancy adjectives, no hedging - makes the statement all the more powerful. By Act 3, Sheila has become the family's moral conscience, openly challenging her parents: "you're pretending everything's just as it was before." The present continuous "pretending" shows her refusal of moral amnesia. For Priestley, writing in 1945 after World War II, Sheila embodies the younger generation's capacity for social conscience - a hopeful vision that post-war Britain could be rebuilt on principles of collective responsibility rather than pre-war class complacency.
 </div>
 
 <h3>Character Comparison Grid</h3>
@@ -978,9 +1007,9 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 
 <h3>Model Paragraph: Sheila's Development (Grade 8-9)</h3>
 
-<div class="text-extract">Priestley constructs Sheila as the play's central moral barometer, dramatising the younger generation's capacity for ethical awakening. In Act 1, the stage directions describe her as "a pretty girl in her early twenties, very pleased with life," a phrase heavy with irony - her pleasure is naive, rooted in material comfort and social privilege. Her comment on the Inspector's dress - "That's a beautiful dress! Isn't it, Mummy? I love it!" - reveals a mind focused entirely on consumption. However, once she learns that her own jealousy led to Eva Smith's dismissal from Milwards, Sheila undergoes a radical reorientation. Her assertion that girls "aren't cheap labour - they're people" employs deliberate simplicity to assert a shared humanity her parents cannot acknowledge. The noun "people" carries moral weight precisely because it refuses euphemism or qualification (unlike Mrs Birling's hedging "girls of that class"). By Act 3, Sheila has become the family's moral conscience, openly challenging her parents with "You're pretending everything's all right." The present continuous verb "pretending" shows her refusal to return to pre-war moral amnesia. For Priestley, writing in the aftermath of World War II, Sheila embodies his hope that the younger generation - having witnessed collective catastrophe - could build a post-war society founded on principles of collective responsibility. She becomes Priestley's spokesman for social justice, suggesting that moral growth, once achieved, cannot be reversed.<div class="source">Grade 8-9 paragraph: ~280 words, demonstrating personal response (AO1, interpretation of generational change), writer's methods (AO2, analysis of stage direction, word choice, dramatic action), context (AO3, post-war)</div></div>
+<div class="text-extract">Priestley constructs Sheila as the play's central moral barometer, dramatising the younger generation's capacity for ethical awakening. In Act 1, the stage directions describe her as "a pretty girl in her early twenties, very pleased with life," a phrase heavy with irony - her pleasure is naive, rooted in material comfort and social privilege. Her delight in her engagement ring - "isn't it a beauty?" - reveals a mind focused on possessions. However, once she learns that her own jealousy led to Eva Smith's dismissal from Milwards, Sheila undergoes a radical reorientation. Her assertion that girls "aren't cheap labour - they're people" employs deliberate simplicity to assert a shared humanity her parents cannot acknowledge. The noun "people" carries moral weight precisely because it refuses euphemism or qualification (unlike Mrs Birling's hedging "girls of that class"). By Act 3, Sheila has become the family's moral conscience, openly challenging her parents with "you're pretending everything's just as it was before." The present continuous verb "pretending" shows her refusal to return to pre-war moral amnesia. For Priestley, writing in the aftermath of World War II, Sheila embodies his hope that the younger generation - having witnessed collective catastrophe - could build a post-war society founded on principles of collective responsibility. She becomes Priestley's spokesman for social justice, suggesting that moral growth, once achieved, cannot be reversed.<div class="source">Grade 8-9 paragraph: ~280 words, demonstrating personal response (AO1, interpretation of generational change, supported by stage directions, word choice and dramatic action) and context (AO3, post-war)</div></div>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing about characters as if they are real people. Always frame analysis around Priestley's purpose - e.g. "Priestley uses Sheila to suggest that younger people can develop moral conscience" not "Sheila feels bad because she caused Eva's death." The first is writer's methods analysis (AO2); the second is paraphrase.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing about characters as if they are real people. Always frame analysis around Priestley's purpose - e.g. "Priestley uses Sheila to suggest that younger people can develop moral conscience" not "Sheila feels bad because she caused Eva's death." The first is an argument about the writer's purpose, which is what personal response (AO1) rewards; the second is paraphrase.</div>
 `,
       quiz: [
         {
@@ -1024,13 +1053,13 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
             'Why should exam responses refer to "Priestley" rather than treating characters as real people?',
           options: [
             'Because markers prefer formal language',
-            "Because it demonstrates awareness that characters are constructs used to convey ideas (personal response (AO1) and writer's methods (AO2))",
+            'Because it demonstrates awareness that characters are constructs used to convey ideas, which strengthens your personal response (AO1)',
             'Because it adds to the word count',
             'Because the marking guide only rewards biographical context',
           ],
           correct: 1,
           explanation:
-            "Referring to Priestley's intentions shows markers that you understand characters are deliberate constructs - tools the writer uses to explore themes and influence the audience. This is essential for personal response (AO1) and writer's methods (AO2).",
+            "Referring to Priestley's intentions shows markers that you understand characters are deliberate constructs - tools the writer uses to explore themes and influence the audience. This strengthens your personal response (AO1), and links naturally to context (AO3).",
         },
       ],
     },
@@ -1039,15 +1068,19 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
     // MODULE 8 - Post-1914 Literature: Writer's Methods & Effects
     // ──────────────────────────────────────────────
     {
+      // 2 October 2026: Section B does not assess writer's methods (AO2) - it is marked for AO1, AO3
+      // and AO4 - so this module now teaches methods as evidence for the argument. Its 60-word
+      // block quotation of the Inspector's last speech, from a play in copyright, is cut to the
+      // three short phrases its notes analyse.
       id: 'edx-lt1-m8',
       title: "Post-1914 Literature: Writer's Methods & Effects",
       duration: '55 min',
       content: `
-<h2>An Inspector Calls - Writer's Methods and Effects (AO2)</h2>
+<h2>An Inspector Calls - Writer's Methods and Effects</h2>
 
-<p><strong>writer's methods (AO2)</strong> asks you to analyse how writers use <strong>language, form, and structure</strong> to achieve effects. In drama, this means going beyond dialogue to examine Priestley's full toolkit as a playwright.</p>
+<p>Section B does not award marks for writer's methods (AO2) on their own: it is marked for your argument (AO1), context (AO3) and accuracy (AO4). But knowing <em>how</em> Priestley builds meaning through <strong>language, form, and structure</strong> gives your argument its best evidence. In drama, this means going beyond dialogue to examine Priestley's full toolkit as a playwright.</p>
 
-<div class="key-term"><strong>Key Term: Writer's Methods (AO2)</strong> - The what markers look for that rewards analysis of <em>how</em> a writer creates meaning through language, structure, and form.</div>
+<div class="key-term"><strong>Key Term: Writer's Methods</strong> - <em>How</em> a writer creates meaning through language, structure, and form. In Section B, use them as evidence for your argument about the play and its context.</div>
 
 <h3>Dramatic Methods</h3>
 
@@ -1074,9 +1107,9 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 
 <div class="common-mistake"><strong>Common Mistake:</strong> "Priestley uses dramatic irony" identifies the technique but says nothing about effect. Always push further: "…to discredit Birling's confidence, ensuring the audience distrusts his philosophy before the Inspector arrives."</div>
 
-<h3>Annotated Extract - Act 3</h3>
+<h3>Annotated Moment - The Inspector's Final Speech (Act 3)</h3>
 
-<div class="text-extract"><strong>INSPECTOR:</strong> One Eva Smith has gone - but there are millions and millions and millions of Eva Smiths and John Smiths still left with us… We don't live alone. We are members of one body. We are responsible for each other. And I tell you that the time will soon come when, if men will not learn that lesson, then they will be taught it in fire and blood and anguish.<div class="source">J.B. Priestley, <em>An Inspector Calls</em>, Act 3</div></div>
+<p>Before he leaves, the Inspector widens Eva's story to everyone like her and warns the family what will happen if the lesson is not learned. Three short quotations carry the speech:</p>
 
 <ul>
   <li><strong>Tripling</strong> - <em>"millions and millions and millions"</em> hammers home the scale of inequality.</li>
@@ -1086,9 +1119,9 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 
 <div class="examiner-tip"><strong>Top Tip:</strong> When writing about structure, think in terms of audience experience: "What does the audience feel, and how has Priestley engineered it?"</div>
 
-<h3>Model Writer's Methods (AO2)-Focused Paragraph</h3>
+<h3>Model Paragraph: Methods as Evidence</h3>
 
-<div class="text-extract">Priestley uses the cyclical structure to reinforce his message. The telephone announces a girl has died and an inspector is coming - mirroring the opening. The Birlings' dismissal of the Inspector as a hoax is immediately punished; the comfortable resolution is snatched away. The audience must recognise that ignoring responsibility has consequences. Just as the Birlings relive the interrogation, post-war Britain must not repeat the inequalities that led to war.<div class="source">Model writer's methods (AO2) paragraph - technique, effect, purpose</div></div>
+<div class="text-extract">Priestley uses the cyclical structure to reinforce his message. The telephone announces a girl has died and an inspector is coming - mirroring the opening. The Birlings' dismissal of the Inspector as a hoax is immediately punished; the comfortable resolution is snatched away. The audience must recognise that ignoring responsibility has consequences. Just as the Birlings relive the interrogation, post-war Britain must not repeat the inequalities that led to war.<div class="source">Model paragraph - technique, effect and purpose, in service of the argument and its 1945 context</div></div>
 `,
       quiz: [
         {
@@ -1121,7 +1154,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
         },
         {
           id: 'edx-lt1-m8-q3',
-          question: 'What is the correct chain for a strong AO2 response?',
+          question: "What is the strongest way to use Priestley's methods in a Section B essay?",
           options: [
             'Quote → Terminology → Context',
             "Technique → Effect → Writer's purpose",
@@ -1130,7 +1163,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
           ],
           correct: 1,
           explanation:
-            "AO2 rewards analysis of methods. The strongest responses identify the technique, explain its effect on the audience, and then link this to the writer's broader purpose - moving well beyond simple feature-spotting.",
+            "Section B does not mark methods (AO2) on their own, but a method becomes strong evidence when you identify it, explain its effect on the audience, and link it to the writer's purpose - which feeds your argument (AO1) and context (AO3).",
         },
         {
           id: 'edx-lt1-m8-q4',
@@ -1167,50 +1200,58 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
     // MODULE 9 - Post-1914 Literature: Essay Writing Techniques
     // ──────────────────────────────────────────────
     {
+      // Rewritten 2 October 2026. This module said Section B prints an extract to analyse with
+      // the wider text, for AO1 to AO4, and called AO4 "evaluation". Section B is ONE essay
+      // question from a choice of two, opened by a short quotation, with no extract: AO1 16, AO3
+      // 16 and AO4 8, where AO4 is spelling, punctuation, grammar and range of vocabulary. Its
+      // worked essay also continued Birling's interrupted speech with words he never says ("and
+      // if he doesn't he's not worth much"), had him sack Eva "from Milwards" (she was sacked
+      // from his works; Milwards is Sheila's shop), and quoted "say nothing" and "it's all over
+      // now", which are not in the play. Quotations are checked against a published script.
       id: 'edx-lt1-m9',
       title: 'Post-1914 Literature: Essay Writing Techniques',
       duration: '55 min',
       content: `
 <h2>Writing the Post-1914 Literature Essay (40 Marks)</h2>
 
-<p>Section B provides a short <strong>extract</strong> from your post-1914 text and asks you to analyse both the extract and the <strong>wider text</strong> for <strong>40 marks</strong> (AO1-AO4). The extract-to-whole-text approach - the same method used for Shakespeare - is essential.</p>
+<p>Section B gives you a choice of <strong>two essay questions</strong> on your post-1914 text, and you answer <strong>one</strong>, for <strong>40 marks</strong>. There is no extract: each question opens with a <strong>short quotation</strong> from the text as a stimulus, then asks you to explore a character, theme, setting or the plot across the whole text, in relation to its context. It is marked for personal response (AO1, 16 marks), context (AO3, 16 marks) and technical accuracy (AO4, 8 marks).</p>
 
-<div class="key-term"><strong>Key Term: Extract-to-Whole-Text Approach</strong> - Begin with close analysis of the given extract, then broaden to the rest of the text, mirroring the marking guide requirement to address both the passage and the wider work.</div>
+<div class="key-term"><strong>Key Term: Stimulus Quotation</strong> - The short quotation printed before each Section B question. It is a starting point, not an extract to analyse line by line: the question is about the text as a whole.</div>
 
 <h3>Planning in 5 Minutes</h3>
 <ol>
-  <li><strong>Identify the key theme.</strong> Read the extract twice, underline significant words. What is markers asking about - power, guilt, responsibility, conflict?</li>
-  <li><strong>Brainstorm 3-4 wider-text moments</strong> where this theme appears, focusing on <em>development</em> or <em>contrast</em>.</li>
-  <li><strong>Choose quotations.</strong> 2-3 short quotes from the extract and 2-3 memorised from wider text (3-6 words each).</li>
+  <li><strong>Choose your question.</strong> Read both questions and their quotations, and pick the one you can argue best - power, guilt, responsibility, class?</li>
+  <li><strong>Brainstorm 4-5 moments</strong> across the text where the theme or character appears, focusing on <em>development</em> or <em>contrast</em>.</li>
+  <li><strong>Choose quotations.</strong> 4-6 short quotes you have memorised (3-6 words each), and a contextual point for each moment.</li>
 </ol>
 
 <h3>Essay Structure: The Six-Part Framework</h3>
 <ol>
   <li><strong>Thesis Introduction:</strong> State your argument - e.g. <em>"Priestley uses Sheila to expose the generational divide in attitudes towards responsibility."</em></li>
-  <li><strong>Extract Paragraph 1:</strong> Close-read the first key moment. Embed a quotation, analyse at word level, link to theme and context.</li>
-  <li><strong>Extract Paragraph 2:</strong> Analyse a second moment using a different technique (structure, dramatic device, imagery).</li>
-  <li><strong>Wider Text Paragraph 1:</strong> A moment that <em>develops</em> the theme - where the idea is introduced or intensified.</li>
-  <li><strong>Wider Text Paragraph 2:</strong> A contrasting or climactic moment. Integrate contextual knowledge naturally.</li>
+  <li><strong>Argument Paragraph 1:</strong> Where the idea is introduced. Embed a quotation, explain what it shows, and link it to context.</li>
+  <li><strong>Argument Paragraph 2:</strong> A moment that <em>develops</em> or intensifies the idea.</li>
+  <li><strong>Argument Paragraph 3:</strong> A contrasting moment or character, showing the idea from another angle.</li>
+  <li><strong>Argument Paragraph 4:</strong> A climactic or closing moment. Integrate contextual knowledge naturally.</li>
   <li><strong>Conclusion:</strong> Link to the writer's overall message and context. Do not repeat your introduction.</li>
 </ol>
 
-<h3>Hitting All AOs in One Paragraph</h3>
+<h3>Covering AO1, AO3 and AO4</h3>
 <ul>
-  <li><strong>AO1 (Point):</strong> <em>"Priestley presents Birling as wilfully ignorant of social responsibility."</em></li>
-  <li><strong>AO2 (Analysis):</strong> <em>"The repeated 'I' in 'I say there isn't a chance of war' reveals egocentric worldview."</em></li>
+  <li><strong>AO1 (Argument and reference):</strong> <em>"Priestley presents Birling as wilfully ignorant of social responsibility."</em></li>
+  <li><strong>Supporting evidence:</strong> <em>"The repeated 'I' in 'I say there isn't a chance of war' reveals an egocentric worldview."</em> Methods are not marked separately in Section B, but close reference like this strengthens your argument.</li>
   <li><strong>AO3 (Context):</strong> <em>"Setting the play in 1912 but writing in 1945, Priestley uses dramatic irony to expose Edwardian complacency."</em></li>
-  <li><strong>AO4 (Evaluation):</strong> <em>"This makes Birling morally culpable - his refusal to see beyond himself enables exploitation."</em></li>
+  <li><strong>AO4 (Technical accuracy):</strong> 8 marks for spelling, punctuation, grammar and a range of vocabulary and sentence structures. Leave time to proofread.</li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing a separate "context paragraph" disconnected from analysis. Weave context into every paragraph - show <em>why</em> the writer made choices, not a standalone history lesson.</div>
 
 <h3>Grade 5 vs Grade 9 Comparison</h3>
 <p><strong>Grade 5:</strong> <em>"Sheila says 'I'll never, never do it again.' This shows she feels guilty."</em> - Paraphrases meaning only.</p>
-<p><strong>Grade 9:</strong> <em>"The emphatic repetition in 'never, never' signals a moral awakening. The contracted 'll' suggests instinctive promise, positioning Sheila as the younger generation's conscience. Priestley embodies his socialist argument that accountability must extend beyond the individual."</em> - Analyses language, conceptualises meaning, integrates purpose.</p>
+<p><strong>Grade 9:</strong> <em>"The emphatic repetition in 'never, never' signals a moral awakening, positioning Sheila as the younger generation's conscience. Priestley embodies his socialist argument that accountability must extend beyond the individual."</em> - Interprets, conceptualises meaning, integrates purpose.</p>
 
 <h3>Quotation Bank: Grade 8-9 Transitions & Linking Phrases</h3>
 <div class="text-extract">
-<strong>Extract-to-Wider-Text Transitions:</strong><br>
+<strong>Across-the-Text Transitions:</strong><br>
 "This moment is crystallised when…" / "The pattern established here develops further…" / "This theme reaches its climax when…" / "Conversely, Priestley complicates this idea through…" / "Elsewhere in the play, this dynamic reverses when…"<br><br>
 <strong>Context Integration Transitions:</strong><br>
 "Writing in the immediate aftermath of…" / "For a 1945 audience, recently emerged from wartime…" / "The historical context illuminates…" / "This reflects the contemporary anxiety about…" / "In the context of post-war social debate…"<br><br>
@@ -1222,16 +1263,16 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 <div class="grade-9-insight"><strong>Grade 9 Conceptualisation:</strong> Move beyond listing points to building a unified argument. Rather than "Priestley criticises capitalism (point 1), Priestley criticises class (point 2), Priestley criticises patriarchy (point 3)," argue something like: "Priestley presents social injustice as systemic - rooted in interconnected failures of capitalism, class hierarchy, and patriarchal power. Each character's moral blindness stems from their investment in these systems. Only the Inspector (and Sheila/Eric) recognise that these systems are inseparable. This interconnection is why collective responsibility - not individual charity - is necessary." This is conceptualisation: a unified argument that brings the play's parts into coherent relation.</div>
 
 <h3>Worked Example: Building Arguments Within Paragraphs</h3>
-<p><strong>Question:</strong> "Explore how Priestley presents the theme of class in An Inspector Calls."</p>
+<p><strong>Question:</strong> "Explore how Priestley presents the theme of class in An Inspector Calls. You must refer to the context of the play in your answer."</p>
 <p><strong>Weak response (list-like):</strong></p>
 <div class="text-extract">
 "Mrs Birling is snobbish about Eva because she is poor. Gerald is upper class and treats Daisy Renton disrespectfully. The Inspector criticises their class attitudes. This shows that Priestley thinks class is a problem."<br><br>
-(Problems: No analysis of how language or dramatic action conveys meaning; no context; statements are obvious restatements of plot.)
+(Problems: No exploration of how Priestley conveys his meaning; no context; statements are obvious restatements of plot.)
 </div>
 <p><strong>Strong response (argument-driven):</strong></p>
 <div class="text-extract">
-"Priestley critiques class not as individual snobbery but as a structural system that dehumanises the working classes. Mrs Birling's truncated phrase 'Girls of that class-' reveals her linguistic discomfort even naming Eva's status; she cannot complete the thought because naming enforces the gap between herself and Eva. This linguistic failure mirrors moral failure: she cannot extend empathy across class lines because the system teaches her that class is determinative of human worth. Similarly, Gerald's upper-class seduction of Daisy Renton ('intensely grateful') treats working-class female sexuality as a commodity to be obtained through superficial kindness. Priestley's dramatic irony is that both characters believe themselves moral within their class framework. The Inspector's intervention - "We are members of one body. We are responsible for each other" - directly contradicts the class ideology that has structured the Birlings' world. In the play's final moments, when Mr and Mrs Birling refuse the Inspector's lesson and close ranks with Gerald, Priestley shows that pre-war class hierarchy was reinforced precisely through such collective refusals to acknowledge systemic interdependence. Writing in 1945, post-World War II, Priestley argues that societies that ignore collective responsibility face catastrophic consequences. Class ideology is thus not merely a prejudice to be overcome through individual goodwill but a structural barrier to the collective consciousness necessary for post-war reconstruction."<br><br>
-(Strengths: Unified argument; precise language analysis; integration of context; understanding of Priestley's purpose; demonstrates how multiple scenes build towards a thematic conclusion.)
+"Priestley critiques class not as individual snobbery but as a structural system that dehumanises the working classes. Mrs Birling's truncated phrase 'Girls of that class-' reveals her discomfort even naming Eva's status; she cannot complete the thought because naming enforces the gap between herself and Eva. This failure of language mirrors moral failure: she cannot extend empathy across class lines because the system teaches her that class determines human worth. Similarly, Gerald treats his affair with Daisy Renton as a kindness he was free to end, a relationship conducted entirely on his terms. Priestley's dramatic irony is that both characters believe themselves moral within their class framework. The Inspector's intervention - "We are members of one body. We are responsible for each other" - directly contradicts the class ideology that has structured the Birlings' world. In the play's final moments, when Mr and Mrs Birling refuse the Inspector's lesson and close ranks with Gerald, Priestley shows that pre-war class hierarchy was reinforced precisely through such collective refusals. Writing in 1945, after the Second World War, Priestley argues that societies that ignore collective responsibility face catastrophic consequences. Class ideology is thus not merely a prejudice to be overcome through individual goodwill but a structural barrier to the collective consciousness necessary for post-war reconstruction."<br><br>
+(Strengths: Unified argument; precise reference; integration of context; understanding of Priestley's purpose; demonstrates how multiple scenes build towards a thematic conclusion.)
 </div>
 
 <h3>Model Six-Paragraph Essay Structure (c. 500 words for 40-mark question)</h3>
@@ -1249,28 +1290,28 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 <td style="padding: 6px;">~60-80 words</td>
 </tr>
 <tr>
-<td style="padding: 6px;"><strong>2. Extract Analysis 1</strong></td>
-<td style="padding: 6px;">First key moment from printed extract; analyse language closely</td>
-<td style="padding: 6px;">PETAL framework; embed short quotations (3-6 words)</td>
-<td style="padding: 6px;">~120-150 words</td>
+<td style="padding: 6px;"><strong>2. Argument 1</strong></td>
+<td style="padding: 6px;">Where the theme or character is introduced</td>
+<td style="padding: 6px;">Embed short quotations (3-6 words); link to context</td>
+<td style="padding: 6px;">~100-120 words</td>
 </tr>
 <tr style="background-color: #f9f9f9;">
-<td style="padding: 6px;"><strong>3. Extract Analysis 2</strong></td>
-<td style="padding: 6px;">Second key moment from printed extract; use different technique (structure, dialogue, stage direction)</td>
-<td style="padding: 6px;">Compare/contrast techniques; weave in brief context</td>
-<td style="padding: 6px;">~120-150 words</td>
+<td style="padding: 6px;"><strong>3. Argument 2</strong></td>
+<td style="padding: 6px;">A moment that <em>develops</em> the idea</td>
+<td style="padding: 6px;">Show how the idea grows; weave in brief context</td>
+<td style="padding: 6px;">~100-120 words</td>
 </tr>
 <tr>
-<td style="padding: 6px;"><strong>4. Wider Play 1</strong></td>
-<td style="padding: 6px;">A moment that <em>develops</em> the theme introduced in extract</td>
-<td style="padding: 6px;">Show how theme evolves; integrate context naturally</td>
-<td style="padding: 6px;">~120-150 words</td>
+<td style="padding: 6px;"><strong>4. Argument 3</strong></td>
+<td style="padding: 6px;">A contrasting moment or character</td>
+<td style="padding: 6px;">Compare attitudes; integrate context naturally</td>
+<td style="padding: 6px;">~100-120 words</td>
 </tr>
 <tr style="background-color: #f9f9f9;">
-<td style="padding: 6px;"><strong>5. Wider Play 2</strong></td>
+<td style="padding: 6px;"><strong>5. Argument 4</strong></td>
 <td style="padding: 6px;">A moment that <em>complicates</em> or <em>culminates</em> the theme</td>
 <td style="padding: 6px;">Build to highest conceptual point; show thematic arc across play</td>
-<td style="padding: 6px;">~120-150 words</td>
+<td style="padding: 6px;">~100-120 words</td>
 </tr>
 <tr>
 <td style="padding: 6px;"><strong>6. Conclusion</strong></td>
@@ -1280,37 +1321,28 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 </tr>
 </table>
 
-<h3>Worked Example: Extract-Based Response (Full Essay, c. 550 words)</h3>
-<p><strong>Question:</strong> "How does Priestley use the character of Mr Birling to explore ideas about responsibility?"</p>
-<p><strong>Extract (Act 1):</strong> "A man has to mind his own business and look after himself and his own - and if he doesn't he's not worth much."</p>
+<h3>Worked Example: A Full Section B Essay (c. 500 words)</h3>
+<p><strong>Stimulus:</strong> "a man has to mind his own business and look after himself and his own" (Mr Birling, Act 1)</p>
+<p><strong>Question:</strong> "How does Priestley use the character of Mr Birling to explore ideas about responsibility? You must refer to the context of the play in your answer."</p>
 
 <div class="text-extract">
-<strong>THESIS:</strong> Priestley uses Mr Birling to embody the capitalist individualism that Priestley sees as morally bankrupt. Birling's assertion that men owe nothing to those beyond their immediate family encapsulates a pre-war worldview that Priestley, writing in 1945, presents as culpable in social injustice and, implicitly, in the catastrophe of the war. Across the play, Birling's refusal of collective responsibility is contrasted with the Inspector's socialist ethic, positioning the audience to reject Birling's philosophy and embrace the play's message: that societies must be built on the principle "we are members of one body."<br><br>
+<strong>THESIS:</strong> Priestley uses Mr Birling to embody the capitalist individualism that Priestley sees as morally bankrupt. Birling's assertion that a man need look after only "himself and his own" encapsulates a pre-war worldview that Priestley, writing in 1945, presents as culpable in social injustice and, implicitly, in the catastrophe of the war. Across the play, Birling's refusal of collective responsibility is contrasted with the Inspector's socialist ethic, positioning the audience to reject Birling's philosophy and embrace the play's message: that societies must be built on the principle "we are members of one body."<br><br>
 
-<strong>EXTRACT ANALYSIS 1:</strong> Priestley's characterisation of Birling emphasises the self-interested basis of his philosophy. The repetition of "his own" (appearing twice in a single sentence) reveals an obsessive focus on familial and personal benefit. The stark pronoun "he" in "if he doesn't he's not worth much" strips away sentiment - for Birling, moral worth is entirely contingent on economic self-interest. No allowance is made for circumstance, disability, or systemic inequality. Priestley's dramatic irony is acute: Birling voices this philosophy immediately after firing Eva Smith from Milwards, having just profited from her labour. His blindness to the connection between his profit and Eva's destitution exposes the moral hazard embedded in capitalist logic. A contemporary audience would recognise in Birling's individualism the pre-war ideology Priestley blames for social inequality and, by extension, for World War II's devastation.<br><br>
+<strong>THE OPENING SPEECH:</strong> Priestley introduces this philosophy in the speech the Inspector's arrival interrupts. Birling scorns the idea that everybody should look after everybody else as "community and all that nonsense", and the repetition of "his own" reveals an obsessive focus on personal and family benefit. Priestley's dramatic irony is acute: Birling lectures the younger generation on looking after themselves moments before learning that a girl he sacked from his works has died. A 1945 audience would recognise in his individualism the pre-war ideology Priestley blamed for social inequality.<br><br>
 
-<strong>EXTRACT ANALYSIS 2:</strong> Priestley embeds this philosophy into Birling's broader dramatic characterisation, particularly through his pomposity and false certainty. Birling's confident prediction that the Titanic is "unsinkable" and that war is unlikely immediately precedes the Inspector's arrival - the play's dramatic hinge. Priestley uses dramatic irony: the audience knows both the Titanic sank and war came. This irony undermines Birling's authority. We recognise him as a man whose certainty masks ignorance and whose self-interest prevents moral foresight. By Act 3, when Birling refuses the Inspector's lesson and reverts to his philosophy ("it's all over now"), Priestley shows Birling incapable of growth. He remains imprisoned in ideology.<br><br>
+<strong>FALSE CERTAINTY:</strong> Priestley undermines Birling's authority before the Inspector arrives. His confident claim that the Titanic is "unsinkable, absolutely unsinkable", and that war will not come, is exposed by history the audience already knows. We recognise him as a man whose certainty masks ignorance, and whose self-interest prevents moral foresight. Even when the Inspector's questioning reveals his part in Eva's story, his concern is for a public scandal and his hoped-for knighthood rather than for the girl.<br><br>
 
-<strong>WIDER PLAY 1:</strong> Contrasted with Sheila and Eric, Birling's intransigence becomes Priestley's critique of his generation's moral failure. Where Sheila recognises "these girls aren't cheap labour - they're people," Birling doubles down on individualism. Even witnessing Eva/Daisy's story - a narrative designed to produce empathy - fails to move him. This contrast positions the audience to reject Birling's philosophy and embrace the younger generation's emerging collectivism.<br><br>
+<strong>THE YOUNGER GENERATION:</strong> Contrasted with Sheila and Eric, Birling's intransigence becomes Priestley's critique of his generation's moral failure. Where Sheila recognises "these girls aren't cheap labour - they're people," Birling doubles down on individualism. Even Eva's story - a narrative designed to produce empathy - fails to move him, positioning the audience to embrace the younger generation's emerging collectivism.<br><br>
 
-<strong>WIDER PLAY 2:</strong> The play's ending, when the Inspector departs and a police inspector arrives, leaves ambiguous whether the Inspector was supernatural. This ambiguity forces each character to choose: will they internalise the lesson (responsibility to all), or will they revert to prior ideology? Birling's choice to "say nothing" and return to business as usual represents Priestley's darkest assessment: without systemic change, moral appeals alone cannot overcome self-interest. The final ringing telephone - potentially announcing another crisis - suggests that societies ignoring collective responsibility cycle through catastrophe.<br><br>
+<strong>THE ENDING:</strong> When it seems the Inspector may not have been a real police inspector, Birling celebrates as if nothing has happened, and treats the evening as a hoax. Priestley's darkest point is that without systemic change, moral appeals alone cannot overcome self-interest. The final telephone call - a girl has died and a police inspector is on his way - suggests that societies ignoring collective responsibility cycle through catastrophe.<br><br>
 
-<strong>CONCLUSION:</strong> Through Mr Birling, Priestley exposes capitalist individualism as not merely ethically insufficient but actively destructive. Birling's arc-or rather, his non-arc, his absolute refusal of growth-embodies Priestley's conviction that pre-war society was culpable in its own catastrophes. Only societies founded on the principle of collective responsibility can avoid tragedy. Priestley's play is thus a call to post-war Britain: choose Sheila's conscience or Birling's blindness.
-<div class="source">~550 words; demonstrates Grade 8-9 standard: unified argument, precise analysis, integrated context, thematic coherence</div>
+<strong>CONCLUSION:</strong> Through Mr Birling, Priestley exposes capitalist individualism as not merely ethically insufficient but actively destructive. Birling's refusal of growth embodies Priestley's conviction that pre-war society was culpable in its own catastrophes. Only societies founded on the principle of collective responsibility can avoid tragedy. Priestley's play is thus a call to post-war Britain: choose Sheila's conscience or Birling's blindness.
+<div class="source">~500 words; demonstrates Grade 8-9 standard: unified argument, precise reference, integrated context, thematic coherence</div>
 </div>
-
-<h3>Planning in 5 Minutes</h3>
-<ol>
-  <li><strong>Read the extract twice.</strong> Underline the 2-3 most significant words or phrases.</li>
-  <li><strong>Identify the theme.</strong> What is markers asking about - responsibility, class, morality, gender?</li>
-  <li><strong>Brainstorm wider-play moments:</strong> List 4-5 scenes where this theme appears (different from the extract). Include one moment that <em>develops</em> the theme and one that <em>culminates</em> it.</li>
-  <li><strong>Select quotations:</strong> 2-3 from the extract; 2-3 from memory (3-6 words each - brevity is strength).</li>
-  <li><strong>Write a one-sentence thesis:</strong> "Priestley uses [character/technique] to argue that [thematic claim] because [evidence of why this matters]."</li>
-</ol>
 
 <h3>Transition Phrases (Grade 8-9)</h3>
 <ul>
-  <li><strong>Extract to wider text:</strong> "This moment is crystallised when…" / "The pattern established here develops further…" / "This tension reaches its climax when…" / "Conversely, Priestley complicates this idea when…"</li>
+  <li><strong>Across the text:</strong> "This moment is crystallised when…" / "The pattern established here develops further…" / "This tension reaches its climax when…" / "Conversely, Priestley complicates this idea when…"</li>
   <li><strong>Contrast:</strong> "In contrast to Birling's refusal…" / "Yet where Act 1 establishes…, by Act 2 Priestley shows…"</li>
   <li><strong>Context:</strong> "Writing in 1945, emerging from…" / "For a contemporary audience, this would…" / "The historical context of post-war reconstruction illuminates…"</li>
 </ul>
@@ -1332,12 +1364,12 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 <tr>
 <td style="padding: 6px;"><strong>Evidence Use</strong></td>
 <td style="padding: 6px;">Long quotations paraphrased; only surface meaning extracted.</td>
-<td style="padding: 6px;">Short quotations (3-6 words) embedded in analytical sentences; precise focus on word choice, connotations, techniques.</td>
+<td style="padding: 6px;">Short quotations (3-6 words) embedded in analytical sentences; precise focus on word choice and dramatic effect.</td>
 </tr>
 <tr style="background-color: #f9f9f9;">
 <td style="padding: 6px;"><strong>Structure</strong></td>
-<td style="padding: 6px;">Extract analysis, then separate "context paragraph," then random wider-play moments.</td>
-<td style="padding: 6px;">Integrated six-part structure: thesis, extract 1, extract 2, wider 1, wider 2, conclusion. Context woven throughout.</td>
+<td style="padding: 6px;">Plot retold in order, then a separate "context paragraph".</td>
+<td style="padding: 6px;">Thesis, four argument paragraphs ranging across the play, conclusion. Context woven throughout.</td>
 </tr>
 <tr>
 <td style="padding: 6px;"><strong>Analysis Depth</strong></td>
@@ -1361,17 +1393,16 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
       quiz: [
         {
           id: 'edx-lt1-m9-q1',
-          question:
-            'In the six-part essay framework, what should come immediately after the two extract analysis paragraphs?',
+          question: 'Each Section B question opens with a short quotation. How should you use it?',
           options: [
-            'A conclusion summarising all key points',
-            'A context paragraph covering historical background',
-            'Two wider-text paragraphs showing thematic development',
-            'A comparison paragraph linking the extract to a different text',
+            'Analyse it line by line for most of the essay',
+            'Treat it as a stimulus: a starting point for an argument that ranges across the whole text',
+            'Ignore it - it is decoration',
+            'Compare it with the Shakespeare extract',
           ],
-          correct: 2,
+          correct: 1,
           explanation:
-            'After analysing the extract in two paragraphs, you move to the wider text with two paragraphs that show how the theme develops or contrasts elsewhere in the text, before writing your conclusion.',
+            'The quotation is a stimulus, not an extract to analyse. The question asks about the text as a whole, in relation to its context, so build an argument that ranges across it.',
         },
         {
           id: 'edx-lt1-m9-q2',
@@ -1379,12 +1410,12 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
           options: [
             'Grade 9 responses are significantly longer',
             'Grade 9 responses use more quotations from the text',
-            'Grade 9 responses analyse specific language features and integrate context with conceptualised interpretation',
+            'Grade 9 responses explore specific details and integrate context with a conceptualised interpretation',
             'Grade 9 responses always disagree with the question statement',
           ],
           correct: 2,
           explanation:
-            "A Grade 9 response stands out through close language analysis (word-level, not just phrase-level), conceptualised interpretation that goes beyond surface meaning, and seamless integration of context and writer's purpose.",
+            "A Grade 9 response stands out through precise reference, a conceptualised interpretation that goes beyond surface meaning, and seamless integration of context and writer's purpose.",
         },
         {
           id: 'edx-lt1-m9-q3',
@@ -1397,7 +1428,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
           ],
           correct: 1,
           explanation:
-            'Context (AO3) should be integrated into your analytical paragraphs, showing why the writer made particular choices. A standalone context paragraph tends to become descriptive background that does not connect to the argument.',
+            'Context (AO3) is worth 16 of the 40 marks in Section B, so it should run through your argument, showing why the writer made particular choices. A standalone context paragraph tends to become descriptive background that does not connect to the argument.',
         },
         {
           id: 'edx-lt1-m9-q4',
@@ -1410,7 +1441,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
           ],
           correct: 1,
           explanation:
-            'Five minutes of focused planning - identifying the theme, brainstorming wider-text moments, and selecting quotations - prevents rambling and ensures your essay has a clear structure and argument.',
+            'Five minutes of focused planning - choosing your question, identifying moments across the text, and selecting quotations and context - prevents rambling and ensures your essay has a clear structure and argument.',
         },
       ],
     },
@@ -1419,37 +1450,41 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
     // MODULE 10 - Paper 1 Exam Strategy & Practice
     // ──────────────────────────────────────────────
     {
+      // Rewritten 2 October 2026 for the paper Pearson sets (see module 1): Section A is two parts,
+      // not one extract-to-whole essay; Section B has no extract; SPaG is marked on the Section B
+      // essay. The timing plan, pitfalls, checklist, mock walkthrough and quiz all assumed two
+      // extract-based essays split 50/50 between extract and wider text.
       id: 'edx-lt1-m10',
       title: 'Paper 1 Exam Strategy & Practice',
       duration: '60 min',
       content: `
 <h2>Paper 1 Exam Strategy - Putting It All Together</h2>
 
-<p>Paper 1 is <strong>1 hour 45 minutes</strong> and worth <strong>80 marks</strong>, split equally between Section A (Shakespeare) and Section B (Post-1914).</p>
+<p>Paper 1 is <strong>1 hour 45 minutes</strong> and worth <strong>80 marks</strong>, split equally between Section A (Shakespeare, a two-part question) and Section B (one post-1914 essay).</p>
 
-<div class="key-term"><strong>Key Term: Time-per-Mark</strong> - You have roughly 1.3 minutes per mark, but planning and review time means writing windows are tighter than you think.</div>
+<div class="key-term"><strong>Key Term: Time-per-Mark</strong> - You have roughly 1.3 minutes per mark, but planning and proofreading time means writing windows are tighter than you think.</div>
 
 <h3>Full Timing Plan</h3>
 <ol>
-  <li><strong>0-5 min:</strong> Shakespeare - read extract twice, plan (theme, moments, quotes).</li>
-  <li><strong>5-45 min:</strong> Shakespeare - write (intro, 2 extract, 2 wider-text paragraphs, conclusion).</li>
-  <li><strong>45-50 min:</strong> Shakespeare - review for errors and balance.</li>
-  <li><strong>50-55 min:</strong> Post-1914 - read and plan.</li>
-  <li><strong>55-95 min:</strong> Post-1914 - write. Do not let fatigue lower standards.</li>
-  <li><strong>95-100 min:</strong> Post-1914 - review.</li>
-  <li><strong>100-105 min:</strong> Final check - scan both essays, verify name and candidate number.</li>
+  <li><strong>0-3 min:</strong> Shakespeare - read the extract twice and both parts of the question.</li>
+  <li><strong>3-25 min:</strong> Part (a) - write 3-4 paragraphs analysing the extract's language, form and structure.</li>
+  <li><strong>25-28 min:</strong> Part (b) - plan 3-4 moments from elsewhere in the play, with context.</li>
+  <li><strong>28-50 min:</strong> Part (b) - write.</li>
+  <li><strong>50-55 min:</strong> Post-1914 - read both questions, choose one, plan.</li>
+  <li><strong>55-100 min:</strong> Post-1914 - write. Do not let fatigue lower standards.</li>
+  <li><strong>100-105 min:</strong> Proofread the post-1914 essay for spelling, punctuation and grammar (AO4), then a final check of name and candidate number.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Top Tip:</strong> If running over on Section A, stop at 50 minutes and move on. Two solid essays always beat one excellent and one rushed.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> If running over on Section A, stop at 50 minutes and move on. Two parts and an essay all attempted always beat one excellent answer and one rushed.</div>
 
-<h3>Reading the Extract</h3>
+<h3>Reading the Extract (Section A part (a))</h3>
 <p><strong>First read:</strong> understand content, speaker, tone - do not write yet. <strong>Second read:</strong> annotate - underline key words, name techniques, note tone shifts. <strong>Then:</strong> highlight the question's instruction word; every paragraph must connect to it.</p>
 
 <h3>Common Pitfalls</h3>
 <ul>
   <li><strong>Narrative retelling:</strong> Analyse <em>how</em> and <em>why</em>, not <em>what</em> happens. Markers know the plot.</li>
-  <li><strong>Forgetting context:</strong> No AO3 = capped grade. Integrate context into analytical paragraphs.</li>
-  <li><strong>Unbalanced answers:</strong> Aim for 50/50 - two paragraphs extract, two wider text.</li>
+  <li><strong>Context in the wrong place:</strong> Context (AO3) earns marks in Section A part (b) and in Section B, not in part (a). Integrate it into your argument where it counts.</li>
+  <li><strong>Mixing the two parts:</strong> Part (a) is about the extract; part (b) is about the rest of the play. Answer each as it is asked.</li>
   <li><strong>Feature-spotting:</strong> Naming a metaphor is not enough - explain what it suggests and its effect.</li>
   <li><strong>Running out of time:</strong> Poor Section A management is the most common tactical error.</li>
 </ul>
@@ -1460,20 +1495,20 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 <ul>
   <li><strong>Quote banks:</strong> 20-30 quotations per text by theme, each with a one-sentence analysis.</li>
   <li><strong>Theme maps:</strong> Mind maps linking characters, moments, quotes, and context.</li>
-  <li><strong>Timed essays:</strong> At least three per text, 45 minutes. Mark against the scheme.</li>
-  <li><strong>Paragraph drills:</strong> 8-minute paragraphs integrating all four AOs.</li>
+  <li><strong>Timed answers:</strong> At least three per text: part (a) and part (b) in 50 minutes for Shakespeare, and the post-1914 essay in 45. Mark against the scheme.</li>
+  <li><strong>Paragraph drills:</strong> 8-minute paragraphs - close analysis for part (a), argument with context for part (b) and Section B.</li>
 </ul>
 
 <h3>Mock Walkthrough</h3>
-<p><strong>Shakespeare:</strong> <em>"How does Shakespeare present ambition in Macbeth?"</em> - ambition vs conscience in extract; wider text - witches' prophecy, "unsex me here," "tomorrow" soliloquy. Link to Jacobean regicide anxieties.</p>
-<p><strong>Post-1914:</strong> <em>"How does Priestley present social class?"</em> - Plan: Birling detachment in extract; wider text - "mind his own business," "fire and blood," Sheila's transformation.</p>
+<p><strong>Shakespeare:</strong> (a) <em>"Explore how Shakespeare presents ambition in this extract."</em> - the language of ambition and conscience in the printed passage. (b) <em>"Explain how ambition is explored elsewhere in the play."</em> - the witches' prophecy, "unsex me here," the "tomorrow" soliloquy, with Jacobean anxieties about regicide.</p>
+<p><strong>Post-1914:</strong> <em>"How does Priestley present social class? You must refer to the context of the play in your answer."</em> - Plan: Birling's "mind his own business" speech, "fire and blood and anguish," Sheila's transformation, with 1912 and 1945 as context.</p>
 
 <h3>Final Checklist</h3>
 <ul>
-  <li>Two complete essays - Shakespeare and Post-1914?</li>
-  <li>Each addresses both extract and wider text?</li>
-  <li>Context (AO3) and language writer's methods analysis (AO2) throughout?</li>
-  <li>SPaG and handwriting checked?</li>
+  <li>Section A part (a), part (b) and the Section B essay all answered?</li>
+  <li>Part (a) closely analysing the extract, and part (b) ranging across the rest of the play?</li>
+  <li>Context (AO3) woven into part (b) and the Section B essay?</li>
+  <li>The Section B essay proofread for SPaG?</li>
 </ul>
 
 <p>Grade boundaries (rough guide, both papers): <strong>Grade 9</strong> ~70-75%, <strong>Grade 7</strong> ~55-60%, <strong>Grade 5</strong> ~42-48%, <strong>Grade 4</strong> ~35-40%.</p>
@@ -1484,24 +1519,24 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
         {
           id: 'edx-lt1-m10-q1',
           question:
-            'According to the recommended timing plan, how long should you spend writing your Shakespeare essay (excluding planning and review)?',
-          options: ['30 minutes', '35 minutes', '40 minutes', '45 minutes'],
-          correct: 2,
+            'According to the recommended timing plan, how long should you spend writing part (a), the extract question?',
+          options: ['15 minutes', '22 minutes', '35 minutes', '45 minutes'],
+          correct: 1,
           explanation:
-            'The timing plan allocates 40 minutes for writing the Shakespeare essay, with 5 minutes for planning beforehand and 5 minutes for review afterwards - totalling 50 minutes for the entire section.',
+            'The timing plan allows about 22 minutes for writing part (a), after 3 minutes reading the extract and the questions - leaving about 25 minutes for part (b) and 50 for the whole of Section A.',
         },
         {
           id: 'edx-lt1-m10-q2',
           question: 'What should you do if you are running over time on Section A (Shakespeare)?',
           options: [
-            'Skip the review stage and keep writing',
+            'Skip proofreading and keep writing',
             'Stop at the 50-minute mark and move on to Section B',
             'Write a shorter conclusion and continue for another 10 minutes',
             'Abandon Section B and focus entirely on Section A',
           ],
           correct: 1,
           explanation:
-            'Stopping at the 50-minute mark and moving to Section B is essential. Two solid essays always earn more marks overall than one excellent essay and one rushed or incomplete essay.',
+            'Stopping at the 50-minute mark and moving to Section B is essential. Answering everything always earns more marks overall than one excellent answer and one rushed or incomplete one.',
         },
         {
           id: 'edx-lt1-m10-q3',
@@ -1519,17 +1554,16 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
         },
         {
           id: 'edx-lt1-m10-q4',
-          question:
-            'What is the ideal balance between extract analysis and wider-text analysis in a Paper 1 essay?',
+          question: 'Where does context (AO3) earn marks on Paper 1?',
           options: [
-            '80% extract, 20% wider text',
-            '70% extract, 30% wider text',
-            '50% extract, 50% wider text',
-            '30% extract, 70% wider text',
+            'Everywhere, including the extract question',
+            'In Section A part (b) and in the Section B essay',
+            'Only in the Shakespeare extract question',
+            'Nowhere - it is only assessed on Paper 2',
           ],
-          correct: 2,
+          correct: 1,
           explanation:
-            'Aim for a roughly 50/50 split - two paragraphs on the extract and two on the wider text. Students who focus almost entirely on the extract miss marks for demonstrating knowledge of the whole text.',
+            "Context is worth 5 marks in Section A part (b) and 16 in Section B. Part (a), the extract, is marked for writer's methods (AO2) alone.",
         },
       ],
     },
@@ -1559,24 +1593,24 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
     },
     {
       id: 'edx-lt1-a3',
-      question: 'What does "extract-to-whole" mean in the Edexcel Shakespeare question?',
+      question: 'How is the Edexcel Shakespeare question set?',
       options: [
-        'Only analyse the extract',
-        'Analyse the extract first, then discuss the wider play',
-        'Ignore the extract and write about the whole play',
-        'Compare two extracts from different acts',
+        'One essay on the extract only',
+        'Two parts: (a) the printed extract, then (b) a theme elsewhere in the play',
+        'One essay on the whole play, with no extract',
+        'Two extracts from different acts to compare',
       ],
       correct: 1,
       explanation:
-        'Extract-to-whole means starting with detailed analysis of the printed passage, then broadening to show how the theme or character develops across the full text.',
+        'Section A has two parts marked separately: part (a) analyses an extract of about 30 lines (AO2), and part (b) explores how a theme from it appears elsewhere in the play (AO1 and AO3).',
     },
     {
       id: 'edx-lt1-a4',
-      question: 'Which what markers look for tests spelling, punctuation and grammar on Paper 1?',
+      question: 'Which assessment objective tests spelling, punctuation and grammar on Paper 1?',
       options: ['AO1', 'AO2', 'AO3', 'AO4'],
       correct: 3,
       explanation:
-        'Technical accuracy (AO4) assesses SPaG and is worth up to 4 additional marks. It is tested on one essay only \u2014 typically the Shakespeare response.',
+        'Technical accuracy (AO4) assesses SPaG. It is worth 8 marks and is marked on the post-1914 essay in Section B only.',
     },
     {
       id: 'edx-lt1-a5',
@@ -1597,7 +1631,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
       options: ['Language', 'Link to context', 'Literary device', 'Line reference'],
       correct: 1,
       explanation:
-        'In PETAL, L stands for "Link to context" \u2014 connecting your analysis to the social, historical, or literary context of the text (AO3).',
+        'In PETAL, L stands for "Link to context" - connecting your analysis to the social, historical, or literary context of the text (AO3), which earns marks in Section A part (b) and in Section B.',
     },
     {
       id: 'edx-lt1-a7',
@@ -1636,17 +1670,16 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
     },
     {
       id: 'edx-lt1-a10',
-      question:
-        'What is the ideal balance between extract analysis and wider-text analysis in a Paper 1 essay?',
+      question: 'Where should your Section A answer deal with the printed extract?',
       options: [
-        '80% extract, 20% wider text',
-        '70% extract, 30% wider text',
-        '50% extract, 50% wider text',
-        '30% extract, 70% wider text',
+        'In part (a), which is marked on the extract alone',
+        'Throughout both parts equally',
+        'Only in the conclusion',
+        'Nowhere - the extract is just a reminder',
       ],
-      correct: 2,
+      correct: 0,
       explanation:
-        'Aim for roughly 50/50 \u2014 two paragraphs on the extract and two on the wider text. Students who focus almost entirely on the extract miss marks for whole-text knowledge.',
+        'Part (a) is marked for your analysis of the extract (AO2). Part (b) asks about the rest of the play, so your answer there should range beyond it.',
     },
     {
       id: 'edx-lt1-a11',
@@ -1703,9 +1736,8 @@ const edexcelLitPaper2: CourseData = {
       // (a) an extract for AO2 20 and (b) the whole novel for AO1 20; Section B Part 1 the named
       // poem, printed, compared with another from the same collection (AO2 15, AO3 5); Part 2 two
       // unseen poems compared (AO1 8, AO2 12); no AO4 anywhere on the paper. Modules 6 to 10 and
-      // the assessment questions are corrected to match. Modules 2 to 5, on the novel, still teach
-      // context as if Section A assessed it: that is a separate correction. The same text is in
-      // edexcel-lit-p2-modules.ts, which nothing imports.
+      // the assessment questions are corrected to match; modules 2 to 5, on the novel, were
+      // corrected the same day not to teach context as if Section A assessed it.
       id: 'edx-lt2-m1',
       title: 'Paper 2 Overview & what markers look for',
       duration: '45 min',
@@ -1816,20 +1848,20 @@ const edexcelLitPaper2: CourseData = {
       // Quotations corrected 2 October 2026 against the held edition (Project Gutenberg #46,
       // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are there
       // no prisons?" and "And the Union workhouses?" ("Are there no workhouses?" is the
-      // Spirit's, in Stave Three), and the edition prints "grind-stone". The same text is in
-      // edexcel-lit-p2-modules.ts.
+      // Spirit's, in Stave Three), and the edition prints "grind-stone". On the same day the module stopped teaching
+      // context (AO3) as if Section A marked it: on Paper 2 it does not.
       id: 'edx-lt2-m2',
       title: '19th-Century Novel: Context & Conventions (A Christmas Carol Focus)',
       duration: '55 min',
       content: `
 <h2>A Christmas Carol - Context, Conventions &amp; Dickens's Purpose</h2>
 
-<p><em>A Christmas Carol</em> is by far the most popular 19th-century novel choice on Edexcel Literature Paper 2. Understanding its historical context is not optional - Context (AO3) requires you to show how the text relates to the time in which it was written. This module equips you with the contextual knowledge Markers reward and, crucially, teaches you how to <em>integrate</em> it into analytical paragraphs rather than bolting it on.</p>
+<p><em>A Christmas Carol</em> is by far the most popular 19th-century novel choice on Edexcel Literature Paper 2. Section A of Paper 2 awards no marks for context (AO3), but knowing the world Dickens wrote for helps you understand the novel and explain his choices - and that understanding shows in your analysis of the extract (AO2) and your argument about the whole novel (AO1). This module gives you that knowledge and shows you how to <em>use</em> it inside an argument rather than bolting it on.</p>
 
 <div class="key-term"><strong>Key Term: Novella</strong> - A prose narrative longer than a short story but shorter than a full novel, typically between 15,000 and 40,000 words. <em>A Christmas Carol</em> is a novella - its compact form allows Dickens to deliver a focused moral message with an allegorical structure divided into five staves (chapters).</div>
 
 <h3>Historical Context: Victorian London in 1843</h3>
-<p>When Chapman &amp; Hall published <em>A Christmas Carol</em> on 19 December 1843, Britain was in the grip of rapid industrial change. The following contextual factors are essential for a strong context (AO3) response:</p>
+<p>When Chapman &amp; Hall published <em>A Christmas Carol</em> on 19 December 1843, Britain was in the grip of rapid industrial change. These contextual factors explain much of what Dickens is doing:</p>
 
 <ul>
   <li><strong>The Poor Law Amendment Act (1834):</strong> This law created workhouses where the destitute were sent to labour in appalling conditions. The philosophy was deliberate harshness - poverty was seen as a moral failing, and relief was made as unpleasant as possible to discourage dependency. Scrooge directly echoes this attitude when he asks, <em>"Are there no prisons? ... And the Union workhouses?"</em></li>
@@ -1850,7 +1882,7 @@ const edexcelLitPaper2: CourseData = {
   <li><strong>Five Staves:</strong> Dickens calls his chapters "staves" - a musical term - reinforcing the idea that the novella is a <em>carol</em>, a song of celebration and joy. The structure itself mirrors the thematic journey from discord to harmony.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Top Tip:</strong> The best answers do not dump context in a separate paragraph. Instead, they weave it into analysis. Compare these two approaches:<br><br><strong>Weak:</strong> "In Victorian times, there were workhouses. Scrooge mentions workhouses."<br><strong>Strong:</strong> "Dickens, writing just nine years after the Poor Law Amendment Act of 1834, uses Scrooge's dismissive reference to workhouses to expose how institutionalised cruelty had become normalised among the wealthy. The audience would have recognised this attitude as commonplace - which makes its dramatic dismantling through the Spirits all the more powerful."<br><br>The second version integrates a specific date, names the legislation, and explains its <em>effect</em> on the reader - this is what context (AO3) at the top band looks like.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> The best answers do not dump context in a separate paragraph. Instead, they weave it into analysis. Compare these two approaches:<br><br><strong>Weak:</strong> "In Victorian times, there were workhouses. Scrooge mentions workhouses."<br><strong>Strong:</strong> "Dickens, writing just nine years after the Poor Law Amendment Act of 1834, uses Scrooge's dismissive reference to workhouses to expose how institutionalised cruelty had become normalised among the wealthy. The audience would have recognised this attitude as commonplace - which makes its dramatic dismantling through the Spirits all the more powerful."<br><br>The second version integrates a specific date, names the legislation, and explains its <em>effect</em> on the reader - context put to work explaining the writer's choices.</div>
 
 <h3>Dickens's Purpose: Social Reform</h3>
 <p>Dickens did not write <em>A Christmas Carol</em> merely to entertain. He had a clear <strong>didactic purpose</strong> - to attack greed, expose the suffering of the poor, and champion generosity. Key points to remember:</p>
@@ -1863,7 +1895,7 @@ const edexcelLitPaper2: CourseData = {
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing "Dickens wanted to show that Christmas is important." This is far too vague for a Literature essay. Be specific: Dickens wanted to <em>challenge the Malthusian view that the poor were expendable</em>, to <em>expose the moral bankruptcy of laissez-faire capitalism</em>, and to <em>argue that personal generosity could remedy social injustice</em>. Always connect purpose to specific contextual knowledge.</div>
 
-<h3>Context (AO3) Sentence Starters That Markers Reward</h3>
+<h3>Sentence Starters for Using Context</h3>
 <p>Practise using these phrases to integrate context naturally into your paragraphs:</p>
 <ul>
   <li><em>"Dickens, writing in 1843, would have been aware that..."</em></li>
@@ -1873,7 +1905,7 @@ const edexcelLitPaper2: CourseData = {
   <li><em>"The reference to [specific detail] directly alludes to..."</em></li>
 </ul>
 
-<p>Each of these phrases anchors your contextual point to the text and the time period simultaneously, which is precisely what context (AO3) demands.</p>
+<p>Each of these phrases anchors your contextual point to the text, so that it explains the writer's choices rather than standing apart from them. On Paper 2, use them sparingly: context earns no marks of its own in Section A.</p>
 `,
       quiz: [
         {
@@ -1907,7 +1939,7 @@ const edexcelLitPaper2: CourseData = {
         {
           id: 'edx-lt2-m2-q3',
           question:
-            'Which of the following is the strongest example of integrating context (AO3) into an analytical paragraph?',
+            'Which of the following uses context most effectively in an analytical sentence?',
           options: [
             '"In Victorian times, there were lots of poor people."',
             '"Dickens wrote A Christmas Carol in 1843."',
@@ -1916,7 +1948,7 @@ const edexcelLitPaper2: CourseData = {
           ],
           correct: 2,
           explanation:
-            "The third option integrates a specific date, names the legislation, connects it to a character's behaviour, and explains the effect - all in one sentence. This is what top-band context (AO3) looks like: context woven into analysis, not stated in isolation.",
+            "The third option integrates a specific date, names the legislation, connects it to a character's behaviour, and explains the effect - all in one sentence. Context used this way explains the writer's choices instead of standing in isolation - though on Paper 2 it earns no marks of its own.",
         },
         {
           id: 'edx-lt2-m2-q4',
@@ -1957,7 +1989,7 @@ const edexcelLitPaper2: CourseData = {
       content: `
 <h2>A Christmas Carol - Character Analysis</h2>
 
-<p>Every character in <em>A Christmas Carol</em> serves a <strong>moral and social purpose</strong>. In the exam, show how characters embody ideas - linking <strong>personal response (AO1)</strong> (response with references) to <strong>context (AO3)</strong>.</p>
+<p>Every character in <em>A Christmas Carol</em> serves a <strong>moral and social purpose</strong>. In the exam, show how characters embody ideas - an argument supported by references, which is what <strong>personal response (AO1)</strong> rewards in part (b).</p>
 
 <h3>Ebenezer Scrooge</h3>
 
@@ -1995,7 +2027,7 @@ const edexcelLitPaper2: CourseData = {
 
 <h3>Model Paragraph</h3>
 
-<div class="text-extract">Dickens presents Scrooge's transformation as both personal redemption and social argument. "Solitary as an oyster" suggests he is sealed off from humanity, yet hints at hidden potential. By Stave 5, he "knew how to keep Christmas well, if any man alive possessed the knowledge" - superlative phrasing positions him as a model. If even the most hardened miser can change, so can a society that tolerates poverty.<div class="source">Model paragraph - AO1, AO2, AO3 integrated</div></div>
+<div class="text-extract">Dickens presents Scrooge's transformation as both personal redemption and social argument. "Solitary as an oyster" suggests he is sealed off from humanity, yet hints at hidden potential. By Stave 5, he "knew how to keep Christmas well, if any man alive possessed the knowledge" - superlative phrasing positions him as a model. If even the most hardened miser can change, so can a society that tolerates poverty.<div class="source">Model paragraph - personal response (AO1) across the novel</div></div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing about characters as real people. Always frame analysis around what <em>Dickens</em> does: "Dickens presents Scrooge as…" not "Scrooge is a mean man who…"</div>
 `,
@@ -2067,7 +2099,7 @@ const edexcelLitPaper2: CourseData = {
       content: `
 <h2>A Christmas Carol - Themes &amp; Writer's Methods</h2>
 
-<p>The Edexcel exam rewards you for showing how Dickens uses <strong>language, form, and structure</strong> (AO2) to present ideas, connected to <strong>context</strong> (AO3).</p>
+<p>Part (a) of the novel question rewards you for showing how Dickens uses <strong>language, form, and structure</strong> (AO2) to present ideas in the printed extract.</p>
 
 <h3>Key Themes</h3>
 
@@ -2184,50 +2216,55 @@ const edexcelLitPaper2: CourseData = {
     // MODULE 5 - 19th-Century Novel: Extract & Essay Response
     // ──────────────────────────────────────────────
     {
+      // Rewritten 2 October 2026. This module taught the novel question as one 40-mark essay moving
+      // between extract and whole text, every paragraph hitting AO1, AO2 and AO3. Pearson sets two
+      // parts, marked separately: (a) the extract, AO2 20; (b) the novel as a whole, AO1 20; context
+      // (AO3) is not assessed in Section A (see module 1). It also said A Christmas Carol came out
+      // in "the year a Parliamentary report exposed child labour in mines": the mines report was
+      // 1842; in 1843 Dickens read the commission's second report, on children in trades and
+      // manufactures.
       id: 'edx-lt2-m5',
       title: '19th-Century Novel: Extract & Essay Response',
       duration: '55 min',
       content: `
-<h2>The 40-Mark Novel Question - Extract + Essay</h2>
+<h2>The Novel Question - Extract, then Essay</h2>
 
-<p>The 19th-century novel question on Edexcel Paper 2 is worth <strong>40 marks</strong> and is the highest-tariff question on the paper. You are given a <strong>printed extract</strong> from your set text - typically 30-40 lines - and asked to explore a theme or character both <em>in the extract</em> and <em>across the whole text</em>.</p>
+<p>Section A on Edexcel Paper 2 is worth <strong>40 marks</strong>, half the paper. It is <strong>one question in two parts</strong>, each worth 20 marks and each marked on its own:</p>
+<ul>
+  <li><strong>Part (a)</strong> prints an extract of about 400 words and asks you to explore how the writer presents a theme, character or idea <em>in the extract</em>. It is marked for writer's methods (AO2): close analysis of language, form and structure.</li>
+  <li><strong>Part (b)</strong> is an essay on the novel <em>as a whole</em> - its plot, settings, characters or themes. It is marked for personal response (AO1): an informed argument supported by references to the text.</li>
+</ul>
+<p>Context (AO3) earns no marks in Section A, and spelling, punctuation and grammar (AO4) are not marked on Paper 2.</p>
 
-<div class="key-term"><strong>Key Term: Extract-to-Whole-Text Question</strong> - A format requiring close reading of a passage followed by discussion of how the same idea appears elsewhere in the text. Markers reward answers that move fluently between the two.</div>
+<div class="key-term"><strong>Key Term: Two-Part Question</strong> - Part (a) is a close reading of the printed passage; part (b) is an argument about the whole novel. Because they are marked separately, for different things, answer each on its own terms.</div>
 
-<h3>Planning (5 Minutes)</h3>
+<h3>Part (a): The Extract (20 marks, AO2)</h3>
 <ol>
   <li><strong>Read the extract twice.</strong> First for content, then underline key quotations and note techniques.</li>
   <li><strong>Identify the focus.</strong> Circle the key word - theme (poverty, redemption) or character (Scrooge, the Ghost)?</li>
-  <li><strong>Link outward.</strong> Jot three moments elsewhere - opening, middle, ending - to show you know the narrative arc.</li>
-  <li><strong>Draft a thesis.</strong> E.g. <em>"Dickens uses Scrooge's transformation to argue that compassion is a social duty."</em></li>
+  <li><strong>Write 3-4 analytical paragraphs,</strong> each built on a short quotation from the extract: name the method, then explain its effect.</li>
 </ol>
 
-<h3>Essay Structure</h3>
+<h3>Part (b): The Whole Novel (20 marks, AO1)</h3>
 <ol>
-  <li><strong>Introduction:</strong> Thesis, writer and text named, question focus referenced.</li>
-  <li><strong>Extract Paragraph 1:</strong> Close-read a quotation - AO2 (technique), AO1 (argument), context (AO3).</li>
-  <li><strong>Extract Paragraph 2:</strong> Second quotation, different technique or contrasting idea, context woven in.</li>
-  <li><strong>Wider-Text Paragraph 1:</strong> A moment elsewhere in the novel. Quote from memory and analyse.</li>
-  <li><strong>Wider-Text Paragraph 2:</strong> Another moment showing how the theme develops or resolves.</li>
-  <li><strong>Conclusion:</strong> Return to thesis. Link to the writer's purpose for his contemporary audience.</li>
+  <li><strong>Draft a thesis.</strong> E.g. <em>"Dickens uses Scrooge's transformation to argue that compassion is a social duty."</em></li>
+  <li><strong>Range across the novel.</strong> Jot three or four moments - opening, middle, ending - to show you know the narrative arc.</li>
+  <li><strong>Write an argument,</strong> one moment per paragraph, quoting from memory and returning to your thesis in a short conclusion.</li>
 </ol>
 
-<h3>Hitting AO1 + AO2 + AO3 Together</h3>
-<p>The marking guide rewards <strong>integration</strong>. In every paragraph: open with an analytical point and quotation (<strong>personal response (AO1)</strong>), zoom in on a word or technique and explain its effect (<strong>writer's methods (AO2)</strong>), then connect to 19th-century context in one sentence (<strong>context (AO3)</strong>). Never bolt context on as a separate block.</p>
+<h3>Model Part (a) Paragraph - Grade 8-9</h3>
 
-<h3>Model Grade 8-9 Opening</h3>
+<div class="text-extract">Dickens presents Scrooge's encounter with the Ghost of Christmas Present as a moral turning point. The imperative "Come in! and know me better, man!" signals warmth, the exclamations and direct address contrasting with the clipped, cold speech Scrooge used to dismiss others. The Ghost's invitation turns a frightening visitation into hospitality, preparing the reader for the change it will bring.<div class="source">Model part (a) paragraph - writer's methods (AO2)</div></div>
 
-<div class="text-extract">Dickens presents Scrooge's encounter with the Ghost of Christmas Present as a moral turning point. The imperative "Come in! and know me better, man!" signals warmth contrasting Scrooge's cold language earlier. Writing in 1843 amid urban poverty, Dickens uses the Ghost as a mouthpiece for charity the wealthy owed the poor - a shift in empathy developed across the narrative to champion social responsibility.<div class="source">Model paragraph - Grade 8-9</div></div>
-
-<div class="examiner-tip"><strong>Top Tip:</strong> markers look for a sustained argument, not a set number of paragraphs. The structure above is a scaffold. Quality of analysis always beats quantity.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Markers look for a sustained argument, not a set number of paragraphs. The structures above are scaffolds. Quality of analysis always beats quantity.</div>
 
 <h3>Common Mistakes to Avoid</h3>
 
 <div class="common-mistake"><strong>Retelling the Plot:</strong> "Scrooge is visited by three ghosts and then he changes" earns very few marks. Every sentence should analyse <em>how</em> or <em>why</em> the writer makes a choice, not describe <em>what</em> happens.</div>
 
-<div class="common-mistake"><strong>Ignoring the Extract:</strong> Some students leap straight to the wider text. You must analyse the printed passage in detail - it is there for a reason and the marking guide rewards close reading of it.</div>
+<div class="common-mistake"><strong>Leaving the Extract in Part (a):</strong> Some students leap straight to the wider novel. Part (a) is marked only on your analysis of the printed passage - it is there for a reason. Save the rest of the novel for part (b).</div>
 
-<div class="common-mistake"><strong>Weak Context:</strong> Avoid "This was written in Victorian times when life was hard." Be specific: "Dickens published <em>A Christmas Carol</em> in 1843, the year a Parliamentary report exposed child labour in mines." Context should explain <em>why</em> the writer made a choice.</div>
+<div class="common-mistake"><strong>Bolting on Context:</strong> Section A has no marks for context. "This was written in Victorian times when life was hard" adds nothing. Knowing the period can help you explain the text - Dickens wrote <em>A Christmas Carol</em> in 1843, the year he read a Parliamentary report on children's working lives - but use it only where it sharpens your analysis or your argument.</div>
 `,
       quiz: [
         {
@@ -2236,30 +2273,28 @@ const edexcelLitPaper2: CourseData = {
           options: ['20 marks', '30 marks', '40 marks', '50 marks'],
           correct: 2,
           explanation:
-            'The 19th-century novel question is worth 40 marks, making it the highest-tariff question on the paper. It requires analysis of both the printed extract and the wider text.',
+            'The 19th-century novel question is worth 40 marks, half the paper, in two parts of 20: (a) analysis of the printed extract and (b) an essay on the novel as a whole.',
         },
         {
           id: 'edx-lt2-m5-q2',
-          question:
-            'In the recommended essay structure, how many paragraphs should focus on close reading of the printed extract?',
-          options: ['One paragraph', 'Two paragraphs', 'Three paragraphs', 'Four paragraphs'],
+          question: 'What is part (a) of the novel question marked for?',
+          options: [
+            'Your knowledge of the whole novel',
+            "The writer's methods in the printed extract (AO2)",
+            'Context (AO3)',
+            'Spelling, punctuation and grammar (AO4)',
+          ],
           correct: 1,
           explanation:
-            'The recommended structure includes two close-reading paragraphs on the extract and two wider-text paragraphs, ensuring you address both parts of the question.',
+            "Part (a) is marked for writer's methods (AO2) alone: how the writer's language, form and structure create meaning in the extract. The whole novel belongs to part (b).",
         },
         {
           id: 'edx-lt2-m5-q3',
-          question:
-            'Which of the following best describes how context (AO3) should appear in a paragraph?',
-          options: [
-            'As a separate paragraph at the end of the essay',
-            'As a one-line footnote after each quotation',
-            'Woven into the analysis to explain why the writer made a particular choice',
-            'Only in the introduction and conclusion',
-          ],
-          correct: 2,
+          question: 'How many marks does context (AO3) earn in Section A of Paper 2?',
+          options: ['None', '4 marks', '5 marks', '10 marks'],
+          correct: 0,
           explanation:
-            "Context (AO3) is most effective when integrated into your analysis - it should deepen your point by explaining the social, historical, or biographical reasons behind the writer's choices.",
+            "None. Section A is marked for AO2 in part (a) and AO1 in part (b). Knowing the novel's context can still help you explain the writer's choices, but it earns no marks of its own here; on Paper 2, context is marked only in the anthology poetry comparison.",
         },
         {
           id: 'edx-lt2-m5-q4',
@@ -2943,7 +2978,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       ],
       correct: 1,
       explanation:
-        'The Act created workhouses designed to be so unpleasant that only the truly desperate would enter. Scrooge\'s question "Are there no workhouses?" shows he has internalised this cruel philosophy.',
+        'The Act created workhouses designed to be so unpleasant that only the truly desperate would enter. Scrooge\'s questions "Are there no prisons?" and "And the Union workhouses?" show he has internalised this cruel philosophy.',
     },
     {
       id: 'edx-lt2-a3',

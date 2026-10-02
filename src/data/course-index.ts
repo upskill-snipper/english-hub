@@ -835,7 +835,7 @@ export const COURSE_INDEX: CourseIndexEntry[] = [
     duration: '14 weeks',
     level: 'GCSE (Years 10-11)',
     description:
-      "Master Edexcel Literature Paper 1: Shakespeare (Macbeth) and Post-1914 Literature (An Inspector Calls). Extract-based responses with context, character analysis, and writer's methods.",
+      "Master Edexcel Literature Paper 1: Shakespeare (Macbeth) and Post-1914 Literature (An Inspector Calls). Extract analysis and whole-play essays, context, character analysis, and writer's methods.",
     color: '#e11d48',
     moduleCount: 10,
     quizCount: 44,
@@ -862,7 +862,7 @@ export const COURSE_INDEX: CourseIndexEntry[] = [
       },
       {
         id: 'edx-lt1-m5',
-        title: 'Shakespeare: Writing the Extract-Based Response',
+        title: 'Shakespeare: Answering Parts (a) and (b)',
         duration: '55 min',
       },
       {
