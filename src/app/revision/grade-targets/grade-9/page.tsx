@@ -316,7 +316,9 @@ export default async function Grade9Page() {
               Example: Turning a topic into a concept
             </h3>
             <div className="space-y-3">
-              <div className="flex items-start gap-3">
+              {/* Label above the sentence on a phone: beside it, the sentence ran
+                  to a 111px column, three or four words a line. */}
+              <div className="flex flex-col items-start gap-1.5 sm:flex-row sm:gap-3">
                 <Badge variant="secondary" className="shrink-0 mt-0.5 text-[10px]">
                   Topic
                 </Badge>
@@ -324,7 +326,7 @@ export default async function Grade9Page() {
                   &quot;How does the writer present guilt?&quot;
                 </p>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex flex-col items-start gap-1.5 sm:flex-row sm:gap-3">
                 <Badge variant="secondary" className="shrink-0 mt-0.5 text-[10px]">
                   Mid-band thesis
                 </Badge>
@@ -333,7 +335,7 @@ export default async function Grade9Page() {
                   protagonist throughout the text.&quot;
                 </p>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex flex-col items-start gap-1.5 sm:flex-row sm:gap-3">
                 <Badge className="shrink-0 mt-0.5 text-[10px] bg-amber-500/20 text-clay-600 border-amber-500/30">
                   Top-grade concept
                 </Badge>

@@ -362,7 +362,9 @@ export default function FreeResourcesPage() {
           <Card className="p-6 md:p-8 space-y-8 border-border/60 bg-card">
             {/* Meta */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
-              <div>
+              {/* The title takes the full row on a phone: in one of two columns it
+                  ran to 107px, a few words a line. */}
+              <div className="col-span-2 sm:col-span-1">
                 <p className="text-muted-foreground text-xs uppercase tracking-wide mb-1">Title</p>
                 <p className="font-medium">{lesson.title}</p>
               </div>
@@ -600,7 +602,9 @@ export default function FreeResourcesPage() {
             <div className="space-y-6">
               {lesson.worksheetQuestions.map((q, i) => (
                 <div key={i} className="rounded-lg border border-border/50 p-5 bg-muted/20">
-                  <div className="flex items-start justify-between gap-4 mb-3">
+                  {/* Marks above the question on a phone: beside it, the question ran to a
+                      104px column. */}
+                  <div className="mb-3 flex flex-col-reverse items-start gap-2 sm:flex-row sm:justify-between sm:gap-4">
                     <p className="text-sm font-medium">
                       <span className="text-primary me-2">Q{i + 1}.</span>
                       {q.question}
