@@ -184,6 +184,43 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
     '/comics/jekyll-and-hyde/the-will-and-mr-seek.7d79b29e0298.svg',
   'lc-jekyll-and-hyde-utterson-meets-hyde':
     '/comics/jekyll-and-hyde/utterson-meets-hyde.fa2c1defcae2.svg',
+  'lc-julius-caesar-a-night-of-storms-and-portents':
+    '/comics/julius-caesar/a-night-of-storms-and-portents.336c7c7a7598.svg',
+  'lc-julius-caesar-antony-alone-with-the-body':
+    '/comics/julius-caesar/antony-alone-with-the-body.990e791f5352.svg',
+  'lc-julius-caesar-beware-the-ides-of-march':
+    '/comics/julius-caesar/beware-the-ides-of-march.991a6b164f88.svg',
+  'lc-julius-caesar-brutus-decides-in-the-orchard':
+    '/comics/julius-caesar/brutus-decides-in-the-orchard.b89aca8f35c8.svg',
+  'lc-julius-caesar-calpurnia': '/comics/julius-caesar/calpurnia.0d23a5ceaf21.svg',
+  'lc-julius-caesar-calpurnia-s-dream-and-decius-s-flattery':
+    '/comics/julius-caesar/calpurnia-s-dream-and-decius-s-flattery.2ed613e195c2.svg',
+  'lc-julius-caesar-cassius': '/comics/julius-caesar/cassius.c05a89e99459.svg',
+  'lc-julius-caesar-cassius-s-mistake': '/comics/julius-caesar/cassius-s-mistake.c609000e8090.svg',
+  'lc-julius-caesar-cassius-works-on-brutus':
+    '/comics/julius-caesar/cassius-works-on-brutus.9aa8ed64a431.svg',
+  'lc-julius-caesar-cinna-the-poet': '/comics/julius-caesar/cinna-the-poet.d8ae2486fa9e.svg',
+  'lc-julius-caesar-decius': '/comics/julius-caesar/decius.18c2f12948ce.svg',
+  'lc-julius-caesar-julius-caesar': '/comics/julius-caesar/julius-caesar.f33682adbe40.svg',
+  'lc-julius-caesar-lepidus': '/comics/julius-caesar/lepidus.9223e71fd56a.svg',
+  'lc-julius-caesar-lucius': '/comics/julius-caesar/lucius.d7d06b3a40b0.svg',
+  'lc-julius-caesar-marcus-brutus': '/comics/julius-caesar/marcus-brutus.592a63e42e89.svg',
+  'lc-julius-caesar-mark-antony': '/comics/julius-caesar/mark-antony.5f3aed5bef68.svg',
+  'lc-julius-caesar-octavius': '/comics/julius-caesar/octavius.16b1b182013b.svg',
+  'lc-julius-caesar-portia': '/comics/julius-caesar/portia.0ff8ce1b43a0.svg',
+  'lc-julius-caesar-quarrel-grief-and-a-ghost':
+    '/comics/julius-caesar/quarrel-grief-and-a-ghost.2f7eee9587b4.svg',
+  'lc-julius-caesar-the-assassination': '/comics/julius-caesar/the-assassination.946d7ce86acd.svg',
+  'lc-julius-caesar-the-citizens': '/comics/julius-caesar/the-citizens.10c8ab4e8d57.svg',
+  'lc-julius-caesar-the-noblest-roman': '/comics/julius-caesar/the-noblest-roman.499d4c14cf51.svg',
+  'lc-julius-caesar-the-proscription-list':
+    '/comics/julius-caesar/the-proscription-list.cdf5f47f63d8.svg',
+  'lc-julius-caesar-the-tribunes-scold-the-crowd':
+    '/comics/julius-caesar/the-tribunes-scold-the-crowd.18e293062290.svg',
+  'lc-julius-caesar-two-speeches-in-the-forum':
+    '/comics/julius-caesar/two-speeches-in-the-forum.5ada387828b2.svg',
+  'lc-julius-caesar-words-before-blows-at-philippi':
+    '/comics/julius-caesar/words-before-blows-at-philippi.ec9dd275f7b4.svg',
   'lc-macbeth-banquo': '/comics/macbeth/banquo.33bcea357019.svg',
   'lc-macbeth-banquo-suspects': '/comics/macbeth/banquo-suspects.a5e32fe0c98d.svg',
   'lc-macbeth-birnam-wood': '/comics/macbeth/birnam-wood.13c8658db606.svg',
@@ -436,4 +473,41 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
     '/comics/the-sign-of-four/toby-and-the-trail-of-creosote.429ef958c1e1.svg',
   'lc-the-sign-of-four-tonga': '/comics/the-sign-of-four/tonga.e3078246c047.svg',
   'lc-the-sign-of-four-wiggins': '/comics/the-sign-of-four/wiggins.905db0c80752.svg',
+  'lc-the-tempest-alonso': '/comics/the-tempest/alonso.72b13348c05c.svg',
+  'lc-the-tempest-antonio': '/comics/the-tempest/antonio.353916ff92f8.svg',
+  'lc-the-tempest-ariel': '/comics/the-tempest/ariel.bb4aeab5f8eb.svg',
+  'lc-the-tempest-ariel-asks-for-his-freedom':
+    '/comics/the-tempest/ariel-asks-for-his-freedom.f644437b3190.svg',
+  'lc-the-tempest-caliban': '/comics/the-tempest/caliban.18f1baef8fee.svg',
+  'lc-the-tempest-caliban-curses-his-master':
+    '/comics/the-tempest/caliban-curses-his-master.4b79b302ec91.svg',
+  'lc-the-tempest-caliban-finds-a-new-master':
+    '/comics/the-tempest/caliban-finds-a-new-master.ee197b5b64c0.svg',
+  'lc-the-tempest-ferdinand': '/comics/the-tempest/ferdinand.f2e5982d8fff.svg',
+  'lc-the-tempest-ferdinand-meets-miranda':
+    '/comics/the-tempest/ferdinand-meets-miranda.43af30c8a312.svg',
+  'lc-the-tempest-gonzalo': '/comics/the-tempest/gonzalo.3b02811fcfa9.svg',
+  'lc-the-tempest-miranda': '/comics/the-tempest/miranda.a816b59734f3.svg',
+  'lc-the-tempest-prospero': '/comics/the-tempest/prospero.fc9f8cb98513.svg',
+  'lc-the-tempest-prospero-asks-to-be-set-free':
+    '/comics/the-tempest/prospero-asks-to-be-set-free.e7604bc38b8c.svg',
+  'lc-the-tempest-prospero-tells-miranda-the-past':
+    '/comics/the-tempest/prospero-tells-miranda-the-past.9767a4dad1df.svg',
+  'lc-the-tempest-sebastian': '/comics/the-tempest/sebastian.f3fb4b260a8a.svg',
+  'lc-the-tempest-stephano': '/comics/the-tempest/stephano.1a6013dd389f.svg',
+  'lc-the-tempest-the-brave-new-world': '/comics/the-tempest/the-brave-new-world.882fe1827426.svg',
+  'lc-the-tempest-the-log-bearer-and-the-lovers-vows':
+    '/comics/the-tempest/the-log-bearer-and-the-lovers-vows.928bbf275509.svg',
+  'lc-the-tempest-the-masque-broken-off':
+    '/comics/the-tempest/the-masque-broken-off.bb80bd5bdf0e.svg',
+  'lc-the-tempest-the-plot-against-prospero':
+    '/comics/the-tempest/the-plot-against-prospero.1bb76f75722f.svg',
+  'lc-the-tempest-the-plot-to-kill-the-king':
+    '/comics/the-tempest/the-plot-to-kill-the-king.976efa3b8494.svg',
+  'lc-the-tempest-the-storm-at-sea': '/comics/the-tempest/the-storm-at-sea.e8660a6d4007.svg',
+  'lc-the-tempest-the-vanishing-banquet':
+    '/comics/the-tempest/the-vanishing-banquet.aebd8269fd5f.svg',
+  'lc-the-tempest-trinculo': '/comics/the-tempest/trinculo.3da13fd09be7.svg',
+  'lc-the-tempest-virtue-not-vengeance':
+    '/comics/the-tempest/virtue-not-vengeance.cb160bd7b9bf.svg',
 }
