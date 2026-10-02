@@ -86,8 +86,10 @@ export default async function RubricsPage() {
               <h3 className="text-base font-semibold tracking-tight text-foreground mb-2">
                 {strandTr[strand] ?? STRAND_LABEL[strand].en}
               </h3>
+              {/* The table keeps readable columns and swipes sideways on a phone:
+                  fitted to 328px, its descriptor columns were 57px, a few words a line. */}
               <div className="overflow-x-auto rounded-xl border border-border/60">
-                <table className="w-full text-sm">
+                <table className="w-full min-w-[36rem] text-sm">
                   <thead className="bg-muted/40">
                     <tr>
                       {LEVELS.map((l) => (
