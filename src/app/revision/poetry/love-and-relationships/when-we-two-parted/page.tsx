@@ -13,15 +13,15 @@ import { useT } from '@/lib/i18n/use-t'
 const poemData: PoemData = {
   title: 'When We Two Parted',
   poet: 'Lord Byron',
-  // The poem as the AQA anthology prints it (Love and Relationships; AQA, Past
-  // and present: poetry anthology, sample, filestore.aqa.org.uk
-  // AQA-8702-TG-POEMS.PDF), checked line by line against the PDF on 2 October
-  // 2026. Until then this array held 28 lines: the first four of the last
-  // stanza, "In secret we met" to "Thy spirit deceive", were missing, though the
-  // form note has always said four stanzas of eight. It also printed "Sunk chill
-  // on my brow" and "A knell to mine ear" where the anthology has "Sank" and
-  // "in", and some marks that are not the anthology's. The quotations on this
-  // page now follow it too.
+  // The poem as AQA's anthology in the book students are given (Love and Relationships; Past and
+  // present: poetry anthology, Version 1.0 June 2015), checked line by line against it on 2 October 2026.
+  // Until then this array held 28 lines: the first four of the last stanza, "In secret we
+  // met" to "Thy spirit deceive", were missing, though the form note has always said four
+  // stanzas of eight. It also printed "A knell to mine ear" where the book has "in", and
+  // some marks that are not the book's. AQA's teacher sample (AQA-8702-TG-POEMS.PDF,
+  // marked SAMPLE) differs from the book: it has "Sank chill on my brow" where the book,
+  // like Byron, has "Sunk". The page followed the sample for part of 2 October 2026 and
+  // now follows the book; the quotations on this page follow it too.
   lines: [
     {
       text: 'When we two parted',
@@ -115,7 +115,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'Sank chill on my brow –',
+      text: 'Sunk chill on my brow –',
       annotations: [
         {
           type: 'Sensory imagery',
@@ -448,7 +448,7 @@ const poemData: PoemData = {
     },
     {
       device: 'Pathetic fallacy',
-      example: 'The dew of the morning / Sank chill on my brow',
+      example: 'The dew of the morning / Sunk chill on my brow',
       effect:
         'Nature mirrors human emotion -- the cold dew represents the chill of grief. The natural world becomes a reflection of internal suffering.',
       lineRef: 9,

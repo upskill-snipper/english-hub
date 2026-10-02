@@ -15,8 +15,10 @@ import { useT } from '@/lib/i18n/use-t'
 const londonPoem: PoemData = {
   title: 'London',
   poet: 'William Blake',
-  // Printed as the AQA anthology prints it (Power and Conflict; AQA-8702-TG-POEMS.PDF),
-  // checked line by line against the PDF on 2 October 2026. AQA modernises Blake: it
+  // Printed as AQA's anthology prints it in the book students are given (Power and
+  // Conflict; Past and present: poetry anthology, Version 1.0 June 2015), checked line by
+  // line against it on 2 October 2026; AQA's teacher sample (AQA-8702-TG-POEMS.PDF) prints
+  // the same text. AQA modernises Blake: it
   // prints "through", "chartered" and "mind-forged" (keeping "black'ning"), and lower
   // case for "man", "infant's", "chimney-sweeper's", "church", "soldier's", "palace",
   // "harlot's" and "marriage". Until then the page printed Blake's engraved forms and

@@ -13,11 +13,13 @@ import { useT } from '@/lib/i18n/use-t'
 const poemData: PoemData = {
   title: "Sonnet 29 -- 'I think of thee!'",
   poet: 'Elizabeth Barrett Browning',
-  // Printed as the AQA anthology prints it (Love and Relationships; AQA-8702-TG-POEMS.PDF),
-  // checked line by line against the PDF on 2 October 2026. The words already matched;
-  // until then the page had double hyphens where AQA prints dashes, and a comma at the end
-  // of line 7 that AQA does not print. AQA sets line 4's "there's" with a space before the
-  // apostrophe ("there 's"), a typesetting slip; it is printed here without the space.
+  // Printed as AQA's anthology prints it in the book students are given (Love and
+  // Relationships; Past and present: poetry anthology, Version 1.0 June 2015), checked line
+  // by line against it on 2 October 2026. The words already matched; until then the page
+  // had double hyphens where AQA prints dashes, and a comma at the end of line 7 that AQA
+  // does not print. AQA's teacher sample (AQA-8702-TG-POEMS.PDF) prints the same text, but
+  // sets line 4's "there's" with a space before the apostrophe ("there 's"); the book does
+  // not.
   lines: [
     {
       text: 'I think of thee! – my thoughts do twine and bud',

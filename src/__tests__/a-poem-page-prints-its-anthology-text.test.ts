@@ -36,7 +36,10 @@ import ts from 'typescript'
  *
  * WHAT IT CHECKS. Each page in VERIFIED was compared line by line with the
  * anthology named beside it on 2 October 2026, by its words and its marks of
- * punctuation (the exceptions are noted on the pages). Three wider-reading
+ * punctuation (the exceptions are noted on the pages). AQA publishes two
+ * copies of its anthology that differ in places: the AQA entries are pinned to
+ * the typeset book students are given, not to the teacher sample
+ * (AQA-8702-TG-POEMS.PDF), and each page says where the two differ. Three wider-reading
  * poems that no board prints are pinned instead to the published edition
  * named beside them, which each page names above its rows. This pins what was
  * verified: the shape of the poem (stanza sizes, with H for a part heading)
@@ -73,15 +76,17 @@ const VERIFIED: Verified[] = [
   },
   {
     page: 'src/app/revision/poetry/love-and-relationships/when-we-two-parted/page.tsx',
-    source: 'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF)',
+    source:
+      'AQA, Past and present: poetry anthology, Version 1.0 June 2015 (the book students are given), p. 6',
     shape: '8,8,8,8',
-    words: 'a18e831d53b6cb19',
+    words: '56b13414b6411881',
   },
   {
     page: 'src/app/revision/poetry/power-and-conflict/exposure/page.tsx',
-    source: 'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF)',
+    source:
+      'AQA, Past and present: poetry anthology, Version 1.0 June 2015 (the book students are given), pp. 33-34',
     shape: '5,5,5,5,5,5,5,5',
-    words: '369d803a9d7f74d5',
+    words: '598d89bad89147ec',
   },
   {
     page: 'src/app/revision/poetry/ocr/love-and-relationships/neutral-tones/page.tsx',
@@ -98,9 +103,9 @@ const VERIFIED: Verified[] = [
   {
     page: 'src/app/igcse/edexcel/poetry/ozymandias/page.tsx',
     source:
-      'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF), p. 21 (AQA sets it; the IGCSE anthology does not)',
+      'AQA, Past and present: poetry anthology, Version 1.0 June 2015 (the book students are given), p. 26 (AQA sets it; the IGCSE anthology does not)',
     shape: '14',
-    words: 'a2230ac518626b1e',
+    words: '90d272ee404ece85',
   },
   {
     page: 'src/app/igcse/edexcel/poetry/the-man-he-killed/page.tsx',
@@ -178,7 +183,7 @@ const VERIFIED: Verified[] = [
   {
     page: 'src/app/revision/poetry/eduqas/the-prelude/page.tsx',
     source:
-      'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF), p. 23 (the AQA extract, not the Eduqas one)',
+      'AQA, Past and present: poetry anthology, Version 1.0 June 2015 (the book students are given), pp. 28-29 (the AQA extract, not the Eduqas one)',
     shape: '44',
     words: '2e2f1556130c3357',
   },
@@ -196,43 +201,50 @@ const VERIFIED: Verified[] = [
   },
   {
     page: 'src/app/revision/poetry/love-and-relationships/loves-philosophy/page.tsx',
-    source: 'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF), p. 3',
+    source:
+      'AQA, Past and present: poetry anthology, Version 1.0 June 2015 (the book students are given), p. 7',
     shape: '8,8',
-    words: '41d589520b74da9c',
+    words: 'e4a14df214d86f8d',
   },
   {
     page: 'src/app/revision/poetry/love-and-relationships/neutral-tones/page.tsx',
-    source: 'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF), p. 7',
+    source:
+      'AQA, Past and present: poetry anthology, Version 1.0 June 2015 (the book students are given), p. 11',
     shape: '4,4,4,4',
     words: '55182f0aabf7b315',
   },
   {
     page: 'src/app/revision/poetry/love-and-relationships/porphyrias-lover/page.tsx',
-    source: 'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF), pp. 4-5',
+    source:
+      'AQA, Past and present: poetry anthology, Version 1.0 June 2015 (the book students are given), pp. 8-9',
     shape: '60',
     words: '4ccd27257c49234a',
   },
   {
     page: 'src/app/revision/poetry/love-and-relationships/sonnet-29/page.tsx',
-    source: 'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF), p. 6',
+    source:
+      'AQA, Past and present: poetry anthology, Version 1.0 June 2015 (the book students are given), p. 10',
     shape: '14',
     words: '61b826c7ed60f170',
   },
   {
     page: 'src/app/revision/poetry/power-and-conflict/london/page.tsx',
-    source: 'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF), p. 22',
+    source:
+      'AQA, Past and present: poetry anthology, Version 1.0 June 2015 (the book students are given), p. 27',
     shape: '4,4,4,4',
     words: 'fd0de1f808b22b38',
   },
   {
     page: 'src/app/revision/poetry/power-and-conflict/ozymandias/page.tsx',
-    source: 'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF), p. 21',
+    source:
+      'AQA, Past and present: poetry anthology, Version 1.0 June 2015 (the book students are given), p. 26',
     shape: '14',
-    words: 'a2230ac518626b1e',
+    words: '90d272ee404ece85',
   },
   {
     page: 'src/app/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade/page.tsx',
-    source: 'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF), pp. 26-27',
+    source:
+      'AQA, Past and present: poetry anthology, Version 1.0 June 2015 (the book students are given), p. 32',
     shape: '8,9,9,12,11,6',
     words: '24d08ae00e152983',
   },
@@ -264,7 +276,8 @@ const VERIFIED: Verified[] = [
   },
   {
     page: 'src/app/revision/poetry/power-and-conflict/the-prelude/page.tsx',
-    source: 'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF), p. 23',
+    source:
+      'AQA, Past and present: poetry anthology, Version 1.0 June 2015 (the book students are given), pp. 28-29',
     shape: '44',
     words: '2e2f1556130c3357',
   },
@@ -305,7 +318,7 @@ const VERIFIED: Verified[] = [
   {
     page: 'src/app/revision/poetry/power-and-conflict/my-last-duchess/page.tsx',
     source:
-      'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF), pp. 24-25 (keeps the held "Fra", "favor" and "pretense" for its "Frà", "favour" and "pretence", as the page says, and the held punctuation or quotation marks in nine lines)',
+      'AQA, Past and present: poetry anthology, Version 1.0 June 2015 (the book students are given), pp. 30-31 (keeps the held "Fra", "favor" and "pretense" for its "Frà", "favour" and "pretence", as the page says, and the held punctuation or quotation marks in nine lines)',
     shape: '56',
     words: 'b8a9f1120b554aae',
   },
@@ -313,7 +326,8 @@ const VERIFIED: Verified[] = [
   // text the same day. AQA's words are those of the Poetry Bookshop edition (1921).
   {
     page: 'src/app/revision/poetry/love-and-relationships/the-farmers-bride/page.tsx',
-    source: 'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF), pp. 9-10',
+    source:
+      'AQA, Past and present: poetry anthology, Version 1.0 June 2015 (the book students are given), pp. 13-14',
     shape: '9,10,10,4,8,5',
     words: 'b624f65e0d0096fc',
   },

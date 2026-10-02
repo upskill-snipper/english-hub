@@ -16,11 +16,15 @@ import { useT } from '@/lib/i18n/use-t'
 const ozymandias: PoemData = {
   title: 'Ozymandias',
   poet: 'Percy Bysshe Shelley',
-  // Printed as the AQA anthology prints it (Power and Conflict; AQA-8702-TG-POEMS.PDF),
-  // checked line by line against the PDF on 2 October 2026. Until then the page had
-  // "shattered", "stamped" and "mocked" where AQA prints Shelley's "shatter'd", "stamp'd"
-  // and "mock'd"; capitals on "Works" and "Wreck" that AQA does not print; commas that
-  // are not in AQA's lines 1, 3, 4 and 5; and a colon for the semicolon ending line 8.
+  // Printed as AQA's anthology prints it in the book students are given (Power and
+  // Conflict; Past and present: poetry anthology, Version 1.0 June 2015), checked line by
+  // line against it on 2 October 2026. Until then the page had capitals on "Works" and
+  // "Wreck" that the book does not print, commas that are not in its lines 1, 3, 4 and 5, a
+  // colon for the semicolon ending line 8 and no comma ending line 13. AQA's teacher sample
+  // (AQA-8702-TG-POEMS.PDF, marked SAMPLE) prints Shelley's older "shatter'd", "stamp'd" and
+  // "mock'd" and no comma after "lip" in line 5; the book prints "shattered", "stamped" and
+  // "mocked". The page followed the sample for part of 2 October 2026 and now follows the
+  // book, as do its quotations.
   lines: [
     {
       text: 'I met a traveller from an antique land',
@@ -68,22 +72,22 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: "Half sunk, a shatter'd visage lies, whose frown",
+      text: 'Half sunk, a shattered visage lies, whose frown',
       annotations: [
         {
           type: 'Imagery',
-          note: '"Half sunk" and "shatter\'d" - the face is broken and partially buried. This physical destruction mirrors the collapse of the ruler\'s reputation and authority.',
+          note: '"Half sunk" and "shattered" - the face is broken and partially buried. This physical destruction mirrors the collapse of the ruler\'s reputation and authority.',
           color: '#10b981',
         },
         {
           type: 'Key quote',
-          note: 'The "shatter\'d visage" lying in the sand is a potent image of fallen pride. The face that once commanded fear is now broken rubble.',
+          note: 'The "shattered visage" lying in the sand is a potent image of fallen pride. The face that once commanded fear is now broken rubble.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'And wrinkled lip and sneer of cold command',
+      text: 'And wrinkled lip, and sneer of cold command',
       annotations: [
         {
           type: 'Characterisation',
@@ -108,7 +112,7 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: "Which yet survive, stamp'd on these lifeless things,",
+      text: 'Which yet survive, stamped on these lifeless things,',
       annotations: [
         {
           type: 'Juxtaposition',
@@ -118,11 +122,11 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: "The hand that mock'd them and the heart that fed;",
+      text: 'The hand that mocked them and the heart that fed;',
       annotations: [
         {
           type: 'Ambiguity',
-          note: "\"The hand that mock'd\" could refer to the sculptor's hand (which imitated/mocked the king's expressions) or the king's own hand (which mocked his people through tyranny). \"The heart that fed\" could mean the king's heart that nourished his cruel passions, or the heart of the people that sustained his rule.",
+          note: '"The hand that mocked" could refer to the sculptor\'s hand (which imitated/mocked the king\'s expressions) or the king\'s own hand (which mocked his people through tyranny). "The heart that fed" could mean the king\'s heart that nourished his cruel passions, or the heart of the people that sustained his rule.',
           color: '#3b82f6',
         },
         {
@@ -260,9 +264,9 @@ const ozymandias: PoemData = {
 
   summary: `Lines 1--3: The octave opens with a frame narrative. The speaker recalls meeting a traveller from "an antique land" (Egypt) who describes a ruined statue in the desert - two enormous legs of stone, without a body, standing alone.
 
-Lines 3--5: Near the legs, the traveller describes the statue's face ("visage") lying half-buried in the sand, broken ("shatter'd"). The face still shows a frown and a "sneer of cold command" - the sculptor captured the pharaoh's arrogant, cruel expression.
+Lines 3--5: Near the legs, the traveller describes the statue's face ("visage") lying half-buried in the sand, broken ("shattered"). The face still shows a frown and a "sneer of cold command" - the sculptor captured the pharaoh's arrogant, cruel expression.
 
-Lines 6--8: These lines praise the sculptor's skill. He "read" the king's passions accurately and carved them so well that they "survive" - outlasting both the sculptor and the king. There is an important ambiguity in "the hand that mock'd them and the heart that fed" - this could refer to the sculptor's hand (which "mocked" by imitating the king's expression) or the king's hand (which "mocked" his subjects).
+Lines 6--8: These lines praise the sculptor's skill. He "read" the king's passions accurately and carved them so well that they "survive" - outlasting both the sculptor and the king. There is an important ambiguity in "the hand that mocked them and the heart that fed" - this could refer to the sculptor's hand (which "mocked" by imitating the king's expression) or the king's hand (which "mocked" his subjects).
 
 Lines 9--11: The inscription on the pedestal delivers Ozymandias's boastful command: "My name is Ozymandias, king of kings: / Look on my works, ye Mighty, and despair!" He commands other powerful rulers to look at what he has built and feel hopeless in comparison.
 
@@ -272,9 +276,9 @@ Overall meaning: The poem is a meditation on the transience of power. Ozymandias
 
   summaryAr: `الأبيات 1-3: الـoctave يبدأ بإطار سردي (frame narrative). المتكلّم يتذكّر إنه قابل مسافر من "أرض قديمة" (مصر)، وهالمسافر يوصف تمثال مهدّم في الصحراء - رجلين ضخمين من حجر، بدون جسم، واقفين لحالهم.
 
-الأبيات 3-5: يم الرجلين، المسافر يوصف وجه التمثال (visage) وهو مدفون نص دفنه في الرمل ومكسّر (shatter'd). الوجه لين الحين يبيّن عبوس وابتسامة استهزاء باردة (sneer of cold command) - النحّات قدر يلتقط تعابير الفرعون المتعجرفة والقاسية وينقلها للحجر.
+الأبيات 3-5: يم الرجلين، المسافر يوصف وجه التمثال (visage) وهو مدفون نص دفنه في الرمل ومكسّر (shattered). الوجه لين الحين يبيّن عبوس وابتسامة استهزاء باردة (sneer of cold command) - النحّات قدر يلتقط تعابير الفرعون المتعجرفة والقاسية وينقلها للحجر.
 
-الأبيات 6-8: هذي الأبيات تمدح مهارة النحّات. هو "قرى" مشاعر الملك بدقة، وحفرها زين لدرجة إنها "نجت" - وعاشت أطول من النحّات والملك مع بعض. وفيه غموض مهم في "the hand that mock'd them and the heart that fed" - يحتمل إنه يقصد يد النحّات (اللي "حاكت" تعابير الملك بإتقان وسخريّة) أو يد الملك نفسه (اللي "استهزت" بشعبه).
+الأبيات 6-8: هذي الأبيات تمدح مهارة النحّات. هو "قرى" مشاعر الملك بدقة، وحفرها زين لدرجة إنها "نجت" - وعاشت أطول من النحّات والملك مع بعض. وفيه غموض مهم في "the hand that mocked them and the heart that fed" - يحتمل إنه يقصد يد النحّات (اللي "حاكت" تعابير الملك بإتقان وسخريّة) أو يد الملك نفسه (اللي "استهزت" بشعبه).
 
 الأبيات 9-11: النقش على القاعدة ينقل أمر Ozymandias المتعجرف: "My name is Ozymandias, king of kings: / Look on my works, ye Mighty, and despair!" يأمر بقية الحكّام الأقوياء إنهم يشوفون ايش بنى ويحسّون بالعجز.
 
@@ -321,12 +325,12 @@ Caesura: أهم caesura هو النقطة في نص البيت 12 "Nothing besid
       themesAr: ['قوة الطبيعة', 'زوال السلطة', 'الكبرياء'],
     },
     {
-      quote: "Half sunk, a shatter'd visage lies",
+      quote: 'Half sunk, a shattered visage lies',
       analysis:
-        'The face of the king is broken and half-buried by sand. "Shatter\'d" suggests violent destruction, while "half sunk" shows nature gradually swallowing the remnants. The word "lies" carries a double meaning - the face physically lies on the ground, but it also "lies" in the sense that its expression of power is now a falsehood.',
+        'The face of the king is broken and half-buried by sand. "Shattered" suggests violent destruction, while "half sunk" shows nature gradually swallowing the remnants. The word "lies" carries a double meaning - the face physically lies on the ground, but it also "lies" in the sense that its expression of power is now a falsehood.',
       themes: ['Power of nature', 'Decay', 'Irony'],
       analysisAr:
-        'وجه الملك مكسّر ومدفون نص دفنه في الرمل. كلمة "shatter\'d" توحي بدمار عنيف، بينما "half sunk" تبيّن إن الطبيعة بشكل تدريجي تبلع ما بقى من التمثال. وكلمة "lies" تحمل معنيين - الوجه فعلياً يرقد (lies) على الأرض، وفي نفس الوقت "يكذب" (lies) لأن تعابير القوة فيه صارت كذبة.',
+        'وجه الملك مكسّر ومدفون نص دفنه في الرمل. كلمة "shattered" توحي بدمار عنيف، بينما "half sunk" تبيّن إن الطبيعة بشكل تدريجي تبلع ما بقى من التمثال. وكلمة "lies" تحمل معنيين - الوجه فعلياً يرقد (lies) على الأرض، وفي نفس الوقت "يكذب" (lies) لأن تعابير القوة فيه صارت كذبة.',
       themesAr: ['قوة الطبيعة', 'التحلّل', 'المفارقة'],
     },
     {
@@ -339,12 +343,12 @@ Caesura: أهم caesura هو النقطة في نص البيت 12 "Nothing besid
       themesAr: ['السلطة والسيطرة', 'الاستبداد', 'الطبيعة البشرية'],
     },
     {
-      quote: "The hand that mock'd them and the heart that fed",
+      quote: 'The hand that mocked them and the heart that fed',
       analysis:
-        "This deliberately ambiguous line can be read in two ways. \"The hand that mock'd\" could be the sculptor's hand (which copied/imitated the king's expression) or the king's hand (which mocked his subjects through cruel rule). \"The heart that fed\" could be the king's heart (which fed on power) or the people's hearts (which sustained the regime). This duality links art and tyranny as forms of power.",
+        "This deliberately ambiguous line can be read in two ways. \"The hand that mocked\" could be the sculptor's hand (which copied/imitated the king's expression) or the king's hand (which mocked his subjects through cruel rule). \"The heart that fed\" could be the king's heart (which fed on power) or the people's hearts (which sustained the regime). This duality links art and tyranny as forms of power.",
       themes: ['Art vs power', 'Ambiguity', 'Legacy'],
       analysisAr:
-        'هذا البيت مقصود إنه يحتمل قراءتين. "The hand that mock\'d" يحتمل إنها يد النحّات (اللي حاكت تعابير الملك بسخريّة) أو يد الملك نفسه (اللي استهزى بشعبه عن طريق حكمه القاسي). و"The heart that fed" يحتمل قلب الملك (اللي تغذّى على السلطة) أو قلوب الناس (اللي ساندوا النظام واستمر بسببهم). هالازدواجية تربط الفن والاستبداد كنوعين من السلطة.',
+        'هذا البيت مقصود إنه يحتمل قراءتين. "The hand that mocked" يحتمل إنها يد النحّات (اللي حاكت تعابير الملك بسخريّة) أو يد الملك نفسه (اللي استهزى بشعبه عن طريق حكمه القاسي). و"The heart that fed" يحتمل قلب الملك (اللي تغذّى على السلطة) أو قلوب الناس (اللي ساندوا النظام واستمر بسببهم). هالازدواجية تربط الفن والاستبداد كنوعين من السلطة.',
       themesAr: ['الفن مقابل السلطة', 'الغموض المتعدّد', 'الإرث'],
     },
     {
@@ -439,12 +443,12 @@ Caesura: أهم caesura هو النقطة في نص البيت 12 "Nothing besid
     },
     {
       device: 'Personification',
-      example: "the hand that mock'd them and the heart that fed",
+      example: 'the hand that mocked them and the heart that fed',
       effect:
-        'Human qualities ("mock\'d", "fed") are attributed to abstract concepts of artistry and power. The "hand" and "heart" become symbolic of the sculptor\'s craft and the ruler\'s ambition. By personifying these, Shelley suggests that both art and tyranny are driven by deeply human impulses.',
+        'Human qualities ("mocked", "fed") are attributed to abstract concepts of artistry and power. The "hand" and "heart" become symbolic of the sculptor\'s craft and the ruler\'s ambition. By personifying these, Shelley suggests that both art and tyranny are driven by deeply human impulses.',
       lineRef: 7,
       effectAr:
-        'صفات بشرية ("mock\'d"، "fed") تُنسب لمفاهيم مجرّدة مثل الفن والسلطة. الـ"hand" والـ"heart" يصيرون رموز لمهارة النحّات وطموح الحاكم. وبهذا الـpersonification، Shelley يلمّح إن الفن والاستبداد كلاهما تحرّكهم دوافع إنسانية عميقة.',
+        'صفات بشرية ("mocked"، "fed") تُنسب لمفاهيم مجرّدة مثل الفن والسلطة. الـ"hand" والـ"heart" يصيرون رموز لمهارة النحّات وطموح الحاكم. وبهذا الـpersonification، Shelley يلمّح إن الفن والاستبداد كلاهما تحرّكهم دوافع إنسانية عميقة.',
     },
     {
       device: 'Sibilance',

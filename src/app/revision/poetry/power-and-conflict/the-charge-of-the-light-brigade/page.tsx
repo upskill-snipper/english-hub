@@ -40,8 +40,10 @@ const poem: PoemData = {
   poet: 'Alfred Lord Tennyson',
 
   /* ── Full text: 6 stanzas ─────────────────────────────────────── */
-  // Printed as the AQA anthology prints it (Power and Conflict; AQA-8702-TG-POEMS.PDF),
-  // checked line by line against the PDF on 2 October 2026. The words already matched;
+  // Printed as AQA's anthology prints it in the book students are given (Power and
+  // Conflict; Past and present: poetry anthology, Version 1.0 June 2015), checked line by
+  // line against it on 2 October 2026; AQA's teacher sample (AQA-8702-TG-POEMS.PDF) prints
+  // the same text. The words already matched;
   // until then the page had double quotation marks where AQA prints single ones, and its
   // own punctuation at the ends of lines 31, 44 and 46. AQA numbers the six stanzas
   // ("1." to "6."); the page does not print the numbers.

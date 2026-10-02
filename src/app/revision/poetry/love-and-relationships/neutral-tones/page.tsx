@@ -13,11 +13,13 @@ import { useT } from '@/lib/i18n/use-t'
 const poemData: PoemData = {
   title: 'Neutral Tones',
   poet: 'Thomas Hardy',
-  // Printed as the AQA anthology prints it (Love and Relationships; AQA-8702-TG-POEMS.PDF),
-  // checked line by line against the PDF on 2 October 2026. Until then the page had the
-  // American "gray" and "grayish" where AQA prints "grey" and "greyish", "God-curst" for
-  // its "God curst" (Hardy hyphenated it; AQA does not), and its own punctuation in lines
-  // 2, 3, 4 and 12, among them the dash AQA puts at the start of line 4.
+  // Printed as AQA's anthology in the book students are given (Love and Relationships; Past and
+  // present: poetry anthology, Version 1.0 June 2015), checked line by line against it on 2 October 2026.
+  // Until then the page had the American "gray" and "grayish" where AQA prints "grey" and
+  // "greyish", and its own punctuation in lines 2, 3, 4 and 12, among them the dash AQA
+  // puts at the start of line 4. AQA's teacher sample (AQA-8702-TG-POEMS.PDF, marked
+  // SAMPLE) prints "God curst" in line 15; the book keeps Hardy's "God-curst", and so does
+  // this page, which followed the sample for part of 2 October 2026.
   lines: [
     {
       text: 'We stood by a pond that winter day,',
@@ -163,11 +165,11 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'Your face, and the God curst sun, and a tree,',
+      text: 'Your face, and the God-curst sun, and a tree,',
       annotations: [
         {
           type: 'List',
-          note: 'The three images from the opening -- face, sun, tree -- return, but now distorted by painful memory. "God curst" intensifies the earlier "chidden" -- the sun is now actively cursed.',
+          note: 'The three images from the opening -- face, sun, tree -- return, but now distorted by painful memory. "God-curst" intensifies the earlier "chidden" -- the sun is now actively cursed.',
           color: '#ef4444',
         },
       ],
@@ -186,11 +188,11 @@ const poemData: PoemData = {
   context: `<p><strong>Thomas Hardy (1840-1928)</strong> wrote this poem in <strong>1867</strong>, though it was not published until 1898 in <em>Wessex Poems</em>. It is one of his earliest poems and reflects personal experience of failed love.</p>
 <p>Hardy is associated with <strong>pessimism and determinism</strong> -- a worldview in which humans are subject to forces beyond their control, including the inevitable failure of love. His work often challenges the <strong>Victorian idealisation of romantic love</strong>.</p>
 <p>The poem reflects Hardy's belief that love is inherently <strong>deceptive</strong> -- it promises joy but delivers suffering. This aligns with the broader <strong>late Victorian disillusionment</strong> with Romantic ideals.</p>
-<p>Hardy was also influenced by <strong>Darwin's theory of evolution</strong>, which suggested an indifferent universe with no divine plan. The "God curst sun" reflects a world where nature is not benevolent but hostile or uncaring.</p>`,
+<p>Hardy was also influenced by <strong>Darwin's theory of evolution</strong>, which suggested an indifferent universe with no divine plan. The "God-curst sun" reflects a world where nature is not benevolent but hostile or uncaring.</p>`,
   contextAr: `<p><strong>Thomas Hardy (1840-1928)</strong> كتب هالقصيدة في <strong>1867</strong>، بس ما نشرها إلا في 1898 في ديوان <em>Wessex Poems</em>. هي من أوّل قصائده، وتعكس تجربة شخصية في فشل الحب.</p>
 <p>Hardy مرتبط بنظرة <strong>التشاؤم والحتميّة</strong> - رؤية للعالم البشر فيها خاضعين لقوى أكبر منهم، منها الفشل الحتمي للحب. أعماله غالباً تحدّت <strong>المثاليّة الفيكتورية للحب الرومانسي</strong>.</p>
 <p>القصيدة تعكس قناعة Hardy بإن الحب في جوهره <strong>خدّاع</strong> - يوعد بالفرح بس يوصل المعاناة. هذي القناعة تتماشى مع <strong>خيبة أمل أواخر العصر الفيكتوري</strong> من المثل الرومانسية.</p>
-<p>Hardy كمان كان متأثّر بـ<strong>نظرية التطور لـDarwin</strong>، اللي اقترحت إن الكون غير مبالي وما فيه خطة إلهية. عبارة "God curst sun" تعكس عالم الطبيعة فيه ما تكون رحيمة، بل عدائيّة أو غير مبالية.</p>`,
+<p>Hardy كمان كان متأثّر بـ<strong>نظرية التطور لـDarwin</strong>، اللي اقترحت إن الكون غير مبالي وما فيه خطة إلهية. عبارة "God-curst sun" تعكس عالم الطبيعة فيه ما تكون رحيمة، بل عدائيّة أو غير مبالية.</p>`,
   summary: `The speaker recalls standing by a pond on a winter day with a former lover. The landscape is drained of colour -- a white sun, grey leaves, starving ground. Everything reflects the lifelessness of their dying relationship.\n\nThe lover's eyes wander with disinterest. Empty words pass between them. The lover's smile is described as "the deadest thing" -- a devastating oxymoron that captures performed affection masking genuine bitterness.\n\nIn the final stanza, the speaker reflects on what this experience taught them: that love deceives and causes pain. The poem returns to its opening images -- face, sun, tree, pond -- showing the speaker is trapped in a cycle of painful memory with no escape or resolution.`,
   summaryAr: `المتكلّم (ذكر) يتذكّر يوم وقف يم بِركة في يوم شتوي مع حبيبته (أنثى) السابقة. المنظر مسحوب منه اللون - شمس بيضاء، أوراق رماديّة، أرض جوعى. كل شي يعكس انعدام الحياة في علاقتهم المحتضرة.\n\nعيون الحبيبة (أنثى) تطوف بدون اهتمام. كلمات فاضية تمر بينهم. ابتسامتها توصف بإنها "the deadest thing" - تناقض موجع يلتقط مظهر العاطفة المؤدّى الذي يخفي مرارة حقيقيّة.\n\nفي المقطع الأخير، المتكلّم (ذكر) يتأمّل في الدرس اللي علّمته هالتجربة: إن الحب يخدع ويسبّب الألم. القصيدة ترجع لصورها الافتتاحيّة - الوجه، الشمس، الشجرة، البِركة - وتبيّن إن المتكلّم (ذكر) محاصر في دورة من الذكرى المؤلمة بدون مفرّ ولا حلّ.`,
   formAndStructure: `Form: Four quatrains (four-line stanzas) with a regular structure that creates an appearance of order and control, belying the emotional devastation within.\n\nRhyme scheme: ABBA -- the enclosed/envelope rhyme scheme mirrors the poem's cyclical structure and the speaker's sense of entrapment. The first and last lines of each stanza rhyme, creating a closed, inescapable pattern.\n\nCyclical structure: The final stanza returns to the images of the first (pond, sun, tree, leaves), showing the speaker is trapped in a loop of painful memory. No progress or healing has occurred.\n\nColour palette: The poem is deliberately drained of colour -- white, grey, neutral. The "neutral tones" of the title refer both to the emotional flatness and the visual bleakness.\n\nTemporal structure: Stanzas 1-3 describe the past event; stanza 4 shifts to the present, showing the lasting psychological damage.\n\nEllipsis: The trailing dots after "a-wing...." create an unfinished, haunting quality, suggesting the memory refuses to end cleanly.`,

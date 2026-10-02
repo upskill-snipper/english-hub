@@ -15,8 +15,10 @@ import { useT } from '@/lib/i18n/use-t'
 const farmersBridePoem: PoemData = {
   title: "The Farmer's Bride",
   poet: 'Charlotte Mew',
-  // Printed as the AQA anthology prints it (Love and Relationships; AQA-8702-TG-POEMS.PDF,
-  // pp. 9-10), checked line by line against the PDF on 2 October 2026. Until then this page
+  // Printed as AQA's anthology prints it in the book students are given (Love and
+  // Relationships; Past and present: poetry anthology, Version 1.0 June 2015, pp. 13-14),
+  // checked line by line against it on 2 October 2026; AQA's teacher sample
+  // (AQA-8702-TG-POEMS.PDF, pp. 9-10) prints the same text. Until then this page
   // printed no line of the poem: an audit (item I5) found that the text it carried did not
   // match Mew's, and replaced it with a summary of each section, with paraphrase in place of
   // the key quotations and device examples. AQA's words are those of the Poetry Bookshop

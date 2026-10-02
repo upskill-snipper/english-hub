@@ -13,13 +13,18 @@ import { useT } from '@/lib/i18n/use-t'
 const poemData: PoemData = {
   title: "Love's Philosophy",
   poet: 'Percy Bysshe Shelley',
-  // Printed as the AQA anthology prints it (Love and Relationships; AQA-8702-TG-POEMS.PDF),
-  // checked line by line against the PDF on 2 October 2026. AQA prints a different version
-  // from the one this page carried until then, which is the version most websites carry:
-  // line 7 is "In one another's being mingle" (not "In one spirit meet and mingle") and
-  // line 15 "What are all these kisses worth" (not "What is all this sweet work worth").
-  // AQA also capitalises "Ocean" and "Heaven" and prints "disdain'd". The notes, a device
-  // card and the semantic-field list that rested on the other version were rewritten.
+  // Printed as AQA's anthology in the book students are given (Love and Relationships; Past and
+  // present: poetry anthology, Version 1.0 June 2015), checked line by line against it on 2 October 2026.
+  // AQA prints a different version from the one this page carried until then, which is
+  // the version most websites carry: line 7 is "in one another's being mingle" (not "In one
+  // spirit meet and mingle") and line 15 "what are all these kissings worth" (not "What is
+  // all this sweet work worth"). The book starts both lines in lower case, as each goes on
+  // from the line before. AQA's teacher sample (AQA-8702-TG-POEMS.PDF, marked SAMPLE) has
+  // "kisses" for "kissings", capitals at the start of both lines and a comma after
+  // "Heaven" in line 9; the page followed it for part of 2 October 2026. The book's dashes
+  // are printed as en dashes. AQA also capitalises "Ocean" and "Heaven" and prints
+  // "disdain'd". The notes, a device card and the semantic-field list that rested on the
+  // other version were rewritten.
   lines: [
     {
       text: 'The fountains mingle with the river',
@@ -82,7 +87,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: "In one another's being mingle —",
+      text: "in one another's being mingle –",
       annotations: [
         {
           type: 'Sibilance',
@@ -103,7 +108,7 @@ const poemData: PoemData = {
     },
     { text: '' },
     {
-      text: 'See the mountains kiss high Heaven,',
+      text: 'See the mountains kiss high Heaven',
       annotations: [
         {
           type: 'Personification',
@@ -153,7 +158,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'And the moonbeams kiss the sea —',
+      text: 'And the moonbeams kiss the sea –',
       annotations: [
         {
           type: 'Parallelism',
@@ -163,11 +168,11 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'What are all these kisses worth,',
+      text: 'what are all these kissings worth,',
       annotations: [
         {
           type: 'Rhetorical question',
-          note: 'Shelley questions the value of all natural beauty if human love is denied. "All these kisses" gathers every image in the poem into one word, so that the last line can ask for one more.',
+          note: 'Shelley questions the value of all natural beauty if human love is denied. "All these kissings" gathers every image in the poem into one word, so that the last line can ask for one more.',
           color: '#ef4444',
         },
       ],
@@ -374,7 +379,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Shelley personifies nature throughout - rivers "mingle", mountains "clasp", the moon "kisses" the sea. Each example serves as evidence in his argument that love is natural.',
+      'Shelley personifies nature throughout - the fountains "mingle", the mountains "kiss high Heaven", the waves "clasp one another", the moonbeams "kiss the sea". Each example serves as evidence in his argument that love is natural.',
     topic: 'Language',
     difficulty: 'foundation',
   },

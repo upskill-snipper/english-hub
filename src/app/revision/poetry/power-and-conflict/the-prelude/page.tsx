@@ -16,6 +16,10 @@ const POEM: PoemData = {
   title: 'Extract from The Prelude: Stealing the Boat',
   poet: 'William Wordsworth',
 
+  // Printed as AQA's anthology prints it in the book students are given (Power and
+  // Conflict; Past and present: poetry anthology, Version 1.0 June 2015), checked line by
+  // line against it on 2 October 2026; AQA's teacher sample (AQA-8702-TG-POEMS.PDF) prints
+  // the same words. Until then line 32 ended with a double hyphen for the book's dash.
   lines: [
     {
       text: 'One summer evening (led by her) I found',
@@ -281,7 +285,7 @@ const POEM: PoemData = {
       text: 'Back to the covert of the willow tree;',
     },
     {
-      text: 'There in her mooring-place I left my bark, --',
+      text: 'There in her mooring-place I left my bark, –',
     },
     {
       text: 'And through the meadows homeward went, in grave',

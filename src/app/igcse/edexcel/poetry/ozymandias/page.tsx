@@ -42,11 +42,15 @@ const poem: PoemData = {
   title: 'Ozymandias',
   poet: 'Percy Bysshe Shelley',
   // Ozymandias is not in the Pearson Edexcel International GCSE anthology (Issue 8),
-  // though this page was written as if it were. The poem is printed as the AQA anthology
-  // prints it (Power and Conflict; AQA-8702-TG-POEMS.PDF), the board that sets it,
-  // checked line by line against the PDF on 2 October 2026. Until then the page had
-  // "shattered", "stamped" and "mocked" where AQA prints Shelley's "shatter'd",
-  // "stamp'd" and "mock'd", and commas AQA does not print in lines 1, 3, 4 and 5.
+  // though this page was written as if it were. The poem is printed as AQA, the board that
+  // sets it, prints it in the book students are given (Power and Conflict; Past and
+  // present: poetry anthology, Version 1.0 June 2015), checked line by line against it on
+  // 2 October 2026. Until then the page had capitals on "Works" and "Wreck" that the book
+  // does not print, commas that are not in its lines 1, 3, 4 and 5, a colon for the
+  // semicolon ending line 8 and no comma ending line 13. AQA's teacher sample (AQA-8702-TG-POEMS.PDF, marked SAMPLE) prints Shelley's older
+  // "shatter'd", "stamp'd" and "mock'd" where the book prints "shattered", "stamped" and
+  // "mocked"; the page followed the sample for part of 2 October 2026 and now follows the
+  // book, as do its quotations.
   lines: [
     {
       text: 'I met a traveller from an antique land',
@@ -89,11 +93,11 @@ const poem: PoemData = {
       ],
     },
     {
-      text: "Half sunk, a shatter'd visage lies, whose frown",
+      text: 'Half sunk, a shattered visage lies, whose frown',
       annotations: [
         {
           type: 'Key quote',
-          note: '"Shatter\'d visage" - the king\'s face is broken and partly buried. Shelley delays the head-rhyme word "lies" so that the line lands heavily on the king\'s ruined features.',
+          note: '"Shattered visage" - the king\'s face is broken and partly buried. Shelley delays the head-rhyme word "lies" so that the line lands heavily on the king\'s ruined features.',
           color: '#f59e0b',
         },
         {
@@ -104,7 +108,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'And wrinkled lip and sneer of cold command',
+      text: 'And wrinkled lip, and sneer of cold command',
       annotations: [
         {
           type: 'Key quote',
@@ -129,21 +133,21 @@ const poem: PoemData = {
       ],
     },
     {
-      text: "Which yet survive, stamp'd on these lifeless things,",
+      text: 'Which yet survive, stamped on these lifeless things,',
       annotations: [
         {
           type: 'Irony',
-          note: 'The "passions" - pride, contempt - outlive the man who felt them. They are now "stamp\'d on" lifeless rock. The metaphor is from coining: a tyrant\'s temper has been minted into stone like a face on a coin.',
+          note: 'The "passions" - pride, contempt - outlive the man who felt them. They are now "stamped on" lifeless rock. The metaphor is from coining: a tyrant\'s temper has been minted into stone like a face on a coin.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: "The hand that mock'd them and the heart that fed;",
+      text: 'The hand that mocked them and the heart that fed;',
       annotations: [
         {
           type: 'Ambiguity',
-          note: "\"Mock'd\" carries two senses: the sculptor's hand mimicked (mock'd = reproduced) the passions, and also derided (mock'd = ridiculed) them. Either way, the sculptor wins. \"The heart that fed\" is the king's heart, which fed the passions.",
+          note: '"Mocked" carries two senses: the sculptor\'s hand mimicked (mocked = reproduced) the passions, and also derided (mocked = ridiculed) them. Either way, the sculptor wins. "The heart that fed" is the king\'s heart, which fed the passions.',
           color: '#a855f7',
         },
       ],
@@ -254,7 +258,7 @@ const poem: PoemData = {
 
   summary: `Lines 1-4: The speaker meets a traveller who tells him about a ruined statue in a far-off desert. All that remains are two enormous stone legs with no body - and, lying nearby in the sand, a broken, half-buried face.
 
-Lines 5-8: The face shows a frown, a wrinkled lip and a "sneer of cold command". The unnamed sculptor understood his subject perfectly - the king\'s contemptuous passions are still visible, "stamp\'d on" lifeless stone, although the king and his hand are long gone.
+Lines 5-8: The face shows a frown, a wrinkled lip and a "sneer of cold command". The unnamed sculptor understood his subject perfectly - the king\'s contemptuous passions are still visible, "stamped on" lifeless stone, although the king and his hand are long gone.
 
 Lines 9-11: An inscription on the pedestal preserves the king\'s own boast: "My name is Ozymandias, king of kings: / Look on my works, ye Mighty, and despair!" The intended meaning was that no rival ruler could ever match him.
 
@@ -287,7 +291,7 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       themesAr: ['السلطة', 'الفناء', 'الصورة'],
     },
     {
-      quote: "a shatter'd visage lies, whose frown / And wrinkled lip and sneer of cold command",
+      quote: 'a shattered visage lies, whose frown / And wrinkled lip, and sneer of cold command',
       analysis:
         'The pharaoh\'s face is broken but his contempt is still legible. The triadic list - "frown… wrinkled lip… sneer" - piles up signs of hostility. "Cold command" with its hard consonants gives the king a chilly, military authority. The face rules even after the kingdom has vanished.',
       themes: ['Tyranny', 'Power', 'Pride'],
@@ -296,12 +300,12 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       themesAr: ['الطغيان', 'السلطة', 'الكِبر'],
     },
     {
-      quote: "The hand that mock'd them and the heart that fed",
+      quote: 'The hand that mocked them and the heart that fed',
       analysis:
-        "\"Mock'd\" carries a brilliant double meaning: the sculptor's hand both mimicked (reproduced) and ridiculed (mock'd) the king's passions. Either way, the artist outlives the ruler. The \"heart that fed\" is the king's - he kept his cruelties alive - but it is now silent, while the sculptor's work still speaks.",
+        '"Mocked" carries a brilliant double meaning: the sculptor\'s hand both mimicked (reproduced) and ridiculed (mocked) the king\'s passions. Either way, the artist outlives the ruler. The "heart that fed" is the king\'s - he kept his cruelties alive - but it is now silent, while the sculptor\'s work still speaks.',
       themes: ['Art vs. power', 'Pride', 'Time'],
       analysisAr:
-        'لفظة "mock\'d" تحمل معنىً مزدوجاً بارعاً: يدُ النحّات حاكتْ (نسخت) ولكنّها سخرت أيضاً من شَهَوات الملك. وعلى المعنيين يبقى الفنّان بعد الحاكم. أمّا "heart that fed" فقلب الملك - أبقى قسوتَه حيّة - لكنّه الآن صامت، فيما عملُ النحّات ما زال يتكلّم.',
+        'لفظة "mocked" تحمل معنىً مزدوجاً بارعاً: يدُ النحّات حاكتْ (نسخت) ولكنّها سخرت أيضاً من شَهَوات الملك. وعلى المعنيين يبقى الفنّان بعد الحاكم. أمّا "heart that fed" فقلب الملك - أبقى قسوتَه حيّة - لكنّه الآن صامت، فيما عملُ النحّات ما زال يتكلّم.',
       themesAr: ['الفنّ في مقابل السلطة', 'الكِبر', 'الزمن'],
     },
     {
@@ -377,13 +381,13 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
         'قائمةٌ ثلاثيّة من ملامح الوجه، كلّها عدوانيّ. أثرُها التراكميّ وجهٌ مصنوعٌ بالكامل من الازدراء. يحرمنا Shelley من تعبيرٍ إنسانيٍّ واحدٍ على الملك - لا يبقى إلّا أثرُ غضبه.',
     },
     {
-      device: "Pun (mock'd)",
-      example: "The hand that mock'd them and the heart that fed",
+      device: 'Pun (mocked)',
+      example: 'The hand that mocked them and the heart that fed',
       effect:
-        '"Mock\'d" means both "imitated" and "ridiculed". The sculptor\'s hand reproduced the king\'s passions, but in doing so it also exposed them. Shelley quietly hands the victory to the artist: the sculptor outlives the tyrant.',
+        '"Mocked" means both "imitated" and "ridiculed". The sculptor\'s hand reproduced the king\'s passions, but in doing so it also exposed them. Shelley quietly hands the victory to the artist: the sculptor outlives the tyrant.',
       lineRef: 7,
       effectAr:
-        'لفظة "mock\'d" تعني "حاكى" و"سخر" معاً. يدُ النحّات نسخت شَهَوات الملك، وبفعل النسخ كشفتها. يُسلّم Shelley النصرَ هادئاً للفنّان: النحّات يبقى بعد الطاغية.',
+        'لفظة "mocked" تعني "حاكى" و"سخر" معاً. يدُ النحّات نسخت شَهَوات الملك، وبفعل النسخ كشفتها. يُسلّم Shelley النصرَ هادئاً للفنّان: النحّات يبقى بعد الطاغية.',
     },
     {
       device: 'Dramatic irony',
@@ -433,7 +437,7 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
 
   summaryAr: `السطور 1-4: يلقى المتكلّمُ رحّالةً يُحدّثه عن تمثالٍ مُحطَّمٍ في صحراءٍ بعيدة. كلّ ما تبقّى ساقا حجرٍ ضخمتان بلا جسد - وعلى مقربةٍ منهما، نصف مدفونٍ في الرمل، وجهٌ مكسور.
 
-السطور 5-8: على الوجه تجهّمٌ، شفةٌ متغضّنة، و"sneer of cold command". فهم النحّاتُ المجهول موضوعه فهماً تامّاً - شَهَواتُ الملك الازدرائيّة ما زالت مرئيّةً "stamp\'d on" على حجرٍ ميّت، وإن طال غيابُ الملك ويده.
+السطور 5-8: على الوجه تجهّمٌ، شفةٌ متغضّنة، و"sneer of cold command". فهم النحّاتُ المجهول موضوعه فهماً تامّاً - شَهَواتُ الملك الازدرائيّة ما زالت مرئيّةً "stamped on" على حجرٍ ميّت، وإن طال غيابُ الملك ويده.
 
 السطور 9-11: نقشٌ على القاعدة يحفظ تفاخرَ الملك بنفسه: "My name is Ozymandias, king of kings: / Look on my works, ye Mighty, and despair!" قصد بها أنّ لا حاكمَ منافساً يستطيع مجاراته.
 

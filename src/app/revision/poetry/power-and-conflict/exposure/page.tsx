@@ -260,17 +260,18 @@ const exposureData: PoemData = {
   title: 'Exposure',
   poet: 'Wilfred Owen',
 
-  // The poem as the AQA anthology prints it (Power and Conflict; AQA, Past and
-  // present: poetry anthology, sample, filestore.aqa.org.uk AQA-8702-TG-POEMS.PDF),
-  // checked line by line against the PDF on 2 October 2026, with the one
-  // exception noted at line 37. Until then the last stanza had seven lines: its
-  // second was not Owen's ("Shrugging wide shoulders out of cold crucifix"), and
-  // four lines of stanza 6 were repeated in place of lines 37 to 39. The notes on
-  // those rows, and the form section, described a crucifix and a repetition the
-  // poem does not have, and the form section put the refrain at the end of the
-  // wrong stanzas. Line 32 had "Nor" and line 36 "To-night" where the anthology
-  // has "Now" and "Tonight". "Now ever suns smile true" is the anthology's
-  // reading, kept on purpose; the Pearson Edexcel anthology prints "Nor".
+  // The poem as AQA's anthology prints it in the book students are given (Power and
+  // Conflict; Past and present: poetry anthology, Version 1.0 June 2015), checked line by
+  // line against it on 2 October 2026. Until then the last stanza had seven lines: its
+  // second was not Owen's ("Shrugging wide shoulders out of cold crucifix"), and four lines
+  // of stanza 6 were repeated in place of lines 37 to 39. The notes on those rows, and the
+  // form section, described a crucifix and a repetition the poem does not have, and the
+  // form section put the refrain at the end of the wrong stanzas. AQA's teacher sample
+  // (AQA-8702-TG-POEMS.PDF, marked SAMPLE) differs from the book: it has "Now ever suns" for
+  // "Nor" (line 32), "His frost" for "this frost" (line 36), "hands. puckering" for "hands,
+  // puckering" (line 37) and "in their shaking grasp" for "in shaking grasp" (line 38). The
+  // page followed the sample for part of 2 October 2026 and now follows the book. Owen
+  // wrote "His frost"; the note on line 36 says so.
   lines: [
     // Stanza 1
     {
@@ -478,7 +479,7 @@ const exposureData: PoemData = {
     { text: '' },
     // Stanza 5
     {
-      text: 'Pale flakes with fingering stealth come feeling for our faces -',
+      text: 'Pale flakes with fingering stealth come feeling for our faces –',
       annotations: [
         {
           type: 'Personification',
@@ -583,7 +584,7 @@ const exposureData: PoemData = {
       ],
     },
     {
-      text: 'Now ever suns smile true on child, or field, or fruit.',
+      text: 'Nor ever suns smile true on child, or field, or fruit.',
       annotations: [
         {
           type: 'Language',
@@ -625,17 +626,17 @@ const exposureData: PoemData = {
     { text: '' },
     // Stanza 8
     {
-      text: 'Tonight, His frost will fasten on this mud and us,',
+      text: 'Tonight, this frost will fasten on this mud and us,',
       annotations: [
         {
           type: 'Imagery',
-          note: '"Fasten" suggests the frost gripping them like a predator. "His" capitalised suggests God\'s frost: nature\'s violence is also divine.',
+          note: '"Fasten" suggests the frost gripping them like a predator. Owen wrote "His frost", God\'s frost, so that nature\'s violence is also divine; AQA\'s book prints "this frost".',
           color: '#f59e0b',
         },
       ],
     },
-    // The AQA anthology prints a full stop after "hands" and "puckering" in lower
-    // case, a misprint; this has the comma the Pearson Edexcel anthology prints.
+    // AQA's teacher sample prints a full stop after "hands", a misprint; the book has the
+    // comma, as here.
     {
       text: 'Shrivelling many hands, puckering foreheads crisp.',
       annotations: [
@@ -647,7 +648,7 @@ const exposureData: PoemData = {
       ],
     },
     {
-      text: 'The burying-party, picks and shovels in their shaking grasp,',
+      text: 'The burying-party, picks and shovels in shaking grasp,',
       annotations: [
         {
           type: 'Imagery',

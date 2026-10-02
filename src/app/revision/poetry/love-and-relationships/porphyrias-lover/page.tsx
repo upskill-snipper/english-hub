@@ -13,8 +13,12 @@ import { useT } from '@/lib/i18n/use-t'
 const poemData: PoemData = {
   title: "Porphyria's Lover",
   poet: 'Robert Browning',
-  // Printed as the AQA anthology prints it (Love and Relationships; AQA-8702-TG-POEMS.PDF),
-  // checked line by line against the PDF on 2 October 2026. Until then the page printed 47
+  // Printed as AQA's anthology in the book students are given (Love and Relationships; Past and
+  // present: poetry anthology, Version 1.0 June 2015), checked line by line against it on 2 October 2026.
+  // AQA's teacher sample (AQA-8702-TG-POEMS.PDF, marked SAMPLE) differs from the book in
+  // two lines: "and did its worst" (line 4) and "And spread o'er all her yellow hair"
+  // without the book's commas (line 20). The page followed the sample for part of
+  // 2 October 2026 and now follows the book. Until then the page printed 47
   // of the poem's 60 lines, leaving out lines 17, 18, 29, 46 and 49 to 57, and seven of the
   // rest were not in Browning's words: "did its best" for "did its worst" (line 4), "the damp
   // long hair / Fall, and, last" (13 to 14), "And made my cheek lie there, and spread / O'er
@@ -52,7 +56,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'and did its worst to vex the lake:',
+      text: 'And did its worst to vex the lake:',
       annotations: [
         {
           type: 'Personification',
@@ -212,7 +216,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: "And spread o'er all her yellow hair,",
+      text: "And spread, o'er all, her yellow hair,",
       annotations: [
         {
           type: 'Hair symbolism',
