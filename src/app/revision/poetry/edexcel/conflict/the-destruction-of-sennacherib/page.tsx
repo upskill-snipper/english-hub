@@ -839,7 +839,7 @@ export default function SennacheribPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong pairings with The Destruction of Sennacherib from the Edexcel Conflict cluster.
+          Strong pairings with The Destruction of Sennacherib from the Edexcel Conflict collection.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

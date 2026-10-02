@@ -33,9 +33,9 @@ export const REV_POETRY2_DICTIONARY: Record<string, { en: string; ar?: string; e
     es: 'Planes de redacción de comparación de poesía',
   },
   'rev.poetry2.edexcel.ep.lead': {
-    en: 'Ten model essay plans covering both the Conflict and Time & Place clusters. Each plan gives you a thesis, three comparative paragraphs with point-evidence-analysis for both poems, and an exam tip.',
+    en: 'Ten model essay plans covering the Conflict and Time & Place collections. Each plan gives you a thesis, three comparative paragraphs with point-evidence-analysis for both poems, and an exam tip.',
     ar: 'عشر خطط مقالات نموذجية تغطّي مجموعتي Conflict و Time & Place. كل خطة تعطيك أطروحة وثلاث فقرات مقارنة بأسلوب point-evidence-analysis للقصيدتين، ونصيحة امتحان.',
-    es: 'Diez planes de redacción modelo que cubren los clusters Conflict y Time & Place. Cada plan te ofrece una tesis, tres párrafos comparativos con point-evidence-analysis para ambos poemas y un consejo de examen.',
+    es: 'Diez planes de redacción modelo que cubren las colecciones Conflict y Time & Place. Cada plan te ofrece una tesis, tres párrafos comparativos con point-evidence-analysis para ambos poemas y un consejo de examen.',
   },
   'rev.poetry2.edexcel.ep.filter_all': {
     en: 'All plans',

@@ -11445,9 +11445,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Antología de poesía de Edexcel',
   },
   'poetry.edexcel.description': {
-    en: "The Pearson Edexcel anthology is split into themed clusters. You'll study one cluster: Conflict or Time and Place.",
-    ar: 'مختارات Pearson Edexcel مقسّمة على مجموعات بحسب التيم. بتذاكر مجموعة وحدة: Conflict أو Time and Place.',
-    es: 'La antología de Pearson Edexcel se divide en clusters temáticos. Estudiarás un cluster: Conflict o Time and Place.',
+    en: "The Pearson Edexcel anthology has four themed collections: Relationships, Conflict, Time and Place, and Belonging. You'll study one. Conflict and Time and Place are below.",
+    ar: 'مختارات Pearson Edexcel فيها أربع مجموعات بحسب التيم: Relationships و Conflict و Time and Place و Belonging. بتذاكر مجموعة وحدة. Conflict و Time and Place تحت.',
+    es: 'La antología de Pearson Edexcel tiene cuatro colecciones temáticas: Relationships, Conflict, Time and Place y Belonging. Estudiarás una. Conflict y Time and Place están abajo.',
   },
   'poetry.edexcel.cluster_conflict.title': { en: 'Conflict', ar: 'Conflict', es: 'Conflict' },
   'poetry.edexcel.cluster_conflict.desc': {

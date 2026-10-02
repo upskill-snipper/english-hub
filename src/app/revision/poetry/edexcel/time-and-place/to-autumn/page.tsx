@@ -417,7 +417,7 @@ const toAutumn: PoemData = {
     <p>Romantic poets celebrated the natural world and direct sensory experience. "To Autumn" is unusual among Keats\u2019s odes in that it stays entirely outside, in the world, with no abstract questioning. It is a poem of acceptance \u2014 of the season, of time and of mortality.</p>
 
     <h3>Time and Place in this poem</h3>
-    <p>For the Edexcel Time and Place cluster, "To Autumn" is essential because it captures a single specific time (a few days in mid-September 1819) in a single specific place (the countryside outside Winchester). The poem is rooted in a real walk on a real day \u2014 yet it manages to feel universal.</p>
+    <p>For the Edexcel Time and Place collection, "To Autumn" is essential because it captures a single specific time (a few days in mid-September 1819) in a single specific place (the countryside outside Winchester). The poem is rooted in a real walk on a real day \u2014 yet it manages to feel universal.</p>
   `,
 
   contextAr: `
@@ -948,7 +948,7 @@ export default function ToAutumnPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong pairings with To Autumn from the Edexcel Time and Place cluster.
+          Strong pairings with To Autumn from the Edexcel Time and Place collection.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

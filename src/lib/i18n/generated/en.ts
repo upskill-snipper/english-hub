@@ -3504,7 +3504,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'poetry.aqa.title': 'AQA Poetry Anthology',
   'poetry.edexcel.title': 'Edexcel Poetry Anthology',
   'poetry.edexcel.description':
-    "The Pearson Edexcel anthology is split into themed clusters. You'll study one cluster: Conflict or Time and Place.",
+    "The Pearson Edexcel anthology has four themed collections: Relationships, Conflict, Time and Place, and Belonging. You'll study one. Conflict and Time and Place are below.",
   'poetry.edexcel.cluster_conflict.title': 'Conflict',
   'poetry.edexcel.cluster_conflict.desc':
     'War, struggle, internal turmoil and the cost of conflict.',
@@ -9168,36 +9168,36 @@ export const EN_MESSAGES: Record<string, string> = {
   'poetry_hub.edexcel.badge_spec_short': 'Pearson Edexcel GCSE English Literature',
   'poetry_hub.edexcel.hero_title': 'Edexcel Poetry Anthology',
   'poetry_hub.edexcel.hero_lead':
-    'The Edexcel anthology contains two themed collections of fifteen poems each. You only study one cluster - either Conflict or Time and Place. Pick yours below and start with annotated study pages, key quotations and comparison practice.',
+    'The Edexcel anthology has four collections of fifteen poems: Relationships, Conflict, Time and Place, and Belonging. You study one. This hub covers Conflict and Time and Place: pick yours below and start with annotated study pages, key quotations and comparison practice.',
   'poetry_hub.edexcel.info_note':
-    'Edexcel poetry is assessed in Paper 2, Section A. You will answer one comparison question on a named anthology poem and one of your own choice from the same cluster, plus an unseen poetry question.',
-  'poetry_hub.edexcel.choose_cluster': 'Choose your cluster',
+    'Edexcel poetry is assessed in Paper 2, Section B. In Part 1 you compare a named anthology poem, printed on the paper, with another of your choice from the same collection (20 marks). In Part 2 you compare two unseen poems (20 marks).',
+  'poetry_hub.edexcel.choose_cluster': 'Choose your collection',
   'poetry_hub.edexcel.fifteen_poems': '15 poems',
   'poetry_hub.edexcel.cluster.conflict.title': 'Conflict',
   'poetry_hub.edexcel.cluster.conflict.desc':
     'Poems exploring the many faces of conflict - war and bloodshed, personal and political battles, family tensions, prejudice, and inner emotional turmoil. Includes Blake, Owen, Byron, Tennyson, Hardy, Rossetti, Agard and Zephaniah.',
-  'poetry_hub.edexcel.cluster.conflict.cta': 'Study the Conflict cluster',
+  'poetry_hub.edexcel.cluster.conflict.cta': 'Study the Conflict collection',
   'poetry_hub.edexcel.cluster.tp.title': 'Time and Place',
   'poetry_hub.edexcel.cluster.tp.desc':
-    'Poems rooted in landscape, memory and journeys - from Keats and Wordsworth to Dickinson, Hardy, Fanthorpe and Grace Nichols. The cluster explores how place shapes identity and how time alters our relationship with where we have lived.',
-  'poetry_hub.edexcel.cluster.tp.cta': 'Study the Time and Place cluster',
+    'Poems rooted in landscape, memory and journeys - from Keats and Wordsworth to Dickinson, Hardy, Fanthorpe and Grace Nichols. The collection explores how place shapes identity and how time alters our relationship with where we have lived.',
+  'poetry_hub.edexcel.cluster.tp.cta': 'Study the Time and Place collection',
   'poetry_hub.edexcel.diff_aqa_title': 'How is Edexcel different from AQA?',
   'poetry_hub.edexcel.diff_aqa_b1':
-    'Edexcel students study one cluster (Conflict or Time and Place), not both.',
+    'Edexcel students study one of the four collections in the anthology, not all of them.',
   'poetry_hub.edexcel.diff_aqa_b2':
-    'The exam asks you to compare a named poem with one of your choice from the same cluster.',
+    'The exam asks you to compare a named poem with one of your choice from the same collection.',
   'poetry_hub.edexcel.diff_aqa_b3':
-    'There is an unseen poetry question in the same paper, just like AQA.',
+    'There is an unseen poetry question on the same paper, as on AQA, but it is one comparison of two poems, with no single-poem question first.',
   'poetry_hub.edexcel.diff_aqa_b4':
-    'Some poets overlap with the AQA anthology (Blake, Wordsworth, Owen, Tennyson) but the specific poems are different.',
-  'poetry_hub.edexcel.conflict.hero_title': 'Conflict Cluster',
+    'Several poems appear in both anthologies, among them London, Exposure, The Charge of the Light Brigade and Poppies, but most are different, and Edexcel groups them differently.',
+  'poetry_hub.edexcel.conflict.hero_title': 'Conflict Collection',
   'poetry_hub.edexcel.conflict.hero_lead':
-    'All 15 poems in the Edexcel Conflict anthology. Conflict is explored in many forms - war and violence, prejudice and racism, family tension, internal struggle and the politics of class.',
-  'poetry_hub.edexcel.tp.hero_title': 'Time and Place Cluster',
+    'All 15 poems in the Edexcel Conflict collection. Conflict is explored in many forms - war and violence, prejudice and racism, family tension, internal struggle and the politics of class.',
+  'poetry_hub.edexcel.tp.hero_title': 'Time and Place Collection',
   'poetry_hub.edexcel.tp.hero_lead':
-    'All 15 poems in the Edexcel Time and Place anthology. From Romantic celebrations of nature to modern poems about migration, identity and belonging, the cluster explores how places shape us and how time changes the way we see them.',
+    'All 15 poems in the Edexcel Time and Place collection. From Romantic celebrations of nature to modern poems about migration, identity and belonging, the collection explores how places shape us and how time changes the way we see them.',
   'poetry_hub.edexcel.study_pages': 'Study pages',
-  'poetry_hub.edexcel.other_in_cluster': 'Other poems in the cluster',
+  'poetry_hub.edexcel.other_in_cluster': 'Other poems in the collection',
   'poetry_hub.edexcel.other_in_cluster_lead':
     'Full study pages for these poems are in development. Many are still in copyright, so we will provide key quotations, analysis and comparison notes rather than the full text.',
   'poetry_hub.edexcel.quotes_only': 'Quotes only',
@@ -9206,7 +9206,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'poetry_hub.edexcel.rights_notice_label': 'Rights notice.',
   'poetry_hub.edexcel.ep.title': 'Edexcel Poetry Comparison Essay Plans',
   'poetry_hub.edexcel.ep.lead':
-    'Ten ready-made comparison plans across both Edexcel clusters. Each plan opens to reveal a thesis, three full paragraphs with evidence and analysis, a conclusion and a tailored exam tip.',
+    'Ten ready-made comparison plans across the Conflict and Time and Place collections. Each plan opens to reveal a thesis, three full paragraphs with evidence and analysis, a conclusion and a tailored exam tip.',
   'poetry_hub.edexcel.ep.how_title': 'How to use these plans',
   'poetry_hub.edexcel.ep.all_plans': 'All Essay Plans',
   'poetry_hub.eduqas.back_to_poetry': 'Back to Poetry',
@@ -18484,7 +18484,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'rev.poetry.shared.back_to_eduqas_poetry': 'Back to Eduqas Poetry',
   'rev.poetry.shared.back_to_edexcel_poetry': 'Back to Edexcel Poetry',
   'rev.poetry.shared.back_to_time_and_place': 'Back to Time and Place cluster',
-  'rev.poetry.shared.back_to_conflict_cluster': 'Back to Conflict cluster',
+  'rev.poetry.shared.back_to_conflict_cluster': 'Back to Conflict collection',
   'rev.poetry.shared.back_to_youth_and_age': 'Back to Youth and Age',
   'rev.poetry.shared.back_to_love_and_relationships': 'Back to Love and Relationships',
   'rev.poetry.shared.back_label_love_and_relationships': 'Love and Relationships',
@@ -19794,7 +19794,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'rev.misc.et.essay_structure': 'Essay Structure',
   'rev.poetry2.edexcel.ep.title': 'Poetry Comparison Essay Plans',
   'rev.poetry2.edexcel.ep.lead':
-    'Ten model essay plans covering both the Conflict and Time & Place clusters. Each plan gives you a thesis, three comparative paragraphs with point-evidence-analysis for both poems, and an exam tip.',
+    'Ten model essay plans covering the Conflict and Time & Place collections. Each plan gives you a thesis, three comparative paragraphs with point-evidence-analysis for both poems, and an exam tip.',
   'rev.poetry2.edexcel.ep.filter_all': 'All plans',
   'rev.poetry2.eduqas.ep.badge': 'Eduqas Essay Plans',
   'rev.poetry2.eduqas.ep.title': 'Comparison Essay Plans',

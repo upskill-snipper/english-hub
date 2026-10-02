@@ -3438,7 +3438,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'poetry.aqa.title': 'مختارات AQA الشِعرية',
   'poetry.edexcel.title': 'مختارات Edexcel الشِعرية',
   'poetry.edexcel.description':
-    'مختارات Pearson Edexcel مقسّمة على مجموعات بحسب التيم. بتذاكر مجموعة وحدة: Conflict أو Time and Place.',
+    'مختارات Pearson Edexcel فيها أربع مجموعات بحسب التيم: Relationships و Conflict و Time and Place و Belonging. بتذاكر مجموعة وحدة. Conflict و Time and Place تحت.',
   'poetry.edexcel.cluster_conflict.title': 'Conflict',
   'poetry.edexcel.cluster_conflict.desc': 'الحرب والصراع والاضطراب الداخلي وتكلفة النزاع.',
   'poetry.edexcel.cluster_time_place.title': 'Time and Place',
@@ -8984,9 +8984,9 @@ export const AR_MESSAGES: Record<string, string> = {
   'poetry_hub.edexcel.badge_spec_short': 'Pearson Edexcel GCSE English Literature',
   'poetry_hub.edexcel.hero_title': 'مختارات شعر Edexcel',
   'poetry_hub.edexcel.hero_lead':
-    'مختارات Edexcel فيها مجموعتين موضوعيتين، كل وحدة فيها خمستعش قصيدة. تذاكر مجموعة وحدة بس - يا Conflict يا Time and Place. اختر اللي مالك تحت وابدأ بصفحات مذاكرة مع شروحات واقتباسات أساسية وتدريب على المقارنة.',
+    'مختارات Edexcel فيها أربع مجموعات، كل وحدة فيها خمستعش قصيدة: Relationships و Conflict و Time and Place و Belonging. تذاكر مجموعة وحدة بس. هالصفحة تغطّي Conflict و Time and Place: اختر اللي مالك تحت وابدأ بصفحات مذاكرة مع شروحات واقتباسات أساسية وتدريب على المقارنة.',
   'poetry_hub.edexcel.info_note':
-    'شعر Edexcel يتقيّم في Paper 2, Section A. بتجاوب على سؤال مقارنة وحد على قصيدة معيّنة من المختارات مع قصيدة من اختيارك من نفس المجموعة، زائد سؤال شعر غير مرئي.',
+    'شعر Edexcel يتقيّم في Paper 2, Section B. في Part 1 تقارن قصيدة معيّنة من المختارات، مطبوعة في ورقة الامتحان، مع قصيدة من اختيارك من نفس المجموعة (20 درجة). وفي Part 2 تقارن بين قصيدتين ما قريتهم من قبل (20 درجة).',
   'poetry_hub.edexcel.choose_cluster': 'اختر مجموعتك',
   'poetry_hub.edexcel.fifteen_poems': '١٥ قصيدة',
   'poetry_hub.edexcel.cluster.conflict.title': 'الصراع',
@@ -8999,18 +8999,19 @@ export const AR_MESSAGES: Record<string, string> = {
   'poetry_hub.edexcel.cluster.tp.cta': 'ذاكر مجموعة Time and Place',
   'poetry_hub.edexcel.diff_aqa_title': 'شلون Edexcel يختلف عن AQA؟',
   'poetry_hub.edexcel.diff_aqa_b1':
-    'طلاب Edexcel يذاكرون مجموعة وحدة (Conflict أو Time and Place)، مو الثنتين.',
+    'طلاب Edexcel يذاكرون مجموعة وحدة من أربع مجموعات في المختارات، مو كلّها.',
   'poetry_hub.edexcel.diff_aqa_b2':
     'الامتحان يطلب منك تقارن قصيدة معيّنة مع قصيدة من اختيارك من نفس المجموعة.',
-  'poetry_hub.edexcel.diff_aqa_b3': 'في سؤال شعر غير مرئي في نفس الورقة، مثل AQA.',
+  'poetry_hub.edexcel.diff_aqa_b3':
+    'في سؤال شعر غير مرئي في نفس الورقة مثل AQA، بس هو مقارنة وحدة بين قصيدتين، بدون سؤال على قصيدة وحدة قبله.',
   'poetry_hub.edexcel.diff_aqa_b4':
-    'كم شاعر يتداخلون مع مختارات AQA (Blake و Wordsworth و Owen و Tennyson) بس القصائد المحدّدة مختلفة.',
+    'في قصائد موجودة في المختارتين، منها London و Exposure و The Charge of the Light Brigade و Poppies، بس أغلب القصائد مختلفة و Edexcel يقسّمها بطريقة ثانية.',
   'poetry_hub.edexcel.conflict.hero_title': 'مجموعة Conflict',
   'poetry_hub.edexcel.conflict.hero_lead':
-    'كل الـ١٥ قصيدة في مختارات Conflict لـ Edexcel. الصراع يتم استكشافه بأشكال متعدّدة - الحرب والعنف، التحيّز والعنصرية، توتّر العائلة، الصراع الداخلي، وسياسات الطبقة.',
+    'كل الـ١٥ قصيدة في مجموعة Conflict لـ Edexcel. الصراع يتم استكشافه بأشكال متعدّدة - الحرب والعنف، التحيّز والعنصرية، توتّر العائلة، الصراع الداخلي، وسياسات الطبقة.',
   'poetry_hub.edexcel.tp.hero_title': 'مجموعة Time and Place',
   'poetry_hub.edexcel.tp.hero_lead':
-    'كل الـ١٥ قصيدة في مختارات Time and Place لـ Edexcel. من احتفاءات الرومانسية بالطبيعة إلى قصائد حديثة عن الهجرة والهوية والانتماء، المجموعة تستكشف شلون الأماكن تشكّلنا وشلون الزمن يغيّر طريقتنا في رؤيتها.',
+    'كل الـ١٥ قصيدة في مجموعة Time and Place لـ Edexcel. من احتفاءات الرومانسية بالطبيعة إلى قصائد حديثة عن الهجرة والهوية والانتماء، المجموعة تستكشف شلون الأماكن تشكّلنا وشلون الزمن يغيّر طريقتنا في رؤيتها.',
   'poetry_hub.edexcel.study_pages': 'صفحات المذاكرة',
   'poetry_hub.edexcel.other_in_cluster': 'قصائد ثانية في المجموعة',
   'poetry_hub.edexcel.other_in_cluster_lead':
@@ -9021,7 +9022,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'poetry_hub.edexcel.rights_notice_label': 'تنبيه الحقوق.',
   'poetry_hub.edexcel.ep.title': 'خطط مقالات مقارنة شعر Edexcel',
   'poetry_hub.edexcel.ep.lead':
-    'عشر خطط مقارنة جاهزة عبر المجموعتين لـ Edexcel. كل خطة تفتح لتكشف عن أطروحة وثلاث فقرات كاملة بالأدلّة والتحليل وخاتمة ونصيحة امتحان موجّهة.',
+    'عشر خطط مقارنة جاهزة عبر مجموعتي Conflict و Time and Place لـ Edexcel. كل خطة تفتح لتكشف عن أطروحة وثلاث فقرات كاملة بالأدلّة والتحليل وخاتمة ونصيحة امتحان موجّهة.',
   'poetry_hub.edexcel.ep.how_title': 'شلون تستخدم الخطط هاي',
   'poetry_hub.edexcel.ep.all_plans': 'كل خطط المقالات',
   'poetry_hub.eduqas.back_to_poetry': 'رجوع للشعر',

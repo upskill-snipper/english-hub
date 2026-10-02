@@ -891,10 +891,12 @@ export default function EdexcelEssayPlansPage() {
       <section className="flex items-start gap-3 rounded-xl border border-blue-500/20 bg-blue-500/5 p-4">
         <BookOpen className="mt-0.5 size-4 shrink-0 text-blue-400" />
         <p className="text-body-sm text-muted-foreground">
-          In <strong className="text-foreground">Paper 2, Section A</strong> you will be given a
-          named poem and asked to compare it with one of your own choice from the same cluster.
-          These plans practise exactly that skill. Adapt each plan to whatever poem the exam names
-          &mdash; the comparative frameworks transfer.
+          {/* 2 October 2026: said Paper 2 Section A and "cluster". Anthology
+              poetry is Section B Part 1, and Pearson's groups are collections. */}
+          In <strong className="text-foreground">Paper 2, Section B</strong> you will be given a
+          named poem, printed on the paper, and asked to compare it with one of your own choice from
+          the same collection. These plans practise exactly that skill. Adapt each plan to whatever
+          poem the exam names - the comparative frameworks transfer.
         </p>
       </section>
 

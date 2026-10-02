@@ -731,7 +731,7 @@ export default function WestminsterBridgePage() {
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           Strong pairings with Composed Upon Westminster Bridge from the Edexcel Time and Place
-          cluster.
+          collection.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

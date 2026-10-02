@@ -228,7 +228,7 @@ const london: PoemData = {
     <p>Blake was a political radical sympathetic to the French and American Revolutions. He hated the institutions he believed were responsible for suffering: the monarchy, the established Church, and the legal system that defended both. "London" reads almost like a list of charges in a courtroom indictment.</p>
 
     <h3>Time and Place in this poem</h3>
-    <p>For the Edexcel Time and Place cluster, "London" is essential because it shows how a place \u2014 a single named city \u2014 can become a moral character in its own right. The whole poem is a portrait of one location at one historical moment, and that location shapes everything we feel.</p>
+    <p>For the Edexcel Time and Place collection, "London" is essential because it shows how a place \u2014 a single named city \u2014 can become a moral character in its own right. The whole poem is a portrait of one location at one historical moment, and that location shapes everything we feel.</p>
   `,
 
   contextAr: `
@@ -753,7 +753,7 @@ export default function LondonEdexcelPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong pairings with London from the Edexcel Time and Place cluster.
+          Strong pairings with London from the Edexcel Time and Place collection.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

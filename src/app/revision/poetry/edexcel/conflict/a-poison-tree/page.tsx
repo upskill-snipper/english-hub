@@ -749,7 +749,7 @@ export default function APoisonTreePage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong pairings with A Poison Tree from the Edexcel Conflict cluster.
+          Strong pairings with A Poison Tree from the Edexcel Conflict collection.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

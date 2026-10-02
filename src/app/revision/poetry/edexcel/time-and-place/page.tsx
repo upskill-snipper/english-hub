@@ -183,12 +183,12 @@ export default function EdexcelTimeAndPlacePage() {
               <MapPin className="size-6 text-emerald-400" />
             </div>
             <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              Time and Place Cluster
+              Time and Place Collection
             </h1>
           </div>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             All 15 poems in the Edexcel Time and Place anthology. From Romantic celebrations of
-            nature to modern poems about migration, identity and belonging, the cluster explores how
+            nature to modern poems about migration, identity and belonging, the collection explores how
             places shape us and how time changes the way we see them.
           </p>
         </div>
@@ -248,7 +248,7 @@ export default function EdexcelTimeAndPlacePage() {
         <div className="mb-3 flex items-center gap-3">
           <Lock className="size-5 text-muted-foreground" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Other poems in the cluster
+            Other poems in the collection
           </h2>
         </div>
         <p className="mb-5 text-body-sm text-muted-foreground max-w-2xl">

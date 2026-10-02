@@ -426,7 +426,14 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Guía de comparación',
   },
 
-  // ─── Poetry hub: Edexcel cluster ───────────────────────────────────
+  // ─── Poetry hub: Edexcel collections ───────────────────────────────
+  // 2 October 2026, against Pearson's 1ET0 specification (Issue 2) and the
+  // anthology (Issue 4): these said the anthology has two clusters (it has four
+  // collections, and Pearson calls them collections), that poetry is Paper 2
+  // Section A (it is Section B, Parts 1 and 2), that the unseen question works
+  // "just like AQA" (it is one comparison, with no single-poem question), and
+  // that no poem is in both the AQA and Edexcel anthologies (London, Exposure,
+  // The Charge of the Light Brigade and Poppies are in both).
   'poetry_hub.edexcel.back_to_poetry': {
     en: 'Back to Poetry',
     ar: 'رجوع للشعر',
@@ -453,19 +460,19 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Antología de poesía de Edexcel',
   },
   'poetry_hub.edexcel.hero_lead': {
-    en: 'The Edexcel anthology contains two themed collections of fifteen poems each. You only study one cluster - either Conflict or Time and Place. Pick yours below and start with annotated study pages, key quotations and comparison practice.',
-    ar: 'مختارات Edexcel فيها مجموعتين موضوعيتين، كل وحدة فيها خمستعش قصيدة. تذاكر مجموعة وحدة بس - يا Conflict يا Time and Place. اختر اللي مالك تحت وابدأ بصفحات مذاكرة مع شروحات واقتباسات أساسية وتدريب على المقارنة.',
-    es: 'La antología de Edexcel contiene dos colecciones temáticas de quince poemas cada una. Solo estudias un cluster: Conflict o Time and Place. Elige el tuyo abajo y empieza con páginas de estudio anotadas, citas clave y práctica de comparación.',
+    en: 'The Edexcel anthology has four collections of fifteen poems: Relationships, Conflict, Time and Place, and Belonging. You study one. This hub covers Conflict and Time and Place: pick yours below and start with annotated study pages, key quotations and comparison practice.',
+    ar: 'مختارات Edexcel فيها أربع مجموعات، كل وحدة فيها خمستعش قصيدة: Relationships و Conflict و Time and Place و Belonging. تذاكر مجموعة وحدة بس. هالصفحة تغطّي Conflict و Time and Place: اختر اللي مالك تحت وابدأ بصفحات مذاكرة مع شروحات واقتباسات أساسية وتدريب على المقارنة.',
+    es: 'La antología de Edexcel tiene cuatro colecciones de quince poemas: Relationships, Conflict, Time and Place y Belonging. Solo estudias una. Esta sección cubre Conflict y Time and Place: elige la tuya abajo y empieza con páginas de estudio anotadas, citas clave y práctica de comparación.',
   },
   'poetry_hub.edexcel.info_note': {
-    en: 'Edexcel poetry is assessed in Paper 2, Section A. You will answer one comparison question on a named anthology poem and one of your own choice from the same cluster, plus an unseen poetry question.',
-    ar: 'شعر Edexcel يتقيّم في Paper 2, Section A. بتجاوب على سؤال مقارنة وحد على قصيدة معيّنة من المختارات مع قصيدة من اختيارك من نفس المجموعة، زائد سؤال شعر غير مرئي.',
-    es: 'La poesía de Edexcel se evalúa en Paper 2, Section A. Responderás a una pregunta de comparación sobre un poema concreto de la antología y otro de tu elección del mismo cluster, además de una pregunta de poesía desconocida.',
+    en: 'Edexcel poetry is assessed in Paper 2, Section B. In Part 1 you compare a named anthology poem, printed on the paper, with another of your choice from the same collection (20 marks). In Part 2 you compare two unseen poems (20 marks).',
+    ar: 'شعر Edexcel يتقيّم في Paper 2, Section B. في Part 1 تقارن قصيدة معيّنة من المختارات، مطبوعة في ورقة الامتحان، مع قصيدة من اختيارك من نفس المجموعة (20 درجة). وفي Part 2 تقارن بين قصيدتين ما قريتهم من قبل (20 درجة).',
+    es: 'La poesía de Edexcel se evalúa en Paper 2, Section B. En Part 1 comparas un poema concreto de la antología, impreso en el examen, con otro de tu elección de la misma colección (20 puntos). En Part 2 comparas dos poemas desconocidos (20 puntos).',
   },
   'poetry_hub.edexcel.choose_cluster': {
-    en: 'Choose your cluster',
+    en: 'Choose your collection',
     ar: 'اختر مجموعتك',
-    es: 'Elige tu cluster',
+    es: 'Elige tu colección',
   },
   'poetry_hub.edexcel.fifteen_poems': { en: '15 poems', ar: '١٥ قصيدة', es: '15 poemas' },
   'poetry_hub.edexcel.cluster.conflict.title': { en: 'Conflict', ar: 'الصراع', es: 'Conflict' },
@@ -475,9 +482,9 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Poemas que exploran las múltiples caras del conflicto: guerra y derramamiento de sangre, batallas personales y políticas, tensiones familiares, prejuicio y agitación emocional interior. Incluye a Blake, Owen, Byron, Tennyson, Hardy, Rossetti, Agard y Zephaniah.',
   },
   'poetry_hub.edexcel.cluster.conflict.cta': {
-    en: 'Study the Conflict cluster',
+    en: 'Study the Conflict collection',
     ar: 'ذاكر مجموعة Conflict',
-    es: 'Estudiar el cluster Conflict',
+    es: 'Estudiar la colección Conflict',
   },
   'poetry_hub.edexcel.cluster.tp.title': {
     en: 'Time and Place',
@@ -485,14 +492,14 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Time and Place',
   },
   'poetry_hub.edexcel.cluster.tp.desc': {
-    en: 'Poems rooted in landscape, memory and journeys - from Keats and Wordsworth to Dickinson, Hardy, Fanthorpe and Grace Nichols. The cluster explores how place shapes identity and how time alters our relationship with where we have lived.',
+    en: 'Poems rooted in landscape, memory and journeys - from Keats and Wordsworth to Dickinson, Hardy, Fanthorpe and Grace Nichols. The collection explores how place shapes identity and how time alters our relationship with where we have lived.',
     ar: 'قصائد جذورها في الطبيعة والذكرى والرحلات - من Keats و Wordsworth إلى Dickinson و Hardy و Fanthorpe و Grace Nichols. المجموعة تستكشف شلون المكان يشكّل الهوية وشلون الزمن يغيّر علاقتنا بالمكان اللي عشنا فيه.',
-    es: 'Poemas arraigados en el paisaje, la memoria y los viajes, desde Keats y Wordsworth hasta Dickinson, Hardy, Fanthorpe y Grace Nichols. El cluster explora cómo el lugar moldea la identidad y cómo el tiempo altera nuestra relación con los lugares donde hemos vivido.',
+    es: 'Poemas arraigados en el paisaje, la memoria y los viajes, desde Keats y Wordsworth hasta Dickinson, Hardy, Fanthorpe y Grace Nichols. La colección explora cómo el lugar moldea la identidad y cómo el tiempo altera nuestra relación con los lugares donde hemos vivido.',
   },
   'poetry_hub.edexcel.cluster.tp.cta': {
-    en: 'Study the Time and Place cluster',
+    en: 'Study the Time and Place collection',
     ar: 'ذاكر مجموعة Time and Place',
-    es: 'Estudiar el cluster Time and Place',
+    es: 'Estudiar la colección Time and Place',
   },
   'poetry_hub.edexcel.diff_aqa_title': {
     en: 'How is Edexcel different from AQA?',
@@ -500,44 +507,44 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: '¿En qué se diferencia Edexcel de AQA?',
   },
   'poetry_hub.edexcel.diff_aqa_b1': {
-    en: 'Edexcel students study one cluster (Conflict or Time and Place), not both.',
-    ar: 'طلاب Edexcel يذاكرون مجموعة وحدة (Conflict أو Time and Place)، مو الثنتين.',
-    es: 'Los estudiantes de Edexcel estudian un cluster (Conflict o Time and Place), no ambos.',
+    en: 'Edexcel students study one of the four collections in the anthology, not all of them.',
+    ar: 'طلاب Edexcel يذاكرون مجموعة وحدة من أربع مجموعات في المختارات، مو كلّها.',
+    es: 'Los estudiantes de Edexcel estudian una de las cuatro colecciones de la antología, no todas.',
   },
   'poetry_hub.edexcel.diff_aqa_b2': {
-    en: 'The exam asks you to compare a named poem with one of your choice from the same cluster.',
+    en: 'The exam asks you to compare a named poem with one of your choice from the same collection.',
     ar: 'الامتحان يطلب منك تقارن قصيدة معيّنة مع قصيدة من اختيارك من نفس المجموعة.',
-    es: 'El examen te pide comparar un poema concreto con otro de tu elección del mismo cluster.',
+    es: 'El examen te pide comparar un poema concreto con otro de tu elección de la misma colección.',
   },
   'poetry_hub.edexcel.diff_aqa_b3': {
-    en: 'There is an unseen poetry question in the same paper, just like AQA.',
-    ar: 'في سؤال شعر غير مرئي في نفس الورقة، مثل AQA.',
-    es: 'Hay una pregunta de poesía desconocida en la misma prueba, igual que en AQA.',
+    en: 'There is an unseen poetry question on the same paper, as on AQA, but it is one comparison of two poems, with no single-poem question first.',
+    ar: 'في سؤال شعر غير مرئي في نفس الورقة مثل AQA، بس هو مقارنة وحدة بين قصيدتين، بدون سؤال على قصيدة وحدة قبله.',
+    es: 'Hay una pregunta de poesía desconocida en la misma prueba, como en AQA, pero es una sola comparación de dos poemas, sin una pregunta previa sobre un único poema.',
   },
   'poetry_hub.edexcel.diff_aqa_b4': {
-    en: 'Some poets overlap with the AQA anthology (Blake, Wordsworth, Owen, Tennyson) but the specific poems are different.',
-    ar: 'كم شاعر يتداخلون مع مختارات AQA (Blake و Wordsworth و Owen و Tennyson) بس القصائد المحدّدة مختلفة.',
-    es: 'Algunos poetas coinciden con la antología de AQA (Blake, Wordsworth, Owen, Tennyson), pero los poemas concretos son distintos.',
+    en: 'Several poems appear in both anthologies, among them London, Exposure, The Charge of the Light Brigade and Poppies, but most are different, and Edexcel groups them differently.',
+    ar: 'في قصائد موجودة في المختارتين، منها London و Exposure و The Charge of the Light Brigade و Poppies، بس أغلب القصائد مختلفة و Edexcel يقسّمها بطريقة ثانية.',
+    es: 'Varios poemas aparecen en ambas antologías, entre ellos London, Exposure, The Charge of the Light Brigade y Poppies, pero la mayoría son distintos y Edexcel los agrupa de otra manera.',
   },
   'poetry_hub.edexcel.conflict.hero_title': {
-    en: 'Conflict Cluster',
+    en: 'Conflict Collection',
     ar: 'مجموعة Conflict',
-    es: 'Cluster Conflict',
+    es: 'Colección Conflict',
   },
   'poetry_hub.edexcel.conflict.hero_lead': {
-    en: 'All 15 poems in the Edexcel Conflict anthology. Conflict is explored in many forms - war and violence, prejudice and racism, family tension, internal struggle and the politics of class.',
-    ar: 'كل الـ١٥ قصيدة في مختارات Conflict لـ Edexcel. الصراع يتم استكشافه بأشكال متعدّدة - الحرب والعنف، التحيّز والعنصرية، توتّر العائلة، الصراع الداخلي، وسياسات الطبقة.',
-    es: 'Los 15 poemas de la antología Conflict de Edexcel. El conflicto se explora de muchas formas: guerra y violencia, prejuicio y racismo, tensión familiar, lucha interior y la política de clase.',
+    en: 'All 15 poems in the Edexcel Conflict collection. Conflict is explored in many forms - war and violence, prejudice and racism, family tension, internal struggle and the politics of class.',
+    ar: 'كل الـ١٥ قصيدة في مجموعة Conflict لـ Edexcel. الصراع يتم استكشافه بأشكال متعدّدة - الحرب والعنف، التحيّز والعنصرية، توتّر العائلة، الصراع الداخلي، وسياسات الطبقة.',
+    es: 'Los 15 poemas de la colección Conflict de Edexcel. El conflicto se explora de muchas formas: guerra y violencia, prejuicio y racismo, tensión familiar, lucha interior y la política de clase.',
   },
   'poetry_hub.edexcel.tp.hero_title': {
-    en: 'Time and Place Cluster',
+    en: 'Time and Place Collection',
     ar: 'مجموعة Time and Place',
-    es: 'Cluster Time and Place',
+    es: 'Colección Time and Place',
   },
   'poetry_hub.edexcel.tp.hero_lead': {
-    en: 'All 15 poems in the Edexcel Time and Place anthology. From Romantic celebrations of nature to modern poems about migration, identity and belonging, the cluster explores how places shape us and how time changes the way we see them.',
-    ar: 'كل الـ١٥ قصيدة في مختارات Time and Place لـ Edexcel. من احتفاءات الرومانسية بالطبيعة إلى قصائد حديثة عن الهجرة والهوية والانتماء، المجموعة تستكشف شلون الأماكن تشكّلنا وشلون الزمن يغيّر طريقتنا في رؤيتها.',
-    es: 'Los 15 poemas de la antología Time and Place de Edexcel. Desde las celebraciones románticas de la naturaleza hasta poemas modernos sobre la migración, la identidad y la pertenencia, el cluster explora cómo los lugares nos moldean y cómo el tiempo cambia la forma en que los vemos.',
+    en: 'All 15 poems in the Edexcel Time and Place collection. From Romantic celebrations of nature to modern poems about migration, identity and belonging, the collection explores how places shape us and how time changes the way we see them.',
+    ar: 'كل الـ١٥ قصيدة في مجموعة Time and Place لـ Edexcel. من احتفاءات الرومانسية بالطبيعة إلى قصائد حديثة عن الهجرة والهوية والانتماء، المجموعة تستكشف شلون الأماكن تشكّلنا وشلون الزمن يغيّر طريقتنا في رؤيتها.',
+    es: 'Los 15 poemas de la colección Time and Place de Edexcel. Desde las celebraciones románticas de la naturaleza hasta poemas modernos sobre la migración, la identidad y la pertenencia, la colección explora cómo los lugares nos moldean y cómo el tiempo cambia la forma en que los vemos.',
   },
   'poetry_hub.edexcel.study_pages': {
     en: 'Study pages',
@@ -545,9 +552,9 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Páginas de estudio',
   },
   'poetry_hub.edexcel.other_in_cluster': {
-    en: 'Other poems in the cluster',
+    en: 'Other poems in the collection',
     ar: 'قصائد ثانية في المجموعة',
-    es: 'Otros poemas del cluster',
+    es: 'Otros poemas de la colección',
   },
   'poetry_hub.edexcel.other_in_cluster_lead': {
     en: 'Full study pages for these poems are in development. Many are still in copyright, so we will provide key quotations, analysis and comparison notes rather than the full text.',
@@ -576,9 +583,9 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Planes de redacción de comparación de poesía de Edexcel',
   },
   'poetry_hub.edexcel.ep.lead': {
-    en: 'Ten ready-made comparison plans across both Edexcel clusters. Each plan opens to reveal a thesis, three full paragraphs with evidence and analysis, a conclusion and a tailored exam tip.',
-    ar: 'عشر خطط مقارنة جاهزة عبر المجموعتين لـ Edexcel. كل خطة تفتح لتكشف عن أطروحة وثلاث فقرات كاملة بالأدلّة والتحليل وخاتمة ونصيحة امتحان موجّهة.',
-    es: 'Diez planes de comparación listos para los dos clusters de Edexcel. Cada plan se despliega para mostrar una tesis, tres párrafos completos con evidencia y análisis, una conclusión y un consejo de examen adaptado.',
+    en: 'Ten ready-made comparison plans across the Conflict and Time and Place collections. Each plan opens to reveal a thesis, three full paragraphs with evidence and analysis, a conclusion and a tailored exam tip.',
+    ar: 'عشر خطط مقارنة جاهزة عبر مجموعتي Conflict و Time and Place لـ Edexcel. كل خطة تفتح لتكشف عن أطروحة وثلاث فقرات كاملة بالأدلّة والتحليل وخاتمة ونصيحة امتحان موجّهة.',
+    es: 'Diez planes de comparación listos para las colecciones Conflict y Time and Place de Edexcel. Cada plan se despliega para mostrar una tesis, tres párrafos completos con evidencia y análisis, una conclusión y un consejo de examen adaptado.',
   },
   'poetry_hub.edexcel.ep.how_title': {
     en: 'How to use these plans',

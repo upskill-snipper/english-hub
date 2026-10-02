@@ -309,7 +309,7 @@ const dickinson: PoemData = {
     <p>Many critics read the poem as a coded encounter with male sexuality. The rising tide moves up the speaker\u2019s body in unmistakably bodily stages, the sea is personified as "He", and the pursuit is intimate and threatening. Other readers see it as an encounter with the sublime \u2014 with overwhelming natural force \u2014 or with death itself.</p>
 
     <h3>Time and Place in this poem</h3>
-    <p>For the Edexcel Time and Place cluster, this poem captures a single visit to a single location. The whole drama happens in one walk \u2014 from town to shore and back \u2014 and the place itself becomes a character. The sea has agency, identity and intent. Place is not just background; it is the second figure in a duet.</p>
+    <p>For the Edexcel Time and Place collection, this poem captures a single visit to a single location. The whole drama happens in one walk \u2014 from town to shore and back \u2014 and the place itself becomes a character. The sea has agency, identity and intent. Place is not just background; it is the second figure in a duet.</p>
   `,
 
   contextAr: `
@@ -854,7 +854,7 @@ export default function IStartedEarlyPage() {
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           Strong pairings with I started Early – Took my Dog from the Edexcel Time and Place
-          cluster.
+          collection.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

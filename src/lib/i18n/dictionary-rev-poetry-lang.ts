@@ -67,9 +67,9 @@ export const REV_POETRY_LANG_DICTIONARY: Dictionary = {
     es: 'Volver al grupo Time and Place',
   },
   'rev.poetry.shared.back_to_conflict_cluster': {
-    en: 'Back to Conflict cluster',
+    en: 'Back to Conflict collection',
     ar: 'رجوع لمجموعة Conflict',
-    es: 'Volver al grupo Conflict',
+    es: 'Volver a la colección Conflict',
   },
   'rev.poetry.shared.back_to_youth_and_age': {
     en: 'Back to Youth and Age',

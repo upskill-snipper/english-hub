@@ -20,7 +20,7 @@ export default function Page() {
     <>
       <CourseJsonLd
         name="Pearson Edexcel GCSE English Literature poetry - 1ET0 anthology"
-        description="The Pearson Edexcel GCSE English Literature 1ET0 poetry anthology - Conflict and Time and Place clusters. Themes, language, structure, comparison practice."
+        description="The Pearson Edexcel GCSE English Literature 1ET0 poetry anthology - the Conflict and Time and Place collections, two of its four. Themes, language, structure, comparison practice."
         educationalLevel="GCSE"
         provider="The English Hub"
         url="https://theenglishhub.app/revision/poetry/edexcel"
