@@ -805,7 +805,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     id: 'poetry-extra-053',
     topic: 'poetry',
     question:
-      'The Edexcel "Conflict" cluster includes Wilfred Owen\'s "Exposure". Which technique structures its stanzas?',
+      'The Edexcel "Conflict" collection includes Wilfred Owen\'s "Exposure". Which technique structures its stanzas?',
     options: [
       'Pararhyme (half-rhyme) and a recurring refrain',
       'Perfect ABAB rhyme',

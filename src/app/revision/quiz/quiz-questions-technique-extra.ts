@@ -1107,8 +1107,10 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
       'Open only for the modern text',
     ],
     correctIndex: 1,
+    // 2 October 2026: said "Only the unseen poems are provided in the exam". Paper 1 prints a
+    // Shakespeare extract; Paper 2 prints a novel extract and the named anthology poem too.
     explanation:
-      'Edexcel GCSE Literature is closed-book for the anthology and all set texts. Only the unseen poems are provided in the exam.',
+      'Edexcel GCSE Literature is closed-book for the anthology and all set texts. The papers print what you are asked to analyse: extracts from your Shakespeare play and your novel, the named anthology poem and the two unseen poems. Your second anthology poem, and everything else, comes from memory.',
   },
   {
     id: 'technique-extra-093',

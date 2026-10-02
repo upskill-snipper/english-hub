@@ -64,7 +64,8 @@ function getTopicRevisionLinks(topic: Topic, board: ExamBoard | null): RevisionL
         {
           href: '/revision/poetry/edexcel',
           title: 'Edexcel Poetry Anthology',
-          description: 'Conflict / Time and Place / Relationships clusters.',
+          // 2 October 2026: listed a Relationships "cluster" this hub does not cover.
+          description: 'The Conflict and Time and Place collections.',
         },
         {
           href: '/revision/exam-technique/essay-structure',

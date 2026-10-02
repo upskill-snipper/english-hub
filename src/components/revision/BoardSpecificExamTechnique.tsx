@@ -694,51 +694,63 @@ export const EDEXCEL_CONTENT: BoardExamTechniqueContent = {
       ],
       tip: 'Edexcel splits Shakespeare into two linked questions (a) extract + (b) wider play. Treat them as separate essays with separate plans - do not blur them together.',
     },
+    // Corrected 2 October 2026 against Pearson's specification (1ET0, Issue 2). This had a
+    // Section C (Paper 2 has two sections; the unseen comparison is Section B Part 2), SPaG
+    // on part (b) (none on Paper 2), and "two named anthology poems" with a warning that
+    // Edexcel gives you both. The paper prints only the named poem; the second is the
+    // student's choice from the same collection, from memory, as on AQA.
     {
       title: 'Edexcel English Literature Paper 2',
       badge: '2h 15m',
       description:
-        '19th-century novel + poetry. Section A: 19th-century novel extract + linked essay. Section B: anthology poetry comparison. Section C: unseen poetry comparison.',
+        '19th-century novel + poetry. Section A: 19th-century novel, (a) extract + (b) the novel as a whole. Section B: Part 1 anthology poetry comparison, Part 2 unseen poetry comparison.',
       rows: [
         {
           time: '0:00 - 0:05',
           label: 'Read 19th-century novel extract',
-          detail: 'Identify focus.',
+          detail: 'Read the extract and both parts of the question. Identify the focus.',
           marks: 'Prep',
           colour: 'prep',
         },
         {
-          time: '0:05 - 0:25',
+          time: '0:05 - 0:30',
           label: 'Section A part (a) - Extract (20 marks)',
-          detail: 'Close analysis of the printed extract.',
+          detail: 'Close analysis of the printed extract: language, form and structure.',
           marks: '20 marks',
           colour: 'analysis',
         },
         {
-          time: '0:25 - 0:50',
-          label: 'Section A part (b) - Wider novel essay (20 marks)',
-          detail: 'Same theme/character across the novel. AO4 SPaG marked here.',
+          time: '0:30 - 1:00',
+          label: 'Section A part (b) - The novel as a whole (20 marks)',
+          detail: 'An argument about the theme or character across the novel, from memory.',
           marks: '20 marks',
           colour: 'creative',
         },
         {
-          time: '0:50 - 1:35',
-          label: 'Section B - Anthology poetry comparison (20 marks)',
+          time: '1:00 - 1:35',
+          label: 'Section B Part 1 - Anthology poetry comparison (20 marks)',
           detail:
-            'Compare two named anthology poems on a given focus. Compare methods within paragraphs.',
+            'Compare the named poem, printed on the paper, with one of your choice from the same collection. Compare methods within paragraphs.',
           marks: '20 marks',
           colour: 'comparison',
         },
         {
-          time: '1:35 - 2:15',
-          label: 'Section C - Unseen poetry comparison (20 marks)',
-          detail: 'Compare two unseen poems. 5 mins reading, 5 mins planning, 30 mins writing.',
+          time: '1:35 - 2:10',
+          label: 'Section B Part 2 - Unseen poetry comparison (20 marks)',
+          detail: 'Compare two unseen poems. 7 mins reading and planning, 25 mins writing.',
           marks: '20 marks',
           colour: 'comparison',
         },
+        {
+          time: '2:10 - 2:15',
+          label: 'Final check',
+          detail: 'Re-read all four answers for slips.',
+          marks: 'Check',
+          colour: 'check',
+        },
       ],
       warning:
-        'Edexcel anthology comparison gives you BOTH poems (unlike AQA where you choose one). Read both carefully before deciding your line of argument.',
+        'Edexcel prints only the named anthology poem. The second poem is your choice from the same collection and comes from memory, so revise every poem in your collection, not just your favourites.',
     },
   ],
   questionTypes: [
@@ -856,17 +868,17 @@ export const EDEXCEL_CONTENT: BoardExamTechniqueContent = {
     },
     {
       paper: 'Lit P2',
-      question: '19th-century (b) wider novel',
+      question: '19th-century (b) the novel as a whole',
       marks: '20',
-      description: 'Same focus across the novel.',
-      approach: 'Quotations from memory. SPaG marked.',
+      description: 'The focus explored across the whole novel.',
+      approach: 'Quotations from memory. Marked for your argument; no SPaG on Paper 2.',
     },
     {
       paper: 'Lit P2',
       question: 'Anthology poetry comparison',
       marks: '20',
-      description: 'Compare two named anthology poems.',
-      approach: 'Both poems in every paragraph. Methods focus.',
+      description: 'Compare the named poem with one of your choice from the same collection.',
+      approach: 'Both poems in every paragraph. Methods, with context.',
     },
     {
       paper: 'Lit P2',
@@ -883,7 +895,7 @@ export const EDEXCEL_CONTENT: BoardExamTechniqueContent = {
       'AO1 - informed personal response with embedded textual references',
       'AO2 - language, form and structure analysis with subject terminology',
       'AO3 - context shaping interpretation',
-      'AO4 - accurate written communication (specific essays only)',
+      'AO4 - accurate written communication (the Paper 1 post-1914 essay only)',
     ],
     structureTips: [
       'Treat Shakespeare (a) and (b) as separate essays - do not write one continuous response.',
