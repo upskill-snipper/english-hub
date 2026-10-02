@@ -797,23 +797,29 @@ export const edexcelGuide: BoardExamGuide = {
   ],
 
   // ─── Poetry (Anthology selections) ─────────────────────────────────────────
+  // 2 October 2026: checked against the Pearson Edexcel anthology (Issue 4). This list had
+  // Hour and To His Coy Mistress, which are in none of its four collections, and Carol
+  // Ann Duffy's War Photographer, where Edexcel sets Carole Satyamurti's poem of that
+  // name. Several topComparison entries named AQA poems (The Farmer's Bride, Bayonet
+  // Charge), poems Edexcel does not set (Ghazal, Futility) or a poem from the other
+  // collection, though the exam pairs poems from one collection. Poppies was misquoted.
   poems: [
     {
       title: 'Cousin Kate',
       poet: 'Christina Rossetti',
       era: 'Victorian',
       themes: ['Betrayal', 'Jealousy', 'Class', 'Motherhood'],
-      topComparison: "The Farmer's Bride",
+      topComparison: 'The Class Game',
       formAnalysis:
         'Ballad form with a regular ABAB rhyme scheme, giving the poem a song-like, folk quality that contrasts with its bitter content.',
-      keyQuotation: '"Why did a great lord find me out, / And praise my flaxen hair?"',
+      keyQuotation: '"Why did a great lord find me out / And praise my flaxen hair?"',
     },
     {
       title: 'Sonnet 43',
       poet: 'Elizabeth Barrett Browning',
       era: 'Victorian',
       themes: ['Devotion', 'Spiritual love', 'Transcendence', 'Faith'],
-      topComparison: 'Ghazal',
+      topComparison: 'Valentine',
       formAnalysis:
         'Petrarchan sonnet form with a volta at line 9. Anaphora of "I love thee" creates a litany-like accumulation that builds emotional intensity.',
       keyQuotation: '"I love thee to the depth and breadth and height / My soul can reach"',
@@ -823,61 +829,58 @@ export const edexcelGuide: BoardExamGuide = {
       poet: 'Simon Armitage',
       era: 'Contemporary',
       themes: ['War trauma', 'Love', 'Physical and emotional scars', 'Intimacy'],
-      topComparison: 'Poppies',
+      topComparison: 'Nettles',
       formAnalysis:
         "Series of couplets tracing the body from surface to depth, mirroring the wife's gradual discovery of her husband's hidden injuries.",
-      // VERIFY: keyQuotation withheld - the previous text contained an unverifiable corruption. Restore an exact phrase from Simon Armitage's "The Manhunt" only against a verified primary source (e.g. The Not Dead, Pomona, 2008).
-      keyQuotation: '[Quotation withheld pending source verification.]',
+      // Restored 2 October 2026 from the Pearson Edexcel anthology (Issue 4, p. 20).
+      keyQuotation: '"the frozen river which ran through his face"',
     },
     {
-      title: 'Hour',
+      title: 'Valentine',
       poet: 'Carol Ann Duffy',
       era: 'Contemporary',
-      themes: ['Love', 'Time', 'Wealth vs. love', 'Transience'],
-      topComparison: 'To His Coy Mistress',
+      themes: ['Honesty in love', 'Rejecting cliché', 'Love as painful', 'Possessiveness'],
+      topComparison: 'Sonnet 43',
       formAnalysis:
-        'Sonnet form - subverts Petrarchan conventions by celebrating a single hour rather than eternal devotion. The form itself becomes an argument about the preciousness of limited time.',
-      keyQuotation:
-        '"Love\'s time\'s beggar, but even a single hour, / bright as a dropped coin, makes love rich"',
+        'Free verse in stanzas of uneven length, several of them a single line or a single word. The extended metaphor of the onion runs through the poem, and the short, abrupt lines read like the speaker handing over the gift.',
+      keyQuotation: '"I give you an onion."',
     },
     {
       title: 'My Last Duchess',
       poet: 'Robert Browning',
       era: 'Victorian',
       themes: ['Jealousy', 'Power', 'Possession', 'Art and control'],
-      topComparison: "The Farmer's Bride",
+      topComparison: 'La Belle Dame sans Merci',
       formAnalysis:
         "Dramatic monologue in heroic couplets with heavy enjambment, reflecting the Duke's controlling nature masked by conversational fluency.",
       keyQuotation: '"I gave commands; / Then all smiles stopped together"',
     },
     {
       title: 'War Photographer',
-      poet: 'Carol Ann Duffy',
+      poet: 'Carole Satyamurti',
       era: 'Contemporary',
-      themes: ['Conflict', 'Guilt', 'Apathy', 'Suffering vs. comfort'],
-      topComparison: 'Poppies',
+      themes: ['Representing war', 'Suffering', 'Truth and the image', 'Indifference'],
+      topComparison: 'What Were They Like?',
       formAnalysis:
-        "Four regular sestets with a near-rhyme scheme. The controlled form mirrors the photographer's professional detachment, which is gradually undermined by emotion.",
-      keyQuotation:
-        '"A hundred agonies in black and white / from which his editor will pick out five or six"',
+        'Free verse in stanzas of uneven length, in the voice of a photographer. The poem moves from the comfortable frames of peacetime to a child fleeing a bomb, and its ending questions whether any frame can contain the horror it shows.',
+      keyQuotation: '"But hell, like heaven, is untidy"',
     },
     {
       title: 'Poppies',
       poet: 'Jane Weir',
       era: 'Contemporary',
       themes: ['Loss', 'Motherhood', 'Memory', 'Grief'],
-      topComparison: 'The Manhunt',
+      topComparison: 'Catrin',
       formAnalysis:
         'Free verse with domestic imagery woven through military references. No regular rhyme - reflecting the disorientation of grief.',
-      keyQuotation:
-        '"I traced / the gilt lettering on the war memorial, / leaning against it like a wishbone"',
+      keyQuotation: '"leaned against it like a wishbone"',
     },
     {
       title: 'Exposure',
       poet: 'Wilfred Owen',
       era: 'WWI',
       themes: ['Suffering', 'Futility', 'Nature as enemy', 'Inaction'],
-      topComparison: 'Futility',
+      topComparison: 'The Charge of the Light Brigade',
       formAnalysis:
         "Eight stanzas of five lines each, with a truncated final line. Pararhyme creates an unsettling, unresolved sound that mirrors the soldiers' discomfort.",
       keyQuotation: '"But nothing happens"',
@@ -887,21 +890,22 @@ export const edexcelGuide: BoardExamGuide = {
       poet: 'Alfred Lord Tennyson',
       era: 'Victorian',
       themes: ['Duty', 'Heroism', 'Military blunders', 'Honour'],
-      topComparison: 'Bayonet Charge',
+      topComparison: 'Exposure',
       formAnalysis:
         'Predominantly anapaestic dimeter (da-da-DUM da-da-DUM) with a dactylic refrain ("Rode the six hundred") - the galloping rhythm imitates horses charging. End-stopped lines, anaphora and repetition create relentless, driving momentum across six irregular stanzas.',
       // 2 October 2026: the Pearson Edexcel anthology prints "Their's"; this had AQA's "Theirs".
       keyQuotation: '"Their\'s not to reason why, / Their\'s but to do and die"',
     },
     {
-      title: 'To His Coy Mistress',
-      poet: 'Andrew Marvell',
-      era: 'Metaphysical / 17th Century',
-      themes: ['Seduction', 'Time', 'Mortality', 'Carpe diem'],
-      topComparison: 'Hour',
+      title: 'Neutral Tones',
+      poet: 'Thomas Hardy',
+      era: 'Victorian',
+      themes: ['The end of love', 'Bitterness', 'Memory', 'Nature and emotion'],
+      topComparison: 'A Complaint',
       formAnalysis:
-        "Three-part argument (if/but/therefore) in rhyming couplets. Iambic tetrameter drives the poem's persuasive momentum.",
-      keyQuotation: '"But at my back I always hear / Time\'s wingèd chariot hurrying near"',
+        'Four quatrains rhyming ABBA, a closed pattern that matches a speaker trapped in a memory. The poem is cyclical, beginning and ending at the pond.',
+      keyQuotation:
+        '"The smile on your mouth was the deadest thing / Alive enough to have strength to die"',
     },
   ],
 

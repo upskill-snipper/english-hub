@@ -13,6 +13,10 @@ const deck: FlashcardDeck = {
     '15 poems from the Edexcel Conflict poetry collection with key quotes, themes, and techniques',
   category: 'Literature',
   board: 'Edexcel',
+  // 2 October 2026: quotations checked against the Pearson Edexcel anthology (Issue 4).
+  // The War Photographer, Poppies and Class Game quotations were not the poems' words
+  // (the last had an invented second line), and War Photographer was described as
+  // third-person: Satyamurti's poem is spoken by the photographer.
   cards: [
     {
       id: 'ecp-1',
@@ -62,7 +66,7 @@ const deck: FlashcardDeck = {
     {
       id: 'ecp-10',
       front: 'War Photographer - Satyamurti',
-      back: `Key quote: "The next one shows a boy / about his age"\n\nThemes: Impact of war on civilians, desensitisation, guilt, distance between war zones and comfortable life.\n\nTechniques: Third-person narrator, contrast between domestic comfort and war zone, child\'s perspective, understatement, the photograph as a bridge between two worlds.\n\nCompare with: Poppies (impact of war at home), What Were They Like? (civilian suffering).`,
+      back: `Key quote: "But hell, like heaven, is untidy"\n\nThemes: Impact of war on civilians, desensitisation, guilt, distance between war zones and comfortable life.\n\nTechniques: First-person narrator (the photographer), contrast between peacetime images and a war zone, the frame as a metaphor for what images include and leave out, the ironic caption, an abrupt ending.\n\nCompare with: Poppies (impact of war at home), What Were They Like? (civilian suffering).`,
     },
     {
       id: 'ecp-11',
@@ -72,12 +76,12 @@ const deck: FlashcardDeck = {
     {
       id: 'ecp-12',
       front: 'The Class Game - Mary Casey',
-      back: `Key quote: "How can you tell what class I\'m from? / I can tell what class you\'re from"\n\nThemes: Class conflict, identity, prejudice, pride in working-class roots.\n\nTechniques: Direct address, rhetorical questions, phonetic spelling of accent, contrast between "posh" and working-class markers, defiant and confrontational tone, listing.\n\nCompare with: Half-caste (identity and prejudice), Cousin Kate (class and power).`,
+      back: `Key quote: "How can you tell what class I\'m from?"\n\nThemes: Class conflict, identity, prejudice, pride in working-class roots.\n\nTechniques: Direct address, rhetorical questions, phonetic spelling of accent, contrast between "posh" and working-class markers, defiant and confrontational tone, listing.\n\nCompare with: Half-caste (identity and prejudice), Cousin Kate (class and power).`,
     },
     {
       id: 'ecp-13',
       front: 'Poppies - Jane Weir',
-      back: `Key quote: "I traced the rims of his poppies / and leaned against the war memorial"\n\nThemes: Mother\'s grief, loss, conflict\'s impact on families, memory, letting go.\n\nTechniques: Sensory imagery (touch, texture), domestic and military language juxtaposed, symbolism of poppies, time shifts between past and present, first-person maternal voice.\n\nCompare with: War Photographer (impact of conflict), Catrin (parent-child bond).`,
+      back: `Key quote: "leaned against it like a wishbone"\n\nThemes: Mother\'s grief, loss, conflict\'s impact on families, memory, letting go.\n\nTechniques: Sensory imagery (touch, texture), domestic and military language juxtaposed, symbolism of poppies, time shifts between past and present, first-person maternal voice.\n\nCompare with: War Photographer (impact of conflict), Catrin (parent-child bond).`,
     },
     {
       id: 'ecp-14',

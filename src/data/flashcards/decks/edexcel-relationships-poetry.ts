@@ -13,6 +13,11 @@ const deck: FlashcardDeck = {
     '15 poems from the Edexcel Relationships poetry collection with key quotes, themes, and techniques',
   category: 'Literature',
   board: 'Edexcel',
+  // 2 October 2026: quotations checked against the Pearson Edexcel anthology (Issue 4).
+  // Both 1st Date quotations and the Love's Dog one were not in the poems at all; the
+  // i wanna be yours, Nettles and My Father Would Not Show Us ones were misquoted. Nettles
+  // is sixteen lines, not fourteen; Valentine's "Lethal." is neither its last line nor
+  // one syllable; and A Complaint's fountain becomes a hidden well, it does not dry up.
   cards: [
     {
       id: 'erp-1',
@@ -32,7 +37,7 @@ const deck: FlashcardDeck = {
     {
       id: 'erp-4',
       front: 'A Complaint - William Wordsworth',
-      back: `Key quote: "There is a change - and I am poor"\n\nThemes: Loss of love, emotional dependency, change, grief.\n\nTechniques: Extended metaphor of a fountain (love as a water source that dries up), caesura reflecting emotional disruption, shift from abundance to emptiness.\n\nCompare with: Neutral Tones (love ended), One Flesh (emotional distance).`,
+      back: `Key quote: "There is a change - and I am poor"\n\nThemes: Loss of love, emotional dependency, change, grief.\n\nTechniques: Extended metaphor of a fountain (love that once flowed freely, now a hidden, silent well), caesura reflecting emotional disruption, shift from abundance to emptiness.\n\nCompare with: Neutral Tones (love ended), One Flesh (emotional distance).`,
     },
     {
       id: 'erp-5',
@@ -52,12 +57,12 @@ const deck: FlashcardDeck = {
     {
       id: 'erp-8',
       front: '1st Date - She / 1st Date - He - Wendy Cope',
-      back: `Key quote (She): "I can\'t believe I\'ve met someone so nice"\nKey quote (He): "She\'s absolutely gorgeous"\n\nThemes: New love, excitement, nervousness, contrasting perspectives.\n\nTechniques: Dual perspective (two companion poems), colloquial language, humour, internal monologue revealing insecurity beneath confidence.\n\nCompare with: Valentine (modern love), Love\'s Dog (conflicting emotions in love).`,
+      back: `Key quote (She): "It wasn\'t exactly a lie."\nKey quote (He): "Perhaps she is out of my league."\n\nThemes: New love, excitement, nervousness, contrasting perspectives.\n\nTechniques: Dual perspective (two companion poems), colloquial language, humour, internal monologue revealing insecurity beneath confidence.\n\nCompare with: Valentine (modern love), Love\'s Dog (conflicting emotions in love).`,
     },
     {
       id: 'erp-9',
       front: 'Valentine - Carol Ann Duffy',
-      back: `Key quote: "I give you an onion. / It is a moon wrapped in brown paper"\n\nThemes: Unconventional love, honesty about relationships, love as painful, rejection of cliché.\n\nTechniques: Extended metaphor (onion = love), free verse, imperative verbs ("Take it"), monosyllabic final line - "Lethal" - showing love\'s danger.\n\nCompare with: Sonnet 43 (contrasting view of love), Love\'s Dog (love\'s contradictions).`,
+      back: `Key quote: "I give you an onion. / It is a moon wrapped in brown paper"\n\nThemes: Unconventional love, honesty about relationships, love as painful, rejection of cliché.\n\nTechniques: Extended metaphor (onion = love), free verse, imperative verbs ("Take it"), one-word line - "Lethal." - showing love\'s danger.\n\nCompare with: Sonnet 43 (contrasting view of love), Love\'s Dog (love\'s contradictions).`,
     },
     {
       id: 'erp-10',
@@ -67,17 +72,17 @@ const deck: FlashcardDeck = {
     {
       id: 'erp-11',
       front: 'i wanna be yours - John Cooper Clarke',
-      back: `Key quote: "I wanna be your electric meter / I will not run out"\n\nThemes: Devotion, desire, total commitment, modern love.\n\nTechniques: Extended metaphor (domestic objects = devotion), repetition ("I wanna be your"), lack of punctuation and capitalisation (informal, urgent tone), metaphors escalate from mundane to passionate.\n\nCompare with: Sonnet 43 (total devotion), Valentine (modern love poem).`,
+      back: `Key quote: "let me be your electric meter / i will not run out"\n\nThemes: Devotion, desire, total commitment, modern love.\n\nTechniques: Extended metaphor (domestic objects = devotion), repetition ("let me be your"), lack of punctuation and capitalisation (informal, urgent tone), metaphors escalate from mundane to passionate.\n\nCompare with: Sonnet 43 (total devotion), Valentine (modern love poem).`,
     },
     {
       id: 'erp-12',
       front: "Love's Dog - Jen Hadfield",
-      back: `Key quote: "What I love about love is its diamond blaze. / What I hate about love is its diamond blaze."\n\nThemes: Contradictions of love, joy and pain coexisting, duality of emotion.\n\nTechniques: Anaphora ("What I love / What I hate"), antithesis, list structure, repeated syntactic pattern highlighting love\'s paradoxes.\n\nCompare with: Valentine (honest about love\'s pain), 1st Date (excitement of love).`,
+      back: `Key quote: "What I love about love is its diagnosis"\n\nThemes: Contradictions of love, joy and pain coexisting, duality of emotion.\n\nTechniques: Anaphora ("What I love / What I hate"), antithesis, list structure, repeated syntactic pattern highlighting love\'s paradoxes.\n\nCompare with: Valentine (honest about love\'s pain), 1st Date (excitement of love).`,
     },
     {
       id: 'erp-13',
       front: 'Nettles - Vernon Scannell',
-      back: `Key quote: "My son aged three fell in the nettle bed. / \'Bed\' seemed a word of comfort"\n\nThemes: Parental love, protectiveness, futility of shielding children, military imagery.\n\nTechniques: Extended metaphor (nettles = threats to children), military lexis ("regiment," "fierce parade," "fallen dead"), sonnet-like 14 lines, irony of "bed" as comfort vs pain.\n\nCompare with: The Manhunt (love and suffering), A Child to his Sick Grandfather (family bonds).`,
+      back: `Key quote: "\'Bed\' seemed a curious name for those green spears"\n\nThemes: Parental love, protectiveness, futility of shielding children, military imagery.\n\nTechniques: Extended metaphor (nettles = threats to children), military lexis ("regiment," "fierce parade," "fallen dead"), a single 16-line stanza, irony of "bed" as comfort vs pain.\n\nCompare with: The Manhunt (love and suffering), A Child to his Sick Grandfather (family bonds).`,
     },
     {
       id: 'erp-14',
@@ -87,7 +92,7 @@ const deck: FlashcardDeck = {
     {
       id: 'erp-15',
       front: 'My Father Would Not Show Us - Ingrid de Kok',
-      back: `Key quote: "My father would not show us his dying"\n\nThemes: Family relationships, grief, distance, masculinity and vulnerability, death.\n\nTechniques: Negative construction ("would not show"), contrast between what father hides and what speaker reveals, enjambment mirroring life flowing away, restrained tone reflecting the father\'s own restraint.\n\nCompare with: A Child to his Sick Grandfather (family and mortality), One Flesh (emotional distance in family).`,
+      back: `Key quote: "My father would not show us how to die."\n\nThemes: Family relationships, grief, distance, masculinity and vulnerability, death.\n\nTechniques: Negative construction ("would not show"), contrast between what father hides and what speaker reveals, enjambment mirroring life flowing away, restrained tone reflecting the father\'s own restraint.\n\nCompare with: A Child to his Sick Grandfather (family and mortality), One Flesh (emotional distance in family).`,
     },
   ],
 }

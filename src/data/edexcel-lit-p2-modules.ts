@@ -949,10 +949,10 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
 
 <ul>
   <li><strong>P - Point:</strong> State your comparative point clearly. <em>"Both poets use natural imagery to convey loss, but they do so to very different effect."</em></li>
-  <li><strong>E - Evidence from Poem 1:</strong> Embed a quotation from the anthology poem. <em>"In 'Remains', Armitage describes the soldier's memory as 'his bloody life in my bloody hands', where the repetition of 'bloody' shifts from literal to metaphorical."</em></li>
-  <li><strong>T - Technique:</strong> Identify and analyse the method. <em>"The pun on 'bloody' creates a dual meaning that mirrors the soldier's inability to separate the physical act from its psychological aftermath."</em></li>
+  <li><strong>E - Evidence from Poem 1:</strong> Embed a quotation from the anthology poem. <em>"In 'Exposure', Owen describes 'the merciless iced east winds that knive us', where the invented verb 'knive' turns the weather into a weapon."</em></li>
+  <li><strong>T - Technique:</strong> Identify and analyse the method. <em>"Making a verb of 'knive' gives the wind the violence of an attacker, so that the soldiers' real enemy is the weather rather than the men opposite."</em></li>
   <li><strong>E - Evidence from Poem 2:</strong> Now bring in the unseen poem with a quotation and analysis. <em>"By contrast, the unseen poet writes of 'petals falling like shrapnel', using a simile that inverts expectations - beauty becomes violence."</em></li>
-  <li><strong>R - Response / Comparison:</strong> Draw the two together. <em>"While Armitage's language traps the reader inside the soldier's guilt, the unseen poet externalises destruction through the landscape, creating a more detached but equally haunting effect."</em></li>
+  <li><strong>R - Response / Comparison:</strong> Draw the two together. <em>"While Owen makes nature itself the soldiers' enemy, the unseen poet turns natural beauty into an image of violence, creating a more detached but equally haunting effect."</em></li>
 </ul>
 
 <div class="key-term"><strong>Key Term: Connectives of Comparison</strong> - Use linking phrases to signal comparison: <em>similarly, likewise, in the same way, both poets</em> (for similarity); <em>however, by contrast, whereas, conversely, on the other hand</em> (for difference). These words are the glue that holds a comparison essay together.</div>

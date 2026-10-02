@@ -846,6 +846,9 @@ const lesson5: LessonPlan = {
 
 // ── Lesson 6: Edexcel Poetry Anthology - Time & Place Cluster ──
 
+// 2 October 2026: the example pairs named The Prelude (Edexcel's Conflict collection),
+// Kamikaze (an AQA poem) and The Émigrée (Edexcel's Belonging collection) as Time and
+// Place poems. Both pairs are now from Collection C of the Pearson Edexcel anthology.
 const lesson6: LessonPlan = {
   id: 'edexcel-06-poetry-time-and-place',
   title: 'Edexcel Poetry Anthology: Time & Place Cluster',
@@ -895,7 +898,7 @@ const lesson6: LessonPlan = {
       title: 'Close Analysis: Two Key Poems from the Cluster',
       duration: '25 minutes',
       instructions:
-        "Focus on two poems that offer strong comparison potential (e.g. 'The Prelude' by Wordsworth and 'Kamikaze' by Beatrice Garland, or 'London' by Blake and 'The Émigrée' by Carol Rumens - select based on your school's chosen poems). Read both poems aloud. For each poem, students complete an analysis grid covering: subject/narrative, key quotations (3 per poem), language techniques, structural features, tone/mood, and the poet's message about time and/or place. Model the first poem's grid entries as a class, then students complete the second independently.",
+        "Focus on two poems that offer strong comparison potential (e.g. 'London' by Blake and 'Nothing's Changed' by Tatamkhulu Afrika, or 'Composed upon Westminster Bridge' by Wordsworth and 'Hurricane Hits England' by Grace Nichols - select based on your school's chosen poems). Read both poems aloud. For each poem, students complete an analysis grid covering: subject/narrative, key quotations (3 per poem), language techniques, structural features, tone/mood, and the poet's message about time and/or place. Model the first poem's grid entries as a class, then students complete the second independently.",
       differentiation: {
         support:
           'Pre-fill key quotations for both poems; students focus on technique identification and effect analysis.',

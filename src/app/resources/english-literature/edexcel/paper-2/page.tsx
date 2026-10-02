@@ -407,21 +407,26 @@ export default async function Paper2Page() {
               <h3 className="text-lg font-bold text-foreground">{_tr(`Relationships Cluster`)}</h3>
               <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 {[
-                  'Sonnet 43 - Elizabeth Barrett Browning',
-                  "Love's Philosophy - Percy Bysshe Shelley",
-                  'Sonnet 29 - Edna St Vincent Millay',
-                  'My Last Duchess - Robert Browning',
+                  // The Pearson Edexcel anthology's Collection A (Issue 4), in its order. Until
+                  // 2 October 2026 this list had Love's Philosophy, Climbing My Grandfather and
+                  // Singh Song!, which are AQA poems, and a "Sonnet 29" by Edna St Vincent
+                  // Millay, in place of A Complaint, Neutral Tones, The Manhunt and My Father
+                  // Would Not Show Us.
                   'La Belle Dame sans Merci - John Keats',
-                  'She Walks in Beauty - Lord Byron',
                   'A Child to His Sick Grandfather - Joanna Baillie',
+                  'She Walks in Beauty - Lord Byron',
+                  'A Complaint - William Wordsworth',
+                  'Neutral Tones - Thomas Hardy',
+                  'Sonnet 43 - Elizabeth Barrett Browning',
+                  'My Last Duchess - Robert Browning',
                   '1st Date - She / 1st Date - He - Wendy Cope',
                   'Valentine - Carol Ann Duffy',
                   'One Flesh - Elizabeth Jennings',
                   'i wanna be yours - John Cooper Clarke',
                   "Love's Dog - Jen Hadfield",
                   'Nettles - Vernon Scannell',
-                  'Climbing My Grandfather - Andrew Waterhouse',
-                  'Singh Song! - Daljit Nagra',
+                  'The Manhunt - Simon Armitage',
+                  'My Father Would Not Show Us - Ingrid de Kok',
                 ].map((poem) => (
                   <li key={poem} className="flex gap-2">
                     <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />

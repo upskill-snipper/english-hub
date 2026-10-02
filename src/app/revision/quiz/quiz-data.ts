@@ -1449,6 +1449,12 @@ const poetryQuestions: QuizQuestion[] = [
   },
 
   // ─── Edexcel anthology (~10 questions) ─────────────────────────────────
+  // 2 October 2026: checked against the Pearson Edexcel anthology (Issue 4). Five of
+  // these (p183, p184, p186, p187, p188) were about poems in the Eduqas anthology
+  // examined until summer 2026, not Edexcel's, two of them saying "in the Edexcel
+  // anthology"; they are retagged and retired like the Eduqas section below. p190
+  // asked about Remains "as studied in the Edexcel Conflict anthology": Remains is an
+  // AQA Power and Conflict poem, and in the Eduqas anthology examined from 2027.
   {
     id: 'p181',
     topic: 'poetry',
@@ -1488,17 +1494,19 @@ const poetryQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       "Brooke presents an idealised, patriotic view of death in war, where the soldier's death enriches the foreign soil with English values.",
-    boards: ['edexcel'],
+    boards: ['eduqas'],
+    retired: 'Eduqas anthology, examined until summer 2026',
   },
   {
     id: 'p184',
     topic: 'poetry',
-    question: 'Who wrote "Afternoons" in the Edexcel anthology?',
+    question: 'Who wrote "Afternoons" in the Eduqas anthology?',
     options: ['Ted Hughes', 'Philip Larkin', 'Simon Armitage', 'Seamus Heaney'],
     correctIndex: 1,
     explanation:
       'Philip Larkin wrote "Afternoons", a melancholy observation of young mothers in a park whose identities are being overtaken by domesticity.',
-    boards: ['edexcel'],
+    boards: ['eduqas'],
+    retired: 'Eduqas anthology, examined until summer 2026',
   },
   {
     id: 'p185',
@@ -1513,8 +1521,7 @@ const poetryQuestions: QuizQuestion[] = [
   {
     id: 'p186',
     topic: 'poetry',
-    question:
-      'In the Edexcel anthology, what does "Dulce et Decorum Est" by Wilfred Owen describe?',
+    question: 'In the Eduqas anthology, what does "Dulce et Decorum Est" by Wilfred Owen describe?',
     options: [
       'A peaceful countryside',
       'A gas attack and its horrific aftermath in the trenches',
@@ -1524,7 +1531,8 @@ const poetryQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       'Owen describes the horror of a poison gas attack in vivid, graphic detail, arguing against the "old lie" that dying for one\'s country is noble.',
-    boards: ['edexcel'],
+    boards: ['eduqas'],
+    retired: 'Eduqas anthology, examined until summer 2026',
   },
   {
     id: 'p187',
@@ -1535,7 +1543,8 @@ const poetryQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       'Owen uses direct address ("My friend, you would not tell...") to confront the reader, making the anti-war message personal and inescapable.',
-    boards: ['edexcel'],
+    boards: ['eduqas'],
+    retired: 'Eduqas anthology, examined until summer 2026',
   },
   {
     id: 'p188',
@@ -1545,7 +1554,8 @@ const poetryQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       'Dickinson compares the way grief fades to the imperceptible transition from summer to autumn, suggesting both loss and acceptance.',
-    boards: ['edexcel'],
+    boards: ['eduqas'],
+    retired: 'Eduqas anthology, examined until summer 2026',
   },
   {
     id: 'p189',
@@ -1560,7 +1570,7 @@ const poetryQuestions: QuizQuestion[] = [
   {
     id: 'p190',
     topic: 'poetry',
-    question: 'What theme is central to "Remains" as studied in the Edexcel Conflict anthology?',
+    question: 'What theme is central to "Remains" by Simon Armitage?',
     options: [
       'The beauty of nature',
       'Guilt and the psychological aftermath of killing',
@@ -1570,7 +1580,7 @@ const poetryQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       'Armitage explores the lasting psychological trauma (PTSD) of a soldier who cannot stop reliving the moment he shot a looter.',
-    boards: ['edexcel'],
+    boards: ['aqa', 'eduqas'],
   },
 
   // ─── Eduqas anthology examined until summer 2026 (10 questions) ─────────

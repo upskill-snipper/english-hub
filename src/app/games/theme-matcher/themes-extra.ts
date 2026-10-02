@@ -11,6 +11,11 @@
  * Boards covered: AQA, Edexcel, OCR, Eduqas (and WJEC where overlapping).
  */
 
+// 2 October 2026: Ozymandias, My Last Duchess, Love's Philosophy and Mother, Any
+// Distance were also tagged Eduqas. None is in the anthology Eduqas examines from 2027
+// (src/lib/board/eduqas-anthology.ts), and only Ozymandias was in the one examined
+// until summer 2026. Sonnet 29 is in the new one and keeps its tag.
+
 export type ExamBoard = 'AQA' | 'Edexcel' | 'OCR' | 'Eduqas' | 'WJEC'
 
 export type ThemeCategory =
@@ -72,56 +77,56 @@ const powerPairings: ThemeQuotePairing[] = [
     theme: 'Power',
     quote: 'My name is Ozymandias, King of Kings; Look on my Works, ye Mighty, and despair!',
     text: 'Ozymandias',
-    board: ['AQA', 'Eduqas'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-power-06',
     theme: 'Power',
     quote: 'Two vast and trunkless legs of stone stand in the desert.',
     text: 'Ozymandias',
-    board: ['AQA', 'Eduqas'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-power-07',
     theme: 'Power',
     quote: 'The hand that mocked them, and the heart that fed.',
     text: 'Ozymandias',
-    board: ['AQA', 'Eduqas'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-power-08',
     theme: 'Power',
     quote: 'Nothing beside remains. Round the decay of that colossal Wreck.',
     text: 'Ozymandias',
-    board: ['AQA', 'Eduqas'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-power-09',
     theme: 'Power',
     quote: 'That’s my last Duchess painted on the wall, looking as if she were alive.',
     text: 'My Last Duchess',
-    board: ['AQA', 'Edexcel', 'Eduqas'],
+    board: ['AQA', 'Edexcel'],
   },
   {
     id: 'tm-extra-power-10',
     theme: 'Power',
     quote: 'I gave commands; then all smiles stopped together.',
     text: 'My Last Duchess',
-    board: ['AQA', 'Edexcel', 'Eduqas'],
+    board: ['AQA', 'Edexcel'],
   },
   {
     id: 'tm-extra-power-11',
     theme: 'Power',
     quote: 'She had a heart - how shall I say? - too soon made glad.',
     text: 'My Last Duchess',
-    board: ['AQA', 'Edexcel', 'Eduqas'],
+    board: ['AQA', 'Edexcel'],
   },
   {
     id: 'tm-extra-power-12',
     theme: 'Power',
     quote: 'I choose never to stoop.',
     text: 'My Last Duchess',
-    board: ['AQA', 'Edexcel', 'Eduqas'],
+    board: ['AQA', 'Edexcel'],
   },
   {
     id: 'tm-extra-power-13',
@@ -206,14 +211,14 @@ const lovePairings: ThemeQuotePairing[] = [
     // AQA's anthology, the book students are given, prints "in one another's being mingle".
     quote: "Nothing in the world is single; ... in one another's being mingle.",
     text: 'Love’s Philosophy',
-    board: ['AQA', 'Eduqas'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-love-09',
     theme: 'Love',
     quote: 'The fountains mingle with the river and the rivers with the ocean.',
     text: 'Love’s Philosophy',
-    board: ['AQA', 'Eduqas'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-love-10',
@@ -222,28 +227,31 @@ const lovePairings: ThemeQuotePairing[] = [
     // AQA's anthology prints "what are all these kissings worth".
     quote: 'What are all these kissings worth, if thou kiss not me?',
     text: 'Love’s Philosophy',
-    board: ['AQA', 'Eduqas'],
+    board: ['AQA'],
   },
+  // 2 October 2026: the three Porphyria's Lover entries were tagged Edexcel and OCR.
+  // Neither sets it (Pearson Edexcel anthology, Issue 4; src/lib/board/ocr-anthology.ts);
+  // it is an AQA Love and Relationships poem.
   {
     id: 'tm-extra-love-11',
     theme: 'Love',
     quote: 'That moment she was mine, mine, fair, perfectly pure and good.',
     text: 'Porphyria’s Lover',
-    board: ['Edexcel', 'OCR'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-love-12',
     theme: 'Love',
     quote: 'In one long yellow string I wound three times her little throat around.',
     text: 'Porphyria’s Lover',
-    board: ['Edexcel', 'OCR'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-love-13',
     theme: 'Love',
     quote: 'And yet God has not said a word!',
     text: 'Porphyria’s Lover',
-    board: ['Edexcel', 'OCR'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-love-14',
@@ -361,21 +369,21 @@ const identityPairings: ThemeQuotePairing[] = [
     theme: 'Identity',
     quote: 'Mother, any distance greater than a single span requires a second pair of hands.',
     text: 'Mother, Any Distance',
-    board: ['AQA', 'Eduqas'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-identity-02',
     theme: 'Identity',
     quote: 'You at the zero-end, me with the spool of tape.',
     text: 'Mother, Any Distance',
-    board: ['AQA', 'Eduqas'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-identity-03',
     theme: 'Identity',
     quote: 'To fall or fly.',
     text: 'Mother, Any Distance',
-    board: ['AQA', 'Eduqas'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-identity-04',
@@ -587,21 +595,21 @@ const mortalityPairings: ThemeQuotePairing[] = [
     theme: 'Mortality',
     quote: 'The lone and level sands stretch far away.',
     text: 'Ozymandias',
-    board: ['AQA', 'Eduqas'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-mortality-02',
     theme: 'Mortality',
     quote: 'Half sunk a shattered visage lies.',
     text: 'Ozymandias',
-    board: ['AQA', 'Eduqas'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-mortality-03',
     theme: 'Mortality',
     quote: 'Boundless and bare.',
     text: 'Ozymandias',
-    board: ['AQA', 'Eduqas'],
+    board: ['AQA'],
   },
   {
     id: 'tm-extra-mortality-04',

@@ -55,6 +55,7 @@ export const POETS: Record<string, number | null> = {
   'Grace Nichols': null,
   'Helen Dunmore': 2017,
   'Imtiaz Dharker': null,
+  'Ingrid de Kok': null,
   'James Berry': 2017,
   'James Shirley': 1666,
   'Jane Weir': null,
@@ -104,6 +105,7 @@ export const POETS: Record<string, number | null> = {
   'Miroslav Holub': 1998,
   'W.B. Yeats': 1939,
   'W.H. Auden': 1973,
+  'Wendy Cope': null,
   'Wilfred Owen': 1918,
   'William Blake': 1827,
   'William Shakespeare': 1616,
@@ -169,6 +171,16 @@ export const POEM_WORDS: Record<string, number> = {
   Absence: 117, // p. 56, 15 lines
   'One Flesh': 147, // p. 16, 18 lines
   Nettles: 136, // p. 19, 16 lines
+  // Counted the same way on 2 October 2026, when the Edexcel Relationships pages were
+  // rebuilt from the anthology's own list of poems:
+  Valentine: 116, // p. 15, 23 lines
+  'i wanna be yours': 139, // p. 17, 29 lines
+  "Love's Dog": 144, // p. 18, 16 lines
+  'The Manhunt': 160, // p. 20, 26 lines
+  'My Father Would Not Show Us': 187, // p. 21, 29 lines; the epigraph from Rilke excluded
+  // p. 14, printed as one entry: She 135 words, He 130, each 20 lines. A page that
+  // quotes both keeps each poem within its own share as well.
+  '1st Date - She and 1st Date - He': 265,
   // AQA Anthology of Poetry, Poems past and present (AQA's PDF), by printed
   // page. It has no margin numbers, so a numeral in the text is a word.
   'Eden Rock': 171, // p. 12, 20 lines

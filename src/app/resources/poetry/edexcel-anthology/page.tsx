@@ -31,51 +31,16 @@ interface Poem {
 /*  Data: Edexcel Relationships cluster                                */
 /* ------------------------------------------------------------------ */
 
+// The fifteen poems of Collection A: Relationships in the Pearson Edexcel GCSE (9-1)
+// English Literature Poetry Anthology (Issue 4), in the anthology's order. Until
+// 2 October 2026 ten of the fifteen entries here were AQA Love and Relationships poems
+// (Letters from Yorkshire, The Farmer's Bride, Walking Away, Eden Rock, Follower,
+// Mother, any distance, Before You Were Mine, Winter Swans, Singh Song! and Climbing My
+// Grandfather), none of which Edexcel sets, while ten of Edexcel's own poems were
+// missing; the comparisons and comparison pairs sent students to the same AQA poems.
+// The new entries quote the anthology's printing, and quotations from poems in
+// copyright are kept within no-poem-quoted-beyond-fair-dealing.test.ts.
 const POEMS: Poem[] = [
-  {
-    id: 'sonnet-43',
-    title: 'Sonnet 43',
-    poet: 'Elizabeth Barrett Browning',
-    date: '1850',
-    context:
-      "Written during Barrett Browning's secret courtship with Robert Browning. She was a semi-invalid controlled by her domineering father, making her declaration of love both radical and deeply personal. Part of the Sonnets from the Portuguese sequence.",
-    summary:
-      'The speaker attempts to quantify and catalogue the ways she loves her partner. She moves from abstract, spiritual love to the everyday and physical, before concluding that her love will only grow stronger after death. The poem is an unrestrained, sincere celebration of romantic devotion.',
-    formAndStructure:
-      "Petrarchan sonnet with 14 lines of iambic pentameter. The ABBA ABBA rhyme scheme in the octave creates a sense of completeness and certainty. The anaphoric repetition of 'I love thee' structures each new dimension of love. The sestet shifts to encompass past griefs and childhood faith, suggesting love redeems suffering. No volta disrupts the argument, reflecting unwavering devotion.",
-    quotes: [
-      {
-        text: 'How do I love thee? Let me count the ways',
-        technique: 'Rhetorical question / anaphora',
-        analysis:
-          "The opening rhetorical question suggests love is so vast it must be systematically catalogued. The verb 'count' implies an attempt to rationalise an irrational emotion, establishing the poem's central tension between measurement and boundlessness.",
-      },
-      {
-        text: 'I love thee to the depth and breadth and height / My soul can reach',
-        technique: 'Spatial metaphor / tricolon',
-        analysis:
-          "The tricolon of abstract dimensions creates a three-dimensional space for love, suggesting it fills every possible direction. The enjambment into 'My soul can reach' elevates the love from physical to spiritual, implying it extends beyond the material world.",
-      },
-      {
-        text: 'I love thee freely, as men strive for Right',
-        technique: 'Simile / abstract noun',
-        analysis:
-          "Comparing love to the pursuit of moral justice ('Right') elevates it from personal emotion to a universal, noble cause. The capitalised 'Right' suggests a quasi-religious devotion, free from obligation or coercion.",
-      },
-      {
-        text: 'I shall but love thee better after death',
-        technique: 'Declarative / hyperbole',
-        analysis:
-          'The final line transcends mortality, asserting that love will intensify beyond the grave. This echoes the Victorian Christian belief in the afterlife while also functioning as a bold, almost defiant, closing statement of eternal commitment.',
-      },
-    ],
-    themes: ['Romantic love', 'Devotion', 'Spirituality', 'Intensity of emotion'],
-    comparisons: [
-      'La Belle Dame Sans Merci (contrasts: destructive vs. life-affirming love)',
-      "Neutral Tones (contrasts: love's death vs. love's transcendence)",
-      'One Flesh (contrasts: passionate declaration vs. love fading with time)',
-    ],
-  },
   {
     id: 'la-belle-dame',
     title: 'La Belle Dame Sans Merci',
@@ -101,7 +66,7 @@ const POEMS: Poem[] = [
           "The medieval register ('thee', 'knight-at-arms') establishes the ballad form and distances the poem from reality. 'Palely loitering' combines physical weakness with aimlessness, suggesting the knight is drained of vitality and purpose by his encounter.",
       },
       {
-        text: "I met a lady in the meads, / Full beautiful -- a faery's child",
+        text: "I met a lady in the meads, / Full beautiful – a faery's child",
         technique: 'Supernatural imagery / caesura',
         analysis:
           "The dash creates a pause that emphasises the revelation of her otherworldly nature. 'Faery's child' marks her as dangerously beyond the human realm, foreshadowing that the relationship is doomed because it crosses the boundary between mortal and immortal.",
@@ -123,7 +88,145 @@ const POEMS: Poem[] = [
     comparisons: [
       'Sonnet 43 (contrasts: destructive vs. life-giving love)',
       'My Last Duchess (links: male powerlessness vs. male control in love)',
-      "The Farmer's Bride (links: desire and possession, unequal relationships)",
+      'She Walks in Beauty (contrasts: beauty that destroys vs. beauty that reflects goodness)',
+    ],
+  },
+  {
+    id: 'a-child-to-his-sick-grandfather',
+    title: 'A Child to his Sick Grandfather',
+    poet: 'Joanna Baillie',
+    date: '1790',
+    context:
+      "Joanna Baillie (1762-1851) was a Scottish poet and dramatist, later famous for her Plays on the Passions. This poem appeared in her first book, Poems (1790), published anonymously, which set out to describe rural life and ordinary feeling in plain language, eight years before Wordsworth and Coleridge's Lyrical Ballads made a similar case. The old man is cared for at home by his family and neighbours, as the sick and elderly usually were.",
+    summary:
+      "A young child speaks to his grandfather, who is old and ill. He notices how frail the old man has become, remembers how the grandfather once played with him and praised him, and promises to look after him in return. Neighbours call and pray for him. In the last stanza the child begins a story, but the grandfather's head sinks and he no longer hears: he may be falling asleep, or dying.",
+    formAndStructure:
+      "Eight six-line stanzas in rhyming couplets, mostly in iambic tetrameter, each closing on a shorter line. Six of the eight stanzas end on the word 'dad', a refrain that keeps the child's affection at the centre of the poem. The poem moves from the grandfather's past strength to his present weakness, and from the child's chatter to silence.",
+    quotes: [
+      {
+        text: "Grand-dad, they say you're old and frail, / Your stocked legs begin to fail",
+        technique: "Direct address / child's voice",
+        analysis:
+          "The child begins by repeating what adults say ('they say'), so his first words are borrowed ones: he is only starting to understand what frailty means. The familiar 'Grand-dad' and the simple, mostly one-syllable words make the voice young and affectionate, while 'begin to fail' quietly announces decline.",
+      },
+      {
+        text: 'Your knobbed stick (that was my horse)',
+        technique: 'Parenthesis / past and present',
+        analysis:
+          "The brackets hold a memory of play inside a description of illness: the walking stick the old man now needs was once the child's hobby-horse. Baillie shows the same object changing its meaning as the grandfather changes, and the child's mind running back to happier times.",
+      },
+      {
+        text: 'You will not die and leave us then? / Rouse up and be our dad again.',
+        technique: 'Rhetorical question / imperative',
+        analysis:
+          "The child names death directly, then hurries past it with a command. The question mark makes his fear audible, and 'Rouse up' shows a child's belief that illness can be overcome by effort. Calling his grandfather 'our dad' stresses how central he has been to the whole family.",
+      },
+      {
+        text: 'Down on your bosom sinks your head – / You do not hear me, dad.',
+        technique: 'Ambiguous ending / dash',
+        analysis:
+          'The last lines leave the outcome open: the grandfather may be falling asleep, or dying. The dash marks the moment the child notices, and the short final line is the first time he speaks without being heard. The reader understands more than the child does.',
+      },
+    ],
+    themes: [
+      'Family love',
+      'Old age and illness',
+      'Childhood and innocence',
+      'Care and duty',
+      'Mortality',
+    ],
+    comparisons: [
+      'My Father Would Not Show Us (links: a child at the deathbed of an older relative; contrasts: closeness vs. exclusion)',
+      'Nettles (links: love between generations; contrasts: a father protecting a child vs. a child wanting to care for an old man)',
+      'One Flesh (links: a child observing an older relative; contrasts: tender closeness vs. cool distance)',
+    ],
+  },
+  {
+    id: 'she-walks-in-beauty',
+    title: 'She Walks in Beauty',
+    poet: 'Lord Byron',
+    date: '1814',
+    context:
+      'Byron (1788-1824) was one of the most famous Romantic poets, and was notorious for his love affairs. He wrote this poem in June 1814 after seeing his cousin by marriage, Anne Wilmot, at a party, wearing a black mourning dress decorated with spangles. It was published in Hebrew Melodies (1815), a collection of lyrics written to be set to music by the composer Isaac Nathan. Unusually for Byron, the poem admires a woman without any hint of seduction.',
+    summary:
+      'The speaker describes a woman whose beauty combines darkness and light in perfect balance, like a clear, starry night. He moves from her appearance, her eyes, her dark hair and her face, to what it reveals about her: a calm mind, a life spent in goodness and an innocent heart. Her beauty is presented as the outward sign of inner goodness.',
+    formAndStructure:
+      'Three six-line stanzas rhyming ABABAB, in regular iambic tetrameter. The repeated rhymes and steady metre create the balance and harmony the poem praises. Each stanza moves further inward: from her appearance in the first, to her face and thoughts in the second, to her character in the third, which ends on an exclamation.',
+    quotes: [
+      {
+        text: 'She walks in beauty, like the night / Of cloudless climes and starry skies',
+        technique: 'Simile / enjambment',
+        analysis:
+          "Comparing a woman to night rather than day is unexpected: this beauty is dark, mysterious and calm, not dazzling. The enjambment carries the simile over the line break, so the reader, like the speaker, is drawn on by the image. The soft sibilance of 'cloudless climes and starry skies' sounds admiring and hushed.",
+      },
+      {
+        text: "And all that's best of dark and bright / Meet in her aspect and her eyes",
+        technique: 'Antithesis / balance',
+        analysis:
+          "The pairing of opposites, 'dark and bright', is the poem's central idea: perfect beauty is a balance, not an extreme. The verb 'Meet' suggests harmony, as if opposites are reconciled in her, and the focus on her 'eyes' prepares for the poem's turn inward.",
+      },
+      {
+        text: "One shade the more, one ray the less, / Had half impair'd the nameless grace",
+        technique: 'Balanced syntax / light imagery',
+        analysis:
+          "The parallel phrases measure her beauty precisely: a single shade or ray more or less would spoil it. 'Nameless grace' admits that her quality cannot be put into words, a paradox in a poem made of words, and 'grace' carries a spiritual as well as a physical sense.",
+      },
+      {
+        text: 'A heart whose love is innocent!',
+        technique: 'Exclamation / moral conclusion',
+        analysis:
+          "The poem ends not on her looks but on her goodness. The exclamation is the speaker's only burst of feeling, and 'innocent' makes clear that his admiration is respectful rather than desiring, which is unusual for a poet with Byron's reputation.",
+      },
+    ],
+    themes: ['Beauty', 'Admiration', 'Harmony and balance', 'Inner goodness', 'Light and dark'],
+    comparisons: [
+      'La Belle Dame Sans Merci (contrasts: beauty that reflects goodness vs. beauty that destroys)',
+      'Sonnet 43 (links: adoration of a loved one; contrasts: admiration from outside vs. love declared from within)',
+      'Valentine (contrasts: idealised, conventional praise vs. a deliberately unromantic gift)',
+    ],
+  },
+  {
+    id: 'a-complaint',
+    title: 'A Complaint',
+    poet: 'William Wordsworth',
+    date: '1807',
+    context:
+      "Wordsworth (1770-1850), a leading Romantic poet, wrote this poem in 1806 and published it in Poems, in Two Volumes (1807). It is usually read as being about the cooling of his close friendship with Samuel Taylor Coleridge, with whom he had published Lyrical Ballads in 1798. A complaint was a traditional kind of poem lamenting lost love or misfortune; here the lost love is a friend's.",
+    summary:
+      "The speaker says that a change has made him poor. His friend's love was once like a fountain at the door of his heart, flowing freely without thought of its own generosity or of his need. Now he has only a hidden, comfortless well: the love may still be deep and never dry, but it is silent and out of sight, and he can no longer reach it.",
+    formAndStructure:
+      'Three six-line stanzas rhyming ABABCC, in iambic tetrameter, so each stanza ends on a couplet that works like a conclusion. The poem is built on one extended metaphor that changes as it goes, from a flowing fountain to a still, hidden well. Its circular structure returns at the end to the change and the poverty of the first line, so the speaker finishes where he began.',
+    quotes: [
+      {
+        text: 'There is a change',
+        technique: 'Blunt opening / monosyllables',
+        analysis:
+          "The poem begins with a plain statement and no explanation. The vague 'change' is never named, which suggests that it is too painful to describe, or that the speaker does not fully understand it himself. The one-syllable words give the opening a flat, numbed tone, and the line goes on to say that it has left him 'poor'.",
+      },
+      {
+        text: "A fountain at my fond heart's door, / Whose only business was to flow",
+        technique: 'Extended metaphor',
+        analysis:
+          "The friend's love was once a fountain: constant, generous and unforced, its 'only business' to flow. The alliteration of 'fountain' and 'fond' is warm, and placing the fountain at the door of the heart makes love something close at hand, freely given and easy to reach.",
+      },
+      {
+        text: 'A comfortless and hidden well',
+        technique: 'Contrast / metaphor',
+        analysis:
+          "The fountain has become a well: still, enclosed and out of sight. 'Comfortless' and 'hidden' mark the loss of warmth and openness. The speaker does not say that the love has gone, only that he can no longer see or reach it, which is perhaps more painful.",
+      },
+      {
+        text: 'if the waters sleep / In silence and obscurity',
+        technique: 'Personification / sibilance',
+        analysis:
+          "Even if the love is deep, 'the waters sleep'. The sibilance hushes the line, and 'obscurity' suggests something not only hidden but neglected. The speaker's question just before it, 'What matter?', shows that a love which is never expressed is, to him, as good as lost.",
+      },
+    ],
+    themes: ['Loss of love', 'Friendship', 'Change', 'Emotional poverty', 'Nature as metaphor'],
+    comparisons: [
+      'Neutral Tones (links: love that has changed and gone cold; contrasts: quiet regret vs. bitterness)',
+      'One Flesh (links: love that persists but is no longer expressed)',
+      'My Father Would Not Show Us (links: a loved one who withdraws and hides their feelings)',
     ],
   },
   {
@@ -169,566 +272,199 @@ const POEMS: Poem[] = [
     themes: ['Loss of love', 'Memory and pain', "Nature's indifference", 'Deception', 'Pessimism'],
     comparisons: [
       "Sonnet 43 (contrasts: love's death vs. eternal devotion)",
-      'Winter Swans (contrasts: nature reflecting breakdown vs. reconciliation)',
+      'A Complaint (links: love that has changed and gone cold; contrasts: bitterness vs. quiet regret)',
       'One Flesh (links: love that has lost its vitality)',
     ],
   },
   {
-    id: 'letters-from-yorkshire',
-    title: 'Letters from Yorkshire',
-    poet: 'Maura Dooley',
-    date: '2002',
-    // Poem in copyright. Until 26 September 2026 all four key quotations here
-    // were invented or corrupted: none of them is in the poem. Rewritten from
-    // the text AQA prints in its 8702/2 specimen paper, and cut to short
-    // phrases within fair dealing. Line numbers count the poem's 15 lines.
+    id: 'sonnet-43',
+    title: 'Sonnet 43',
+    poet: 'Elizabeth Barrett Browning',
+    date: '1850',
     context:
-      'A contemporary poem about two people living different lives: one works the land in rural Yorkshire, the other, the speaker, works with news and words far away. Dooley examines how meaningful connection can be maintained across distance through letters and shared understanding. The poem resists categorisation as purely romantic: the speaker says plainly in line 5 that this is not a romance, and the relationship could be familial or platonic.',
+      "Written during Barrett Browning's secret courtship with Robert Browning. She was a semi-invalid controlled by her domineering father, making her declaration of love both radical and deeply personal. Part of the Sonnets from the Portuguese sequence.",
     summary:
-      "The speaker receives letters from a man in Yorkshire who writes about the seasons, nature and rural life: planting potatoes in February, seeing the lapwings come back. The speaker contrasts their own screen-based work with the correspondent's physical, outdoor existence. Despite the distance and different lifestyles, the letters create a powerful emotional connection that transcends geography.",
+      'The speaker attempts to quantify and catalogue the ways she loves her partner. She moves from abstract, spiritual love to the everyday and physical, before concluding that her love will only grow stronger after death. The poem is an unrestrained, sincere celebration of romantic devotion.',
     formAndStructure:
-      "Five three-line stanzas in free verse with no rhyme scheme, reflecting the informal, conversational tone of correspondence. The tercets create a neat, letter-like compactness, but three of the sentences run on across a stanza break, as the letters carry on across the distance. The poem opens in the past tense with the news the letter brings, then moves into the present for the speaker's reflection. The lack of quotation marks blurs the boundary between the correspondent's words and the speaker's thoughts, suggesting deep empathy.",
+      "Petrarchan sonnet with 14 lines of iambic pentameter. The ABBA ABBA rhyme scheme in the octave creates a sense of completeness and certainty. The anaphoric repetition of 'I love thee' structures each new dimension of love. The sestet shifts to encompass past griefs and childhood faith, suggesting love redeems suffering. No volta disrupts the argument, reflecting unwavering devotion.",
     quotes: [
       {
-        text: 'his knuckles singing',
-        technique: 'Personification / enjambment',
+        text: 'How do I love thee? Let me count the ways',
+        technique: 'Rhetorical question / anaphora',
         analysis:
-          'His hands, raw from digging in the cold, are said to sing as they warm up indoors, which turns physical discomfort into joy at the thought of writing. The stanza break after line 3 holds the word in the air for a moment before the sentence continues, as the letter itself carries his feeling across the distance.',
+          "The opening rhetorical question suggests love is so vast it must be systematically catalogued. The verb 'count' implies an attempt to rationalise an irrational emotion, establishing the poem's central tension between measurement and boundlessness.",
       },
       {
-        text: 'heartful of headlines',
-        technique: 'Neologism / alliteration',
+        text: 'I love thee to the depth and breadth and height / My soul can reach',
+        technique: 'Spatial metaphor / tricolon',
         analysis:
-          "'Heartful' is coined on the pattern of handful, so the speaker holds the news the way the correspondent holds soil or seed. The alliteration ties heart to headlines: the speaker's feelings are crowded with other people's stories, which sets an indoor, second-hand world against his first-hand one.",
+          "The tricolon of abstract dimensions creates a three-dimensional space for love, suggesting it fills every possible direction. The enjambment into 'My soul can reach' elevates the love from physical to spiritual, implying it extends beyond the material world.",
       },
       {
-        text: 'dig and sow',
-        technique: 'Rhetorical question / monosyllabic verbs',
+        text: 'I love thee freely, as men strive for Right',
+        technique: 'Simile / abstract noun',
         analysis:
-          "Line 9 asks outright whether the correspondent's life is more real because of this physical work. The two plain verbs stand for a life rooted in the land, set against the speaker's work with words on a screen (line 8). The next stanza imagines him shrugging the idea off, and the turn at 'Still' (line 11) insists that it is he who keeps writing, whatever the weather.",
+          "Comparing love to the pursuit of moral justice ('Right') elevates it from personal emotion to a universal, noble cause. The capitalised 'Right' suggests a quasi-religious devotion, free from obligation or coercion.",
       },
       {
-        text: 'our souls tap out messages',
-        technique: 'Metaphor / final image',
+        text: 'I shall but love thee better after death',
+        technique: 'Declarative / hyperbole',
         analysis:
-          "The final line imagines the two of them signalling to each other like operators of a telegraph or Morse code, across the 'icy miles' between them. Souls, not letters, do the communicating, so the connection has become spiritual rather than practical. Both following the same news at night, each in their own home (line 14), joins their different lives in one shared moment.",
+          'The final line transcends mortality, asserting that love will intensify beyond the grave. This echoes the Victorian Christian belief in the afterlife while also functioning as a bold, almost defiant, closing statement of eternal commitment.',
       },
     ],
-    themes: [
-      'Connection across distance',
-      'Nature and rural life',
-      'Communication',
-      'Different ways of living',
-      'Enduring bonds',
-    ],
+    themes: ['Romantic love', 'Devotion', 'Spirituality', 'Intensity of emotion'],
     comparisons: [
-      'Walking Away (links: love expressed through separation and distance)',
-      'Follower (links: admiration for someone with a different, more physical life)',
-      'Eden Rock (links: connection across a divide)',
+      'La Belle Dame Sans Merci (contrasts: destructive vs. life-affirming love)',
+      "Neutral Tones (contrasts: love's death vs. love's transcendence)",
+      'One Flesh (contrasts: passionate declaration vs. love fading with time)',
     ],
   },
   {
-    id: 'the-farmers-bride',
-    title: "The Farmer's Bride",
-    poet: 'Charlotte Mew',
-    date: '1912',
+    id: 'my-last-duchess',
+    title: 'My Last Duchess',
+    poet: 'Robert Browning',
+    date: '1842',
     context:
-      "Written in the early 20th century when women had few legal rights in marriage. Mew explores the power imbalance in a rural marriage through the farmer's dramatic monologue. Mew herself lived as a closeted lesbian in repressive Victorian/Edwardian society, which may inform the poem's exploration of desire, isolation, and miscommunication between genders.",
+      "Based on the historical Duke Alfonso II of Ferrara, whose first wife Lucrezia de' Medici died in suspicious circumstances in 1561, aged 16. Browning pioneered the dramatic monologue, in which a speaker inadvertently reveals their true character. The poem is set during negotiations for the Duke's next marriage, adding chilling dramatic irony as he discusses how he dealt with his previous wife.",
     summary:
-      "A farmer narrates the story of his young bride who, after their marriage, became terrified of him and ran away. The village men caught her 'like a hare' and brought her back. She now lives in the house but avoids all contact with him, sleeping alone. The farmer's monologue reveals his growing frustration and desire, culminating in a disturbing final stanza.",
+      "The Duke shows a visitor (an envoy negotiating his next marriage) a portrait of his late wife, hidden behind a curtain that only he controls. He complains that the Duchess smiled too easily and equally at everyone, treating his 'nine-hundred-years-old name' as no more special than a sunset or a gift of cherries. He implies he had her killed ('I gave commands; then all smiles stopped together') before smoothly returning to the marriage negotiation.",
     formAndStructure:
-      "Dramatic monologue in irregular stanzas with varying line lengths, reflecting the farmer's agitated, unstable emotional state. The rhyme scheme is loose and shifts, mirroring his loss of control. The poem moves chronologically from marriage to the present, with the stanzas growing shorter and more urgent towards the end, building tension. The dialect voice ('maid', 'We caught her') grounds the poem in rural realism.",
-    // Checked on 26 September 2026 against AQA's anthology. The third
-    // quotation opened with a capital the poem does not have: it starts
-    // mid-line.
+      "Dramatic monologue in rhyming couplets (heroic couplets) of iambic pentameter. The couplets create a sense of the Duke's controlled, authoritative speech, yet the heavy enjambment fights against the rhyme, suggesting emotions (jealousy, rage) that strain against his polished surface. The single, unbroken stanza mirrors the Duke's desire for total control -- he will not allow even a stanza break to interrupt his narrative.",
+    // Checked on 26 September 2026 against Pearson's anthology, which prints
+    // 'duchess' in the first line in lower case. Two analyses put words in
+    // quotation marks that the poem does not use ('crime', 'tames').
     quotes: [
       {
-        text: 'We caught her, fetched her home at last / And turned the key upon her, fast',
-        technique: 'Possessive language / plosive sounds',
+        text: "That's my last duchess painted on the wall, / Looking as if she were alive",
+        technique: 'Possessive pronoun / dramatic irony',
         analysis:
-          "The collective 'We' implicates the entire community in her captivity. 'Caught' and 'fetched' are verbs used for animals, dehumanising her. The plosive 't' sounds in 'caught', 'fetched', 'turned', 'fast' create a harsh, violent rhythm that mirrors the physical force used against her.",
+          "The possessive 'my' immediately establishes ownership. 'Last' is chillingly casual, implying a series. 'Looking as if she were alive' is deeply ironic, as the reader gradually understands that she is dead, likely at his command. The portrait is the only form in which he can fully control her.",
       },
       {
-        text: "Like the shut of a winter's day",
-        technique: 'Simile / seasonal imagery',
+        text: 'She had / A heart–how shall I say?–too soon made glad',
+        technique: 'Caesura / feigned hesitation',
         analysis:
-          "Her withdrawal is compared to the abrupt darkness of a winter afternoon -- sudden, cold, and final. The simile conveys the farmer's incomprehension; her retreat is as natural and inevitable as a season changing, yet he cannot understand it.",
+          'The dashes create a false pause, as though the Duke is searching for the right words, but his speech is actually carefully calculated. Her only offence, being too easily pleased, reveals his pathological jealousy. He wants her joy to be exclusively his, and her inability to comply was, in his view, punishable by death.',
       },
       {
-        text: 'her eyes, her hair, her hair!',
-        technique: 'Repetition / exclamatory',
+        text: 'I gave commands; / Then all smiles stopped together',
+        technique: 'Euphemism / caesura',
         analysis:
-          "The obsessive repetition and exclamation mark reveal the farmer's desire spiralling out of control. He fragments her into body parts, objectifying her. The repetition of 'her hair' suggests fixation that borders on the predatory, making the ending deeply unsettling.",
+          "This is the poem's most chilling moment. The vague 'commands' and the abrupt 'stopped' strongly imply murder, but the Duke's refusal to say it directly shows his ability to commit violence while maintaining social decorum. The semicolon creates a cold, efficient pause between order and outcome.",
       },
       {
-        text: 'Not near, not near!',
-        technique: 'Repetition / negative construction',
+        text: 'Notice Neptune, though, / Taming a sea-horse, thought a rarity',
+        technique: 'Classical allusion / symbolism',
         analysis:
-          "This could be read as the bride's plea to keep distance, or the farmer restraining himself. The ambiguity heightens tension. The short, emphatic phrasing contrasts with the longer descriptive lines, marking a moment of crisis.",
+          "The Duke identifies with Neptune, god of the sea, shown in bronze taming a sea-horse. This reveals his self-image: a powerful figure who masters those beneath him. The seahorse (the next Duchess?) is something to be controlled and displayed, like the portrait. 'Rarity' shows his view of people as collectible objects.",
       },
     ],
     themes: [
       'Power and control',
-      'Gender and marriage',
-      'Desire and obsession',
-      'Isolation',
-      'Fear',
+      'Jealousy and possession',
+      'Art and objectification',
+      'Status and pride',
+      'Gender and patriarchy',
     ],
     comparisons: [
-      'My Last Duchess (links: male control and possession of women)',
-      'La Belle Dame Sans Merci (contrasts: who holds power in the relationship)',
-      'Singh Song! (contrasts: joyful mutual love vs. one-sided desire)',
+      'The Manhunt (contrasts: a husband who destroys his wife vs. a wife who patiently heals her husband)',
+      'La Belle Dame Sans Merci (contrasts: male powerlessness vs. male tyranny)',
+      'Sonnet 43 (contrasts: controlling love vs. generous, selfless love)',
     ],
   },
   {
-    id: 'walking-away',
-    title: 'Walking Away',
-    poet: 'C. Day-Lewis',
-    date: '1956',
-    // Poem in copyright. Until 26 September 2026 one quotation here was
-    // corrupted (a phrase the poem does not contain), the context said the poem
-    // was published in 1956 and that Sean was 18 and starting boarding school,
-    // and the form note claimed iambic pentameter and a final couplet. Checked
-    // against the text AQA prints in its June 2020 8702/2 paper, and cut to
-    // short phrases within fair dealing. Line numbers count the poem's 20 lines.
+    id: '1st-date',
+    title: '1st Date - She and 1st Date - He',
+    poet: 'Wendy Cope',
+    date: '2011',
     context:
-      "Written in 1956 and collected in The Gate and Other Poems (1962). The poem is addressed to the poet's eldest son, Sean Day-Lewis (born 1931, later a journalist), and looks back eighteen years to watching Sean, then a small boy, play his first game of football at school. (Note: this is NOT Daniel Day-Lewis the actor - Daniel was the poet's youngest son, born in 1957, after the poem was written.) C. Day-Lewis was UK Poet Laureate from 1968 until his death in 1972. The poem explores the universal parental experience of letting go.",
+      "Wendy Cope (born 1945) is known for witty, accessible poems about love and everyday life, often in strict traditional forms. These two companion poems, from Family Values (2011), present the same first date at a classical concert from each person's point of view. The humour depends on dramatic irony: the reader can see what neither character can.",
     summary:
-      "The speaker recalls watching his young son play his first game of football and then walk away towards the school, eighteen years earlier. The boy's hesitant walk fills the father with anxiety and grief. The poem moves from this specific memory to a broader meditation on how love requires the painful act of letting someone become independent.",
+      'In the first poem the woman admits that she exaggerated her love of classical music to impress the man. She worries about how she looks, and tries hard to listen so she will have something clever to say, while he seems absorbed in the music. In the second, the man admits that he exaggerated his interest too, arrived late and feels nervous; he believes she is lost in the music and worries that she is too good for him. Each thinks the other is enjoying the concert, and both are pretending.',
     formAndStructure:
-      "Four five-line stanzas rhyming ABACA, with full rhymes on the first, third and fifth lines of each. The regular structure reflects the father's attempt to contain and understand his emotion through careful retrospection. The poem moves from specific memory (stanza 1) through natural imagery (stanzas 2 and 3) to philosophical conclusion (stanza 4). The lines are long and uneven rather than strict iambic pentameter, and the first sentence runs on across the break between stanzas 1 and 2, giving a measured, conversational pace suited to looking back over eighteen years.",
+      'Two poems of five quatrains each, rhyming on the second and fourth lines, with a light, regular rhythm that suits the comedy. The structures mirror each other, and both contain an almost identical line in which each sees the other as absorbed in the music and indifferent to them. Reading the two private monologues side by side creates the dramatic irony.',
     quotes: [
       {
-        text: 'Wrenched from its orbit',
-        technique: 'Simile / enjambment',
+        text: "It wasn't exactly a lie",
+        technique: 'Understatement / confession',
         analysis:
-          "The father compares his son to a satellite leaving the pull of the planet it circles, the parent. 'Wrenched' implies violent, painful separation, and the drift that follows suggests the child's vulnerability once detached. The simile begins at the end of line 4 and runs into line 5, so the line break enacts the slow, inevitable process of moving apart.",
+          "The woman's first admission uses understatement to excuse herself: the claim was not 'exactly' a lie. The colloquial, self-mocking tone draws the reader into her confidence, and shows how both characters begin the relationship by performing a version of themselves.",
       },
       {
-        text: 'half-fledged thing',
-        technique: 'Metaphor / natural imagery',
+        text: 'That my brow was acceptably high',
+        technique: 'Humour / idiom',
         analysis:
-          "The image of a young bird whose feathers have only half grown acknowledges the child is not yet fully ready to fly, but must still be released. The 'wilderness' he walks into (line 9) transforms the familiar school grounds into something vast and threatening from the parent's perspective, revealing the father's protective anxiety.",
+          "She hopes to seem highbrow, and turns the idiom into a joke about her own forehead. 'Acceptably' reveals her anxiety: she wants to be cultured enough to pass, rather than to be herself.",
       },
       {
-        text: 'love is proved in the letting go',
-        technique: 'Epigram / paradox',
+        text: 'And quite undistracted by me',
+        technique: 'Parallelism / dramatic irony',
         analysis:
-          "The last two lines (19 and 20) crystallise the poem's meaning: 'selfhood', a child's own identity, begins with separation, and true love is demonstrated not by holding on but by releasing. The paradox challenges possessive love, redefining it as an act of generosity and sacrifice.",
+          "Both poems contain this line. Each character is so busy appearing interested in the music that each misreads the other's concentration as indifference. The repetition across the two poems is the joke and also the pathos: they are closer than either realises.",
       },
       {
-        text: 'I can see',
-        technique: 'Present tense / direct address',
+        text: 'Perhaps she is out of my league',
+        technique: 'Insecurity / colloquial language',
         analysis:
-          "After the first stanza's memory, told in the past tense, the shift into the present at line 6 makes the eighteen-year-old memory feel immediate and vivid, showing how the moment has imprinted itself permanently on the father. Addressing the son directly in the first two stanzas creates intimacy, as though speaking to him now as an adult.",
+          "The man's anxiety mirrors the woman's. The sporting idiom is casual, but 'out of my league' exposes his fear of not being good enough, the same fear that made her pretend to love classical music.",
       },
     ],
-    themes: ['Parental love', 'Letting go', 'Memory', 'Growing up', 'Identity and independence'],
+    themes: ['New love', 'Insecurity', 'Pretence and performance', 'Communication', 'Humour'],
     comparisons: [
-      'Follower (links: parent-child relationship, roles reversing over time)',
-      'Eden Rock (links: separation between parent and child)',
-      'Mother Any Distance (links: letting go and independence)',
+      'i wanna be yours (links: modern, humorous love poems; contrasts: hesitant new love vs. open devotion)',
+      "Love's Dog (links: the mixed feelings and anxieties of love)",
+      'Valentine (links: honesty in love; contrasts: pretending vs. insisting on the truth)',
     ],
   },
   {
-    id: 'eden-rock',
-    title: 'Eden Rock',
-    poet: 'Charles Causley',
-    date: '1988',
-    // Poem in copyright. Until 26 September 2026 this entry quoted about twice
-    // what fair dealing allows, and called the poem four stanzas of free verse:
-    // it is six stanzas, loosely rhymed. Checked against the Poetry Archive's
-    // text, printed there by permission of the Causley estate. Line numbers
-    // count the poem's 20 lines.
-    context:
-      "Causley wrote this poem late in life, after both his parents had died; his father died in 1924, when Causley was seven, of injuries from the First World War. The poem imagines a reunion with them in an idealised landscape. Causley never married and remained deeply attached to his mother. Eden Rock is an invented threshold place: Causley is reported as saying that he made it up. Some interpretations link the name to the biblical Eden and to Causley's Cornish landscape, but the place itself is fictional.",
-    summary:
-      "The speaker envisions his dead parents at Eden Rock, presented in vivid, specific domestic detail: his mother's hair, the Thermos, the tablecloth. They are young, as the speaker remembers them from childhood. They beckon him to cross a stream to join them, and the poem ends with an ambiguous single line (line 20), suggesting the crossing represents death.",
-    formAndStructure:
-      'Twenty lines in six stanzas: four quatrains, a tercet and a single final line. It is not free verse: the lines are long and fairly even, and the quatrains are loosely rhymed, mostly with half-rhymes, which gives a conversational, unhurried rhythm. The precise domestic details create a realist surface that gradually reveals itself as visionary or supernatural. The present tense makes the vision feel immediate and real. The final single-line stanza stands alone, creating a pause that mirrors the threshold moment of crossing.',
-    quotes: [
-      {
-        text: 'the colour of wheat',
-        technique: 'Natural imagery / sensory detail',
-        analysis:
-          "The specific comparison anchors the mother in the speaker's memory with photographic clarity and links her to harvest and summer. In the same line (line 8) her hair catches and holds the light, giving her an almost luminous, angelic quality that subtly hints this is a vision of the afterlife rather than a plain memory.",
-      },
-      {
-        text: 'lit by three suns',
-        technique: 'Simile / intensifying imagery',
-        analysis:
-          'The strange, bleached brightness of the sky in line 13 creates an otherworldly, supernatural light that moves the poem from realism into vision. Three may suggest the Holy Trinity, or the family of three, echoing the three plates set out in line 12. The whitening could represent the approach of death or spiritual transcendence, transforming the ordinary picnic scene into something sacred.',
-      },
-      {
-        text: 'My father, twenty-five',
-        technique: 'Precise detail / age specification',
-        analysis:
-          "Specifying the father's age as twenty-five emphasises that the speaker remembers (or imagines) his parents as younger than he is now, reversing the natural order. The unchanged suit he wears in line 2 grounds the vision in authenticity, as though memory has preserved every detail.",
-      },
-      {
-        text: 'I had not thought that it would be like this',
-        technique: 'Understatement / ambiguity',
-        analysis:
-          "The understated final line carries enormous weight. 'This' is deliberately vague: death, reunion, peace? The calm, almost conversational surprise contrasts with the enormity of the 'crossing' the parents invite him to in line 19, suggesting death is not frightening but gently surprising.",
-      },
-    ],
-    themes: [
-      'Memory and loss',
-      'Death and afterlife',
-      'Parental love',
-      'Nostalgia',
-      'Crossing thresholds',
-    ],
-    comparisons: [
-      'Walking Away (links: parent-child bond, separation)',
-      'Follower (links: memory of a parent, changing perspective with age)',
-      'Before You Were Mine (links: imagining a parent in the past)',
-    ],
-  },
-  {
-    id: 'follower',
-    title: 'Follower',
-    poet: 'Seamus Heaney',
-    date: '1966',
-    context:
-      "Heaney grew up on a farm in rural Northern Ireland. His father, Patrick Heaney, was a cattle dealer and farmer. This poem is from Heaney's first collection, Death of a Naturalist, which frequently explores his rural childhood and his complex relationship with his father's world of physical labour, which Heaney left behind to become a poet.",
-    summary:
-      "The speaker recalls following his father as he ploughed the fields, admiring his skill and physical mastery. The child stumbled in his father's wake, wanting to be like him but always falling behind. The final stanza reverses the relationship: now the aged father follows the adult son, stumbling and dependent. The poem captures the bittersweet reversal of parent-child roles.",
-    // Poem in copyright. Until 26 September 2026 this entry quoted twice what
-    // fair dealing allows, misspelt the poem's hyphenated compound in line 13,
-    // called a two-word sentence a single word and quoted a verb form the poem
-    // does not use. Checked against the text AQA prints in its 8702/2 specimen
-    // paper, and cut to short phrases. Line numbers count the poem's 24 lines.
-    // The fourth analysis then put the present tense in line 22: that line
-    // only ends on the turn, and the quoted verb is in line 23.
-    formAndStructure:
-      "Six quatrains rhyming ABAB, mixing full rhymes with half-rhymes. The regular, four-line stanzas mirror the neat furrows of the ploughed field. The poem is tightly controlled, reflecting the father's precision at work. The final stanza's tonal shift disrupts the admiring tone, creating a sense of guilt and unease. Monosyllabic, Anglo-Saxon diction dominates, grounding the poem in the physicality of farm life.",
-    quotes: [
-      {
-        text: 'globed like a full sail',
-        technique: 'Simile / visual imagery',
-        analysis:
-          "The father's shoulders are compared to a ship's sail filled with wind, suggesting power, control, and forward motion. 'Globed' is an unusual, precise verb that conveys the rounded, muscular bulk of a working man. The nautical imagery elevates manual labour to something heroic and skilful.",
-      },
-      {
-        text: 'An expert.',
-        technique: 'Minor sentence / technical lexis',
-        analysis:
-          "The two-word sentence that opens the second stanza (line 5) is emphatic and definitive. The technical ploughing vocabulary ('wing', 'sock', 'headrig') demonstrates the father's specialist knowledge and the son's admiration for it. The sentence that runs on from the second stanza into the third (lines 8 to 9) mirrors the continuous forward motion of ploughing.",
-      },
-      {
-        text: 'hob-nailed wake',
-        technique: 'Metaphor / tactile imagery',
-        analysis:
-          "The phrase blends the heavy, studded boots with a nautical metaphor (a ship's wake), continuing the sailing imagery of the first stanza. 'Stumbled' captures the child's clumsiness and the gap between aspiration and ability. The father's path is literally imprinted in the earth.",
-      },
-      {
-        text: 'keeps stumbling',
-        technique: 'Role reversal / present tense shift',
-        analysis:
-          "The turn at the end of line 22 into the present tense of line 23 is sudden and jarring. The father is now the one who stumbles, the verb the child used of himself in line 13, completing the reversal. The closing words, 'will not go away', are ambiguous: affectionate exasperation, guilt at finding a dependent parent burdensome, or the persistence of memory.",
-      },
-    ],
-    themes: [
-      'Admiration and hero-worship',
-      'Parent-child relationships',
-      'Role reversal',
-      'Rural life and labour',
-      'Guilt and responsibility',
-    ],
-    comparisons: [
-      'Walking Away (links: parent watching child, but reversed perspective)',
-      'Climbing My Grandfather (links: physical admiration of a male relative)',
-      'Mother Any Distance (links: child separating from a parent)',
-    ],
-  },
-  {
-    id: 'mother-any-distance',
-    title: 'Mother, any distance',
-    poet: 'Simon Armitage',
-    date: '1993',
-    // Checked against AQA's published anthology (AQA-8702-TG-POEMS.PDF) on 26
-    // September 2026. The second quotation had been corrupted into words the
-    // poem does not contain, the form note gave the wrong line count, and the
-    // summary put a window where the poem has a hatch. The poem is in
-    // copyright, so quotations are cut to the short phrases the analysis
-    // discusses, and other lines are cited by number.
-    context:
-      "From Armitage's collection Book of Matches (1993), whose opening sequence of short, sonnet-like poems is meant to be read in about the time a struck match takes to burn. Armitage is a Yorkshire poet known for conversational, accessible verse. The poem captures a young adult measuring the rooms of a new house with his mother's help, using this domestic task as a metaphor for leaving home.",
-    summary:
-      "The speaker's mother helps him measure the rooms of his new home. She holds the end of the tape measure while he moves away from her, the tape unwinding between them like an umbilical cord. He climbs the ladder into the loft, where the tape is stretched as far as it will go, and reaches towards a hatch that opens on to the sky. The poem ends on an unresolved choice between falling and flying.",
-    formAndStructure:
-      "Loosely based on the sonnet form: fifteen lines, one more than a sonnet, in three stanzas of four, four and seven lines. The extra line and the lengthening final stanza stretch the form, as the tape and the parent-child bond are stretched. The poem moves vertically through the house (ground floor to loft to sky), mirroring the child's upward path towards independence. A sonnet-like shape suits a love poem, but its irregularity suggests a relationship growing beyond its old shape. Rhyme comes and goes, as in lines 3 and 4, and the poem closes on a full rhyme between its last two lines.",
-    quotes: [
-      {
-        text: 'a second pair of hands',
-        technique: 'Direct address / double meaning',
-        analysis:
-          'The poem opens by addressing the mother directly, establishing intimacy. The distance of the title is both literal (a length to be measured) and metaphorical (any stage of life beyond childhood). Asking for her help acknowledges that the son still depends on her, while the practical, matter-of-fact tone underplays the emotional weight.',
-      },
-      {
-        text: 'feeding out, unreeling',
-        technique: 'Extended metaphor / enjambment',
-        analysis:
-          "The tape measure becomes an umbilical cord, still paying out between mother and son as he climbs the stairs. 'Unreeling' also suggests a film or a cassette spooling out, and the enjambment that carries it over to the years at the start of line 8 condenses a lifetime of gradual separation into one extending tape. The same wordplay runs through line 5, where 'recording' at the line end turns the tape measure briefly into a recording tape that stores memories.",
-      },
-      {
-        text: 'Anchor. Kite.',
-        technique: 'Minor sentences / contrast',
-        analysis:
-          'Two one-word sentences distil the poem into a binary: the mother is the anchor (stability, grounding, weight) and the son is the kite (freedom, flight, risk). Yet an anchor and a kite are both held by a line, so the image also insists that the two are still connected. The full stops separate the words on the page, enacting the distance between parent and child.',
-      },
-      {
-        text: 'fall or fly',
-        technique: 'Alliteration / ambiguity',
-        analysis:
-          'The alliterative pairing in the final line balances two outcomes of independence: failure or success. The poem refuses to choose, capturing the real uncertainty of leaving home, and the open hatch the speaker reaches towards in line 14 leaves the ending literally open.',
-      },
-    ],
-    themes: [
-      'Growing up and independence',
-      'Parental love',
-      'Letting go',
-      'Risk and freedom',
-      'Home',
-    ],
-    comparisons: [
-      'Walking Away (links: parent letting child go, love proved in separation)',
-      'Follower (links: changing parent-child dynamic over time)',
-      "Before You Were Mine (links: the child's perspective on the parent)",
-    ],
-  },
-  {
-    id: 'before-you-were-mine',
-    title: 'Before You Were Mine',
+    id: 'valentine',
+    title: 'Valentine',
     poet: 'Carol Ann Duffy',
     date: '1993',
     context:
-      "Duffy imagines her mother's life as a young woman in 1950s Glasgow before motherhood transformed her. Duffy was the first female and first openly LGBT Poet Laureate. The poem is characteristic of her interest in voice, identity, and the gap between how we imagine others and who they truly are.",
+      "Carol Ann Duffy (born 1955) was the UK's Poet Laureate from 2009 to 2019, the first woman to hold the role. Valentine comes from her collection Mean Time (1993). It rejects the clichés of Valentine's Day, the red rose and the card, and offers instead an ordinary onion as a more honest image of what love is like.",
     summary:
-      "The speaker addresses her mother, imagining her as a glamorous, carefree young woman laughing with friends on a street corner in the decade before the speaker was born. She envisions her mother dancing, wearing high heels, and living with a boldness that motherhood later constrained. The poem's possessive title reveals that the speaker claims ownership over even the time before her existence.",
+      "The speaker gives a lover an onion instead of a traditional Valentine's gift, and explains why. Like love, it offers light and beauty but also brings tears; its taste lasts; its rings could make a wedding ring; and it can be dangerous. The poem insists on truthfulness rather than romance, and ends on a disturbing hint of possessiveness and violence.",
     formAndStructure:
-      "Four five-line stanzas with no regular rhyme scheme. Each stanza is anchored in a specific decade or image, giving the poem a cinematic, snapshot quality. The direct address ('you') sustains an intimate, conversational tone. The present tense used for past events makes the mother's youth feel vivid and immediate, as though the speaker is watching it happen.",
-    // Poem in copyright. Checked on 26 September 2026 against the text AQA
-    // prints in its published anthology (AQA-8702-TG-POEMS.PDF). The third
-    // quotation had a line break the poem does not have; the fourth ran over
-    // three of the poem's lines with its break in the wrong place, and is cut
-    // to the one-line phrase the analysis discusses. The summary put the
-    // friends' laughter on George Square, which the poem does not. Line
-    // numbers count the poem's 20 lines.
-    //
-    // The four were then cut again, because they still took about 40
-    // distinct words of a poem AQA prints at 209, over the 15 per cent share
-    // (31 words). The fair-dealing test passed the page because POEM_WORDS in
-    // src/__tests__/helpers/poets.ts records this poem as 375 words. Keep each
-    // quotation to the phrase its analysis discusses.
+      "Free verse in stanzas of uneven length, several of them a single line or a single word. The short, abrupt lines read like the speaker's statements and commands as the gift is handed over. One extended metaphor, the onion, runs through the whole poem, and the poem's rejection of regular form matches its rejection of conventional romance.",
     quotes: [
       {
-        text: "I'm not here yet",
-        technique: 'Dramatic irony / self-awareness',
+        text: 'I give you an onion.',
+        technique: 'Bathos / direct address',
         analysis:
-          "The speaker acknowledges her own absence from the scene she is describing, creating a poignant temporal irony, and in the same line (line 6) adds that her mother has not yet even imagined her. The blunt 'doesn't occur' suggests the mother's life was complete and joyful without her child, subtly challenging the assumption that motherhood is a woman's ultimate fulfilment.",
+          'After rejecting the usual romantic gifts, the speaker offers something deliberately unromantic. The plain sentence is almost comic, but it challenges the reader to look at love differently: the onion is ordinary, layered and real.',
       },
       {
-        text: 'polka-dot dress',
-        technique: 'Allusion / visual imagery',
+        text: 'a moon wrapped in brown paper',
+        technique: 'Metaphor',
         analysis:
-          "The dress blowing round the mother's legs in line 5 is followed by the single-word sentence 'Marilyn', an allusion to Marilyn Monroe over the subway grate in The Seven Year Itch. It glamorises the mother, casting her as a film star, and the name set down as a sentence on its own is emphatic and idolising, showing the daughter's awe at her mother's former allure.",
+          "The onion becomes something beautiful and mysterious, a 'moon', while 'brown paper' keeps it humble. The image suggests that love's beauty is hidden beneath a plain surface and has to be uncovered, like a present.",
       },
       {
-        text: 'my loud, possessive yell',
-        technique: 'Colloquial register / possessive language',
+        text: 'Lethal.',
+        technique: 'One-word line / ambiguity',
         analysis:
-          "The speaker openly admits her birth was a 'possessive yell' that claimed the mother. In the same line (line 11) she calls the decade before it 'the best one', acknowledging that motherhood diminished her freedom. The colloquial 'eh?' that closes the line seeks confirmation while also expressing guilt about what was sacrificed.",
+          'A single word stands alone as a stanza, and its meaning is unsettling: love, like the strength of the onion, can overwhelm and harm. The abrupt line breaks the romantic mood that the wedding-ring image has just built.',
       },
       {
-        text: 'the bold girl',
-        technique: 'Temporal paradox / possessive tone',
+        text: 'cling to your knife',
+        technique: 'Final image / violent imagery',
         analysis:
-          "The speaker claims to have wanted her mother 'even then' (line 17), before she existed, creating an impossible, possessive longing. 'Bold girl' celebrates the mother's confidence and daring, qualities the speaker fears she may have extinguished by being born.",
+          "The poem ends with a smell that will not wash off and a 'knife' in the lover's hand. The knife belongs to the kitchen, but as the last word it leaves a hint of danger and possessiveness, suggesting that love can be painful and hard to escape.",
       },
     ],
     themes: [
-      'Parent-child relationships',
-      'Nostalgia and the past',
-      'Identity and freedom',
-      'Possession',
-      'Glamour and sacrifice',
+      'Honesty in love',
+      'Rejecting cliché',
+      'Love as painful',
+      'Commitment and possession',
+      'Unconventional love',
     ],
     comparisons: [
-      'Eden Rock (links: imagining a parent in the past, before the speaker knew them)',
-      "Follower (links: admiration for a parent, seen from the child's perspective)",
-      "Walking Away (contrasts: parent's perspective vs. child's perspective)",
-    ],
-  },
-  {
-    id: 'winter-swans',
-    title: 'Winter Swans',
-    poet: 'Owen Sheers',
-    date: '2005',
-    // Checked against AQA's published anthology (AQA-8702-TG-POEMS.PDF) on 26
-    // September 2026. Two of the four quotations here were wholly or partly
-    // lines the poem does not contain, and the fourth had words inserted into
-    // it and its ending replaced. The poem is in
-    // copyright, so quotations are cut to the short phrases the analysis
-    // discusses, and the rest of the poem is described in the site's words.
-    context:
-      'Sheers is a Welsh poet whose work frequently draws on landscape and nature. This poem, from his collection Skirrid Hill (2005), uses the natural world as a lens for examining human relationships. The swans carry mythological and literary associations with love (they pair for life, and their necks form a heart shape), which Sheers both draws on and complicates.',
-    summary:
-      "A couple walks together after two days of rain, their relationship strained and silent as they skirt a lake. Swans stop them with a synchronised display, dipping their heads and bodies under the water and rising again. One partner remarks that swans 'mate for life'; the speaker does not reply. The display becomes a turning point: as they walk on, the speaker notices that their hands have found each other, and the poem ends with the joined hands pictured as a bird's wings coming to rest.",
-    formAndStructure:
-      'Six tercets followed by a final couplet. The three-line stanzas reflect the uneasy, unresolved tension between the couple, while the closing couplet (two lines together) enacts their reunion, two becoming a pair. The poem moves from separation through observation to reconnection, with the swans as the pivot point. Enjambment between stanzas, as from the third into the fourth and the sixth into the couplet, creates a flowing, continuous movement that mirrors the walk.',
-    quotes: [
-      {
-        text: 'given their all',
-        technique: 'Pathetic fallacy / double meaning',
-        analysis:
-          "The personified clouds of the opening line mirror the relationship: they have spent themselves, suggesting emotional exhaustion after conflict. In line 2 the rain stops for a 'break', which is ambiguous: a break in the clouds, or a break in the relationship. The pause in the weather hints at the renewal the poem will explore.",
-      },
-      {
-        text: 'tipping in unison',
-        technique: 'Imagery / symbolism',
-        analysis:
-          "The swans move as one, the synchronised partnership the couple have lost. As they plunge, they 'halved themselves' in the dark water (line 10), each bird half above and half below the surface, a hint that every partner in a relationship is also half of something larger. The swans then come upright again, compared in line 12 to boats recovering in a storm, modelling a partnership that survives difficulty.",
-      },
-      {
-        text: 'They mate for life',
-        technique: 'Direct speech / symbolism',
-        analysis:
-          "The only speech in the poem is given to the partner, and it sits in quotation marks in line 13 as a tentative offer of hope. The speaker's silence in reply keeps the tension alive, but the swans have become a symbol of the lasting commitment the couple are drifting from, and the remark prepares for the reconciliation of the final stanzas.",
-      },
-      {
-        text: 'swum the distance',
-        technique: 'Extended metaphor / enjambment',
-        analysis:
-          "The hands become swans themselves, having crossed the emotional distance between the couple. 'Somehow', fenced off by commas in line 17, captures the tentative, almost miraculous quality of reconciliation: it happens without either partner quite knowing how. The enjambment from line 17 into line 18 lets the movement flow across the line break, just as the hands drift together.",
-      },
-    ],
-    themes: [
-      'Reconciliation',
-      'Nature and relationships',
-      'Distance and closeness',
-      'Trust',
-      'Renewal',
-    ],
-    comparisons: [
-      "Neutral Tones (contrasts: nature reflecting reconciliation vs. love's end)",
-      'Sonnet 43 (contrasts: quiet, tentative love vs. passionate declaration)',
-      'Letters from Yorkshire (links: connection found through the natural world)',
-    ],
-  },
-  {
-    id: 'singh-song',
-    title: 'Singh Song!',
-    poet: 'Daljit Nagra',
-    date: '2007',
-    // Checked against AQA's published anthology (AQA-8702-TG-POEMS.PDF) on 26
-    // September 2026. The fourth quotation and the summary's quoted complaint
-    // were lines the poem does not contain, the second misquoted the final
-    // line, the withheld third carried analysis of an image the poem does not
-    // have, the first ran to three lines, and the couple sit on a stool in the
-    // shop, not on its roof. The poem is in copyright, so quotations are cut
-    // to short phrases.
-    context:
-      'Nagra is a British poet of Punjabi heritage, and the poem is from his first collection, Look We Have Coming to Dover! (2007). It draws on the experience of British-Indian communities, blending Punjabi-inflected English with contemporary British culture. Nagra celebrates hybrid identity and challenges stereotypes of the dutiful corner-shop worker. The exclamation mark in the title suggests joy and exuberance.',
-    summary:
-      "A young newlywed narrates his life running one of his father's corner shops while slipping upstairs to be with his new bride. The customers complain in a repeated chorus that his stock is poor and that his is the 'worst Indian shop' on the road, but the speaker is consumed by his love. The poem ends at midnight, with the couple sitting together on his stool in the empty shop, gazing out through the window at the moon, in a tender and playful scene.",
-    formAndStructure:
-      "Irregular stanzas with a loose, rhythmic structure and frequent but irregular rhyme, echoing both Punjabi oral traditions and the patter of a market seller. Italicised sections, each opening 'Hey Singh, ver yoo bin?', represent the customers' complaints and work as a refrain, creating a choral, communal voice. The non-standard English ('di', 'vee', 'dat') is not dialect transcription but a deliberate literary creation, celebrating linguistic hybridity. The playful, song-like rhythm matches the title's exclamation of joy.",
-    quotes: [
-      {
-        text: 'she effing at my mum',
-        technique: 'Humour / cultural imagery',
-        analysis:
-          "The comic image of the bride swearing at her mother-in-law 'in all di colours of Punjabi' subverts the stereotype of the obedient Asian wife. 'Colours' transforms language into something vivid and visual, celebrating its expressiveness rather than translating it for a Western audience. The stanzas that follow dress her in a 'Tartan sari', a single image of the blended British and Punjabi identity the poem celebrates.",
-      },
-      {
-        text: 'Is priceless baby',
-        technique: 'Pun / double meaning',
-        analysis:
-          "The last line of the poem ends the bargaining game the couple play each night: she asks what the moon costs, he answers that it is half what she costs, and when she asks what that comes to, he answers that the sum is beyond price. The shopkeeper's language of prices becomes a declaration of love, bridging the commercial world of the shop and the emotional world of the marriage.",
-      },
-      {
-        text: 'di brightey moon',
-        technique: 'Neologism / setting',
-        analysis:
-          "Nagra coins 'brightey', an adjective of his own, for the moon the couple watch from inside the empty shop (line 50). Looking out past the discount notices in the window of a shop on a concrete precinct, they see the beaches of Britain lit up. The invented word lets an ordinary shop at midnight become a romantic seascape, suggesting that love elevates the everyday.",
-      },
-      {
-        text: 'from di stool each night',
-        technique: 'Repetition / refrain',
-        analysis:
-          "Repeated four times in the closing exchange (lines 51, 53, 55 and 57), the phrase turns the couple's midnight talk into a nightly ritual. The alternation between what she says and what he says is a call and response, like a duet, so the poem ends as the song its title promises.",
-      },
-    ],
-    themes: [
-      'Romantic love',
-      'Cultural identity',
-      'Family duty vs. personal desire',
-      'Humour and joy',
-      'Hybrid identity',
-    ],
-    comparisons: [
-      'Sonnet 43 (links: passionate, celebratory love poetry)',
-      "The Farmer's Bride (contrasts: mutual joy vs. one-sided desire)",
-      'Before You Were Mine (links: tension between family roles and personal identity)',
-    ],
-  },
-  {
-    id: 'climbing-my-grandfather',
-    title: 'Climbing My Grandfather',
-    poet: 'Andrew Waterhouse',
-    date: '2000',
-    // Checked against AQA's published anthology (AQA-8702-TG-POEMS.PDF) and
-    // the publisher's page for In (therialto.co.uk) on 26 September 2026. Two
-    // of the four quotations here had been altered, one of them turning the
-    // poem's central oxymoron into a plain simile, and the fourth was a line
-    // the poem does not contain; the summary named body parts the poem does
-    // not mention. The poem is in copyright, so quotations are cut to short
-    // phrases.
-    context:
-      "Waterhouse (1958 to 2001), who trained in environmental science, lived in Northumberland, where he worked as a teacher and freelance writer. The poem is from his first collection, In (The Rialto, 2000), which won the Forward Prize for Best First Collection; he died the following year. It uses the extended conceit of mountain climbing to explore the physical and emotional landscape of a grandfather's body. It can be read as a childhood memory relived in the present tense, which makes the climb an act of remembrance.",
-    summary:
-      "The speaker imagines climbing their grandfather's body as though it were a mountain, starting at his shoes and working upwards. Each part of him reveals something about the grandfather's character and history: a hand stained with soil, a scar on his arm, a smiling mouth, his eyes and his white hair. The climb ends at the summit, where the speaker lies breathless, feeling the grandfather's warmth and the beat of his heart, in a profound, wordless connection.",
-    formAndStructure:
-      'A single continuous stanza of 27 lines in free verse, with no breaks or sections. The unbroken form mirrors the continuous, uninterrupted climb from foot to head. The lack of stanza breaks also suggests the intimacy of the relationship: there are no barriers or divisions. Present tense throughout creates immediacy, as though the climb is happening now, even if the grandfather is remembered.',
-    quotes: [
-      {
-        text: 'free, without a rope or net',
-        technique: 'Extended metaphor / risk imagery',
-        analysis:
-          'Climbing free means climbing without safety equipment, suggesting the speaker approaches this relationship with total vulnerability and trust: there is no emotional protection, and the speaker is willing to be fully open. The opening line announces a conceit that the poem sustains through mountaineering vocabulary, such as the traverse along the belt in line 6 and the summit in line 23.',
-      },
-      {
-        text: 'earth-stained hand',
-        technique: 'Tactile detail / characterisation',
-        analysis:
-          "The grandfather's working hands are described with realism rather than sentimentality. The stain of soil suggests manual labour, connecting him to the land and to a life of physical work, much like Heaney's father in 'Follower'. His 'splintered' nails, damaged by that work, are what give the climbing child a grip (line 8): the marks of a hard life become a support.",
-      },
-      {
-        text: 'like warm ice',
-        technique: 'Simile / oxymoron',
-        analysis:
-          'The simile is an oxymoron: ice is cold and hard, yet this ice is warm. It keeps the mountaineering conceit, a climber on an ice face, while insisting that the grandfather is alive and warm to the touch, and the smooth surface suggests skin worn by age and work. Line 9 describes the skin of his finger, and the enjambment delays the comparison to the start of line 10, so the surprise of the oxymoron lands with force.',
-      },
-      {
-        text: 'his good heart',
-        technique: 'Final image / monosyllables',
-        analysis:
-          "The climb ends not with a view from the top but with the speaker lying breathless, feeling the grandfather's heat and sensing the beat of his heart (line 27). 'Good' moves from the physical to the moral: the summit of the climb is knowledge of his kindness. The slow rhythm of the heartbeat suggests age and calm, and the ending turns the conceit from conquest into closeness.",
-      },
-    ],
-    themes: [
-      'Family bonds',
-      'Memory and physicality',
-      'Admiration',
-      'Trust and vulnerability',
-      'The body as landscape',
-    ],
-    comparisons: [
-      'Follower (links: physical admiration of a male relative, detailed bodily description)',
-      'Eden Rock (links: remembering a family member, crossing into their world)',
-      'Walking Away (contrasts: physical closeness vs. letting go)',
+      'Sonnet 43 (contrasts: a traditional declaration vs. a deliberately unromantic gift)',
+      'i wanna be yours (links: love expressed through everyday objects)',
+      'She Walks in Beauty (contrasts: idealised beauty vs. honesty about love)',
     ],
   },
   {
@@ -778,60 +514,239 @@ const POEMS: Poem[] = [
     comparisons: [
       'Sonnet 43 (contrasts: passionate young love vs. love that has faded with age)',
       'Neutral Tones (links: love that has lost its vitality and warmth)',
-      'Winter Swans (contrasts: reconnection vs. quiet, resigned distance)',
+      'The Manhunt (contrasts: a couple drifting apart vs. a couple slowly coming close)',
     ],
   },
   {
-    id: 'my-last-duchess',
-    title: 'My Last Duchess',
-    poet: 'Robert Browning',
-    date: '1842',
+    id: 'i-wanna-be-yours',
+    title: 'i wanna be yours',
+    poet: 'John Cooper Clarke',
+    date: '1983',
     context:
-      "Based on the historical Duke Alfonso II of Ferrara, whose first wife Lucrezia de' Medici died in suspicious circumstances in 1561, aged 16. Browning pioneered the dramatic monologue, in which a speaker inadvertently reveals their true character. The poem is set during negotiations for the Duke's next marriage, adding chilling dramatic irony as he discusses how he dealt with his previous wife.",
+      'John Cooper Clarke (born 1949), from Salford, is known as the punk poet: he performed his fast, comic poems at punk gigs in the late 1970s and early 1980s. This poem was written to be performed, which explains its repetition and rhythm. In 2013 the band Arctic Monkeys set it to music on their album AM, bringing it to a new audience.',
     summary:
-      "The Duke shows a visitor (an envoy negotiating his next marriage) a portrait of his late wife, hidden behind a curtain that only he controls. He complains that the Duchess smiled too easily and equally at everyone, treating his 'nine-hundred-years-old name' as no more special than a sunset or a gift of cherries. He implies he had her killed ('I gave commands; then all smiles stopped together') before smoothly returning to the marriage negotiation.",
+      'The speaker offers to be a series of everyday objects for the person he loves, from a vacuum cleaner and a car to a raincoat, a teddy bear and an electric heater. Each offer promises usefulness, comfort or reliability. The repeated plea of the title makes the poem a declaration of complete devotion, which ends by rejecting anyone else.',
     formAndStructure:
-      "Dramatic monologue in rhyming couplets (heroic couplets) of iambic pentameter. The couplets create a sense of the Duke's controlled, authoritative speech, yet the heavy enjambment fights against the rhyme, suggesting emotions (jealousy, rage) that strain against his polished surface. The single, unbroken stanza mirrors the Duke's desire for total control -- he will not allow even a stanza break to interrupt his narrative.",
-    // Checked on 26 September 2026 against Pearson's anthology, which prints
-    // 'duchess' in the first line in lower case. Two analyses put words in
-    // quotation marks that the poem does not use ('crime', 'tames').
+      "Written in lower case and with almost no punctuation, the poem reads like speech or song. Its short lines, simple rhymes and the repeated opening 'let me be your' give it a chant-like rhythm suited to performance, and the title returns as a refrain at the end of each section. The offers become more intimate as the poem goes on, building to the exaggeration of its final section.",
     quotes: [
       {
-        text: "That's my last duchess painted on the wall, / Looking as if she were alive",
-        technique: 'Possessive pronoun / dramatic irony',
+        text: 'let me be your vacuum cleaner',
+        technique: 'Extended metaphor / bathos',
         analysis:
-          "The possessive 'my' immediately establishes ownership. 'Last' is chillingly casual, implying a series. 'Looking as if she were alive' is deeply ironic, as the reader gradually understands that she is dead, likely at his command. The portrait is the only form in which he can fully control her.",
+          "The first offer is comically unromantic: a household appliance. Yet it suggests a lover willing to take on the dull, dirty parts of someone else's life. The humour masks a sincere promise to be useful.",
       },
       {
-        text: 'She had / A heart -- how shall I say? -- too soon made glad',
-        technique: 'Caesura / feigned hesitation',
+        text: 'i will never rust',
+        technique: 'Rhyme / reliability',
         analysis:
-          'The dashes create a false pause, as though the Duke is searching for the right words, but his speech is actually carefully calculated. Her only offence, being too easily pleased, reveals his pathological jealousy. He wants her joy to be exclusively his, and her inability to comply was, in his view, punishable by death.',
+          'The speaker offers to be a family car of the time and promises that he will never rust. The simple rhyme makes the promise sound like an advertising slogan, but its point is constancy: his love will not wear out.',
       },
       {
-        text: 'I gave commands; / Then all smiles stopped together',
-        technique: 'Euphemism / caesura',
+        text: 'you call the shots',
+        technique: 'Colloquial idiom / power',
         analysis:
-          "This is the poem's most chilling moment. The vague 'commands' and the abrupt 'stopped' strongly imply murder, but the Duke's refusal to say it directly shows his ability to commit violence while maintaining social decorum. The semicolon creates a cold, efficient pause between order and outcome.",
+          'The idiom hands control to the beloved. The speaker is willing to serve, and the casual phrase keeps the tone light while revealing how completely he wants to belong to her.',
       },
       {
-        text: 'Notice Neptune, though, / Taming a sea-horse, thought a rarity',
-        technique: 'Classical allusion / symbolism',
+        text: "i don't wanna be hers",
+        technique: 'Contrast / refrain',
         analysis:
-          "The Duke identifies with Neptune, god of the sea, shown in bronze taming a sea-horse. This reveals his self-image: a powerful figure who masters those beneath him. The seahorse (the next Duchess?) is something to be controlled and displayed, like the portrait. 'Rarity' shows his view of people as collectible objects.",
+          'Just before the final refrain, the speaker rejects anyone else. Changing a single word turns the repeated plea into a statement of exclusive commitment.',
+      },
+    ],
+    themes: ['Devotion', 'Desire', 'Everyday love', 'Humour', 'Commitment'],
+    comparisons: [
+      'Valentine (links: love expressed through everyday objects; contrasts: eager devotion vs. guarded honesty)',
+      'Sonnet 43 (links: declarations of total devotion; contrasts: a performed list of objects vs. a sonnet of spiritual love)',
+      '1st Date - She and 1st Date - He (contrasts: wholehearted devotion vs. the hesitation of a first date)',
+    ],
+  },
+  {
+    id: 'loves-dog',
+    title: "Love's Dog",
+    poet: 'Jen Hadfield',
+    date: '2008',
+    context:
+      "Jen Hadfield (born 1978) lives in Shetland. Love's Dog appears in Nigh-No-Place (2008), the collection that won the T. S. Eliot Prize. The poem catalogues the contradictions of being in love, through surprising, playful and sometimes unsettling images.",
+    summary:
+      'Each line states something the speaker loves, hates or loathes about love, and completes the sentence with an image: a diagnosis and a prognosis, a petting zoo and its zookeeper, a truth serum and a shrinking potion, a pirate and a sick parrot. The list swings between delight and dislike, presenting love as exciting, absurd and painful all at once.',
+    formAndStructure:
+      "Sixteen lines, each built on the same frame, so the only things that change are the verb (love, hate or loathe) and the final image, and the reader's attention falls on the surprising last words. Many lines are paired by rhyme or half-rhyme, and the lack of punctuation lets the contrasts run into each other.",
+    quotes: [
+      {
+        text: 'What I love about love',
+        technique: 'Anaphora / list structure',
+        analysis:
+          'Every line begins with this frame or its opposite, so the poem becomes a list of the pleasures and pains of love. The repetition imitates obsessive thought, returning to the same subject again and again.',
+      },
+      {
+        text: 'its diagnosis ... its prognosis',
+        technique: 'Medical imagery / rhyme',
+        analysis:
+          'The opening pair treats love as an illness: the speaker loves being told what is wrong, but hates hearing how it will end. The rhyme binds the two words together, suggesting that the excitement of love cannot be separated from fear of its outcome.',
+      },
+      {
+        text: 'its zookeeper – you',
+        technique: 'Direct address / climax',
+        analysis:
+          'This is the only line that addresses the beloved. After the chaos of the petting zoo, the lover is the keeper who controls it, and the dash creates a pause before the reveal.',
+      },
+      {
+        text: 'its sick parrot',
+        technique: 'Ending / bathos',
+        analysis:
+          "Set against the pirate in the line before, the final image is absurd and sad: love's swagger ends in something ailing. The poem closes on what the speaker hates, so the list ends on pain rather than pleasure.",
       },
     ],
     themes: [
-      'Power and control',
-      'Jealousy and possession',
-      'Art and objectification',
-      'Status and pride',
-      'Gender and patriarchy',
+      'Contradictions of love',
+      'Desire and fear',
+      'Playfulness',
+      'Vulnerability',
+      'Obsession',
     ],
     comparisons: [
-      "The Farmer's Bride (links: male desire to control a woman)",
-      'La Belle Dame Sans Merci (contrasts: male powerlessness vs. male tyranny)',
-      'Sonnet 43 (contrasts: controlling love vs. generous, selfless love)',
+      "Valentine (links: honesty about love's pain as well as its pleasure)",
+      '1st Date - She and 1st Date - He (links: the mixed feelings and anxieties of love)',
+      'La Belle Dame Sans Merci (links: love as an enchantment that harms)',
+    ],
+  },
+  {
+    id: 'nettles',
+    title: 'Nettles',
+    poet: 'Vernon Scannell',
+    date: '1980',
+    context:
+      'Vernon Scannell (1922-2007) served as an infantry soldier in the Second World War and was wounded in Normandy in 1944; war is a recurring subject in his poetry. Nettles describes a moment from family life, when his young son fell into a bed of nettles, but its language is full of military imagery.',
+    summary:
+      "The speaker's three-year-old son falls into a nettle bed and comes to him crying, his skin blistered. The father comforts him, then takes his billhook, cuts down every nettle and burns them. But within two weeks new nettles have grown, and the speaker realises that his son will be hurt again: he cannot protect him from pain for ever.",
+    formAndStructure:
+      "A single stanza of sixteen lines in iambic pentameter, rhyming in alternate lines. The unbroken block suggests a single memory, or a father's protective wall around his child. Military language runs throughout, turning the nettles into an enemy army and the father into a soldier, and the final line turns from the battle to the future.",
+    quotes: [
+      {
+        text: 'That regiment of spite',
+        technique: 'Metaphor / military imagery',
+        analysis:
+          "The nettles are imagined as a regiment of soldiers, a disciplined force that exists to cause pain. The abstract noun 'spite' gives them deliberate malice, showing how the father sees anything that harms his son as an enemy.",
+      },
+      {
+        text: 'White blisters beaded on his tender skin',
+        technique: 'Visual imagery / sibilance',
+        analysis:
+          "The precise image of the blisters shows the father's close attention to his son's pain. 'Tender' stresses the child's vulnerability, and the soft sounds slow the line, as if lingering over the injury.",
+      },
+      {
+        text: 'the fallen dead',
+        technique: 'Hyperbole / military imagery',
+        analysis:
+          "The father's revenge on the nettles is described as a battle followed by a funeral for the enemy dead. The exaggeration is partly comic, but it also shows the strength of his protective love.",
+      },
+      {
+        text: 'sharp wounds again',
+        technique: 'Ending / inevitability',
+        analysis:
+          "The last line accepts that the father cannot win this war: the nettles grow back, and his son will be hurt again. 'Wounds' belongs to the poem's military language, and suggests the wider pains that will come with growing up.",
+      },
+    ],
+    themes: ['Parental love', 'Protection', 'Pain and growing up', 'Conflict', 'Inevitability'],
+    comparisons: [
+      'A Child to his Sick Grandfather (links: love between generations; contrasts: protecting a child vs. a child wanting to care for an old man)',
+      'The Manhunt (links: wounds, and the love that tries to heal them)',
+      'My Father Would Not Show Us (links: a father and his child; contrasts: a father who protects vs. a father who withdraws)',
+    ],
+  },
+  {
+    id: 'the-manhunt',
+    title: 'The Manhunt',
+    poet: 'Simon Armitage',
+    date: '2008',
+    context:
+      "Simon Armitage (born 1963) has been the UK's Poet Laureate since 2019. The Manhunt comes from The Not Dead (2008), poems written for a Channel 4 documentary about former soldiers living with the effects of war. It is spoken by Laura Beddoes, whose husband Eddie served as a peacekeeper in Bosnia and came home with physical and psychological injuries.",
+    summary:
+      "A wife describes slowly getting to know her husband's injuries after he comes home from war. Only gradually is she allowed to touch and explore each damaged part of his body, from his face and jaw to his collar-bone, shoulder, lung and ribs, and the bullet still lodged in his chest. Finally she traces his suffering to its source, a trauma buried in his mind, and only then does she come close to him.",
+    formAndStructure:
+      "The poem is written in couplets, a form that suggests a pair, husband and wife, trying to come together. Many of the couplets rhyme or half-rhyme, as if the relationship is close to harmony but not quite there. The poem moves from the surface of the body inwards, to the heart and then the mind, like a search, and the repetition of 'only then' shows how slowly and patiently she has to proceed.",
+    quotes: [
+      {
+        text: 'the frozen river which ran through his face',
+        technique: 'Metaphor / landscape imagery',
+        analysis:
+          "A scar becomes a 'frozen river', a cold, fixed feature of a landscape she must explore. The image suggests that his feelings, like the water, have frozen, and that his face, once familiar, has become strange territory.",
+      },
+      {
+        text: 'the blown hinge of his lower jaw',
+        technique: 'Metaphor / damaged mechanism',
+        analysis:
+          'The jaw is a broken hinge, part of a machine that no longer works. The image suggests that his ability to speak, to open up, has also been damaged, so she has to learn about him through touch rather than words.',
+      },
+      {
+        text: 'a sweating, unexploded mine',
+        technique: 'Metaphor / psychological trauma',
+        analysis:
+          'The search ends in his mind, where the trauma lies like an unexploded mine: dangerous, unstable and liable to go off. The metaphor suggests post-traumatic stress, and that the hardest wound to reach is the one nobody can see.',
+      },
+      {
+        text: 'only then',
+        technique: 'Repetition / patience',
+        analysis:
+          'The phrase recurs through the poem, marking each stage at which she is allowed closer. Its repetition stresses her patience and his slow trust, and the last line holds back the moment of closeness until the very end.',
+      },
+    ],
+    themes: [
+      'Love and recovery',
+      'The effects of war',
+      'Physical and psychological wounds',
+      'Patience',
+      'Intimacy',
+    ],
+    comparisons: [
+      'Nettles (links: wounds, and the love that tries to heal them)',
+      'One Flesh (links: closeness and distance within a marriage)',
+      'Sonnet 43 (contrasts: love that has to be earned slowly vs. love declared all at once)',
+    ],
+  },
+  {
+    id: 'my-father-would-not-show-us',
+    title: 'My Father Would Not Show Us',
+    poet: 'Ingrid de Kok',
+    date: '1988',
+    context:
+      'Ingrid de Kok (born 1951) is a South African poet who grew up in a small mining town. This elegy for her father comes from her first collection, Familiar Ground (1988). It opens with an epigraph from the poet Rainer Maria Rilke asking which way we should face to talk to the dead, a question the poem goes on to explore.',
+    summary:
+      "The speaker sees her father's body, five days after his death. She notices how strange his face looks, and how the collar of his pyjamas seems oddly ordinary and alive. Seeing him for the last time, she remembers her childhood and allows herself to imagine a fuller, braver version of it. She reflects that her father did not show his family how to die: he turned away from them, faced the wall and died without a word.",
+    formAndStructure:
+      "Free verse in stanzas of uneven length. The poem moves from the present, the body laid out for viewing, to memory and back again. Two refrains, which change from 'would not' to 'could not', mark a shift from blaming her father for hiding his dying to recognising that he was unable to share it. The final image, of a man facing the wall, answers the epigraph's question about which way to face the dead.",
+    quotes: [
+      {
+        text: 'My father would not show us how to die.',
+        technique: 'Refrain / title line',
+        analysis:
+          "The line gives the poem its title and returns later in a changed form. 'Would not' suggests a choice: her father refused to share his dying with his family, keeping it private as he perhaps kept his feelings private in life.",
+      },
+      {
+        text: 'five days dead',
+        technique: 'Blunt detail / monosyllables',
+        analysis:
+          'The plain phrase records a fact without comment, as if the speaker is holding her feelings at a distance. The one-syllable words are flat and final.',
+      },
+      {
+        text: 'unfrozen collar of his striped pyjamas',
+        technique: 'Contrasting detail',
+        analysis:
+          'Among the cold, arranged details of the room, the soft collar is the one thing that seems alive and ordinary. The small domestic detail catches the speaker off guard, reminding her of the real man rather than the body.',
+      },
+      {
+        text: 'face to the wall',
+        technique: 'Final image / symbolism',
+        analysis:
+          "By the end the refrain has changed to 'could not', and the father is seen turning away, alone, to face the wall. The image suggests both his isolation in death and the family's exclusion from it.",
+      },
+    ],
+    themes: ['Grief', 'Fathers and children', 'Memory', 'Death and silence', 'Emotional distance'],
+    comparisons: [
+      'A Child to his Sick Grandfather (links: a child at the deathbed of an older relative; contrasts: closeness vs. exclusion)',
+      'One Flesh (links: a daughter observing a parent from a distance)',
+      'A Complaint (links: a loved one who withdraws and hides their feelings)',
     ],
   },
 ]
@@ -864,94 +779,94 @@ const COMPARISON_PAIRS: ComparisonPair[] = [
   },
   {
     poemA: 'My Last Duchess',
-    poemB: "The Farmer's Bride",
-    link: 'Both feature male speakers who desire control over women',
-    contrast:
-      'The Duke is articulate and calculated; the Farmer is inarticulate and increasingly desperate. Both women are silenced.',
-  },
-  {
-    poemA: 'My Last Duchess',
     poemB: 'La Belle Dame Sans Merci',
     link: 'Both explore power dynamics in relationships',
     contrast:
       'The Duke holds all power and destroys his wife; the knight is powerless, destroyed by the lady. Male control vs. male vulnerability.',
   },
   {
-    poemA: 'Walking Away',
-    poemB: 'Follower',
-    link: 'Both explore parent-child relationships across time',
+    poemA: 'My Last Duchess',
+    poemB: 'The Manhunt',
+    link: 'Both are spoken by one partner about the other',
     contrast:
-      'Day-Lewis watches his child leave; Heaney recalls following his father. Both acknowledge the pain of changing roles.',
+      "The Duke controls and silences his wife; the wife in The Manhunt patiently learns her husband's wounds. Possession vs. care.",
   },
   {
-    poemA: 'Walking Away',
-    poemB: 'Mother Any Distance',
-    link: 'Both address the process of letting go',
+    poemA: 'Sonnet 43',
+    poemB: 'Valentine',
+    link: 'Both are declarations of love',
     contrast:
-      'Day-Lewis reflects as a parent; Armitage speaks as the child leaving. Both use extended metaphors for separation.',
+      "Barrett Browning's love is spiritual and limitless; Duffy distrusts romantic cliché and offers a gift that brings tears. Idealism vs. honesty.",
   },
   {
-    poemA: 'Eden Rock',
-    poemB: 'Before You Were Mine',
-    link: 'Both imagine parents in a time the speaker did not witness',
+    poemA: 'She Walks in Beauty',
+    poemB: 'La Belle Dame Sans Merci',
+    link: "Both portray a beautiful woman through a man's eyes",
     contrast:
-      "Causley envisions a reunion after death; Duffy possessively claims her mother's youth. Acceptance vs. desire.",
+      "Byron's woman is calm, good and innocent; Keats's lady enchants and destroys. Admiration vs. enthralment.",
   },
   {
-    poemA: 'Eden Rock',
-    poemB: 'Follower',
-    link: 'Both recall parents with precise physical detail',
+    poemA: 'A Child to his Sick Grandfather',
+    poemB: 'My Father Would Not Show Us',
+    link: "Both show a child facing an older relative's death",
     contrast:
-      "Causley's parents are idealised in death; Heaney's father is admired but the relationship becomes uncomfortable. Nostalgia vs. guilt.",
+      "Baillie's child stays close and talks to the end; de Kok's speaker is shut out as her father turns away. Closeness vs. exclusion.",
   },
   {
-    poemA: 'Winter Swans',
+    poemA: 'A Child to his Sick Grandfather',
+    poemB: 'Nettles',
+    link: 'Both explore love between generations',
+    contrast:
+      'A child wants to look after an old man; a father fails to shield his son from pain. Caring for vs. protecting.',
+  },
+  {
+    poemA: 'A Complaint',
     poemB: 'Neutral Tones',
-    link: 'Both use nature to reflect on a relationship',
+    link: 'Both look back on a love that has changed',
     contrast:
-      "Sheers uses swans to show reconciliation; Hardy uses a drained landscape to show love's end. Renewal vs. death of feeling.",
+      "Wordsworth's love may still exist, hidden; Hardy's has died, leaving bitterness. Regret vs. disillusion.",
   },
   {
-    poemA: 'Singh Song!',
-    poemB: "The Farmer's Bride",
-    link: 'Both present marriages',
+    poemA: 'A Complaint',
+    poemB: 'One Flesh',
+    link: 'Both describe love that lasts but is no longer expressed',
     contrast:
-      'Nagra celebrates mutual, playful love; Mew depicts a marriage of fear and isolation. Joy vs. entrapment.',
+      "Wordsworth speaks of his own loss; Jennings observes her parents' marriage from outside. Personal grief vs. detached observation.",
   },
   {
-    poemA: 'Singh Song!',
-    poemB: 'Sonnet 43',
-    link: 'Both are celebrations of romantic love',
+    poemA: '1st Date - She and 1st Date - He',
+    poemB: 'i wanna be yours',
+    link: 'Both are modern, humorous love poems',
     contrast:
-      'Nagra uses humour, dialect, and contemporary setting; Barrett Browning uses the high literary tradition of the Petrarchan sonnet.',
+      "Cope's couple hide their feelings and pretend; Cooper Clarke's speaker declares his devotion openly. Concealment vs. exaggerated openness.",
   },
   {
-    poemA: 'Climbing My Grandfather',
-    poemB: 'Follower',
-    link: 'Both admire a male family figure through physical detail',
+    poemA: 'Valentine',
+    poemB: 'i wanna be yours',
+    link: 'Both use everyday objects to express love',
     contrast:
-      'Waterhouse uses the body-as-landscape conceit; Heaney uses ploughing expertise. Both convey deep respect for working hands.',
+      "Duffy's onion is honest about love's pain; Cooper Clarke's objects promise comfort and usefulness. Truthfulness vs. devotion.",
   },
   {
-    poemA: 'Mother Any Distance',
-    poemB: 'Before You Were Mine',
-    link: "Both written from the child's perspective about a parent",
+    poemA: "Love's Dog",
+    poemB: 'Valentine',
+    link: 'Both are honest about the pain as well as the pleasure of love',
     contrast:
-      "Armitage focuses on separation and risk; Duffy focuses on the mother's lost youth. Independence vs. possession.",
+      'Hadfield lists the contradictions of love line by line; Duffy builds one extended metaphor. Fragmented list vs. sustained image.',
   },
   {
-    poemA: 'Letters from Yorkshire',
-    poemB: 'Winter Swans',
-    link: 'Both explore connection through the natural world',
+    poemA: 'Nettles',
+    poemB: 'The Manhunt',
+    link: 'Both present wounds and the love that tries to heal them',
     contrast:
-      "Dooley's connection is maintained across distance through writing; Sheers's couple reconnect through shared physical presence.",
+      "Scannell's father fights a war he cannot win; Armitage's wife patiently explores the damage war has done. Protection vs. healing.",
   },
   {
-    poemA: 'La Belle Dame Sans Merci',
-    poemB: "The Farmer's Bride",
-    link: 'Both explore desire and entrapment',
+    poemA: 'My Father Would Not Show Us',
+    poemB: 'One Flesh',
+    link: 'Both are written by a daughter about a parent',
     contrast:
-      "Keats's knight is trapped by a supernatural woman; Mew's bride is trapped by a mortal man. Who is the victim changes.",
+      'De Kok mourns a father who shut his family out of his dying; Jennings watches the fading intimacy of her parents. Grief vs. quiet sadness.',
   },
 ]
 

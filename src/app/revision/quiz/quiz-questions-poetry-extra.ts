@@ -768,6 +768,13 @@ export const poetryExtraQuestions: QuizQuestion[] = [
   },
 
   // ─── Edexcel anthology (20) ──────────────────────────────────────────────
+  // 2 October 2026: questions 051 to 063 were all tagged 'edexcel', the Pearson Edexcel
+  // GCSE. Still I Rise, Blessing, Search for My Tongue, Hide and Seek and Half-past Two are
+  // in the International GCSE anthology instead (tags as src/lib/board/set-texts.ts), and
+  // Mametz Wood was in the Eduqas anthology examined until summer 2026, so 062 and 063 are
+  // retired like the Eduqas questions in quiz-data.ts. 059 asked which poem is "a parent's
+  // warning to a child about the world's dangers" and answered Catrin, which is not one,
+  // with three International GCSE poems as the other options.
   {
     id: 'poetry-extra-051',
     topic: 'poetry',
@@ -777,7 +784,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     correctIndex: 0,
     explanation:
       'Anaphora-"You may…you may…you may"-gives the poem a defiant, sermonic rhythm. The repeated structure both anticipates oppressors\' attacks and overrides them; the speaker\'s "I rise" refrain, also anaphoric, asserts collective, historical resilience (AO2/AO3).',
-    boards: ['edexcel'],
+    boards: ['edexcel-igcse-lang'],
   },
   {
     id: 'poetry-extra-052',
@@ -823,7 +830,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       'When a municipal pipe bursts, the community rushes with "frantic hands" and "every man, woman, / child" to catch the water. Dharker uses religious diction ("blessing", "kindly god") to honour the holiness of an everyday miracle in extreme poverty (AO2/AO3).',
-    boards: ['edexcel'],
+    boards: ['edexcel-igcse'],
   },
   {
     id: 'poetry-extra-055',
@@ -838,7 +845,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       'Dharker collapses water and wealth-"fortune"-to make the reader recognise what is taken for granted in richer countries. Enjambment ("rush / of fortune") mimics the gushing flow, while diction conveys both scarcity and ecstatic joy (AO2).',
-    boards: ['edexcel'],
+    boards: ['edexcel-igcse'],
   },
   {
     id: 'poetry-extra-056',
@@ -853,7 +860,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       'The speaker imagines her "mother tongue" as a physical organ that "rots" in the mouth that must speak the "foreign tongue". Inserted Gujarati script and transliteration enact the language\'s persistent return in dreams-form embodies linguistic identity (AO2/AO3).',
-    boards: ['edexcel'],
+    boards: ['edexcel-igcse'],
   },
   {
     id: 'poetry-extra-057',
@@ -890,13 +897,8 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     id: 'poetry-extra-059',
     topic: 'poetry',
     question:
-      "Which Edexcel anthology poem is structured as a parent's warning to a child about the world's dangers?",
-    options: [
-      '"Half-past Two"',
-      '"Hide and Seek"',
-      '"Catrin"',
-      '"Do Not Go Gentle into That Good Night"',
-    ],
+      'Which poem in the Edexcel Conflict collection presents a mother and daughter in conflict, at the birth and again years later?',
+    options: ['"A Poison Tree"', '"The Man He Killed"', '"Catrin"', '"Poppies"'],
     correctIndex: 2,
     explanation:
       // VERIFIED: gillianclarke.co.uk - "rosy in the heat" is not in the poem; the actual phrase is "rosy, / Defiant glare". The "tight / Red rope of love" is from stanza one.
@@ -917,7 +919,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     correctIndex: 0,
     explanation:
       'The child, hidden in salty sacks for too long, emerges to find "The darkening garden watches. Nothing stirs". Scannell uses second-person narration ("Call out. Call loud.") to draw the reader in; the volta from triumph to abandonment makes the final isolation devastating (AO2).',
-    boards: ['edexcel'],
+    boards: ['edexcel-igcse'],
   },
   {
     id: 'poetry-extra-061',
@@ -932,7 +934,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       'The child knows "Gettinguptime, timeyouwereofftime" but not "half-past two". Fanthorpe runs the words together to mimic a child\'s undivided sense of time, then opens space-time as the child enters "ever" until the teacher rescues him. Form embodies cognition (AO2).',
-    boards: ['edexcel'],
+    boards: ['edexcel-igcse'],
   },
   {
     id: 'poetry-extra-062',
@@ -942,7 +944,8 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     correctIndex: 0,
     explanation:
       'Sheers commemorates the Welsh dead at Mametz Wood during the Battle of the Somme. Farmers turning the soil decades later "find them", their bones surfacing like "a chit of bone, the china plate of a shoulder blade"-imagery of fragile crockery dignifies the dead (AO2/AO3).',
-    boards: ['edexcel'],
+    boards: ['eduqas'],
+    retired: 'Eduqas anthology, examined until summer 2026',
   },
   {
     id: 'poetry-extra-063',
@@ -958,7 +961,8 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       '"Wasted" understates mass death while "turning up under their plough blades" pictures soldiers exhumed accidentally. The image yokes farming to grief; sibilance and assonance ("wasted young") give the loss a soft, mournful music (AO2).',
-    boards: ['edexcel'],
+    boards: ['eduqas'],
+    retired: 'Eduqas anthology, examined until summer 2026',
   },
   {
     id: 'poetry-extra-064',

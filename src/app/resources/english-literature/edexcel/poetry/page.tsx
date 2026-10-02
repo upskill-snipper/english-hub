@@ -43,6 +43,15 @@ interface PoemAnalysis {
   rightsNotice?: string
 }
 
+// The Relationships cluster is Collection A of the Pearson Edexcel GCSE English Literature
+// Poetry Anthology (Issue 4): La Belle Dame Sans Merci, A Child to his Sick Grandfather,
+// She Walks in Beauty, A Complaint, Neutral Tones, Sonnet 43, My Last Duchess, 1st Date -
+// She and 1st Date - He, Valentine, One Flesh, i wanna be yours, Love's Dog, Nettles, The
+// Manhunt and My Father Would Not Show Us. Until 2 October 2026 four entries here were
+// poems Edexcel does not set, and the comparisons pointed students to them; more than a
+// dozen quotations across both clusters were not in the poems at all, and several more
+// were misquoted. Every quotation now follows the anthology's printing, and the entries
+// rewritten that day keep poems in copyright to the site's fair-dealing share (15 per cent).
 const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
   {
     title: 'Sonnet 43',
@@ -62,44 +71,44 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
     comparisonLinks:
       "Compare with 'Valentine' (unconventional vs conventional love), 'i wanna be yours' (modern declaration), or 'She Walks in Beauty' (idealised love).",
   },
+  // 2 October 2026: replaces Love's Philosophy, an AQA poem.
   {
-    title: "Love's Philosophy",
-    poet: 'Percy Bysshe Shelley',
+    title: 'A Complaint',
+    poet: 'William Wordsworth',
     summary:
-      "The speaker uses examples from nature (rivers meeting the sea, winds mingling) to argue that everything in nature is united - so why won't the beloved kiss him? A persuasive, playful love poem.",
-    themes: 'Desire, persuasion, nature and love, rejection',
+      "The speaker mourns a change in someone he loves, usually read as Wordsworth's friend Samuel Taylor Coleridge. Their love was once a fountain flowing freely at the door of his heart; now it is a hidden, silent well, perhaps still deep, but out of his reach. The change has left him emotionally poor.",
+    themes: 'Loss of love, friendship, change, emotional poverty',
     language:
-      "Personification of nature ('the fountains mingle,' 'the winds of heaven mix') suggests love is natural and inevitable. Rhetorical question ('What are all these kissings worth, if thou kiss not me?') is both charming and slightly manipulative.",
+      "One extended metaphor carries the poem: the friend's love was once 'A fountain at my fond heart's door', and is now 'A comfortless and hidden well'. The plain, monosyllabic opening ('There is a change') sounds stunned, and the waters that may 'sleep / In silence and obscurity' suggest a love that survives but is never expressed.",
     structure:
-      "Two short stanzas with an ABAB rhyme scheme. The regular rhythm creates a song-like, persuasive tone. Each stanza builds an argument then ends with a rhetorical question, mirroring the speaker's repeated attempts.",
+      'Three six-line stanzas rhyming ABABCC, in iambic tetrameter; each closing couplet works like a conclusion. The poem is circular, ending, as it began, with the change that has made the speaker poor.',
     keyQuotes: [
-      '"The fountains mingle with the river and the rivers with the ocean"',
-      // 2 October 2026: "in another's being mingle" lacked "one", as AQA prints the line.
-      // Love's Philosophy is not in the Pearson Edexcel anthology (Issue 4, Collection A);
-      // its place on this page is a separate error, not corrected here.
-      '"Nothing in the world is single; all things by a law divine in one another\'s being mingle"',
-      '"What are all these kissings worth, if thou kiss not me?"',
+      '"There is a change"',
+      '"A fountain at my fond heart\'s door, / Whose only business was to flow"',
+      '"A comfortless and hidden well"',
     ],
     comparisonLinks:
-      "Compare with 'Sonnet 43' (requited vs unrequited love), 'La Belle Dame sans Merci' (the power dynamics of love), or '1st Date - She / 1st Date - He' (anticipation and desire).",
+      "Compare with 'Neutral Tones' (love that has gone cold), 'One Flesh' (love that lasts but is no longer expressed), or 'My Father Would Not Show Us' (a loved one who withdraws).",
   },
+  // 2 October 2026: replaces a "Sonnet 29" said to be by Edna St Vincent Millay, whose
+  // quotations came from her sonnet "What lips my lips have kissed".
   {
-    title: 'Sonnet 29',
-    poet: 'Edna St Vincent Millay',
+    title: 'Neutral Tones',
+    poet: 'Thomas Hardy',
     summary:
-      'The speaker reflects on a past love, acknowledging that the memory of love fades over time. She uses imagery of seasons and nature to show that even intense emotions diminish. A bittersweet, mature meditation on lost love.',
-    themes: 'Memory, loss, the transience of love, acceptance',
+      'The speaker remembers a winter day by a pond when a relationship died. The colourless landscape, the white sun and the grey leaves mirror the death of feeling between the lovers. The final stanza shows the memory returning whenever love deceives him.',
+    themes: 'The end of love, bitterness, memory, nature reflecting emotion',
     language:
-      "Seasonal imagery ('summer,' 'autumn') represents the cycle of love - its peak and decline. 'I only know that summer sang in me a little while, that in me sings no more' uses synaesthesia (singing/summer) to convey joy that has become silent.",
+      "Pathetic fallacy drains the scene of colour: 'the sun was white, as though chidden of God', and the leaves 'were gray'. The oxymoron of 'the deadest thing / Alive enough to have strength to die' captures a dying relationship, and 'the God-curst sun' suggests a world without comfort.",
     structure:
-      "Shakespearean sonnet. The final couplet offers a resigned but dignified acceptance rather than the traditional resolution. The sonnet form creates irony - a love poem about love's ending.",
+      "Four quatrains rhyming ABBA, a closed pattern that matches the speaker's entrapment in the memory. The poem is cyclical, beginning and ending at the pond, so the memory becomes a lesson the speaker cannot escape.",
     keyQuotes: [
-      '"I only know that summer sang in me a little while, that in me sings no more"',
-      '"What lips my lips have kissed, and where, and why, I have forgotten"',
-      '"I cannot say what loves have come and gone"',
+      '"We stood by a pond that winter day"',
+      '"The smile on your mouth was the deadest thing / Alive enough to have strength to die"',
+      '"And a pond edged with grayish leaves"',
     ],
     comparisonLinks:
-      "Compare with 'One Flesh' (love fading over time), 'Sonnet 43' (enduring vs fading love), or 'La Belle Dame sans Merci' (love and loss).",
+      "Compare with 'A Complaint' (a love that has changed), 'One Flesh' (love that has lost its warmth), or 'Sonnet 43' (love's death vs eternal devotion).",
   },
   {
     title: 'My Last Duchess',
@@ -118,7 +127,7 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       '"as if she ranked my gift of a nine-hundred-years-old name with anybody\'s gift"',
     ],
     comparisonLinks:
-      "Compare with 'Cousin Kate' (Conflict cluster - men controlling women), 'Singh Song!' (contrasting loving relationships), or 'Valentine' (love and possession).",
+      "Compare with 'Cousin Kate' (Conflict cluster - men controlling women), 'The Manhunt' (a husband who destroys vs a wife who heals), or 'Valentine' (love and possession).",
   },
   {
     title: 'La Belle Dame sans Merci',
@@ -137,7 +146,7 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       '"And no birds sing"',
     ],
     comparisonLinks:
-      "Compare with 'My Last Duchess' (destructive relationships), 'Love\'s Philosophy' (desire), or 'Sonnet 29' (love and loss).",
+      "Compare with 'My Last Duchess' (destructive relationships), 'She Walks in Beauty' (beauty that reflects goodness rather than destroys), or 'Love\'s Dog' (love as an enchantment that harms).",
   },
   {
     title: 'She Walks in Beauty',
@@ -164,16 +173,16 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       'A child speaks lovingly to their dying grandfather, promising to care for him as he once cared for them. The child does not fully understand death, making the poem both tender and heartbreaking. The reversal of care between generations is its emotional core.',
     themes: 'Family love, ageing, death, innocence, role reversal',
     language:
-      "Simple, childlike diction reflects the speaker's youth and innocence. Questions ('Grand-dad, they say you\'re old and frail') show the child's attempt to understand. Tender promises ('I\'ll bring my chair') create pathos through the gap between what the child offers and what the grandfather faces.",
+      "Simple, childlike diction reflects the speaker's youth and innocence. Direct address ('Grand-dad, they say you\'re old and frail') shows the child's attempt to understand what adults have told him. Tender promises ('I\'ll lead you kindly by the hand') create pathos through the gap between what the child offers and what the grandfather faces.",
     structure:
       "Regular stanzas with a simple rhyme scheme suitable for a child's voice. The steady rhythm creates a gentle, soothing tone - as if the child is comforting the grandfather.",
     keyQuotes: [
       '"Grand-dad, they say you\'re old and frail"',
-      '"I\'ll bring my chair and sit beside you"',
+      '"I\'ll lead you kindly by the hand"',
       '"You used to smile and stroke my head"',
     ],
     comparisonLinks:
-      "Compare with 'Climbing My Grandfather' (grandparent relationships), 'Nettles' (parent-child bonds), or 'One Flesh' (ageing and love).",
+      "Compare with 'My Father Would Not Show Us' (a child facing an older relative's death), 'Nettles' (parent-child bonds), or 'One Flesh' (ageing and love).",
   },
   {
     title: '1st Date - She / 1st Date - He',
@@ -182,16 +191,16 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       "Two companion poems presenting a first date from both perspectives. Both speakers are nervous and self-conscious. The humour and warmth come from recognising their shared anxiety. The dual perspective shows love's vulnerability and universality.",
     themes: 'New love, nervousness, self-doubt, hope, vulnerability',
     language:
-      "Conversational, modern language creates authenticity. Internal monologue reveals hidden insecurities beneath composed exteriors. Humour ('Should I have worn the other dress?') makes the anxiety relatable and endearing.",
+      "Conversational, modern language creates authenticity. Internal monologue reveals hidden insecurities beneath composed exteriors. Humour ('That my brow was acceptably high') makes the anxiety relatable and endearing.",
     structure:
       'Two separate poems designed to be read together. The parallel structure highlights similarities between the two perspectives, suggesting connection despite nervousness. Short lines create a breathless, anxious pace.',
     keyQuotes: [
-      '"I nearly didn\'t come"',
-      '"Perhaps I should have worn the other dress"',
-      '"I think she likes me"',
+      '"It wasn\'t exactly a lie"',
+      '"And quite undistracted by me"',
+      '"Perhaps she is out of my league"',
     ],
     comparisonLinks:
-      "Compare with 'Love\'s Philosophy' (anticipation), 'Singh Song!' (joyful love), or 'Sonnet 43' (established vs new love).",
+      "Compare with 'i wanna be yours' (devotion declared openly vs feelings hidden), 'Valentine' (honesty vs pretence), or 'Sonnet 43' (established vs new love).",
   },
   {
     title: 'Valentine',
@@ -200,14 +209,13 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       "Instead of traditional Valentine's gifts, the speaker gives an onion as a symbol of love - it has layers, makes you cry, and its scent clings persistently. An anti-romantic poem that argues real love is complex, honest, and sometimes painful.",
     themes: 'Unconventional love, honesty, possession, the inadequacy of cliches',
     language:
-      "Extended metaphor of the onion works on multiple levels: layers (complexity), tears (pain), light (hope), clinging scent (lasting impact). The imperative 'Take it' becomes increasingly aggressive, hinting at love's possessive dark side. Rejection of cliches ('Not a red rose or a satin heart') asserts authenticity.",
+      "Extended metaphor of the onion works on multiple levels: layers (complexity), tears (pain), light (hope), clinging scent (lasting impact). The speaker's commands become more forceful as the poem goes on, hinting at love's possessive dark side, and the opening rejection of Valentine's Day cliches asserts authenticity.",
     structure:
       "Free verse with irregular line lengths mirrors the unpredictability of real love. Single-word lines ('Lethal') create dramatic emphasis. The poem grows darker towards the end, subverting romantic expectations.",
     keyQuotes: [
-      '"Not a red rose or a satin heart"',
-      '"I give you an onion. It is a moon wrapped in brown paper"',
-      '"It will blind you with tears like a lover"',
-      '"Its scent will cling to your fingers, cling to your knife"',
+      '"I give you an onion."',
+      '"a moon wrapped in brown paper"',
+      '"cling to your knife"',
       '"Lethal"',
     ],
     comparisonLinks:
@@ -222,16 +230,16 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       "The speaker observes her elderly parents lying apart in bed, their passion long faded. They are physically close but emotionally distant - 'one flesh' in name only. A melancholic reflection on how time erodes even deep love.",
     themes: 'Ageing, fading love, loneliness within marriage, time, memory',
     language:
-      "Religious allusion ('one flesh' from Genesis) creates irony - they are legally united but emotionally separated. Simile ('like a survey') suggests clinical detachment. Gentle, quiet language ('Tossing up,' 'light') creates a hushed, sad atmosphere.",
+      "Religious allusion ('one flesh' from Genesis) creates irony - they are legally united but emotionally separated. Similes ('like flotsam from a former passion') present the couple as wreckage left behind once passion has passed. Gentle, quiet language creates a hushed, sad atmosphere.",
     structure:
-      "Three regular sestets with a measured rhythm reflecting the calm but sad tone. The regularity suggests routine and monotony. The final line - 'Whose fire from which I came has now grown cold' - is a quiet devastation.",
+      "Three regular sestets with a measured rhythm reflecting the calm but sad tone. The regularity suggests routine and monotony. The final line, in which the 'fire' the speaker came from 'has now grown cold', is a quiet devastation.",
     keyQuotes: [
       '"Lying apart now, each in a separate bed"',
-      '"Do they know they\'re old, these two who are my father and my mother?"',
-      '"Whose fire from which I came has now grown cold"',
+      '"like flotsam from a former passion"',
+      '"has now grown cold"',
     ],
     comparisonLinks:
-      "Compare with 'Sonnet 29' (love fading), 'Sonnet 43' (enduring love as contrast), or 'A Child to His Sick Grandfather' (family and ageing).",
+      "Compare with 'Neutral Tones' (love fading), 'Sonnet 43' (enduring love as contrast), or 'A Child to His Sick Grandfather' (family and ageing).",
     rightsNotice:
       "Rights notice: © Carcanet Press / David Higham Associates on behalf of the Elizabeth Jennings estate (1926-2001). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Jennings's New Collected Poems (Carcanet).",
   },
@@ -242,17 +250,16 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       'A modern, playful love poem in which the speaker offers to be everyday objects for their beloved - a vacuum cleaner, a Ford Cortina, a raincoat. Beneath the humour is genuine devotion and vulnerability.',
     themes: 'Devotion, desire, vulnerability, everyday love',
     language:
-      "Domestic, ordinary imagery (vacuum cleaner, electric heater) rejects romantic cliches. Repetition of 'I wanna be yours' creates an insistent, almost desperate tone. Simple, accessible language reflects the universality of the desire to belong to someone.",
+      "Domestic, ordinary imagery (vacuum cleaner, electric heater) rejects romantic cliches. The repeated offer, 'let me be your', and the refrain of the title create an insistent, almost desperate tone. Simple, accessible language reflects the universality of the desire to belong to someone.",
     structure:
       'Irregular stanzas with a refrain. The repetition creates a song-like quality (it was later set to music by the Arctic Monkeys). The accumulation of metaphors builds intensity.',
     keyQuotes: [
-      '"I wanna be your vacuum cleaner, breathing in your dust"',
-      '"I wanna be your electric meter, I will not run out"',
-      '"I wanna be yours"',
-      '"deep deep deep deep deep deep ocean"',
+      '"let me be your vacuum cleaner / breathing in your dust"',
+      '"i will not run out"',
+      '"i wanna be yours"',
     ],
     comparisonLinks:
-      "Compare with 'Sonnet 43' (declarations of love), 'Valentine' (unconventional love imagery), or 'Love\'s Philosophy' (desire for union).",
+      "Compare with 'Sonnet 43' (declarations of love), 'Valentine' (unconventional love imagery), or '1st Date - She / 1st Date - He' (open devotion vs the hesitation of a first date).",
     rightsNotice:
       "Rights notice: © Penguin Random House on behalf of John Cooper Clarke (b. 1949). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Cooper Clarke's collection Ten Years in an Open Necked Shirt (1981).",
   },
@@ -260,21 +267,21 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
     title: "Love's Dog",
     poet: 'Jen Hadfield',
     summary:
-      'A poem that presents love as a contradictory experience - both joyful and painful. Each stanza pairs a positive with a negative, showing that love encompasses the full range of human emotion.',
+      'A poem that presents love as a contradictory experience, both joyful and painful. Each line names something the speaker loves or hates about love, showing that love encompasses the full range of human emotion.',
     themes: 'The contradictions of love, joy and pain, honesty about relationships',
     language:
-      "Contrasting pairs ('the spoor of badgers / the sniff of divorce') juxtapose beauty and ugliness. Animal and nature imagery ground love in the physical, instinctive world. The dog metaphor suggests love is loyal but unpredictable.",
+      "Contrasting pairs, such as a diagnosis and a 'prognosis', or a pirate and a 'sick parrot', juxtapose delight and disappointment. Animal and nature imagery ground love in the physical, instinctive world. The dog metaphor suggests love is loyal but unpredictable.",
     structure:
-      "Short couplets create a rhythmic back-and-forth between positive and negative - structurally enacting love's contradictions. No resolution is offered; the poem simply presents love's complexity.",
+      "Sixteen lines that fall into rhyming or half-rhyming pairs create a rhythmic back-and-forth between positive and negative, structurally enacting love's contradictions. No resolution is offered; the poem simply presents love's complexity.",
     keyQuotes: [
-      '"What I love about love is its diamond absolutes"',
-      '"What I hate about love is its dog, its stink, its whine"',
-      '"the lipping wood pigeon"',
+      '"What I love about love is its diagnosis"',
+      '"its zookeeper – you"',
+      '"its sick parrot"',
     ],
     comparisonLinks:
       "Compare with 'Valentine' (honest, unsentimental love), 'One Flesh' (love's disappointments), or 'Sonnet 43' (idealised love as contrast).",
     rightsNotice:
-      "Rights notice: © Bloodaxe Books on behalf of Jen Hadfield (b. 1978). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Hadfield's collection Byssus (Picador, 2014).",
+      "Rights notice: © Bloodaxe Books on behalf of Jen Hadfield (b. 1978). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Hadfield's collection Nigh-No-Place (Bloodaxe, 2008).",
   },
   {
     title: 'Nettles',
@@ -285,57 +292,58 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
     language:
       "Military metaphor throughout: 'regiment of spite,' 'fallen dead,' 'tall recruits.' The father's response to nettles mirrors a soldier fighting an enemy. This connects to Scannell's own experience as a WWII soldier and suggests the world is a hostile, dangerous place for children.",
     structure:
-      "A single stanza of 16 lines with a regular rhyme scheme (couplets). The containment in one stanza mirrors the father's attempt to contain the threat. The final couplet, where the nettles grow back, undermines his efforts.",
+      "A single stanza of 16 lines rhyming in alternate lines. The containment in one stanza mirrors the father's attempt to contain the threat. The final lines, where the nettles grow back, undermine his efforts.",
     keyQuotes: [
       '"My son would often feel sharp wounds again"',
-      '"a regiment of spite behind the shed"',
-      '"tall recruits... called up... stood sharp beneath the window"',
+      '"That regiment of spite behind the shed"',
+      '"tall recruits"',
     ],
     comparisonLinks:
-      "Compare with 'Climbing My Grandfather' (family bonds), 'A Child to His Sick Grandfather' (intergenerational love), or 'Catrin' (Conflict - parent-child tension).",
+      "Compare with 'The Manhunt' (wounds and the love that tries to heal them), 'A Child to His Sick Grandfather' (intergenerational love), or 'Catrin' (Conflict - parent-child tension).",
     rightsNotice:
       'Rights notice: © Robson Books on behalf of the Vernon Scannell estate (1922-2007). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology.',
   },
+  // 2 October 2026: replaces Climbing My Grandfather, an AQA poem.
   {
-    title: 'Climbing My Grandfather',
-    poet: 'Andrew Waterhouse',
+    title: 'The Manhunt',
+    poet: 'Simon Armitage',
     summary:
-      "The speaker imagines climbing their grandfather like a mountain - from his shoes up to his head. The extended metaphor allows an intimate exploration of the grandfather's physical features and the love they represent.",
-    themes: 'Family love, memory, admiration, physical intimacy, exploration',
+      'Laura Beddoes describes slowly getting to know the injuries of her husband Eddie, a soldier who came home from peacekeeping in Bosnia wounded in body and mind. She explores his body piece by piece, from his face and jaw to the bullet lodged in his chest, until she reaches the trauma in his mind, and only then comes close to him.',
+    themes: 'Love and recovery, the effects of war, physical and psychological wounds, patience',
     language:
-      "Extended mountaineering metaphor transforms the grandfather into a landscape. Sensory detail ('the skin of his finger is smooth and thick,' 'his dusty, bald head') creates an intimate, tactile portrait. The grandfather becomes monumental - literally larger than life.",
+      "Metaphors turn his body into damaged landscapes and objects, such as 'the frozen river which ran through his face' and 'the blown hinge of his lower jaw'. The search ends at 'a sweating, unexploded mine' in his mind, a metaphor for post-traumatic stress.",
     structure:
-      'Free verse with no stanza breaks - one continuous climb, reflecting the unbroken connection between speaker and grandfather. Enjambment creates a sense of continuous movement upwards.',
+      "Couplets suggest a couple trying to come together, and frequent half-rhymes suggest a harmony not quite reached. The poem moves from the surface of the body inwards, and the repeated 'only then' shows the slow, patient pace of her search.",
     keyQuotes: [
-      '"I decide to do it free, without a rope or net"',
-      '"his thick fingers... old and smooth"',
-      '"I place my ear against his chest and hear the good workings of his heart"',
+      '"the frozen river which ran through his face"',
+      '"the blown hinge of his lower jaw"',
+      '"a sweating, unexploded mine"',
     ],
     comparisonLinks:
-      "Compare with 'A Child to His Sick Grandfather' (grandparent love), 'Nettles' (family bonds), or 'One Flesh' (physical observation of family members).",
+      "Compare with 'Nettles' (wounds and the love that tries to heal them), 'One Flesh' (closeness and distance in a marriage), or 'My Last Duchess' (a husband who destroys vs a wife who heals).",
     rightsNotice:
-      "Rights notice: © Faber & Faber on behalf of the Andrew Waterhouse estate (1958-2001). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Waterhouse's collection In (Rialto, 2000).",
+      'Rights notice: The Manhunt is in copyright (Simon Armitage, b. 1963). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For the full text, students should consult the board-licensed Edexcel anthology or The Not Dead (2008).',
   },
+  // 2 October 2026: replaces Singh Song!, an AQA poem.
   {
-    title: 'Singh Song!',
-    poet: 'Daljit Nagra',
+    title: 'My Father Would Not Show Us',
+    poet: 'Ingrid de Kok',
     summary:
-      "A Punjabi shopkeeper describes his love for his new bride while his father's shop falls into disrepair. He abandons his duties to be with her - their love is vibrant, humorous, and culturally rich. The poem celebrates multicultural Britain and joyful, irreverent love.",
-    themes: 'Love and marriage, cultural identity, duty vs desire, joy, multicultural Britain',
+      "Ingrid de Kok's elegy for her father. She sees his body five days after his death, notices the strangeness of his face and the ordinary collar of his pyjamas, and remembers her childhood. She reflects that her father would not, or could not, show his family how to die: he turned away from them and faced the wall.",
+    themes: 'Grief, fathers and children, memory, death and silence',
     language:
-      "Phonetic spelling of Punjabi-accented English ('di,' 'vee') celebrates the speaker's cultural identity. Humour and irreverence ('She's made of honey... she's a Sikh') create warmth. Vivid, sensory language makes their love tangible and alive.",
+      "Plain, precise details ('five days dead') hold grief at a distance. The refrain 'My father would not show us how to die' later changes to 'could not', moving from blame towards understanding, and the final image, 'face to the wall, he lay', shows him shutting his family out.",
     structure:
-      'Irregular stanzas mixing narrative and dialogue. The refrain-like returns to the shop create comic contrast between duty and desire. The poem shifts between public (the shop) and private (their intimate moments).',
+      'Free verse in stanzas of uneven length, moving between the present and memory. The changing refrain gives the poem its shape, and the ending answers the epigraph from Rilke, which asks which way we should face to talk to the dead.',
     keyQuotes: [
-      '"my bride she hav a red crew cut"',
-      '"at di dairy milk dat cost a pound"',
-      '"ve drown in each other\'s eyes"',
-      "\"I tell her dat she is di 'World's Best Wife'\"",
+      '"My father would not show us how to die."',
+      '"five days dead"',
+      '"face to the wall, he lay"',
     ],
     comparisonLinks:
-      "Compare with 'i wanna be yours' (joyful devotion), 'Valentine' (unconventional love), or 'My Last Duchess' (contrasting attitudes to wives).",
+      "Compare with 'A Child to His Sick Grandfather' (a child at an older relative's deathbed), 'One Flesh' (a daughter observing her parents), or 'Nettles' (fathers and children).",
     rightsNotice:
-      "Rights notice: © Faber & Faber on behalf of Daljit Nagra (b. 1966). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Nagra's collection Look We Have Coming to Dover! (2007).",
+      'Rights notice: My Father Would Not Show Us is in copyright (Ingrid de Kok, b. 1951). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For the full text, students should consult the board-licensed Edexcel anthology or Familiar Ground (1988).',
   },
 ]
 
@@ -409,7 +417,7 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     themes:
       'The reality of war, media and detachment, ethics of witnessing, the gap between suffering and comfort',
     language:
-      "Detached, observational language reflects the photographer's professional distance. Sensory and visual imagery ('focus', 'frame') foregrounds the camera as an instrument of mediation. The poem questions whether photographs of suffering can produce empathy or only numb the viewer.",
+      "Detached, observational language reflects the photographer's professional distance. Visual imagery of the photograph's borders ('the frame', 'the edges') foregrounds the camera as an instrument of mediation. The poem questions whether photographs of suffering can produce empathy or only numb the viewer.",
     structure:
       "Measured stanzas with a controlled rhythm reflect the photographer's disciplined, technical work. The form contrasts with the chaos witnessed, creating an unsettling distance between subject and treatment.",
     // These three quotations were removed on 26 September 2026. "A hundred
@@ -431,14 +439,13 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       'The speaker is caught in a bomb explosion during the Troubles in Belfast. Punctuation marks become shrapnel - the poem enacts the confusion and terror of a sudden bombing. Language itself breaks down under the pressure of violence.',
     themes: 'Political conflict, terrorism, confusion, language and violence, identity',
     language:
-      "Punctuation marks as weapons ('Nuts, bolts, nails, car-keys. A fount of broken type. And the explosion itself - an asterisk on the map') brilliantly conflates the writer's tools with instruments of destruction. Questions pile up ('What is my name? Where am I?') showing loss of identity in chaos.",
+      "Punctuation marks become weapons: shrapnel is a fount of type and the explosion an asterisk, conflating the writer's tools with instruments of destruction. Questions pile up at the end, showing the speaker's identity breaking down in the chaos.",
     structure:
       "Two stanzas of increasing fragmentation. Sentences break apart, mimicking the explosion's impact. Enjambment and caesura create a stuttering, disrupted rhythm - the reader experiences the speaker's disorientation.",
     keyQuotes: [
-      '"Suddenly as the riot squad moved in it was raining exclamation marks"',
-      '"a fount of broken type"',
-      '"I know this labyrinth so well... every blocked-off end street"',
-      '"What is my name? Where am I?"',
+      '"it was raining / exclamation marks"',
+      '"A fount of broken type"',
+      '"Where am I going?"',
     ],
     comparisonLinks:
       "Compare with 'The Charge of the Light Brigade' (being trapped in conflict), 'Exposure' (soldiers' experiences), or 'Half-caste' (identity and cultural conflict).",
@@ -556,14 +563,10 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       'Benjamin Zephaniah (1958-2023) was a British dub poet and rights campaigner; rights to his work are now managed by his estate. In this poem the speaker responds to racism with defiance and confidence, asserting their identity and worth despite being stereotyped and excluded. The poem challenges racist assumptions while celebrating black British identity.',
     themes: 'Racism, identity, resilience, cultural pride, defiance',
     language:
-      "Caribbean dialect ('I am not de problem') asserts cultural identity. Repetition of 'I am not de problem' is both a refutation and a declaration of self-worth. Direct address ('you') confronts the racist directly.",
+      "Caribbean dialect ('I am not de problem') asserts cultural identity. Repetition of 'I am not de problem' is both a refutation and a declaration of self-worth. Direct address ('yu') confronts the racist directly.",
     structure:
       "Free verse with a rhythmic, spoken-word quality. The repetitive structure builds confidence and defiance. The poem is designed to be performed, reflecting Zephaniah's dub poetry tradition.",
-    keyQuotes: [
-      '"I am not de problem"',
-      '"I am born in England, I am not de problem"',
-      '"Black is not de problem"',
-    ],
+    keyQuotes: ['"I am not de problem"', '"I am born academic"', '"Black is not de problem"'],
     comparisonLinks:
       "Compare with 'Half-caste' (racism and identity), 'The Class Game' (prejudice), or 'Belfast Confetti' (identity under threat).",
     rightsNotice:
@@ -593,15 +596,15 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     title: 'The Class Game',
     poet: 'Mary Casey',
     summary:
-      "The speaker challenges class prejudice by asking how the reader judges class - by accent, vocabulary, address, or clothing. She proudly asserts her working-class identity and challenges the assumption that middle-class is 'better.'",
+      'The speaker challenges class prejudice by asking how the reader judges class - by accent, vocabulary, address, or clothing. She proudly asserts her working-class identity and challenges the assumption that being middle-class is better.',
     themes: 'Class prejudice, identity, language and power, pride, social inequality',
     language:
-      "Juxtaposition of working-class and middle-class language ('dinner' vs 'luncheon,' 'serviette' vs 'napkin') exposes how language is used to judge people. Direct, confrontational tone ('How can you tell what class I\'m from?') challenges the reader. Working-class dialect is presented with pride, not shame.",
+      "Juxtaposition of working-class and middle-class language ('Tara' instead of 'Bye Mummy dear', toilet instead of bog) exposes how language is used to judge people. Direct, confrontational tone ('How can you tell what class I\'m from?') challenges the reader. Working-class dialect is presented with pride, not shame.",
     structure:
       'Free verse with a conversational, spoken quality. Rhetorical questions drive the argument. The accumulation of class markers creates an overwhelming case against prejudice.',
     keyQuotes: [
       '"How can you tell what class I\'m from?"',
-      "\"I say 'din-din' instead of 'dinner'\"",
+      '"toilet instead of bog"',
       '"And I\'m proud of the class that I come from"',
     ],
     comparisonLinks:
@@ -616,13 +619,13 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       'A mother describes the experience of her son leaving for war. She smooths his uniform, notices poppies on his lapel, and after he leaves, walks to a war memorial hoping to hear his voice. A deeply personal, emotional anti-war poem focused on loss and grief.',
     themes: 'Loss, grief, motherhood, memory, war',
     language:
-      "Domestic imagery ('smoothed down your shirt's collar') juxtaposes the ordinary with the military. Textile and craft imagery ('bandaged,' 'pinned,' 'crimped') connects to the mother's domestic world. Sensory detail ('I wanted to graze my nose across the tip of your nose') conveys physical longing and intimacy.",
+      "Domestic imagery ('smoothed down your shirt's / upturned collar') juxtaposes the ordinary with the military. Textile and craft imagery ('bandaged,' 'pinned,' 'crimped') connects to the mother's domestic world. Sensory detail, the mother's wish to touch her son's nose with her own as she did when he was small, conveys physical longing and intimacy.",
     structure:
       "Free verse with long, enjambed sentences that flow like thought or memory. No regular stanza pattern reflects the mother's uncontained grief. The poem moves between past and present, memory and reality.",
     keyQuotes: [
-      '"I pinned one onto your lapel, crimped petals, spasms of paper red"',
-      '"I wanted to graze my nose across the tip of your nose"',
-      '"I traced the date with my finger, leaned against it like a wishbone"',
+      '"crimped petals, / spasms of paper red"',
+      '"I wanted to graze my nose / across the tip of your nose"',
+      '"leaned against it like a wishbone"',
     ],
     comparisonLinks:
       "Compare with 'War Photographer' (personal response to war), 'Catrin' (mother-child bond), or 'Exposure' (the reality of war).",

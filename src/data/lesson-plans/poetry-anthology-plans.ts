@@ -1,7 +1,7 @@
 // @ts-nocheck
 // ─── Poetry Anthology Lesson Plans ────────────────────────────────────────────
-// 20 complete GCSE Poetry Anthology lesson plans
-// AQA Power & Conflict (10), Edexcel Relationships (10)
+// 15 complete GCSE Poetry Anthology lesson plans (this said 20 until 2 October 2026)
+// AQA Power & Conflict (5), Relationships (10: see the note below)
 // Each lesson covers full format with starter, main (differentiated), plenary,
 // homework, resources, and SEND adaptations
 //
@@ -21,8 +21,15 @@
 //     1ET0).
 // Teachers should cross-check the poems list against their actual
 // specification before using lessons 4-10. Only AQA P&C lessons 1-5 and
-// Edexcel Relationships lessons 1-3 (Sonnet 43/Byron, Shelley/Hardy,
-// Dooley/Mew) have been fact-checked against canonical poem texts.
+// Relationships lessons 1-3 (Sonnet 43/Byron, Shelley/Hardy, Dooley/Mew)
+// have been fact-checked against canonical poem texts.
+//
+// 2 October 2026: lessons 1-3 were still tagged Edexcel, though only Sonnet 43
+// and Neutral Tones are in its Relationships collection (Pearson Edexcel
+// anthology, Issue 4). Love's Philosophy, When We Two Parted, Letters from
+// Yorkshire and The Farmer's Bride are AQA Love and Relationships poems, so
+// lessons 2 and 3 are now tagged AQA, and lesson 1, which pairs an Edexcel poem
+// with an AQA one, is a cross-board lesson like 4-9.
 
 export interface LessonActivity {
   title: string
@@ -543,15 +550,18 @@ const aqaPowerConflictLesson5: PoetryLesson = {
 // EDEXCEL RELATIONSHIPS - 10 LESSONS
 // ════════════════════════════════════════════════════════════════════════════
 
+// NOTE: Sonnet 43 is in the Edexcel Relationships collection (and Eduqas's
+// anthology); When We Two Parted is an AQA Love & Relationships poem, so no board
+// pairs them. Retagged as a cross-board comparison lesson on 2 October 2026.
 const edexcelRelationshipsLesson1: PoetryLesson = {
   id: 'edex-rel-01',
-  title: 'Sonnet 43 vs When We Two Parted: Passion vs Restraint in Love',
+  title: 'Sonnet 43 vs When We Two Parted: Passion vs Restraint in Love (cross-board comparison)',
   poems: [
     'Sonnet 43 ("How do I love thee?") by Elizabeth Barrett Browning',
     'When We Two Parted by Lord Byron',
   ],
-  anthology: 'Relationships',
-  examBoard: 'Edexcel',
+  anthology: 'Relationships (cross-board comparison practice)',
+  examBoard: 'General (cross-board)',
   yearGroup: '10-11',
   duration: '1.5 hours',
   learningObjectives: [
@@ -638,12 +648,16 @@ const edexcelRelationshipsLesson1: PoetryLesson = {
   examPractice: 'Full timed 32-mark comparison essay.',
 }
 
+// NOTE: both poems are in AQA's Love & Relationships cluster, and their quotations
+// follow AQA's anthology (the book students are given): "See the mountains kiss high
+// Heaven" (this had "The mountains kiss high heaven") and Hardy's "greyish", where
+// the Edexcel anthology prints "grayish". Tagged Edexcel until 2 October 2026.
 const edexcelRelationshipsLesson2: PoetryLesson = {
   id: 'edex-rel-02',
   title: "Love's Philosophy vs Neutral Tones: Persuasion vs Acceptance of Love's End",
   poems: ["Love's Philosophy by Percy Bysshe Shelley", 'Neutral Tones by Thomas Hardy'],
-  anthology: 'Relationships',
-  examBoard: 'Edexcel',
+  anthology: 'Love & Relationships',
+  examBoard: 'AQA',
   yearGroup: '10-11',
   duration: '1.5 hours',
   learningObjectives: [
@@ -664,7 +678,7 @@ const edexcelRelationshipsLesson2: PoetryLesson = {
     title: 'Philosophical Argument & Emotional Reality',
     duration: '70 minutes',
     instructions:
-      'PART 1 (28 mins): Read Love\'s Philosophy aloud (1819, Shelley). Shelley presents nature as model: fountains flow to rivers, mountains meet the heavens, waves clasp each other. Annotate: (1) Extended metaphor of nature\'s unity - everything connects ("The fountains mingle with the river / And the rivers with the ocean", "The mountains kiss high heaven"); (2) Rhetorical structure: observation of nature → logical conclusion that humans should do the same; (3) Sensory language (mingling, kissing, clasping) suggesting harmony and inevitability; (4) Each stanza ends in a rhetorical question directed at the lover ("Why not I with thine?", "If thou kiss not me?"), transforming philosophy into personal plea; (5) Two regular octave stanzas with alternating rhyme suggesting order and certainty. Discuss: How does comparing human love to natural law make it irresistible? PART 2 (28 mins): Read Neutral Tones twice (Hardy, written 1867, published 1898). Hardy describes failed love with emotional detachment. Annotate: (1) Title "Neutral Tones" - suggests absence of colour and feeling; (2) Setting (winter pond, "the sun was white, as though chidden of God", "starving sod") mirrors emotional deadness; (3) Key image: "The smile on your mouth was the deadest thing / Alive enough to have strength to die" - love has turned into a half-dead performance; (4) The exchange of words: "Some words played between us to and fro / On which lost the more by our love" - conversation reduced to a futile game; (5) Final stanza\'s images return as memory: "Your face, and the God-curst sun, and a tree, / And a pond edged with grayish leaves" - the scene haunts Hardy as a fixed emblem of love\'s failure. Discuss: Why is Hardy\'s numbness more painful than explicit grief? PART 3 (14 mins): Comparative task. Table: Shelley (nature argument, universality, conviction), Hardy (emotional reality, individual failure, resignation). Contrast: Shelley argues love is inevitable; Hardy shows inevitability of love\'s failure. Write paragraph: "While Shelley uses nature\'s harmony to argue love is universal and necessary, Hardy\'s poem suggests love\'s end in emotional numbness is equally inevitable, questioning whether Shelley\'s philosophy survives reality."',
+      'PART 1 (28 mins): Read Love\'s Philosophy aloud (1819, Shelley). Shelley presents nature as model: fountains flow to rivers, mountains meet the heavens, waves clasp each other. Annotate: (1) Extended metaphor of nature\'s unity - everything connects ("The fountains mingle with the river / And the rivers with the Ocean", "See the mountains kiss high Heaven"); (2) Rhetorical structure: observation of nature → logical conclusion that humans should do the same; (3) Sensory language (mingling, kissing, clasping) suggesting harmony and inevitability; (4) Each stanza ends in a rhetorical question directed at the lover ("Why not I with thine?", "If thou kiss not me?"), transforming philosophy into personal plea; (5) Two regular octave stanzas with alternating rhyme suggesting order and certainty. Discuss: How does comparing human love to natural law make it irresistible? PART 2 (28 mins): Read Neutral Tones twice (Hardy, written 1867, published 1898). Hardy describes failed love with emotional detachment. Annotate: (1) Title "Neutral Tones" - suggests absence of colour and feeling; (2) Setting (winter pond, "the sun was white, as though chidden of God", "starving sod") mirrors emotional deadness; (3) Key image: "The smile on your mouth was the deadest thing / Alive enough to have strength to die" - love has turned into a half-dead performance; (4) The exchange of words: "Some words played between us to and fro / On which lost the more by our love" - conversation reduced to a futile game; (5) Final stanza\'s images return as memory: "Your face, and the God-curst sun, and a tree, / And a pond edged with greyish leaves" - the scene haunts Hardy as a fixed emblem of love\'s failure. Discuss: Why is Hardy\'s numbness more painful than explicit grief? PART 3 (14 mins): Comparative task. Table: Shelley (nature argument, universality, conviction), Hardy (emotional reality, individual failure, resignation). Contrast: Shelley argues love is inevitable; Hardy shows inevitability of love\'s failure. Write paragraph: "While Shelley uses nature\'s harmony to argue love is universal and necessary, Hardy\'s poem suggests love\'s end in emotional numbness is equally inevitable, questioning whether Shelley\'s philosophy survives reality."',
     differentiation: {
       support:
         "Pre-read poems aloud. Shelley's nature metaphors highlighted. Hardy's setting details marked. Annotation guides with metaphor and tone devices identified.",
@@ -731,13 +745,18 @@ const edexcelRelationshipsLesson2: PoetryLesson = {
   examPractice: "Full timed 32-mark essay evaluating which poet's view of love is more convincing.",
 }
 
+// NOTE: both poems are in AQA's Love & Relationships cluster; tagged Edexcel until
+// 2 October 2026. The same day three quotations were corrected against AQA's book
+// ("planting potatoes", "Is your life more real because you dig and sow?", and the
+// letters' "word", which the poem does not capitalise), and the final stanza was
+// misread: it is the bride who is in the attic, a stair away, not the farmer in a loft.
 const edexcelRelationshipsLesson3: PoetryLesson = {
   id: 'edex-rel-03',
   title:
     "Letters from Yorkshire vs The Farmer's Bride: Rural vs Urban Love, Connection vs Isolation",
   poems: ['Letters from Yorkshire by Maura Dooley', "The Farmer's Bride by Charlotte Mew"],
-  anthology: 'Relationships',
-  examBoard: 'Edexcel',
+  anthology: 'Love & Relationships',
+  examBoard: 'AQA',
   yearGroup: '10-11',
   duration: '1.5 hours',
   learningObjectives: [
@@ -758,7 +777,7 @@ const edexcelRelationshipsLesson3: PoetryLesson = {
     title: 'Epistolary Form & Monologue: Communication & Silence',
     duration: '70 minutes',
     instructions:
-      'PART 1 (30 mins): Read Letters from Yorkshire (Dooley). The poem implies a correspondence between an urban speaker and a rural correspondent who works the land. Annotate: (1) Structure: speaker reflects on letters received from someone digging in Yorkshire ("seeing the seasons turning"); (2) Imagery of physical labour ("his knuckles singing", "planting potato seed") contrasted with the speaker\'s indoor, intellectual life; (3) Emotional intimacy despite distance - the speaker asks "Is his life more real because he digs the earth?"; (4) The capitalised "Word" in the final stanza elevates communication itself to something almost sacred - letters become the bridge across distance; (5) Final lines suggest that despite different lives, "souls tap out messages across the icy miles". Discuss: Distance doesn\'t prevent real connection; in fact, the gap enables a particular kind of honesty. PART 2 (28 mins): Read The Farmer\'s Bride twice (Mew, 1916). Mew uses dramatic monologue (farmer speaks alone about his young bride). Annotate: (1) Bride was "Too young maybe - but more\'s to do / At harvest-time than bide and woo" - a marriage of expedience; (2) Farmer\'s confusion: bride is described as a frightened animal - "as a leveret", "Like the shut of a winter\'s day / Her smile went out"; (3) Language of pursuit ("We chased her") showing the bride fled and was retrieved; (4) Disturbing final stanza: the farmer alone in his loft, longing physically for her - "Oh! my God! the down, / The soft young down of her, the brown, / The brown of her - her eyes, her hair, her hair!"; (5) Monologue form shows only farmer\'s perspective; bride is voiceless throughout. Discuss: Unlike Dooley\'s mutually respectful distance, Mew shows isolation as a trap and non-communication as oppression. PART 3 (12 mins): Comparison. Both poems use form (letter vs monologue) to shape meaning. Dooley: distance allows connection; Mew: proximity with silence is loneliness. Venn diagram: Both (rural/urban contrast, distance/closeness theme), Dooley only (mutual communication, separate worlds, hopeful tone), Mew only (one-sided narration, farmer\'s incomprehension, bride\'s voicelessness, disturbing final image). Write paragraph: "Both Dooley and Mew explore the paradox of closeness and distance in love, but Dooley suggests distance can deepen intimacy through honest communication, while Mew shows physical proximity with emotional silence creates oppression."',
+      'PART 1 (30 mins): Read Letters from Yorkshire (Dooley). The poem implies a correspondence between an urban speaker and a rural correspondent who works the land. Annotate: (1) Structure: speaker reflects on letters received from someone digging in Yorkshire ("seeing the seasons turning"); (2) Imagery of physical labour ("his knuckles singing", "planting potatoes") contrasted with the speaker\'s indoor, intellectual life; (3) Emotional intimacy despite distance - the speaker asks "Is your life more real because you dig and sow?"; (4) The letters bring "word of that other world", "pouring air and light into an envelope" - writing becomes the bridge across distance; (5) Final lines suggest that despite different lives, "souls tap out messages across the icy miles". Discuss: Distance doesn\'t prevent real connection; in fact, the gap enables a particular kind of honesty. PART 2 (28 mins): Read The Farmer\'s Bride twice (Mew, first published 1912). Mew uses dramatic monologue (farmer speaks alone about his young bride). Annotate: (1) Bride was "Too young maybe - but more\'s to do / At harvest-time than bide and woo" - a marriage of expedience; (2) Farmer\'s confusion: bride is described as a frightened animal - "as a leveret", "Like the shut of a winter\'s day / Her smile went out"; (3) Language of pursuit ("We chased her") showing the bride fled and was retrieved; (4) Disturbing final stanza: the farmer, only a stair away from the bride asleep in the attic, longing physically for her - "Oh! my God! the down, / The soft young down of her, the brown, / The brown of her - her eyes, her hair, her hair!"; (5) Monologue form shows only farmer\'s perspective; bride is voiceless throughout. Discuss: Unlike Dooley\'s mutually respectful distance, Mew shows isolation as a trap and non-communication as oppression. PART 3 (12 mins): Comparison. Both poems use form (letter vs monologue) to shape meaning. Dooley: distance allows connection; Mew: proximity with silence is loneliness. Venn diagram: Both (rural/urban contrast, distance/closeness theme), Dooley only (mutual communication, separate worlds, hopeful tone), Mew only (one-sided narration, farmer\'s incomprehension, bride\'s voicelessness, disturbing final image). Write paragraph: "Both Dooley and Mew explore the paradox of closeness and distance in love, but Dooley suggests distance can deepen intimacy through honest communication, while Mew shows physical proximity with emotional silence creates oppression."',
     differentiation: {
       support:
         "Pre-read poems aloud with contexts. Dooley's imagery of landscapes highlighted. Mew's monologue structure marked. Annotation guides with 4 devices per poem.",
@@ -1549,7 +1568,7 @@ const edexcelRelationshipsLesson10: PoetryLesson = {
 }
 
 // ════════════════════════════════════════════════════════════════════════════
-// FINAL EXPORT: All 20 Lessons
+// FINAL EXPORT: All 15 Lessons
 // ════════════════════════════════════════════════════════════════════════════
 
 export const poetryAnthologyPlans = [
@@ -1559,7 +1578,9 @@ export const poetryAnthologyPlans = [
   aqaPowerConflictLesson3, // Bayonet Charge/Remains
   aqaPowerConflictLesson4, // Poppies/War Photographer
   aqaPowerConflictLesson5, // Kamikaze/Checking Out Me History
-  // Edexcel Relationships (10 lessons covering key poems and comparison techniques)
+  // Relationships (10 lessons): 2 and 3 are AQA Love & Relationships pairs, 1 and 4-9
+  // are cross-board comparisons, and 10 is Edexcel unseen-poetry practice (see the note
+  // at the top of this file).
   edexcelRelationshipsLesson1, // Sonnet 43/When We Two Parted
   edexcelRelationshipsLesson2, // Love's Philosophy/Neutral Tones
   edexcelRelationshipsLesson3, // Letters from Yorkshire/The Farmer's Bride
