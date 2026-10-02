@@ -130,9 +130,12 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
 
   return (
     <ToastProvider>
+      {/* Desktop only: on a phone this fixed button sat on top of the demo
+          banner's text, and the banner and the menu already offer Book a Call
+          to the same contact page. */}
       <Link
         href="/contact"
-        className="fixed top-20 end-4 z-40 rounded-full bg-primary text-primary-foreground px-4 py-2 shadow-lg hover:bg-primary/90 text-sm"
+        className="fixed top-20 end-4 z-40 rounded-full bg-primary text-primary-foreground px-4 py-2 shadow-lg hover:bg-primary/90 text-sm max-lg:hidden"
       >
         {t('demo_school.chrome.contact_about_demo')}
       </Link>
