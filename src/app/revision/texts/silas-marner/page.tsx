@@ -121,6 +121,16 @@ const data: TextGuideData = {
     'The novel is set in the opening years of the nineteenth century, roughly a generation before its 1861 publication, and its world is consciously pre-industrial. Raveloe is described as lying in a rich agricultural pocket untouched by the railways, the factories and the religious and political upheavals that were transforming England during Eliot\u2019s own lifetime. Lantern Yard, by contrast, belongs to the new industrial north, and when Silas returns to look for it late in the novel he finds it has been demolished and a factory stands in its place. Eliot uses this contrast deliberately: the displacement of rural life by industrial expansion is part of what the novel mourns, even as it refuses to idealise the village.',
     'Religion is central to the novel\u2019s moral landscape. Lantern Yard represents Dissenting Christianity, the strict chapel-based tradition of Nonconformist sects outside the Church of England, and Eliot treats it with a mixture of respect and unease: it offers community but is capable of catastrophic error, as in the drawing of lots that condemns Silas. Raveloe\u2019s Church of England piety is quieter and more practical, expressed in figures like Dolly Winthrop rather than in doctrine. Eliot herself had broken with evangelical Christianity in her twenties and was by 1861 a religious humanist who nonetheless took religious experience seriously. Silas Marner can be read as her attempt to imagine what it might look like for a man of lost faith to recover a meaningful moral life without returning to the beliefs that had failed him.',
   ],
+  // TWO NOTES CORRECTED 2 October 2026. The note on Silas's "the blessing was
+  // mine" set it in "the climactic confrontation with Godfrey and Nancy". He
+  // says it to Eppie, alone with her on the evening his gold is recovered,
+  // before they come to the door (Chapter 19). The note on Eppie's "any father
+  // but one" called her rejection "quiet", where Eliot has her speak
+  // "impetuously, while the tears gathered". Each note is also the full-text
+  // reader's highlight note for its line (scripts/generate-text-annotations.mjs),
+  // so the reader showed both errors too. Re-run that script after editing a
+  // note: the-highlights-highlight-something.test.ts compares only a note's
+  // last sixty characters, so it passes a reader note whose opening is stale.
   quotations: [
     {
       quote:
@@ -176,13 +186,13 @@ const data: TextGuideData = {
         '"Eh, my precious child, the blessing was mine. If you hadn\u2019t been sent to save me, I should ha\u2019 gone to the grave in my misery."',
       who: 'Silas Marner \u2014 Chapter 19',
       analysis:
-        'In the climactic confrontation with Godfrey and Nancy, Silas states openly what the narrative has been arguing throughout: Eppie has saved him, not the other way around. The reversal of the Victorian expectation that the adult rescues the child is a key part of Eliot\u2019s revaluation of parenthood. The passive phrase "been sent" leaves the source of Eppie\u2019s arrival ambiguous between chance and providence, which is exactly the space Eliot wants the novel to inhabit.',
+        'Alone with Eppie on the evening his gold is recovered, before Godfrey and Nancy arrive, Silas answers her words that but for him she would have been taken to the workhouse, with "nobody to love me". He states openly what the narrative has been arguing throughout: Eppie has saved him, not the other way around. The reversal of the Victorian expectation that the adult rescues the child is a key part of Eliot\u2019s revaluation of parenthood. The passive phrase "been sent" leaves the source of Eppie\u2019s arrival ambiguous between chance and providence, which is exactly the space Eliot wants the novel to inhabit.',
     },
     {
       quote: '"I can\u2019t feel as I\u2019ve got any father but one."',
       who: 'Eppie \u2014 Chapter 19',
       analysis:
-        'Eppie\u2019s quiet, decisive rejection of Godfrey\u2019s claim is the moral climax of the novel. The grammar is deliberately simple because the argument is absolute: her sense of fatherhood is not about biology but about who has cared for her. Eliot makes the case through the voice of an uneducated young woman, implicitly contrasting Eppie\u2019s clarity with Godfrey\u2019s years of concealment and his unspoken assumption that blood and class outweigh years of daily care.',
+        'Eppie\u2019s rejection of Godfrey\u2019s claim, made "impetuously, while the tears gathered", is the moral climax of the novel. The grammar is deliberately simple because the argument is absolute: her sense of fatherhood is not about biology but about who has cared for her. Eliot makes the case through the voice of an uneducated young woman, implicitly contrasting Eppie\u2019s clarity with Godfrey\u2019s years of concealment and his unspoken assumption that blood and class outweigh years of daily care.',
     },
     {
       quote:

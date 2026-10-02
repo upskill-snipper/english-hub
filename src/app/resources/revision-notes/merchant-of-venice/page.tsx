@@ -4,6 +4,31 @@ import { useState } from 'react'
 
 import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
+/*
+ * Quotations of the play on this page are the edition the site holds
+ * (src/data/full-texts/the-merchant-of-venice.ts, Project Gutenberg #1515),
+ * cut from it by script rather than typed. Until 2 October 2026 fourteen were
+ * not. Ten spelt out what the edition elides ("strained", "deceived", "moved",
+ * "unlocked", "cleared" and "sufferance" for its "strain'd", "deceiv'd",
+ * "mov'd", "unlock'd", "clear'd" and "suff'rance"); three had a word the
+ * edition does not have there ("spit" for "spet", "whom" for "who"); and
+ * Solanio's report of Shylock's cries in Act 2, Scene 8 was
+ * credited to Shylock as its speaker. Seven shorter ones in the notes ("Not
+ * strained", "Unlocked", "craves the law" among them) are too short for
+ * scripts/check-quotations.mjs to judge and were put right with them. No test
+ * checks this page's quotations against the play; that scanner is what found
+ * the fourteen. "I am not well" was also called Shylock's last line, here and
+ * in the trial table (and its Arabic in content.ts); it is in his last speech,
+ * which ends "And I will sign it", the correction the study guide made first.
+ *
+ * A review the same day read the page for what the scanner cannot see. The
+ * Arabic in content.ts had translated or mangled four quotations (its docblock
+ * says which). The Act 1 summary had the Prince of Morocco arriving, but 1.2
+ * only announces him and he arrives in 2.1. The Act 5 summary said Shylock is
+ * never mentioned after Act 4, but Act 5 calls him "the wealthy Jew" and "the
+ * rich Jew"; he is never named. The Key Quotations badge said 22, over 17 cards.
+ */
+
 /* ─── Expandable Section Component ──────────────────────────── */
 
 function Section({
@@ -172,7 +197,8 @@ export default function MerchantOfVeniceRevisionPage() {
                 Antonio agrees, confident his ships will return in time. Meanwhile, in Belmont,
                 Portia is bound by her dead father&apos;s will: suitors must choose between three
                 caskets (gold, silver, lead) to win her hand. She and Nerissa discuss her unwanted
-                suitors. The Prince of Morocco arrives to try his luck.
+                suitors, and word comes that the Prince of Morocco will arrive that night to try his
+                luck.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -188,8 +214,8 @@ export default function MerchantOfVeniceRevisionPage() {
                     condition (1.3)
                   </li>
                   <li>
-                    &bull; Shylock&apos;s &ldquo;sufferance is the badge of all our tribe&rdquo;
-                    speech (1.3)
+                    &bull; Shylock&apos;s &ldquo;suff&apos;rance is the badge of all our
+                    tribe&rdquo; speech (1.3)
                   </li>
                   <li>&bull; Portia&apos;s casket test introduced (1.2)</li>
                 </ul>
@@ -259,7 +285,7 @@ export default function MerchantOfVeniceRevisionPage() {
                   <li>&bull; Bassanio chooses the lead casket correctly (3.2)</li>
                   <li>&bull; The ring exchange between Portia and Bassanio (3.2)</li>
                   <li>
-                    &bull; Antonio&apos;s letter: &ldquo;all debts are cleared between you and
+                    &bull; Antonio&apos;s letter: &ldquo;all debts are clear&apos;d between you and
                     I&rdquo; (3.2)
                   </li>
                 </ul>
@@ -316,7 +342,7 @@ export default function MerchantOfVeniceRevisionPage() {
                 some of his ships have in fact returned safely. Lorenzo and Jessica learn they will
                 inherit Shylock&apos;s estate. The play ends on a comedic note, though the forced
                 conversion of Shylock and his absence from this final scene leave a shadow over the
-                apparent harmony. Shylock is never mentioned again after Act 4.
+                apparent harmony. Shylock is never named again after Act 4.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -369,10 +395,10 @@ export default function MerchantOfVeniceRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="The quality of mercy is not strained; / It droppeth as the gentle rain from heaven / Upon the place beneath"
+                    text="The quality of mercy is not strain'd, / It droppeth as the gentle rain from heaven / Upon the place beneath"
                     speaker="Portia"
                     act="Act 4, Scene 1"
-                    analysis="The simile of rain (natural, free, gentle) establishes mercy as divine. 'Not strained' means not forced -- true mercy must be freely given. Ironically, Portia herself does not show mercy to Shylock moments later, undermining her own argument."
+                    analysis="The simile of rain (natural, free, gentle) establishes mercy as divine. 'Not strain'd' means not forced -- true mercy must be freely given. Ironically, Portia herself does not show mercy to Shylock moments later, undermining her own argument."
                   />
                   <Quote
                     text="I stand for sacrifice"
@@ -470,7 +496,7 @@ export default function MerchantOfVeniceRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="So may the outward shows be least themselves; / The world is still deceived with ornament"
+                    text="So may the outward shows be least themselves. / The world is still deceiv'd with ornament"
                     speaker="Bassanio"
                     act="Act 3, Scene 2"
                     analysis="Bassanio's casket speech shows his understanding of the appearance vs reality theme. 'Ornament' is deceptive -- gold and silver are attractive but hollow. This insight wins him Portia. Ironically, Bassanio himself could be accused of pursuing the 'ornament' of Portia's wealth."
@@ -520,7 +546,7 @@ export default function MerchantOfVeniceRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="The man that hath no music in himself, / Nor is not moved with concord of sweet sounds, / Is fit for treasons, stratagems, and spoils"
+                    text="The man that hath no music in himself, / Nor is not mov'd with concord of sweet sounds, / Is fit for treasons, stratagems, and spoils"
                     speaker="Lorenzo"
                     act="Act 5, Scene 1"
                     analysis="Lorenzo links music appreciation with moral goodness. The triple 'treasons, stratagems, and spoils' condemns those without harmony. Ironically, Lorenzo himself could be accused of 'stratagems' in his elopement with Jessica."
@@ -599,7 +625,7 @@ export default function MerchantOfVeniceRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="The quality of mercy is not strained; / It droppeth as the gentle rain from heaven"
+                    text="The quality of mercy is not strain'd, / It droppeth as the gentle rain from heaven"
                     speaker="Portia"
                     act="Act 4, Scene 1"
                     analysis="Portia's speech frames mercy as natural and divine. The simile of rain -- unforced, universal -- contrasts with the rigid legalism of the courtroom. Yet the speech is undermined by the Christians' subsequent treatment of Shylock."
@@ -632,16 +658,16 @@ export default function MerchantOfVeniceRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="You call me misbeliever, cut-throat dog, / And spit upon my Jewish gaberdine"
+                    text="You call me misbeliever, cut-throat dog, / And spet upon my Jewish gaberdine"
                     speaker="Shylock"
                     act="Act 1, Scene 3"
                     analysis="Shylock lists Antonio's abuses. 'Misbeliever' -- religious prejudice. 'Cut-throat dog' -- dehumanisation. 'Jewish gaberdine' -- his clothing marks him as Other. The calm listing makes Antonio's behaviour seem systematic, not impulsive."
                   />
                   <Quote
-                    text="Sufferance is the badge of all our tribe"
+                    text="suff'rance is the badge of all our tribe"
                     speaker="Shylock"
                     act="Act 1, Scene 3"
-                    analysis="'Sufferance' (patient endurance of suffering) is described as a 'badge' -- something worn, visible, imposed. 'Our tribe' invokes collective Jewish identity and history. The line acknowledges centuries of persecution with bitter resignation."
+                    analysis="'Suff'rance' (sufferance, patient endurance of suffering) is described as a 'badge' -- something worn, visible, imposed. 'Our tribe' invokes collective Jewish identity and history. The line acknowledges centuries of persecution with bitter resignation."
                   />
                 </div>
               </div>
@@ -665,10 +691,10 @@ export default function MerchantOfVeniceRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="My purse, my person, my extremest means / Lie all unlocked to your occasions"
+                    text="My purse, my person, my extremest means / Lie all unlock'd to your occasions"
                     speaker="Antonio"
                     act="Act 1, Scene 1"
-                    analysis="Antonio offers Bassanio everything -- money ('purse'), body ('person'), and his very life ('extremest means'). 'Unlocked' suggests total openness and vulnerability. The listing climaxes in intensity, showing the depth of Antonio's devotion."
+                    analysis="Antonio offers Bassanio everything -- money ('purse'), body ('person'), and his very life ('extremest means'). 'Unlock'd' suggests total openness and vulnerability. The listing climaxes in intensity, showing the depth of Antonio's devotion."
                   />
                   <Quote
                     text="In Belmont is a lady richly left"
@@ -690,8 +716,8 @@ export default function MerchantOfVeniceRevisionPage() {
                   themselves as men, proving more capable than the actual male lawyers. The
                   Christians appear virtuous but behave cruelly; Shylock appears villainous but
                   articulates the most powerful arguments for humanity. Bassanio&apos;s speech on
-                  &ldquo;ornament&rdquo; argues that the world is &ldquo;still deceived&rdquo; by
-                  appearances, yet he himself may be deceived by Portia&apos;s wealth. The rings
+                  &ldquo;ornament&rdquo; argues that the world is &ldquo;still deceiv&apos;d&rdquo;
+                  by appearances, yet he himself may be deceived by Portia&apos;s wealth. The rings
                   &mdash; symbols of fidelity &mdash; are easily given away. Throughout the play,
                   what appears good may be hollow, and what appears base may be valuable.
                 </p>
@@ -703,7 +729,7 @@ export default function MerchantOfVeniceRevisionPage() {
                     analysis="A proverb warning against superficial judgement. Morocco chose gold because it seemed most worthy, but found a death's head inside. The casket test is designed to expose those who judge by outward show."
                   />
                   <Quote
-                    text="So may the outward shows be least themselves; / The world is still deceived with ornament"
+                    text="So may the outward shows be least themselves. / The world is still deceiv'd with ornament"
                     speaker="Bassanio"
                     act="Act 3, Scene 2"
                     analysis="Bassanio recognises that appearances are deceptive. 'Still' means always -- the world is permanently fooled. His wisdom in choosing lead shows understanding of true value, which lies beneath the surface."
@@ -721,16 +747,17 @@ export default function MerchantOfVeniceRevisionPage() {
                   relationship in the play. The bond plot is a financial contract. The casket plot
                   involves an heiress. Jessica steals Shylock&apos;s wealth. The trial punishment
                   involves confiscating Shylock&apos;s property. Even love is expressed in monetary
-                  terms: Antonio &ldquo;unlocks&rdquo; his purse, Bassanio treats courtship as an
-                  investment. The play interrogates how money shapes human relationships, morality,
-                  and identity. Shylock&apos;s moneylending (usury) was considered sinful by
-                  Christians, yet their entire world depends on commerce and credit. The hypocrisy
-                  of condemning usury while profiting from trade is a key tension.
+                  terms: Antonio&apos;s purse lies &ldquo;all unlock&apos;d&rdquo; to his friend,
+                  and Bassanio treats courtship as an investment. The play interrogates how money
+                  shapes human relationships, morality, and identity. Shylock&apos;s moneylending
+                  (usury) was considered sinful by Christians, yet their entire world depends on
+                  commerce and credit. The hypocrisy of condemning usury while profiting from trade
+                  is a key tension.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
                     text="My daughter! O my ducats! O my daughter! / Fled with a Christian! O my Christian ducats!"
-                    speaker="Shylock (reported by Solanio)"
+                    speaker="Solanio (reporting Shylock)"
                     act="Act 2, Scene 8"
                     analysis="The interweaving of 'daughter' and 'ducats' is often read as Shylock valuing money equally with his child. However, this is reported mockingly by Solanio, who may be exaggerating. The repetition suggests overwhelming grief where all losses blur together."
                   />
@@ -772,7 +799,7 @@ export default function MerchantOfVeniceRevisionPage() {
           <Section
             id="quotes"
             title={tr(`Key Quotations with Analysis`)}
-            badge="22 Quotes"
+            badge="17 Quotes"
             colour="bg-amber-600"
           >
             <div className="space-y-4">
@@ -796,10 +823,10 @@ export default function MerchantOfVeniceRevisionPage() {
                   analysis="Parallel conditionals move from universal human responses to the controversial 'revenge'. Shylock argues revenge is equally human -- learned from Christian example. The logic is irrefutable but leads to a morally troubling conclusion."
                 />
                 <Quote
-                  text="You call me misbeliever, cut-throat dog, / And spit upon my Jewish gaberdine"
+                  text="You call me misbeliever, cut-throat dog, / And spet upon my Jewish gaberdine"
                   speaker="Shylock"
                   act="Act 1, Scene 3"
-                  analysis="A catalogue of Antonio's abuse. Three insults escalating from religious ('misbeliever') to dehumanising ('dog') to physical ('spit'). The 'Jewish gaberdine' -- his distinctive clothing -- marks him as a visible target."
+                  analysis="A catalogue of Antonio's abuse. Three insults escalating from religious ('misbeliever') to dehumanising ('dog') to physical ('spet', an old form of spit). The 'Jewish gaberdine' -- his distinctive clothing -- marks him as a visible target."
                 />
                 <Quote
                   text="I would my daughter were dead at my foot, and the jewels in her ear!"
@@ -811,14 +838,14 @@ export default function MerchantOfVeniceRevisionPage() {
                   text="I am not well"
                   speaker="Shylock"
                   act="Act 4, Scene 1"
-                  analysis="Shylock's last line before leaving the trial. A masterpiece of understatement after being stripped of wealth, religion, and dignity. The brevity is devastating -- there are no more words for this level of suffering."
+                  analysis="From Shylock's last speech before he leaves the trial. A masterpiece of understatement after being stripped of wealth, religion, and dignity. The brevity is devastating -- there are no more words for this level of suffering."
                 />
               </div>
 
               <h3 className="font-bold text-foreground mt-6 mb-3">Portia</h3>
               <div className="grid gap-3 sm:grid-cols-2">
                 <Quote
-                  text="The quality of mercy is not strained; / It droppeth as the gentle rain from heaven / Upon the place beneath. It is twice blest: / It blesseth him that gives and him that takes"
+                  text="The quality of mercy is not strain'd, / It droppeth as the gentle rain from heaven / Upon the place beneath. It is twice blest, / It blesseth him that gives and him that takes"
                   speaker="Portia"
                   act="Act 4, Scene 1"
                   analysis="Mercy is compared to rain -- natural, divine, universal. 'Twice blest' means it benefits both giver and receiver. This is the play's most famous speech, yet its idealism is undermined by Portia's subsequent mercilessness towards Shylock."
@@ -1105,7 +1132,7 @@ export default function MerchantOfVeniceRevisionPage() {
                         </td>
                         <td className="px-4 py-2 text-muted-foreground">
                           {tr(
-                            `Deeply ironic “mercy.” The forced conversion strips Shylock of his identity. His final line: “I am not well.”`,
+                            `Deeply ironic “mercy.” The forced conversion strips Shylock of his identity. From his last speech: “I am not well”.`,
                           )}
                         </td>
                       </tr>
@@ -1315,8 +1342,8 @@ export default function MerchantOfVeniceRevisionPage() {
                       </p>
                       <p>
                         <strong>{tr(`Paragraph 2:`)}</strong> Shylock&apos;s refusal of mercy
-                        &mdash; he &ldquo;craves the law.&rdquo; Why? Context of his suffering.
-                        Mercy has never been shown to him.
+                        &mdash; &ldquo;I crave the law&rdquo;. Why? Context of his suffering. Mercy
+                        has never been shown to him.
                       </p>
                       <p>
                         <strong>{tr(`Paragraph 3:`)}</strong> Antonio&apos;s &ldquo;mercy&rdquo;
@@ -1349,7 +1376,7 @@ export default function MerchantOfVeniceRevisionPage() {
                       </p>
                       <p>
                         <strong>{tr(`Paragraph 1:`)}</strong> Portia in Belmont &mdash; subject to
-                        the casket test. &ldquo;I may neither choose whom I would nor refuse whom I
+                        the casket test. &ldquo;I may neither choose who I would nor refuse who I
                         dislike&rdquo; &mdash; lack of female agency.
                       </p>
                       <p>

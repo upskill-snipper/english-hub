@@ -3042,7 +3042,7 @@ const romeoJulietIGModules: CourseModule[] = [
 <ul>
   <li><strong>Romantic idealism:</strong> Romeo experiences love as absolute and all-consuming. His language shifts from artificial Petrarchan conceits (for Rosaline) to genuine, powerful poetry (for Juliet).</li>
   <li><strong>Impulsiveness:</strong> Romeo acts on emotion without thinking. He falls in love instantly, marries within hours, kills Tybalt in rage, and takes poison without verifying Juliet's death. His impulsiveness is both his most attractive and most destructive quality.</li>
-  <li><strong>Masculinity and honour:</strong> Romeo initially tries to refuse Tybalt's challenge (because he is now Tybalt's kinsman), but after Mercutio's death, he reverts to the masculine honour code - "fire-eyed fury be my conduct now." Shakespeare critiques the honour system that turns love into violence.</li>
+  <li><strong>Masculinity and honour:</strong> Romeo initially tries to refuse Tybalt's challenge (because he is now Tybalt's kinsman), but after Mercutio's death, he reverts to the masculine honour code - "fire-ey'd fury be my conduct now." Shakespeare critiques the honour system that turns love into violence.</li>
 </ul>
 
 <h3>Juliet</h3>
@@ -3299,7 +3299,7 @@ const romeoJulietIGModules: CourseModule[] = [
   <tr><td>"star-cross'd lovers"</td><td>Prologue</td><td>Fate, tragedy, inevitability</td></tr>
   <tr><td>"It is the east, and Juliet is the sun"</td><td>Balcony scene</td><td>Love, light imagery, idealism</td></tr>
   <tr><td>"A plague o' both your houses!"</td><td>Mercutio dying</td><td>Conflict, violence, futility of feuding</td></tr>
-  <tr><td>"fire-eyed fury be my conduct now"</td><td>Romeo before killing Tybalt</td><td>Masculinity, honour, violence</td></tr>
+  <tr><td>"fire-ey'd fury be my conduct now"</td><td>Romeo before killing Tybalt</td><td>Masculinity, honour, violence</td></tr>
   <tr><td>"my only love sprung from my only hate"</td><td>Juliet, Act 1</td><td>Love/hate paradox, fate</td></tr>
   <tr><td>"Hang thee, young baggage!"</td><td>Capulet to Juliet</td><td>Patriarchy, power, family</td></tr>
 </table>
@@ -3486,7 +3486,7 @@ const macbethIGModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'The prophecies are equivocal - true in ways Macbeth does not expect. "No man born of woman" seems to guarantee safety but is undone by Macduff\'s Caesarean birth. This creates dramatic irony and drives the tragic plot.',
+          'The prophecies are equivocal - true in ways Macbeth does not expect. "No man that\'s born of woman" seems to guarantee safety but is undone by Macduff\'s Caesarean birth. This creates dramatic irony and drives the tragic plot.',
       },
       {
         id: 'mac-ig-m2-q2',
@@ -3744,7 +3744,7 @@ const macbethIGModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'The witches\' half-truths create dramatic irony. The audience can see that "no man born of woman" has a loophole, but Macbeth cannot. This builds tension and reinforces the theme that Macbeth is deceived by his own desire to believe.',
+          'The witches\' half-truths create dramatic irony. The audience can see that "no man that\'s born of woman" has a loophole, but Macbeth cannot. This builds tension and reinforces the theme that Macbeth is deceived by his own desire to believe.',
       },
     ],
   },
@@ -3834,6 +3834,13 @@ const macbethIGModules: CourseModule[] = [
 // 8. The Merchant of Venice - William Shakespeare
 // ─────────────────────────────────────────────────────────────────────────────
 
+// Corrected 2 October 2026, against the held edition
+// (src/data/full-texts/the-merchant-of-venice.ts). The quotation table gave
+// "All that glisters is not gold" as the gold casket's inscription; the
+// inscription is "Who chooseth me shall gain what many men desire", and the
+// line is on the scroll Morocco finds inside (Act 2, Scene 7). The themes
+// module quoted an "alien law" the play never names; Portia cites a law against
+// "an alien" who seeks a citizen's life.
 const merchantVeniceModules: CourseModule[] = [
   {
     id: 'mov-m1',
@@ -4095,7 +4102,7 @@ const merchantVeniceModules: CourseModule[] = [
 <p>The casket test embodies this theme: "All that glisters is not gold." Portia's disguise as Balthasar shows that identity can be performed. Shylock's role as villain may mask his victimhood. The play repeatedly suggests that surfaces are deceptive and that truth requires looking beneath.</p>
 
 <h3>Law and Its Limits</h3>
-<p>Venice prides itself on its laws - they protect commerce and ensure contracts are honoured. But the trial scene reveals that the law can be manipulated: Portia uses legal technicality to defeat Shylock, and the "alien law" is invoked to strip him of his property. Shakespeare suggests that law without mercy is cruelty - but also that mercy without law is chaos.</p>
+<p>Venice prides itself on its laws - they protect commerce and ensure contracts are honoured. But the trial scene reveals that the law can be manipulated: Portia uses legal technicality to defeat Shylock, and a Venetian law against any "alien" who seeks the life of a citizen is invoked to strip him of his property. Shakespeare suggests that law without mercy is cruelty - but also that mercy without law is chaos.</p>
 `,
     quiz: [
       {
@@ -4237,7 +4244,7 @@ const merchantVeniceModules: CourseModule[] = [
   <tr><th>Quotation</th><th>Context</th><th>Useful For</th></tr>
   <tr><td>"Hath not a Jew eyes?"</td><td>Shylock, Act 3</td><td>Prejudice, humanity, sympathy</td></tr>
   <tr><td>"The quality of mercy is not strain'd"</td><td>Portia, trial scene</td><td>Mercy, justice, hypocrisy</td></tr>
-  <tr><td>"All that glisters is not gold"</td><td>Gold casket inscription</td><td>Appearance vs. reality, value</td></tr>
+  <tr><td>"All that glisters is not gold"</td><td>Scroll in the gold casket, Act 2</td><td>Appearance vs. reality, value</td></tr>
   <tr><td>"I am a Jew"</td><td>Shylock, Act 3</td><td>Identity, defiance, humanity</td></tr>
   <tr><td>"He is well paid that is well satisfied"</td><td>Portia, Act 4</td><td>Value, reward, commerce</td></tr>
   <tr><td>"You call me misbeliever, cut-throat dog"</td><td>Shylock, Act 1</td><td>Prejudice, abuse, victimhood</td></tr>

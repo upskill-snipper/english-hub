@@ -1,6 +1,13 @@
 // Model essay bank for Macbeth - grade 9 exemplars with paragraph-level annotations.
-// Quotations are taken from the standard Folger / RSC editions of Shakespeare's Macbeth
-// and have been kept short (under 15 words) for fair-dealing study purposes.
+// Quotations are in the wording of the edition the site holds, Project Gutenberg #1533
+// (src/data/full-texts/macbeth.ts), and are kept short (under 15 words).
+//
+// Until 2 October 2026 this said the quotations came from "the standard Folger / RSC
+// editions". The site stopped printing Folger's text on 26 September 2026 (Folger licenses
+// it for non-commercial use only), but nothing checked these essays against the held text,
+// so students memorised wording it does not have: the Witch's "that shalt be king
+// hereafter" as "thou shalt", Malcolm's "temp'rance" as "temperance".
+// scripts/check-quotations.mjs now checks every quotation here against the held text.
 
 export interface ModelEssay {
   slug: string
@@ -48,7 +55,7 @@ export const macbethModelEssays: ModelEssay[] = [
       },
       {
         content:
-          "From the moment the witches hail him as 'thou shalt be king hereafter', ambition is presented as something planted from outside but eagerly cultivated within. Macbeth's aside that the thought 'doth unfix my hair' uses visceral somatic imagery: ambition is felt physically before it is reasoned morally. The verb 'unfix' is telling - it suggests dislocation, a mind being prised loose from its natural order. For a Jacobean audience who believed kings were ordained by God, Macbeth's bodily reaction dramatises the cosmic wrongness of even contemplating regicide. Shakespeare therefore shows ambition entering Macbeth not as choice but as temptation, complicating any simple reading of him as villain.",
+          "From the moment the witches hail him as the one 'that shalt be king hereafter', ambition is presented as something planted from outside but eagerly cultivated within. Macbeth's aside that the thought 'doth unfix my hair' uses visceral somatic imagery: ambition is felt physically before it is reasoned morally. The verb 'unfix' is telling - it suggests dislocation, a mind being prised loose from its natural order. For a Jacobean audience who believed kings were ordained by God, Macbeth's bodily reaction dramatises the cosmic wrongness of even contemplating regicide. Shakespeare therefore shows ambition entering Macbeth not as choice but as temptation, complicating any simple reading of him as villain.",
         annotation:
           "Topic sentence makes a precise conceptual claim ('planted from outside but cultivated within'). Two short embedded quotations support analysis of a single word ('unfix'), modelling AO2 zoom. Context (divine right) is woven in to extend interpretation, not bolted on. Closes by complicating the argument - sophisticated AO1.",
       },
@@ -288,14 +295,14 @@ export const macbethModelEssays: ModelEssay[] = [
       },
       {
         content:
-          // VERIFIED: Malcolm (not Macduff) is the speaker. Folger 4.3.46-48 / OpenSourceShakespeare 4.3 lines 1888-1890: "I think our country sinks beneath the yoke; / It weeps, it bleeds; and each new day a gash / Is added to her wounds."
+          // VERIFIED: Malcolm (not Macduff) is the speaker, in the held edition's Act IV, Scene III (src/data/full-texts/macbeth.ts): "I think our country sinks beneath the yoke; / It weeps, it bleeds; and each new day a gash / Is added to her wounds."
           "Tyranny is then dramatised as the conversion of the body politic into a sick body. Malcolm laments that Scotland 'sinks beneath the yoke; it weeps, it bleeds'. Shakespeare's tricolon stacks suffering into a single line, and the personification turns the country itself into a victim of Macbeth's misrule. Crucially, the verbs are passive and corporeal - sinking, weeping, bleeding - they are what a body does when it cannot defend itself. The early modern political theory of the king's two bodies, which James I explicitly endorsed, held that the natural body of the king and the political body of the realm were mystically joined; a corrupt king infects the kingdom. Shakespeare literalises that doctrine in Malcolm's lament.",
         annotation:
           "Sophisticated AO3 - invokes 'the king's two bodies', a specific political-theological doctrine, rather than waving at 'context'. AO2 analyses tricolon and personification together. The argument that corruption spreads from king to land is precise and earns top-band marks.",
       },
       {
         content:
-          "Malcolm's testing of Macduff in Act 4 is Shakespeare's most explicit anatomy of kingship. He lists the 'king-becoming graces' - 'justice, verity, temperance, stableness' - as the moral architecture of legitimate rule. Structurally, this scene is positioned as the play's ethical centre: in a drama of regicide, Shakespeare pauses to define what the murdered office actually is. The list itself is non-dramatic, almost catechistic, and that is the point - kingship, the play insists, is a discipline of virtues, not a crown. Malcolm's later restraint, his refusal to claim the throne by force alone, models the curative kingship Scotland needs.",
+          "Malcolm's testing of Macduff in Act 4 is Shakespeare's most explicit anatomy of kingship. He lists the 'king-becoming graces' - 'justice, verity, temp'rance, stableness' - as the moral architecture of legitimate rule. Structurally, this scene is positioned as the play's ethical centre: in a drama of regicide, Shakespeare pauses to define what the murdered office actually is. The list itself is non-dramatic, almost catechistic, and that is the point - kingship, the play insists, is a discipline of virtues, not a crown. Malcolm's later restraint, his refusal to claim the throne by force alone, models the curative kingship Scotland needs.",
         annotation:
           "Reads structure as argument - a top-band move. Notes that Shakespeare interrupts the action to deliver a definition, and asks why. Connects the 'king-becoming graces' speech to Malcolm's later behaviour, demonstrating whole-text AO1.",
       },

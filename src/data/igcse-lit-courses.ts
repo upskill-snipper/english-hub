@@ -495,7 +495,7 @@ const dramaProseModules: CourseModule[] = [
 
 <p><strong>Paragraph 1: The Soldier vs. The Ambitious Man</strong></p>
 
-<p>In Act 1, Macbeth is described by the Captain as one who "carved out his passage" - a warrior defined by martial prowess, not political intrigue. The witches' prophecy does not create his ambition; rather, it activates latent desire. Critically, Shakespeare shows Macbeth's initial resistance: "I have no spur to prick the sides of my intent, but only vaulting ambition." This famous phrase reveals crucial self-awareness. Macbeth <em>knows</em> he is about to do wrong. He is not a naive tool of fate. Lady Macbeth must manipulate him, questioning his manhood ("Are you a man?") to push him toward murder. This suggests that Macbeth's fundamental nature is good - he must be psychologically coerced into evil.</p>
+<p>In Act 1, Macbeth is described by the Captain as one who "carv'd out his passage" - a warrior defined by martial prowess, not political intrigue. The witches' prophecy does not create his ambition; rather, it activates latent desire. Critically, Shakespeare shows Macbeth's initial resistance: "I have no spur to prick the sides of my intent, but only vaulting ambition." This famous phrase reveals crucial self-awareness. Macbeth <em>knows</em> he is about to do wrong. He is not a naive tool of fate. Lady Macbeth must manipulate him, questioning his manhood ("Are you a man?") to push him toward murder. This suggests that Macbeth's fundamental nature is good - he must be psychologically coerced into evil.</p>
 
 <p><strong>Paragraph 2: The Corrupted Will</strong></p>
 
@@ -507,7 +507,7 @@ const dramaProseModules: CourseModule[] = [
 
 <p><strong>Conclusion:</strong></p>
 
-<p>Macbeth's character arc is a tragedy of corruption, not of inherent evil. Shakespeare's genius lies in showing us a good man, a soldier, a husband, step by step sacrificing his humanity to ambition. We understand why he acts, even as we judge his actions. By the end, he recognises his damnation: "I am in blood stepped in so far..." He cannot go back. This is the profound tragedy of Shakespeare's vision.</p>
+<p>Macbeth's character arc is a tragedy of corruption, not of inherent evil. Shakespeare's genius lies in showing us a good man, a soldier, a husband, step by step sacrificing his humanity to ambition. We understand why he acts, even as we judge his actions. By the end, he recognises his damnation: "I am in blood stepp'd in so far..." He cannot go back. This is the profound tragedy of Shakespeare's vision.</p>
 </div>
 
 <h3>Grade 9 Insight: Advanced Character Analysis</h3>
@@ -1072,7 +1072,7 @@ Aim for at least one sentence of integrated context (not separate context, but w
 <p>What impact does the word have on the reader or audience? How does it make us feel? What does it make us think? "Full of scorpions is my mind" creates a visceral sense of Macbeth's psychological torment - his thoughts are not merely troubled but actively venomous, poisoning him from the inside.</p>
 
 <h4>Layer 4: Purpose</h4>
-<p>Why did the writer choose <em>this</em> word rather than any other? What is it achieving in the text? Shakespeare could have written "full of worries is my mind" - but "scorpions" elevates Macbeth's guilt from mere anxiety to something monstrous and self-destructive, contributing to the play's pattern of imagery linking sin with physical corruption.</p>
+<p>Why did the writer choose <em>this</em> word rather than any other? What is it achieving in the text? Shakespeare could have given Macbeth a mind merely full of worries - but "scorpions" elevates Macbeth's guilt from mere anxiety to something monstrous and self-destructive, contributing to the play's pattern of imagery linking sin with physical corruption.</p>
 
 <h3>Analysing Language Choices</h3>
 <p>When you encounter a significant word or phrase, work through these analytical questions:</p>
@@ -1088,7 +1088,7 @@ Aim for at least one sentence of integrated context (not separate context, but w
 <h3>Worked Example: Close Reading in Practice</h3>
 <p>Let us apply close reading to a single line from <em>Macbeth</em>:</p>
 
-<div class="text-extract">"Look like th'innocent flower, / But be the serpent under't."<div class="source">Lady Macbeth, Act 1, Scene 5</div></div>
+<div class="text-extract">"Look like the innocent flower, / But be the serpent under't."<div class="source">Lady Macbeth, Act 1, Scene 5</div></div>
 
 <p><strong>Surface meaning:</strong> Lady Macbeth tells her husband to appear innocent while concealing his murderous intent.</p>
 
@@ -1153,7 +1153,7 @@ Aim for at least one sentence of integrated context (not separate context, but w
       {
         id: 'iglit-dp-m6-q2',
         question:
-          'In "Look like th\'innocent flower, / But be the serpent under\'t", what does the Biblical allusion to the serpent suggest?',
+          'In "Look like the innocent flower, / But be the serpent under\'t", what does the Biblical allusion to the serpent suggest?',
         options: [
           'That Macbeth should be cunning like a snake',
           'That the planned regicide is linked to original sin - disobedience against divine authority',
@@ -1269,7 +1269,7 @@ Aim for at least one sentence of integrated context (not separate context, but w
   <li><strong>"Fair is foul, and foul is fair"</strong> (1.1) - moral inversion, deception, supernatural</li>
   <li><strong>"Stars, hide your fires; let not light see my black and deep desires"</strong> (1.4) - ambition, appearance vs reality</li>
   <li><strong>"Unsex me here"</strong> (1.5) - gender, ambition, supernatural</li>
-  <li><strong>"Look like th'innocent flower, but be the serpent under't"</strong> (1.5) - deception, appearance vs reality</li>
+  <li><strong>"Look like the innocent flower, but be the serpent under't"</strong> (1.5) - deception, appearance vs reality</li>
   <li><strong>"Is this a dagger which I see before me?"</strong> (2.1) - guilt, supernatural, psychological breakdown</li>
   <li><strong>"Will all great Neptune's ocean wash this blood clean from my hand?"</strong> (2.2) - guilt, blood motif</li>
   <li><strong>"Full of scorpions is my mind"</strong> (3.2) - guilt, psychological torment</li>
@@ -3612,7 +3612,7 @@ const poetryAssessment: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      'A metaphor makes a direct identification ("life IS a walking shadow") while a simile uses "like" or "as" to compare ("my love is LIKE a red rose"). Metaphors are generally considered stronger because they assert identity rather than resemblance.',
+      'A metaphor makes a direct identification ("Life\'s but a walking shadow") while a simile uses "like" or "as" to compare ("my love is LIKE a red rose"). Metaphors are generally considered stronger because they assert identity rather than resemblance.',
   },
   {
     id: 'iglit-po-a7',

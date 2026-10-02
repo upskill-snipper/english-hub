@@ -29,13 +29,21 @@ export const metadata: Metadata = {
 
 /* ─── Data ───────────────────────────────────────────────────── */
 
+/**
+ * QUOTATIONS CORRECTED (2 October 2026) against the edition the site holds,
+ * Project Gutenberg #46 (src/data/full-texts/a-christmas-carol.ts), as read by
+ * scripts/check-quotations.mjs. Four were not Dickens's words as printed: the
+ * edition has "grind-stone", and "If they would rather die" and Marley's "I
+ * wear the chain I forged in life" had each lost a speech tag with no
+ * ellipsis in its place.
+ */
 const keyQuotes = [
   {
-    quote: 'Oh! But he was a tight-fisted hand at the grindstone, Scrooge!',
+    quote: 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!',
     speaker: 'Narrator',
     location: 'Stave One',
     analysis:
-      "The exclamatory 'Oh!' draws the reader in conversationally, establishing the oral storytelling tone of the novella. 'Tight-fisted' and 'grindstone' create an image of relentless, crushing miserliness. The narrator's direct address breaks the fourth wall, positioning the reader as an audience being told a moral tale.",
+      "The exclamatory 'Oh!' draws the reader in conversationally, establishing the oral storytelling tone of the novella. 'Tight-fisted' and 'grind-stone' create an image of relentless, crushing miserliness. The narrator's direct address breaks the fourth wall, positioning the reader as an audience being told a moral tale.",
   },
   {
     quote: 'a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner!',
@@ -60,7 +68,7 @@ const keyQuotes = [
       "Scrooge parrots the utilitarian philosophy of Thomas Malthus. His rhetorical questions dismiss charitable responsibility by pointing to institutional 'solutions' that Dickens knew to be cruel and dehumanising. This is a direct attack on the 1834 Poor Law Amendment Act, which Dickens despised.",
   },
   {
-    quote: 'If they would rather die, they had better do it, and decrease the surplus population',
+    quote: 'If they would rather die... they had better do it, and decrease the surplus population',
     speaker: 'Scrooge',
     location: 'Stave One',
     analysis:
@@ -74,7 +82,7 @@ const keyQuotes = [
       "Marley redefines 'business' from commerce to compassion. The simple, declarative sentence carries enormous moral weight. Dickens uses Marley as a warning figure: his chains, forged in life through neglect of others, literalise the spiritual consequences of selfishness. This is the novella's central moral thesis.",
   },
   {
-    quote: 'I wear the chain I forged in life. I made it link by link, and yard by yard',
+    quote: 'I wear the chain I forged in life... I made it link by link, and yard by yard',
     speaker: "Marley's Ghost",
     location: 'Stave One',
     analysis:
@@ -599,7 +607,7 @@ export default async function ChristmasCarolStudyGuide() {
               </span>
               <p className="mt-3 text-sm font-medium text-foreground">
                 Re-read the passage in Stave One from &ldquo;Oh! But he was a tight-fisted hand at
-                the grindstone&rdquo; to &ldquo;No wind that blew was bitterer than he.&rdquo; How
+                the grind-stone&rdquo; to &ldquo;No wind that blew was bitterer than he.&rdquo; How
                 does Dickens present Scrooge&rsquo;s character in this passage?
               </p>
               <div className="mt-3 rounded bg-primary/5 p-3">

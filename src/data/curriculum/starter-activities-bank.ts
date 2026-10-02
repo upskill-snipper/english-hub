@@ -78,7 +78,8 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     differentiation: {
       support: 'Work with 3 synonym groups and pre-labelled positive/negative ends.',
       core: 'Rank all 5 groups and justify one placement in writing.',
-      stretch: 'Write two contrasting sentences using words from opposite ends of the same spectrum.',
+      stretch:
+        'Write two contrasting sentences using words from opposite ends of the same spectrum.',
     },
     linkedObjectives: [
       'Analyse how writers use word choice to create effects',
@@ -137,7 +138,7 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     termUnit: 'Term 2: Novel Study',
     duration: 7,
     instructions:
-      'One student sits in the hot seat as a character from the class novel. The rest of the class prepares 3 questions each about the character\'s motivations. The hot-seated student answers in character for 3 minutes. Class then discusses whether the answers were consistent with textual evidence.',
+      "One student sits in the hot seat as a character from the class novel. The rest of the class prepares 3 questions each about the character's motivations. The hot-seated student answers in character for 3 minutes. Class then discusses whether the answers were consistent with textual evidence.",
     resources: ['Hot seat chair at front', 'Character profile notes', 'Question prompt cards'],
     differentiation: {
       support: 'Provide question stems (e.g. "Why did you...?", "How did you feel when...?").',
@@ -145,7 +146,7 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
       stretch: 'Hot-seat as the character and justify every answer with a textual reference.',
     },
     linkedObjectives: [
-      'Infer characters\' feelings, thoughts and motives from their actions',
+      "Infer characters' feelings, thoughts and motives from their actions",
       'Develop empathy and understanding of character perspective',
     ],
     activityType: 'Character Hot-Seating',
@@ -203,8 +204,9 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     resources: ['Projected literary extract', 'Two-column recording sheet'],
     differentiation: {
       support: 'Underline the adjectives and verbs in advance; students classify them.',
-      core: 'Identify word classes independently and comment on writer\'s choices.',
-      stretch: 'Rewrite the extract replacing all adjectives with more ambitious alternatives and evaluate the effect.',
+      core: "Identify word classes independently and comment on writer's choices.",
+      stretch:
+        'Rewrite the extract replacing all adjectives with more ambitious alternatives and evaluate the effect.',
     },
     linkedObjectives: [
       'Analyse how writers use word classes to create effects',
@@ -241,7 +243,7 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     termUnit: 'Term 2: Novel Study',
     duration: 6,
     instructions:
-      'Hand out cards with 4 short textual clues about a character (actions, dialogue, appearance, others\' reactions). Students infer the character\'s personality traits and emotions. Write a PEE paragraph using one clue as evidence.',
+      "Hand out cards with 4 short textual clues about a character (actions, dialogue, appearance, others' reactions). Students infer the character's personality traits and emotions. Write a PEE paragraph using one clue as evidence.",
     resources: ['Character clue cards (one set per pair)', 'PEE paragraph frame'],
     differentiation: {
       support: 'Provide a trait word bank (e.g. anxious, confident, secretive) to choose from.',
@@ -308,7 +310,8 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     differentiation: {
       support: 'Provide a brief character summary for each character in the group.',
       core: 'Identify the odd one out and write a justification with evidence.',
-      stretch: 'Argue that a different character could also be the odd one out, providing alternative reasoning.',
+      stretch:
+        'Argue that a different character could also be the odd one out, providing alternative reasoning.',
     },
     linkedObjectives: [
       'Compare characters across texts using specific criteria',
@@ -370,7 +373,8 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     differentiation: {
       support: 'Combine into pairs first using provided conjunctions, then try three.',
       core: 'Combine all 6 into 2-3 complex sentences independently.',
-      stretch: 'Write two versions: one for a formal report and one for a creative piece, discussing how purpose changes structure.',
+      stretch:
+        'Write two versions: one for a formal report and one for a creative piece, discussing how purpose changes structure.',
     },
     linkedObjectives: [
       'Use subordination and co-ordination to construct complex sentences',
@@ -392,7 +396,8 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     differentiation: {
       support: 'Focus on 3 words and aim for 3 synonyms each with a thesaurus.',
       core: 'Generate synonyms for all 6 words from memory.',
-      stretch: 'For each word, identify a synonym with a positive and one with a negative connotation.',
+      stretch:
+        'For each word, identify a synonym with a positive and one with a negative connotation.',
     },
     linkedObjectives: [
       'Build a broad vocabulary for analytical and creative writing',
@@ -408,7 +413,10 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     duration: 6,
     instructions:
       'Display a short dialogue extract between two characters with no speech tags or stage directions. Students infer: Who are these characters? What is their relationship? What is the mood? Students must cite specific words or phrases as evidence for each inference.',
-    resources: ['Printed dialogue extract', 'Inference grid (Character / Relationship / Mood / Evidence)'],
+    resources: [
+      'Printed dialogue extract',
+      'Inference grid (Character / Relationship / Mood / Evidence)',
+    ],
     differentiation: {
       support: 'Provide multiple-choice options for character and relationship.',
       core: 'Complete all four inference categories with evidence.',
@@ -453,12 +461,12 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     termUnit: 'Term 2: Shakespeare Introduction',
     duration: 6,
     instructions:
-      'Display 6 themes from the studied play (e.g. ambition, loyalty, jealousy, fate, love, revenge). Students rank them by importance to the play\'s overall message. Write a paragraph defending your top-ranked theme using two quotations.',
+      "Display 6 themes from the studied play (e.g. ambition, loyalty, jealousy, fate, love, revenge). Students rank them by importance to the play's overall message. Write a paragraph defending your top-ranked theme using two quotations.",
     resources: ['Theme cards', 'Quotation bank organised by theme', 'Ranking frame'],
     differentiation: {
       support: 'Rank 4 themes and select from provided quotations.',
       core: 'Rank all 6 themes and write a paragraph on the top theme.',
-      stretch: 'Argue why the lowest-ranked theme is still essential to the play\'s meaning.',
+      stretch: "Argue why the lowest-ranked theme is still essential to the play's meaning.",
     },
     linkedObjectives: [
       'Evaluate the relative significance of themes within a text',
@@ -496,7 +504,11 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     duration: 7,
     instructions:
       'Give each student a 3x3 bingo grid with rhetoric technique names (e.g. anaphora, tricolon, antithesis, hyperbole, rhetorical question, direct address, imperative, emotive language, allusion). Read aloud a speech extract. Students cross off each technique as they hear it. First to complete a line explains their findings.',
-    resources: ['Bingo grid sheets', 'Speech extract for reading aloud', 'Technique definition cards'],
+    resources: [
+      'Bingo grid sheets',
+      'Speech extract for reading aloud',
+      'Technique definition cards',
+    ],
     differentiation: {
       support: 'Provide definitions on the bingo card alongside technique names.',
       core: 'Identify techniques from names only and provide one example.',
@@ -536,11 +548,15 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     duration: 6,
     instructions:
       'Show 4 real-world examples: a charity advert, a political campaign poster, a product tagline, and a social media post. Students identify at least one rhetorical device in each and explain who the target audience is and how the device appeals to them.',
-    resources: ['Four real-world media examples projected', 'Analysis grid with audience/device/effect columns'],
+    resources: [
+      'Four real-world media examples projected',
+      'Analysis grid with audience/device/effect columns',
+    ],
     differentiation: {
       support: 'Analyse 2 examples with guided questions for each.',
       core: 'Analyse all 4 independently using the grid.',
-      stretch: 'Redesign one example using a different rhetorical device and argue it would be more effective.',
+      stretch:
+        'Redesign one example using a different rhetorical device and argue it would be more effective.',
     },
     linkedObjectives: [
       'Recognise how rhetoric functions in everyday media and communication',
@@ -577,12 +593,14 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     termUnit: 'Term 2: Poetry Across Time',
     duration: 5,
     instructions:
-      'Display only the first and last lines of a poem. Students predict: What is the poem about? How does the speaker\'s attitude change? Write 2 sentences of analysis. Then reveal the full poem and check predictions. Discuss what clues the first and last lines gave.',
+      "Display only the first and last lines of a poem. Students predict: What is the poem about? How does the speaker's attitude change? Write 2 sentences of analysis. Then reveal the full poem and check predictions. Discuss what clues the first and last lines gave.",
     resources: ['First/last line display', 'Full poem for reveal', 'Prediction frame'],
     differentiation: {
-      support: 'Guided questions: What mood does the first line create? How is the last line different?',
+      support:
+        'Guided questions: What mood does the first line create? How is the last line different?',
       core: 'Predict theme and attitude shift independently with evidence from the lines.',
-      stretch: 'Analyse how the structural choice of the opening and closing shapes the reader\'s journey.',
+      stretch:
+        "Analyse how the structural choice of the opening and closing shapes the reader's journey.",
     },
     linkedObjectives: [
       'Analyse how poets use structure to shape meaning',
@@ -618,13 +636,21 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     yearGroup: 'Year 8',
     termUnit: 'Term 2: Shakespeare Introduction',
     duration: 7,
+    // Each example names its play (2 October 2026). The list ran a line of
+    // Hamlet's between two of Romeo and Juliet's with nothing to say so, and
+    // read as one play's lines.
     instructions:
-      'Display 5 Shakespearean sentences on the board (e.g. "Wherefore art thou Romeo?", "Get thee to a nunnery!", "What light through yonder window breaks?"). Students translate each into modern English. Then discuss: what is lost in translation? Why does Shakespeare\'s original language matter?',
-    resources: ['Shakespearean quotation list projected', 'Translation recording sheet', 'Glossary of archaic terms'],
+      'Display 5 Shakespearean sentences on the board, naming the play each comes from (e.g. "Wherefore art thou Romeo?" from Romeo and Juliet, "Get thee to a nunnery!" from Hamlet, "What light through yonder window breaks?" from Romeo and Juliet). Students translate each into modern English. Then discuss: what is lost in translation? Why does Shakespeare\'s original language matter?',
+    resources: [
+      'Shakespearean quotation list projected',
+      'Translation recording sheet',
+      'Glossary of archaic terms',
+    ],
     differentiation: {
       support: 'Translate 3 sentences with a provided glossary of key archaic words.',
       core: 'Translate all 5 and identify one example where modern English loses impact.',
-      stretch: 'Rewrite a modern sentence in Shakespearean style and explain the stylistic choices.',
+      stretch:
+        'Rewrite a modern sentence in Shakespearean style and explain the stylistic choices.',
     },
     linkedObjectives: [
       'Develop comprehension of Shakespearean language and syntax',
@@ -639,12 +665,13 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     termUnit: 'Term 2: Shakespeare Introduction',
     duration: 6,
     instructions:
-      'Using a three-column Shakespearean insult generator (Column A: adjectives, Column B: adjectives, Column C: nouns), students create 3 insults. Then translate their favourite into modern English and explain which version is more effective and why. Discuss what Shakespeare\'s insults reveal about his characters.',
+      "Using a three-column Shakespearean insult generator (Column A: adjectives, Column B: adjectives, Column C: nouns), students create 3 insults. Then translate their favourite into modern English and explain which version is more effective and why. Discuss what Shakespeare's insults reveal about his characters.",
     resources: ['Three-column insult generator sheet', 'Example insults from plays'],
     differentiation: {
       support: 'Generate 2 insults and pick a favourite, explaining it in modern terms.',
       core: 'Generate 3 insults, translate one, and analyse effectiveness.',
-      stretch: 'Write a short dialogue between two characters using Shakespearean insults in context.',
+      stretch:
+        'Write a short dialogue between two characters using Shakespearean insults in context.',
     },
     linkedObjectives: [
       'Engage playfully with Shakespearean vocabulary and syntax',
@@ -666,7 +693,8 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     differentiation: {
       support: 'Compare 2 headlines with guided prompts: "Which words are emotive?"',
       core: 'Analyse all 4 headlines and write a neutral alternative.',
-      stretch: 'Explain how headline bias reflects the political or commercial interests of each publication.',
+      stretch:
+        'Explain how headline bias reflects the political or commercial interests of each publication.',
     },
     linkedObjectives: [
       'Identify bias and perspective in non-fiction texts',
@@ -686,7 +714,8 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     differentiation: {
       support: 'Identify techniques from a provided list and rewrite 3 headlines.',
       core: 'Name techniques independently and rewrite all 5.',
-      stretch: 'Write your own clickbait headline for a school event and explain the psychology behind it.',
+      stretch:
+        'Write your own clickbait headline for a school event and explain the psychology behind it.',
     },
     linkedObjectives: [
       'Critically evaluate how digital media uses language to engage audiences',
@@ -706,7 +735,8 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     differentiation: {
       support: 'Complete a guided comparison grid focusing on headline and image.',
       core: 'Compare all four features and write a comparative paragraph.',
-      stretch: 'Evaluate which front page is more effective at shaping public opinion, with evidence.',
+      stretch:
+        'Evaluate which front page is more effective at shaping public opinion, with evidence.',
     },
     linkedObjectives: [
       'Compare how different texts present the same topic',
@@ -724,11 +754,16 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     duration: 7,
     instructions:
       'Each student receives a 4x4 bingo grid with persuasive techniques (e.g. statistics, expert opinion, anecdote, rule of three, emotive language, imperative, flattery, repetition, inclusive pronoun, counterargument, concession, exaggeration, alliteration, contrast, analogy, call to action). Play an audio or read aloud a persuasive speech. Students mark each technique as they identify it.',
-    resources: ['4x4 bingo grid sheets', 'Persuasive speech audio or text', 'Technique definitions reference'],
+    resources: [
+      '4x4 bingo grid sheets',
+      'Persuasive speech audio or text',
+      'Technique definitions reference',
+    ],
     differentiation: {
       support: 'Use a 3x3 grid with definitions alongside technique names.',
       core: 'Complete the 4x4 grid and quote one example from the speech.',
-      stretch: 'For each technique found, rate its effectiveness on a 1-5 scale with justification.',
+      stretch:
+        'For each technique found, rate its effectiveness on a 1-5 scale with justification.',
     },
     linkedObjectives: [
       'Identify a wide range of persuasive techniques in context',
@@ -748,7 +783,7 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     differentiation: {
       support: 'Use 2 techniques with sentence starters provided.',
       core: 'Use 3+ techniques independently in a structured speech.',
-      stretch: 'Deliver a counterargument speech responding to a peer\'s original speech.',
+      stretch: "Deliver a counterargument speech responding to a peer's original speech.",
     },
     linkedObjectives: [
       'Apply persuasive techniques in original writing and speech',
@@ -770,7 +805,8 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     differentiation: {
       support: 'Use a writing frame with sentence starters for each convention.',
       core: 'Write 4-5 sentences using 3+ Gothic conventions independently.',
-      stretch: 'Write the same setting twice: once as Gothic horror, once as Gothic romance. Compare the techniques used.',
+      stretch:
+        'Write the same setting twice: once as Gothic horror, once as Gothic romance. Compare the techniques used.',
     },
     linkedObjectives: [
       'Apply Gothic conventions in descriptive writing',
@@ -811,7 +847,7 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     termUnit: 'Term 1: 19th Century Novel Study',
     duration: 6,
     instructions:
-      'Display 5 contextual facts (e.g. Victorian class system, industrial revolution, women\'s rights, empire, religious doubt) and 5 quotations from the studied novel. Students match each context to the most relevant quotation and write one sentence explaining the connection.',
+      "Display 5 contextual facts (e.g. Victorian class system, industrial revolution, women's rights, empire, religious doubt) and 5 quotations from the studied novel. Students match each context to the most relevant quotation and write one sentence explaining the connection.",
     resources: ['Context fact cards', 'Quotation cards', 'Matching grid template'],
     differentiation: {
       support: 'Match 3 pairs with connection sentence starters provided.',
@@ -856,7 +892,8 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     differentiation: {
       support: 'Select 2 events from a shorter timeline with guided prompts.',
       core: 'Select 3 events and write independent explanatory sentences.',
-      stretch: 'Explain how one event influenced two different aspects of the text (character, theme, or setting).',
+      stretch:
+        'Explain how one event influenced two different aspects of the text (character, theme, or setting).',
     },
     linkedObjectives: [
       'Place literary texts within their historical and cultural context',
@@ -938,9 +975,11 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
       'Display a quotation and an analytical focus (e.g. "How does Dickens present social class in this extract?"). Students write a full analytical paragraph in exactly 2 minutes. Then spend 3 minutes peer-assessing using a checklist: clear point, embedded quotation, language analysis, context link, concluding comment.',
     resources: ['Quotation and question projected', 'Peer-assessment checklist', 'Timer'],
     differentiation: {
-      support: 'Use a paragraph scaffold (Point... Evidence shows... This suggests... The context of...).',
+      support:
+        'Use a paragraph scaffold (Point... Evidence shows... This suggests... The context of...).',
       core: 'Write a paragraph independently using the full checklist.',
-      stretch: 'Write the paragraph, then add a second analytical layer exploring an alternative interpretation.',
+      stretch:
+        'Write the paragraph, then add a second analytical layer exploring an alternative interpretation.',
     },
     linkedObjectives: [
       'Write analytical paragraphs efficiently under timed conditions',
@@ -997,12 +1036,13 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     termUnit: 'Term 1: 19th Century Novel Study',
     duration: 6,
     instructions:
-      'Display 5 quotations from the studied text. Students practise embedding each one seamlessly into an analytical sentence (not just bolting it on). Model the difference between: "Dickens says \'it was the best of times\'" vs "Dickens\' opening antithesis of \'the best of times\' and \'the worst\' immediately establishes..." Students write 5 embedded quotation sentences in 4 minutes.',
+      "Display 5 quotations from the studied text. Students practise embedding each one seamlessly into an analytical sentence (not just bolting it on). Model the difference between: \"Dickens says 'it was the best of times'\" vs \"Dickens' opening antithesis of 'the best of times' and 'the worst' immediately establishes...\" Students write 5 embedded quotation sentences in 4 minutes.",
     resources: ['Quotation list projected', 'Embedding technique guide', 'Model examples'],
     differentiation: {
       support: 'Embed 3 quotations using sentence stems that model embedding.',
       core: 'Embed all 5 quotations seamlessly with analytical comment.',
-      stretch: 'Embed a single quotation in 3 different ways, each foregrounding a different analytical angle.',
+      stretch:
+        'Embed a single quotation in 3 different ways, each foregrounding a different analytical angle.',
     },
     linkedObjectives: [
       'Embed quotations fluently within analytical writing',
@@ -1042,7 +1082,8 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     differentiation: {
       support: 'Quotations are ordered for logical flow; connecting phrases provided.',
       core: 'Team decides the order and writes connecting analysis between quotations.',
-      stretch: 'Include a counterargument or alternative interpretation within the relay paragraph.',
+      stretch:
+        'Include a counterargument or alternative interpretation within the relay paragraph.',
     },
     linkedObjectives: [
       'Integrate multiple quotations into a sustained analytical argument',
@@ -1064,7 +1105,8 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     differentiation: {
       support: 'Command words are highlighted; students write what each one means.',
       core: 'Identify command words independently and distinguish between similar ones.',
-      stretch: 'Write the opening sentence of a response to each question, showing how the command word shapes the approach.',
+      stretch:
+        'Write the opening sentence of a response to each question, showing how the command word shapes the approach.',
     },
     linkedObjectives: [
       'Understand and respond precisely to exam command words',
@@ -1104,7 +1146,8 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     differentiation: {
       support: 'Use a structured planning frame with guided sections.',
       core: 'Produce a full plan independently within the time limit.',
-      stretch: 'Plan two different responses to the same question and argue which approach is stronger.',
+      stretch:
+        'Plan two different responses to the same question and argue which approach is stronger.',
     },
     linkedObjectives: [
       'Plan essay responses efficiently under timed conditions',
@@ -1141,7 +1184,7 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     termUnit: 'Term 1: 19th Century Novel Study',
     duration: 6,
     instructions:
-      'Create a comparison grid for two characters from the studied text. Columns: trait, Character A evidence, Character B evidence, what the comparison reveals. Students complete at least 3 rows. Focus on how the comparison deepens understanding of the writer\'s message.',
+      "Create a comparison grid for two characters from the studied text. Columns: trait, Character A evidence, Character B evidence, what the comparison reveals. Students complete at least 3 rows. Focus on how the comparison deepens understanding of the writer's message.",
     resources: ['Comparison grid template', 'Character notes/quotation bank'],
     differentiation: {
       support: 'Traits are pre-filled; students find evidence for each character.',
@@ -1149,7 +1192,7 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
       stretch: 'Add a "writer\'s purpose" column explaining why the author created this contrast.',
     },
     linkedObjectives: [
-      'Compare characters to explore writer\'s thematic intentions',
+      "Compare characters to explore writer's thematic intentions",
       'Use comparison as an analytical tool to deepen interpretation',
     ],
     activityType: 'Comparative Thinking Map',
@@ -1166,10 +1209,11 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     differentiation: {
       support: 'Theme is provided; identify one method in each extract with guidance.',
       core: 'Identify theme, methods, and effects independently; write comparative sentence.',
-      stretch: 'Write a full comparative paragraph linking both methods to their respective contexts.',
+      stretch:
+        'Write a full comparative paragraph linking both methods to their respective contexts.',
     },
     linkedObjectives: [
-      'Compare writers\' methods across different texts',
+      "Compare writers' methods across different texts",
       'Use comparative language and connectives effectively in analytical writing',
     ],
     activityType: 'Comparative Thinking Map',
@@ -1184,11 +1228,16 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     duration: 5,
     instructions:
       'Display 10 true/false statements about the historical, social, or literary context of the studied texts (e.g. "Priestley wrote An Inspector Calls during WWII" -- True). Students answer all 10 on mini whiteboards. Review answers and discuss why each contextual fact matters for understanding the text.',
-    resources: ['True/false statements projected', 'Mini whiteboards', 'Answer key with explanations'],
+    resources: [
+      'True/false statements projected',
+      'Mini whiteboards',
+      'Answer key with explanations',
+    ],
     differentiation: {
       support: 'Answer 6 questions with a provided context fact sheet.',
       core: 'Answer all 10 from memory and explain 2 in relation to the text.',
-      stretch: 'For any false statement, provide the correct fact and explain its textual significance.',
+      stretch:
+        'For any false statement, provide the correct fact and explain its textual significance.',
     },
     linkedObjectives: [
       'Recall and apply key contextual knowledge accurately',
@@ -1204,11 +1253,17 @@ export const curriculumStarterActivities: CurriculumStarterActivity[] = [
     duration: 7,
     instructions:
       'Display an essay question. Students write only the introduction paragraph in 3 minutes. The introduction must: address the question directly, establish a thesis, and signal the direction of the argument. Peer-assess using a 3-point checklist. Discuss what makes an introduction compelling versus generic.',
-    resources: ['Essay question projected', 'Introduction checklist', 'Timer', 'Peer assessment slips'],
+    resources: [
+      'Essay question projected',
+      'Introduction checklist',
+      'Timer',
+      'Peer assessment slips',
+    ],
     differentiation: {
       support: 'Use a scaffold: "In [text], [author] explores [theme] through [method]..."',
       core: 'Write an original introduction addressing all 3 checklist points.',
-      stretch: 'Write two versions -- one safe and one ambitious -- and argue which would score higher.',
+      stretch:
+        'Write two versions -- one safe and one ambitious -- and argue which would score higher.',
     },
     linkedObjectives: [
       'Craft effective essay introductions that establish a clear thesis',

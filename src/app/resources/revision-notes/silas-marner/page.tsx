@@ -83,6 +83,44 @@ function Quote({
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
+/**
+ * QUOTATIONS CORRECTED 2 October 2026. No test checked this page's quotations
+ * against the novel, and scripts/check-quotations.mjs found 13 of them wrong,
+ * with a fourteenth it passes over because it begins "I think", which the
+ * checker takes for a sentence frame. Six were in no chapter of the novel.
+ * Dolly's "a bit motherly to it" is "a bit moithered with it" (bothered), so
+ * the note on mothering rested on a word Eliot never wrote. The gold that was
+ * "with him as his child" is the guineas Silas thinks of "as if they had been
+ * unborn children" (Chapter 2). Godfrey's "This is my punishment ... I shan't
+ * pass for anything better than I am" is "She thinks me worse than I am ...
+ * It's part of my punishment" (Chapter 20), and his "I hadn't the courage to
+ * spoil your happiness" is replaced by the excuse he does make to Nancy in
+ * Chapter 18. Two had no counterpart in the novel. Dolly's "There's things to
+ * be done in this world" is replaced by her "keep the little un" (Chapter
+ * 14), which makes the same point. "It drives me mad to hear the talk of the
+ * virtuous people", given to Godfrey, has no equivalent at all, so it is
+ * replaced by the nearest real judgement of him, the narrator on the "yoke"
+ * of his secret (Chapter 3), with a note written for those words. "I think
+ * those have the least feeling" is Nancy's retort to Godfrey in Chapter 11,
+ * not the narrator's in Chapter 3, and it ends "that act wrong to begin
+ * with": the hardship it went on to speak of is not in it. Godfrey's "It is
+ * too late now. That's the truth" set his "it's too late now" before the money
+ * debts he speaks of first, and "That's the truth" is not in the novel.
+ * "Vittles" is Eliot's "victuals". Five more stood in the wrong chapter, and
+ * the note on "there's dealings" called it the first sign of Silas's
+ * recovered faith, which was true only of the chapter it was wrongly given;
+ * he says it sixteen years on. Each corrected quotation was cut by script from
+ * the held edition, Project Gutenberg #550 (src/data/full-texts/silas-marner.ts),
+ * not retyped; its dashes are set as " -- " and its apostrophes straight, as
+ * elsewhere on this page. The redemption theme also called Eppie a "gift", in
+ * quotation marks, a word Eliot never uses of her: it comes three times, each
+ * a gift for singing, in the Rainbow's talk in Chapter 6. It now gives the
+ * word Silas uses of her coming, "sent". Each Quote card is also a reader
+ * highlight note, beginning with its speaker and chapter, so re-run
+ * scripts/generate-text-annotations.mjs after editing one:
+ * the-highlights-highlight-something.test.ts compares only a note's last sixty
+ * characters, and would pass a reader note still giving the old chapter.
+ */
 export default function SilasMarnerRevisionPage() {
   const locale = useLocale()
   const tr = (en: string): string => {
@@ -282,7 +320,7 @@ export default function SilasMarnerRevisionPage() {
                   <Quote
                     text="The gold had kept his thoughts in an ever-repeated circle, leading to nothing beyond itself"
                     speaker="Narrator"
-                    act="Part 1, Chapter 5"
+                    act="Part 1, Chapter 14"
                     analysis="The gold represents sterile repetition and isolation. 'Leading to nothing beyond itself' captures the emptiness of materialism. The circular imagery contrasts with the linear growth Silas experiences through Eppie -- love leads outward, gold leads nowhere."
                   />
                 </div>
@@ -338,7 +376,7 @@ export default function SilasMarnerRevisionPage() {
                     analysis="The devastating irony of Godfrey's situation: he chose to hide his child, and now he must live without one. 'Pass for childless' echoes his earlier deception -- his life has been defined by performing a false identity. The symmetry feels like moral justice."
                   />
                   <Quote
-                    text="It is too late now. That's the truth... there's debts we can't pay like money debts, by paying extra for the years that have slipped by"
+                    text="there's debts we can't pay like money debts, by paying extra for the years that have slipped by. While I've been putting off and putting off, the trees have been growing -- it's too late now"
                     speaker="Godfrey"
                     act="Part 2, Chapter 20"
                     analysis="Godfrey finally understands that moral obligations cannot be settled retroactively. The comparison to 'money debts' shows his habitual thinking -- as a wealthy man, he expected money to solve everything. This is the novel's clearest statement about the limits of material wealth."
@@ -398,10 +436,10 @@ export default function SilasMarnerRevisionPage() {
                   son Aaron marries Eppie, completing the bond between the families.
                 </p>
                 <Quote
-                  text="You'll happen be a bit motherly to it, and that'll do for everything"
+                  text="You'll happen be a bit moithered with it while it's so little; but I'll come, and welcome, and see to it for you"
                   speaker="Dolly Winthrop"
                   act="Part 1, Chapter 14"
-                  analysis="Dolly's advice is characteristically simple and warm. 'Motherly' is significant -- she does not say 'fatherly,' suggesting that nurturing transcends gender. 'That'll do for everything' captures Eliot's core message: love is the essential ingredient in child-rearing, not wealth or status."
+                  analysis="Dolly's offer is characteristically simple and warm. 'Moithered' is a dialect word for bothered or flustered: she warns Silas that so small a child may fluster him, and at once offers her own help, 'and welcome'. Her neighbourliness is what draws Silas back into village life. Eliot suggests that a child is raised by a community's care as well as by one parent's love."
                 />
               </div>
 
@@ -490,16 +528,16 @@ export default function SilasMarnerRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="In the old days, the gold had been with him as his child, and he had not been lonelier for it"
+                    text="He spread them out in heaps and bathed his hands in them... and thought fondly of the guineas that were only half-earned by the work in his loom, as if they had been unborn children"
                     speaker="Narrator"
                     act="Part 1, Chapter 2"
-                    analysis="The comparison of gold to a child is deeply ironic in light of what follows. Gold is a false substitute for human connection -- it cannot love back. When Eppie literally replaces the gold, the metaphor becomes reality: real love is infinitely more valuable than material wealth."
+                    analysis="Silas bathes his hands in his coins and thinks of the guineas not yet fully earned 'as if they had been unborn children'. The comparison of gold to a child is deeply ironic in light of what follows: gold is a false substitute for human connection, and it cannot love back. When Eppie literally replaces the gold, the metaphor becomes reality: real love is infinitely more valuable than material wealth."
                   />
                   <Quote
-                    text="I think those have the least feeling that act wrong under the pressure of hardship; those who do it under no pressure at all"
-                    speaker="Narrator"
-                    act="Part 1, Chapter 3"
-                    analysis="Eliot contrasts those who sin out of need with those who sin out of comfort. This is a direct critique of the gentry -- Dunsey steals from boredom and greed, not necessity. The working class are shown to have more moral sense precisely because they understand hardship."
+                    text="I think those have the least feeling that act wrong to begin with"
+                    speaker="Nancy"
+                    act="Part 1, Chapter 11"
+                    analysis="Nancy's retort at the New Year's Eve dance, when Godfrey calls her 'hard-hearted' and says she has 'no feeling'. She turns the charge back on him: the unfeeling are those who do wrong in the first place. Nancy has resolved that not even the most dazzling rank would make her marry a man careless of his character, and Eliot measures worth the same way, by conduct rather than class: the Squire's heir, with every advantage, wants sympathy for a misery of his own making."
                   />
                 </div>
               </div>
@@ -597,11 +635,11 @@ export default function SilasMarnerRevisionPage() {
                   redemptive arc. His transformation is gradual and believable: Eppie forces him to
                   engage with others, and through that engagement he rediscovers trust, warmth, and
                   purpose. The novel draws on Christian imagery (Eppie arrives on New Year&apos;s
-                  Eve, a time of renewal; she is a &ldquo;gift&rdquo;), but the redemption is
-                  fundamentally secular. It is human love, not divine grace, that saves Silas.
-                  Godfrey, by contrast, seeks redemption but arrives too late &mdash; his moral
-                  debts have accumulated beyond payment. Eliot suggests that redemption is possible
-                  but must be earned through genuine connection, not purchased with money.
+                  Eve, a time of renewal, and Silas believes she was &ldquo;sent&rdquo; to him), but
+                  the redemption is fundamentally secular. It is human love, not divine grace, that
+                  saves Silas. Godfrey, by contrast, seeks redemption but arrives too late &mdash;
+                  his moral debts have accumulated beyond payment. Eliot suggests that redemption is
+                  possible but must be earned through genuine connection, not purchased with money.
                 </p>
               </div>
             </div>
@@ -633,19 +671,19 @@ export default function SilasMarnerRevisionPage() {
                   <Quote
                     text="The gold had asked that he should sit weaving longer and longer, deafened and blinded more and more to all things except the monotony of his loom and the repetition of his web"
                     speaker="Narrator"
-                    act="Part 1, Chapter 5"
+                    act="Part 1, Chapter 14"
                     analysis="The gold is personified as a demanding master. 'Deafened and blinded' suggests Silas's senses have been deadened. The 'monotony' and 'repetition' contrast sharply with the variety and liveliness Eppie will bring. Gold creates a closed loop; love opens the world."
                   />
                   <Quote
                     text="The child was sent to me: there's dealings with us -- there's dealings"
                     speaker="Silas"
-                    act="Part 1, Chapter 13"
-                    analysis="Silas interprets Eppie's arrival as providential -- 'sent to me.' 'There's dealings' suggests he is beginning to believe in some form of moral order again, though it is vague rather than doctrinal. This is the first sign of his recovered faith."
+                    act="Part 2, Chapter 16"
+                    analysis="Silas interprets Eppie's arrival as providential -- 'sent to me.' 'There's dealings' suggests he has come to believe in some form of moral order again, though it is vague rather than doctrinal. He says it to Dolly sixteen years after Eppie's coming: the drawing of lots that condemned him at Lantern Yard is still dark to him, but the child has given him back his faith in a good beyond himself."
                   />
                   <Quote
                     text="Since the time the child was sent to me and I've come to love her as myself, I've had light enough to trusten by"
                     speaker="Silas"
-                    act="Part 2, Chapter 19"
+                    act="Part 2, Chapter 21"
                     analysis="'Light' replaces the darkness of his isolated years. 'Trusten by' means he has recovered enough faith to live by. Crucially, this faith comes through loving Eppie, not through religious doctrine. Love provides the moral compass that religion failed to give him."
                   />
                 </div>
@@ -655,16 +693,16 @@ export default function SilasMarnerRevisionPage() {
                 <h3 className="font-bold text-foreground mb-3">{tr(`Godfrey Cass`)}</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="This is my punishment... I shan't pass for anything better than I am"
+                    text="She thinks me worse than I am. But she must think it: she can never know all. It's part of my punishment, Nancy, for my daughter to dislike me"
                     speaker="Godfrey"
                     act="Part 2, Chapter 20"
-                    analysis="Godfrey finally accepts that his years of deception have consequences. 'Pass for' echoes his lifetime of performing a false identity. The word 'punishment' suggests he sees moral causation at work -- his suffering is the natural result of his choices."
+                    analysis="Godfrey finally accepts that his years of deception have consequences. Eppie, refusing him, believes he wronged her mother as well as her, and he cannot tell her the whole story ('she can never know all'). The word 'punishment' suggests he sees moral causation at work: his suffering is the natural result of his choices."
                   />
                   <Quote
-                    text="I'd a mind to tell you about it before I married you... but I hadn't the courage to spoil your happiness"
+                    text="But you wouldn't have married me then, Nancy, if I'd told you"
                     speaker="Godfrey"
                     act="Part 2, Chapter 18"
-                    analysis="Godfrey frames his cowardice as kindness -- 'spoil your happiness.' But Eliot makes clear this was self-serving. His inability to face difficult truths defines his character. The contrast with Proctor in The Crucible (who painfully tells the truth) is striking."
+                    analysis="Godfrey excuses his silence: Nancy, he insists, would never have married him if he had told her the truth. Eliot's narrator makes clear that this is self-justification: Godfrey says it 'to prove to himself that his conduct had not been utter folly'. His inability to face difficult truths defines his character. The contrast with Proctor in The Crucible (who painfully tells the truth) is striking."
                   />
                 </div>
               </div>
@@ -673,28 +711,28 @@ export default function SilasMarnerRevisionPage() {
                 <h3 className="font-bold text-foreground mb-3">{tr(`Eppie and Others`)}</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="I like the working-folks, and their vittles, and their ways. And... I'm promised to marry a working-man"
+                    text="I like the working-folks, and their victuals, and their ways. And... I'm promised to marry a working-man"
                     speaker="Eppie"
                     act="Part 2, Chapter 19"
-                    analysis="Eppie's declaration of class loyalty. She values the working-class life not out of ignorance of alternatives but by genuine preference. 'Vittles and their ways' is concrete and specific -- she loves the texture of this life, not an abstract idea of it."
+                    analysis="Eppie's declaration of class loyalty. She values the working-class life not out of ignorance of alternatives but by genuine preference. 'Their victuals, and their ways' is concrete and specific -- she loves the texture of this life, not an abstract idea of it."
                   />
                   <Quote
-                    text="It drives me mad to hear the talk of the virtuous people -- they never had the chance of being wicked"
-                    speaker="Godfrey (to himself)"
+                    text="The yoke a man creates for himself by wrong-doing will breed hate in the kindliest nature; and the good-humoured, affectionate-hearted Godfrey Cass was fast becoming a bitter man, visited by cruel wishes"
+                    speaker="Narrator"
                     act="Part 1, Chapter 3"
-                    analysis="An unusually self-aware moment for Godfrey. He recognises that moral judgement is easy for those who have never been tempted. This connects to Eliot's nuanced moral vision -- she judges characters by what they do with their circumstances, not by abstract standards."
+                    analysis="Eliot's narrator does not make Godfrey a villain: he is 'good-humoured' and 'affectionate-hearted'. But his secret marriage has given Dunsey a hold over him, a 'yoke' of his own making, and it is turning him into 'a bitter man'. This connects to Eliot's nuanced moral vision: she judges characters by what they do with their circumstances, not by abstract standards."
                   />
                   <Quote
-                    text="There's things to be done in this world, and what we must do is to bring up the child as our own"
+                    text="I think you're in the right on it to keep the little un, Master Marner, seeing as it's been sent to you, though there's folks as thinks different"
                     speaker="Dolly Winthrop"
                     act="Part 1, Chapter 14"
-                    analysis="Dolly's practical wisdom: the right response to finding a child is to raise it with love. Her simple moral clarity contrasts with Godfrey's agonised avoidance. 'Things to be done' reflects her active, engaged approach to life."
+                    analysis="Dolly's practical wisdom: the right response to finding a child is to keep it and bring it up. Her simple moral clarity contrasts with Godfrey's agonised avoidance. 'Seeing as it's been sent to you' reflects her simple faith that Eppie's coming was meant, and she backs Silas against the 'folks as thinks different'."
                   />
                   <Quote
                     text="The gods of the hearth exist for us still; and let all new faith be tolerant of that fetishism, lest it bruise its own roots"
                     speaker="Narrator"
-                    act="Part 1, Chapter 1"
-                    analysis="Eliot's narrator makes a philosophical statement: domestic love ('gods of the hearth') is the foundation of all higher values. Any new ideology ('new faith') that dismisses the importance of home and family undermines its own moral basis."
+                    act="Part 2, Chapter 16"
+                    analysis="Silas will not have a grate and oven put in: he loves the old brick hearth, where he found Eppie, as he once loved his brown pot. From this, Eliot's narrator makes a philosophical statement: domestic love ('gods of the hearth') is the foundation of all higher values. Any new ideology ('new faith') that scorns this attachment to home and its familiar things undermines its own moral basis."
                   />
                 </div>
               </div>

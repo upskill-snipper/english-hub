@@ -14,7 +14,9 @@ export const DAILY_QUOTES: DailyQuote[] = [
   { text: "Will all great Neptune's ocean wash this blood clean from my hand?", author: "William Shakespeare", work: "Macbeth", topic: "guilt" },
   { text: "Out, damned spot! Out, I say!", author: "William Shakespeare", work: "Macbeth", topic: "guilt" },
   { text: "Fair is foul, and foul is fair.", author: "William Shakespeare", work: "Macbeth", topic: "appearance vs reality" },
-  { text: "Stars, hide your fires; let not light see my black desires.", author: "William Shakespeare", work: "Macbeth", topic: "ambition" },
+  // Corrected 2 October 2026 against the held edition (Project Gutenberg #1533,
+  // src/data/full-texts/macbeth.ts): this had lost "and deep" from Macbeth's line.
+  { text: "Stars, hide your fires; let not light see my black and deep desires.", author: "William Shakespeare", work: "Macbeth", topic: "ambition" },
   { text: "I have no spur to prick the sides of my intent.", author: "William Shakespeare", work: "Macbeth", topic: "ambition" },
   { text: "Life's but a walking shadow, a poor player.", author: "William Shakespeare", work: "Macbeth", topic: "despair" },
   { text: "Unsex me here, and fill me from the crown to the toe.", author: "William Shakespeare", work: "Macbeth", topic: "power" },
@@ -24,7 +26,7 @@ export const DAILY_QUOTES: DailyQuote[] = [
   // SHAKESPEARE — Romeo and Juliet (10)
   // ============================================================
   { text: "But soft, what light through yonder window breaks?", author: "William Shakespeare", work: "Romeo and Juliet", topic: "love" },
-  { text: "A plague on both your houses!", author: "William Shakespeare", work: "Romeo and Juliet", topic: "conflict" },
+  { text: "A plague o' both your houses!", author: "William Shakespeare", work: "Romeo and Juliet", topic: "conflict" },
   { text: "My only love sprung from my only hate!", author: "William Shakespeare", work: "Romeo and Juliet", topic: "love" },
   { text: "What's in a name? That which we call a rose...", author: "William Shakespeare", work: "Romeo and Juliet", topic: "identity" },
   { text: "These violent delights have violent ends.", author: "William Shakespeare", work: "Romeo and Juliet", topic: "fate" },
@@ -45,7 +47,13 @@ export const DAILY_QUOTES: DailyQuote[] = [
   { text: "She is fallen into a pit of ink.", author: "William Shakespeare", work: "Much Ado About Nothing", topic: "reputation" },
   { text: "Are you good men and true?", author: "William Shakespeare", work: "Much Ado About Nothing", topic: "appearance vs reality" },
   { text: "I would my horse had the speed of your tongue.", author: "William Shakespeare", work: "Much Ado About Nothing", topic: "wit" },
-  { text: "Friendship is constant in all other things save the office of love.", author: "William Shakespeare", work: "Much Ado About Nothing", topic: "friendship" },
+  // Corrected 2 October 2026: Claudio's line had lost "in" and "and affairs"
+  // with nothing to mark the gap. Now word for word the held edition
+  // (src/data/full-texts/much-ado-about-nothing.ts, Gutenberg #1519), Act 2,
+  // Scene 1, its two verse lines run together, as a script comparing the two
+  // confirmed (found once, Claudio's). The quotation scanner reads a
+  // `text` field here as a label, not a quotation, so it never saw this one.
+  { text: "Friendship is constant in all other things save in the office and affairs of love.", author: "William Shakespeare", work: "Much Ado About Nothing", topic: "friendship" },
   { text: "For which of my bad parts didst thou first fall in love with me?", author: "William Shakespeare", work: "Much Ado About Nothing", topic: "wit" },
 
   // ============================================================
@@ -127,20 +135,25 @@ export const DAILY_QUOTES: DailyQuote[] = [
   // ============================================================
   // JEKYLL & HYDE — Stevenson (15)
   // ============================================================
+  // Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+  // src/data/full-texts/jekyll-and-hyde.ts): the pun's speech tag is marked with an
+  // ellipsis, "as we meet them" is restored, the edition prints "under foot", and
+  // "these polar twins were bound together" had run two clauses of Jekyll's into a
+  // sentence he never wrote.
   { text: "Man is not truly one, but truly two.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "duality" },
-  { text: "If he be Mr Hyde, I shall be Mr Seek.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "mystery" },
+  { text: "If he be Mr Hyde... I shall be Mr Seek.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "mystery" },
   { text: "He gave an impression of deformity without any nameable malformation.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "evil" },
   { text: "Satan's signature upon a face.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "evil" },
   { text: "The pleasures which I made haste to seek in my disguise.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "duality" },
   { text: "I learned to recognise the thorough and primitive duality of man.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "duality" },
   { text: "I was slowly losing hold of my original and better self.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "identity" },
-  { text: "With ape-like fury, he was trampling his victim underfoot.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "violence" },
-  { text: "All human beings are commingled out of good and evil.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "duality" },
+  { text: "With ape-like fury, he was trampling his victim under foot.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "violence" },
+  { text: "All human beings, as we meet them, are commingled out of good and evil.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "duality" },
   { text: "The large handsome face of Dr Jekyll grew pale to the very lips.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "fear" },
   { text: "My devil had been long caged; he came out roaring.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "repression" },
   { text: "I felt younger, lighter, happier in body.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "temptation" },
   { text: "He had in his hand a heavy cane, with which he was trifling.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "violence" },
-  { text: "It was the curse of mankind that these polar twins were bound together.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "duality" },
+  { text: "It was the curse of mankind that... these polar twins should be continuously struggling.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "duality" },
   { text: "There was something abnormal and misbegotten in the very essence of the creature.", author: "Robert Louis Stevenson", work: "Dr Jekyll and Mr Hyde", topic: "evil" },
 
   // ============================================================
@@ -183,8 +196,12 @@ export const DAILY_QUOTES: DailyQuote[] = [
   { text: "Full fathom five thy father lies.", author: "William Shakespeare", work: "The Tempest", topic: "death" },
 
   // The Merchant of Venice — Shakespeare (3)
+  // Corrected 2 October 2026: Portia's line read "not strained", where the held
+  // edition (src/data/full-texts/the-merchant-of-venice.ts, Gutenberg #1515)
+  // prints "strain'd"; cut by script from it. The quotation scanner reads a
+  // `text` field here as a label, not a quotation, so it never saw this one.
   { text: "If you prick us, do we not bleed?", author: "William Shakespeare", work: "The Merchant of Venice", topic: "prejudice" },
-  { text: "The quality of mercy is not strained.", author: "William Shakespeare", work: "The Merchant of Venice", topic: "mercy" },
+  { text: "The quality of mercy is not strain'd.", author: "William Shakespeare", work: "The Merchant of Venice", topic: "mercy" },
   { text: "All that glisters is not gold.", author: "William Shakespeare", work: "The Merchant of Venice", topic: "appearance vs reality" },
 
   // Great Expectations — Dickens (3)
@@ -193,7 +210,10 @@ export const DAILY_QUOTES: DailyQuote[] = [
   { text: "In a word, I was too cowardly to do what I knew to be right.", author: "Charles Dickens", work: "Great Expectations", topic: "guilt" },
 
   // Animal Farm — Orwell (4)
-  { text: "All animals are equal, but some are more equal than others.", author: "George Orwell", work: "Animal Farm", topic: "power" },
+  // Corrected 2 October 2026: "some are more equal" had lost its second
+  // "animals". Cut by script from the held edition
+  // (src/data/full-texts/animal-farm.ts), which sets it without a comma.
+  { text: "All animals are equal but some animals are more equal than others.", author: "George Orwell", work: "Animal Farm", topic: "power" },
   { text: "Four legs good, two legs bad.", author: "George Orwell", work: "Animal Farm", topic: "propaganda" },
   { text: "The creatures outside looked from pig to man, and from man to pig.", author: "George Orwell", work: "Animal Farm", topic: "corruption" },
   { text: "Napoleon is always right.", author: "George Orwell", work: "Animal Farm", topic: "propaganda" },

@@ -1,6 +1,11 @@
 // @ts-nocheck
 import type { CourseData } from './courses'
 
+// Macbeth is quoted here in the wording of the edition the site holds, Project
+// Gutenberg #1533 (src/data/full-texts/macbeth.ts). It prints "We have scorch'd
+// the snake", the Folio's reading, where many editions print "scotch'd", and
+// "Tomorrow, and tomorrow, and tomorrow" without hyphens. Until 2 October 2026
+// these pages used the other editions' forms, which students then memorised.
 const edexcelLitPaper1: CourseData = {
   id: 'edexcel-lit-paper1',
   title: 'Edexcel GCSE English Literature \u2013 Paper 1',
@@ -159,7 +164,7 @@ const edexcelLitPaper1: CourseData = {
 
 <h4>6. Appearance vs Reality</h4>
 <p>Deception saturates the play. Duncan calls Macbeth's castle "pleasant"; Macbeth plays the loyal host while planning regicide. The motif is crystallised by Lady Macbeth's instruction:</p>
-<div class="text-extract">"Look like th'innocent flower, / But be the serpent under't."<div class="source">Act 1, Scene 5</div></div>
+<div class="text-extract">"Look like the innocent flower, / But be the serpent under't."<div class="source">Act 1, Scene 5</div></div>
 
 <h4>7. Fate vs Free Will</h4>
 <p>Do the witches cause Macbeth's actions, or merely reveal what he already desired? This ambiguity is central to Shakespeare's design and gives you a rich line of argument for personal response (AO1).</p>
@@ -229,7 +234,7 @@ const edexcelLitPaper1: CourseData = {
           question: 'Which quotation best illustrates the theme of guilt in Macbeth?',
           options: [
             '"Fair is foul, and foul is fair"',
-            '"Look like th\'innocent flower, but be the serpent under\'t"',
+            '"Look like the innocent flower, but be the serpent under\'t"',
             '"Will all great Neptune\'s ocean wash this blood clean from my hand?"',
             '"When you durst do it, then you were a man"',
           ],
@@ -285,12 +290,12 @@ const edexcelLitPaper1: CourseData = {
 
 <h4>Macbeth</h4>
 <ul>
-  <li><strong>Brave warrior</strong> - Praised as "brave Macbeth" who "unseamed" the rebel "from the nave to the chops" (Act 1).</li>
+  <li><strong>Brave warrior</strong> - Praised as "brave Macbeth" who "unseam'd" the rebel "from the nave to the chops" (Act 1).</li>
   <li><strong>Ambitious but conflicted</strong> - His Act 1 Scene 7 soliloquy reveals moral horror at regicide yet inability to resist power.</li>
   <li><strong>Tyrant</strong> - Orders Banquo's and Macduff's family's murders; becomes isolated and paranoid.</li>
   <li><strong>Desperate</strong> - The nihilistic "Tomorrow and tomorrow" soliloquy (Act 5) shows fatalistic defiance.</li>
 </ul>
-<p><strong>Key quote:</strong> <em>"I am in blood / Stepped in so far that, should I wade no more, / Returning were as tedious as go o'er."</em> - Blood as a metaphor for moral entrapment beyond the point of no return.</p>
+<p><strong>Key quote:</strong> <em>"I am in blood / Stepp'd in so far that, should I wade no more, / Returning were as tedious as go o'er."</em> - Blood as a metaphor for moral entrapment beyond the point of no return.</p>
 
 <h4>Lady Macbeth</h4>
 <ul>
@@ -323,8 +328,8 @@ const edexcelLitPaper1: CourseData = {
 <strong>Act 1, Scene 2 (Warrior):</strong> "For brave Macbeth - well he deserves that name" - Initial heroism and martial honour.<br><br>
 <strong>Act 1, Scene 7 (Conflicted):</strong> "I have no spur / To prick the sides of my intent, but only / Vaulting ambition" - Awareness of moral transgression; inability to resist. "Vaulting" suggests ambition overleaping proper bounds.<br><br>
 <strong>Act 2, Scene 2 (Guilt):</strong> "Will all great Neptune's ocean wash this blood / Clean from my hand?" - Hyperbole conveys guilt as cosmic, indelible. No physical act can undo moral transgression.<br><br>
-<strong>Act 3, Scene 2 (Isolation):</strong> "We have scotch'd the snake, not kill'd it" - Paranoia. Macbeth recognises that Banquo remains a threat, forcing further murders.<br><br>
-<strong>Act 5, Scene 5 (Despair):</strong> "To-morrow, and to-morrow, and to-morrow, / Creeps in this petty pace from day to day" - Nihilism. Meaning dissolves; life becomes meaningless repetition.
+<strong>Act 3, Scene 2 (Isolation):</strong> "We have scorch'd the snake, not kill'd it" - Paranoia. Macbeth recognises that Banquo remains a threat, forcing further murders.<br><br>
+<strong>Act 5, Scene 5 (Despair):</strong> "Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day" - Nihilism. Meaning dissolves; life becomes meaningless repetition.
 </div>
 
 <div class="grade-9-insight"><strong>Grade 9 Insight:</strong> Trace a single image's evolution across the entire play. Blood begins as honour ("brave Macbeth"), becomes transgression (Duncan's murder), then guilt ("Will all great Neptune's ocean wash this blood / Clean from my hand?"), and finally numbness ("Out, damned spot!" in Lady Macbeth's mad scene). This unified analysis demonstrates sophisticated writer's methods (AO2) understanding and conceptual mastery of the play's psychological arc.</div>
@@ -401,7 +406,7 @@ const edexcelLitPaper1: CourseData = {
 <h3>Model Answer: Full Grade 8-9 Paragraph on Character Development</h3>
 <div class="text-extract">
 <strong>Sample Question:</strong> "Explore how Shakespeare presents Macbeth's change from loyal warrior to paranoid tyrant."<br><br>
-<strong>Model Response (c. 280 words):</strong> Shakespeare's presentation of Macbeth's moral descent is central to the tragedy's exploration of ambition's corrupting nature. In Act 1 Scene 2, the bleeding sergeant hails "brave Macbeth," establishing him as a loyal warrior whose violence serves rightful order - blood here symbolises martial honour. Yet by Act 1 Scene 7, Macbeth's soliloquy reveals internal fracture: "I have no spur / To prick the sides of my intent, but only / Vaulting ambition." The noun "spur" traditionally signified duty or honour, but Macbeth finds only "ambition" - selfish desire divorced from legitimate cause. The verb "vaulting" (arching, overleaping) suggests ambition that exceeds its proper bounds and will inevitably collapse, foreshadowing his downfall. Lady Macbeth's manipulation - "When you durst do it, then you were a man" - weaponises masculinity against him, forcing the murder. Following Duncan's death, blood's imagery inverts. The hyperbolic "Will all great Neptune's ocean wash this blood / Clean from my hand?" reveals Macbeth's recognition that moral transgression cannot be undone by physical action. This psychological unraveling accelerates through Acts 3-5. By Act 3, Macbeth orders further murders to feel secure ("We have scotch'd the snake, not kill'd it"), revealing paranoia and moral numbness. The Act 5 soliloquy sees meaning itself dissolve: "To-morrow, and to-morrow, and to-morrow." Shakespeare's arc demonstrates that unchecked ambition doesn't elevate; it destroys, leaving the protagonist isolated and nihilistic. For a Jacobean audience steeped in the divine right of kings, Macbeth's fall would serve as a cosmic warning: those who violate God's ordained order face not mere earthly punishment but psychological annihilation.
+<strong>Model Response (c. 280 words):</strong> Shakespeare's presentation of Macbeth's moral descent is central to the tragedy's exploration of ambition's corrupting nature. In Act 1 Scene 2, the bleeding sergeant hails "brave Macbeth," establishing him as a loyal warrior whose violence serves rightful order - blood here symbolises martial honour. Yet by Act 1 Scene 7, Macbeth's soliloquy reveals internal fracture: "I have no spur / To prick the sides of my intent, but only / Vaulting ambition." The noun "spur" traditionally signified duty or honour, but Macbeth finds only "ambition" - selfish desire divorced from legitimate cause. The verb "vaulting" (arching, overleaping) suggests ambition that exceeds its proper bounds and will inevitably collapse, foreshadowing his downfall. Lady Macbeth's manipulation - "When you durst do it, then you were a man" - weaponises masculinity against him, forcing the murder. Following Duncan's death, blood's imagery inverts. The hyperbolic "Will all great Neptune's ocean wash this blood / Clean from my hand?" reveals Macbeth's recognition that moral transgression cannot be undone by physical action. This psychological unraveling accelerates through Acts 3-5. By Act 3, Macbeth orders further murders to feel secure ("We have scorch'd the snake, not kill'd it"), revealing paranoia and moral numbness. The Act 5 soliloquy sees meaning itself dissolve: "Tomorrow, and tomorrow, and tomorrow." Shakespeare's arc demonstrates that unchecked ambition doesn't elevate; it destroys, leaving the protagonist isolated and nihilistic. For a Jacobean audience steeped in the divine right of kings, Macbeth's fall would serve as a cosmic warning: those who violate God's ordained order face not mere earthly punishment but psychological annihilation.
 <div class="source">Grade 8-9 exemplar: ~320 words integrating personal response (AO1), writer's methods (AO2, language analysis of "vaulting," "spur," hyperbole), and context (AO3, divine right)</div>
 </div>
 
@@ -650,7 +655,7 @@ const edexcelLitPaper1: CourseData = {
 <strong>For Ambition:</strong> "Vaulting ambition, which o'erleaps itself" (Act 1.7) | "I have no spur / To prick the sides of my intent" (Act 1.7) | "None of woman born shall harm Macbeth" (Act 4.1, false security)<br><br>
 <strong>For Guilt & Conscience:</strong> "Will all great Neptune's ocean wash this blood / Clean from my hand?" (Act 2.2) | "Out, damned spot!" (Act 5.1, Lady Macbeth sleepwalking)<br><br>
 <strong>For Power & Masculinity:</strong> "When you durst do it, then you were a man" (Act 1.7, Lady Macbeth goads) | "I am settled: I will rule in fear" (Act 4.1, post-witches)<br><br>
-<strong>For Appearance vs Reality:</strong> "Look like th'innocent flower, / But be the serpent under't" (Act 1.5) | "There's none of my people know" (Act 3.2, before Banquo murder)<br><br>
+<strong>For Appearance vs Reality:</strong> "Look like the innocent flower, / But be the serpent under't" (Act 1.5) | "There's none of my people know" (Act 3.2, before Banquo murder)<br><br>
 <strong>For the Supernatural:</strong> "Fair is foul, and foul is fair" (Act 1.1, witches) | "By the pricking of my thumbs, / Something wicked this way comes" (Act 4.1)
 </div>
 
@@ -664,7 +669,7 @@ const edexcelLitPaper1: CourseData = {
 <strong>Extract Analysis (2 paragraphs):</strong><br>
 This soliloquy reveals Macbeth's moral awareness. The metaphor of "spur" (a rider's tool for motivating a horse) signals that legitimate motives (duty, honour) should drive action. Yet Macbeth finds only "ambition" - selfish desire. The verb "vaulting" (arching too far) and the paradox "o'erleaps itself / And falls on th'other" foreshadow inevitable collapse. For a Jacobean audience, this self-awareness makes the subsequent regicide doubly damning: Macbeth knows his transgression violates divine order.<br><br>
 <strong>Wider Play Integration (2 paragraphs):</strong><br>
-The prophecy itself fuels this ambition. The witches' "All hail, Macbeth, that shalt be king hereafter" (Act 1.3) plants the idea; Lady Macbeth weaponises it with "When you durst do it, then you were a man" (Act 1.7). But the play demonstrates that this ambition cannot be sated. Post-murder, Macbeth's paranoia forces him to order Banquo's death ("We have scotch'd the snake, not kill'd it," Act 3.2), then Macduff's family's slaughter. Each crime deepens isolation and psychological decay. By Act 5, the nihilistic soliloquy ("To-morrow, and to-morrow, and to-morrow") shows that ambition has destroyed not just Macbeth's morality but his capacity for meaning. Shakespeare's point: ambition as isolated personal desire, unchecked by conscience or loyalty, is self-consuming. Macduff's eventual victory and Malcolm's restoration of order reassert that the kingdom itself rejects the tyranny ambition produced.
+The prophecy itself fuels this ambition. The witches' "All hail, Macbeth, that shalt be king hereafter" (Act 1.3) plants the idea; Lady Macbeth weaponises it with "When you durst do it, then you were a man" (Act 1.7). But the play demonstrates that this ambition cannot be sated. Post-murder, Macbeth's paranoia forces him to order Banquo's death ("We have scorch'd the snake, not kill'd it," Act 3.2), then Macduff's family's slaughter. Each crime deepens isolation and psychological decay. By Act 5, the nihilistic soliloquy ("Tomorrow, and tomorrow, and tomorrow") shows that ambition has destroyed not just Macbeth's morality but his capacity for meaning. Shakespeare's point: ambition as isolated personal desire, unchecked by conscience or loyalty, is self-consuming. Macduff's eventual victory and Malcolm's restoration of order reassert that the kingdom itself rejects the tyranny ambition produced.
 </div>
 
 <h3>PETAL Framework: Worked Practice</h3>
@@ -702,7 +707,7 @@ Shakespeare's use of equestrian metaphor reveals Macbeth's moral self-awareness.
 <h3>Wider Play Paragraph Model (Grade 8-9)</h3>
 <div class="text-extract">
 <strong>Developing the theme into Acts 2-5:</strong><br><br>
-Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the play demonstrates how ambition mutates into paranoia and tyranny. Following Duncan's murder, Macbeth's language shifts from reflection to ruthlessness. "We have scotch'd the snake, not kill'd it" (Act 3.2) reveals that one murder cannot satiate ambition - Banquo remains a threat. This compulsion drives Macbeth to orchestrate Banquo's death and, by Act 4, to order the slaughter of Macduff's innocent family. Each crime distances him further from his initial moral awareness. By Act 5, the nihilistic "To-morrow, and to-morrow, and to-morrow" soliloquy shows that ambition has consumed all meaning - Macbeth is no longer driven by desire but hollowed by it. Shakespeare's arc demonstrates that unchecked ambition does not elevate; it destroys the ambition-driven self. The restoration of order through Macduff's victory and Malcolm's coronation reasserts that the kingdom itself rejects the tyrant ambition produced.
+Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the play demonstrates how ambition mutates into paranoia and tyranny. Following Duncan's murder, Macbeth's language shifts from reflection to ruthlessness. "We have scorch'd the snake, not kill'd it" (Act 3.2) reveals that one murder cannot satiate ambition - Banquo remains a threat. This compulsion drives Macbeth to orchestrate Banquo's death and, by Act 4, to order the slaughter of Macduff's innocent family. Each crime distances him further from his initial moral awareness. By Act 5, the nihilistic "Tomorrow, and tomorrow, and tomorrow" soliloquy shows that ambition has consumed all meaning - Macbeth is no longer driven by desire but hollowed by it. Shakespeare's arc demonstrates that unchecked ambition does not elevate; it destroys the ambition-driven self. The restoration of order through Macduff's victory and Malcolm's coronation reasserts that the kingdom itself rejects the tyrant ambition produced.
 <div class="source">Grade 8-9 Wider Play Paragraph: ~200 words, integrating multiple scenes to show thematic development and providing conceptualised interpretation</div>
 </div>
 `,
@@ -1796,6 +1801,11 @@ const edexcelLitPaper2: CourseData = {
     // MODULE 2 - 19th-Century Novel: Context & Conventions (A Christmas Carol Focus)
     // ──────────────────────────────────────────────
     {
+      // Quotations corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+      // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are there
+      // no prisons?" and "And the Union workhouses?" ("Are there no workhouses?" is the
+      // Spirit's, in Stave Three), and the edition prints "grind-stone". The same text is in
+      // edexcel-lit-p2-modules.ts.
       id: 'edx-lt2-m2',
       title: '19th-Century Novel: Context & Conventions (A Christmas Carol Focus)',
       duration: '55 min',
@@ -1810,7 +1820,7 @@ const edexcelLitPaper2: CourseData = {
 <p>When Chapman &amp; Hall published <em>A Christmas Carol</em> on 19 December 1843, Britain was in the grip of rapid industrial change. The following contextual factors are essential for a strong context (AO3) response:</p>
 
 <ul>
-  <li><strong>The Poor Law Amendment Act (1834):</strong> This law created workhouses where the destitute were sent to labour in appalling conditions. The philosophy was deliberate harshness - poverty was seen as a moral failing, and relief was made as unpleasant as possible to discourage dependency. Scrooge directly echoes this attitude when he asks, <em>"Are there no prisons? Are there no workhouses?"</em></li>
+  <li><strong>The Poor Law Amendment Act (1834):</strong> This law created workhouses where the destitute were sent to labour in appalling conditions. The philosophy was deliberate harshness - poverty was seen as a moral failing, and relief was made as unpleasant as possible to discourage dependency. Scrooge directly echoes this attitude when he asks, <em>"Are there no prisons? ... And the Union workhouses?"</em></li>
   <li><strong>Malthusian Economics:</strong> Thomas Malthus argued that population growth would inevitably outstrip food supply, and that helping the poor only encouraged overpopulation. Scrooge channels Malthus when he refers to the poor dying to <em>"decrease the surplus population"</em> - a phrase Dickens uses to expose the cruelty of this ideology.</li>
   <li><strong>Industrial Capitalism:</strong> Factory owners and businessmen accumulated enormous wealth while workers - including children - endured poverty wages, long hours, and dangerous conditions. Dickens saw this inequality first-hand during a visit to Manchester's cotton mills in October 1843, just weeks before he began writing the novella.</li>
   <li><strong>Workhouse Conditions:</strong> Families were separated, food was minimal, and inmates wore uniforms. The Andover workhouse scandal of 1845 (where starving inmates gnawed on bones) was still two years away, but conditions were already notorious. Dickens had experienced poverty himself as a child, working in Warren's Blacking Factory at the age of twelve.</li>
@@ -1945,8 +1955,8 @@ const edexcelLitPaper2: CourseData = {
 
 <p><strong>Key Quotes:</strong></p>
 <ul>
-  <li><em>"Oh! But he was a tight-fisted hand at the grindstone, Scrooge!"</em> - Exclamatory tone establishes him as an extreme figure of avarice.</li>
-  <li><em>"Are there no prisons? Are there no workhouses?"</em> - Echoes Malthusian economics; reveals callousness toward the poor.</li>
+  <li><em>"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!"</em> - Exclamatory tone establishes him as an extreme figure of avarice.</li>
+  <li><em>"Are there no prisons? ... And the Union workhouses?"</em> - Echoes Malthusian economics; reveals callousness toward the poor.</li>
   <li><em>"I will honour Christmas in my heart, and try to keep it all the year."</em> - Stave 5 pledge marks complete moral reversal.</li>
   <li><em>"Solitary as an oyster"</em> - Hard-shelled and closed off, yet containing hidden value (the pearl within).</li>
   <li><em>"He became as good a friend, as good a master, and as good a man"</em> - Superlative repetition reinforces total transformation.</li>

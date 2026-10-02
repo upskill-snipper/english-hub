@@ -3,6 +3,23 @@
 //
 // 10 GCSE-level lessons covering Shakespeare's Romeo and Juliet.
 // All original content - no exam board copyrighted material.
+//
+// Quotations of the play are in the wording of the edition the site holds,
+// Project Gutenberg #1513 (src/data/full-texts/romeo-and-juliet.ts), and are
+// cut from it rather than typed. Until 2 October 2026 forty-five were not:
+// other editions' readings ("By any other word", "There rust", "naught") and
+// modern spellings ("star-crossed", "death-marked", "A plague on both your
+// houses", "injured", "All are punished") where this edition prints "name",
+// "There rest", "nought", "star-cross'd", "death-mark'd", "A plague o' both
+// your houses", "injur'd" and "All are punish'd". A model answer that
+// analyses one word now quotes the word as printed ("cross'd", "mark'd").
+// A review the same day found two misplaced lines the checker cannot see,
+// since it reads a place only as an act and scene: "Which, but their
+// children's end, nought could remove" was called the Prologue's final
+// couplet (it is line 11; the couplet is lines 13 and 14), and Juliet's "My
+// grave is like to be my wedding bed", which she says at the Capulets' feast
+// in Act 1, Scene 5, was placed in the balcony scene.
+// Check a new quotation with `node scripts/check-quotations.mjs --text romeo-and-juliet`.
 
 import type { LessonPlan } from './macbeth-lessons'
 
@@ -39,10 +56,10 @@ const lesson1: LessonPlan = {
     title: 'Predicting the Plot',
     duration: '8 minutes',
     instructions:
-      'Display the phrase "star-crossed lovers" on the board. Students discuss in pairs: what does "star-crossed" mean? What might it suggest about the ending of a love story? Collect responses and introduce the idea that Elizabethan audiences believed the stars controlled human destiny. Then reveal: Shakespeare tells the audience the ending before the play even begins. Why would a playwright do this?',
+      'Display the phrase "star-cross\'d lovers" on the board. Students discuss in pairs: what does "star-cross\'d" mean? What might it suggest about the ending of a love story? Collect responses and introduce the idea that Elizabethan audiences believed the stars controlled human destiny. Then reveal: Shakespeare tells the audience the ending before the play even begins. Why would a playwright do this?',
     differentiation: {
       support:
-        'Provide a definition of "star-crossed" and a sentence starter: "This phrase suggests the lovers will..."',
+        'Provide a definition of "star-cross\'d" and a sentence starter: "This phrase suggests the lovers will..."',
       core: 'Students discuss and record their interpretation independently before feedback.',
       stretch:
         'Students consider how the concept of fate in Elizabethan England differs from modern ideas of free will and choice.',
@@ -72,7 +89,7 @@ const lesson1: LessonPlan = {
       title: 'Language Analysis: Fate and Conflict',
       duration: '22 minutes',
       instructions:
-        'Students work through four key quotations from the Prologue: (1) "star-crossed lovers", (2) "death-marked love", (3) "fatal loins", (4) "ancient grudge". For each quotation, students complete a table: what does it literally mean? What does it suggest about the play? What technique is Shakespeare using? Teacher models the first example. Students then write one analytical paragraph on how Shakespeare uses the Prologue to establish fate as a controlling force, using PEE structure. Share examples under the visualiser.',
+        'Students work through four key quotations from the Prologue: (1) "star-cross\'d lovers", (2) "death-mark\'d love", (3) "fatal loins", (4) "ancient grudge". For each quotation, students complete a table: what does it literally mean? What does it suggest about the play? What technique is Shakespeare using? Teacher models the first example. Students then write one analytical paragraph on how Shakespeare uses the Prologue to establish fate as a controlling force, using PEE structure. Share examples under the visualiser.',
       differentiation: {
         support:
           'Provide a completed first row of the table and sentence starters for the paragraph: "Shakespeare presents fate as..."',
@@ -107,24 +124,25 @@ const lesson1: LessonPlan = {
     },
     {
       question:
-        'Analyse the phrase "star-crossed lovers" and explain what it reveals about the play.',
+        'Analyse the phrase "star-cross\'d lovers" and explain what it reveals about the play.',
       lines: 5,
       modelAnswer:
-        'The compound adjective "star-crossed" combines astrology with the idea of being thwarted or opposed. In Elizabethan England, the stars were believed to control human destiny, so "star-crossed" suggests that Romeo and Juliet\'s love is doomed by forces beyond their control. The word "crossed" implies conflict and obstruction. Shakespeare establishes from the very first scene that the lovers\' fate is sealed, creating dramatic irony as the audience watches them fall in love knowing they will die.',
+        'The compound adjective "star-cross\'d" combines astrology with the idea of being thwarted or opposed. In Elizabethan England, the stars were believed to control human destiny, so "star-cross\'d" suggests that Romeo and Juliet\'s love is doomed by forces beyond their control. The word "cross\'d" implies conflict and obstruction. Shakespeare establishes from the very first scene that the lovers\' fate is sealed, creating dramatic irony as the audience watches them fall in love knowing they will die.',
       marks: 4,
     },
     {
       question: 'How does the Prologue create dramatic irony?',
       lines: 5,
       modelAnswer:
-        'Dramatic irony occurs when the audience knows something the characters do not. The Prologue reveals that Romeo and Juliet will die - "a pair of star-crossed lovers take their life" - before the audience meets them. This means that every moment of joy and hope in the play is undercut by the audience\'s knowledge of the tragic ending. Shakespeare uses this technique to heighten tension and encourage the audience to focus not on what happens, but on why and how it happens.',
+        'Dramatic irony occurs when the audience knows something the characters do not. The Prologue reveals that Romeo and Juliet will die - "a pair of star-cross\'d lovers take their life" - before the audience meets them. This means that every moment of joy and hope in the play is undercut by the audience\'s knowledge of the tragic ending. Shakespeare uses this technique to heighten tension and encourage the audience to focus not on what happens, but on why and how it happens.',
       marks: 4,
     },
     {
-      question: 'Explain how the phrase "death-marked love" contributes to the themes of the play.',
+      question:
+        'Explain how the phrase "death-mark\'d love" contributes to the themes of the play.',
       lines: 5,
       modelAnswer:
-        'The oxymoronic phrase "death-marked love" juxtaposes two opposing ideas: love, which is associated with life and joy, and death. The word "marked" suggests something branded or destined - the love is permanently stamped with death from the outset. This establishes the central paradox of the play: that love and death are inseparable. Shakespeare suggests that in a world poisoned by hatred and feuding, love can only end in destruction.',
+        'The oxymoronic phrase "death-mark\'d love" juxtaposes two opposing ideas: love, which is associated with life and joy, and death. The word "mark\'d" suggests something branded or destined - the love is permanently stamped with death from the outset. This establishes the central paradox of the play: that love and death are inseparable. Shakespeare suggests that in a world poisoned by hatred and feuding, love can only end in destruction.',
       marks: 4,
     },
     {
@@ -321,7 +339,7 @@ const lesson3: LessonPlan = {
     title: "What's in a Name?",
     duration: '7 minutes',
     instructions:
-      'Display the quotation: "What\'s in a name? That which we call a rose by any other word would smell as sweet." Ask students: what is Juliet arguing here? Do names matter? Students discuss in pairs, then feed back. Teacher explains that Juliet is challenging the entire basis of the feud - the idea that a name (Montague or Capulet) defines a person\'s identity and loyalties. Link to Elizabethan ideas about family honour and duty.',
+      'Display the quotation: "What\'s in a name? That which we call a rose / By any other name would smell as sweet." Ask students: what is Juliet arguing here? Do names matter? Students discuss in pairs, then feed back. Teacher explains that Juliet is challenging the entire basis of the feud - the idea that a name (Montague or Capulet) defines a person\'s identity and loyalties. Link to Elizabethan ideas about family honour and duty.',
     differentiation: {
       support:
         'Provide a modern English paraphrase and a sentence starter: "Juliet is arguing that..."',
@@ -388,7 +406,7 @@ const lesson3: LessonPlan = {
       question: "Analyse Romeo's use of light imagery in the balcony scene.",
       lines: 6,
       modelAnswer:
-        'Romeo uses an extended metaphor of light to describe Juliet: "It is the east, and Juliet is the sun." By comparing her to the sun, he suggests she brings warmth, life, and illumination to his world. He continues: "Arise, fair sun, and kill the envious moon" - the moon represents the pale, inferior beauty of Rosaline, whom Juliet has replaced. The celestial imagery elevates Juliet to something divine and unreachable, following Petrarchan conventions of idealising the beloved. However, this language also foreshadows tragedy: stars and celestial bodies are linked to fate, and the Prologue has already told us they are "star-crossed".',
+        'Romeo uses an extended metaphor of light to describe Juliet: "It is the east, and Juliet is the sun." By comparing her to the sun, he suggests she brings warmth, life, and illumination to his world. He continues: "Arise, fair sun, and kill the envious moon" - the moon represents the pale, inferior beauty of Rosaline, whom Juliet has replaced. The celestial imagery elevates Juliet to something divine and unreachable, following Petrarchan conventions of idealising the beloved. However, this language also foreshadows tragedy: stars and celestial bodies are linked to fate, and the Prologue has already told us they are "star-cross\'d".',
       marks: 4,
     },
     {
@@ -402,7 +420,7 @@ const lesson3: LessonPlan = {
       question: 'What is the significance of Romeo comparing Juliet to the sun?',
       lines: 5,
       modelAnswer:
-        'The metaphor "Juliet is the sun" is significant because the sun is the most powerful source of light and life. It suggests Juliet has replaced everything else in Romeo\'s world - she is the centre around which he orbits. The contrast with the moon (representing Rosaline) implies that his previous love was pale and reflected, while Juliet is genuine and radiant. However, the imagery also carries danger: the sun rises and sets, suggesting the transient nature of their happiness, and celestial imagery links to the "star-crossed" fate established in the Prologue.',
+        'The metaphor "Juliet is the sun" is significant because the sun is the most powerful source of light and life. It suggests Juliet has replaced everything else in Romeo\'s world - she is the centre around which he orbits. The contrast with the moon (representing Rosaline) implies that his previous love was pale and reflected, while Juliet is genuine and radiant. However, the imagery also carries danger: the sun rises and sets, suggesting the transient nature of their happiness, and celestial imagery links to the "star-cross\'d" fate established in the Prologue.',
       marks: 4,
     },
     {
@@ -445,7 +463,7 @@ const lesson4: LessonPlan = {
   ],
   successCriteria: [
     'I can explain how Mercutio and Tybalt represent different aspects of the theme of conflict.',
-    'I can analyse Mercutio\'s "A plague on both your houses" and explain its significance to the play as a whole.',
+    'I can analyse Mercutio\'s "A plague o\' both your houses" and explain its significance to the play as a whole.',
     'I can write an analytical paragraph on how Shakespeare presents toxic masculinity and honour culture.',
   ],
   keywords: [
@@ -494,7 +512,7 @@ const lesson4: LessonPlan = {
       title: 'Close Analysis: Act 3, Scene 1 - The Fight',
       duration: '22 minutes',
       instructions:
-        "Read Act 3, Scene 1 (from Tybalt's challenge to Mercutio's death) aloud with allocated roles. Focus on three key moments: (1) Romeo's refusal to fight: \"I do protest I never injured thee, but love thee better than thou canst devise\"; (2) Mercutio's intervention and death: \"A plague on both your houses!\"; (3) Romeo's reaction: \"O, I am fortune's fool!\" For each moment, students analyse: what does it reveal about the character? How does it advance the plot? What themes does it explore? Students write an analytical paragraph on Mercutio's dying words and their significance to the play as a whole.",
+        "Read Act 3, Scene 1 (from Tybalt's challenge to Mercutio's death) aloud with allocated roles. Focus on three key moments: (1) Romeo's refusal to fight: \"I do protest I never injur'd thee, / But love thee better than thou canst devise\"; (2) Mercutio's intervention and death: \"A plague o' both your houses!\"; (3) Romeo's reaction: \"O, I am fortune's fool!\" For each moment, students analyse: what does it reveal about the character? How does it advance the plot? What themes does it explore? Students write an analytical paragraph on Mercutio's dying words and their significance to the play as a whole.",
       differentiation: {
         support: 'Provide a scaffolded analysis table with guiding questions for each moment.',
         core: "Students analyse all three moments and write a full paragraph on Mercutio's dying words.",
@@ -523,11 +541,11 @@ const lesson4: LessonPlan = {
       question: "What is Mercutio's dramatic function in the play?",
       lines: 5,
       modelAnswer:
-        "Mercutio serves multiple dramatic functions. As Romeo's closest friend, he provides a foil: his witty, cynical view of love contrasts with Romeo's romantic idealism. His Queen Mab speech in Act 1 mocks the idea of dreams and love, grounding the play in reality. Most critically, his death in Act 3, Scene 1 is the catalyst for the tragedy - it forces Romeo to kill Tybalt, leading to banishment and the chain of events that ends in death. His dying curse, \"A plague on both your houses,\" indicts both families and reinforces Shakespeare's message that the feud destroys everyone it touches.",
+        "Mercutio serves multiple dramatic functions. As Romeo's closest friend, he provides a foil: his witty, cynical view of love contrasts with Romeo's romantic idealism. His Queen Mab speech in Act 1 mocks the idea of dreams and love, grounding the play in reality. Most critically, his death in Act 3, Scene 1 is the catalyst for the tragedy - it forces Romeo to kill Tybalt, leading to banishment and the chain of events that ends in death. His dying curse, \"A plague o' both your houses,\" indicts both families and reinforces Shakespeare's message that the feud destroys everyone it touches.",
       marks: 4,
     },
     {
-      question: 'Analyse the significance of Mercutio\'s line "A plague on both your houses."',
+      question: 'Analyse the significance of Mercutio\'s line "A plague o\' both your houses."',
       lines: 5,
       modelAnswer:
         "This line is significant because Mercutio - who is neither Montague nor Capulet - becomes a victim of a feud that is not his own. The word \"plague\" suggests a disease that infects and kills indiscriminately, implying that the feud is a sickness destroying all of Verona. The repetition of this curse (he says it three times as he dies) emphasises his anger and pain. It also functions as a prophecy: the feud will indeed claim more lives, including Romeo and Juliet's. Shakespeare uses Mercutio's death to show the audience that the feud's consequences extend far beyond the two families.",
@@ -545,7 +563,7 @@ const lesson4: LessonPlan = {
         'Explain the significance of Romeo\'s exclamation "O, I am fortune\'s fool!" after killing Tybalt.',
       lines: 5,
       modelAnswer:
-        'Romeo\'s exclamation is significant because it directly references the theme of fate. "Fortune\'s fool" suggests that Romeo sees himself as a plaything of destiny, manipulated by forces beyond his control. This connects to the Prologue\'s description of the lovers as "star-crossed." However, the audience can also see that Romeo\'s own choices - his decision to intervene in the fight, his impulsive killing of Tybalt - have contributed to this moment. Shakespeare creates ambiguity: is Romeo genuinely controlled by fate, or is he using fate as an excuse for his own reckless actions? This tension between fate and free will is central to the play.',
+        "Romeo's exclamation is significant because it directly references the theme of fate. \"Fortune's fool\" suggests that Romeo sees himself as a plaything of destiny, manipulated by forces beyond his control. This connects to the Prologue's description of the lovers as \"star-cross'd.\" However, the audience can also see that Romeo's own choices - his decision to intervene in the fight, his impulsive killing of Tybalt - have contributed to this moment. Shakespeare creates ambiguity: is Romeo genuinely controlled by fate, or is he using fate as an excuse for his own reckless actions? This tension between fate and free will is central to the play.",
       marks: 4,
     },
   ],
@@ -611,7 +629,7 @@ const lesson5: LessonPlan = {
       title: "Juliet's Reaction: Act 3, Scene 2",
       duration: '20 minutes',
       instructions:
-        "Read Juliet's speech upon learning of Tybalt's death and Romeo's banishment (Act 3, Scene 2). Focus on the oxymora: \"Beautiful tyrant! Fiend angelical! Dove-feathered raven! Wolvish-ravening lamb!\" Students identify and list all the oxymora in the speech. Discuss: what do these contradictions reveal about Juliet's emotional state? Why does she use opposites? Students then analyse Juliet's conclusion: despite everything, she sides with Romeo over her own family. Write a paragraph analysing how Shakespeare uses oxymora to convey Juliet's internal conflict.",
+        "Read Juliet's speech upon learning of Tybalt's death and Romeo's banishment (Act 3, Scene 2). Focus on the oxymora: \"Beautiful tyrant, fiend angelical, / Dove-feather'd raven, wolvish-ravening lamb!\" Students identify and list all the oxymora in the speech. Discuss: what do these contradictions reveal about Juliet's emotional state? Why does she use opposites? Students then analyse Juliet's conclusion: despite everything, she sides with Romeo over her own family. Write a paragraph analysing how Shakespeare uses oxymora to convey Juliet's internal conflict.",
       differentiation: {
         support:
           'Provide a modern English paraphrase and a list of the oxymora with definitions. Students explain the effect of two examples.',
@@ -669,7 +687,7 @@ const lesson5: LessonPlan = {
       question: "Analyse Shakespeare's use of oxymora in Juliet's speech in Act 3, Scene 2.",
       lines: 6,
       modelAnswer:
-        'Juliet\'s speech is dense with oxymora: "Beautiful tyrant! Fiend angelical! Dove-feathered raven!" These contradictions reflect her conflicting emotions - Romeo is both her beloved husband and the killer of her cousin Tybalt. Each oxymoron pairs beauty with violence, love with hate, showing that these opposites coexist in Romeo and in her feelings for him. The accumulation of oxymora also mirrors the wider play, where love and death, peace and violence, are constantly intertwined. Shakespeare uses this technique to show that in Verona, nothing can be purely good or purely evil - the feud corrupts everything.',
+        'Juliet\'s speech is dense with oxymora: "Beautiful tyrant, fiend angelical, / Dove-feather\'d raven!" These contradictions reflect her conflicting emotions - Romeo is both her beloved husband and the killer of her cousin Tybalt. Each oxymoron pairs beauty with violence, love with hate, showing that these opposites coexist in Romeo and in her feelings for him. The accumulation of oxymora also mirrors the wider play, where love and death, peace and violence, are constantly intertwined. Shakespeare uses this technique to show that in Verona, nothing can be purely good or purely evil - the feud corrupts everything.',
       marks: 4,
     },
     {
@@ -873,7 +891,7 @@ const lesson7: LessonPlan = {
     title: 'Returning to the Prologue',
     duration: '7 minutes',
     instructions:
-      'Display the Prologue\'s final couplet: "Which, but their children\'s end, naught could remove." Ask students: what does this line predict? What is Shakespeare saying about what it takes to end a feud? Discuss: is it acceptable that two young people had to die for their parents to make peace? This question will frame the entire lesson.',
+      'Display line 11 of the Prologue: "Which, but their children\'s end, nought could remove." Ask students: what does this line predict? What is Shakespeare saying about what it takes to end a feud? Discuss: is it acceptable that two young people had to die for their parents to make peace? This question will frame the entire lesson.',
     differentiation: {
       support:
         'Provide a modern English paraphrase and a clear question: "What had to happen before the feud could end?"',
@@ -888,7 +906,7 @@ const lesson7: LessonPlan = {
       title: 'Close Analysis: The Tomb Scene',
       duration: '22 minutes',
       instructions:
-        'Read the final scene in the Capulet tomb (Act 5, Scene 3). Focus on three key moments: (1) Romeo\'s final speech: "Here\'s to my love... Thus with a kiss I die"; (2) Juliet\'s awakening and discovery: "What\'s here? A cup, closed in my true love\'s hand? Poison, I see, hath been his timeless end"; (3) Juliet\'s death: "O happy dagger! This is thy sheath. There rust, and let me die." For each moment, students analyse: what language techniques does Shakespeare use? How does he create pathos? What is the effect on the audience? Students write an analytical paragraph on one of the three moments.',
+        "Read the final scene in the Capulet tomb (Act 5, Scene 3). Focus on three key moments: (1) Romeo's final speech: \"Here's to my love... Thus with a kiss I die\"; (2) Juliet's awakening and discovery: \"What's here? A cup clos'd in my true love's hand? / Poison, I see, hath been his timeless end\"; (3) Juliet's death: \"O happy dagger. / This is thy sheath. There rest, and let me die.\" For each moment, students analyse: what language techniques does Shakespeare use? How does he create pathos? What is the effect on the audience? Students write an analytical paragraph on one of the three moments.",
       differentiation: {
         support: 'Provide a scaffolded analysis with key words highlighted and guiding prompts.',
         core: 'Students analyse all three moments and write a full paragraph on their chosen extract.',
@@ -901,7 +919,7 @@ const lesson7: LessonPlan = {
       title: 'The Reconciliation: Hollow Peace or Genuine Hope?',
       duration: '18 minutes',
       instructions:
-        "Read the Prince's final speech and the families' reconciliation. Focus on: \"All are punished\" and Capulet and Montague's offers to build golden statues. Students debate in groups: is this ending satisfying? Is the reconciliation genuine or performative? Do golden statues represent real change or empty gestures? Groups prepare three arguments for their position and present to the class. Teacher draws out: Shakespeare's ending is deliberately ambiguous - the audience is meant to question whether the sacrifice was worth it.",
+        "Read the Prince's final speech and the families' reconciliation. Focus on: \"All are punish'd\" and Capulet and Montague's offers to build golden statues. Students debate in groups: is this ending satisfying? Is the reconciliation genuine or performative? Do golden statues represent real change or empty gestures? Groups prepare three arguments for their position and present to the class. Teacher draws out: Shakespeare's ending is deliberately ambiguous - the audience is meant to question whether the sacrifice was worth it.",
       differentiation: {
         support: 'Provide argument cards for and against the reconciliation being genuine.',
         core: 'Students generate their own arguments with textual evidence.',
@@ -934,14 +952,14 @@ const lesson7: LessonPlan = {
       question: 'How does Shakespeare create pathos in the tomb scene?',
       lines: 6,
       modelAnswer:
-        'Shakespeare creates pathos through dramatic irony: the audience knows Juliet is alive, but Romeo does not. His speech over her "dead" body - "Death, that hath sucked the honey of thy breath, hath had no power yet upon thy beauty" - is heartbreaking because he unknowingly describes signs of life. The timing is agonisingly close: Juliet wakes moments after Romeo drinks the poison. Shakespeare maximises the audience\'s suffering by making the tragedy avoidable - if Romeo had waited minutes longer, both would have lived. This technique creates catharsis, the emotional purging that Aristotle identified as the purpose of tragedy.',
+        'Shakespeare creates pathos through dramatic irony: the audience knows Juliet is alive, but Romeo does not. His speech over her "dead" body - "Death that hath suck\'d the honey of thy breath, / Hath had no power yet upon thy beauty" - is heartbreaking because he unknowingly describes signs of life. The timing is agonisingly close: Juliet wakes moments after Romeo drinks the poison. Shakespeare maximises the audience\'s suffering by making the tragedy avoidable - if Romeo had waited minutes longer, both would have lived. This technique creates catharsis, the emotional purging that Aristotle identified as the purpose of tragedy.',
       marks: 4,
     },
     {
-      question: 'What is the significance of the Prince\'s line "All are punished"?',
+      question: 'What is the significance of the Prince\'s line "All are punish\'d"?',
       lines: 5,
       modelAnswer:
-        'The Prince\'s declaration "All are punished" distributes responsibility for the tragedy across the entire community. It is not only the lovers who have suffered: Montague has lost Romeo, Capulet has lost Juliet and Tybalt, and the Prince himself has lost Mercutio and Paris, who were his kinsmen. The line suggests that the feud has had consequences far beyond the two families. Shakespeare uses this to deliver a moral message: hatred and violence harm everyone, not just those directly involved. The Prince speaks for the audience, articulating the lesson they are meant to take from the play.',
+        'The Prince\'s declaration "All are punish\'d" distributes responsibility for the tragedy across the entire community. It is not only the lovers who have suffered: Montague has lost Romeo, Capulet has lost Juliet and Tybalt, and the Prince himself has lost Mercutio and Paris, who were his kinsmen. The line suggests that the feud has had consequences far beyond the two families. Shakespeare uses this to deliver a moral message: hatred and violence harm everyone, not just those directly involved. The Prince speaks for the audience, articulating the lesson they are meant to take from the play.',
       marks: 4,
     },
     {
@@ -955,7 +973,7 @@ const lesson7: LessonPlan = {
       question: 'How does the ending of the play connect to the Prologue?',
       lines: 5,
       modelAnswer:
-        'The ending fulfils every prediction made in the Prologue. The "star-crossed lovers take their life," the "death-marked love" reaches its inevitable end, and "their children\'s end" removes the "ancient grudge." This circular structure reinforces the theme of fate: the ending was written before the play began, both literally (in the Prologue) and figuratively (in the stars). Shakespeare\'s structural choice suggests that the tragedy was always inevitable - the audience has watched it unfold knowing the outcome, which heightens the sense of tragic waste and the feeling that the deaths were both necessary and unbearably pointless.',
+        'The ending fulfils every prediction made in the Prologue. The "star-cross\'d lovers take their life," the "death-mark\'d love" reaches its inevitable end, and "their children\'s end" removes the "ancient grudge." This circular structure reinforces the theme of fate: the ending was written before the play began, both literally (in the Prologue) and figuratively (in the stars). Shakespeare\'s structural choice suggests that the tragedy was always inevitable - the audience has watched it unfold knowing the outcome, which heightens the sense of tragic waste and the feeling that the deaths were both necessary and unbearably pointless.',
       marks: 4,
     },
   ],
@@ -1040,7 +1058,7 @@ const lesson8: LessonPlan = {
       title: 'Love and Death: The Central Paradox',
       duration: '20 minutes',
       instructions:
-        'Students trace the connection between love and death throughout the play. Working in pairs, they find quotations that link love to death: the Prologue ("death-marked love"), the balcony scene ("My grave is like to be my wedding bed"), Romeo in the tomb ("Thus with a kiss I die"). Students plot these quotations on a timeline of the play. Discuss: why does Shakespeare consistently connect love and death? Is he suggesting that in a world of hatred, love must be sacrificial? Students write a thematic paragraph: "How does Shakespeare present love and death as inseparable in Romeo and Juliet?"',
+        'Students trace the connection between love and death throughout the play. Working in pairs, they find quotations that link love to death: the Prologue ("death-mark\'d love"), the Capulets\' feast ("My grave is like to be my wedding bed"), Romeo in the tomb ("Thus with a kiss I die"). Students plot these quotations on a timeline of the play. Discuss: why does Shakespeare consistently connect love and death? Is he suggesting that in a world of hatred, love must be sacrificial? Students write a thematic paragraph: "How does Shakespeare present love and death as inseparable in Romeo and Juliet?"',
       differentiation: {
         support: 'Provide the quotations on cards; students sequence them and explain each one.',
         core: 'Students find their own quotations and write a full thematic paragraph.',
@@ -1088,7 +1106,7 @@ const lesson8: LessonPlan = {
       question: 'How does Shakespeare present love and death as connected throughout the play?',
       lines: 6,
       modelAnswer:
-        'Love and death are intertwined from the Prologue ("death-marked love") to the final scene. Juliet says "My grave is like to be my wedding bed" before she even knows Romeo is a Montague, foreshadowing the connection between marriage and death. In the tomb, Romeo\'s final act is a kiss - "Thus with a kiss I die" - merging love and death into a single gesture. The play\'s central paradox is that love cannot survive in a world poisoned by hate; it can only triumph through death, which ends both the lovers and the feud. Shakespeare presents love as a sacrificial force: powerful enough to change the world, but at an unbearable cost.',
+        'Love and death are intertwined from the Prologue ("death-mark\'d love") to the final scene. Juliet says "My grave is like to be my wedding bed" before she even knows Romeo is a Montague, foreshadowing the connection between marriage and death. In the tomb, Romeo\'s final act is a kiss - "Thus with a kiss I die" - merging love and death into a single gesture. The play\'s central paradox is that love cannot survive in a world poisoned by hate; it can only triumph through death, which ends both the lovers and the feud. Shakespeare presents love as a sacrificial force: powerful enough to change the world, but at an unbearable cost.',
       marks: 4,
     },
     {
@@ -1226,7 +1244,7 @@ const lesson9: LessonPlan = {
         "How does Shakespeare use Romeo's internal conflict in Act 3, Scene 1 to develop the tragedy?",
       lines: 5,
       modelAnswer:
-        'Romeo initially refuses to fight Tybalt because of his secret marriage to Juliet: "I do protest I never injured thee, but love thee better than thou canst devise." His internal conflict is between love (his new bond with the Capulets through Juliet) and the masculine honour code that demands he fight. When Mercutio is killed, Romeo\'s grief overwhelms his restraint: "O sweet Juliet, thy beauty hath made me effeminate." He blames love for making him weak, revealing that the toxic masculinity of Verona is so powerful that even Romeo cannot fully resist it. His decision to kill Tybalt is the moment where conflict defeats love.',
+        'Romeo initially refuses to fight Tybalt because of his secret marriage to Juliet: "I do protest I never injur\'d thee, / But love thee better than thou canst devise." His internal conflict is between love (his new bond with the Capulets through Juliet) and the masculine honour code that demands he fight. When Mercutio is killed, Romeo\'s grief overwhelms his restraint: "O sweet Juliet, thy beauty hath made me effeminate." He blames love for making him weak, revealing that the toxic masculinity of Verona is so powerful that even Romeo cannot fully resist it. His decision to kill Tybalt is the moment where conflict defeats love.',
       marks: 4,
     },
     {
@@ -1234,7 +1252,7 @@ const lesson9: LessonPlan = {
         "What is Shakespeare's authorial intention in presenting the consequences of conflict?",
       lines: 6,
       modelAnswer:
-        'Shakespeare\'s authorial intention is to show his audience the devastating consequences of unchecked hatred and violence. The feud destroys not only the fighters (Mercutio, Tybalt) but also the innocent (Romeo, Juliet, Paris, Lady Montague). The Prince\'s final speech - "All are punished" - makes explicit that the entire community has suffered. Writing in Elizabethan England, where civil unrest and political violence were real fears, Shakespeare may have intended the play as a warning: feuds and factions tear apart the social fabric and can only end in tragedy. The reconciliation at the end is bittersweet precisely because it comes at such a terrible cost.',
+        "Shakespeare's authorial intention is to show his audience the devastating consequences of unchecked hatred and violence. The feud destroys not only the fighters (Mercutio, Tybalt) but also the innocent (Romeo, Juliet, Paris, Lady Montague). The Prince's final speech - \"All are punish'd\" - makes explicit that the entire community has suffered. Writing in Elizabethan England, where civil unrest and political violence were real fears, Shakespeare may have intended the play as a warning: feuds and factions tear apart the social fabric and can only end in tragedy. The reconciliation at the end is bittersweet precisely because it comes at such a terrible cost.",
       marks: 4,
     },
   ],
@@ -1357,7 +1375,7 @@ const lesson10: LessonPlan = {
         'Write an analytical paragraph responding to: "How does Shakespeare present fate in the Prologue?"',
       lines: 8,
       modelAnswer:
-        'Shakespeare presents fate as an inescapable force from the very opening of the play. The Prologue describes Romeo and Juliet as "star-crossed lovers," with the compound adjective "star-crossed" drawing on Elizabethan beliefs in astrology and predestination to suggest that their love is doomed by cosmic forces beyond their control. The word "crossed" implies opposition and obstruction, foreshadowing the obstacles they will face. Shakespeare\'s decision to reveal the ending in the Prologue is itself a structural embodiment of fate: just as the characters cannot escape their destiny, the audience cannot escape their foreknowledge of the tragedy. This creates dramatic irony throughout the play, as every moment of hope is shadowed by the audience\'s awareness that the lovers will die. Shakespeare\'s authorial intention may be to encourage his audience to focus not on what happens, but on why - examining the social forces (the feud, patriarchy, honour culture) that make the tragedy inevitable.',
+        'Shakespeare presents fate as an inescapable force from the very opening of the play. The Prologue describes Romeo and Juliet as "star-cross\'d lovers," with the compound adjective "star-cross\'d" drawing on Elizabethan beliefs in astrology and predestination to suggest that their love is doomed by cosmic forces beyond their control. The word "cross\'d" implies opposition and obstruction, foreshadowing the obstacles they will face. Shakespeare\'s decision to reveal the ending in the Prologue is itself a structural embodiment of fate: just as the characters cannot escape their destiny, the audience cannot escape their foreknowledge of the tragedy. This creates dramatic irony throughout the play, as every moment of hope is shadowed by the audience\'s awareness that the lovers will die. Shakespeare\'s authorial intention may be to encourage his audience to focus not on what happens, but on why - examining the social forces (the feud, patriarchy, honour culture) that make the tragedy inevitable.',
       marks: 8,
     },
     {
@@ -1365,7 +1383,7 @@ const lesson10: LessonPlan = {
         'Write an analytical paragraph responding to: "How does Shakespeare use Juliet\'s character to explore the theme of defiance?"',
       lines: 8,
       modelAnswer:
-        "Shakespeare presents Juliet as a character who defies the patriarchal expectations of Elizabethan society. In Act 2, Scene 2, she challenges the very foundation of the feud by questioning the significance of names: \"What's in a name? That which we call a rose by any other word would smell as sweet.\" The rhetorical question and natural imagery suggest that identity is innate, not defined by family allegiance - a radical idea in a society where family honour was paramount. Juliet further defies convention by effectively proposing marriage to Romeo, taking control of the courtship in a way that would have surprised Elizabethan audiences who expected women to be passive. However, Shakespeare also shows the limits of Juliet's defiance: by Act 4, she is so isolated by patriarchal forces that her only option is the Friar's dangerous plan. Shakespeare may be suggesting that while individual defiance is admirable, it cannot succeed against systemic oppression without tragic consequences.",
+        "Shakespeare presents Juliet as a character who defies the patriarchal expectations of Elizabethan society. In Act 2, Scene 2, she challenges the very foundation of the feud by questioning the significance of names: \"What's in a name? That which we call a rose / By any other name would smell as sweet.\" The rhetorical question and natural imagery suggest that identity is innate, not defined by family allegiance - a radical idea in a society where family honour was paramount. Juliet further defies convention by effectively proposing marriage to Romeo, taking control of the courtship in a way that would have surprised Elizabethan audiences who expected women to be passive. However, Shakespeare also shows the limits of Juliet's defiance: by Act 4, she is so isolated by patriarchal forces that her only option is the Friar's dangerous plan. Shakespeare may be suggesting that while individual defiance is admirable, it cannot succeed against systemic oppression without tragic consequences.",
       marks: 8,
     },
     {
@@ -1373,7 +1391,7 @@ const lesson10: LessonPlan = {
         'Write an analytical paragraph responding to: "How does Shakespeare present violence as destructive in Act 3, Scene 1?"',
       lines: 8,
       modelAnswer:
-        'In Act 3, Scene 1, Shakespeare presents violence as a destructive force that consumes even those who try to resist it. Romeo initially refuses to fight Tybalt - "I do protest I never injured thee, but love thee better than thou canst devise" - but his attempt at peace is misunderstood as cowardice by Mercutio, who intervenes and is killed. Romeo\'s subsequent killing of Tybalt is driven by guilt and rage rather than honour, showing how violence perpetuates itself through emotional contagion. Mercutio\'s dying curse, "A plague on both your houses," uses the metaphor of disease to suggest that the feud is a sickness infecting all of Verona. The scene is the play\'s peripeteia - the turning point after which tragedy becomes inevitable. Shakespeare\'s authorial intention is to demonstrate that in a culture of violence, even love cannot protect the innocent, and that the cycle of revenge will always claim more victims than the original wrong.',
+        "In Act 3, Scene 1, Shakespeare presents violence as a destructive force that consumes even those who try to resist it. Romeo initially refuses to fight Tybalt - \"I do protest I never injur'd thee, / But love thee better than thou canst devise\" - but his attempt at peace is misunderstood as cowardice by Mercutio, who intervenes and is killed. Romeo's subsequent killing of Tybalt is driven by guilt and rage rather than honour, showing how violence perpetuates itself through emotional contagion. Mercutio's dying curse, \"A plague o' both your houses,\" uses the metaphor of disease to suggest that the feud is a sickness infecting all of Verona. The scene is the play's peripeteia - the turning point after which tragedy becomes inevitable. Shakespeare's authorial intention is to demonstrate that in a culture of violence, even love cannot protect the innocent, and that the cycle of revenge will always claim more victims than the original wrong.",
       marks: 8,
     },
     {
@@ -1381,7 +1399,7 @@ const lesson10: LessonPlan = {
         'List five key quotations from Romeo and Juliet that you could use in any essay, and briefly explain the significance of each.',
       lines: 10,
       modelAnswer:
-        '1. "Star-crossed lovers" (Prologue) - establishes the theme of fate and the inevitability of tragedy. 2. "What\'s in a name?" (Act 2, Scene 2) - Juliet challenges the feud and questions identity. 3. "A plague on both your houses" (Act 3, Scene 1) - Mercutio curses both families, showing the feud destroys the innocent. 4. "O, I am fortune\'s fool!" (Act 3, Scene 1) - Romeo recognises the role of fate after killing Tybalt. 5. "Hang, beg, starve, die in the streets" (Act 3, Scene 5) - Capulet\'s threats reveal the violence of patriarchal authority. These five quotations cover the play\'s major themes (fate, love, conflict, patriarchy) and can be applied to almost any essay question.',
+        '1. "Star-cross\'d lovers" (Prologue) - establishes the theme of fate and the inevitability of tragedy. 2. "What\'s in a name?" (Act 2, Scene 2) - Juliet challenges the feud and questions identity. 3. "A plague o\' both your houses" (Act 3, Scene 1) - Mercutio curses both families, showing the feud destroys the innocent. 4. "O, I am fortune\'s fool!" (Act 3, Scene 1) - Romeo recognises the role of fate after killing Tybalt. 5. "Hang, beg, starve, die in the streets" (Act 3, Scene 5) - Capulet\'s threats reveal the violence of patriarchal authority. These five quotations cover the play\'s major themes (fate, love, conflict, patriarchy) and can be applied to almost any essay question.',
       marks: 5,
     },
   ],

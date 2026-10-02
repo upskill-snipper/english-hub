@@ -754,8 +754,11 @@ export const poetryExtraQuestions: QuizQuestion[] = [
       "Children's perspectives on adulthood",
     ],
     correctIndex: 1,
+    // 2 October 2026: this set "behind a curtain" in quotation marks as the poem's,
+    // which it is not. It now quotes line 9, "none puts by", cut by script from the
+    // held edition (src/data/full-texts/my-last-duchess.ts).
     explanation:
-      'Both dramatic monologues feature speakers who silence their partner-Porphyria literally strangled, the Duchess reduced to a painting "behind a curtain". Browning critiques 19th-century patriarchal ideologies by allowing the speakers to incriminate themselves through their own voices (AO2/AO3).',
+      'Both dramatic monologues feature speakers who silence their partner-Porphyria literally strangled, the Duchess reduced to a painting behind a curtain that "none puts by" but the Duke. Browning critiques 19th-century patriarchal ideologies by allowing the speakers to incriminate themselves through their own voices (AO2/AO3).',
     boards: ['aqa'],
   },
 

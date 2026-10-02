@@ -6,6 +6,13 @@
  * Conventions: Khaleeji-leaning, no Levantine, English quotations
  * preserved verbatim, character + author + brand + AO codes in Latin.
  * Binary M/F gender policy.
+ *
+ * The machine translation did not always keep that rule. Until 2 October 2026
+ * s7 put Banquo's "play'dst most foully" into Arabic, and s15 spelt Lady
+ * Macbeth's "Naught's had, all's spent" out in Arabic letters, unclosed, under a
+ * heading that called the scene a testimony. Both quote the play in English now,
+ * in real quotation marks rather than &ldquo; entities: the page prints what
+ * _tr returns as text, so an entity shows on the page as written.
  */
 
 export type Bi = { en: string; ar: string }
@@ -35,7 +42,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s7: {
     en: `Banquo's suspicion that Macbeth “play’dst most foully” makes him a threat to the regime.`,
-    ar: `شكّ Banquo أن Macbeth «لعبت بطريقة شريرة» يجعله تهديدًا للنظام.`,
+    ar: `شكّ Banquo أن Macbeth “play’dst most foully” يجعله تهديدًا للنظام.`,
   },
   s8: { en: `Language Analysis`, ar: `تحليل اللغة` },
   s9: { en: `Character Development`, ar: `تطور الشخصية` },
@@ -45,7 +52,7 @@ export const STRINGS: Record<string, Bi> = {
   s14: { en: `The Supernatural`, ar: `` },
   s15: {
     en: `Scene 2 - “Naught’s Had, All’s Spent”`,
-    ar: `الشِّهَادَةُ 2 - "نُوتٍ حَد، أَلٍّ سُپِنت`,
+    ar: `المشهد الثاني - “Naught’s Had, All’s Spent”`,
   },
   s16: {
     en: `Lady Macbeth's private admission of unhappiness shows the crown has brought no satisfaction.`,

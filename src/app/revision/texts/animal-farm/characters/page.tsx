@@ -52,7 +52,9 @@ const characters: CharacterData[] = [
       "Napoleon is Orwell's study in how dictators rise. He rarely speaks in public, preferring to work through intermediaries (Squealer) and enforcers (the dogs). He contributes nothing to the intellectual life of the farm -- Snowball designs the windmill, not Napoleon -- yet he takes credit for everything. His key qualities are patience, brutality and total indifference to the animals' suffering.",
     arc: [
       "Chapters 1-2: Quiet, unremarkable pig who listens to Old Major's speech.",
-      'Chapters 3-5: Takes the puppies to "educate" them privately. Opposes Snowball\'s windmill plan, then uses his trained dogs to expel Snowball. Seizes absolute power and abolishes democratic meetings.',
+      // Corrected 2 October 2026: "educate" is not Orwell's word; Chapter 3 has
+      // Napoleon make himself responsible for the puppies' "education".
+      'Chapters 3-5: Takes the puppies, saying he will be responsible for their "education". Opposes Snowball\'s windmill plan, then uses his trained dogs to expel Snowball. Seizes absolute power and abolishes democratic meetings.',
       "Chapters 6-8: Adopts Snowball's windmill as his own idea. Stages show-trial executions. Builds a cult of personality with titles and a poem by Minimus.",
       'Chapters 9-10: Sells Boxer to the knacker. Walks on two legs, carries a whip, dines with humans. Renames the farm "Manor Farm". He has become Mr Jones.',
     ],

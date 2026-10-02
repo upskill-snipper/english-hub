@@ -564,6 +564,10 @@ The experience does not end when the boat is returned. The phrase suggests lasti
       id: 'aqa-pc-m4',
       title: 'My Last Duchess - Robert Browning',
       duration: '55 min',
+      // 2 October 2026: the Grade 9 model paragraph quoted "none puts by... but I" and
+      // called its "I" a possessive pronoun. It is the first-person subject pronoun, and
+      // the paragraph now says so; a student copying it would have carried the error
+      // into the exam.
       content: `
 <h2>My Last Duchess - Robert Browning (1842)</h2>
 
@@ -634,7 +638,7 @@ The final image: a bronze of the god Neptune (power) <em>taming</em> a sea-horse
 <div class="model-paragraph">
 <p><strong>Sample Question: How does Browning present power and control in My Last Duchess?</strong></p>
 
-<p>Browning presents power as a pathological need to control everything within one's environment, particularly women. This is evident through the Duke's obsession with the portrait of his dead wife, which he keeps behind a curtain that "none puts by... but I." The possessive pronoun "I" creates the impression that the Duke's control is absolute and unquestionable. This structural choice reflects how the Duke has transformed the living woman into a silent, controllable object. The verb "taming" in the final image of Neptune "taming a sea-horse" reinforces this view: the Duke sees domination as natural, even divinely sanctioned. Furthermore, the poem's form as a dramatic monologue embodies power through silence - the Duchess never speaks, and the envoy never replies. Browning uses this formal choice to show how absolute power silences all opposition. The most chilling moment is the euphemistic "I gave commands; then all smiles stopped together," in which the Duke casually discusses what appears to be the Duchess's death as if it were a mere administrative order. Power, Browning suggests, corrupts the powerful into believing they have the right to dominate and eliminate anyone who resists their will.</p>
+<p>Browning presents power as a pathological need to control everything within one's environment, particularly women. This is evident through the Duke's obsession with the portrait of his dead wife, which he keeps behind a curtain that "none puts by... but I." The first-person pronoun "I" creates the impression that the Duke's control is absolute and unquestionable. This structural choice reflects how the Duke has transformed the living woman into a silent, controllable object. The verb "taming" in the final image of Neptune "taming a sea-horse" reinforces this view: the Duke sees domination as natural, even divinely sanctioned. Furthermore, the poem's form as a dramatic monologue embodies power through silence - the Duchess never speaks, and the envoy never replies. Browning uses this formal choice to show how absolute power silences all opposition. The most chilling moment is the euphemistic "I gave commands; then all smiles stopped together," in which the Duke casually discusses what appears to be the Duchess's death as if it were a mere administrative order. Power, Browning suggests, corrupts the powerful into believing they have the right to dominate and eliminate anyone who resists their will.</p>
 </div>
 
 <h3>Quotation Bank for Essays</h3>
@@ -701,10 +705,12 @@ The final image: a bronze of the god Neptune (power) <em>taming</em> a sea-horse
         {
           id: 'aqa-pc-m4-q3',
           question: 'What does the Neptune statue at the end symbolise?',
+          // 2 October 2026: an option set "tame" in quotation marks as the poem's word.
+          // The poem has "Taming", so the option now uses tame as our own word.
           options: [
             "The Duke's love of Italian art",
             "The envoy's wealth",
-            'The Duke\'s desire to dominate and "tame" those around him',
+            "The Duke's desire to dominate and tame those around him",
             'The beauty of Renaissance sculpture',
           ],
           correct: 2,

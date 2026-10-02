@@ -3,10 +3,14 @@
 // The authored analysis, located in the text we publish, so the reader can
 // highlight the line and show the note somebody already wrote about it.
 //
-// NOTHING HERE IS WRITTEN BY THE GENERATOR. Every `note` is a sentence from the
-// study guide, the themes page or the key-quotes page; every `text` is cut
+// NOTHING HERE IS WRITTEN BY THE GENERATOR. Every `note` is a sentence a person
+// wrote, in a study guide, one of its pages or a course; every `text` is cut
 // verbatim out of our own edition. A quotation that cannot be located is absent
-// rather than approximated.
+// rather than approximated. Where a course says it quotes another printing of
+// the text, a quotation in its note that our edition words otherwise is
+// replaced by our edition's words, cut from the text, so that a note beside
+// our text quotes our text (OTHER_PRINTINGS in the script), and a note of its
+// naming punctuation our edition does not print there is left out.
 //
 // Re-run the script after changing a guide or re-fetching a text.
 
@@ -350,7 +354,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'a solemn Phantom, draped and hooded, coming, like a mist along the ground, towards him',
-        note: "Narrator - Stave Four. The simile 'like a mist' makes the ghost seem insubstantial yet all-encompassing, like death itself. 'Solemn' creates a funereal tone. The ghost 'comes towards him' -- Scrooge cannot escape his future. Its silence throughout is more terrifying than any words.",
+        note: "Narrator - Stave Three. The simile 'like a mist' makes the ghost seem insubstantial yet all-encompassing, like death itself. 'Solemn' creates a funereal tone. The ghost 'comes towards him' -- Scrooge cannot escape his future. Its silence throughout is more terrifying than any words.",
       },
       {
         type: 'quote',
@@ -380,7 +384,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'Have they no refuge or resource',
-        note: "Scrooge - Stave Three. Scrooge asks about Ignorance and Want with genuine concern -- a marked change from Stave One. The ghost's devastating reply ('Are there no prisons? Are there no workhouses?') forces Scrooge to hear his own words and recognise their cruelty.",
+        note: "Scrooge - Stave Three. Scrooge asks about Ignorance and Want with genuine concern -- a marked change from Stave One. The ghost's devastating reply ('Are there no prisons? ... Are there no workhouses?') forces Scrooge to hear his own words and recognise their cruelty.",
       },
       {
         type: 'quote',
@@ -882,12 +886,12 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'SEEMED to oppose the windmill, simply as a manoeuvre to get rid of Snowball',
-        note: 'Narrator - Chapter 5. This is one of Orwell’s clearest Stalin parallels: Stalin adopted Trotsky’s industrialisation programme after exiling him. The sentence reveals that Napoleon’s opposition was never ideological but purely strategic — he opposed the windmill not because it was wrong but because Snowball supported it. Power, not policy, is what matters.',
+        note: 'Chapter 5. This is one of Orwell’s clearest Stalin parallels: Stalin adopted Trotsky’s industrialisation programme after exiling him. Squealer’s explanation reveals that Napoleon’s opposition was never ideological but purely strategic — he opposed the windmill not because it was wrong but because Snowball supported it. Power, not policy, is what matters.',
       },
       {
         type: 'theme',
         text: 'SEEMED to oppose the windmill, simply as a manoeuvre to get rid of Snowball',
-        note: 'Power & Corruption. This is one of Orwell’s clearest Stalin parallels: Stalin adopted Trotsky’s industrialisation programme after exiling him. The sentence reveals that Napoleon’s opposition was never ideological but purely strategic — he opposed the windmill not because it was wrong but because Snowball supported it. Power, not policy, is what matters.',
+        note: 'Power & Corruption. This is one of Orwell’s clearest Stalin parallels: Stalin adopted Trotsky’s industrialisation programme after exiling him. Squealer’s explanation reveals that Napoleon’s opposition was never ideological but purely strategic — he opposed the windmill not because it was wrong but because Snowball supported it. Power, not policy, is what matters.',
       },
     ],
     'section-3': [
@@ -946,7 +950,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'no one dared speak his mind',
-        note: 'Narrator - Chapter 7. The dogs are Orwell’s equivalent of the NKVD — Stalin’s secret police. "No one dared speak his mind" describes the defining condition of totalitarianism: the elimination of free thought through fear. The past perfect ("had come to a time") suggests the change was gradual and thus harder to resist — no single moment could have been identified as the point of no return.',
+        note: 'Chapter 7. The dogs are Orwell’s equivalent of the NKVD — Stalin’s secret police. "No one dared speak his mind" describes the defining condition of totalitarianism: the elimination of free thought through fear. The past perfect ("had come to a time") suggests the change was gradual and thus harder to resist — no single moment could have been identified as the point of no return.',
       },
       {
         type: 'theme',
@@ -1045,18 +1049,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'language',
         text: 'All that year the animals worked like slaves',
         note: 'simile. The simile is devastating in its irony. The revolution was fought to end slavery, yet the animals are now compared to the very thing they sought to escape. Orwell’s narrator is not ironic by accident — the word "slaves" forces the reader to confront the revolution’s failure at its most basic level.',
-      },
-    ],
-    'section-8': [
-      {
-        type: 'quote',
-        text: "Father of All Animals, Terror of Mankind, Protector of the Sheep-fold, Ducklings' Friend",
-        note: 'Narrator (listing Napoleon’s titles) - Chapter 8. The accumulation of absurd titles parodies Stalin’s personality cult. "Father of All Animals" echoes "Father of the Peoples," an epithet Soviet propaganda gave Stalin. The contradiction between "Terror of Mankind" and "Ducklings’ Friend" reveals the incoherence that personality cults require the public to accept without question. Orwell uses comic excess to expose the absurdity of totalitarian self-glorification.',
-      },
-      {
-        type: 'theme',
-        text: "Father of All Animals, Terror of Mankind, Protector of the Sheep-fold, Ducklings' Friend",
-        note: 'Power & Corruption. The accumulation of absurd titles parodies Stalin’s personality cult. "Father of All Animals" echoes "Father of the Peoples," an epithet Soviet propaganda gave Stalin. The contradiction between "Terror of Mankind" and "Ducklings’ Friend" reveals the incoherence that personality cults require the public to accept without question. Orwell uses comic excess to expose the absurdity of totalitarian self-glorification.',
       },
     ],
   },
@@ -1248,6 +1240,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'The lady protests too much, methinks',
         note: 'Gertrude — Act 3, Scene 2. Watching the Player Queen swear fidelity, Gertrude’s comment lands with ironic weight given her own hasty remarriage; Shakespeare makes her the unwitting critic of herself.',
       },
+      {
+        type: 'character',
+        text: 'that man\nThat is not passion’s slave',
+        note: "Horatio. Horatio is rational, sceptical (initially of the Ghost), Stoical, and discreet - Hamlet praises him as 'that man / That is not passion’s slave'.",
+      },
     ],
     'actv-scenei': [
       {
@@ -1361,8 +1358,15 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'character',
-        text: 'll lug the guts into the neighbour room',
-        note: "Polonius. Hamlet's flippant treatment of his corpse ('I'll lug the guts into the neighbour room') reveals an unpleasant streak in the prince and triggers Laertes's revenge plot.",
+        text: 'I’ll lug the guts into the neighbour room',
+        note: "Polonius. Hamlet's flippant treatment of his corpse ('I’ll lug the guts into the neighbour room') reveals an unpleasant streak in the prince and triggers Laertes's revenge plot.",
+      },
+    ],
+    'activ-scenevii': [
+      {
+        type: 'theme',
+        text: 'cut his throat i’ th’ church',
+        note: "Revenge. Hamlet hesitates because he wants his revenge to be morally and theologically right; Laertes vows to 'cut his throat i’ th’ church'; Fortinbras turns vengeance into politics.",
       },
     ],
   },
@@ -1391,12 +1395,17 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'Can this cockpit hold\nThe vasty fields of France? Or may we cram\nWithin this wooden O the very casques\nThat did affright the air at Agincourt',
-        note: "Chorus, Prologue. The 'wooden O' is the Globe Theatre, opened in 1599 - the same year Henry V was first performed. The diminishing imagery ('cockpit', 'wooden O') against the vast subject matter ('vasty fields') makes a feature of its inadequacy. The triple rhetorical questioning enlists audiences as imaginative collaborators. The reference to 'casques' (helmets) at Agincourt frames history as a sensory event the theatre can only gesture at.",
+        note: "Chorus, Prologue. The 'wooden O' is the Globe Theatre, opened in 1599 - the same year Henry V was first performed. The diminishing imagery ('cockpit', 'wooden O') against the vast subject matter ('vasty fields') makes a feature of its inadequacy. The two rhetorical questions enlist audiences as imaginative collaborators. The reference to 'casques' (helmets) at Agincourt frames history as a sensory event the theatre can only gesture at.",
       },
       {
         type: 'quote',
         text: 'Piece out our imperfections with your thoughts',
         note: "Chorus, Prologue. The Chorus's defining instruction. Theatre is collaborative: the audience must supply with imagination what the stage cannot. The verb 'piece out' suggests patchwork - the play is a torn cloth needing the viewer's mind to make it whole. This metatheatrical address is unique in Shakespeare's history plays and licenses the play's persistent self-awareness of its own artifice.",
+      },
+      {
+        type: 'character',
+        text: 'Think, when we talk of horses, that you see them',
+        note: "The Chorus. The Chorus repeatedly apologises for the inadequacy of the playhouse - the 'wooden O', the 'unworthy scaffold' - and asks the audience to supply with their imaginations what the stage cannot show: 'Into a thousand parts divide one man', 'Think, when we talk of horses, that you see them'.",
       },
       {
         type: 'theme',
@@ -1451,6 +1460,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'Now entertain conjecture of a time\nWhen creeping murmur and the poring dark\nFills the wide vessel of the universe',
         note: 'Chorus — Act 4. The Chorus before Agincourt shifts the play’s register from triumphalism to quiet, fearful anticipation, asking the audience to imagine the two camps through poetic atmosphere rather than spectacle.',
       },
+      {
+        type: 'character',
+        text: 'A little touch of Harry in the night',
+        note: "The Chorus. The Chorus celebrates Henry but also describes events the staged action complicates: it promises 'a little touch of Harry in the night' before the king's disturbed soliloquy.",
+      },
     ],
     'activ-sceneiii': [
       {
@@ -1478,11 +1492,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'And gentlemen in England now abed\nShall think themselves accurs’d they were not here',
         note: "Henry V, Act 4 Scene 3. The continuation of the St Crispin's Day speech. By inverting the natural order - those at home are 'accurs'd', those at risk are blessed - Henry persuades his men that absence from the battle is the loss, not presence. It is a brilliant rhetorical flip that converts disadvantage into status. The line has been quoted approvingly in every English-speaking war for four hundred years.",
       },
-      {
-        type: 'theme',
-        text: 'er so vile,\nThis day shall gentle his condition',
-        note: "Class and Brotherhood. The 'band of brothers' speech promises that fighting alongside the king ennobles the lowliest soldier: 'be he ne'er so vile, / This day shall gentle his condition.' The play tests this.",
-      },
     ],
     'activ-scenei': [
       {
@@ -1503,7 +1512,12 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'What is thy soul of adoration',
-        note: "Henry V, Act 4 Scene 1. In the same soliloquy Henry interrogates 'ceremony' - the panoply of office that surrounds a king. He asks what ceremony is, and answers: not ease, not health, not a peaceful sleep. It is the 'idol' that the wretched private man pays for with constant sacrifice. The speech anticipates the Romantic line that the crown is heavier than it looks; it humanises Henry at the play's pivotal moment, just before the battle.",
+        note: "Henry V, Act 4 Scene 1. In the same soliloquy Henry interrogates 'ceremony' - the panoply of office that surrounds a king. He asks what ceremony is, and answers: not ease, not health, not a peaceful sleep. It is an 'idol', a god 'that suffer’st more / Of mortal griefs than do thy worshippers', and what kings forgo for it is the 'infinite heart’s ease' that 'private men enjoy'. The speech anticipates the Romantic line that the crown is heavier than it looks; it humanises Henry at the play's pivotal moment, just before the battle.",
+      },
+      {
+        type: 'theme',
+        text: 'place, degree, and form,\nCreating awe and fear in other men',
+        note: "Kingship and Power. The 'Upon the King' soliloquy lays out the loneliness of office - every subject's misfortune is laid at his door, while ceremony, the 'idol', is no more than 'place, degree, and form, / Creating awe and fear in other men'.",
       },
     ],
     'actiii-sceneiii': [
@@ -1542,22 +1556,41 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'character',
-        text: 'n just between twelve and one',
-        note: "Mistress Quickly (the Hostess). Her Act 2 description of Falstaff's death - 'a parted ev'n just between twelve and one' - is one of the most moving prose passages in Shakespeare.",
+        text: 'parted even just between twelve and one',
+        note: "Mistress Quickly (the Hostess). Her Act 2 description of Falstaff's death, that he 'parted even just between twelve and one', is one of the most moving prose passages in Shakespeare.",
+      },
+    ],
+    'actv-sceneii': [
+      {
+        type: 'quote',
+        text: 'I speak\nto thee plain soldier. If thou canst love me for this, take me',
+        note: "Henry V, Act 5 Scene 2. In the wooing scene Henry presents himself to Katherine in the plainest of identities, a soldier rather than a courtier, and later in the same speech folds the king into it: 'take a soldier, take a king'. The self-fashioning is strategic: it disarms her, masks the political coercion, and lets him court her in blunt language. As character study it shows Henry's instinct for the persona that will work; as politics it strips off ceremony at the precise moment when he is securing the marriage that completes his conquest.",
       },
     ],
     epilogue: [
       {
         type: 'quote',
         text: 'Small time, but in that small most greatly lived\nThis star of England',
-        note: "Chorus, Epilogue. The Epilogue's elegiac celebration of Henry. 'Small time' acknowledges his short reign (he died young). 'This star of England' is iconic. But the Epilogue immediately undermines the celebration: under Henry's son the realm 'lost France, and made his England bleed.' The audience knew the Henry VI plays. The play closes by reminding viewers that Agincourt's glory was momentary. The triumph is bracketed by mortality.",
+        note: "Chorus, Epilogue. The Epilogue's elegiac celebration of Henry. 'Small time' acknowledges his short reign (he died young). 'This star of England' is iconic. But the Epilogue immediately undermines the celebration: Henry's son became king as a baby, and those who governed for him 'lost France and made his England bleed'. The audience knew the Henry VI plays. The play closes by reminding viewers that Agincourt's glory was momentary. The triumph is bracketed by mortality.",
       },
     ],
     'actii-scenei': [
       {
         type: 'character',
+        text: 'The King has kill’d his heart',
+        note: "Falstaff (offstage). In Act 2 Scene 1 the Hostess says 'The King has kill’d his heart' and Pistol 'His heart is fracted and corroborate'; in Scene 3 she describes his death in heart-breaking prose.",
+      },
+      {
+        type: 'character',
         text: 'His heart is fracted and corroborate',
-        note: "Falstaff (offstage). In Act 2 the Hostess describes his death in heart-breaking prose: 'his heart is fracted and corroborate.' Shakespeare promised in 2 Henry IV that Falstaff would appear in the French wars but here keeps him offstage, dying of a broken heart.",
+        note: "Falstaff (offstage). In Act 2 Scene 1 the Hostess says 'The King has kill’d his heart' and Pistol 'His heart is fracted and corroborate'; in Scene 3 she describes his death in heart-breaking prose.",
+      },
+    ],
+    'actiii-scenevi': [
+      {
+        type: 'character',
+        text: 'discipline ought to be used',
+        note: "Bardolph. Pistol begs Fluellen to speak to the Duke for his life, and Fluellen refuses, because 'discipline ought to be used'.",
       },
     ],
   },
@@ -1887,6 +1920,11 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'character',
+        text: 'the well-known man about town',
+        note: 'Enfield is described as "the well-known man about town," suggesting a social ease that contrasts with Utterson\'s austerity.',
+      },
+      {
+        type: 'character',
         text: 'It was a nut to crack for many',
         note: 'Their unlikely friendship ("it was a nut to crack for many") mirrors the theme of duality: even the most mismatched surfaces can conceal deep connections.',
       },
@@ -1909,6 +1947,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'context',
         text: 'looks like Queer Street',
         note: 'Jekyll conceals his "pleasures" behind a "morbid sense of shame." Enfield refuses to ask questions about anything that "looks like Queer Street." The entire social world of the novella is built on a foundation of deliberate self-deception.',
+      },
+      {
+        type: 'context',
+        text: 'with an air of invitation, like rows of smiling saleswomen',
+        note: 'Stevenson describes the shop fronts of one by-street standing "with an air of invitation, like rows of smiling saleswomen" -- the city is seductive and treacherous, like Hyde himself.',
       },
       {
         type: 'language',
@@ -1989,6 +2032,11 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'quote',
+        text: 'the man seems hardly human! Something troglodytic, shall we say',
+        note: "Utterson. 'Troglodytic' means cave-dwelling, linking Hyde to primitive, pre-civilised humanity. This connects directly to Victorian anxieties about Darwin's theory of evolution and the fear that humans might 'devolve.' Hyde represents the primitive self that civilisation supposedly suppresses but can never fully eliminate.",
+      },
+      {
+        type: 'quote',
         text: 'he gave an impression of deformity without any nameable malformation',
         note: "Narrator. The paradox - deformed yet physically whole - suggests Hyde's evil is metaphysical, not physical. His wrongness is felt instinctively. This connects to physiognomy (the Victorian pseudo-science of reading character from appearance) while simultaneously undermining it: Hyde's evil cannot be pinned to specific features.",
       },
@@ -2045,6 +2093,16 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'He had in his hand a heavy cane, with which he was trifling; but he answered never a word',
         note: "Narrator, describing Hyde before the murder. The casual 'trifling' with the murder weapon creates menacing understatement. Hyde's silence is more threatening than speech. The cane - a gentleman's accessory - becomes a weapon, symbolising how respectability conceals violence. The weapon belongs to Jekyll's world, not Hyde's.",
+      },
+      {
+        type: 'character',
+        text: 'an aged beautiful gentleman with white hair',
+        note: "Sir Danvers Carew. Carew is described as 'an aged beautiful gentleman with white hair' with 'an innocent and old-world kindness of disposition', making Hyde's unprovoked attack especially horrifying.",
+      },
+      {
+        type: 'character',
+        text: 'an innocent and old-world kindness of disposition',
+        note: "Sir Danvers Carew. Carew is described as 'an aged beautiful gentleman with white hair' with 'an innocent and old-world kindness of disposition', making Hyde's unprovoked attack especially horrifying.",
       },
       {
         type: 'language',
@@ -2250,7 +2308,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'character',
         text: 'will never follow anything\nThat other men begin',
-        note: "Cicero. The conspirators consider recruiting him but Brutus rejects the idea, claiming Cicero 'will never follow any thing / That other men begin.' His brief on-stage appearance during the storm shows him calm and rational.",
+        note: "Cicero. The conspirators consider recruiting him but Brutus rejects the idea, claiming Cicero 'will never follow anything / That other men begin.' His brief on-stage appearance during the storm shows him calm and rational.",
       },
     ],
     'actii-sceneii': [
@@ -2398,6 +2456,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'I love your majesty\nAccording to my bond; no more nor less',
         note: "Cordelia, I.i. Cordelia refuses to inflate her love into rhetoric. The legal vocabulary ('bond') is deliberately understated, and contrasts with her sisters' hyperbole. Critics have read this line as everything from cold legalism to the play's only honest declaration of love; it is also the engine of catastrophe. The quotation is essential for any essay on language, integrity or filial duty.",
       },
+      {
+        type: 'theme',
+        text: 'The name, and all the addition to a king',
+        note: "Lear retains 'The name, and all the addition to a king' while giving away the substance, and discovers - too late - that his daughters value the substance, not the name.",
+      },
     ],
     'acti-sceneiv': [
       {
@@ -2416,6 +2479,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'Thou shouldst not have been old till thou hadst been wise',
         note: 'The Fool — Act 1, Scene 5. The Fool diagnoses Lear’s tragedy in a single line: wisdom has arrived after power has been given away. The proverbial form gives the judgement the weight of folk truth.',
+      },
+      {
+        type: 'character',
+        text: 'Thou shouldst not have been old till thou hadst been wise',
+        note: "The Fool. The Fool tells the king truths no other character dares speak: 'Thou shouldst not have been old till thou hadst been wise.' He is paradoxically the wisest figure on stage and the only one who openly mourns Cordelia's banishment.",
       },
     ],
     'actiii-sceneii': [
@@ -2467,8 +2535,8 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'theme',
-        text: 'As flies to wanton boys are we to th',
-        note: "Gloucester famously cries 'As flies to wanton boys are we to th' gods; / They kill us for their sport,' while Edgar later insists 'The gods are just.' The mock-trial Lear conducts on the heath, arraigning a stool as Goneril, parodies the very institutions that have failed him.",
+        text: 'As flies to wanton boys are we to the gods,\nThey kill us for their sport',
+        note: "Gloucester famously cries 'As flies to wanton boys are we to the gods, / They kill us for their sport', while Edgar later insists 'The gods are just.' The mock-trial Lear conducts in the farmhouse in III.vi (a passage only the 1608 Quarto has), arraigning a stool as Goneril, parodies the very institutions that have failed him.",
       },
     ],
     'activ-scenevii': [
@@ -2505,6 +2573,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Suffering and redemption. The play’s final speeches suggest only the exhausted duty of the living to "speak what we feel, not what we ought to say" and to go on.',
       },
       {
+        type: 'quote',
+        text: 'Howl, howl, howl, howl! O, you are men of stone',
+        note: "Lear, V.iii. Lear enters with Cordelia in his arms. The four-fold imperative is reducible to no rational meaning - it is grief-as-sound. The contrast with the urbane verse he speaks elsewhere is shattering. The phrase 'men of stone' transforms the on-stage witnesses into a chorus of unfeeling rock. Critics often note that the line is Shakespeare's most extreme attempt to push tragic verse to the limit of articulation. Count in your own copy: this edition, like the 1608 Quarto, has four cries of 'Howl' where the 1623 Folio has three, and it prints 'stone' where both the Quarto and the Folio read 'stones'.",
+      },
+      {
         type: 'character',
         text: 'Some good I mean to do,\nDespite of mine own nature',
         note: "Edmund. Yet Shakespeare gives him a remarkable death-bed reversal - 'Some good I mean to do, despite of mine own nature' - which he attempts too late.",
@@ -2536,7 +2609,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'O, reason not the need: our basest beggars\nAre in the poorest thing superfluous',
-        note: "Lear, II.iv. The crisis-point of the dispossession scene: Regan has just asked 'What need one?' Lear's reply moves from particular grievance to philosophical statement: human dignity is precisely what cannot be reduced to need. The line foreshadows his later realisation on the heath that even 'the basest beggar' has more than he. It is also a profound rebuke of the utilitarian thinking that his daughters represent.",
+        note: "Lear, II.iv. The crisis-point of the dispossession scene: Regan has just asked 'What need one?' Lear's reply moves from particular grievance to philosophical statement: human dignity is precisely what cannot be reduced to need. The line foreshadows the heath, where Lear sees in Poor Tom what a man is without anything superfluous: 'a poor, bare, forked animal'. It is also a profound rebuke of the utilitarian thinking that his daughters represent.",
       },
     ],
     'activ-scenevi': [
@@ -2544,6 +2617,23 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'When we are born, we cry that we are come\nTo this great stage of fools',
         note: 'King Lear — Act 4, Scene 6. Lear’s crowned-in-weeds speech uses the theatrical metaphor to place human life within a tragic drama whose participants do not choose their roles. The line captures the play’s bleakest existential vision.',
+      },
+      {
+        type: 'quote',
+        text: 'A man may see how the world goes with no eyes.\nLook with thine ears',
+        note: "Lear, IV.vi. The mad Lear, meeting the blind Gloucester, articulates the play's sight/blindness paradox at its bleakest. The synaesthetic command ('Look with thine ears') collapses the sensory hierarchy. The scene is one of the strangest in Shakespeare: the mad king and the blind earl together perceive the world more truly than any sane and sighted character has done.",
+      },
+      {
+        type: 'theme',
+        text: 'A man may see how the world goes with no eyes.\nLook with thine ears',
+        note: "The paradox is sharpened in IV.vi when the blind Gloucester meets the mad Lear: 'A man may see how the world goes with no eyes. Look with thine ears'.",
+      },
+    ],
+    'activ-sceneii': [
+      {
+        type: 'character',
+        text: 'Tigers, not daughters, what have you perform',
+        note: "The Duke of Albany. By Act IV he openly condemns her: 'Tigers, not daughters, what have you perform'd?' He survives the catastrophe and, with Edgar, takes responsibility for the kingdom.",
       },
     ],
   },
@@ -2558,11 +2648,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'language',
         text: 'O what can ail thee, knight-at-arms\nAlone and palely loitering',
         note: '"O what can ail thee, knight-at-arms, / Alone and palely loitering?" The opening question immediately establishes mystery.',
-      },
-      {
-        type: 'language',
-        text: "I met a lady in the meads\nFull beautiful, a faery's child",
-        note: '"I met a lady in the meads, / Full beautiful - a faery\'s child" The dash before "a faery\'s child" creates a moment of revelation.',
       },
       {
         type: 'language',
@@ -2587,12 +2672,12 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'language',
         text: 'O what can ail thee, knight-at-arms',
-        note: 'Compare: "O what can ail thee, knight-at-arms" (8 syllables) "Alone and palely loitering?" (8 syllables) "The sedge has wither\'d from the lake" (8 syllables) "And no birds sing" (4 syllables) The sudden contraction of the fourth line creates a dying fall - the rhythm drops away, leaving a gap or silence.',
+        note: 'Compare: "O what can ail thee, knight-at-arms" (8 syllables) "Alone and palely loitering?" (8 syllables) "The sedge is withered from the lake" (8 syllables) "And no birds sing" (4 syllables) The sudden contraction of the fourth line creates a dying fall - the rhythm drops away, leaving a gap or silence.',
       },
       {
         type: 'language',
         text: 'Alone and palely loitering',
-        note: 'Compare: "O what can ail thee, knight-at-arms" (8 syllables) "Alone and palely loitering?" (8 syllables) "The sedge has wither\'d from the lake" (8 syllables) "And no birds sing" (4 syllables) The sudden contraction of the fourth line creates a dying fall - the rhythm drops away, leaving a gap or silence.',
+        note: 'Compare: "O what can ail thee, knight-at-arms" (8 syllables) "Alone and palely loitering?" (8 syllables) "The sedge is withered from the lake" (8 syllables) "And no birds sing" (4 syllables) The sudden contraction of the fourth line creates a dying fall - the rhythm drops away, leaving a gap or silence.',
       },
     ],
   },
@@ -2818,8 +2903,23 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'quote',
+        text: 'Look to her, Moor, if thou hast eyes to see:\nShe has deceiv’d her father, and may thee',
+        note: "Brabantio - Act 1, Scene 3. This warning plants a seed that Iago later cultivates. If Desdemona deceived Brabantio (by eloping), might she deceive Othello too? The rhyming couplet makes it memorable and prophetic-sounding. In Act 3, Scene 3 Iago echoes it almost word for word ('She did deceive her father, marrying you'), and Othello agrees: 'And so she did.'",
+      },
+      {
+        type: 'quote',
+        text: 'Her father lov’d me, oft invited me,\nStill question’d me the story of my life',
+        note: 'Othello - Act 1, Scene 3. Ironic: Brabantio welcomed Othello as an exotic guest but not as a son-in-law. This reveals the limits of Venetian tolerance -- Othello is acceptable as a servant of the state but not as a family member.',
+      },
+      {
+        type: 'quote',
         text: 'I am hitherto your daughter: but here’s my husband',
         note: "Desdemona - Act 1, Scene 3. Desdemona publicly chooses Othello over her father. The simple clarity of 'here's my husband' is powerful. She uses the same argument her mother might have used -- women transfer allegiance from father to husband -- but she has chosen the husband herself.",
+      },
+      {
+        type: 'quote',
+        text: 'she, in spite of nature,\nOf years, of country, credit, everything,\nTo fall in love with what she fear’d to look on',
+        note: "Brabantio - Act 1, Scene 3. Brabantio lists reasons why Desdemona's love must be unnatural. 'In spite of nature' frames interracial love as against nature. 'Fear'd to look on' projects his own racist horror onto Desdemona. This speech reveals Venice's deep racial prejudice beneath its cosmopolitan surface.",
       },
     ],
     'actii-sceneiii': [
@@ -2954,6 +3054,11 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'quote',
+        text: 'Of one that loved not wisely, but too well;\nOf one not easily jealous, but being wrought,\nPerplex’d in the extreme',
+        note: "Othello - Act 5, Scene 2. Othello's final self-assessment. 'Not wisely, but too well' is debatable -- is this honest reflection or self-justification? 'Wrought' acknowledges Iago's manipulation but also distances himself from responsibility. 'Perplex'd' means tortured/bewildered, not merely confused.",
+      },
+      {
+        type: 'quote',
         text: 'Nobody; I myself. Farewell.\nCommend me to my kind lord',
         note: "Desdemona - Act 5, Scene 2. Her dying words deny Othello's guilt -- 'nobody' killed her. 'Kind lord' is heartbreaking: even at death, she calls him 'kind.' This can be read as supreme devotion or as the ultimate tragic consequence of a woman taught never to accuse her husband.",
       },
@@ -2961,6 +3066,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'It is the cause, it is the cause, my soul',
         note: "Othello - Act 5, Scene 2. Othello enters to murder Desdemona, trying to frame it as justice rather than revenge. 'The cause' -- he cannot name adultery, showing residual love and perhaps doubt. The address to 'my soul' shows he knows this will damn him. The repetition suggests he is trying to convince himself.",
+      },
+      {
+        type: 'quote',
+        text: 'I kiss’d thee ere I kill’d thee. No way but this,\nKilling myself, to die upon a kiss',
+        note: "Othello - Act 5, Scene 2. Othello's last words unite love and death. The chiasmus (kiss'd/kill'd, killing/kiss) creates a tragic symmetry. 'No way but this' -- he sees suicide as the only resolution. 'Die upon a kiss' -- he dies beside Desdemona, literalising the connection between love and death.",
       },
       {
         type: 'quote',
@@ -3035,6 +3145,16 @@ export const TEXT_ANNOTATIONS: Readonly<
   },
   remember: {
     poem: [
+      {
+        type: 'context',
+        text: 'you should forget me for a while',
+        note: 'Time and loss: The poem grapples with the awareness that time may erode memory - "you should forget me for a while" - and that memory, when it returns, may bring grief: "And afterwards remember, do not grieve".',
+      },
+      {
+        type: 'context',
+        text: 'And afterwards remember, do not grieve',
+        note: 'Time and loss: The poem grapples with the awareness that time may erode memory - "you should forget me for a while" - and that memory, when it returns, may bring grief: "And afterwards remember, do not grieve".',
+      },
       {
         type: 'language',
         text: 'Remember me when I am gone away,\nGone far away into the silent land',
@@ -3254,6 +3374,11 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'character',
+        text: 'fire-ey’d fury be my conduct now',
+        note: "Masculinity and honour: Romeo initially tries to refuse Tybalt's challenge (because he is now Tybalt's kinsman), but after Mercutio's death, he reverts to the masculine honour code - \"fire-ey'd fury be my conduct now.\" Shakespeare critiques the honour system that turns love into violence.",
+      },
+      {
+        type: 'character',
         text: 'A plague o’ both your houses',
         note: 'Death: "A plague o\' both your houses!" - Mercutio\'s dying curse condemns both families and, by extension, the entire system of honour-based violence.',
       },
@@ -3303,21 +3428,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'theme',
         text: 'Hang thee young baggage, disobedient wretch',
         note: 'Family and Honour. Capulet\'s violent language reduces Juliet to disposable property. "Baggage" and "wretch" dehumanise her. The scene exposes how patriarchal authority operates through emotional and verbal violence before physical force.',
-      },
-      {
-        type: 'quote',
-        text: 'More light and light, more dark and dark our woes',
-        note: 'Juliet - Act 3, Scene 5. As dawn forces Romeo to leave, Juliet recognises daylight as the enemy. The chiastic structure mirrors the inverse relationship between physical light and emotional darkness. The entire light-dark motif crystallises in one line.',
-      },
-      {
-        type: 'theme',
-        text: 'More light and light, more dark and dark our woes',
-        note: 'Light and Dark. As dawn forces Romeo to leave, Juliet recognises daylight as the enemy. The chiastic structure mirrors the inverse relationship between physical light and emotional darkness. The entire light-dark motif crystallises in one line.',
-      },
-      {
-        type: 'language',
-        text: 'More light and light, more dark and dark our woes',
-        note: 'motif. As dawn forces Romeo to leave, Juliet recognises daylight as the enemy. The chiastic structure mirrors the inverse relationship between physical light and emotional darkness. The entire light-dark motif crystallises in one line.',
       },
       {
         type: 'character',
@@ -3683,12 +3793,22 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'The gold had kept his thoughts in an ever-repeated circle, leading to nothing beyond itself',
-        note: "Narrator - Part 1, Chapter 5. The gold represents sterile repetition and isolation. 'Leading to nothing beyond itself' captures the emptiness of materialism. The circular imagery contrasts with the linear growth Silas experiences through Eppie -- love leads outward, gold leads nowhere.",
+        note: "Narrator - Part 1, Chapter 14. The gold represents sterile repetition and isolation. 'Leading to nothing beyond itself' captures the emptiness of materialism. The circular imagery contrasts with the linear growth Silas experiences through Eppie -- love leads outward, gold leads nowhere.",
+      },
+      {
+        type: 'quote',
+        text: 'You’ll happen be a bit moithered with it while it’s so little; but I’ll come, and welcome, and see to it for you',
+        note: "Dolly Winthrop - Part 1, Chapter 14. Dolly's offer is characteristically simple and warm. 'Moithered' is a dialect word for bothered or flustered: she warns Silas that so small a child may fluster him, and at once offers her own help, 'and welcome'. Her neighbourliness is what draws Silas back into village life. Eliot suggests that a child is raised by a community's care as well as by one parent's love.",
       },
       {
         type: 'quote',
         text: 'The gold had asked that he should sit weaving longer and longer, deafened and blinded more and more to all things except the monotony of his loom and the repetition of his web',
-        note: "Narrator - Part 1, Chapter 5. The gold is personified as a demanding master. 'Deafened and blinded' suggests Silas's senses have been deadened. The 'monotony' and 'repetition' contrast sharply with the variety and liveliness Eppie will bring. Gold creates a closed loop; love opens the world.",
+        note: "Narrator - Part 1, Chapter 14. The gold is personified as a demanding master. 'Deafened and blinded' suggests Silas's senses have been deadened. The 'monotony' and 'repetition' contrast sharply with the variety and liveliness Eppie will bring. Gold creates a closed loop; love opens the world.",
+      },
+      {
+        type: 'quote',
+        text: 'I think you’re in the right on it to keep the little un, Master Marner, seeing as it’s been sent to you, though there’s folks as thinks different',
+        note: "Dolly Winthrop - Part 1, Chapter 14. Dolly's practical wisdom: the right response to finding a child is to keep it and bring it up. Her simple moral clarity contrasts with Godfrey's agonised avoidance. 'Seeing as it's been sent to you' reflects her simple faith that Eppie's coming was meant, and she backs Silas against the 'folks as thinks different'.",
       },
     ],
     'section-13': [
@@ -3702,12 +3822,12 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'Eh, my precious child, the blessing was mine. If you hadn’t been sent to save me, I should ha’ gone to the grave in my misery',
-        note: 'Silas Marner — Chapter 19. In the climactic confrontation with Godfrey and Nancy, Silas states openly what the narrative has been arguing throughout: Eppie has saved him, not the other way around. The reversal of the Victorian expectation that the adult rescues the child is a key part of Eliot’s revaluation of parenthood. The passive phrase "been sent" leaves the source of Eppie’s arrival ambiguous between chance and providence, which is exactly the space Eliot wants the novel to inhabit.',
+        note: 'Silas Marner — Chapter 19. Alone with Eppie on the evening his gold is recovered, before Godfrey and Nancy arrive, Silas answers her words that but for him she would have been taken to the workhouse, with "nobody to love me". He states openly what the narrative has been arguing throughout: Eppie has saved him, not the other way around. The reversal of the Victorian expectation that the adult rescues the child is a key part of Eliot’s revaluation of parenthood. The passive phrase "been sent" leaves the source of Eppie’s arrival ambiguous between chance and providence, which is exactly the space Eliot wants the novel to inhabit.',
       },
       {
         type: 'quote',
         text: 'I can’t feel as I’ve got any father but one',
-        note: 'Eppie — Chapter 19. Eppie’s quiet, decisive rejection of Godfrey’s claim is the moral climax of the novel. The grammar is deliberately simple because the argument is absolute: her sense of fatherhood is not about biology but about who has cared for her. Eliot makes the case through the voice of an uneducated young woman, implicitly contrasting Eppie’s clarity with Godfrey’s years of concealment and his unspoken assumption that blood and class outweigh years of daily care.',
+        note: 'Eppie — Chapter 19. Eppie’s rejection of Godfrey’s claim, made "impetuously, while the tears gathered", is the moral climax of the novel. The grammar is deliberately simple because the argument is absolute: her sense of fatherhood is not about biology but about who has cared for her. Eliot makes the case through the voice of an uneducated young woman, implicitly contrasting Eppie’s clarity with Godfrey’s years of concealment and his unspoken assumption that blood and class outweigh years of daily care.',
       },
       {
         type: 'quote',
@@ -3729,12 +3849,12 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'the child was sent to me: there’s dealings with us—there’s dealings',
-        note: "Silas - Part 1, Chapter 13. Silas interprets Eppie's arrival as providential -- 'sent to me.' 'There's dealings' suggests he is beginning to believe in some form of moral order again, though it is vague rather than doctrinal. This is the first sign of his recovered faith.",
+        note: "Silas - Part 2, Chapter 16. Silas interprets Eppie's arrival as providential -- 'sent to me.' 'There's dealings' suggests he has come to believe in some form of moral order again, though it is vague rather than doctrinal. He says it to Dolly sixteen years after Eppie's coming: the drawing of lots that condemned him at Lantern Yard is still dark to him, but the child has given him back his faith in a good beyond himself.",
       },
       {
         type: 'quote',
         text: 'The gods of the hearth exist for us still; and let all new faith be tolerant of that fetishism, lest it bruise its own roots',
-        note: "Narrator - Part 1, Chapter 1. Eliot's narrator makes a philosophical statement: domestic love ('gods of the hearth') is the foundation of all higher values. Any new ideology ('new faith') that dismisses the importance of home and family undermines its own moral basis.",
+        note: "Narrator - Part 2, Chapter 16. Silas will not have a grate and oven put in: he loves the old brick hearth, where he found Eppie, as he once loved his brown pot. From this, Eliot's narrator makes a philosophical statement: domestic love ('gods of the hearth') is the foundation of all higher values. Any new ideology ('new faith') that scorns this attachment to home and its familiar things undermines its own moral basis.",
       },
     ],
     'section-5': [
@@ -3757,6 +3877,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'Raveloe was not a place where moral censure was severe',
         note: 'Narrator — Chapter 3. A deceptively mild sentence that does important work. Eliot sketches Raveloe as a place of easy-going tolerance, which is partly a virtue because Silas is eventually received back without hostility, and partly a failing because the Cass brothers grow up unchecked. The line captures Eliot’s realist refusal to present any community as simply good or bad, and quietly contrasts the village’s lax mood with the unforgiving chapel world that falsely condemned Silas at Lantern Yard.',
       },
+      {
+        type: 'quote',
+        text: 'The yoke a man creates for himself by wrong-doing will breed hate in the kindliest nature; and the good-humoured, affectionate-hearted Godfrey Cass was fast becoming a bitter man, visited by cruel wishes',
+        note: "Narrator - Part 1, Chapter 3. Eliot's narrator does not make Godfrey a villain: he is 'good-humoured' and 'affectionate-hearted'. But his secret marriage has given Dunsey a hold over him, a 'yoke' of his own making, and it is turning him into 'a bitter man'. This connects to Eliot's nuanced moral vision: she judges characters by what they do with their circumstances, not by abstract standards.",
+      },
     ],
     'section-21': [
       {
@@ -3767,7 +3892,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'Since the time the child was sent to me and I’ve come to love her as myself, I’ve had light enough to trusten by',
-        note: "Silas - Part 2, Chapter 19. 'Light' replaces the darkness of his isolated years. 'Trusten by' means he has recovered enough faith to live by. Crucially, this faith comes through loving Eppie, not through religious doctrine. Love provides the moral compass that religion failed to give him.",
+        note: "Silas - Part 2, Chapter 21. 'Light' replaces the darkness of his isolated years. 'Trusten by' means he has recovered enough faith to live by. Crucially, this faith comes through loving Eppie, not through religious doctrine. Love provides the moral compass that religion failed to give him.",
       },
     ],
     'section-22': [
@@ -3782,6 +3907,30 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'I wanted to pass for childless once, Nancy—I shall pass for childless now against my wish',
         note: "Godfrey - Part 2, Chapter 20. The devastating irony of Godfrey's situation: he chose to hide his child, and now he must live without one. 'Pass for childless' echoes his earlier deception -- his life has been defined by performing a false identity. The symmetry feels like moral justice.",
+      },
+      {
+        type: 'quote',
+        text: 'there’s debts we can’t pay like money debts, by paying extra for the years that have slipped by. While I’ve been putting off and putting off, the trees have been growing—it’s too late now',
+        note: "Godfrey - Part 2, Chapter 20. Godfrey finally understands that moral obligations cannot be settled retroactively. The comparison to 'money debts' shows his habitual thinking -- as a wealthy man, he expected money to solve everything. This is the novel's clearest statement about the limits of material wealth.",
+      },
+      {
+        type: 'quote',
+        text: 'She thinks me worse than I am. But she must think it: she can never know all. It’s part of my punishment, Nancy, for my daughter to dislike me',
+        note: "Godfrey - Part 2, Chapter 20. Godfrey finally accepts that his years of deception have consequences. Eppie, refusing him, believes he wronged her mother as well as her, and he cannot tell her the whole story ('she can never know all'). The word 'punishment' suggests he sees moral causation at work: his suffering is the natural result of his choices.",
+      },
+    ],
+    'section-11': [
+      {
+        type: 'quote',
+        text: 'I think those have the least feeling that act wrong to begin with',
+        note: "Nancy - Part 1, Chapter 11. Nancy's retort at the New Year's Eve dance, when Godfrey calls her 'hard-hearted' and says she has 'no feeling'. She turns the charge back on him: the unfeeling are those who do wrong in the first place. Nancy has resolved that not even the most dazzling rank would make her marry a man careless of his character, and Eliot measures worth the same way, by conduct rather than class: the Squire's heir, with every advantage, wants sympathy for a misery of his own making.",
+      },
+    ],
+    'section-18': [
+      {
+        type: 'quote',
+        text: 'But you wouldn’t have married me then, Nancy, if I’d told you',
+        note: "Godfrey - Part 2, Chapter 18. Godfrey excuses his silence: Nancy, he insists, would never have married him if he had told her the truth. Eliot's narrator makes clear that this is self-justification: Godfrey says it 'to prove to himself that his conduct had not been utter folly'. His inability to face difficult truths defines his character. The contrast with Proctor in The Crucible (who painfully tells the truth) is striking.",
       },
     ],
   },
@@ -3808,6 +3957,11 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'quote',
+        text: 'My purse, my person, my extremest means\nLie all unlock’d to your occasions',
+        note: "Antonio - Act 1, Scene 1. Antonio offers Bassanio everything -- money ('purse'), body ('person'), and his very life ('extremest means'). 'Unlock'd' suggests total openness and vulnerability. The listing climaxes in intensity, showing the depth of Antonio's devotion.",
+      },
+      {
+        type: 'quote',
         text: 'In Belmont is a lady richly left',
         note: "Bassanio - Act 1, Scene 1. Bassanio introduces Portia with 'richly left' -- her inheritance. Wealth is mentioned before beauty, charm, or virtue. This raises questions about whether Bassanio's love is genuine or financially motivated.",
       },
@@ -3822,6 +3976,16 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'I hate him for he is a Christian,\nBut more for that in low simplicity\nHe lends out money gratis, and brings down\nThe rate of usance here with us in Venice',
         note: 'Shylock — Act 1, Scene 3. Shylock’s aside when he first meets Antonio reveals motives that are both religious and commercial. Shakespeare makes Shylock’s grievance rational as well as vindictive: Antonio undercuts him economically by lending without interest. The blunt “I hate him” is shocking, but placed inside a reasoned economic analysis it complicates a purely villainous reading and sets up the play’s entanglement of faith and money.',
+      },
+      {
+        type: 'quote',
+        text: 'You call me misbeliever, cut-throat dog,\nAnd spet upon my Jewish gaberdine',
+        note: "Shylock - Act 1, Scene 3. Shylock lists Antonio's abuses. 'Misbeliever' -- religious prejudice. 'Cut-throat dog' -- dehumanisation. 'Jewish gaberdine' -- his clothing marks him as Other. The calm listing makes Antonio's behaviour seem systematic, not impulsive.",
+      },
+      {
+        type: 'quote',
+        text: 'suff’rance is the badge of all our tribe',
+        note: "Shylock - Act 1, Scene 3. 'Suff'rance' (sufferance, patient endurance of suffering) is described as a 'badge' -- something worn, visible, imposed. 'Our tribe' invokes collective Jewish identity and history. The line acknowledges centuries of persecution with bitter resignation.",
       },
       {
         type: 'quote',
@@ -3899,12 +4063,12 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'And earthly power doth then show likest God’s\nWhen mercy seasons justice',
-        note: 'Portia — Act 4, Scene 1. Portia argues that law and mercy must work together, not in opposition. The culinary metaphor of “seasoning” keeps the theological argument concrete: justice without mercy is unpalatable. The lines articulate a Christian ideal that the play then tests by action. Because Shylock refuses this vision and Portia then uses strict law to defeat him, the speech becomes both the play’s moral peak and the marker of its most difficult irony.',
+        note: 'Portia — Act 4, Scene 1. Portia argues that law and mercy must work together, not in opposition. The culinary metaphor in “seasons” keeps the theological argument concrete: justice without mercy is unpalatable. The lines articulate a Christian ideal that the play then tests by action. Because Shylock refuses this vision and Portia then uses strict law to defeat him, the speech becomes both the play’s moral peak and the marker of its most difficult irony.',
       },
       {
         type: 'quote',
         text: 'I stand for judgment. Answer; shall I have it',
-        note: 'Shylock — Act 4, Scene 1. Shylock’s blunt demand cuts through Portia’s extended rhetoric with the force of law. The short, largely monosyllabic line, with its courtroom formality, shows him refusing the emotional register of mercy and insisting on procedural fact. Shakespeare uses the contrast in rhythm and diction between Portia’s fluent, image-rich verse and Shylock’s stripped, legalistic speech to dramatise two incompatible ideas of what justice is, and the direct question “Answer; shall I have it?” forces the court to commit.',
+        note: 'Shylock — Act 4, Scene 1. Shylock’s blunt demand to the Duke, made before Portia has even arrived, carries the force of law. The short, largely monosyllabic line, with its courtroom formality, shows him refusing the emotional register of mercy and insisting on procedural fact. Shakespeare sets this stripped, legalistic speech against the fluent, image-rich verse Portia brings to the court later in the scene, dramatising two incompatible ideas of what justice is, and the direct question “Answer; shall I have it?” forces the court to commit.',
       },
       {
         type: 'quote',
@@ -3924,7 +4088,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'You take my house when you do take the prop\nThat doth sustain my house; you take my life\nWhen you do take the means whereby I live',
-        note: 'Shylock — Act 4, Scene 1. Stripped of his wealth and his religion, Shylock speaks with unusual plainness. The triple repetition of “you take” turns the court’s judgement into a catalogue of violations, and the parallel between “house” and “life” insists that livelihood and identity are inseparable. Shakespeare gives his defeated figure a last moment of dignified argument that most modern productions treat as the emotional centre of the scene.',
+        note: 'Shylock — Act 4, Scene 1. Stripped of his wealth, though not yet of his religion, Shylock speaks with unusual plainness. The repeated “you take” turns the court’s judgement into a catalogue of violations, and the parallel between “house” and “life” insists that livelihood and identity are inseparable. Shakespeare gives his defeated figure a last moment of dignified argument that most modern productions treat as the emotional centre of the scene.',
       },
       {
         type: 'theme',
@@ -3943,8 +4107,18 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'quote',
+        text: 'The quality of mercy is not strain’d,\nIt droppeth as the gentle rain from heaven',
+        note: "Portia - Act 4, Scene 1. Portia's speech frames mercy as natural and divine. The simile of rain -- unforced, universal -- contrasts with the rigid legalism of the courtroom. Yet the speech is undermined by the Christians' subsequent treatment of Shylock.",
+      },
+      {
+        type: 'quote',
         text: 'I crave the law,\nThe penalty and forfeit of my bond',
         note: "Shylock - Act 4, Scene 1. Shylock insists on strict legal justice. 'Crave' suggests desperate need -- the law is all he has in a society that denies him equality. His legalism is villainous but also a rational response to a system that offers him no mercy.",
+      },
+      {
+        type: 'quote',
+        text: 'The quality of mercy is not strain’d,\nIt droppeth as the gentle rain from heaven\nUpon the place beneath. It is twice blest,\nIt blesseth him that gives and him that takes',
+        note: "Portia - Act 4, Scene 1. Mercy is compared to rain -- natural, divine, universal. 'Twice blest' means it benefits both giver and receiver. This is the play's most famous speech, yet its idealism is undermined by Portia's subsequent mercilessness towards Shylock.",
       },
       {
         type: 'quote',
@@ -4002,7 +4176,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'My daughter! O my ducats! O my daughter!\nFled with a Christian! O my Christian ducats',
-        note: "Shylock (reported by Solanio) - Act 2, Scene 8. The interweaving of 'daughter' and 'ducats' is often read as Shylock valuing money equally with his child. However, this is reported mockingly by Solanio, who may be exaggerating. The repetition suggests overwhelming grief where all losses blur together.",
+        note: "Solanio (reporting Shylock) - Act 2, Scene 8. The interweaving of 'daughter' and 'ducats' is often read as Shylock valuing money equally with his child. However, this is reported mockingly by Solanio, who may be exaggerating. The repetition suggests overwhelming grief where all losses blur together.",
       },
     ],
     'actiii-sceneiv': [
@@ -4027,19 +4201,94 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'The scarlet letter had not done its office',
         note: 'Key Quotations on Sin and Guilt: "The scarlet letter had not done its office." - Explains how Hester\'s public shame, rather than destroying her, becomes the vehicle for her transformation.',
       },
+      {
+        type: 'theme',
+        text: 'The world’s law was no law for her mind',
+        note: '"The world’s law was no law for her mind." - Internal psychological shift: Hester moves from accepting the letter\'s meaning to questioning it.',
+      },
+      {
+        type: 'language',
+        text: 'They said that it meant Able, so strong was Hester Prynne, with a woman’s strength',
+        note: '"They said that it meant Able, so strong was Hester Prynne, with a woman’s strength." - The letter\'s meaning is not fixed: as Hester\'s strength and charity become known, many read the "A" as "Able" rather than as a mark of shame.',
+      },
+    ],
+    'section-10': [
+      {
+        type: 'theme',
+        text: 'guilty as they may be, retaining, nevertheless, a zeal for God’s glory and man’s welfare, they shrink from displaying themselves black and filthy in the view of men',
+        note: '"guilty as they may be, retaining, nevertheless, a zeal for God’s glory and man’s welfare, they shrink from displaying themselves black and filthy in the view of men" - Dimmesdale, arguing with Chillingworth about why some guilty men never confess, is really defending himself: he has internalised the logic of secrecy as self-preservation.',
+      },
+    ],
+    'section-17': [
+      {
+        type: 'theme',
+        text: 'Thou little knowest what a relief it is, after the torment of a seven years’ cheat, to look into an eye that recognises me for what I am',
+        note: '"Thou little knowest what a relief it is, after the torment of a seven years’ cheat, to look into an eye that recognises me for what I am!" - Dimmesdale to Hester in the forest: after seven years of deceit, being known for what he is comes as a relief, which suggests that concealment prevents genuine human connection and growth.',
+      },
+      {
+        type: 'theme',
+        text: 'Had I one friend—or were it my worst enemy!—to whom, when sickened with the praises of all other men, I could daily betake myself, and be known as the vilest of all sinners, methinks my soul might keep itself alive thereby',
+        note: '"Had I one friend—or were it my worst enemy!—to whom, when sickened with the praises of all other men, I could daily betake myself, and be known as the vilest of all sinners, methinks my soul might keep itself alive thereby." - Dimmesdale\'s realisation, spoken to Hester in the forest, that his isolation has prevented true spiritual communion.',
+      },
+    ],
+    'section-11': [
+      {
+        type: 'theme',
+        text: 'It is the unspeakable misery of a life so false as his, that it steals the pith and substance out of whatever realities there are around us',
+        note: 'Hypocrisy and Public Morality - Key Quotations: "It is the unspeakable misery of a life so false as his, that it steals the pith and substance out of whatever realities there are around us" - Direct statement of Dimmesdale\'s psychological torment from living a double life.',
+      },
+      {
+        type: 'theme',
+        text: 'He took himself to task for his bad sympathies in reference to Roger Chillingworth, disregarded the lesson that he should have drawn from them, and did his best to root them out',
+        note: '"He took himself to task for his bad sympathies in reference to Roger Chillingworth, disregarded the lesson that he should have drawn from them, and did his best to root them out." - Dimmesdale\'s confusion about his own feelings: he blames his instinctive distrust of Chillingworth on his own guilt and tries to root it out, which reveals how hypocrisy corrupts authentic emotion.',
+      },
+    ],
+    'section-3': [
+      {
+        type: 'theme',
+        text: 'I charge thee to speak out the name of thy fellow-sinner and fellow-sufferer',
+        note: '"I charge thee to speak out the name of thy fellow-sinner and fellow-sufferer!" - Urged on by Mr Wilson and Governor Bellingham, Dimmesdale publicly charges Hester to name the man who shared her sin, concealing that he is that man: the community\'s demand for Hester\'s public shame lets him escape accountability, which encapsulates the hypocrisy.',
+      },
+    ],
+    'section-18': [
+      {
+        type: 'theme',
+        text: 'The scarlet letter was her passport into regions where other women dared not tread',
+        note: 'Identity and Self-Definition - Key Quotations: "The scarlet letter was her passport into regions where other women dared not tread." - The letter becomes the means through which Hester transcends her isolation: shut out by it, she reaches a freedom of thought that other women dare not claim.',
+      },
+      {
+        type: 'language',
+        text: 'All at once, as with a sudden smile of heaven, forth burst the sunshine, pouring a very flood into the obscure forest',
+        note: 'Light and Darkness - Key Quotations: "All at once, as with a sudden smile of heaven, forth burst the sunshine, pouring a very flood into the obscure forest" - When Hester throws off the letter and lets down her hair, sunlight floods the gloomy forest: light marks her release from shame, a release that lasts only until she must fasten the letter on again.',
+      },
     ],
     'section-14': [
       {
         type: 'theme',
         text: 'Let the black flower blossom as it may',
-        note: '"Let the black flower blossom as it may." - Hester\'s metaphorical acceptance of her situation while maintaining hope for growth - black flowers can still bloom.',
+        note: '"Let the black flower blossom as it may!" - Roger Chillingworth\'s words to Hester (Chapter XIV), when she begs him to forgive.',
+      },
+      {
+        type: 'theme',
+        text: 'it has all been a dark necessity',
+        note: 'Since Hester\'s first wrong step, Chillingworth tells her, "it has all been a dark necessity", and the evil must now grow as it will.',
       },
     ],
     'section-5': [
       {
         type: 'theme',
+        text: 'giving up her individuality, she would become the general symbol at which the preacher and moralist might point',
+        note: '"giving up her individuality, she would become the general symbol at which the preacher and moralist might point" - Hester foresees the letter replacing her identity, turning her into an example for sermons.',
+      },
+      {
+        type: 'theme',
         text: 'In all her intercourse with society, however, there was nothing that made her feel as if she belonged to it',
         note: 'Isolation and Community - Key Quotations: "In all her intercourse with society, however, there was nothing that made her feel as if she belonged to it." - Hester\'s physical presence masking her psychological separation from community values.',
+      },
+      {
+        type: 'language',
+        text: 'she felt or fancied, then, that the scarlet letter had endowed her with a new sense',
+        note: '"she felt or fancied, then, that the scarlet letter had endowed her with a new sense." - The letter that marks shame becomes paradoxically the source of illumination and insight into the human heart.',
       },
     ],
     'section-6': [
@@ -4047,6 +4296,30 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'theme',
         text: 'Pearl was a born outcast of the infantile world',
         note: '"Pearl was a born outcast of the infantile world." - She exists in a different order of being, unable to conform to normal childhood patterns.',
+      },
+    ],
+    'section-12': [
+      {
+        type: 'language',
+        text: 'with no such shape as his guilty imagination gave it, or, at least, with so little definiteness, that another’s guilt might have seen another symbol in it',
+        note: '"with no such shape as his guilty imagination gave it, or, at least, with so little definiteness, that another’s guilt might have seen another symbol in it." - The ambiguous light that different characters interpret as a sign, showing how meaning depends on the observer\'s perspective.',
+      },
+    ],
+    'section-24': [
+      {
+        type: 'language',
+        text: 'As regarded its origin there were various explanations, all of which must necessarily have been conjectural',
+        note: 'Narrative Ambiguity - Key Quotations: "As regarded its origin there were various explanations, all of which must necessarily have been conjectural." - The narrator reports what the spectators saw on Dimmesdale\'s breast, yet concedes that every explanation of it is conjecture, leaving the ultimate truth ambiguous.',
+      },
+      {
+        type: 'language',
+        text: 'The reader may choose among these theories',
+        note: '"The reader may choose among these theories." - Direct admission of narrative limitation: the narrator will not settle what the mark was or how it came there, and leaves the choice to the reader, emphasising that some things resist certain knowledge.',
+      },
+      {
+        type: 'language',
+        text: 'he had made the manner of his death a parable, in order to impress on his admirers the mighty and mournful lesson, that, in the view of Infinite Purity, we are sinners all alike',
+        note: '"he had made the manner of his death a parable, in order to impress on his admirers the mighty and mournful lesson, that, in the view of Infinite Purity, we are sinners all alike." - Some who watched the final scaffold scene deny that Dimmesdale confessed at all and read his death as a lesson in humility: even then his defenders misread his guilt as spiritual dedication, showing the gap between internal and external morality.',
       },
     ],
   },
@@ -4126,7 +4399,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'How small we feel with our petty ambitions and strivings in the presence of the great elemental forces of nature',
-        note: "Watson. Watson's reflection during the Thames chase reveals his capacity for wonder and emotional depth - qualities Holmes entirely lacks. The contrast between 'petty ambitions' (the treasure hunt) and 'elemental forces' (nature, love) suggests that Watson grasps a deeper truth about human insignificance that Holmes's rational framework cannot access.",
+        note: "Holmes. Holmes, not Watson, says this, as the sun rises over London while the two of them follow Toby on the creosote trail. It reveals a capacity for wonder that sits uneasily with Watson's charge that he is 'an automaton'. The contrast between 'petty ambitions' (the treasure hunt) and 'elemental forces' (nature) shows Holmes grasping a deeper truth about human insignificance, and he goes straight on to ask Watson about the German writer Jean Paul. Conan Doyle complicates the opposition of reason and emotion: the reasoning machine can be moved too.",
       },
     ],
     'section-11': [
@@ -4134,6 +4407,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'Whoever had lost a treasure, I knew that night that I had gained one',
         note: 'Watson — Chapter 11. Watson’s closing thought on the night the treasure is lost and Mary returns his love. Conan Doyle makes the romance turn on a rejection of the treasure’s value, realigning money against love.',
+      },
+      {
+        type: 'quote',
+        text: 'I welted the little devil with the slack end of the rope for it, but it was done, and I could not undo it again',
+        note: "Small (on Tonga, after Bartholomew Sholto's death). Small is telling Holmes how Tonga's dart killed Bartholomew Sholto, and he calls his companion 'that little hell-hound' and 'the little devil'. 'Devil' strips Tonga of humanity and places him in a moral category below human, and 'welted' - thrashed with a rope's end - is how a man punishes an animal. That even Tonga's ally describes him this way reveals how deeply Victorian racial prejudice is embedded - not as individual cruelty but as a shared cultural assumption. Modern readers should recognise this as reflecting the racism of the period.",
       },
     ],
     'section-12': [
@@ -4149,13 +4427,23 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'quote',
+        text: 'He tried to speak in a cool, careless way, but his eyes were shining with excitement and greed',
+        note: "Small (describing Major Sholto's reaction to the treasure). Small watches Major Sholto bargain for a share of the treasure. The 'cool, careless' manner is a performance - the officer and gentleman keeping up appearances - and the eyes give him away. 'Excitement and greed' breaks through the mask before Sholto has seen a single jewel, and it is the convict who sees through the officer. Major Sholto's greed ultimately destroys him - it leads to betrayal, fear, paranoia, and ultimately death.",
+      },
+      {
+        type: 'quote',
         text: 'It is my treasure; and if I can’t have the loot I’ll take darned good care that no one else does',
-        note: "Jonathan Small. Small's declaration as he throws the treasure into the Thames. The possessive 'my treasure' reveals his sense of entitlement - though the treasure was itself stolen. The colloquial 'loot' and 'darned' contrast with the formal language of other characters, marking Small's working-class status. His act is simultaneously petty revenge and a kind of rough justice.",
+        note: "Jonathan Small. Small's defiance at Baker Street, when Watson brings back the empty box: he has scattered the jewels in the Thames during the chase. The possessive 'my treasure' reveals his sense of entitlement - though the treasure was itself stolen. The colloquial 'loot' and 'darned' contrast with the formal language of other characters, marking Small's working-class status. His act is simultaneously petty revenge and a kind of rough justice.",
       },
       {
         type: 'quote',
         text: 'You have done all the work in this business. I get a wife out of it, Jones gets the credit, pray what remains for you',
         note: "Watson. Watson's question to Holmes at the novel's end. Holmes's answer - reaching for the cocaine bottle - is devastating. The three outcomes neatly summarise the characters: Watson gains love (emotion), Jones gains reputation (social status), and Holmes gains nothing that matters to a human being, only the satisfaction of a solved puzzle. The implication is that Holmes's dedication to reason has cost him the ability to find meaning in life.",
+      },
+      {
+        type: 'quote',
+        text: 'I took the treasure-box and let it down, and then slid down myself, having first left the sign of the four upon the table, to show that the jewels had come back at last to those who had most right to them',
+        note: "Small. Small describes leaving his calling card at the scene of Bartholomew Sholto's murder. The ordered verbs - 'took', 'let', 'slid', 'left' - give the escape a deliberate, almost ritual calm, and 'to show that' turns the sign into a statement. It is both a confession and a claim of ownership: the jewels have 'come back at last to those who had most right to them'. Small marks the scene as the four's, connecting Bartholomew's death directly to the original colonial theft. Crime becomes a chain that links India to England across decades.",
       },
     ],
     'section-2': [
@@ -4172,7 +4460,12 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'What a very attractive woman',
-        note: "Watson (on first seeing Mary Morstan). Watson's immediate emotional response to Mary contrasts with Holmes's purely analytical assessment of her. Where Holmes catalogues physical details as data, Watson responds with feeling. This simple exclamation establishes the Watson-Mary romance and the reason-emotion duality that structures the entire novel.",
+        note: "Watson (after Mary Morstan's first visit). Watson's emotional response to Mary, once he has watched her out of sight, meets Holmes's languid reply that he 'did not observe' it. Where Watson responds with feeling, Holmes claims not to have noticed her at all. This simple exclamation establishes the Watson-Mary romance and the reason-emotion duality that structures the entire novel.",
+      },
+      {
+        type: 'quote',
+        text: 'Miss Morstan entered the room with a firm step and an outward composure of manner',
+        note: "Watson (narrating). Mary is introduced through language of strength and self-control: 'firm step' and 'composure.' She is not the helpless damsel of typical Victorian fiction but a woman who faces danger with courage. 'Outward composure' subtly suggests inner anxiety she controls - strength through self-discipline rather than absence of fear.",
       },
     ],
     'section-3': [
@@ -4180,6 +4473,20 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'It was a September evening, and not yet seven o’clock, but the day had been a dreary one, and a dense drizzly fog lay low upon the great city',
         note: "Watson (narrating). Classic Victorian atmosphere-building. The fog operates as pathetic fallacy, reflecting the confusion and concealment central to the plot. 'Dense' and 'drizzly' create heaviness and discomfort. The fog literally and metaphorically obscures the truth. London becomes a Gothic landscape where danger hides in every shadow.",
+      },
+    ],
+    'section-4': [
+      {
+        type: 'quote',
+        text: 'An oasis of art in the howling desert of South London',
+        note: "Thaddeus Sholto (on his own rooms). Thaddeus's description of his own rooms, which Watson finds hung with rich tapestries, with tiger-skins and a hookah adding 'the suggestion of Eastern luxury'. 'Oasis of art' presents Thaddeus as a man of culture and taste, and 'howling desert' dismisses the London suburb outside. Yet the luxuries are the spoils of empire: his father 'had prospered in India' and kept the stolen Agra treasure hidden in his house. The irony highlights the gap between Victorian refinement and the colonial exploitation that funds it.",
+      },
+    ],
+    'section-10': [
+      {
+        type: 'quote',
+        text: 'Holmes had already drawn his revolver, and I whipped out mine at the sight of this savage, distorted creature',
+        note: "Watson (seeing Tonga in the Thames chase). Watson's narration as the police launch closes on the Aurora. 'Savage' is the word the novel keeps fixing to Tonga - Watson exclaims 'A savage!' when Holmes sums up the clues - and here the narrator, the humane doctor the reader trusts, uses it again. 'Distorted' turns physical difference into deformity, and 'creature' denies that he is a man at all. Watson draws his revolver at the mere sight of him, and the language prepares the reader to accept his killing moments later. Modern readers should recognise this as the racism of the period, not neutral description.",
       },
     ],
   },
@@ -4284,6 +4591,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'Be not afeard. The isle is full of noises,\nSounds, and sweet airs, that give delight, and hurt not',
         note: 'Caliban — Act 3, Scene 2. Caliban calms the drunken Stephano and Trinculo with an unexpected description of the island’s music. The lyricism of the speech — its gentle “sweet airs,” its sleeping “riches ready to drop” — complicates Prospero’s claim that Caliban is irredeemably savage. The figure most abused by the play’s hierarchy turns out to have the deepest imaginative response to the place itself, and Shakespeare invites audiences to hear in his voice the sound of the island itself.',
       },
+      {
+        type: 'quote',
+        text: 'in dreaming,\nThe clouds methought would open and show riches\nReady to drop upon me; that, when I wak’d,\nI cried to dream again',
+        note: "Caliban - Act 3, Scene 2. Part of the 'Be not afeard' speech. 'I cried to dream again' is heartbreaking: his reality (enslavement) is so painful that dreams are his only joy. The line humanises Caliban completely, showing profound emotional depth.",
+      },
     ],
     'activ-scenei': [
       {
@@ -4366,7 +4678,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'the rarer action is\nIn virtue than in vengeance',
-        note: "Prospero - Act 5, Scene 1. The play's moral turning point. Prospero chooses forgiveness over revenge, redefining 'rare' (admirable) action as mercy rather than punishment. This is significant because Prospero has the power to destroy his enemies; his forgiveness is meaningful precisely because vengeance is available.",
+        note: "Prospero - Act 5, Scene 1. The play's moral turning point. Prospero chooses forgiveness over revenge, redefining 'rarer' (more admirable) action as mercy rather than punishment. This is significant because Prospero has the power to destroy his enemies; his forgiveness is meaningful precisely because vengeance is available.",
       },
       {
         type: 'quote',
@@ -4415,6 +4727,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'Now my charms are all o’erthrown,\nAnd what strength I have’s mine own,\nWhich is most faint',
         note: "Prospero - Epilogue. The boundary between character and actor dissolves. Stripped of magic, Prospero asks the audience for freedom. 'What strength I have's mine own, which is most faint' is a humbling admission of human vulnerability. If Prospero is Shakespeare, this is the playwright acknowledging that without theatre's 'magic', he is merely a man.",
       },
+      {
+        type: 'quote',
+        text: 'I must be here confin’d by you,\nOr sent to Naples',
+        note: "Prospero - Epilogue. The island becomes the stage; the 'spell' is the theatrical illusion. The audience must choose to end the play and free the actor. This makes spectators active participants in the final act of liberation, mirroring the play's theme of freedom requiring others' generosity.",
+      },
     ],
     'actiii-scenei': [
       {
@@ -4438,6 +4755,18 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'No more dams I’ll make for fish;\nNor fetch in firing\nAt requiring,\nNor scrape trenchering, nor wash dish',
         note: "Caliban - Act 2, Scene 2. Caliban's freedom song catalogues his servile tasks. The domestic specificity makes his servitude concrete. The joyful rhythm celebrates liberation, but the irony is devastating: he immediately pledges himself to Stephano, exchanging one master for another.",
+      },
+      {
+        type: 'quote',
+        text: 'I’ll show thee every fertile inch o’ the island',
+        note: "Caliban - Act 2, Scene 2. Caliban offers to share the island's resources with Stephano, repeating exactly what he did with Prospero. The tragic cycle: the colonised teaches the coloniser to survive, then is enslaved using that knowledge. 'Fertile' connects Caliban to the natural world.",
+      },
+    ],
+    'actiii-sceneiii': [
+      {
+        type: 'quote',
+        text: 'I’ the name of something holy, sir, why stand you\nIn this strange stare',
+        note: "Gonzalo - Act 3, Scene 3. After the harpy scene, Gonzalo's concern for the traumatised nobles shows his consistent goodness. While others plot or despair, Gonzalo acts with practical compassion. His invocation of 'something holy' contrasts with the dark magic surrounding them.",
       },
     ],
   },
@@ -4536,7 +4865,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'I am all the daughters of my father’s house,\nAnd all the brothers too',
-        note: "Viola as Cesario, 2.4. The second half of the same speech. The grammar is doubled - Viola is at once daughter and brother because she believes Sebastian dead and is now performing his role. The line is one of the most cited in the play: it makes explicit that Viola has absorbed Sebastian into herself. After Stephen Greenblatt's biographical reading (Will in the World) linking the line to Shakespeare's grief for his dead son Hamnet, twin to Judith, this passage has become inseparable from the question of how the personal can shape comedy.",
+        note: "Viola as Cesario, 2.4. Viola's answer when Orsino asks whether her sister died of her love. The grammar is doubled - Viola is at once daughter and brother because she believes Sebastian dead and is now performing his role. The line is one of the most cited in the play: it makes explicit that Viola has absorbed Sebastian into herself. After Stephen Greenblatt's biographical reading (Will in the World) linking the line to Shakespeare's grief for his dead son Hamnet, twin to Judith, this passage has become inseparable from the question of how the personal can shape comedy.",
       },
       {
         type: 'character',
@@ -4553,7 +4882,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'Youth’s a stuff will not endure',
-        note: 'Feste — Act 2, Scene 3. The refrain of Feste’s song introduces the play’s melancholy undertow, reminding the revellers that festive time is always running out.',
+        note: 'Feste — Act 2, Scene 3. The closing line of Feste’s song introduces the play’s melancholy undertow, reminding the revellers that festive time is always running out.',
       },
       {
         type: 'quote',
@@ -4588,7 +4917,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'character',
         text: 'Dost thou think,\nbecause thou art virtuous, there shall be no more cakes and ale',
-        note: "Sir Toby Belch. He drives the Malvolio sub-plot, asking Maria's iconic question 'Dost thou think because thou art virtuous there shall be no more cakes and ale?' He is at once charming and cruel - a festive lord of misrule whose festivity has a hard, exploitative edge by the end.",
+        note: "Sir Toby Belch. He drives the Malvolio sub-plot, asking Malvolio the play's iconic question 'Dost thou think because thou art virtuous there shall be no more cakes and ale?' He is at once charming and cruel - a festive lord of misrule whose festivity has a hard, exploitative edge by the end.",
       },
     ],
     'actiii-sceneiv': [
@@ -4629,7 +4958,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'Conceal me what I am, and be my aid\nFor such disguise as haply shall become\nThe form of my intent',
-        note: "Viola, 1.2. The decision that drives the entire plot. Viola asks the Sea-Captain to hide her identity so she can take male disguise. 'Concealment' is the active first verb - disguise here is an act of self-erasure. The triple 'me what I am' / 'such disguise' / 'form of my intent' moves from being to costume to purpose, mapping how identity will be reconstructed performatively across the play.",
+        note: "Viola, 1.2. The decision that drives the entire plot. Viola asks the Sea-Captain to hide her identity so she can take male disguise. 'Conceal' is the active first verb - disguise here is an act of self-erasure. The triple 'me what I am' / 'such disguise' / 'form of my intent' moves from being to costume to purpose, mapping how identity will be reconstructed performatively across the play.",
       },
     ],
     'actii-sceneii': [
@@ -4653,7 +4982,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'Love sought is good, but given unsought is better',
-        note: "Olivia, 3.1. Olivia's open declaration of love to Cesario. The chiasmus (sought / given unsought) inverts the conventional Petrarchan dynamic in which the male suitor seeks and the woman is reluctantly won. Olivia claims that love offered freely - by the woman, here - is the higher kind. The line is one of the play's clearest expressions of female desire as active rather than passive, and it directly contradicts Orsino's later speech about how women's love is 'too weak to hold so much.'",
+        note: "Olivia, 3.1. Olivia's open declaration of love to Cesario. The chiasmus (sought / given unsought) inverts the conventional Petrarchan dynamic in which the male suitor seeks and the woman is reluctantly won. Olivia claims that love offered freely - by the woman, here - is the higher kind. The line is one of the play's clearest expressions of female desire as active rather than passive, and it directly contradicts Orsino's earlier claim (2.4) that there is 'no woman's heart / So big, to hold so much'.",
       },
       {
         type: 'character',

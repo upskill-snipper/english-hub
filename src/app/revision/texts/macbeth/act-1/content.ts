@@ -6,6 +6,14 @@
  * Conventions: Khaleeji-leaning, no Levantine, English quotations
  * preserved verbatim, character + author + brand + AO codes in Latin.
  * Binary M/F gender policy.
+ *
+ * The machine translation did not always keep that rule. Until 2 October 2026
+ * s14, s32 and s39 put Shakespeare's words into Arabic ("brave Macbeth",
+ * "Bellona's bridegroom" as a bride, "look like the innocent flower" garbled,
+ * and "If It Were Done" under a heading that called the scene a testimony), so
+ * an Arabic reader met quotations that are not the play's. They are English now,
+ * in real quotation marks rather than &ldquo; entities: the page prints what
+ * _tr returns as text, so an entity shows on the page as written.
  */
 
 export type Bi = { en: string; ar: string }
@@ -30,7 +38,7 @@ export const STRINGS: Record<string, Bi> = {
   s13: { en: `Scene 2 - The Battlefield Report`, ar: `-scene 2 - التقرير من ساحة المعركة-` },
   s14: {
     en: `Macbeth is praised as “brave Macbeth” and “Bellona’s bridegroom” before we meet him.`,
-    ar: `ماكبث يُمدح كـ "“ماكبث الشجاع”" و "“عروس Bellona”" قبل أن نلتقي به.`,
+    ar: `ماكبث يُمدح كـ “brave Macbeth” و “Bellona’s bridegroom” قبل أن نلتقي به.`,
   },
   s15: {
     en: `Duncan's transfer of the Cawdor title unknowingly fulfils the witches' first prophecy.`,
@@ -58,7 +66,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s32: {
     en: `She takes charge of the murder plot, instructing Macbeth to “look like the innocent flower, / But be the serpent under’t.”`,
-    ar: `تستحوذ على خطة القتل، وتوجه مكbeth لـ "يشبhim في صورة الزهرة البريئة، / لكن كن الحية تحته.`,
+    ar: `تستحوذ على خطة القتل، وتوجّه Macbeth إنه “look like the innocent flower, / But be the serpent under’t.”`,
   },
   s34: { en: `Lady Macbeth`, ar: `` },
   s35: {
@@ -75,7 +83,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s39: {
     en: `Scene 7 - “If It Were Done” - The Decision`,
-    ar: `الشِّهَادَةُ السَّابِعَةُ - "إذا كان مفعولاً" - اتِّخَاذُ الْحُكْمِ`,
+    ar: `المشهد السابع - “If It Were Done” - اتخاذ القرار`,
   },
   s40: {
     en: `Macbeth decides against the murder - then is persuaded back by Lady Macbeth.`,

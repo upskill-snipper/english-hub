@@ -2,9 +2,13 @@
  * Grade 9 model essays for Robert Louis Stevenson's
  * "The Strange Case of Dr Jekyll and Mr Hyde" (1886).
  *
- * All quotations have been verified against Project Gutenberg
- * (eBook #43) and the Penguin Classics edition. Each quoted
- * fragment is fifteen words or fewer.
+ * Every quotation is in the wording of the edition the site holds,
+ * Project Gutenberg eBook #43 (src/data/full-texts/jekyll-and-hyde.ts),
+ * and scripts/check-quotations.mjs checks it there. Until 2 October
+ * 2026 this note also named the Penguin Classics edition as a source;
+ * the site prints and checks one edition only, so a quotation in
+ * another edition's wording would be a misquotation here. Each quoted
+ * fragment is fifteen words or fewer (the longest is fifteen).
  *
  * The annotations under each paragraph map onto the AQA AOs:
  *   AO1 - clear, sustained argument with apt textual support

@@ -16,12 +16,15 @@ export const STRINGS: Record<string, Bi> = {
   s2: { en: `Full PEEL Paragraph in Action`, ar: `نموذج لفقرة كاملة من نوعية PEEL في العمل` },
   s3: { en: `Mid-Sentence Embedding`, ar: `توسيط الجملة` },
   s4: { en: `Instead of:`, ar: `بدلاً من:` },
+  // s5 and s6 quote Dickens; corrected 2 October 2026 against the held edition (Project
+  // Gutenberg #46, src/data/full-texts/a-christmas-carol.ts), which prints "grind-stone".
+  // page.tsx finds the Arabic by the English string, so it changed with them.
   s5: {
-    en: `Scrooge is presented as miserly. “He was a tight-fisted hand at the grindstone.”`,
+    en: `Scrooge is presented as miserly. “He was a tight-fisted hand at the grind-stone.”`,
     ar: `سكروج م Presented كريمًا. "“كان يدًا قاسية على الرحى.”`,
   },
   s6: {
-    en: `Dickens presents Scrooge as a “tight-fisted hand at the grindstone”, immediately establishing his miserly and unfeeling nature.`,
+    en: `Dickens presents Scrooge as a “tight-fisted hand at the grind-stone”, immediately establishing his miserly and unfeeling nature.`,
     ar: `ديكنز ي presente سكروج كـ "يد قوية على الرحى"، م-establishing طبيعته البخلية والغير شعراءة فورًا.`,
   },
   s7: { en: `Single Word / Short Phrase Embedding`, ar: `توصيف كلمة أو جملة قصيرة` },

@@ -17,6 +17,11 @@ import { useT } from '@/lib/i18n/use-t'
 // 14), a semicolon for the colon after "now" (line 3), and the dash that opens line 42
 // moved to the end of line 41. Checked against the Pearson Issue 8 anthology and the
 // held edition in src/data/full-texts/my-last-duchess.ts, which agree on all three.
+// 2 October 2026: line 25 had "favour", the anthology's spelling. The held edition is
+// an American printing (Gutenberg #28041) with "favor", and the site quotes the held
+// edition, so line 25 now has "favor", cut from it by script. The note beside it is our
+// own prose and keeps the British spelling. Lines 3, 6 and 16 (Fra) and 50 (pretense),
+// the other places the two printings differ, already followed the held edition.
 const poemData: PoemData = {
   title: 'My Last Duchess',
   poet: 'Robert Browning',
@@ -181,7 +186,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: "Sir, 'twas all one! My favour at her breast,",
+      text: "Sir, 'twas all one! My favor at her breast,",
       annotations: [
         {
           type: 'Indignation',
@@ -426,13 +431,17 @@ The poem ends with a shocking reveal: the Duke is in the middle of negotiating h
 
 As they leave, the Duke pauses to admire a bronze sculpture of Neptune taming a sea-horse - a final metaphor for his desire to dominate and possess.`,
 
+  // 2 October 2026: the last paragraph set the Arabic for "taming" in quotation marks,
+  // as if it were the poem's word in translation. The English beside it uses taming as
+  // its own word, unquoted, and so now does the Arabic; the quotations this summary does
+  // make stay in Browning's English.
   summaryAr: `Duke of Ferrara يعرض على مبعوث زائر لوحة لزوجته السابقة - "last Duchess" مالته. ولمّا يوصف اللوحة، يكشف غيرته المرضية: الـDuchess كانت تبتسم بسهولة، وتقدّر المتع البسيطة، وتعامل الكل بنفس الدفء، وهذا شي ما طاقه الـDuke أبداً.
 
 بدل ما يبلّغها بانزعاجه (لأنه يعتبر هذا "stooping"، أي تنازل)، الـDuke "gave commands" - كناية مرعبة عن إنه أمر بقتلها. ابتسامات الـDuchess "stopped together"، والحين هي موجودة فقط كلوحة وراء ستارة هو وحده يتحكّم فيها.
 
 القصيدة تنتهي بكشف صادم: الـDuke في الحين في وسط مفاوضات لزواجه التالي. كل المونولوج كان تحذير مبطّن للمبعوث (وعن طريقه، لعائلة الزوجة المقبلة) عن مصير النساء اللي ما يخضعون لسلطته المطلقة.
 
-ولمّا يطلعون، الـDuke يوقف عشان يتأمّل تمثال برونزي يصوّر Neptune وهو "يروّض" حصان البحر - استعارة ختامية لرغبته في الهيمنة والتملّك.`,
+ولمّا يطلعون، الـDuke يوقف عشان يتأمّل تمثال برونزي يصوّر Neptune وهو يروّض حصان البحر - استعارة ختامية لرغبته في الهيمنة والتملّك.`,
 
   // 26 September 2026: the enjambment example here, in the Arabic copy and in the
   // language devices split "she thanked / Men". Line 31 is one line, "She thanked men -

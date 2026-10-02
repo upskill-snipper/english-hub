@@ -5,6 +5,18 @@
 // T3: Of Mice and Men - essay writing, exam technique
 // ─────────────────────────────────────────────────────────────
 
+// A Christmas Carol quotations corrected on 2 October 2026 against the edition
+// the site holds (Project Gutenberg #46, src/data/full-texts/a-christmas-carol.ts),
+// as read by scripts/check-quotations.mjs. Seven were not Dickens's words as
+// printed. The Cratchit extract said Mrs Cratchit was "dressed out bravely":
+// the edition has "dressed out but poorly", so the model answer's "repetition
+// of brave" described words that are not there, and now reads the contrast
+// that is. Scrooge's walk in Stave Five had lost "and watched the people
+// hurrying to and fro"; his questions to the charity collectors had lost the
+// gentleman's answer and the tag between them; Scrooge was Marley's "sole
+// executor, his sole administrator", with four "his"es the list had dropped;
+// and the edition prints "grind-stone" and "covetous, old sinner".
+
 export interface WorkbookExercise {
   id: string
   title: string
@@ -61,7 +73,7 @@ const t1Exercises: WorkbookExercise[] = [
     type: 'analysis',
     instructions: `<h3>Language Analysis: Dickens's Introduction of Scrooge</h3>
 <p>Read the following extract from Stave One of <em>A Christmas Carol</em>:</p>
-<blockquote>"Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner! Hard and sharp as flint, from which no steel had ever struck out generous fire; secret, and self-contained, and solitary as an oyster."</blockquote>
+<blockquote>"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner! Hard and sharp as flint, from which no steel had ever struck out generous fire; secret, and self-contained, and solitary as an oyster."</blockquote>
 <p><strong>Task:</strong> Analyse how Dickens uses language to present Scrooge as an unpleasant character. You should comment on:</p>
 <ul>
 <li>The effect of the list of adjectives</li>
@@ -92,7 +104,7 @@ The simile "hard and sharp as flint" extends this characterisation by suggesting
     type: 'context',
     instructions: `<h3>Contextual Understanding: The Poor in Victorian England</h3>
 <p>In Stave One, two charity collectors visit Scrooge and ask him to donate to help the poor. Scrooge responds:</p>
-<blockquote>"Are there no prisons? And the Union workhouses - are they still in operation?"</blockquote>
+<blockquote>"Are there no prisons? ... And the Union workhouses? ... Are they still in operation?"</blockquote>
 <p><strong>Task:</strong> Explain how this scene reflects Victorian attitudes towards poverty. In your answer you should discuss:</p>
 <ul>
 <li>What the Poor Law of 1834 was and how it affected poor people</li>
@@ -306,7 +318,7 @@ Most powerfully, the ghost reveals two emaciated children hidden beneath its rob
     type: 'analysis',
     instructions: `<h3>Character Arc: Scrooge's Redemption</h3>
 <p>In Stave Five, Scrooge wakes up a changed man. Dickens writes:</p>
-<blockquote>"He went to church, and walked about the streets, and patted children on the head, and questioned beggars, and looked down into the kitchens of houses, and up to the windows, and found that everything could yield him pleasure."</blockquote>
+<blockquote>"He went to church, and walked about the streets, and watched the people hurrying to and fro, and patted children on the head, and questioned beggars, and looked down into the kitchens of houses, and up to the windows, and found that everything could yield him pleasure."</blockquote>
 <p><strong>Task:</strong> Analyse how Dickens presents Scrooge's transformation in Stave Five. Consider:</p>
 <ul>
 <li>How the language and sentence structure differ from Stave One</li>
@@ -393,7 +405,7 @@ Practically, the novella's brevity was also strategic. Dickens priced it at five
     instructions: `<h3>Vocabulary in Context</h3>
 <p>Dickens uses many words that are less common in modern English. For each word below, write a definition and then use the word in a sentence of your own that shows you understand its meaning.</p>
 <ol>
-<li><strong>Covetous</strong> (Stave One: "a covetous old sinner")</li>
+<li><strong>Covetous</strong> (Stave One: "covetous, old sinner")</li>
 <li><strong>Avarice</strong> (Stave Two: used to describe Scrooge's obsession)</li>
 <li><strong>Benevolence</strong> (Stave One: what the charity collectors represent)</li>
 <li><strong>Surplus</strong> (Stave One: "decrease the surplus population")</li>
@@ -618,7 +630,7 @@ In Stave Five, Scrooge wakes to a bright morning: "Golden sunlight; Heavenly sky
     type: 'exam-technique',
     instructions: `<h3>Timed Practice: Extract-Based Question</h3>
 <p>Read the following extract from Stave Three, in which the Ghost of Christmas Present takes Scrooge to the Cratchit household:</p>
-<blockquote>"Then up rose Mrs Cratchit, Cratchit's wife, dressed out bravely in a twice-turned gown, but brave in ribbons, which are cheap and make a goodly show for sixpence..."</blockquote>
+<blockquote>"Then up rose Mrs. Cratchit, Cratchit's wife, dressed out but poorly in a twice-turned gown, but brave in ribbons, which are cheap and make a goodly show for sixpence..."</blockquote>
 <p><strong>Task:</strong> Starting with this extract, explain how Dickens presents the theme of poverty and dignity in <em>A Christmas Carol</em>.</p>
 <p>You should write about:</p>
 <ul>
@@ -626,7 +638,7 @@ In Stave Five, Scrooge wakes to a bright morning: "Golden sunlight; Heavenly sky
 <li>How poverty and dignity are presented in the novella as a whole</li>
 </ul>
 <p><strong>Time limit:</strong> 25 minutes. Aim for 400-500 words.</p>`,
-    modelAnswer: `In this extract, Dickens presents Mrs Cratchit as a woman who maintains her dignity despite grinding poverty. The detail of her "twice-turned gown" - a dress that has been taken apart and re-sewn inside out to disguise its wear - reveals the family's financial hardship without sentimentalising it. The repetition of "brave" is particularly significant: the gown is "dressed out bravely" and Mrs Cratchit herself is "brave in ribbons." Dickens transforms what might be a scene of pity into one of admiration; Mrs Cratchit is not defeated by poverty but meets it with courage and resourcefulness. The parenthetical remark that ribbons "are cheap and make a goodly show for sixpence" is characteristically Dickensian - it acknowledges the economic reality whilst celebrating the human capacity to find beauty and pride within constraints.
+    modelAnswer: `In this extract, Dickens presents Mrs Cratchit as a woman who maintains her dignity despite grinding poverty. The detail of her "twice-turned gown" - a dress that has been taken apart and re-sewn inside out to disguise its wear - reveals the family's financial hardship without sentimentalising it. The turn between two "but"s is particularly significant: Mrs Cratchit is "dressed out but poorly", "but brave in ribbons." Dickens transforms what might be a scene of pity into one of admiration; Mrs Cratchit is not defeated by poverty but meets it with courage and resourcefulness. The parenthetical remark that ribbons "are cheap and make a goodly show for sixpence" is characteristically Dickensian - it acknowledges the economic reality whilst celebrating the human capacity to find beauty and pride within constraints.
 
 This presentation of poverty and dignity runs throughout the novella and forms a central part of Dickens's social argument. The Cratchit family consistently demonstrate that poverty does not diminish moral worth. Their Christmas dinner is modest - a small goose, a pudding that Mrs Cratchit fears will not be large enough - yet it is characterised by gratitude, laughter, and love. Dickens deliberately contrasts this with Scrooge's solitary wealth: the richest man in the novella is also the most miserable, while the poorest family is the happiest. This inversion challenges the Victorian assumption that wealth equals virtue and poverty equals moral failing.
 
@@ -2336,7 +2348,7 @@ The Poor Law Amendment Act of 1834 was one of the most significant and controver
 5. By 1838, over 500 workhouses had been built across England and Wales, housing approximately 200,000 people.
 
 **Connection to A Christmas Carol:**
-When Scrooge asks the charity collectors, "Are there no prisons? And the Union workhouses?" he is referencing these institutions. His willingness to let the poor suffer in workhouses - and his suggestion that those who refuse should die to "decrease the surplus population" - reflects the callous attitudes of many wealthy Victorians who supported the system. Dickens uses Scrooge to satirise this cruelty and to argue that the workhouse system was a moral disgrace rather than a solution to poverty.
+When Scrooge asks the charity collectors, "Are there no prisons? ... And the Union workhouses?" he is referencing these institutions. His willingness to let the poor suffer in workhouses - and his suggestion that those who refuse should die to "decrease the surplus population" - reflects the callous attitudes of many wealthy Victorians who supported the system. Dickens uses Scrooge to satirise this cruelty and to argue that the workhouse system was a moral disgrace rather than a solution to poverty.
 
 **Sources:**
 Higginbotham, P. *The Workhouse: The Story of an Institution* (2012).
@@ -2364,7 +2376,7 @@ Longmate, N. *The Workhouse* (2003).`,
 <p>Then write a paragraph (100-150 words) explaining what the opening establishes about the narrator's voice and Scrooge's character.</p>`,
     modelAnswer: `The opening of A Christmas Carol establishes two essential elements: an intrusive, witty narrator and an irredeemably cold protagonist. The narrator's voice is immediately conversational and humorous - the insistence that Marley is "dead as a door-nail," followed by a comic digression about why door-nails are considered particularly dead, creates a fireside storytelling tone that draws the reader in as a companion rather than a passive audience. The ironic aside suggests that the narrator is intelligent, opinionated, and willing to interrupt his own story for the sake of a joke.
 
-Scrooge, by contrast, is introduced through relentless negativity. The repetition of "sole" - "sole executor, sole administrator, sole assign, sole residuary legatee, sole friend, and sole mourner" - hammers home his isolation, while the devastating punchline that Scrooge "was not so dreadfully cut up by the sad event" reveals that even his only friend's death does not penetrate his emotional armour. The foreshadowing element - "Scrooge never painted out Old Marley's name" - hints that Marley's presence will return, setting up the supernatural events to come.`,
+Scrooge, by contrast, is introduced through relentless negativity. The repetition of "sole" - "sole executor, his sole administrator, his sole assign, his sole residuary legatee, his sole friend, and sole mourner" - hammers home his isolation, while the devastating punchline that Scrooge "was not so dreadfully cut up by the sad event" reveals that even his only friend's death does not penetrate his emotional armour. The foreshadowing element - "Scrooge never painted out Old Marley's name" - hints that Marley's presence will return, setting up the supernatural events to come.`,
     marks: 10,
     difficulty: 'intermediate',
     keywords: ['close reading', 'annotation', 'narrator', 'foreshadowing', 'Stave One'],

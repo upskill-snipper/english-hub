@@ -53,6 +53,11 @@ type CharacterStudy = {
 
 /* ─── Data ───────────────────────────────────────────────────── */
 
+// Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+// src/data/full-texts/jekyll-and-hyde.ts): "If I am the chief of sinners" is Chapter 6,
+// not 10; Enfield is "the well-known man about town"; and Poole's "My master... is a
+// tall, fine build of a man" had lost the narration between its halves with no
+// ellipsis.
 const CHARACTERS: CharacterStudy[] = [
   {
     name: 'Dr Henry Jekyll',
@@ -88,7 +93,7 @@ const CHARACTERS: CharacterStudy[] = [
       },
       {
         quote: 'If I am the chief of sinners, I am the chief of sufferers also.',
-        chapter: "Chapter 10 -- Henry Jekyll's Full Statement",
+        chapter: 'Chapter 6 -- Remarkable Incident of Dr Lanyon',
         analysis:
           'Jekyll positions himself as both perpetrator and victim. The balanced clause structure ("chief of sinners... chief of sufferers") suggests he sees sin and suffering as equivalent, which evades moral responsibility. Stevenson invites the reader to question whether Jekyll\'s suffering excuses his crimes.',
       },
@@ -239,9 +244,9 @@ const CHARACTERS: CharacterStudy[] = [
     role: "Utterson's cousin and walking companion",
     roleAr: 'قريب Utterson ورفيقه في المشي',
     analysis:
-      'Enfield is a man-about-town who witnesses Hyde trampling the young girl in the opening chapter. His role is primarily structural: he introduces the mystery and models the Victorian gentleman\'s instinct to suppress scandalous knowledge. His agreement with Utterson to make "a bargain never to refer to this again" after their first conversation reflects the culture of silence and repression that pervades the novella. Enfield is described as "well-known" and "a man about town," suggesting a social ease that contrasts with Utterson\'s austerity. Their unlikely friendship ("it was a nut to crack for many") mirrors the theme of duality: even the most mismatched surfaces can conceal deep connections.',
+      'Enfield is a man-about-town who witnesses Hyde trampling the young girl in the opening chapter. His role is primarily structural: he introduces the mystery and models the Victorian gentleman\'s instinct to suppress scandalous knowledge. His agreement with Utterson to make "a bargain never to refer to this again" after their first conversation reflects the culture of silence and repression that pervades the novella. Enfield is described as "the well-known man about town," suggesting a social ease that contrasts with Utterson\'s austerity. Their unlikely friendship ("it was a nut to crack for many") mirrors the theme of duality: even the most mismatched surfaces can conceal deep connections.',
     analysisAr:
-      'Enfield رجل اجتماعي يعرف المدينة، يشهد Hyde وهو يدوس البنت الصغيرة في الفصل الأول. دوره أساساً بنيوي: يقدّم اللغز ويجسّد غريزة الجنتلمان الفيكتوري بكبت أي معلومات مفضوحة. اتفاقه مع Utterson إنهم "never to refer to this again" بعد أول محادثة يعكس ثقافة الصمت والكبت اللي تسود الرواية كلها. Enfield موصوف بأنه "well-known" و"a man about town"، يلمّح بسهولة اجتماعية تتضاد مع صرامة Utterson. صداقتهم غير المتوقّعة ("it was a nut to crack for many") تعكس محور الازدواجية: حتى أكثر السطوح اختلافاً يقدر يخفي روابط عميقة.',
+      'Enfield رجل اجتماعي يعرف المدينة، يشهد Hyde وهو يدوس البنت الصغيرة في الفصل الأول. دوره أساساً بنيوي: يقدّم اللغز ويجسّد غريزة الجنتلمان الفيكتوري بكبت أي معلومات مفضوحة. اتفاقه مع Utterson إنهم "never to refer to this again" بعد أول محادثة يعكس ثقافة الصمت والكبت اللي تسود الرواية كلها. Enfield موصوف بأنه "the well-known man about town"، يلمّح بسهولة اجتماعية تتضاد مع صرامة Utterson. صداقتهم غير المتوقّعة ("it was a nut to crack for many") تعكس محور الازدواجية: حتى أكثر السطوح اختلافاً يقدر يخفي روابط عميقة.',
     development:
       'Enfield does not develop significantly as a character. His function is to introduce the central mystery and to demonstrate the code of secrecy that governs Victorian male relationships. His second appearance (Chapter 7) repeats the pattern of his first: he encounters disturbing information about Jekyll and immediately suppresses it. Stevenson uses this repetition to show how deeply ingrained the habit of silence is.',
     developmentAr:
@@ -276,7 +281,7 @@ const CHARACTERS: CharacterStudy[] = [
     keyQuotes: [
       {
         quote:
-          'That thing was not my master... My master is a tall, fine build of a man, and this was more of a dwarf.',
+          "That thing was not my master, and there's the truth. My master... is a tall, fine build of a man, and this was more of a dwarf.",
         chapter: 'Chapter 8 -- The Last Night',
         analysis:
           'Poole recognises that the figure behind the door is physically different from Jekyll. "That thing" dehumanises Hyde and registers Poole\'s horror. The contrast between "tall, fine build" and "dwarf" encapsulates the physical manifestation of Jekyll\'s moral shrinkage.',

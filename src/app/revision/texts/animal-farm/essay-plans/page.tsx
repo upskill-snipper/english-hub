@@ -92,8 +92,10 @@ const essayPlans: EssayPlan[] = [
     paragraphs: [
       {
         point: "Squealer's manipulation of language to justify privilege",
+        // Corrected 2 October 2026: called "repeated", but Squealer asks it once,
+        // in Chapter 5; the threat recurs in other words (Chapters 3 and 6).
         evidence:
-          '"Surely, comrades, you do not want Jones back?" -- Squealer\'s repeated rhetorical question.',
+          '"Surely, comrades, you do not want Jones back?" -- Squealer in Chapter 5; he makes the same threat in other words in Chapters 3 and 6.',
         analysis:
           'Squealer never argues on the merits. He deflects every criticism by invoking the fear of Jones. This is a classic propaganda technique: replacing logical argument with emotional manipulation. Orwell shows that propaganda does not need to be convincing -- it only needs to make the alternative seem worse.',
       },
@@ -200,7 +202,10 @@ const essayPlans: EssayPlan[] = [
       },
       {
         point: "Education weaponised: Napoleon's training of the puppies",
-        evidence: 'Napoleon takes the puppies from their mothers to "educate" them privately.',
+        // Corrected 2 October 2026: "educate" was quoted as if it were Orwell's
+        // word; Chapter 3 has Napoleon take responsibility for their "education".
+        evidence:
+          'Napoleon takes the puppies from their mothers, "saying that he would make himself responsible for their education".',
         analysis:
           "Napoleon's education of the dogs is the dark inverse of Snowball's reading classes. Snowball tries to create citizens; Napoleon creates enforcers. Orwell juxtaposes these two models of education to show that education is not inherently liberating -- it depends entirely on who controls it and for what purpose.",
       },

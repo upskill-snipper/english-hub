@@ -5,6 +5,23 @@ import { AITextArea } from '@/components/AITextArea'
 
 import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
+/*
+ * Quotations of the novel on this page are the 1831 text the site holds
+ * (src/data/full-texts/frankenstein.ts), hyphens included. Until 2 October
+ * 2026 two read "charnel houses" and "fellow creatures", where Shelley prints
+ * "charnel-houses" and "fellow-creatures", and the first was set in "the
+ * creation scene", though the charnel-houses are in Chapter 4, where Victor
+ * gathers his materials. The quotation scanner and
+ * frankenstein-pages-quote-the-held-text.test.ts both read a hyphen as a
+ * space, so neither could see the difference.
+ *
+ * Found in review the same day: the last Grade 9 point called "I shall
+ * ascend my funeral pile triumphantly" the Creature's final words. His final
+ * speech goes on for three more sentences and ends on "Farewell", so the
+ * point now calls it a line from his final speech. Neither check reads where
+ * a page says a line falls.
+ */
+
 /* ─── Expandable Section Component ─────────────────────────── */
 
 function Section({
@@ -611,9 +628,10 @@ export default function FrankensteinPage() {
             <h4 className="font-bold text-foreground">{tr(`Death and Decay`)}</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The novel is saturated with death: Victor&apos;s mother, William, Justine, Clerval,
-              Elizabeth, Alphonse, and eventually Victor and the Creature. The creation scene
-              involves &ldquo;charnel houses&rdquo; and body parts, blending scientific ambition
-              with bodily horror. Shelley connects the desire to conquer death with death itself.
+              Elizabeth, Alphonse, and eventually Victor and the Creature. Victor&apos;s work of
+              creation involves &ldquo;charnel-houses&rdquo; and body parts, blending scientific
+              ambition with bodily horror. Shelley connects the desire to conquer death with death
+              itself.
             </p>
           </div>
         </div>
@@ -807,7 +825,7 @@ export default function FrankensteinPage() {
               </p>
               <p>
                 <strong>{tr(`Paragraph 1 - Victor's self-imposed isolation:`)}</strong> He cuts
-                himself off for two years during creation. &ldquo;I shunned my fellow creatures as
+                himself off for two years during creation. &ldquo;I shunned my fellow-creatures as
                 if I had been guilty of a crime.&rdquo; His isolation mirrors the Creature&apos;s
                 later exclusion. Link to Romantic ideas about solitary genius.
               </p>
@@ -938,7 +956,7 @@ export default function FrankensteinPage() {
             "The Creature's demand for a female companion raises questions Shelley deliberately leaves unresolved. Victor destroys the female creature because he fears reproduction --- that the Creature might found a race. His fear is both rational (the consequences are unknowable) and deeply prejudiced (he assumes the offspring would be monstrous). Shelley forces the reader to consider whether Victor's decision is responsible caution or selfish cruelty --- and the novel supports both readings.",
             "The novel can be read as Shelley's critique of Romanticism from within. Victor embodies the Romantic ideal --- passionate, brilliant, driven by a desire to transcend human limitations --- yet these very qualities destroy him. Shelley, surrounded by Romantic poets who celebrated individual genius (Percy Shelley, Byron), understood the movement's appeal but saw its dangers. The novel argues that genius without empathy is monstrous.",
             "The blind De Lacey is the only character who shows the Creature kindness, precisely because he cannot see him. Shelley uses this to argue that human prejudice is primarily visual: we judge by appearance and reject what we cannot assimilate aesthetically. The Creature's physical appearance is the sole barrier to his acceptance. Shelley's argument anticipates modern debates about prejudice and challenges the reader to examine their own responses to difference.",
-            "The Creature's final words --- 'I shall ascend my funeral pile triumphantly and exult in the agony of the torturing flames' --- fuse suffering with triumph in a way that undermines any simple reading of his character. He is simultaneously victim and villain, destroyed by others and by himself, seeking peace through self-destruction. Shelley refuses to grant him either redemption or damnation, leaving the reader with the uncomfortable recognition that the most human response to an inhuman world may be self-annihilation.",
+            "A line from the Creature's final speech --- 'I shall ascend my funeral pile triumphantly and exult in the agony of the torturing flames' --- fuses suffering with triumph in a way that undermines any simple reading of his character. He is simultaneously victim and villain, destroyed by others and by himself, seeking peace through self-destruction. Shelley refuses to grant him either redemption or damnation, leaving the reader with the uncomfortable recognition that the most human response to an inhuman world may be self-annihilation.",
           ].map((point, i) => (
             <div key={i} className="rounded-lg border-s-4 border-accent bg-muted p-4">
               <p className="text-sm leading-relaxed text-muted-foreground">{point}</p>

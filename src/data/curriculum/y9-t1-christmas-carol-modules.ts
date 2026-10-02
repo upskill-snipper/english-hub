@@ -1,5 +1,16 @@
 import type { CourseModule } from '../courses'
 
+/**
+ * Quotations corrected on 2 October 2026 against the edition the site holds
+ * (Project Gutenberg #46, src/data/full-texts/a-christmas-carol.ts), as read
+ * by scripts/check-quotations.mjs. Six were not Dickens's words as printed.
+ * Scrooge's Stave One questions are "Are there no prisons?" and "And the Union
+ * workhouses?"; "Are there no workhouses?" is the Spirit's, in Stave Three.
+ * Scrooge says "decrease the surplus population", not "decreasing". Marley's
+ * chain is "made (for Scrooge observed it closely) of cash-boxes", a clause
+ * that had been cut with no ellipsis. The Spirit answers "More than eighteen
+ * hundred"; "brothers" is Scrooge's word, in the question.
+ */
 export const y9T1ChristmasCarolModules: CourseModule[] = [
   {
     id: 'y9t1-acc-m1',
@@ -20,9 +31,9 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>Workhouses deliberately separated families. Husbands were separated from wives; children were taken from parents. Inmates wore uniforms, ate monotonous and inadequate food, and performed grinding labour such as breaking stones or picking oakum (untwisting old rope). The workhouse was designed to humiliate. It carried an enormous social stigma: to enter one was to publicly admit failure. Many people preferred to starve on the streets rather than submit to the workhouse system.</p>
 
-<p>When Scrooge says the poor should go to the "prisons" and "workhouses," Dickens is directly quoting the callous attitudes of the wealthy. When Scrooge asks, "Are there no prisons? Are there no workhouses?", he is parroting the language of those who believed they had discharged their social obligations simply because institutions existed, however cruel those institutions might be.</p>
+<p>When Scrooge says the poor should go to the "prisons" and "workhouses," Dickens is directly quoting the callous attitudes of the wealthy. When Scrooge asks, "Are there no prisons? ... And the Union workhouses?", he is parroting the language of those who believed they had discharged their social obligations simply because institutions existed, however cruel those institutions might be.</p>
 
-<div class="key-term"><strong>Key Term: Malthusian economics</strong> - Thomas Malthus argued that population growth would always outstrip food supply, and that poverty was therefore inevitable and even necessary to control population. Scrooge's reference to "decreasing the surplus population" echoes Malthus directly. Dickens despised this philosophy.</div>
+<div class="key-term"><strong>Key Term: Malthusian economics</strong> - Thomas Malthus argued that population growth would always outstrip food supply, and that poverty was therefore inevitable and even necessary to control population. Scrooge's call to "decrease the surplus population" echoes Malthus directly. Dickens despised this philosophy.</div>
 
 <h3>The "Two Nations" Divide</h3>
 <p>Benjamin Disraeli, who would later become Prime Minister, described Victorian Britain as "two nations" -- the rich and the poor -- "between whom there is no intercourse and no sympathy; who are as ignorant of each other's habits, thoughts, and feelings, as if they were dwellers in different zones, or inhabitants of different planets." This is precisely the division that Dickens dramatises. Scrooge lives within walking distance of the Cratchit family, yet he is utterly ignorant of their suffering. The ghosts do not take him to some foreign land; they show him his own neighbourhood. The horror is proximity: misery exists all around him, and he has simply chosen not to see it.</p>
@@ -51,7 +62,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
       {
         id: 'y9t1-acc-m1-q2',
         question:
-          'When Scrooge refers to "decreasing the surplus population," which thinker\'s ideas is Dickens alluding to?',
+          'When Scrooge says the poor had better "decrease the surplus population," which thinker\'s ideas is Dickens alluding to?',
         options: ['Karl Marx', 'Adam Smith', 'Thomas Malthus', 'Charles Darwin'],
         correct: 2,
         explanation:
@@ -322,7 +333,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 <p>The three ghosts in <em>A Christmas Carol</em> are not merely plot devices to move the story forward. They form a carefully designed tripartite structure that mirrors the process of moral education: understanding where you went wrong (past), seeing the consequences of your current behaviour (present), and confronting the ultimate outcome if you refuse to change (future). Each ghost serves a distinct rhetorical function, and analysing these functions is essential for a sophisticated response.</p>
 
 <h3>Marley's Ghost: The Prologue to Transformation</h3>
-<p>Before the three Christmas ghosts arrive, Dickens introduces Jacob Marley -- Scrooge's deceased business partner. Marley is structurally essential because he establishes the rules of the supernatural world and provides the moral framework for everything that follows. Marley's chain, "made of cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel," is a physical manifestation of his sins. Every act of selfishness during his life has become a literal burden in death.</p>
+<p>Before the three Christmas ghosts arrive, Dickens introduces Jacob Marley -- Scrooge's deceased business partner. Marley is structurally essential because he establishes the rules of the supernatural world and provides the moral framework for everything that follows. Marley's chain, "made... of cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel," is a physical manifestation of his sins. Every act of selfishness during his life has become a literal burden in death.</p>
 
 <p>Marley's function is cautionary. He tells Scrooge that he has been condemned to wander the earth, witnessing suffering he can no longer alleviate. His torment is not physical pain but the agony of powerlessness -- of seeing the good he could have done and knowing it is too late. This is strategically placed before the three ghosts because it establishes the stakes. Scrooge is not being offered a pleasant educational experience; he is being offered his last chance to avoid Marley's fate.</p>
 
@@ -1029,7 +1040,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 <h3>The Right Way: Context Embedded in Analysis</h3>
 <p>Here is the same point written with properly integrated context:</p>
 <div class="model-answer"><div class="model-answer-header">MODEL ANSWER</div>
-<p>"When Scrooge dismisses the charity collectors by asking 'Are there no prisons? Are there no workhouses?', Dickens deliberately echoes the callous rhetoric of the Victorian establishment, which regarded the New Poor Law's system of institutionalised punishment as an adequate response to mass deprivation. The rhetorical questions are not genuine enquiries; they are a performance of moral indifference, designed to shut down the conversation. By placing this Malthusian logic in the mouth of his most unsympathetic character, Dickens forces his middle-class readers to confront the cruelty of an ideology they may have accepted without question."</p>
+<p>"When Scrooge dismisses the charity collectors by asking 'Are there no prisons? ... And the Union workhouses?', Dickens deliberately echoes the callous rhetoric of the Victorian establishment, which regarded the New Poor Law's system of institutionalised punishment as an adequate response to mass deprivation. The rhetorical questions are not genuine enquiries; they are a performance of moral indifference, designed to shut down the conversation. By placing this Malthusian logic in the mouth of his most unsympathetic character, Dickens forces his middle-class readers to confront the cruelty of an ideology they may have accepted without question."</p>
 </div>
 
 <p>Notice how the context (New Poor Law, Malthusian logic, Victorian establishment attitudes) is woven into the same sentences as the textual analysis (rhetorical questions, performance of indifference). The context is not decorative; it is functional -- it explains why Dickens makes Scrooge speak this way.</p>
@@ -1287,7 +1298,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <div class="model-answer"><div class="model-answer-header">SAMPLE PLAN</div>
 <p><strong>Thesis:</strong> Dickens uses the Ghost of Christmas Present to argue that generosity is a moral imperative, contrasting the spiritual poverty of the wealthy with the emotional richness of the poor.</p>
-<p><strong>P1:</strong> Ghost's appearance -- abundance, warmth, torch. Represents generosity as natural, overflowing, accessible to all. "More than eighteen hundred brothers" -- universal, timeless.</p>
+<p><strong>P1:</strong> Ghost's appearance -- abundance, warmth, torch. Represents generosity as natural, overflowing, accessible to all. "More than eighteen hundred" brothers -- universal, timeless.</p>
 <p><strong>P2:</strong> Cratchit dinner -- modest but celebrated. "Every one had had enough" -- generosity of spirit compensates for material lack. Contrast with Scrooge's lonely supper.</p>
 <p><strong>P3:</strong> Fred's party -- wealthy generosity. Shows that the problem is not wealth itself but the refusal to share it. Fred as model for what Scrooge could be.</p>
 <p><strong>P4:</strong> Ignorance and Want -- consequences of failing to be generous. Political argument: selfishness does not just harm individuals, it threatens society. "Doom" on Ignorance's brow.</p>

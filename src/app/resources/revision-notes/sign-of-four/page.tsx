@@ -4,6 +4,58 @@ import { useState } from 'react'
 
 import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
+/*
+ * Quotations of the novel on this page are in the words of the text the site
+ * holds, Project Gutenberg #2097 (src/data/full-texts/the-sign-of-four.ts).
+ * Until 2 October 2026 a student learning the key quotations here would have
+ * learnt words Conan Doyle never wrote:
+ *   - five joined the words either side of a speech tag ("he said", "I
+ *     cried", "said Holmes", "said Sherlock Holmes") with no ellipsis, one of
+ *     them also printing "judgement" for the edition's "judgment"; a sixth
+ *     added "had" to "Miss Morstan entered the room";
+ *   - five were in the novel nowhere. "An agony of greed and expectation",
+ *     "A model of propriety", "He is an ugly devil" and "I then put the sign
+ *     of the four upon the paper" now carry real lines making the same point
+ *     (Small on Major Sholto's greed, Thaddeus on his rooms, Small on Tonga,
+ *     Small leaving the sign). "I never saw a more savage, distorted face"
+ *     was set beside Bartholomew Sholto's body, and its analysis said
+ *     "savage" was turned on a white Englishman; "savage, distorted" is
+ *     Watson's description of Tonga in Chapter X, which the card now quotes;
+ *   - "How small we feel..." is Holmes's, at sunrise on the Toby trail
+ *     (Chapter VII), not Watson's in the Thames chase; the note beside the
+ *     body reads "The sign of the four", not "The sign of four"; Watson's
+ *     word is "calculating-machine"; "What a very attractive woman" comes
+ *     after Mary's visit, not on first seeing her; "It is my treasure" is
+ *     said at Baker Street over the empty box, not as Small throws the
+ *     treasure overboard; "Whoever had lost a treasure" is narration, not a
+ *     proposal; and the cocaine-bottle line is Holmes's last, not the
+ *     novel's last.
+ * scripts/check-quotations.mjs found nine of these. It reads a hyphen as a
+ * space, cannot tell who speaks a line of a novel or when, and passed over
+ * the "agony" and "propriety" lines as too far from any passage to judge,
+ * so the rest were found by reading the chapters. Check a speaker and a
+ * moment by hand. Every replacement was cut from the held text by script,
+ * not typed. The reader's highlight notes are built from these cards
+ * (scripts/generate-text-annotations.mjs), so they carried the wrong speaker
+ * for "How small we feel" too; re-run that script after changing a card.
+ *
+ * A review the same day found the chapter summaries contradicting the
+ * corrected cards, placing moments the cards quote where the novel does not.
+ * They had the box opened empty in Chapter 10 and again at Baker Street in
+ * Chapter 11 (Watson forces it at Mrs Forrester's, in Chapter XI), Holmes
+ * reaching for the cocaine in Chapter 11 (the last page of Chapter XII),
+ * Watson's visit to Mary in Chapter 8 (Chapter IX) and the three Sikhs alone
+ * as the four of the title (the four include Small). They also had the
+ * treasure chest found empty in Chapter 5 (Small took it, box and all),
+ * Holmes placing the companion in the Andamans in Chapter 6 (from a
+ * gazetteer, in Chapter VIII) with a dog of his own (Toby is Sherman's), the
+ * barrel at a wharf (it is in a timber-yard) and Watson reading a monograph
+ * in Chapter 8 (none is read).
+ * The fog card had lost the edition's comma after "September evening". Each
+ * now follows the held text. (A line break straight after the Chapter 10
+ * summary's <em>Aurora</em> had also run it into the next word on screen.)
+ */
+
 /* ─── Expandable Section Component ─────────────────────────── */
 
 function Section({
@@ -203,10 +255,11 @@ export default function SignOfFourPage() {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 The group travels to Pondicherry Lodge, the Sholto family home, to find Bartholomew
                 Sholto (Thaddeus&apos;s twin brother) dead in his locked room. His face is frozen in
-                a terrible smile, and a poisoned thorn is embedded in his skin. The Agra treasure
-                chest is empty &mdash; the treasure has been stolen. On a piece of paper beside the
-                body is written &ldquo;The sign of the four.&rdquo; Holmes discovers footprints: a
-                wooden-legged man and a small, bare-footed companion who climbed through the roof.
+                a terrible smile, and a poisoned thorn is embedded in his skin. The Agra treasure,
+                which Bartholomew had found hidden in the house, has been stolen. On a piece of
+                paper beside the body is written &ldquo;The sign of the four.&rdquo; Holmes
+                discovers footprints: a wooden-legged man and a small, bare-footed companion who
+                climbed through the roof.
               </p>
             </div>
             <div>
@@ -214,13 +267,12 @@ export default function SignOfFourPage() {
                 {tr(`Chapter 6: Sherlock Holmes Gives a Demonstration`)}
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Holmes demonstrates his deductive powers to the police detectives Athelney Jones,
-                who has arrested the wrong man (Thaddeus). Holmes examines the crime scene
-                methodically, identifies creosote on the rope used by the murderer&apos;s companion,
-                and measures the small footprints. He deduces that the accomplice is a small man
-                from the Andaman Islands. Holmes sends his dog Toby to track the creosote scent.
-                This chapter showcases Holmes&apos;s scientific method in contrast to the
-                police&apos;s incompetent, assumption-based approach.
+                Holmes demonstrates his deductive powers while the police detective Athelney Jones
+                arrests the wrong man (Thaddeus). Holmes examines the crime scene methodically: the
+                rope the wooden-legged man climbed, and the small naked footprints of his companion,
+                who has trodden in spilt creosote. He sends Watson to fetch Toby, a tracker dog, to
+                follow the creosote scent. This chapter showcases Holmes&apos;s scientific method in
+                contrast to the police&apos;s incompetent, assumption-based approach.
               </p>
             </div>
             <div>
@@ -231,7 +283,7 @@ export default function SignOfFourPage() {
                 Holmes and Watson follow the dog Toby through the streets of South London, tracking
                 the creosote trail. Toby leads them on a winding chase through working-class
                 neighbourhoods, timber yards, and along the Thames. The trail ends at a barrel of
-                creosote at a wharf, a false lead &mdash; but Holmes is not discouraged. The chapter
+                creosote in a timber-yard, a false lead, but Holmes is not discouraged. The chapter
                 provides vivid descriptions of the poverty and industrial landscape of South London,
                 highlighting the class divisions of Victorian society.
               </p>
@@ -241,24 +293,26 @@ export default function SignOfFourPage() {
                 {tr(`Chapter 8: The Baker Street Irregulars`)}
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Holmes enlists his network of street urchins, the Baker Street Irregulars, to search
-                the river for a steam launch called the <em>Aurora</em>. While they wait, Watson
-                reads Holmes&apos;s monograph and Holmes discusses the case. Watson returns to Mary
-                to update her on events, and his feelings for her deepen. The chapter develops the
-                Watson&ndash;Mary romance and shows Holmes&apos;s resourceful use of London&apos;s
-                underclass as an intelligence network.
+                Toby follows the second trail to a wharf on the Thames, where Holmes learns that the
+                fugitives have hired a steam launch called the <em>Aurora</em>. Holmes enlists his
+                network of street urchins, the Baker Street Irregulars, to search the river for it.
+                While they wait, Holmes reads from a gazetteer and identifies the small companion as
+                an Andaman Islander, then plays his violin until Watson falls asleep, dreaming of
+                Mary. The chapter shows Holmes&apos;s resourceful use of London&apos;s underclass as
+                an intelligence network.
               </p>
             </div>
             <div>
               <h4 className="font-bold text-foreground">{tr(`Chapter 9: A Break in the Chain`)}</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Athelney Jones&apos;s investigation falters &mdash; he has arrested the wrong
-                suspect and has no real leads. Holmes disguises himself as an old sailor and
-                personally searches the docks for the <em>Aurora</em>, eventually locating it at
-                Jacobson&apos;s Yard. He arranges for a police steam launch to pursue Small that
-                evening. Holmes&apos;s willingness to go undercover and physically pursue leads
-                contrasts with the official police approach. His disguise also highlights the theme
-                of identity and appearance versus reality.
+                Watson visits Mary and Mrs Forrester in Camberwell to tell them what has happened,
+                and his feelings for Mary deepen. Athelney Jones&apos;s investigation falters
+                &mdash; he has arrested the wrong suspect and has no real leads. Holmes disguises
+                himself as an old sailor and personally searches the docks for the <em>Aurora</em>,
+                eventually locating it at Jacobson&apos;s Yard. He arranges for a police steam
+                launch to pursue Small that evening. Holmes&apos;s willingness to go undercover and
+                physically pursue leads contrasts with the official police approach. His disguise
+                also highlights the theme of identity and appearance versus reality.
               </p>
             </div>
             <div>
@@ -267,13 +321,12 @@ export default function SignOfFourPage() {
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 A dramatic chase along the Thames. Holmes, Watson, and the police pursue the{' '}
-                <em>Aurora</em>
-                carrying Jonathan Small and his companion Tonga. Tonga fires a poisoned dart at the
-                pursuers but Holmes and Watson shoot him dead. Small is captured but the treasure
-                chest, when opened, is empty &mdash; Small has thrown the jewels overboard into the
-                Thames, ensuring that if he cannot have them, no one will. The death of Tonga is
-                presented in strikingly dehumanising language that reflects Victorian racial
-                attitudes.
+                <em>Aurora</em>, carrying Jonathan Small and his companion Tonga. Tonga fires a
+                poisoned dart at the pursuers but Holmes and Watson shoot him dead. Small is
+                captured, his wooden leg stuck in the mud of the riverbank, and the heavy iron
+                treasure-chest is taken from the <em>Aurora</em> unopened, for there is no key. The
+                death of Tonga is presented in strikingly dehumanising language that reflects
+                Victorian racial attitudes.
               </p>
             </div>
             <div>
@@ -281,13 +334,10 @@ export default function SignOfFourPage() {
                 {tr(`Chapter 11: The Great Agra Treasure`)}
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                The empty treasure chest is opened at Baker Street. Watson realises that the
-                disappearance of the treasure means Mary will not become wealthy &mdash; removing
-                the class barrier between them. He proposes to her and she accepts. Holmes, rather
-                than celebrating, returns to his cocaine bottle, remarking that the case is solved
-                and boredom has returned. The contrast between Watson&apos;s emotional fulfilment
-                and Holmes&apos;s retreat into drugs powerfully illustrates the
-                reason-versus-emotion duality.
+                Watson takes the chest to Mary at Mrs Forrester&apos;s house and forces it open with
+                a poker: it is empty. Watson realises that the disappearance of the treasure means
+                Mary will not become wealthy, which removes the class barrier between them. He tells
+                her that he loves her, and she returns his love.
               </p>
             </div>
             <div>
@@ -295,15 +345,20 @@ export default function SignOfFourPage() {
                 {tr(`Chapter 12: The Strange Story of Jonathan Small`)}
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Jonathan Small narrates his backstory. A former soldier, he lost his leg to a
-                crocodile in India. During the Indian Rebellion of 1857, he was drawn into a plot by
-                three Sikh men (the &ldquo;Four&rdquo; of the title) to murder a merchant, Achmet,
-                and steal the Agra treasure. The four were imprisoned in the Andaman Islands, where
-                Small befriended the islander Tonga. Small made a deal with Major Sholto and Captain
-                Morstan to share the treasure in return for his freedom, but Sholto betrayed them
-                all. Small&apos;s narrative reveals the violence and exploitation at the heart of
-                the British Empire, while complicating the reader&apos;s view of justice &mdash;
-                Small is both criminal and victim.
+                Back at Baker Street, Small admits that he scattered the treasure in the Thames
+                during the chase, and then narrates his backstory. A former soldier, he lost his leg
+                to a crocodile in India. During the Indian Rebellion of 1857, he was drawn into a
+                plot by three Sikh men to murder a merchant, Achmet, and steal the Agra treasure;
+                Small and those three men are the four of the title. The four were imprisoned in the
+                Andaman Islands, where Small befriended the islander Tonga. Small made a deal with
+                Major Sholto and Captain Morstan to share the treasure in return for his freedom,
+                but Sholto betrayed them all. Small&apos;s narrative reveals the violence and
+                exploitation at the heart of the British Empire, while complicating the
+                reader&apos;s view of justice &mdash; Small is both criminal and victim. The novel
+                ends with Watson engaged to Mary and Jones taking the credit, while Holmes reaches
+                for the cocaine-bottle. The contrast between Watson&apos;s emotional fulfilment and
+                Holmes&apos;s retreat into drugs powerfully illustrates the reason-versus-emotion
+                duality.
               </p>
             </div>
           </div>
@@ -386,14 +441,14 @@ export default function SignOfFourPage() {
               analysis="Establishes Holmes's central conflict - his extraordinary intellect makes ordinary life unbearable. 'Abhor' and 'crave' are extreme verbs that reveal the intensity of his need. This drives his cocaine use and frames the entire novel as Holmes's search for stimulation. Conan Doyle suggests that genius comes at a psychological cost."
             />
             <QuoteCard
-              quote="My mind rebels at stagnation. Give me problems, give me work."
+              quote="My mind … rebels at stagnation. Give me problems, give me work, give me the most abstruse cryptogram or the most intricate analysis, and I am in my own proper atmosphere."
               speaker="Holmes"
               analysis="The imperative 'give me' and the repetition create urgency and desperation. 'Rebels at stagnation' personifies Holmes's mind as a force that cannot be controlled. This connects to the theme of reason - Holmes's rationality is not a calm trait but a compulsive, almost destructive drive."
             />
             <QuoteCard
-              quote="You really are an automaton - a calculating machine. There is something positively inhuman in you at times."
+              quote="You really are an automaton,—a calculating-machine! … There is something positively inhuman in you at times."
               speaker="Watson"
-              analysis="Watson's criticism of Holmes uses mechanistic language: 'automaton' and 'calculating machine' reduce him to a device without feeling. 'Inhuman' is the key word - Watson recognises that Holmes's rejection of emotion diminishes his humanity. This establishes the novel's central debate about whether reason without emotion is admirable or monstrous."
+              analysis="Watson's criticism of Holmes uses mechanistic language: 'automaton' and 'calculating-machine' reduce him to a device without feeling. 'Inhuman' is the key word - Watson recognises that Holmes's rejection of emotion diminishes his humanity. This establishes the novel's central debate about whether reason without emotion is admirable or monstrous."
             />
             <QuoteCard
               quote="Detection is, or ought to be, an exact science."
@@ -407,11 +462,11 @@ export default function SignOfFourPage() {
             />
             <QuoteCard
               quote="How small we feel with our petty ambitions and strivings in the presence of the great elemental forces of Nature!"
-              speaker="Watson"
-              analysis="Watson's reflection during the Thames chase reveals his capacity for wonder and emotional depth - qualities Holmes entirely lacks. The contrast between 'petty ambitions' (the treasure hunt) and 'elemental forces' (nature, love) suggests that Watson grasps a deeper truth about human insignificance that Holmes's rational framework cannot access."
+              speaker="Holmes"
+              analysis="Holmes, not Watson, says this, as the sun rises over London while the two of them follow Toby on the creosote trail. It reveals a capacity for wonder that sits uneasily with Watson's charge that he is 'an automaton'. The contrast between 'petty ambitions' (the treasure hunt) and 'elemental forces' (nature) shows Holmes grasping a deeper truth about human insignificance, and he goes straight on to ask Watson about the German writer Jean Paul. Conan Doyle complicates the opposition of reason and emotion: the reasoning machine can be moved too."
             />
             <QuoteCard
-              quote="It is of the first importance not to allow your judgement to be biased by personal qualities."
+              quote="It is of the first importance … not to allow your judgment to be biased by personal qualities."
               speaker="Holmes"
               analysis="Holmes warns against letting personal feelings influence deduction. This is ironic because his own personality - his arrogance, his need for stimulation - constantly shapes his approach to cases. Conan Doyle uses Holmes's failure to live up to his own principles to show that complete objectivity is impossible, even for the most rational mind."
             />
@@ -421,59 +476,59 @@ export default function SignOfFourPage() {
               analysis="One of Holmes's most famous deductive principles. The logic is elegant but deceptively simple - it assumes one can identify and eliminate all other factors, which in complex human situations is rarely possible. This maxim reflects Victorian confidence in scientific method while the novel's messy human realities quietly undermine it."
             />
             <QuoteCard
-              quote="I would not tell them too much. Women are never to be entirely trusted - not the best of them."
+              quote="I would not tell them too much … Women are never to be entirely trusted,—not the best of them."
               speaker="Holmes"
               analysis="A deeply sexist remark that reveals Holmes's misogyny and fear of emotional entanglement. The absolute 'never' and 'not the best of them' extend distrust to all women without exception. Conan Doyle uses this to characterise Holmes rather than to endorse the view - Watson's trust in Mary and their successful relationship implicitly rebuts Holmes's prejudice."
             />
             <QuoteCard
               quote="What a very attractive woman!"
-              speaker="Watson (on first seeing Mary Morstan)"
-              analysis="Watson's immediate emotional response to Mary contrasts with Holmes's purely analytical assessment of her. Where Holmes catalogues physical details as data, Watson responds with feeling. This simple exclamation establishes the Watson-Mary romance and the reason-emotion duality that structures the entire novel."
+              speaker="Watson (after Mary Morstan's first visit)"
+              analysis="Watson's emotional response to Mary, once he has watched her out of sight, meets Holmes's languid reply that he 'did not observe' it. Where Watson responds with feeling, Holmes claims not to have noticed her at all. This simple exclamation establishes the Watson-Mary romance and the reason-emotion duality that structures the entire novel."
             />
             <QuoteCard
-              quote="Miss Morstan had entered the room with a firm step and an outward composure of manner."
+              quote="Miss Morstan entered the room with a firm step and an outward composure of manner."
               speaker="Watson (narrating)"
               analysis="Mary is introduced through language of strength and self-control: 'firm step' and 'composure.' She is not the helpless damsel of typical Victorian fiction but a woman who faces danger with courage. 'Outward composure' subtly suggests inner anxiety she controls - strength through self-discipline rather than absence of fear."
             />
             <QuoteCard
-              quote="It was a September evening and not yet seven o'clock, but the day had been a dreary one, and a dense drizzly fog lay low upon the great city."
+              quote="It was a September evening, and not yet seven o'clock, but the day had been a dreary one, and a dense drizzly fog lay low upon the great city."
               speaker="Watson (narrating)"
               analysis="Classic Victorian atmosphere-building. The fog operates as pathetic fallacy, reflecting the confusion and concealment central to the plot. 'Dense' and 'drizzly' create heaviness and discomfort. The fog literally and metaphorically obscures the truth. London becomes a Gothic landscape where danger hides in every shadow."
             />
             <QuoteCard
-              quote="An agony of greed and expectation."
+              quote="He tried to speak in a cool, careless way, but his eyes were shining with excitement and greed."
               speaker="Small (describing Major Sholto's reaction to the treasure)"
-              analysis="The noun 'agony' transforms greed from a vice into a physical suffering, suggesting that the desire for wealth is itself a form of torture. 'Expectation' connects to Great Expectations and the Victorian preoccupation with wealth as a pathway to status. Major Sholto's greed literally destroys him - it causes fear, paranoia, and ultimately death."
+              analysis="Small watches Major Sholto bargain for a share of the treasure. The 'cool, careless' manner is a performance - the officer and gentleman keeping up appearances - and the eyes give him away. 'Excitement and greed' breaks through the mask before Sholto has seen a single jewel, and it is the convict who sees through the officer. Major Sholto's greed ultimately destroys him - it leads to betrayal, fear, paranoia, and ultimately death."
             />
             <QuoteCard
-              quote="A model of propriety."
-              speaker="Watson (describing Thaddeus Sholto's home)"
-              analysis="Used ironically - Sholto's home is filled with Eastern luxuries (hookahs, rich tapestries) that represent the spoils of empire, yet he presents himself as 'proper.' The irony highlights the gap between Victorian respectability and the colonial exploitation that funds it. 'Propriety' becomes a mask for ill-gotten wealth."
+              quote="An oasis of art in the howling desert of South London."
+              speaker="Thaddeus Sholto (on his own rooms)"
+              analysis="Thaddeus's description of his own rooms, which Watson finds hung with rich tapestries, with tiger-skins and a hookah adding 'the suggestion of Eastern luxury'. 'Oasis of art' presents Thaddeus as a man of culture and taste, and 'howling desert' dismisses the London suburb outside. Yet the luxuries are the spoils of empire: his father 'had prospered in India' and kept the stolen Agra treasure hidden in his house. The irony highlights the gap between Victorian refinement and the colonial exploitation that funds it."
             />
             <QuoteCard
               quote="It is my treasure; and if I can't have the loot I'll take darned good care that no one else does."
               speaker="Jonathan Small"
-              analysis="Small's declaration as he throws the treasure into the Thames. The possessive 'my treasure' reveals his sense of entitlement - though the treasure was itself stolen. The colloquial 'loot' and 'darned' contrast with the formal language of other characters, marking Small's working-class status. His act is simultaneously petty revenge and a kind of rough justice."
+              analysis="Small's defiance at Baker Street, when Watson brings back the empty box: he has scattered the jewels in the Thames during the chase. The possessive 'my treasure' reveals his sense of entitlement - though the treasure was itself stolen. The colloquial 'loot' and 'darned' contrast with the formal language of other characters, marking Small's working-class status. His act is simultaneously petty revenge and a kind of rough justice."
             />
             <QuoteCard
               quote="Whoever had lost a treasure, I knew that night that I had gained one."
               speaker="Watson"
-              analysis="Watson's declaration when he proposes to Mary. The wordplay on 'treasure' contrasts material wealth (the Agra jewels) with emotional wealth (love). Conan Doyle explicitly argues that human connection is more valuable than gold. The parallel structure ('lost a treasure... gained one') makes this a thesis statement for the novel's moral framework."
+              analysis="Watson's narration closing Chapter 11, on the night the box is opened empty and he and Mary declare their love. The wordplay on 'treasure' contrasts material wealth (the Agra jewels) with emotional wealth (love). Conan Doyle explicitly argues that human connection is more valuable than gold. The parallel structure ('lost a treasure... gained one') makes this a thesis statement for the novel's moral framework."
             />
             <QuoteCard
-              quote="The sign of four."
+              quote="The sign of the four."
               speaker="Written on the paper found beside Bartholomew Sholto's body"
               analysis="The novel's title and central motif. The 'four' refers to Jonathan Small and the three Sikh conspirators who swore a pact over the Agra treasure. The sign represents a bond of loyalty forged through crime - a dark parody of friendship. It recurs throughout the novel as a mark of colonial violence that cannot be erased, linking past crimes in India to present murders in London."
             />
             <QuoteCard
-              quote="I never saw a more savage, distorted face."
-              speaker="Watson (describing Bartholomew Sholto's death)"
-              analysis="The word 'savage' is loaded - throughout the novel it is applied to Tonga and colonial subjects, yet here it describes a white Englishman's death mask. The reversal unsettles the racial hierarchy the novel elsewhere maintains. 'Distorted' suggests the treasure's corrupting influence extends even beyond death, twisting the body as greed twisted the soul."
+              quote="Holmes had already drawn his revolver, and I whipped out mine at the sight of this savage, distorted creature."
+              speaker="Watson (seeing Tonga in the Thames chase)"
+              analysis="Watson's narration as the police launch closes on the Aurora. 'Savage' is the word the novel keeps fixing to Tonga - Watson exclaims 'A savage!' when Holmes sums up the clues - and here the narrator, the humane doctor the reader trusts, uses it again. 'Distorted' turns physical difference into deformity, and 'creature' denies that he is a man at all. Watson draws his revolver at the mere sight of him, and the language prepares the reader to accept his killing moments later. Modern readers should recognise this as the racism of the period, not neutral description."
             />
             <QuoteCard
-              quote="He is an ugly devil."
-              speaker="Small (describing Tonga)"
-              analysis="Even Small, Tonga's only friend, uses dehumanising language. 'Devil' strips Tonga of humanity and places him in a moral category below human. That even Tonga's ally describes him this way reveals how deeply Victorian racial prejudice is embedded - not as individual cruelty but as a shared cultural assumption. Modern readers should recognise this as reflecting the racism of the period."
+              quote="I welted the little devil with the slack end of the rope for it, but it was done, and I could not undo it again."
+              speaker="Small (on Tonga, after Bartholomew Sholto's death)"
+              analysis="Small is telling Holmes how Tonga's dart killed Bartholomew Sholto, and he calls his companion 'that little hell-hound' and 'the little devil'. 'Devil' strips Tonga of humanity and places him in a moral category below human, and 'welted' - thrashed with a rope's end - is how a man punishes an animal. That even Tonga's ally describes him this way reveals how deeply Victorian racial prejudice is embedded - not as individual cruelty but as a shared cultural assumption. Modern readers should recognise this as reflecting the racism of the period."
             />
             <QuoteCard
               quote="You have done all the work in this business. I get a wife out of it, Jones gets the credit, pray what remains for you?"
@@ -481,14 +536,14 @@ export default function SignOfFourPage() {
               analysis="Watson's question to Holmes at the novel's end. Holmes's answer - reaching for the cocaine bottle - is devastating. The three outcomes neatly summarise the characters: Watson gains love (emotion), Jones gains reputation (social status), and Holmes gains nothing that matters to a human being, only the satisfaction of a solved puzzle. The implication is that Holmes's dedication to reason has cost him the ability to find meaning in life."
             />
             <QuoteCard
-              quote="For me there still remains the cocaine-bottle."
+              quote="For me … there still remains the cocaine-bottle."
               speaker="Holmes"
-              analysis="The novel's final line. Holmes returns to drugs because the case is over and intellectual stimulation has ceased. The cocaine bottle replaces the treasure chest as the novel's closing image - both represent false solutions to deeper needs. Conan Doyle ends on a note of melancholy rather than triumph, suggesting that Holmes's genius is inseparable from his self-destruction."
+              analysis="Holmes's last words in the novel. He returns to drugs because the case is over and intellectual stimulation has ceased. The cocaine bottle replaces the treasure chest as the novel's closing image - both represent false solutions to deeper needs. Conan Doyle ends on a note of melancholy rather than triumph, suggesting that Holmes's genius is inseparable from his self-destruction."
             />
             <QuoteCard
-              quote="I then put the sign of the four upon the paper and put it upon the table."
+              quote="I took the treasure-box and let it down, and then slid down myself, having first left the sign of the four upon the table, to show that the jewels had come back at last to those who had most right to them."
               speaker="Small"
-              analysis="Small describes leaving his calling card at the murder scene. The deliberate, ritualistic quality - 'put... upon... put... upon' - transforms murder into a statement. The sign is both a confession and a claim of ownership: Small marks the scene as his, connecting Bartholomew's death directly to the original colonial theft. Crime becomes a chain that links India to England across decades."
+              analysis="Small describes leaving his calling card at the scene of Bartholomew Sholto's murder. The ordered verbs - 'took', 'let', 'slid', 'left' - give the escape a deliberate, almost ritual calm, and 'to show that' turns the sign into a statement. It is both a confession and a claim of ownership: the jewels have 'come back at last to those who had most right to them'. Small marks the scene as the four's, connecting Bartholomew's death directly to the original colonial theft. Crime becomes a chain that links India to England across decades."
             />
           </div>
         </Section>
@@ -736,9 +791,9 @@ export default function SignOfFourPage() {
                   </p>
                   <p>
                     Holmes represents reason; Watson represents emotion. &ldquo;You really are an
-                    automaton &mdash; a calculating machine.&rdquo; Watson&apos;s criticism shows
-                    both frustration and intimacy &mdash; only a close friend could speak so
-                    bluntly. Their differences make them effective together.
+                    automaton,—a calculating-machine!&rdquo; Watson&apos;s criticism shows both
+                    frustration and intimacy &mdash; only a close friend could speak so bluntly.
+                    Their differences make them effective together.
                   </p>
                 </div>
                 <div>

@@ -35,7 +35,11 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * and enjambment example split "She thanked men" across a line break the poem
  * does not have; its context and quiz say Lucrezia de' Medici died at 17 (she
  * was 16) and call Barbara of Austria the Count of Tyrol's niece (she was his
- * sister). Reported to the editor, not fixed here.
+ * sister). Reported to the editor, not fixed here. All five were fixed on the
+ * page on 26 September 2026 (its own comments say where), so this paragraph now
+ * records what was wrong, not what is. Checked again on 2 October 2026: the
+ * page's 56 lines match the held edition word for word and mark for mark, dash
+ * style apart, now that its line 25 has the held edition's "favor".
  *
  * RE-CHECKED 26 September 2026. Two claims in the first draft did not survive:
  * it credited Louis S. Friedland's 1936 article with naming the envoy as

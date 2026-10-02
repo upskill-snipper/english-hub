@@ -132,7 +132,7 @@ const IMPROVEMENT_STEPS = [
     step: 3,
     title: 'Practice embedding quotations',
     description:
-      "Instead of: 'A quote that shows this is \"the dagger of the mind.\"' Write: 'Macbeth's reference to \"the dagger of the mind\" suggests his growing psychological torment.'",
+      "Instead of: 'A quote that shows this is \"a dagger of the mind.\"' Write: 'Macbeth's reference to \"a dagger of the mind\" suggests his growing psychological torment.'",
   },
   {
     step: 4,

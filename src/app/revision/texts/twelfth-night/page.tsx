@@ -155,11 +155,14 @@ const data: TextGuideData = {
       analysis:
         'Viola describes her own hidden love for Orsino in the third person, using the image of a canker-worm to capture the self-consuming pain of silence.',
     },
+    // Corrected 2 October 2026: this note and the Melancholy revision topic
+    // below called this line the song's refrain. It is said once, as the last
+    // line of "O mistress mine" (2.3), a song with no refrain.
     {
       quote: '"Youth\'s a stuff will not endure."',
       who: 'Feste \u2014 Act 2, Scene 3',
       analysis:
-        'The refrain of Feste\u2019s song introduces the play\u2019s melancholy undertow, reminding the revellers that festive time is always running out.',
+        'The closing line of Feste\u2019s song introduces the play\u2019s melancholy undertow, reminding the revellers that festive time is always running out.',
     },
     {
       quote: '"Journeys end in lovers meeting, / Every wise man\'s son doth know."',
@@ -311,6 +314,8 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     topic: 'Characters',
     difficulty: 'foundation',
   },
+  // Corrected 2 October 2026: the explanation quoted "licensed fool", a term
+  // the play never uses. Olivia's words are "allowed fool" (1.5).
   {
     id: 'tn-7',
     question: 'What role does Feste play in Olivia\u2019s household?',
@@ -318,7 +323,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['The steward', 'The clown / licensed fool', 'The butler', 'The chaplain'],
     correctIndex: 1,
     explanation:
-      'Feste is Olivia\u2019s clown, a \u201clicensed fool\u201d whose role is to speak wittily and sometimes cuttingly to his betters. He moves freely between Olivia\u2019s and Orsino\u2019s households.',
+      'Feste is Olivia\u2019s clown, in her words an \u201callowed fool\u201d (1.5): his role is to speak wittily and sometimes cuttingly to his betters. He moves freely between Olivia\u2019s and Orsino\u2019s households.',
     topic: 'Characters',
     difficulty: 'foundation',
   },
@@ -577,7 +582,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       'Viola and Olivia both mourn brothers believed dead',
       'Orsino\u2019s love is laced with melancholy from the opening line',
-      'Feste\u2019s refrain \u201cyouth\u2019s a stuff will not endure\u201d haunts the revellers',
+      'The last line of Feste\u2019s song, \u201cyouth\u2019s a stuff will not endure\u201d, haunts the revellers',
       'The gulling of Malvolio ends with a vow of revenge, not laughter',
       'The closing song \u201cthe rain it raineth every day\u201d gives the comedy a dying fall',
     ],

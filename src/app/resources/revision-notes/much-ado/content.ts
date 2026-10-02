@@ -6,6 +6,14 @@
  * Conventions: Khaleeji-leaning, no Levantine, English quotations
  * preserved verbatim, character + author + brand + AO codes in Latin.
  * Binary M/F gender policy.
+ *
+ * Corrected by hand 2 October 2026; a re-run of the generator would undo
+ * this. The model broke its own convention twice where it matters most. It
+ * translated Beatrice's "Kill Claudio" in s16 into Arabic, dropping the
+ * closing quotation mark, so Arabic readers were shown words Shakespeare
+ * did not write; the quotation is English again. And it mangled the play's
+ * title in s8, which the Arabic page prints in the rights line, into Latin
+ * and Arabic letters mixed; it is the English title again.
  */
 
 export type Bi = { en: string; ar: string }
@@ -29,7 +37,7 @@ export const STRINGS: Record<string, Bi> = {
   s5: { en: `Elizabethan Women and Marriage`, ar: `نساء العصر الإليزابيثي والزواج` },
   s6: { en: `Courtship Conventions`, ar: `conventions الزواج` },
   s7: { en: `Conventions of Comedy`, ar: `conventions الكوميديا` },
-  s8: { en: `Much Ado About Nothing`, ar: `مUCH ADo Abou NOTHING` },
+  s8: { en: `Much Ado About Nothing`, ar: `Much Ado About Nothing` },
   s9: { en: `Honour Culture and the Masculine Code`, ar: `` },
   s11: { en: `The Tempest`, ar: `العاصفة` },
   s13: { en: `Orlando Furioso`, ar: `أوراندو فوريوسيو` },
@@ -43,7 +51,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s16: {
     en: `Paragraph 3: Love tested - “Kill Claudio”`,
-    ar: `الحب مختبر - "اقتل كلوديو`,
+    ar: `الحب مختبر - “Kill Claudio”`,
   },
   s17: { en: `Paragraph 4: Love and vulnerability`, ar: `الحب والضعف` },
   s18: { en: `Paragraph 1: Hero as the patriarchal ideal`, ar: `الهيرو كالمثال الأبوي المثالي` },

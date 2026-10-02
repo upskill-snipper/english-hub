@@ -87,10 +87,14 @@ const MISTAKES: {
     category: 'Analysis',
     description:
       'Identifying a technique ("this is a metaphor") without explaining its effect. Naming the technique is not analysis -- explaining what it does to the reader and why the writer chose it is analysis.',
+    // Until 2 October 2026 both answers quoted Macbeth's hands as "in blood
+    // steeped", words the play never prints, and the model answer built its
+    // reading on "steeped". The line is Macbeth's in Act 3 Scene 4 of the held
+    // edition (src/data/full-texts/macbeth.ts): "I am in blood / Stepp'd in so far".
     wrong:
-      'Shakespeare uses a simile when he says Macbeth\'s hands are "in blood steeped." This is effective because it is a good use of imagery.',
+      'Shakespeare uses a metaphor when Macbeth says he is "in blood / Stepp\'d in so far". This is effective because it is a good use of imagery.',
     right:
-      'The image of hands "in blood steeped" transforms guilt from an abstract emotion into a physical stain. The past participle "steeped" -- evoking the slow saturation of fabric in dye -- implies that Macbeth\'s culpability is not a momentary act but a permanent condition, one that has seeped into his very identity.',
+      'The image of Macbeth "in blood / Stepp\'d in so far" turns guilt from an abstract emotion into a physical landscape. The verb "Stepp\'d" -- a man who has waded deep into a river of blood -- implies that his culpability is no longer a single act but a journey he cannot reverse: "Returning were as tedious as go o\'er".',
   },
   {
     number: 7,
@@ -155,8 +159,12 @@ const MISTAKES: {
       'Identifying three or four techniques in a single paragraph without showing how they work together. The best analysis explains how techniques combine to create a cumulative effect.',
     wrong:
       'In this extract there is a metaphor, alliteration, and a rhetorical question. These techniques are all effective.',
+    // Until 2 October 2026 this model answer analysed "sinister, silent streets" as
+    // Stevenson's, words Jekyll and Hyde never prints. The sibilance is now that of a
+    // real line, Chapter 5 of the held edition (Project Gutenberg #43,
+    // src/data/full-texts/jekyll-and-hyde.ts).
     right:
-      'The sibilance in "sinister, silent streets" works in concert with the Gothic imagery of fog and shadow to construct a soundscape of threat. The whispered quality of the repeated /s/ phoneme aurally enacts the secrecy that pervades Stevenson\'s London, where respectable surfaces conceal moral corruption.',
+      'The sibilance of "The fog still slept on the wing above the drowned city" works in concert with the personification of the fog to construct a soundscape of threat. The whispered quality of the repeated /s/ phoneme aurally enacts the secrecy that pervades Stevenson\'s London, where respectable surfaces conceal moral corruption.',
   },
   {
     number: 13,

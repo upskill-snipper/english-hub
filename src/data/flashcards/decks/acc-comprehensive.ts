@@ -4,6 +4,16 @@
 // route's First Load JS (~600 KB of card text before a student had opened a
 // single deck). Each deck now lives in its own module so the loader in
 // ../deck-loaders.ts can fetch just this one, on demand.
+//
+// QUOTATIONS CORRECTED (2 October 2026) against the edition the site holds,
+// Project Gutenberg #46 (src/data/full-texts/a-christmas-carol.ts), as read by
+// scripts/check-quotations.mjs. Six were not Dickens's words as printed.
+// Scrooge's Stave One questions are "Are there no prisons?" and "And the Union
+// workhouses?", so the card no longer claims a repetition that only the
+// Spirit's Stave Three echo has. The Spirit's throne of food lists "game,
+// poultry, brawn" between "geese" and "great joints of meat". Fezziwig says
+// "to-night" and "Christmas, Ebenezer!", and "The happiness he gives" is
+// Scrooge's, not the narrator's. The edition prints "grind-stone".
 import type { FlashcardDeck } from '../types'
 
 const deck: FlashcardDeck = {
@@ -17,8 +27,8 @@ const deck: FlashcardDeck = {
     // ===== QUOTATION CARDS (15) =====
     {
       id: 'acc-q1',
-      front: '"Oh! But he was a tight-fisted hand at the grindstone, Scrooge!"',
-      back: `Stave: One (Marley\'s Ghost)\nSpeaker/Narrator: Third-person narrator\nTechnique: Exclamatory, metaphor ("grindstone" implies relentless, mechanical labour for profit), direct address to the reader ("Oh!")\nTheme: Greed and miserliness\n\nAnalysis: Dickens opens his characterisation of Scrooge with a visceral metaphor - the "grindstone" suggests he squeezes every last penny from others with industrial efficiency. The narrator\'s exclamatory tone ("Oh!") creates a conversational, almost gossipy rapport with the reader, inviting us to judge Scrooge from the outset. This sets up the moral framework of the novella: Scrooge embodies everything Dickens wants Victorian society to reject.`,
+      front: '"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!"',
+      back: `Stave: One (Marley\'s Ghost)\nSpeaker/Narrator: Third-person narrator\nTechnique: Exclamatory, metaphor ("grind-stone" implies relentless, mechanical labour for profit), direct address to the reader ("Oh!")\nTheme: Greed and miserliness\n\nAnalysis: Dickens opens his characterisation of Scrooge with a visceral metaphor - the "grind-stone" suggests he squeezes every last penny from others with industrial efficiency. The narrator\'s exclamatory tone ("Oh!") creates a conversational, almost gossipy rapport with the reader, inviting us to judge Scrooge from the outset. This sets up the moral framework of the novella: Scrooge embodies everything Dickens wants Victorian society to reject.`,
     },
     {
       id: 'acc-q2',
@@ -27,8 +37,8 @@ const deck: FlashcardDeck = {
     },
     {
       id: 'acc-q3',
-      front: '"Are there no prisons? Are there no workhouses?"',
-      back: `Stave: One (Marley\'s Ghost)\nSpeaker: Ebenezer Scrooge\nTechnique: Rhetorical questions, repetition, callous tone\nTheme: Social responsibility, poverty, class\n\nAnalysis: Scrooge deflects responsibility for the poor by pointing to institutions that Dickens\'s readers would recognise as cruel and dehumanising. The rhetorical questions imply he believes the poor are already "dealt with." Dickens directly critiques the 1834 Poor Law and the Malthusian attitude that poverty was the fault of the poor. These words return to haunt Scrooge via the Ghost of Christmas Present, turning his own logic against him.`,
+      front: '"Are there no prisons? ... And the Union workhouses?"',
+      back: `Stave: One (Marley\'s Ghost)\nSpeaker: Ebenezer Scrooge\nTechnique: Rhetorical questions, callous tone\nTheme: Social responsibility, poverty, class\n\nAnalysis: Scrooge deflects responsibility for the poor by pointing to institutions that Dickens\'s readers would recognise as cruel and dehumanising. The rhetorical questions imply he believes the poor are already "dealt with." Dickens directly critiques the 1834 Poor Law and the Malthusian attitude that poverty was the fault of the poor. These words return to haunt Scrooge via the Ghost of Christmas Present, turning his own logic against him.`,
     },
     {
       id: 'acc-q4',
@@ -120,7 +130,7 @@ const deck: FlashcardDeck = {
     {
       id: 'acc-c6',
       front: 'Ghost of Christmas Present',
-      back: `Role: The second spirit - a giant, jolly figure who shows Scrooge how others celebrate Christmas now, and the suffering he ignores.\n\nKey Quotes/Description:\n• Sits on a throne of food - "turkeys, geese, great joints of meat, sucking-pigs"\n• Wears a green robe bordered with white fur, carries a glowing torch\n• Reveals Ignorance and Want beneath his robes\n• Ages visibly during the stave - his life spans only one Christmas Day\n\nDevelopment Arc: The Ghost moves from warmth and abundance to a dark warning (Ignorance and Want), mirroring the novella\'s shift from celebration to social critique.\n\nMarker Tip: The Ghost embodies Christmas generosity - his torch sprinkles goodwill on the poor. His ageing represents the fleeting nature of the present moment, urging Scrooge (and the reader) to act NOW. The reveal of Ignorance and Want is Dickens\'s most direct political message - address these social evils or face destruction.`,
+      back: `Role: The second spirit - a giant, jolly figure who shows Scrooge how others celebrate Christmas now, and the suffering he ignores.\n\nKey Quotes/Description:\n• Sits on a throne of food - "turkeys, geese, game, poultry, brawn, great joints of meat, sucking-pigs"\n• Wears a green robe bordered with white fur, carries a glowing torch\n• Reveals Ignorance and Want beneath his robes\n• Ages visibly during the stave - his life spans only one Christmas Day\n\nDevelopment Arc: The Ghost moves from warmth and abundance to a dark warning (Ignorance and Want), mirroring the novella\'s shift from celebration to social critique.\n\nMarker Tip: The Ghost embodies Christmas generosity - his torch sprinkles goodwill on the poor. His ageing represents the fleeting nature of the present moment, urging Scrooge (and the reader) to act NOW. The reveal of Ignorance and Want is Dickens\'s most direct political message - address these social evils or face destruction.`,
     },
     {
       id: 'acc-c7',
@@ -140,7 +150,7 @@ const deck: FlashcardDeck = {
     {
       id: 'acc-c10',
       front: 'Fezziwig',
-      back: `Role: Scrooge\'s former employer during his apprenticeship - a generous, jovial businessman who treats his workers with warmth and stages a joyful Christmas party.\n\nKey Quotes:\n• "Old Fezziwig laid down his pen... No more work tonight. Christmas Eve, Dick. Christmas!"\n• The narrator notes: "The happiness he gives, is quite as great as if it cost a fortune"\n• Scrooge watches and says quietly: "I should like to be able to say a word or two to my clerk just now"\n\nDevelopment Arc: Fezziwig appears only in Stave Two as a memory. He does not change but serves as a model of how employers should treat workers.\n\nMarker Tip: Fezziwig is the anti-Scrooge - proof that capitalism and compassion can coexist. Dickens uses him to show that an employer\'s power extends beyond wages: small acts of generosity create immense happiness. The moment Scrooge recognises his failure to be like Fezziwig to Bob Cratchit is a crucial step in his transformation. Link Fezziwig to Dickens\'s argument that the wealthy have a moral duty to their workers.`,
+      back: `Role: Scrooge\'s former employer during his apprenticeship - a generous, jovial businessman who treats his workers with warmth and stages a joyful Christmas party.\n\nKey Quotes:\n• "Old Fezziwig laid down his pen... No more work to-night. Christmas Eve, Dick. Christmas, Ebenezer!"\n• Scrooge himself says: "The happiness he gives, is quite as great as if it cost a fortune"\n• Scrooge watches and says quietly: "I should like to be able to say a word or two to my clerk just now"\n\nDevelopment Arc: Fezziwig appears only in Stave Two as a memory. He does not change but serves as a model of how employers should treat workers.\n\nMarker Tip: Fezziwig is the anti-Scrooge - proof that capitalism and compassion can coexist. Dickens uses him to show that an employer\'s power extends beyond wages: small acts of generosity create immense happiness. The moment Scrooge recognises his failure to be like Fezziwig to Bob Cratchit is a crucial step in his transformation. Link Fezziwig to Dickens\'s argument that the wealthy have a moral duty to their workers.`,
     },
 
     // ===== THEME CARDS (8) =====
@@ -152,7 +162,7 @@ const deck: FlashcardDeck = {
     {
       id: 'acc-t2',
       front: 'Theme: Social Responsibility',
-      back: `Definition: The duty of the wealthy and powerful to care for the poor and vulnerable in society.\n\nKey Moments:\n• Scrooge refuses the charity collectors and suggests the poor go to workhouses (Stave 1)\n• Marley\'s ghost declares "Mankind was my business" (Stave 1)\n• The Ghost of Christmas Present reveals Ignorance and Want (Stave 3)\n• Scrooge raises Bob\'s salary and helps his family (Stave 5)\n\nKey Quotes:\n• "Are there no prisons? Are there no workhouses?" - callous dismissal\n• "Mankind was my business" - moral duty recognised too late\n• "This boy is Ignorance. This girl is Want." - allegorical warning\n\nHow Dickens Presents It: Dickens wrote A Christmas Carol partly as a response to a parliamentary report on child labour. He uses the novella as a direct appeal to the wealthy middle classes, arguing that ignoring poverty is both morally wrong and socially dangerous (Ignorance and Want will destroy society). Scrooge\'s transformation models the change Dickens wants from his readers - personal generosity as a first step toward social justice.`,
+      back: `Definition: The duty of the wealthy and powerful to care for the poor and vulnerable in society.\n\nKey Moments:\n• Scrooge refuses the charity collectors and suggests the poor go to workhouses (Stave 1)\n• Marley\'s ghost declares "Mankind was my business" (Stave 1)\n• The Ghost of Christmas Present reveals Ignorance and Want (Stave 3)\n• Scrooge raises Bob\'s salary and helps his family (Stave 5)\n\nKey Quotes:\n• "Are there no prisons? ... And the Union workhouses?" - callous dismissal\n• "Mankind was my business" - moral duty recognised too late\n• "This boy is Ignorance. This girl is Want." - allegorical warning\n\nHow Dickens Presents It: Dickens wrote A Christmas Carol partly as a response to a parliamentary report on child labour. He uses the novella as a direct appeal to the wealthy middle classes, arguing that ignoring poverty is both morally wrong and socially dangerous (Ignorance and Want will destroy society). Scrooge\'s transformation models the change Dickens wants from his readers - personal generosity as a first step toward social justice.`,
     },
     {
       id: 'acc-t3',
@@ -189,7 +199,7 @@ const deck: FlashcardDeck = {
     {
       id: 'acc-cx1',
       front: 'Context: Victorian Workhouses',
-      back: `Key Facts:\n• The 1834 Poor Law Amendment Act established workhouses as the main form of relief for the poor.\n• Conditions were deliberately harsh to deter people from seeking help - families were separated, food was minimal, work was gruelling.\n• They were seen as shameful; entering one meant you had "failed."\n• Many Victorians believed poverty was caused by laziness, not systemic injustice.\n\nConnection to the Novella:\n• Scrooge refers to workhouses when asked to donate: "Are there no prisons? Are there no workhouses?"\n• He uses their existence to justify his refusal to help - the state has "provided" for the poor.\n• Dickens directly attacks this attitude: the charity collectors reply that many "would rather die" than enter workhouses.\n\nUseful for AO3: Shows Dickens writing to challenge the dominant ideology of his time. His contemporary readers would have recognised Scrooge\'s attitude as common among the wealthy. Dickens argues that workhouses are not charity - they are punishment disguised as help. Link to Dickens\'s own childhood experience of poverty when his father was imprisoned for debt.`,
+      back: `Key Facts:\n• The 1834 Poor Law Amendment Act established workhouses as the main form of relief for the poor.\n• Conditions were deliberately harsh to deter people from seeking help - families were separated, food was minimal, work was gruelling.\n• They were seen as shameful; entering one meant you had "failed."\n• Many Victorians believed poverty was caused by laziness, not systemic injustice.\n\nConnection to the Novella:\n• Scrooge refers to workhouses when asked to donate: "Are there no prisons? ... And the Union workhouses?"\n• He uses their existence to justify his refusal to help - the state has "provided" for the poor.\n• Dickens directly attacks this attitude: the charity collectors reply that many "would rather die" than enter workhouses.\n\nUseful for AO3: Shows Dickens writing to challenge the dominant ideology of his time. His contemporary readers would have recognised Scrooge\'s attitude as common among the wealthy. Dickens argues that workhouses are not charity - they are punishment disguised as help. Link to Dickens\'s own childhood experience of poverty when his father was imprisoned for debt.`,
     },
     {
       id: 'acc-cx2',

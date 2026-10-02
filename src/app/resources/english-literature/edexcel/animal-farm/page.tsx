@@ -28,6 +28,24 @@ export const metadata: Metadata = {
 
 /* ─── Data ───────────────────────────────────────────────────── */
 
+/**
+ * QUOTATIONS CORRECTED 2 October 2026. No test read this page, and
+ * scripts/check-quotations.mjs found six of its quotations of Animal Farm
+ * wrong; reading the rest by hand found five more. Two lines were in no
+ * held text: Benjamin's cry at the van ("The van was taking Boxer to the
+ * horse slaughterer's!", twice), now his real "They are taking Boxer to the
+ * knacker's!", and "Benjamin... noticed that there was no change", now the
+ * Chapter 10 line about things never being much better or much worse.
+ * Others had dropped words with no ellipsis ("Snowball, who had studied",
+ * "As for the pigs, they could already read", the bracket in the milk and
+ * apples sentence), and Squealer's "brainworkers" was split into two words
+ * in three places. The milk and apples sentence is the narrator's, not
+ * Squealer's, and "Surely, comrades, you do not want Jones back?" is in
+ * Chapter 5, not Chapter 3. Each corrected quotation was cut by script from
+ * the held edition, Project Gutenberg Australia's transcription
+ * (src/data/full-texts/animal-farm.ts), and the rights notice now says the
+ * page quotes it.
+ */
 const PLOT_SUMMARY = [
   {
     chapter: 'Chapters 1-2',
@@ -39,7 +57,7 @@ const PLOT_SUMMARY = [
     chapter: 'Chapters 3-4',
     title: 'Early Success and the Battle of the Cowshed',
     summary:
-      "The animals work together and the harvest is the best the farm has ever seen. The pigs take on a supervisory role, claiming they need the milk and apples for themselves because they are 'brain workers.' Snowball organises committees and teaches the animals to read. Napoleon takes no interest in committees but quietly takes nine puppies to educate privately. When Jones and neighbouring farmers attempt to recapture the farm, the animals fight them off at the Battle of the Cowshed. Snowball is hailed as a hero.",
+      "The animals work together and the harvest is the best the farm has ever seen. The pigs take on a supervisory role, claiming they need the milk and apples for themselves because they are 'brainworkers.' Snowball organises committees and teaches the animals to read. Napoleon takes no interest in committees but quietly takes nine puppies to educate privately. When Jones and neighbouring farmers attempt to recapture the farm, the animals fight them off at the Battle of the Cowshed. Snowball is hailed as a hero.",
   },
   {
     chapter: 'Chapters 5-6',
@@ -80,7 +98,7 @@ const CHARACTERS = [
     description:
       'An intelligent, eloquent pig who genuinely wants to improve the animals\u0027 lives. He organises committees, teaches literacy, and designs the windmill. He is brave at the Battle of the Cowshed. After Napoleon expels him using the dogs, Snowball becomes a scapegoat - blamed for everything that goes wrong on the farm. Squealer rewrites history to make Snowball a villain and traitor. He represents the idealistic revolutionary who is betrayed and erased by the dictator.',
     key_quotes: [
-      '"Snowball had studied an old book of Julius Caesar\'s campaigns"',
+      '"Snowball, who had studied an old book of Julius Caesar\'s campaigns which he had found in the farmhouse, was in charge of the defensive operations"',
       '"Snowball was a more vivacious pig than Napoleon, quicker in speech and more inventive"',
       '"He fought bravely at the Battle of the Cowshed"',
     ],
@@ -106,7 +124,7 @@ const CHARACTERS = [
       '"I will work harder"',
       '"Napoleon is always right"',
       '"His two slogans ... seemed to him a sufficient answer to all problems"',
-      '"The van was taking Boxer to the horse slaughterer\'s!"',
+      '"They are taking Boxer to the knacker\'s!"',
     ],
   },
   {
@@ -128,7 +146,7 @@ const CHARACTERS = [
     key_quotes: [
       '"Donkeys live a long time. None of you has ever seen a dead donkey"',
       '"Life would go on as it had always gone on - that is, badly"',
-      '"Benjamin... noticed that there was no change"',
+      '"things never had been, nor ever could be much better or much worse"',
     ],
   },
   {
@@ -172,9 +190,9 @@ const THEMES = [
   {
     theme: 'Class and Inequality',
     description:
-      "The Rebellion is fought for equality, but a new class system quickly emerges. The pigs claim special privileges - first the milk and apples, then the farmhouse, beds, alcohol, and eventually human clothing. They justify their superiority by calling themselves 'brain workers.' The other animals work harder for less food while the pigs grow fat. Orwell shows that revolutions often replace one ruling class with another, especially when the working class (Boxer, the sheep) are too loyal, too exhausted, or too uneducated to challenge the new elite.",
+      "The Rebellion is fought for equality, but a new class system quickly emerges. The pigs claim special privileges - first the milk and apples, then the farmhouse, beds, alcohol, and eventually human clothing. They justify their superiority by calling themselves 'brainworkers.' The other animals work harder for less food while the pigs grow fat. Orwell shows that revolutions often replace one ruling class with another, especially when the working class (Boxer, the sheep) are too loyal, too exhausted, or too uneducated to challenge the new elite.",
     quotes: [
-      '"The milk and the windfall apples should be reserved for the pigs alone"',
+      '"The milk and the windfall apples (and also the main crop of apples when they ripened) should be reserved for the pigs alone"',
       '"The pigs did not actually work, but directed and supervised the others"',
       '"All animals are equal, but some animals are more equal than others"',
     ],
@@ -184,7 +202,7 @@ const THEMES = [
     description:
       "The pigs maintain power partly because the other animals lack education. The pigs can read and write fluently; most other animals cannot read beyond a few letters. This means they cannot detect changes to the Commandments or challenge Squealer\u0027s lies. Boxer responds to every problem with 'I will work harder' and 'Napoleon is always right' - hard work and blind faith replace critical thinking. Orwell argues that an uneducated population is vulnerable to exploitation and that education is essential to freedom.",
     quotes: [
-      '"The pigs could already read and write perfectly"',
+      '"As for the pigs, they could already read and write perfectly"',
       '"Benjamin could read as well as any pig, but never exercised his faculty"',
       '"I will work harder"',
       '"Napoleon is always right"',
@@ -252,9 +270,9 @@ const KEY_QUOTES = [
   },
   {
     quote: '"Surely, comrades, you do not want Jones back?"',
-    speaker: 'Squealer (Chapter 3)',
+    speaker: 'Squealer (Chapter 5)',
     significance:
-      "Squealer's most powerful propaganda technique - the appeal to fear. By invoking the threat of Jones's return, he silences all criticism of the pigs' privileges.",
+      "Squealer's most powerful propaganda technique - the appeal to fear. By invoking the threat of Jones's return after Snowball's expulsion, he persuades the animals that the Sunday debates must stop; in Chapter 3 the same threat defended the pigs' milk and apples.",
   },
   {
     quote: '"He could turn black into white"',
@@ -275,10 +293,11 @@ const KEY_QUOTES = [
       "Napoleon adopts Jones's instrument of oppression. The whip symbolises the complete reversal of the revolution - the liberator has become the oppressor.",
   },
   {
-    quote: '"The milk and the windfall apples should be reserved for the pigs alone"',
-    speaker: 'Squealer (Chapter 3)',
+    quote:
+      '"The milk and the windfall apples (and also the main crop of apples when they ripened) should be reserved for the pigs alone"',
+    speaker: 'Narrator (Chapter 3)',
     significance:
-      "The first act of inequality after the Rebellion. Justified by Squealer as necessary for 'brain workers,' it sets the precedent for every future privilege the pigs take.",
+      "The first act of inequality after the Rebellion. Justified by Squealer as necessary for 'brainworkers,' it sets the precedent for every future privilege the pigs take.",
   },
   {
     quote: '"Donkeys live a long time. None of you has ever seen a dead donkey"',
@@ -287,7 +306,7 @@ const KEY_QUOTES = [
       "Benjamin's cynical refusal to engage. He has seen enough to know that revolutions fail, but his passivity makes him complicit in the pigs' tyranny.",
   },
   {
-    quote: '"The van was taking Boxer to the horse slaughterer\'s!"',
+    quote: '"They are taking Boxer to the knacker\'s!"',
     speaker: 'Benjamin (Chapter 9)',
     significance:
       "Benjamin finally speaks out - but too late. The most emotionally devastating moment in the novella. Boxer's loyalty is repaid with betrayal and death.",
@@ -809,7 +828,9 @@ export default function AnimalFarmPage() {
         short fair-dealing extracts; longer engagement should use a school-licensed edition. Short
         quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents
         Act 1988 (s.30) for the purpose of criticism, review and educational study.{' '}
-        <em>Animal Farm</em> by George Orwell is published by Penguin Books.
+        <em>Animal Farm</em> by George Orwell is published by Penguin Books. Quotations follow the
+        wording of the text the site&apos;s reader prints, Project Gutenberg Australia&apos;s
+        transcription; a printed edition may differ in punctuation.
       </p>
     </>
   )

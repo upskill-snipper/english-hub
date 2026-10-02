@@ -32,10 +32,14 @@ const QUOTE_BANK: QuoteEntry[] = [
   { quote: 'They will be taught it in fire and blood and anguish.', text: 'An Inspector Calls' },
   { quote: "The young ones. They're more impressionable.", text: 'An Inspector Calls' },
   { quote: 'We are all responsible for each other.', text: 'An Inspector Calls' },
-  // A Christmas Carol
-  { quote: 'Are there no prisons? Are there no workhouses?', text: 'A Christmas Carol' },
+  // A Christmas Carol. Corrected 2 October 2026 against the held edition (Project
+  // Gutenberg #46, src/data/full-texts/a-christmas-carol.ts). Scrooge's Stave One
+  // questions are "Are there no prisons?" and "And the Union workhouses?"; "Are
+  // there no workhouses?" is the Spirit's, in Stave Three. The chain speech had
+  // lost its speech tag with no ellipsis, and the edition prints "grind-stone".
+  { quote: 'Are there no prisons? ... And the Union workhouses?', text: 'A Christmas Carol' },
   {
-    quote: 'I wear the chain I forged in life. I made it link by link',
+    quote: 'I wear the chain I forged in life... I made it link by link',
     text: 'A Christmas Carol',
   },
   {
@@ -48,8 +52,13 @@ const QUOTE_BANK: QuoteEntry[] = [
     text: 'A Christmas Carol',
   },
   // Jekyll & Hyde
+  // Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+  // src/data/full-texts/jekyll-and-hyde.ts): Utterson's pun runs across a speech tag,
+  // which the ellipsis marks, and two later Jekyll and Hyde lines had lost "as I have
+  // said" and "as we meet them" with no ellipsis. The second is restored; the first is
+  // marked as cut, because restoring it would break this page's fifteen-word limit.
   { quote: 'Man is not truly one, but truly two.', text: 'Jekyll and Hyde' },
-  { quote: 'If he be Mr Hyde, I shall be Mr Seek.', text: 'Jekyll and Hyde' },
+  { quote: 'If he be Mr Hyde... I shall be Mr Seek.', text: 'Jekyll and Hyde' },
   { quote: "Satan's signature upon a face.", text: 'Jekyll and Hyde' },
   { quote: 'I felt younger, lighter, happier in body.', text: 'Jekyll and Hyde' },
   // Romeo & Juliet
@@ -104,7 +113,7 @@ const QUOTE_BANK: QuoteEntry[] = [
   { quote: 'I dare do all that may become a man; who dares do more is none.', text: 'Macbeth' },
   { quote: 'By the pricking of my thumbs, something wicked this way comes.', text: 'Macbeth' },
   {
-    quote: "Yet do I fear thy nature; ... too full o' the milk of human kindness.",
+    quote: "Yet do I fear thy nature; ... too full o' th' milk of human kindness.",
     text: 'Macbeth',
   },
   { quote: "What's done cannot be undone.", text: 'Macbeth' },
@@ -115,7 +124,7 @@ const QUOTE_BANK: QuoteEntry[] = [
     text: 'Macbeth',
   },
   {
-    quote: 'I am in blood stepped in so far',
+    quote: "I am in blood stepp'd in so far",
     text: 'Macbeth',
   },
   { quote: 'So foul and fair a day I have not seen.', text: 'Macbeth' },
@@ -153,7 +162,7 @@ const QUOTE_BANK: QuoteEntry[] = [
 
   // ── Additional A Christmas Carol quotes (public domain) ────────────────────
   {
-    quote: 'Oh! But he was a tight-fisted hand at the grindstone, Scrooge!',
+    quote: 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!',
     text: 'A Christmas Carol',
   },
   { quote: 'Bah! Humbug!', text: 'A Christmas Carol' },
@@ -182,14 +191,17 @@ const QUOTE_BANK: QuoteEntry[] = [
     text: 'Jekyll and Hyde',
   },
   {
-    quote: 'The pleasures which I made haste to seek in my disguise were undignified.',
+    quote: 'The pleasures which I made haste to seek in my disguise were... undignified.',
     text: 'Jekyll and Hyde',
   },
   {
     quote: 'He had always been known for charities; he was now no less distinguished for religion.',
     text: 'Jekyll and Hyde',
   },
-  { quote: 'All human beings are commingled out of good and evil.', text: 'Jekyll and Hyde' },
+  {
+    quote: 'All human beings, as we meet them, are commingled out of good and evil.',
+    text: 'Jekyll and Hyde',
+  },
   { quote: 'The moment I choose, I can be rid of Mr Hyde.', text: 'Jekyll and Hyde' },
   {
     quote: 'He is not easy to describe. There is something wrong with his appearance.',

@@ -659,9 +659,15 @@ export const wjecGuide: BoardExamGuide = {
       ],
       quotations: [
         {
-          quote: 'Are there no prisons? Are there no workhouses?',
+          // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+          // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are
+          // there no prisons?" and "And the Union workhouses?", with the gentleman's answer
+          // between. "Are there no workhouses?" is the Spirit's, turning his words on him in
+          // Stave Three. His own questions do not repeat "Are there no", so the analysis no
+          // longer says they do.
+          quote: 'Are there no prisons? ... And the Union workhouses?',
           analysis:
-            'Scrooge\'s rhetorical questions echo the utilitarian philosophy Dickens despised. The repetition of "Are there no" reveals Scrooge\'s dismissive contempt for the poor, and Dickens positions the reader to reject this callous attitude.',
+            "Scrooge's rhetorical questions echo the utilitarian philosophy Dickens despised. The bare, clipped questions reveal Scrooge's dismissive contempt for the poor, and Dickens positions the reader to reject this callous attitude.",
         },
         {
           quote: 'Mankind was my business',
@@ -714,7 +720,7 @@ export const wjecGuide: BoardExamGuide = {
       ],
       quotations: [
         {
-          quote: "Look like th' innocent flower, / But be the serpent under 't",
+          quote: "Look like the innocent flower, / But be the serpent under 't",
           analysis:
             'Lady Macbeth\'s imperative to Macbeth encapsulates the theme of appearance versus reality. The biblical allusion to the serpent in Eden positions the Macbeths as agents of original sin, while the juxtaposition of "flower" and "serpent" mirrors the play\'s pervasive moral inversions.',
         },

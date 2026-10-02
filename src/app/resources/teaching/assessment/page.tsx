@@ -297,8 +297,12 @@ const QUIZ_TOPICS: Record<string, QuizQuestion[]> = {
       ],
       correctIndex: 1,
     },
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+    // src/data/full-texts/jekyll-and-hyde.ts): as Hyde, Jekyll can "spring headlong
+    // into the sea of liberty"; the phrase the question used is not in the novel.
     {
-      question: "Jekyll describes Hyde as his 'full sea of liberty'. This means Hyde represents:",
+      question:
+        "As Hyde, Jekyll can 'spring headlong into the sea of liberty'. This means Hyde represents:",
       options: [
         "Jekyll's wealth",
         "Jekyll's suppressed desires freed from moral restraint",

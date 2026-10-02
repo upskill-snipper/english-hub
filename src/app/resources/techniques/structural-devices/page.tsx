@@ -106,7 +106,12 @@ const TECHNIQUES: Technique[] = [
     category: 'Sentence Types',
     definition:
       'A sentence that expresses strong emotion, surprise, or emphasis, ending with an exclamation mark. It conveys feeling rather than simply stating a fact.',
-    example: '"What a piece of work is a man!"',
+    // Until 2 October 2026 this was "What a piece of work is a man!", which is
+    // not the held edition's line (src/data/full-texts/hamlet.ts prints "is
+    // man", followed by a comma) and so, as the site prints Hamlet, not an
+    // exclamation either. The line now is an exclamation in that edition, cut
+    // from it word for word.
+    example: '"O what a rogue and peasant slave am I!"',
     exampleSource: 'Shakespeare, Hamlet',
     effect:
       'Conveys intensity of emotion -- shock, anger, joy, or disbelief. In persuasive writing, it can express outrage or passion to engage the reader emotionally.',

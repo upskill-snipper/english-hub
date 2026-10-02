@@ -1,5 +1,17 @@
 import type { LessonPlan } from '../../types'
 
+/**
+ * A Christmas Carol quotations corrected on 2 October 2026 against the edition
+ * the site holds (Project Gutenberg #46, src/data/full-texts/a-christmas-carol.ts),
+ * as read by scripts/check-quotations.mjs. Seven were not Dickens's words as
+ * printed. Scrooge is avoided by "the blind men's dogs", plural, where two
+ * lessons had "the blindman's dog" (whose apostrophe was also escaped twice,
+ * so the page printed a backslash). The Spirit says "Beware them both, and
+ * all of their degree", which had been cut with no ellipsis. Scrooge's Stave
+ * One questions are "Are there no prisons?" and "And the Union workhouses?":
+ * "Are there no workhouses?" is the Spirit's, in Stave Three. The edition
+ * prints "grind-stone".
+ */
 export const y9Term1Lessons: LessonPlan[] = [
   // ── Lesson 1: Victorian England and Dickens's Social Message ─────────────
   {
@@ -196,7 +208,7 @@ export const y9Term1Lessons: LessonPlan[] = [
       title: 'First Impressions -- What Makes a Villain?',
       duration: '8 minutes',
       instructions:
-        "Display the famous description of Scrooge from Stave 1 on the board: 'Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner!' Students read it twice -- once silently, once read aloud by teacher with emphasis. Ask: how many adjectives or verbs describe Scrooge? What do they have in common? What single word would students use to sum him up? Take responses and introduce the term 'accumulation'. Ask: why does Dickens pile up so many words here rather than choosing just one?",
+        "Display the famous description of Scrooge from Stave 1 on the board: 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!' Students read it twice -- once silently, once read aloud by teacher with emphasis. Ask: how many adjectives or verbs describe Scrooge? What do they have in common? What single word would students use to sum him up? Take responses and introduce the term 'accumulation'. Ask: why does Dickens pile up so many words here rather than choosing just one?",
       differentiation: {
         support:
           'Provide a vocabulary glossary for the quotation with definitions of covetous, grasping, and wrenching.',
@@ -215,7 +227,7 @@ export const y9Term1Lessons: LessonPlan[] = [
         title: 'Close Reading -- Cold Imagery and Extended Metaphor',
         duration: '22 minutes',
         instructions:
-          "Direct students to the extended passage introducing Scrooge in Stave 1, from 'Oh! But he was a tight-fisted hand...' to '...even the blindman\\'s dog appeared to know him.' Students read in pairs and annotate for: (a) all references to cold, frost, or ice; (b) all similes and metaphors; (c) any moments where Dickens's narrative voice seems to be mocking Scrooge. Take whole-class feedback. Teacher models moving from quotation to technique to effect: 'The metaphor of Scrooge as a man who carried his own cold with him suggests that his miserliness is not simply a financial attitude but a fundamental coldness of character -- he actively chills everything around him.' Students then annotate three more quotations independently using this structure.",
+          "Direct students to the extended passage introducing Scrooge in Stave 1, from 'Oh! But he was a tight-fisted hand...' to '...even the blind men's dogs appeared to know him.' Students read in pairs and annotate for: (a) all references to cold, frost, or ice; (b) all similes and metaphors; (c) any moments where Dickens's narrative voice seems to be mocking Scrooge. Take whole-class feedback. Teacher models moving from quotation to technique to effect: 'The metaphor of Scrooge as a man who carried his own cold with him suggests that his miserliness is not simply a financial attitude but a fundamental coldness of character -- he actively chills everything around him.' Students then annotate three more quotations independently using this structure.",
         differentiation: {
           support:
             'Provide a pre-highlighted extract with three quotations already marked and one completed annotation as a model.',
@@ -293,14 +305,14 @@ export const y9Term1Lessons: LessonPlan[] = [
           "How does Dickens's narrative voice in Stave 1 shape the reader's attitude towards Scrooge?",
         lines: 4,
         modelAnswer:
-          "Dickens's narrative voice is intrusive and opinionated, directly guiding the reader's response. The narrator addresses the reader conversationally -- 'Oh! But he was a tight-fisted hand at the grindstone, Scrooge!' -- using exclamation and direct address to create a sense of shared moral judgement. This satirical tone invites the reader to join the narrator in condemning Scrooge, ensuring that even readers who might sympathise with self-reliance feel the weight of Dickens's moral disapproval.",
+          "Dickens's narrative voice is intrusive and opinionated, directly guiding the reader's response. The narrator addresses the reader conversationally -- 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!' -- using exclamation and direct address to create a sense of shared moral judgement. This satirical tone invites the reader to join the narrator in condemning Scrooge, ensuring that even readers who might sympathise with self-reliance feel the weight of Dickens's moral disapproval.",
         marks: 4,
       },
       {
         question: 'Is Scrooge entirely unsympathetic in Stave 1? Give evidence for your view.',
         lines: 5,
         modelAnswer:
-          "While Scrooge is overwhelmingly presented as a villain in Stave 1, there are early hints that he was not always so. The Ghost of Christmas Past later reveals a warmer, younger Scrooge, and even in Stave 1 the narrator notes that Scrooge was once apprenticed to the jovial Fezziwig. However, within Stave 1 itself, Scrooge's refusal to donate to charity and his contempt for the poor ('Are there no prisons? Are there no workhouses?') make it difficult to feel sympathy. Dickens deliberately withholds the backstory to ensure the reader condemns Scrooge before being invited to understand him.",
+          "While Scrooge is overwhelmingly presented as a villain in Stave 1, there are early hints that he was not always so. The Ghost of Christmas Past later reveals a warmer, younger Scrooge, and even in Stave 1 the narrator notes that Scrooge was once apprenticed to the jovial Fezziwig. However, within Stave 1 itself, Scrooge's refusal to donate to charity and his contempt for the poor ('Are there no prisons? ... And the Union workhouses?') make it difficult to feel sympathy. Dickens deliberately withholds the backstory to ensure the reader condemns Scrooge before being invited to understand him.",
         marks: 5,
       },
     ],
@@ -547,7 +559,7 @@ export const y9Term1Lessons: LessonPlan[] = [
         title: 'Ignorance and Want -- Allegorical Analysis',
         duration: '20 minutes',
         instructions:
-          "Read aloud the passage in which the Ghost of Christmas Present reveals two emaciated children from beneath its robe: 'This boy is Ignorance. This girl is Want.' Teacher explains the concept of allegory -- a story or image that represents an abstract idea. Students discuss: what does Ignorance represent? What does Want represent? Why does Dickens make them children? Why does the Ghost say 'Beware them both, but most of all beware this boy'? Students write three analytical sentences exploring the symbolism. Teacher then explains the contextual link: Ignorance refers to the lack of education for the poor, which Dickens saw as a greater long-term danger even than material poverty. Students add a contextual sentence to their analysis.",
+          "Read aloud the passage in which the Ghost of Christmas Present reveals two emaciated children from beneath its robe: 'This boy is Ignorance. This girl is Want.' Teacher explains the concept of allegory -- a story or image that represents an abstract idea. Students discuss: what does Ignorance represent? What does Want represent? Why does Dickens make them children? Why does the Ghost say 'Beware them both, and all of their degree, but most of all beware this boy'? Students write three analytical sentences exploring the symbolism. Teacher then explains the contextual link: Ignorance refers to the lack of education for the poor, which Dickens saw as a greater long-term danger even than material poverty. Students add a contextual sentence to their analysis.",
         differentiation: {
           support:
             "Provide the allegory definition and a sentence frame: 'The child Ignorance represents... Dickens chooses to present this as a child because...'",
@@ -1159,7 +1171,7 @@ export const y9Term1Lessons: LessonPlan[] = [
         title: "Analysing Dickens's Narrative Voice",
         duration: '20 minutes',
         instructions:
-          "Direct students to three short passages where Dickens's narrator speaks directly to the reader or makes an editorial comment: (1) 'Oh! But he was a tight-fisted hand at the grindstone, Scrooge!'; (2) 'You will therefore permit me to repeat, emphatically, that Marley was as dead as a door-nail'; (3) the narrator's aside about Scrooge being 'as good a friend, as good a master, and as good a man, as the good old city knew' at the close of the novella. Students annotate each passage for: what the narrator says, how they say it (technique), and why (effect on reader / authorial purpose). Take whole-class feedback. Teacher models: 'The direct address in passage 1 draws the reader into the narrator\\'s moral position, making us feel part of a shared judgement rather than passive observers -- Dickens is building a community of moral sympathy.'",
+          "Direct students to three short passages where Dickens's narrator speaks directly to the reader or makes an editorial comment: (1) 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!'; (2) 'You will therefore permit me to repeat, emphatically, that Marley was as dead as a door-nail'; (3) the narrator's aside about Scrooge being 'as good a friend, as good a master, and as good a man, as the good old city knew' at the close of the novella. Students annotate each passage for: what the narrator says, how they say it (technique), and why (effect on reader / authorial purpose). Take whole-class feedback. Teacher models: 'The direct address in passage 1 draws the reader into the narrator\\'s moral position, making us feel part of a shared judgement rather than passive observers -- Dickens is building a community of moral sympathy.'",
         differentiation: {
           support:
             'Provide a printed sheet with the three passages and a partially completed annotation for passage 1.',
@@ -1213,7 +1225,7 @@ export const y9Term1Lessons: LessonPlan[] = [
           'What is an intrusive narrator? How does Dickens use this narrative technique in A Christmas Carol?',
         lines: 5,
         modelAnswer:
-          "An intrusive narrator is one who steps outside the story to comment directly on events, characters, or the reader's expected responses. Dickens uses an intrusive narrator throughout A Christmas Carol -- most strikingly in the opening pages, where the narrator addresses the reader directly ('You will therefore permit me to repeat, emphatically...') and editorialises about Scrooge's character ('Oh! But he was a tight-fisted hand at the grindstone, Scrooge!'). This technique positions the reader within the narrator's moral framework, ensuring that Dickens's judgements about wealth, poverty, and generosity are absorbed as shared common sense rather than argued positions.",
+          "An intrusive narrator is one who steps outside the story to comment directly on events, characters, or the reader's expected responses. Dickens uses an intrusive narrator throughout A Christmas Carol -- most strikingly in the opening pages, where the narrator addresses the reader directly ('You will therefore permit me to repeat, emphatically...') and editorialises about Scrooge's character ('Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!'). This technique positions the reader within the narrator's moral framework, ensuring that Dickens's judgements about wealth, poverty, and generosity are absorbed as shared common sense rather than argued positions.",
         marks: 5,
       },
       {
@@ -1229,7 +1241,7 @@ export const y9Term1Lessons: LessonPlan[] = [
           'How does Dickens use hyperbole and humour in A Christmas Carol? What effect does this have on the reader?',
         lines: 4,
         modelAnswer:
-          "Dickens frequently employs comic hyperbole to satirise Scrooge's excesses and to maintain the novella's tone as a festive fable rather than a bleak social tract. Describing Scrooge as a man the 'blindman\\'s dog' would avoid creates an image so extreme it tips from condemnation into comedy -- even the world's most indifferent creature has the sense to avoid him. This humour allows readers to simultaneously condemn Scrooge and enjoy the entertainment of his exaggerated villainy, making the moral medicine of the novella more palatable. Dickens understood that humour increases a text's reach and persuasive power.",
+          "Dickens frequently employs comic hyperbole to satirise Scrooge's excesses and to maintain the novella's tone as a festive fable rather than a bleak social tract. Describing Scrooge as a man 'the blind men's dogs' would avoid creates an image so extreme it tips from condemnation into comedy -- even the world's most indifferent creature has the sense to avoid him. This humour allows readers to simultaneously condemn Scrooge and enjoy the entertainment of his exaggerated villainy, making the moral medicine of the novella more palatable. Dickens understood that humour increases a text's reach and persuasive power.",
         marks: 4,
       },
       {

@@ -638,7 +638,7 @@ export const teacherPowerpoints: TeacherPresentation[] = [
           "Macbeth sees Banquo's ghost - only he sees it",
           "In front of his thegns (nobles), he's visibly disturbed",
           'His lack of control reveals his guilt and instability',
-          "Quote: 'I am in blood stepped in so far that should I wade no more'",
+          "Quote: 'I am in blood stepp'd in so far that should I wade no more'",
           'The feast, meant to secure his position, becomes a display of his weakness',
         ],
         teacherNotes:
@@ -664,7 +664,7 @@ export const teacherPowerpoints: TeacherPresentation[] = [
         title: "The Witches' Second Prophecy: False Comfort",
         bulletPoints: [
           "'None of woman born shall harm Macbeth'",
-          "'Macbeth shall never vanquished be until Great Birnam Wood to Dunsinane hill shall come'",
+          "'Macbeth shall never vanquish'd be, until / Great Birnam wood to high Dunsinane hill / Shall come'",
           'These are literally true but misleadingly interpreted',
           "Macbeth's ambition makes him arrogant - he ignores hidden meanings",
           "The prophecies drive him to more murder (Macduff's family)",
@@ -714,11 +714,16 @@ export const teacherPowerpoints: TeacherPresentation[] = [
       {
         slideNumber: 13,
         title: 'Masculine Identity & Ambition',
+        // Until 2 October 2026 two of these lines were not in the play at all
+        // (Macbeth's "I have no sons", Macduff's "I'll not fight with a man that
+        // has no children"), and "Are you a man?", which Lady Macbeth says at the
+        // banquet in 3.4, stood for her goading him to murder in 1.7. Each is now
+        // the held edition's line (src/data/full-texts/macbeth.ts) for that point.
         bulletPoints: [
-          "Lady Macbeth: 'Are you a man?' - uses masculinity to drive him to murder",
+          "Lady Macbeth: 'When you durst do it, then you were a man' - uses masculinity to drive him to murder",
           'Macbeth equates manhood with aggression and ambition',
-          "Later: 'I have no sons' - his ambition leaves him with no legacy",
-          "Macduff: 'I'll not fight with a man that has no children' - true manhood is about protecting",
+          "Later: 'No son of mine succeeding' - his ambition leaves him with no legacy",
+          "Macduff: 'But I must also feel it as a man' - true manhood includes grief",
           'Shakespeare questions how ambition distorts masculine identity',
         ],
         teacherNotes:
@@ -754,6 +759,14 @@ export const teacherPowerpoints: TeacherPresentation[] = [
       },
     ],
   },
+  // Quotations corrected on 2 October 2026 against the edition the site holds
+  // (Project Gutenberg #46, src/data/full-texts/a-christmas-carol.ts), as read by
+  // scripts/check-quotations.mjs. "Can I change these shadows?" is in no edition:
+  // Scrooge begs "Assure me that I yet may change these shadows". The Ghost says
+  // the shadows "remain unaltered by the Future", not "unchanged"; Scrooge asks
+  // about "shadows of things that May be, only", with no "the"; and the speech
+  // tag inside "If they would rather die" wants an ellipsis. Slide 8 also said
+  // Tiny Tim was "buried in a neglected grave": the neglected grave is Scrooge's.
   {
     id: 'lit-christmas-carol-responsibility',
     title: 'A Christmas Carol: Social Responsibility',
@@ -787,7 +800,7 @@ export const teacherPowerpoints: TeacherPresentation[] = [
         title: 'Scrooge: The Epitome of Social Irresponsibility',
         bulletPoints: [
           'Scrooge represents capitalist self-interest taken to its extreme',
-          "Quote: 'If they would rather die, they had better do it, and decrease the surplus population'",
+          "Quote: 'If they would rather die... they had better do it, and decrease the surplus population'",
           "He rejects responsibility for the poor: 'It's not my business'",
           'He hoards wealth while workers starve',
           'His name has become synonymous with meanness and greed',
@@ -854,7 +867,7 @@ export const teacherPowerpoints: TeacherPresentation[] = [
           'Tiny Tim is good-natured despite illness and poverty',
           'He represents innocent victims of social inequality',
           "His possible death would be caused by Scrooge's refusal to pay fair wages",
-          "The spirit tells Scrooge: 'If these shadows remain unchanged, the child will die'",
+          "The spirit tells Scrooge: 'If these shadows remain unaltered by the Future, the child will die'",
           "Tim's fate depends on whether the wealthy choose responsibility",
         ],
         teacherNotes:
@@ -867,8 +880,8 @@ export const teacherPowerpoints: TeacherPresentation[] = [
           'Silent and terrifying - shows a possible future',
           'Scrooge is dead; businessmen discuss his death with indifference',
           'His possessions are stolen by his servants and laundresses',
-          'Tiny Tim is also dead, buried in a neglected grave',
-          "Scrooge desperately asks: 'Are these the shadows of things that will be, or things that may be?'",
+          'Tiny Tim is also dead, and his family mourns him',
+          "Scrooge desperately asks: 'Are these the shadows of the things that Will be, or are they shadows of things that May be, only?'",
         ],
         teacherNotes:
           'This stave shows the ultimate consequence of irresponsibility - a meaningless death leaving nothing behind.',
@@ -877,7 +890,7 @@ export const teacherPowerpoints: TeacherPresentation[] = [
         slideNumber: 9,
         title: 'The Question of Change: Free Will & Redemption',
         bulletPoints: [
-          "Scrooge asks: 'Can I change these shadows?'",
+          "Scrooge begs: 'Assure me that I yet may change these shadows you have shown me, by an altered life!'",
           "The ghost's answer is ambiguous - the future is not fixed",
           'Dickens suggests: If we change our behaviour, the future changes',
           'Scrooge wakes on Christmas morning - he has been given a chance',
@@ -905,7 +918,7 @@ export const teacherPowerpoints: TeacherPresentation[] = [
         bulletPoints: [
           "Tiny Tim's closing line is central to the message",
           'It suggests that kindness and responsibility benefit everyone',
-          "Scrooge becomes 'as good a friend, as good a master, as good a man as the good old City knew'",
+          "Scrooge becomes 'as good a friend, as good a master, and as good a man, as the good old city knew'",
           'The novella ends with affirmation and hope',
           'Scrooge is redeemed; society (through him) shows responsibility',
         ],
@@ -2317,7 +2330,7 @@ export const teacherPowerpoints3: TeacherPresentation[] = [
         slideNumber: 2,
         title: 'Act 1: Love at First Sight',
         bulletPoints: [
-          "Prologue establishes fate: 'star-crossed lovers'",
+          "Prologue establishes fate: 'star-cross'd lovers'",
           'Romeo is initially infatuated with Rosaline (not Juliet)',
           'At the ball, Romeo sees Juliet and immediately forgets Rosaline',
           'Their meeting is presented as instant, overwhelming love',
@@ -2347,7 +2360,10 @@ export const teacherPowerpoints3: TeacherPresentation[] = [
           'The feud is ancient - neither family remembers how it started',
           'Fighting is habitual, almost ritualistic',
           'Young men (Tybalt, Mercutio) are violent, honour-obsessed',
-          "The feud is presented as senseless - 'new broils' break out constantly",
+          // Until 2 October 2026 this quoted "new broils", which the held
+          // edition (Project Gutenberg #1513) does not print anywhere; the
+          // Prologue's "ancient grudge" and "new mutiny" make the same point.
+          "The feud is presented as senseless - the 'ancient grudge' breaks out again in 'new mutiny'",
           'Love across enemy families is an impossible situation',
         ],
         teacherNotes:
@@ -2409,7 +2425,7 @@ export const teacherPowerpoints3: TeacherPresentation[] = [
         slideNumber: 9,
         title: 'Fate vs. Free Will: Central Debate',
         bulletPoints: [
-          "Prologue says they're 'star-crossed' - suggesting fate",
+          "Prologue says they're 'star-cross'd' - suggesting fate",
           'But each character makes choices: Romeo pursues Juliet; Tybalt picks fights; Romeo kills; Juliet takes poison',
           "Are these choices tragic because they're free, or because fate guides them?",
           'Shakespeare leaves this ambiguous - we must grapple with it',
@@ -3229,7 +3245,9 @@ export const teacherPowerpoints3: TeacherPresentation[] = [
         bulletPoints: [
           "The novella critiques Victorian society's demand for absolute respectability",
           'This repression creates: Hypocrisy, compartmentalisation, psychological damage',
-          "Jekyll: 'I was the first that could thus plod in the public eye with a load of genial respectability'",
+          // The edition has no "thus" in "I was the first that could plod" (corrected 2
+          // October 2026 against Project Gutenberg #43).
+          "Jekyll: 'I was the first that could plod in the public eye with a load of genial respectability'",
           'Suggestion: Respectability itself is a kind of hypocrisy',
           'Stevenson asks: Is total respectability humanly possible or healthy?',
         ],

@@ -203,7 +203,9 @@ const themes: ThemeData[] = [
     keyPoints: [
       'Snowball attempts to educate the animals, but most fail to learn more than a few letters. Only the pigs and Benjamin achieve full literacy.',
       'The sheep learn only a single slogan: "Four legs good, two legs bad." Their education is designed to prevent thought, not encourage it.',
-      'Napoleon takes the puppies to "educate" them privately. His version of education is indoctrination and violence.',
+      // Corrected 2 October 2026: "educate" is not Orwell's word; Chapter 3 has
+      // Napoleon make himself responsible for the puppies' "education".
+      'Napoleon takes the puppies, saying he will be responsible for their "education". His version of education is indoctrination and violence.',
       "The animals' inability to remember the original commandments allows Squealer to alter them. Memory and education are linked.",
       "Benjamin can read but refuses to. His literacy without action is as useless as the other animals' illiteracy.",
     ],

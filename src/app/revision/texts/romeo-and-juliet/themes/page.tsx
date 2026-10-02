@@ -22,6 +22,12 @@ type ThemeStudy = {
 
 /* ─── Data ───────────────────────────────────────────────────── */
 
+// Quotations are in the wording of the edition the site holds, Project
+// Gutenberg #1513 (src/data/full-texts/romeo-and-juliet.ts), and are cut from
+// it rather than typed. Until 2 October 2026 three here were not: "An you be
+// mine" and "to be her bride", other editions' readings, where this edition
+// has "And you be mine" and "to be her bridegroom"; and a line of Romeo's
+// given to Juliet (see the card).
 const THEMES: ThemeStudy[] = [
   {
     title: 'Love (Romantic, Courtly, Bawdy)',
@@ -126,7 +132,7 @@ const THEMES: ThemeStudy[] = [
     overview:
       "The Montague-Capulet feud structures Verona's society. Shakespeare shows how family loyalty and masculine honour create the conditions that destroy the lovers.",
     detailed:
-      "Family in Romeo and Juliet is simultaneously a source of identity and a prison. Juliet's famous question \"What's in a name?\" challenges the idea that family identity should determine individual destiny, but the rest of the play demonstrates how powerfully it does. Lord Capulet treats Juliet as property to be disposed of (\"An you be mine, I'll give you to my friend\"), and the feud requires every family member to treat the opposing house as an enemy. Honour -- the obligation to defend the family's reputation through violence -- is the mechanism that perpetuates the conflict. Tybalt fights because honour demands it; Romeo kills because Mercutio's death challenges his masculine standing. Shakespeare presents honour as a code that sounds noble but produces only suffering. The play's resolution requires the death of the families' children: only the sight of Romeo and Juliet's bodies can persuade Capulet and Montague to shake hands. Shakespeare's argument is bleak: the patriarchal family, as constructed in Verona, cannot accommodate genuine love and must be broken by tragedy before it can reform.",
+      "Family in Romeo and Juliet is simultaneously a source of identity and a prison. Juliet's famous question \"What's in a name?\" challenges the idea that family identity should determine individual destiny, but the rest of the play demonstrates how powerfully it does. Lord Capulet treats Juliet as property to be disposed of (\"And you be mine, I'll give you to my friend\"), and the feud requires every family member to treat the opposing house as an enemy. Honour -- the obligation to defend the family's reputation through violence -- is the mechanism that perpetuates the conflict. Tybalt fights because honour demands it; Romeo kills because Mercutio's death challenges his masculine standing. Shakespeare presents honour as a code that sounds noble but produces only suffering. The play's resolution requires the death of the families' children: only the sight of Romeo and Juliet's bodies can persuade Capulet and Montague to shake hands. Shakespeare's argument is bleak: the patriarchal family, as constructed in Verona, cannot accommodate genuine love and must be broken by tragedy before it can reform.",
     keyQuotes: [
       {
         quote:
@@ -176,7 +182,7 @@ const THEMES: ThemeStudy[] = [
       },
       {
         quote:
-          'Is she not proud? Doth she not count her blest, / Unworthy as she is, that we have wrought / So worthy a gentleman to be her bride?',
+          'Is she not proud? Doth she not count her blest, / Unworthy as she is, that we have wrought / So worthy a gentleman to be her bridegroom?',
         speaker: 'Lord Capulet -- Act 3, Scene 5',
         analysis:
           'Capulet cannot comprehend Juliet\'s refusal. "Unworthy" and "wrought" reveal his view of her as raw material to be shaped. The older generation sees marriage as achievement; the younger sees it as a matter of the heart. Shakespeare dramatises the collision between these worldviews.',
@@ -209,10 +215,14 @@ const THEMES: ThemeStudy[] = [
           'Juliet outshines artificial light ("torches"). The jewel image makes her beautiful but also precious and possessable. "Cheek of night" personifies darkness as a backdrop that enhances her brilliance. Shakespeare presents love as something that shines brightest against the darkest background.',
       },
       {
+        // Romeo's line, not Juliet's (2 October 2026): until then this card,
+        // and its analysis, gave it to Juliet. In the held edition
+        // (src/data/full-texts/romeo-and-juliet.ts) Juliet says the light
+        // grows and Romeo answers with this.
         quote: 'More light and light, more dark and dark our woes!',
-        speaker: 'Juliet -- Act 3, Scene 5',
+        speaker: 'Romeo -- Act 3, Scene 5',
         analysis:
-          'As dawn forces Romeo to leave after their wedding night, Juliet recognises that daylight is their enemy. The chiastic structure mirrors the inverse relationship: more physical light means more emotional darkness. Shakespeare crystallises the entire light-dark motif in a single line.',
+          'As dawn forces him to leave after their wedding night, Romeo recognises that daylight is their enemy. The chiastic structure mirrors the inverse relationship: more physical light means more emotional darkness. Shakespeare crystallises the entire light-dark motif in a single line.',
       },
     ],
     contextLink:

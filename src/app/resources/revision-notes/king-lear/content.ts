@@ -6,6 +6,15 @@
  * Conventions: Khaleeji-leaning, no Levantine, English quotations
  * preserved verbatim, character + author + brand + AO codes in Latin.
  * Binary M/F gender policy.
+ *
+ * s35 REMOVED, 2 October 2026. The translation pass cut the Justice card at
+ * the straight apostrophe in "th' gods", so its English was a fragment no tr()
+ * call can ask for and no reader ever saw, and its Arabic rendered
+ * Gloucester's "As flies to wanton boys" in Arabic, against the convention
+ * above. The page now quotes that line in the held edition's words ("to the
+ * gods"); if the card is ever translated, keep the quotation in English. s25
+ * and s26 are fragments cut the same way, at "Lear's" and "Cordelia's", and
+ * are as unreachable, but they quote nothing.
  */
 
 export type Bi = { en: string; ar: string }
@@ -50,10 +59,6 @@ export const STRINGS: Record<string, Bi> = {
   s32: { en: `Nature and Order`, ar: `nature و الترتيب` },
   s33: { en: `Suffering and Redemption`, ar: `المعاناة والتنقية` },
   s34: { en: `Justice and Injustice`, ar: `العدالة والظلم` },
-  s35: {
-    en: `The play repeatedly asks whether the gods are just, and repeatedly refuses to answer. Gloucester famously cries ‘As flies to wanton boys are we to th`,
-    ar: `المسرحية تسأل مراراً إن كانت الآلهة عادلة، وترفض الإجابة مراراً. يصرخ غلوستر شهيرة: "كما نحن للصبيان المتهوّرين كالذباب`,
-  },
   s36: { en: `Historical and Literary Context`, ar: `` },
   s37: { en: `Key Quotations with Analysis`, ar: `عبارات رئيسية مع تحليل` },
   s38: { en: `Symbols and Motifs`, ar: `رموز وصور سردية` },

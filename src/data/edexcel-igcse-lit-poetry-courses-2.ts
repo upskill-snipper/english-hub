@@ -9,6 +9,22 @@ import type { CourseData, CourseModule, CourseQuiz } from './courses'
 // 1. La Belle Dame sans Merci - John Keats
 // ─────────────────────────────────────────────────────────────────────────────
 
+/**
+ * QUOTATIONS CORRECTED 2 October 2026. The version note below says this course
+ * quotes the anthology's text. Eight quotations gave lines 3 and 19 of the
+ * verse (4 and 24 in the anthology's margin numbers, which count each
+ * stanza's Roman numeral) as "The sedge has wither'd from the lake" and "She
+ * look'd at me as she did love", a spelling that neither the anthology nor
+ * the held edition (Colvin's, src/data/full-texts) prints. The anthology has
+ * "withered" and "looked": the study guide
+ * (src/data/study-guides/la-belle-dame-sans-merci.ts), whose
+ * quotations were checked against the Pearson PDF and Colvin both, quotes
+ * "looked" and declares "has withered" the anthology's own wording.
+ * WHY IT WAS MISSED: scripts/check-quotations.mjs reports this course's
+ * differences from the held text apart, as `printing` (OTHER_PRINTINGS), so a
+ * third printing's spelling looked the same as the anthology's. Check a
+ * change here against the anthology, not only with --try.
+ */
 const laBelleDameModules: CourseModule[] = [
   {
     id: 'igp2-labelle-m1',
@@ -35,7 +51,7 @@ const laBelleDameModules: CourseModule[] = [
 <ul>
   <li><strong>Desire and enthralment:</strong> The knight is completely consumed by the lady's beauty. His love becomes a kind of captivity - he is unable to act or move on.</li>
   <li><strong>Mortality and transience:</strong> The withered landscape and the "death-pale" figures in the dream suggest that beauty and pleasure are fleeting and ultimately lead to suffering.</li>
-  <li><strong>Nature and the seasons:</strong> The setting - "The sedge has wither'd from the lake, / And no birds sing" - mirrors the knight's emotional desolation. Autumn and winter symbolise decay.</li>
+  <li><strong>Nature and the seasons:</strong> The setting - "The sedge has withered from the lake, / And no birds sing" - mirrors the knight's emotional desolation. Autumn and winter symbolise decay.</li>
   <li><strong>The femme fatale:</strong> The lady is an archetype of the dangerous, beautiful woman whose allure leads men to destruction. Keats draws on centuries of literary tradition.</li>
   <li><strong>Isolation and loss:</strong> The knight is left utterly alone, unable to return to normal life. His experience has severed him from the human world.</li>
 </ul>
@@ -96,7 +112,7 @@ const laBelleDameModules: CourseModule[] = [
 <p><strong>1. "O what can ail thee, knight-at-arms, / Alone and palely loitering?"</strong><br/>
 The opening question immediately establishes mystery. The adverb <em>palely</em> suggests illness or death, while <em>loitering</em> implies purposelessness - the knight has been drained of vitality and direction. The archaic address "knight-at-arms" evokes the chivalric tradition, heightening the sense of a noble figure brought low.</p>
 
-<p><strong>2. "The sedge has wither'd from the lake, / And no birds sing"</strong><br/>
+<p><strong>2. "The sedge has withered from the lake, / And no birds sing"</strong><br/>
 This couplet uses <strong>pathetic fallacy</strong> to mirror the knight's inner desolation. The withered sedge and silent birds create a landscape stripped of life and beauty - reflecting the emotional wasteland left after enchantment fades. The short, declarative clause "And no birds sing" has a finality that emphasises total absence.</p>
 
 <p><strong>3. "I met a lady in the meads, / Full beautiful - a faery's child"</strong><br/>
@@ -105,7 +121,7 @@ The dash before "a faery's child" creates a moment of revelation. She is not mer
 <p><strong>4. "Her hair was long, her foot was light, / And her eyes were wild"</strong><br/>
 The tricolon of physical description builds from conventional beauty (long hair) through ethereal grace (light foot) to something unsettling: <em>wild</em> eyes. The adjective <em>wild</em> disrupts the courtly portrait and hints at danger - she is untameable and unpredictable.</p>
 
-<p><strong>5. "She look'd at me as she did love, / And made sweet moan"</strong><br/>
+<p><strong>5. "She looked at me as she did love, / And made sweet moan"</strong><br/>
 The crucial phrase is <em>as she did love</em> - not "because she loved" but "as if she loved." The word <em>as</em> introduces ambiguity: her affection may be genuine or performative. This single word is the hinge on which the poem's tragedy turns.</p>
 
 <p><strong>6. "And there she lulled me asleep"</strong><br/>
@@ -132,7 +148,7 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
       {
         id: 'igp2-labelle-m2-q1',
         question:
-          'What technique is used in "The sedge has wither\'d from the lake, / And no birds sing"?',
+          'What technique is used in "The sedge has withered from the lake, / And no birds sing"?',
         options: ['Personification', 'Pathetic fallacy', 'Hyperbole', 'Oxymoron'],
         correct: 1,
         explanation:
@@ -140,7 +156,7 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
       },
       {
         id: 'igp2-labelle-m2-q2',
-        question: 'Why is the word "as" significant in "She look\'d at me as she did love"?',
+        question: 'Why is the word "as" significant in "She looked at me as she did love"?',
         options: [
           'It confirms that the lady truly loved the knight',
           'It introduces ambiguity - she appeared to love him but may not have',
@@ -199,7 +215,7 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
 <ul>
   <li>"O what can ail thee, knight-at-arms" (8 syllables)</li>
   <li>"Alone and palely loitering?" (8 syllables)</li>
-  <li>"The sedge has wither'd from the lake" (8 syllables)</li>
+  <li>"The sedge has withered from the lake" (8 syllables)</li>
   <li>"And no birds sing" (4 syllables)</li>
 </ul>
 <p>The sudden contraction of the fourth line creates a <strong>dying fall</strong> - the rhythm drops away, leaving a gap or silence. This echoes the themes of loss, absence, and incompleteness that pervade the poem.</p>
@@ -252,6 +268,9 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
     id: 'igp2-labelle-m4',
     title: 'Exam Practice & Model Response',
     duration: '50 min',
+    // Until 2 October 2026 the model paragraph quoted the opening's "wither'd
+    // sedge", words no printing of the poem has in that order (the first
+    // stanza puts the sedge first). It now describes the sedge in its own words.
     content: `
 <h2>Exam Practice - La Belle Dame sans Merci</h2>
 
@@ -274,7 +293,7 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
 
 <h3>Model Paragraph</h3>
 <div class="model-response">
-<p>Keats presents love as an annihilating force that strips the knight of identity and purpose. The lady's allure operates through total sensory immersion - "She found me roots of relish sweet, / And honey wild, and manna dew" - where the listing of exotic, natural delicacies suggests a pleasure so overwhelming it becomes intoxicating. The biblical connotation of "manna" elevates the lady's gifts to the divine, implying the knight experiences her love as a form of transcendence. However, this ecstasy is revealed as entrapment when the knight awakes "On the cold hill's side" - the stark monosyllables and the adjective "cold" brutally contrast the warmth of the enchantment. Keats reinforces this entrapment through the poem's circular structure: the final stanza returns us to the opening's "wither'd sedge" and absent birdsong, suggesting the knight is caught in an endless loop of loss. Writing during a period when his own love for Fanny Brawne was shadowed by his awareness of his fatal illness, Keats may be exploring the Romantic fear that the intensity of desire is inseparable from the certainty of its loss.</p>
+<p>Keats presents love as an annihilating force that strips the knight of identity and purpose. The lady's allure operates through total sensory immersion - "She found me roots of relish sweet, / And honey wild, and manna dew" - where the listing of exotic, natural delicacies suggests a pleasure so overwhelming it becomes intoxicating. The biblical connotation of "manna" elevates the lady's gifts to the divine, implying the knight experiences her love as a form of transcendence. However, this ecstasy is revealed as entrapment when the knight awakes "On the cold hill's side" - the stark monosyllables and the adjective "cold" brutally contrast the warmth of the enchantment. Keats reinforces this entrapment through the poem's circular structure: the final stanza returns us to the opening's withered sedge and absent birdsong, suggesting the knight is caught in an endless loop of loss. Writing during a period when his own love for Fanny Brawne was shadowed by his awareness of his fatal illness, Keats may be exploring the Romantic fear that the intensity of desire is inseparable from the certainty of its loss.</p>
 </div>
 
 <h3>What Makes This Effective?</h3>
@@ -291,10 +310,10 @@ The repetition of <em>pale</em> three times, intensifying to the compound <em>de
 <h3>Key Quotations to Memorise</h3>
 <ol>
   <li>"Alone and palely loitering"</li>
-  <li>"The sedge has wither'd from the lake, / And no birds sing"</li>
+  <li>"The sedge has withered from the lake, / And no birds sing"</li>
   <li>"Full beautiful - a faery's child"</li>
   <li>"Her eyes were wild"</li>
-  <li>"She look'd at me as she did love"</li>
+  <li>"She looked at me as she did love"</li>
   <li>"I saw pale kings and princes too, / Pale warriors, death-pale were they all"</li>
   <li>"On the cold hill's side"</li>
 </ol>
@@ -1100,6 +1119,24 @@ const warPhotographerCourse: CourseData = {
 // 4. The Tyger - William Blake
 // ─────────────────────────────────────────────────────────────────────────────
 
+/**
+ * QUOTATIONS CORRECTED 2 October 2026, against the held text
+ * (src/data/full-texts/the-tyger.ts, Project Gutenberg #574) and the anthology
+ * (Issue 8, page 64). Students memorise these lines.
+ * - Module 4 gave the poem a line that is not in it, "Did he laugh at the
+ *   slaughter?", twice: joined to line 19 in its quotation bank, and on its own
+ *   in the Key Quotations to Memorise, between lines 19 and 20 as if it stood
+ *   there. No line of the anthology's text or of the held edition has it. The
+ *   bank's row now quotes line 19 alone, which its note on the maker's pleasure
+ *   still describes, and the list entry is gone.
+ * - Model paragraph 2 said the poem capitalises "He" for the Creator. Neither
+ *   text does: both print "he" in lines 19 and 20, and only the anthology gives
+ *   "Lamb" a capital. The sentence now says that.
+ * WHY IT WAS MISSED: scripts/check-quotations.mjs passes over a quotation that
+ * shares too few of its words with the text it is attributed to (it reports
+ * them "not near" only with --trace), so a line invented in the poem's manner
+ * is never reported, and capital letters are not compared at all.
+ */
 const theTygerModules: CourseModule[] = [
   {
     id: 'igp2-tyger-m1',
@@ -1360,7 +1397,7 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
 </tr>
 <tr>
   <td><strong>Creator's intention</strong></td>
-  <td>"Did he smile his work to see? / Did he laugh at the slaughter?"</td>
+  <td>"Did he smile his work to see?"</td>
   <td>Questions whether Creator takes pleasure in violence he creates; theological crisis deepens</td>
 </tr>
 <tr>
@@ -1399,7 +1436,7 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
 
 <h3>Model Paragraph 2: The Theological Crisis</h3>
 <div class="model-response">
-<p>The poem's deepest meaning emerges in the penultimate stanza: "Did he who made the Lamb make thee?" This question crystallises a theological crisis that Blake explores throughout. In Songs of Innocence, "The Lamb" presents a benevolent Creator, gentle and nurturing. But if the same Creator made both the Lamb and the Tyger, how can we maintain our faith in benevolence? The capitals - "He" for the Creator, "Lamb" for innocence - signal that both are sacred, yet fundamentally opposed. Blake is articulating theodicy: the ancient problem of reconciling God's goodness with the existence of violence, suffering, and predatory power in nature. The irresolution of the question is crucial. Blake offers no answer, no reconciliation. Instead, he forces the reader to sit with the paradox. This is particularly resonant given Blake's historical context: writing in 1794, during the French Revolution, Blake witnessed how revolutionary ideals (the promise of liberation) required revolutionary violence. Creation and destruction are intertwined; innocence and violence cannot be separated. The poem's refusal to resolve the paradox is philosophically honest.</p>
+<p>The poem's deepest meaning emerges in the penultimate stanza: "Did he who made the Lamb make thee?" This question crystallises a theological crisis that Blake explores throughout. In Songs of Innocence, "The Lamb" presents a benevolent Creator, gentle and nurturing. But if the same Creator made both the Lamb and the Tyger, how can we maintain our faith in benevolence? The capital letter of "Lamb" marks the lamb as sacred, an image of Christ, while the Creator is only "he": the poem never names the power it questions. Blake is articulating theodicy: the ancient problem of reconciling God's goodness with the existence of violence, suffering, and predatory power in nature. The irresolution of the question is crucial. Blake offers no answer, no reconciliation. Instead, he forces the reader to sit with the paradox. This is particularly resonant given Blake's historical context: writing in 1794, during the French Revolution, Blake witnessed how revolutionary ideals (the promise of liberation) required revolutionary violence. Creation and destruction are intertwined; innocence and violence cannot be separated. The poem's refusal to resolve the paradox is philosophically honest.</p>
 </div>
 
 <h3>Model Paragraph 3: Form, Sound, and Meaning</h3>
@@ -1414,7 +1451,6 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
   <li>"In what distant deeps or skies, / Burnt the fire of thine eyes?"</li>
   <li>"What the hammer? what the chain, / In what furnace was thy brain?"</li>
   <li>"Did he smile his work to see?"</li>
-  <li>"Did he laugh at the slaughter?"</li>
   <li>"Did he who made the Lamb make thee?"</li>
   <li>"Dare frame thy fearful symmetry?"</li>
 </ol>
@@ -1573,6 +1609,14 @@ const myLastDuchessModules: CourseModule[] = [
     id: 'igp2-duchess-m2',
     title: 'Language & Imagery Analysis',
     duration: '50 min',
+    // 2 October 2026: the possessive-language list quoted "my favour", the anthology's
+    // spelling. The held edition (src/data/full-texts/my-last-duchess.ts, an American
+    // printing) has "favor" in line 25, and the site quotes the held edition.
+    // Two claims about the quoted words were not true of them either. "My" was said to
+    // be capitalised for self-importance, but every line of the poem begins with a
+    // capital and line 33 begins with "My". "I gave commands" was called a passive
+    // construction; it is active, and what distances the Duke is the next clause, which
+    // names no one who stopped the smiles.
     content: `
 <h2>Language & Imagery - My Last Duchess</h2>
 
@@ -1588,17 +1632,17 @@ The curtain is a symbol of control - the Duke alone decides who sees the Duchess
 The parenthetical <em>how shall I say?</em> is a masterpiece of false modesty. The Duke pretends to search for the right words, as though reluctant to criticise - but his complaint is precise and deliberate. <em>Too soon made glad</em> reframes warmth and joy as faults. The Duke pathologises happiness itself.</p>
 
 <p><strong>4. "she ranked / My gift of a nine-hundred-years-old name / With anybody's gift."</strong><br/>
-The enjambment across "ranked / My gift" creates a falling rhythm that enacts the Duke's sense of degradation. His "nine-hundred-years-old name" - his aristocratic lineage - is presented as the ultimate gift, and the Duchess's failure to value it above "anybody's gift" (a sunset, cherries) is, in his view, an unforgivable slight. The possessive <em>My</em> is capitalised, asserting his self-importance.</p>
+The enjambment across "ranked / My gift" creates a falling rhythm that enacts the Duke's sense of degradation. His "nine-hundred-years-old name" - his aristocratic lineage - is presented as the ultimate gift, and the Duchess's failure to value it above "anybody's gift" (a sunset, cherries) is, in his view, an unforgivable slight. The possessive <em>My</em> opens the line, asserting his self-importance.</p>
 
 <p><strong>5. "I gave commands; / Then all smiles stopped together."</strong><br/>
-The most chilling lines in the poem. <em>Gave commands</em> is a euphemism - the Duke cannot or will not say what he actually did. The passive construction distances him from the act. <em>All smiles stopped</em> could mean she was silenced, sent away, or killed. The ambiguity is deliberate - the Duke controls the narrative just as he controlled the Duchess.</p>
+The most chilling lines in the poem. <em>Gave commands</em> is a euphemism - the Duke cannot or will not say what he actually did. Nor does he say who stopped the smiles: the clause that follows has no agent, which distances him from the act. <em>All smiles stopped</em> could mean she was silenced, sent away, or killed. The ambiguity is deliberate - the Duke controls the narrative just as he controlled the Duchess.</p>
 
 <p><strong>6. "Notice Neptune, though, / Taming a sea-horse, thought a rarity"</strong><br/>
 The Duke casually draws attention to another art object as they leave. The bronze of <strong>Neptune taming a sea-horse</strong> is a final, telling symbol: Neptune, god of the sea, dominating a smaller creature. The Duke identifies with Neptune - he tames, controls, possesses. The Duchess was his sea-horse. The word <em>taming</em> reveals that the Duke sees relationships as exercises of power.</p>
 
 <h3>Language Patterns</h3>
 <ul>
-  <li><strong>Possessive language:</strong> "my last Duchess," "my gift," "my favour" - the Duke speaks in terms of ownership.</li>
+  <li><strong>Possessive language:</strong> "my last Duchess," "my gift," "my favor" - the Duke speaks in terms of ownership.</li>
   <li><strong>Euphemism:</strong> "I gave commands" avoids directly naming the violence. The Duke's civilised language masks barbaric actions.</li>
   <li><strong>Parenthetical asides:</strong> "how shall I say?" and "if she let / Herself be lessoned so" create a false impression of moderation and reasonableness.</li>
 </ul>
@@ -1651,6 +1695,13 @@ The Duke casually draws attention to another art object as they leave. The bronz
     id: 'igp2-duchess-m3',
     title: 'Structure & Form',
     duration: '45 min',
+    // 2 October 2026, against the held edition (src/data/full-texts/my-last-duchess.ts).
+    // The list of lines that flow "without pause" ended with "I gave commands; / Then
+    // all smiles stopped", where line 45 ends on a semicolon: the paragraph above it
+    // gives that same line as one where the phrase ends with the rhyme. It now gives
+    // "I choose / Never to stoop" (lines 42 to 43), which runs on. The progression put
+    // "fault" in quotation marks beside the Duke's real words; he never says it, so it
+    // is now our word.
     content: `
 <h2>Structure & Form - My Last Duchess</h2>
 
@@ -1669,7 +1720,7 @@ The Duke casually draws attention to another art object as they leave. The bronz
 <ul>
   <li>"she ranked / My gift" - the break isolates "My gift," giving it emphasis</li>
   <li>"since none puts by / The curtain" - the flowing syntax mimics casual conversation</li>
-  <li>"I gave commands; / Then all smiles stopped" - the enjambment creates a pause before the devastating revelation</li>
+  <li>"I choose / Never to stoop" - the break holds back the Duke's decision, so his refusal lands at the start of the next line</li>
 </ul>
 <p>This technique creates the illusion that the Duke is speaking naturally and spontaneously, when in fact his speech is carefully controlled and rhetorically manipulative.</p>
 
@@ -1679,7 +1730,7 @@ The Duke casually draws attention to another art object as they leave. The bronz
 <h3>Structural Progression</h3>
 <ol>
   <li><strong>Lines 1-13:</strong> The Duke introduces the painting and establishes his control over who sees it (the curtain).</li>
-  <li><strong>Lines 13-34:</strong> He describes the Duchess's "fault" - her tendency to be pleased by everything - with increasing irritation.</li>
+  <li><strong>Lines 13-34:</strong> He describes what he sees as the Duchess's fault - her tendency to be pleased by everything - with increasing irritation.</li>
   <li><strong>Lines 34-46:</strong> He reveals that he "gave commands" and the smiles "stopped." This is the climax - the moment of violence, delivered with terrifying calm.</li>
   <li><strong>Lines 47-56:</strong> He pivots immediately to discussing the dowry and points out the Neptune statue. The casualness with which he moves on from implied murder is perhaps the most chilling moment.</li>
 </ol>
@@ -1732,6 +1783,9 @@ The Duke casually draws attention to another art object as they leave. The bronz
     id: 'igp2-duchess-m4',
     title: 'Exam Practice & Model Response',
     duration: '50 min',
+    // 2 October 2026: the model paragraph called "gave commands" passive phrasing. "I
+    // gave commands" is active (src/data/full-texts/my-last-duchess.ts, line 45); the
+    // phrasing is impersonal, which is what the sentence goes on to describe.
     content: `
 <h2>Exam Practice - My Last Duchess</h2>
 
@@ -1744,7 +1798,7 @@ The Duke casually draws attention to another art object as they leave. The bronz
 
 <h3>Model Paragraph</h3>
 <div class="model-response">
-<p>Browning exposes the Duke's need for absolute possession through the poem's controlling structure and the speaker's revealing language. The curtain over the portrait - which "none puts by... but I" - functions as a symbol of the Duke's obsessive authority: having failed to control the living Duchess's smiles, he now controls even who may view her image. The emphatic personal pronoun "I," isolated at the line's end by the caesura and enjambment, asserts exclusive ownership with aristocratic finality. This possessiveness is rendered more disturbing by the Duke's euphemistic account of her fate: "I gave commands; / Then all smiles stopped together." The passive, bureaucratic phrasing - "gave commands" - distances the Duke from direct responsibility, revealing a man who exercises power through intermediaries and cloaks violence in civilised language. Browning's choice of the dramatic monologue form is essential to this effect: because the Duke controls the narrative entirely, the reader must actively resist his perspective, reading between the lines to perceive the cruelty he tries to conceal. The poem's final image - Neptune "taming a sea-horse" - crystallises the Duke's worldview: relationships are acts of domination, and beauty exists only to be possessed. Writing in the Victorian period, Browning uses the Renaissance Italian setting to examine patriarchal power structures that, while historically distant, remained deeply relevant to his own society's treatment of women as property.</p>
+<p>Browning exposes the Duke's need for absolute possession through the poem's controlling structure and the speaker's revealing language. The curtain over the portrait - which "none puts by... but I" - functions as a symbol of the Duke's obsessive authority: having failed to control the living Duchess's smiles, he now controls even who may view her image. The emphatic personal pronoun "I," isolated at the line's end by the caesura and enjambment, asserts exclusive ownership with aristocratic finality. This possessiveness is rendered more disturbing by the Duke's euphemistic account of her fate: "I gave commands; / Then all smiles stopped together." The impersonal, bureaucratic phrasing - "gave commands" - distances the Duke from direct responsibility, revealing a man who exercises power through intermediaries and cloaks violence in civilised language. Browning's choice of the dramatic monologue form is essential to this effect: because the Duke controls the narrative entirely, the reader must actively resist his perspective, reading between the lines to perceive the cruelty he tries to conceal. The poem's final image - Neptune "taming a sea-horse" - crystallises the Duke's worldview: relationships are acts of domination, and beauty exists only to be possessed. Writing in the Victorian period, Browning uses the Renaissance Italian setting to examine patriarchal power structures that, while historically distant, remained deeply relevant to his own society's treatment of women as property.</p>
 </div>
 
 <h3>Key Quotations to Memorise</h3>
@@ -2472,6 +2526,46 @@ const doNotGoGentleCourse: CourseData = {
 // 8. Remember - Christina Rossetti
 // ─────────────────────────────────────────────────────────────────────────────
 
+/**
+ * QUOTATIONS CORRECTED 2 October 2026, against the held text
+ * (src/data/full-texts/remember.ts, Project Gutenberg #19188), each one cut
+ * from it by script rather than typed. Students memorise these lines.
+ * - Line 10 was quoted five times with "forget" where the poem has
+ *   "remember" ("And afterwards forget"), and analysis was built on the wrong
+ *   word: a "repetition of forget", and a forgetting that grows into
+ *   "permanent erasure".
+ * - "Remember" was counted five times in the octave and once in the sestet. It
+ *   is three and two: lines 1, 5 and 7, each a command, and lines 10 and 14,
+ *   neither of them one.
+ * - Line 6 was given "plann'd", where the held edition and the anthology print
+ *   "planned", and lines 13 and 14 were run together as one quotation with the
+ *   start of line 14 cut and no ellipsis.
+ * - Module 4 credited the poem with two lines it does not contain, in its
+ *   quotation bank, its list to memorise and two model paragraphs: a
+ *   misremembered line of Rossetti's "Song" ("When I am dead, my dearest"), and
+ *   one found in neither poem, which it called the final couplet. Nothing in
+ *   Remember says either thing, so both bank rows and both list entries are
+ *   gone, and the paragraph on faith now rests on lines 2, 8 and 11. A Grade 9
+ *   insight still tied the poem's faith to "reunion", a reading only the
+ *   invented line supported; the poem promises no meeting again, so the word
+ *   is gone. Three more phrases were set in quotation marks as the poem's:
+ *   "Remember me" three times in a row, "Remember" with an exclamation mark,
+ *   and "be happy without me". Each is now the poem's own words.
+ * - Module 3's outline of the poem's movement uses no quotation marks, so no
+ *   checker reads it. It gave lines 5 to 8 as "you will not be able to counsel
+ *   me or change your mind", where line 8 has "counsel" and "pray" and no line
+ *   says anything of a mind, and lines 9 to 11 as "Yet if you forget me, do not
+ *   grieve", dropping the remembering that "do not grieve" answers. Both now
+ *   paraphrase what the lines say, and the poem's own words they keep are exact.
+ * WHY IT WAS MISSED: in module 4, which names four poems,
+ * scripts/check-quotations.mjs gives a quotation to Remember only when its
+ * words are exact. Anything else it reads as The Tyger's and passes over, so a
+ * correct line there is confirmed and a wrong one is never reported (run it
+ * with --file on this file and --trace). Check a change to module 4 a
+ * quotation at a time with --try remember.
+ * Line 5 is printed without the two commas the held edition adds, as the
+ * anthology prints it, like the page and the study guide for this poem.
+ */
 const rememberModules: CourseModule[] = [
   {
     id: 'igp2-remember-m1',
@@ -2495,7 +2589,7 @@ const rememberModules: CourseModule[] = [
   <li><strong>Death and the afterlife:</strong> Death is presented as a departure - "gone far away" - and the afterlife as "the silent land." The euphemisms soften death without denying it.</li>
   <li><strong>Memory and forgetting:</strong> The poem's central tension: is it better to remember and grieve, or to forget and be happy? Rossetti ultimately chooses the loved one's happiness over her own memorialisation.</li>
   <li><strong>Love and selflessness:</strong> The speaker's willingness to be forgotten demonstrates a love that prioritises the other person's wellbeing above her own desire to be remembered.</li>
-  <li><strong>Time and loss:</strong> The poem grapples with the awareness that time will eventually erode memory - "you should forget me for a while / And afterwards forget."</li>
+  <li><strong>Time and loss:</strong> The poem grapples with the awareness that time may erode memory - "you should forget me for a while" - and that memory, when it returns, may bring grief: "And afterwards remember, do not grieve".</li>
   <li><strong>Faith:</strong> The "silent land" echoes Christian ideas of the afterlife. Rossetti's faith may underpin her acceptance of death: if there is life after death, earthly remembrance becomes less important.</li>
 </ul>
 
@@ -2561,24 +2655,24 @@ Physical intimacy - holding hands - represents the relationship. Death will seve
 <p><strong>3. "Nor I half turn to go yet turning stay"</strong><br/>
 This line captures the hesitation of parting - the speaker half-turns to leave but cannot fully go. The paradox of simultaneously leaving and staying mirrors the poem's own tension between remembering and forgetting, holding on and letting go.</p>
 
-<p><strong>4. "Remember me when no more day by day / You tell me of our future that you plann'd"</strong><br/>
-The specificity of "our future that you plann'd" makes the loss concrete - they had plans, a shared future, now cancelled by death. The past tense <em>plann'd</em> is heartbreaking: the future has already become past. The phrase "day by day" suggests the habitual, everyday nature of their relationship - an intimacy of routine.</p>
+<p><strong>4. "Remember me when no more day by day / You tell me of our future that you planned"</strong><br/>
+The specificity of "our future that you planned" makes the loss concrete - they had plans, a shared future, now cancelled by death. The past tense <em>planned</em> is heartbreaking: the future has already become past. The phrase "day by day" suggests the habitual, everyday nature of their relationship - an intimacy of routine.</p>
 
-<p><strong>5. "Yet if you should forget me for a while / And afterwards forget"</strong><br/>
-The volta brings a radical shift. The speaker accepts not only temporary forgetting ("for a while") but permanent erasure ("afterwards forget"). The progressive nature of the forgetting - from temporary to permanent - shows the speaker accepting the full implications of her selfless decision.</p>
+<p><strong>5. "Yet if you should forget me for a while / And afterwards remember, do not grieve"</strong><br/>
+The volta brings a radical shift. The speaker now allows for being forgotten, if only "for a while", and looks ahead to the moment memory returns ("afterwards remember"). Her instruction for that moment is "do not grieve": the one command left after the volta protects the beloved rather than the speaker, and lifts any guilt at having forgotten her. This shows the speaker accepting the full implications of her selfless decision.</p>
 
 <p><strong>6. "Better by far you should forget and smile / Than that you should remember and be sad"</strong><br/>
 The poem's central statement presents two balanced alternatives: forget/smile vs. remember/sad. The antithesis is crystalline. Rossetti privileges the loved one's happiness over her own memorialisation. The phrase <em>Better by far</em> is emphatic - this is not a reluctant concession but a wholehearted conviction.</p>
 
 <h3>Language Features</h3>
 <ul>
-  <li><strong>Imperative mood:</strong> "Remember" is repeated five times in the octave, creating an insistent, almost pleading tone. After the volta, this gives way to the conditional "if you should forget" - the command softens into permission.</li>
+  <li><strong>Imperative mood:</strong> "Remember" is repeated three times in the octave, each time as a command, creating an insistent, almost pleading tone. After the volta, this gives way to the conditional "if you should forget" - the command softens into permission.</li>
   <li><strong>Euphemism:</strong> Death is never named directly - "gone away," "the silent land," "the darkness and corruption." This gentleness reflects both Victorian decorum and the speaker's desire to comfort.</li>
   <li><strong>Antithesis:</strong> "forget and smile" vs. "remember and be sad" - the balanced opposition gives the poem's conclusion epigrammatic force.</li>
   <li><strong>Simple diction:</strong> The vocabulary is deliberately simple - "hand," "stay," "smile," "sad." This simplicity gives the poem universal accessibility and emotional directness.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Track the word "remember" through the poem. It appears five times in the octave and once in the sestet - where its meaning has shifted from a command to something the speaker is willing to relinquish. This trajectory is the poem's emotional arc.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Track the word "remember" through the poem. It appears three times in the octave, each time as a command, and twice in the sestet - where its meaning has shifted from a command to something the speaker is willing to relinquish. This trajectory is the poem's emotional arc.</div>
 `,
     quiz: [
       {
@@ -2596,7 +2690,8 @@ The poem's central statement presents two balanced alternatives: forget/smile vs
       },
       {
         id: 'igp2-remember-m2-q2',
-        question: 'How does the antithesis "forget and smile / remember and be sad" function?',
+        question:
+          'How does the antithesis between "forget and smile" and "remember and be sad" function?',
         options: [
           'It creates confusion about what the speaker actually wants',
           "It presents two balanced alternatives and clearly prioritises the loved one's happiness over the speaker's memorialisation",
@@ -2618,7 +2713,7 @@ The poem's central statement presents two balanced alternatives: forget/smile vs
         ],
         correct: 1,
         explanation:
-          'The five repetitions of "Remember" in the octave create an almost desperate insistence. After the volta, the word appears only once - and its meaning has shifted. The speaker moves from commanding remembrance to accepting forgetting.',
+          'The three repetitions of "Remember" in the octave, each a command, create an almost desperate insistence. After the volta, the word appears twice more, but never as a command - its meaning has shifted. The speaker moves from commanding remembrance to accepting forgetting.',
       },
     ],
   },
@@ -2656,8 +2751,8 @@ The poem's central statement presents two balanced alternatives: forget/smile vs
 <p>The poem's overall structural arc moves from <strong>command</strong> to <strong>release</strong>:</p>
 <ol>
   <li><strong>Lines 1-4:</strong> Remember me when I am gone (direct command).</li>
-  <li><strong>Lines 5-8:</strong> Remember me - you will not be able to counsel me or change your mind (intensified urgency).</li>
-  <li><strong>Lines 9-11:</strong> Yet if you forget me, do not grieve (concession).</li>
+  <li><strong>Lines 5-8:</strong> Remember me, because once I am gone the time for counsel or prayer will have passed (intensified urgency).</li>
+  <li><strong>Lines 9-11:</strong> If you forget me for a time and then remember, do not grieve (concession).</li>
   <li><strong>Lines 12-14:</strong> Better to forget and smile than remember and be sad (full release).</li>
 </ol>
 <p>This movement from anxious holding to selfless letting go is one of the poem's most powerful effects.</p>
@@ -2742,51 +2837,41 @@ The poem's central statement presents two balanced alternatives: forget/smile vs
 </tr>
 <tr>
   <td><strong>The crucial volta</strong></td>
-  <td>"Yet if you should forget me for a while / And afterwards forget"</td>
-  <td>Concessive "Yet"; shift from imperative to conditional; repetition of "forget" marks acceptance</td>
+  <td>"Yet if you should forget me for a while / And afterwards remember, do not grieve"</td>
+  <td>Concessive "Yet"; shift from imperative to conditional; the one command left, "do not grieve", protects the beloved, not the speaker</td>
 </tr>
 <tr>
   <td><strong>The emotional reversal</strong></td>
   <td>"Better by far you should forget and smile / Than that you should remember and be sad"</td>
   <td>Perfect antithesis structures the selfless sacrifice; "smile" vs. "sad" shows priorities have shifted</td>
 </tr>
-<tr>
-  <td><strong>Release and permission</strong></td>
-  <td>"I shall not see the shadows, nor feel the rain"</td>
-  <td>Acceptance of absence from sensory experience; peace with non-existence</td>
-</tr>
-<tr>
-  <td><strong>Conclusion - ultimate acceptance</strong></td>
-  <td>"Unless you come to me or I come to you"</td>
-  <td>Conditional spirituality; suggests belief in afterlife reunion, transcending earthly memory</td>
-</tr>
 </table>
 </div>
 
 <h3>Grade 9 Insights - What Examiners Reward</h3>
 <div class="grade9-insight">
-<p><strong>The Volta is Everything:</strong> High-scoring responses do not simply identify the volta at line 9; they <em>track the speaker's emotional journey</em> from desperate pleading (octave) to selfless acceptance (sestet). Discuss how the volta represents a fundamental shift in the speaker's understanding of love itself - from possessive ("Remember me") to generative ("be happy without me"). This demonstrates sophisticated analytical thinking.</p>
+<p><strong>The Volta is Everything:</strong> High-scoring responses do not simply identify the volta at line 9; they <em>track the speaker's emotional journey</em> from desperate pleading (octave) to selfless acceptance (sestet). Discuss how the volta represents a fundamental shift in the speaker's understanding of love itself - from possessive ("Remember me") to generative ("forget and smile"). This demonstrates sophisticated analytical thinking.</p>
 
 <p><strong>Form and Meaning are Inseparable:</strong> The Petrarchan sonnet's traditional structure - octave + sestet - physically enacts the poem's meaning. Don't just note that it's a Petrarchan sonnet; explain how the form's requirement for a volta forced Rossetti to articulate a profound paradox: how can you love someone while willingly being forgotten? This is structural sophistication.</p>
 
-<p><strong>Context Matters Precisely:</strong> Rossetti's devout Anglicanism is not decoration. Her acceptance of "the silent land" is rooted in Christian belief in the afterlife and reunion. This is not biographical trivia - it explains why the speaker can let go of earthly memory with such serenity. Examiners reward specificity: show how faith shapes the poem's resolution.</p>
+<p><strong>Context Matters Precisely:</strong> Rossetti's devout Anglicanism is not decoration. Her acceptance of "the silent land" is rooted in Christian belief in the afterlife. This is not biographical trivia - it explains why the speaker can let go of earthly memory with such serenity. Examiners reward specificity: show how faith shapes the poem's resolution.</p>
 
-<p><strong>The Conditional Mood is Crucial:</strong> In the sestet, imperatives ("Remember!") give way to conditionals ("if you should forget"). This grammatical shift is not accidental - it represents the speaker surrendering control. Noting this demonstrates precision in technical analysis.</p>
+<p><strong>The Conditional Mood is Crucial:</strong> In the sestet, the octave's imperatives ("Remember me") give way to conditionals ("if you should forget"). This grammatical shift is not accidental - it represents the speaker surrendering control. Noting this demonstrates precision in technical analysis.</p>
 </div>
 
 <h3>Model Paragraph 1: The Volta as Meaning</h3>
 <div class="model-response">
-<p>Rossetti uses the Petrarchan sonnet's structural division to dramatise a profound emotional reversal. The octave's fivefold repetition of "Remember" creates an insistent, almost desperate plea - the imperative mood and the accumulating clauses ("when I am gone away," "when you can no more hold me by the hand") build a picture of irreversible loss that demands to be acknowledged. Yet at the volta - signalled by the concessive "Yet" in line 9 - the speaker surrenders her own claim on memory: "Better by far you should forget and smile / Than that you should remember and be sad." The perfectly balanced antithesis ("forget and smile" vs. "remember and be sad") crystallises a selfless love that prioritises the beloved's happiness over the speaker's memorialisation. This emotional generosity is reinforced by the sestet's softer tone - the imperatives give way to conditionals ("if you should forget"), and the anxious insistence relaxes into gentle permission. The volta is not simply a structural device; it is the poem's <em>meaning</em> - the recognition that true love consists not in being remembered, but in releasing the beloved from grief.</p>
+<p>Rossetti uses the Petrarchan sonnet's structural division to dramatise a profound emotional reversal. The octave's threefold repetition of "Remember" creates an insistent, almost desperate plea - the imperative mood and the accumulating clauses ("when I am gone away," "when you can no more hold me by the hand") build a picture of irreversible loss that demands to be acknowledged. Yet at the volta - signalled by the concessive "Yet" in line 9 - the speaker surrenders her own claim on memory: "Better by far you should forget and smile / Than that you should remember and be sad." The perfectly balanced antithesis ("forget and smile" vs. "remember and be sad") crystallises a selfless love that prioritises the beloved's happiness over the speaker's memorialisation. This emotional generosity is reinforced by the sestet's softer tone - the imperatives give way to conditionals ("if you should forget"), and the anxious insistence relaxes into gentle permission. The volta is not simply a structural device; it is the poem's <em>meaning</em> - the recognition that true love consists not in being remembered, but in releasing the beloved from grief.</p>
 </div>
 
 <h3>Model Paragraph 2: Faith and Acceptance</h3>
 <div class="model-response">
-<p>The poem's resolution is inseparable from Rossetti's Christian faith. The final couplet - "Unless you come to me or I come to you" - is not a sad resignation to earthly separation but a quiet affirmation of spiritual reunion. References to "the silent land," the absence of sensory experience ("I shall not see the shadows, nor feel the rain"), and the overall tone of graceful acceptance all point to the Christian concept of death as a transition, not an ending. This is crucial: the speaker can relinquish earthly remembrance only because she believes in eternal life. For Rossetti, mortality is not annihilation but transformation - hence the speaker's willingness to be forgotten in this world. Examiners often overlook this context, but it is essential: the poem's peace comes not from romantic generosity alone, but from theological conviction. A sophisticated essay acknowledges this dimension and shows how Rossetti's personal faith shapes the poem's emotional architecture.</p>
+<p>The poem's resolution is inseparable from Rossetti's Christian faith. The octave closes in the language of religion: "It will be late to counsel then or pray". Once the speaker has died, neither advice nor prayer can change anything, and remembrance is all she asks. References to "the silent land," the sestet's calm acknowledgement of "the darkness and corruption" of the grave, and the overall tone of graceful acceptance all point to the Christian concept of death as a transition, not an ending. This is crucial: the speaker can relinquish earthly remembrance only because she believes in eternal life. For Rossetti, mortality is not annihilation but transformation - hence the speaker's willingness to be forgotten in this world. Examiners often overlook this context, but it is essential: the poem's peace comes not from romantic generosity alone, but from theological conviction. A sophisticated essay acknowledges this dimension and shows how Rossetti's personal faith shapes the poem's emotional architecture.</p>
 </div>
 
 <h3>Model Paragraph 3: Technical Analysis of Repetition and Rhythm</h3>
 <div class="model-response">
-<p>Rossetti's use of repetition and iambic pentameter creates a rhythmic insistence that mirrors the speaker's emotional state. The opening "Remember me, remember me, remember me" - though not all explicit in the poem - is present in spirit through the fivefold imperative. This creates a <em>hammering</em> effect, as if the speaker cannot help but repeat the plea. The metrical regularity of iambic pentameter reinforces this: the regular ti-TUM, ti-TUM rhythm is almost incantatory, like a prayer or a chant. But notice how the volta disrupts this: the shift to conditionals and the gentler diction ("if you should forget," "shall not see") actually subtly loosens the metrical tension. Rossetti is using sound and rhythm to enact the emotional journey - from insistent repetition to gentle release. This is an example of form serving meaning: the poem's technical choices are not ornamental but essential to its emotional impact.</p>
+<p>Rossetti's use of repetition and iambic pentameter creates a rhythmic insistence that mirrors the speaker's emotional state. The plea "Remember me" opens line 1, opens line 5 again, and returns a third time in line 7 ("Only remember me"), a threefold imperative across the octave. This creates a <em>hammering</em> effect, as if the speaker cannot help but repeat the plea. The metrical regularity of iambic pentameter reinforces this: the regular ti-TUM, ti-TUM rhythm is almost incantatory, like a prayer or a chant. But notice how the volta disrupts this: the shift to conditionals and the gentler diction ("if you should forget," "do not grieve") actually subtly loosens the metrical tension. Rossetti is using sound and rhythm to enact the emotional journey - from insistent repetition to gentle release. This is an example of form serving meaning: the poem's technical choices are not ornamental but essential to its emotional impact.</p>
 </div>
 
 <h3>Key Quotations to Memorise</h3>
@@ -2795,11 +2880,9 @@ The poem's central statement presents two balanced alternatives: forget/smile vs
   <li>"Gone far away into the silent land"</li>
   <li>"When you can no more hold me by the hand"</li>
   <li>"Nor I half turn to go yet turning stay"</li>
-  <li>"our future that you plann'd"</li>
-  <li>"Yet if you should forget me for a while / And afterwards forget"</li>
+  <li>"our future that you planned"</li>
+  <li>"Yet if you should forget me for a while / And afterwards remember, do not grieve"</li>
   <li>"Better by far you should forget and smile / Than that you should remember and be sad"</li>
-  <li>"I shall not see the shadows, nor feel the rain"</li>
-  <li>"Unless you come to me or I come to you"</li>
 </ol>
 
 <h3>Comparison Pairings</h3>

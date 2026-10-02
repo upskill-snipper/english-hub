@@ -248,8 +248,11 @@ const lesson2: LessonPlan = {
     {
       title: "Shakespeare's Stagecraft: Language as Scenery",
       duration: '25 minutes',
+      // In The Tempest, Act 3 Scene 2, the island's sounds are described by
+      // Caliban ("Be not afeard; the isle is full of noises"); Ariel only plays
+      // the tune. Until 2 October 2026 this gave the speech to Ariel.
       instructions:
-        'Present three short extracts where Shakespeare uses language to compensate for the Globe\'s limitations: (1) The Prologue from Henry V ("O for a Muse of fire...") where the Chorus asks the audience to imagine armies and battlefields; (2) Act 2, Scene 1 of Macbeth ("Is this a dagger which I see before me...") where language creates a hallucination without props; (3) Act 3, Scene 2 of The Tempest where Ariel describes the island\'s sounds. For each extract, students annotate how Shakespeare uses language techniques to create setting, mood, or spectacle that the Globe could not provide visually. Students then write a comparative paragraph on how Shakespeare turned the Globe\'s limitations into creative strengths.',
+        'Present three short extracts where Shakespeare uses language to compensate for the Globe\'s limitations: (1) The Prologue from Henry V ("O for a Muse of fire...") where the Chorus asks the audience to imagine armies and battlefields; (2) Act 2, Scene 1 of Macbeth ("Is this a dagger which I see before me...") where language creates a hallucination without props; (3) Act 3, Scene 2 of The Tempest where Caliban describes the island\'s sounds. For each extract, students annotate how Shakespeare uses language techniques to create setting, mood, or spectacle that the Globe could not provide visually. Students then write a comparative paragraph on how Shakespeare turned the Globe\'s limitations into creative strengths.',
       differentiation: {
         support:
           'Provide glossed versions of the extracts with vocabulary support and a paragraph frame for the written response.',
@@ -381,8 +384,10 @@ const lesson3: LessonPlan = {
     {
       title: 'Verse vs Prose: Status and State of Mind',
       duration: '20 minutes',
+      // "What a piece of work is man", in the held edition's words
+      // (src/data/full-texts/hamlet.ts); this said "is a man" until 2 October 2026.
       instructions:
-        "Present four paired extracts where the same character or scene shifts between verse and prose: (1) Hamlet speaking to Horatio in verse vs his \"What a piece of work is a man\" prose speech; (2) Lady Macbeth's verse commands in Act 1 vs her prose ramblings in the sleepwalking scene; (3) Benedick's prose wit in Much Ado vs his awkward verse love poem; (4) Bottom speaking prose in A Midsummer Night's Dream while the nobles speak verse. For each pair, students identify which is verse and which is prose, then write an explanation of what the shift reveals. Teacher consolidates the pattern: verse = high status, order, control, formality; prose = low status, madness, informality, emotional chaos.",
+        "Present four paired extracts where the same character or scene shifts between verse and prose: (1) Hamlet speaking to Horatio in verse vs his \"What a piece of work is man\" prose speech; (2) Lady Macbeth's verse commands in Act 1 vs her prose ramblings in the sleepwalking scene; (3) Benedick's prose wit in Much Ado vs his awkward verse love poem; (4) Bottom speaking prose in A Midsummer Night's Dream while the nobles speak verse. For each pair, students identify which is verse and which is prose, then write an explanation of what the shift reveals. Teacher consolidates the pattern: verse = high status, order, control, formality; prose = low status, madness, informality, emotional chaos.",
       differentiation: {
         support:
           'Provide a decision flowchart: "Does it have a regular rhythm? Are the lines the same length? If yes = verse, if no = prose."',
@@ -737,8 +742,11 @@ const lesson5: LessonPlan = {
       question:
         'How does Shakespeare use pathetic fallacy to show the disruption of the Great Chain of Being in Macbeth?',
       lines: 5,
+      // In Act 2 Scene 4 it is Ross who reports that Duncan's horses "turn'd wild
+      // in nature"; the old man only adds that they ate each other. Until
+      // 2 October 2026 this answer gave Ross's line to the old man.
       modelAnswer:
-        'After Macbeth murders Duncan, Shakespeare uses pathetic fallacy to show that the natural world itself has been thrown into chaos. Lennox reports that the night was "unruly" with "lamentings heard i\' th\' air" and chimneys blown down by storms. Ross describes how "darkness does the face of earth entomb" even during daytime, and an old man reports that Duncan\'s horses "turned wild in nature" and ate each other. These unnatural events reflect the Jacobean belief that killing a king - God\'s representative on earth - would disrupt the entire Chain of Being, causing nature itself to revolt.',
+        'After Macbeth murders Duncan, Shakespeare uses pathetic fallacy to show that the natural world itself has been thrown into chaos. Lennox reports that the night was "unruly" with "lamentings heard i\' th\' air" and chimneys blown down by storms. Ross describes how "darkness does the face of earth entomb" even during daytime, and how Duncan\'s horses "turn\'d wild in nature"; an old man adds that they ate each other. These unnatural events reflect the Jacobean belief that killing a king - God\'s representative on earth - would disrupt the entire Chain of Being, causing nature itself to revolt.',
       marks: 4,
     },
     {
@@ -1288,7 +1296,7 @@ const lesson9: LessonPlan = {
       title: 'Genre in Action: Close Analysis of Openings',
       duration: '20 minutes',
       instructions:
-        'Distribute the opening lines of three plays: (1) Macbeth - "When shall we three meet again? / In thunder, lightning, or in rain?" (witches establish a dark, supernatural atmosphere); (2) A Midsummer Night\'s Dream - Theseus and Hippolyta discussing their wedding; (3) Romeo and Juliet - the Prologue revealing the "star-crossed lovers" will die. For each opening, students annotate: What genre signals does Shakespeare give? What expectations does he create for the audience? Students then focus on Romeo and Juliet\'s Prologue, which tells the audience the ending before the play begins. Why would Shakespeare spoil his own story? Students write a paragraph explaining how the Prologue transforms a love story into a tragedy and creates dramatic irony from the very first line.',
+        'Distribute the opening lines of three plays: (1) Macbeth - "When shall we three meet again? / In thunder, lightning, or in rain?" (witches establish a dark, supernatural atmosphere); (2) A Midsummer Night\'s Dream - Theseus and Hippolyta discussing their wedding; (3) Romeo and Juliet - the Prologue revealing the "star-cross\'d lovers" will die. For each opening, students annotate: What genre signals does Shakespeare give? What expectations does he create for the audience? Students then focus on Romeo and Juliet\'s Prologue, which tells the audience the ending before the play begins. Why would Shakespeare spoil his own story? Students write a paragraph explaining how the Prologue transforms a love story into a tragedy and creates dramatic irony from the very first line.',
       differentiation: {
         support:
           "Provide annotated versions of the first two openings; students annotate Romeo and Juliet's Prologue independently.",
@@ -1331,7 +1339,7 @@ const lesson9: LessonPlan = {
         "How does the Prologue of Romeo and Juliet establish the play's genre and create dramatic irony?",
       lines: 5,
       modelAnswer:
-        'The Prologue immediately identifies the play as a tragedy by revealing that the "star-crossed lovers" will "take their life" - the audience knows the ending before the story begins. This creates pervasive dramatic irony: every moment of joy between Romeo and Juliet is shadowed by the audience\'s knowledge of their inevitable death. Shakespeare signals through the Prologue that this is not a story about whether the lovers will survive but about how and why they will die. The Prologue also establishes fate as a central theme - the word "star-crossed" suggests their destiny is written in the stars and cannot be avoided.',
+        'The Prologue immediately identifies the play as a tragedy by revealing that the "star-cross\'d lovers" will "take their life" - the audience knows the ending before the story begins. This creates pervasive dramatic irony: every moment of joy between Romeo and Juliet is shadowed by the audience\'s knowledge of their inevitable death. Shakespeare signals through the Prologue that this is not a story about whether the lovers will survive but about how and why they will die. The Prologue also establishes fate as a central theme - the word "star-cross\'d" suggests their destiny is written in the stars and cannot be avoided.',
       marks: 4,
     },
     {

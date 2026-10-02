@@ -145,7 +145,7 @@ export const litP1Modules: CourseModule[] = [
 
 <h4>6. Appearance vs Reality</h4>
 <p>Deception saturates the play. Duncan calls Macbeth's castle "pleasant"; Macbeth plays the loyal host while planning regicide. The motif is crystallised by Lady Macbeth's instruction:</p>
-<div class="text-extract">"Look like th'innocent flower, / But be the serpent under't."<div class="source">Act 1, Scene 5</div></div>
+<div class="text-extract">"Look like the innocent flower, / But be the serpent under't."<div class="source">Act 1, Scene 5</div></div>
 
 <h4>7. Fate vs Free Will</h4>
 <p>Do the witches cause Macbeth's actions, or merely reveal what he already desired? This ambiguity is central to Shakespeare's design and gives candidates a rich line of argument for AO1.</p>
@@ -215,7 +215,7 @@ export const litP1Modules: CourseModule[] = [
         question: 'Which quotation best illustrates the theme of guilt in Macbeth?',
         options: [
           '"Fair is foul, and foul is fair"',
-          '"Look like th\'innocent flower, but be the serpent under\'t"',
+          '"Look like the innocent flower, but be the serpent under\'t"',
           '"Will all great Neptune\'s ocean wash this blood clean from my hand?"',
           '"When you durst do it, then you were a man"',
         ],
@@ -271,12 +271,12 @@ export const litP1Modules: CourseModule[] = [
 
 <h4>Macbeth</h4>
 <ul>
-  <li><strong>Brave warrior</strong> - Praised as "brave Macbeth" who "unseamed" the rebel "from the nave to the chops" (Act 1).</li>
+  <li><strong>Brave warrior</strong> - Praised as "brave Macbeth" who "unseam'd" the rebel "from the nave to the chops" (Act 1).</li>
   <li><strong>Ambitious but conflicted</strong> - His Act 1 Scene 7 soliloquy reveals moral horror at regicide yet inability to resist power.</li>
   <li><strong>Tyrant</strong> - Orders the murders of Banquo and Macduff's family; becomes isolated and paranoid.</li>
   <li><strong>Desperate</strong> - The nihilistic "Tomorrow and tomorrow" soliloquy (Act 5) shows fatalistic defiance.</li>
 </ul>
-<p><strong>Key quote:</strong> <em>"I am in blood / Stepped in so far that, should I wade no more, / Returning were as tedious as go o'er."</em> - Blood as a metaphor for moral entrapment beyond the point of no return.</p>
+<p><strong>Key quote:</strong> <em>"I am in blood / Stepp'd in so far that, should I wade no more, / Returning were as tedious as go o'er."</em> - Blood as a metaphor for moral entrapment beyond the point of no return.</p>
 
 <h4>Lady Macbeth</h4>
 <ul>

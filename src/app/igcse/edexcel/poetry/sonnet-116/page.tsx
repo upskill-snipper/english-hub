@@ -22,6 +22,16 @@ import StudyTools from '@/components/study/StudyTools'
 // "wandering" in full. Notes that treated line 5 as the poem's only
 // exclamation, or as a break in the metre, were built on the wrong text and
 // have gone. Time carries a sickle in line 10, not a scythe.
+//
+// Lines 13 and 14 end "proved" and "loved", as the anthology prints them
+// (checked again against the Pearson PDF, page 59, on 2 October 2026). The
+// edition held in src/data/full-texts prints "prov'd" and "lov'd", so the
+// quotation check reported line 14 and the couplet card as misspelt (it does
+// not read the hyperbole example, which prints line 14 too). They are the
+// anthology's words, kept so the page matches the copy the student has in the
+// exam, and the guide's quotesFromElsewhere now declares them beside line 13.
+// Do not change one line to the held spelling: the couplet would then match
+// neither printing.
 const poem: PoemData = {
   title: 'Sonnet 116',
   poet: 'William Shakespeare',
@@ -184,7 +194,11 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Polyptoton',
-          note: 'Back to the "alter / alteration" theme from line 3. Shakespeare is building a careful argument: real love = unchanging. The repetition creates a refrain.',
+          // Quoted "alter / alteration" as line 3's words until 2 October 2026;
+          // line 3 prints "alters", as this line does. The quotation check reads
+          // the slash as a line break, so it found no passage near the pair and
+          // passed it over.
+          note: 'Back to the "alters / alteration" theme from line 3. Shakespeare is building a careful argument: real love = unchanging. The repetition creates a refrain.',
           color: '#10b981',
         },
         {
@@ -367,7 +381,10 @@ Enjambment: Shakespeare uses enjambment sparingly, letting most lines end on nat
   languageDevices: [
     {
       device: 'Polyptoton',
-      example: 'alters when it alteration finds / bends with the remover to remove',
+      // Read "finds / bends" until 2 October 2026, dropping the "Or" that
+      // opens line 4 with no ellipsis to mark it. The quotation check does not
+      // read `example` fields, so nothing caught it.
+      example: 'alters when it alteration finds / Or bends with the remover to remove',
       effect:
         'Repeating the same word in different grammatical forms (alter/alteration, remover/remove) draws attention to the idea of change. The grammar enacts the argument: Shakespeare is showing how each word is anchored to its root, refusing to drift - just like true love refuses to drift.',
       lineRef: 2,

@@ -28,6 +28,14 @@ export const metadata: Metadata = {
 
 /* ─── Data ───────────────────────────────────────────────────── */
 
+// Quotations are in the wording of the edition the site holds, Project
+// Gutenberg #1513 (src/data/full-texts/romeo-and-juliet.ts), and are cut from
+// it rather than typed. Until 2 October 2026 fourteen here were not: "There
+// rust" and "An you be mine", other editions' readings, where this edition
+// has "There rest" and "And you be mine"; "raised" for "made" in "Love is a
+// smoke"; and modern spellings ("star-crossed", "death-marked", "All are
+// punished").
+// Check a new quotation with `node scripts/check-quotations.mjs --text romeo-and-juliet`.
 const PLOT_SUMMARY = [
   {
     act: 'Act 1',
@@ -82,7 +90,7 @@ const CHARACTERS = [
       '"What\'s in a name? That which we call a rose by any other name would smell as sweet"',
       '"My bounty is as boundless as the sea, my love as deep"',
       '"Gallop apace, you fiery-footed steeds"',
-      '"O happy dagger! This is thy sheath. There rust, and let me die"',
+      '"O happy dagger. / This is thy sheath. There rest, and let me die"',
       '"My only love sprung from my only hate!"',
     ],
   },
@@ -131,7 +139,7 @@ const CHARACTERS = [
       "Juliet's father, who shifts from a seemingly caring parent to a tyrannical patriarch. He initially tells Paris that Juliet is too young to marry, but after Tybalt's death he forces the match. His explosive rage when Juliet refuses reveals the patriarchal control that traps women in Elizabethan society.",
     key_quotes: [
       '"Hang thee, young baggage! Disobedient wretch!"',
-      '"An you be mine, I\'ll give you to my friend; and you be not, hang, beg, starve, die in the streets"',
+      '"And you be mine, I\'ll give you to my friend; / And you be not, hang, beg, starve, die in the streets"',
     ],
   },
 ]
@@ -144,15 +152,15 @@ const THEMES = [
     quotes: [
       '"My bounty is as boundless as the sea, my love as deep; the more I give to thee, the more I have, for both are infinite"',
       '"Did my heart love till now? Forswear it, sight! For I ne\'er saw true beauty till this night"',
-      '"Love is a smoke raised with the fume of sighs"',
+      '"Love is a smoke made with the fume of sighs"',
     ],
   },
   {
     theme: 'Fate and Fortune',
     description:
-      "Romeo and Juliet are described in the Prologue as 'star-crossed lovers' whose 'death-marked love' is fated. Throughout the play, references to stars, fortune, and destiny suggest their tragedy is inevitable. Yet Shakespeare also shows how human choices - Tybalt's aggression, the Friar's scheming, Romeo's impulsiveness - contribute to the catastrophe. The tension between fate and free will is central.",
+      "Romeo and Juliet are described in the Prologue as 'star-cross'd lovers' whose 'death-mark'd love' is fated. Throughout the play, references to stars, fortune, and destiny suggest their tragedy is inevitable. Yet Shakespeare also shows how human choices - Tybalt's aggression, the Friar's scheming, Romeo's impulsiveness - contribute to the catastrophe. The tension between fate and free will is central.",
     quotes: [
-      '"A pair of star-crossed lovers take their life"',
+      '"A pair of star-cross\'d lovers take their life"',
       '"Then I defy you, stars!"',
       '"O, I am fortune\'s fool!"',
     ],
@@ -160,11 +168,11 @@ const THEMES = [
   {
     theme: 'Conflict and Violence',
     description:
-      "The ancient feud between Montague and Capulet drives the entire tragedy. Violence erupts repeatedly - the opening brawl, Tybalt's challenge, Mercutio's death, Romeo's revenge, Paris's death. Shakespeare shows that violence is cyclical and self-perpetuating. The Prince's final judgement - 'All are punished' - makes clear that the feud has destroyed both families, not just the lovers.",
+      "The ancient feud between Montague and Capulet drives the entire tragedy. Violence erupts repeatedly - the opening brawl, Tybalt's challenge, Mercutio's death, Romeo's revenge, Paris's death. Shakespeare shows that violence is cyclical and self-perpetuating. The Prince's final judgement - 'All are punish'd' - makes clear that the feud has destroyed both families, not just the lovers.",
     quotes: [
       '"Two households, both alike in dignity, in fair Verona, where we lay our scene, from ancient grudge break to new mutiny"',
       '"A plague o\' both your houses!"',
-      '"All are punished"',
+      '"All are punish\'d"',
     ],
   },
   {
@@ -191,7 +199,7 @@ const THEMES = [
     description:
       "Juliet exists within a patriarchal society where her father controls her marriage and her future. Lady Capulet married young and expects Juliet to do the same. Juliet's defiance of her father is radical for an Elizabethan audience. Meanwhile, male characters are driven by a violent, honour-based masculinity - Tybalt's aggression, Mercutio's taunting, Romeo's revenge. Shakespeare shows how rigid gender roles contribute to the tragedy.",
     quotes: [
-      '"An you be mine, I\'ll give you to my friend; and you be not, hang, beg, starve, die in the streets"',
+      '"And you be mine, I\'ll give you to my friend; / And you be not, hang, beg, starve, die in the streets"',
       '"What, drawn, and talk of peace? I hate the word"',
       '"My child is yet a stranger in the world"',
     ],
@@ -216,10 +224,10 @@ const KEY_QUOTES = [
       "The Prologue establishes the setting, the feud, and foreshadows the lovers' deaths. 'Both alike in dignity' suggests neither family is morally superior - both share blame.",
   },
   {
-    quote: '"A pair of star-crossed lovers take their life"',
+    quote: '"A pair of star-cross\'d lovers take their life"',
     speaker: 'Prologue',
     significance:
-      "Introduces the theme of fate. 'Star-crossed' means opposed by the stars (destiny). The audience knows the ending from the start - dramatic irony pervades the entire play.",
+      "Introduces the theme of fate. 'Star-cross'd' means opposed by the stars (destiny). The audience knows the ending from the start - dramatic irony pervades the entire play.",
   },
   {
     quote:
@@ -292,7 +300,7 @@ const KEY_QUOTES = [
   },
   {
     quote:
-      '"An you be mine, I\'ll give you to my friend; and you be not, hang, beg, starve, die in the streets"',
+      '"And you be mine, I\'ll give you to my friend; / And you be not, hang, beg, starve, die in the streets"',
     speaker: 'Lord Capulet (3.5)',
     significance:
       "Capulet threatens to disown Juliet. The list structure ('hang, beg, starve, die') builds to a brutal climax. Reveals that a daughter's value lies only in her obedience.",
@@ -317,13 +325,13 @@ const KEY_QUOTES = [
       "Romeo's final words. Love and death are united in a single action. 'With a kiss I die' is a rhyming couplet that provides a sense of closure. Echoes their first meeting, when they shared a kiss.",
   },
   {
-    quote: '"O happy dagger! This is thy sheath. There rust, and let me die"',
+    quote: '"O happy dagger. / This is thy sheath. There rest, and let me die"',
     speaker: 'Juliet (5.3)',
     significance:
       "Juliet's death is swift and decisive - unlike Romeo's poetic farewell. The oxymoron 'happy dagger' links joy and death. The sexual connotation of 'sheath' unites love and death (Eros and Thanatos).",
   },
   {
-    quote: '"All are punished"',
+    quote: '"All are punish\'d"',
     speaker: 'Prince Escalus (5.3)',
     significance:
       "The Prince's final judgement. The universal 'all' spreads blame across both families and the wider community. The feud's consequences are collective - no one escapes responsibility.",

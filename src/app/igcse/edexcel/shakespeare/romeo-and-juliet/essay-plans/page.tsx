@@ -27,6 +27,13 @@ export const metadata: Metadata = {
     'Five model essay plans for Romeo and Juliet with paragraph-by-paragraph structure, key quotations and context for Edexcel IGCSE English Literature.',
 }
 
+// Quotations are in the wording of the edition the site holds, Project
+// Gutenberg #1513 (src/data/full-texts/romeo-and-juliet.ts), and are cut from
+// it rather than typed. Until 2 October 2026 seven here were not: "By any
+// other word" and "There rust", the Folger's readings, where this edition has
+// "name" and "There rest"; "the inconstant moon" for its "th'inconstant
+// moon"; and Friar Lawrence on the undelivered letter, quoted with "By my
+// brotherhood" left out and no ellipsis to show it.
 const ESSAY_PLANS = [
   {
     id: 'love',
@@ -54,9 +61,9 @@ const ESSAY_PLANS = [
       {
         topic: 'Love against the world -- the balcony scene',
         argument:
-          "In the balcony scene (2.2), Juliet challenges Romeo to move beyond names and surfaces: 'What's in a name? That which we call a rose by any other word would smell as sweet.' Shakespeare shows Juliet as the more clear-sighted lover -- she sees that names are the obstacle and is willing to renounce hers. Love in this scene is defined by its willingness to sacrifice social identity.",
+          "In the balcony scene (2.2), Juliet challenges Romeo to move beyond names and surfaces: 'What's in a name? That which we call a rose / By any other name would smell as sweet.' Shakespeare shows Juliet as the more clear-sighted lover -- she sees that names are the obstacle and is willing to renounce hers. Love in this scene is defined by its willingness to sacrifice social identity.",
         key_quote:
-          '"What\'s in a name? That which we call a rose by any other word would smell as sweet" (2.2)',
+          '"What\'s in a name? That which we call a rose / By any other name would smell as sweet" (2.2)',
         context:
           "In Elizabethan society, a family name carried legal, financial and social weight. Juliet's willingness to abandon hers is radical -- it means giving up inheritance, protection and status.",
       },
@@ -116,7 +123,7 @@ const ESSAY_PLANS = [
         argument:
           "Friar Lawrence's letter explaining Juliet's fake death never reaches Romeo because Friar John is quarantined in a plague house (5.2). Shakespeare introduces plague -- random, uncontrollable, lethal -- as the mechanism that makes the plan fail. Is this fate intervening, or is it sheer bad luck amplified by a reckless plan? Shakespeare deliberately refuses to answer, preserving the play's double vision.",
         key_quote:
-          '"Unhappy fortune! The letter was not nice but full of charge, of dear import" (5.2)',
+          '"Unhappy fortune! By my brotherhood, / The letter was not nice, but full of charge, / Of dear import" (5.2)',
         context:
           'Plague was a constant reality in Elizabethan London -- theatres were regularly closed during outbreaks. The audience would have felt the horror of quarantine viscerally.',
       },
@@ -201,8 +208,8 @@ const ESSAY_PLANS = [
       {
         topic: 'Intellectual strength -- the balcony scene',
         argument:
-          "In the balcony scene (2.2), Juliet is the more rational speaker. While Romeo swears by the moon, she stops him: 'O, swear not by the moon, the inconstant moon, that monthly changes in her circled orb, lest that thy love prove likewise variable.' She demands sincerity over romance. Her question 'What's in a name?' is a philosophical argument that goes further than Romeo ever goes -- she is willing to think her way out of the feud rather than just feel her way.",
-        key_quote: '"O, swear not by the moon, the inconstant moon" (2.2)',
+          "In the balcony scene (2.2), Juliet is the more rational speaker. While Romeo swears by the moon, she stops him: 'O swear not by the moon, th'inconstant moon, / That monthly changes in her circled orb, / Lest that thy love prove likewise variable.' She demands sincerity over romance. Her question 'What's in a name?' is a philosophical argument that goes further than Romeo ever goes -- she is willing to think her way out of the feud rather than just feel her way.",
+        key_quote: '"O swear not by the moon, th\'inconstant moon" (2.2)',
         context:
           "For a girl of nearly fourteen to correct her suitor's rhetoric would have been striking. Shakespeare gives Juliet the intellectual authority that Elizabethan convention reserved for men.",
       },
@@ -226,8 +233,8 @@ const ESSAY_PLANS = [
       {
         topic: 'Final strength -- choosing death on her own terms',
         argument:
-          "In the tomb (5.3), Juliet wakes to find Romeo dead. The Friar urges her to flee; she refuses. She kisses Romeo's lips hoping for residual poison, and when that fails, takes his dagger: 'O happy dagger! This is thy sheath; there rust, and let me die.' Shakespeare gives her the play's most decisive action. Romeo hesitated, soliloquised, and was talked out of things throughout the play. Juliet acts without hesitation. Her suicide is not weakness but the final expression of a will that refuses to live on anyone else's terms.",
-        key_quote: '"O happy dagger! This is thy sheath; there rust, and let me die" (5.3)',
+          "In the tomb (5.3), Juliet wakes to find Romeo dead. The Friar urges her to flee; she refuses. She kisses Romeo's lips hoping for residual poison, and when that fails, takes his dagger: 'O happy dagger. / This is thy sheath. There rest, and let me die.' Shakespeare gives her the play's most decisive action. Romeo hesitated, soliloquised, and was talked out of things throughout the play. Juliet acts without hesitation. Her suicide is not weakness but the final expression of a will that refuses to live on anyone else's terms.",
+        key_quote: '"O happy dagger. / This is thy sheath. There rest, and let me die" (5.3)',
         context:
           "Suicide was a mortal sin in Elizabethan theology, yet Shakespeare frames Juliet's death with tragic dignity. The audience is invited to grieve, not to judge.",
       },

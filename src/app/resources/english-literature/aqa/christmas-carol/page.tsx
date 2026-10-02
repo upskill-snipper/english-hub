@@ -24,6 +24,20 @@ export const metadata: Metadata = {
     'A Christmas Carol for AQA GCSE English Literature: stave-by-stave summary, characters, themes, key quotations, Victorian context and essay plans.',
 }
 
+/**
+ * QUOTATIONS CORRECTED (2 October 2026) against the edition the site holds,
+ * Project Gutenberg #46 (src/data/full-texts/a-christmas-carol.ts), which
+ * scripts/check-quotations.mjs reads. Fifteen were not Dickens's words as
+ * printed. "Are there no prisons? Are there no workhouses?" is the Spirit's,
+ * in Stave Three; in Stave One Scrooge asks "Are there no prisons?" and "And
+ * the Union workhouses?" with the gentleman's answer between, so neither form
+ * could stand without an ellipsis. Speech tags had been cut with none, the
+ * clerk's two lines were run together in the wrong order, and Bob's "Mr
+ * Scrooge! A merry Christmas, sir" is in no edition: his toast is to "the
+ * Founder of the Feast". The edition prints "grind-stone" and "to-night", and
+ * Scrooge vows to "keep it all the year", not "keep Christmas".
+ */
+
 /* ─── Data ──────────────────────────────────────────────────── */
 
 const staveSummaries = [
@@ -32,7 +46,7 @@ const staveSummaries = [
     title: "Marley's Ghost",
     summary: [
       "The novella opens on Christmas Eve. Scrooge is introduced as a cold, miserly man who values money above all human connection. His dead business partner Jacob Marley is described as 'dead as a door-nail.'",
-      "Scrooge refuses charity collectors, dismissing the poor as surplus population ('Are there no prisons? Are there no workhouses?'). He grudgingly allows his clerk Bob Cratchit a day off for Christmas.",
+      "Scrooge refuses charity collectors, dismissing the poor as surplus population ('Are there no prisons? ... And the Union workhouses?'). He grudgingly allows his clerk Bob Cratchit a day off for Christmas.",
       "Scrooge rejects his nephew Fred's invitation to Christmas dinner. Fred represents the Christmas spirit of generosity and family that Scrooge has lost.",
       "That evening, Marley's ghost appears, bound in heavy chains forged from his own greed. He warns Scrooge that he will share the same fate unless he changes. Three spirits will visit him.",
     ],
@@ -58,7 +72,7 @@ const staveSummaries = [
       'The Ghost of Christmas Present shows Scrooge the current Christmas celebrations he is missing. The spirit is jolly and abundant, surrounded by a feast that represents generosity.',
       "Scrooge visits the Cratchit family's modest Christmas dinner. Despite poverty, they are loving and grateful. Tiny Tim, Bob's disabled youngest son, is cheerful but seriously ill. The spirit warns that Tiny Tim will die if 'these shadows remain unaltered.'",
       "Scrooge visits Fred's Christmas party. Fred defends his uncle despite being rejected, and his guests enjoy games and laughter. Scrooge begins to wish he could join in.",
-      "The spirit reveals two starving children hidden beneath his robe: Ignorance and Want, representing the social problems Dickens most feared. The spirit uses Scrooge's own words against him: 'Are there no prisons? Are there no workhouses?'",
+      "The spirit reveals two starving children hidden beneath his robe: Ignorance and Want, representing the social problems Dickens most feared. The spirit uses Scrooge's own words against him: 'Are there no prisons? ... Are there no workhouses?'",
     ],
     keyMoments:
       "The Cratchit family shows that wealth is not needed for happiness - love is. Ignorance and Want are Dickens's most direct social message. The spirit's use of Scrooge's words creates powerful dramatic irony.",
@@ -104,8 +118,8 @@ const characters = [
       'Dickens uses Scrooge to argue that the wealthy have a moral duty to help the poor',
     ],
     keyQuotes: [
-      "'Oh! But he was a tight-fisted hand at the grindstone, Scrooge!'",
-      "'Are there no prisons? And the Union Workhouses?'",
+      "'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!'",
+      "'Are there no prisons? ... And the Union workhouses?'",
       "'I will honour Christmas in my heart, and try to keep it all the year'",
       "'He became as good a friend, as good a master, and as good a man, as the good old city knew'",
     ],
@@ -124,9 +138,9 @@ const characters = [
       'His improved situation in Stave Five shows the positive impact of individual generosity',
     ],
     keyQuotes: [
-      "'The clerk in the tank... tried to warm himself at the candle'",
-      "'Mr Scrooge! A merry Christmas, sir!'",
-      "'My little, little child! My little child!'",
+      "'The clerk put on his white comforter, and tried to warm himself at the candle'",
+      "'Mr. Scrooge! ... I'll give you Mr. Scrooge, the Founder of the Feast!'",
+      "'My little, little child! ... My little child!'",
     ],
   },
   {
@@ -163,7 +177,7 @@ const characters = [
     keyQuotes: [
       "'I wear the chain I forged in life'",
       "'Mankind was my business. The common welfare was my business'",
-      "'I am here tonight to warn you, that you have yet a chance and hope of escaping my fate'",
+      "'I am here to-night to warn you, that you have yet a chance and hope of escaping my fate'",
     ],
   },
   {
@@ -173,7 +187,7 @@ const characters = [
       "Fred is Scrooge's cheerful, warm-hearted nephew who embodies the Christmas spirit. He persistently tries to include Scrooge in his family celebrations despite being rejected every year. He represents unconditional love and the idea that Christmas can bring out the best in people.",
     keyPoints: [
       "He is Fan's son - a living connection to Scrooge's happier past",
-      "His defence of Christmas as 'a kind, forgiving, charitable time' articulates Dickens's ideal",
+      "His defence of Christmas as 'a kind, forgiving, charitable, pleasant time' articulates Dickens's ideal",
       'He refuses to give up on Scrooge, showing that compassion should be persistent',
       "His laughter is warm and inclusive, contrasting with Scrooge's cold isolation",
       'He welcomes Scrooge in Stave Five without resentment, demonstrating forgiveness',
@@ -217,7 +231,7 @@ const themes = [
       'Dickens published the novella cheaply so working-class people could afford it',
     ],
     keyQuotes: [
-      "'Are there no prisons? And the Union Workhouses?'",
+      "'Are there no prisons? ... And the Union workhouses?'",
       "'If they would rather die... they had better do it, and decrease the surplus population'",
       "'Mankind was my business'",
       "'This boy is Ignorance. This girl is Want. Beware them both'",
@@ -246,7 +260,7 @@ const themes = [
     title: 'Christmas and Generosity',
     colour: 'bg-amber-500/10 border-amber-500/30',
     analysis:
-      "Christmas in the novella represents more than a religious festival. It symbolises everything Scrooge lacks: warmth, generosity, family, community, and compassion. Dickens helped shape the modern idea of Christmas as a time for giving and togetherness. Fred's defence of Christmas as 'a kind, forgiving, charitable, pleasant time' is the novella's manifesto. However, Scrooge learns to 'keep Christmas all the year' - generosity should not be limited to one day.",
+      "Christmas in the novella represents more than a religious festival. It symbolises everything Scrooge lacks: warmth, generosity, family, community, and compassion. Dickens helped shape the modern idea of Christmas as a time for giving and togetherness. Fred's defence of Christmas as 'a kind, forgiving, charitable, pleasant time' is the novella's manifesto. However, Scrooge vows to honour Christmas in his heart and 'try to keep it all the year' - generosity should not be limited to one day.",
     keyPoints: [
       "Christmas serves as a moral lens that exposes Scrooge's failings",
       "The Cratchit and Fred's celebrations show Christmas as communal, warm, and inclusive",
@@ -302,10 +316,10 @@ const themes = [
 
 const keyQuotations = [
   {
-    quote: 'Oh! But he was a tight-fisted hand at the grindstone, Scrooge!',
+    quote: 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!',
     speaker: 'Narrator (Stave One)',
     analysis:
-      "The narrator directly addresses the reader, establishing Scrooge's miserliness. 'Tight-fisted' is literal (he clutches his money) and metaphorical (he is emotionally closed). 'Grindstone' suggests he grinds down everything - money, people, joy. The exclamatory 'Oh!' creates an almost gleeful tone, as if the narrator is enjoying the description.",
+      "The narrator directly addresses the reader, establishing Scrooge's miserliness. 'Tight-fisted' is literal (he clutches his money) and metaphorical (he is emotionally closed). 'Grind-stone' suggests he grinds down everything - money, people, joy. The exclamatory 'Oh!' creates an almost gleeful tone, as if the narrator is enjoying the description.",
   },
   {
     quote: 'Hard and sharp as flint, from which no steel had ever struck out generous fire',
@@ -320,19 +334,19 @@ const keyQuotations = [
       "This simile captures Scrooge's isolation perfectly. An oyster is hard-shelled and closed tight - like Scrooge's emotional defences. But oysters also contain pearls, suggesting that something valuable lies hidden inside Scrooge, waiting to be opened. The simile is economical and memorable - ideal for the exam.",
   },
   {
-    quote: 'Are there no prisons? And the Union Workhouses?',
+    quote: 'Are there no prisons? ... And the Union workhouses?',
     speaker: 'Scrooge (Stave One)',
     analysis:
       "Scrooge's response to charity collectors reveals his cruel indifference. He suggests the poor belong in prisons and workhouses - institutions Dickens despised as dehumanising. The rhetorical questions imply the poor are already adequately provided for. These words are thrown back at Scrooge by the Ghost of Christmas Present, creating powerful dramatic irony.",
   },
   {
-    quote: 'If they would rather die, they had better do it, and decrease the surplus population',
+    quote: 'If they would rather die... they had better do it, and decrease the surplus population',
     speaker: 'Scrooge (Stave One)',
     analysis:
       "Scrooge echoes Thomas Malthus's theory that population growth among the poor should be left unchecked. The phrase 'surplus population' dehumanises the poor, treating them as economic data. This is Scrooge at his most monstrous. The Ghost of Christmas Present will later apply these words to Tiny Tim, forcing Scrooge to confront their cruelty.",
   },
   {
-    quote: 'I wear the chain I forged in life. I made it link by link, and yard by yard',
+    quote: 'I wear the chain I forged in life... I made it link by link, and yard by yard',
     speaker: "Marley's Ghost (Stave One)",
     analysis:
       "Marley's chains are a physical metaphor for moral debt. Each selfish act added a link. The repetition of 'link by link, and yard by yard' emphasises that damnation is gradual - it accumulates through daily choices. This warns Scrooge (and the reader) that every small act of selfishness has consequences.",

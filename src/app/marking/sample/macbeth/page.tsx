@@ -252,7 +252,7 @@ const ESSAYS: ModelEssay[] = [
           "The conclusion ('operates within, and is limited by, the structures it subverts') is epigrammatic and demonstrates full critical control.",
         ],
         improvements: [
-          "Virtually no improvements needed at this level. Could briefly note that Lady Macbeth's hypothetical infanticide image ('dashed the brains out') represents the most extreme form of this gender transgression.",
+          "Virtually no improvements needed at this level. Could briefly note that Lady Macbeth's hypothetical infanticide image ('dash'd the brains out') represents the most extreme form of this gender transgression.",
         ],
         aoAddressed: [
           'AO1 - original argument',

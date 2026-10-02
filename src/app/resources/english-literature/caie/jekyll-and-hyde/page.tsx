@@ -28,6 +28,12 @@ export const metadata: Metadata = {
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */
+// Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+// src/data/full-texts/jekyll-and-hyde.ts). Enfield's "the man trampled calmly" had
+// become "He was trampling calmly", and the edition prints "judgment" and "down-right".
+// The Carew murder is the narrator's account of what the maid saw, not her words; "If I
+// am the chief of sinners" is Chapter 6, not 5; and "He put the glass to his lips" is
+// Lanyon's own narrative, Chapter 9, not a narrator in Chapter 10.
 
 const keyQuotes = [
   {
@@ -38,7 +44,7 @@ const keyQuotes = [
       "The novella's central thesis. Jekyll articulates the duality at the heart of human nature. Stevenson challenges the Victorian ideal of a unified, morally consistent self, suggesting that repression does not eliminate desire but merely conceals it. The adverb 'truly' repeated twice insists on the authenticity of this divided self.",
   },
   {
-    quote: 'If he be Mr Hyde, I shall be Mr Seek',
+    quote: 'If he be Mr Hyde... I shall be Mr Seek',
     speaker: 'Mr Utterson',
     location: 'Chapter 2 (Search for Mr Hyde)',
     analysis:
@@ -76,15 +82,15 @@ const keyQuotes = [
       'Religious imagery marks Hyde as diabolical. The sibilant alliteration creates a sinister, hissing sound. Utterson, a rational lawyer, resorts to supernatural language because Hyde defies rational description. This reflects the Victorian tendency to frame deviance in moral or religious terms rather than psychological ones.',
   },
   {
-    quote: "He was trampling calmly over the child's body and left her screaming on the ground",
+    quote: "The man trampled calmly over the child's body and left her screaming on the ground",
     speaker: 'Mr Enfield',
     location: 'Chapter 1 (Story of the Door)',
     analysis:
-      "Hyde's first act of violence is gratuitous and unprovoked. The oxymoron 'trampling calmly' is deeply disturbing: the adverb suggests indifference rather than rage, implying that cruelty is Hyde's natural state. The victim being a child intensifies the horror and establishes Hyde as a figure without moral restraint.",
+      "Hyde's first act of violence is gratuitous and unprovoked. The oxymoron 'trampled calmly' is deeply disturbing: the adverb suggests indifference rather than rage, implying that cruelty is Hyde's natural state. The victim being a child intensifies the horror and establishes Hyde as a figure without moral restraint.",
   },
   {
     quote:
-      'There was something wrong with his appearance; something displeasing, something downright detestable',
+      'There is something wrong with his appearance; something displeasing, something down-right detestable',
     speaker: 'Mr Enfield',
     location: 'Chapter 1 (Story of the Door)',
     analysis:
@@ -92,7 +98,7 @@ const keyQuotes = [
   },
   {
     quote:
-      'I feel very strongly about putting questions; it partakes too much of the style of the day of judgement',
+      'I feel very strongly about putting questions; it partakes too much of the style of the day of judgment',
     speaker: 'Mr Enfield',
     location: 'Chapter 1 (Story of the Door)',
     analysis:
@@ -108,7 +114,7 @@ const keyQuotes = [
   {
     quote:
       'With ape-like fury, he was trampling his victim under foot and hailing down a storm of blows',
-    speaker: 'Maid (witness)',
+    speaker: "Narrator (the maid's account)",
     location: 'Chapter 4 (The Carew Murder Case)',
     analysis:
       "The simile 'ape-like' connects Hyde to evolutionary regression and Darwin's theory. Victorian readers feared that beneath civilisation lay an animalistic, primitive self. The metaphor 'storm of blows' presents violence as a natural force, uncontrollable and devastating. The murder of Sir Danvers Carew marks Hyde's escalation from cruelty to homicide.",
@@ -124,15 +130,15 @@ const keyQuotes = [
   {
     quote: 'If I am the chief of sinners, I am the chief of sufferers also',
     speaker: 'Dr Jekyll',
-    location: 'Chapter 5 (Incident of the Letter)',
+    location: 'Chapter 6 (Incident of Dr Lanyon)',
     analysis:
       "The parallel structure ('chief of sinners... chief of sufferers') positions Jekyll as both perpetrator and victim. This self-pitying stance is ambiguous: is Jekyll genuinely tormented, or is he deflecting responsibility? The Biblical echo of St Paul ('chief of sinners') adds a confessional, religious dimension to his guilt.",
   },
   {
     quote:
       'He put the glass to his lips and drank at one gulp. A cry followed; he reeled, staggered, clutched at the table and held on, staring with injected eyes, gasping',
-    speaker: 'Narrator',
-    location: 'Chapter 10 (witnessed by Lanyon)',
+    speaker: 'Dr Lanyon',
+    location: "Chapter 9 (Dr Lanyon's Narrative)",
     analysis:
       "The transformation scene uses rapid, short clauses to create breathless pacing. The list of verbs ('reeled, staggered, clutched... staring... gasping') conveys physical agony and loss of control. Lanyon's horror at witnessing this moment is so profound that it kills him, suggesting that some truths are too terrible to survive.",
   },
@@ -211,7 +217,7 @@ const themes = [
   {
     name: 'Victorian Hypocrisy and Repression',
     detail:
-      "Stevenson critiques a society that demands outward respectability while ignoring what lies beneath. Jekyll's double life is only possible because Victorian gentlemen do not ask questions. Enfield declares that asking questions 'partakes too much of the style of the day of judgement'. Utterson suppresses his suspicions out of loyalty and propriety. The novella suggests that Victorian morality, by insisting on the appearance of virtue, creates the very conditions for hidden vice to flourish.",
+      "Stevenson critiques a society that demands outward respectability while ignoring what lies beneath. Jekyll's double life is only possible because Victorian gentlemen do not ask questions. Enfield declares that asking questions 'partakes too much of the style of the day of judgment'. Utterson suppresses his suspicions out of loyalty and propriety. The novella suggests that Victorian morality, by insisting on the appearance of virtue, creates the very conditions for hidden vice to flourish.",
   },
   {
     name: 'Science and Its Limits',

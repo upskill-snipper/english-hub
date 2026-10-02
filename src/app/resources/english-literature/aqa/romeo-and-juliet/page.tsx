@@ -26,6 +26,18 @@ export const metadata: Metadata = {
 
 /* ─── Data ──────────────────────────────────────────────────── */
 
+// Quotations are in the wording of the edition the site holds, Project
+// Gutenberg #1513 (src/data/full-texts/romeo-and-juliet.ts), and are cut from
+// it rather than typed. Until 2 October 2026 eighteen here were not: the
+// Folger's readings ("By any other word", "There rust", with an analysis of
+// "Rust"), other spellings ("nursed", "Ethiope", "All are punished"), "Like"
+// for the play's "As", and "two star-cross'd lovers", which runs "two foes"
+// into "A pair of star-cross'd lovers" with nothing to mark the gap. A review
+// the same day found one more, which the checker had judged too far from the
+// line to be a quotation of it: Capulet's "So worthy a gentleman", quoted as
+// "worthy gentleman" with his "a" left out. Check a new quotation with
+// `node scripts/check-quotations.mjs --text romeo-and-juliet`, and a quotation
+// of one or two words by eye.
 const actSummaries = [
   {
     act: 'Act 1',
@@ -34,7 +46,7 @@ const actSummaries = [
       {
         scene: 'Prologue',
         summary:
-          "The Chorus delivers a sonnet revealing the entire plot: 'two star-cross'd lovers' from 'two households, both alike in dignity' will die, and only their deaths will end their families' feud. This prologue removes suspense and creates dramatic irony - the audience knows the lovers are doomed from the start.",
+          "The Chorus delivers a sonnet revealing the entire plot: 'a pair of star-cross'd lovers' from 'two households, both alike in dignity' will die, and only their deaths will end their families' feud. This prologue removes suspense and creates dramatic irony - the audience knows the lovers are doomed from the start.",
       },
       {
         scene: '1.1',
@@ -65,7 +77,7 @@ const actSummaries = [
       {
         scene: '2.1-2.2',
         summary:
-          "Romeo climbs the Capulet orchard wall. In the balcony scene, Juliet questions the importance of names: 'What's in a name? That which we call a rose / By any other word would smell as sweet.' They declare their love and plan to marry in secret. Juliet is practical about the danger; Romeo is reckless with passion.",
+          "Romeo climbs the Capulet orchard wall. In the balcony scene, Juliet questions the importance of names: 'What's in a name? That which we call a rose / By any other name would smell as sweet.' They declare their love and plan to marry in secret. Juliet is practical about the danger; Romeo is reckless with passion.",
       },
       {
         scene: '2.3',
@@ -148,7 +160,7 @@ const actSummaries = [
       {
         scene: '5.3',
         summary:
-          "Paris is at Juliet's tomb and fights Romeo. Romeo kills Paris. Romeo drinks poison beside Juliet: 'Here's to my love... Thus with a kiss I die.' Juliet wakes, finds Romeo dead, and stabs herself with his dagger: 'O happy dagger! This is thy sheath.' The Prince, Montagues, and Capulets arrive. The Friar explains everything. The families are finally reconciled in grief. The Prince concludes: 'All are punished.'",
+          "Paris is at Juliet's tomb and fights Romeo. Romeo kills Paris. Romeo drinks poison beside Juliet: 'Here's to my love... Thus with a kiss I die.' Juliet wakes, finds Romeo dead, and stabs herself with his dagger: 'O happy dagger! This is thy sheath.' The Prince, Montagues, and Capulets arrive. The Friar explains everything. The families are finally reconciled in grief. The Prince concludes: 'All are punish'd.'",
       },
     ],
   },
@@ -188,10 +200,10 @@ const characters = [
       'Her death by dagger (a phallic symbol) can be read as a final act of masculine agency in a patriarchal world',
     ],
     keyQuotes: [
-      "'What's in a name? That which we call a rose / By any other word would smell as sweet'",
+      "'What's in a name? That which we call a rose / By any other name would smell as sweet'",
       "'My bounty is as boundless as the sea, / My love as deep'",
       "'Give me my Romeo; and, when I shall die, / Take him and cut him out in little stars'",
-      "'O happy dagger! / This is thy sheath; there rust, and let me die'",
+      "'O happy dagger. / This is thy sheath. There rest, and let me die'",
     ],
   },
   {
@@ -261,7 +273,7 @@ const characters = [
       "After the betrayal, Juliet never confides in the Nurse again - 'Thou and my bosom henceforth shall be twain'",
     ],
     keyQuotes: [
-      "'Thou wast the prettiest babe that e'er I nursed'",
+      "'Thou wast the prettiest babe that e'er I nurs'd'",
       "'His name is Romeo, and a Montague; / The only son of your great enemy'",
       "'I think it best you married with the County'",
     ],
@@ -273,7 +285,7 @@ const characters = [
       "Capulet initially appears reasonable, telling Paris that Juliet is too young for marriage and that her consent matters. However, when Juliet defies him in Act 3, he becomes tyrannical and verbally abusive, threatening to disown her. Shakespeare uses Capulet to expose the violence of patriarchal authority - his 'love' for Juliet is conditional on her obedience.",
     keyPoints: [
       'His transformation from protective father (Act 1) to domestic tyrant (Act 3) exposes patriarchal control',
-      "He arranges Juliet's marriage to Paris partly as a business transaction - Paris is a 'worthy gentleman'",
+      "He arranges Juliet's marriage to Paris partly as a business transaction - Paris is 'so worthy a gentleman'",
       "'Hang, beg, starve, die in the streets' - his threats reveal that daughters are property, not people",
       "His grief at Juliet's 'death' seems genuine but also self-centred - 'Death is my heir'",
       "He only learns the truth when it is too late - representing the older generation's failure to listen",
@@ -334,12 +346,12 @@ const themes = [
       'Violence is linked to toxic masculinity: honour codes demand aggression and punish peacemaking',
       "The street brawls use sexual language ('thrust his maids to the wall'), linking violence to male dominance",
       "Act 3 Scene 1 is the structural turning point: Mercutio's death transforms comedy into tragedy",
-      "'All are punished' - the Prince's final judgement holds everyone accountable, not just the lovers",
+      "'All are punish'd' - the Prince's final judgement holds everyone accountable, not just the lovers",
     ],
     keyQuotes: [
       "'Two households, both alike in dignity, / In fair Verona, where we lay our scene'",
       "'A plague o' both your houses!'",
-      "'All are punished'",
+      "'All are punish'd'",
       "'What, drawn, and talk of peace! I hate the word'",
     ],
   },
@@ -353,7 +365,7 @@ const themes = [
       "Capulet's attitude shifts from protective to tyrannical when Juliet disobeys - his love is conditional",
       "The Nurse and Friar both fail as substitute parents - neither can protect the lovers from society's structures",
       "Juliet's rapid maturation (from obedient child to independent woman) is forced by adult failures",
-      "Only the children's deaths teach the parents the cost of their hatred - 'All are punished'",
+      "Only the children's deaths teach the parents the cost of their hatred - 'All are punish'd'",
     ],
     keyQuotes: [
       "'Hang, beg, starve, die in the streets'",
@@ -365,7 +377,7 @@ const themes = [
     title: 'Light and Darkness',
     colour: 'bg-indigo-500/10 border-indigo-200',
     analysis:
-      "Shakespeare uses light and dark imagery paradoxically throughout the play. Conventionally, light represents goodness and dark represents evil, but Shakespeare inverts this. Romeo and Juliet's love flourishes in darkness (the balcony scene, the wedding night) and is threatened by daylight (which brings separation and public violence). Juliet is consistently associated with light - 'the sun,' 'a rich jewel in an Ethiope's ear' - suggesting she illuminates Romeo's world. However, this light imagery is always set against darkness, foreshadowing the idea that their love can only truly exist beyond the world of the living.",
+      "Shakespeare uses light and dark imagery paradoxically throughout the play. Conventionally, light represents goodness and dark represents evil, but Shakespeare inverts this. Romeo and Juliet's love flourishes in darkness (the balcony scene, the wedding night) and is threatened by daylight (which brings separation and public violence). Juliet is consistently associated with light - 'the sun,' 'a rich jewel in an Ethiop's ear' - suggesting she illuminates Romeo's world. However, this light imagery is always set against darkness, foreshadowing the idea that their love can only truly exist beyond the world of the living.",
     keyPoints: [
       "Juliet is compared to the sun, stars, and light - she represents truth and beauty in Romeo's world",
       'Their love exists in darkness: the feast, the balcony, the bedroom - daylight means separation',
@@ -395,7 +407,7 @@ const themes = [
       "'My child is yet a stranger in the world'",
       "'Hang, beg, starve, die in the streets'",
       "'Is she not proud? Doth she not count her blest?'",
-      "'O happy dagger! / This is thy sheath; there rust, and let me die'",
+      "'O happy dagger. / This is thy sheath. There rest, and let me die'",
     ],
   },
 ]
@@ -415,10 +427,10 @@ const keyQuotations = [
   },
   {
     quote:
-      "O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / Like a rich jewel in an Ethiope's ear",
+      "O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / As a rich jewel in an Ethiop's ear",
     speaker: 'Romeo (1.5)',
     analysis:
-      "Romeo's first sight of Juliet. The light/dark imagery presents Juliet as a source of illumination against darkness. 'Teach the torches' personifies the torches as her students - she outshines artificial light. The simile 'rich jewel in an Ethiope's ear' emphasises her preciousness and radiance. His language shifts from the artificial Petrarchan style he used about Rosaline to something more vivid and genuine.",
+      "Romeo's first sight of Juliet. The light/dark imagery presents Juliet as a source of illumination against darkness. 'Teach the torches' personifies the torches as her students - she outshines artificial light. The simile 'rich jewel in an Ethiop's ear' emphasises her preciousness and radiance. His language shifts from the artificial Petrarchan style he used about Rosaline to something more vivid and genuine.",
   },
   {
     quote:
@@ -441,7 +453,7 @@ const keyQuotations = [
       "The balcony scene's opening metaphor. Romeo elevates Juliet to a celestial body - she is not merely compared to the sun but identified as it. The sun is the centre of the universe (a bold claim in Elizabethan England), suggesting Juliet is the centre of Romeo's existence. 'Breaks' implies her light pierces the darkness forcefully.",
   },
   {
-    quote: "What's in a name? That which we call a rose / By any other word would smell as sweet",
+    quote: "What's in a name? That which we call a rose / By any other name would smell as sweet",
     speaker: 'Juliet (2.2)',
     analysis:
       "Juliet argues that names are arbitrary social constructs - Romeo's identity as a Montague is merely a label, not his essence. This is philosophically radical: she challenges the entire basis of the feud. The rose metaphor is simple but powerful - identity lies in nature, not in what society calls us. She is more rational and analytical than Romeo in this scene.",
@@ -496,16 +508,16 @@ const keyQuotations = [
       "Romeo's response to Juliet's apparent death is to challenge fate itself. The exclamation mark conveys passionate defiance. However, his 'defiance' of the stars (fate) actually fulfils their decree - by rushing to die beside Juliet, he ensures the tragedy the stars predicted. This is Shakespeare's deepest irony: free will and fate are indistinguishable. Romeo thinks he is choosing; the audience knows he is being led.",
   },
   {
-    quote: 'O happy dagger! / This is thy sheath; there rust, and let me die',
+    quote: 'O happy dagger. / This is thy sheath. There rest, and let me die',
     speaker: 'Juliet (5.3)',
     analysis:
-      "Juliet's final words. 'Happy' is bitterly ironic - the dagger is 'happy' because it will reunite her with Romeo. 'Sheath' is a sexual metaphor (her body sheathes the dagger as in their marriage), linking love and death one final time. 'Rust' implies permanence - she will never be separated from Romeo again. Her death by stabbing contrasts with Romeo's poison: she chooses a more violent, traditionally masculine method.",
+      "Juliet's final words. 'Happy' is bitterly ironic - the dagger is 'happy' because it will reunite her with Romeo. 'Sheath' is a sexual metaphor (her body sheathes the dagger as in their marriage), linking love and death one final time. 'Rest' implies permanence and the peace of death - she will never be separated from Romeo again. Her death by stabbing contrasts with Romeo's poison: she chooses a more violent, traditionally masculine method.",
   },
   {
-    quote: 'All are punished',
+    quote: "All are punish'd",
     speaker: 'Prince Escalus (5.3)',
     analysis:
-      "The Prince's final judgement. The universality of 'all' refuses to assign blame to any single character - the tragedy is collective. The passive voice ('are punished') suggests a force greater than human justice is at work - God, fate, or the natural consequences of hatred. This line echoes the prologue's message: the feud has consumed innocent and guilty alike. It is Shakespeare's most concise statement of the play's moral.",
+      "The Prince's final judgement. The universality of 'all' refuses to assign blame to any single character - the tragedy is collective. The passive voice ('are punish'd') suggests a force greater than human justice is at work - God, fate, or the natural consequences of hatred. This line echoes the prologue's message: the feud has consumed innocent and guilty alike. It is Shakespeare's most concise statement of the play's moral.",
   },
   {
     quote: 'For never was a story of more woe / Than this of Juliet and her Romeo',
@@ -629,7 +641,7 @@ const essayQuestions = [
       "Wider play - The feud as inherited hatred: the Prologue establishes the 'ancient grudge.' The servants fight without knowing why (Act 1 Scene 1) - the feud is mindless, cyclical violence passed down through generations.",
       "Wider play - Juliet's divided loyalties: Act 3 Scene 2 - 'Beautiful tyrant! Fiend angelical!' Oxymorons express her impossible position. She ultimately chooses Romeo over family, showing love transcends blood loyalty.",
       "Wider play - Capulet's conditional love: Act 3 Scene 5 - 'Hang, beg, starve, die in the streets.' Family loyalty is revealed as patriarchal control: Juliet is expected to obey, not to have her own desires.",
-      "Context: Elizabethan family structures, male honour codes, the expectation of female obedience. 'All are punished' - Shakespeare shows the feud destroys both families and the innocent.",
+      "Context: Elizabethan family structures, male honour codes, the expectation of female obedience. 'All are punish'd' - Shakespeare shows the feud destroys both families and the innocent.",
     ],
   },
   {

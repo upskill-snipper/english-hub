@@ -108,7 +108,7 @@ const ACTS = [
       {
         scene: '3.1',
         summary:
-          "Banquo suspects Macbeth 'playedst most foully'. Macbeth arranges his murder, insisting Fleance must die too to halt the line of kings.",
+          "Banquo suspects Macbeth 'play'dst most foully'. Macbeth arranges his murder, insisting Fleance must die too to halt the line of kings.",
       },
       {
         scene: '3.2',
@@ -163,7 +163,7 @@ const ACTS = [
     act: 'Act 5',
     title: 'Downfall and death',
     overview:
-      "Lady Macbeth sleepwalks, tormented by guilt, and dies offstage (implied suicide). Malcolm's army camouflages itself with branches from Birnam Wood and advances on Dunsinane. Macbeth, hearing of his wife's death, delivers his nihilistic 'Tomorrow' soliloquy. Macduff - 'from his mother's womb untimely ripped' - kills Macbeth in single combat. Malcolm is crowned rightful king.",
+      "Lady Macbeth sleepwalks, tormented by guilt, and dies offstage (implied suicide). Malcolm's army camouflages itself with branches from Birnam Wood and advances on Dunsinane. Macbeth, hearing of his wife's death, delivers his nihilistic 'Tomorrow' soliloquy. Macduff - 'from his mother's womb untimely ripp'd' - kills Macbeth in single combat. Malcolm is crowned rightful king.",
     scenes: [
       {
         scene: '5.1',
@@ -178,7 +178,7 @@ const ACTS = [
       {
         scene: '5.3',
         summary:
-          "Macbeth clings to the witches' prophecies. He mourns his loss of comfort and honour: 'my way of life is fallen into the sere, the yellow leaf'.",
+          "Macbeth clings to the witches' prophecies. He mourns his loss of comfort and honour: 'my way of life is fall'n into the sere, the yellow leaf'.",
       },
       {
         scene: '5.4',
@@ -199,15 +199,13 @@ const ACTS = [
         summary:
           'Macbeth kills young Siward and continues to trust the prophecy that no man born of woman can harm him.',
       },
+      // The site's edition (src/data/full-texts/macbeth.ts) ends in Act 5 Scene 8.
+      // Until 2 October 2026 its close had a card of its own as "5.9", a scene
+      // that edition does not have, so Malcolm's last lines were placed there.
       {
         scene: '5.8',
         summary:
-          "Macduff finds Macbeth. He reveals he was 'from his mother's womb untimely ripped' - born by Caesarean, and so 'not of woman born'. They fight. Macbeth dies.",
-      },
-      {
-        scene: '5.9',
-        summary:
-          "Macduff enters with Macbeth's head. Malcolm is hailed as king of Scotland and promises to restore order. He calls Macbeth 'this dead butcher and his fiend-like queen'.",
+          "Macduff finds Macbeth. He reveals he was 'from his mother's womb untimely ripp'd' - born by Caesarean, and so not 'of woman born'. They fight. Macbeth dies. Macduff enters with Macbeth's head, and Malcolm is hailed as king of Scotland and promises to restore order. He speaks of 'this dead butcher and his fiend-like queen'.",
       },
     ],
   },

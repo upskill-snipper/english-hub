@@ -877,10 +877,10 @@ export const y8Term2Lessons: LessonPlan[] = [
       },
       {
         question:
-          'Translate the following into modern English: "Thou art too full o\' the milk of human kindness."',
+          'Translate the following into modern English: "Yet do I fear thy nature; / It is too full o\' th\' milk of human kindness."',
         lines: 2,
         modelAnswer:
-          '"You are too full of the milk of human kindness." In this line, Lady Macbeth is telling Macbeth that he is too gentle and compassionate to seize the throne through violence - she sees his conscience as a weakness.',
+          'Yet I am afraid of your nature: it is too full of the milk of human kindness. Alone with his letter, Lady Macbeth fears that Macbeth is too gentle and compassionate to seize the throne through violence - she sees his conscience as a weakness.',
         marks: 2,
       },
       {
@@ -1282,7 +1282,7 @@ export const y8Term2Lessons: LessonPlan[] = [
         title: 'Paired Scene Analysis with Comparison Grid',
         duration: '25 minutes',
         instructions:
-          "Students receive both extracts in full (Lady Macbeth Act 1 Scene 7; Cassius Act 1 Scene 2 Julius Caesar). They read both and complete a four-row comparison grid: rows covering (1) the manipulator's strategy, (2) the language techniques used, (3) the victim's response/reaction, and (4) what the manipulation reveals about power in each play. Students work in pairs, spending 10 minutes on each extract before filling in the comparison column. Teacher circulates, probing with questions: \"Cassius uses the word 'honour' repeatedly - what is he actually appealing to in Brutus?\" \"Lady Macbeth challenges Macbeth's masculinity - why is that her weapon of choice?\"",
+          "Students receive both extracts in full (Lady Macbeth Act 1 Scene 7; Cassius Act 1 Scene 2 Julius Caesar). They read both and complete a four-row comparison grid: rows covering (1) the manipulator's strategy, (2) the language techniques used, (3) the victim's response/reaction, and (4) what the manipulation reveals about power in each play. Students work in pairs, spending 10 minutes on each extract before filling in the comparison column. Teacher circulates, probing with questions: \"Brutus says 'honour' first, and Cassius takes the word up - what is he actually appealing to in Brutus?\" \"Lady Macbeth challenges Macbeth's masculinity - why is that her weapon of choice?\"",
         differentiation: {
           support:
             'Provide the grid with the "strategy" row pre-completed for both plays. Students complete rows 2-4.',
@@ -1346,12 +1346,16 @@ export const y8Term2Lessons: LessonPlan[] = [
           'Lady Macbeth uses emotional manipulation: she attacks Macbeth\'s identity as a man ("When you durst do it, then you were a man"), questions his love, and employs shocking violent imagery. She does not argue that the murder is right - she argues that Macbeth is weak if he does not commit it. Cassius, by contrast, uses intellectual seduction: he appeals to Brutus\'s sense of Roman honour, his pride in the republic, and his noble ancestry. His language is measured and rhetorical, building a logical (if distorted) patriotic case. The key difference is that Lady Macbeth exploits shame and emotion while Cassius exploits reason and pride.',
         marks: 4,
       },
+      // Corrected 2 October 2026. This question and the probing question in
+      // the main activity said Cassius uses "honour" repeatedly. In Act 1
+      // Scene 2 (Project Gutenberg #1522, the edition the site prints) he says
+      // it once; Brutus says it first, twice, and Cassius takes it up.
       {
         question:
-          'Analyse the word "honour" in Cassius\'s persuasion of Brutus. Why does Cassius use this word repeatedly?',
+          'Analyse the word "honour" in Cassius\'s persuasion of Brutus. Brutus says it first: why does Cassius take it up?',
         lines: 4,
         modelAnswer:
-          'Cassius uses "honour" repeatedly because he understands that Brutus\'s greatest vulnerability is his sense of Roman virtue and duty. By repeatedly framing the assassination as an honourable act - a patriotic duty to Rome and to the republic - Cassius makes it almost impossible for Brutus to refuse without feeling that he is betraying his deepest values. The word "honour" becomes a rhetorical trap: it redefines murder as nobility, making the act feel not only acceptable but necessary. This is more sophisticated manipulation than Lady Macbeth\'s because it co-opts the victim\'s own moral framework.',
+          'Brutus says the word first, swearing he loves "The name of honour more than I fear death", and Cassius takes it straight up: "Well, honour is the subject of my story." Cassius understands that Brutus\'s greatest vulnerability is his sense of Roman virtue and duty. By framing the assassination as an honourable act - a patriotic duty to Rome and to the republic - he makes it almost impossible for Brutus to refuse without feeling that he is betraying his deepest values. The word "honour" becomes a rhetorical trap: it redefines murder as nobility, making the act feel not only acceptable but necessary. This is more sophisticated manipulation than Lady Macbeth\'s because it co-opts the victim\'s own moral framework.',
         marks: 4,
       },
       {

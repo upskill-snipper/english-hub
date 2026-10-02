@@ -122,7 +122,10 @@ const chapters: ChapterData[] = [
     characterDevelopment: [
       "Boxer's immense work ethic is established -- he arrives early and works late.",
       'Snowball is energetic and creative, organising reading classes and committees.',
-      "Napoleon takes no interest in committees -- he focuses on the young, taking puppies to 'educate'.",
+      // Corrected 2 October 2026: "educate" is not Orwell's word (see the docblock
+      // of src/data/chapter-guides/animal-farm/chapter-3.ts); Napoleon says that
+      // "the education of the young" matters more than the committees.
+      "Napoleon takes no interest in committees -- he focuses on 'the education of the young', taking the puppies himself.",
       "Squealer justifies the pigs' milk and apple privilege with the threat of Jones returning.",
     ],
     allegory: [

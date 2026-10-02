@@ -36,7 +36,7 @@ const SAMPLES: SampleEssay[] = [
       'A clear and relevant response with some understanding of ambition. Textual references are mostly appropriate but analysis tends to identify rather than explore methods. Context is attached rather than integrated.',
     paragraphs: [
       "Shakespeare shows that Macbeth is very ambitious in the play. At the start he is called 'brave Macbeth' which shows he is a good soldier. But after he meets the witches he starts to think about being king.",
-      "Lady Macbeth also pushes him to kill Duncan. She says he should 'screw his courage to the sticking place'. This shows she is ambitious too and wants Macbeth to be king so she can be queen.",
+      "Lady Macbeth also pushes him to kill Duncan. She tells him to 'screw your courage to the sticking-place'. This shows she is ambitious too and wants Macbeth to be king so she can be queen.",
       'In the end Macbeth dies because his ambition was too much. Shakespeare is showing that ambition is bad if you do not control it. The audience at the time would not like someone killing a king because of the divine right of kings.',
     ],
     annotations: [

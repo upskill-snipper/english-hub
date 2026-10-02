@@ -1,3 +1,25 @@
+/**
+ * Much Ado About Nothing key quotations, Edexcel IGCSE Literature.
+ *
+ * A line shown as Shakespeare's must be the words of the edition the site
+ * holds, src/data/full-texts/much-ado-about-nothing.ts (Project Gutenberg
+ * #1519), because students learn these fifteen for a closed-book exam. When
+ * scripts/check-quotations.mjs first compared this page with that text (2
+ * October 2026), two were wrong: Beatrice's "stuff'd man" for the edition's
+ * "stuffed man", and "I take thee for pity" given to Beatrice, though it is
+ * Benedick's (Act 5, Scene 4). Both are now cut from the edition by script. A
+ * quotation added here should be cut from it too, not typed from memory or
+ * taken from another printing. Check again with
+ * node scripts/check-quotations.mjs --text much-ado-about-nothing.
+ *
+ * The checker compares words, not what the analysis says about them, and a
+ * review the same night found three claims the real words do not bear out:
+ * "Kill Claudio" was called "two monosyllables" (Claudio is not one); the
+ * market-place was called "the exact social space where Hero was shamed",
+ * though she is shamed at her wedding, in church; and "curtsies", a noun in
+ * Beatrice's line, was called a verb. Each analysis now says only what the
+ * line does.
+ */
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { GraduationCap } from 'lucide-react'
@@ -36,7 +58,7 @@ const QUOTES = [
       'Our first real taste of Beatrice. The comparison is wilfully absurd \u2014 barking dogs and crows vs love vows \u2014 and the sharpness of it establishes her as someone who refuses romantic clich\u00e9. The line sets up the enormous distance her character will have to travel.',
   },
   {
-    quote: '"He is no less than a stuff\u2019d man"',
+    quote: '"He is no less than a stuffed man"',
     speaker: 'Beatrice (1.1)',
     themes: ['Love'],
     analysis:
@@ -103,21 +125,21 @@ const QUOTES = [
     speaker: 'Beatrice (4.1)',
     themes: ['Love', 'Honour', 'Gender'],
     analysis:
-      'Two monosyllables. Probably the most shocking line in the play. Beatrice cannot avenge Hero herself \u2014 so she asks the man who has just declared his love to prove it by killing his best friend. Shakespeare folds love, gender, honour and friendship into three beats.',
+      'Two words. Probably the most shocking line in the play. Beatrice cannot avenge Hero herself \u2014 so she asks the man who has just declared his love to prove it by killing his best friend. Shakespeare folds love, gender, honour and friendship into a single command.',
   },
   {
     quote: '"O God, that I were a man! I would eat his heart in the market-place"',
     speaker: 'Beatrice (4.1)',
     themes: ['Gender', 'Honour'],
     analysis:
-      "The most direct feminist line in any Shakespeare comedy. Beatrice does not merely want retribution \u2014 she wants it publicly, physically, and in the exact social space where Hero was shamed. The play's repressed rage breaks through the wit.",
+      "The most direct feminist line in any Shakespeare comedy. Beatrice does not merely want retribution: she wants it in public and in the flesh, in the market-place, as public as the wedding at which Hero was shamed. The play's repressed rage breaks through the wit.",
   },
   {
     quote: '"Manhood is melted into curtsies, valour into compliment"',
     speaker: 'Beatrice (4.1)',
     themes: ['Gender', 'Honour'],
     analysis:
-      "Same scene. Beatrice diagnoses the failure of the men around her: they are all mannered, all polite, all useless when a woman's life is on the line. The verbs 'melted' and 'curtsies' feminise them \u2014 Shakespeare lets Beatrice turn their own honour-language against them.",
+      "Same scene. Beatrice diagnoses the failure of the men around her: they are all mannered, all polite, all useless when a woman's life is on the line. The words 'melted' and 'curtsies' feminise them \u2014 Shakespeare lets Beatrice turn their own honour-language against them.",
   },
   {
     quote: '"Peace! I will stop your mouth"',
@@ -128,7 +150,7 @@ const QUOTES = [
   },
   {
     quote: '"I take thee for pity"',
-    speaker: 'Beatrice (5.4)',
+    speaker: 'Benedick (5.4)',
     themes: ['Love', 'Marriage'],
     analysis:
       "The play's last great joke. Beatrice and Benedick agree to marry but refuse to pretend it was romantic destiny. The line preserves their pride and their wit at exactly the moment the plot is trying to flatten them into a conventional comic ending.",

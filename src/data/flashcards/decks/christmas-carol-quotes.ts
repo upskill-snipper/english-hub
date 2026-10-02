@@ -15,8 +15,8 @@ const deck: FlashcardDeck = {
   cards: [
     {
       id: 'cc-1',
-      front: '"Oh! But he was a tight-fisted hand at the grindstone, Scrooge!"',
-      back: `Stave 1. Introduces Scrooge as miserly and mean. "Tight-fisted" = unwilling to spend. "Grindstone" = relentless, mechanical labour. Dickens establishes Scrooge as everything wrong with Victorian capitalism.`,
+      front: '"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!"',
+      back: `Stave 1. Introduces Scrooge as miserly and mean. "Tight-fisted" = unwilling to spend. "Grind-stone" = relentless, mechanical labour. Dickens establishes Scrooge as everything wrong with Victorian capitalism.`,
     },
     {
       id: 'cc-2',
@@ -25,13 +25,13 @@ const deck: FlashcardDeck = {
     },
     {
       id: 'cc-3',
-      front: '"Are there no prisons? Are there no workhouses?"',
+      front: '"Are there no prisons? ... And the Union workhouses?"',
       back: `Stave 1. Scrooge\'s response to being asked for charity. Rhetorical questions. Shows his Malthusian attitude - he believes the poor deserve punishment, not help. Dickens satirises this Victorian mindset.`,
     },
     {
       id: 'cc-4',
       front:
-        '"If they would rather die, they had better do it, and decrease the surplus population"',
+        '"If they would rather die... they had better do it, and decrease the surplus population"',
       back: `Stave 1. Scrooge echoing Thomas Malthus\'s theory. "Surplus population" = the poor are expendable. This is Scrooge at his worst - completely dehumanising the poor. The Ghost of Christmas Present throws this back at him.`,
     },
     {

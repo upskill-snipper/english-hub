@@ -327,7 +327,8 @@ const conflictPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-conflict-10',
     theme: 'Conflict',
-    quote: 'Brave Macbeth - well he deserves that name - unseamed him from the nave to th’ chops.',
+    quote:
+      'Brave Macbeth (well he deserves that name) ... unseam’d him from the nave to the chops.',
     text: 'Macbeth',
     board: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
   },
@@ -457,16 +458,21 @@ const classPairings: ThemeQuotePairing[] = [
     board: ['AQA', 'Eduqas'],
   },
   {
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are there
+    // no prisons?" and "And the Union workhouses?" ("Are there no workhouses?" is the Spirit's,
+    // in Stave Three), and "If they would rather die" had lost its speech tag.
     id: 'tm-extra-class-05',
     theme: 'Class & Society',
-    quote: 'Are there no prisons? Are there no workhouses?',
+    quote: 'Are there no prisons? ... And the Union workhouses?',
     text: 'A Christmas Carol',
     board: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
   },
   {
     id: 'tm-extra-class-06',
     theme: 'Class & Society',
-    quote: 'If they would rather die, they had better do it, and decrease the surplus population.',
+    quote:
+      'If they would rather die... they had better do it, and decrease the surplus population.',
     text: 'A Christmas Carol',
     board: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
   },
@@ -542,15 +548,20 @@ const guiltPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-guilt-06',
     theme: 'Guilt',
-    // VERIFIED: Stevenson, Strange Case of Dr Jekyll and Mr Hyde, "Henry Jekyll's Full Statement of the Case" (Gutenberg #43)
-    quote: 'I bring on him a disease and a sorrow.',
+    // Cut from the held text (src/data/full-texts/jekyll-and-hyde.ts, Project
+    // Gutenberg #43), "Henry Jekyll's Full Statement of the Case". The line here
+    // until 2 October 2026 was marked VERIFIED but is in no printing of the
+    // novel: it was invented, and a student could have learnt it for the exam.
+    quote: 'It was Hyde, after all, and Hyde alone, that was guilty.',
     text: 'Jekyll and Hyde',
     board: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
   },
   {
     id: 'tm-extra-guilt-07',
     theme: 'Guilt',
-    quote: 'I was the chief of sinners, I was also the chief of sufferers.',
+    // Jekyll to Utterson, Chapter 6. Until 2 October 2026 this read "I was the chief of
+    // sinners, I was also...", which the edition never prints.
+    quote: 'If I am the chief of sinners, I am the chief of sufferers also.',
     text: 'Jekyll and Hyde',
     board: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
   },

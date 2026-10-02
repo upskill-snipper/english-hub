@@ -1077,6 +1077,12 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
     id: 'y10-poetry-m10',
     title: 'Sample Poem Analysis 2 - Worked Exemplar',
     duration: '55 min',
+    // 2 October 2026: the imagined poem below is My Last Duchess, quoted in its own
+    // words, but twice it quoted "my painting", which the poem never says, and the model
+    // paragraph said its "my" reached the listener, which no line does. The first list
+    // now has line 1, "my last Duchess painted on the wall", and the second line 53,
+    // "my object" (the next bride), cut by script from the held edition
+    // (src/data/full-texts/my-last-duchess.ts).
     content: `
 <h2>A Second Worked Exemplar: Analysing Voice and Perspective</h2>
 
@@ -1090,7 +1096,7 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
 
 <h3>Analysing the Speaker's Language</h3>
 
-<p>In a dramatic monologue, every word choice characterises the speaker. If the speaker uses language of <strong>ownership and control</strong> - "my painting," "I gave commands," "I choose never to stoop" - these choices reveal a personality defined by authority, pride, and a refusal to negotiate. The possessive pronouns ("my") accumulate, extending from objects to people, suggesting that the speaker views their spouse not as a person but as a possession - an artwork to be displayed and controlled.</p>
+<p>In a dramatic monologue, every word choice characterises the speaker. If the speaker uses language of <strong>ownership and control</strong> - "my last Duchess painted on the wall," "I gave commands," "I choose never to stoop" - these choices reveal a personality defined by authority, pride, and a refusal to negotiate. The possessive pronouns ("my") accumulate, extending from objects to people, suggesting that the speaker views their spouse not as a person but as a possession - an artwork to be displayed and controlled.</p>
 
 <p>The speaker's tone shifts subtly throughout the poem, and tracking these shifts is essential. The opening might be conversational and charming - the speaker appears to be a gracious host showing a guest a prized painting. But underneath the charm, specific word choices betray darker impulses. A phrase like "I gave commands; then all smiles stopped together" is chillingly understated - the calm, controlled syntax masks what is essentially an admission of murder. This tension between polished surface and violent subtext is the heart of the dramatic monologue form.</p>
 
@@ -1112,7 +1118,7 @@ export const y10IgcseLitPoetryModules: CourseModule[] = [
 
 <p><strong>Opening:</strong> "The poem presents a speaker whose polished, controlling language gradually reveals the disturbing truth behind their apparently civilised exterior. Through the form of the dramatic monologue, the poet exposes the gap between the speaker's self-image as a cultured patron and the reality of their possessive, violent nature."</p>
 
-<p><strong>Key Analytical Move:</strong> "The speaker's repeated use of possessive language - 'my painting,' 'my last Duchess,' 'my gift' - reveals a worldview in which people are reduced to objects of ownership. The possessive pronoun 'my' accumulates across the poem, extending from artwork to spouse to the listener themselves, until the reader recognises that for this speaker, all relationships are transactions of power. The apparent warmth of 'my' - a word that might suggest affection in another context - is hollowed out by the controlling logic it serves."</p>
+<p><strong>Key Analytical Move:</strong> "The speaker's repeated use of possessive language - 'my last Duchess,' 'my gift,' 'my object' - reveals a worldview in which people are reduced to objects of ownership. The possessive pronoun 'my' accumulates across the poem, extending from the dead spouse to the next bride being bargained for, until the reader recognises that for this speaker, all relationships are transactions of power. The apparent warmth of 'my' - a word that might suggest affection in another context - is hollowed out by the controlling logic it serves."</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Students sometimes moralise about the speaker rather than analysing the poet's craft. Writing "The speaker is a terrible person and should not have done this" is personal opinion, not analysis. Instead, examine <em>how</em> the poet reveals the speaker's character - through diction, syntax, tone, dramatic irony, and the gap between what is said and what is implied. Your job is to analyse the technique, not to judge the character.</div>
 

@@ -12,12 +12,15 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * 2026 and again, line by line, on 26 September, prints the earlier
  * "knight-at-arms" text, the one the Poetry Foundation prints from Penguin's
  * Selected Poems (1988), and not the revised text of The Indicator (10 May
- * 1820), which opens with a "wretched wight". The page above this supplement
- * says the opposite in its version note, which calls the anthology's text the
- * Indicator version; that note is wrong. Its poem viewer and summary also print
- * "Hath thee in thrall", where the anthology has "Thee hath in thrall". Neither
- * is corrected here, because this file does not edit that page; the tips below
- * tell the student to quote the anthology.
+ * 1820), which opens with a "wretched wight". When this was written the page
+ * above this supplement said the opposite in its version note, calling the
+ * anthology's text the Indicator version, and its poem viewer and summary
+ * printed "Hath thee in thrall", where the anthology has "Thee hath in thrall".
+ * The page was corrected later on 26 September 2026 (its version note, viewer
+ * and summary now follow the anthology), and the same Indicator claim was
+ * taken out of the poetry hub, the authors page, the common-errors page and a
+ * mock-exam model answer on 2 October 2026. The tips below tell the student to
+ * quote the anthology.
  *
  * The edition held in src/data/full-texts is Sidney Colvin's text (Project
  * Gutenberg #36356). It is also a knight-at-arms text, but it differs from the

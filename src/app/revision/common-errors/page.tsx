@@ -212,11 +212,18 @@ const ERROR_GROUPS: ErrorGroup[] = [
     errors: [
       {
         number: 12,
+        // Until 2 October 2026 the right answer said "Edexcel uses the 1820
+        // Indicator version", contradicting the wrong answer above it, and it
+        // is the error the poem's page corrected on 26 September: the
+        // International GCSE anthology, read from the Pearson PDF (see
+        // src/data/study-guides/la-belle-dame-sans-merci.ts), prints the
+        // earlier knight-at-arms text. What other boards print was never
+        // checked, so it is no longer claimed.
         text: 'La Belle Dame Sans Merci - TWO versions exist',
         wrong:
-          'Quoting the 1820 Indicator version when sitting Edexcel… or the 1848 Milnes version when sitting AQA.',
+          'Quoting the revised 1820 Indicator text, which opens with a "wretched wight", when your anthology prints the earlier "knight-at-arms" text, or the other way round.',
         right:
-          'Edexcel uses the 1820 Indicator version. Other boards typically use the 1819/1848 Milnes version. Check your specification.',
+          'The Edexcel International GCSE anthology prints the earlier text, in which the knight is a "knight-at-arms", not the 1820 Indicator revision. Whatever your board, quote the version your anthology prints.',
         why: 'The two versions differ in wording and stanza order. Quoting the wrong one will produce "misquotations" in the examiner\'s eyes. Always use the version printed in your anthology.',
       },
       {

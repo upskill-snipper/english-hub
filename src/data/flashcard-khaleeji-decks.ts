@@ -123,7 +123,7 @@ export const khaleejiVocabDecks: FlashcardDeck[] = [
         id: 'kh-mb-10',
         front: 'Equivocation',
         frontAr: 'إيكويفوكيشن / المراوغة بالكلام (Equivocation)',
-        back: "Definition: The use of ambiguous, double-meaning language to mislead without telling an outright lie.\n\nExample essay sentence: \"The witches' equivocation - promising Macbeth he cannot be killed 'by man of woman born' - gives him false security while concealing the literal truth.\"\n\nWhen to use it: When analysing the witches' prophecies or any speech designed to deceive through ambiguity.",
+        back: "Definition: The use of ambiguous, double-meaning language to mislead without telling an outright lie.\n\nExample essay sentence: \"The witches' equivocation - promising Macbeth that 'none of woman born / Shall harm Macbeth' - gives him false security while concealing the literal truth.\"\n\nWhen to use it: When analysing the witches' prophecies or any speech designed to deceive through ambiguity.",
         backAr:
           'التعريف: استخدام كلام له أكثر من معنى عشان تخدع الطرف الثاني بدون ما تكذب صراحة. الكلام ظاهره صحيح، بس معناه الحقيقي مختلف تماماً.\n\nالسحرة سيّدات هالفن: يقولون لماكبث إنه ما راح يُقتل من رجل ولدته امرأة - و هو يفهمها إنه محصّن، بينما الحقيقة إن ماكدف ولد بعملية قيصرية (مو ولادة طبيعية)، فينطبق عليه الشرط.\n\nالعصر الجاكوبي كان مهتم بهالموضوع بسبب محاكمات اليسوعيين اللي استخدموا الـ equivocation عشان يتهرّبوا من الاتهام.\n\nالاستخدام: استخدمها (استخدميها) لمّا تحلّل لغة السحرة أو أي كلام مخادع بطريقة ذكية.',
       },
@@ -518,8 +518,12 @@ export const khaleejiVocabDecks: FlashcardDeck[] = [
         front: 'Dramatic Monologue',
         frontAr: 'مونولوج درامي (Dramatic Monologue)',
         back: "Definition: A poem spoken by a single character to a silent listener, revealing the speaker's personality - often unintentionally.\n\nExample (My Last Duchess, Browning): The Duke reveals his controlling, murderous nature while trying to impress an envoy.\n\nEffect: Creates dramatic irony - we learn things about the speaker they don't mean to tell us.\n\nWhen to mention: When a poem is in a clear first-person voice talking to a defined listener.",
+        // 2 October 2026: the Arabic set "she smiled at everyone" in quotation marks, as if
+        // quoting the Duke. It is a fair paraphrase of lines 43 to 45 of the held edition
+        // (src/data/full-texts/my-last-duchess.ts) but not his words, and the English card
+        // quotes nothing here, so it is now unquoted paraphrase.
         backAr:
-          'التعريف: قصيدة يقولها متكلّم واحد يخاطب مستمع صامت. المستمع موجود بالقصيدة لكن ما يردّ - كل ما عندنا هو كلام المتكلّم. و من هالكلام، نكتشف طبيعة المتكلّم - أحياناً ضد إرادته.\n\nالأثر:\n- مفارقة درامية: المتكلّم يكشف عن نفسه أكثر مما يقصد\n- نقد الشخصية من داخلها\n- بناء صورة معقّدة بدون راوي يحكم علناً\n\nأمثلة:\n- "My Last Duchess" لـ Browning: الدوق يكلّم مبعوث الكونت اللي راح يجيب له عروس جديدة. خلال الكلام، الدوق يكشف إنه قتل زوجته السابقة لأنها كانت "تبتسم لكل أحد." الجمهور يفهم الجريمة، المبعوث ربّما يفهم، الدوق نفسه يحسب إنه يبيّن جدارته.\n- "Checking Out Me History" لـ Agard: مونولوج درامي بصوت ساخر، يخاطب المعلّمين البريطانيين اللي علّموه تاريخ أبيض فقط.\n- "Tissue" بطريقة مختلفة: متأمّل وحده، لكن بصوت يخاطب القارئ.\n\nالاستخدام: لمّا تحلّل، اسأل: مين المتكلّم؟ مين المستمع؟ وش يكشفه المتكلّم بدون قصد؟',
+          'التعريف: قصيدة يقولها متكلّم واحد يخاطب مستمع صامت. المستمع موجود بالقصيدة لكن ما يردّ - كل ما عندنا هو كلام المتكلّم. و من هالكلام، نكتشف طبيعة المتكلّم - أحياناً ضد إرادته.\n\nالأثر:\n- مفارقة درامية: المتكلّم يكشف عن نفسه أكثر مما يقصد\n- نقد الشخصية من داخلها\n- بناء صورة معقّدة بدون راوي يحكم علناً\n\nأمثلة:\n- "My Last Duchess" لـ Browning: الدوق يكلّم مبعوث الكونت اللي راح يجيب له عروس جديدة. خلال الكلام، الدوق يكشف إنه قتل زوجته السابقة لأنها كانت تبتسم لكل أحد. الجمهور يفهم الجريمة، المبعوث ربّما يفهم، الدوق نفسه يحسب إنه يبيّن جدارته.\n- "Checking Out Me History" لـ Agard: مونولوج درامي بصوت ساخر، يخاطب المعلّمين البريطانيين اللي علّموه تاريخ أبيض فقط.\n- "Tissue" بطريقة مختلفة: متأمّل وحده، لكن بصوت يخاطب القارئ.\n\nالاستخدام: لمّا تحلّل، اسأل: مين المتكلّم؟ مين المستمع؟ وش يكشفه المتكلّم بدون قصد؟',
       },
       {
         id: 'kh-pc-10',

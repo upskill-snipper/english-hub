@@ -647,6 +647,17 @@ The river lay like a strip of molten silver in the afternoon sun. Along its bank
   // ──────────────────────────────────────────────
   // MODULE 5 - Non-Fiction Reading: Summary, Synthesis & Comparison
   // ──────────────────────────────────────────────
+  // The practice extract is from Mary Shelley's Introduction to the 1831
+  // Frankenstein, cut from the text the site holds
+  // (src/data/full-texts/frankenstein.ts). Until 2 October 2026 it was headed
+  // "Preface", which is the 1818 preface her Introduction says Percy Shelley
+  // wrote; it dropped her sentence ending "would be unworthy of its name" with
+  // no ellipsis; and it carried 29 words that are not hers. The model answer
+  // rested on those words, saying she was "haunted" by her determination and
+  // that her companions were succeeding where she was not, when the
+  // Introduction says the poets "speedily relinquished their
+  // uncongenial task". The quotation scanner reads only spans in quotation
+  // marks and quotation fields, so it never saw the extract.
   {
     id: 'igcse-b-m5',
     title: 'Non-Fiction Reading: Summary, Synthesis & Comparison',
@@ -670,10 +681,10 @@ The river lay like a strip of molten silver in the afternoon sun. Along its bank
   <li><strong>Covering range:</strong> Draw from across the whole text, not just the first paragraph.</li>
 </ul>
 
-<h3>Practice Extract: Mary Shelley, Preface to <em>Frankenstein</em> (1831 Edition)</h3>
+<h3>Practice Extract: Mary Shelley, Introduction to <em>Frankenstein</em> (1831 Edition)</h3>
 
 <blockquote>
-I busied myself to think of a story - a story to rival those which had excited us to this task. One which would speak to the mysterious fears of our nature, and awaken thrilling horror - one to make the reader dread to look round, to curdle the blood, and quicken the beatings of the heart. I thought and pondered - vainly. I felt that blank incapability of invention which is the greatest misery of authorship, when dull Nothing replies to our anxious invocations. And yet I could not yield. So I was ever haunted by my resolve to compose a worthy tale, and by my companions' success, which taunted me still further. "Have you thought of a story?" I was asked each morning, and each morning I was forced to reply with a mortifying negative.
+I busied myself <em>to think of a story</em>, - a story to rival those which had excited us to this task. One which would speak to the mysterious fears of our nature, and awaken thrilling horror - one to make the reader dread to look round, to curdle the blood, and quicken the beatings of the heart. If I did not accomplish these things, my ghost story would be unworthy of its name. I thought and pondered - vainly. I felt that blank incapability of invention which is the greatest misery of authorship, when dull Nothing replies to our anxious invocations. <em>Have you thought of a story?</em> I was asked each morning, and each morning I was forced to reply with a mortifying negative.
 </blockquote>
 
 <h3>Sample Question</h3>
@@ -692,7 +703,7 @@ I busied myself to think of a story - a story to rival those which had excited u
 
 <div class="model-answer"><strong>Model Answer:</strong>
 <p>Shelley reveals that she was deeply ambitious in her creative goals - she wanted to produce a story that would genuinely terrify readers and "curdle the blood," suggesting she set herself an extremely high standard from the outset. However, this ambition was met with a frustrating inability to generate ideas; she describes the "blank incapability of invention" as "the greatest misery of authorship," conveying the psychological torment of creative block.</p>
-<p>Despite this failure, Shelley was unable to abandon her goal. She was "haunted" by her determination to succeed, implying an obsessive, almost involuntary commitment. Her frustration was compounded by social pressure - her companions were succeeding where she was not, and their daily question "Have you thought of a story?" became a source of humiliation. The word "mortifying" reveals that the experience was not merely disappointing but genuinely shameful.</p>
+<p>Her standard was absolute: a ghost story that failed to frighten in this way "would be unworthy of its name". She persisted, but without success: she "thought and pondered - vainly". Her frustration was compounded by social pressure: "Have you thought of a story?" she was asked every morning, and every morning she was forced to give "a mortifying negative". The word "mortifying" reveals that the experience was not merely disappointing but genuinely shameful.</p>
 <p>In summary, Shelley's account reveals a cycle of ambition, frustration, determination, and embarrassment - a deeply personal and emotionally charged creative struggle.</p>
 <p><em>Annotation: This answer identifies five key aspects of Shelley's experience (ambition, creative block, persistence, social pressure, humiliation), paraphrases them in the student's own words, uses selective quotation as support, and organises them into a logical, coherent account. The final sentence provides a concise overall summary.</em></p>
 </div>
@@ -978,6 +989,13 @@ Lord Henry elevated his eyebrows and looked at him in amazement through the thin
     id: 'igcse-b-m7',
     title: "Literary Text Reading: Language, Structure & Writer's Craft",
     duration: '60 min',
+    // The model answer below quotes the Soho passage of Jekyll and Hyde from the held
+    // edition (Project Gutenberg #43, src/data/full-texts/jekyll-and-hyde.ts). Until 2
+    // October 2026 it had the cab "crawling"; the edition has "the cab crawled from
+    // street to street". The practice extract itself, which the quotation scanner never
+    // reads because it is not in quotation marks, had a shaft of daylight that would
+    // "look in" where Stevenson's would "glance in", and "marvellous" where the held
+    // edition prints "marvelous"; a word-by-word comparison now finds no difference.
     content: `
 <h2>Analysing Language and Structure in Literary Texts</h2>
 
@@ -997,7 +1015,7 @@ Lord Henry elevated his eyebrows and looked at him in amazement through the thin
 <h3>Practice Extract: Robert Louis Stevenson, <em>The Strange Case of Dr Jekyll and Mr Hyde</em> (1886)</h3>
 
 <blockquote>
-It was by this time about nine in the morning, and the first fog of the season. A great chocolate-coloured pall lowered over heaven, but the wind was continually charging and routing these embattled vapours; so that as the cab crawled from street to street, Mr Utterson beheld a marvellous number of degrees and hues of twilight; for here it would be dark like the back-end of evening; and there would be a glow of a rich, lurid brown, like the light of some strange conflagration; and here, for a moment, the fog would be quite broken up, and a haggard shaft of daylight would look in between the swirling wreaths. The dismal quarter of Soho seen under these changing glimpses, with its muddy ways, and slatternly passengers, and its lamps, which had never been extinguished or had been kindled afresh to combat this mournful reinvasion of darkness, seemed, in the lawyer's eyes, like a district of some city in a nightmare.
+It was by this time about nine in the morning, and the first fog of the season. A great chocolate-coloured pall lowered over heaven, but the wind was continually charging and routing these embattled vapours; so that as the cab crawled from street to street, Mr Utterson beheld a marvelous number of degrees and hues of twilight; for here it would be dark like the back-end of evening; and there would be a glow of a rich, lurid brown, like the light of some strange conflagration; and here, for a moment, the fog would be quite broken up, and a haggard shaft of daylight would glance in between the swirling wreaths. The dismal quarter of Soho seen under these changing glimpses, with its muddy ways, and slatternly passengers, and its lamps, which had never been extinguished or had been kindled afresh to combat this mournful reinvasion of darkness, seemed, in the lawyer's eyes, like a district of some city in a nightmare.
 </blockquote>
 
 <h3>Sample Question</h3>
@@ -1021,7 +1039,7 @@ It was by this time about nine in the morning, and the first fog of the season. 
 </div>
 
 <div class="model-answer"><strong>Model Answer - Structural Analysis:</strong>
-<p><strong>Point:</strong> Structurally, Stevenson builds the passage as a single, extended sentence that mirrors the cab's journey through the fog. <strong>Evidence:</strong> The sentence accumulates images through a series of semicolons and connecting phrases: "for here it would be dark… and there would be a glow… and here, for a moment, the fog would be quite broken up." <strong>Technique:</strong> This use of polysyndeton (the repetition of conjunctions) and spatial markers ("here," "there," "here") <strong>Analysis:</strong> creates a rhythmic, almost hypnotic movement that mimics the cab "crawling from street to street." The reader experiences the shifting light and fog alongside Mr Utterson, sharing his disorientation. The passage withholds a clear destination - we move through one impression after another without resolution - which builds suspense and unease. <strong>Link:</strong> The structural choice to delay clarity mirrors Mr Utterson's experience as an investigator: he is always moving through fog, both literal and metaphorical, searching for truth that continually recedes.</p>
+<p><strong>Point:</strong> Structurally, Stevenson builds the passage as a single, extended sentence that mirrors the cab's journey through the fog. <strong>Evidence:</strong> The sentence accumulates images through a series of semicolons and connecting phrases: "for here it would be dark… and there would be a glow… and here, for a moment, the fog would be quite broken up." <strong>Technique:</strong> This use of polysyndeton (the repetition of conjunctions) and spatial markers ("here," "there," "here") <strong>Analysis:</strong> creates a rhythmic, almost hypnotic movement that mimics the way "the cab crawled from street to street." The reader experiences the shifting light and fog alongside Mr Utterson, sharing his disorientation. The passage withholds a clear destination - we move through one impression after another without resolution - which builds suspense and unease. <strong>Link:</strong> The structural choice to delay clarity mirrors Mr Utterson's experience as an investigator: he is always moving through fog, both literal and metaphorical, searching for truth that continually recedes.</p>
 </div>
 
 <h3>What Gets Marks vs What Doesn't</h3>
@@ -1134,6 +1152,13 @@ It was by this time about nine in the morning, and the first fog of the season. 
   // ──────────────────────────────────────────────
   // MODULE 8 - Literary Text Reading: Evaluation & Personal Response
   // ──────────────────────────────────────────────
+  // The practice extract is Chapter 5 of Frankenstein, word for word with the
+  // held 1831 text (src/data/full-texts/frankenstein.ts). Until 2 October 2026
+  // it, and the model answer, printed "dun-white sockets"; the held text prints
+  // "dun white", and the extract walkthrough
+  // (src/app/revision/texts/frankenstein/extract-walkthrough/page.tsx) records
+  // that the 1818 first edition does too, the hyphen being Gutenberg #84's
+  // modernisation.
   {
     id: 'igcse-b-m8',
     title: 'Literary Text Reading: Evaluation & Personal Response',
@@ -1161,7 +1186,7 @@ It was by this time about nine in the morning, and the first fog of the season. 
 <blockquote>
 It was on a dreary night of November that I beheld the accomplishment of my toils. With an anxiety that almost amounted to agony, I collected the instruments of life around me, that I might infuse a spark of being into the lifeless thing that lay at my feet. It was already one in the morning; the rain pattered dismally against the panes, and my candle was nearly burnt out, when, by the glimmer of the half-extinguished light, I saw the dull yellow eye of the creature open; it breathed hard, and a convulsive motion agitated its limbs.
 <br/><br/>
-How can I describe my emotions at this catastrophe, or how delineate the wretch whom with such infinite pains and care I had endeavoured to form? His limbs were in proportion, and I had selected his features as beautiful. Beautiful! Great God! His yellow skin scarcely covered the work of muscles and arteries beneath; his hair was of a lustrous black, and flowing; his teeth of a pearly whiteness; but these luxuriances only formed a more horrid contrast with his watery eyes, that seemed almost of the same colour as the dun-white sockets in which they were set, his shrivelled complexion and straight black lips.
+How can I describe my emotions at this catastrophe, or how delineate the wretch whom with such infinite pains and care I had endeavoured to form? His limbs were in proportion, and I had selected his features as beautiful. Beautiful! Great God! His yellow skin scarcely covered the work of muscles and arteries beneath; his hair was of a lustrous black, and flowing; his teeth of a pearly whiteness; but these luxuriances only formed a more horrid contrast with his watery eyes, that seemed almost of the same colour as the dun white sockets in which they were set, his shrivelled complexion and straight black lips.
 </blockquote>
 
 <h3>Sample Question</h3>
@@ -1180,7 +1205,7 @@ How can I describe my emotions at this catastrophe, or how delineate the wretch 
 
 <div class="model-answer"><strong>Model Answer:</strong>
 <p>I largely agree with the reader's view that Shelley creates both fascination and horror, though I would argue that the passage is more complex than this binary suggests - the dominant effect is one of <em>tragic revulsion</em>, where fascination and horror are inseparable.</p>
-<p>The passage certainly generates horror. Shelley's description of the creature emphasises the grotesque: "his yellow skin scarcely covered the work of muscles and arteries beneath" creates a visceral, almost nauseating image of a body that is simultaneously alive and corpse-like. The detail of "watery eyes" set in "dun-white sockets" evokes a cadaverous appearance that is deeply unsettling. The reader cannot help but recoil from this description, which is clearly designed to provoke disgust.</p>
+<p>The passage certainly generates horror. Shelley's description of the creature emphasises the grotesque: "his yellow skin scarcely covered the work of muscles and arteries beneath" creates a visceral, almost nauseating image of a body that is simultaneously alive and corpse-like. The detail of "watery eyes" set in "dun white sockets" evokes a cadaverous appearance that is deeply unsettling. The reader cannot help but recoil from this description, which is clearly designed to provoke disgust.</p>
 <p>However, fascination is also present - indeed, it is embedded in the very structure of the passage. Shelley builds suspense through the scene-setting: "a dreary night of November," "the rain pattered dismally," "my candle was nearly burnt out." These Gothic details create anticipation, drawing the reader forward with a desire to witness the creation. When the creature's "dull yellow eye" opens, the moment is electrifying precisely because we have been made to wait for it. Furthermore, the narrative voice's exclamation - "Beautiful! Great God!" - captures a moment of stunned recognition that mimics the reader's own conflicted response.</p>
 <p>Where I would go beyond the statement is in noting that Shelley also creates a profound sense of <em>pity</em>. The creature is described as a "wretch" formed with "infinite pains and care" - the juxtaposition of loving creation and horrifying result is deeply tragic. Frankenstein <em>intended</em> beauty ("I had selected his features as beautiful") but produced something monstrous. This gap between intention and outcome generates sympathy not only for the creator but, arguably, for the creature itself - a being that never asked to be made and is immediately labelled a "catastrophe."</p>
 <p>In conclusion, I agree that fascination and horror are present, but the passage's greatest achievement is the way these emotions are intertwined with pity and moral complexity, creating a reading experience that is profoundly unsettling rather than simply thrilling.</p>

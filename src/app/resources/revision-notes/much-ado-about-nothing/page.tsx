@@ -1,5 +1,35 @@
 'use client'
 
+/**
+ * Much Ado About Nothing study guide.
+ *
+ * A line shown as Shakespeare's must be the words of the edition the site
+ * holds, src/data/full-texts/much-ado-about-nothing.ts (Project Gutenberg
+ * #1519), because students memorise these quotations for their exams. Until
+ * 2 October 2026 nothing compared this page with that text, and when
+ * scripts/check-quotations.mjs first did, seven quotations were wrong: two
+ * spellings the edition does not print, each twice ("marketplace" and
+ * "defiled" for its "market-place" and "defil'd"); Dogberry's "auspicious" for
+ * his "aspicious"; an "I" added to Leonato's "Myself would, on the rearward of
+ * reproaches"; and "She is fallen / Into a pit of ink" given to Claudio,
+ * though it is Leonato's. Those cards and the words their analysis quotes are
+ * now cut from the edition by script, and the ink card's analysis is
+ * rewritten for its real speaker. Two errors the checker cannot see were
+ * found by hand: the context section gave Beatrice a line the play does not
+ * have, now her "Not till God make men of some other metal than earth" (Act 2,
+ * Scene 1), and Benedick's "Peace! I will stop your mouth" was called his
+ * final line, though he speaks four times after it. A quotation added here
+ * should be cut from the edition too, not typed from memory or taken from
+ * another printing. Check again with
+ * node scripts/check-quotations.mjs --text much-ado-about-nothing.
+ *
+ * A review the same night found one more the checker cannot see: Benedick's
+ * profile gave his decision to challenge Claudio as "('Kill Claudio')", which
+ * reads as his line. It is Beatrice's demand; his answer is "Ha! not for the
+ * wide world", and only later "I will challenge him". The profile now says
+ * whose words they are.
+ */
+
 import { useState } from 'react'
 
 /* ─── Expandable Section ─────────────────────────────────────── */
@@ -146,7 +176,7 @@ const characters = [
   {
     name: 'Benedick',
     description:
-      "A soldier and witty bachelor who swears he will never marry ('I will live a bachelor'). His verbal sparring with Beatrice reveals a sharp mind and deep emotional investment that contradicts his professed indifference. His gulling scene is comic masterpiece: he instantly believes Beatrice loves him and reinterprets her every past insult as hidden affection. His decision to challenge Claudio ('Kill Claudio') is the play's most significant character moment: he chooses Beatrice over his male friendships and the soldier's code of honour. This represents genuine moral growth: he moves from superficial wit to principled action. By the end, he has not been tamed but has chosen love willingly, and his final line ('Peace! I will stop your mouth') is a playful reassertion of the verbal dynamic that defines their relationship.",
+      "A soldier and witty bachelor who swears he will never marry ('I will live a bachelor'). His verbal sparring with Beatrice reveals a sharp mind and deep emotional investment that contradicts his professed indifference. His gulling scene is comic masterpiece: he instantly believes Beatrice loves him and reinterprets her every past insult as hidden affection. His decision to challenge Claudio, after Beatrice demands 'Kill Claudio', is the play's most significant character moment: he chooses Beatrice over his male friendships and the soldier's code of honour. This represents genuine moral growth: he moves from superficial wit to principled action. By the end, he has not been tamed but has chosen love willingly, and his line in the final scene ('Peace! I will stop your mouth') is a playful reassertion of the verbal dynamic that defines their relationship.",
   },
   {
     name: 'Hero',
@@ -176,7 +206,7 @@ const characters = [
   {
     name: 'Dogberry',
     description:
-      "The self-important constable whose malapropisms (using the wrong word: 'Our watch, sir, have indeed comprehended two auspicious persons') provide some of the play's best comedy. Dogberry is crucial to the plot: his Watch discovers the truth about Don John's deception, but his incompetence delays the revelation until after the broken wedding. Shakespeare uses Dogberry to show that truth emerges despite, not because of, institutional authority. His outrage at being called an 'ass' and his insistence that 'I am a wise fellow' satirise petty officialdom. In performance, Dogberry often steals the show.",
+      "The self-important constable whose malapropisms (using the wrong word: 'Our watch, sir, have indeed comprehended two aspicious persons') provide some of the play's best comedy. Dogberry is crucial to the plot: his Watch discovers the truth about Don John's deception, but his incompetence delays the revelation until after the broken wedding. Shakespeare uses Dogberry to show that truth emerges despite, not because of, institutional authority. His outrage at being called an 'ass' and his insistence that 'I am a wise fellow' satirise petty officialdom. In performance, Dogberry often steals the show.",
   },
 ]
 
@@ -254,11 +284,11 @@ const keyQuotes = [
   },
   {
     quote:
-      'O that I were a man! What, bear her in hand until they come to take hands; and then, with public accusation, uncovered slander, unmitigated rancour \u2014 O God, that I were a man! I would eat his heart in the marketplace',
+      'O! that I were a man. What! bear her in hand until they come to take hands, and then, with public accusation, uncovered slander, unmitigated rancour,\u2014O God, that I were a man! I would eat his heart in the market-place',
     speaker: 'Beatrice',
     act: 'Act 4, Scene 1',
     analysis:
-      "Beatrice's most passionate speech exposes the gendered limitation of the honour code. 'O that I were a man!' repeated twice, expresses not a desire to be male but fury at the injustice of being excluded from action by her sex. The violent imagery ('eat his heart in the marketplace') is deliberately public: she wants Claudio's humiliation to match Hero's. The speech is a devastating critique of a society that silences women while allowing men to destroy them publicly.",
+      "Beatrice's most passionate speech exposes the gendered limitation of the honour code. 'O that I were a man!' repeated twice, expresses not a desire to be male but fury at the injustice of being excluded from action by her sex. The violent imagery ('eat his heart in the market-place') is deliberately public: she wants Claudio's humiliation to match Hero's. The speech is a devastating critique of a society that silences women while allowing men to destroy them publicly.",
   },
   {
     quote: 'Thou and I are too wise to woo peaceably',
@@ -292,10 +322,10 @@ const keyQuotes = [
   {
     quote:
       'She is fallen / Into a pit of ink, that the wide sea / Hath drops too few to wash her clean again',
-    speaker: 'Claudio',
+    speaker: 'Leonato',
     act: 'Act 4, Scene 1',
     analysis:
-      "Claudio's metaphor of ink staining echoes the blood imagery of Macbeth but applies to reputation rather than guilt. The hyperbole ('the wide sea hath drops too few') suggests that once a woman's reputation is damaged, it can never be restored. The passivity of 'she is fallen' implies that Hero brought this upon herself, absolving Claudio of responsibility. Shakespeare exposes how male rhetoric transforms the accuser into the victim.",
+      "Leonato's metaphor of ink staining echoes the blood imagery of Macbeth but applies to reputation rather than guilt. The hyperbole ('the wide sea / Hath drops too few') suggests that once a woman's reputation is damaged, it can never be restored. 'She is fallen' makes the fall Hero's own, as though she had brought this upon herself, though she has done nothing. Shakespeare shows a father so bound by the honour code that he believes his daughter's accusers over her, and mourns his own disgrace in hers.",
   },
   {
     quote:
@@ -307,25 +337,25 @@ const keyQuotes = [
   },
   {
     quote:
-      'Do not live, Hero; do not ope thine eyes: / For, did I think thou wouldst not quickly die, / Thought I thy spirits were stronger than thy shames, / I myself would, on the rearward of reproaches, / Strike at thy life',
+      'Do not live, Hero; do not ope thine eyes; / For, did I think thou wouldst not quickly die, / Thought I thy spirits were stronger than thy shames, / Myself would, on the rearward of reproaches, / Strike at thy life',
     speaker: 'Leonato',
     act: 'Act 4, Scene 1',
     analysis:
       "Leonato's most disturbing lines: a father wishing his daughter dead and threatening to kill her himself. This is the logical extreme of the honour code: a daughter's unchastity is worse than her death. 'Rearward of reproaches' is a military metaphor, treating his own child as an enemy. Shakespeare forces the audience to confront the violence inherent in patriarchal honour, even from a character previously presented as loving and genial.",
   },
   {
-    quote: 'One Hero died defiled, but I do live, / And surely as I live, I am a maid',
+    quote: "One Hero died defil'd, but I do live, / And surely as I live, I am a maid",
     speaker: 'Hero',
     act: 'Act 5, Scene 4',
     analysis:
-      "Hero's self-reinvention at the second wedding is both triumphant and troubling. 'One Hero died defiled' refers to her old identity, destroyed by slander; the living Hero reasserts her virginity. The symbolism of death and rebirth gives Hero narrative power, but critics note that she must perform innocence for male satisfaction. Her identity is still defined by her chastity, even in her moment of vindication.",
+      "Hero's self-reinvention at the second wedding is both triumphant and troubling. 'One Hero died defil'd' refers to her old identity, destroyed by slander; the living Hero reasserts her virginity. The symbolism of death and rebirth gives Hero narrative power, but critics note that she must perform innocence for male satisfaction. Her identity is still defined by her chastity, even in her moment of vindication.",
   },
   {
     quote: 'There was a star danced, and under that was I born',
     speaker: 'Beatrice',
     act: 'Act 2, Scene 1',
     analysis:
-      "Beatrice describes herself as born under a dancing star, associating herself with joy, energy, and perhaps caprice. The image contrasts with the 'star-crossed' lovers of Romeo and Juliet: Beatrice's stars dance rather than doom. The line reveals the exuberance beneath her cynicism and foreshadows the play's comic resolution. It is one of Shakespeare's most delightful character-defining moments.",
+      "Beatrice describes herself as born under a dancing star, associating herself with joy, energy, and perhaps caprice. The image contrasts with the 'star-cross'd' lovers of Romeo and Juliet: Beatrice's stars dance rather than doom. The line reveals the exuberance beneath her cynicism and foreshadows the play's comic resolution. It is one of Shakespeare's most delightful character-defining moments.",
   },
   {
     quote: 'Comparisons are odorous',
@@ -364,7 +394,7 @@ const contextTopics = [
   {
     title: 'Elizabethan Women and Marriage',
     content:
-      "In Shakespeare's England, women had no legal identity separate from their fathers or husbands. Marriage was an economic and social arrangement, especially among the wealthy. A woman's value was tied to her chastity: loss of virginity before marriage brought shame on the entire family. Hero's public shaming reflects these real stakes. Beatrice's resistance to marriage ('I will not have a husband till I can make one of better stuff') would have been seen as both entertaining and socially transgressive. The play explores whether women can find agency within or against these constraints.",
+      "In Shakespeare's England, women had no legal identity separate from their fathers or husbands. Marriage was an economic and social arrangement, especially among the wealthy. A woman's value was tied to her chastity: loss of virginity before marriage brought shame on the entire family. Hero's public shaming reflects these real stakes. Beatrice's resistance to marriage ('Not till God make men of some other metal than earth') would have been seen as both entertaining and socially transgressive. The play explores whether women can find agency within or against these constraints.",
   },
   {
     title: 'Courtship Conventions',

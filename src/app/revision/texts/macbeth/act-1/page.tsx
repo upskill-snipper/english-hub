@@ -224,9 +224,11 @@ export default async function MacbethAct1Page() {
                 <p className="font-medium">
                   &ldquo;Unseam’d him from the nave to the chops.&rdquo;
                 </p>
+                {/* The edition prints "Unseam'd", as the quotation above does; this
+                    note said "Unseamed" until 2 October 2026. */}
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Violent imagery
-                  &amp; metaphor. &ldquo;Unseamed&rdquo; is a tailoring metaphor &mdash; Macbeth has
+                  &amp; metaphor. &ldquo;Unseam’d&rdquo; is a tailoring metaphor &mdash; Macbeth has
                   ripped his enemy open like fabric. The graphic brutality establishes Macbeth as
                   capable of extreme violence, which becomes significant when that capacity is
                   turned against innocent targets.

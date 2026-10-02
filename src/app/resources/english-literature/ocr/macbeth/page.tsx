@@ -42,7 +42,7 @@ const keyQuotations = [
       "Macbeth invokes darkness to conceal his ambition, revealing that he already harbours murderous thoughts even before Lady Macbeth's influence. The metaphor of 'black and deep desires' associates his ambition with something hidden, shameful, and bottomless. The imperative 'hide' shows Macbeth's awareness that his desires are morally wrong - he knows he must conceal them from the world and from God.",
   },
   {
-    quote: "Look like th'innocent flower, / But be the serpent under't",
+    quote: "Look like the innocent flower, / But be the serpent under't",
     speaker: 'Lady Macbeth (Act 1, Scene 5)',
     analysis:
       "Lady Macbeth uses the Biblical allusion of the serpent (the Devil in the Garden of Eden) to advise Macbeth on deception. The juxtaposition of 'innocent flower' and 'serpent' encapsulates the theme of appearance versus reality. This also aligns Lady Macbeth with the forces of evil, as she explicitly instructs Macbeth to adopt duplicity.",
@@ -287,7 +287,7 @@ export default async function OCRMacbethPage() {
                 suspect Macbeth (&ldquo;O horror, horror, horror!&rdquo;) and refuses to attend his
                 coronation. His reaction to the murder of his family (&ldquo;He has no
                 children&rdquo;) is one of the most emotionally powerful moments in the play. As the
-                man &ldquo;not of woman born,&rdquo; he fulfils the prophecy and kills Macbeth,
+                man not &ldquo;of woman born,&rdquo; he fulfils the prophecy and kills Macbeth,
                 restoring moral order to Scotland.
               </p>
             </div>

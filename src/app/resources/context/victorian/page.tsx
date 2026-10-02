@@ -96,6 +96,14 @@ function TimelineEvent({ year, event }: { year: string; event: string }) {
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
+/**
+ * A Christmas Carol quotations corrected on 2 October 2026 against the edition
+ * the site holds (Project Gutenberg #46, src/data/full-texts/a-christmas-carol.ts),
+ * as read by scripts/check-quotations.mjs. Scrooge's Stave One questions are
+ * "Are there no prisons?" and "And the Union workhouses?", with the gentleman's
+ * answer between; "Are there no workhouses?" is the Spirit's, turning his words
+ * on him in Stave Three.
+ */
 export default function VictorianContextPage() {
   const t = useT()
   return (
@@ -239,7 +247,7 @@ export default function VictorianContextPage() {
                 &ldquo;self-help&rdquo; and that poverty was often the fault of the individual -- a
                 moral failing rather than a systemic problem. This attitude is exactly what Dickens
                 attacks through Scrooge&apos;s famous dismissal of the poor: &ldquo;Are there no
-                prisons? Are there no workhouses?&rdquo;
+                prisons? ... And the Union workhouses?&rdquo;
               </p>
               <p>
                 The concept of the{' '}
@@ -450,7 +458,7 @@ export default function VictorianContextPage() {
                 <ContextExample
                   text="A Christmas Carol"
                   point="The workhouse references reflect the 1834 Poor Law"
-                  analysis="Scrooge's question -- 'Are there no prisons? Are there no workhouses?' -- directly references the institutions created by the 1834 Poor Law Amendment Act. Dickens presents these as instruments of cruelty, not charity. By making Scrooge advocate for them, Dickens forces the reader to confront the inhumanity of a system that punished people for being poor. The novella was published just nine years after the Act, making this a pointed political critique."
+                  analysis="Scrooge's question -- 'Are there no prisons? ... And the Union workhouses?' -- directly references the institutions created by the 1834 Poor Law Amendment Act. Dickens presents these as instruments of cruelty, not charity. By making Scrooge advocate for them, Dickens forces the reader to confront the inhumanity of a system that punished people for being poor. The novella was published just nine years after the Act, making this a pointed political critique."
                 />
               </div>
 

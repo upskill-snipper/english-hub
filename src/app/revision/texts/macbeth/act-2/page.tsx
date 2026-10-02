@@ -342,7 +342,7 @@ export default async function MacbethAct2Page() {
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Confession &amp;
-                  inversion. The warrior who &ldquo;unseamed&rdquo; enemies in battle is now
+                  inversion. The warrior who &ldquo;unseam’d&rdquo; enemies in battle is now
                   terrified by what he has done. The inversion of bravery and fear shows how murder
                   corrodes identity. The short, broken sentences convey psychological
                   disintegration.

@@ -121,7 +121,12 @@ export const y9FullLessons: LessonPlan[] = [
       },
       {
         question:
-          'Read Scrooge\'s line: "Are there no prisons? Are there no workhouses?" What does this reveal about his attitude towards the poor? How does this reflect real Victorian attitudes?',
+          // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+          // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are
+          // there no prisons?" and "And the Union workhouses?", with the gentleman's answer
+          // between. "Are there no workhouses?" is the Spirit's, turning his words on him in
+          // Stave Three.
+          'Read Scrooge\'s line: "Are there no prisons? ... And the Union workhouses?" What does this reveal about his attitude towards the poor? How does this reflect real Victorian attitudes?',
         lines: 6,
         modelAnswer:
           "Scrooge's rhetorical questions reveal his belief that existing institutions like prisons and workhouses are sufficient to deal with poverty. He sees no personal responsibility to help. This reflects the real attitude of many wealthy Victorians who supported the Poor Law and believed poverty was a moral failing. Dickens uses Scrooge as a mouthpiece for these views so he can systematically dismantle them through the novella.",
@@ -195,10 +200,12 @@ export const y9FullLessons: LessonPlan[] = [
     },
     mainActivities: [
       {
+        // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+        // src/data/full-texts/a-christmas-carol.ts), which prints "grind-stone".
         title: 'Close Language Analysis: Stave One Description of Scrooge',
         duration: '20 minutes',
         instructions:
-          'Provide students with the Stave One description of Scrooge ("Oh! But he was a tight-fisted hand at the grindstone..."). Teacher models close reading of the first sentence, zooming into individual word choices: "tight-fisted" - connotations of greed, control; "squeezing, wrenching, grasping" - the list of aggressive verbs creates a sense of relentless cruelty. Students then work in pairs to annotate three further quotations from the extract, identifying technique, connotation, and effect on the reader. Share findings using a class annotation on the board.',
+          'Provide students with the Stave One description of Scrooge ("Oh! But he was a tight-fisted hand at the grind-stone..."). Teacher models close reading of the first sentence, zooming into individual word choices: "tight-fisted" - connotations of greed, control; "squeezing, wrenching, grasping" - the list of aggressive verbs creates a sense of relentless cruelty. Students then work in pairs to annotate three further quotations from the extract, identifying technique, connotation, and effect on the reader. Share findings using a class annotation on the board.',
         differentiation: {
           support:
             'Provide a partially completed annotation table with the technique column filled in; students add connotation and effect.',

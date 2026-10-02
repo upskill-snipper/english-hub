@@ -199,8 +199,12 @@ const ROMANTIC_VICTORIAN_POETS: AuthorEntry[] = [
       'To Autumn (1819) - Edexcel Time and Place, Eduqas',
       'When I Have Fears (1818) - OCR Youth and Age',
     ],
+    // Until 2 October 2026 this told students to quote the 1820 Indicator
+    // text, which the International GCSE anthology does not print: the error
+    // put right in the version note of /igcse/edexcel/poetry/la-belle-dame-sans-merci
+    // on 26 September (see src/data/study-guides/la-belle-dame-sans-merci.ts).
     examNote:
-      'Edexcel uses the 1820 Indicator version of La Belle Dame sans Merci - quote from that text, not the 1819 manuscript.',
+      'Quote from the text your anthology prints. The Edexcel International GCSE anthology prints the earlier text, from Keats\'s letter of April 1819, in which the knight is a "knight-at-arms", not the revised text of The Indicator (1820), which opens with a "wretched wight".',
   },
   {
     name: 'Alfred, Lord Tennyson',

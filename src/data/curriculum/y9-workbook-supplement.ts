@@ -5,6 +5,17 @@
 //   T3: Of Mice and Men (supplementing y9-workbook-data.ts)
 // ─────────────────────────────────────────────────────────────
 
+// A Christmas Carol quotations corrected on 2 October 2026 against the edition
+// the site holds (Project Gutenberg #46, src/data/full-texts/a-christmas-carol.ts),
+// as read by scripts/check-quotations.mjs. Eight were not Dickens's words as
+// printed: Fred's and Scrooge's opening exchange had lost its speech tags with
+// no ellipsis; the Ghost says the solitary child "is left there still"; Scrooge
+// "patted children on the head", not "the children", and looked "up to the
+// windows"; the Cratchits' shoes are not "water-proof"; Fred's "I mean to give
+// him the same chance" is at his party in Stave Three, not Stave One; and the
+// Spirit's "Are there no prisons? ... Are there no workhouses?" wants the
+// ellipsis where its speech tag stands.
+
 // Interfaces are re-declared here for file-level self-containment.
 // They are identical to the interfaces in y9-workbook-data.ts.
 
@@ -103,7 +114,7 @@ export const y9Term1WorkbookExercises: WorkbookExercise[] = [
     type: 'analysis',
     instructions: `<h3>Character Analysis: Fred as a Foil to Scrooge</h3>
 <p>In Stave One, Scrooge's nephew Fred visits the counting house to invite his uncle to Christmas dinner. Scrooge refuses. Consider this exchange:</p>
-<blockquote>"Christmas a humbug, uncle! You don't mean that, I am sure?" / "I do. Merry Christmas! What right have you to be merry? What reason have you to be merry? You're poor enough."</blockquote>
+<blockquote>"Christmas a humbug, uncle! ... You don't mean that, I am sure?" / "I do... Merry Christmas! What right have you to be merry? What reason have you to be merry? You're poor enough."</blockquote>
 <p><strong>Task:</strong> Analyse how Dickens uses Fred to challenge Scrooge's values. In your answer consider:</p>
 <ul>
 <li>What Fred's warmth and generosity of spirit represent</li>
@@ -740,7 +751,7 @@ One interesting contrast: in the 1840s, Christmas Day was not a public holiday, 
 
 **Paragraph 1 -- The Cratchit Family:**
 - Point: The Cratchits represent the ideal of family as an emotional resource that wealth cannot buy.
-- Evidence: "They were not a handsome family; they were not well dressed; their shoes were far from being waterproof... But they were happy, grateful, pleased with one another."
+- Evidence: "They were not a handsome family; they were not well dressed; their shoes were far from being water-proof... But, they were happy, grateful, pleased with one another."
 - Analysis: The list of negatives ("not... not... far from") followed by the pivot "But" makes the point structurally: material poverty is irrelevant to the richness of family life.
 - Context: Dickens argues against the Malthusian idea that poor families should have fewer children; the Cratchits' love for each other is his evidence.
 
@@ -752,7 +763,7 @@ One interesting contrast: in the 1840s, Christmas Day was not a public holiday, 
 
 **Paragraph 3 -- Scrooge's Absence of Family:**
 - Point: Scrooge's isolation is presented not as a virtue but as a wound; the scene showing young Scrooge abandoned by his father explains rather than excuses his coldness.
-- Evidence: "A solitary child, neglected by his friends, was left there still" -- the young Scrooge at school.
+- Evidence: "A solitary child, neglected by his friends, is left there still" -- the young Scrooge at school.
 - Analysis: "Neglected" is the key word -- Scrooge was failed by family before he failed others; Dickens asks the reader to see causation, not just condemnation.
 - Context: Dickens's own experience of abandonment at the blacking factory gives this scene autobiographical weight.
 
@@ -843,13 +854,13 @@ E. Scrooge`,
     instructions: `<h3>Homework: Timed Exam Question</h3>
 <p>This question is written in the style of an AQA GCSE English Literature paper. You have <strong>45 minutes</strong>.</p>
 <p>Starting with this extract, how does Dickens present Scrooge as a changed man in <em>A Christmas Carol</em>?</p>
-<blockquote>"He went to church, and walked about the streets, and watched the people hurrying to and fro, and patted the children on the head, and questioned beggars, and looked down into the kitchens of houses, and up to the windows, and found that everything could yield him pleasure. He had never dreamed that any walk -- that anything -- could give him so much happiness."</blockquote>
+<blockquote>"He went to church, and walked about the streets, and watched the people hurrying to and fro, and patted children on the head, and questioned beggars, and looked down into the kitchens of houses, and up to the windows, and found that everything could yield him pleasure. He had never dreamed that any walk--that anything--could give him so much happiness."</blockquote>
 <p>Write about:</p>
 <ul>
 <li>How Dickens presents the transformed Scrooge in this extract</li>
 <li>How Dickens presents transformation elsewhere in the novella</li>
 </ul>`,
-    modelAnswer: `In this extract from Stave Five, Dickens presents the transformed Scrooge through a striking change in his relationship with the physical world. The list of activities -- "went to church... walked about... patted the children... questioned beggars... looked down... looked up" -- creates a sense of restless, joyful engagement with a world that he previously held at arm's length. The variety of the list is important: Scrooge does not simply perform one good deed but opens himself to everything around him. Most revealing is the verb "questioned beggars" -- a man who once refused to acknowledge the poor as human beings now initiates conversation with them. Dickens uses this simple detail to show that transformation is not merely internal but manifests in the most ordinary social interactions.
+    modelAnswer: `In this extract from Stave Five, Dickens presents the transformed Scrooge through a striking change in his relationship with the physical world. The list of activities -- "went to church... walked about the streets... patted children on the head... questioned beggars... looked down into the kitchens of houses, and up to the windows" -- creates a sense of restless, joyful engagement with a world that he previously held at arm's length. The variety of the list is important: Scrooge does not simply perform one good deed but opens himself to everything around him. Most revealing is the verb "questioned beggars" -- a man who once refused to acknowledge the poor as human beings now initiates conversation with them. Dickens uses this simple detail to show that transformation is not merely internal but manifests in the most ordinary social interactions.
 
 The final sentence of the extract -- "He had never dreamed that any walk -- that anything -- could give him so much happiness" -- is significant for what it reveals about the nature of the change. The em-dash expands "any walk" into "anything," suggesting that Scrooge's astonishment is total: the entire world has become a source of joy. The word "dreamed" is carefully chosen; in a novella structured around visions, dreams, and supernatural journeys, it connects the transformed Scrooge to the process of imaginative awakening that the ghosts initiated.
 
@@ -894,12 +905,12 @@ Dickens presents the completed transformation in Stave Five with deliberate exub
     modelAnswer: `| Character | Role | Key Quotation | Significance |
 |---|---|---|---|
 | Bob Cratchit | Employee / moral contrast | "I'll raise your salary, and endeavour to assist your struggling family" (Stave Five) | Bob represents the worker Scrooge has exploited; his patient suffering without resentment makes him a moral exemplar, and Scrooge's final act of generosity toward him measures the full distance of his transformation. |
-| Fred | Nephew / foil | "I mean to give him the same chance every year, whether he likes it or not." (Stave One) | Fred's unconditional generosity toward his uncle challenges the reader to adopt the same attitude toward those who seem to refuse kindness; his persistence models the novel's argument that compassion should not be conditional on reciprocation. |
+| Fred | Nephew / foil | "I mean to give him the same chance every year, whether he likes it or not." (Stave Three) | Fred's unconditional generosity toward his uncle challenges the reader to adopt the same attitude toward those who seem to refuse kindness; his persistence models the novel's argument that compassion should not be conditional on reciprocation. |
 | Marley | Dead partner / warning | "I wear the chain I forged in life." (Stave One) | Marley is Scrooge's possible future self -- a warning of what happens when a life of selfishness reaches its natural conclusion; their shared history makes the warning personal and impossible to dismiss. |
 | Belle | Former fiancee / lost love | "Another idol has displaced me... a golden one." (Stave Two) | Belle's departure reveals that Scrooge chose money over love and that this choice was conscious; her scene is the emotional hinge on which the reader's sympathy for Scrooge first turns toward compassion. |
 | Fezziwig | Former employer / ideal model | "He has the power to render us happy or unhappy; to make our service light or burdensome." (Stave Two) | Fezziwig represents the kind of employer Scrooge could have been; the Ghost uses him to awaken Scrooge's conscience by showing him the good he himself is failing to do. |
 | Tiny Tim | Symbol of innocent suffering | "God bless us, every one!" (Stave Three) | Tim's potential death is the emotional climax of the Ghost of Christmas Present's journey; his unconditional blessing of everyone, including those who oppress his family, embodies the Christian compassion Dickens argues society must adopt. |
-| Ghost of Christmas Present | Supernatural guide / social conscience | "Are there no prisons? Are there no workhouses?" -- echoing Scrooge's words back at him (Stave Three) | The ghost's use of Scrooge's own words as a weapon against him is one of the novella's most devastating structural choices, forcing Scrooge to hear his callousness from the outside. |`,
+| Ghost of Christmas Present | Supernatural guide / social conscience | "Are there no prisons? ... Are there no workhouses?" -- echoing Scrooge's words back at him (Stave Three) | The ghost's use of Scrooge's own words as a weapon against him is one of the novella's most devastating structural choices, forcing Scrooge to hear his callousness from the outside. |`,
     marks: 14,
     difficulty: 'intermediate',
     keywords: [

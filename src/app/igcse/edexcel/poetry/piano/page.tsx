@@ -36,7 +36,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Key quote',
-          note: 'The song "takes" him back physically - he is passive, pulled by the music. "Vista of years" is a visual metaphor: memory as a long corridor or view opening up before him.',
+          note: '"Taking me back" makes him passive, pulled by the music rather than choosing to remember. "Vista of years" is a visual metaphor: memory as a long corridor or view opening up before him.',
           color: '#f59e0b',
         },
         {
@@ -186,9 +186,13 @@ const poem: PoemData = {
           note: 'The poem\'s final line and emotional climax. "Flood of remembrance" is a metaphor of being overwhelmed - too much memory, all at once. "Weep like a child for the past" is devastating: the adult man becomes a crying child again.',
           color: '#f59e0b',
         },
+        // The child under the piano is line 3; the poem opens on the woman
+        // singing in the dusk. Until 2 October 2026 this note, the analysis of
+        // the last key quotation and the circular-structure device below all
+        // said the poem began with the child.
         {
           type: 'Simile',
-          note: '"Like a child" closes the circle - the poem began with "a child sitting under the piano" and ends with the adult weeping "like a child". He has become again what he was remembering.',
+          note: '"Like a child" closes the circle - the first stanza showed "a child sitting under the piano", and the poem ends with the adult weeping "like a child". He has become again what he was remembering.',
           color: '#10b981',
         },
       ],
@@ -212,7 +216,11 @@ const poem: PoemData = {
     <p>The poem is striking for how openly it admits to an adult man being overwhelmed to tears. In the Edwardian world of "stiff upper lip" masculinity, weeping in public was considered shameful. Lawrence\'s willingness to write "my manhood is cast down" - to admit that adult self-control has failed - is deeply unusual for his period.</p>
   `,
 
-  summary: `Stanza 1 (lines 1-4): The speaker is listening to a woman singing to him in the evening. The song "takes him back" through the years until he sees a memory of himself as a young child, sitting underneath the piano while his mother played. The child pressed his mother\'s feet as she smiled and sang.
+  // Quotations are the held edition's words (src/data/full-texts/piano.ts).
+  // Until 2 October 2026 this summary, and the note on line 2, said in
+  // quotation marks that the song "takes" him back. Lawrence wrote "Taking
+  // me back".
+  summary: `Stanza 1 (lines 1-4): The speaker is listening to a woman singing to him in the evening. The song carries him back through the years ("Taking me back down the vista of years") until he sees a memory of himself as a young child, sitting underneath the piano while his mother played. The child pressed his mother\'s feet as she smiled and sang.
 
 Stanza 2 (lines 5-8): The speaker resists the memory but cannot help himself. The "insidious" song "betrays" him back to childhood. His heart longs to belong again to the "old Sunday evenings at home" - winter outside, the family gathered in the cosy parlour, the piano leading them through hymns.
 
@@ -274,9 +282,11 @@ Volta: The soft volta comes at the start of stanza 3 ("So now it is vain…"). T
       themes: ['Masculinity', 'Loss of control', 'Grief'],
     },
     {
+      // The child under the piano is the first stanza's (line 3), not the
+      // poem's opening: see the Simile note on the poem's last line, above.
       quote: 'I weep like a child for the past',
       analysis:
-        'The final line and the poem\'s emotional collapse. The adult speaker weeps "like a child" - the simile completes the poem\'s circle, because it began with an image of the child under the piano. He has been reduced to what he was remembering. "For the past" is the object of his grief - not any specific event, but the very state of being in the past. This is the purest expression of nostalgia in the poem.',
+        'The final line and the poem\'s emotional collapse. The adult speaker weeps "like a child" - the simile completes the poem\'s circle, because the first stanza gave an image of the child under the piano. He has been reduced to what he was remembering. "For the past" is the object of his grief - not any specific event, but the very state of being in the past. This is the purest expression of nostalgia in the poem.',
       themes: ['Grief', 'Nostalgia', 'Regression'],
     },
   ],
@@ -322,6 +332,8 @@ Volta: The soft volta comes at the start of stanza 3 ("So now it is vain…"). T
       lineRef: 13,
     },
     {
+      // Line 3, not the opening line: see the Simile note on the poem's last
+      // line, above.
       device: 'Circular structure',
       example: 'A child sitting under the piano… I weep like a child for the past',
       effect:

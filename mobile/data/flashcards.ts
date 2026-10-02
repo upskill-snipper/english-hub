@@ -66,8 +66,13 @@ export const flashcards: Flashcard[] = [
     source: 'A Christmas Carol',
   },
   {
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are there
+    // no prisons?" and "And the Union workhouses?", with the gentleman's answer between. "Are
+    // there no workhouses?" is the Spirit's, turning his words on him in Stave Three.
+    // flashcards_data.json carries the same card and was corrected with it.
     id: 'q-6',
-    front: '"Are there no prisons? Are there no workhouses?"',
+    front: '"Are there no prisons? ... And the Union workhouses?"',
     back: 'A Christmas Carol, Stave 1. Scrooge dismisses the charity collectors. Shows his callousness towards the poor and reliance on inadequate institutions.',
     category: 'quotes',
     difficulty: 'easy',
@@ -680,9 +685,12 @@ export const flashcards: Flashcard[] = [
   // ==========================================================================
   // KEY QUOTES — Animal Farm (5)
   // ==========================================================================
+  // Corrected 2 October 2026: this card had lost the second "animals" and
+  // "than others". Cut by script from the held edition
+  // (src/data/full-texts/animal-farm.ts), which sets it without a comma.
   {
     id: 'q-21',
-    front: '"All animals are equal, but some are more equal"',
+    front: '"All animals are equal but some animals are more equal than others"',
     back: 'Animal Farm, Chapter 10. The pigs alter the final commandment. Orwell exposes how revolutionary ideals are corrupted by those in power to justify privilege.',
     category: 'quotes',
     difficulty: 'easy',
@@ -1074,7 +1082,7 @@ export const flashcards: Flashcard[] = [
   {
     id: 't-13',
     front: 'Theme: Fate vs free will',
-    back: 'In Romeo and Juliet, the lovers are "star-crossed" yet make active choices. In Macbeth, the Witches prophesy but Macbeth chooses to act. Shakespeare asks whether destiny or choice drives tragedy.',
+    back: 'In Romeo and Juliet, the lovers are "star-cross\'d" yet make active choices. In Macbeth, the Witches prophesy but Macbeth chooses to act. Shakespeare asks whether destiny or choice drives tragedy.',
     category: 'themes',
     difficulty: 'hard',
     source: 'Multiple texts',

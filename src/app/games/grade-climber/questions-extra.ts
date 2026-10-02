@@ -863,11 +863,15 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     correctIndex: 1,
   },
   {
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are there
+    // no prisons?" and "And the Union workhouses?", with the gentleman's answer between. "Are
+    // there no workhouses?" is the Spirit's, turning his words on him in Stave Three.
     id: 'gc-extra-g7-009',
     grade: 7,
     type: 'analysis',
     prompt:
-      '"Are there no prisons? Are there no workhouses?" (Scrooge, A Christmas Carol) - the rhetorical questions show:',
+      '"Are there no prisons? ... And the Union workhouses?" (Scrooge, A Christmas Carol) - the rhetorical questions show:',
     options: [
       'Genuine inquiry',
       'Callous endorsement of harsh Poor Law institutions; Dickens satirises Malthusian attitudes',

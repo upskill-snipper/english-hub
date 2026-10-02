@@ -6,6 +6,16 @@
  * Conventions: Khaleeji-leaning, no Levantine, English quotations
  * preserved verbatim, character + author + brand + AO codes in Latin.
  * Binary M/F gender policy.
+ *
+ * The generator did not keep the quotations convention. Until 2 October 2026
+ * the Arabic of s33 translated Shylock's "I am not well" into Arabic, s24 was
+ * Arabic written in Latin letters with "quality of mercy" translated inside it,
+ * s18 glued "humour" to an Arabic suffix, and s59 printed the quotation as "ال
+ * HANDS ORGANS DIMENSIONS". A student revising in Arabic still has to quote
+ * the play in English, in the edition's words, so those four now carry the
+ * English quotation in straight double quotes, which read the same either way
+ * round in right-to-left text. The rest of the Arabic here is still the
+ * machine translation and is not checked.
  */
 
 export type Bi = { en: string; ar: string }
@@ -32,7 +42,7 @@ export const STRINGS: Record<string, Bi> = {
   s17: { en: `Key Techniques`, ar: `TECHNIQUES الرئيسية` },
   s18: {
     en: `The Duke appeals to Shylock for mercy. Shylock refuses, citing the law and his “humour.”`,
-    ar: `الدوكن يسألك شيلوك على رحمه. شيلوك ما يقبل، معتمد على القانون وHumourه.`,
+    ar: `الدوق يناشد شايلوك أن يرحم، فيرفض شايلوك محتجًا بالقانون وبما يسميه "humour"، أي مزاجه.`,
   },
   s19: {
     en: `Shylock's animal imagery (rats, pigs) dehumanises his own position. The Duke's bias is clear.`,
@@ -46,7 +56,7 @@ export const STRINGS: Record<string, Bi> = {
   s23: { en: `Portia's mercy speech`, ar: `خطبة برتشا عن الرحمة` },
   s24: {
     en: `Disguised as Balthazar, Portia delivers the “quality of mercy” speech.`,
-    ar: `Maskanā fī sharīʿat Balthazar, Portia tudkhiru kalam al-kamāl al-raʾfah.`,
+    ar: `متنكرةً في هيئة Balthazar، تلقي Portia خطبة "quality of mercy".`,
   },
   s25: {
     en: `Religious imagery, natural imagery (rain). Rhetorical persuasion. Dramatic irony: the audience knows this is Portia.`,
@@ -71,8 +81,8 @@ export const STRINGS: Record<string, Bi> = {
     ar: `أنتونيو يسمح لشيلوك &ldquo؛بMercifully&rdquo؛ بأن يحتفظ بنصف ثروته إذا تحول إلى المسيحية وترك ميراثه جيسيكا.`,
   },
   s33: {
-    en: `Deeply ironic “mercy.” The forced conversion strips Shylock of his identity. His final line: “I am not well.”`,
-    ar: `م Mercerية حادة. التحول القسري يسلب شايلوك هويته. سطره الأخيرة: "أنا لست بخير.`,
+    en: `Deeply ironic “mercy.” The forced conversion strips Shylock of his identity. From his last speech: “I am not well”.`,
+    ar: `"رحمة" تنطوي على مفارقة عميقة. التحول القسري يسلب شايلوك هويته. من كلامه الأخير: "I am not well".`,
   },
   s34: { en: `Key Arguments About the Trial`, ar: `نقاط principal حول المحاكمة` },
   s35: { en: `Portia is the hero`, ar: `` },
@@ -122,7 +132,7 @@ export const STRINGS: Record<string, Bi> = {
   s58: { en: `Embed short quotations`, ar: `ادمج استشهادات قصيرة` },
   s59: {
     en: `Use 2-5 word quotations woven into your sentences rather than long block quotes. E.g., “Shylock's plea that Jews have ‘hands, organs, dimensions’ asserts shared humanity.”`,
-    ar: `استخدم اقتباسات بـ 2 إلى 5 كلمات داخل جملك بدلاً من كتل طويلة. مثلاً، "ال HANDS ORGANS DIMENSIONS" لشيلوك يؤكد على الإنسانية المشتركة.`,
+    ar: `استخدم اقتباسات من 2 إلى 5 كلمات تدمجها في جملك بدلاً من الاقتباسات الطويلة. مثلاً: "قول شايلوك إن لليهود 'hands, organs, dimensions' يؤكد الإنسانية المشتركة."`,
   },
   s62: { en: `Integrate context naturally`, ar: `أدخل السياق بشكل طبيعي` },
   s63: { en: `Analyse Shakespeare's methods`, ar: `تحليل أساليب شكسبير` },

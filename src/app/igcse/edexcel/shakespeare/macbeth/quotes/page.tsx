@@ -108,7 +108,7 @@ const QUOTES = [
   },
   {
     quote:
-      '"I am in blood stepped in so far that, should I wade no more, returning were as tedious as go o\u2019er"',
+      '"I am in blood stepp’d in so far that, should I wade no more, returning were as tedious as go o\u2019er"',
     speaker: 'Macbeth (3.4)',
     themes: ['Guilt', 'Tyranny'],
     analysis:
@@ -143,7 +143,7 @@ const QUOTES = [
       "The imperative verbs and fragmented syntax enact her broken mind. The blood she once dismissed as washable has become permanent. Her earlier claim that 'a little water' could cleanse them is turned into savage dramatic irony.",
   },
   {
-    quote: '"My way of life is fallen into the sere, the yellow leaf"',
+    quote: '"My way of life is fall\'n into the sere, the yellow leaf"',
     speaker: 'Macbeth (5.3)',
     themes: ['Ambition', 'Tyranny'],
     analysis:
@@ -157,15 +157,17 @@ const QUOTES = [
       "The repetition and monosyllables create a weary, hopeless rhythm. Hearing of his wife's death, Macbeth collapses into nihilism: life is 'a tale told by an idiot, full of sound and fury, signifying nothing'. Ambition has delivered nothing.",
   },
   {
-    quote: '"Macduff was from his mother\u2019s womb untimely ripped"',
+    quote: '"Macduff was from his mother\u2019s womb untimely ripp’d"',
     speaker: 'Macduff (5.8)',
     themes: ['Fate vs free will', 'Supernatural'],
     analysis:
-      "The witches' equivocation is exposed. 'Not of woman born' turns out to be a technicality, not a guarantee \u2014 Macbeth has mistaken a half-truth for a promise, which is the play's final warning about trusting the supernatural.",
+      "The witches' equivocation is exposed. 'None of woman born' turns out to be a technicality, not a guarantee \u2014 Macbeth has mistaken a half-truth for a promise, which is the play's final warning about trusting the supernatural.",
   },
   {
     quote: '"This dead butcher and his fiend-like queen"',
-    speaker: 'Malcolm (5.9)',
+    // Act 5 Scene 8 is the last scene in the site's edition
+    // (src/data/full-texts/macbeth.ts); this said "5.9" until 2 October 2026.
+    speaker: 'Malcolm (5.8)',
     themes: ['Kingship', 'Gender'],
     analysis:
       "The play's final verdict. 'Butcher' reduces Macbeth from tragic hero to mindless killer; 'fiend-like' demonises Lady Macbeth. The new king's language restores moral order \u2014 but notice how neatly it flattens the complexity we've just watched.",

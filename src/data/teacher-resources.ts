@@ -46,17 +46,22 @@ export const TEACHER_RESOURCES: TeacherResource[] = [
     yearGroup: ['Year 10', 'Year 11'],
     description:
       'A full Grade 9 response to an extract question on Macbeth (Act 1, Scene 7 - "If it were done when \'tis done").',
+    // Quotations are in the held edition's words (src/data/full-texts/macbeth.ts).
+    // Corrected 2 October 2026: "the ingredients of our poisoned chalice" for
+    // "th' ingredience of our poison'd chalice", the metaphor then named as the
+    // "poisoned chalice", and "done" said to come three times in a single line,
+    // where the third is in the next line.
     content: `QUESTION: Starting with this extract (Act 1 Scene 7), how does Shakespeare present the theme of ambition?
 
 GRADE 9 MODEL ANSWER:
 
 Shakespeare presents ambition as an inherently self-destructive force through Macbeth's tortured soliloquy, in which the protagonist's language itself fractures under the weight of his moral conflict.
 
-The conditional opening - "If it were done when 'tis done, then 'twere well / It were done quickly" - is striking in its syntactic instability. The repetition of "done" three times within a single line creates a stuttering, circular quality, as though Macbeth is trapped in a linguistic loop that mirrors his psychological entrapment. The subjunctive "if" immediately introduces doubt; this is not a man resolved, but one desperately trying to convince himself. Shakespeare's use of euphemism - the act of regicide is never named, only "it" - reveals Macbeth's inability to confront the reality of what ambition demands.
+The conditional opening - "If it were done when 'tis done, then 'twere well / It were done quickly" - is striking in its syntactic instability. The repetition of "done" three times in a line and a half creates a stuttering, circular quality, as though Macbeth is trapped in a linguistic loop that mirrors his psychological entrapment. The subjunctive "if" immediately introduces doubt; this is not a man resolved, but one desperately trying to convince himself. Shakespeare's use of euphemism - the act of regicide is never named, only "it" - reveals Macbeth's inability to confront the reality of what ambition demands.
 
-The extended metaphor of the "poisoned chalice" is particularly significant when considered in its Jacobean context. James I, himself the target of the Gunpowder Plot, would have recognised the image of treachery returning upon the traitor. Shakespeare suggests that ambition that oversteps moral boundaries contains within it the seeds of its own punishment - the "even-handed justice" that "commends the ingredients of our poisoned chalice / To our own lips." The personification of justice as "even-handed" implies a cosmic moral order that ambition cannot outwit, foreshadowing Macbeth's eventual destruction.
+The extended metaphor of the "poison'd chalice" is particularly significant when considered in its Jacobean context. James I, himself the target of the Gunpowder Plot, would have recognised the image of treachery returning upon the traitor. Shakespeare suggests that ambition that oversteps moral boundaries contains within it the seeds of its own punishment - the "even-handed justice" that "commends th' ingredience of our poison'd chalice / To our own lips." The personification of justice as "even-handed" implies a cosmic moral order that ambition cannot outwit, foreshadowing Macbeth's eventual destruction.
 
-Crucially, Shakespeare contrasts this with the image of "vaulting ambition, which o'erleaps itself / And falls on the other." The equestrian metaphor is deliberately bathetic - the grand image of leaping is immediately undercut by the fall. The enjambment across the line break enacts the overreach physically on the page: the reader, like Macbeth, is carried forward only to stumble. This structural choice reinforces the idea that ambition is not merely dangerous but inherently self-defeating.
+Crucially, Shakespeare contrasts this with the image of "vaulting ambition, which o'erleaps itself / And falls on th' other." The equestrian metaphor is deliberately bathetic - the grand image of leaping is immediately undercut by the fall. The enjambment across the line break enacts the overreach physically on the page: the reader, like Macbeth, is carried forward only to stumble. This structural choice reinforces the idea that ambition is not merely dangerous but inherently self-defeating.
 
 Across the play, Shakespeare traces a trajectory from this moment of hesitation to Lady Macbeth's sleepwalking guilt and Macbeth's nihilistic "Tomorrow and tomorrow and tomorrow" speech. The initial fracturing of language in this soliloquy - the euphemisms, conditionals, and broken syntax - intensifies into full psychological collapse, suggesting that ambition, once it displaces moral certainty, leaves only a void.`,
     printable: true,
@@ -914,7 +919,7 @@ AMBITION
 "Stars, hide your fires; / Let not light see my black and deep desires" (1.4)
 → Light/dark imagery. "Black and deep" - ambition is hidden, shameful, associated with evil.
 
-"I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on the other" (1.7)
+"I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on th' other" (1.7)
 → Equestrian metaphor. Ambition overreaches and defeats itself. Prophetic of Macbeth's fall.
 
 "I am in blood / Stepp'd in so far that, should I wade no more, / Returning were as tedious as go o'er" (3.4)
@@ -950,10 +955,10 @@ THE SUPERNATURAL
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 POWER & KINGSHIP
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"Look like th'innocent flower, / But be the serpent under't" (1.5)
+"Look like the innocent flower, / But be the serpent under't" (1.5)
 → Biblical imagery (Garden of Eden). Duplicity as a political tool.
 
-"Upon my head they placed a fruitless crown, / And put a barren sceptre in my grip" (3.1)
+"Upon my head they plac'd a fruitless crown, / And put a barren sceptre in my gripe" (3.1)
 → "Fruitless" / "barren" - power without legacy is meaningless. Explains his obsession with Banquo.
 
 "Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day" (5.5)
@@ -1052,6 +1057,11 @@ ERIC
     ],
   },
   {
+    // Quotations corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts). The edition prints "grind-stone"; the Spirit's
+    // "Are there no prisons? ... Are there no workhouses?" has a speech tag between its
+    // questions; and "Beware them both, and all of their degree" had lost its middle with no
+    // ellipsis.
     id: 'quotes-christmas-carol-by-stave',
     title: 'A Christmas Carol Key Quotes - By Stave & Theme',
     category: 'Key Quotes Banks',
@@ -1064,8 +1074,8 @@ ERIC
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STAVE 1: MARLEY'S GHOST
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"Oh! But he was a tight-fisted hand at the grindstone, Scrooge!" [GREED]
-→ "Tight-fisted" - physically clenched, closed off. "Grindstone" - he grinds others down.
+"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!" [GREED]
+→ "Tight-fisted" - physically clenched, closed off. "Grind-stone" - he grinds others down.
 
 "Hard and sharp as flint, from which no steel had ever struck out generous fire" [ISOLATION]
 → Extended simile. Flint is cold, hard, but COULD produce warmth - Scrooge has potential for change.
@@ -1094,11 +1104,11 @@ STAVE 3: THE GHOST OF CHRISTMAS PRESENT
 "God bless us, every one!" - Tiny Tim [GENEROSITY / GOODNESS]
 → "Every one" - inclusive, no exceptions. Tim has nothing but gives blessings freely.
 
-"Are there no prisons? Are there no workhouses?" - Ghost echoing Scrooge [SOCIAL RESPONSIBILITY]
+"Are there no prisons? ... Are there no workhouses?" - Ghost echoing Scrooge [SOCIAL RESPONSIBILITY]
 → Scrooge's own words thrown back at him. Forces him to confront their cruelty.
 
 "This boy is Ignorance. This girl is Want." [SOCIAL CRITICISM]
-→ Allegory. Dickens directly addresses Victorian society. "Beware them both, but most of all beware this boy" - ignorance is the greatest danger.
+→ Allegory. Dickens directly addresses Victorian society. "Beware them both, and all of their degree, but most of all beware this boy" - ignorance is the greatest danger.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STAVE 4: THE GHOST OF CHRISTMAS YET TO COME
@@ -1795,7 +1805,7 @@ Display quotations with key words missing. Students fill them in.
 Example (Macbeth):
 "Is this a _______ which I see before me, the _______ toward my hand?"
 "Out, _______ spot! Out, I say!"
-"Look like th'innocent _______, but be the _______ under't"
+"Look like the innocent _______, but be the _______ under't"
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ACTIVITY 2: WHO SAID IT?

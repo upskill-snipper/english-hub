@@ -231,7 +231,7 @@ const QUESTION_BANK: GradeQuestion[] = [
   {
     grade: 4,
     type: 'meaning',
-    prompt: 'In Romeo and Juliet, what does "star-crossed lovers" mean?',
+    prompt: 'In Romeo and Juliet, what does "star-cross\'d lovers" mean?',
     options: [
       'They love astronomy',
       'They are destined for misfortune by fate',

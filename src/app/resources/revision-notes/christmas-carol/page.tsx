@@ -83,6 +83,23 @@ function Quote({
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
+/**
+ * QUOTATIONS CORRECTED (2 October 2026) against the edition the site holds,
+ * Project Gutenberg #46 (src/data/full-texts/a-christmas-carol.ts), as read by
+ * scripts/check-quotations.mjs; ten here were not Dickens's words as printed.
+ * The carol-singer quotation opened with "A remarkable boy!", which is Scrooge
+ * on the turkey boy in Stave Five, joined to Stave Two with no mark. The
+ * Phantom "draped and hooded" first appears in the last sentence of Stave
+ * Three, not Stave Four. Belle says "You fear the world too much"; Marley's
+ * list of virtues and his "link by link, and yard by yard" had each lost an
+ * "and"; the narrator's subject is "Scrooge", not "he", so the melancholy
+ * dinner is now quoted from "took". "Are there no prisons? Are there no
+ * workhouses?" is the Spirit's, with a speech tag between that wants an
+ * ellipsis; Scrooge's own Stave One words are "Are there no prisons?" and
+ * "And the Union workhouses?". The edition prints "grind-stone". The note on
+ * the Ignorance and Want quotation is also printed by the reader, through
+ * src/data/text-annotations.generated.ts.
+ */
 export default function ChristmasCarolRevisionPage() {
   const locale = useLocale()
   const tr = (en: string): string => {
@@ -404,7 +421,7 @@ export default function ChristmasCarolRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"
+                    text="Oh! But he was a tight-fisted hand at the grind-stone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"
                     speaker="Narrator"
                     act="Stave One"
                     analysis="The list of aggressive adjectives creates a sense of relentless greed. Each word intensifies the last, building a portrait of someone who takes everything and gives nothing. 'Sinner' carries religious weight -- Scrooge's greed is not just antisocial but morally damning."
@@ -555,7 +572,7 @@ export default function ChristmasCarolRevisionPage() {
                   <Quote
                     text="a solemn Phantom, draped and hooded, coming, like a mist along the ground, towards him"
                     speaker="Narrator"
-                    act="Stave Four"
+                    act="Stave Three"
                     analysis="The simile 'like a mist' makes the ghost seem insubstantial yet all-encompassing, like death itself. 'Solemn' creates a funereal tone. The ghost 'comes towards him' -- Scrooge cannot escape his future. Its silence throughout is more terrifying than any words."
                   />
                   <Quote
@@ -845,7 +862,7 @@ export default function ChristmasCarolRevisionPage() {
                     text="Mankind was my business. The common welfare was my business; charity, mercy, forbearance, and benevolence, were, all, my business"
                     speaker="Marley's Ghost"
                     act="Stave One"
-                    analysis="Marley redefines 'business' -- not commerce but humanity. The anaphoric repetition of 'my business' is bitterly ironic, since in life Marley's only business was money. The list of virtues ('charity, mercy, forbearance, benevolence') is the moral programme of the entire novella. This is Dickens's thesis statement."
+                    analysis="Marley redefines 'business' -- not commerce but humanity. The anaphoric repetition of 'my business' is bitterly ironic, since in life Marley's only business was money. The list of virtues ('charity, mercy, forbearance, and benevolence') is the moral programme of the entire novella. This is Dickens's thesis statement."
                   />
                   <Quote
                     text="No rest, no peace. Incessant torture of remorse"
@@ -909,14 +926,14 @@ export default function ChristmasCarolRevisionPage() {
                   government report on child labour and the harsh conditions in workhouses under the
                   Poor Law Amendment Act of 1834. The novella argues passionately that the wealthy
                   have a duty to help the poor. Scrooge&apos;s early attitude &mdash; &ldquo;Are
-                  there no prisons? Are there no workhouses?&rdquo; &mdash; reflects the prevailing
-                  view among many wealthy Victorians that poverty was the poor&apos;s own fault and
-                  that institutions (however brutal) were sufficient. Dickens uses Marley&apos;s
-                  ghost, the Ghost of Christmas Present, and the figure of Tiny Tim to demolish this
-                  view. Marley&apos;s regret, the children Ignorance and Want, and Tim&apos;s
-                  potential death all demonstrate that society&apos;s neglect of the poor has
-                  devastating consequences. The novella targets the reader&apos;s conscience just as
-                  the spirits target Scrooge&apos;s.
+                  there no prisons? ... And the Union workhouses?&rdquo; &mdash; reflects the
+                  prevailing view among many wealthy Victorians that poverty was the poor&apos;s own
+                  fault and that institutions (however brutal) were sufficient. Dickens uses
+                  Marley&apos;s ghost, the Ghost of Christmas Present, and the figure of Tiny Tim to
+                  demolish this view. Marley&apos;s regret, the children Ignorance and Want, and
+                  Tim&apos;s potential death all demonstrate that society&apos;s neglect of the poor
+                  has devastating consequences. The novella targets the reader&apos;s conscience
+                  just as the spirits target Scrooge&apos;s.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -1042,7 +1059,7 @@ export default function ChristmasCarolRevisionPage() {
                   he lost.
                 </p>
                 <Quote
-                  text="A remarkable boy!... I wish, but it's too late now... I should like to have given him something: that's all"
+                  text="I wish... but it's too late now... I should like to have given him something: that's all."
                   speaker="Scrooge (about the carol singer)"
                   act="Stave Two"
                   analysis="One of Scrooge's first emotional responses during the spirit visits. The unfinished sentence and self-correction show his feelings struggling against his habitual coldness. 'It's too late now' expresses regret -- but the entire novella argues that it is never too late. This small moment begins Scrooge's thaw."
@@ -1160,7 +1177,7 @@ export default function ChristmasCarolRevisionPage() {
                     text="I wear the chain I forged in life... I made it link by link, and yard by yard"
                     speaker="Marley's Ghost"
                     act="Stave One"
-                    analysis="Extended metaphor: the chain represents accumulated selfishness. 'Forged' suggests both creation and imprisonment. The repetition ('link by link, yard by yard') emphasises gradual accumulation -- each selfish act adds to the burden. The chain is self-made, making the punishment a direct consequence of choices."
+                    analysis="Extended metaphor: the chain represents accumulated selfishness. 'Forged' suggests both creation and imprisonment. The repetition ('link by link, and yard by yard') emphasises gradual accumulation -- each selfish act adds to the burden. The chain is self-made, making the punishment a direct consequence of choices."
                   />
                 </div>
               </div>
@@ -1232,7 +1249,7 @@ export default function ChristmasCarolRevisionPage() {
                     text="Have they no refuge or resource?"
                     speaker="Scrooge"
                     act="Stave Three"
-                    analysis="Scrooge asks about Ignorance and Want with genuine concern -- a marked change from Stave One. The ghost's devastating reply ('Are there no prisons? Are there no workhouses?') forces Scrooge to hear his own words and recognise their cruelty."
+                    analysis="Scrooge asks about Ignorance and Want with genuine concern -- a marked change from Stave One. The ghost's devastating reply ('Are there no prisons? ... Are there no workhouses?') forces Scrooge to hear his own words and recognise their cruelty."
                   />
                   <Quote
                     text="There was nothing of high mark in this. They were not a handsome family... But, they were happy"
@@ -1304,7 +1321,7 @@ export default function ChristmasCarolRevisionPage() {
                     text="Some people laughed to see the alteration in him, but he let them laugh... His own heart laughed: and that was quite enough for him"
                     speaker="Narrator"
                     act="Stave Five"
-                    analysis="Scrooge no longer cares about others' opinions (recall Belle's observation that he 'feared the world too much'). 'His own heart laughed' is a beautiful image of internal joy. He has moved from external validation (money, status) to internal fulfilment (genuine happiness and connection)."
+                    analysis="Scrooge no longer cares about others' opinions (recall Belle's observation, 'You fear the world too much'). 'His own heart laughed' is a beautiful image of internal joy. He has moved from external validation (money, status) to internal fulfilment (genuine happiness and connection)."
                   />
                 </div>
               </div>
@@ -1484,7 +1501,7 @@ export default function ChristmasCarolRevisionPage() {
                   chestnuts) &mdash; represents love and family rather than material wealth.
                   Fezziwig&apos;s party features food and drink shared freely. Scrooge&apos;s first
                   act of generosity is buying the &ldquo;prize Turkey&rdquo; for the Cratchits. In
-                  contrast, Scrooge eats alone (&ldquo;he took his melancholy dinner in his usual
+                  contrast, Scrooge eats alone (he &ldquo;took his melancholy dinner in his usual
                   melancholy tavern&rdquo;). Food shared is love expressed; food hoarded or eaten
                   alone is isolation made visible.
                 </p>
@@ -1575,9 +1592,9 @@ export default function ChristmasCarolRevisionPage() {
                     </li>
                     <li>
                       <strong>Para 5:</strong> Stave Five &mdash; joyful transformation, similes of
-                      happiness (&ldquo;light as a feather, happy as an angel&rdquo;), practical
-                      acts of generosity (turkey, donation, salary). &ldquo;As good a man as the
-                      good old city knew.&rdquo;
+                      happiness (&ldquo;as light as a feather, I am as happy as an angel&rdquo;),
+                      practical acts of generosity (turkey, donation, salary). &ldquo;As good a man
+                      as the good old city knew.&rdquo;
                     </li>
                     <li>
                       <strong>Conclusion:</strong> Dickens uses Scrooge&apos;s transformation as a

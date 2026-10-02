@@ -58,6 +58,24 @@ function Section({
   )
 }
 
+/**
+ * One quotation card. Every `text` on this page is in the words of the edition
+ * the site prints (src/data/full-texts/the-tempest.ts, Project Gutenberg
+ * #1540), and `speaker` and `act` are where that edition has the line.
+ *
+ * WHAT BROKE (found 2 October 2026 by scripts/check-quotations.mjs, which
+ * reads this page). Four cards did not spell the line as our edition does:
+ * "confined", "waked", "o' th' island" and "In the name" where it prints
+ * "confin'd", "wak'd", "o' the island" and "I' the name". They are now cut
+ * from the edition by script. In the same review: "Hell is empty" was
+ * credited to Ariel "reporting the mariners", but the mariners stay aboard
+ * and it is Ferdinand's cry that Ariel reports; and the Magic paragraph had
+ * the Epilogue ask to be "released", a word it never uses, where it says
+ * "release me from my bands". The review of those fixes found one more that
+ * the scanner passes over, since it does not read a single word with no cue
+ * as a quotation: the "rarer action" card glossed 'rare', and the line says
+ * "rarer".
+ */
 function Quote({
   text,
   speaker,
@@ -494,7 +512,7 @@ export default function TheTempestRevisionPage() {
                     text="The rarer action is / In virtue than in vengeance"
                     speaker="Prospero"
                     act="Act 5, Scene 1"
-                    analysis="The play's moral turning point. Prospero chooses forgiveness over revenge, redefining 'rare' (admirable) action as mercy rather than punishment. This is significant because Prospero has the power to destroy his enemies; his forgiveness is meaningful precisely because vengeance is available."
+                    analysis="The play's moral turning point. Prospero chooses forgiveness over revenge, redefining 'rarer' (more admirable) action as mercy rather than punishment. This is significant because Prospero has the power to destroy his enemies; his forgiveness is meaningful precisely because vengeance is available."
                   />
                 </div>
               </div>
@@ -791,10 +809,11 @@ export default function TheTempestRevisionPage() {
                   knows that without his books, &ldquo;he&apos;s but a sot&rdquo;). The masque in
                   Act 4 is explicitly theatrical magic, blurring the line between sorcery and
                   stagecraft. When Prospero breaks his staff and drowns his book, he renounces both
-                  magical and artistic power. The Epilogue, where he asks to be
-                  &ldquo;released&rdquo; with applause, makes the metatheatrical connection
-                  explicit: the playwright, like the magician, depends on the audience&apos;s
-                  willing participation. This is the play&apos;s most sustained metaphor.
+                  magical and artistic power. The Epilogue, where he asks the audience to
+                  &ldquo;release me from my bands&rdquo; with their applause, makes the
+                  metatheatrical connection explicit: the playwright, like the magician, depends on
+                  the audience&apos;s willing participation. This is the play&apos;s most sustained
+                  metaphor.
                 </p>
                 <Quote
                   text="Now my charms are all o'erthrown, / And what strength I have's mine own, / Which is most faint"
@@ -830,7 +849,7 @@ export default function TheTempestRevisionPage() {
                     analysis="Caliban's freedom song catalogues his servile tasks. The domestic specificity makes his servitude concrete. The joyful rhythm celebrates liberation, but the irony is devastating: he immediately pledges himself to Stephano, exchanging one master for another."
                   />
                   <Quote
-                    text="I must be here confined by you, / Or sent to Naples"
+                    text="I must be here confin'd by you, / Or sent to Naples"
                     speaker="Prospero"
                     act="Epilogue"
                     analysis="The island becomes the stage; the 'spell' is the theatrical illusion. The audience must choose to end the play and free the actor. This makes spectators active participants in the final act of liberation, mirroring the play's theme of freedom requiring others' generosity."
@@ -945,13 +964,13 @@ export default function TheTempestRevisionPage() {
                     analysis="Caliban recalls the initial kindness of their relationship before it turned to enslavement. 'Strok'st' and 'made much of me' suggest genuine affection, now replaced by domination. This complicates the colonial narrative: there was an initial exchange before exploitation."
                   />
                   <Quote
-                    text="In dreaming, / The clouds methought would open and show riches / Ready to drop upon me, that when I waked / I cried to dream again"
+                    text="In dreaming, / The clouds methought would open and show riches / Ready to drop upon me; that, when I wak'd, / I cried to dream again"
                     speaker="Caliban"
                     act="Act 3, Scene 2"
                     analysis="Part of the 'Be not afeard' speech. 'I cried to dream again' is heartbreaking: his reality (enslavement) is so painful that dreams are his only joy. The line humanises Caliban completely, showing profound emotional depth."
                   />
                   <Quote
-                    text="I'll show thee every fertile inch o' th' island"
+                    text="I'll show thee every fertile inch o' the island"
                     speaker="Caliban"
                     act="Act 2, Scene 2"
                     analysis="Caliban offers to share the island's resources with Stephano, repeating exactly what he did with Prospero. The tragic cycle: the colonised teaches the coloniser to survive, then is enslaved using that knowledge. 'Fertile' connects Caliban to the natural world."
@@ -964,7 +983,7 @@ export default function TheTempestRevisionPage() {
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Quote
                     text="Hell is empty, / And all the devils are here"
-                    speaker="Ariel (reporting the mariners)"
+                    speaker="Ariel (reporting Ferdinand)"
                     act="Act 1, Scene 2"
                     analysis="Inverts the expected location of evil. The 'devils' are not supernatural but human: the corrupt nobles aboard the ship. Suggests that human wickedness (usurpation, betrayal) is the true source of evil in the play."
                   />
@@ -1011,7 +1030,7 @@ export default function TheTempestRevisionPage() {
                     analysis="Antonio uses this to justify murdering Alonso: the past merely sets the stage. Ironically, it describes the play's own structure: Prospero's past usurpation is the prologue driving the entire plot. One of Shakespeare's most quoted phrases."
                   />
                   <Quote
-                    text="In the name of something holy, sir, why stand you / In this strange stare?"
+                    text="I' the name of something holy, sir, why stand you / In this strange stare?"
                     speaker="Gonzalo"
                     act="Act 3, Scene 3"
                     analysis="After the harpy scene, Gonzalo's concern for the traumatised nobles shows his consistent goodness. While others plot or despair, Gonzalo acts with practical compassion. His invocation of 'something holy' contrasts with the dark magic surrounding them."

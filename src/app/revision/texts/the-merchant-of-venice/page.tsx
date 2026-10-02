@@ -30,6 +30,19 @@ export const metadata: Metadata = {
   },
 }
 
+/*
+ * The quotations below are word for word the held edition
+ * (src/data/full-texts/the-merchant-of-venice.ts), but until 2 October 2026
+ * three analyses misplaced or misdescribed them, which no quotation check can
+ * see. "I stand for judgment" was said to cut through Portia's rhetoric: Shylock
+ * says it to the Duke before Portia arrives. "You take my house" was said to
+ * come after he was stripped of his religion: the conversion is demanded after
+ * it. "Seasoning" was given as the word of Portia's metaphor, which is
+ * "seasons", and "you take" was called a triple repetition, which it is not.
+ * The reader's notes (src/data/text-annotations.generated.ts) are cut from these
+ * analyses and catch up when scripts/generate-text-annotations.mjs next runs,
+ * which the prebuild step does on every build.
+ */
 const data: TextGuideData = {
   slug: 'the-merchant-of-venice',
   title: 'The Merchant of Venice',
@@ -183,13 +196,13 @@ const data: TextGuideData = {
       quote: '"And earthly power doth then show likest God\u2019s / When mercy seasons justice."',
       who: 'Portia \u2014 Act 4, Scene 1',
       analysis:
-        'Portia argues that law and mercy must work together, not in opposition. The culinary metaphor of \u201Cseasoning\u201D keeps the theological argument concrete: justice without mercy is unpalatable. The lines articulate a Christian ideal that the play then tests by action. Because Shylock refuses this vision and Portia then uses strict law to defeat him, the speech becomes both the play\u2019s moral peak and the marker of its most difficult irony.',
+        'Portia argues that law and mercy must work together, not in opposition. The culinary metaphor in \u201Cseasons\u201D keeps the theological argument concrete: justice without mercy is unpalatable. The lines articulate a Christian ideal that the play then tests by action. Because Shylock refuses this vision and Portia then uses strict law to defeat him, the speech becomes both the play\u2019s moral peak and the marker of its most difficult irony.',
     },
     {
       quote: '"I stand for judgment. Answer; shall I have it?"',
       who: 'Shylock \u2014 Act 4, Scene 1',
       analysis:
-        'Shylock\u2019s blunt demand cuts through Portia\u2019s extended rhetoric with the force of law. The short, largely monosyllabic line, with its courtroom formality, shows him refusing the emotional register of mercy and insisting on procedural fact. Shakespeare uses the contrast in rhythm and diction between Portia\u2019s fluent, image-rich verse and Shylock\u2019s stripped, legalistic speech to dramatise two incompatible ideas of what justice is, and the direct question \u201CAnswer; shall I have it?\u201D forces the court to commit.',
+        'Shylock\u2019s blunt demand to the Duke, made before Portia has even arrived, carries the force of law. The short, largely monosyllabic line, with its courtroom formality, shows him refusing the emotional register of mercy and insisting on procedural fact. Shakespeare sets this stripped, legalistic speech against the fluent, image-rich verse Portia brings to the court later in the scene, dramatising two incompatible ideas of what justice is, and the direct question \u201CAnswer; shall I have it?\u201D forces the court to commit.',
     },
     {
       quote:
@@ -216,7 +229,7 @@ const data: TextGuideData = {
         '"You take my house when you do take the prop / That doth sustain my house; you take my life / When you do take the means whereby I live."',
       who: 'Shylock \u2014 Act 4, Scene 1',
       analysis:
-        'Stripped of his wealth and his religion, Shylock speaks with unusual plainness. The triple repetition of \u201Cyou take\u201D turns the court\u2019s judgement into a catalogue of violations, and the parallel between \u201Chouse\u201D and \u201Clife\u201D insists that livelihood and identity are inseparable. Shakespeare gives his defeated figure a last moment of dignified argument that most modern productions treat as the emotional centre of the scene.',
+        'Stripped of his wealth, though not yet of his religion, Shylock speaks with unusual plainness. The repeated \u201Cyou take\u201D turns the court\u2019s judgement into a catalogue of violations, and the parallel between \u201Chouse\u201D and \u201Clife\u201D insists that livelihood and identity are inseparable. Shakespeare gives his defeated figure a last moment of dignified argument that most modern productions treat as the emotional centre of the scene.',
     },
     {
       quote:

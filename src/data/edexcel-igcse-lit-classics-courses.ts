@@ -1111,6 +1111,34 @@ const greatExpectationsModules: CourseModule[] = [
 // 3. The Scarlet Letter - Nathaniel Hawthorne
 // ─────────────────────────────────────────────────────────────────────────────
 
+/**
+ * THE QUOTATIONS ARE THE HELD TEXT'S (2 October 2026). Every line these modules
+ * present as Hawthorne's is in the words of the edition the reader prints,
+ * src/data/full-texts/the-scarlet-letter.ts (Project Gutenberg #33), cut from
+ * it by script rather than typed.
+ *
+ * WHAT BROKE. Seventeen lines in the quotation banks and the model response
+ * were not in the novel at all: "She had clomb from that pit into a brighter
+ * day" (twice), "The meteor displayed the same red dullness that it always
+ * wears", "He has been eaten by demons", a plea "as thou valuest thy life"
+ * that nobody in the novel makes. One had lost a word ("She felt or fancied
+ * that", where Hawthorne has "she felt or fancied, then, that"). And "Let the
+ * black flower blossom as it may" was glossed as Hester's hope, when it is
+ * Chillingworth's fatalism, said to Hester in Chapter XIV; the reader showed
+ * that gloss beside the line, because scripts/generate-text-annotations.mjs
+ * takes its notes from these modules. scripts/check-quotations.mjs reported
+ * only the missing word: a line outside a quotation field that shares too few
+ * words with any passage is one it cannot see, so the inventions passed as
+ * our own prose.
+ *
+ * Each invented line was replaced by a real one that makes the point its note
+ * made, and a note was rewritten wherever it was not true of the real words.
+ * "Adulteress" is a reader's label for the letter, not Hawthorne's word (no
+ * form of it is in the novel), and the symbolism list says so beside it.
+ * To add a quotation, cut it from the held text and run
+ * `node scripts/check-quotations.mjs --text the-scarlet-letter`; a line that
+ * passes that check may still be invented, so search the held text for it too.
+ */
 const scarletLetterModules: CourseModule[] = [
   // ──────────────────────────────────────────────
   // MODULE 1 - Context & Author Background
@@ -1388,9 +1416,9 @@ const scarletLetterModules: CourseModule[] = [
 
 <div class="quotation-bank"><strong>Key Quotations on Sin and Guilt:</strong>
 <p><em>"The scarlet letter had not done its office."</em> - Explains how Hester's public shame, rather than destroying her, becomes the vehicle for her transformation.</p>
-<p><em>"She grew ashamed of the shame upon her bosom."</em> - Internal psychological shift: Hester moves from accepting the letter's meaning to questioning it.</p>
-<p><em>"Keep, therefore, the secret, as thou valuest thy life!"</em> - Dimmesdale's plea to Hester shows how he has internalised the logic of secrecy as self-preservation.</p>
-<p><em>"Thou and I never knew what we might be to one another."</em> - Suggests that concealment prevents genuine human connection and growth.</p>
+<p><em>"The world’s law was no law for her mind."</em> - Internal psychological shift: Hester moves from accepting the letter's meaning to questioning it.</p>
+<p><em>"guilty as they may be, retaining, nevertheless, a zeal for God’s glory and man’s welfare, they shrink from displaying themselves black and filthy in the view of men"</em> - Dimmesdale, arguing with Chillingworth about why some guilty men never confess, is really defending himself: he has internalised the logic of secrecy as self-preservation.</p>
+<p><em>"Thou little knowest what a relief it is, after the torment of a seven years’ cheat, to look into an eye that recognises me for what I am!"</em> - Dimmesdale to Hester in the forest: after seven years of deceit, being known for what he is comes as a relief, which suggests that concealment prevents genuine human connection and growth.</p>
 </div>
 
 <div class="context-box"><strong>Grade 9 Insight:</strong> The novel's treatment of sin challenges Puritan theology itself. The Puritans believed sin could be expiated through sufficient suffering and moral discipline. Hawthorne complicates this: he shows that public confession and community involvement in redemption matter more than private guilt. Hester's redemption comes through her actions and the community's evolving perception of her - not through internal torment. This is a radical argument for 1850.</div>
@@ -1410,9 +1438,9 @@ const scarletLetterModules: CourseModule[] = [
 </div>
 
 <div class="quotation-bank"><strong>Hypocrisy and Public Morality - Key Quotations:</strong>
-<p><em>"He began to feel, indeed, that the burden of his own hypocrisy was almost unendurable."</em> - Direct statement of Dimmesdale's psychological torment from living a double life.</p>
-<p><em>"Hester would fain have been at peace."</em> - The community's demand for Hester's public shame while Dimmesdale escapes accountability encapsulates the hypocrisy.</p>
-<p><em>"Do I feel affection for this man who is so kind to me? Or do I lie about it to myself?"</em> - Dimmesdale's confusion about his own feelings reveals how hypocrisy corrupts authentic emotion.</p>
+<p><em>"It is the unspeakable misery of a life so false as his, that it steals the pith and substance out of whatever realities there are around us"</em> - Direct statement of Dimmesdale's psychological torment from living a double life.</p>
+<p><em>"I charge thee to speak out the name of thy fellow-sinner and fellow-sufferer!"</em> - Urged on by Mr Wilson and Governor Bellingham, Dimmesdale publicly charges Hester to name the man who shared her sin, concealing that he is that man: the community's demand for Hester's public shame lets him escape accountability, which encapsulates the hypocrisy.</p>
+<p><em>"He took himself to task for his bad sympathies in reference to Roger Chillingworth, disregarded the lesson that he should have drawn from them, and did his best to root them out."</em> - Dimmesdale's confusion about his own feelings: he blames his instinctive distrust of Chillingworth on his own guilt and tries to root it out, which reveals how hypocrisy corrupts authentic emotion.</p>
 </div>
 
 <h3>Identity and Self-Definition</h3>
@@ -1423,9 +1451,9 @@ const scarletLetterModules: CourseModule[] = [
 <div class="context-box"><strong>Grade 9 Insight - Self-Definition and Agency:</strong> Hawthorne presents Hester's transformation as a pioneering example of individual agency resisting social determinism. She takes a mark of shame and through artistry and moral action converts it into something beautiful and meaningful. This was a radical idea in 1850, predating modern feminist theory. Hester essentially argues (through her actions rather than words) that a person is not defined by a single past act but by the totality of their moral choices.</div>
 
 <div class="quotation-bank"><strong>Identity and Self-Definition - Key Quotations:</strong>
-<p><em>"Hester Prynne had cloven the secret of her estrangement in the scarlet letter."</em> - The letter becomes the means through which Hester understands and ultimately transcends her isolation.</p>
-<p><em>"Let the black flower blossom as it may."</em> - Hester's metaphorical acceptance of her situation while maintaining hope for growth - black flowers can still bloom.</p>
-<p><em>"She became the general symbol of society's shame."</em> - But then she transcends this by proving her worth through action, not words or appearance.</p>
+<p><em>"The scarlet letter was her passport into regions where other women dared not tread."</em> - The letter becomes the means through which Hester transcends her isolation: shut out by it, she reaches a freedom of thought that other women dare not claim.</p>
+<p><em>"Let the black flower blossom as it may!"</em> - Roger Chillingworth's words to Hester (Chapter XIV), when she begs him to forgive. Since Hester's first wrong step, Chillingworth tells her, "it has all been a dark necessity", and the evil must now grow as it will. Where Hester redefines herself through her actions, he denies that he has any choice.</p>
+<p><em>"giving up her individuality, she would become the general symbol at which the preacher and moralist might point"</em> - Hester foresees the letter replacing her identity, turning her into an example for sermons. But then she transcends this by proving her worth through action, not words or appearance.</p>
 </div>
 
 <h3>Nature versus Society</h3>
@@ -1458,7 +1486,7 @@ const scarletLetterModules: CourseModule[] = [
 
 <div class="quotation-bank"><strong>Isolation and Community - Key Quotations:</strong>
 <p><em>"In all her intercourse with society, however, there was nothing that made her feel as if she belonged to it."</em> - Hester's physical presence masking her psychological separation from community values.</p>
-<p><em>"He became aware that he had perchance been deprived of the spiritual company of a man of genuine religious faith."</em> - Dimmesdale's realisation that his isolation has prevented true spiritual communion.</p>
+<p><em>"Had I one friend—or were it my worst enemy!—to whom, when sickened with the praises of all other men, I could daily betake myself, and be known as the vilest of all sinners, methinks my soul might keep itself alive thereby."</em> - Dimmesdale's realisation, spoken to Hester in the forest, that his isolation has prevented true spiritual communion.</p>
 <p><em>"Pearl was a born outcast of the infantile world."</em> - She exists in a different order of being, unable to conform to normal childhood patterns.</p>
 </div>
 
@@ -1525,7 +1553,7 @@ const scarletLetterModules: CourseModule[] = [
 <h3>Symbolism</h3>
 <p>Symbolism is the dominant feature of Hawthorne's style. The novel's central symbol - the scarlet letter "A" - is perhaps the most analysed symbol in American literature. Its meaning is <strong>unstable and multivalent</strong>:</p>
 <ul>
-  <li><strong>"Adulteress"</strong> - the community's intended meaning, a mark of shame.</li>
+  <li><strong>"Adulteress"</strong> - the community's intended meaning, a mark of shame (a reader's label: the novel never uses the word).</li>
   <li><strong>"Able"</strong> - the meaning it acquires through Hester's good works and resilience.</li>
   <li><strong>"Angel"</strong> - the meaning some assign when the letter appears in the sky during the midnight scaffold scene.</li>
   <li><strong>"Arthur"</strong> - a possible reference to Dimmesdale, connecting the letter to his hidden identity.</li>
@@ -1543,9 +1571,9 @@ const scarletLetterModules: CourseModule[] = [
 <div class="context-box"><strong>Grade 9 Insight - Light/Darkness Symbolism:</strong> Hawthorne's use of light and darkness operates on multiple levels. On a realist level, the midnight scaffold scene is literally dark. But symbolically, darkness represents the private, interior, hidden realm of sin and guilt, while light represents the public, exposed, accountable realm. The meteor that appears during the midnight scene creates what students often miss: a moment of ambiguous illumination - darkness broken by light but only temporarily, and interpreted differently by each observer. This matches Hawthorne's broader technique of using potentially fixed symbols (light = good, dark = evil) but complicating them through ambiguity.</div>
 
 <div class="quotation-bank"><strong>Light and Darkness - Key Quotations:</strong>
-<p><em>"The Puritan had darkened the world. She had clomb from that pit into a brighter day."</em> - Suggests movement from internal darkness to the light of public acknowledgment and self-understanding.</p>
-<p><em>"The meteor displayed the same red dullness that it always wears."</em> - The ambiguous light that different characters interpret as a sign, showing how meaning depends on the observer's perspective.</p>
-<p><em>"She felt or fancied that the scarlet letter had endowed her with a new sense."</em> - The letter that marks shame becomes paradoxically the source of illumination and insight into the human heart.</p>
+<p><em>"All at once, as with a sudden smile of heaven, forth burst the sunshine, pouring a very flood into the obscure forest"</em> - When Hester throws off the letter and lets down her hair, sunlight floods the gloomy forest: light marks her release from shame, a release that lasts only until she must fasten the letter on again.</p>
+<p><em>"with no such shape as his guilty imagination gave it, or, at least, with so little definiteness, that another’s guilt might have seen another symbol in it."</em> - The ambiguous light that different characters interpret as a sign, showing how meaning depends on the observer's perspective.</p>
+<p><em>"she felt or fancied, then, that the scarlet letter had endowed her with a new sense."</em> - The letter that marks shame becomes paradoxically the source of illumination and insight into the human heart.</p>
 </div>
 
 <div class="key-term"><strong>Key Term: Allegory</strong> - A narrative in which characters, events, and settings represent abstract ideas or moral qualities. <em>The Scarlet Letter</em> operates partially as an allegory - Hester can represent individual freedom, Dimmesdale the anguish of hidden guilt, Chillingworth the destructiveness of revenge - but Hawthorne's characters are too psychologically complex to be reduced to simple allegorical figures.</div>
@@ -1558,8 +1586,8 @@ const scarletLetterModules: CourseModule[] = [
 <div class="context-box"><strong>Grade 9 Insight - Narrative Unreliability:</strong> Hawthorne's narrator is omniscient (able to enter any character's mind) yet paradoxically evasive. This unusual combination creates an unreliable narrator - not because they lie, but because they refuse to assert authority over ambiguous phenomena. Consider: the narrator can tell us Dimmesdale's internal thoughts but cannot or will not definitively say what appears on his chest. This is a sophisticated narrative technique that makes the reader feel the same uncertainty the characters do. It's not modern unreliable narration, but it serves a similar purpose: to immerse the reader in the epistemological problems the novel explores.</div>
 
 <div class="quotation-bank"><strong>Narrative Ambiguity - Key Quotations:</strong>
-<p><em>"It was so minutely done as to have required several months of labour and exquisite skill. The needle was a well-known fact of those times."</em> - The narrator includes details that seem to be proving narrative truth, yet leaves the ultimate truth ambiguous.</p>
-<p><em>"Whether or no there was a scarcely visible flush upon his cheek, I cannot determine."</em> - Direct admission of narrative limitation, emphasising that some things resist certain knowledge.</p>
+<p><em>"As regarded its origin there were various explanations, all of which must necessarily have been conjectural."</em> - The narrator reports what the spectators saw on Dimmesdale's breast, yet concedes that every explanation of it is conjecture, leaving the ultimate truth ambiguous.</p>
+<p><em>"The reader may choose among these theories."</em> - Direct admission of narrative limitation: the narrator will not settle what the mark was or how it came there, and leaves the choice to the reader, emphasising that some things resist certain knowledge.</p>
 </div>
 
 <h3>The Scaffold as Recurring Motif</h3>
@@ -1568,8 +1596,8 @@ const scarletLetterModules: CourseModule[] = [
 <div class="context-box"><strong>Grade 9 Insight - The Scaffold as Moral Testing Ground:</strong> The scaffold appears three times at key moments: Hester's public shaming, Dimmesdale's failed private confession, and the final true confession. Hawthorne uses this recurring location to chart the novel's moral argument: each appearance tests whether characters will choose concealment or confession. The scaffold is never neutral - it is always a site of potential redemption or damnation. By returning to it three times, Hawthorne emphasises that moral truth-telling is not a single act but an ongoing struggle. The scaffold becomes not just a physical location but a metaphor for the public sphere where private sin must ultimately be acknowledged.</div>
 
 <div class="quotation-bank"><strong>The Scaffold - Key Quotations:</strong>
-<p><em>"The scaffold of the pillory had served its purpose; but it was no longer necessary that Hester should stand upon it."</em> - Initial assumption of closure, yet the scaffold will reappear twice more, showing that moral issues cannot be permanently resolved.</p>
-<p><em>"He was exhausted with the struggle which that exercise had cost him; and when the rumour of his illness reached the ears of the people, they seemed to regard it as a visitation from Providence."</em> - The community misinterprets Dimmesdale's internal guilt as spiritual dedication, showing the gap between internal and external morality.</p>
+<p><em>"The same platform or scaffold, black and weather-stained with the storm or sunshine of seven long years ... remained standing beneath the balcony of the meeting-house."</em> - Seven years after Hester's punishment, the scaffold still stands when Dimmesdale climbs it at midnight: the place of public shame has outlasted the years, showing that moral issues cannot be permanently resolved.</p>
+<p><em>"he had made the manner of his death a parable, in order to impress on his admirers the mighty and mournful lesson, that, in the view of Infinite Purity, we are sinners all alike."</em> - Some who watched the final scaffold scene deny that Dimmesdale confessed at all and read his death as a lesson in humility: even then his defenders misread his guilt as spiritual dedication, showing the gap between internal and external morality.</p>
 </div>
 
 <h3>Names as Symbolism</h3>
@@ -1586,7 +1614,7 @@ const scarletLetterModules: CourseModule[] = [
 <div class="quotation-bank"><strong>Names and Symbolic Meaning - Analysis Examples:</strong>
 <p><em>"Arthur Dimmesdale" - Arthur: bearing of a noble name in darkness; Dimmesdale: light that is dim, partial, obscured.</em></p>
 <p><em>"Roger Chillingworth" - Roger: suggests authority/rule; Chillingworth: the worth derived from chilling, freezing, coldness.</em></p>
-<p><em>"She had clomb from that pit into a brighter day" - Hester's movement from darkness into light is reflected in how her name moves from mark of shame to marker of "Able."</em></p>
+<p><em>"They said that it meant Able, so strong was Hester Prynne, with a woman’s strength." - The letter's meaning is not fixed: as Hester's strength and charity become known, many read the "A" as "Able" rather than as a mark of shame.</em></p>
 </div>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing Hawthorne's symbolism, always discuss how the symbols create ambiguity rather than certainty. Saying "the scarlet letter symbolises adultery" is a starting point; saying "Hawthorne uses the letter's shifting meaning to argue that moral symbols are unstable and that interpretation depends on the observer's perspective" is sophisticated analysis.</div>
@@ -1674,7 +1702,7 @@ const scarletLetterModules: CourseModule[] = [
 
 <p>By contrast, Dimmesdale's concealed guilt manifests as physical self-destruction. Hawthorne constructs a powerful pattern of bodily imagery: the minister grows pale, emaciated, and weak, clutching his hand to his chest as though pressing on a hidden wound. The repeated gesture - placing "his hand over his heart" - functions as a gestural symbol, drawing the reader's attention to the very secret Dimmesdale is desperate to hide. Hawthorne's technique here is deeply ironic: the minister's attempt to conceal his guilt actually advertises it, suggesting that hidden sin inevitably seeks expression, even through the body of the sinner who tries to suppress it.</p>
 
-<p>Finally, Chillingworth presents an inverse case: guilt without acknowledgment. Rather than suffering from his own sin, Chillingworth transforms guilt into a project of revenge, becoming increasingly demonic as he divorces himself from human sympathy. The novel's final revelation - "He has been eaten by demons," the narrator informs us - suggests that the complete suppression of guilt and conscience leads not to escape but to spiritual annihilation. Through these three cases, Hawthorne argues that guilt is inescapable: whether one bears it openly (Hester), hides it (Dimmesdale), or suppresses it entirely (Chillingworth), it shapes one's destiny. The difference lies in whether one responds with redemptive acknowledgment or destructive denial.</p>
+<p>Finally, Chillingworth presents an inverse case: guilt without acknowledgment. Rather than suffering from his own sin, Chillingworth transforms guilt into a project of revenge, becoming increasingly demonic as he divorces himself from human sympathy. In the Conclusion, with Dimmesdale dead, Chillingworth shrivels "like an uprooted weed that lies wilting in the sun", which suggests that the complete suppression of guilt and conscience leads not to escape but to spiritual annihilation. Through these three cases, Hawthorne argues that guilt is inescapable: whether one bears it openly (Hester), hides it (Dimmesdale), or suppresses it entirely (Chillingworth), it shapes one's destiny. The difference lies in whether one responds with redemptive acknowledgment or destructive denial.</p>
 </div>
 
 <div class="character-analysis"><strong>Guilt Response Framework - Application to Other Questions:</strong>

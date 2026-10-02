@@ -41,6 +41,15 @@ export const metadata: Metadata = {
  * most lines in this play, not in Shakespeare (Hamlet has more). Quotations
  * follow the held edition, Project Gutenberg #1531
  * (src/data/full-texts/othello.ts), including its elisions (lov'd, ey'd).
+ *
+ * That last sentence was not wholly true until 2 October 2026: the quiz's
+ * right answer to "What does Iago famously call jealousy?" was "The
+ * green-eyed monster", a spelling the edition does not print, while the
+ * explanation under it quoted "green-ey'd". scripts/check-quotations.mjs reads
+ * text in quotation marks and quotation fields, not a quiz's options, so it
+ * passed over a line given to Iago with no quotation marks round it. The
+ * wrong answer "The red-ey'd demon" takes the same elision, so that the right
+ * one is not given away by its spelling.
  */
 const data: TextGuideData = {
   slug: 'othello',
@@ -337,8 +346,8 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: 'What does Iago famously call jealousy?',
     type: 'multiple-choice',
     options: [
-      'The red-eyed demon',
-      'The green-eyed monster',
+      'The red-ey\u2019d demon',
+      'The green-ey\u2019d monster',
       'The black serpent',
       'The silent killer',
     ],

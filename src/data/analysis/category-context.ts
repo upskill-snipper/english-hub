@@ -55,7 +55,7 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
     about: [
       'Macbeth sits on every major UK GCSE English Literature specification. AQA, Edexcel, OCR, and Eduqas all use it as the Shakespeare text option and most candidates answering the Shakespeare question will choose it. It is also the most-taught Shakespeare in UK state secondaries because it is short (2,106 lines vs 4,024 for Hamlet), fast-paced, and thematically sharp: ambition, guilt, gender, fate, kingship, violence, and the supernatural.',
       "For Jacobean audiences the play was politically loaded. James I had acceded to the English throne in 1603; his Scottish ancestry traced back to Banquo (whose line is promised dominion forever in Act 4 Scene 1). The Gunpowder Plot of November 1605 had attempted to kill him and the entire royal family. Shakespeare's depiction of regicide as a supernatural-moral catastrophe flattered the new king's sense of his own sanctity. James had also published Daemonologie (1597), arguing witches were real and dangerous - the three witches of Act 1 Scene 1 meet the king's theological-political worldview exactly.",
-      "Structurally, the tragedy follows the classical five-act arc. Act 1 is exposition and temptation. Act 2 stages the regicide. Act 3 is the consolidation of guilt via Banquo's murder and the banquet scene. Act 4 shows Macbeth's decay and the witches' second prophecy. Act 5 delivers catastrophe: Lady Macbeth's suicide, the moving of Birnam Wood, the revelation that Macduff was \"not of woman born\", and Macbeth's death.",
+      "Structurally, the tragedy follows the classical five-act arc. Act 1 is exposition and temptation. Act 2 stages the regicide. Act 3 is the consolidation of guilt via Banquo's murder and the banquet scene. Act 4 shows Macbeth's decay and the witches' second prophecy. Act 5 delivers catastrophe: Lady Macbeth's suicide, the moving of Birnam Wood, the revelation that Macduff was not \"of woman born\", and Macbeth's death.",
     ],
     boards: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
     assessmentContext: [
@@ -475,10 +475,16 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
           "First-person past + metaphor of forging. Marley's chain is moral guilt made material - Dickens makes invisible sin visible, which is the novella's governing technique.",
       },
       {
-        quote: '"Are there no prisons? Are there no workhouses?"',
+        // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+        // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are
+        // there no prisons?" and "And the Union workhouses?", with the gentleman's answer
+        // between. "Are there no workhouses?" is the Spirit's, turning his words on him in
+        // Stave Three. His own words have no anaphora, and the Spirit's echo is not word for
+        // word.
+        quote: '"Are there no prisons? ... And the Union workhouses?"',
         source: 'Stave 1, Scrooge to the charity collectors',
         analysis:
-          "Anaphora + rhetorical interrogation. Dickens has Scrooge weaponise two real Victorian institutions - the New Poor Law's workhouses and the debtor prisons of Dickens's own father - and then returns these exact words in Stave 3 via the Ghost of Christmas Present.",
+          "Rhetorical interrogation. Dickens has Scrooge weaponise two real Victorian institutions - the New Poor Law's workhouses and the debtor prisons of Dickens's own father - and then turns his words back on him in Stave 3 via the Ghost of Christmas Present.",
       },
       {
         quote: '"Ignorance" and "Want"',
@@ -551,7 +557,12 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
       },
     ],
     examTips: [
-      "Treat duality as the thematic spine. Stevenson's title has two names; the novella has two London settings (respectable Soho vs fog-bound back alleys); two narrators (Utterson-Enfield vs Jekyll's Full Statement).",
+      // Until 2 October 2026 this tip called Soho the respectable half of London and
+      // gave the novella two narrators. In the held edition (Project Gutenberg #43) Soho
+      // is where Hyde lodges, "a district of some city in a nightmare", and the story is
+      // told by a narrator who follows Utterson and then by Lanyon's and Jekyll's own
+      // documents.
+      "Treat duality as the thematic spine. Stevenson's title has two names; the novella has two London settings (Jekyll's respectable house vs Hyde's fog-bound Soho); two kinds of narration (the third-person account that follows Utterson vs the first-person documents of Lanyon and Jekyll).",
       'Context is rich: name Darwin, degeneration theory, Jack the Ripper (1888 - AFTER the novella but reads back onto it).',
       'Hyde is smaller and "younger" than Jekyll. That is significant: Stevenson locates the primal self as developmentally prior.',
       'Use "Gothic" with precision. Gothic does not just mean scary - name specific Gothic techniques (unreliable narration, fragmented document structure, the doubled protagonist).',

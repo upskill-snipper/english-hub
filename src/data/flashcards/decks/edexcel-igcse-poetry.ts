@@ -38,10 +38,12 @@ const deck: FlashcardDeck = {
       front: 'Half-past Two - U. A. Fanthorpe',
       back: `Key quote: "He knew a lot of time: he knew Gettinguptime, Timeyougotobed time"\n\nThemes: Childhood innocence, adult authority, time as abstract concept, imagination.\n\nTechniques: Compound words ("Gettinguptime") reflecting child\'s understanding, third person, contrast between child\'s fluid time and adult clock-time, the child escapes "into the forever of not-being-there."\n\nCompare with: Piano (childhood memory), Hide and Seek (child\'s experience).`,
     },
+    // Piano: until 2 October 2026 this card quoted the last line as "weeps
+    // like a child". Lawrence wrote "I weep like a child".
     {
       id: 'eig-6',
       front: 'Piano - D. H. Lawrence',
-      back: `Key quote: "Softly, in the dusk, a woman is singing to me; / Taking me back down the vista of years"\n\nThemes: Nostalgia, childhood, memory, loss of innocence, the power of music.\n\nTechniques: Sibilance ("softly," "singing"), sensory imagery, enjambment, contrast between present (woman singing) and past (mother at piano), the speaker "weeps like a child" - unable to resist memory.\n\nCompare with: Poem at Thirty-Nine (remembering a parent), Half-past Two (childhood perspective).`,
+      back: `Key quote: "Softly, in the dusk, a woman is singing to me; / Taking me back down the vista of years"\n\nThemes: Nostalgia, childhood, memory, loss of innocence, the power of music.\n\nTechniques: Sibilance ("softly," "singing"), sensory imagery, enjambment, contrast between present (woman singing) and past (mother at piano), the simile "I weep like a child" - the speaker cannot resist memory.\n\nCompare with: Poem at Thirty-Nine (remembering a parent), Half-past Two (childhood perspective).`,
     },
     {
       id: 'eig-7',

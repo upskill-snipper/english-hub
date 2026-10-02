@@ -1,4 +1,33 @@
 // @ts-nocheck
+/**
+ * Frankenstein lesson plans: activities, worksheets and the model answers
+ * students learn from.
+ *
+ * QUOTATIONS (2 October 2026). A quotation of the novel here must be the 1831
+ * text the site holds (src/data/full-texts/frankenstein.ts), word for word;
+ * scripts/check-quotations.mjs checks them. Its first run found three
+ * misquotations in model answers: the rain "pattering dismally" (Shelley's
+ * "pattered dismally against the panes"), the Creature's "teeth of pearly
+ * whiteness" without her "a", and Victor's "whence did the principle of life
+ * proceed?" with his "I often asked myself" cut and no ellipsis to say so.
+ * Reading what it passed over found four more it cannot see: "daemon" for the
+ * edition's "dæmon"; Victor's fear, twice, that the female creature might
+ * have "desires and passions of her own", words that are nowhere in the novel,
+ * now the line that makes the same point about her will, that she "might
+ * refuse to comply with a compact made before her creation" (Chapter 20); the
+ * Creature's case for a companion (Chapter 17) closing on his Chapter 20
+ * threat, "I shall be with you on your wedding-night", made only after Victor
+ * destroys the female, now the threat he makes in Chapter 17 itself; and a
+ * Chapter 10 line placed in his narration of Chapters 11 to 16. Each
+ * replacement is cut from the held text, and the sentences around it reworded
+ * to fit the real words.
+ *
+ * Found in review the same day: that model answer went on to credit "I ought
+ * to be thy Adam", which the Creature also says on the glacier in Chapter 10,
+ * to "the Creature's reading of Paradise Lost", which he narrates in Chapter
+ * 15. It now says the line comes from the same encounter. The scanner cannot
+ * see a place given in prose without a chapter number.
+ */
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 import type { LessonPlan } from './macbeth-lessons'
@@ -261,7 +290,7 @@ const lesson2: LessonPlan = {
       question: 'Analyse how Shelley uses Gothic imagery in the creation scene (Chapter 5).',
       lines: 6,
       modelAnswer:
-        'Shelley saturates the creation scene with Gothic imagery to create a sense of horror and wrongness. The scene takes place on a "dreary night of November" with "rain pattering dismally," establishing a dark, oppressive atmosphere. The Creature\'s appearance is described through disturbing contrasts: "lustrous black" hair and "teeth of pearly whiteness" set against "yellow skin" that "scarcely covered the work of muscles and arteries beneath." This juxtaposition of beauty and horror reflects the Gothic tradition of the uncanny. The candle is "nearly burnt out," symbolising the dying of Victor\'s rational Enlightenment ideals as the horrifying reality of his creation becomes apparent.',
+        'Shelley saturates the creation scene with Gothic imagery to create a sense of horror and wrongness. The scene takes place on a "dreary night of November" when the rain "pattered dismally against the panes," establishing a dark, oppressive atmosphere. The Creature\'s appearance is described through disturbing contrasts: "lustrous black" hair and "teeth of a pearly whiteness" set against "yellow skin" that "scarcely covered the work of muscles and arteries beneath." This juxtaposition of beauty and horror reflects the Gothic tradition of the uncanny. The candle is "nearly burnt out," symbolising the dying of Victor\'s rational Enlightenment ideals as the horrifying reality of his creation becomes apparent.',
       marks: 4,
     },
     {
@@ -403,7 +432,7 @@ const lesson3: LessonPlan = {
       question: 'What is the significance of the Creature narrating its own story?',
       lines: 5,
       modelAnswer:
-        'By giving the Creature its own narrative voice, Shelley forces the reader to empathise with a character they might otherwise dismiss as a monster. The first-person narration reveals the Creature\'s intelligence, emotional depth, and capacity for suffering, directly contradicting Victor\'s portrayal of it as a "daemon" and "wretch." This narrative choice reflects Shelley\'s broader concern with giving voice to the voiceless and challenging prejudice based on appearance. It also complicates the reader\'s moral judgement: if we sympathise with the Creature, we must question whether Victor - and by extension, society - bears responsibility for creating the very monstrosity it fears.',
+        'By giving the Creature its own narrative voice, Shelley forces the reader to empathise with a character they might otherwise dismiss as a monster. The first-person narration reveals the Creature\'s intelligence, emotional depth, and capacity for suffering, directly contradicting Victor\'s portrayal of it as a "dæmon" and "wretch." This narrative choice reflects Shelley\'s broader concern with giving voice to the voiceless and challenging prejudice based on appearance. It also complicates the reader\'s moral judgement: if we sympathise with the Creature, we must question whether Victor - and by extension, society - bears responsibility for creating the very monstrosity it fears.',
       marks: 4,
     },
   ],
@@ -755,7 +784,7 @@ const lesson6: LessonPlan = {
           'Provide a partially completed decision grid with sentence starters for the evaluation paragraph.',
         core: 'Students complete the grid and write an evaluation paragraph independently.',
         stretch:
-          'Students consider the gender politics of this episode: Victor fears the female creature might have "desires and passions of her own" - what does this reveal about attitudes to female autonomy?',
+          'Students consider the gender politics of this episode: Victor fears that the female creature "might refuse to comply with a compact made before her creation" - what does this reveal about attitudes to female autonomy?',
       },
       resources: [
         'Chapters 17-20 key extracts',
@@ -784,7 +813,7 @@ const lesson6: LessonPlan = {
         'Analyse how the Creature uses persuasion to convince Victor to create a female companion.',
       lines: 6,
       modelAnswer:
-        'The Creature employs a sophisticated combination of emotional appeal, logical argument, and implicit threat. It appeals to Victor\'s guilt - "I am thy creature; I ought to be thy Adam" - invoking the creator\'s moral obligation to its creation. It uses logical reasoning to argue that a companion will end its violence: "My vices are the children of a forced solitude that I abhor." The word "forced" places responsibility on Victor, while "children" ironically echoes the parent-child relationship Victor has denied. Finally, the Creature implies a threat: "I shall be with you on your wedding night," suggesting that Victor\'s refusal will have devastating consequences. Shelley presents the Creature as more articulate and rational than its creator, subverting the reader\'s expectations of a "monster."',
+        'The Creature employs a sophisticated combination of emotional appeal, logical argument, and open threat. It appeals to Victor\'s guilt - "I am thy creature; I ought to be thy Adam" - invoking the creator\'s moral obligation to its creation. It uses logical reasoning to argue that a companion will end its violence: "My vices are the children of a forced solitude that I abhor." The word "forced" places responsibility on Victor, while "children" ironically echoes the parent-child relationship Victor has denied. The Creature also turns to threat: "if I cannot inspire love, I will cause fear", suggesting that Victor\'s refusal will have devastating consequences. Shelley presents the Creature as more articulate and rational than its creator, subverting the reader\'s expectations of a "monster."',
       marks: 4,
     },
     {
@@ -805,7 +834,7 @@ const lesson6: LessonPlan = {
   ],
   teacherNotes: [
     'The female creature episode raises important questions about gender and autonomy that resonate with modern students.',
-    'Victor\'s fear that the female creature might have "desires and passions of her own" is a key AO3 point linking to Wollstonecraft and contemporary feminism.',
+    'Victor\'s fear that the female creature "might refuse to comply with a compact made before her creation" is a key AO3 point linking to Wollstonecraft and contemporary feminism.',
     'The hot-seat activity can be adapted: stronger groups might hot-seat the Creature instead of or as well as Victor.',
     "Emphasise that the destruction of the female creature is the point of no return - it triggers the Creature's final vengeance, including the murders of Clerval and Elizabeth.",
   ],
@@ -1187,7 +1216,7 @@ const lesson9: LessonPlan = {
         'How does Shelley present Victor as an irresponsible scientist? Use quotations in your answer.',
       lines: 6,
       modelAnswer:
-        'Shelley presents Victor\'s irresponsibility as a failure of imagination and empathy rather than intellect. He describes his work in terms of compulsion - "I could not tear my thoughts from my employment" - suggesting he is driven by obsession rather than rational purpose. Crucially, Victor never considers the needs of his creation: he asks "whence did the principle of life proceed?" but never asks what kind of life his creation will have. His "workshop of filthy creation" is hidden away, suggesting he knows his work is morally questionable. After the Creature comes to life, Victor\'s immediate response is to flee, abandoning his creation like a negligent parent. Shelley\'s authorial intention is clear: the danger lies not in the act of creation itself, but in creating without accepting responsibility for the consequences.',
+        'Shelley presents Victor\'s irresponsibility as a failure of imagination and empathy rather than intellect. He describes his work in terms of compulsion - "I could not tear my thoughts from my employment" - suggesting he is driven by obsession rather than rational purpose. Crucially, Victor never considers the needs of his creation: "Whence, I often asked myself, did the principle of life proceed?" he recalls, but he never asks what kind of life his creation will have. His "workshop of filthy creation" is hidden away, suggesting he knows his work is morally questionable. After the Creature comes to life, Victor\'s immediate response is to flee, abandoning his creation like a negligent parent. Shelley\'s authorial intention is clear: the danger lies not in the act of creation itself, but in creating without accepting responsibility for the consequences.',
       marks: 4,
     },
     {
@@ -1338,7 +1367,7 @@ const lesson10: LessonPlan = {
         'How does Shelley present the Creature as sympathetic in the novel as a whole? Consider the wider text.',
       lines: 8,
       modelAnswer:
-        "Across the novel, Shelley builds sympathy for the Creature through a careful accumulation of injustice. Its first experience of life is abandonment - Victor flees in horror, denying it the parental care every being needs. The Creature's early encounters with humans follow a consistent pattern of unprovoked violence: villagers attack it on sight, and the De Lacey family rejects it despite evidence of its gentleness and intelligence. Shelley gives the Creature its own narrative voice (Chapters 11-16), a structural choice that forces the reader to engage with its perspective. Through this narration, we learn that the Creature was \"benevolent; my soul glowed with love and humanity\" before society's rejection corrupted it. The Creature's reading of Paradise Lost provides the most poignant framing: \"I ought to be thy Adam, but I am rather the fallen angel.\" Shelley's authorial intention is to challenge the reader's assumption that monstrosity is physical rather than moral, and to place responsibility for the Creature's violence on the society that created the conditions for it.",
+        "Across the novel, Shelley builds sympathy for the Creature through a careful accumulation of injustice. Its first experience of life is abandonment - Victor flees in horror, denying it the parental care every being needs. The Creature's early encounters with humans follow a consistent pattern of unprovoked violence: villagers attack it on sight, and the De Lacey family rejects it despite evidence of its gentleness and intelligence. Shelley gives the Creature its own narrative voice (Chapters 11-16), a structural choice that forces the reader to engage with its perspective. Before that narration begins, on the glacier in Chapter 10, the Creature tells Victor that it was \"benevolent; my soul glowed with love and humanity\" before society's rejection corrupted it. In the same encounter it borrows its most poignant framing from Paradise Lost: \"I ought to be thy Adam, but I am rather the fallen angel.\" Shelley's authorial intention is to challenge the reader's assumption that monstrosity is physical rather than moral, and to place responsibility for the Creature's violence on the society that created the conditions for it.",
       marks: 8,
     },
   ],

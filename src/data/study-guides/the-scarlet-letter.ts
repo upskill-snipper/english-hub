@@ -31,9 +31,11 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * vigil, Chapter XII. Do not restore them.
  *
  * WHAT WAS NOT USED. The older course (/courses/igcse-lit-classic-the-scarlet-letter)
- * quotes lines the novel does not contain, among them "She grew ashamed of the
+ * quoted lines the novel does not contain, among them "She grew ashamed of the
  * shame upon her bosom" and "Keep, therefore, the secret, as thou valuest thy
- * life!". Nothing was taken from it.
+ * life!". Nothing was taken from it. On 2 October 2026 those lines were replaced
+ * with the novel's own (see the docblock above scarletLetterModules in
+ * src/data/edexcel-igcse-lit-classics-courses.ts).
  *
  * THE EXAM PAPERS (third check, 26 September 2026). The first draft could not
  * open the 4ET1 question papers and wrote its practice questions in the board's

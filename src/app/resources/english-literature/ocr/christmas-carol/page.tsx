@@ -30,28 +30,38 @@ export const metadata: Metadata = {
 
 /* ─── Quotation data ─────────────────────────────────────────── */
 
+/**
+ * QUOTATIONS CORRECTED (2 October 2026) against the edition the site holds,
+ * Project Gutenberg #46 (src/data/full-texts/a-christmas-carol.ts), as read by
+ * scripts/check-quotations.mjs. Four were not Dickens's words as printed. In
+ * Stave One Scrooge asks "Are there no prisons?" and "And the Union
+ * workhouses?": "Are there no workhouses?" is the Spirit's, in Stave Three, so
+ * the analysis of a repeated "Are there no" described words Scrooge never
+ * says. Two speech tags had been cut with no ellipsis, and the edition has
+ * "grind-stone". The list of "monosyllabic adjectives" was neither.
+ */
 const keyQuotations = [
   {
     quote:
-      'Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner!',
+      'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!',
     speaker: 'Narrator (Stave 1)',
     analysis:
-      "Dickens uses a list of aggressive, monosyllabic adjectives to establish Scrooge's miserly nature. The exclamatory 'Oh!' creates an intimate, storytelling tone, as if the narrator is sharing gossip. Each adjective intensifies the previous one, building a picture of relentless greed. The word 'sinner' introduces a moral and religious dimension - Scrooge's avarice is not just a personality flaw but a spiritual failing.",
+      "Dickens uses a list of aggressive adjectives, most of them formed from verbs, to establish Scrooge's miserly nature. The exclamatory 'Oh!' creates an intimate, storytelling tone, as if the narrator is sharing gossip. Each adjective intensifies the previous one, building a picture of relentless greed. The word 'sinner' introduces a moral and religious dimension - Scrooge's avarice is not just a personality flaw but a spiritual failing.",
   },
   {
-    quote: 'Are there no prisons? Are there no workhouses?',
+    quote: 'Are there no prisons? ... And the Union workhouses?',
     speaker: 'Scrooge (Stave 1)',
     analysis:
-      "Scrooge's rhetorical questions reveal his callous attitude to poverty. He believes the poor are the responsibility of institutions, not individuals. The repetition of 'Are there no' is dismissive and contemptuous. Dickens uses these lines to criticise the Victorian attitude that the Poor Law and workhouses were adequate responses to poverty - institutions that Dickens himself had experienced and despised.",
+      "Scrooge's rhetorical questions reveal his callous attitude to poverty. He believes the poor are the responsibility of institutions, not individuals. The short, clipped questions are dismissive and contemptuous. Dickens uses these lines to criticise the Victorian attitude that the Poor Law and workhouses were adequate responses to poverty - institutions that Dickens himself had experienced and despised.",
   },
   {
-    quote: 'If they would rather die, they had better do it, and decrease the surplus population',
+    quote: 'If they would rather die... they had better do it, and decrease the surplus population',
     speaker: 'Scrooge (Stave 1)',
     analysis:
       "This shocking statement echoes Thomas Malthus's population theory, which argued that the poor were a drain on resources. The phrase 'surplus population' dehumanises the poor, reducing them to an economic statistic. Dickens deliberately puts Malthusian language in Scrooge's mouth to discredit it. The Ghost of Christmas Present later throws these words back at Scrooge when he reveals Ignorance and Want.",
   },
   {
-    quote: 'I wear the chain I forged in life. I made it link by link, and yard by yard',
+    quote: 'I wear the chain I forged in life... I made it link by link, and yard by yard',
     speaker: "Marley's Ghost (Stave 1)",
     analysis:
       "Marley's chain is a powerful symbol of the consequences of selfishness. The metaphor of forging a chain 'link by link' suggests that sin is cumulative - each selfish act adds to the burden. The repetition creates a sense of relentless accumulation. Marley serves as a warning to Scrooge (and the reader): failure to help others in life leads to punishment after death.",

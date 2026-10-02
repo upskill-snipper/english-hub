@@ -256,11 +256,15 @@ const CHARACTERS: CharacterStudy[] = [
           'Malcolm defines kingship as service rather than power. The word "command" is ironic -- by placing himself at his country\'s disposal, he demonstrates the humility Macbeth utterly lacks.',
       },
       {
+        // Until 2 October 2026 this placed the speech in an Act 5 Scene 9 that the
+        // held edition (src/data/full-texts/macbeth.ts) does not have, and called
+        // these two lines a couplet: they do not rhyme. The couplet is the
+        // speech's last two lines.
         quote:
           'We shall not spend a large expense of time / Before we reckon with your several loves.',
-        context: "Act 5, Scene 9 -- Malcolm's final speech",
+        context: "Act 5, Scene 8 -- Malcolm's final speech",
         analysis:
-          "Malcolm's first act as king is to reward loyalty, mirroring his father's generosity but adding the political shrewdness Duncan lacked. The orderly couplet form signals the restoration of harmony.",
+          "Malcolm's first act as king is to reward loyalty, mirroring his father's generosity but adding the political shrewdness Duncan lacked. The speech ends the play on a rhyming couplet ('one' and 'Scone'), its orderly form signalling the restoration of harmony.",
       },
     ],
     arc: "Malcolm's arc represents the restoration of legitimate order. He begins as a passive youth, matures through exile, and returns as a ruler who combines his father's virtue with political intelligence. His coronation at Scone brings the play full circle.",

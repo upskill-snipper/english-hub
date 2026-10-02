@@ -287,7 +287,11 @@ const SAMPLE_QUOTES = [
   },
   { quote: '"Fire and blood and anguish."', author: 'J.B. Priestley, An Inspector Calls' },
   {
-    quote: '"Are there no prisons? Are there no workhouses?"',
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are there
+    // no prisons?" and "And the Union workhouses?", with the gentleman's answer between. "Are
+    // there no workhouses?" is the Spirit's, turning his words on him in Stave Three.
+    quote: '"Are there no prisons? ... And the Union workhouses?"',
     author: 'Charles Dickens, A Christmas Carol',
   },
   { quote: '"I wear the chain I forged in life."', author: 'Charles Dickens, A Christmas Carol' },

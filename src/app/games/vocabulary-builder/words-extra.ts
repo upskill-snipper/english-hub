@@ -685,7 +685,10 @@ export const VOCAB_EXTRA: VocabExtraEntry[] = [
     word: 'plosive',
     partOfSpeech: 'noun',
     definition: 'a hard, percussive consonant such as p, b or t',
-    example: 'The plosives in Macbeth’s “bloody, bold, and resolute” mimic an axe striking flesh.',
+    // The line is the second apparition's, to Macbeth (Act 4 Scene 1); until
+    // 2 October 2026 this example gave it to Macbeth.
+    example:
+      'The plosives in the apparition’s “bloody, bold, and resolute” mimic an axe striking flesh.',
     synonyms: ['stop consonant', 'percussive sound'],
     antonyms: ['fricative', 'sibilant'],
   },
@@ -713,8 +716,12 @@ export const VOCAB_EXTRA: VocabExtraEntry[] = [
     word: 'caesura',
     partOfSpeech: 'noun',
     definition: 'a deliberate pause within a line of verse',
-    example:
-      'The caesura in “To die, to sleep // No more” imitates Hamlet’s suspended self-questioning.',
+    // Until 2 October 2026 the // stood between "To die, to sleep" and "No
+    // more". The held edition (src/data/full-texts/hamlet.ts) ends a verse line
+    // there and starts the next with "No more", so the pause it marked was a
+    // line end, not a caesura. The mid-line pause is the edition's dash
+    // between "To die" and "to sleep", and the // marks that now.
+    example: 'The caesura in “To die // to sleep” imitates Hamlet’s suspended self-questioning.',
     synonyms: ['mid-line pause', 'rest'],
     antonyms: ['enjambment', 'flow'],
   },
@@ -1211,8 +1218,10 @@ export const VOCAB_EXTRA: VocabExtraEntry[] = [
     word: 'polysemous',
     partOfSpeech: 'adjective',
     definition: 'open to multiple coexisting meanings',
+    // The witches speak the line together (Act 1 Scene 1); until 2 October 2026
+    // this example gave it to Macbeth, whose first line only echoes it.
     example:
-      'Macbeth’s “fair is foul, and foul is fair” is polysemous, encoding ethical, aesthetic and political inversion.',
+      'The witches’ “fair is foul, and foul is fair” is polysemous, encoding ethical, aesthetic and political inversion.',
     synonyms: ['multivalent', 'plurivocal', 'ambiguous'],
     antonyms: ['univocal', 'unambiguous'],
   },

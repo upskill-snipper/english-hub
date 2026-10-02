@@ -173,6 +173,12 @@ const poems = [
       'old wood crumbling in the cellar',
     ],
   },
+  // Piano. Every quotation here is cut from the held edition
+  // (src/data/full-texts/piano.ts, from New Poems, 1918). Until 2 October
+  // 2026 this entry printed "tinkling strings" for the poem's
+  // "tingling strings" (the tinkling piano is line 8's, not the strings of
+  // line 3), and its analysis read the wrong word; it also added an "and"
+  // before "I weep like a child", in the analysis and in the key quotation.
   {
     title: 'Piano',
     poet: 'D.H. Lawrence',
@@ -194,19 +200,19 @@ const poems = [
       {
         point: 'Childhood detail',
         detail:
-          "\"A child sitting under the piano, in the boom of the tinkling strings\" - the juxtaposition of 'boom' and 'tinkling' captures both the physical vibration of the instrument and its delicate sound. The child sits beneath the piano, suggesting smallness and protection.",
+          "\"A child sitting under the piano, in the boom of the tingling strings\" - the juxtaposition of 'boom' and 'tingling' sets the deep resonance of the instrument against a sensation felt on the skin, so that the child feels the music as well as hearing it. The child sits beneath the piano, suggesting smallness and protection.",
       },
       {
         point: 'The ending',
         detail:
-          "\"The glamour / Of childish days is upon me, my manhood is cast / Down in the flood of remembrance, and I weep like a child.\" The enjambment of 'cast / Down' enacts the fall. 'Manhood' is defeated by childhood memory; the simile 'weep like a child' is both literal and ironic, as weeping makes him childlike again.",
+          "\"The glamour / Of childish days is upon me, my manhood is cast / Down in the flood of remembrance, I weep like a child for the past.\" The enjambment of 'cast / Down' enacts the fall. 'Manhood' is defeated by childhood memory; the simile 'weep like a child' is both literal and ironic, as weeping makes him childlike again.",
       },
     ],
     keyQuotes: [
       'Softly, in the dusk, a woman is singing to me',
       'the insidious mastery of song / Betrays me back',
-      'A child sitting under the piano, in the boom of the tinkling strings',
-      'my manhood is cast / Down in the flood of remembrance, and I weep like a child',
+      'A child sitting under the piano, in the boom of the tingling strings',
+      'my manhood is cast / Down in the flood of remembrance, I weep like a child for the past',
     ],
   },
   {

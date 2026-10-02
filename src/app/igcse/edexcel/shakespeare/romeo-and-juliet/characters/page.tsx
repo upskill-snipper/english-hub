@@ -27,12 +27,17 @@ export const metadata: Metadata = {
     'Character analysis for Romeo, Juliet, Friar Lawrence, the Nurse, Mercutio, Tybalt, Lord Capulet and Paris for Edexcel IGCSE English Literature.',
 }
 
+// Quotations are in the wording of the edition the site holds, Project
+// Gutenberg #1513 (src/data/full-texts/romeo-and-juliet.ts), and are cut from
+// it rather than typed. Until 2 October 2026 five here were not: "By any
+// other word" and "There rust", the Folger's readings, where this edition has
+// "name" and "There rest", and modern spellings ("fire-eyed", "nursed").
 const CHARACTERS = [
   {
     name: 'Romeo',
     role: 'Montague heir -- passionate lover, impulsive youth',
     description:
-      "Romeo begins the play performing lovesickness for Rosaline in elaborate Petrarchan language: 'O brawling love, O loving hate' (1.1). His love for Juliet transforms him -- the shared sonnet at the ball (1.5) shows two minds meeting as equals. But his impulsiveness is constant: he kills Tybalt in rage ('fire-eyed fury be my conduct now', 3.1), rushes to buy poison without waiting for the Friar's message, and takes his life beside Juliet's body. Shakespeare asks whether Romeo's intensity is heroic or reckless -- and lets the audience feel both.",
+      "Romeo begins the play performing lovesickness for Rosaline in elaborate Petrarchan language: 'O brawling love, O loving hate' (1.1). His love for Juliet transforms him -- the shared sonnet at the ball (1.5) shows two minds meeting as equals. But his impulsiveness is constant: he kills Tybalt in rage ('fire-ey'd fury be my conduct now', 3.1), rushes to buy poison without waiting for the Friar's message, and takes his life beside Juliet's body. Shakespeare asks whether Romeo's intensity is heroic or reckless -- and lets the audience feel both.",
     arc: 'Lovesick poseur \u2192 genuine lover \u2192 killer \u2192 exile \u2192 suicide',
     key_quotes: [
       '"O brawling love, O loving hate" (1.1)',
@@ -46,14 +51,14 @@ const CHARACTERS = [
     name: 'Juliet',
     role: 'Capulet daughter -- from obedience to defiance',
     description:
-      "Juliet is not yet fourteen, but she is the play's most psychologically complex character. In Act 1 she defers to her mother: 'It is an honour that I dream not of' (1.3). By Act 2 she is questioning Romeo's name -- 'What's in a name? That which we call a rose by any other word would smell as sweet' (2.2) -- with a philosophical clarity Romeo never matches. By Act 3 she defies her father, by Act 4 she fakes her own death, and by Act 5 she chooses suicide over survival. Shakespeare tracks her growth from a sheltered child into a woman who refuses to compromise, making her arguably the play's true tragic hero.",
+      "Juliet is not yet fourteen, but she is the play's most psychologically complex character. In Act 1 she defers to her mother: 'It is an honour that I dream not of' (1.3). By Act 2 she is questioning Romeo's name -- 'What's in a name? That which we call a rose / By any other name would smell as sweet' (2.2) -- with a philosophical clarity Romeo never matches. By Act 3 she defies her father, by Act 4 she fakes her own death, and by Act 5 she chooses suicide over survival. Shakespeare tracks her growth from a sheltered child into a woman who refuses to compromise, making her arguably the play's true tragic hero.",
     arc: 'Obedient daughter \u2192 secret wife \u2192 defiant rebel \u2192 apparent corpse \u2192 suicide',
     key_quotes: [
       '"It is an honour that I dream not of" (1.3)',
-      '"What\'s in a name? That which we call a rose by any other word would smell as sweet" (2.2)',
+      '"What\'s in a name? That which we call a rose / By any other name would smell as sweet" (2.2)',
       '"My only love sprung from my only hate!" (1.5)',
       '"Give me my Romeo; and, when I shall die, take him and cut him out in little stars" (3.2)',
-      '"O happy dagger! This is thy sheath; there rust, and let me die" (5.3)',
+      '"O happy dagger. / This is thy sheath. There rest, and let me die" (5.3)',
     ],
   },
   {
@@ -76,7 +81,7 @@ const CHARACTERS = [
       "The Nurse has raised Juliet from birth and loves her with a physical, maternal warmth that Lady Capulet cannot match. Her long, rambling speeches (1.3) are full of bawdy humour and genuine tenderness. She acts as go-between for Romeo and Juliet, carrying messages and arranging the secret wedding. But in Act 3, after Romeo's banishment, she pragmatically advises Juliet to forget Romeo and marry Paris: 'I think it best you married with the County' (3.5). Shakespeare shows her loyalty collapsing under social pressure -- and the betrayal isolates Juliet completely.",
     arc: 'Loving surrogate mother \u2192 conspirator \u2192 pragmatic betrayer',
     key_quotes: [
-      '"Thou wast the prettiest babe that e\'er I nursed" (1.3)',
+      '"Thou wast the prettiest babe that e\'er I nurs\'d" (1.3)',
       '"His name is Romeo, and a Montague, the only son of your great enemy" (1.5)',
       '"I think it best you married with the County" (3.5)',
       '"Ancient damnation! O most wicked fiend!" (3.5, Juliet about the Nurse)',

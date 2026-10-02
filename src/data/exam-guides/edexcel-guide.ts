@@ -655,19 +655,19 @@ export const edexcelGuide: BoardExamGuide = {
       ],
       quotations: [
         {
-          quote: 'Are there no prisons? Are there no workhouses?',
+          quote: 'Are there no prisons? ... And the Union workhouses?',
           analysis:
             "Scrooge's callous rhetorical questions echo the real arguments of Malthusian political economists. Dickens uses Scrooge to satirise the dehumanising attitude of the wealthy toward poverty.",
         },
         {
-          quote: 'I wear the chain I forged in life. I made it link by link, and yard by yard.',
+          quote: 'I wear the chain I forged in life... I made it link by link, and yard by yard.',
           analysis:
             'Marley\'s metaphor of the chain makes moral consequences tangible and physical. The repetition of "link by link, and yard by yard" creates a slow, relentless accumulation that mirrors a lifetime of selfish choices.',
         },
         {
-          quote: 'He was better than his word. He did everything he said, and infinitely more.',
+          quote: 'Scrooge was better than his word. He did it all, and infinitely more.',
           analysis:
-            'The narrator\'s summary of Scrooge\'s transformation uses the superlative "infinitely more" to emphasise the completeness of his redemption. The shift to present tense creates immediacy and universality.',
+            'The narrator\'s summary of Scrooge\'s transformation uses the hyperbole "infinitely more" to emphasise the completeness of his redemption. The plain, short first sentence gives it the finality of a verdict.',
         },
       ],
       examStrategy:
@@ -726,9 +726,9 @@ export const edexcelGuide: BoardExamGuide = {
             'Juliet\'s rhyming couplet creates antithesis between "love" and "hate", "early" and "late", "unknown" and "known". The exclamatory tone conveys shock, while the paradox encapsulates the central conflict of the play.',
         },
         {
-          quote: 'A pair of star-crossed lovers take their life.',
+          quote: "A pair of star-cross'd lovers take their life.",
           analysis:
-            'The Prologue\'s use of "star-crossed" introduces the motif of fate and celestial imagery that runs throughout. "Take their life" carries the double meaning of living their lives and ending them, establishing tragic inevitability.',
+            'The Prologue\'s use of "star-cross\'d" introduces the motif of fate and celestial imagery that runs throughout. "Take their life" carries the double meaning of living their lives and ending them, establishing tragic inevitability.',
         },
       ],
       examStrategy:
@@ -776,7 +776,7 @@ export const edexcelGuide: BoardExamGuide = {
       ],
       quotations: [
         {
-          quote: "Look like th' innocent flower, But be the serpent under 't.",
+          quote: "Look like the innocent flower, But be the serpent under 't.",
           analysis:
             'Lady Macbeth\'s imperative uses the biblical serpent image to align deception with the Fall. The contrast between "flower" and "serpent" encapsulates the play\'s theme of appearance vs. reality. The enjambment across the line break mirrors the hidden danger.',
         },

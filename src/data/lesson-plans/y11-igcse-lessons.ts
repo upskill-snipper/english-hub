@@ -1635,7 +1635,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'How would a Jacobean audience have responded to Lady Macbeth\'s "unsex me here" speech? Why?',
         lines: 5,
         modelAnswer:
-          'A Jacobean audience would have been deeply disturbed. In a patriarchal society, women were expected to be gentle, obedient, and nurturing. Lady Macbeth\'s call to be "unsexed" - to have her femininity removed - would have been seen as unnatural and transgressive. Her invocation of "spirits" would have been associated with witchcraft, which James I took very seriously. She would have been perceived as a threat to the natural order, making her ultimate madness and death a form of divine retribution.',
+          'A Jacobean audience would have been deeply disturbed. In a patriarchal society, women were expected to be gentle, obedient, and nurturing. Lady Macbeth\'s call to the spirits to "unsex" her - to have her femininity removed - would have been seen as unnatural and transgressive. Her invocation of "spirits" would have been associated with witchcraft, which James I took very seriously. She would have been perceived as a threat to the natural order, making her ultimate madness and death a form of divine retribution.',
         marks: 5,
       },
       {

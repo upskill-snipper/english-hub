@@ -638,7 +638,7 @@ const year8ShakespeareTerms: FlashcardDeck = {
     {
       id: 'y8sh-14',
       front: 'Prologue',
-      back: 'An introduction spoken before the main action of the play begins.\n\nExample: The Chorus in Romeo and Juliet tells us the lovers are "star-crossed" and will die.\n\nEffect: Sets the scene, creates dramatic irony, or foreshadows events.',
+      back: 'An introduction spoken before the main action of the play begins.\n\nExample: The Chorus in Romeo and Juliet tells us the lovers are "star-cross\'d" and will die.\n\nEffect: Sets the scene, creates dramatic irony, or foreshadows events.',
     },
     {
       id: 'y8sh-15',
@@ -997,7 +997,7 @@ const year9ConceptualVocabulary: FlashcardDeck = {
     {
       id: 'y9cv-19',
       front: 'Fate vs Free Will',
-      back: 'The tension between destiny (events are predetermined) and choice (individuals shape their own future).\n\nIn literature: Characters struggle against prophecy, social expectations, or inevitable doom.\n\nExample: Romeo and Juliet as "star-crossed lovers."',
+      back: 'The tension between destiny (events are predetermined) and choice (individuals shape their own future).\n\nIn literature: Characters struggle against prophecy, social expectations, or inevitable doom.\n\nExample: Romeo and Juliet as "star-cross\'d lovers."',
     },
     {
       id: 'y9cv-20',
@@ -1025,9 +1025,13 @@ const year9VictorianContext: FlashcardDeck = {
       back: "The practice of helping others through charitable acts, donations, or social reform.\n\nRelevance: Dickens advocated for philanthropy. Scrooge's transformation is from miser to philanthropist.\n\nVictorian philanthropists: Barnardo, Peabody, Cadbury.",
     },
     {
+      // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+      // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are there
+      // no prisons?" and "And the Union workhouses?", with the gentleman's answer between. "Are
+      // there no workhouses?" is the Spirit's, turning his words on him in Stave Three.
       id: 'y9vc-3',
       front: 'Thomas Malthus',
-      back: 'Economist who argued that population growth would outstrip food supply, and that poverty was inevitable.\n\nRelevance: Scrooge echoes Malthusian ideas: "Are there no prisons? Are there no workhouses?"\n\nDickens uses Scrooge to criticise this view.',
+      back: 'Economist who argued that population growth would outstrip food supply, and that poverty was inevitable.\n\nRelevance: Scrooge echoes Malthusian ideas: "Are there no prisons? ... And the Union workhouses?"\n\nDickens uses Scrooge to criticise this view.',
     },
     {
       id: 'y9vc-4',
@@ -1416,8 +1420,12 @@ const igcseSetTextQuotations: FlashcardDeck = {
       back: "Description of Scrooge in the opening.\n\nTechnique: Asyndetic list of adjectives.\n\nEffect: The accumulation of negative words creates an overwhelmingly miserly portrait. Each word intensifies Scrooge's greed and cold-heartedness.",
     },
     {
+      // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+      // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are there
+      // no prisons?" and "And the Union workhouses?", with the gentleman's answer between. "Are
+      // there no workhouses?" is the Spirit's, turning his words on him in Stave Three.
       id: 'igstq-2',
-      front: 'A Christmas Carol: "Are there no prisons? Are there no workhouses?"',
+      front: 'A Christmas Carol: "Are there no prisons? ... And the Union workhouses?"',
       back: "Scrooge's response when asked to donate to the poor.\n\nTechnique: Rhetorical questions echoing Malthusian philosophy.\n\nEffect: Shows Scrooge's callousness and reflects the attitudes of the wealthy Victorian upper class.",
     },
     {
@@ -1470,7 +1478,7 @@ const igcseSetTextQuotations: FlashcardDeck = {
     },
     {
       id: 'igstq-12',
-      front: 'Macbeth: "Look like th\'innocent flower, But be the serpent under\'t"',
+      front: 'Macbeth: "Look like the innocent flower, But be the serpent under\'t"',
       back: 'Lady Macbeth advising Macbeth to hide his murderous intentions.\n\nTechnique: Simile, biblical allusion (serpent = Satan).\n\nTheme: Deception, appearance vs reality, the corrupting influence of ambition.',
     },
     {

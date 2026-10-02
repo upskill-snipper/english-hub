@@ -301,8 +301,18 @@ const techniques: Technique[] = [
     type: 'Structure',
     definition:
       "The story is told using 'I', from the perspective of a character within the story.",
-    example: '"I could feel my heart hammering against my ribs as I stepped into the room."',
-    source: 'Bront\u00eb, Jane Eyre; Shelley, Frankenstein',
+    // Victor's words, cut from Chapter 5 of the 1831 text the site holds
+    // (src/data/full-texts/frankenstein.ts). Until 2 October 2026 the example
+    // was a sentence that is not in Frankenstein ("I could feel my heart
+    // hammering against my ribs..."), printed in quotation marks over
+    // "Brontë, Jane Eyre; Shelley, Frankenstein", so it read as a line from
+    // both novels. Jane Eyre is dropped because the site holds no text of it to
+    // cut a line from. The quotation scanner takes a quotation beside a
+    // `source` field to be someone else's words, so it could not see one whose
+    // source names the novel.
+    example:
+      '"I saw the dull yellow eye of the creature open; it breathed hard, and a convulsive motion agitated its limbs."',
+    source: 'Shelley, Frankenstein (Chapter 5)',
     effect:
       "Creates intimacy and immediacy. The reader experiences events through the narrator's eyes, building empathy but also limiting knowledge to one viewpoint.",
   },

@@ -205,8 +205,10 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 13,
+    // Corrected 2 October 2026: the held edition has "Sheep-fold", hyphened;
+    // the title list is cut by script from src/data/full-texts/animal-farm.ts.
     quote:
-      'Father of All Animals, Terror of Mankind, Protector of the Sheepfold, Ducklings\u2019 Friend.',
+      'Father of All Animals, Terror of Mankind, Protector of the Sheep-fold, Ducklings\u2019 Friend.',
     speaker: 'Narrator (listing Napoleon\u2019s titles)',
     chapter: 'Chapter 8',
     context:
@@ -267,10 +269,13 @@ const QUOTES: QuoteEntry[] = [
   {
     id: 17,
     quote: '...no one dared speak his mind...',
-    speaker: 'Narrator',
+    // Corrected 2 October 2026: the narrator is giving Clover's thoughts as she
+    // looks down over the farm after the executions, as the revision notes and
+    // the course already say; it is not the narrator's own comment.
+    speaker: 'Narrator (Clover\u2019s thoughts)',
     chapter: 'Chapter 7',
     context:
-      'Description of the farm\u2019s atmosphere after Napoleon\u2019s purges and show trials: Orwell describes a climate in which animals were too frightened to speak openly while patrolling dogs intimidated the farm (Ch. 7).',
+      'Clover\u2019s thoughts as she looks down over the farm after Napoleon\u2019s purges and show trials: a climate in which animals were too frightened to speak openly while patrolling dogs intimidated the farm (Ch. 7).',
     analysis:
       'The dogs are Orwell\u2019s equivalent of the NKVD \u2014 Stalin\u2019s secret police. "No one dared speak his mind" describes the defining condition of totalitarianism: the elimination of free thought through fear. The past perfect ("had come to a time") suggests the change was gradual and thus harder to resist \u2014 no single moment could have been identified as the point of no return.',
     thematicLinks:
@@ -297,12 +302,15 @@ const QUOTES: QuoteEntry[] = [
   {
     id: 19,
     quote: 'seemed to oppose the windmill, simply as a manoeuvre to get rid of Snowball.',
-    speaker: 'Narrator',
+    // Corrected 2 October 2026: this is Squealer's explanation, reported ("That,
+    // he said, was Comrade Napoleon's cunning"), not the narrator's own verdict;
+    // the revision notes already credit it to Squealer.
+    speaker: 'Squealer (reported speech)',
     chapter: 'Chapter 5',
     context:
-      'Napoleon announces the windmill will be built after all, despite having opposed it when Snowball proposed it.',
+      'Napoleon announces the windmill will be built after all, despite having opposed it when Snowball proposed it. Squealer then explains privately to the other animals that this was Napoleon\u2019s cunning.',
     analysis:
-      'This is one of Orwell\u2019s clearest Stalin parallels: Stalin adopted Trotsky\u2019s industrialisation programme after exiling him. The sentence reveals that Napoleon\u2019s opposition was never ideological but purely strategic \u2014 he opposed the windmill not because it was wrong but because Snowball supported it. Power, not policy, is what matters.',
+      'This is one of Orwell\u2019s clearest Stalin parallels: Stalin adopted Trotsky\u2019s industrialisation programme after exiling him. Squealer\u2019s explanation reveals that Napoleon\u2019s opposition was never ideological but purely strategic \u2014 he opposed the windmill not because it was wrong but because Snowball supported it. Power, not policy, is what matters.',
     thematicLinks:
       'Exposes the gap between political rhetoric and political reality. Napoleon\u2019s reversal proves that his ideology is infinitely flexible \u2014 it serves power, not principle.',
     themes: ['Power & Corruption', 'Revolution & Betrayal'],

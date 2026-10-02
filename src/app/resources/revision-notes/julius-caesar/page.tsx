@@ -4,6 +4,26 @@ import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
 import { useState } from 'react'
 
+/**
+ * Corrected on 2 October 2026. Caesar's lines on the men he would have about
+ * him (1.2) read "sleep o' nights", where the held edition, Project Gutenberg
+ * #1522 (src/data/full-texts/julius-caesar.ts), which the site's reader prints
+ * in full, has "sleep a-nights". That card is now cut from the edition by
+ * script, and so is Brutus's "will never follow anything" (2.1), which read
+ * "any thing". The line introducing the key quotations and the footer both
+ * said the quotations matched the First Folio text. They are not in the
+ * Folio's 1623 spelling but in the held edition's modern spelling, which is
+ * what scripts/check-quotations.mjs checks them against, and both now name
+ * that edition. The analysis of Antony's refrain (3.2) said he praises
+ * 'honour', a word he never says in the funeral speech: Brutus says it four
+ * times in the speech before his, and Antony's word, ten times over, is
+ * 'honourable', which the analysis now gives. Nothing reported it: the scanner
+ * passes over a single quoted word that no cue such as "the word" presents as
+ * the play's, and 'honour' is in the play, only in other mouths. A quotation
+ * added here should be cut from the edition, not typed from memory or taken
+ * from another printing.
+ */
+
 /* ─── Expandable Section Component ─────────────────────────── */
 
 function Section({
@@ -388,7 +408,7 @@ export default function JuliusCaesarPage() {
               />
               <CharacterCard
                 name="Cicero"
-                description="The famous Roman orator and senator, present at minor moments. The conspirators consider recruiting him but Brutus rejects the idea, claiming Cicero 'will never follow any thing / That other men begin.' His brief on-stage appearance during the storm shows him calm and rational. He is later executed in the Triumvirate's proscription, mentioned in Act 4. His absence from the conspiracy - a loss of moral authority - is a crucial Brutus error: had Cicero spoken at the funeral, Antony's rhetoric might not have prevailed."
+                description="The famous Roman orator and senator, present at minor moments. The conspirators consider recruiting him but Brutus rejects the idea, claiming Cicero 'will never follow anything / That other men begin.' His brief on-stage appearance during the storm shows him calm and rational. He is later executed in the Triumvirate's proscription, mentioned in Act 4. His absence from the conspiracy - a loss of moral authority - is a crucial Brutus error: had Cicero spoken at the funeral, Antony's rhetoric might not have prevailed."
               />
               <CharacterCard
                 name="The Soothsayer"
@@ -434,8 +454,9 @@ export default function JuliusCaesarPage() {
         <div id="key-quotations">
           <Section title={tr(`Key Quotations with Analysis`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
-              15 verbatim quotations organised by speaker and theme. All quotations match the First
-              Folio (1623) text.
+              15 verbatim quotations, each with its speaker and scene. All are in the words of
+              Project Gutenberg&apos;s modern-spelling text (eBook #1522), the edition this site
+              prints in full.
             </p>
             <div className="space-y-1">
               <QuoteCard
@@ -449,7 +470,7 @@ export default function JuliusCaesarPage() {
                 analysis="Cassius's central argument for human agency. He rejects astrological determinism (the 'stars') in favour of personal responsibility, urging Brutus to act. The address 'dear Brutus' is intimate and persuasive. Yet the speech is ironic in context: the play repeatedly shows that the 'stars' (omens, prophecies) are always right. Cassius advocates free will to recruit Brutus into a conspiracy that will ultimately be defeated by what he denies - fate."
               />
               <QuoteCard
-                quote="Let me have men about me that are fat; / Sleek-headed men, and such as sleep o' nights: / Yond Cassius has a lean and hungry look; / He thinks too much: such men are dangerous."
+                quote="Let me have men about me that are fat, / Sleek-headed men, and such as sleep a-nights: / Yond Cassius has a lean and hungry look; / He thinks too much: such men are dangerous."
                 speaker="Caesar (1.2)"
                 analysis="Caesar's character-reading of Cassius is acute. The contrast between 'fat / Sleek-headed' contented men and 'lean and hungry' restless men maps physical appearance onto political danger. 'He thinks too much' is paradoxical - Caesar fears intellectual men more than aggressive ones. The judgement is correct but does Caesar no good: he names the danger and yet does nothing about it. The speech reveals both his political shrewdness and his fatal inaction."
               />
@@ -486,7 +507,7 @@ export default function JuliusCaesarPage() {
               <QuoteCard
                 quote="For Brutus is an honourable man; / So are they all, all honourable men."
                 speaker="Antony (3.2)"
-                analysis="The repeated refrain that destroys Brutus's argument through irony. With each repetition the word 'honourable' becomes hollower, until it sounds like its opposite. Antony never directly contradicts Brutus - he repeats Brutus's claim until it collapses under its own weight. The technique demonstrates how rhetoric can reverse meaning without explicit denial: he praises 'honour' while emptying the word of force, turning Brutus's strongest claim into his weakest."
+                analysis="The repeated refrain that destroys Brutus's argument through irony. With each repetition the word 'honourable' becomes hollower, until it sounds like its opposite. Antony never directly contradicts Brutus - he repeats Brutus's claim until it collapses under its own weight. The technique demonstrates how rhetoric can reverse meaning without explicit denial: he keeps calling them 'honourable' while emptying the word of force, turning Brutus's strongest claim into his weakest."
               />
               <QuoteCard
                 quote="O judgement! thou art fled to brutish beasts, / And men have lost their reason."
@@ -1542,8 +1563,8 @@ export default function JuliusCaesarPage() {
         <p>
           <em>{tr(`Julius Caesar`)}</em> by William Shakespeare was first performed c.1599 and first
           printed in the First Folio of 1623. Shakespeare died in 1616 and the text is in the{' '}
-          <strong>public domain</strong>. All quotations on this page are reproduced from the First
-          Folio text.
+          <strong>public domain</strong>. All quotations on this page are taken from Project
+          Gutenberg&apos;s modern-spelling text (eBook #1522), the edition this site prints in full.
         </p>
       </footer>
     </>

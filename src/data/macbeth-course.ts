@@ -1,6 +1,12 @@
 // @ts-nocheck
 import type { CourseData } from './courses'
 
+// Quotations are in the wording of the edition the site holds, Project Gutenberg
+// #1533 (src/data/full-texts/macbeth.ts), corrected to it on 2 October 2026:
+// "We have scorch'd the snake" (the Folio's reading, which many editions emend
+// to "scotch'd"), "Untimely ripp'd", "My hands are of your color", and Banquo's
+// "What are these, / So wither'd", which had been printed as "What are these
+// creatures?", a line the play does not have.
 const macbethCourse: CourseData = {
   id: 'macbeth-full',
   title: 'Macbeth - GCSE Complete Course',
@@ -32,7 +38,7 @@ const macbethCourse: CourseData = {
 <ul>
 <li><strong>"There's no art / To find the mind's construction in the face"</strong> (Duncan, Act 1 Scene 4) - Duncan cannot read betrayal. A king assumes loyalty. Effect: Shows Duncan's fatal naïveté; foreshadows that Macbeth will betray him. Grade 9: Ironic - Duncan sees Macbeth as trustworthy just before he's killed, suggesting that appearance masks dark ambition.</li>
 <li><strong>"Blood will have blood"</strong> (Macbeth, Act 3 Scene 4) - Once murder enters the kingdom, more murder follows. Effect: The law of divine revenge - kill a king, and God demands payment. Grade 9: Macbeth recognises he's trapped in a cycle of violence triggered by breaking the cosmic order.</li>
-<li><strong>"None of woman born / Shall harm Macbeth"</strong> (Witches, Act 4 Scene 1) - A false promise that plays on Macbeth's complacency. Effect: Creates false hope; later Macduff, "from his mother's womb / Untimely ripped," breaks the prophecy. Grade 9: The witches exploit Macbeth's literal thinking; language is technically true but misleading - a metaphor for how ambition blinds us.</li>
+<li><strong>"None of woman born / Shall harm Macbeth"</strong> (Witches, Act 4 Scene 1) - A false promise that plays on Macbeth's complacency. Effect: Creates false hope; later Macduff, "from his mother's womb / Untimely ripp'd," breaks the prophecy. Grade 9: The witches exploit Macbeth's literal thinking; language is technically true but misleading - a metaphor for how ambition blinds us.</li>
 </ul>
 </div>
 <h3>Witchcraft Beliefs in Jacobean England</h3>
@@ -82,7 +88,7 @@ const macbethCourse: CourseData = {
 <div class="quote-bank">
 <ul>
 <li><strong>"I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on th'other."</strong> (Macbeth, Act 1 Scene 7) - Extended metaphor (horse-riding). Macbeth compares ambition to a rider who leaps so high on a horse that he falls off the other side. Effect: Suggests ambition is an uncontrollable force that destroys itself. Grade 9: Macbeth consciously recognises his fatal flaw - he knows ambition will destroy him, yet he acts anyway. This makes him a tragic hero, not a villain. He chooses damnation with eyes open.</li>
-<li><strong>"We have scotch'd the snake, not kill'd it"</strong> (Macbeth, Act 3 Scene 2) - Metaphor (fear as a snake). Effect: Macbeth fears Banquo's prophecy; killing Banquo has not solved the problem. Grade 9: Shows that Macbeth's crimes are futile - no amount of murder can change fate or the witches' prophecy. He is trapped.</li>
+<li><strong>"We have scorch'd the snake, not kill'd it"</strong> (Macbeth, Act 3 Scene 2) - Metaphor (fear as a snake). Effect: Macbeth fears Banquo's prophecy; killing Duncan has not solved the problem. Grade 9: Shows that Macbeth's crimes are futile - no amount of murder can change fate or the witches' prophecy. He is trapped.</li>
 <li><strong>"Blood will have blood."</strong> (Macbeth, Act 3 Scene 4) - Monosyllabic, blunt statement. Effect: A law of cosmic retribution. Grade 9: Connects to the divine order - breaking it by regicide triggers an endless chain of consequences.</li>
 <li><strong>"I am in blood / Stepp'd in so far that, should I wade no more, / Returning were as tedious as go o'er."</strong> (Macbeth, Act 3 Scene 4) - Extended metaphor (wading through blood). Effect: Macbeth has committed so many murders that turning back seems harder than continuing. Grade 9: Illustrates the psychological mechanism of corruption - after the first crime, the path forward seems easier than redemption.</li>
 <li><strong>"Life's but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more."</strong> (Macbeth, Act 5 Scene 5) - Extended metaphor (life as theatre). Effect: Complete nihilism. Grade 9: The tragedy's climax. Macbeth's ambition has not brought him satisfaction or security, only emptiness and despair.</li>
@@ -122,7 +128,7 @@ const macbethCourse: CourseData = {
 <div class="quote-bank">
 <ul>
 <li><strong>"Come, you spirits / That tend on mortal thoughts, unsex me here, / And fill me from the crown to the toe top-full / Of direst cruelty."</strong> (Lady Macbeth, Act 1 Scene 5) - Invocation; metaphor of filling a vessel. Lady Macbeth rejects femininity to access power. She asks spirits to fill her with cruelty. Grade 9: Shakespeare is exploring a profound problem: in a patriarchal society, power is coded as masculine. To seize power, Lady Macbeth must reject her femininity. This suggests the play explores how gender restricts both men and women.</li>
-<li><strong>"My hands are of your colour; but I shame / To wear a heart so white."</strong> (Lady Macbeth, Act 2 Scene 2) - Color imagery (white = cowardice, red = blood). Lady Macbeth has Duncan's blood on her hands but feels no shame. Grade 9: At this point, Lady Macbeth appears emotionally invulnerable. She believes she can commit evil without consequences. This makes her later breakdown devastating.</li>
+<li><strong>"My hands are of your color, but I shame / To wear a heart so white."</strong> (Lady Macbeth, Act 2 Scene 2) - Color imagery (white = cowardice, red = blood). Lady Macbeth has Duncan's blood on her hands but feels no shame. Grade 9: At this point, Lady Macbeth appears emotionally invulnerable. She believes she can commit evil without consequences. This makes her later breakdown devastating.</li>
 <li><strong>"A little water clears us of this deed."</strong> (Lady Macbeth, Act 2 Scene 2) - Dismissive simplicity. Lady Macbeth minimises the murder. Grade 9: Dramatic irony. By Act 5, she is scrubbing imaginary blood, unable to wash away guilt. Shakespeare shows guilt cannot be dismissed.</li>
 </ul>
 </div>
@@ -166,11 +172,11 @@ const macbethCourse: CourseData = {
 <div class="quote-bank">
 <ul>
 <li><strong>"Fair is foul, and foul is fair."</strong> (Witches, Act 1 Scene 1) - Oxymoron (contradiction). Sets the play's moral confusion. Good and evil are inverted. Grade 9: This line encapsulates the play's central moral problem. Macbeth will come to believe that murder is glorious. The witches embody this inversion of values.</li>
-<li><strong>"What are these creatures? / That look not like the inhabitants of the earth?"</strong> (Banquo, Act 1 Scene 3) - Description. The witches are explicitly unnatural, not human. Grade 9: They exist outside nature and morality. This is important for understanding them as genuine supernatural beings.</li>
+<li><strong>"What are these, / So wither'd, and so wild in their attire, / That look not like the inhabitants o' th' earth, / And yet are on't?"</strong> (Banquo, Act 1 Scene 3) - Description. The witches are explicitly unnatural, not human. Grade 9: They exist outside nature and morality. This is important for understanding them as genuine supernatural beings.</li>
 </ul>
 </div>
 <h3>The Witches' Equivocation</h3>
-<p>The witches make prophecies that are technically true but misleading. "None of woman born / Shall harm Macbeth" seems to promise safety, but Macduff, "from his mother's womb / Untimely ripped" (caesarean birth), technically was not "of woman born." He defeats Macbeth. Grade 9: The witches use language ambiguously. They are not lying, but they are misleading. This raises the question: are they agents of fate, or are they simply revealing a truth that Macbeth's own ambition will realise?</p>
+<p>The witches make prophecies that are technically true but misleading. "None of woman born / Shall harm Macbeth" seems to promise safety, but Macduff, "from his mother's womb / Untimely ripp'd" (caesarean birth), technically was not "of woman born." He defeats Macbeth. Grade 9: The witches use language ambiguously. They are not lying, but they are misleading. This raises the question: are they agents of fate, or are they simply revealing a truth that Macbeth's own ambition will realise?</p>
 <h3>Key Takeaways</h3>
 <ul>
 <li>The witches are supernatural beings who exist outside nature and morality.</li>
@@ -191,7 +197,7 @@ const macbethCourse: CourseData = {
           ],
           correct: 2,
           explanation:
-            'The witches use equivocal (double-meaning) language. Macduff was "from his mother\'s womb / Untimely ripped," meaning caesarean delivery. Technically, he was not "of woman born," so the prophecy is fulfilled in an unexpected way.',
+            'The witches use equivocal (double-meaning) language. Macduff was "from his mother\'s womb / Untimely ripp\'d," meaning caesarean delivery. Technically, he was not "of woman born," so the prophecy is fulfilled in an unexpected way.',
         },
       ],
     },

@@ -61,7 +61,7 @@ const CONTEXT_POINTS = [
   {
     topic: 'Gender in Jacobean society',
     detail:
-      "Women were expected to be pious, obedient, silent and nurturing. Lady Macbeth's call to be 'unsexed' \u2014 her demand to have her femininity stripped away so she can act with 'direst cruelty' \u2014 would have been deeply shocking. Her eventual sleepwalking, suicide, and the closing description of her as 'fiend-like' can be read as the play punishing her for that transgression. Macduff's insistence on feeling grief 'as a man' offers a very different, more sympathetic model of masculinity.",
+      "Women were expected to be pious, obedient, silent and nurturing. Lady Macbeth's call to the spirits to 'unsex' her \u2014 her demand to have her femininity stripped away so she can act with 'direst cruelty' \u2014 would have been deeply shocking. Her eventual sleepwalking, suicide, and the closing description of her as 'fiend-like' can be read as the play punishing her for that transgression. Macduff's insistence on feeling grief 'as a man' offers a very different, more sympathetic model of masculinity.",
   },
   {
     topic: 'Aristotelian tragedy',

@@ -377,8 +377,11 @@ const macbethLesson5: LiteratureLesson = {
   mainActivity: {
     title: 'Prophecies, Ambition & Tragic Inevitability',
     duration: '45 minutes',
+    // Macduff meets Macbeth in Act 5 Scene 8 of the held edition
+    // (src/data/full-texts/macbeth.ts); until 2 October 2026 this set 5.6-7,
+    // which stops before the fight, as in the lesson further down.
     instructions:
-      'PART 1 (20 min): Read Act 4.1 (witches\' second prophecies: "none of woman born", "until Birnam Wood moves"). Annotate for ambiguity and wordplay. Create a three-column table: "The Prophecy | What Macbeth Understands | What Actually Happens". PART 2 (25 min): Read Act 5.6-7 (Macduff vs Macbeth). Track how each prophecy is fulfilled through technical/literal language rather than straightforward meaning. Discuss: is Macbeth a victim of the witches or his own unchecked ambition? Students write analytical paragraph: "To what extent does Shakespeare present Macbeth\'s downfall as inevitable?"',
+      'PART 1 (20 min): Read Act 4.1 (witches\' second prophecies: "none of woman born", "until / Great Birnam wood to high Dunsinane hill / Shall come against him"). Annotate for ambiguity and wordplay. Create a three-column table: "The Prophecy | What Macbeth Understands | What Actually Happens". PART 2 (25 min): Read Act 5.6-8 (Macduff vs Macbeth). Track how each prophecy is fulfilled through technical/literal language rather than straightforward meaning. Discuss: is Macbeth a victim of the witches or his own unchecked ambition? Students write analytical paragraph: "To what extent does Shakespeare present Macbeth\'s downfall as inevitable?"',
     differentiation: {
       support: 'Provided prophecy table with some answers filled in. Paragraph frame.',
       core: 'Complete independently with clear cause-and-effect reasoning.',
@@ -609,10 +612,13 @@ const christmasCarolLesson2: LiteratureLesson = {
     resources: ['Opening quotations slide', 'Word cloud tool or paper'],
   },
   mainActivity: {
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts): "If they would rather die" had lost its speech
+    // tag with no ellipsis.
     title: "Scrooge's Characterisation & Social Philosophy",
     duration: '48 minutes',
     instructions:
-      'Read Stave 1 focusing on: (1) Description of Scrooge ("Hard as flint, cold as ice"), (2) His treatment of Bob Cratchit (cold office, meagre wages), (3) The charity collectors and his response "If they would rather die, they had better do it and decrease the surplus population." Annotate for Dickens\' critique of Scrooge\'s philosophy. Create a character profile showing: Physical description | Emotional state | Beliefs about poor | Beliefs about responsibility. Then read Marley\'s ghost entrance. Discuss: why is Marley chained? What is Dickens\' message? Students write analytical paragraph: "How does Dickens present Scrooge as a symbol of Victorian greed and indifference to suffering?"',
+      'Read Stave 1 focusing on: (1) Description of Scrooge ("Hard as flint, cold as ice"), (2) His treatment of Bob Cratchit (cold office, meagre wages), (3) The charity collectors and his response "If they would rather die... they had better do it, and decrease the surplus population." Annotate for Dickens\' critique of Scrooge\'s philosophy. Create a character profile showing: Physical description | Emotional state | Beliefs about poor | Beliefs about responsibility. Then read Marley\'s ghost entrance. Discuss: why is Marley chained? What is Dickens\' message? Students write analytical paragraph: "How does Dickens present Scrooge as a symbol of Victorian greed and indifference to suffering?"',
     differentiation: {
       support: 'Annotated extract with key devices marked. Character profile template.',
       core: 'Independent annotation and full paragraph with embedded quotations.',
@@ -1500,11 +1506,15 @@ const jekyllHydeLesson2: LiteratureLesson = {
     'Explore the introductory depiction of Hyde and its unsettling nature',
     'Link narrative technique to theme development',
   ],
+  // Until 2 October 2026 this starter said the novella opens with Utterson witnessing
+  // Carew's murder. The Carew murder is Chapter 4 and only a maid sees it; the opening
+  // violence is Enfield's account of Hyde trampling a girl, Chapter 1 of the held edition
+  // (Project Gutenberg #43, src/data/full-texts/jekyll-and-hyde.ts).
   starterActivity: {
     title: 'First Encounter',
     duration: '6 minutes',
     instructions:
-      "Show the opening: Utterson witnesses Mr Carew's murder by Hyde. The victim is a respected man, struck down casually. Ask: what is Stevenson's effect by opening with violence?",
+      "Show the opening: Enfield tells Utterson how he saw Hyde trample a young girl in the street. The victim is a child, trampled without a second thought. Ask: what is Stevenson's effect by opening with violence?",
     resources: ['Opening description slide'],
   },
   mainActivity: {
@@ -1563,6 +1573,10 @@ const jekyllHydeLesson2: LiteratureLesson = {
     'Heavily annotated extract. Pre-filled observation/suggestion table example. Visual character card for Utterson. Simplified paragraph frame.',
 }
 
+// Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+// src/data/full-texts/jekyll-and-hyde.ts): the two phrases this lesson gave as Jekyll's
+// motivation are in no printing of the novel; his "beloved daydream" of separation and
+// his wish to "strip off these lendings" replace them.
 const jekyllHydeLesson3: LiteratureLesson = {
   id: 'jekyll-lit-03',
   title: 'The Transformation & Scientific Ambition',
@@ -1587,7 +1601,7 @@ const jekyllHydeLesson3: LiteratureLesson = {
     title: "Jekyll's Confession & Loss of Control",
     duration: '46 minutes',
     instructions:
-      'Read Jekyll\'s confession (Letter in final chapters). Key focuses: (1) His motivation - "the greatest interest was in the loathsome study of my own heart" and the desire to "shake off the body of the conventional self." He wants to separate his respectable self from his darker impulses. (2) The transformation language - powerful, almost ecstatic at first. Annotate for: metaphors of freedom, scientific language, then growing horror at loss of control. (3) His realisation - Hyde grows stronger, requires larger doses, begins to act without Jekyll\'s consent. Write two annotated versions of the same passage: first reading (ecstasy), second reading (horror). Then write analytical paragraph: "How does Stevenson use Jekyll\'s confession to argue that the denial and suppression of human nature leads to psychological breakdown?"',
+      'Read Jekyll\'s confession (Letter in final chapters). Key focuses: (1) His motivation - "I had learned to dwell with pleasure, as a beloved daydream, on the thought of the separation of these elements" and the desire to "strip off these lendings and spring headlong into the sea of liberty." He wants to separate his respectable self from his darker impulses. (2) The transformation language - powerful, almost ecstatic at first. Annotate for: metaphors of freedom, scientific language, then growing horror at loss of control. (3) His realisation - Hyde grows stronger, requires larger doses, begins to act without Jekyll\'s consent. Write two annotated versions of the same passage: first reading (ecstasy), second reading (horror). Then write analytical paragraph: "How does Stevenson use Jekyll\'s confession to argue that the denial and suppression of human nature leads to psychological breakdown?"',
     differentiation: {
       support: 'Annotated confession extract. Comparative annotation example.',
       core: 'Independent analysis with dual reading.',
@@ -1761,8 +1775,11 @@ const jekyllHydeLesson5: LiteratureLesson = {
       stretch: 'Evaluate how this argument applies to Victorian society itself.',
     },
   },
+  // Until 2 October 2026 the homework quotation was "I am now at my last hour of the
+  // condemned", in no printing of the novel. Jekyll's own words near the end of his
+  // statement (Chapter 10 of the held edition, Project Gutenberg #43) replace it.
   homework:
-    'Analyse Jekyll\'s final confession: "I am now at my last hour of the condemned." Write 5-6 sentences explaining what he has learned and what Stevenson wants readers to understand.',
+    'Analyse Jekyll\'s final confession: "this is my true hour of death, and what is to follow concerns another than myself." Write 5-6 sentences explaining what he has learned and what Stevenson wants readers to understand.',
   resourcesNeeded: [
     'Final chapters extract',
     'Agency timeline',
@@ -1891,7 +1908,7 @@ const romeoJulietLesson1: LiteratureLesson = {
     title: 'Star-Crossed Lovers',
     duration: '7 minutes',
     instructions:
-      'The Prologue tells us the lovers are "star-crossed" - their fate is sealed. Discuss: what is Shakespeare suggesting about destiny, choice, and external circumstances?',
+      'The Prologue tells us the lovers are "star-cross\'d" - their fate is sealed. Discuss: what is Shakespeare suggesting about destiny, choice, and external circumstances?',
     resources: ['Prologue quotation slide'],
   },
   mainActivity: {
@@ -2204,7 +2221,7 @@ const romeoJulietLesson5: LiteratureLesson = {
     title: 'Waste & Redemption',
     duration: '3 minutes',
     instructions:
-      'The Prologue told us "a pair of star-crossed lovers take their life." We have now witnessed the tragedy. But the ending also suggests redemption - the families end their feud because of the lovers\' deaths. Discuss: is there hope in this resolution?',
+      'The Prologue told us "a pair of star-cross\'d lovers take their life." We have now witnessed the tragedy. But the ending also suggests redemption - the families end their feud because of the lovers\' deaths. Discuss: is there hope in this resolution?',
     differentiation: {
       support: 'Explain the ironic resolution.',
       core: 'Discuss redemption through tragedy.',
@@ -2352,7 +2369,7 @@ const macbethActOneAmbition: LiteratureLesson = {
     title: "The Witches' Prophecy & Macbeth's Internal Conflict",
     duration: '47 minutes',
     instructions:
-      'PART 1 (15 min): Read Act 1.3 (encounter with witches). Annotate: (1) Physical reactions ("start" "pall"), (2) The three prophecies, (3) The crucial aside "If chance will have me king, why, yet it may come without my stir". Identify Shakespeare\'s presentation of Macbeth as neither puppet nor free agent. PART 2 (15 min): Read Act 1.7 ("We will proceed no further"). Annotate Lady Macbeth\'s manipulation tactics: rhetorical questions, accusations of cowardice, appeals to masculinity. Track how she unravels Macbeth\'s rational objections. PART 3 (17 min): Students complete a "Reasons for Murder" chart: What does the witches\' prophecy do? What does Lady Macbeth do? What does Macbeth\'s ambition do? Write extended response: "Which force - supernatural, spousal influence, or personal ambition - is most responsible for Macbeth\'s decision to murder Duncan? Use Act 1 evidence."',
+      'PART 1 (15 min): Read Act 1.3 (encounter with witches). Annotate: (1) Physical reactions ("start", "rapt"), (2) The three prophecies, (3) The crucial aside "If chance will have me king, why, chance may crown me / Without my stir". Identify Shakespeare\'s presentation of Macbeth as neither puppet nor free agent. PART 2 (15 min): Read Act 1.7 ("We will proceed no further"). Annotate Lady Macbeth\'s manipulation tactics: rhetorical questions, accusations of cowardice, appeals to masculinity. Track how she unravels Macbeth\'s rational objections. PART 3 (17 min): Students complete a "Reasons for Murder" chart: What does the witches\' prophecy do? What does Lady Macbeth do? What does Macbeth\'s ambition do? Write extended response: "Which force - supernatural, spousal influence, or personal ambition - is most responsible for Macbeth\'s decision to murder Duncan? Use Act 1 evidence."',
     differentiation: {
       support:
         'Pre-annotated key extracts with devices labeled. Reasons chart template with sentence starters.',
@@ -2434,7 +2451,7 @@ const macbethActTwoGuilt: LiteratureLesson = {
     title: 'The Dagger Soliloquy & Psychological Disintegration',
     duration: '46 minutes',
     instructions:
-      'PART 1 (18 min): Read Act 2.1.33-61 (dagger soliloquy). Students annotate for: (1) Personification ("dagger that I see before me"), (2) Metaphor comparing blood to nature ("gout" of blood), (3) Sensory imagery (visual but not tactile), (4) Shift from wondering if the dagger is real to understanding it\'s a vision created by his mind. Create a "What the Dagger Represents" chart: rational interpretation vs psychological interpretation. PART 2 (18 min): Read Act 2.2.60-72 ("A little water clears us of this deed"). Juxtapose with Act 5.1\'s sleepwalking obsession. Discuss: how is this ironic? What does Lady Macbeth not understand about guilt? PART 3 (10 min): Students write analytical paragraph: "Analyse how the dagger soliloquy reveals Macbeth\'s state of mind before the murder and foreshadows his later psychological deterioration."',
+      'PART 1 (18 min): Read Act 2.1.33-61 (dagger soliloquy). Students annotate for: (1) Personification ("dagger which I see before me"), (2) Metaphor comparing blood to nature ("gouts of blood"), (3) Sensory imagery (visual but not tactile), (4) Shift from wondering if the dagger is real to understanding it\'s a vision created by his mind. Create a "What the Dagger Represents" chart: rational interpretation vs psychological interpretation. PART 2 (18 min): Read Act 2.2.60-72 ("A little water clears us of this deed"). Juxtapose with Act 5.1\'s sleepwalking obsession. Discuss: how is this ironic? What does Lady Macbeth not understand about guilt? PART 3 (10 min): Students write analytical paragraph: "Analyse how the dagger soliloquy reveals Macbeth\'s state of mind before the murder and foreshadows his later psychological deterioration."',
     differentiation: {
       support:
         'Pre-highlighted dagger soliloquy devices. Chart template. Paragraph frame with sentence starters.',
@@ -2518,7 +2535,7 @@ const macbethActThreeTyranny: LiteratureLesson = {
     title: "From King to Tyrant: Macbeth's Descent into Paranoia",
     duration: '46 minutes',
     instructions:
-      'PART 1 (15 min): Read Act 3.1.48-72 (Macbeth\'s soliloquy about Banquo). Annotate for: (1) His fear that the prophecy is for Banquo\'s children ("They hailed him father to a line of kings"), (2) His awareness that achieving the crown hasn\'t brought peace ("to be thus is nothing"), (3) His decision to hire murderers. Track: Macbeth is now planning murder not to achieve ambition but to secure power. PART 2 (16 min): Read Act 3.4 (the banquet scene and Banquo\'s ghost). Annotate for: (1) How the ghost appears twice, (2) Macbeth\'s visible terror, (3) His attempt to hide his reaction from nobles, (4) The revelation of his isolated paranoia. PART 3 (15 min): Students create a "Spiral of Violence" diagram: Duncan\'s murder → Macbeth fears Banquo → Macbeth murders Banquo → Macbeth fears Macduff → (next lesson). Write analytical paragraph: "How does Shakespeare show that tyranny and violence spiral out of control once ambition turns to paranoia?"',
+      'PART 1 (15 min): Read Act 3.1.48-72 (Macbeth\'s soliloquy about Banquo). Annotate for: (1) His fear that the prophecy is for Banquo\'s children ("They hail\'d him father to a line of kings"), (2) His awareness that achieving the crown hasn\'t brought peace ("to be thus is nothing"), (3) His decision to hire murderers. Track: Macbeth is now planning murder not to achieve ambition but to secure power. PART 2 (16 min): Read Act 3.4 (the banquet scene and Banquo\'s ghost). Annotate for: (1) How the ghost appears twice, (2) Macbeth\'s visible terror, (3) His attempt to hide his reaction from nobles, (4) The revelation of his isolated paranoia. PART 3 (15 min): Students create a "Spiral of Violence" diagram: Duncan\'s murder → Macbeth fears Banquo → Macbeth murders Banquo → Macbeth fears Macduff → (next lesson). Write analytical paragraph: "How does Shakespeare show that tyranny and violence spiral out of control once ambition turns to paranoia?"',
     differentiation: {
       support: 'Pre-annotated soliloquy and banquet scene. Spiral diagram template with prompts.',
       core: 'Independent annotation and diagram with analytical writing.',
@@ -2593,14 +2610,19 @@ const macbethActFiveDownfall: LiteratureLesson = {
     title: 'Prophecies & Deception',
     duration: '6 minutes',
     instructions:
-      'Quick logic puzzle: "You will be safe from all men born of woman." What\'s the trick? (Macduff was "from his mother\'s womb untimely ripped.") Introduce: the witches\' prophecies use truth deceptively, setting up Macbeth\'s tragic end.',
+      "Quick logic puzzle: \"You will be safe from all men born of woman.\" What's the trick? (Macduff was \"from his mother's womb untimely ripp'd.\") Introduce: the witches' prophecies use truth deceptively, setting up Macbeth's tragic end.",
     resources: ['Logic puzzle', 'Prophecy slides'],
   },
   mainActivity: {
     title: 'Equivocation, Irony & Tragic Justice',
     duration: '46 minutes',
+    // The three prophecies are the apparitions' own lines in the held edition
+    // (src/data/full-texts/macbeth.ts). Until 2 October 2026 two were the site's
+    // paraphrase in quotation marks ("until Birnam Wood moves to Dunsinane", "no
+    // man of woman born shall harm Macbeth"), and Macduff's reveal, which this
+    // edition prints in Act 5 Scene 8, was set as reading for 5.6-7.
     instructions:
-      'PART 1 (16 min): Read Act 4.1 (witches\' prophecies). Create three-column table: Prophecy | How Macbeth Interprets It | True Meaning. Focus on: "none of woman born", "until Birnam Wood moves to Dunsinane", "no man of woman born shall harm Macbeth". Annotate for equivocation (technically true but deceptive). PART 2 (18 min): Read Act 5.6-7 (final battle). Track: Birnam soldiers use camouflage (moving wood), Macduff reveals "untimely ripped" birth, Macbeth is killed. Discuss: are the prophecies truly fulfilled, or did Macbeth misunderstand them? PART 3 (12 min): Students write analytical response: "How does Shakespeare use the witches\' equivocal prophecies to present tragic fate? Is Macbeth a victim of deception or his own misinterpretation?" Consider both perspectives.',
+      'PART 1 (16 min): Read Act 4.1 (witches\' prophecies). Create three-column table: Prophecy | How Macbeth Interprets It | True Meaning. Focus on: "Beware Macduff", "none of woman born / Shall harm Macbeth", "Macbeth shall never vanquish\'d be, until / Great Birnam wood to high Dunsinane hill / Shall come against him". Annotate for equivocation (technically true but deceptive). PART 2 (18 min): Read Act 5.6-8 (final battle). Track: Birnam soldiers use camouflage (moving wood), Macduff reveals "untimely ripp\'d" birth, Macbeth is killed. Discuss: are the prophecies truly fulfilled, or did Macbeth misunderstand them? PART 3 (12 min): Students write analytical response: "How does Shakespeare use the witches\' equivocal prophecies to present tragic fate? Is Macbeth a victim of deception or his own misinterpretation?" Consider both perspectives.',
     differentiation: {
       support: 'Provided prophecy table with one example completed. Response frame.',
       core: 'Independent table and analytical response.',
@@ -2661,6 +2683,14 @@ const macbethActFiveDownfall: LiteratureLesson = {
 // JEKYLL & HYDE - 4 ADDITIONAL SPECIALIZED LESSONS
 // ════════════════════════════════════════════════════════════════════════════
 
+// Jekyll and Hyde lessons below corrected 2 October 2026 against the held edition
+// (Project Gutenberg #43, src/data/full-texts/jekyll-and-hyde.ts): four quotations were
+// in no printing of the novel and real lines making the same points replace them, and
+// "I felt younger, lighter, happier in body" had lost "happier" with no ellipsis. On
+// review the same day: "undignified pleasures" was set in quotation marks as Jekyll's
+// phrase (he calls his pleasures "undignified"; the phrase is ours), and a shift "from
+// "I will take the potion" to "the potion is taking me"" was set out as if both were
+// his lines; they were the site's summary, and are now worded as one.
 const jekyllHydeDuality: LiteratureLesson = {
   id: 'jekyll-hyde-lit-07',
   title: 'Jekyll & Hyde: Duality & The Divided Self',
@@ -2686,7 +2716,7 @@ const jekyllHydeDuality: LiteratureLesson = {
     title: 'The Divided Self: Analysis of Duality',
     duration: '47 minutes',
     instructions:
-      'PART 1 (18 min): Read key passages showing Jekyll and Hyde\'s contrasts. Annotate for physical descriptions, behavioural differences, speech patterns. Create a comparison chart: Jekyll\'s Characteristics | Hyde\'s Characteristics. Note: Hyde appears younger, more vital, more expressive - suggesting repressed vitality. PART 2 (18 min): Read Jekyll\'s confession where he describes the attraction of the potion: "the drug had no action on the physical nature...it was on the spiritual side...that led me to this choice." Annotate for: what desires does Jekyll want to suppress? What does the potion allow him to do? PART 3 (11 min): Students write analytical paragraph: "How does Stevenson use the characters of Jekyll and Hyde to present the idea that human nature cannot be divided? Use textual evidence to show that suppressing evil does not eliminate it."',
+      'PART 1 (18 min): Read key passages showing Jekyll and Hyde\'s contrasts. Annotate for physical descriptions, behavioural differences, speech patterns. Create a comparison chart: Jekyll\'s Characteristics | Hyde\'s Characteristics. Note: Hyde appears younger, more vital, more expressive - suggesting repressed vitality. PART 2 (18 min): Read Jekyll\'s confession where he describes what the potion does: "The drug had no discriminating action; it was neither diabolical nor divine; it but shook the doors of the prisonhouse of my disposition." Annotate for: what desires does Jekyll want to suppress? What does the potion allow him to do? PART 3 (11 min): Students write analytical paragraph: "How does Stevenson use the characters of Jekyll and Hyde to present the idea that human nature cannot be divided? Use textual evidence to show that suppressing evil does not eliminate it."',
     differentiation: {
       support: 'Provided comparison chart with examples. Paragraph frame.',
       core: 'Independent chart and response.',
@@ -2767,7 +2797,7 @@ const jekyllHydeVictorianRepression: LiteratureLesson = {
     title: 'Respectable Facades & Hidden Desires',
     duration: '46 minutes',
     instructions:
-      'PART 1 (18 min): Examine Jekyll\'s position in society: respected physician, church elder, man of science. Read passages describing his public life. Annotate for: signs of constraint, hints of unfulfilled desires, the facade of respectability. PART 2 (18 min): Read about Jekyll\'s admission of "undignified pleasures" and his desire to "escape." Annotate for: what specific desires does he mention? What does he fear if they become known? Why does respectable society force such repression? PART 3 (10 min): Students create a chart comparing Jekyll\'s Public Image vs Private Desires. Then write analytical response: "How does Stevenson use the character of Dr Jekyll to critique Victorian repression and hypocrisy? What is he arguing about the dangers of suppressing human desires?"',
+      'PART 1 (18 min): Examine Jekyll\'s position in society: respected physician, church elder, man of science. Read passages describing his public life. Annotate for: signs of constraint, hints of unfulfilled desires, the facade of respectability. PART 2 (18 min): Read about Jekyll\'s admission that his pleasures were "undignified" and his desire to "escape." Annotate for: what specific desires does he mention? What does he fear if they become known? Why does respectable society force such repression? PART 3 (10 min): Students create a chart comparing Jekyll\'s Public Image vs Private Desires. Then write analytical response: "How does Stevenson use the character of Dr Jekyll to critique Victorian repression and hypocrisy? What is he arguing about the dangers of suppressing human desires?"',
     differentiation: {
       support: 'Guided annotations. Chart template with prompts.',
       core: 'Independent analysis and chart completion.',
@@ -2848,7 +2878,7 @@ const jekyllHydeTransformation: LiteratureLesson = {
     title: "The Potion's Power: Voluntary to Involuntary",
     duration: '47 minutes',
     instructions:
-      'PART 1 (15 min): Read passages describing Jekyll\'s early transformations. Annotate for: his control, his excitement, the thrill of liberation. Track how he uses language of freedom and relief: "I felt younger... lighter in body; within I was conscious of a heady recklessness." PART 2 (18 min): Read later passages where Jekyll transforms involuntarily (at night, without the potion). Annotate for: fear, loss of control, horror at his own nature. Track the shift from "I will take the potion" to "the potion is taking me." PART 3 (14 min): Students create a timeline showing the progression: Control → Partial Control → Loss of Control → Complete Inversion (Hyde\'s control over Jekyll). Write analytical paragraph: "How does Stevenson present the gradual erosion of Jekyll\'s agency and control? What does this suggest about the nature of human desire?"',
+      'PART 1 (15 min): Read passages describing Jekyll\'s early transformations. Annotate for: his control, his excitement, the thrill of liberation. Track how he uses language of freedom and relief: "I felt younger, lighter, happier in body; within I was conscious of a heady recklessness." PART 2 (18 min): Read later passages where Jekyll transforms involuntarily (at night, without the potion). Annotate for: fear, loss of control, horror at his own nature. Track the shift from Jekyll choosing to take the potion to the change taking hold of him unbidden. PART 3 (14 min): Students create a timeline showing the progression: Control → Partial Control → Loss of Control → Complete Inversion (Hyde\'s control over Jekyll). Write analytical paragraph: "How does Stevenson present the gradual erosion of Jekyll\'s agency and control? What does this suggest about the nature of human desire?"',
     differentiation: {
       support: 'Pre-highlighted control passages. Timeline template with prompts.',
       core: 'Independent identification and timeline creation.',
@@ -2928,7 +2958,7 @@ const jekyllHydeFinalChapter: LiteratureLesson = {
     title: "Jekyll's Confession: Truth, Regret & Damnation",
     duration: '47 minutes',
     instructions:
-      'PART 1 (15 min): Read the "Henry Jekyll\'s Full Statement" chapter. Annotate for: Jekyll\'s self-awareness, his regret, his understanding that he cannot reverse the transformation. Track language of damnation: "I am now at my last hour", "I cannot say I am innocent", "I have long since lost the self-respect of virtue." PART 2 (18 min): Examine Jekyll\'s explanation of how Hyde grew stronger. Annotate for: the irony that attempting to suppress evil made it more powerful, the moment when he realizes he is truly trapped. PART 3 (14 min): Students create a chart showing Jekyll\'s Evolution of Understanding: Initial Optimism | Growing Doubt | Horror | Final Acceptance. Write analytical response: "How does Jekyll\'s confession reveal his gradual understanding that his attempt to separate good and evil was doomed? What is Stevenson\'s final message about human nature?"',
+      'PART 1 (15 min): Read the "Henry Jekyll\'s Full Statement" chapter. Annotate for: Jekyll\'s self-awareness, his regret, his understanding that he cannot reverse the transformation. Track language of damnation and regret: "this is my true hour of death", "I chose the better part and was found wanting in the strength to keep to it", "the slime of the pit". PART 2 (18 min): Examine Jekyll\'s explanation of how Hyde grew stronger. Annotate for: the irony that attempting to suppress evil made it more powerful, the moment when he realises he is truly trapped. PART 3 (14 min): Students create a chart showing Jekyll\'s Evolution of Understanding: Initial Optimism | Growing Doubt | Horror | Final Acceptance. Write analytical response: "How does Jekyll\'s confession reveal his gradual understanding that his attempt to separate good and evil was doomed? What is Stevenson\'s final message about human nature?"',
     differentiation: {
       support: 'Provided confession with key passages highlighted. Chart template.',
       core: 'Independent reading and chart completion.',
@@ -3500,10 +3530,14 @@ const christmasCarolIgnoranceWant: LiteratureLesson = {
     resources: ['Victorian London images (contrast)', 'Discussion prompt'],
   },
   mainActivity: {
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts): the children "cling to me, appealing from
+    // their fathers" (there is no "skirts"), and the Spirit's "If these shadows remain
+    // unaltered by the Future, the child will die" is a warning, not a question.
     title: "Ignorance & Want: Dickens' Social Message",
     duration: '47 minutes',
     instructions:
-      'PART 1 (16 min): Read the scene where the Spirit reveals Ignorance and Want beneath their robes. Annotate for: physical descriptions (ragged clothes, hollow eyes), the names themselves (not hunger but ignorance), the Spirit\'s statement that both "cling to the skirts of me." Track: Dickens presents ignorance and poverty as interconnected social problems. PART 2 (16 min): Find and read the "surplus population" passage where Scrooge earlier said the poor should be dealt with by workhouses or prisons. Annotate for: the terrible cynicism, the dehumanization (calling people "surplus"), the moral horror. Show irony: the Spirit later asks "if these shadows remain unaltered by the future, will the child live or die?" suggesting that society itself must change. PART 3 (15 min): Students create a chart: Scrooge\'s View of Poverty | Dickens\' View of Poverty | What Needs to Change. Write analytical response: "How does Dickens use Ignorance and Want to challenge Victorian attitudes toward poverty? What is his argument about social responsibility?"',
+      'PART 1 (16 min): Read the scene where the Spirit reveals Ignorance and Want beneath their robes. Annotate for: physical descriptions (ragged clothes, hollow eyes), the names themselves (not hunger but ignorance), the Spirit\'s statement that "they cling to me, appealing from their fathers." Track: Dickens presents ignorance and poverty as interconnected social problems. PART 2 (16 min): Find and read the "surplus population" passage where Scrooge earlier said the poor should be dealt with by workhouses or prisons. Annotate for: the terrible cynicism, the dehumanization (calling people "surplus"), the moral horror. Show irony: the Spirit later warns "If these shadows remain unaltered by the Future, the child will die," suggesting that society itself must change. PART 3 (15 min): Students create a chart: Scrooge\'s View of Poverty | Dickens\' View of Poverty | What Needs to Change. Write analytical response: "How does Dickens use Ignorance and Want to challenge Victorian attitudes toward poverty? What is his argument about social responsibility?"',
     differentiation: {
       support: 'Highlighted passages. Chart template.',
       core: 'Independent annotation and response.',

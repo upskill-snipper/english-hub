@@ -1822,9 +1822,13 @@ const Y8_T3: Year['terms'][number] = {
             { en: 'animation', ar: 'البعث الحيّ' },
             { en: 'monstrous', ar: 'وحشي' },
           ],
+          // Shelley's words stay in English in the Arabic, as quotations do
+          // elsewhere on the site; until 2 October 2026 this note and the
+          // "beautiful" task below translated them, so an Arabic reader was
+          // given words that are not in the novel to quote.
           contextNote: {
             en: 'Victor brings the creature to life on "a dreary night of November". The moment realises his ambition and his ruin.',
-            ar: 'يبعث فيكتور الحياة في المخلوق في "ليلةٍ كئيبةٍ من نوفمبر". تتحقّق في هذه اللحظة طموحه ودماره معًا.',
+            ar: 'يبعث فيكتور الحياة في المخلوق في «a dreary night of November». تتحقّق في هذه اللحظة طموحه ودماره معًا.',
           },
           lessons: [
             lesson({
@@ -1853,7 +1857,7 @@ const Y8_T3: Year['terms'][number] = {
               do: "Model paragraph: Shelley's use of contrast.",
               do_ar: 'فقرة نموذجية: توظيف شيلي للمفارقة (التضادّ).',
               task: 'Analyse "beautiful" features vs overall horror.',
-              task_ar: 'حلِّل السمات "الجميلة" في مقابل الرعب العامّ للمشهد.',
+              task_ar: 'حلِّل السمات «beautiful» في مقابل الرعب العامّ للمشهد.',
               success: 'Contrast unpicked; effect on reader explained.',
               success_ar: 'تفكيك التضادّ وشرح أثره على القارئ.',
             }),

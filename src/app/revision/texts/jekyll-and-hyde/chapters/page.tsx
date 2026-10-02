@@ -66,6 +66,9 @@ type ChapterData = {
 
 /* ─── Data ───────────────────────────────────────────────────── */
 
+// Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+// src/data/full-texts/jekyll-and-hyde.ts): Jekyll says he is "painfully situated", in
+// the English summary and the Arabic; "painful" is not his word.
 const chapters: ChapterData[] = [
   {
     number: 1,
@@ -164,9 +167,9 @@ const chapters: ChapterData[] = [
     number: 3,
     title: 'Dr Jekyll Was Quite at Ease',
     summary:
-      'Two weeks later, Jekyll hosts a dinner party attended by Utterson and other old friends. After the guests leave, Utterson raises his concerns about Hyde and the will. Jekyll becomes visibly agitated but assures Utterson that he can "be rid of Mr. Hyde" whenever he chooses. He asks Utterson, as his lawyer and friend, to honour the will and look after Hyde\'s interests if anything should happen to him. Jekyll describes his situation as "painful" but insists it can be resolved at any moment. Utterson reluctantly agrees.',
+      'Two weeks later, Jekyll hosts a dinner party attended by Utterson and other old friends. After the guests leave, Utterson raises his concerns about Hyde and the will. Jekyll becomes visibly agitated but assures Utterson that he can "be rid of Mr. Hyde" whenever he chooses. He asks Utterson, as his lawyer and friend, to honour the will and look after Hyde\'s interests if anything should happen to him. Jekyll says he is "painfully situated" but insists it can be resolved at any moment. Utterson reluctantly agrees.',
     summaryAr:
-      'بعد أسبوعين، Jekyll يستضيف عشاء يحضره Utterson وأصدقاء قدامى. بعد ما يطلع الضيوف، Utterson يطرح قلقه عن Hyde والوصية. Jekyll يصير عصبي ويبيّن عليه الاضطراب، لكنه يطمئن Utterson إنه يقدر "be rid of Mr. Hyde" متى ما يبا. يطلب من Utterson، باعتباره محاميه وصديقه، يحترم الوصية ويعتني بمصالح Hyde لو صار له شي. Jekyll يصف وضعه بأنه "painful"، لكنه يصرّ إن المسألة قابلة للحل بأي لحظة. Utterson يوافق على مضض.',
+      'بعد أسبوعين، Jekyll يستضيف عشاء يحضره Utterson وأصدقاء قدامى. بعد ما يطلع الضيوف، Utterson يطرح قلقه عن Hyde والوصية. Jekyll يصير عصبي ويبيّن عليه الاضطراب، لكنه يطمئن Utterson إنه يقدر "be rid of Mr. Hyde" متى ما يبا. يطلب من Utterson، باعتباره محاميه وصديقه، يحترم الوصية ويعتني بمصالح Hyde لو صار له شي. Jekyll يقول إنه "painfully situated"، لكنه يصرّ إن المسألة قابلة للحل بأي لحظة. Utterson يوافق على مضض.',
     keyEvents: [
       'Jekyll hosts a dinner party, appearing his usual sociable self',
       'Utterson confronts Jekyll about Hyde after the other guests leave',

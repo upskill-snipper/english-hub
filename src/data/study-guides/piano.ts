@@ -24,13 +24,15 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * the anthology numbering lines 5 and 10. poets.org and The Reader print the
  * same text.
  *
- * WHAT THE PAGE ABOVE GETS WRONG, and this file does not repeat: its banner and
- * its comparison section say the poem is not in the current 4ET1 anthology, but
- * it is one of the sixteen compulsory Part 3 poems; An Unknown Girl, one of its
- * pairings, is a Part 2 poem that 4ET1 does not examine; its If- pairing
- * misquotes Kipling as "keep his head" (the poem says your); its line 10 note
- * describes a capital-P Piano, but the poem's piano is lower case; and it calls
- * the present-day singer professional, which the poem does not say.
+ * WHAT THE PAGE ABOVE GOT WRONG when this was written, and this file does not
+ * repeat: its banner and its comparison section said the poem is not in the
+ * current 4ET1 anthology, but it is one of the sixteen compulsory Part 3 poems;
+ * An Unknown Girl, one of its pairings, is a Part 2 poem that 4ET1 does not
+ * examine; its If- pairing misquoted Kipling as "keep his head" (the poem says
+ * your); its line 10 note described a capital-P Piano, but the poem's piano is
+ * lower case; and it called the present-day singer professional, which the
+ * poem does not say. All five were put right on the page on 26 September 2026
+ * (commit 9359b96e); checked again on 2 October 2026.
  *
  * FACT-CHECK (26 September 2026). Every quotation, extract and quoted phrase was
  * re-read against the held edition and page 57 of the Issue 8 PDF, and all were

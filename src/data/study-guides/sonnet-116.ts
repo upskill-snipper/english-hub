@@ -21,17 +21,22 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * 13 are quoted in prose and listed in quotesFromElsewhere; both were read from
  * the Pearson PDF. Extract B keeps the held edition's unaccented "ever-fixed",
  * because the test checks passages against the held edition, and its pointer
- * tells the student so.
+ * tells the student so. Line 14 and the couplet, as the anthology prints them,
+ * are listed too (2 October 2026). This file does not quote them, but the page
+ * above prints the anthology's text whole, and the site's quotation check
+ * (scripts/check-quotations.mjs) reads this list as the declaration for every
+ * page about the poem.
  *
- * THE PAGE ABOVE differs from the anthology in several places: it prints line 2
- * as "Admit impediments. Love", ends line 4 with a colon, prints line 5 as
- * "O no! it is an ever-fixed mark" and builds a note on that being the poem's
- * only exclamation, and prints "wand'ring" in line 7. The anthology prints none
- * of these. This file repeats none of them, and tells the student what the
- * anthology prints. The page also calls Time's blade a scythe in its summary
- * (the poem says sickle, and so does everything here), and quotes the 1662
- * banns wording "cause or just impediment" for a poem published in 1609; this
- * file quotes the 1559 service instead.
+ * THE PAGE ABOVE has printed the anthology's text, word for word and mark for
+ * mark, since commit 9359b96e (26 September 2026). Before that it followed
+ * another edition: "Admit impediments. Love" in line 2, a colon ending line 4,
+ * "O no! it is an ever-fixed mark" in line 5 with a note built on that being
+ * the poem's only exclamation, and "wand'ring" in line 7, none of which the
+ * anthology prints. The same commit changed the summary's scythe to the poem's
+ * sickle, and replaced the 1662 banns wording, "cause or just impediment",
+ * later than the 1609 poem, with the 1559 service's "any impediment", which is
+ * what this file quotes. Until 2 October 2026 this paragraph still described
+ * the page as it was before that commit.
  *
  * RE-VERIFIED 26 September 2026, from fresh downloads rather than the first
  * draft's notes: the anthology page 59 wording and layout, the four comparison
@@ -546,6 +551,13 @@ export const guide: StudyGuide = {
     'ever-fixèd',
     'O no, it is an ever-fixèd mark',
     'If this be error and upon me proved',
+    // Line 14 and the couplet as the anthology prints them, where the held
+    // edition has "lov'd" and "prov'd". Not quoted in this file: the page above
+    // prints them (its line 14, its couplet card and its hyperbole example), and
+    // the quotation check reads this list for every page about the poem.
+    // Checked against the Pearson PDF, page 59, on 2 October 2026.
+    'I never writ, nor no man ever loved',
+    'If this be error and upon me proved, / I never writ, nor no man ever loved',
     // The marriage service of the 1559 Book of Common Prayer, as printed by the
     // Internet Shakespeare Editions (modernised spelling).
     'as you will answer at the dreadful Day of Judgment',
@@ -611,8 +623,11 @@ export const guide: StudyGuide = {
       url: 'https://internetshakespeare.uvic.ca/m/doc/matrimony_M/index.html',
     },
     {
+      // Said until 2 October 2026 that the page above quotes this wording,
+      // which commit 9359b96e had replaced there with the 1559 text on
+      // 26 September: the same stale claim the header paragraph made.
       label:
-        'Church of England, The Form of Solemnization of Matrimony (Book of Common Prayer, 1662): the banns formula with the words cause, or just impediment, which is the wording Dowden cites and the page above quotes. Not quoted in this file, which uses the 1559 text instead',
+        'Church of England, The Form of Solemnization of Matrimony (Book of Common Prayer, 1662): the banns formula with the words cause, or just impediment, which is the wording Dowden cites. Not quoted in this file or on the page above (which quoted it until 26 September 2026): both use the 1559 text instead',
       url: 'https://www.churchofengland.org/prayer-and-worship/worship-texts-and-resources/book-common-prayer/form-solemnization-matrimony',
     },
     {

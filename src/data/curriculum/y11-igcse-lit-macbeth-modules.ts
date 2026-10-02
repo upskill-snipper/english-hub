@@ -1,5 +1,18 @@
 import type { CourseModule } from '../courses'
 
+// Quotations of the play here are in the wording of the edition the site holds,
+// Project Gutenberg #1533 (src/data/full-texts/macbeth.ts). On 2 October 2026
+// scripts/check-quotations.mjs found 29 that were not, and each was cut again
+// from the edition: modern spellings ("stepped", "unseamed") where it prints
+// "stepp'd" and "unseam'd", "Nought's had" for its "Naught's had", "Life is a
+// tale told by an idiot" for "it is a tale / Told by an idiot", and "And falls
+// on the other side", which it does not print: Macbeth breaks off at "And falls
+// on th' other" as Lady Macbeth comes in. A review the same day found two more
+// the checker passes over, because they hold a quotation inside them: "And
+// damned be him" for the edition's "And damn'd be him". It also set Malcolm's
+// list of "king-becoming graces" in quotation marks in the edition's words
+// (Act 4 Scene 3): it was his list in his order, unmarked, with "temperance"
+// for "temp'rance" and stopping short at "devotion".
 export const y11IgcseLitMacbethModules: CourseModule[] = [
   // ──────────────────────────────────────────────
   // MODULE 1 - Jacobean Context: Kingship, Witchcraft, and Divine Right
@@ -135,11 +148,11 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <h3>Act 1 Scene 2: The Bloody Captain's Report</h3>
 
-<p>Before we meet Macbeth in person, Shakespeare shapes our first impression through the <strong>Captain's report</strong> to King Duncan. The Captain describes Macbeth's extraordinary bravery in battle against the rebel Macdonwald: Macbeth "unseamed him from the nave to the chops, / And fixed his head upon our battlements." This is visceral, violent imagery that presents Macbeth as a <strong>fearless and brutal warrior</strong> - a man who kills without hesitation in the service of his king. Duncan responds with admiration, calling Macbeth "O valiant cousin! Worthy gentleman!" The scene establishes Macbeth's <strong>martial reputation</strong> and his <strong>loyalty to Duncan</strong>, both of which make his subsequent betrayal all the more shocking.</p>
+<p>Before we meet Macbeth in person, Shakespeare shapes our first impression through the <strong>Captain's report</strong> to King Duncan. The Captain describes Macbeth's extraordinary bravery in battle against the rebel Macdonwald: Macbeth "unseam'd him from the nave to the chops, / And fix'd his head upon our battlements." This is visceral, violent imagery that presents Macbeth as a <strong>fearless and brutal warrior</strong> - a man who kills without hesitation in the service of his king. Duncan responds with admiration, calling Macbeth "O valiant cousin! Worthy gentleman!" The scene establishes Macbeth's <strong>martial reputation</strong> and his <strong>loyalty to Duncan</strong>, both of which make his subsequent betrayal all the more shocking.</p>
 
 <p>Crucially, the scene also introduces the <strong>Thane of Cawdor</strong>, who has betrayed Duncan and sided with the Norwegian invaders. Duncan orders Cawdor's execution and decrees that Macbeth shall receive his title. This is deeply ironic: the title that Macbeth inherits from a traitor will become the stepping stone to his own treason. Shakespeare is already layering the play with dramatic irony.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing the Captain's speech, focus on the verb choices. "Unseamed" suggests Macbeth cut Macdonwald open like a garment being torn apart at the seam - it is dehumanising and mechanical, suggesting Macbeth kills with practised efficiency. This duality - heroic yet savage - is central to his characterisation throughout the play.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing the Captain's speech, focus on the verb choices. "Unseam'd" suggests Macbeth cut Macdonwald open like a garment being torn apart at the seam - it is dehumanising and mechanical, suggesting Macbeth kills with practised efficiency. This duality - heroic yet savage - is central to his characterisation throughout the play.</div>
 
 <h3>Act 1 Scene 3: The Witches' Prophecies</h3>
 
@@ -155,13 +168,13 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <p>Lady Macbeth reads Macbeth's letter describing the witches' prophecy and immediately resolves that Duncan must be killed. Her response is one of the most famous speeches in Shakespeare. She calls upon dark spirits to <strong>"unsex me here, / And fill me from the crown to the toe top-full / Of direst cruelty."</strong> She asks to be stripped of her femininity, her compassion, and her humanity so that she can carry out the murder without remorse. The language is violent and transgressive: she asks that her breast milk be turned to gall (bile), that thick night should hide her actions from heaven, and that her "keen knife" should not see the wound it makes.</p>
 
-<p>This soliloquy establishes Lady Macbeth as a character who deliberately chooses evil. Unlike Macbeth, who is tormented by moral uncertainty, Lady Macbeth appears resolute and ruthless. She sees her husband's nature as "too full o' the milk of human kindness" - a phrase that mixes tenderness with contempt. She will become the driving force behind the murder, manipulating Macbeth's insecurities and questioning his masculinity to override his moral objections.</p>
+<p>This soliloquy establishes Lady Macbeth as a character who deliberately chooses evil. Unlike Macbeth, who is tormented by moral uncertainty, Lady Macbeth appears resolute and ruthless. She sees her husband's nature as "too full o' th' milk of human kindness" - a phrase that mixes tenderness with contempt. She will become the driving force behind the murder, manipulating Macbeth's insecurities and questioning his masculinity to override his moral objections.</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Students often describe Lady Macbeth as "evil" without nuance. The soliloquy actually shows that she needs to call on supernatural forces to suppress her natural compassion - suggesting that cruelty does not come naturally to her. She must actively choose to become cruel, which makes her characterisation more complex than simple villainy.</div>
 
 <h3>Act 1 Scene 7: "If It Were Done When 'Tis Done"</h3>
 
-<p>Macbeth's soliloquy at the opening of Scene 7 is his most sustained attempt to think through the consequences of Duncan's murder. He lists compelling reasons <em>not</em> to kill the king: he is Duncan's kinsman, his subject, and his host - all roles that impose sacred obligations of protection. Duncan has been a good and humble king. Macbeth has no justification except his own "vaulting ambition, which o'erleaps itself / And falls on the other side." This image of a horseman leaping too eagerly and tumbling over the other side of the saddle is a metaphor for overreaching ambition that destroys itself.</p>
+<p>Macbeth's soliloquy at the opening of Scene 7 is his most sustained attempt to think through the consequences of Duncan's murder. He lists compelling reasons <em>not</em> to kill the king: he is Duncan's kinsman, his subject, and his host - all roles that impose sacred obligations of protection. Duncan has been a good and humble king. Macbeth has no justification except his own "vaulting ambition, which o'erleaps itself / And falls on th' other." This image of a horseman leaping too eagerly and tumbling over the other side of the saddle is a metaphor for overreaching ambition that destroys itself.</p>
 
 <p>When Lady Macbeth enters and Macbeth tells her "We will proceed no further in this business," she deploys a devastating psychological attack. She questions his manhood: "When you durst do it, then you were a man." She invokes the shocking image of dashing her own nursing infant's brains out to prove she would keep a promise - an image of maternal violence so extreme that it is designed to shame Macbeth into action. Her strategy works. Macbeth's resolve crumbles and he agrees to the murder: "I am settled, and bend up / Each corporal agent to this terrible feat."</p>
 
@@ -219,7 +232,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'Macbeth describes his "vaulting ambition, which o\'erleaps itself / And falls on the other side." The image of a horseman leaping too eagerly and tumbling over the saddle is a metaphor for overreaching ambition that ultimately destroys itself.',
+          'Macbeth describes his "vaulting ambition, which o\'erleaps itself / And falls on th\' other." The image of a horseman leaping too eagerly and tumbling over the saddle is a metaphor for overreaching ambition that ultimately destroys itself.',
       },
       {
         id: 'macbeth-m2-q5',
@@ -283,7 +296,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <p>Act 2 establishes the play's central <strong>symbolic opposition between blood and water</strong>. Blood represents guilt, violence, and the irrevocable consequences of sin. Water represents cleansing, innocence, and absolution. Macbeth's despair that Neptune's ocean cannot wash his hands clean sets up a symbolic pattern that culminates in Lady Macbeth's sleepwalking scene in Act 5, where she compulsively washes her hands and cries "Out, damned spot!" The blood-water imagery creates a through-line of guilt that runs from the murder to the final act of the play, binding husband and wife in a shared psychological torment.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about blood imagery in Macbeth, trace its development across the play. In Act 2, Macbeth is horrified by Duncan's blood; by Act 3, he speaks of being "in blood stepped in so far" that returning is as difficult as continuing; by Act 5, he is numb to violence. This trajectory from horror to numbness is the arc of Macbeth's moral disintegration, and tracking imagery across the play demonstrates the kind of structural awareness that earns top marks.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about blood imagery in Macbeth, trace its development across the play. In Act 2, Macbeth is horrified by Duncan's blood; by Act 3, he speaks of being "in blood stepp'd in so far" that returning is as difficult as continuing; by Act 5, he is numb to violence. This trajectory from horror to numbness is the arc of Macbeth's moral disintegration, and tracking imagery across the play demonstrates the kind of structural awareness that earns top marks.</div>
 `,
     quiz: [
       {
@@ -369,7 +382,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <h3>Act 3 Scene 1: Macbeth's Suspicion of Banquo</h3>
 
-<p>Macbeth is now king, but the witches' prophecy that Banquo's descendants will inherit the throne gnaws at him. In his soliloquy, Macbeth reflects bitterly that he has murdered Duncan only to place a "fruitless crown" upon his own head and a "barren sceptre" in his grip - he has no son to inherit. He has committed regicide for Banquo's benefit, not his own: <strong>"For Banquo's issue have I filed my mind; / For them the gracious Duncan have I murdered."</strong> The word "filed" means defiled - Macbeth recognises that he has polluted his soul for nothing.</p>
+<p>Macbeth is now king, but the witches' prophecy that Banquo's descendants will inherit the throne gnaws at him. In his soliloquy, Macbeth reflects bitterly that he has murdered Duncan only to place a "fruitless crown" upon his own head and a "barren sceptre" in his grip - he has no son to inherit. He has committed regicide for Banquo's benefit, not his own: <strong>"For Banquo's issue have I fil'd my mind; / For them the gracious Duncan have I murder'd."</strong> The word "fil'd" means defiled - Macbeth recognises that he has polluted his soul for nothing.</p>
 
 <p>What follows is a chilling scene in which Macbeth manipulates two hired murderers, using the same psychological tactics Lady Macbeth used on him. He questions their manhood, implies that Banquo has wronged them, and goads them into agreeing to kill both Banquo and his son Fleance. This is a significant development: Macbeth no longer needs Lady Macbeth's persuasion. He has <strong>internalised her methods</strong> and now acts as both planner and manipulator. Critically, he does not tell Lady Macbeth about the plan - a sign of the growing distance between them.</p>
 
@@ -377,7 +390,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <h3>Act 3 Scene 2: "O, Full of Scorpions Is My Mind"</h3>
 
-<p>This intimate scene between Macbeth and Lady Macbeth reveals the psychological cost of their crime. Lady Macbeth, who was so decisive in Act 1, now sounds weary and uncertain: <strong>"Nought's had, all's spent, / Where our desire is got without content."</strong> She has achieved everything she wanted and gained nothing - a devastating summary of the emptiness at the heart of ambition. Macbeth, meanwhile, is tormented by paranoia. His confession - <strong>"O, full of scorpions is my mind, dear wife!"</strong> - is a visceral metaphor for the psychological agony of a guilty conscience. The scorpions represent thoughts that sting and poison from within, turning his own mind into an instrument of self-torture.</p>
+<p>This intimate scene between Macbeth and Lady Macbeth reveals the psychological cost of their crime. Lady Macbeth, who was so decisive in Act 1, now sounds weary and uncertain: <strong>"Naught's had, all's spent, / Where our desire is got without content."</strong> She has achieved everything she wanted and gained nothing - a devastating summary of the emptiness at the heart of ambition. Macbeth, meanwhile, is tormented by paranoia. His confession - <strong>"O, full of scorpions is my mind, dear wife!"</strong> - is a visceral metaphor for the psychological agony of a guilty conscience. The scorpions represent thoughts that sting and poison from within, turning his own mind into an instrument of self-torture.</p>
 
 <p>Macbeth's language in this scene has shifted. He now speaks of darkness and violence with a kind of terrible relish: "Come, seeling night, / Scarf up the tender eye of pitiful day." He is invoking the same darkness Lady Macbeth called upon in Act 1, but where she needed supernatural assistance to suppress her conscience, Macbeth is embracing evil more willingly. The power dynamic has shifted: Macbeth now keeps secrets from Lady Macbeth, telling her to "Be innocent of the knowledge, dearest chuck, / Till thou applaud the deed." He has moved beyond her influence.</p>
 
@@ -393,7 +406,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <p>The ghost is visible to Macbeth but not to anyone else, raising the question of whether it is a <strong>genuine supernatural visitation or a hallucination</strong> born of guilt - the same ambiguity that surrounded the dagger in Act 2. Lady Macbeth tries to control the situation, privately hissing at Macbeth that he is unmanned by his terror: "Are you a man?" She uses the same tactic she employed in Act 1 Scene 7 - questioning his masculinity - but this time it fails. Macbeth is beyond her control.</p>
 
-<p>The political consequences are severe. Macbeth's lords witness their king raving at an empty chair, undermining his authority and raising suspicions about his sanity and legitimacy. The banquet that was meant to consolidate Macbeth's power has <strong>exposed his instability</strong>. By the end of the scene, Macbeth resolves to visit the witches again, seeking more prophecies. He also declares: <strong>"I am in blood / Stepped in so far that, should I wade no more, / Returning were as tedious as go o'er."</strong> This is a pivotal metaphor: Macbeth imagines himself wading through a river of blood. He has gone so far that turning back is as difficult as continuing. He has passed the point of no return.</p>
+<p>The political consequences are severe. Macbeth's lords witness their king raving at an empty chair, undermining his authority and raising suspicions about his sanity and legitimacy. The banquet that was meant to consolidate Macbeth's power has <strong>exposed his instability</strong>. By the end of the scene, Macbeth resolves to visit the witches again, seeking more prophecies. He also declares: <strong>"I am in blood / Stepp'd in so far that, should I wade no more, / Returning were as tedious as go o'er."</strong> This is a pivotal metaphor: Macbeth imagines himself wading through a river of blood. He has gone so far that turning back is as difficult as continuing. He has passed the point of no return.</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Students often focus only on what the ghost scene reveals about Macbeth's guilt. It is equally important to analyse its <em>political</em> consequences. The banquet was intended to project stability and authority; instead, it publicly exposed Macbeth's psychological fragility, undermining his claim to legitimate rule and sowing doubt among his lords.</div>
 
@@ -403,7 +416,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <div class="key-term"><strong>Key Term: Tyranny</strong> - Rule through fear, violence, and the suppression of dissent, as opposed to legitimate kingship based on the consent and loyalty of subjects. Shakespeare contrasts Duncan's benevolent kingship with Macbeth's tyranny to explore how illegitimate power corrupts both the ruler and the state.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The metaphor of blood as a river in Act 3 Scene 4 ("I am in blood / Stepped in so far") is one of the most important images in the play. It shows Macbeth recognising that he has passed a moral point of no return - he cannot undo what he has done, so he chooses to continue. This is a turning point: from here on, Macbeth's violence becomes deliberate and strategic rather than tortured and reluctant.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The metaphor of blood as a river in Act 3 Scene 4 ("I am in blood / Stepp'd in so far") is one of the most important images in the play. It shows Macbeth recognising that he has passed a moral point of no return - he cannot undo what he has done, so he chooses to continue. This is a turning point: from here on, Macbeth's violence becomes deliberate and strategic rather than tortured and reluctant.</div>
 `,
     quiz: [
       {
@@ -460,7 +473,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
       },
       {
         id: 'macbeth-m4-q5',
-        question: 'What does Macbeth\'s metaphor "I am in blood / Stepped in so far" signify?',
+        question: 'What does Macbeth\'s metaphor "I am in blood / Stepp\'d in so far" signify?',
         options: [
           'He is physically covered in blood from battle',
           'He has passed a moral point of no return and will continue killing',
@@ -488,21 +501,21 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <h3>Act 4 Scene 1: The Second Set of Prophecies</h3>
 
-<p>Macbeth returns to the witches demanding answers. They conjure three apparitions. The <strong>Armed Head</strong> warns him to "beware Macduff." The <strong>Bloody Child</strong> tells him that "none of woman born / Shall harm Macbeth." The <strong>Crowned Child holding a tree</strong> declares that Macbeth "shall never vanquished be until / Great Birnam Wood to high Dunsinane Hill / Shall come against him." These prophecies give Macbeth a false sense of invincibility: since every person is born of a woman and forests cannot move, he believes himself safe.</p>
+<p>Macbeth returns to the witches demanding answers. They conjure three apparitions. The <strong>Armed Head</strong> warns him to "beware Macduff." The <strong>Bloody Child</strong> tells him that "none of woman born / Shall harm Macbeth." The <strong>Crowned Child holding a tree</strong> declares that Macbeth "shall never vanquish'd be until / Great Birnam Wood to high Dunsinane Hill / Shall come against him." These prophecies give Macbeth a false sense of invincibility: since every person is born of a woman and forests cannot move, he believes himself safe.</p>
 
-<p>The prophecies are a masterclass in <strong>equivocation</strong> - the witches tell literal truths that are designed to mislead. Macduff was "from his mother's womb / Untimely ripped" (delivered by Caesarean section), which the witches' language technically excludes from being "born." Malcolm's soldiers will camouflage themselves with branches from Birnam Wood, creating the illusion of a moving forest. The witches never lie, but their truths are crafted to deceive. Shakespeare uses this to explore how <strong>language itself can be a weapon</strong> - how the same words can carry opposite meanings depending on interpretation.</p>
+<p>The prophecies are a masterclass in <strong>equivocation</strong> - the witches tell literal truths that are designed to mislead. Macduff was "from his mother's womb / Untimely ripp'd" (delivered by Caesarean section), which the witches' language technically excludes from being "born." Malcolm's soldiers will camouflage themselves with branches from Birnam Wood, creating the illusion of a moving forest. The witches never lie, but their truths are crafted to deceive. Shakespeare uses this to explore how <strong>language itself can be a weapon</strong> - how the same words can carry opposite meanings depending on interpretation.</p>
 
 <div class="key-term"><strong>Key Term: Equivocation</strong> - The deliberate use of ambiguous language to mislead without technically lying. The witches' prophecies are the play's supreme example: each statement is literally true but designed to create a false sense of security in Macbeth. The concept connects to the Gunpowder Plot, where the Jesuit doctrine of equivocation was controversially used during interrogations.</div>
 
 <h3>Act 4 Scene 2: The Murder of Macduff's Family</h3>
 
-<p>This scene is the most disturbing in the play. Macbeth orders the murder of Lady Macduff and her children - not because they threaten him, but as an act of <strong>pure, vindictive cruelty</strong>. Macduff has fled to England, so Macbeth punishes his absence by destroying everything he left behind. The murder of children onstage was shocking even by Jacobean standards. Shakespeare includes the son's brave, futile defiance - "He has killed me, mother. Run away, I pray you!" - to maximise the horror and to make the audience's condemnation of Macbeth absolute.</p>
+<p>This scene is the most disturbing in the play. Macbeth orders the murder of Lady Macduff and her children - not because they threaten him, but as an act of <strong>pure, vindictive cruelty</strong>. Macduff has fled to England, so Macbeth punishes his absence by destroying everything he left behind. The murder of children onstage was shocking even by Jacobean standards. Shakespeare includes the son's brave, futile defiance - "He has kill'd me, mother. Run away, I pray you!" - to maximise the horror and to make the audience's condemnation of Macbeth absolute.</p>
 
 <p>This massacre marks Macbeth's moral nadir. There is no pretence of political necessity, no agonised soliloquy, no hesitation. He has become the very thing the play warns against: a ruler whose power is sustained entirely by terror. The murder also provides Macduff with his personal motivation for vengeance, transforming the political conflict into a deeply personal one.</p>
 
 <h3>Act 4 Scene 3: Malcolm and Macduff in England</h3>
 
-<p>Malcolm tests Macduff's loyalty by pretending to be an even worse tyrant than Macbeth - claiming to be lustful, greedy, and devoid of kingly virtues. When Macduff despairs and cries "O Scotland, Scotland!" Malcolm reveals that his self-accusations were a test, and that he is actually virtuous. This scene establishes Malcolm as a <strong>shrewd and cautious future king</strong> - the opposite of Macbeth's impulsive brutality. It also develops the play's exploration of <strong>what makes a good king</strong>, listing the "king-becoming graces" as justice, verity, temperance, stableness, bounty, perseverance, mercy, lowliness, and devotion.</p>
+<p>Malcolm tests Macduff's loyalty by pretending to be an even worse tyrant than Macbeth - claiming to be lustful, greedy, and devoid of kingly virtues. When Macduff despairs and cries "O Scotland, Scotland!" Malcolm reveals that his self-accusations were a test, and that he is actually virtuous. This scene establishes Malcolm as a <strong>shrewd and cautious future king</strong> - the opposite of Macbeth's impulsive brutality. It also develops the play's exploration of <strong>what makes a good king</strong>, listing the "king-becoming graces": "justice, verity, temp'rance, stableness, / Bounty, perseverance, mercy, lowliness, / Devotion, patience, courage, fortitude".</p>
 
 <p>When Ross arrives with news that Macduff's family has been murdered, Macduff's grief is devastating: <strong>"All my pretty ones? / Did you say all? O hell-kite! All?"</strong> Malcolm urges him to convert his grief into anger: "Let grief / Convert to anger; blunt not the heart, enrage it." Macduff's vow to confront Macbeth gives the final act its personal, emotional drive.</p>
 
@@ -516,9 +529,9 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <h3>Act 5 Scenes 3-8: Macbeth's Last Stand and Death</h3>
 
-<p>As Malcolm's army approaches, Macbeth clings to the witches' prophecies. But each prophecy is systematically dismantled. When a servant reports that Birnam Wood appears to be moving (Malcolm's soldiers carry branches as camouflage), Macbeth's confidence cracks: "I pull in resolution, and begin / To doubt the equivocation of the fiend / That lies like truth." He finally understands that the witches' truths were designed to destroy him.</p>
+<p>As Malcolm's army approaches, Macbeth clings to the witches' prophecies. But each prophecy is systematically dismantled. When a servant reports that Birnam Wood appears to be moving (Malcolm's soldiers carry branches as camouflage), Macbeth's confidence cracks: "I pull in resolution, and begin / To doubt th' equivocation of the fiend / That lies like truth." He finally understands that the witches' truths were designed to destroy him.</p>
 
-<p>Macbeth's response to Lady Macbeth's death produces one of Shakespeare's most famous speeches: <strong>"Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day."</strong> Life, he concludes, is "a tale / Told by an idiot, full of sound and fury, / Signifying nothing." This nihilistic vision reveals a man stripped of all meaning, purpose, and hope. Yet even in despair, Macbeth fights on. His final battle with Macduff, and his refusal to yield even after learning that Macduff was "from his mother's womb / Untimely ripped," demonstrates a residual <strong>martial courage</strong> that complicates any simple moral judgement.</p>
+<p>Macbeth's response to Lady Macbeth's death produces one of Shakespeare's most famous speeches: <strong>"Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day."</strong> Life, he concludes, is "a tale / Told by an idiot, full of sound and fury, / Signifying nothing." This nihilistic vision reveals a man stripped of all meaning, purpose, and hope. Yet even in despair, Macbeth fights on. His final battle with Macduff, and his refusal to yield even after learning that Macduff was "from his mother's womb / Untimely ripp'd," demonstrates a residual <strong>martial courage</strong> that complicates any simple moral judgement.</p>
 
 <p>Macduff kills Macbeth and presents his head to Malcolm. Malcolm is proclaimed king, and order is restored. The play ends as it must: with the <strong>restoration of legitimate kingship</strong> and the destruction of the tyrant. The Great Chain of Being is repaired. But the audience is left with haunting questions about the nature of evil, the fragility of goodness, and the terrible cost of ambition.</p>
 
@@ -626,7 +639,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <p>Shakespeare traces Macbeth's moral deterioration with extraordinary precision. In Act 1, he is tormented by the mere <em>thought</em> of murder. In Act 2, he is shattered by guilt after the deed. In Act 3, he plans Banquo's murder with cold calculation but is still haunted by guilt (the ghost). By Act 4, he orders the slaughter of Macduff's innocent family without hesitation or remorse. By Act 5, he declares that life is meaningless.</p>
 
-<p>This trajectory - from moral sensitivity to moral numbness - is the arc of a <strong>man who has murdered his own conscience</strong>. Each crime makes the next one easier, until killing becomes routine. Macbeth himself articulates this process: <strong>"I am in blood / Stepped in so far that, should I wade no more, / Returning were as tedious as go o'er"</strong> (3.4). He has crossed a threshold beyond which moral recovery is impossible. The blood metaphor suggests that violence has become the element he lives in - not something he does, but something he <em>is</em>.</p>
+<p>This trajectory - from moral sensitivity to moral numbness - is the arc of a <strong>man who has murdered his own conscience</strong>. Each crime makes the next one easier, until killing becomes routine. Macbeth himself articulates this process: <strong>"I am in blood / Stepp'd in so far that, should I wade no more, / Returning were as tedious as go o'er"</strong> (3.4). He has crossed a threshold beyond which moral recovery is impossible. The blood metaphor suggests that violence has become the element he lives in - not something he does, but something he <em>is</em>.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about Macbeth's character arc, use specific quotations from different acts to show how his language changes. In Act 1, he speaks with hesitation, conditional syntax, and moral awareness. By Act 5, his language is bleak, nihilistic, and stripped of feeling. Tracking this linguistic shift demonstrates the sophisticated textual analysis that earns top marks.</div>
 
@@ -634,7 +647,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <p>A key question for the IGCSE examiner is whether the audience retains any sympathy for Macbeth. Shakespeare carefully ensures that we do - at least partially. Macbeth's soliloquies give us access to his inner world, revealing a man who suffers intensely for his crimes. His hallucinations - the dagger, the ghost, the voice crying "Sleep no more!" - show a conscience that punishes him even when no human authority can. His awareness of what he has lost - "honour, love, obedience, troops of friends, / I must not look to have" (5.3) - is poignant precisely because he knows he has brought this desolation upon himself.</p>
 
-<p>Even in his final moments, Macbeth displays a fierce, animal courage that complicates judgement. He refuses to yield to Macduff: <strong>"Yet I will try the last. Before my body / I throw my warlike shield. Lay on, Macduff, / And damned be him that first cries, 'Hold, enough!'"</strong> This defiance, while futile, echoes the martial heroism of Act 1 and reminds us that Macbeth was once a man of genuine greatness. The tragedy lies in the gap between what he was and what he has become.</p>
+<p>Even in his final moments, Macbeth displays a fierce, animal courage that complicates judgement. He refuses to yield to Macduff: <strong>"Yet I will try the last. Before my body / I throw my warlike shield. Lay on, Macduff, / And damn'd be him that first cries, 'Hold, enough!'"</strong> This defiance, while futile, echoes the martial heroism of Act 1 and reminds us that Macbeth was once a man of genuine greatness. The tragedy lies in the gap between what he was and what he has become.</p>
 
 <h3>Alternative Interpretations</h3>
 
@@ -679,11 +692,11 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
           '"Is this a dagger which I see before me?"',
           '"I have no spur to prick the sides of my intent, but only vaulting ambition"',
           '"Tomorrow, and tomorrow, and tomorrow"',
-          '"I am in blood stepped in so far"',
+          '"I am in blood stepp\'d in so far"',
         ],
         correct: 1,
         explanation:
-          'In his Act 1 Scene 7 soliloquy, Macbeth admits he has no justification for murder except "vaulting ambition, which o\'erleaps itself / And falls on the other side." This self-awareness - knowing that his only motive is personal desire - is what makes him a tragic rather than merely criminal figure.',
+          'In his Act 1 Scene 7 soliloquy, Macbeth admits he has no justification for murder except "vaulting ambition, which o\'erleaps itself / And falls on th\' other." This self-awareness - knowing that his only motive is personal desire - is what makes him a tragic rather than merely criminal figure.',
       },
       {
         id: 'macbeth-m6-q4',
@@ -696,7 +709,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'In Act 1, Macbeth speaks with hesitation, conditional syntax, and moral awareness. By Act 5, his language becomes bleak and nihilistic ("Life is a tale told by an idiot, signifying nothing"). This linguistic shift tracks his moral disintegration from sensitivity to numbness.',
+          'In Act 1, Macbeth speaks with hesitation, conditional syntax, and moral awareness. By Act 5, his language becomes bleak and nihilistic ("it is a tale / Told by an idiot, full of sound and fury, / Signifying nothing"). This linguistic shift tracks his moral disintegration from sensitivity to numbness.',
       },
       {
         id: 'macbeth-m6-q5',
@@ -709,7 +722,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
         ],
         correct: 2,
         explanation:
-          "Macbeth's fierce, defiant last stand (\"Lay on, Macduff, / And damned be him that first cries 'Hold, enough!'\") echoes the martial courage praised in Act 1. This residual heroism reminds us of what he was before ambition destroyed him, making the gap between potential and reality the true tragedy.",
+          "Macbeth's fierce, defiant last stand (\"Lay on, Macduff, / And damn'd be him that first cries 'Hold, enough!'\") echoes the martial courage praised in Act 1. This residual heroism reminds us of what he was before ambition destroyed him, making the gap between potential and reality the true tragedy.",
       },
     ],
   },
@@ -728,7 +741,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <h3>Act 1: The Driving Force</h3>
 
-<p>Lady Macbeth's first appearance is electrifying. Reading Macbeth's letter about the witches' prophecy, she immediately resolves that Duncan must die. There is no hesitation, no moral struggle - where Macbeth agonises, she acts. Her assessment of her husband is both loving and ruthless: she fears his nature is <strong>"too full o' the milk of human kindness"</strong> to seize the crown. The metaphor is telling: "milk" suggests nourishment and maternal tenderness, qualities she associates with weakness. She sees compassion as an impediment to power.</p>
+<p>Lady Macbeth's first appearance is electrifying. Reading Macbeth's letter about the witches' prophecy, she immediately resolves that Duncan must die. There is no hesitation, no moral struggle - where Macbeth agonises, she acts. Her assessment of her husband is both loving and ruthless: she fears his nature is <strong>"too full o' th' milk of human kindness"</strong> to seize the crown. The metaphor is telling: "milk" suggests nourishment and maternal tenderness, qualities she associates with weakness. She sees compassion as an impediment to power.</p>
 
 <p>Her invocation to the spirits - <strong>"Come, you spirits / That tend on mortal thoughts, unsex me here"</strong> - is one of the most analysed passages in the play. She asks to be stripped of her femininity, her maternal instincts, and her capacity for remorse. She wants her breast milk replaced with gall (bile), and she calls on "thick night" to hide her actions from heaven. This is not a woman who finds cruelty natural; it is a woman who must <strong>actively suppress her humanity</strong> to achieve what she has decided must be done. The very fact that she needs supernatural help to become cruel tells us that, beneath her iron exterior, she possesses the compassion she despises.</p>
 
@@ -740,13 +753,13 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <ol>
   <li><strong>Attacking his masculinity:</strong> "When you durst do it, then you were a man; / And to be more than what you were, you would / Be so much more the man." She equates murder with manhood, making cowardice the alternative to regicide.</li>
-  <li><strong>Invoking maternal violence:</strong> "I have given suck, and know / How tender 'tis to love the babe that milks me: / I would, while it was smiling in my face, / Have plucked my nipple from his boneless gums, / And dashed the brains out." This horrifying image is designed to shame Macbeth by showing that she - a woman, a mother - would commit an even more unnatural act to keep a promise.</li>
+  <li><strong>Invoking maternal violence:</strong> "I have given suck, and know / How tender 'tis to love the babe that milks me: / I would, while it was smiling in my face, / Have pluck'd my nipple from his boneless gums, / And dash'd the brains out." This horrifying image is designed to shame Macbeth by showing that she - a woman, a mother - would commit an even more unnatural act to keep a promise.</li>
   <li><strong>Providing a practical plan:</strong> She overcomes his practical objections by outlining how they will drug Duncan's guards and frame them. She makes murder seem not only possible but simple.</li>
 </ol>
 
 <p>Her strategy works because she understands the Jacobean masculine code. In a society where a man's honour depended on his courage, being called a coward by your own wife was an unbearable affront. Lady Macbeth weaponises gender expectations to override Macbeth's moral objections.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing Lady Macbeth's persuasion in Act 1 Scene 7, identify her specific techniques: rhetorical questions ("Was the hope drunk / Wherein you dressed yourself?"), gender-based shaming, shocking imagery, and practical planning. Naming the strategies precisely - rather than simply saying she "persuades" him - demonstrates analytical skill.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing Lady Macbeth's persuasion in Act 1 Scene 7, identify her specific techniques: rhetorical questions ("Was the hope drunk / Wherein you dress'd yourself?"), gender-based shaming, shocking imagery, and practical planning. Naming the strategies precisely - rather than simply saying she "persuades" him - demonstrates analytical skill.</div>
 
 <h3>Act 2: Composure and Control</h3>
 
@@ -754,7 +767,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <h3>Act 3: The Beginning of Isolation</h3>
 
-<p>By Act 3, the power dynamic between the Macbeths has shifted. Macbeth plans Banquo's murder without telling Lady Macbeth: "Be innocent of the knowledge, dearest chuck." She is excluded from his decisions, reduced from co-conspirator to spectator. Her weary admission - <strong>"Nought's had, all's spent, / Where our desire is got without content"</strong> - reveals that power has brought her no satisfaction. She has everything she wanted and nothing she needs. During the banquet scene, she tries to manage Macbeth's breakdown, hissing "Are you a man?" - the same tactic she used in Act 1. But this time it fails. She can no longer control him, and her power has evaporated.</p>
+<p>By Act 3, the power dynamic between the Macbeths has shifted. Macbeth plans Banquo's murder without telling Lady Macbeth: "Be innocent of the knowledge, dearest chuck." She is excluded from his decisions, reduced from co-conspirator to spectator. Her weary admission - <strong>"Naught's had, all's spent, / Where our desire is got without content"</strong> - reveals that power has brought her no satisfaction. She has everything she wanted and nothing she needs. During the banquet scene, she tries to manage Macbeth's breakdown, hissing "Are you a man?" - the same tactic she used in Act 1. But this time it fails. She can no longer control him, and her power has evaporated.</p>
 
 <h3>Act 5: The Sleepwalking Scene</h3>
 
@@ -774,7 +787,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
       {
         id: 'macbeth-m7-q1',
         question:
-          'What does Lady Macbeth mean when she says Macbeth is "too full o\' the milk of human kindness"?',
+          'What does Lady Macbeth mean when she says Macbeth is "too full o\' th\' milk of human kindness"?',
         options: [
           'He is physically weak and unable to fight',
           'He is too compassionate and morally sensitive to seize power ruthlessly',
@@ -994,9 +1007,9 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <h3>Corruption: The Spreading Stain</h3>
 
-<p>Corruption in <em>Macbeth</em> operates on three levels: <strong>personal</strong>, <strong>political</strong>, and <strong>cosmic</strong>. On the personal level, Macbeth's soul is progressively corrupted by his crimes. He moves from agonised moral awareness to cold calculation to nihilistic despair. Each murder erodes his humanity further until he declares that life itself is "a tale told by an idiot, signifying nothing." This is the ultimate corruption: not just of morals, but of meaning itself.</p>
+<p>Corruption in <em>Macbeth</em> operates on three levels: <strong>personal</strong>, <strong>political</strong>, and <strong>cosmic</strong>. On the personal level, Macbeth's soul is progressively corrupted by his crimes. He moves from agonised moral awareness to cold calculation to nihilistic despair. Each murder erodes his humanity further until he declares that life itself is "a tale / Told by an idiot, full of sound and fury, / Signifying nothing." This is the ultimate corruption: not just of morals, but of meaning itself.</p>
 
-<p>On the political level, Macbeth's rule corrupts the entire state of Scotland. His reign replaces trust with suspicion, loyalty with fear, and justice with arbitrary violence. Macduff tells Malcolm: "Each new morn / New widows howl, new orphans cry, new sorrows / Strike heaven on the face." Scotland under Macbeth is a land of suffering, where the innocent are punished and the guilty prosper. Ross describes it as a place where "sighs and groans and shrieks that rent the air / Are made, not marked" - suffering has become so common that people no longer notice it.</p>
+<p>On the political level, Macbeth's rule corrupts the entire state of Scotland. His reign replaces trust with suspicion, loyalty with fear, and justice with arbitrary violence. Macduff tells Malcolm: "Each new morn / New widows howl, new orphans cry, new sorrows / Strike heaven on the face." Scotland under Macbeth is a land of suffering, where the innocent are punished and the guilty prosper. Ross describes it as a place where "sighs and groans and shrieks that rent the air / Are made, not mark'd" - suffering has become so common that people no longer notice it.</p>
 
 <p>On the cosmic level, the murder of the divinely appointed king disrupts the <strong>Great Chain of Being</strong>. Nature itself becomes disordered: owls kill falcons, horses eat each other, darkness covers the land at midday. This cosmic corruption is Shakespeare's most dramatic way of showing that Macbeth's crime is not merely personal or political but an offence against the divine order of the universe.</p>
 
@@ -1234,7 +1247,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <p>Shakespeare structures <em>Macbeth</em> around recurring <strong>image clusters</strong> that develop and deepen as the play progresses. Identifying these patterns and tracking their evolution is one of the most effective analytical strategies for the IGCSE exam.</p>
 
-<p><strong>Blood:</strong> Blood appears throughout the play, evolving from a symbol of honour (the Captain's bloody account of Macbeth's bravery) to a symbol of guilt (Macbeth's bloodstained hands), to a metaphor for the irreversibility of evil ("I am in blood / Stepped in so far"), to a hallucination (Lady Macbeth's "damned spot"). The progression from literal to metaphorical to hallucinatory blood mirrors the deepening of guilt from external act to internal torment to psychological destruction.</p>
+<p><strong>Blood:</strong> Blood appears throughout the play, evolving from a symbol of honour (the Captain's bloody account of Macbeth's bravery) to a symbol of guilt (Macbeth's bloodstained hands), to a metaphor for the irreversibility of evil ("I am in blood / Stepp'd in so far"), to a hallucination (Lady Macbeth's "damned spot"). The progression from literal to metaphorical to hallucinatory blood mirrors the deepening of guilt from external act to internal torment to psychological destruction.</p>
 
 <p><strong>Darkness:</strong> Both Macbeth and Lady Macbeth invoke darkness to conceal their crimes. Lady Macbeth calls on "thick night" and asks the darkness to hide her "keen knife" from heaven. Macbeth invites "seeling night" to "scarf up the tender eye of pitiful day." Darkness represents <strong>moral blindness, concealment, and the world of evil</strong>. The ironic reversal comes when Lady Macbeth, who once welcomed darkness, is terrified of it in Act 5 and carries a candle everywhere - the darkness she invited has consumed her.</p>
 
@@ -1294,7 +1307,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'Blood evolves from a symbol of honour (the Captain\'s report) to guilt (Macbeth\'s stained hands) to irreversibility ("stepped in so far") to hallucination (Lady Macbeth\'s "damned spot"). This progression from literal to metaphorical to hallucinatory mirrors the deepening of guilt.',
+          'Blood evolves from a symbol of honour (the Captain\'s report) to guilt (Macbeth\'s stained hands) to irreversibility ("stepp\'d in so far") to hallucination (Lady Macbeth\'s "damned spot"). This progression from literal to metaphorical to hallucinatory mirrors the deepening of guilt.',
       },
       {
         id: 'macbeth-m11-q3',

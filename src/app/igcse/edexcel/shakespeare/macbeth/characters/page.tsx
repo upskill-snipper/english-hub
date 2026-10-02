@@ -84,14 +84,14 @@ const CHARACTERS = [
     name: 'Macduff',
     role: "Thane of Fife - Macbeth's avenger",
     description:
-      "Macduff is the moral counterweight to Macbeth. He refuses to attend Macbeth's coronation at Scone, flees to England, and joins Malcolm. His grief at the slaughter of his wife and children - 'all my pretty chickens and their dam at one fell swoop' - is one of the play's rawest moments, and Shakespeare uses it to model healthy masculine grief against the toxic version Lady Macbeth demanded of her husband. Being 'from his mother's womb untimely ripped', he fulfils the prophecy and kills Macbeth.",
+      "Macduff is the moral counterweight to Macbeth. He refuses to attend Macbeth's coronation at Scone, flees to England, and joins Malcolm. His grief at the slaughter of his wife and children - 'all my pretty chickens and their dam at one fell swoop' - is one of the play's rawest moments, and Shakespeare uses it to model healthy masculine grief against the toxic version Lady Macbeth demanded of her husband. Being 'from his mother's womb untimely ripp'd', he fulfils the prophecy and kills Macbeth.",
     arc: 'Suspicious nobleman \u2192 exile \u2192 grieving father \u2192 avenger',
     key_quotes: [
       '"O horror, horror, horror!" (2.3)',
       '"He has no children" (4.3)',
       '"I shall do so; but I must also feel it as a man" (4.3)',
       '"Turn, hell-hound, turn!" (5.8)',
-      '"Macduff was from his mother\'s womb untimely ripped" (5.8)',
+      '"Macduff was from his mother\'s womb untimely ripp\'d" (5.8)',
     ],
   },
   {

@@ -1438,10 +1438,13 @@ const Y7_T2: Year['terms'][number] = {
             lesson({
               focus: 'explicit-reading',
               skills: ['7R.2', '7R.4'],
-              do: 'Read lines 1-24; gloss "Frà Pandolf", "countenance".',
+              // 2 October 2026: "Frà Pandolf" is the anthology's spelling. The held edition
+              // (src/data/full-texts/my-last-duchess.ts), the text the reader prints, has
+              // "Fra", and words set in quotation marks as the poem's follow it.
+              do: 'Read lines 1-24; gloss "Fra Pandolf", "countenance".',
               task: 'Answer five literal questions: who speaks, to whom, about whom, when, where.',
               success: 'Identifies speaker, listener, subject.',
-              doAr: 'اقرأ الأسطر من 1 إلى 24، واشرح "Frà Pandolf" و"countenance".',
+              doAr: 'اقرأ الأسطر من 1 إلى 24، واشرح "Fra Pandolf" و"countenance".',
               taskAr: 'أجب عن خمسة أسئلة حرفية: من يتكلّم، إلى من، عن من، متى، أين.',
               successAr: 'يحدّد الطالب المتكلّم والمستمع وموضوع الحديث.',
             }),

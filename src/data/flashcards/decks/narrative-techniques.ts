@@ -94,9 +94,12 @@ const deck: FlashcardDeck = {
       back: `Definition: A direct comparison between two unlike things without "like" or "as," suggesting one thing IS another.\n\nHow Writers Use It:\n• "Life is a journey" - suggests life has direction, stages, obstacles\n• "Scrooge\'s heart is frozen" - suggests emotional coldness\n\nEffect: Creates vivid imagery; suggests deeper meaning through comparison; can create irony`,
     },
     {
+      // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+      // src/data/full-texts/a-christmas-carol.ts): Dickens wrote "solitary as an oyster", not
+      // "lonely". The parallel-similes example in nt-43 is our own sentence, not his.
       id: 'nt-17',
       front: 'Simile',
-      back: `Definition: A comparison between two unlike things using "like" or "as."\n\nHow Writers Use It:\n• "As lonely as an oyster" - Dickens on Scrooge\n• "Like a thief in the night" - suggests stealth and danger\n\nEffect: Creates vivid, memorable images; slightly more obvious than metaphor; can be beautiful or comic`,
+      back: `Definition: A comparison between two unlike things using "like" or "as."\n\nHow Writers Use It:\n• "Solitary as an oyster" - Dickens on Scrooge\n• "Like a thief in the night" - suggests stealth and danger\n\nEffect: Creates vivid, memorable images; slightly more obvious than metaphor; can be beautiful or comic`,
     },
     {
       id: 'nt-18',

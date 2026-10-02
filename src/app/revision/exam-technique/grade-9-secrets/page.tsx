@@ -513,11 +513,15 @@ export default async function Grade9SecretsPage() {
           <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
             {await t('rev.misc2.g9.example_in_action')}
           </p>
+          {/* Shelley's "wedding-night" is hyphenated in the 1831 text the site holds
+              (src/data/full-texts/frankenstein.ts). This read "wedding night" until 2
+              October 2026; the quotation scanner reads a hyphen as a space, so it
+              could not see the difference. */}
           <p className="text-body-sm text-muted-foreground leading-relaxed italic">
             &ldquo;The Creature&apos;s request for a companion can be read as a genuine plea for
             empathy, positioning him as the novel&apos;s true moral centre.
             <span className="font-semibold text-foreground not-italic"> Alternatively, </span>
-            his threat -- &apos;I shall be with you on your wedding night&apos; -- reframes the
+            his threat -- &apos;I shall be with you on your wedding-night&apos; -- reframes the
             request as coercion, suggesting Shelley questions whether beings born of unnatural means
             can ever escape the violence of their origins. The ambiguity itself may be
             Shelley&apos;s point: moral judgement in

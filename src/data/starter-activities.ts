@@ -78,11 +78,11 @@ export const starterActivities: StarterActivity[] = [
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 10', 'Year 11'],
     content:
-      '"I have no spur to prick the sides of my intent, but only vaulting ambition, which o\'erleaps itself and falls on the other."',
+      '"I have no spur to prick the sides of my intent, but only vaulting ambition, which o\'erleaps itself and falls on th\' other."',
     instructions:
       "Write 2-3 sentences analysing this quotation. Consider: What does the horse metaphor suggest about Macbeth's ambition? What is Shakespeare's message about unchecked ambition?",
     answers:
-      'The metaphor of a horse leaping too high and falling suggests ambition that exceeds ability leads to destruction. "Vaulting" implies recklessness, while "falls on the other" foreshadows Macbeth\'s downfall. Shakespeare warns that ambition without moral restraint is self-defeating.',
+      'The metaphor of a horse leaping too high and falling suggests ambition that exceeds ability leads to destruction. "Vaulting" implies recklessness, while "falls on th\' other" foreshadows Macbeth\'s downfall. Shakespeare warns that ambition without moral restraint is self-defeating.',
     duration: 3,
     skills: ['Analysis', 'Quotation Selection', 'Language Analysis'],
   },
@@ -228,6 +228,11 @@ export const starterActivities: StarterActivity[] = [
   // INFERENCE PUZZLE (5)
   // ──────────────────────────────────────────────
   {
+    // A Christmas Carol quotations here and in comp-2 and theme-3 corrected 2 October 2026
+    // against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts): the edition prints "grind-stone", and
+    // Scrooge's Stave One questions are "Are there no prisons?" and "And the Union workhouses?"
+    // ("Are there no workhouses?" is the Spirit's, in Stave Three).
     id: 'inf-1',
     type: 'Inference Puzzle',
     title: 'ACC - Stave One Extract',
@@ -235,11 +240,11 @@ export const starterActivities: StarterActivity[] = [
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 10', 'Year 11'],
     content:
-      '"Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"',
+      '"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"',
     instructions:
-      '1. What can you infer about Scrooge\'s character from this description?\n2. Why does Dickens use so many adjectives in a list?\n3. What might "grindstone" suggest about how Scrooge treats others?',
+      '1. What can you infer about Scrooge\'s character from this description?\n2. Why does Dickens use so many adjectives in a list?\n3. What might "grind-stone" suggest about how Scrooge treats others?',
     answers:
-      '1. Scrooge is miserly, aggressive, and morally corrupt - "sinner" shows spiritual failing.\n2. The long list (asyndetic listing) overwhelms the reader, mirroring how oppressive Scrooge is.\n3. "Grindstone" implies he works people relentlessly and painfully, grinding them down.',
+      '1. Scrooge is miserly, aggressive, and morally corrupt - "sinner" shows spiritual failing.\n2. The long list (asyndetic listing) overwhelms the reader, mirroring how oppressive Scrooge is.\n3. "Grind-stone" implies he works people relentlessly and painfully, grinding them down.',
     duration: 3,
     skills: ['Inference', 'Language Analysis'],
   },
@@ -489,7 +494,7 @@ export const starterActivities: StarterActivity[] = [
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 10', 'Year 11'],
     content:
-      'Extract A: "a man has to mind his own business and look after himself" - Mr Birling, An Inspector Calls\n\nExtract B: "Are there no prisons? Are there no workhouses?" - Scrooge, A Christmas Carol',
+      'Extract A: "a man has to mind his own business and look after himself" - Mr Birling, An Inspector Calls\n\nExtract B: "Are there no prisons? ... And the Union workhouses?" - Scrooge, A Christmas Carol',
     instructions:
       'Find 3 similarities or differences in how the upper classes are presented. Use comparative connectives.',
     answers:
@@ -693,13 +698,19 @@ export const starterActivities: StarterActivity[] = [
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 10', 'Year 11'],
     content:
-      'Themes:\n1. Redemption  2. Poverty  3. Isolation  4. Christmas Spirit  5. Family\n\nEvidence:\nA) "solitary as an oyster"\nB) "God bless us, every one!"\nC) "I will honour Christmas in my heart"\nD) "Are there no prisons? Are there no workhouses?"\nE) "He had been Tim\'s blood horse all the way from church"',
+      'Themes:\n1. Redemption  2. Poverty  3. Isolation  4. Christmas Spirit  5. Family\n\nEvidence:\nA) "solitary as an oyster"\nB) "God bless us, every one!"\nC) "I will honour Christmas in my heart"\nD) "Are there no prisons? ... And the Union workhouses?"\nE) "He had been Tim\'s blood horse all the way from church"',
     instructions: 'Match each piece of evidence to the most relevant theme.',
     answers:
       "1. Redemption → C (Scrooge vows to change)\n2. Poverty → D (Scrooge dismisses the poor)\n3. Isolation → A (Scrooge is closed off from others)\n4. Christmas Spirit → B (Tiny Tim's blessing)\n5. Family → E (Bob Cratchit's loving relationship with Tim)",
     duration: 3,
     skills: ['Theme Identification', 'Quotation Selection'],
   },
+  // Utterson's pun (C) runs across a speech tag ("he had thought"); the ellipsis marks
+  // the cut (corrected 2 October 2026 against Project Gutenberg #43). The same day E,
+  // "I began to be aware, more sharply than ever, of the dangers of my scientific work",
+  // was found to be in no printing of the novel and was replaced by Jekyll's own line
+  // from Chapter 10; and the answers had given D to Utterson, though it is Jekyll who
+  // binds his honour, in Chapter 5.
   {
     id: 'theme-4',
     type: 'Theme Match',
@@ -708,10 +719,10 @@ export const starterActivities: StarterActivity[] = [
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 10', 'Year 11'],
     content:
-      'Themes:\n1. Duality  2. Reputation  3. Science  4. Secrecy  5. Violence\n\nEvidence:\nA) "man is not truly one, but truly two"\nB) "trampled calmly over the child\'s body"\nC) "If he be Mr Hyde, I shall be Mr Seek"\nD) "I bind my honour to you that I am done with him"\nE) "I began to be aware, more sharply than ever, of the dangers of my scientific work"',
+      'Themes:\n1. Duality  2. Reputation  3. Science  4. Secrecy  5. Violence\n\nEvidence:\nA) "man is not truly one, but truly two"\nB) "trampled calmly over the child\'s body"\nC) "If he be Mr Hyde... I shall be Mr Seek"\nD) "I bind my honour to you that I am done with him"\nE) "I hesitated long before I put this theory to the test of practice"',
     instructions: 'Match each piece of evidence to the most relevant theme.',
     answers:
-      "1. Duality → A (Jekyll's theory of human nature)\n2. Reputation → D (Utterson is concerned with honour)\n3. Science → E (Jekyll fears the consequences)\n4. Secrecy → C (everyone is investigating hidden truths)\n5. Violence → B (Hyde's casual cruelty)",
+      "1. Duality → A (Jekyll's theory of human nature)\n2. Reputation → D (Jekyll stakes his honour on it)\n3. Science → E (Jekyll knows his experiment is dangerous)\n4. Secrecy → C (everyone is investigating hidden truths)\n5. Violence → B (Hyde's casual cruelty)",
     duration: 3,
     skills: ['Theme Identification', 'Quotation Selection'],
   },
@@ -1489,7 +1500,7 @@ export const starterActivities: StarterActivity[] = [
     instructions:
       'Work without notes. Accuracy and specific evidence count. After writing, verify examples against text. Missing specifics? Make a note for revision.',
     answers:
-      'Allegory: Entire farm=USSR. Propaganda: Squealer\'s lies reshape reality. Repetition: "All animals equal" then "but some more equal." Language corruption: "Comrade" to control. Irony: Pigs become the oppressors they overthrew.',
+      'Allegory: Entire farm=USSR. Propaganda: Squealer\'s lies reshape reality. Repetition: "All animals are equal" then "but some animals are more equal than others." Language corruption: "Comrade" to control. Irony: Pigs become the oppressors they overthrew.',
     duration: 6,
     skills: ['Retrieval', 'Language Analysis', 'Allegory'],
   },

@@ -1,14 +1,20 @@
 export interface FormativeAssessmentTool {
-  id: string;
-  title: string;
-  type: 'exit-ticket' | 'hinge-question' | 'mini-whiteboard' | 'think-pair-share' | 'quiz' | 'observation';
-  yearGroup: string;
-  skill: 'reading' | 'writing' | 'speaking' | 'grammar' | 'knowledge';
-  purpose: string;
-  howToUse: string[];
-  questions?: string[];
-  whatToLookFor: string[];
-  followUpActions: string[];
+  id: string
+  title: string
+  type:
+    | 'exit-ticket'
+    | 'hinge-question'
+    | 'mini-whiteboard'
+    | 'think-pair-share'
+    | 'quiz'
+    | 'observation'
+  yearGroup: string
+  skill: 'reading' | 'writing' | 'speaking' | 'grammar' | 'knowledge'
+  purpose: string
+  howToUse: string[]
+  questions?: string[]
+  whatToLookFor: string[]
+  followUpActions: string[]
 }
 
 export const formativeAssessmentTools: FormativeAssessmentTool[] = [
@@ -98,19 +104,19 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
     questions: [
       'Name two historical events that influenced the writing of the text studied this term.',
       'What was the social position of women during the period in which this text was written?',
-      'Explain one way in which the author\'s own life experiences are reflected in the text.',
+      "Explain one way in which the author's own life experiences are reflected in the text.",
       'How might a contemporary reader have responded differently to this text compared to a modern reader?',
       'Identify one critical perspective that could be applied when reading this text.',
     ],
     whatToLookFor: [
       'Accuracy of factual recall: dates, names, and key events stated correctly.',
       'Whether students can move beyond listing facts to connecting context to the text.',
-      'Misconceptions or oversimplifications in students\' understanding of the historical period.',
-      'Students who conflate the author\'s biography with the text\'s themes.',
+      "Misconceptions or oversimplifications in students' understanding of the historical period.",
+      "Students who conflate the author's biography with the text's themes.",
     ],
     followUpActions: [
       'Create a context card for students who scored below 3 out of 5 to use in future lessons.',
-      'Add the lowest-scoring contextual point to the next lesson\'s starter retrieval quiz.',
+      "Add the lowest-scoring contextual point to the next lesson's starter retrieval quiz.",
       'Set a home-learning task asking students to find one additional contextual fact independently.',
     ],
   },
@@ -132,7 +138,7 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
     ],
     questions: [
       'Identify two language techniques the writer uses in this extract and explain the effect of each.',
-      'How does the writer\'s choice of words in line 2 influence the reader\'s feelings about the subject?',
+      "How does the writer's choice of words in line 2 influence the reader's feelings about the subject?",
       'What effect does the sentence structure in the final sentence create for the reader?',
     ],
     whatToLookFor: [
@@ -165,9 +171,9 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
     ],
     questions: [
       'Apply the phonological framework to this spoken transcript: identify two features and comment on their function.',
-      'Using the pragmatic framework, explain what the speaker\'s utterance implies beyond its literal meaning.',
+      "Using the pragmatic framework, explain what the speaker's utterance implies beyond its literal meaning.",
       'Identify one feature of syntax in this written extract and explain its effect on the reader.',
-      'Which discourse framework feature is most prominent here, and what does it reveal about the speaker\'s purpose?',
+      "Which discourse framework feature is most prominent here, and what does it reveal about the speaker's purpose?",
     ],
     whatToLookFor: [
       'Whether students use precise metalinguistic terminology rather than informal descriptions.',
@@ -248,6 +254,8 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
   },
 
   {
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts), which prints "grind-stone".
     id: 'hq-y9-theme-analysis',
     title: 'Y9 Theme Analysis Hinge Question',
     type: 'hinge-question',
@@ -263,7 +271,7 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
       'Follow up with a brief partner discussion task that requires students to justify their answer in writing.',
     ],
     questions: [
-      'Dickens describes Scrooge as "a tight-fisted hand at the grindstone." This primarily develops the theme of:\nA) Physical cruelty, because Scrooge works hard.\nB) Greed and exploitation, because the metaphor links him to relentless, joyless labour.\nC) Poverty, because Dickens is criticising the working class.\nD) Isolation, because Scrooge does not speak to anyone.',
+      'Dickens describes Scrooge as "a tight-fisted hand at the grind-stone." This primarily develops the theme of:\nA) Physical cruelty, because Scrooge works hard.\nB) Greed and exploitation, because the metaphor links him to relentless, joyless labour.\nC) Poverty, because Dickens is criticising the working class.\nD) Isolation, because Scrooge does not speak to anyone.',
       'How does Steinbeck develop the theme of loneliness through Crooks in Chapter 4?\nA) By showing Crooks is physically disabled.\nB) By describing the objects in his room and his hostile reaction to Lennie entering.\nC) By having other characters ignore him at dinner.\nD) By showing Crooks reads many books.',
     ],
     whatToLookFor: [
@@ -371,8 +379,8 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
     ],
     whatToLookFor: [
       'Comma splices: students using a comma rather than a semi-colon or full stop between independent clauses.',
-      'Confusion between its (possessive) and it\'s (contraction) as a persistent error.',
-      'Apostrophe placement errors in plural possessives (boys\' vs boy\'s).',
+      "Confusion between its (possessive) and it's (contraction) as a persistent error.",
+      "Apostrophe placement errors in plural possessives (boys' vs boy's).",
       'Students who can correct given sentences but cannot construct their own, suggesting procedural rather than conceptual understanding.',
     ],
     followUpActions: [
@@ -400,7 +408,9 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
     questions: [
       'Embed this quotation into an analytical sentence: "of mice and men" -- start with "Steinbeck\'s title..."',
       'Complete this sentence so the quotation is embedded: "Scrooge is shown to be isolated when Dickens describes him as \'____.\'"',
-      'Write a sentence embedding the quotation "What a piece of work is a man" that includes the word "suggests".',
+      // Hamlet's line, as the held edition prints it (src/data/full-texts/hamlet.ts):
+      // this said "is a man", and did not name the play, until 2 October 2026.
+      'Write a sentence embedding the quotation "What a piece of work is man" (Hamlet) that includes the word "suggests".',
       'Rewrite this dropped quotation as an embedded one: "Macbeth is ambitious. \'I have no spur to prick the sides of my intent.\'"',
     ],
     whatToLookFor: [
@@ -412,7 +422,7 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
     followUpActions: [
       'Provide a sentence frame resource for students who struggled with embedding during independent writing time.',
       'Display three model embedded sentences on the board as a reference for the subsequent essay task.',
-      'Ask students who embedded correctly to peer-mark a partner\'s paragraph for quotation embedding in the next task.',
+      "Ask students who embedded correctly to peer-mark a partner's paragraph for quotation embedding in the next task.",
     ],
   },
 
@@ -425,22 +435,22 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
     yearGroup: 'Y7',
     skill: 'speaking',
     purpose:
-      'Develop students\' ability to articulate character judgements using textual evidence, building the verbal skills that underpin written analytical responses.',
+      "Develop students' ability to articulate character judgements using textual evidence, building the verbal skills that underpin written analytical responses.",
     howToUse: [
       'Pose the question on the board and give students 90 seconds to think individually and jot notes.',
       'Pair students (ideally one more confident with one less confident reader) to discuss for 2 minutes.',
-      'Take feedback from three or four pairs, asking each to share their partner\'s view rather than their own.',
+      "Take feedback from three or four pairs, asking each to share their partner's view rather than their own.",
       'Record key vocabulary and phrases that emerge on the board for students to use in subsequent writing.',
-      'Close by asking students to write one sentence summarising the class\'s view of the character.',
+      "Close by asking students to write one sentence summarising the class's view of the character.",
     ],
     questions: [
       'Is this character a villain, a victim, or something more complicated? What does the text tell us?',
-      'Which word or phrase in the passage best captures this character\'s personality? Explain your choice.',
+      "Which word or phrase in the passage best captures this character's personality? Explain your choice.",
       'How do you think the reader is meant to feel about this character at this point in the story?',
     ],
     whatToLookFor: [
       'Whether students support their opinions with specific reference to the text or rely on general impressions.',
-      'Quality of listening during the pair stage: does each student accurately report their partner\'s view?',
+      "Quality of listening during the pair stage: does each student accurately report their partner's view?",
       'Students who offer binary judgements (good/bad, like/dislike) rather than nuanced responses.',
       'The vocabulary students use spontaneously: is it analytical or conversational?',
     ],
@@ -453,12 +463,12 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
 
   {
     id: 'tps-y8-poets-message',
-    title: 'Y8 Poet\'s Message Discussion Think-Pair-Share',
+    title: "Y8 Poet's Message Discussion Think-Pair-Share",
     type: 'think-pair-share',
     yearGroup: 'Y8',
     skill: 'speaking',
     purpose:
-      'Help students move from identifying poetic techniques to discussing the poet\'s overall message or intention, a higher-order analytical skill.',
+      "Help students move from identifying poetic techniques to discussing the poet's overall message or intention, a higher-order analytical skill.",
     howToUse: [
       'After reading the poem twice, pose the question and allow 2 minutes of silent individual thinking.',
       'Students discuss in pairs for 3 minutes, with one student acting as note-taker.',
@@ -469,7 +479,7 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
     questions: [
       'What is the poet trying to make the reader think or feel by the end of this poem?',
       'Do you think the poet is criticising, celebrating, or mourning something? What makes you say that?',
-      'Which image in the poem do you think best communicates the poet\'s message? Why?',
+      "Which image in the poem do you think best communicates the poet's message? Why?",
       'Has your interpretation of the poem changed since reading it a second time? What changed?',
     ],
     whatToLookFor: [
@@ -481,7 +491,7 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
     followUpActions: [
       'Model how a class discussion point can be transformed into an opening essay sentence.',
       'Ask each pair to select one quotation that best supports their interpretation for the subsequent written task.',
-      'If students struggle with the concept of poetic intention, plan a lesson on how to approach the poet\'s voice.',
+      "If students struggle with the concept of poetic intention, plan a lesson on how to approach the poet's voice.",
     ],
   },
 
@@ -492,7 +502,7 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
     yearGroup: 'Y9',
     skill: 'speaking',
     purpose:
-      'Develop students\' ability to connect social and historical context to specific moments in the studied text, preparing them for context-based examination questions.',
+      "Develop students' ability to connect social and historical context to specific moments in the studied text, preparing them for context-based examination questions.",
     howToUse: [
       'Provide a brief context card with two or three key historical facts relevant to the discussion question.',
       'Students think individually for 90 seconds before discussing in pairs for 3 minutes.',
@@ -504,13 +514,13 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
       'How does knowledge of the Great Depression help you understand the relationship between George and Lennie?',
       'Dickens published "A Christmas Carol" in 1843 when child poverty was widespread. How does this change how you read Tiny Tim?',
       'How might the rigid class system of the Edwardian era explain why Sheila and Eva Smith are treated so differently?',
-      'Would a reader in the 1930s have been more or less shocked by Crooks\' treatment than a modern reader? Why?',
+      "Would a reader in the 1930s have been more or less shocked by Crooks' treatment than a modern reader? Why?",
     ],
     whatToLookFor: [
       'Whether students can move beyond listing context to explaining how it illuminates a specific moment in the text.',
-      'Confusion between the author\'s historical period and the text\'s setting period.',
+      "Confusion between the author's historical period and the text's setting period.",
       'Students who can retrieve contextual facts but cannot apply them analytically.',
-      'Quality of discussion: are students building on each other\'s points or speaking in turn without engaging?',
+      "Quality of discussion: are students building on each other's points or speaking in turn without engaging?",
     ],
     followUpActions: [
       'Provide a context-to-text sentence frame for the written follow-up: "Given that ______, it is significant that Dickens/Steinbeck/Priestley ______."',
@@ -526,7 +536,7 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
     yearGroup: 'Y12-Y13',
     skill: 'speaking',
     purpose:
-      'Develop A-level students\' ability to construct interpretive arguments about language data before committing to a written analytical response, reducing the tendency to merely describe.',
+      "Develop A-level students' ability to construct interpretive arguments about language data before committing to a written analytical response, reducing the tendency to merely describe.",
     howToUse: [
       'Provide a language data source (transcript, text, or comparative pair) and allow 3 minutes of silent annotation.',
       'Students discuss their preliminary interpretations in pairs for 4 minutes, each taking turns to lead.',
@@ -542,14 +552,14 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
     ],
     whatToLookFor: [
       'Whether students generate analytical arguments or default to feature-spotting and labelling.',
-      'Evidence of genuine intellectual engagement during the pair stage: are they challenging each other\'s interpretations?',
+      "Evidence of genuine intellectual engagement during the pair stage: are they challenging each other's interpretations?",
       'Whether students can apply multiple frameworks or tend to rely on one comfortable approach.',
       'Quality of the thesis statement: is it specific, arguable, and grounded in the data?',
     ],
     followUpActions: [
-      'Ask students to exchange thesis statements and provide one written question that challenges their partner\'s argument.',
+      "Ask students to exchange thesis statements and provide one written question that challenges their partner's argument.",
       'Identify the pair that generated the strongest interpretation and ask them to share their discussion process.',
-      'Plan a lesson on constructing counter-arguments if students\' discussions are consistently one-directional.',
+      "Plan a lesson on constructing counter-arguments if students' discussions are consistently one-directional.",
     ],
   },
 
@@ -602,11 +612,11 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
     yearGroup: 'Y8',
     skill: 'grammar',
     purpose:
-      'Assess students\' spelling, punctuation, and grammar accuracy in a focused, time-limited format to inform targeted intervention before major writing assessments.',
+      "Assess students' spelling, punctuation, and grammar accuracy in a focused, time-limited format to inform targeted intervention before major writing assessments.",
     howToUse: [
       'Administer the 10-question quiz as the lesson starter over 10 minutes without access to notes.',
       'Students swap papers and peer-mark using the answer key, awarding one mark per question.',
-      'Students record their score and circle the questions they marked wrong on their partner\'s paper.',
+      "Students record their score and circle the questions they marked wrong on their partner's paper.",
       'Teacher collects data on the three most common errors across the class.',
       'Target the most common error in a 5-minute explanation and practice activity at the end of the lesson.',
     ],
@@ -623,10 +633,10 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
       'Add a semi-colon to join these two sentences: "The play was brilliant. The audience stood and applauded."',
     ],
     whatToLookFor: [
-      'Apostrophe errors: confusion between its/it\'s and failure to use apostrophes in contracted forms.',
+      "Apostrophe errors: confusion between its/it's and failure to use apostrophes in contracted forms.",
       'Comma splices as a persistent pattern across the majority of the class.',
       'Spelling errors in high-frequency academic vocabulary such as "argument", "evidence", "necessary".',
-      'Confusion between homophones: effect/affect, their/there/they\'re, lay/lie.',
+      "Confusion between homophones: effect/affect, their/there/they're, lay/lie.",
     ],
     followUpActions: [
       'Create a class SPaG target list based on the three most common errors and share it with students.',
@@ -656,7 +666,7 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
       'What is the name of the Poor Law that Dickens was protesting against in "A Christmas Carol"?',
       'What social group does Crooks represent in "Of Mice and Men"?',
       'What does "Marxist criticism" argue when applied to literature?',
-      'What event in Dickens\' own childhood influenced his portrayal of poverty?',
+      "What event in Dickens' own childhood influenced his portrayal of poverty?",
       'Why did Steinbeck set "Of Mice and Men" in the 1930s Salinas Valley?',
       'What is meant by the term "social mobility" in the context of Victorian England?',
       'Name one female critic or theorist whose ideas could be applied to the treatment of women in this period.',
@@ -666,11 +676,11 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
       'Whether students can recall accurate dates and names rather than approximations.',
       'Any contextual area (historical, social, biographical, critical) that is consistently weak across the class.',
       'Students who answer questions about context correctly but cannot apply that context to specific moments in the text.',
-      'Confusion between context about the text\'s setting and context about the time of writing.',
+      "Confusion between context about the text's setting and context about the time of writing.",
     ],
     followUpActions: [
       'Revisit the lowest-scoring contextual area with a short structured reading and retrieval activity next lesson.',
-      'Create a context revision card for any area scored below 50% across the class and add it to students\' revision folders.',
+      "Create a context revision card for any area scored below 50% across the class and add it to students' revision folders.",
       'Set a home-learning task requiring students to connect three contextual facts to specific moments in the studied text.',
     ],
   },
@@ -714,4 +724,4 @@ export const formativeAssessmentTools: FormativeAssessmentTool[] = [
       'Ask students to create their own personalised terminology revision cards for the terms they scored lowest on.',
     ],
   },
-];
+]

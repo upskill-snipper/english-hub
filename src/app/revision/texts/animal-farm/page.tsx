@@ -202,7 +202,10 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       '"All animals are free"',
-      '"No animal shall kill"',
+      // Corrected 2 October 2026: a wrong answer, but the Sixth Commandment cut
+      // short ("No animal shall kill"), so a student could learn the stub as
+      // its wording. Now the Commandment whole, as the held edition has it.
+      '"No animal shall kill any other animal"',
       '"All animals are equal"',
       '"Work is freedom"',
     ],
@@ -261,7 +264,10 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       '"All animals are free"',
-      '"Long live Napoleon"',
+      // Corrected 2 October 2026: a wrong answer, but a near miss of a real
+      // line, so a student could learn it as the novel's. This is the real
+      // caption on the banner in Chapter 9, cut from the held edition.
+      '"Long live Comrade Napoleon!"',
       '"All animals are equal but some animals are more equal than others"',
       '"Work harder"',
     ],

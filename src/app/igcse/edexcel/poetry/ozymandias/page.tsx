@@ -457,8 +457,11 @@ const comparisons = [
     title: 'Sonnet 116',
     poet: 'William Shakespeare',
     href: '/igcse/edexcel/poetry/sonnet-116',
+    // Quoted "Time's sickle" until 2 October 2026, words Sonnet 116 does not
+    // contain: its sickle is "his bending sickle" (line 10), and the line that
+    // makes this point is line 9's "Love's not Time's fool".
     reason:
-      'Both are 14-line sonnets meditating on what survives time. Shakespeare argues that true love does not bend with "Time\'s sickle"; Shelley shows that political power does. Compare what each poet thinks survives the passage of years.',
+      'Both are 14-line sonnets meditating on what survives time. Shakespeare argues that true love is not "Time\'s fool"; Shelley shows that political power is. Compare what each poet thinks survives the passage of years.',
     themes: ['Time', 'Endurance', 'Sonnet form'],
   },
   {

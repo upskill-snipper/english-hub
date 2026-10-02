@@ -1,5 +1,80 @@
 'use client'
 
+/**
+ * Henry V, the A-Level revision notes.
+ *
+ * A line shown as Shakespeare's must be the words of the edition the site
+ * holds, src/data/full-texts/henry-v.ts (Project Gutenberg #1521), which the
+ * reader prints in full, because students memorise these quotations for their
+ * exams. Until 2 October 2026 this page called its quotations "authentic Folio
+ * quotations", "reproduced verbatim from the First Folio as preserved in
+ * standard modern editions", and nothing compared it with the held edition.
+ * When scripts/check-quotations.mjs first did, it found three spellings the
+ * edition does not print ("ev'n", "to-day" and "a-bed" for its "even", "today"
+ * and "abed"), and a card for the wooing scene (5.2) holding a line that is in
+ * no edition, "I am a soldier; a name that I think will suit me better than
+ * any I now name", a misremembering of the Harfleur speech (3.3) that the
+ * essay plans quoted twice more. The wooing scene's own "I speak to thee plain
+ * soldier" now stands in all three places.
+ *
+ * Reading the page by hand found what the checker cannot see, because the
+ * speaker or the scene is named only in prose: Pistol's "His heart is fracted
+ * and corroborate" (2.1) given to the Hostess as her account of Falstaff's
+ * death; Henry's own "I am a Welshman", said in disguise to Pistol (4.1),
+ * given to Fluellen in the leek scene; "fiery trigon", from 2 Henry IV, given
+ * to Henry; "creep'st thou into the great-place", which the play does not
+ * have, given to the ceremony soliloquy; the Chorus asking for "horse" and
+ * "armies", where the Prologue has "horses" and no armies; and the
+ * soliloquy's "idol" called a cap of maintenance (the play has none) whose
+ * worshippers suffer for it, and on another card an idol the private man pays
+ * for, where the idol is the god "that suffer'st more / Of mortal griefs than
+ * do thy worshippers" and it is kings who forgo the heart's ease private men
+ * enjoy. Each is now the play's own line for the same point, and the
+ * Prologue's two questions are no longer called three.
+ *
+ * A second reading the same day found what that pass left. The breach-speech
+ * card had Henry summon "noble English"; his line is "On, on, you noblest
+ * English" (3.1). "O noble English" is Canterbury's, in 1.2, so the checker
+ * found the words in the play and passed them. Four paraphrases of the
+ * Epilogue gave the loss of France to Henry's son, or to "the realm", where
+ * the Epilogue gives it to those who governed for the infant king: "Whose
+ * state so many had the managing, / That they lost France". Five places said
+ * as fact that the Hostess dies. In this edition Pistol's news is "my Doll is
+ * dead" (5.1), and only editions that read Nell make it the Hostess, as the
+ * study guide and the page at /revision/texts/henry-v already say. The
+ * wooing card still said Henry presents himself as "not a king", which fitted
+ * the invented line but not the real speech, where the plain soldier goes on
+ * "take a soldier, take a king". "Ascribe we all" was called a royal plural;
+ * it is the whole army. And four claims the text does not bear: Exeter's
+ * report of York's death called prose (it is verse), the French King said to
+ * recall Poitiers (he names only Crécy), Henry's threats at Harfleur put after
+ * its surrender (they come first, 3.3), and Pistol said to plead with the
+ * King for Bardolph (he begs Fluellen, who refuses).
+ *
+ * A review after that pass found five more. The plot summary had Henry order
+ * Bardolph's execution and two cards said he executes him; Pistol reports
+ * that Exeter "hath given the doom of death" (3.6) and Henry approves it, so
+ * they now say he lets it stand, as the Bardolph card already did. The two
+ * breach-speech cards, the exam tip and the Fluellen and Mountjoy cards kept
+ * another printing's punctuation ("once more;", "Cry 'God for Harry,
+ * England, and Saint George!'") under a footer saying every quotation is
+ * taken from this edition; they now have its own. The reader's highlight for
+ * the "be he ne'er so vile" card began mid-word, at "er so vile": the
+ * annotation generator finds a card's quotations between straight single
+ * quotes, and took the apostrophe in "ne'er" for the opening one. A quotation
+ * in a CharacterCard or ThemeCard description takes a curly apostrophe (’)
+ * for that reason, as "kill’d" and "suffer’st" do here. The "We few" card
+ * called the two phrases "we few, we happy few" triadic; the third is "we
+ * band of brothers". And layout.tsx still described the page as "Folio
+ * quotations".
+ *
+ * Every quotation changed here was cut from the edition by script. One added
+ * here should be cut from it too, not typed from memory or taken from another
+ * printing, and a line credited to a speaker should be checked against the
+ * speech heading. Check again with node scripts/check-quotations.mjs --text
+ * henry-v.
+ */
+
 import { useState } from 'react'
 
 /* ─── Expandable Section Component ─────────────────────────── */
@@ -107,8 +182,8 @@ export default function HenryVPage() {
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Comprehensive A-Level revision notes for Shakespeare&apos;s <em>Henry V</em>, the final
           play of the second tetralogy. Act-by-act plot, character profiles, themes (kingship, war,
-          theatre, brotherhood), authentic Folio quotations with analysis, symbols, historical
-          context, and A-Level essay plans for the most-examined questions.
+          theatre, brotherhood), key quotations with analysis, symbols, historical context, and
+          A-Level essay plans for the most-examined questions.
         </p>
       </div>
 
@@ -225,14 +300,14 @@ export default function HenryVPage() {
                   The Chorus describes the English fleet sailing to France. At Harfleur, Henry
                   delivers his famous siege oration, urging his men &ldquo;Once more unto the
                   breach.&rdquo; Pistol, Bardolph and Nym hang back and are driven forward by the
-                  Welsh Captain Fluellen. After the surrender of Harfleur, Henry threatens appalling
-                  violence against the citizens if they resist further, but the city yields.
+                  Welsh Captain Fluellen. At the gates of Harfleur, Henry threatens appalling
+                  violence against the citizens if they resist further, and the city yields.
                   Princess Katherine takes a comic English lesson from her gentlewoman Alice. The
                   French nobility, increasingly nervous, debate the threat. Henry&apos;s army falls
                   ill with disease and short of supplies. Bardolph is condemned to hang for stealing
-                  a pax from a French church &mdash; Henry orders the execution of his old tavern
-                  companion. The French herald Mountjoy demands ransom; Henry refuses, conceding his
-                  army is weakened but resolute.
+                  a pax from a French church, and Henry lets the sentence on his old tavern
+                  companion stand. The French herald Mountjoy demands ransom; Henry refuses,
+                  conceding his army is weakened but resolute.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -312,14 +387,15 @@ export default function HenryVPage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The Chorus describes Henry&apos;s triumphant return to London and his second
                   voyage to France for treaty. Fluellen confronts Pistol and forces him to eat the
-                  Welsh leek as punishment for mocking it. Pistol, his Hostess dead, resolves to
-                  return to England as a thief and beggar. At the French court, Henry negotiates the
-                  Treaty of Troyes: he will marry Princess Katherine and inherit the French throne.
-                  He woos her in plain blunt soldier&apos;s English mixed with broken French, in a
-                  scene that veers between charm and political coercion. The peace is sealed. The
-                  Chorus ends with an Epilogue acknowledging that Henry&apos;s triumph was
-                  short-lived; his son lost France and &ldquo;made his England bleed,&rdquo;
-                  gesturing to the <em>Henry VI</em> plays the audience already knew.
+                  Welsh leek as punishment for mocking it. Pistol, with news that &ldquo;my Doll is
+                  dead&rdquo;, resolves to return to England as a thief and beggar. At the French
+                  court, Henry negotiates the Treaty of Troyes: he will marry Princess Katherine and
+                  inherit the French throne. He woos her in plain blunt soldier&apos;s English mixed
+                  with broken French, in a scene that veers between charm and political coercion.
+                  The peace is sealed. The Chorus ends with an Epilogue acknowledging that
+                  Henry&apos;s triumph was short-lived: his son became king as a baby, and those who
+                  governed for him &ldquo;lost France and made his England bleed&rdquo;, gesturing
+                  to the <em>Henry VI</em> plays the audience already knew.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -346,31 +422,31 @@ export default function HenryVPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Henry V (King Henry, Harry)"
-                description="The play's central figure: a young king transformed from his prodigal youth (the Hal of the Henry IV plays) into a sovereign warrior. Shakespeare presents him as a virtuoso performer of kingship - devout, eloquent, ruthless, charismatic. He invokes God's favour at every step, exposes the traitors with theatrical timing, threatens the citizens of Harfleur with appalling violence, executes his old companion Bardolph, walks among the common soldiers in disguise, orders the killing of the French prisoners, and woos Katherine in plain soldier's English. Critics divide on whether he is the ideal Christian prince of mirror-for-magistrates tradition or a Machiavellian whose piety is performance. Either reading is invited by the text."
+                description="The play's central figure: a young king transformed from his prodigal youth (the Hal of the Henry IV plays) into a sovereign warrior. Shakespeare presents him as a virtuoso performer of kingship - devout, eloquent, ruthless, charismatic. He invokes God's favour at every step, exposes the traitors with theatrical timing, threatens the citizens of Harfleur with appalling violence, lets his old companion Bardolph hang, walks among the common soldiers in disguise, orders the killing of the French prisoners, and woos Katherine in plain soldier's English. Critics divide on whether he is the ideal Christian prince of mirror-for-magistrates tradition or a Machiavellian whose piety is performance. Either reading is invited by the text."
               />
               <CharacterCard
                 name="The Chorus"
-                description="A unique theatrical presence: a single speaker who opens each act with a verse prologue and closes the play with an Epilogue. The Chorus repeatedly apologises for the inadequacy of the playhouse - the 'wooden O', the 'unworthy scaffold' - and asks the audience to use their imaginations to supply 'horse', 'armies' and 'fields'. This metatheatrical frame foregrounds the artifice of the history play and invites audiences to question how heroic narratives are made. The Chorus celebrates Henry but also describes events the staged action complicates (e.g. promising 'a little touch of Harry in the night' before the king's disturbed soliloquy)."
+                description="A unique theatrical presence: a single speaker who opens each act with a verse prologue and closes the play with an Epilogue. The Chorus repeatedly apologises for the inadequacy of the playhouse - the 'wooden O', the 'unworthy scaffold' - and asks the audience to supply with their imaginations what the stage cannot show: 'Into a thousand parts divide one man', 'Think, when we talk of horses, that you see them'. This metatheatrical frame foregrounds the artifice of the history play and invites audiences to question how heroic narratives are made. The Chorus celebrates Henry but also describes events the staged action complicates: it promises 'a little touch of Harry in the night' before the king's disturbed soliloquy."
               />
               <CharacterCard
                 name="Falstaff (offstage)"
-                description="The play's most famous absent character. Sir John Falstaff, Henry's beloved companion in the Henry IV plays, has been rejected by the new king ('I know thee not, old man'). In Act 2 the Hostess describes his death in heart-breaking prose: 'his heart is fracted and corroborate.' Shakespeare promised in 2 Henry IV that Falstaff would appear in the French wars but here keeps him offstage, dying of a broken heart. His absence colours Henry's kingship: the price of becoming king was the rejection of Falstaff, and his comic chaos is felt as a loss throughout."
+                description="The play's most famous absent character. Sir John Falstaff, Henry's beloved companion in the Henry IV plays, has been rejected by the new king at the end of 2 Henry IV ('I know thee not, old man'). In Act 2 Scene 1 the Hostess says 'The King has kill’d his heart' and Pistol 'His heart is fracted and corroborate'; in Scene 3 she describes his death in heart-breaking prose. Shakespeare promised in 2 Henry IV that Falstaff would appear in the French wars but here keeps him offstage, dying of a broken heart. His absence colours Henry's kingship: the price of becoming king was the rejection of Falstaff, and his comic chaos is felt as a loss throughout."
               />
               <CharacterCard
                 name="Bardolph"
-                description="One of Henry's old Eastcheap companions. A red-faced, drunken soldier - Henry once mocked his nose as a 'fiery trigon'. In Act 3 Bardolph is condemned to hang for stealing a pax (a small religious icon) from a French church during the march to Calais. Henry endorses the execution: 'we would have all such offenders so cut off.' His death dramatises the cost of kingship: the personal loyalty of the Boar's Head Tavern is sacrificed to the impersonal justice of the army. Pistol pleads for him, but the king does not relent."
+                description="One of Henry's old Eastcheap companions. A red-faced, drunken soldier - Fluellen says his nose 'is like a coal of fire, sometimes plue and sometimes red'. In Act 3 Bardolph is condemned to hang for stealing a pax (a small religious icon) from a French church during the march to Calais. Henry endorses the execution: 'we would have all such offenders so cut off.' His death dramatises the cost of kingship: the personal loyalty of the Boar's Head Tavern is sacrificed to the impersonal justice of the army. Pistol begs Fluellen to speak to the Duke for his life, and Fluellen refuses, because 'discipline ought to be used'."
               />
               <CharacterCard
                 name="Pistol"
-                description="A swaggering, cowardly braggart from Eastcheap who serves in Henry's army. He speaks in absurd theatrical bombast, parodying older heroic plays. Pistol provides comic relief but also represents the unromantic underside of war: he ransoms a French soldier for crowns, hangs back from danger, and is humiliated by Fluellen who forces him to eat the Welsh leek. By the play's end his Hostess is dead, his companions hanged, and he resolves to slink back to England as a 'cutpurse'. He is the camp-follower's perspective on a war the king celebrates."
+                description="A swaggering, cowardly braggart from Eastcheap who serves in Henry's army. He speaks in absurd theatrical bombast, parodying older heroic plays. Pistol provides comic relief but also represents the unromantic underside of war: he ransoms a French soldier for crowns, hangs back from danger, and is humiliated by Fluellen who forces him to eat the Welsh leek. By the play's end he has news that 'my Doll is dead', his companions are hanged, and he resolves to slink back to England as a 'cutpurse'. He is the camp-follower's perspective on a war the king celebrates."
               />
               <CharacterCard
                 name="Nym"
-                description="Another Eastcheap soldier, marked by his repeated catchphrase 'that's the humour of it.' He quarrels with Pistol over Mistress Quickly. Nym is hanged in France along with Bardolph for theft, his fate reported by the boy. He represents the small-time criminality that follows armies; his curt, repetitive idiom suggests a small mind exposed to events too large for it."
+                description="Another Eastcheap soldier, marked by his repeated catchphrase 'that’s the humour of it.' He quarrels with Pistol over Mistress Quickly. Nym is hanged in France along with Bardolph for theft, his fate reported by the boy. He represents the small-time criminality that follows armies; his curt, repetitive idiom suggests a small mind exposed to events too large for it."
               />
               <CharacterCard
                 name="Fluellen"
-                description="The Welsh captain in Henry's army - pedantic, brave, irrepressibly proud of his nation, obsessed with the 'disciplines of the wars' and classical military precedent. Fluellen compares Henry to Alexander the Great via a tortuously specific analogy ('there is a river in Macedon, and there is also moreover a river at Monmouth'). His Welsh accent is heavily marked in the text. He forces Pistol to eat the leek in Act 5 as punishment for mocking Welsh ceremony. Through Fluellen Shakespeare celebrates British (rather than English) unity at a moment when Wales, Scotland and Ireland were all politically charged."
+                description="The Welsh captain in Henry's army - pedantic, brave, irrepressibly proud of his nation, obsessed with the 'disciplines of the wars' and classical military precedent. Fluellen compares Henry to Alexander the Great via a tortuously specific analogy ('there is a river in Macedon; and there is also moreover a river at Monmouth'). His Welsh accent is heavily marked in the text. He forces Pistol to eat the leek in Act 5 as punishment for mocking Welsh ceremony. Through Fluellen Shakespeare celebrates British (rather than English) unity at a moment when Wales, Scotland and Ireland were all politically charged."
               />
               <CharacterCard
                 name="The Dauphin (Lewis)"
@@ -378,7 +454,7 @@ export default function HenryVPage() {
               />
               <CharacterCard
                 name="The French King (Charles VI)"
-                description="A weary, dignified figure - historically known to suffer from periods of madness, though Shakespeare softens this. He recognises the danger Henry poses, recalling the disasters of Crécy and Poitiers. By Act 5 he has effectively surrendered, signing the Treaty of Troyes that disinherits his son and gives Henry both his daughter and his throne. His resignation contrasts with the Dauphin's bluster."
+                description="A weary, dignified figure - historically known to suffer from periods of madness, though Shakespeare softens this. He recognises the danger Henry poses, recalling the disaster of Crécy. By Act 5 he has effectively surrendered, signing the Treaty of Troyes that disinherits his son and gives Henry both his daughter and his throne. His resignation contrasts with the Dauphin's bluster."
               />
               <CharacterCard
                 name="Princess Katherine of France"
@@ -386,7 +462,7 @@ export default function HenryVPage() {
               />
               <CharacterCard
                 name="Mountjoy"
-                description="The French herald who acts as a diplomatic intermediary between Henry and the French court. He delivers the demands of the French King, demands Henry's ransom before Agincourt, and finally returns to admit defeat. Mountjoy's exchanges with Henry mark the play's diplomatic stages and let Henry deliver some of his most controlled speeches of defiance: 'I pray thee bear my former answer back.'"
+                description="The French herald who acts as a diplomatic intermediary between Henry and the French court. He delivers the demands of the French King, demands Henry's ransom before Agincourt, and finally returns to admit defeat. Mountjoy's exchanges with Henry mark the play's diplomatic stages and let Henry deliver some of his most controlled speeches of defiance: 'I pray thee, bear my former answer back.'"
               />
               <CharacterCard
                 name="Williams"
@@ -394,7 +470,7 @@ export default function HenryVPage() {
               />
               <CharacterCard
                 name="Exeter, Bedford, Gloucester, York"
-                description="Henry's noble kinsmen who lead his forces. Exeter is the senior diplomat, delivering Henry's terms to the French court. The Duke of York leads the vaward at Agincourt and dies bravely; his death is reported in tearful prose by Exeter. These nobles populate the loyal English aristocratic world and help frame Henry's command."
+                description="Henry's noble kinsmen who lead his forces. Exeter is the senior diplomat, delivering Henry's terms to the French court. The Duke of York leads the vaward at Agincourt and dies bravely; his death is reported in tearful verse by Exeter. These nobles populate the loyal English aristocratic world and help frame Henry's command."
               />
               <CharacterCard
                 name="Cambridge, Scroop, Grey"
@@ -402,7 +478,7 @@ export default function HenryVPage() {
               />
               <CharacterCard
                 name="Mistress Quickly (the Hostess)"
-                description="Hostess of the Boar's Head Tavern, now married to Pistol. Her Act 2 description of Falstaff's death - 'a parted ev'n just between twelve and one' - is one of the most moving prose passages in Shakespeare. By the end of the play she has died of disease, her loss reported by Pistol as a final sign of the war's cost on the common world."
+                description="Hostess of the Boar's Head Tavern, now married to Pistol. Her Act 2 description of Falstaff's death, that he 'parted even just between twelve and one', is one of the most moving prose passages in Shakespeare. In Act 5 Scene 1 Pistol has news that 'my Doll is dead' of the 'malady of France'. The edition this site prints reads Doll; some editions read Nell, which would make the dead woman the Hostess herself. Either way, it is a final sign of the war's cost on the common world."
               />
             </div>
           </Section>
@@ -414,11 +490,11 @@ export default function HenryVPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title="Kingship and Power"
-                description="The play interrogates what it means to be a king. Henry is repeatedly tested: by traitors, by the burden of war, by his common subjects, by his own conscience. The 'Upon the King' soliloquy lays out the loneliness of office - every subject's misfortune is laid at his door, while ceremony is only an 'idol' that 'creep'st thou into the great-place.' Shakespeare leaves open whether Henry is the ideal Christian prince or a calculating performer. His public face - devout, generous, eloquent - is contrasted with his private capacity for ruthless statecraft (the traitors, Bardolph, the prisoners, the Harfleur threats)."
+                description="The play interrogates what it means to be a king. Henry is repeatedly tested: by traitors, by the burden of war, by his common subjects, by his own conscience. The 'Upon the King' soliloquy lays out the loneliness of office - every subject's misfortune is laid at his door, while ceremony, the 'idol', is no more than 'place, degree, and form, / Creating awe and fear in other men'. Shakespeare leaves open whether Henry is the ideal Christian prince or a calculating performer. His public face - devout, generous, eloquent - is contrasted with his private capacity for ruthless statecraft (the traitors, Bardolph, the prisoners, the Harfleur threats)."
               />
               <ThemeCard
                 title="War and Patriotism"
-                description="Henry V is the most celebrated patriotic play in English. The St Crispin's Day speech transforms a tactical disadvantage into the eternal glory of the 'band of brothers'. Yet the play also presents war's brutality: the Harfleur threats, the killing of the prisoners, the slaughtered boys at the luggage train, Bardolph hanged, the Hostess dead. Shakespeare counterpoints heroic rhetoric with material loss. Williams asks whether the cause is good. Pistol is reduced to a beggar. Modern critics read the play as ironic counter-propaganda; older readings as straightforward jingoism. The play licenses both."
+                description="Henry V is the most celebrated patriotic play in English. The St Crispin's Day speech transforms a tactical disadvantage into the eternal glory of the 'band of brothers'. Yet the play also presents war's brutality: the Harfleur threats, the killing of the prisoners, the slaughtered boys at the luggage train, Bardolph and Nym hanged, Pistol's Doll dead of disease. Shakespeare counterpoints heroic rhetoric with material loss. Williams asks whether the cause is good. Pistol is reduced to a beggar. Modern critics read the play as ironic counter-propaganda; older readings as straightforward jingoism. The play licenses both."
               />
               <ThemeCard
                 title="Theatre and Performance - the Chorus's Apologies"
@@ -426,7 +502,7 @@ export default function HenryVPage() {
               />
               <ThemeCard
                 title="Class and Brotherhood"
-                description="The 'band of brothers' speech promises that fighting alongside the king ennobles the lowliest soldier: 'be he ne'er so vile, / This day shall gentle his condition.' The play tests this. Henry walks among the common soldiers in disguise, listens to Williams, executes Bardolph. Pistol, Nym and Bardolph see the war from the bottom; the boy and the luggage are massacred. The promise of brotherhood is genuine in the rhetoric but uncertain in practice - the social hierarchy of England is reinforced even while it is rhetorically suspended."
+                description="The 'band of brothers' speech promises that fighting alongside the king ennobles the lowliest soldier: 'be he ne’er so vile, / This day shall gentle his condition.' The play tests this. Henry walks among the common soldiers in disguise, listens to Williams, lets Bardolph hang. Pistol, Nym and Bardolph see the war from the bottom; the boy and the luggage are massacred. The promise of brotherhood is genuine in the rhetoric but uncertain in practice - the social hierarchy of England is reinforced even while it is rhetorically suspended."
               />
               <ThemeCard
                 title="Religion and Justification"
@@ -434,7 +510,7 @@ export default function HenryVPage() {
               />
               <ThemeCard
                 title="Honour and Valour"
-                description="The St Crispin's Day speech offers a vision of honour available only to those who fight: those at home will 'think themselves accurs'd they were not here'. Honour is bought with blood. The play tests this rhetoric against the reality: the historical butchery of the killing of the prisoners, the cowardice of Pistol, the small-scale theft of Bardolph. York's death is honourable; the boys' death is not. Shakespeare lets the rhetoric stand but surrounds it with cases that complicate any simple equation of war with honour."
+                description="The St Crispin's Day speech offers a vision of honour available only to those who fight: those at home will 'think themselves accurs’d they were not here'. Honour is bought with blood. The play tests this rhetoric against the reality: the historical butchery of the killing of the prisoners, the cowardice of Pistol, the small-scale theft of Bardolph. York's death is honourable; the boys' death is not. Shakespeare lets the rhetoric stand but surrounds it with cases that complicate any simple equation of war with honour."
               />
             </div>
           </Section>
@@ -444,8 +520,9 @@ export default function HenryVPage() {
         <div id="key-quotations">
           <Section title="Key Quotations with Analysis" icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
-              Authentic Folio quotations organised for A-Level analysis. Quote verbatim and unpack
-              methods.
+              Quotations organised for A-Level analysis, each with its speaker and scene. All are in
+              the words of Project Gutenberg&apos;s modern-spelling text (eBook #1521), the edition
+              this site prints in full. Quote verbatim and unpack methods.
             </p>
             <div className="space-y-1">
               <QuoteCard
@@ -456,7 +533,7 @@ export default function HenryVPage() {
               <QuoteCard
                 quote="Can this cockpit hold / The vasty fields of France? Or may we cram / Within this wooden O the very casques / That did affright the air at Agincourt?"
                 speaker="Chorus, Prologue"
-                analysis="The 'wooden O' is the Globe Theatre, opened in 1599 - the same year Henry V was first performed. The diminishing imagery ('cockpit', 'wooden O') against the vast subject matter ('vasty fields') makes a feature of its inadequacy. The triple rhetorical questioning enlists audiences as imaginative collaborators. The reference to 'casques' (helmets) at Agincourt frames history as a sensory event the theatre can only gesture at."
+                analysis="The 'wooden O' is the Globe Theatre, opened in 1599 - the same year Henry V was first performed. The diminishing imagery ('cockpit', 'wooden O') against the vast subject matter ('vasty fields') makes a feature of its inadequacy. The two rhetorical questions enlist audiences as imaginative collaborators. The reference to 'casques' (helmets) at Agincourt frames history as a sensory event the theatre can only gesture at."
               />
               <QuoteCard
                 quote="Piece out our imperfections with your thoughts."
@@ -469,17 +546,17 @@ export default function HenryVPage() {
                 analysis="Henry's response to the Dauphin's gift of tennis balls. He turns the Dauphin's metaphor against him: tennis becomes war, the 'rackets' become weapons, the 'set' becomes the conquest of France, and the 'hazard' (a tennis term for a winning chamber) becomes the gambled crown. The conceit is elegant and threatening, showing Henry's verbal command and revealing his rhetoric as inseparable from violence. 'By God's grace' begins the play's pattern of pious justifications."
               />
               <QuoteCard
-                quote="His nose was as sharp as a pen, and a babbled of green fields."
+                quote="His nose was as sharp as a pen, and ’a babbled of green fields."
                 speaker="Hostess, Act 2 Scene 3"
                 analysis="The Hostess's account of Falstaff's death. The simile 'sharp as a pen' makes his face emaciated; 'babbled of green fields' suggests delirium and pastoral nostalgia (and editorial tradition emends the Folio's 'a Table of green fields' to this Theobald reading). The detail is heart-breaking in plain prose, contrasting the king's grand verse. Falstaff dies offstage, of a broken heart, because Henry rejected him - the cost of the new kingship written into Eastcheap's grief."
               />
               <QuoteCard
-                quote="Once more unto the breach, dear friends, once more; / Or close the wall up with our English dead."
+                quote="Once more unto the breach, dear friends, once more, / Or close the wall up with our English dead."
                 speaker="Henry V, Act 3 Scene 1"
-                analysis="The most famous siege exhortation in English. The repetition of 'once more' acts as a drumbeat. The grim alternative - closing the wall with corpses - exposes the speech's underside: the bodies of soldiers as building material. Henry invokes martial brotherhood ('dear friends') and then, later in the speech, summons 'the action of the tiger', 'noble English' and ancestral blood. Critics note the speech rallies men into a breach where many will die - its rhetoric does what war propaganda does."
+                analysis="The most famous siege exhortation in English. The repetition of 'once more' acts as a drumbeat. The grim alternative - closing the wall with corpses - exposes the speech's underside: the bodies of soldiers as building material. Henry invokes martial brotherhood ('dear friends') and then, later in the speech, summons 'the action of the tiger', 'noblest English' and ancestral blood. Critics note the speech rallies men into a breach where many will die - its rhetoric does what war propaganda does."
               />
               <QuoteCard
-                quote="The game's afoot: / Follow your spirit, and upon this charge / Cry &lsquo;God for Harry, England, and Saint George!&rsquo;"
+                quote="The game's afoot! / Follow your spirit, and upon this charge / Cry, &lsquo;God for Harry! England and Saint George!&rsquo;"
                 speaker="Henry V, Act 3 Scene 1"
                 analysis="The closing line of the breach speech. The triadic war-cry yokes king ('Harry'), nation ('England'), and patron saint ('Saint George') in a single shout. 'The game's afoot' echoes the tennis-ball conceit of Act 1 - war as the King's continued game. The cry became proverbial. As patriotic icon it is as forceful as anything in Shakespeare; its power is undeniable even if (as some critics argue) the play surrounds it with material that complicates simple celebration."
               />
@@ -496,32 +573,32 @@ export default function HenryVPage() {
               <QuoteCard
                 quote="What is thy soul of adoration?"
                 speaker="Henry V, Act 4 Scene 1"
-                analysis="In the same soliloquy Henry interrogates 'ceremony' - the panoply of office that surrounds a king. He asks what ceremony is, and answers: not ease, not health, not a peaceful sleep. It is the 'idol' that the wretched private man pays for with constant sacrifice. The speech anticipates the Romantic line that the crown is heavier than it looks; it humanises Henry at the play's pivotal moment, just before the battle."
+                analysis="In the same soliloquy Henry interrogates 'ceremony' - the panoply of office that surrounds a king. He asks what ceremony is, and answers: not ease, not health, not a peaceful sleep. It is an 'idol', a god 'that suffer’st more / Of mortal griefs than do thy worshippers', and what kings forgo for it is the 'infinite heart’s ease' that 'private men enjoy'. The speech anticipates the Romantic line that the crown is heavier than it looks; it humanises Henry at the play's pivotal moment, just before the battle."
               />
               <QuoteCard
-                quote="We few, we happy few, we band of brothers; / For he to-day that sheds his blood with me / Shall be my brother."
+                quote="We few, we happy few, we band of brothers. / For he today that sheds his blood with me / Shall be my brother."
                 speaker="Henry V, Act 4 Scene 3"
-                analysis="The St Crispin's Day speech, perhaps Shakespeare's single most famous oration. The triadic 'we few, we happy few' defines the soldier's identity by collective scarcity. 'Band of brothers' projects Henry's army as a family above class - even 'be he ne'er so vile' will be ennobled by sharing the king's blood-letting. The speech is rhetorical magic; it also exemplifies the play's exchange - heroic identity is bought by the willingness to bleed."
+                analysis="The St Crispin's Day speech, perhaps Shakespeare's single most famous oration. The repeated 'we few, we happy few' defines the soldier's identity by collective scarcity. 'Band of brothers' projects Henry's army as a family above class - even 'be he ne'er so vile' will be ennobled by sharing the king's blood-letting. The speech is rhetorical magic; it also exemplifies the play's exchange - heroic identity is bought by the willingness to bleed."
               />
               <QuoteCard
-                quote="And gentlemen in England now a-bed / Shall think themselves accurs'd they were not here."
+                quote="And gentlemen in England now abed / Shall think themselves accurs’d they were not here."
                 speaker="Henry V, Act 4 Scene 3"
                 analysis="The continuation of the St Crispin's Day speech. By inverting the natural order - those at home are 'accurs'd', those at risk are blessed - Henry persuades his men that absence from the battle is the loss, not presence. It is a brilliant rhetorical flip that converts disadvantage into status. The line has been quoted approvingly in every English-speaking war for four hundred years."
               />
               <QuoteCard
                 quote="O God, thy arm was here; / And not to us, but to thy arm alone, / Ascribe we all."
                 speaker="Henry V, Act 4 Scene 8"
-                analysis="Henry's response to the casualty list at Agincourt: thousands of French dead, only a handful of English. He attributes victory to God. The pious deflection has been read as sincere thanksgiving (the providential reading of Tudor history) and as politically savvy disclaimer (avoiding the appearance of personal pride). 'Ascribe we all' is a royal plural; 'thy arm' literalises divine intervention. The line frames the battle as God's, not Henry's, victory."
+                analysis="Henry's response to the casualty list at Agincourt: thousands of French dead, only a handful of English. He attributes victory to God. The pious deflection has been read as sincere thanksgiving (the providential reading of Tudor history) and as politically savvy disclaimer (avoiding the appearance of personal pride). 'Ascribe we all' is an inclusive plural, not a royal one: the whole army is to give God the credit. 'Thy arm' literalises divine intervention. The line frames the battle as God's, not Henry's, victory."
               />
               <QuoteCard
-                quote="I am a soldier; a name that I think will suit me better than any I now name."
+                quote="I speak to thee plain soldier. If thou canst love me for this, take me."
                 speaker="Henry V, Act 5 Scene 2"
-                analysis="In the wooing scene Henry presents himself to Katherine in the plainest of identities - a soldier, not a courtier, not a king. The self-fashioning is strategic: it disarms her, masks the political coercion, and lets him court her in blunt language. As character study it shows Henry's instinct for the persona that will work; as politics it strips off ceremony at the precise moment when he is securing the marriage that completes his conquest."
+                analysis="In the wooing scene Henry presents himself to Katherine in the plainest of identities, a soldier rather than a courtier, and later in the same speech folds the king into it: 'take a soldier, take a king'. The self-fashioning is strategic: it disarms her, masks the political coercion, and lets him court her in blunt language. As character study it shows Henry's instinct for the persona that will work; as politics it strips off ceremony at the precise moment when he is securing the marriage that completes his conquest."
               />
               <QuoteCard
                 quote="Small time, but in that small most greatly lived / This star of England."
                 speaker="Chorus, Epilogue"
-                analysis="The Epilogue's elegiac celebration of Henry. 'Small time' acknowledges his short reign (he died young). 'This star of England' is iconic. But the Epilogue immediately undermines the celebration: under Henry's son the realm 'lost France, and made his England bleed.' The audience knew the Henry VI plays. The play closes by reminding viewers that Agincourt's glory was momentary. The triumph is bracketed by mortality."
+                analysis="The Epilogue's elegiac celebration of Henry. 'Small time' acknowledges his short reign (he died young). 'This star of England' is iconic. But the Epilogue immediately undermines the celebration: Henry's son became king as a baby, and those who governed for him 'lost France and made his England bleed'. The audience knew the Henry VI plays. The play closes by reminding viewers that Agincourt's glory was momentary. The triumph is bracketed by mortality."
               />
             </div>
           </Section>
@@ -549,10 +626,12 @@ export default function HenryVPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   In Act 5 Scene 1 Fluellen forces Pistol to eat the Welsh leek that Pistol mocked.
                   The leek &mdash; a Welsh national emblem worn for St David&apos;s Day &mdash;
-                  becomes a comic symbol of national pride and the cost of mocking it. Fluellen
-                  reminds Pistol that Henry himself is &ldquo;a Welshman&rdquo; (Henry was born at
-                  Monmouth). The scene celebrates British rather than narrowly English identity at a
-                  moment when the multinational composition of Henry&apos;s army (Welsh Fluellen,
+                  becomes a comic symbol of national pride and the cost of mocking it. Henry
+                  himself, in disguise the night before Agincourt, tells Pistol &ldquo;I am a
+                  Welshman&rdquo; (he was born at Monmouth), and after the battle tells Fluellen
+                  that he wears the leek &ldquo;for a memorable honour; / For I am Welsh, you
+                  know&rdquo;. The scene celebrates British rather than narrowly English identity at
+                  a moment when the multinational composition of Henry&apos;s army (Welsh Fluellen,
                   Scots Jamy, Irish Macmorris) was politically charged for an Elizabethan audience
                   watching Essex&apos;s campaign in Ireland.
                 </p>
@@ -582,16 +661,17 @@ export default function HenryVPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">5. The Cap of Maintenance / Crown</h4>
+                <h4 className="font-bold text-foreground">5. The Crown and Ceremony</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Henry&apos;s &ldquo;Upon the King&rdquo; soliloquy interrogates the symbolism of
                   &ldquo;ceremony&rdquo; &mdash; the crown, the throne, the &ldquo;intertissued robe
                   of gold and pearl&rdquo; &mdash; arguing that these emblems do not buy ease,
                   health, or peaceful sleep. The crown becomes in this speech a symbol of crushing
                   responsibility rather than sovereignty. Henry envies the &ldquo;wretched
-                  slave&rdquo; who sleeps soundly because no kingdom rests on him. The cap of
-                  maintenance, a ceremonial cap of state, is invoked as an &ldquo;idol&rdquo; whose
-                  worshippers are forced to suffer for it.
+                  slave&rdquo; who sleeps soundly because no kingdom rests on him. Ceremony itself
+                  is addressed as an &ldquo;idol&rdquo;, a god &ldquo;that suffer’st more / Of
+                  mortal griefs than do thy worshippers&rdquo;: the king who embodies it suffers
+                  more than the subjects who bow to it.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -712,8 +792,9 @@ export default function HenryVPage() {
                   the Chorus, the Salic Law speech, and several other passages. Most modern editions
                   follow the Folio as the more complete version, though scholars debate the
                   Quarto&apos;s origins (memorial reconstruction, performance script, abridged tour
-                  text). All quotations on this page are taken from the Folio text as preserved in
-                  standard modern editions.
+                  text). All quotations on this page are taken from Project Gutenberg&apos;s
+                  modern-spelling text (eBook #1521), the edition this site prints in full; like
+                  most modern editions, it follows the Folio and includes the Chorus.
                 </p>
               </div>
             </div>
@@ -851,8 +932,8 @@ export default function HenryVPage() {
                       The Chorus promises &ldquo;a little touch of Harry in the night&rdquo; before
                       Act 4, but the staged Henry is troubled, melancholy, in disguise. The Chorus
                       celebrates triumphal return but the Epilogue immediately undercuts it: under
-                      Henry&apos;s son the realm &ldquo;lost France, and made his England
-                      bleed.&rdquo;
+                      Henry&apos;s infant son, those who governed &ldquo;lost France and made his
+                      England bleed.&rdquo;
                     </p>
                   </div>
                   <div>
@@ -914,10 +995,9 @@ export default function HenryVPage() {
                       Paragraph 3 &mdash; Strategic plainness in the wooing
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      In the wooing scene Henry deliberately strips off ceremony: &ldquo;I am a
-                      soldier; a name that I think will suit me better than any I now name.&rdquo;
-                      The plainness is itself a performance &mdash; a king choosing the most
-                      disarming idiom for a political marriage.
+                      In the wooing scene Henry deliberately strips off ceremony: &ldquo;I speak to
+                      thee plain soldier.&rdquo; The plainness is itself a performance &mdash; a
+                      king choosing the most disarming idiom for a political marriage.
                     </p>
                   </div>
                   <div>
@@ -959,8 +1039,8 @@ export default function HenryVPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       Pistol, Nym, Bardolph hang back at the breach until Fluellen drives them
                       forward. Pistol ransoms a French soldier for crowns. Bardolph is hanged for
-                      stealing a pax. Nym is hanged. The Hostess dies of disease at home. This is
-                      war as theft, swindle, and casualty.
+                      stealing a pax. Nym is hanged. Pistol hears that his Doll has died of disease
+                      at home. This is war as theft, swindle, and casualty.
                     </p>
                   </div>
                   <div>
@@ -1033,10 +1113,10 @@ export default function HenryVPage() {
                       Paragraph 2 &mdash; Henry&apos;s strategic plainness
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      &ldquo;I am a soldier; a name that I think will suit me better than any I now
-                      name.&rdquo; Henry adopts the persona of the blunt soldier &mdash; the persona
-                      furthest from courtly sophistication. The choice of register is calculated: it
-                      disarms her and masks the political reality.
+                      &ldquo;I speak to thee plain soldier.&rdquo; Henry adopts the persona of the
+                      blunt soldier &mdash; the persona furthest from courtly sophistication. The
+                      choice of register is calculated: it disarms her and masks the political
+                      reality.
                     </p>
                   </div>
                   <div>
@@ -1055,10 +1135,10 @@ export default function HenryVPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The play closes with a wedding and a treaty. Generic convention reads this as
-                      comedic resolution. But the Epilogue&apos;s reminder that under their son the
-                      realm &ldquo;made his England bleed&rdquo; reframes the wedding as the seed of
-                      future disaster. Even the play&apos;s closing romance is qualified by its
-                      sense of consequence.
+                      comedic resolution. But the Epilogue&apos;s reminder that under their son,
+                      king as a baby, those who governed for him &ldquo;made his England
+                      bleed&rdquo; reframes the wedding as the seed of future disaster. Even the
+                      play&apos;s closing romance is qualified by its sense of consequence.
                     </p>
                   </div>
                 </div>
@@ -1149,10 +1229,9 @@ export default function HenryVPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Quote verbatim.</strong> Examiners reward accurate Folio quotation.
-              &ldquo;Once more unto the breach,&rdquo; &ldquo;we few, we happy few,&rdquo;
-              &ldquo;Cry &lsquo;God for Harry, England, and Saint George!&rsquo;&rdquo; &mdash;
-              learn the exact words.
+              <strong>Quote verbatim.</strong> Examiners reward accurate quotation. &ldquo;Once more
+              unto the breach,&rdquo; &ldquo;we few, we happy few,&rdquo; &ldquo;Cry, &lsquo;God for
+              Harry! England and Saint George!&rsquo;&rdquo; &mdash; learn the exact words.
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -1170,9 +1249,9 @@ export default function HenryVPage() {
       <footer className="mt-8 text-xs text-muted-foreground">
         <p>
           <em>Henry V</em> by William Shakespeare was first performed c. 1599 and first printed in
-          quarto in 1600. The First Folio text appeared in 1623. All quotations on this page are
-          reproduced verbatim from the First Folio as preserved in standard modern editions, and the
-          text is in the <strong>public domain</strong>.
+          quarto in 1600. The First Folio text appeared in 1623. The play is in the{' '}
+          <strong>public domain</strong>, and all quotations on this page are taken from Project
+          Gutenberg&apos;s modern-spelling text (eBook #1521), the edition this site prints in full.
         </p>
       </footer>
     </>

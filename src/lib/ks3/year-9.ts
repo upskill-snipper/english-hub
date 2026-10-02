@@ -910,9 +910,11 @@ const Y9_T2: Year['terms'][number] = {
             { en: 'equivocation', ar: 'المراوغة اللفظية' },
             { en: 'hubris', ar: 'الكبرياء المهلكة' },
           ],
+          // Shakespeare's words stay in English in the Arabic too; until
+          // 2 October 2026 the Arabic translated "fair is foul" here.
           contextNote: {
             en: 'The witches open with paradox ("fair is foul") and seed Macbeth\'s ambition through equivocal prophecy.',
-            ar: 'تفتتح الساحرات المسرحية بالمفارقة ("الجميل قبيح")، ويزرعن طموحَ Macbeth عبر نبوءة مراوغة.',
+            ar: 'تفتتح الساحرات المسرحية بالمفارقة ("fair is foul")، ويزرعن طموحَ Macbeth عبر نبوءة مراوغة.',
           },
           lessons: [
             lesson({
@@ -1328,7 +1330,8 @@ const Y9_T2: Year['terms'][number] = {
               focus: 'explicit-reading',
               skills: ['9R.1', '9R.4'],
               do: 'Close read Malcolm\'s list of "king-becoming graces".',
-              doAr: 'اقرأ قائمة Malcolm لـ "الفضائل اللائقة بالملك" قراءةً دقيقة.',
+              // The quotation stays in English; translated until 2 October 2026.
+              doAr: 'اقرأ قائمة Malcolm لـ "king-becoming graces" قراءةً دقيقة.',
               task: "Map virtues against Macbeth's tyranny.",
               taskAr: 'قابِل الفضائل بالاستبداد عند Macbeth.',
               success: 'Reads structurally.',

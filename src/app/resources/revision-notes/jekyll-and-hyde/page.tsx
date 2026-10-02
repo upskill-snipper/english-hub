@@ -83,6 +83,15 @@ function ThemeCard({ title, description }: { title: string; description: string 
 
 /* ─── Main Page ────────────────────────────────────────────── */
 
+// Quotations corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+// src/data/full-texts/jekyll-and-hyde.ts). "This was the shocking thing; that the slime
+// of the pit..." is Jekyll's statement, but the card gave it to Lanyon and its analysis
+// had Lanyon witnessing it. The cane never "shivered": it "had broken in the middle".
+// Carew is "an aged beautiful gentleman"; Jekyll's will speaks of his "disappearance or
+// unexplained absence"; Utterson says "I incline to Cain's heresy"; his "the man seems
+// hardly human! Something troglodytic" ran backwards; and "If I am the chief of
+// sinners" had become "I was". The essay plan on religious language also said all three
+// of its phrases describe Hyde, but "chief of sinners" is Jekyll's word for himself.
 export default function JekyllAndHydePage() {
   const locale = useLocale()
   const tr = (en: string): string => {
@@ -208,14 +217,15 @@ export default function JekyllAndHydePage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; Jekyll&apos;s will &mdash; &ldquo;in case of his disappearance&rdquo;
+                      &bull; Jekyll&apos;s will &mdash; in case of his &ldquo;disappearance or
+                      unexplained absence&rdquo;
                     </li>
                     <li>&bull; Lanyon&apos;s rift with Jekyll over science</li>
                     <li>
                       &bull; Utterson&apos;s first encounter with Hyde &mdash; instinctive revulsion
                     </li>
                     <li>
-                      &bull; &ldquo;If he be Mr Hyde, I shall be Mr Seek&rdquo; &mdash; detective
+                      &bull; &ldquo;If he be Mr Hyde... I shall be Mr Seek&rdquo; &mdash; detective
                       role established
                     </li>
                   </ul>
@@ -272,7 +282,10 @@ export default function JekyllAndHydePage() {
                     <li>
                       &bull; The brutal, unprovoked murder of Carew &mdash; escalation of violence
                     </li>
-                    <li>&bull; The cane &ldquo;shivered&rdquo; with the force of blows</li>
+                    <li>
+                      &bull; The cane &ldquo;had broken in the middle under the stress of this
+                      insensate cruelty&rdquo;
+                    </li>
                     <li>&bull; Hyde&apos;s Soho lodgings &mdash; luxury and squalor combined</li>
                     <li>&bull; The maid&apos;s moonlit witness &mdash; Gothic atmosphere</li>
                   </ul>
@@ -485,7 +498,7 @@ export default function JekyllAndHydePage() {
               />
               <CharacterCard
                 name="Sir Danvers Carew"
-                description="An elderly, distinguished Member of Parliament whose brutal murder by Hyde marks the turning point of the novella. Carew is described as having 'an aged and beautiful' gentleness, making Hyde's unprovoked attack especially horrifying. His murder symbolises Hyde's assault on the very pillars of respectable Victorian society - law, government, and civility."
+                description="An elderly, distinguished Member of Parliament whose brutal murder by Hyde marks the turning point of the novella. Carew is described as 'an aged beautiful gentleman with white hair' with 'an innocent and old-world kindness of disposition', making Hyde's unprovoked attack especially horrifying. His murder symbolises Hyde's assault on the very pillars of respectable Victorian society - law, government, and civility."
               />
               <CharacterCard
                 name="Mr Richard Enfield"
@@ -539,12 +552,12 @@ export default function JekyllAndHydePage() {
             </p>
             <div className="space-y-1">
               <QuoteCard
-                quote="If he be Mr Hyde, I shall be Mr Seek."
+                quote="If he be Mr Hyde... I shall be Mr Seek."
                 speaker="Utterson"
                 analysis="A pun on 'hide and seek' that establishes Utterson's role as detective-figure. It also hints at the theme of concealment - Hyde hides within Jekyll, and behind the respectable facade of Victorian society. The playfulness of the pun contrasts with the darkness of what Utterson will uncover."
               />
               <QuoteCard
-                quote="He is not easy to describe. There is something wrong with his appearance; something displeasing, something downright detestable."
+                quote="He is not easy to describe. There is something wrong with his appearance; something displeasing, something down-right detestable."
                 speaker="Enfield"
                 analysis="The inability to describe Hyde reflects the idea that evil cannot be rationalised or categorised. The tricolon ('something wrong... displeasing... detestable') shows escalating revulsion. Hyde provokes an instinctive, almost supernatural reaction that transcends rational explanation, suggesting evil operates on a primal level."
               />
@@ -599,12 +612,12 @@ export default function JekyllAndHydePage() {
                 analysis="Jekyll's attempt to absolve himself of responsibility by blaming Hyde. The self-justification is deeply ironic - Jekyll created Hyde and chose to become him. Stevenson critiques the Victorian tendency to displace guilt onto others. 'After all' reveals Jekyll's need to convince himself."
               />
               <QuoteCard
-                quote="I was the chief of sinners, I was the chief of sufferers also."
+                quote="If I am the chief of sinners, I am the chief of sufferers also."
                 speaker="Jekyll"
                 analysis="Biblical language (echoing St Paul: 'Christ Jesus came into the world to save sinners, of whom I am chief'). The parallel structure equates sin with suffering - Jekyll is both perpetrator and victim. This duality within a single sentence encapsulates the novella's central theme."
               />
               <QuoteCard
-                quote="Something troglodytic... the man seems hardly human."
+                quote="The man seems hardly human! Something troglodytic, shall we say?"
                 speaker="Utterson"
                 analysis="'Troglodytic' means cave-dwelling, linking Hyde to primitive, pre-civilised humanity. This connects directly to Victorian anxieties about Darwin's theory of evolution and the fear that humans might 'devolve.' Hyde represents the primitive self that civilisation supposedly suppresses but can never fully eliminate."
               />
@@ -631,12 +644,12 @@ export default function JekyllAndHydePage() {
               <QuoteCard
                 quote="The large handsome face of Dr Jekyll grew pale to the very lips, and there came a blackness about his eyes."
                 speaker="Narrator"
-                analysis="Physical description foreshadows the transformation. 'Pale to the lips' and 'blackness about his eyes' suggest Hyde bleeding through Jekyll's appearance. The visual contrast of white and black mirrors the novella's central duality. The face - the public self - is literally being darkened."
+                analysis="Physical description foreshadows the transformation. 'Pale to the very lips' and 'blackness about his eyes' suggest Hyde bleeding through Jekyll's appearance. The visual contrast of white and black mirrors the novella's central duality. The face - the public self - is literally being darkened."
               />
               <QuoteCard
                 quote="This was the shocking thing; that the slime of the pit seemed to utter cries and voices."
-                speaker="Lanyon"
-                analysis="Religious imagery of Hell ('the pit') combined with visceral disgust ('slime'). Lanyon witnesses the transformation and interprets it through religious rather than scientific language. That evil can 'utter cries' personifies it as a living force. The shock of this revelation kills Lanyon, suggesting some truths are too terrible to survive."
+                speaker="Jekyll"
+                analysis="Religious imagery of Hell ('the pit') combined with visceral disgust ('slime'). Near the end of his statement Jekyll thinks of Hyde as 'something not only hellish but inorganic': dead matter that has somehow come to life. That 'the slime of the pit' should 'utter cries and voices' personifies evil as a living force. The scientist who made Hyde can describe him only in the language of damnation."
               />
               <QuoteCard
                 quote="If I am the chief of sinners, I am the chief of sufferers also. I could not think that this earth contained a place for sufferings and terrors so unmanning."
@@ -741,10 +754,10 @@ export default function JekyllAndHydePage() {
                 <h4 className="font-bold text-foreground">{tr(`Violence and Terror`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Gothic fiction often features extreme violence. Hyde&apos;s trampling of the girl
-                  and murder of Carew are described with shocking intensity. The broken cane &mdash;
-                  &ldquo;shivered&rdquo; with the force of the blows &mdash; emphasises the
-                  savagery. Stevenson uses violence to literalise the danger of repressed evil
-                  erupting.
+                  and murder of Carew are described with shocking intensity. The cane, which
+                  &ldquo;had broken in the middle under the stress of this insensate cruelty,&rdquo;
+                  emphasises the savagery. Stevenson uses violence to literalise the danger of
+                  repressed evil erupting.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -1007,8 +1020,8 @@ export default function JekyllAndHydePage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;There is something wrong with his appearance; something displeasing,
-                      something downright detestable.&rdquo; Analyse the tricolon and the failure of
-                      language to capture Hyde. His horror is beyond rational description, making
+                      something down-right detestable.&rdquo; Analyse the tricolon and the failure
+                      of language to capture Hyde. His horror is beyond rational description, making
                       him a Gothic figure of the sublime.
                     </p>
                   </div>
@@ -1092,10 +1105,10 @@ export default function JekyllAndHydePage() {
                       {tr(`Paragraph 3 - Secrecy as social norm`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Utterson &ldquo;inclined to Cain&apos;s heresy&rdquo; of letting others go
-                      their own way. All characters collude in secrecy. Stevenson shows repression
-                      is not individual but systemic &mdash; an entire society built on not asking
-                      questions.
+                      Utterson admits, &ldquo;I incline to Cain&apos;s heresy&rdquo;, letting others
+                      go their own way. All characters collude in secrecy. Stevenson shows
+                      repression is not individual but systemic &mdash; an entire society built on
+                      not asking questions.
                     </p>
                   </div>
                   <div>
@@ -1224,10 +1237,10 @@ export default function JekyllAndHydePage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Satan&apos;s signature,&rdquo; &ldquo;child of Hell,&rdquo;
-                      &ldquo;chief of sinners.&rdquo; Characters consistently describe Hyde in
-                      biblical terms. This religious framework suggests science has released
-                      something diabolical &mdash; that Jekyll has committed a sin, not merely a
-                      scientific error.
+                      &ldquo;chief of sinners.&rdquo; Characters describe Hyde in biblical terms,
+                      and Jekyll uses them of himself. This religious framework suggests science has
+                      released something diabolical &mdash; that Jekyll has committed a sin, not
+                      merely a scientific error.
                     </p>
                   </div>
                   <div>

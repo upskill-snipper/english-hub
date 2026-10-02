@@ -29,6 +29,14 @@ export const metadata: Metadata = {
 }
 
 /* ─── Quotation data ─────────────────────────────────────────── */
+// Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+// src/data/full-texts/jekyll-and-hyde.ts). Three lines had the wrong speaker: "Satan's
+// signature upon a face" is Utterson's, in Chapter 2, not Enfield's in Chapter 1; "the
+// body of a self-destroyer" is the narrator's, seen through Utterson, not Poole's; and
+// "This was the shocking thing" is Jekyll's statement, not Utterson's. "If I am the
+// chief of sinners" is Chapter 6, and the edition prints "the man trampled calmly",
+// "judgment" and "putting questions", and has a "masked thing like a monkey", not
+// "monkey-like agility".
 
 const keyQuotations = [
   {
@@ -38,22 +46,22 @@ const keyQuotations = [
       "Jekyll's central revelation about human nature. Stevenson uses the adverb 'truly' twice to emphasise the fundamental duality of human nature. This challenges the Victorian belief in a single, unified moral self. Jekyll argues that everyone contains both good and evil - his experiment merely separates what already exists. This reflects emerging psychological theories about the unconscious mind.",
   },
   {
-    quote: 'If he be Mr Hyde, I shall be Mr Seek',
+    quote: 'If he be Mr Hyde... I shall be Mr Seek',
     speaker: 'Mr Utterson (Chapter 2)',
     analysis:
       "Utterson's pun on the children's game 'hide and seek' introduces the novella's central dynamic of concealment and pursuit. The wordplay is uncharacteristically playful for the serious lawyer, revealing his determination. The pun also foreshadows the novella's structure - it is fundamentally a story about uncovering hidden truths. 'Hyde' as a name literally means 'hidden'.",
   },
   {
     quote: "Satan's signature upon a face",
-    speaker: 'Mr Enfield (Chapter 1)',
+    speaker: 'Mr Utterson (Chapter 2)',
     analysis:
-      "Enfield's description of Hyde associates him with the Devil, placing the novella within a Christian moral framework. The alliteration of 'Satan's signature' is hissing and sinister. The idea that evil can be read on the face reflects Victorian physiognomy - the pseudo-scientific belief that character could be determined from physical appearance. Hyde's repulsiveness is the outward sign of inner evil.",
+      "Utterson's reaction to Hyde associates him with the Devil, placing the novella within a Christian moral framework. The alliteration of 'Satan's signature' is hissing and sinister. The idea that evil can be read on the face reflects Victorian physiognomy - the pseudo-scientific belief that character could be determined from physical appearance. Hyde's repulsiveness is the outward sign of inner evil.",
   },
   {
-    quote: "He was trampling calmly over the child's body",
+    quote: "The man trampled calmly over the child's body",
     speaker: 'Mr Enfield (Chapter 1)',
     analysis:
-      "The oxymoron 'trampling calmly' is deeply disturbing. Trampling suggests violence and chaos, while 'calmly' implies indifference - Hyde feels no remorse or emotional response. The contrast encapsulates Hyde's nature: he is capable of violence without conscience. The child victim emphasises Hyde's moral depravity - he attacks the most innocent and vulnerable members of society.",
+      "The oxymoron 'trampled calmly' is deeply disturbing. 'Trampled' suggests violence and chaos, while 'calmly' implies indifference - Hyde feels no remorse or emotional response. The contrast encapsulates Hyde's nature: he is capable of violence without conscience. The child victim emphasises Hyde's moral depravity - he attacks the most innocent and vulnerable members of society.",
   },
   {
     quote: 'I learned to recognise the thorough and primitive duality of man',
@@ -76,22 +84,22 @@ const keyQuotations = [
   },
   {
     quote:
-      'I feel very strongly about putting questions; it partakes too much of the style of the day of judgement',
+      'I feel very strongly about putting questions; it partakes too much of the style of the day of judgment',
     speaker: 'Mr Enfield (Chapter 1)',
     analysis:
-      "Enfield's reluctance to ask questions is characteristic of Victorian gentlemen who valued privacy and discretion above truth. The religious allusion to the 'day of judgement' suggests that asking questions is a form of moral scrutiny that gentlemen should leave to God. Stevenson critiques this code of silence - it is precisely this refusal to investigate that allows Hyde (and the hidden sins of respectable men) to flourish.",
+      "Enfield's reluctance to ask questions is characteristic of Victorian gentlemen who valued privacy and discretion above truth. The religious allusion to the 'day of judgment' suggests that asking questions is a form of moral scrutiny that gentlemen should leave to God. Stevenson critiques this code of silence - it is precisely this refusal to investigate that allows Hyde (and the hidden sins of respectable men) to flourish.",
   },
   {
     quote: 'If I am the chief of sinners, I am the chief of sufferers also',
-    speaker: 'Dr Jekyll (Chapter 10)',
+    speaker: 'Dr Jekyll (Chapter 6)',
     analysis:
       "Jekyll's self-description as 'chief of sinners' echoes St Paul's words in 1 Timothy 1:15, placing his story within a Christian framework of sin and suffering. The parallel structure ('chief of sinners... chief of sufferers') suggests that sin and suffering are inseparable - wrongdoing brings its own punishment. However, Jekyll's focus on his own suffering reveals a persistent selfishness; he is more concerned with his pain than with his victims'.",
   },
   {
     quote: 'the body of a self-destroyer',
-    speaker: 'Mr Poole (Chapter 8)',
+    speaker: 'Narrator (Chapter 8)',
     analysis:
-      "Poole's description of Jekyll/Hyde's death avoids the word 'suicide', which was a criminal offence and social taboo in Victorian England. The compound noun 'self-destroyer' captures the deeper truth: Jekyll has literally destroyed himself by splitting his identity. The ambiguity of who has died - Jekyll or Hyde - reinforces the idea that they were always one person. Self-destruction is the inevitable consequence of attempting to separate good from evil.",
+      "The narrator's description of Jekyll/Hyde's death, seen through Utterson's eyes, avoids the word 'suicide', which was a criminal offence and social taboo in Victorian England. The compound noun 'self-destroyer' captures the deeper truth: Jekyll has literally destroyed himself by splitting his identity. The ambiguity of who has died - Jekyll or Hyde - reinforces the idea that they were always one person. Self-destruction is the inevitable consequence of attempting to separate good from evil.",
   },
   {
     quote:
@@ -123,9 +131,9 @@ const keyQuotations = [
   {
     quote:
       'This was the shocking thing; that the slime of the pit seemed to utter cries and voices',
-    speaker: 'Mr Utterson (Chapter 10)',
+    speaker: 'Dr Jekyll (Chapter 10)',
     analysis:
-      "Utterson's reaction to Jekyll's confession uses Biblical imagery: 'the slime of the pit' evokes Hell. The word 'slime' connotes something primitive and repulsive. The shock is that this 'slime' can 'utter cries and voices' - evil is not mute and distant but articulate and human. Stevenson disturbs the reader by showing that evil is not an external threat but exists within ordinary, respectable people.",
+      "Near the end of his statement, Jekyll describes Hyde in Biblical imagery: 'the slime of the pit' evokes Hell. The word 'slime' connotes something primitive and repulsive. The shock is that this 'slime' can 'utter cries and voices' - evil is not mute and distant but articulate and human. Stevenson disturbs the reader by showing that evil is not an external threat but exists within ordinary, respectable people.",
   },
   {
     quote: 'It was Hyde, after all, and Hyde alone, that was guilty',
@@ -457,7 +465,7 @@ export default async function OCRJekyllAndHydePage() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The novella is saturated with secrecy. Characters avoid asking questions, keep
                 letters sealed until death, and prioritise reputation over truth. Enfield&rsquo;s
-                reluctance to &ldquo;put questions&rdquo; and Utterson&rsquo;s cautious discretion
+                dislike of &ldquo;putting questions&rdquo; and Utterson&rsquo;s cautious discretion
                 reflect a Victorian gentleman&rsquo;s code that valued privacy above all. Stevenson
                 shows that this culture of secrecy enables evil: Hyde thrives in the spaces that
                 respectable society refuses to examine.
@@ -479,10 +487,10 @@ export default async function OCRJekyllAndHydePage() {
             <div className="rounded-lg border border-border bg-muted p-5">
               <h3 className="text-lg font-semibold text-foreground">Violence and Primitiveness</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Hyde is associated with animalistic imagery: he is &ldquo;ape-like,&rdquo; moves
-                with &ldquo;monkey-like agility,&rdquo; and his violence is savage and instinctive.
-                This connects to Darwin&rsquo;s theory of evolution (published 1859), which
-                disturbed Victorians by suggesting humans were descended from animals. Hyde
+                Hyde is associated with animalistic imagery: he is &ldquo;ape-like,&rdquo; Poole
+                describes a &ldquo;masked thing like a monkey,&rdquo; and his violence is savage and
+                instinctive. This connects to Darwin&rsquo;s theory of evolution (published 1859),
+                which disturbed Victorians by suggesting humans were descended from animals. Hyde
                 represents the primitive, animalistic self that civilisation has suppressed but not
                 eliminated. Stevenson suggests that the beast within is always threatening to break
                 free.

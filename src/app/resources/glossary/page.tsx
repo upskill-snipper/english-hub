@@ -138,8 +138,10 @@ const GLOSSARY_TERMS: GlossaryTerm[] = [
     term: 'Paradox',
     definition:
       'A statement that appears to contradict itself but may reveal a deeper truth upon reflection.',
+    // Hamlet's line has "only", which this left out until 2 October 2026; it is
+    // cut now from the held edition (src/data/full-texts/hamlet.ts).
     example:
-      '"I must be cruel to be kind" -- cruelty and kindness seem opposed but together reveal a truth.',
+      '"I must be cruel, only to be kind" (Hamlet, Act 3, Scene 4) -- cruelty and kindness seem opposed but together reveal a truth.',
     category: 'Literary Devices',
   },
 
@@ -191,7 +193,13 @@ const GLOSSARY_TERMS: GlossaryTerm[] = [
     term: 'Caesura',
     definition:
       'A pause near the middle of a line of poetry, usually created by punctuation. It can disrupt rhythm, create emphasis, or signal a shift in thought.',
-    example: '"To be, or not to be -- that is the question" -- the comma and dash create pauses.',
+    // Until 2 October 2026 this printed a dash after "not to be" and said "the
+    // comma and dash create pauses". The held edition
+    // (src/data/full-texts/hamlet.ts) has a comma there, so the note named
+    // punctuation Hamlet's line does not have. The line is now in its words
+    // and its commas.
+    example:
+      '"To be, or not to be, that is the question" (Hamlet, Act 3, Scene 1) -- the commas create pauses.',
     category: 'Poetic Terms',
   },
   {

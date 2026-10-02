@@ -21,7 +21,7 @@ import type { ChapterGuide } from '@/lib/study-guides/chapter-guide'
  *   education of the young" matters most and that he will "make himself
  *   responsible for their education". Four sibling pages (chapters,
  *   characters, themes and essay-plans) put "educate" in quotation marks as
- *   if it were his word.
+ *   if it were his word; all four were corrected on 2 October 2026.
  * - The loft is reached "by a ladder from the harness-room". The novella does
  *   not say it is above the harness-room.
  * - Squealer's line here is "surely there is no one among you who wants to see

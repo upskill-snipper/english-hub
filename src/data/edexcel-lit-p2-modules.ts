@@ -111,6 +111,11 @@ export const litP2Modules: CourseModule[] = [
   // MODULE 2 - 19th-Century Novel: Context & Conventions (A Christmas Carol Focus)
   // ──────────────────────────────────────────────
   {
+    // Quotations corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are there
+    // no prisons?" and "And the Union workhouses?" ("Are there no workhouses?" is the Spirit's,
+    // in Stave Three), and the edition prints "grind-stone". The same text is in
+    // edexcel-lit-courses.ts.
     id: 'edx-lt2-m2',
     title: '19th-Century Novel: Context & Conventions (A Christmas Carol Focus)',
     duration: '55 min',
@@ -125,7 +130,7 @@ export const litP2Modules: CourseModule[] = [
 <p>When Chapman &amp; Hall published <em>A Christmas Carol</em> on 19 December 1843, Britain was in the grip of rapid industrial change. The following contextual factors are essential for a strong AO3 response:</p>
 
 <ul>
-  <li><strong>The Poor Law Amendment Act (1834):</strong> This law created workhouses where the destitute were sent to labour in appalling conditions. The philosophy was deliberate harshness - poverty was seen as a moral failing, and relief was made as unpleasant as possible to discourage dependency. Scrooge directly echoes this attitude when he asks, <em>"Are there no prisons? Are there no workhouses?"</em></li>
+  <li><strong>The Poor Law Amendment Act (1834):</strong> This law created workhouses where the destitute were sent to labour in appalling conditions. The philosophy was deliberate harshness - poverty was seen as a moral failing, and relief was made as unpleasant as possible to discourage dependency. Scrooge directly echoes this attitude when he asks, <em>"Are there no prisons? ... And the Union workhouses?"</em></li>
   <li><strong>Malthusian Economics:</strong> Thomas Malthus argued that population growth would inevitably outstrip food supply, and that helping the poor only encouraged overpopulation. Scrooge channels Malthus when he refers to the poor dying to <em>"decrease the surplus population"</em> - a phrase Dickens uses to expose the cruelty of this ideology.</li>
   <li><strong>Industrial Capitalism:</strong> Factory owners and businessmen accumulated enormous wealth while workers - including children - endured poverty wages, long hours, and dangerous conditions. Dickens saw this inequality first-hand during a visit to Manchester's cotton mills in October 1843, just weeks before he began writing the novella.</li>
   <li><strong>Workhouse Conditions:</strong> Families were separated, food was minimal, and inmates wore uniforms. The Andover workhouse scandal of 1845 (where starving inmates gnawed on bones) was still two years away, but conditions were already notorious. Dickens had experienced poverty himself as a child, working in Warren's Blacking Factory at the age of twelve.</li>
@@ -260,8 +265,8 @@ export const litP2Modules: CourseModule[] = [
 
 <p><strong>Key Quotes:</strong></p>
 <ul>
-  <li><em>"Oh! But he was a tight-fisted hand at the grindstone, Scrooge!"</em> - Exclamatory tone establishes him as an extreme figure of avarice.</li>
-  <li><em>"Are there no prisons? Are there no workhouses?"</em> - Echoes Malthusian economics; reveals callousness toward the poor.</li>
+  <li><em>"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!"</em> - Exclamatory tone establishes him as an extreme figure of avarice.</li>
+  <li><em>"Are there no prisons? ... And the Union workhouses?"</em> - Echoes Malthusian economics; reveals callousness toward the poor.</li>
   <li><em>"I will honour Christmas in my heart, and try to keep it all the year."</em> - Stave 5 pledge marks complete moral reversal.</li>
   <li><em>"Solitary as an oyster"</em> - Hard-shelled and closed off, yet containing hidden value (the pearl within).</li>
   <li><em>"He became as good a friend, as good a master, and as good a man"</em> - Superlative repetition reinforces total transformation.</li>

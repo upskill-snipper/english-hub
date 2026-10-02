@@ -1036,7 +1036,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'quotes-004',
-    text: "Who says 'Look like the innocent flower, but be the serpent under it'?",
+    text: "Who says 'Look like the innocent flower, but be the serpent under't'?",
     options: ['Macbeth', 'The Witches', 'Lady Macbeth', 'Duncan'],
     correctIndex: 2,
     topic: 'quotes',
@@ -1066,7 +1066,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'quotes-007',
-    text: "Which character says 'I am in blood stepped in so far'?",
+    text: "Which character says 'I am in blood stepp'd in so far'?",
     options: ['Lady Macbeth', 'Macbeth', 'Banquo', 'Malcolm'],
     correctIndex: 1,
     topic: 'quotes',
@@ -1091,7 +1091,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'quotes-009',
-    text: "Which text features 'My hands are of your colour, but I shame to wear a heart so white'?",
+    text: "Which text features 'My hands are of your color, but I shame to wear a heart so white'?",
     options: ['Romeo and Juliet', 'Macbeth', 'Hamlet', 'An Inspector Calls'],
     correctIndex: 1,
     topic: 'quotes',
@@ -1673,8 +1673,11 @@ export const quizQuestions: QuizQuestion[] = [
     correctIndex: 0,
     topic: 'characters',
     difficulty: 'medium',
+    // Until 2 October 2026 this quoted Mercutio as saying "The Prince of Cats".
+    // His words in the held edition (src/data/full-texts/romeo-and-juliet.ts,
+    // Act 2, Scene 4) are "More than Prince of cats"; there is no "The".
     explanation:
-      "Tybalt is called 'The Prince of Cats' by Mercutio, referencing a character in the fable Reynard the Fox and suggesting his skill in fighting.",
+      "Mercutio calls Tybalt 'More than Prince of cats' (Act 2, Scene 4), referencing a character in the fable Reynard the Fox and suggesting his skill in fighting.",
   },
   {
     id: 'characters-028',

@@ -163,7 +163,7 @@ const ESSAY_PLANS = [
       {
         topic: 'The apparitions and equivocation',
         argument:
-          "In Act 4 Scene 1, the witches' apparitions offer prophecies that are literally true but functionally deceptive: 'none of woman born shall harm Macbeth' and 'Macbeth shall never vanquished be until Great Birnam Wood to high Dunsinane Hill shall come'. Shakespeare uses the supernatural to explore equivocation -- truth deployed to deceive -- which was a Jacobean anxiety after the Gunpowder Plot trials.",
+          "In Act 4 Scene 1, the witches' apparitions offer prophecies that are literally true but functionally deceptive: 'none of woman born shall harm Macbeth' and 'Macbeth shall never vanquish'd be until Great Birnam Wood to high Dunsinane Hill shall come'. Shakespeare uses the supernatural to explore equivocation -- truth deployed to deceive -- which was a Jacobean anxiety after the Gunpowder Plot trials.",
         key_quote: '"None of woman born shall harm Macbeth" (4.1)',
         context:
           "The Jesuit Henry Garnet was executed in 1606 for 'equivocation' -- lying under oath by using ambiguous language. The Porter's speech directly references this. Shakespeare links the witches' method to a real political scandal.",
@@ -200,7 +200,7 @@ const ESSAY_PLANS = [
         argument:
           "Lady Macbeth's persuasion in Act 1 Scene 7 is a masterclass in manipulation. She attacks Macbeth's manhood ('When you durst do it, then you were a man'), invokes the horrifying image of dashing her own baby's brains out, and reframes murder as courage. Shakespeare gives her the scene's most forceful language -- she dominates it rhetorically while Macbeth can only ask questions.",
         key_quote:
-          '"I have given suck, and know how tender \'tis to love the babe that milks me; I would, while it was smiling in my face, have plucked my nipple from his boneless gums and dashed the brains out" (1.7)',
+          "\"I have given suck, and know how tender 'tis to love the babe that milks me; I would, while it was smiling in my face, have pluck'd my nipple from his boneless gums and dash'd the brains out\" (1.7)",
         context:
           "The infanticide image inverts the ultimate symbol of female nurturing. Shakespeare pushes the 'unsexing' to its most extreme expression.",
       },
@@ -244,7 +244,7 @@ const ESSAY_PLANS = [
         argument:
           "Duncan is trusting, generous and gracious. He rewards Macbeth lavishly ('More is thy due than more than all can pay', 1.4) and praises Inverness as a place where 'the air nimbly and sweetly recommends itself' (1.6). Shakespeare deliberately makes him gentle so that his murder feels monstrous -- there is no political justification for killing a good king. Duncan embodies the Jacobean ideal of a divinely appointed monarch.",
         key_quote:
-          '"This castle hath a pleasant seat; the air nimbly and sweetly recommends itself to our gentle senses" (1.6)',
+          '"This castle hath a pleasant seat. The air / Nimbly and sweetly recommends itself / Unto our gentle senses" (1.6)',
         context:
           "James I championed the Divine Right of Kings -- the doctrine that monarchs were God's representatives on earth. Duncan represents this ideal, making his murder not just treason but sacrilege.",
       },
@@ -253,7 +253,7 @@ const ESSAY_PLANS = [
         argument:
           "As king, Macbeth rules through paranoia and violence. He orders the murder of Banquo and Fleance (Act 3), then the slaughter of Macduff's entire household, including women and children (Act 4). Shakespeare never shows Macbeth governing -- he is never seen holding court, dispensing justice or rewarding loyalty. His kingship is defined entirely by what he destroys.",
         key_quote:
-          '"I am in blood stepped in so far that, should I wade no more, returning were as tedious as go o\'er" (3.4)',
+          '"I am in blood stepp\'d in so far that, should I wade no more, returning were as tedious as go o\'er" (3.4)',
         context:
           "The tyrannical king was a familiar figure from classical sources. Shakespeare draws on the Roman historians' portraits of Nero and Caligula to model Macbeth's descent.",
       },
@@ -262,7 +262,7 @@ const ESSAY_PLANS = [
         argument:
           "Duncan's murder triggers cosmic disorder: 'the earth was feverous and did shake' (2.3), horses ate each other, an owl killed a falcon, and day turned to night. Shakespeare uses pathetic fallacy on a supernatural scale to argue that the king's body is linked to the body of the state and to nature itself. Illegitimate kingship makes the whole world sick.",
         key_quote:
-          '"A falcon, towering in her pride of place, was by a mousing owl hawked at and killed" (2.4)',
+          '"A falcon, towering in her pride of place, was by a mousing owl hawk\'d at and kill\'d" (2.4)',
         context:
           'The Great Chain of Being held that every creature had a fixed place. An owl killing a falcon -- a lower creature defeating a higher one -- symbolises the inversion caused by a subject killing his king.',
       },
@@ -276,10 +276,13 @@ const ESSAY_PLANS = [
           "Malcolm's testing of Macduff mirrors the idea that legitimate kingship must be earned through virtue, not seized through violence -- a pointed compliment to James I's claim to the English throne.",
       },
       {
+        // The site's edition (src/data/full-texts/macbeth.ts) ends the play in
+        // Act 5 Scene 8; until 2 October 2026 these two lines were placed in a
+        // "5.9" it does not have.
         topic: "Restoration -- Macbeth named 'butcher', order returns",
         argument:
-          "In the play's final speech, Malcolm calls Macbeth 'this dead butcher and his fiend-like queen' (5.9) and invites everyone to his coronation at Scone. Shakespeare closes the play with a return to legitimate succession: the rightful king takes the throne, order is restored, and the unnatural events cease. The structure argues that tyranny is always temporary.",
-        key_quote: '"We will perform in measure, time, and place" (5.9)',
+          "In the play's final speech, Malcolm calls Macbeth and his wife 'this dead butcher and his fiend-like queen' (5.8) and invites everyone to his coronation at Scone. Shakespeare closes the play with a return to legitimate succession: the rightful king takes the throne, order is restored, and the unnatural events cease. The structure argues that tyranny is always temporary.",
+        key_quote: '"We will perform in measure, time, and place" (5.8)',
         context:
           "The word 'measure' carries weight: it means both 'appropriate degree' and 'order'. Malcolm's first act is to reimpose the measured hierarchy that Macbeth's usurpation shattered.",
       },

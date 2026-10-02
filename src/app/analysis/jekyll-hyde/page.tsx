@@ -52,8 +52,10 @@ const quoteAnalyses = [
     slug: 'the-polite-fiction-of-the-law',
     blurb: 'Utterson, hypocrisy and the Victorian obsession with reputation over reality.',
   },
+  // The edition prints "down-right"; the slug keeps the old spelling so that links to
+  // the page still work (corrected 2 October 2026 against Project Gutenberg #43).
   {
-    title: '"Downright detestable"',
+    title: '"Down-right detestable"',
     slug: 'downright-detestable',
     blurb: "Enfield's visceral, irrational disgust at Hyde and the limits of rational description.",
   },
@@ -127,7 +129,7 @@ const characterTheme = [
     title: 'Repression theme analysis',
     slug: 'repression-theme-analysis',
     blurb:
-      'Victorian respectability, Jekyll\'s "disgraceful pleasures", and proto-Freudian repression.',
+      'Victorian respectability, Jekyll\'s "undignified" pleasures, and proto-Freudian repression.',
     group: 'Theme',
   },
   {

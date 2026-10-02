@@ -41,8 +41,23 @@ export const metadata: Metadata = {
  * numbers, the first pearl (1882, not six years after 1878), the thorn (above
  * the ear, not in the neck), Thaddeus's house (south London, not Norwood),
  * how Jones arrives (Holmes sends Thaddeus to the police) and "Small murders
- * for it twice" (Tonga killed Bartholomew). Check any new quotation against
- * the held edition before adding it.
+ * for it twice" (Tonga killed Bartholomew).
+ *
+ * Four quotations were still not the novel's words when the quotation
+ * scanner (scripts/check-quotations.mjs) read this page on 2 October 2026.
+ * Each joined the words either side of a speech tag with nothing to show
+ * the cut ("he said" twice, "cried Mrs. Forrester", and "said Holmes, as we
+ * sat in the sheets of the wherry"), so a student learning them learnt
+ * sentences Conan Doyle never wrote. Each cut is now an ellipsis.
+ *
+ * A review the same day found two faults the scanner cannot see. The note on
+ * "It is of the first importance" said Holmes warns Watson against liking
+ * Mary Morstan; in Chapter II it is his reply to being called an automaton,
+ * about his own judgment ("A client is to me a mere unit"), and the note now
+ * says so. A revision point put "improbable is true" in quotation marks,
+ * words Holmes never says; it now quotes the line he does say. Check any new
+ * quotation, and the moment its note describes, against the held edition
+ * before adding it.
  */
 const data: TextGuideData = {
   slug: 'the-sign-of-four',
@@ -170,7 +185,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"My mind rebels at stagnation. Give me problems, give me work, give me the most abstruse cryptogram or the most intricate analysis, and I am in my own proper atmosphere."',
+        '"My mind \u2026 rebels at stagnation. Give me problems, give me work, give me the most abstruse cryptogram or the most intricate analysis, and I am in my own proper atmosphere."',
       who: 'Holmes \u2014 Chapter 1',
       analysis:
         'Holmes explains his cocaine use as a response to intellectual boredom. Conan Doyle presents the detective\u2019s mind as requiring constant stimulation, which is both the source of his brilliance and of his vulnerability.',
@@ -189,7 +204,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"The main thing with people of that sort is never to let them think that their information can be of the slightest importance to you."',
+        '"The main thing with people of that sort \u2026 is never to let them think that their information can be of the slightest importance to you."',
       who: 'Holmes \u2014 Chapter 8',
       analysis:
         'Holmes explains his method of handling informants. The line exposes his psychological sharpness and his slightly cold manipulation of ordinary people, a complicating trait beneath the heroic exterior.',
@@ -202,10 +217,10 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"It is of the first importance not to allow your judgment to be biased by personal qualities."',
+        '"It is of the first importance \u2026 not to allow your judgment to be biased by personal qualities."',
       who: 'Holmes \u2014 Chapter 2',
       analysis:
-        'Holmes warns Watson against liking Mary Morstan too much. The advice dramatises the reason/emotion contrast: Watson will ignore it, and the book will largely endorse his decision to do so.',
+        'Holmes\u2019s reply when Watson calls him an automaton for not noticing Mary Morstan\u2019s charm: a client, he says, is "a mere unit". The principle dramatises the reason/emotion contrast: Watson does not live by it, and the book will largely endorse his decision not to.',
     },
     {
       quote:
@@ -223,7 +238,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"It is a romance! An injured lady, half a million in treasure, a black cannibal, and a wooden-legged ruffian."',
+        '"It is a romance! \u2026 An injured lady, half a million in treasure, a black cannibal, and a wooden-legged ruffian."',
       who: 'Mrs Forrester \u2014 Chapter 9',
       analysis:
         'Mrs Forrester\u2019s phrasing gathers the story\u2019s sensational elements and, uncomfortably for modern readers, its racial caricature of Tonga. The line exposes how the novella\u2019s imperial material is packaged as entertainment.',
@@ -644,7 +659,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       'Eccentric detective, narrator-sidekick, forensic method, locked-room puzzle',
       'Watson\u2019s first-person narration filters Holmes through ordinary eyes',
-      'The "improbable is true" principle invites the reader to deduce',
+      'Holmes\u2019s rule that "whatever remains, however improbable, must be the truth" invites the reader to deduce',
       'Second Holmes novel, after A Study in Scarlet (1887)',
       'Published 1890 in Lippincott\u2019s Monthly Magazine, then as a book',
     ],

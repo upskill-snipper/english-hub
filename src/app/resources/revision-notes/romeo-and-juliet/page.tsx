@@ -77,6 +77,13 @@ function QuoteCard({
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
+// Quotations are in the wording of the edition the site holds, Project
+// Gutenberg #1513 (src/data/full-texts/romeo-and-juliet.ts), and are cut from
+// it rather than typed. Until 2 October 2026 four here were not: "There rust"
+// and "bitterest gall" where this edition has "There rest" and "bitter gall";
+// "Like" and "Ethiope" for its "As" and "Ethiop"; and Lord Capulet's card,
+// which set "Or I will drag thee on a hurdle thither" after "Hang thee young
+// baggage", the reverse of the order he speaks them in.
 export default function RomeoAndJulietRevisionPage() {
   const locale = useLocale()
   const tr = (en: string): string => {
@@ -133,8 +140,8 @@ export default function RomeoAndJulietRevisionPage() {
               <li>&bull; The street brawl and Prince&apos;s warning (1.1)</li>
               <li>&bull; Romeo and Juliet&apos;s shared sonnet at the ball (1.5)</li>
               <li>
-                &bull; Tybalt&apos;s fury: &ldquo;I will withdraw, but this intrusion shall...
-                convert to bitterest gall&rdquo; (1.5)
+                &bull; Tybalt&apos;s fury: &ldquo;I will withdraw: but this intrusion shall...
+                convert to bitter gall&rdquo; (1.5)
               </li>
             </ul>
           </div>
@@ -336,7 +343,7 @@ export default function RomeoAndJulietRevisionPage() {
             genuinely grieves at her death, but his love is possessive and controlling.
           </p>
           <QuoteCard
-            quote="Hang thee, young baggage! Disobedient wretch! [...] Or I will drag thee on a hurdle thither"
+            quote="Or I will drag thee on a hurdle thither. [...] Hang thee young baggage, disobedient wretch!"
             speaker="Lord Capulet"
             act="Act 3, Scene 5"
             analysis="Violent language reveals patriarchal power. 'Baggage' reduces Juliet to an object. A 'hurdle' was used to drag traitors to execution -- he equates disobedience with treason. His love is conditional on obedience."
@@ -520,7 +527,7 @@ export default function RomeoAndJulietRevisionPage() {
               analysis="Juliet commands the sun to set faster. Passionate and commanding -- far from the obedient girl of Act 1."
             />
             <QuoteCard
-              quote="O happy dagger! / This is thy sheath; there rust, and let me die"
+              quote="O happy dagger. / This is thy sheath. There rest, and let me die"
               speaker="Juliet"
               act="Act 5, Scene 3"
               analysis="'Happy' -- the dagger reunites her with Romeo. 'Sheath' links love and death. Her death is decisive, courageous, unhesitating."
@@ -638,7 +645,7 @@ export default function RomeoAndJulietRevisionPage() {
           <p className="text-sm leading-relaxed text-muted-foreground">
             Romeo consistently associates Juliet with light: she &ldquo;doth teach the torches to
             burn bright,&rdquo; she is &ldquo;the sun,&rdquo; she &ldquo;hangs upon the cheek of
-            night / Like a rich jewel in an Ethiope&apos;s ear.&rdquo; Yet their love thrives in
+            night / As a rich jewel in an Ethiop&apos;s ear.&rdquo; Yet their love thrives in
             darkness (the balcony at night, the bedroom before dawn) and daylight brings separation
             and danger. This inversion suggests that their love exists outside the normal social
             order and that conventional categories are unreliable.

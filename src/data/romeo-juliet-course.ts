@@ -1,6 +1,30 @@
 // @ts-nocheck
 import type { CourseData } from './courses'
 
+// Quotations of the play are in the wording of the edition the site holds,
+// Project Gutenberg #1513 (src/data/full-texts/romeo-and-juliet.ts), and are
+// cut from it rather than typed. Until 2 October 2026 seventeen were not:
+//   - other editions' readings ("bitt'rest gall", "By any other word", "There
+//     rust", "the Capels are abroad") and spellings ("injured", "baptized");
+//   - two lines not in this edition, nor near anything in it: Juliet's "If,
+//     in thy wisdom, thou canst give me counsel / To do it safely..."
+//     (replaced by the ultimatum she does give the Friar, three lines that
+//     begin the same way and end with her knife), and Romeo's "I would tear
+//     the word love from language" (replaced by his "Henceforth I never will
+//     be Romeo", the absolute the sentence describes);
+//   - "cut out in little stars", given to Romeo, which is Juliet's "cut him
+//     out in little stars"; and "Romeo, I drink to thee", which drops two of
+//     the three "Romeo"s the same sentence analyses;
+//   - "There is no world without Verona walls" placed in Act 3, Scene 2-3: it
+//     is in Scene 3;
+//   - words the prose said were the play's: "sucks" for "suck'd", Capulet's
+//     "command" that Juliet "be ruled" (he tells Paris she "will be rul'd").
+// A review the same day found one more: Romeo was said to have sworn "by the
+// moon", which are Juliet's words ("O swear not by the moon"); his oath is
+// "Lady, by yonder blessed moon I vow". The checker passed it because the
+// words are in the play, and it cannot tell whose words prose says they are.
+// Check a new quotation with `node scripts/check-quotations.mjs --text romeo-and-juliet`.
+
 export const romeoJulietCourse: CourseData = {
   id: 'aqa-lit-romeo-juliet',
   title: 'Romeo & Juliet',
@@ -261,7 +285,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>While Romeo and Juliet share their sonnet, <strong>Tybalt</strong> recognises Romeo's voice and is outraged by his presence at the Capulet ball. He demands action: <strong>"Fetch me my rapier, boy."</strong> The imperative and the monosyllabic aggression contrast sharply with the lovers' delicate religious imagery. Shakespeare juxtaposes the two conversations - love and violence happening simultaneously in the same room - to show that the feud is always present, always threatening to destroy what the lovers are building.</p>
 
-<p><strong>Lord Capulet</strong> restrains Tybalt, insisting Romeo be tolerated as a guest. Tybalt obeys but seethes: <strong>"I will withdraw, but this intrusion shall, / Now seeming sweet, convert to bitt'rest gall."</strong> The antithesis of <strong>"sweet"</strong> and <strong>"bitt'rest gall"</strong> foreshadows the play's trajectory - tonight's sweetness will indeed become tomorrow's bitterness. Tybalt's grudge, nursed through this scene, explodes in the fatal confrontation of Act 3.</p>
+<p><strong>Lord Capulet</strong> restrains Tybalt, insisting Romeo be tolerated as a guest. Tybalt obeys but seethes: <strong>"I will withdraw: but this intrusion shall, / Now seeming sweet, convert to bitter gall."</strong> The antithesis of <strong>"sweet"</strong> and <strong>"bitter gall"</strong> foreshadows the play's trajectory - tonight's sweetness will indeed become tomorrow's bitterness. Tybalt's grudge, nursed through this scene, explodes in the fatal confrontation of Act 3.</p>
 
 <p>The scene ends with a devastating dramatic irony. Juliet learns Romeo is a Montague and declares: <strong>"My only love sprung from my only hate!"</strong> The antithesis of <strong>"love"</strong> and <strong>"hate"</strong> encapsulates the play's central conflict. The audience, who already knows the Prologue's prophecy, understands that this discovery is the beginning of the tragedy.</p>
 `,
@@ -354,7 +378,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>Juliet's most famous speech addresses the central problem: Romeo is a Montague. Her solution is radical:</p>
 
-<p><strong>"What's in a name? That which we call a rose / By any other word would smell as sweet."</strong></p>
+<p><strong>"What's in a name? That which we call a rose / By any other name would smell as sweet."</strong></p>
 
 <p>Juliet argues that names are arbitrary labels, not essential truths. A rose's fragrance exists independently of what we call it; Romeo's worth exists independently of his family name. This is a remarkably <strong>philosophical</strong> argument for a thirteen-year-old, and it demonstrates Juliet's intellectual maturity. She is not simply swept away by emotion - she <em>reasons</em> her way to a justification for loving Romeo.</p>
 
@@ -491,11 +515,11 @@ export const romeoJulietCourse: CourseData = {
 
 <h3>Act 3, Scene 1: The Deaths of Mercutio &amp; Tybalt</h3>
 
-<p>The scene opens with <strong>Benvolio</strong> warning that the heat of the day will provoke trouble: <strong>"The day is hot, the Capels are abroad."</strong> Shakespeare uses the weather as a <strong>pathetic fallacy</strong> - the external heat mirrors the internal passions that are about to boil over into violence.</p>
+<p>The scene opens with <strong>Benvolio</strong> warning that the heat of the day will provoke trouble: <strong>"The day is hot, the Capulets abroad."</strong> Shakespeare uses the weather as a <strong>pathetic fallacy</strong> - the external heat mirrors the internal passions that are about to boil over into violence.</p>
 
 <div class="key-term"><strong>Key Term: Pathetic Fallacy</strong> - A literary device in which weather or the natural environment reflects the emotional state of characters or the mood of a scene. The oppressive heat in Act 3, Scene 1 mirrors the tensions that erupt into fatal violence.</div>
 
-<p><strong>Tybalt</strong> arrives looking for Romeo. When Romeo appears, Tybalt challenges him, but Romeo - now secretly married to Juliet and therefore Tybalt's kinsman - refuses to fight: <strong>"I do protest I never injured thee, / But love thee better than thou canst devise."</strong> The dramatic irony is intense: Tybalt does not know why Romeo speaks of love, but the audience does. Romeo's attempt at peace is genuine but doomed - his vague language frustrates Mercutio and fails to satisfy Tybalt.</p>
+<p><strong>Tybalt</strong> arrives looking for Romeo. When Romeo appears, Tybalt challenges him, but Romeo - now secretly married to Juliet and therefore Tybalt's kinsman - refuses to fight: <strong>"I do protest I never injur'd thee, / But love thee better than thou canst devise."</strong> The dramatic irony is intense: Tybalt does not know why Romeo speaks of love, but the audience does. Romeo's attempt at peace is genuine but doomed - his vague language frustrates Mercutio and fails to satisfy Tybalt.</p>
 
 <p><strong>Mercutio</strong>, outraged by what he sees as Romeo's cowardice, fights Tybalt in Romeo's place. When Romeo intervenes to separate them, Tybalt stabs Mercutio under Romeo's arm. This is a devastating irony: Romeo's attempt to prevent violence directly causes his friend's death.</p>
 
@@ -546,8 +570,8 @@ export const romeoJulietCourse: CourseData = {
 <h3>Quotation Bank: Act 3 with Model Analysis</h3>
 
 <div class="quotation-analysis">
-<strong>1. "I do protest I never injured thee, / But love thee better than thou canst devise." (Act 3, Scene 1 - Romeo to Tybalt)</strong><br/>
-<strong>Technique:</strong> Protestation; antithesis (injured vs. love); hyperbole ("better than thou canst devise").<br/>
+<strong>1. "I do protest I never injur'd thee, / But love thee better than thou canst devise." (Act 3, Scene 1 - Romeo to Tybalt)</strong><br/>
+<strong>Technique:</strong> Protestation; antithesis (injur'd vs. love); hyperbole ("better than thou canst devise").<br/>
 <strong>Effect:</strong> Romeo's language is formal, almost liturgical - he speaks as if swearing an oath. The antithesis between injury and love emphasises the contrast between what Tybalt expects (a fight) and what Romeo offers (affection).<br/>
 <strong>Grade 9 Reading:</strong> This line is tragically ironic because the audience knows what Tybalt does not - that Romeo and Juliet are now married, making Tybalt technically Romeo's kinsman. Romeo's love is both genuine and impossible to explain. His vague language ("better than thou canst devise") frustrates Tybalt and leads Tybalt to suspect Romeo of cowardice or dishonour. This demonstrates how <em>secrecy</em> and <em>miscommunication</em> drive the tragedy. If Tybalt knew the truth, he would understand Romeo's refusal to fight. Instead, Romeo's words precipitate the very violence he is trying to prevent.
 </div>
@@ -567,7 +591,7 @@ export const romeoJulietCourse: CourseData = {
 </div>
 
 <div class="quotation-analysis">
-<strong>4. "There is no world without Verona walls, / But purgatory, torture, hell itself." (Act 3, Scene 2-3 - Romeo in the Friar's cell, banished)</strong><br/>
+<strong>4. "There is no world without Verona walls, / But purgatory, torture, hell itself." (Act 3, Scene 3 - Romeo in the Friar's cell, banished)</strong><br/>
 <strong>Technique:</strong> Hyperbole; negative imaging (purgatory, torture, hell); tricolon (three-part escalation).<br/>
 <strong>Effect:</strong> The escalation from purgatory to torture to hell emphasises the intensity of Romeo's despair. His language transforms banishment into a kind of damnation.<br/>
 <strong>Grade 9 Reading:</strong> Romeo's hyperbolic response to banishment reveals his immaturity. For Romeo, separation from Juliet is worse than death - indeed, he views banishment as a death-in-life. The Friar's response ("Thy wild acts denote / The unreasonable fury of a beast") suggests that Romeo's language is adolescent excess. The contrast between Romeo's hysteria and the Friar's calm reason is important: it shows that Romeo is driven by passion rather than wisdom. Later, when the Friar devises the sleeping-potion plan, Romeo will seize on it without questioning whether it is sound, revealing that his desperation - not his judgment - governs his decisions.
@@ -806,8 +830,8 @@ export const romeoJulietCourse: CourseData = {
 </div>
 
 <div class="quotation-analysis">
-<strong>6. "O happy dagger, / This is thy sheath; there rust, and let me die." (Act 5, Scene 3 - Juliet)</strong><br/>
-<strong>Technique:</strong> Apostrophe (direct address to the dagger); oxymoron ("happy dagger" - happiness with death); sexual metaphor (sheath/dagger); commanding verbs (rust, let).<br/>
+<strong>6. "O happy dagger. / This is thy sheath. There rest, and let me die." (Act 5, Scene 3 - Juliet)</strong><br/>
+<strong>Technique:</strong> Apostrophe (direct address to the dagger); oxymoron ("happy dagger" - happiness with death); sexual metaphor (sheath/dagger); commanding verbs (rest, let).<br/>
 <strong>Effect:</strong> Transforms suicide into an act of consummation. The dagger is "happy" because it will reunite her with Romeo. The sexual metaphor (sheath for the dagger) suggests that death with Romeo is the ultimate union.<br/>
 <strong>Grade 9 Reading:</strong> This is not an expression of despair but of determination. Juliet addresses the dagger as a lover or a friend - it will enable her to join Romeo. The oxymoron ("happy dagger") shows that she finds meaning and even joy in this final act. She is not a victim of fate but an agent of her own destiny. Her suicide is not tragic in the sense of being helpless or forced; it is tragic because it is freely chosen and absolutely final.
 </div>
@@ -869,7 +893,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>The final scene takes place in the Capulet tomb - a physical space that unites the play's themes of love, death, and family. Romeo encounters <strong>Paris</strong> at the tomb and kills him - another needless death caused by the feud, though Paris is motivated by genuine grief rather than family honour.</p>
 
-<p>Romeo's final speech over Juliet's body is suffused with the light/dark imagery that has defined their relationship: <strong>"O my love, my wife! / Death, that hath suck'd the honey of thy breath, / Hath had no power yet upon thy beauty."</strong> The personification of <strong>Death</strong> as a lover who "sucks" Juliet's breath is both grotesque and poignant. The dramatic irony is excruciating: Juliet is not dead, and her beauty is intact because she is alive - but Romeo cannot know this.</p>
+<p>Romeo's final speech over Juliet's body is suffused with the light/dark imagery that has defined their relationship: <strong>"O my love, my wife! / Death, that hath suck'd the honey of thy breath, / Hath had no power yet upon thy beauty."</strong> The personification of <strong>Death</strong> as a lover that "hath suck'd the honey" of Juliet's breath is both grotesque and poignant. The dramatic irony is excruciating: Juliet is not dead, and her beauty is intact because she is alive - but Romeo cannot know this.</p>
 
 <p>Romeo drinks the poison and dies. Moments later, Juliet wakes. Finding Romeo dead, she kisses his lips hoping for residual poison: <strong>"Thy lips are warm."</strong> These four monosyllabic words are devastating in their simplicity - they tell the audience that Romeo died only seconds before, that a moment's difference would have saved both lives. Juliet then takes Romeo's dagger and stabs herself: <strong>"O happy dagger, / This is thy sheath."</strong> The sexual metaphor - the dagger entering its sheath - unites love and death one final time.</p>
 
@@ -963,7 +987,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>When Romeo sees Juliet at the Capulet ball, his language is transformed. Gone are the stale paradoxes; in their place is <strong>vivid, original imagery</strong>: <strong>"O, she doth teach the torches to burn bright!"</strong> The shift from abstract oxymorons to concrete sensory images marks a fundamental change in Romeo's character - he has moved from performing love to experiencing it.</p>
 
-<p>In the balcony scene, Romeo's poetry reaches its peak. His extended sun metaphor is spontaneous and passionate, his willingness to renounce his name - <strong>"Call me but love, and I'll be new baptized"</strong> - shows he values Juliet above family identity, and his physical bravery in climbing the Capulet wall demonstrates that his love is active, not passive.</p>
+<p>In the balcony scene, Romeo's poetry reaches its peak. His extended sun metaphor is spontaneous and passionate, his willingness to renounce his name - <strong>"Call me but love, and I'll be new baptis'd"</strong> - shows he values Juliet above family identity, and his physical bravery in climbing the Capulet wall demonstrates that his love is active, not passive.</p>
 
 <div class="examiner-tip"><strong>Top Tip:</strong> When writing about Romeo's character, always track the <strong>change in his language</strong> from Act 1 to Act 2. This linguistic transformation is the best evidence for his character development and allows you to engage with AO2 (writer's methods) while making an AO1 argument about character.</div>
 
@@ -1148,7 +1172,7 @@ export const romeoJulietCourse: CourseData = {
 
 <p>In the tomb, Juliet wakes to find Romeo dead. Her grief is expressed not in elaborate poetry but in devastating simplicity: <strong>"Thy lips are warm."</strong> Where Romeo's final speeches were long and richly metaphorical, Juliet's are short, direct, and urgent. She has no time for poetry - she can hear the watchmen approaching.</p>
 
-<p>Her decision to die is instantaneous but not impulsive - she has already stated in Act 3 that she has <strong>"power to die"</strong> if all else fails. She kisses Romeo's poisoned lips, hoping for death: <strong>"I will kiss thy lips. / Haply some poison yet doth hang on them."</strong> When this fails, she takes his dagger: <strong>"O happy dagger, / This is thy sheath. There rust, and let me die."</strong></p>
+<p>Her decision to die is instantaneous but not impulsive - she has already stated in Act 3 that she has <strong>"power to die"</strong> if all else fails. She kisses Romeo's poisoned lips, hoping for death: <strong>"I will kiss thy lips. / Haply some poison yet doth hang on them."</strong> When this fails, she takes his dagger: <strong>"O happy dagger. / This is thy sheath. There rest, and let me die."</strong></p>
 
 <p>The word <strong>"happy"</strong> is a bitter oxymoron - the dagger brings not happiness but an end to unbearable pain. The metaphor of the body as a <strong>"sheath"</strong> for the dagger unites love and death in a final, devastating image. Juliet dies as she lived - with agency, determination, and an absolute commitment to love.</p>
 
@@ -1176,10 +1200,10 @@ export const romeoJulietCourse: CourseData = {
 </div>
 
 <div class="quotation-analysis">
-<strong>3. "O, swear not by the moon, the inconstant moon, / That monthly changes in her circled orb." (Act 2, Scene 2)</strong><br/>
+<strong>3. "O swear not by the moon, th'inconstant moon, / That monthly changes in her circled orb." (Act 2, Scene 2)</strong><br/>
 <strong>Technique:</strong> Apostrophe and warning; reference to classical mythology; practical wisdom; fear expressed through natural imagery.<br/>
 <strong>Effect:</strong> Juliet warns Romeo against making vows by the moon, which is changeable. She reveals anxiety about love's fragility.<br/>
-<strong>Grade 9 Reading:</strong> While Romeo has just sworn "by the moon," Juliet immediately questions this oath. She is more cautious, more aware of danger, more cognisant of love's potential impermanence. Where Romeo speaks in absolutes ("I would tear the word love from language"), Juliet worries about constancy. This makes her the realist of the pair. By the play's end, her realism has matured into tragic resignation - she has learned that love, in this world, cannot endure.
+<strong>Grade 9 Reading:</strong> While Romeo has just sworn "by yonder blessed moon," Juliet immediately questions this oath. She is more cautious, more aware of danger, more cognisant of love's potential impermanence. Where Romeo speaks in absolutes ("Henceforth I never will be Romeo"), Juliet worries about constancy. This makes her the realist of the pair. By the play's end, her realism has matured into tragic resignation - she has learned that love, in this world, cannot endure.
 </div>
 
 <div class="quotation-analysis">
@@ -1197,7 +1221,7 @@ export const romeoJulietCourse: CourseData = {
 </div>
 
 <div class="quotation-analysis">
-<strong>6. "If, in thy wisdom, thou canst give me counsel / To do it safely, else I am resolv'd / To do something like it myself." (Act 4, Scene 1 - to the Friar)</strong><br/>
+<strong>6. "If in thy wisdom, thou canst give no help, / Do thou but call my resolution wise, / And with this knife I'll help it presently." (Act 4, Scene 1 - to the Friar)</strong><br/>
 <strong>Technique:</strong> Conditional structure; escalating ultimatum; clear statement of agency.<br/>
 <strong>Effect:</strong> Juliet presents the Friar with a choice: help her or she will kill herself.<br/>
 <strong>Grade 9 Reading:</strong> This line is crucial for understanding Juliet's agency. She does not beg the Friar; she threatens. She has already resolved to die rather than marry Paris - she is simply giving him an opportunity to help her live instead. This is the moment where Juliet moves from passive victim to active agent. She is no longer asking for permission or guidance; she is demanding assistance in a plan she has already decided upon. The Friar's potion plan works because Juliet - not Romeo - has forced him to devise it.
@@ -1259,7 +1283,7 @@ export const romeoJulietCourse: CourseData = {
 
 <h3>Model Paragraph: Juliet</h3>
 
-<div class="model-answer"><strong>Model Answer (extract):</strong> Shakespeare presents Juliet as a character whose agency develops in direct proportion to her isolation. In Act 1, her obedient response to Lady Capulet - "I'll look to like, if looking liking move" - operates within patriarchal expectations, yet the conditional phrasing subtly resists full compliance. By Act 4, stripped of every ally - Romeo banished, parents threatening, the Nurse disloyal - Juliet faces the Friar's potion alone, confronting terrifying visions of death in her soliloquy before drinking with the words "Romeo, I drink to thee." The triple invocation of his name transforms the act into a sacrament of love, recalling the religious imagery of their first meeting. For a contemporary audience, Juliet's trajectory might illustrate how patriarchal systems, by denying women legitimate means of self-determination, leave them no option but extreme acts of defiance - a reading that gives the play enduring feminist resonance.</div>
+<div class="model-answer"><strong>Model Answer (extract):</strong> Shakespeare presents Juliet as a character whose agency develops in direct proportion to her isolation. In Act 1, her obedient response to Lady Capulet - "I'll look to like, if looking liking move" - operates within patriarchal expectations, yet the conditional phrasing subtly resists full compliance. By Act 4, stripped of every ally - Romeo banished, parents threatening, the Nurse disloyal - Juliet faces the Friar's potion alone, confronting terrifying visions of death in her soliloquy before drinking with the words "Romeo, Romeo, Romeo, here's drink! I drink to thee." The triple invocation of his name transforms the act into a sacrament of love, recalling the religious imagery of their first meeting. For a contemporary audience, Juliet's trajectory might illustrate how patriarchal systems, by denying women legitimate means of self-determination, leave them no option but extreme acts of defiance - a reading that gives the play enduring feminist resonance.</div>
 `,
       quiz: [
         {
@@ -1513,7 +1537,7 @@ export const romeoJulietCourse: CourseData = {
 
 <div class="key-term"><strong>Key Term: Imagery</strong> - Descriptive language that creates vivid pictures in the reader's or audience's mind. In <em>Romeo and Juliet</em>, Shakespeare uses sustained patterns of imagery - light/dark, stars, religious language - that recur throughout the play, creating a web of connected meanings.</div>
 
-<p>The light/dark pattern also connects to the theme of <strong>fate</strong>. Stars - points of light in darkness - represent destiny (<strong>"star-cross'd"</strong>). The lovers are described in celestial terms: Juliet is the sun, Romeo asks her to be <strong>"cut out in little stars"</strong>. Their love is cosmic in scale but also, like starlight, fragile and distant from the earthly world of the feud.</p>
+<p>The light/dark pattern also connects to the theme of <strong>fate</strong>. Stars - points of light in darkness - represent destiny (<strong>"star-cross'd"</strong>). The lovers are described in celestial terms: Juliet is the sun, and Juliet asks night to take Romeo and <strong>"cut him out in little stars"</strong>. Their love is cosmic in scale but also, like starlight, fragile and distant from the earthly world of the feud.</p>
 
 <h4>2. Religious Imagery</h4>
 
@@ -1740,7 +1764,7 @@ export const romeoJulietCourse: CourseData = {
 <p>Context should be integrated, not added on. Here are examples of effective and ineffective context use:</p>
 
 <p><strong>Ineffective:</strong> "In Elizabethan times, women had to obey their fathers. This is shown when Capulet tells Juliet to marry Paris."</p>
-<p><strong>Effective:</strong> "Capulet's command that Juliet 'be ruled' reflects the patriarchal structures of Elizabethan society, where daughters were legally subject to their fathers' authority. Shakespeare uses Juliet's refusal to expose the cruelty embedded in this system - her disobedience is not rebellion for its own sake but a defence of her right to choose her own life."</p>
+<p><strong>Effective:</strong> "Capulet's confidence that Juliet 'will be rul'd' reflects the patriarchal structures of Elizabethan society, where daughters were legally subject to their fathers' authority. Shakespeare uses Juliet's refusal to expose the cruelty embedded in this system - her disobedience is not rebellion for its own sake but a defence of her right to choose her own life."</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Starting sentences with "In those days..." or "Back then..." - these phrases signal that your context is bolted on rather than integrated. Instead, make Shakespeare the subject of your sentence: "Shakespeare presents...", "Shakespeare uses...", "Shakespeare challenges..."</div>
 

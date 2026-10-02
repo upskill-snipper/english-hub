@@ -3252,11 +3252,11 @@ const ks3CoursesExtra: CourseData[] = [
 
 <p><strong>Love and relationships</strong> - Shakespeare explores every kind of love: romantic (Romeo and Juliet), familial (King Lear), obsessive (Othello), and platonic (Antonio and Bassanio in The Merchant of Venice). Love in Shakespeare is rarely simple - it is complicated by family, society, jealousy, and fate.</p>
 
-<p><strong>Appearance vs reality</strong> - Things are never what they seem. Characters disguise themselves, lie, manipulate, and deceive. Lady Macbeth tells her husband to "look like the innocent flower, but be the serpent under it" - a perfect encapsulation of this theme.</p>
+<p><strong>Appearance vs reality</strong> - Things are never what they seem. Characters disguise themselves, lie, manipulate, and deceive. Lady Macbeth tells her husband to "look like the innocent flower, but be the serpent under't" - a perfect encapsulation of this theme.</p>
 
 <p><strong>Order and disorder</strong> - Shakespeare's world valued order: God, king, nobles, commoners. When this order is disrupted (by murder, rebellion, or deception), chaos follows - storms rage, nature behaves strangely, and suffering increases until order is restored.</p>
 
-<p><strong>Fate vs free will</strong> - Are characters in control of their destiny, or are they driven by forces beyond their control? Romeo and Juliet are described as "star-crossed lovers," suggesting fate dooms them - but their own impulsive choices also contribute to the tragedy.</p>
+<p><strong>Fate vs free will</strong> - Are characters in control of their destiny, or are they driven by forces beyond their control? Romeo and Juliet are described as "star-cross'd lovers," suggesting fate dooms them - but their own impulsive choices also contribute to the tragedy.</p>
 
 <div class="key-term"><strong>Key Term: Soliloquy</strong> - A speech delivered by a character who is alone on stage, revealing their innermost thoughts and feelings to the audience. It is a window into the character's mind.</div>
 
@@ -3416,7 +3416,7 @@ const ks3CoursesExtra: CourseData[] = [
       },
       {
         id: 'ks3s-a3',
-        question: 'In Romeo and Juliet, what does "star-crossed" suggest about the lovers?',
+        question: 'In Romeo and Juliet, what does "star-cross\'d" suggest about the lovers?',
         options: [
           'They are lucky',
           'Their fate is doomed by forces beyond their control',
@@ -3425,7 +3425,7 @@ const ks3CoursesExtra: CourseData[] = [
         ],
         correct: 1,
         explanation:
-          '"Star-crossed" means their destiny is controlled by the stars (fate) - suggesting they are doomed from the start, no matter what choices they make.',
+          '"Star-cross\'d" means their destiny is controlled by the stars (fate) - suggesting they are doomed from the start, no matter what choices they make.',
       },
       {
         id: 'ks3s-a4',

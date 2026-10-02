@@ -25,6 +25,14 @@ export const metadata: Metadata = {
 }
 
 /* ─── Data ──────────────────────────────────────────────────── */
+// Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+// src/data/full-texts/jekyll-and-hyde.ts). "A gust of delight" is in no printing of the
+// novel; Jekyll's words are "tasting delight from every blow". "If I am the chief of
+// sinners, I am the chief of sufferers also" had become "I was", Utterson's "the man
+// seems hardly human! Something troglodytic" ran backwards, and "the haunting sense of
+// unexpressed deformity" had "a". Lanyon's analysis read meaning into an ellipsis that
+// is ours: it marks the speech tag cut from "I have had a shock... and I shall never
+// recover".
 
 const examInfo = {
   paper: 'Paper 1: Shakespeare and the 19th-century novel',
@@ -153,10 +161,10 @@ const characters = [
       'He is smaller than Jekyll because evil has been repressed and undeveloped',
       'His violence escalates: trampling a girl, then murdering Carew - evil grows bolder with indulgence',
       'He represents the id in Freudian terms (though Freud came later): pure instinct without conscience',
-      "Characters feel 'a haunting sense of unexpressed deformity' - evil is sensed, not seen",
+      "Those who saw him agree only on 'the haunting sense of unexpressed deformity' he left - evil is sensed, not seen",
     ],
     keyQuotes: [
-      "'Something troglodytic... the man seems hardly human'",
+      "'the man seems hardly human! Something troglodytic, shall we say?'",
       "'Satan's signature upon a face'",
       "'ape-like fury'",
       "'the man trampled calmly over the child's body'",
@@ -169,7 +177,7 @@ const characters = [
       "A lawyer and Jekyll's loyal friend who serves as the main narrative perspective. Utterson is the embodiment of Victorian restraint: rational, loyal, discreet, and reluctant to judge. He investigates the mystery of Jekyll and Hyde but actively avoids the truth, preferring respectable explanations (blackmail, madness) to the terrifying reality.",
     keyPoints: [
       'His profession (lawyer) makes him a symbol of law, order, and rational society',
-      "He is 'the last reputable acquaintance and the last good influence' in Jekyll's life",
+      "He is often 'the last reputable acquaintance and the last good influence in the lives of downgoing men' - and so he proves for Jekyll",
       "He actively suppresses truth: he suspects Jekyll forged Hyde's letter but says nothing",
       "His limited perspective creates the novella's mystery - he can only see the outside of events",
       "He represents Victorian society's deliberate blindness to uncomfortable truths",
@@ -177,8 +185,8 @@ const characters = [
     ],
     keyQuotes: [
       "'If he be Mr Hyde... I shall be Mr Seek'",
+      "'I incline to Cain's heresy'",
       "'I let my brother go to the devil in his own way'",
-      "'inclined to Cain's heresy... I let my brother go to the devil in his own way'",
     ],
   },
   {
@@ -258,7 +266,7 @@ const themes = [
       'Utterson, Enfield, and Lanyon all practise discretion to the point of wilful blindness',
       'The setting of respectable London with its hidden back-streets mirrors the theme of concealment',
       "Hyde uses the back door of Jekyll's house - literally and symbolically entering through a hidden entrance",
-      "Jekyll's confession reveals 'a morbid sense of shame' drove him to create Hyde, not genuine evil",
+      "Jekyll's confession reveals that 'an almost morbid sense of shame', not genuine evil, drove him to create Hyde",
       'AQA focus: connect to the strict social codes and double standards of the Victorian era',
     ],
     keyQuotes: [
@@ -312,8 +320,8 @@ const themes = [
       "Hyde's violence escalates through the novella: from trampling a child to beating Sir Danvers Carew to death. This escalation suggests that evil, once indulged, cannot be contained. Hyde's violence is gratuitous and pleasurable to him, representing pure malice without conscience. Stevenson presents evil not as an external force but as something within every person, waiting to be unleashed.",
     keyPoints: [
       "The trampling of the girl is callous and casual - evil begins with indifference to others' suffering",
-      "The Carew murder is described with savage animal imagery: 'ape-like fury,' 'bones audibly shattered'",
-      "Hyde's violence is specifically described as pleasurable: 'a gust of delight' - this is Stevenson's most disturbing claim about human nature",
+      "The Carew murder is described with savage animal imagery: 'ape-like fury,' 'the bones were audibly shattered'",
+      "Hyde's violence is specifically described as pleasurable: 'tasting delight from every blow' - this is Stevenson's most disturbing claim about human nature",
       'The violence is always committed at night, in hidden or empty spaces - evil thrives in darkness and secrecy',
       "Hyde's victims are vulnerable (a child, an elderly man) - evil preys on the weak",
       'AQA focus: analyse how Stevenson uses escalating violence to convey his message about human nature',
@@ -321,7 +329,7 @@ const themes = [
     keyQuotes: [
       "'the man trampled calmly over the child's body'",
       "'with ape-like fury, he was trampling his victim under foot and hailing down a storm of blows'",
-      "'a gust of delight'",
+      "'tasting delight from every blow'",
       "'bones were audibly shattered'",
     ],
   },
@@ -340,8 +348,8 @@ const themes = [
     ],
     keyQuotes: [
       "'I concealed my pleasures'",
-      "'I was the chief of sinners, I was also the chief of sufferers'",
-      "'a certain gaiety of disposition... such as I found it hard to reconcile with a wear and austere life'",
+      "'If I am the chief of sinners, I am the chief of sufferers also'",
+      "'a certain impatient gaiety of disposition... such as I found it hard to reconcile with my imperious desire to carry my head high'",
     ],
   },
 ]
@@ -378,7 +386,7 @@ const keyQuotations = [
       "Hyde provokes instinctive, irrational revulsion in everyone who meets him. The contradiction ('disliked... scarce know why') suggests that evil is felt rather than understood. Stevenson creates horror through vagueness - the inability to describe Hyde's wrongness is more unsettling than any specific deformity. Language fails in the presence of pure evil.",
   },
   {
-    quote: 'Something troglodytic... the man seems hardly human',
+    quote: 'The man seems hardly human! Something troglodytic, shall we say?',
     speaker: 'Utterson (Chapter 2)',
     analysis:
       "'Troglodytic' means cave-dweller, linking Hyde to evolutionary regression. Stevenson draws on Darwin's theory to suggest that evil represents a devolution to a more primitive state. 'Hardly human' places Hyde at the boundary between human and animal, civilised and savage - a terrifying idea for Victorians anxious about their place in the natural order.",
@@ -412,7 +420,7 @@ const keyQuotations = [
     quote: 'I have had a shock... and I shall never recover',
     speaker: 'Lanyon (Chapter 6)',
     analysis:
-      "Lanyon represents conventional, rational science. His destruction symbolises the failure of reason to contain or explain the irrational. 'Never recover' is both literal (he dies) and philosophical - once you see the truth about human nature, you cannot unsee it. The ellipsis mirrors his inability to articulate what he has witnessed.",
+      "Lanyon represents conventional, rational science. His destruction symbolises the failure of reason to contain or explain the irrational. 'Never recover' is both literal (he dies) and philosophical - once you see the truth about human nature, you cannot unsee it. He adds, 'It is a question of weeks', facing his own death with a doctor's flat precision.",
   },
   {
     quote: 'all human beings... are commingled out of good and evil',
@@ -434,7 +442,7 @@ const keyQuotations = [
       "A Juggernaut was a Hindu idol under whose wheels devotees were said to throw themselves. The simile presents Hyde as an unstoppable, crushing force. 'Damned' carries both casual and religious meaning - Hyde is literally hellish. The exotic reference also reflects Victorian Orientalism and fear of the 'uncivilised.'",
   },
   {
-    quote: 'a haunting sense of unexpressed deformity',
+    quote: 'the haunting sense of unexpressed deformity',
     speaker: 'Narrator describing responses to Hyde',
     analysis:
       "'Unexpressed' is crucial - Hyde's evil cannot be put into words. Multiple characters try and fail to describe what is wrong with him. This 'deformity' is moral, not physical, yet it registers as physical. Stevenson suggests that evil is a presence felt instinctively, beyond rational description. The adjective 'haunting' adds a supernatural quality.",
@@ -487,9 +495,9 @@ const essayQuestions = [
     plan: [
       "Introduction: Stevenson presents duality as a universal human condition, using Jekyll and Hyde to argue that all people contain both good and evil. The novella critiques Victorian society's refusal to acknowledge this truth.",
       "Paragraph 1 - Jekyll's confession: 'Man is not truly one, but truly two.' Analyse the declarative sentence as a scientific discovery. 'Truly' repeated for emphasis. Link to the Victorian pressure to present a single, respectable identity. Jekyll's 'profound duplicity of life' shows duality is forced by society.",
-      "Paragraph 2 - Hyde's appearance: Characters describe 'a haunting sense of unexpressed deformity' - evil cannot be articulated but is instinctively felt. 'Troglodytic' and 'ape-like' link to Darwin and fears of evolutionary regression. Hyde's physical smallness reflects the repressed, underdeveloped nature of evil.",
+      "Paragraph 2 - Hyde's appearance: Those who saw Hyde agree only on 'the haunting sense of unexpressed deformity' - evil cannot be articulated but is instinctively felt. 'Troglodytic' and 'ape-like' link to Darwin and fears of evolutionary regression. Hyde's physical smallness reflects the repressed, underdeveloped nature of evil.",
       "Paragraph 3 - The setting as duality: Jekyll's house has a respectable front and a sinister back entrance. London's fog and darkness obscure truth. The structure of the novella itself conceals the truth until the final chapters - the reader experiences the same deception as the characters.",
-      "Paragraph 4 - The failure of separation: 'All human beings are commingled out of good and evil.' Jekyll's experiment fails because duality cannot be resolved by division. Hyde grows stronger ('I was slowly losing hold of my original and better self'). Stevenson's message: repression strengthens the very thing it tries to eliminate.",
+      "Paragraph 4 - The failure of separation: 'All human beings, as we meet them, are commingled out of good and evil.' Jekyll's experiment fails because duality cannot be resolved by division. Hyde grows stronger ('I was slowly losing hold of my original and better self'). Stevenson's message: repression strengthens the very thing it tries to eliminate.",
       'Conclusion: Stevenson warns that the Victorian obsession with respectability creates monsters. True moral health requires acknowledging duality, not denying it. The novella remains relevant because the tension between public identity and private self is universal.',
     ],
   },
@@ -499,7 +507,7 @@ const essayQuestions = [
       'Introduction: Stevenson presents Hyde as terrifying precisely because he cannot be described or categorised. He exists outside the boundaries of Victorian social norms, scientific understanding, and even language itself.',
       "Paragraph 1 - Physical description through vagueness: 'I never saw a man I so disliked, and yet I scarce know why.' Multiple characters fail to describe Hyde - their language breaks down. 'Unexpressed deformity' creates horror through absence. Stevenson makes the reader's imagination do the work, which is more frightening than any specific description.",
       "Paragraph 2 - Animal and primitive imagery: 'Ape-like fury,' 'troglodytic,' 'hardly human.' Link to Darwin and Victorian fears of degeneration. Hyde represents regression to a pre-civilised state. He threatens the Victorian belief in human progress and moral evolution. He is frightening because he suggests civilisation is a thin veneer.",
-      "Paragraph 3 - Escalating violence: From trampling 'calmly' over a child to murdering Carew with 'a storm of blows.' The adverb 'calmly' is the most disturbing word - it shows absence of conscience, not loss of control. Hyde's violence is pleasurable ('a gust of delight'), suggesting evil is natural, not aberrant.",
+      "Paragraph 3 - Escalating violence: From trampling 'calmly' over a child to murdering Carew with 'a storm of blows.' The adverb 'calmly' is the most disturbing word - it shows absence of conscience, not loss of control. Hyde's violence is pleasurable ('tasting delight from every blow'), suggesting evil is natural, not aberrant.",
       "Paragraph 4 - Social outsider: Hyde has no family, no history, no social connections. He cannot be placed within Victorian society's rigid categories. His existence threatens the social order itself. 'Satan's signature upon a face' - religious language is the only framework that can contain him, and even that fails.",
       'Conclusion: Hyde is frightening because he reveals an uncomfortable truth: evil is not external but internal. He is not a stranger but a part of Jekyll - and, by extension, a part of every respectable Victorian gentleman. The real horror is recognition.',
     ],
@@ -511,7 +519,7 @@ const essayQuestions = [
       "Paragraph 1 - Jekyll's motivation: 'I concealed my pleasures' - the unspecified 'pleasures' show that concealment matters more than the act itself. Jekyll creates Hyde not to be evil but to protect his reputation while being evil. His 'morbid sense of shame' is a product of society's impossible standards.",
       "Paragraph 2 - The gentleman's code: Utterson and Enfield agree not to discuss what they have seen. Utterson 'let[s] my brother go to the devil in his own way.' Discretion is presented as loyalty but actually enables wrongdoing. Stevenson shows that the Victorian code of silence among gentlemen protects criminals.",
       "Paragraph 3 - Physical symbols: Jekyll's house has a grand front and a neglected back entrance. Hyde uses the back door. The architecture of Victorian London mirrors the architecture of Victorian identity - a respectable facade concealing squalor. Fog obscures both streets and truth.",
-      "Paragraph 4 - The cost of reputation: Jekyll becomes trapped: 'I was the chief of sinners, I was also the chief of sufferers.' Lanyon dies rather than live with knowledge that would destroy his worldview. Reputation does not just shape behaviour - it kills those who cannot maintain the pretence. The novella's structure (concealment until the final chapters) forces the reader to experience how reputation controls information.",
+      "Paragraph 4 - The cost of reputation: Jekyll becomes trapped: 'If I am the chief of sinners, I am the chief of sufferers also.' Lanyon dies rather than live with knowledge that would destroy his worldview. Reputation does not just shape behaviour - it kills those who cannot maintain the pretence. The novella's structure (concealment until the final chapters) forces the reader to experience how reputation controls information.",
       "Conclusion: Stevenson suggests that the Victorian cult of respectability does not prevent sin but simply hides it. The novella's enduring power lies in its message that reputation is a mask, and that the pressure to wear it creates the very evils society claims to abhor.",
     ],
   },

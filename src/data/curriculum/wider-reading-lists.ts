@@ -1,15 +1,23 @@
 export interface WiderReadingEntry {
-  id: string;
-  title: string;
-  author: string;
-  yearGroup: string | string[];
-  genre: 'fiction' | 'non-fiction' | 'poetry' | 'play' | 'short-story' | 'essay' | 'biography' | 'graphic-novel';
-  difficulty: 'accessible' | 'on-level' | 'challenging';
-  synopsis: string;
-  whyRecommended: string;
-  curriculumLink: string;
-  themes: string[];
-  discussionQuestions: string[];
+  id: string
+  title: string
+  author: string
+  yearGroup: string | string[]
+  genre:
+    | 'fiction'
+    | 'non-fiction'
+    | 'poetry'
+    | 'play'
+    | 'short-story'
+    | 'essay'
+    | 'biography'
+    | 'graphic-novel'
+  difficulty: 'accessible' | 'on-level' | 'challenging'
+  synopsis: string
+  whyRecommended: string
+  curriculumLink: string
+  themes: string[]
+  discussionQuestions: string[]
 }
 
 export const widerReadingList: WiderReadingEntry[] = [
@@ -31,7 +39,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     discussionQuestions: [
       'How does Palacio use multiple narrators to change your sympathy for different characters?',
       'What does the novel suggest about the difference between looking "normal" and being treated normally?',
-      'Choose a scene from a minor character\'s point of view and consider what it adds to the main story.',
+      "Choose a scene from a minor character's point of view and consider what it adds to the main story.",
     ],
   },
   {
@@ -110,7 +118,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     themes: ['grief', 'truth', 'guilt', 'stories', 'loss', 'courage'],
     discussionQuestions: [
       "Why does the monster insist on 'the truth' and why is it so hard for Conor to speak it?",
-      'How do the three stories the monster tells relate to Conor\'s situation?',
+      "How do the three stories the monster tells relate to Conor's situation?",
       'What does the novel suggest about the function of stories in helping us cope with pain?',
     ],
   },
@@ -142,7 +150,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'on-level',
     synopsis:
-      'Fifteen-year-old Christopher, who has a form of autism, investigates the murder of his neighbour\'s dog. His literal, logical narration gradually uncovers secrets about his own family.',
+      "Fifteen-year-old Christopher, who has a form of autism, investigates the murder of his neighbour's dog. His literal, logical narration gradually uncovers secrets about his own family.",
     whyRecommended:
       "An outstanding example of unreliable first-person narration. The novel challenges students to read 'between the lines' and consider what Christopher cannot understand about his own story.",
     curriculumLink:
@@ -162,7 +170,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'graphic-novel',
     difficulty: 'on-level',
     synopsis:
-      'A graphic memoir depicting Satrapi\'s childhood in Iran during and after the Islamic Revolution. She traces her family\'s resistance, her own rebellious spirit, and her eventual exile to Europe.',
+      "A graphic memoir depicting Satrapi's childhood in Iran during and after the Islamic Revolution. She traces her family's resistance, her own rebellious spirit, and her eventual exile to Europe.",
     whyRecommended:
       'Introduces students to memoir and graphic narrative simultaneously. The interplay of image and text is an excellent model for exploring how visual and verbal choices create meaning.',
     curriculumLink:
@@ -210,7 +218,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     themes: ['racism', 'power', 'forbidden love', 'inequality', 'resistance', 'privilege'],
     discussionQuestions: [
       'How does reversing the racial hierarchy make readers reconsider their own assumptions about race?',
-      'Compare Callum and Sephy\'s relationship to other "star-crossed lovers" you have encountered.',
+      'Compare Callum and Sephy\'s relationship to other "star-cross\'d lovers" you have encountered.',
       'What does the novel suggest about the personal costs of systemic inequality?',
     ],
   },
@@ -229,11 +237,18 @@ export const widerReadingList: WiderReadingEntry[] = [
       'A foundational text for studying allegory and symbolism. The novel raises questions about human nature that students will revisit at GCSE and A-level.',
     curriculumLink:
       'Bridges to Y9 and GCSE social/political themes; supports extended analytical writing on allegorical texts.',
-    themes: ['civilisation vs savagery', 'power', 'fear', 'leadership', 'human nature', 'loss of innocence'],
+    themes: [
+      'civilisation vs savagery',
+      'power',
+      'fear',
+      'leadership',
+      'human nature',
+      'loss of innocence',
+    ],
     discussionQuestions: [
       'What does Golding suggest about whether evil is innate or socially constructed?',
-      'How do the symbolic objects (the conch, Piggy\'s glasses, the beast) develop the allegory?',
-      'Is Ralph\'s leadership ever truly democratic? Support your answer with evidence from the text.',
+      "How do the symbolic objects (the conch, Piggy's glasses, the beast) develop the allegory?",
+      "Is Ralph's leadership ever truly democratic? Support your answer with evidence from the text.",
     ],
   },
   {
@@ -246,13 +261,13 @@ export const widerReadingList: WiderReadingEntry[] = [
     synopsis:
       'Fourteen-year-old Ponyboy Curtis belongs to the Greasers, a gang of working-class boys in 1960s Oklahoma. When a violent confrontation with the rival Socs leads to tragedy, Ponyboy must question loyalty, class, and what it means to be good.',
     whyRecommended:
-      'Written by a teenager, the novel\'s authentic voice resonates strongly with Y8 readers. It is ideal for exploring class, masculinity, and the pressure to conform.',
+      "Written by a teenager, the novel's authentic voice resonates strongly with Y8 readers. It is ideal for exploring class, masculinity, and the pressure to conform.",
     curriculumLink:
       'Links to Y8 social justice writing unit and work on voice; bridges to GCSE themes of conflict and community.',
     themes: ['class', 'loyalty', 'masculinity', 'violence', 'belonging', 'growing up'],
     discussionQuestions: [
       "How does Hinton use Ponyboy's love of literature and sunsets to complicate the 'tough gang member' stereotype?",
-      'What does the novel suggest about whether social class determines a person\'s character?',
+      "What does the novel suggest about whether social class determines a person's character?",
       "Compare the Greasers' code of loyalty to the values promoted by the Socs.",
     ],
   },
@@ -272,7 +287,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     themes: ['manipulation', 'genius', 'ethics of war', 'childhood', 'isolation', 'empathy'],
     discussionQuestions: [
       'Are the adults in the novel justified in deceiving Ender for the greater good?',
-      'How does Ender\'s ability to understand his enemies relate to the novel\'s ending?',
+      "How does Ender's ability to understand his enemies relate to the novel's ending?",
       'What does the novel suggest about the relationship between violence and intelligence?',
     ],
   },
@@ -329,11 +344,18 @@ export const widerReadingList: WiderReadingEntry[] = [
       "Using an abridged edition, Y8 students can engage with one of the central texts in the Western literary tradition. Scout's child perspective makes complex injustice accessible without simplifying it.",
     curriculumLink:
       'Bridges to IGCSE and GCSE thematic study of justice, race, and moral courage; supports work on narrative perspective.',
-    themes: ['racial injustice', 'moral courage', 'innocence', 'class', 'empathy', 'the American South'],
+    themes: [
+      'racial injustice',
+      'moral courage',
+      'innocence',
+      'class',
+      'empathy',
+      'the American South',
+    ],
     discussionQuestions: [
       "How does Scout's perspective as a child shape what she understands and misunderstands about the trial?",
-      'What does Atticus mean when he tells Scout to climb into someone else\'s skin and walk around in it?',
-      'Why does Boo Radley matter to the novel\'s themes despite appearing so rarely?',
+      "What does Atticus mean when he tells Scout to climb into someone else's skin and walk around in it?",
+      "Why does Boo Radley matter to the novel's themes despite appearing so rarely?",
     ],
   },
   {
@@ -344,7 +366,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'challenging',
     synopsis:
-      "Dana, a Black woman living in 1970s California, is repeatedly pulled back in time to a pre-Civil War Maryland plantation where she must protect the white ancestor whose survival ensures her own existence. The opening chapters are used as an extract.",
+      'Dana, a Black woman living in 1970s California, is repeatedly pulled back in time to a pre-Civil War Maryland plantation where she must protect the white ancestor whose survival ensures her own existence. The opening chapters are used as an extract.',
     whyRecommended:
       "Butler's time-slip structure makes the brutality of slavery viscerally present for contemporary readers. The extract is an outstanding model of gripping narrative opening and genre subversion.",
     curriculumLink:
@@ -364,7 +386,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'challenging',
     synopsis:
-      "In a future World State, humans are engineered and conditioned from birth. Happiness is enforced through pleasure and the drug soma. The opening chapters introducing the Hatchery and the conditioning process are studied as an extract.",
+      'In a future World State, humans are engineered and conditioned from birth. Happiness is enforced through pleasure and the drug soma. The opening chapters introducing the Hatchery and the conditioning process are studied as an extract.',
     whyRecommended:
       "Huxley's chilling vision of a 'perfect' society introduces students to satirical dystopia and prepares them for 1984 and GCSE/A-level study of dystopian fiction.",
     curriculumLink:
@@ -384,7 +406,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'challenging',
     synopsis:
-      "Winston Smith lives in Airstrip One under the totalitarian surveillance of Big Brother. The opening chapters establishing the world of Oceania, Newspeak, and the Ministry of Truth are studied as an extract.",
+      'Winston Smith lives in Airstrip One under the totalitarian surveillance of Big Brother. The opening chapters establishing the world of Oceania, Newspeak, and the Ministry of Truth are studied as an extract.',
     whyRecommended:
       "Orwell's political vocabulary -- doublethink, Newspeak, the memory hole -- has become essential cultural literacy. The opening chapters are accessible enough for Y8 while the ideas are richly complex.",
     curriculumLink:
@@ -393,7 +415,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     discussionQuestions: [
       "How does Orwell use the physical description of Winston's world to convey oppression?",
       "What is 'doublethink' and can you find examples of it in contemporary political language?",
-      "Why does the Party want to control language? What is the relationship between language and thought?",
+      'Why does the Party want to control language? What is the relationship between language and thought?',
     ],
   },
   {
@@ -404,12 +426,19 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'on-level',
     synopsis:
-      "The animals of Manor Farm overthrow their human farmer and establish a republic based on equality. But as the pigs consolidate power, the founding commandments are quietly rewritten and the revolution betrays its own ideals.",
+      'The animals of Manor Farm overthrow their human farmer and establish a republic based on equality. But as the pigs consolidate power, the founding commandments are quietly rewritten and the revolution betrays its own ideals.',
     whyRecommended:
-      "A compact, accessible political allegory ideal for Y8. It teaches students to read on two levels simultaneously and prepares them for more complex allegorical texts at GCSE.",
+      'A compact, accessible political allegory ideal for Y8. It teaches students to read on two levels simultaneously and prepares them for more complex allegorical texts at GCSE.',
     curriculumLink:
       'Directly supports Y8 rhetoric and propaganda unit; links to history curriculum on the Russian Revolution.',
-    themes: ['power and corruption', 'propaganda', 'revolution', 'equality', 'language', 'betrayal'],
+    themes: [
+      'power and corruption',
+      'propaganda',
+      'revolution',
+      'equality',
+      'language',
+      'betrayal',
+    ],
     discussionQuestions: [
       "How does Orwell use the animals' different abilities and characteristics to represent different social groups?",
       "Track how the commandment 'All animals are equal' is gradually corrupted. What does this suggest about political language?",
@@ -426,7 +455,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'on-level',
     synopsis:
-      "Kathy, Ruth, and Tommy grow up at Hailsham, an idyllic English boarding school. Only gradually does Ishiguro reveal that these children have been created as organ donors and their lives are carefully predetermined.",
+      'Kathy, Ruth, and Tommy grow up at Hailsham, an idyllic English boarding school. Only gradually does Ishiguro reveal that these children have been created as organ donors and their lives are carefully predetermined.',
     whyRecommended:
       "Ishiguro's understated, elliptical prose is a masterclass in what is left unsaid. The novel is an ideal GCSE bridge text for practising inference, tone, and thematic analysis.",
     curriculumLink:
@@ -471,9 +500,16 @@ export const widerReadingList: WiderReadingEntry[] = [
       "Adichie's lyrical prose and structurally confident debut explores religion, domestic violence, and post-colonial identity with great nuance. An essential text for diversifying the Y9 canon.",
     curriculumLink:
       'Supports Y9 global voices reading strand; links to IGCSE and A-level postcolonial literature study.',
-    themes: ['religion', 'domestic abuse', 'freedom', 'post-colonial Nigeria', 'silence', 'coming of age'],
+    themes: [
+      'religion',
+      'domestic abuse',
+      'freedom',
+      'post-colonial Nigeria',
+      'silence',
+      'coming of age',
+    ],
     discussionQuestions: [
-      'How does Adichie use silence and voice as recurring motifs to track Kambili\'s development?',
+      "How does Adichie use silence and voice as recurring motifs to track Kambili's development?",
       'What is the significance of the purple hibiscus flowers in the novel?',
       "How does Eugene's Catholicism coexist with his abuse, and what does this reveal about religious hypocrisy?",
     ],
@@ -486,7 +522,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'on-level',
     synopsis:
-      "Okonkwo is a proud warrior and leader in the Igbo community of Umuofia. When British missionaries and colonial administrators arrive, his world and his identity are systematically dismantled.",
+      'Okonkwo is a proud warrior and leader in the Igbo community of Umuofia. When British missionaries and colonial administrators arrive, his world and his identity are systematically dismantled.',
     whyRecommended:
       "Achebe wrote this novel explicitly to challenge the Eurocentric representation of Africa in texts like Conrad's Heart of Darkness. It is essential reading for understanding postcolonial counter-narrative.",
     curriculumLink:
@@ -495,7 +531,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     discussionQuestions: [
       'How does Achebe present Igbo culture with complexity and dignity to counter colonial stereotypes?',
       "Is Okonkwo a tragic hero in the classical sense? Compare his 'fatal flaw' to characters from other texts.",
-      'What does the title, taken from a Yeats poem, suggest about the novel\'s themes?',
+      "What does the title, taken from a Yeats poem, suggest about the novel's themes?",
     ],
   },
   {
@@ -506,15 +542,22 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'challenging',
     synopsis:
-      "Pip, a poor orphan, is lifted into the middle classes by a mysterious benefactor. His obsession with becoming a gentleman and winning the love of Estella leads him to neglect his true friends and values.",
+      'Pip, a poor orphan, is lifted into the middle classes by a mysterious benefactor. His obsession with becoming a gentleman and winning the love of Estella leads him to neglect his true friends and values.',
     whyRecommended:
-      "One of the great novels of social mobility and self-deception. Y9 study of this text builds the extended reading stamina and contextual knowledge essential for GCSE.",
+      'One of the great novels of social mobility and self-deception. Y9 study of this text builds the extended reading stamina and contextual knowledge essential for GCSE.',
     curriculumLink:
       'Direct bridge to GCSE Victorian literature study; supports work on social context, irony, and character development across a long narrative.',
-    themes: ['social class', 'ambition', 'guilt', 'love and obsession', 'Victorian England', 'identity'],
+    themes: [
+      'social class',
+      'ambition',
+      'guilt',
+      'love and obsession',
+      'Victorian England',
+      'identity',
+    ],
     discussionQuestions: [
       "How does Dickens use the marshes and Satis House as symbolic settings that reflect Pip's psychology?",
-      "Is Miss Havisham a villain, a victim, or both? Consider how Dickens invites us to judge her.",
+      'Is Miss Havisham a villain, a victim, or both? Consider how Dickens invites us to judge her.',
       'What does the novel suggest about the true meaning of being a gentleman?',
     ],
   },
@@ -526,7 +569,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'challenging',
     synopsis:
-      "Celie, a young Black woman in the American Deep South, writes letters to God and her sister Nettie as she endures poverty, abuse, and oppression. Through the love of women around her, she finds her voice and her freedom.",
+      'Celie, a young Black woman in the American Deep South, writes letters to God and her sister Nettie as she endures poverty, abuse, and oppression. Through the love of women around her, she finds her voice and her freedom.',
     whyRecommended:
       "Walker's use of vernacular dialect as a literary device is an important model. The epistolary form and the question of who controls narrative are central A-level concerns introduced here.",
     curriculumLink:
@@ -534,7 +577,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     themes: ['abuse', 'female solidarity', 'race', 'spirituality', 'voice', 'liberation'],
     discussionQuestions: [
       "What is the effect of Walker's choice to write in Celie's own dialect rather than 'correcting' her speech?",
-      'How does the relationship between Celie and Shug Avery change Celie\'s understanding of herself and God?',
+      "How does the relationship between Celie and Shug Avery change Celie's understanding of herself and God?",
       "Compare the conditions of Celie's life in America with what Nettie describes in Africa. What parallels does Walker draw?",
     ],
   },
@@ -566,14 +609,14 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'challenging',
     synopsis:
-      "In the theocratic Republic of Gilead, women are stripped of all rights and reduced to reproductive function. Offred, a Handmaid, recounts her daily life and her suppressed resistance in a near-future America. The opening section is studied as an extract.",
+      'In the theocratic Republic of Gilead, women are stripped of all rights and reduced to reproductive function. Offred, a Handmaid, recounts her daily life and her suppressed resistance in a near-future America. The opening section is studied as an extract.',
     whyRecommended:
       "Atwood's dystopia is the defining feminist speculative text of the twentieth century. The opening section introduces students to Atwood's meticulous world-building before full study at IGCSE or A-level.",
     curriculumLink:
       "Bridges to IGCSE and A-level feminist dystopia; supports Y9 work on context and women's rights.",
     themes: ['gender', 'totalitarianism', 'fertility', 'resistance', 'language', 'memory'],
     discussionQuestions: [
-      "How does Atwood create a sense of menace through description of ordinary, domestic space?",
+      'How does Atwood create a sense of menace through description of ordinary, domestic space?',
       'What is the significance of names and naming in Gilead?',
       "How does Offred's narration make her both a reliable and an unreliable witness?",
     ],
@@ -593,8 +636,8 @@ export const widerReadingList: WiderReadingEntry[] = [
       'Bridges to A-level American literature; supports Y9 work on Gothic conventions and the representation of trauma.',
     themes: ['slavery', 'motherhood', 'trauma', 'memory', 'haunting', 'freedom'],
     discussionQuestions: [
-      "How does Morrison use the Gothic convention of the ghost to explore the psychological legacy of slavery?",
-      "What does the novel suggest about the relationship between memory and identity?",
+      'How does Morrison use the Gothic convention of the ghost to explore the psychological legacy of slavery?',
+      'What does the novel suggest about the relationship between memory and identity?',
       "Why might Morrison describe the novel as 'not a story to pass on'? What does this paradox mean?",
     ],
   },
@@ -606,12 +649,19 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'on-level',
     synopsis:
-      "Two displaced ranch workers, the intellectually limited Lennie and his pragmatic companion George, cling to their dream of owning land during the Great Depression -- until a tragic accident makes that dream impossible.",
+      'Two displaced ranch workers, the intellectually limited Lennie and his pragmatic companion George, cling to their dream of owning land during the Great Depression -- until a tragic accident makes that dream impossible.',
     whyRecommended:
-      "A structurally precise, thematically rich novella that is ideal for close study at the GCSE bridge stage. Every detail is purposeful; students learn to read economical prose with analytical precision.",
+      'A structurally precise, thematically rich novella that is ideal for close study at the GCSE bridge stage. Every detail is purposeful; students learn to read economical prose with analytical precision.',
     curriculumLink:
       'Core preparation for GCSE English Literature; the novella appears on several specifications and bridges directly to exam technique.',
-    themes: ['the American Dream', 'friendship', 'loneliness', 'disability', 'power', 'the Great Depression'],
+    themes: [
+      'the American Dream',
+      'friendship',
+      'loneliness',
+      'disability',
+      'power',
+      'the Great Depression',
+    ],
     discussionQuestions: [
       "How does Steinbeck use Crooks, Candy, and Curley's wife to explore the different faces of loneliness?",
       "Is George's final act one of love, mercy, or betrayal? Can it be all three simultaneously?",
@@ -635,7 +685,7 @@ export const widerReadingList: WiderReadingEntry[] = [
       'IGCSE and A-level modernist prose; supports analysis of stream-of-consciousness technique and dual narrative structure.',
     themes: ['time', 'memory', 'mental health', 'gender', 'class', 'post-war society'],
     discussionQuestions: [
-      "How does Woolf use the stream-of-consciousness technique to explore the relationship between external events and inner life?",
+      'How does Woolf use the stream-of-consciousness technique to explore the relationship between external events and inner life?',
       'What is the significance of the structural parallel between Clarissa and Septimus?',
       "How does Woolf use London's cityscape as a reflection of the social hierarchies of 1920s Britain?",
     ],
@@ -648,14 +698,21 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'on-level',
     synopsis:
-      "Nick Carraway narrates the story of his mysterious neighbour Jay Gatsby, whose lavish parties and obsessive pursuit of the dream of wealth and Daisy Buchanan embody and ultimately expose the corruption of the American Dream.",
+      'Nick Carraway narrates the story of his mysterious neighbour Jay Gatsby, whose lavish parties and obsessive pursuit of the dream of wealth and Daisy Buchanan embody and ultimately expose the corruption of the American Dream.',
     whyRecommended:
-      "A concise, formally crafted novel that rewards close reading at every level -- symbol, narrative perspective, social satire. It is one of the most analysed texts in English literature.",
+      'A concise, formally crafted novel that rewards close reading at every level -- symbol, narrative perspective, social satire. It is one of the most analysed texts in English literature.',
     curriculumLink:
       'IGCSE and A-level American literature; supports sustained close reading of symbolic language and narrative technique.',
-    themes: ['the American Dream', 'class', 'obsession', 'the 1920s', 'illusion vs reality', 'moral corruption'],
+    themes: [
+      'the American Dream',
+      'class',
+      'obsession',
+      'the 1920s',
+      'illusion vs reality',
+      'moral corruption',
+    ],
     discussionQuestions: [
-      'What does the green light at the end of the Buchanans\' dock symbolise, and how does its meaning shift?',
+      "What does the green light at the end of the Buchanans' dock symbolise, and how does its meaning shift?",
       'Nick claims to be one of the few honest people he has ever known. Is this claim supported by the text?',
       'What does the Valley of Ashes represent, and why does Fitzgerald place it between West Egg and New York?',
     ],
@@ -668,7 +725,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'challenging',
     synopsis:
-      "Sethe, a formerly enslaved woman, is haunted by the ghost of her dead daughter. When the ghost takes physical form as a young woman called Beloved, the unresolved trauma of slavery threatens to consume the living.",
+      'Sethe, a formerly enslaved woman, is haunted by the ghost of her dead daughter. When the ghost takes physical form as a young woman called Beloved, the unresolved trauma of slavery threatens to consume the living.',
     whyRecommended:
       "Widely considered Morrison's masterpiece and one of the greatest American novels. Its fusion of Gothic, historical, and African oral traditions demands and rewards the highest levels of literary analysis.",
     curriculumLink:
@@ -688,7 +745,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'on-level',
     synopsis:
-      "Janie Crawford recounts three marriages and her journey toward self-discovery in the Black communities of early 20th-century Florida. Her story is framed as a tale told to a friend on the evening she returns to her hometown.",
+      'Janie Crawford recounts three marriages and her journey toward self-discovery in the Black communities of early 20th-century Florida. Her story is framed as a tale told to a friend on the evening she returns to her hometown.',
     whyRecommended:
       "Hurston's use of African-American vernacular dialect as a literary form equal to Standard English is groundbreaking. The novel is essential for studying voice, gender, and the Harlem Renaissance.",
     curriculumLink:
@@ -697,7 +754,7 @@ export const widerReadingList: WiderReadingEntry[] = [
     discussionQuestions: [
       "What is the significance of Hurston's choice to write in African-American vernacular dialect?",
       "How does each of Janie's three marriages represent a different stage of her self-realisation?",
-      "The novel opens with Janie returning. How does the framing narrative shape our interpretation of her story?",
+      'The novel opens with Janie returning. How does the framing narrative shape our interpretation of her story?',
     ],
   },
   {
@@ -712,8 +769,15 @@ export const widerReadingList: WiderReadingEntry[] = [
     whyRecommended:
       "Plath's precise, mordantly witty prose is a masterclass in first-person narration and the representation of mental illness. The novel speaks powerfully to students about the pressures placed on women and high-achievers.",
     curriculumLink:
-      "IGCSE and A-level; supports work on confessional writing, gender and 1950s America, and the relationship between author and narrator.",
-    themes: ['mental illness', 'gender', 'ambition', "women's roles in the 1950s", 'identity', 'confinement'],
+      'IGCSE and A-level; supports work on confessional writing, gender and 1950s America, and the relationship between author and narrator.',
+    themes: [
+      'mental illness',
+      'gender',
+      'ambition',
+      "women's roles in the 1950s",
+      'identity',
+      'confinement',
+    ],
     discussionQuestions: [
       'How does Plath use the metaphor of the bell jar to represent depression?',
       "What does the novel reveal about the contradictions in society's expectations of women in the 1950s?",
@@ -728,14 +792,14 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'challenging',
     synopsis:
-      "Bigger Thomas, a young Black man living in poverty in 1930s Chicago, accidentally kills a white woman and faces an almost entirely corrupt justice system. Wright presents Bigger as a product of a racist society that has denied him any other identity.",
+      'Bigger Thomas, a young Black man living in poverty in 1930s Chicago, accidentally kills a white woman and faces an almost entirely corrupt justice system. Wright presents Bigger as a product of a racist society that has denied him any other identity.',
     whyRecommended:
       "Wright's novel is a furious, unflinching examination of structural racism and the psychology of oppression. It is essential for understanding the tradition of African-American protest literature.",
     curriculumLink:
       'IGCSE and A-level American literature; supports study of naturalism, protest fiction, and social determinism.',
     themes: ['racism', 'poverty', 'fear', 'justice', 'determinism', 'American society'],
     discussionQuestions: [
-      "Wright presents Bigger as simultaneously a victim and an agent. How does the novel balance these two readings?",
+      'Wright presents Bigger as simultaneously a victim and an agent. How does the novel balance these two readings?',
       "How does the portrayal of the American justice system challenge the concept of 'equal justice under law'?",
       "Compare Wright's naturalistic style to the approach of other writers addressing racial injustice. What does his method gain?",
     ],
@@ -748,9 +812,9 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'play',
     difficulty: 'on-level',
     synopsis:
-      "The Younger family, three generations living in a cramped Chicago apartment, must decide how to spend a $10,000 life insurance payment. Their conflicting dreams -- of a home, a business, an identity -- reflect the tensions of Black American life in the 1950s.",
+      'The Younger family, three generations living in a cramped Chicago apartment, must decide how to spend a $10,000 life insurance payment. Their conflicting dreams -- of a home, a business, an identity -- reflect the tensions of Black American life in the 1950s.',
     whyRecommended:
-      "A landmark American play that brings together class, race, gender, and the American Dream in a compact dramatic form. Ideal for students studying drama and for comparison with other IGCSE literary texts.",
+      'A landmark American play that brings together class, race, gender, and the American Dream in a compact dramatic form. Ideal for students studying drama and for comparison with other IGCSE literary texts.',
     curriculumLink:
       'IGCSE and A-level; supports dramatic analysis, the American Dream theme, and study of mid-20th-century African-American literature.',
     themes: ['the American Dream', 'race', 'family', 'gender', 'dignity', '1950s America'],
@@ -775,9 +839,9 @@ export const widerReadingList: WiderReadingEntry[] = [
       'IGCSE and A-level non-fiction; supports work on memoir, voice, and the construction of childhood in literary autobiography.',
     themes: ['poverty', 'Catholicism', 'Ireland', 'alcoholism', 'family', 'resilience'],
     discussionQuestions: [
-      "How does McCourt use the perspective of a child narrator to balance tragedy with black comedy?",
-      'What role does the Catholic Church play in the family\'s suffering and in the community\'s culture?',
-      "What techniques does McCourt use to make the reader both laugh and grieve within the same passage?",
+      'How does McCourt use the perspective of a child narrator to balance tragedy with black comedy?',
+      "What role does the Catholic Church play in the family's suffering and in the community's culture?",
+      'What techniques does McCourt use to make the reader both laugh and grieve within the same passage?',
     ],
   },
   {
@@ -793,7 +857,14 @@ export const widerReadingList: WiderReadingEntry[] = [
       "Roy's dazzling prose style, her structural innovations, and her handling of caste and colonialism make this one of the most important postcolonial novels of the 20th century.",
     curriculumLink:
       'IGCSE and A-level; supports postcolonial study, structural analysis, and close reading of figurative prose.',
-    themes: ['caste', 'postcolonialism', 'forbidden love', 'family', 'political violence', 'childhood'],
+    themes: [
+      'caste',
+      'postcolonialism',
+      'forbidden love',
+      'family',
+      'political violence',
+      'childhood',
+    ],
     discussionQuestions: [
       "How does Roy's non-linear structure create both suspense and a sense of tragic inevitability?",
       'What are the "Love Laws" and how do they govern -- and destroy -- the lives of the novel\'s characters?',
@@ -808,16 +879,23 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'fiction',
     difficulty: 'on-level',
     synopsis:
-      "Jeanette grows up in a strict Pentecostal community in the north of England, raised by her domineering mother to be a missionary. When she falls in love with another woman, she must choose between her faith and her identity.",
+      'Jeanette grows up in a strict Pentecostal community in the north of England, raised by her domineering mother to be a missionary. When she falls in love with another woman, she must choose between her faith and her identity.',
     whyRecommended:
       "Winterson's semi-autobiographical novel is a powerful exploration of identity, religious indoctrination, and the uses of storytelling. The interpolated fairy tales within the main narrative are an excellent model of embedded narrative.",
     curriculumLink:
       'IGCSE and A-level; supports work on embedded narrative, LGBTQ+ representation, and the coming-of-age genre.',
-    themes: ['religion', 'sexuality', 'identity', 'mother-daughter relationships', 'storytelling', 'community'],
+    themes: [
+      'religion',
+      'sexuality',
+      'identity',
+      'mother-daughter relationships',
+      'storytelling',
+      'community',
+    ],
     discussionQuestions: [
       "How do the fairy-tale interpolations in the novel comment on or subvert Jeanette's 'real' story?",
-      "What does the novel suggest about the relationship between religion and love?",
-      "How does Winterson use first-person narration to create both intimacy and ironic distance?",
+      'What does the novel suggest about the relationship between religion and love?',
+      'How does Winterson use first-person narration to create both intimacy and ironic distance?',
     ],
   },
 
@@ -830,16 +908,23 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'non-fiction',
     difficulty: 'challenging',
     synopsis:
-      "Pinker argues that human language is not a cultural invention but a biological adaptation -- a distinct faculty shaped by natural selection. He draws on linguistics, cognitive science, and evolutionary biology to make the case.",
+      'Pinker argues that human language is not a cultural invention but a biological adaptation -- a distinct faculty shaped by natural selection. He draws on linguistics, cognitive science, and evolutionary biology to make the case.',
     whyRecommended:
       "Essential reading for IAL Unit 1 Language and Context. Pinker's accessible explanation of universal grammar, the poverty-of-stimulus argument, and language acquisition directly underpins key specification topics.",
     curriculumLink:
       'IAL Unit 1: Language and Context -- language acquisition, universal grammar, and the nature-nurture debate.',
-    themes: ['language acquisition', 'universal grammar', 'evolution', 'cognition', 'Chomsky', 'nativism'],
+    themes: [
+      'language acquisition',
+      'universal grammar',
+      'evolution',
+      'cognition',
+      'Chomsky',
+      'nativism',
+    ],
     discussionQuestions: [
-      "What evidence does Pinker offer for the claim that language is an instinct rather than a learned skill?",
+      'What evidence does Pinker offer for the claim that language is an instinct rather than a learned skill?',
       'What is the poverty-of-stimulus argument and why is it important for debates about acquisition?',
-      "How does Pinker respond to the view that thought is impossible without language? Do you find his argument convincing?",
+      'How does Pinker respond to the view that thought is impossible without language? Do you find his argument convincing?',
     ],
   },
   {
@@ -850,15 +935,21 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'non-fiction',
     difficulty: 'challenging',
     synopsis:
-      "Lakoff and Johnson argue that metaphor is not a poetic ornament but the fundamental mechanism by which human beings understand abstract concepts. They show how everyday language is structured by conceptual metaphors like ARGUMENT IS WAR.",
+      'Lakoff and Johnson argue that metaphor is not a poetic ornament but the fundamental mechanism by which human beings understand abstract concepts. They show how everyday language is structured by conceptual metaphors like ARGUMENT IS WAR.',
     whyRecommended:
-      "Directly relevant to IAL Unit 1 language study and Unit 4 critical theory. The concept of conceptual metaphor is a powerful analytical tool for both language and literary analysis at A-level.",
+      'Directly relevant to IAL Unit 1 language study and Unit 4 critical theory. The concept of conceptual metaphor is a powerful analytical tool for both language and literary analysis at A-level.',
     curriculumLink:
       'IAL Unit 1: Language and Representation; Unit 4: Critical Approaches -- semantics and cognitive linguistics.',
-    themes: ['conceptual metaphor', 'language and thought', 'framing', 'cognitive linguistics', 'embodied meaning'],
+    themes: [
+      'conceptual metaphor',
+      'language and thought',
+      'framing',
+      'cognitive linguistics',
+      'embodied meaning',
+    ],
     discussionQuestions: [
       "Identify three 'conceptual metaphors' Lakoff and Johnson analyse. Find your own examples from contemporary texts.",
-      "What are the political implications of the claim that all our thinking is structured by metaphor?",
+      'What are the political implications of the claim that all our thinking is structured by metaphor?',
       'How might the theory of conceptual metaphor be applied to the literary analysis of a poem or novel?',
     ],
   },
@@ -870,12 +961,19 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'non-fiction',
     difficulty: 'on-level',
     synopsis:
-      "A comprehensive undergraduate-level introduction to the key branches of linguistics: phonology, morphology, syntax, semantics, pragmatics, language acquisition, and sociolinguistics. Widely used as a first-year university textbook.",
+      'A comprehensive undergraduate-level introduction to the key branches of linguistics: phonology, morphology, syntax, semantics, pragmatics, language acquisition, and sociolinguistics. Widely used as a first-year university textbook.',
     whyRecommended:
-      "The clearest and most comprehensive single-volume introduction to linguistics for IAL students. Provides precise technical vocabulary for all areas of the specification and excellent practice exercises.",
+      'The clearest and most comprehensive single-volume introduction to linguistics for IAL students. Provides precise technical vocabulary for all areas of the specification and excellent practice exercises.',
     curriculumLink:
       'Supports all IAL language units; essential reference for Units 1, 2, and 3 terminology and concepts.',
-    themes: ['phonology', 'syntax', 'semantics', 'pragmatics', 'sociolinguistics', 'language acquisition'],
+    themes: [
+      'phonology',
+      'syntax',
+      'semantics',
+      'pragmatics',
+      'sociolinguistics',
+      'language acquisition',
+    ],
     discussionQuestions: [
       'Choose one branch of linguistics (e.g. pragmatics) and explain how the concepts covered apply to a real text you have analysed.',
       'What does the study of morphology reveal about the structure of English that we rarely notice as native speakers?',
@@ -890,16 +988,23 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'non-fiction',
     difficulty: 'challenging',
     synopsis:
-      "A systematic guide to the major schools of literary theory -- formalism, Marxism, psychoanalysis, feminism, postcolonialism, poststructuralism, and more. Each chapter explains key thinkers, terms, and how to apply the theory in practice.",
+      'A systematic guide to the major schools of literary theory -- formalism, Marxism, psychoanalysis, feminism, postcolonialism, poststructuralism, and more. Each chapter explains key thinkers, terms, and how to apply the theory in practice.',
     whyRecommended:
       "The IAL Unit 4 Critical Approaches paper requires confident use of multiple theoretical frameworks. Castle's handbook is the clearest guide available for applying theory to literary texts.",
     curriculumLink:
       'IAL Unit 4: Critical Approaches and Independent Study; supports theoretical framing for all literary texts.',
-    themes: ['formalism', 'Marxist criticism', 'feminist theory', 'postcolonialism', 'psychoanalysis', 'poststructuralism'],
+    themes: [
+      'formalism',
+      'Marxist criticism',
+      'feminist theory',
+      'postcolonialism',
+      'psychoanalysis',
+      'poststructuralism',
+    ],
     discussionQuestions: [
       'Choose a passage from any novel you have studied and apply two contrasting theoretical frameworks. What does each reveal?',
       "Why does Castle argue that 'theory' is not something imposed on texts from outside but something texts themselves generate?",
-      "Which theoretical framework do you find most useful for the texts you are studying, and why?",
+      'Which theoretical framework do you find most useful for the texts you are studying, and why?',
     ],
   },
   {
@@ -910,15 +1015,22 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'non-fiction',
     difficulty: 'on-level',
     synopsis:
-      "Literary critic James Wood examines the elements of prose fiction -- narrative, character, point of view, detail, language -- through close readings of texts from Cervantes to Flaubert to contemporary novelists.",
+      'Literary critic James Wood examines the elements of prose fiction -- narrative, character, point of view, detail, language -- through close readings of texts from Cervantes to Flaubert to contemporary novelists.',
     whyRecommended:
       "Wood's essays model the kind of precise, evaluative close reading expected at A-level. His concept of 'free indirect style' is particularly useful for IAL literary analysis.",
     curriculumLink:
       'IAL Units 1 and 3: Literary text analysis; supports Unit 4 independent critical study and essay writing.',
-    themes: ['narrative technique', 'free indirect style', 'character', 'realism', 'detail', 'prose style'],
+    themes: [
+      'narrative technique',
+      'free indirect style',
+      'character',
+      'realism',
+      'detail',
+      'prose style',
+    ],
     discussionQuestions: [
       "What does Wood mean by 'free indirect style' and how does he demonstrate its power through literary examples?",
-      'Wood argues that the novel\'s greatest achievement is the representation of consciousness. Do you agree?',
+      "Wood argues that the novel's greatest achievement is the representation of consciousness. Do you agree?",
       'Choose a technique Wood discusses and apply it to a close reading of a passage from one of your set texts.',
     ],
   },
@@ -930,15 +1042,22 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'non-fiction',
     difficulty: 'challenging',
     synopsis:
-      "Fairclough introduces Critical Discourse Analysis (CDA), arguing that language does not merely reflect social reality but constructs and maintains power relations. He analyses media, political, and institutional discourse.",
+      'Fairclough introduces Critical Discourse Analysis (CDA), arguing that language does not merely reflect social reality but constructs and maintains power relations. He analyses media, political, and institutional discourse.',
     whyRecommended:
       "Fairclough's CDA framework is directly applicable to IAL language analysis tasks involving media and political texts. His approach links linguistic choices to ideological effects.",
     curriculumLink:
       'IAL Unit 1: Language and Representation; Unit 2: Language in Context -- media and political discourse.',
-    themes: ['power', 'discourse analysis', 'ideology', 'media language', 'institutions', 'language change'],
+    themes: [
+      'power',
+      'discourse analysis',
+      'ideology',
+      'media language',
+      'institutions',
+      'language change',
+    ],
     discussionQuestions: [
       "What is 'Critical Discourse Analysis' and how does it differ from conventional linguistic description?",
-      'Apply Fairclough\'s analytical framework to a newspaper front page. What ideological assumptions does the language encode?',
+      "Apply Fairclough's analytical framework to a newspaper front page. What ideological assumptions does the language encode?",
       "How does Fairclough's concept of 'orders of discourse' explain why certain ways of speaking feel 'natural'?",
     ],
   },
@@ -950,12 +1069,19 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'non-fiction',
     difficulty: 'on-level',
     synopsis:
-      "A lucid introduction to narratology covering story and discourse, character, unreliable narration, narrative gaps, and the relationship between narrative and time. Draws on examples from literature, film, and everyday life.",
+      'A lucid introduction to narratology covering story and discourse, character, unreliable narration, narrative gaps, and the relationship between narrative and time. Draws on examples from literature, film, and everyday life.',
     whyRecommended:
       "Narratology provides a rigorous vocabulary for literary analysis that students often lack. Abbott's terms -- fabula vs sjuzet, focalization, narrative gaps -- are immediately applicable to IAL literary essay writing.",
     curriculumLink:
       'IAL Unit 3: Prose and Drama; Unit 4: Independent Study -- narrative structure and technique.',
-    themes: ['narratology', 'focalization', 'story vs discourse', 'time in narrative', 'unreliable narration', 'gaps'],
+    themes: [
+      'narratology',
+      'focalization',
+      'story vs discourse',
+      'time in narrative',
+      'unreliable narration',
+      'gaps',
+    ],
     discussionQuestions: [
       "Explain the distinction between 'story' (fabula) and 'discourse' (sjuzet). Illustrate using a text you have studied.",
       "What is 'focalization' and how does it differ from the concept of narrative point of view?",
@@ -964,7 +1090,7 @@ export const widerReadingList: WiderReadingEntry[] = [
   },
   {
     id: 'wr-ial-008',
-    title: "The Reader, the Text, the Poem: The Transactional Theory of the Literary Work",
+    title: 'The Reader, the Text, the Poem: The Transactional Theory of the Literary Work',
     author: 'Louise Rosenblatt',
     yearGroup: 'IAL',
     genre: 'non-fiction',
@@ -975,7 +1101,14 @@ export const widerReadingList: WiderReadingEntry[] = [
       "Reader-response theory is a key framework for IAL Unit 4. Rosenblatt's transactional model gives students a principled basis for discussing how their own reading experience contributes to literary meaning.",
     curriculumLink:
       'IAL Unit 4: Critical Approaches -- reader-response theory and the construction of literary meaning.',
-    themes: ['reader-response', 'aesthetic reading', 'interpretation', 'subjectivity', 'literary experience', 'meaning-making'],
+    themes: [
+      'reader-response',
+      'aesthetic reading',
+      'interpretation',
+      'subjectivity',
+      'literary experience',
+      'meaning-making',
+    ],
     discussionQuestions: [
       "What is the difference between 'efferent' and 'aesthetic' stances toward a text?",
       "How does Rosenblatt's transactional theory challenge the New Critical view that meaning resides solely in the text?",
@@ -995,11 +1128,18 @@ export const widerReadingList: WiderReadingEntry[] = [
       "Burke's concept of identification is essential for analysing political and literary rhetoric at A-level. His dramatistic pentad provides a rigorous framework for analysing any communicative act.",
     curriculumLink:
       'IAL Unit 1: Language and Representation; Unit 2: Language and Power -- rhetoric and persuasion.',
-    themes: ['rhetoric', 'identification', 'persuasion', 'language and society', 'motive', 'symbolic action'],
+    themes: [
+      'rhetoric',
+      'identification',
+      'persuasion',
+      'language and society',
+      'motive',
+      'symbolic action',
+    ],
     discussionQuestions: [
       'What does Burke mean by identification and how does it differ from persuasion?',
       "Apply Burke's dramatistic pentad (act, scene, agent, agency, purpose) to a political speech of your choice.",
-      'How does Burke\'s claim that all language use is rhetoric challenge the idea of purely neutral or objective communication?',
+      "How does Burke's claim that all language use is rhetoric challenge the idea of purely neutral or objective communication?",
     ],
   },
   {
@@ -1010,16 +1150,23 @@ export const widerReadingList: WiderReadingEntry[] = [
     genre: 'non-fiction',
     difficulty: 'challenging',
     synopsis:
-      "The foundational text of postcolonial literary theory. The authors examine how writers from formerly colonised nations use, subvert, and transform the English language and literary forms to assert their own cultural identities.",
+      'The foundational text of postcolonial literary theory. The authors examine how writers from formerly colonised nations use, subvert, and transform the English language and literary forms to assert their own cultural identities.',
     whyRecommended:
-      "Directly required for IAL Unit 4 postcolonial approaches. The concepts of abrogation, appropriation, and hybridity are essential for analysing texts by Achebe, Adichie, Roy, Morrison, and others studied across the course.",
+      'Directly required for IAL Unit 4 postcolonial approaches. The concepts of abrogation, appropriation, and hybridity are essential for analysing texts by Achebe, Adichie, Roy, Morrison, and others studied across the course.',
     curriculumLink:
       'IAL Unit 4: Critical Approaches -- postcolonial theory; underpins reading of all postcolonial literary texts across Units 1-3.',
-    themes: ['postcolonialism', 'language and empire', 'hybridity', 'identity', 'resistance', 'abrogation'],
+    themes: [
+      'postcolonialism',
+      'language and empire',
+      'hybridity',
+      'identity',
+      'resistance',
+      'abrogation',
+    ],
     discussionQuestions: [
       "What do Ashcroft et al. mean by 'abrogation' and 'appropriation' as strategies of postcolonial writing?",
       "How does the concept of 'hybridity' challenge binary thinking about colonial and postcolonial cultures?",
       "Apply the book's framework to a postcolonial text you have studied. How does the author 'write back' to empire?",
     ],
   },
-];
+]

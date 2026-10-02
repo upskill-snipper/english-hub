@@ -545,6 +545,15 @@ export const poetryAnalysisGuides: PoetryAnalysisGuide[] = [
   },
 
   // 8. IGCSE: My Last Duchess (Browning)
+  // 2 October 2026: two quotations were not the held edition's words
+  // (src/data/full-texts/my-last-duchess.ts): 'blushes', where line 31 has "blush", and
+  // 'my favour', the anthology's spelling, where the held edition, an American
+  // printing, has "favor" in line 25. Both are now cut from it by script.
+  // Reviewed the same day: the possessive-language example then gave 'my gift' and
+  // 'my favor' as "words of ownership applied to a person", but both are the Duke's own
+  // things (his name, his token), not people. It now pairs 'my last Duchess' (line 1)
+  // with 'my object' (line 53), said of the Count's daughter. 'faults' in quotation
+  // marks read as the Duke's word, which the poem never uses; it is now "supposed faults".
   {
     id: 'guide-igcse-my-last-duchess',
     title: 'My Last Duchess -- Close Reading Guide',
@@ -572,7 +581,7 @@ export const poetryAnalysisGuides: PoetryAnalysisGuide[] = [
         device: 'Dramatic irony',
         definition: 'When the reader understands more than the speaker realises',
         example:
-          "The Duke describes the Duchess's 'smile' and 'blushes' as faults; the reader recognises these as signs of warmth",
+          "The Duke describes the Duchess's 'smile' and 'blush' as faults; the reader recognises these as signs of warmth",
       },
       {
         device: 'Enjambment and iambic pentameter',
@@ -592,7 +601,7 @@ export const poetryAnalysisGuides: PoetryAnalysisGuide[] = [
         device: 'Possessive language',
         definition: 'Words of ownership applied to a person',
         example:
-          "'my last Duchess', 'my gift', 'my favour' -- the Duke speaks of the Duchess as a possession throughout",
+          "'my last Duchess', and of the Count's daughter, 'my object' -- the Duke speaks of a wife as a possession throughout",
       },
       {
         device: 'The portrait as symbol',
@@ -613,7 +622,7 @@ export const poetryAnalysisGuides: PoetryAnalysisGuide[] = [
       "Write a character analysis of the Duke in 'My Last Duchess' (400-550 words). Explore how Browning uses the dramatic monologue form to reveal the Duke's obsession with power and control. Include analysis of language choices, implied meaning, and structural effects.",
     modelAnalysisPoints: [
       'The Duke is an unreliable narrator: he believes he is presenting himself well, but reveals his cruelty and jealousy',
-      "The Duchess's 'faults' (her warmth, her courtesy, her joy in life) expose the Duke's possessiveness",
+      "The Duchess's supposed faults (her warmth, her courtesy, her joy in life) expose the Duke's possessiveness",
       "The euphemism 'I gave commands; / Then all smiles stopped together' is the poem's most chilling moment",
       "The portrait is the poem's controlling symbol: art is used to imprison and silence a woman",
       'The negotiation context is crucial: the Duke is already seeking a replacement, treating women as acquisitions',

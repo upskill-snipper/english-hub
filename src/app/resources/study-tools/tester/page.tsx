@@ -84,7 +84,7 @@ const TEXT_SETS: TextSet[] = [
       },
       {
         id: 'mac-3',
-        quote: "Look like th'innocent flower, / But be the serpent under't",
+        quote: "Look like the innocent flower, / But be the serpent under't",
         character: 'Lady Macbeth',
         act: 'Act 1, Scene 5',
         analysis:
@@ -166,15 +166,18 @@ const TEXT_SETS: TextSet[] = [
     colour: 'from-primary/[0.08] to-primary/[0.02]',
     cards: [
       {
+        // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+        // src/data/full-texts/a-christmas-carol.ts), which prints "grind-stone". acc-2 below is
+        // Scrooge's own Stave One question, not the Spirit's echo.
         id: 'acc-1',
-        quote: 'Oh! But he was a tight-fisted hand at the grindstone, Scrooge!',
+        quote: 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!',
         analysis:
-          "The exclamatory 'Oh!' breaks the fourth wall. 'Tight-fisted' and 'grindstone' create imagery of miserliness and relentless, joyless work.",
+          "The exclamatory 'Oh!' breaks the fourth wall. 'Tight-fisted' and 'grind-stone' create imagery of miserliness and relentless, joyless work.",
         themes: ['Greed', 'Isolation'],
       },
       {
         id: 'acc-2',
-        quote: 'Are there no prisons? Are there no workhouses?',
+        quote: 'Are there no prisons? ... And the Union workhouses?',
         character: 'Scrooge',
         analysis:
           "Scrooge's rhetorical questions echo the cruel Malthusian attitudes of the Victorian upper class. Dickens uses Scrooge to satirise those who blamed the poor.",
@@ -323,9 +326,11 @@ const TEXT_SETS: TextSet[] = [
           "'Primitive' suggests the duality is ancient and innate. 'Thorough' means it permeates every aspect of human nature.",
         themes: ['Duality', 'Science', 'Human Nature'],
       },
+      // Utterson's pun runs across a speech tag ("he had thought"); the ellipsis marks
+      // the cut (corrected 2 October 2026 against Project Gutenberg #43).
       {
         id: 'jh-3',
-        quote: 'If he be Mr Hyde, I shall be Mr Seek',
+        quote: 'If he be Mr Hyde... I shall be Mr Seek',
         character: 'Utterson',
         analysis:
           "Wordplay on hide-and-seek creates dark humour but also establishes the detective-story structure. Reflects the Victorian gentleman's need to understand and control.",

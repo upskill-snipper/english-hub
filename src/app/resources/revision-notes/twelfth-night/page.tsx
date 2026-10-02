@@ -4,6 +4,61 @@ import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
 import { useState } from 'react'
 
+/**
+ * Corrected on 2 October 2026. A line shown as Shakespeare's must be in the
+ * words of the edition the site holds, Project Gutenberg #1526
+ * (src/data/full-texts/twelfth-night.ts), which the reader prints in full,
+ * because students memorise these quotations for their exams. This page said
+ * its quotations were "verbatim Folio quotations", each "verifiable against
+ * the 1623 First Folio text", and until scripts/check-quotations.mjs nothing
+ * compared them with the held edition. It found two: Viola's worm "i' the
+ * bud", where the edition has "i' th' bud" (2.4), and Orsino saying women's
+ * love is "too weak to hold so much", which he never says. His words are "no
+ * woman's heart / So big, to hold so much" (2.4), and the card that misquoted
+ * them called his speech later than Olivia's in 3.1, which it comes before.
+ *
+ * Reading the page by hand found what the checker cannot see, because the
+ * speaker or the scene is named only in prose, or the quotation is only a few
+ * words: Sir Toby's "cakes and ale" question to Malvolio (2.3) called Maria's;
+ * Viola's "I am all the daughters of my father's house" (2.4) listed among
+ * Act 5's key moments, and given to the recognition scene in an essay plan,
+ * where her own line in that scene, "That I am Viola", now stands; "made the
+ * breach", which the play does not have, as what Viola realises in the ring
+ * soliloquy (2.2), now her "She loves me, sure"; "Concealment" called the
+ * first verb of "Conceal me what I am" (1.2); "thrust upon him" given as the
+ * letter's third clause, which ends "thrust upon 'em" (2.5); and "the second
+ * half of the same speech" for a line Viola speaks only after Orsino asks
+ * whether her sister died of love. The source notes now name the edition, and
+ * the notes scripts/generate-text-annotations.mjs copies from this page into
+ * src/data/text-annotations.generated.ts were corrected with it.
+ *
+ * A second reading the same day, against the edition's speech headings and
+ * stage directions, found lines and deeds still given to the wrong person or
+ * the wrong moment. The Maria card made the dark room her proposal; it is Sir
+ * Toby's ("Come, we'll have him in a dark room and bound", 3.4), and her part
+ * is dressing Feste as Sir Topas (4.2). The Malvolio essay plan had the others
+ * offer to "entreat him to a peace" before he leaves; Orsino says it after his
+ * exit. The Act 5 summary had Malvolio read aloud the forged letter, which he
+ * hands Olivia to peruse; the letter read aloud there is his own, by Feste and
+ * Fabian. In passing it found plot the play contradicts: Feste pacifying
+ * Malvolio in 1.5 (Malvolio sneers at him, and it is Olivia he talks round),
+ * Olivia protecting Cesario in the duel (she stops Sir Toby fighting
+ * Sebastian, 4.1), Viola becoming Orsino's wife and the subplot ending in a
+ * promise of marriage (Viola is promised; Toby has already married Maria), and
+ * Toby, a knight, called steward-class in an essay plan. The Olivia card's new
+ * words carry no apostrophe, because the generator pairs single quotes and one
+ * more before her quotation would drop its note. The footer's edition note now
+ * covers the quotations from the play only, since the page also quotes
+ * critics.
+ *
+ * Every quotation changed here was cut from the edition by script, or, in the
+ * second reading, matched against it word for word by script. One added
+ * here should be cut from it too, not typed from memory or taken from another
+ * printing, and a line credited to a speaker or a scene should be checked
+ * against the edition's speech headings. Check again with
+ * node scripts/check-quotations.mjs --text twelfth-night.
+ */
+
 /* ─── Expandable Section Component ─────────────────────────── */
 
 function Section({
@@ -120,9 +175,8 @@ export default function TwelfthNightPage() {
         </p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Everything you need for your A-Level and GCSE English Literature exam. Act-by-act plot,
-          character profiles, themes with evidence, verbatim Folio quotations with analysis,
-          symbols, festive context, the Hamnet/Judith biographical reading, and essay planning
-          guidance.
+          character profiles, themes with evidence, key quotations with analysis, symbols, festive
+          context, the Hamnet/Judith biographical reading, and essay planning guidance.
         </p>
       </div>
 
@@ -174,8 +228,8 @@ export default function TwelfthNightPage() {
                   is sent to woo Olivia on his behalf &mdash; but Olivia falls for Cesario instead.
                   Meanwhile, in Olivia&apos;s household, her drunken uncle Sir Toby Belch entertains
                   his foolish friend Sir Andrew Aguecheek, whom Toby encourages as a suitor for
-                  Olivia. Feste the clown returns after an absence and pacifies the steward Malvolio
-                  with witty wordplay.
+                  Olivia. Feste the clown returns after an absence and talks Olivia round with witty
+                  wordplay, while the steward Malvolio sneers at him.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -359,7 +413,7 @@ export default function TwelfthNightPage() {
                   the twins finally see each other. Olivia exclaims &ldquo;Most wonderful!&rdquo;
                   Viola and Sebastian recognise each other through testimony of their dead father.
                   Orsino, now realising Cesario is a woman, immediately offers her his hand.
-                  Malvolio is released, reads aloud the letter that ruined him, and learns it was
+                  Malvolio is released, shows Olivia the letter that ruined him, and learns it was
                   forged by Maria. He exits vowing &ldquo;I&apos;ll be revenged on the whole pack of
                   you,&rdquo; while Toby and Maria have married offstage. Feste closes the play
                   alone with his melancholy song: &ldquo;the rain it raineth every day.&rdquo;
@@ -376,10 +430,7 @@ export default function TwelfthNightPage() {
                     <li>
                       &bull; The twins meet &mdash; &ldquo;An apple cleft in two&rdquo; (Antonio)
                     </li>
-                    <li>
-                      &bull; &ldquo;I am all the daughters of my father&apos;s house, And all the
-                      brothers too&rdquo;
-                    </li>
+                    <li>&bull; Viola names herself at last: &ldquo;That I am Viola&rdquo;</li>
                     <li>
                       &bull; Malvolio&apos;s exit &mdash; the unhealed wound in the play&apos;s
                       comedy
@@ -413,7 +464,7 @@ export default function TwelfthNightPage() {
               />
               <CharacterCard
                 name="Olivia"
-                description="A wealthy countess in mourning for her dead brother, having sworn to veil her face for seven years. The arrival of Cesario disrupts her vow within minutes: she falls violently and openly in love. Olivia is decisive where Orsino is paralysed - when she wants Cesario, she sends a ring; when she meets Sebastian, she marries him. She is also generous, granting Malvolio rank and trust, and protecting Cesario in the duel. Her line 'love sought is good; but given unsought is better' captures her ideology of impulsive feeling."
+                description="A wealthy countess in mourning for her dead brother, having sworn to veil her face for seven years. The arrival of Cesario disrupts her vow within minutes: she falls violently and openly in love. Olivia is decisive where Orsino is paralysed - when she wants Cesario, she sends a ring; when she meets Sebastian, she marries him. She is also generous, granting Malvolio rank and trust, and protecting the youth she takes for Cesario from the sword of Sir Toby. Her line 'love sought is good; but given unsought is better' captures her ideology of impulsive feeling."
               />
               <CharacterCard
                 name="Malvolio"
@@ -421,7 +472,7 @@ export default function TwelfthNightPage() {
               />
               <CharacterCard
                 name="Sir Toby Belch"
-                description="Olivia's uncle: a riotous, parasitic knight who lives off her household and exploits Sir Andrew for drinking-money. His name (Belch) marks his role as embodiment of gluttony and Carnival misrule. He drives the Malvolio sub-plot, asking Maria's iconic question 'Dost thou think because thou art virtuous there shall be no more cakes and ale?' He is at once charming and cruel - a festive lord of misrule whose festivity has a hard, exploitative edge by the end."
+                description="Olivia's uncle: a riotous, parasitic knight who lives off her household and exploits Sir Andrew for drinking-money. His name (Belch) marks his role as embodiment of gluttony and Carnival misrule. He drives the Malvolio sub-plot, asking Malvolio the play's iconic question 'Dost thou think because thou art virtuous there shall be no more cakes and ale?' He is at once charming and cruel - a festive lord of misrule whose festivity has a hard, exploitative edge by the end."
               />
               <CharacterCard
                 name="Sir Andrew Aguecheek"
@@ -429,7 +480,7 @@ export default function TwelfthNightPage() {
               />
               <CharacterCard
                 name="Maria"
-                description="Olivia's gentlewoman - sharp, literate, and the architect of the Malvolio gulling. It is Maria who imitates Olivia's hand to forge the fatal letter and who proposes the dark-room imprisonment. Toby calls her 'Penthesilea' (an Amazon queen). Her marriage to Toby at the play's end is rewarded explicitly because of the letter trick - a striking instance of comedy delivering social mobility for its female schemer. She is the most genuinely intelligent character in the household."
+                description="Olivia's gentlewoman - sharp, literate, and the architect of the Malvolio gulling. It is Maria who imitates Olivia's hand to forge the fatal letter, and who dresses Feste as Sir Topas for the dark room that Sir Toby proposes. Toby calls her 'Penthesilea' (an Amazon queen). Her marriage to Toby at the play's end is rewarded explicitly because of the letter trick - a striking instance of comedy delivering social mobility for its female schemer. She is the most genuinely intelligent character in the household."
               />
               <CharacterCard
                 name="Feste"
@@ -487,8 +538,9 @@ export default function TwelfthNightPage() {
         <div id="key-quotations">
           <Section title={tr(`Key Quotations with Analysis`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
-              Verbatim Folio quotations (modernised spelling) for exam revision. Each is verifiable
-              against the 1623 First Folio text of Twelfth Night, or What You Will.
+              Verbatim quotations for exam revision, each with its speaker and scene. All are in the
+              words of Project Gutenberg&apos;s modern-spelling text (eBook #1526), the edition this
+              site prints in full.
             </p>
             <div className="space-y-1">
               <QuoteCard
@@ -504,7 +556,7 @@ export default function TwelfthNightPage() {
               <QuoteCard
                 quote="Conceal me what I am, and be my aid / For such disguise as haply shall become / The form of my intent."
                 speaker="Viola, 1.2"
-                analysis="The decision that drives the entire plot. Viola asks the Sea-Captain to hide her identity so she can take male disguise. 'Concealment' is the active first verb - disguise here is an act of self-erasure. The triple 'me what I am' / 'such disguise' / 'form of my intent' moves from being to costume to purpose, mapping how identity will be reconstructed performatively across the play."
+                analysis="The decision that drives the entire plot. Viola asks the Sea-Captain to hide her identity so she can take male disguise. 'Conceal' is the active first verb - disguise here is an act of self-erasure. The triple 'me what I am' / 'such disguise' / 'form of my intent' moves from being to costume to purpose, mapping how identity will be reconstructed performatively across the play."
               />
               <QuoteCard
                 quote="Make me a willow cabin at your gate, / And call upon my soul within the house."
@@ -522,14 +574,14 @@ export default function TwelfthNightPage() {
                 analysis="Alone after Malvolio brings the ring, Viola realises Olivia loves Cesario. 'Wickedness' is a startlingly strong word in a comic plot - Viola sees that her disguise has caused real damage. 'Pregnant enemy' (the Devil, fertile in mischief) raises the moral stakes. This soliloquy is the play's main piece of moral self-awareness about cross-dressing: Shakespeare lets his heroine name the cost of her own trick."
               />
               <QuoteCard
-                quote="She never told her love, / But let concealment, like a worm i' the bud, / Feed on her damask cheek."
+                quote="She never told her love, / But let concealment, like a worm i' th' bud, / Feed on her damask cheek."
                 speaker="Viola as Cesario, 2.4"
                 analysis="Viola, talking to Orsino about an imagined sister (herself), gives one of Shakespeare's most beautiful images of repressed feeling. The worm in the rosebud - concealment as parasite - is exactly the situation Viola is in: hiding love, kept from speech. 'Damask cheek' (red-and-white roses) is a Petrarchan colour, but here drained by interior consumption. This is an A-Level set-piece for repression, female silence, and the cost of disguise."
               />
               <QuoteCard
                 quote="I am all the daughters of my father's house, / And all the brothers too."
                 speaker="Viola as Cesario, 2.4"
-                analysis="The second half of the same speech. The grammar is doubled - Viola is at once daughter and brother because she believes Sebastian dead and is now performing his role. The line is one of the most cited in the play: it makes explicit that Viola has absorbed Sebastian into herself. After Stephen Greenblatt's biographical reading (Will in the World) linking the line to Shakespeare's grief for his dead son Hamnet, twin to Judith, this passage has become inseparable from the question of how the personal can shape comedy."
+                analysis="Viola's answer when Orsino asks whether her sister died of her love. The grammar is doubled - Viola is at once daughter and brother because she believes Sebastian dead and is now performing his role. The line is one of the most cited in the play: it makes explicit that Viola has absorbed Sebastian into herself. After Stephen Greenblatt's biographical reading (Will in the World) linking the line to Shakespeare's grief for his dead son Hamnet, twin to Judith, this passage has become inseparable from the question of how the personal can shape comedy."
               />
               <QuoteCard
                 quote="Dost thou think, because thou art virtuous, there shall be no more cakes and ale?"
@@ -539,12 +591,12 @@ export default function TwelfthNightPage() {
               <QuoteCard
                 quote="Some are born great, some achieve greatness, and some have greatness thrust upon 'em."
                 speaker="The forged letter, read aloud by Malvolio, 2.5"
-                analysis="Maria's bait - the line written into the forged letter that Malvolio finds and reads. Its rhetorical balance (born / achieve / thrust) is so seductive that Malvolio cannot resist applying it to himself. The third clause is the trap: 'thrust upon him' is exactly what Maria intends to do. The aphorism became one of Shakespeare's most quoted lines because the structure works independently of the trick. In context, it is a tool of class-aspirational self-deception."
+                analysis="Maria's bait - the line written into the forged letter that Malvolio finds and reads. Its rhetorical balance (born / achieve / thrust) is so seductive that Malvolio cannot resist applying it to himself. The third clause is the trap: greatness 'thrust upon' him is exactly what the letter pretends to offer. The aphorism became one of Shakespeare's most quoted lines because the structure works independently of the trick. In context, it is a tool of class-aspirational self-deception."
               />
               <QuoteCard
                 quote="Love sought is good; but given unsought is better."
                 speaker="Olivia, 3.1"
-                analysis="Olivia's open declaration of love to Cesario. The chiasmus (sought / given unsought) inverts the conventional Petrarchan dynamic in which the male suitor seeks and the woman is reluctantly won. Olivia claims that love offered freely - by the woman, here - is the higher kind. The line is one of the play's clearest expressions of female desire as active rather than passive, and it directly contradicts Orsino's later speech about how women's love is 'too weak to hold so much.'"
+                analysis="Olivia's open declaration of love to Cesario. The chiasmus (sought / given unsought) inverts the conventional Petrarchan dynamic in which the male suitor seeks and the woman is reluctantly won. Olivia claims that love offered freely - by the woman, here - is the higher kind. The line is one of the play's clearest expressions of female desire as active rather than passive, and it directly contradicts Orsino's earlier claim (2.4) that there is 'no woman's heart / So big, to hold so much'."
               />
               <QuoteCard
                 quote="Why, this is very midsummer madness."
@@ -598,8 +650,8 @@ export default function TwelfthNightPage() {
                   allow her to enter Orsino&apos;s court, generate Olivia&apos;s misdirected love,
                   and produce the twins-mistaken-for-twins resolution. Crucially, the disguise is
                   never undone onstage: Viola&apos;s women&apos;s clothes are in the keeping of the
-                  Sea-Captain, who is being detained at the play&apos;s end. Viola becomes
-                  Orsino&apos;s wife while still dressed as Cesario. Many critics treat this as
+                  Sea-Captain, who is being detained at the play&apos;s end. Viola is promised to
+                  Orsino while still dressed as Cesario. Many critics treat this as
                   Shakespeare&apos;s most subversive symbolic gesture &mdash; the comedy ends with
                   the heroine in trousers.
                 </p>
@@ -660,10 +712,9 @@ export default function TwelfthNightPage() {
                   behind. The ring is fictional &mdash; Cesario never gave it &mdash; and is the
                   first sign that Olivia has fallen in love. Symbolically, the ring is a circular
                   object of completion (and conventional sign of betrothal) used here as a lie. It
-                  marks the moment when Viola realises she has &ldquo;made the breach&rdquo; in
-                  Olivia&apos;s heart, and her soliloquy on &ldquo;disguise&rdquo; follows
-                  immediately. The whole emotional knot of the play is encoded in this single
-                  circular prop.
+                  marks the moment when Viola realises &ldquo;She loves me, sure&rdquo;, and within
+                  a few lines her soliloquy turns to &ldquo;disguise&rdquo;. The whole emotional
+                  knot of the play is encoded in this single circular prop.
                 </p>
               </div>
             </div>
@@ -802,9 +853,9 @@ export default function TwelfthNightPage() {
                   The play runs two plots in parallel: the romance triangle of Orsino, Olivia, and
                   Viola/Sebastian; and the gulling of Malvolio in the Olivia household. Both turn on
                   misreading: Olivia misreads Cesario&apos;s sex, Malvolio misreads the letter. Both
-                  end in promises of marriage (Viola/Orsino, Sebastian/Olivia, Toby/Maria) &mdash;
-                  except Malvolio, who is left out. Shakespeare crosses the two plots structurally
-                  so that the gulling and the romance climax in the same Act 5 scene.
+                  end in marriages made or promised (Viola/Orsino, Sebastian/Olivia, Toby/Maria)
+                  &mdash; except Malvolio, who is left out. Shakespeare crosses the two plots
+                  structurally so that the gulling and the romance climax in the same Act 5 scene.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -888,7 +939,7 @@ export default function TwelfthNightPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Conceal me what I am.&rdquo; Show how Viola&apos;s disguise generates
                       the love triangle and ultimately the twins-resolution. Without the disguise,
-                      no plot. Use Folio Act 1 evidence.
+                      no plot. Use evidence from Act 1.
                     </p>
                   </div>
                   <div>
@@ -1039,7 +1090,7 @@ export default function TwelfthNightPage() {
                       Paragraph 2 &mdash; Festive inversions
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Cross-dressing (Viola), low-character marrying steward-class (Maria/Toby),
+                      Cross-dressing (Viola), a gentlewoman servant marrying a knight (Maria/Toby),
                       fool acting curate (Feste/Sir Topas). Argue that the play formalises the
                       holiday convention of inversion through its plot structures.
                     </p>
@@ -1130,10 +1181,10 @@ export default function TwelfthNightPage() {
                       Paragraph 4 &mdash; The exit line
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      &ldquo;I&apos;ll be revenged on the whole pack of you.&rdquo; The other
-                      characters offer to entreat him to a peace, but he leaves anyway. The comedy
-                      is therefore structurally incomplete &mdash; one major figure refuses
-                      inclusion.
+                      &ldquo;I&apos;ll be revenged on the whole pack of you.&rdquo; He leaves before
+                      anyone can make peace with him; only then does Orsino send after him to
+                      &ldquo;entreat him to a peace&rdquo;. The comedy is therefore structurally
+                      incomplete &mdash; one major figure refuses inclusion.
                     </p>
                   </div>
                   <div>
@@ -1318,9 +1369,8 @@ export default function TwelfthNightPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Most wonderful!&rdquo; In Act 5 the twins meet and the truth is
-                      recognised. Olivia&apos;s amazement and Viola&apos;s &ldquo;I am all the
-                      daughters of my father&apos;s house, / And all the brothers too&rdquo; resolve
-                      the chain of mistakes.
+                      recognised. Olivia&apos;s amazement and Viola&apos;s naming of herself at
+                      last, &ldquo;That I am Viola&rdquo;, resolve the chain of mistakes.
                     </p>
                   </div>
                   <div>
@@ -1586,10 +1636,10 @@ export default function TwelfthNightPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Quote precisely.`)}</strong> Use the verbatim Folio quotations &mdash;
-              &ldquo;If music be the food of love, play on&rdquo;, &ldquo;Some are born
-              great...&rdquo;, &ldquo;I am all the daughters of my father&apos;s house...&rdquo;
-              &mdash; rather than paraphrasing.
+              <strong>{tr(`Quote precisely.`)}</strong> Learn the exact words, such as &ldquo;If
+              music be the food of love, play on&rdquo;, &ldquo;Some are born great...&rdquo; and
+              &ldquo;I am all the daughters of my father&apos;s house...&rdquo;, rather than
+              paraphrasing.
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -1632,8 +1682,9 @@ export default function TwelfthNightPage() {
         <p>
           <em>{tr(`Twelfth Night, or What You Will`)}</em> by William Shakespeare was first printed
           in the 1623 First Folio. Shakespeare died in 1616 and the text is in the{' '}
-          <strong>public domain</strong>. All quotations on this page are reproduced (in modernised
-          spelling) from the Folio text of the play.
+          <strong>public domain</strong>. All quotations from the play on this page are taken from
+          Project Gutenberg&apos;s modern-spelling text (eBook #1526), the edition this site prints
+          in full.
         </p>
       </footer>
     </>

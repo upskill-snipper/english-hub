@@ -1030,10 +1030,18 @@ export const ks3Lessons: LessonPlan[] = [
         marks: 3,
       },
       {
+        // "green-ey'd monster" is the held Othello's spelling (Project Gutenberg
+        // #1531, src/data/full-texts/othello.ts). Until 2 October 2026 this
+        // answer had "green-eyed", unseen by scripts/check-quotations.mjs: a
+        // sentence naming more than three works decides no text for it.
+        // For the same reason nothing saw "in a pickle" given to The Tempest,
+        // which never prints it: the held text (Project Gutenberg #1540) has
+        // Trinculo's "in such a pickle" and Alonso's "in this pickle", both in
+        // Act 5, Scene 1. The answer now quotes Trinculo's.
         question: 'Name three phrases we use in modern English that were invented by Shakespeare.',
         lines: 3,
         modelAnswer:
-          'Examples include: "break the ice" (The Taming of the Shrew), "wild goose chase" (Romeo and Juliet), "heart of gold" (Henry V), "in a pickle" (The Tempest), "green-eyed monster" (Othello), "full circle" (King Lear).',
+          'Examples include: "break the ice" (The Taming of the Shrew), "wild goose chase" (Romeo and Juliet), "heart of gold" (Henry V), "in such a pickle" (The Tempest), "green-ey\'d monster" (Othello), "full circle" (King Lear).',
         marks: 3,
       },
       {

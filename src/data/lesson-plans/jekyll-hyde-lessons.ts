@@ -1,6 +1,17 @@
 // @ts-nocheck
 import type { LessonPlan } from '@/types'
 
+/**
+ * Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+ * src/data/full-texts/jekyll-and-hyde.ts). Fog was said to fill Chapters 1 to 3 and
+ * Utterson's nightmare; the edition first mentions it in Chapter 4. Two fog lines from
+ * Chapters 4 and 5 had been run together in the wrong order. A line of Enfield's about
+ * nausea and a phrase about a foul soul crying for justice are in no printing of the
+ * novel; real lines that make the same points replace them. Utterson drank gin "to
+ * mortify a taste for vintages"; Jekyll says "I concealed my pleasures"; the Carew lane
+ * "was brilliantly lit by the full moon"; and speech tags had been cut with no
+ * ellipsis.
+ */
 export const jekyllHydeLessonPlans: LessonPlan[] = [
   // ─────────────────────────────────────────────
   // LESSON 1: Context & the Gothic Genre
@@ -231,7 +242,7 @@ export const jekyllHydeLessonPlans: LessonPlan[] = [
         title: 'Utterson - The Detective Figure',
         duration: '15 minutes',
         instructions:
-          "Analyse Utterson's character across Chapters 1-3. He is our lens into the story - a rational, respectable lawyer who tries to solve the mystery through logic. Students complete a character profile: his personality traits (evidence from the text), his relationship with Jekyll, his reaction to Hyde, and his role as a narrative device. Key quotation: 'If he be Mr Hyde, I shall be Mr Seek.' Discuss the pun and what it reveals about Utterson's determination. Then discuss: Why does Stevenson choose a lawyer - someone bound by rules and rationality - as the viewpoint character?",
+          "Analyse Utterson's character across Chapters 1-3. He is our lens into the story - a rational, respectable lawyer who tries to solve the mystery through logic. Students complete a character profile: his personality traits (evidence from the text), his relationship with Jekyll, his reaction to Hyde, and his role as a narrative device. Key quotation: 'If he be Mr Hyde... I shall be Mr Seek.' Discuss the pun and what it reveals about Utterson's determination. Then discuss: Why does Stevenson choose a lawyer - someone bound by rules and rationality - as the viewpoint character?",
         differentiation: {
           support: 'Provide the character profile template with some sections completed.',
           core: 'Complete the profile independently with textual evidence.',
@@ -244,7 +255,7 @@ export const jekyllHydeLessonPlans: LessonPlan[] = [
         title: 'Setting and Atmosphere - The Streets of London',
         duration: '13 minutes',
         instructions:
-          "Students analyse how Stevenson uses the London setting in Chapters 1-3 to create a Gothic atmosphere. Focus on: the contrast between Jekyll's respectable front door and Hyde's dingy back entrance, the fog and darkness, and the 'nocturnal' quality of key scenes. Students create a two-column table: 'Respectable London' vs 'Hidden London' and place quotations in each column. Write a paragraph: 'How does Stevenson use setting to reflect the theme of duality?'",
+          "Students analyse how Stevenson uses the London setting in Chapters 1-3 to create a Gothic atmosphere. Focus on: the contrast between Jekyll's respectable front door and Hyde's dingy back entrance, the darkness of the empty, lamp-lit streets, and the 'nocturnal' quality of key scenes. Students create a two-column table: 'Respectable London' vs 'Hidden London' and place quotations in each column. Write a paragraph: 'How does Stevenson use setting to reflect the theme of duality?'",
         differentiation: {
           support: 'Provide quotations to sort into the two columns with guided questions.',
           core: 'Find their own quotations and write an analytical paragraph.',
@@ -285,7 +296,8 @@ export const jekyllHydeLessonPlans: LessonPlan[] = [
         marks: 4,
       },
       {
-        question: "What does the pun 'If he be Mr Hyde, I shall be Mr Seek' reveal about Utterson?",
+        question:
+          "What does the pun 'If he be Mr Hyde... I shall be Mr Seek' reveal about Utterson?",
         lines: 4,
         modelAnswer:
           "The pun reveals Utterson's determination to uncover the truth about Hyde. It shows his rational, methodical approach - he frames the mystery as something to be solved through investigation. The play on words also links to the children's game hide and seek, suggesting a pursuit between hunter and quarry. However, the pun also foreshadows the danger of seeking hidden truths - some things are hidden for a reason.",
@@ -312,7 +324,7 @@ export const jekyllHydeLessonPlans: LessonPlan[] = [
           'How does Stevenson create a Gothic atmosphere in the opening chapters? Use specific examples.',
         lines: 5,
         modelAnswer:
-          "Stevenson creates a Gothic atmosphere through dark, foggy settings: 'the fog still slept on the wing of the building.' The streets are described as empty and eerie, with events occurring at night. The mysterious door with its 'marks of prolonged and sordid negligence' creates a sense of decay and hidden secrets. The characters' unease and inability to explain Hyde adds psychological horror. These elements combine to create an atmosphere of dread and mystery that is characteristic of the Gothic genre.",
+          "Stevenson creates a Gothic atmosphere through dark, night-time settings: Enfield is walking home 'about three o'clock of a black winter morning' through streets 'all as empty as a church'. The mysterious door with its 'marks of prolonged and sordid negligence' creates a sense of decay and hidden secrets. The characters' unease and inability to explain Hyde adds psychological horror. These elements combine to create an atmosphere of dread and mystery that is characteristic of the Gothic genre.",
         marks: 4,
       },
     ],
@@ -394,13 +406,13 @@ export const jekyllHydeLessonPlans: LessonPlan[] = [
         title: "Jekyll's Behaviour - The Mask Slipping",
         duration: '15 minutes',
         instructions:
-          "Students track Jekyll's behaviour across Chapters 5-6: his initial relief after the murder, his period of sociability and charity, and then his sudden withdrawal and 'the light of some foul soul that cried aloud for justice.' Create a timeline showing Jekyll's emotional states. For each phase, students record evidence and explain what it reveals about the internal battle between Jekyll and Hyde. Key discussion: Is Jekyll in control at this point? What evidence suggests the transformation is becoming involuntary?",
+          "Students track Jekyll's behaviour across Chapters 5-6: his initial relief after the murder, his period of sociability and charity, and then his sudden withdrawal: 'I mean from henceforth to lead a life of extreme seclusion.' Create a timeline showing Jekyll's emotional states. For each phase, students record evidence and explain what it reveals about the internal battle between Jekyll and Hyde. Key discussion: Is Jekyll in control at this point? What evidence suggests the transformation is becoming involuntary?",
         differentiation: {
           support:
             'Provide the timeline with phases identified; students add evidence and explanation.',
           core: 'Create the timeline independently with detailed evidence.',
           stretch:
-            "Analyse what Jekyll's period of 'good works' suggests - is it genuine or desperate compensation?",
+            "Analyse what Jekyll's new life suggests - he 'was now no less distinguished for religion' - is it genuine or desperate compensation?",
         },
         resources: ['Chapters 5-6 text or extracts', 'Timeline template'],
       },
@@ -445,7 +457,7 @@ export const jekyllHydeLessonPlans: LessonPlan[] = [
           "Why does Stevenson choose Sir Danvers Carew as Hyde's murder victim? What is the effect of his characterisation?",
         lines: 5,
         modelAnswer:
-          "Carew is described as an 'aged and beautiful gentleman' with 'innocent and old-world kindness.' By making the victim elderly, gentle, and innocent, Stevenson maximises the horror of the attack - Hyde's violence is not provoked but entirely gratuitous. Carew's respectability also mirrors Jekyll's public persona, suggesting that Hyde's violence is directed at the very qualities Jekyll tries to embody. The murder of an innocent reinforces that Hyde is pure, motiveless evil.",
+          "Carew is described as an 'aged beautiful gentleman' with 'innocent and old-world kindness.' By making the victim elderly, gentle, and innocent, Stevenson maximises the horror of the attack - Hyde's violence is not provoked but entirely gratuitous. Carew's respectability also mirrors Jekyll's public persona, suggesting that Hyde's violence is directed at the very qualities Jekyll tries to embody. The murder of an innocent reinforces that Hyde is pure, motiveless evil.",
         marks: 4,
       },
       {
@@ -467,7 +479,7 @@ export const jekyllHydeLessonPlans: LessonPlan[] = [
         question: 'How does Stevenson use the setting of the murder scene to heighten its impact?',
         lines: 4,
         modelAnswer:
-          "The murder takes place on a moonlit night - 'the lane glittered in the full moon.' The peaceful, romantic setting creates a stark contrast with the sudden, extreme violence, making the attack even more shocking. Moonlight is also a Gothic convention associated with transformation and revelation. The beautiful setting lulls both the victim and the reader into a false sense of security before the horror erupts.",
+          "The murder takes place on a moonlit night - 'the lane, which the maid's window overlooked, was brilliantly lit by the full moon.' The peaceful, romantic setting creates a stark contrast with the sudden, extreme violence, making the attack even more shocking. Moonlight is also a Gothic convention associated with transformation and revelation. The beautiful setting lulls both the victim and the reader into a false sense of security before the horror erupts.",
         marks: 3,
       },
       {
@@ -784,7 +796,7 @@ export const jekyllHydeLessonPlans: LessonPlan[] = [
           "How does Jekyll's relationship with respectability connect to Victorian context?",
         lines: 5,
         modelAnswer:
-          "Victorian society demanded that gentlemen maintain an impeccable public image. Jekyll embodies this pressure: he is a successful doctor, a charitable figure, and a pillar of society. But his confession reveals that maintaining this facade required 'concealing his pleasures' and living in 'duplicity.' Stevenson uses Jekyll to argue that the Victorian cult of respectability is itself destructive - by forbidding any expression of human imperfection, it forces dark desires underground where they become more dangerous. Jekyll's transformation is the extreme consequence of social repression.",
+          "Victorian society demanded that gentlemen maintain an impeccable public image. Jekyll embodies this pressure: he is a successful doctor, a charitable figure, and a pillar of society. But his confession reveals that maintaining this facade meant a 'profound duplicity of life': 'I concealed my pleasures'. Stevenson uses Jekyll to argue that the Victorian cult of respectability is itself destructive - by forbidding any expression of human imperfection, it forces dark desires underground where they become more dangerous. Jekyll's transformation is the extreme consequence of social repression.",
         marks: 4,
       },
       {
@@ -946,7 +958,7 @@ export const jekyllHydeLessonPlans: LessonPlan[] = [
         question: "How does Stevenson use other characters' reactions to Hyde to characterise him?",
         lines: 5,
         modelAnswer:
-          "Rather than describing Hyde directly, Stevenson often characterises him through the reactions he provokes. The doctor in Chapter 1 feels a 'desire to kill him.' Utterson feels 'hitherto unknown disgust, loathing and fear.' Enfield cannot look at him 'without a turn of nausea.' These extreme, visceral reactions suggest Hyde provokes a primal, instinctive response - people recognise his wrongness on a gut level even if they cannot articulate it. This technique makes Hyde more terrifying by showing his effect rather than his appearance.",
+          "Rather than describing Hyde directly, Stevenson often characterises him through the reactions he provokes. The doctor in Chapter 1 feels a 'desire to kill him.' Utterson feels 'hitherto unknown disgust, loathing and fear.' Enfield admits, 'I had taken a loathing to my gentleman at first sight.' These extreme, visceral reactions suggest Hyde provokes a primal, instinctive response - people recognise his wrongness on a gut level even if they cannot articulate it. This technique makes Hyde more terrifying by showing his effect rather than his appearance.",
         marks: 4,
       },
       {
@@ -1031,7 +1043,7 @@ export const jekyllHydeLessonPlans: LessonPlan[] = [
         title: 'Duality in Characters - Evidence Mapping',
         duration: '15 minutes',
         instructions:
-          "Students create a duality map showing how characters embody the theme: Jekyll/Hyde (the most obvious dual figure), Utterson (represses his own pleasures - 'mortified his taste for wine'), the setting (Jekyll's respectable front vs Hyde's dingy back door), and society itself (public respectability vs private vice). For each example, students record a key quotation and explain how it demonstrates duality. Key discussion: Is anyone in the novella truly 'one' person, or does Stevenson suggest everyone is dual?",
+          "Students create a duality map showing how characters embody the theme: Jekyll/Hyde (the most obvious dual figure), Utterson (represses his own pleasures - 'drank gin when he was alone, to mortify a taste for vintages'), the setting (Jekyll's respectable front vs Hyde's dingy back door), and society itself (public respectability vs private vice). For each example, students record a key quotation and explain how it demonstrates duality. Key discussion: Is anyone in the novella truly 'one' person, or does Stevenson suggest everyone is dual?",
         differentiation: {
           support:
             'Provide the duality map with examples identified; students add quotations and explanations.',
@@ -1108,7 +1120,7 @@ export const jekyllHydeLessonPlans: LessonPlan[] = [
           'How does the character of Utterson demonstrate that duality is not limited to Jekyll?',
         lines: 5,
         modelAnswer:
-          "Utterson is described as someone who 'mortified his taste for fine vintages' and allowed others to enjoy freedoms he denied himself. He suppresses his own desires to maintain a respectable image, suggesting he too lives a form of dual existence - denying his true preferences in favour of social convention. Stevenson uses Utterson to suggest that duality is not unique to Jekyll but a universal condition of Victorian society. Even the most rational, disciplined man has desires he represses.",
+          "Utterson is described as someone who 'drank gin when he was alone, to mortify a taste for vintages' and allowed others to enjoy freedoms he denied himself. He suppresses his own desires to maintain a respectable image, suggesting he too lives a form of dual existence - denying his true preferences in favour of social convention. Stevenson uses Utterson to suggest that duality is not unique to Jekyll but a universal condition of Victorian society. Even the most rational, disciplined man has desires he represses.",
         marks: 4,
       },
       {
@@ -1201,7 +1213,7 @@ export const jekyllHydeLessonPlans: LessonPlan[] = [
         title: 'Reputation in the Novella - Character Analysis',
         duration: '18 minutes',
         instructions:
-          "Students analyse how reputation drives the behaviour of key characters. Track through the text: (1) Enfield and Utterson agree not to discuss the door - 'the more it looks like Queer Street, the less I ask.' (2) Jekyll's motivation: he 'concealed his pleasures' to protect his reputation. (3) Utterson's reluctance to investigate too deeply - he fears scandal for his friend. (4) The gentlemen's unspoken agreement to suppress information. For each example, students explain how reputation prevents truth from emerging. Write a paragraph: 'How does the protection of reputation enable Hyde's crimes?'",
+          "Students analyse how reputation drives the behaviour of key characters. Track through the text: (1) Enfield and Utterson agree not to discuss the door - 'the more it looks like Queer Street, the less I ask.' (2) Jekyll's motivation: 'I concealed my pleasures', he confesses, to protect his reputation. (3) Utterson's reluctance to investigate too deeply - he fears scandal for his friend. (4) The gentlemen's unspoken agreement to suppress information. For each example, students explain how reputation prevents truth from emerging. Write a paragraph: 'How does the protection of reputation enable Hyde's crimes?'",
         differentiation: {
           support: "Provide quotations and guided questions for each character's behaviour.",
           core: 'Find evidence independently and write the paragraph.',
@@ -1364,7 +1376,7 @@ export const jekyllHydeLessonPlans: LessonPlan[] = [
         title: 'Gothic Atmosphere - Close Reading of Key Passages',
         duration: '18 minutes',
         instructions:
-          "Students analyse three key atmospheric passages: (1) The fog-bound London of Utterson's nightmare: 'a great field of lamps of a nocturnal city... the figure of a man walking swiftly.' (2) The night of the Carew murder: 'the early part of the night was cloudless, and the lane... glittered in the full moon.' (3) The description of Jekyll's laboratory: 'the dingy, windowless structure.' For each, students annotate for: pathetic fallacy, sensory details, Gothic imagery, and the emotional effect on the reader. Then write a comparative paragraph: 'How does Stevenson use setting to create different Gothic atmospheres at different points in the novella?'",
+          "Students analyse three key atmospheric passages: (1) The night-time London of Utterson's nightmare: 'the great field of lamps of a nocturnal city... the figure of a man walking swiftly.' (2) The night of the Carew murder: 'the early part of the night was cloudless, and the lane, which the maid's window overlooked, was brilliantly lit by the full moon.' (3) The description of Jekyll's laboratory: 'the dingy, windowless structure.' For each, students annotate for: pathetic fallacy, sensory details, Gothic imagery, and the emotional effect on the reader. Then write a comparative paragraph: 'How does Stevenson use setting to create different Gothic atmospheres at different points in the novella?'",
         differentiation: {
           support:
             'Provide guided annotation for each passage with technique identification starters.',
@@ -1420,7 +1432,7 @@ export const jekyllHydeLessonPlans: LessonPlan[] = [
         question: 'How does Stevenson use fog as a Gothic device in the novella?',
         lines: 5,
         modelAnswer:
-          "Fog appears repeatedly, creating an atmosphere of obscurity and confusion: 'the fog still slept on the wing of the building... the next moment the fog had settled down again.' The fog symbolises moral obscurity - the inability to see truth clearly in a society built on concealment. It also creates a sense of claustrophobia and disorientation, typical of Gothic fiction. In practical terms, the fog literally obscures the streets of London, making it a city of hidden dangers - an appropriate setting for a story about hidden identities.",
+          "Fog appears repeatedly, creating an atmosphere of obscurity and confusion: in Chapter 4 'the fog lifted a little' over Soho, but 'the next moment the fog settled down again upon that part', and in Chapter 5 'The fog still slept on the wing above the drowned city'. The fog symbolises moral obscurity - the inability to see truth clearly in a society built on concealment. It also creates a sense of claustrophobia and disorientation, typical of Gothic fiction. In practical terms, the fog literally obscures the streets of London, making it a city of hidden dangers - an appropriate setting for a story about hidden identities.",
         marks: 4,
       },
       {

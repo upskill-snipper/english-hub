@@ -126,7 +126,12 @@ const TEXTS = [
     ],
     quotes: [
       {
-        text: '"Are there no prisons? Are there no workhouses?"',
+        // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+        // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are
+        // there no prisons?" and "And the Union workhouses?", with the gentleman's answer
+        // between. "Are there no workhouses?" is the Spirit's, turning his words on him in
+        // Stave Three.
+        text: '"Are there no prisons? ... And the Union workhouses?"',
         analysis:
           "Scrooge's callous dismissal is designed to provoke guilt in Dickens' wealthy readers, who shared these attitudes toward the poor.",
       },

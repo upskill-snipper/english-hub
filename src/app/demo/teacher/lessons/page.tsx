@@ -480,7 +480,7 @@ const LESSON_PLANS: LessonPlan[] = [
       },
       {
         question:
-          "Analyse the image of 'vaulting ambition, which o'erleaps itself / And falls on the other'. What does this reveal about Macbeth's self-awareness?",
+          "Analyse the image of 'vaulting ambition, which o'erleaps itself / And falls on th' other'. What does this reveal about Macbeth's self-awareness?",
         lines: 5,
         modelAnswer:
           "The metaphor of 'vaulting ambition' presents ambition as a horse that jumps too high and falls. The verb 'o'erleaps' suggests excess - ambition that goes beyond reasonable limits. Crucially, Macbeth recognises this danger in himself, demonstrating a tragic self-awareness: he knows his ambition will destroy him, yet he proceeds regardless. This makes his downfall more poignant because it is not born of ignorance but of a conscious surrender to desire.",

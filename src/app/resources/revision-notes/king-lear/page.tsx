@@ -1,5 +1,45 @@
 'use client'
 
+/**
+ * King Lear, A-level revision notes.
+ *
+ * QUOTATIONS CORRECTED, 2 October 2026. The page went in as "verbatim quotes,
+ * audited", but no test read it. scripts/check-quotations.mjs found 12 of its
+ * quotations were not the words of the edition the site holds (Project
+ * Gutenberg #1532, src/data/full-texts/king-lear.ts), and reading what the
+ * scanner passed over found 7 more: remembered wording ("how this world goes",
+ * "that self mettle", "respects of fortune"), elisions modernised or invented
+ * ("hanged", "performed", "milk-livered"; "th' gods" and "th' addition" where
+ * the edition has "the"), a line turned round ("sustain the gor'd state"), the
+ * Quarto's "before" given unlabelled where the edition has the Folio's "till",
+ * the early texts' "men of stones" where it prints "stone", and a phrase in no
+ * text ("the basest beggar", now a real line). Each is now cut by script from
+ * the edition. Three references were wrong as well: Cordelia's dismissal of
+ * Burgundy read as his own words, Albany's charge to Edgar and Kent as a task
+ * left to Albany and Edgar, and Cordelia's description of the crown of weeds
+ * (IV.iv) as if spoken in IV.vi. The footer credited "the Folio/Quarto
+ * tradition"; it now names the edition.
+ *
+ * A second reading the same night found five claims about where things happen
+ * that no scanner checks, because they are prose: the mock trial was put "on
+ * the heath" (the edition sets III.vi in a farmhouse, and only the 1608 Quarto
+ * has the trial at all); Lear met Gloucester "on the beach" (the edition sets
+ * IV.vi in "The country near Dover", and the beach is only in Edgar's account
+ * of the view from a cliff that is not there); "Never, never, never, never,
+ * never" was called Lear's last full line of verse, though in this edition
+ * three more lines follow it; the Act II summary had Kent take service with
+ * Lear, which he does in I.iv; and "Acts III" named no act. The mock-trial
+ * sentence is copied into the reader's notes by
+ * scripts/generate-text-annotations.mjs, and the note in
+ * text-annotations.generated.ts carries the same correction.
+ *
+ * Before changing a quotation here, run the scanner with --file on this page
+ * and --trace, and read the skipped lines too. A straight apostrophe ending a
+ * word ("th' gods") cuts its span short, and the Quarto readings declared in
+ * the study guide's quotesFromElsewhere excuse the same words on this page,
+ * which is how the line at the Justice card and the Fool's "before" hid.
+ */
+
 import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
 import { useState } from 'react'
@@ -198,14 +238,13 @@ export default function KingLearPage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Edmund persuades Edgar to flee, then wounds himself to feign an attack and frame
                   his brother; Gloucester proclaims Edgar an outlaw. Edgar disguises himself as
-                  &ldquo;Poor Tom,&rdquo; a Bedlam beggar. Kent, also in disguise as
-                  &ldquo;Caius,&rdquo; takes service with Lear and is placed in the stocks by
-                  Cornwall and Regan as a calculated insult to the king. Goneril and Regan together
-                  strip Lear of his knights, reducing his retinue from one hundred to fifty, to
-                  twenty-five, to ten, to five, until Regan asks &ldquo;What need one?&rdquo;
-                  Wounded to the soul and refusing to weep, Lear rushes out into a gathering storm,
-                  accompanied only by his Fool. Cornwall, Regan and Goneril shut the castle doors
-                  against him.
+                  &ldquo;Poor Tom,&rdquo; a Bedlam beggar. Kent, who took service with Lear in
+                  disguise in I.iv, is placed in the stocks by Cornwall and Regan as a calculated
+                  insult to the king. Goneril and Regan together strip Lear of his knights, reducing
+                  his retinue from one hundred to fifty, to twenty-five, to ten, to five, until
+                  Regan asks &ldquo;What need one?&rdquo; Wounded to the soul and refusing to weep,
+                  Lear rushes out into a gathering storm, accompanied only by his Fool. Cornwall,
+                  Regan and Goneril shut the castle doors against him.
                 </p>
               </div>
 
@@ -242,14 +281,14 @@ export default function KingLearPage() {
                   The two plots converge. Edgar, still disguised, leads his blind father towards the
                   cliffs of Dover. Gloucester, despairing, attempts suicide; Edgar stages a fall
                   from an imaginary cliff to convince him the gods have miraculously preserved his
-                  life. Lear, garlanded with weeds and entirely mad, meets the blinded Gloucester on
-                  the beach in one of the play&apos;s most harrowing scenes: &ldquo;A man may see
-                  how this world goes with no eyes.&rdquo; Cordelia has landed with French forces.
-                  Goneril and Regan now both lust after Edmund, exposing the rottenness of their
-                  alliance. Albany, Goneril&apos;s husband, recoils from his wife&apos;s cruelty.
-                  Lear is recovered to Cordelia&apos;s camp; awakening from sleep, he kneels before
-                  his daughter and, in tears, calls himself &ldquo;a very foolish, fond old
-                  man.&rdquo;
+                  life. Lear, garlanded with weeds and entirely mad, meets the blinded Gloucester in
+                  the country near Dover in one of the play&apos;s most harrowing scenes: &ldquo;A
+                  man may see how the world goes with no eyes.&rdquo; Cordelia has landed with
+                  French forces. Goneril and Regan now both lust after Edmund, exposing the
+                  rottenness of their alliance. Albany, Goneril&apos;s husband, recoils from his
+                  wife&apos;s cruelty. Lear is recovered to Cordelia&apos;s camp; awakening from
+                  sleep, he kneels before his daughter and, in tears, calls himself &ldquo;a very
+                  foolish, fond old man.&rdquo;
                 </p>
               </div>
 
@@ -269,8 +308,9 @@ export default function KingLearPage() {
                   reconcile. Edmund repents and tries to revoke his order, but too late: Lear enters
                   carrying Cordelia&apos;s body, howling. Gloucester, off-stage, has died of joy and
                   grief on learning Edgar&apos;s identity. Lear dies broken over Cordelia&apos;s
-                  corpse, gazing at her lips. Albany and Edgar are left to &ldquo;sustain the
-                  gor&apos;d state&rdquo; in a kingdom emptied of authority.
+                  corpse, gazing at her lips. Albany asks Edgar and Kent to &ldquo;Rule in this
+                  realm and the gor&apos;d state sustain&rdquo;; Kent declines, and Albany and Edgar
+                  are left in a kingdom emptied of authority.
                 </p>
               </div>
             </div>
@@ -287,11 +327,11 @@ export default function KingLearPage() {
               />
               <CharacterCard
                 name="Goneril"
-                description="Lear's eldest daughter and the Duchess of Albany. Goneril opens the play with hyperbolic flattery - &lsquo;Sir, I love you more than word can wield the matter&rsquo; - and is shown immediately afterwards plotting with Regan to undermine her father. She is politically shrewd, sexually predatory in her pursuit of Edmund, and contemptuous of her gentler husband Albany, whom she calls a &lsquo;milk-livered man.&rsquo; Shakespeare uses her to dramatise the perversion of natural family bonds; her downfall - poisoning her sister and then taking her own life - completes the play's pattern of evil consuming itself."
+                description="Lear's eldest daughter and the Duchess of Albany. Goneril opens the play with hyperbolic flattery - &lsquo;Sir, I love you more than word can wield the matter&rsquo; - and is shown immediately afterwards plotting with Regan to undermine her father. She is politically shrewd, sexually predatory in her pursuit of Edmund, and contemptuous of her gentler husband Albany, whom she calls a &lsquo;Milk-liver'd man&rsquo;. Shakespeare uses her to dramatise the perversion of natural family bonds; her downfall - poisoning her sister and then taking her own life - completes the play's pattern of evil consuming itself."
               />
               <CharacterCard
                 name="Regan"
-                description="Lear's middle daughter and the Duchess of Cornwall. If Goneril is the strategist, Regan is the visceral cruelty: she physically pulls Gloucester's beard, urges Cornwall on as he blinds him, and dispatches the wounded servant with a sword from behind. She mirrors Goneril's flattery in Act I - &lsquo;I am made of that self mettle as my sister&rsquo; - but quickly becomes a rival, and her lust for Edmund fractures their alliance. She dies poisoned by her sister, off-stage, dismissed in a single line."
+                description="Lear's middle daughter and the Duchess of Cornwall. If Goneril is the strategist, Regan is the visceral cruelty: she physically pulls Gloucester's beard, urges Cornwall on as he blinds him, and dispatches the wounded servant with a sword from behind. She mirrors Goneril's flattery in Act I - &lsquo;I am made of the self mettle as my sister&rsquo; - but quickly becomes a rival, and her lust for Edmund fractures their alliance. She dies poisoned by her sister, off-stage, dismissed in a single line."
               />
               <CharacterCard
                 name="Cordelia"
@@ -299,7 +339,7 @@ export default function KingLearPage() {
               />
               <CharacterCard
                 name="The Fool"
-                description="Lear's licensed jester, whose riddles, songs and bitter prophecies operate as the play's moral chorus. The Fool tells the king truths no other character dares speak: &lsquo;Thou shouldst not have been old before thou hadst been wise.&rsquo; He is paradoxically the wisest figure on stage and the only one who openly mourns Cordelia's banishment. He vanishes from the play in Act III, scene vi, with the line &lsquo;And I'll go to bed at noon&rsquo;; his disappearance is unexplained. Critics have long debated whether he dies, withdraws, or doubles as Cordelia (the same boy actor traditionally played both roles), and Lear's closing &lsquo;And my poor fool is hanged&rsquo; deliberately conflates them."
+                description="Lear's licensed jester, whose riddles, songs and bitter prophecies operate as the play's moral chorus. The Fool tells the king truths no other character dares speak: &lsquo;Thou shouldst not have been old till thou hadst been wise.&rsquo; He is paradoxically the wisest figure on stage and the only one who openly mourns Cordelia's banishment. He vanishes from the play in Act III, scene vi, with the line &lsquo;And I'll go to bed at noon&rsquo;; his disappearance is unexplained. Critics have long debated whether he dies, withdraws, or doubles as Cordelia (the same boy actor traditionally played both roles), and Lear's closing &lsquo;And my poor fool is hang'd&rsquo; deliberately conflates them."
               />
               <CharacterCard
                 name="Edgar"
@@ -319,7 +359,7 @@ export default function KingLearPage() {
               />
               <CharacterCard
                 name="The Duke of Albany"
-                description="Goneril's husband, who begins as a mild, almost passive figure but develops a moral conscience as his wife's cruelty becomes plain. By Act IV he openly condemns her: &lsquo;Tigers, not daughters, what have you performed?&rsquo; He survives the catastrophe and, with Edgar, takes responsibility for the kingdom. Albany's development complicates a simple good-versus-evil reading; Shakespeare shows that virtue can grow as well as decay."
+                description="Goneril's husband, who begins as a mild, almost passive figure but develops a moral conscience as his wife's cruelty becomes plain. By Act IV he openly condemns her: &lsquo;Tigers, not daughters, what have you perform'd?&rsquo; He survives the catastrophe and, with Edgar, takes responsibility for the kingdom. Albany's development complicates a simple good-versus-evil reading; Shakespeare shows that virtue can grow as well as decay."
               />
               <CharacterCard
                 name="The Duke of Cornwall"
@@ -327,7 +367,7 @@ export default function KingLearPage() {
               />
               <CharacterCard
                 name="King of France &amp; Duke of Burgundy"
-                description="The two suitors for Cordelia's hand in Act I. Burgundy, on hearing Cordelia is dowerless, immediately withdraws - &lsquo;Peace be with Burgundy: / Since that respects of fortune are his love, / I shall not be his wife.&rsquo; France marries her on principle, declaring &lsquo;She is herself a dowry.&rsquo; The two figures form a brief but pointed structural contrast between transactional and unconditional love, foreshadowing the play's broader interrogation of what binds people to one another. France remains off-stage thereafter; Cordelia returns as queen of France at the head of his army, but he himself is conspicuously absent from the final acts."
+                description="The two suitors for Cordelia's hand in Act I. Burgundy, on hearing Cordelia is dowerless, immediately withdraws, and Cordelia dismisses him: &lsquo;Peace be with Burgundy! / Since that respects of fortunes are his love, / I shall not be his wife.&rsquo; France marries her on principle, declaring &lsquo;She is herself a dowry.&rsquo; The two figures form a brief but pointed structural contrast between transactional and unconditional love, foreshadowing the play's broader interrogation of what binds people to one another. France remains off-stage thereafter; Cordelia returns as queen of France at the head of his army, but he himself is conspicuously absent from the final acts."
               />
             </div>
           </Section>
@@ -339,11 +379,11 @@ export default function KingLearPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title={tr(`Power and Authority`)}
-                description="The play opens with the most catastrophic political act imaginable in early modern thought: a king dividing his realm and abdicating power without dying. Shakespeare anatomises what authority is once stripped of its theatrical trappings. Lear retains the &lsquo;name and all th' addition&rsquo; of king while giving away the substance, and discovers - too late - that his daughters value the substance, not the name. Power changes hands violently and repeatedly: from Lear to his daughters, from Gloucester to Edmund, from Cornwall to Albany, and finally to a depleted, exhausted Edgar. The play's political vision is profoundly pessimistic; even a legitimate restoration carries the weight of catastrophe."
+                description="The play opens with the most catastrophic political act imaginable in early modern thought: a king dividing his realm and abdicating power without dying. Shakespeare anatomises what authority is once stripped of its theatrical trappings. Lear retains &lsquo;The name, and all the addition to a king&rsquo; while giving away the substance, and discovers - too late - that his daughters value the substance, not the name. Power changes hands violently and repeatedly: from Lear to his daughters, from Gloucester to Edmund, from Cornwall to Albany, and finally to a depleted, exhausted Edgar. The play's political vision is profoundly pessimistic; even a legitimate restoration carries the weight of catastrophe."
               />
               <ThemeCard
                 title={tr(`Sight and Blindness`)}
-                description="Few Shakespeare plays use a single image so insistently. Lear's opening fault is one of moral blindness - he cannot see Cordelia's love, nor read his elder daughters' flattery - and Kent's rebuke &lsquo;See better, Lear&rsquo; sets the motif in motion. Gloucester's literal blinding in Act III externalises the metaphor: only when his eyes are gone does he understand his sons. The paradox is sharpened in IV.vi when the blind Gloucester meets the mad Lear: &lsquo;A man may see how this world goes with no eyes. Look with thine ears.&rsquo; True sight in this play is moral, not physical; both fathers must be blinded, literally or figuratively, to perceive what they have done."
+                description="Few Shakespeare plays use a single image so insistently. Lear's opening fault is one of moral blindness - he cannot see Cordelia's love, nor read his elder daughters' flattery - and Kent's rebuke &lsquo;See better, Lear&rsquo; sets the motif in motion. Gloucester's literal blinding in Act III externalises the metaphor: only when his eyes are gone does he understand his sons. The paradox is sharpened in IV.vi when the blind Gloucester meets the mad Lear: &lsquo;A man may see how the world goes with no eyes. Look with thine ears&rsquo;. True sight in this play is moral, not physical; both fathers must be blinded, literally or figuratively, to perceive what they have done."
               />
               <ThemeCard
                 title="Madness"
@@ -351,7 +391,7 @@ export default function KingLearPage() {
               />
               <ThemeCard
                 title={tr(`Family and Filial Loyalty`)}
-                description="The play stages a brutal inversion of the Fifth Commandment. Goneril and Regan flatter and then abandon their father; Edmund frames and betrays his. Yet Shakespeare also shows the opposite: Cordelia returns to rescue Lear, Edgar tends his blinded father in disguise, the Fool follows his master into the storm. The bond between parent and child is the play's deepest test of human nature, and the language of &lsquo;nature&rsquo; (a key word repeated more than forty times) is used both to denounce unnatural daughters and to celebrate the bonds that survive. Critically, the play has been read as a study of the patriarchal family in crisis: a father who weaponises his children's love is himself a corrupting force."
+                description="The play stages a brutal inversion of the Fifth Commandment. Goneril and Regan flatter and then abandon their father; Edmund frames and betrays his. Yet Shakespeare also shows the opposite: Cordelia returns to rescue Lear, Edgar tends his blinded father in disguise, the Fool follows his master into the storm. The bond between parent and child is the play's deepest test of human nature, and the language of &lsquo;nature&rsquo; (a key word repeated some forty times) is used both to denounce unnatural daughters and to celebrate the bonds that survive. Critically, the play has been read as a study of the patriarchal family in crisis: a father who weaponises his children's love is himself a corrupting force."
               />
               <ThemeCard
                 title={tr(`Nature and Order`)}
@@ -363,7 +403,7 @@ export default function KingLearPage() {
               />
               <ThemeCard
                 title={tr(`Justice and Injustice`)}
-                description="The play repeatedly asks whether the gods are just, and repeatedly refuses to answer. Gloucester famously cries &lsquo;As flies to wanton boys are we to th' gods; / They kill us for their sport,&rsquo; while Edgar later insists &lsquo;The gods are just.&rsquo; The mock-trial Lear conducts on the heath, arraigning a stool as Goneril, parodies the very institutions that have failed him. Cordelia's death is the play's ultimate scandal: she is the most innocent character in the canon, and Shakespeare kills her without explanation. Whether this is a critique of human justice, divine injustice, or simply tragic contingency is left unresolved."
+                description="The play repeatedly asks whether the gods are just, and repeatedly refuses to answer. Gloucester famously cries &lsquo;As flies to wanton boys are we to the gods, / They kill us for their sport&rsquo;, while Edgar later insists &lsquo;The gods are just.&rsquo; The mock-trial Lear conducts in the farmhouse in III.vi (a passage only the 1608 Quarto has), arraigning a stool as Goneril, parodies the very institutions that have failed him. Cordelia's death is the play's ultimate scandal: she is the most innocent character in the canon, and Shakespeare kills her without explanation. Whether this is a critique of human justice, divine injustice, or simply tragic contingency is left unresolved."
               />
             </div>
           </Section>
@@ -486,14 +526,14 @@ export default function KingLearPage() {
                 analysis="Edmund's opening soliloquy redefines &lsquo;nature&rsquo; as raw self-interest, in opposition to the customary, hierarchical &lsquo;nature&rsquo; invoked by his father. The blank-verse confidence and direct address to a personified Nature mark him as a proto-modern, almost Hobbesian figure. The line is a gift for AO3 (context) work on the Great Chain of Being and its erosion."
               />
               <QuoteCard
-                quote="Thou shouldst not have been old before thou hadst been wise."
+                quote="Thou shouldst not have been old till thou hadst been wise."
                 speaker="The Fool, I.v"
-                analysis="The Fool's rebuke to Lear, delivered as a pseudo-proverb. The chiasmus (&lsquo;old / wise&rsquo;) inverts the conventional pairing: in Jacobean wisdom literature, age implies wisdom. The Fool deflates this commonplace and pinpoints Lear's tragedy. As the play's licensed truth-teller, the Fool can speak to the king what no courtier dares; this line is one of the most useful for discussing the Fool's structural function."
+                analysis="The Fool's rebuke to Lear, delivered as a pseudo-proverb. The chiasmus (&lsquo;old / wise&rsquo;) inverts the conventional pairing: in Jacobean wisdom literature, age implies wisdom. The Fool deflates this commonplace and pinpoints Lear's tragedy. As the play's licensed truth-teller, the Fool can speak to the king what no courtier dares; this line is one of the most useful for discussing the Fool's structural function. The 1608 Quarto reads &lsquo;before&rsquo; where this edition, like the 1623 Folio, has &lsquo;till&rsquo;."
               />
               <QuoteCard
                 quote="O, reason not the need! Our basest beggars / Are in the poorest thing superfluous."
                 speaker="Lear, II.iv"
-                analysis="The crisis-point of the dispossession scene: Regan has just asked &lsquo;What need one?&rsquo; Lear's reply moves from particular grievance to philosophical statement: human dignity is precisely what cannot be reduced to need. The line foreshadows his later realisation on the heath that even &lsquo;the basest beggar&rsquo; has more than he. It is also a profound rebuke of the utilitarian thinking that his daughters represent."
+                analysis="The crisis-point of the dispossession scene: Regan has just asked &lsquo;What need one?&rsquo; Lear's reply moves from particular grievance to philosophical statement: human dignity is precisely what cannot be reduced to need. The line foreshadows the heath, where Lear sees in Poor Tom what a man is without anything superfluous: &lsquo;a poor, bare, forked animal&rsquo;. It is also a profound rebuke of the utilitarian thinking that his daughters represent."
               />
               <QuoteCard
                 quote="Blow, winds, and crack your cheeks! Rage, blow!"
@@ -521,7 +561,7 @@ export default function KingLearPage() {
                 analysis="The line accompanying the on-stage blinding of Gloucester. The gross materiality (&lsquo;vile jelly&rsquo;) reduces the eye, the most spiritualised organ in Renaissance thought, to a piece of meat. The rhetorical question is sadistic. Productions almost always deliver this line with shocking force; its violence is one of the reasons the play was rarely performed in its full text for nearly two centuries."
               />
               <QuoteCard
-                quote="As flies to wanton boys are we to th' gods; / They kill us for their sport."
+                quote="As flies to wanton boys are we to the gods, / They kill us for their sport."
                 speaker="Gloucester, IV.i"
                 analysis="Spoken just after his blinding, this is the play's most famous statement of cosmic injustice. The simile reduces humanity to insects and the gods to cruel children. &lsquo;Wanton&rsquo; suggests both casual and capricious. The line is essential for any discussion of the play's religious vision; it is balanced, but never refuted, by Edgar's &lsquo;The gods are just&rsquo; (V.iii)."
               />
@@ -531,7 +571,7 @@ export default function KingLearPage() {
                 analysis="The most concise statement of the sight/blindness paradox. The verb &lsquo;stumbled&rsquo; reverses the usual association of sight with security; only blindness has given Gloucester clear vision. Brilliant for AO2 (language) work because of its compression - five words contain the entire metaphorical structure of the subplot."
               />
               <QuoteCard
-                quote="A man may see how this world goes with no eyes. Look with thine ears."
+                quote="A man may see how the world goes with no eyes. Look with thine ears"
                 speaker="Lear, IV.vi"
                 analysis="The mad Lear, meeting the blind Gloucester, articulates the play's sight/blindness paradox at its bleakest. The synaesthetic command (&lsquo;Look with thine ears&rsquo;) collapses the sensory hierarchy. The scene is one of the strangest in Shakespeare: the mad king and the blind earl together perceive the world more truly than any sane and sighted character has done."
               />
@@ -546,14 +586,14 @@ export default function KingLearPage() {
                 analysis="Captured with Cordelia, Lear imagines an idyllic prison-life. The bird-cage simile transforms imprisonment into pastoral; &lsquo;God's spies&rsquo; suggests a contemplative, almost monastic vocation. The fantasy is heart-breaking precisely because Edmund's execution-order is already in motion. Shakespeare gives Lear a moment of imagined grace and then immediately destroys it."
               />
               <QuoteCard
-                quote="Howl, howl, howl, howl! O, you are men of stones."
+                quote="Howl, howl, howl, howl! O, you are men of stone"
                 speaker="Lear, V.iii"
-                analysis="Lear enters with Cordelia in his arms. The four-fold imperative is reducible to no rational meaning - it is grief-as-sound. The contrast with the urbane verse he speaks elsewhere is shattering. &lsquo;Men of stones&rsquo; transforms the on-stage witnesses into a chorus of unfeeling rock. Critics often note that the line is Shakespeare's most extreme attempt to push tragic verse to the limit of articulation."
+                analysis="Lear enters with Cordelia in his arms. The four-fold imperative is reducible to no rational meaning - it is grief-as-sound. The contrast with the urbane verse he speaks elsewhere is shattering. The phrase &lsquo;men of stone&rsquo; transforms the on-stage witnesses into a chorus of unfeeling rock. Critics often note that the line is Shakespeare's most extreme attempt to push tragic verse to the limit of articulation. Count in your own copy: this edition, like the 1608 Quarto, has four cries of &lsquo;Howl&rsquo; where the 1623 Folio has three, and it prints &lsquo;stone&rsquo; where both the Quarto and the Folio read &lsquo;stones&rsquo;."
               />
               <QuoteCard
                 quote="Never, never, never, never, never."
                 speaker="Lear, V.iii"
-                analysis="Lear's last full line of verse, looking at the dead Cordelia. The repetition of a single trochee five times is a deliberate metrical shock: it falls outside the iambic norm and forces the actor to find five different inflections of the same word. Many critics regard this as the most devastating line in English drama. Use it to discuss the breakdown of language under grief, or as evidence against any reading of the play as ultimately redemptive."
+                analysis="From Lear's last speech, looking at the dead Cordelia, a few lines before he dies. The repetition of a single trochee five times is a deliberate metrical shock: it falls outside the iambic norm and forces the actor to find five different inflections of the same word. Many critics regard this as the most devastating line in English drama. Use it to discuss the breakdown of language under grief, or as evidence against any reading of the play as ultimately redemptive."
               />
             </div>
           </Section>
@@ -566,7 +606,7 @@ export default function KingLearPage() {
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">The Storm</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The storm in Acts III is the play&apos;s defining symbol, operating on at least
+                  The storm in Act III is the play&apos;s defining symbol, operating on at least
                   three levels: the cosmological (the heavens registering disorder in the body
                   politic), the psychological (Lear&apos;s mind erupting), and the social (society
                   shaken to its base by the violation of natural bonds). Shakespeare directs the
@@ -608,11 +648,12 @@ export default function KingLearPage() {
                 <h4 className="font-bold text-foreground">{tr(`Lear's Crown`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The crown is given away in I.i and never literally returned. In its place, Lear in
-                  IV.vi wears a crown of weeds and wild flowers - &lsquo;crown&apos;d with rank
-                  fumiter and furrow-weeds&rsquo; - a savage parody of regal display. The
-                  substitution dramatises the play&apos;s collapse of the body politic into the body
-                  natural. The crown of weeds also recalls Christ&apos;s crown of thorns; readings
-                  that emphasise the play&apos;s religious imagery often pivot on this image.
+                  IV.vi wears a crown of weeds and wild flowers, a savage parody of regal display;
+                  Cordelia has already described him in IV.iv as &lsquo;Crown&apos;d with rank
+                  fumiter and furrow weeds&rsquo;. The substitution dramatises the play&apos;s
+                  collapse of the body politic into the body natural. The crown of weeds also
+                  recalls Christ&apos;s crown of thorns; readings that emphasise the play&apos;s
+                  religious imagery often pivot on this image.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -631,7 +672,7 @@ export default function KingLearPage() {
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">The Heath</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The heath of Acts III is the most powerful liminal space in Shakespeare. It is
+                  The heath of Act III is the most powerful liminal space in Shakespeare. It is
                   outside the castle, outside the court, outside the law: a place of wind, hovel and
                   madness. In the heath scenes, the king is reduced to the status of a beggar, the
                   beggar (Edgar) speaks with the voice of a fiend, and the Fool becomes a sage.
@@ -752,7 +793,7 @@ export default function KingLearPage() {
                       Paragraph 1 &mdash; Truth-telling
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      &lsquo;Thou shouldst not have been old before thou hadst been wise.&rsquo; The
+                      &lsquo;Thou shouldst not have been old till thou hadst been wise.&rsquo; The
                       Fool&apos;s riddles puncture courtly hypocrisy. AO3: the medieval and
                       Renaissance tradition of the licensed jester.
                     </p>
@@ -764,7 +805,8 @@ export default function KingLearPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       The Fool first appears only after Cordelia is banished. AO5: discuss the
                       theatrical tradition that the boy-actor doubled both roles, and the
-                      implications for Lear&apos;s closing &lsquo;my poor fool is hanged.&rsquo;
+                      implications for Lear&apos;s closing &lsquo;my poor fool is
+                      hang&apos;d&rsquo;.
                     </p>
                   </div>
                   <div>
@@ -1030,8 +1072,11 @@ export default function KingLearPage() {
           <em>King Lear</em> by William Shakespeare was written c.1605&ndash;1606 and first
           performed at the court of James I on 26 December 1606. The text exists in two early
           versions, the 1608 First Quarto and the 1623 First Folio, which differ substantially.
-          Shakespeare died in 1616 and the text is in the <strong>public domain</strong>. All
-          quotations on this page are reproduced from the Folio/Quarto tradition.
+          Shakespeare died in 1616 and the text is in the <strong>public domain</strong>. Quotations
+          on this page follow the modern-spelling Project Gutenberg edition (eBook #1532) held on
+          this site, which combines the two texts, as most school editions do. Your own edition may
+          differ from it in spelling, punctuation and, in places, whole lines, so check a quotation
+          against your own copy before you learn it.
         </p>
       </footer>
     </>

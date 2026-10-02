@@ -3,22 +3,22 @@
 // One paper per year group per term (9 total).
 
 export interface MockAssessmentTask {
-  id: string;
-  title: string;
-  yearGroup: 'Year 7' | 'Year 8' | 'Year 9';
-  term: 'Term 1' | 'Term 2' | 'Term 3';
-  type: 'reading' | 'writing' | 'combined';
-  duration: string;
-  totalMarks: number;
-  instructions: string;
+  id: string
+  title: string
+  yearGroup: 'Year 7' | 'Year 8' | 'Year 9'
+  term: 'Term 1' | 'Term 2' | 'Term 3'
+  type: 'reading' | 'writing' | 'combined'
+  duration: string
+  totalMarks: number
+  instructions: string
   questions: {
-    questionNumber: number;
-    question: string;
-    marks: number;
-    guidance: string;
-    modelAnswer: string;
-  }[];
-  markScheme: { criterion: string; marks: number; descriptor: string }[];
+    questionNumber: number
+    question: string
+    marks: number
+    guidance: string
+    modelAnswer: string
+  }[]
+  markScheme: { criterion: string; marks: number; descriptor: string }[]
 }
 
 export const ks3MockAssessments: MockAssessmentTask[] = [
@@ -38,8 +38,7 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
     questions: [
       {
         questionNumber: 1,
-        question:
-          'List FOUR things you learn about the fox girl from the extract. [4 marks]',
+        question: 'List FOUR things you learn about the fox girl from the extract. [4 marks]',
         marks: 4,
         guidance:
           'Award 1 mark for each relevant, text-supported point up to a maximum of 4. ' +
@@ -96,7 +95,7 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
           'mostly embedded quotation. Band 2 (4-6): some analysis, quotation not always embedded. ' +
           'Band 1 (1-3): limited point, quotation copied without analysis.',
         modelAnswer:
-          'The opening paragraph establishes a threatening, liminal setting that mirrors the fox girl\'s outsider status. ' +
+          "The opening paragraph establishes a threatening, liminal setting that mirrors the fox girl's outsider status. " +
           'The writer describes "the trees at the edge of the village [that] leaned inward as if listening," ' +
           'using personification to make the natural world appear active and watchful. ' +
           'This creates an atmosphere of surveillance and unease, suggesting that the boundary between the safe village ' +
@@ -110,8 +109,7 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
       {
         criterion: 'Retrieval (Q1)',
         marks: 4,
-        descriptor:
-          '1 mark per valid, text-supported point. No marks for unsupported assertion.',
+        descriptor: '1 mark per valid, text-supported point. No marks for unsupported assertion.',
       },
       {
         criterion: 'Language Analysis (Q2)',
@@ -268,7 +266,7 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
       {
         questionNumber: 2,
         question:
-          'Choose one poetic technique used in Poem A and explain how it contributes to the poem\'s meaning. [8 marks]',
+          "Choose one poetic technique used in Poem A and explain how it contributes to the poem's meaning. [8 marks]",
         marks: 8,
         guidance:
           'Accept any clearly identified technique (metaphor, simile, enjambment, repetition, imagery, etc.) ' +
@@ -277,12 +275,12 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
           'Band 3 (5-6): clear explanation. Band 2 (3-4): technique named with some explanation. ' +
           'Band 1 (1-2): technique or quotation present but no analysis.',
         modelAnswer:
-          'The poet uses enjambment throughout the poem to reflect the speaker\'s inability to contain their emotions. ' +
+          "The poet uses enjambment throughout the poem to reflect the speaker's inability to contain their emotions. " +
           'Lines such as "I cannot hold / the shape of you in memory" run across two lines, ' +
           'mimicking the way memory fragments and refuses to stay fixed. ' +
           'The line break after "hold" creates a pause that enacts the very act of trying and failing to grasp something, ' +
-          'making the reader physically experience the speaker\'s sense of loss. ' +
-          'This technique deepens the poem\'s central theme of impermanence.',
+          "making the reader physically experience the speaker's sense of loss. " +
+          "This technique deepens the poem's central theme of impermanence.",
       },
       {
         questionNumber: 3,
@@ -375,9 +373,9 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
           'Collins builds tension through a range of linguistic techniques. She uses short declarative sentences - ' +
           '"I am not pretty. I am not beautiful. I am as radiant as the sun." - creating a list structure that ' +
           'builds to an unexpected, almost defiant climax. This juxtaposition of self-deprecation and grandiosity ' +
-          'reflects Katniss\'s complex emotional state. ' +
+          "reflects Katniss's complex emotional state. " +
           'Collins also uses sensory imagery: "the smell of desperation, of unwashed bodies" grounds the reader ' +
-          'in the physical reality of the crowd\'s fear, making the tension visceral and immediate. ' +
+          "in the physical reality of the crowd's fear, making the tension visceral and immediate. " +
           'The verb "stiffened" applied to the crowd\'s collective body language suggests shared dread ' +
           'without a word being spoken, a form of showing rather than telling that amplifies unease.',
       },
@@ -387,16 +385,16 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
           'How does Collins present the Capitol as a symbol of power and oppression in this extract? [9 marks]',
         marks: 9,
         guidance:
-          'Band 3 (7-9): perceptive analysis of the Capitol\'s symbolic role, well-supported. ' +
+          "Band 3 (7-9): perceptive analysis of the Capitol's symbolic role, well-supported. " +
           'Band 2 (4-6): clear explanation with evidence. Band 1 (1-3): simple comment.',
         modelAnswer:
-          'Collins uses the Capitol\'s representatives as visual symbols of oppressive power. ' +
+          "Collins uses the Capitol's representatives as visual symbols of oppressive power. " +
           'The Peacekeepers\' "identical white uniforms" suggest conformity imposed from above - individuality ' +
           'is erased in service of the state. ' +
-          'Effie Trinket\'s elaborate costume and cheerful manner create a disturbing contrast with the poverty ' +
+          "Effie Trinket's elaborate costume and cheerful manner create a disturbing contrast with the poverty " +
           'around her, implying that the Capitol consumes suffering as entertainment without acknowledging it as real. ' +
           'The phrase "smiling as if she had not a care in the world" uses free indirect discourse to expose the ' +
-          'gap between the Capitol\'s performed indifference and the genuine anguish of the districts.',
+          "gap between the Capitol's performed indifference and the genuine anguish of the districts.",
       },
       {
         questionNumber: 4,
@@ -411,8 +409,8 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
         modelAnswer:
           'Collins presents Katniss as a character defined by the necessity of survival, ' +
           'using her experiences to critique systems that force impossible choices on ordinary people. ' +
-          'From the outset, Katniss\'s hunting and her role as provider establish survival as both literal and metaphorical: ' +
-          'she must preserve her family\'s physical lives while also protecting their dignity under oppression. ' +
+          "From the outset, Katniss's hunting and her role as provider establish survival as both literal and metaphorical: " +
+          "she must preserve her family's physical lives while also protecting their dignity under oppression. " +
           'When she volunteers for Prim, the act is framed not as heroism but as reflexive love: ' +
           '"It\'s the only logical thing to do." Collins strips the gesture of sentimentality, suggesting that sacrifice ' +
           'in a dystopian world is not a choice but a consequence of love surviving in an unloving system. ' +
@@ -466,7 +464,7 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
       {
         questionNumber: 1,
         question:
-          'What is the speaker\'s attitude towards conflict in this poem? ' +
+          "What is the speaker's attitude towards conflict in this poem? " +
           'Use evidence to explain your answer. [6 marks]',
         marks: 6,
         guidance:
@@ -491,38 +489,38 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
           'volta, repetition, fragmentation). Band 3 (7-9): perceptive structural analysis with effect. ' +
           'Band 2 (4-6): some structural awareness. Band 1 (1-3): surface observation.',
         modelAnswer:
-          'The poem\'s fragmented structure - short, incomplete lines interspersed with longer, flowing ones - ' +
+          "The poem's fragmented structure - short, incomplete lines interspersed with longer, flowing ones - " +
           'enacts the disruption of conflict on human experience. ' +
           'When the lines are short and clipped ("Fire. Heat. Done."), ' +
           'the reader experiences the shock of violence through form. ' +
           'The volta midway through the poem shifts from external description to internal reflection, ' +
-          'mirroring the survivor\'s movement from witnessing to processing. ' +
+          "mirroring the survivor's movement from witnessing to processing. " +
           'The final stanza returns to the opening image, creating a circular structure that suggests ' +
-          'the impossibility of escaping conflict\'s aftermath.',
+          "the impossibility of escaping conflict's aftermath.",
       },
       {
         questionNumber: 3,
         question:
-          'How does Shakespeare present Macbeth\'s ambition in this extract? ' +
+          "How does Shakespeare present Macbeth's ambition in this extract? " +
           'Consider how language, imagery, and dramatic effect contribute to your answer. [20 marks]',
         marks: 20,
         guidance:
           'Mark holistically. Band 4 (17-20): sophisticated analysis, contextual awareness, precise quotation, ' +
-          'discussion of dramatic effect and Shakespeare\'s craft. ' +
+          "discussion of dramatic effect and Shakespeare's craft. " +
           'Band 3 (12-16): clear analysis, well-structured, mostly accurate. ' +
           'Band 2 (7-11): some analysis with evidence. Band 1 (1-6): narrative or descriptive.',
         modelAnswer:
-          'Shakespeare presents Macbeth\'s ambition as simultaneously driving and destroying him, ' +
+          "Shakespeare presents Macbeth's ambition as simultaneously driving and destroying him, " +
           'using imagery that is both magnificent and deeply unsettling. ' +
-          'The soliloquy structure gives the audience privileged access to Macbeth\'s inner conflict, ' +
+          "The soliloquy structure gives the audience privileged access to Macbeth's inner conflict, " +
           'creating dramatic irony as he voices doubts no other character can hear. ' +
           'The phrase "vaulting ambition, which o\'erleaps itself" uses an extended equestrian metaphor ' +
           'to present ambition as a force that defeats its own purpose by overreaching. ' +
           'The verb "o\'erleaps" is active and physical, suggesting ambition as an ungovernable physical energy. ' +
           'Shakespeare also uses darkness imagery throughout - "Stars, hide your fires" - associating ambition ' +
-          'with a desire to suppress natural order, connecting Macbeth\'s personal failing to a wider cosmic disruption. ' +
+          "with a desire to suppress natural order, connecting Macbeth's personal failing to a wider cosmic disruption. " +
           'In the context of the Jacobean worldview, in which the natural and divine orders were intertwined, ' +
-          'this would signal to the audience that Macbeth\'s ambition is not merely a personal flaw ' +
+          "this would signal to the audience that Macbeth's ambition is not merely a personal flaw " +
           'but a transgression against the universe itself.',
       },
     ],
@@ -530,8 +528,7 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
       {
         criterion: 'Poem - Attitude and Inference (Q1)',
         marks: 6,
-        descriptor:
-          'Band 3 (5-6): nuanced, evidenced. Band 2 (3-4): clear. Band 1 (1-2): simple.',
+        descriptor: 'Band 3 (5-6): nuanced, evidenced. Band 2 (3-4): clear. Band 1 (1-2): simple.',
       },
       {
         criterion: 'Poem - Structure and Form (Q2)',
@@ -593,16 +590,16 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
           'with explanation of persuasive effect. Band 2 (3-4): some analysis. Band 1 (1-2): description only.',
         modelAnswer:
           'The bold, capitalised headline immediately draws the eye and establishes a commanding tone, ' +
-          'positioning the reader to accept the article\'s viewpoint before they begin reading. ' +
+          "positioning the reader to accept the article's viewpoint before they begin reading. " +
           'The image of a crowd, placed directly beneath the headline, creates a visual argument: ' +
           'the scale of the crowd implies popular support, lending the text social authority. ' +
           'The use of a pull-quote in a contrasting colour breaks the flow of reading and forces the reader ' +
-          'to engage with the text\'s key claim even if they skim the rest of the article.',
+          "to engage with the text's key claim even if they skim the rest of the article.",
       },
       {
         questionNumber: 3,
         question:
-          'Write a speech for your school\'s Year 8 assembly arguing for or against the following motion: ' +
+          "Write a speech for your school's Year 8 assembly arguing for or against the following motion: " +
           '"Technology is making us less human." Your speech should use at least three rhetorical techniques. [15 marks]',
         marks: 15,
         guidance:
@@ -655,6 +652,11 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
 
   // --- YEAR 9, TERM 1 --------------------------------------------------------
   {
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts). "If they would rather die" had lost its speech
+    // tag with no ellipsis; that tag ("said Scrooge") makes it direct speech, not the free
+    // indirect discourse the model answer called it; and the gentlemen are not "dismissed" in
+    // the text: Scrooge sees them off with "Good afternoon, gentlemen!".
     id: 'y9-t1-mock',
     title: 'Year 9 Term 1 Mock Assessment: A Christmas Carol',
     yearGroup: 'Year 9',
@@ -671,18 +673,18 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
       {
         questionNumber: 1,
         question:
-          'What do you learn about Scrooge\'s character from this extract? ' +
-          'How does Dickens make Scrooge\'s attitudes clear? [5 marks]',
+          "What do you learn about Scrooge's character from this extract? " +
+          "How does Dickens make Scrooge's attitudes clear? [5 marks]",
         marks: 5,
         guidance:
           'Band 3 (4-5): clear inference with evidence, some comment on authorial method. ' +
           'Band 2 (2-3): identification with partial support. Band 1 (1): simple assertion.',
         modelAnswer:
           'From the extract, Scrooge appears entirely indifferent to the suffering of others. ' +
-          'The verb "dismissed" suggests contempt - he does not merely ignore the charity collectors ' +
-          'but actively removes them from his presence. Dickens makes this clear through free indirect discourse, ' +
-          'allowing the reader to hear Scrooge\'s rationalisations in his own idiom: ' +
-          '"If they would rather die, they had better do it." ' +
+          'His parting words, "Good afternoon, gentlemen!", show contempt - he does not merely ignore the charity collectors ' +
+          "but actively dismisses them from his presence. Dickens makes this clear through Scrooge's own speech, " +
+          "allowing the reader to hear Scrooge's rationalisations in his own idiom: " +
+          '"If they would rather die... they had better do it." ' +
           'The conditional structure of this sentence reveals his cold, transactional view of human life.',
       },
       {
@@ -706,22 +708,22 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
           'uses this scene to argue that emotional memory - the capacity to feel and be changed by the past - ' +
           'is what distinguishes fully human individuals from those who, like the early Scrooge, ' +
           'have subordinated feeling to financial interest. ' +
-          'The structural choice to begin Scrooge\'s transformation with memory rather than current suffering ' +
+          "The structural choice to begin Scrooge's transformation with memory rather than current suffering " +
           'implies that redemption requires honest engagement with the self one has neglected or abandoned.',
       },
       {
         questionNumber: 3,
         question:
-          'How does Dickens present Scrooge\'s transformation as a criticism of Victorian social attitudes? ' +
+          "How does Dickens present Scrooge's transformation as a criticism of Victorian social attitudes? " +
           'Write a character essay with detailed reference to the novel as a whole. [20 marks]',
         marks: 20,
         guidance:
           'Band 4 (17-20): sustained argument, contextual depth, precise evidence across the novel, ' +
-          'discussion of Dickens\'s craft and purpose. Band 3 (12-16): clear essay structure, ' +
+          "discussion of Dickens's craft and purpose. Band 3 (12-16): clear essay structure, " +
           'contextual awareness, well-chosen evidence. Band 2 (7-11): some analysis and context. ' +
           'Band 1 (1-6): descriptive or narrative.',
         modelAnswer:
-          'Dickens shapes Scrooge\'s transformation not merely as a personal redemption story ' +
+          "Dickens shapes Scrooge's transformation not merely as a personal redemption story " +
           'but as a pointed critique of the Malthusian attitudes prevalent in Victorian England. ' +
           'At the novel\'s opening, Scrooge\'s dismissal of charitable giving - "decrease the surplus population" - ' +
           'directly echoes the language of contemporary political economists who argued that poverty was natural ' +
@@ -729,9 +731,9 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
           'By having Scrooge repeat this rhetoric only to be confronted with it by the Ghost of Christmas Present, ' +
           'Dickens exposes how abstract economic language conceals real human suffering. ' +
           'Tiny Tim is the embodiment of this critique: a child whose fate is determined by economic circumstance, ' +
-          'not moral failing. When Scrooge asks whether Tim will survive, the ghost\'s use of Scrooge\'s own words ' +
+          "not moral failing. When Scrooge asks whether Tim will survive, the ghost's use of Scrooge's own words " +
           'against him is a moment of devastating irony. ' +
-          'By the novel\'s end, Scrooge\'s transformation - manifested in practical generosity rather than sentimentality - ' +
+          "By the novel's end, Scrooge's transformation - manifested in practical generosity rather than sentimentality - " +
           'models the behaviour Dickens believed the Victorian middle classes were capable of and morally obligated to adopt. ' +
           'The final image of Scrooge as a second father to Tiny Tim suggests that social bonds of care ' +
           'can and should replace the impersonal mechanisms of the market.',
@@ -780,7 +782,7 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
       {
         questionNumber: 1,
         question:
-          'A local council has proposed closing the town\'s only library to save money. ' +
+          "A local council has proposed closing the town's only library to save money. " +
           'Write an article for the local newspaper arguing against this decision. ' +
           'Your article should inform, argue, and persuade. [24 marks]',
         marks: 24,
@@ -791,7 +793,7 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
           'Technical Accuracy (10 marks): spelling, punctuation, grammar, vocabulary range and accuracy.',
         modelAnswer:
           'CLOSING OUR LIBRARY WOULD BE AN ACT OF CULTURAL VANDALISM\n\n' +
-          'The council\'s proposal to close Riverside Library is not merely a budget decision. ' +
+          "The council's proposal to close Riverside Library is not merely a budget decision. " +
           'It is a statement about what kind of community we want to be - and the answer, ' +
           'if we allow it, will be a profoundly impoverished one. ' +
           'Libraries are not relics. They are the only public spaces in our town ' +
@@ -822,7 +824,7 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
           'I want to share three pieces of advice that genuinely helped me.\n\n' +
           'First: read. Read anything - novels, news articles, the back of cereal boxes. ' +
           'The more you read, the more you absorb the patterns of language unconsciously. ' +
-          'You\'ll find yourself using techniques you couldn\'t name, simply because you\'ve seen them work.\n\n' +
+          "You'll find yourself using techniques you couldn't name, simply because you've seen them work.\n\n" +
           'Second: your first draft is not your final draft. Do not try to write perfectly. ' +
           'Write honestly, then improve. Every professional writer rewrites. It is not a sign of failure; ' +
           'it is the process.\n\n' +
@@ -913,9 +915,9 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
           'Band 3 (7-9): clear analysis, mostly accurate. Band 2 (4-6): some analysis. Band 1 (1-3): simple.',
         modelAnswer:
           'Steinbeck constructs a pervasive atmosphere of isolation through both setting description and dialogue. ' +
-          'The landscape is described in terms of absence: "the silence came into the room" is a striking '  +
+          'The landscape is described in terms of absence: "the silence came into the room" is a striking ' +
           'personification, treating silence as an active presence that fills the space left by human connection. ' +
-          'The men\'s speech is clipped and guarded: Steinbeck uses short exchanges and pauses (rendered through dashes) ' +
+          "The men's speech is clipped and guarded: Steinbeck uses short exchanges and pauses (rendered through dashes) " +
           'to suggest that the characters are unable or unwilling to fully express themselves. ' +
           'The verb "hunched" applied to Crooks captures the physical posture of a man who has internalised ' +
           'his own marginalisation. ' +
@@ -926,17 +928,17 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
       {
         questionNumber: 3,
         question:
-          'How does Steinbeck use the character of Curley\'s wife to explore the theme of powerlessness? ' +
+          "How does Steinbeck use the character of Curley's wife to explore the theme of powerlessness? " +
           'Write a literature essay that integrates contextual understanding throughout. [20 marks]',
         marks: 20,
         guidance:
           'Band 4 (17-20): sustained, precise, contextually integrated, clear argument, well-structured paragraphs, ' +
-          'discussion of Steinbeck\'s craft and purpose. ' +
+          "discussion of Steinbeck's craft and purpose. " +
           'Band 3 (12-16): clear argument with contextual awareness. ' +
           'Band 2 (7-11): some analytical comment and context. Band 1 (1-6): descriptive or narrative.',
         modelAnswer:
-          'Steinbeck uses Curley\'s wife to embody the multiple and intersecting forms of powerlessness ' +
-          'that defined women\'s lives in 1930s America. ' +
+          "Steinbeck uses Curley's wife to embody the multiple and intersecting forms of powerlessness " +
+          "that defined women's lives in 1930s America. " +
           'She is notable as the only character in the novel without a name, ' +
           'a structural choice that itself enacts her powerlessness: she exists only in relation to her husband, ' +
           'her identity subsumed by his. ' +
@@ -949,7 +951,7 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
           'This posthumous revelation of her full humanity - her dreams of Hollywood, her loneliness - ' +
           'constitutes an indictment of the society that denied her a life commensurate with her humanity. ' +
           'In the context of the Great Depression and the patriarchal structures of rural California, ' +
-          'Curley\'s wife represents all those rendered invisible by the intersection of gender, ' +
+          "Curley's wife represents all those rendered invisible by the intersection of gender, " +
           'class, and economic hardship.',
       },
     ],
@@ -978,4 +980,4 @@ export const ks3MockAssessments: MockAssessmentTask[] = [
       },
     ],
   },
-];
+]

@@ -26,6 +26,9 @@ type ThemeQuotes = {
 
 /* ─── Data ───────────────────────────────────────────────────── */
 
+// Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+// src/data/full-texts/jekyll-and-hyde.ts): "If I am the chief of sinners" is Chapter 6,
+// not 10.
 const QUOTES_BY_THEME: ThemeQuotes[] = [
   {
     theme: 'Duality of Man',
@@ -167,7 +170,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
       {
         quote: 'If I am the chief of sinners, I am the chief of sufferers also.',
         speaker: 'Jekyll',
-        chapter: 'Chapter 10',
+        chapter: 'Chapter 6',
         analysis:
           "Jekyll positions himself as both perpetrator and victim. The balanced clause structure equates sin and suffering, which evades moral responsibility. Stevenson invites the reader to question whether Jekyll's pain excuses his crimes.",
       },

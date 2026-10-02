@@ -596,11 +596,14 @@ export default function MacbethRevisionPage() {
                       act="Act 2, Scene 2"
                       analysis="A rare moment of vulnerability revealing she is not entirely ruthless. She could not kill Duncan herself because he looked like her father. This cracks her facade of total coldness and foreshadows her eventual breakdown. Her humanity survives despite her attempts to suppress it."
                     />
+                    {/* The held edition (src/data/full-texts/macbeth.ts) prints "Naught's",
+                        not the "Nought's" of other editions that this card printed until
+                        2 October 2026. */}
                     <Quote
-                      text="Nought's had, all's spent, / Where our desire is got without content"
+                      text="Naught's had, all's spent, / Where our desire is got without content"
                       speaker="Lady Macbeth"
                       act="Act 3, Scene 2"
-                      analysis="They have everything they wanted but no satisfaction. 'Nought's had, all's spent' -- they have gained nothing and lost everything. The rhyming couplet gives it a proverbial, bitter wisdom. This soliloquy shows Lady Macbeth's growing despair, spoken when she is alone."
+                      analysis="They have everything they wanted but no satisfaction. 'Naught's had, all's spent' -- they have gained nothing and lost everything. The rhyming couplet gives it a proverbial, bitter wisdom. This soliloquy shows Lady Macbeth's growing despair, spoken when she is alone."
                     />
                     <Quote
                       text="Out, damned spot! out, I say! [...] who would have thought the old man to have had so much blood in him?"
@@ -625,7 +628,7 @@ export default function MacbethRevisionPage() {
                       analysis="Banquo warns that the witches use small truths (the Cawdor prophecy) to lure victims into larger traps. He is exactly right, but Macbeth ignores this wisdom. Shows Banquo's moral clarity and his role as a voice of reason."
                     />
                     <Quote
-                      text="Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promised, and I fear / Thou play'dst most foully for't"
+                      text="Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promis'd; and I fear / Thou play'dst most foully for't"
                       speaker="Banquo"
                       act="Act 3, Scene 1"
                       analysis="Banquo suspects Macbeth but does not act -- possibly because the prophecy promises his own line will be kings. The tricolon 'King, Cawdor, Glamis' shows he has been keeping careful track. 'Most foully' is a direct (private) accusation of murder."
@@ -793,7 +796,7 @@ export default function MacbethRevisionPage() {
                 quotes={
                   <>
                     <Quote
-                      text="Your castle is surprised; your wife and babes / Savagely slaughter'd"
+                      text="Your castle is surpris'd; your wife and babes / Savagely slaughter'd"
                       speaker="Ross"
                       act="Act 4, Scene 3"
                       analysis="The bluntness of 'savagely slaughter'd' is devastating after Ross's earlier hesitation. He tried to soften the blow but ultimately must deliver the raw truth. This moment triggers Macduff's grief and the audience's final condemnation of Macbeth."
@@ -1079,7 +1082,7 @@ export default function MacbethRevisionPage() {
                     analysis="Banquo warns the witches use small truths to lure victims into larger traps. He is exactly right, but Macbeth ignores this wisdom. Shows Banquo's moral clarity as a foil."
                   />
                   <QuoteCompact
-                    text="Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promised, and I fear / Thou play'dst most foully for't"
+                    text="Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promis'd; and I fear / Thou play'dst most foully for't"
                     speaker="Banquo"
                     act="Act 3, Scene 1"
                     themes={['Loyalty & Betrayal', 'Ambition']}
@@ -1230,9 +1233,9 @@ export default function MacbethRevisionPage() {
                       </td>
                       <td className="py-2">
                         &ldquo;Fair is foul, and foul is fair&rdquo; &bull; &ldquo;Is this a
-                        dagger?&rdquo; &bull; &ldquo;Come, you spirits, unsex me here&rdquo; &bull;
-                        &ldquo;Double, double toil and trouble&rdquo; &bull; &ldquo;So foul and fair
-                        a day&rdquo;
+                        dagger?&rdquo; &bull; &ldquo;Come, you spirits ... unsex me here&rdquo;
+                        &bull; &ldquo;Double, double toil and trouble&rdquo; &bull; &ldquo;So foul
+                        and fair a day&rdquo;
                       </td>
                     </tr>
                     <tr className="border-b border-border">

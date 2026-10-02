@@ -3,9 +3,23 @@
 // Jekyll & Hyde, Romeo & Juliet, Animal Farm/LOTF/OMAM, Blood Brothers/AVFTB,
 // Frankenstein/Jane Eyre/P&P, and IGCSE prose (TFA/TKAM/Curious Incident).
 //
-// All quotations have been verified against authoritative editions (Folger
-// Shakespeare for Shakespeare, Heinemann for An Inspector Calls, Penguin for
-// Dickens / Stevenson, Penguin Modern Classics for the modern prose).
+// Shakespeare is quoted in the wording of the editions the site holds
+// (src/data/full-texts), which `node scripts/check-quotations.mjs` checks.
+// Until 2 October 2026 this note named the Folger edition instead, and the
+// Romeo and Juliet questions carried another edition's wording: "distilling
+// liquor", where the held text (Project Gutenberg #1513) has "distilled
+// liquor". A Macbeth option gave the third apparition's prophecy as "Macbeth
+// shall never vanquished be until Birnam Wood comes to Dunsinane", half
+// paraphrase; it is now the held text's words (Project Gutenberg #1533).
+// A Christmas Carol is quoted in the held edition too (Project
+// Gutenberg #46), which the same script checks; until 2 October 2026 this note
+// named Penguin for Dickens, and a question gave "school-boy" for the held
+// text's "schoolboy". Jekyll and Hyde is quoted in the held edition as well
+// (Project Gutenberg #43); until 2 October 2026 this note named Penguin for
+// Stevenson, and an explanation had Hyde "trampling calmly", where Enfield's
+// words are "trampled calmly". Other quotations have been verified against
+// authoritative editions (Heinemann for An Inspector Calls, Penguin Modern
+// Classics for the modern prose).
 // Quotations are kept to 15 words or fewer.
 
 import type { QuizQuestion } from './quiz-data'
@@ -84,7 +98,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: [
       'Beware Macduff',
       'None of woman born shall harm Macbeth',
-      'Macbeth shall never vanquished be until Birnam Wood comes to Dunsinane',
+      'Macbeth shall never vanquish’d be, until / Great Birnam wood to high Dunsinane hill / Shall come',
       "Banquo's sons shall be kings",
     ],
     correctIndex: 1,
@@ -622,6 +636,8 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts), which prints "schoolboy".
     id: 'text-extra-050',
     topic: 'set-texts',
     question: 'How does Scrooge first react when he realises he is alive on Christmas morning?',
@@ -633,7 +649,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'In Stave 5 Scrooge is "as light as a feather... as merry as a school-boy", reborn into joyful generosity.',
+      'In Stave 5 Scrooge is "as light as a feather... as merry as a schoolboy", reborn into joyful generosity.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
 
@@ -660,7 +676,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Enfield\'s opening anecdote describes Hyde "trampling calmly" over a child at a street corner, introducing his casual cruelty.',
+      'Enfield\'s opening anecdote describes how Hyde "trampled calmly over the child\'s body" at a street corner, introducing his casual cruelty.',
     boards: ['aqa', 'eduqas'],
   },
   {
@@ -673,10 +689,12 @@ export const setTextExtraQuestions: QuizQuestion[] = [
       'Hyde clubs the elderly MP Sir Danvers Carew to death with a cane - witnessed by a maid in moonlight.',
     boards: ['aqa', 'eduqas'],
   },
+  // Utterson's pun runs across a speech tag ("he had thought"); the ellipsis marks the
+  // cut (corrected 2 October 2026 against Project Gutenberg #43).
   {
     id: 'text-extra-054',
     topic: 'set-texts',
-    question: 'Who says "If he be Mr Hyde, I shall be Mr Seek"?',
+    question: 'Who says "If he be Mr Hyde... I shall be Mr Seek"?',
     options: ['Jekyll', 'Utterson', 'Enfield', 'Lanyon'],
     correctIndex: 1,
     explanation:
@@ -841,13 +859,13 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     question: 'What does the Friar give Juliet to fake her death?',
     options: [
       'Belladonna berries',
-      'A "distilling liquor" / sleeping potion',
+      'A "distilled liquor" / sleeping potion',
       'A dagger',
       'A holy wafer',
     ],
     correctIndex: 1,
     explanation:
-      'Friar Lawrence gives Juliet a "distilling liquor" that mimics death for "two and forty hours" so she can avoid marrying Paris.',
+      'Friar Lawrence gives Juliet a "distilled liquor" that mimics death for "two and forty hours" so she can avoid marrying Paris.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {

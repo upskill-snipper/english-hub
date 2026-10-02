@@ -1,5 +1,46 @@
 'use client'
 
+/**
+ * Much Ado About Nothing revision guide.
+ *
+ * A line shown as Shakespeare's must be the words of the edition the site
+ * holds, src/data/full-texts/much-ado-about-nothing.ts (Project Gutenberg
+ * #1519), because students memorise these quotations for their exams. Until
+ * 2 October 2026 nothing compared this page with that text, and when
+ * scripts/check-quotations.mjs first did, thirteen quotations were wrong.
+ * Seven were in spellings the edition does not print ("defiled", "wished",
+ * "maintained", "accused", "excused", "lacked", "overmastered" and
+ * "marketplace" for its "defil'd", "wish'd", "maintain'd", "accus'd",
+ * "excus'd", "lack'd", "over-mastered" and "market-place"). Three had a
+ * changed word: Beatrice's "I would rather" for "I had rather", twice, and
+ * her "his single one" for "a single one". Two were given to the wrong
+ * speaker: "She is fallen / Into a pit of ink" is Leonato's, not Claudio's,
+ * and "I think he thinks upon the savage bull" is Claudio's, not Don Pedro's.
+ * One, given to Dogberry, is not in the play; it is now his "Flat burglary as
+ * ever was committed" (Act 4, Scene 2), the words its analysis is about.
+ * These are now cut from the edition by script, and the analysis beside them
+ * names the real words and speakers. Two errors the checker cannot see were
+ * found by hand: the dog-bark line was listed under Act 2 as "(2.1)", though
+ * it is in Act 1, Scene 1, and has moved to Act 1's key moments; and
+ * Dogberry's malapropism was printed the wrong way round, as though he said
+ * "sensible" for "senseless", when the word he says is "senseless". A
+ * quotation added here should be cut from the edition too, not typed from
+ * memory or taken from another printing. Check again with
+ * node scripts/check-quotations.mjs --text much-ado-about-nothing.
+ *
+ * A review the same night found the analysis contradicting the edition where
+ * the checker does not look. Benedick's "I will be horribly in love with her"
+ * ended in an exclamation mark, and its analysis praised it, but the edition
+ * ends the sentence with a full stop. "Sigh no more" was said to come just
+ * before "the women" deceive Benedick, when it is sung for Don Pedro, Claudio
+ * and Leonato, the men who deceive him in Act 2, Scene 3. An essay plan read
+ * Claudio's "Silence is the perfectest herald of joy" as valuing Hero's
+ * silence, when he says it of his own. The plot summary and a key moment had
+ * Dogberry overhear and arrest Borachio, though he and Verges leave in Act 3,
+ * Scene 3 before Borachio and Conrade enter; the Watch do both. And the
+ * quotations section claimed 24 quotations; it holds 17.
+ */
+
 import { useState } from 'react'
 
 import { STRINGS } from './content'
@@ -182,6 +223,10 @@ export default function MuchAdoRevisionPage() {
                   <li>
                     &bull; Beatrice and Benedick&apos;s first &ldquo;skirmish of wit&rdquo; (1.1)
                   </li>
+                  <li>
+                    &bull; Beatrice: &ldquo;I had rather hear my dog bark at a crow than a man swear
+                    he loves me&rdquo; (1.1)
+                  </li>
                   <li>&bull; Claudio declares his love for Hero (1.1)</li>
                   <li>
                     &bull; Don Pedro&apos;s plan to woo Hero in disguise at the masquerade (1.1)
@@ -222,10 +267,6 @@ export default function MuchAdoRevisionPage() {
                     &bull; The masked ball and Don John&apos;s first attempted deception (2.1)
                   </li>
                   <li>
-                    &bull; Beatrice: &ldquo;I would rather hear my dog bark at a crow than a man
-                    swear he loves me&rdquo; (2.1)
-                  </li>
-                  <li>
                     &bull; Claudio and Hero betrothed; the week-long wait for the wedding (2.1)
                   </li>
                   <li>
@@ -251,10 +292,10 @@ export default function MuchAdoRevisionPage() {
                 for Margaret (Hero&apos;s gentlewoman) to appear at Hero&apos;s window at night,
                 pretending to be Hero in a romantic encounter. Don John tells Claudio and Don Pedro
                 that Hero is unfaithful and invites them to witness the &ldquo;proof&rdquo; that
-                night. In a parallel subplot, the comically incompetent constable Dogberry and his
-                watchmen overhear Borachio boasting about the deception. They arrest Borachio and
-                Conrade but Dogberry&apos;s bumbling means the information does not reach Leonato
-                before the wedding.
+                night. In a parallel subplot, the watchmen of the comically incompetent constable
+                Dogberry, left on duty after he has gone, overhear Borachio boasting about the
+                deception. They arrest Borachio and Conrade but Dogberry&apos;s bumbling means the
+                information does not reach Leonato before the wedding.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -270,7 +311,7 @@ export default function MuchAdoRevisionPage() {
                     (3.2)
                   </li>
                   <li>&bull; Don John tells Claudio and Don Pedro that Hero is disloyal (3.2)</li>
-                  <li>&bull; Dogberry and the Watch arrest Borachio (3.3)</li>
+                  <li>&bull; The Watch arrest Borachio, after Dogberry has gone (3.3)</li>
                   <li>
                     &bull; Dogberry&apos;s malapropisms when trying to report to Leonato (3.5)
                   </li>
@@ -380,10 +421,10 @@ export default function MuchAdoRevisionPage() {
                   war&rdquo; of words with Benedick, using humour to deflect emotional
                   vulnerability. Her sharp tongue masks deeper feelings: the play hints that she and
                   Benedick had a previous relationship that ended painfully (&ldquo;he lent it me
-                  awhile, and I gave him use for it, a double heart for his single one&rdquo;). She
-                  is an unconventional woman for her era, openly mocking marriage and male
-                  authority. However, she is not cold &mdash; her passionate defence of Hero in the
-                  church scene reveals her capacity for fierce love and moral courage. Her demand
+                  awhile; and I gave him use for it, a double heart for a single one&rdquo;). She is
+                  an unconventional woman for her era, openly mocking marriage and male authority.
+                  However, she is not cold &mdash; her passionate defence of Hero in the church
+                  scene reveals her capacity for fierce love and moral courage. Her demand
                   &ldquo;Kill Claudio&rdquo; is shocking but arises from genuine outrage at
                   injustice. She recognises that as a woman she cannot challenge Claudio herself
                   (&ldquo;O that I were a man!&rdquo;), making her frustration with patriarchal
@@ -393,16 +434,16 @@ export default function MuchAdoRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="I would rather hear my dog bark at a crow than a man swear he loves me"
+                    text="I had rather hear my dog bark at a crow than a man swear he loves me"
                     speaker="Beatrice"
                     act="Act 1, Scene 1"
                     analysis="Beatrice uses deliberately unromantic imagery (a barking dog) to dismiss love. The hyperbole establishes her anti-romantic persona, but the vehemence suggests she protests too much -- she is shielding herself from past hurt."
                   />
                   <Quote
-                    text="O that I were a man! ... I would eat his heart in the marketplace"
+                    text="O! that I were a man ... I would eat his heart in the market-place"
                     speaker="Beatrice"
                     act="Act 4, Scene 1"
-                    analysis="Her frustration explodes at the limits patriarchy places on women. She cannot defend Hero's honour through combat. The visceral, violent imagery ('eat his heart') shows her rage. 'In the marketplace' -- she wants justice to be public, just as Hero's shaming was public."
+                    analysis="Her frustration explodes at the limits patriarchy places on women. She cannot defend Hero's honour through combat. The visceral, violent imagery ('eat his heart') shows her rage. 'In the market-place' -- she wants justice to be public, just as Hero's shaming was public."
                   />
                 </div>
               </div>
@@ -463,10 +504,10 @@ export default function MuchAdoRevisionPage() {
                   entirely on male perception.
                 </p>
                 <Quote
-                  text="One Hero died defiled, but I do live, / And surely as I live, I am a maid"
+                  text="One Hero died defil'd, but I do live, / And surely as I live, I am a maid"
                   speaker="Hero"
                   act="Act 5, Scene 4"
-                  analysis="Hero speaks of herself in the third person, separating the 'defiled' Hero (a fiction created by men) from her true self. The word 'maid' reclaims her chastity. She must publicly assert her innocence -- the burden of proof lies with the woman, not her accusers."
+                  analysis="Hero speaks of herself in the third person, separating the 'defil'd' Hero (a fiction created by men) from her true self. The word 'maid' reclaims her chastity. She must publicly assert her innocence -- the burden of proof lies with the woman, not her accusers."
                 />
               </div>
 
@@ -567,7 +608,7 @@ export default function MuchAdoRevisionPage() {
                   dimensions.
                 </p>
                 <Quote
-                  text="Death is the fairest cover for her shame / That may be wished for"
+                  text="Death is the fairest cover for her shame / That may be wish'd for"
                   speaker="Leonato"
                   act="Act 4, Scene 1"
                   analysis="Leonato would rather Hero die than live with a damaged reputation. 'Fairest cover' suggests death would hide the shame -- appearance matters more than truth. This reveals how patriarchal honour codes prioritise family reputation over a daughter's life."
@@ -581,8 +622,8 @@ export default function MuchAdoRevisionPage() {
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Dogberry is the comically incompetent constable of Messina. He speaks in
-                  malapropisms &mdash; constantly using the wrong word (&ldquo;sensible&rdquo; for
-                  &ldquo;senseless,&rdquo; &ldquo;desartless&rdquo; for &ldquo;deserving&rdquo;). He
+                  malapropisms &mdash; constantly using the wrong word (&ldquo;senseless&rdquo; for
+                  &ldquo;sensible,&rdquo; &ldquo;desartless&rdquo; for &ldquo;deserving&rdquo;). He
                   is pompous, long-winded, and desperate for respect. However, Dogberry and his
                   Watch are the ones who actually uncover Don John&apos;s plot &mdash; not the
                   clever noblemen. This is deeply ironic: the lowest-status characters in the play
@@ -692,7 +733,7 @@ export default function MuchAdoRevisionPage() {
                     analysis="Hero's defence is heartbreakingly formal -- she can only assert her innocence through the language of 'maiden modesty.' She must prove a negative (her chastity), which is essentially impossible. The oath reveals how completely women's worth depends on male-defined sexual purity."
                   />
                   <Quote
-                    text="What offence hath this man done? ... Marry, sir, he hath offended the prince; and there is flat burglary as ever was committed"
+                    text="Flat burglary as ever was committed"
                     speaker="Dogberry"
                     act="Act 4, Scene 2"
                     analysis="Dogberry's confused legal terminology ('flat burglary' for slander) ironically points to a truth: Hero has been robbed -- of her reputation, her wedding, and nearly her life. The malapropism accidentally captures the violence of what has been done to her."
@@ -760,10 +801,10 @@ export default function MuchAdoRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="Would it not grieve a woman to be overmastered with a piece of valiant dust?"
+                    text="Would it not grieve a woman to be over-mastered with a piece of valiant dust?"
                     speaker="Beatrice"
                     act="Act 2, Scene 1"
-                    analysis="Beatrice reduces men to 'valiant dust' -- heroic but ultimately insignificant. 'Overmastered' directly critiques the patriarchal expectation that women must be subordinate. The rhetorical question expects the audience to agree with her. She uses wit to challenge the system she cannot directly overthrow."
+                    analysis="Beatrice reduces men to 'valiant dust' -- heroic but ultimately insignificant. 'Over-mastered' directly critiques the patriarchal expectation that women must be subordinate. The rhetorical question expects the audience to agree with her. She uses wit to challenge the system she cannot directly overthrow."
                   />
                   <Quote
                     text="O that I were a man for his sake! or that I had any friend would be a man for my sake!"
@@ -797,9 +838,9 @@ export default function MuchAdoRevisionPage() {
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
                     text="She is fallen / Into a pit of ink, that the wide sea / Hath drops too few to wash her clean again"
-                    speaker="Claudio"
+                    speaker="Leonato"
                     act="Act 4, Scene 1"
-                    analysis="Claudio uses imagery of staining and washing -- Hero's 'blot' (the false appearance of infidelity) cannot be removed. Ironic because she IS clean; the 'ink' is Don John's lie. The sea imagery echoes Macbeth's 'Neptune's ocean' -- both speakers believe guilt is permanent when it does not exist."
+                    analysis="Leonato uses imagery of staining and washing: to her father, the stain of the accusation (the false appearance of infidelity) cannot be removed. Ironic because she IS clean; the 'ink' is Don John's lie. The sea imagery echoes Macbeth's 'Neptune's ocean': both speakers believe a stain can never be washed away, but Hero's does not exist."
                   />
                   <Quote
                     text="Let every eye negotiate for itself, / And trust no agent"
@@ -818,7 +859,7 @@ export default function MuchAdoRevisionPage() {
           <Section
             id="quotations"
             title={tr(`Key Quotations with Analysis`)}
-            badge="24 Quotations"
+            badge="17 Quotations"
             colour="bg-primary"
           >
             <div className="space-y-6">
@@ -862,10 +903,10 @@ export default function MuchAdoRevisionPage() {
                     analysis="Spoken just before Benedick himself falls in love -- the dramatic irony is perfect. He mocks Claudio's lovesickness and then immediately becomes lovesick himself. Shakespeare shows that no one is immune to love, however much they protest."
                   />
                   <Quote
-                    text="I will be horribly in love with her!"
+                    text="I will be horribly in love with her"
                     speaker="Benedick"
                     act="Act 2, Scene 3"
-                    analysis="'Horribly' is a wonderfully comic adverb for love -- Benedick cannot help framing even his capitulation in excessive terms. The exclamation mark conveys enthusiasm despite himself. He transforms immediately from sceptic to lover, showing love's irresistible power."
+                    analysis="'Horribly' is a wonderfully comic adverb for love -- Benedick cannot help framing even his capitulation in excessive terms. 'I will be' makes love a resolution, as though he could decide to feel it. He transforms immediately from sceptic to lover, showing love's irresistible power."
                   />
                   <Quote
                     text="Serve God, love me, and mend"
@@ -892,10 +933,10 @@ export default function MuchAdoRevisionPage() {
                     analysis="Claudio contrasts two goddesses: Diana (chastity) and Venus (lust). Hero 'seemed' chaste but is actually lustful, he claims. The imagery of a flower bud ('ere it be blown') implies lost innocence. His elaborate classical references make the shaming a public performance of his own wounded pride."
                   />
                   <Quote
-                    text="I think he thinks upon the savage bull. / Tush, fear not, man; we'll tip thy horns with gold"
-                    speaker="Don Pedro"
+                    text="I think he thinks upon the savage bull. / Tush! fear not, man, we'll tip thy horns with gold"
+                    speaker="Claudio"
                     act="Act 5, Scene 4"
-                    analysis="Don Pedro jokes about cuckoldry ('horns'), turning male anxiety about female infidelity into humour. Even at the resolution, the fear of being cuckolded persists. 'Tip thy horns with gold' tries to make the best of it -- but the joke reveals an underlying patriarchal anxiety that never fully disappears."
+                    analysis="Claudio jokes about cuckoldry ('horns'), turning male anxiety about female infidelity into humour. Even at the resolution, the fear of being cuckolded persists. 'Tip thy horns with gold' tries to make the best of it -- but the joke reveals an underlying patriarchal anxiety that never fully disappears."
                   />
                 </div>
               </div>
@@ -928,13 +969,13 @@ export default function MuchAdoRevisionPage() {
                     analysis="Leonato asks to be killed rather than endure the shame of Hero's supposed disgrace. His honour is so wounded that he prefers death -- not Hero's death, but his own. Yet moments later he wishes Hero dead instead. His shifting responses show honour as irrational, self-destructive, and ultimately selfish."
                   />
                   <Quote
-                    text="She dying, as it must be so maintained, / Upon the instant that she was accused, / Shall be lamented, pitied, and excused"
+                    text="She dying, as it must be so maintain'd, / Upon the instant that she was accus'd, / Shall be lamented, pitied and excus'd"
                     speaker="The Friar"
                     act="Act 4, Scene 1"
                     analysis="The Friar's plan uses death (appearance) to restore life (reality). He understands how public opinion works: the living Hero was condemned, but the 'dead' Hero will be pitied. He manipulates the same social mechanisms that destroyed her -- rumour, reputation, public sentiment -- to save her."
                   />
                   <Quote
-                    text="For it so falls out / That what we have we prize not to the worth / Whiles we enjoy it, but being lacked and lost, / Why, then we rack the value"
+                    text="For it so falls out / That what we have we prize not to the worth / Whiles we enjoy it, but being lack'd and lost, / Why, then we rack the value"
                     speaker="The Friar"
                     act="Act 4, Scene 1"
                     analysis="The Friar explains human psychology: we only value things fully when we lose them. This aphorism drives his plan -- Claudio will only appreciate Hero when he believes she is dead. It applies broadly to the play: Beatrice and Benedick only admitted their love under pressure."
@@ -949,7 +990,7 @@ export default function MuchAdoRevisionPage() {
                     text="Sigh no more, ladies, sigh no more, / Men were deceivers ever"
                     speaker="Balthasar (song)"
                     act="Act 2, Scene 3"
-                    analysis="This song, performed just before Benedick's gulling, warns women that men are untrustworthy. Ironically, it is the women who are about to deceive Benedick. The song's melancholy note foreshadows the darker deceptions to come. It also functions as a thematic statement about the battle of the sexes."
+                    analysis="This song, performed just before Benedick's gulling, warns women that men are untrustworthy. Ironically, it is sung for the three men, Don Pedro, Claudio and Leonato, who are about to deceive Benedick. The song's melancholy note foreshadows the darker deceptions to come. It also functions as a thematic statement about the battle of the sexes."
                   />
                   <Quote
                     text="man is a giddy thing, and this is my conclusion"
@@ -1150,7 +1191,8 @@ export default function MuchAdoRevisionPage() {
                     <p>
                       Hero is silent, obedient, and defined by her chastity. She is exchanged
                       between men (Leonato to Claudio). &ldquo;Silence is the perfectest herald of
-                      joy&rdquo; (2.1) &mdash; Claudio values her silence. Context: Elizabethan
+                      joy&rdquo; (2.1): Claudio says it of his own silence at their betrothal, and
+                      Hero&apos;s answer is only whispered in his ear. Context: Elizabethan
                       expectations of women.
                     </p>
                   </div>
@@ -1172,9 +1214,9 @@ export default function MuchAdoRevisionPage() {
                     <p>
                       &ldquo;O that I were a man!&rdquo; (4.1) &mdash; Beatrice recognises and
                       resists patriarchal constraints. &ldquo;Would it not grieve a woman to be
-                      overmastered?&rdquo; (2.1). She cannot act directly but uses wit and Benedick
-                      as her &ldquo;instrument.&rdquo; Shakespeare gives voice to female
-                      frustration.
+                      over-mastered with a piece of valiant dust?&rdquo; (2.1). She cannot act
+                      directly but uses wit and Benedick as her &ldquo;instrument.&rdquo;
+                      Shakespeare gives voice to female frustration.
                     </p>
                   </div>
                   <div className="rounded bg-muted p-3">

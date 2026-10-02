@@ -12,6 +12,13 @@
  *  - Each direct quotation is kept ≤ 15 words for fair-use habit, even though
  *    the text is public domain.
  *  - Zero fabricated lines: if it is in quotation marks here, it is in Dickens.
+ *    That was not quite true until 2 October 2026, when the quotations were
+ *    checked against the held edition (src/data/full-texts/a-christmas-carol.ts)
+ *    by scripts/check-quotations.mjs: the Stave Four essay had Scrooge being
+ *    asked whether the images "are the shadows of the things that May be",
+ *    when it is Scrooge who asks, of "shadows of things that May be, only";
+ *    and the essay on the Cratchits quoted "he did not die" for the edition's
+ *    "who did NOT die", losing the capitals its own argument turns on.
  *
  * The ModelEssay interface is defined inline. Other model-essay files in this
  * folder (e.g. macbeth.ts) re-declare the same shape; the orchestrator that
@@ -224,14 +231,14 @@ export const aChristmasCarolModelEssays: ModelEssay[] = [
       },
       {
         label: 'Body 4 - Stave 5: the moral test answered',
-        text: 'The novella\'s moral argument is sealed not by Scrooge\'s giddy euphoria but by the closing line about Tim: "he did not die." The negative formulation is significant. Dickens does not write that Tim lived; he writes that he did not die, foregrounding the action of *prevention*, of damage averted. This reframes the entire transformation arc as a question of consequence rather than feeling. Scrooge\'s late benevolence - raising Bob\'s salary, becoming a "second father" to Tim - is presented in concrete material terms because Dickens wants his reader to understand that moral change is verified in deeds, not declarations. The Cratchits, in this sense, are the test that Scrooge - and the reader - must pass.',
+        text: "The novella's moral argument is sealed not by Scrooge's giddy euphoria but by the line that settles Tim's fate: \"who did NOT die.\" The negative formulation is significant, and the capitals insist on it. Dickens does not write that Tim lived; he writes that he did NOT die, foregrounding the action of *prevention*, of damage averted. This reframes the entire transformation arc as a question of consequence rather than feeling. Scrooge's late benevolence - raising Bob's salary, becoming a \"second father\" to Tim - is presented in concrete material terms because Dickens wants his reader to understand that moral change is verified in deeds, not declarations. The Cratchits, in this sense, are the test that Scrooge - and the reader - must pass.",
         annotation:
           "The micro-analysis of the negative ('did not die') is the kind of close-reading detail examiners highlight as 'discriminating'. The synthesis (Cratchits = the test) returns to the thesis cleanly.",
         aoFocus: ['AO1', 'AO2'],
       },
       {
         label: 'Conclusion',
-        text: "The Cratchits, then, are anything but ornamental. They are the moral instrument by which Dickens converts abstract polemic into lived consequence: their warmth indicts Scrooge's coldness, Tim's vulnerability indicts laissez-faire fatalism, and Bob's enforced gratitude indicts the wage system itself. By the time the reader encounters the line \"he did not die\", Dickens has already taught us that the survival of a Tiny Tim somewhere is now our responsibility too.",
+        text: "The Cratchits, then, are anything but ornamental. They are the moral instrument by which Dickens converts abstract polemic into lived consequence: their warmth indicts Scrooge's coldness, Tim's vulnerability indicts laissez-faire fatalism, and Bob's enforced gratitude indicts the wage system itself. By the time the reader encounters the words \"who did NOT die\", Dickens has already taught us that the survival of a Tiny Tim somewhere is now our responsibility too.",
         annotation:
           "Conclusion sustains the conceptual frame and lands on a final ethical reframing of the reader's position. Confident, controlled, and avoids list-style summary.",
         aoFocus: ['AO1'],
@@ -344,7 +351,7 @@ export const aChristmasCarolModelEssays: ModelEssay[] = [
       },
       {
         label: 'Body 4 - Yet to Come: redemption as terror of consequence',
-        text: "The final spirit is the most generically conventional ghost - silent, shrouded, terrifying - but Dickens uses that very conventionality to land his sharpest moral point. By refusing the Phantom speech, Dickens forces Scrooge (and the reader) to interpret the silent images themselves: the laundress selling the dead man's bed-curtains, the Cratchits weeping over an empty chair, the gravestone bearing Scrooge's own name. Redemption here is engineered through projected consequence: Scrooge is shown precisely the future his current self is producing, and is asked whether the images \"are the shadows of the things that May be, only\" - the conditional verb 'May' opens the door through which change can pass. The supernatural becomes, in this final stave, a kind of ethical conditional clause.",
+        text: "The final spirit is the most generically conventional ghost - silent, shrouded, terrifying - but Dickens uses that very conventionality to land his sharpest moral point. By refusing the Phantom speech, Dickens forces Scrooge (and the reader) to interpret the silent images themselves: the laundress selling the dead man's bed-curtains, the Cratchits weeping over an empty chair, the gravestone bearing Scrooge's own name. Redemption here is engineered through projected consequence: Scrooge is shown precisely the future his current self is producing, and asks whether the images are \"shadows of things that May be, only\" - the conditional verb 'May' opens the door through which change can pass. The supernatural becomes, in this final stave, a kind of ethical conditional clause.",
         annotation:
           "Sophisticated reading: makes the silence itself the rhetorical instrument. The micro-analysis of the modal 'May' is exactly the kind of detail that distinguishes Grade 9 - and links the supernatural to free will.",
         aoFocus: ['AO2', 'AO1'],

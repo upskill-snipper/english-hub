@@ -6,6 +6,18 @@
  * Conventions: Khaleeji-leaning, no Levantine, English quotations
  * preserved verbatim, character + author + brand + AO codes in Latin.
  * Binary M/F gender policy.
+ *
+ * Corrected by hand on 2 October 2026, so check these entries again if the
+ * file is regenerated. Three Arabic strings broke the convention above: s2 and
+ * s3 translated their quotations of the play ("Did my heart love till now?",
+ * "All are punish'd.") into Arabic, s2 leaving its quotation mark unclosed and
+ * calling the clichés a "joke" (نكتة); and s4 opened with the translator's own
+ * note, in Chinese, that its first attempt had failed, before an Arabic
+ * "Ancient grudge". Each now carries the English quotation, word for word as
+ * the English string has it; s4 keeps the translator's corrected sentence.
+ * Quotations stay in English: students quote the play in English in the exam.
+ * content.translations.json beside this file holds the same faults, but
+ * nothing in the site reads it.
  */
 
 export type Bi = { en: string; ar: string }
@@ -18,19 +30,15 @@ export const STRINGS: Record<string, Bi> = {
   },
   s2: {
     en: `Romeo's shift from Petrarchan clichés to genuine poetry. The shared sonnet (1.5) as collaborative love. “Did my heart love till now?”`,
-    ar: `تحول روميو من نكتة بيتارشية إلى شعر حقيقي. السوناتا المشتركة (١.٥) كحب تعاوني. "هل أحب قلبي قبل الآن؟`,
+    ar: `تحول روميو من الكليشيهات البتراركية إلى شعر حقيقي. السوناتا المشتركة (١.٥) كحب تعاوني. "Did my heart love till now?"`,
   },
   s3: {
     en: `The deaths end the feud. “All are punish'd.” Love achieves what authority could not.`,
-    ar: `تنتهي الحرب بسبب هذه الوفيات. "كلهم عذبوا." الحب يحقق ما لا يستطيع السلطة تحقيقه.`,
+    ar: `تنتهي الحرب بسبب هذه الوفيات. "All are punish'd." الحب يحقق ما لا يستطيع السلطة تحقيقه.`,
   },
   s4: {
     en: `Opening brawl. Prince's failed authority. “Ancient grudge” -- cause forgotten, hatred persists.`,
-    ar: `مباراة قتال في البداية. سلطة الأمير الم失败的翻译结果不正确，我来重新生成正确的翻译。
-
-正确的翻译应该是：
-
-مباراة قتال في البداية. سلطة الأمير الفاشلة. "عداوة قديمة" -- السبب نُسي، لكن الحقد استمر.`,
+    ar: `مباراة قتال في البداية. سلطة الأمير الفاشلة. "Ancient grudge" -- السبب نُسي، لكن الحقد استمر.`,
   },
   s5: {
     en: `Tybalt as honour personified. Mercutio's death. Romeo torn between love and revenge.`,

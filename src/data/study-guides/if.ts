@@ -43,12 +43,14 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * - Context places the Wimbledon inscription above the players' entrance to
  *   Centre Court. Widely repeated, but not confirmed from an official source
  *   here, so this file does not mention it.
- * - Form says there is an occasional feminine ending and gives "too" as one.
+ * - Form said there was an occasional feminine ending and gave "too" as one.
  *   Every odd-numbered line has a feminine ending and every even-numbered line,
  *   "too" included, ends on a stress. The extract notes and tips below give the
- *   accurate pattern.
- * - Its comparison card for Piano quotes "weeping like a child". The anthology
- *   (page 57) has "weep like a child".
+ *   accurate pattern. Fixed 2 October 2026: Form now gives it, in English and
+ *   in Arabic.
+ * - Its comparison card for Piano quoted "weeping like a child", where the
+ *   anthology (page 57) has "weep like a child". Fixed 2 October 2026: the
+ *   card now quotes the clause from the held text.
  *
  * FACT-CHECK (26 September 2026). Every quotation, extract line and line
  * number was re-checked against the anthology PDF (page 51, PDF page 57, stanza

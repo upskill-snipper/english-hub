@@ -775,7 +775,7 @@ export const y8Presentations: LessonPresentation[] = [
         bulletPoints: [
           'Lady Macbeth is presented as more ruthlessly ambitious than her husband',
           "Her 'unsex me here' soliloquy asks supernatural forces to remove her feminine compassion",
-          "She manipulates Macbeth by questioning his masculinity: 'Was the hope drunk wherein you dressed yourself?'",
+          "She manipulates Macbeth by questioning his masculinity: 'Was the hope drunk wherein you dress'd yourself?'",
           'She organises the murder of Duncan while Macbeth hesitates',
           'Her later madness and sleepwalking suggest that the guilt she suppressed re-emerges',
         ],
@@ -792,7 +792,7 @@ export const y8Presentations: LessonPresentation[] = [
           'Ambition: presented as a destructive force when unchecked by morality',
           'Power: corrupts those who obtain it through illegitimate means',
           "Guilt: externalised as hallucinations -- the dagger, Banquo's ghost",
-          "Appearance vs reality: 'look like the innocent flower, but be the serpent under it'",
+          "Appearance vs reality: 'look like the innocent flower, but be the serpent under't'",
           'Natural order: the murder of a king disrupts nature -- storms, unnatural animal behaviour',
         ],
         teacherNotes:

@@ -39,7 +39,7 @@ const quotePages = [
   },
   { slug: 'vaulting-ambition', title: '"Vaulting ambition, which o\'erleaps itself"' },
   { slug: 'unsex-me-here', title: '"Unsex me here"' },
-  { slug: 'the-milk-of-human-kindness', title: '"The milk of human kindness"' },
+  { slug: 'the-milk-of-human-kindness', title: '"Too full o\' th\' milk of human kindness"' },
   { slug: 'double-double-toil-and-trouble', title: '"Double, double toil and trouble"' },
   {
     slug: 'look-like-the-innocent-flower',

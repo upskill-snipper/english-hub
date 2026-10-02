@@ -45,14 +45,18 @@ export const revisionCardSets: RevisionCardSet[] = [
       },
       {
         id: 'mcb004',
-        front: '"To-morrow, and to-morrow, and to-morrow"',
+        front: '"Tomorrow, and tomorrow, and tomorrow"',
         back: "Macbeth's soliloquy in Act 5 after hearing of Lady Macbeth's death. Expresses despair about life's meaninglessness and the repetitive nature of existence.",
         category: 'Key Quotes',
         difficulty: 'hard',
       },
       {
+        // The front is Romeo and Juliet's line in the held edition's words
+        // (src/data/full-texts/romeo-and-juliet.ts). Until 2 October 2026 it
+        // read "A rose by any other name", with "That which we call" left out
+        // and nothing to mark the gap.
         id: 'mcb005',
-        front: '"What\'s in a name? A rose by any other name..."',
+        front: '"What\'s in a name? That which we call a rose / By any other name..."',
         back: 'This is actually from Romeo and Juliet, not Macbeth. If referencing Macbeth: "None of woman born shall harm Macbeth" - the witches\' prophecy that creates false security.',
         category: 'Key Quotes',
         difficulty: 'medium',
@@ -87,7 +91,7 @@ export const revisionCardSets: RevisionCardSet[] = [
       },
       {
         id: 'mcb010',
-        front: '"Vaulting ambition, which o\'er-leaps itself"',
+        front: '"Vaulting ambition, which o\'erleaps itself"',
         back: "From Macbeth's soliloquy in Act 1 Scene 7. Describes how his unchecked ambition will be his downfall. A key theme: ambition as destructive force.",
         category: 'Key Quotes',
         difficulty: 'hard',
@@ -144,7 +148,7 @@ export const revisionCardSets: RevisionCardSet[] = [
       {
         id: 'mcb018',
         front: 'What is the dramatic irony in "None of woman born shall harm Macbeth"?',
-        back: 'Macbeth believes he is invincible because no man "of woman born" can harm him. Macduff was "from his mother\'s womb untimely ripped" (delivered by Caesarean section), so he can harm Macbeth.',
+        back: 'Macbeth believes he is invincible because no man "of woman born" can harm him. Macduff was "from his mother\'s womb untimely ripp\'d" (delivered by Caesarean section), so he can harm Macbeth.',
         category: 'Literary Devices',
         difficulty: 'hard',
       },
@@ -294,7 +298,7 @@ export const revisionCardSets: RevisionCardSet[] = [
       },
       {
         id: 'rj008',
-        front: '"A plague on both your houses!"',
+        front: '"A plague o\' both your houses!"',
         back: "Mercutio's dying curse in Act 3 Scene 1 after being stabbed. He blames both the Montagues and Capulets for his death. The curse seems to set events toward tragedy.",
         category: 'Key Quotes',
         difficulty: 'medium',
@@ -687,9 +691,13 @@ export const revisionCardSets: RevisionCardSet[] = [
         difficulty: 'easy',
       },
       {
+        // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+        // src/data/full-texts/a-christmas-carol.ts): the speech tag in "If they would rather
+        // die" wants an ellipsis, and the poor in question are those who would rather die than
+        // enter the workhouse, not those who cannot work.
         id: 'cc002',
         front: "What is Scrooge's famous line about the poor and workhouses?",
-        back: '"If they would rather die, they had better do it, and decrease the surplus population." Scrooge suggests the poor should die if they cannot work. This reveals his callousness and harsh economic views.',
+        back: '"If they would rather die... they had better do it, and decrease the surplus population." Scrooge says that the poor who would rather die than go to the workhouse should do so. This reveals his callousness and harsh economic views.',
         category: 'Key Quotes',
         difficulty: 'easy',
       },
@@ -1196,7 +1204,10 @@ export const revisionCardSets: RevisionCardSet[] = [
       {
         id: 'af012',
         front: 'Why does Napoleon order the execution of animals?',
-        back: 'After a snowstorm, Napoleon blames Snowball and has many animals executed as "confessors" who supposedly conspired with Snowball. This mirrors Stalin\'s purges where many were executed on false charges.',
+        // Corrected 2 October 2026: there is no snowstorm before the executions,
+        // which follow the hens' rebellion in Chapter 7, and "confessors" was
+        // quoted as if it were Orwell's word. The held edition has "confessed".
+        back: 'In Chapter 7, after the hens\' rebellion, Napoleon blames Snowball for everything and has the dogs kill the animals who "confessed" to conspiring with him. This mirrors Stalin\'s purges where many were executed on false charges.',
         category: 'Plot & Allegory',
         difficulty: 'hard',
       },
@@ -1616,9 +1627,13 @@ export const revisionCardSets: RevisionCardSet[] = [
         difficulty: 'medium',
       },
       {
+        // 2 October 2026: this quoted "gift of a 900-year-old name", where the poem has
+        // "nine-hundred-years-old", called the gift hers when the name is the Duke's, and
+        // said he "dismisses" faults he resents. The quotation is now cut by script from
+        // the held edition (src/data/full-texts/my-last-duchess.ts).
         id: 'pw010',
         front: 'How is power demonstrated in "My Last Duchess"?',
-        back: 'The Duke\'s power is absolute: he controls the portrait, the narrative, and implicitly his wife\'s life. He dismisses her "faults" and implies his authority as her "gift of a 900-year-old name" justifies control.',
+        back: 'The Duke\'s power is absolute: he controls the portrait, the narrative, and implicitly his wife\'s life. He resents what he sees as her faults and implies that his "gift of a nine-hundred-years-old name" justifies his control.',
         category: 'Literary Analysis',
         difficulty: 'hard',
       },

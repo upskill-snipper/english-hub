@@ -59,6 +59,11 @@ export const y9Presentations: LessonPresentation[] = [
           "Class discussion: Why might personal experience make Dickens's writing more powerful than that of a wealthy reformer who had only read about poverty?",
       },
       {
+        // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+        // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are
+        // there no prisons?" and "And the Union workhouses?", with the gentleman's answer
+        // between. "Are there no workhouses?" is the Spirit's, turning his words on him in
+        // Stave Three.
         id: 'y9-t1-pres-01-s3',
         slideNumber: 3,
         title: 'The New Poor Law and the Workhouse System',
@@ -70,7 +75,7 @@ export const y9Presentations: LessonPresentation[] = [
           'The workhouse carried massive social stigma; many preferred to starve rather than enter one',
         ],
         teacherNotes:
-          'Direct link to the text: Scrooge quotes the language of the Poor Law when he says "Are there no prisons? Are there no workhouses?" Dickens is not inventing these attitudes -- he is putting the actual rhetoric of the ruling class into Scrooge\'s mouth, which is why the dialogue feels so shockingly cold.',
+          'Direct link to the text: Scrooge quotes the language of the Poor Law when he says "Are there no prisons? ... And the Union workhouses?" Dickens is not inventing these attitudes -- he is putting the actual rhetoric of the ruling class into Scrooge\'s mouth, which is why the dialogue feels so shockingly cold.',
         activity:
           'Close reading: Find and annotate the passage in Stave 1 where Scrooge dismisses the charity collectors. Which specific words echo the ideologies discussed on this slide?',
       },
@@ -396,11 +401,16 @@ export const y9Presentations: LessonPresentation[] = [
       },
       {
         id: 'y9-t1-pres-03-s7',
+        // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+        // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are
+        // there no prisons?" and "And the Union workhouses?", with the gentleman's answer
+        // between. "Are there no workhouses?" is the Spirit's, turning his words on him in
+        // Stave Three.
         slideNumber: 7,
         title: 'A Model Paragraph -- Annotated',
         bulletPoints: [
           'Question: How does Dickens present Scrooge as a symbol of social indifference in Stave 1?',
-          'Dickens positions Scrooge as the embodiment of the callous Victorian ruling class through his dismissal of the charity collectors: "Are there no prisons? Are there no workhouses?" The rhetorical questions echo the actual language used by politicians and economists to deflect responsibility for poverty, suggesting Dickens is targeting an attitude rather than merely an individual.',
+          'Dickens positions Scrooge as the embodiment of the callous Victorian ruling class through his dismissal of the charity collectors: "Are there no prisons? ... And the Union workhouses?" The rhetorical questions echo the actual language used by politicians and economists to deflect responsibility for poverty, suggesting Dickens is targeting an attitude rather than merely an individual.',
           'The verb "are there" implies Scrooge believes his obligations end with the existence of punitive institutions -- a direct allusion to the laissez-faire ideology that Dickens despised.',
           'By making Scrooge ventriloquise the language of the powerful, Dickens implicates the comfortable Victorian reader in the worldview he is satirising.',
         ],

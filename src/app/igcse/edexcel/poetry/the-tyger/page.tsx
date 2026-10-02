@@ -19,6 +19,18 @@ import StudyTools from '@/components/study/StudyTools'
 // "hand" in line 8, and ended line 16 with a question mark. Line 16 ends on
 // an exclamation mark, the poem's only one, so stanza 4 is the one stanza
 // that does not end on a question.
+//
+// One word is not the anthology's. The anthology prints line 18 with Blake's
+// apostrophe, water'd, as this page did until 2 October 2026, in the line and
+// in the key quotation of lines 17 and 18. A quotation the site gives as a
+// writer's is in the wording of the edition it holds, and the held Tyger
+// (src/data/full-texts/the-tyger.ts, Project Gutenberg #574) prints watered,
+// so scripts/check-quotations.mjs reported both. Both now have the held word,
+// cut from the held text by script (line 18 keeps the anthology's colon), and
+// a note on the line gives the reader the anthology's spelling, as the study
+// guide mounted below already did in its Extract C and its vocabulary.
+// Checked against the anthology PDF on 2 October 2026: apart from that word,
+// the 24 lines are the anthology's words.
 const poem: PoemData = {
   title: 'The Tyger',
   poet: 'William Blake',
@@ -218,12 +230,17 @@ const poem: PoemData = {
       ],
     },
     {
-      text: "And water'd heaven with their tears:",
+      text: 'And watered heaven with their tears:',
       annotations: [
         {
           type: 'Cosmic imagery',
           note: 'The stars weep over heaven. This is a stunning image - the cosmos itself weeping at the creation of the tiger. Whatever was made, it was significant enough to make heaven cry.',
           color: '#10b981',
+        },
+        {
+          type: 'Spelling',
+          note: "The anthology prints this word as water'd, as Blake spelt it: the apostrophe shows that the -ed is not sounded as a separate syllable. This page prints watered, the spelling of the Project Gutenberg edition the site checks its quotations against. It is the same word.",
+          color: '#3b82f6',
         },
       ],
     },
@@ -406,7 +423,7 @@ Relationship to "The Lamb": The poem is best read alongside "The Lamb" from Song
       themesAr: ['الصناعة', 'الخَلق', 'السباكة'],
     },
     {
-      quote: "When the stars threw down their spears, / And water'd heaven with their tears",
+      quote: 'When the stars threw down their spears, / And watered heaven with their tears',
       analysis:
         'A cosmic, apocalyptic image. The stars throwing down their spears is often read as a reference to the fall of the rebel angels in Paradise Lost - their weapons dropped in defeat. The stars then weep over heaven. Whatever was made, it was significant enough to make the cosmos itself mourn. This stanza lifts the tiger out of zoology and into myth - its creation is a heavenly event.',
       themes: ['Cosmic response', 'Mourning', 'Fall'],
@@ -473,7 +490,10 @@ Relationship to "The Lamb": The poem is best read alongside "The Lamb" from Song
     },
     {
       device: 'Extended metaphor (blacksmith)',
-      example: 'What the hammer? what the chain… In what furnace was thy brain? / What the anvil?',
+      // Lines 13 to 15. Until 2 October 2026 the break after line 13 was an ellipsis, which
+      // marks words left out, and none are: line 14 follows "chain," directly, so it is a " / ".
+      example:
+        'What the hammer? what the chain, / In what furnace was thy brain? / What the anvil?',
       effect:
         "Stanza 4 extends a single metaphor: the creator as blacksmith. This domesticates divine creation - it becomes physical labour, not magic. The tools of an industrial forge become the tools of God. This connects creation to Blake's own time and the anxieties of the Industrial Revolution.",
       lineRef: 13,

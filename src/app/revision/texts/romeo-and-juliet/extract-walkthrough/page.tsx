@@ -1,7 +1,12 @@
 'use client'
 
-// VERIFIED: Folger Prologue lines 1-14, Arden 2012 (Weis).
-// Extract uses Q2/Arden archaic spellings (star-cross'd, misadventur'd, death-mark'd).
+// The Prologue as the site's held edition prints it: Project Gutenberg #1513,
+// src/data/full-texts/romeo-and-juliet.ts (star-cross'd, misadventur'd,
+// death-mark'd). Until 2 October 2026 this note named the Folger and Arden
+// editions as the source, and line 11 read "naught" where the held text and
+// the reader print "nought"; line 13 also lacked a comma. Both printings of
+// each line, the extract and the line-by-line notes, now match the held text,
+// cut from it by script.
 
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Quote, Lightbulb, ScrollText } from 'lucide-react'
@@ -58,13 +63,13 @@ const PROLOGUE_LINES: { number: string; line: string; analysis: string }[] = [
   },
   {
     number: '11-12',
-    line: "Which, but their children's end, naught could remove, / Is now the two hours' traffic of our stage;",
+    line: "Which, but their children's end, nought could remove, / Is now the two hours' traffic of our stage;",
     analysis:
       'The metatheatrical close. "Two hours\' traffic" reduces the entire tragedy to a commercial transaction with the audience - they have paid for a couple of hours of grief. "Traffic" carries connotations of trade and bustle, reminding the audience that theatre is a business as well as an art. Shakespeare also acknowledges the play\'s compressed timeline: the fictional events take a few days, but the performance takes only two hours.',
   },
   {
     number: '13-14',
-    line: 'The which if you with patient ears attend, / What here shall miss, our toil shall strive to mend.',
+    line: 'The which, if you with patient ears attend, / What here shall miss, our toil shall strive to mend.',
     analysis:
       'The final couplet of the Shakespearean sonnet (rhyming "attend" / "mend") functions as a humble plea for the audience\'s attention. The closing couplet of a love sonnet usually offers a witty resolution or a declaration of devotion; here, instead, it asks for patience with the actors\' effort. This subverted ending mirrors the larger inversion of the prologue itself: a love sonnet that announces deaths.',
   },
@@ -169,11 +174,11 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
                 <br />
                 And the continuance of their parents&apos; rage,
                 <br />
-                Which, but their children&apos;s end, naught could remove,
+                Which, but their children&apos;s end, nought could remove,
                 <br />
                 Is now the two hours&apos; traffic of our stage;
                 <br />
-                The which if you with patient ears attend,
+                The which, if you with patient ears attend,
                 <br />
                 What here shall miss, our toil shall strive to mend.
               </blockquote>

@@ -111,7 +111,7 @@ const TEXT_DATA: TextData[] = [
       },
       {
         id: 'qt-mac-3',
-        quote: "Look like th'innocent flower, / But be the serpent under't",
+        quote: "Look like the innocent flower, / But be the serpent under't",
         speaker: 'Lady Macbeth',
         location: 'Act 1, Scene 5',
         technique: 'Simile / Biblical allusion',
@@ -211,6 +211,11 @@ const TEXT_DATA: TextData[] = [
     ],
   },
   {
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts). Scrooge's Stave One questions are "Are there
+    // no prisons?" and "And the Union workhouses?", and the edition prints "grind-stone". "I
+    // will honour Christmas in my heart" is said in the churchyard in Stave Four, so Stave Five
+    // was the wrong answer.
     slug: 'christmas-carol',
     title: 'A Christmas Carol',
     author: 'Charles Dickens',
@@ -218,7 +223,7 @@ const TEXT_DATA: TextData[] = [
     questions: [
       {
         id: 'qt-acc-1',
-        quote: 'Oh! But he was a tight-fisted hand at the grindstone, Scrooge!',
+        quote: 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!',
         speaker: 'The Narrator',
         location: 'Stave One',
         technique: 'Exclamatory / Direct address',
@@ -230,7 +235,7 @@ const TEXT_DATA: TextData[] = [
       },
       {
         id: 'qt-acc-2',
-        quote: 'Are there no prisons? Are there no workhouses?',
+        quote: 'Are there no prisons? ... And the Union workhouses?',
         speaker: 'Scrooge',
         location: 'Stave One',
         technique: 'Rhetorical question',
@@ -256,11 +261,11 @@ const TEXT_DATA: TextData[] = [
         id: 'qt-acc-4',
         quote: 'I will honour Christmas in my heart, and try to keep it all the year',
         speaker: 'Scrooge',
-        location: 'Stave Five',
+        location: 'Stave Four',
         technique: 'Declarative / Pledge',
         theme: 'Redemption',
         wrongSpeakers: ['Fred', 'Bob Cratchit', 'The Narrator'],
-        wrongLocations: ['Stave One', 'Stave Three', 'Stave Four'],
+        wrongLocations: ['Stave One', 'Stave Three', 'Stave Five'],
         wrongTechniques: ['Rhetorical question', 'Simile', 'Personification'],
         wrongThemes: ['Poverty', 'Isolation', 'Greed'],
       },
@@ -449,9 +454,13 @@ const TEXT_DATA: TextData[] = [
         wrongTechniques: ['Simile', 'Dramatic irony', 'Personification'],
         wrongThemes: ['Secrecy', 'Violence', 'Victorian Society'],
       },
+      // Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+      // src/data/full-texts/jekyll-and-hyde.ts): Utterson's pun runs across a speech
+      // tag, which the ellipsis marks, and the Carew murder (qt-jh-6) is the narrator's
+      // account of what the maid saw, not her words.
       {
         id: 'qt-jh-3',
-        quote: 'If he be Mr Hyde, I shall be Mr Seek',
+        quote: 'If he be Mr Hyde... I shall be Mr Seek',
         speaker: 'Utterson',
         location: 'Chapter 2 (Search for Mr Hyde)',
         technique: 'Pun / Wordplay',
@@ -488,7 +497,7 @@ const TEXT_DATA: TextData[] = [
       {
         id: 'qt-jh-6',
         quote: 'With ape-like fury',
-        speaker: 'The Maid (witness)',
+        speaker: 'The Narrator',
         location: 'Chapter 4 (The Carew Murder Case)',
         technique: 'Simile / Darwinian allusion',
         theme: 'Evolution',

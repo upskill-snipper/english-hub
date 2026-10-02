@@ -2224,8 +2224,11 @@ const setTextQuestions: QuizQuestion[] = [
       'It symbolises death',
     ],
     correctIndex: 1,
+    // Until 2 October 2026 this had Macbeth declare he had "murdered sleep",
+    // words the play does not print: he hears a voice cry "Macbeth does murder
+    // sleep" (Act 2 Scene 2 of src/data/full-texts/macbeth.ts).
     explanation:
-      'Sleep represents innocence and a clear conscience. After killing Duncan, Macbeth declares he has "murdered sleep", and both he and Lady Macbeth suffer insomnia and nightmares.',
+      'Sleep represents innocence and a clear conscience. After killing Duncan, Macbeth hears a voice cry that he "does murder sleep", and both he and Lady Macbeth suffer insomnia and nightmares.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -3114,13 +3117,17 @@ const setTextQuestions: QuizQuestion[] = [
     boards: ['aqa', 'edexcel', 'ocr'],
   },
   {
+    // Corrected 2 October 2026: the right answer had lost the second
+    // "animals" ("some are more equal"), and the Sixth Commandment read
+    // "another animal" for "any other animal". Both are cut by script from
+    // the held edition, src/data/full-texts/animal-farm.ts.
     id: 'st181',
     topic: 'set-texts',
     question: 'What is the final commandment on the barn wall at the end of "Animal Farm"?',
     options: [
       'All animals are equal',
-      'No animal shall kill another animal',
-      'All animals are equal, but some are more equal than others',
+      'No animal shall kill any other animal',
+      'All animals are equal but some animals are more equal than others',
       'Four legs good, two legs bad',
     ],
     correctIndex: 2,

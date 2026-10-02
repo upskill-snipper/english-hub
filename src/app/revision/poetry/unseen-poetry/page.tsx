@@ -372,6 +372,12 @@ The final couplet delivers the poem's triumphant conclusion: "So long as men can
     title: 'The Tyger',
     poet: 'William Blake (1794)',
     focus: 'Creation, power, and awe',
+    // Line 18 printed water'd, Blake's spelling, until 2 October 2026. A
+    // quotation the site gives as a writer's is in the wording of the edition
+    // it holds, and the held Tyger (src/data/full-texts/the-tyger.ts, Project
+    // Gutenberg #574) prints watered, which was cut from it by script. The
+    // quotation checker (scripts/check-quotations.mjs) does not read a poem
+    // printed whole in this field, so nothing had reported it.
     poem: `Tyger Tyger, burning bright,
 In the forests of the night;
 What immortal hand or eye,
@@ -393,7 +399,7 @@ What the anvil? what dread grasp,
 Dare its deadly terrors clasp!
 
 When the stars threw down their spears
-And water'd heaven with their tears:
+And watered heaven with their tears:
 Did he smile his work to see?
 Did he who made the Lamb make thee?
 

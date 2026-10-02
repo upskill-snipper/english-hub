@@ -1,3 +1,32 @@
+/**
+ * Much Ado About Nothing themes, Edexcel IGCSE Literature.
+ *
+ * A line shown as Shakespeare's must be the words of the edition the site
+ * holds, src/data/full-texts/much-ado-about-nothing.ts (Project Gutenberg
+ * #1519), because students memorise these quotations for their exams. When
+ * scripts/check-quotations.mjs first compared this page with that text (2
+ * October 2026), two were wrong. The Honour list ended with a line the play
+ * does not have, credited to Act 3, Scene 4. It is replaced by the line that
+ * begins with the same three words, Beatrice's "A very even way, but no such
+ * friend" (Act 4, Scene 1): there is a plain way to right the wrong done to
+ * Hero's honour, but no friend to take it. And the Gender summary had Beatrice
+ * say she would eat "Claudio's" heart, for the edition's "his". Both are now
+ * cut from the edition by script. A quotation added here should be cut from
+ * it too, not typed from memory or taken from another printing. Check again
+ * with node scripts/check-quotations.mjs --text much-ado-about-nothing.
+ *
+ * The checker reads quotations, not the prose around them, and a review the
+ * same night found the prose wrong where the edition is plain. Benedick's
+ * converting soliloquy was placed in Act 3, though it is Act 2, Scene 3 (the
+ * Marriage list's own "The world must be peopled" (2.3) said so), and two
+ * lists put both eavesdropping scenes in Act 3, though Benedick's is 2.3 and
+ * only Beatrice's is 3.1. "Leonato introduces Hero proudly as his only heir"
+ * is in no scene: it is Don Pedro who tells Claudio she is "his only heir",
+ * when Claudio asks whether Leonato has a son (1.1). And Beatrice's "sit in a
+ * corner and cry heigh-ho for a husband" was glossed as preferring that to a
+ * bad match, when she says it as Hero is betrothed, joking that everyone
+ * marries but her.
+ */
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { GraduationCap } from 'lucide-react'
@@ -33,7 +62,7 @@ const THEMES = [
     summary:
       "The play sets two contrasting couples side by side. Claudio and Hero fall in love almost without speaking \u2014 Claudio asks another man to woo her on his behalf. Beatrice and Benedick, by contrast, have been sparring with each other for years, and come together only when they are both tricked into admitting it. Shakespeare seems to argue that the love that can take the weight of the play's events is the one built on words, wit and equal footing.",
     how_it_develops:
-      "Act 1: Claudio falls silently for Hero; Beatrice and Benedick begin their 'merry war'. Act 2: the two plots are set in motion. Act 3: the eavesdropping scenes convert Beatrice and Benedick into lovers. Act 4: Claudio's thin love breaks under one piece of gossip; Beatrice and Benedick's stronger love is tested by 'Kill Claudio'. Act 5: two weddings.",
+      "Act 1: Claudio falls silently for Hero; Beatrice and Benedick begin their 'merry war'. Act 2: the two plots are set in motion, and the first eavesdropping scene converts Benedick. Act 3: the second converts Beatrice. Act 4: Claudio's thin love breaks under one piece of gossip; Beatrice and Benedick's stronger love is tested by 'Kill Claudio'. Act 5: two weddings.",
     quotes: [
       '"In faith, lady, you have a merry heart" (2.1)',
       '"I do love nothing in the world so well as you" (4.1)',
@@ -46,7 +75,7 @@ const THEMES = [
     summary:
       "Every major turn of the plot depends on somebody being tricked. Don Pedro woos Hero in disguise on Claudio's behalf. Don John twice tricks Claudio about Hero. Beatrice and Benedick are both tricked by their friends into falling in love. The Friar stages Hero's fake death. Shakespeare divides deception into three kinds: <strong>loving</strong> (the friends' matchmaking), <strong>protective</strong> (the Friar's plan), and <strong>malicious</strong> (Don John's plot) \u2014 and asks whether we can tell them apart from the inside.",
     how_it_develops:
-      "Act 1: Don John declares himself a 'plain-dealing villain'. Act 2: the masked ball enables mistaken identities. Act 3: twin eavesdropping scenes produce the comic couple; the window trick frames Hero. Act 4: the Friar's loving deception saves Hero. Act 5: Dogberry finally reveals the truth.",
+      "Act 1: Don John declares himself a 'plain-dealing villain'. Act 2: the masked ball enables mistaken identities, and the first eavesdropping scene tricks Benedick. Act 3: the second tricks Beatrice; the window trick frames Hero. Act 4: the Friar's loving deception saves Hero. Act 5: Dogberry finally reveals the truth.",
     quotes: [
       '"I am a plain-dealing villain" (1.3)',
       '"Some Cupid kills with arrows, some with traps" (3.1)',
@@ -59,20 +88,20 @@ const THEMES = [
     summary:
       "In Messina, male honour depends entirely on the sexual reputation of the women attached to them. One rumour about Hero is enough to make Claudio, Don Pedro and even Leonato turn on her instantly. Leonato's reaction \u2014 'Death is the fairest cover for her shame' \u2014 is catastrophic, because it shows a father preferring his daughter's death to the survival of gossip. Shakespeare exposes that system as both lethal and fragile, because the men who rely on it can be fooled by any plausible lie.",
     how_it_develops:
-      "Act 1: Leonato introduces Hero proudly as his only heir. Act 2: Claudio's honour is briefly wobbled when he thinks Don Pedro has stolen Hero. Act 4: the public shaming at the altar; Leonato's collapse. Act 5: Benedick challenges Claudio, and honour is only restored by Hero's staged return.",
+      "Act 1: Claudio asks whether Leonato has a son, and learns from Don Pedro that Hero is 'his only heir'. Act 2: Claudio's honour is briefly wobbled when he thinks Don Pedro has stolen Hero. Act 4: the public shaming at the altar; Leonato's collapse. Act 5: Benedick challenges Claudio, and honour is only restored by Hero's staged return.",
     quotes: [
       '"O, she is fallen into a pit of ink" (4.1)',
       '"Death is the fairest cover for her shame" (4.1)',
       '"Give not this rotten orange to your friend" (4.1)',
-      '"A very even hand, a very pretty hand" (3.4)',
+      '"A very even way, but no such friend" (4.1)',
     ],
   },
   {
     theme: 'Marriage',
     summary:
-      "Marriage in Much Ado is simultaneously a romance, a contract and, for Beatrice, a cage. Beatrice jokes early on that she will 'sit in a corner and cry heigh-ho for a husband' rather than be pushed into a bad match. Claudio's match with Hero is almost entirely transactional \u2014 he is as interested in her inheritance as in her. The play ends with two weddings, but Shakespeare is careful to keep the earlier scepticism audible underneath the celebration.",
+      "Marriage in Much Ado is simultaneously a romance, a contract and, for Beatrice, a cage. As Hero is betrothed, Beatrice jokes that everyone marries but her, so she 'may sit in a corner and cry heigh-ho for a husband', and then turns down the Prince himself. Claudio's match with Hero is almost entirely transactional \u2014 he is as interested in her inheritance as in her. The play ends with two weddings, but Shakespeare is careful to keep the earlier scepticism audible underneath the celebration.",
     how_it_develops:
-      "Act 2: Beatrice's resistance to marriage; Claudio and Hero's rapid engagement. Act 3: Benedick converts from anti-marriage to pro-marriage in a single soliloquy. Act 4: the broken wedding. Act 5: Beatrice and Benedick's reluctant, witty acceptance \u2014 'I take thee for pity' \u2014 ends the play.",
+      "Act 2: Beatrice's resistance to marriage; Claudio and Hero's rapid engagement; Benedick converts from anti-marriage to pro-marriage in a single soliloquy (2.3). Act 3: Beatrice, tricked in her turn, resolves to return his love. Act 4: the broken wedding. Act 5: Beatrice and Benedick's reluctant, witty acceptance \u2014 'I take thee for pity' \u2014 ends the play.",
     quotes: [
       '"I had rather hear my dog bark at a crow than a man swear he loves me" (1.1)',
       '"The world must be peopled" (2.3)',
@@ -83,7 +112,7 @@ const THEMES = [
   {
     theme: 'Gender',
     summary:
-      "Much Ado is unusually direct about how little real power women have in its world. Hero barely speaks in the first three acts. When she is slandered, she has no legal or social recourse \u2014 only the Friar's pretence that she has died. Beatrice rages in Act 4 that if she were a man she would 'eat Claudio's heart in the market-place'. Because she cannot act herself, she asks Benedick to do it for her. Shakespeare frames the play's comedy very carefully around this fact.",
+      "Much Ado is unusually direct about how little real power women have in its world. Hero barely speaks in the first three acts. When she is slandered, she has no legal or social recourse \u2014 only the Friar's pretence that she has died. Beatrice rages in Act 4 that if she were a man she would 'eat his heart in the market-place', meaning Claudio's. Because she cannot act herself, she asks Benedick to do it for her. Shakespeare frames the play's comedy very carefully around this fact.",
     how_it_develops:
       "Act 1: Beatrice's early independence and refusal of marriage. Act 2: Hero is silent during her own engagement. Act 3: the trick scenes. Act 4: the public shaming, Hero's silence, Beatrice's 'Kill Claudio' and the 'O, that I were a man!' speech. Act 5: Hero returns only when her honour can be restored on male terms.",
     quotes: [

@@ -318,8 +318,13 @@ export const terminologyList: TerminologyEntry[] = [
     category: 'sentence',
     definition:
       'A sentence that expresses strong emotion - surprise, anger, joy, fear - and ends with an exclamation mark. Should be used sparingly in analytical writing, but is important to identify in texts.',
+    // Until 2 October 2026 the example was "What a piece of work is a man!",
+    // which is not the held edition's line (src/data/full-texts/hamlet.ts
+    // prints "is man", followed by a comma) and so, as the site prints Hamlet,
+    // not an exclamation either. The line now is an exclamation in that
+    // edition, cut from it word for word.
     example:
-      '"What a piece of work is a man!" - Hamlet\'s exclamation conveys both admiration and, in context, biting irony about human nature.',
+      '"O what a rogue and peasant slave am I!" - Hamlet\'s exclamation conveys the force of his self-disgust: an actor has just wept for a fiction, and he has done nothing to avenge his father.',
   },
   {
     term: 'Minor Sentence',

@@ -37,7 +37,7 @@ const THEMES = [
     quotes: [
       '"I have no spur to prick the sides of my intent, but only vaulting ambition, which o\'erleaps itself" (1.7)',
       '"Stars, hide your fires; let not light see my black and deep desires" (1.4)',
-      '"Thou would\u2019st be great; art not without ambition, but without the illness should attend it" (1.5)',
+      '"Thou wouldst be great; art not without ambition, but without the illness should attend it" (1.5)',
     ],
   },
   {
@@ -73,7 +73,9 @@ const THEMES = [
     quotes: [
       '"He was a gentleman on whom I built an absolute trust" (1.4)',
       '"Bleed, bleed, poor country!" (4.3)',
-      '"This dead butcher and his fiend-like queen" (5.9)',
+      // 5.8, the last scene in the site's edition (src/data/full-texts/macbeth.ts);
+      // this said "5.9" until 2 October 2026.
+      '"This dead butcher and his fiend-like queen" (5.8)',
     ],
   },
   {

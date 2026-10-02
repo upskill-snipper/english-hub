@@ -99,7 +99,7 @@ const actSummaries = [
       {
         scene: '3.2',
         summary:
-          "Both Macbeth and Lady Macbeth are unhappy. Macbeth speaks of 'scorpions in his mind' but keeps the plan to kill Banquo secret from Lady Macbeth. Their relationship is deteriorating.",
+          "Both Macbeth and Lady Macbeth are unhappy. Macbeth tells her his mind is 'full of scorpions' but keeps the plan to kill Banquo secret from Lady Macbeth. Their relationship is deteriorating.",
       },
       {
         scene: '3.3',
@@ -161,7 +161,7 @@ const actSummaries = [
       {
         scene: '5.6-5.8',
         summary:
-          "Macbeth fights on despite knowing the prophecies are coming true. Young Siward is killed. Macduff reveals he was 'from his mother's womb untimely ripped' (born by Caesarean section). Macbeth realises the Witches deceived him but fights to the death. Macduff kills Macbeth and Malcolm is crowned king, restoring order.",
+          "Macbeth fights on despite knowing the prophecies are coming true. Young Siward is killed. Macduff reveals he was 'from his mother's womb untimely ripp'd' (born by Caesarean section). Macbeth realises the Witches deceived him but fights to the death. Macduff kills Macbeth and Malcolm is crowned king, restoring order.",
       },
     ],
   },
@@ -203,7 +203,7 @@ const characters = [
     ],
     keyQuotes: [
       "'Come, you spirits / That tend on mortal thoughts, unsex me here'",
-      "'Look like th' innocent flower, / But be the serpent under 't'",
+      "'Look like the innocent flower, / But be the serpent under 't'",
       "'A little water clears us of this deed'",
       "'Out, damned spot! Out, I say!'",
       "'All the perfumes of Arabia will not sweeten this little hand'",
@@ -222,7 +222,7 @@ const characters = [
       'Represents the path of honour that Macbeth rejected',
     ],
     keyQuotes: [
-      "'Thou hast it now: King, Cawdor, Glamis, all... and I fear / Thou played'st most foully for 't'",
+      "'Thou hast it now: King, Cawdor, Glamis, all... and I fear / Thou play'dst most foully for 't'",
       "'In the great hand of God I stand'",
     ],
   },
@@ -236,12 +236,12 @@ const characters = [
       "Discovers Duncan's murder and reacts with genuine horror",
       'Leaves his family to seek help in England - this decision costs them their lives',
       "His grief ('He has no children') is raw and human, contrasting with Macbeth's cold plotting",
-      "'Not of woman born' - born by Caesarean section, fulfilling the prophecy",
+      "Not 'of woman born' - born by Caesarean section, fulfilling the prophecy",
     ],
     keyQuotes: [
       "'O horror, horror, horror!'",
       "'He has no children. All my pretty ones?'",
-      "'I was from my mother's womb / Untimely ripp'd'",
+      "'Macduff was from his mother's womb / Untimely ripp'd'",
     ],
   },
   {
@@ -395,7 +395,7 @@ const themes = [
       "From the Witches' opening 'Fair is foul, and foul is fair,' the play constantly questions what is real and what is illusion. Characters deceive others (Lady Macbeth's hospitality, Macbeth's loyalty), and deceive themselves (Macbeth's belief in his invincibility). The audience is also challenged: is the dagger real? Is the ghost? Shakespeare suggests that in a world of moral corruption, truth itself becomes unstable.",
     keyPoints: [
       "The Witches' equivocation: their prophecies appear to promise safety but actually ensure destruction",
-      "Lady Macbeth tells Macbeth to 'look like th' innocent flower, / But be the serpent under 't'",
+      "Lady Macbeth tells Macbeth to 'look like the innocent flower, / But be the serpent under 't'",
       "Duncan's trust is misplaced - he notes 'There's no art / To find the mind's construction in the face'",
       'Macbeth plays the grieving subject while being the murderer',
       'The hallucinations blur the line between reality and imagination',
@@ -403,7 +403,7 @@ const themes = [
     ],
     keyQuotes: [
       "'Fair is foul, and foul is fair'",
-      "'Look like th' innocent flower, / But be the serpent under 't'",
+      "'Look like the innocent flower, / But be the serpent under 't'",
       "'There's no art / To find the mind's construction in the face'",
       "'False face must hide what the false heart doth know'",
     ],
@@ -430,7 +430,7 @@ const keyQuotations = [
       "Lady Macbeth invokes dark spirits to remove her femininity so she can be ruthless enough to drive the murder. 'Unsex me' reveals that cruelty is coded as masculine in this world. The imperative verbs ('Come,' 'Fill,' 'Stop') show her forceful determination. A Jacobean audience would see this as deeply transgressive and unnatural.",
   },
   {
-    quote: "Look like th' innocent flower, / But be the serpent under 't",
+    quote: "Look like the innocent flower, / But be the serpent under 't",
     speaker: 'Lady Macbeth (1.5)',
     analysis:
       "Lady Macbeth advises Macbeth to hide his murderous intent behind a pleasant exterior. The biblical imagery (serpent = Satan in the Garden of Eden) casts their plan as a fundamental act of evil. The juxtaposition of 'flower' and 'serpent' captures the play's theme of appearance vs reality.",

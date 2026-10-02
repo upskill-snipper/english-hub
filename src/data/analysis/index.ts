@@ -744,11 +744,13 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
       'GCSE analysis of door symbolism in Jekyll and Hyde. The "blistered and distained" door, the Gothic threshold, secrecy, and exam paragraph.',
     category: 'jekyll-hyde',
   },
+  // The edition prints "down-right"; the slug keeps the old spelling so that links to
+  // the page still work (corrected 2 October 2026 against Project Gutenberg #43).
   {
     slug: ['jekyll-hyde', 'downright-detestable'],
-    title: '"Downright detestable" Analysis - Jekyll and Hyde',
+    title: '"Down-right detestable" Analysis - Jekyll and Hyde',
     description:
-      'GCSE analysis of Enfield\'s "downright detestable" from Jekyll and Hyde. The failure of rational language and exam paragraph by GCSE markers.',
+      'GCSE analysis of Enfield\'s "down-right detestable" from Jekyll and Hyde. The failure of rational language and exam paragraph by GCSE markers.',
     category: 'jekyll-hyde',
   },
   {
@@ -856,11 +858,15 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
       'Victorian context for Jekyll and Hyde. Fin-de-siècle London, class, the Labouchere Amendment, Darwinism, and exam-ready AO3 paragraph.',
     category: 'jekyll-hyde',
   },
+  // "With the sea of liberty before me" is in no printing of the novel: as Hyde, Jekyll can
+  // "spring headlong into the sea of liberty", in his account of the double life the
+  // drug gave him. The slug keeps the old words so that links to the page still work
+  // (corrected 2 October 2026 against Project Gutenberg #43).
   {
     slug: ['jekyll-hyde', 'with-the-sea-of-liberty-before-me'],
-    title: '"With the sea of liberty before me" - Jekyll and Hyde Analysis',
+    title: '"Spring headlong into the sea of liberty" - Jekyll and Hyde Analysis',
     description:
-      'GCSE analysis of "with the sea of liberty before me" from Jekyll\'s first transformation. Freedom, repression and exam paragraph.',
+      'GCSE analysis of "spring headlong into the sea of liberty", Jekyll\'s account of the freedom Hyde gave him. Freedom, repression and exam paragraph.',
     category: 'jekyll-hyde',
   },
   {

@@ -61,6 +61,12 @@ const PLOT_SUMMARY = [
   },
 ]
 
+// Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+// src/data/full-texts/jekyll-and-hyde.ts). Poole says "I've been afraid"; Lanyon's
+// "something seizing, surprising and revolting" had been joined to a sentence of his
+// over a hundred words earlier; the fog that "still slept on the wing" is Chapter 5,
+// not 4; "were audibly shattered" had lost "audibly"; and Utterson's pun had lost its
+// speech tag with no ellipsis.
 const CHARACTERS = [
   {
     name: 'Dr Henry Jekyll',
@@ -89,7 +95,7 @@ const CHARACTERS = [
     description:
       "Jekyll's lawyer and the novel's main narrator-figure. Utterson is the epitome of Victorian respectability - reserved, rational, loyal, and discreet. He investigates Hyde out of concern for his friend but is limited by his commitment to reputation and propriety. He represents the reader: trying to make rational sense of irrational events. His reluctance to pry reflects the Victorian code of silence around scandal.",
     key_quotes: [
-      '"If he be Mr Hyde, I shall be Mr Seek"',
+      '"If he be Mr Hyde... I shall be Mr Seek"',
       '"I incline to Cain\'s heresy... I let my brother go to the devil in his own way"',
     ],
   },
@@ -99,14 +105,14 @@ const CHARACTERS = [
       "A conventional, respected doctor and former friend of Jekyll. Lanyon dismissed Jekyll's experiments as 'unscientific balderdash.' When he witnesses Hyde's transformation into Jekyll, the shock is so profound that he dies within weeks. Lanyon represents orthodox Victorian science - he cannot accommodate what falls outside rational understanding. His death shows the danger of confronting truths that society refuses to acknowledge.",
     key_quotes: [
       '"I have had a shock... and I shall never recover"',
-      '"This person... had something seizing, surprising and revolting"',
+      '"something seizing, surprising and revolting"',
     ],
   },
   {
     name: 'Poole',
     description:
       "Jekyll's loyal butler who ultimately breaks the code of servant discretion when his master's safety is at stake. His fear and loyalty drive the climactic scene where he and Utterson break down the cabinet door. Poole's observations - the changed voice, the desperate notes - build suspense and confirm that something is deeply wrong.",
-    key_quotes: ['"I have been afraid for about a week... and I can bear it no more"'],
+    key_quotes: ['"I\'ve been afraid for about a week... and I can bear it no more"'],
   },
   {
     name: 'Sir Danvers Carew',
@@ -227,10 +233,10 @@ const KEY_QUOTES = [
     quote: '"the bones were audibly shattered and the body jumped upon the roadway"',
     speaker: 'Narrator (Ch. 4)',
     significance:
-      "The graphic violence of Carew's murder shocks Victorian sensibilities. The passive construction ('were shattered') distances the reader while emphasising the brutality. The body 'jumped' - even in death, Hyde's violence has physical force.",
+      "The graphic violence of Carew's murder shocks Victorian sensibilities. The passive construction ('were audibly shattered') distances the reader while emphasising the brutality. The body 'jumped' - even in death, Hyde's violence has physical force.",
   },
   {
-    quote: '"If he be Mr Hyde, I shall be Mr Seek"',
+    quote: '"If he be Mr Hyde... I shall be Mr Seek"',
     speaker: 'Utterson (Ch. 2)',
     significance:
       "A pun on 'hide and seek' that encapsulates the novella's structure - a quest to uncover hidden truth. Utterson represents rational investigation, though he ultimately fails to prevent tragedy.",
@@ -268,7 +274,7 @@ const KEY_QUOTES = [
   },
   {
     quote: '"the fog still slept on the wing above the drowned city"',
-    speaker: 'Narrator (Ch. 4)',
+    speaker: 'Narrator (Ch. 5)',
     significance:
       "Personification of fog as something alive and oppressive. 'Drowned' suggests suffocation. The weather mirrors the moral atmosphere - nothing is clear, everything is obscured.",
   },

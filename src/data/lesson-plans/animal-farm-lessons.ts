@@ -1,6 +1,31 @@
 // @ts-nocheck
 import { LessonPlan } from '../../types'
 
+/**
+ * QUOTATIONS CORRECTED 2 October 2026. scripts/check-quotations.mjs found
+ * two of these lessons' quotations of Animal Farm wrong. One is not a
+ * quotation: "Napoleon secretly trained the dogs" is a statement card for a
+ * ranking task, in the lesson's own words, and is left as it is. The other,
+ * Old Major's "Is it not crystal clear, then, comrades, that all the evils
+ * of this life of ours spring from the tyranny of human beings?", had lost
+ * "then" and the rest of the question in a model answer. Reading the lessons
+ * by hand found more in model answers students copy: Squealer never says
+ * milk and apples are "scientifically proven", but that it "has been
+ * proved by Science", and he cites no statistics in that speech. Each
+ * corrected quotation was cut by script from the held edition, Project
+ * Gutenberg Australia's transcription (src/data/full-texts/animal-farm.ts).
+ *
+ * REVIEWED the same day. Two answers put the dogs that "growled so
+ * threateningly" at the moment the four porkers protest. In Chapter 5 those
+ * are the three dogs with Squealer as he explains away Napoleon's change of
+ * mind over the windmill, and the animals then "accepted his explanation
+ * without further questions"; the porkers are silenced earlier, when the
+ * dogs "let out deep, menacing growls". Both answers now quote the right
+ * moment. The first pass had also changed Squealer's "Jones's agent" to
+ * "Jones's secret agent", saying the novel never has the shorter form; it
+ * does ("Snowball was Jones's agent from the very beginning", Chapter 7),
+ * so that answer is back as it was.
+ */
 export const animalFarmLessons: LessonPlan[] = [
   // ── Lesson 1: Introduction - Orwell, Russian Revolution & Allegory ───
   {
@@ -269,7 +294,7 @@ export const animalFarmLessons: LessonPlan[] = [
           'Identify and explain the effect of one rhetorical question used by Old Major in his speech.',
         lines: 4,
         modelAnswer:
-          "Old Major asks, 'Is it not crystal clear, comrades?' This rhetorical question is designed to make the animals feel that the answer is obvious and beyond dispute. It pressures them into agreement without allowing space for doubt, which is a classic propaganda technique that shuts down independent thinking.",
+          "Old Major asks, 'Is it not crystal clear, then, comrades, that all the evils of this life of ours spring from the tyranny of human beings?' This rhetorical question is designed to make the animals feel that the answer is obvious and beyond dispute. It pressures them into agreement without allowing space for doubt, which is a classic propaganda technique that shuts down independent thinking.",
         marks: 3,
       },
       {
@@ -457,7 +482,7 @@ export const animalFarmLessons: LessonPlan[] = [
           "Why do the other animals fail to prevent Napoleon's rise to power? Use evidence from the text.",
         lines: 6,
         modelAnswer:
-          "The other animals fail to resist because of a combination of fear, ignorance, and misplaced loyalty. The dogs physically intimidate anyone who questions Napoleon, as seen when 'four young porkers...uttered shrill squeals of disapproval' and the dogs 'growled so threateningly' they fell silent. Many animals, like Boxer, believe Napoleon is always right ('Napoleon is always right'), substituting trust for critical thinking. Orwell suggests that tyranny thrives when citizens are too afraid or too uneducated to challenge authority.",
+          "The other animals fail to resist because of a combination of fear, ignorance, and misplaced loyalty. The dogs physically intimidate anyone who questions Napoleon, as seen when 'four young porkers...uttered shrill squeals of disapproval' and the dogs 'let out deep, menacing growls, and the pigs fell silent'. Many animals, like Boxer, believe Napoleon is always right ('Napoleon is always right'), substituting trust for critical thinking. Orwell suggests that tyranny thrives when citizens are too afraid or too uneducated to challenge authority.",
         marks: 5,
       },
       {
@@ -587,7 +612,7 @@ export const animalFarmLessons: LessonPlan[] = [
           'How does Squealer justify the pigs taking the milk and apples? What techniques does he use?',
         lines: 5,
         modelAnswer:
-          "Squealer claims it is 'scientifically proven' that milk and apples are essential for pigs' brain function. He uses false statistics to sound authoritative and then resorts to fear-mongering: 'Do you know what would happen if we pigs failed in our duty? Jones would come back!' This combination of pseudo-science and fear is designed to silence objections by making the animals feel their survival depends on the pigs' privileges.",
+          "Squealer claims that milk and apples 'contain substances absolutely necessary to the well-being of a pig' ('this has been proved by Science, comrades') and that the pigs need them because they are 'brainworkers'. He borrows the authority of science and then resorts to fear-mongering: 'Do you know what would happen if we pigs failed in our duty? Jones would come back!' This combination of pseudo-science and fear is designed to silence objections by making the animals feel their survival depends on the pigs' privileges.",
         marks: 4,
       },
       {
@@ -1547,7 +1572,7 @@ export const animalFarmLessons: LessonPlan[] = [
           'What does AO1 require in an Animal Farm essay? Give an example of how you might meet this assessment objective.',
         lines: 4,
         modelAnswer:
-          "AO1 requires students to demonstrate a clear understanding of the text and support their ideas with relevant quotations or textual references. For example, when arguing that Napoleon is a tyrant, you might write: 'Napoleon uses the dogs to enforce obedience, as seen when they \"growled so threateningly\" that the protesting pigs fell silent. This shows that Napoleon's power is built on intimidation, not consent.'",
+          'AO1 requires students to demonstrate a clear understanding of the text and support their ideas with relevant quotations or textual references. For example, when arguing that Napoleon is a tyrant, you might write: \'Napoleon uses the dogs to enforce obedience, as seen when Squealer explains away Napoleon\'s change of mind over the windmill and the three dogs with him "growled so threateningly" that the animals "accepted his explanation without further questions." This shows that Napoleon\'s power is built on intimidation, not consent.\'',
         marks: 3,
       },
       {

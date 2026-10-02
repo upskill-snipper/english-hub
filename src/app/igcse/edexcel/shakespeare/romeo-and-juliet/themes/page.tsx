@@ -27,6 +27,16 @@ export const metadata: Metadata = {
     'Detailed themes guide for Romeo and Juliet for Edexcel IGCSE Literature: love, fate, conflict, youth vs age and honour, with key quotations and analysis.',
 }
 
+// Quotations are in the wording of the edition the site holds, Project
+// Gutenberg #1513 (src/data/full-texts/romeo-and-juliet.ts), and are cut from
+// it rather than typed. Until 2 October 2026 two here were not: "Alive in
+// triumph", another edition's reading, where this one has "Again in triumph";
+// and a line given to Paris, "I will maintain it 'gainst the pride of all the
+// world", which is not in this edition, nor anything near it. His real
+// defiance at the tomb, "I do defy thy conjuration", replaced it. A review the
+// same day found a third, which the checker had judged too far from the line
+// to be a quotation of it: the Honour summary quoted Mercutio's "dishonourable
+// submission", dropping his "vile" with no ellipsis to show it.
 const THEMES = [
   {
     theme: 'Love',
@@ -84,14 +94,14 @@ const THEMES = [
   {
     theme: 'Honour',
     summary:
-      "Honour is a trap. Mercutio fights Tybalt because Romeo's refusal to duel is 'dishonourable submission'. Romeo kills Tybalt because honour demands he avenge Mercutio. The Capulet men escalate because backing down would shame them. Paris is bound to his betrothal by honour. Shakespeare lets us see that honour-codes don't protect anyone \u2014 they just supply polite justifications for unnecessary deaths.",
+      "Honour is a trap. Mercutio fights Tybalt because Romeo's refusal to duel is 'dishonourable, vile submission'. Romeo kills Tybalt because honour demands he avenge Mercutio. The Capulet men escalate because backing down would shame them. Paris is bound to his betrothal by honour. Shakespeare lets us see that honour-codes don't protect anyone \u2014 they just supply polite justifications for unnecessary deaths.",
     how_it_develops:
       "Act 1: Sampson and Gregory frame the feud as a matter of reputation. Act 3: Mercutio dies to defend Romeo's honour; Romeo avenges him out of his own. Act 3 Scene 5: Capulet frames Juliet's refusal as a personal dishonour. Act 5: Paris dies at the tomb defending his honourable claim on Juliet.",
     quotes: [
       '"O calm, dishonourable, vile submission!" (3.1)',
-      '"Alive in triumph, and Mercutio slain! / Away to heaven, respective lenity" (3.1)',
+      '"Again in triumph, and Mercutio slain? / Away to heaven respective lenity" (3.1)',
       '"Out, you baggage! You tallow-face!" (3.5)',
-      '"I will maintain it \u2019gainst the pride of all the world" (5.3, Paris)',
+      '"I do defy thy conjuration, / And apprehend thee for a felon here" (5.3, Paris)',
     ],
   },
 ]

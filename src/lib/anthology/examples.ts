@@ -57,9 +57,11 @@ export const EXAMPLE_STUDY_GUIDE: StudyGuideContent = {
       kind: 'quote-list',
       title: 'The four hinge quotations',
       numPrefix: 'ii.',
+      // Until 2 October 2026 the second read "Commends the chalice to our own
+      // lips", cutting "th' ingredience of our poison'd" with nothing to show it.
       items: [
         '<em>"If it were done when \'tis done"</em> - a fantasy of consequence-free action. The murder as event without duration.',
-        '<em>"Commends the chalice to our own lips"</em> - hospitality inverted. The host drinks his own cup; the crime returns.',
+        '<em>"Commends th\' ingredience of our poison\'d chalice / To our own lips"</em> - hospitality inverted. The host drinks his own cup; the crime returns.',
         '<em>"Pity, like a naked new-born babe, striding the blast"</em> - defencelessness against armoured intent. The image that breaks the argument.',
         '<em>"Vaulting ambition, which o\'erleaps itself"</em> - horse and rider. Force without direction. The play\'s most self-diagnostic phrase.',
       ],

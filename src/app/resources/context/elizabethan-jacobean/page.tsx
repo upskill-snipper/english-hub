@@ -266,7 +266,7 @@ export default function ElizabethanJacobeanContextPage() {
               </p>
               <p>
                 <strong>Macbeth</strong> dramatises the horror of regicide. Duncan is presented as a
-                saintly, divinely appointed king -- &ldquo;his silver skin laced with his golden
+                saintly, divinely appointed king -- &ldquo;his silver skin lac'd with his golden
                 blood.&rdquo; Shakespeare makes clear that killing him brings damnation. This would
                 have powerfully reinforced James I&apos;s political message.
               </p>
@@ -457,7 +457,7 @@ export default function ElizabethanJacobeanContextPage() {
                 <ContextExample
                   text="Macbeth"
                   point="Duncan's murder violates the Divine Right of Kings"
-                  analysis="When Macbeth kills Duncan, he commits both treason and sacrilege. Shakespeare emphasises Duncan's divine status through religious imagery -- 'his silver skin laced with his golden blood' -- making the murder feel like an attack on God's order. For James I, watching in the audience, this would have reinforced his belief that regicide was the ultimate sin, legitimising his own claim to divine authority."
+                  analysis="When Macbeth kills Duncan, he commits both treason and sacrilege. Shakespeare emphasises Duncan's divine status through religious imagery -- 'his silver skin lac'd with his golden blood' -- making the murder feel like an attack on God's order. For James I, watching in the audience, this would have reinforced his belief that regicide was the ultimate sin, legitimising his own claim to divine authority."
                 />
               </div>
 
@@ -472,10 +472,17 @@ export default function ElizabethanJacobeanContextPage() {
 
               <h3 className="text-base font-bold text-foreground pt-4">The Tempest</h3>
               <div className="space-y-3">
+                {/* WHAT BROKE (2 October 2026). Prospero was made to insist he
+                    "taught [Caliban] language", which are Caliban's words turned
+                    round ("You taught me language"), so a student would quote
+                    them as Prospero's. His own, in the edition the site prints
+                    (Project Gutenberg #1540, which gives him the "Abhorred slave"
+                    speech that the First Folio gives Miranda), are "Took pains to
+                    make thee speak", Act 1, Scene 2. */}
                 <ContextExample
                   text="The Tempest"
                   point="Prospero's control of Caliban reflects colonial attitudes"
-                  analysis="Prospero's enslavement of Caliban -- the island's original inhabitant -- mirrors the colonial encounters of Shakespeare's era. European explorers were claiming 'new' lands and subjugating indigenous peoples, justifying this through the belief that they were bringing civilisation and Christianity. Prospero's insistence that he 'taught [Caliban] language' echoes this colonial mindset, while Caliban's response -- 'you taught me language, and my profit on't / Is I know how to curse' -- offers a powerful counter-narrative."
+                  analysis="Prospero's enslavement of Caliban -- the island's original inhabitant -- mirrors the colonial encounters of Shakespeare's era. European explorers were claiming 'new' lands and subjugating indigenous peoples, justifying this through the belief that they were bringing civilisation and Christianity. Prospero's insistence that he 'took pains to make thee speak' echoes this colonial mindset, while Caliban's response -- 'you taught me language, and my profit on't / Is I know how to curse' -- offers a powerful counter-narrative."
                 />
               </div>
 

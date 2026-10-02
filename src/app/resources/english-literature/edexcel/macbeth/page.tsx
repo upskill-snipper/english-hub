@@ -57,7 +57,7 @@ const PLOT_SUMMARY = [
     act: 'Act 5',
     title: 'Downfall and Death',
     summary:
-      "Lady Macbeth sleepwalks, haunted by guilt, and eventually dies (implied suicide). Malcolm's army camouflages itself with branches from Birnam Wood - fulfilling the prophecy. Macduff reveals he was 'from his mother's womb untimely ripped' (born by Caesarean section). Macduff kills Macbeth and Malcolm is crowned King.",
+      "Lady Macbeth sleepwalks, haunted by guilt, and eventually dies (implied suicide). Malcolm's army camouflages itself with branches from Birnam Wood - fulfilling the prophecy. Macduff reveals he was 'from his mother's womb untimely ripp'd' (born by Caesarean section). Macduff kills Macbeth and Malcolm is crowned King.",
   },
 ]
 
@@ -70,7 +70,7 @@ const CHARACTERS = [
       '"Stars, hide your fires; let not light see my black and deep desires"',
       '"Is this a dagger which I see before me?"',
       '"Will all great Neptune\'s ocean wash this blood clean from my hand?"',
-      '"I am in blood stepped in so far that, should I wade no more, returning were as tedious as go o\'er"',
+      '"I am in blood stepp\'d in so far that, should I wade no more, returning were as tedious as go o\'er"',
       '"Tomorrow, and tomorrow, and tomorrow"',
     ],
   },
@@ -91,7 +91,7 @@ const CHARACTERS = [
     description:
       "Macbeth's fellow general and friend. He also hears the witches' prophecy (that his descendants will be kings) but, unlike Macbeth, resists temptation. He represents honour and moral integrity - a foil to Macbeth. His ghost haunts Macbeth at the banquet, symbolising inescapable guilt.",
     key_quotes: [
-      '"Thou hast it now: King, Cawdor, Glamis, all... and I fear thou played\'st most foully for\'t"',
+      '"Thou hast it now: King, Cawdor, Glamis, all... and I fear thou play\'dst most foully for\'t"',
       '"But \'tis strange; and oftentimes to win us to our harm, the instruments of darkness tell us truths"',
     ],
   },
@@ -103,7 +103,7 @@ const CHARACTERS = [
       '"O horror, horror, horror!"',
       '"He has no children"',
       '"Turn, hell-hound, turn!"',
-      '"Macduff was from his mother\'s womb untimely ripped"',
+      '"Macduff was from his mother\'s womb untimely ripp\'d"',
     ],
   },
   {
@@ -255,14 +255,14 @@ const KEY_QUOTES = [
       'Sleep symbolises innocence and peace. By killing Duncan, Macbeth has destroyed his own peace of mind forever.',
   },
   {
-    quote: '"Nought\'s had, all\'s spent, where our desire is got without content"',
+    quote: '"Naught\'s had, all\'s spent, where our desire is got without content"',
     speaker: 'Lady Macbeth (3.2)',
     significance:
       'Despite gaining the crown, they have no satisfaction. Power without peace is worthless.',
   },
   {
     quote:
-      '"I am in blood stepped in so far that, should I wade no more, returning were as tedious as go o\'er"',
+      '"I am in blood stepp\'d in so far that, should I wade no more, returning were as tedious as go o\'er"',
     speaker: 'Macbeth (3.4)',
     significance:
       'Metaphor of a river of blood - he is so deep in murder that turning back is as hard as continuing. Shows his moral descent.',
@@ -304,7 +304,7 @@ const KEY_QUOTES = [
       'Repetition and monosyllables create a weary, hopeless tone. Macbeth sees life as tedious and pointless.',
   },
   {
-    quote: '"I have lived long enough. My way of life is fallen into the sere, the yellow leaf"',
+    quote: '"I have liv\'d long enough. My way of life is fall\'n into the sere, the yellow leaf"',
     speaker: 'Macbeth (5.3)',
     significance:
       'Autumnal imagery. Macbeth recognises that he has lost everything that makes life worth living - honour, love, friends.',
@@ -316,14 +316,16 @@ const KEY_QUOTES = [
       "Macduff confronts Macbeth. 'Hell-hound' dehumanises Macbeth and links him to the demonic.",
   },
   {
-    quote: '"Macduff was from his mother\'s womb untimely ripped"',
+    quote: '"Macduff was from his mother\'s womb untimely ripp\'d"',
     speaker: 'Macduff (5.8)',
     significance:
       "The witches' equivocation is revealed. The prophecy was a half-truth - Macduff was born by Caesarean.",
   },
   {
     quote: '"This dead butcher and his fiend-like queen"',
-    speaker: 'Malcolm (5.9)',
+    // Act 5 Scene 8 is the last scene in the site's edition
+    // (src/data/full-texts/macbeth.ts); this said "5.9" until 2 October 2026.
+    speaker: 'Malcolm (5.8)',
     significance:
       "Malcolm's final judgement. 'Butcher' reduces Macbeth to a mindless killer; 'fiend-like' demonises Lady Macbeth.",
   },

@@ -257,7 +257,7 @@ const lesson2: LessonPlan = {
       title: 'Act 1, Scene 7: "Vaulting Ambition" Soliloquy Analysis',
       duration: '22 minutes',
       instructions:
-        'Read Macbeth\'s soliloquy from "If it were done when \'tis done" to "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o\'erleaps itself / And falls on the other." Discuss: what reasons does Macbeth give for NOT killing Duncan? (He is his kinsman, his host, a good king.) What is the ONLY reason he gives FOR killing him? (Ambition.) Students create a two-column table: "Reasons Against" vs "Reasons For" and annotate the metaphor of "vaulting ambition" - a horse rider jumping too high and falling. In groups, discuss: what does this soliloquy reveal about Macbeth\'s character? Students then write a paragraph analysing the significance of the phrase "vaulting ambition".',
+        'Read Macbeth\'s soliloquy from "If it were done when \'tis done" to "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o\'erleaps itself / And falls on th\' other." Discuss: what reasons does Macbeth give for NOT killing Duncan? (He is his kinsman, his host, a good king.) What is the ONLY reason he gives FOR killing him? (Ambition.) Students create a two-column table: "Reasons Against" vs "Reasons For" and annotate the metaphor of "vaulting ambition" - a horse rider jumping too high and falling. In groups, discuss: what does this soliloquy reveal about Macbeth\'s character? Students then write a paragraph analysing the significance of the phrase "vaulting ambition".',
       differentiation: {
         support:
           'Provide a modern English translation alongside the original. Two-column table partially completed.',
@@ -297,7 +297,7 @@ const lesson2: LessonPlan = {
     },
     {
       question:
-        'Explain the effect of the metaphor "vaulting ambition, which o\'erleaps itself and falls on the other."',
+        'Explain the effect of the metaphor "vaulting ambition, which o\'erleaps itself and falls on th\' other."',
       lines: 5,
       modelAnswer:
         'The metaphor compares Macbeth\'s ambition to a horse rider who jumps too ambitiously and falls on the other side. "Vaulting" suggests excessive, uncontrolled ambition that overreaches. The image of falling foreshadows Macbeth\'s eventual downfall - his ambition will ultimately destroy him. Shakespeare uses this to warn the audience that unchecked ambition leads to self-destruction, reflecting the Jacobean belief that disrupting the natural order invites disaster.',
@@ -835,7 +835,7 @@ const lesson6: LessonPlan = {
     title: 'What Makes a Good King?',
     duration: '7 minutes',
     instructions:
-      'Students brainstorm ten qualities of a good leader/ruler on mini-whiteboards. Display Malcolm\'s list of "king-becoming graces" from Act 4.3: "justice, verity, temperance, stableness, bounty, perseverance, mercy, lowliness, devotion, patience, courage, fortitude." Students compare their list to Malcolm\'s. Discuss: does Duncan display these qualities? Does Macbeth?',
+      'Students brainstorm ten qualities of a good leader/ruler on mini-whiteboards. Display Malcolm\'s list of "king-becoming graces" from Act 4.3: "justice, verity, temp\'rance, stableness, bounty, perseverance, mercy, lowliness, devotion, patience, courage, fortitude." Students compare their list to Malcolm\'s. Discuss: does Duncan display these qualities? Does Macbeth?',
     differentiation: {
       support: 'Provide definitions for each of Malcolm\'s "king-becoming graces" on a handout.',
       core: 'Students match each grace to evidence of Duncan displaying it or Macbeth lacking it.',

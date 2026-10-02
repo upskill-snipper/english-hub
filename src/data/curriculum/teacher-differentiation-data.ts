@@ -234,7 +234,7 @@ export const writingFrames: WritingFrame[] = [
         instruction:
           'Embed a short quotation smoothly into your sentence. Aim for key words rather than long chunks of text.',
         example:
-          'She commands Macbeth to "look like the innocent flower, but be the serpent under it."',
+          'She commands Macbeth to "look like the innocent flower, but be the serpent under\'t."',
       },
       {
         label: 'Explain',

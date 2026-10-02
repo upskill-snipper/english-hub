@@ -218,7 +218,7 @@ export const macbethGuide: SetTextAnalysis = {
     {
       name: 'Macduff',
       description:
-        'The agent of justice and retribution. Macduff\'s grief at his family\'s murder ("All my pretty ones? / Did you say all?") is one of the play\'s most human moments. He is "not of woman born" (delivered by Caesarean section), fulfilling the witches\' prophecy. Macduff represents legitimate masculine honour - he feels deeply but acts decisively.',
+        'The agent of justice and retribution. Macduff\'s grief at his family\'s murder ("All my pretty ones? / Did you say all?") is one of the play\'s most human moments. He is not "of woman born" (delivered by Caesarean section), fulfilling the witches\' prophecy. Macduff represents legitimate masculine honour - he feels deeply but acts decisively.',
     },
     {
       name: 'Duncan',
@@ -238,7 +238,7 @@ export const macbethGuide: SetTextAnalysis = {
         "The witches' opening chant establishes the play's central motif: the inversion of moral order. Nothing is as it seems - loyal thanes become traitors, trusted hosts become murderers. The chiasmus (reversal of word order) enacts the confusion of values that Macbeth's ambition will cause.",
     },
     {
-      quote: '"Look like th\'innocent flower, / But be the serpent under\'t."',
+      quote: '"Look like the innocent flower, / But be the serpent under\'t."',
       analysis:
         "Lady Macbeth advises Macbeth to deceive Duncan. The biblical allusion to the serpent in the Garden of Eden casts the murder as a fall from grace. The imperative verbs reveal Lady Macbeth's dominance in the relationship at this stage.",
     },

@@ -9,6 +9,26 @@ import type { CourseData, CourseModule, CourseQuiz } from './courses'
 // 1. "If-" by Rudyard Kipling
 // ─────────────────────────────────────────────────────────────────────────────
 
+// QUOTATIONS, checked 2 October 2026 against the held text
+// (src/data/full-texts/if.ts, Rewards and Fairies, whose words match the
+// anthology's in all 32 lines, as src/data/study-guides/if.ts records from
+// Pearson's PDF). The overview printed a paraphrase in quotation marks
+// as the poem's own sentence, "If you can do all of these things...", words
+// Kipling never wrote; it now quotes his first words and his last, cut from
+// the held text, with an ellipsis between. The structure module said the "if"
+// clauses run for 31 lines before a two-line conclusion, 33 lines of a 32-line
+// poem: the conditions fill lines 1 to 30 and the main clause begins at line
+// 31, as its own note on the final couplet says. Its quiz option now says 30 too.
+// A second reading the same day found four more things the held text
+// disproves. That note on the final couplet called its exclamation mark "the
+// only one in the poem", but the Will's command in line 24 ends with one too.
+// The metre was said to vary with "occasional extra syllables": every
+// odd-numbered line has one, a feminine ending, and every even-numbered line
+// ends on a stress. Enjambment was said to make the lines "flow into each other
+// without pause": eight of the 32 run on, and the rest end on punctuation. And
+// the antithesis list and its quiz quoted "kings", where Kipling capitalises
+// Kings, as he does Triumph, Disaster, Will and Man.
+
 const ifKiplingModules: CourseModule[] = [
   {
     id: 'iglit-if-m1',
@@ -27,7 +47,7 @@ const ifKiplingModules: CourseModule[] = [
 <div class="key-term"><strong>Key Term: Stoicism</strong> - A philosophy emphasising self-control, endurance, and the suppression of emotional extremes. Victorian stoicism was closely linked to ideals of masculinity and imperial duty.</div>
 
 <h3>Summary of the Poem</h3>
-<p>The poem is structured as a single, extended conditional sentence: "If you can do all of these things... you'll be a Man, my son!" Across four stanzas, the speaker outlines a series of virtues:</p>
+<p>The poem is structured as a single, extended conditional sentence: "If you can keep your head... you'll be a Man, my son!" Across four stanzas, the speaker outlines a series of virtues:</p>
 <ul>
   <li><strong>Stanza 1:</strong> Keeping composure when others lose theirs; trusting yourself while allowing for doubt; patience and honesty.</li>
   <li><strong>Stanza 2:</strong> Not being enslaved by dreams or intellect; treating triumph and disaster equally ("those two impostors").</li>
@@ -117,7 +137,7 @@ const ifKiplingModules: CourseModule[] = [
 <p>Kipling structures many lines around <strong>antithesis</strong> - the pairing of opposites:</p>
 <ul>
   <li>"Triumph and Disaster"</li>
-  <li>"kings" and "the common touch"</li>
+  <li>"Kings" and "the common touch"</li>
   <li>"foes" and "loving friends"</li>
   <li>"dreams" and being "master" of them</li>
 </ul>
@@ -145,7 +165,7 @@ const ifKiplingModules: CourseModule[] = [
       {
         id: 'iglit-if-m2-q2',
         question:
-          'What literary technique is used in the pairing of "kings" and "the common touch"?',
+          'What literary technique is used in the pairing of "Kings" and "the common touch"?',
         options: ['Simile', 'Onomatopoeia', 'Antithesis', 'Hyperbole'],
         correct: 2,
         explanation:
@@ -174,16 +194,16 @@ const ifKiplingModules: CourseModule[] = [
 <h2>"If-": Structure &amp; Form</h2>
 
 <h3>Overall Structure</h3>
-<p>"If-" consists of <strong>four stanzas of eight lines each</strong> (32 lines total). The entire poem forms a single conditional sentence, which is a remarkable feat of syntactic control. The protasis (the "if" clauses) runs for 31 lines, and the apodosis (the "then" conclusion) arrives only in the final two lines. This structure creates a powerful sense of <strong>delayed gratification</strong> - the reader must absorb all the conditions before learning the reward.</p>
+<p>"If-" consists of <strong>four stanzas of eight lines each</strong> (32 lines total). The entire poem forms a single conditional sentence, which is a remarkable feat of syntactic control. The protasis (the "if" clauses) runs for 30 lines, and the apodosis (the "then" conclusion) arrives only in the final two lines. This structure creates a powerful sense of <strong>delayed gratification</strong> - the reader must absorb all the conditions before learning the reward.</p>
 
 <h3>Rhyme Scheme</h3>
 <p>Each stanza follows an <strong>ABABCDCD</strong> rhyme scheme. The alternating rhymes create a steady, predictable rhythm that reinforces the poem's tone of calm authority. There are no surprises in the rhyme - just as the ideal man described in the poem avoids emotional extremes.</p>
 
 <h3>Metre</h3>
-<p>The poem is written predominantly in <strong>iambic pentameter</strong> (five stressed syllables per line), the most natural-sounding metre in English. However, Kipling varies this with occasional extra syllables and enjambment, preventing the rhythm from becoming monotonous. The regularity of the metre mirrors the self-control and discipline the poem advocates.</p>
+<p>The poem is written predominantly in <strong>iambic pentameter</strong> (five stressed syllables per line), the most natural-sounding metre in English. However, the lines alternate: every odd-numbered line ends on an extra, unstressed syllable (a feminine ending, as in "about you" and "waiting"), and every even-numbered line ends on a stress, as in "too" and "wise". That steady alternation, with the enjambment, keeps the rhythm from becoming monotonous. The regularity of the metre mirrors the self-control and discipline the poem advocates.</p>
 
 <h3>Enjambment</h3>
-<p>Kipling uses <strong>enjambment</strong> (the continuation of a sentence beyond a line break) extensively. Lines flow into each other without pause, creating a sense of <strong>relentless accumulation</strong>. The conditions keep piling up, one after another, without allowing the reader to rest. This structural choice mirrors the poem's message: the demands of moral excellence are continuous and unrelenting.</p>
+<p>Kipling uses <strong>enjambment</strong> (the continuation of a sentence beyond a line break) at key moments: eight of the 32 lines run on with no punctuation at all, the first among them ("when all about you / Are losing theirs"). The rest end on a mark of punctuation, but never a full stop, so the sentence does not come to rest until the last line, creating a sense of <strong>relentless accumulation</strong>. The conditions keep piling up, one after another, without allowing the reader to rest. This structural choice mirrors the poem's message: the demands of moral excellence are continuous and unrelenting.</p>
 
 <div class="key-term"><strong>Key Term: Enjambment</strong> - When a sentence or phrase runs over from one line of verse to the next without a pause. In "If-", this creates a sense of continuous, unbroken expectation.</div>
 
@@ -191,7 +211,7 @@ const ifKiplingModules: CourseModule[] = [
 <p>The repetition of <strong>"If you can"</strong> at the beginning of multiple lines is an example of <strong>anaphora</strong> (the repetition of a word or phrase at the start of successive clauses). This creates a rhythmic, almost incantatory quality, as if the speaker is delivering a sermon or a set of commandments. The repetition also creates a sense of mounting pressure - each new "If" adds another demand to the list.</p>
 
 <h3>The Final Couplet</h3>
-<p>The poem builds to a climactic <strong>concluding couplet</strong>: "Yours is the Earth and everything that's in it, / And - which is more - you'll be a Man, my son!" The dash before "which is more" creates a dramatic <strong>caesura</strong> (pause), making the reader stop and register the speaker's scale of values: the Earth itself is less important than achieving moral manhood. The exclamation mark - the only one in the poem - releases the emotional tension that has been building through 30 lines of restrained conditional clauses.</p>
+<p>The poem builds to a climactic <strong>concluding couplet</strong>: "Yours is the Earth and everything that's in it, / And - which is more - you'll be a Man, my son!" The dash before "which is more" creates a dramatic <strong>caesura</strong> (pause), making the reader stop and register the speaker's scale of values: the Earth itself is less important than achieving moral manhood. The final exclamation mark - the poem's only other one is in the Will's command, "Hold on!" (line 24) - releases the emotional tension that has been building through 30 lines of restrained conditional clauses.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> When discussing structure, always link form to meaning. For example: "The delayed resolution of the conditional sentence mirrors the poem's argument that moral maturity requires sustained effort over time - the reward cannot be reached quickly."</div>
 
@@ -212,7 +232,7 @@ const ifKiplingModules: CourseModule[] = [
         question: 'What is the effect of the poem being a single conditional sentence?',
         options: [
           'It makes the poem difficult to understand',
-          'It creates delayed gratification - the reward only arrives after 31 lines of conditions',
+          'It creates delayed gratification - the reward only arrives after 30 lines of conditions',
           'It shows Kipling was experimenting with punctuation',
           'It makes each stanza independent from the others',
         ],
@@ -1797,6 +1817,14 @@ const halfPastTwoCourse: CourseData = {
 // 6. "Piano" by D H Lawrence
 // ─────────────────────────────────────────────────────────────────────────────
 
+// Quotations are the held edition's words (src/data/full-texts/piano.ts).
+// Until 2 October 2026 the last line was quoted five times as "weeping like
+// a child" (four of them adding "for the past"), where Lawrence wrote
+// "I weep like a child for the past"; the rhyme scheme was shown with "softly/me" and
+// "song/along", which are not rhymes in the poem ("along" is not in it at
+// all: line 6 ends "belong"); and the model answer called line 9's "vain" the
+// poem's final image. scripts/check-quotations.mjs saw two of the five: in the
+// exam-practice module it gave the quotations to If-, the file's first poem.
 const pianoModules: CourseModule[] = [
   {
     id: 'iglit-pi-m1',
@@ -1897,7 +1925,7 @@ const pianoModules: CourseModule[] = [
 </ul>
 <p>These details create an idealised, almost <strong>sacred image of childhood</strong> - a world of warmth, music, and maternal love that has been irrecoverably lost.</p>
 
-<h3>"Weeping like a child for the past"</h3>
+<h3>"I weep like a child for the past"</h3>
 <p>The poem ends with the speaker weeping openly. The simile <strong>"like a child"</strong> is layered with irony: the speaker weeps <em>for</em> his childhood <em>as</em> a child would - helplessly, without restraint. This suggests that the act of remembering has temporarily <strong>dissolved the boundary between adult and child</strong>. The phrase "for the past" is poignant in its simplicity - he does not weep for a specific loss but for the entire, irrecoverable past.</p>
 
 <h3>The Present-Day Singer</h3>
@@ -1922,7 +1950,7 @@ const pianoModules: CourseModule[] = [
       },
       {
         id: 'iglit-pi-m2-q2',
-        question: 'Why is the simile "weeping like a child" ironic?',
+        question: 'Why is the simile "I weep like a child" ironic?',
         options: [
           'Because children do not actually weep',
           'Because the speaker is weeping for his childhood while simultaneously reverting to childlike helplessness',
@@ -1970,7 +1998,7 @@ const pianoModules: CourseModule[] = [
 <div class="key-term"><strong>Key Term: Quatrain</strong> - A four-line stanza. The regular quatrain form in "Piano" creates a sense of stability and order that mirrors the security of the childhood memory.</div>
 
 <h3>Rhyme and Regularity</h3>
-<p>The AABB rhyme scheme (softly/me, strings/sings, song/along, etc.) creates a <strong>musical quality</strong> that is appropriate for a poem about music. The regularity of the rhymes also creates a sense of inevitability - once the memory is triggered, the emotional journey to surrender feels <strong>predetermined</strong>, as if the speaker never really had a chance of resisting.</p>
+<p>The AABB rhyme scheme (me/see, strings/sings, song/belong, etc.) creates a <strong>musical quality</strong> that is appropriate for a poem about music. The regularity of the rhymes also creates a sense of inevitability - once the memory is triggered, the emotional journey to surrender feels <strong>predetermined</strong>, as if the speaker never really had a chance of resisting.</p>
 
 <h3>Enjambment</h3>
 <p>Despite the neat rhyme scheme, Lawrence uses <strong>enjambment</strong> across several lines: "the insidious mastery of song / Betrays me back". The enjambment creates a tension between the poem's formal orderliness (rhyme) and its emotional overflow (enjambment). The sentences spill beyond line boundaries, just as the speaker's emotions overflow his attempts at control.</p>
@@ -2041,7 +2069,7 @@ const pianoModules: CourseModule[] = [
   <li><strong>Thesis:</strong> Lawrence presents nostalgia as an overwhelming, involuntary force that overwhelms rational resistance, dramatising the conflict between adult composure and childhood emotion.</li>
   <li><strong>Point 1:</strong> "Insidious mastery of song" / "Betrays me back" - nostalgia as treacherous, deceptive force.</li>
   <li><strong>Point 2:</strong> Sensory domestic imagery - "boom of the tingling strings", "cosy parlour" - idealised childhood.</li>
-  <li><strong>Point 3:</strong> "Weeping like a child for the past" - the ironic collapse of the adult/child boundary.</li>
+  <li><strong>Point 3:</strong> "I weep like a child for the past" - the ironic collapse of the adult/child boundary.</li>
   <li><strong>Point 4:</strong> Form - neat quatrains vs. emotional overflow; the regularity mirrors childhood security.</li>
 </ol>
 
@@ -2077,7 +2105,7 @@ const pianoModules: CourseModule[] = [
   <li><strong>"a child sitting under the piano, in the boom of the tingling strings"</strong> - Childhood memory; sensory immersion in sound; "boom" and "tingling" create intensity.</li>
   <li><strong>"pressing the small, poised feet of a mother"</strong> - Intimate tactile detail; "poised" and "small" create tenderness and vulnerability.</li>
   <li><strong>"the cosy parlour, the tinkling piano our guide"</strong> - Domestic security; "cosy" and "tinkling" suggest warmth; "our guide" personalises the piano as a protective presence.</li>
-  <li><strong>"weeping like a child for the past"</strong> - Final image; simile captures the irony of an adult reverting to childlike helplessness.</li>
+  <li><strong>"I weep like a child for the past"</strong> - Final image; simile captures the irony of an adult reverting to childlike helplessness.</li>
   <li><strong>"the great black piano appassionato"</strong> - Present-day performance; "appassionato" (with intense passion) is ironic - the present is passionate but empty.</li>
   <li><strong>"vain"</strong> - The present-day song is described as futile, meaningless, overshadowed by the past.</li>
 </ul>
@@ -2104,9 +2132,9 @@ const pianoModules: CourseModule[] = [
 
 <p><em>The sensory details of the childhood memory reveal why this past experience exerts such powerful control. The image of sitting "under the piano, in the boom of the tingling strings" creates a sense of total sensory immersion. "Boom" and "tingling" are onomatopoetic words that evoke sound and sensation; they make the reader almost physically feel the intensity of the child's experience. The tactile detail of "pressing the small, poised feet of a mother" is particularly intimate - the child is touching his mother, feeling her physical presence. These sensory details are crucial: involuntary memory is not triggered by intellectual thought but by sensory experience - the sound of music, the remembered feeling of a touch. The poverty of the present-day experience becomes apparent by contrast: the woman singing in the present is described barely at all; the poem gives her no sensory reality.</em></p>
 
-<p><em>Lawrence's portrayal of the speaker's emotional breakdown reveals the power of involuntary memory to obliterate rational self-control. Despite his resistance - "In spite of myself" - the speaker cannot prevent the flood of memory. By the poem's end, he is "weeping like a child for the past". The simile is loaded with irony: he is weeping FOR his childhood while simultaneously reverting TO a childlike state of helpless emotion. The act of remembering has temporarily dissolved the boundary between his adult and child selves. The word "past" is deceptively simple: it does not specify what he mourns - not a particular loss but the entire irrecoverable past, the world of childhood security that has been permanently lost.</em></p>
+<p><em>Lawrence's portrayal of the speaker's emotional breakdown reveals the power of involuntary memory to obliterate rational self-control. Despite his resistance - "In spite of myself" - the speaker cannot prevent the flood of memory. By the poem's end, he confesses: "I weep like a child for the past". The simile is loaded with irony: he is weeping FOR his childhood while simultaneously reverting TO a childlike state of helpless emotion. The act of remembering has temporarily dissolved the boundary between his adult and child selves. The word "past" is deceptively simple: it does not specify what he mourns - not a particular loss but the entire irrecoverable past, the world of childhood security that has been permanently lost.</em></p>
 
-<p><em>The poem's final image dismisses the present entirely. The woman's song, which is described as performed "appassionato" (with intense passion), is now "vain" - futile, meaningless. This is a devastating conclusion: the present moment, however passionate or beautiful, cannot compete with the power of involuntary memory. What Lawrence reveals is that the past, once triggered in the mind, becomes more real than the present - more vivid, more emotionally significant, more true. Involuntary memory does not simply remind us of the past; it brings the past into the present with such intensity that the present is temporarily obliterated. This is why the memory has such power: it is not a pale shadow of lived experience but a living, breathing force that can still make an adult man weep like a child.</em></p>
+<p><em>The final stanza dismisses the present entirely. The woman's song, which is described as performed "appassionato" (with intense passion), is now "vain" - futile, meaningless. This is a devastating conclusion: the present moment, however passionate or beautiful, cannot compete with the power of involuntary memory. What Lawrence reveals is that the past, once triggered in the mind, becomes more real than the present - more vivid, more emotionally significant, more true. Involuntary memory does not simply remind us of the past; it brings the past into the present with such intensity that the present is temporarily obliterated. This is why the memory has such power: it is not a pale shadow of lived experience but a living, breathing force that can still make an adult man weep like a child.</em></p>
 </div>
 `,
     quiz: [
@@ -2520,6 +2548,24 @@ const hideAndSeekCourse: CourseData = {
 // 8. "Sonnet 116" by William Shakespeare
 // ─────────────────────────────────────────────────────────────────────────────
 
+// QUOTATIONS, checked 2 October 2026 against the held text
+// (src/data/full-texts/sonnet-116.ts, Shakespeare's Sonnets, Project Gutenberg
+// #1041) and the anthology's page 59 (Issue 8). Seven quotations printed
+// "wand'ring", an elision from another edition, where both print "wandering";
+// one made the bark plural as well. The couplet was quoted with the
+// anthology's "proved" and "loved" but line 5 with the held "ever-fixed", so
+// the course matched neither printing. Every quotation is now the held
+// edition's, cut by script, and the structure module tells the student what
+// the anthology prints. Three sentences were untrue to the poem in either
+// printing: the summary gave Time's sickle to death; "look on" stood for the
+// poem's "looks on"; and the caesura example was a "full stop at mark", but
+// "mark" ends line 5, with a comma in the held text and no stop in the
+// anthology. And the marriage service quoted was the 1662 banns, later than
+// the sonnet, where the 1559 service asks about "any impediment", as the
+// poem's page has said since 26 September. The quotation check saw two of the
+// seven elisions: it read the exam module's four as Kipling's, because the
+// module names "If-" as a comparison, and passed over the plural one.
+
 const sonnet116Modules: CourseModule[] = [
   {
     id: 'iglit-s116-m1',
@@ -2541,14 +2587,14 @@ const sonnet116Modules: CourseModule[] = [
 <ul>
   <li><strong>Quatrain 1 (lines 1-4):</strong> The speaker defines what true love is NOT - it does not change when circumstances change ("alteration"), and it does not end when the beloved is unfaithful ("remover").</li>
   <li><strong>Quatrain 2 (lines 5-8):</strong> The speaker defines what true love IS - it is a fixed point ("an ever-fixed mark") that guides lost ships, like the North Star. It is not shaken by storms.</li>
-  <li><strong>Quatrain 3 (lines 9-12):</strong> Love is not subject to time - it does not decay with physical aging ("rosy lips and cheeks") nor can it be destroyed by death's "bending sickle".</li>
+  <li><strong>Quatrain 3 (lines 9-12):</strong> Love is not subject to time - it does not decay with physical ageing ("rosy lips and cheeks") nor can it be destroyed by Time's "bending sickle".</li>
   <li><strong>Couplet (lines 13-14):</strong> A bold conclusion: if the speaker is wrong, then no one has ever loved and he himself has never written. The speaker stakes everything on the truth of his definition.</li>
 </ul>
 
 <h3>Key Themes</h3>
 <ul>
   <li><strong>The constancy of true love:</strong> Love is defined by what it endures, not by what it feels. True love is permanent, unchanging, and unconditional.</li>
-  <li><strong>Love vs. Time:</strong> Time is love's greatest adversary. The poem argues that genuine love transcends time, aging, and death.</li>
+  <li><strong>Love vs. Time:</strong> Time is love's greatest adversary. The poem argues that genuine love transcends time, ageing, and death.</li>
   <li><strong>Idealism:</strong> The poem presents an idealised vision of love that may be aspirational rather than realistic.</li>
   <li><strong>Definition and certainty:</strong> The poem is structured as a definition - the speaker attempts to pin down exactly what love is and is not.</li>
 </ul>
@@ -2580,7 +2626,7 @@ const sonnet116Modules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'The poem argues that true love is permanent and unchanging - it does not alter when circumstances change, it withstands storms, and it endures beyond physical aging and death. Love is defined by its constancy.',
+          'The poem argues that true love is permanent and unchanging - it does not alter when circumstances change, it withstands storms, and it endures beyond physical ageing and death. Love is defined by its constancy.',
       },
       {
         id: 'iglit-s116-m1-q3',
@@ -2589,7 +2635,7 @@ const sonnet116Modules: CourseModule[] = [
         options: [
           'His wealth and reputation',
           'His relationship with the Fair Youth',
-          'His writing and the existence of love itself - "If this be error and upon me proved, / I never writ, nor no man ever loved"',
+          'His writing and the existence of love itself - "If this be error and upon me prov\'d, / I never writ, nor no man ever lov\'d"',
           'His belief in God',
         ],
         correct: 2,
@@ -2606,9 +2652,9 @@ const sonnet116Modules: CourseModule[] = [
 <h2>"Sonnet 116": Language &amp; Imagery Analysis</h2>
 
 <h3>Navigational Imagery</h3>
-<p>The poem's most sustained metaphor compares love to a <strong>navigational aid</strong>: "It is an ever-fixed mark / That looks on tempests and is never shaken; / It is the star to every wand'ring bark". The <strong>"ever-fixed mark"</strong> is a lighthouse or sea-mark - a permanent, immovable guide for ships. The <strong>"star"</strong> is the North Star (Polaris), which sailors used for navigation because it never moves. The <strong>"wand'ring bark"</strong> is a lost ship.</p>
+<p>The poem's most sustained metaphor compares love to a <strong>navigational aid</strong>: "It is an ever-fixed mark / That looks on tempests and is never shaken; / It is the star to every wandering bark". The <strong>"ever-fixed mark"</strong> is a lighthouse or sea-mark - a permanent, immovable guide for ships. The <strong>"star"</strong> is the North Star (Polaris), which sailors used for navigation because it never moves. The <strong>"wandering bark"</strong> is a lost ship.</p>
 
-<p>This extended nautical metaphor presents love as a <strong>fixed point of reference</strong> in a chaotic, stormy world. The "tempests" represent life's challenges - suffering, change, infidelity - and love's ability to "look on" them without being "shaken" affirms its permanence. The metaphor is particularly effective because it appeals to an <strong>Elizabethan audience</strong> for whom navigation and sea voyages were matters of life and death.</p>
+<p>This extended nautical metaphor presents love as a <strong>fixed point of reference</strong> in a chaotic, stormy world. The "tempests" represent life's challenges - suffering, change, infidelity - and the fact that love "looks on" them without being "shaken" affirms its permanence. The metaphor is particularly effective because it appeals to an <strong>Elizabethan audience</strong> for whom navigation and sea voyages were matters of life and death.</p>
 
 <div class="key-term"><strong>Key Term: Extended Metaphor</strong> - A metaphor that is developed across multiple lines. Shakespeare's comparison of love to a navigational star is sustained across the entire second quatrain, giving it depth and resonance.</div>
 
@@ -2626,7 +2672,7 @@ const sonnet116Modules: CourseModule[] = [
 <p>This strategy of negation is rhetorically powerful. By telling us what love is not, Shakespeare strips away false versions of love - infatuation, lust, conditional attachment - to reveal the ideal.</p>
 
 <h3>The Legal Register</h3>
-<p>The opening line - <strong>"Let me not to the marriage of true minds / Admit impediments"</strong> - echoes the language of the <strong>Church of England marriage service</strong>: "If any of you know cause, or just impediment, why these two persons should not be joined together..." By invoking this formal, legal register, Shakespeare frames his definition of love as a solemn <strong>oath or declaration</strong>, giving it the weight of a marriage vow.</p>
+<p>The opening line - <strong>"Let me not to the marriage of true minds / Admit impediments"</strong> - echoes the language of the <strong>Church of England marriage service</strong>, which in Shakespeare's time charged the couple to confess "any impediment" to their marriage. By invoking this formal, legal register, Shakespeare frames his definition of love as a solemn <strong>oath or declaration</strong>, giving it the weight of a marriage vow.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The navigational imagery and the personification of Time are the two most important image clusters for exam analysis. Make sure you can discuss both in detail, connecting the imagery to the poem's argument about love's permanence.</div>
 `,
@@ -2642,7 +2688,7 @@ const sonnet116Modules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'The "ever-fixed mark" is a lighthouse or sea-mark - a permanent, immovable guide for ships. It is part of an extended nautical metaphor comparing love to a fixed point of reference that guides lost ships ("wand\'ring barks") through storms ("tempests").',
+          'The "ever-fixed mark" is a lighthouse or sea-mark - a permanent, immovable guide for ships. It is part of an extended nautical metaphor comparing love to a fixed point of reference that guides lost ships ("every wandering bark") through storms ("tempests").',
       },
       {
         id: 'iglit-s116-m2-q2',
@@ -2668,7 +2714,7 @@ const sonnet116Modules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'By echoing the marriage service ("If any of you know cause, or just impediment..."), Shakespeare frames his definition of love as a solemn, formal declaration. This gives his argument the weight of a legal oath and connects his ideal of love to the institution of marriage.',
+          'By echoing the marriage service, with its charge to confess "any impediment", Shakespeare frames his definition of love as a solemn, formal declaration. This gives his argument the weight of a legal oath and connects his ideal of love to the institution of marriage.',
       },
     ],
   },
@@ -2706,12 +2752,14 @@ const sonnet116Modules: CourseModule[] = [
 <p>However, Shakespeare occasionally <strong>disrupts the iambic pattern</strong> for emphasis. The opening word "Let" is stressed - a trochaic inversion that creates a forceful, imperative opening, as if the speaker is commanding attention.</p>
 
 <h3>The Couplet</h3>
-<p>The final couplet - <strong>"If this be error and upon me proved, / I never writ, nor no man ever loved"</strong> - is a masterstroke of rhetorical confidence. The conditional structure ("If... then") recalls the scientific or legal method of proof, but the conclusion is absurd: if love is not permanent, then Shakespeare never wrote and no one ever loved. The speaker challenges anyone to disprove him, knowing the proposition is self-evidently true. This creates a <strong>logical lock</strong> - the argument becomes irrefutable because its negation is impossible.</p>
+<p>The final couplet - <strong>"If this be error and upon me prov'd, / I never writ, nor no man ever lov'd"</strong> - is a masterstroke of rhetorical confidence. The conditional structure ("If... then") recalls the scientific or legal method of proof, but the conclusion is absurd: if love is not permanent, then Shakespeare never wrote and no one ever loved. The speaker challenges anyone to disprove him, knowing the proposition is self-evidently true. This creates a <strong>logical lock</strong> - the argument becomes irrefutable because its negation is impossible.</p>
+
+<p>Your anthology prints the couplet's rhymes in full, <em>proved</em> and <em>loved</em>, and line 5's <em>ever-fixèd</em> with an accent, which tells you to sound the <em>-ed</em>. This course quotes the Project Gutenberg edition of the Sonnets, which prints <em>prov'd</em>, <em>lov'd</em> and <em>ever-fixed</em>. The words are the same; only the spelling and some of the punctuation differ.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The couplet is where the poem's argument reaches its climax. Show the examiner that you understand how the three quatrains build towards this moment and how the couplet clinches the argument with rhetorical force.</div>
 
 <h3>Enjambment and Caesura</h3>
-<p>Shakespeare uses <strong>enjambment</strong> to create flow and urgency: "Love is not love / Which alters when it alteration finds". The thought runs across the line break, creating a sense of continuous, unbroken assertion - mirroring love's own continuity. Conversely, he uses <strong>caesura</strong> (mid-line pauses) for emphasis: "It is an ever-fixed mark" - the full stop at "mark" creates a definitive, declarative statement.</p>
+<p>Shakespeare uses <strong>enjambment</strong> to create flow and urgency: "Love is not love / Which alters when it alteration finds". The thought runs across the line break, creating a sense of continuous, unbroken assertion - mirroring love's own continuity. Conversely, he uses <strong>caesura</strong> (mid-line pauses) for emphasis: line 2 stops short after "Admit impediments", so the speaker's refusal ends in a definitive, declarative statement before the definition of love begins.</p>
 `,
     quiz: [
       {
@@ -2773,20 +2821,20 @@ const sonnet116Modules: CourseModule[] = [
 <ol>
   <li><strong>Thesis:</strong> Shakespeare constructs an idealised, absolute definition of love through navigational imagery, personification of Time, and a rhetorically irrefutable couplet, presenting love as the one constant in a world of change.</li>
   <li><strong>Point 1:</strong> The marriage service echo - framing the definition as a solemn oath.</li>
-  <li><strong>Point 2:</strong> Navigational imagery - "ever-fixed mark", "star to every wand'ring bark" - love as orientation and stability.</li>
+  <li><strong>Point 2:</strong> Navigational imagery - "ever-fixed mark", "star to every wandering bark" - love as orientation and stability.</li>
   <li><strong>Point 3:</strong> Love vs. Time - "bending sickle", "Love's not Time's fool" - transcending mortality.</li>
   <li><strong>Point 4:</strong> The couplet's rhetorical power - the logical lock that clinches the argument.</li>
 </ol>
 
 <h3>Model Paragraph</h3>
 <div class="text-extract">
-<p><em>Shakespeare uses navigational imagery to present love as the one reliable constant in a chaotic and threatening world. The metaphor of "an ever-fixed mark / That looks on tempests and is never shaken" compares love to a lighthouse - a permanent, immovable structure that withstands the most violent storms. The verb "looks on" is significant: it implies that love does not merely endure storms passively but observes them with calm, unperturbed confidence. The "tempests" represent life's challenges - suffering, betrayal, change - and love's refusal to be "shaken" affirms its absolute permanence. The extended metaphor deepens with the "star to every wand'ring bark" - a reference to Polaris, the North Star, which Elizabethan sailors relied upon for navigation. By comparing love to this celestial constant, Shakespeare elevates it from a human emotion to something cosmic and eternal. The word "wand'ring" suggests that without love, people are lost and directionless; love provides not just comfort but purpose and orientation in a confusing world.</em></p>
+<p><em>Shakespeare uses navigational imagery to present love as the one reliable constant in a chaotic and threatening world. The metaphor of "an ever-fixed mark / That looks on tempests and is never shaken" compares love to a lighthouse - a permanent, immovable structure that withstands the most violent storms. The verb "looks on" is significant: it implies that love does not merely endure storms passively but observes them with calm, unperturbed confidence. The "tempests" represent life's challenges - suffering, betrayal, change - and love's refusal to be "shaken" affirms its absolute permanence. The extended metaphor deepens with the "star to every wandering bark" - a reference to Polaris, the North Star, which Elizabethan sailors relied upon for navigation. By comparing love to this celestial constant, Shakespeare elevates it from a human emotion to something cosmic and eternal. The word "wandering" suggests that without love, people are lost and directionless; love provides not just comfort but purpose and orientation in a confusing world.</em></p>
 </div>
 
 <h3>What Makes This Paragraph Effective?</h3>
 <ul>
   <li>It identifies and explores an extended metaphor across multiple lines, not just a single quotation.</li>
-  <li>It analyses specific word choices ("looks on", "shaken", "wand'ring") and their connotations.</li>
+  <li>It analyses specific word choices ("looks on", "shaken", "wandering") and their connotations.</li>
   <li>It connects the imagery to the poem's wider argument about love's permanence.</li>
   <li>It integrates context (Elizabethan navigation) naturally into the analysis.</li>
   <li>It shows how the metaphor develops - from lighthouse to star - growing in scale and significance.</li>

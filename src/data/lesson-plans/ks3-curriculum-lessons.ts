@@ -3501,6 +3501,11 @@ export const ks3CurriculumLessons: LessonPlan[] = [
         ],
       },
       {
+        // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+        // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are
+        // there no prisons?" and "And the Union workhouses?", with the gentleman's answer
+        // between. "Are there no workhouses?" is the Spirit's, turning his words on him in
+        // Stave Three.
         title: 'Conceptual Analysis: Scrooge as Symbol',
         duration: '18 minutes',
         instructions:
@@ -3510,7 +3515,7 @@ export const ks3CurriculumLessons: LessonPlan[] = [
             'Provide the chart template with the first example completed and guided prompts for the next two.',
           core: 'Students complete the chart independently in pairs.',
           stretch:
-            'Students consider Scrooge\'s statement "Are there no prisons? Are there no workhouses?" - what does this reveal about Malthusian attitudes, and why does Dickens include it?',
+            'Students consider Scrooge\'s statement "Are there no prisons? ... And the Union workhouses?" - what does this reveal about Malthusian attitudes, and why does Dickens include it?',
         },
         resources: ['Dual-layer analysis chart', 'Extract', 'Contextual reference sheet'],
       },

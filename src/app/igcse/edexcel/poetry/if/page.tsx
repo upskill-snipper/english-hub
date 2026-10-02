@@ -12,6 +12,36 @@ import StudyTools from '@/components/study/StudyTools'
 
 /* ── Poem data ────────────────────────────────────────────────────── */
 
+/*
+ * CHECKED 2 October 2026 against the held text (src/data/full-texts/if.ts) and
+ * the anthology's punctuation as src/data/study-guides/if.ts records it. The
+ * words of all 32 lines were right; these were not, and no check could see them:
+ * - Four language-device cards cited the wrong line. `lineRef` is an index into
+ *   `lines`, blank stanza rows included, but they had been written as line
+ *   numbers, so after each stanza break a card named and highlighted an earlier
+ *   line: "your heart and nerve and sinew" showed as line 20 (it is 21), the
+ *   unforgiving minute as 27 (29), "my son" as 30 (32), and the anaphora, which
+ *   starts at line 1, as 3. The quotation checker reads quotations, not row
+ *   numbers, and does not read a device's `example` at all.
+ * - Line 19 ended with a comma that neither the anthology nor the held edition
+ *   prints, and its note was built on it ("The repeated commas"). Line 7 was
+ *   indented like an even-numbered line.
+ * - Form called the feminine endings occasional and gave "too" as one: every
+ *   odd-numbered line has one, and every even-numbered line, "too" included,
+ *   ends on a stress (the study guide's docblock had listed this).
+ * - Form and the direct-address card said the poem addresses its listener only
+ *   in the last word. It says "you" from line 1; what it holds back is who the
+ *   listener is, "my son".
+ * - Line 17's note gave the gamble a card table. The game is pitch-and-toss,
+ *   played with coins, as the next note says.
+ * - The last key quotation's note said the sentence "finally finds its period"
+ *   (in the Arabic, its full stop). It ends on an exclamation mark.
+ * - The Arabic of the first key quotation put an Arabic verb inside quotation
+ *   marks where the English quotes "losing". Quotations stay in English.
+ * src/__tests__/if-pages-quote-the-held-text.test.ts now checks the printed
+ * lines, each device's line and every quotation here, the Arabic included.
+ */
+
 const poem: PoemData = {
   title: 'If-',
   poet: 'Rudyard Kipling',
@@ -82,7 +112,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: "    Or being hated, don't give way to hating,",
+      text: "Or being hated, don't give way to hating,",
       annotations: [
         {
           type: 'Parallelism',
@@ -203,7 +233,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Gambling metaphor',
-          note: 'Kipling turns life into a game of chance. A "heap" of winnings becomes the stake for one enormous bet. The image is vivid and masculine - the card table as metaphor for courage.',
+          note: 'Kipling turns life into a game of chance. A "heap" of winnings becomes the stake for one enormous bet. The image is vivid and masculine - risking everything at once as a metaphor for courage.',
           color: '#10b981',
         },
       ],
@@ -219,11 +249,11 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'And lose, and start again at your beginnings,',
+      text: 'And lose, and start again at your beginnings',
       annotations: [
         {
           type: 'Resilience',
-          note: "The poem's hardest test: lose everything and begin again. The repeated commas slow the line, matching the patient, heavy act of starting over.",
+          note: 'The poem\'s hardest test: lose everything and begin again. The comma after "lose" slows the line, matching the patient, heavy act of starting over.',
           color: '#ef4444',
         },
       ],
@@ -409,7 +439,7 @@ One long sentence: Remarkably, the whole poem is a single sentence held together
 
 Rhyme scheme: The stanzas rhyme ABABCDCD, a steady, balanced pattern. The regularity mirrors the emotional control the poem is recommending - predictable, patient, never losing its rhythm.
 
-Metre: Iambic pentameter, with an occasional feminine (unstressed) ending ("you" / "too" / "waiting"). The regular iambic beat gives the poem the feel of a ticking clock or a marching soldier - a sound of measured, disciplined time.
+Metre: Iambic pentameter. Every odd-numbered line ends on an extra, unstressed syllable, a feminine ending ("about you" / "waiting" / "master"), and every even-numbered line ends on a stress ("too" / "lies" / "wise"). The regular iambic beat gives the poem the feel of a ticking clock or a marching soldier - a sound of measured, disciplined time.
 
 Anaphora: The repeated "If you can…" opens line after line. This pounding repetition is the poem's most distinctive structural device. It piles condition upon condition, making the son's task seem almost impossible, until the final reward feels all the greater.
 
@@ -417,7 +447,7 @@ Parallelism: Within stanzas, Kipling uses balanced pairs ("lied about / don\'t d
 
 Volta: There is no traditional volta. Instead, the turn comes in the last two lines, where the conditions stop and the reward finally arrives. The whole poem has been leading to the word "Man" in the last line.
 
-Direct address: The poem is spoken to "my son" - the only direct address in the whole poem appears in the last word. This reveal places the whole weight of the poem on a private, tender relationship: a father to his child.`,
+Direct address: The poem speaks to "you" throughout, but names its listener only in its last two words, "my son". This reveal places the whole weight of the poem on a private, tender relationship: a father to his child.`,
 
   keyQuotes: [
     {
@@ -426,7 +456,7 @@ Direct address: The poem is spoken to "my son" - the only direct address in the 
         'The famous opening sets the poem\'s stoic tone. "Keep your head" is an everyday idiom - Kipling is deliberately avoiding grand language. The image of others "losing" their heads (with its faint echo of panic or even guillotine) makes calmness itself a kind of moral victory. Crucially, the son is to remain steady even when others blame him for their own failures.',
       themes: ['Stoicism', 'Self-control', 'Integrity'],
       analysisAr:
-        'المفتتح الشهير الذي يضبط نبرةَ القصيدة الرواقيّة. عبارةُ "keep your head" تعبيرٌ يوميّ مألوف، وقد تعمّد Kipling تجنّبَ اللغة الفخمة. وصورةُ الآخرين الذين "يفقدون" رؤوسَهم (مع صدًى خفيٍّ للذعر أو ربّما للمقصلة) تجعل الهدوءَ نفسَه نصراً أخلاقيّاً. والأهمّ أنّ على الابن أن يثبت حتى حين يُحمَّل لومَ إخفاقات غيره.',
+        'المفتتح الشهير الذي يضبط نبرةَ القصيدة الرواقيّة. عبارةُ "keep your head" تعبيرٌ يوميّ مألوف، وقد تعمّد Kipling تجنّبَ اللغة الفخمة. وصورةُ الآخرين الذين يفقدون ("losing") رؤوسَهم (مع صدًى خفيٍّ للذعر أو ربّما للمقصلة) تجعل الهدوءَ نفسَه نصراً أخلاقيّاً. والأهمّ أنّ على الابن أن يثبت حتى حين يُحمَّل لومَ إخفاقات غيره.',
       themesAr: ['الرواقيّة', 'ضبط النفس', 'النزاهة'],
     },
     {
@@ -489,10 +519,10 @@ Direct address: The poem is spoken to "my son" - the only direct address in the 
     {
       quote: "And-which is more-you'll be a Man, my son!",
       analysis:
-        'The poem\'s single sentence finally finds its period. The em-dashes ("And-which is more-") slow the line down, making sure the reader does not miss what the real reward is. Owning the Earth is less important than becoming "a Man" (capitalised). The sudden switch to "my son" at the very end turns the whole poem from public oratory into private, tender instruction. Modern readers often note how much emotional pressure is folded into that single phrase.',
+        'The poem\'s single sentence finally ends, on an exclamation mark. The em-dashes ("And-which is more-") slow the line down, making sure the reader does not miss what the real reward is. Owning the Earth is less important than becoming "a Man" (capitalised). The sudden switch to "my son" at the very end turns the whole poem from public oratory into private, tender instruction. Modern readers often note how much emotional pressure is folded into that single phrase.',
       themes: ['Masculinity', 'Growing up', 'Father-son relationships'],
       analysisAr:
-        'جملةُ القصيدة الواحدةُ تجد نقطتَها أخيراً. والشَّرَطَتان الطويلتان ("And-which is more-") تُبطئان السطر، فلا يفوت القارئ ما هو الجزاء الحقيقيّ. امتلاكُ الأرض دون أن يكون المرء "a Man" (بالحرف الكبير) أقلّ شأناً. والانتقالُ المفاجئ إلى "my son" في خاتمة السطر يُحوّل القصيدةَ من خطابةٍ علنيّة إلى توجيهٍ خاصّ حنون. ويلحظ كثيرٌ من القرّاء المعاصرين كثافةَ الضغط العاطفيّ المُضمَّن في هذه العبارة الوجيزة.',
+        'جملةُ القصيدة الواحدةُ تنتهي أخيراً، بعلامة تعجّب. والشَّرَطَتان الطويلتان ("And-which is more-") تُبطئان السطر، فلا يفوت القارئ ما هو الجزاء الحقيقيّ. امتلاكُ الأرض دون أن يكون المرء "a Man" (بالحرف الكبير) أقلّ شأناً. والانتقالُ المفاجئ إلى "my son" في خاتمة السطر يُحوّل القصيدةَ من خطابةٍ علنيّة إلى توجيهٍ خاصّ حنون. ويلحظ كثيرٌ من القرّاء المعاصرين كثافةَ الضغط العاطفيّ المُضمَّن في هذه العبارة الوجيزة.',
       themesAr: ['الذكورة', 'البلوغ', 'علاقة الأب بالابن'],
     },
   ],
@@ -587,7 +617,7 @@ Direct address: The poem is spoken to "my son" - the only direct address in the 
 
 نظام القافية: تتبع المقاطع نمطَ ABABCDCD، وهو نمطٌ ثابتٌ متّزن. الانتظامُ يحاكي ضبطَ النفس الذي تنادي به القصيدة - متوقّعٌ، صبور، لا يفقد إيقاعه قطّ.
 
-الوزن: iambic pentameter، مع تذييلٍ مؤنّث غير مُشدّد بين الحين والآخر ("you" / "too" / "waiting"). إيقاعُ الـ iamb المنتظم يكسب القصيدة وقعَ ساعةٍ تدقّ أو جنديٍّ يخطو خطوةً منضبطة.
+الوزن: iambic pentameter. ينتهي كلّ سطرٍ فرديّ بمقطعٍ زائد غير مُشدّد، أي بتذييلٍ مؤنّث ("about you" / "waiting" / "master")، وينتهي كلّ سطرٍ زوجيّ بمقطعٍ مُشدّد ("too" / "lies" / "wise"). إيقاعُ الـ iamb المنتظم يكسب القصيدة وقعَ ساعةٍ تدقّ أو جنديٍّ يخطو خطوةً منضبطة.
 
 الـ anaphora: تكرارُ "If you can…" في مفتتح السطر تلو الآخر هو الأداةُ البنائيّة الأبرز. تكدِّس شرطاً فوق شرط، فتجعل مهمّةَ الابن شِبهَ مستحيلة، إلى أن يبدو الجزاءُ الختاميّ أعظم.
 
@@ -618,11 +648,16 @@ const comparisons = [
     themes: ['Parent-child relationships', 'Legacy', 'Identity'],
   },
   {
+    // Until 2 October 2026 this quoted Lawrence as "weeping like a child". He
+    // wrote "I weep like a child" (the held text, src/data/full-texts/piano.ts,
+    // and the anthology's page 57 as the Piano guide prints it), and the
+    // quotation checker read the card as this page's poem, not Piano's, so it
+    // passed the line over. The clause is now cut from the held text.
     title: 'Piano',
     poet: 'D.H. Lawrence',
     href: '/igcse/edexcel/poetry/piano',
     reason:
-      'Piano is the emotional opposite of If-. Where Kipling insists on stoic control, Lawrence collapses into nostalgia, "weeping like a child". Compare how each poem treats masculine emotion - Kipling disciplines it, Lawrence surrenders to it.',
+      'Piano is the emotional opposite of If-. Where Kipling insists on stoic control, Lawrence collapses into nostalgia: "I weep like a child for the past". Compare how each poem treats masculine emotion - Kipling disciplines it, Lawrence surrenders to it.',
     themes: ['Masculinity', 'Emotion', 'Childhood'],
   },
 ]

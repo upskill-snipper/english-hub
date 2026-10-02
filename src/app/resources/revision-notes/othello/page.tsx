@@ -1,5 +1,32 @@
 'use client'
 
+/**
+ * Othello revision notes.
+ *
+ * A line shown as Shakespeare's must be the words of the edition the site
+ * holds, src/data/full-texts/othello.ts (Project Gutenberg #1531), because
+ * students memorise these quotations for their exams. Until 2 October 2026
+ * nothing checked this page against that text. The reader's highlights
+ * generator (scripts/generate-text-annotations.mjs) looks each card up in the
+ * edition, but a card it cannot find is only left out of the reader: it is
+ * counted in the generator's output, named only when SHOW_MISSES is set, and
+ * nothing fails. When scripts/check-quotations.mjs first checked, fifteen
+ * quotations were not the edition's words: fourteen in a spelling it does
+ * not print ("loved", "deceived", "green-eyed" for its "lov'd", "deceiv'd",
+ * "green-ey'd"), and the Act 3 "Farewell" card, which ran two passages
+ * together with no ellipsis and had "makes" for "make". Those fifteen are now
+ * cut from the edition by script, and the analysis names the words the cards
+ * print. Two claims about who speaks were also wrong against the text: Iago,
+ * not Othello, echoes Brabantio's warning (Act 3, Scene 3), and "thick-lips"
+ * is Roderigo's, not Brabantio's. And the "Farewell" card's analysis called
+ * it his last sustained eloquent speech, which the text does not bear out: the
+ * "Pontic sea" speech comes later in the same scene, and the speech on the
+ * handkerchief's history in Act 3, Scene 4. The checker compares words, not
+ * punctuation, so the other quotations are the edition's words though not
+ * always in its punctuation. Check again with
+ * node scripts/check-quotations.mjs --text othello.
+ */
+
 import { useState } from 'react'
 import { AITextArea } from '@/components/AITextArea'
 
@@ -361,16 +388,16 @@ export default function OthelloRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="She loved me for the dangers I had passed, / And I loved her that she did pity them"
+                    text="She lov'd me for the dangers I had pass'd, / And I lov'd her that she did pity them"
                     speaker="Othello"
                     act="Act 1, Scene 3"
                     analysis="This reveals the basis of their love: mutual admiration rooted in storytelling and compassion. However, critics note this is love mediated through narrative rather than direct knowledge, making it potentially fragile."
                   />
                   <Quote
-                    text="Of one that loved not wisely, but too well; / Of one not easily jealous, but being wrought, / Perplexed in the extreme"
+                    text="Of one that loved not wisely, but too well; / Of one not easily jealous, but being wrought, / Perplex'd in the extreme"
                     speaker="Othello"
                     act="Act 5, Scene 2"
-                    analysis="Othello's final self-assessment. 'Not wisely, but too well' is debatable -- is this honest reflection or self-justification? 'Wrought' acknowledges Iago's manipulation but also distances himself from responsibility. 'Perplexed' means tortured/bewildered, not merely confused."
+                    analysis="Othello's final self-assessment. 'Not wisely, but too well' is debatable -- is this honest reflection or self-justification? 'Wrought' acknowledges Iago's manipulation but also distances himself from responsibility. 'Perplex'd' means tortured/bewildered, not merely confused."
                   />
                 </div>
               </div>
@@ -535,16 +562,16 @@ export default function OthelloRevisionPage() {
                   him freely, insisting Othello must have used witchcraft or drugs. His language is
                   steeped in racial prejudice: he sees the match as unnatural and against the
                   &ldquo;rules of nature.&rdquo; His warning to Othello &mdash; &ldquo;She has
-                  deceived her father, and may thee&rdquo; &mdash; is later echoed by Iago and
+                  deceiv&apos;d her father, and may thee&rdquo; &mdash; is later echoed by Iago and
                   lodges in Othello&apos;s mind. Brabantio represents the racist attitudes of
                   Venetian society that Othello can never fully escape. He reportedly dies of grief
                   over the marriage (mentioned in Act 5).
                 </p>
                 <Quote
-                  text="Look to her, Moor, if thou hast eyes to see: / She has deceived her father, and may thee"
+                  text="Look to her, Moor, if thou hast eyes to see: / She has deceiv'd her father, and may thee"
                   speaker="Brabantio"
                   act="Act 1, Scene 3"
-                  analysis="This warning plants a seed that Iago later cultivates. If Desdemona deceived Brabantio (by eloping), might she deceive Othello too? The rhyming couplet makes it memorable and prophetic-sounding. Othello later echoes this almost word for word, showing how deeply it affected him."
+                  analysis="This warning plants a seed that Iago later cultivates. If Desdemona deceived Brabantio (by eloping), might she deceive Othello too? The rhyming couplet makes it memorable and prophetic-sounding. In Act 3, Scene 3 Iago echoes it almost word for word ('She did deceive her father, marrying you'), and Othello agrees: 'And so she did.'"
                 />
               </div>
 
@@ -582,22 +609,22 @@ export default function OthelloRevisionPage() {
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Jealousy is the play&apos;s dominant theme, famously described as the
-                  &ldquo;green-eyed monster which doth mock the meat it feeds on.&rdquo; Shakespeare
-                  explores jealousy as irrational, self-generating, and ultimately destructive. Once
-                  planted by Iago, Othello&apos;s jealousy grows independently, feeding on innocent
-                  events and interpreting everything as proof of guilt. Jealousy also motivates Iago
-                  (professional jealousy over the promotion, possibly sexual jealousy over Emilia),
-                  Roderigo (jealous of Othello), and Bianca (jealous over the handkerchief). The
-                  play demonstrates that jealousy destroys the jealous person first &mdash; it
-                  consumes Othello&apos;s reason, dignity, and humanity before it destroys
-                  Desdemona&apos;s life.
+                  &ldquo;green-ey&apos;d monster which doth mock / The meat it feeds on.&rdquo;
+                  Shakespeare explores jealousy as irrational, self-generating, and ultimately
+                  destructive. Once planted by Iago, Othello&apos;s jealousy grows independently,
+                  feeding on innocent events and interpreting everything as proof of guilt. Jealousy
+                  also motivates Iago (professional jealousy over the promotion, possibly sexual
+                  jealousy over Emilia), Roderigo (jealous of Othello), and Bianca (jealous over the
+                  handkerchief). The play demonstrates that jealousy destroys the jealous person
+                  first &mdash; it consumes Othello&apos;s reason, dignity, and humanity before it
+                  destroys Desdemona&apos;s life.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="O, beware, my lord, of jealousy! / It is the green-eyed monster which doth mock / The meat it feeds on"
+                    text="O, beware, my lord, of jealousy; / It is the green-ey'd monster which doth mock / The meat it feeds on"
                     speaker="Iago"
                     act="Act 3, Scene 3"
-                    analysis="Iago warns against jealousy while simultaneously creating it -- supreme irony. The 'green-eyed monster' personifies jealousy as a predator that torments ('mocks') its victim even as it consumes them. 'Feeds on' suggests jealousy is parasitic and self-sustaining."
+                    analysis="Iago warns against jealousy while simultaneously creating it -- supreme irony. The 'green-ey'd monster' personifies jealousy as a predator that torments ('doth mock') its victim even as it consumes them. 'Feeds on' suggests jealousy is parasitic and self-sustaining."
                   />
                   <Quote
                     text="Trifles light as air / Are to the jealous confirmations strong / As proofs of holy writ"
@@ -799,7 +826,7 @@ export default function OthelloRevisionPage() {
                   analysis="Othello's calm authority in the face of Brabantio's armed men. The dismissive wit ('dew will rust them') shows supreme confidence. This controlled Othello contrasts dramatically with the man he becomes."
                 />
                 <Quote
-                  text="Her father loved me; oft invited me; / Still questioned me the story of my life"
+                  text="Her father lov'd me, oft invited me, / Still question'd me the story of my life"
                   speaker="Othello"
                   act="Act 1, Scene 3"
                   analysis="Ironic: Brabantio welcomed Othello as an exotic guest but not as a son-in-law. This reveals the limits of Venetian tolerance -- Othello is acceptable as a servant of the state but not as a family member."
@@ -853,10 +880,10 @@ export default function OthelloRevisionPage() {
                   analysis="Othello is trapped between trust and suspicion of both Desdemona and Iago. The balanced antithesis shows his mind seesawing. He cannot commit to either position -- jealousy has paralysed his judgement."
                 />
                 <Quote
-                  text="Farewell the tranquil mind! farewell content! / Farewell the plumed troops and the big wars / That makes ambition virtue! O, farewell! / Farewell! Othello's occupation's gone"
+                  text="Farewell the tranquil mind! Farewell content! / Farewell the plumed troops and the big wars / That make ambition virtue! O, farewell, [...] Farewell! Othello's occupation's gone!"
                   speaker="Othello"
                   act="Act 3, Scene 3"
-                  analysis="The repeated 'farewell' is a litany of loss. Othello's identity is inseparable from his military role -- if his honour is compromised, his 'occupation' (purpose) is destroyed. The grand rhetoric here still belongs to the noble Othello; it is his last sustained eloquent speech before his language fragments."
+                  analysis="The repeated 'farewell' is a litany of loss. Othello's identity is inseparable from his military role -- if his honour is compromised, his 'occupation' (purpose) is destroyed. The grand rhetoric here still belongs to the noble Othello; it is one of his last sustained eloquent speeches before his language fragments."
                 />
                 <Quote
                   text="It is the cause, it is the cause, my soul"
@@ -883,10 +910,10 @@ export default function OthelloRevisionPage() {
                   analysis="Iago's final refusal to explain himself denies closure to every character and the audience. 'What you know, you know' is contemptuous -- he will not satisfy their need for understanding. His silence is his final act of control and cruelty."
                 />
                 <Quote
-                  text="I kissed thee ere I killed thee: no way but this; / Killing myself, to die upon a kiss"
+                  text="I kiss'd thee ere I kill'd thee. No way but this, / Killing myself, to die upon a kiss"
                   speaker="Othello"
                   act="Act 5, Scene 2"
-                  analysis="Othello's last words unite love and death. The chiasmus (kissed/killed, killing/kiss) creates a tragic symmetry. 'No way but this' -- he sees suicide as the only resolution. 'Die upon a kiss' -- he dies beside Desdemona, literalising the connection between love and death."
+                  analysis="Othello's last words unite love and death. The chiasmus (kiss'd/kill'd, killing/kiss) creates a tragic symmetry. 'No way but this' -- he sees suicide as the only resolution. 'Die upon a kiss' -- he dies beside Desdemona, literalising the connection between love and death."
                 />
                 <Quote
                   text="Who would not make her husband a cuckold to make him a monarch?"
@@ -895,10 +922,10 @@ export default function OthelloRevisionPage() {
                   analysis="Emilia's pragmatic, witty challenge to sexual double standards. She uses hypothetical extremes to expose the absurdity of absolute moral rules. This contrasts with Desdemona's idealistic response and highlights different female perspectives on fidelity."
                 />
                 <Quote
-                  text="She, in spite of nature, / Of years, of country, credit, every thing, / To fall in love with what she feared to look on!"
+                  text="she, in spite of nature, / Of years, of country, credit, everything, / To fall in love with what she fear'd to look on!"
                   speaker="Brabantio"
                   act="Act 1, Scene 3"
-                  analysis="Brabantio lists reasons why Desdemona's love must be unnatural. 'In spite of nature' frames interracial love as against nature. 'Feared to look on' projects his own racist horror onto Desdemona. This speech reveals Venice's deep racial prejudice beneath its cosmopolitan surface."
+                  analysis="Brabantio lists reasons why Desdemona's love must be unnatural. 'In spite of nature' frames interracial love as against nature. 'Fear'd to look on' projects his own racist horror onto Desdemona. This speech reveals Venice's deep racial prejudice beneath its cosmopolitan surface."
                 />
                 <Quote
                   text="O thou weed, / Who art so lovely fair and smell'st so sweet / That the sense aches at thee, would thou hadst ne'er been born!"
@@ -1054,10 +1081,10 @@ export default function OthelloRevisionPage() {
                   </h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     Iago never directly says &ldquo;Desdemona is unfaithful.&rdquo; Instead, he
-                    plants ideas through questions (&ldquo;Did Michael Cassio, when you wooed my
-                    lady, know of your love?&rdquo;), hesitation, and half-finished thoughts. He
-                    forces Othello to fill in the gaps himself, making Othello the author of his own
-                    torment.
+                    plants ideas through questions (&ldquo;Did Michael Cassio, when you woo&apos;d
+                    my lady, / Know of your love?&rdquo;), hesitation, and half-finished thoughts.
+                    He forces Othello to fill in the gaps himself, making Othello the author of his
+                    own torment.
                   </p>
                 </div>
 
@@ -1209,7 +1236,7 @@ export default function OthelloRevisionPage() {
                           1
                         </span>
                         <p className="text-sm text-muted-foreground">
-                          <strong>{tr(`Iago as the origin:`)}</strong> &ldquo;green-eyed
+                          <strong>{tr(`Iago as the origin:`)}</strong> &ldquo;green-ey&apos;d
                           monster&rdquo; &mdash; he names jealousy while creating it. Link to the
                           Vice figure tradition. His own professional jealousy is the play&apos;s
                           catalyst.
@@ -1265,8 +1292,8 @@ export default function OthelloRevisionPage() {
                         <p className="text-sm text-muted-foreground">
                           <strong>{tr(`Racist language from others:`)}</strong> &ldquo;old black
                           ram,&rdquo; &ldquo;thick-lips,&rdquo; &ldquo;the devil&rdquo; &mdash; Iago
-                          and Brabantio reduce Othello to racial stereotypes. Shakespeare exposes
-                          how racism dehumanises through language. Context: Moors in Elizabethan
+                          and Roderigo reduce Othello to racial stereotypes. Shakespeare exposes how
+                          racism dehumanises through language. Context: Moors in Elizabethan
                           England.
                         </p>
                       </div>
@@ -1445,7 +1472,8 @@ export default function OthelloRevisionPage() {
                     <p className="mt-1 text-xs text-muted-foreground">
                       Use two- or three-word quotations woven into your sentences rather than long
                       block quotes. E.g., &ldquo;Iago&apos;s description of jealousy as a
-                      &lsquo;green-eyed monster&rsquo; personifies the emotion as predatory.&rdquo;
+                      &lsquo;green-ey&apos;d monster&rsquo; personifies the emotion as
+                      predatory.&rdquo;
                     </p>
                   </div>
                   <div className="rounded-lg bg-primary/10 border border-accent/20 p-4">

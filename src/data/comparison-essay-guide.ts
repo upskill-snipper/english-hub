@@ -308,7 +308,12 @@ const guide5: ComparisonGuide = {
     },
     {
       point: 'Justice and retribution',
-      text1Evidence: 'I gave commands; / Then all smiles stopped together / There she stands',
+      // 2 October 2026: this set a line break (" / ") between "together" and "There she
+      // stands", which are one line, 46, in the held edition
+      // (src/data/full-texts/my-last-duchess.ts), so the "verified" note above was not
+      // true of it. These fields carry no quotation marks, so scripts/check-quotations.mjs
+      // does not read them; the full stop is the held edition's.
+      text1Evidence: 'I gave commands; / Then all smiles stopped together. There she stands',
       text2Evidence: '[See licensed edition for verbatim text]',
       analysis:
         "Both poems show power confronted by consequence. The Duke's monologue inadvertently exposes his crime to the envoy; the Mayor's broken promise to the Piper leads to the loss of Hamelin's children. Browning frames retribution as the inevitable counter-movement to abuse.",
@@ -662,6 +667,11 @@ const guide10: ComparisonGuide = {
     'Self-destruction through greed',
     'Redemption after moral failure',
   ],
+  // The Macbeth evidence is in the held edition's wording (Project Gutenberg
+  // #1533, src/data/full-texts/macbeth.ts): "scorch'd", the Folio's reading, not
+  // the "scotch'd" of many editions, and "Tomorrow" unhyphenated. These fields
+  // carry no quotation marks, so scripts/check-quotations.mjs does not read them;
+  // they were corrected by hand on 2 October 2026.
   comparisonPoints: [
     {
       point: "Ambition's origin",
@@ -672,14 +682,14 @@ const guide10: ComparisonGuide = {
     },
     {
       point: 'Moral transgression',
-      text1Evidence: "We have scotch'd the snake, not kill'd it",
+      text1Evidence: "We have scorch'd the snake, not kill'd it",
       text2Evidence: 'I was a coward too',
       analysis:
         "Macbeth murders to achieve ambition; Amir's cowardice causes betrayal. Different manifestations of moral failure driven by self-interest.",
     },
     {
       point: 'Psychological deterioration',
-      text1Evidence: 'To-morrow, and to-morrow, and to-morrow, / Creeps in this petty pace',
+      text1Evidence: 'Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace',
       text2Evidence: 'I could build a case that I was a good person',
       analysis:
         'Macbeth experiences spiritual emptiness despite achieving ambition; Amir constructs self-deception. Both damage themselves psychologically.',
@@ -700,7 +710,7 @@ const guide10: ComparisonGuide = {
     },
   ],
   modelEssay:
-    "Shakespeare's 'Macbeth' and Khaled Hosseini's 'The Kite Runner' both examine ambition and corruption, yet differ in sources and possibilities. Macbeth presents ambition as externally triggered and internally corrosive, leading inevitably to destruction without redemption. Amir's ambition emerges from internal cowardice and shame, leading to psychological damage but ultimately enabling redemption through action. Both examine how self-interest corrupts character; they differ in whether recovery is possible. Macbeth's ambition originates in external prophecy. The witches' prediction that he will be king awakens desire previously dormant. Lady Macbeth recognizes this: his ambition requires activation from outside, suggesting it violates his essential nature. Yet once activated, ambition produces rapid moral deterioration. Macbeth murders Duncan, then must murder Banquo to secure the throne, then massacre Macduff's family. Each murder produces diminishing moral resistance, suggesting ambition creates momentum independent of will. The psychological cost is evident in soliloquies: 'Life's but a walking shadow,' suggesting meaning has emptied completely. Amir's failure originates in himself. He watches Hassan's assault without intervention; cowardice produces betrayal. Unlike Macbeth's rapid trajectory to violence, Amir's wrongdoing is passive-he fails to act. Yet the psychological damage mirrors Macbeth's: he constructs elaborate self-deceptions to avoid confronting truth. Both characters suffer profound spiritual alienation. Where Macbeth achieves political power but loses meaning, Amir achieves stability but loses integrity. Both eventually confront what they've become. Macbeth recognizes ambition's emptiness: 'To-morrow, and to-morrow, and to-morrow,' suggesting empty repetition without purpose. He dies still refusing genuine repentance, locked in denial. Amir's confrontation is different: returning to Afghanistan, he recognizes what cowardice cost. He achieves insight that Macbeth never reaches-understanding that redemption requires action. The crucial difference: Shakespeare presents ambition as inevitably destructive without possibility of redemption; Hosseini suggests ambition rooted in shame can be redeemed through courageous action. Both examine moral corruption; they differ on whether corruption can be reversed. In conclusion, both texts use ambition and failure to explore character, yet reach different conclusions about human possibility for change.",
+    "Shakespeare's 'Macbeth' and Khaled Hosseini's 'The Kite Runner' both examine ambition and corruption, yet differ in sources and possibilities. Macbeth presents ambition as externally triggered and internally corrosive, leading inevitably to destruction without redemption. Amir's ambition emerges from internal cowardice and shame, leading to psychological damage but ultimately enabling redemption through action. Both examine how self-interest corrupts character; they differ in whether recovery is possible. Macbeth's ambition originates in external prophecy. The witches' prediction that he will be king awakens desire previously dormant. Lady Macbeth recognizes this: his ambition requires activation from outside, suggesting it violates his essential nature. Yet once activated, ambition produces rapid moral deterioration. Macbeth murders Duncan, then must murder Banquo to secure the throne, then massacre Macduff's family. Each murder produces diminishing moral resistance, suggesting ambition creates momentum independent of will. The psychological cost is evident in soliloquies: 'Life's but a walking shadow,' suggesting meaning has emptied completely. Amir's failure originates in himself. He watches Hassan's assault without intervention; cowardice produces betrayal. Unlike Macbeth's rapid trajectory to violence, Amir's wrongdoing is passive-he fails to act. Yet the psychological damage mirrors Macbeth's: he constructs elaborate self-deceptions to avoid confronting truth. Both characters suffer profound spiritual alienation. Where Macbeth achieves political power but loses meaning, Amir achieves stability but loses integrity. Both eventually confront what they've become. Macbeth recognizes ambition's emptiness: 'Tomorrow, and tomorrow, and tomorrow,' suggesting empty repetition without purpose. He dies still refusing genuine repentance, locked in denial. Amir's confrontation is different: returning to Afghanistan, he recognizes what cowardice cost. He achieves insight that Macbeth never reaches-understanding that redemption requires action. The crucial difference: Shakespeare presents ambition as inevitably destructive without possibility of redemption; Hosseini suggests ambition rooted in shame can be redeemed through courageous action. Both examine moral corruption; they differ on whether corruption can be reversed. In conclusion, both texts use ambition and failure to explore character, yet reach different conclusions about human possibility for change.",
   structureTemplate:
     'Para 1: Intro comparing ambition themes. Para 2-6: Analyze origins of ambition, moral transgressions, psychological effects, confrontation with truth, and redemptive possibilities. Para 7: Conclusion on difference in possibility of redemption.',
   connectives: [

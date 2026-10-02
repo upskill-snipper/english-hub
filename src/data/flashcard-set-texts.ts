@@ -428,6 +428,21 @@ export const setTextFlashcardDecks: FlashcardDeck[] = [
   // ─────────────────────────────────────────────
   // ANIMAL FARM - COMPREHENSIVE (35 cards)
   // ─────────────────────────────────────────────
+  // QUOTATIONS CORRECTED 2 October 2026. scripts/check-quotations.mjs found
+  // three of this deck's quotations of Animal Farm wrong ("Squealer could
+  // turn black into white", "You don't want Jones back?", "life would go on
+  // ... badly" with "that is" left out), and reading the deck by hand found
+  // more: "He had killed himself by drinking too much" is nowhere in the held
+  // edition, and is replaced by Squealer's real lie about Boxer, "I was at his
+  // bedside at the very last"; the statistics were "production has increased
+  // by 200%"; the pigs took the milk and apples "for their health", which no
+  // pig says; Orwell was said to call class "the endless cycle", which he does
+  // not; and "Surely, comrades, you do not want Jones back?" is said once, in
+  // Chapter 5, not "repeatedly". Each corrected quotation was cut by script
+  // from the held edition, Project Gutenberg Australia's transcription
+  // (src/data/full-texts/animal-farm.ts), not retyped. Reviewed the same day:
+  // the milk and apples line now says whose claim it is (Squealer's), since
+  // the narrator never says the milk is necessary to a pig.
   {
     id: 'af-comprehensive',
     title: 'Animal Farm - Comprehensive',
@@ -475,7 +490,7 @@ export const setTextFlashcardDecks: FlashcardDeck[] = [
       },
       {
         id: 'af-q8',
-        front: '"Squealer could turn black into white."',
+        front: '"The others said of Squealer that he could turn black into white."',
         back: 'Speaker: Narrator (Chapter 2)\n\nMeaning: Squealer is so persuasive he can make animals believe the opposite of what they\'ve seen with their own eyes.\n\nTechniques: Hyperbole, metaphor, foreshadowing, characterisation through reputation.\n\nThemes: Propaganda, manipulation, truth vs lies.\n\nExam point: Squealer represents Pravda (the Soviet state newspaper) and propaganda in general. His ability to "turn black into white" is not magic but technique - he uses statistics, rhetorical questions ("Surely, comrades, you do not want Jones back?"), and fear to override evidence. Orwell warns that propaganda doesn\'t need to be believable - it just needs to be repeated more loudly than the truth.',
       },
       {
@@ -491,11 +506,11 @@ export const setTextFlashcardDecks: FlashcardDeck[] = [
       {
         id: 'af-q11',
         front: '"Surely, comrades, you do not want Jones back?"',
-        back: "Speaker: Squealer (used repeatedly)\n\nMeaning: Whenever animals question the pigs' privileges, Squealer invokes the threat of Jones returning.\n\nTechniques: Rhetorical question, fear-mongering, direct address (\"comrades\"), manipulation.\n\nThemes: Propaganda, fear, control, false binary.\n\nExam point: This is Squealer's most effective propaganda technique - the false binary. He presents only two options: accept the pigs' rule or return to Jones. There is no third option (genuine equality). Orwell shows how authoritarian regimes maintain power by keeping the population more afraid of the alternative than of the current regime. Stalin used the same technique: accept Soviet rule or face capitalist exploitation.",
+        back: "Speaker: Squealer (Chapter 5; the same threat, in other words, recurs in Chapters 3 and 6)\n\nMeaning: Whenever animals question the pigs' privileges, Squealer invokes the threat of Jones returning.\n\nTechniques: Rhetorical question, fear-mongering, direct address (\"comrades\"), manipulation.\n\nThemes: Propaganda, fear, control, false binary.\n\nExam point: This is Squealer's most effective propaganda technique - the false binary. He presents only two options: accept the pigs' rule or return to Jones. There is no third option (genuine equality). Orwell shows how authoritarian regimes maintain power by keeping the population more afraid of the alternative than of the current regime. Stalin used the same technique: accept Soviet rule or face capitalist exploitation.",
       },
       {
         id: 'af-q12',
-        front: '"He had killed himself by drinking too much." (referring to Boxer\'s fate)',
+        front: '"I was at his bedside at the very last." (Squealer on Boxer\'s death)',
         back: "Speaker: Squealer's lie about Boxer (Chapter 9) - the narrator reveals the van said \"Horse Slaughterer\"\n\nMeaning: Squealer claims Boxer died peacefully in hospital. In reality, Napoleon sold him to the glue factory for whisky money.\n\nTechniques: Dramatic irony, euphemism, propaganda vs truth, pathos.\n\nThemes: Betrayal, exploitation, propaganda, cruelty of power.\n\nExam point: Boxer's death is the novel's most emotionally devastating moment. The most loyal, hardworking animal is sold for profit the moment he can no longer work. Orwell shows that totalitarian regimes see people as resources, not beings - useful until exhausted, then discarded. Benjamin (who reads the van's sign) represents those who see the truth but are powerless to act.",
       },
 
@@ -518,7 +533,7 @@ export const setTextFlashcardDecks: FlashcardDeck[] = [
       {
         id: 'af-c4',
         front: 'Squealer - Character Profile + Allegory',
-        back: 'Allegorical parallel: Pravda (Soviet state media) / propaganda apparatus\n\nRole: Napoleon\'s spokesperson, responsible for manipulating the truth and maintaining the pigs\' legitimacy.\n\nKey traits: Eloquent, persuasive, nimble (literally and rhetorically), shameless liar, "could turn black into white."\n\nKey techniques: Statistics ("production has increased by 200%"), rhetorical questions ("You don\'t want Jones back?"), revision of commandments, emotional manipulation.\n\nOrwell\'s purpose: Squealer shows that propaganda is the ESSENTIAL tool of dictatorship - more important than force. He represents all state media that serves power rather than truth. Without Squealer, Napoleon could not maintain the illusion of legitimacy.\n\nExam tip: Squealer is caught repainting the commandments at night - this is Orwell\'s most literal image of history being rewritten by those in power.',
+        back: 'Allegorical parallel: Pravda (Soviet state media) / propaganda apparatus\n\nRole: Napoleon\'s spokesperson, responsible for manipulating the truth and maintaining the pigs\' legitimacy.\n\nKey traits: Eloquent, persuasive, nimble (literally and rhetorically), shameless liar, "could turn black into white."\n\nKey techniques: Statistics ("the production of every class of foodstuff had increased by two hundred per cent"), rhetorical questions ("Surely, comrades, you do not want Jones back?"), revision of commandments, emotional manipulation.\n\nOrwell\'s purpose: Squealer shows that propaganda is the ESSENTIAL tool of dictatorship - more important than force. He represents all state media that serves power rather than truth. Without Squealer, Napoleon could not maintain the illusion of legitimacy.\n\nExam tip: Squealer is caught repainting the commandments at night - this is Orwell\'s most literal image of history being rewritten by those in power.',
       },
       {
         id: 'af-c5',
@@ -528,7 +543,7 @@ export const setTextFlashcardDecks: FlashcardDeck[] = [
       {
         id: 'af-c6',
         front: 'Benjamin the Donkey - Character Profile + Allegory',
-        back: 'Allegorical parallel: Sceptical intellectuals / cynical observers who see the truth but do nothing\n\nRole: The oldest animal on the farm, cynical and literate, who sees through the pigs\' lies but refuses to act.\n\nKey traits: Intelligent, literate, pessimistic, passive, loyal only to Boxer.\n\nKey actions: Refuses to read the commandments for others; says "life would go on as it had always gone on - badly"; reads the van taking Boxer but too late to save him.\n\nOrwell\'s purpose: Benjamin represents the intelligentsia who see injustice but choose inaction. He knows the truth but his cynicism makes him complicit - silence in the face of tyranny enables it. Orwell criticises those who are smart enough to see oppression but too apathetic or afraid to resist.\n\nExam tip: Benjamin is arguably the most guilty character - he has the knowledge to expose the pigs but chooses silence. Orwell suggests that passive intelligence is as dangerous as active ignorance.',
+        back: 'Allegorical parallel: Sceptical intellectuals / cynical observers who see the truth but do nothing\n\nRole: The oldest animal on the farm, cynical and literate, who sees through the pigs\' lies but refuses to act.\n\nKey traits: Intelligent, literate, pessimistic, passive, loyal only to Boxer.\n\nKey actions: Refuses to read the commandments for others; says "life would go on as it had always gone on - that is, badly"; reads the van taking Boxer but too late to save him.\n\nOrwell\'s purpose: Benjamin represents the intelligentsia who see injustice but choose inaction. He knows the truth but his cynicism makes him complicit - silence in the face of tyranny enables it. Orwell criticises those who are smart enough to see oppression but too apathetic or afraid to resist.\n\nExam tip: Benjamin is arguably the most guilty character - he has the knowledge to expose the pigs but chooses silence. Orwell suggests that passive intelligence is as dangerous as active ignorance.',
       },
       {
         id: 'af-c7',
@@ -555,7 +570,7 @@ export const setTextFlashcardDecks: FlashcardDeck[] = [
       {
         id: 'af-t3',
         front: 'Theme: Class and Inequality',
-        back: 'Central idea: Revolution does not eliminate class - it merely creates a new ruling class.\n\nHow it\'s shown:\n- Under Jones: humans exploit animals\n- After revolution: pigs gradually become the new exploiters\n- Pigs take the milk and apples "for their health"\n- Pigs move into the farmhouse while others sleep in barns\n- Pigs walk on two legs and carry whips\n\nOrwell\'s argument: The structure of inequality survives revolution - only the personnel change. Orwell calls this "the endless cycle" - every revolution promises equality but produces a new elite. The working animals end up no better off than before.\n\nExam tip: The key structural point is that the end mirrors the beginning - Animal Farm under Napoleon is IDENTICAL to Manor Farm under Jones. Orwell uses cyclical structure to argue that revolution without genuine equality is meaningless.',
+        back: 'Central idea: Revolution does not eliminate class - it merely creates a new ruling class.\n\nHow it\'s shown:\n- Under Jones: humans exploit animals\n- After revolution: pigs gradually become the new exploiters\n- Pigs take the milk and apples, which, Squealer says, "contain substances absolutely necessary to the well-being of a pig"\n- Pigs move into the farmhouse while others sleep in barns\n- Pigs walk on two legs and carry whips\n\nOrwell\'s argument: The structure of inequality survives revolution - only the personnel change. On this reading the cycle is endless - every revolution promises equality but produces a new elite. The working animals end up no better off than before.\n\nExam tip: The key structural point is that the end mirrors the beginning - Animal Farm under Napoleon is IDENTICAL to Manor Farm under Jones. Orwell uses cyclical structure to argue that revolution without genuine equality is meaningless.',
       },
       {
         id: 'af-t4',
@@ -570,7 +585,7 @@ export const setTextFlashcardDecks: FlashcardDeck[] = [
       {
         id: 'af-t6',
         front: 'Theme: Fear and Control',
-        back: "Central idea: Totalitarian regimes maintain power through fear - both external threats and internal purges.\n\nHow it's shown:\n- \"Surely you don't want Jones back?\" - fear of the old regime\n- Napoleon's dogs - fear of violence\n- Public executions of \"traitors\" - fear of accusation\n- Snowball as scapegoat - fear of the enemy within\n\nOrwell's argument: Fear is the complement to propaganda - where propaganda fails to convince, fear compels obedience. Napoleon uses both: Squealer for the mind, the dogs for the body. The show trials (where animals confess to impossible crimes) mirror Stalin's Great Purge of the 1930s.\n\nExam tip: The confessions are the novel's most chilling moment - animals \"confess\" to crimes they didn't commit because fear overrides truth. This directly parallels the Moscow Show Trials.",
+        back: 'Central idea: Totalitarian regimes maintain power through fear - both external threats and internal purges.\n\nHow it\'s shown:\n- "Surely, comrades, you do not want Jones back?" - fear of the old regime\n- Napoleon\'s dogs - fear of violence\n- Public executions of "traitors" - fear of accusation\n- Snowball as scapegoat - fear of the enemy within\n\nOrwell\'s argument: Fear is the complement to propaganda - where propaganda fails to convince, fear compels obedience. Napoleon uses both: Squealer for the mind, the dogs for the body. The show trials (where animals confess to impossible crimes) mirror Stalin\'s Great Purge of the 1930s.\n\nExam tip: The confessions are the novel\'s most chilling moment - animals "confess" to crimes they didn\'t commit because fear overrides truth. This directly parallels the Moscow Show Trials.',
       },
       {
         id: 'af-t7',
@@ -871,7 +886,7 @@ export const setTextFlashcardDecks: FlashcardDeck[] = [
       },
       {
         id: 'rj-q54',
-        front: 'Romeo and Juliet: Quote - "What\'s in a name? That which we call a rose by an...',
+        front: 'Romeo and Juliet: Quote - "What\'s in a name? That which we call a rose"...',
         back: 'Analyze this quotation: "What\'s in a name? That which we call a rose by any other name would smell as sweet". What does it reveal about character, theme, or conflict? Why is this quotation significant? How does it connect to larger patterns in the text? What is the context in which this quotation appears? How might different readers interpret this quotation? What techniques does the author use in this passage?',
       },
       {

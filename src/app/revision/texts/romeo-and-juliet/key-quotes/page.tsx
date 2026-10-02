@@ -217,11 +217,15 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
           'Juliet outshines artificial light. The jewel image makes her precious but also possessable. "Cheek of night" personifies darkness as a backdrop that enhances beauty. Love shines brightest against the darkest background.',
       },
       {
+        // Romeo's line, not Juliet's (2 October 2026): until then this card,
+        // and its analysis, gave it to Juliet. In the held edition
+        // (src/data/full-texts/romeo-and-juliet.ts) Juliet says the light
+        // grows and Romeo answers with this.
         quote: 'More light and light, more dark and dark our woes!',
-        speaker: 'Juliet',
+        speaker: 'Romeo',
         act: 'Act 3, Scene 5',
         analysis:
-          'As dawn forces Romeo to leave, Juliet recognises daylight as the enemy. The chiastic structure mirrors the inverse relationship between physical light and emotional darkness. The entire light-dark motif crystallises in one line.',
+          'As dawn forces him to leave, Romeo recognises daylight as the enemy. The chiastic structure mirrors the inverse relationship between physical light and emotional darkness. The entire light-dark motif crystallises in one line.',
       },
       {
         quote: "Come gentle night, come loving black-brow'd night, / Give me my Romeo.",

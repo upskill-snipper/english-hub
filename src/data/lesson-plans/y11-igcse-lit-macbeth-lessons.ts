@@ -1,5 +1,14 @@
 import type { LessonPlan } from '../../types'
 
+// Quotations of the play here are in the wording of the edition the site holds,
+// Project Gutenberg #1533 (src/data/full-texts/macbeth.ts). On 2 October 2026
+// scripts/check-quotations.mjs found 19 that were not, and each was cut again
+// from the edition: modern spellings ("stepped", "plucked") where it prints
+// "stepp'd" and "pluck'd", "'twere well" with its "then" left out, the
+// Witch's "that shalt be king hereafter" as "Thou shalt", and "And falls on
+// th' other side", where Macbeth breaks off at "th' other". A review the same
+// day found one more that the checker passes over, as two words with no cue:
+// "borrowed robes" for the edition's "borrow'd robes".
 export const y11IgcseLitMacbethLessons: LessonPlan[] = [
   // ── Lesson 1: Jacobean Context ────────────────────────────────────────────
   {
@@ -217,7 +226,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
         title: "Macbeth's Ambition: Before and After the Prophecy",
         duration: '22 minutes',
         instructions:
-          "Teacher directs students to two moments: (1) the Sergeant's report in Act 1 Scene 2 - Macbeth's savage battlefield heroism, described as \"carving out his passage\" and \"unseamed him from the nave to the chops\"; (2) Macbeth's first soliloquy in Act 1 Scene 7 (\"If it were done when 'tis done...\"). Students complete a comparison grid: What does this moment reveal about Macbeth's character? What language techniques are used? What does this suggest about his ambition? Class discussion: does Act 1 Scene 2 show that violence is already central to Macbeth's identity before the witches appear? Students then write one paragraph arguing either that Macbeth's ambition is the product of the witches' influence or that the witches merely catalyse an ambition that already exists.",
+          "Teacher directs students to two moments: (1) the Sergeant's report in Act 1 Scene 2 - Macbeth's savage battlefield heroism, described as one who \"carv'd out his passage\" and \"unseam'd him from the nave to the chops\"; (2) Macbeth's first soliloquy in Act 1 Scene 7 (\"If it were done when 'tis done...\"). Students complete a comparison grid: What does this moment reveal about Macbeth's character? What language techniques are used? What does this suggest about his ambition? Class discussion: does Act 1 Scene 2 show that violence is already central to Macbeth's identity before the witches appear? Students then write one paragraph arguing either that Macbeth's ambition is the product of the witches' influence or that the witches merely catalyse an ambition that already exists.",
         differentiation: {
           support:
             'Provide the comparison grid with the first row partially completed and sentence starters for the paragraph: "Shakespeare presents Macbeth\'s ambition as... This is shown when..."',
@@ -276,7 +285,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
           'Analyse how Shakespeare presents Macbeth\'s ambition in his Act 1 Scene 7 soliloquy ("If it were done when \'tis done...").',
         lines: 6,
         modelAnswer:
-          'In the soliloquy, Macbeth reveals the full complexity of his ambition through tortured conditional logic. He uses the phrase "If it were done when \'tis done, \'twere well / It were done quickly" - the repetition of "done" creates a circular, evasive quality, as if Macbeth is trying to think around the word "murder" rather than confront it directly. He acknowledges the moral and political reasons not to kill Duncan - the duties of hospitality, the king\'s virtues, the likelihood of violent retribution - before conceding that "I have no spur... but only / Vaulting ambition." The metaphor of ambition as a horse that "o\'erleaps itself" and falls suggests Macbeth already senses that his ambition is reckless and self-destructive, yet he cannot resist it.',
+          'In the soliloquy, Macbeth reveals the full complexity of his ambition through tortured conditional logic. He uses the phrase "If it were done when \'tis done, then \'twere well / It were done quickly" - the repetition of "done" creates a circular, evasive quality, as if Macbeth is trying to think around the word "murder" rather than confront it directly. He acknowledges the moral and political reasons not to kill Duncan - the duties of hospitality, the king\'s virtues, the likelihood of violent retribution - before conceding that "I have no spur... but only / Vaulting ambition." The metaphor of ambition as a horse that "o\'erleaps itself" and falls suggests Macbeth already senses that his ambition is reckless and self-destructive, yet he cannot resist it.',
         marks: 6,
       },
       {
@@ -284,7 +293,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
           'To what extent is Macbeth responsible for his own downfall? Use evidence from Act 1 to support your view.',
         lines: 6,
         modelAnswer:
-          'Macbeth bears significant responsibility for his downfall because the evidence of Act 1 suggests his ambition precedes and exceeds the witches\' influence. In Act 1 Scene 2, his battlefield violence is described in graphic terms - he "unseamed" his enemy "from the nave to the chops" - suggesting a man already comfortable with extreme violence. His aside in Act 1 Scene 3 reveals that the thought of murder crosses his mind before Lady Macbeth has spoken a word. His soliloquy in Act 1 Scene 7 shows he is fully aware of the moral and practical arguments against murder but proceeds anyway. While the witches provide the initial prophecy and Lady Macbeth provides pressure, Macbeth\'s choice to act is ultimately his own, which is what makes the play a tragedy rather than merely a tale of supernatural corruption.',
+          'Macbeth bears significant responsibility for his downfall because the evidence of Act 1 suggests his ambition precedes and exceeds the witches\' influence. In Act 1 Scene 2, his battlefield violence is described in graphic terms - he "unseam\'d" his enemy "from the nave to the chops" - suggesting a man already comfortable with extreme violence. His aside in Act 1 Scene 3 reveals that the thought of murder crosses his mind before Lady Macbeth has spoken a word. His soliloquy in Act 1 Scene 7 shows he is fully aware of the moral and practical arguments against murder but proceeds anyway. While the witches provide the initial prophecy and Lady Macbeth provides pressure, Macbeth\'s choice to act is ultimately his own, which is what makes the play a tragedy rather than merely a tale of supernatural corruption.',
         marks: 6,
       },
     ],
@@ -339,7 +348,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
       title: 'First Impressions of Lady Macbeth',
       duration: '8 minutes',
       instructions:
-        "Without giving any context, display Lady Macbeth's reaction on reading Macbeth's letter (Act 1 Scene 5): \"Yet do I fear thy nature; / It is too full o' the milk of human kindness.\" Ask students to discuss in pairs: what does this line tell us about Lady Macbeth's view of her husband, and what does it imply about her own nature? Collect responses. Then reveal the full context of the scene and ask: does knowing that Lady Macbeth is reading a letter from her husband change the effect? Introduce the idea that Lady Macbeth is established through her private thoughts - her soliloquy - not through how others describe her, making her one of Shakespeare's most psychologically complex characters.",
+        "Without giving any context, display Lady Macbeth's reaction on reading Macbeth's letter (Act 1 Scene 5): \"Yet do I fear thy nature; / It is too full o' th' milk of human kindness.\" Ask students to discuss in pairs: what does this line tell us about Lady Macbeth's view of her husband, and what does it imply about her own nature? Collect responses. Then reveal the full context of the scene and ask: does knowing that Lady Macbeth is reading a letter from her husband change the effect? Introduce the idea that Lady Macbeth is established through her private thoughts - her soliloquy - not through how others describe her, making her one of Shakespeare's most psychologically complex characters.",
       differentiation: {
         support:
           'Provide the quotation with glossed vocabulary: "fear" = doubt about; "milk of human kindness" = natural compassion.',
@@ -354,7 +363,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
         title: 'Close Reading: "Come, you spirits" Soliloquy',
         duration: '20 minutes',
         instructions:
-          'Students receive the full "unsex me here" soliloquy (Act 1 Scene 5, from "Come, you spirits / That tend on mortal thoughts" to "nor heaven peep through the blanket of the dark"). Working individually, students annotate for: (1) the language of invocation - what Lady Macbeth is calling on spirits to do; (2) the vocabulary of gender and the body - what she wants removed or changed; (3) the imagery of darkness, blood, and concealment; (4) what this soliloquy reveals about her psychological state and her awareness of moral danger. Teacher models one annotation: "\'Stop up the access and passage to remorse\' - the medical metaphor of blocking a physical passage suggests Lady Macbeth sees compassion as a bodily function that can be surgically removed. This reveals a chilling rationalism." Pairs compare annotations and class discusses: is Lady Macbeth more frightening or more pitiable here?',
+          'Students receive the full "unsex me here" soliloquy (Act 1 Scene 5, from "Come, you spirits / That tend on mortal thoughts" to "nor heaven peep through the blanket of the dark"). Working individually, students annotate for: (1) the language of invocation - what Lady Macbeth is calling on spirits to do; (2) the vocabulary of gender and the body - what she wants removed or changed; (3) the imagery of darkness, blood, and concealment; (4) what this soliloquy reveals about her psychological state and her awareness of moral danger. Teacher models one annotation: "\'Stop up th\' access and passage to remorse\' - the medical metaphor of blocking a physical passage suggests Lady Macbeth sees compassion as a bodily function that can be surgically removed. This reveals a chilling rationalism." Pairs compare annotations and class discusses: is Lady Macbeth more frightening or more pitiable here?',
         differentiation: {
           support:
             'Provide an annotated glossary for the soliloquy (e.g., "mortal thoughts" = murderous thoughts; "gall" = bitterness; "pall" = funeral cloth) and two pre-written annotations for students to expand on.',
@@ -368,7 +377,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
         title: "Lady Macbeth's Manipulation: Act 1 Scene 7",
         duration: '22 minutes',
         instructions:
-          'Students read Act 1 Scene 7 (from Macbeth\'s "We will proceed no further in this business" to Lady Macbeth\'s "screw your courage to the sticking-place"). Students identify: (1) how Lady Macbeth attacks Macbeth\'s masculinity - "When you durst do it, then you were a man"; (2) how she uses the image of the nursing mother to establish her own ruthlessness - "I would... have plucked my nipple from his boneless gums, / And dashed the brains out"; (3) how her language shifts from attacking to encouraging - "We fail? / But screw your courage to the sticking-place, / And we\'ll not fail." Class discusses: is Lady Macbeth\'s use of gender rhetoric a sign of psychological strength or does it reveal her own understanding of her world\'s gender rules? Students write one analytical paragraph on her methods of manipulation.',
+          'Students read Act 1 Scene 7 (from Macbeth\'s "We will proceed no further in this business" to Lady Macbeth\'s "screw your courage to the sticking-place"). Students identify: (1) how Lady Macbeth attacks Macbeth\'s masculinity - "When you durst do it, then you were a man"; (2) how she uses the image of the nursing mother to establish her own ruthlessness - "I would... have pluck\'d my nipple from his boneless gums, / And dash\'d the brains out"; (3) how her language shifts from attacking to encouraging - "We fail? / But screw your courage to the sticking-place, / And we\'ll not fail." Class discusses: is Lady Macbeth\'s use of gender rhetoric a sign of psychological strength or does it reveal her own understanding of her world\'s gender rules? Students write one analytical paragraph on her methods of manipulation.',
         differentiation: {
           support:
             'Provide a sentence-starter frame: "Shakespeare presents Lady Macbeth as manipulative through her use of... / She uses the quotation... / This technique works because... / A Jacobean audience would have been particularly struck by this because..."',
@@ -415,7 +424,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
           "What does Lady Macbeth's soliloquy in Act 1 Scene 5 reveal about her relationship with guilt and morality?",
         lines: 5,
         modelAnswer:
-          'Lady Macbeth\'s soliloquy reveals that she is acutely aware of the moral weight of what she plans and that she fears her own conscience. Her request to "stop up the access and passage to remorse" acknowledges that remorse is a natural human response she expects to feel - and must therefore suppress. Similarly, she asks "that no compunctious visitings of nature / Shake my fell purpose" - suggesting that she knows her natural instincts would oppose murder. This awareness of guilt, ironically, foreshadows her psychological collapse in Act 5, where the guilt she tried to eliminate returns with devastating force. Shakespeare thus establishes Lady Macbeth\'s tragic arc from the very beginning.',
+          'Lady Macbeth\'s soliloquy reveals that she is acutely aware of the moral weight of what she plans and that she fears her own conscience. Her request to "stop up th\' access and passage to remorse" acknowledges that remorse is a natural human response she expects to feel - and must therefore suppress. Similarly, she asks "that no compunctious visitings of nature / Shake my fell purpose" - suggesting that she knows her natural instincts would oppose murder. This awareness of guilt, ironically, foreshadows her psychological collapse in Act 5, where the guilt she tried to eliminate returns with devastating force. Shakespeare thus establishes Lady Macbeth\'s tragic arc from the very beginning.',
         marks: 5,
       },
       {
@@ -438,7 +447,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
     teacherNotes: [
       'The "unsex me here" soliloquy is rich for AO2 but the language is demanding. Pre-teaching vocabulary (gall, compunctious, pall, dunnest) before the annotation activity will save time and prevent students getting stuck on meaning rather than analysis.',
       'Students sometimes treat Lady Macbeth as simply "evil" or simply "a victim." The most sophisticated exam answers hold both possibilities in tension. Model this in the structured controversy plenary.',
-      'The nursing mother imagery ("I would... have plucked my nipple from his boneless gums / And dashed the brains out") is deliberately shocking. Acknowledge that students may find it disturbing and explain that this is precisely the effect Shakespeare intends - Lady Macbeth is using the most sacred image of femininity and weaponising it to prove her ruthlessness.',
+      'The nursing mother imagery ("I would... have pluck\'d my nipple from his boneless gums / And dash\'d the brains out") is deliberately shocking. Acknowledge that students may find it disturbing and explain that this is precisely the effect Shakespeare intends - Lady Macbeth is using the most sacred image of femininity and weaponising it to prove her ruthlessness.',
       'Connecting the "unsex me here" soliloquy to Lady Macbeth\'s sleepwalking scene in Act 5 early in the course helps students see the play\'s structure as a whole. The guilt she tries to expel here returns to destroy her.',
     ],
     targetedSkills: [
@@ -667,7 +676,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
         title: 'From Conflict to Compulsion: Tracking Language Change',
         duration: '22 minutes',
         instructions:
-          'Students receive four short quotations arranged chronologically: (1) Act 1 Scene 7: "I have no spur / To prick the sides of my intent, but only / Vaulting ambition"; (2) Act 3 Scene 2: "We have scorched the snake, not killed it"; (3) Act 3 Scene 4: "I am in blood / Stepped in so far, that, should I wade no more, / Returning were as tedious as go o\'er"; (4) Act 4 Scene 1: "From this moment / The very firstlings of my heart shall be / The firstlings of my hand." Students complete a close analysis of each quotation, tracking: the metaphor or imagery used; what emotion or mental state it reveals; how it represents a stage in Macbeth\'s deterioration. Class discusses: what does the progression of these quotations tell us about the relationship between action and character? Students write one sustained analytical paragraph tracing the deterioration through at least two of the quotations.',
+          'Students receive four short quotations arranged chronologically: (1) Act 1 Scene 7: "I have no spur / To prick the sides of my intent, but only / Vaulting ambition"; (2) Act 3 Scene 2: "We have scorch\'d the snake, not kill\'d it"; (3) Act 3 Scene 4: "I am in blood / Stepp\'d in so far, that, should I wade no more, / Returning were as tedious as go o\'er"; (4) Act 4 Scene 1: "From this moment / The very firstlings of my heart shall be / The firstlings of my hand." Students complete a close analysis of each quotation, tracking: the metaphor or imagery used; what emotion or mental state it reveals; how it represents a stage in Macbeth\'s deterioration. Class discusses: what does the progression of these quotations tell us about the relationship between action and character? Students write one sustained analytical paragraph tracing the deterioration through at least two of the quotations.',
         differentiation: {
           support:
             'Provide an analysis grid with the imagery column partially completed and a sentence frame: "As the play progresses, Macbeth\'s language shifts from... to... This suggests that..."',
@@ -692,7 +701,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
       },
     },
     homework:
-      "Learn this quotation by heart: \"I am in blood / Stepped in so far, that, should I wade no more, / Returning were as tedious as go o'er.\" Write a paragraph explaining: (1) the metaphor Shakespeare uses; (2) what it reveals about Macbeth's psychological state at this point in the play; (3) how it shows Macbeth's deterioration from the conflicted figure of Act 1. Then write one sentence linking this quotation to the theme of moral corruption.",
+      "Learn this quotation by heart: \"I am in blood / Stepp'd in so far, that, should I wade no more, / Returning were as tedious as go o'er.\" Write a paragraph explaining: (1) the metaphor Shakespeare uses; (2) what it reveals about Macbeth's psychological state at this point in the play; (3) how it shows Macbeth's deterioration from the conflicted figure of Act 1. Then write one sentence linking this quotation to the theme of moral corruption.",
     worksheetQuestions: [
       {
         question:
@@ -704,7 +713,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
       },
       {
         question:
-          'Analyse the metaphor in "I am in blood / Stepped in so far, that, should I wade no more, / Returning were as tedious as go o\'er." What does this reveal about Macbeth\'s state of mind?',
+          "Analyse the metaphor in \"I am in blood / Stepp'd in so far, that, should I wade no more, / Returning were as tedious as go o'er.\" What does this reveal about Macbeth's state of mind?",
         lines: 5,
         modelAnswer:
           'The extended metaphor of wading through blood presents Macbeth\'s situation as one of physical immersion from which retreat is as difficult as progress. The word "blood" carries both its literal meaning - the murders he has committed - and its symbolic weight as moral guilt. The phrase "tedious" is revealing: it reduces the moral question of whether to continue killing to a matter of convenience rather than ethics. This suggests that Macbeth has passed a point of moral reckoning and now views further violence as practically rather than morally determined. The metaphor shows his moral numbness - the guilt of Act 2 has been replaced by a pragmatic acceptance of his own corruption.',
@@ -800,7 +809,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
         title: 'Close Reading: The Banquet Scene',
         duration: '20 minutes',
         instructions:
-          "Students receive Act 3 Scene 4 (from the ghost's first appearance to Macbeth's \"I am in blood / Stepped in so far...\"). Working in groups of three, they annotate for: (1) the contrast between Macbeth's public role as host and his private disintegration; (2) Lady Macbeth's attempts to manage the situation - her asides and excuses to the lords; (3) Macbeth's language when addressing the ghost - \"Thou canst not say I did it: never shake / Thy gory locks at me\"; (4) the lords' confusion and its political implications. Teacher models: \"The phrase 'Thou canst not say I did it' is a direct address to the ghost - but it is also an unconscious confession to everyone in the room. The dramatic irony here is that Macbeth's attempt to confront his guilt in private inadvertently exposes it publicly.\" Students write a 4-5 sentence analysis of the scene's dramatic function.",
+          "Students receive Act 3 Scene 4 (from the ghost's first appearance to Macbeth's \"I am in blood / Stepp'd in so far...\"). Working in groups of three, they annotate for: (1) the contrast between Macbeth's public role as host and his private disintegration; (2) Lady Macbeth's attempts to manage the situation - her asides and excuses to the lords; (3) Macbeth's language when addressing the ghost - \"Thou canst not say I did it: never shake / Thy gory locks at me\"; (4) the lords' confusion and its political implications. Teacher models: \"The phrase 'Thou canst not say I did it' is a direct address to the ghost - but it is also an unconscious confession to everyone in the room. The dramatic irony here is that Macbeth's attempt to confront his guilt in private inadvertently exposes it publicly.\" Students write a 4-5 sentence analysis of the scene's dramatic function.",
         differentiation: {
           support:
             'Provide four focus quotations with guided questions: "What does this line reveal? Who hears it? What is the dramatic irony?"',
@@ -869,7 +878,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
           'Why can the Banquet scene be described as the dramatic turning point of the play? Use evidence to support your argument.',
         lines: 6,
         modelAnswer:
-          "The Banquet scene can be described as the play's dramatic turning point because it marks the moment at which Macbeth's political and psychological collapse becomes publicly visible and therefore irreversible. Before this scene, Macbeth's crimes are private and concealed; after it, the court has witnessed his instability and his reign is visibly collapsing. The scene also marks Macbeth's decisive turn toward the witches: its final lines show him determined to seek them out again, abandoning the moral caution that even his tyrannical self had occasionally maintained. His words \"I am in blood / Stepped in so far, that, should I wade no more, / Returning were as tedious as go o'er\" confirm he has surrendered to an inevitable course of escalating violence. After this, his downfall is not merely likely - it is inevitable.",
+          "The Banquet scene can be described as the play's dramatic turning point because it marks the moment at which Macbeth's political and psychological collapse becomes publicly visible and therefore irreversible. Before this scene, Macbeth's crimes are private and concealed; after it, the court has witnessed his instability and his reign is visibly collapsing. The scene also marks Macbeth's decisive turn toward the witches: its final lines show him determined to seek them out again, abandoning the moral caution that even his tyrannical self had occasionally maintained. His words \"I am in blood / Stepp'd in so far, that, should I wade no more, / Returning were as tedious as go o'er\" confirm he has surrendered to an inevitable course of escalating violence. After this, his downfall is not merely likely - it is inevitable.",
         marks: 6,
       },
       {
@@ -1101,7 +1110,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
         title: 'Theme Deep Dive: Ambition and Power',
         duration: '20 minutes',
         instructions:
-          'Students work in pairs on one of two themes - Ambition or Power (each pair takes one). They complete a three-column grid: Evidence (quotation) | Analysis (language/technique) | Shakespeare\'s Message (what the play suggests about this theme). For Ambition, key quotations include: "Vaulting ambition, which o\'erleaps itself"; "I have no spur / To prick the sides of my intent"; "Stars, hide your fires." For Power, key quotations include: "I dare do all that may become a man"; "Thou shalt be king hereafter"; "To be thus is nothing / But to be safely thus." After individual pair work, Ambition pairs share with Power pairs and teach each other their findings. Teacher circulates and provides feedback on the quality of the analytical column.',
+          'Students work in pairs on one of two themes - Ambition or Power (each pair takes one). They complete a three-column grid: Evidence (quotation) | Analysis (language/technique) | Shakespeare\'s Message (what the play suggests about this theme). For Ambition, key quotations include: "Vaulting ambition, which o\'erleaps itself"; "I have no spur / To prick the sides of my intent"; "Stars, hide your fires." For Power, key quotations include: "I dare do all that may become a man"; "All hail, Macbeth! that shalt be king hereafter"; "To be thus is nothing / But to be safely thus." After individual pair work, Ambition pairs share with Power pairs and teach each other their findings. Teacher circulates and provides feedback on the quality of the analytical column.',
         differentiation: {
           support:
             'Provide the quotations pre-selected and the analysis column partially completed; students write the "Shakespeare\'s Message" column.',
@@ -1154,7 +1163,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
           'How does Shakespeare present the theme of ambition in Macbeth? Use evidence from at least two different points in the play.',
         lines: 6,
         modelAnswer:
-          "Shakespeare presents ambition as a destructive force that corrupts moral judgement and leads inevitably to ruin. In Act 1, Macbeth himself identifies \"vaulting ambition, which o'erleaps itself / And falls on th' other side\" - the metaphor of a horse jumping too high and falling presents ambition as inherently self-defeating. At this early stage, Macbeth still has the moral awareness to recognise the danger of his own ambition, even if he cannot resist it. By Act 3, however, this self-awareness has disappeared: his ambition has transformed into paranoid compulsion, driving him to murder Banquo despite the practical and moral costs. Shakespeare's message is not simply that ambition is wrong, but that unchecked ambition - ambition without moral restraint - is catastrophic both for the individual and the state.",
+          "Shakespeare presents ambition as a destructive force that corrupts moral judgement and leads inevitably to ruin. In Act 1, Macbeth himself identifies \"vaulting ambition, which o'erleaps itself / And falls on th' other\" - the metaphor of a horse jumping too high and falling presents ambition as inherently self-defeating. At this early stage, Macbeth still has the moral awareness to recognise the danger of his own ambition, even if he cannot resist it. By Act 3, however, this self-awareness has disappeared: his ambition has transformed into paranoid compulsion, driving him to murder Banquo despite the practical and moral costs. Shakespeare's message is not simply that ambition is wrong, but that unchecked ambition - ambition without moral restraint - is catastrophic both for the individual and the state.",
         marks: 6,
       },
       {
@@ -1273,13 +1282,13 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
         title: 'Image Patterns: Blood, Darkness, and Nature',
         duration: '22 minutes',
         instructions:
-          'Teacher explains that Shakespeare uses sustained image patterns (motifs) to create coherent dramatic meaning across the play. Students work in groups of three, each taking one image pattern: (A) Blood - from "brave Macbeth... unseamed him from the nave to the chops" to "Out, damned spot!"; (B) Darkness - from "Stars, hide your fires" to "Come, thick night, / And pall thee in the dunnest smoke of hell"; (C) Nature disrupted - from the unnatural darkness after Duncan\'s murder to the "tomorrow, and tomorrow" nihilism. Groups collect at least four quotations showing their motif developing across the play, note where each appears in the five-act structure, and prepare a 90-second explanation for the class. After sharing, class writes one paragraph tracing any one motif across the play, demonstrating structural awareness.',
+          'Teacher explains that Shakespeare uses sustained image patterns (motifs) to create coherent dramatic meaning across the play. Students work in groups of three, each taking one image pattern: (A) Blood - from "brave Macbeth... unseam\'d him from the nave to the chops" to "Out, damned spot!"; (B) Darkness - from "Stars, hide your fires" to "Come, thick night, / And pall thee in the dunnest smoke of hell"; (C) Nature disrupted - from the unnatural darkness after Duncan\'s murder to the "tomorrow, and tomorrow" nihilism. Groups collect at least four quotations showing their motif developing across the play, note where each appears in the five-act structure, and prepare a 90-second explanation for the class. After sharing, class writes one paragraph tracing any one motif across the play, demonstrating structural awareness.',
         differentiation: {
           support:
             'Provide six quotations per group (rather than asking students to find their own) and a structured explanation frame.',
           core: 'Students find their own quotations using the play text and write the group explanation.',
           stretch:
-            'Students identify a fourth image pattern not listed (e.g., clothing: "borrowed robes," "a giant\'s robe upon a dwarfish thief") and prepare an independent analysis of how it develops across the play.',
+            'Students identify a fourth image pattern not listed (e.g., clothing: "borrow\'d robes," "a giant\'s robe upon a dwarfish thief") and prepare an independent analysis of how it develops across the play.',
         },
         resources: [
           'Play text or extract pack',
@@ -1292,7 +1301,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
       title: 'Technique Showcase: Write the Best Sentence',
       duration: '7 minutes',
       instructions:
-        "Challenge: who can write the single most effective AO2 analytical sentence about Macbeth? The sentence must name a technique, include a quotation, analyse the effect, and link to dramatic purpose. Students have three minutes to write. Volunteers read their sentences; class identifies the strongest element of each. Teacher models the gold standard: \"Shakespeare's use of the blood motif - progressing from the heroic violence of Act 1 ('unseamed him from the nave to the chops') to Lady Macbeth's obsessive 'Out, damned spot!' in Act 5 - tracks the corruption of violence from glory to guilt, showing that acts of bloodshed cannot be contained within their immediate context.\" Students revise their sentences based on feedback.",
+        "Challenge: who can write the single most effective AO2 analytical sentence about Macbeth? The sentence must name a technique, include a quotation, analyse the effect, and link to dramatic purpose. Students have three minutes to write. Volunteers read their sentences; class identifies the strongest element of each. Teacher models the gold standard: \"Shakespeare's use of the blood motif - progressing from the heroic violence of Act 1 ('unseam'd him from the nave to the chops') to Lady Macbeth's obsessive 'Out, damned spot!' in Act 5 - tracks the corruption of violence from glory to guilt, showing that acts of bloodshed cannot be contained within their immediate context.\" Students revise their sentences based on feedback.",
       differentiation: {
         support:
           'Provide the sentence frame: "[Technique] - seen in [quotation] - creates [effect] because [explanation]."',
@@ -1409,7 +1418,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
         title: 'Timed Extract Analysis: Planning and Writing',
         duration: '22 minutes',
         instructions:
-          'Students receive an extract from Act 3 Scene 4 (the Banquet scene, from Macbeth\'s first sight of the ghost to his "I am in blood / Stepped in so far" speech) and the question: "Explore how Shakespeare presents Macbeth\'s guilt in the following extract and in the play as a whole." Students follow a structured process: (1) Read and annotate the extract - 3 minutes; (2) Plan: write a thesis and four paragraph headings - 3 minutes; (3) Write: an opening paragraph establishing the thesis and one full analytical paragraph on the extract - 12 minutes; (4) Self-assess against the success criteria - 4 minutes. Teacher circulates and gives verbal feedback on thesis quality and quotation embedding. After writing, two students share opening paragraphs; class identifies what makes a strong thesis.',
+          'Students receive an extract from Act 3 Scene 4 (the Banquet scene, from Macbeth\'s first sight of the ghost to his "I am in blood / Stepp\'d in so far" speech) and the question: "Explore how Shakespeare presents Macbeth\'s guilt in the following extract and in the play as a whole." Students follow a structured process: (1) Read and annotate the extract - 3 minutes; (2) Plan: write a thesis and four paragraph headings - 3 minutes; (3) Write: an opening paragraph establishing the thesis and one full analytical paragraph on the extract - 12 minutes; (4) Self-assess against the success criteria - 4 minutes. Teacher circulates and gives verbal feedback on thesis quality and quotation embedding. After writing, two students share opening paragraphs; class identifies what makes a strong thesis.',
         differentiation: {
           support:
             'Provide a planning frame: Thesis (complete this sentence: "Shakespeare presents guilt as...") / Paragraph 1 - Extract: / Paragraph 2 - Act 1 or 2: / Paragraph 3 - Act 5:',
@@ -1465,7 +1474,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
           'Read the following exam question: "Explore how Shakespeare presents the theme of ambition in Macbeth." Write a thesis-level opening paragraph (5-7 sentences) that establishes your argument without summarising the plot.',
         lines: 8,
         modelAnswer:
-          "Shakespeare presents ambition in Macbeth as a fundamentally self-destructive force that corrupts not only the individual but the political and natural order around them. From Macbeth's earliest self-diagnosis - \"Vaulting ambition, which o'erleaps itself / And falls on th' other side\" - Shakespeare establishes that ambition in the play is characterised by its excess and inevitable collapse. Lady Macbeth's ambition is presented differently: where Macbeth's is conflicted and morally aware, hers is initially cold and purposeful, making her both more effective and, ultimately, more vulnerable to the guilt she suppresses. Shakespeare uses the Jacobean context of the Divine Right of Kings to frame unchecked ambition as not merely personally destructive but as a cosmic transgression - a violation of divine and natural law that inevitably attracts retribution. The play's structure enacts this argument: Macbeth's ambition rises to its fullest expression in Act 3 before the remainder of the play charts his inevitable decline.",
+          "Shakespeare presents ambition in Macbeth as a fundamentally self-destructive force that corrupts not only the individual but the political and natural order around them. From Macbeth's earliest self-diagnosis - \"Vaulting ambition, which o'erleaps itself / And falls on th' other\" - Shakespeare establishes that ambition in the play is characterised by its excess and inevitable collapse. Lady Macbeth's ambition is presented differently: where Macbeth's is conflicted and morally aware, hers is initially cold and purposeful, making her both more effective and, ultimately, more vulnerable to the guilt she suppresses. Shakespeare uses the Jacobean context of the Divine Right of Kings to frame unchecked ambition as not merely personally destructive but as a cosmic transgression - a violation of divine and natural law that inevitably attracts retribution. The play's structure enacts this argument: Macbeth's ambition rises to its fullest expression in Act 3 before the remainder of the play charts his inevitable decline.",
         marks: 8,
       },
       {

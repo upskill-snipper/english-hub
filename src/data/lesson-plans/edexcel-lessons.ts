@@ -547,10 +547,14 @@ const lesson4: LessonPlan = {
     'workhouse',
   ],
   starterActivity: {
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are there
+    // no prisons?" and "And the Union workhouses?", with the gentleman's answer between. "Are
+    // there no workhouses?" is the Spirit's, turning his words on him in Stave Three.
     title: "Scrooge's Journey: Before and After",
     duration: '8 minutes',
     instructions:
-      "Display two quotations side by side - one from Stave 1 ('Are there no prisons? Are there no workhouses?') and one from Stave 5 ('I will honour Christmas in my heart'). Students write three observations about how Scrooge has changed, focusing on language, tone, and attitude. Discuss as a class, introducing the concept of transformation as Dickens's central structural device.",
+      "Display two quotations side by side - one from Stave 1 ('Are there no prisons? ... And the Union workhouses?') and one from Stave 5 ('I will honour Christmas in my heart'). Students write three observations about how Scrooge has changed, focusing on language, tone, and attitude. Discuss as a class, introducing the concept of transformation as Dickens's central structural device.",
     differentiation: {
       support:
         "Provide a comparison table with prompts: 'In Stave 1 Scrooge is... In Stave 5 Scrooge is...'",

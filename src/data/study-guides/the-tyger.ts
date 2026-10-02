@@ -26,18 +26,22 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * are never quoted whole, only in phrases that avoid the ampersands, because
  * the anthology's ampersands cannot match the held edition's "and".
  *
- * WHAT THE PAGE ABOVE GETS WRONG, and this file does not repeat. Against the
- * anthology's page 64 its poem viewer: prints line 1 as "Tyger Tyger," (the
- * anthology has a comma after the first Tyger), ends line 2 with a semicolon
- * (the anthology has a colon), drops the comma after "hand" in line 8, ends
+ * WHAT THE PAGE ABOVE GOT WRONG, and this file does not repeat. Against the
+ * anthology's page 64 its poem viewer: printed line 1 as "Tyger Tyger," (the
+ * anthology has a comma after the first Tyger), ended line 2 with a semicolon
+ * (the anthology has a colon), dropped the comma after "hand" in line 8, ended
  * line 16 with a question mark (the anthology has the poem's only exclamation
- * mark), and drops the comma after the first Tyger in line 21. Its form section
- * says every stanza except stanza 4 contains a question, when stanza 4 holds
- * three question marks in lines 13 to 15 and is only the one stanza that does
- * not END on one. Its context applies "dark satanic mills", a phrase from a
- * later Blake poem, to the England of 1794 as if it described factories Blake
- * hated, which is a disputed reading presented as fact. Its comparison links
- * all go to the anthology index, not to the poems.
+ * mark), and dropped the comma after the first Tyger in line 21. Its form
+ * section said every stanza except stanza 4 contains a question, when stanza 4
+ * holds three question marks in lines 13 to 15 and is only the one stanza that
+ * does not END on one. Its context applied "dark satanic mills", a phrase from
+ * a later Blake poem, to the England of 1794 as if it described factories
+ * Blake hated, which is a disputed reading presented as fact. Its comparison
+ * links all went to the anthology index, not to the poems. All of these were
+ * put right on the page later on 26 September 2026, after this file was
+ * written, and this paragraph went on describing them in the present tense
+ * until 2 October 2026. Since then the page's line 18 and its key quotation of
+ * lines 17 and 18 print watered, as Extract C here does.
  *
  * Fact-check, 26 September 2026: every quotation and passage re-read against
  * the anthology PDF (page 64, rendered as an image) and the held edition, the

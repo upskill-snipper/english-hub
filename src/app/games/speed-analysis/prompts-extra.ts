@@ -173,19 +173,21 @@ export const speedAnalysisPromptsExtra: SpeedAnalysisPromptExtra[] = [
   },
   {
     id: 'sa-extra-mac-10',
-    quote: 'Lay on, Macduff, and damned be him that first cries "Hold, enough!"',
+    // "damn'd", as the held edition (src/data/full-texts/macbeth.ts) prints it,
+    // here and in the notes below; "damned" until 2 October 2026.
+    quote: 'Lay on, Macduff, and damn\'d be him that first cries "Hold, enough!"',
     text: 'Macbeth',
     character: 'Macbeth',
     context: 'Act 5, Scene 8 - final duel with Macduff.',
     expectedFeatures: [
       'imperative challenging Macduff',
-      'embedded curse "damned be him"',
+      'embedded curse "damn\'d be him"',
       'restoration of warrior code',
       'iambic pentameter regained at death',
     ],
     expectedMethods: ['imperative', 'embedded direct speech', 'iambic pentameter'],
     modelAnswer:
-      'Macbeth dies as he began - a soldier - recovering the iambic pentameter that fragmented in earlier acts. The imperative "Lay on" reclaims agency from the prophecies that have manipulated him, while the embedded curse "damned be him" knowingly accepts damnation he has long earned. For a Jacobean audience, this is a paradoxical moment: tyrannical hubris meeting flickers of admirable martial code, complicating any neat moral. The pentameter\'s restoration suggests order returning even as Macbeth himself is extinguished.',
+      'Macbeth dies as he began - a soldier - recovering the iambic pentameter that fragmented in earlier acts. The imperative "Lay on" reclaims agency from the prophecies that have manipulated him, while the embedded curse "damn\'d be him" knowingly accepts damnation he has long earned. For a Jacobean audience, this is a paradoxical moment: tyrannical hubris meeting flickers of admirable martial code, complicating any neat moral. The pentameter\'s restoration suggests order returning even as Macbeth himself is extinguished.',
     time: 110,
   },
   {
@@ -516,6 +518,9 @@ export const speedAnalysisPromptsExtra: SpeedAnalysisPromptExtra[] = [
     time: 90,
   },
   {
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts): the model answer quoted "secret,
+    // self-contained, solitary" without the two "and"s that make the polysyndeton it describes.
     id: 'sa-extra-acc-08',
     quote: 'Secret, and self-contained, and solitary as an oyster.',
     text: 'A Christmas Carol',
@@ -529,7 +534,7 @@ export const speedAnalysisPromptsExtra: SpeedAnalysisPromptExtra[] = [
     ],
     expectedMethods: ['sibilance', 'tricolon', 'simile'],
     modelAnswer:
-      'The hissing sibilance - "secret, self-contained, solitary" - sonically encloses Scrooge in his own shell, the polysyndeton piling each adjective until isolation becomes oppressive. The oyster simile is brilliantly double-edged: it images closed defensiveness, but oysters also conceal pearls - a quiet hint that Scrooge contains hidden value redeemable by the Spirits. Dickens\'s narrator thus diagnoses the disease and prescribes the cure in a single line, training Victorian readers to see even a Scrooge as redeemable, not disposable.',
+      'The hissing sibilance - "secret, and self-contained, and solitary" - sonically encloses Scrooge in his own shell, the polysyndeton piling each adjective until isolation becomes oppressive. The oyster simile is brilliantly double-edged: it images closed defensiveness, but oysters also conceal pearls - a quiet hint that Scrooge contains hidden value redeemable by the Spirits. Dickens\'s narrator thus diagnoses the disease and prescribes the cure in a single line, training Victorian readers to see even a Scrooge as redeemable, not disposable.',
     time: 100,
   },
 
@@ -764,20 +769,27 @@ export const speedAnalysisPromptsExtra: SpeedAnalysisPromptExtra[] = [
     time: 100,
   },
   {
+    // 2 October 2026: this gave the opening line as "My Last Duchess painted on the
+    // wall.", with "That's" left out and "my last" capitalised like the title. The held
+    // edition (src/data/full-texts/my-last-duchess.ts) has "That's my last Duchess
+    // painted on the wall," and the quotation is now its words. The notes quoted "My" and
+    // "Last" in the title's capitals too, called "last" a past tense (it is an adjective,
+    // as the model answer says), and said other wives "have followed her", where the poem
+    // ends with the next marriage still being negotiated.
     id: 'sa-extra-pc-mp-01',
-    quote: 'My Last Duchess painted on the wall.',
+    quote: "That's my last Duchess painted on the wall",
     text: 'My Last Duchess - Browning',
     character: 'The Duke of Ferrara',
     context: 'Power & Conflict - opening line of the dramatic monologue.',
     expectedFeatures: [
-      'possessive "My"',
+      'possessive "my"',
       'dramatic monologue form',
       'objectification - Duchess as painting',
-      'casual past tense "Last"',
+      'casual adjective "last"',
     ],
     expectedMethods: ['possessive determiner', 'dramatic monologue', 'objectification'],
     modelAnswer:
-      'The possessive "My" announces ownership before the line even reaches the noun, instantly subordinating the Duchess. The chilling adjective "Last" implies a sequence - others have followed her - reducing wives to interchangeable items. The dramatic monologue form lets Browning expose the Duke\'s ego without authorial comment, allowing 1842 readers to convict him themselves. The painting reduces a once-living woman to a controllable image: she now smiles only when the Duke draws back the curtain. Browning critiques Renaissance - and Victorian - patriarchal possessiveness in a single line.',
+      'The possessive "my" announces ownership before the line even reaches the noun, instantly subordinating the Duchess. The chilling adjective "last" implies a sequence - another wife is to follow her - reducing wives to interchangeable items. The dramatic monologue form lets Browning expose the Duke\'s ego without authorial comment, allowing 1842 readers to convict him themselves. The painting reduces a once-living woman to a controllable image: she now smiles only when the Duke draws back the curtain. Browning critiques Renaissance - and Victorian - patriarchal possessiveness in a single line.',
     time: 100,
   },
   {

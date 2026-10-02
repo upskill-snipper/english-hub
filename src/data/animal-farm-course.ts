@@ -1,6 +1,39 @@
 // @ts-nocheck
 import type { CourseData } from './courses'
 
+/**
+ * QUOTATIONS CORRECTED 2 October 2026. No test read this course, and
+ * scripts/check-quotations.mjs found four of its quotations of Animal Farm
+ * wrong; reading the rest by hand found thirteen more. Five were in no held
+ * text at all: "Snowball had proved himself to be a brilliant tactician",
+ * "horses do not live long", "Boxer is dead", "it was no longer called
+ * Animal Farm, but Manor Farm" and "The animals had never heard of such
+ * things before", whose nearest words in the novel are about Snowball's
+ * machines in Chapter 5, not the executions it was said to describe. Each is
+ * replaced by a real line that makes the same point. Squealer's "You do not
+ * imagine, I hope, that we pigs are doing this in a spirit of selfishness and
+ * privilege?" had become "Surely you do not imagine, comrades, ... for our own
+ * benefit?"; "he could turn black into white" had become "black seem white"
+ * (three times); "directed and supervised" was reversed (twice); and the
+ * statistics were "production has increased by 200 percent". Lines from
+ * other chapters stood in a chapter bank with nothing to say so, and Clover's
+ * thoughts after the executions ("no one dared speak his mind") were called
+ * Orwell's own authorial intrusion. Each corrected quotation was cut by
+ * script from the held edition, Project Gutenberg Australia's transcription
+ * (src/data/full-texts/animal-farm.ts), not retyped.
+ *
+ * REVIEWED the same day, with the HTML tags stripped before the quotation
+ * marks were paired. The checker pairs the marks in a module's HTML as they
+ * stand, so a class="..." attribute can swallow one, and 14 of this file's
+ * quoted spans were never read as quotations. One of them was wrong: the
+ * Benjamin insight box had him say "things never have been, nor ever could
+ * be much better.", where Chapter 10 has "had been" and "much better or much
+ * worse", and it is the narrator's report of what he professes to know.
+ * Two claims about quotations were also wrong: "it is for your sake" was
+ * called a recurring phrase (Squealer says it once, in Chapter 3), and the
+ * Chapter 10 module had "the animals" chanting "Four legs good, two legs
+ * better!", which only the sheep bleat.
+ */
 export const animalFarmCourse: CourseData = {
   id: 'gcse-lit-animal-farm',
   title: 'Animal Farm - Complete GCSE Course',
@@ -234,7 +267,7 @@ export const animalFarmCourse: CourseData = {
 
 <h4>Early Warning Signs</h4>
 
-<p>Even in Chapter 2, Orwell plants subtle signs of the corruption to come. The pigs take the milk and apples for themselves - Squealer later justifies this by claiming pigs need them to think properly. The phrase <strong>"it is for your sake"</strong> becomes a recurring justification for privilege. This early incident establishes the pattern: the pigs will always find a way to rationalise their advantages as being in the interests of all animals.</p>
+<p>Even in Chapter 2, Orwell plants subtle signs of the corruption to come. The pigs take the milk and apples for themselves - Squealer later justifies this by claiming pigs need them to think properly. His phrase <strong>"it is for your sake"</strong> (Chapter 3) is the first of many justifications for privilege. This early incident establishes the pattern: the pigs will always find a way to rationalise their advantages as being in the interests of all animals.</p>
 
 <div class="examiner-tip"><strong>Top Tip:</strong> The milk and apples incident is a superb example to use in an exam. It shows how quickly revolutionary equality is undermined, and Squealer's justification demonstrates the role of propaganda in disguising exploitation. You can use this moment to discuss <em>multiple</em> themes - power, propaganda, class inequality - which shows the marker you can make connections across the text (a top-band skill).</div>
 
@@ -338,7 +371,7 @@ export const animalFarmCourse: CourseData = {
 <p>However, Orwell is careful to include details that undermine the utopian picture:</p>
 
 <ul>
-  <li><strong>The pigs do not work physically.</strong> They "supervised and directed" the others, claiming that their intellectual labour was more important. This is the first formal division of labour along class lines - the pigs become a managerial elite, while the other animals remain manual labourers.</li>
+  <li><strong>The pigs do not work physically.</strong> They "directed and supervised" the others, claiming that their intellectual labour was more important. This is the first formal division of labour along class lines - the pigs become a managerial elite, while the other animals remain manual labourers.</li>
   <li><strong>Boxer adopts two mottos:</strong> "I will work harder" and "Napoleon is always right." These reveal Boxer's blind loyalty and his willingness to solve every problem through sheer physical effort rather than critical thinking. Both mottos will ultimately contribute to his destruction.</li>
   <li><strong>The cat disappears during work</strong> and reappears at meal times - representing those who exploit the system without contributing.</li>
 </ul>
@@ -396,7 +429,7 @@ export const animalFarmCourse: CourseData = {
 <ul>
   <li><strong>"I will work harder"</strong> - Boxer's first motto; admirable on the surface but ultimately self-destructive. It shows how blind dedication without critical thinking serves the interests of those in power. Boxer solves every problem through labour rather than by questioning the system. <strong>Technique:</strong> Internal monologue. <strong>Effect:</strong> Reveals character psychology and foreshadows his exploitation. <strong>Grade 9 Interpretation:</strong> Orwell is warning that in totalitarian systems, virtues like loyalty and hard work can be weaponised against you.</li>
 
-  <li><strong>"Napoleon is always right"</strong> - Boxer's second motto; a chilling expression of absolute trust in a leader, mirroring the cult of personality around Stalin. <strong>Technique:</strong> Repetition (forms a mantra). <strong>Effect:</strong> Shows how ideology becomes reflex rather than thought. <strong>Grade 9 Interpretation:</strong> This represents the abdication of individual judgment. Citizens of Stalin's Soviet Union repeated similar mantras; critical thinking was replaced by obedience.</li>
+  <li><strong>"Napoleon is always right"</strong> - Boxer's second motto, which he adopts in Chapter 5; a chilling expression of absolute trust in a leader, mirroring the cult of personality around Stalin. <strong>Technique:</strong> Repetition (forms a mantra). <strong>Effect:</strong> Shows how ideology becomes reflex rather than thought. <strong>Grade 9 Interpretation:</strong> This represents the abdication of individual judgment. Citizens of Stalin's Soviet Union repeated similar mantras; critical thinking was replaced by obedience.</li>
 
   <li><strong>"Four legs good, two legs bad"</strong> - The sheep's simplified version of Animalism; reduces complex ideology to a meaningless slogan. <strong>Technique:</strong> Alliteration and binary thinking. <strong>Effect:</strong> Makes critical thought impossible. <strong>Grade 9 Interpretation:</strong> Orwell shows how slogans can replace thinking entirely. When the sheep later chant "Four legs good, two legs better," they adopt it instantly without understanding.</li>
 
@@ -404,11 +437,11 @@ export const animalFarmCourse: CourseData = {
 
   <li><strong>"I have no wish to take life"</strong> - Boxer after the Battle; establishes his moral decency. <strong>Technique:</strong> Direct speech revealing internal values. <strong>Effect:</strong> Creates tragic irony with his later fate. <strong>Grade 9 Interpretation:</strong> Boxer's kindness and morality won't protect him - in fact, they make him vulnerable to exploitation by those without scruples.</li>
 
-  <li><strong>"Snowball had proved himself to be a brilliant tactician"</strong> - Establishes Snowball's genuine heroism. <strong>Technique:</strong> Direct authorial judgment. <strong>Effect:</strong> Makes Napoleon's later lies obviously false to the reader (though not to the animals). <strong>Grade 9 Interpretation:</strong> Orwell is showing that truth is objectively knowable - but control of information can make falsehood seem true to those without access to evidence.</li>
+  <li><strong>"The animals decided unanimously to create a military decoration, 'Animal Hero, First Class,' which was conferred there and then on Snowball and Boxer"</strong> - Establishes Snowball's genuine heroism, honoured at the time. <strong>Technique:</strong> Plain narrative record of the animals' own verdict. <strong>Effect:</strong> Makes Napoleon's later lies obviously false to the reader (though not to the animals). <strong>Grade 9 Interpretation:</strong> Orwell is showing that truth is objectively knowable - but control of information can make falsehood seem true to those without access to evidence.</li>
 
-  <li><strong>"they had come to a time when no animal dared to speak his mind"</strong> - Appears later but is foreshadowed in Chapter 3. <strong>Technique:</strong> Direct narratorial statement. <strong>Effect:</strong> Explicitly names the atmosphere of fear. <strong>Grade 9 Interpretation:</strong> Totalitarianism is maintained through fear, not just violence. Even the threat of violence is enough to silence dissent.</li>
+  <li><strong>"they had come to a time when no one dared speak his mind"</strong> - Appears in Chapter 7, in Clover's thoughts after the executions, but is foreshadowed in Chapter 3. <strong>Technique:</strong> Reported thought: the narrator voices what Clover cannot say. <strong>Effect:</strong> Explicitly names the atmosphere of fear. <strong>Grade 9 Interpretation:</strong> Totalitarianism is maintained through fear, not just violence. Even the threat of violence is enough to silence dissent.</li>
 
-  <li><strong>"Pilkington of Foxwood and Frederick of Pinchfield, the owners of the two farms adjoining Animal Farm, were thoroughly frightened by the rebellion"</strong> - Introduces the external threat. <strong>Technique:</strong> Narrative exposition. <strong>Effect:</strong> Establishes the external enemy that will later be weaponised to maintain control. <strong>Grade 9 Interpretation:</strong> Totalitarian regimes need enemies. Real or invented, external threats justify militarisation, increased control, and the suppression of dissent as "necessary for survival."</li>
+  <li><strong>"they were both thoroughly frightened by the rebellion on Animal Farm, and very anxious to prevent their own animals from learning too much about it"</strong> - Pilkington of Foxwood and Frederick of Pinchfield, the neighbouring farmers, in Chapter 4; introduces the external threat. <strong>Technique:</strong> Narrative exposition. <strong>Effect:</strong> Establishes the external enemy that will later be weaponised to maintain control. <strong>Grade 9 Interpretation:</strong> Totalitarian regimes need enemies. Real or invented, external threats justify militarisation, increased control, and the suppression of dissent as "necessary for survival."</li>
 </ul>
 `,
       quiz: [
@@ -423,7 +456,7 @@ export const animalFarmCourse: CourseData = {
           ],
           correct: 1,
           explanation:
-            'The pigs do not perform physical labour. They "supervised and directed" the others, claiming their intellectual work was more important - establishing themselves as a managerial ruling class.',
+            'The pigs do not perform physical labour. They "directed and supervised" the others, claiming their intellectual work was more important - establishing themselves as a managerial ruling class.',
         },
         {
           id: 'af-m3-q2',
@@ -601,17 +634,17 @@ export const animalFarmCourse: CourseData = {
 
   <li><strong>"No animal shall sleep in a bed <em>with sheets</em>"</strong> - The first altered Commandment; demonstrates how the pigs manipulate the law to legitimise their privileges. <strong>Technique:</strong> Subtle textual alteration. <strong>Effect:</strong> Creates semantic wiggle room; the pigs sleep in beds without sheets. <strong>Grade 9 Interpretation:</strong> Totalitarian regimes use language to permit the impermissible. By adding a single word, an absolute law becomes a loophole. This is Orwell's warning about how language can be weaponised.</li>
 
-  <li><strong>"Snowball had been Jones's agent"</strong> - Squealer's rewriting of Snowball as a traitor; a complete inversion of reality. <strong>Technique:</strong> Historical revisionism (Big Lie technique). <strong>Effect:</strong> The animals cannot refute it because they cannot read and have no independent information. <strong>Grade 9 Interpretation:</strong> In a system where the regime controls all information, objective truth becomes impossible. Any lie, if repeated consistently, becomes accepted as fact.</li>
+  <li><strong>"Snowball was in league with Jones from the very start! He was Jones's secret agent all the time."</strong> - Squealer's rewriting of Snowball as a traitor; a complete inversion of reality. <strong>Technique:</strong> Historical revisionism (Big Lie technique). <strong>Effect:</strong> The animals cannot refute it because they cannot read and have no independent information. <strong>Grade 9 Interpretation:</strong> In a system where the regime controls all information, objective truth becomes impossible. Any lie, if repeated consistently, becomes accepted as fact.</li>
 
-  <li><strong>"they had come to a time when no one dared speak his mind"</strong> - Orwell's direct statement of the atmosphere of terror. <strong>Technique:</strong> Authorial intrusion; direct commentary. <strong>Effect:</strong> Names explicitly what the narrative has been showing implicitly. <strong>Grade 9 Interpretation:</strong> The revolution has produced the very oppression it sought to end - worse, because the oppressor claims to act in the animals' name.</li>
+  <li><strong>"they had come to a time when no one dared speak his mind"</strong> - Clover's thoughts after the executions, as the narrator imagines she would have spoken them: a plain statement of the atmosphere of terror. <strong>Technique:</strong> Reported thought; the narrator speaks for an animal who cannot. <strong>Effect:</strong> Names explicitly what the narrative has been showing implicitly. <strong>Grade 9 Interpretation:</strong> The revolution has produced the very oppression it sought to end - worse, because the oppressor claims to act in the animals' name.</li>
 
   <li><strong>"the dogs promptly tore their throats out"</strong> - The execution scene narration; devastatingly restrained language. <strong>Technique:</strong> Understatement and plain style. <strong>Effect:</strong> The violence is reported matter-of-factly, as routine. <strong>Grade 9 Interpretation:</strong> Orwell's prose mirrors totalitarian society's normalisation of brutality. Violence becomes ordinary. Executions are listed like weather reports. This narrative detachment is more horrifying than any graphic description could be.</li>
 
-  <li><strong>"horses do not live long"</strong> - Reference to Boxer's limited lifespan; foreshadows his later fate. <strong>Technique:</strong> Veiled reference / foreshadowing. <strong>Effect:</strong> Readers with knowledge of history understand what will happen to the most loyal worker. <strong>Grade 9 Interpretation:</strong> Totalitarian systems use up their workers. When they become unproductive, they are discarded. Loyalty is never rewarded; it is simply exploited until the worker is exhausted.</li>
+  <li><strong>"the very day that those great muscles of yours lose their power, Jones will sell you to the knacker"</strong> - Old Major's warning to Boxer in Chapter 1, which the pigs fulfil; foreshadows his later fate. <strong>Technique:</strong> Prophecy / foreshadowing. <strong>Effect:</strong> Readers remember it when Boxer's strength fails and the pigs do exactly what Jones would have done. <strong>Grade 9 Interpretation:</strong> Totalitarian systems use up their workers. When they become unproductive, they are discarded. Loyalty is never rewarded; it is simply exploited until the worker is exhausted.</li>
 
-  <li><strong>"The animals had never heard of such things before"</strong> - Reference to the public confessions and executions. <strong>Technique:</strong> Narrative distance. <strong>Effect:</strong> Emphasises the shock and disbelief of ordinary animals witnessing atrocity. <strong>Grade 9 Interpretation:</strong> Totalitarian violence works partly through surprise and bewilderment. Citizens cannot process what they are seeing because it violates every norm of civilisation they had known.</li>
+  <li><strong>"They did not know which was more shocking - the treachery of the animals who had leagued themselves with Snowball, or the cruel retribution they had just witnessed"</strong> - The animals after the public confessions and executions. <strong>Technique:</strong> Collective point of view; the narrator reports what the animals feel as one. <strong>Effect:</strong> Emphasises the shock and disbelief of ordinary animals witnessing atrocity. <strong>Grade 9 Interpretation:</strong> Totalitarian violence works partly through surprise and bewilderment. Citizens cannot process what they are seeing because it violates every norm of civilisation they had known.</li>
 
-  <li><strong>"Surely you do not imagine, comrades, that we pigs are doing this for our own benefit?"</strong> - Squealer's justification for pig privileges. <strong>Technique:</strong> Rhetorical question (implies obvious answer: no). <strong>Effect:</strong> Makes the lies seem self-evident. <strong>Grade 9 Interpretation:</strong> The regime claims to act selflessly, in service of the state/revolution. This covers naked self-interest in a cloak of idealism. It's a technique that has fooled billions across multiple totalitarian regimes.</li>
+  <li><strong>"You do not imagine, I hope, that we pigs are doing this in a spirit of selfishness and privilege?"</strong> - Squealer's justification for pig privileges, in Chapter 3. <strong>Technique:</strong> Rhetorical question (implies obvious answer: no). <strong>Effect:</strong> Makes the lies seem self-evident. <strong>Grade 9 Interpretation:</strong> The regime claims to act selflessly, in service of the state/revolution. This covers naked self-interest in a cloak of idealism. It's a technique that has fooled billions across multiple totalitarian regimes.</li>
 </ul>
 `,
       quiz: [
@@ -726,7 +759,7 @@ export const animalFarmCourse: CourseData = {
 
 <p>Years pass. Most of the animals who remember the Rebellion are dead. Memory itself - the potential basis for resistance - has been systematically erased by time and by the regime's control of history. The farm is more prosperous - but only for the pigs. The other animals work as hard as ever, their rations are no better than under Jones, and the promises of leisure, education and comfort have come to nothing. The animals have no language to describe their betrayal because the regime has corrupted language itself.</p>
 
-<p>Then, in the novella's climactic scene, <strong>the pigs begin walking on their hind legs</strong>. The sheep - retrained by Squealer - bleat a new slogan: <strong>"Four legs good, two legs better!"</strong> The animals who once built a revolution based on "four legs good, two legs bad" now chant the opposite, and they chant it willingly, having been psychologically reprogrammed. The Seven Commandments have been erased and replaced with a single statement:</p>
+<p>Then, in the novella's climactic scene, <strong>the pigs begin walking on their hind legs</strong>. The sheep - retrained by Squealer - bleat a new slogan: <strong>"Four legs good, two legs better!"</strong> Once they bleated "four legs good, two legs bad" for hours on end; now they bleat the opposite, and by the time they fall quiet "the chance to utter any protest had passed". The Seven Commandments have been erased and replaced with a single statement:</p>
 
 <p><strong>"All animals are equal, but some animals are more equal than others."</strong></p>
 
@@ -761,9 +794,9 @@ export const animalFarmCourse: CourseData = {
 
   <li><strong>"the animals worked like slaves"</strong> - Description of labour under the pigs. <strong>Technique:</strong> Stark comparison / simile. <strong>Effect:</strong> Invokes the very thing the revolution was supposed to end. <strong>Grade 9 Interpretation:</strong> Despite the revolution's rhetoric of liberation, the animals are in chains. The pigs have merely replaced the humans. Structural oppression continues unchanged.</li>
 
-  <li><strong>"Boxer is dead"</strong> (announced by Squealer). <strong>Technique:</strong> Flat, factual delivery with false context. <strong>Effect:</strong> The regime controls even the narrative of death. <strong>Grade 9 Interpretation:</strong> Totalitarian regimes don't just kill - they rewrite the meaning of death. Boxer's death is presented as peaceful, honourable, while actually being murder for profit.</li>
+  <li><strong>"it was announced that he had died in the hospital at Willingdon, in spite of receiving every attention a horse could have"</strong> (Squealer then brings the news to the others). <strong>Technique:</strong> Flat, factual delivery with false context. <strong>Effect:</strong> The regime controls even the narrative of death. <strong>Grade 9 Interpretation:</strong> Totalitarian regimes don't just kill - they rewrite the meaning of death. Boxer's death is presented as peaceful, honourable, while actually being murder for profit.</li>
 
-  <li><strong>"it was no longer called Animal Farm, but Manor Farm"</strong> - The symbolic reversal. <strong>Technique:</strong> Name change as ideology reversal. <strong>Effect:</strong> Erases the revolution entirely, replacing it with the name of the old regime. <strong>Grade 9 Interpretation:</strong> Names matter. By reverting to "Manor Farm," the pigs are saying: the revolution never happened. We are the new lords; you are the new peasants. The system continues.</li>
+  <li><strong>"Henceforward the farm was to be known as 'The Manor Farm'"</strong> - Napoleon's announcement to the farmers; the symbolic reversal. <strong>Technique:</strong> Name change as ideology reversal. <strong>Effect:</strong> Erases the revolution entirely, replacing it with the name of the old regime. <strong>Grade 9 Interpretation:</strong> Names matter. By reverting to "Manor Farm," the pigs are saying: the revolution never happened. We are the new lords; you are the new peasants. The system continues.</li>
 </ul>
 `,
       quiz: [
@@ -876,7 +909,7 @@ export const animalFarmCourse: CourseData = {
 
 <p><strong>Allegorical role:</strong> Soviet propaganda / <em>Pravda</em> (the state newspaper)</p>
 
-<p>Squealer is "a small fat pig" with "very round cheeks" and "twinkling eyes." He has an extraordinary ability to make <strong>"black seem white"</strong> - Orwell's direct description of his talent for propaganda. Squealer's methods include: emotional manipulation (threatening Jones's return), distortion of statistics ("production has increased by 200 percent"), historical revisionism (Snowball was always a traitor), and outright lies (Boxer died peacefully in hospital).</p>
+<p>Squealer is "a small fat pig" with "very round cheeks" and "twinkling eyes." His talent for propaganda is summed up in one sentence: <strong>"The others said of Squealer that he could turn black into white"</strong>. Squealer's methods include: emotional manipulation (threatening Jones's return), distortion of statistics ("the production of every class of foodstuff had increased by two hundred per cent"), historical revisionism (Snowball was always a traitor), and outright lies (Boxer died peacefully in hospital).</p>
 
 <p>Squealer represents the <strong>propaganda apparatus</strong> of the Soviet state - newspapers like <em>Pravda</em>, state radio, and the entire machinery of information control. Without Squealer, Napoleon's regime could not function. Violence alone is not enough to maintain power; the regime also needs to control what the animals <em>believe</em>.</p>
 
@@ -1092,7 +1125,7 @@ export const animalFarmCourse: CourseData = {
 <p>Key examples of language as control include:</p>
 
 <ul>
-  <li><strong>Squealer's speeches:</strong> He redefines words ("readjustment" instead of "reduction"), uses rhetorical questions, threatens Jones's return, and cites invented statistics. His ability to make "black seem white" is the regime's most essential tool.</li>
+  <li><strong>Squealer's speeches:</strong> He redefines words ("readjustment" instead of "reduction"), uses rhetorical questions, threatens Jones's return, and cites invented statistics. His ability to "turn black into white" is the regime's most essential tool.</li>
   <li><strong>The alteration of the Commandments:</strong> By adding qualifiers ("with sheets," "to excess," "without cause"), the pigs change the law without appearing to break it. Language becomes a tool for <em>retroactive legalisation</em> of the pigs' actions.</li>
   <li><strong>The sheep's slogan:</strong> "Four legs good, two legs bad" reduces complex ideology to a binary chant. It is not a thought - it is a <em>reflex</em>. When it changes to "Four legs good, two legs better," the sheep adopt it instantly, demonstrating that slogans bypass critical thinking entirely.</li>
   <li><strong>The banning of "Beasts of England":</strong> By suppressing the revolutionary anthem, Napoleon eliminates the language of dissent. The replacement song - praising Napoleon - substitutes aspiration with submission.</li>
@@ -1136,7 +1169,7 @@ export const animalFarmCourse: CourseData = {
 </div>
 
 <div class="insight-box">
-<strong>Why Benjamin's Passivity is Tragic:</strong> Benjamin can read. Benjamin knows the truth. But Benjamin refuses to act. Orwell presents this as a moral failure because it demonstrates how totalitarian systems neutralise potential opposition through cynicism. If Benjamin had mobilised the literate animals, they could have exposed every lie, every altered Commandment, every manipulation. Instead, he says "things never have been, nor ever could be much better." His pessimism becomes self-fulfilling. Orwell is warning that cynicism about politics is a form of collaboration with tyranny.
+<strong>Why Benjamin's Passivity is Tragic:</strong> Benjamin can read. Benjamin knows the truth. But Benjamin refuses to act. Orwell presents this as a moral failure because it demonstrates how totalitarian systems neutralise potential opposition through cynicism. If Benjamin had mobilised the literate animals, they could have exposed every lie, every altered Commandment, every manipulation. Instead, he professes to know "that things never had been, nor ever could be much better or much worse". His pessimism becomes self-fulfilling. Orwell is warning that cynicism about politics is a form of collaboration with tyranny.
 </div>
 
 <div class="insight-box">
@@ -1232,7 +1265,7 @@ export const animalFarmCourse: CourseData = {
   <li><strong>Old Major → Karl Marx / Vladimir Lenin:</strong> The intellectual father of the revolution. Provides the theoretical framework (Marxism) and the revolutionary inspiration (Lenin). Dies before the revolution is corrupted, so his ideals remain untested.</li>
   <li><strong>Napoleon → Joseph Stalin:</strong> The ruthless leader who seizes power through force and manipulation. Uses secret police (dogs), propaganda (Squealer), purges (executions), and a cult of personality to maintain absolute control.</li>
   <li><strong>Snowball → Leon Trotsky:</strong> The brilliant, idealistic rival who is expelled and then recast as a traitor. Trotsky was exiled from the Soviet Union in 1929 and assassinated by Stalin's agent in Mexico in 1940.</li>
-  <li><strong>Squealer → Propaganda / <em>Pravda</em>:</strong> The voice of the regime. Represents Soviet propaganda - state-controlled media that distorted facts, rewrote history, and made "black seem white."</li>
+  <li><strong>Squealer → Propaganda / <em>Pravda</em>:</strong> The voice of the regime. Represents Soviet propaganda - state-controlled media that distorted facts, rewrote history, and could "turn black into white."</li>
   <li><strong>Boxer → The loyal working class:</strong> Represents the millions of Soviet workers who gave everything to the state and were discarded when no longer useful. His motto "I will work harder" mirrors the Stakhanovite movement - Soviet propaganda celebrating heroic workers.</li>
   <li><strong>Benjamin → Cynical intellectuals:</strong> Those who see through the regime's lies but refuse to act. Their silence enables tyranny.</li>
   <li><strong>Mollie → The Russian bourgeoisie:</strong> Those who fled the revolution, preferring comfort under the old system (or in the West) to revolutionary sacrifice.</li>

@@ -1258,7 +1258,7 @@ export const quoteBanks: QuoteBank[] = [
         technique: 'Chiasmus / paradox',
       },
       {
-        quote: 'Look like the innocent flower, but be the serpent under it',
+        quote: "Look like the innocent flower, but be the serpent under't",
         speaker: 'Lady Macbeth',
         context: 'Advising Macbeth to hide his intentions',
         technique: 'Simile / biblical allusion',
@@ -1334,7 +1334,7 @@ export const quoteBanks: QuoteBank[] = [
       },
       {
         quote:
-          "Here's the smell of blood still. All the perfumes of Arabia will not sweeten this little hand",
+          "Here's the smell of the blood still: all the perfumes of Arabia will not sweeten this little hand",
         speaker: 'Lady Macbeth',
         context: 'Sleepwalking - guilt has overwhelmed her',
         technique: 'Hyperbole / contrast (perfume vs blood) / olfactory imagery',
@@ -1359,7 +1359,12 @@ export const quoteBanks: QuoteBank[] = [
         technique: 'Metaphor / symbolism',
       },
       {
-        quote: 'Are there no prisons? Are there no workhouses?',
+        // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+        // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are
+        // there no prisons?" and "And the Union workhouses?", with the gentleman's answer
+        // between. "Are there no workhouses?" is the Spirit's, turning his words on him in
+        // Stave Three.
+        quote: 'Are there no prisons? ... And the Union workhouses?',
         speaker: 'Scrooge',
         context: 'Refusing to donate to charity',
         technique: "Rhetorical questions / Dickens' social critique",

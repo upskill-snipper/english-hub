@@ -733,7 +733,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Square brackets show editorial additions, e.g. "[Macbeth] is too full o\' the milk of human kindness" - clarifying who is being referred to.',
+      'Square brackets show editorial additions, e.g. "[Macbeth] is too full o\' th\' milk of human kindness" - clarifying who is being referred to.',
   },
   {
     id: 'technique-extra-064',
@@ -797,9 +797,12 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question:
       'When you alter the tense of a verb inside a quotation to fit your sentence, you should:',
+    // Until 2 October 2026 the example gave Macbeth the words "cannot but
+    // remember", which are Macduff's, about his murdered family (Act 4 Scene 3
+    // of src/data/full-texts/macbeth.ts), and had him remembering Duncan.
     options: [
       'Just change it silently',
-      'Place the changed letters in square brackets, e.g. "Macbeth \'cannot but remember\' [remembers] Duncan"',
+      'Place the changed words in square brackets, e.g. Macbeth admits he "[had] no spur / To prick the sides of [his] intent"',
       'Add an asterisk',
       'Use bold',
     ],

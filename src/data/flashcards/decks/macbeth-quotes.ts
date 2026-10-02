@@ -25,7 +25,7 @@ const deck: FlashcardDeck = {
     },
     {
       id: 'mq-3',
-      front: '"Look like th\'innocent flower, but be the serpent under\'t"',
+      front: '"Look like the innocent flower, but be the serpent under\'t"',
       back: `Speaker: Lady Macbeth to Macbeth (Act 1, Scene 5)\n\nMeaning: She instructs him to appear innocent while concealing murderous intent.\n\nTechniques: Simile, juxtaposition (flower vs serpent), biblical allusion (serpent = Satan in Eden).\n\nThemes: Appearance vs reality, deception, gender roles.\n\nExam point: Lady Macbeth takes the role of tempter, echoing the serpent of Genesis; Shakespeare positions her as the driving force behind Duncan\'s murder, subverting Jacobean expectations of feminine passivity.`,
     },
     {
@@ -130,7 +130,7 @@ const deck: FlashcardDeck = {
     },
     {
       id: 'mq-24',
-      front: '"Nought\'s had, all\'s spent, where our desire is got without content"',
+      front: '"Naught\'s had, all\'s spent, where our desire is got without content"',
       back: `Speaker: Lady Macbeth (Act 3, Scene 2)\n\nMeaning: They have gained everything they wanted but find no happiness - it was all for nothing.\n\nTechniques: Antithesis ("had" / "spent"), rhyming couplet, paradox.\n\nThemes: Ambition, dissatisfaction, consequences.\n\nExam point: Lady Macbeth articulates the play\'s central moral - ambition achieved through evil brings no fulfilment. Shakespeare uses her private admission to contrast with her public confidence, showing the cracks forming early.`,
     },
     {

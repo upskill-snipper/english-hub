@@ -1,4 +1,21 @@
 // @ts-nocheck
+
+/**
+ * QUOTATIONS CORRECTED (2 October 2026) against the edition the site holds,
+ * Project Gutenberg #46 (src/data/full-texts/a-christmas-carol.ts), as read by
+ * scripts/check-quotations.mjs; fifteen here were not Dickens's words as
+ * printed. The Ghost of Christmas Present's "Are there no prisons? ... Are
+ * there no workhouses?" had lost the ellipsis where its speech tag was, and
+ * Scrooge's Stave One questions had lost the gentleman's answer between them.
+ * The Ghost sees "a vacant seat", not a chair. Marley's chain is made "(for
+ * Scrooge observed it closely) of cash-boxes", and the extract now keeps the
+ * parenthesis it had silently dropped. The edition prints "grind-stone" and
+ * "schoolboy". The Stave Five similes run on to a fourth, "as giddy as a
+ * drunken man", so they are no longer called a triple. Scrooge is "a second
+ * father" to Tiny Tim, but the edition never says "a second father to Tiny
+ * Tim": the quotation now holds only its own words.
+ */
+
 export interface LessonActivity {
   title: string
   duration: string
@@ -195,7 +212,7 @@ export const christmasCarolLessons: LessonPlan[] = [
       },
       {
         question:
-          "Read the following quotation: 'Are there no prisons? And the Union workhouses - are they still in operation?' What does this reveal about Scrooge's attitude to the poor?",
+          "Read the following quotation: 'Are there no prisons? ... And the Union workhouses? ... Are they still in operation?' What does this reveal about Scrooge's attitude to the poor?",
         lines: 6,
         modelAnswer:
           'This quotation reveals that Scrooge believes the existing institutions - prisons and workhouses - are sufficient provision for the poor. His rhetorical questions suggest he sees no need for personal charity or compassion. The dismissive tone shows he views poverty as something to be managed institutionally rather than as a moral responsibility. Dickens uses Scrooge as a vehicle to criticise wealthy Victorians who used the existence of the Poor Law to justify their own lack of generosity.',
@@ -270,7 +287,7 @@ export const christmasCarolLessons: LessonPlan[] = [
         title: "Close Reading - Scrooge's Description (Stave 1 Opening)",
         duration: '22 minutes',
         instructions:
-          "Distribute the extract from 'Oh! But he was a tight-fisted hand at the grindstone, Scrooge!' to 'No wind that blew was bitterer than he.' Read aloud as a class. Teacher models annotation of the first two sentences, identifying: listing of adjectives ('squeezing, wrenching, grasping, scraping, clutching'), the semantic field of cold ('froze his old features, stiffened his gait'), similes ('solitary as an oyster'), and pathetic fallacy ('The cold within him froze his old features'). Students then annotate the remainder independently. In pairs, students write a PEE paragraph: 'How does Dickens present Scrooge at the beginning of the novella?'",
+          "Distribute the extract from 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!' to 'No wind that blew was bitterer than he.' Read aloud as a class. Teacher models annotation of the first two sentences, identifying: listing of adjectives ('squeezing, wrenching, grasping, scraping, clutching'), the semantic field of cold ('froze his old features... stiffened his gait'), similes ('solitary as an oyster'), and pathetic fallacy ('The cold within him froze his old features'). Students then annotate the remainder independently. In pairs, students write a PEE paragraph: 'How does Dickens present Scrooge at the beginning of the novella?'",
         differentiation: {
           support:
             "Provide a pre-annotated version with two techniques identified. PEE frame with sentence starters: 'Dickens presents Scrooge as... This is shown when he writes... This suggests...'",
@@ -364,7 +381,7 @@ export const christmasCarolLessons: LessonPlan[] = [
           "How does Scrooge's response to the charity collectors reveal his attitude? Use a quotation in your answer.",
         lines: 6,
         modelAnswer:
-          "When asked to donate to the poor, Scrooge responds: 'Are there no prisons? And the Union workhouses?' His rhetorical questions show he believes existing institutions are sufficient, refusing any personal responsibility. When told some would 'rather die' than enter a workhouse, he replies they 'had better do it, and decrease the surplus population.' This echoes Malthusian economics and reveals a complete absence of empathy. Dickens uses Scrooge to satirise wealthy Victorians who used institutional charity as an excuse for personal callousness.",
+          "When asked to donate to the poor, Scrooge responds: 'Are there no prisons? ... And the Union workhouses?' His rhetorical questions show he believes existing institutions are sufficient, refusing any personal responsibility. When told some would 'rather die' than enter a workhouse, he replies they 'had better do it, and decrease the surplus population.' This echoes Malthusian economics and reveals a complete absence of empathy. Dickens uses Scrooge to satirise wealthy Victorians who used institutional charity as an excuse for personal callousness.",
         marks: 4,
       },
       {
@@ -639,7 +656,7 @@ export const christmasCarolLessons: LessonPlan[] = [
         title: 'The Cratchit Family - Dignity in Poverty',
         duration: '22 minutes',
         instructions:
-          "Read the Cratchit Christmas dinner scene. Students create a table: 'Evidence of poverty' vs 'Evidence of love and happiness'. Key details: the small goose, the pudding, the worn clothes, the family's gratitude and togetherness. Focus on Tiny Tim: read 'God bless us, every one!' and the Ghost's prophecy ('I see a vacant chair... and a crutch without an owner'). Discuss: Why does Dickens make the Cratchits happy despite their poverty? How does he use Tiny Tim to create pathos? Students write a PEEL paragraph: 'How does Dickens present the Cratchit family to challenge Victorian attitudes to the poor?'",
+          "Read the Cratchit Christmas dinner scene. Students create a table: 'Evidence of poverty' vs 'Evidence of love and happiness'. Key details: the small goose, the pudding, the worn clothes, the family's gratitude and togetherness. Focus on Tiny Tim: read 'God bless us, every one!' and the Ghost's prophecy ('I see a vacant seat... and a crutch without an owner'). Discuss: Why does Dickens make the Cratchits happy despite their poverty? How does he use Tiny Tim to create pathos? Students write a PEEL paragraph: 'How does Dickens present the Cratchit family to challenge Victorian attitudes to the poor?'",
         differentiation: {
           support:
             'Provide a partially completed table and a PEEL frame. Key quotations pre-selected.',
@@ -685,7 +702,7 @@ export const christmasCarolLessons: LessonPlan[] = [
       },
     },
     homework:
-      "Learn the quotation 'I see a vacant chair... and a crutch without an owner, carefully preserved.' Write a paragraph explaining the effect of this on the reader and on Scrooge, linking to Dickens' purpose.",
+      "Learn the quotation 'I see a vacant seat... and a crutch without an owner, carefully preserved.' Write a paragraph explaining the effect of this on the reader and on Scrooge, linking to Dickens' purpose.",
     worksheetQuestions: [
       {
         question: 'Describe the Ghost of Christmas Present. What does its appearance symbolise?',
@@ -714,7 +731,7 @@ export const christmasCarolLessons: LessonPlan[] = [
           'What do the allegorical figures of Ignorance and Want represent? Why are they significant?',
         lines: 6,
         modelAnswer:
-          "Ignorance and Want are two wretched children hidden beneath the Ghost's robe. They represent the twin consequences of society's neglect of the poor: a lack of education (Ignorance) and a lack of basic necessities (Want). The Ghost warns Scrooge to 'beware this boy, for on his brow I see that written which is Doom' - Dickens argues that if society ignores these problems, it will face catastrophic consequences, possibly revolution or moral collapse. When Scrooge asks 'Have they no refuge?', the Ghost throws his own words back: 'Are there no prisons? Are there no workhouses?' This is Dickens' most direct and devastating critique of Victorian indifference.",
+          "Ignorance and Want are two wretched children hidden beneath the Ghost's robe. They represent the twin consequences of society's neglect of the poor: a lack of education (Ignorance) and a lack of basic necessities (Want). The Ghost warns Scrooge to 'beware this boy, for on his brow I see that written which is Doom' - Dickens argues that if society ignores these problems, it will face catastrophic consequences, possibly revolution or moral collapse. When Scrooge asks 'Have they no refuge?', the Ghost throws his own words back: 'Are there no prisons? ... Are there no workhouses?' This is Dickens' most direct and devastating critique of Victorian indifference.",
         marks: 6,
       },
       {
@@ -722,7 +739,7 @@ export const christmasCarolLessons: LessonPlan[] = [
           "Why does the Ghost of Christmas Present quote Scrooge's own words back to him? What effect does this create?",
         lines: 5,
         modelAnswer:
-          "The Ghost quotes 'Are there no prisons? Are there no workhouses?' back at Scrooge to force him to confront the cruelty of his own attitudes. Hearing his own words used against him creates a powerful moment of shame and self-recognition. It also creates dramatic irony for the reader, who remembers Scrooge's callousness in Stave 1. Dickens uses this technique to show that words have consequences and that indifference to suffering is a form of active cruelty.",
+          "The Ghost quotes 'Are there no prisons? ... Are there no workhouses?' back at Scrooge to force him to confront the cruelty of his own attitudes. Hearing his own words used against him creates a powerful moment of shame and self-recognition. It also creates dramatic irony for the reader, who remembers Scrooge's callousness in Stave 1. Dickens uses this technique to show that words have consequences and that indifference to suffering is a form of active cruelty.",
         marks: 4,
       },
       {
@@ -979,7 +996,7 @@ export const christmasCarolLessons: LessonPlan[] = [
         title: 'Scrooge Awakes - Language of Rebirth',
         duration: '15 minutes',
         instructions:
-          "Read the opening of Stave 5: Scrooge wakes and discovers he is alive. Annotate the extract focusing on: the exclamatory sentences ('I don't know what to do! I am as light as a feather, I am as happy as an angel, I am as merry as a school-boy!'), the similes that reverse his Stave 1 characterisation, the childlike energy and laughter, and the repeated exclamation marks. Compare directly to Stave 1 language: cold imagery vs warmth, isolation vs connection, silence vs laughter. Students write a comparative analysis: 'How does Dickens use language to show Scrooge's transformation between Stave 1 and Stave 5?'",
+          "Read the opening of Stave 5: Scrooge wakes and discovers he is alive. Annotate the extract focusing on: the exclamatory sentences ('I don't know what to do! ... I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy.'), the similes that reverse his Stave 1 characterisation, the childlike energy and laughter, and the repeated exclamation marks. Compare directly to Stave 1 language: cold imagery vs warmth, isolation vs connection, silence vs laughter. Students write a comparative analysis: 'How does Dickens use language to show Scrooge's transformation between Stave 1 and Stave 5?'",
         differentiation: {
           support:
             'Provide a side-by-side table with Stave 1 and Stave 5 quotations. Sentence starters for comparison.',
@@ -1046,7 +1063,7 @@ export const christmasCarolLessons: LessonPlan[] = [
           "How does Dickens use language to show Scrooge's transformation at the start of Stave 5? Use quotations.",
         lines: 6,
         modelAnswer:
-          "Dickens uses exclamatory sentences and joyful similes to present Scrooge's transformation: 'I am as light as a feather, I am as happy as an angel, I am as merry as a school-boy!' The listing creates a breathless, childlike energy that contrasts sharply with the cold, measured language of Stave 1. The similes - feather, angel, schoolboy - associate Scrooge with innocence, lightness, and spiritual goodness, reversing the earlier imagery of ice and hardness. The repetition of 'I am' emphasises Scrooge's new identity and his joy at simply being alive.",
+          "Dickens uses exclamatory sentences and joyful similes to present Scrooge's transformation: 'I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy.' The listing creates a breathless, childlike energy that contrasts sharply with the cold, measured language of Stave 1. The similes - feather, angel, schoolboy - associate Scrooge with innocence, lightness, and spiritual goodness, reversing the earlier imagery of ice and hardness. The repetition of 'I am' emphasises Scrooge's new identity and his joy at simply being alive.",
         marks: 4,
       },
       {
@@ -1247,7 +1264,7 @@ export const christmasCarolLessons: LessonPlan[] = [
         question: 'How does Dickens use the theme of family in the novella?',
         lines: 5,
         modelAnswer:
-          "Family represents warmth, love, and moral goodness in the novella. The Cratchits, despite their poverty, are a loving and united family. Fred's Christmas dinner is full of laughter and connection. By contrast, Scrooge has rejected family: he refuses Fred's invitation and has no close relationships. Dickens uses family as the antidote to greed and isolation - Scrooge's redemption is marked by his return to family life, attending Fred's dinner and becoming 'a second father to Tiny Tim'. Family, for Dickens, is the foundation of a moral society.",
+          "Family represents warmth, love, and moral goodness in the novella. The Cratchits, despite their poverty, are a loving and united family. Fred's Christmas dinner is full of laughter and connection. By contrast, Scrooge has rejected family: he refuses Fred's invitation and has no close relationships. Dickens uses family as the antidote to greed and isolation - Scrooge's redemption is marked by his return to family life, attending Fred's dinner and becoming, to Tiny Tim, 'a second father'. Family, for Dickens, is the foundation of a moral society.",
         marks: 4,
       },
       {
@@ -1333,7 +1350,7 @@ export const christmasCarolLessons: LessonPlan[] = [
         title: "Marley's Ghost - The Chain of Consequence",
         duration: '15 minutes',
         instructions:
-          "Read the passage describing Marley's appearance: 'The chain he drew was clasped about his middle. It was long, and wound about him like a tail; and it was made of cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel.' Annotate: What do the objects on the chain symbolise? Why is the chain a powerful metaphor for the consequences of greed? Discuss Marley's warning: 'I wear the chain I forged in life.' What does 'forged' suggest? Students write a PEE paragraph: 'How does Dickens use Marley's Ghost to introduce the theme of moral consequence?'",
+          "Read the passage describing Marley's appearance: 'The chain he drew was clasped about his middle. It was long, and wound about him like a tail; and it was made (for Scrooge observed it closely) of cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel.' Annotate: What do the objects on the chain symbolise? Why is the chain a powerful metaphor for the consequences of greed? Discuss Marley's warning: 'I wear the chain I forged in life.' What does 'forged' suggest? Students write a PEE paragraph: 'How does Dickens use Marley's Ghost to introduce the theme of moral consequence?'",
         differentiation: {
           support:
             'Provide a symbols key matching chain objects to their meanings. PEE frame provided.',
@@ -1544,7 +1561,7 @@ export const christmasCarolLessons: LessonPlan[] = [
         title: 'Narrative Voice - Who Is Telling This Story?',
         duration: '10 minutes',
         instructions:
-          "Introduce the concept of Dickens' narrative voice: an omniscient, conversational narrator who speaks directly to the reader. Read examples: 'Oh! But he was a tight-fisted hand at the grindstone, Scrooge!' (direct address and exclamation), 'Marley was dead: to begin with. There is no doubt whatever about that.' (assertive, conversational). Discuss: How does this voice guide the reader's response? The narrator tells us what to think about Scrooge - is this effective or manipulative? Students write 3-4 sentences analysing one example of narrative voice and its effect.",
+          "Introduce the concept of Dickens' narrative voice: an omniscient, conversational narrator who speaks directly to the reader. Read examples: 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!' (direct address and exclamation), 'Marley was dead: to begin with. There is no doubt whatever about that.' (assertive, conversational). Discuss: How does this voice guide the reader's response? The narrator tells us what to think about Scrooge - is this effective or manipulative? Students write 3-4 sentences analysing one example of narrative voice and its effect.",
         differentiation: {
           support:
             'Provide two examples with the voice features identified. Students explain the effect.',
@@ -1607,7 +1624,7 @@ export const christmasCarolLessons: LessonPlan[] = [
           "Analyse Dickens' narrative voice. How does the narrator guide the reader's response to Scrooge?",
         lines: 6,
         modelAnswer:
-          "Dickens uses an omniscient, conversational narrator who speaks directly to the reader. The opening - 'Marley was dead: to begin with' - is assertive and chatty, establishing an intimate relationship with the audience. The narrator is openly judgemental: 'Oh! But he was a tight-fisted hand at the grindstone, Scrooge!' The exclamation and direct address tell the reader exactly how to feel. This narrative voice means Dickens can control the reader's sympathy, guiding them to dislike Scrooge in Stave 1 and celebrate his transformation in Stave 5. The narrator acts as a moral commentator, ensuring Dickens' social message is unmistakable.",
+          "Dickens uses an omniscient, conversational narrator who speaks directly to the reader. The opening - 'Marley was dead: to begin with' - is assertive and chatty, establishing an intimate relationship with the audience. The narrator is openly judgemental: 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!' The exclamation and direct address tell the reader exactly how to feel. This narrative voice means Dickens can control the reader's sympathy, guiding them to dislike Scrooge in Stave 1 and celebrate his transformation in Stave 5. The narrator acts as a moral commentator, ensuring Dickens' social message is unmistakable.",
         marks: 4,
       },
       {
@@ -1615,7 +1632,7 @@ export const christmasCarolLessons: LessonPlan[] = [
           'Compare the language Dickens uses to describe Scrooge in Stave 1 and Stave 5. What does this contrast reveal?',
         lines: 6,
         modelAnswer:
-          "In Stave 1, Scrooge is described through cold, hard imagery: 'hard and sharp as flint', 'the cold within him froze his old features'. In Stave 5, he is described through light, warm, childlike imagery: 'I am as light as a feather, I am as happy as an angel, I am as merry as a school-boy!' The semantic field shifts entirely from cold to warmth, from hardness to lightness. The Stave 5 similes associate Scrooge with innocence and joy, suggesting a rebirth. Dickens uses this language contrast to make Scrooge's transformation vivid and undeniable, showing that moral change transforms everything about a person.",
+          "In Stave 1, Scrooge is described through cold, hard imagery: 'hard and sharp as flint', 'the cold within him froze his old features'. In Stave 5, he is described through light, warm, childlike imagery: 'I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy.' The semantic field shifts entirely from cold to warmth, from hardness to lightness. The Stave 5 similes associate Scrooge with innocence and joy, suggesting a rebirth. Dickens uses this language contrast to make Scrooge's transformation vivid and undeniable, showing that moral change transforms everything about a person.",
         marks: 4,
       },
     ],
@@ -1798,7 +1815,7 @@ export const christmasCarolLessons: LessonPlan[] = [
           'Write a Grade 8/9 paragraph analysing how Dickens presents the theme of redemption in the extract where Scrooge wakes in Stave 5.',
         lines: 10,
         modelAnswer:
-          "Dickens presents Scrooge's redemption as a joyous rebirth, deploying breathless exclamatory sentences - 'I don't know what to do! I am as light as a feather, I am as happy as an angel, I am as merry as a school-boy!' - to capture the overwhelming euphoria of moral awakening. The triple simile is structurally significant: 'feather' suggests the lifting of the moral weight symbolised by Marley's chain, 'angel' elevates Scrooge to spiritual goodness, and 'school-boy' returns him to childhood innocence, reversing the lonely boy the Ghost of Christmas Past revealed. The listing creates an accumulative, almost incoherent energy that mirrors a man reborn - Scrooge cannot contain his transformation within a single image. Dickens deliberately echoes the listing technique used in Stave 1 ('squeezing, wrenching, grasping') but inverts its effect: where the earlier list constructed greed, this one constructs joy. This structural mirroring reinforces Dickens' thesis that redemption is not the creation of a new person but the recovery of a self that was always latent. For a Victorian readership steeped in Christian narratives of salvation, Scrooge's transformation would resonate as proof that no sinner is beyond grace - a message Dickens extends beyond the spiritual to the social, arguing that the wealthy can and must change their relationship with the poor.",
+          "Dickens presents Scrooge's redemption as a joyous rebirth, deploying breathless exclamatory sentences - 'I don't know what to do! ... I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy.' - to capture the overwhelming euphoria of moral awakening. The first three similes are structurally significant: 'feather' suggests the lifting of the moral weight symbolised by Marley's chain, 'angel' elevates Scrooge to spiritual goodness, and 'schoolboy' returns him to childhood innocence, reversing the lonely boy the Ghost of Christmas Past revealed. The listing creates an accumulative, almost incoherent energy that mirrors a man reborn - Scrooge cannot contain his transformation within a single image. Dickens deliberately echoes the listing technique used in Stave 1 ('squeezing, wrenching, grasping') but inverts its effect: where the earlier list constructed greed, this one constructs joy. This structural mirroring reinforces Dickens' thesis that redemption is not the creation of a new person but the recovery of a self that was always latent. For a Victorian readership steeped in Christian narratives of salvation, Scrooge's transformation would resonate as proof that no sinner is beyond grace - a message Dickens extends beyond the spiritual to the social, arguing that the wealthy can and must change their relationship with the poor.",
         marks: 6,
       },
     ],

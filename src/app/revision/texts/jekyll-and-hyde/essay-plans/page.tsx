@@ -201,7 +201,9 @@ const essayPlans: EssayPlan[] = [
           '"a certain sinister block of building thrust forward its gable on the street"',
         ],
         analysis:
-          'London is presented as a city of stark contrasts, mirroring the Jekyll-Hyde duality. The simile "like a fire in a forest" suggests the respectable street is an island of light surrounded by darkness, vulnerable to being consumed. The personification of the building "thrusting forward" gives it an aggressive, intrusive quality, as though the disreputable is forcing itself into the respectable. Stevenson makes geography moral: place reflects character.',
+          // The building "thrust forward its gable on the street"; the edition has no
+          // "thrusting" (corrected 2 October 2026 against Project Gutenberg #43).
+          'London is presented as a city of stark contrasts, mirroring the Jekyll-Hyde duality. The simile "like a fire in a forest" suggests the respectable street is an island of light surrounded by darkness, vulnerable to being consumed. The personification of the building, which "thrust forward its gable on the street", gives it an aggressive, intrusive quality, as though the disreputable is forcing itself into the respectable. Stevenson makes geography moral: place reflects character.',
         context:
           'Victorian London genuinely contained extreme contrasts: grand townhouses stood streets away from slums. The East End/West End divide was a spatial expression of class inequality. Stevenson exploits this real geography to make his Gothic symbolism feel authentic.',
       },

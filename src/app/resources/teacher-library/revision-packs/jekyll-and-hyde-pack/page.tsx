@@ -197,9 +197,12 @@ export default function JekyllAndHydePack() {
                 q: 'A certain sinister block of building.',
                 n: 'Setting mirrors character - pathetic fallacy, the Gothic.',
               },
+              // The edition's line is "A fog rolled over the city in the small hours",
+              // on the night of the Carew murder; until 2 October 2026 the card read
+              // "The fog", with a note about London's streets (Project Gutenberg #43).
               {
-                q: 'The fog rolled over the city.',
-                n: 'London itself is dual - clean streets and dark alleys side by side.',
+                q: 'A fog rolled over the city in the small hours.',
+                n: 'The night of the Carew murder: fog in the small hours, bright moonlight before it. Even the weather is dual.',
               },
               {
                 q: 'I had gone to bed Henry Jekyll, I had awakened Edward Hyde.',

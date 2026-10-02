@@ -117,7 +117,10 @@ export const grade9Strategy: Grade9Strategy = {
           label: 'Strong paragraph opening (Grade 8-9)',
           text:
             "Stevenson deepens the novella's interrogation of Victorian respectability by making Hyde's evil impossible to articulate - " +
-            'Enfield confesses he "cannot specify" what is wrong with Hyde, suggesting that the horror lies not in a visible deformity ' +
+            // Enfield's words are "although I couldn't specify the point"; "cannot
+            // specify" was not his (corrected 2 October 2026 against Project Gutenberg
+            // #43).
+            'Enfield says Hyde "gives a strong feeling of deformity", although he "couldn\'t specify the point", suggesting that the horror lies not in a visible deformity ' +
             'but in a recognition that the boundary between gentleman and monster is far thinner than Victorian society dares to admit.',
         },
       ],
@@ -221,15 +224,20 @@ export const grade9Strategy: Grade9Strategy = {
         'and the reader\'s understanding</strong>. Always ask: "So what? Why does this context matter for the meaning of this specific moment in the text?"</p>',
       examples: [
         {
+          // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+          // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are
+          // there no prisons?" and "And the Union workhouses?", with the gentleman's answer
+          // between. "Are there no workhouses?" is the Spirit's, turning his words on him in
+          // Stave Three. Both examples below quote them.
           label: 'Bolted-on context (Grade 5-6)',
           text:
             'In Victorian times, there was a big gap between the rich and the poor. Many people lived in poverty and had to go to workhouses. ' +
-            'Dickens writes about this in A Christmas Carol. Scrooge says "Are there no prisons? Are there no workhouses?" which shows he does not care about the poor.',
+            'Dickens writes about this in A Christmas Carol. Scrooge says "Are there no prisons? ... And the Union workhouses?" which shows he does not care about the poor.',
         },
         {
           label: 'Woven, analytical context (Grade 8-9)',
           text:
-            'Scrooge\'s dismissive "Are there no prisons? Are there no workhouses?" directly echoes the utilitarian logic of the 1834 New Poor Law, ' +
+            'Scrooge\'s dismissive "Are there no prisons? ... And the Union workhouses?" directly echoes the utilitarian logic of the 1834 New Poor Law, ' +
             "which Dickens despised. By placing the language of government policy in Scrooge's mouth, Dickens transforms a personal character flaw into " +
             'a systemic indictment - Scrooge is not merely cold-hearted; he is the mouthpiece of an ideology that criminalises poverty. ' +
             "The reader is invited to see that Scrooge's cruelty is not individual but institutional.",

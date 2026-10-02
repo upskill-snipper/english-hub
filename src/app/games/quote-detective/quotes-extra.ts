@@ -7,7 +7,11 @@ export interface QuoteEntryExtra {
 
 // All quotes are verbatim from the canonical (largely public-domain) source texts.
 // Each excerpt is kept to 15 words or fewer for fair-dealing under UK copyright law.
-// VERIFIED 2026-05-12 against Folger (Shakespeare), Project Gutenberg #46 (ACC),
+// Shakespeare is quoted in the wording of the editions the site holds
+// (src/data/full-texts), which scripts/check-quotations.mjs checks. Until 2 October
+// 2026 this note named Folger for Shakespeare, and a Macbeth card had "plague the
+// inventor" where the held text (Project Gutenberg #1533) prints "plague th' inventor".
+// VERIFIED 2026-05-12 against Project Gutenberg #46 (ACC),
 // Project Gutenberg #43 (J&H), Heinemann (AIC), Penguin (Animal Farm, OMAM),
 // Faber (LotF), Methuen (Blood Brothers), Penguin Modern Classics (AVFTB),
 // Poetry Foundation + AQA anthology (Power & Conflict).
@@ -32,11 +36,16 @@ export const quoteDetectiveExtra: QuoteEntryExtra[] = [
   { quote: 'Out, damned spot! out, I say!', text: 'Macbeth' },
   { quote: 'Hell is murky.', text: 'Macbeth' },
   {
-    quote: 'Bloody instructions, which, being taught, return to plague the inventor.',
+    quote: "Bloody instructions, which, being taught, return to plague th' inventor.",
     text: 'Macbeth',
   },
   { quote: 'Fair is foul, and foul is fair.', text: 'Macbeth' },
-  { quote: 'Lay on, Macduff, and damned be him that first cries "Hold, enough!"', text: 'Macbeth' },
+  // "damn'd", as the held edition prints it; this said "damned" until 2 October
+  // 2026, unseen by the checker, which passes over a quotation holding another.
+  {
+    quote: 'Lay on, Macduff, and damn\'d be him that first cries "Hold, enough!"',
+    text: 'Macbeth',
+  },
 
   // ── An Inspector Calls (12) ────────────────────────────────────────────────
   {
@@ -71,8 +80,11 @@ export const quoteDetectiveExtra: QuoteEntryExtra[] = [
     text: 'A Christmas Carol',
   },
   { quote: 'Secret, and self-contained, and solitary as an oyster.', text: 'A Christmas Carol' },
+  // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+  // src/data/full-texts/a-christmas-carol.ts): the speech tag wants an ellipsis.
   {
-    quote: 'If they would rather die, they had better do it, and decrease the surplus population.',
+    quote:
+      'If they would rather die... they had better do it, and decrease the surplus population.',
     text: 'A Christmas Carol',
   },
   { quote: 'I wear the chain I forged in life.', text: 'A Christmas Carol' },
@@ -91,9 +103,11 @@ export const quoteDetectiveExtra: QuoteEntryExtra[] = [
   // ── Jekyll and Hyde (8) ────────────────────────────────────────────────────
   { quote: "It wasn't like a man; it was like some damned Juggernaut.", text: 'Jekyll and Hyde' },
   { quote: 'Something troglodytic, shall we say?', text: 'Jekyll and Hyde' },
+  // The edition prints "down-right" (corrected 2 October 2026 against Project Gutenberg
+  // #43).
   {
     quote:
-      'There is something wrong with his appearance; something displeasing, something downright detestable.',
+      'There is something wrong with his appearance; something displeasing, something down-right detestable.',
     text: 'Jekyll and Hyde',
   },
   { quote: 'Man is not truly one, but truly two.', text: 'Jekyll and Hyde' },

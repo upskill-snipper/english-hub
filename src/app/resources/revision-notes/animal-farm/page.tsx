@@ -59,6 +59,40 @@ function Section({
 
 /* ─── Data ───────────────────────────────────────────────────── */
 
+/**
+ * QUOTATIONS CORRECTED 2 October 2026. No test read this page, and
+ * scripts/check-quotations.mjs found eight of its quotations of Animal Farm
+ * wrong. The altered Sixth Commandment read "kill another animal" where the
+ * novel has "kill any other animal" (three times, and once more in the
+ * original commandment, which the checker reads as a label). Squealer's
+ * "Out of his kindness, a pension has been arranged for old Boxer" appears
+ * nowhere in the held edition; it is replaced by his real lie, that he was
+ * at Boxer's bedside at the very last. "The distinguishing mark of man is
+ * the hand" is Snowball's, explaining the maxim to the birds in Chapter 3,
+ * not Old Major's in Chapter 1. Benjamin's tail is in Chapter 1 and his
+ * "life would go on" in Chapter 5. Pilkington's toast had lost its "he said"
+ * with no ellipsis. Squealer's "Surely, comrades, you do not want Jones
+ * back?" is said once, in Chapter 5, not in "Multiple chapters", and had
+ * been modernised to "Surely you don't" in two places the checker passes
+ * over. The note on "Twelve voices" spoke of "Twelve Commandments", which
+ * the novel never has: the voices are the six farmers and six pigs at the
+ * table. Each corrected quotation was cut by script from the held edition,
+ * Project Gutenberg Australia's transcription
+ * (src/data/full-texts/animal-farm.ts), not retyped. Its capitals are kept:
+ * the edition sets "WITHOUT CAUSE" and "HAND" in capitals for emphasis.
+ *
+ * REVIEWED the same day. The chapter summaries still credited quotations
+ * wrongly. Chapter 7 gave Boxer "Napoleon is always right" as his answer to
+ * the executions; the maxim is not in Chapter 7, and what he says there is
+ * "The solution, as I see it, is to work harder." The same summary said
+ * "Beasts of England" was replaced by an anthem praising Napoleon; it is
+ * replaced by Minimus's song "Animal Farm, Animal Farm", and the poem
+ * praising Napoleon comes in Chapter 8. Chapter 6 had Squealer reveal the
+ * altered Fourth Commandment; Muriel reads it out to Clover. The Seventh
+ * Commandment's quotation carried its own label inside the printed
+ * quotation marks, and "no one dared speak his mind" now names the thoughts
+ * it gives as Clover's, as the quotation beside it already did.
+ */
 const chapters = [
   {
     chapter: 'Chapter 1',
@@ -88,17 +122,17 @@ const chapters = [
   {
     chapter: 'Chapter 6',
     summary:
-      "The animals work sixty-hour weeks to build the windmill. Napoleon announces that Animal Farm will begin trading with neighbouring farms, despite the original resolution against human contact. The pigs move into the farmhouse and sleep in beds. When the animals question this, Squealer reveals that the commandment actually reads 'No animal shall sleep in a bed with sheets.' A storm destroys the half-built windmill. Napoleon blames Snowball for its destruction, claiming he sneaked back to sabotage it.",
+      "The animals work sixty-hour weeks to build the windmill. Napoleon announces that Animal Farm will begin trading with neighbouring farms, despite the original resolution against human contact. The pigs move into the farmhouse and sleep in beds. When Clover asks Muriel to read her the Fourth Commandment, it says 'No animal shall sleep in a bed with sheets.' A storm destroys the half-built windmill. Napoleon blames Snowball for its destruction, claiming he sneaked back to sabotage it.",
   },
   {
     chapter: 'Chapter 7',
     summary:
-      "The winter is harsh and food is scarce. Napoleon begins selling eggs to buy grain, enraging the hens, who rebel by smashing their eggs. Napoleon starves them into submission; several die. Napoleon holds a show trial in which animals confess to being in league with Snowball and are executed by the dogs. The slaughter shocks the remaining animals. Boxer's response is 'I will work harder' and 'Napoleon is always right'. 'Beasts of England' is abolished and replaced with a new anthem praising Napoleon.",
+      "The winter is harsh and food is scarce. Napoleon begins selling eggs to buy grain, enraging the hens, who rebel by smashing their eggs. Napoleon starves them into submission; several die. Napoleon holds a show trial in which animals confess to being in league with Snowball and are executed by the dogs. The slaughter shocks the remaining animals. Boxer's response is 'The solution, as I see it, is to work harder.' 'Beasts of England' is abolished and replaced by a song Minimus has composed, beginning 'Animal Farm, Animal Farm'.",
   },
   {
     chapter: 'Chapter 8',
     summary:
-      "The Sixth Commandment now reads 'No animal shall kill another animal without cause.' Napoleon is increasingly isolated, referred to as 'our Leader, Comrade Napoleon'. He negotiates the sale of timber to Mr Frederick, who pays in forged banknotes. Frederick then attacks Animal Farm and blows up the windmill with explosives. The animals fight back and win, but at great cost. The pigs celebrate by drinking whisky found in the farmhouse. The commandment about alcohol is altered to 'No animal shall drink alcohol to excess.'",
+      "The Sixth Commandment now reads 'No animal shall kill any other animal WITHOUT CAUSE.' Napoleon is increasingly isolated, referred to as 'our Leader, Comrade Napoleon'. He negotiates the sale of timber to Mr Frederick, who pays in forged banknotes. Frederick then attacks Animal Farm and blows up the windmill with explosives. The animals fight back and win, but at great cost. The pigs celebrate by drinking whisky found in the farmhouse. The commandment about alcohol is altered to 'No animal shall drink alcohol to excess.'",
   },
   {
     chapter: 'Chapter 9',
@@ -190,7 +224,7 @@ const themes = [
   {
     name: 'Propaganda and Language',
     detail:
-      "Squealer's manipulation of language is central to the pigs' control. He alters the commandments, rewrites history, uses rhetorical questions ('Surely you don't want Jones back?'), fabricates statistics, and renames Snowball from hero to traitor. The reduction of the Seven Commandments to 'Four legs good, two legs bad' shows how complex ideas are simplified to control the masses. Language is shown to be a tool of power: those who control the narrative control reality. Orwell was deeply concerned with the corruption of language by political regimes, a theme he explored further in Nineteen Eighty-Four.",
+      "Squealer's manipulation of language is central to the pigs' control. He alters the commandments, rewrites history, uses rhetorical questions ('Surely, comrades, you do not want Jones back?'), fabricates statistics, and renames Snowball from hero to traitor. The reduction of the Seven Commandments to 'Four legs good, two legs bad' shows how complex ideas are simplified to control the masses. Language is shown to be a tool of power: those who control the narrative control reality. Orwell was deeply concerned with the corruption of language by political regimes, a theme he explored further in Nineteen Eighty-Four.",
   },
   {
     name: 'Class and Inequality',
@@ -256,14 +290,15 @@ const keyQuotes = [
   },
   {
     quote: 'Surely, comrades, you do not want Jones back?',
-    chapter: 'Multiple chapters',
+    chapter: 'Chapter 5',
     speaker: 'Squealer',
     analysis:
-      "Squealer's most effective rhetorical device: the threat of the old regime's return. This rhetorical question is used to silence every objection. It works because the animals' fear of Jones is greater than their dissatisfaction with the pigs. Orwell shows how authoritarian regimes maintain power by presenting themselves as the only alternative to something worse.",
+      "Squealer's most effective rhetorical device: the threat of the old regime's return, which he makes in other words in Chapters 3 and 6 as well. This rhetorical question is used to silence every objection. It works because the animals' fear of Jones is greater than their dissatisfaction with the pigs. Orwell shows how authoritarian regimes maintain power by presenting themselves as the only alternative to something worse.",
   },
   {
-    quote: 'All animals are equal. (Seventh of the Seven Commandments)',
+    quote: 'All animals are equal.',
     chapter: 'Chapter 2',
+    speaker: 'The Seventh Commandment',
     analysis:
       "The foundation of Animalism, painted on the barn wall. The full set of Seven Commandments (paraphrased): the animals declare humans an enemy, four-legged or winged creatures friends, and forbid clothes, beds, alcohol, killing of fellow animals, and inequality between animals. Each commandment is systematically violated and altered by the pigs. The commandments' simplicity makes their corruption all the more visible. Orwell uses them as a measure of the revolution's decay: each alteration marks a further betrayal of the original ideals. (Teacher note: Source: Orwell, *Animal Farm* (1945) - quoted under estate-licensed extracts. For longer extracts, students should refer to a licensed school edition.)",
   },
@@ -275,7 +310,7 @@ const keyQuotes = [
   },
   {
     quote: 'God had given him a tail ... sooner have had no tail and no flies.',
-    chapter: 'Chapter 3',
+    chapter: 'Chapter 1',
     speaker: 'Narrator, describing Benjamin',
     analysis:
       "Benjamin's cynical philosophy: life is equally bad under any system. This fatalism prevents him from acting against the pigs' tyranny. Orwell uses Benjamin to criticise intellectuals who see injustice clearly but use their insight as an excuse for inaction rather than a motivation for resistance.",
@@ -296,7 +331,7 @@ const keyQuotes = [
   },
   {
     quote: 'life would go on as it had always gone on -- that is, badly.',
-    chapter: 'Chapter 6',
+    chapter: 'Chapter 5',
     speaker: 'Benjamin',
     analysis:
       "Benjamin's assessment of the windmill project captures his existential pessimism. While the other animals invest hope in the windmill, Benjamin sees through the promise. His insight is correct (the windmill benefits only the pigs), but his refusal to share it leaves the other animals vulnerable to manipulation.",
@@ -309,7 +344,7 @@ const keyQuotes = [
       "Clover's reflection after the show trials is the novel's most poignant expression of betrayed idealism. Orwell paraphrases her dim, half-remembered hopes for the revolution: a world without hunger or violence in which each animal works according to its capacity and the strong protect the weak. The description of her original vision echoes Marxist principles ('each working according to his capacity'). The gap between this gentle vision and the reality of executions and terror measures the full extent of the revolution's corruption. (Teacher note: Source: Orwell, *Animal Farm* (1945) - quoted under estate-licensed extracts. For longer extracts, students should refer to a licensed school edition.)",
   },
   {
-    quote: 'No animal shall kill another animal without cause.',
+    quote: 'No animal shall kill any other animal WITHOUT CAUSE.',
     chapter: 'Chapter 8',
     analysis:
       "The altered Sixth Commandment. The addition of 'without cause' renders the prohibition meaningless: whoever defines 'cause' (Napoleon) can justify any killing. This is Orwell's most precise illustration of how the manipulation of language enables tyranny. The animals' vague memory of the original wording makes them doubt their own recollection rather than questioning the pigs.",
@@ -349,31 +384,33 @@ const keyQuotes = [
   {
     quote: '...no one dared speak his mind...',
     chapter: 'Chapter 7',
+    speaker: "Narrator, describing Clover's thoughts",
     analysis:
-      "Orwell's narrator (Ch. 7) describes the conditions of terror under Napoleon's rule: animals afraid to speak, growling dogs patrolling, and public executions of confessed 'traitors'. The tricolon (silence, surveillance, public execution) mirrors the mechanisms of Stalinist repression. The narrator's detached register conveys the animals' helplessness, and the staged confessions echo the Soviet show trials of the 1930s. (Teacher note: Source: Orwell, *Animal Farm* (1945) - quoted under estate-licensed extracts. For longer extracts, students should refer to a licensed school edition.)",
+      "Orwell's narrator, giving Clover's thoughts (Ch. 7), describes the conditions of terror under Napoleon's rule: animals afraid to speak, growling dogs patrolling, and public executions of confessed 'traitors'. The tricolon (silence, surveillance, public execution) mirrors the mechanisms of Stalinist repression. The narrator's detached register conveys the animals' helplessness, and the staged confessions echo the Soviet show trials of the 1930s. (Teacher note: Source: Orwell, *Animal Farm* (1945) - quoted under estate-licensed extracts. For longer extracts, students should refer to a licensed school edition.)",
   },
   {
     quote: 'Twelve voices were shouting in anger, and they were all alike.',
     chapter: 'Chapter 10',
     analysis:
-      "One of the novel's closing sentences. 'All alike' completes the pigs' transformation into humans. The 'twelve voices' recall the original Twelve Commandments (reduced from seven through alteration) and the twelve pigs who form the ruling elite. Orwell's final image is of power as a force that makes all tyrants identical, regardless of their species or their revolutionary rhetoric.",
+      "One of the novel's closing sentences. 'All alike' completes the pigs' transformation into humans. The 'twelve voices' are the six farmers and six pigs round the table, and the creatures outside can no longer tell which are which. Orwell's final image is of power as a force that makes all tyrants identical, regardless of their species or their revolutionary rhetoric.",
   },
   {
-    quote: 'Out of his kindness, a pension has been arranged for old Boxer.',
+    quote: 'I was at his bedside at the very last.',
     chapter: 'Chapter 9',
     speaker: 'Squealer',
     analysis:
-      "Squealer's most monstrous lie: Boxer has not been pensioned but sold to a glue factory. The word 'kindness' is obscene in context. This moment represents the apex of propaganda's power: Squealer can present the murder of the farm's most beloved worker as an act of compassion, and the animals accept it because they have no means to verify the truth.",
+      "Squealer's most monstrous lie: Boxer has not died in the hospital at Willingdon; he has been sold to the horse slaughterer. Squealer wipes away a tear and claims to have been with him at the end, turning the sale into a sentimental deathbed scene. This moment represents the apex of propaganda's power: Squealer can present the murder of the farm's most beloved worker as a death attended with every care, and the animals accept it because they have no means to verify the truth.",
   },
   {
-    quote: 'The distinguishing mark of Man is the hand, the instrument ... does all his mischief.',
-    chapter: 'Chapter 1',
-    speaker: 'Old Major',
+    quote:
+      'The distinguishing mark of man is the HAND, the instrument with which he does all his mischief.',
+    chapter: 'Chapter 3',
+    speaker: 'Snowball',
     analysis:
-      "Old Major identifies the hand as the tool of human oppression. The irony is that the pigs eventually learn to use their trotters as hands: they carry whips, play cards, and drink from glasses. By acquiring the 'distinguishing mark of Man', the pigs become what the revolution was supposed to destroy.",
+      "Snowball, explaining to the birds why their wings count as legs under 'Four legs good, two legs bad', identifies the hand as the tool of human oppression. The irony is that the pigs eventually learn to use their trotters as hands: they carry whips, play cards, and drink from glasses. By acquiring the 'distinguishing mark of man', the pigs become what the revolution was supposed to destroy.",
   },
   {
-    quote: 'If you have your lower animals to contend with, we have our lower classes.',
+    quote: 'If you have your lower animals to contend with ... we have our lower classes!',
     chapter: 'Chapter 10',
     speaker: 'Mr Pilkington',
     analysis:
@@ -403,8 +440,8 @@ const commandmentsEvolution = [
     altered: "'No animal shall drink alcohol to excess.' (Chapter 8)",
   },
   {
-    original: 'No animal shall kill another animal.',
-    altered: "'No animal shall kill another animal without cause.' (Chapter 8)",
+    original: 'No animal shall kill any other animal.',
+    altered: "'No animal shall kill any other animal WITHOUT CAUSE.' (Chapter 8)",
   },
   {
     original: 'All animals are equal.',
@@ -786,7 +823,7 @@ export default function AnimalFarmStudyGuide() {
                 'How does Orwell use the character of Squealer to explore the power of propaganda?',
               outline: [
                 "Introduction: Squealer is the novel's most important secondary character because he represents the mechanism by which tyranny is maintained: not force (the dogs) but narrative control.",
-                "Para 1 -- Rhetorical techniques: Squealer uses questions ('Surely you don't want Jones back?'), statistics the animals cannot verify, and emotional manipulation. His ability to 'turn black into white' makes him the pigs' most valuable asset.",
+                "Para 1 -- Rhetorical techniques: Squealer uses questions ('Surely, comrades, you do not want Jones back?'), statistics the animals cannot verify, and emotional manipulation. His ability to 'turn black into white' makes him the pigs' most valuable asset.",
                 "Para 2 -- Rewriting history: Squealer transforms Snowball from hero to traitor, claims Napoleon always supported the windmill, and presents Boxer's death as peaceful. Each revision is small but cumulative. Orwell shows how totalitarian regimes falsify the historical record.",
                 "Para 3 -- The commandments: Squealer's nocturnal alterations of the commandments represent the rewriting of constitutional principles. The animals' failure to detect the changes shows how propaganda exploits poor memory and literacy.",
                 'Para 4 -- Squealer and the dogs: On one occasion, Squealer is found beside the commandments at night with paint and a ladder, accompanied by dogs. The combination of propaganda (Squealer) and force (the dogs) represents the two pillars of totalitarian control.',

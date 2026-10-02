@@ -213,7 +213,7 @@ export default async function EssayStructurePage() {
                 colour: 'bg-primary',
                 desc: 'Support your point with a short, embedded quotation from the text. Choose precise, analysable words.',
                 example:
-                  'She commands Macbeth to "look like th\' innocent flower, but be the serpent under\'t", revealing her capacity for deception.',
+                  'She commands Macbeth to "look like the innocent flower, but be the serpent under\'t", revealing her capacity for deception.',
               },
               {
                 letter: 'E',

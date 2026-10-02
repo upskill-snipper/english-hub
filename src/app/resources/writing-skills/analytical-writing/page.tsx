@@ -319,7 +319,7 @@ export default async function AnalyticalWritingPage() {
                     <p className="text-xs font-semibold text-red-600 mb-1">{tr(`Instead of:`)}</p>
                     <p className="text-sm text-muted-foreground">
                       {tr(
-                        `Scrooge is presented as miserly. “He was a tight-fisted hand at the grindstone.”`,
+                        `Scrooge is presented as miserly. “He was a tight-fisted hand at the grind-stone.”`,
                       )}
                     </p>
                   </div>
@@ -329,7 +329,7 @@ export default async function AnalyticalWritingPage() {
                     </p>
                     <p className="text-sm text-muted-foreground">
                       {tr(
-                        `Dickens presents Scrooge as a “tight-fisted hand at the grindstone”, immediately establishing his miserly and unfeeling nature.`,
+                        `Dickens presents Scrooge as a “tight-fisted hand at the grind-stone”, immediately establishing his miserly and unfeeling nature.`,
                       )}
                     </p>
                   </div>
@@ -386,7 +386,7 @@ export default async function AnalyticalWritingPage() {
                     </p>
                     <p className="text-sm text-muted-foreground">
                       At the climax of his moral crisis, Macbeth acknowledges his own damnation,
-                      confessing that he has &ldquo;filed my mind&rdquo; and given his
+                      confessing that he has &ldquo;fil'd my mind&rdquo; and given his
                       &ldquo;eternal jewel&rdquo; to &ldquo;the common enemy of man.&rdquo;
                     </p>
                   </div>
@@ -927,8 +927,9 @@ export default async function AnalyticalWritingPage() {
                     </Annotation>{' '}
                     <Annotation note="EVIDENCE: Embedded quotation with context">
                       On the night of Duncan&apos;s murder, Lennox reports that &ldquo;the earth was
-                      feverous and did shake,&rdquo; while an Old Man describes how Duncan&apos;s
-                      horses &ldquo;turned wild in nature&rdquo; and &ldquo;ate each other.&rdquo;
+                      feverous and did shake,&rdquo; while Ross describes how Duncan&apos;s horses
+                      &ldquo;turn'd wild in nature&rdquo; and an Old Man replies, &ldquo;'Tis said
+                      they eat each other.&rdquo;
                     </Annotation>{' '}
                     <Annotation note="EXPLAIN: Analysis of pathetic fallacy and the Great Chain of Being">
                       The personification of the earth as &ldquo;feverous&rdquo; employs pathetic

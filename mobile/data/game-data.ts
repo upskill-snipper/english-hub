@@ -30,7 +30,7 @@ export const QUOTE_MATCHES: QuoteMatch[] = [
     character: 'Lady Macbeth',
   },
   {
-    quote: 'Look like the innocent flower, but be the serpent under it',
+    quote: 'Look like the innocent flower, but be the serpent under\'t',
     source: 'Macbeth',
     character: 'Lady Macbeth',
   },
@@ -50,7 +50,7 @@ export const QUOTE_MATCHES: QuoteMatch[] = [
     character: 'Macbeth',
   },
   {
-    quote: 'Stars, hide your fires; let not light see my black desires',
+    quote: 'Stars, hide your fires! Let not light see my black and deep desires',
     source: 'Macbeth',
     character: 'Macbeth',
   },
@@ -87,14 +87,18 @@ export const QUOTE_MATCHES: QuoteMatch[] = [
     character: 'Friar Lawrence',
   },
   {
-    quote: 'A pair of star-crossed lovers take their life',
+    quote: 'A pair of star-cross\'d lovers take their life',
     source: 'Romeo and Juliet',
     character: 'Chorus',
   },
 
   // A Christmas Carol (6)
   {
-    quote: 'Are there no prisons? Are there no workhouses?',
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are there
+    // no prisons?" and "And the Union workhouses?", with the gentleman's answer between. "Are
+    // there no workhouses?" is the Spirit's, turning his words on him in Stave Three.
+    quote: 'Are there no prisons? ... And the Union workhouses?',
     source: 'A Christmas Carol',
     character: 'Scrooge',
   },
@@ -156,8 +160,10 @@ export const QUOTE_MATCHES: QuoteMatch[] = [
     source: 'The Strange Case of Dr Jekyll and Mr Hyde',
     character: 'Dr Jekyll',
   },
+  // Utterson's pun runs across a speech tag ("he had thought"); the ellipsis marks the
+  // cut (corrected 2 October 2026 against Project Gutenberg #43).
   {
-    quote: 'If he be Mr Hyde, I shall be Mr Seek',
+    quote: 'If he be Mr Hyde... I shall be Mr Seek',
     source: 'The Strange Case of Dr Jekyll and Mr Hyde',
     character: 'Mr Utterson',
   },
@@ -298,11 +304,14 @@ export const VOCAB_ITEMS: VocabItem[] = [
     difficulty: 'easy',
   },
   {
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #46,
+    // src/data/full-texts/a-christmas-carol.ts): Scrooge never repeats "Are there no"; the
+    // Spirit does, in Stave Three, so the example is now the Spirit's.
     term: 'Repetition',
     definition:
       'Deliberately using the same word or phrase multiple times for emphasis.',
     example:
-      '"Are there no prisons? Are there no workhouses?" -- Scrooge repeats the structure to dismiss the poor.',
+      '"Are there no prisons? ... Are there no workhouses?" -- the Ghost of Christmas Present repeats the structure to throw Scrooge\'s dismissal of the poor back at him.',
     difficulty: 'easy',
   },
   {
@@ -344,7 +353,7 @@ export const VOCAB_ITEMS: VocabItem[] = [
     definition:
       'Repetition of "s" and "sh" sounds, often creating a sinister or soothing effect.',
     example:
-      '"Stars, hide your fires; let not light see my black desires" -- the "s" sounds create a secretive tone in Macbeth.',
+      '"Stars, hide your fires! Let not light see my black and deep desires" -- the "s" sounds create a secretive tone in Macbeth.',
     difficulty: 'medium',
   },
   {

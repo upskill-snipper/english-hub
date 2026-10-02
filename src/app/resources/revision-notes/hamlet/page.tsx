@@ -81,6 +81,41 @@ function ThemeCard({ title, description }: { title: string; description: string 
 
 /* ─── Main Page ────────────────────────────────────────────── */
 
+/**
+ * The Hamlet revision notes.
+ *
+ * QUOTATIONS CORRECTED 2 October 2026. No test checked this page's
+ * quotations against the play, and scripts/check-quotations.mjs found eleven
+ * of them in wording the site does not print: other editions' ("What a piece
+ * of work is a man", "The lady doth protest", "May be a devil"), modern
+ * spellings of the edition's ("turned", "confined", "i' the church"), and
+ * wording that is nobody's (Horatio as "a man / That is not passion's slave",
+ * "no shriving time allowed", "Occasions inform against me" with Hamlet's "do"
+ * left out). The footer said the quotations came from "the standard modern
+ * editions", so nothing told a student that their copy and the site's could
+ * differ. Each quotation is now cut from the held edition, Project Gutenberg
+ * #1524 (src/data/full-texts/hamlet.ts), which the reader at
+ * /revision/texts/hamlet/read prints, and the footer names it. Where that
+ * edition differs from others its wording is kept, as on /revision/texts/hamlet:
+ * "is man", "protests", "May be the devil". Laertes's "i' the church" in the
+ * Revenge card was missed by the checker, whose scanner ends a single-quoted
+ * span at the apostrophe in "i'". So was the Death card's "the unknown
+ * country", which stood unquoted beside Hamlet's quoted "dread", where a
+ * student would take it for his phrase; the play's is "the undiscover’d
+ * country", and the card now quotes it.
+ *
+ * Horatio's line keeps the edition's own apostrophe, "passion’s", on purpose.
+ * scripts/generate-text-annotations.mjs reads a quotation in these cards as
+ * the text between two straight single quotes, so with a straight apostrophe
+ * there it anchored "that man / That is not passion" in the reader and stopped
+ * in the middle of the word. Polonius's card had the same fault the other way
+ * round: its straight "I'll" made the reader's highlight begin at "ll lug the
+ * guts", so it keeps the edition's apostrophe too, "I’ll". Laertes's line in
+ * the Revenge card keeps the edition's "i’ th’" for the same reason: with
+ * straight apostrophes the generator found nothing there to highlight. The
+ * checker's scanner still stops at the apostrophe after "i", curly or
+ * straight, so that line is checked with --try, not by the audit.
+ */
 export default function HamletPage() {
   return (
     <>
@@ -365,7 +400,7 @@ export default function HamletPage() {
               />
               <CharacterCard
                 name="Polonius"
-                description="Lord Chamberlain to Claudius, father to Laertes and Ophelia. Polonius is verbose, sententious ('Brevity is the soul of wit' - said at length), and convinced of his own cunning. He treats his children as instruments and is the play's chief practitioner of surveillance: spying on Laertes through Reynaldo, on Hamlet through Ophelia, on Hamlet through the arras. His death - stabbed behind a curtain - is grimly fitting: he dies eavesdropping. Hamlet's flippant treatment of his corpse ('I'll lug the guts into the neighbour room') reveals an unpleasant streak in the prince and triggers Laertes's revenge plot."
+                description="Lord Chamberlain to Claudius, father to Laertes and Ophelia. Polonius is verbose, sententious ('Brevity is the soul of wit' - said at length), and convinced of his own cunning. He treats his children as instruments and is the play's chief practitioner of surveillance: spying on Laertes through Reynaldo, on Hamlet through Ophelia, on Hamlet through the arras. His death - stabbed behind a curtain - is grimly fitting: he dies eavesdropping. Hamlet's flippant treatment of his corpse ('I’ll lug the guts into the neighbour room') reveals an unpleasant streak in the prince and triggers Laertes's revenge plot."
               />
               <CharacterCard
                 name="Laertes"
@@ -373,11 +408,11 @@ export default function HamletPage() {
               />
               <CharacterCard
                 name="Horatio"
-                description="Hamlet's loyal friend from Wittenberg and the play's moral touchstone. Horatio is rational, sceptical (initially of the Ghost), Stoical, and discreet - Hamlet praises him as 'a man / That is not passion's slave.' He is the only major character to survive, and Hamlet's dying request that he 'tell my story' makes Horatio the play's authorised narrator. Structurally he serves as audience surrogate: questions he asks Hamlet allow exposition without artificiality."
+                description="Hamlet's loyal friend from Wittenberg and the play's moral touchstone. Horatio is rational, sceptical (initially of the Ghost), Stoical, and discreet - Hamlet praises him as 'that man / That is not passion’s slave'. He is the only major character to survive, and Hamlet's dying request that he 'tell my story' makes Horatio the play's authorised narrator. Structurally he serves as audience surrogate: questions he asks Hamlet allow exposition without artificiality."
               />
               <CharacterCard
                 name="The Ghost"
-                description="The spirit of Old Hamlet, demanding that his son avenge his murder. The Ghost is theologically ambiguous: he claims to suffer in Purgatory (a Catholic doctrine) but also urges revenge (which Christianity forbids), and he appears in armour like a martial figure of the old heroic world. Protestants in Shakespeare's audience would have suspected he could be a demonic deceiver; Catholics might have accepted him as a genuine soul. Hamlet himself worries 'the spirit that I have seen / May be a devil.' This ambiguity drives the Mousetrap test. The Ghost is the play's link to a vanishing chivalric and Catholic past."
+                description="The spirit of Old Hamlet, demanding that his son avenge his murder. The Ghost is theologically ambiguous: he claims to suffer in Purgatory (a Catholic doctrine) but also urges revenge (which Christianity forbids), and he appears in armour like a martial figure of the old heroic world. Protestants in Shakespeare's audience would have suspected he could be a demonic deceiver; Catholics might have accepted him as a genuine soul. Hamlet himself worries 'the spirit that I have seen / May be the devil'. This ambiguity drives the Mousetrap test. The Ghost is the play's link to a vanishing chivalric and Catholic past."
               />
               <CharacterCard
                 name="Fortinbras"
@@ -385,7 +420,7 @@ export default function HamletPage() {
               />
               <CharacterCard
                 name="Rosencrantz and Guildenstern"
-                description="Hamlet's old schoolfellows, recruited by Claudius to spy on him. They function almost as a single unit - interchangeable, hollow, conventionally polite. Hamlet sees through them quickly ('You would play upon me') and ultimately rewrites the execution letter so that they, not he, are killed in England. Their offstage deaths are reported with chilling brevity: Hamlet has 'no shriving time allowed' for them. They embody the courtier class who survive by serving power without examining it - and pay the price."
+                description="Hamlet's old schoolfellows, recruited by Claudius to spy on him. They function almost as a single unit - interchangeable, hollow, conventionally polite. Hamlet sees through them quickly ('You would play upon me') and ultimately rewrites the execution letter so that they, not he, are killed in England. Their offstage deaths are reported with chilling brevity, and the commission Hamlet rewrote has them put to 'sudden death, / Not shriving-time allow'd', with no time even to confess their sins. They embody the courtier class who survive by serving power without examining it - and pay the price."
               />
             </div>
           </Section>
@@ -397,7 +432,7 @@ export default function HamletPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title="Revenge"
-                description="Hamlet is the most famous of the Elizabethan revenge tragedies, but Shakespeare interrogates rather than indulges the genre. The play stages three sons avenging fathers - Hamlet for Old Hamlet, Laertes for Polonius, Fortinbras for his father - and contrasts their methods. Hamlet hesitates because he wants his revenge to be morally and theologically right; Laertes vows to 'cut his throat i' the church'; Fortinbras turns vengeance into politics. Shakespeare exposes the ethical incoherence of revenge: the Ghost, supposedly in Purgatory, demands an act that Christianity forbids; the avenger himself becomes a murderer. By Act 5 Hamlet acts only when reactively trapped, suggesting that 'pure' revenge may be impossible."
+                description="Hamlet is the most famous of the Elizabethan revenge tragedies, but Shakespeare interrogates rather than indulges the genre. The play stages three sons avenging fathers - Hamlet for Old Hamlet, Laertes for Polonius, Fortinbras for his father - and contrasts their methods. Hamlet hesitates because he wants his revenge to be morally and theologically right; Laertes vows to 'cut his throat i’ th’ church'; Fortinbras turns vengeance into politics. Shakespeare exposes the ethical incoherence of revenge: the Ghost, supposedly in Purgatory, demands an act that Christianity forbids; the avenger himself becomes a murderer. By Act 5 Hamlet acts only when reactively trapped, suggesting that 'pure' revenge may be impossible."
               />
               <ThemeCard
                 title="Madness and Sanity"
@@ -405,7 +440,7 @@ export default function HamletPage() {
               />
               <ThemeCard
                 title="Death and Mortality"
-                description="From the Ghost in Act 1 to four corpses in Act 5, death saturates the play. Hamlet's most famous soliloquy meditates on suicide; the gravediggers' scene treats death as a working trade; Yorick's skull collapses the distance between courtly wit and rotting bone. Shakespeare draws on the medieval tradition of the danse macabre and the Renaissance memento mori: 'Imperious Caesar, dead and turned to clay'. Death in Hamlet is the great leveller, but it is also the unknown country whose 'dread' paralyses moral choice. The play's tragic logic moves Hamlet from horror at death towards stoic acceptance: 'the readiness is all.'"
+                description="From the Ghost in Act 1 to four corpses in Act 5, death saturates the play. Hamlet's most famous soliloquy meditates on suicide; the gravediggers' scene treats death as a working trade; Yorick's skull collapses the distance between courtly wit and rotting bone. Shakespeare draws on the medieval tradition of the danse macabre and the Renaissance memento mori: 'Imperious Caesar, dead and turn'd to clay'. Death in Hamlet is the great leveller, but it is also 'the undiscover’d country' whose 'dread' paralyses moral choice. The play's tragic logic moves Hamlet from horror at death towards stoic acceptance: 'the readiness is all.'"
               />
               <ThemeCard
                 title="Corruption and Decay"
@@ -446,7 +481,7 @@ export default function HamletPage() {
                 <h4 className="font-bold text-primary">Catholic and Protestant Tensions</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Shakespeare wrote in a Protestant England that had violently rejected Catholicism
-                  within living memory. The Ghost claims to be &ldquo;confined to fast in
+                  within living memory. The Ghost claims to be &ldquo;confin&apos;d to fast in
                   fires&rdquo; in Purgatory &mdash; a Catholic doctrine officially abolished by the
                   Church of England. This makes the Ghost theologically suspect: a Protestant
                   audience would worry he could be a demon. Hamlet&apos;s university, Wittenberg,
@@ -493,7 +528,7 @@ export default function HamletPage() {
                   renewed value on individual conscience, rhetoric, and self-knowledge. Hamlet is a
                   humanist hero: a university scholar, a wit, a critic of theatre, a moral
                   philosopher. But the play also shows humanism in crisis: Hamlet&apos;s &ldquo;What
-                  a piece of work is a man&rdquo; speech celebrates and then collapses humanist
+                  a piece of work is man&rdquo; speech celebrates and then collapses humanist
                   optimism (&ldquo;and yet, to me, what is this quintessence of dust?&rdquo;). The
                   play asks whether the cultivated, reflective self can still act in a corrupted
                   world.
@@ -537,7 +572,7 @@ export default function HamletPage() {
                 analysis="Polonius's famously self-undermining line: he detects Hamlet's coherence inside the chaos but cannot grasp its target - himself. The aphorism captures the play's central question about Hamlet's madness: feigned, real, or both? The dramatic irony is that the 'method' Polonius suspects will eventually kill him."
               />
               <QuoteCard
-                quote="What a piece of work is a man! How noble in reason, how infinite in faculty! ... And yet, to me, what is this quintessence of dust?"
+                quote="What a piece of work is man, how noble in reason, how infinite in faculties ... And yet, to me, what is this quintessence of dust?"
                 speaker="Hamlet, Act 2 Scene 2"
                 analysis="A textbook humanist celebration of human dignity that collapses, mid-speech, into nihilism. The cadence rises with classical confidence and then crashes on 'quintessence of dust' - an alchemical term collapsed back into mere matter. The speech encapsulates Renaissance humanism in crisis: Hamlet knows what humanity is supposed to be, and cannot feel it."
               />
@@ -557,9 +592,9 @@ export default function HamletPage() {
                 analysis="Layered with cruelty. 'Nunnery' meant convent but was Elizabethan slang for brothel, so the line damns Ophelia either way: chastity or prostitution, no middle ground. Hamlet may sense Polonius and Claudius hiding behind the arras and so performs misogynistic rage; alternatively his disgust at Gertrude has spilled onto Ophelia. Either reading places Ophelia as collateral damage in a court of male manipulation."
               />
               <QuoteCard
-                quote="The lady doth protest too much, methinks."
+                quote="The lady protests too much, methinks."
                 speaker="Gertrude, Act 3 Scene 2"
-                analysis="Gertrude watches the Player Queen vow eternal devotion in the Mousetrap and judges the protests excessive. Dramatic irony: Gertrude herself remarried within a month. 'Protest' means 'declare', not 'object' - modern misuse has reversed it. Shakespeare uses Gertrude's critical eye to make her, briefly, seem self-aware: she sees performance even when she cannot see her own."
+                analysis="Gertrude watches the Player Queen vow eternal devotion in the Mousetrap and judges the protests excessive. Dramatic irony: Gertrude herself remarried within a month. 'Protests' means 'declares', not 'objects' - modern misuse has reversed it. Shakespeare uses Gertrude's critical eye to make her, briefly, seem self-aware: she sees performance even when she cannot see her own."
               />
               <QuoteCard
                 quote="Now might I do it pat, now he is praying; / And now I'll do't. And so he goes to heaven."
@@ -579,7 +614,7 @@ export default function HamletPage() {
               <QuoteCard
                 quote="How all occasions do inform against me, / And spur my dull revenge!"
                 speaker="Hamlet, Act 4 Scene 4"
-                analysis="The final soliloquy, prompted by seeing Fortinbras march to fight for 'an eggshell.' 'Occasions inform against me' is courtroom imagery - every event is a witness to his inaction. 'Dull' suggests blunted, unsharpened. The speech ends with the resolve 'O, from this time forth, / My thoughts be bloody, or be nothing worth' - yet Hamlet is being shipped off to England as he speaks, and will not act decisively until Act 5."
+                analysis="The final soliloquy, prompted by seeing Fortinbras march to fight for 'an eggshell.' 'Occasions do inform against me' is courtroom imagery - every event is a witness to his inaction. 'Dull' suggests blunted, unsharpened. The speech ends with the resolve 'O, from this time forth, / My thoughts be bloody, or be nothing worth' - yet Hamlet is being shipped off to England as he speaks, and will not act decisively until Act 5."
               />
               <QuoteCard
                 quote="There's rosemary, that's for remembrance ... and there is pansies, that's for thoughts."
@@ -657,7 +692,7 @@ export default function HamletPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       The prayer scene (&ldquo;Now might I do it pat&rdquo;): Hamlet refuses easy
                       revenge for theological reasons. Compare with Laertes&apos;s &ldquo;cut his
-                      throat i&apos; the church&rdquo; &mdash; honour-revenge unmoored from
+                      throat i&apos; th&apos; church&rdquo; &mdash; honour-revenge unmoored from
                       conscience.
                     </p>
                   </div>
@@ -949,7 +984,7 @@ export default function HamletPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       Generic reading: the Ghost is the inherited revenge-tragedy machine, a Senecan
                       import. Shakespeare uses but tests the convention &mdash; Hamlet&apos;s
-                      &ldquo;the spirit that I have seen / May be a devil&rdquo; problematises the
+                      &ldquo;the spirit that I have seen / May be the devil&rdquo; problematises the
                       genre&apos;s standard premise.
                     </p>
                   </div>
@@ -1082,8 +1117,11 @@ export default function HamletPage() {
         <p>
           <em>Hamlet</em> by William Shakespeare was first performed c. 1600&ndash;1601 and
           published in quarto in 1603 (Q1) and 1604 (Q2), and in the First Folio of 1623.
-          Shakespeare died in 1616 and the text is in the <strong>public domain</strong>. All
-          quotations are reproduced from the standard modern editions.
+          Shakespeare died in 1616 and the text is in the <strong>public domain</strong>. Quotations
+          follow the edition this site holds and prints in its reader: the modern-spelling Project
+          Gutenberg text (eBook #1524), which combines readings from the Second Quarto and the
+          Folio. Your own edition may differ from it in line numbers, punctuation and, in places, a
+          word.
         </p>
       </footer>
     </>

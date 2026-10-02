@@ -13,10 +13,14 @@ const deck: FlashcardDeck = {
   category: 'Literature',
   board: 'AQA',
   cards: [
+    // Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
+    // src/data/full-texts/jekyll-and-hyde.ts): "Mr Hyde was pale and dwarfish" is
+    // Chapter 2, not 1, and Utterson's pun (jh-3) runs across a speech tag, which the
+    // ellipsis marks.
     {
       id: 'jh-1',
       front: '"Mr Hyde was pale and dwarfish, he gave an impression of deformity"',
-      back: `Chapter 1. Hyde\'s appearance reflects Victorian ideas that evil shows physically (physiognomy). "Dwarfish" = smaller, less evolved. "Impression" = people sense something wrong but cannot explain it.`,
+      back: `Chapter 2. Hyde\'s appearance reflects Victorian ideas that evil shows physically (physiognomy). "Dwarfish" = smaller, less evolved. "Impression" = people sense something wrong but cannot explain it.`,
     },
     {
       id: 'jh-2',
@@ -25,7 +29,7 @@ const deck: FlashcardDeck = {
     },
     {
       id: 'jh-3',
-      front: '"If he be Mr Hyde, I shall be Mr Seek"',
+      front: '"If he be Mr Hyde... I shall be Mr Seek"',
       back: `Chapter 2. Utterson\'s wordplay. Foreshadows the pursuit of truth. Also echoes "hide and seek" - a child\'s game, but here the stakes are deadly.`,
     },
     {

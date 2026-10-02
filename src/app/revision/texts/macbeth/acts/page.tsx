@@ -537,7 +537,7 @@ const ACTS: Act[] = [
             quote:
               '"There is none but he / Whose being I do fear: and under him / My genius is rebuk’d."',
             analysis:
-              'Macbeth admits that Banquo\'s moral integrity ("Genius" meaning guardian spirit) diminishes his own. The verb "rebuked" suggests a supernatural correction: Banquo\'s virtue is a standing reproach to Macbeth\'s corruption. This is a rare moment of self-awareness.',
+              'Macbeth admits that Banquo\'s moral integrity ("Genius" meaning guardian spirit) diminishes his own. The verb "rebuk’d" suggests a supernatural correction: Banquo\'s virtue is a standing reproach to Macbeth\'s corruption. This is a rare moment of self-awareness.',
           },
           {
             name: 'Soliloquy / resolution',
@@ -956,8 +956,9 @@ const ACTS: Act[] = [
           {
             name: 'Plant imagery / natural order',
             quote: '"To dew the sovereign flower, and drown the weeds."',
+            // The line has "weeds"; until 2 October 2026 this quoted it as "weed".
             analysis:
-              'Malcolm is the "sovereign flower" (legitimate king) and Macbeth the "weed" (usurper). The organic metaphor returns the play to Duncan\'s planting imagery from Act 1, suggesting that the natural order reasserts itself. Legitimate kingship grows; illegitimate power is uprooted.',
+              'Malcolm is the "sovereign flower" (legitimate king), and Macbeth and his followers are the "weeds" (usurpers). The organic metaphor returns the play to Duncan\'s planting imagery from Act 1, suggesting that the natural order reasserts itself. Legitimate kingship grows; illegitimate power is uprooted.',
           },
         ],
       },

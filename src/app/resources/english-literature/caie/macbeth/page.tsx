@@ -23,7 +23,7 @@ const keyQuotes = [
       "Macbeth already harbours ambition before Lady Macbeth's influence. The imperative verb 'hide' and imagery of darkness versus light foreshadow his descent into evil.",
   },
   {
-    quote: "Look like th'innocent flower, / But be the serpent under't",
+    quote: "Look like the innocent flower, / But be the serpent under't",
     speaker: 'Lady Macbeth',
     act: 'Act 1, Scene 5',
     analysis:
@@ -121,7 +121,7 @@ const keyQuotes = [
       "Parallels Macbeth's 'Neptune's ocean' speech. The sensory shift from sight (blood) to smell deepens the guilt motif. 'Little hand' is a rare moment of vulnerability from a character defined by her strength.",
   },
   {
-    quote: "I have lived long enough. My way of life / Is fall'n into the sere, the yellow leaf",
+    quote: "I have liv'd long enough. My way of life / Is fall'n into the sere, the yellow leaf",
     speaker: 'Macbeth',
     act: 'Act 5, Scene 3',
     analysis:
@@ -166,7 +166,9 @@ const keyQuotes = [
   {
     quote: 'This dead butcher and his fiend-like queen',
     speaker: 'Malcolm',
-    act: 'Act 5, Scene 9',
+    // The last scene of the site's edition (src/data/full-texts/macbeth.ts) is
+    // Act 5 Scene 8; this and Malcolm's speech below said Scene 9 until 2 October 2026.
+    act: 'Act 5, Scene 8',
     analysis:
       "Malcolm's reductive summary strips Macbeth and Lady Macbeth of their complexity. The audience knows they are more than 'butcher' and 'fiend'; this gap between political label and human reality is dramatically powerful.",
   },
@@ -195,7 +197,7 @@ const characters = [
     arc: "Lady Macbeth's arc is an inversion of Macbeth's. She begins as the dominant partner, manipulating Macbeth through attacks on his masculinity ('When you durst do it, then you were a man'). By Act 3, she is increasingly sidelined as Macbeth acts alone. In Act 5, her sleepwalking scene reveals total psychological collapse - the woman who said 'a little water clears us of this deed' now cannot remove an imaginary bloodstain.",
     keyQuotes: [
       "'Unsex me here' - rejects femininity, invokes the supernatural",
-      "'Look like th'innocent flower, / But be the serpent under't' - counsels deception",
+      "'Look like the innocent flower, / But be the serpent under't' - counsels deception",
       "'Out, damned spot!' - guilt destroys her",
     ],
     examTip:
@@ -304,7 +306,7 @@ const themes = [
   {
     name: 'Appearance versus Reality',
     detail:
-      "The motif of deception runs throughout the play. The witches equivocate, Lady Macbeth tells Macbeth to 'look like th'innocent flower', Macbeth plays the grieving host after Duncan's murder. The opening paradox 'fair is foul, and foul is fair' establishes that nothing in the play is as it seems. Even the prophecies that appear reassuring ('none of woman born') conceal deadly truths.",
+      "The motif of deception runs throughout the play. The witches equivocate, Lady Macbeth tells Macbeth to 'look like the innocent flower', Macbeth plays the grieving host after Duncan's murder. The opening paradox 'fair is foul, and foul is fair' establishes that nothing in the play is as it seems. Even the prophecies that appear reassuring ('none of woman born') conceal deadly truths.",
     keyMoments: [
       "Duncan's misjudgement of the original Thane of Cawdor, then immediately trusting the new one (Act 1, Scene 4)",
       "Lady Macbeth fainting (real or feigned?) when Duncan's body is discovered (Act 2, Scene 3)",
@@ -312,7 +314,7 @@ const themes = [
     ],
     relatedQuotes: [
       "'Fair is foul, and foul is fair'",
-      "'Look like th'innocent flower, / But be the serpent under't'",
+      "'Look like the innocent flower, / But be the serpent under't'",
       "'There's no art to find the mind's construction in the face'",
     ],
   },
@@ -353,7 +355,7 @@ const themes = [
       "Duncan's gracious language as a generous king (Act 1)",
       "The Old Man's description of unnatural events after Duncan's death (Act 2, Scene 4)",
       "Malcolm's self-test with Macduff, listing kingly virtues (Act 4, Scene 3)",
-      "Malcolm's crowning speech restoring order (Act 5, Scene 9)",
+      "Malcolm's crowning speech restoring order (Act 5, Scene 8)",
     ],
     relatedQuotes: [
       "'This castle hath a pleasant seat' - Duncan's trust and goodness",
@@ -390,7 +392,7 @@ const plotSummary = [
       {
         scene: 'Scene 5',
         summary:
-          "Lady Macbeth reads Macbeth's letter and fears he is 'too full o'th'milk of human kindness'. She delivers the 'unsex me' soliloquy, invoking dark spirits. She tells Macbeth to 'look like th'innocent flower, but be the serpent under't'.",
+          "Lady Macbeth reads Macbeth's letter and fears he is 'too full o'th'milk of human kindness'. She delivers the 'unsex me' soliloquy, invoking dark spirits. She tells Macbeth to 'look like the innocent flower, but be the serpent under't'.",
       },
       {
         scene: 'Scene 6',
@@ -411,7 +413,7 @@ const plotSummary = [
       },
       { quote: 'Unsex me here', context: 'Lady Macbeth - invokes supernatural aid' },
       {
-        quote: "Look like th'innocent flower, / But be the serpent under't",
+        quote: "Look like the innocent flower, / But be the serpent under't",
         context: 'Lady Macbeth - appearance vs reality',
       },
     ],
@@ -535,7 +537,7 @@ const plotSummary = [
       {
         scene: 'Scene 3',
         summary:
-          "Macbeth clings to the witches' prophecies but delivers the weary 'I have lived long enough' speech, recognising he has lost everything meaningful.",
+          "Macbeth clings to the witches' prophecies but delivers the weary 'I have liv'd long enough' speech, recognising he has lost everything meaningful.",
       },
       {
         scene: 'Scene 4',

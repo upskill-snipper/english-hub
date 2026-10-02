@@ -1,6 +1,41 @@
 // @ts-nocheck
 import type { CourseData, CourseModule, CourseQuiz } from './courses'
 
+/**
+ * QUOTATIONS CORRECTED AGAINST THE HELD TEXT (2 October 2026). Students
+ * memorise these, so each must be Dickens's words as the site's edition prints
+ * them (Project Gutenberg #46, src/data/full-texts/a-christmas-carol.ts).
+ * scripts/check-quotations.mjs found 38 here that were not. The commonest was
+ * "Are there no prisons? Are there no workhouses?" given as Scrooge's in
+ * Stave 1: in that form it is the Spirit's in Stave 3, turning his words on
+ * him, and Scrooge's own are "Are there no prisons?" and "And the Union
+ * workhouses?". Others cut a speech tag or a clause with no ellipsis, made
+ * Belle say "a golden idol" (she says "Another idol", then "A golden one"),
+ * added a "the" to "shadows of things that May be", and wrote "grindstone"
+ * for the edition's "grind-stone".
+ *
+ * Reading the quotation banks around them found lines in no edition at all,
+ * which the scanner cannot see because nothing in the text is close to them:
+ * "Fan, my dear sister", "But a woman of some importance to you", "The empty
+ * chair by the fire", "It matters little ... who it was who lay there", a
+ * Fezziwig line built on the Ghost's "a large heart" about Fan, the Spirit's
+ * "eighteen hundred years", a line about "the gallows" profiting by a sale,
+ * "a throne of Christmas food", "the cheapest funeral", "you were my
+ * partner", and a Stave 2 line given "they may be, they will be". Each was
+ * replaced with a real line making the same point, or removed where the next
+ * line already made it. Fred's "a kind, forgiving, charitable, pleasant time"
+ * had been called the Spirit's.
+ *
+ * THE FOUR EXAM EXTRACTS were worse. Belle's began "When last we spoke", which
+ * is in no edition, and the Stave 4 one ("Bob sat down in the only comfortable
+ * chair") was largely invented; the Cratchit one ran a real sentence on into
+ * invented ones; the charity-collector one joined two speeches two hundred
+ * words apart with no mark. Each is now a passage cut from the held text, and
+ * the model answers, which analysed the invented words ("I release you,
+ * Ebenezer", "powerless to resist", "pathetically"), now analyse the real
+ * ones. Every replacement was cut from the held text by script, not retyped.
+ */
+
 // ─── AQA GCSE English Literature: A Christmas Carol ─────────────────────────
 
 const accModules: CourseModule[] = [
@@ -30,7 +65,7 @@ const accModules: CourseModule[] = [
 
 <p>The 1830s and 1840s - sometimes called the "Hungry Forties" - saw extreme poverty across industrial Britain. Rapid urbanisation packed families into overcrowded slums with no sanitation. Life expectancy for a working-class child in Manchester was just seventeen years. Against this backdrop, the government's response was not compassion but punishment.</p>
 
-<p>The <strong>Poor Law Amendment Act of 1834</strong> established <strong>workhouses</strong> - institutions where the destitute could receive food and shelter, but only in exchange for gruelling labour under deliberately harsh conditions. The principle of "less eligibility" meant that workhouse life had to be <em>worse</em> than the worst conditions outside, to discourage people from seeking help. Families were separated, meals were meagre, and inmates wore uniforms. Dickens despised the workhouse system, and Scrooge's infamous line - "Are there no prisons? Are there no workhouses?" - is a direct attack on those who saw these institutions as adequate provision for the poor.</p>
+<p>The <strong>Poor Law Amendment Act of 1834</strong> established <strong>workhouses</strong> - institutions where the destitute could receive food and shelter, but only in exchange for gruelling labour under deliberately harsh conditions. The principle of "less eligibility" meant that workhouse life had to be <em>worse</em> than the worst conditions outside, to discourage people from seeking help. Families were separated, meals were meagre, and inmates wore uniforms. Dickens despised the workhouse system, and Scrooge's infamous line - "Are there no prisons? ... And the Union workhouses?" - is a direct attack on those who saw these institutions as adequate provision for the poor.</p>
 
 <div class="key-term"><strong>Key Term: Less Eligibility</strong> - The principle behind the 1834 Poor Law that conditions in workhouses should be worse than the lowest standard of living outside, to deter all but the truly desperate from entering. Dickens regarded this as deliberately cruel.</div>
 
@@ -189,7 +224,7 @@ const accModules: CourseModule[] = [
 
 <h3>The Charity Collectors</h3>
 
-<p>Two gentlemen arrive seeking donations for the poor. This scene is crucial for AO3 because Scrooge's response directly echoes real Victorian attitudes. When told that many would rather die than enter a workhouse, Scrooge replies: "If they would rather die, they had better do it, and decrease the surplus population." This line parrots <strong>Malthusian economics</strong> and reveals the dehumanising logic of laissez-faire capitalism.</p>
+<p>Two gentlemen arrive seeking donations for the poor. This scene is crucial for AO3 because Scrooge's response directly echoes real Victorian attitudes. When told that many would rather die than enter a workhouse, Scrooge replies: "If they would rather die... they had better do it, and decrease the surplus population." This line parrots <strong>Malthusian economics</strong> and reveals the dehumanising logic of laissez-faire capitalism.</p>
 
 <p>Dickens uses Scrooge as a mouthpiece for the attitudes he despises, so that when the ghosts transform Scrooge, the reader too is compelled to reject those attitudes. The charity collectors represent Dickens's own position - that voluntary compassion and social responsibility are moral imperatives, not optional extras.</p>
 
@@ -201,7 +236,7 @@ const accModules: CourseModule[] = [
 
 <p>Marley's anguished cry - "Mankind was my business!" - is the novella's moral thesis statement. The word "business" is deliberately ironic: Marley spent his life in business (commerce), but his true business (duty to humanity) was neglected. Dickens uses this pun to argue that no amount of commercial success can compensate for a failure of compassion.</p>
 
-<p>Marley warns Scrooge that he wears a chain even longer than Marley's own - "you were my partner" - and that three spirits will visit him. The supernatural framework gives Dickens a mechanism to show Scrooge (and the reader) the past, present, and future consequences of greed. It also taps into the Victorian fascination with ghosts and the afterlife, ensuring the story would grip its audience.</p>
+<p>Marley warns Scrooge that he wears a chain even longer than Marley's own - "It is a ponderous chain!" - and that three spirits will visit him. The supernatural framework gives Dickens a mechanism to show Scrooge (and the reader) the past, present, and future consequences of greed. It also taps into the Victorian fascination with ghosts and the afterlife, ensuring the story would grip its audience.</p>
 
 <div class="examiner-tip"><strong>Top Tip (AO2):</strong> The chain is one of the most important symbols in the novella. In an exam, you could analyse how Dickens uses it to make an abstract concept (spiritual punishment for greed) concrete and visible. This links form and meaning - the ghost story genre allows Dickens to <em>literalise</em> metaphors that would otherwise remain abstract.</div>
 
@@ -223,7 +258,7 @@ const accModules: CourseModule[] = [
 
 <h3>Victorian Workhouse System and Scrooge's Callousness</h3>
 
-<p>To fully understand Scrooge's "Are there no prisons? No workhouses?" line, we must grasp the reality of the 1834 Poor Law Amendment. The workhouse was Victorian England's answer to poverty - a system designed to be deliberately harsh. As the Poor Law dictated, conditions were meant to be worse than the poorest outside employment, a principle called "less eligibility." Families were separated; meals consisted of gruel; the elderly and disabled worked alongside healthy adults. Death rates were high, and morale low.</p>
+<p>To fully understand Scrooge's "Are there no prisons? ... And the Union workhouses?" line, we must grasp the reality of the 1834 Poor Law Amendment. The workhouse was Victorian England's answer to poverty - a system designed to be deliberately harsh. As the Poor Law dictated, conditions were meant to be worse than the poorest outside employment, a principle called "less eligibility." Families were separated; meals consisted of gruel; the elderly and disabled worked alongside healthy adults. Death rates were high, and morale low.</p>
 
 <p>Scrooge's suggestion that the poor should enter workhouses reveals his complete ignorance of or indifference to their conditions. He sees workhouses as adequate provision, not as slow death. By suggesting that poverty was a problem best solved by institutions designed for degradation, Scrooge aligns himself with the most callous voices of the political establishment. Dickens's genius is using Scrooge to voice these real arguments so that his readers must confront them directly.</p>
 
@@ -235,9 +270,9 @@ const accModules: CourseModule[] = [
 <li><strong>"Hard and sharp as flint"</strong> - The simile conveys emotional hardness while flint's spark-producing quality foreshadows transformation.</li>
 <li><strong>"Solitary as an oyster"</strong> - Isolation on the surface, but oysters contain pearls, suggesting hidden goodness within.</li>
 <li><strong>"No warmth could warm, no wintry weather chill him."</strong> - Paradoxical language emphasising Scrooge's absolute emotional frigidity; external conditions cannot affect one already frozen within.</li>
-<li><strong>"If they would rather die, they had better do it, and decrease the surplus population."</strong> - Scrooge echoes Malthusian economics, reducing human suffering to population statistics; Dickens uses his words to indict his attitudes.</li>
+<li><strong>"If they would rather die... they had better do it, and decrease the surplus population."</strong> - Scrooge echoes Malthusian economics, reducing human suffering to population statistics; Dickens uses his words to indict his attitudes.</li>
 <li><strong>"Mankind was my business."</strong> - Marley's ironic pun: he pursued business (commerce) at the expense of his true business (duty to humanity).</li>
-<li><strong>"I wear the chain I forged in life - link by link, and yard by yard."</strong> - Marley's chains are self-made, suggesting moral responsibility; we forge our own spiritual destinies.</li>
+<li><strong>"I wear the chain I forged in life... I made it link by link, and yard by yard."</strong> - Marley's chains are self-made, suggesting moral responsibility; we forge our own spiritual destinies.</li>
 <li><strong>"But you were always a good man of business, Jacob."</strong> - Scrooge's assessment of Marley is morally bankrupt; business success is not the measure of a good life.</li>
 </ul>
 
@@ -259,17 +294,17 @@ const accModules: CourseModule[] = [
 <div style="background: #f0f0f0; padding: 15px; margin: 20px 0; border: 1px solid #999;">
   <strong>Sample Extract Question:</strong>
   <p style="margin: 10px 0;"><em>Starting with this extract, how does Dickens present Scrooge's moral bankruptcy through his response to the charity collectors?</em></p>
-  <p style="margin: 10px 0; border-left: 4px solid #999; padding-left: 10px;">"'At this festive season of the year, Mr. Scrooge,' said the gentleman, 'it is more than usually desirable that we should make some slight provision for the Poor and Destitute, who suffer greatly at the present time.' 'If they would rather die,' said Scrooge, 'they had better do it, and decrease the surplus population.'"</p>
+  <p style="margin: 10px 0; border-left: 4px solid #999; padding-left: 10px;">"'At this festive season of the year, Mr. Scrooge,' said the gentleman, taking up a pen, 'it is more than usually desirable that we should make some slight provision for the Poor and destitute, who suffer greatly at the present time.' ... 'If they would rather die,' said Scrooge, 'they had better do it, and decrease the surplus population.'"</p>
 
   <strong>Model Grade 9 Answer:</strong>
-  <p style="margin: 10px 0;">Dickens presents Scrooge's moral bankruptcy through the brutal contrast between the gentleman's compassionate language and Scrooge's utilitarian callousness. The gentleman's deferential tone and appeal to "this festive season" invoke Christian charity and human compassion. Scrooge's response - "If they would rather die, they had better do it, and decrease the surplus population" - is shocking in its indifference. The phrase "decrease the surplus population" reduces human suffering to economic abstraction, echoing Malthusian theory that Dickens despised. By having Scrooge voice this ideology directly, Dickens forces readers to confront the cruelty it represents. The word "surplus" is particularly damning - it treats the poor not as people but as excess population to be eliminated. Throughout Stave 1, Dickens establishes that Scrooge's indifference extends beyond mere stinginess to ideological opposition to compassion. His treatment of Bob Cratchit (denying him adequate heat), his dismissal of Fred's Christmas invitation, and his response to the charity collectors all demonstrate a consistent refusal of human connection. By the stave's end, Marley's ghost embodies the spiritual consequences of this ideology: chains forged from the ledgers and cash-boxes of a life devoted to wealth over humanity. Dickens argues that such indifference is itself a form of damnation - not punishment imposed from outside but the inevitable spiritual poverty of a life devoted only to accumulation.</p>
+  <p style="margin: 10px 0;">Dickens presents Scrooge's moral bankruptcy through the brutal contrast between the gentleman's compassionate language and Scrooge's utilitarian callousness. The gentleman's deferential tone and appeal to "this festive season" invoke Christian charity and human compassion. Scrooge's response - "If they would rather die... they had better do it, and decrease the surplus population" - is shocking in its indifference. The phrase "decrease the surplus population" reduces human suffering to economic abstraction, echoing Malthusian theory that Dickens despised. By having Scrooge voice this ideology directly, Dickens forces readers to confront the cruelty it represents. The word "surplus" is particularly damning - it treats the poor not as people but as excess population to be eliminated. Throughout Stave 1, Dickens establishes that Scrooge's indifference extends beyond mere stinginess to ideological opposition to compassion. His treatment of Bob Cratchit (denying him adequate heat), his dismissal of Fred's Christmas invitation, and his response to the charity collectors all demonstrate a consistent refusal of human connection. By the stave's end, Marley's ghost embodies the spiritual consequences of this ideology: chains forged from the ledgers and cash-boxes of a life devoted to wealth over humanity. Dickens argues that such indifference is itself a form of damnation - not punishment imposed from outside but the inevitable spiritual poverty of a life devoted only to accumulation.</p>
 </div>
 
 <h3>Symbolism Deep-Dive: Chains, Cold, and Christmas Warmth</h3>
 
-<p><strong>Chains and Bindings:</strong> Marley's chain - "made of cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel" - symbolises the spiritual consequences of prioritising wealth. Each component carries meaning: the cash-boxes and purses explicitly link the chain to money; the keys suggest locked opportunities for generosity; the ledgers represent commerce over compassion; the deeds show that property ownership without moral dimension is worthless. Critically, the chain is <em>self-forged</em> - Marley tells Scrooge that he made it "link by link, and yard by yard." This doctrine of moral responsibility is central to Dickens: we forge our own destinies through our choices.</p>
+<p><strong>Chains and Bindings:</strong> Marley's chain - "made... of cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel" - symbolises the spiritual consequences of prioritising wealth. Each component carries meaning: the cash-boxes and purses explicitly link the chain to money; the keys suggest locked opportunities for generosity; the ledgers represent commerce over compassion; the deeds show that property ownership without moral dimension is worthless. Critically, the chain is <em>self-forged</em> - Marley tells Scrooge that he made it "link by link, and yard by yard." This doctrine of moral responsibility is central to Dickens: we forge our own destinies through our choices.</p>
 
-<p><strong>Cold vs. Warmth Imagery:</strong> Temperature becomes a moral register in Stave 1. Scrooge is "hard and sharp as flint" - cold, unyielding. His counting house is "dark and cold." Bob Cratchit shivers over a single coal while Scrooge hoards comfort. Yet the novella is set at Christmas, the warmest, most communal season. Dickens uses this contrast to argue that Scrooge's choice is not merely personal; it is a rejection of the very season that celebrates human connection. By Stave 5, when Scrooge is transformed, the imagery reverses: the fire is warm, the house is light, and Scrooge becomes warm-hearted. This symbolism makes redemption visceral - change is not abstract but embodied in warmth and light.</p>
+<p><strong>Cold vs. Warmth Imagery:</strong> Temperature becomes a moral register in Stave 1. Scrooge is "hard and sharp as flint" - cold, unyielding. The weather outside his counting house is "cold, bleak, biting". Bob Cratchit shivers over a single coal while Scrooge hoards comfort. Yet the novella is set at Christmas, the warmest, most communal season. Dickens uses this contrast to argue that Scrooge's choice is not merely personal; it is a rejection of the very season that celebrates human connection. By Stave 5, when Scrooge is transformed, the imagery reverses: the fire is warm, the house is light, and Scrooge becomes warm-hearted. This symbolism makes redemption visceral - change is not abstract but embodied in warmth and light.</p>
 
 <p><strong>Christmas as Symbol:</strong> Christmas in Stave 1 is not yet the beloved holiday of popular imagination - it is contested. Fred celebrates it; Scrooge dismisses it as "humbug." Dickens is arguing that Christmas represents a choice: to acknowledge our common humanity, to suspend commerce and competition, to prioritise generosity. Scrooge's refusal of Christmas is his refusal of these values. His eventual acceptance of Christmas in Stave 5 represents his acceptance of social responsibility and human connection.</p>
 `,
@@ -378,7 +413,7 @@ const accModules: CourseModule[] = [
 
 <p>The vision of Fezziwig's warehouse is one of the novella's most joyful scenes and serves as a direct counterpoint to Scrooge's own counting house. Fezziwig is everything Scrooge is not: generous, warm, and alive to the happiness of those around him. He spends "a few pounds" on a Christmas party that fills his employees with genuine joy. Dickens emphasises that the monetary cost is small - it is the spirit of generosity that matters.</p>
 
-<p>Scrooge watches Fezziwig and unconsciously speaks "like his former, not his latter, self" - declaring that Fezziwig had "the power to render us happy or unhappy; to make our service light or burdensome." This is a crucial moment of self-awareness. Scrooge recognises that an employer's power extends beyond wages to the emotional wellbeing of their workers. The Spirit asks pointedly whether the praise is deserved for spending "a few pounds," and Scrooge - "heated by the Ghost's remark" - begins to understand that he himself has failed as an employer.</p>
+<p>Scrooge watches Fezziwig and unconsciously speaks "like his former, not his latter, self" - declaring that Fezziwig had "the power to render us happy or unhappy; to make our service light or burdensome." This is a crucial moment of self-awareness. Scrooge recognises that an employer's power extends beyond wages to the emotional wellbeing of their workers. The Spirit asks pointedly whether the praise is deserved for spending "a few pounds," and Scrooge - "heated by the remark" - begins to understand that he himself has failed as an employer.</p>
 
 <div class="key-term"><strong>Key Term: Foil</strong> - A character who contrasts with another to highlight particular qualities. Fezziwig is a foil for Scrooge: both are employers, but Fezziwig uses his wealth to spread joy while Scrooge hoards it. The comparison sharpens Dickens's critique of miserly employers.</div>
 
@@ -388,7 +423,7 @@ const accModules: CourseModule[] = [
 
 <h3>Belle: The Loss of Love</h3>
 
-<p>The final - and most painful - vision shows Belle, Scrooge's former fiancee, releasing him from their engagement. She tells him that "a golden idol has displaced me" - money has replaced love in Scrooge's heart. The metaphor of the "golden idol" carries biblical resonance (the Golden Calf of Exodus), suggesting that Scrooge's worship of wealth is a form of idolatry - a sin against the divine.</p>
+<p>The final - and most painful - vision shows Belle, Scrooge's former fiancee, releasing him from their engagement. She tells him that "Another idol has displaced me" and, when he asks what idol, answers "A golden one." Money has replaced love in Scrooge's heart. The metaphor of the golden idol carries biblical resonance (the Golden Calf of Exodus), suggesting that Scrooge's worship of wealth is a form of idolatry - a sin against the divine.</p>
 
 <p>Belle's accusation is gentle but devastating: "You fear the world too much." She recognises that Scrooge's greed is rooted not in malice but in <strong>fear</strong> - fear of poverty, fear of the vulnerability he experienced as a child. Dickens humanises Scrooge even as he condemns his choices, ensuring the reader understands that greed is a response to trauma, not an inherent character flaw.</p>
 
@@ -410,14 +445,14 @@ const accModules: CourseModule[] = [
 
 <ul>
 <li><strong>"A solitary child, neglected by his friends."</strong> - "Neglected" carries weight beyond loneliness; it suggests abandonment and explains Scrooge's adult isolation.</li>
-<li><strong>"I wish... I had given him something: that's all."</strong> - Scrooge's first expression of regret; memory activates conscience.</li>
-<li><strong>"Fan, my dear sister!"</strong> - The only female figure Scrooge loves, her death leaves him emotionally vulnerable and explains his coldness to Fred.</li>
+<li><strong>"I should like to have given him something: that's all."</strong> - Scrooge's first expression of regret; memory activates conscience.</li>
+<li><strong>"I have come to bring you home, dear brother!"</strong> - Fan, come to fetch her brother from school, is the only female figure Scrooge loves; her death leaves him emotionally vulnerable and explains his coldness to Fred, her son.</li>
 <li><strong>"Father is so much kinder than he used to be."</strong> - Implies parental cruelty that shaped Scrooge's difficulty with emotional connection.</li>
-<li><strong>"A large heart! It is the one thing in the world I prize above all things!"</strong> - Fezziwig defines value in emotional rather than financial terms, a direct counterpoint to Scrooge's later philosophy.</li>
-<li><strong>"Mankind was my business; charity, mercy, forbearance, and benevolence were all my business."</strong> - (Fezziwig's model) The inverse of Marley's regret; generosity makes business meaningful.</li>
-<li><strong>"A golden idol has displaced me."</strong> - Belle's biblical language (Golden Calf) positions Scrooge's wealth-worship as idolatry, a sin.</li>
+<li><strong>"The happiness he gives, is quite as great as if it cost a fortune."</strong> - Scrooge, defending Fezziwig to the Ghost, measures value in happiness rather than money, a direct counterpoint to the miser he became.</li>
+<li><strong>"Mankind was my business... charity, mercy, forbearance, and benevolence, were, all, my business."</strong> - Marley's lament from Stave 1, which Fezziwig's generosity puts into practice; generosity makes business meaningful.</li>
+<li><strong>"Another idol has displaced me... A golden one."</strong> - Belle's biblical language (Golden Calf) positions Scrooge's wealth-worship as idolatry, a sin.</li>
 <li><strong>"You fear the world too much."</strong> - Belle diagnoses greed as rooted in fear, not malice - crucial for understanding Scrooge's psychology.</li>
-<li><strong>"But a woman of some importance to you."</strong> - Belle, surrounded by children and warmth, represents the family life Scrooge sacrificed.</li>
+<li><strong>"such another creature, quite as graceful and as full of promise, might have called him father"</strong> - Watching Belle's daughter, Scrooge sees the family life he sacrificed: a child like her might have been his.</li>
 </ul>
 
 <h3>Grade 9 Insight Box - Symbolism of Light and Darkness in Memory</h3>
@@ -432,15 +467,15 @@ const accModules: CourseModule[] = [
 <div style="background: #f0f0f0; padding: 15px; margin: 20px 0; border: 1px solid #999;">
   <strong>Sample Extract Question:</strong>
   <p style="margin: 10px 0;"><em>Starting with this extract, how does Dickens use Belle to represent what Scrooge has sacrificed through his devotion to wealth?</em></p>
-  <p style="margin: 10px 0; border-left: 4px solid #999; padding-left: 10px;">"'When last we spoke, I told you he would take no further notice of me, and that if you wished to change your nature, the time was past. It is. I release you, Ebenezer.' She extended her hand in token of parting; and he, though he held it for a moment, powerless to resist, turned from her."</p>
+  <p style="margin: 10px 0; border-left: 4px solid #999; padding-left: 10px;">"'It matters little,' she said, softly. 'To you, very little. Another idol has displaced me; and if it can cheer and comfort you in time to come, as I would have tried to do, I have no just cause to grieve.' 'What Idol has displaced you?' he rejoined. 'A golden one.' 'This is the even-handed dealing of the world!' he said. 'There is nothing on which it is so hard as poverty; and there is nothing it professes to condemn with such severity as the pursuit of wealth!' 'You fear the world too much,' she answered, gently. 'All your other hopes have merged into the hope of being beyond the chance of its sordid reproach. I have seen your nobler aspirations fall off one by one, until the master-passion, Gain, engrosses you. Have I not?'"</p>
 
   <strong>Model Grade 9 Answer:</strong>
-  <p style="margin: 10px 0;">Belle's farewell is Dickens's most poignant dramatisation of the cost of greed. The phrase "I release you, Ebenezer" is particularly devastating - Belle speaks with resignation, not anger. She recognises that Scrooge has already chosen, that she cannot compete with his "golden idol" of wealth. The image of Scrooge turning from her - "powerless to resist" - suggests that he is trapped, unable to choose love even when given the chance. Dickens presents this not as Scrooge's moral failure alone but as tragedy: the economic system and the fear it engenders have made it impossible for him to prioritise human connection. Belle's extended hand represents the alternative life available to him - the family, children, warmth, and belonging visible in the subsequent vision where she sits surrounded by her own happy brood. The contrast is devastating: Belle thrives in domestic love while Scrooge languishes in solitary accumulation. Dickens argues that no amount of wealth compensates for this loss. For the wider text, Belle is crucial to understanding why Scrooge's transformation must happen: he is not naturally wicked but has been warped by circumstance and fear. His redemption is possible because beneath the miser is still a man who once loved and can love again.</p>
+  <p style="margin: 10px 0;">Belle's farewell is Dickens's most poignant dramatisation of the cost of greed. Her quiet "It matters little" and the correction "To you, very little" are spoken with resignation, not anger: she recognises that Scrooge has already chosen. The metaphor of an "idol" that has displaced her makes his love of money a false religion, and her three-word answer, "A golden one", names it with devastating economy. Scrooge's protest at "the even-handed dealing of the world" only proves her point, and her diagnosis, "You fear the world too much", suggests that he is trapped by fear rather than wicked: she has watched his "nobler aspirations fall off one by one" until "the master-passion, Gain, engrosses" him. Dickens presents this not as Scrooge's moral failure alone but as tragedy: the economic system and the fear it engenders have made it impossible for him to prioritise human connection. Belle herself represents the alternative life available to him - the family, children, warmth, and belonging visible in the subsequent vision where she sits surrounded by her own happy brood. The contrast is devastating: Belle thrives in domestic love while Scrooge languishes in solitary accumulation. Dickens argues that no amount of wealth compensates for this loss. For the wider text, Belle is crucial to understanding why Scrooge's transformation must happen: he is not naturally wicked but has been warped by circumstance and fear. His redemption is possible because beneath the miser is still a man who once loved and can love again.</p>
 </div>
 
 <h3>Symbolism Deep-Dive: The Golden Idol and Lost Alternatives</h3>
 
-<p><strong>The Golden Idol:</strong> Belle's phrase "a golden idol has displaced me" carries biblical resonance to the Golden Calf of Exodus. This comparison positions Scrooge's worship of wealth as idolatry - a sin against divine values. By using religious language, Dickens elevates Scrooge's greed from mere vice to spiritual transgression. The "idol" metaphor also suggests blind worship: Scrooge serves wealth without rational thought, much as the Israelites worshipped the golden calf in ignorance. This connects to the novella's larger argument that economic ideology can be as blind and destructive as any false religion.</p>
+<p><strong>The Golden Idol:</strong> Belle's words "Another idol has displaced me" and "A golden one" carry biblical resonance to the Golden Calf of Exodus. This comparison positions Scrooge's worship of wealth as idolatry - a sin against divine values. By using religious language, Dickens elevates Scrooge's greed from mere vice to spiritual transgression. The "idol" metaphor also suggests blind worship: Scrooge serves wealth without rational thought, much as the Israelites worshipped the golden calf in ignorance. This connects to the novella's larger argument that economic ideology can be as blind and destructive as any false religion.</p>
 
 <p><strong>The Absent Alternative:</strong> Stave 2 is structured around alternatives - alternative employers (Fezziwig vs. Scrooge), alternative relationships (Fan, Belle), alternative futures (Belle's warm family vs. Scrooge's isolation). Dickens implies that Scrooge's present misery is not inevitable but the result of choices that foreclosed other possibilities. This is crucial for the novella's hopefulness: if Scrooge became what he is through choice, he can become something different through different choices. The ghost's light illuminates not just the past but the many paths not taken, making Scrooge's redemption psychologically and morally urgent.</p>
 
@@ -477,7 +512,8 @@ const accModules: CourseModule[] = [
       },
       {
         id: 'aqa-acc-m3-q3',
-        question: 'What does Belle mean when she says "a golden idol has displaced me"?',
+        question:
+          'What does Belle mean when she says "Another idol has displaced me" and calls it "A golden one"?',
         options: [
           'Scrooge has replaced her with a golden statue',
           "Money has replaced love in Scrooge's heart - the biblical allusion suggests his worship of wealth is a form of idolatry",
@@ -486,7 +522,7 @@ const accModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'Belle uses the metaphor of a "golden idol" (echoing the biblical Golden Calf) to show that Scrooge now worships money instead of valuing love. This frames his greed as a spiritual sin, not just a personality flaw.',
+          'Belle uses the metaphor of a golden idol (echoing the biblical Golden Calf) to show that Scrooge now worships money instead of valuing love. This frames his greed as a spiritual sin, not just a personality flaw.',
       },
       {
         id: 'aqa-acc-m3-q4',
@@ -544,7 +580,7 @@ const accModules: CourseModule[] = [
 
 <h3>The Cratchit Family Christmas</h3>
 
-<p>The centrepiece of Stave 3 is the Cratchit family's Christmas dinner. Dickens describes it in loving, sensory detail - the smell of the goose, the excitement of the Christmas pudding, the warmth of the family gathered together. Yet he also makes clear that this is a <strong>modest</strong> celebration. The goose is small. The pudding is "a small one for a large family." The children's clothes are threadbare but clean. Martha, the eldest daughter, works long hours in a hatmaker's shop for a pittance.</p>
+<p>The centrepiece of Stave 3 is the Cratchit family's Christmas dinner. Dickens describes it in loving, sensory detail - the smell of the goose, the excitement of the Christmas pudding, the warmth of the family gathered together. Yet he also makes clear that this is a <strong>modest</strong> celebration. The goose is small. The pudding is small, though nobody "said or thought it was at all a small pudding for a large family." The children's clothes are threadbare but clean. Martha, the eldest daughter, works long hours in a hatmaker's shop for a pittance.</p>
 
 <p>The brilliance of this scene is its <strong>juxtaposition</strong>: the Cratchits have almost nothing in material terms, yet they possess everything that Scrooge lacks - love, warmth, gratitude, and togetherness. Dickens inverts the expected hierarchy: the "poor" family is spiritually rich, while the "wealthy" Scrooge is spiritually bankrupt. This structural contrast is central to the novella's moral argument and provides excellent material for AO2 analysis.</p>
 
@@ -552,7 +588,7 @@ const accModules: CourseModule[] = [
 
 <div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
   <strong>How to Write About the Cratchit Family (Grade 9 Response):</strong>
-  <p style="margin: 10px 0;">Dickens presents the Cratchit family's Christmas dinner as a moment of spiritual abundance despite material poverty. The sensory details - the smell of goose, the warmth of the fire, the laughter - create an atmosphere of contentment that contrasts sharply with Scrooge's isolation. The phrase "a small one for a large family" highlights the family's material constraints while the subsequent celebration emphasizes their emotional richness. Dickens uses this juxtaposition to argue that happiness derives not from wealth but from relationships. For an exam response, this demonstrates AO2 analysis: Dickens's choice of what to describe (family warmth) and what to downplay (material limitations) serves his larger purpose of critiquing capitalism and celebrating human connection.</p>
+  <p style="margin: 10px 0;">Dickens presents the Cratchit family's Christmas dinner as a moment of spiritual abundance despite material poverty. The sensory details - the smell of goose, the warmth of the fire, the laughter - create an atmosphere of contentment that contrasts sharply with Scrooge's isolation. The narrator's insistence that nobody "said or thought it was at all a small pudding for a large family" highlights the family's material constraints while the subsequent celebration emphasizes their emotional richness. Dickens uses this juxtaposition to argue that happiness derives not from wealth but from relationships. For an exam response, this demonstrates AO2 analysis: Dickens's choice of what to describe (family warmth) and what to downplay (material limitations) serves his larger purpose of critiquing capitalism and celebrating human connection.</p>
 </div>
 
 <h3>Tiny Tim</h3>
@@ -584,7 +620,7 @@ const accModules: CourseModule[] = [
 
 <div class="key-term"><strong>Key Term: Allegory</strong> - A narrative in which characters, events, and settings represent abstract ideas or moral concepts. Ignorance and Want are allegorical figures representing the social consequences of neglecting the poor. The entire novella can be read as an allegory for Victorian society's need for moral reform.</div>
 
-<p>When Scrooge asks "Have they no refuge or resource?", the Ghost echoes his own words once more: "Are there no prisons? Are there no workhouses?" This repetition is devastating - Scrooge's earlier dismissal of the poor is turned into an indictment of his own callousness. Dickens makes it impossible for the reader to hear those words without shame.</p>
+<p>When Scrooge asks "Have they no refuge or resource?", the Ghost echoes his own words once more: "Are there no prisons? ... Are there no workhouses?" This repetition is devastating - Scrooge's earlier dismissal of the poor is turned into an indictment of his own callousness. Dickens makes it impossible for the reader to hear those words without shame.</p>
 
 <div class="examiner-tip"><strong>Top Tip (AO1):</strong> Ignorance and Want are among the most frequently examined moments in the novella. If asked about social responsibility, poverty, or Dickens's message, this scene should feature prominently. Always connect the allegory to Dickens's wider purpose - he is arguing that Victorian society must address poverty and education to avoid its own destruction.</div>
 
@@ -603,15 +639,14 @@ const accModules: CourseModule[] = [
 <h3>Key Quotation Bank - Stave 3</h3>
 
 <ul>
-<li><strong>"I have always thought of Christmas time... as a good time; a kind, forgiving, charitable, pleasant time."</strong> - The Spirit's definition of Christmas as a time of active generosity and forgiveness, not passivity.</li>
-<li><strong>"These are but shadows of the things that have been, they may be, they will be."</strong> - Uncertainty about the future; the outcomes depend on present choices.</li>
+<li><strong>"I have always thought of Christmas time... as a good time; a kind, forgiving, charitable, pleasant time."</strong> - Fred's definition of Christmas in Stave 1, which the Spirit's journey bears out: a time of active generosity and forgiveness, not passivity.</li>
 <li><strong>"If these shadows remain unaltered by the Future, the child will die."</strong> - The Spirit turns Scrooge's conditional language against him, forcing him to acknowledge agency.</li>
 <li><strong>"If he be like to die, he had better do it, and decrease the surplus population."</strong> - The Spirit echoes Scrooge's own Malthusian language back at him, showing its cruelty in the context of a beloved child.</li>
 <li><strong>"God bless us, every one!"</strong> - Tiny Tim's blessing is unconditional and all-encompassing, the novella's statement of universal goodwill.</li>
 <li><strong>"I mean to give him the same chance every year, whether he likes it or not, for I pity him."</strong> - Fred's persistent kindness; he pities Scrooge's misery, not the poor.</li>
-<li><strong>"Are there no prisons? Are there no workhouses?"</strong> - The Spirit echoes Scrooge's earlier dismissal, showing its inadequacy in addressing poverty.</li>
-<li><strong>"Beware them both, but most of all beware this boy, for on his brow I see that written which is Doom."</strong> - Ignorance is presented as the greatest threat; an uneducated poor class is a threat to society itself.</li>
-<li><strong>"More than eighteen hundred years this day have had birth, and I have never felt the want of company."</strong> - The Spirit's eternity; Christmas time is eternal, transcending any individual lifetime.</li>
+<li><strong>"Are there no prisons? ... Are there no workhouses?"</strong> - The Spirit echoes Scrooge's earlier dismissal, showing its inadequacy in addressing poverty.</li>
+<li><strong>"Beware them both, and all of their degree, but most of all beware this boy, for on his brow I see that written which is Doom, unless the writing be erased."</strong> - Ignorance is presented as the greatest threat; an uneducated poor class is a threat to society itself.</li>
+<li><strong>"More than eighteen hundred"</strong> - The Spirit's answer when Scrooge asks how many brothers he has had: a spirit for every Christmas since the Nativity, so Christmas is older than any individual lifetime.</li>
 </ul>
 
 <h3>Grade 9 Insight Box - Tiny Tim as Symbol and Character</h3>
@@ -626,10 +661,10 @@ const accModules: CourseModule[] = [
 <div style="background: #f0f0f0; padding: 15px; margin: 20px 0; border: 1px solid #999;">
   <strong>Sample Extract Question:</strong>
   <p style="margin: 10px 0;"><em>Starting with this extract, how does Dickens present the Cratchit family as morally superior to Scrooge despite their poverty?</em></p>
-  <p style="margin: 10px 0; border-left: 4px solid #999; padding-left: 10px;">"Bob's voice was tremulous when he told them this, and trembled more when he said that Tiny Tim was growing strong and hearty. Mrs. Cratchit kissed him, his daughters cheered, Scrooge's clerk was overjoyed. It was the first of the proceedings of the evening that made the slightest impression on him."</p>
+  <p style="margin: 10px 0; border-left: 4px solid #999; padding-left: 10px;">"'And how did little Tim behave?' asked Mrs. Cratchit, when she had rallied Bob on his credulity, and Bob had hugged his daughter to his heart's content. 'As good as gold,' said Bob, 'and better. Somehow he gets thoughtful, sitting by himself so much, and thinks the strangest things you ever heard. He told me, coming home, that he hoped the people saw him in the church, because he was a cripple, and it might be pleasant to them to remember upon Christmas Day, who made lame beggars walk, and blind men see.' Bob's voice was tremulous when he told them this, and trembled more when he said that Tiny Tim was growing strong and hearty."</p>
 
   <strong>Model Grade 9 Answer:</strong>
-  <p style="margin: 10px 0;">Dickens presents the Cratchits as morally superior through their emotional responsiveness and genuine love. Bob's tremulous voice reveals his deep parental concern for Tiny Tim; the family's unified response - Mrs. Cratchit kisses him, daughters cheer, the whole household rejoices - demonstrates that their values centre on relationships, not possessions. The phrase "It was the first of the proceedings of the evening that made the slightest impression on him" is significant: Scrooge, who has passed through his own household with indifference, is moved only when witnessing authentic parental love. Dickens juxtaposes the Cratchit home (small, warm, full of affection) with Scrooge's environment (large, cold, empty of human connection), suggesting that the Cratchits' spiritual wealth far exceeds Scrooge's material wealth. Throughout Stave 3, Dickens uses sensory imagery to convey the Cratchit family's richness: the smell of goose, the warmth of the fire, the sound of laughter and conversation. These details, though describing material modesty, create an atmosphere of abundance - not of money but of love. For Dickens, this is the true measure of a good life: the ability to create warmth and joy from limited resources, and to maintain dignity and love despite poverty. The Cratchits achieve what Scrooge, despite all his wealth, has failed to achieve: a meaningful, connected life.</p>
+  <p style="margin: 10px 0;">Dickens presents the Cratchits as morally superior through their emotional responsiveness and genuine love. Bob's answer, "As good as gold... and better", turns a phrase about money into a judgement on worth: goodness, not gold, is this family's wealth. Tim's hope that the people in church would remember "who made lame beggars walk, and blind men see" shows a sick child thinking of others rather than of his own suffering, and Bob's voice, which "trembled more when he said that Tiny Tim was growing strong and hearty", betrays the fear beneath the family's cheer. Scrooge, who has passed through his own life with indifference, is moved only when witnessing authentic parental love. Dickens juxtaposes the Cratchit home (small, warm, full of affection) with Scrooge's environment (large, cold, empty of human connection), suggesting that the Cratchits' spiritual wealth far exceeds Scrooge's material wealth. Throughout Stave 3, Dickens uses sensory imagery to convey the Cratchit family's richness: the smell of goose, the warmth of the fire, the sound of laughter and conversation. These details, though describing material modesty, create an atmosphere of abundance - not of money but of love. For Dickens, this is the true measure of a good life: the ability to create warmth and joy from limited resources, and to maintain dignity and love despite poverty. The Cratchits achieve what Scrooge, despite all his wealth, has failed to achieve: a meaningful, connected life.</p>
 </div>
 
 <h3>Symbolism Deep-Dive: Ignorance and Want - The Children Beneath the Robe</h3>
@@ -638,7 +673,7 @@ const accModules: CourseModule[] = [
 
 <p><strong>Warmth and Cold as Moral Registers:</strong> Stave 3 intensifies the warmth/cold imagery introduced in Stave 1. The Cratchit home is warm despite limited fuel; the fire is carefully tended. Scrooge's environment remains cold and dark. Fred's party is full of light and warmth. The physical temperature becomes a moral indicator: those who create warmth and welcome are morally superior to those who hoard comfort. By Stave 5, when Scrooge is transformed, the imagery reverses completely - he becomes warm in both body and spirit. The novella suggests that moral transformation involves literally warming to others, becoming capable of generating and sharing heat (comfort, joy, generosity).</p>
 
-<p><strong>Christmas as Abundance Despite Scarcity:</strong> The Spirit sits atop "a throne of Christmas food - turkeys, geese, sausages, mince pies, plum puddings" - an image of abundance. Yet the Spirit uses its torch (resembling a cornucopia) to sprinkle blessings on the food of the poor, not the rich. Dickens argues that there is enough for everyone; the problem is distribution and will, not scarcity. When the Spirit spreads its robe over hovels and tenements, the poor momentarily enjoy abundance. This is Dickens's vision of social reform: not destruction of wealth but redistribution of generosity - making sure everyone has enough for dignity and joy.</p>
+<p><strong>Christmas as Abundance Despite Scarcity:</strong> The Spirit sits on food heaped up "to form a kind of throne" - "turkeys, geese, game, poultry, brawn, great joints of meat, sucking-pigs, long wreaths of sausages, mince-pies, plum-puddings" - an image of abundance. Yet the Spirit uses its torch (resembling a cornucopia) to sprinkle blessings on the food of the poor, not the rich. Dickens argues that there is enough for everyone; the problem is distribution and will, not scarcity. When the Spirit spreads its robe over hovels and tenements, the poor momentarily enjoy abundance. This is Dickens's vision of social reform: not destruction of wealth but redistribution of generosity - making sure everyone has enough for dignity and joy.</p>
 
 <h3>The Ghost's Departure</h3>
 
@@ -720,7 +755,7 @@ const accModules: CourseModule[] = [
 
 <h3>The Ghost's Appearance</h3>
 
-<p>The Ghost of Christmas Yet to Come is described as a "solemn Phantom, draped and hooded" in a "deep black garment." Unlike the previous spirits, it does not speak - it communicates only by pointing with a spectral hand. Dickens writes that it fills Scrooge with "a solemn dread" and that "the very air through which this Spirit moved seemed to scatter gloom and mystery."</p>
+<p>The Ghost of Christmas Yet to Come is described as a "solemn Phantom, draped and hooded" in a "deep black garment." Unlike the previous spirits, it does not speak - it communicates only by pointing with a spectral hand. Dickens writes that it fills Scrooge with "a solemn dread" and that "the very air through which this Spirit moved it seemed to scatter gloom and mystery."</p>
 
 <p>The ghost's silence is a masterful structural choice. The first two spirits engaged Scrooge in dialogue, guiding his interpretation of what he saw. The third offers no guidance - Scrooge must interpret the visions himself. This forces him into active moral reasoning rather than passive observation. The ghost also evokes the figure of the <strong>Grim Reaper</strong>, and its silence conveys the implacability of death - it cannot be argued with, bargained with, or charmed.</p>
 
@@ -733,7 +768,7 @@ const accModules: CourseModule[] = [
 
 <h3>The Businessmen's Reaction</h3>
 
-<p>The first vision shows a group of businessmen discussing a recent death with casual indifference. One says he will only attend the funeral "if a lunch is provided." Another jokes that the dead man has finally done something useful - "made the cheapest funeral he could." Their callousness mirrors Scrooge's own attitude towards the poor in Stave 1. Dickens holds up a mirror: <em>this is how the world treats those who lived without love or generosity</em>.</p>
+<p>The first vision shows a group of businessmen discussing a recent death with casual indifference. One says he will only attend the funeral "if a lunch is provided." Another expects "a very cheap funeral", since he does not know "of anybody to go to it." Their callousness mirrors Scrooge's own attitude towards the poor in Stave 1. Dickens holds up a mirror: <em>this is how the world treats those who lived without love or generosity</em>.</p>
 
 <p>Scrooge does not yet realise the dead man is himself. This dramatic irony intensifies the horror - the reader may guess what Scrooge cannot, creating suspense and a sense of dread.</p>
 
@@ -751,7 +786,7 @@ const accModules: CourseModule[] = [
 
 <div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
   <strong>How to Develop a Point About Death and Community (Grade 9 Response):</strong>
-  <p style="margin: 10px 0;">Old Joe's shop scene dramatizes the ultimate consequence of Scrooge's philosophy: a death that serves only as an economic transaction. The businessmen joke about making "the cheapest funeral," reducing death to cost. This contrasts with Tiny Tim's death, which is mourned with genuine grief. Dickens is arguing that a life's meaning is measured not by wealth but by the relationships it generates. The theming of death as either "mourned" or "unmourned" becomes Dickens's central preoccupation in Stave 4. For an essay, this demonstrates how Dickens uses opposing images to make his moral argument: the unmourned corpse vs. the beloved child.</p>
+  <p style="margin: 10px 0;">Old Joe's shop scene dramatizes the ultimate consequence of Scrooge's philosophy: a death that serves only as an economic transaction. The businessmen joke that it will be "a very cheap funeral," reducing death to cost. This contrasts with Tiny Tim's death, which is mourned with genuine grief. Dickens is arguing that a life's meaning is measured not by wealth but by the relationships it generates. The theming of death as either "mourned" or "unmourned" becomes Dickens's central preoccupation in Stave 4. For an essay, this demonstrates how Dickens uses opposing images to make his moral argument: the unmourned corpse vs. the beloved child.</p>
 </div>
 
 <h3>The Shrouded Corpse</h3>
@@ -762,7 +797,7 @@ const accModules: CourseModule[] = [
 
 <h3>Tiny Tim's Death</h3>
 
-<p>In devastating contrast to the uncared-for corpse, Dickens shows the Cratchit household after Tiny Tim's death. The family is grief-stricken but united. Bob Cratchit kisses his dead child's face, promising "my little child, my little child!" The repetition conveys overwhelming parental love. The house is described as "quiet. Very quiet." The short sentences mirror the family's stunned, breathless grief.</p>
+<p>In devastating contrast to the uncared-for corpse, Dickens shows the Cratchit household after Tiny Tim's death. The family is grief-stricken but united. Bob Cratchit, who has promised his son that he will walk to the grave on a Sunday, breaks down: "My little, little child! ... My little child!" The repetition conveys overwhelming parental love. The house is described as "quiet. Very quiet." The short sentences mirror the family's stunned, breathless grief.</p>
 
 <p>The empty chair by the fire and the crutch "without an owner, carefully preserved" are among the novella's most poignant symbols. The chair represents absence - what should be there but is not. The preserved crutch suggests that Tiny Tim's memory will endure in this loving household, in stark contrast to the dead businessman whom nobody remembers with affection.</p>
 
@@ -772,7 +807,7 @@ const accModules: CourseModule[] = [
 
 <h3>The Gravestone</h3>
 
-<p>The final revelation comes in the churchyard. The Ghost points to a neglected grave, and Scrooge reads his own name on the stone: <strong>EBENEZER SCROOGE</strong>. The moment is the novella's climax - everything has been building to this shattering self-recognition. Scrooge falls to his knees and begs: "Are these the shadows of the things that Will be, or are they shadows of the things that May be, only?"</p>
+<p>The final revelation comes in the churchyard. The Ghost points to a neglected grave, and before he will draw nearer Scrooge asks: "Are these the shadows of the things that Will be, or are they shadows of things that May be, only?" The Ghost only points, and Scrooge reads his own name on the stone: <strong>EBENEZER SCROOGE</strong>. The moment is the novella's climax - everything has been building to this shattering self-recognition, and Scrooge falls to his knees.</p>
 
 <p>The distinction between "Will" and "May" is crucial. Scrooge is asking whether the future is fixed or changeable - whether redemption is still possible. This question reflects a key tension in the novella between determinism and free will. Dickens's answer - delivered through Scrooge's transformation in Stave 5 - is emphatically optimistic: the future can be changed through moral choice and action.</p>
 
@@ -790,19 +825,19 @@ const accModules: CourseModule[] = [
 
 <h3>Character Transformation Arc - The Crystallisation of Change</h3>
 
-<p>Stave 4 is where Scrooge's transformation completes. The previous ghosts worked through memory and empathy to move Scrooge gradually toward change. The fourth spirit works through fear - not fear of God's wrath but fear of his own insignificance. Scrooge realises that his entire life - his wealth, his business, his accumulated power - will mean nothing if he dies unmourned. This is not a moral argument but an existential one: a life devoted solely to accumulation is, by definition, a wasted life because accumulation creates no meaning. The shock of recognising his own corpse - seeing his name on the gravestone - is the turning point. In that moment, Scrooge understands that he has the power to change his future. His famous question - "Are these the shadows of the things that Will be, or are they shadows of the things that May be, only?" - expresses his recognition of free will: the future is not fixed; he can make different choices.</p>
+<p>Stave 4 is where Scrooge's transformation completes. The previous ghosts worked through memory and empathy to move Scrooge gradually toward change. The fourth spirit works through fear - not fear of God's wrath but fear of his own insignificance. Scrooge realises that his entire life - his wealth, his business, his accumulated power - will mean nothing if he dies unmourned. This is not a moral argument but an existential one: a life devoted solely to accumulation is, by definition, a wasted life because accumulation creates no meaning. The shock of recognising his own corpse - seeing his name on the gravestone - is the turning point. In that moment, Scrooge understands that he has the power to change his future. His famous question - "Are these the shadows of the things that Will be, or are they shadows of things that May be, only?" - expresses his recognition of free will: the future is not fixed; he can make different choices.</p>
 
 <h3>Key Quotation Bank - Stave 4</h3>
 
 <ul>
-<li><strong>"The Phantom slowly, gravely, silently approached."</strong> - The repetition of monosyllabic adjectives creates an atmosphere of inexorable dread; the spirit cannot be influenced or argued with.</li>
-<li><strong>"The very air through which this Spirit moved seemed to scatter gloom and mystery."</strong> - Personification of darkness; the ghost embodies the absence of meaning and hope.</li>
-<li><strong>"It matters little... who it was who lay there. It matters little."</strong> - The repeated dismissal emphasises the dead man's complete insignificance; he is forgotten already.</li>
-<li><strong>"If he would only be conscious of this satisfaction to himself! But the gallows, I suppose, would profit by the sale of his body; if there was anything to be got!"</strong> - Darkly comic commentary on the reduction of human death to economic value.</li>
+<li><strong>"The Phantom slowly, gravely, silently approached."</strong> - The three adverbs slow the sentence and create an atmosphere of inexorable dread; the spirit cannot be influenced or argued with.</li>
+<li><strong>"The very air through which this Spirit moved it seemed to scatter gloom and mystery."</strong> - Personification of darkness; the ghost embodies the absence of meaning and hope.</li>
+<li><strong>"It's likely to be a very cheap funeral... for upon my life I don't know of anybody to go to it."</strong> - The businessman's shrug emphasises the dead man's complete insignificance; nobody will even go to his funeral.</li>
+<li><strong>"This is the end of it, you see! He frightened every one away from him when he was alive, to profit us when he was dead!"</strong> - The charwoman's darkly comic gloating reduces a human death to economic value.</li>
 <li><strong>"Plundered and bereft, unwatched, unwept, uncared for."</strong> - The triple "un-" construction strips away all human connection; each prefix removes a link to community.</li>
-<li><strong>"My little child! My little child!"</strong> - Bob Cratchit's repetition conveys the depth of parental love and the magnitude of loss, in contrast to the callous indifference to the dead businessman's passing.</li>
-<li><strong>"The empty chair by the fire."</strong> - A symbol of absence made present; what should be there but is not.</li>
-<li><strong>"Are these the shadows of the things that Will be, or are they shadows of the things that May be, only?"</strong> - Scrooge's crucial recognition that the future is not fixed, that free will and moral choice matter.</li>
+<li><strong>"My little, little child! ... My little child!"</strong> - Bob Cratchit's repetition conveys the depth of parental love and the magnitude of loss, in contrast to the callous indifference to the dead businessman's passing.</li>
+<li><strong>"Quiet. Very quiet."</strong> - Absence made present: the short sentences make the silence where Tiny Tim should be audible.</li>
+<li><strong>"Are these the shadows of the things that Will be, or are they shadows of things that May be, only?"</strong> - Scrooge's crucial question: whether the future is fixed, or whether free will and moral choice still matter.</li>
 <li><strong>"I will honour Christmas in my heart, and try to keep it all the year."</strong> - Scrooge's pledge; note the "try" (realistic effort, not perfection) and the extension beyond Christmas to "all the year."</li>
 </ul>
 
@@ -818,10 +853,10 @@ const accModules: CourseModule[] = [
 <div style="background: #f0f0f0; padding: 15px; margin: 20px 0; border: 1px solid #999;">
   <strong>Sample Extract Question:</strong>
   <p style="margin: 10px 0;"><em>Starting with this extract, how does Dickens use Tiny Tim's death to contrast with the death of the unnamed businessman?</em></p>
-  <p style="margin: 10px 0; border-left: 4px solid #999; padding-left: 10px;">"Bob sat down in the only comfortable chair in the room, and when he had thought a little and composed himself, he said that he had a presentiment and should like to be let alone. Then Bob took up the child's crutch and leaned upon it, pathetically. But he told them that he had seen a change in Tiny Tim of late... and hoped he might have been his own son."</p>
+  <p style="margin: 10px 0; border-left: 4px solid #999; padding-left: 10px;">"'My little, little child!' cried Bob. 'My little child!' He broke down all at once. He couldn't help it. If he could have helped it, he and his child would have been farther apart perhaps than they were. He left the room, and went up-stairs into the room above, which was lighted cheerfully, and hung with Christmas. There was a chair set close beside the child, and there were signs of some one having been there, lately. Poor Bob sat down in it, and when he had thought a little and composed himself, he kissed the little face. He was reconciled to what had happened, and went down again quite happy."</p>
 
   <strong>Model Grade 9 Answer:</strong>
-  <p style="margin: 10px 0;">Dickens uses two contrasting deaths to argue that life's meaning is measured by love, not wealth. Tiny Tim's death, while tragic, is surrounded by love: Bob's grief is genuine and overwhelming, the family is united in mourning, and Tiny Tim's memory will be cherished. The detail of Bob taking up "the child's crutch" and leaning on it "pathetically" shows how the object becomes a relic of love - carefully preserved because it belonged to someone who mattered profoundly. In contrast, the unnamed businessman's death is met with indifference and theft: his bed curtains are stolen, his body is robbed, people joke about the cheapness of his funeral. Dickens juxtaposes these deaths to show that material wealth provides no protection against meaninglessness. The businessman, despite his resources, dies unmourned. Tiny Tim, despite his poverty and disability, dies beloved. This is Dickens's most powerful argument about social responsibility: the poor may have little, but they have each other; the rich, if they remain isolated, have nothing. For Scrooge, witnessing these two deaths is transformative because it forces him to recognise that his accumulated wealth will provide no comfort in death. His redemption depends on recognising that human connection, not money, is the true measure of a good life. By Stave 5, Scrooge understands this viscerally: he acts to save Tiny Tim because he has learned that one child's life, filled with love, is worth more than his entire fortune.</p>
+  <p style="margin: 10px 0;">Dickens uses two contrasting deaths to argue that life's meaning is measured by love, not wealth. Tiny Tim's death, while tragic, is surrounded by love: Bob's grief is genuine and overwhelming, the family is united in mourning, and Tiny Tim's memory will be cherished. Bob "broke down all at once", yet the room where his son lies is "lighted cheerfully, and hung with Christmas", and after sitting in "a chair set close beside the child" he "kissed the little face": even the deathbed is a place of love, because the child mattered profoundly. In contrast, the unnamed businessman's death is met with indifference and theft: his bed curtains are stolen, his body is robbed, people joke about the cheapness of his funeral. Dickens juxtaposes these deaths to show that material wealth provides no protection against meaninglessness. The businessman, despite his resources, dies unmourned. Tiny Tim, despite his poverty and disability, dies beloved. This is Dickens's most powerful argument about social responsibility: the poor may have little, but they have each other; the rich, if they remain isolated, have nothing. For Scrooge, witnessing these two deaths is transformative because it forces him to recognise that his accumulated wealth will provide no comfort in death. His redemption depends on recognising that human connection, not money, is the true measure of a good life. By Stave 5, Scrooge understands this viscerally: he acts to save Tiny Tim because he has learned that one child's life, filled with love, is worth more than his entire fortune.</p>
 </div>
 
 <h3>Dickens's Social Reform Agenda - Death and Indifference</h3>
@@ -868,7 +903,7 @@ const accModules: CourseModule[] = [
       {
         id: 'aqa-acc-m5-q3',
         question:
-          'What is the importance of Scrooge\'s question: "Are these the shadows of things that Will be, or May be?"',
+          'What is the importance of Scrooge\'s question: "Are these the shadows of the things that Will be, or are they shadows of things that May be, only?"',
         options: [
           'It shows Scrooge is confused about how ghosts work',
           'It reveals Scrooge asking whether the future is fixed or changeable - whether redemption is still possible',
@@ -927,9 +962,9 @@ const accModules: CourseModule[] = [
 
 <h3>Scrooge's Awakening</h3>
 
-<p>Scrooge wakes in his own bed, alive, and bursts into an ecstasy of joy: "I don't know what to do! I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy." The triple simile structure - feather, angel, schoolboy - traces an arc from physical lightness to spiritual joy to youthful innocence. The simile "as merry as a schoolboy" is especially significant: it recalls the lonely schoolboy of Stave 2, suggesting that Scrooge has recovered his lost innocence.</p>
+<p>Scrooge wakes in his own bed, alive, and bursts into an ecstasy of joy: "I don't know what to do! ... I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy." The run of similes - feather, angel, schoolboy - traces an arc from physical lightness to spiritual joy to youthful innocence, before a fourth, "as giddy as a drunken man", tips it into comedy. The simile "as merry as a schoolboy" is especially significant: it recalls the lonely schoolboy of Stave 2, suggesting that Scrooge has recovered his lost innocence.</p>
 
-<p>His language is transformed. The man who spoke in clipped, dismissive phrases - "Bah! Humbug!" - now speaks in <strong>exclamatory sentences</strong> full of energy and emotion: "I don't know what day of the month it is! I don't know how long I've been among the Spirits! I don't know anything! I'm quite a baby!" The exclamation marks, the repetition of "I don't know," and the self-deprecating humour show a man completely freed from the rigid, controlling persona of Stave 1.</p>
+<p>His language is transformed. The man who spoke in clipped, dismissive phrases - "Bah! Humbug!" - now speaks in <strong>exclamatory sentences</strong> full of energy and emotion: "I don't know what day of the month it is! ... I don't know how long I've been among the Spirits. I don't know anything. I'm quite a baby." The exclamation, the repetition of "I don't know," and the self-deprecating humour show a man completely freed from the rigid, controlling persona of Stave 1.</p>
 
 <div class="key-term"><strong>Key Term: Exclamatory Sentence</strong> - A sentence that expresses strong emotion, ending with an exclamation mark. Dickens uses a flood of exclamatory sentences in Stave 5 to convey Scrooge's overwhelming joy and to create a dramatic tonal shift from the darkness of Stave 4.</div>
 
@@ -948,7 +983,7 @@ const accModules: CourseModule[] = [
 
 <h3>Meeting the Charity Collectors</h3>
 
-<p>Scrooge encounters one of the charity collectors he rudely dismissed in Stave 1. He whispers a large donation in the man's ear, and the collector is astonished: "Lord bless me! My dear Mr Scrooge, are you serious?" The scene directly reverses the earlier encounter, providing structural symmetry. Where Stave 1 showed Scrooge refusing to help, Stave 5 shows him giving extravagantly. This mirroring reinforces the completeness of his transformation.</p>
+<p>Scrooge encounters one of the charity collectors he rudely dismissed in Stave 1. He whispers a large donation in the man's ear, and the collector is astonished: "Lord bless me! ... My dear Mr. Scrooge, are you serious?" The scene directly reverses the earlier encounter, providing structural symmetry. Where Stave 1 showed Scrooge refusing to help, Stave 5 shows him giving extravagantly. This mirroring reinforces the completeness of his transformation.</p>
 
 <p>Scrooge's whispered donation is another private act - he does not announce it publicly. The collector's shock highlights how radically Scrooge has changed. Dickens uses this reaction to show the social impact of individual transformation: one person's change of heart can ripple outward, inspiring surprise, gratitude, and hope in others.</p>
 
@@ -1093,7 +1128,7 @@ const accModules: CourseModule[] = [
 
 <p>Fred, Scrooge's nephew, represents the <strong>Christmas spirit</strong> and the persistence of unconditional love. He is warm, generous, and refuses to give up on Scrooge despite repeated rejection. His function in the novella is twofold: he provides a living contrast to Scrooge (warm vs cold, generous vs miserly, sociable vs isolated), and he embodies the idea that compassion should be offered without expectation of return.</p>
 
-<p><strong>Key quotation:</strong> "I have always thought of Christmas time as a good time; a kind, forgiving, charitable, pleasant time." Fred's list of adjectives directly opposes the negative adjectives associated with Scrooge. The word "forgiving" is especially important - it foreshadows Fred's willingness to forgive Scrooge in Stave 5.</p>
+<p><strong>Key quotation:</strong> "I have always thought of Christmas time... as a good time; a kind, forgiving, charitable, pleasant time." Fred's list of adjectives directly opposes the negative adjectives associated with Scrooge. The word "forgiving" is especially important - it foreshadows Fred's willingness to forgive Scrooge in Stave 5.</p>
 
 <p>Fred is also Fan's son, and his warmth echoes his mother's "large heart." Dickens implies that generosity can be inherited - or at least that growing up in a loving environment (Fan's influence) produces compassionate adults, while neglect (Scrooge's childhood) produces misers.</p>
 
@@ -1214,7 +1249,7 @@ const accModules: CourseModule[] = [
 
 <p>Dickens's most urgent theme. He argues that the wealthy have a <strong>moral duty</strong> to help the poor - not through impersonal institutions like workhouses, but through personal generosity and compassion. This theme is embodied in Marley's cry ("Mankind was my business!"), the Ghost of Christmas Present's revelation of Ignorance and Want, and Scrooge's practical generosity in Stave 5.</p>
 
-<p><strong>Key quotation:</strong> "Are there no prisons? Are there no workhouses?" - Scrooge's rhetorical questions in Stave 1 represent the callous attitude Dickens wants to destroy. When the Ghost of Christmas Present echoes these words in Stave 3, their cruelty is fully exposed.</p>
+<p><strong>Key quotation:</strong> "Are there no prisons? ... And the Union workhouses?" - Scrooge's rhetorical questions in Stave 1 represent the callous attitude Dickens wants to destroy. When the Ghost of Christmas Present echoes these words in Stave 3, their cruelty is fully exposed.</p>
 
 <p>For AO3, connect this theme to the <strong>1834 Poor Law</strong>, Malthusian economics, and the vast wealth gap in Victorian Britain. Dickens was not advocating revolution - he was advocating <strong>individual moral action</strong> by the middle and upper classes. He believed that if enough Scrooges changed, society would follow.</p>
 
@@ -1224,7 +1259,7 @@ const accModules: CourseModule[] = [
 
 <p>Christmas in the novella is more than a holiday - it is a <strong>moral principle</strong>. Dickens defines the Christmas spirit as generosity, forgiveness, warmth, and social unity. Fred articulates this in Stave 1: Christmas is the one time when people "think of people below them as if they really were fellow-passengers to the grave, and not another race of creatures bound on other journeys." This extraordinary line argues that Christmas breaks down social barriers, reminding the wealthy that the poor are fellow human beings.</p>
 
-<p><strong>Key quotation:</strong> "It is a time for being kind, forgiving, charitable, pleasant." - Fred's adjective list defines the Christmas spirit and serves as a checklist against which Scrooge's behaviour is measured and found wanting.</p>
+<p><strong>Key quotation:</strong> "a kind, forgiving, charitable, pleasant time" - Fred's adjective list defines the Christmas spirit and serves as a checklist against which Scrooge's behaviour is measured and found wanting.</p>
 
 <p>Dickens extends Christmas beyond a single day. Scrooge pledges to keep it "all the year," and the narrator's final blessing - "may that be truly said of us" - universalises the message. The Christmas spirit is not seasonal goodwill but a permanent moral stance.</p>
 
@@ -1242,7 +1277,7 @@ const accModules: CourseModule[] = [
 
 <p>Family is presented as the greatest source of human happiness and the most effective defence against the dehumanising effects of poverty. The Cratchit family's love sustains them through hardship. Fred's warmth comes from his mother Fan's influence. Scrooge's transformation involves reconnecting with family - attending Fred's party, becoming a "second father" to Tiny Tim.</p>
 
-<p><strong>Key quotation:</strong> "A great deal of steam! ... Mrs Cratchit, flushed, but smiling proudly" - The Cratchit Christmas dinner scene is saturated with domestic warmth. The steam, the smiles, the gathered family - all convey the emotional richness that money cannot buy.</p>
+<p><strong>Key quotation:</strong> "A great deal of steam! ... Mrs. Cratchit entered--flushed, but smiling proudly" - The Cratchit Christmas dinner scene is saturated with domestic warmth. The steam, the smiles, the gathered family - all convey the emotional richness that money cannot buy.</p>
 
 <p>Conversely, the absence of family is linked to moral decline. Scrooge's childhood was marked by abandonment; his adult life is defined by solitude. Dickens implies that human beings need love and connection to remain morally healthy - without it, they become cold and acquisitive.</p>
 
@@ -1387,7 +1422,7 @@ const accModules: CourseModule[] = [
 
 <p>Dickens uses weather and environment to mirror emotional states. In Stave 1, the fog is "cold, bleak, biting" - reflecting Scrooge's emotional frigidity. In Stave 5, Christmas morning is bright and clear - reflecting Scrooge's renewed joy. The warmth of the Cratchit home contrasts with the darkness of Scrooge's chambers. The Ghost of Christmas Yet to Come moves through shadow and gloom.</p>
 
-<p><strong>Key quotation:</strong> "The cold became intense... Fog came pouring in at every chink and keyhole." - The fog is invasive, penetrating even sealed spaces, just as Scrooge's coldness affects everyone around him.</p>
+<p><strong>Key quotation:</strong> "The fog came pouring in at every chink and keyhole"; later, "The cold became intense." - The fog is invasive, penetrating even sealed spaces, just as Scrooge's coldness affects everyone around him.</p>
 
 <div class="key-term"><strong>Key Term: Pathetic Fallacy</strong> - The attribution of human emotions to weather, landscape, or objects. Dickens uses pathetic fallacy to externalise internal states - Scrooge's emotional coldness becomes literal cold; his transformation is reflected in bright, warm weather.</div>
 
@@ -1395,7 +1430,7 @@ const accModules: CourseModule[] = [
 
 <p>One of Dickens's most effective techniques is the dramatic tonal shift between Stave 4 (dark, silent, terrifying) and Stave 5 (bright, noisy, joyful). This shift is achieved largely through syntax - specifically, the flood of <strong>exclamatory sentences</strong> that marks Scrooge's awakening:</p>
 
-<p>"I don't know what to do! I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy. I am as giddy as a drunken man!"</p>
+<p>"I don't know what to do! ... I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy. I am as giddy as a drunken man."</p>
 
 <p>The exclamation marks, the anaphoric "I am as," and the rapid succession of similes create a sense of breathless, almost childlike excitement. The sentence structure mirrors the emotional content - short, punchy clauses convey spontaneous joy, replacing the longer, more measured prose of the earlier staves.</p>
 
@@ -1407,7 +1442,7 @@ const accModules: CourseModule[] = [
 
 <h3>The Narrative Voice</h3>
 
-<p>Dickens's narrator is warm, conspiratorial, and morally engaged. The narrator frequently addresses the reader directly - "Oh! But he was a tight-fisted hand at the grindstone, Scrooge!" - creating an intimate, fireside storytelling quality. This authorial intrusion allows Dickens to guide the reader's moral response, ensuring that his critique of Victorian society is unmistakable.</p>
+<p>Dickens's narrator is warm, conspiratorial, and morally engaged. The narrator frequently addresses the reader directly - "Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!" - creating an intimate, fireside storytelling quality. This authorial intrusion allows Dickens to guide the reader's moral response, ensuring that his critique of Victorian society is unmistakable.</p>
 
 <p>The narrative voice shifts register throughout the text: comic in Stave 1 (the door-knocker transforming into Marley's face), lyrical in Stave 2 (the Fezziwig party), sombre in Stave 4 (the shrouded corpse), and exuberant in Stave 5 (Scrooge's awakening). These shifts in register mirror the emotional journey of the protagonist and the reader.</p>
 

@@ -26,6 +26,19 @@ export const metadata: Metadata = {
     'A Christmas Carol for Edexcel GCSE English Literature: plot summary, characters, themes, key quotes, historical context and exam technique.',
 }
 
+/**
+ * QUOTATIONS CORRECTED (2 October 2026) against the edition the site holds,
+ * Project Gutenberg #46 (src/data/full-texts/a-christmas-carol.ts), as read by
+ * scripts/check-quotations.mjs; twelve here were not Dickens's words as
+ * printed. In Stave One Scrooge asks "Are there no prisons?" and "And the
+ * Union workhouses?" with the gentleman's answer between, and "Are there no
+ * workhouses?" is the Spirit's, in Stave Three, so the run-together forms now
+ * carry an ellipsis and Scrooge's own words. "If they would rather die" had
+ * lost its speech tag with no ellipsis, the first Ghost's shadows are "but
+ * shadows", and the edition prints "grind-stone". Fred's "His wealth is of no
+ * use to him" is said at his party in Stave Three, not in Stave One.
+ */
+
 /* ─── Data ───────────────────────────────────────────────────── */
 
 const PLOT_SUMMARY = [
@@ -33,7 +46,7 @@ const PLOT_SUMMARY = [
     stave: 'Stave 1',
     title: "Marley's Ghost",
     summary:
-      "We are introduced to Ebenezer Scrooge - a cold, miserly old man who despises Christmas. He rejects his nephew Fred's dinner invitation and refuses to donate to charity for the poor, asking 'Are there no prisons? Are there no workhouses?' That night, the ghost of his dead business partner Jacob Marley visits, dragging heavy chains forged by his own selfishness. Marley warns Scrooge that he will be visited by three spirits.",
+      "We are introduced to Ebenezer Scrooge - a cold, miserly old man who despises Christmas. He rejects his nephew Fred's dinner invitation and refuses to donate to charity for the poor, asking 'Are there no prisons? ... And the Union workhouses?' That night, the ghost of his dead business partner Jacob Marley visits, dragging heavy chains forged by his own selfishness. Marley warns Scrooge that he will be visited by three spirits.",
   },
   {
     stave: 'Stave 2',
@@ -67,12 +80,12 @@ const CHARACTERS = [
     description:
       "The protagonist. Initially a cold, miserly, isolated man who values money above all else. Through the three spirits' visits, he undergoes a complete moral transformation - from selfishness to generosity, isolation to community. He is Dickens' vehicle for showing that even the hardest heart can change. His redemption arc drives the novella's message: it is never too late to become a better person.",
     key_quotes: [
-      '"Are there no prisons? And the Union workhouses?"',
+      '"Are there no prisons? ... And the Union workhouses?"',
       '"Every idiot who goes about with \'Merry Christmas\' on his lips, should be boiled with his own pudding"',
       '"I will honour Christmas in my heart, and try to keep it all the year"',
       '"He became as good a friend, as good a master, and as good a man, as the good old city knew"',
       '"I am not the man I was"',
-      '"Oh! But he was a tight-fisted hand at the grindstone, Scrooge!"',
+      '"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!"',
     ],
   },
   {
@@ -122,7 +135,7 @@ const CHARACTERS = [
     description:
       "The Ghost of Christmas Past (a strange, flickering figure representing memory), the Ghost of Christmas Present (a jolly giant in a green robe representing abundance and compassion), and the Ghost of Christmas Yet to Come (a dark, silent phantom representing death and consequence). Together they serve as Dickens' moral teachers, guiding Scrooge - and the reader - toward redemption.",
     key_quotes: [
-      '"These are the shadows of the things that have been" (Past)',
+      '"These are but shadows of the things that have been" (Past)',
       '"They are Man\'s... This boy is Ignorance. This girl is Want" (Present)',
     ],
   },
@@ -144,8 +157,8 @@ const THEMES = [
     description:
       "Dickens wrote A Christmas Carol to draw attention to the suffering of the Victorian poor, especially children. The Cratchit family, Ignorance and Want, and the charity collectors all highlight the vast inequality between rich and poor. Scrooge's early attitude ('Are there no prisons?') reflects the callousness of the wealthy classes. Dickens challenges the Malthusian view that the poor are disposable.",
     quotes: [
-      '"Are there no prisons? And the Union workhouses?"',
-      '"If they would rather die, they had better do it, and decrease the surplus population"',
+      '"Are there no prisons? ... And the Union workhouses?"',
+      '"If they would rather die... they had better do it, and decrease the surplus population"',
       '"This boy is Ignorance. This girl is Want. Beware them both"',
       '"Mankind was my business"',
     ],
@@ -175,7 +188,7 @@ const THEMES = [
     description:
       "Scrooge hoards wealth while others starve. Dickens argues that wealth carries responsibility - the rich have a moral duty to help the poor. Fezziwig uses his wealth to bring happiness; Scrooge uses his to increase his own comfort. Marley's chains represent the spiritual cost of greed. The novella insists that money is only valuable when it serves others.",
     quotes: [
-      '"Oh! But he was a tight-fisted hand at the grindstone, Scrooge!"',
+      '"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!"',
       '"I wear the chain I forged in life"',
       '"He has the power to render us happy or unhappy"',
     ],
@@ -194,10 +207,10 @@ const THEMES = [
 
 const KEY_QUOTES = [
   {
-    quote: '"Oh! But he was a tight-fisted hand at the grindstone, Scrooge!"',
+    quote: '"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!"',
     speaker: 'Narrator (Stave 1)',
     significance:
-      "Introduces Scrooge's miserly character. 'Tight-fisted' and 'grindstone' suggest relentless, mechanical greed.",
+      "Introduces Scrooge's miserly character. 'Tight-fisted' and 'grind-stone' suggest relentless, mechanical greed.",
   },
   {
     quote: '"Solitary as an oyster"',
@@ -206,13 +219,14 @@ const KEY_QUOTES = [
       "Simile establishing Scrooge's isolation. An oyster is hard-shelled and closed - but contains a pearl, hinting at hidden goodness.",
   },
   {
-    quote: '"Are there no prisons? And the Union workhouses?"',
+    quote: '"Are there no prisons? ... And the Union workhouses?"',
     speaker: 'Scrooge (Stave 1)',
     significance:
       'Scrooge echoes the Malthusian view that the poor should be institutionalised. Dickens exposes this as cruel and inhumane.',
   },
   {
-    quote: '"If they would rather die, they had better do it, and decrease the surplus population"',
+    quote:
+      '"If they would rather die... they had better do it, and decrease the surplus population"',
     speaker: 'Scrooge (Stave 1)',
     significance:
       "Scrooge parrots Malthus's theory that overpopulation causes poverty. These words are later used against him by the Ghost of Christmas Present.",
@@ -313,7 +327,7 @@ const KEY_QUOTES = [
   },
   {
     quote: '"His wealth is of no use to him. He don\'t do any good with it"',
-    speaker: 'Fred (Stave 1)',
+    speaker: 'Fred (Stave 3)',
     significance:
       "Fred identifies Scrooge's fundamental problem - wealth hoarded is wealth wasted. Money has value only when it helps others.",
   },
@@ -334,7 +348,7 @@ const CONTEXT_POINTS = [
   {
     topic: 'The Poor Law of 1834',
     detail:
-      "The New Poor Law established workhouses for the destitute. Conditions were deliberately harsh to discourage people from seeking help - families were separated, food was minimal, and inmates performed backbreaking work. When Scrooge says 'Are there no prisons? And the Union workhouses?' he is endorsing this cruel system.",
+      "The New Poor Law established workhouses for the destitute. Conditions were deliberately harsh to discourage people from seeking help - families were separated, food was minimal, and inmates performed backbreaking work. When Scrooge says 'Are there no prisons? ... And the Union workhouses?' he is endorsing this cruel system.",
   },
   {
     topic: "Thomas Malthus and 'Surplus Population'",

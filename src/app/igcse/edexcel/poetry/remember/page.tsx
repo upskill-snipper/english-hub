@@ -12,6 +12,26 @@ import StudyTools from '@/components/study/StudyTools'
 
 /* ── Poem data ────────────────────────────────────────────────────── */
 
+/**
+ * CORRECTED 2 October 2026, against the held text
+ * (src/data/full-texts/remember.ts). Four notes said things about the poem's
+ * words that the poem does not bear out, each in a form the quotation checker
+ * (scripts/check-quotations.mjs) cannot see: a claim about other printings, a
+ * one-word quotation, a line number, a word said to be "rarely" used.
+ * - Line 2's note said "earlier versions" print the silent land with a capital
+ *   L. The held edition prints it in lower case, and so, by the sources
+ *   recorded in src/data/study-guides/remember.ts, do the 1862 first edition,
+ *   the 1904 Poetical Works and the anthology.
+ * - Line 6's note quoted the beloved's "plans". The poem's word is "planned",
+ *   and its past tense is the point being made.
+ * - The anaphora entry put "Remember me" at the start of lines 1, 5 and 7, and
+ *   had the sestet replace "remember" with "forget". Line 7 opens with "Only",
+ *   and the sestet keeps "remember" (lines 10 and 14) beside "forget" (lines 9
+ *   and 13).
+ * - The euphemism entry said Rossetti "rarely" uses the word "death". The poem
+ *   never uses it, nor dead or die.
+ * The Arabic of the last two entries said the same and is corrected with them.
+ */
 const poem: PoemData = {
   title: 'Remember',
   poet: 'Christina Rossetti',
@@ -36,7 +56,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Key quote',
-          note: '"The silent land" is a metaphor for death - a place without voices, without communication. The capitalised "L" in earlier versions sometimes gives it a biblical feel. "Silent" emphasises that the dead cannot speak.',
+          note: '"The silent land" is a metaphor for death - a place without voices, without communication. "Silent" emphasises that the dead cannot speak.',
           color: '#f59e0b',
         },
         {
@@ -86,7 +106,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Pathos',
-          note: 'The beloved "plans" their future together - but we already know there is no future for them. The ordinary, hopeful act of future-planning becomes poignant because it is about to be cut short.',
+          note: 'The beloved has "planned" their future together - but we already know there is no future for them. The ordinary, hopeful act of future-planning becomes poignant because it is about to be cut short.',
           color: '#ef4444',
         },
         {
@@ -310,10 +330,10 @@ Tone: Tender, quiet, loving. Remarkably, there is no anger, no fear, no bitterne
       example:
         'Remember me when I am gone away… / Remember me when no more day by day… / Only remember me',
       effect:
-        'The repetition of "Remember me" at the start of lines 1, 5 and 7 anchors the octave in a single request. The anaphora gives the poem the feel of a whispered litany - almost a prayer. When the sestet replaces "remember" with "forget", the emotional shift is even more striking because of how insistently she had asked for memory.',
+        'The repetition of "Remember me" at the start of lines 1 and 5, and again after "Only" in line 7, anchors the octave in a single request. The anaphora gives the poem the feel of a whispered litany - almost a prayer. When the sestet sets "forget" against "remember", the emotional shift is even more striking because of how insistently she had asked for memory.',
       lineRef: 0,
       effectAr:
-        'تكرارُ "Remember me" في مفتتح السطور 1 و5 و7 يُرسي الـ octave على طلبٍ واحد. ويُكسب الـ anaphora القصيدةَ وقعَ ابتهالٍ هامس - يكاد يكون صلاة. وحين يستعيض الـ sestet عن "remember" بـ"forget"، يصير التحوّلُ العاطفيّ أشدّ وقعاً بسبب إلحاحها السابق على الذكرى.',
+        'تكرارُ "Remember me" في مفتتح السطرين 1 و5، ثمّ بعد "Only" في السطر 7، يُرسي الـ octave على طلبٍ واحد. ويُكسب الـ anaphora القصيدةَ وقعَ ابتهالٍ هامس - يكاد يكون صلاة. وحين يضع الـ sestet "forget" في مقابل "remember"، يصير التحوّلُ العاطفيّ أشدّ وقعاً بسبب إلحاحها السابق على الذكرى.',
     },
     {
       device: 'Metaphor',
@@ -349,7 +369,7 @@ Tone: Tender, quiet, loving. Remarkably, there is no anger, no fear, no bitterne
         'Rossetti rarely uses the word "death" directly. Instead she circles it with gentle alternatives: "gone away", "silent land", and even the more direct "darkness and corruption" are still metaphorical rather than literal. The accumulation of euphemisms softens death and lets the poem remain a love poem rather than a horror.',
       lineRef: 1,
       effectAr:
-        'قلّما تستعمل Rossetti كلمة "death" مباشرةً. وتُحيط بها بدائلَ ناعمة: "gone away" و"silent land"، بل حتى "darkness and corruption" الأشدّ صراحة تبقى استعاريّة لا حرفيّة. وتراكمُ التلطّفات يُليّن الموتَ ويُبقي القصيدةَ قصيدةَ حبٍّ لا قصيدةَ رعب.',
+        'لا تستعمل Rossetti كلمة "death" أبداً. وتُحيط بها بدائلَ ناعمة: "gone away" و"silent land"، بل حتى "darkness and corruption" الأشدّ صراحة تبقى استعاريّة لا حرفيّة. وتراكمُ التلطّفات يُليّن الموتَ ويُبقي القصيدةَ قصيدةَ حبٍّ لا قصيدةَ رعب.',
     },
     {
       device: 'Iambic pentameter',

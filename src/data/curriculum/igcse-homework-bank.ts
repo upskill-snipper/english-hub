@@ -989,7 +989,7 @@ export const igcseHomeworkBank: IGCSEHomeworkTask[] = [
     modelResponsePoints: [
       'The interrogative opening ("Is this a dagger...?") immediately signals Macbeth\'s psychological fracture',
       "The dagger as a hallucination suggests that Macbeth's ambition has begun to overwhelm his reason",
-      'Darkness imagery ("witchcraft celebrates / Pale Hecate\'s offerings") connects Macbeth to the supernatural and evil',
+      'Darkness imagery ("witchcraft celebrates / Pale Hecate\'s off\'rings") connects Macbeth to the supernatural and evil',
       'The movement from questioning to certainty within the speech tracks his moral capitulation',
       'Jacobean context: audiences would have seen hallucinations as evidence of supernatural interference or moral corruption',
     ],

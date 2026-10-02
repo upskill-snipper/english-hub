@@ -30,6 +30,14 @@ export const metadata: Metadata = {
 
 /* ─── Quotation data ─────────────────────────────────────────── */
 
+// Quotations are in the wording of the edition the site holds, Project
+// Gutenberg #1513 (src/data/full-texts/romeo-and-juliet.ts), and are cut from
+// it rather than typed. Until 2 October 2026 eight here were not: "There rust",
+// "small flower", "flow'ring" and "An you be mine", other editions' readings,
+// where this edition has "There rest", "weak flower", "flowering" and "And you
+// be mine"; "Like" and "Ethiope" for its "As" and "Ethiop"; and "hath lain
+// with", Capulet's "Hath death lain with thy bride" with "death" left out.
+// Check a new quotation with `node scripts/check-quotations.mjs --text romeo-and-juliet`.
 const keyQuotations = [
   {
     quote:
@@ -40,10 +48,10 @@ const keyQuotations = [
   },
   {
     quote:
-      "O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / Like a rich jewel in an Ethiope's ear",
+      "O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / As a rich jewel in an Ethiop's ear",
     speaker: 'Romeo (Act 1, Scene 5)',
     analysis:
-      "Romeo's first sight of Juliet is expressed through light and dark imagery. The hyperbole 'teach the torches to burn bright' elevates Juliet above the natural world - she is brighter than fire itself. The simile 'like a rich jewel in an Ethiope's ear' presents Juliet as something precious and radiant against darkness, establishing the play's recurring motif of light versus dark. This imagery also foreshadows the doomed nature of their love - beauty that shines brightest in darkness suggests something that cannot survive in the ordinary light of day.",
+      "Romeo's first sight of Juliet is expressed through light and dark imagery. The hyperbole 'teach the torches to burn bright' elevates Juliet above the natural world - she is brighter than fire itself. The simile 'as a rich jewel in an Ethiop's ear' presents Juliet as something precious and radiant against darkness, establishing the play's recurring motif of light versus dark. This imagery also foreshadows the doomed nature of their love - beauty that shines brightest in darkness suggests something that cannot survive in the ordinary light of day.",
   },
   {
     quote: 'My only love sprung from my only hate! / Too early seen unknown, and known too late!',
@@ -97,10 +105,10 @@ const keyQuotations = [
       "The Friar's proverbial warning about haste proves tragically prophetic. The antithesis between 'wisely and slow' and 'run fast' captures the play's central tension between caution and impulsiveness. Romeo and Juliet's love moves at breakneck speed - they meet, marry, and die within four days. The verb 'stumble' is a gentle understatement for the catastrophe to come. The Friar's own advice, ironically, is something he himself fails to follow when he devises the sleeping potion plan.",
   },
   {
-    quote: "O serpent heart hid with a flow'ring face! / Did ever dragon keep so fair a cave?",
+    quote: 'O serpent heart, hid with a flowering face! / Did ever dragon keep so fair a cave?',
     speaker: 'Juliet (Act 3, Scene 2)',
     analysis:
-      "Juliet's reaction to Romeo killing Tybalt is expressed through a series of oxymorons and antithetical images. The 'serpent heart' with a 'flow'ring face' echoes Lady Macbeth's 'look like the innocent flower / But be the serpent under't,' connecting deception with the Biblical Fall. Yet Juliet's anger is short-lived - she quickly defends Romeo, showing that her love transcends even the murder of her cousin. The passage reveals the impossible position the feud places her in: torn between family loyalty and romantic love.",
+      "Juliet's reaction to Romeo killing Tybalt is expressed through a series of oxymorons and antithetical images. The 'serpent heart' with a 'flowering face' echoes Lady Macbeth's 'look like the innocent flower / But be the serpent under't,' connecting deception with the Biblical Fall. Yet Juliet's anger is short-lived - she quickly defends Romeo, showing that her love transcends even the murder of her cousin. The passage reveals the impossible position the feud places her in: torn between family loyalty and romantic love.",
   },
   {
     quote:
@@ -141,7 +149,7 @@ const keyQuotations = [
       "Romeo's extended metaphor positions Juliet as the sun that eclipses Diana, the moon goddess associated with chastity and virginity. The imperative 'arise' and 'kill' inject urgency and violence into a love declaration, foreshadowing the entwining of love and death throughout the play. By asking Juliet to 'kill the envious moon,' Romeo is symbolically asking her to abandon chastity - a subversive request in Elizabethan society where female virginity was paramount. The celestial imagery elevates their love above the earthly feud.",
   },
   {
-    quote: 'O happy dagger, / This is thy sheath. There rust, and let me die',
+    quote: 'O happy dagger. / This is thy sheath. There rest, and let me die',
     speaker: 'Juliet (Act 5, Scene 3)',
     analysis:
       "Juliet's final words are devastatingly brief compared to Romeo's lengthy final speech, reflecting her decisive nature. The oxymoron 'happy dagger' redefines death as a joyful reunion with Romeo. The sexual connotation of 'sheath' connects death and consummation - the Elizabethan pun on 'die' (meaning both death and orgasm) makes their final union both tragic and intimate. Juliet's agency in choosing death is significant - throughout the play she has been controlled by her father, but in death she makes her own choice.",
@@ -353,7 +361,7 @@ export default async function OCRRomeoAndJulietPage() {
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Friar Lawrence is a complex figure who functions as both a mentor and a catalyst for
                 tragedy. His knowledge of herbs and potions (&ldquo;Within the infant rind of this
-                small flower / Poison hath residence, and medicine power&rdquo;) symbolises the
+                weak flower / Poison hath residence, and medicine power&rdquo;) symbolises the
                 play&rsquo;s central duality: the same substance can heal or destroy. He agrees to
                 marry Romeo and Juliet hoping to end the feud, showing good intentions but flawed
                 judgement.
@@ -561,12 +569,13 @@ export default async function OCRRomeoAndJulietPage() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Death haunts the play from the Prologue&rsquo;s revelation of the
                 &ldquo;death-mark&rsquo;d&rdquo; love. Shakespeare repeatedly personifies Death as
-                Juliet&rsquo;s rival lover &mdash; Lord Capulet says Death &ldquo;hath lain
-                with&rdquo; Juliet, and Romeo finds Death has not marred her beauty. Time is
-                compressed to an extraordinary degree: the entire action unfolds over four days,
-                creating a relentless momentum that mirrors the lovers&rsquo; urgency and leaves no
-                space for reflection or reconciliation. The haste itself becomes a cause of the
-                tragedy &mdash; if Romeo had waited even moments longer, Juliet would have woken.
+                Juliet&rsquo;s rival lover &mdash; Lord Capulet tells Paris that the night before
+                his wedding &ldquo;hath death lain with thy bride&rdquo;, and Romeo finds Death has
+                not marred her beauty. Time is compressed to an extraordinary degree: the entire
+                action unfolds over four days, creating a relentless momentum that mirrors the
+                lovers&rsquo; urgency and leaves no space for reflection or reconciliation. The
+                haste itself becomes a cause of the tragedy &mdash; if Romeo had waited even moments
+                longer, Juliet would have woken.
               </p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>{_tr(`Key quote:`)}</strong> &ldquo;Wisely and slow. They stumble that run
@@ -580,14 +589,14 @@ export default async function OCRRomeoAndJulietPage() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Juliet exists within a patriarchal society where women are expected to obey their
                 fathers and husbands. Lord Capulet treats her as property to be given in marriage
-                (&ldquo;An you be mine, I&rsquo;ll give you to my friend&rdquo;), and the Nurse sees
-                marriage as a practical transaction. Juliet&rsquo;s rebellion &mdash; choosing her
-                own husband, defying her father, and ultimately choosing death over a life without
-                Romeo &mdash; represents a radical challenge to patriarchal authority. Shakespeare
-                invites sympathy for Juliet&rsquo;s position, presenting her father&rsquo;s rage as
-                tyrannical rather than justified. The male characters&rsquo; obsession with honour
-                and violence is also critiqued as a form of toxic masculinity that destroys
-                everything it claims to protect.
+                (&ldquo;And you be mine, I&rsquo;ll give you to my friend&rdquo;), and the Nurse
+                sees marriage as a practical transaction. Juliet&rsquo;s rebellion &mdash; choosing
+                her own husband, defying her father, and ultimately choosing death over a life
+                without Romeo &mdash; represents a radical challenge to patriarchal authority.
+                Shakespeare invites sympathy for Juliet&rsquo;s position, presenting her
+                father&rsquo;s rage as tyrannical rather than justified. The male characters&rsquo;
+                obsession with honour and violence is also critiqued as a form of toxic masculinity
+                that destroys everything it claims to protect.
               </p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>{_tr(`Key quote:`)}</strong> &ldquo;O happy dagger, / This is thy
