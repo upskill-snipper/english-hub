@@ -304,6 +304,47 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
   'lc-romeo-and-juliet-tybalt': '/comics/romeo-and-juliet/tybalt.3793b9ef8047.svg',
   'lc-romeo-and-juliet-wedding-turned-to-funeral':
     '/comics/romeo-and-juliet/wedding-turned-to-funeral.889fca150359.svg',
+  'lc-silas-marner-aaron-winthrop': '/comics/silas-marner/aaron-winthrop.a44a36339c85.svg',
+  'lc-silas-marner-blackmail-at-the-red-house':
+    '/comics/silas-marner/blackmail-at-the-red-house.52f057bfde15.svg',
+  'lc-silas-marner-dolly-s-lard-cakes': '/comics/silas-marner/dolly-s-lard-cakes.51e01e9d695d.svg',
+  'lc-silas-marner-dolly-winthrop': '/comics/silas-marner/dolly-winthrop.1fc28168bb3a.svg',
+  'lc-silas-marner-dunstan-cass': '/comics/silas-marner/dunstan-cass.84c597c25ebb.svg',
+  'lc-silas-marner-eppie': '/comics/silas-marner/eppie.a19a87badc54.svg',
+  'lc-silas-marner-eppie-chooses': '/comics/silas-marner/eppie-chooses.df2745f36bfd.svg',
+  'lc-silas-marner-eppie-is-named': '/comics/silas-marner/eppie-is-named.b1dffb040787.svg',
+  'lc-silas-marner-fifteen-years-at-the-loom':
+    '/comics/silas-marner/fifteen-years-at-the-loom.ad7dd26a00b0.svg',
+  'lc-silas-marner-framed-at-lantern-yard':
+    '/comics/silas-marner/framed-at-lantern-yard.8bd960467984.svg',
+  'lc-silas-marner-godfrey-cass': '/comics/silas-marner/godfrey-cass.1ac41135da44.svg',
+  'lc-silas-marner-godfrey-fails-to-confess':
+    '/comics/silas-marner/godfrey-fails-to-confess.6cf3a3f08238.svg',
+  'lc-silas-marner-godfrey-s-silence': '/comics/silas-marner/godfrey-s-silence.2be9c40bd812.svg',
+  'lc-silas-marner-lantern-yard-is-gone':
+    '/comics/silas-marner/lantern-yard-is-gone.59988ba22440.svg',
+  'lc-silas-marner-molly-farren': '/comics/silas-marner/molly-farren.f902ef21d357.svg',
+  'lc-silas-marner-nancy-lammeter': '/comics/silas-marner/nancy-lammeter.6ccb12b9c2b5.svg',
+  'lc-silas-marner-nancy-s-sunday': '/comics/silas-marner/nancy-s-sunday.3abff46f3e03.svg',
+  'lc-silas-marner-priscilla-lammeter': '/comics/silas-marner/priscilla-lammeter.778b91d418a3.svg',
+  'lc-silas-marner-robbed': '/comics/silas-marner/robbed.816781bde5fc.svg',
+  'lc-silas-marner-sarah': '/comics/silas-marner/sarah.0f2c8dd8d829.svg',
+  'lc-silas-marner-silas-at-the-red-house':
+    '/comics/silas-marner/silas-at-the-red-house.6a2c0142ad0a.svg',
+  'lc-silas-marner-silas-marner': '/comics/silas-marner/silas-marner.2c03a056d8cd.svg',
+  'lc-silas-marner-sixteen-years-later':
+    '/comics/silas-marner/sixteen-years-later.22a6882e1836.svg',
+  'lc-silas-marner-squire-cass': '/comics/silas-marner/squire-cass.573bdf030287.svg',
+  'lc-silas-marner-the-child-in-the-snow':
+    '/comics/silas-marner/the-child-in-the-snow.0114177a0f1f.svg',
+  'lc-silas-marner-the-new-year-s-eve-dance':
+    '/comics/silas-marner/the-new-year-s-eve-dance.427e2941ba7a.svg',
+  'lc-silas-marner-the-robbery': '/comics/silas-marner/the-robbery.bce949481406.svg',
+  'lc-silas-marner-the-stone-pit-gives-up-its-secret':
+    '/comics/silas-marner/the-stone-pit-gives-up-its-secret.1e7616230e5e.svg',
+  'lc-silas-marner-the-wedding': '/comics/silas-marner/the-wedding.c1a1e9a321e7.svg',
+  'lc-silas-marner-too-late': '/comics/silas-marner/too-late.5c3a29d92342.svg',
+  'lc-silas-marner-william-dane': '/comics/silas-marner/william-dane.0721bd9ded4b.svg',
   'lc-the-merchant-of-venice-antonio': '/comics/the-merchant-of-venice/antonio.8419d86baba4.svg',
   'lc-the-merchant-of-venice-antonio-s-sadness':
     '/comics/the-merchant-of-venice/antonio-s-sadness.20fa297111ed.svg',
@@ -349,4 +390,50 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
   'lc-the-merchant-of-venice-the-trial-the-reversal':
     '/comics/the-merchant-of-venice/the-trial-the-reversal.36f43a940e1b.svg',
   'lc-the-merchant-of-venice-tubal': '/comics/the-merchant-of-venice/tubal.0e75f48ef612.svg',
+  'lc-the-sign-of-four-abdullah-khan': '/comics/the-sign-of-four/abdullah-khan.7e84f3ae398c.svg',
+  'lc-the-sign-of-four-athelney-jones': '/comics/the-sign-of-four/athelney-jones.8d52b5f1ad9e.svg',
+  'lc-the-sign-of-four-captain-arthur-morstan':
+    '/comics/the-sign-of-four/captain-arthur-morstan.7867e28ef1ae.svg',
+  'lc-the-sign-of-four-dr-john-watson': '/comics/the-sign-of-four/dr-john-watson.d75fc1e7c61a.svg',
+  'lc-the-sign-of-four-holmes-gives-a-demonstration':
+    '/comics/the-sign-of-four/holmes-gives-a-demonstration.c9bddb54b1b4.svg',
+  'lc-the-sign-of-four-into-the-fog': '/comics/the-sign-of-four/into-the-fog.6b2847792730.svg',
+  'lc-the-sign-of-four-jonathan-small': '/comics/the-sign-of-four/jonathan-small.fd3c2cb071de.svg',
+  'lc-the-sign-of-four-major-john-sholto':
+    '/comics/the-sign-of-four/major-john-sholto.be3c8a584e23.svg',
+  'lc-the-sign-of-four-mary-morstan': '/comics/the-sign-of-four/mary-morstan.f764b8ef2829.svg',
+  'lc-the-sign-of-four-mary-s-indifference-to-the-fortune':
+    '/comics/the-sign-of-four/mary-s-indifference-to-the-fortune.b5213c6dc84e.svg',
+  'lc-the-sign-of-four-miss-morstan-s-statement':
+    '/comics/the-sign-of-four/miss-morstan-s-statement.2818a67f6a5d.svg',
+  'lc-the-sign-of-four-mrs-cecil-forrester':
+    '/comics/the-sign-of-four/mrs-cecil-forrester.2c9b8db1d0f3.svg',
+  'lc-the-sign-of-four-sherlock-holmes':
+    '/comics/the-sign-of-four/sherlock-holmes.a50a52548981.svg',
+  'lc-the-sign-of-four-sholto-s-betrayal-and-small-s-revenge':
+    '/comics/the-sign-of-four/sholto-s-betrayal-and-small-s-revenge.3ae9a7c99caa.svg',
+  'lc-the-sign-of-four-small-s-story-of-agra':
+    '/comics/the-sign-of-four/small-s-story-of-agra.20145da11288.svg',
+  'lc-the-sign-of-four-thaddeus-sholto':
+    '/comics/the-sign-of-four/thaddeus-sholto.a79ab42150a2.svg',
+  'lc-the-sign-of-four-thaddeus-sholto-s-story':
+    '/comics/the-sign-of-four/thaddeus-sholto-s-story.2e4066156509.svg',
+  'lc-the-sign-of-four-the-baker-street-irregulars':
+    '/comics/the-sign-of-four/the-baker-street-irregulars.4d9c65877bad.svg',
+  'lc-the-sign-of-four-the-chase-down-the-thames':
+    '/comics/the-sign-of-four/the-chase-down-the-thames.9dc33f66ae7e.svg',
+  'lc-the-sign-of-four-the-division-of-rewards':
+    '/comics/the-sign-of-four/the-division-of-rewards.691b0acbb0c7.svg',
+  'lc-the-sign-of-four-the-empty-box': '/comics/the-sign-of-four/the-empty-box.3b64de8096a1.svg',
+  'lc-the-sign-of-four-the-locked-room-at-pondicherry-lodge':
+    '/comics/the-sign-of-four/the-locked-room-at-pondicherry-lodge.21a7e4e83e10.svg',
+  'lc-the-sign-of-four-the-old-sailor': '/comics/the-sign-of-four/the-old-sailor.d2039459294e.svg',
+  'lc-the-sign-of-four-the-seven-per-cent-solution':
+    '/comics/the-sign-of-four/the-seven-per-cent-solution.f6fd41d7b84c.svg',
+  'lc-the-sign-of-four-the-test-of-the-watch':
+    '/comics/the-sign-of-four/the-test-of-the-watch.39d81c34d945.svg',
+  'lc-the-sign-of-four-toby-and-the-trail-of-creosote':
+    '/comics/the-sign-of-four/toby-and-the-trail-of-creosote.429ef958c1e1.svg',
+  'lc-the-sign-of-four-tonga': '/comics/the-sign-of-four/tonga.e3078246c047.svg',
+  'lc-the-sign-of-four-wiggins': '/comics/the-sign-of-four/wiggins.905db0c80752.svg',
 }
