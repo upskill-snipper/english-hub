@@ -216,8 +216,8 @@ export default function MarkSchemePage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
             <Target className="size-5 text-emerald-400" />
           </div>
-          <div className="flex flex-col gap-1">
-            <div className="flex items-center gap-2">
+          <div className="flex min-w-0 flex-col gap-1">
+            <div className="flex flex-wrap items-center gap-2">
               <h1 className="text-heading-lg font-heading text-foreground">Mark Scheme Decoded</h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
                 {tr('igcse.page.badge_edexcel_lit')}

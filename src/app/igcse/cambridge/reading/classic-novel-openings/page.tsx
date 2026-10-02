@@ -290,12 +290,13 @@ export default async function ClassicNovelOpeningsPage() {
       </section>
 
       {/* Footer nav */}
-      <div className="flex justify-between border-t border-border pt-6">
+      <div className="flex flex-wrap justify-between gap-2 border-t border-border pt-6">
         <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           <ArrowLeft className="size-3.5" />
           All frameworks
         </Button>
         <Button
+          className="ms-auto"
           variant="ghost"
           size="sm"
           render={<Link href="/igcse/cambridge/reading/descriptive-nature" />}

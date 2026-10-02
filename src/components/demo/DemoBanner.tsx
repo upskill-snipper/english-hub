@@ -31,12 +31,12 @@ export default function DemoBanner({ message }: DemoBannerProps) {
   const text = message ?? t('demo.banner.message')
 
   return (
-    <div className="relative flex items-center justify-between gap-4 bg-gradient-to-r from-amber-500/15 via-yellow-500/15 to-amber-500/15 border border-amber-500/20 px-4 py-3 text-sm">
+    <div className="relative flex flex-wrap items-center justify-between gap-x-4 gap-y-2 bg-gradient-to-r from-amber-500/15 via-yellow-500/15 to-amber-500/15 border border-amber-500/20 px-4 py-3 text-sm">
       <div className="flex items-center gap-3 min-w-0">
         <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500/20">
           <Sparkles className="h-3.5 w-3.5 text-clay-600" />
         </div>
-        <p className="text-amber-700/90 truncate">{text}</p>
+        <p className="text-amber-700/90 sm:truncate">{text}</p>
       </div>
       <div className="flex items-center gap-3 shrink-0">
         <Button

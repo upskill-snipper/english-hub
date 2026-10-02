@@ -310,7 +310,10 @@ export default function IeltsLessonPage() {
 
         {/* ── Prev / next within the skill ──────────────────────────── */}
         {prev || next ? (
-          <nav aria-label={t('ielts.learn.nav.aria')} className="mt-6 grid gap-3 sm:grid-cols-2">
+          <nav
+            aria-label={t('ielts.learn.nav.aria')}
+            className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2"
+          >
             {prev ? (
               <Link
                 href={`/ielts/learn/${prev.skill}/${prev.slug}`}

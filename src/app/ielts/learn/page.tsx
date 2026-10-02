@@ -516,7 +516,7 @@ function TrackSection({
                 <h3 className="text-sm font-semibold text-foreground">{unit.title}</h3>
                 <p className="text-xs text-muted-foreground">{unit.blurb}</p>
               </div>
-              <ul className="grid gap-2 sm:grid-cols-2">
+              <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {lessons.map((lesson) => (
                   <li key={lesson.id}>
                     <LessonRow

@@ -183,7 +183,7 @@ export default function TeacherDemoLayoutClient({ children }: { children: React.
       )}
 
       {/* Main content */}
-      <div className="flex-1 pt-14 lg:pt-0">
+      <div className="min-w-0 flex-1 pt-14 lg:pt-0">
         <DemoBanner />
         <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">{children}</div>
       </div>

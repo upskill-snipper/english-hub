@@ -66,7 +66,7 @@ export default function KS3Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
-      <div className="grid gap-10 lg:grid-cols-[14rem_1fr]">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-[14rem_minmax(0,1fr)]">
         {/* Sidebar nav */}
         <aside className="hidden lg:block">
           <nav aria-label={t('ks3.nav.aria')} className="sticky top-28 space-y-6 text-sm">
@@ -113,7 +113,7 @@ export default function KS3Layout({ children }: { children: React.ReactNode }) {
         </aside>
 
         {/* Page content - uses the same prose-eh variant we shipped for blogs */}
-        <article className="prose prose-eh prose-lg max-w-none dark:prose-invert">
+        <article className="prose prose-eh prose-lg min-w-0 max-w-none dark:prose-invert">
           {children}
         </article>
       </div>

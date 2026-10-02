@@ -530,7 +530,7 @@ export default async function EdexcelIgcseHubPage() {
             {await t('edexcel.lit.set_texts.intro')}
           </p>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {setTexts.map((text) => (
               <Link
                 key={text.slug}
@@ -563,7 +563,7 @@ export default async function EdexcelIgcseHubPage() {
             </h2>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {await Promise.all(
               studyTools.map(async (tool) => {
                 const Icon = tool.icon
@@ -601,7 +601,7 @@ export default async function EdexcelIgcseHubPage() {
             </h2>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {await Promise.all(
               examResources.map(async (res) => {
                 const Icon = res.icon

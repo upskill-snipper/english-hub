@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button-variants'
+import { cn } from '@/lib/utils'
 import { Drama, ArrowRight, BookOpen, Sparkles } from 'lucide-react'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
@@ -186,7 +187,12 @@ export default async function ShakespeareHubPage() {
                 <div className="mt-6">
                   <Link
                     href={`/igcse/edexcel/shakespeare/${play.slug}`}
-                    className={buttonVariants({ size: 'lg' })}
+                    // Wraps on a phone: 'Start the Romeo and Juliet guide' is 306px on one
+                    // line and the card is 246px wide at 360, so the page scrolled sideways.
+                    className={cn(
+                      buttonVariants({ size: 'lg' }),
+                      'h-auto min-h-11 max-w-full py-2.5 whitespace-normal',
+                    )}
                   >
                     {play.cta}
                     <ArrowRight className="ms-1 h-4 w-4" />

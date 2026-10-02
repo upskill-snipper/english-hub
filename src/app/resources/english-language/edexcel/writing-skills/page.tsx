@@ -228,7 +228,7 @@ export default async function WritingSkillsPage() {
             council leader).
           </p>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+          <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
             {/* Formal letter */}
             <div className="rounded-xl border border-border bg-card p-6 shadow-md">
               <h3 className="text-lg font-bold text-primary">{tr(`Formal Letter Format`)}</h3>
@@ -327,7 +327,7 @@ export default async function WritingSkillsPage() {
 
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
             <h3 className="text-lg font-bold text-primary">Speech Writing Toolkit</h3>
-            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {[
                 {
                   technique: 'Direct Address',
@@ -584,14 +584,18 @@ export default async function WritingSkillsPage() {
             the top marking-guide levels.
           </p>
 
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div className="rounded-xl border border-border bg-card p-6 shadow-md">
               <h3 className="font-bold text-primary">Planning (5 minutes)</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Identify the <strong>form</strong>, <strong>audience</strong>, and{' '}
-                  <strong>purpose</strong> (FAP)
+                  {/* One span, so the sentence is one flex item and wraps as a sentence:
+                     loose text and <strong> each became their own unwrappable item. */}
+                  <span>
+                    Identify the <strong>form</strong>, <strong>audience</strong>, and{' '}
+                    <strong>purpose</strong> (FAP)
+                  </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -691,7 +695,7 @@ export default async function WritingSkillsPage() {
             <h3 className="text-lg font-bold text-foreground">
               Proofreading Checklist (Final 5 Minutes)
             </h3>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {[
                 'Capital letters at the start of every sentence',
                 'Full stops, question marks, or exclamation marks at the end of every sentence',

@@ -193,7 +193,7 @@ export default async function AqaWorldsAndLivesHubPage() {
             </h2>
           </div>
 
-          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {WORLDS_AND_LIVES.map((poem) => (
               <div
                 key={poem.title}
@@ -222,7 +222,7 @@ export default async function AqaWorldsAndLivesHubPage() {
           <h2 className="text-heading-md font-heading text-foreground">
             {await t('poetry_hub.wl.themes_heading')}
           </h2>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="space-y-1">
               <h3 className="text-sm font-semibold text-foreground">
                 {await t('poetry_hub.wl.theme_identity_title')}

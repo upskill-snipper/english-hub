@@ -59,7 +59,10 @@ function Annotation({ children, note }: { children: React.ReactNode; note: strin
       <span className="cursor-help rounded border-b-2 border-dashed border-primary/40 bg-primary/10 px-1 py-0.5 text-foreground">
         {children}
       </span>
-      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-60 -translate-x-1/2 rounded-lg bg-primary px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
+      {/* Out of the layout until hovered, not merely transparent: a fixed-width note
+         centred on a phrase near the right edge made the page scroll sideways on
+         a phone even while invisible (opacity-0 still counts towards width). */}
+      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-60 -translate-x-1/2 rounded-lg bg-primary px-3 py-2 text-xs leading-relaxed text-white hidden shadow-lg group-hover:pointer-events-auto group-hover:block">
         {note}
         <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-primary" />
       </span>

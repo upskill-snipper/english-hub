@@ -271,7 +271,7 @@ export default async function TravelWritingPage() {
         </Card>
       </section>
 
-      <div className="flex justify-between border-t border-border pt-6">
+      <div className="flex flex-wrap justify-between gap-2 border-t border-border pt-6">
         <Button
           variant="ghost"
           size="sm"
@@ -280,7 +280,12 @@ export default async function TravelWritingPage() {
           <ArrowLeft className="size-3.5" />
           Children&rsquo;s classics
         </Button>
-        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
+        <Button
+          className="ms-auto"
+          variant="ghost"
+          size="sm"
+          render={<Link href="/igcse/cambridge/reading" />}
+        >
           All frameworks
           <ArrowRight className="size-3.5" />
         </Button>

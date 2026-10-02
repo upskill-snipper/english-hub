@@ -230,7 +230,7 @@ export default async function SitemapHtmlPage() {
             return (
               <section key={heading}>
                 <h2 className="text-xl font-semibold text-foreground">{heading}</h2>
-                <ul className="mt-4 grid gap-1.5 sm:grid-cols-2">
+                <ul className="mt-4 grid grid-cols-1 gap-1.5 sm:grid-cols-2">
                   {pathsInSection.map((path) => (
                     <li key={path}>
                       <Link
@@ -239,7 +239,7 @@ export default async function SitemapHtmlPage() {
                       >
                         {labelForPath(path)}
                       </Link>
-                      <span className="ms-2 text-xs text-muted-foreground">{path}</span>
+                      <span className="ms-2 text-xs break-all text-muted-foreground">{path}</span>
                     </li>
                   ))}
                 </ul>

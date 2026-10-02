@@ -271,7 +271,7 @@ export default async function NarrativeVoicePage() {
         </Card>
       </section>
 
-      <div className="flex justify-between border-t border-border pt-6">
+      <div className="flex flex-wrap justify-between gap-2 border-t border-border pt-6">
         <Button
           variant="ghost"
           size="sm"
@@ -281,6 +281,7 @@ export default async function NarrativeVoicePage() {
           Setting and atmosphere
         </Button>
         <Button
+          className="ms-auto"
           variant="ghost"
           size="sm"
           render={<Link href="/igcse/cambridge/reading/victorian-fiction" />}

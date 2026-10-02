@@ -166,8 +166,8 @@ export default function UnseenPoetryHubPage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-sky-500/10">
             <Feather className="size-5 text-sky-400" />
           </div>
-          <div className="flex flex-col gap-1">
-            <div className="flex items-center gap-2">
+          <div className="flex min-w-0 flex-col gap-1">
+            <div className="flex flex-wrap items-center gap-2">
               <h1 className="text-heading-lg font-heading text-foreground">Unseen Poetry</h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
                 {tr('igcse.page.badge_edexcel_lit')}
@@ -206,7 +206,7 @@ export default function UnseenPoetryHubPage() {
           <h2 className="text-heading-lg font-heading text-foreground">Skill Guides</h2>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {GUIDES.map((guide) => (
             <Link
               key={guide.href}
@@ -256,7 +256,7 @@ export default function UnseenPoetryHubPage() {
           The unseen poems are often chosen from a narrow range of themes. Knowing the territory
           helps you orient quickly under pressure.
         </p>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {COMMON_THEMES.map((item) => (
             <div
               key={item.theme}
@@ -276,7 +276,7 @@ export default function UnseenPoetryHubPage() {
           <h2 className="text-heading-lg font-heading text-foreground">Practice Tips</h2>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {PRACTICE_TIPS.map((tip) => (
             <div key={tip.title} className="rounded-2xl border border-border/60 bg-card p-5">
               <div className="mb-2 flex items-center gap-2">
@@ -301,7 +301,7 @@ export default function UnseenPoetryHubPage() {
           The unseen poetry comparison question rewards four assessment objectives. Every paragraph
           you write should push at one of these.
         </p>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {[
             {
               ao: 'Understanding the text',

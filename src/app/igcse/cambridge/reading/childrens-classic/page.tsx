@@ -270,7 +270,7 @@ export default async function ChildrensClassicPage() {
         </Card>
       </section>
 
-      <div className="flex justify-between border-t border-border pt-6">
+      <div className="flex flex-wrap justify-between gap-2 border-t border-border pt-6">
         <Button
           variant="ghost"
           size="sm"
@@ -280,6 +280,7 @@ export default async function ChildrensClassicPage() {
           Modernist fiction
         </Button>
         <Button
+          className="ms-auto"
           variant="ghost"
           size="sm"
           render={<Link href="/igcse/cambridge/reading/travel-writing" />}
