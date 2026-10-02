@@ -17,9 +17,16 @@ import EduqasPreviousAnthologyNotice from '../_components/EduqasPreviousAntholog
 const ozymandias: PoemData = {
   title: 'Ozymandias',
   poet: 'Percy Bysshe Shelley',
+  // Printed as the Eduqas anthology examined until summer 2026 prints it (WJEC Eduqas GCSE
+  // Poetry Anthology, 2014), checked line by line against the PDF on 2 October 2026. Until
+  // then the page had a full stop where the anthology prints an ellipsis in line 3,
+  // capitals on "Works" and "Wreck" that it does not print, and its own commas in lines 1
+  // and 8; the notes quoted line 10 as "King of Kings;". Eduqas prints "shattered",
+  // "stamped" and "mocked", where AQA, on the AQA page, prints Shelley's "shatter'd",
+  // "stamp'd" and "mock'd".
   lines: [
     {
-      text: 'I met a traveller from an antique land,',
+      text: 'I met a traveller from an antique land',
       annotations: [
         {
           type: 'Frame narrative',
@@ -44,7 +51,7 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: 'Stand in the desert. Near them, on the sand,',
+      text: 'Stand in the desert … Near them, on the sand,',
       annotations: [
         {
           type: 'Symbolism',
@@ -99,7 +106,7 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: 'The hand that mocked them and the heart that fed:',
+      text: 'The hand that mocked them, and the heart that fed:',
       annotations: [
         {
           type: 'Ambiguity',
@@ -123,13 +130,13 @@ const ozymandias: PoemData = {
       annotations: [
         {
           type: 'Hubris',
-          note: '"King of Kings" is a superlative claiming absolute supremacy. The biblical echo (Revelation 19:16 uses the same phrase for God) suggests blasphemous arrogance.',
+          note: '"king of kings" is a superlative claiming absolute supremacy. The biblical echo (Revelation 19:16 uses the same phrase for God) suggests blasphemous arrogance.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: "Look on my Works, ye Mighty, and despair!'",
+      text: "Look on my works, ye Mighty, and despair!'",
       annotations: [
         {
           type: 'Dramatic irony',
@@ -154,11 +161,11 @@ const ozymandias: PoemData = {
       ],
     },
     {
-      text: 'Of that colossal Wreck, boundless and bare',
+      text: 'Of that colossal wreck, boundless and bare',
       annotations: [
         {
           type: 'Oxymoron',
-          note: '"Colossal Wreck" pairs grandeur with ruin. The statue was once imposing; now its very size emphasises the completeness of its fall.',
+          note: '"Colossal wreck" pairs grandeur with ruin. The statue was once imposing; now its very size emphasises the completeness of its fall.',
           color: '#10b981',
         },
       ],
@@ -215,9 +222,9 @@ Lines 3-5: Near the legs, the traveller describes the statue's face ("visage") l
 
 Lines 6-8: These lines praise the sculptor's skill. He "read" the king's passions accurately and carved them so well that they "survive". There is an ambiguity in "the hand that mocked them, and the heart that fed".
 
-Lines 9-11: The inscription delivers Ozymandias's boastful command: "My name is Ozymandias, King of Kings; / Look on my Works, ye Mighty, and despair!"
+Lines 9-11: The inscription delivers Ozymandias's boastful command: "My name is Ozymandias, king of kings: / Look on my works, ye Mighty, and despair!"
 
-Lines 12-14: The sestet delivers the poem's devastating irony. "Nothing beside remains" - all the "Works" have vanished completely. The "lone and level sands" have the final word, showing nature and time triumph over human power.
+Lines 12-14: The sestet delivers the poem's devastating irony. "Nothing beside remains" - all the "works" have vanished completely. The "lone and level sands" have the final word, showing nature and time triumph over human power.
 
 Overall meaning: The poem is a meditation on the transience of power. The only thing that survives is art (the sculptor's work) and, ironically, the king's own boastful words - which now serve as evidence of his foolishness rather than his greatness.`,
 
@@ -227,7 +234,7 @@ Overall meaning: The poem is a meditation on the transience of power. The only t
 
 الأبيات 6-8: هذي الأبيات تمدح مهارة النحّات. هو "قرى" مشاعر الملك بدقة، وحفرها زين لدرجة إنها "نجت". وفيه غموض في عبارة "the hand that mocked them, and the heart that fed".
 
-الأبيات 9-11: النقش ينقل أمر Ozymandias المتعجرف: "My name is Ozymandias, King of Kings; / Look on my Works, ye Mighty, and despair!"
+الأبيات 9-11: النقش ينقل أمر Ozymandias المتعجرف: "My name is Ozymandias, king of kings: / Look on my works, ye Mighty, and despair!"
 
 الأبيات 12-14: الـsestet يوصل المفارقة المدمّرة. "Nothing beside remains" - كل "الأعمال" انّمحت تماماً. الـ"lone and level sands" هي اللي تختم القصيدة، عشان تبيّن إن الطبيعة والوقت ينتصرون على القوة البشرية.
 
@@ -290,16 +297,16 @@ Caesura: النقطة في نص البيت "Nothing beside remains." في الب
       themesAr: ['السلطة والسيطرة', 'الاستبداد', 'الطبيعة البشرية'],
     },
     {
-      quote: 'My name is Ozymandias, King of Kings',
+      quote: 'My name is Ozymandias, king of kings',
       analysis:
-        'The only time we hear the tyrant\'s own voice. "King of Kings" is a superlative that claims superiority. The phrase echoes biblical language used for God, suggesting blasphemous arrogance. The name now represents failure, not glory.',
+        'The only time we hear the tyrant\'s own voice. "king of kings" is a superlative that claims superiority. The phrase echoes biblical language used for God, suggesting blasphemous arrogance. The name now represents failure, not glory.',
       themes: ['Pride and hubris', 'Power', 'Legacy'],
       analysisAr:
-        'المرّة الوحيدة اللي نسمع فيها صوت الطاغية نفسه. "King of Kings" صيغة تفضيل تدّعي التفوّق على كل الحكّام. العبارة تذكّر بلغة الكتاب المقدس اللي تستخدم لله، وهذا يوحي بغطرسة قريبة من الكفر. الاسم الحين صار يمثّل الفشل، مو المجد.',
+        'المرّة الوحيدة اللي نسمع فيها صوت الطاغية نفسه. "king of kings" صيغة تفضيل تدّعي التفوّق على كل الحكّام. العبارة تذكّر بلغة الكتاب المقدس اللي تستخدم لله، وهذا يوحي بغطرسة قريبة من الكفر. الاسم الحين صار يمثّل الفشل، مو المجد.',
       themesAr: ['الكبرياء والغطرسة', 'السلطة', 'الإرث'],
     },
     {
-      quote: 'Look on my Works, ye Mighty, and despair!',
+      quote: 'Look on my works, ye Mighty, and despair!',
       analysis:
         'The most dramatically ironic line in the poem. Ozymandias intended this as a warning to rival kings. But the reader understands "despair" differently: despair because even the greatest works are destroyed by time.',
       themes: ['Dramatic irony', 'Hubris', 'Transience of power'],
@@ -317,12 +324,12 @@ Caesura: النقطة في نص البيت "Nothing beside remains." في الب
       themesAr: ['زوال السلطة', 'المفارقة', 'الوقت والتحلّل'],
     },
     {
-      quote: 'colossal Wreck, boundless and bare',
+      quote: 'colossal wreck, boundless and bare',
       analysis:
-        'The oxymoron "colossal Wreck" pairs grandeur with ruin. "Boundless and bare" uses alliteration to emphasise the vast emptiness. The statue\'s very size now highlights how completely it has fallen.',
+        'The oxymoron "colossal wreck" pairs grandeur with ruin. "Boundless and bare" uses alliteration to emphasise the vast emptiness. The statue\'s very size now highlights how completely it has fallen.',
       themes: ['Decay', 'Power of nature', 'Irony'],
       analysisAr:
-        'الـoxymoron في "colossal Wreck" يجمع بين العظمة والخراب. و"boundless and bare" تستخدم alliteration عشان تأكّد على الفراغ الشاسع. حجم التمثال نفسه صار يبرز مدى السقوط.',
+        'الـoxymoron في "colossal wreck" يجمع بين العظمة والخراب. و"boundless and bare" تستخدم alliteration عشان تأكّد على الفراغ الشاسع. حجم التمثال نفسه صار يبرز مدى السقوط.',
       themesAr: ['التحلّل', 'قوة الطبيعة', 'المفارقة'],
     },
     {
@@ -345,7 +352,7 @@ Caesura: النقطة في نص البيت "Nothing beside remains." في الب
   languageDevices: [
     {
       device: 'Dramatic irony',
-      example: 'Look on my Works, ye Mighty, and despair!',
+      example: 'Look on my works, ye Mighty, and despair!',
       effect:
         'Ozymandias intended "despair" as a threat to rival kings. The reader, however, sees the empty desert and understands the real cause for despair - that nothing survives. The king\'s own words become the strongest argument against his power.',
       lineRef: 10,
@@ -372,7 +379,7 @@ Caesura: النقطة في نص البيت "Nothing beside remains." في الب
     },
     {
       device: 'Juxtaposition',
-      example: '"King of Kings" vs "Nothing beside remains"',
+      example: '"king of kings" vs "Nothing beside remains"',
       effect:
         "The poem places Ozymandias's grandiose self-description directly beside the reality of his total obscurity. The bigger the boast, the more devastating the reality.",
       lineRef: 9,
@@ -471,7 +478,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Three blunt words demolish the king\'s grand claims after his boast about his "Works."',
+      'Three blunt words demolish the king\'s grand claims after his boast about his "works".',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -509,7 +516,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'oz-6',
-    question: 'What type of irony is in "Look on my Works... and despair!"?',
+    question: 'What type of irony is in "Look on my works... and despair!"?',
     type: 'multiple-choice',
     options: ['Verbal irony', 'Dramatic irony', 'Cosmic irony', 'Socratic irony'],
     correctIndex: 1,
@@ -598,7 +605,7 @@ const REVISION_TOPICS = [
       '"Sneer of cold command" - hard consonants characterise the tyrant',
       '"Nothing beside remains" - blunt monosyllables',
       '"Boundless and bare" / "lone and level" - alliteration emphasises emptiness',
-      'Dramatic irony in "Look on my Works"',
+      'Dramatic irony in "Look on my works"',
     ],
   },
   {

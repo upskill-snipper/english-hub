@@ -13,6 +13,11 @@ import { useT } from '@/lib/i18n/use-t'
 const poemData: PoemData = {
   title: 'Neutral Tones',
   poet: 'Thomas Hardy',
+  // Printed as the AQA anthology prints it (Love and Relationships; AQA-8702-TG-POEMS.PDF),
+  // checked line by line against the PDF on 2 October 2026. Until then the page had the
+  // American "gray" and "grayish" where AQA prints "grey" and "greyish", "God-curst" for
+  // its "God curst" (Hardy hyphenated it; AQA does not), and its own punctuation in lines
+  // 2, 3, 4 and 12, among them the dash AQA puts at the start of line 4.
   lines: [
     {
       text: 'We stood by a pond that winter day,',
@@ -25,7 +30,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'And the sun was white, as though chidden of God;',
+      text: 'And the sun was white, as though chidden of God,',
       annotations: [
         {
           type: 'Pathetic fallacy',
@@ -35,7 +40,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'And a few leaves lay on the starving sod,',
+      text: 'And a few leaves lay on the starving sod;',
       annotations: [
         {
           type: 'Personification',
@@ -45,11 +50,11 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'They had fallen from an ash, and were gray.',
+      text: '– They had fallen from an ash, and were grey.',
       annotations: [
         {
           type: 'Symbolism',
-          note: '"Ash" works as a pun -- both the tree species and the residue of fire (passion burned out). "Gray" continues the colourless palette that gives the poem its title.',
+          note: '"Ash" works as a pun -- both the tree species and the residue of fire (passion burned out). "Grey" continues the colourless palette that gives the poem its title.',
           color: '#f59e0b',
         },
       ],
@@ -70,7 +75,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Metaphor',
-          note: 'The speaker has become a "tedious riddle" -- something puzzling but boring, no longer worth solving. The relationship has become an obligation rather than a joy.',
+          note: 'The speaker has become one of the "tedious riddles of years ago": something puzzling but boring, no longer worth solving. The relationship has become an obligation rather than a joy.',
           color: '#f59e0b',
         },
       ],
@@ -127,7 +132,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'Like an ominous bird a-wing....',
+      text: 'Like an ominous bird a-wing…',
       annotations: [
         {
           type: 'Simile',
@@ -158,17 +163,17 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'Your face, and the God-curst sun, and a tree,',
+      text: 'Your face, and the God curst sun, and a tree,',
       annotations: [
         {
           type: 'List',
-          note: 'The three images from the opening -- face, sun, tree -- return, but now distorted by painful memory. "God-curst" intensifies the earlier "chidden" -- the sun is now actively cursed.',
+          note: 'The three images from the opening -- face, sun, tree -- return, but now distorted by painful memory. "God curst" intensifies the earlier "chidden" -- the sun is now actively cursed.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'And a pond edged with grayish leaves.',
+      text: 'And a pond edged with greyish leaves.',
       annotations: [
         {
           type: 'Cyclical ending',
@@ -181,11 +186,11 @@ const poemData: PoemData = {
   context: `<p><strong>Thomas Hardy (1840-1928)</strong> wrote this poem in <strong>1867</strong>, though it was not published until 1898 in <em>Wessex Poems</em>. It is one of his earliest poems and reflects personal experience of failed love.</p>
 <p>Hardy is associated with <strong>pessimism and determinism</strong> -- a worldview in which humans are subject to forces beyond their control, including the inevitable failure of love. His work often challenges the <strong>Victorian idealisation of romantic love</strong>.</p>
 <p>The poem reflects Hardy's belief that love is inherently <strong>deceptive</strong> -- it promises joy but delivers suffering. This aligns with the broader <strong>late Victorian disillusionment</strong> with Romantic ideals.</p>
-<p>Hardy was also influenced by <strong>Darwin's theory of evolution</strong>, which suggested an indifferent universe with no divine plan. The "God-curst sun" reflects a world where nature is not benevolent but hostile or uncaring.</p>`,
+<p>Hardy was also influenced by <strong>Darwin's theory of evolution</strong>, which suggested an indifferent universe with no divine plan. The "God curst sun" reflects a world where nature is not benevolent but hostile or uncaring.</p>`,
   contextAr: `<p><strong>Thomas Hardy (1840-1928)</strong> كتب هالقصيدة في <strong>1867</strong>، بس ما نشرها إلا في 1898 في ديوان <em>Wessex Poems</em>. هي من أوّل قصائده، وتعكس تجربة شخصية في فشل الحب.</p>
 <p>Hardy مرتبط بنظرة <strong>التشاؤم والحتميّة</strong> - رؤية للعالم البشر فيها خاضعين لقوى أكبر منهم، منها الفشل الحتمي للحب. أعماله غالباً تحدّت <strong>المثاليّة الفيكتورية للحب الرومانسي</strong>.</p>
 <p>القصيدة تعكس قناعة Hardy بإن الحب في جوهره <strong>خدّاع</strong> - يوعد بالفرح بس يوصل المعاناة. هذي القناعة تتماشى مع <strong>خيبة أمل أواخر العصر الفيكتوري</strong> من المثل الرومانسية.</p>
-<p>Hardy كمان كان متأثّر بـ<strong>نظرية التطور لـDarwin</strong>، اللي اقترحت إن الكون غير مبالي وما فيه خطة إلهية. عبارة "God-curst sun" تعكس عالم الطبيعة فيه ما تكون رحيمة، بل عدائيّة أو غير مبالية.</p>`,
+<p>Hardy كمان كان متأثّر بـ<strong>نظرية التطور لـDarwin</strong>، اللي اقترحت إن الكون غير مبالي وما فيه خطة إلهية. عبارة "God curst sun" تعكس عالم الطبيعة فيه ما تكون رحيمة، بل عدائيّة أو غير مبالية.</p>`,
   summary: `The speaker recalls standing by a pond on a winter day with a former lover. The landscape is drained of colour -- a white sun, grey leaves, starving ground. Everything reflects the lifelessness of their dying relationship.\n\nThe lover's eyes wander with disinterest. Empty words pass between them. The lover's smile is described as "the deadest thing" -- a devastating oxymoron that captures performed affection masking genuine bitterness.\n\nIn the final stanza, the speaker reflects on what this experience taught them: that love deceives and causes pain. The poem returns to its opening images -- face, sun, tree, pond -- showing the speaker is trapped in a cycle of painful memory with no escape or resolution.`,
   summaryAr: `المتكلّم (ذكر) يتذكّر يوم وقف يم بِركة في يوم شتوي مع حبيبته (أنثى) السابقة. المنظر مسحوب منه اللون - شمس بيضاء، أوراق رماديّة، أرض جوعى. كل شي يعكس انعدام الحياة في علاقتهم المحتضرة.\n\nعيون الحبيبة (أنثى) تطوف بدون اهتمام. كلمات فاضية تمر بينهم. ابتسامتها توصف بإنها "the deadest thing" - تناقض موجع يلتقط مظهر العاطفة المؤدّى الذي يخفي مرارة حقيقيّة.\n\nفي المقطع الأخير، المتكلّم (ذكر) يتأمّل في الدرس اللي علّمته هالتجربة: إن الحب يخدع ويسبّب الألم. القصيدة ترجع لصورها الافتتاحيّة - الوجه، الشمس، الشجرة، البِركة - وتبيّن إن المتكلّم (ذكر) محاصر في دورة من الذكرى المؤلمة بدون مفرّ ولا حلّ.`,
   formAndStructure: `Form: Four quatrains (four-line stanzas) with a regular structure that creates an appearance of order and control, belying the emotional devastation within.\n\nRhyme scheme: ABBA -- the enclosed/envelope rhyme scheme mirrors the poem's cyclical structure and the speaker's sense of entrapment. The first and last lines of each stanza rhyme, creating a closed, inescapable pattern.\n\nCyclical structure: The final stanza returns to the images of the first (pond, sun, tree, leaves), showing the speaker is trapped in a loop of painful memory. No progress or healing has occurred.\n\nColour palette: The poem is deliberately drained of colour -- white, grey, neutral. The "neutral tones" of the title refer both to the emotional flatness and the visual bleakness.\n\nTemporal structure: Stanzas 1-3 describe the past event; stanza 4 shifts to the present, showing the lasting psychological damage.\n\nEllipsis: The trailing dots after "a-wing...." create an unfinished, haunting quality, suggesting the memory refuses to end cleanly.`,
@@ -210,21 +215,21 @@ const poemData: PoemData = {
       themesAr: ['الطبيعة', 'النضوب', 'المعاناة'],
     },
     {
-      quote: 'fallen from an ash, and were gray',
+      quote: 'fallen from an ash, and were grey',
       analysis:
-        'The ash tree pun suggests passion burned to ash. "Gray" -- the dominant colour -- represents emotional neutrality, the absence of both love and hate.',
+        'The ash tree pun suggests passion burned to ash. "Grey" -- the dominant colour -- represents emotional neutrality, the absence of both love and hate.',
       themes: ['Death of love', 'Neutrality', 'Wordplay'],
       analysisAr:
-        'التورية في "ash" (شجرة الدردار ورماد النار) توحي إن العاطفة احترقت ل رماد. كلمة "gray" - اللون السائد - تمثّل الحياد العاطفي، غياب الحب وغياب الكره مع بعض.',
+        'التورية في "ash" (شجرة الدردار ورماد النار) توحي إن العاطفة احترقت ل رماد. كلمة "grey" - اللون السائد - تمثّل الحياد العاطفي، غياب الحب وغياب الكره مع بعض.',
       themesAr: ['موت الحب', 'الحياد', 'التورية'],
     },
     {
       quote: 'eyes that rove / Over tedious riddles',
       analysis:
-        'The lover\'s wandering eyes show disengagement. The speaker has become a "tedious riddle" -- something once intriguing now boring. Love has made familiarity breed contempt.',
+        'The lover\'s wandering eyes show disengagement. The speaker has become one of the "tedious riddles" of the past: something once intriguing, now boring. Love has made familiarity breed contempt.',
       themes: ['Disillusionment', 'Boredom', 'Loss'],
       analysisAr:
-        'عيون الحبيبة (أنثى) اللي تطوف تبيّن انفصال. المتكلّم (ذكر) صار "tedious riddle" - شي كان مثير وصار الحين ممل. الحب خلّى الألفة تولّد الاحتقار.',
+        'عيون الحبيبة (أنثى) اللي تطوف تبيّن انفصال. المتكلّم (ذكر) صار من الـ"tedious riddles" - شي كان مثير وصار الحين ممل. الحب خلّى الألفة تولّد الاحتقار.',
       themesAr: ['خيبة الأمل', 'الملل', 'الفقد'],
     },
     {
@@ -255,12 +260,12 @@ const poemData: PoemData = {
       themesAr: ['التشاؤم', 'الخداع', 'خيبة الأمل'],
     },
     {
-      quote: 'And a pond edged with grayish leaves',
+      quote: 'And a pond edged with greyish leaves',
       analysis:
-        'The return to the opening image completes the cycle. "Grayish" slightly alters the original "gray" -- memory distorts even as it repeats. The speaker is trapped.',
+        'The return to the opening image completes the cycle. "Greyish" slightly alters the original "grey" -- memory distorts even as it repeats. The speaker is trapped.',
       themes: ['Cyclical structure', 'Memory', 'Entrapment'],
       analysisAr:
-        'الرجوع للصورة الافتتاحيّة يكمل الدورة. "Grayish" تعدّل قليلاً "gray" الأصلية - الذاكرة تشوّه حتى وهي تكرّر. المتكلّم (ذكر) محاصر.',
+        'الرجوع للصورة الافتتاحيّة يكمل الدورة. "Greyish" تعدّل قليلاً "grey" الأصلية - الذاكرة تشوّه حتى وهي تكرّر. المتكلّم (ذكر) محاصر.',
       themesAr: ['البنية الدوريّة', 'الذاكرة', 'الاحتجاز'],
     },
   ],
@@ -294,7 +299,7 @@ const poemData: PoemData = {
     },
     {
       device: 'Cyclical structure',
-      example: 'a pond... grayish leaves (echoing stanza 1)',
+      example: 'a pond... greyish leaves (echoing stanza 1)',
       effect:
         'The return to opening images in the final stanza creates a closed loop, suggesting the speaker is imprisoned by memory. No growth, healing, or escape is possible.',
       lineRef: 18,
@@ -303,7 +308,7 @@ const poemData: PoemData = {
     },
     {
       device: 'Semantic field of death/decay',
-      example: 'starving, fallen, gray, deadest, die',
+      example: 'starving, fallen, grey, deadest, die',
       effect:
         'A sustained vocabulary of death and decay runs through the poem, creating an atmosphere of total lifelessness. Love is not just ended but decomposing.',
       lineRef: 2,
@@ -330,7 +335,7 @@ const poemData: PoemData = {
     },
     {
       device: 'Colour symbolism',
-      example: 'white... gray... grayish',
+      example: 'white... grey... greyish',
       effect:
         'The deliberate absence of colour creates the "neutral tones" of the title. The palette drains warmth and vibrancy from the world, reflecting emotional numbness and the death of passion.',
       lineRef: 1,

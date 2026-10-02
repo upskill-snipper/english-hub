@@ -2,7 +2,7 @@
 // [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
 import Link from 'next/link'
-import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
+import { AlertTriangle, ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
 import { useT } from '@/lib/i18n/use-t'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -16,7 +16,9 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CreativeWork',
   name: 'Ozymandias',
-  alternativeHeadline: 'A Pearson Edexcel IGCSE 4ET1 set-text study guide',
+  // Until 2 October 2026 this said "4ET1 set-text study guide". Ozymandias is not in the
+  // current 4ET1 anthology (Issue 8); AQA sets it, and the page prints AQA's text.
+  alternativeHeadline: 'A study guide: wider reading for Pearson Edexcel IGCSE 4ET1',
   author: {
     '@type': 'Person',
     name: 'Percy Bysshe Shelley',
@@ -29,8 +31,8 @@ const jsonLd = {
   educationalAlignment: {
     '@type': 'AlignmentObject',
     alignmentType: 'educationalSubject',
-    educationalFramework: 'Pearson Edexcel IGCSE English Literature 4ET1',
-    targetName: 'Anthology Poetry - Paper 1 Section B',
+    educationalFramework: 'AQA GCSE English Literature 8702',
+    targetName: 'Poetry anthology: Power and Conflict',
   },
 }
 
@@ -39,9 +41,15 @@ const jsonLd = {
 const poem: PoemData = {
   title: 'Ozymandias',
   poet: 'Percy Bysshe Shelley',
+  // Ozymandias is not in the Pearson Edexcel International GCSE anthology (Issue 8),
+  // though this page was written as if it were. The poem is printed as the AQA anthology
+  // prints it (Power and Conflict; AQA-8702-TG-POEMS.PDF), the board that sets it,
+  // checked line by line against the PDF on 2 October 2026. Until then the page had
+  // "shattered", "stamped" and "mocked" where AQA prints Shelley's "shatter'd",
+  // "stamp'd" and "mock'd", and commas AQA does not print in lines 1, 3, 4 and 5.
   lines: [
     {
-      text: 'I met a traveller from an antique land,',
+      text: 'I met a traveller from an antique land',
       annotations: [
         {
           type: 'Frame narrative',
@@ -71,7 +79,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Stand in the desert. Near them, on the sand,',
+      text: 'Stand in the desert. Near them on the sand,',
       annotations: [
         {
           type: 'Setting',
@@ -81,11 +89,11 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Half sunk, a shattered visage lies, whose frown,',
+      text: "Half sunk, a shatter'd visage lies, whose frown",
       annotations: [
         {
           type: 'Key quote',
-          note: '"Shattered visage" - the king\'s face is broken and partly buried. Shelley delays the head-rhyme word "lies" so that the line lands heavily on the king\'s ruined features.',
+          note: '"Shatter\'d visage" - the king\'s face is broken and partly buried. Shelley delays the head-rhyme word "lies" so that the line lands heavily on the king\'s ruined features.',
           color: '#f59e0b',
         },
         {
@@ -96,7 +104,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'And wrinkled lip, and sneer of cold command,',
+      text: 'And wrinkled lip and sneer of cold command',
       annotations: [
         {
           type: 'Key quote',
@@ -121,21 +129,21 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Which yet survive, stamped on these lifeless things,',
+      text: "Which yet survive, stamp'd on these lifeless things,",
       annotations: [
         {
           type: 'Irony',
-          note: 'The "passions" - pride, contempt - outlive the man who felt them. They are now "stamped on" lifeless rock. The metaphor is from coining: a tyrant\'s temper has been minted into stone like a face on a coin.',
+          note: 'The "passions" - pride, contempt - outlive the man who felt them. They are now "stamp\'d on" lifeless rock. The metaphor is from coining: a tyrant\'s temper has been minted into stone like a face on a coin.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'The hand that mocked them and the heart that fed:',
+      text: "The hand that mock'd them and the heart that fed;",
       annotations: [
         {
           type: 'Ambiguity',
-          note: '"Mocked" carries two senses: the sculptor\'s hand mimicked (mocked = reproduced) the passions, and also derided (mocked = ridiculed) them. Either way, the sculptor wins. "The heart that fed" is the king\'s heart, which fed the passions.',
+          note: "\"Mock'd\" carries two senses: the sculptor's hand mimicked (mock'd = reproduced) the passions, and also derided (mock'd = ridiculed) them. Either way, the sculptor wins. \"The heart that fed\" is the king's heart, which fed the passions.",
           color: '#a855f7',
         },
       ],
@@ -166,16 +174,16 @@ const poem: PoemData = {
       ],
     },
     {
-      text: "Look on my Works, ye Mighty, and despair!'",
+      text: "Look on my works, ye Mighty, and despair!'",
       annotations: [
         {
           type: 'Key quote',
-          note: 'The most quoted line in the poem. Ozymandias commands rival kings ("ye Mighty") to look at what he has built and lose hope. The intended meaning was: "you will never match me." The actual meaning, in the empty desert, becomes: "your works will end like mine." (Edexcel anthology Issue 2 prints "Look on my Works", not "Look upon my works".)',
+          note: 'The most quoted line in the poem. Ozymandias commands rival kings ("ye Mighty") to look at what he has built and lose hope. The intended meaning was: "you will never match me." The actual meaning, in the empty desert, becomes: "your works will end like mine." (Quote it as the poem has it, "Look on my works", not "Look upon my works".)',
           color: '#f59e0b',
         },
         {
           type: 'Irony',
-          note: 'Dramatic irony: the only "Works" left are two trunkless legs and a half-buried face. The boast turns into its opposite - every reader becomes a "Mighty" one looking at ruins.',
+          note: 'Dramatic irony: the only "works" left are two trunkless legs and a half-buried face. The boast turns into its opposite - every reader becomes a "Mighty" one looking at ruins.',
           color: '#ef4444',
         },
       ],
@@ -196,7 +204,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Of that colossal Wreck, boundless and bare',
+      text: 'Of that colossal wreck, boundless and bare,',
       annotations: [
         {
           type: 'Juxtaposition',
@@ -246,11 +254,11 @@ const poem: PoemData = {
 
   summary: `Lines 1-4: The speaker meets a traveller who tells him about a ruined statue in a far-off desert. All that remains are two enormous stone legs with no body - and, lying nearby in the sand, a broken, half-buried face.
 
-Lines 5-8: The face shows a frown, a wrinkled lip and a "sneer of cold command". The unnamed sculptor understood his subject perfectly - the king\'s contemptuous passions are still visible, "stamped on" lifeless stone, although the king and his hand are long gone.
+Lines 5-8: The face shows a frown, a wrinkled lip and a "sneer of cold command". The unnamed sculptor understood his subject perfectly - the king\'s contemptuous passions are still visible, "stamp\'d on" lifeless stone, although the king and his hand are long gone.
 
-Lines 9-11: An inscription on the pedestal preserves the king\'s own boast: "My name is Ozymandias, king of kings: / Look on my Works, ye Mighty, and despair!" The intended meaning was that no rival ruler could ever match him.
+Lines 9-11: An inscription on the pedestal preserves the king\'s own boast: "My name is Ozymandias, king of kings: / Look on my works, ye Mighty, and despair!" The intended meaning was that no rival ruler could ever match him.
 
-Lines 12-14: But around the broken statue, "nothing beside remains". The "colossal Wreck" is surrounded by empty, endless desert. The sands "stretch far away" - the empire has vanished, and only the artist\'s record of the tyrant\'s sneer survives.
+Lines 12-14: But around the broken statue, "nothing beside remains". The "colossal wreck" is surrounded by empty, endless desert. The sands "stretch far away" - the empire has vanished, and only the artist\'s record of the tyrant\'s sneer survives.
 
 Overall meaning: A meditation on the impermanence of political power. Shelley uses the ruined boast of an Egyptian pharaoh to argue that all human empires end the same way. Time levels every tyrant; only art outlasts the ruler.`,
 
@@ -279,7 +287,7 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       themesAr: ['السلطة', 'الفناء', 'الصورة'],
     },
     {
-      quote: 'a shattered visage lies, whose frown, / And wrinkled lip, and sneer of cold command',
+      quote: "a shatter'd visage lies, whose frown / And wrinkled lip and sneer of cold command",
       analysis:
         'The pharaoh\'s face is broken but his contempt is still legible. The triadic list - "frown… wrinkled lip… sneer" - piles up signs of hostility. "Cold command" with its hard consonants gives the king a chilly, military authority. The face rules even after the kingdom has vanished.',
       themes: ['Tyranny', 'Power', 'Pride'],
@@ -288,12 +296,12 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       themesAr: ['الطغيان', 'السلطة', 'الكِبر'],
     },
     {
-      quote: 'The hand that mocked them and the heart that fed',
+      quote: "The hand that mock'd them and the heart that fed",
       analysis:
-        '"Mocked" carries a brilliant double meaning: the sculptor\'s hand both mimicked (reproduced) and ridiculed (mocked) the king\'s passions. Either way, the artist outlives the ruler. The "heart that fed" is the king\'s - he kept his cruelties alive - but it is now silent, while the sculptor\'s work still speaks.',
+        "\"Mock'd\" carries a brilliant double meaning: the sculptor's hand both mimicked (reproduced) and ridiculed (mock'd) the king's passions. Either way, the artist outlives the ruler. The \"heart that fed\" is the king's - he kept his cruelties alive - but it is now silent, while the sculptor's work still speaks.",
       themes: ['Art vs. power', 'Pride', 'Time'],
       analysisAr:
-        'لفظة "mocked" تحمل معنىً مزدوجاً بارعاً: يدُ النحّات حاكتْ (نسخت) ولكنّها سخرت أيضاً من شَهَوات الملك. وعلى المعنيين يبقى الفنّان بعد الحاكم. أمّا "heart that fed" فقلب الملك - أبقى قسوتَه حيّة - لكنّه الآن صامت، فيما عملُ النحّات ما زال يتكلّم.',
+        'لفظة "mock\'d" تحمل معنىً مزدوجاً بارعاً: يدُ النحّات حاكتْ (نسخت) ولكنّها سخرت أيضاً من شَهَوات الملك. وعلى المعنيين يبقى الفنّان بعد الحاكم. أمّا "heart that fed" فقلب الملك - أبقى قسوتَه حيّة - لكنّه الآن صامت، فيما عملُ النحّات ما زال يتكلّم.',
       themesAr: ['الفنّ في مقابل السلطة', 'الكِبر', 'الزمن'],
     },
     {
@@ -306,12 +314,12 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       themesAr: ['الكِبر', 'السلطة', 'الإمبراطوريّة'],
     },
     {
-      quote: 'Look on my Works, ye Mighty, and despair!',
+      quote: 'Look on my works, ye Mighty, and despair!',
       analysis:
-        'The most-quoted line in the poem and the climax of the king\'s boast. He commands rival rulers ("ye Mighty") to despair at what he has built. The cruel irony is that the only "Works" remaining are two trunkless legs and a half-buried face - so the line tells the truth, but not the truth Ozymandias intended. (The Edexcel anthology Issue 2 reads "Look on my Works", not the more common "Look upon my works".)',
+        'The most-quoted line in the poem and the climax of the king\'s boast. He commands rival rulers ("ye Mighty") to despair at what he has built. The cruel irony is that the only "works" remaining are two trunkless legs and a half-buried face - so the line tells the truth, but not the truth Ozymandias intended. (The poem reads "Look on my works", not the often misquoted "Look upon my works".)',
       themes: ['Hubris', 'Irony', 'Tyranny'],
       analysisAr:
-        'أكثر سطور القصيدة تداولاً، وذروةُ تفاخر الملك. يأمر الحكّامَ المنافسين ("ye Mighty") بأن يفقدوا الأمل أمام ما بناه. والمفارقةُ القاسية أنّ الـ"Works" الباقية لا تتجاوز ساقَيْن بلا جذع ووجهاً نصف مدفون - فالسطر يقول الحقيقة، لكن ليست الحقيقة التي قصدها Ozymandias. (تطبع نسخةُ Edexcel anthology Issue 2 "Look on my Works"، لا "Look upon my works" الأشهرَ شيوعاً.)',
+        'أكثر سطور القصيدة تداولاً، وذروةُ تفاخر الملك. يأمر الحكّامَ المنافسين ("ye Mighty") بأن يفقدوا الأمل أمام ما بناه. والمفارقةُ القاسية أنّ الـ"works" الباقية لا تتجاوز ساقَيْن بلا جذع ووجهاً نصف مدفون - فالسطر يقول الحقيقة، لكن ليست الحقيقة التي قصدها Ozymandias. (نصّ القصيدة "Look on my works"، مو "Look upon my works" اللي ينقتبس غلط كثير.)',
       themesAr: ['الكِبر', 'المفارقة', 'الطغيان'],
     },
     {
@@ -369,17 +377,17 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
         'قائمةٌ ثلاثيّة من ملامح الوجه، كلّها عدوانيّ. أثرُها التراكميّ وجهٌ مصنوعٌ بالكامل من الازدراء. يحرمنا Shelley من تعبيرٍ إنسانيٍّ واحدٍ على الملك - لا يبقى إلّا أثرُ غضبه.',
     },
     {
-      device: 'Pun (mocked)',
-      example: 'The hand that mocked them and the heart that fed',
+      device: "Pun (mock'd)",
+      example: "The hand that mock'd them and the heart that fed",
       effect:
-        '"Mocked" means both "imitated" and "ridiculed". The sculptor\'s hand reproduced the king\'s passions, but in doing so it also exposed them. Shelley quietly hands the victory to the artist: the sculptor outlives the tyrant.',
+        '"Mock\'d" means both "imitated" and "ridiculed". The sculptor\'s hand reproduced the king\'s passions, but in doing so it also exposed them. Shelley quietly hands the victory to the artist: the sculptor outlives the tyrant.',
       lineRef: 7,
       effectAr:
-        'لفظة "mocked" تعني "حاكى" و"سخر" معاً. يدُ النحّات نسخت شَهَوات الملك، وبفعل النسخ كشفتها. يُسلّم Shelley النصرَ هادئاً للفنّان: النحّات يبقى بعد الطاغية.',
+        'لفظة "mock\'d" تعني "حاكى" و"سخر" معاً. يدُ النحّات نسخت شَهَوات الملك، وبفعل النسخ كشفتها. يُسلّم Shelley النصرَ هادئاً للفنّان: النحّات يبقى بعد الطاغية.',
     },
     {
       device: 'Dramatic irony',
-      example: 'Look on my Works, ye Mighty, and despair!',
+      example: 'Look on my works, ye Mighty, and despair!',
       effect:
         "Ozymandias's boast comes true in the opposite way to what he meant. He intended other kings to despair at his power; instead, every reader despairs at the inevitability of all empires falling. The line works against itself.",
       lineRef: 10,
@@ -425,11 +433,11 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
 
   summaryAr: `السطور 1-4: يلقى المتكلّمُ رحّالةً يُحدّثه عن تمثالٍ مُحطَّمٍ في صحراءٍ بعيدة. كلّ ما تبقّى ساقا حجرٍ ضخمتان بلا جسد - وعلى مقربةٍ منهما، نصف مدفونٍ في الرمل، وجهٌ مكسور.
 
-السطور 5-8: على الوجه تجهّمٌ، شفةٌ متغضّنة، و"sneer of cold command". فهم النحّاتُ المجهول موضوعه فهماً تامّاً - شَهَواتُ الملك الازدرائيّة ما زالت مرئيّةً "stamped on" على حجرٍ ميّت، وإن طال غيابُ الملك ويده.
+السطور 5-8: على الوجه تجهّمٌ، شفةٌ متغضّنة، و"sneer of cold command". فهم النحّاتُ المجهول موضوعه فهماً تامّاً - شَهَواتُ الملك الازدرائيّة ما زالت مرئيّةً "stamp\'d on" على حجرٍ ميّت، وإن طال غيابُ الملك ويده.
 
-السطور 9-11: نقشٌ على القاعدة يحفظ تفاخرَ الملك بنفسه: "My name is Ozymandias, king of kings: / Look on my Works, ye Mighty, and despair!" قصد بها أنّ لا حاكمَ منافساً يستطيع مجاراته.
+السطور 9-11: نقشٌ على القاعدة يحفظ تفاخرَ الملك بنفسه: "My name is Ozymandias, king of kings: / Look on my works, ye Mighty, and despair!" قصد بها أنّ لا حاكمَ منافساً يستطيع مجاراته.
 
-السطور 12-14: لكنّ حول التمثال المكسور "nothing beside remains". تحيط بـ"colossal Wreck" صحراءٌ فارغة لا نهاية لها. الرمالُ "stretch far away" - اختفت الإمبراطوريّة، ولم يبقَ إلّا سِجلّ الفنّان لازدراء الطاغية.
+السطور 12-14: لكنّ حول التمثال المكسور "nothing beside remains". تحيط بـ"colossal wreck" صحراءٌ فارغة لا نهاية لها. الرمالُ "stretch far away" - اختفت الإمبراطوريّة، ولم يبقَ إلّا سِجلّ الفنّان لازدراء الطاغية.
 
 المعنى الإجماليّ: تأمّلٌ في زوال السلطة السياسيّة. يستعمل Shelley مفاخرةَ فرعونٍ مصريّ المُحطَّمة ليُحاجج بأنّ كلّ إمبراطوريّات البشر تنتهي على النحو نفسه. الزمن يساوي بين كلّ الطغاة؛ ولا يبقى أحدٌ بعد الحاكم سوى الفنّ.`,
 
@@ -510,7 +518,7 @@ export default function OzymandiasPage() {
             <h1 className="text-heading-lg font-heading text-foreground">Ozymandias</h1>
             <p className="text-body-sm text-muted-foreground">
               Percy Bysshe Shelley (1792–1822) &middot; published 1818, <em>The Examiner</em>{' '}
-              &middot; Edexcel IGCSE Anthology
+              &middot; not in the current IGCSE anthology
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
               {tr('igcse.page.badge_edexcel_lit')}
@@ -518,6 +526,22 @@ export default function OzymandiasPage() {
           </div>
         </div>
       </div>
+
+      <section
+        aria-label="Anthology scope notice"
+        className="rounded-xl border border-amber-500/40 bg-amber-500/[0.08] p-5 text-body-sm text-card-foreground"
+      >
+        <div className="flex items-start gap-3">
+          <AlertTriangle className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
+          <p>
+            <strong className="text-foreground">
+              This poem is not in the current Edexcel IGCSE 4ET1 anthology.
+            </strong>{' '}
+            AQA sets it, in its Power and Conflict cluster, and this page prints the poem as the AQA
+            anthology does.
+          </p>
+        </div>
+      </section>
 
       <InteractivePoemViewer poem={poem} />
 
@@ -531,8 +555,7 @@ export default function OzymandiasPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another from the anthology. These
-          are strong pairings for Ozymandias.
+          Ozymandias is not in the current 4ET1 anthology, so these are wider-reading pairings.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

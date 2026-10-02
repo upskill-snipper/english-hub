@@ -15,14 +15,21 @@ import { useT } from '@/lib/i18n/use-t'
 const londonPoem: PoemData = {
   title: 'London',
   poet: 'William Blake',
+  // Printed as the AQA anthology prints it (Power and Conflict; AQA-8702-TG-POEMS.PDF),
+  // checked line by line against the PDF on 2 October 2026. AQA modernises Blake: it
+  // prints "through", "chartered" and "mind-forged" (keeping "black'ning"), and lower
+  // case for "man", "infant's", "chimney-sweeper's", "church", "soldier's", "palace",
+  // "harlot's" and "marriage". Until then the page printed Blake's engraved forms and
+  // capitals, with its own punctuation in lines 7, 8, 10 and 15, and quoted them so
+  // throughout; the quotations now follow AQA. Pearson Edexcel and Eduqas print other
+  // texts of the poem, on their own pages: none should be corrected to match another.
   lines: [
-    // Stanza 1
     {
-      text: 'I wander thro\u2019 each charter\u2019d street,',
+      text: 'I wander through each chartered street,',
       annotations: [
         {
           type: 'Vocabulary',
-          note: '"Charter\'d" means mapped, controlled, or owned. Blake uses it to suggest that even the streets of London have been bought and sold \u2014 freedom is an illusion.',
+          note: '"Chartered" means mapped, controlled, or owned. Blake uses it to suggest that even the streets of London have been bought and sold \u2014 freedom is an illusion.',
           color: '#3b82f6',
         },
         {
@@ -33,16 +40,16 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      text: 'Near where the charter\u2019d Thames does flow.',
+      text: 'Near where the chartered Thames does flow,',
       annotations: [
         {
           type: 'Imagery',
-          note: 'Even the river Thames \u2014 a natural, free-flowing force \u2014 has been "charter\'d" (controlled). Nature itself has been commodified.',
+          note: 'Even the river Thames \u2014 a natural, free-flowing force \u2014 has been "chartered" (controlled). Nature itself has been commodified.',
           color: '#10b981',
         },
         {
           type: 'Repetition',
-          note: 'The repetition of "charter\'d" emphasises the all-consuming nature of commercial and political control over London.',
+          note: 'The repetition of "chartered" emphasises the all-consuming nature of commercial and political control over London.',
           color: '#f59e0b',
         },
       ],
@@ -72,11 +79,9 @@ const londonPoem: PoemData = {
         },
       ],
     },
-    // Stanza break
     { text: '' },
-    // Stanza 2
     {
-      text: 'In every cry of every Man,',
+      text: 'In every cry of every man,',
       annotations: [
         {
           type: 'Anaphora',
@@ -86,7 +91,7 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      text: 'In every Infant\u2019s cry of fear,',
+      text: "In every infant's cry of fear,",
       annotations: [
         {
           type: 'Imagery',
@@ -96,7 +101,7 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      text: 'In every voice: in every ban,',
+      text: 'In every voice, in every ban,',
       annotations: [
         {
           type: 'Vocabulary',
@@ -106,11 +111,11 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      text: 'The mind-forg\u2019d manacles I hear.',
+      text: 'The mind-forged manacles I hear:',
       annotations: [
         {
           type: 'Metaphor',
-          note: '"Mind-forg\'d manacles" is Blake\'s most famous phrase from this poem. The chains are not physical but psychological \u2014 people are imprisoned by their own acceptance of oppression.',
+          note: '"Mind-forged manacles" is Blake\'s most famous phrase from this poem. The chains are not physical but psychological \u2014 people are imprisoned by their own acceptance of oppression.',
           color: '#ef4444',
         },
         {
@@ -120,11 +125,9 @@ const londonPoem: PoemData = {
         },
       ],
     },
-    // Stanza break
     { text: '' },
-    // Stanza 3
     {
-      text: 'How the Chimney-sweeper\u2019s cry',
+      text: "How the chimney-sweeper's cry",
       annotations: [
         {
           type: 'Context',
@@ -134,7 +137,7 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      text: 'Every black\u2019ning Church appalls;',
+      text: "Every black'ning church appalls,",
       annotations: [
         {
           type: 'Symbolism',
@@ -149,7 +152,7 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      text: 'And the hapless Soldier\u2019s sigh',
+      text: "And the hapless soldier's sigh",
       annotations: [
         {
           type: 'Emotive language',
@@ -159,7 +162,7 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      text: 'Runs in blood down Palace walls.',
+      text: 'Runs in blood down palace walls.',
       annotations: [
         {
           type: 'Imagery',
@@ -168,16 +171,14 @@ const londonPoem: PoemData = {
         },
         {
           type: 'Symbolism',
-          note: 'Blood on "Palace walls" could foreshadow revolution (Blake supported the French Revolution). The powerful are not shielded from the consequences of their oppression.',
+          note: 'Blood on "palace walls" could foreshadow revolution (Blake supported the French Revolution). The powerful are not shielded from the consequences of their oppression.',
           color: '#ef4444',
         },
       ],
     },
-    // Stanza break
     { text: '' },
-    // Stanza 4
     {
-      text: 'But most thro\u2019 midnight streets I hear',
+      text: 'But most through midnight streets I hear',
       annotations: [
         {
           type: 'Structure',
@@ -187,7 +188,7 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      text: 'How the youthful Harlot\u2019s curse',
+      text: "How the youthful harlot's curse",
       annotations: [
         {
           type: 'Context',
@@ -202,7 +203,7 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      text: 'Blasts the new-born Infant\u2019s tear',
+      text: "Blasts the new-born infant's tear,",
       annotations: [
         {
           type: 'Imagery',
@@ -212,11 +213,11 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      text: 'And blights with plagues the Marriage hearse.',
+      text: 'And blights with plagues the marriage hearse.',
       annotations: [
         {
           type: 'Oxymoron',
-          note: '"Marriage hearse" is a powerful oxymoron \u2014 marriage (life, love, new beginnings) is fused with a hearse (death, endings). Love and death become inseparable in Blake\'s London.',
+          note: '"marriage hearse" is a powerful oxymoron \u2014 marriage (life, love, new beginnings) is fused with a hearse (death, endings). Love and death become inseparable in Blake\'s London.',
           color: '#ef4444',
         },
         {
@@ -243,43 +244,43 @@ const londonPoem: PoemData = {
     '<p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 <strong>\u0627\u062d\u062a\u062c\u0627\u062c \u0627\u062c\u062a\u0645\u0627\u0639\u064a</strong>\u060c \u064a\u0647\u0627\u062c\u0645 \u0643\u0644 \u0645\u0633\u062a\u0648\u0649 \u0645\u0646 \u0645\u0633\u062a\u0648\u064a\u0627\u062a \u0627\u0644\u0633\u0644\u0637\u0629 \u2014 \u0645\u0646 \u0627\u0644\u0645\u0648\u0627\u062b\u064a\u0642 \u0627\u0644\u062a\u062c\u0627\u0631\u064a\u0629\u060c \u0644\u0644\u0646\u0641\u0627\u0642 \u0627\u0644\u062f\u064a\u0646\u064a\u060c \u0644\u0644\u0627\u0645\u0628\u0627\u0644\u0627\u0629 \u0627\u0644\u0645\u0644\u0643\u064a\u0629 \u2014 \u0648\u064a\u0628\u064a\u0651\u0646 \u0643\u064a\u0641 \u0625\u0646 \u0647\u0627\u0644\u0642\u0648\u0649 \u062a\u062f\u0645\u0651\u0631 \u0627\u0644\u0628\u0631\u0627\u0621\u0629 \u0648\u0627\u0644\u062d\u0631\u064a\u0629 \u0648\u0627\u0644\u062a\u0631\u0627\u0628\u0637 \u0627\u0644\u0625\u0646\u0633\u0627\u0646\u064a.</p>',
 
   summary:
-    'Stanza 1: The speaker walks through London\'s streets, observing that everything \u2014 even the river Thames \u2014 is "charter\'d" (controlled and owned). Every face he sees is marked with suffering and despair.\n\n' +
-    'Stanza 2: He hears the cries of men, infants, and the voice of every social restriction. Most importantly, he recognises that the chains binding people are "mind-forg\'d" \u2014 psychological, not physical. People have internalised their oppression.\n\n' +
+    'Stanza 1: The speaker walks through London\'s streets, observing that everything \u2014 even the river Thames \u2014 is "chartered" (controlled and owned). Every face he sees is marked with suffering and despair.\n\n' +
+    'Stanza 2: He hears the cries of men, infants, and the voice of every social restriction. Most importantly, he recognises that the chains binding people are "mind-forged" \u2014 psychological, not physical. People have internalised their oppression.\n\n' +
     'Stanza 3: Blake attacks specific institutions. The Church ignores the suffering of child chimney sweeps (its walls "black\'ning" with soot and guilt). The soldier\'s blood runs down the Palace walls \u2014 the monarchy sends men to die.\n\n' +
-    'Stanza 4: The poem reaches its darkest point. A young prostitute\'s curse infects a newborn baby with disease, and the final oxymoron \u2014 "Marriage hearse" \u2014 fuses love with death. The cycle of suffering is inescapable; corruption poisons even the next generation.',
+    'Stanza 4: The poem reaches its darkest point. A young prostitute\'s curse infects a newborn baby with disease, and the final oxymoron \u2014 "marriage hearse" \u2014 fuses love with death. The cycle of suffering is inescapable; corruption poisons even the next generation.',
 
   summaryAr:
-    '\u0627\u0644\u0645\u0642\u0637\u0639 1: \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0645\u0634\u064a \u0641\u064a \u0634\u0648\u0627\u0631\u0639 \u0644\u0646\u062f\u0646\u060c \u0648\u064a\u0644\u0627\u062d\u0638 \u0625\u0646 \u0643\u0644 \u0634\u064a \u2014 \u062d\u062a\u0649 \u0646\u0647\u0631 \u0627\u0644\u062a\u0627\u064a\u0645\u0632 (Thames) \u2014 "charter\'d" (\u0645\u0645\u0644\u0648\u0643 \u0648\u0645\u0633\u064a\u0637\u0631 \u0639\u0644\u064a\u0647). \u0648\u0643\u0644 \u0648\u062c\u0647 \u064a\u0634\u0648\u0641\u0647 \u0641\u064a\u0647 \u0622\u062b\u0627\u0631 \u0645\u0639\u0627\u0646\u0627\u0629 \u0648\u064a\u0623\u0633.\n\n' +
-    '\u0627\u0644\u0645\u0642\u0637\u0639 2: \u064a\u0633\u0645\u0639 \u0635\u0631\u0627\u062e \u0627\u0644\u0631\u062c\u0627\u0644\u060c \u0648\u0628\u0643\u0627\u0621 \u0627\u0644\u0623\u0637\u0641\u0627\u0644\u060c \u0648\u0643\u0644 \u0635\u0648\u062a \u0645\u0646 \u0623\u0635\u0648\u0627\u062a \u0627\u0644\u0642\u064a\u0648\u062f \u0627\u0644\u0627\u062c\u062a\u0645\u0627\u0639\u064a\u0629. \u0648\u0627\u0644\u0623\u0647\u0645\u060c \u064a\u062f\u0631\u0643 \u0625\u0646 \u0627\u0644\u0633\u0644\u0627\u0633\u0644 \u0627\u0644\u0644\u064a \u062a\u0643\u0628\u0651\u0644 \u0627\u0644\u0646\u0627\u0633 "mind-forg\'d" \u2014 \u0633\u0644\u0627\u0633\u0644 \u0646\u0641\u0633\u064a\u0629\u060c \u0645\u0648 \u062d\u0633\u0651\u064a\u0629. \u0627\u0644\u0646\u0627\u0633 \u0628\u0646\u0641\u0633\u0647\u0645 \u0627\u0633\u062a\u0628\u0637\u0646\u0648\u0627 \u0627\u0644\u0638\u0644\u0645 \u0648\u0642\u0628\u0644\u0648\u0647.\n\n' +
+    '\u0627\u0644\u0645\u0642\u0637\u0639 1: \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0645\u0634\u064a \u0641\u064a \u0634\u0648\u0627\u0631\u0639 \u0644\u0646\u062f\u0646\u060c \u0648\u064a\u0644\u0627\u062d\u0638 \u0625\u0646 \u0643\u0644 \u0634\u064a \u2014 \u062d\u062a\u0649 \u0646\u0647\u0631 \u0627\u0644\u062a\u0627\u064a\u0645\u0632 (Thames) \u2014 "chartered" (\u0645\u0645\u0644\u0648\u0643 \u0648\u0645\u0633\u064a\u0637\u0631 \u0639\u0644\u064a\u0647). \u0648\u0643\u0644 \u0648\u062c\u0647 \u064a\u0634\u0648\u0641\u0647 \u0641\u064a\u0647 \u0622\u062b\u0627\u0631 \u0645\u0639\u0627\u0646\u0627\u0629 \u0648\u064a\u0623\u0633.\n\n' +
+    '\u0627\u0644\u0645\u0642\u0637\u0639 2: \u064a\u0633\u0645\u0639 \u0635\u0631\u0627\u062e \u0627\u0644\u0631\u062c\u0627\u0644\u060c \u0648\u0628\u0643\u0627\u0621 \u0627\u0644\u0623\u0637\u0641\u0627\u0644\u060c \u0648\u0643\u0644 \u0635\u0648\u062a \u0645\u0646 \u0623\u0635\u0648\u0627\u062a \u0627\u0644\u0642\u064a\u0648\u062f \u0627\u0644\u0627\u062c\u062a\u0645\u0627\u0639\u064a\u0629. \u0648\u0627\u0644\u0623\u0647\u0645\u060c \u064a\u062f\u0631\u0643 \u0625\u0646 \u0627\u0644\u0633\u0644\u0627\u0633\u0644 \u0627\u0644\u0644\u064a \u062a\u0643\u0628\u0651\u0644 \u0627\u0644\u0646\u0627\u0633 "mind-forged" \u2014 \u0633\u0644\u0627\u0633\u0644 \u0646\u0641\u0633\u064a\u0629\u060c \u0645\u0648 \u062d\u0633\u0651\u064a\u0629. \u0627\u0644\u0646\u0627\u0633 \u0628\u0646\u0641\u0633\u0647\u0645 \u0627\u0633\u062a\u0628\u0637\u0646\u0648\u0627 \u0627\u0644\u0638\u0644\u0645 \u0648\u0642\u0628\u0644\u0648\u0647.\n\n' +
     '\u0627\u0644\u0645\u0642\u0637\u0639 3: Blake \u064a\u0647\u0627\u062c\u0645 \u0645\u0624\u0633\u0633\u0627\u062a \u0628\u0639\u064a\u0646\u0647\u0627. \u0627\u0644\u0643\u0646\u064a\u0633\u0629 \u062a\u062a\u062c\u0627\u0647\u0644 \u0645\u0639\u0627\u0646\u0627\u0629 \u0623\u0637\u0641\u0627\u0644 \u0645\u0646\u0638\u0651\u0641\u064a \u0627\u0644\u0645\u062f\u0627\u062e\u0646 (\u0648\u062c\u062f\u0631\u0627\u0646\u0647\u0627 "black\'ning" \u0645\u0646 \u0627\u0644\u0633\u062e\u0627\u0645 \u0648\u0627\u0644\u0630\u0646\u0628). \u0648\u062f\u0645 \u0627\u0644\u062c\u0646\u062f\u064a \u064a\u0646\u0632\u0644 \u0639\u0644\u0649 \u062c\u062f\u0631\u0627\u0646 \u0627\u0644\u0642\u0635\u0631 \u2014 \u0627\u0644\u0645\u0644\u0643\u064a\u0629 \u062a\u0631\u0633\u0644 \u0627\u0644\u0631\u062c\u0627\u0644 \u0644\u0644\u0645\u0648\u062a.\n\n' +
-    '\u0627\u0644\u0645\u0642\u0637\u0639 4: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0648\u0635\u0644 \u0644\u0623\u062d\u0644\u0643 \u0646\u0642\u0637\u0629. \u0644\u0639\u0646\u0629 (curse) \u0641\u062a\u0627\u0629 \u0634\u063a\u0651\u0627\u0644\u0629 \u0641\u064a \u0627\u0644\u062f\u0639\u0627\u0631\u0629 \u0648\u0639\u0645\u0631\u0647\u0627 \u0635\u063a\u064a\u0631 \u062a\u0635\u064a\u0628 \u0631\u0636\u064a\u0639 \u062d\u062f\u064a\u062b \u0627\u0644\u0648\u0644\u0627\u062f\u0629 \u0628\u0627\u0644\u0645\u0631\u0636\u060c \u0648\u0627\u0644\u0645\u0641\u0627\u0631\u0642\u0629 \u0627\u0644\u0623\u062e\u064a\u0631\u0629 \u2014 "Marriage hearse" \u2014 \u062a\u062f\u0645\u062c \u0627\u0644\u062d\u0628 \u0628\u0627\u0644\u0645\u0648\u062a. \u062f\u0648\u0631\u0629 \u0627\u0644\u0645\u0639\u0627\u0646\u0627\u0629 \u0645\u0627 \u0644\u0647\u0627 \u0645\u0647\u0631\u0628\u061b \u0627\u0644\u0641\u0633\u0627\u062f \u064a\u0633\u0645\u0651\u0645 \u062d\u062a\u0649 \u0627\u0644\u062c\u064a\u0644 \u0627\u0644\u0644\u064a \u064a\u0627\u064a.',
+    '\u0627\u0644\u0645\u0642\u0637\u0639 4: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0648\u0635\u0644 \u0644\u0623\u062d\u0644\u0643 \u0646\u0642\u0637\u0629. \u0644\u0639\u0646\u0629 (curse) \u0641\u062a\u0627\u0629 \u0634\u063a\u0651\u0627\u0644\u0629 \u0641\u064a \u0627\u0644\u062f\u0639\u0627\u0631\u0629 \u0648\u0639\u0645\u0631\u0647\u0627 \u0635\u063a\u064a\u0631 \u062a\u0635\u064a\u0628 \u0631\u0636\u064a\u0639 \u062d\u062f\u064a\u062b \u0627\u0644\u0648\u0644\u0627\u062f\u0629 \u0628\u0627\u0644\u0645\u0631\u0636\u060c \u0648\u0627\u0644\u0645\u0641\u0627\u0631\u0642\u0629 \u0627\u0644\u0623\u062e\u064a\u0631\u0629 \u2014 "marriage hearse" \u2014 \u062a\u062f\u0645\u062c \u0627\u0644\u062d\u0628 \u0628\u0627\u0644\u0645\u0648\u062a. \u062f\u0648\u0631\u0629 \u0627\u0644\u0645\u0639\u0627\u0646\u0627\u0629 \u0645\u0627 \u0644\u0647\u0627 \u0645\u0647\u0631\u0628\u061b \u0627\u0644\u0641\u0633\u0627\u062f \u064a\u0633\u0645\u0651\u0645 \u062d\u062a\u0649 \u0627\u0644\u062c\u064a\u0644 \u0627\u0644\u0644\u064a \u064a\u0627\u064a.',
 
   formAndStructure:
-    'Form: Four quatrains (four-line stanzas) with a regular ABAB rhyme scheme throughout. This rigid, controlled structure mirrors the "charter\'d" restrictions Blake describes \u2014 even the poem\'s form feels constrained.\n\n' +
+    'Form: Four quatrains (four-line stanzas) with a regular ABAB rhyme scheme throughout. This rigid, controlled structure mirrors the "chartered" restrictions Blake describes \u2014 even the poem\'s form feels constrained.\n\n' +
     'Metre: Predominantly iambic tetrameter (four stressed beats per line), creating a steady, marching rhythm like footsteps through the city. This regularity reinforces the relentless, inescapable nature of suffering.\n\n' +
     'Anaphora: "In every" is repeated four times in stanza 2, creating a cumulative, overwhelming effect. The repetition makes suffering feel universal and inescapable.\n\n' +
-    'Repetition: "Charter\'d" (lines 1\u20132), "marks" (lines 3\u20134), and "every" (throughout stanza 2) are repeated to hammer home key ideas. Blake uses simple, powerful language with deliberate repetition rather than elaborate vocabulary.\n\n' +
-    'Cyclical structure: The poem begins with a baby\'s "cry of fear" in stanza 2 and ends with a "new-born Infant\'s tear" in stanza 4, suggesting the cycle of suffering repeats endlessly from generation to generation.\n\n' +
-    'Volta: "But most" at the start of the final stanza signals a shift to the poem\'s most shocking imagery, building to the devastating climax of the "Marriage hearse".\n\n' +
+    'Repetition: "Chartered" (lines 1\u20132), "marks" (lines 3\u20134), and "every" (throughout stanza 2) are repeated to hammer home key ideas. Blake uses simple, powerful language with deliberate repetition rather than elaborate vocabulary.\n\n' +
+    'Cyclical structure: The poem begins with a baby\'s "cry of fear" in stanza 2 and ends with a "new-born infant\'s tear" in stanza 4, suggesting the cycle of suffering repeats endlessly from generation to generation.\n\n' +
+    'Volta: "But most" at the start of the final stanza signals a shift to the poem\'s most shocking imagery, building to the devastating climax of the "marriage hearse".\n\n' +
     'First-person narrator: The use of "I" makes the poem feel like a personal testimony \u2014 Blake positions himself as an eyewitness to London\'s horrors, giving the poem moral authority.',
 
   formAndStructureAr:
-    '\u0627\u0644\u0634\u0643\u0644: \u0623\u0631\u0628\u0639 quatrains (\u0645\u0642\u0637\u0648\u0639\u0627\u062a \u0645\u0646 \u0623\u0631\u0628\u0639 \u0623\u0628\u064a\u0627\u062a) \u0628\u0646\u0638\u0627\u0645 \u0642\u0627\u0641\u064a\u0629 \u0645\u0646\u062a\u0638\u0645 ABAB \u0645\u0646 \u0628\u062f\u0627\u064a\u062a\u0647\u0627 \u0644\u0646\u0647\u0627\u064a\u062a\u0647\u0627. \u0647\u0627\u0644\u0628\u0646\u064a\u0629 \u0627\u0644\u0635\u0627\u0631\u0645\u0629 \u062a\u0639\u0643\u0633 \u0627\u0644\u0642\u064a\u0648\u062f \u0627\u0644\u0640"charter\'d" \u0627\u0644\u0644\u064a \u064a\u0648\u0635\u0641\u0647\u0627 Blake \u2014 \u062d\u062a\u0649 \u0634\u0643\u0644 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0646\u0641\u0633\u0647 \u064a\u062d\u0633\u0651 \u0627\u0644\u0642\u0627\u0631\u0626 \u0625\u0646\u0647 \u0645\u0642\u064a\u0651\u062f.\n\n' +
+    '\u0627\u0644\u0634\u0643\u0644: \u0623\u0631\u0628\u0639 quatrains (\u0645\u0642\u0637\u0648\u0639\u0627\u062a \u0645\u0646 \u0623\u0631\u0628\u0639 \u0623\u0628\u064a\u0627\u062a) \u0628\u0646\u0638\u0627\u0645 \u0642\u0627\u0641\u064a\u0629 \u0645\u0646\u062a\u0638\u0645 ABAB \u0645\u0646 \u0628\u062f\u0627\u064a\u062a\u0647\u0627 \u0644\u0646\u0647\u0627\u064a\u062a\u0647\u0627. \u0647\u0627\u0644\u0628\u0646\u064a\u0629 \u0627\u0644\u0635\u0627\u0631\u0645\u0629 \u062a\u0639\u0643\u0633 \u0627\u0644\u0642\u064a\u0648\u062f \u0627\u0644\u0640"chartered" \u0627\u0644\u0644\u064a \u064a\u0648\u0635\u0641\u0647\u0627 Blake \u2014 \u062d\u062a\u0649 \u0634\u0643\u0644 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0646\u0641\u0633\u0647 \u064a\u062d\u0633\u0651 \u0627\u0644\u0642\u0627\u0631\u0626 \u0625\u0646\u0647 \u0645\u0642\u064a\u0651\u062f.\n\n' +
     '\u0627\u0644\u0648\u0632\u0646: \u063a\u0627\u0644\u0628\u0627\u064b iambic tetrameter (\u0623\u0631\u0628\u0639 \u0646\u0628\u0631\u0627\u062a \u0645\u0634\u062f\u0651\u062f\u0629 \u0641\u064a \u0643\u0644 \u0628\u064a\u062a)\u060c \u0648\u064a\u062e\u0644\u0642 \u0625\u064a\u0642\u0627\u0639 \u062b\u0627\u0628\u062a \u064a\u0634\u0628\u0647 \u0645\u0634\u064a \u0627\u0644\u0623\u0642\u062f\u0627\u0645 \u0641\u064a \u0627\u0644\u0634\u0648\u0627\u0631\u0639. \u0647\u0627\u0644\u0627\u0646\u062a\u0638\u0627\u0645 \u064a\u0623\u0643\u0651\u062f \u0639\u0644\u0649 \u0627\u0644\u0637\u0627\u0628\u0639 \u0627\u0644\u0645\u062a\u0648\u0627\u0635\u0644 \u0627\u0644\u0644\u064a \u0645\u0627 \u0644\u0647 \u0645\u0647\u0631\u0628 \u0644\u0644\u0645\u0639\u0627\u0646\u0627\u0629.\n\n' +
     'Anaphora: \u0639\u0628\u0627\u0631\u0629 "In every" \u062a\u062a\u0643\u0631\u0651\u0631 \u0623\u0631\u0628\u0639 \u0645\u0631\u0627\u062a \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062b\u0627\u0646\u064a\u060c \u0648\u062a\u062e\u0644\u0642 \u0623\u062b\u0631 \u062a\u0631\u0627\u0643\u0645\u064a \u064a\u063a\u0645\u0631 \u0627\u0644\u0642\u0627\u0631\u0626. \u0627\u0644\u062a\u0643\u0631\u0627\u0631 \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0645\u0639\u0627\u0646\u0627\u0629 \u062a\u062d\u0633 \u0625\u0646\u0647\u0627 \u0634\u0627\u0645\u0644\u0629\u060c \u0648\u0644\u0627 \u0645\u0641\u0631\u0651 \u0645\u0646\u0647\u0627.\n\n' +
-    '\u0627\u0644\u062a\u0643\u0631\u0627\u0631: \u0643\u0644\u0645\u0627\u062a "charter\'d" (\u0623\u0628\u064a\u0627\u062a 1\u20132)\u060c \u0648"marks" (\u0623\u0628\u064a\u0627\u062a 3\u20134)\u060c \u0648"every" (\u0637\u0648\u0644 \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062b\u0627\u0646\u064a)\u060c \u062a\u062a\u0643\u0631\u0651\u0631 \u0639\u0634\u0627\u0646 \u062a\u062b\u0628\u0651\u062a \u0627\u0644\u0623\u0641\u0643\u0627\u0631 \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629. Blake \u064a\u0633\u062a\u062e\u062f\u0645 \u0644\u063a\u0629 \u0628\u0633\u064a\u0637\u0629 \u0642\u0648\u064a\u0629 \u0645\u0639 \u062a\u0643\u0631\u0627\u0631 \u0645\u0642\u0635\u0648\u062f\u060c \u0628\u062f\u0644 \u0627\u0644\u0645\u0641\u0631\u062f\u0627\u062a \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0641\u0629.\n\n' +
-    '\u0627\u0644\u0628\u0646\u064a\u0629 \u0627\u0644\u062f\u0627\u0626\u0631\u064a\u0629: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0628\u062f\u0623 \u0628\u0640"cry of fear" \u0644\u0631\u0636\u064a\u0639 \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062b\u0627\u0646\u064a\u060c \u0648\u062a\u0646\u062a\u0647\u064a \u0628\u0640"new-born Infant\'s tear" \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u0631\u0627\u0628\u0639. \u0647\u0627\u0644\u0634\u064a \u064a\u0644\u0645\u0651\u062d \u0625\u0646 \u062f\u0648\u0631\u0629 \u0627\u0644\u0645\u0639\u0627\u0646\u0627\u0629 \u062a\u062a\u0643\u0631\u0651\u0631 \u0628\u0644\u0627 \u0646\u0647\u0627\u064a\u0629 \u0645\u0646 \u062c\u064a\u0644 \u0644\u062c\u064a\u0644.\n\n' +
-    'Volta: \u0639\u0628\u0627\u0631\u0629 "But most" \u0641\u064a \u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u0623\u062e\u064a\u0631 \u062a\u0634\u064a\u0631 \u0644\u062a\u062d\u0648\u0651\u0644 \u0646\u062d\u0648 \u0623\u0642\u0633\u0649 \u0635\u0648\u0631 \u0627\u0644\u0642\u0635\u064a\u062f\u0629\u060c \u0648\u062a\u0628\u0646\u064a \u0627\u0644\u0630\u0631\u0648\u0629 \u0627\u0644\u0645\u062f\u0645\u0651\u0631\u0629 \u0644\u0640"Marriage hearse".\n\n' +
+    '\u0627\u0644\u062a\u0643\u0631\u0627\u0631: \u0643\u0644\u0645\u0627\u062a "chartered" (\u0623\u0628\u064a\u0627\u062a 1\u20132)\u060c \u0648"marks" (\u0623\u0628\u064a\u0627\u062a 3\u20134)\u060c \u0648"every" (\u0637\u0648\u0644 \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062b\u0627\u0646\u064a)\u060c \u062a\u062a\u0643\u0631\u0651\u0631 \u0639\u0634\u0627\u0646 \u062a\u062b\u0628\u0651\u062a \u0627\u0644\u0623\u0641\u0643\u0627\u0631 \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629. Blake \u064a\u0633\u062a\u062e\u062f\u0645 \u0644\u063a\u0629 \u0628\u0633\u064a\u0637\u0629 \u0642\u0648\u064a\u0629 \u0645\u0639 \u062a\u0643\u0631\u0627\u0631 \u0645\u0642\u0635\u0648\u062f\u060c \u0628\u062f\u0644 \u0627\u0644\u0645\u0641\u0631\u062f\u0627\u062a \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0641\u0629.\n\n' +
+    '\u0627\u0644\u0628\u0646\u064a\u0629 \u0627\u0644\u062f\u0627\u0626\u0631\u064a\u0629: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0628\u062f\u0623 \u0628\u0640"cry of fear" \u0644\u0631\u0636\u064a\u0639 \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062b\u0627\u0646\u064a\u060c \u0648\u062a\u0646\u062a\u0647\u064a \u0628\u0640"new-born infant\'s tear" \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u0631\u0627\u0628\u0639. \u0647\u0627\u0644\u0634\u064a \u064a\u0644\u0645\u0651\u062d \u0625\u0646 \u062f\u0648\u0631\u0629 \u0627\u0644\u0645\u0639\u0627\u0646\u0627\u0629 \u062a\u062a\u0643\u0631\u0651\u0631 \u0628\u0644\u0627 \u0646\u0647\u0627\u064a\u0629 \u0645\u0646 \u062c\u064a\u0644 \u0644\u062c\u064a\u0644.\n\n' +
+    'Volta: \u0639\u0628\u0627\u0631\u0629 "But most" \u0641\u064a \u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u0623\u062e\u064a\u0631 \u062a\u0634\u064a\u0631 \u0644\u062a\u062d\u0648\u0651\u0644 \u0646\u062d\u0648 \u0623\u0642\u0633\u0649 \u0635\u0648\u0631 \u0627\u0644\u0642\u0635\u064a\u062f\u0629\u060c \u0648\u062a\u0628\u0646\u064a \u0627\u0644\u0630\u0631\u0648\u0629 \u0627\u0644\u0645\u062f\u0645\u0651\u0631\u0629 \u0644\u0640"marriage hearse".\n\n' +
     '\u0627\u0644\u0631\u0627\u0648\u064a \u0628\u0636\u0645\u064a\u0631 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645: \u0627\u0633\u062a\u062e\u062f\u0627\u0645 "I" \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u062d\u0633\u0651 \u0643\u0623\u0646\u0647\u0627 \u0634\u0647\u0627\u062f\u0629 \u0634\u062e\u0635\u064a\u0629 \u2014 Blake \u064a\u062d\u0637 \u0646\u0641\u0633\u0647 \u0634\u0627\u0647\u062f \u0639\u064a\u0627\u0646 \u0639\u0644\u0649 \u0645\u0622\u0633\u064a \u0644\u0646\u062f\u0646\u060c \u0648\u0647\u0630\u0627 \u064a\u0639\u0637\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0633\u0644\u0637\u0629 \u0623\u062e\u0644\u0627\u0642\u064a\u0629.',
 
   keyQuotes: [
     {
-      quote: 'charter\u2019d street',
+      quote: 'chartered street',
       analysis:
-        '"Charter\'d" means legally mapped or commercially controlled. Blake subverts the positive connotation of "charter" (a document granting rights) to show how rights have become restrictions \u2014 everything in London is owned and commodified.',
+        '"Chartered" means legally mapped or commercially controlled. Blake subverts the positive connotation of "charter" (a document granting rights) to show how rights have become restrictions \u2014 everything in London is owned and commodified.',
       themes: ['Power', 'Oppression', 'Corruption'],
       analysisAr:
-        '\u0643\u0644\u0645\u0629 "charter\'d" \u0645\u0639\u0646\u0627\u0647\u0627 \u0645\u0631\u0633\u0648\u0645 \u0642\u0627\u0646\u0648\u0646\u064a\u0627\u064b \u0623\u0648 \u062e\u0627\u0636\u0639 \u0644\u0644\u0633\u064a\u0637\u0631\u0629 \u0627\u0644\u062a\u062c\u0627\u0631\u064a\u0629. Blake \u064a\u0642\u0644\u0628 \u0627\u0644\u0625\u064a\u062d\u0627\u0621 \u0627\u0644\u0625\u064a\u062c\u0627\u0628\u064a \u0644\u0643\u0644\u0645\u0629 "charter" (\u0648\u062b\u064a\u0642\u0629 \u062a\u0645\u0646\u062d \u062d\u0642\u0648\u0642) \u0639\u0634\u0627\u0646 \u064a\u0628\u064a\u0651\u0646 \u0643\u064a\u0641 \u0625\u0646 \u0627\u0644\u062d\u0642\u0648\u0642 \u062a\u062d\u0648\u0651\u0644\u062a \u0644\u0642\u064a\u0648\u062f \u2014 \u0643\u0644 \u0634\u064a \u0641\u064a \u0644\u0646\u062f\u0646 \u0635\u0627\u0631 \u0645\u0645\u062a\u0644\u064e\u0643 \u0648\u0645\u064f\u0633\u0644\u064e\u0651\u0639.',
+        '\u0643\u0644\u0645\u0629 "chartered" \u0645\u0639\u0646\u0627\u0647\u0627 \u0645\u0631\u0633\u0648\u0645 \u0642\u0627\u0646\u0648\u0646\u064a\u0627\u064b \u0623\u0648 \u062e\u0627\u0636\u0639 \u0644\u0644\u0633\u064a\u0637\u0631\u0629 \u0627\u0644\u062a\u062c\u0627\u0631\u064a\u0629. Blake \u064a\u0642\u0644\u0628 \u0627\u0644\u0625\u064a\u062d\u0627\u0621 \u0627\u0644\u0625\u064a\u062c\u0627\u0628\u064a \u0644\u0643\u0644\u0645\u0629 "charter" (\u0648\u062b\u064a\u0642\u0629 \u062a\u0645\u0646\u062d \u062d\u0642\u0648\u0642) \u0639\u0634\u0627\u0646 \u064a\u0628\u064a\u0651\u0646 \u0643\u064a\u0641 \u0625\u0646 \u0627\u0644\u062d\u0642\u0648\u0642 \u062a\u062d\u0648\u0651\u0644\u062a \u0644\u0642\u064a\u0648\u062f \u2014 \u0643\u0644 \u0634\u064a \u0641\u064a \u0644\u0646\u062f\u0646 \u0635\u0627\u0631 \u0645\u0645\u062a\u0644\u064e\u0643 \u0648\u0645\u064f\u0633\u0644\u064e\u0651\u0639.',
       themesAr: [
         '\u0627\u0644\u0633\u0644\u0637\u0629',
         '\u0627\u0644\u0638\u0644\u0645',
@@ -287,24 +288,24 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      quote: 'charter\u2019d Thames',
+      quote: 'chartered Thames',
       analysis:
-        'Extending "charter\'d" to the river Thames \u2014 a force of nature \u2014 suggests that even the natural world has been controlled and exploited by those in power. Nothing is free.',
+        'Extending "chartered" to the river Thames \u2014 a force of nature \u2014 suggests that even the natural world has been controlled and exploited by those in power. Nothing is free.',
       themes: ['Power', 'Nature vs Industry'],
       analysisAr:
-        '\u0644\u0645\u0651\u0627 Blake \u064a\u0645\u062f\u0651 \u0635\u0641\u0629 "charter\'d" \u062d\u062a\u0649 \u0644\u0646\u0647\u0631 \u0627\u0644\u062a\u0627\u064a\u0645\u0632 (Thames) \u2014 \u0627\u0644\u0644\u064a \u0647\u0648 \u0642\u0648\u0629 \u0637\u0628\u064a\u0639\u064a\u0629 \u2014 \u064a\u0644\u0645\u0651\u062d \u0625\u0646 \u062d\u062a\u0649 \u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u0635\u0627\u0631\u062a \u062a\u062d\u062a \u0633\u064a\u0637\u0631\u0629 \u0623\u0635\u062d\u0627\u0628 \u0627\u0644\u0646\u0641\u0648\u0630 \u0648\u064a\u0633\u062a\u063a\u0644\u0651\u0648\u0646\u0647\u0627. \u0645\u0627 \u0641\u064a\u0647 \u0634\u064a \u062d\u0631 \u0641\u064a \u0627\u0644\u0645\u062f\u064a\u0646\u0629.',
+        '\u0644\u0645\u0651\u0627 Blake \u064a\u0645\u062f\u0651 \u0635\u0641\u0629 "chartered" \u062d\u062a\u0649 \u0644\u0646\u0647\u0631 \u0627\u0644\u062a\u0627\u064a\u0645\u0632 (Thames) \u2014 \u0627\u0644\u0644\u064a \u0647\u0648 \u0642\u0648\u0629 \u0637\u0628\u064a\u0639\u064a\u0629 \u2014 \u064a\u0644\u0645\u0651\u062d \u0625\u0646 \u062d\u062a\u0649 \u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u0635\u0627\u0631\u062a \u062a\u062d\u062a \u0633\u064a\u0637\u0631\u0629 \u0623\u0635\u062d\u0627\u0628 \u0627\u0644\u0646\u0641\u0648\u0630 \u0648\u064a\u0633\u062a\u063a\u0644\u0651\u0648\u0646\u0647\u0627. \u0645\u0627 \u0641\u064a\u0647 \u0634\u064a \u062d\u0631 \u0641\u064a \u0627\u0644\u0645\u062f\u064a\u0646\u0629.',
       themesAr: [
         '\u0627\u0644\u0633\u0644\u0637\u0629',
         '\u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u0645\u0642\u0627\u0628\u0644 \u0627\u0644\u0635\u0646\u0627\u0639\u0629',
       ],
     },
     {
-      quote: 'mind-forg\u2019d manacles',
+      quote: 'mind-forged manacles',
       analysis:
-        'The most important metaphor in the poem. "Manacles" are handcuffs, but these are "mind-forg\'d" \u2014 created in the mind. People are imprisoned not by physical chains but by their own acceptance of oppression, fear, and social conditioning.',
+        'The most important metaphor in the poem. "Manacles" are handcuffs, but these are "mind-forged" \u2014 created in the mind. People are imprisoned not by physical chains but by their own acceptance of oppression, fear, and social conditioning.',
       themes: ['Oppression', 'Power', 'Individual Freedom'],
       analysisAr:
-        '\u0623\u0647\u0645 \u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u0643\u0644\u0645\u0629 "manacles" \u0645\u0639\u0646\u0627\u0647\u0627 \u0642\u064a\u0648\u062f \u062d\u062f\u064a\u062f \u0644\u0644\u0623\u064a\u062f\u064a\u060c \u0628\u0633 \u0647\u0630\u064a \u0627\u0644\u0642\u064a\u0648\u062f "mind-forg\'d" \u2014 \u0645\u0635\u0646\u0648\u0639\u0629 \u0641\u064a \u0627\u0644\u0639\u0642\u0644. \u0627\u0644\u0646\u0627\u0633 \u0645\u0633\u062c\u0648\u0646\u064a\u0646 \u0645\u0648 \u0628\u0633\u0644\u0627\u0633\u0644 \u0645\u0627\u062f\u064a\u0651\u0629\u060c \u0628\u0644 \u0628\u0642\u0628\u0648\u0644\u0647\u0645 \u0627\u0644\u0630\u0627\u062a\u064a \u0644\u0644\u0638\u0644\u0645 \u0648\u0627\u0644\u062e\u0648\u0641 \u0648\u0627\u0644\u062a\u0646\u0634\u0626\u0629 \u0627\u0644\u0627\u062c\u062a\u0645\u0627\u0639\u064a\u0629.',
+        '\u0623\u0647\u0645 \u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u0643\u0644\u0645\u0629 "manacles" \u0645\u0639\u0646\u0627\u0647\u0627 \u0642\u064a\u0648\u062f \u062d\u062f\u064a\u062f \u0644\u0644\u0623\u064a\u062f\u064a\u060c \u0628\u0633 \u0647\u0630\u064a \u0627\u0644\u0642\u064a\u0648\u062f "mind-forged" \u2014 \u0645\u0635\u0646\u0648\u0639\u0629 \u0641\u064a \u0627\u0644\u0639\u0642\u0644. \u0627\u0644\u0646\u0627\u0633 \u0645\u0633\u062c\u0648\u0646\u064a\u0646 \u0645\u0648 \u0628\u0633\u0644\u0627\u0633\u0644 \u0645\u0627\u062f\u064a\u0651\u0629\u060c \u0628\u0644 \u0628\u0642\u0628\u0648\u0644\u0647\u0645 \u0627\u0644\u0630\u0627\u062a\u064a \u0644\u0644\u0638\u0644\u0645 \u0648\u0627\u0644\u062e\u0648\u0641 \u0648\u0627\u0644\u062a\u0646\u0634\u0626\u0629 \u0627\u0644\u0627\u062c\u062a\u0645\u0627\u0639\u064a\u0629.',
       themesAr: [
         '\u0627\u0644\u0638\u0644\u0645',
         '\u0627\u0644\u0633\u0644\u0637\u0629',
@@ -312,7 +313,7 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      quote: 'every black\u2019ning Church appalls',
+      quote: 'every black\u2019ning church appalls',
       analysis:
         '"Black\'ning" works literally (soot from industry) and metaphorically (moral corruption). "Appalls" puns on a funeral pall. The Church, which should protect the vulnerable, is complicit in their suffering.',
       themes: ['Corruption', 'Religion', 'Hypocrisy'],
@@ -325,7 +326,7 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      quote: 'the hapless Soldier\u2019s sigh',
+      quote: 'the hapless soldier\u2019s sigh',
       analysis:
         '"Hapless" means unfortunate or powerless. The soldier cannot speak out \u2014 he can only "sigh". His quiet suffering contrasts with the violence of his blood running down Palace walls, showing the human cost of war.',
       themes: ['Power', 'Conflict', 'Individual Suffering'],
@@ -338,12 +339,12 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      quote: 'Runs in blood down Palace walls',
+      quote: 'Runs in blood down palace walls',
       analysis:
-        'A shocking visual image that directly blames the monarchy for soldiers\' deaths. "Palace walls" represent royal power, and the blood imagery links to the French Revolution, suggesting violent consequences for oppressive rulers.',
+        'A shocking visual image that directly blames the monarchy for soldiers\' deaths. "palace walls" represent royal power, and the blood imagery links to the French Revolution, suggesting violent consequences for oppressive rulers.',
       themes: ['Power', 'Conflict', 'Revolution'],
       analysisAr:
-        '\u0635\u0648\u0631\u0629 \u0628\u0635\u0631\u064a\u0629 \u0635\u0627\u062f\u0645\u0629\u060c \u062a\u062d\u0645\u0651\u0644 \u0627\u0644\u0645\u0644\u0643\u064a\u0629 \u0645\u0633\u0624\u0648\u0644\u064a\u0629 \u0645\u0648\u062a \u0627\u0644\u062c\u0646\u0648\u062f \u0628\u0634\u0643\u0644 \u0645\u0628\u0627\u0634\u0631. "Palace walls" \u062a\u0631\u0645\u0632 \u0644\u0644\u0633\u0644\u0637\u0629 \u0627\u0644\u0645\u0644\u0643\u064a\u0629\u060c \u0648\u0635\u0648\u0631\u0629 \u0627\u0644\u062f\u0645 \u062a\u0631\u0628\u0637 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0628\u0627\u0644\u062b\u0648\u0631\u0629 \u0627\u0644\u0641\u0631\u0646\u0633\u064a\u0629\u060c \u0648\u062a\u0644\u0645\u0651\u062d \u0625\u0646 \u0627\u0644\u062d\u0643\u0651\u0627\u0645 \u0627\u0644\u0638\u0627\u0644\u0645\u064a\u0646 \u0628\u064a\u062d\u0635\u062f\u0648\u0646 \u0639\u0648\u0627\u0642\u0628 \u0639\u0646\u064a\u0641\u0629.',
+        '\u0635\u0648\u0631\u0629 \u0628\u0635\u0631\u064a\u0629 \u0635\u0627\u062f\u0645\u0629\u060c \u062a\u062d\u0645\u0651\u0644 \u0627\u0644\u0645\u0644\u0643\u064a\u0629 \u0645\u0633\u0624\u0648\u0644\u064a\u0629 \u0645\u0648\u062a \u0627\u0644\u062c\u0646\u0648\u062f \u0628\u0634\u0643\u0644 \u0645\u0628\u0627\u0634\u0631. "palace walls" \u062a\u0631\u0645\u0632 \u0644\u0644\u0633\u0644\u0637\u0629 \u0627\u0644\u0645\u0644\u0643\u064a\u0629\u060c \u0648\u0635\u0648\u0631\u0629 \u0627\u0644\u062f\u0645 \u062a\u0631\u0628\u0637 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0628\u0627\u0644\u062b\u0648\u0631\u0629 \u0627\u0644\u0641\u0631\u0646\u0633\u064a\u0629\u060c \u0648\u062a\u0644\u0645\u0651\u062d \u0625\u0646 \u0627\u0644\u062d\u0643\u0651\u0627\u0645 \u0627\u0644\u0638\u0627\u0644\u0645\u064a\u0646 \u0628\u064a\u062d\u0635\u062f\u0648\u0646 \u0639\u0648\u0627\u0642\u0628 \u0639\u0646\u064a\u0641\u0629.',
       themesAr: [
         '\u0627\u0644\u0633\u0644\u0637\u0629',
         '\u0627\u0644\u0635\u0631\u0627\u0639',
@@ -363,7 +364,7 @@ const londonPoem: PoemData = {
       ],
     },
     {
-      quote: 'Marriage hearse',
+      quote: 'marriage hearse',
       analysis:
         "A devastating oxymoron that ends the poem. Marriage (love, life, hope) is combined with a hearse (death, funerals). In Blake's London, love is poisoned by disease and social corruption. There is no escape, not even in the institution meant to celebrate human connection.",
       themes: ['Corruption', 'Death', 'Loss of Innocence'],
@@ -386,7 +387,7 @@ const londonPoem: PoemData = {
     {
       device: 'Anaphora',
       example:
-        'In every cry of every Man, / In every Infant\u2019s cry of fear, / In every voice: in every ban',
+        'In every cry of every man, / In every infant\u2019s cry of fear, / In every voice, in every ban',
       effect:
         'The relentless repetition of "In every" creates a cumulative, overwhelming effect. The reader is bombarded with suffering just as Blake is bombarded by what he sees and hears. It makes the oppression feel total and universal.',
       lineRef: 5,
@@ -395,7 +396,7 @@ const londonPoem: PoemData = {
     },
     {
       device: 'Oxymoron',
-      example: 'Marriage hearse',
+      example: 'marriage hearse',
       effect:
         "Fusing two contradictory concepts \u2014 marriage (celebration of life) and hearse (vehicle of death) \u2014 creates a shocking final image. It encapsulates Blake's argument that corruption has poisoned every aspect of human life, even love itself.",
       lineRef: 18,
@@ -404,7 +405,7 @@ const londonPoem: PoemData = {
     },
     {
       device: 'Synesthesia',
-      example: 'The mind-forg\u2019d manacles I hear',
+      example: 'The mind-forged manacles I hear',
       effect:
         'Manacles are seen, but Blake "hears" them. This blending of senses suggests that oppression is so pervasive it overwhelms every sense. The psychological chains are audible in every cry and sigh.',
       lineRef: 8,
@@ -413,7 +414,7 @@ const londonPoem: PoemData = {
     },
     {
       device: 'Visual imagery',
-      example: 'Runs in blood down Palace walls',
+      example: 'Runs in blood down palace walls',
       effect:
         "This vivid, violent image transforms an abstract concept (the cost of war) into something viscerally concrete. The reader can see the blood, making the monarch's responsibility undeniable.",
       lineRef: 13,
@@ -422,7 +423,7 @@ const londonPoem: PoemData = {
     },
     {
       device: 'Emotive language',
-      example: 'hapless Soldier\u2019s sigh',
+      example: 'hapless soldier\u2019s sigh',
       effect:
         '"Hapless" evokes pity, while "sigh" suggests resignation and powerlessness. Together they portray the soldier as a victim, not a hero \u2014 challenging patriotic narratives of military glory.',
       lineRef: 12,
@@ -431,7 +432,7 @@ const londonPoem: PoemData = {
     },
     {
       device: 'Symbolism',
-      example: 'every black\u2019ning Church',
+      example: 'every black\u2019ning church',
       effect:
         'The Church symbolises institutional religion and its moral authority. "Black\'ning" symbolises both industrial pollution and moral decay. Blake attacks the Church as a hypocritical institution that ignores suffering.',
       lineRef: 11,
@@ -449,7 +450,7 @@ const londonPoem: PoemData = {
     },
     {
       device: 'Plosive sounds',
-      example: 'Blasts the new-born Infant\u2019s tear / And blights with plagues',
+      example: 'Blasts the new-born infant\u2019s tear, / And blights with plagues',
       effect:
         'The harsh plosive "b" sounds in "Blasts", "blights", and "plagues" create an aggressive, violent aural quality. The sounds themselves feel destructive, mirroring the content.',
       lineRef: 17,
@@ -464,7 +465,7 @@ const londonPoem: PoemData = {
 const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: 'lon-1',
-    question: 'What does the word "charter\'d" suggest in the opening lines?',
+    question: 'What does the word "chartered" suggest in the opening lines?',
     type: 'multiple-choice',
     options: [
       'The streets are well-maintained',
@@ -474,13 +475,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Blake uses "charter\'d" to suggest that even the streets and the Thames have been bought, sold, and controlled. Freedom is an illusion - everything is owned by those in power.',
+      'Blake uses "chartered" to suggest that even the streets and the Thames have been bought, sold, and controlled. Freedom is an illusion - everything is owned by those in power.',
     topic: 'Language',
     difficulty: 'foundation',
   },
   {
     id: 'lon-2',
-    question: 'What are "mind-forg\'d manacles"?',
+    question: 'What are "mind-forged manacles"?',
     type: 'multiple-choice',
     options: [
       'Physical chains used on prisoners',
@@ -490,7 +491,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"Mind-forg\'d manacles" is Blake\'s most important metaphor. The chains are not physical but mental - people have internalised their oppression and accepted it as normal.',
+      '"Mind-forged manacles" is Blake\'s most important metaphor. The chains are not physical but mental - people have internalised their oppression and accepted it as normal.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -506,13 +507,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Blake attacks the Church ("every black\'ning Church appalls") for ignoring child chimney sweeps, and the monarchy ("Runs in blood down Palace walls") for sending soldiers to die.',
+      'Blake attacks the Church ("every black\'ning church appalls") for ignoring child chimney sweeps, and the monarchy ("Runs in blood down palace walls") for sending soldiers to die.',
     topic: 'Themes',
     difficulty: 'foundation',
   },
   {
     id: 'lon-4',
-    question: 'What is the effect of the oxymoron "Marriage hearse"?',
+    question: 'What is the effect of the oxymoron "marriage hearse"?',
     type: 'multiple-choice',
     options: [
       'It celebrates wedding traditions',
@@ -544,7 +545,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'lon-6',
-    question: 'What does "Runs in blood down Palace walls" suggest about the monarchy?',
+    question: 'What does "Runs in blood down palace walls" suggest about the monarchy?',
     type: 'multiple-choice',
     options: [
       'The Palace is being redecorated',
@@ -586,7 +587,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The regular four-beat rhythm sounds like footsteps through the city, reinforcing the sense of relentless, unavoidable oppression. The rigid form also mirrors the "charter\'d" restrictions Blake describes.',
+      'The regular four-beat rhythm sounds like footsteps through the city, reinforcing the sense of relentless, unavoidable oppression. The rigid form also mirrors the "chartered" restrictions Blake describes.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -602,7 +603,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The poem begins with an infant\'s "cry of fear" in stanza 2 and ends with a "new-born Infant\'s tear" in stanza 4. This cyclical structure suggests suffering passes from generation to generation with no escape.',
+      'The poem begins with an infant\'s "cry of fear" in stanza 2 and ends with a "new-born infant\'s tear" in stanza 4. This cyclical structure suggests suffering passes from generation to generation with no escape.',
     topic: 'Structure',
     difficulty: 'grade-9',
   },
@@ -632,7 +633,7 @@ const REVISION_TOPICS = [
       'London explores the corruption of power, the suffering of ordinary people, and the loss of innocence in an industrialised city controlled by oppressive institutions.',
     keyPoints: [
       'Power corrupts - the Church, monarchy, and commercial interests all cause suffering',
-      'Oppression is both external (institutions) and internal ("mind-forg\'d manacles")',
+      'Oppression is both external (institutions) and internal ("mind-forged manacles")',
       'Innocence is destroyed - children suffer from birth (chimney sweeps, diseased infants)',
       'The cycle of suffering repeats endlessly from generation to generation',
     ],
@@ -642,16 +643,16 @@ const REVISION_TOPICS = [
     summary:
       'Blake uses metaphor, repetition, oxymoron, and visceral imagery to create an unrelenting picture of suffering and institutional corruption.',
     keyPoints: [
-      '"Mind-forg\'d manacles" - psychological chains of internalised oppression',
-      '"Marriage hearse" - oxymoron fusing love with death',
-      '"Runs in blood down Palace walls" - visceral imagery blaming the monarchy',
+      '"Mind-forged manacles" - psychological chains of internalised oppression',
+      '"marriage hearse" - oxymoron fusing love with death',
+      '"Runs in blood down palace walls" - visceral imagery blaming the monarchy',
       'Semantic field of suffering throughout: weakness, woe, cry, curse, plagues',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Four quatrains in ABAB rhyme with iambic tetrameter - the rigid, controlled structure mirrors the "charter\'d" restrictions of the city itself.',
+      'Four quatrains in ABAB rhyme with iambic tetrameter - the rigid, controlled structure mirrors the "chartered" restrictions of the city itself.',
     keyPoints: [
       "Regular ABAB rhyme scheme - the poem's form feels as constrained as the city",
       'Anaphora ("In every") in stanza 2 creates overwhelming cumulative effect',

@@ -11,11 +11,19 @@ import StudyTools from '@/components/study/StudyTools'
 import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 
-/* ── Poem data (verified PD text from Verified Library) ──────────── */
+/* ── Poem data ─────────────────────────────────────────────────────── */
 
 const drummerHodge: PoemData = {
   title: 'Drummer Hodge',
   poet: 'Thomas Hardy',
+  // Printed as the Eduqas anthology for examination from 2027 prints it (WJEC 2024,
+  // ISBN 978-1-86085-774-4), checked line by line against the PDF on 2 October 2026.
+  // Line 16 there reads "Grow up some Southern tree"; Hardy's own text, which this page
+  // printed until then, reads "Grow to". The page follows the anthology, the text Eduqas
+  // students have in front of them, and the note on that line says what Hardy wrote. The
+  // anthology also has "drummer" in lower case in line 7 and does not indent alternate
+  // lines. The header above called this "verified PD text" while it differed from the
+  // set text.
   lines: [
     {
       text: 'They throw in Drummer Hodge, to rest',
@@ -28,7 +36,7 @@ const drummerHodge: PoemData = {
       ],
     },
     {
-      text: '  Uncoffined -- just as found:',
+      text: 'Uncoffined — just as found:',
       annotations: [
         {
           type: 'Key quote',
@@ -47,7 +55,7 @@ const drummerHodge: PoemData = {
         },
       ],
     },
-    { text: '  That breaks the veldt around;' },
+    { text: 'That breaks the veldt around:' },
     {
       text: 'And foreign constellations west',
       annotations: [
@@ -58,11 +66,10 @@ const drummerHodge: PoemData = {
         },
       ],
     },
-    { text: '  Each night above his mound.' },
+    { text: 'Each night above his mound.' },
     { text: '' },
-
-    { text: 'Young Hodge the Drummer never knew --' },
-    { text: '  Fresh from his Wessex home --' },
+    { text: 'Young Hodge the drummer never knew —' },
+    { text: 'Fresh from his Wessex home —' },
     {
       text: 'The meaning of the broad Karoo,',
       annotations: [
@@ -73,10 +80,10 @@ const drummerHodge: PoemData = {
         },
       ],
     },
-    { text: '  The Bush, the dusty loam,' },
+    { text: 'The Bush, the dusty loam,' },
     { text: 'And why uprose to nightly view' },
     {
-      text: '  Strange stars amid the gloam.',
+      text: 'Strange stars amid the gloam.',
       annotations: [
         {
           type: 'Diction',
@@ -86,9 +93,8 @@ const drummerHodge: PoemData = {
       ],
     },
     { text: '' },
-
     { text: 'Yet portion of that unknown plain' },
-    { text: '  Will Hodge for ever be;' },
+    { text: 'Will Hodge for ever be;' },
     {
       text: 'His homely Northern breast and brain',
       annotations: [
@@ -100,18 +106,18 @@ const drummerHodge: PoemData = {
       ],
     },
     {
-      text: '  Grow to some Southern tree,',
+      text: 'Grow up some Southern tree,',
       annotations: [
         {
           type: 'Imagery',
-          note: '"Grow to some Southern tree" -- Hodge’s body literally feeds an alien plant. There is a strange consolation here: he becomes part of the foreign landscape, but only at the cost of being utterly transformed.',
+          note: '"Grow up some Southern tree": Hodge’s body literally feeds an alien plant. (The Eduqas anthology prints "Grow up"; Hardy’s own text reads "Grow to", as if Hodge grows into the tree itself.) There is a strange consolation here: he becomes part of the foreign landscape, but only at the cost of being utterly transformed.',
           color: '#f59e0b',
         },
       ],
     },
     { text: 'And strange-eyed constellations reign' },
     {
-      text: '  His stars eternally.',
+      text: 'His stars eternally.',
       annotations: [
         {
           type: 'Closing image',
@@ -217,7 +223,7 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
       themesAr: ['الموت', 'الانتماء', 'التحوّل'],
     },
     {
-      quote: 'His homely Northern breast and brain / Grow to some Southern tree',
+      quote: 'His homely Northern breast and brain / Grow up some Southern tree',
       analysis:
         'A literal, almost grotesque image: Hodge’s body decomposes and feeds an African tree. "Homely" and "Northern" mark his English origin; "Southern" marks his fate. The contrast captures total transformation -- the rural Wessex boy becomes vegetation in a foreign hemisphere.',
       themes: ['Transformation', 'Death', 'Nature'],
@@ -274,7 +280,7 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
     },
     {
       device: 'Contrast (North/South)',
-      example: 'homely Northern breast and brain / Grow to some Southern tree',
+      example: 'homely Northern breast and brain / Grow up some Southern tree',
       effect:
         'Hardy juxtaposes "homely Northern" (familiar, English) with "Southern tree" (foreign, African). The geographical contrast enacts the speaker’s grief at how far Hodge has been taken from home, even in death.',
       lineRef: 16,

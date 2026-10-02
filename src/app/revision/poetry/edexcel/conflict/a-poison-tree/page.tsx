@@ -13,9 +13,14 @@ import { useT } from '@/lib/i18n/use-t'
 const aPoisonTree: PoemData = {
   title: 'A Poison Tree',
   poet: 'William Blake',
+  // Printed as the Pearson Edexcel GCSE anthology prints it (Conflict; Issue 4, January
+  // 2023), checked line by line against the PDF on 2 October 2026. Until then the page
+  // mixed Blake's engraved spellings ("waterd", "Night & morning", "veild") with a
+  // modern one ("outstretched"); the anthology prints "water'd", "Night and morning",
+  // "veil'd" and "outstretch'd", and the page's punctuation differed from it in seven lines.
   lines: [
     {
-      text: 'I was angry with my friend;',
+      text: 'I was angry with my friend:',
       annotations: [
         {
           type: 'Opening',
@@ -61,7 +66,7 @@ const aPoisonTree: PoemData = {
     },
     { text: '' },
     {
-      text: 'And I waterd it in fears,',
+      text: "And I water'd it in fears,",
       annotations: [
         {
           type: 'Extended metaphor',
@@ -71,11 +76,11 @@ const aPoisonTree: PoemData = {
       ],
     },
     {
-      text: 'Night & morning with my tears:',
+      text: 'Night and morning with my tears;',
       annotations: [
         {
           type: 'Imagery',
-          note: 'The image of constant tending suggests obsession. "Night & morning" implies that grief and anger occupy every moment.',
+          note: 'The image of constant tending suggests obsession. "Night and morning" implies that grief and anger occupy every moment.',
           color: '#3b82f6',
         },
       ],
@@ -132,7 +137,7 @@ const aPoisonTree: PoemData = {
       ],
     },
     {
-      text: 'And my foe beheld it shine.',
+      text: 'And my foe beheld it shine,',
       annotations: [
         {
           type: 'Verb choice',
@@ -142,7 +147,7 @@ const aPoisonTree: PoemData = {
       ],
     },
     {
-      text: 'And he knew that it was mine.',
+      text: 'And he knew that it was mine,',
       annotations: [
         {
           type: 'Possession',
@@ -153,7 +158,7 @@ const aPoisonTree: PoemData = {
     },
     { text: '' },
     {
-      text: 'And into my garden stole.',
+      text: 'And into my garden stole',
       annotations: [
         {
           type: 'Eden reference',
@@ -163,17 +168,17 @@ const aPoisonTree: PoemData = {
       ],
     },
     {
-      text: 'When the night had veild the pole;',
+      text: "When the night had veil'd the pole:",
       annotations: [
         {
           type: 'Imagery',
-          note: '"Veild" suggests concealment and ritual. The pole star is hidden \u2014 the moral compass is gone, conscience is suspended.',
+          note: '"Veil\'d" suggests concealment and ritual. The pole star is hidden \u2014 the moral compass is gone, conscience is suspended.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: 'In the morning glad I see;',
+      text: 'In the morning glad I see',
       annotations: [
         {
           type: 'Disturbing tone',
@@ -188,7 +193,7 @@ const aPoisonTree: PoemData = {
       ],
     },
     {
-      text: 'My foe outstretched beneath the tree.',
+      text: "My foe outstretch'd beneath the tree.",
       annotations: [
         {
           type: 'Final image',
@@ -262,7 +267,7 @@ Structural symmetry: Stanza 1 sets up the parallel between friend and foe. Stanz
 
 Volta: There is a turning point in line 4, when "I told it not, my wrath did grow." From here on, the poem stops describing two situations and follows just one \u2014 the suppression \u2014 to its terrible conclusion.
 
-Repetition and parallelism: The repetition of "I" at the start of so many lines makes the speaker the centre of moral attention. The parallel structures of "I waterd it... I sunned it..." emphasise his active cultivation of evil.
+Repetition and parallelism: The repetition of "I" at the start of so many lines makes the speaker the centre of moral attention. The parallel structures of "I water'd it... I sunned it..." emphasise his active cultivation of evil.
 
 Punctuation: Blake uses semicolons and full stops to slow the poem down, making each step in the moral collapse feel deliberate.`,
 
@@ -276,7 +281,7 @@ Rhyme scheme: الـcouplets المنتظمة على AABB تعطي إحساس ب
 
 Volta: نقطة التحوّل في البيت الرابع، "I told it not, my wrath did grow." من هنا، القصيدة تبطّل توصف وضعين، وتركّز على وضع واحد بس - الكبت - لين توصل لنهايته الفظيعة.
 
-Repetition و parallelism: تكرار "I" في بداية أبيات كثيرة يخلّي المتكلّم هو مركز المساءلة الأخلاقية. والبنية المتوازية "I waterd it... I sunned it..." تأكّد إنه هو اللي يزرع الشر بإيده.
+Repetition و parallelism: تكرار "I" في بداية أبيات كثيرة يخلّي المتكلّم هو مركز المساءلة الأخلاقية. والبنية المتوازية "I water'd it... I sunned it..." تأكّد إنه هو اللي يزرع الشر بإيده.
 
 Punctuation: Blake يستخدم الفواصل المنقوطة (semicolons) والنقاط عشان يبطّئ القصيدة، فكل خطوة من خطوات الانهيار الأخلاقي تحسّ إنها مدروسة.`,
 
@@ -295,12 +300,12 @@ Punctuation: Blake يستخدم الفواصل المنقوطة (semicolons) و�
       ],
     },
     {
-      quote: 'And I waterd it in fears',
+      quote: "And I water'd it in fears",
       analysis:
-        'The metaphor of anger as a plant takes hold. "Watered" makes fear sound nourishing rather than draining \u2014 the speaker is actively keeping his anger alive. The unusual spelling "waterd" (Blake\u2019s own) adds a slightly archaic, parable-like feel.',
+        'The metaphor of anger as a plant takes hold. "Water\'d" makes fear sound nourishing rather than draining \u2014 the speaker is actively keeping his anger alive. The old spelling "water\'d" adds a slightly archaic, parable-like feel (Blake\u2019s own plate has "waterd").',
       themes: ['Anger', 'Fear', 'Deception'],
       analysisAr:
-        '\u0647\u0646\u0627 \u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0627\u0644\u063a\u0636\u0628 \u0643\u0623\u0646\u0647 \u0646\u0628\u062a\u0629 \u062a\u062a\u0631\u0633\u0651\u062e. \u0643\u0644\u0645\u0629 "Watered" \u062a\u062e\u0644\u0651\u064a \u0627\u0644\u062e\u0648\u0641 \u064a\u0637\u0644\u0639 \u0634\u064a \u064a\u063a\u0630\u0651\u064a\u060c \u0645\u0648 \u0634\u064a \u064a\u0633\u062a\u0646\u0632\u0641 \u2014 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0628\u0634\u0643\u0644 \u0641\u0639\u0651\u0627\u0644 \u064a\u062e\u0644\u0651\u064a \u063a\u0636\u0628\u0647 \u062d\u064a. \u0648\u0627\u0644\u0625\u0645\u0644\u0627\u0621 \u0627\u0644\u063a\u0631\u064a\u0628 "waterd" (Blake \u0646\u0641\u0633\u0647 \u064a\u0643\u062a\u0628\u0647 \u0643\u0630\u0627) \u064a\u0639\u0637\u064a \u0625\u062d\u0633\u0627\u0633 \u0639\u062a\u064a\u0642 \u0634\u0628\u064a\u0647 \u0628\u0623\u0633\u0644\u0648\u0628 \u0627\u0644\u0623\u0645\u062b\u0627\u0644.',
+        '\u0647\u0646\u0627 \u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0627\u0644\u063a\u0636\u0628 \u0643\u0623\u0646\u0647 \u0646\u0628\u062a\u0629 \u062a\u062a\u0631\u0633\u0651\u062e. \u0643\u0644\u0645\u0629 "Water\'d" \u062a\u062e\u0644\u0651\u064a \u0627\u0644\u062e\u0648\u0641 \u064a\u0637\u0644\u0639 \u0634\u064a \u064a\u063a\u0630\u0651\u064a\u060c \u0645\u0648 \u0634\u064a \u064a\u0633\u062a\u0646\u0632\u0641 \u2014 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0628\u0634\u0643\u0644 \u0641\u0639\u0651\u0627\u0644 \u064a\u062e\u0644\u0651\u064a \u063a\u0636\u0628\u0647 \u062d\u064a. \u0648\u0627\u0644\u0625\u0645\u0644\u0627\u0621 \u0627\u0644\u0642\u062f\u064a\u0645 "water\'d" \u064a\u0639\u0637\u064a \u0625\u062d\u0633\u0627\u0633 \u0639\u062a\u064a\u0642 \u0634\u0628\u064a\u0647 \u0628\u0623\u0633\u0644\u0648\u0628 \u0627\u0644\u0623\u0645\u062b\u0627\u0644 (Blake \u0646\u0641\u0633\u0647 \u0643\u062a\u0628\u0647\u0627 "waterd").',
       themesAr: [
         '\u0627\u0644\u063a\u0636\u0628',
         '\u0627\u0644\u062e\u0648\u0641',
@@ -360,7 +365,7 @@ Punctuation: Blake يستخدم الفواصل المنقوطة (semicolons) و�
       ],
     },
     {
-      quote: 'My foe outstretched beneath the tree',
+      quote: "My foe outstretch'd beneath the tree",
       analysis:
         'The closing tableau. The tree is now a gallows; the foe is laid out like a sacrifice. The poem ends in stillness \u2014 the speaker offers no remorse, no judgement, no commentary. The reader is forced to supply the moral.',
       themes: ['Death', 'Anger', 'Internal conflict'],
@@ -394,7 +399,7 @@ Punctuation: Blake يستخدم الفواصل المنقوطة (semicolons) و�
   languageDevices: [
     {
       device: 'Extended metaphor',
-      example: 'And I waterd it in fears / Night & morning with my tears',
+      example: "And I water'd it in fears / Night and morning with my tears",
       effect:
         'Anger becomes a plant the speaker cultivates. The metaphor grows across the whole poem, ending with the "apple" and the body beneath the "tree". It dramatises how nourishing resentment turns it into something deadly.',
       lineRef: 5,
@@ -442,7 +447,7 @@ Punctuation: Blake يستخدم الفواصل المنقوطة (semicolons) و�
       device: 'Personal pronoun "I"',
       // Until 2 October 2026 these were joined by " / ", the mark for the next line, though they
       // come from lines apart.
-      example: 'I waterd … I sunned … I see',
+      example: "I water'd … I sunned … I see",
       effect:
         'The speaker repeats "I" as the active subject of every act of cultivation. Blake makes clear that suppressed anger is something we choose to grow \u2014 it is not something that happens to us.',
       lineRef: 5,
@@ -546,7 +551,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'apt-5',
-    question: 'What does "I watered it in fears" suggest?',
+    question: 'What does "I water\'d it in fears" suggest?',
     type: 'multiple-choice',
     options: [
       'The speaker cried on the tree',
@@ -588,7 +593,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The speaker sees the foe "outstretched beneath the tree" and is glad. The lack of guilt shows how nurturing anger has morally corrupted the speaker - they have become the poison.',
+      'The speaker sees the foe "outstretch\'d beneath the tree" and is glad. The lack of guilt shows how nurturing anger has morally corrupted the speaker - they have become the poison.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -661,7 +666,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       'Extended metaphor - anger as a tree that grows when nurtured',
       'Eden allusion - the apple as temptation and death',
-      '"Watered it in fears" - anger fed by negative emotions',
+      '"Water\'d it in fears" - anger fed by negative emotions',
       '"Glad" - the speaker\'s lack of guilt shows moral corruption',
     ],
   },

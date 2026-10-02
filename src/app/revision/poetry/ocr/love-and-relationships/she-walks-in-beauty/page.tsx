@@ -15,6 +15,12 @@ import { useT } from '@/lib/i18n/use-t'
 const sheWalksInBeauty: PoemData = {
   title: 'She Walks in Beauty',
   poet: 'Lord Byron',
+  // Not an OCR set poem (see the notice on this page). Pearson Edexcel sets it, in its GCSE
+  // Relationships collection, and the page prints it as that anthology does (Issue 4,
+  // January 2023), checked line by line against the PDF on 2 October 2026. Until then
+  // the page had "mellowed" and "impaired" where the anthology prints "mellow'd" and
+  // "impair'd", "dwelling-place" for its "dwelling-place", and a semicolon for the colon
+  // ending line 4.
   lines: [
     {
       text: 'She walks in beauty, like the night',
@@ -57,7 +63,7 @@ const sheWalksInBeauty: PoemData = {
       ],
     },
     {
-      text: 'Meet in her aspect and her eyes;',
+      text: 'Meet in her aspect and her eyes:',
       annotations: [
         {
           type: 'Imagery',
@@ -67,11 +73,11 @@ const sheWalksInBeauty: PoemData = {
       ],
     },
     {
-      text: 'Thus mellowed to that tender light',
+      text: "Thus mellow'd to that tender light",
       annotations: [
         {
           type: 'Tone',
-          note: '"Mellowed" and "tender" suggest softness rather than dazzling brightness. Byron praises a quiet, gentle beauty rather than a bold, fiery one.',
+          note: '"Mellow\'d" and "tender" suggest softness rather than dazzling brightness. Byron praises a quiet, gentle beauty rather than a bold, fiery one.',
           color: '#a855f7',
         },
       ],
@@ -91,6 +97,7 @@ const sheWalksInBeauty: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: 'One shade the more, one ray the less,',
       annotations: [
@@ -107,7 +114,7 @@ const sheWalksInBeauty: PoemData = {
       ],
     },
     {
-      text: 'Had half impaired the nameless grace',
+      text: "Had half impair'd the nameless grace",
       annotations: [
         {
           type: 'Diction',
@@ -147,15 +154,16 @@ const sheWalksInBeauty: PoemData = {
       ],
     },
     {
-      text: 'How pure, how dear their dwelling place.',
+      text: 'How pure, how dear their dwelling-place.',
       annotations: [
         {
           type: 'Religious diction',
-          note: '"Pure", "dear", "dwelling place" -- this language is almost sacred. Her mind is described as a kind of holy temple where pure thoughts live.',
+          note: '"Pure", "dear", "dwelling-place" -- this language is almost sacred. Her mind is described as a kind of holy temple where pure thoughts live.',
           color: '#3b82f6',
         },
       ],
     },
+    { text: '' },
     {
       text: "And on that cheek, and o'er that brow,",
       annotations: [
@@ -316,21 +324,21 @@ Metre (الوزن): iambic tetrameter (أربع iambs في كل بيت، ثما�
       themesAr: ['التوازن', 'الانسجام', 'الجمال'],
     },
     {
-      quote: 'One shade the more, one ray the less, / Had half impaired the nameless grace',
+      quote: "One shade the more, one ray the less, / Had half impair'd the nameless grace",
       analysis:
-        'A perfectly balanced couplet. The slightest change -- "one shade more", "one ray less" -- would damage her beauty, suggesting it is mathematically perfect. "Nameless grace" admits that her beauty has a mysterious, indefinable quality beyond simple description.',
+        'A perfectly balanced couplet. The slightest change -- "one shade the more", "one ray the less" -- would damage her beauty, suggesting it is mathematically perfect. "Nameless grace" admits that her beauty has a mysterious, indefinable quality beyond simple description.',
       themes: ['Perfection', 'Beauty', 'Mystery'],
       analysisAr:
-        'بيتان متوازنين بشكل تام. أصغر تغيير - "one shade more"، "one ray less" - كفيل يخرّب جمالها، وهذا يلمّح إن جمالها كامل رياضياً. وعبارة "nameless grace" تعترف إن جمالها فيه صفة غامضة ما تتسمّى، فوق أي وصف بسيط.',
+        'بيتان متوازنين بشكل تام. أصغر تغيير - "one shade the more"، "one ray the less" - كفيل يخرّب جمالها، وهذا يلمّح إن جمالها كامل رياضياً. وعبارة "nameless grace" تعترف إن جمالها فيه صفة غامضة ما تتسمّى، فوق أي وصف بسيط.',
       themesAr: ['الكمال', 'الجمال', 'الغموض'],
     },
     {
-      quote: 'thoughts serenely sweet express / How pure, how dear their dwelling place',
+      quote: 'thoughts serenely sweet express / How pure, how dear their dwelling-place',
       analysis:
-        'The poem turns inward. Her face is described as the "dwelling place" of pure thoughts, which is almost religious diction -- like describing a temple or shrine. Her outer beauty is now read as evidence of an inner spiritual purity.',
+        'The poem turns inward. Her face is described as the "dwelling-place" of pure thoughts, which is almost religious diction -- like describing a temple or shrine. Her outer beauty is now read as evidence of an inner spiritual purity.',
       themes: ['Inner beauty', 'Spirituality', 'Virtue'],
       analysisAr:
-        'القصيدة تتجه للداخل. وجهها يوصف على إنه "dwelling place" لأفكار طاهرة، وهذا قريب من اللغة الدينية - مثل ما توصف معبد أو مقام. جمالها الخارجي الحين يُقرأ كدليل على نقاء روحي داخلي.',
+        'القصيدة تتجه للداخل. وجهها يوصف على إنه "dwelling-place" لأفكار طاهرة، وهذا قريب من اللغة الدينية - مثل ما توصف معبد أو مقام. جمالها الخارجي الحين يُقرأ كدليل على نقاء روحي داخلي.',
       themesAr: ['الجمال الداخلي', 'الروحانية', 'الفضيلة'],
     },
     {
@@ -379,12 +387,12 @@ Metre (الوزن): iambic tetrameter (أربع iambs في كل بيت، ثما�
     },
     {
       device: 'Religious diction',
-      example: 'How pure, how dear their dwelling place',
+      example: 'How pure, how dear their dwelling-place',
       effect:
-        'Byron uses sacred language ("pure", "dwelling place") to describe her mind. This elevates her beyond ordinary praise -- her face becomes almost a holy site.',
-      lineRef: 11,
+        'Byron uses sacred language ("pure", "dwelling-place") to describe her mind. This elevates her beyond ordinary praise -- her face becomes almost a holy site.',
+      lineRef: 12,
       effectAr:
-        'Byron يستخدم لغة مقدّسة ("pure"، "dwelling place") عشان يوصف عقلها. هالشي يرفعها فوق المديح العادي - وجهها يصير شبه موقع مقدّس.',
+        'Byron يستخدم لغة مقدّسة ("pure"، "dwelling-place") عشان يوصف عقلها. هالشي يرفعها فوق المديح العادي - وجهها يصير شبه موقع مقدّس.',
     },
     {
       device: 'Alliteration',
@@ -400,13 +408,13 @@ Metre (الوزن): iambic tetrameter (أربع iambs في كل بيت، ثما�
       example: 'thoughts serenely sweet express',
       effect:
         'Her thoughts "express" themselves through her face, as if they have a life of their own. This makes her inner mind visible to the reader through her outer features.',
-      lineRef: 10,
+      lineRef: 11,
       effectAr:
         'أفكارها "تعبّر" عن نفسها من خلال وجهها، كأن لها حياتها الخاصة. هالـpersonification يخلّي عقلها الداخلي مرئي للقارئ من خلال ملامحها الخارجية.',
     },
     {
       device: 'Tonal contrast',
-      example: 'mellowed to that tender light / Which heaven to gaudy day denies',
+      example: "mellow'd to that tender light / Which heaven to gaudy day denies",
       effect:
         'The contrast between "tender light" and "gaudy day" devalues showy, ostentatious beauty in favour of soft, refined beauty. "Gaudy" is the only harsh word in the poem -- and it is used to dismiss its opposite.',
       lineRef: 4,
@@ -418,7 +426,7 @@ Metre (الوزن): iambic tetrameter (أربع iambs في كل بيت، ثما�
       example: 'One shade the more, one ray the less',
       effect:
         'The pause in the middle of the line creates two perfectly balanced halves. The grammatical balance mirrors the visual balance Byron is describing -- form embodies content.',
-      lineRef: 6,
+      lineRef: 7,
       effectAr:
         'التوقّف في نص البيت يخلق نصفين متوازنين بشكل تام. التوازن النحوي يعكس التوازن البصري اللي يوصفه Byron - الشكل يجسّد المحتوى.',
     },

@@ -15,9 +15,16 @@ import EduqasPreviousAnthologyNotice from '../_components/EduqasPreviousAntholog
 const toAutumn: PoemData = {
   title: 'To Autumn',
   poet: 'John Keats',
+  // Printed as the Eduqas anthology examined until summer 2026 prints it (WJEC Eduqas GCSE
+  // Poetry Anthology, 2014), checked line by line against the PDF on 2 October 2026. Until
+  // then the page had "thatch-eves", "o'er-brimm'd" and "summer" where the anthology prints
+  // "thatch-eaves", "o'erbrimm'd" and "Summer", and differed from its punctuation in lines
+  // 1, 18 and 24 (it ends line 1 with an exclamation mark). Pearson Edexcel's text, on the
+  // Edexcel page, differs from this one in several words, among them "Aye", "cider-press",
+  // "twinèd" and "barrèd": neither page should be corrected to match the other.
   lines: [
     {
-      text: 'Season of mists and mellow fruitfulness,',
+      text: 'Season of mists and mellow fruitfulness!',
       annotations: [
         {
           type: 'Opening',
@@ -52,7 +59,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'With fruit the vines that round the thatch-eves run;',
+      text: 'With fruit the vines that round the thatch-eaves run;',
       annotations: [
         {
           type: 'Imagery',
@@ -122,7 +129,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: "For summer has o'er-brimm'd their clammy cells.",
+      text: "For Summer has o'erbrimm'd their clammy cells.",
       annotations: [
         {
           type: 'Imagery',
@@ -136,6 +143,7 @@ const toAutumn: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: 'Who hath not seen thee oft amid thy store?',
       annotations: [
@@ -197,7 +205,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'Spares the next swath and all its twined flowers:',
+      text: 'Spares the next swath and all its twined flowers;',
       annotations: [
         {
           type: 'Imagery',
@@ -246,6 +254,7 @@ const toAutumn: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: 'Where are the songs of Spring? Ay, where are they?',
       annotations: [
@@ -257,7 +266,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'Think not of them, thou hast thy music too,-',
+      text: 'Think not of them, thou hast thy music too, —',
       annotations: [
         {
           type: 'Reassurance',
@@ -410,7 +419,7 @@ const toAutumn: PoemData = {
 
   summary: `Stanza 1 - Abundance: Autumn is personified and addressed directly. It "conspires" with the sun to ripen the harvest. Vines, apples, gourds, hazelnuts, flowers - everything is full to overflowing. Even the bees are deceived into thinking summer will never end.
 
-Stanza 2 - Personification: The speaker imagines seeing Autumn personified at work in the rural landscape. Autumn sits on the granary floor, falls asleep in a half-reaped field "drowsed with the fume of poppies", crosses a brook like a gleaner, watches the last drops oozing from a cider-press. Time slows.
+Stanza 2 - Personification: The speaker imagines seeing Autumn personified at work in the rural landscape. Autumn sits on the granary floor, falls asleep in a half-reaped field "drows'd with the fume of poppies", crosses a brook like a gleaner, watches the last drops oozing from a cider-press. Time slows.
 
 Stanza 3 - Music and acceptance: The third stanza opens with a question - "Where are the songs of Spring?" - but immediately dismisses it. Autumn has its own music: wailing gnats, bleating sheep, singing hedge-crickets, whistling robins, twittering swallows. The day dies softly. The swallows gather to migrate south. The poem ends in acceptance.
 
@@ -418,7 +427,7 @@ Overall meaning: "To Autumn" celebrates the beauty of the season of ripeness and
 
   summaryAr: `المقطع 1 - الوفرة: الخريف مشخصن، وموجّه له الكلام مباشرة. الخريف "يتآمر" (conspires) مع الشمس عشان ينضّج المحصول. الكروم، التفاح، اليقطين، البندق، الزهور - كل شي مملوء لدرجة الفيضان. حتى النحل ينخدع ويعتقد إن الصيف ما بينتهي.
 
-المقطع 2 - Personification: المتكلّم يتخيّل إنه يشوف الخريف مشخصن وهو يشتغل في المنظر الريفي. الخريف يجلس على أرضية المخزن، يغفو على حقل نص محصود "drowsed with the fume of poppies"، يعبر جدول مثل امرأة تجمع بقايا الحبوب، يراقب آخر قطرات تنزّ من معصرة التفاح. الوقت يتباطأ.
+المقطع 2 - Personification: المتكلّم يتخيّل إنه يشوف الخريف مشخصن وهو يشتغل في المنظر الريفي. الخريف يجلس على أرضية المخزن، يغفو على حقل نص محصود "drows'd with the fume of poppies"، يعبر جدول مثل امرأة تجمع بقايا الحبوب، يراقب آخر قطرات تنزّ من معصرة التفاح. الوقت يتباطأ.
 
 المقطع 3 - الموسيقى والقبول: المقطع الثالث يفتح بسؤال - "Where are the songs of Spring?" - بس يستبعده فوراً. الخريف عنده موسيقاه الخاصة: بعوض ينوح، خراف تثغو، صراصير الأسوار تغنّي، أبو الحنّاء يصفّر، طيور السنونو تزقزق. النهار يموت بنعومة. السنونو تتجمّع عشان تهاجر للجنوب. القصيدة تنتهي بالقبول.
 
@@ -571,7 +580,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 - "Wh
       example: 'Who hath not seen thee oft amid thy store? ... thou hast thy music too',
       effect:
         'The poem is an extended apostrophe - a direct address to autumn personified. This conventions of the ode form give the poem its conversational, intimate quality, as if Keats is talking directly to a friend.',
-      lineRef: 11,
+      lineRef: 12,
       effectAr:
         'القصيدة apostrophe ممتدّة - خطاب مباشر للخريف المشخصن. هالعرف من أعراف شكل الـode يعطي القصيدة طابعها الحواري الحميم، كأن Keats يكلّم صديق مباشرة.',
     },
@@ -580,7 +589,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 - "Wh
       example: 'Where are the songs of Spring? Ay, where are they?',
       effect:
         'The third stanza opens with a turn - a brief moment of nostalgia for spring. But it is immediately dismissed. The volta marks the philosophical climax: acceptance of the seasonal cycle.',
-      lineRef: 22,
+      lineRef: 24,
       effectAr:
         'المقطع الثالث يفتح بتحوّل - لحظة حنين قصيرة للربيع. بس يُستبعد فوراً. الـvolta يعلّم الذروة الفلسفية: قبول الدورة الموسمية.',
     },
@@ -590,7 +599,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 - "Wh
         'gnats mourn ... lambs loud bleat ... crickets sing ... red-breast whistles ... swallows twitter',
       effect:
         'The third stanza catalogues the music of autumn. Each creature has its own song, building up to a full chorus. The catalogue suggests that autumn is rich with sound, not silent.',
-      lineRef: 26,
+      lineRef: 28,
       effectAr:
         'المقطع الثالث يعدّ موسيقى الخريف. كل مخلوق عنده أغنيته، يبنون كورس كامل. القائمة توحي إن الخريف غني بالصوت، مو صامت.',
     },

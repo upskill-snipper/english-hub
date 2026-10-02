@@ -15,6 +15,11 @@ import EduqasPreviousAnthologyNotice from '../_components/EduqasPreviousAntholog
 const soldier: PoemData = {
   title: 'The Soldier',
   poet: 'Rupert Brooke',
+  // Printed as the Eduqas anthology examined until summer 2026 prints it (WJEC Eduqas GCSE
+  // Poetry Anthology, 2014), checked line by line against the PDF on 2 October 2026. The
+  // words and marks already matched; only leading spaces on alternate lines were removed.
+  // Until then the context, a quiz question and its answer, and a revision point quoted
+  // line 2 as "a corner of a foreign field"; Brooke wrote "some corner".
   lines: [
     {
       text: 'If I should die, think only this of me:',
@@ -32,7 +37,7 @@ const soldier: PoemData = {
       ],
     },
     {
-      text: "   That there's some corner of a foreign field",
+      text: "That there's some corner of a foreign field",
       annotations: [
         {
           type: 'Key quote',
@@ -52,7 +57,7 @@ const soldier: PoemData = {
       ],
     },
     {
-      text: '   In that rich earth a richer dust concealed;',
+      text: 'In that rich earth a richer dust concealed;',
       annotations: [
         {
           type: 'Imagery',
@@ -72,7 +77,7 @@ const soldier: PoemData = {
       ],
     },
     {
-      text: '   Gave, once, her flowers to love, her ways to roam,',
+      text: 'Gave, once, her flowers to love, her ways to roam,',
       annotations: [
         {
           type: 'Imagery',
@@ -92,7 +97,7 @@ const soldier: PoemData = {
       ],
     },
     {
-      text: '   Washed by the rivers, blest by suns of home.',
+      text: 'Washed by the rivers, blest by suns of home.',
       annotations: [
         {
           type: 'Religious diction',
@@ -106,6 +111,7 @@ const soldier: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: 'And think, this heart, all evil shed away,',
       annotations: [
@@ -117,7 +123,7 @@ const soldier: PoemData = {
       ],
     },
     {
-      text: '   A pulse in the eternal mind, no less',
+      text: 'A pulse in the eternal mind, no less',
       annotations: [
         {
           type: 'Diction',
@@ -137,7 +143,7 @@ const soldier: PoemData = {
       ],
     },
     {
-      text: '   Her sights and sounds; dreams happy as her day;',
+      text: 'Her sights and sounds; dreams happy as her day;',
       annotations: [
         {
           type: 'Imagery',
@@ -157,7 +163,7 @@ const soldier: PoemData = {
       ],
     },
     {
-      text: '   In hearts at peace, under an English heaven.',
+      text: 'In hearts at peace, under an English heaven.',
       annotations: [
         {
           type: 'Closing image',
@@ -181,7 +187,7 @@ const soldier: PoemData = {
     <p>"The Soldier" was written at the start of WW1, before Brooke had experienced any combat. He saw the war as a noble, cleansing crusade. The poem reflects the optimistic, romantic view of war that was common in 1914.</p>
 
     <h3>Brooke\'s Death</h3>
-    <p>Brooke died in April 1915, aged 27, on his way to the Gallipoli campaign. He died not in battle but from sepsis caused by an infected mosquito bite. He was buried on the Greek island of Skyros - "a corner of a foreign field" indeed.</p>
+    <p>Brooke died in April 1915, aged 27, on his way to the Gallipoli campaign. He died not in battle but from sepsis caused by an infected mosquito bite. He was buried on the Greek island of Skyros: "some corner of a foreign field" indeed.</p>
 
     <h3>National Symbol</h3>
     <p>After his death, Brooke became a martyr-figure for patriotic Britain. The Dean of St Paul\'s Cathedral read "The Soldier" in a sermon on Easter Sunday 1915. Winston Churchill wrote his obituary. Brooke\'s romantic image of English sacrifice was used in propaganda throughout the war.</p>
@@ -390,7 +396,7 @@ Volta: في بداية الـsestet ("And think, this heart...")، القصيد�
       example: 'And think, this heart, all evil shed away',
       effect:
         'The traditional sonnet turn moves the poem from body (octave) to soul (sestet). The shift signals a move from physical sacrifice to spiritual immortality. The volta is the structural heart of the patriotic vision.',
-      lineRef: 8,
+      lineRef: 9,
       effectAr:
         'التحوّل التقليدي في الـsonnet ينقل القصيدة من الجسم (octave) للروح (sestet). الانتقال يأشّر للحركة من التضحية المادية للخلود الروحي. الـvolta هو القلب البنيوي للرؤية الوطنية.',
     },
@@ -440,7 +446,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Returning home from war',
-      'His own death in battle - and how the foreign soil where he is buried will become "a corner that is for ever England"',
+      'His own death in battle - and how the foreign soil where he is buried will be "for ever England"',
       'A holiday abroad',
       'Retirement',
     ],
@@ -452,7 +458,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'ts-2',
-    question: 'What does "a corner of a foreign field that is for ever England" mean?',
+    question: 'What does "some corner of a foreign field / That is for ever England" mean?',
     type: 'multiple-choice',
     options: [
       'England owns foreign territory',
@@ -613,7 +619,7 @@ const REVISION_TOPICS = [
     summary:
       'Brooke uses pastoral imagery, personification of England as a mother, and serene, elevated language to present death as beautiful.',
     keyPoints: [
-      '"A corner of a foreign field that is for ever England" - death as colonisation',
+      '"some corner of a foreign field / That is for ever England" - death as colonisation',
       '"A dust whom England bore, shaped, made aware" - identity as entirely English',
       'Pastoral imagery - flowers, air, rivers - England as paradise',
       'Calm, accepting tone - no fear, no horror, only peace',

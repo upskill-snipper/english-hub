@@ -13,9 +13,13 @@ import { useT } from '@/lib/i18n/use-t'
 const dickinson: PoemData = {
   title: 'I started Early \u2013 Took my Dog \u2013',
   poet: 'Emily Dickinson',
+  // Printed as the Pearson Edexcel GCSE anthology prints it (Time and Place; Issue 4,
+  // January 2023), checked line by line against the PDF on 2 October 2026. Until then
+  // line 18 had "His Silver Heel" where the anthology prints "his", and line 11 ended in
+  // a dash the anthology does not print.
   lines: [
     {
-      text: 'I started Early \u2013 Took my Dog \u2013',
+      text: 'I started Early – Took my Dog –',
       annotations: [
         {
           type: 'Opening',
@@ -30,7 +34,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'And visited the Sea \u2013',
+      text: 'And visited the Sea –',
       annotations: [
         {
           type: 'Verb',
@@ -55,7 +59,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'Came out to look at me \u2013',
+      text: 'Came out to look at me –',
       annotations: [
         {
           type: 'Personification',
@@ -66,7 +70,7 @@ const dickinson: PoemData = {
     },
     { text: '' },
     {
-      text: 'And Frigates \u2013 in the Upper Floor',
+      text: 'And Frigates – in the Upper Floor',
       annotations: [
         {
           type: 'Extended metaphor',
@@ -76,7 +80,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'Extended Hempen Hands \u2013',
+      text: 'Extended Hempen Hands –',
       annotations: [
         {
           type: 'Imagery',
@@ -86,7 +90,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'Presuming Me to be a Mouse \u2013',
+      text: 'Presuming Me to be a Mouse –',
       annotations: [
         {
           type: 'Self-image',
@@ -96,7 +100,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'Aground \u2013 upon the Sands \u2013',
+      text: 'Aground – upon the Sands –',
       annotations: [
         {
           type: 'Position',
@@ -107,7 +111,7 @@ const dickinson: PoemData = {
     },
     { text: '' },
     {
-      text: 'But no Man moved Me \u2013 till the Tide',
+      text: 'But no Man moved Me – till the Tide',
       annotations: [
         {
           type: 'Volta',
@@ -122,7 +126,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'Went past my simple Shoe \u2013',
+      text: 'Went past my simple Shoe –',
       annotations: [
         {
           type: 'Intimacy',
@@ -132,7 +136,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'And past my Apron \u2013 and my Belt \u2013',
+      text: 'And past my Apron – and my Belt',
       annotations: [
         {
           type: 'Rising tide',
@@ -142,7 +146,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'And past my Bodice \u2013 too \u2013',
+      text: 'And past my Bodice – too –',
       annotations: [
         {
           type: 'Sexual undertone',
@@ -158,7 +162,7 @@ const dickinson: PoemData = {
     },
     { text: '' },
     {
-      text: 'And made as He would eat me up \u2013',
+      text: 'And made as He would eat me up –',
       annotations: [
         {
           type: 'Threat',
@@ -178,7 +182,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'Upon a Dandelion\u2019s Sleeve \u2013',
+      text: "Upon a Dandelion's Sleeve –",
       annotations: [
         {
           type: 'Domestic image',
@@ -188,7 +192,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'And then \u2013 I started \u2013 too \u2013',
+      text: 'And then – I started – too –',
       annotations: [
         {
           type: 'Echo',
@@ -199,7 +203,7 @@ const dickinson: PoemData = {
     },
     { text: '' },
     {
-      text: 'And He \u2013 He followed \u2013 close behind \u2013',
+      text: 'And He – He followed – close behind –',
       annotations: [
         {
           type: 'Pursuit',
@@ -214,7 +218,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'I felt His Silver Heel',
+      text: 'I felt his Silver Heel',
       annotations: [
         {
           type: 'Imagery',
@@ -224,7 +228,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'Upon my Ankle \u2013 Then my Shoes',
+      text: 'Upon my Ankle – Then my Shoes',
       annotations: [
         {
           type: 'Reverse',
@@ -234,7 +238,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'Would overflow with Pearl \u2013',
+      text: 'Would overflow with Pearl –',
       annotations: [
         {
           type: 'Beauty in danger',
@@ -245,7 +249,7 @@ const dickinson: PoemData = {
     },
     { text: '' },
     {
-      text: 'Until We met the Solid Town \u2013',
+      text: 'Until We met the Solid Town –',
       annotations: [
         {
           type: 'Boundary',
@@ -255,7 +259,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'No One He seemed to know \u2013',
+      text: 'No One He seemed to know –',
       annotations: [
         {
           type: 'Outsider',
@@ -265,7 +269,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'And bowing \u2013 with a Mighty look \u2013',
+      text: 'And bowing – with a Mighty look –',
       annotations: [
         {
           type: 'Dignity',
@@ -275,7 +279,7 @@ const dickinson: PoemData = {
       ],
     },
     {
-      text: 'At me \u2013 The Sea withdrew \u2013',
+      text: 'At me – The Sea withdrew –',
       annotations: [
         {
           type: 'Closing',
@@ -461,7 +465,7 @@ Capitalisation: Dickinson \u062a\u0643\u0627\u067e\u062a\u0644 (\u062a\u0643\u06
       ],
     },
     {
-      quote: 'I felt His Silver Heel / Upon my Ankle',
+      quote: 'I felt his Silver Heel / Upon my Ankle',
       analysis:
         'The sea is given a "Silver Heel" \u2014 part beautiful jewel, part heavy boot. The image collapses ornament and threat into one. The sea\u2019s contact with the speaker\u2019s ankle is small and physical \u2014 it could be courtly or it could be dangerous.',
       themes: ['Beauty', 'Threat', 'Body'],

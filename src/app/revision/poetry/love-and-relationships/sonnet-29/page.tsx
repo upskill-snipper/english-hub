@@ -13,9 +13,14 @@ import { useT } from '@/lib/i18n/use-t'
 const poemData: PoemData = {
   title: "Sonnet 29 -- 'I think of thee!'",
   poet: 'Elizabeth Barrett Browning',
+  // Printed as the AQA anthology prints it (Love and Relationships; AQA-8702-TG-POEMS.PDF),
+  // checked line by line against the PDF on 2 October 2026. The words already matched;
+  // until then the page had double hyphens where AQA prints dashes, and a comma at the end
+  // of line 7 that AQA does not print. AQA sets line 4's "there's" with a space before the
+  // apostrophe ("there 's"), a typesetting slip; it is printed here without the space.
   lines: [
     {
-      text: 'I think of thee! -- my thoughts do twine and bud',
+      text: 'I think of thee! – my thoughts do twine and bud',
       annotations: [
         {
           type: 'Extended metaphor',
@@ -75,7 +80,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'Who art dearer, better! Rather, instantly,',
+      text: 'Who art dearer, better! Rather, instantly',
       annotations: [
         {
           type: 'Exclamation',
@@ -115,7 +120,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'Drop heavily down, -- burst, shattered, everywhere!',
+      text: 'Drop heavily down, – burst, shattered, everywhere!',
       annotations: [
         {
           type: 'Violent imagery',
@@ -145,7 +150,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'I do not think of thee -- I am too near thee.',
+      text: 'I do not think of thee – I am too near thee.',
       annotations: [
         {
           type: 'Paradox',

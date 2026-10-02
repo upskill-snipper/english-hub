@@ -15,6 +15,12 @@ import EduqasPreviousAnthologyNotice from '../_components/EduqasPreviousAntholog
 const london: PoemData = {
   title: 'London',
   poet: 'William Blake',
+  // Printed as the Eduqas anthology examined until summer 2026 prints it (WJEC Eduqas GCSE
+  // Poetry Anthology, 2014), checked line by line against the PDF on 2 October 2026. Until
+  // then the page printed Blake's engraved forms "Infants", "Chimney-sweepers",
+  // "blackning", "Soldiers" and "Harlots", where the anthology prints "Infant's",
+  // "Chimney-sweeper's", "black'ning", "Soldier's" and "Harlot's"; "new-born" for its
+  // "new born"; and its own punctuation in five lines.
   lines: [
     {
       text: "I wander thro' each charter'd street,",
@@ -32,7 +38,7 @@ const london: PoemData = {
       ],
     },
     {
-      text: "Near where the charter'd Thames does flow.",
+      text: "Near where the charter'd Thames does flow,",
       annotations: [
         {
           type: 'Repetition',
@@ -66,6 +72,7 @@ const london: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: 'In every cry of every Man,',
       annotations: [
@@ -77,7 +84,7 @@ const london: PoemData = {
       ],
     },
     {
-      text: 'In every Infants cry of fear,',
+      text: "In every Infant's cry of fear,",
       annotations: [
         {
           type: 'Pathos',
@@ -87,7 +94,7 @@ const london: PoemData = {
       ],
     },
     {
-      text: 'In every voice: in every ban,',
+      text: 'In every voice, in every ban,',
       annotations: [
         {
           type: 'Ambiguity',
@@ -111,8 +118,9 @@ const london: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
-      text: 'How the Chimney-sweepers cry',
+      text: "How the Chimney-sweeper's cry",
       annotations: [
         {
           type: 'Social criticism',
@@ -122,11 +130,11 @@ const london: PoemData = {
       ],
     },
     {
-      text: 'Every blackning Church appalls,',
+      text: "Every black'ning Church appalls;",
       annotations: [
         {
           type: 'Symbolism',
-          note: '"Blackning" describes both literal soot from chimneys and moral corruption. The Church should protect the innocent but instead is "appalled" - and complicit. "Appall" also means to make pale, suggesting hypocrisy.',
+          note: '"Black\'ning" describes both literal soot from chimneys and moral corruption. The Church should protect the innocent but instead is "appalled" - and complicit. "Appall" also means to make pale, suggesting hypocrisy.',
           color: '#10b981',
         },
         {
@@ -137,7 +145,7 @@ const london: PoemData = {
       ],
     },
     {
-      text: 'And the hapless Soldiers sigh',
+      text: "And the hapless Soldier's sigh",
       annotations: [
         {
           type: 'Pathos',
@@ -147,7 +155,7 @@ const london: PoemData = {
       ],
     },
     {
-      text: 'Runs in blood down Palace walls',
+      text: 'Runs in blood down Palace walls.',
       annotations: [
         {
           type: 'Imagery',
@@ -161,6 +169,7 @@ const london: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: "But most thro' midnight streets I hear",
       annotations: [
@@ -172,17 +181,17 @@ const london: PoemData = {
       ],
     },
     {
-      text: 'How the youthful Harlots curse',
+      text: "How the youthful Harlot's curse",
       annotations: [
         {
           type: 'Social criticism',
-          note: '"Youthful Harlots" - young prostitutes, often forced into the work by poverty. Blake refuses to look away from the most vulnerable victims of London\'s economy.',
+          note: 'The "youthful Harlot\'s curse" comes from a young prostitute, often forced into the work by poverty. Blake refuses to look away from the most vulnerable victims of London\'s economy.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'Blasts the new-born Infants tear',
+      text: "Blasts the new born Infant's tear,",
       annotations: [
         {
           type: 'Imagery',
@@ -222,7 +231,7 @@ const london: PoemData = {
     <p>The poem was written during a period of revolution and reaction. The French Revolution (1789) inspired hope in radicals like Blake but terrified the British establishment. Blake saw the Church and Monarchy as oppressors complicit in human suffering.</p>
 
     <h3>Religious Critique</h3>
-    <p>Blake was a Christian but a fierce critic of organised religion. He believed the established Church had abandoned its duty to the poor and instead served the powerful. The "blackning Church" image is central to his anti-clerical message.</p>
+    <p>Blake was a Christian but a fierce critic of organised religion. He believed the established Church had abandoned its duty to the poor and instead served the powerful. The "black'ning Church" image is central to his anti-clerical message.</p>
   `,
 
   contextAr: `
@@ -239,7 +248,7 @@ const london: PoemData = {
     <p>القصيدة مكتوبة في فترة ثورة ورد فعل. الثورة الفرنسية (1789) ألهمت أملاً عند الراديكاليين مثل Blake، بس رعبت المؤسسة البريطانية. Blake كان يشوف الكنيسة والملكية كقوّتين قامعتين متواطئتين في المعاناة الإنسانية.</p>
 
     <h3>النقد الديني</h3>
-    <p>Blake كان مسيحياً، بس كان منتقد شرس للدين المنظَّم. كان يعتقد إن الكنيسة المُؤسَّسة تخلّت عن واجبها تجاه الفقراء، وصارت تخدم الأقوياء بدلاً عنه. وصورة "blackning Church" مركزية في رسالته المعادية لرجال الدين.</p>
+    <p>Blake كان مسيحياً، بس كان منتقد شرس للدين المنظَّم. كان يعتقد إن الكنيسة المُؤسَّسة تخلّت عن واجبها تجاه الفقراء، وصارت تخدم الأقوياء بدلاً عنه. وصورة "black'ning Church" مركزية في رسالته المعادية لرجال الدين.</p>
   `,
 
   summary: `Stanza 1: The speaker walks through London\'s "charter\'d" (owned, regulated) streets near the equally controlled Thames. He observes that everyone he meets bears "marks of weakness, marks of woe" - visible signs of suffering.
@@ -248,7 +257,7 @@ Stanza 2: The speaker hears suffering everywhere - in adults\' cries, infants\' 
 
 Stanza 3: Blake names three institutions and their victims: the Church (which fails chimney-sweep children), the Monarchy (whose wars kill soldiers, whose blood metaphorically runs down palace walls), and society at large.
 
-Stanza 4: At midnight, the speaker hears young prostitutes cursing. Their curses "blast" newborn babies (with disease) and turn marriage into a "marriage hearse" - a funeral. The poem ends with corruption infecting birth, love, and death.
+Stanza 4: At midnight, the speaker hears young prostitutes cursing. Their curses "blast" newborn babies (with disease) and turn marriage into a "Marriage hearse" - a funeral. The poem ends with corruption infecting birth, love, and death.
 
 Overall meaning: London is a city of total oppression where institutions (Church, Monarchy, marriage) have failed everyone. Suffering is universal, inescapable, and self-perpetuating. Blake calls for radical change but the poem itself offers no hope - only documentation of the misery.`,
 
@@ -258,7 +267,7 @@ Overall meaning: London is a city of total oppression where institutions (Church
 
 المقطع 3: Blake يسمّي ثلاث مؤسسات وضحاياها: الكنيسة (اللي تخذل أطفال منظّفي المداخن)، الملكية (اللي حروبها تقتل الجنود، ودمهم رمزياً يجري على جدران القصر)، والمجتمع بشكل عام.
 
-المقطع 4: في منتصف الليل، المتكلّم يسمع شابّات بائعات هوى يلعنون. ولعناتهم "blast" الرضّع حديثي الولادة (بالمرض)، وتحوّل الزواج إلى "marriage hearse" - جنازة. القصيدة تنتهي والفساد يلوّث الولادة والحب والموت.
+المقطع 4: في منتصف الليل، المتكلّم يسمع شابّات بائعات هوى يلعنون. ولعناتهم "blast" الرضّع حديثي الولادة (بالمرض)، وتحوّل الزواج إلى "Marriage hearse" - جنازة. القصيدة تنتهي والفساد يلوّث الولادة والحب والموت.
 
 المعنى العام: لندن مدينة قمع شامل، تخذل فيها كل المؤسسات (الكنيسة، الملكية، الزواج) الناس بالكامل. والمعاناة كونية ومستمرة وتعيد إنتاج نفسها. Blake يدعو للتغيير الجذري، بس القصيدة بنفسها ما تقدّم أمل - بس توثيق للبؤس.`,
 
@@ -319,12 +328,12 @@ Volta: ما في تحوّل تقليدي. القصيدة تنتقل من الم�
       themesAr: ['الحبس الذهني', 'القمع', 'العجز'],
     },
     {
-      quote: 'every blackning Church appalls',
+      quote: "every black'ning Church appalls",
       analysis:
-        '"Blackning" works literally (soot from chimneys) and metaphorically (moral corruption). "Appalls" means both "horrifies" and "makes pale" - the Church is shocked by suffering yet pale with hypocrisy. Blake attacks the institution that should protect the poor for being complicit in their suffering.',
+        '"Black\'ning" works literally (soot from chimneys) and metaphorically (moral corruption). "Appalls" means both "horrifies" and "makes pale" - the Church is shocked by suffering yet pale with hypocrisy. Blake attacks the institution that should protect the poor for being complicit in their suffering.',
       themes: ['Religion', 'Hypocrisy', 'Institutional failure'],
       analysisAr:
-        'كلمة "blackning" تشتغل حرفياً (سخام المداخن) ومجازياً (فساد أخلاقي). وكلمة "appalls" تعني "يرعب" و"يجعل شاحباً" مع بعض - الكنيسة مصدومة من المعاناة، بس شاحبة من النفاق. Blake يهاجم المؤسسة اللي المفروض إنها تحمي الفقراء على تواطؤها في معاناتهم.',
+        'كلمة "black\'ning" تشتغل حرفياً (سخام المداخن) ومجازياً (فساد أخلاقي). وكلمة "appalls" تعني "يرعب" و"يجعل شاحباً" مع بعض - الكنيسة مصدومة من المعاناة، بس شاحبة من النفاق. Blake يهاجم المؤسسة اللي المفروض إنها تحمي الفقراء على تواطؤها في معاناتهم.',
       themesAr: ['الدين', 'النفاق', 'فشل المؤسسات'],
     },
     {
@@ -337,7 +346,7 @@ Volta: ما في تحوّل تقليدي. القصيدة تنتقل من الم�
       themesAr: ['الحرب', 'الملكية', 'الثورة'],
     },
     {
-      quote: 'youthful Harlots curse',
+      quote: "youthful Harlot's curse",
       analysis:
         '"Youthful" emphasises that these prostitutes are young - children forced into sex work by poverty. Their "curse" is multi-layered: they swear, they have venereal disease, and they curse the society that failed them. Blake refuses to romanticise or look away.',
       themes: ['Poverty', 'Exploitation', 'Innocence corrupted'],
@@ -372,10 +381,10 @@ Volta: ما في تحوّل تقليدي. القصيدة تنتقل من الم�
   languageDevices: [
     {
       device: 'Anaphora',
-      example: 'In every cry of every Man, / In every Infants cry of fear, / In every voice',
+      example: "In every cry of every Man, / In every Infant's cry of fear, / In every voice",
       effect:
         'The repetition of "every" creates a relentless, totalising effect. Suffering is not occasional but universal. The reader feels overwhelmed by the catalogue of pain, just as the speaker is overwhelmed walking through the city.',
-      lineRef: 4,
+      lineRef: 5,
       effectAr:
         'تكرار "every" يخلق أثر شامل ما يهدأ. المعاناة مو عابرة بل كونية. والقارئ يحسّ بالغرق تحت قائمة الألم، تماماً مثل غرق المتكلّم وهو يمشي في المدينة.',
     },
@@ -384,25 +393,25 @@ Volta: ما في تحوّل تقليدي. القصيدة تنتقل من الم�
       example: "The mind-forg'd manacles I hear",
       effect:
         "Blake's most famous metaphor describes mental imprisonment. The chains are not external but internal - Londoners have created their own oppression by accepting the system. This makes the suffering harder to escape than literal chains, because revolution alone cannot break it.",
-      lineRef: 7,
+      lineRef: 8,
       effectAr:
         'أشهر استعارة عند Blake، توصف الحبس الذهني. القيود مو خارجية بل داخلية - أهل لندن خلقوا قمعهم بنفسهم بقبولهم للنظام. هذا يخلّي المعاناة أصعب من القيود الحرفية في الهرب منها، لأن الثورة وحدها ما تقدر تكسرها.',
     },
     {
       device: 'Symbolism',
-      example: 'every blackning Church appalls',
+      example: "every black'ning Church appalls",
       effect:
-        'The Church symbolises institutional religion\'s moral failure. "Blackning" works as both literal soot and metaphorical corruption. Blake suggests that the very institutions claiming to protect souls are blackened by their complicity with suffering.',
-      lineRef: 9,
+        'The Church symbolises institutional religion\'s moral failure. "Black\'ning" works as both literal soot and metaphorical corruption. Blake suggests that the very institutions claiming to protect souls are blackened by their complicity with suffering.',
+      lineRef: 11,
       effectAr:
-        'الكنيسة ترمز للفشل الأخلاقي للدين المؤسّسي. كلمة "blackning" تشتغل كسخام حرفي وكفساد مجازي مع بعض. Blake يلمّح إن المؤسسات اللي تدّعي حماية الأرواح هي نفسها مسوّدة بتواطؤها مع المعاناة.',
+        'الكنيسة ترمز للفشل الأخلاقي للدين المؤسّسي. كلمة "black\'ning" تشتغل كسخام حرفي وكفساد مجازي مع بعض. Blake يلمّح إن المؤسسات اللي تدّعي حماية الأرواح هي نفسها مسوّدة بتواطؤها مع المعاناة.',
     },
     {
       device: 'Oxymoron',
       example: 'Marriage hearse',
       effect:
         "The poem's devastating closing image. Marriage (life, love, hope) is paired with hearse (death, ending). The oxymoron captures how London's corruption infects even the most sacred institutions. It leaves the reader with a permanent jolt of disgust.",
-      lineRef: 15,
+      lineRef: 18,
       effectAr:
         'صورة القصيدة الختامية المدمّرة. الزواج (حياة، حب، أمل) مقترن بـhearse (موت، نهاية). والتضاد يجسّد كيف فساد لندن يصيب حتى أكثر المؤسسات قدسيةً. ويخلّي القارئ مع صدمة دائمة من الاشمئزاز.',
     },
@@ -411,7 +420,7 @@ Volta: ما في تحوّل تقليدي. القصيدة تنتقل من الم�
       example: 'Runs in blood down Palace walls',
       effect:
         'A shocking visual that makes the abstract guilt of the monarchy literal. The soldier\'s "sigh" becomes blood. Blake forces the reader to see what political language hides: the human cost of war and royal power.',
-      lineRef: 11,
+      lineRef: 13,
       effectAr:
         'صورة بصرية صادمة تحوّل ذنب الملكية المجرّد إلى شي حرفي. تنهيدة الجندي ("sigh") تصير دم. Blake يجبر القارئ يشوف اللي تخفيه اللغة السياسية: الكلفة الإنسانية للحرب وللسلطة الملكية.',
     },

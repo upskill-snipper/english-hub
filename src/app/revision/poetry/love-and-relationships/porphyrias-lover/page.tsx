@@ -13,6 +13,13 @@ import { useT } from '@/lib/i18n/use-t'
 const poemData: PoemData = {
   title: "Porphyria's Lover",
   poet: 'Robert Browning',
+  // Printed as the AQA anthology prints it (Love and Relationships; AQA-8702-TG-POEMS.PDF),
+  // checked line by line against the PDF on 2 October 2026. Until then the page printed 47
+  // of the poem's 60 lines, leaving out lines 17, 18, 29, 46 and 49 to 57, and seven of the
+  // rest were not in Browning's words: "did its best" for "did its worst" (line 4), "the damp
+  // long hair / Fall, and, last" (13 to 14), "And made my cheek lie there, and spread / O'er
+  // all her yellow hair displayed" (19 to 20), "She was come" for "So, she was come" (30)
+  // and "As I untied at her cheek once more" (47). The restored lines have notes of their own.
   lines: [
     {
       text: 'The rain set early in to-night,',
@@ -45,7 +52,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'And did its best to vex the lake:',
+      text: 'and did its worst to vex the lake:',
       annotations: [
         {
           type: 'Personification',
@@ -135,7 +142,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'Her hat and let the damp long hair',
+      text: 'Her hat and let the damp hair fall,',
       annotations: [
         {
           type: 'Hair imagery',
@@ -145,7 +152,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'Fall, and, last, she sat down by my side',
+      text: 'And, last, she sat down by my side',
       annotations: [
         {
           type: 'Enjambment',
@@ -175,7 +182,27 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'And made my cheek lie there, and spread',
+      text: 'And made her smooth white shoulder bare,',
+      annotations: [
+        {
+          type: 'Sensuality',
+          note: 'Porphyria bares her own shoulder. In this half of the poem every physical advance is hers, and the speaker only records it.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'And all her yellow hair displaced,',
+      annotations: [
+        {
+          type: 'Hair imagery',
+          note: 'The poem keeps returning to her "yellow hair". Each mention brings it nearer to the moment it becomes "one long yellow string" around her throat.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'And, stooping, made my cheek lie there,',
       annotations: [
         {
           type: 'Objectification',
@@ -185,17 +212,17 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: "O'er all her yellow hair displayed,",
+      text: "And spread o'er all her yellow hair,",
       annotations: [
         {
           type: 'Hair symbolism',
-          note: '"Yellow hair displayed" suggests both beauty and vanity. The hair is deliberately shown, associated with Porphyria\'s sexuality and freedom.',
+          note: 'She spreads "all her yellow hair" over him. The hair that will become the murder weapon is first a sign of her tenderness, and of her sexuality and freedom.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'Murmuring how she loved me -- she',
+      text: 'Murmuring how she loved me – she',
       annotations: [
         {
           type: 'Enjambment',
@@ -255,7 +282,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: "Nor could to-night's gay feast restrain",
+      text: "Nor could tonight's gay feast restrain",
       annotations: [
         {
           type: 'Context',
@@ -265,7 +292,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'A sudden thought of one so pale --',
+      text: 'A sudden thought of one so pale',
       annotations: [
         {
           type: 'Self-description',
@@ -275,7 +302,17 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'She was come through wind and rain.',
+      text: 'For love of her, and all in vain:',
+      annotations: [
+        {
+          type: 'Self-pity',
+          note: 'At the feast Porphyria thinks of him as "one so pale / For love of her, and all in vain". Through her eyes the speaker casts himself as the hopeless, suffering lover: self-pity that turns into something worse.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'So, she was come through wind and rain.',
       annotations: [
         {
           type: 'Devotion',
@@ -305,7 +342,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'Porphyria worshipped me; surprise',
+      text: 'Porphyria worshipped me: surprise',
       annotations: [
         {
           type: 'Delusion',
@@ -435,21 +472,58 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'As I untied at her cheek once more',
+      text: 'And I untightened next the tress',
       annotations: [
         {
-          type: 'Repetition of actions',
-          note: 'The speaker now arranges Porphyria as she earlier arranged him, reversing the power dynamic. He is now the active agent, she the passive object.',
-          color: '#3b82f6',
+          type: 'Detail',
+          note: '"Untightened" is a careful, practical word for loosening the hair he has strangled her with, and "next" makes the killing one step in a calm sequence. The calm is the horror.',
+          color: '#ef4444',
         },
       ],
     },
+    { text: 'About her neck; her cheek once more' },
     {
-      text: 'Blushed bright beneath my burning kiss.',
+      text: 'Blushed bright beneath my burning kiss:',
       annotations: [
         {
           type: 'Disturbing imagery',
           note: 'He projects life onto death -- seeing a "blush" where there is none. "Burning" contrasts with her now-cold flesh. The speaker\'s delusion is complete.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'I propped her head up as before,',
+      annotations: [
+        {
+          type: 'Role reversal',
+          note: 'The speaker now arranges Porphyria as she earlier arranged him, reversing the power dynamic. "As before" points back to the moment she made his cheek lie on her shoulder; "this time my shoulder bore / Her head". He is now the active agent, she the passive object.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    { text: 'Only, this time my shoulder bore' },
+    { text: 'Her head, which droops upon it still:' },
+    { text: 'The smiling rosy little head,' },
+    {
+      text: 'So glad it has its utmost will,',
+      annotations: [
+        {
+          type: 'Delusion',
+          note: 'He claims the dead head is "glad" to have "its utmost will": he insists that killing Porphyria gave her what she wanted.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    { text: 'That all it scorned at once is fled,' },
+    { text: 'And I, its love, am gained instead!' },
+    { text: "Porphyria's love: she guessed not how" },
+    {
+      text: 'Her darling one wish would be heard.',
+      annotations: [
+        {
+          type: 'Self-justification',
+          note: 'He presents the murder as the answer to "Her darling one wish", to be his for ever. She "guessed not how" it would be granted: the speaker admits she never chose this.',
           color: '#ef4444',
         },
       ],
@@ -485,16 +559,19 @@ const poemData: PoemData = {
       ],
     },
   ],
-  context: `<p><strong>Robert Browning (1812-1889)</strong> published this poem in 1836 as part of a pair titled <em>Madhouse Cells</em>, making clear the speaker is meant to be understood as <strong>mentally unstable</strong>.</p>
+  // Until 2 October 2026 this said Browning published the poem in 1836 "as part of a pair
+  // titled Madhouse Cells". It appeared alone in 1836, as "Porphyria", in the Monthly
+  // Repository; the pairing under that title came in Dramatic Lyrics (1842).
+  context: `<p><strong>Robert Browning (1812-1889)</strong> first published this poem in 1836, as "Porphyria", in the <em>Monthly Repository</em>. When he reprinted it in <em>Dramatic Lyrics</em> (1842), he paired it with "Johannes Agricola in Meditation" under the title <em>Madhouse Cells</em>, making clear the speaker is meant to be understood as <strong>mentally unstable</strong>.</p>
 <p>The poem is a <strong>dramatic monologue</strong> -- a form Browning mastered. The speaker is not Browning himself but a fictional character whose unreliable perspective the reader must see through. Browning reveals character through what the speaker says and, crucially, what they fail to recognise about themselves.</p>
 <p>The <strong>Victorian era</strong> was fascinated by psychology, criminality, and the darker aspects of human nature. Browning explores <strong>obsessive love, power, and control</strong> through a speaker who sees murder as a rational solution to an emotional problem.</p>
 <p>The poem also reflects Victorian anxieties about <strong>class and sexuality</strong>. Porphyria crosses class boundaries to visit the speaker, and her sexual agency -- freely visiting a lover -- may be part of what the speaker seeks to control and punish.</p>`,
-  contextAr: `<p><strong>Robert Browning (1812-1889)</strong> نشر هالقصيدة سنة 1836 ضمن ثنائي شعري عنوانه <em>Madhouse Cells</em> (زنازين المجانين)، وهذا العنوان يوضّح من البداية إن المتكلّم المفروض يُفهم على إنه <strong>مختلّ نفسياً</strong>.</p>
+  contextAr: `<p><strong>Robert Browning (1812-1889)</strong> نشر هالقصيدة أوّل مرّة سنة 1836 بعنوان "Porphyria" في مجلة <em>Monthly Repository</em>. ولمّا أعاد نشرها في <em>Dramatic Lyrics</em> سنة 1842، حطّها مع قصيدة "Johannes Agricola in Meditation" تحت عنوان <em>Madhouse Cells</em> (زنازين المجانين)، وهذا العنوان يوضّح إن المتكلّم المفروض يُفهم على إنه <strong>مختلّ نفسياً</strong>.</p>
 <p>القصيدة <strong>dramatic monologue</strong> (مونولوج درامي) - وهو شكل أتقنه Browning. المتكلّم مو Browning نفسه، إنما شخصية متخيّلة منظورها مو موثوق، والقارئ لازم يقرأ ما بين السطور. Browning يكشف الشخصية من خلال اللي يقوله المتكلّم، والأهم من ذلك، من خلال اللي يعجز هو نفسه عن إدراكه عن نفسه.</p>
 <p><strong>العصر الفيكتوري</strong> كان مفتون بعلم النفس وبالإجرام وبالجوانب المظلمة من الطبيعة البشرية. Browning يستكشف <strong>الحب الهوسي والسلطة والسيطرة</strong> من خلال متكلّم يشوف القتل حلّ منطقي لمشكلة عاطفية.</p>
 <p>القصيدة كمان تعكس قلق العصر الفيكتوري من <strong>الطبقة الاجتماعية والجنسانية</strong>. Porphyria تعبر حدود الطبقة عشان تزور المتكلّم، وحريّتها الجنسية - إنها تزور حبيب بإرادتها - يحتمل إنها جزء من اللي يبي المتكلّم يسيطر عليه ويعاقبها عليه.</p>`,
-  summary: `The speaker sits alone in a cottage while a storm rages outside. Porphyria arrives, tends to the fire, removes her wet clothes, and sits beside him. She arranges his body against hers and murmurs her love, but the speaker knows she is "too weak" to fully leave her privileged life for him.\n\nIn a moment of realisation that Porphyria truly loves him, the speaker decides to preserve this perfect moment forever. He winds her hair around her throat three times and strangles her. He then opens her eyes, kisses her, and sits with the corpse all night.\n\nThe poem ends with the speaker's observation that God has not intervened or punished him, which he interprets as divine approval. The dramatic monologue reveals a deeply disturbed mind that rationalises murder as an act of love and preservation.`,
-  summaryAr: `المتكلّم قاعد لحاله في كوخ، وبراً عاصفة هايجة. Porphyria تجي، تشعل النار، تشلح ثيابها المبلولة، وتقعد جنبه. هي بنفسها ترتّب جسمه على جسمها، وتهمس له بحبّها، بس المتكلّم يدري إنها "too weak" - أضعف من إنها تتخلّى عن حياتها المرفّهة عشانه.\n\nفي لحظة يكتشف فيها إن Porphyria صدق تحبه، يقرّر إنه يخلّد هاللحظة الكاملة للأبد. يلفّ شعرها حول حلقها ثلاث مرّات ويخنقها. بعدها يفتح عيونها، يبوسها، ويقعد جنب جثّتها طول الليل.\n\nالقصيدة تنتهي بملاحظة المتكلّم إن الله ما تدخّل ولا عاقبه، وهو يفسّر هالشي على إنه موافقة إلهية. الـdramatic monologue يكشف عقل مضطرب جداً يبرّر القتل ويعتبره فعل محبة وحفظ.`,
+  summary: `The speaker sits alone in a cottage while a storm rages outside. Porphyria arrives, tends to the fire, removes her wet clothes, and sits beside him. She arranges his body against hers and murmurs her love, but the speaker knows she is "too weak" to fully leave her privileged life for him.\n\nIn a moment of realisation that Porphyria truly loves him, the speaker decides to preserve this perfect moment forever. He winds her hair around her throat three times and strangles her. He then opens her eyes, kisses her, props her head on his shoulder as she had laid his cheek on hers, and sits with the corpse all night.\n\nThe poem ends with the speaker's observation that God has not intervened or punished him, which he interprets as divine approval. The dramatic monologue reveals a deeply disturbed mind that rationalises murder as an act of love and preservation.`,
+  summaryAr: `المتكلّم قاعد لحاله في كوخ، وبراً عاصفة هايجة. Porphyria تجي، تشعل النار، تشلح ثيابها المبلولة، وتقعد جنبه. هي بنفسها ترتّب جسمه على جسمها، وتهمس له بحبّها، بس المتكلّم يدري إنها "too weak" - أضعف من إنها تتخلّى عن حياتها المرفّهة عشانه.\n\nفي لحظة يكتشف فيها إن Porphyria صدق تحبه، يقرّر إنه يخلّد هاللحظة الكاملة للأبد. يلفّ شعرها حول حلقها ثلاث مرّات ويخنقها. بعدها يفتح عيونها، يبوسها، يسند راسها على كتفه مثل ما هي سندت خدّه على كتفها، ويقعد جنب جثّتها طول الليل.\n\nالقصيدة تنتهي بملاحظة المتكلّم إن الله ما تدخّل ولا عاقبه، وهو يفسّر هالشي على إنه موافقة إلهية. الـdramatic monologue يكشف عقل مضطرب جداً يبرّر القتل ويعتبره فعل محبة وحفظ.`,
   formAndStructure: `Form: A dramatic monologue -- the entire poem is spoken by a single, unreliable narrator whose true nature is gradually revealed through his own words.\n\nSingle stanza: The poem is one continuous block of text with no stanza breaks, creating a relentless, claustrophobic narrative that mirrors the speaker's obsessive, unbroken thought process.\n\nRhyme scheme: ABABB -- the interlocking rhyme creates a sense of entrapment and obsession. The extra rhyme in each group creates an unsettling asymmetry.\n\nEnjambment: Heavy use of enjambment creates a breathless, flowing narrative that mimics natural speech, drawing the reader into the speaker's warped perspective.\n\nPower reversal: The poem's structure mirrors the shift in power -- Porphyria is active and the speaker passive in the first half; this reverses completely after the murder.\n\nPresent tense ending: The shift to present tense ("And thus we sit together now") creates a disturbing immediacy, revealing the speaker is narrating while sitting beside the corpse.`,
   formAndStructureAr: `DRAMATIC MONOLOGUE (مونولوج درامي)\nالقصيدة كلها يحكيها متكلّم واحد غير موثوق، وحقيقة شخصيته تنكشف تدريجياً من خلال كلامه نفسه.\n\nSINGLE STANZA (مقطوعة واحدة)\nالقصيدة كتلة نص واحدة متّصلة، بدون أي فاصل بين المقاطع، وهذا يخلق سرد متلاحق وخانق يعكس تيّار التفكير الهوسي المتواصل عند المتكلّم.\n\nRHYME SCHEME (نمط القافية)\nABABB - القافية المتشابكة تعطي إحساس بالحصار والهوس. القافية الزايدة في كل مجموعة تخلق عدم تماثل مقلق.\n\nENJAMBMENT\nالاستخدام المكثّف للـenjambment يخلق سرد متدفّق وشبه لاهث يحاكي الكلام الطبيعي، ويسحب القارئ داخل منظور المتكلّم المعوجّ.\n\nانعكاس السلطة\nبنية القصيدة تعكس تحوّل السلطة - Porphyria هي الفاعلة والمتكلّم خامل في النصف الأول؛ وهالشي ينقلب بالكامل بعد جريمة القتل.\n\nنهاية بزمن المضارع\nالتحوّل إلى زمن المضارع ("And thus we sit together now") يخلق إحساس مرعب بالحضور الآني، ويكشف إن المتكلّم يحكي وهو قاعد جنب الجثّة.`,
   keyQuotes: [
@@ -610,7 +687,7 @@ const poemData: PoemData = {
       example: 'mine, mine',
       effect:
         'The frantic doubling reveals obsessive possessiveness. The speaker reduces Porphyria to an object to be owned rather than a person to be loved.',
-      lineRef: 32,
+      lineRef: 35,
       effectAr:
         'التكرار المحموم يكشف عن تملّك هوسي. المتكلّم يختزل Porphyria إلى شي يُمتلك، مو شخص يُحَب.',
     },
@@ -619,7 +696,7 @@ const poemData: PoemData = {
       example: 'A thing to do',
       effect:
         "The casual, everyday phrasing for murder reveals the speaker's psychological detachment and inability to recognise the horror of his actions.",
-      lineRef: 34,
+      lineRef: 37,
       effectAr:
         'الصياغة العادية اليومية للقتل تكشف انفصال المتكلّم النفسي وعجزه عن إدراك بشاعة فعلته.',
     },
@@ -628,7 +705,7 @@ const poemData: PoemData = {
       example: 'all her hair / In one long yellow string I wound',
       effect:
         "Porphyria's hair, symbolising her sexuality and freedom throughout, becomes the murder weapon. Her own identity is literally turned against her.",
-      lineRef: 34,
+      lineRef: 37,
       effectAr:
         'شعر Porphyria، اللي كان يرمز لجنسانيتها وحريّتها طول القصيدة، يتحوّل إلى أداة القتل. هويّتها نفسها تنقلب ضدّها حرفياً.',
     },
@@ -637,7 +714,7 @@ const poemData: PoemData = {
       example: 'As a shut bud that holds a bee',
       effect:
         "A beautiful natural image for an unnatural act. The simile presents entrapment as natural and beautiful, revealing the speaker's capacity for aesthetic detachment from violence.",
-      lineRef: 39,
+      lineRef: 42,
       effectAr:
         'صورة طبيعية جميلة لفعل غير طبيعي. الـsimile يقدّم الحبس على إنه طبيعي وجميل، وهذا يكشف قدرة المتكلّم على الانفصال الجمالي عن العنف.',
     },
@@ -759,7 +836,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['Shelley in 1819', 'Robert Browning in 1836', 'Hardy in 1867', 'Byron in 1816'],
     correctIndex: 1,
     explanation:
-      'Written by Robert Browning in 1836. Browning was fascinated by the psychology of disturbed minds and used the dramatic monologue form to let speakers reveal their true nature.',
+      'Published by Robert Browning in 1836. Browning was fascinated by the psychology of disturbed minds and used the dramatic monologue form to let speakers reveal their true nature.',
     topic: 'Context',
     difficulty: 'foundation',
   },

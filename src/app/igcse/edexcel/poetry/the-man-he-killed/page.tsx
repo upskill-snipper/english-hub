@@ -14,9 +14,14 @@ import StudyTools from '@/components/study/StudyTools'
 const poem: PoemData = {
   title: 'The Man He Killed',
   poet: 'Thomas Hardy',
+  // Not in the Pearson Edexcel International GCSE anthology (Issue 8); Pearson Edexcel sets
+  // it at GCSE, in the Conflict collection, and this page prints the poem as that
+  // anthology does (Issue 4, January 2023), checked line by line against the PDF on
+  // 2 October 2026. The words already matched; until then the speech marks were double
+  // where the anthology's are single, and its dashes were hyphens.
   lines: [
     {
-      text: '"Had he and I but met',
+      text: "'Had he and I but met",
       annotations: [
         {
           type: 'Conditional mood',
@@ -57,7 +62,7 @@ const poem: PoemData = {
     },
     { text: '' },
     {
-      text: '"But ranged as infantry,',
+      text: "'But ranged as infantry,",
       annotations: [
         {
           type: 'Key quote',
@@ -98,7 +103,7 @@ const poem: PoemData = {
     },
     { text: '' },
     {
-      text: '"I shot him dead because -',
+      text: "'I shot him dead because –",
       annotations: [
         {
           type: 'Key quote',
@@ -139,7 +144,7 @@ const poem: PoemData = {
     },
     { text: '' },
     {
-      text: "\"He thought he'd 'list, perhaps,",
+      text: "'He thought he'd 'list, perhaps,",
       annotations: [
         {
           type: 'Empathy',
@@ -149,7 +154,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Off-hand like - just as I -',
+      text: 'Off-hand like – just as I –',
       annotations: [
         {
           type: 'Key quote',
@@ -159,7 +164,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Was out of work - had sold his traps -',
+      text: 'Was out of work – had sold his traps –',
       annotations: [
         {
           type: 'Social commentary',
@@ -180,7 +185,7 @@ const poem: PoemData = {
     },
     { text: '' },
     {
-      text: '"Yes; quaint and curious war is!',
+      text: "'Yes; quaint and curious war is!",
       annotations: [
         {
           type: 'Key quote',
@@ -210,7 +215,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Or help to half-a-crown."',
+      text: "Or help to half-a-crown.'",
       annotations: [
         {
           type: 'Final image',
@@ -515,7 +520,7 @@ export default function TheManHeKilledPage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">The Man He Killed</h1>
             <p className="text-body-sm text-muted-foreground">
-              Thomas Hardy &middot; Edexcel IGCSE Anthology
+              Thomas Hardy &middot; not in the current IGCSE anthology
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
               {tr('igcse.page.badge_edexcel_lit')}
@@ -535,9 +540,8 @@ export default function TheManHeKilledPage() {
               <strong className="text-foreground">
                 This poem is not in the current Edexcel IGCSE 4ET1 anthology.
               </strong>{' '}
-              It may have been included in earlier syllabus cycles or is provided as wider-reading
-              content. Confirm via the official Pearson Edexcel anthology before relying on it for
-              assessment.
+              Pearson Edexcel sets it at GCSE, in the Conflict collection, and this page prints the
+              poem as that anthology does. Here it is wider reading.
             </p>
           </div>
         </div>

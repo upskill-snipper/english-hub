@@ -15,6 +15,12 @@ import EduqasPreviousAnthologyNotice from '../_components/EduqasPreviousAntholog
 const sonnet43: PoemData = {
   title: 'Sonnet 43',
   poet: 'Elizabeth Barrett Browning',
+  // Printed as the Eduqas anthology examined until summer 2026 prints it (WJEC Eduqas GCSE
+  // Poetry Anthology, 2014), checked line by line against the PDF on 2 October 2026. Until
+  // then the page had "being" and "grace" where the anthology capitalises "Being" and
+  // "Grace" (line 4), "candle-light" for its "candlelight" (line 6), and a full stop and a
+  // semicolon where it prints a dash and an exclamation mark in lines 12 and 13. The
+  // anthology indents lines 2, 3, 6, 7, 10, 12 and 14, which PoemLine has no way to show.
   lines: [
     {
       text: 'How do I love thee? Let me count the ways.',
@@ -52,11 +58,11 @@ const sonnet43: PoemData = {
       ],
     },
     {
-      text: 'For the ends of being and ideal grace.',
+      text: 'For the ends of Being and ideal Grace.',
       annotations: [
         {
           type: 'Diction',
-          note: '"Ends of being" - the limits of existence. "Ideal grace" - perfect divine grace. The speaker compares her love to a soul reaching toward God.',
+          note: '"Ends of Being" - the limits of existence. "Ideal Grace" - perfect divine grace. The speaker compares her love to a soul reaching toward God.',
           color: '#3b82f6',
         },
         {
@@ -77,11 +83,11 @@ const sonnet43: PoemData = {
       ],
     },
     {
-      text: 'Most quiet need, by sun and candle-light.',
+      text: 'Most quiet need, by sun and candlelight.',
       annotations: [
         {
           type: 'Imagery',
-          note: '"Sun and candle-light" - day and night. The line moves from the cosmic to the domestic. Love operates at every scale, from universal to ordinary.',
+          note: '"Sun and candlelight" - day and night. The line moves from the cosmic to the domestic. Love operates at every scale, from universal to ordinary.',
           color: '#10b981',
         },
         {
@@ -142,7 +148,7 @@ const sonnet43: PoemData = {
       ],
     },
     {
-      text: 'With my lost saints. I love thee with the breath,',
+      text: 'With my lost saints – I love thee with the breath,',
       annotations: [
         {
           type: 'Religious imagery',
@@ -152,7 +158,7 @@ const sonnet43: PoemData = {
       ],
     },
     {
-      text: 'Smiles, tears, of all my life; and, if God choose,',
+      text: 'Smiles, tears, of all my life! – and, if God choose,',
       annotations: [
         {
           type: 'Catalogue',
@@ -218,9 +224,9 @@ const sonnet43: PoemData = {
     <p>طوال قرون، الـsonnets كانت تُكتب من قبل الرجال عن النساء. EBB تكتب كامرأة تعلن الحب لرجل. هذا شي غير مألوف وقوي. تطالب لنفسها بنفس الحق في الحب العاطفي الفصيح اللي أخذه الشعراء الرجال طول التاريخ.</p>
   `,
 
-  summary: `Lines 1-4: The speaker opens with a rhetorical question - "How do I love thee?" - and offers to count the ways. She claims her love reaches the spatial limits her soul can reach, "to the depth and breadth and height", to "the ends of being and ideal grace". This is mystical, cosmic love.
+  summary: `Lines 1-4: The speaker opens with a rhetorical question - "How do I love thee?" - and offers to count the ways. She claims her love reaches the spatial limits her soul can reach, "to the depth and breadth and height", to "the ends of Being and ideal Grace". This is mystical, cosmic love.
 
-Lines 5-8: Love also operates at the everyday level - "by sun and candle-light", in "most quiet need". Love is both ordinary and necessary. She loves freely (like men who strive for political rights) and purely (like those who reject vanity).
+Lines 5-8: Love also operates at the everyday level - "by sun and candlelight", in "most quiet need". Love is both ordinary and necessary. She loves freely (like men who strive for political rights) and purely (like those who reject vanity).
 
 Lines 9-12: Love absorbs the passion she once felt for "old griefs" and her "childhood\'s faith". She thought she had lost the capacity to love when she lost "my lost saints" (her faith), but Robert\'s love has restored it. Her love is now her entire being - "breath, smiles, tears".
 
@@ -228,9 +234,9 @@ Lines 13-14: The closing couplet promises that, if God allows, she will love him
 
 Overall meaning: "Sonnet 43" is one of the greatest love poems in English. EBB attempts to "count" the dimensions, intensities, and durations of her love. The poem moves from cosmic scale to domestic scale, from physical to spiritual, and finally to eternal. It is a complete declaration of total devotion.`,
 
-  summaryAr: `الأبيات 1-4: المتكلّمة تفتح بسؤال بلاغي - "How do I love thee?" - وتعرض إنها تعدّ الطرق. تدّعي إن حبها يصل لأقصى حدود مكانية تقدر روحها تبلغها: "to the depth and breadth and height"، لـ"the ends of being and ideal grace". هذا حب صوفي كوني.
+  summaryAr: `الأبيات 1-4: المتكلّمة تفتح بسؤال بلاغي - "How do I love thee?" - وتعرض إنها تعدّ الطرق. تدّعي إن حبها يصل لأقصى حدود مكانية تقدر روحها تبلغها: "to the depth and breadth and height"، لـ"the ends of Being and ideal Grace". هذا حب صوفي كوني.
 
-الأبيات 5-8: الحب يشتغل بعد على المستوى اليومي - "by sun and candle-light"، في "most quiet need". الحب عادي وضروري. تحبّه بحرية (مثل الرجال اللي يكافحون من أجل الحقوق السياسية) وبنقاء (مثل اللي يرفضون الغرور).
+الأبيات 5-8: الحب يشتغل بعد على المستوى اليومي - "by sun and candlelight"، في "most quiet need". الحب عادي وضروري. تحبّه بحرية (مثل الرجال اللي يكافحون من أجل الحقوق السياسية) وبنقاء (مثل اللي يرفضون الغرور).
 
 الأبيات 9-12: الحب يستوعب الشغف اللي كانت تحسّه من قبل تجاه "old griefs" و"childhood's faith". اعتقدت إنها فقدت القدرة على الحب لما فقدت "my lost saints" (إيمانها)، بس حب Robert استرجعها. حبها الحين كل كيانها - "breath, smiles, tears".
 
@@ -250,7 +256,7 @@ Volta: The traditional turn comes at line 9 - "I love thee with the passion put 
 
 Spatial language: The poem uses the language of dimensions - depth, breadth, height. Love is given physical scale even though it is immaterial. This makes the abstract feel concrete.
 
-Religious diction: "Soul", "ideal grace", "lost saints", "if God choose" - the poem is full of spiritual language. Love becomes a religious experience, replacing or completing faith.
+Religious diction: "soul", "ideal Grace", "lost saints", "if God choose" - the poem is full of spiritual language. Love becomes a religious experience, replacing or completing faith.
 
 Closure: The final line promises eternity. The poem ends not with limitation but with expansion - love continues beyond death. The closing couplet has the certainty of a vow.`,
 
@@ -266,7 +272,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 - "I love thee w
 
 اللغة المكانية: القصيدة تستخدم لغة الأبعاد - depth, breadth, height. الحب يعطى حجم مادي حتى لو هو غير مادي. هذا يخلّي المجرّد يحسّ ملموس.
 
-اللغة الدينية: "Soul"، "ideal grace"، "lost saints"، "if God choose" - القصيدة مشبّعة بلغة روحية. الحب يصير تجربة دينية، يستبدل الإيمان أو يكمّله.
+اللغة الدينية: "soul"، "ideal Grace"، "lost saints"، "if God choose" - القصيدة مشبّعة بلغة روحية. الحب يصير تجربة دينية، يستبدل الإيمان أو يكمّله.
 
 الخاتمة: البيت الأخير يوعد بالأبدية. القصيدة ما تنتهي بحدّ بل بتوسّع - الحب يستمر بعد الموت. المقطع الختامي عنده يقين القَسَم.`,
 
@@ -283,19 +289,19 @@ Volta: التحوّل التقليدي يجي في البيت 9 - "I love thee w
     {
       quote: 'I love thee to the depth and breadth and height / My soul can reach',
       analysis:
-        'The speaker uses spatial dimensions - "depth, breadth, height" - to measure love. The tricolon creates a sense of total coverage. But these are also the dimensions her SOUL can reach, suggesting love is spiritual as well as physical. The scale is cosmic.',
+        'The speaker uses spatial dimensions - "depth and breadth and height" - to measure love. The tricolon creates a sense of total coverage. But these are also the dimensions her SOUL can reach, suggesting love is spiritual as well as physical. The scale is cosmic.',
       themes: ['Cosmic love', 'Tricolon', 'Spirituality'],
       analysisAr:
-        'المتكلّمة تستخدم أبعاد مكانية - "depth, breadth, height" - عشان تقيس الحب. الـtricolon يخلق إحساس بالتغطية الكاملة. بس هذي بعد أبعاد روحها - هي اللي تقدر توصل لها - وهذا يوحي إن الحب روحي وجسدي مع بعض. المقياس كوني.',
+        'المتكلّمة تستخدم أبعاد مكانية - "depth and breadth and height" - عشان تقيس الحب. الـtricolon يخلق إحساس بالتغطية الكاملة. بس هذي بعد أبعاد روحها - هي اللي تقدر توصل لها - وهذا يوحي إن الحب روحي وجسدي مع بعض. المقياس كوني.',
       themesAr: ['الحب الكوني', 'Tricolon', 'الروحانية'],
     },
     {
-      quote: 'For the ends of being and ideal grace',
+      quote: 'For the ends of Being and ideal Grace',
       analysis:
-        '"Ends of being" - the limits of existence itself. "Ideal grace" - perfect divine grace, the highest spiritual concept. The speaker compares her love to a soul reaching toward God. Love has theological scale.',
+        '"Ends of Being" - the limits of existence itself. "Ideal Grace" - perfect divine grace, the highest spiritual concept. The speaker compares her love to a soul reaching toward God. Love has theological scale.',
       themes: ['Religion', 'Limits', 'Divine love'],
       analysisAr:
-        '"Ends of being" - حدود الوجود نفسه. "Ideal grace" - النعمة الإلهية المثالية، أعلى مفهوم روحي. المتكلّمة تشبّه حبها بروح تمدّ نفسها نحو الله. الحب عنده مقياس لاهوتي.',
+        '"Ends of Being" - حدود الوجود نفسه. "Ideal Grace" - النعمة الإلهية المثالية، أعلى مفهوم روحي. المتكلّمة تشبّه حبها بروح تمدّ نفسها نحو الله. الحب عنده مقياس لاهوتي.',
       themesAr: ['الدين', 'الحدود', 'الحب الإلهي'],
     },
     {
@@ -374,7 +380,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 - "I love thee w
     },
     {
       device: 'Religious diction',
-      example: 'soul ... ideal grace ... my lost saints ... if God choose',
+      example: 'soul ... ideal Grace ... my lost saints ... if God choose',
       effect:
         "The poem is saturated with religious language. Love becomes a spiritual experience, equivalent to faith. The speaker's past religious doubt is transformed into a new kind of devotion - to her beloved.",
       lineRef: 2,
@@ -499,7 +505,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 's43-4',
-    question: 'What is the effect of "I love thee freely, as men strive for right"?',
+    question: 'What is the effect of "I love thee freely, as men strive for Right"?',
     type: 'multiple-choice',
     options: [
       'Love is easy',
@@ -630,7 +636,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       '"Depth and breadth and height" - love fills all dimensions',
       '"I love thee" anaphora - prayer-like repetition',
-      '"Freely, as men strive for right" - love as moral principle',
+      '"Freely, as men strive for Right" - love as moral principle',
       '"After death" - love transcends mortality',
     ],
   },

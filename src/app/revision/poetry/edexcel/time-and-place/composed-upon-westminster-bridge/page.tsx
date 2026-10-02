@@ -13,9 +13,13 @@ import { useT } from '@/lib/i18n/use-t'
 const westminsterBridge: PoemData = {
   title: 'Composed Upon Westminster Bridge, September 3, 1802',
   poet: 'William Wordsworth',
+  // Printed as the Pearson Edexcel GCSE anthology prints it (Time and Place; Issue 4,
+  // January 2023), checked line by line against the PDF on 2 October 2026. Until then
+  // line 1 had "any thing" where the anthology prints "anything", and lines 3 and 4 had
+  // their own punctuation ("doth like a garment wear" for "doth, like a garment, wear").
   lines: [
     {
-      text: 'Earth has not any thing to show more fair:',
+      text: 'Earth has not anything to show more fair:',
       annotations: [
         {
           type: 'Hyperbole',
@@ -40,7 +44,7 @@ const westminsterBridge: PoemData = {
       ],
     },
     {
-      text: 'A sight so touching in its majesty:',
+      text: 'A sight so touching in its majesty;',
       annotations: [
         {
           type: 'Diction',
@@ -50,7 +54,7 @@ const westminsterBridge: PoemData = {
       ],
     },
     {
-      text: 'This City now doth like a garment wear',
+      text: 'This City now doth, like a garment, wear',
       annotations: [
         {
           type: 'Simile',
@@ -140,7 +144,7 @@ const westminsterBridge: PoemData = {
       ],
     },
     {
-      text: 'Ne\u2019er saw I, never felt, a calm so deep!',
+      text: "Ne'er saw I, never felt, a calm so deep!",
       annotations: [
         {
           type: 'Emotional climax',
@@ -191,12 +195,17 @@ const westminsterBridge: PoemData = {
     },
   ],
 
+  // Until 2 October 2026 this quoted Dorothy Wordsworth's journal with words she did not
+  // write ("no fog", "the houses…seemed insensible to it as the trees") and put the
+  // crossing on 3 September 1802, the date in the title. Her journal dates it 31 July
+  // 1802 (Journals of Dorothy Wordsworth, ed. William Knight, 1897, vol. I, read on
+  // Project Gutenberg, ebook 42856). The quiz question on the date said the same.
   context: `
     <h3>William Wordsworth (1770–1850)</h3>
     <p>Wordsworth was the leading poet of English Romanticism and a great celebrant of the natural world, particularly the Lake District. He believed nature was a source of moral and emotional truth, and spent most of his career writing about rural landscapes.</p>
 
-    <h3>September 3, 1802</h3>
-    <p>The exact date in the title matters. On 3 September 1802, Wordsworth was crossing Westminster Bridge in a coach with his sister Dorothy at dawn, on his way to Dover and France. Dorothy\u2019s journal records the same view: a "spectacle" with "no fog" and "the houses\u2026seemed insensible to it as the trees".</p>
+    <h3>The date in the title</h3>
+    <p>The title dates the poem 3 September 1802, but the dawn crossing that matches it in Dorothy Wordsworth\u2019s journal was on 31 July 1802, when she and William left London on the Dover coach, bound for France. She wrote that the houses "were not overhung by their cloud of smoke", and that the sun shone "with such a fierce light" that the city had "something like the purity of one of nature\u2019s own grand spectacles".</p>
 
     <h3>Romantic poet praising a city</h3>
     <p>It is genuinely surprising for a Romantic to write a love poem to London. Wordsworth\u2019s usual subject matter was nature; cities, in his other writing, are often associated with corruption and over-stimulation. The poem catches an exceptional, fleeting moment when the city looked as beautiful to him as a mountain valley.</p>
@@ -205,15 +214,15 @@ const westminsterBridge: PoemData = {
     <p>By 1802, London was the largest city in Europe and the early stages of the Industrial Revolution had already transformed its skyline. Smoke from coal fires usually shrouded the buildings. The "smokeless air" Wordsworth describes is unique to early morning before the city woke up \u2014 a fragile, fleeting condition.</p>
 
     <h3>Time and Place in this poem</h3>
-    <p>This is a perfect Time and Place poem because it depends so completely on a specific time (dawn, 3 September 1802) and a specific place (Westminster Bridge). The same view, an hour later, would have been entirely different. Wordsworth captures a unique encounter between a person and a place at a precise moment.</p>
+    <p>This is a perfect Time and Place poem because it depends so completely on a specific time (a single dawn in 1802) and a specific place (Westminster Bridge). The same view, an hour later, would have been entirely different. Wordsworth captures a unique encounter between a person and a place at a precise moment.</p>
   `,
 
   contextAr: `
     <h3>William Wordsworth (1770–1850)</h3>
     <p><strong>William Wordsworth</strong> \u0647\u0648 \u0634\u0627\u0639\u0631 \u0627\u0644\u0631\u0648\u0645\u0627\u0646\u0633\u064a\u0629 \u0627\u0644\u0625\u0646\u062c\u0644\u064a\u0632\u064a\u0629 \u0627\u0644\u0623\u0628\u0631\u0632\u060c \u0648\u0645\u0646 \u0623\u0639\u0638\u0645 \u0645\u0646 \u062a\u063a\u0646\u0651\u0649 \u0628\u0627\u0644\u0637\u0628\u064a\u0639\u0629\u060c \u0648\u0628\u0627\u0644\u0623\u062e\u0635 \u0645\u0646\u0637\u0642\u0629 Lake District. \u0643\u0627\u0646 \u064a\u0639\u062a\u0642\u062f \u0625\u0646 \u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u0645\u0635\u062f\u0631 \u0644\u0644\u062d\u0642\u064a\u0642\u0629 \u0627\u0644\u0623\u062e\u0644\u0627\u0642\u064a\u0629 \u0648\u0627\u0644\u0639\u0627\u0637\u0641\u064a\u0629\u060c \u0648\u0642\u0636\u0649 \u0645\u0639\u0638\u0645 \u0645\u0633\u064a\u0631\u062a\u0647 \u0627\u0644\u0634\u0639\u0631\u064a\u0629 \u064a\u0643\u062a\u0628 \u0639\u0646 \u0627\u0644\u0645\u0646\u0627\u0638\u0631 \u0627\u0644\u0631\u064a\u0641\u064a\u0629.</p>
 
-    <h3>3 \u0633\u0628\u062a\u0645\u0628\u0631 1802</h3>
-    <p>\u0627\u0644\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0645\u062d\u062f\u062f \u0641\u064a \u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u0644\u0647 \u0623\u0647\u0645\u064a\u062a\u0647. \u064a\u0648\u0645 3 \u0633\u0628\u062a\u0645\u0628\u0631 1802\u060c \u0643\u0627\u0646 Wordsworth \u064a\u0639\u0628\u0631 \u062c\u0633\u0631 Westminster Bridge \u0641\u064a \u0639\u0631\u0628\u0629 \u0645\u0639 \u0623\u062e\u062a\u0647 Dorothy \u0639\u0646\u062f \u0627\u0644\u0641\u062c\u0631\u060c \u0648\u0647\u0648 \u0641\u064a \u0637\u0631\u064a\u0642\u0647 \u0625\u0644\u0649 Dover \u062b\u0645 France. \u0648\u0645\u0630\u0643\u0631\u0627\u062a Dorothy \u062a\u0633\u062c\u0651\u0644 \u0646\u0641\u0633 \u0627\u0644\u0645\u0646\u0638\u0631: "\u0645\u0634\u0647\u062f" \u0628\u062f\u0648\u0646 \u0636\u0628\u0627\u0628\u060c \u0648\u0627\u0644\u0628\u064a\u0648\u062a \u0643\u0623\u0646\u0647\u0627 "\u063a\u0627\u0641\u0644\u0629 \u0639\u0646 \u0627\u0644\u0641\u062c\u0631 \u0645\u062b\u0644 \u0627\u0644\u0623\u0634\u062c\u0627\u0631".</p>
+    <h3>\u0627\u0644\u062a\u0627\u0631\u064a\u062e \u0641\u064a \u0627\u0644\u0639\u0646\u0648\u0627\u0646</h3>
+    <p>\u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u064a\u0623\u0631\u0651\u062e \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0628\u06403 \u0633\u0628\u062a\u0645\u0628\u0631 1802\u060c \u0628\u0633 \u0627\u0644\u0639\u0628\u0648\u0631 \u0627\u0644\u0644\u064a \u064a\u0637\u0627\u0628\u0642\u0647\u0627 \u0641\u064a \u0645\u0630\u0643\u0631\u0627\u062a \u0623\u062e\u062a\u0647 Dorothy \u0643\u0627\u0646 \u0641\u062c\u0631 \u064a\u0648\u0645 31 \u064a\u0648\u0644\u064a\u0648 1802\u060c \u0644\u0645\u0651\u0627 \u0637\u0644\u0639\u062a \u0647\u064a \u0648William \u0645\u0646 London \u0641\u064a \u0639\u0631\u0628\u0629 Dover\u060c \u0641\u064a \u0637\u0631\u064a\u0642\u0647\u0645 \u0625\u0644\u0649 France. \u0643\u062a\u0628\u062a \u0625\u0646 \u0627\u0644\u0628\u064a\u0648\u062a "were not overhung by their cloud of smoke" (\u0645\u0627 \u0643\u0627\u0646 \u0641\u0648\u0642\u0647\u0627 \u063a\u064a\u0645 \u0627\u0644\u062f\u062e\u0627\u0646 \u0627\u0644\u0645\u0639\u062a\u0627\u062f)\u060c \u0648\u0625\u0646 \u0627\u0644\u0634\u0645\u0633 \u0644\u0645\u0639\u062a "with such a fierce light" \u0644\u062f\u0631\u062c\u0629 \u0625\u0646 \u0627\u0644\u0645\u062f\u064a\u0646\u0629 \u0635\u0627\u0631 \u0641\u064a\u0647\u0627 "something like the purity of one of nature\u2019s own grand spectacles".</p>
 
     <h3>\u0634\u0627\u0639\u0631 \u0631\u0648\u0645\u0627\u0646\u0633\u064a \u064a\u0645\u062f\u062d \u0645\u062f\u064a\u0646\u0629</h3>
     <p>\u0627\u0644\u0634\u064a \u0627\u0644\u0644\u064a \u064a\u0633\u062a\u063a\u0631\u0628 \u0627\u0644\u0648\u0627\u062d\u062f \u0641\u0639\u0644\u0627\u064b \u0647\u0648 \u0625\u0646 \u0634\u0627\u0639\u0631 \u0631\u0648\u0645\u0627\u0646\u0633\u064a \u064a\u0643\u062a\u0628 \u0642\u0635\u064a\u062f\u0629 \u062d\u0628 \u0644\u0644\u0646\u062f\u0646. \u0645\u0648\u0636\u0648\u0639 Wordsworth \u0627\u0644\u0645\u0639\u062a\u0627\u062f \u0647\u0648 \u0627\u0644\u0637\u0628\u064a\u0639\u0629\u060c \u0648\u0627\u0644\u0645\u062f\u0646 \u0641\u064a \u0643\u062a\u0627\u0628\u0627\u062a\u0647 \u0627\u0644\u0623\u062e\u0631\u0649 \u062a\u0631\u062a\u0628\u0637 \u0639\u0627\u062f\u0629 \u0628\u0627\u0644\u0641\u0633\u0627\u062f \u0648\u0627\u0644\u0625\u0641\u0631\u0627\u0637 \u0627\u0644\u062d\u0633\u064a. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0644\u062a\u0642\u0637 \u0644\u062d\u0638\u0629 \u0627\u0633\u062a\u062b\u0646\u0627\u0626\u064a\u0629 \u0639\u0627\u0628\u0631\u0629 \u0644\u0645\u0651\u0627 \u0634\u0627\u0641 \u0627\u0644\u0645\u062f\u064a\u0646\u0629 \u062c\u0645\u064a\u0644\u0629 \u0642\u062f \u062c\u0645\u0627\u0644 \u0623\u064a \u0648\u0627\u062f\u064a \u062c\u0628\u0644\u064a.</p>
@@ -222,7 +231,7 @@ const westminsterBridge: PoemData = {
     <p>\u0628\u062d\u0644\u0648\u0644 \u0633\u0646\u0629 1802\u060c \u0643\u0627\u0646\u062a London \u0623\u0643\u0628\u0631 \u0645\u062f\u064a\u0646\u0629 \u0641\u064a \u0623\u0648\u0631\u0648\u0628\u0627\u060c \u0648\u0643\u0627\u0646\u062a \u0627\u0644\u0645\u0631\u0627\u062d\u0644 \u0627\u0644\u0645\u0628\u0643\u0631\u0629 \u0645\u0646 \u0627\u0644\u062b\u0648\u0631\u0629 \u0627\u0644\u0635\u0646\u0627\u0639\u064a\u0629 \u0642\u062f \u063a\u064a\u0651\u0631\u062a \u0645\u0639\u0627\u0644\u0645 \u0627\u0644\u0645\u062f\u064a\u0646\u0629. \u0627\u0644\u062f\u062e\u0627\u0646 \u0645\u0646 \u062d\u0631\u0642 \u0627\u0644\u0641\u062d\u0645 \u0643\u0627\u0646 \u064a\u063a\u0637\u0651\u064a \u0627\u0644\u0645\u0628\u0627\u0646\u064a \u0639\u0627\u062f\u0629. "smokeless air" \u0627\u0644\u0644\u064a \u064a\u0635\u0641\u0647\u0627 Wordsworth \u062e\u0627\u0635\u0629 \u0628\u0633\u0627\u0639\u0629 \u0627\u0644\u0641\u062c\u0631 \u0627\u0644\u0623\u0648\u0644\u0649 \u0642\u0628\u0644 \u0645\u0627 \u062a\u0633\u062a\u0641\u064a\u0642 \u0627\u0644\u0645\u062f\u064a\u0646\u0629 \u2014 \u062d\u0627\u0644\u0629 \u0647\u0634\u0651\u0629 \u0639\u0627\u0628\u0631\u0629.</p>
 
     <h3>\u0627\u0644\u0632\u0645\u0627\u0646 \u0648\u0627\u0644\u0645\u0643\u0627\u0646 \u0641\u064a \u0647\u0627\u0644\u0642\u0635\u064a\u062f\u0629</h3>
-    <p>\u0647\u064a \u0642\u0635\u064a\u062f\u0629 \u0645\u062b\u0627\u0644\u064a\u0629 \u0644\u0645\u062c\u0645\u0648\u0639\u0629 Time and Place \u0644\u0623\u0646\u0647\u0627 \u062a\u0639\u062a\u0645\u062f \u0643\u0644\u0651\u064a\u0627\u064b \u0639\u0644\u0649 \u0632\u0645\u0627\u0646 \u0645\u062d\u062f\u062f (\u0627\u0644\u0641\u062c\u0631\u060c 3 \u0633\u0628\u062a\u0645\u0628\u0631 1802) \u0648\u0645\u0643\u0627\u0646 \u0645\u062d\u062f\u062f (Westminster Bridge). \u0646\u0641\u0633 \u0627\u0644\u0645\u0646\u0638\u0631\u060c \u0628\u0639\u062f \u0633\u0627\u0639\u0629\u060c \u0643\u0627\u0646 \u0628\u064a\u062e\u062a\u0644\u0641 \u062a\u0645\u0627\u0645\u0627\u064b. Wordsworth \u064a\u0644\u062a\u0642\u0637 \u0644\u0642\u0627\u0621 \u0641\u0631\u064a\u062f \u0628\u064a\u0646 \u0625\u0646\u0633\u0627\u0646 \u0648\u0645\u0643\u0627\u0646 \u0641\u064a \u0644\u062d\u0638\u0629 \u062f\u0642\u064a\u0642\u0629.</p>
+    <p>\u0647\u064a \u0642\u0635\u064a\u062f\u0629 \u0645\u062b\u0627\u0644\u064a\u0629 \u0644\u0645\u062c\u0645\u0648\u0639\u0629 Time and Place \u0644\u0623\u0646\u0647\u0627 \u062a\u0639\u062a\u0645\u062f \u0643\u0644\u0651\u064a\u0627\u064b \u0639\u0644\u0649 \u0632\u0645\u0627\u0646 \u0645\u062d\u062f\u062f (\u0641\u062c\u0631 \u0648\u0627\u062d\u062f \u0641\u064a \u0633\u0646\u0629 1802) \u0648\u0645\u0643\u0627\u0646 \u0645\u062d\u062f\u062f (Westminster Bridge). \u0646\u0641\u0633 \u0627\u0644\u0645\u0646\u0638\u0631\u060c \u0628\u0639\u062f \u0633\u0627\u0639\u0629\u060c \u0643\u0627\u0646 \u0628\u064a\u062e\u062a\u0644\u0641 \u062a\u0645\u0627\u0645\u0627\u064b. Wordsworth \u064a\u0644\u062a\u0642\u0637 \u0644\u0642\u0627\u0621 \u0641\u0631\u064a\u062f \u0628\u064a\u0646 \u0625\u0646\u0633\u0627\u0646 \u0648\u0645\u0643\u0627\u0646 \u0641\u064a \u0644\u062d\u0638\u0629 \u062f\u0642\u064a\u0642\u0629.</p>
   `,
 
   summary: `Octave (lines 1\u20138): Wordsworth opens with a hyperbolic claim: nothing on earth is more beautiful than the view from Westminster Bridge at dawn. Anyone unmoved must be spiritually dead. He describes the city wearing "the beauty of the morning" like a garment, listing the ships, towers, domes, theatres and temples that lie open to the fields and sky. The crucial detail is "smokeless air" \u2014 the factories have not yet started for the day.
@@ -267,7 +276,7 @@ Metre: iambic pentameter (\u0639\u0634\u0631\u0629 \u0645\u0642\u0627\u0637\u063
 
   keyQuotes: [
     {
-      quote: 'Earth has not any thing to show more fair',
+      quote: 'Earth has not anything to show more fair',
       analysis:
         'A hyperbolic opening that immediately establishes the speaker\u2019s awe. Coming from Wordsworth, this praise of a city is genuinely shocking \u2014 the great poet of nature ranks London above the natural world. The line frames the entire sonnet as a moment of surprise.',
       themes: ['City', 'Beauty', 'Awe'],
@@ -380,7 +389,7 @@ Metre: iambic pentameter (\u0639\u0634\u0631\u0629 \u0645\u0642\u0627\u0637\u063
   languageDevices: [
     {
       device: 'Hyperbole',
-      example: 'Earth has not any thing to show more fair',
+      example: 'Earth has not anything to show more fair',
       effect:
         'The exaggerated opening claim sets the entire poem\u2019s tone. Wordsworth is not making a measured statement \u2014 he is overwhelmed. The hyperbole forces the reader to take the rest of the poem as a record of genuine awe rather than careful description.',
       lineRef: 0,
@@ -510,7 +519,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: 'wb-4',
     question:
-      'What does "The city now doth like a garment wear / The beauty of the morning" suggest?',
+      'What does "This City now doth, like a garment, wear / The beauty of the morning" suggest?',
     type: 'multiple-choice',
     options: [
       'The city is ugly',
@@ -544,15 +553,10 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'wb-6',
     question: 'When was the poem written?',
     type: 'multiple-choice',
-    options: [
-      '1850',
-      '1802, on 3 September, during a journey through London at dawn',
-      '1794',
-      '1818',
-    ],
+    options: ['1850', '1802', '1794', '1818'],
     correctIndex: 1,
     explanation:
-      'Written on 3 September 1802 as Wordsworth crossed Westminster Bridge at dawn on his way to France with his sister Dorothy.',
+      "The title dates it 3 September 1802. The dawn crossing that matches it in Dorothy Wordsworth's journal was on 31 July 1802, when she and William took the Dover coach on their way to France.",
     topic: 'Context',
     difficulty: 'higher',
   },

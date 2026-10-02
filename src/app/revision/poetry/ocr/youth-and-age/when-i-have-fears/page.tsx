@@ -15,6 +15,12 @@ import { useT } from '@/lib/i18n/use-t'
 const whenIHaveFears: PoemData = {
   title: 'When I Have Fears',
   poet: 'John Keats',
+  // In OCR's anthology until OCR revised it in 2022 (see the notice on this page). Printed
+  // as the September 2020 edition of Towards a World Unknown prints it, OCR's last printing
+  // of the poem, checked line by line against the PDF on 2 October 2026. Until then the
+  // page had "gleaned", "high-pilèd", "charactery", "full ripened" and "starred" where OCR
+  // prints "glean'd", "high pilèd", "charact'ry", "full-ripen'd" and "starr'd", "love and
+  // fame" for its "Love and Fame", and its own punctuation in lines 9, 12 and 13.
   lines: [
     {
       text: 'When I have fears that I may cease to be',
@@ -37,11 +43,11 @@ const whenIHaveFears: PoemData = {
       ],
     },
     {
-      text: 'Before my pen has gleaned my teeming brain,',
+      text: "Before my pen has glean'd my teeming brain,",
       annotations: [
         {
           type: 'Metaphor',
-          note: '"Gleaned" -- to gather grain after the harvest. Keats compares his mind to a field full of crops and his pen to a harvester. He fears dying before his pen can collect everything inside his head.',
+          note: '"Glean\'d" -- to gather grain after the harvest. Keats compares his mind to a field full of crops and his pen to a harvester. He fears dying before his pen can collect everything inside his head.',
           color: '#10b981',
         },
         {
@@ -52,26 +58,26 @@ const whenIHaveFears: PoemData = {
       ],
     },
     {
-      text: 'Before high-pilèd books, in charactery,',
+      text: "Before high pilèd books, in charact'ry,",
       annotations: [
         {
           type: 'Imagery',
-          note: '"High-pilèd books" -- great stacks of books that he has not yet written. Keats imagines all the unwritten poetry as physical books towering up. The image is ambitious: he wants a long, productive career.',
+          note: '"High pilèd books" -- great stacks of books that he has not yet written. Keats imagines all the unwritten poetry as physical books towering up. The image is ambitious: he wants a long, productive career.',
           color: '#10b981',
         },
         {
           type: 'Diction',
-          note: '"Charactery" -- writing or characters (letters). An old-fashioned word that gives the line a slightly archaic, elevated tone.',
+          note: '"Charact\'ry" (charactery, with a syllable dropped) -- writing or characters (letters). An old-fashioned word that gives the line a slightly archaic, elevated tone.',
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: 'Hold like rich garners the full ripened grain;',
+      text: "Hold like rich garners the full-ripen'd grain;",
       annotations: [
         {
           type: 'Extended metaphor',
-          note: '"Garners" -- granaries (storehouses for grain). The harvesting metaphor continues: books are storehouses, holding the "full ripened grain" of his thoughts. Writing is like reaping a harvest.',
+          note: '"Garners" -- granaries (storehouses for grain). The harvesting metaphor continues: books are storehouses, holding the "full-ripen\'d grain" of his thoughts. Writing is like reaping a harvest.',
           color: '#10b981',
         },
         {
@@ -82,7 +88,7 @@ const whenIHaveFears: PoemData = {
       ],
     },
     {
-      text: "When I behold, upon the night's starred face,",
+      text: "When I behold, upon the night's starr'd face,",
       annotations: [
         {
           type: 'Anaphora',
@@ -91,7 +97,7 @@ const whenIHaveFears: PoemData = {
         },
         {
           type: 'Personification',
-          note: '"Night\'s starred face" -- the night is given a face decorated with stars. The cosmos becomes a person looking down at him.',
+          note: '"Night\'s starr\'d face" -- the night is given a face decorated with stars. The cosmos becomes a person looking down at him.',
           color: '#10b981',
         },
       ],
@@ -137,7 +143,7 @@ const whenIHaveFears: PoemData = {
       ],
     },
     {
-      text: 'And when I feel, fair creature of an hour!',
+      text: 'And when I feel, fair creature of an hour,',
       annotations: [
         {
           type: 'Anaphora',
@@ -172,7 +178,7 @@ const whenIHaveFears: PoemData = {
       ],
     },
     {
-      text: 'Of unreflecting love;-then on the shore',
+      text: 'Of unreflecting love;—then on the shore',
       annotations: [
         {
           type: 'Volta',
@@ -187,7 +193,7 @@ const whenIHaveFears: PoemData = {
       ],
     },
     {
-      text: 'Of the wide world I stand alone, and think',
+      text: 'Of the wide world I stand alone, and think,',
       annotations: [
         {
           type: 'Imagery',
@@ -202,11 +208,11 @@ const whenIHaveFears: PoemData = {
       ],
     },
     {
-      text: 'Till love and fame to nothingness do sink.',
+      text: 'Till Love and Fame to nothingness do sink.',
       annotations: [
         {
           type: 'Resolution',
-          note: 'The poem ends with the speaker realising that, faced with the vastness of the world and death, both "love and fame" -- the very things he was afraid of losing -- become meaningless. They "sink to nothingness".',
+          note: 'The poem ends with the speaker realising that, faced with the vastness of the world and death, both "Love and Fame" -- the very things he was afraid of losing -- become meaningless. They "to nothingness do sink".',
           color: '#ef4444',
         },
         {
@@ -246,23 +252,23 @@ const whenIHaveFears: PoemData = {
     <p>الباحثون عادة يعرّفون "fair creature of an hour" في القصيدة على إنها امرأة شابة قابلها Keats قبالة قصيرة، ممكن في Vauxhall Gardens. هو ما قابل حبّه الكبير، Fanny Brawne، إلا بعد ذلك في 1818. القصيدة تتعامل مع الحب نفسه على إنه عابر: حتى أكثر اللي نحبّهم هم "of an hour".</p>
   `,
 
-  summary: `Quatrain 1 (lines 1--4): The speaker fears dying ("ceasing to be") before he can write down all the poetry that fills his "teeming brain". He uses a harvest metaphor: his thoughts are crops and his pen the harvester, and his unwritten books should be storehouses ("garners") full of "ripened grain". He fears the harvest of his mind will never be reaped.
+  summary: `Quatrain 1 (lines 1--4): The speaker fears dying ("cease to be") before he can write down all the poetry that fills his "teeming brain". He uses a harvest metaphor: his thoughts are crops and his pen the harvester, and his unwritten books should be storehouses ("garners") holding "the full-ripen'd grain". He fears the harvest of his mind will never be reaped.
 
 Quatrain 2 (lines 5--8): He fears never being able to capture in words the "huge cloudy symbols" he sees in the night sky -- the vast mythic and imaginative subjects he wants to write about. Even tracing their "shadows" requires the magic of inspiration ("the magic hand of chance"), and he may not live long enough.
 
 Quatrain 3 (lines 9--12): He addresses a "fair creature of an hour" -- a beloved woman -- and fears never seeing her again or experiencing the "faery power" of "unreflecting love" (love that does not stop to think).
 
-Couplet (lines 12--14): The poem turns. Standing alone on the "shore / Of the wide world", Keats reflects on his fears. In the face of the vastness of the world and death, he concludes that both "love and fame" -- the things he was afraid of losing -- "sink to nothingness". This is a paradoxical comfort: if they are nothing, losing them is no loss.
+Couplet (lines 12--14): The poem turns. Standing alone on the "shore / Of the wide world", Keats reflects on his fears. In the face of the vastness of the world and death, he concludes that both "Love and Fame" -- the things he was afraid of losing -- "to nothingness do sink". This is a paradoxical comfort: if they are nothing, losing them is no loss.
 
 Overall meaning: The poem is a young man\'s confrontation with the prospect of an early death. He lists the things he fears losing: poetry, wonder, love. But the volta brings a strange consolation -- in the face of mortality, even the most important things become small. Whether this is genuine peace or bleak resignation is left for the reader to decide.`,
 
-  summaryAr: `Quatrain 1 (الأبيات 1-4): المتكلّم يخاف يموت ("cease to be") قبل ما يقدر يكتب كل الشعر اللي يملأ "teeming brain". يستخدم استعارة الحصاد: أفكاره محاصيل، وقلمه الحاصد، وكتبه اللي ما كتبها لازم تكون مخازن ("garners") مليانة "ripened grain". يخاف إن حصاد عقله ما يتمّ أبداً.
+  summaryAr: `Quatrain 1 (الأبيات 1-4): المتكلّم يخاف يموت ("cease to be") قبل ما يقدر يكتب كل الشعر اللي يملأ "teeming brain". يستخدم استعارة الحصاد: أفكاره محاصيل، وقلمه الحاصد، وكتبه اللي ما كتبها لازم تكون مخازن ("garners") فيها "the full-ripen'd grain". يخاف إن حصاد عقله ما يتمّ أبداً.
 
 Quatrain 2 (الأبيات 5-8): يخاف إنه ما يقدر يلتقط بالكلمات "huge cloudy symbols" اللي يشوفها في سما الليل - المواضيع الأسطورية والخيالية الواسعة اللي يبغي يكتب عنها. حتى تتبّع "shadows" يتطلّب سحر الإلهام ("the magic hand of chance")، وممكن ما يعيش لمدة كافية.
 
 Quatrain 3 (الأبيات 9-12): يخاطب "fair creature of an hour" - امرأة محبوبة - ويخاف ما يشوفها مرة ثانية ولا يجرّب "faery power" لـ"unreflecting love" (الحب اللي ما يتوقّف يفكّر).
 
-Couplet (الأبيات 12-14): القصيدة تتحوّل. وهو واقف بروحه على "shore / Of the wide world"، Keats يتأمّل في مخاوفه. أمام شساعة العالم والموت، يستنتج إن "love and fame" - الأشياء اللي خاف يفقدها - "sink to nothingness". هذي عزاء مفارقة: إذا كانت لا شي، ففقدها مو خسارة.
+Couplet (الأبيات 12-14): القصيدة تتحوّل. وهو واقف بروحه على "shore / Of the wide world"، Keats يتأمّل في مخاوفه. أمام شساعة العالم والموت، يستنتج إن "Love and Fame" - الأشياء اللي خاف يفقدها - "to nothingness do sink". هذي عزاء مفارقة: إذا كانت لا شي، ففقدها مو خسارة.
 
 المعنى العام: القصيدة مواجهة شاب لاحتمال موت مبكّر. يعدّد الأشياء اللي يخاف يفقدها: الشعر، والدهشة، والحب. لكن الـvolta تجيب عزاء غريب - أمام الموت، حتى أهم الأشياء تصير صغيرة. تركَ للقارئ يقرّر إذا هذا سلام حقيقي ولّا استسلام كئيب.`,
 
@@ -272,9 +278,9 @@ Metre: Iambic pentameter -- ten syllables per line, with five iambs (unstressed-
 
 Three quatrains, three fears: Each quatrain introduces a different fear, signalled by "When..." -- a structure called anaphora. Quatrain 1: fear of not writing his poetry. Quatrain 2: fear of not capturing his cosmic visions. Quatrain 3: fear of losing love. The fears progress from public (poetry, fame) to private (love).
 
-Volta: The traditional sonnet "turn" comes at line 12 -- "-then on the shore". The dash is dramatic: it physically marks the moment when Keats stops piling up fears and begins to respond to them. After the turn, the tone shifts from anxious to contemplative.
+Volta: The traditional sonnet "turn" comes at line 12 -- "love;—then on the shore". The dash is dramatic: it physically marks the moment when Keats stops piling up fears and begins to respond to them. After the turn, the tone shifts from anxious to contemplative.
 
-Closing couplet: The final two lines deliver the resolution. Like all Shakespearean sonnets, the couplet provides a punchy summary of the argument. Keats arrives at a paradoxical comfort: in the face of vastness and death, "love and fame to nothingness do sink".
+Closing couplet: The final two lines deliver the resolution. Like all Shakespearean sonnets, the couplet provides a punchy summary of the argument. Keats arrives at a paradoxical comfort: in the face of vastness and death, "Love and Fame to nothingness do sink".
 
 Extended metaphor: Quatrain 1 contains a sustained agricultural metaphor -- gleaning, books as garners, ripened grain. This makes the writing of poetry feel like a natural, organic process that requires time to mature.
 
@@ -286,9 +292,9 @@ Metre (الوزن): iambic pentameter - عشرة مقاطع في كل بيت، �
 
 ثلاث quatrains، ثلاث مخاوف: كل quatrain يقدّم خوف مختلف، يبدأ بـ"When..." - تركيب يسمّى anaphora. Quatrain 1: خوف ما يكتب شعره. Quatrain 2: خوف ما يلتقط رؤاه الكونية. Quatrain 3: خوف يفقد الحب. المخاوف تتدرّج من العام (الشعر، الشهرة) إلى الخاص (الحب).
 
-Volta: التحوّل التقليدي في الـsonnet يصير في البيت 12 - "-then on the shore". الشرطة دراماتيكية: تعلّم مادّياً اللحظة اللي Keats يوقف فيها عن تكديس المخاوف ويبدأ يردّ عليها. بعد التحوّل، النبرة تتغيّر من قلقة إلى متأمّلة.
+Volta: التحوّل التقليدي في الـsonnet يصير في البيت 12 - "love;—then on the shore". الشرطة دراماتيكية: تعلّم مادّياً اللحظة اللي Keats يوقف فيها عن تكديس المخاوف ويبدأ يردّ عليها. بعد التحوّل، النبرة تتغيّر من قلقة إلى متأمّلة.
 
-الـCouplet الختامي: البيتان الأخيران يوصلون لحلّ. مثل كل sonnets شيكسبيرية، الـcouplet يقدّم تلخيص قاطع للحجّة. Keats يوصل لعزاء مفارقة: أمام الشساعة والموت، "love and fame to nothingness do sink".
+الـCouplet الختامي: البيتان الأخيران يوصلون لحلّ. مثل كل sonnets شيكسبيرية، الـcouplet يقدّم تلخيص قاطع للحجّة. Keats يوصل لعزاء مفارقة: أمام الشساعة والموت، "Love and Fame to nothingness do sink".
 
 استعارة ممتدّة: Quatrain 1 يحتوي على استعارة زراعية مستمرّة - gleaning، وكتب كـgarners، وripened grain. هذا يخلّي كتابة الشعر تحسّ بأنها عملية طبيعية عضوية تحتاج وقت عشان تنضج.
 
@@ -305,7 +311,7 @@ Volta: التحوّل التقليدي في الـsonnet يصير في البي�
       themesAr: ['الموت', 'الخوف', 'الاعتراف الذاتي'],
     },
     {
-      quote: 'Before my pen has gleaned my teeming brain',
+      quote: "Before my pen has glean'd my teeming brain",
       analysis:
         'A vivid agricultural metaphor: his brain is a field full of grain ("teeming") and his pen is the harvester ("gleaning" means to pick up grain after a harvest). His fear is that he will die before all his poetry can be reaped. The image makes creativity feel organic and natural -- and finite.',
       themes: ['Creativity', 'Unfulfilled potential', 'Time'],
@@ -314,12 +320,12 @@ Volta: التحوّل التقليدي في الـsonnet يصير في البي�
       themesAr: ['الإبداع', 'الإمكانات المتعثّرة', 'الوقت'],
     },
     {
-      quote: 'high-pilèd books, in charactery, / Hold like rich garners the full ripened grain',
+      quote: "high pilèd books, in charact'ry, / Hold like rich garners the full-ripen'd grain",
       analysis:
-        'The harvest metaphor is sustained: books are "garners" (granaries) and his thoughts are "ripened grain". The image of "high-pilèd books" suggests vast literary ambition -- he imagines a long career producing many volumes. He fears never building that pile.',
+        'The harvest metaphor is sustained: books are "garners" (granaries) and his thoughts are "full-ripen\'d grain". The image of "high pilèd books" suggests vast literary ambition -- he imagines a long career producing many volumes. He fears never building that pile.',
       themes: ['Ambition', 'Creativity', 'Harvest imagery'],
       analysisAr:
-        'استعارة الحصاد مستمرّة: الكتب "garners" (مخازن حبوب)، وأفكاره "ripened grain". وصورة "high-pilèd books" تلمّح لطموح أدبي واسع - هو يتصوّر مسيرة طويلة ينتج فيها مجلّدات كثيرة. يخاف ما يبني هالكومة أبداً.',
+        'استعارة الحصاد مستمرّة: الكتب "garners" (مخازن حبوب)، وأفكاره "full-ripen\'d grain". وصورة "high pilèd books" تلمّح لطموح أدبي واسع - هو يتصوّر مسيرة طويلة ينتج فيها مجلّدات كثيرة. يخاف ما يبني هالكومة أبداً.',
       themesAr: ['الطموح', 'الإبداع', 'صور الحصاد'],
     },
     {
@@ -342,12 +348,12 @@ Volta: التحوّل التقليدي في الـsonnet يصير في البي�
     },
     {
       quote:
-        'on the shore / Of the wide world I stand alone, and think / Till love and fame to nothingness do sink',
+        'on the shore / Of the wide world I stand alone, and think, / Till Love and Fame to nothingness do sink',
       analysis:
-        'The poem\'s closing image and resolution. The speaker stands alone on the edge of the world, contemplating its vastness. The famous final line concludes that, faced with mortality, even "love and fame" become nothing. This is paradoxical: it could be read as peaceful (his fears were misplaced) or bleak (everything is meaningless). Keats leaves the ambiguity for the reader.',
+        'The poem\'s closing image and resolution. The speaker stands alone on the edge of the world, contemplating its vastness. The famous final line concludes that, faced with mortality, even "Love and Fame" become nothing. This is paradoxical: it could be read as peaceful (his fears were misplaced) or bleak (everything is meaningless). Keats leaves the ambiguity for the reader.',
       themes: ['Resolution', 'Insignificance', 'Meaninglessness'],
       analysisAr:
-        'الصورة الختامية والحلّ في القصيدة. المتكلّم يقف وحده على حافة العالم، يتأمّل في شساعته. والبيت الأخير الشهير يستنتج إنه، أمام الموت، حتى "love and fame" تصير لا شي. وهذا تناقض: يمكن يُقرأ هادي (مخاوفه كانت في غير محلّها) أو كئيب (كل شي بلا معنى). Keats يترك الغموض للقارئ.',
+        'الصورة الختامية والحلّ في القصيدة. المتكلّم يقف وحده على حافة العالم، يتأمّل في شساعته. والبيت الأخير الشهير يستنتج إنه، أمام الموت، حتى "Love and Fame" تصير لا شي. وهذا تناقض: يمكن يُقرأ هادي (مخاوفه كانت في غير محلّها) أو كئيب (كل شي بلا معنى). Keats يترك الغموض للقارئ.',
       themesAr: ['الحلّ', 'انعدام الأهمية', 'انعدام المعنى'],
     },
   ],
@@ -370,7 +376,7 @@ Volta: التحوّل التقليدي في الـsonnet يصير في البي�
     },
     {
       device: 'Extended metaphor',
-      example: 'gleaned... teeming brain... high-pilèd books... rich garners... ripened grain',
+      example: "glean'd... teeming brain... high pilèd books... rich garners... full-ripen'd grain",
       effect:
         'Quatrain 1 sustains a single agricultural metaphor across four lines. Writing becomes harvesting; the brain becomes a field; books become granaries. The metaphor makes creativity feel organic and natural -- and shows how much labour is required to bring it to fruition.',
       lineRef: 1,
@@ -379,7 +385,7 @@ Volta: التحوّل التقليدي في الـsonnet يصير في البي�
     },
     {
       device: 'Personification',
-      example: "night's starred face",
+      example: "night's starr'd face",
       effect:
         'The night is given a face, decorated with stars. This transforms the cosmos into a watching presence. By giving the night a face, Keats makes the universe feel personal and animate.',
       lineRef: 4,
@@ -455,7 +461,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'wihf-2',
-    question: 'What does "high-piled books in charactery" mean?',
+    question: 'What does "high pilèd books, in charact\'ry" mean?',
     type: 'multiple-choice',
     options: [
       'A library',
@@ -465,7 +471,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Keats imagines the many books he hopes to fill with his poetry. "High-piled" suggests abundance; "charactery" means written characters. His creative ambition is vast.',
+      'Keats imagines the many books he hopes to fill with his poetry. "High pilèd" suggests abundance; "charact\'ry" means written characters. His creative ambition is vast.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -497,7 +503,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"Cease to be" is a gentle euphemism for death. Keats used the same phrase in Ode to a Nightingale ("half in love with easeful Death"). It reflects his constant awareness of mortality.',
+      '"Cease to be" is a gentle euphemism for death. Keats returns to the idea in Ode to a Nightingale, where he is "half in love with easeful Death" and longs "To cease upon the midnight with no pain". It reflects his constant awareness of mortality.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -539,7 +545,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It offers hope',
-      '"Love and fame to nothingness do sink" - facing the void, both love and ambition seem insignificant. The resolution is bleak contemplation.',
+      '"Love and Fame to nothingness do sink" - facing the void, both love and ambition seem insignificant. The resolution is bleak contemplation.',
       'It celebrates life',
       'It promises immortality',
     ],
@@ -571,7 +577,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He is a farmer',
-      '"Before my pen has gleaned my teeming brain" - his brain is a field full of grain; his pen must harvest it. Death threatens before the harvest is complete.',
+      '"Before my pen has glean\'d my teeming brain" - his brain is a field full of grain; his pen must harvest it. Death threatens before the harvest is complete.',
       'He enjoys autumn',
       'The metaphor is about food',
     ],
@@ -611,10 +617,10 @@ const REVISION_TOPICS = [
     summary:
       'Keats uses harvest metaphor, celestial imagery, and the poignant euphemism "cease to be" to explore mortality.',
     keyPoints: [
-      '"Gleaned my teeming brain" - harvest metaphor for creativity',
+      '"Glean\'d my teeming brain" - harvest metaphor for creativity',
       "\"Night's starr'd face\" - beauty Keats fears he'll never capture",
       '"Cease to be" - gentle euphemism for death',
-      '"Love and fame to nothingness do sink" - bleak conclusion',
+      '"Love and Fame to nothingness do sink" - bleak conclusion',
     ],
   },
   {

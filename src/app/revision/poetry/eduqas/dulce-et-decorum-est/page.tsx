@@ -15,6 +15,13 @@ import EduqasPreviousAnthologyNotice from '../_components/EduqasPreviousAntholog
 const dulce: PoemData = {
   title: 'Dulce et Decorum Est',
   poet: 'Wilfred Owen',
+  // Printed as the Eduqas anthology examined until summer 2026 prints it (WJEC Eduqas GCSE
+  // Poetry Anthology, 2014), checked line by line against the PDF on 2 October 2026. The
+  // anthology sets the second "GAS" in line 9 in small capitals, printed here as "GAS"; the
+  // PDF's text layer reads it as "Gas", so check the printed page, not extracted text.
+  // Until then the page had commas the anthology does not print in lines 3, 5 and 17,
+  // "gas-shells" for its "gas shells", and hyphens and three full stops where it prints
+  // dashes and an ellipsis.
   lines: [
     {
       text: 'Bent double, like old beggars under sacks,',
@@ -47,7 +54,7 @@ const dulce: PoemData = {
       ],
     },
     {
-      text: 'Till on the haunting flares we turned our backs,',
+      text: 'Till on the haunting flares we turned our backs',
       annotations: [
         {
           type: 'Diction',
@@ -67,7 +74,7 @@ const dulce: PoemData = {
       ],
     },
     {
-      text: 'Men marched asleep. Many had lost their boots,',
+      text: 'Men marched asleep. Many had lost their boots',
       annotations: [
         {
           type: 'Imagery',
@@ -102,7 +109,7 @@ const dulce: PoemData = {
       ],
     },
     {
-      text: 'Of gas-shells dropping softly behind.',
+      text: 'Of gas shells dropping softly behind.',
       annotations: [
         {
           type: 'Foreshadowing',
@@ -111,8 +118,9 @@ const dulce: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
-      text: 'Gas! GAS! Quick, boys!-An ecstasy of fumbling,',
+      text: 'Gas! GAS! Quick, boys! – An ecstasy of fumbling,',
       annotations: [
         {
           type: 'Capitalisation',
@@ -152,7 +160,7 @@ const dulce: PoemData = {
       ],
     },
     {
-      text: "And flound'ring like a man in fire or lime...",
+      text: "And flound'ring like a man in fire or lime …",
       annotations: [
         {
           type: 'Simile',
@@ -186,6 +194,7 @@ const dulce: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: 'In all my dreams, before my helpless sight,',
       annotations: [
@@ -211,8 +220,9 @@ const dulce: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
-      text: 'If in some smothering dreams, you too could pace',
+      text: 'If in some smothering dreams you too could pace',
       annotations: [
         {
           type: 'Direct address',
@@ -282,7 +292,7 @@ const dulce: PoemData = {
       ],
     },
     {
-      text: 'Of vile, incurable sores on innocent tongues,-',
+      text: 'Of vile, incurable sores on innocent tongues, –',
       annotations: [
         {
           type: 'Imagery',
@@ -458,7 +468,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" - الانتقال المفا
       themesAr: ['حقيقة الحرب', 'الإذلال', 'مضادّ للبطولة'],
     },
     {
-      quote: 'GAS! Quick, boys! - An ecstasy of fumbling',
+      quote: 'GAS! Quick, boys! – An ecstasy of fumbling',
       analysis:
         'The capitalisation captures the rising panic. The oxymoron "ecstasy of fumbling" pairs an emotion of joy with frantic incompetence. "Ecstasy" comes from a Greek word meaning "standing outside oneself" - the soldiers are dissociated by terror.',
       themes: ['Panic', 'Trauma', 'Sudden violence'],
@@ -536,16 +546,16 @@ Volta: في تحوّلان. الأول "Gas! GAS!" - الانتقال المفا
         'guttering, choking, drowning ... the blood / Come gargling from the froth-corrupted lungs',
       effect:
         'Owen forces the reader to see, hear, and almost taste the horror. The sensory details are deliberately graphic and unpleasant. The reader cannot look away - just as the speaker cannot escape the memory.',
-      lineRef: 15,
+      lineRef: 17,
       effectAr:
         'Owen يجبر القارئ يشوف ويسمع ويتذوّق الرعب تقريباً. التفاصيل الحسّية فاحشة ومزعجة عمداً. والقارئ ما يقدر يبعد نظره - تماماً مثل ما المتكلّم ما يقدر يهرب من الذكرى.',
     },
     {
       device: 'Direct address',
-      example: 'If in some smothering dreams, you too could pace ... My friend',
+      example: 'If in some smothering dreams you too could pace ... My friend',
       effect:
         'In the final stanza, Owen addresses the reader directly, especially those who romanticise war. The "you" forces complicity. We are no longer passive witnesses - we are part of the lie if we don\'t see the truth.',
-      lineRef: 16,
+      lineRef: 19,
       effectAr:
         'في المقطع الأخير، Owen يخاطب القارئ بشكل مباشر، وبالأخص اللي يرومنسون الحرب. الضمير "you" يفرض الشراكة. ما عدنا شاهدين سلبيين - صرنا جزء من الكذبة لو ما شفنا الحقيقة.',
     },
@@ -554,7 +564,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" - الانتقال المفا
       example: 'Gas! GAS! Quick, boys!',
       effect:
         'The poem accelerates from slow, exhausted trudging to immediate panic. The shift in pace mirrors the unpredictability of war - peace and horror are seconds apart.',
-      lineRef: 8,
+      lineRef: 9,
       effectAr:
         'القصيدة تتسارع من مشية بطيئة ومرهَقة إلى ذعر فوري. والانتقال في الإيقاع يعكس عدم القابلية للتنبّؤ في الحرب - السكينة والرعب ما بينهم إلا ثواني.',
     },
@@ -563,7 +573,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" - الانتقال المفا
       example: 'Dulce et decorum est / Pro patria mori',
       effect:
         "Owen quotes Horace's patriotic motto only to demolish it. The Latin sounds high-minded and noble - until you place it after the description of a man drowning in poison gas. The juxtaposition is the poem's entire argument.",
-      lineRef: 26,
+      lineRef: 29,
       effectAr:
         'Owen يقتبس لازمة Horace الوطنية فقط ليهدمها. اللاتينية تطنّ سامية ونبيلة - لين ما تحطّها بعد وصف رجل يغرق في غاز سام. والمقارنة الجنبية هي حجّة القصيدة بكاملها.',
     },
@@ -572,7 +582,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" - الانتقال المفا
       example: 'guttering, choking, drowning',
       effect:
         "Three present-tense verbs in a row make the death immediate and inescapable. The accumulation creates a sense of slow suffocation. The fact that they are present tense - happening now, in the speaker's mind - is devastating.",
-      lineRef: 15,
+      lineRef: 17,
       effectAr:
         'ثلاث أفعال بالمضارع ورا بعض تخلّي الموت فوري ومستحيل الهرب. والتراكم يخلق إحساس بخنق بطيء. وحقيقة إنها بالمضارع - تصير الحين، في ذهن المتكلّم - مدمّرة.',
     },
@@ -797,7 +807,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       '"Bent double, like old beggars" - soldiers stripped of heroism',
       '"Green sea" / "drowning" - gas attack as suffocation',
-      '"Blood gargling from froth-corrupted lungs" - deliberately sickening',
+      '"the blood / Come gargling from the froth-corrupted lungs" - deliberately sickening',
       '"My friend" - direct, sarcastic address to pro-war propagandists',
     ],
   },

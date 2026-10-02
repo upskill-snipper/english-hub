@@ -40,8 +40,12 @@ const poem: PoemData = {
   poet: 'Alfred Lord Tennyson',
 
   /* ── Full text: 6 stanzas ─────────────────────────────────────── */
+  // Printed as the AQA anthology prints it (Power and Conflict; AQA-8702-TG-POEMS.PDF),
+  // checked line by line against the PDF on 2 October 2026. The words already matched;
+  // until then the page had double quotation marks where AQA prints single ones, and its
+  // own punctuation at the ends of lines 31, 44 and 46. AQA numbers the six stanzas
+  // ("1." to "6."); the page does not print the numbers.
   lines: [
-    /* Stanza 1 */
     {
       text: 'Half a league, half a league,',
       annotations: [
@@ -73,9 +77,9 @@ const poem: PoemData = {
         },
       ],
     },
-    { text: '\u2003\u2003Rode the six hundred.' },
-    { text: '\u201CForward, the Light Brigade!' },
-    { text: 'Charge for the guns!\u201D he said:' },
+    { text: 'Rode the six hundred.' },
+    { text: "'Forward, the Light Brigade!" },
+    { text: "Charge for the guns!' he said:" },
     {
       text: 'Into the valley of Death',
       annotations: [
@@ -86,12 +90,10 @@ const poem: PoemData = {
         },
       ],
     },
-    { text: '\u2003\u2003Rode the six hundred.' },
+    { text: 'Rode the six hundred.' },
     { text: '' },
-
-    /* Stanza 2 */
     {
-      text: '\u201CForward, the Light Brigade!\u201D',
+      text: "'Forward, the Light Brigade!'",
       annotations: [
         {
           type: 'Direct speech',
@@ -100,9 +102,9 @@ const poem: PoemData = {
         },
       ],
     },
-    { text: 'Was there a man dismay\u2019d?' },
+    { text: "Was there a man dismay'd?" },
     {
-      text: 'Not tho\u2019 the soldier knew',
+      text: "Not tho' the soldier knew",
       annotations: [
         {
           type: 'Rhetorical question + enjambment',
@@ -111,7 +113,7 @@ const poem: PoemData = {
         },
       ],
     },
-    { text: '\u2003\u2003Some one had blunder\u2019d:' },
+    { text: "Some one had blunder'd:" },
     {
       text: 'Theirs not to make reply,',
       annotations: [
@@ -125,10 +127,8 @@ const poem: PoemData = {
     { text: 'Theirs not to reason why,' },
     { text: 'Theirs but to do and die:' },
     { text: 'Into the valley of Death' },
-    { text: '\u2003\u2003Rode the six hundred.' },
+    { text: 'Rode the six hundred.' },
     { text: '' },
-
-    /* Stanza 3 */
     {
       text: 'Cannon to right of them,',
       annotations: [
@@ -142,7 +142,7 @@ const poem: PoemData = {
     { text: 'Cannon to left of them,' },
     { text: 'Cannon in front of them' },
     {
-      text: '\u2003\u2003Volley\u2019d and thunder\u2019d;',
+      text: "Volley'd and thunder'd;",
       annotations: [
         {
           type: 'Onomatopoeia',
@@ -152,7 +152,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Storm\u2019d at with shot and shell,',
+      text: "Storm'd at with shot and shell,",
       annotations: [
         {
           type: 'Metonymy / metaphor',
@@ -178,12 +178,10 @@ const poem: PoemData = {
       ],
     },
     { text: 'Into the mouth of Hell' },
-    { text: '\u2003\u2003Rode the six hundred.' },
+    { text: 'Rode the six hundred.' },
     { text: '' },
-
-    /* Stanza 4 */
     {
-      text: 'Flash\u2019d all their sabres bare,',
+      text: "Flash'd all their sabres bare,",
       annotations: [
         {
           type: 'Imagery',
@@ -192,7 +190,7 @@ const poem: PoemData = {
         },
       ],
     },
-    { text: 'Flash\u2019d as they turn\u2019d in air' },
+    { text: "Flash'd as they turn'd in air" },
     { text: 'Sabring the gunners there,' },
     {
       text: 'Charging an army, while',
@@ -204,15 +202,15 @@ const poem: PoemData = {
         },
       ],
     },
-    { text: '\u2003\u2003All the world wonder\u2019d.' },
+    { text: "All the world wonder'd:" },
     { text: 'Plunged in the battery-smoke' },
-    { text: 'Right thro\u2019 the line they broke;' },
+    { text: "Right thro' the line they broke;" },
     { text: 'Cossack and Russian' },
-    { text: 'Reel\u2019d from the sabre-stroke' },
-    { text: 'Shatter\u2019d and sunder\u2019d.' },
+    { text: "Reel'd from the sabre-stroke" },
+    { text: "Shatter'd and sunder'd." },
     { text: 'Then they rode back, but not' },
     {
-      text: '\u2003\u2003Not the six hundred.',
+      text: 'Not the six hundred.',
       annotations: [
         {
           type: 'Structural shift',
@@ -222,8 +220,6 @@ const poem: PoemData = {
       ],
     },
     { text: '' },
-
-    /* Stanza 5 */
     {
       text: 'Cannon to right of them,',
       annotations: [
@@ -245,12 +241,12 @@ const poem: PoemData = {
         },
       ],
     },
-    { text: '\u2003\u2003Volley\u2019d and thunder\u2019d;' },
-    { text: 'Storm\u2019d at with shot and shell,' },
-    { text: 'While horse and hero fell.' },
+    { text: "Volley'd and thunder'd;" },
+    { text: "Storm'd at with shot and shell," },
+    { text: 'While horse and hero fell,' },
     { text: 'They that had fought so well' },
     {
-      text: 'Came thro\u2019 the jaws of Death,',
+      text: "Came thro' the jaws of Death",
       annotations: [
         {
           type: 'Personification',
@@ -261,10 +257,8 @@ const poem: PoemData = {
     },
     { text: 'Back from the mouth of Hell,' },
     { text: 'All that was left of them,' },
-    { text: '\u2003\u2003Left of six hundred.' },
+    { text: 'Left of six hundred.' },
     { text: '' },
-
-    /* Stanza 6 */
     {
       text: 'When can their glory fade?',
       annotations: [
@@ -276,7 +270,7 @@ const poem: PoemData = {
       ],
     },
     { text: 'O the wild charge they made!' },
-    { text: '\u2003\u2003All the world wonder\u2019d.' },
+    { text: "All the world wonder'd." },
     { text: 'Honour the charge they made!' },
     {
       text: 'Honour the Light Brigade,',
@@ -288,7 +282,7 @@ const poem: PoemData = {
         },
       ],
     },
-    { text: '\u2003\u2003Noble six hundred!' },
+    { text: 'Noble six hundred!' },
   ],
 
   /* ── Context ─────────────────────────────────────────────────── */

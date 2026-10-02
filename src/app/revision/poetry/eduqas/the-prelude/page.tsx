@@ -15,6 +15,10 @@ import EduqasPreviousAnthologyNotice from '../_components/EduqasPreviousAntholog
 const prelude: PoemData = {
   title: 'The Prelude: stealing the boat',
   poet: 'William Wordsworth',
+  // Not the Eduqas extract (see the version note below). This is the boat-stealing passage
+  // AQA sets, printed as the AQA anthology prints it (Power and Conflict;
+  // AQA-8702-TG-POEMS.PDF), checked line by line against the PDF on 2 October 2026. The
+  // words already matched; until then line 32 ended "bark,-" where AQA prints "bark, –".
   lines: [
     {
       text: 'One summer evening (led by her) I found',
@@ -347,7 +351,7 @@ const prelude: PoemData = {
       ],
     },
     {
-      text: 'There in her mooring-place I left my bark,-',
+      text: 'There in her mooring-place I left my bark, –',
       annotations: [
         {
           type: 'Action',

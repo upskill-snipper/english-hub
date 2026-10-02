@@ -13,6 +13,10 @@ import { useT } from '@/lib/i18n/use-t'
 const sennacherib: PoemData = {
   title: 'The Destruction of Sennacherib',
   poet: 'Lord Byron',
+  // Printed as the Pearson Edexcel GCSE anthology prints it (Conflict; Issue 4, January
+  // 2023), checked line by line against the PDF on 2 October 2026. Until then the page
+  // had "withered", "passed" and "waxed" where the anthology prints "wither'd", "pass'd"
+  // and "wax'd", and its own punctuation at the ends of lines 14 and 18.
   lines: [
     {
       text: 'The Assyrian came down like the wolf on the fold,',
@@ -101,11 +105,11 @@ const sennacherib: PoemData = {
       ],
     },
     {
-      text: 'That host on the morrow lay withered and strown.',
+      text: "That host on the morrow lay wither'd and strown.",
       annotations: [
         {
           type: 'Imagery',
-          note: '"Withered and strown" turns the soldiers into dead leaves on the ground \u2014 anonymous, scattered, lifeless. Their grandeur is gone overnight.',
+          note: '"Wither\'d and strown" turns the soldiers into dead leaves on the ground \u2014 anonymous, scattered, lifeless. Their grandeur is gone overnight.',
           color: '#ef4444',
         },
       ],
@@ -127,7 +131,7 @@ const sennacherib: PoemData = {
       ],
     },
     {
-      text: 'And breathed in the face of the foe as he passed;',
+      text: "And breathed in the face of the foe as he pass'd;",
       annotations: [
         {
           type: 'Imagery',
@@ -137,11 +141,11 @@ const sennacherib: PoemData = {
       ],
     },
     {
-      text: 'And the eyes of the sleepers waxed deadly and chill,',
+      text: "And the eyes of the sleepers wax'd deadly and chill,",
       annotations: [
         {
           type: 'Diction',
-          note: '"Waxed deadly and chill" uses old, almost funereal language. The soldiers do not wake \u2014 their eyes simply glaze and freeze.',
+          note: '"Wax\'d deadly and chill" uses old, almost funereal language. The soldiers do not wake \u2014 their eyes simply glaze and freeze.',
           color: '#3b82f6',
         },
       ],
@@ -168,7 +172,7 @@ const sennacherib: PoemData = {
       ],
     },
     {
-      text: 'But through it there roll\u2019d not the breath of his pride;',
+      text: "But through it there roll'd not the breath of his pride:",
       annotations: [
         {
           type: 'Pride motif',
@@ -209,7 +213,7 @@ const sennacherib: PoemData = {
       ],
     },
     {
-      text: 'With the dew on his brow, and the rust on his mail:',
+      text: 'With the dew on his brow and the rust on his mail;',
       annotations: [
         {
           type: 'Decay motif',
@@ -321,7 +325,7 @@ const sennacherib: PoemData = {
 
   summary: `Stanzas 1\u20132: Byron describes the Assyrian army at its most magnificent. They sweep down "like the wolf on the fold" in shining purple and gold, their spears glittering like stars on the sea. They are compared to a forest in summer \u2014 vast, lush, irresistible.
 
-Stanza 2 turn: The same forest simile is repeated, but now in autumn. By the morning, the army lies "withered and strown" like fallen leaves. Two seasons in two lines: the rise and fall of empire compressed into a single image.
+Stanza 2 turn: The same forest simile is repeated, but now in autumn. By the morning, the army lies "wither'd and strown" like fallen leaves. Two seasons in two lines: the rise and fall of empire compressed into a single image.
 
 Stanza 3: Byron names the agent of destruction. The Angel of Death (from 2 Kings 19) spreads his wings on the wind and breathes in the face of the soldiers. They die in their sleep \u2014 their hearts beat once and stop forever.
 
@@ -333,7 +337,7 @@ Overall meaning: A poem about the fragility of human power. The mightiest empire
 
   summaryAr: `Stanzas 1\u20132: Byron \u064a\u0648\u0635\u0641 \u0627\u0644\u062c\u064a\u0634 \u0627\u0644\u0622\u0634\u0648\u0631\u064a \u0641\u064a \u0623\u0628\u0647\u0649 \u0644\u062d\u0638\u0627\u062a\u0647. \u064a\u0646\u0642\u0636\u0651\u0648\u0646 "like the wolf on the fold" \u0628\u062b\u064a\u0627\u0628 \u0623\u0631\u062c\u0648\u0627\u0646\u064a\u0629 \u0648\u0630\u0647\u0628\u064a\u0629 \u0644\u0627\u0645\u0639\u0629\u060c \u0648\u0631\u0645\u0627\u062d\u0647\u0645 \u062a\u0644\u0645\u0639 \u0645\u062b\u0644 \u0627\u0644\u0646\u062c\u0648\u0645 \u0639\u0644\u0649 \u0627\u0644\u0628\u062d\u0631. \u0648\u064a\u0634\u0628\u0651\u0647\u0647\u0645 \u0628\u063a\u0627\u0628\u0629 \u0641\u064a \u0627\u0644\u0635\u064a\u0641 \u2014 \u0634\u0627\u0633\u0639\u0629\u060c \u062e\u0636\u0631\u0627\u060c \u0645\u0627 \u064a\u0645\u0643\u0646 \u062a\u0642\u0627\u0648\u0645\u0647\u0627.
 
-\u0627\u0644\u062a\u062d\u0648\u0651\u0644 \u0641\u064a Stanza 2: \u0646\u0641\u0633 \u062a\u0634\u0628\u064a\u0647 \u0627\u0644\u063a\u0627\u0628\u0629 \u064a\u062a\u0643\u0631\u0651\u0631\u060c \u0628\u0633 \u0647\u0630\u064a \u0627\u0644\u0645\u0631\u0651\u0629 \u0641\u064a \u0627\u0644\u062e\u0631\u064a\u0641. \u0648\u0642\u062a \u0627\u0644\u0635\u0628\u0627\u062d\u060c \u0627\u0644\u062c\u064a\u0634 \u064a\u0631\u0642\u062f "withered and strown" \u0645\u062b\u0644 \u0623\u0648\u0631\u0627\u0642 \u0645\u062a\u0633\u0627\u0642\u0637\u0629. \u0641\u0635\u0644\u064a\u0646 \u0641\u064a \u0628\u064a\u062a\u064a\u0646: \u0635\u0639\u0648\u062f \u0627\u0644\u0625\u0645\u0628\u0631\u0627\u0637\u0648\u0631\u064a\u0629 \u0648\u0633\u0642\u0648\u0637\u0647\u0627 \u0645\u0643\u062b\u0651\u0641\u064a\u0646 \u0641\u064a \u0635\u0648\u0631\u0629 \u0648\u062d\u062f\u0629.
+\u0627\u0644\u062a\u062d\u0648\u0651\u0644 \u0641\u064a Stanza 2: \u0646\u0641\u0633 \u062a\u0634\u0628\u064a\u0647 \u0627\u0644\u063a\u0627\u0628\u0629 \u064a\u062a\u0643\u0631\u0651\u0631\u060c \u0628\u0633 \u0647\u0630\u064a \u0627\u0644\u0645\u0631\u0651\u0629 \u0641\u064a \u0627\u0644\u062e\u0631\u064a\u0641. \u0648\u0642\u062a \u0627\u0644\u0635\u0628\u0627\u062d\u060c \u0627\u0644\u062c\u064a\u0634 \u064a\u0631\u0642\u062f "wither'd and strown" \u0645\u062b\u0644 \u0623\u0648\u0631\u0627\u0642 \u0645\u062a\u0633\u0627\u0642\u0637\u0629. \u0641\u0635\u0644\u064a\u0646 \u0641\u064a \u0628\u064a\u062a\u064a\u0646: \u0635\u0639\u0648\u062f \u0627\u0644\u0625\u0645\u0628\u0631\u0627\u0637\u0648\u0631\u064a\u0629 \u0648\u0633\u0642\u0648\u0637\u0647\u0627 \u0645\u0643\u062b\u0651\u0641\u064a\u0646 \u0641\u064a \u0635\u0648\u0631\u0629 \u0648\u062d\u062f\u0629.
 
 Stanza 3: Byron \u064a\u0633\u0645\u0651\u064a \u0627\u0644\u0645\u0633\u0624\u0648\u0644 \u0639\u0646 \u0627\u0644\u062f\u0645\u0627\u0631. \u0645\u0644\u0627\u0643 \u0627\u0644\u0645\u0648\u062a (\u0645\u0646 2 Kings 19) \u064a\u0641\u0631\u062f \u062c\u0646\u0627\u062d\u0627\u062a\u0647 \u0639\u0644\u0649 \u0627\u0644\u0631\u064a\u062d\u060c \u0648\u064a\u0646\u0641\u062e \u0641\u064a \u0648\u062c\u0648\u0647 \u0627\u0644\u062c\u0646\u0648\u062f. \u064a\u0645\u0648\u062a\u0648\u0646 \u0648\u0647\u0645 \u0646\u0627\u064a\u0645\u064a\u0646 \u2014 \u0642\u0644\u0648\u0628\u0647\u0645 \u062a\u0646\u0628\u0636 \u0645\u0631\u0651\u0629 \u0648\u062d\u062f\u0629 \u0648\u062a\u0633\u0643\u0646 \u0644\u0644\u0623\u0628\u062f.
 
@@ -353,7 +357,7 @@ Structural shape: The poem moves from grandeur (stanzas 1\u20132) to destruction
 
 Caesura and end-stopping: Most lines are end-stopped, giving the poem a steady, marching pulse. The pauses inside lines (especially in stanza 3) make individual deaths feel deliberate and vivid.
 
-Anaphora: Phrases like "And there lay the steed", "And there lay the rider", "And the tents... And the lances..." build a rhythmic cataloguing of devastation, like a list of war casualties.`,
+Anaphora: Phrases like "And there lay the steed", "And there lay the rider", "And the tents were all silent", "And the widows of Ashur" build a rhythmic cataloguing of devastation, like a list of war casualties.`,
 
   formAndStructureAr: `Form: ستّة quatrains على شكل أبيات مزدوجة القافية (AABB طول القصيدة). البنية المنتظمة الشبيهة بالأغنية تناسب أصل القصيدة في <em>Hebrew Melodies</em>، اللي وُضعت أصلاً عشان تنغنّى.
 
@@ -365,7 +369,7 @@ Rhyme scheme: الـcouplets على AABB تعطي القصيدة طابع ترت
 
 Caesura و end-stopping: معظم الأبيات end-stopped، وهذا يعطي القصيدة نبض ثابت زي خطوات الجيش. والوقفات داخل الأبيات (خصوصاً في Stanza 3) تخلّي كل حالة موت تحسّ مدروسة وحاضرة.
 
-Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rider" و"And the tents... And the lances..." تبني تعداد إيقاعي للدمار، شبيه بقائمة ضحايا حرب.`,
+Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rider" و"And the tents were all silent" و"And the widows of Ashur" تبني تعداد إيقاعي للدمار، شبيه بقائمة ضحايا حرب.`,
 
   keyQuotes: [
     {

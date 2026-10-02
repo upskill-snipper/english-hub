@@ -13,6 +13,13 @@ import { useT } from '@/lib/i18n/use-t'
 const poemData: PoemData = {
   title: "Love's Philosophy",
   poet: 'Percy Bysshe Shelley',
+  // Printed as the AQA anthology prints it (Love and Relationships; AQA-8702-TG-POEMS.PDF),
+  // checked line by line against the PDF on 2 October 2026. AQA prints a different version
+  // from the one this page carried until then, which is the version most websites carry:
+  // line 7 is "In one another's being mingle" (not "In one spirit meet and mingle") and
+  // line 15 "What are all these kisses worth" (not "What is all this sweet work worth").
+  // AQA also capitalises "Ocean" and "Heaven" and prints "disdain'd". The notes, a device
+  // card and the semantic-field list that rested on the other version were rewritten.
   lines: [
     {
       text: 'The fountains mingle with the river',
@@ -25,7 +32,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'And the rivers with the ocean,',
+      text: 'And the rivers with the Ocean,',
       annotations: [
         {
           type: 'Scale',
@@ -35,11 +42,11 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'The winds of heaven mix for ever',
+      text: 'The winds of Heaven mix for ever',
       annotations: [
         {
           type: 'Personification',
-          note: '"Winds of heaven" elevates the natural world to something divine. "Mix for ever" implies eternal, sacred union.',
+          note: '"Winds of Heaven" elevates the natural world to something divine. "Mix for ever" implies eternal, sacred union.',
           color: '#8b5cf6',
         },
       ],
@@ -75,17 +82,17 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'In one spirit meet and mingle.',
+      text: "In one another's being mingle —",
       annotations: [
         {
           type: 'Sibilance',
-          note: 'The soft "s" and "m" sounds in "spirit", "meet", "mingle" create a gentle, seductive musicality that mirrors the merging he describes.',
+          note: 'Things do not just touch: they "mingle" in "one another\'s being", merging into each other\'s very existence. The dash then turns the general law into a personal plea.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: 'Why not I with thine?--',
+      text: 'Why not I with thine?',
       annotations: [
         {
           type: 'Rhetorical question',
@@ -96,7 +103,7 @@ const poemData: PoemData = {
     },
     { text: '' },
     {
-      text: 'See the mountains kiss high heaven',
+      text: 'See the mountains kiss high Heaven,',
       annotations: [
         {
           type: 'Personification',
@@ -120,13 +127,13 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Anthropomorphism',
-          note: 'Even flowers would be morally wrong ("not forgiven") to reject their counterpart. Shelley frames rejection of love as a kind of sin.',
+          note: 'Even flowers would be morally wrong to reject their counterpart: no "sister-flower would be forgiven" for it. Shelley frames rejection of love as a kind of sin.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'If it disdained its brother;',
+      text: "If it disdain'd its brother:",
       annotations: [
         {
           type: 'Family metaphor',
@@ -136,7 +143,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'And the sunlight clasps the earth',
+      text: 'And the sunlight clasps the earth,',
       annotations: [
         {
           type: 'Imagery',
@@ -146,7 +153,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'And the moonbeams kiss the sea:',
+      text: 'And the moonbeams kiss the sea —',
       annotations: [
         {
           type: 'Parallelism',
@@ -156,11 +163,11 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: 'What is all this sweet work worth',
+      text: 'What are all these kisses worth,',
       annotations: [
         {
           type: 'Rhetorical question',
-          note: 'Shelley questions the value of all natural beauty if human love is denied. "Sweet work" frames nature as God\'s craftsmanship.',
+          note: 'Shelley questions the value of all natural beauty if human love is denied. "All these kisses" gathers every image in the poem into one word, so that the last line can ask for one more.',
           color: '#ef4444',
         },
       ],
@@ -186,8 +193,8 @@ const poemData: PoemData = {
 <p>القصيدة تتفاعل كمان مع أفكار الرومانسية حول <strong>ترابط الطبيعة كلّها</strong> - فلسفة شافت البشر جزء من العالم الطبيعي، مو منفصلين عنه.</p>`,
   summary: `The speaker uses examples from nature to argue that everything in the world exists in union -- rivers merge with oceans, winds blend together, mountains touch the sky. He claims this is "a law divine", making union a spiritual imperative.\n\nHaving built his case, he asks a simple rhetorical question: if everything in nature comes together, why should the beloved refuse him?\n\nThe second stanza escalates the argument with grander imagery -- sunlight clasping the earth, moonbeams kissing the sea -- before ending with a direct, almost pleading question: what is the point of all this natural beauty if the beloved will not love him?\n\nThe poem is essentially an elaborate argument for love, using nature as evidence. Whether it is charming or manipulative depends on interpretation.`,
   summaryAr: `المتكلّم (ذكر) يستخدم أمثلة من الطبيعة عشان يستدل إن كل شي في الدنيا موجود في اتحاد - الأنهار تنصب في المحيطات، الرياح تختلط ببعض، الجبال تلامس السماء. ويدّعي إن هذا "law divine"، فيخلّي الاتحاد ضرورة روحانية.\n\nبعد ما يبني حجّته، يسأل سؤال بلاغي بسيط: إذا كل شي في الطبيعة يجي مع بعضه، ليش المحبوبة (أنثى) ترفضه؟\n\nالمقطع الثاني يصعّد الحجّة بصور أعظم - الشمس تحضن الأرض، أشعّة القمر تبوس البحر - قبل ما يختم بسؤال مباشر وقريب من التوسّل: ايش فايدة كل هالجمال الطبيعي إذا المحبوبة (أنثى) ما تحبّه؟\n\nالقصيدة في جوهرها حجّة مفصّلة من أجل الحب، تستخدم الطبيعة كدليل. تكون ساحرة أو تكون متلاعبة - هذا يعتمد على تفسير القارئ.`,
-  formAndStructure: `Form: Two stanzas of eight lines each, creating a balanced, symmetrical structure that mirrors the poem's argument about natural pairing.\n\nRhyme scheme: ABABCDCD in both stanzas -- the regular, predictable pattern creates a sense of natural order and inevitability that supports Shelley's argument.\n\nRhetorical questions: Each stanza builds to a climactic rhetorical question (lines 8 and 16-17). The structure is persuasive -- evidence followed by conclusion.\n\nEscalation: The imagery grows in scale from fountains to rivers to ocean, then from mountains to sunlight to moonbeams, building persuasive momentum.\n\nList structure: The accumulation of natural examples creates a sense of overwhelming evidence, making the argument feel irresistible.\n\nEnding: The final line is notably shorter and simpler than the rest, creating bathos -- the grand natural argument resolves into a simple, human plea.`,
-  formAndStructureAr: `Form: مقطعين كل واحد منهم ثمانية أبيات، فيخلق بنية متوازنة ومتناسقة، تحاكي حجّة القصيدة عن التزاوج الطبيعي.\n\nRhyme scheme: ABABCDCD في كلا المقطعين - النمط المنتظم اللي تقدر تتوقّعه يخلق إحساس بالنظام الطبيعي والحتمية، اللي يدعم حجّة Shelley.\n\nالأسئلة البلاغية: كل مقطع يبني وصولاً إلى سؤال بلاغي على ذروة (البيت 8 والبيتين 16-17). البنية إقناعية - أدلّة ثم استنتاج.\n\nالتصاعد: الصور تكبر في الحجم: من النوافير إلى الأنهار إلى المحيط، ثم من الجبال إلى ضوء الشمس إلى أشعّة القمر، وهذا يبني زخم إقناعي.\n\nبنية القائمة: تراكم الأمثلة الطبيعية يخلق إحساس بأدلّة كاسحة، فتطلع الحجّة كأنها ما يقدر يقاومها أحد.\n\nالخاتمة: البيت الأخير أقصر وأبسط من البقيّة، وهذا يخلق bathos - الحجّة الطبيعية الفخمة تنحل إلى توسّل إنساني بسيط.`,
+  formAndStructure: `Form: Two stanzas of eight lines each, creating a balanced, symmetrical structure that mirrors the poem's argument about natural pairing.\n\nRhyme scheme: ABABCDCD in both stanzas -- the regular, predictable pattern creates a sense of natural order and inevitability that supports Shelley's argument.\n\nRhetorical questions: Each stanza builds to a climactic rhetorical question (lines 8 and 15-16). The structure is persuasive -- evidence followed by conclusion.\n\nEscalation: The imagery grows in scale from fountains to rivers to ocean, then from mountains to sunlight to moonbeams, building persuasive momentum.\n\nList structure: The accumulation of natural examples creates a sense of overwhelming evidence, making the argument feel irresistible.\n\nEnding: The final line is notably shorter and simpler than the rest, creating bathos -- the grand natural argument resolves into a simple, human plea.`,
+  formAndStructureAr: `Form: مقطعين كل واحد منهم ثمانية أبيات، فيخلق بنية متوازنة ومتناسقة، تحاكي حجّة القصيدة عن التزاوج الطبيعي.\n\nRhyme scheme: ABABCDCD في كلا المقطعين - النمط المنتظم اللي تقدر تتوقّعه يخلق إحساس بالنظام الطبيعي والحتمية، اللي يدعم حجّة Shelley.\n\nالأسئلة البلاغية: كل مقطع يبني وصولاً إلى سؤال بلاغي على ذروة (البيت 8 والبيتين 15-16). البنية إقناعية - أدلّة ثم استنتاج.\n\nالتصاعد: الصور تكبر في الحجم: من النوافير إلى الأنهار إلى المحيط، ثم من الجبال إلى ضوء الشمس إلى أشعّة القمر، وهذا يبني زخم إقناعي.\n\nبنية القائمة: تراكم الأمثلة الطبيعية يخلق إحساس بأدلّة كاسحة، فتطلع الحجّة كأنها ما يقدر يقاومها أحد.\n\nالخاتمة: البيت الأخير أقصر وأبسط من البقيّة، وهذا يخلق bathos - الحجّة الطبيعية الفخمة تنحل إلى توسّل إنساني بسيط.`,
   keyQuotes: [
     {
       quote: 'The fountains mingle with the river',
@@ -226,7 +233,7 @@ const poemData: PoemData = {
       themesAr: ['الرغبة', 'الإقناع', 'الانكشاف العاطفي'],
     },
     {
-      quote: 'See the mountains kiss high heaven',
+      quote: 'See the mountains kiss high Heaven',
       analysis:
         '"Kiss" personifies mountains with romantic action. "See" is an imperative, directing the beloved to observe the evidence. The imagery is grand and romantic.',
       themes: ['Personification', 'Romance', 'Nature'],
@@ -265,7 +272,7 @@ const poemData: PoemData = {
   languageDevices: [
     {
       device: 'Personification',
-      example: 'the mountains kiss high heaven',
+      example: 'the mountains kiss high Heaven',
       effect:
         'By giving human romantic actions to nature, Shelley argues that love is woven into the fabric of the natural world, making human love equally inevitable.',
       lineRef: 9,
@@ -282,17 +289,17 @@ const poemData: PoemData = {
         'السؤال مصمّم بحيث ما له جواب. بعد ما يقدّم Shelley أدلّة طبيعية كاسحة، يلمّح إن الردّ المنطقي الوحيد هو قبول حبّه.',
     },
     {
-      device: 'Sibilance',
-      example: 'In one spirit meet and mingle',
+      device: 'Imagery of merging',
+      example: "In one another's being mingle",
       effect:
-        'The soft "s" and "m" sounds create a seductive, flowing musicality that enacts the gentle merging Shelley describes, appealing to the senses.',
+        'Things do not just meet; they merge into each other\'s "being". Shelley makes union a matter of existence itself, which makes the speaker\'s separateness in the next line look unnatural.',
       lineRef: 6,
       effectAr:
-        'أصوات الـ"s" والـ"m" الناعمة تخلق موسيقى منسابة ومغرية، تجسّد الاندماج اللطيف اللي Shelley يوصفه، وتخاطب الحواس.',
+        'الأشياء ما تلتقي وبس؛ تذوب في "being" بعضها. Shelley يخلّي الاتحاد مسألة وجود، وهذا يخلّي انفصال المتكلّم في البيت اللي بعده يبان شي مو طبيعي.',
     },
     {
       device: 'Semantic field of union',
-      example: 'mingle, mix, meet, clasp, kiss',
+      example: 'mingle, mix, clasp, kiss',
       effect:
         'A sustained vocabulary of coming-together runs through the poem, creating a cumulative sense of inevitability around the theme of union.',
       lineRef: 0,
@@ -328,7 +335,7 @@ const poemData: PoemData = {
     },
     {
       device: 'List / accumulation',
-      example: 'fountains... rivers... ocean... winds',
+      example: 'fountains... rivers... Ocean... winds',
       effect:
         "The piling up of natural examples creates a sense of overwhelming evidence, making Shelley's argument feel logically irresistible.",
       lineRef: 0,

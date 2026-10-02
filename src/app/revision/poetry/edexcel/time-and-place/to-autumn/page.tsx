@@ -13,6 +13,12 @@ import { useT } from '@/lib/i18n/use-t'
 const toAutumn: PoemData = {
   title: 'To Autumn',
   poet: 'John Keats',
+  // Printed as the Pearson Edexcel GCSE anthology prints it (Time and Place; Issue 4,
+  // January 2023), checked line by line against the PDF on 2 October 2026. Until then the
+  // page had "thatch-eves", "o'er-brimm'd", "twined", "cyder-press", "spring", "Ay",
+  // "barred" and "red-breast" where the anthology prints "thatch-eaves", "o'erbrimm'd",
+  // "twinèd", "cider-press", "Spring", "Aye", "barrèd" and "redbreast", and its
+  // punctuation differed in four lines, among them the dash in line 24.
   lines: [
     {
       text: 'Season of mists and mellow fruitfulness,',
@@ -55,7 +61,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'With fruit the vines that round the thatch-eves run;',
+      text: 'With fruit the vines that round the thatch-eaves run;',
       annotations: [
         {
           type: 'Setting',
@@ -65,7 +71,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'To bend with apples the moss\u2019d cottage-trees,',
+      text: "To bend with apples the moss'd cottage-trees,",
       annotations: [
         {
           type: 'Imagery',
@@ -130,7 +136,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'For Summer has o\u2019er-brimm\u2019d their clammy cells.',
+      text: "For Summer has o'erbrimm'd their clammy cells.",
       annotations: [
         {
           type: 'Tactile',
@@ -191,7 +197,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'Or on a half-reap\u2019d furrow sound asleep,',
+      text: "Or on a half-reap'd furrow sound asleep,",
       annotations: [
         {
           type: 'Sleep',
@@ -201,7 +207,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'Drows\u2019d with the fume of poppies, while thy hook',
+      text: "Drows'd with the fume of poppies, while thy hook",
       annotations: [
         {
           type: 'Drugged',
@@ -211,7 +217,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'Spares the next swath and all its twined flowers:',
+      text: 'Spares the next swath and all its twinèd flowers;',
       annotations: [
         {
           type: 'Pause',
@@ -241,7 +247,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'Or by a cyder-press, with patient look,',
+      text: 'Or by a cider-press, with patient look,',
       annotations: [
         {
           type: 'Patience',
@@ -251,7 +257,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'Thou watchest the last oozings hours by hours.',
+      text: 'Thou watchest the last oozings, hours by hours.',
       annotations: [
         {
           type: 'Time',
@@ -267,7 +273,7 @@ const toAutumn: PoemData = {
     },
     { text: '' },
     {
-      text: 'Where are the songs of spring? Ay, where are they?',
+      text: 'Where are the songs of Spring? Aye, where are they?',
       annotations: [
         {
           type: 'Rhetorical question',
@@ -277,7 +283,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'Think not of them, thou hast thy music too,\u2014',
+      text: 'Think not of them, — thou hast thy music too,',
       annotations: [
         {
           type: 'Volta',
@@ -292,7 +298,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'While barred clouds bloom the soft-dying day,',
+      text: 'While barrèd clouds bloom the soft-dying day,',
       annotations: [
         {
           type: 'Metaphor',
@@ -357,7 +363,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'Hedge-crickets sing; and now with treble soft',
+      text: 'Hedge-crickets sing, and now with treble soft',
       annotations: [
         {
           type: 'Music',
@@ -367,11 +373,11 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'The red-breast whistles from a garden-croft;',
+      text: 'The redbreast whistles from a garden-croft;',
       annotations: [
         {
           type: 'Bird',
-          note: 'The robin (red-breast) is traditionally associated with autumn and winter in England. Keats lets the robin add a clear, bright note to the soundscape.',
+          note: 'The robin (redbreast) is traditionally associated with autumn and winter in England. Keats lets the robin add a clear, bright note to the soundscape.',
           color: '#3b82f6',
         },
       ],
@@ -393,12 +399,16 @@ const toAutumn: PoemData = {
     },
   ],
 
+  // Until 2 October 2026 this said Keats wrote the poem "the day after" his walk near
+  // Winchester. The walk was on Sunday 19 September 1819, the date the poem is usually
+  // given: his letter to J. H. Reynolds of 21 or 22 September says it "struck me so much in
+  // my Sunday's walk that I composed upon it" (Letters, ed. Sidney Colvin, 1891).
   context: `
     <h3>John Keats (1795–1821)</h3>
     <p>Keats was a second-generation Romantic poet, alongside Byron and Shelley. He died of tuberculosis at the age of just 25, having produced an extraordinary body of work in the last few years of his life. He was deeply attentive to sensory experience and to the relationship between beauty and mortality.</p>
 
     <h3>September 1819</h3>
-    <p>Keats wrote "To Autumn" on 19 September 1819, the day after a walk near Winchester. He described the walk in a letter: "How beautiful the season is now \u2014 How fine the air. A temperate sharpness about it... I never lik\u2019d stubble fields so much as now... somehow a stubble plain looks warm \u2014 in the same way that some pictures look warm."</p>
+    <p>Keats wrote "To Autumn" in Winchester after a walk on Sunday 19 September 1819. A few days later he described the walk in a letter to his friend John Hamilton Reynolds: "How beautiful the season is now \u2014 How fine the air. A temperate sharpness about it... I never lik\u2019d stubble fields so much as now... somehow a stubble plain looks warm \u2014 in the same way that some pictures look warm."</p>
 
     <h3>One of the great odes</h3>
     <p>"To Autumn" is the last of Keats\u2019s great odes, following "Ode to a Nightingale", "Ode on a Grecian Urn" and "Ode on Melancholy". Many critics regard it as the most perfectly achieved poem of his short career.</p>
@@ -415,7 +425,7 @@ const toAutumn: PoemData = {
     <p><strong>John Keats</strong> \u0634\u0627\u0639\u0631 \u0631\u0648\u0645\u0627\u0646\u0633\u064a \u0645\u0646 \u0627\u0644\u062c\u064a\u0644 \u0627\u0644\u062b\u0627\u0646\u064a\u060c \u062c\u0646\u0628\u0627\u064b \u0625\u0644\u0649 \u062c\u0646\u0628 \u0645\u0639 Byron \u0648 Shelley. \u062a\u0648\u0641\u0651\u064a \u0628\u0627\u0644\u0633\u0644\u0651 \u0648\u0639\u0645\u0631\u0647 25 \u0633\u0646\u0629 \u0628\u0633\u060c \u0648\u0643\u0627\u0646 \u0642\u062f \u0623\u0646\u062a\u062c \u0625\u0646\u062a\u0627\u062c\u0627\u064b \u0627\u0633\u062a\u062b\u0646\u0627\u0626\u064a\u0627\u064b \u0641\u064a \u0622\u062e\u0631 \u0633\u0646\u0648\u0627\u062a \u062d\u064a\u0627\u062a\u0647. \u0643\u0627\u0646 \u0645\u0646\u062a\u0628\u0647\u0627\u064b \u0628\u0639\u0645\u0642 \u0644\u0644\u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u062d\u0633\u0651\u064a\u0629\u060c \u0648\u0644\u0644\u0639\u0644\u0627\u0642\u0629 \u0628\u064a\u0646 \u0627\u0644\u062c\u0645\u0627\u0644 \u0648\u0627\u0644\u0641\u0646\u0627\u0621.</p>
 
     <h3>\u0633\u0628\u062a\u0645\u0628\u0631 1819</h3>
-    <p>Keats \u0643\u062a\u0628 "To Autumn" \u064a\u0648\u0645 19 \u0633\u0628\u062a\u0645\u0628\u0631 1819\u060c \u0627\u0644\u064a\u0648\u0645 \u0627\u0644\u0644\u064a \u0639\u0642\u0628 \u0645\u0634\u064a\u0629 \u0642\u0631\u0628 Winchester. \u0648\u0648\u0635\u0641 \u0627\u0644\u0645\u0634\u064a\u0629 \u0641\u064a \u0631\u0633\u0627\u0644\u0629: "\u0643\u0645 \u0647\u064a \u062c\u0645\u064a\u0644\u0629 \u0627\u0644\u0641\u0635\u0648\u0644 \u0627\u0644\u062d\u064a\u0646 \u2014 \u0648\u0643\u0645 \u0647\u0648 \u0644\u0637\u064a\u0641 \u0627\u0644\u0647\u0648\u0627\u0621. \u0641\u064a\u0647 \u062d\u062f\u0651\u0629 \u0645\u0639\u062a\u062f\u0644\u0629... \u0645\u0627 \u062d\u0628\u0651\u064a\u062a \u062d\u0642\u0648\u0644 \u0627\u0644\u0642\u0634\u0651 \u0628\u0642\u062f \u0645\u0627 \u0623\u062d\u0628\u0651\u0647\u0627 \u0627\u0644\u062d\u064a\u0646... \u0628\u0637\u0631\u064a\u0642\u0629 \u0645\u0627\u060c \u062d\u0642\u0644 \u0642\u0634\u0651 \u064a\u0628\u062f\u0648 \u062f\u0627\u0641\u0626\u0627\u064b \u2014 \u0645\u062b\u0644 \u0645\u0627 \u0628\u0639\u0636 \u0627\u0644\u0644\u0648\u062d\u0627\u062a \u062a\u0628\u062f\u0648 \u062f\u0627\u0641\u0626\u0629."</p>
+    <p>Keats \u0643\u062a\u0628 "To Autumn" \u0641\u064a Winchester \u0628\u0639\u062f \u0645\u0634\u064a\u0629 \u064a\u0648\u0645 \u0627\u0644\u0623\u062d\u062f 19 \u0633\u0628\u062a\u0645\u0628\u0631 1819. \u0648\u0628\u0639\u062f\u0647\u0627 \u0628\u0643\u0645 \u064a\u0648\u0645 \u0648\u0635\u0641 \u0627\u0644\u0645\u0634\u064a\u0629 \u0641\u064a \u0631\u0633\u0627\u0644\u0629 \u0644\u0635\u062f\u064a\u0642\u0647 John Hamilton Reynolds: "\u0643\u0645 \u0647\u064a \u062c\u0645\u064a\u0644\u0629 \u0627\u0644\u0641\u0635\u0648\u0644 \u0627\u0644\u062d\u064a\u0646 \u2014 \u0648\u0643\u0645 \u0647\u0648 \u0644\u0637\u064a\u0641 \u0627\u0644\u0647\u0648\u0627\u0621. \u0641\u064a\u0647 \u062d\u062f\u0651\u0629 \u0645\u0639\u062a\u062f\u0644\u0629... \u0645\u0627 \u062d\u0628\u0651\u064a\u062a \u062d\u0642\u0648\u0644 \u0627\u0644\u0642\u0634\u0651 \u0628\u0642\u062f \u0645\u0627 \u0623\u062d\u0628\u0651\u0647\u0627 \u0627\u0644\u062d\u064a\u0646... \u0628\u0637\u0631\u064a\u0642\u0629 \u0645\u0627\u060c \u062d\u0642\u0644 \u0642\u0634\u0651 \u064a\u0628\u062f\u0648 \u062f\u0627\u0641\u0626\u0627\u064b \u2014 \u0645\u062b\u0644 \u0645\u0627 \u0628\u0639\u0636 \u0627\u0644\u0644\u0648\u062d\u0627\u062a \u062a\u0628\u062f\u0648 \u062f\u0627\u0641\u0626\u0629."</p>
 
     <h3>\u0648\u062d\u062f\u0629 \u0645\u0646 \u0627\u0644\u0642\u0635\u0627\u0626\u062f \u0627\u0644\u0639\u0638\u064a\u0645\u0629 (odes)</h3>
     <p>"To Autumn" \u0622\u062e\u0631 \u0627\u0644\u0642\u0635\u0627\u0626\u062f \u0627\u0644\u0639\u0638\u064a\u0645\u0629 (odes) \u0639\u0646\u062f Keats\u060c \u0628\u0639\u062f "Ode to a Nightingale" \u0648 "Ode on a Grecian Urn" \u0648 "Ode on Melancholy". \u0648\u0627\u064a\u062f \u0646\u0642\u0651\u0627\u062f \u064a\u0639\u062a\u0628\u0631\u0648\u0646\u0647\u0627 \u0623\u0643\u062b\u0631 \u0642\u0635\u064a\u062f\u0629 \u0648\u0635\u0644\u062a \u0644\u0643\u0645\u0627\u0644 \u0634\u0643\u0644\u064a \u0641\u064a \u0645\u0633\u064a\u0631\u062a\u0647 \u0627\u0644\u0642\u0635\u064a\u0631\u0629.</p>
@@ -439,7 +449,7 @@ Overall meaning: An ode of pure acceptance. Where most poems about autumn mourn 
 
 \u0627\u0644\u0645\u0642\u0637\u0639 2 \u2014 \u0627\u0644\u062e\u0631\u064a\u0641 \u0645\u0634\u062e\u0651\u0635\u0627\u064b: \u0627\u0644\u062e\u0631\u064a\u0641 \u0645\u062a\u062e\u064a\u0651\u0644 \u0643\u0623\u0646\u0647 \u0634\u062e\u0635\u060c \u064a\u064f\u0644\u0645\u062d \u0641\u064a \u0645\u0634\u0627\u0647\u062f \u0631\u064a\u0641\u064a\u0629 \u0645\u062e\u062a\u0644\u0641\u0629. \u062a\u062c\u0644\u0633 "careless" (\u0645\u0631\u062a\u0627\u062d\u0629) \u0639\u0644\u0649 \u0623\u0631\u0636\u064a\u0629 \u0628\u064a\u062f\u0631 (granary)\u060c \u0648\u0634\u0639\u0631\u0647\u0627 \u062a\u0644\u0627\u0639\u0628\u0647 \u0631\u064a\u062d \u0627\u0644\u062a\u0630\u0631\u064a\u0629 (winnowing wind). \u062a\u0646\u0627\u0645 \u0641\u064a \u062d\u0642\u0644 \u0646\u064f\u0635\u0641 \u0645\u062d\u0635\u0648\u062f\u060c \u062a\u062e\u062f\u0651\u0631\u0647\u0627 \u0631\u0648\u0627\u0626\u062d \u0627\u0644\u062e\u0634\u062e\u0627\u0634 (poppies). \u062a\u0634\u062a\u063a\u0644 \u0643\u0640gleaner (\u0644\u0642\u0651\u0627\u0637\u0629 \u0633\u0646\u0627\u0628\u0644) \u062a\u0639\u0628\u0631 \u062c\u062f\u0648\u0644\u0627\u064b \u0648\u062d\u0645\u0644\u0647\u0627 \u062b\u0642\u064a\u0644. \u062a\u062a\u0641\u0631\u0651\u062c \u0639\u0644\u0649 \u0639\u0635\u064a\u0631 \u0627\u0644\u062a\u0641\u0627\u062d \u064a\u0642\u0637\u0631 \u0645\u0646 \u0645\u0639\u0635\u0631\u0629 (cider press)\u060c \u0633\u0627\u0639\u0629 \u0639\u0642\u0628 \u0633\u0627\u0639\u0629. \u0648\u0627\u0644\u062c\u0648 \u062d\u0627\u0644\u0645 \u0648\u0628\u0637\u064a\u0621.
 
-\u0627\u0644\u0645\u0642\u0637\u0639 3 \u2014 \u0645\u0648\u0633\u064a\u0642\u0649 \u0627\u0644\u062e\u0631\u064a\u0641: Keats \u064a\u0628\u062f\u0623 \u0628\u0633\u0624\u0627\u0644 \u0639\u0646 \u0623\u063a\u0627\u0646\u064a \u0627\u0644\u0631\u0628\u064a\u0639\u060c \u062b\u0645 \u064a\u062c\u0627\u0648\u0628 \u0639\u0644\u0649 \u0633\u0624\u0627\u0644\u0647 \u0628\u0646\u0641\u0633\u0647 \u0641\u0648\u0631\u0627\u064b: \u0627\u0644\u062e\u0631\u064a\u0641 \u0639\u0646\u062f\u0647 \u0645\u0648\u0633\u064a\u0642\u0627\u0647 \u0627\u0644\u062e\u0627\u0635\u0651\u0629. \u0648\u064a\u0635\u0641 \u0623\u0635\u0648\u0627\u062a \u0627\u0644\u0645\u0633\u0627\u0621: \u0627\u0644\u0628\u0639\u0648\u0636 \u064a\u0646\u0648\u062d\u060c \u0627\u0644\u062e\u0631\u0627\u0641 \u0627\u0644\u0643\u0628\u064a\u0631\u0629 \u062a\u062b\u063a\u0648 \u0645\u0646 \u0627\u0644\u062a\u0644\u0627\u0644\u060c \u0627\u0644\u0635\u0631\u0627\u0635\u064a\u0631 \u062a\u063a\u0646\u0651\u064a\u060c \u0623\u0628\u0648 \u0627\u0644\u062d\u0646\u0651\u0627\u0621 (red-breast) \u064a\u0635\u0641\u0651\u0631\u060c \u0648\u0637\u064a\u0648\u0631 \u0627\u0644\u0633\u0646\u0648\u0646\u0648 (swallows) \u062a\u062a\u062c\u0645\u0651\u0639 \u0648\u062a\u0632\u0642\u0632\u0642 \u0648\u0647\u064a \u062a\u062a\u062c\u0647\u0651\u0632 \u0644\u0644\u0647\u062c\u0631\u0629. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0646\u062a\u0647\u064a \u0648\u0627\u0644\u0633\u0646\u0648\u0646\u0648 \u0641\u064a \u0627\u0644\u0633\u0645\u0627\u0621 \u2014 \u0639\u0644\u0649 \u0648\u0634\u0643 \u0627\u0644\u0631\u062d\u064a\u0644\u060c \u0628\u0633 \u0644\u0627\u0632\u0627\u0644\u062a \u0647\u0646\u0627.
+\u0627\u0644\u0645\u0642\u0637\u0639 3 \u2014 \u0645\u0648\u0633\u064a\u0642\u0649 \u0627\u0644\u062e\u0631\u064a\u0641: Keats \u064a\u0628\u062f\u0623 \u0628\u0633\u0624\u0627\u0644 \u0639\u0646 \u0623\u063a\u0627\u0646\u064a \u0627\u0644\u0631\u0628\u064a\u0639\u060c \u062b\u0645 \u064a\u062c\u0627\u0648\u0628 \u0639\u0644\u0649 \u0633\u0624\u0627\u0644\u0647 \u0628\u0646\u0641\u0633\u0647 \u0641\u0648\u0631\u0627\u064b: \u0627\u0644\u062e\u0631\u064a\u0641 \u0639\u0646\u062f\u0647 \u0645\u0648\u0633\u064a\u0642\u0627\u0647 \u0627\u0644\u062e\u0627\u0635\u0651\u0629. \u0648\u064a\u0635\u0641 \u0623\u0635\u0648\u0627\u062a \u0627\u0644\u0645\u0633\u0627\u0621: \u0627\u0644\u0628\u0639\u0648\u0636 \u064a\u0646\u0648\u062d\u060c \u0627\u0644\u062e\u0631\u0627\u0641 \u0627\u0644\u0643\u0628\u064a\u0631\u0629 \u062a\u062b\u063a\u0648 \u0645\u0646 \u0627\u0644\u062a\u0644\u0627\u0644\u060c \u0627\u0644\u0635\u0631\u0627\u0635\u064a\u0631 \u062a\u063a\u0646\u0651\u064a\u060c \u0623\u0628\u0648 \u0627\u0644\u062d\u0646\u0651\u0627\u0621 (redbreast) \u064a\u0635\u0641\u0651\u0631\u060c \u0648\u0637\u064a\u0648\u0631 \u0627\u0644\u0633\u0646\u0648\u0646\u0648 (swallows) \u062a\u062a\u062c\u0645\u0651\u0639 \u0648\u062a\u0632\u0642\u0632\u0642 \u0648\u0647\u064a \u062a\u062a\u062c\u0647\u0651\u0632 \u0644\u0644\u0647\u062c\u0631\u0629. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0646\u062a\u0647\u064a \u0648\u0627\u0644\u0633\u0646\u0648\u0646\u0648 \u0641\u064a \u0627\u0644\u0633\u0645\u0627\u0621 \u2014 \u0639\u0644\u0649 \u0648\u0634\u0643 \u0627\u0644\u0631\u062d\u064a\u0644\u060c \u0628\u0633 \u0644\u0627\u0632\u0627\u0644\u062a \u0647\u0646\u0627.
 
 \u0627\u0644\u0645\u0639\u0646\u0649 \u0627\u0644\u0625\u062c\u0645\u0627\u0644\u064a: ode \u0645\u0646 \u0627\u0644\u0642\u0628\u0648\u0644 \u0627\u0644\u062e\u0627\u0644\u0635. \u0641\u064a \u062d\u064a\u0646 \u0625\u0646 \u0623\u063a\u0644\u0628 \u0627\u0644\u0642\u0635\u0627\u0626\u062f \u0639\u0646 \u0627\u0644\u062e\u0631\u064a\u0641 \u062a\u0646\u0648\u062d \u0639\u0644\u0649 \u0642\u062f\u0648\u0645 \u0627\u0644\u0634\u062a\u0627\u0621\u060c Keats \u064a\u0631\u0641\u0636 \u0625\u0646\u0647 \u064a\u0646\u0648\u062d. \u064a\u062d\u062a\u0641\u0644 \u0628\u0648\u0641\u0631\u0629 \u0627\u0644\u0641\u0635\u0644\u060c \u0648\u0639\u0645\u0644\u0647 \u0627\u0644\u0647\u0627\u062f\u0626\u060c \u0648\u0645\u0648\u0633\u064a\u0642\u0627\u0647 \u0627\u0644\u062e\u0627\u0635\u0651\u0629. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0639\u0646 \u0642\u064a\u0645\u0629 \u0648\u0642\u062a \u0645\u062d\u062f\u0651\u062f \u0645\u0646 \u0627\u0644\u0633\u0646\u0629 \u0641\u064a \u0645\u0643\u0627\u0646 \u0645\u062d\u062f\u0651\u062f \u2014 \u0648\u0628\u0627\u0644\u0627\u0645\u062a\u062f\u0627\u062f\u060c \u0639\u0646 \u0642\u0628\u0648\u0644 \u0627\u0644\u0648\u0642\u062a \u0628\u0646\u0641\u0633\u0647.`,
 
@@ -449,7 +459,7 @@ Three-stage structure: The three stanzas correspond to three stages of autumn. S
 
 Time progression: The ode moves from morning ripening (stanza 1), through afternoon resting (stanza 2), to evening music (stanza 3). The reader experiences not just an autumn day but the whole arc of the season compressed into three stanzas.
 
-Volta: The turn comes at the start of stanza 3: "Where are the songs of spring? Ay, where are they? / Think not of them, thou hast thy music too." Keats refuses to mourn what is past and instead celebrates what is here.
+Volta: The turn comes at the start of stanza 3: "Where are the songs of Spring? Aye, where are they? / Think not of them, — thou hast thy music too". Keats refuses to mourn what is past and instead celebrates what is here.
 
 Iambic pentameter: The lines are mostly in regular iambic pentameter, giving the ode a stately, almost classical pulse. The metre is calm and unhurried \u2014 the form itself is in no rush.
 
@@ -463,7 +473,7 @@ Sound: Keats packs the poem with assonance, alliteration and rich vowel sounds (
 
 \u062a\u0642\u062f\u0651\u0645 \u0627\u0644\u0632\u0645\u0646: \u0627\u0644\u0640ode \u062a\u062a\u062d\u0631\u0651\u0643 \u0645\u0646 \u0646\u0636\u062c \u0627\u0644\u0635\u0628\u062d (\u0627\u0644\u0645\u0642\u0637\u0639 1)\u060c \u0625\u0644\u0649 \u0631\u0627\u062d\u0629 \u0628\u0639\u062f \u0627\u0644\u0638\u0647\u0631 (\u0627\u0644\u0645\u0642\u0637\u0639 2)\u060c \u0625\u0644\u0649 \u0645\u0648\u0633\u064a\u0642\u0649 \u0627\u0644\u0645\u0633\u0627\u0621 (\u0627\u0644\u0645\u0642\u0637\u0639 3). \u0648\u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u062c\u0631\u0651\u0628 \u0645\u0648 \u064a\u0648\u0645 \u062e\u0631\u064a\u0641\u060c \u0628\u0644 \u0642\u0648\u0633 \u0627\u0644\u0641\u0635\u0644 \u0643\u0644\u0651\u0647 \u0645\u0636\u063a\u0648\u0637 \u0641\u064a \u062b\u0644\u0627\u062b\u0629 \u0645\u0642\u0627\u0637\u0639.
 
-Volta: \u0627\u0644\u0627\u0646\u0639\u0637\u0627\u0641 \u064a\u062c\u064a \u0641\u064a \u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u0645\u0642\u0637\u0639 3: "Where are the songs of spring? Ay, where are they? / Think not of them, thou hast thy music too." Keats \u064a\u0631\u0641\u0636 \u0625\u0646\u0647 \u064a\u0646\u0648\u062d \u0639\u0644\u0649 \u0645\u0627 \u0645\u0636\u0649\u060c \u0648\u0628\u062f\u0644 \u0630\u0644\u0643 \u064a\u062d\u062a\u0641\u0644 \u0628\u0645\u0627 \u0647\u0648 \u062d\u0627\u0636\u0631.
+Volta: \u0627\u0644\u0627\u0646\u0639\u0637\u0627\u0641 \u064a\u062c\u064a \u0641\u064a \u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u0645\u0642\u0637\u0639 3: "Where are the songs of Spring? Aye, where are they? / Think not of them, — thou hast thy music too". Keats \u064a\u0631\u0641\u0636 \u0625\u0646\u0647 \u064a\u0646\u0648\u062d \u0639\u0644\u0649 \u0645\u0627 \u0645\u0636\u0649\u060c \u0648\u0628\u062f\u0644 \u0630\u0644\u0643 \u064a\u062d\u062a\u0641\u0644 \u0628\u0645\u0627 \u0647\u0648 \u062d\u0627\u0636\u0631.
 
 Iambic pentameter: \u0627\u0644\u0623\u0628\u064a\u0627\u062a \u0641\u064a \u0627\u0644\u063a\u0627\u0644\u0628 iambic pentameter \u0645\u0646\u062a\u0638\u0645\u060c \u064a\u0639\u0637\u064a \u0627\u0644\u0640ode \u0646\u0628\u0636\u0627\u064b \u0648\u0642\u0648\u0631\u0627\u064b \u0634\u0628\u0647 \u0643\u0644\u0627\u0633\u064a\u0643\u064a. \u0648\u0627\u0644\u0648\u0632\u0646 \u0647\u0627\u062f\u0626 \u063a\u064a\u0631 \u0645\u0633\u062a\u0639\u062c\u0644 \u2014 \u0627\u0644\u0634\u0643\u0644 \u0628\u0646\u0641\u0633\u0647 \u0645\u0627 \u0639\u0646\u062f\u0647 \u0639\u062c\u0644\u0629.
 
@@ -538,7 +548,7 @@ Apostrophe: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0651\u0647\
       ],
     },
     {
-      quote: 'Where are the songs of spring? Ay, where are they?',
+      quote: 'Where are the songs of Spring? Aye, where are they?',
       analysis:
         'The volta. For a moment Keats seems to mourn the lost spring. But the next line refuses to: "Think not of them, thou hast thy music too." The ode\u2019s great act of acceptance is to refuse the temptation of nostalgia and turn fully to the present.',
       themes: ['Acceptance', 'Time', 'Music'],
@@ -551,7 +561,7 @@ Apostrophe: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0651\u0647\
       ],
     },
     {
-      quote: 'While barred clouds bloom the soft-dying day',
+      quote: 'While barrèd clouds bloom the soft-dying day',
       analysis:
         '"Bloom" is the verb used for spring flowers, here applied to evening clouds. Keats borrows spring\u2019s vocabulary for autumn\u2019s sky. "Soft-dying" yokes gentleness with death \u2014 the day is ending, but beautifully, without struggle.',
       themes: ['Beauty', 'Death', 'Time'],
@@ -627,7 +637,7 @@ Apostrophe: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0651\u0647\
     {
       device: 'Volta',
       example:
-        'Where are the songs of spring? Ay, where are they? / Think not of them, thou hast thy music too',
+        'Where are the songs of Spring? Aye, where are they? / Think not of them, — thou hast thy music too',
       effect:
         'The turn at the start of stanza 3 refuses nostalgia. Keats opens the door to mourning spring and then closes it again. The ode\u2019s philosophical move is this refusal \u2014 a celebration of the present in its own right.',
       lineRef: 24,
