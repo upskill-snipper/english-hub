@@ -377,7 +377,7 @@ Practically, the novella's brevity was also strategic. Dickens priced it at five
 <blockquote>"Another idol has displaced me... A golden one."</blockquote>
 <p><strong>Task:</strong> Analyse the significance of the scene with Belle. Consider:</p>
 <ul>
-<li>What Belle means by "a golden idol" - what is the religious connotation?</li>
+<li>What Belle means by "Another idol has displaced me" and "A golden one" - what is the religious connotation?</li>
 <li>Why Scrooge begs the ghost to remove him from this memory</li>
 <li>What this scene reveals about the moment Scrooge chose money over love</li>
 <li>How Belle's later happiness (with her own family) contrasts with Scrooge's loneliness</li>

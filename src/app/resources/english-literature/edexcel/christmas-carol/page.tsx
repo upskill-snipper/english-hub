@@ -267,7 +267,7 @@ const KEY_QUOTES = [
     quote: '"Another idol has displaced me... a golden one"',
     speaker: 'Belle (Stave 2)',
     significance:
-      "Belle leaves Scrooge because money ('a golden idol') has replaced love. Biblical allusion to idolatry - Scrooge worships wealth instead of God.",
+      "Belle leaves Scrooge because money has replaced love: 'Another idol has displaced me', she says, and when he asks what idol, 'A golden one.' Biblical allusion to idolatry - Scrooge worships wealth instead of God.",
   },
   {
     quote:

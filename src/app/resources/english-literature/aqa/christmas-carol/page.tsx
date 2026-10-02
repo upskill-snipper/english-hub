@@ -60,7 +60,7 @@ const staveSummaries = [
       'The Ghost of Christmas Past takes Scrooge back through his memories. Scrooge sees himself as a lonely boy left at school during the holidays, explaining his emotional isolation.',
       "He sees his beloved sister Fan (Fred's mother) who rescued him from school. Her early death may explain Scrooge's difficulty with human connection.",
       "Scrooge relives his time as an apprentice to the warm, generous Fezziwig, whose small acts of kindness made his employees happy. This contrasts with Scrooge's treatment of Cratchit.",
-      "He watches his younger self lose his fiancee Belle, who leaves him because his love of money has replaced his love for her. She says he has replaced her with 'a golden idol.' Scrooge is deeply moved and begs the spirit to show no more.",
+      "He watches his younger self lose his fiancee Belle, who leaves him because his love of money has replaced his love for her. She tells him that 'another idol' has displaced her: 'A golden one.' Scrooge is deeply moved and begs the spirit to show no more.",
     ],
     keyMoments:
       "Dickens uses the past to explain (not excuse) Scrooge's character. Fezziwig demonstrates that kindness costs little but means everything. Belle's departure shows the human cost of greed.",
