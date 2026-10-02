@@ -18,6 +18,12 @@
  *   wide       up to three elements past the right edge that are not inside a
  *              container that fits (a scroller the reader can swipe, or a
  *              deliberate clip); fixed elements and SVG shapes are skipped
+ *   clipped    up to three pieces of text cut off at the side by a container
+ *              with overflow hidden or clip. The page does not scroll, so the
+ *              width check cannot see this: on 2 October the unseen-poetry
+ *              cards pushed a heading under their section's clip, measuring a
+ *              clean 360px. Deliberate truncation (ellipsis, line clamp) is
+ *              not counted.
  *   narrowest  the narrowest box holding 60+ characters of its own text, if
  *              under 170px (how the readers' 68px text column was found on
  *              26 September); screen-reader-only text is skipped
@@ -108,6 +114,39 @@ function measure(vw) {
     if (wide.length >= 3) break
   }
 
+  // Text cut off by the nearest container that clips sideways. Measured on the
+  // text itself (its line boxes), not the element, which may be wider than
+  // the words it holds. A swipeable scroller in between is fine.
+  const clipped = []
+  const range = document.createRange()
+  for (const el of document.body.querySelectorAll('*')) {
+    const texts = [...el.childNodes].filter(
+      (n) => n.nodeType === 3 && n.textContent.trim().length >= 3,
+    )
+    if (!texts.length || !visible(el) || srOnly(el) || fixed(el)) continue
+    const s = cs(el)
+    if (s.textOverflow === 'ellipsis' || (s.webkitLineClamp && s.webkitLineClamp !== 'none'))
+      continue
+    let clip = null
+    for (let p = el.parentElement; p && p !== document.body; p = p.parentElement) {
+      const o = cs(p).overflowX
+      if (o === 'auto' || o === 'scroll') break
+      if (o === 'hidden' || o === 'clip') {
+        clip = p.getBoundingClientRect()
+        break
+      }
+    }
+    if (!clip || clip.width === 0) continue
+    const cut = texts.some((n) => {
+      range.selectNodeContents(n)
+      return [...range.getClientRects()].some(
+        (r) => r.width > 0 && (r.right > clip.right + 2 || r.left < clip.left - 2),
+      )
+    })
+    if (cut) clipped.push(`${describe(el)} "${texts[0].textContent.trim().slice(0, 40)}"`)
+    if (clipped.length >= 3) break
+  }
+
   let narrowest = null
   for (const el of document.body.querySelectorAll('*')) {
     let own = ''
@@ -124,6 +163,7 @@ function measure(vw) {
     overflowX: docW > vw + 1 ? docW - vw : 0,
     innerWidth: window.innerWidth,
     wide,
+    clipped,
     narrowest: narrowest && narrowest.w < 170 ? narrowest : null,
     h1: (document.querySelector('h1')?.textContent ?? '').trim().slice(0, 60) || null,
   }
@@ -191,8 +231,10 @@ const rows = readFileSync(OUT, 'utf8')
 const tooWide = rows.filter((r) => r.overflowX)
 for (const r of tooWide.sort((a, b) => b.overflowX - a.overflowX))
   console.log(`${String(r.overflowX).padStart(4)}px too wide  ${r.url}  ${r.wide?.[0] ?? ''}`)
+for (const r of rows.filter((x) => x.clipped?.length))
+  console.log(`  text cut off  ${r.url}  ${r.clipped[0]}`)
 console.log(
-  `checked ${rows.length}; too wide ${tooWide.length}; narrow text ${rows.filter((r) => r.narrowest).length}; errors ${rows.filter((r) => r.error).length}; no h1 ${rows.filter((r) => !r.error && !r.h1).length}`,
+  `checked ${rows.length}; too wide ${tooWide.length}; text cut off ${rows.filter((r) => r.clipped?.length).length}; narrow text ${rows.filter((r) => r.narrowest).length}; errors ${rows.filter((r) => r.error).length}; no h1 ${rows.filter((r) => !r.error && !r.h1).length}`,
 )
 // A page that could not be measured is not a page that fits: exit 2 rather than
 // letting a run full of navigation errors report success.
