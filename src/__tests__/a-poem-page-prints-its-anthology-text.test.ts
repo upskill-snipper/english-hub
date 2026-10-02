@@ -266,6 +266,47 @@ const VERIFIED: Verified[] = [
     shape: '44',
     words: '2e2f1556130c3357',
   },
+  // Six pages that print a held text (src/data/full-texts), compared with their
+  // anthology later the same day. Where the held edition and the anthology
+  // differ, the page says which it follows and why.
+  {
+    page: 'src/app/igcse/edexcel/poetry/if/page.tsx',
+    source: 'Pearson Edexcel International GCSE English Anthology, Issue 8, p. 51',
+    shape: '8,8,8,8',
+    words: '6bcabeb1ced4828e',
+  },
+  {
+    page: 'src/app/igcse/edexcel/poetry/piano/page.tsx',
+    source: 'Pearson Edexcel International GCSE English Anthology, Issue 8, p. 57',
+    shape: '4,4,4',
+    words: '042a5dea7c1c4dce',
+  },
+  {
+    page: 'src/app/igcse/edexcel/poetry/remember/page.tsx',
+    source: 'Pearson Edexcel International GCSE English Anthology, Issue 8, p. 70',
+    shape: '14',
+    words: '5fd373ee7be0e3fd',
+  },
+  {
+    page: 'src/app/igcse/edexcel/poetry/sonnet-116/page.tsx',
+    source: 'Pearson Edexcel International GCSE English Anthology, Issue 8, p. 59',
+    shape: '14',
+    words: '09fe8d10b18a7a4d',
+  },
+  {
+    page: 'src/app/igcse/edexcel/poetry/the-tyger/page.tsx',
+    source:
+      'Pearson Edexcel International GCSE English Anthology, Issue 8, p. 64 (line 18 keeps the held "watered" for its "water\'d", as the page says)',
+    shape: '4,4,4,4,4,4',
+    words: '7920edd5a809b913',
+  },
+  {
+    page: 'src/app/revision/poetry/power-and-conflict/my-last-duchess/page.tsx',
+    source:
+      'AQA, Past and present: poetry anthology (AQA-8702-TG-POEMS.PDF), pp. 24-25 (keeps the held "Fra", "favor" and "pretense" for its "Frà", "favour" and "pretence", as the page says, and the held punctuation or quotation marks in nine lines)',
+    shape: '56',
+    words: 'b8a9f1120b554aae',
+  },
 ]
 
 /**
@@ -273,18 +314,6 @@ const VERIFIED: Verified[] = [
  * the reason. A page leaves this list when it has been checked and pinned.
  */
 const NOT_PINNED: Record<string, string> = {
-  'src/app/igcse/edexcel/poetry/if/page.tsx':
-    'prints the held text (src/data/full-texts); its wording against the anthology was being settled separately on 2 October 2026',
-  'src/app/igcse/edexcel/poetry/piano/page.tsx':
-    'prints the held text (src/data/full-texts); its wording against the anthology was being settled separately on 2 October 2026',
-  'src/app/igcse/edexcel/poetry/remember/page.tsx':
-    'prints the held text (src/data/full-texts); its wording against the anthology was being settled separately on 2 October 2026',
-  'src/app/igcse/edexcel/poetry/sonnet-116/page.tsx':
-    'prints the held text (src/data/full-texts); its wording against the anthology was being settled separately on 2 October 2026',
-  'src/app/igcse/edexcel/poetry/the-tyger/page.tsx':
-    'prints the held text (src/data/full-texts), which has "watered" where the anthology has "water\'d" in line 18',
-  'src/app/revision/poetry/power-and-conflict/my-last-duchess/page.tsx':
-    'prints the held text (src/data/full-texts), an American printing ("favor", "pretense", "Fra") where AQA prints "favour", "pretence", "Frà"',
   'src/app/revision/poetry/love-and-relationships/the-farmers-bride/page.tsx':
     'its rows describe each section in our own words; AQA prints the poem (pp. 9-10), so it can now be restored from that',
   'src/app/revision/poetry/ocr/love-and-relationships/she-dwelt-among-the-untrodden-ways/page.tsx':
