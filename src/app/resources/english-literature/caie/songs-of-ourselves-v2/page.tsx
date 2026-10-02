@@ -5,45 +5,47 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 
 const poems = [
   {
+    // Rewritten 2 October 2026. Two of the card's three quotations were not Dharker's: "Don't
+    // look at me like that... / I'm not the one you should be afraid of" and "the border is a
+    // line / someone else drew" are not in the poem, which is about passport control, and the
+    // title is not repeated in it as a refrain. Cambridge's printing is not held here; quotations are checked against the text Poetry Prof prints.
     id: 'these-are-the-times',
     poet: 'Imtiaz Dharker',
     title: 'These are the Times We Live in',
     context:
       'Imtiaz Dharker is a British-Pakistani poet whose work frequently explores questions of cultural identity, displacement, and belonging. Born in Lahore and raised in Glasgow, her experience of living between cultures deeply informs this poem. Written in the post-9/11 era, the poem addresses the climate of suspicion and surveillance that reshaped how people - particularly those from minority backgrounds - are perceived at borders and in everyday life.',
     formAndStructure:
-      'The poem is written in free verse with short, enjambed lines that mirror the fragmented, uncertain experience of crossing borders. The lack of a fixed rhyme scheme or regular metre reflects the instability and anxiety of the speaker. Stanzas are irregular in length, reinforcing the sense of disruption. The conversational, almost confessional tone draws the reader into an intimate space of vulnerability.',
+      'The poem is written in free verse with short, enjambed lines that mirror the fragmented, uncertain experience of crossing a border. It is addressed to "you", which puts the reader in the place of the traveller at passport control. Stanzas are irregular in length, and the conversational, wry tone draws the reader into an intimate space of vulnerability.',
     quotations: [
       {
-        quote: 'These are the times we live in',
+        quote: 'reading you backwards from the last page',
         analysis:
-          "The titular refrain recurs throughout the poem, functioning as a resigned acknowledgement of a hostile political climate. Its repetition creates a cumulative weight, suggesting both inevitability and quiet protest. The use of the collective pronoun 'we' implicates the reader, making the experience universal rather than individual.",
+          'The officer reads the traveller as if they were the passport, starting at the wrong end. The image is comic and unsettling at once: the person is reduced to a document and examined as though they might be something other than they seem.',
       },
       {
-        quote: "Don't look at me like that... / I'm not the one you should be afraid of",
+        quote: 'You shrink to the size / of the book in his hand',
         analysis:
-          "The imperative 'Don't' signals defensiveness and frustration. The speaker directly confronts the assumptions of an unseen interlocutor, highlighting the injustice of racial profiling. The phrase 'afraid of' foregrounds the poem's central irony - the speaker is the one experiencing fear, not causing it.",
-      },
-      {
-        quote: 'the border is a line / someone else drew',
-        analysis:
-          "This metaphor exposes the arbitrary and imposed nature of national borders. The passive construction ('someone else drew') strips agency from those affected by borders, underscoring the power imbalance between state and individual. It also gestures toward the colonial legacy of partition.",
+          "The traveller is made small, literally and figuratively, by the officer's suspicion: reduced to the passport he holds. The second-person 'You' draws the reader into the experience of being scrutinised and found doubtful.",
       },
     ],
     themes: [
-      'Borders and boundaries - both literal (national borders, airports) and metaphorical (racial, cultural)',
+      'Borders and boundaries - both literal (passport control, airports) and metaphorical (racial, cultural)',
       'Identity and belonging - the tension between how the speaker identifies and how they are perceived',
       'Fear and suspicion - the post-9/11 climate of surveillance and mistrust',
       'Power and powerlessness - the individual against institutional authority',
     ],
   },
   {
+    // Rewritten 2 October 2026. The poem is five four-line stanzas, not a Petrarchan sonnet, and
+    // "In glamorous restaurants and expensive cafes / You can tell at once that this is not a
+    // world / Where men are colourful" is not in it. Cambridge's printing is not held here; quotations are checked against the text Poetry Prof prints.
     id: 'the-capital',
     poet: 'W.H. Auden',
     title: 'The Capital',
     context:
-      "W.H. Auden wrote 'The Capital' in the 1930s during a period of political turmoil in Europe. Auden was deeply concerned with social injustice, the rise of fascism, and the moral failures of modern society. The poem reflects on the experience of arriving in a large city - likely London or Berlin - and the disillusionment that follows the initial promise of urban life. Auden's work from this period is often political, yet expressed through deceptively personal and lyrical forms.",
+      "W.H. Auden wrote 'The Capital' in the late 1930s, during a period of political turmoil in Europe. Auden was deeply concerned with social injustice, the rise of fascism, and the moral failures of modern society. The poem addresses a great capital city directly, exposing the misery its glamour hides and the way its glow lures people in from the countryside. Auden's work from this period is often political, yet expressed through deceptively personal and lyrical forms.",
     formAndStructure:
-      "The poem is a Petrarchan (Italian) sonnet with an octave (ABBAABBA) and sestet, though Auden adapts the form with characteristic irony. The sonnet form - traditionally used for love poetry - is repurposed to express alienation and disappointment, creating a tension between form and content. The volta (turn) between octave and sestet marks a shift from description of the city's allure to its darker reality.",
+      'The poem is five four-line stanzas of long, loose lines with no regular rhyme scheme. It opens as a catalogue addressed to the city itself, like an ironic hymn of praise; the third stanza turns to the ways the city betrays its people and the fourth to the misery it hides, before the last watches its glow beckoning across the dark countryside.',
     quotations: [
       {
         quote: 'Quarter of pleasures where the rich are always waiting',
@@ -56,27 +58,30 @@ const poems = [
           "The adverb 'expensively' is brilliantly placed, linking the act of waiting to financial cost and suggesting that even hope has been commodified. The word 'miracles' carries religious connotations, implying that the city's inhabitants have lost genuine faith and replaced it with materialism.",
       },
       {
-        quote:
-          'In glamorous restaurants and expensive cafes / You can tell at once that this is not a world / Where men are colourful',
+        quote: 'like a wicked uncle',
         analysis:
-          "The contrast between 'glamorous' surroundings and colourless people creates a stark irony. The city promises vibrancy but produces conformity. 'Colourful' functions metaphorically - the inhabitants lack individuality, passion, and authentic character.",
+          "In the last stanza the city's glow reaches far into the dark countryside and beckons the farmer's children. The simile makes the capital a tempter, hinting at forbidden pleasures, and ends the poem on menace rather than delight.",
       },
     ],
     themes: [
       "Urban alienation - the loneliness and emptiness beneath the city's surface",
       'Wealth and materialism - the failure of money to provide fulfilment',
       'Disillusionment - the gap between expectation and reality',
-      'Conformity - the loss of individuality in modern urban life',
+      'Exploitation - lives used up in factories and lonely rooms',
     ],
   },
   {
+    // Rewritten 2 October 2026. "They were like an army without / The discipline of soldiers"
+    // and "We wondered what it was they were afraid of" are not in the poem, which is set in a
+    // city, not a pastoral landscape, and is three stanzas of six, six and eight lines, not
+    // quatrains. Cambridge's printing is not held here; quotations are checked against the text Poetry Prof prints.
     id: 'the-enemies',
     poet: 'Elizabeth Jennings',
     title: 'The Enemies',
     context:
-      "Elizabeth Jennings was part of 'The Movement', a group of 1950s English poets who favoured clarity and emotional restraint over the excesses of modernism. Jennings's work often explores themes of mental illness, faith, and the tension between inner and outer worlds. 'The Enemies' examines the arrival of hostile forces into a peaceful, pastoral landscape, and the anxiety of those who watch from within.",
+      "Elizabeth Jennings was part of the Movement, a group of 1950s English poets who favoured clarity and emotional restraint over the excesses of modernism. Jennings's work often explores themes of mental illness, faith, and the tension between inner and outer worlds. 'The Enemies' describes strangers who arrive in a city overnight, take nothing and harm no one, yet leave the whole town suspicious and afraid.",
     formAndStructure:
-      "The poem uses regular quatrains with a predominantly ABAB rhyme scheme, lending it a controlled, measured quality that contrasts with the threatening content. The formal regularity mirrors the ordered world of the inhabitants, while the encroaching 'enemies' disrupt this order thematically if not formally. Enjambment across stanza breaks creates a sense of unease beneath the surface calm.",
+      "Three stanzas, of six, six and eight lines, with rhymes that come and go rather than a fixed scheme. The calm, measured movement of the lines contrasts with the unease the poem describes, and the longer last stanza turns from what happened in the night to its effect on the townspeople's minds.",
     quotations: [
       {
         quote: 'Last night they came across the river and / Entered the city',
@@ -84,56 +89,53 @@ const poems = [
           "The opening is immediate and narrative, placing the reader in the middle of an invasion. 'Last night' gives urgency and recency. 'Across the river' carries biblical and mythological overtones - rivers frequently symbolise boundaries between the known and unknown, safety and danger.",
       },
       {
-        quote: 'They were like an army without / The discipline of soldiers',
+        quote: 'Yet all the city is a haunted place',
         analysis:
-          'The simile is deliberately unsettling. An army without discipline suggests chaos and unpredictability, making the threat more frightening than a conventional military force. This could represent internal anxieties - emotions or thoughts that cannot be controlled or ordered.',
-      },
-      {
-        quote: 'We wondered what it was they were afraid of',
-        analysis:
-          "This remarkable reversal shifts perspective: the 'enemies' themselves carry fear. This complicates the binary of threat and victim, suggesting that those who threaten may do so out of their own vulnerability. The line invites empathy even for antagonists.",
+          "Although the strangers took nothing and peace is still apparent, the city is changed: old friends speak cautiously and close their faces to each other. The threat has moved from the streets into people's minds, so the enemies of the title may be suspicion and fear themselves.",
       },
     ],
     themes: [
-      'Conflict and invasion - the disruption of peace by hostile forces',
-      'Nature vs. threat - the pastoral landscape as a space of vulnerability',
-      'Duality - the blurred line between aggressor and victim',
-      "Inner vs. outer conflict - the 'enemies' as potential metaphors for psychological threats",
+      'Invasion and rumour - strangers arrive by night and the town fills with stories',
+      'Trust and suspicion - friends who no longer speak openly',
+      'Inner vs. outer threat - strangers who settle in minds as well as homes',
+      'Restraint - a calm surface over deep unease',
     ],
   },
   {
+    // Rewritten 2 October 2026. None of the card's three quotations was Kolatkar's: "The bus
+    // stumbled / on a pothole", "The hills crack / and begin to fall" and "An old woman / sits
+    // beside you / and cracks her knuckles" are not in the poem, whose windows are buttoned down,
+    // so the landscape is never seen. Cambridge's printing is not held here; quotations are checked against the text Poetry Prof prints.
     id: 'the-bus',
     poet: 'Arun Kolatkar',
     title: 'The Bus',
     context:
-      "Arun Kolatkar was a major Indian poet who wrote in both Marathi and English. He is best known for his collection 'Jejuri' (1976), from which this poem is taken. The collection documents a bus journey to the temple town of Jejuri in Maharashtra. Kolatkar blends the mundane and the sacred, using precise, often humorous observation to challenge romanticised views of pilgrimage and religious devotion. His work sits at the intersection of Indian and Western modernist traditions.",
+      "Arun Kolatkar was a major Indian poet who wrote in both Marathi and English. He is best known for his collection 'Jejuri' (1976), from which this poem is taken. The collection documents a journey to the temple town of Jejuri in Maharashtra. Kolatkar blends the mundane and the sacred, using precise, often humorous observation to challenge romanticised views of pilgrimage and religious devotion. His work sits at the intersection of Indian and Western modernist traditions.",
     formAndStructure:
-      'The poem uses short, clipped free-verse lines with minimal punctuation, creating a rapid, visual quality that mimics the jolting movement of a bus. The structure is cinematic - images flash past as if viewed through a bus window. There is no conventional narrative arc; instead, the poem accumulates impressions, reflecting the fragmented nature of travel and perception.',
+      "The poem is a sequence of short stanzas in lower case, with sparse punctuation. Because the windows are covered, its images come from inside the bus - a flapping tarpaulin, the light that spills out, a reflection in an old man's glasses - and the journey is felt rather than seen.",
     quotations: [
       {
-        quote: 'The bus stumbled / on a pothole',
+        quote: 'your own divided face in the pair of glasses',
         analysis:
-          "The verb 'stumbled' personifies the bus, giving it a clumsy, almost human quality. This grounds the poem in physical, bodily experience rather than abstract reflection. The pothole is a concrete detail that roots the poem in the reality of Indian roads, resisting any tendency to idealise the journey.",
+          "With the windows buttoned down, the traveller's own face, split in two by an old man's spectacles, is the only view the journey offers. The divided face hints at a self split between the modern traveller and the old beliefs of the pilgrimage.",
       },
       {
-        quote: 'The hills crack / and begin to fall',
+        quote: "you don't step inside the old man's head",
         analysis:
-          "This striking image captures the visual effect of the landscape shifting as the bus moves. The verbs 'crack' and 'fall' suggest fragility and impermanence - the solid landscape appears to disintegrate. This could symbolise the breaking down of fixed perceptions as the journey progresses.",
-      },
-      {
-        quote: 'An old woman / sits beside you / and cracks her knuckles',
-        analysis:
-          "The sharp, mundane detail of knuckle-cracking contrasts with any expectation of spiritual or poetic profundity. Kolatkar's genius lies in finding significance in the utterly ordinary. The second-person address ('you') draws the reader directly into the scene.",
+          "The poem's last line: the traveller gets off the bus without entering the old man's world of faith. The second-person 'you' keeps the reader at the same distance - an observer of devotion, not a sharer in it.",
       },
     ],
     themes: [
       'Journey and pilgrimage - the physical and spiritual dimensions of travel',
       'Observation and perception - the act of noticing as a form of meaning-making',
       'The mundane and the sacred - finding significance in everyday details',
-      'Indian landscape and culture - a specific, grounded sense of place',
+      "Faith and scepticism - the old man's belief and the traveller's distance",
     ],
   },
   {
+    // Rewritten 2 October 2026. Two of the card's three quotations were not Daryush's: "Set in
+    // the cushioned niche, how safely rest" (the poem has a cushioned window seat) and "your easy
+    // griefs, that play, as played, with toys" are not in the poem. Cambridge's printing is not held here; quotations are checked against the text Poetry Prof prints.
     id: 'children-of-wealth',
     poet: 'Elizabeth Daryush',
     title: 'Children of Wealth',
@@ -148,14 +150,14 @@ const poems = [
           "The opening directly addresses the privileged class. 'Warm nursery' suggests comfort, protection, and - crucially - immaturity. The word 'children' positions the wealthy as perpetually juvenile, never forced to grow through hardship. The nursery is both literal (a childhood space) and metaphorical (a sheltered, insulated existence).",
       },
       {
-        quote: 'Set in the cushioned niche, how safely rest',
+        quote: 'your citadel / Is safe from feeling',
         analysis:
-          "The image of a 'cushioned niche' extends the metaphor of comfort as confinement. 'Safely' carries a double edge - safety from hardship, but also safety from growth, experience, and genuine life. The verb 'rest' implies passivity and stagnation.",
+          "Behind a double pane the children watch the snow without feeling it. The metaphor of a 'citadel' makes their comfort a fortress, safe from feeling and from any knowledge of winter's cruelty. Protection becomes ignorance.",
       },
       {
-        quote: 'your easy griefs, that play, as played, with toys',
+        quote: "horror's wrecking fire",
         analysis:
-          "The phrase 'easy griefs' is oxymoronic - true grief is never easy. Their suffering is trivial, performative, compared to genuine hardship. The comparison to toys underscores the childishness of their emotional lives. The repetition of 'play/played' reinforces the artificiality.",
+          "The sestet orders the children out to 'elemental wrong' and warns that tonight they may wake to a house on fire, because it is wired for disaster. The closing couplet turns social criticism into prophecy: their protective glass will not save them.",
       },
     ],
     themes: [
@@ -166,35 +168,38 @@ const poems = [
     ],
   },
   {
+    // Rewritten 2 October 2026. "It was a touch and go thing" and "But he wanted to die, you say? /
+    // No no, he wanted to live" are not in the poem, which is about mankind half out of the
+    // mountains, not a man close to death; it ends "It is touch and go". Cambridge's printing is not held here; quotations are checked against the text Poetry Prof prints.
     id: 'touch-and-go',
     poet: 'Stevie Smith',
     title: 'Touch and Go',
     context:
       'Stevie Smith (1902-1971) was a distinctive English poet known for her deceptively simple style, dark humour, and preoccupation with death. Her work often presents serious themes - mortality, loneliness, faith - through a childlike or whimsical voice, creating an unsettling tonal dissonance. Smith worked as a secretary for much of her life and lived in Palmers Green, London, with her aunt. Her outsider status in the literary establishment informs the subversive quality of her poetry.',
     formAndStructure:
-      "The poem uses a nursery-rhyme-like metre and simple diction that belies its serious subject matter. The short lines and regular rhythm create a sing-song quality associated with childhood verse, which jars against the poem's engagement with death. This tonal dissonance is Smith's signature technique - the gap between how the poem sounds and what it says forces the reader to reconsider their assumptions about both form and meaning.",
+      "The poem uses short quatrains, a nursery-rhyme-like metre and simple diction that belie its serious subject matter. The short lines and regular rhythm create a sing-song quality associated with childhood verse, which jars against the poem's picture of humanity stuck at a point of crisis. This tonal dissonance is Smith's signature technique - the gap between how the poem sounds and what it says forces the reader to reconsider their assumptions about both form and meaning.",
     quotations: [
       {
         quote: 'Man is coming out of the mountains',
         analysis:
-          "The opening line is stark and elemental. 'Man' is generic, representing humanity rather than a specific individual. The mountains suggest a primordial, mythic landscape. 'Coming out' implies emergence - from darkness, from struggle, from the shadow of death - establishing the poem's concern with survival and mortality.",
+          "The opening line is stark and elemental. 'Man' is generic, representing humanity rather than a specific individual. The mountains suggest a primordial, mythic landscape. 'Coming out' implies emergence - from darkness and struggle - establishing the poem's concern with humanity's progress.",
       },
       {
-        quote: 'It was a touch and go thing',
+        quote: 'his tail is caught in the pass',
         analysis:
-          "The colloquial idiom 'touch and go' is deliberately casual, almost flippant, about a life-or-death situation. This understated tone is characteristic of Smith's ability to address the gravest subjects with apparent lightness. The phrase also carries a physical quality - 'touch' and 'go' - suggesting the thin boundary between life and death.",
+          "The tail is a comic, startling detail: man still carries his animal past and is held back by it, stuck in a narrow place between where he came from and where he is going. The speaker's voice veers between impatience, calling him an ass, and pity for his suffering.",
       },
       {
-        quote: 'But he wanted to die, you say? / No no, he wanted to live',
+        quote: 'It is touch and go',
         analysis:
-          "The dramatic dialogue format creates an exchange between the poem's speaker and an imagined interlocutor. The sharp correction ('No no') reveals a common misunderstanding about those close to death - the assumption that proximity to death implies a death wish. Smith challenges this assumption with characteristic directness.",
+          "The final line answers the poem's question - will he make it out? - with a colloquial shrug. The idiom 'touch and go' is deliberately casual about a life-or-death outcome; this understatement is characteristic of Smith's ability to address the gravest subjects with apparent lightness.",
       },
     ],
     themes: [
-      'Death and mortality - the thin line between living and dying',
+      "Humanity's struggle - man half out of the mountains, held back by his past",
       'Deceptive simplicity - serious content delivered through a childlike voice',
-      'Survival and the will to live - challenging assumptions about despair',
-      'Tone and irony - the gap between form (light, sing-song) and content (death, crisis)',
+      'Hope and doubt - an ending left uncertain',
+      'Tone and irony - the gap between form (light, sing-song) and content (crisis)',
     ],
   },
 ]
@@ -203,27 +208,27 @@ const poemPairings = [
   {
     pair: 'Dharker & Auden',
     connection:
-      'Both poems explore alienation within modern society - Dharker through the lens of racial profiling and border anxiety, Auden through urban disillusionment and spiritual emptiness. Both use a first-person or inclusive perspective to draw the reader into the experience of feeling out of place.',
+      'Both poems explore alienation within modern society - Dharker through the lens of racial profiling and border anxiety, Auden through urban disillusionment and spiritual emptiness. Both address someone directly - Dharker the traveller in the second person, Auden the city itself - drawing the reader into the experience of feeling out of place.',
   },
   {
     pair: 'Jennings & Smith',
     connection:
-      "Both poets use controlled, formal structures to explore threatening or unsettling subject matter. Jennings's measured quatrains contain the threat of invasion, while Smith's nursery-rhyme rhythms domesticate death. In both cases, the tension between form and content is central to meaning.",
+      "Both poets use controlled, formal structures to explore threatening or unsettling subject matter. Jennings's measured stanzas contain the unease of the strangers' arrival, while Smith's nursery-rhyme rhythms make light of a crisis. In both cases, the tension between form and content is central to meaning.",
   },
   {
     pair: 'Kolatkar & Dharker',
     connection:
-      'Both poets write from a South Asian perspective and use free verse to capture fragmented, sensory experience. Kolatkar observes the Indian landscape with cinematic precision; Dharker navigates the psychological landscape of displacement. Both resist romanticisation in favour of honest, grounded detail.',
+      'Both poets write from a South Asian perspective and use free verse to capture fragmented, sensory experience. Kolatkar records a bus journey in fragments of light, sound and reflection; Dharker the psychological experience of being examined at a border. Both resist romanticisation in favour of honest, grounded detail.',
   },
   {
     pair: 'Daryush & Auden',
     connection:
-      "Both poems critique wealth and privilege. Daryush addresses the 'children of wealth' directly through a tightly controlled sonnet, while Auden's sonnet exposes the emptiness of the rich who wait 'expensively for miracles'. Both use the sonnet form ironically - a form associated with beauty and love repurposed for social criticism.",
+      "Both poems critique wealth and privilege. Daryush addresses the 'children of wealth' directly through a tightly controlled sonnet, while Auden's catalogue exposes the emptiness of the rich who wait 'expensively for miracles'. Daryush turns the sonnet, a form associated with beauty and love, to social criticism; Auden borrows the tone of a hymn of praise to do the same.",
   },
   {
     pair: 'Smith & Jennings',
     connection:
-      'Both poems deal with the presence of threat - external enemies in Jennings, death in Smith. Both complicate simple binaries: Jennings shows enemies who are themselves afraid; Smith shows a man close to death who desperately wants to live. Both poets use deceptively simple surfaces to explore complex emotional and philosophical territory.',
+      "Both poems deal with threat that is hard to pin down - strangers who harm no one yet leave a city afraid in Jennings, mankind stuck halfway out of the mountains in Smith. Neither offers a clear resolution: Jennings's town ends haunted, and Smith's man may or may not get free. Both poets use deceptively simple surfaces to explore complex emotional and philosophical territory.",
   },
   {
     pair: 'Kolatkar & Daryush',
@@ -247,7 +252,7 @@ const assessmentObjectives = [
     description:
       'Analyse the language, form and structure used by a writer to create meanings and effects.',
     application:
-      "This is where marks are won and lost. Examine specific word choices (e.g., Daryush's 'cushioned niche'), structural features (e.g., Auden's use of the Petrarchan volta), and the effects of form (e.g., Kolatkar's cinematic free verse). Always link technique to meaning.",
+      "This is where marks are won and lost. Examine specific word choices (e.g., Daryush's 'citadel'), structural features (e.g., the turn in Daryush's sonnet from octave to sestet), and the effects of form (e.g., Kolatkar's lower-case fragments). Always link technique to meaning.",
   },
   {
     code: 'Interpretation',
@@ -482,12 +487,12 @@ export default function SongsOfOurselvesV2Page() {
                   Analyse specific word choices, not just themes
                 </strong>
                 . Saying a poem is &ldquo;about identity&rdquo; is description; explaining how
-                Dharker&apos;s use of the imperative &ldquo;Don&apos;t look at me like that&rdquo;
-                conveys defensive vulnerability is analysis.
+                Dharker&apos;s image of the traveller shrinking to the size of a passport conveys
+                powerlessness is analysis.
               </li>
               <li>
                 <strong className="text-foreground">Address form and structure explicitly</strong>.
-                Discuss why Auden chose a sonnet, why Kolatkar uses free verse, why Smith&apos;s
+                Discuss why Daryush chose a sonnet, why Kolatkar uses free verse, why Smith&apos;s
                 nursery-rhyme metre is significant. Form is not decoration - it is meaning.
               </li>
               <li>

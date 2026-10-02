@@ -102,6 +102,11 @@ const poems = [
     ],
   },
   {
+    // Rewritten 2 October 2026. The card quoted 48 words of a poem in copyright whose share
+    // here is 20, one quotation ran three lines, and it had the villagers saying the scorpion's
+    // own sins would burn away: they hope the pain will burn away the sins of the mother's
+    // previous birth. Cambridge's printing is not held here; quotations are checked against
+    // the text AllPoetry prints.
     title: 'The Night of the Scorpion',
     poet: 'Nissim Ezekiel',
     themes: ['Suffering', 'Community', 'Superstition versus reason', 'Maternal love'],
@@ -112,65 +117,67 @@ const poems = [
       {
         point: "The villagers' response",
         detail:
-          '"They said" is repeated obsessively, creating a choral, ritualistic effect. The villagers\' superstitions (that the poison purifies sin, that suffering reduces evil) are presented without overt mockery but with implicit irony: their words do not help.',
+          "'they said' is repeated through the villagers' prayers, giving them a choral, ritual sound. Their hopes, that her pain will burn away the sins of a previous birth and cleanse her body of its desires, are reported without open mockery but with implicit irony: their words do not help.",
       },
       {
         point: "The father's rationalism",
         detail:
-          "\"My father, sceptic, rationalist\" tries 'every curse and blessing, / powder, mixture, herb and hybrid'. The listing technique and juxtaposition of 'curse and blessing' show that even the rationalist, in desperation, resorts to superstition.",
+          '"My father, sceptic, rationalist" tries every remedy he can find, from \'curse and blessing\' to paraffin set alight on the bitten toe. That even the rationalist turns to superstition in desperation shows how fear levels everyone.',
       },
       {
         point: "The mother's selflessness",
         detail:
-          'The poem\'s final three lines are devastatingly simple: "My mother only said / Thank God the scorpion picked on me / and spared my children." After 45 lines of communal noise, her quiet gratitude is the only genuine response. The understatement makes it profoundly moving.',
+          'The poem ends with the mother\'s only words once the pain has passed: "Thank God the scorpion picked on me / And spared my children." After the crowd\'s noise, her quiet gratitude is the only response that thinks of others. The understatement makes it profoundly moving.',
       },
       {
         point: 'Structure and form',
         detail:
-          'The poem is essentially one long stanza followed by a three-line conclusion. The lack of stanza breaks mirrors the unrelenting night of suffering, while the brevity of the ending creates a powerful contrast.',
+          "The long, unrhymed lines pile up the night's events, the crowd, the candles, the rain and the remedies, then the mother's words are set apart in three short lines. The brevity of the ending creates a powerful contrast.",
       },
     ],
     keyQuotes: [
-      'I remember the night my mother / was stung by a scorpion',
-      'they said the scorpion / ... would burn away his sins',
       'My father, sceptic, rationalist',
-      'My mother only said / Thank God the scorpion picked on me / and spared my children',
+      'Thank God the scorpion picked on me / And spared my children',
     ],
   },
   {
+    // Rewritten 2 October 2026. Almost every quotation on this card was not Brewster's: "People
+    // carry their landscapes with them / the way they carry their own names", "Mine is a world
+    // of spruce and birch" and "old wood crumbling in the cellar" are not in the poem, and it
+    // has three stanzas, not two. Cambridge's printing is not held here; quotations are checked
+    // against the text Poetry Prof prints.
     title: 'Where I Come From',
     poet: 'Elizabeth Brewster',
     themes: ['Identity', 'Place and belonging', 'Nature versus urban life', 'Memory'],
-    form: 'Free verse in two stanzas, contrasting urban and rural environments.',
+    form: "Free verse in three stanzas: the city, the speaker's own rural home, and a closing two-line image.",
     summary:
-      "The poem contrasts city and rural identities. The first stanza describes city-dwellers who 'carry their cities with them' in the form of urban sensory impressions. The second stanza describes the speaker's rural origins, rich with natural imagery and a sense of rootedness.",
+      "The poem begins from the idea that people are shaped by the places they come from. The first stanza describes what city people carry with them, the smells and sights of urban life. The second turns to the speaker's own rural origins, full of woods, farms and hard winters, and the short last stanza brings that cold landscape back into the mind.",
     analysis: [
+      {
+        point: 'The opening idea',
+        detail:
+          '"People are made of places" states the poem\'s central idea in five plain words: identity is shaped by where we come from. The rest of the poem tests it on two very different kinds of place.',
+      },
       {
         point: 'Urban imagery',
         detail:
-          "\"People carry their landscapes with them / the way they carry their own names\" establishes the central metaphor: identity is shaped by place. The urban landscape is characterised by 'museums, cathedrals, / subways' and the 'smell of traffic'.",
+          "The city is caught through its smells: smog, tulips in tidy beds, a museum, glue factories, the 'smell of subways' at rush hour. Even nature and art are neatly arranged, suggesting a controlled, second-hand world.",
       },
       {
         point: 'Rural imagery',
         detail:
-          "\"Mine is a world of spruce and birch\" introduces a vivid natural world. The specific tree names create authenticity. The 'smell of horses and cattle' contrasts with the city's 'smell of traffic', suggesting a more organic, grounded identity.",
+          'Where the speaker comes from, people "carry woods in their minds": pine woods, blueberry patches, old, unpainted farmhouses, hens, battered schoolhouses. The detail is homely and a little worn, rooted rather than polished.',
       },
       {
-        point: 'Sensory language',
+        point: 'Seasons and the ending',
         detail:
-          "The poem engages multiple senses: smell ('traffic', 'horses'), sight ('blueberries', 'spring floods'), touch (implied cold of 'ice and snow'). This synaesthesia creates an immersive sense of place.",
-      },
-      {
-        point: 'Tone and nostalgia',
-        detail:
-          'The final image of "old logs / crumbling in the cellar" suggests decay and the passage of time. The speaker\'s landscape is partly a memory, making the poem elegiac as well as celebratory.',
+          'The seasons that matter there are spring and winter, "ice and the breaking of ice". In the last two lines the cold of home blows back into the speaker\'s mind: the remembered landscape is still part of who they are.',
       },
     ],
     keyQuotes: [
-      'People carry their landscapes with them / the way they carry their own names',
-      'the smell of subways / … the click of machines',
-      'Mine is a world of spruce and birch',
-      'old wood crumbling in the cellar',
+      'People are made of places',
+      'carry woods in their minds',
+      'ice and the breaking of ice',
     ],
   },
   // Piano. Every quotation here is cut from the held edition
@@ -216,42 +223,50 @@ const poems = [
     ],
   },
   {
+    // Rewritten 2 October 2026 from the poem as the Pearson Edexcel International GCSE English Anthology, Issue 8 (p. 58)
+    // prints it. Cambridge's printing is not held here. Until then most of this card's
+    // quotations were not Scannell's: "Call out just once then hide and seek", "The cold wood
+    // smells of itself" and "The game is over. / Come out, come out" are not in the poem, and
+    // the line it quoted as the last is not.
     title: 'Hide and Seek',
     poet: 'Vernon Scannell',
     themes: ['Childhood', 'Isolation', 'Growing up', 'Loss and abandonment'],
-    form: "Free verse, second-person address ('you'), creating immediacy and drawing the reader into the child's experience.",
+    form: "Second-person address ('you') throughout, creating immediacy and drawing the reader into the child's experience. Rhyme comes and goes rather than following a fixed pattern.",
     summary:
       'A child plays hide and seek, hiding so well that the other children give up looking and leave. The child emerges triumphant to discover everyone has gone. The poem works as an extended metaphor for growing up and finding yourself alone.',
     analysis: [
       {
         point: 'Second-person narration',
         detail:
-          '"Call out. Call out just once then hide and seek." The imperative verbs and \'you\' address make the reader the child. This technique creates a visceral, immediate experience and allows the final revelation to hit harder.',
+          "The poem opens with the child's shout, \"I'm ready! Come and find me!\" The imperatives and the address to 'you' make the reader the child, so the final discovery happens to us as well.",
       },
       {
         point: 'Sensory concealment',
         detail:
-          '"The cold wood smells of itself" and "the sacks ... smell of seaside" ground the hiding place in specific textures. The child\'s world shrinks to what can be sensed in the dark, mimicking the claustrophobic experience.',
+          '"The sacks in the toolshed smell like the seaside" grounds the hiding place in smell and texture. The child\'s world shrinks to what can be sensed in the dark: a cold floor, damp sand, the hush of the searchers at the door.',
       },
       {
         point: 'Turning point',
         detail:
-          "\"The game is over. / Come out, come out\" - the shift from others calling to silence is abrupt. The child's triumph ('I've won! Here I am!') is immediately undercut by the emptiness.",
+          'The child bursts out to claim victory, "I\'ve won! / Here I am!", but the shout meets silence: the garden watches and "Nothing stirs". The triumph is immediately undercut by the emptiness.',
       },
       {
         point: 'The final line',
         detail:
-          '"The darkening garden watches. Nothing stirs. / But the bushes hold their breath. The sun is gone." Pathetic fallacy transforms the garden into something watchful and ominous. \'The sun is gone\' works literally (evening) and metaphorically (loss of warmth, innocence, childhood).',
+          '"Yes, here you are. But where are they who sought you?" The closing question turns the game into something lonelier: the child has won, and is alone. Read as a metaphor, it suggests the isolation of growing up.',
       },
     ],
     keyQuotes: [
-      'Call out. Call out just once then hide and seek',
-      'The cold wood smells of itself',
-      "Yes here I am! Come and own up I've caught you!",
-      'The darkening garden watches. Nothing stirs. / But the bushes hold their breath. The sun is gone',
+      "I'm ready! Come and find me!",
+      'The sacks in the toolshed smell like the seaside',
+      "I've won! / Here I am!",
+      'Yes, here you are. But where are they who sought you?',
     ],
   },
   {
+    // 2 October 2026: the card quoted 59 words of a poem in copyright whose share here is 20.
+    // Cambridge's printing is not held here; the quotations kept are checked against the text
+    // WJEC prints on its own resource site.
     title: 'Hawk Roosting',
     poet: 'Ted Hughes',
     themes: ['Power and control', 'Nature', 'Violence', 'Arrogance'],
@@ -262,12 +277,12 @@ const poems = [
       {
         point: 'First-person perspective',
         detail:
-          "\"I sit in the top of the wood, my eyes closed.\" The hawk's 'I' dominates every stanza. The first-person monologue allows no alternative perspective, mirroring the totalitarian nature of absolute power.",
+          "The hawk's 'I' dominates every stanza, from the opening, where the bird sits at the summit of the wood, eyes shut. The first-person monologue allows no alternative perspective, mirroring the totalitarian nature of absolute power.",
       },
       {
         point: 'God-like self-image',
         detail:
-          '"It took the whole of Creation / To produce my foot, my each feather" - the hawk sees itself as the pinnacle of evolution, the purpose of Creation. The capitalisation of \'Creation\' suggests divine origin, elevating the hawk to godlike status.',
+          "The hawk claims that the whole of 'Creation' was needed to produce its foot and each of its feathers, seeing itself as the pinnacle of the natural order. The capital C gives the word a religious weight, elevating the hawk to godlike status.",
       },
       {
         point: 'Violence without apology',
@@ -277,17 +292,17 @@ const poems = [
       {
         point: 'Political reading',
         detail:
-          '"No arguments assert my right" and "I am going to keep things like this" echo the language of dictatorship. Hughes denied a direct political allegory, but the poem\'s imagery of unchallenged power invites comparison with totalitarian regimes.',
+          '"No arguments assert my right", and the closing vow to keep things as they are, echo the language of dictatorship. Hughes denied a direct political allegory, but the poem\'s imagery of unchallenged power invites comparison with totalitarian regimes.',
       },
     ],
-    keyQuotes: [
-      'I sit in the top of the wood, my eyes closed',
-      'It took the whole of Creation / To produce my foot, my each feather',
-      'I kill where I please because it is all mine',
-      'Nothing has changed since I began. / My eye has permitted no change',
-    ],
+    keyQuotes: ['I kill where I please because it is all mine', 'No arguments assert my right'],
   },
   {
+    // Rewritten 2 October 2026 from the poem as the Pearson Edexcel International GCSE English Anthology, Issue 8 (p. 53)
+    // prints it. Cambridge's printing is not held here. Until then the card quoted 33 words of
+    // a 100-word poem in copyright, more than twice its share of 15, and two quotations were not
+    // Dharker's: the poem ends "over their small bones", of the children, not "the small bones of
+    // her feet", and the water does not "gather".
     title: 'Blessing',
     poet: 'Imtiaz Dharker',
     themes: ['Water and life', 'Poverty', 'Community', 'Spirituality'],
@@ -303,101 +318,106 @@ const poems = [
       {
         point: 'Religious language',
         detail:
-          "The title 'Blessing' and phrases like 'the voice of a kindly god' frame water as divine gift. 'Congregation' describes the gathering crowd, transforming a burst pipe into a sacred event. For these people, water is miraculous.",
+          "The title, the drip of water imagined as the voice of a god, and the crowd that gathers as 'a congregation' frame water as a divine gift, turning a burst pipe into a sacred event. For these people, water is miraculous.",
       },
       {
         point: 'Sound and movement',
         detail:
-          "\"the rush of fortune ... silver crashes to the ground\" - the onomatopoeia and dynamic verbs create a sense of urgent, joyful chaos. The sibilance in 'silver' and 'crashes' mimics the sound of flowing water.",
+          'When the municipal pipe bursts, "silver crashes to the ground" and the flow turns into a roar: the dynamic verbs create a sense of urgent, joyful chaos, and the sibilance of \'silver\' mimics the sound of rushing water.',
       },
       {
         point: 'The ending',
         detail:
-          '"the small bones of her feet" - this intimate, fragile image of a child in the water is beautiful but also poignant. The \'small bones\' remind us of vulnerability; the blessing is temporary, the poverty enduring.',
+          "The poem ends with the blessing singing over the children's 'small bones'. The image is beautiful but also poignant: the small bones remind us of vulnerability; the blessing is temporary, the poverty enduring.",
       },
     ],
-    keyQuotes: [
-      'The skin cracks like a pod',
-      'the voice of a kindly god',
-      'silver crashes to the ground / and the water gathers',
-      'over the small bones of her feet',
-    ],
+    keyQuotes: ['The skin cracks like a pod', 'silver crashes to the ground'],
     rights:
       '© Bloodaxe Books - fair-dealing extract. Imtiaz Dharker is a Pakistani-born British poet; raised in Glasgow; divides time between London and Mumbai.',
   },
   {
+    // Rewritten 2 October 2026 from the poem as the Pearson Edexcel International GCSE English Anthology, Issue 8 (p. 56)
+    // prints it. Cambridge's printing is not held here. Until then most of this card's
+    // quotations were not Fanthorpe's: "Taborrowsmorningtime", "He was intolerably the
+    // clockless land for ever" and "he had been let out into a time outside of Time" are not
+    // in the poem, and the boy is kept in until half-past two, not after school.
     title: 'Half-Past Two',
     poet: 'U.A. Fanthorpe',
     themes: ['Childhood perception', 'Time', 'Authority', 'Imagination'],
-    form: "Free verse with compound words ('schooltime', 'gettinguptime') that mimic a child's invented language.",
+    form: "Free verse with compound words ('schooltime', 'Gettinguptime') that mimic a child's invented language.",
     summary:
-      'A young child is kept behind after school as punishment but cannot tell the time. The teacher forgets him. Without the structure of clock-time, the child enters a timeless, imaginative space. When the teacher returns, she reimposes adult time, but the child has briefly experienced something transcendent.',
+      'A young child is told to stay in the classroom as a punishment until half-past two, but cannot tell the time. The teacher forgets him. Without the structure of clock-time, the child enters a timeless, imaginative space. When the teacher returns, she slots him back into ordinary time, but the child has briefly experienced something transcendent.',
     analysis: [
       {
         point: 'Compound time-words',
         detail:
-          '"He knew a lot of time: he knew Gettinguptime, Timeyouwereofftime, Taborrowsmorningtime." These invented compounds capture how young children structure their day through events, not numbers. The technique is both humorous and perceptive.',
+          '"Gettinguptime, timeyouwereofftime": these invented compounds capture how young children structure their day through events, not numbers. The technique is both humorous and perceptive.',
       },
       {
         point: "The teacher's authority",
         detail:
-          "\"She said he'd done Something Very Wrong\" - the capitalisation parodies the teacher's gravity from the child's perspective. The child does not understand the offence; he only understands the emotional weight adults impose.",
+          "\"And She said he'd done / Something Very Wrong\" - the capitals parody the teacher's gravity from the child's perspective. The child does not understand the offence; he only understands the emotional weight adults impose.",
       },
       {
         point: 'Timelessness',
         detail:
-          '"He was intolerably the clockless land for ever" - once freed from imposed time, the child experiences a dreamlike state. The adverb \'intolerably\' is ambiguous: is the timelessness frightening or liberating? Fanthorpe suggests both.',
+          'Unable to read the clockface, the child escapes "into the clockless land for ever", a dreamlike state outside adult time. Fanthorpe makes the timelessness both frightening and liberating.',
       },
       {
         point: 'The ending',
         detail:
-          "\"And he never forgot how once by not knowing time, / he had been let out into a time outside of Time.\" The capitalised 'Time' (abstract, transcendent) is distinguished from 'time' (mundane, clock-based). The child's ignorance becomes a form of wisdom.",
+          'Back in ordinary time, "he never forgot how once by not knowing time" he had escaped it. The child\'s ignorance becomes a kind of freedom, kept for life.',
       },
     ],
     keyQuotes: [
-      'He knew Gettinguptime, Timeyouwereofftime',
-      "She said he'd done Something Very Wrong",
-      'the clockless land for ever',
-      'once by not knowing time, / he had been let out into a time outside of Time',
+      'Gettinguptime, timeyouwereofftime',
+      "And She said he'd done / Something Very Wrong",
+      'into the clockless land for ever',
+      'he never forgot how once by not knowing time',
     ],
   },
   {
+    // Rewritten 2 October 2026. Three of this card's quotations were not Curnow's: "A long
+    // winded poem about nothing", "I am not in this poem" and "the air / wood-pigeon-cool air"
+    // are not in the poem. Cambridge's printing is not held here; quotations are checked against
+    // the text Carol Naylor's teaching blog prints.
     title: 'Continuum',
     poet: 'Allen Curnow',
     themes: ["Creativity and writer's block", 'Insomnia', 'Self and identity', 'The natural world'],
     form: "Free verse with enjambment that mirrors the restless, unresolved movement of the poet's mind.",
     summary:
-      'The speaker, unable to sleep, steps outside and contemplates the moon and the act of writing. He struggles with creativity, feeling disconnected from the world and from language itself. The poem is about the difficulty of writing a poem.',
+      'The speaker, unable to sleep, goes outside barefoot under the moon, watches the night sky and feels the cold, then gives up and goes back indoors. The moon is a metaphor for the speaker himself, and the poem is about the restless, interrupted work of writing.',
     analysis: [
       {
         point: 'Opening line',
         detail:
-          '"The moon rolls over the roof and falls behind / my house" - the enjambment makes the moon seem to literally fall, creating a sense of instability. The domestic setting (\'my house\') contrasts with the cosmic scale of the moon.',
+          '"The moon rolls over the roof and falls behind / my house" - the enjambment makes the moon seem to literally fall, creating a sense of instability. The domestic setting contrasts with the cosmic scale of the moon.',
       },
       {
-        point: 'Self-reflexive writing',
+        point: 'The moon as metaphor',
         detail:
-          '"A long winded poem about nothing" - the poet\'s self-deprecation acknowledges the absurdity of writing about not being able to write. This metapoetic quality (a poem about poetry) is characteristic of the Songs of Ourselves anthology.',
+          'The next lines withdraw the image: "I am talking about myself". This self-reflexive turn tells the reader that the moon stands for the poet, and the poem becomes a poem about its own making.',
       },
       {
-        point: 'Disconnection',
+        point: 'Restlessness',
         detail:
-          '"I am not in this poem" - the speaker feels alienated from his own creative output. The statement is paradoxical: he is literally in the poem (he wrote it), yet emotionally absent. This captures the feeling of creative impotence.',
+          'Unable to settle, the speaker goes out barefoot and watches clouds cross the dark sky while the cold rises in him. The broken, enjambed lines enact a mind that cannot rest.',
       },
       {
         point: 'The ending',
         detail:
-          "\"and / close the door behind him on the night\" - the pronoun shift from 'I' to 'him' is significant. The poet steps outside himself, viewing himself in the third person. The closed door suggests resolution, or perhaps just avoidance.",
+          "In the last stanza the speaker gives up and goes back to bed, closing the door on 'the author' as if he were someone else. The shift into the third person suggests the poet watching himself: resolution, or perhaps just avoidance.",
       },
     ],
     keyQuotes: [
       'The moon rolls over the roof and falls behind / my house',
-      'the air / wood-pigeon-cool air',
-      'A long winded poem about nothing',
-      'close the door behind him on the night',
+      'I am talking about myself',
     ],
   },
   {
+    // 2 October 2026: the card quoted 44 words of a poem in copyright whose share here is 20,
+    // and "I was a child then, and now I am old" is not in the poem. Cambridge's printing is not
+    // held here; quotations are checked against the text Poem Hunter prints.
     title: 'Horses',
     poet: 'Edwin Muir',
     themes: ['Childhood memory', "Nature's power", 'Awe and fear', 'The passage of time'],
@@ -408,17 +428,17 @@ const poems = [
       {
         point: 'Scale and power',
         detail:
-          "\"Their conquering hooves which trod the stubble down\" - the verb 'conquering' elevates the horses to warrior-like status. The alliteration of 'hooves' and the heavy stress pattern mimic the rhythmic pounding of their movement.",
+          '"Their conquering hooves which trod the stubble down" - the word \'conquering\' elevates the horses to warrior-like status, and the heavy stresses mimic the rhythmic pounding of their movement.',
       },
       {
         point: 'Elemental imagery',
         detail:
-          '"Their eyes as brilliant and as wide as night" - the simile grants the horses cosmic qualities. They are not merely animals but embodiments of natural power, linked to darkness and vastness.',
+          "Later the horses' eyes are likened to the night, vast and brilliant, with a terrible, end-of-the-world glow. They are not merely animals but embodiments of natural power, linked to darkness and vastness.",
       },
       {
         point: 'Childhood perspective',
         detail:
-          '"I was a child then, and now I am old" - the simple temporal contrast frames the poem as retrospective. The childish awe has not faded but crystallised, suggesting some experiences are so powerful they transcend time.',
+          'The adult speaker wonders why the horses suddenly seem so terrible, and whether "some childish hour has come again". The awe of childhood returns rather than fading, suggesting some experiences are so powerful they outlast time.',
       },
       {
         point: 'Mythological quality',
@@ -427,10 +447,9 @@ const poems = [
       },
     ],
     keyQuotes: [
-      'Those lumbering horses in the steady plough',
       'Their conquering hooves which trod the stubble down',
-      'Their eyes as brilliant and as wide as night',
-      'Ah, now it fades! It fades! and I must pine',
+      'Perhaps some childish hour has come again',
+      'Ah, now it fades!',
     ],
   },
 ]

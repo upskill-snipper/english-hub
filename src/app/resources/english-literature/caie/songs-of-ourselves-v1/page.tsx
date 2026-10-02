@@ -92,29 +92,29 @@ const poems: PoemData[] = [
     ],
   },
   {
+    // Rewritten 2 October 2026 against AQA's printing of the poem (its typeset anthology,
+    // p. 17); Cambridge's printing is not held here. The card quoted 60 words of a poem in
+    // copyright whose share here is 22, ran the first line on to the fourth as if they were
+    // adjacent, printed "The horses strained" for "The horse strained", and named a half-rhyme,
+    // 'sock'/'lacked', whose second word is not in the poem.
     title: 'Follower',
     poet: 'Seamus Heaney',
     context:
-      "Published in 'Death of a Naturalist' (1966), Heaney's first major collection. Heaney grew up on a farm in County Derry, Northern Ireland, and his early poetry is deeply rooted in rural life. 'Follower' draws on his childhood memories of watching his father plough fields. Heaney often explored the tension between his farming heritage and his identity as a poet - this poem captures that tension through the metaphor of following.",
+      "Published in Death of a Naturalist (1966), Heaney's first major collection. Heaney grew up on a farm in County Derry, Northern Ireland, and his early poetry is deeply rooted in rural life. 'Follower' draws on his childhood memories of watching his father plough fields. Heaney often explored the tension between his farming heritage and his identity as a poet - this poem captures that tension through the metaphor of following.",
     themes: [
       'Admiration and hero-worship',
       'Role reversal and ageing',
       'Family relationships',
       'Rural identity',
     ],
-    form: "Six four-line stanzas (quatrains) with an ABAB rhyme scheme, though many rhymes are half-rhymes (e.g. 'plough'/'follow', 'sock'/'lacked'). The half-rhymes suggest something slightly off - the son can never quite match or replicate the father.",
+    form: "Six four-line stanzas (quatrains) with an ABAB rhyme scheme, though many rhymes are half-rhymes (e.g. 'plough'/'follow'). The half-rhymes suggest something slightly off - the son can never quite match or replicate the father.",
     structure:
-      "The poem moves chronologically. Stanzas 1-4 describe the father's skill at ploughing, observed by the admiring child. Stanza 5 reveals the child's desire to emulate the father. The final stanza delivers a sudden reversal: now the father stumbles behind the grown son. The last two lines invert the entire poem.",
+      "The poem moves chronologically. Stanzas 1-3 describe the father's skill at ploughing, observed by the admiring child. Stanza 4 shows the child stumbling after him and riding on his back; stanza 5 reveals the child's desire to emulate the father. The final stanza delivers a sudden reversal: now the father stumbles behind the grown son. The last two lines invert the entire poem.",
     keyQuotations: [
       {
-        quote: 'My father worked with a horse-plough, / The horses strained at his clicking tongue',
+        quote: 'An expert.',
         analysis:
-          "The opening establishes the father's mastery over animals and land. 'Clicking tongue' is a tiny, precise detail that conveys expertise - the father controls powerful horses with the smallest sound.",
-      },
-      {
-        quote: 'An expert. He would set the wing / And fit the bright steel-pointed sock',
-        analysis:
-          "The blunt sentence 'An expert' stands alone, its certainty reinforced by the enjambment that makes it land with weight. The technical vocabulary ('wing', 'sock', 'headrig') demonstrates the father's specialist knowledge.",
+          "The blunt two-word sentence opens the second stanza and stands alone, its certainty reinforced by the full stop. The technical vocabulary that follows - the wing, the sock, the headrig - demonstrates the father's specialist knowledge.",
       },
       {
         quote: 'I stumbled in his hob-nailed wake',
@@ -122,21 +122,21 @@ const poems: PoemData[] = [
           "'Stumbled' conveys the child's clumsiness in contrast to the father's precision. 'Hob-nailed wake' merges farming boots with nautical imagery - the father is like a ship cutting through the sea, the child trailing in the disturbed water behind.",
       },
       {
-        quote: 'But today / It is my father who keeps stumbling / Behind me, and will not go away',
+        quote: 'keeps stumbling / Behind me, and will not go away',
         analysis:
-          "The volta. 'But today' marks the shift from past to present. Now the father 'stumbles' - the same verb used for the child earlier, completing the role reversal. 'Will not go away' is deliberately ambiguous: is it irritation, guilt, or love?",
+          "The reversal. The present tense of the final stanza marks the shift: now it is the father who is 'stumbling' - the verb used for the child earlier, completing the role reversal. 'Will not go away' is deliberately ambiguous: is it irritation, guilt, or love?",
       },
     ],
     analysis: [
       {
         point: 'Farming imagery as metaphor',
         detail:
-          "The poem operates on two levels: literally, it describes ploughing; metaphorically, it explores how children follow in their parents' footsteps (or fail to). The 'furrow' the father ploughs is also the path of life the son is expected to follow.",
+          "The poem operates on two levels: literally, it describes ploughing; metaphorically, it explores how children follow in their parents' footsteps (or fail to). The furrow the father ploughs is also the path of life the son is expected to follow.",
       },
       {
         point: 'Half-rhymes and imperfect echoes',
         detail:
-          "The half-rhymes ('plough'/'follow', 'sock'/'lacked') are central to meaning. Just as the child cannot perfectly replicate the father's skill, the rhymes cannot perfectly replicate each other. Form mirrors content.",
+          "The half-rhymes ('plough'/'follow') are central to meaning. Just as the child cannot perfectly replicate the father's skill, the rhymes cannot perfectly replicate each other. Form mirrors content.",
       },
       {
         point: 'The ambiguous ending',
@@ -146,14 +146,14 @@ const poems: PoemData[] = [
       {
         point: 'Monosyllabic language',
         detail:
-          "Much of the poem uses short, Anglo-Saxon words ('worked', 'set', 'fit', 'bright', 'steel'). This plain diction suits the subject: farming is physical, practical work, and the language reflects that directness.",
+          'Much of the poem is built from short, plain words for physical work: the father sets, fits, turns and maps the furrow. This plain diction suits the subject: farming is physical, practical work, and the language reflects that directness.',
       },
     ],
     examTips: [
       'The half-rhymes are crucial - always mention them and explain how they connect to the theme of imperfect imitation.',
       "Compare with 'Piano' (Lawrence) for another poem about a son's relationship with a parent and the pull of the past.",
       'Discuss the ambiguity of the ending - markers reward responses that explore multiple interpretations rather than fixing on one.',
-      "Note the shift in tense: past tense dominates until the final stanza's 'today', which makes the reversal sudden and powerful.",
+      "Note the shift in tense: past tense dominates until the final stanza's present tense, which makes the reversal sudden and powerful.",
     ],
   },
   {
@@ -224,10 +224,14 @@ const poems: PoemData[] = [
     ],
   },
   {
+    // 2 October 2026: the card quoted 49 words of a poem in copyright whose share here is 20,
+    // joined lines that are not adjacent into one quotation, and quoted 'loved' and 'coloniser
+    // bad', which are not Bhatt's words. Cambridge's printing is not held here; quotations are
+    // checked against the text Poetry Prof prints.
     title: 'A Different History',
     poet: 'Sujata Bhatt',
     context:
-      "Published in 'Brunizem' (1988). Bhatt was born in India in 1956 and later moved to the United States, then Germany. Her poetry frequently explores the tension between her Gujarati mother tongue and English, the language of colonial power. 'A Different History' examines how colonialism imposes language and erases indigenous culture, while also acknowledging the complex relationship colonised peoples have with the coloniser's language - loving English literature while recognising its history of oppression.",
+      "Published in Brunizem (1988). Bhatt was born in India in 1956 and later moved to the United States, then Germany. Her poetry frequently explores the tension between her Gujarati mother tongue and English, the language of colonial power. 'A Different History' examines how colonialism imposes language and erases indigenous culture, while also acknowledging the complex relationship colonised peoples have with the coloniser's language - loving English literature while recognising its history of oppression.",
     themes: [
       'Postcolonial identity',
       'Language and power',
@@ -236,28 +240,22 @@ const poems: PoemData[] = [
     ],
     form: "Free verse with no regular rhyme scheme or metre, reflecting the poem's resistance to imposed structure - just as colonised cultures resist imposed languages. The poem is divided into two distinct sections, each with a different tone.",
     structure:
-      "Part 1 celebrates Indian culture: the god Pan lives on in India, and books and trees are treated with reverence. Part 2 shifts abruptly to the violence of colonialism, asking how a language can be 'torture' one generation and 'loved' by the next. The two-part structure mirrors the split identity of postcolonial subjects.",
+      'Part 1 celebrates Indian culture: the god Pan lives on in India, and books and trees are treated with reverence. Part 2 shifts abruptly to the violence of colonialism, asking how a language forced on a people through torture can come to be loved by their grandchildren. The two-part structure mirrors the split identity of postcolonial subjects.',
     keyQuotations: [
       {
-        quote: 'Great Pan is not dead; / he simply emigrated / to India',
+        quote: 'Great Pan is not dead',
         analysis:
-          "The reference to Pan (Greek god of nature) being alive in India asserts that ancient, nature-based spirituality survives in Indian culture even as it has died in the West. 'Emigrated' humorously personifies a god as a migrant, connecting to themes of cultural movement.",
-      },
-      {
-        quote:
-          'Every tree is sacred / ... You must learn how to turn the pages gently / without offending the tree',
-        analysis:
-          "Books and trees are linked - paper comes from trees, so books carry the sacred life of the forest. This reverence contrasts with Western commodification of nature. The imperative 'You must' conveys the weight of cultural obligation.",
+          "The reference to Pan (Greek god of nature) being alive in India - he has simply 'emigrated' there - asserts that ancient, nature-based spirituality survives in Indian culture even as it has died in the West. The verb humorously personifies a god as a migrant, connecting to themes of cultural movement.",
       },
       {
         quote: "Which language / has not been the oppressor's tongue?",
         analysis:
-          "A pivotal rhetorical question that universalises the poem's concerns. It is not only English that has been used as a tool of oppression - all languages carry histories of conquest. This complicates a simplistic 'coloniser bad' reading.",
+          "A pivotal rhetorical question that universalises the poem's concerns. It is not only English that has been used as a tool of oppression - all languages carry histories of conquest. This complicates any simple reading in which only the coloniser is to blame.",
       },
       {
-        quote: 'the unborn grandchildren / grow to love that strange language',
+        quote: 'grow to love that strange language',
         analysis:
-          "The most painful paradox: future generations come to love the language that was forced upon their ancestors through violence. 'Strange' retains a sense of foreignness even as the language becomes familiar, capturing the postcolonial condition of inhabiting a language that is both yours and not yours.",
+          "The most painful paradox: the unborn grandchildren come to love the language that was forced upon their ancestors through violence. 'Strange' retains a sense of foreignness even as the language becomes familiar, capturing the postcolonial condition of inhabiting a language that is both yours and not yours.",
       },
     ],
     analysis: [
@@ -269,12 +267,12 @@ const poems: PoemData[] = [
       {
         point: 'Language as both wound and gift',
         detail:
-          "Bhatt does not simply condemn English. She acknowledges that the language of the oppressor can become a vehicle for beauty, literature, and self-expression. This ambivalence - English as 'torture' and as something 'loved' - is the poem's emotional core.",
+          "Bhatt does not simply condemn English. She acknowledges that the language of the oppressor can become a vehicle for beauty, literature, and self-expression. This ambivalence - a language that arrives through torture and is then loved - is the poem's emotional core.",
       },
       {
         point: 'Reverence for nature and knowledge',
         detail:
-          'The insistence that books must be handled with care, that trees are sacred, positions Indian culture as one of deep respect for the natural and intellectual worlds. This implicitly critiques colonial cultures that extract and exploit.',
+          'The insistence that books must be handled with care, so as not to offend the goddess of learning or the tree the paper came from, positions Indian culture as one of deep respect for the natural and intellectual worlds. This implicitly critiques colonial cultures that extract and exploit.',
       },
       {
         point: 'Rhetorical questions',
@@ -290,89 +288,98 @@ const poems: PoemData[] = [
     ],
   },
   {
+    // Rewritten 2 October 2026. The card quoted 48 words of a poem in copyright whose share here
+    // is 20, and most of its quotations were not Wright's: "he moved his survey / on us with
+    // narrowed eye", "We took a deep breath, and went on walking" and "reided ropes" are not in
+    // the poem, and the snake never surveys the walkers. Cambridge's printing is not held here;
+    // quotations are checked against the text Poetry Prof prints.
     title: 'Hunting Snake',
     poet: 'Judith Wright',
     context:
-      "Published in 'The Two Fires' (1955). Wright was an Australian poet, environmentalist, and campaigner for Aboriginal land rights. Her poetry frequently engages with the Australian landscape and the human relationship with nature. 'Hunting Snake' describes a brief encounter with a large black snake - likely an eastern brown or king brown - and explores the mixture of fear and admiration that the natural world provokes.",
+      "Published in The Two Fires (1955). Wright was an Australian poet, environmentalist, and campaigner for Aboriginal land rights. Her poetry frequently engages with the Australian landscape and the human relationship with nature. 'Hunting Snake' describes a brief encounter with a great black snake and explores the mixture of fear and admiration that the natural world provokes.",
     themes: [
       "Nature's power and beauty",
       'Fear and awe',
       'Human insignificance',
       'Respect for the natural world',
     ],
-    form: "Four quatrains with an ABAB rhyme scheme and predominantly iambic tetrameter. The tight, controlled form mirrors the precision and economy of the snake's movement. The regularity also reflects the walkers' attempt to contain their fear within rational observation.",
+    form: "Four quatrains, mostly rhymed ABAB, in predominantly iambic tetrameter. The tight, controlled form mirrors the precision and economy of the snake's movement. The regularity also reflects the walkers' attempt to contain their fear within rational observation.",
     structure:
-      "Stanza 1 establishes the peaceful autumn walk. Stanza 2 introduces the snake - the walkers freeze. Stanza 3 describes the snake in precise physical detail. Stanza 4 records the snake's departure and the walkers' stunned silence. The poem follows a simple arc: calm, interruption, observation, departure - mirroring the brevity of the actual encounter.",
+      "Stanza 1 establishes the peaceful autumn walk and the moment the walkers freeze as the snake goes by. Stanza 2 describes the snake in motion, hunting. Stanza 3 records the walkers' stillness as they watch it go. Stanza 4 follows the snake into the grass and the walkers back to their walk. The poem follows a simple arc: calm, interruption, observation, departure - mirroring the brevity of the actual encounter.",
     keyQuotations: [
       {
-        quote: "Sun-warmed in this late season's grace / we paused",
+        quote: "late season's grace",
         analysis:
-          "The opening creates a gentle, idyllic mood. 'Grace' suggests beauty and ease. 'Late season' hints at autumn - a time of transition. The peaceful tone makes the snake's arrival more startling.",
+          "The opening creates a gentle, idyllic mood: the walkers are warmed by the sun under a mild autumn sky. 'Grace' suggests beauty and ease, and the late season hints at autumn - a time of transition. The peaceful tone makes the snake's arrival more startling.",
       },
       {
-        quote: 'We froze half-through a pace',
+        quote: 'froze half-through a pace',
         analysis:
-          "The caesura after 'froze' enacts the sudden stop. 'Half-through a pace' captures the mid-stride freeze with physical precision - the walkers are literally caught between steps, suspended in the moment.",
+          'The walkers stop mid-stride. The pause in the line enacts the sudden stop, and the phrase captures the freeze with physical precision - they are literally caught between steps, suspended in the moment.',
       },
       {
-        quote: 'Cold, dark and splendid, he moved his survey / on us with narrowed eye',
+        quote: 'Cold, dark and splendid he was gone',
         analysis:
-          "The triple adjective 'Cold, dark and splendid' balances threat ('cold, dark') with beauty ('splendid'). The snake 'surveys' the humans - reversing the expected power dynamic. The humans are being observed, not the observer. 'Narrowed eye' suggests intelligence and assessment.",
+          "The triple adjective balances threat ('cold, dark') with beauty ('splendid'), and the line records the snake's departure as swiftly as it came. The walkers are left as bystanders; the snake is sovereign.",
       },
       {
-        quote: 'We took a deep breath, and went on walking',
+        quote: 'a deeper breath',
         analysis:
-          "The understated final line captures the aftershock. The 'deep breath' acknowledges the intensity of the encounter. 'Went on walking' suggests life continues, but the encounter has left a mark. The simplicity is deceptive - it conceals awe.",
+          'The understated last stanza captures the aftershock: the walkers take a deeper breath, look at each other and go on. Life continues, but the encounter has left a mark. The simplicity is deceptive - it conceals awe.',
       },
     ],
     analysis: [
       {
         point: 'Precise, economical imagery',
         detail:
-          "Wright describes the snake with scientific precision: 'reided ropes', 'diamond scale', 'survey'. There is no exaggeration or sentimentality. The restraint mirrors the respect the poem advocates - the snake is observed, not dramatised.",
+          "Wright describes the snake with close precision: its lowered head and flickering tongue, the sun glazing its 'diamond scale'. There is no exaggeration or sentimentality. The restraint mirrors the respect the poem advocates - the snake is observed, not dramatised.",
       },
       {
         point: 'Reversal of power',
         detail:
-          "The humans freeze; the snake moves freely. The snake 'surveys' the humans; the humans are passive. Wright reverses the anthropocentric assumption that humans dominate nature. In this encounter, the snake is sovereign.",
+          'The humans freeze and lose their breath; the snake moves freely, intent on its own prey. Wright reverses the assumption that humans dominate nature: in this encounter the walkers are bystanders and the snake is sovereign.',
       },
       {
         point: 'Fear and beauty coexisting',
         detail:
-          "'Splendid' is the key word. The snake is dangerous, yet beautiful. Wright refuses to separate these qualities, suggesting that true appreciation of nature requires accepting both. This is not the 'tamed' nature of gardens but the wild, indifferent natural world.",
+          "'Splendid' is the key word. The snake is dangerous, yet beautiful. Wright refuses to separate these qualities, suggesting that true appreciation of nature requires accepting both. This is not the tamed nature of gardens but the wild, indifferent natural world.",
       },
       {
         point: 'Brevity and structure',
         detail:
-          "The poem is only 16 lines - as brief as the encounter itself. Each stanza has a clear function (setting, interruption, description, departure), creating a tightly controlled arc. Nothing is wasted, mirroring the snake's efficient movement.",
+          "The poem is only 16 lines - as brief as the encounter itself. Each stanza has a clear function (setting, description, watching, departure), creating a tightly controlled arc. Nothing is wasted, mirroring the snake's efficient movement.",
       },
     ],
     examTips: [
       "Focus on the coexistence of fear and admiration - 'Cold, dark and splendid' is the poem's most important phrase.",
-      'Discuss the reversal of the human-animal power dynamic: the snake observes the humans, not the other way around.',
+      'Discuss the reversal of the human-animal power dynamic: the walkers stand still while the snake goes about its hunt, untroubled by them.',
       "Compare with 'Hawk Roosting' (Hughes) for contrasting presentations of powerful animals - the hawk speaks, the snake is observed in silence.",
       "The poem's brevity is a technique: explain how the short, tight form mirrors the fleeting nature of the encounter.",
     ],
   },
   {
+    // Rewritten 2 October 2026. "For the ocean wood-pigeon, / the ocean dolphin" is not in the
+    // poem, which neither ends with the green turtle nor has a final single line, and the soldier
+    // is not its only human victim. Cambridge's printing is not held here; quotations are checked
+    // against the text Poetry Prof prints.
     title: 'Lament',
     poet: 'Gillian Clarke',
     context:
-      "Published in 'Five Fields' (1998). Clarke, the former National Poet of Wales, wrote 'Lament' in response to the 1991 Gulf War, which caused catastrophic environmental damage. Oil wells were set ablaze, millions of barrels of oil were dumped into the Persian Gulf, and wildlife was devastated. The poem mourns the environmental casualties of war - the creatures and landscapes destroyed by human conflict.",
+      "Published in Five Fields (1998). Clarke, the former National Poet of Wales, wrote 'Lament' in response to the 1991 Gulf War, which caused catastrophic environmental damage. Oil wells were set ablaze, millions of barrels of oil were dumped into the Persian Gulf, and wildlife was devastated. The poem mourns the casualties of war - the creatures, people and landscapes destroyed by human conflict.",
     themes: [
       'Environmental destruction',
       'War and its consequences',
       'Human responsibility',
       'Elegy and mourning',
     ],
-    form: "Seven three-line stanzas (tercets) plus a final single line. Free verse with no regular rhyme scheme. Each stanza begins with 'For' - an anaphoric structure that echoes the litany of a funeral prayer or lament, listing the dead.",
+    form: "Seven three-line stanzas (tercets). Free verse with no regular rhyme scheme. Each stanza begins with 'For' - an anaphoric structure that echoes the litany of a funeral prayer or lament, listing the dead.",
     structure:
-      "The poem accumulates images of destruction, moving from individual creatures (turtle, cormorant, whale) to broader environmental collapse (ocean, sun, tern's eggs). The final single line - 'For the green turtle with her pulsing burden' - returns to the turtle from the opening, creating a circular structure that suggests the cycle of destruction is unending.",
+      'The poem accumulates images of destruction, moving from single creatures (the turtle, the cormorant) through the people caught up in the war - a refugee at a closed border, a soldier, a boy fusilier - to sea creatures and birds, and finally to the burning of land, sea and sky, ending with language itself. The list widens until it takes in the whole world.',
     keyQuotations: [
       {
         quote: 'For the green turtle with her pulsing burden',
         analysis:
-          "Opens and closes the poem. 'Pulsing burden' refers to the turtle's eggs - alive, fragile, full of potential. 'Burden' carries a double meaning: the eggs are both a physical weight and a responsibility. The turtle carries the future of her species, now threatened.",
+          "The poem's opening line. 'Pulsing burden' refers to the turtle's eggs - alive, fragile, full of potential. 'Burden' carries a double meaning: the eggs are both a physical weight and a responsibility. The turtle carries the future of her species, now threatened.",
       },
       {
         quote: 'For the cormorant in his funeral silk',
@@ -380,14 +387,9 @@ const poems: PoemData[] = [
           "The cormorant, coated in oil, appears to wear 'funeral silk' - a metaphor that transforms pollution into mourning dress. The bird attends its own funeral. 'Silk' is bitterly ironic: oil is a luxury commodity, but here it is a death shroud.",
       },
       {
-        quote: 'For the ocean wood-pigeon, / the ocean dolphin',
+        quote: 'uniform of fire',
         analysis:
-          "The naming of individual species creates a roll-call of the dead, each 'For' functioning like a prayer. The simplicity of the naming - no adjectives, no elaboration - gives the lines a dignified, mournful quality.",
-      },
-      {
-        quote: 'For the soldier in his uniform of fire',
-        analysis:
-          "The only human victim mentioned. 'Uniform of fire' transforms the military uniform into flames - the soldier is consumed by the war he serves. Clarke does not distinguish between human and animal victims; all are casualties of the same violence.",
+          "The soldier's 'uniform of fire' transforms the military uniform into flames - the soldier is consumed by the war he serves. Clarke sets him among the animals without distinction; all are casualties of the same violence.",
       },
     ],
     analysis: [
@@ -402,20 +404,20 @@ const poems: PoemData[] = [
           "A lament is a formal expression of grief. Clarke adapts the elegiac tradition to mourn not a single person but an entire ecosystem. By treating environmental destruction with the gravity usually reserved for human death, she elevates nature's suffering to the level of tragedy.",
       },
       {
-        point: 'Circular structure',
+        point: 'Widening scope',
         detail:
-          'The poem begins and ends with the green turtle, creating a loop. This circularity suggests that environmental destruction is cyclical and ongoing - each war brings the same devastation. There is no resolution, only repetition.',
+          'The poem moves outwards: from single creatures and individual people to the burning of land, sea and sky, and last of all to language. There is no consolation or resolution, only accumulation, as if no list could be long enough.',
       },
       {
-        point: 'The soldier among the animals',
+        point: 'People among the animals',
         detail:
-          'By placing the soldier alongside turtles, cormorants, and dolphins, Clarke refuses to privilege human suffering. War destroys everything - human and non-human alike. The soldier is as much a victim as the wildlife, consumed by forces beyond his control.',
+          'By placing a refugee, a soldier and a boy fusilier alongside turtles, cormorants and dolphins, Clarke refuses to privilege human suffering. War destroys everything - human and non-human alike. The soldier is as much a victim as the wildlife, consumed by forces beyond his control.',
       },
     ],
     examTips: [
       "The anaphora ('For') is the poem's defining technique - always discuss it and explain its liturgical, cumulative effect.",
       "Compare with 'The Chimney-Sweeper' (Blake) for different forms of social/political criticism through poetry.",
-      'Discuss the circular structure and explain how it reinforces the theme of ongoing, cyclical destruction.',
+      "Discuss how the list widens from creatures to the whole world, and to language, and what that suggests about the scale of war's damage.",
       'Note that Clarke mourns human and animal victims equally - this is a deliberate ethical stance, not an oversight.',
     ],
   },
@@ -446,7 +448,7 @@ const comparisonPairings = [
     theme: 'Cultural identity and language',
     poems: 'A Different History & Follower',
     explanation:
-      "Bhatt explores how colonialism imposes a 'strange language' that future generations come to love; Heaney explores the tension between his farming heritage and his literary identity. Both poets negotiate between inherited culture and the self they have become.",
+      'Bhatt explores how colonialism imposes a strange language that future generations come to love; Heaney explores the tension between his farming heritage and his literary identity. Both poets negotiate between inherited culture and the self they have become.',
   },
   {
     theme: 'Social criticism',
