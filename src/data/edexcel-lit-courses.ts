@@ -415,7 +415,7 @@ const edexcelLitPaper1: CourseData = {
 <div class="text-extract">
 <strong>Sample Question:</strong> "Explore how Shakespeare presents Macbeth's change from loyal warrior to paranoid tyrant."<br><br>
 <strong>Model Response (c. 280 words):</strong> Shakespeare's presentation of Macbeth's moral descent is central to the tragedy's exploration of ambition's corrupting nature. In Act 1 Scene 2, the bleeding sergeant hails "brave Macbeth," establishing him as a loyal warrior whose violence serves rightful order - blood here symbolises martial honour. Yet by Act 1 Scene 7, Macbeth's soliloquy reveals internal fracture: "I have no spur / To prick the sides of my intent, but only / Vaulting ambition." The noun "spur" traditionally signified duty or honour, but Macbeth finds only "ambition" - selfish desire divorced from legitimate cause. The verb "vaulting" (arching, overleaping) suggests ambition that exceeds its proper bounds and will inevitably collapse, foreshadowing his downfall. Lady Macbeth's manipulation - "When you durst do it, then you were a man" - weaponises masculinity against him, forcing the murder. Following Duncan's death, blood's imagery inverts. The hyperbolic "Will all great Neptune's ocean wash this blood / Clean from my hand?" reveals Macbeth's recognition that moral transgression cannot be undone by physical action. This psychological unraveling accelerates through Acts 3-5. By Act 3, Macbeth orders further murders to feel secure ("We have scorch'd the snake, not kill'd it"), revealing paranoia and moral numbness. The Act 5 soliloquy sees meaning itself dissolve: "Tomorrow, and tomorrow, and tomorrow." Shakespeare's arc demonstrates that unchecked ambition doesn't elevate; it destroys, leaving the protagonist isolated and nihilistic. For a Jacobean audience steeped in the divine right of kings, Macbeth's fall would serve as a cosmic warning: those who violate God's ordained order face not mere earthly punishment but psychological annihilation.
-<div class="source">Grade 8-9 exemplar for a part (b)-style question: ~320 words of personal response (AO1) ranging across the play, supported by close reference ("vaulting," "spur"), with context (AO3, divine right)</div>
+<div class="source">Grade 8-9 exemplar for a part (b)-style question: ~280 words of personal response (AO1) ranging across the play, supported by close reference ("vaulting," "spur"), with context (AO3, divine right)</div>
 </div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing about characters as real people. Avoid "Macbeth feels angry" - instead write "Shakespeare presents Macbeth as consumed by paranoia, reflecting the consequences of tyranny."</div>
@@ -786,6 +786,8 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
     {
       // 2 October 2026: the Inspector's "Public men, Mr Birling, have responsibilities as well as
       // privileges" is quoted in full; "Mr Birling" had been dropped from its middle unmarked.
+      // The quotation list also gave Mrs Birling "I was quite justified", which is Mr Birling's,
+      // on sacking Eva in Act 1; hers, in Act 2, is "I was perfectly justified".
       id: 'edx-lt1-m6',
       title: 'Post-1914 Literature: Themes & Context (An Inspector Calls Focus)',
       duration: '55 min',
@@ -819,7 +821,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
   <li><strong>"We are members of one body"</strong> - echoes Christian collectivism; "body" suggests harm to one part damages the whole.</li>
   <li><strong>"Fire and blood and anguish"</strong> - prophetic; the 1945 audience had lived through two wars.</li>
   <li><strong>"These girls aren't cheap labour - they're people"</strong> - Sheila rejects dehumanising language; the dash emphasises the correction.</li>
-  <li><strong>"I was quite justified"</strong> - Mrs Birling measures behaviour by class, not compassion.</li>
+  <li><strong>"I was perfectly justified"</strong> - Mrs Birling measures behaviour by class, not compassion.</li>
   <li><strong>"We all helped to kill her"</strong> - "we all" distributes responsibility across the family.</li>
   <li><strong>"A man has to make his own way"</strong> - Birling's individualist creed, opposite to the Inspector's collectivism.</li>
   <li><strong>"Public men, Mr Birling, have responsibilities as well as privileges"</strong> - balanced syntax mirrors the balance Priestley demands.</li>
@@ -905,7 +907,11 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
       // 2 October 2026: Sheila's "That's a beautiful dress! Isn't it, Mummy? I love it!" is not in
       // the play (in Act 1 she says of her engagement ring "isn't it a beauty?"), nor is "You're
       // pretending everything's all right" (Act 3 has "you're pretending everything's just as it
-      // was before"). Section B does not assess writer's methods (AO2); see module 1.
+      // was before"). Section B does not assess writer's methods (AO2); see module 1. Later the
+      // same day: Sheila's "But these girls aren't cheap labour - they're people" was dated to
+      // Act 2, and both analyses had her say it after learning her part in Eva's dismissal from
+      // Milwards. She says it in Act 1, on hearing how her father sacked Eva, before her own part
+      // comes out.
       id: 'edx-lt1-m7',
       title: 'Post-1914 Literature: Character Analysis',
       duration: '55 min',
@@ -943,9 +949,9 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 
 <h3>Worked Example: Sheila's Transformation</h3>
 <p><strong>Act 1, on her engagement ring:</strong> "Oh - it's wonderful! Look - mummy - isn't it a beauty?"</p>
-<p><strong>Later (Act 2):</strong> "But these girls aren't cheap labour - they're people."</p>
+<p><strong>Later in Act 1, on Eva's sacking:</strong> "But these girls aren't cheap labour - they're people."</p>
 <div class="text-extract">
-<strong>Analysis:</strong> Priestley constructs Sheila as the play's moral barometer, moving from shallow materialism to ethical consciousness. In Act 1, her delight in her engagement ring - and the stage direction "very pleased with life" - shows her isolation in bourgeois comfort. She has never considered the labour or ethics behind her possessions. However, when she learns that her vanity led to Eva's dismissal from Milwards (out of jealousy at a pretty girl in the shop), Sheila undergoes radical reorientation. Her assertion that girls "aren't cheap labour - they're people" employs the simple plural noun "people" to assert a shared humanity her parents cannot acknowledge. The deliberate simplicity - no fancy adjectives, no hedging - makes the statement all the more powerful. By Act 3, Sheila has become the family's moral conscience, openly challenging her parents: "you're pretending everything's just as it was before." The present continuous "pretending" shows her refusal of moral amnesia. For Priestley, writing in 1945 after World War II, Sheila embodies the younger generation's capacity for social conscience - a hopeful vision that post-war Britain could be rebuilt on principles of collective responsibility rather than pre-war class complacency.
+<strong>Analysis:</strong> Priestley constructs Sheila as the play's moral barometer, moving from shallow materialism to ethical consciousness. In Act 1, her delight in her engagement ring - and the stage direction "very pleased with life" - shows her isolation in bourgeois comfort. She has never considered the labour or ethics behind her possessions. Yet when she hears how her father sacked Eva, her protest that girls "aren't cheap labour - they're people" employs the simple plural noun "people" to assert a shared humanity her parents cannot acknowledge. The deliberate simplicity - no fancy adjectives, no hedging - makes the statement all the more powerful. When she then learns that her own vanity cost Eva her job at Milwards (out of jealousy at a pretty girl in the shop), that sympathy becomes guilt, and Sheila undergoes radical reorientation. By Act 3, Sheila has become the family's moral conscience, openly challenging her parents: "you're pretending everything's just as it was before." The present continuous "pretending" shows her refusal of moral amnesia. For Priestley, writing in 1945 after World War II, Sheila embodies the younger generation's capacity for social conscience - a hopeful vision that post-war Britain could be rebuilt on principles of collective responsibility rather than pre-war class complacency.
 </div>
 
 <h3>Character Comparison Grid</h3>
@@ -1007,7 +1013,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 
 <h3>Model Paragraph: Sheila's Development (Grade 8-9)</h3>
 
-<div class="text-extract">Priestley constructs Sheila as the play's central moral barometer, dramatising the younger generation's capacity for ethical awakening. In Act 1, the stage directions describe her as "a pretty girl in her early twenties, very pleased with life," a phrase heavy with irony - her pleasure is naive, rooted in material comfort and social privilege. Her delight in her engagement ring - "isn't it a beauty?" - reveals a mind focused on possessions. However, once she learns that her own jealousy led to Eva Smith's dismissal from Milwards, Sheila undergoes a radical reorientation. Her assertion that girls "aren't cheap labour - they're people" employs deliberate simplicity to assert a shared humanity her parents cannot acknowledge. The noun "people" carries moral weight precisely because it refuses euphemism or qualification (unlike Mrs Birling's hedging "girls of that class"). By Act 3, Sheila has become the family's moral conscience, openly challenging her parents with "you're pretending everything's just as it was before." The present continuous verb "pretending" shows her refusal to return to pre-war moral amnesia. For Priestley, writing in the aftermath of World War II, Sheila embodies his hope that the younger generation - having witnessed collective catastrophe - could build a post-war society founded on principles of collective responsibility. She becomes Priestley's spokesman for social justice, suggesting that moral growth, once achieved, cannot be reversed.<div class="source">Grade 8-9 paragraph: ~280 words, demonstrating personal response (AO1, interpretation of generational change, supported by stage directions, word choice and dramatic action) and context (AO3, post-war)</div></div>
+<div class="text-extract">Priestley constructs Sheila as the play's central moral barometer, dramatising the younger generation's capacity for ethical awakening. In Act 1, the stage directions describe her as "a pretty girl in her early twenties, very pleased with life," a phrase heavy with irony - her pleasure is naive, rooted in material comfort and social privilege. Her delight in her engagement ring - "isn't it a beauty?" - reveals a mind focused on possessions. Yet when she hears how her father sacked Eva, her assertion that girls "aren't cheap labour - they're people" employs deliberate simplicity to assert a shared humanity her parents cannot acknowledge. The noun "people" carries moral weight precisely because it refuses euphemism or qualification (unlike Mrs Birling's hedging "girls of that class"). Once she learns that her own jealousy led to Eva Smith's dismissal from Milwards, that sympathy becomes guilt, and Sheila undergoes a radical reorientation. By Act 3, Sheila has become the family's moral conscience, openly challenging her parents with "you're pretending everything's just as it was before." The present continuous verb "pretending" shows her refusal to return to pre-war moral amnesia. For Priestley, writing in the aftermath of World War II, Sheila embodies his hope that the younger generation - having witnessed collective catastrophe - could build a post-war society founded on principles of collective responsibility. She becomes Priestley's spokesman for social justice, suggesting that moral growth, once achieved, cannot be reversed.<div class="source">Grade 8-9 paragraph: ~240 words, demonstrating personal response (AO1, interpretation of generational change, supported by stage directions, word choice and dramatic action) and context (AO3, post-war)</div></div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing about characters as if they are real people. Always frame analysis around Priestley's purpose - e.g. "Priestley uses Sheila to suggest that younger people can develop moral conscience" not "Sheila feels bad because she caused Eva's death." The first is an argument about the writer's purpose, which is what personal response (AO1) rewards; the second is paraphrase.</div>
 `,
@@ -1321,7 +1327,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 </tr>
 </table>
 
-<h3>Worked Example: A Full Section B Essay (c. 500 words)</h3>
+<h3>Worked Example: A Full Section B Essay (c. 450 words)</h3>
 <p><strong>Stimulus:</strong> "a man has to mind his own business and look after himself and his own" (Mr Birling, Act 1)</p>
 <p><strong>Question:</strong> "How does Priestley use the character of Mr Birling to explore ideas about responsibility? You must refer to the context of the play in your answer."</p>
 
@@ -1337,7 +1343,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 <strong>THE ENDING:</strong> When it seems the Inspector may not have been a real police inspector, Birling celebrates as if nothing has happened, and treats the evening as a hoax. Priestley's darkest point is that without systemic change, moral appeals alone cannot overcome self-interest. The final telephone call - a girl has died and a police inspector is on his way - suggests that societies ignoring collective responsibility cycle through catastrophe.<br><br>
 
 <strong>CONCLUSION:</strong> Through Mr Birling, Priestley exposes capitalist individualism as not merely ethically insufficient but actively destructive. Birling's refusal of growth embodies Priestley's conviction that pre-war society was culpable in its own catastrophes. Only societies founded on the principle of collective responsibility can avoid tragedy. Priestley's play is thus a call to post-war Britain: choose Sheila's conscience or Birling's blindness.
-<div class="source">~500 words; demonstrates Grade 8-9 standard: unified argument, precise reference, integrated context, thematic coherence</div>
+<div class="source">~450 words; demonstrates Grade 8-9 standard: unified argument, precise reference, integrated context, thematic coherence</div>
 </div>
 
 <h3>Transition Phrases (Grade 8-9)</h3>
@@ -1849,7 +1855,9 @@ const edexcelLitPaper2: CourseData = {
       // src/data/full-texts/a-christmas-carol.ts): Scrooge's Stave One questions are "Are there
       // no prisons?" and "And the Union workhouses?" ("Are there no workhouses?" is the
       // Spirit's, in Stave Three), and the edition prints "grind-stone". On the same day the module stopped teaching
-      // context (AO3) as if Section A marked it: on Paper 2 it does not.
+      // context (AO3) as if Section A marked it: on Paper 2 it does not. The first pass corrected
+      // the module text but missed its quiz's first question, which still gave Scrooge the
+      // Spirit's line in its answer and explanation; a second pass fixed it later that day.
       id: 'edx-lt2-m2',
       title: '19th-Century Novel: Context & Conventions (A Christmas Carol Focus)',
       duration: '55 min',
@@ -1914,13 +1922,13 @@ const edexcelLitPaper2: CourseData = {
             'What was the Poor Law Amendment Act of 1834 designed to do, and how does Scrooge reflect its philosophy?',
           options: [
             "It abolished child labour; Scrooge exploits Bob Cratchit's children",
-            'It created harsh workhouses to discourage the poor from seeking help; Scrooge dismisses the poor by asking "Are there no workhouses?"',
+            'It created harsh workhouses to discourage the poor from seeking help; Scrooge dismisses the poor by asking "And the Union workhouses?"',
             'It introduced free education for all; Scrooge refuses to donate to schools',
             "It banned debtors' prisons; Scrooge threatens to imprison his debtors",
           ],
           correct: 1,
           explanation:
-            'The Poor Law Amendment Act created workhouses designed to be so unpleasant that only the truly desperate would enter. Scrooge\'s question "Are there no workhouses?" shows he has internalised this cruel philosophy - he sees the workhouse as an adequate solution to poverty.',
+            'The Poor Law Amendment Act created workhouses designed to be so unpleasant that only the truly desperate would enter. Scrooge\'s questions "Are there no prisons?" and "And the Union workhouses?" show he has internalised this cruel philosophy - he sees the workhouse as an adequate solution to poverty.',
         },
         {
           id: 'edx-lt2-m2-q2',
@@ -1983,6 +1991,9 @@ const edexcelLitPaper2: CourseData = {
     // MODULE 3 - 19th-Century Novel: Character Analysis
     // ──────────────────────────────────────────────
     {
+      // 2 October 2026: "I will honour Christmas in my heart, and try to keep it all the year" was
+      // called a Stave 5 pledge. Scrooge makes it at his own grave, at the end of Stave Four
+      // (held edition, src/data/full-texts/a-christmas-carol.ts); Stave Five shows him keeping it.
       id: 'edx-lt2-m3',
       title: '19th-Century Novel: Character Analysis',
       duration: '55 min',
@@ -2001,7 +2012,7 @@ const edexcelLitPaper2: CourseData = {
 <ul>
   <li><em>"Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!"</em> - Exclamatory tone establishes him as an extreme figure of avarice.</li>
   <li><em>"Are there no prisons? ... And the Union workhouses?"</em> - Echoes Malthusian economics; reveals callousness toward the poor.</li>
-  <li><em>"I will honour Christmas in my heart, and try to keep it all the year."</em> - Stave 5 pledge marks complete moral reversal.</li>
+  <li><em>"I will honour Christmas in my heart, and try to keep it all the year."</em> - Made at his own grave in Stave 4, the pledge marks complete moral reversal; Stave 5 shows him keeping it.</li>
   <li><em>"Solitary as an oyster"</em> - Hard-shelled and closed off, yet containing hidden value (the pearl within).</li>
   <li><em>"He became as good a friend, as good a master, and as good a man"</em> - Superlative repetition reinforces total transformation.</li>
 </ul>
