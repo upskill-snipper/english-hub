@@ -599,7 +599,9 @@ export default function EssayPlansPage() {
           >
             {/* Header */}
             <div className="border-b border-border/40 bg-gradient-to-r from-rose-500/[0.06] to-transparent p-5 sm:p-6">
-              <div className="mb-2 flex items-center gap-2">
+              {/* Wraps: "Plan 1, Sonnet 29 - I think of thee! vs Love's Philosophy" is wider
+                  than a phone, and the card clipped the second poem's name. */}
+              <div className="mb-2 flex flex-wrap items-center gap-2">
                 <Badge variant="secondary" className="text-[0.65rem]">
                   Plan {plan.id}
                 </Badge>

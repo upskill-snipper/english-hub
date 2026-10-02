@@ -197,10 +197,12 @@ export default async function ForParentsPage() {
             >
               {ctaStartTrial}
             </Button>
+            {/* May wrap: "Run a 20-minute reading-age check (free, no card)" is
+                about 430px on one line, and on a 360px phone the hero cut it off. */}
             <Button
               variant="outline"
               size="lg"
-              className="text-base px-8 h-12"
+              className="text-base px-8 h-auto min-h-12 max-w-full py-2.5 whitespace-normal"
               render={<Link href="/assessment/reading" />}
             >
               {ctaReadingCheck}
