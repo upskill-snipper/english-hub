@@ -1,4 +1,4 @@
-import DOMPurify from 'dompurify'
+import DOMPurify, { type Config } from 'dompurify'
 
 /**
  * Sanitise a fragment of HTML in the browser OR on the server.
@@ -74,10 +74,20 @@ export function sanitiseOnServer(html: string): string {
   )
 }
 
-/** Sanitise wherever this runs. */
-export function sanitiseHtml(html: string): string {
+/**
+ * Sanitise wherever this runs. `config` reaches DOMPurify in the browser (the
+ * revision builder passes `USE_PROFILES: { html: true }`); the server strip is
+ * stricter than any config, so it ignores it.
+ *
+ * Four client pages still called `DOMPurify.sanitize` directly until 2 October
+ * 2026, and the lesson page did so in a hook that runs on the server: every
+ * lesson's server render threw "DOMPurify.sanitize is not a function" and was
+ * left to the browser to redo, with the error in the logs on every view.
+ */
+export function sanitiseHtml(html: string, config?: Config): string {
   // Feature-detect rather than check for `window`: DOMPurify is the thing that
   // may or may not be usable, so ask it directly.
-  if (typeof DOMPurify.sanitize === 'function') return DOMPurify.sanitize(html)
+  if (typeof DOMPurify.sanitize === 'function')
+    return config ? DOMPurify.sanitize(html, config) : DOMPurify.sanitize(html)
   return sanitiseOnServer(html)
 }

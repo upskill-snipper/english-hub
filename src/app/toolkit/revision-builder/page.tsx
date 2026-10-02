@@ -5,7 +5,7 @@ import { useLocale } from '@/lib/i18n/use-locale'
 import { useState, useCallback } from 'react'
 import { useTopicFromUrl } from '@/lib/toolkit/use-topic-from-url'
 import Link from 'next/link'
-import DOMPurify from 'dompurify'
+import { sanitiseHtml } from '@/lib/html/sanitise'
 import {
   ArrowLeft,
   FileText,
@@ -407,7 +407,7 @@ export default function RevisionBuilderPage() {
             <div
               className="rounded-xl border border-border bg-card p-6 sm:p-8 shadow-soft course-content"
               dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(
+                __html: sanitiseHtml(
                   `<p class="text-muted-foreground leading-relaxed mb-3">${renderMarkdown(notes)}</p>`,
                   { USE_PROFILES: { html: true } },
                 ),

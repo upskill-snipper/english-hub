@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useMemo } from 'react'
 import Link from 'next/link'
-import DOMPurify from 'dompurify'
+import { sanitiseHtml } from '@/lib/html/sanitise'
 import { useT } from '@/lib/i18n/use-t'
 import {
   ArrowLeft,
@@ -628,7 +628,7 @@ export default function ProgressPage() {
                   // if the localStorage schema ever widens to include other
                   // fields under user control.
                   dangerouslySetInnerHTML={{
-                    __html: DOMPurify.sanitize(
+                    __html: sanitiseHtml(
                       s.replace(
                         /\*\*(.+?)\*\*/g,
                         '<strong class="text-foreground font-semibold">$1</strong>',

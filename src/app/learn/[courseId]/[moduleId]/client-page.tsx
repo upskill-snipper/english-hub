@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, useCallback, useRef, useMemo } from 'react'
-import DOMPurify from 'dompurify'
+import { sanitiseHtml } from '@/lib/html/sanitise'
 import { useParams, useRouter, notFound } from 'next/navigation'
 import Link from 'next/link'
 import {
@@ -608,7 +608,7 @@ export default function CoursePlayerPage() {
   // ─── Render ──────────────────────────────────────────────────────────────────
 
   const sanitizedContent = useMemo(
-    () => DOMPurify.sanitize(currentModule?.content || ''),
+    () => sanitiseHtml(currentModule?.content || ''),
     [currentModule?.content],
   )
 

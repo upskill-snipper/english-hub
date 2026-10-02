@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react'
 import Link from 'next/link'
-import DOMPurify from 'dompurify'
+import { sanitiseHtml } from '@/lib/html/sanitise'
 import {
   ArrowLeft,
   FolderOpen,
@@ -194,7 +194,7 @@ export default function MyMaterialsPage() {
                       before it reaches a minor's browser. */}
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: DOMPurify.sanitize(
+                      __html: sanitiseHtml(
                         ((viewingMaterial.data as { notes: string })?.notes || '')
                           .replace(/^### (.+)$/gm, '<h3>$1</h3>')
                           .replace(/^## (.+)$/gm, '<h2>$1</h2>')
