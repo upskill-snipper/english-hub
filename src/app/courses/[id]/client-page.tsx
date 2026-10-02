@@ -210,8 +210,10 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
 
                       {/* Details */}
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2">
-                          <span className="truncate text-sm font-medium text-foreground">
+                        {/* Titles wrap on a phone: truncated, every lesson read as a
+                            fragment ("Victori..." beside the Free preview badge, 52px). */}
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                          <span className="text-sm font-medium text-foreground sm:truncate">
                             {mod.title}
                           </span>
                           {isFreePreview && (
