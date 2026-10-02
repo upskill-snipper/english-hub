@@ -295,6 +295,35 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
   'lc-much-ado-about-nothing-too-busy-to-listen':
     '/comics/much-ado-about-nothing/too-busy-to-listen.0e6e78870288.svg',
   'lc-much-ado-about-nothing-verges': '/comics/much-ado-about-nothing/verges.9bc5c43c7202.svg',
+  'lc-othello-ambush-in-the-dark': '/comics/othello/ambush-in-the-dark.20d45fbcc1a8.svg',
+  'lc-othello-before-the-senate': '/comics/othello/before-the-senate.953671ca682d.svg',
+  'lc-othello-bianca': '/comics/othello/bianca.aa47136f213e.svg',
+  'lc-othello-brabantio': '/comics/othello/brabantio.d359374b322b.svg',
+  'lc-othello-cassio': '/comics/othello/cassio.7e40f5eebe08.svg',
+  'lc-othello-desdemona': '/comics/othello/desdemona.ee8c6b8df1df.svg',
+  'lc-othello-emilia': '/comics/othello/emilia.3e42bb9e952c.svg',
+  'lc-othello-emilia-speaks': '/comics/othello/emilia-speaks.4b2bba4148b1.svg',
+  'lc-othello-iago': '/comics/othello/iago.6909225dd979.svg',
+  'lc-othello-iago-s-plan-is-born': '/comics/othello/iago-s-plan-is-born.289d6bb38b1c.svg',
+  'lc-othello-iago-wakes-venice': '/comics/othello/iago-wakes-venice.49e3e27e8ff0.svg',
+  'lc-othello-lodovico': '/comics/othello/lodovico.b198b7dacf98.svg',
+  'lc-othello-othello': '/comics/othello/othello.4d799a1034bf.svg',
+  'lc-othello-othello-s-last-words': '/comics/othello/othello-s-last-words.c4433fbb9ae9.svg',
+  'lc-othello-othello-will-not-hide': '/comics/othello/othello-will-not-hide.96b232807b2a.svg',
+  'lc-othello-roderigo': '/comics/othello/roderigo.41b5b27bf800.svg',
+  'lc-othello-storm-and-reunion-on-cyprus':
+    '/comics/othello/storm-and-reunion-on-cyprus.9c07115217ca.svg',
+  'lc-othello-the-accusation': '/comics/othello/the-accusation.000a4a117e1b.svg',
+  'lc-othello-the-drunken-brawl': '/comics/othello/the-drunken-brawl.594a57ffcfa4.svg',
+  'lc-othello-the-handkerchief-is-dropped':
+    '/comics/othello/the-handkerchief-is-dropped.148c45f530b7.svg',
+  'lc-othello-the-magic-in-the-handkerchief':
+    '/comics/othello/the-magic-in-the-handkerchief.d425533fd95e.svg',
+  'lc-othello-the-murder': '/comics/othello/the-murder.cd3cb80ab9d0.svg',
+  'lc-othello-the-temptation-begins': '/comics/othello/the-temptation-begins.873b0655cfee.svg',
+  'lc-othello-the-trance-and-the-blow': '/comics/othello/the-trance-and-the-blow.8a2ffa3761ba.svg',
+  'lc-othello-the-vow-of-revenge': '/comics/othello/the-vow-of-revenge.335b5276a7fb.svg',
+  'lc-othello-the-willow-song': '/comics/othello/the-willow-song.fd72683a017f.svg',
   'lc-romeo-and-juliet-a-brawl-in-the-streets':
     '/comics/romeo-and-juliet/a-brawl-in-the-streets.c19f882804bd.svg',
   'lc-romeo-and-juliet-a-glooming-peace':
@@ -510,4 +539,49 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
   'lc-the-tempest-trinculo': '/comics/the-tempest/trinculo.3da13fd09be7.svg',
   'lc-the-tempest-virtue-not-vengeance':
     '/comics/the-tempest/virtue-not-vengeance.cb160bd7b9bf.svg',
+  'lc-twelfth-night-a-duel-and-an-arrest':
+    '/comics/twelfth-night/a-duel-and-an-arrest.a03c3b72c49e.svg',
+  'lc-twelfth-night-a-pearl-and-a-priest':
+    '/comics/twelfth-night/a-pearl-and-a-priest.bda85c24fb23.svg',
+  'lc-twelfth-night-antonio': '/comics/twelfth-night/antonio.a9a6c8c3e049.svg',
+  'lc-twelfth-night-cakes-and-ale': '/comics/twelfth-night/cakes-and-ale.d89073aa3df1.svg',
+  'lc-twelfth-night-cesario-sent-to-woo':
+    '/comics/twelfth-night/cesario-sent-to-woo.e8e06070c3fc.svg',
+  'lc-twelfth-night-feste': '/comics/twelfth-night/feste.f70c1dae8638.svg',
+  'lc-twelfth-night-husband': '/comics/twelfth-night/husband.70d280dfa933.svg',
+  'lc-twelfth-night-i-am-not-what-i-am':
+    '/comics/twelfth-night/i-am-not-what-i-am.31ff28e6de26.svg',
+  'lc-twelfth-night-malvolio': '/comics/twelfth-night/malvolio.86dcbcc2c30a.svg',
+  'lc-twelfth-night-maria': '/comics/twelfth-night/maria.dfe6a544814c.svg',
+  'lc-twelfth-night-mistaken-for-cesario':
+    '/comics/twelfth-night/mistaken-for-cesario.df08cf2e169c.svg',
+  'lc-twelfth-night-music-for-a-lovesick-duke':
+    '/comics/twelfth-night/music-for-a-lovesick-duke.c5150899f1de.svg',
+  'lc-twelfth-night-olivia': '/comics/twelfth-night/olivia.8c1604c9cff5.svg',
+  'lc-twelfth-night-olivia-unveiled': '/comics/twelfth-night/olivia-unveiled.a2d0091b544e.svg',
+  'lc-twelfth-night-one-face-one-voice':
+    '/comics/twelfth-night/one-face-one-voice.c077fa32f1f5.svg',
+  'lc-twelfth-night-orsino': '/comics/twelfth-night/orsino.0ea9f2a9416f.svg',
+  'lc-twelfth-night-patience-on-a-monument':
+    '/comics/twelfth-night/patience-on-a-monument.6d898a7c0975.svg',
+  'lc-twelfth-night-revels-at-olivia-s-house':
+    '/comics/twelfth-night/revels-at-olivia-s-house.341f5c9f0b2b.svg',
+  'lc-twelfth-night-sebastian': '/comics/twelfth-night/sebastian.b29f690fe337.svg',
+  'lc-twelfth-night-sebastian-is-alive':
+    '/comics/twelfth-night/sebastian-is-alive.0abd805c3a05.svg',
+  'lc-twelfth-night-shipwrecked-in-illyria':
+    '/comics/twelfth-night/shipwrecked-in-illyria.92f17384dd28.svg',
+  'lc-twelfth-night-sir-andrew-aguecheek':
+    '/comics/twelfth-night/sir-andrew-aguecheek.f3ceb5820dd1.svg',
+  'lc-twelfth-night-sir-toby-belch': '/comics/twelfth-night/sir-toby-belch.44ceeef46f29.svg',
+  'lc-twelfth-night-the-dark-room': '/comics/twelfth-night/the-dark-room.ea6c63e117ac.svg',
+  'lc-twelfth-night-the-letter-in-the-garden':
+    '/comics/twelfth-night/the-letter-in-the-garden.d715ebc544b9.svg',
+  'lc-twelfth-night-the-ring': '/comics/twelfth-night/the-ring.40323e084646.svg',
+  'lc-twelfth-night-the-whole-pack-of-you':
+    '/comics/twelfth-night/the-whole-pack-of-you.f91bc59f4877.svg',
+  'lc-twelfth-night-the-wind-and-the-rain':
+    '/comics/twelfth-night/the-wind-and-the-rain.b65803c46899.svg',
+  'lc-twelfth-night-viola': '/comics/twelfth-night/viola.05a28a242834.svg',
+  'lc-twelfth-night-yellow-stockings': '/comics/twelfth-night/yellow-stockings.33c69fa03f1e.svg',
 }

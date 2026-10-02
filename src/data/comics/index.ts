@@ -24,9 +24,11 @@ export const COMIC_LOADERS: Record<string, () => Promise<ComicSet>> = {
   'julius-caesar': () => import('./julius-caesar').then((m) => m.comics),
   macbeth: () => import('./macbeth').then((m) => m.comics),
   'much-ado-about-nothing': () => import('./much-ado-about-nothing').then((m) => m.comics),
+  othello: () => import('./othello').then((m) => m.comics),
   'romeo-and-juliet': () => import('./romeo-and-juliet').then((m) => m.comics),
   'silas-marner': () => import('./silas-marner').then((m) => m.comics),
   'the-merchant-of-venice': () => import('./the-merchant-of-venice').then((m) => m.comics),
   'the-sign-of-four': () => import('./the-sign-of-four').then((m) => m.comics),
   'the-tempest': () => import('./the-tempest').then((m) => m.comics),
+  'twelfth-night': () => import('./twelfth-night').then((m) => m.comics),
 }
