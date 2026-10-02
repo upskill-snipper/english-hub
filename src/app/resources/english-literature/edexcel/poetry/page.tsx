@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel Poetry: Relationships and Conflict',
     description:
-      'Analysis of all 30 poems in the Edexcel GCSE poetry anthology, Relationships and Conflict clusters, with themes, structure and comparison advice.',
+      'The 30 poems of the Relationships and Conflict collections, two of four in the Edexcel GCSE poetry anthology, with themes, structure and comparison advice.',
     images: [
       {
         url: '/api/og?title=Edexcel+Poetry%3A+Relationships+and+Conflict',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Edexcel Poetry: Relationships and Conflict',
   description:
-    'Analysis of all 30 poems in the Edexcel GCSE poetry anthology, Relationships and Conflict clusters, with themes, structure and comparison advice.',
+    'The 30 poems of the Relationships and Conflict collections, two of four in the Edexcel GCSE poetry anthology, with themes, structure and comparison advice.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */
@@ -788,22 +788,28 @@ export default async function PoetryPage() {
         </nav>
 
         {/* ── Exam overview ─────────────────────────────────────── */}
+        {/* Until 2 October 2026 this said a school studies either Relationships or Conflict and
+            that the comparison is worth 24 marks for reading and response, methods and context.
+            Pearson's anthology has four collections, and Section B Part 1 is worth 20 marks: AO2
+            15 and AO3 5 (1ET0 specification, Issue 2). */}
         <section className="mt-14">
           <h2 className="text-2xl font-bold text-foreground">
             {_tr(`How the Poetry Anthology Works`)}
           </h2>
           <div className="mt-4 rounded-xl bg-muted p-6 text-sm text-muted-foreground leading-relaxed space-y-3">
             <p>
-              Your school will have studied <strong>one cluster</strong> - either Relationships or
-              Conflict. In the exam, one poem from your cluster will be{' '}
-              <strong>printed on the paper</strong>, and you will be asked to compare it with{' '}
-              <strong>another poem of your choice</strong> from the same cluster (from memory).
+              Pearson&apos;s anthology has <strong>four collections</strong> of 15 poems:
+              Relationships, Conflict, Time and Place and Belonging. Your school will have studied
+              one, and this page covers the first two. In the exam, one poem from your collection
+              will be <strong>printed on the paper</strong>, and you will be asked to compare it
+              with <strong>another poem of your choice</strong> from the same collection (from
+              memory).
             </p>
             <p>
               The question will focus on how the poets present a particular theme or idea. You must
-              compare <strong>methods</strong>
-              (language, structure, form) as well as content. The comparison is worth{' '}
-              <strong>24 marks</strong> (reading and response, analysis of methods, context).
+              compare <strong>methods</strong> (language, structure, form) as well as content. The
+              comparison is worth <strong>20 marks</strong>: 15 for analysis of methods and 5 for
+              context.
             </p>
             <p>
               <strong>Top tip:</strong> For each poem, prepare 2-3 comparison partners so you are

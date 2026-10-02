@@ -14,12 +14,8 @@ export const STRINGS: Record<string, Bi> = {
   s0: { en: `Exam Structure`, ar: `هيكل الامتحان` },
   s1: { en: `Section A: 19th-Century Novel`, ar: `SECTION A: رواية من القرن التاسع عشر` },
   s2: { en: `Section B: Poetry Anthology`, ar: `` },
-  s3: { en: `Section C: Unseen Poetry`, ar: `SECTION C: شعر غير مشاهد` },
-  s4: { en: `Relationships Cluster`, ar: `` },
-  s5: {
-    en: `Conflict Cluster`,
-    ar: ``,
-  },
+  s4: { en: `Relationships Collection`, ar: `` },
+  s5: { en: `Conflict Collection`, ar: `` },
   s6: { en: `Step-by-step approach:`, ar: `خطوات منهجية:` },
   s7: {
     en: `Identify the poem's subject matter, tone, and overall message.`,
@@ -44,10 +40,9 @@ export const STRINGS: Record<string, Bi> = {
     en: `Compare named poem with your choice`,
     ar: ``,
   },
-  s27: { en: `Read twice, 3-4 PEA paragraphs`, ar: `` },
   s28: { en: `Paper 2 Exam Technique`, ar: `TECHNIQUE امتحان الورق الثاني` },
   s29: { en: `Memorise short, versatile quotes`, ar: `أبغى ت memorise قصيرة ومتعددة الاستخدامات` },
-  s30: { en: `Context is crucial`, ar: `السياق مهم جداً` },
-  s31: { en: `SPaG matters`, ar: `SPELLING و GRAMMAR مهمان` },
   s32: { en: `Show awareness of the whole text`, ar: `كن على معرفة بالنص كله` },
+  s33: { en: `Time and Place Collection`, ar: `` },
+  s34: { en: `Belonging Collection`, ar: `` },
 }

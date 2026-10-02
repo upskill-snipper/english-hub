@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel Paper 2: 19th-Century Novel',
     description:
-      'Edexcel GCSE English Literature Paper 2: 19th-century novel set texts, the Relationships and Conflict poetry clusters, and unseen poetry.',
+      'Edexcel GCSE Literature Paper 2: the 19th-century novel set texts, all four poetry anthology collections and unseen poetry, with marks and timings.',
     images: [
       {
         url: '/api/og?title=Edexcel+Paper+2%3A+19th-Century+Novel',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Edexcel Paper 2: 19th-Century Novel',
   description:
-    'Edexcel GCSE English Literature Paper 2: 19th-century novel set texts, the Relationships and Conflict poetry clusters, and unseen poetry.',
+    'Edexcel GCSE Literature Paper 2: the 19th-century novel set texts, all four poetry anthology collections and unseen poetry, with marks and timings.',
 }
 
 /* ─── Page component ─────────────────────────────────────────── */
@@ -64,10 +64,17 @@ export default async function Paper2Page() {
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         {/* ── Exam structure ────────────────────────────────────── */}
+        {/* Until 2 October 2026 this page described a paper Pearson does not set: three
+            sections, a novel essay with no extract and 4 SPaG marks, a 24-mark anthology
+            section and a 16-mark unseen "Section C" in two parts of 8. The 1ET0
+            specification (Issue 2) has two sections and four questions of 20 marks; the
+            marking engine holds the same split in src/lib/marking/mark-schemes/edexcel-lit.ts. */}
         <section>
           <h2 className="text-2xl font-bold text-foreground">{_tr(`Exam Structure`)}</h2>
           <p className="mt-2 text-muted-foreground">
-            Paper 2 has three sections. The exam is closed-book throughout.
+            Paper 2 has two sections and four questions, each worth 20 marks. The exam is closed
+            book: texts are not allowed, and the paper prints the extract and the poems it asks
+            about.
           </p>
 
           <div className="mt-6 grid gap-6 lg:grid-cols-3">
@@ -76,25 +83,25 @@ export default async function Paper2Page() {
                 {_tr(`Section A: 19th-Century Novel`)}
               </h3>
               <p className="mt-1 text-sm font-medium text-muted-foreground">
-                40 marks &middot; ~55 minutes
+                40 marks &middot; ~1 hour
               </p>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  One essay question on your studied novel.
+                  One two-part question on your studied novel.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  No extract - you choose your own evidence from across the text.
+                  (a) Explore an extract of about 400 words, printed on the paper (20 marks).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Usually a choice of two questions per text.
+                  (b) An essay on the novel as a whole (20 marks).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Assessed on reading and response, analysis of methods, context, and accuracy (4
-                  SPaG marks).
+                  Part (a) is assessed on analysis of methods, part (b) on reading and response. No
+                  marks for context or SPaG in this section.
                 </li>
               </ul>
             </div>
@@ -104,44 +111,42 @@ export default async function Paper2Page() {
                 {_tr(`Section B: Poetry Anthology`)}
               </h3>
               <p className="mt-1 text-sm font-medium text-muted-foreground">
-                24 marks &middot; ~40 minutes
+                Part 1 &middot; 20 marks &middot; ~35 minutes
               </p>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  One named poem from your cluster is printed in the exam paper.
+                  One named poem from your collection is printed in the exam paper.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  You must compare it with another poem from the same cluster (from memory).
+                  You must compare it with another poem from the same collection (from memory).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Assessed on reading and response, analysis of methods, and context.
+                  Assessed on analysis of methods (15 marks) and context (5 marks).
                 </li>
               </ul>
             </div>
 
             <div className="rounded-xl border border-border p-6 shadow-md">
-              <h3 className="text-lg font-bold text-foreground">
-                {_tr(`Section C: Unseen Poetry`)}
-              </h3>
+              <h3 className="text-lg font-bold text-foreground">Section B: Unseen Poetry</h3>
               <p className="mt-1 text-sm font-medium text-muted-foreground">
-                16 marks &middot; ~35 minutes
+                Part 2 &middot; 20 marks &middot; ~35 minutes
               </p>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Two unseen poems are printed in the paper.
+                  Two contemporary poems you have not seen before are printed in the paper, linked
+                  by a theme.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Part (a): analyse the first poem (8 marks, reading and response + analysis of
-                  methods).
+                  One question: compare how the poets present that theme.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Part (b): compare both poems (8 marks, analysis of methods).
+                  Assessed on reading and response (8 marks) and analysis of methods (12 marks).
                 </li>
               </ul>
             </div>
@@ -398,13 +403,16 @@ export default async function Paper2Page() {
             {_tr(`Section B: Poetry Anthology`)}
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Your school will have studied one cluster. You must compare a named poem (printed in the
-            exam) with one of your choice from the same cluster.
+            Pearson&apos;s anthology has four collections of 15 poems, and your school will have
+            studied one. In Section B Part 1 you compare a named poem (printed in the exam) with one
+            of your choice from the same collection.
           </p>
 
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <div className="rounded-xl border border-border p-6 shadow-md">
-              <h3 className="text-lg font-bold text-foreground">{_tr(`Relationships Cluster`)}</h3>
+              <h3 className="text-lg font-bold text-foreground">
+                {_tr(`Relationships Collection`)}
+              </h3>
               <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 {[
                   // The Pearson Edexcel anthology's Collection A (Issue 4), in its order. Until
@@ -412,8 +420,8 @@ export default async function Paper2Page() {
                   // Singh Song!, which are AQA poems, and a "Sonnet 29" by Edna St Vincent
                   // Millay, in place of A Complaint, Neutral Tones, The Manhunt and My Father
                   // Would Not Show Us.
-                  'La Belle Dame sans Merci - John Keats',
-                  'A Child to His Sick Grandfather - Joanna Baillie',
+                  'La Belle Dame Sans Merci - John Keats',
+                  'A Child to his Sick Grandfather - Joanna Baillie',
                   'She Walks in Beauty - Lord Byron',
                   'A Complaint - William Wordsworth',
                   'Neutral Tones - Thomas Hardy',
@@ -438,12 +446,12 @@ export default async function Paper2Page() {
                 href="/resources/english-literature/edexcel/poetry"
                 className="mt-4 inline-block text-sm font-semibold text-primary hover:underline"
               >
-                Full analysis of all poems &rarr;
+                Analysis of every poem in this collection &rarr;
               </Link>
             </div>
 
             <div className="rounded-xl border border-border p-6 shadow-md">
-              <h3 className="text-lg font-bold text-foreground">{_tr(`Conflict Cluster`)}</h3>
+              <h3 className="text-lg font-bold text-foreground">{_tr(`Conflict Collection`)}</h3>
               <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 {[
                   'The Charge of the Light Brigade - Alfred Lord Tennyson',
@@ -472,28 +480,97 @@ export default async function Paper2Page() {
                 href="/resources/english-literature/edexcel/poetry"
                 className="mt-4 inline-block text-sm font-semibold text-primary hover:underline"
               >
-                Full analysis of all poems &rarr;
+                Analysis of every poem in this collection &rarr;
               </Link>
+            </div>
+
+            <div className="rounded-xl border border-border p-6 shadow-md">
+              <h3 className="text-lg font-bold text-foreground">
+                {_tr(`Time and Place Collection`)}
+              </h3>
+              <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+                {[
+                  // The anthology's Collection C, in its order. Until 2 October 2026 this page
+                  // listed only Relationships and Conflict, two of the four collections.
+                  'To Autumn - John Keats',
+                  'Composed upon Westminster Bridge - William Wordsworth',
+                  'London - William Blake',
+                  'I started Early - Took my Dog - Emily Dickinson',
+                  'Where the Picnic was - Thomas Hardy',
+                  'Adlestrop - Edward Thomas',
+                  'Home Thoughts from Abroad - Robert Browning',
+                  'First Flight - U. A. Fanthorpe',
+                  'Stewart Island - Fleur Adcock',
+                  'Presents from my Aunts in Pakistan - Moniza Alvi',
+                  'Hurricane Hits England - Grace Nichols',
+                  "Nothing's Changed - Tatamkhulu Afrika",
+                  'Postcard from a Travel Snob - Sophie Hannah',
+                  'In Romney Marsh - John Davidson',
+                  'Absence - Elizabeth Jennings',
+                ].map((poem) => (
+                  <li key={poem} className="flex gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                    {poem}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/revision/poetry/edexcel/time-and-place"
+                className="mt-4 inline-block text-sm font-semibold text-primary hover:underline"
+              >
+                All 15 poems, with guides to four &rarr;
+              </Link>
+            </div>
+
+            <div className="rounded-xl border border-border p-6 shadow-md">
+              <h3 className="text-lg font-bold text-foreground">{_tr(`Belonging Collection`)}</h3>
+              <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+                {[
+                  // The anthology's Collection D, in its order.
+                  'Peckham Rye Lane - A. K. Blakemore',
+                  'Us - Zaffar Kunial',
+                  'In Wales, wanting to be Italian - Imtiaz Dharker',
+                  'Kumukanda - Kayo Chingonyi',
+                  'Jamaican British - Raymond Antrobus',
+                  "My Mother's Kitchen - Choman Hardi",
+                  'The Émigrée - Carol Rumens',
+                  'To My Sister - William Wordsworth',
+                  'Sunday Dip - John Clare',
+                  'Mild the Mist Upon the Hill - Emily Brontë',
+                  'Captain Cook (To My Brother) - Letitia Elizabeth Landon',
+                  'Clear and Gentle Stream - Robert Bridges',
+                  'I Remember, I Remember - Thomas Hood',
+                  'Island Man - Grace Nichols',
+                  'We Refugees - Benjamin Zephaniah',
+                ].map((poem) => (
+                  <li key={poem} className="flex gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                    {poem}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-sm text-muted-foreground">
+                The site has no study guides to this collection yet.
+              </p>
             </div>
           </div>
         </section>
 
         {/* ── Unseen poetry ─────────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-foreground">{_tr(`Section C: Unseen Poetry`)}</h2>
+          <h2 className="text-2xl font-bold text-foreground">Section B Part 2: Unseen Poetry</h2>
           <p className="mt-2 text-muted-foreground">
-            You will be given two poems you have never seen before. This section tests your ability
-            to analyse poetry independently.
+            You will be given two contemporary poems you have never seen before, linked by a theme,
+            and one question asking you to compare them (20 marks). This part tests your ability to
+            analyse poetry independently.
           </p>
 
           <div className="mt-6 space-y-6">
             <div className="rounded-xl bg-muted p-6">
-              <h3 className="text-lg font-bold text-foreground">
-                Part (a): Analysing the First Poem (8 marks)
-              </h3>
+              <h3 className="text-lg font-bold text-foreground">Reading the Two Poems</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                You will be asked a question about how the poet presents a particular idea, feeling,
-                or experience.
+                The question tells you what to compare: how the poets present a theme the two poems
+                share. Read each poem with that theme in mind.
               </p>
               <div className="mt-4 space-y-3">
                 <h4 className="text-sm font-semibold text-foreground">
@@ -505,7 +582,7 @@ export default async function Paper2Page() {
                       1
                     </span>
                     <span>
-                      Read the poem twice. Annotate key words, images, and techniques on the second
+                      Read each poem twice. Annotate key words, images, and techniques on the second
                       read.
                     </span>
                   </li>
@@ -532,8 +609,8 @@ export default async function Paper2Page() {
                       4
                     </span>
                     <span>
-                      Write 3-4 focused paragraphs using PEA (Point, Evidence, Analysis). Quote
-                      directly from the poem.
+                      Note where the two poems meet and where they differ, then plan 3-4 points of
+                      comparison.
                     </span>
                   </li>
                 </ol>
@@ -542,10 +619,12 @@ export default async function Paper2Page() {
 
             <div className="rounded-xl bg-muted p-6">
               <h3 className="text-lg font-bold text-foreground">
-                Part (b): Comparing Both Poems (8 marks)
+                Writing the Comparison (20 marks)
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                You must compare how the poets present a similar theme or idea across both poems.
+                You must compare how the poets present the theme across both poems. The marks are
+                for your response, supported by references (8), and for analysis of methods (12).
+                Context is not assessed in this part.
               </p>
               <div className="mt-4 space-y-3">
                 <h4 className="text-sm font-semibold text-foreground">
@@ -567,7 +646,7 @@ export default async function Paper2Page() {
                   </li>
                   <li className="flex gap-2">
                     <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                    Write 2-3 comparative paragraphs. Each paragraph should reference both poems.
+                    Write 3-4 comparative paragraphs. Each paragraph should reference both poems.
                   </li>
                 </ul>
               </div>
@@ -630,32 +709,36 @@ export default async function Paper2Page() {
               </thead>
               <tbody className="text-muted-foreground">
                 <tr className="border-b border-border">
-                  <td className="py-3 pe-4 font-medium">A: 19th-Century Novel</td>
-                  <td className="py-3 pe-4">40</td>
-                  <td className="py-3 pe-4">~55 mins</td>
-                  <td className="py-3">5 min plan + 4-5 paragraphs</td>
+                  <td className="py-3 pe-4 font-medium">A(a): The Extract</td>
+                  <td className="py-3 pe-4">20</td>
+                  <td className="py-3 pe-4">~30 mins</td>
+                  <td className="py-3">Stay with the extract: language, form, structure</td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="py-3 pe-4 font-medium">B: Anthology Poetry</td>
-                  <td className="py-3 pe-4">24</td>
-                  <td className="py-3 pe-4">~40 mins</td>
+                  <td className="py-3 pe-4 font-medium">A(b): The Whole Novel</td>
+                  <td className="py-3 pe-4">20</td>
+                  <td className="py-3 pe-4">~30 mins</td>
+                  <td className="py-3">5 min plan, then range across the novel</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="py-3 pe-4 font-medium">B Part 1: Anthology Poetry</td>
+                  <td className="py-3 pe-4">20</td>
+                  <td className="py-3 pe-4">~35 mins</td>
                   <td className="py-3">{_tr(`Compare named poem with your choice`)}</td>
                 </tr>
-                <tr className="border-b border-border">
-                  <td className="py-3 pe-4 font-medium">C(a): Unseen Poem 1</td>
-                  <td className="py-3 pe-4">8</td>
-                  <td className="py-3 pe-4">~20 mins</td>
-                  <td className="py-3">{_tr(`Read twice, 3-4 PEA paragraphs`)}</td>
-                </tr>
                 <tr>
-                  <td className="py-3 pe-4 font-medium">C(b): Unseen Comparison</td>
-                  <td className="py-3 pe-4">8</td>
-                  <td className="py-3 pe-4">~15 mins</td>
-                  <td className="py-3">2-3 comparative paragraphs</td>
+                  <td className="py-3 pe-4 font-medium">B Part 2: Unseen Poetry</td>
+                  <td className="py-3 pe-4">20</td>
+                  <td className="py-3 pe-4">~35 mins</td>
+                  <td className="py-3">Read both poems twice, then compare</td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <p className="mt-3 text-sm text-muted-foreground">
+            That leaves about 5 minutes to check your answers. Pearson sets only the total time;
+            this split follows the marks.
+          </p>
         </section>
 
         {/* ── Exam technique ────────────────────────────────────── */}
@@ -668,31 +751,33 @@ export default async function Paper2Page() {
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>{_tr(`Memorise short, versatile quotes`)}</strong> - since there is no
-                  extract, you need quotes ready for multiple topics. Learn 15-20 key quotes that
-                  cover major themes and characters.
+                  <strong>{_tr(`Memorise short, versatile quotes`)}</strong> - part (a) prints an
+                  extract, but part (b) is about the whole novel, so you need quotes ready for many
+                  topics. Learn 15-20 key quotes that cover major themes and characters.
                 </span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>{_tr(`Context is crucial`)}</strong> - 19th-century novels are rooted in
-                  their historical context. Link to the writer&apos;s purpose, social conditions,
-                  and literary movements (e.g., Gothic, Romantic, Victorian realism).
+                  <strong>Context earns no marks in Section A</strong> - part (a) is assessed on
+                  analysis of the extract and part (b) on your response to the whole novel. Use
+                  context only where it helps you explain the text; on this paper it earns marks in
+                  Section B Part 1.
                 </span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>{_tr(`SPaG matters`)}</strong> - 4 marks are awarded for spelling,
-                  punctuation, and grammar. Write clearly and use literary terminology accurately.
+                  <strong>Write clearly anyway</strong> - Paper 2 has no marks for spelling,
+                  punctuation and grammar (those are on Paper 1), but clear writing and accurate
+                  terminology are how your argument reaches the marker.
                 </span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>{_tr(`Show awareness of the whole text`)}</strong> - reference the
-                  beginning, middle, and end to demonstrate complete knowledge.
+                  <strong>{_tr(`Show awareness of the whole text`)}</strong> - in part (b),
+                  reference the beginning, middle, and end to demonstrate complete knowledge.
                 </span>
               </li>
             </ul>
