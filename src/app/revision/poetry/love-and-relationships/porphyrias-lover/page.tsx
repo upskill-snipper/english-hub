@@ -643,7 +643,9 @@ const poemData: PoemData = {
     },
     {
       device: 'Power reversal (structural)',
-      example: 'she put my arm... / I wound... her throat',
+      // Read "she put my arm... / I wound... her throat" until 2 October 2026, and "her throat" is
+      // not Browning's: he wrote "Three times her little throat around".
+      example: 'She put my arm about her waist … I wound / Three times her little throat around',
       effect:
         'In the first half, Porphyria physically arranges the passive speaker. After the murder, he arranges her corpse. The structural reversal mirrors his violent seizure of control.',
       lineRef: 15,

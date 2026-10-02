@@ -416,7 +416,8 @@ Volta: ما في تحوّل تقليدي. القصيدة تنتقل من الم�
     },
     {
       device: 'Repetition',
-      example: "charter'd street ... charter'd Thames / marks of weakness, marks of woe",
+      // Joined lines 2 and 4 with " / ", the mark for the next line, until 2 October 2026.
+      example: "charter'd street ... charter'd Thames ... marks of weakness, marks of woe",
       effect:
         'Heavy repetition creates a hammering, oppressive rhythm. The reader cannot escape the words just as Londoners cannot escape suffering. "Charter\'d" repeated emphasises that even nature has been controlled.',
       lineRef: 0,

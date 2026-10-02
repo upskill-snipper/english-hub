@@ -420,7 +420,8 @@ Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: 
     },
     {
       device: 'Religious imagery',
-      example: 'chidden of God / God-curst sun',
+      // Joined lines 2 and 15 with " / ", the mark for the next line, until 2 October 2026.
+      example: 'chidden of God … God-curst sun',
       effect:
         'God appears twice -- first scolding the sun, then cursing it. Hardy is questioning whether divine love exists in a world this bleak. The religious diction makes the misery feel cosmic, not just personal.',
       lineRef: 1,

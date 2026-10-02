@@ -833,7 +833,9 @@ ELLIPSIS:
     },
     {
       device: 'Pararhyme (half-rhyme)',
-      example: 'knive us / nervous; silence / nonchalance; snow / renew',
+      // Pairs of rhyme words, so a note in square brackets since 2 October 2026; printed as a
+      // quotation, its " / " marked line breaks the poem does not have.
+      example: '[knive us / nervous; silence / nonchalance; snow / renew]',
       effect:
         "Owen's signature technique. The consonants match but the vowels shift, producing sounds that almost rhyme but never quite resolve. This creates a persistent sense of discomfort and incompleteness that mirrors the soldiers' unresolved suffering and the poem's refusal to offer closure.",
       lineRef: 0,
@@ -878,7 +880,8 @@ ELLIPSIS:
     },
     {
       device: 'Juxtaposition (home vs. trenches)',
-      example: 'kind fires burn / But nothing happens',
+      // Joined lines 31 and 40 with " / ", the mark for the next line, until 2 October 2026.
+      example: 'kind fires burn … But nothing happens',
       effect:
         'Owen repeatedly contrasts the warmth and safety of home ("kind fires", "crickets jingle", "innocent mice") with the frozen horror of the trenches. This juxtaposition emphasises what the soldiers have lost and highlights the unbridgeable gap between civilian life and the reality of war.',
       lineRef: 36,

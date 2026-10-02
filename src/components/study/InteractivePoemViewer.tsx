@@ -307,6 +307,23 @@ export function poemLineNumbers(lines: readonly PoemLine[]): (number | null)[] {
   return lines.map((line) => (line.text.trim() === '' || line.heading ? null : ++n))
 }
 
+/**
+ * Whether a device's example is the site's own words rather than the poem's,
+ * by the conventions the fair-dealing guards read
+ * (no-poem-quoted-beyond-fair-dealing.test.ts): it opens with a square bracket
+ * ("[Line 15] a full stop halfway through the line", "[Traditional Petrarchan
+ * sonnet]") or ends "(paraphrase)". Such a note is printed as it is written,
+ * without the quotation marks the panel puts round a quotation.
+ *
+ * ADDED 2 October 2026. Until then the panel printed every example between
+ * quotation marks, in italics, so the notes that stand in for a poem in
+ * copyright and the descriptions bracketed that day were shown as if they were
+ * the poet's words.
+ */
+export function isDeviceNote(example: string): boolean {
+  return /^\s*\[/.test(example) || /\(paraphrase\)\s*$/i.test(example)
+}
+
 function LanguagePanel({
   devices,
   locale,
@@ -332,9 +349,15 @@ function LanguagePanel({
                 <span className="text-xs text-muted-foreground">Line {lineNumbers[d.lineRef]}</span>
               )}
             </div>
-            <p className="text-sm text-card-foreground italic mb-1" dir="ltr" lang="en">
-              &ldquo;{d.example}&rdquo;
-            </p>
+            {isDeviceNote(d.example) ? (
+              <p className="text-sm text-card-foreground mb-1" dir="ltr" lang="en">
+                {d.example}
+              </p>
+            ) : (
+              <p className="text-sm text-card-foreground italic mb-1" dir="ltr" lang="en">
+                &ldquo;{d.example}&rdquo;
+              </p>
+            )}
             <p className="text-sm text-muted-foreground">{effect}</p>
           </div>
         )

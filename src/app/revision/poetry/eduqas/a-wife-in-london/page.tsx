@@ -448,7 +448,8 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين - "the fo
   languageDevices: [
     {
       device: 'Pathetic fallacy',
-      example: 'tawny vapour ... fog hangs thicker ... glimmers cold',
+      // In the poem's order since 2 October 2026.
+      example: 'tawny vapour ... glimmers cold ... fog hangs thicker',
       effect:
         'The London fog mirrors the wife\'s emotional state. As her grief deepens between sections, the fog "hangs thicker". Hardy uses weather as a physical embodiment of psychological suffering.',
       lineRef: 1,
@@ -493,7 +494,8 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين - "the fo
     },
     {
       device: 'Two-part structure',
-      example: 'I - The Tragedy / II - The Irony',
+      // Joined the two part headings with " / ", the mark for the next line, until 2 October 2026.
+      example: 'I - The Tragedy … II - The Irony',
       effect:
         "Hardy formally announces the poem's structure with section titles. The two parts create a dramatic before/after. The labels also signal Hardy's argument: the universe arranges events to maximise suffering.",
       lineRef: 0,
@@ -502,7 +504,8 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين - "the fo
     },
     {
       device: 'Diction (cold imagery)',
-      example: 'glimmers cold ... worm now knows ... fog hangs thicker',
+      // In the poem's order since 2 October 2026.
+      example: 'glimmers cold ... fog hangs thicker ... worm now knows',
       effect:
         "Hardy chooses cold, dead, dark words throughout. The vocabulary creates a consistent atmosphere of gloom and lifelessness. The wife's warm hopes (and her dead husband's) cannot survive in this environment.",
       lineRef: 5,

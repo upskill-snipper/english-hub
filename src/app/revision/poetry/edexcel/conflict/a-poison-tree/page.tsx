@@ -421,7 +421,8 @@ Punctuation: Blake يستخدم الفواصل المنقوطة (semicolons) و�
     },
     {
       device: 'Parallelism',
-      example: 'I was angry with my friend / I was angry with my foe',
+      // Joined lines 1 and 3 with " / ", the mark for the next line, until 2 October 2026.
+      example: 'I was angry with my friend … I was angry with my foe',
       effect:
         'The grammatical mirroring of lines 1 and 3 sets up a moral comparison. Identical structure but different outcome forces the reader to focus on the single variable: did the speaker speak his anger or hide it?',
       lineRef: 0,
@@ -439,7 +440,9 @@ Punctuation: Blake يستخدم الفواصل المنقوطة (semicolons) و�
     },
     {
       device: 'Personal pronoun "I"',
-      example: 'I waterd / I sunned / I see',
+      // Until 2 October 2026 these were joined by " / ", the mark for the next line, though they
+      // come from lines apart.
+      example: 'I waterd … I sunned … I see',
       effect:
         'The speaker repeats "I" as the active subject of every act of cultivation. Blake makes clear that suppressed anger is something we choose to grow \u2014 it is not something that happens to us.',
       lineRef: 5,

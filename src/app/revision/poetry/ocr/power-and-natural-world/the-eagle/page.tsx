@@ -305,7 +305,9 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
     },
     {
       device: 'Diction',
-      example: 'azure / mountain walls / thunderbolt',
+      // Until 2 October 2026 these were joined by " / ", the mark for the next line, though they
+      // come from lines apart.
+      example: 'azure … mountain walls … thunderbolt',
       effect:
         'Tennyson chooses elevated, almost regal vocabulary. "Azure" instead of "blue", "mountain walls" instead of "cliffs", "thunderbolt" instead of "lightning". Every word elevates the eagle into something royal or divine.',
       lineRef: 2,

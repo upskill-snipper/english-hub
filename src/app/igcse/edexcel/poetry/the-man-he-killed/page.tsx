@@ -374,7 +374,8 @@ Tone: Conversational, confused, regretful, understated. The speaker is not angry
     },
     {
       device: 'Dashes (caesura)',
-      example: 'I shot him dead because - / Off-hand like - just as I -',
+      // Joined lines 9 and 14 with " / ", the mark for the next line, until 2 October 2026.
+      example: 'I shot him dead because - … Off-hand like - just as I -',
       effect:
         'The dashes represent gaps in the speaker\'s understanding. They are moments where thought breaks down, where the speaker cannot complete his sentence or his reasoning. The dash after "because -" is the poem\'s central moral crisis: the speaker reaches for a reason and finds silence.',
       lineRef: 10,

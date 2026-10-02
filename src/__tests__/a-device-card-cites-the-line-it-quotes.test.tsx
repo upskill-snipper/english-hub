@@ -6,7 +6,11 @@ import ts from 'typescript'
 import { createElement, type ComponentType } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 
-import { poemLineNumbers, type PoemData } from '@/components/study/InteractivePoemViewer'
+import {
+  isDeviceNote,
+  poemLineNumbers,
+  type PoemData,
+} from '@/components/study/InteractivePoemViewer'
 import DoNotGoGentlePage from '@/app/resources/revision-notes/do-not-go-gentle-into-that-good-night/page'
 
 /**
@@ -33,6 +37,14 @@ import DoNotGoGentlePage from '@/app/resources/revision-notes/do-not-go-gentle-i
  * brackets, the mark the copyright pages use for the site's own words. The
  * last, "the ash tree", is not Hardy's: he wrote "an ash".
  *
+ * Later that day the check was widened to every part of an example and the
+ * marks between them, and found 32 more cards. 25 joined lines that do not
+ * follow each other with " / ", the mark for the next line (Crossing the
+ * Bar's lines 1 and 9, When We Two Parted's 2 and 32), where an ellipsis marks
+ * a gap; four listed the poem's words out of its order; two misquoted
+ * (Dulce et Decorum Est's "blood gargling from froth-corrupted lungs", Porphyria's
+ * Lover's "her throat"); and one printed pairs of rhyme words as a quotation.
+ *
  * WHAT IT CHECKS, for every PoemData under src/app that has language devices:
  *  1. lineRef is a row of the poem that is a line, or a part heading the poem
  *     prints (`heading: true`, which the viewer shows unnumbered), not a
@@ -41,18 +53,25 @@ import DoNotGoGentlePage from '@/app/resources/revision-notes/do-not-go-gentle-i
  *     it: its first part, up to an ellipsis, a " / ", an arrow or "vs", as whole
  *     words. Where that part is in no line of the poem, the example is a list of
  *     words ("mingle, mix, meet, clasp, kiss"), and its first item, up to a
- *     comma, semicolon or bracket, must be on the row instead.
+ *     comma or semicolon, must be on the row instead.
  *  3. Where an example says which lines or stanzas it is from, in a label
  *     opening a bracket ("[Line 15]", "[Stanzas 2 to 5: ...]") or a whole
  *     parenthesis ("(lines 1 to 5)", "inn (stanza 1)"), the card's line is one
  *     of them, counted as the viewer counts. A reference in passing, "(echoing
  *     stanza 1)", is about another place and is not read.
- * An example that is the site's own words by the conventions the fair-dealing
- * guards read (no-poem-quoted-beyond-fair-dealing.test.ts) is held to 1 and 3
- * only: one that opens with a square bracket ("[Line 27: ...]", "[See
- * anthology: ...]") or ends "(paraphrase)". So is any example on a row that
- * opens with one ("[Paraphrase] ...", "[Extract: ...]"), the site's stand-in
- * for a line of a poem in copyright that it does not print.
+ *  4. Its later parts are the poem's words too, and follow as the marks
+ *     between them say: after " / ", on the next line, a stanza break between
+ *     allowed; after an ellipsis, later in the poem; after an arrow or "vs", a
+ *     comparison, anywhere in it. Asides in round brackets ("(line 3)",
+ *     "(memory)") are the site's, and are left out.
+ * An example that is the site's own words is held to 1 and 3 only. That is
+ * isDeviceNote in the viewer, which prints such a note without quotation
+ * marks: the conventions the fair-dealing guards read
+ * (no-poem-quoted-beyond-fair-dealing.test.ts), an example that opens with a
+ * square bracket ("[Line 27: ...]", "[See anthology: ...]") or ends
+ * "(paraphrase)". So is any example on a row that opens with one ("[Paraphrase]
+ * ...", "[Extract: ...]"), the site's stand-in for a line of a poem in
+ * copyright that it does not print.
  *
  * HOW WORDS ARE COMPARED, as if-pages-quote-the-held-text.test.ts compares them:
  * case, punctuation, quotation marks and dash forms are forgiven, words are
@@ -64,9 +83,10 @@ import DoNotGoGentlePage from '@/app/resources/revision-notes/do-not-go-gentle-i
  * its card names: those pages print a paraphrase of each line, so the words
  * are not here to compare. On 2 October 2026 their 106 quotation cards were
  * judged by hand against each row's paraphrase and the poem, and four were
- * moved. Which of several lines holding the same opening words was meant.
- * Whether the example is quoted word for word beyond its opening, which is
- * scripts/check-quotations.mjs's work for the poems the site holds.
+ * moved. On a page that prints such a poem only in part, a later part from a
+ * line it does not print. Which of several lines holding the same words was
+ * meant. Punctuation, which it forgives; scripts/check-quotations.mjs compares
+ * it for the poems the site holds.
  *
  * WHERE THE DATA COMES FROM. Each page's PoemData is read from its source with
  * the TypeScript parser, as the If- test reads it. A page that builds its rows
@@ -76,10 +96,11 @@ import DoNotGoGentlePage from '@/app/resources/revision-notes/do-not-go-gentle-i
  *
  * EXCUSED is for a card these rules misjudge and a reader would judge right,
  * with the reason. An entry must name a card that still fails without it. It
- * is empty. Some cards had pointed on purpose at the later of the lines they
- * quote (Piano's circular structure at its last line, Crossing the Bar's
- * parallelism at "Twilight"); they now name the line their quotation starts
- * on, so that the number a card shows is where a reader finds its first words.
+ * holds one: Sonnet 116's scansion of line 1, whose " / " marks divide the
+ * feet. Some cards had pointed on purpose at the later of the lines they quote
+ * (Piano's circular structure at its last line, Crossing the Bar's parallelism
+ * at "Twilight"); they now name the line their quotation starts on, so that the
+ * number a card shows is where a reader finds its first words.
  */
 
 const ROOT = process.cwd()
@@ -107,7 +128,12 @@ const COMPUTED: Record<string, ComponentType> = {
 }
 
 /** Cards excused, by page and then by example, with the reason. */
-const EXCUSED: Record<string, Record<string, string>> = {}
+const EXCUSED: Record<string, Record<string, string>> = {
+  'src/app/igcse/edexcel/poetry/sonnet-116/page.tsx': {
+    'Let ME / not TO / the MAR / riage OF / true MINDS':
+      'a scansion of line 1: each " / " divides a metrical foot, not a line',
+  },
+}
 
 // ── Reading the pages ───────────────────────────────────────────────────────
 
@@ -218,37 +244,58 @@ function norm(s: string, hyphen: '' | ' '): string {
 /** As whole words, padded, with any apostrophe at the edge of a word dropped. */
 const words = (s: string) => ` ${s.replace(/(^| )'+|'+(?= |$)/g, '$1').trim()} `
 
+/** The words of a line or a phrase, a hyphen inside a word read as `hyphen`. */
+const tokens = (s: string, hyphen: '' | ' ') =>
+  words(norm(s, hyphen)).trim().split(' ').filter(Boolean)
+
 /**
- * Whether `phrase` starts on row `i` as whole words, reading a hyphen either
- * way. It may run on into the lines after ("lustily / I dipped" quoted as
- * "lustily I dipped"), but must begin on this one.
+ * The row a phrase ends on, if it starts on row `i` as whole words, reading a
+ * hyphen either way; otherwise -1. It may run on into the lines after
+ * ("lustily / I dipped" quoted as "lustily I dipped"), but must begin on this
+ * one.
  */
-function startsOn(rows: string[], i: number, phrase: string): boolean {
-  const after = rows
-    .slice(i + 1)
-    .filter((r) => r.trim() !== '')
-    .slice(0, 3)
-  return (['', ' '] as const).some((h) => {
-    const p = words(norm(phrase, h))
-    const head = words(norm(rows[i], h))
-    const at = words(norm([rows[i], ...after].join(' '), h)).indexOf(p)
-    return p.trim() !== '' && at >= 0 && at < head.length - 1
-  })
+function endRow(rows: string[], i: number, phrase: string): number {
+  if (!rows[i]?.trim()) return -1
+  const span = [i]
+  for (let k = i + 1; k < rows.length && span.length < 4; k++) if (rows[k].trim()) span.push(k)
+  for (const h of ['', ' '] as const) {
+    const p = tokens(phrase, h)
+    if (!p.length) continue
+    const run = span.flatMap((k) => tokens(rows[k], h).map((word) => ({ word, row: k })))
+    for (let s = 0; s < run.length && run[s].row === i; s++)
+      if (p.every((w, j) => run[s + j]?.word === w)) return run[s + p.length - 1].row
+  }
+  return -1
 }
+
+const startsOn = (rows: string[], i: number, phrase: string) => endRow(rows, i, phrase) >= 0
 
 /** The rows the phrase starts on. */
 const startRows = (rows: string[], phrase: string) =>
   rows.flatMap((r, i) => (r.trim() !== '' && startsOn(rows, i, phrase) ? [i] : []))
 
-/** The example's first part, up to an ellipsis, a slash, an arrow or "vs". */
-const opening = (example: string) =>
-  example.split(/\s*(?:\.\.\.|…|\/|→|\s+vs\.?\s+)\s*/).find((p) => /[\p{L}\p{N}]/u.test(p)) ?? ''
+/**
+ * The example's parts, its asides in round brackets ("(line 3)", "(memory)")
+ * left out, each with the mark that joins it to the part before: " / " for the
+ * next line, an ellipsis for words left out (so it comes later in the poem), an
+ * arrow or "vs" for a comparison, whose parts may come in any order.
+ */
+type Part = { text: string; join: '/' | '…' | 'vs' | null }
+function partsOf(example: string): Part[] {
+  const pieces = example
+    .replace(/\s*\([^)]*\)/g, ' ')
+    .split(/(\s*(?:\.\.\.|…|\/|→)(?:\s*(?:\.\.\.|…|\/))*\s*|\s+vs\.?\s+)/)
+  const out: Part[] = []
+  let join: Part['join'] = null
+  pieces.forEach((piece, i) => {
+    if (i % 2) join = /\.\.\.|…/.test(piece) ? '…' : piece.includes('/') ? '/' : 'vs'
+    else if (/[\p{L}\p{N}]/u.test(piece)) out.push({ text: piece, join: out.length ? join : null })
+  })
+  return out
+}
 
-/** A list's first item, up to a comma, semicolon or bracket. */
-const firstItem = (part: string) => part.split(/[,;(]/)[0]
-
-/** The site's own words, by the fair-dealing guards' conventions. */
-const isNote = (s: string) => /^\s*\[/.test(s) || /\(paraphrase\)\s*$/i.test(s)
+/** A list's first item, up to a comma or semicolon. */
+const firstItem = (part: string) => part.split(/[,;]/)[0]
 
 /**
  * The lines, or stanzas, an example says it is from, in a label opening a
@@ -285,12 +332,47 @@ function stanzas(rows: string[]): number[] {
 const numbers = (p: Poem) =>
   poemLineNumbers(p.rows.map((text, i) => ({ text, heading: p.headings.includes(i) })))
 
+/** A row as a reader would name it. */
+const lineName = (p: Poem, i: number) => {
+  const n = numbers(p)[i]
+  return n === null ? 'a heading' : `line ${n}`
+}
+
 function where(p: Poem, phrase: string): string {
-  const n = numbers(p)
-  const at = startRows(p.rows, phrase).map(
-    (i) => `row ${i} (${n[i] === null ? 'a heading' : `line ${n[i]}`})`,
-  )
+  const at = startRows(p.rows, phrase).map((i) => `row ${i} (${lineName(p, i)})`)
   return `its opening words are on ${at.join(', ')}`
+}
+
+/** The next row after `k` that is a line, not a stanza break or a part heading. */
+const nextLine = (p: Poem, k: number) =>
+  p.rows.findIndex((r, j) => j > k && r.trim() !== '' && !p.headings.includes(j))
+
+const few = (s: string) => s.replace(/["“”]/g, '').trim().split(/\s+/).slice(0, 4).join(' ')
+
+/** What is wrong with the way an example's later parts follow its first, or null. */
+function joins(p: Poem, start: number, parts: Part[]): string | null {
+  let end = endRow(p.rows, start, parts[0].text)
+  for (const { text, join } of parts.slice(1)) {
+    const at = startRows(p.rows, text)
+    // A page that prints a poem in copyright only in part may quote a line it
+    // does not print, so a part it cannot find there is not judged.
+    if (!at.length && p.rows.some((r) => /^\s*\[/.test(r))) return null
+    if (!at.length) return `quotes "${few(text)}", which is in no line of the poem`
+    if (join === 'vs') continue
+    if (join === '/') {
+      const next = nextLine(p, end)
+      if (at.includes(next)) {
+        end = endRow(p.rows, next, text)
+        continue
+      }
+      const to = at.find((k) => k > end) ?? at[0]
+      return `" / " joins ${lineName(p, end)} to ${lineName(p, to)}, which do not follow each other; an ellipsis marks a gap`
+    }
+    const later = at.filter((k) => k >= end)
+    if (!later.length) return `puts "${few(text)}" after words that come later in the poem`
+    end = endRow(p.rows, later[0], text)
+  }
+  return null
 }
 
 /** What is wrong with a card, or null. */
@@ -306,9 +388,10 @@ function fault(p: Poem, d: Device): string | null {
   const inStanzas = named(d.example, 'stanza')
   if (inStanzas.length && !inStanzas.includes(stanza))
     return `is in stanza ${stanza}, names ${inStanzas.join(', ')}`
-  if (isNote(d.example) || /^\s*\[/.test(row)) return null
-  const first = opening(d.example)
-  if (startsOn(p.rows, d.lineRef, first)) return null
+  if (isDeviceNote(d.example) || /^\s*\[/.test(row)) return null
+  const parts = partsOf(d.example)
+  const first = parts[0]?.text ?? ''
+  if (startsOn(p.rows, d.lineRef, first)) return joins(p, d.lineRef, parts)
   if (startRows(p.rows, first).length) return where(p, first)
   const item = firstItem(first)
   if (!startRows(p.rows, item).length) return 'quotes words that are in no line of the poem'
@@ -381,6 +464,17 @@ describe('a language-device card', () => {
     expect(check('[Stanza 2: the ruin]', 0)).toBe('is in stanza 1, names 2')
     expect(check('[Stanza 2: the ruin]', 3)).toBeNull()
     expect(check('Nothing beside (echoing stanza 1)', 3)).toBeNull()
+    // A " / " is a line break: the part after it starts on the next line, across a
+    // stanza break if need be. Lines further apart are joined by an ellipsis, and
+    // every part is the poem's, in the poem's order.
+    expect(check('I met a traveller / Who said / Nothing beside', 0)).toBeNull()
+    expect(check('I met a traveller from an antique land, / Nothing beside.', 0)).toMatch(
+      /joins line 1 to line 3, which do not follow/,
+    )
+    expect(check('I met a traveller from an antique land, … Nothing beside.', 0)).toBeNull()
+    expect(check('Nothing beside. … I met a traveller', 3)).toMatch(/after words that come later/)
+    expect(check('I met a traveller … a vast desert', 0)).toMatch(/"a vast desert", which is in no/)
+    expect(check('Nothing beside vs I met a traveller', 3)).toBeNull()
     // A part heading is not numbered, so a line after it keeps its own number.
     const parts: Poem = {
       file: 'fixture',
@@ -396,7 +490,8 @@ describe('a language-device card', () => {
     }
     const card = (example: string, lineRef: number) =>
       fault(parts, { device: 'x', example, lineRef })
-    expect(card('I - The Tragedy / II - The Irony', 0)).toBeNull()
+    expect(card('I - The Tragedy … II - The Irony', 0)).toBeNull()
+    expect(card('I - The Tragedy / II - The Irony', 0)).toMatch(/joins a heading to a heading/)
     expect(card('[Line 2] the morrow', 4)).toBeNull()
     expect(card('[Line 3] the morrow', 4)).toBe('shows line 2, names 3')
     expect(card('[Line 1] the heading', 0)).toBe('shows no line, names 1')

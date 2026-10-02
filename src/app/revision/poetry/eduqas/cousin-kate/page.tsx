@@ -273,7 +273,9 @@ Volta: التحوّل الدرامي يجي في المقطع الأخير، ل�
     },
     {
       device: 'Class diction',
-      example: '"cottage maiden" / "great lord" / "palace home" / "mean estate" / "coronet"',
+      // Until 2 October 2026 these were joined by " / ", the mark for the next line, though they
+      // come from lines apart.
+      example: '"cottage maiden" … "great lord" … "palace home" … "mean estate" … "coronet"',
       effect:
         'The poem is saturated with class markers. Rossetti draws explicit attention to the gulf between aristocrat and peasant -- the lord’s power over both women is rooted in this hierarchy.',
       lineRef: 0,

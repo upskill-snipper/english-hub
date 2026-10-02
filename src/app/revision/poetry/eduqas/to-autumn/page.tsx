@@ -548,7 +548,8 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 - "Wh
     },
     {
       device: 'Sensory imagery',
-      example: "mists and mellow fruitfulness / Drows'd with the fume of poppies",
+      // Joined lines 1 and 17 with " / ", the mark for the next line, until 2 October 2026.
+      example: "mists and mellow fruitfulness … Drows'd with the fume of poppies",
       effect:
         'Each stanza emphasises a different sense. Stanza 1 is visual and tactile (ripe fruit). Stanza 2 is languid and dreamy (drowsiness, slow movement). Stanza 3 is auditory (songs and music). The poem becomes a total sensory experience of autumn.',
       lineRef: 0,
@@ -594,7 +595,8 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 - "Wh
     },
     {
       device: 'Diction',
-      example: 'mellow ... swell ... plump ... ripeness ... laden',
+      // In the poem's order since 2 October 2026.
+      example: 'mellow ... ripeness ... swell ... plump ... laden',
       effect:
         "Keats's word choices throughout emphasise fullness, weight, and ripeness. The language itself feels heavy with abundance, mirroring the season's overflow.",
       lineRef: 0,

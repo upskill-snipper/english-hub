@@ -475,7 +475,8 @@ const poemData: PoemData = {
     },
     {
       device: 'Cyclical structure',
-      example: 'In silence and tears / With silence and tears',
+      // Joined lines 2 and 32 with " / ", the mark for the next line, until 2 October 2026.
+      example: 'In silence and tears … With silence and tears',
       effect:
         'The near-identical opening and closing lines create a circular poem, suggesting the speaker is trapped in a cycle of grief with no possibility of escape or resolution.',
       lineRef: 1,

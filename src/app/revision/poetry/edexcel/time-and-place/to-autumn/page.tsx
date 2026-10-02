@@ -597,7 +597,9 @@ Apostrophe: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0651\u0647\
     },
     {
       device: 'Sensory imagery',
-      example: 'mists and mellow fruitfulness / plump the hazel shells / clammy cells',
+      // Until 2 October 2026 these were joined by " / ", the mark for the next line, though they
+      // come from lines apart.
+      example: 'mists and mellow fruitfulness … plump the hazel shells … clammy cells',
       effect:
         'Keats packs the ode with tactile, visual and even tasteable details. The reader can almost feel the swelling fruit and the damp honeycomb. Romantic poetry valued direct sensory experience as a route to truth.',
       lineRef: 0,

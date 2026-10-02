@@ -433,7 +433,8 @@ Volta: \u0639\u0628\u0627\u0631\u0629 "But most" \u0641\u064a \u0627\u0644\u0628
     },
     {
       device: 'Symbolism',
-      example: 'blackning Church / Palace walls',
+      // Joined lines 10 and 12 with " / ", the mark for the next line, until 2 October 2026.
+      example: 'blackning Church … Palace walls',
       effect:
         'Two institutions become symbols of the corrupt system. The Church symbolises hypocrisy (preaching mercy while ignoring children dying in chimneys); the Palace symbolises the warmaking power of monarchy. Blake makes architecture moral.',
       lineRef: 11,

@@ -497,7 +497,8 @@ Capitalisation: Dickinson \u062a\u0643\u0627\u067e\u062a\u0644 (\u062a\u0643\u06
   languageDevices: [
     {
       device: 'Sustained personification',
-      example: 'visited the Sea / The Mermaids in the Basement / He \u2013 He followed',
+      // Joined lines 3 and 17 with " / ", the mark for the next line, until 2 October 2026.
+      example: 'visited the Sea / The Mermaids in the Basement … He – He followed',
       effect:
         'The whole poem treats the sea as a person, specifically a man. Each stanza adds another human attribute. The personification turns the encounter from "speaker meets sea" into "speaker meets stranger", which is what gives the poem its uncanny intimacy.',
       lineRef: 1,
@@ -515,7 +516,9 @@ Capitalisation: Dickinson \u062a\u0643\u0627\u067e\u062a\u0644 (\u062a\u0643\u06
     },
     {
       device: 'Capitalisation',
-      example: 'Tide / Sea / Mighty / Solid Town',
+      // Until 2 October 2026 these were joined by " / ", the mark for the next line, though they
+      // come from lines apart. They are now in the poem's order.
+      example: 'Tide … Solid Town … Mighty … Sea',
       effect:
         'Dickinson capitalises ordinary nouns to elevate them. By turning "Tide" and "Sea" into proper nouns, she gives them the weight of characters. The Solid Town becomes the named opposite of the fluid Sea.',
       lineRef: 10,

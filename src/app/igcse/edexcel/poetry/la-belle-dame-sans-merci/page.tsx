@@ -696,16 +696,22 @@ Archaic diction: Keats uses words like "ail", "thee", "haggard", "woe-begone", "
         'The poem has layers of voice. An outer speaker questions the knight; the knight tells his story; in his story, dream-kings cry the title aloud. Each layer adds distance and uncertainty. Crucially, the lady herself never speaks in her own voice - everything we know about her is second-hand, making her unknowable.',
       lineRef: 15,
     },
+    // Until 2 October 2026 the next two examples misquoted by their marks. A
+    // " / " says the lines either side are consecutive, but a line comes
+    // between "Alone and palely loitering" and "And no birds sing" in both
+    // stanzas that hold them; and the ellipses put "language strange" (stanza
+    // VII) before "sweet moan" (stanza V). scripts/check-quotations.mjs found
+    // both once the descriptions above were bracketed.
     {
       device: 'Repetition',
-      example: 'Alone and palely loitering / And no birds sing',
+      example: 'Alone and palely loitering… And no birds sing',
       effect:
         'Key phrases repeat across the poem, functioning like ballad refrains. The repetition traps the knight in his own story - he ends where he began, in a landscape that has not changed. The circular structure makes his fate feel permanent.',
       lineRef: 1,
     },
     {
       device: 'Ambiguity',
-      example: 'as she did love… language strange… sweet moan… wild wild eyes',
+      example: 'as she did love… sweet moan… language strange… wild wild eyes',
       effect:
         'Keats fills the central love encounter with words that could mean love or danger. "As she did love" - did she love him or only appear to? "Language strange" - can the knight really translate her meaning? "Sweet moan" - pleasure or distress? "Wild wild eyes" - fearful or ferocious? The ambiguity refuses to let the reader decide whether the lady is victim or villain.',
       lineRef: 22,

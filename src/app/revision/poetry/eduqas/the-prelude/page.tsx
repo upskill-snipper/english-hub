@@ -671,7 +671,8 @@ Personification: الطبيعة دايماً مشخصنة. القارب عنده
     },
     {
       device: 'Repetition',
-      example: 'a huge peak, black and huge / struck and struck again',
+      // Joined lines 22 and 24 with " / ", the mark for the next line, until 2 October 2026.
+      example: 'a huge peak, black and huge … struck and struck again',
       effect:
         "The repetitions show the speaker overwhelmed by experience - words fail him. They also create a sense of the mountain's relentlessness and the speaker's panic. The simple repeated language mirrors a child's response to fear.",
       lineRef: 21,

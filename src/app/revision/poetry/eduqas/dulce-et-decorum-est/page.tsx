@@ -529,7 +529,10 @@ Volta: في تحوّلان. الأول "Gas! GAS!" - الانتقال المفا
     },
     {
       device: 'Sensory imagery',
-      example: 'guttering, choking, drowning ... blood gargling from froth-corrupted lungs',
+      // Read "blood gargling from froth-corrupted lungs" until 2 October 2026, two of Owen's lines
+      // run together with words left out.
+      example:
+        'guttering, choking, drowning ... the blood / Come gargling from the froth-corrupted lungs',
       effect:
         'Owen forces the reader to see, hear, and almost taste the horror. The sensory details are deliberately graphic and unpleasant. The reader cannot look away - just as the speaker cannot escape the memory.',
       lineRef: 15,

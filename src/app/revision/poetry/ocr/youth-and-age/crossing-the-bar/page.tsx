@@ -345,7 +345,8 @@ Metre (الوزن): الوزن غير منتظم، يتناوب بين أبيا�
     },
     {
       device: 'Religious imagery',
-      example: 'one clear call / Pilot face to face',
+      // Joined lines 2 and 15 with " / ", the mark for the next line, until 2 October 2026.
+      example: 'one clear call … Pilot face to face',
       effect:
         'Tennyson weaves religious language throughout: a divine call, a homecoming, a Pilot. This gradually transforms a meditation on death into a meditation on faith. The capital "P" on "Pilot" is the giveaway: God is steering the ship.',
       lineRef: 1,
@@ -363,7 +364,9 @@ Metre (الوزن): الوزن غير منتظم، يتناوب بين أبيا�
     },
     {
       device: 'Symbolism',
-      example: 'Sunset / Twilight / dark',
+      // Until 2 October 2026 these were joined by " / ", the mark for the next line, though they
+      // come from lines apart.
+      example: 'Sunset … Twilight … dark',
       effect:
         "The progression from sunset to twilight to dark symbolises the speaker's gradual approach to death. Each stanza pushes a little further into the night. Yet the imagery remains beautiful, not frightening -- death is the natural close of a long day.",
       lineRef: 0,
@@ -372,7 +375,8 @@ Metre (الوزن): الوزن غير منتظم، يتناوب بين أبيا�
     },
     {
       device: 'Parallelism',
-      example: 'Sunset and evening star / Twilight and evening bell',
+      // Joined lines 1 and 9 with " / ", the mark for the next line, until 2 October 2026.
+      example: 'Sunset and evening star … Twilight and evening bell',
       effect:
         'Stanzas 1 and 3 begin with parallel imagery -- "evening" combined with a sight (star) or sound (bell). The parallelism creates a sense of stately ritual, like the movements of a church service.',
       lineRef: 0,
@@ -390,10 +394,12 @@ Metre (الوزن): الوزن غير منتظم، يتناوب بين أبيا�
     },
     {
       device: 'Cyclical structure',
-      example: '"the bar" (line 3) / "crost the bar" (line 16)',
+      // Joined lines 3 and 16 with " / ", the mark for the next line, until 2 October 2026, and
+      // named line 16 though it begins with line 3.
+      example: '"the bar" (line 3) … "crost the bar" (line 16)',
       effect:
         "The poem begins and ends with the same image. The crossing has happened in the speaker's imagination -- by the end, he has rehearsed his own death and arrived at peace with it. The structure enacts the journey.",
-      lineRef: 15,
+      lineRef: 2,
       effectAr:
         'القصيدة تبدأ وتنتهي بنفس الصورة. العبور صار في خيال المتكلّم - لمّا توصل النهاية، هو يكون تمرّن على موته ووصل لسلام معه. البنية تمثّل الرحلة نفسها.',
     },

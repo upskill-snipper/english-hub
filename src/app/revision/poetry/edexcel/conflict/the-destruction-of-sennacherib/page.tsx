@@ -492,8 +492,9 @@ Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rid
     },
     {
       device: 'Repeated simile',
+      // Joined lines 5 and 7 with " / ", the mark for the next line, until 2 October 2026.
       example:
-        'Like the leaves of the forest when Summer is green / Like the leaves of the forest when Autumn hath blown',
+        'Like the leaves of the forest when Summer is green … Like the leaves of the forest when Autumn hath blown',
       effect:
         'Byron repeats the same syntactic frame with one season swapped for another. The repetition itself dramatises the speed of the fall: the army goes from summer to autumn in two lines. The form embodies the meaning.',
       lineRef: 5,
@@ -520,7 +521,8 @@ Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rid
     },
     {
       device: 'Religious diction',
-      example: 'the temple of Baal / the glance of the Lord',
+      // Joined lines 22 and 24 with " / ", the mark for the next line, until 2 October 2026.
+      example: 'the temple of Baal … the glance of the Lord',
       effect:
         'Byron uses Old Testament vocabulary throughout. The "temple of Baal" represents pagan worship; "the glance of the Lord" represents the true God. The contrast frames the destruction as a religious as well as a military victory.',
       lineRef: 26,

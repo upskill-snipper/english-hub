@@ -245,7 +245,9 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
   languageDevices: [
     {
       device: 'South African vocabulary',
-      example: 'kopje / veldt / Karoo',
+      // Until 2 October 2026 these were joined by " / ", the mark for the next line, though they
+      // come from lines apart.
+      example: 'kopje … veldt … Karoo',
       effect:
         'Hardy embeds Afrikaans and South African English in an otherwise English ballad. The vocabulary marks Hodge as displaced -- the very words for the landscape are foreign to him. The reader, too, must look them up, mirroring Hodge’s alienation.',
       lineRef: 2,

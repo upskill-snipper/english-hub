@@ -289,7 +289,8 @@ const poemData: PoemData = {
     },
     {
       device: 'Sensual imagery',
-      example: 'set thy trunk all bare / breathe within thy shadow',
+      // Joined lines 9 and 13 with " / ", the mark for the next line, until 2 October 2026.
+      example: 'set thy trunk all bare … breathe within thy shadow',
       effect:
         'The physical, bodily imagery asserts sexual desire and intimacy, subverting Victorian expectations of feminine modesty and presenting female desire as natural and legitimate.',
       lineRef: 8,
@@ -298,7 +299,8 @@ const poemData: PoemData = {
     },
     {
       device: 'Exclamatory tone',
-      example: 'I think of thee! / burst, shattered, everywhere!',
+      // Joined lines 1 and 11 with " / ", the mark for the next line, until 2 October 2026.
+      example: 'I think of thee! … burst, shattered, everywhere!',
       effect:
         'Exclamation marks throughout convey passionate intensity. The poem is not a calm reflection but an urgent, emotionally charged declaration of desire and love.',
       lineRef: 0,

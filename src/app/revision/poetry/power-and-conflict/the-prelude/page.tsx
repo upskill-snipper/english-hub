@@ -562,10 +562,11 @@ Volta / نقطة التحوّل
     },
     {
       device: 'Sibilance',
-      example: 'silent ... stole ... stealth',
+      // In the poem's order since 2 October 2026, so the card now names line 5, where "stealth" is.
+      example: 'stealth ... silent ... stole',
       effect:
         'The repeated "s" sounds create a hushed, secretive atmosphere throughout the extract. They link the boy\'s initial act of theft with his fearful retreat, bookending the experience with guilt and secrecy.',
-      lineRef: 29,
+      lineRef: 4,
     },
     {
       device: 'Enjambment',
