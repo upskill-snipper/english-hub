@@ -185,7 +185,10 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       "Compare with 'My Father Would Not Show Us' (a child facing an older relative's death), 'Nettles' (parent-child bonds), or 'One Flesh' (ageing and love).",
   },
   {
-    title: '1st Date - She / 1st Date - He',
+    // Titled as the anthology prints the pair (p. 14), which is also how the fair-dealing
+    // measure records its length. Until 2 October 2026 this read "1st Date - She / 1st Date
+    // - He", which matched no recorded length and so was held to the 20-word floor.
+    title: '1st Date - She and 1st Date - He',
     poet: 'Wendy Cope',
     summary:
       "Two companion poems presenting a first date from both perspectives. Both speakers are nervous and self-conscious. The humour and warmth come from recognising their shared anxiety. The dual perspective shows love's vulnerability and universality.",
@@ -259,7 +262,7 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       '"i wanna be yours"',
     ],
     comparisonLinks:
-      "Compare with 'Sonnet 43' (declarations of love), 'Valentine' (unconventional love imagery), or '1st Date - She / 1st Date - He' (open devotion vs the hesitation of a first date).",
+      "Compare with 'Sonnet 43' (declarations of love), 'Valentine' (unconventional love imagery), or '1st Date - She and 1st Date - He' (open devotion vs the hesitation of a first date).",
     rightsNotice:
       "Rights notice: © Penguin Random House on behalf of John Cooper Clarke (b. 1949). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Cooper Clarke's collection Ten Years in an Open Necked Shirt (1981).",
   },
@@ -399,9 +402,13 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       "The metaphor of the 'red rope of love' simultaneously represents connection (umbilical cord) and conflict (a tug-of-war). Military language ('confrontation,' 'fought') frames the mother-child relationship as a battle. 'Tight red rope' suggests intensity and inescapability.",
     structure:
       'Two stanzas: the first describes the birth, the second a present-day conflict over skating. The gap between stanzas represents the passage of time, but the conflict remains the same - love expressed through opposition.',
+    // 2 October 2026: two of these ran several of the poem's short lines together as one
+    // ("I can remember you, child, as I stood in a hot, white room" is three lines), and the
+    // page quoted 31 words of a poem in copyright whose share here is 20. They are now cut
+    // to the lines as the anthology prints them.
     keyQuotes: [
-      '"I can remember you, child, as I stood in a hot, white room"',
-      '"the tight red rope of love which we both fought over"',
+      '"I can remember you, child,"',
+      '"the tight / Red rope of love"',
       '"Neither won nor lost the struggle"',
     ],
     comparisonLinks:
@@ -483,13 +490,15 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     // Until 26 September 2026 these were four quotations that each ran several
     // of the poem's short lines together, with a capital on picasso, a question
     // mark and commas the poem does not have (it prints names in lower case and
-    // uses no commas or question marks). The poem is in copyright, so the page now quotes only
-    // the two-line refrain, checked against the anthology, and describes the rest.
+    // uses no commas or question marks). From then until 2 October 2026 three of
+    // them were descriptions ending "(quote the exact wording from your anthology)",
+    // printed in the key-quotation list as if they were Agard's words. They are now
+    // short quotations, two lines at most, checked against the anthology (p. 29).
     keyQuotes: [
       '"Explain yuself / wha yu mean"',
-      'The painter analogy: mixing red and green on a canvas (quote the exact wording from your anthology)',
-      'The literal half person, casting half a shadow (quote the exact wording from your anthology)',
-      'The closing challenge to come back tomorrow with the whole eye and the whole ear (quote the exact wording from your anthology)',
+      '"mix red an green / is a half-caste canvas"',
+      '"I half-caste human being / cast half-a-shadow"',
+      '"de other half / of my story"',
     ],
     comparisonLinks:
       "Compare with 'No Problem' (racism and identity), 'The Class Game' (prejudice based on class), or 'Catrin' (identity and conflict).",
@@ -582,11 +591,9 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       "The past tense ('their light hearts turned to stone') emphasises irreversible loss. Poetic imagery in the questions ('Did they use bone and ivory, jade and silver, for ornament?') contrasts with the blunt, devastating answers ('Sir, their light hearts turned to stone'). 'Sir' is bitterly ironic - addressing the powerful who caused the destruction.",
     structure:
       'Two stanzas: six numbered questions, then six numbered answers. The formal, bureaucratic structure (like a government report) creates cold detachment that makes the human loss more shocking.',
-    keyQuotes: [
-      '"Sir, their light hearts turned to stone"',
-      '"It is not remembered whether in gardens stone lanterns illumined pleasant ways"',
-      '"Who can say? It is silent now"',
-    ],
+    // 2 October 2026: "It is not remembered whether in gardens / stone lanterns illumined
+    // pleasant ways" is cut, which brings the page within its share of a poem in copyright.
+    keyQuotes: ['"Sir, their light hearts turned to stone"', '"Who can say? It is silent now"'],
     comparisonLinks:
       "Compare with 'War Photographer' (the impact of war on people), 'Exposure' (suffering), or 'Poppies' (loss and remembrance).",
     rightsNotice:
@@ -622,11 +629,9 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       "Domestic imagery ('smoothed down your shirt's / upturned collar') juxtaposes the ordinary with the military. Textile and craft imagery ('bandaged,' 'pinned,' 'crimped') connects to the mother's domestic world. Sensory detail, the mother's wish to touch her son's nose with her own as she did when he was small, conveys physical longing and intimacy.",
     structure:
       "Free verse with long, enjambed sentences that flow like thought or memory. No regular stanza pattern reflects the mother's uncontained grief. The poem moves between past and present, memory and reality.",
-    keyQuotes: [
-      '"crimped petals, / spasms of paper red"',
-      '"I wanted to graze my nose / across the tip of your nose"',
-      '"leaned against it like a wishbone"',
-    ],
+    // 2 October 2026: "I wanted to graze my nose / across the tip of your nose" is cut (the
+    // language note describes it), which brings the page within its share of the poem.
+    keyQuotes: ['"crimped petals, / spasms of paper red"', '"leaned against it like a wishbone"'],
     comparisonLinks:
       "Compare with 'War Photographer' (personal response to war), 'Catrin' (mother-child bond), or 'Exposure' (the reality of war).",
     rightsNotice:

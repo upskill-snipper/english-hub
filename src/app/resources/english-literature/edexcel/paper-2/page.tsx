@@ -427,7 +427,7 @@ export default async function Paper2Page() {
                   'Neutral Tones - Thomas Hardy',
                   'Sonnet 43 - Elizabeth Barrett Browning',
                   'My Last Duchess - Robert Browning',
-                  '1st Date - She / 1st Date - He - Wendy Cope',
+                  '1st Date - She and 1st Date - He - Wendy Cope',
                   'Valentine - Carol Ann Duffy',
                   'One Flesh - Elizabeth Jennings',
                   'i wanna be yours - John Cooper Clarke',
