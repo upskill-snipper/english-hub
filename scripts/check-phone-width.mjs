@@ -157,6 +157,10 @@ function measure(vw) {
     for (const n of el.childNodes) if (n.nodeType === 3) own += n.textContent
     const t = own.replace(/\s+/g, ' ').trim()
     if (t.length < 60 || !visible(el) || srOnly(el)) continue
+    // An inline element is as wide as its longest line, not the space it is
+    // given: a quoted exchange in short verse lines measured 104px inside a
+    // 254px blockquote. Only boxes that lay out their own lines count.
+    if (cs(el).display === 'inline') continue
     const w = el.getBoundingClientRect().width
     if (!narrowest || w < narrowest.w)
       narrowest = { w: Math.round(w), el: describe(el), text: t.slice(0, 40) }
