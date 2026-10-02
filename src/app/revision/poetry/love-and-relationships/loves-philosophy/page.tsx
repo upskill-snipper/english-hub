@@ -590,7 +590,9 @@ export default function LovesPhilosophyPage() {
           <ArrowLeft className="size-3.5" />
           {t('rev.poetry.shared.back_to_poetry')}
         </Button>
-        <div className="flex items-center gap-3 mb-1">
+        {/* Wraps: the title and its two badges do not fit one line at phone width, and until
+            2 October 2026 they pushed the page 7 to 60px wider than a 375px screen. */}
+        <div className="flex flex-wrap items-center gap-3 mb-1">
           <h1 className="text-heading-lg font-heading text-foreground">Love&apos;s Philosophy</h1>
           <Badge className="bg-rose-500/10 text-rose-400 border-rose-500/20">
             Love &amp; Relationships

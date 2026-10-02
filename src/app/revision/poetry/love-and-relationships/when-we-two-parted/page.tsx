@@ -759,7 +759,9 @@ export default function WhenWeTwoPartedPage() {
           <ArrowLeft className="size-3.5" />
           {t('rev.poetry.shared.back_to_poetry')}
         </Button>
-        <div className="flex items-center gap-3 mb-1">
+        {/* Wraps, so the title and its two badges cannot push the page wider than a phone
+            screen: the same row on four sibling pages did, until 2 October 2026. */}
+        <div className="flex flex-wrap items-center gap-3 mb-1">
           <h1 className="text-heading-lg font-heading text-foreground">When We Two Parted</h1>
           <Badge className="bg-rose-500/10 text-rose-400 border-rose-500/20">
             Love &amp; Relationships
