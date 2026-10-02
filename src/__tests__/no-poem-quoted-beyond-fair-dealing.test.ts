@@ -36,10 +36,13 @@ import { POETS, POEM_WORDS, inCopyright } from './helpers/poets'
  * page gives up in total.
  *
  * WHAT IT CHECKS. Every page.tsx under src/app/revision/poetry,
- * src/app/igcse/<board>/poetry and src/app/resources/poetry, with the layout,
- * loading and error files beside it, every file it imports from src/app or
- * src/data, and every dictionary string those files name by key. For each poem
- * in UK copyright that a page quotes:
+ * src/app/igcse/<board>/poetry, src/app/resources/poetry, the poem guides in
+ * the revision-notes library, and each board's poetry directories under
+ * src/app/resources/english-literature (poetry, unseen, unseen-poetry and
+ * songs-of-ourselves-v1/v2), with the layout, loading and error files beside
+ * it, every file it imports from src/app or src/data, and every dictionary
+ * string those files name by key. For each poem in UK copyright that a page
+ * quotes:
  *  (a) no quotation over FAIR_DEALING.quoteWords words or
  *      FAIR_DEALING.poemQuoteLines lines;
  *  (b) the distinct words the page quotes from it, in every language, no more
@@ -66,8 +69,8 @@ import { POETS, POEM_WORDS, inCopyright } from './helpers/poets'
  *  - where the field it sits in is paired by name with one of several poems
  *    (`poemAEvidence` with `poemA`, `analysis2` with `evidence2poem`), it
  *    belongs to that poem alone;
- *  - anywhere else, it belongs to the page's own poem: its one PoemData, or
- *    the set text its route is named after;
+ *  - anywhere else, it belongs to the page's own poem: its one PoemData, the
+ *    set text its route is named after, or its entry in ROUTE_POEMS;
  *  - on a page with no poem of its own, outside every card, it belongs to each
  *    poem whose quotations elsewhere in these trees share three words running
  *    with it, or, if it is one or two words long, equal it. What is left is
@@ -108,6 +111,15 @@ import { POETS, POEM_WORDS, inCopyright } from './helpers/poets'
  * unseen-poetry page printed two copyrighted poems almost whole as practice
  * texts, 141 of Storm on the Island's 158 words and 127 of Nettles' 136, in a
  * PoemBlock that names its poet as `author`, which no earlier guard read.
+ *
+ * WIDENED on 2 October 2026 to the board resource pages, which no guard had
+ * measured: 20 more pages, and at the first run 25 page and poem pairs over
+ * their share and 19 quotations over the word or line limit, on the Edexcel
+ * poetry page and three Cambridge ones. Checking what those pages kept against
+ * a printing of each poem found much of it was not the poets' words at all:
+ * the Cambridge cards for more than a dozen poems quoted lines the poems do not
+ * contain. The pages were rewritten from the poems, within the limits below;
+ * each card's comment names the printing its quotations were checked against.
  */
 
 // ── Which poet ──────────────────────────────────────────────────────────────
@@ -196,7 +208,12 @@ function resolve(slot: Slot): Poem | undefined {
       return undefined
     }
     if (!title) return { key: `poet:${poet}`, title: `(a poem by ${poet})`, poet }
-    return TITLES.get(titleKey(title)) ?? { key: titleKey(title), title, poet }
+    const known = TITLES.get(titleKey(title))
+    // Two poets can share a title: Edexcel sets Carole Satyamurti's War
+    // Photographer and AQA Carol Ann Duffy's. Until 2 October 2026 a card naming
+    // Satyamurti's poem resolved to Duffy's and was measured against its length.
+    if (known && known.poet !== poet) return { key: `${titleKey(title)} (${poet})`, title, poet }
+    return known ?? { key: titleKey(title), title, poet }
   }
   if (!title) return undefined
   const known = TITLES.get(titleKey(title))
@@ -558,7 +575,31 @@ const NOTE_POEMS = readdirSync(join(ROOT, NOTES), { withFileTypes: true })
       SET_TEXTS.some((t) => t.slug === e.name && t.category === 'poetry-anthology'),
   )
   .map((e) => `${NOTES}/${e.name}`)
-const ROOTS = ['src/app/revision/poetry', ...IGCSE, 'src/app/resources/poetry', ...NOTE_POEMS]
+// Each board's resource pages hold poetry guides too: its poetry page, the
+// Cambridge Songs of Ourselves guides and the unseen-poetry pages. Until
+// 2 October 2026 this file never looked there either, and the Edexcel poetry
+// page quoted 39 words of Duffy's 116-word Valentine, more than twice its
+// share. Only the poetry directories are taken: the rest of the tree is novels
+// and plays, which the sweep test covers.
+const BOARDS = 'src/app/resources/english-literature'
+const BOARD_POETRY = readdirSync(join(ROOT, BOARDS), { withFileTypes: true })
+  .filter((b) => b.isDirectory())
+  .flatMap((b) =>
+    readdirSync(join(ROOT, BOARDS, b.name), { withFileTypes: true })
+      .filter(
+        (e) =>
+          e.isDirectory() && /^(?:poetry|unseen(?:-poetry)?|songs-of-ourselves-v\d+)$/.test(e.name),
+      )
+      .map((e) => `${BOARDS}/${b.name}/${e.name}`),
+  )
+  .sort()
+const ROOTS = [
+  'src/app/revision/poetry',
+  ...IGCSE,
+  'src/app/resources/poetry',
+  ...NOTE_POEMS,
+  ...BOARD_POETRY,
+]
 const IN_SCOPE = ROOTS.flatMap((r) => sourcesUnder(join(ROOT, r))).sort()
 
 /** A module specifier resolved to a source file under src/app or src/data. */
@@ -636,6 +677,40 @@ const registered = (slug: string): Poem | undefined => {
 }
 
 /**
+ * Board pages about one poem whose route is not a registered set text: the
+ * Cambridge Songs of Ourselves poem pages. Without this, nothing tells this file
+ * which poem such a page is about, so the lines it quotes outside a card are
+ * measured against no poem at all. Every page one level below a Songs of
+ * Ourselves directory must be named here or registered; see SINGLE_POEM_PAGES.
+ */
+const SOO = `${BOARDS}/caie/songs-of-ourselves-v1`
+const ROUTE_POEMS: Record<string, Slot> = {
+  [`${SOO}/funeral-blues`]: { title: 'Funeral Blues', poet: 'W.H. Auden' },
+  [`${SOO}/hawk-roosting`]: { title: 'Hawk Roosting', poet: 'Ted Hughes' },
+  [`${SOO}/he-never-expected-much`]: { title: 'He Never Expected Much', poet: 'Thomas Hardy' },
+  [`${SOO}/on-finding-a-small-fly-crushed-in-a-book`]: {
+    title: 'On Finding a Small Fly Crushed in a Book',
+    poet: 'Charles Tennyson Turner',
+  },
+  [`${SOO}/rain`]: { title: 'Rain', poet: 'Edward Thomas' },
+  [`${SOO}/the-city-planners`]: { title: 'The City Planners', poet: 'Margaret Atwood' },
+  [`${SOO}/the-thought-fox`]: { title: 'The Thought-Fox', poet: 'Ted Hughes' },
+  [`${SOO}/wind`]: { title: 'Wind', poet: 'Ted Hughes' },
+}
+
+/** The page's own poem from its route: a registered set text, or ROUTE_POEMS. */
+function routePoem(page: string): Poem | undefined {
+  const dir = dirname(page)
+  const slot = ROUTE_POEMS[dir]
+  return registered(dir.split('/').pop()!) ?? (slot ? resolve(slot) : undefined)
+}
+
+/** Board pages that are each about one poem: those below a Songs of Ourselves index. */
+const SINGLE_POEM_PAGES = BOARD_POETRY.filter((r) => /\/songs-of-ourselves-v\d+$/.test(r))
+  .flatMap((r) => sourcesUnder(join(ROOT, r)))
+  .filter((f) => /\/songs-of-ourselves-v\d+\/[^/]+\/page\.tsx$/.test(f))
+
+/**
  * The dynamic routes, expanded. Each checks that the page still says what it
  * is taken to say, so this cannot outlive a change to the route.
  */
@@ -684,7 +759,7 @@ const PAGES: Page[] = PAGE_FILES.flatMap((page) => {
     }
     return d.expand(page)
   }
-  return [measure(page, filesOf(page).map(read), registered(dirname(page).split('/').pop()!))]
+  return [measure(page, filesOf(page).map(read), routePoem(page))]
 })
 
 // ── Counting ────────────────────────────────────────────────────────────────
@@ -821,16 +896,20 @@ describe('every poetry page, on every board', () => {
     // quotations, or a resolver that stopped placing them, cannot pass by
     // measuring nothing. Cutting quotations to fix a page lowers the fourth
     // figure: lower it to the new count in the same change, and say so.
-    expect(IN_SCOPE.length).toBeGreaterThanOrEqual(194)
-    expect(PAGE_FILES.length).toBeGreaterThanOrEqual(99)
-    expect(PAGES.length).toBeGreaterThanOrEqual(103)
+    // Raised on 2 October 2026, when the board resource pages came in, from 194
+    // source files, 99 page files, 103 pages, 47 pages quoting a poem in
+    // copyright and the figures below.
+    expect(IN_SCOPE.length).toBeGreaterThanOrEqual(242)
+    expect(PAGE_FILES.length).toBeGreaterThanOrEqual(119)
+    expect(PAGES.length).toBeGreaterThanOrEqual(123)
     // 9,484 when this test was written; 8,733 once the same change had cut the
-    // pages it found over their share back to it, on 26 September 2026.
-    expect(MEASURED.length).toBeGreaterThanOrEqual(8733)
-    expect(new Set(ROWS.map((r) => r.page)).size).toBeGreaterThanOrEqual(47)
-    // 123 before the same change's cuts; 112 after, where a page now describes
-    // a poem it used to quote.
-    expect(ROWS.length).toBeGreaterThanOrEqual(112)
+    // pages it found over their share back to it, on 26 September 2026; 11,040
+    // with the board pages in and cut back to theirs, on 2 October 2026.
+    expect(MEASURED.length).toBeGreaterThanOrEqual(11040)
+    expect(new Set(ROWS.map((r) => r.page)).size).toBeGreaterThanOrEqual(58)
+    // 123 before the first change's cuts; 112 after, where a page now describes
+    // a poem it used to quote; 161 with the board pages in.
+    expect(ROWS.length).toBeGreaterThanOrEqual(161)
   })
 
   it.each([
@@ -841,6 +920,7 @@ describe('every poetry page, on every board', () => {
     ['src/app/revision/poetry/power-and-conflict/essay-plans/page.tsx', 'Kamikaze'],
     ['src/app/resources/poetry/love-and-relationships/page.tsx', 'Winter Swans'],
     ['src/app/resources/poetry/unseen-poetry/page.tsx', 'Nettles'],
+    ['src/app/resources/english-literature/edexcel/poetry/page.tsx', 'Valentine'],
   ])('measures %s for %s', (page, title) => {
     const row = ROWS.find((r) => r.page === page && titleKey(r.poem) === titleKey(title))
     expect(row?.quoted ?? 0).toBeGreaterThanOrEqual(10)
@@ -857,6 +937,38 @@ describe('every poetry page, on every board', () => {
         PAGES.some((p) => p.page.startsWith(`${dir}/`)),
         dir,
       ).toBe(true)
+  })
+
+  it("reaches each board's poetry pages", () => {
+    // What this file reported before it looked there, on 2 October 2026:
+    // nothing, and the Edexcel page quoting Valentine at twice its share.
+    expect(BOARD_POETRY).toEqual(
+      expect.arrayContaining(
+        [
+          'aqa/poetry',
+          'caie/poetry',
+          'caie/songs-of-ourselves-v1',
+          'caie/songs-of-ourselves-v2',
+          'caie/unseen',
+          'caie/unseen-poetry',
+          'edexcel/poetry',
+          'ocr/poetry',
+        ].map((d) => `${BOARDS}/${d}`),
+      ),
+    )
+    for (const dir of BOARD_POETRY)
+      expect(
+        PAGES.some((p) => p.page.startsWith(`${dir}/`)),
+        dir,
+      ).toBe(true)
+  })
+
+  it('knows which poem each single-poem board page is about', () => {
+    expect(SINGLE_POEM_PAGES.length).toBeGreaterThanOrEqual(8)
+    expect(SINGLE_POEM_PAGES.filter((p) => !routePoem(p))).toEqual([])
+    // And names no page that has gone, so the table cannot outlive its routes.
+    const dirs = new Set(SINGLE_POEM_PAGES.map((p) => dirname(p)))
+    expect(Object.keys(ROUTE_POEMS).filter((d) => !dirs.has(d))).toEqual([])
   })
 
   it('reaches every source file under the poetry trees', () => {
@@ -883,7 +995,14 @@ describe('every poetry page, on every board', () => {
     // fragments of three or four words on the resources unseen-poetry page.
     // If a new one is the site's own words, raise the ceiling; if it quotes a
     // poem, name the poem on its card.
-    expect(LOOSE.length).toBeLessThanOrEqual(177)
+    //
+    // Raised to 277 on 2 October 2026, when the board resource pages came in.
+    // Each of the 126 on those pages was read: sentence frames, placeholders
+    // such as "[poem A]", model sentences and paragraphs, the Cambridge unseen
+    // page's original practice poem and imagined passages, and a line of
+    // Shakespeare. The single-poem Cambridge pages, whose own poem's lines sat
+    // here unmeasured, are now placed by ROUTE_POEMS.
+    expect(LOOSE.length).toBeLessThanOrEqual(277)
   })
 
   it('excuses nothing that is not there', () => {
@@ -994,6 +1113,18 @@ describe('the measure itself', () => {
     expect(scanSource('guide.ts', src, POEM_FIELDS).map((q) => q.text)).toEqual([
       'alpha bravo charlie',
     ])
+  })
+
+  it('keeps apart two poems that share a title', () => {
+    // Edexcel sets Carole Satyamurti's War Photographer and AQA Carol Ann Duffy's.
+    const a = resolve({ title: 'War Photographer', poet: 'Carole Satyamurti' })
+    const b = resolve({ title: 'War Photographer', poet: 'Carol Ann Duffy' })
+    expect(a?.poet).toBe('Carole Satyamurti')
+    expect(b?.poet).toBe('Carol Ann Duffy')
+    expect(a?.key).not.toBe(b?.key)
+    // And the one without a recorded length is held to the floor, not given Duffy's.
+    const satyamurti = a ? lengthOf(a) : undefined
+    expect(satyamurti).toBeUndefined()
   })
 
   it('does not know a poet it has not been told about', () => {

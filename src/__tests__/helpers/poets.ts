@@ -21,6 +21,16 @@
 export const POETS: Record<string, number | null> = {
   'Alfred Lord Tennyson': 1892,
   'Alice Walker': null,
+  // Eight Cambridge Songs of Ourselves poets, added 2 October 2026 when the board
+  // resource pages came into the fair-dealing measure. All died in or after 1959.
+  'Allen Curnow': 2001,
+  'Arun Kolatkar': 2004,
+  'Edwin Muir': 1959,
+  'Elizabeth Brewster': 2012,
+  'Elizabeth Daryush': 1977,
+  'Judith Wright': 2000,
+  'Nissim Ezekiel': 2004,
+  'Stevie Smith': 1971,
   'Andrew Waterhouse': 2001,
   'Beatrice Garland': null,
   'Ben Jonson': 1637,
@@ -32,6 +42,8 @@ export const POETS: Record<string, number | null> = {
   'Carol Rumens': null,
   'Carole Satyamurti': 2019,
   'Charles Causley': 2003,
+  // Added 2 October 2026 with the Cambridge Songs of Ourselves poem pages.
+  'Charles Tennyson Turner': 1879,
   'Charlotte Mew': 1928,
   'Chinua Achebe': 2013,
   'Christina Rossetti': 1894,
@@ -69,6 +81,8 @@ export const POETS: Record<string, number | null> = {
   'Lord Byron': 1824,
   'Louis MacNeice': 1963,
   'Louisa Adjoa Parker': null,
+  // Added 2 October 2026 with the Cambridge Songs of Ourselves poem pages.
+  'Margaret Atwood': null,
   'Margaret Walker': 1998,
   // "The Class Game" (OCR). Her dates are not established here.
   'Mary Casey': null,
