@@ -15,6 +15,13 @@ import { useT } from '@/lib/i18n/use-t'
 const sheDweltAmongTheUntroddenWays: PoemData = {
   title: 'She Dwelt Among the Untrodden Ways',
   poet: 'William Wordsworth',
+  // Wider reading: no board's anthology prints this poem. It is printed as William Knight
+  // gives Wordsworth's final text (The Poetical Works of William Wordsworth, 1896, vol. 2;
+  // Project Gutenberg 12145), checked line by line on 2 October 2026. The words already
+  // matched; until then the twelve lines ran on with no breaks, though the poem is three
+  // quatrains, as the form section says, and line 7 opened with a hyphen for Knight's dash.
+  // The 1800 Lyrical Ballads text differs in places ("th' untrodden ways"); this page does
+  // not follow it. Three notes were wrong about the poem's shape or place: they are fixed.
   lines: [
     {
       text: 'She dwelt among the untrodden ways',
@@ -36,7 +43,7 @@ const sheDweltAmongTheUntroddenWays: PoemData = {
       annotations: [
         {
           type: 'Place',
-          note: 'The "springs of Dove" likely refers to the River Dove in the Lake District, where Wordsworth lived. The location is real but also symbolic -- a "dove" is associated with peace and innocence.',
+          note: 'Wordsworth knew three rivers Dove, in Derbyshire, Yorkshire and Westmorland, and the poem does not say which it means. The location is real but also symbolic -- a "dove" is associated with peace and innocence.',
           color: '#a855f7',
         },
       ],
@@ -66,6 +73,7 @@ const sheDweltAmongTheUntroddenWays: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: 'A violet by a mossy stone',
       annotations: [
@@ -92,11 +100,11 @@ const sheDweltAmongTheUntroddenWays: PoemData = {
       ],
     },
     {
-      text: '- Fair as a star, when only one',
+      text: '—Fair as a star, when only one',
       annotations: [
         {
           type: 'Simile',
-          note: 'A second comparison: now Lucy is like a star. The image is paradoxical: in the previous stanza she was small and hidden; now she is "fair as a star". The two metaphors capture both her humility and her uniqueness.',
+          note: 'A second comparison: now Lucy is like a star. The image is paradoxical: two lines earlier she was small and hidden; now she is "fair as a star". The two metaphors capture both her humility and her uniqueness.',
           color: '#10b981',
         },
         {
@@ -116,6 +124,7 @@ const sheDweltAmongTheUntroddenWays: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: 'She lived unknown, and few could know',
       annotations: [
@@ -131,7 +140,7 @@ const sheDweltAmongTheUntroddenWays: PoemData = {
       annotations: [
         {
           type: 'Naming',
-          note: 'Her name is finally revealed: Lucy. Saved until the penultimate stanza, the name carries weight. "Ceased to be" is a gentle euphemism for death -- she did not violently die, she simply stopped existing.',
+          note: 'Her name is finally revealed: Lucy. Saved until the last stanza, the name carries weight. "Ceased to be" is a gentle euphemism for death -- she did not violently die, she simply stopped existing.',
           color: '#3b82f6',
         },
         {
@@ -146,7 +155,7 @@ const sheDweltAmongTheUntroddenWays: PoemData = {
       annotations: [
         {
           type: 'Volta',
-          note: 'The poem turns. After eleven lines of restrained description, the speaker breaks down with "oh". The interjection is the emotional climax of the poem -- a single sigh that contains all the grief.',
+          note: 'The poem turns. After ten lines of restrained description, the speaker breaks down with "oh". The interjection is the emotional climax of the poem -- a single sigh that contains all the grief.',
           color: '#a855f7',
         },
         {
@@ -281,10 +290,10 @@ Volta (نقطة التحوّل): التحوّل يصير في آخر بيتين:
     {
       quote: 'But she is in her grave, and, oh, / The difference to me!',
       analysis:
-        'After eleven lines of restraint, the speaker finally breaks down. The single interjection "oh" is the emotional climax of the poem. "The difference to me" -- the world is unchanged by her death, but for him, everything has changed. The contrast between the simplicity of the words and the weight of feeling makes this one of the most quietly devastating endings in English poetry.',
+        'After ten lines of restraint, the speaker finally breaks down. The single interjection "oh" is the emotional climax of the poem. "The difference to me" -- the world is unchanged by her death, but for him, everything has changed. The contrast between the simplicity of the words and the weight of feeling makes this one of the most quietly devastating endings in English poetry.',
       themes: ['Grief', 'Loss', 'Subjective experience'],
       analysisAr:
-        'بعد إحدى عشرة بيت من الكبح، المتكلّم أخيراً ينهار. كلمة "oh" الوحيدة هي ذروة الإحساس في القصيدة. و"The difference to me" - العالم ما تغيّر بموتها، بس بالنسبة له، كل شي تغيّر. التضاد بين بساطة الكلمات وثقل المشاعر يخلّي هالخاتمة من أكثر الخواتم تدميراً بهدوء في الشعر الإنجليزي.',
+        'بعد عشر أبيات من الكبح، المتكلّم أخيراً ينهار. كلمة "oh" الوحيدة هي ذروة الإحساس في القصيدة. و"The difference to me" - العالم ما تغيّر بموتها، بس بالنسبة له، كل شي تغيّر. التضاد بين بساطة الكلمات وثقل المشاعر يخلّي هالخاتمة من أكثر الخواتم تدميراً بهدوء في الشعر الإنجليزي.',
       themesAr: ['الحزن', 'الفقد', 'التجربة الذاتية'],
     },
   ],
@@ -301,7 +310,7 @@ Volta (نقطة التحوّل): التحوّل يصير في آخر بيتين:
       example: 'A violet by a mossy stone / Half hidden from the eye',
       effect:
         "Lucy is compared to a small, modest wild flower partly hidden behind a stone. The metaphor captures her entire being: delicate, beautiful, but invisible to anyone not paying attention. It is the poem's most famous image.",
-      lineRef: 4,
+      lineRef: 5,
       effectAr:
         'Lucy مشبّهة بزهرة برّية صغيرة متواضعة، نصّها مدفون يم حجر. الـmetaphor يلتقط كيانها كلّه: رقيقة، حلوة، بس مخفية عن أي أحد ما ينتبه. هذي أشهر صورة في القصيدة.',
     },
@@ -310,7 +319,7 @@ Volta (نقطة التحوّل): التحوّل يصير في آخر بيتين:
       example: 'Fair as a star, when only one / Is shining in the sky',
       effect:
         "Lucy is compared to the only star in the sky -- bright, lonely, and completely dominating the speaker's view. The simile captures her uniqueness to those who loved her: in their universe, she was the only light.",
-      lineRef: 6,
+      lineRef: 7,
       effectAr:
         'Lucy مشبّهة بالنجمة الوحيدة في السما - مضيّة، وحيدة، تسيطر على مشهد المتكلّم كلّه. الـsimile يلتقط تفرّدها عند اللي يحبّونها: في كونهم، كانت هي النور الوحيد.',
     },
@@ -319,7 +328,7 @@ Volta (نقطة التحوّل): التحوّل يصير في آخر بيتين:
       example: 'violet (small) vs star (vast)',
       effect:
         'The two main metaphors of stanza 2 are deliberately contradictory. Lucy is both tiny (a hidden flower) and immense (the only star). Wordsworth uses the contradiction to capture how the same person can be insignificant to the world and everything to one person.',
-      lineRef: 4,
+      lineRef: 5,
       effectAr:
         'الاستعارتان الرئيسيتان في المقطع الثاني متناقضتين عن قصد. Lucy ضئيلة (زهرة مخفية) وضخمة (النجمة الوحيدة) في نفس الوقت. Wordsworth يستخدم التناقض عشان يلتقط كيف يقدر نفس الشخص يكون لا شي بالنسبة للعالم وكل شي بالنسبة لشخص واحد.',
     },
@@ -328,7 +337,7 @@ Volta (نقطة التحوّل): التحوّل يصير في آخر بيتين:
       example: 'But she is in her grave, and, oh,',
       effect:
         'The commas around "oh" create a stuttering pause that mimics the speaker\'s catching breath. Grammatically, the line is broken; emotionally, the speaker is breaking down.',
-      lineRef: 10,
+      lineRef: 12,
       effectAr:
         'الفواصل اللي تحوط كلمة "oh" تخلق توقّف متلجلج، يحاكي شهقة المتكلّم. نحوياً، البيت مكسّر؛ عاطفياً، المتكلّم ينهار.',
     },
@@ -337,7 +346,7 @@ Volta (نقطة التحوّل): التحوّل يصير في آخر بيتين:
       example: 'when Lucy ceased to be',
       effect:
         'Her death is described gently and indirectly. Wordsworth avoids harsh words like "died" or "killed" -- she just "ceased to be". The euphemism makes her death feel quiet and unobtrusive, like the rest of her life.',
-      lineRef: 9,
+      lineRef: 11,
       effectAr:
         'موتها يوصف بهدوء وبشكل غير مباشر. Wordsworth يتجنّب كلمات قاسية مثل "died" أو "killed" - هي بس "ceased to be". الـeuphemism يخلّي موتها يحسّ به هادي وغير ملفت، مثل بقية حياتها.',
     },
@@ -346,7 +355,7 @@ Volta (نقطة التحوّل): التحوّل يصير في آخر بيتين:
       example: 'The difference to me',
       effect:
         'After all the restraint, the speaker simply says her death has made "the difference" to him. He does not say his world has shattered; he just says she is the difference. The understatement is more powerful than any wail of grief could be.',
-      lineRef: 11,
+      lineRef: 13,
       effectAr:
         'بعد كل الكبح، المتكلّم بكل بساطة يقول إن موتها سوّى له "the difference". ما يقول إن عالمه تحطّم؛ بس يقول إنها الفرق. الـunderstatement أقوى من أي صراخ حزن ممكن يطلع.',
     },

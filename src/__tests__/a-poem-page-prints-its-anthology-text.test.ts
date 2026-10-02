@@ -36,7 +36,9 @@ import ts from 'typescript'
  *
  * WHAT IT CHECKS. Each page in VERIFIED was compared line by line with the
  * anthology named beside it on 2 October 2026, by its words and its marks of
- * punctuation (the exceptions are noted on the pages). This pins what was
+ * punctuation (the exceptions are noted on the pages). Three wider-reading
+ * poems that no board prints are pinned instead to the published edition
+ * named beside them, which each page names above its rows. This pins what was
  * verified: the shape of the poem (stanza sizes, with H for a part heading)
  * and a fingerprint of its words, one line at a time, ignoring case,
  * punctuation and dash forms. A dropped, added or changed word or line fails
@@ -315,6 +317,29 @@ const VERIFIED: Verified[] = [
     shape: '9,10,10,4,8,5',
     words: 'b624f65e0d0096fc',
   },
+  // Wider reading that no board prints, pinned to a published edition. Until 2 October
+  // 2026 all three ran their stanzas together.
+  {
+    page: 'src/app/revision/poetry/ocr/love-and-relationships/she-dwelt-among-the-untrodden-ways/page.tsx',
+    source:
+      'no board prints it: The Poetical Works of William Wordsworth, ed. William Knight, 1896, vol. 2 (Project Gutenberg 12145)',
+    shape: '4,4,4',
+    words: '6968f46ee4ba4e09',
+  },
+  {
+    page: 'src/app/revision/poetry/ocr/power-and-natural-world/the-eagle/page.tsx',
+    source:
+      'no board prints it: The Poetical Works of Alfred Tennyson (New York: Harper, 1873), as transcribed on Wikisource',
+    shape: '3,3',
+    words: 'eca63b2786cf5740',
+  },
+  {
+    page: 'src/app/revision/poetry/ocr/youth-and-age/crossing-the-bar/page.tsx',
+    source:
+      'no board prints it: Tennyson, Demeter and Other Poems (Macmillan, 1889), from the scan transcribed on Wikisource',
+    shape: '4,4,4,4',
+    words: 'b7b1b05c8a39fa56',
+  },
 ]
 
 /**
@@ -322,12 +347,6 @@ const VERIFIED: Verified[] = [
  * the reason. A page leaves this list when it has been checked and pinned.
  */
 const NOT_PINNED: Record<string, string> = {
-  'src/app/revision/poetry/ocr/love-and-relationships/she-dwelt-among-the-untrodden-ways/page.tsx':
-    'wider reading: none of the anthologies the site covers prints it, so there is no board text to check it against',
-  'src/app/revision/poetry/ocr/power-and-natural-world/the-eagle/page.tsx':
-    'wider reading: none of the anthologies the site covers prints it, so there is no board text to check it against',
-  'src/app/revision/poetry/ocr/youth-and-age/crossing-the-bar/page.tsx':
-    'wider reading: none of the anthologies the site covers prints it, so there is no board text to check it against',
   'src/app/resources/revision-notes/do-not-go-gentle-into-that-good-night/page.tsx':
     'its rows are built at run time from the held text in src/data/full-texts, which this test does not read',
 }
@@ -423,7 +442,8 @@ function poemPages() {
 describe('a poem page checked against its anthology', () => {
   it.each(VERIFIED)('$page prints the poem as $source does', (v) => {
     const rows = rowsOf(v.page)
-    expect(rows.length, 'no poem read from the page').toBeGreaterThan(10)
+    // The Eagle, the shortest poem pinned, has six lines and seven rows.
+    expect(rows.length, 'no poem read from the page').toBeGreaterThan(5)
     expect(shape(rows), 'stanzas').toBe(v.shape)
     expect(fingerprint(rows), 'words: check the page against its anthology').toBe(v.words)
   })

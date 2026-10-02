@@ -15,6 +15,11 @@ import { useT } from '@/lib/i18n/use-t'
 const crossingTheBar: PoemData = {
   title: 'Crossing the Bar',
   poet: 'Alfred Lord Tennyson',
+  // Wider reading: no board's anthology prints this poem. It is printed as it first
+  // appeared, in Tennyson's Demeter and Other Poems (Macmillan, 1889), from the scan
+  // transcribed on Wikisource, checked on 2 October 2026. Until then the sixteen lines ran on
+  // with no breaks, though the poem is four quatrains, as the form section says, and line 13
+  // had "though" for Tennyson's "tho'".
   lines: [
     {
       text: 'Sunset and evening star,',
@@ -71,6 +76,7 @@ const crossingTheBar: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: 'But such a tide as moving seems asleep,',
       annotations: [
@@ -116,6 +122,7 @@ const crossingTheBar: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: 'Twilight and evening bell,',
       annotations: [
@@ -161,8 +168,9 @@ const crossingTheBar: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
-      text: 'For though from out our bourne of Time and Place',
+      text: "For tho' from out our bourne of Time and Place",
       annotations: [
         {
           type: 'Diction',
@@ -389,7 +397,7 @@ Metre (الوزن): الوزن غير منتظم، يتناوب بين أبيا�
       example: '[rising and falling line lengths]',
       effect:
         'Each stanza alternates long and short lines, creating a swelling-and-receding rhythm that mimics ocean waves. The form physically embodies the content: the poem moves like the tide.',
-      lineRef: 4,
+      lineRef: 5,
       effectAr:
         'كل مقطع يناوب بين أبيات طويلة وقصيرة، فيخلق إيقاع مدّ وجزر يحاكي موج المحيط. الشكل يجسّد المحتوى مادّياً: القصيدة تتحرّك مثل المدّ.',
     },

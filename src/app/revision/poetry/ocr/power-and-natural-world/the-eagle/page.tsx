@@ -15,6 +15,13 @@ import { useT } from '@/lib/i18n/use-t'
 const theEagle: PoemData = {
   title: 'The Eagle',
   poet: 'Alfred Lord Tennyson',
+  // Wider reading: no board's anthology prints this poem. It is printed as Tennyson's
+  // Poetical Works (New York: Harper, 1873) gives it, as transcribed on Wikisource, checked
+  // on 2 October 2026. Until then the six lines ran on with no break, though the poem is two
+  // tercets, as the form section says, and line 3 had "Ringed" for Tennyson's "Ring'd"; the
+  // page's quotations of it now follow. Some printings, among them Collins's edition of the
+  // early poems (1900; Project Gutenberg 8601), have "hooked hands" in line 1; this page
+  // keeps "crooked", as the 1873 edition has it.
   lines: [
     {
       text: 'He clasps the crag with crooked hands;',
@@ -52,11 +59,11 @@ const theEagle: PoemData = {
       ],
     },
     {
-      text: 'Ringed with the azure world, he stands.',
+      text: "Ring'd with the azure world, he stands.",
       annotations: [
         {
           type: 'Imagery',
-          note: '"Ringed with the azure world" -- the blue sky surrounds him completely. He is at the centre of his own kingdom, a king crowned by the heavens.',
+          note: '"Ring\'d with the azure world" -- the blue sky surrounds him completely. He is at the centre of his own kingdom, a king crowned by the heavens.',
           color: '#10b981',
         },
         {
@@ -71,6 +78,7 @@ const theEagle: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
       text: 'The wrinkled sea beneath him crawls;',
       annotations: [
@@ -216,12 +224,12 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
       themesAr: ['العزلة', 'العلوّ', 'الجلال'],
     },
     {
-      quote: 'Ringed with the azure world, he stands',
+      quote: "Ring'd with the azure world, he stands",
       analysis:
-        '"Ringed" suggests both surrounding (the sky encircles him) and crowning (a king is ringed with a crown). "Azure" is a luxurious word for blue, elevating the description beyond ordinary speech. "He stands" is short and emphatic -- the eagle is utterly still, master of all he surveys.',
+        '"Ring\'d" suggests both surrounding (the sky encircles him) and crowning (a king is ringed with a crown). "Azure" is a luxurious word for blue, elevating the description beyond ordinary speech. "He stands" is short and emphatic -- the eagle is utterly still, master of all he surveys.',
       themes: ['Royalty', 'Stillness', 'Dominance'],
       analysisAr:
-        'كلمة "ringed" تلمّح للإحاطة (السما تحيط فيه) وللتتويج (الملك يُتوَّج بحلقة) في نفس الوقت. و"azure" كلمة فاخرة للأزرق، ترفع الوصف فوق الكلام العادي. وعبارة "he stands" قصيرة ومؤكَّدة - النسر ساكن تماماً، سيّد كل ما يطلّ عليه.',
+        'كلمة "ring\'d" تلمّح للإحاطة (السما تحيط فيه) وللتتويج (الملك يُتوَّج بحلقة) في نفس الوقت. و"azure" كلمة فاخرة للأزرق، ترفع الوصف فوق الكلام العادي. وعبارة "he stands" قصيرة ومؤكَّدة - النسر ساكن تماماً، سيّد كل ما يطلّ عليه.',
       themesAr: ['الملوكية', 'السكون', 'الهيمنة'],
     },
     {
@@ -273,7 +281,7 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
       example: 'like a thunderbolt he falls',
       effect:
         'The eagle is compared to a thunderbolt -- the weapon of Zeus, king of the gods. This simile makes the dive both supernaturally fast and divinely destructive. It is the perfect ending: explosive, mythological, final.',
-      lineRef: 5,
+      lineRef: 6,
       effectAr:
         'النسر يتشبّه بصاعقة - سلاح Zeus، ملك الآلهة. هالـsimile تخلّي الانقضاض سريع بشكل خارق وفيه دمار إلهي في نفس الوقت. وهي خاتمة مثالية: انفجارية، أسطورية، نهائية.',
     },
@@ -291,7 +299,7 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
       example: 'wrinkled sea... crawls',
       effect:
         'The sea is given human qualities -- it is old ("wrinkled") and slow ("crawls"). By personifying the sea this way, Tennyson makes it seem feeble compared to the eagle. The mighty ocean is just a wrinkled, crawling old man from this height.',
-      lineRef: 3,
+      lineRef: 4,
       effectAr:
         'البحر تُعطى له صفات بشرية - يصير عجوز ("wrinkled") وبطيء ("crawls"). بـpersonification البحر بهالطريقة، Tennyson يخلّيه يبان ضعيف مقارنة بالنسر. المحيط الجبّار، من هالعلوّ، يصير مجرّد عجوز مكرمش يزحف.',
     },
@@ -300,7 +308,7 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
       example: '[stillness (lines 1--5) vs sudden movement (line 6)]',
       effect:
         'The poem builds tension through five lines of patient stillness, then releases it in a single line of explosive action. The contrast makes the dive feel even more sudden and devastating.',
-      lineRef: 5,
+      lineRef: 6,
       effectAr:
         'القصيدة تبني التوتّر عبر خمسة أبيات من السكون الصبور، وبعدين تفرّجه في بيت واحد من الفعل الانفجاري. التضاد يخلّي الانقضاض يحسّ بأنه أكثر مفاجأة وأكثر تدميراً.',
     },
@@ -412,17 +420,17 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'te-6',
-    question: 'How does Tennyson use the word "ringed"?',
+    question: 'How does Tennyson use the word "ring\'d"?',
     type: 'multiple-choice',
     options: [
       'The eagle wears a ring',
-      '"Ringed with the azure world" - the eagle is encircled by the blue sky, placing it at the centre of everything',
+      '"Ring\'d with the azure world" - the eagle is encircled by the blue sky, placing it at the centre of everything',
       'The sky has rings',
       'It describes a circus',
     ],
     correctIndex: 1,
     explanation:
-      'The eagle is "ringed" (encircled) by the blue sky - it sits at the very centre of the natural world, like a king on a throne. Everything revolves around it.',
+      'The eagle is "ring\'d" (encircled) by the blue sky - it sits at the very centre of the natural world, like a king on a throne. Everything revolves around it.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -510,7 +518,7 @@ const REVISION_TOPICS = [
       'Tennyson uses personification, alliteration, simile, and reversal of scale to present the eagle as a figure of supreme power.',
     keyPoints: [
       '"Clasps the crag with crooked hands" - alliterative power',
-      '"Ringed with the azure world" - the eagle at the centre',
+      '"Ring\'d with the azure world" - the eagle at the centre',
       '"The wrinkled sea beneath him crawls" - the sea made small',
       '"Like a thunderbolt he falls" - elemental force',
     ],
