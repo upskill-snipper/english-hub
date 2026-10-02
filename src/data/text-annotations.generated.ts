@@ -3948,6 +3948,187 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
     ],
   },
+  'the-great-gatsby': {
+    'section-1': [
+      {
+        type: 'quote',
+        text: 'In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since',
+        note: 'Nick Carraway — Chapter 1. The opening line establishes Nick as a retrospective, morally reflective narrator, and sets up the novel’s interest in judgement, memory and the attempt to understand the past.',
+      },
+      {
+        type: 'quote',
+        text: 'I hope she’ll be a fool—that’s the best thing a girl can be in this world, a beautiful little fool',
+        note: 'Daisy Buchanan — Chapter 1. Daisy’s wish for her infant daughter is a startlingly clear-eyed indictment of the world she lives in, and hints at her own knowing complicity in the system that traps her.',
+      },
+      {
+        type: 'quote',
+        text: 'If personality is an unbroken series of successful gestures, then there was something gorgeous about him',
+        note: 'Nick — Chapter 1. Nick’s early verdict on Gatsby captures the double quality of his persona: a construction of deliberate gestures that nevertheless amounts to something "gorgeous" and genuinely remarkable.',
+      },
+      {
+        type: 'theme',
+        text: 'some Hôtel de Ville in Normandy',
+        note: 'Wealth: old money versus new money. Tom and Daisy’s East Egg mansion is "white palaces" gleaming on the water; Gatsby’s West Egg house is an imitation of "some Hôtel de Ville in Normandy", a French town hall.',
+      },
+      {
+        type: 'theme',
+        text: 'extraordinary gift for hope',
+        note: 'Love and idealisation. Fitzgerald presents idealised love as both noble and destructive: it powers Gatsby’s "extraordinary gift for hope" but also blinds him to who Daisy has actually become.',
+      },
+      {
+        type: 'character',
+        text: 'a beautiful little fool',
+        note: 'Daisy Buchanan. Her cynical wish that her daughter grow up to be "a beautiful little fool" captures her understanding of the world that traps her.',
+      },
+      {
+        type: 'quote',
+        text: 'In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since.\n\n“Whenever you feel like criticising any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had',
+        note: "Nick (opening of Chapter 1). The novel's opening establishes Nick as a narrator who claims, unusually, to suspend judgement. The advice is paternal, Midwestern, and class-conscious (note 'advantages'). It frames everything that follows: every cruelty Nick records is filtered through this stated tolerance. Whether the principle survives the summer is a central question of the book, and most readers conclude that Nick abandons it - he ends the novel with strong moral verdicts.",
+      },
+      {
+        type: 'quote',
+        text: 'If personality is an unbroken series of successful gestures, then there was something gorgeous about him, some heightened sensitivity to the promises of life',
+        note: "Nick (Chapter 1). An early definition of Gatsby that prefigures his entire arc. 'Successful gestures' reduces personality to performance - a deeply modernist idea. 'Promises of life' is the romantic counter-weight: Gatsby is sensitive to what life keeps offering and never quite delivers. The sentence sets up Gatsby as a study of style and yearning together.",
+      },
+    ],
+    'section-2': [
+      {
+        type: 'quote',
+        text: 'This is a valley of ashes—a fantastic farm where ashes grow like wheat into ridges and hills and grotesque gardens',
+        note: 'Nick — Chapter 2. The Valley of Ashes is the novel’s emblem of the industrial waste that underpins the glittering life of the rich, and is watched over by the blank eyes of Doctor T. J. Eckleburg.',
+      },
+      {
+        type: 'quote',
+        text: 'I was within and without, simultaneously enchanted and repelled by the inexhaustible variety of life',
+        note: 'Nick — Chapter 2. Nick captures his double position as participant and observer, a tension that structures his narration and frames the novel’s ambivalent attitude towards wealth and glamour.',
+      },
+      {
+        type: 'quote',
+        text: 'The eyes of Doctor T. J. Eckleburg are blue and gigantic—their retinas are one yard high. They look out of no face, but, instead, from a pair of enormous yellow spectacles which pass over a nonexistent nose',
+        note: "Nick (Chapter 2). The faded oculist's billboard is the novel's most discussed symbol: an absent God watching over the wasteland. The face is 'nonexistent' - the divine has been reduced to advertising. Wilson, in his grief, is the only character who reads the eyes as God's eyes, and Fitzgerald uses that misreading to suggest that religion in this world has dwindled to a half-erased commercial image.",
+      },
+    ],
+    'section-3': [
+      {
+        type: 'quote',
+        text: 'I believe that on the first night I went to Gatsby’s house I was one of the few guests who had actually been invited',
+        note: 'Nick — Chapter 3. The detail exposes the impersonal spectacle of Gatsby’s parties: hundreds of strangers arriving uninvited to consume a host they barely acknowledge.',
+      },
+      {
+        type: 'quote',
+        text: 'He smiled understandingly—much more than understandingly. It was one of those rare smiles with a quality of eternal reassurance in it',
+        note: "Nick (Chapter 3). Nick's first close encounter with Gatsby. The smile is given mythic, almost religious weight ('eternal reassurance'), but it is also a performance - one that, Nick notes, 'concentrated on you with an irresistible prejudice in your favor.' Gatsby's charm is both genuine and a tool. The passage establishes the novel's ambivalence: he is admirable, and he is fake, simultaneously.",
+      },
+      {
+        type: 'quote',
+        text: 'I am one of the few honest people that I have ever known',
+        note: "Nick (Chapter 3). A line worth interrogating. Nick claims honesty in the same chapter in which he begins a relationship with the 'incurably dishonest' Jordan and starts to facilitate Gatsby's pursuit of his married cousin. Most A-Level answers earn marks by treating this self-description sceptically: Nick is an unreliable narrator who, like everyone else in the book, edits the past to suit his preferred self-image.",
+      },
+    ],
+    'section-6': [
+      {
+        type: 'quote',
+        text: 'You can’t repeat the past.”\n\n“Can’t repeat the past?” he cried incredulously. “Why of course you can',
+        note: 'Nick and Gatsby — Chapter 6. The exchange crystallises Gatsby’s defining delusion: that time can be reversed by willpower and wealth, and that a five-year-old love affair can be restarted where it left off.',
+      },
+      {
+        type: 'quote',
+        text: 'The truth was that Jay Gatsby of West Egg, Long Island, sprang from his Platonic conception of himself',
+        note: 'Nick — Chapter 6. The phrase "Platonic conception of himself" gives philosophical weight to Gatsby’s self-invention, presenting him as both fraud and visionary.',
+      },
+      {
+        type: 'quote',
+        text: 'Can’t repeat the past?” he cried incredulously. “Why of course you can',
+        note: "Gatsby (Chapter 6). The novel's defining statement of Gatsby's tragedy. The 'incredulously' is doing huge work: he genuinely cannot conceive that the past is closed. Critics often read this as the American imagination's own delusion: a country built on reinvention struggling to accept that some things are irreversible. The exclamation is both heroic and pitiable.",
+      },
+      {
+        type: 'quote',
+        text: 'So he waited, listening for a moment longer to the tuning-fork that had been struck upon a star',
+        note: "Nick, on Gatsby kissing Daisy (Chapter 6). Fitzgerald's description of the moment Gatsby commits himself to Daisy in Louisville. The metaphor is extraordinary: a tuning fork struck on a star turns desire into a cosmic, almost musical event. Just before the kiss, Nick says Gatsby's 'mind would never romp again like the mind of God' - he has tied his entire imagination to one woman. The romantic absurdity is also the romantic grandeur.",
+      },
+      {
+        type: 'character',
+        text: 'sprang from his Platonic conception of himself',
+        note: "Jay Gatsby (James Gatz). Fitzgerald presents him as 'a son of God' who 'sprang from his Platonic conception of himself' - an almost mythic figure of American self-creation.",
+      },
+    ],
+    'section-7': [
+      {
+        type: 'quote',
+        text: 'Her voice is full of money',
+        note: 'Gatsby — Chapter 7. Gatsby’s sharpest insight — that the charm of Daisy’s voice is inseparable from the wealth that shaped it — exposes the inseparability of love and class in the novel.',
+      },
+      {
+        type: 'quote',
+        text: 'High in a white palace the king’s daughter, the golden girl',
+        note: "Nick (Chapter 7). Nick's gloss on Gatsby's observation about Daisy's voice. Fairy-tale imagery (palace, princess) reveals the mythic structure underneath Gatsby's desire. 'Golden girl' gathers up the novel's recurrent yellow-and-gold imagery (Daisy's name, Gatsby's car, the 'yellow cocktail music'), aligning Daisy with both wealth and the sun - a dazzling, untouchable object.",
+      },
+    ],
+    'section-9': [
+      {
+        type: 'quote',
+        text: 'Gatsby believed in the green light, the orgastic future that year by year recedes before us',
+        note: 'Nick — Chapter 9. In the closing pages, Nick transforms Gatsby’s personal longing into a national and universal condition, binding him to the American Dream itself.',
+      },
+      {
+        type: 'quote',
+        text: 'So we beat on, boats against the current, borne back ceaselessly into the past',
+        note: 'Nick — Chapter 9 (closing line). The famous final sentence turns the novel’s central image of striving into a resigned, elegiac truth: forward motion is an illusion, and the past always catches us.',
+      },
+      {
+        type: 'quote',
+        text: 'He had come a long way to this blue lawn, and his dream must have seemed so close that he could hardly fail to grasp it',
+        note: 'Nick — Chapter 9. Nick’s final evocation of Gatsby frames his whole life as a near-miss, making the novel’s tragedy one of narrowly unrealised hope rather than foolish fantasy.',
+      },
+      {
+        type: 'quote',
+        text: 'Let us learn to show our friendship for a man when he is alive and not after he is dead',
+        note: 'Meyer Wolfshiem — Chapter 9. Wolfshiem’s excuse for missing the funeral completes the picture of a world in which loyalty evaporates as soon as the money stops flowing.',
+      },
+      {
+        type: 'theme',
+        text: 'fresh, green breast of the new world',
+        note: 'The American Dream and its corruption. The novel closes with Nick meditating on the "fresh, green breast of the new world" that greeted the first Dutch sailors — an original promise that has been hollowed out into careless consumption.',
+      },
+      {
+        type: 'character',
+        text: 'Let us learn to show our friendship for a man when he is alive and not after he is dead',
+        note: 'Meyer Wolfshiem. His refusal to attend Gatsby’s funeral — "let us learn to show our friendship for a man when he is alive and not after he is dead" — completes the picture of a milieu in which loyalty evaporates the moment the money stops.',
+      },
+      {
+        type: 'quote',
+        text: 'They were careless people, Tom and Daisy—they smashed up things and creatures and then retreated back into their money or their vast carelessness, or whatever it was that kept them together, and let other people clean up the mess they had made',
+        note: "Nick (Chapter 9). The novel's moral verdict on the Buchanans. The repetition of 'careless / carelessness' turns negligence into a class trait. 'Smashed up things and creatures' is deliberately childish, as if Tom and Daisy are spoiled children whose toys include human beings. 'Their money' is the bunker they retreat into - old money insulating them from consequence.",
+      },
+      {
+        type: 'character',
+        text: 'five years too old to lie to myself and call it honor',
+        note: "Jordan Baker. The relationship ends in Chapter 9: Nick says he is 'five years too old to lie to myself and call it honor.' Jordan delivers the novel's final sting, accusing Nick of being just another careless driver.",
+      },
+      {
+        type: 'theme',
+        text: 'boats against the current, borne back ceaselessly into the past',
+        note: "The book's recurring autumn imagery, its compression of action into a single summer, its closing image of 'boats against the current, borne back ceaselessly into the past' all dramatise the impossibility of recovering what is gone.",
+      },
+    ],
+    'section-5': [
+      {
+        type: 'quote',
+        text: 'the colossal vitality of his illusion',
+        note: "Nick, of Gatsby (Chapter 5). Nick's formulation captures Gatsby's peculiar grandeur. 'Colossal' gives the illusion the scale of architecture or myth; 'vitality' gives it life. The phrase concedes that Gatsby's dream of Daisy is an illusion while still admiring its sheer animating force. It is one of the lines that justifies Nick's claim that Gatsby was 'worth the whole damn bunch put together.'",
+      },
+      {
+        type: 'quote',
+        text: 'No amount of fire or freshness can challenge what a man can store up in his ghostly heart',
+        note: "Nick (Chapter 5). Nick's observation as he watches Gatsby with the actual Daisy after the reunion. 'Ghostly heart' suggests that Gatsby's love has become a phantom - an object more powerful than anything real life can offer. This is the novel's most precise statement of how obsession works: the imagined version always outcompetes the real.",
+      },
+      {
+        type: 'theme',
+        text: 'No amount of fire or freshness can challenge what a man can store up in his ghostly heart',
+        note: "Nick observes that 'no amount of fire or freshness can challenge what a man can store up in his ghostly heart.' This is the novel's most penetrating insight into romantic obsession: the beloved becomes a screen for the lover's projection.",
+      },
+    ],
+  },
   'the-merchant-of-venice': {
     'acti-scenei': [
       {

@@ -80,13 +80,27 @@ describe('the texts that were being libelled', () => {
     }
   })
 
-  it('and the ones that gained nothing are still the trap shape', () => {
+  it('and the texts that gained nothing are still the trap shape', () => {
     // The original case has to survive somewhere, or the regression could come
-    // back unnoticed on the texts that still look like that.
-    const unchanged = WRONGLY_CALLED_UNWRITTEN.filter((s) => buildTextNav(s).sectionCount === 0)
+    // back unnoticed on the texts that still look like that: a substantial
+    // guide with no sub-pages. Until 2 October 2026 some of the nine above
+    // were still that shape; that day The Great Gatsby, the last of them,
+    // gained its full-text reader. So the shape is looked for among every set
+    // text, by the same measure the nine were held to (a page of more than
+    // 400 lines), and every text that has it must not be a placeholder.
+    const unchanged = SET_TEXTS.map((t) => t.slug).filter((slug) => {
+      const page = join(TEXTS, slug, 'page.tsx')
+      return (
+        existsSync(page) &&
+        readFileSync(page, 'utf8').split('\n').length > 400 &&
+        buildTextNav(slug).sectionCount === 0
+      )
+    })
     expect(unchanged.length).toBeGreaterThan(0)
     for (const slug of unchanged) {
-      expect(PLACEHOLDER_TEXT_SLUGS.has(slug)).toBe(false)
+      expect(PLACEHOLDER_TEXT_SLUGS.has(slug), `${slug} is a full guide in the register`).toBe(
+        false,
+      )
     }
   })
 })

@@ -204,7 +204,7 @@ export default function TheGreatGatsbyPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; First description of the Valley of Ashes &mdash; &ldquo;ash-grey
+                      &bull; First description of the Valley of Ashes &mdash; &ldquo;ash-gray
                       men&rdquo;
                     </li>
                     <li>&bull; The eyes of Doctor T. J. Eckleburg introduced</li>
@@ -433,7 +433,7 @@ export default function TheGreatGatsbyPage() {
               />
               <CharacterCard
                 name="Jay Gatsby (James Gatz)"
-                description="The title character: a self-made millionaire whose entire identity is an act of will. Born James Gatz to poor farmers in North Dakota, he reinvents himself at seventeen on Dan Cody's yacht and accumulates a bootlegging fortune in order to recover Daisy, whom he met and lost in Louisville in 1917. Fitzgerald presents him as 'a son of God' who 'sprang from his Platonic conception of himself' &mdash; an almost mythic figure of American self-creation. His repeated affectation 'old sport' marks the strain of the disguise. He is simultaneously a fraud and the most admirable figure in the novel, a criminal whose dream Nick calls 'incorruptible.' His tragedy is that the woman he has rebuilt his life around cannot match the idealised image he has carried for five years, and his refusal to accept this ('Can't repeat the past? Why of course you can!') seals his ruin."
+                description="The title character: a self-made millionaire whose entire identity is an act of will. Born James Gatz to poor farmers in North Dakota, he reinvents himself at seventeen on Dan Cody's yacht and accumulates a bootlegging fortune in order to recover Daisy, whom he met and lost in Louisville in 1917. Fitzgerald presents him as 'a son of God' who 'sprang from his Platonic conception of himself' &mdash; an almost mythic figure of American self-creation. His repeated affectation 'old sport' marks the strain of the disguise. He is simultaneously a fraud and the most admirable figure in the novel, a criminal whose dream Nick calls 'incorruptible.' His tragedy is that the woman he has rebuilt his life around cannot match the idealised image he has carried for five years, and his refusal to accept this ('Can't repeat the past?... Why of course you can!') seals his ruin."
               />
               <CharacterCard
                 name="Daisy Buchanan"
@@ -602,14 +602,14 @@ export default function TheGreatGatsbyPage() {
                 analysis="The Valley of Ashes is the novel's great industrial wasteland. The simile &lsquo;like wheat&rsquo; turns industrial waste into a perverse harvest, suggesting that what the Jazz Age cultivates is dust. &lsquo;Grotesque&rsquo; is the key Gothic term: this is the underside of Tom and Daisy's lawns. T. S. Eliot's <em>{tr(`The Waste Land`)}</em> (1922) is a clear influence."
               />
               <QuoteCard
-                quote="The eyes of Doctor T. J. Eckleburg are blue and gigantic&mdash;their retinas are one yard high. They look out of no face, but, instead, from a pair of enormous yellow spectacles which pass over a non-existent nose."
+                quote="The eyes of Doctor T. J. Eckleburg are blue and gigantic&mdash;their retinas are one yard high. They look out of no face, but, instead, from a pair of enormous yellow spectacles which pass over a nonexistent nose."
                 speaker="Nick (Chapter 2)"
-                analysis="The faded oculist's billboard is the novel's most discussed symbol: an absent God watching over the wasteland. The face is &lsquo;non-existent&rsquo; &mdash; the divine has been reduced to advertising. Wilson, in his grief, is the only character who reads the eyes as God's eyes, and Fitzgerald uses that misreading to suggest that religion in this world has dwindled to a half-erased commercial image."
+                analysis="The faded oculist's billboard is the novel's most discussed symbol: an absent God watching over the wasteland. The face is &lsquo;nonexistent&rsquo; &mdash; the divine has been reduced to advertising. Wilson, in his grief, is the only character who reads the eyes as God's eyes, and Fitzgerald uses that misreading to suggest that religion in this world has dwindled to a half-erased commercial image."
               />
               <QuoteCard
                 quote="He smiled understandingly&mdash;much more than understandingly. It was one of those rare smiles with a quality of eternal reassurance in it."
                 speaker="Nick (Chapter 3)"
-                analysis="Nick's first close encounter with Gatsby. The smile is given mythic, almost religious weight (&lsquo;eternal reassurance&rsquo;), but it is also a performance &mdash; one that, Nick notes, &lsquo;concentrated on you with an irresistible prejudice in your favour.&rsquo; Gatsby's charm is both genuine and a tool. The passage establishes the novel's ambivalence: he is admirable, and he is fake, simultaneously."
+                analysis="Nick's first close encounter with Gatsby. The smile is given mythic, almost religious weight (&lsquo;eternal reassurance&rsquo;), but it is also a performance &mdash; one that, Nick notes, &lsquo;concentrated on you with an irresistible prejudice in your favor.&rsquo; Gatsby's charm is both genuine and a tool. The passage establishes the novel's ambivalence: he is admirable, and he is fake, simultaneously."
               />
               <QuoteCard
                 quote="I am one of the few honest people that I have ever known."
@@ -657,7 +657,7 @@ export default function TheGreatGatsbyPage() {
                 analysis="Nick's formulation captures Gatsby's peculiar grandeur. &lsquo;Colossal&rsquo; gives the illusion the scale of architecture or myth; &lsquo;vitality&rsquo; gives it life. The phrase concedes that Gatsby's dream of Daisy is an illusion while still admiring its sheer animating force. It is one of the lines that justifies Nick's claim that Gatsby was &lsquo;worth the whole damn bunch put together.&rsquo;"
               />
               <QuoteCard
-                quote="They're a rotten crowd. You're worth the whole damn bunch put together."
+                quote="They're a rotten crowd... You're worth the whole damn bunch put together."
                 speaker="Nick to Gatsby (Chapter 8)"
                 analysis="The only compliment Nick ever pays Gatsby aloud, shouted across the lawn the morning before Gatsby's death. &lsquo;Rotten&rsquo; condenses everything Nick has come to despise about East Egg. The line is also a moral judgement Nick never delivers to the Buchanans themselves: he is brave with Gatsby, careful with the people who matter to his class position. The contradiction is part of his unreliability."
               />
@@ -667,7 +667,7 @@ export default function TheGreatGatsbyPage() {
                 analysis="An early definition of Gatsby that prefigures his entire arc. &lsquo;Successful gestures&rsquo; reduces personality to performance &mdash; a deeply modernist idea. &lsquo;Promises of life&rsquo; is the romantic counter-weight: Gatsby is sensitive to what life keeps offering and never quite delivers. The sentence sets up Gatsby as a study of style and yearning together."
               />
               <QuoteCard
-                quote="No amount of fire or freshness can challenge what a man will store up in his ghostly heart."
+                quote="No amount of fire or freshness can challenge what a man can store up in his ghostly heart."
                 speaker="Nick (Chapter 5)"
                 analysis="Nick's observation as he watches Gatsby with the actual Daisy after the reunion. &lsquo;Ghostly heart&rsquo; suggests that Gatsby's love has become a phantom &mdash; an object more powerful than anything real life can offer. This is the novel's most precise statement of how obsession works: the imagined version always outcompetes the real."
               />
@@ -727,7 +727,7 @@ export default function TheGreatGatsbyPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The novel&apos;s richest colour scheme. Daisy is the &ldquo;golden girl&rdquo;;
                   her name is a flower with a yellow centre. Gatsby&apos;s car is a &ldquo;rich
-                  cream colour&rdquo; that becomes &ldquo;the yellow car&rdquo; in Wilson&apos;s
+                  cream color&rdquo; that becomes &ldquo;the yellow car&rdquo; in Wilson&apos;s
                   account. Music at the parties is &ldquo;yellow cocktail music.&rdquo; Gold
                   connotes wealth, sun, glamour; yellow connotes its decay (the dying leaves of
                   autumn, the dust of the Valley). Fitzgerald distinguishes carefully: gold is the

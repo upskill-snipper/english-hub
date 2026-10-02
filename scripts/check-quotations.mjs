@@ -1104,6 +1104,8 @@ const NAMES = {
   'romeo-and-juliet': { title: /\bRomeo and Juliet\b|\bRomeo & Juliet\b/, people: /\bRomeo\b|\bJuliet\b|\bMercutio\b|\bTybalt\b|\bCapulets?\b|\bMontagues?\b|\bBenvolio\b|\bFriar Lau?rence\b/, path: /romeo/ },
   'silas-marner': { title: /\bSilas Marner\b/, people: /\bSilas\b|\bMarner\b|\bEppie\b|\bGodfrey\b|\bDunstan\b|\bRaveloe\b|\bLantern Yard\b|\bGeorge Eliot\b/, path: /silas-marner/ },
   'sonnet-116': { title: /\bSonnet 116\b/, people: /\bmarriage of true minds\b/, path: /sonnet-116/ },
+  // No bare "Daisy": An Inspector Calls has a Daisy Renton.
+  'the-great-gatsby': { title: /\bGreat Gatsby\b/, people: /\bGatsby\b|\bCarraway\b|\bBuchanans?\b|\bJordan Baker\b|\bMyrtle Wilson\b|\bWest Egg\b|\bEast Egg\b|\bF\.\s?Scott Fitzgerald\b/, path: /great-gatsby/ },
   'the-merchant-of-venice': { title: /\bMerchant of Venice\b/, people: /\bShylock\b|\bBassanio\b|\bNerissa\b|\bGratiano\b/, path: /merchant-of-venice/ },
   'the-scarlet-letter': { title: /\bScarlet Letter\b/, people: /\bHester\b|\bPrynne\b|\bDimmesdale\b|\bChillingworth\b|\bHawthorne\b/, path: /scarlet-letter/ },
   'the-sign-of-four': { title: /\bSign of (?:the )?Four\b/, people: /\bSherlock\b|\bHolmes\b|\bMorstan\b|\bSholto\b|\bJonathan Small\b|\bAthelney Jones\b/, path: /sign-of-(?:the-)?four/ },

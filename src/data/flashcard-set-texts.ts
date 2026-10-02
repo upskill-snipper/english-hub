@@ -1031,8 +1031,9 @@ export const setTextFlashcardDecks: FlashcardDeck[] = [
       },
       {
         id: 'gts-q83',
-        front: 'The Great Gatsby: Quote - "The colossal significance of that light increased...',
-        back: 'Analyze this quotation: "The colossal significance of that light increased day by day". What does it reveal about character, theme, or conflict? Why is this quotation significant? How does it connect to larger patterns in the text? What is the context in which this quotation appears? How might different readers interpret this quotation? What techniques does the author use in this passage?',
+        front:
+          'The Great Gatsby: Quote - "The colossal significance of that light had now vanished...',
+        back: 'Analyze this quotation: "The colossal significance of that light had now vanished forever". What does it reveal about character, theme, or conflict? Why is this quotation significant? How does it connect to larger patterns in the text? What is the context in which this quotation appears? How might different readers interpret this quotation? What techniques does the author use in this passage?',
       },
       {
         id: 'gts-q84',

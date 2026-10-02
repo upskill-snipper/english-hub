@@ -119,6 +119,7 @@ export const TEXT_SUBPAGE_ROUTES: ReadonlySet<string> = new Set([
   '/revision/texts/romeo-and-juliet/themes',
   '/revision/texts/silas-marner/read',
   '/revision/texts/sonnet-116/read',
+  '/revision/texts/the-great-gatsby/read',
   '/revision/texts/the-merchant-of-venice/read',
   '/revision/texts/the-scarlet-letter/read',
   '/revision/texts/the-sign-of-four/read',

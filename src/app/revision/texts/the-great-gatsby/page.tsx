@@ -9,6 +9,8 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/the-great-gatsby'
 export const metadata: Metadata = {
   openGraph: {
     title: 'The Great Gatsby - Study Guide | The English Hub',
@@ -437,7 +439,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'gg-12',
-    question: 'What does Gatsby mean by "Can\'t repeat the past? Why of course you can!"?',
+    question: 'What does Gatsby mean by "Can\'t repeat the past?... Why of course you can!"?',
     type: 'multiple-choice',
     options: [
       'He is joking',
@@ -622,7 +624,7 @@ const REVISION_TOPICS = [
     topic: 'The Past and Longing',
     summary: "The novel's great subject is the impossibility of recovering time.",
     keyPoints: [
-      '"Can\'t repeat the past? Why of course you can!"',
+      '"Can\'t repeat the past?... Why of course you can!"',
       'Gatsby has organised his life around a 1917 affair',
       'The green light is always just across the water',
       'Nick narrates retrospectively from the Midwest',
@@ -748,6 +750,9 @@ export default async function TheGreatGatsbyPage() {
         revisionTopics={REVISION_TOPICS}
       />
       <TextGuide data={data} />
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }

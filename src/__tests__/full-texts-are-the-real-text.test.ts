@@ -115,7 +115,7 @@ function dataFor(slug: string): string {
 }
 
 describe('the texts are there', () => {
-  it('has thirteen plays, eight prose works and nine poems', () => {
+  it('has thirteen plays, nine prose works and nine poems', () => {
     // 26 September 2026: Animal Farm (from Project Gutenberg Australia) and Do
     // not go gentle (from the Pearson anthology) joined, once the site began
     // judging copyright by UK law only.
@@ -127,8 +127,16 @@ describe('the texts are there', () => {
     // Frankenstein joined the same day as the eighth prose work. Its reader had
     // printed a hand-typed eighth of the novel as "the 1818 first edition"; it
     // now reads the 1831 text, Project Gutenberg #42324, held here.
+    //
+    // 2 October 2026: The Great Gatsby joined as the ninth, so that its comics
+    // can be checked against the book. It is Wikisource's validated
+    // transcription of the 1925 first edition, not Project Gutenberg's #64317,
+    // a modernised text in British spelling with a later editor's "orgiastic"
+    // for Fitzgerald's "orgastic", which would have pulled the site's correct
+    // quotations away from what he published. Its 10 misquotations across the
+    // site were corrected in the same change.
     expect(PLAYS).toHaveLength(13)
-    expect(PROSE).toHaveLength(8)
+    expect(PROSE).toHaveLength(9)
     expect(POEMS).toHaveLength(9)
   })
 

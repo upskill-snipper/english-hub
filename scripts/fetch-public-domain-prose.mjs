@@ -206,6 +206,39 @@ const BOOKS = [
     verse: true,
     expect: 30,
   },
+  {
+    // Out of UK copyright since 1 January 2011 (Fitzgerald died in 1940), and
+    // of US copyright since 2021. Wikisource's transcription of the 1925
+    // first edition, not Project Gutenberg's: see fetchWikisource for why.
+    // Each chapter is its own page, opening on its "CHAPTER I" heading; the
+    // dedication and epigraph sit on the work's front page, outside any
+    // chapter. (2 October 2026)
+    slug: 'the-great-gatsby',
+    wikisource: 'The_Great_Gatsby_(1925)',
+    printing: "Charles Scribner's Sons first edition (New York, 1925)",
+    title: 'The Great Gatsby',
+    displayTitle: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    type: 'novel',
+    heading: /^CHAPTER\s+([IVXLC]+)$/,
+    label: (n) => `Chapter ${n}`,
+    // The novel quotes two songs. "Ain't We Got Fun?" (Chapter V; Whiting,
+    // Kahn and Egan, the last of whom died in 1952) is out of UK copyright
+    // and stays. "The Sheik of Araby" (Chapter IV) does not: its words and
+    // music were written together, and such a song stays in copyright until
+    // 70 years after the last of its writers has died; its composer, Ted
+    // Snyder, died in 1965.
+    dropVerse: [
+      {
+        chapter: 4,
+        index: 0,
+        lines: 4,
+        note: '[Four lines of the song “The Sheik of Araby” (1921) are left out here: the song is still in copyright in the UK.]',
+        why: 'the four lines of the song “The Sheik of Araby” (1921) in Chapter IV, in UK copyright until the end of 2035; a note in square brackets marks the place',
+      },
+    ],
+    expect: 9,
+  },
 ]
 
 const MIN_CHARS = 8000
@@ -422,7 +455,123 @@ function trimToText(body, book) {
   return out
 }
 
+/**
+ * A work transcribed on Wikisource, fetched chapter by chapter through the
+ * MediaWiki API, as the plain text parseSections reads.
+ *
+ * WHY WIKISOURCE, for The Great Gatsby (2 October 2026). Project Gutenberg's
+ * only Gatsby, #64317, is the Standard Ebooks text: modernised ("tomorrow",
+ * "further"), in British spelling ("grey", "neighbour"), and with Edmund
+ * Wilson's 1941 "orgiastic" for the first edition's "orgastic", the word
+ * Fitzgerald defended to Maxwell Perkins in January 1925. The site's Gatsby
+ * pages quote the 1925 first edition, which Wikisource holds transcribed from
+ * the scans of the Scribner printing. Holding the Gutenberg text would have
+ * "corrected" those pages away from what Fitzgerald published.
+ *
+ * Every transcluded page carries its proofreading level in data-page-quality,
+ * and anything below 4 (validated: proofread, then checked again by a second
+ * reader) refuses the write, as a Gutenberg edition flagged as poorly proofed
+ * does. The running header, page numbers and Wikisource's navigation are
+ * removed; italics become _underscores_, as in the Gutenberg texts; a line
+ * break inside a paragraph (a list, a letter) starts a new block, as Project
+ * Gutenberg Australia's <pre> does. Text anywhere but in a paragraph also
+ * refuses the write, since reading only paragraphs would otherwise drop it
+ * silently.
+ */
+async function fetchWikisource(book) {
+  const { JSDOM } = await import('jsdom')
+  const chars = (s) => s.replace(/\s+/g, '').length
+  const dropped = new Set()
+  const chapters = []
+  for (let n = 1; n <= book.expect; n++) {
+    const page = `${book.wikisource}/Chapter_${n}`
+    const url =
+      'https://en.wikisource.org/w/api.php?action=parse&format=json&formatversion=2' +
+      `&prop=text&disablelimitreport=1&disableeditsection=1&page=${encodeURIComponent(page)}`
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'TheEnglishHub-fetch/1.0 (https://theenglishhub.app)' },
+    })
+    if (!res.ok) throw new Error(`${page}: HTTP ${res.status}`)
+    const html = (await res.json()).parse?.text
+    if (!html) throw new Error(`${page}: no such page`)
+    const quality = [...html.matchAll(/data-page-quality="(\d)"/g)].map((m) => m[1])
+    if (quality.length === 0 || quality.some((q) => q !== '4')) {
+      throw new Error(`${page}: not every page is validated (${quality.join(',') || 'none'})`)
+    }
+    const doc = new JSDOM(html).window.document
+    const title = doc.querySelector('.wst-header-title-text')?.textContent.trim()
+    if (title !== book.title)
+      throw new Error(`${page}: expected title "${book.title}", got "${title}"`)
+    doc
+      .querySelectorAll('.ws-noexport, .pagenum, style, #dynamic_layout_overrider')
+      .forEach((e) => e.remove())
+    const root = doc.querySelector('.prp-pages-output')
+    if (!root)
+      throw new Error(`${page}: no transcluded text`)
+      // Verse quoted in the prose (a song) is set in .ws-poem, outside any
+      // paragraph: each line becomes its own block, unless the book drops that
+      // block for copyright, in which case a bracketed note marks the place.
+      // A drop names its chapter, its place among that chapter's verse blocks
+      // and its line count, never its words, so the words are not in this
+      // repository either; a transcription that has changed shape fails here.
+    ;[...root.querySelectorAll('.ws-poem')].forEach((poem, index) => {
+      const lines = [...poem.querySelectorAll('.ws-poem-line')]
+        .map((l) => l.textContent.replace(/\s+/g, ' ').trim())
+        .filter(Boolean)
+      const p = doc.createElement('p')
+      const drop = (book.dropVerse ?? []).find((d) => d.chapter === n && d.index === index)
+      if (drop) {
+        if (lines.length !== drop.lines) {
+          throw new Error(
+            `${page}: verse block ${index} has ${lines.length} lines, expected ${drop.lines}`,
+          )
+        }
+        p.textContent = drop.note
+        dropped.add(drop)
+      } else {
+        p.textContent = lines.join('\n\n')
+      }
+      poem.replaceWith(p)
+    })
+    // A table (the schedule young Gatsby wrote in his copy of Hopalong
+    // Cassidy) prints one row to a line, its cells joined by a space.
+    for (const table of root.querySelectorAll('table')) {
+      const rows = [...table.querySelectorAll('tr')].map((tr) => {
+        const p = doc.createElement('p')
+        p.textContent = [...tr.querySelectorAll('td, th')]
+          .map((c) => c.textContent.replace(/\s+/g, ' ').trim())
+          .filter(Boolean)
+          .join(' ')
+        return p
+      })
+      table.replaceWith(...rows)
+    }
+    for (const i of root.querySelectorAll('i')) i.replaceWith(`_${i.textContent}_`)
+    for (const br of root.querySelectorAll('br')) br.replaceWith('\n\n')
+    const blocks = [...root.querySelectorAll('p')]
+      .flatMap((p) => p.textContent.split('\n\n'))
+      .map((s) => s.replace(/\s+/g, ' ').trim())
+      .filter(Boolean)
+    // Counted in characters, whitespace aside: a word count merges the last
+    // word of one inserted paragraph with the first of the next, since
+    // nothing separates them in textContent.
+    const inParagraphs = chars(blocks.join(''))
+    const inAll = chars(root.textContent)
+    if (inParagraphs !== inAll) {
+      throw new Error(
+        `${page}: ${inAll - inParagraphs} characters outside paragraphs - refusing to drop them`,
+      )
+    }
+    chapters.push(blocks.join('\n\n'))
+  }
+  const unused = (book.dropVerse ?? []).filter((d) => !dropped.has(d))
+  if (unused.length)
+    throw new Error(`${unused.length} verse drop(s) matched nothing - edition changed shape`)
+  return chapters.join('\n\n')
+}
+
 async function fetchBody(book) {
+  if (book.wikisource) return fetchWikisource(book)
   if (book.pga) {
     const res = await fetch(book.pga, { headers: { 'User-Agent': 'TheEnglishHub-fetch/1.0' } })
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
@@ -499,19 +648,27 @@ async function build(book) {
 //
 // The text is a byte copy of a published edition, not typed and not reproduced
 // from memory, so it cannot contain invented sentences. Source edition: ${
-    book.pga
-      ? `Project
+    book.wikisource
+      ? `the
+// ${book.printing}, as transcribed by Wikisource's
+// contributors (https://en.wikisource.org/wiki/${book.wikisource}) and
+// validated there against the page scans, every page; page numbers, running
+// headers and navigation are stripped. The underlying work is out of UK
+// copyright.`
+      : book.pga
+        ? `Project
 // Gutenberg Australia, ${book.pga}, whose header and licence text are stripped;
 // the underlying work is out of UK copyright.`
-      : `Project
+        : `Project
 // Gutenberg #${book.id}, whose branding and licence text are stripped per their
 // terms; the underlying work is out of copyright.`
   }${
-    book.strip || book.end
+    book.strip || book.end || book.dropVerse
       ? `
 //
 // Removed from the edition, and nothing else:${[
           ...(book.strip ?? []).map((s) => s.why),
+          ...(book.dropVerse ?? []).map((d) => d.why),
           ...(book.end
             ? ['everything after its last line (an imprint and a transcriber’s note)']
             : []),
@@ -522,8 +679,11 @@ async function build(book) {
   }
 //
 // Re-run the generator to refresh. It refuses to write if the edition's own
-// title stops matching, if Gutenberg has flagged the edition as poorly
-// proofed, or if the section count is not exactly ${book.expect}.
+// title stops matching, if ${
+    book.wikisource
+      ? 'any page of the transcription is not validated'
+      : 'Gutenberg has flagged the edition as poorly\n// proofed'
+  }, or if the section count is not exactly ${book.expect}.
 
 import type { TextData } from '@/components/study/InteractiveTextViewer'
 

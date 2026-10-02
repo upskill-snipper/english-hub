@@ -43,8 +43,10 @@ const readsThroughFullTextReader = (slug: string) =>
 
 describe('the rights line under each held text', () => {
   it('has texts to check', () => {
-    expect(TEXTS.length).toBe(30)
-    expect(TEXTS.filter(readsThroughFullTextReader)).toHaveLength(28)
+    // 31 and 29 since 2 October 2026, when The Great Gatsby joined with a
+    // FullTextReader page.
+    expect(TEXTS.length).toBe(31)
+    expect(TEXTS.filter(readsThroughFullTextReader)).toHaveLength(29)
   })
 
   it.each(TEXTS.filter(readsThroughFullTextReader))('%s', (slug) => {
