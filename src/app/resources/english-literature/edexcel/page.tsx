@@ -38,7 +38,7 @@ const PAPERS = [
     href: '/resources/english-literature/edexcel/paper-2',
     title: 'Paper 2: 19th-Century Novel and Poetry since 1789',
     description:
-      '19th-century novels including A Christmas Carol, Jekyll and Hyde, and Jane Eyre. Poetry anthology (Relationships and Conflict clusters) plus unseen poetry.',
+      '19th-century novels including A Christmas Carol, Jekyll and Hyde, and Jane Eyre. Poetry from one of the anthology\'s four collections, plus two unseen poems to compare.',
     marks: '80 marks - 50% of GCSE',
   },
 ]
@@ -176,28 +176,39 @@ export default function EdexcelEnglishLiteraturePage() {
       </section>
 
       {/* ── Key exam features ─────────────────────────────────── */}
+      {/* Corrected 2 October 2026 against Pearson's specification (1ET0, Issue
+          2). These said no extract is printed for Shakespeare or prose (both
+          papers print one), that the anthology has two clusters (it has four
+          collections), and that the Shakespeare question is one whole-play
+          essay (it is two parts, extract then elsewhere). The skills section
+          below said every answer is marked on all four skills; none is, and
+          accuracy (AO4) is marked only on the Paper 1 post-1914 essay. */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         <h2 className="text-2xl font-bold text-foreground">Key features of the Edexcel exam</h2>
         <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
           <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4">
             <h3 className="font-semibold text-foreground">Fully closed-book</h3>
             <p className="mt-1 text-sm">
-              Both Edexcel papers are fully closed-book. You must memorise quotations for every text
-              - no extracts are provided for Shakespeare or prose sections.
+              Both Edexcel papers are closed book: you may not take your texts in. The paper prints
+              an extract from your Shakespeare play, an extract from your 19th-century novel, the
+              named anthology poem and the two unseen poems. Everything else comes from memory, so
+              learn quotations from across each text.
             </p>
           </div>
           <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4">
-            <h3 className="font-semibold text-foreground">Poetry anthology clusters</h3>
+            <h3 className="font-semibold text-foreground">Poetry anthology collections</h3>
             <p className="mt-1 text-sm">
-              Edexcel uses Relationships and Conflict clusters (15 poems each). You will be given a
-              named poem and must compare it with another of your choice from the same cluster.
+              The anthology has four collections of 15 poems: Relationships, Conflict, Time and
+              Place, and Belonging. You study one. The paper prints a named poem from it, and you
+              compare it with another poem of your choice from the same collection.
             </p>
           </div>
           <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4">
             <h3 className="font-semibold text-foreground">Question structure</h3>
             <p className="mt-1 text-sm">
-              Edexcel Shakespeare questions give a theme or character to discuss across the whole
-              play. Post-1914 questions may offer a choice of two essay titles.
+              The Shakespeare and 19th-century novel questions each come in two parts. Part (a)
+              analyses a printed extract; part (b) explores the play elsewhere, or the novel as a
+              whole. The post-1914 question is one essay from a choice of two.
             </p>
           </div>
         </div>
@@ -208,8 +219,8 @@ export default function EdexcelEnglishLiteraturePage() {
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">Marking Skills</h2>
           <p className="mt-2 text-muted-foreground">
-            All responses are marked against these four skills. Knowing how marks are weighted for
-            each question helps you structure your answer.
+            Each question is marked for one or more of these four skills, never all four on one
+            answer. Knowing which skills a question rewards helps you structure your answer.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {[
@@ -227,7 +238,7 @@ export default function EdexcelEnglishLiteraturePage() {
               },
               {
                 ao: 'Accuracy',
-                desc: 'Use a range of vocabulary and sentence structures for clarity, purpose, and effect, with accurate spelling and punctuation. (Only assessed on certain questions.)',
+                desc: 'Use a range of vocabulary and sentence structures for clarity, purpose, and effect, with accurate spelling and punctuation. (Marked only on the Paper 1 post-1914 essay: 8 of its 40 marks.)',
               },
             ].map((obj) => (
               <div key={obj.ao} className="rounded-lg border border-border bg-card p-5">

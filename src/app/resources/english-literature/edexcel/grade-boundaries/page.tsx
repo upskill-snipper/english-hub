@@ -488,30 +488,31 @@ export default function GradeBoundariesPage() {
                   <th className="py-2 pe-4">Focus</th>
                 </tr>
               </thead>
+              {/* Corrected 2 October 2026 against Pearson's specification (1ET0,
+                  Issue 2). This table had a Section C of unseen poetry, 12 marks
+                  for one poem and 8 for a comparison. Paper 2 has two sections:
+                  the unseen comparison is Section B Part 2, one question worth
+                  20 marks, with no single-poem step. */}
               <tbody className="divide-y divide-border">
                 <tr>
                   <td className="py-2 pe-4 font-semibold">A &mdash; 19th-Century Novel</td>
                   <td className="py-2 pe-4">{tr(`Extract + essay`)}</td>
                   <td className="py-2 pe-4">40 marks</td>
-                  <td className="py-2 pe-4">19th-century novel (extract-based essay)</td>
+                  <td className="py-2 pe-4">
+                    (a) the printed extract, 20 marks; (b) the novel as a whole, 20 marks
+                  </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pe-4 font-semibold">B &mdash; Poetry Anthology</td>
-                  <td className="py-2 pe-4">Comparison</td>
+                  <td className="py-2 pe-4 font-semibold" rowSpan={2}>
+                    B &mdash; Poetry
+                  </td>
+                  <td className="py-2 pe-4">Part 1</td>
                   <td className="py-2 pe-4">20 marks</td>
                   <td className="py-2 pe-4">{tr(`Poetry anthology comparison (two poems)`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pe-4 font-semibold" rowSpan={2}>
-                    C &mdash; Unseen Poetry
-                  </td>
-                  <td className="py-2 pe-4">C1</td>
-                  <td className="py-2 pe-4">12 marks</td>
-                  <td className="py-2 pe-4">{tr(`Analysis of one unseen poem`)}</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pe-4">C2</td>
-                  <td className="py-2 pe-4">8 marks</td>
+                  <td className="py-2 pe-4">Part 2</td>
+                  <td className="py-2 pe-4">20 marks</td>
                   <td className="py-2 pe-4">Comparison of two unseen poems</td>
                 </tr>
                 <tr className="font-bold">
@@ -527,8 +528,9 @@ export default function GradeBoundariesPage() {
 
           <p className="mt-4 text-sm text-muted-foreground">
             Both papers carry equal weight. Paper 2 is longer (2 hours 15 minutes vs 1 hour 45
-            minutes) and covers three distinct sections, so time management is crucial. Practise
-            writing under timed conditions to ensure you can complete all questions.
+            minutes) and asks for four answers across its two sections, so time management is
+            crucial. Practise writing under timed conditions to ensure you can complete all
+            questions.
           </p>
         </Section>
 

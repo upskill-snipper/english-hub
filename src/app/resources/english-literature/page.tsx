@@ -155,7 +155,10 @@ const POETRY_SECTIONS: PoetrySection[] = [
   },
   {
     title: 'Edexcel Relationships and Conflict',
-    description: 'Detailed notes on both Edexcel poetry clusters with comparison frameworks.',
+    // 2 October 2026: said "both Edexcel poetry clusters". The anthology has four collections;
+    // the page linked covers two of them.
+    description:
+      'Detailed notes on the Relationships and Conflict collections, two of the four in the Edexcel anthology, with comparison frameworks.',
     href: '/resources/english-literature/edexcel/poetry',
     boards: ['edexcel'],
   },

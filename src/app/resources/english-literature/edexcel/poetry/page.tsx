@@ -127,7 +127,9 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       '"as if she ranked my gift of a nine-hundred-years-old name with anybody\'s gift"',
     ],
     comparisonLinks:
-      "Compare with 'Cousin Kate' (Conflict cluster - men controlling women), 'The Manhunt' (a husband who destroys vs a wife who heals), or 'Valentine' (love and possession).",
+      // 2 October 2026: suggested Cousin Kate, a Conflict poem. The exam compares the named
+      // poem with another from the same collection, so every partner here is Relationships.
+      "Compare with 'La Belle Dame sans Merci' (power in love, held by the woman), 'The Manhunt' (a husband who destroys vs a wife who heals), or 'Valentine' (love and possession).",
   },
   {
     title: 'La Belle Dame sans Merci',
@@ -302,7 +304,8 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       '"tall recruits"',
     ],
     comparisonLinks:
-      "Compare with 'The Manhunt' (wounds and the love that tries to heal them), 'A Child to His Sick Grandfather' (intergenerational love), or 'Catrin' (Conflict - parent-child tension).",
+      // 2 October 2026: suggested Catrin, a Conflict poem; partners must share the collection.
+      "Compare with 'The Manhunt' (wounds and the love that tries to heal them), 'A Child to His Sick Grandfather' (intergenerational love), or 'My Father Would Not Show Us' (a father and his children).",
     rightsNotice:
       'Rights notice: © Robson Books on behalf of the Vernon Scannell estate (1922-2007). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology.',
   },
@@ -412,7 +415,8 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       '"Neither won nor lost the struggle"',
     ],
     comparisonLinks:
-      "Compare with 'Nettles' (Relationships - parental love), 'Poppies' (mother and child), or 'Half-caste' (identity and conflict).",
+      // 2 October 2026: suggested Nettles, a Relationships poem; partners must share the collection.
+      "Compare with 'Cousin Kate' (a mother's fierce pride in her son), 'Poppies' (mother and child), or 'Half-caste' (identity and conflict).",
     rightsNotice:
       "Rights notice: © Carcanet Press on behalf of Gillian Clarke (b. 1937). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Clarke's Collected Poems (Carcanet).",
   },
@@ -563,7 +567,9 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       '"Yet I\'ve a gift you have not got, and seem not like to get"',
     ],
     comparisonLinks:
-      "Compare with 'My Last Duchess' (Relationships - male power), 'Half-caste' (prejudice and identity), or 'The Class Game' (social inequality).",
+      // 2 October 2026: suggested My Last Duchess, a Relationships poem; partners must share the
+      // collection.
+      "Compare with 'A Poison Tree' (bitterness nursed against another), 'Half-caste' (prejudice and identity), or 'The Class Game' (social inequality).",
   },
   {
     title: 'No Problem',

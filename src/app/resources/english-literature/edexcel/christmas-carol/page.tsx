@@ -532,35 +532,45 @@ export default function ChristmasCarolPage() {
           </h2>
 
           <div className="mt-6 space-y-6">
+            {/* Corrected 2 October 2026 against Pearson's specification (1ET0,
+                Issue 2). This said there was a choice of two essay questions,
+                no extract, context to be considered and 4 marks for SPaG. Paper
+                2 Section A is one compulsory two-part question: (a) on a
+                printed extract of about 400 words, 20 marks for language, form
+                and structure; (b) on the novel as a whole, 20 marks for the
+                argument. Neither part marks context or SPaG. */}
             <div className="rounded-xl bg-muted p-6">
               <h3 className="text-lg font-bold text-foreground">
                 What Does an Edexcel Question Look Like?
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                You will typically have a choice of two essay questions. There is no extract - you
-                must recall your own evidence.
+                One question in two parts, with no choice. Part (a) prints an extract of about 400
+                words and asks you to explore it; part (b) is an essay on the novel as a whole. Each
+                is worth 20 marks and is marked on its own.
               </p>
               <div className="mt-4 space-y-3">
                 <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                    Example Question 1
+                    Example part (a)
                   </p>
                   <p className="mt-2 text-sm text-foreground font-medium">
-                    Explore how Dickens presents the theme of redemption in
-                    <em> A Christmas Carol</em>.
+                    Explore how Dickens presents Scrooge&apos;s attitude to the poor in this
+                    extract.
                   </p>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    You must consider the context of the novella in your answer. (40 marks,
-                    including 4 marks for SPaG)
+                    Refer closely to the extract in your answer. (20 marks, for analysis of
+                    Dickens&apos;s language, form and structure)
                   </p>
                 </div>
                 <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                    Example Question 2
+                    Example part (b)
                   </p>
                   <p className="mt-2 text-sm text-foreground font-medium">
-                    How does Dickens use the character of Scrooge to present ideas about social
-                    responsibility?
+                    Explore how Dickens presents the theme of redemption in the novel as a whole.
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    (20 marks, for your argument and the references that support it)
                   </p>
                 </div>
               </div>
@@ -574,8 +584,9 @@ export default function ChristmasCarolPage() {
                     1
                   </span>
                   <span>
-                    <strong>Introduction</strong> - state Dickens&apos; purpose and how the
-                    theme/character connects to his social message. Reference the Victorian context.
+                    <strong>Part (a): read the extract twice</strong>, then write 3-4 paragraphs on
+                    how Dickens presents the focus of the question in it. Quote closely from the
+                    printed passage; the rest of the novel belongs in part (b).
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -583,8 +594,10 @@ export default function ChristmasCarolPage() {
                     2
                   </span>
                   <span>
-                    <strong>4-5 analytical paragraphs</strong> covering different staves. Track how
-                    the theme/character develops across the novella.
+                    <strong>Analyse Dickens&apos; methods</strong> - language (imagery, simile,
+                    listing, hyperbole), structure (the five-stave form, the transformation arc),
+                    and narrative voice (the intrusive narrator who addresses the reader directly).
+                    This is what part (a) is marked for.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -592,9 +605,9 @@ export default function ChristmasCarolPage() {
                     3
                   </span>
                   <span>
-                    <strong>Analyse Dickens&apos; methods</strong> - language (imagery, simile,
-                    listing, hyperbole), structure (the five-stave form, the transformation arc),
-                    and narrative voice (the intrusive narrator who addresses the reader directly).
+                    <strong>Part (b): open with a clear argument</strong> about the theme or
+                    character, then write 3-4 paragraphs across different staves, quoting from
+                    memory. Track how it develops across the novella.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -602,9 +615,9 @@ export default function ChristmasCarolPage() {
                     4
                   </span>
                   <span>
-                    <strong>Integrate context</strong> - link to Victorian poverty, the Poor Law,
-                    Malthus, child labour, and Dickens&apos; own experiences. Make context serve
-                    your argument.
+                    <strong>Use context only where it explains Dickens&apos; choices</strong> -
+                    Victorian poverty, the Poor Law, Malthus, child labour. Section A gives no marks
+                    for context in its own right.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -612,8 +625,8 @@ export default function ChristmasCarolPage() {
                     5
                   </span>
                   <span>
-                    <strong>Conclude</strong> - summarise Dickens&apos; overall message and what he
-                    wanted his Victorian readers to do differently.
+                    <strong>Conclude part (b)</strong> - summarise Dickens&apos; overall message and
+                    what he wanted his Victorian readers to do differently.
                   </span>
                 </li>
               </ol>
@@ -644,7 +657,8 @@ export default function ChristmasCarolPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  SPaG is worth 4 marks on this section - write clearly and use paragraphs.
+                  Spelling, punctuation and grammar are not marked on Paper 2, but clear
+                  paragraphs help the examiner follow your argument.
                 </li>
               </ul>
             </div>

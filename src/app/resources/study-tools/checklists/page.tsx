@@ -355,18 +355,20 @@ const CHECKLISTS: ChecklistBoard[] = [
             label: '19th-century novel: extract + essay',
             detail: 'ACC, J&H, Frankenstein, etc.',
           },
+          // Corrected 2 October 2026 against Pearson's specification (1ET0, Issue 2): the
+          // anthology has collections, not clusters, the poem of choice comes from the named
+          // poem's collection, and there is no single unseen poem question (edx-lit-9, removed).
           {
             id: 'edx-lit-7',
             label: 'Poetry anthology: compare two poems',
-            detail: 'Named poem + free choice',
+            detail: 'Named poem + one of your choice from the same collection',
           },
-          { id: 'edx-lit-8', label: 'Poetry: know all poems in your cluster' },
+          { id: 'edx-lit-8', label: 'Poetry: know all 15 poems in your collection' },
           {
-            id: 'edx-lit-9',
-            label: 'Unseen poetry: analyse one poem',
-            detail: 'Language, structure, themes',
+            id: 'edx-lit-10',
+            label: 'Unseen poetry: compare two poems',
+            detail: 'Linked by a theme: language, form and structure',
           },
-          { id: 'edx-lit-10', label: 'Unseen poetry: compare two poems' },
         ],
       },
     ],

@@ -234,20 +234,28 @@ const EDEXCEL_TIMINGS = {
       name: 'Literature Paper 2 -- 19th-Century Novel & Poetry Since 1789',
       duration: '2 hours 15 minutes',
       total: 80,
+      // Corrected 2 October 2026 against Pearson's specification (1ET0, Issue 2). The unseen
+      // question was "Single unseen poem analysis"; it compares two unseen poems. The times
+      // now account for all 135 minutes, as the Paper 2 course's timing plan does.
       questions: [
         {
-          q: '19th-century novel extract + essay',
+          q: '19th-century novel: (a) extract + (b) essay',
           marks: 40,
-          time: '55 mins',
-          notes: 'Extract then wider text.',
+          time: '60 mins',
+          notes: 'Two parts of 20 marks: the printed extract, then the novel as a whole.',
         },
         {
           q: 'Poetry anthology comparison',
           marks: 20,
           time: '35 mins',
-          notes: '2 poems from anthology.',
+          notes: 'The named poem, printed, and one of your choice from the same collection.',
         },
-        { q: 'Unseen poetry', marks: 20, time: '25 mins', notes: 'Single unseen poem analysis.' },
+        {
+          q: 'Unseen poetry comparison',
+          marks: 20,
+          time: '35 mins',
+          notes: 'Compare two unseen poems linked by a theme. Leave 5 minutes to check.',
+        },
       ],
     },
   ],

@@ -535,10 +535,14 @@ export default async function UnseenPoetryPage() {
 
             {/* ─── 5. COMPARISON TECHNIQUE ────────────────────────── */}
             <Section id="comparison" title="5. Comparison Technique">
+              {/* 2 October 2026: this described AQA's shape as everyone's. Edexcel's
+                  Paper 2 has no single-poem step (1ET0 specification, Issue 2). */}
               <p className="mb-6 text-muted-foreground leading-relaxed">
-                The second unseen poetry question typically asks you to compare the poem you have
-                already analysed with a second, shorter poem. This is usually worth fewer marks and
-                requires a more concise approach.
+                How comparison is set depends on your board. On AQA, the second unseen question asks
+                you to compare the poem you have already analysed with a second poem; it is worth
+                fewer marks (8, against 24 for the first) and needs a more concise approach.
+                Edexcel&apos;s Paper 2 has no single-poem question: its unseen question is one
+                comparison of two poems, worth 20 marks.
               </p>
 
               <h3 className="mb-4 text-lg font-bold text-foreground">

@@ -490,8 +490,9 @@ export default function JekyllAndHydePage() {
         <section id="context" className="mt-14 scroll-mt-20">
           <h2 className="text-2xl font-bold text-foreground">Victorian Context</h2>
           <p className="mt-2 text-muted-foreground">
-            Context is assessed through the context skill. The best responses weave context into
-            analysis rather than treating it as a bolt-on paragraph.
+            Paper 2 Section A gives no marks for context in its own right, but knowing it helps
+            you explain Stevenson&apos;s choices. Use it inside your analysis, never as a bolt-on
+            paragraph.
           </p>
           <div className="mt-6 space-y-4">
             {CONTEXT_POINTS.map((c) => (
@@ -510,29 +511,50 @@ export default function JekyllAndHydePage() {
           </h2>
 
           <div className="mt-6 space-y-6">
+            {/* Corrected 2 October 2026 against Pearson's specification (1ET0,
+                Issue 2). This presented Section A as one 40-mark question on
+                the extract and the novella together, with context marked, and
+                said Macbeth on Paper 1 has no extract. Section A is one
+                compulsory question in two parts, marked separately: (a) the
+                printed extract, 20 marks for language, form and structure; (b)
+                the novel as a whole, 20 marks for the argument. No part marks
+                context or SPaG. Paper 1 prints a Shakespeare extract too. */}
             <div className="rounded-xl bg-muted p-6">
               <h3 className="text-lg font-bold text-foreground">
                 What Does an Edexcel Jekyll and Hyde Question Look Like?
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                Jekyll and Hyde appears in <strong>Paper 2, Section A</strong> (19th-century novel).
-                You will be given an <strong>extract</strong> from the novella and a question that
-                asks you to analyse a character, theme, or idea. You must write about{' '}
-                <strong>both the extract and the wider novella</strong>. The question is worth{' '}
-                <strong>40 marks</strong> (no SPaG marks on Paper 2).
+                Jekyll and Hyde appears in <strong>Paper 2, Section A</strong> (19th-century novel):
+                one question in <strong>two parts</strong>, with no choice. Part (a) prints an{' '}
+                <strong>extract of about 400 words</strong> and asks you to explore it; part (b) is
+                an essay on <strong>the novella as a whole</strong>. Each part is worth{' '}
+                <strong>20 marks</strong> and is marked on its own. There are no SPaG marks on
+                Paper 2.
               </p>
-              <div className="mt-4 rounded-lg border-2 border-dashed border-primary bg-card p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                  Example Question
-                </p>
-                <p className="mt-2 text-sm text-foreground font-medium">
-                  How does Stevenson present the theme of duality in this extract and in the novella
-                  as a whole?
-                </p>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Refer closely to the extract and to the novella as a whole in your answer. (40
-                  marks)
-                </p>
+              <div className="mt-4 space-y-3">
+                <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                    Example part (a)
+                  </p>
+                  <p className="mt-2 text-sm text-foreground font-medium">
+                    Explore how Stevenson presents Hyde in this extract.
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    Refer closely to the extract in your answer. (20 marks, for analysis of
+                    Stevenson&apos;s language, form and structure)
+                  </p>
+                </div>
+                <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                    Example part (b)
+                  </p>
+                  <p className="mt-2 text-sm text-foreground font-medium">
+                    Explore how Stevenson presents the theme of duality in the novella as a whole.
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    (20 marks, for your argument and the references that support it)
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -544,9 +566,8 @@ export default function JekyllAndHydePage() {
                     1
                   </span>
                   <span>
-                    <strong>Brief introduction</strong> - outline Stevenson&apos;s overall
-                    presentation of the theme/character in 2-3 sentences. Mention the novella&apos;s
-                    Victorian context.
+                    <strong>Part (a): read the extract twice</strong>, then outline in a sentence
+                    or two how Stevenson presents the focus of the question in it.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -554,9 +575,10 @@ export default function JekyllAndHydePage() {
                     2
                   </span>
                   <span>
-                    <strong>2-3 paragraphs on the extract</strong> - analyse specific language,
-                    imagery, and techniques from the given passage. Use short embedded quotations
-                    from the extract. Link to context where relevant.
+                    <strong>3-4 paragraphs on the extract</strong> - analyse specific language,
+                    imagery and structure in the printed passage, with short embedded quotations
+                    from it. This is what part (a) is marked for; the wider novella belongs in part
+                    (b).
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -564,9 +586,9 @@ export default function JekyllAndHydePage() {
                     3
                   </span>
                   <span>
-                    <strong>2-3 paragraphs on the wider novella</strong> - discuss how the
-                    theme/character is presented elsewhere. Use memorised quotes from other parts of
-                    the text. Track development across the narrative.
+                    <strong>Part (b): 3-4 paragraphs across the novella</strong> - open with a
+                    clear argument, then show how the theme or character is presented in different
+                    chapters, with memorised quotations. Track development across the narrative.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -574,9 +596,8 @@ export default function JekyllAndHydePage() {
                     4
                   </span>
                   <span>
-                    <strong>Conclude briefly</strong> - summarise Stevenson&apos;s message and its
-                    relevance to a Victorian audience. Consider what Stevenson wanted readers to
-                    understand about human nature.
+                    <strong>Conclude part (b) briefly</strong> - summarise Stevenson&apos;s message
+                    and what he wanted readers to understand about human nature.
                   </span>
                 </li>
               </ol>
@@ -589,13 +610,14 @@ export default function JekyllAndHydePage() {
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  <strong>Extract-based:</strong> You are given a passage from the novella to
-                  analyse - this is different from Macbeth (Paper 1), which has no extract.
+                  <strong>Extract first:</strong> Part (a) gives you a passage from the novella to
+                  analyse. Part (b) is about the whole novella, from memory.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  <strong>40 marks total:</strong> No separate SPaG marks on Paper 2, but clear,
-                  accurate writing still matters for the overall quality of your response.
+                  <strong>40 marks total:</strong> 20 for part (a) and 20 for part (b). No SPaG
+                  marks on Paper 2, but clear, accurate writing still helps the examiner follow
+                  your argument.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -604,8 +626,8 @@ export default function JekyllAndHydePage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  <strong>Timing:</strong> Spend approximately 50-55 minutes on this question. Allow
-                  5 minutes for reading the extract and planning.
+                  <strong>Timing:</strong> Spend about an hour on Section A: roughly 30 minutes on
+                  each part, including 5 minutes reading the extract or planning.
                 </li>
               </ul>
             </div>
@@ -625,10 +647,10 @@ export default function JekyllAndHydePage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Embed context into analysis: &quot;A Victorian reader, influenced by Darwin&apos;s
-                  theory of evolution, would have found Hyde&apos;s &apos;ape-like fury&apos;
-                  particularly disturbing as it implies humanity&apos;s civilised veneer is
-                  dangerously thin.&quot;
+                  Context earns no marks of its own here, but a line of it can sharpen a point:
+                  &quot;A Victorian reader, influenced by Darwin&apos;s theory of evolution, would
+                  have found Hyde&apos;s &apos;ape-like fury&apos; particularly disturbing as it
+                  implies humanity&apos;s civilised veneer is dangerously thin.&quot;
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -643,8 +665,8 @@ export default function JekyllAndHydePage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Balance extract and whole text - markers want to see both. Don&apos;t spend all
-                  your time on the extract and neglect the wider novella, or vice versa.
+                  Answer each part as it is asked: part (a) on the extract, part (b) on the
+                  novella as a whole. They carry equal marks, so give them equal time.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />

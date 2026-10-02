@@ -150,10 +150,15 @@ export const STRINGS: Record<string, Bi> = {
     en: `Paper 1 - Shakespeare and Post-1914 Literature (50%)`,
     ar: `الورقة 1 - شكسبير وأدب ما بعد 1914 (50%)`,
   },
-  s53: { en: `Extract + essay`, ar: `استخرج واستعمرEssay` },
+  // 2 October 2026: s53 and s54 were machine output with English fragments
+  // left in ("Essay", "tract"); s57 called the 19th-century novel a
+  // twentieth-century one; s58 said the comparison was between two poetry
+  // collections, when it is between two poems from one collection; s59, the
+  // single unseen poem, described a question Paper 2 does not have.
+  s53: { en: `Extract + essay`, ar: `مقتطف + مقال` },
   s54: {
     en: `Shakespeare play (extract-based essay + wider text)`,
-    ar: `مسرحية شكسبير (مقال استنادي علىtract مستند إلى نص مقتبس من النص الأكبر)`,
+    ar: `مسرحية شكسبير (مقال على مقتطف + بقية النص)`,
   },
   s55: {
     en: `Post-1914 British play or novel (essay question)`,
@@ -162,13 +167,12 @@ export const STRINGS: Record<string, Bi> = {
   s56: { en: `Paper 1 Total`, ar: `ورقة 1 الإجمالي` },
   s57: {
     en: `Paper 2 - 19th-Century Novel, Poetry Anthology & Unseen Poetry (50%)`,
-    ar: `ورق الامتحان 2 - رواية قرن العشرين، مختارات الشعر، وشعر غير المعهود (50%)`,
+    ar: `الورقة 2 - رواية القرن التاسع عشر، ومختارات الشعر، والشعر غير المعهود (50%)`,
   },
   s58: {
     en: `Poetry anthology comparison (two poems)`,
-    ar: `مقارنة بين ديواني الشعر (قصيدة وقصيدة)`,
+    ar: `مقارنة من مختارات الشعر (قصيدتان)`,
   },
-  s59: { en: `Analysis of one unseen poem`, ar: `تحليل قصيدة غير معروفة واحدة` },
   s61: { en: `Paper 2 Total`, ar: `ورقة 2 الإجمالي` },
   s62: {
     en: `Overall grade boundaries (combined Paper 1 + Paper 2)`,

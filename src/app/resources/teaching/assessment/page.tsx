@@ -432,14 +432,19 @@ const ESSAY_QUESTIONS: EssayQuestion[] = [
     examBoard: 'AQA',
     markSchemeRef: 'AO1, AO2, AO3 - AQA Lit Paper 1 Section A',
   },
+  // The six Edexcel Literature entries below were all tagged "AO1, AO2, AO3, AO4 - Edexcel
+  // Lit Paper 1" until 2 October 2026, the two novel questions included. No Edexcel question
+  // assesses all four (1ET0 specification, Issue 2): a whole-play Shakespeare question is part
+  // (b), AO1 and AO3, 20 marks; the post-1914 essay is AO1, AO3 and AO4; the novel is Paper 2,
+  // and its whole-text part (b) is AO1 only, 20 marks.
   {
     id: 'eq4',
     text: 'Explore the significance of guilt in Macbeth. You should consider the whole play in your answer.',
     subject: 'English Literature',
     topic: 'Macbeth',
-    marks: 40,
+    marks: 20,
     examBoard: 'Edexcel',
-    markSchemeRef: 'AO1, AO2, AO3, AO4 - Edexcel Lit Paper 1',
+    markSchemeRef: 'AO1, AO3 - Edexcel Lit Paper 1 Section A, part (b)',
   },
 
   // A Christmas Carol
@@ -463,12 +468,12 @@ const ESSAY_QUESTIONS: EssayQuestion[] = [
   },
   {
     id: 'eq7',
-    text: 'How does Dickens present the theme of redemption in A Christmas Carol?',
+    text: 'Explore how Dickens presents the theme of redemption in A Christmas Carol as a whole.',
     subject: 'English Literature',
     topic: 'A Christmas Carol',
-    marks: 40,
+    marks: 20,
     examBoard: 'Edexcel',
-    markSchemeRef: 'AO1, AO2, AO3, AO4 - Edexcel Lit Paper 1',
+    markSchemeRef: 'AO1 - Edexcel Lit Paper 2 Section A, part (b)',
   },
 
   // An Inspector Calls
@@ -497,7 +502,7 @@ const ESSAY_QUESTIONS: EssayQuestion[] = [
     topic: 'An Inspector Calls',
     marks: 40,
     examBoard: 'Edexcel',
-    markSchemeRef: 'AO1, AO2, AO3, AO4 - Edexcel Lit Paper 1',
+    markSchemeRef: 'AO1, AO3, AO4 - Edexcel Lit Paper 1 Section B',
   },
 
   // Jekyll and Hyde
@@ -521,12 +526,12 @@ const ESSAY_QUESTIONS: EssayQuestion[] = [
   },
   {
     id: 'eq13',
-    text: 'How does Stevenson present Hyde as a frightening outsider?',
+    text: 'Explore how Stevenson presents Hyde as a frightening outsider in the novella as a whole.',
     subject: 'English Literature',
     topic: 'Jekyll and Hyde',
-    marks: 40,
+    marks: 20,
     examBoard: 'Edexcel',
-    markSchemeRef: 'AO1, AO2, AO3, AO4 - Edexcel Lit Paper 1',
+    markSchemeRef: 'AO1 - Edexcel Lit Paper 2 Section A, part (b)',
   },
 
   // Lord of the Flies
@@ -537,7 +542,7 @@ const ESSAY_QUESTIONS: EssayQuestion[] = [
     topic: 'Lord of the Flies',
     marks: 40,
     examBoard: 'Edexcel',
-    markSchemeRef: 'AO1, AO2, AO3, AO4 - Edexcel Lit Paper 1',
+    markSchemeRef: 'AO1, AO3, AO4 - Edexcel Lit Paper 1 Section B',
   },
   {
     id: 'eq15',
@@ -546,7 +551,7 @@ const ESSAY_QUESTIONS: EssayQuestion[] = [
     topic: 'Lord of the Flies',
     marks: 40,
     examBoard: 'Edexcel',
-    markSchemeRef: 'AO1, AO2, AO3, AO4 - Edexcel Lit Paper 1',
+    markSchemeRef: 'AO1, AO3, AO4 - Edexcel Lit Paper 1 Section B',
   },
 
   // Poetry
