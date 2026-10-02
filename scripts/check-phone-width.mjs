@@ -129,10 +129,14 @@ function measure(vw) {
       continue
     let clip = null
     for (let p = el.parentElement; p && p !== document.body; p = p.parentElement) {
-      const o = cs(p).overflowX
+      const ps = cs(p)
+      const o = ps.overflowX
       if (o === 'auto' || o === 'scroll') break
       if (o === 'hidden' || o === 'clip') {
-        clip = p.getBoundingClientRect()
+        // A box that truncates with an ellipsis cuts its text off on purpose,
+        // whether the text is its own or a child's ("10A English" in the
+        // school demo sits in a span inside a truncate div).
+        if (ps.textOverflow !== 'ellipsis') clip = p.getBoundingClientRect()
         break
       }
     }
