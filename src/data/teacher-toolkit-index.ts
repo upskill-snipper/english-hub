@@ -11,13 +11,13 @@
  */
 
 export interface TeacherResource {
-  id: string;
-  title: string;
-  category: ResourceCategory;
-  description: string;
-  suitableFor: string[];
-  fileRef: string;
-  tags: string[];
+  id: string
+  title: string
+  category: ResourceCategory
+  description: string
+  suitableFor: string[]
+  fileRef: string
+  tags: string[]
 }
 
 export type ResourceCategory =
@@ -32,7 +32,7 @@ export type ResourceCategory =
   | 'SEND'
   | 'Schemes of Work'
   | 'Revision'
-  | 'Exam Prep';
+  | 'Exam Prep'
 
 /**
  * ───────────────────────────────────────────────────────────────────────────
@@ -49,7 +49,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-aqa-lang-p1-metaphor',
     title: 'AQA Language Paper 1: Metaphor & Imagery Deep Dive',
     category: 'Lesson Plans',
-    description: 'Full lesson on identifying and analysing metaphor and imagery in unseen texts. Includes starter activity, three guided practice tasks, and independent application to examination questions.',
+    description:
+      'Full lesson on identifying and analysing metaphor and imagery in unseen texts. Includes starter activity, three guided practice tasks, and independent application to examination questions.',
     suitableFor: ['GCSE', 'Year 10', 'Year 11', 'Mixed ability'],
     fileRef: 'lesson-plans/aqa-language-plans.ts',
     tags: ['AQA', 'Language', 'Analysis', 'Imagery', 'Techniques', 'GCSE'],
@@ -59,7 +60,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-shakespeare-macbeth-act1',
     title: 'Macbeth Act 1: Ambition & Supernatural',
     category: 'Lesson Plans',
-    description: 'Three-lesson sequence covering Act 1 of Macbeth. Explores themes of ambition, supernatural elements, and character motivation. Includes context slides, character mapping, and analysis activities.',
+    description:
+      'Three-lesson sequence covering Act 1 of Macbeth. Explores themes of ambition, supernatural elements, and character motivation. Includes context slides, character mapping, and analysis activities.',
     suitableFor: ['GCSE', 'Year 10', 'Year 11', 'Shakespeare', 'All abilities'],
     fileRef: 'lesson-plans/macbeth-lessons.ts',
     tags: ['Shakespeare', 'Macbeth', 'Drama', 'Theme', 'Context', 'GCSE'],
@@ -69,7 +71,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-poetry-love-relationships',
     title: 'Love & Relationships Poetry: Full Scheme (12 lessons)',
     category: 'Lesson Plans',
-    description: 'Complete 12-lesson unit on the Love & Relationships poetry anthology. Covers each poem individually with analysis, comparison activities, and essay preparation exercises.',
+    description:
+      'Complete 12-lesson unit on the Love & Relationships poetry anthology. Covers each poem individually with analysis, comparison activities, and essay preparation exercises.',
     suitableFor: ['GCSE', 'Year 11', 'Poetry', 'Literature'],
     fileRef: 'lesson-plans/poetry-love-relationships-lessons.ts',
     tags: ['Poetry', 'AQA', 'Anthology', 'Love', 'Analysis', 'GCSE'],
@@ -79,7 +82,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-creative-writing-narratives',
     title: 'Creative Writing: Narrative Techniques (5 lessons)',
     category: 'Lesson Plans',
-    description: 'Five-lesson progression developing narrative writing skills. Covers structure, dialogue, characterisation, and revision. Includes model answers and student exemplars.',
+    description:
+      'Five-lesson progression developing narrative writing skills. Covers structure, dialogue, characterisation, and revision. Includes model answers and student exemplars.',
     suitableFor: ['GCSE', 'Year 9', 'Year 10', 'All abilities'],
     fileRef: 'lesson-plans/creative-writing-lessons.ts',
     tags: ['Creative Writing', 'Narrative', 'Writing', 'Technique', 'GCSE'],
@@ -89,7 +93,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-grammar-punctuation-ks3',
     title: 'Grammar & Punctuation: Progressive Mastery (KS3)',
     category: 'Lesson Plans',
-    description: 'Year-long scheme covering sentence types, punctuation rules, grammatical terminology, and proofreading. Includes interactive activities and consolidation tasks.',
+    description:
+      'Year-long scheme covering sentence types, punctuation rules, grammatical terminology, and proofreading. Includes interactive activities and consolidation tasks.',
     suitableFor: ['KS3', 'Year 7', 'Year 8', 'Year 9', 'Foundations'],
     fileRef: 'lesson-plans/grammar-punctuation-lessons.ts',
     tags: ['Grammar', 'Punctuation', 'KS3', 'Foundation', 'Writing'],
@@ -99,7 +104,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-an-inspector-calls-full',
     title: 'An Inspector Calls: Complete Text Study (10 lessons)',
     category: 'Lesson Plans',
-    description: 'Comprehensive study of Priestley\'s play covering structure, characterisation, class themes, and social responsibility. Includes context, analysis, and essay preparation.',
+    description:
+      "Comprehensive study of Priestley's play covering structure, characterisation, class themes, and social responsibility. Includes context, analysis, and essay preparation.",
     suitableFor: ['GCSE', 'Year 10', 'Year 11', 'Literature'],
     fileRef: 'lesson-plans/inspector-calls-lessons.ts',
     tags: ['Drama', 'Priestley', 'Text Study', 'Theme', 'GCSE'],
@@ -109,7 +115,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-unseen-poetry-strategies',
     title: 'Unseen Poetry: Analytical Reading Strategies',
     category: 'Lesson Plans',
-    description: 'Teaches systematic approach to analysing unfamiliar poems in examination conditions. Includes annotation strategies, time management, and practice with diverse poetry.',
+    description:
+      'Teaches systematic approach to analysing unfamiliar poems in examination conditions. Includes annotation strategies, time management, and practice with diverse poetry.',
     suitableFor: ['GCSE', 'Year 11', 'Assessment'],
     fileRef: 'lesson-plans/unseen-poetry-lessons.ts',
     tags: ['Poetry', 'Analysis', 'Exam skills', 'Unseen', 'GCSE'],
@@ -119,7 +126,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-non-fiction-writing',
     title: 'Non-Fiction Writing: Informative & Persuasive (8 lessons)',
     category: 'Lesson Plans',
-    description: 'Covers articles, reviews, opinion pieces, and speeches. Develops techniques for engaging audiences, using rhetorical devices, and structuring complex ideas.',
+    description:
+      'Covers articles, reviews, opinion pieces, and speeches. Develops techniques for engaging audiences, using rhetorical devices, and structuring complex ideas.',
     suitableFor: ['GCSE', 'Year 10', 'Year 11', 'Writing'],
     fileRef: 'lesson-plans/non-fiction-writing-lessons.ts',
     tags: ['Writing', 'Non-fiction', 'Rhetoric', 'Persuasion', 'GCSE'],
@@ -129,7 +137,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-jekyll-hyde-gothic-novella',
     title: 'Jekyll and Hyde: Gothic Novella Analysis',
     category: 'Lesson Plans',
-    description: 'Exploration of Stevenson\'s novella examining dual nature, Victorian concerns, and gothic conventions. Includes close text analysis and character study.',
+    description:
+      "Exploration of Stevenson's novella examining dual nature, Victorian concerns, and gothic conventions. Includes close text analysis and character study.",
     suitableFor: ['GCSE', 'Year 10', 'Year 11'],
     fileRef: 'lesson-plans/jekyll-hyde-lessons.ts',
     tags: ['Literature', 'Gothic', 'Victorian', 'Text Study', 'GCSE'],
@@ -139,7 +148,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-reading-comprehension-strategies',
     title: 'Reading Comprehension: Active Reading Techniques',
     category: 'Lesson Plans',
-    description: 'Develops skills for extracting information, making inferences, and evaluating texts. Includes annotation methods, questioning strategies, and practice questions.',
+    description:
+      'Develops skills for extracting information, making inferences, and evaluating texts. Includes annotation methods, questioning strategies, and practice questions.',
     suitableFor: ['KS3', 'GCSE', 'Year 7-11', 'Foundation'],
     fileRef: 'lesson-plans/reading-comprehension-lessons.ts',
     tags: ['Reading', 'Comprehension', 'Inference', 'Skills', 'All levels'],
@@ -149,7 +159,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-power-conflict-poetry-ks3',
     title: 'Power & Conflict Poetry: KS3 Introduction',
     category: 'Lesson Plans',
-    description: 'Introduction to power and conflict themes in poetry. Suitable for younger students encountering poetry anthology work. Builds towards GCSE study.',
+    description:
+      'Introduction to power and conflict themes in poetry. Suitable for younger students encountering poetry anthology work. Builds towards GCSE study.',
     suitableFor: ['KS3', 'Year 9', 'Foundation'],
     fileRef: 'lesson-plans/poetry-power-conflict-lessons.ts',
     tags: ['Poetry', 'Power', 'Conflict', 'KS3', 'Theme'],
@@ -159,7 +170,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-romeo-juliet-tragedy',
     title: 'Romeo and Juliet: Shakespearean Tragedy',
     category: 'Lesson Plans',
-    description: 'Full text study exploring Shakespeare\'s treatment of tragedy, love, and fate. Covers key scenes, thematic analysis, and essay techniques.',
+    description:
+      "Full text study exploring Shakespeare's treatment of tragedy, love, and fate. Covers key scenes, thematic analysis, and essay techniques.",
     suitableFor: ['GCSE', 'Year 10', 'Year 11'],
     fileRef: 'lesson-plans/romeo-juliet-lessons.ts',
     tags: ['Shakespeare', 'Drama', 'Tragedy', 'Love', 'GCSE'],
@@ -169,7 +181,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-lord-of-flies-survival',
     title: 'Lord of the Flies: Civilization vs. Chaos',
     category: 'Lesson Plans',
-    description: 'Study of Golding\'s novel examining themes of civilisation, power struggles, and human nature. Includes symbolism analysis and thematic essays.',
+    description:
+      "Study of Golding's novel examining themes of civilisation, power struggles, and human nature. Includes symbolism analysis and thematic essays.",
     suitableFor: ['GCSE', 'Year 10', 'Year 11'],
     fileRef: 'lesson-plans/lord-of-flies-lessons.ts',
     tags: ['Literature', 'Novel', 'Theme', 'Symbolism', 'GCSE'],
@@ -179,7 +192,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-media-literacy-advertising',
     title: 'Media Literacy: Decoding Advertising',
     category: 'Lesson Plans',
-    description: 'Critical analysis of advertising messages, visual techniques, and persuasive language. Includes comparison of campaigns and creating media materials.',
+    description:
+      'Critical analysis of advertising messages, visual techniques, and persuasive language. Includes comparison of campaigns and creating media materials.',
     suitableFor: ['KS3', 'GCSE', 'Media literacy'],
     fileRef: 'lesson-plans/media-literacy-lessons.ts',
     tags: ['Media', 'Advertising', 'Critical thinking', 'Persuasion'],
@@ -189,7 +203,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-spoken-language-presentations',
     title: 'Spoken Language: Presentation Skills',
     category: 'Lesson Plans',
-    description: 'Develops skills in delivering presentations, speaking clearly, responding to questions. Covers for GCSE spoken language endorsement.',
+    description:
+      'Develops skills in delivering presentations, speaking clearly, responding to questions. Covers for GCSE spoken language endorsement.',
     suitableFor: ['GCSE', 'Year 10', 'Year 11'],
     fileRef: 'lesson-plans/spoken-language-lessons.ts',
     tags: ['Spoken Language', 'Communication', 'Presentation', 'GCSE'],
@@ -199,7 +214,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-animal-farm-allegory',
     title: 'Animal Farm: Political Allegory Study',
     category: 'Lesson Plans',
-    description: 'Examination of Orwell\'s satirical novella exploring political themes, character symbolism, and the corruption of power.',
+    description:
+      "Examination of Orwell's satirical novella exploring political themes, character symbolism, and the corruption of power.",
     suitableFor: ['GCSE', 'Year 10', 'Year 11'],
     fileRef: 'lesson-plans/animal-farm-lessons.ts',
     tags: ['Literature', 'Allegory', 'Political theme', 'Satire', 'GCSE'],
@@ -209,7 +225,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-christmas-carol-redemption',
     title: 'A Christmas Carol: Redemption & Transformation',
     category: 'Lesson Plans',
-    description: 'Study of Dickens\'s ghost story examining themes of redemption, social responsibility, and transformation. Includes context and character development.',
+    description:
+      "Study of Dickens's ghost story examining themes of redemption, social responsibility, and transformation. Includes context and character development.",
     suitableFor: ['GCSE', 'Year 10', 'Year 11'],
     fileRef: 'lesson-plans/christmas-carol-lessons.ts',
     tags: ['Victorian literature', 'Novel', 'Theme', 'Social concern', 'GCSE'],
@@ -219,7 +236,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-edexcel-paper1-writing',
     title: 'Edexcel Paper 1: Creative & Transactional Writing',
     category: 'Lesson Plans',
-    description: 'Preparation for Edexcel Language Paper 1. Covers both creative narratives and transactional writing (letters, emails, articles).',
+    description:
+      'Preparation for Edexcel Language Paper 1. Covers both creative narratives and transactional writing (letters, emails, articles).',
     suitableFor: ['GCSE', 'Edexcel', 'Year 10', 'Year 11'],
     fileRef: 'lesson-plans/edexcel-language-plans.ts',
     tags: ['Edexcel', 'Writing', 'GCSE', 'Exam prep'],
@@ -229,7 +247,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-frankenstein-gothic-science',
     title: 'Frankenstein: Gothic Science & Responsibility',
     category: 'Lesson Plans',
-    description: 'Study of Mary Shelley\'s novel exploring gothic conventions, scientific ambition, and moral responsibility. Includes detailed textual analysis.',
+    description:
+      "Study of Mary Shelley's novel exploring gothic conventions, scientific ambition, and moral responsibility. Includes detailed textual analysis.",
     suitableFor: ['GCSE', 'Year 10', 'Year 11'],
     fileRef: 'lesson-plans/frankenstein-lessons.ts',
     tags: ['Gothic literature', 'Science', 'Responsibility', 'GCSE'],
@@ -239,7 +258,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-great-expectations-society',
     title: 'Great Expectations: Class & Society',
     category: 'Lesson Plans',
-    description: 'Dickens\'s novel examining social class, ambition, and self-understanding. Analyzes character relationships and Victorian society concerns.',
+    description:
+      "Dickens's novel examining social class, ambition, and self-understanding. Analyzes character relationships and Victorian society concerns.",
     suitableFor: ['GCSE', 'Year 10', 'Year 11'],
     fileRef: 'lesson-plans/great-expectations-lessons.ts',
     tags: ['Victorian literature', 'Novel', 'Society', 'GCSE'],
@@ -249,7 +269,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-blood-brothers-social-realism',
     title: 'Blood Brothers: Social Realism & Fate',
     category: 'Lesson Plans',
-    description: 'Russell\'s contemporary drama examining social class, superstition, and fate. Includes staging analysis and thematic exploration.',
+    description:
+      "Russell's contemporary drama examining social class, superstition, and fate. Includes staging analysis and thematic exploration.",
     suitableFor: ['GCSE', 'Year 10', 'Year 11'],
     fileRef: 'lesson-plans/blood-brothers-lessons.ts',
     tags: ['Drama', 'Contemporary', 'Social realism', 'GCSE'],
@@ -259,7 +280,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-language-paper2-transactional',
     title: 'Language Paper 2: Transactional Writing',
     category: 'Lesson Plans',
-    description: 'Focuses on Paper 2 writing tasks: formal correspondence, articles, reviews. Develops audience awareness and appropriate tone.',
+    description:
+      'Focuses on Paper 2 writing tasks: formal correspondence, articles, reviews. Develops audience awareness and appropriate tone.',
     suitableFor: ['GCSE', 'Year 10', 'Year 11', 'Writing'],
     fileRef: 'lesson-plans/language-paper2-lessons.ts',
     tags: ['Writing', 'Transactional', 'Communication', 'GCSE'],
@@ -269,7 +291,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-shakespeare-context',
     title: 'Shakespeare: Historical & Literary Context',
     category: 'Lesson Plans',
-    description: 'Cross-textual study of Shakespeare examining Elizabethan England, theatrical conventions, and language development.',
+    description:
+      'Cross-textual study of Shakespeare examining Elizabethan England, theatrical conventions, and language development.',
     suitableFor: ['GCSE', 'Year 9-11', 'Context'],
     fileRef: 'lesson-plans/shakespeare-context-lessons.ts',
     tags: ['Shakespeare', 'Context', 'Historical', 'Elizabethan'],
@@ -279,7 +302,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-nineteenth-century-prose',
     title: 'Nineteenth Century Prose: Comparison & Analysis',
     category: 'Lesson Plans',
-    description: 'Comparative study of Victorian and early 20th century prose. Develops skills in comparison essays required for GCSE Literature.',
+    description:
+      'Comparative study of Victorian and early 20th century prose. Develops skills in comparison essays required for GCSE Literature.',
     suitableFor: ['GCSE', 'Year 11', 'Literature'],
     fileRef: 'lesson-plans/nineteenth-century-prose-lessons.ts',
     tags: ['Literature', 'Prose', 'Comparison', 'Victorian', 'GCSE'],
@@ -289,7 +313,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-ocr-language-paper1',
     title: 'OCR Language Paper 1: Reading & Analysis',
     category: 'Lesson Plans',
-    description: 'Tailored to OCR exam requirements. Covers unseen reading analysis and evaluation with OCR-specific question types.',
+    description:
+      'Tailored to OCR exam requirements. Covers unseen reading analysis and evaluation with OCR-specific question types.',
     suitableFor: ['GCSE', 'OCR', 'Year 10', 'Year 11'],
     fileRef: 'lesson-plans/ocr-language-plans.ts',
     tags: ['OCR', 'Reading', 'Analysis', 'GCSE'],
@@ -299,7 +324,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-wjec-language-welsh-board',
     title: 'WJEC Language: Welsh Exam Board Materials',
     category: 'Lesson Plans',
-    description: 'WJEC-specific lesson plans covering their syllabus requirements and question formats.',
+    description:
+      'WJEC-specific lesson plans covering their syllabus requirements and question formats.',
     suitableFor: ['GCSE', 'WJEC', 'Wales'],
     fileRef: 'lesson-plans/wjec-language-plans.ts',
     tags: ['WJEC', 'Regional exam board', 'Language'],
@@ -309,7 +335,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-igcse-lessons-caie',
     title: 'IGCSE: Cambridge International Exam Materials',
     category: 'Lesson Plans',
-    description: 'Lesson plans for Cambridge International IGCSE covering their specifications and assessment style.',
+    description:
+      'Lesson plans for Cambridge International IGCSE covering their specifications and assessment style.',
     suitableFor: ['IGCSE', 'Cambridge', 'International'],
     fileRef: 'lesson-plans/igcse-lessons.ts',
     tags: ['IGCSE', 'Cambridge', 'International exam'],
@@ -319,7 +346,11 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-poetry-anthology-plans',
     title: 'Poetry Anthology: Complete Study Guide',
     category: 'Lesson Plans',
-    description: 'Full coverage of AQA/Edexcel poetry anthologies with individual poem lessons and cross-textual comparison activities.',
+    // 2 October 2026: this said "Full coverage of AQA/Edexcel poetry anthologies". The file
+    // has five AQA Power and Conflict pairings, Love and Relationships comparisons (two
+    // AQA, the rest cross-board) and one Edexcel unseen-poetry lesson.
+    description:
+      'Fifteen poetry lessons: five AQA Power and Conflict pairings, Love and Relationships comparisons, and an Edexcel unseen-poetry lesson.',
     suitableFor: ['GCSE', 'Year 10', 'Year 11', 'Poetry'],
     fileRef: 'lesson-plans/poetry-anthology-plans.ts',
     tags: ['Poetry', 'Anthology', 'Comparison', 'GCSE'],
@@ -329,7 +360,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-ks3-lessons-comprehensive',
     title: 'KS3 Comprehensive Curriculum',
     category: 'Lesson Plans',
-    description: 'Year-long schemes of work for Key Stage 3 covering reading, writing, speaking, and listening across genres and texts.',
+    description:
+      'Year-long schemes of work for Key Stage 3 covering reading, writing, speaking, and listening across genres and texts.',
     suitableFor: ['KS3', 'Year 7', 'Year 8', 'Year 9'],
     fileRef: 'lesson-plans/ks3-lessons.ts',
     tags: ['KS3', 'Curriculum', 'Foundation', 'Progression'],
@@ -339,7 +371,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-literature-text-plans',
     title: 'Literature Set Texts: Individual Study Guides',
     category: 'Lesson Plans',
-    description: 'Detailed lesson plans for all GCSE literature set texts with section-by-section analysis.',
+    description:
+      'Detailed lesson plans for all GCSE literature set texts with section-by-section analysis.',
     suitableFor: ['GCSE', 'Year 10', 'Year 11', 'Literature'],
     fileRef: 'lesson-plans/literature-text-plans.ts',
     tags: ['Literature', 'Set texts', 'Analysis', 'GCSE'],
@@ -349,7 +382,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-revision-techniques-engaging',
     title: 'Revision Techniques: Engaging & Effective',
     category: 'Lesson Plans',
-    description: 'Teaches students active revision strategies including mind mapping, spaced repetition, and peer teaching.',
+    description:
+      'Teaches students active revision strategies including mind mapping, spaced repetition, and peer teaching.',
     suitableFor: ['GCSE', 'Year 11', 'Revision'],
     fileRef: 'lesson-plans/revision-techniques-lessons.ts',
     tags: ['Revision', 'Study skills', 'Exam preparation', 'GCSE'],
@@ -359,7 +393,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-pride-prejudice-austen',
     title: 'Pride and Prejudice: Romance & Social Commentary',
     category: 'Lesson Plans',
-    description: 'Study of Austen\'s novel examining social class, gender roles, and Regency society through detailed textual analysis.',
+    description:
+      "Study of Austen's novel examining social class, gender roles, and Regency society through detailed textual analysis.",
     suitableFor: ['GCSE', 'Year 10', 'Year 11'],
     fileRef: 'lesson-plans/pride-prejudice-lessons.ts',
     tags: ['Literature', 'Novel', 'Austen', 'Regency period', 'GCSE'],
@@ -369,7 +404,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-language-p1-q2-analysis',
     title: 'Language Paper 1 Q2: Detailed Analysis Methods',
     category: 'Lesson Plans',
-    description: 'Deep-dive into language analysis techniques for Paper 1, Question 2. Covers identifying techniques and explaining effects.',
+    description:
+      'Deep-dive into language analysis techniques for Paper 1, Question 2. Covers identifying techniques and explaining effects.',
     suitableFor: ['GCSE', 'Year 10', 'Year 11', 'Analysis'],
     fileRef: 'lesson-plans/language-paper1-lessons.ts',
     tags: ['Language', 'Analysis', 'Techniques', 'GCSE', 'Paper 1'],
@@ -379,7 +415,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'lp-language-p2-writing-focus',
     title: 'Language Paper 2: Writing Skills Development',
     category: 'Lesson Plans',
-    description: 'Progressively develops writing skills for Paper 2 including structure, tone control, and audience awareness.',
+    description:
+      'Progressively develops writing skills for Paper 2 including structure, tone control, and audience awareness.',
     suitableFor: ['GCSE', 'Year 10', 'Year 11', 'Writing'],
     fileRef: 'lesson-plans/language-paper2-lessons.ts',
     tags: ['Writing', 'Language', 'Paper 2', 'GCSE'],
@@ -393,7 +430,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'assess-mark-scheme-aqa-lang',
     title: 'AQA Language: Complete Mark Scheme Reference',
     category: 'Assessment',
-    description: 'Detailed mark schemes for all AQA Language papers covering assessment objectives and grade band descriptors.',
+    description:
+      'Detailed mark schemes for all AQA Language papers covering assessment objectives and grade band descriptors.',
     suitableFor: ['GCSE', 'Teachers', 'AQA'],
     fileRef: 'mark-schemes.ts',
     tags: ['Mark scheme', 'Assessment', 'AQA', 'GCSE'],
@@ -403,7 +441,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'assess-mock-aqa-lang-p1',
     title: 'AQA Language Paper 1: Full Mock Exam',
     category: 'Assessment',
-    description: 'Complete mock examination matching AQA specification with reading and writing tasks. Includes model answers.',
+    description:
+      'Complete mock examination matching AQA specification with reading and writing tasks. Includes model answers.',
     suitableFor: ['GCSE', 'Year 10', 'Year 11', 'Practice'],
     fileRef: 'mock-exams-aqa-lang-p1.ts',
     tags: ['Mock exam', 'Practice', 'AQA', 'Paper 1', 'GCSE'],
@@ -413,7 +452,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'assess-mock-aqa-lang-p2',
     title: 'AQA Language Paper 2: Full Mock Exam',
     category: 'Assessment',
-    description: 'Complete mock examination for AQA Language Paper 2 with reading analysis and creative writing task.',
+    description:
+      'Complete mock examination for AQA Language Paper 2 with reading analysis and creative writing task.',
     suitableFor: ['GCSE', 'Year 10', 'Year 11', 'Practice'],
     fileRef: 'mock-exams-aqa-lang-p2.ts',
     tags: ['Mock exam', 'Practice', 'AQA', 'Paper 2', 'GCSE'],
@@ -443,7 +483,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'assess-mock-ocr-language',
     title: 'OCR Language: Practice Papers',
     category: 'Assessment',
-    description: 'Mock examinations designed to OCR specifications with model answers and grade descriptors.',
+    description:
+      'Mock examinations designed to OCR specifications with model answers and grade descriptors.',
     suitableFor: ['GCSE', 'OCR', 'Year 10', 'Year 11'],
     fileRef: 'mock-exams-ocr-lang.ts',
     tags: ['Mock exam', 'OCR', 'Language', 'Practice'],
@@ -473,7 +514,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'assess-ks3-mock-papers',
     title: 'KS3: Full Mock Papers & Tests',
     category: 'Assessment',
-    description: 'KS3 assessment papers in reading, writing, speaking, and listening across different year groups.',
+    description:
+      'KS3 assessment papers in reading, writing, speaking, and listening across different year groups.',
     suitableFor: ['KS3', 'Year 7-9', 'Assessment'],
     fileRef: 'mock-exams-ks3.ts',
     tags: ['KS3', 'Assessment', 'Practice', 'Foundation'],
@@ -493,7 +535,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'assess-marking-rubrics-essays',
     title: 'Essay Assessment Rubrics: Comprehensive Guide',
     category: 'Assessment',
-    description: 'Detailed rubrics for assessing analytical and creative essays with clear grade descriptors.',
+    description:
+      'Detailed rubrics for assessing analytical and creative essays with clear grade descriptors.',
     suitableFor: ['GCSE', 'Teachers', 'Assessment'],
     fileRef: 'teacher-marking-rubrics.ts',
     tags: ['Rubric', 'Assessment', 'Essays', 'Grading'],
@@ -503,7 +546,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'assess-exam-question-bank',
     title: 'Exam Question Bank: 500+ Questions',
     category: 'Assessment',
-    description: 'Extensive collection of past and practice examination questions organized by topic and difficulty.',
+    description:
+      'Extensive collection of past and practice examination questions organized by topic and difficulty.',
     suitableFor: ['GCSE', 'Practice', 'Revision'],
     fileRef: 'exam-questions.ts',
     tags: ['Questions', 'Practice', 'Exam style', 'Database'],
@@ -513,7 +557,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'assess-model-answers-grade9',
     title: 'Grade 9 Model Answers: Complete Examples',
     category: 'Assessment',
-    description: 'Exemplary Grade 9 responses to various question types showing best practice in analysis and writing.',
+    description:
+      'Exemplary Grade 9 responses to various question types showing best practice in analysis and writing.',
     suitableFor: ['GCSE', 'Year 11', 'Stretching'],
     fileRef: 'model-answers.ts',
     tags: ['Model answer', 'Grade 9', 'Exemplar', 'GCSE'],
@@ -523,7 +568,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'assess-gap-analysis-tool',
     title: 'Gap Analysis Framework: Student Progress Tracking',
     category: 'Assessment',
-    description: 'System for identifying specific gaps in student knowledge and targeting intervention strategies.',
+    description:
+      'System for identifying specific gaps in student knowledge and targeting intervention strategies.',
     suitableFor: ['Teachers', 'Data analysis', 'Planning'],
     fileRef: 'teacher-gap-analysis.ts',
     tags: ['Assessment', 'Data', 'Progress', 'Intervention'],
@@ -533,7 +579,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'assess-mark-scheme-edexcel',
     title: 'Edexcel Mark Schemes: All Papers',
     category: 'Assessment',
-    description: 'Complete mark schemes for Edexcel Language and Literature with assessment objective alignment.',
+    description:
+      'Complete mark schemes for Edexcel Language and Literature with assessment objective alignment.',
     suitableFor: ['GCSE', 'Teachers', 'Edexcel'],
     fileRef: 'mark-scheme-questions.ts',
     tags: ['Mark scheme', 'Assessment', 'Edexcel'],
@@ -543,7 +590,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'assess-aqa-lit-comparison-q3',
     title: 'AQA Literature Q3: Comparison Assessments',
     category: 'Assessment',
-    description: 'Assessment materials for comparing two texts, aligned to AQA Literature Paper 2 Q3.',
+    description:
+      'Assessment materials for comparing two texts, aligned to AQA Literature Paper 2 Q3.',
     suitableFor: ['GCSE', 'Year 11', 'Comparison'],
     fileRef: 'mock-exams-aqa-lit.ts',
     tags: ['Comparison', 'AQA', 'Literature', 'Assessment'],
@@ -597,7 +645,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'diff-essay-scaffolds-all-levels',
     title: 'Essay Writing Scaffolds: Foundation, Core, Extension',
     category: 'Differentiation',
-    description: 'Three-tier scaffolds for essay writing with sentence starters, word banks, and support structures at each level.',
+    description:
+      'Three-tier scaffolds for essay writing with sentence starters, word banks, and support structures at each level.',
     suitableFor: ['GCSE', 'Mixed ability', 'Writing'],
     fileRef: 'differentiation-scaffolds.ts',
     tags: ['Scaffolding', 'Differentiation', 'Writing', 'Three levels'],
@@ -607,7 +656,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'diff-analysis-support-sheets',
     title: 'Text Analysis: Scaffolded Support Sheets',
     category: 'Differentiation',
-    description: 'Graduated worksheets for analysing texts with prompts, partially filled examples, and independent tasks.',
+    description:
+      'Graduated worksheets for analysing texts with prompts, partially filled examples, and independent tasks.',
     suitableFor: ['GCSE', 'Mixed ability', 'Analysis'],
     fileRef: 'teacher-differentiation.ts',
     tags: ['Analysis', 'Scaffolding', 'Support', 'Differentiation'],
@@ -617,7 +667,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'diff-vocabulary-word-banks',
     title: 'Subject Terminology: Tiered Word Banks',
     category: 'Differentiation',
-    description: 'Vocabulary and technical terms organized by difficulty level with definitions and examples.',
+    description:
+      'Vocabulary and technical terms organized by difficulty level with definitions and examples.',
     suitableFor: ['GCSE', 'KS3', 'All abilities'],
     fileRef: 'differentiation-scaffolds.ts',
     tags: ['Vocabulary', 'Terminology', 'Word bank', 'Support'],
@@ -627,7 +678,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'diff-quote-banks-set-texts',
     title: 'Quote Banks: Organized by Text & Theme',
     category: 'Differentiation',
-    description: 'Pre-selected key quotes from set texts organized by theme and character with analysis support.',
+    description:
+      'Pre-selected key quotes from set texts organized by theme and character with analysis support.',
     suitableFor: ['GCSE', 'Literature', 'Support'],
     fileRef: 'differentiation-scaffolds.ts',
     tags: ['Quotes', 'Reference', 'Literature', 'Support'],
@@ -637,7 +689,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'diff-sentence-starter-banks',
     title: 'Sentence Starters: Writing & Analysis',
     category: 'Differentiation',
-    description: 'Banks of sentence starters for analytical writing, creative writing, and formal communication.',
+    description:
+      'Banks of sentence starters for analytical writing, creative writing, and formal communication.',
     suitableFor: ['GCSE', 'Writing', 'Support'],
     fileRef: 'differentiation-scaffolds.ts',
     tags: ['Sentence starters', 'Writing support', 'Scaffolding'],
@@ -647,7 +700,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'diff-reading-comprehension-support',
     title: 'Reading Comprehension: Graduated Worksheets',
     category: 'Differentiation',
-    description: 'Comprehension tasks at three levels with scaffolded questions progressing from literal to inferential.',
+    description:
+      'Comprehension tasks at three levels with scaffolded questions progressing from literal to inferential.',
     suitableFor: ['KS3', 'GCSE', 'Reading', 'Mixed ability'],
     fileRef: 'teacher-differentiation.ts',
     tags: ['Reading', 'Comprehension', 'Scaffolding', 'Differentiation'],
@@ -657,7 +711,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'diff-character-mapping-tools',
     title: 'Character Mapping: Visual Scaffolds',
     category: 'Differentiation',
-    description: 'Graphic organizers for mapping character relationships, development, and key moments in texts.',
+    description:
+      'Graphic organizers for mapping character relationships, development, and key moments in texts.',
     suitableFor: ['Literature', 'GCSE', 'Visual learners'],
     fileRef: 'teacher-differentiation.ts',
     tags: ['Character', 'Visual', 'Graphic organizer', 'Literature'],
@@ -667,7 +722,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'diff-creative-writing-frames',
     title: 'Creative Writing: Structured Frames',
     category: 'Differentiation',
-    description: 'Graduated writing frames for narrative and descriptive writing with increasing complexity.',
+    description:
+      'Graduated writing frames for narrative and descriptive writing with increasing complexity.',
     suitableFor: ['GCSE', 'Writing', 'All abilities'],
     fileRef: 'teacher-differentiation.ts',
     tags: ['Creative writing', 'Frames', 'Scaffolding', 'Writing'],
@@ -677,7 +733,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'diff-comparison-matrix',
     title: 'Comparison Matrix: Text Analysis Tool',
     category: 'Differentiation',
-    description: 'Structured matrix for comparing themes, characters, or techniques across two texts.',
+    description:
+      'Structured matrix for comparing themes, characters, or techniques across two texts.',
     suitableFor: ['GCSE', 'Literature', 'Comparison'],
     fileRef: 'differentiation-scaffolds.ts',
     tags: ['Comparison', 'Graphic organizer', 'Tool', 'Literature'],
@@ -687,7 +744,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'diff-essay-planning-scaffold',
     title: 'Essay Planning: Step-by-Step Scaffold',
     category: 'Differentiation',
-    description: 'Detailed planning worksheets guiding students through essay structure from question analysis to drafting.',
+    description:
+      'Detailed planning worksheets guiding students through essay structure from question analysis to drafting.',
     suitableFor: ['GCSE', 'Writing', 'Support'],
     fileRef: 'teacher-differentiation.ts',
     tags: ['Planning', 'Essay', 'Scaffolding', 'Writing process'],
@@ -697,7 +755,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'diff-technical-accuracy-checklist',
     title: 'Technical Accuracy: Editing Checklist',
     category: 'Differentiation',
-    description: 'Graduated checklists for proofreading and editing focusing on spelling, punctuation, and grammar.',
+    description:
+      'Graduated checklists for proofreading and editing focusing on spelling, punctuation, and grammar.',
     suitableFor: ['GCSE', 'All abilities', 'Writing'],
     fileRef: 'teacher-differentiation.ts',
     tags: ['Editing', 'Checklist', 'Technical accuracy', 'Writing'],
@@ -707,7 +766,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'diff-inference-question-stems',
     title: 'Inference Training: Question Stems',
     category: 'Differentiation',
-    description: 'Structured question stems to develop inferential thinking at Foundation, Core, and Extension levels.',
+    description:
+      'Structured question stems to develop inferential thinking at Foundation, Core, and Extension levels.',
     suitableFor: ['Reading', 'Inference', 'GCSE', 'Differentiation'],
     fileRef: 'differentiation-scaffolds.ts',
     tags: ['Inference', 'Questions', 'Thinking skills', 'Scaffolding'],
@@ -727,7 +787,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'diff-extension-challenges',
     title: 'Extension Challenges: Stretching Tasks',
     category: 'Differentiation',
-    description: 'High-level challenge tasks for high-achieving students including complex analysis and synthesis.',
+    description:
+      'High-level challenge tasks for high-achieving students including complex analysis and synthesis.',
     suitableFor: ['GCSE', 'Stretching', 'G&T'],
     fileRef: 'teacher-differentiation.ts',
     tags: ['Extension', 'Challenge', 'Stretching', 'High ability'],
@@ -741,7 +802,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'disp-classroom-poster-techniques',
     title: 'Classroom Posters: Literary Techniques',
     category: 'Display',
-    description: 'Colorful, engaging posters displaying key literary techniques with definitions and examples for classroom walls.',
+    description:
+      'Colorful, engaging posters displaying key literary techniques with definitions and examples for classroom walls.',
     suitableFor: ['Classroom', 'GCSE', 'Visual learning'],
     fileRef: 'teacher-display-resources.ts',
     tags: ['Poster', 'Techniques', 'Visual', 'Reference'],
@@ -751,7 +813,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'disp-grammar-rules-chart',
     title: 'Grammar & Punctuation: Reference Charts',
     category: 'Display',
-    description: 'Wall charts showing rules for punctuation, sentence types, and grammatical structures with examples.',
+    description:
+      'Wall charts showing rules for punctuation, sentence types, and grammatical structures with examples.',
     suitableFor: ['Classroom', 'Grammar', 'Reference'],
     fileRef: 'teacher-display-resources.ts',
     tags: ['Grammar', 'Chart', 'Reference', 'Punctuation'],
@@ -771,7 +834,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'disp-exam-board-timeline',
     title: 'Exam Specification Timeline Chart',
     category: 'Display',
-    description: 'Visual timeline showing key points in the academic year for exam preparation and key deadlines.',
+    description:
+      'Visual timeline showing key points in the academic year for exam preparation and key deadlines.',
     suitableFor: ['Planning', 'GCSE', 'Year 11'],
     fileRef: 'teacher-display-resources.ts',
     tags: ['Timeline', 'Exam preparation', 'Planning', 'Visual'],
@@ -791,7 +855,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'disp-writing-process-flowchart',
     title: 'Writing Process: Visual Flowchart',
     category: 'Display',
-    description: 'Step-by-step flowchart showing the writing process from planning through revision.',
+    description:
+      'Step-by-step flowchart showing the writing process from planning through revision.',
     suitableFor: ['Writing', 'Classroom', 'Process'],
     fileRef: 'teacher-display-resources.ts',
     tags: ['Process', 'Writing', 'Flowchart', 'Visual'],
@@ -801,7 +866,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'disp-quote-of-week',
     title: 'Quote Display: Weekly Updates',
     category: 'Display',
-    description: 'Featured quotes from literature with analysis for classroom display and discussion.',
+    description:
+      'Featured quotes from literature with analysis for classroom display and discussion.',
     suitableFor: ['Literature', 'Classroom', 'Engagement'],
     fileRef: 'teacher-display-resources.ts',
     tags: ['Quote', 'Display', 'Literature', 'Weekly'],
@@ -811,7 +877,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'disp-theme-concept-map',
     title: 'Theme Concept Maps: Visual Exploration',
     category: 'Display',
-    description: 'Large concept maps showing how themes interconnect across different texts and units.',
+    description:
+      'Large concept maps showing how themes interconnect across different texts and units.',
     suitableFor: ['Classroom', 'Themes', 'Visual'],
     fileRef: 'teacher-display-resources.ts',
     tags: ['Concept map', 'Theme', 'Visual', 'Literature'],
@@ -821,7 +888,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'disp-audience-purpose-framework',
     title: 'Audience & Purpose: Decision Framework',
     category: 'Display',
-    description: 'Visual framework showing how audience and purpose determine writing style and technique.',
+    description:
+      'Visual framework showing how audience and purpose determine writing style and technique.',
     suitableFor: ['Writing', 'Classroom', 'Reference'],
     fileRef: 'teacher-display-resources.ts',
     tags: ['Framework', 'Audience', 'Purpose', 'Writing'],
@@ -865,7 +933,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'hw-starter-activities-bank',
     title: 'Starter Activities: 100+ Options',
     category: 'Homework',
-    description: 'Bank of quick starter activities including vocabulary challenges, grammar fixes, and quote analysis.',
+    description:
+      'Bank of quick starter activities including vocabulary challenges, grammar fixes, and quote analysis.',
     suitableFor: ['GCSE', 'KS3', 'Daily use'],
     fileRef: 'starter-activities.ts',
     tags: ['Starter', 'Warm-up', 'Activity', 'Engagement'],
@@ -875,7 +944,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'hw-plenary-tasks-bank',
     title: 'Plenary Activities: Consolidation Tasks',
     category: 'Homework',
-    description: 'Plenary activities to consolidate learning including exit tickets, reflections, and summary tasks.',
+    description:
+      'Plenary activities to consolidate learning including exit tickets, reflections, and summary tasks.',
     suitableFor: ['Lesson closure', 'Reflection', 'Assessment'],
     fileRef: 'plenary-activities.ts',
     tags: ['Plenary', 'Consolidation', 'Reflection', 'Closure'],
@@ -885,7 +955,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'hw-flashcard-vocabulary',
     title: 'Flashcard Sets: Subject Vocabulary',
     category: 'Homework',
-    description: 'Digital flashcard sets for learning subject terminology, key concepts, and definitions.',
+    description:
+      'Digital flashcard sets for learning subject terminology, key concepts, and definitions.',
     suitableFor: ['Revision', 'Vocabulary', 'Self-study'],
     fileRef: 'flashcard-vocabulary.ts',
     tags: ['Flashcards', 'Vocabulary', 'Revision', 'Self-study'],
@@ -905,7 +976,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'hw-flashcard-set-texts',
     title: 'Flashcard Sets: Set Text Knowledge',
     category: 'Homework',
-    description: 'Flashcard packs for key characters, plot points, and quotations from GCSE set texts.',
+    description:
+      'Flashcard packs for key characters, plot points, and quotations from GCSE set texts.',
     suitableFor: ['Literature', 'Revision', 'Independent learning'],
     fileRef: 'flashcard-set-texts.ts',
     tags: ['Flashcards', 'Literature', 'Revision', 'Knowledge'],
@@ -925,7 +997,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'hw-practice-questions-by-level',
     title: 'Practice Questions: Graduated Difficulty',
     category: 'Homework',
-    description: 'Question banks at Foundation, Core, and Extension levels for independent practice.',
+    description:
+      'Question banks at Foundation, Core, and Extension levels for independent practice.',
     suitableFor: ['Practice', 'Homework', 'All abilities'],
     fileRef: 'practice-data.ts',
     tags: ['Practice questions', 'Differentiation', 'Homework'],
@@ -935,7 +1008,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'hw-context-cards-all-texts',
     title: 'Context Cards: Historical & Literary Background',
     category: 'Homework',
-    description: 'Information cards providing historical and literary context for set texts and periods.',
+    description:
+      'Information cards providing historical and literary context for set texts and periods.',
     suitableFor: ['Context', 'Literature', 'Background knowledge'],
     fileRef: 'context-cards.ts',
     tags: ['Context', 'Background', 'Literature', 'Learning'],
@@ -945,7 +1019,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'hw-comparison-essay-guide',
     title: 'Comparison Essay: Step-by-Step Guide',
     category: 'Homework',
-    description: 'Detailed guidance for writing comparison essays with worked examples and practice tasks.',
+    description:
+      'Detailed guidance for writing comparison essays with worked examples and practice tasks.',
     suitableFor: ['Essay writing', 'Literature', 'GCSE'],
     fileRef: 'comparison-essay-guide.ts',
     tags: ['Comparison', 'Essay', 'Guide', 'Writing'],
@@ -955,7 +1030,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'hw-writing-masterclass',
     title: 'Writing Masterclass: Advanced Techniques',
     category: 'Homework',
-    description: 'Advanced writing techniques and craft lessons for improving creative and analytical writing.',
+    description:
+      'Advanced writing techniques and craft lessons for improving creative and analytical writing.',
     suitableFor: ['Writing', 'Advanced', 'Independent learning'],
     fileRef: 'writing-masterclass.ts',
     tags: ['Writing', 'Technique', 'Advanced', 'Craft'],
@@ -965,7 +1041,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'hw-spoken-resources',
     title: 'Spoken Language: Speaking & Listening Resources',
     category: 'Homework',
-    description: 'Resources for developing speaking skills including presentation tasks and discussion prompts.',
+    description:
+      'Resources for developing speaking skills including presentation tasks and discussion prompts.',
     suitableFor: ['Spoken language', 'GCSE', 'Communication'],
     fileRef: 'spoken-language-resources.ts',
     tags: ['Spoken language', 'Speaking', 'Listening', 'Communication'],
@@ -989,7 +1066,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'int-catch-up-phonics-reading',
     title: 'Reading Intervention: Phonics & Decoding',
     category: 'Intervention',
-    description: 'Structured phonics intervention for students struggling with word recognition and reading fluency.',
+    description:
+      'Structured phonics intervention for students struggling with word recognition and reading fluency.',
     suitableFor: ['KS3', 'Lower ability', 'Reading support'],
     fileRef: 'teacher-resources.ts',
     tags: ['Intervention', 'Phonics', 'Reading', 'Support'],
@@ -999,7 +1077,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'int-sentence-construction-building',
     title: 'Sentence Building: Scaffolded Construction',
     category: 'Intervention',
-    description: 'Systematic intervention for building sentences from word cards progressing to independent writing.',
+    description:
+      'Systematic intervention for building sentences from word cards progressing to independent writing.',
     suitableFor: ['KS3', 'Intervention', 'Writing'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['Writing', 'Intervention', 'Sentence', 'Construction'],
@@ -1009,7 +1088,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'int-spelling-intervention-program',
     title: 'Spelling: Structured Intervention',
     category: 'Intervention',
-    description: 'Multi-sensory spelling intervention program targeting common patterns and problem spellings.',
+    description:
+      'Multi-sensory spelling intervention program targeting common patterns and problem spellings.',
     suitableFor: ['Intervention', 'Spelling', 'KS3'],
     fileRef: 'teacher-resources.ts',
     tags: ['Spelling', 'Intervention', 'Multi-sensory', 'Support'],
@@ -1019,7 +1099,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'int-comprehension-support-program',
     title: 'Comprehension: Intensive Support',
     category: 'Intervention',
-    description: 'Intensive comprehension program with scaffolded texts and guided practice for struggling readers.',
+    description:
+      'Intensive comprehension program with scaffolded texts and guided practice for struggling readers.',
     suitableFor: ['Reading', 'Intervention', 'Support'],
     fileRef: 'teacher-differentiation.ts',
     tags: ['Reading', 'Comprehension', 'Intervention', 'Support'],
@@ -1029,7 +1110,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'int-vocabulary-building-systematic',
     title: 'Vocabulary: Systematic Building Program',
     category: 'Intervention',
-    description: 'Structured vocabulary building with word families, morphology, and contextual learning.',
+    description:
+      'Structured vocabulary building with word families, morphology, and contextual learning.',
     suitableFor: ['Vocabulary', 'Intervention', 'Support'],
     fileRef: 'teacher-resources.ts',
     tags: ['Vocabulary', 'Word learning', 'Intervention', 'Support'],
@@ -1039,7 +1121,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'int-confidence-building-activities',
     title: 'Confidence Building: Low-Threat Activities',
     category: 'Intervention',
-    description: 'Supportive activities designed to build confidence in students with low self-efficacy.',
+    description:
+      'Supportive activities designed to build confidence in students with low self-efficacy.',
     suitableFor: ['SEND', 'Emotional support', 'Intervention'],
     fileRef: 'teacher-resources.ts',
     tags: ['Confidence', 'Support', 'SEND', 'Wellbeing'],
@@ -1049,7 +1132,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'int-exam-anxiety-support',
     title: 'Exam Anxiety: Coping Strategies',
     category: 'Intervention',
-    description: 'Resources for managing exam anxiety including breathing techniques and mental preparation.',
+    description:
+      'Resources for managing exam anxiety including breathing techniques and mental preparation.',
     suitableFor: ['GCSE', 'Wellbeing', 'Mental health'],
     fileRef: 'teaching-guides/exam-prep-guide.ts',
     tags: ['Anxiety', 'Wellbeing', 'Exam preparation', 'Support'],
@@ -1059,7 +1143,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'int-additional-adult-scripts',
     title: 'Additional Adult: Scripted Support',
     category: 'Intervention',
-    description: 'Scripts and guidance for teaching assistants and additional adults supporting learners.',
+    description:
+      'Scripts and guidance for teaching assistants and additional adults supporting learners.',
     suitableFor: ['TA support', 'Intervention', 'SEND'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['TA support', 'Scripts', 'Intervention', 'SEND'],
@@ -1069,7 +1154,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'int-small-group-literacy',
     title: 'Small Group: Focused Literacy Sessions',
     category: 'Intervention',
-    description: 'Resource pack for delivering small group literacy interventions with clear learning objectives.',
+    description:
+      'Resource pack for delivering small group literacy interventions with clear learning objectives.',
     suitableFor: ['Intervention', 'Small group', 'Targeted support'],
     fileRef: 'teacher-resources.ts',
     tags: ['Small group', 'Intervention', 'Focused', 'Targeted'],
@@ -1079,7 +1165,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'int-efl-english-language-learners',
     title: 'EFL Support: English Language Learners',
     category: 'Intervention',
-    description: 'Resources specifically designed for English as a Foreign Language learners including simplified texts.',
+    description:
+      'Resources specifically designed for English as a Foreign Language learners including simplified texts.',
     suitableFor: ['EFL', 'International', 'Language support'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['EFL', 'English learners', 'Language support', 'Intervention'],
@@ -1093,7 +1180,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'cpd-assessment-for-learning-guide',
     title: 'CPD: Assessment for Learning',
     category: 'CPD',
-    description: 'Comprehensive guide to formative assessment strategies including feedback, questioning, and self-assessment.',
+    description:
+      'Comprehensive guide to formative assessment strategies including feedback, questioning, and self-assessment.',
     suitableFor: ['Teachers', 'Professional development', 'Assessment'],
     fileRef: 'teaching-guides/assessment-for-learning.ts',
     tags: ['CPD', 'Assessment', 'Professional development', 'Training'],
@@ -1103,7 +1191,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'cpd-differentiation-masterclass',
     title: 'CPD: Differentiation Masterclass',
     category: 'CPD',
-    description: 'In-depth guide to differentiation strategies including tiering, scaffolding, and intervention planning.',
+    description:
+      'In-depth guide to differentiation strategies including tiering, scaffolding, and intervention planning.',
     suitableFor: ['Teachers', 'Professional development', 'Differentiation'],
     fileRef: 'teaching-guides/differentiation-guide.ts',
     tags: ['CPD', 'Differentiation', 'Training', 'Professional development'],
@@ -1113,7 +1202,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'cpd-essay-marking-techniques',
     title: 'CPD: Expert Essay Marking Techniques',
     category: 'CPD',
-    description: 'Training on consistent, constructive essay marking with exemplification and grade justification.',
+    description:
+      'Training on consistent, constructive essay marking with exemplification and grade justification.',
     suitableFor: ['Teachers', 'Marking', 'Assessment'],
     fileRef: 'teaching-guides/essay-marking-guide.ts',
     tags: ['CPD', 'Marking', 'Assessment', 'Quality assurance'],
@@ -1123,7 +1213,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'cpd-marking-guide-comprehensive',
     title: 'CPD: Comprehensive Marking Guide',
     category: 'CPD',
-    description: 'Detailed guide to marking aligned with exam board criteria and providing developmental feedback.',
+    description:
+      'Detailed guide to marking aligned with exam board criteria and providing developmental feedback.',
     suitableFor: ['Teachers', 'Quality assurance', 'Marking'],
     fileRef: 'teaching-guides/marking-guide.ts',
     tags: ['CPD', 'Marking', 'Feedback', 'Quality assurance'],
@@ -1133,7 +1224,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'cpd-closing-attainment-gaps',
     title: 'CPD: Closing Attainment Gaps',
     category: 'CPD',
-    description: 'Strategic guide to identifying and closing gaps in student achievement through targeted intervention.',
+    description:
+      'Strategic guide to identifying and closing gaps in student achievement through targeted intervention.',
     suitableFor: ['Teachers', 'School leaders', 'Data analysis'],
     fileRef: 'teaching-guides/closing-gaps.ts',
     tags: ['CPD', 'Attainment', 'Gaps', 'Intervention'],
@@ -1143,7 +1235,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'cpd-data-driven-teaching',
     title: 'CPD: Data-Driven Teaching',
     category: 'CPD',
-    description: 'Guide to using assessment data to inform teaching decisions and track student progress.',
+    description:
+      'Guide to using assessment data to inform teaching decisions and track student progress.',
     suitableFor: ['Teachers', 'Data analysis', 'Progress tracking'],
     fileRef: 'teaching-guides/data-driven-teaching-guide.ts',
     tags: ['CPD', 'Data', 'Analysis', 'Progress'],
@@ -1153,7 +1246,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'cpd-revision-strategies-teaching',
     title: 'CPD: Teaching Effective Revision Strategies',
     category: 'CPD',
-    description: 'Training on teaching students how to revise effectively including spacing, testing, and elaboration.',
+    description:
+      'Training on teaching students how to revise effectively including spacing, testing, and elaboration.',
     suitableFor: ['Teachers', 'Revision', 'Exam preparation'],
     fileRef: 'teaching-guides/revision-strategies.ts',
     tags: ['CPD', 'Revision', 'Learning science', 'Training'],
@@ -1173,7 +1267,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'cpd-exam-preparation-strategy',
     title: 'CPD: Strategic Exam Preparation',
     category: 'CPD',
-    description: 'Comprehensive guide to planning and delivering effective exam preparation across the year.',
+    description:
+      'Comprehensive guide to planning and delivering effective exam preparation across the year.',
     suitableFor: ['Teachers', 'Exam board training', 'Planning'],
     fileRef: 'teaching-guides/exam-prep-guide.ts',
     tags: ['CPD', 'Exam preparation', 'Strategy', 'Planning'],
@@ -1183,7 +1278,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'cpd-using-data-formatively',
     title: 'CPD: Using Assessment Data Formatively',
     category: 'CPD',
-    description: 'Training on analyzing assessment data to identify trends and plan targeted intervention.',
+    description:
+      'Training on analyzing assessment data to identify trends and plan targeted intervention.',
     suitableFor: ['Teachers', 'Data literacy', 'Planning'],
     fileRef: 'teaching-guides/using-data-guide.ts',
     tags: ['CPD', 'Data', 'Formative assessment', 'Analysis'],
@@ -1193,7 +1289,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'cpd-exam-board-updates-aqa',
     title: 'CPD: AQA Exam Board Updates & Guidance',
     category: 'CPD',
-    description: 'Training materials from AQA including specification guidance and examiner feedback.',
+    description:
+      'Training materials from AQA including specification guidance and examiner feedback.',
     suitableFor: ['Teachers', 'AQA schools', 'Exam board training'],
     fileRef: 'exam-guides/aqa-guide.ts',
     tags: ['CPD', 'AQA', 'Exam board', 'Training'],
@@ -1203,7 +1300,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'cpd-teaching-poetry-specialist',
     title: 'CPD: Teaching Poetry (Specialist Training)',
     category: 'CPD',
-    description: 'In-depth training on teaching poetry including text selection, analysis approaches, and engagement.',
+    description:
+      'In-depth training on teaching poetry including text selection, analysis approaches, and engagement.',
     suitableFor: ['Teachers', 'Poetry specialist', 'Professional development'],
     fileRef: 'teaching-guides/index.ts',
     tags: ['CPD', 'Poetry', 'Specialist', 'Teaching methods'],
@@ -1217,7 +1315,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'parent-exam-info-sheet',
     title: 'Parent Information: GCSE Exam Guide',
     category: 'Parent Communication',
-    description: 'Comprehensive information sheet for parents explaining GCSE structure, timings, and how to support.',
+    description:
+      'Comprehensive information sheet for parents explaining GCSE structure, timings, and how to support.',
     suitableFor: ['Parents', 'GCSE', 'Communication'],
     fileRef: 'teacher-resources.ts',
     tags: ['Parent communication', 'GCSE', 'Information', 'Support'],
@@ -1227,7 +1326,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'parent-support-your-child',
     title: 'Parent Guide: Supporting Learning at Home',
     category: 'Parent Communication',
-    description: 'Practical guide for parents on how to support their child\'s English learning including conversation starters.',
+    description:
+      "Practical guide for parents on how to support their child's English learning including conversation starters.",
     suitableFor: ['Parents', 'Home learning', 'Partnership'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['Parent guide', 'Home support', 'Partnership', 'Learning'],
@@ -1237,7 +1337,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'parent-vocabulary-help',
     title: 'Parent Guide: Understanding English Terminology',
     category: 'Parent Communication',
-    description: 'Explanation of English subject terminology for parents to help them support their children.',
+    description:
+      'Explanation of English subject terminology for parents to help them support their children.',
     suitableFor: ['Parents', 'Understanding', 'Support'],
     fileRef: 'teacher-resources.ts',
     tags: ['Parent guide', 'Terminology', 'Understanding', 'Support'],
@@ -1257,7 +1358,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'parent-revision-timetable-support',
     title: 'Parent Guide: Supporting Revision at Home',
     category: 'Parent Communication',
-    description: 'Guidance for parents on helping with exam revision including timetabling and avoiding stress.',
+    description:
+      'Guidance for parents on helping with exam revision including timetabling and avoiding stress.',
     suitableFor: ['Parents', 'Revision', 'Exam preparation'],
     fileRef: 'teaching-guides/revision-strategies.ts',
     tags: ['Parent guide', 'Revision', 'Support', 'Exam prep'],
@@ -1267,7 +1369,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'parent-reading-list-recommendations',
     title: 'Reading List: Book Recommendations for Parents',
     category: 'Parent Communication',
-    description: 'Recommended reading lists for different ages/abilities to encourage wider reading at home.',
+    description:
+      'Recommended reading lists for different ages/abilities to encourage wider reading at home.',
     suitableFor: ['Parents', 'Reading', 'Recommendations'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['Reading list', 'Recommendations', 'Parent guide', 'Wider reading'],
@@ -1277,7 +1380,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'parent-university-preparation',
     title: 'Parent Guide: A-Level & University Preparation',
     category: 'Parent Communication',
-    description: 'Information for parents on how GCSE English prepares for A-Level and university study.',
+    description:
+      'Information for parents on how GCSE English prepares for A-Level and university study.',
     suitableFor: ['Parents', 'Post-GCSE', 'Progression'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['Parent guide', 'A-Level', 'University', 'Progression'],
@@ -1291,7 +1395,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'send-dyslexia-strategies',
     title: 'SEND: Dyslexia Support Strategies',
     category: 'SEND',
-    description: 'Evidence-based strategies for supporting students with dyslexia including reading and writing aids.',
+    description:
+      'Evidence-based strategies for supporting students with dyslexia including reading and writing aids.',
     suitableFor: ['SEND', 'Dyslexia', 'Support', 'Accessibility'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['SEND', 'Dyslexia', 'Strategies', 'Support'],
@@ -1301,7 +1406,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'send-visual-support-tools',
     title: 'SEND: Visual Support Tools',
     category: 'SEND',
-    description: 'Visual supports including symbol supports, visual timetables, and graphic organizers for SEND learners.',
+    description:
+      'Visual supports including symbol supports, visual timetables, and graphic organizers for SEND learners.',
     suitableFor: ['SEND', 'Visual learners', 'Communication'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['SEND', 'Visual support', 'Communication', 'Accessibility'],
@@ -1311,7 +1417,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'send-speech-language-support',
     title: 'SEND: Speech & Language Support',
     category: 'SEND',
-    description: 'Resources for supporting students with speech and language needs including communication strategies.',
+    description:
+      'Resources for supporting students with speech and language needs including communication strategies.',
     suitableFor: ['SEND', 'Speech', 'Language', 'Communication'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['SEND', 'Speech', 'Language', 'Communication'],
@@ -1321,7 +1428,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'send-sensory-regulation-tools',
     title: 'SEND: Sensory & Regulation Support',
     category: 'SEND',
-    description: 'Tools for managing sensory needs and supporting emotional regulation in learners with SEND.',
+    description:
+      'Tools for managing sensory needs and supporting emotional regulation in learners with SEND.',
     suitableFor: ['SEND', 'Regulation', 'Sensory', 'Wellbeing'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['SEND', 'Sensory', 'Regulation', 'Wellbeing'],
@@ -1331,7 +1439,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'send-alternative-text-formats',
     title: 'SEND: Alternative Text Formats',
     category: 'SEND',
-    description: 'Texts adapted into different formats including larger print, simplified language, and audio versions.',
+    description:
+      'Texts adapted into different formats including larger print, simplified language, and audio versions.',
     suitableFor: ['SEND', 'Accessibility', 'Different formats'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['SEND', 'Accessibility', 'Text format', 'Adaptation'],
@@ -1341,7 +1450,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'send-technology-assistive-aids',
     title: 'SEND: Assistive Technology & Digital Aids',
     category: 'SEND',
-    description: 'Guide to assistive technology tools and digital aids to support SEND learners in English.',
+    description:
+      'Guide to assistive technology tools and digital aids to support SEND learners in English.',
     suitableFor: ['SEND', 'Technology', 'Accessibility'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['SEND', 'Assistive technology', 'Accessibility', 'Digital'],
@@ -1351,7 +1461,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'send-ADHD-strategies',
     title: 'SEND: ADHD Support Strategies',
     category: 'SEND',
-    description: 'Classroom strategies for supporting students with ADHD including movement breaks and focus aids.',
+    description:
+      'Classroom strategies for supporting students with ADHD including movement breaks and focus aids.',
     suitableFor: ['SEND', 'ADHD', 'Attention', 'Behaviour'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['SEND', 'ADHD', 'Attention', 'Strategies'],
@@ -1361,7 +1472,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'send-autism-classroom-adjustments',
     title: 'SEND: Autism Spectrum Adjustments',
     category: 'SEND',
-    description: 'Classroom adjustments and sensory considerations for students on the autism spectrum.',
+    description:
+      'Classroom adjustments and sensory considerations for students on the autism spectrum.',
     suitableFor: ['SEND', 'Autism', 'Adjustment', 'Sensory'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['SEND', 'Autism', 'Classroom adjustment', 'Sensory'],
@@ -1371,7 +1483,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'send-ei-english-interpreter',
     title: 'SEND: Emotional & Interpersonal Support',
     category: 'SEND',
-    description: 'Resources for supporting emotional well-being and social interactions in learners with SEND.',
+    description:
+      'Resources for supporting emotional well-being and social interactions in learners with SEND.',
     suitableFor: ['SEND', 'Wellbeing', 'Social', 'Emotional'],
     fileRef: 'teacher-resources-extended.ts',
     tags: ['SEND', 'Emotional', 'Wellbeing', 'Social'],
@@ -1385,7 +1498,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'scheme-year7-full-scheme',
     title: 'Year 7: Complete Scheme of Work',
     category: 'Schemes of Work',
-    description: 'Full year scheme covering reading, writing, speaking/listening, and grammar across diverse texts.',
+    description:
+      'Full year scheme covering reading, writing, speaking/listening, and grammar across diverse texts.',
     suitableFor: ['KS3', 'Year 7', 'Curriculum planning'],
     fileRef: 'lesson-plans/ks3-plans.ts',
     tags: ['Scheme of work', 'Year 7', 'Curriculum', 'Planning'],
@@ -1395,7 +1509,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'scheme-year8-full-scheme',
     title: 'Year 8: Complete Scheme of Work',
     category: 'Schemes of Work',
-    description: 'Year 8 scheme building skills with increased text complexity and independent study.',
+    description:
+      'Year 8 scheme building skills with increased text complexity and independent study.',
     suitableFor: ['KS3', 'Year 8', 'Curriculum planning'],
     fileRef: 'lesson-plans/ks3-plans.ts',
     tags: ['Scheme of work', 'Year 8', 'Curriculum', 'Planning'],
@@ -1405,7 +1520,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'scheme-year9-gcse-prep',
     title: 'Year 9: GCSE Preparation Scheme',
     category: 'Schemes of Work',
-    description: 'Year 9 scheme beginning formal GCSE content preparation with analytical writing focus.',
+    description:
+      'Year 9 scheme beginning formal GCSE content preparation with analytical writing focus.',
     suitableFor: ['KS3', 'Year 9', 'GCSE prep'],
     fileRef: 'lesson-plans/ks3-plans.ts',
     tags: ['Scheme of work', 'Year 9', 'GCSE prep', 'Progression'],
@@ -1415,7 +1531,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'scheme-gcse-literature-year10-11',
     title: 'GCSE Literature: Full Year Scheme',
     category: 'Schemes of Work',
-    description: 'Complete two-year scheme for GCSE Literature including all set texts and poetry anthology.',
+    description:
+      'Complete two-year scheme for GCSE Literature including all set texts and poetry anthology.',
     suitableFor: ['GCSE', 'Year 10-11', 'Literature', 'Planning'],
     fileRef: 'lesson-plans/literature-text-plans.ts',
     tags: ['Scheme of work', 'Literature', 'GCSE', 'Planning'],
@@ -1435,7 +1552,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'scheme-poetry-focused-unit',
     title: 'Poetry Focus: 6-Week Unit Scheme',
     category: 'Schemes of Work',
-    description: 'Focused poetry unit covering reading, writing, analysis, and anthology preparation.',
+    description:
+      'Focused poetry unit covering reading, writing, analysis, and anthology preparation.',
     suitableFor: ['GCSE', 'KS3', 'Poetry', 'Unit planning'],
     fileRef: 'lesson-plans/poetry-lessons.ts',
     tags: ['Scheme of work', 'Poetry', 'Unit', 'Planning'],
@@ -1459,7 +1577,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'rev-guide-gcse-language',
     title: 'Revision Guide: GCSE Language Topics',
     category: 'Revision',
-    description: 'Comprehensive revision guide covering all GCSE Language topics with summaries and practice questions.',
+    description:
+      'Comprehensive revision guide covering all GCSE Language topics with summaries and practice questions.',
     suitableFor: ['GCSE', 'Year 11', 'Revision'],
     fileRef: 'revision-guides.ts',
     tags: ['Revision guide', 'Language', 'GCSE', 'Summary'],
@@ -1469,7 +1588,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'rev-guide-gcse-literature',
     title: 'Revision Guide: GCSE Literature Texts',
     category: 'Revision',
-    description: 'Revision guide for all GCSE literature set texts with key quotes, character analysis, and themes.',
+    description:
+      'Revision guide for all GCSE literature set texts with key quotes, character analysis, and themes.',
     suitableFor: ['GCSE', 'Year 11', 'Literature', 'Revision'],
     fileRef: 'revision-guides.ts',
     tags: ['Revision guide', 'Literature', 'Texts', 'GCSE'],
@@ -1479,7 +1599,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'rev-guide-poetry-anthology',
     title: 'Revision Guide: Poetry Anthology',
     category: 'Revision',
-    description: 'Detailed poetry anthology revision guide with poem-by-poem analysis and comparison links.',
+    description:
+      'Detailed poetry anthology revision guide with poem-by-poem analysis and comparison links.',
     suitableFor: ['GCSE', 'Poetry', 'Revision'],
     fileRef: 'revision-guides.ts',
     tags: ['Revision guide', 'Poetry', 'Anthology', 'Analysis'],
@@ -1559,7 +1680,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'rev-question-command-words',
     title: 'Question Analysis: Command Words Guide',
     category: 'Revision',
-    description: 'Explanation of command words in exam questions (analyze, evaluate, compare, etc.)',
+    description:
+      'Explanation of command words in exam questions (analyze, evaluate, compare, etc.)',
     suitableFor: ['Revision', 'Exam strategy', 'GCSE'],
     fileRef: 'revision-guides.ts',
     tags: ['Command words', 'Question analysis', 'Exam strategy', 'Revision'],
@@ -1573,7 +1695,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'exam-aqa-guide-comprehensive',
     title: 'Exam Board Guide: AQA Detailed Overview',
     category: 'Exam Prep',
-    description: 'Comprehensive guide to AQA English GCSE with specification breakdown and examiner guidance.',
+    description:
+      'Comprehensive guide to AQA English GCSE with specification breakdown and examiner guidance.',
     suitableFor: ['AQA', 'Exam preparation', 'Teachers'],
     fileRef: 'exam-guides/aqa-guide.ts',
     tags: ['AQA', 'Exam board', 'Guide', 'Specification'],
@@ -1583,7 +1706,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'exam-edexcel-guide-comprehensive',
     title: 'Exam Board Guide: Edexcel Detailed Overview',
     category: 'Exam Prep',
-    description: 'Comprehensive guide to Edexcel English GCSE with assessment criteria and paper structure.',
+    description:
+      'Comprehensive guide to Edexcel English GCSE with assessment criteria and paper structure.',
     suitableFor: ['Edexcel', 'Exam preparation', 'Teachers'],
     fileRef: 'exam-guides/edexcel-guide.ts',
     tags: ['Edexcel', 'Exam board', 'Guide', 'Specification'],
@@ -1633,7 +1757,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'exam-grade9-strategy',
     title: 'Grade 9 Attainment: Specialist Strategy',
     category: 'Exam Prep',
-    description: 'Specialized guidance on achieving Grade 9 including top band writing and analysis.',
+    description:
+      'Specialized guidance on achieving Grade 9 including top band writing and analysis.',
     suitableFor: ['Stretching', 'Grade 9', 'High achievers'],
     fileRef: 'exam-guides/grade9-strategy.ts',
     tags: ['Grade 9', 'Stretching', 'High achievement', 'Strategy'],
@@ -1695,7 +1820,8 @@ export const teacherResourceIndex: TeacherResource[] = [
     id: 'tech-powerpoint-library',
     title: 'PowerPoint Library: Ready-Made Presentations',
     category: 'Lesson Plans',
-    description: 'Complete library of PowerPoint presentations for lessons with editable slides and teacher notes.',
+    description:
+      'Complete library of PowerPoint presentations for lessons with editable slides and teacher notes.',
     suitableFor: ['Teaching', 'Presentations', 'GCSE', 'KS3'],
     fileRef: 'teacher-powerpoints.ts',
     tags: ['PowerPoint', 'Presentation', 'Resource', 'Teaching'],
@@ -1730,7 +1856,7 @@ export const teacherResourceIndex: TeacherResource[] = [
     fileRef: 'igcse-b-assessment.ts',
     tags: ['IGCSE', 'Assessment', 'Cambridge', 'Component B'],
   },
-];
+]
 
 /**
  * ───────────────────────────────────────────────────────────────────────────
@@ -1753,33 +1879,31 @@ export const teacherResourceIndex: TeacherResource[] = [
  * ───────────────────────────────────────────────────────────────────────────
  */
 
-export function getResourcesByCategory(
-  category: ResourceCategory,
-): TeacherResource[] {
-  return teacherResourceIndex.filter((resource) => resource.category === category);
+export function getResourcesByCategory(category: ResourceCategory): TeacherResource[] {
+  return teacherResourceIndex.filter((resource) => resource.category === category)
 }
 
 export function searchResources(query: string): TeacherResource[] {
-  const lowerQuery = query.toLowerCase();
+  const lowerQuery = query.toLowerCase()
   return teacherResourceIndex.filter(
     (resource) =>
       resource.title.toLowerCase().includes(lowerQuery) ||
       resource.description.toLowerCase().includes(lowerQuery) ||
       resource.tags.some((tag) => tag.toLowerCase().includes(lowerQuery)) ||
       resource.suitableFor.some((item) => item.toLowerCase().includes(lowerQuery)),
-  );
+  )
 }
 
 export function getResourcesByTag(tag: string): TeacherResource[] {
   return teacherResourceIndex.filter((resource) =>
     resource.tags.some((t) => t.toLowerCase() === tag.toLowerCase()),
-  );
+  )
 }
 
 export function getResourcesBySuitability(suitability: string): TeacherResource[] {
   return teacherResourceIndex.filter((resource) =>
     resource.suitableFor.some((s) => s.toLowerCase() === suitability.toLowerCase()),
-  );
+  )
 }
 
 /**
@@ -1792,4 +1916,4 @@ export const toolkitStats = {
   mostCommonCategory: 'Lesson Plans',
   examBoardsCovered: ['AQA', 'Edexcel', 'OCR', 'WJEC', 'Cambridge IGCSE', 'CAIE'],
   keyStagesCovered: ['KS3', 'GCSE', 'IGCSE'],
-} as const;
+} as const
