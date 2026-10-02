@@ -577,7 +577,7 @@ Direct address: The poem speaks to "you" throughout, but names its listener only
       device: 'Direct address',
       example: "you'll be a Man, my son!",
       effect:
-        'The poem holds back its direct address until the very last word. "My son" collapses the whole poem into a private conversation between father and child. It turns public moral code into intimate love - and gives the poem its emotional punch.',
+        'The poem speaks to "you" from its first line but names its listener only in its last two words. "My son" collapses the whole poem into a private conversation between father and child. It turns public moral code into intimate love - and gives the poem its emotional punch.',
       lineRef: 34,
       effectAr:
         'تُؤخّر القصيدةُ النداءَ المباشر إلى آخر كلمة. عبارة "my son" تختزل القصيدةَ كلّها في حوارٍ خاصّ بين أبٍ وابنه. تُحوّل المدوّنةَ الأخلاقيّة العامّة إلى محبّةٍ حميمة - وتمنح القصيدةَ ضربتَها الأخيرة العاطفيّة.',

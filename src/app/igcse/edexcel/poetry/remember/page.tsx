@@ -370,7 +370,7 @@ Tone: Tender, quiet, loving. Remarkably, there is no anger, no fear, no bitterne
       device: 'Euphemism',
       example: 'gone away… silent land… darkness and corruption',
       effect:
-        'Rossetti rarely uses the word "death" directly. Instead she circles it with gentle alternatives: "gone away", "silent land", and even the more direct "darkness and corruption" are still metaphorical rather than literal. The accumulation of euphemisms softens death and lets the poem remain a love poem rather than a horror.',
+        'Rossetti never uses the word "death". Instead she circles it with gentle alternatives: "gone away", "silent land", and even the more direct "darkness and corruption" are still metaphorical rather than literal. The accumulation of euphemisms softens death and lets the poem remain a love poem rather than a horror.',
       lineRef: 0,
       effectAr:
         'لا تستعمل Rossetti كلمة "death" أبداً. وتُحيط بها بدائلَ ناعمة: "gone away" و"silent land"، بل حتى "darkness and corruption" الأشدّ صراحة تبقى استعاريّة لا حرفيّة. وتراكمُ التلطّفات يُليّن الموتَ ويُبقي القصيدةَ قصيدةَ حبٍّ لا قصيدةَ رعب.',

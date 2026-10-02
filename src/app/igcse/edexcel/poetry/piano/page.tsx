@@ -342,7 +342,7 @@ Volta: The soft volta comes at the start of stanza 3 ("So now it is vain…"). T
       device: 'Circular structure',
       example: 'A child sitting under the piano… I weep like a child for the past',
       effect:
-        "The poem begins with an image of the child and ends with the adult speaker returning to the same state. The circularity is the poem's quiet argument: time does not move in a line. Memory and music can put you back exactly where you started.",
+        "The first stanza gives an image of the child, and the poem ends with the adult speaker returning to the same state. The circularity is the poem's quiet argument: time does not move in a line. Memory and music can put you back exactly where you started.",
       lineRef: 2,
     },
   ],
