@@ -15,7 +15,8 @@ import { evaluateCsrfAttestation } from '@/lib/security/csrf-origin'
 const BOARD_COOKIE = 'english-hub-board'
 
 /**
- * A request made in advance of a click, which must never choose a board.
+ * A request that is not a page load, which must never choose, change or clear
+ * a board.
  *
  * THE DEFECT (2 October 2026). Next's <Link> prefetches its destination when
  * the link scrolls into view, and that request passes through this middleware
@@ -28,15 +29,27 @@ const BOARD_COOKIE = 'english-hub-board'
  * held english-hub-board=ks3 after one homepage load, and its resource list
  * showed /ks3?setBoard=ks3&_rsc=... fetched with nothing clicked.
  *
- * The router marks its background prefetches with Next-Router-Prefetch: 1. A
- * click on a link that was not prefetched sends no such header, so a real
- * choice is unaffected. The other three cover the browser's own speculative
- * loading.
+ * THE FIRST FIX DID NOTHING, the same day. It keyed on Next-Router-Prefetch: 1,
+ * the header the router puts on a prefetch. Next's middleware adapter
+ * (next/dist/server/web/adapter.js) deletes that header, with RSC and the rest
+ * of its FLIGHT_HEADERS, before this function runs, so the check never fired.
+ * After the deploy, a curl to the live site carrying the header still got the
+ * cookie. Its test called middleware() directly, past the adapter, and passed.
+ *
+ * WHAT IT KEYS ON NOW: Sec-Fetch-Mode, which the browser sets and the adapter
+ * leaves alone. A page load says `navigate`. The router's prefetches and its
+ * client-side navigations are fetches and say `cors`, and once Next has
+ * stripped its own headers the two cannot be told apart. So every fetch is
+ * treated alike, and a board write is honoured only on a page load. A browser
+ * that sends no Sec-Fetch-Mode (Safari before 16.4, curl, crawlers) counts as a
+ * page load, as every request did before. Purpose and Sec-Purpose still catch
+ * the browser's own speculative page loads, which also say `navigate`.
  */
-function isPrefetchRequest(request: NextRequest): boolean {
+function isBackgroundRequest(request: NextRequest): boolean {
   const headers = request.headers
+  const mode = headers.get('sec-fetch-mode')
   return (
-    headers.get('next-router-prefetch') === '1' ||
+    (mode !== null && mode !== 'navigate') ||
     headers.get('purpose') === 'prefetch' ||
     headers.get('x-middleware-prefetch') === '1' ||
     (headers.get('sec-purpose') ?? '').includes('prefetch')
@@ -530,9 +543,9 @@ export async function middleware(request: NextRequest) {
       `/set-texts/${shelflessMatch[2]}`,
       request.cookies.get(BOARD_COOKIE)?.value,
     )
-    // Arriving remembers the board; a prefetch has not arrived. See
-    // isPrefetchRequest.
-    if (shelflessBoard && !isPrefetchRequest(request)) {
+    // Arriving remembers the board; a prefetch or a client-side fetch has not
+    // arrived. See isBackgroundRequest.
+    if (shelflessBoard && !isBackgroundRequest(request)) {
       shelflessResponse.cookies.set(BOARD_COOKIE, shelflessBoard, {
         path: '/',
         maxAge: 60 * 60 * 24 * 365,
@@ -573,14 +586,14 @@ export async function middleware(request: NextRequest) {
   // not by the middleware.
   const setBoardParam = request.nextUrl.searchParams.get('setBoard')
   if (setBoardParam) {
-    // A prefetch of a choice is not a choice (see isPrefetchRequest). It gets
-    // an empty 204 rather than the redirect: the router cannot use a prefetch
-    // with no body, so it loads the page in full when the link is actually
-    // clicked, and that request reaches this handler without the prefetch
-    // header and writes the cookie. Answering with the redirect minus the
-    // cookie instead would let the router cache it and skip the one request
-    // that saves the choice.
-    if (isPrefetchRequest(request)) return new NextResponse(null, { status: 204 })
+    // A prefetch of a choice is not a choice (see isBackgroundRequest). Any
+    // fetch gets an empty 204 rather than the redirect: the router cannot use
+    // a response with no body, so when the link is actually clicked it loads
+    // the page in full, and that page load reaches this handler as `navigate`
+    // and writes the cookie. Answering with the redirect minus the cookie
+    // instead would let the router cache it and skip the one request that
+    // saves the choice.
+    if (isBackgroundRequest(request)) return new NextResponse(null, { status: 204 })
     const validBoardIds = BOARDS.map((b) => b.id) as readonly string[]
     const cleanUrl = new URL(request.nextUrl)
     cleanUrl.searchParams.delete('setBoard')
@@ -615,7 +628,7 @@ export async function middleware(request: NextRequest) {
   const resetBoardParam = request.nextUrl.searchParams.get('resetBoard')
   if (resetBoardParam === '1') {
     // Nor may a prefetch clear one. Same 204, for the same reason as above.
-    if (isPrefetchRequest(request)) return new NextResponse(null, { status: 204 })
+    if (isBackgroundRequest(request)) return new NextResponse(null, { status: 204 })
     const cleanUrl = new URL(request.nextUrl)
     cleanUrl.searchParams.delete('resetBoard')
     const response = NextResponse.redirect(cleanUrl)
@@ -878,14 +891,14 @@ export async function middleware(request: NextRequest) {
   // It validates against the canonical BOARDS list, so a junk segment writes
   // nothing.
   //
-  // And it ignores prefetches (2 October 2026): a link to another board's
-  // shelf scrolling into view is not the visitor arriving there. See
-  // isPrefetchRequest. The page itself is still served to the prefetch.
+  // And it ignores anything but a page load (2 October 2026): a link to
+  // another board's shelf scrolling into view is not the visitor arriving
+  // there. See isBackgroundRequest. The page itself is still served.
   const rememberBoard = boardToRememberFromPath(
     servedPath,
     request.cookies.get('english-hub-board')?.value,
   )
-  if (rememberBoard && !isPrefetchRequest(request)) {
+  if (rememberBoard && !isBackgroundRequest(request)) {
     response.cookies.set('english-hub-board', rememberBoard, {
       path: '/',
       maxAge: 60 * 60 * 24 * 365,
