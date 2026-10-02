@@ -14,6 +14,35 @@ import { evaluateCsrfAttestation } from '@/lib/security/csrf-origin'
 
 const BOARD_COOKIE = 'english-hub-board'
 
+/**
+ * A request made in advance of a click, which must never choose a board.
+ *
+ * THE DEFECT (2 October 2026). Next's <Link> prefetches its destination when
+ * the link scrolls into view, and that request passes through this middleware
+ * like any other. Four places below write the board cookie - the ?setBoard=
+ * and ?resetBoard= handlers and the two that remember a /set-texts/<board>
+ * shelf - and the browser keeps a cookie set on a prefetch response. So a
+ * visitor with no board who only looked at the homepage was saved as KS3, the
+ * first board card in view, and scrolling on re-chose whichever card was
+ * prefetched last. Confirmed on production: a browser with the cookie cleared
+ * held english-hub-board=ks3 after one homepage load, and its resource list
+ * showed /ks3?setBoard=ks3&_rsc=... fetched with nothing clicked.
+ *
+ * The router marks its background prefetches with Next-Router-Prefetch: 1. A
+ * click on a link that was not prefetched sends no such header, so a real
+ * choice is unaffected. The other three cover the browser's own speculative
+ * loading.
+ */
+function isPrefetchRequest(request: NextRequest): boolean {
+  const headers = request.headers
+  return (
+    headers.get('next-router-prefetch') === '1' ||
+    headers.get('purpose') === 'prefetch' ||
+    headers.get('x-middleware-prefetch') === '1' ||
+    (headers.get('sec-purpose') ?? '').includes('prefetch')
+  )
+}
+
 // ── Language mode cookie (en | ar | es) ─────────────────────────────
 //
 // Three-mode toggle surfaced in the site header
@@ -78,7 +107,10 @@ const LANG_VALUES = new Set(['en', 'ar', 'es'])
 // Use exact matches and prefix matches (prefixes end with "/").
 //
 // Philosophy: ONLY gate content that materially changes by exam board
-// (revision/*, practice, mock-exams, games, assessment/*, courses, igcse/*).
+// (revision/*, practice, mock-exams, games, assessment/*, courses - the list
+// is BOARD_SPECIFIC_PREFIXES in src/lib/board/gated-paths.ts, which since
+// 2 October 2026 no longer includes /igcse or /a-level, whose URLs name the
+// board).
 // Marketing, policy, compliance, demo, and account pages must be crawlable
 // without a board cookie so that Googlebot, social unfurlers, diligence
 // reviewers, school DPOs, and paid-ad landers can see real content.
@@ -498,7 +530,9 @@ export async function middleware(request: NextRequest) {
       `/set-texts/${shelflessMatch[2]}`,
       request.cookies.get(BOARD_COOKIE)?.value,
     )
-    if (shelflessBoard) {
+    // Arriving remembers the board; a prefetch has not arrived. See
+    // isPrefetchRequest.
+    if (shelflessBoard && !isPrefetchRequest(request)) {
       shelflessResponse.cookies.set(BOARD_COOKIE, shelflessBoard, {
         path: '/',
         maxAge: 60 * 60 * 24 * 365,
@@ -539,6 +573,14 @@ export async function middleware(request: NextRequest) {
   // not by the middleware.
   const setBoardParam = request.nextUrl.searchParams.get('setBoard')
   if (setBoardParam) {
+    // A prefetch of a choice is not a choice (see isPrefetchRequest). It gets
+    // an empty 204 rather than the redirect: the router cannot use a prefetch
+    // with no body, so it loads the page in full when the link is actually
+    // clicked, and that request reaches this handler without the prefetch
+    // header and writes the cookie. Answering with the redirect minus the
+    // cookie instead would let the router cache it and skip the one request
+    // that saves the choice.
+    if (isPrefetchRequest(request)) return new NextResponse(null, { status: 204 })
     const validBoardIds = BOARDS.map((b) => b.id) as readonly string[]
     const cleanUrl = new URL(request.nextUrl)
     cleanUrl.searchParams.delete('setBoard')
@@ -572,6 +614,8 @@ export async function middleware(request: NextRequest) {
   // board" empty-state link instead of the dropdown.
   const resetBoardParam = request.nextUrl.searchParams.get('resetBoard')
   if (resetBoardParam === '1') {
+    // Nor may a prefetch clear one. Same 204, for the same reason as above.
+    if (isPrefetchRequest(request)) return new NextResponse(null, { status: 204 })
     const cleanUrl = new URL(request.nextUrl)
     cleanUrl.searchParams.delete('resetBoard')
     const response = NextResponse.redirect(cleanUrl)
@@ -833,11 +877,15 @@ export async function middleware(request: NextRequest) {
   //
   // It validates against the canonical BOARDS list, so a junk segment writes
   // nothing.
+  //
+  // And it ignores prefetches (2 October 2026): a link to another board's
+  // shelf scrolling into view is not the visitor arriving there. See
+  // isPrefetchRequest. The page itself is still served to the prefetch.
   const rememberBoard = boardToRememberFromPath(
     servedPath,
     request.cookies.get('english-hub-board')?.value,
   )
-  if (rememberBoard) {
+  if (rememberBoard && !isPrefetchRequest(request)) {
     response.cookies.set('english-hub-board', rememberBoard, {
       path: '/',
       maxAge: 60 * 60 * 24 * 365,
