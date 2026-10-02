@@ -10,6 +10,7 @@ import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
+import OcrWiderReadingNotice from '../../_components/OcrWiderReadingNotice'
 import { useT } from '@/lib/i18n/use-t'
 const theEagle: PoemData = {
   title: 'The Eagle',
@@ -320,10 +321,10 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
 const comparisons = [
   {
     title: 'Browse all poems',
-    poet: 'Power and the Natural World cluster',
-    href: '/revision/poetry/ocr/power-and-natural-world',
+    poet: "OCR's three clusters",
+    href: '/revision/poetry/ocr',
     reason:
-      "See the full OCR Power and the Natural World anthology for more poems that pair well with Tennyson's taut portrait of the eagle.",
+      "The 45 poems OCR sets. The Eagle is not one of them, but any of them could be compared with Tennyson's taut portrait of the eagle.",
     themes: ['Power of nature', 'Wildness', 'Imagery'],
   },
 ]
@@ -529,7 +530,7 @@ const REVISION_TOPICS = [
 
 const ESSAY_PROMPTS = [
   'How does Tennyson present the power of nature in The Eagle?',
-  'Compare how an animal or natural force is presented in The Eagle and one other poem from the anthology.',
+  'Compare how an animal or natural force is presented in The Eagle and one poem from your OCR cluster.',
   'How does Tennyson use brevity and imagery to create a powerful impression of the eagle?',
 ]
 
@@ -547,11 +548,18 @@ export default function TheEaglePage() {
           variant="ghost"
           size="sm"
           className="mb-3 -ms-2 text-muted-foreground"
-          render={<Link href="/revision/poetry/ocr/power-and-natural-world" />}
+          render={<Link href="/revision/poetry/ocr" />}
         >
           <ArrowLeft className="size-3.5" />
-          {t('rev.poetry.shared.back_to_power_natural_world')}
+          {t('poetry_hub.ocr.back_to_anthology')}
         </Button>
+
+        <OcrWiderReadingNotice>
+          <>
+            The Eagle is not in OCR&rsquo;s anthology, and OCR has no Power and the Natural World
+            cluster, though this page used to file it under one.
+          </>
+        </OcrWiderReadingNotice>
 
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
@@ -560,22 +568,16 @@ export default function TheEaglePage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">The Eagle</h1>
             <p className="text-body-sm text-muted-foreground">
-              Alfred Lord Tennyson &middot; Power and the Natural World cluster
+              Alfred Lord Tennyson &middot; Wider reading
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              OCR
+              OCR wider reading
             </Badge>
           </div>
         </div>
       </div>
 
-      <StudyTools
-        textName="The Eagle"
-        textType="poem"
-        examBoard="OCR"
-        cluster="Power and the Natural World"
-        variant="compact"
-      />
+      <StudyTools textName="The Eagle" textType="poem" examBoard="OCR" variant="compact" />
       <InlineStudyEngine
         textName="The Eagle"
         questions={QUIZ_QUESTIONS}
@@ -602,7 +604,8 @@ export default function TheEaglePage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong pairings for the OCR Power and the Natural World cluster.
+          Practise comparing it with another poem: part (a) of the OCR exam compares a poem from
+          your cluster with one you have not seen.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

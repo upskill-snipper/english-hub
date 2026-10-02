@@ -76,11 +76,6 @@ export const REV_POETRY_LANG_DICTIONARY: Dictionary = {
     ar: 'رجوع لـ Youth and Age',
     es: 'Volver a Youth and Age',
   },
-  'rev.poetry.shared.back_to_power_natural_world': {
-    en: 'Back to Power and the Natural World',
-    ar: 'رجوع لـ Power and the Natural World',
-    es: 'Volver a Power and the Natural World',
-  },
   'rev.poetry.shared.back_to_love_and_relationships': {
     en: 'Back to Love and Relationships',
     ar: 'رجوع لـ Love and Relationships',

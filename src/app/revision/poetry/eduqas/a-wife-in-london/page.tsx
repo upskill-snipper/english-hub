@@ -11,6 +11,7 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
+import EduqasPreviousAnthologyNotice from '../_components/EduqasPreviousAnthologyNotice'
 const wifeInLondon: PoemData = {
   title: 'A Wife in London',
   poet: 'Thomas Hardy',
@@ -768,13 +769,7 @@ export default function WifeInLondonEduqasPage() {
           {t('rev.poetry.shared.back_to_eduqas_poetry')}
         </Button>
 
-        <div className="mb-5 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-body-sm text-amber-100">
-          <p className="font-semibold mb-1">Legacy anthology notice</p>
-          <p className="text-amber-100/90 leading-relaxed">
-            This page is from the legacy pre-2025 Eduqas anthology. The current Eduqas 2025 cluster
-            does not include this poem. The content remains as a study reference.
-          </p>
-        </div>
+        <EduqasPreviousAnthologyNotice title="A Wife in London" />
 
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-red-500/10">
@@ -783,22 +778,16 @@ export default function WifeInLondonEduqasPage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">A Wife in London</h1>
             <p className="text-body-sm text-muted-foreground">
-              Thomas Hardy &middot; Eduqas Poetry Anthology
+              Thomas Hardy &middot; Previous Eduqas anthology, to 2026
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              Eduqas
+              Eduqas, to 2026
             </Badge>
           </div>
         </div>
       </div>
 
-      <StudyTools
-        textName="A Wife in London"
-        textType="poem"
-        examBoard="Eduqas"
-        cluster="Eduqas Poetry Anthology"
-        variant="compact"
-      />
+      <StudyTools textName="A Wife in London" textType="poem" variant="compact" />
       <InlineStudyEngine
         textName="A Wife in London"
         questions={QUIZ_QUESTIONS}
@@ -816,7 +805,7 @@ export default function WifeInLondonEduqasPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong Eduqas pairings for comparison questions involving A Wife in London.
+          Other pages written for the same anthology, to compare it with.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

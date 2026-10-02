@@ -11,6 +11,7 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
+import EduqasPreviousAnthologyNotice from '../_components/EduqasPreviousAnthologyNotice'
 const prelude: PoemData = {
   title: 'The Prelude: stealing the boat',
   poet: 'William Wordsworth',
@@ -482,6 +483,9 @@ const prelude: PoemData = {
     },
   ],
 
+  // The version note below said, until 2 October 2026, that the Eduqas anthology
+  // printed this passage. It printed the skating scene; this is the boat-stealing
+  // episode AQA and Pearson Edexcel set. See src/lib/board/eduqas-anthology.ts.
   context: `
     <h3>William Wordsworth (1770-1850)</h3>
     <p>Wordsworth was one of the founders of English Romanticism, alongside Samuel Taylor Coleridge. He grew up in the Lake District and his deep love of nature shaped his entire poetic vision. He believed that childhood experiences in nature were formative and sacred.</p>
@@ -489,7 +493,7 @@ const prelude: PoemData = {
     <h3>The Prelude</h3>
     <p>The full title is <em>The Prelude, or Growth of a Poet\'s Mind</em>. It is an autobiographical epic poem in which Wordsworth traces his own intellectual and emotional development. He worked on it for most of his life. This extract comes from Book One.</p>
 
-    <p><strong>Version note:</strong> The Eduqas anthology uses the <strong>1850 published Prelude</strong> (the same version used by AQA Power &amp; Conflict). OCR\'s "Towards a World Unknown" uses the earlier <strong>1799 two-part Prelude</strong>, which differs materially in wording. Always quote from the 1850 version when answering Eduqas questions.</p>
+    <p><strong>Version note:</strong> This page prints the boat-stealing episode from the <strong>1850</strong> text of <em>The Prelude</em>, the extract AQA (Power and Conflict) and Pearson Edexcel GCSE (Conflict) set. The Eduqas anthology examined until summer 2026 printed a different passage from Book One, the skating scene. OCR sets the boat-stealing episode too, but in the earlier <strong>1799 two-part Prelude</strong>, whose wording differs: quote the version your board prints.</p>
 
     <h3>"Spots of Time"</h3>
     <p>Wordsworth believed certain childhood experiences leave a permanent mark on the mind - he called them "spots of time". The boat-stealing episode is one of these. These memories are formative and continue to shape the adult.</p>
@@ -508,7 +512,7 @@ const prelude: PoemData = {
     <h3>The Prelude</h3>
     <p>العنوان الكامل هو <em>The Prelude, or Growth of a Poet's Mind</em>. هي قصيدة ملحمية سيرة ذاتية، Wordsworth يتتبّع فيها تطوّره الفكري والعاطفي. اشتغل عليها معظم حياته. هذا المقطع من الكتاب الأول.</p>
 
-    <p><strong>ملاحظة عن النسخة:</strong> منهج Eduqas يستخدم <strong>نسخة 1850 المنشورة من The Prelude</strong> (نفس النسخة اللي يستخدمها منهج AQA Power &amp; Conflict). أما منهج OCR "Towards a World Unknown" فيستخدم النسخة الأقدم من <strong>1799 (The Prelude بنسختين)</strong>، اللي تختلف ماديّاً في الصياغة. لازم تقتبس من نسخة 1850 لما تجاوب على أسئلة Eduqas.</p>
+    <p><strong>ملاحظة عن النسخة:</strong> هذي الصفحة فيها مشهد سرقة القارب من نص <strong>1850</strong> من The Prelude، وهو المقطع اللي تقرره AQA (Power and Conflict) و Pearson Edexcel GCSE (Conflict). مختارات Eduqas اللي انمتحنت لين صيف ٢٠٢٦ كان فيها مقطع ثاني من الكتاب الأول، مشهد التزلّج. OCR بعد تقرر مشهد سرقة القارب، بس من نسخة <strong>1799</strong> الأقدم اللي صياغتها تختلف: اقتبس من النسخة اللي يطبعها بوردك.</p>
 
     <h3>"Spots of Time"</h3>
     <p>Wordsworth كان يؤمن إن بعض تجارب الطفولة تترك أثر دائم على العقل - كان يسمّيها "spots of time". حادثة سرقة القارب وحدة من هذي الـspots. هالذكريات مكوّنة، وتستمر تشكّل الإنسان البالغ.</p>
@@ -966,13 +970,11 @@ export default function PreludeEduqasPage() {
           {t('rev.poetry.shared.back_to_eduqas_poetry')}
         </Button>
 
-        <div className="mb-5 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-body-sm text-amber-100">
-          <p className="font-semibold mb-1">Legacy anthology notice</p>
-          <p className="text-amber-100/90 leading-relaxed">
-            This page is from the legacy pre-2025 Eduqas anthology. The current Eduqas 2025 cluster
-            does not include this poem. The content remains as a study reference.
-          </p>
-        </div>
+        <EduqasPreviousAnthologyNotice title="any extract from The Prelude">
+          This page prints the boat-stealing episode, which AQA (Power and Conflict) and Pearson
+          Edexcel GCSE (Conflict) set. It is not the passage the Eduqas anthology printed, which was
+          the skating scene.
+        </EduqasPreviousAnthologyNotice>
 
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
@@ -983,22 +985,16 @@ export default function PreludeEduqasPage() {
               The Prelude: stealing the boat
             </h1>
             <p className="text-body-sm text-muted-foreground">
-              William Wordsworth &middot; Eduqas Poetry Anthology
+              William Wordsworth &middot; The extract AQA and Pearson Edexcel GCSE set
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              Eduqas
+              Not the Eduqas extract
             </Badge>
           </div>
         </div>
       </div>
 
-      <StudyTools
-        textName="The Prelude: stealing the boat"
-        textType="poem"
-        examBoard="Eduqas"
-        cluster="Eduqas Poetry Anthology"
-        variant="compact"
-      />
+      <StudyTools textName="The Prelude: stealing the boat" textType="poem" variant="compact" />
       <InlineStudyEngine
         textName="The Prelude"
         questions={QUIZ_QUESTIONS}
@@ -1016,7 +1012,7 @@ export default function PreludeEduqasPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong Eduqas pairings for comparison questions involving The Prelude.
+          Other pages written for the same anthology, to compare it with.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

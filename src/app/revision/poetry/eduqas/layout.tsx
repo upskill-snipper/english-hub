@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
 
+// Until 2 October 2026 this said "12-poem 2025 cluster" and "all 12 prescribed
+// poems analysed". The anthology has fifteen poems, is examined from summer
+// 2027, and two of them have study pages. See src/lib/board/eduqas-anthology.ts.
 export const metadata: Metadata = {
-  title: 'Eduqas GCSE poetry anthology - 12-poem 2025 cluster',
+  title: 'Eduqas GCSE poetry anthology, examined from 2027',
   description:
-    'WJEC Eduqas 2025 GCSE poetry anthology - all 12 prescribed poems analysed. Themes, voice, comparison pairs and exam-aligned Grade 9 essay plans.',
+    'The 15 poems of the WJEC Eduqas GCSE English Literature anthology, first examined in summer 2027: themes, comparison pairs and essay plans.',
   alternates: { canonical: 'https://theenglishhub.app/revision/poetry/eduqas' },
 }
 

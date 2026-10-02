@@ -111,7 +111,6 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Revision › Poetry › Ocr › Love And Relationships › Neutral Tones](https://theenglishhub.app/revision/poetry/ocr/love-and-relationships/neutral-tones)
 - [Revision › Poetry › Ocr › Love And Relationships › She Dwelt Among The Untrodden Ways](https://theenglishhub.app/revision/poetry/ocr/love-and-relationships/she-dwelt-among-the-untrodden-ways)
 - [Revision › Poetry › Ocr › Love And Relationships › She Walks In Beauty](https://theenglishhub.app/revision/poetry/ocr/love-and-relationships/she-walks-in-beauty)
-- [Revision › Poetry › Ocr › Power And Natural World](https://theenglishhub.app/revision/poetry/ocr/power-and-natural-world)
 - [Revision › Poetry › Ocr › Power And Natural World › The Eagle](https://theenglishhub.app/revision/poetry/ocr/power-and-natural-world/the-eagle)
 - [Revision › Poetry › Ocr › Themes](https://theenglishhub.app/revision/poetry/ocr/themes)
 - [Revision › Poetry › Ocr › Youth And Age](https://theenglishhub.app/revision/poetry/ocr/youth-and-age)

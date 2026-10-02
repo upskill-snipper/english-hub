@@ -11,6 +11,7 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
+import EduqasPreviousAnthologyNotice from '../_components/EduqasPreviousAnthologyNotice'
 const dulce: PoemData = {
   title: 'Dulce et Decorum Est',
   poet: 'Wilfred Owen',
@@ -593,7 +594,7 @@ const comparisons = [
     poet: 'Rupert Brooke',
     href: '/revision/poetry/eduqas/the-soldier',
     reason:
-      'The most famous Eduqas pairing. Owen exposes the horror of war; Brooke romanticises death in battle. Brooke\'s "England" is exactly the lie Owen attacks. A perfect study in contrasting WW1 voices.',
+      'A classic pairing. Owen exposes the horror of war; Brooke romanticises death in battle. Brooke\'s "England" is exactly the lie Owen attacks. A perfect study in contrasting WW1 voices.',
     themes: ['War', 'Patriotism', 'Anti-war'],
   },
   {
@@ -839,13 +840,7 @@ export default function DulceEduqasPage() {
           {t('rev.poetry.shared.back_to_eduqas_poetry')}
         </Button>
 
-        <div className="mb-5 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-body-sm text-amber-100">
-          <p className="font-semibold mb-1">Legacy anthology notice</p>
-          <p className="text-amber-100/90 leading-relaxed">
-            This page is from the legacy pre-2025 Eduqas anthology. The current Eduqas 2025 cluster
-            does not include this poem. The content remains as a study reference.
-          </p>
-        </div>
+        <EduqasPreviousAnthologyNotice title="Dulce et Decorum Est" />
 
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-red-500/10">
@@ -854,22 +849,16 @@ export default function DulceEduqasPage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">Dulce et Decorum Est</h1>
             <p className="text-body-sm text-muted-foreground">
-              Wilfred Owen &middot; Eduqas Poetry Anthology
+              Wilfred Owen &middot; Previous Eduqas anthology, to 2026
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              Eduqas
+              Eduqas, to 2026
             </Badge>
           </div>
         </div>
       </div>
 
-      <StudyTools
-        textName="Dulce et Decorum Est"
-        textType="poem"
-        examBoard="Eduqas"
-        cluster="Eduqas Poetry Anthology"
-        variant="compact"
-      />
+      <StudyTools textName="Dulce et Decorum Est" textType="poem" variant="compact" />
       <InlineStudyEngine
         textName="Dulce et Decorum Est"
         questions={QUIZ_QUESTIONS}
@@ -887,7 +876,7 @@ export default function DulceEduqasPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong Eduqas pairings for war poetry comparison questions.
+          Other pages written for the same anthology, to compare it with.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

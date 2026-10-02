@@ -10,6 +10,7 @@ import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
+import OcrWiderReadingNotice from '../../_components/OcrWiderReadingNotice'
 import { useT } from '@/lib/i18n/use-t'
 const crossingTheBar: PoemData = {
   title: 'Crossing the Bar',
@@ -613,7 +614,7 @@ const REVISION_TOPICS = [
 
 const ESSAY_PROMPTS = [
   'How does Tennyson present death as a peaceful journey in Crossing the Bar?',
-  'Compare how death is presented in Crossing the Bar and one other poem from the anthology.',
+  'Compare how death is presented in Crossing the Bar and one poem from the OCR Youth and Age cluster.',
   'How does Tennyson use the extended maritime metaphor to explore mortality and faith?',
 ]
 
@@ -637,6 +638,10 @@ export default function CrossingTheBarPage() {
           {t('rev.poetry.shared.back_to_youth_and_age')}
         </Button>
 
+        <OcrWiderReadingNotice clusterSlug="youth-and-age" clusterTitle="Youth and Age">
+          <>Crossing the Bar is not in OCR&rsquo;s anthology.</>
+        </OcrWiderReadingNotice>
+
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
             <BookOpen className="size-5 text-clay-600" />
@@ -644,22 +649,16 @@ export default function CrossingTheBarPage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">Crossing the Bar</h1>
             <p className="text-body-sm text-muted-foreground">
-              Alfred Lord Tennyson &middot; Youth and Age cluster
+              Alfred Lord Tennyson &middot; Wider reading for OCR Youth and Age
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              OCR
+              OCR wider reading
             </Badge>
           </div>
         </div>
       </div>
 
-      <StudyTools
-        textName="Crossing the Bar"
-        textType="poem"
-        examBoard="OCR"
-        cluster="Youth and Age"
-        variant="compact"
-      />
+      <StudyTools textName="Crossing the Bar" textType="poem" examBoard="OCR" variant="compact" />
       <InlineStudyEngine
         textName="Crossing the Bar"
         questions={QUIZ_QUESTIONS}
@@ -686,7 +685,8 @@ export default function CrossingTheBarPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong pairings for the OCR Youth and Age cluster.
+          Practise comparing it with another poem: part (a) of the OCR exam compares a poem from
+          your cluster with one you have not seen.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

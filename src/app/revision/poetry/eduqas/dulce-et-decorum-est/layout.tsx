@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
 
+// Until 2 October 2026 this described the poem as part of the current Eduqas
+// anthology. It was in the one examined until summer 2026; see
+// src/lib/board/eduqas-anthology.ts.
 export const metadata: Metadata = {
-  title: 'Dulce et Decorum Est - Eduqas GCSE Poetry',
+  title: 'Dulce et Decorum Est (Owen): previous Eduqas anthology',
   description:
-    'Dulce et Decorum Est by Wilfred Owen - GCSE analysis for the WJEC Eduqas poetry anthology: war, horror, structure, context and comparison poems.',
+    'Dulce et Decorum Est by Wilfred Owen, annotated, from the Eduqas anthology examined until summer 2026: war, horror, structure and context.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/poetry/eduqas/dulce-et-decorum-est',
   },

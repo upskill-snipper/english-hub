@@ -46,16 +46,26 @@ interface EssayPlan {
 // ─── Essay plan data ─────────────────────────────────────────────────────────
 //
 // All analysis references themes, methods and context rather than
-// reproducing copyrighted text. Students should consult the OCR
-// "Towards a World Unknown" anthology (ISBN 9781398384408) for full poems.
+// reproducing copyrighted text.
+//
+// RELABELLED 2 October 2026. Each plan was badged with an OCR cluster, and the
+// page said it covered "all 4 OCR clusters". OCR has three, and of the nineteen
+// poems these plans use, one is in OCR's anthology: The Destruction of
+// Sennacherib (plan 4). The rest are not OCR's: most are set by other boards,
+// and some by no board this site covers (see src/lib/board/ocr-anthology.ts
+// for OCR's list). OCR's exam
+// never asks for two anthology poems to be compared: part (a) sets a poem from
+// the cluster beside an unseen one. So the plans are kept as practice in that
+// comparison, and every badge now says what the pairing is. The analysis itself
+// was not re-reviewed in this change.
 // ─────────────────────────────────────────────────────────────────────────────
 
 const ESSAY_PLANS: EssayPlan[] = [
-  // ── 1. Love & Relationships ────────────────────────────────────────────────
+  // ── Plans 1 and 2: love (wider reading) ────────────────────────────────────
   {
     id: 1,
     title: 'How do poets present the pain of lost love?',
-    cluster: 'Love and Relationships',
+    cluster: 'Wider reading',
     clusterIcon: Heart,
     clusterColour: 'text-pink-400',
     poemA: 'Neutral Tones',
@@ -96,7 +106,7 @@ const ESSAY_PLANS: EssayPlan[] = [
   {
     id: 2,
     title: 'How do poets present intense devotion?',
-    cluster: 'Love and Relationships',
+    cluster: 'Wider reading',
     clusterIcon: Heart,
     clusterColour: 'text-pink-400',
     poemA: 'Sonnet 43',
@@ -135,11 +145,11 @@ const ESSAY_PLANS: EssayPlan[] = [
       'Linking form to meaning is a hallmark of top-band responses. Note how both poets choose forms traditionally associated with love poetry but use them in distinct ways.',
   },
 
-  // ── 2. Conflict ────────────────────────────────────────────────────────────
+  // ── Plans 3 and 4: conflict (plan 4 uses an OCR Conflict poem) ─────────────
   {
     id: 3,
     title: 'How do poets present the reality of battle?',
-    cluster: 'Conflict',
+    cluster: 'Wider reading',
     clusterIcon: Swords,
     clusterColour: 'text-red-400',
     poemA: 'Exposure',
@@ -180,7 +190,7 @@ const ESSAY_PLANS: EssayPlan[] = [
   {
     id: 4,
     title: 'How do poets explore prejudice and identity?',
-    cluster: 'Conflict',
+    cluster: 'OCR Conflict poem with wider reading',
     clusterIcon: Swords,
     clusterColour: 'text-red-400',
     poemA: 'The Destruction of Sennacherib',
@@ -216,14 +226,14 @@ const ESSAY_PLANS: EssayPlan[] = [
     conclusion:
       "Byron and Rossetti both condemn the abuse of power, but from vastly different scales. Byron's is cosmic and impersonal; Rossetti's is intimate and gendered. Together they demonstrate that conflict can operate at every level of human experience.",
     examTip:
-      'Cross-cluster comparisons are not required in the OCR exam, but comparing poems within the Conflict cluster that address different kinds of conflict shows range and independence of thought.',
+      "Cousin Kate is not one of OCR's poems, so treat it as your unseen poem: this is the shape of part (a), a poem from your cluster set beside one you have not studied.",
   },
 
-  // ── 3. Youth & Age ─────────────────────────────────────────────────────────
+  // ── Plans 5 and 6: time and age (wider reading) ────────────────────────────
   {
     id: 5,
     title: 'How do poets present the passing of time?',
-    cluster: 'Youth and Age',
+    cluster: 'Wider reading',
     clusterIcon: Clock,
     clusterColour: 'text-clay-600',
     poemA: 'When I Have Fears',
@@ -264,7 +274,7 @@ const ESSAY_PLANS: EssayPlan[] = [
   {
     id: 6,
     title: 'How do poets present the parent-child relationship?',
-    cluster: 'Youth and Age',
+    cluster: 'Wider reading',
     clusterIcon: Clock,
     clusterColour: 'text-clay-600',
     poemA: 'On My First Son',
@@ -303,11 +313,11 @@ const ESSAY_PLANS: EssayPlan[] = [
       'The question may ask about "relationships" broadly. Framing parent-child relationships as a specific type of relationship shows you can narrow your focus effectively.',
   },
 
-  // ── 4. Power & Natural World ───────────────────────────────────────────────
+  // ── Plans 7 and 8: power and nature (wider reading) ────────────────────────
   {
     id: 7,
     title: 'How do poets present the power of nature?',
-    cluster: 'Power and the Natural World',
+    cluster: 'Wider reading',
     clusterIcon: Mountain,
     clusterColour: 'text-emerald-400',
     poemA: 'Ozymandias',
@@ -348,7 +358,7 @@ const ESSAY_PLANS: EssayPlan[] = [
   {
     id: 8,
     title: 'How do poets present urban versus rural environments?',
-    cluster: 'Power and the Natural World',
+    cluster: 'Wider reading',
     clusterIcon: Mountain,
     clusterColour: 'text-emerald-400',
     poemA: 'London',
@@ -387,11 +397,11 @@ const ESSAY_PLANS: EssayPlan[] = [
       'This pairing works brilliantly for questions about "place" or "environment". Emphasise that neither poet is wrong -- they are writing for different purposes, which is the key analytical point.',
   },
 
-  // ── 5. Cross-cluster (Love + Conflict) ─────────────────────────────────────
+  // ── Plan 9: love and conflict (wider reading) ──────────────────────────────
   {
     id: 9,
     title: 'How do poets present the conflict within relationships?',
-    cluster: 'Love and Relationships / Conflict',
+    cluster: 'Wider reading',
     clusterIcon: Heart,
     clusterColour: 'text-pink-400',
     poemA: 'Neutral Tones',
@@ -427,14 +437,14 @@ const ESSAY_PLANS: EssayPlan[] = [
     conclusion:
       'Hardy consistently presents life as governed by cruel irony -- in love and in war, people are trapped by circumstances beyond their control. Comparing these two poems reveals a worldview, not just a theme.',
     examTip:
-      'Comparing two poems by the same poet from different clusters is an advanced move. It lets you discuss authorial voice and worldview, which pushes your analysis towards the top band.',
+      'Comparing two poems by the same poet lets you discuss authorial voice and worldview. Neither is set by OCR now (OCR removed The Man He Killed in 2022), so use this as practice in comparing poems you have not studied.',
   },
 
-  // ── 6. Cross-cluster (Youth & Age + Power & Natural World) ─────────────────
+  // ── Plan 10: childhood and nature (wider reading) ──────────────────────────
   {
     id: 10,
     title: 'How do poets use nature to explore human experience?',
-    cluster: 'Youth and Age / Power and the Natural World',
+    cluster: 'Wider reading',
     clusterIcon: Mountain,
     clusterColour: 'text-emerald-400',
     poemA: 'I Remember, I Remember',
@@ -470,19 +480,15 @@ const ESSAY_PLANS: EssayPlan[] = [
     conclusion:
       'Hood and Hopkins both value the natural world deeply, but Hood looks backward in sorrow while Hopkins looks forward in alarm. One mourns a personal loss; the other warns of a collective one.',
     examTip:
-      'Cross-cluster comparisons show the examiner you can think independently. Just make sure the thematic link is clear and that you analyse methods, not just content.',
+      'Name the thematic link first, then compare methods, not just content. In part (a) the theme is given to you in the question.',
   },
 ]
 
 // ─── Cluster badge colours ───────────────────────────────────────────────────
 
 const CLUSTER_BADGE: Record<string, string> = {
-  'Love and Relationships': 'bg-pink-500/15 text-pink-300 border-pink-500/20',
-  Conflict: 'bg-red-500/15 text-red-300 border-red-500/20',
-  'Youth and Age': 'bg-amber-500/15 text-amber-700 border-amber-500/20',
-  'Power and the Natural World': 'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
-  'Love and Relationships / Conflict': 'bg-violet-500/15 text-violet-300 border-violet-500/20',
-  'Youth and Age / Power and the Natural World': 'bg-teal-500/15 text-teal-300 border-teal-500/20',
+  'Wider reading': 'bg-muted text-muted-foreground border-border',
+  'OCR Conflict poem with wider reading': 'bg-red-500/15 text-red-300 border-red-500/20',
 }
 
 // ─── Expandable plan card ────────────────────────────────────────────────────
@@ -650,9 +656,10 @@ export default function OCREssayPlansPage() {
                 your own quotation analysis from the anthology.
               </li>
               <li>
-                The OCR exam asks you to compare poems from the cluster you have studied.
-                Cross-cluster plans (marked below) are included for additional practice but will not
-                appear as exam questions.
+                These pairings are practice, not OCR questions. Part (a) of the exam compares a poem
+                from your cluster with an unseen poem, and only one poem used here, The Destruction
+                of Sennacherib, is in OCR&rsquo;s anthology. Treat the second poem in each plan as
+                your unseen.
               </li>
             </ul>
           </div>
@@ -682,9 +689,8 @@ export default function OCREssayPlansPage() {
         </h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
           These essay plans discuss themes, methods and context rather than reproducing copyrighted
-          poem text. To complete your essays you will need to select and analyse your own quotations
-          from the OCR <em>Towards a World Unknown</em> anthology (ISBN 9781398384408).
-          Public-domain poems have full study pages available on this site.
+          poem text. For the poems you will be examined on, use OCR&rsquo;s anthology,{' '}
+          <em>Towards a World Unknown</em>, which OCR publishes free of charge at ocr.org.uk.
         </p>
       </section>
 

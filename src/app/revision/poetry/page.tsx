@@ -88,7 +88,9 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
     )
   }
 
-  // ── OCR: Towards a World Unknown (4 clusters) ────────────────────────
+  // ── OCR: Towards a World Unknown (3 clusters) ────────────────────────
+  // A fourth card offered "Power and the Natural World" until 2 October 2026.
+  // OCR has never set that cluster; see src/lib/board/ocr-anthology.ts.
   if (board === 'ocr') {
     return (
       <>
@@ -118,12 +120,6 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
             subtitle="15 poems"
             description={await t('poetry.ocr.cluster_youth_age.desc')}
           />
-          <ClusterCard
-            href="/revision/poetry/ocr/power-and-natural-world"
-            title={await t('poetry.ocr.cluster_power_nature.title')}
-            subtitle="15 poems"
-            description={await t('poetry.ocr.cluster_power_nature.desc')}
-          />
           <div className="sm:col-span-2">
             <Button variant="outline" size="sm" render={<Link href="/revision/poetry/ocr" />}>
               {await t('poetry.ocr.view_full')}
@@ -135,7 +131,7 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
     )
   }
 
-  // ── Eduqas: single 12-poem anthology (2025 specification) ──────────
+  // ── Eduqas: one 15-poem anthology, examined from summer 2027 ───────
   if (board === 'eduqas') {
     return (
       <>
@@ -493,10 +489,10 @@ function PoetrySeoContent() {
             Each board introduces its own quirks. AQA Power and Conflict typically asks you to
             analyse a single named poem in depth and then compare a second poem from the cluster.
             Edexcel Conflict expects deeper historical contextualisation, because several of its
-            poems sit in very specific political and military moments. Eduqas mixes the anthology
-            with an unseen poem in the same paper, so you must flex between memorised material and
-            cold reading on the day. Unseen poetry is marked against the same AO grid, just without
-            the context-heavy AO3 element, so strong AO2 habits transfer directly.
+            poems sit in very specific political and military moments. Eduqas examines its anthology
+            in one paper and an unseen poem in the other, so you must flex between memorised
+            material and cold reading. Unseen poetry is marked against the same AO grid, just
+            without the context-heavy AO3 element, so strong AO2 habits transfer directly.
           </p>
         </div>
 
@@ -593,7 +589,7 @@ const ANTHOLOGY_LINKS: AnthologyLink[] = [
     href: '/revision/poetry/eduqas',
     title: 'Eduqas Poetry',
     snippet:
-      'All twelve poems from the Eduqas 2025 GCSE anthology with strong pairing suggestions for the compulsory comparison question.',
+      'The fifteen poems of the Eduqas GCSE anthology examined from summer 2027, with pairing suggestions for the compulsory comparison question.',
     boards: ['eduqas'],
     boardTag: 'Eduqas',
   },
@@ -617,7 +613,7 @@ const ANTHOLOGY_LINKS: AnthologyLink[] = [
     href: '/revision/poetry/ocr',
     title: 'OCR Towards a World Unknown',
     snippet:
-      'OCR anthology revision covering Love and Relationships, Conflict, Youth and Age and Power and the Natural World clusters.',
+      "OCR's three anthology clusters, Love and Relationships, Conflict, and Youth and Age, with the fifteen poems OCR sets in each.",
     boards: ['ocr'],
     boardTag: 'OCR',
   },

@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 
+// Until 2 October 2026 this said "four clusters of 15 poems". OCR sets three;
+// see src/lib/board/ocr-anthology.ts.
 export const metadata: Metadata = {
   title: 'OCR GCSE Towards a World Unknown poetry anthology',
   description:
-    'OCR GCSE J352 Towards a World Unknown - four clusters of 15 poems. Themes, language and comparison practice across Love, Conflict, Power and Youth.',
+    'OCR GCSE J352 Towards a World Unknown: the 45 poems OCR sets, in three clusters of 15: Love and Relationships, Conflict, and Youth and Age.',
   alternates: { canonical: 'https://theenglishhub.app/revision/poetry/ocr' },
 }
 

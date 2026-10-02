@@ -26,7 +26,14 @@ import StudyTools from '@/components/study/StudyTools'
 
 import { useT } from '@/lib/i18n/use-t'
 
-/* ── Poem data (Eduqas GCSE 2025 anthology - 12 poems) ────────────── */
+/* ── Poem data: the Eduqas anthology for first assessment in 2027 ──── */
+//
+// CORRECTED 2 October 2026. This page called the anthology a "12-poem 2025
+// cluster". It has fifteen poems, it is not a cluster, and it is examined from
+// summer 2027 (WJEC 2024, ISBN 978-1-86085-774-4). War Photographer, Dusting the
+// Phone and Remains were missing. The grouping by theme below is this site's,
+// not Eduqas's: Eduqas sets one anthology and every poem in it. The list is held
+// to src/lib/board/eduqas-anthology.ts by a-poem-board-claim-is-true.test.ts.
 
 interface EduqasPoem {
   title: string
@@ -84,6 +91,13 @@ const LOVE_AND_RELATIONSHIPS: EduqasPoem[] = [
     publicDomain: false,
     themes: ['Family', 'Love', 'Conflict'],
   },
+  {
+    title: 'Dusting the Phone',
+    poet: 'Jackie Kay',
+    slug: null,
+    publicDomain: false,
+    themes: ['Love', 'Longing', 'Waiting'],
+  },
 ]
 
 const WAR_AND_CONFLICT: EduqasPoem[] = [
@@ -109,6 +123,20 @@ const WAR_AND_CONFLICT: EduqasPoem[] = [
     publicDomain: false,
     themes: ['War', 'Family', 'Honour'],
   },
+  {
+    title: 'War Photographer',
+    poet: 'Carol Ann Duffy',
+    slug: null,
+    publicDomain: false,
+    themes: ['War', 'Suffering', 'Responsibility'],
+  },
+  {
+    title: 'Remains',
+    poet: 'Simon Armitage',
+    slug: null,
+    publicDomain: false,
+    themes: ['War', 'Guilt', 'Memory'],
+  },
 ]
 
 const IDENTITY_AND_VOICE: EduqasPoem[] = [
@@ -125,7 +153,6 @@ const IDENTITY_AND_VOICE: EduqasPoem[] = [
     slug: null,
     publicDomain: false,
     themes: ['Identity', 'Poverty', 'Photography'],
-    flag: 'Source confidence: LOW - verify against Eduqas anthology edition before use.',
   },
   {
     title: 'Origin Story',
@@ -172,7 +199,7 @@ const THEME_GROUPS = [
   },
 ] as const
 
-/* ── Comparison pairings (Eduqas 2025 anthology) ─────────────────── */
+/* ── Comparison pairings (the anthology examined from 2027) ──────── */
 
 const COMPARISON_PAIRINGS = [
   {
@@ -205,6 +232,48 @@ const COMPARISON_PAIRINGS = [
     poems: ['I Shall Return', 'Origin Story'],
     tip: "McKay's Jamaican-American return to a beloved homeland compared with Ewing's reimagined origins for Black American identity.",
   },
+]
+
+/* ── Pages written for the previous anthology ─────────────────────── */
+//
+// Eduqas examined its 2014 anthology for the last time in summer 2026, and the
+// new one has no poem in common with it. These eight pages were written for the
+// old one. They are kept, and listed here as what they are; where another board
+// sets the poem now, the note says which.
+const PREVIOUS_ANTHOLOGY: { title: string; poet: string; slug: string; note?: string }[] = [
+  {
+    title: 'Ozymandias',
+    poet: 'Percy Bysshe Shelley',
+    slug: 'ozymandias',
+    note: 'Set by AQA (Power and Conflict).',
+  },
+  {
+    title: 'London',
+    poet: 'William Blake',
+    slug: 'london',
+    note: 'Set by AQA (Power and Conflict) and Pearson Edexcel GCSE (Time and Place).',
+  },
+  {
+    title: 'To Autumn',
+    poet: 'John Keats',
+    slug: 'to-autumn',
+    note: 'Set by Pearson Edexcel GCSE (Time and Place).',
+  },
+  {
+    title: 'Sonnet 43',
+    poet: 'Elizabeth Barrett Browning',
+    slug: 'sonnet-43',
+    note: 'Set by Pearson Edexcel GCSE (Relationships).',
+  },
+  {
+    title: 'The Prelude: stealing the boat',
+    poet: 'William Wordsworth',
+    slug: 'the-prelude',
+    note: 'This page prints the boat-stealing passage, which AQA (Power and Conflict) and Pearson Edexcel GCSE (Conflict) set. The Eduqas anthology printed a different passage, the skating scene.',
+  },
+  { title: 'Dulce et Decorum Est', poet: 'Wilfred Owen', slug: 'dulce-et-decorum-est' },
+  { title: 'The Soldier', poet: 'Rupert Brooke', slug: 'the-soldier' },
+  { title: 'A Wife in London', poet: 'Thomas Hardy', slug: 'a-wife-in-london' },
 ]
 
 /* ── Page component ───────────────────────────────────────────────── */
@@ -251,9 +320,8 @@ export default function EduqasPoetryPage() {
             {t('poetry_hub.eduqas.hero_title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Master all {totalPoems} poems from the WJEC Eduqas GCSE English Literature 2025
-            anthology. Interactive study pages, key quotations, technique analysis, and comparison
-            practice.
+            The {totalPoems} poems of the WJEC Eduqas GCSE English Literature anthology, examined
+            from summer 2027, with comparison practice and essay plans.
           </p>
 
           <div className="mt-5 flex items-start gap-2 rounded-lg bg-blue-500/5 border border-blue-500/10 p-3 max-w-2xl">
@@ -266,20 +334,19 @@ export default function EduqasPoetryPage() {
             </p>
           </div>
 
-          {/* Cluster-level rights notice */}
+          {/* Anthology rights notice */}
           <div className="mt-3 flex items-start gap-2 rounded-lg bg-amber-500/5 border border-amber-500/10 p-3 max-w-2xl">
             <Scale className="mt-0.5 size-4 shrink-0 text-clay-600" />
             <p className="text-caption text-muted-foreground">
               <strong className="text-foreground">
                 {t('poetry_hub.eduqas.rights_notice_label')}
               </strong>{' '}
-              Six of these twelve Eduqas poems remain in copyright &mdash; Heaney&rsquo;s{' '}
-              <em>Blackberry Picking</em> (&copy; Faber &amp; Faber), Clarke&rsquo;s <em>Catrin</em>{' '}
-              (&copy; Carcanet Press), Garland&rsquo;s <em>Kamikaze</em> (&copy; Enitharmon Press),
-              Ewing&rsquo;s <em>Origin Story</em> (&copy; Haymarket Books) and others. Quotations on
-              this site are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review,
-              quotation). For full text, students should consult the board-licensed Eduqas Poetry
-              Anthology.
+              Eight of these fifteen poems remain in copyright: <em>Decomposition</em>,{' '}
+              <em>Catrin</em>, <em>Blackberry Picking</em>, <em>Kamikaze</em>,{' '}
+              <em>War Photographer</em>, <em>Dusting the Phone</em>, <em>Remains</em> and{' '}
+              <em>Origin Story</em>. Quotations on this site are short fair-dealing extracts under
+              CDPA 1988 &sect;30 (criticism, review, quotation). For the full text, use the Eduqas
+              Poetry Anthology.
             </p>
           </div>
         </div>
@@ -484,6 +551,35 @@ export default function EduqasPoetryPage() {
         </div>
       </section>
 
+      {/* ── Pages from the previous anthology ─────────────────────── */}
+      <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
+        <h2 className="text-heading-sm font-heading text-foreground">
+          From the previous anthology, examined until summer 2026
+        </h2>
+        <p className="mt-1 max-w-2xl text-body-sm text-muted-foreground leading-relaxed">
+          Eduqas examined its previous anthology for the last time in summer 2026, and none of its
+          poems is in the new one. These study pages were written for it.
+        </p>
+        <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+          {PREVIOUS_ANTHOLOGY.map((p) => (
+            <li key={p.slug}>
+              <Link
+                href={`/revision/poetry/eduqas/${p.slug}`}
+                className="group flex h-full flex-col rounded-xl border border-border/60 bg-card p-4 transition-colors hover:border-border"
+              >
+                <span className="text-sm font-semibold text-foreground group-hover:text-primary">
+                  {p.title}
+                </span>
+                <span className="text-xs text-muted-foreground">{p.poet}</span>
+                {p.note ? (
+                  <span className="mt-2 text-xs text-muted-foreground">{p.note}</span>
+                ) : null}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       {/* ── Featured study cards ──────────────────────────────────── */}
       <section className="grid gap-6 sm:grid-cols-2">
         <Card className="group relative flex flex-col overflow-hidden transition-all duration-200 hover:border-border hover:shadow-card-hover">
@@ -503,8 +599,8 @@ export default function EduqasPoetryPage() {
           <CardContent className="flex flex-1 flex-col gap-4">
             <p className="text-body-sm text-muted-foreground">
               Sonnet 29 (Barrett Browning) and Cousin Kate (Rossetti) are both Victorian, both from
-              female speakers, and both about absent or lost lovers - a strong cluster pairing for
-              the comparison question.
+              female speakers, and both about absent or lost lovers: a strong pairing for the
+              comparison question.
             </p>
           </CardContent>
         </Card>

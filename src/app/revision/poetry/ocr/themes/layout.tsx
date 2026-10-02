@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 
+// Until 2 October 2026 this described a map of the anthology; most of the
+// page's poems are wider reading. See the docblock above THEMES in page.tsx.
 export const metadata: Metadata = {
   title: 'Poetry Themes - OCR GCSE Poetry',
   description:
-    'Theme-by-theme guide to the OCR J352 Towards a World Unknown anthology: love, conflict, time, nature and identity mapped across all clusters.',
+    "Themes across OCR's three GCSE poetry clusters (J352), with wider reading to compare: love, conflict, time, nature and identity.",
   alternates: { canonical: 'https://theenglishhub.app/revision/poetry/ocr/themes' },
 }
 

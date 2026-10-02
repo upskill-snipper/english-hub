@@ -45,9 +45,9 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Towards a World Unknown',
   },
   'poetry_hub.ocr.hero_lead': {
-    en: 'The OCR poetry anthology contains 60 poems split across 4 themed clusters of 15 poems each. For your exam, you only need to study one cluster - the one chosen by your school or teacher.',
-    ar: 'مختارات الشعر OCR فيها ٦٠ قصيدة مقسّمة على ٤ مجموعات موضوعية، كل وحدة فيها ١٥ قصيدة. للامتحان، بس تذاكر مجموعة وحدة - اللي اختارتها مدرستك ولا معلمك.',
-    es: 'La antología de poesía de OCR contiene 60 poemas repartidos en 4 clusters temáticos de 15 poemas cada uno. Para tu examen, solo necesitas estudiar un cluster: el que elija tu centro o tu profesor.',
+    en: "OCR's poetry anthology, Towards a World Unknown, has 45 poems in three clusters of 15. You study one cluster, the one your school chooses.",
+    ar: 'مختارات الشعر من OCR، Towards a World Unknown، فيها ٤٥ قصيدة في ثلاث مجموعات، كل مجموعة ١٥ قصيدة. تذاكر مجموعة وحدة بس، اللي تختارها مدرستك.',
+    es: 'La antología de poesía de OCR, Towards a World Unknown, tiene 45 poemas en tres clusters de 15. Estudias un solo cluster, el que elija tu centro.',
   },
   'poetry_hub.ocr.which_cluster': {
     en: 'Which cluster do I study?',
@@ -55,14 +55,14 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: '¿Qué cluster estudio?',
   },
   'poetry_hub.ocr.which_cluster_body': {
-    en: 'Check with your teacher to find out which of the 4 clusters your class is studying. Most schools choose one cluster at the start of Year 10 and stick with it through to the exam. You will be assessed on poems from that cluster only.',
-    ar: 'اسأل المعلم عشان تعرف أي مجموعة من الأربعة فصلك يذاكرها. أغلب المدارس تختار مجموعة وحدة بداية Year 10 وتكمّل عليها للامتحان. الامتحان بيكون من قصائد المجموعة هاي بس.',
-    es: 'Consulta con tu profesor para saber cuál de los 4 clusters estudia tu clase. La mayoría de los centros eligen un cluster al inicio del Year 10 y se mantienen con él hasta el examen. Solo se te evaluará sobre los poemas de ese cluster.',
+    en: 'Check with your teacher which of the three clusters your class is studying. The exam asks about that cluster only: one of its poems compared with a poem you have not seen, then one other poem of your choice.',
+    ar: 'اسأل معلمك أي مجموعة من الثلاث فصلك يذاكرها. الامتحان يسأل عن هذي المجموعة بس: قصيدة منها تقارنها بقصيدة ما شفتها قبل، وبعدين قصيدة ثانية من اختيارك.',
+    es: 'Pregunta a tu profesor cuál de los tres clusters estudia tu clase. El examen solo pregunta por ese cluster: uno de sus poemas comparado con un poema que no has visto, y después otro poema que tú eliges.',
   },
-  'poetry_hub.ocr.four_clusters': {
-    en: 'The Four Clusters',
-    ar: 'المجموعات الأربعة',
-    es: 'Los cuatro clusters',
+  'poetry_hub.ocr.three_clusters': {
+    en: 'The Three Clusters',
+    ar: 'المجموعات الثلاث',
+    es: 'Los tres clusters',
   },
   'poetry_hub.ocr.poems_count': { en: 'poems', ar: 'قصائد', es: 'poemas' },
   'poetry_hub.ocr.study': { en: 'Study', ar: 'ذاكر', es: 'Estudiar' },
@@ -72,9 +72,9 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Acerca de estas páginas de estudio',
   },
   'poetry_hub.ocr.about_pages_body': {
-    en: 'For older, public-domain poems we provide full interactive study pages with annotations, context, and quotation analysis. For poems still in copyright, we provide context, themes, and key quotation analysis only - you will need a copy of the OCR anthology (Towards a World Unknown, ISBN 9781398384408) to read the full text.',
-    ar: 'القصائد الأقدم اللي بالمجال العام نوفّر صفحات مذاكرة كاملة وتفاعلية فيها الشروحات والسياق وتحليل الاقتباسات. القصائد اللي محفوظة حقوقها نوفّر السياق والمواضيع وتحليل الاقتباسات الأساسية بس - بتحتاج نسخة من مختارات OCR (Towards a World Unknown، ISBN 9781398384408) عشان تقرا النص كامل.',
-    es: 'Para los poemas más antiguos y de dominio público ofrecemos páginas de estudio interactivas completas con anotaciones, contexto y análisis de citas. Para los poemas que aún están bajo derechos de autor, ofrecemos solo contexto, temas y análisis de citas clave: necesitarás un ejemplar de la antología de OCR (Towards a World Unknown, ISBN 9781398384408) para leer el texto completo.',
+    en: "Where a poem is out of copyright we can print it in full, with annotations; where it is still in copyright we quote it only briefly. Most of OCR's 45 poems are in copyright, and two have a study page on this site so far. OCR publishes the anthology free of charge at ocr.org.uk.",
+    ar: 'إذا القصيدة خرجت من حقوق النشر نقدر ننشرها كاملة مع الشروحات، وإذا بعدها محفوظة الحقوق نقتبس منها شي قليل بس. أغلب قصائد OCR الـ٤٥ محفوظة الحقوق، وثنتين منها بس لها صفحة مذاكرة في الموقع لين الحين. OCR تنشر المختارات مجاناً على ocr.org.uk.',
+    es: 'Si un poema ya no tiene derechos de autor, podemos publicarlo completo, con anotaciones; si todavía los tiene, solo lo citamos brevemente. La mayoría de los 45 poemas de OCR tienen derechos de autor, y por ahora dos tienen página de estudio en este sitio. OCR publica la antología gratis en ocr.org.uk.',
   },
   'poetry_hub.ocr.different_board_title': {
     en: 'Studying a different exam board?',
@@ -97,15 +97,15 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Love and Relationships',
   },
   'poetry_hub.ocr.cluster.lr.desc': {
-    en: 'Romantic, familial and complex relationships from Byron and Wordsworth to Carol Ann Duffy and John Cooper Clarke.',
-    ar: 'علاقات رومانسية وعائلية ومعقّدة، من Byron و Wordsworth إلى Carol Ann Duffy و John Cooper Clarke.',
-    es: 'Relaciones románticas, familiares y complejas, desde Byron y Wordsworth hasta Carol Ann Duffy y John Cooper Clarke.',
+    en: 'Love, desire and loss, from Keats and Emily Brontë to Carol Ann Duffy, Jackie Kay and Raymond Antrobus.',
+    ar: 'الحب والرغبة والفقد، من Keats و Emily Brontë إلى Carol Ann Duffy و Jackie Kay و Raymond Antrobus.',
+    es: 'Amor, deseo y pérdida, desde Keats y Emily Brontë hasta Carol Ann Duffy, Jackie Kay y Raymond Antrobus.',
   },
   'poetry_hub.ocr.cluster.conflict.title': { en: 'Conflict', ar: 'الصراع', es: 'Conflict' },
   'poetry_hub.ocr.cluster.conflict.desc': {
-    en: 'War, prejudice and personal struggle, from Tennyson and Owen to Agard, Zephaniah and Imtiaz Dharker.',
-    ar: 'الحرب والتحيّز والصراع الشخصي، من Tennyson و Owen إلى Agard و Zephaniah و Imtiaz Dharker.',
-    es: 'Guerra, prejuicio y lucha personal, desde Tennyson y Owen hasta Agard, Zephaniah e Imtiaz Dharker.',
+    en: 'War, power and division, from Byron and Wordsworth to Gillian Clarke, John Agard and Caleb Femi.',
+    ar: 'الحرب والسلطة والانقسام، من Byron و Wordsworth إلى Gillian Clarke و John Agard و Caleb Femi.',
+    es: 'Guerra, poder y división, desde Byron y Wordsworth hasta Gillian Clarke, John Agard y Caleb Femi.',
   },
   'poetry_hub.ocr.cluster.ya.title': {
     en: 'Youth and Age',
@@ -113,80 +113,145 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Youth and Age',
   },
   'poetry_hub.ocr.cluster.ya.desc': {
-    en: 'Childhood, growing up, parenthood and mortality, from Yeats and Keats to Helen Dunmore and Carol Rumens.',
-    ar: 'الطفولة والبلوغ والأبوّة والموت، من Yeats و Keats إلى Helen Dunmore و Carol Rumens.',
-    es: 'Infancia, crecimiento, paternidad y mortalidad, desde Yeats y Keats hasta Helen Dunmore y Carol Rumens.',
-  },
-  'poetry_hub.ocr.cluster.pnw.title': {
-    en: 'Power and the Natural World',
-    ar: 'السلطة والعالم الطبيعي',
-    es: 'Power and the Natural World',
-  },
-  'poetry_hub.ocr.cluster.pnw.desc': {
-    en: 'Nature, environment and human power, from Shelley and Blake to Ted Hughes, Seamus Heaney and Achebe.',
-    ar: 'الطبيعة والبيئة وقوة الإنسان، من Shelley و Blake إلى Ted Hughes و Seamus Heaney و Achebe.',
-    es: 'Naturaleza, medio ambiente y poder humano, desde Shelley y Blake hasta Ted Hughes, Seamus Heaney y Achebe.',
-  },
-  'poetry_hub.ocr.lr.hero_lead': {
-    en: "15 poems exploring romantic, familial and complex relationships across more than two centuries. From Byron's celebration of beauty to John Cooper Clarke's punk devotion.",
-    ar: '١٥ قصيدة تستكشف العلاقات الرومانسية والعائلية والمعقّدة عبر أكثر من قرنين. من احتفاء Byron بالجمال إلى تفاني John Cooper Clarke بأسلوب الـ punk.',
-    es: '15 poemas que exploran relaciones románticas, familiares y complejas a lo largo de más de dos siglos. Desde la celebración de la belleza de Byron hasta la devoción punk de John Cooper Clarke.',
-  },
-  'poetry_hub.ocr.conflict.hero_lead': {
-    en: '15 poems exploring war, prejudice, identity and personal struggle. From Tennyson and Owen to Agard, Zephaniah and Imtiaz Dharker.',
-    ar: '١٥ قصيدة تستكشف الحرب والتحيّز والهوية والصراع الشخصي. من Tennyson و Owen إلى Agard و Zephaniah و Imtiaz Dharker.',
-    es: '15 poemas que exploran la guerra, el prejuicio, la identidad y la lucha personal. Desde Tennyson y Owen hasta Agard, Zephaniah e Imtiaz Dharker.',
-  },
-  'poetry_hub.ocr.ya.hero_lead': {
-    en: '15 poems exploring childhood, growing up, parenthood and mortality. From Yeats and Keats to Helen Dunmore and Carol Rumens.',
-    ar: '١٥ قصيدة تستكشف الطفولة والبلوغ والأبوّة والموت. من Yeats و Keats إلى Helen Dunmore و Carol Rumens.',
-    es: '15 poemas que exploran la infancia, el crecimiento, la paternidad y la mortalidad. Desde Yeats y Keats hasta Helen Dunmore y Carol Rumens.',
-  },
-  'poetry_hub.ocr.pnw.hero_lead': {
-    en: '15 poems exploring nature, environment and human power. From Shelley and Blake to Ted Hughes, Seamus Heaney and Chinua Achebe.',
-    ar: '١٥ قصيدة تستكشف الطبيعة والبيئة وقوة الإنسان. من Shelley و Blake إلى Ted Hughes و Seamus Heaney و Chinua Achebe.',
-    es: '15 poemas que exploran la naturaleza, el medio ambiente y el poder humano. Desde Shelley y Blake hasta Ted Hughes, Seamus Heaney y Chinua Achebe.',
+    en: 'Childhood, growing up and growing old, from Blake and Hardy to Sylvia Plath, Langston Hughes and Warsan Shire.',
+    ar: 'الطفولة والكبر والشيخوخة، من Blake و Hardy إلى Sylvia Plath و Langston Hughes و Warsan Shire.',
+    es: 'Infancia, crecimiento y vejez, desde Blake y Hardy hasta Sylvia Plath, Langston Hughes y Warsan Shire.',
   },
   'poetry_hub.ocr.all_15': { en: 'All 15 Poems', ar: 'كل الـ١٥ قصيدة', es: 'Los 15 poemas' },
-  'poetry_hub.ocr.full_study': {
-    en: 'Full study page',
-    ar: 'صفحة مذاكرة كاملة',
-    es: 'Página de estudio completa',
-  },
-  'poetry_hub.ocr.quotes_only': {
-    en: 'Key quotations only',
-    ar: 'اقتباسات أساسية بس',
-    es: 'Solo citas clave',
-  },
-  'poetry_hub.ocr.why_locked': {
-    en: 'Why are some poems locked?',
-    ar: 'ليش بعض القصائد مقفولة؟',
-    es: '¿Por qué algunos poemas están bloqueados?',
-  },
-  'poetry_hub.ocr.why_locked_body': {
-    en: 'Older poems are public domain so we provide full annotated study pages. More recent poems are still in copyright - for those we offer context, themes and key quotation analysis only. You will need a copy of the OCR Towards a World Unknown anthology to read the full text.',
-    ar: 'القصائد الأقدم بالمجال العام ولهذا نوفّر صفحات مذاكرة كاملة مع شروحات. القصائد الأحدث محفوظة حقوقها - ولها نوفّر السياق والمواضيع وتحليل الاقتباسات الأساسية بس. بتحتاج نسخة من مختارات OCR Towards a World Unknown عشان تقرا النص كامل.',
-    es: 'Los poemas más antiguos son de dominio público, por lo que ofrecemos páginas de estudio completas y anotadas. Los poemas más recientes siguen bajo derechos de autor: para esos ofrecemos solo contexto, temas y análisis de citas clave. Necesitarás un ejemplar de la antología OCR Towards a World Unknown para leer el texto completo.',
-  },
   'poetry_hub.ocr.rights_notice_label': {
     en: 'Rights notice.',
     ar: 'تنبيه الحقوق.',
     es: 'Aviso de derechos.',
   },
-  'poetry_hub.ocr.prelude_version_title': {
-    en: 'Version note: The Prelude (1799 two-part edition)',
-    ar: 'ملاحظة النسخة: The Prelude (نسخة ١٧٩٩ المؤلّفة من جزأين)',
-    es: 'Nota sobre la versión: The Prelude (edición de 1799 en dos partes)',
-  },
-  'poetry_hub.ocr.prelude_version_body': {
-    en: "OCR prescribes the 1799 two-part Prelude, drafted in Wordsworth's lifetime but unpublished until 1973. The boat-stealing episode appears in Part First, lines 81-129. AQA prescribes the 1850 posthumous Prelude (edited by Wordsworth's widow Mary). The wording is materially different between the two editions - never cross-quote between versions. If you are revising for OCR, use only the 1799 text.",
-    ar: 'OCR يقرّر نسخة The Prelude ١٧٩٩ المؤلّفة من جزأين، اللي كتبها Wordsworth في حياته بس ما انتشرت إلا عام ١٩٧٣. مشهد سرقة القارب يطلع في Part First، الأسطر ٨١-١٢٩. AQA يقرّر نسخة The Prelude ١٨٥٠ اللي انتشرت بعد موته (حرّرتها أرملته Mary). الكلام بين النسختين مختلف جوهرياً - لا تنقل اقتباسات بين النسختين أبداً. لو تراجع لـ OCR، استخدم نص ١٧٩٩ بس.',
-    es: 'OCR prescribe The Prelude de 1799 en dos partes, redactado en vida de Wordsworth pero inédito hasta 1973. El episodio del robo de la barca aparece en Part First, versos 81-129. AQA prescribe The Prelude póstumo de 1850 (editado por la viuda de Wordsworth, Mary). La redacción difiere notablemente entre ambas ediciones: nunca cites cruzando versiones. Si te preparas para OCR, usa solo el texto de 1799.',
-  },
   'poetry_hub.ocr.explore_other_clusters': {
     en: 'Explore other clusters',
     ar: 'استكشف المجموعات الثانية',
     es: 'Explora otros clusters',
+  },
+  'poetry_hub.ocr.cluster_lead': {
+    en: 'The 15 poems OCR sets for this cluster, as the anthology has stood since OCR revised it for first teaching in September 2022.',
+    ar: 'الـ١٥ قصيدة اللي تحددها OCR لهذي المجموعة، حسب المختارات من يوم راجعتها OCR للتدريس من سبتمبر ٢٠٢٢.',
+    es: 'Los 15 poemas que OCR fija para este cluster, tal como está la antología desde que OCR la revisó para empezar a enseñarse en septiembre de 2022.',
+  },
+  'poetry_hub.ocr.exam_title': {
+    en: 'How it is examined',
+    ar: 'شلون يجي في الامتحان',
+    es: 'Cómo se evalúa',
+  },
+  'poetry_hub.ocr.exam_body': {
+    en: 'In J352/02 Exploring poetry and Shakespeare, Section A, you answer one question on your cluster, in two parts. Part (a) prints a poem from the cluster beside a poem you have not seen and asks you to compare them (20 marks, about 45 minutes). Part (b) asks you to explore one other poem from the anthology, from memory (20 marks, about 30 minutes). You may not take the anthology into the exam.',
+    ar: 'في J352/02 Exploring poetry and Shakespeare، القسم A، تجاوب على سؤال واحد عن مجموعتك، وله جزئين. الجزء (a) يطبع قصيدة من المجموعة جنب قصيدة ما شفتها قبل ويطلب منك تقارن بينهم (٢٠ درجة، حوالي ٤٥ دقيقة). الجزء (b) يطلب منك تحلل قصيدة ثانية من المختارات من الذاكرة (٢٠ درجة، حوالي ٣٠ دقيقة). ما يسمحون لك تدخل المختارات معك الامتحان.',
+    es: 'En J352/02 Exploring poetry and Shakespeare, sección A, respondes a una pregunta sobre tu cluster, en dos partes. La parte (a) imprime un poema del cluster junto a un poema que no has visto y te pide compararlos (20 puntos, unos 45 minutos). La parte (b) te pide analizar otro poema de la antología, de memoria (20 puntos, unos 30 minutos). No puedes llevar la antología al examen.',
+  },
+  'poetry_hub.ocr.no_study_page': {
+    en: 'No study page yet',
+    ar: 'ما في صفحة مذاكرة لين الحين',
+    es: 'Aún sin página de estudio',
+  },
+  'poetry_hub.ocr.added_2022': {
+    en: 'Added in 2022',
+    ar: 'أُضيفت في ٢٠٢٢',
+    es: 'Añadido en 2022',
+  },
+  'poetry_hub.ocr.on_edexcel_pages': {
+    en: 'On our Pearson Edexcel Conflict pages',
+    ar: 'في صفحاتنا لـ Pearson Edexcel، مجموعة Conflict',
+    es: 'En nuestras páginas de Pearson Edexcel, Conflict',
+  },
+  'poetry_hub.ocr.on_igcse_pages': {
+    en: 'On our International GCSE pages',
+    ar: 'في صفحاتنا لـ International GCSE',
+    es: 'En nuestras páginas de International GCSE',
+  },
+  'poetry_hub.ocr.wider_title': {
+    en: 'Wider reading on this site',
+    ar: 'قراءات إضافية في الموقع',
+    es: 'Lecturas complementarias en este sitio',
+  },
+  'poetry_hub.ocr.wider_body': {
+    en: "These poems are not in OCR's anthology. OCR's specification asks you to read beyond your cluster, because part (a) sets a poem you have not seen, and these are annotated in full.",
+    ar: 'هذي القصائد مو موجودة في مختارات OCR. منهج OCR يطلب منك تقرا أكثر من مجموعتك، لأن الجزء (a) يجيب قصيدة ما شفتها قبل، وهذي القصائد مشروحة كاملة.',
+    es: 'Estos poemas no están en la antología de OCR. La especificación de OCR te pide leer más allá de tu cluster, porque la parte (a) pone un poema que no has visto, y estos están anotados por completo.',
+  },
+  'poetry_hub.ocr.wider.edexcel_relationships': {
+    en: 'Set by Pearson Edexcel GCSE (Relationships), not by OCR.',
+    ar: 'مقررة في Pearson Edexcel GCSE (Relationships)، مو في OCR.',
+    es: 'La fija Pearson Edexcel GCSE (Relationships), no OCR.',
+  },
+  'poetry_hub.ocr.wider.aqa_and_edexcel': {
+    en: 'Set by AQA (Love and Relationships) and Pearson Edexcel GCSE (Relationships), not by OCR.',
+    ar: 'مقررة في AQA (Love and Relationships) وفي Pearson Edexcel GCSE (Relationships)، مو في OCR.',
+    es: 'La fijan AQA (Love and Relationships) y Pearson Edexcel GCSE (Relationships), no OCR.',
+  },
+  'poetry_hub.ocr.wider.not_in_anthology': {
+    en: "Not in OCR's anthology.",
+    ar: 'مو موجودة في مختارات OCR.',
+    es: 'No está en la antología de OCR.',
+  },
+  'poetry_hub.ocr.wider.removed_2022': {
+    en: 'In this cluster until OCR revised the anthology in 2022; no longer set.',
+    ar: 'كانت في هذي المجموعة لين راجعت OCR المختارات في ٢٠٢٢؛ ما عادت مقررة.',
+    es: 'Estuvo en este cluster hasta que OCR revisó la antología en 2022; ya no se fija.',
+  },
+  'poetry_hub.ocr.removed_title': {
+    en: 'No longer set',
+    ar: 'ما عادت مقررة',
+    es: 'Ya no se fijan',
+  },
+  'poetry_hub.ocr.removed_body': {
+    en: 'OCR replaced five poems in this cluster in 2022: {list}. A revision guide that lists any of them was written for the earlier anthology.',
+    ar: 'OCR بدّلت خمس قصائد في هذي المجموعة في ٢٠٢٢: {list}. أي دليل مراجعة يذكر وحدة منها مكتوب للمختارات القديمة.',
+    es: 'OCR sustituyó cinco poemas de este cluster en 2022: {list}. Una guía de repaso que incluya alguno de ellos se escribió para la antología anterior.',
+  },
+  'poetry_hub.ocr.rights_body': {
+    en: 'Most of these poems are still in copyright, so this site quotes them only briefly, for criticism and review under the fair dealing provisions of the Copyright, Designs and Patents Act 1988. OCR publishes the anthology free of charge at ocr.org.uk.',
+    ar: 'أغلب هذي القصائد بعدها محفوظة الحقوق، فالموقع يقتبس منها شي قليل بس، للنقد والمراجعة حسب أحكام الاستخدام العادل في Copyright, Designs and Patents Act 1988. OCR تنشر المختارات مجاناً على ocr.org.uk.',
+    es: 'La mayoría de estos poemas siguen protegidos por derechos de autor, así que este sitio solo los cita brevemente, con fines de crítica y reseña según las disposiciones de uso legítimo de la Copyright, Designs and Patents Act 1988. OCR publica la antología gratis en ocr.org.uk.',
+  },
+  'poetry_hub.ocr.pnw_notice.badge': {
+    en: 'Not an OCR cluster',
+    ar: 'مو مجموعة من OCR',
+    es: 'No es un cluster de OCR',
+  },
+  'poetry_hub.ocr.pnw_notice.title': {
+    en: 'OCR has no Power and the Natural World cluster',
+    ar: 'ما في مجموعة اسمها Power and the Natural World في OCR',
+    es: 'OCR no tiene un cluster Power and the Natural World',
+  },
+  'poetry_hub.ocr.pnw_notice.body': {
+    en: "OCR's anthology, Towards a World Unknown, has three clusters: Love and Relationships, Conflict, and Youth and Age. This page used to list a fourth, Power and the Natural World, with fifteen poems. OCR has never set that cluster. Of those fifteen, one is an OCR poem: Boat Stealing, from the 1799 Prelude, which is in Conflict.",
+    ar: 'مختارات OCR، Towards a World Unknown، فيها ثلاث مجموعات: Love and Relationships و Conflict و Youth and Age. هذي الصفحة كانت تعرض مجموعة رابعة اسمها Power and the Natural World فيها ١٥ قصيدة. OCR عمرها ما قررت هذي المجموعة. من هذي الـ١٥، وحدة بس من قصائد OCR: Boat Stealing من The Prelude نسخة ١٧٩٩، وهي في مجموعة Conflict.',
+    es: 'La antología de OCR, Towards a World Unknown, tiene tres clusters: Love and Relationships, Conflict y Youth and Age. Esta página mostraba un cuarto, Power and the Natural World, con quince poemas. OCR nunca ha fijado ese cluster. De esos quince, uno es un poema de OCR: Boat Stealing, de The Prelude de 1799, que está en Conflict.',
+  },
+  'poetry_hub.ocr.pnw_notice.choose_cluster': {
+    en: "Choose one of OCR's three clusters",
+    ar: 'اختار وحدة من مجموعات OCR الثلاث',
+    es: 'Elige uno de los tres clusters de OCR',
+  },
+  'poetry_hub.ocr.pnw_notice.elsewhere_title': {
+    en: 'Where some of those poems are set',
+    ar: 'وين تنقرر بعض هذي القصائد',
+    es: 'Dónde se fijan algunos de esos poemas',
+  },
+  'poetry_hub.ocr.pnw_notice.aqa_pc': {
+    en: 'AQA, Power and Conflict',
+    ar: 'AQA، مجموعة Power and Conflict',
+    es: 'AQA, Power and Conflict',
+  },
+  'poetry_hub.ocr.pnw_notice.edexcel_tp': {
+    en: 'Pearson Edexcel GCSE, Time and Place',
+    ar: 'Pearson Edexcel GCSE، مجموعة Time and Place',
+    es: 'Pearson Edexcel GCSE, Time and Place',
+  },
+  'poetry_hub.ocr.pnw_notice.ocr_conflict': {
+    en: 'OCR, Conflict',
+    ar: 'OCR، مجموعة Conflict',
+    es: 'OCR, Conflict',
+  },
+  'poetry_hub.ocr.pnw_notice.wider': {
+    en: 'Not set by OCR: wider reading',
+    ar: 'مو مقررة في OCR: قراءة إضافية',
+    es: 'No la fija OCR: lectura complementaria',
   },
 
   // OCR comparison-guide
@@ -207,21 +272,21 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
   },
   'poetry_hub.ocr.cg.time_label': { en: 'Time', ar: 'الوقت', es: 'Tiempo' },
   'poetry_hub.ocr.cg.time_value': {
-    en: 'Approximately 40 minutes',
-    ar: 'تقريباً ٤٠ دقيقة',
-    es: 'Aproximadamente 40 minutos',
+    en: 'About 75 minutes: 45 for part (a), 30 for part (b)',
+    ar: 'حوالي ٧٥ دقيقة: ٤٥ للجزء (a) و٣٠ للجزء (b)',
+    es: 'Unos 75 minutos: 45 para la parte (a) y 30 para la (b)',
   },
   'poetry_hub.ocr.cg.marks_label': { en: 'Marks', ar: 'الدرجات', es: 'Puntos' },
   'poetry_hub.ocr.cg.marks_value': {
-    en: 'Up to 24 marks for this section',
-    ar: 'لين ٢٤ درجة لهذا القسم',
-    es: 'Hasta 24 puntos para esta sección',
+    en: '40 marks: 20 for each part',
+    ar: '٤٠ درجة: ٢٠ لكل جزء',
+    es: '40 puntos: 20 por parte',
   },
   'poetry_hub.ocr.cg.assess_label': { en: 'Assessment', ar: 'التقييم', es: 'Evaluación' },
   'poetry_hub.ocr.cg.assess_value': {
-    en: 'AO1, AO2, AO3 are all tested',
-    ar: 'AO1 و AO2 و AO3 كلها تتقيّم',
-    es: 'Se evalúan AO1, AO2 y AO3',
+    en: 'AO1 and AO2. Context (AO3) is assessed in the Shakespeare section, not here.',
+    ar: 'AO1 و AO2. السياق (AO3) ينقيّم في قسم Shakespeare، مو هني.',
+    es: 'AO1 y AO2. El contexto (AO3) se evalúa en la sección de Shakespeare, no aquí.',
   },
   'poetry_hub.ocr.cg.aos_title': {
     en: 'The Assessment Objectives',
@@ -254,9 +319,9 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Cómo analizar una cita',
   },
   'poetry_hub.ocr.cg.choosing_title': {
-    en: 'Choosing Your Comparison Poem',
-    ar: 'اختيار قصيدة المقارنة',
-    es: 'Elegir tu poema de comparación',
+    en: 'Choosing your part (b) poem',
+    ar: 'اختيار قصيدة الجزء (b)',
+    es: 'Cómo elegir el poema de la parte (b)',
   },
   'poetry_hub.ocr.cg.do': { en: 'Do', ar: 'سوِّ', es: 'Haz' },
   'poetry_hub.ocr.cg.avoid': { en: 'Avoid', ar: 'تجنّب', es: 'Evita' },
@@ -293,9 +358,9 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Planes de redacción de comparación de poesía',
   },
   'poetry_hub.ocr.ep.lead': {
-    en: '10 ready-made essay plans covering all 4 OCR clusters. Each plan pairs two poems, provides a three-point structure with side-by-side analysis, and includes an exam tip.',
-    ar: '١٠ خطط مقالات جاهزة تغطّي كل المجموعات الأربعة لـ OCR. كل خطة تجمع قصيدتين، وتوفّر بنية بثلاث نقاط مع تحليل جنب جنب، وتتضمّن نصيحة للامتحان.',
-    es: '10 planes de redacción listos que cubren los 4 clusters de OCR. Cada plan empareja dos poemas, ofrece una estructura de tres puntos con análisis en paralelo e incluye un consejo de examen.',
+    en: 'Ten practice comparison plans. Their poems are wider reading rather than OCR set poems (plan 4 uses The Destruction of Sennacherib, from Conflict), so use them to practise part (a): comparing a poem with one you have not studied.',
+    ar: 'عشر خطط مقارنة للتمرين. قصائدها قراءة إضافية مو من قصائد OCR المقررة (الخطة ٤ فيها The Destruction of Sennacherib من مجموعة Conflict)، فاستخدمها عشان تتمرن على الجزء (a): مقارنة قصيدة بقصيدة ما درستها.',
+    es: 'Diez planes de comparación para practicar. Sus poemas son lecturas complementarias, no poemas fijados por OCR (el plan 4 usa The Destruction of Sennacherib, de Conflict), así que úsalos para practicar la parte (a): comparar un poema con otro que no has estudiado.',
   },
   'poetry_hub.ocr.ep.how_to_title': {
     en: 'How to use these plans',
@@ -329,14 +394,14 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
 
   // OCR themes
   'poetry_hub.ocr.themes.title': {
-    en: 'Themes Across All Clusters',
-    ar: 'المواضيع عبر كل المجموعات',
-    es: 'Temas en todos los clusters',
+    en: 'Themes and Wider Reading',
+    ar: 'المواضيع والقراءات الإضافية',
+    es: 'Temas y lecturas complementarias',
   },
   'poetry_hub.ocr.themes.lead': {
-    en: 'Every major theme in the OCR anthology mapped to the poems that explore it. Use this to find strong comparison pairings and to see how the same idea appears across different clusters.',
-    ar: 'كل موضوع رئيسي في مختارات OCR مربوط بالقصائد اللي تستكشفه. استخدمها تلقى أزواج مقارنة قوية وتشوف شلون نفس الفكرة تطلع في مجموعات مختلفة.',
-    es: 'Cada tema principal de la antología de OCR vinculado a los poemas que lo exploran. Úsalo para encontrar buenos emparejamientos de comparación y para ver cómo aparece la misma idea en distintos clusters.',
+    en: "Themes that run through OCR's three clusters, mapped to poems that explore them. Most of these poems are wider reading, not OCR set poems, and each is badged to say which.",
+    ar: 'مواضيع تمرّ في مجموعات OCR الثلاث، مع قصائد تتناولها. أغلب هذي القصائد قراءة إضافية مو من قصائد OCR المقررة، وكل وحدة عليها علامة توضح.',
+    es: 'Temas que recorren los tres clusters de OCR, con poemas que los exploran. La mayoría de estos poemas son lecturas complementarias, no poemas fijados por OCR, y cada uno lleva una etiqueta que lo indica.',
   },
   'poetry_hub.ocr.themes.how_title': {
     en: 'How to use this page',
@@ -526,16 +591,16 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Todos los planes de redacción',
   },
 
-  // ─── Poetry hub: Eduqas cluster ────────────────────────────────────
+  // ─── Poetry hub: Eduqas anthology ──────────────────────────────────
   'poetry_hub.eduqas.back_to_poetry': {
     en: 'Back to Poetry',
     ar: 'رجوع للشعر',
     es: 'Volver a Poesía',
   },
   'poetry_hub.eduqas.badge_anthology': {
-    en: 'Eduqas GCSE 2025 Anthology',
-    ar: 'Eduqas GCSE 2025 Anthology',
-    es: 'Eduqas GCSE 2025 Anthology',
+    en: 'Eduqas anthology, exams from 2027',
+    ar: 'مختارات Eduqas، امتحانات من ٢٠٢٧',
+    es: 'Antología de Eduqas, exámenes desde 2027',
   },
   'poetry_hub.eduqas.hero_title': {
     en: 'WJEC Eduqas Poetry',
@@ -578,9 +643,9 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Un ancla de comparación victoriana',
   },
   'poetry_hub.eduqas.love_betrayal_body': {
-    en: 'Sonnet 29 (Barrett Browning) and Cousin Kate (Rossetti) are both Victorian, both from female speakers, and both about absent or lost lovers - a strong cluster pairing for the comparison question.',
-    ar: 'Sonnet 29 (Barrett Browning) و Cousin Kate (Rossetti) كلاهما فيكتوري، كلاهما من متحدّثات نساء، وكلاهما عن حبيب غائب أو مفقود - زوج قوي في المجموعة لسؤال المقارنة.',
-    es: 'Sonnet 29 (Barrett Browning) y Cousin Kate (Rossetti) son ambos victorianos, ambos de voces femeninas y ambos sobre amantes ausentes o perdidos: una pareja sólida del cluster para la pregunta de comparación.',
+    en: 'Sonnet 29 (Barrett Browning) and Cousin Kate (Rossetti) are both Victorian, both from female speakers, and both about absent or lost lovers: a strong pairing for the comparison question.',
+    ar: 'Sonnet 29 (Barrett Browning) و Cousin Kate (Rossetti) كلاهما فيكتوري، كلاهما من متحدّثات نساء، وكلاهما عن حبيب غائب أو مفقود: زوج قوي لسؤال المقارنة.',
+    es: 'Sonnet 29 (Barrett Browning) y Cousin Kate (Rossetti) son ambos victorianos, ambos de voces femeninas y ambos sobre amantes ausentes o perdidos: una pareja sólida para la pregunta de comparación.',
   },
   'poetry_hub.eduqas.war_identity_title': {
     en: 'War & identity pair',
@@ -603,19 +668,19 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Nota: Drummer Hodge es un poema de la Guerra de los Bóeres (1899), no de la Primera Guerra Mundial.',
   },
   'poetry_hub.eduqas.copyright_only': {
-    en: 'In copyright - study notes only (short fair-dealing extracts)',
-    ar: 'حقوق محفوظة - ملاحظات مذاكرة بس (مقاطع قصيرة بحدود الاستخدام العادل)',
-    es: 'Bajo derechos de autor: solo apuntes de estudio (breves extractos de uso legítimo)',
+    en: 'In copyright: no study page yet',
+    ar: 'محفوظة الحقوق: ما في صفحة مذاكرة لين الحين',
+    es: 'Con derechos de autor: aún sin página de estudio',
   },
   'poetry_hub.eduqas.pd_soon': {
-    en: 'Public domain - study page coming soon',
-    ar: 'مجال عام - صفحة المذاكرة قريباً',
-    es: 'Dominio público: página de estudio próximamente',
+    en: 'Public domain: no study page yet',
+    ar: 'ملك عام: ما في صفحة مذاكرة لين الحين',
+    es: 'Dominio público: aún sin página de estudio',
   },
   'poetry_hub.eduqas.in_copyright_aria': {
-    en: 'In copyright - study notes only',
-    ar: 'حقوق محفوظة - ملاحظات مذاكرة بس',
-    es: 'Bajo derechos de autor: solo apuntes de estudio',
+    en: 'In copyright: no study page yet',
+    ar: 'محفوظة الحقوق: ما في صفحة مذاكرة لين الحين',
+    es: 'Con derechos de autor: aún sin página de estudio',
   },
   'poetry_hub.eduqas.theme.childhood_nature': {
     en: 'Childhood & Nature',
@@ -673,9 +738,9 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
     es: 'Planes de redacción de comparación de poesía de Eduqas',
   },
   'poetry_hub.eduqas.ep.lead': {
-    en: 'Ready-made comparison plans across the Eduqas 2025 anthology. Each plan provides a thesis, three full paragraphs with evidence and analysis, a conclusion and an exam tip.',
-    ar: 'خطط مقارنة جاهزة عبر مختارات Eduqas ٢٠٢٥. كل خطة توفّر أطروحة وثلاث فقرات كاملة بالأدلّة والتحليل وخاتمة ونصيحة امتحان.',
-    es: 'Planes de comparación listos para la antología de Eduqas 2025. Cada plan ofrece una tesis, tres párrafos completos con evidencia y análisis, una conclusión y un consejo de examen.',
+    en: 'Ready-made comparison plans for the Eduqas anthology examined from summer 2027. Each plan provides a thesis, three full paragraphs with evidence and analysis, a conclusion and an exam tip.',
+    ar: 'خطط مقارنة جاهزة لمختارات Eduqas اللي تنمتحن من صيف ٢٠٢٧. كل خطة توفّر أطروحة وثلاث فقرات كاملة بالأدلّة والتحليل وخاتمة ونصيحة امتحان.',
+    es: 'Planes de comparación listos para la antología de Eduqas que se examina desde el verano de 2027. Cada plan ofrece una tesis, tres párrafos completos con evidencia y análisis, una conclusión y un consejo de examen.',
   },
   'poetry_hub.eduqas.ep.how_title': {
     en: 'How to use these plans',

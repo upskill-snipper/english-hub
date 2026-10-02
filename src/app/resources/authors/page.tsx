@@ -122,6 +122,12 @@ const NOVELISTS_DRAMATISTS: AuthorEntry[] = [
   },
 ]
 
+// The board after each poem is where it is set now. Until 2 October 2026 these
+// labels attached OCR clusters to 26 poems OCR does not set (two of which it set
+// until 2022), several of them to an OCR "Power and Natural World" cluster that
+// does not exist, and gave as current the Eduqas anthology retired in summer
+// 2026. Checked against src/lib/board/ocr-anthology.ts, eduqas-anthology.ts and
+// the AQA and Pearson Edexcel anthologies.
 const ROMANTIC_VICTORIAN_POETS: AuthorEntry[] = [
   {
     name: 'William Blake',
@@ -130,7 +136,7 @@ const ROMANTIC_VICTORIAN_POETS: AuthorEntry[] = [
     bio: 'London-born engraver, painter, poet and radical visionary. Lived in London his entire life. Combined poetry with hand-coloured illuminated printing to publish his own work.',
     keyWorks: [
       'Songs of Innocence (1789) and Songs of Experience (1794) - combined edition 1794',
-      'London (Songs of Experience, 1794) - AQA Power & Conflict, OCR Power & Natural World, Eduqas',
+      'London (Songs of Experience, 1794) - AQA Power & Conflict, Edexcel Time and Place (and Eduqas until summer 2026)',
       'The Tyger (Songs of Experience, 1794) - Edexcel IGCSE',
       'A Poison Tree (Songs of Experience, 1794) - Edexcel Conflict',
       'The Schoolboy (Songs of Experience, 1794) - Eduqas',
@@ -149,10 +155,10 @@ const ROMANTIC_VICTORIAN_POETS: AuthorEntry[] = [
     bio: 'Founder of English Romanticism, born in Cumbria. Co-wrote the Lyrical Ballads (1798) with Coleridge. Was Poet Laureate from 1843 until his death. The Prelude was published posthumously in 1850.',
     keyWorks: [
       'Lyrical Ballads (with Coleridge, 1798)',
-      'The Prelude (1850, posthumous; earlier versions 1799 and 1805) - AQA Power & Conflict (1850), OCR Power & Natural World (1799 two-part)',
-      'Composed Upon Westminster Bridge (1802) - Edexcel Time and Place, OCR Power & Natural World',
+      'The Prelude (1850, posthumous; earlier versions 1799 and 1805) - AQA Power & Conflict and Edexcel Conflict (1850), OCR Conflict (1799 two-part, as Boat Stealing)',
+      'Composed Upon Westminster Bridge (1802) - Edexcel Time and Place',
       'I Wandered Lonely as a Cloud (1807) - Eduqas',
-      'She Dwelt Among the Untrodden Ways (1800) - OCR Love & Relationships',
+      'She Dwelt Among the Untrodden Ways (1800)',
     ],
     examNote:
       'AQA prints the 1850 posthumous Prelude. OCR uses the 1799 two-part Prelude (Part First, lines 81-129). The wording is materially different - never cross-quote between the versions.',
@@ -164,7 +170,7 @@ const ROMANTIC_VICTORIAN_POETS: AuthorEntry[] = [
     era: 'Romantic',
     bio: 'George Gordon, 6th Baron Byron. Aristocratic, scandalous, charismatic Romantic poet. Created the "Byronic hero." Died of fever at Missolonghi while supporting the Greek War of Independence.',
     keyWorks: [
-      'She Walks in Beauty (1814) - OCR Love & Relationships',
+      'She Walks in Beauty (1814) - Edexcel Relationships',
       'When We Two Parted (written 1815/16, pub. 1816) - AQA Love & Relationships',
       'The Destruction of Sennacherib (1815) - Edexcel Conflict, OCR Conflict',
       'Don Juan (1819-24) - wider reading',
@@ -182,9 +188,9 @@ const ROMANTIC_VICTORIAN_POETS: AuthorEntry[] = [
     era: 'Romantic',
     bio: 'English Romantic poet and political radical, expelled from Oxford for atheism. Drowned in a sailing accident off the Italian coast aged 29. Husband of Mary Shelley.',
     keyWorks: [
-      'Ozymandias (written 1817; pub. Jan 1818 in The Examiner / The Indicator sonnet competition with Horace Smith) - AQA Power & Conflict, OCR Power & Natural World, Eduqas',
+      'Ozymandias (written 1817; pub. Jan 1818 in The Examiner / The Indicator sonnet competition with Horace Smith) - AQA Power & Conflict (and Eduqas until summer 2026)',
       "Love's Philosophy (1820) - AQA Love & Relationships",
-      'Ode to the West Wind (1820) - OCR Power & Natural World',
+      'Ode to the West Wind (1820)',
     ],
     studyLinks: [{ label: 'Ozymandias', href: '/revision/poetry/power-and-conflict/ozymandias' }],
   },
@@ -196,8 +202,8 @@ const ROMANTIC_VICTORIAN_POETS: AuthorEntry[] = [
     keyWorks: [
       'La Belle Dame sans Merci (two versions: 1819 manuscript and 1820 published version in The Indicator) - Edexcel',
       'Ode to a Nightingale (1819) - wider reading',
-      'To Autumn (1819) - Edexcel Time and Place, Eduqas',
-      'When I Have Fears (1818) - OCR Youth and Age',
+      'To Autumn (1819) - Edexcel Time and Place (and Eduqas until summer 2026)',
+      'When I Have Fears (1818) - OCR Youth and Age until the anthology was revised in 2022',
     ],
     // Until 2 October 2026 this told students to quote the 1820 Indicator
     // text, which the International GCSE anthology does not print: the error
@@ -212,9 +218,9 @@ const ROMANTIC_VICTORIAN_POETS: AuthorEntry[] = [
     era: 'Victorian',
     bio: 'Poet Laureate from 1850 until his death - the longest tenure in the role\'s history. Wrote "The Charge of the Light Brigade" within minutes of reading the Times report of the disastrous Battle of Balaclava charge in October 1854.',
     keyWorks: [
-      'The Charge of the Light Brigade (1854) - AQA Power & Conflict, Edexcel Conflict, OCR Conflict',
-      'The Eagle (1851) - OCR Power & Natural World',
-      'Crossing the Bar (1889) - OCR Youth and Age',
+      'The Charge of the Light Brigade (1854) - AQA Power & Conflict, Edexcel Conflict',
+      'The Eagle (1851)',
+      'Crossing the Bar (1889)',
       'In Memoriam A.H.H. (1850) - wider reading',
     ],
     studyLinks: [
@@ -232,7 +238,7 @@ const ROMANTIC_VICTORIAN_POETS: AuthorEntry[] = [
     keyWorks: [
       'Goblin Market and Other Poems (1862) - wider reading',
       'Remember (1862) - Edexcel IGCSE',
-      'Cousin Kate (1862) - Edexcel Conflict, OCR Conflict, Eduqas',
+      'Cousin Kate (1862) - Edexcel Conflict, Eduqas (from 2027)',
     ],
   },
   {
@@ -242,8 +248,8 @@ const ROMANTIC_VICTORIAN_POETS: AuthorEntry[] = [
     bio: "English novelist and poet, born in Dorset. Hardy's poetry is Victorian in its reach but pre-modernist in its bleakness. Lost his religious faith partly under the influence of Darwin's On the Origin of Species (1859).",
     keyWorks: [
       'Drummer Hodge (1899) - Eduqas',
-      'Neutral Tones (written 1867; pub. 1898) - AQA Love & Relationships, OCR Love & Relationships',
-      'The Man He Killed (1902) - Edexcel Conflict, OCR Conflict',
+      'Neutral Tones (written 1867; pub. 1898) - AQA Love & Relationships, Edexcel Relationships',
+      'The Man He Killed (1902) - Edexcel Conflict',
       "Tess of the d'Urbervilles (1891) - wider reading",
     ],
     commonError:
@@ -260,8 +266,8 @@ const TWENTIETH_CENTURY_POETS: AuthorEntry[] = [
     keyWorks: [
       'Anthem for Doomed Youth (1917) - wider reading',
       'Disabled (1917) - Eduqas',
-      'Exposure (drafted winter 1917-18) - AQA Power & Conflict, Edexcel Conflict, OCR Conflict',
-      'Dulce et Decorum Est (1917) - Eduqas',
+      'Exposure (drafted winter 1917-18) - AQA Power & Conflict, Edexcel Conflict',
+      'Dulce et Decorum Est (1917) - Eduqas until summer 2026',
     ],
     examNote:
       'In Exposure the spelling "knive" (verb) is correct - Owen\'s coinage; do not "correct" it to "knife" in quotation.',
@@ -272,9 +278,7 @@ const TWENTIETH_CENTURY_POETS: AuthorEntry[] = [
     dates: '1904-1972',
     era: 'Mid-twentieth century',
     bio: 'Anglo-Irish poet (note the hyphenated surname Day-Lewis). Part of the politically-engaged 1930s generation alongside Auden and Spender. UK Poet Laureate from 1968 until his death in 1972.',
-    keyWorks: [
-      'Walking Away (in The Gate and Other Poems, 1956) - AQA Love & Relationships, OCR Youth and Age',
-    ],
+    keyWorks: ['Walking Away (in The Gate and Other Poems, 1956) - AQA Love & Relationships'],
     commonError:
       '"Walking Away" is dedicated to his eldest son Sean Day-Lewis (the journalist) - NOT to Daniel Day-Lewis the actor, who was the poet\'s youngest son and not yet born when the poem was written.',
     studyLinks: [
@@ -309,7 +313,7 @@ const TWENTIETH_CENTURY_POETS: AuthorEntry[] = [
     era: 'Modern',
     bio: 'Yorkshire-born English poet. Husband of Sylvia Plath (married 1956-1963). UK Poet Laureate from 1984 until his death in 1998.',
     keyWorks: [
-      'The Hawk in the Rain (1957) - debut collection containing Bayonet Charge (AQA Power & Conflict) and Wind (OCR Power & Natural World)',
+      'The Hawk in the Rain (1957) - debut collection containing Bayonet Charge (AQA Power & Conflict) and Wind',
       'Crow (1970) - wider reading',
       'Birthday Letters (1998) - wider reading',
     ],
@@ -332,8 +336,8 @@ const TWENTIETH_CENTURY_POETS: AuthorEntry[] = [
     era: 'Modern',
     bio: 'Northern Irish poet, born in County Derry. Awarded the Nobel Prize in Literature in 1995. Boston University professor of poetry. His childhood on a Catholic farm in rural Ulster underpins much of his early work.',
     keyWorks: [
-      'Death of a Naturalist (1966) - debut collection containing Storm on the Island (AQA Power & Conflict, OCR Power & Natural World), Follower (AQA Love & Relationships, OCR Youth and Age), Blackberry Picking (Eduqas)',
-      'At a Potato Digging (Death of a Naturalist, 1966) - OCR Power & Natural World',
+      'Death of a Naturalist (1966) - debut collection containing Storm on the Island (AQA Power & Conflict), Follower (AQA Love & Relationships), Blackberry Picking (Eduqas, from 2027)',
+      'At a Potato Digging (Death of a Naturalist, 1966)',
       'North (1975) - wider reading',
     ],
     studyLinks: [
@@ -350,7 +354,7 @@ const TWENTIETH_CENTURY_POETS: AuthorEntry[] = [
     era: 'Contemporary',
     bio: 'English poet, novelist and critic.',
     keyWorks: [
-      'The Émigrée (in Thinking of Skins, 1993) - AQA Power & Conflict, OCR Youth and Age',
+      'The Émigrée (in Thinking of Skins, 1993) - AQA Power & Conflict, Edexcel Belonging',
     ],
     commonError:
       'The city in The Émigrée is deliberately UNNAMED - do not identify it as any specific place. Note the accents on Émigrée (feminine French form).',
@@ -362,7 +366,7 @@ const TWENTIETH_CENTURY_POETS: AuthorEntry[] = [
     era: 'Contemporary',
     bio: "British-Caribbean poet, playwright and children's writer; born in British Guiana (now Guyana) and moved to England in 1977. Uses Caribbean Creole alongside Standard English to interrogate colonialism, race and identity.",
     keyWorks: [
-      'Half-Caste (1996) - Edexcel Conflict, OCR Conflict',
+      'Half-Caste (1996) - Edexcel Conflict',
       'Checking Out Me History (in Half-Caste and Other Poems, 2005) - AQA Power & Conflict',
       'Flag - OCR Conflict',
     ],
@@ -383,7 +387,7 @@ const TWENTIETH_CENTURY_POETS: AuthorEntry[] = [
     keyWorks: [
       'Blessing (1989, in Postcards from god) - wider reading',
       'Tissue (in The Terrorist at My Table, 2006) - AQA Power & Conflict',
-      'Living Space - OCR Power & Natural World',
+      'Living Space - Eduqas until summer 2026',
       'Honour Killing - OCR Conflict',
     ],
     commonError:
@@ -398,7 +402,7 @@ const TWENTIETH_CENTURY_POETS: AuthorEntry[] = [
     keyWorks: [
       'Standing Female Nude (1985) - contains War Photographer (AQA Power & Conflict)',
       'Mean Time (1993) - contains Before You Were Mine (AQA Love & Relationships)',
-      'Valentine (1993) - OCR Love & Relationships',
+      'Valentine (1993) - Edexcel Relationships (and Eduqas until summer 2026)',
     ],
     studyLinks: [
       { label: 'War Photographer', href: '/revision/poetry/power-and-conflict/war-photographer' },
@@ -415,7 +419,7 @@ const TWENTIETH_CENTURY_POETS: AuthorEntry[] = [
     bio: 'British dub poet, novelist, playwright and rights campaigner; born in Birmingham to Jamaican and Barbadian parents. Died on 7 December 2023.',
     keyWorks: [
       'City Psalms (1992) - wider reading',
-      'No Problem (Propa Propaganda, 1996) - Edexcel Conflict, OCR Conflict',
+      'No Problem (Propa Propaganda, 1996) - Edexcel Conflict',
       'Refugee Boy (2001) - wider reading',
       "Young and dyslexic? You've got it going on - Edexcel IGCSE Language anthology",
     ],
@@ -428,7 +432,7 @@ const TWENTIETH_CENTURY_POETS: AuthorEntry[] = [
     era: 'Contemporary',
     bio: 'British poet and textile designer; has lived in Italy, England and Northern Ireland.',
     keyWorks: [
-      'Poppies (commissioned by Carol Ann Duffy; pub. 2009 in Exit Wounds) - AQA Power & Conflict, Edexcel Conflict, OCR Conflict',
+      'Poppies (commissioned by Carol Ann Duffy; pub. 2009 in Exit Wounds) - AQA Power & Conflict, Edexcel Conflict',
     ],
   },
   {
@@ -439,7 +443,7 @@ const TWENTIETH_CENTURY_POETS: AuthorEntry[] = [
     keyWorks: [
       'Book of Matches (1993) - contains Mother, any distance (AQA Love & Relationships)',
       'The Not Dead (2008) - contains Remains (AQA Power & Conflict)',
-      'The Manhunt (2008) - OCR Love & Relationships',
+      'The Manhunt (2008) - Edexcel Relationships (and Eduqas until summer 2026)',
     ],
     commonError:
       'Armitage NEVER served in any military or combat role. "Remains" was commissioned for the 2007 Channel 4 documentary The Not Dead and is based on interviews with Iraq War veterans (especially Guardsman Tromans).',

@@ -14,7 +14,6 @@ export const STRINGS: Record<string, Bi> = {
   s0: { en: `Towards a World Unknown`, ar: `Towards a World Unknown` },
   s1: { en: `Love and Relationships`, ar: `الحب والعلاقات` },
   s2: { en: `Youth and Age`, ar: `الشباب والكهولة` },
-  s3: { en: `Power and the Natural World`, ar: `القوة والعالم الطبيعي` },
   s4: { en: `Questions to ask:`, ar: `أسئلة للسؤال عنها:` },
   s5: { en: `Key vocabulary for tone:`, ar: `لغة أساسية للטון:` },
   s6: { en: `Figurative language`, ar: `لغة مجازية` },

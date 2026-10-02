@@ -71,7 +71,10 @@ const PRIORITY_OVERRIDES: Record<string, number> = {
 const DEMOTED: Record<string, { priority: number; changeFrequency: ChangeFreq }> =
   Object.fromEntries(
     [
-      // Eduqas pre-2025 anthology poems (not in the 2025 cluster).
+      // Pages written for the Eduqas anthology examined for the last time in
+      // summer 2026; none of these poems is in the one examined from 2027.
+      // (This said "pre-2025 anthology ... not in the 2025 cluster" until
+      // 2 October 2026. See src/lib/board/eduqas-anthology.ts.)
       'dulce-et-decorum-est',
       'the-soldier',
       'london',

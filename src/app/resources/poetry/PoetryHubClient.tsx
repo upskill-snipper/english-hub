@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { useT } from '@/lib/i18n/use-t'
+import { EDUQAS_ANTHOLOGY_2027 } from '@/lib/board/eduqas-anthology'
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -48,7 +49,8 @@ const EDUQAS_SECTIONS = [
     titleKey: 'resources.poetry.anth.eduqas.title',
     href: '/revision/poetry/eduqas',
     descKey: 'resources.poetry.anth.eduqas.desc',
-    poems: 12,
+    // Said 12 until 2 October 2026; the anthology examined from 2027 has 15.
+    poems: EDUQAS_ANTHOLOGY_2027.poems.length,
     board: 'Eduqas',
   },
 ]

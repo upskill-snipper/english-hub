@@ -202,14 +202,14 @@ export const HOMEPAGE_DICTIONARY: Record<string, { en: string; ar: string; es?: 
     es: 'Antología Time & Place, Conflict, Relationships.',
   },
   'homepage.board.ocr.blurb': {
-    en: 'Love, Conflict, Power & Natural World, Youth & Age.',
-    ar: 'الحب، الصراع، القوة والعالم الطبيعي، الشباب والكِبَر.',
-    es: 'Love, Conflict, Power & Natural World, Youth & Age.',
+    en: 'Love and Relationships, Conflict, Youth and Age.',
+    ar: 'الحب والعلاقات، الصراع، الشباب والكِبَر.',
+    es: 'Love and Relationships, Conflict, Youth and Age.',
   },
   'homepage.board.eduqas.blurb': {
-    en: 'Eduqas anthology with annotated walkthroughs.',
-    ar: 'مختارات Eduqas مع شروحات مفصّلة خطوة بخطوة.',
-    es: 'Antología de Eduqas con guías anotadas paso a paso.',
+    en: 'The 15-poem Eduqas anthology, first examined in 2027.',
+    ar: 'مختارات Eduqas من ١٥ قصيدة، أول امتحان فيها ٢٠٢٧.',
+    es: 'La antología de Eduqas de 15 poemas, que se examina desde 2027.',
   },
 
   /* IGCSE board blurbs */

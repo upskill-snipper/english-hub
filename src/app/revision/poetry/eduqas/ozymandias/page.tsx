@@ -11,6 +11,7 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
+import EduqasPreviousAnthologyNotice from '../_components/EduqasPreviousAnthologyNotice'
 /* ── Poem data ────────────────────────────────────────────────────── */
 
 const ozymandias: PoemData = {
@@ -638,13 +639,9 @@ export default function OzymandiasEduqasPage() {
           {t('rev.poetry.shared.back_to_eduqas_poetry')}
         </Button>
 
-        <div className="mb-5 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-body-sm text-amber-100">
-          <p className="font-semibold mb-1">Legacy anthology notice</p>
-          <p className="text-amber-100/90 leading-relaxed">
-            This page is from the legacy pre-2025 Eduqas anthology. The current Eduqas 2025 cluster
-            does not include this poem. The content remains as a study reference.
-          </p>
-        </div>
+        <EduqasPreviousAnthologyNotice title="Ozymandias">
+          AQA sets it, in Power and Conflict.
+        </EduqasPreviousAnthologyNotice>
 
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
@@ -653,22 +650,16 @@ export default function OzymandiasEduqasPage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">Ozymandias</h1>
             <p className="text-body-sm text-muted-foreground">
-              Percy Bysshe Shelley &middot; Eduqas Poetry Anthology
+              Percy Bysshe Shelley &middot; Previous Eduqas anthology, to 2026
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              Eduqas
+              Eduqas, to 2026
             </Badge>
           </div>
         </div>
       </div>
 
-      <StudyTools
-        textName="Ozymandias"
-        textType="poem"
-        examBoard="Eduqas"
-        cluster="Eduqas Poetry Anthology"
-        variant="compact"
-      />
+      <StudyTools textName="Ozymandias" textType="poem" variant="compact" />
       <InlineStudyEngine
         textName="Ozymandias"
         questions={QUIZ_QUESTIONS}
@@ -686,8 +677,7 @@ export default function OzymandiasEduqasPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Eduqas exam asks you to compare two poems from the anthology. These are strong
-          pairings with Ozymandias.
+          Other pages written for the same anthology, to compare it with.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

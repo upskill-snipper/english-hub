@@ -132,8 +132,16 @@ describe('getQuestionsForBoard', () => {
     expect(qs.length).toBeGreaterThan(0)
   })
 
-  it('returns all questions when board is null and topics are empty', () => {
-    expect(getQuestionsForBoard(undefined, null)).toHaveLength(ALL_QUESTIONS.length)
+  it('returns every question still in use when board is null and topics are empty', () => {
+    // Retired questions (about an anthology no longer examined, see QuizQuestion.retired)
+    // are never served, to any board. Until 2 October 2026 there were none.
+    const live = ALL_QUESTIONS.filter((q) => !q.retired)
+    expect(live.length).toBeLessThan(ALL_QUESTIONS.length)
+    expect(getQuestionsForBoard(undefined, null)).toHaveLength(live.length)
+    for (const board of ['eduqas', 'aqa', 'edexcel', 'ocr'] as const) {
+      for (const q of getQuestionsForBoard(undefined, board))
+        expect(q.retired, q.id).toBeUndefined()
+    }
   })
 
   it('filters by topic when topics are provided', () => {

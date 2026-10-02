@@ -123,7 +123,12 @@ describe('the marking hub declares itself too', () => {
 
   it('and is no longer excluded from the sitemap', () => {
     const gen = readFileSync(join(ROOT, 'scripts/generate-sitemap-routes.mjs'), 'utf8')
-    expect(gen).toMatch(/const EXACT_EXCLUDE = new Set\(\[\]\)/)
+    // EXACT_EXCLUDE was empty until 2 October 2026, when the noindex notice at
+    // /revision/poetry/ocr/power-and-natural-world joined it. What this test
+    // guards is that /marking is not in it.
+    const exact = gen.match(/const EXACT_EXCLUDE = new Set\(\[([^\]]*)\]\)/)
+    expect(exact, 'EXACT_EXCLUDE is declared').not.toBeNull()
+    expect(exact![1]).not.toMatch(/'\/marking'/)
     const routes = readFileSync(join(ROOT, 'src/lib/seo/static-routes.json'), 'utf8')
     expect(routes, '/marking is still absent from the route register').toContain('"/marking"')
   })

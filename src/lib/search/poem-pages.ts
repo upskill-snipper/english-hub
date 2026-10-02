@@ -50,16 +50,31 @@ export const POEM_ROOTS: Readonly<Record<string, string>> = {
 /** Directories under those roots that are not poems. */
 export const NOT_POEMS: ReadonlySet<string> = new Set(['essay-plans', 'comparison-guide'])
 
-function inRoot(root: string, poems: ReadonlyArray<[slug: string, title: string, poet: string]>) {
+/**
+ * A fourth element overrides the root's collection for one page. Eduqas needs
+ * it: until 2 October 2026 all ten pages under /revision/poetry/eduqas were
+ * labelled "Eduqas Poetry Anthology", but eight were written for the anthology
+ * examined for the last time in summer 2026, and one of those prints a passage
+ * Eduqas never set. A search result's label is the student's only clue to
+ * which paper a page is for. See src/lib/board/eduqas-anthology.ts.
+ */
+function inRoot(
+  root: string,
+  poems: ReadonlyArray<
+    [slug: string, title: string, poet: string] | [string, string, string, string]
+  >,
+) {
   return poems.map(
-    ([slug, title, poet]): PoemPage => ({
+    ([slug, title, poet, collection]): PoemPage => ({
       title,
       poet,
       href: `${root}/${slug}`,
-      collection: POEM_ROOTS[root],
+      collection: collection ?? POEM_ROOTS[root],
     }),
   )
 }
+
+const EDUQAS_TO_2026 = 'Eduqas anthology, examined to 2026'
 
 export const POEM_PAGES: readonly PoemPage[] = [
   ...inRoot('/revision/poetry/power-and-conflict', [
@@ -97,16 +112,16 @@ export const POEM_PAGES: readonly PoemPage[] = [
     ['winter-swans', 'Winter Swans', 'Owen Sheers'],
   ]),
   ...inRoot('/revision/poetry/eduqas', [
-    ['a-wife-in-london', 'A Wife in London', 'Thomas Hardy'],
+    ['a-wife-in-london', 'A Wife in London', 'Thomas Hardy', EDUQAS_TO_2026],
     ['cousin-kate', 'Cousin Kate', 'Christina Rossetti'],
     ['drummer-hodge', 'Drummer Hodge', 'Thomas Hardy'],
-    ['dulce-et-decorum-est', 'Dulce et Decorum Est', 'Wilfred Owen'],
-    ['london', 'London', 'William Blake'],
-    ['ozymandias', 'Ozymandias', 'Percy Bysshe Shelley'],
-    ['sonnet-43', 'Sonnet 43', 'Elizabeth Barrett Browning'],
-    ['the-prelude', 'The Prelude', 'William Wordsworth'],
-    ['the-soldier', 'The Soldier', 'Rupert Brooke'],
-    ['to-autumn', 'To Autumn', 'John Keats'],
+    ['dulce-et-decorum-est', 'Dulce et Decorum Est', 'Wilfred Owen', EDUQAS_TO_2026],
+    ['london', 'London', 'William Blake', EDUQAS_TO_2026],
+    ['ozymandias', 'Ozymandias', 'Percy Bysshe Shelley', EDUQAS_TO_2026],
+    ['sonnet-43', 'Sonnet 43', 'Elizabeth Barrett Browning', EDUQAS_TO_2026],
+    ['the-prelude', 'The Prelude', 'William Wordsworth', 'The AQA and Pearson Edexcel extract'],
+    ['the-soldier', 'The Soldier', 'Rupert Brooke', EDUQAS_TO_2026],
+    ['to-autumn', 'To Autumn', 'John Keats', EDUQAS_TO_2026],
   ]),
   ...inRoot('/revision/poetry/edexcel/conflict', [
     ['a-poison-tree', 'A Poison Tree', 'William Blake'],

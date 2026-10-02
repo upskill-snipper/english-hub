@@ -435,6 +435,14 @@ const EDEXCEL_PAPERS: Paper[] = [
 ]
 
 // ─── OCR GCSE ────────────────────────────────────────────────────────
+//
+// CORRECTED 2 October 2026 against the J352 specification, Version 3.0, and
+// OCR's own set-text page. Component 01 listed Lord of the Flies, which OCR
+// does not set. Component 02 linked a "Power and the Natural World" cluster
+// OCR has never had, described the poetry as a named poem compared with one of
+// the student's choice, and gave the paper a "Section C: Unseen Poetry" it does
+// not have: the unseen poem is part (a) of Section A, compared with a poem from
+// the student's cluster. See src/lib/board/ocr-anthology.ts.
 
 const OCR_PAPERS: Paper[] = [
   {
@@ -452,7 +460,6 @@ const OCR_PAPERS: Paper[] = [
         links: [
           { label: 'An Inspector Calls', href: '/revision/texts/an-inspector-calls', type: 'text' },
           { label: 'Animal Farm', href: '/revision/texts/animal-farm', type: 'text' },
-          { label: 'Lord of the Flies', href: '/revision/texts/lord-of-the-flies', type: 'text' },
           { label: 'Never Let Me Go', href: '/revision/texts/never-let-me-go', type: 'text' },
           {
             label: 'Essay Structure Guide',
@@ -482,8 +489,9 @@ const OCR_PAPERS: Paper[] = [
     colour: 'clay',
     sections: [
       {
-        title: 'Section A: Poetry Anthology',
-        description: 'One comparison question on a named poem and one of your choice.',
+        title: 'Section A: Poetry across time',
+        description:
+          'One question on your cluster, in two parts: (a) compare a poem from it with an unseen poem; (b) explore one other poem from the anthology.',
         links: [
           { label: 'OCR Poetry Anthology', href: '/revision/poetry/ocr', type: 'poetry' },
           { label: 'Conflict Cluster', href: '/revision/poetry/ocr/conflict', type: 'poetry' },
@@ -494,9 +502,9 @@ const OCR_PAPERS: Paper[] = [
           },
           { label: 'Youth & Age', href: '/revision/poetry/ocr/youth-and-age', type: 'poetry' },
           {
-            label: 'Power & Natural World',
-            href: '/revision/poetry/ocr/power-and-natural-world',
-            type: 'poetry',
+            label: 'Unseen Poetry Practice',
+            href: '/revision/poetry/unseen-poetry',
+            type: 'practice',
           },
         ],
       },
@@ -509,22 +517,6 @@ const OCR_PAPERS: Paper[] = [
             label: 'Romeo & Juliet Study Guide',
             href: '/revision/texts/romeo-and-juliet',
             type: 'text',
-          },
-          {
-            label: 'Unseen Poetry Practice',
-            href: '/revision/poetry/unseen-poetry',
-            type: 'practice',
-          },
-        ],
-      },
-      {
-        title: 'Section C: Unseen Poetry',
-        description: 'One analysis question on an unseen poem.',
-        links: [
-          {
-            label: 'Unseen Poetry Practice',
-            href: '/revision/poetry/unseen-poetry',
-            type: 'practice',
           },
           { label: 'OCR Lit Mock Exams', href: '/mock-exams?paper=ocr-lit', type: 'mock' },
         ],
@@ -607,6 +599,13 @@ const OCR_PAPERS: Paper[] = [
 ]
 
 // ─── Eduqas (WJEC) GCSE ─────────────────────────────────────────────
+//
+// CORRECTED 2 October 2026 against the Eduqas specification, Version 4, August
+// 2024. Component 1 Section B is two questions on the anthology, one of them a
+// comparison; it was described as "one comparison from the anthology, one
+// unseen". The unseen poetry is Component 2 Section C, which was missing, so
+// Component 2 showed 80 marks rather than 120. Component 2 also listed Animal
+// Farm and A View from the Bridge, which Eduqas does not set.
 
 const EDUQAS_PAPERS: Paper[] = [
   {
@@ -637,14 +636,10 @@ const EDUQAS_PAPERS: Paper[] = [
       },
       {
         title: 'Section B: Poetry',
-        description: 'Two poetry questions: one comparison from the anthology, one unseen.',
+        description:
+          'Two questions on the anthology: one on a named poem, then a second poem of your choice compared with it.',
         links: [
           { label: 'Eduqas Poetry Anthology', href: '/revision/poetry/eduqas', type: 'poetry' },
-          {
-            label: 'Unseen Poetry Practice',
-            href: '/revision/poetry/unseen-poetry',
-            type: 'practice',
-          },
           { label: 'Eduqas Lit Mock Exams', href: '/mock-exams?paper=eduqas-lit', type: 'mock' },
         ],
       },
@@ -653,10 +648,10 @@ const EDUQAS_PAPERS: Paper[] = [
   {
     id: 'eduqas-lit-c2',
     name: 'Literature Component 2',
-    subtitle: 'Post-1914 Prose/Drama and 19th-century Prose',
+    subtitle: 'Post-1914 Prose/Drama, 19th-century Prose and Unseen Poetry',
     examCode: 'C720U20-1',
     duration: '2h 30m',
-    totalMarks: 80,
+    totalMarks: 120,
     colour: 'clay',
     sections: [
       {
@@ -666,12 +661,6 @@ const EDUQAS_PAPERS: Paper[] = [
           { label: 'An Inspector Calls', href: '/revision/texts/an-inspector-calls', type: 'text' },
           { label: 'Blood Brothers', href: '/revision/texts/blood-brothers', type: 'text' },
           { label: 'Lord of the Flies', href: '/revision/texts/lord-of-the-flies', type: 'text' },
-          { label: 'Animal Farm', href: '/revision/texts/animal-farm', type: 'text' },
-          {
-            label: 'A View from the Bridge',
-            href: '/revision/texts/a-view-from-the-bridge',
-            type: 'text',
-          },
         ],
       },
       {
@@ -681,6 +670,18 @@ const EDUQAS_PAPERS: Paper[] = [
           { label: 'A Christmas Carol', href: '/revision/texts/a-christmas-carol', type: 'text' },
           { label: 'Jekyll & Hyde', href: '/revision/texts/jekyll-and-hyde', type: 'text' },
           { label: 'Eduqas Lit Mock Exams', href: '/mock-exams?paper=eduqas-lit', type: 'mock' },
+        ],
+      },
+      {
+        title: 'Section C: Unseen Poetry',
+        description:
+          'Two questions on unseen poems from the 20th or 21st century, one a comparison.',
+        links: [
+          {
+            label: 'Unseen Poetry Practice',
+            href: '/revision/poetry/unseen-poetry',
+            type: 'practice',
+          },
         ],
       },
     ],

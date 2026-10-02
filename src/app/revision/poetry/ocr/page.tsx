@@ -1,17 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  Sparkles,
-  BookOpen,
-  Heart,
-  Swords,
-  Clock,
-  Mountain,
-  Info,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, Sparkles, BookOpen, Heart, Swords, Clock, Info } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -19,23 +9,25 @@ import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 
 import { useT } from '@/lib/i18n/use-t'
+import { ocrCluster, type OcrClusterSlug } from '@/lib/board/ocr-anthology'
 
 interface Cluster {
-  slug: string
+  slug: OcrClusterSlug
   titleKey: string
   descKey: string
-  count: number
   icon: typeof Heart
   iconColor: string
   iconBg: string
 }
 
+// OCR sets three clusters of fifteen; the counts come from the anthology module.
+// Until 2 October 2026 a fourth card offered "Power and the Natural World", a
+// cluster OCR has never set. Its URL now explains that; see ocr-anthology.ts.
 const CLUSTERS: Cluster[] = [
   {
     slug: 'love-and-relationships',
     titleKey: 'poetry_hub.ocr.cluster.lr.title',
     descKey: 'poetry_hub.ocr.cluster.lr.desc',
-    count: 15,
     icon: Heart,
     iconColor: 'text-pink-400',
     iconBg: 'bg-pink-500/10',
@@ -44,7 +36,6 @@ const CLUSTERS: Cluster[] = [
     slug: 'conflict',
     titleKey: 'poetry_hub.ocr.cluster.conflict.title',
     descKey: 'poetry_hub.ocr.cluster.conflict.desc',
-    count: 15,
     icon: Swords,
     iconColor: 'text-red-400',
     iconBg: 'bg-red-500/10',
@@ -53,19 +44,9 @@ const CLUSTERS: Cluster[] = [
     slug: 'youth-and-age',
     titleKey: 'poetry_hub.ocr.cluster.ya.title',
     descKey: 'poetry_hub.ocr.cluster.ya.desc',
-    count: 15,
     icon: Clock,
     iconColor: 'text-clay-600',
     iconBg: 'bg-amber-500/10',
-  },
-  {
-    slug: 'power-and-natural-world',
-    titleKey: 'poetry_hub.ocr.cluster.pnw.title',
-    descKey: 'poetry_hub.ocr.cluster.pnw.desc',
-    count: 15,
-    icon: Mountain,
-    iconColor: 'text-emerald-400',
-    iconBg: 'bg-emerald-500/10',
   },
 ]
 
@@ -136,11 +117,11 @@ export default function OCRPoetryHubPage() {
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            {t('poetry_hub.ocr.four_clusters')}
+            {t('poetry_hub.ocr.three_clusters')}
           </h2>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {CLUSTERS.map((cluster) => (
             <Card
               key={cluster.slug}
@@ -158,7 +139,7 @@ export default function OCRPoetryHubPage() {
                       {t(cluster.titleKey)}
                     </CardTitle>
                     <CardDescription>
-                      {cluster.count} {t('poetry_hub.ocr.poems_count')}
+                      {ocrCluster(cluster.slug).poems.length} {t('poetry_hub.ocr.poems_count')}
                     </CardDescription>
                   </div>
                 </div>

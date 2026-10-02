@@ -9,7 +9,9 @@
 // reference poems that are NOT in the canonical Edexcel UK GCSE 1ET0 Pearson
 // Anthology Relationships cluster:
 //   - Lesson 4: "Porphyria's Lover" is an AQA L&R cluster poem; "First Love"
-//     by Clare is an Eduqas anthology poem - neither is in Edexcel 1ET0.
+//     by Clare is in no current GCSE anthology this site covers (this said it
+//     was an Eduqas poem until 2 October 2026; it is in neither Eduqas
+//     anthology) - neither is in Edexcel 1ET0.
 //   - Lesson 5: "Modern Love (Sonnet 16)" by Meredith is not in Edexcel 1ET0
 //     (though "She Walks in Beauty" by Byron IS in Edexcel 1ET0).
 //   - Lessons 6-10 reference poems that are NOT in the standard Edexcel
@@ -819,7 +821,7 @@ const edexcelRelationshipsLesson3: PoetryLesson = {
 }
 
 // NOTE: Porphyria's Lover is in the AQA Love & Relationships cluster (NOT Edexcel
-// 1ET0); First Love (Clare) is an Eduqas anthology poem. Retagged as a cross-board
+// 1ET0); First Love (Clare) is in neither Eduqas anthology. Retagged as a cross-board
 // general comparison lesson so students using this lesson are not misled into
 // thinking either poem is on the Edexcel UK GCSE 1ET0 anthology spec.
 const edexcelRelationshipsLesson4: PoetryLesson = {

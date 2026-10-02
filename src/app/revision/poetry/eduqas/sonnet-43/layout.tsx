@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
 
+// Until 2 October 2026 this described the poem as part of the current Eduqas
+// anthology. It was in the one examined until summer 2026; see
+// src/lib/board/eduqas-anthology.ts.
 export const metadata: Metadata = {
-  title: 'Sonnet 43 - Eduqas GCSE Poetry Analysis',
+  title: 'Sonnet 43 (Barrett Browning): previous Eduqas anthology',
   description:
-    "Sonnet 43 ('How do I love thee?') by Elizabeth Barrett Browning - GCSE analysis for the WJEC Eduqas anthology: love, form and comparisons.",
+    "Sonnet 43 ('How do I love thee?') by Elizabeth Barrett Browning, annotated, from the Eduqas anthology examined until summer 2026. Pearson Edexcel GCSE sets it.",
   alternates: { canonical: 'https://theenglishhub.app/revision/poetry/eduqas/sonnet-43' },
 }
 

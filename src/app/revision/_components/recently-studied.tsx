@@ -34,7 +34,8 @@ const POETRY_HUB_PATHS_BY_BOARD: Partial<Record<ExamBoard, readonly string[]>> =
     '/revision/poetry/ocr/love-and-relationships',
     '/revision/poetry/ocr/conflict',
     '/revision/poetry/ocr/youth-and-age',
-    '/revision/poetry/ocr/power-and-natural-world',
+    // OCR has three clusters; a fourth, "power-and-natural-world", was listed
+    // here until 2 October 2026. See src/lib/board/ocr-anthology.ts.
   ],
   eduqas: ['/revision/poetry/eduqas'],
   // IGCSE boards: use the IGCSE hub

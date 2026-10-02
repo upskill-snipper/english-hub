@@ -10,6 +10,7 @@ import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
+import OcrWiderReadingNotice from '../../_components/OcrWiderReadingNotice'
 import { useT } from '@/lib/i18n/use-t'
 const neutralTones: PoemData = {
   title: 'Neutral Tones',
@@ -627,7 +628,7 @@ const REVISION_TOPICS = [
 
 const ESSAY_PROMPTS = [
   'How does Hardy present the end of love in Neutral Tones?',
-  'Compare how lost love is presented in Neutral Tones and one other poem from the anthology.',
+  'Compare how lost love is presented in Neutral Tones and one poem from the OCR Love and Relationships cluster.',
   'How does Hardy use natural imagery to convey emotional pain?',
 ]
 
@@ -651,6 +652,24 @@ export default function NeutralTonesPage() {
           {t('rev.poetry.shared.back_to_love_and_relationships')}
         </Button>
 
+        <OcrWiderReadingNotice
+          clusterSlug="love-and-relationships"
+          clusterTitle="Love and Relationships"
+        >
+          <>
+            Neutral Tones is not in OCR&rsquo;s anthology. AQA sets it, in Love and Relationships,
+            and so does Pearson Edexcel GCSE, in Relationships; this page prints the poem as Pearson
+            Edexcel&rsquo;s anthology does. If you study AQA, use{' '}
+            <Link
+              href="/revision/poetry/love-and-relationships/neutral-tones"
+              className="underline underline-offset-2"
+            >
+              our AQA page
+            </Link>
+            , which prints AQA&rsquo;s text.
+          </>
+        </OcrWiderReadingNotice>
+
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-pink-500/10">
             <BookOpen className="size-5 text-pink-400" />
@@ -658,22 +677,16 @@ export default function NeutralTonesPage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">Neutral Tones</h1>
             <p className="text-body-sm text-muted-foreground">
-              Thomas Hardy &middot; Love and Relationships cluster
+              Thomas Hardy &middot; Wider reading for OCR Love and Relationships
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              OCR
+              OCR wider reading
             </Badge>
           </div>
         </div>
       </div>
 
-      <StudyTools
-        textName="Neutral Tones"
-        textType="poem"
-        examBoard="OCR"
-        cluster="Love and Relationships"
-        variant="compact"
-      />
+      <StudyTools textName="Neutral Tones" textType="poem" examBoard="OCR" variant="compact" />
       <InlineStudyEngine
         textName="Neutral Tones"
         questions={QUIZ_QUESTIONS}
@@ -700,7 +713,8 @@ export default function NeutralTonesPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong pairings with Neutral Tones for the OCR Love and Relationships cluster.
+          Practise comparing it with another poem: part (a) of the OCR exam compares a poem from
+          your cluster with one you have not seen.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

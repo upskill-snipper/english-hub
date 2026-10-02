@@ -10,6 +10,7 @@ import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
+import OcrWiderReadingNotice from '../../_components/OcrWiderReadingNotice'
 import { useT } from '@/lib/i18n/use-t'
 const sheDweltAmongTheUntroddenWays: PoemData = {
   title: 'She Dwelt Among the Untrodden Ways',
@@ -364,10 +365,10 @@ Volta (نقطة التحوّل): التحوّل يصير في آخر بيتين:
 const comparisons = [
   {
     title: 'Browse all poems',
-    poet: 'Love and Relationships cluster',
+    poet: 'OCR Love and Relationships',
     href: '/revision/poetry/ocr/love-and-relationships',
     reason:
-      "See the full OCR Love and Relationships anthology for more poems that pair well with Wordsworth's quiet lament for Lucy.",
+      "The 15 poems OCR sets for Love and Relationships, any of which you could compare with Wordsworth's quiet lament for Lucy.",
     themes: ['Loss', 'Love', 'Wordsworth'],
   },
 ]
@@ -569,7 +570,7 @@ const REVISION_TOPICS = [
 
 const ESSAY_PROMPTS = [
   'How does Wordsworth present loss and obscurity in She Dwelt Among the Untrodden Ways?',
-  'Compare how love and loss are presented in She Dwelt Among the Untrodden Ways and one other poem from the anthology.',
+  'Compare how love and loss are presented in She Dwelt Among the Untrodden Ways and one poem from the OCR Love and Relationships cluster.',
   'How does Wordsworth use simplicity as a powerful poetic technique?',
 ]
 
@@ -593,6 +594,13 @@ export default function SheDweltPage() {
           {t('rev.poetry.shared.back_to_love_and_relationships')}
         </Button>
 
+        <OcrWiderReadingNotice
+          clusterSlug="love-and-relationships"
+          clusterTitle="Love and Relationships"
+        >
+          <>She Dwelt Among the Untrodden Ways is not in OCR&rsquo;s anthology.</>
+        </OcrWiderReadingNotice>
+
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-pink-500/10">
             <BookOpen className="size-5 text-pink-400" />
@@ -602,10 +610,10 @@ export default function SheDweltPage() {
               She Dwelt Among the Untrodden Ways
             </h1>
             <p className="text-body-sm text-muted-foreground">
-              William Wordsworth &middot; Love and Relationships cluster
+              William Wordsworth &middot; Wider reading for OCR Love and Relationships
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              OCR
+              OCR wider reading
             </Badge>
           </div>
         </div>
@@ -615,7 +623,6 @@ export default function SheDweltPage() {
         textName="She Dwelt Among the Untrodden Ways"
         textType="poem"
         examBoard="OCR"
-        cluster="Love and Relationships"
         variant="compact"
       />
       <InlineStudyEngine
@@ -644,7 +651,8 @@ export default function SheDweltPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong pairings for the OCR Love and Relationships cluster.
+          Practise comparing it with another poem: part (a) of the OCR exam compares a poem from
+          your cluster with one you have not seen.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

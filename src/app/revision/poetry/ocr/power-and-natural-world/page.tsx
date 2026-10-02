@@ -1,152 +1,89 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  Mountain,
-  Sparkles,
-  BookOpen,
-  Lock,
-  CheckCircle2,
-} from 'lucide-react'
+import { AlertTriangle, ArrowLeft, ArrowRight } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import StudyTools from '@/components/study/StudyTools'
+import { t } from '@/lib/i18n/t'
+import { OCR_CLUSTERS } from '@/lib/board/ocr-anthology'
 
-import { useT } from '@/lib/i18n/use-t'
-
-interface Poem {
-  title: string
-  poet: string
-  slug: string
-  publicDomain: boolean
-  hook: string
-  // Full study page for this poem, verified to exist. Most public-domain
-  // poems have no page in this cluster, so they borrow the same poem's page
-  // elsewhere on the site; poems with no page anywhere stay unlinked.
-  studyHref?: string
+/**
+ * There is no OCR cluster called Power and the Natural World.
+ *
+ * THE DEFECT, found 2 October 2026. This URL described a fourth OCR cluster
+ * with fifteen poems, and the OCR hub, the board's paper structure and the
+ * revision shelf all linked to it. OCR's anthology has three clusters (see
+ * src/lib/board/ocr-anthology.ts). Of the fifteen poems listed here, one is
+ * an OCR poem, Boat Stealing, and OCR sets it in Conflict.
+ *
+ * The page is kept rather than deleted so that a student who saved the link,
+ * having been told it was their cluster, finds out that it is not and where to
+ * go instead. It is noindex, and excluded from the sitemap, so that it does not
+ * draw new visitors to a cluster name OCR has never used. The robots rule is
+ * set here rather than in the layout because the layout also wraps The Eagle,
+ * which stays indexed as wider reading.
+ */
+export const metadata: Metadata = {
+  title: 'OCR has no Power and the Natural World cluster',
+  description:
+    "OCR's GCSE anthology, Towards a World Unknown, has three clusters: Love and Relationships, Conflict, and Youth and Age.",
+  robots: { index: false, follow: true },
 }
 
-const POEMS: Poem[] = [
+/** Poems the old page listed that another board sets, with where the site covers them. */
+const ELSEWHERE: { title: string; poet: string; whereKey: string; href: string }[] = [
+  {
+    title: 'Boat Stealing (from 1799 Prelude)',
+    poet: 'William Wordsworth',
+    whereKey: 'poetry_hub.ocr.pnw_notice.ocr_conflict',
+    href: '/revision/poetry/ocr/conflict',
+  },
   {
     title: 'Ozymandias',
     poet: 'Percy Bysshe Shelley',
-    slug: 'ozymandias',
-    publicDomain: true,
-    studyHref: '/revision/poetry/power-and-conflict/ozymandias',
-    hook: 'A shattered statue in the desert reveals the futility of human power.',
+    whereKey: 'poetry_hub.ocr.pnw_notice.aqa_pc',
+    href: '/revision/poetry/power-and-conflict/ozymandias',
   },
   {
     title: 'London',
     poet: 'William Blake',
-    slug: 'london',
-    publicDomain: true,
-    studyHref: '/revision/poetry/power-and-conflict/london',
-    hook: 'A walk through London exposes suffering and institutional oppression.',
+    whereKey: 'poetry_hub.ocr.pnw_notice.aqa_pc',
+    href: '/revision/poetry/power-and-conflict/london',
   },
   {
-    title: 'The Eagle',
-    poet: 'Alfred Lord Tennyson',
-    slug: 'the-eagle',
-    publicDomain: true,
-    studyHref: '/revision/poetry/ocr/power-and-natural-world/the-eagle',
-    hook: 'A six-line miniature portrait of a majestic bird poised above the sea.',
-  },
-  {
-    title: 'Inversnaid',
-    poet: 'Gerard Manley Hopkins',
-    slug: 'inversnaid',
-    publicDomain: true,
-    hook: 'A wild Scottish stream becomes a passionate plea to leave wilderness alone.',
-  },
-  {
-    title: 'Wind',
-    poet: 'Ted Hughes',
-    slug: 'wind',
-    publicDomain: false,
-    hook: 'A house under siege as a violent wind tries to tear it from its moorings.',
+    title: 'London',
+    poet: 'William Blake',
+    whereKey: 'poetry_hub.ocr.pnw_notice.edexcel_tp',
+    href: '/revision/poetry/edexcel/time-and-place/london',
   },
   {
     title: 'Storm on the Island',
     poet: 'Seamus Heaney',
-    slug: 'storm-on-the-island',
-    publicDomain: false,
-    hook: 'An island community braces against the relentless force of a storm.',
+    whereKey: 'poetry_hub.ocr.pnw_notice.aqa_pc',
+    href: '/revision/poetry/power-and-conflict/storm-on-the-island',
   },
   {
-    title: 'Living Space',
-    poet: 'Imtiaz Dharker',
-    slug: 'living-space',
-    publicDomain: false,
-    hook: 'A precarious slum dwelling becomes a small miracle of human persistence.',
-  },
-  {
-    title: 'Ode to the West Wind',
-    poet: 'Percy Bysshe Shelley',
-    slug: 'ode-to-the-west-wind',
-    publicDomain: true,
-    hook: 'An ecstatic invocation of the autumn wind as a force of destruction and rebirth.',
-  },
-  {
-    title: 'Composed Upon Westminster Bridge',
+    title: 'Composed upon Westminster Bridge',
     poet: 'William Wordsworth',
-    slug: 'composed-upon-westminster-bridge',
-    publicDomain: true,
-    studyHref: '/revision/poetry/edexcel/time-and-place/composed-upon-westminster-bridge',
-    hook: 'Wordsworth, a country poet, is silenced by the early-morning beauty of London.',
+    whereKey: 'poetry_hub.ocr.pnw_notice.edexcel_tp',
+    href: '/revision/poetry/edexcel/time-and-place/composed-upon-westminster-bridge',
   },
   {
-    // No studyHref: the existing Prelude pages cover the 1850 extract used by
-    // AQA and Eduqas, whereas OCR prescribes the materially different 1799
-    // two-part text, so there is no correct page to link to.
-    title: 'The Prelude (extract) - 1799 two-part Prelude (Part First, lines 81-129)',
-    poet: 'William Wordsworth',
-    slug: 'the-prelude',
-    publicDomain: true,
-    hook: 'A stolen boat ride becomes a terrifying encounter with the power of nature. OCR prescribes the 1799 two-part Prelude (Part First, lines 81-129) - not the 1850 posthumous Prelude used by AQA. The wording is materially different.',
-  },
-  {
-    title: 'From a Mother in a Refugee Camp',
-    poet: 'Chinua Achebe',
-    slug: 'from-a-mother-in-a-refugee-camp',
-    publicDomain: false,
-    hook: 'A mother performs a tender, doomed act of care for her dying child.',
-  },
-  {
-    title: 'Snow',
-    poet: 'Louis MacNeice',
-    slug: 'snow',
-    publicDomain: false,
-    hook: 'A sudden snowfall reveals "the drunkenness of things being various".',
-  },
-  {
-    title: 'The Prayer of the Owl',
-    poet: 'Carmen Bernos de Gasztold',
-    slug: 'the-prayer-of-the-owl',
-    publicDomain: false,
-    hook: "An owl's plea to be allowed to keep watching the night unharmed.",
-  },
-  {
-    title: 'Below the Green Corrie',
-    poet: 'Norman MacCaig',
-    slug: 'below-the-green-corrie',
-    publicDomain: false,
-    hook: "Highland mountains personified as bandits demand the speaker's life and his praise.",
-  },
-  {
-    title: 'At a Potato Digging',
-    poet: 'Seamus Heaney',
-    slug: 'at-a-potato-digging',
-    publicDomain: false,
-    hook: 'Modern Irish farmers digging potatoes are haunted by the ghosts of the Famine.',
+    title: 'The Eagle',
+    poet: 'Alfred Lord Tennyson',
+    whereKey: 'poetry_hub.ocr.pnw_notice.wider',
+    href: '/revision/poetry/ocr/power-and-natural-world/the-eagle',
   },
 ]
 
-export default function OCRPowerAndNaturalWorldPage() {
-  const t = useT()
+const CLUSTER_TITLE_KEY: Record<string, string> = {
+  'love-and-relationships': 'poetry_hub.ocr.cluster.lr.title',
+  conflict: 'poetry_hub.ocr.cluster.conflict.title',
+  'youth-and-age': 'poetry_hub.ocr.cluster.ya.title',
+}
+
+export default async function OCRPowerAndNaturalWorldPage() {
   return (
-    <div className="space-y-10 pb-16">
+    <div className="space-y-8 pb-16">
       <div>
         <Button
           variant="ghost"
@@ -155,132 +92,75 @@ export default function OCRPowerAndNaturalWorldPage() {
           render={<Link href="/revision/poetry/ocr" />}
         >
           <ArrowLeft className="size-3.5" />
-          {t('poetry_hub.ocr.back_to_anthology')}
+          {await t('poetry_hub.ocr.back_to_anthology')}
         </Button>
       </div>
 
-      <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-emerald-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-emerald-500/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-teal-500/5 blur-3xl" />
-
-        <div className="relative">
-          <div className="mb-4 flex flex-wrap items-center gap-2">
-            <Badge variant="secondary">
-              <Sparkles className="me-1 size-3" />
-              {t('poetry_hub.ocr.badge_anthology')}
-            </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">OCR</Badge>
-          </div>
-
-          <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            {t('poetry_hub.ocr.cluster.pnw.title')}
-          </h1>
-          <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            {t('poetry_hub.ocr.pnw.hero_lead')}
-          </p>
-        </div>
+      <section className="rounded-2xl border border-amber-500/40 bg-amber-500/10 p-6 sm:p-8">
+        <Badge variant="secondary" className="mb-4">
+          <AlertTriangle className="me-1 size-3" />
+          {await t('poetry_hub.ocr.pnw_notice.badge')}
+        </Badge>
+        <h1 className="text-display-sm font-heading text-foreground">
+          {await t('poetry_hub.ocr.pnw_notice.title')}
+        </h1>
+        <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground leading-relaxed">
+          {await t('poetry_hub.ocr.pnw_notice.body')}
+        </p>
       </section>
-
-      <StudyTools
-        textName="OCR Power and Natural World Poetry"
-        textType="anthology"
-        examBoard="OCR"
-        variant="banner"
-      />
 
       <section>
-        <div className="mb-5 flex items-center gap-3">
-          <Mountain className="size-5 text-emerald-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            {t('poetry_hub.ocr.all_15')}
-          </h2>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {POEMS.map((poem) => (
-            <Link
-              key={poem.slug}
-              href={poem.studyHref ?? '#'}
-              className={`group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 ${
-                poem.studyHref
-                  ? 'hover:border-border hover:shadow-card-hover'
-                  : 'cursor-not-allowed opacity-70'
-              }`}
-              onClick={(e) => {
-                if (!poem.studyHref) e.preventDefault()
-              }}
-            >
-              <div className="absolute end-4 top-4">
-                {poem.studyHref ? (
-                  <CheckCircle2 className="size-4 text-emerald-400" />
-                ) : (
-                  <Lock className="size-4 text-muted-foreground-subtle" />
-                )}
-              </div>
-
-              <h3 className="pe-8 text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
-                {poem.title}
-              </h3>
-              <p className="mt-0.5 text-caption text-muted-foreground">{poem.poet}</p>
-              <p className="mt-3 flex-1 text-body-sm text-muted-foreground leading-relaxed">
-                {poem.hook}
-              </p>
-
-              <div className="mt-3">
-                <Badge variant="outline" className="text-[0.65rem]">
-                  {poem.studyHref
-                    ? t('poetry_hub.ocr.full_study')
-                    : t('poetry_hub.ocr.quotes_only')}
-                </Badge>
-              </div>
-            </Link>
-          ))}
+        <h2 className="mb-4 text-heading-md font-heading text-foreground">
+          {await t('poetry_hub.ocr.pnw_notice.choose_cluster')}
+        </h2>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {await Promise.all(
+            OCR_CLUSTERS.map(async (c) => (
+              <Link
+                key={c.slug}
+                href={`/revision/poetry/ocr/${c.slug}`}
+                className="group flex items-center justify-between rounded-xl border border-border/60 bg-card p-4 transition-colors hover:border-border hover:bg-muted/40"
+              >
+                <span className="text-sm font-semibold text-foreground group-hover:text-primary">
+                  {await t(CLUSTER_TITLE_KEY[c.slug])}
+                </span>
+                <ArrowRight className="size-4 text-muted-foreground" />
+              </Link>
+            )),
+          )}
         </div>
       </section>
 
-      <section className="rounded-2xl border border-amber-500/40 bg-amber-500/[0.04] p-5 sm:p-6">
+      <section className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6">
         <h2 className="text-heading-sm font-heading text-foreground">
-          {t('poetry_hub.ocr.prelude_version_title')}
+          {await t('poetry_hub.ocr.pnw_notice.elsewhere_title')}
         </h2>
-        <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
-          {t('poetry_hub.ocr.prelude_version_body')}
-        </p>
-      </section>
-
-      <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
-        <h2 className="text-heading-sm font-heading text-foreground">
-          {t('poetry_hub.ocr.why_locked')}
-        </h2>
-        <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
-          {t('poetry_hub.ocr.why_locked_body')}
-        </p>
-        <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
-          <strong className="text-foreground">{t('poetry_hub.ocr.rights_notice_label')}</strong>{' '}
-          Several poems in this cluster remain in copyright &mdash; Hughes&rsquo;s <em>Wind</em> and
-          Heaney&rsquo;s <em>Storm on the Island</em> and <em>At a Potato Digging</em> (&copy; Faber
-          &amp; Faber), Dharker&rsquo;s <em>Living Space</em> (&copy; Bloodaxe Books),
-          Achebe&rsquo;s <em>From a Mother in a Refugee Camp</em> (&copy; Carcanet Press),
-          MacNeice&rsquo;s <em>Snow</em> (&copy; Faber &amp; Faber) and others. Quotations on
-          individual set-text pages are short fair-dealing extracts under CDPA 1988 &sect;30
-          (criticism, review, quotation). For full text, students should consult the board-licensed
-          OCR <em>Towards a World Unknown</em> anthology.
-        </p>
-      </section>
-
-      <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
-        <BookOpen className="mx-auto mb-3 size-8 text-emerald-400" />
-        <h2 className="text-heading-lg font-heading text-foreground">
-          {t('poetry_hub.ocr.explore_other_clusters')}
-        </h2>
-        <Button
-          variant="default"
-          size="lg"
-          className="mt-5"
-          render={<Link href="/revision/poetry/ocr" />}
-        >
-          {t('poetry_hub.ocr.back_to_anthology')}
-          <ArrowRight className="size-4" />
-        </Button>
+        <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+          {await Promise.all(
+            ELSEWHERE.map(async (p) => (
+              <li key={p.href}>
+                <Link
+                  href={p.href}
+                  className="group flex h-full flex-col rounded-xl border border-border/60 p-4 transition-colors hover:border-border hover:bg-muted/40"
+                >
+                  <span
+                    className="text-sm font-semibold text-foreground group-hover:text-primary"
+                    dir="ltr"
+                    lang="en"
+                  >
+                    {p.title}
+                  </span>
+                  <span className="text-caption text-muted-foreground" dir="ltr" lang="en">
+                    {p.poet}
+                  </span>
+                  <span className="mt-2 text-caption text-muted-foreground">
+                    {await t(p.whereKey)}
+                  </span>
+                </Link>
+              </li>
+            )),
+          )}
+        </ul>
       </section>
     </div>
   )

@@ -27,6 +27,15 @@ export const metadata: Metadata = {
 }
 
 /* ─── Page component ─────────────────────────────────────────── */
+//
+// CORRECTED 2 October 2026. This page said the anthology had four clusters, the
+// fourth "Power and the Natural World", which OCR has never set; cited an ISBN
+// that appears in no OCR document we hold; put the poetry in Section B (it is
+// Section A); and described the question as the printed poem compared with
+// "another poem of your choice" from the cluster, for 24 marks in 40 minutes.
+// Part (a) compares a cluster poem with an UNSEEN poem (20 marks, about 45
+// minutes) and part (b) explores one other anthology poem (20 marks, about 30).
+// Sources and OCR's list: src/lib/board/ocr-anthology.ts.
 
 export default async function OCRPoetryPage() {
   const _hdrs = await headers()
@@ -52,8 +61,8 @@ export default async function OCRPoetryPage() {
             Poetry Anthology Analysis
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            Master the OCR poetry anthology. Detailed analysis, comparison strategies, and exam
-            techniques for Paper 2, Section B.
+            Master the OCR poetry anthology. Comparison strategies and exam techniques for J352/02,
+            Section A.
           </p>
         </div>
       </section>
@@ -67,15 +76,15 @@ export default async function OCRPoetryPage() {
           </h2>
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              The OCR GCSE English Literature poetry anthology is organised into thematic clusters.
-              Your school will study one cluster. In the exam, you will be given{' '}
-              <strong>one poem</strong> from your cluster (printed on the paper) and asked to
-              compare it with
-              <strong> another poem of your choice</strong> from the same cluster.
+              The OCR GCSE English Literature poetry anthology is organised into three thematic
+              clusters, and your school will study one. In the exam, part (a) prints a poem from
+              your cluster beside an <strong>unseen poem</strong> and asks you to compare them. Part
+              (b) asks you to explore <strong>one other poem</strong> from the anthology, from
+              memory.
             </p>
             <p>
-              The OCR anthology, <em>{tr(`Towards a World Unknown`)}</em> (J352, ISBN
-              9781398384408), is divided into four thematic clusters of 15 poems each:
+              The OCR anthology, <em>{tr(`Towards a World Unknown`)}</em>, as revised for first
+              teaching in September 2022, has three clusters of 15 poems each:
             </p>
             <ul className="ms-6 list-disc space-y-1">
               <li>
@@ -86,9 +95,6 @@ export default async function OCRPoetryPage() {
               </li>
               <li>
                 <strong>{tr(`Youth and Age`)}</strong>
-              </li>
-              <li>
-                <strong>{tr(`Power and the Natural World`)}</strong>
               </li>
             </ul>
             <p>
@@ -246,33 +252,30 @@ export default async function OCRPoetryPage() {
           </h2>
           <div className="mt-4 space-y-6 text-muted-foreground leading-relaxed">
             <p>
-              The OCR poetry comparison question is worth 24 marks. You must compare the printed
-              poem with one of your choice from the same cluster. Here is how to approach it:
+              Part (a), the comparison, is worth 20 marks: you compare the poem from your cluster
+              with the unseen poem, and both are printed on the paper. Part (b), worth another 20,
+              asks you to explore one other poem from the anthology on its own. Here is how to
+              approach them:
             </p>
 
             {/* Choosing the comparison */}
             <div>
-              <h3 className="text-xl font-semibold text-foreground">
-                Choosing Your Comparison Poem
-              </h3>
+              <h3 className="text-xl font-semibold text-foreground">Choosing Your Part (b) Poem</h3>
               <p className="mt-2">
-                When you see the printed poem and the question, quickly decide which poem from your
-                cluster offers the best comparison. Consider:
+                When you see the question, quickly decide which other poem from your cluster fits
+                its theme best. Consider:
               </p>
               <ul className="ms-6 mt-2 list-disc space-y-2">
                 <li>
-                  Which poem explores a <strong>similar theme</strong> but through{' '}
-                  <strong>different methods</strong>? This gives you the richest comparison
-                  material.
+                  Which poem explores <strong>the theme the question names</strong> in a way you can
+                  analyse in detail?
                 </li>
                 <li>
-                  Which poem can you remember the most quotations from? You need to quote from
-                  memory for your chosen poem.
+                  Which poem can you remember the most quotations from? It is not printed, so you
+                  quote it from memory.
                 </li>
                 <li>
-                  Which poem allows you to discuss{' '}
-                  <strong>both similarities and differences</strong>? A nuanced comparison is always
-                  better than one that only discusses similarities.
+                  It must be a <strong>different poem</strong> from the one printed in part (a).
                 </li>
               </ul>
             </div>
@@ -540,9 +543,9 @@ export default async function OCRPoetryPage() {
                   {tr(`Practise Timed Comparisons`)}
                 </h3>
                 <p className="mt-2 text-sm">
-                  Give yourself 40 minutes (the exam allocation) to write a comparison. Practise
-                  with different poem pairings and different themes. The more you practise, the
-                  faster and more confident you become.
+                  Give yourself about 45 minutes, OCR&rsquo;s suggestion for part (a), to write a
+                  comparison, and about 30 for a part (b) answer. Practise with different poems and
+                  different themes. The more you practise, the faster and more confident you become.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
@@ -608,9 +611,9 @@ export default async function OCRPoetryPage() {
                 demonstrates sophisticated understanding.
               </li>
               <li>
-                <strong>{tr(`Context as an afterthought`)}</strong> &mdash; Do not bolt context onto
-                the end of a paragraph. Embed it naturally within your analysis of the poet&rsquo;s
-                choices and their effects.
+                <strong>Spending time on context</strong>: OCR does not assess context (AO3) in the
+                poetry section; it is assessed in the Shakespeare section of the paper. Mention a
+                poem&rsquo;s background only where it explains a choice the poet made.
               </li>
               <li>
                 <strong>{tr(`Superficial analysis`)}</strong> &mdash; Don&rsquo;t just name a

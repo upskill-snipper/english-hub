@@ -11,6 +11,7 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
+import EduqasPreviousAnthologyNotice from '../_components/EduqasPreviousAnthologyNotice'
 const london: PoemData = {
   title: 'London',
   poet: 'William Blake',
@@ -682,13 +683,9 @@ export default function LondonEduqasPage() {
           {t('rev.poetry.shared.back_to_eduqas_poetry')}
         </Button>
 
-        <div className="mb-5 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-body-sm text-amber-100">
-          <p className="font-semibold mb-1">Legacy anthology notice</p>
-          <p className="text-amber-100/90 leading-relaxed">
-            This page is from the legacy pre-2025 Eduqas anthology. The current Eduqas 2025 cluster
-            does not include this poem. The content remains as a study reference.
-          </p>
-        </div>
+        <EduqasPreviousAnthologyNotice title="London">
+          AQA sets it, in Power and Conflict, and so does Pearson Edexcel GCSE, in Time and Place.
+        </EduqasPreviousAnthologyNotice>
 
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
@@ -697,22 +694,16 @@ export default function LondonEduqasPage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">London</h1>
             <p className="text-body-sm text-muted-foreground">
-              William Blake &middot; Eduqas Poetry Anthology
+              William Blake &middot; Previous Eduqas anthology, to 2026
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              Eduqas
+              Eduqas, to 2026
             </Badge>
           </div>
         </div>
       </div>
 
-      <StudyTools
-        textName="London"
-        textType="poem"
-        examBoard="Eduqas"
-        cluster="Eduqas Poetry Anthology"
-        variant="compact"
-      />
+      <StudyTools textName="London" textType="poem" variant="compact" />
       <InlineStudyEngine
         textName="London"
         questions={QUIZ_QUESTIONS}
@@ -730,7 +721,7 @@ export default function LondonEduqasPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong Eduqas pairings for comparison questions involving London.
+          Other pages written for the same anthology, to compare it with.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

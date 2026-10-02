@@ -3202,14 +3202,14 @@ export const DICTIONARY: Dictionary = {
     es: 'Antología Time & Place, Conflict, Relationships.',
   },
   'board.desc.ocr': {
-    en: 'Love, Conflict, Power & Natural World, Youth & Age.',
-    ar: 'الحب، الصراع، القوة والعالم الطبيعي، الشباب والشيخوخة.',
-    es: 'Love, Conflict, Power & Natural World, Youth & Age.',
+    en: 'Love and Relationships, Conflict, Youth and Age.',
+    ar: 'الحب والعلاقات، الصراع، الشباب والشيخوخة.',
+    es: 'Love and Relationships, Conflict, Youth and Age.',
   },
   'board.desc.eduqas': {
-    en: 'Eduqas Anthology poems with annotated walkthroughs.',
-    ar: 'قصائد مختارات Eduqas مع شروحات تفصيلية.',
-    es: 'Poemas de la antología de Eduqas con guías anotadas.',
+    en: 'The 15-poem Eduqas anthology, first examined in 2027.',
+    ar: 'مختارات Eduqas من ١٥ قصيدة، أول امتحان فيها ٢٠٢٧.',
+    es: 'La antología de Eduqas de 15 poemas, que se examina desde 2027.',
   },
   'board.desc.cambridge_igcse': {
     en: '0500 and 0990 - Reading, Composition, model answers.',
@@ -9484,9 +9484,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Antología de Eduqas',
   },
   'resources.poetry.anth.eduqas.desc': {
-    en: 'The Eduqas poetry anthology, poem by poem.',
-    ar: 'مختارات Eduqas الشعرية، قصيدة قصيدة.',
-    es: 'La antología poética de Eduqas, poema a poema.',
+    en: 'The fifteen poems Eduqas sets from 2027, with comparison plans.',
+    ar: 'الـ١٥ قصيدة اللي تقررها Eduqas من ٢٠٢٧، مع خطط مقارنة.',
+    es: 'Los quince poemas que fija Eduqas desde 2027, con planes de comparación.',
   },
   'aff_comp.resources.platform.twitter': { en: 'X (Twitter)', ar: 'X (تويتر)', es: 'X (Twitter)' },
   'aff_comp.resources.platform.instagram': { en: 'Instagram', ar: 'Instagram', es: 'Instagram' },
@@ -11476,9 +11476,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Towards a World Unknown',
   },
   'poetry.ocr.description': {
-    en: "The OCR anthology has 4 thematic clusters of 15 poems each. You'll study one cluster prescribed by your teacher.",
-    ar: 'مختارات OCR فيها ٤ مجموعات تيمية، كل وحدة ١٥ قصيدة. بتذاكر مجموعة وحدة بحسب اللي اختاره معلّمك.',
-    es: 'La antología de OCR tiene 4 clusters temáticos de 15 poemas cada uno. Estudiarás un cluster prescrito por tu profesor.',
+    en: "The OCR anthology has 3 thematic clusters of 15 poems each. You'll study the one your school chooses.",
+    ar: 'مختارات OCR فيها ٣ مجموعات، كل وحدة ١٥ قصيدة. بتذاكر المجموعة اللي تختارها مدرستك.',
+    es: 'La antología de OCR tiene 3 clusters temáticos de 15 poemas cada uno. Estudiarás el que elija tu centro.',
   },
   'poetry.ocr.cluster_lar.title': {
     en: 'Love and Relationships',
@@ -11506,16 +11506,6 @@ export const DICTIONARY: Dictionary = {
     ar: 'الوقت والكِبر والموت والنظر للماضي.',
     es: 'El tiempo, crecer, la mortalidad y mirar atrás.',
   },
-  'poetry.ocr.cluster_power_nature.title': {
-    en: 'Power and the Natural World',
-    ar: 'Power and the Natural World',
-    es: 'Power and the Natural World',
-  },
-  'poetry.ocr.cluster_power_nature.desc': {
-    en: "Nature's force, human power and our relationship with the environment.",
-    ar: 'قوة الطبيعة والقوة البشرية وعلاقتنا بالبيئة.',
-    es: 'La fuerza de la naturaleza, el poder humano y nuestra relación con el medio ambiente.',
-  },
   'poetry.ocr.view_full': {
     en: 'View full OCR anthology hub',
     ar: 'شوف مركز مختارات OCR كامل',
@@ -11527,9 +11517,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Antología de poesía de Eduqas',
   },
   'poetry.eduqas.description': {
-    en: "The Eduqas 2025 anthology has 12 poems that all students study. You'll be asked to compare two of them in the exam - strong pairings are essential. Six of the twelve remain in copyright; quotations are short fair-dealing extracts.",
-    ar: 'مختارات Eduqas 2025 فيها ١٢ قصيدة كل الطلاب يذاكرونها. في الامتحان لازم تقارن بين قصيدتين - اختيار الزوج المناسب وايد مهم. ست قصايد من الـ١٢ لسّا تحت حقوق النشر؛ الاقتباسات قصيرة بحدود الاستخدام العادل.',
-    es: 'La antología de Eduqas de 2025 tiene 12 poemas que estudian todos los alumnos. En el examen se te pedirá que compares dos de ellos - las parejas sólidas son esenciales. Seis de los doce siguen con derechos de autor; las citas son extractos breves de uso legítimo.',
+    en: 'The Eduqas anthology for exams from summer 2027 has 15 poems, and you study all of them. The exam asks about one poem, then a second of your choice compared with it. Most of the fifteen are in copyright, so quotations here are short fair-dealing extracts.',
+    ar: 'مختارات Eduqas لامتحانات صيف ٢٠٢٧ وما بعدها فيها ١٥ قصيدة، وتذاكرها كلها. الامتحان يسأل عن قصيدة وحدة، وبعدين قصيدة ثانية من اختيارك تقارنها فيها. أغلب الـ١٥ محفوظة الحقوق، فالاقتباسات هني قصيرة بحدود الاستخدام العادل.',
+    es: 'La antología de Eduqas para los exámenes desde el verano de 2027 tiene 15 poemas, y los estudias todos. El examen pregunta por un poema y después por otro que eliges tú, comparado con el primero. La mayoría de los quince tienen derechos de autor, así que las citas aquí son extractos breves de uso legítimo.',
   },
   'poetry.eduqas.view': {
     en: 'View Eduqas anthology',

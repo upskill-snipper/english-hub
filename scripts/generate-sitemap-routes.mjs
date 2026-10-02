@@ -87,7 +87,11 @@ const NOINDEX_PREFIXES = [
 // internal links pointing at it - more than any page outside the primary nav.
 // /marking/submit and /marking/history remain excluded above: those are
 // logged-in tools, not landing pages.
-const EXACT_EXCLUDE = new Set([])
+// /revision/poetry/ocr/power-and-natural-world is noindex (2 October 2026): it
+// now says that OCR has no cluster of that name, for students who saved the
+// link. A sitemap must not list a page that asks not to be indexed. Exact, not
+// a prefix, because The Eagle beneath it stays indexed as wider reading.
+const EXACT_EXCLUDE = new Set(['/revision/poetry/ocr/power-and-natural-world'])
 
 const matchesPrefix = (route, prefixes) =>
   prefixes.some((p) => route === p || route.startsWith(p + '/'))

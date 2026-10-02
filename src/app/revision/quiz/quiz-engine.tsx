@@ -92,7 +92,9 @@ function getTopicRevisionLinks(topic: Topic, board: ExamBoard | null): RevisionL
         {
           href: '/revision/poetry/ocr',
           title: 'OCR Poetry Cluster',
-          description: 'Annotated guides for every OCR anthology poem.',
+          // Said "Annotated guides for every OCR anthology poem" until 2 October
+          // 2026; two of OCR's 45 poems have a study page here.
+          description: 'The fifteen poems in each OCR cluster, and how they are examined.',
         },
         {
           href: '/revision/exam-technique/essay-structure',

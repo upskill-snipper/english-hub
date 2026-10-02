@@ -20,6 +20,13 @@ export interface QuizQuestion {
    * question to boards that actually study a particular text or anthology.
    */
   boards?: ExamBoard[]
+  /**
+   * The anthology this question is about is no longer examined by any board
+   * it was written for. The question is kept, so the reason is on record, but
+   * questionMatchesBoard never serves it. Untagged questions go to every board,
+   * so dropping the board tag alone would have served these to everyone.
+   */
+  retired?: string
 }
 
 // Topics covered by each board
@@ -1566,7 +1573,11 @@ const poetryQuestions: QuizQuestion[] = [
     boards: ['edexcel'],
   },
 
-  // ─── Eduqas anthology (~10 questions) ──────────────────────────────────
+  // ─── Eduqas anthology examined until summer 2026 (10 questions) ─────────
+  // Until 2 October 2026 all ten were served to Eduqas students as their
+  // anthology. None of these poems is in the anthology Eduqas examines from
+  // summer 2027 (src/lib/board/eduqas-anthology.ts). Three are set by Pearson
+  // Edexcel GCSE and are retagged to it; the other seven are retired.
   {
     id: 'p191',
     topic: 'poetry',
@@ -1576,6 +1587,7 @@ const poetryQuestions: QuizQuestion[] = [
     explanation:
       'Ted Hughes wrote "Hawk Roosting", a dramatic monologue from the perspective of a hawk that sees itself as the ultimate predator and controller of nature.',
     boards: ['eduqas'],
+    retired: 'Eduqas anthology, examined until summer 2026',
   },
   {
     id: 'p192',
@@ -1591,11 +1603,12 @@ const poetryQuestions: QuizQuestion[] = [
     explanation:
       'The hawk represents unchecked power and arrogance, seeing the world as existing solely for its benefit, which can be read as an allegory for dictatorship.',
     boards: ['eduqas'],
+    retired: 'Eduqas anthology, examined until summer 2026',
   },
   {
     id: 'p193',
     topic: 'poetry',
-    question: 'In the Eduqas anthology, what is the theme of "The Manhunt" by Simon Armitage?',
+    question: 'What is the theme of "The Manhunt" by Simon Armitage?',
     options: [
       'Hunting animals',
       "A wife's gentle exploration of her soldier husband's physical and emotional wounds",
@@ -1605,7 +1618,7 @@ const poetryQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       '"The Manhunt" traces a wife carefully exploring her husband\'s injuries, both physical (scars, broken bones) and psychological (PTSD), as an act of love and reconnection.',
-    boards: ['eduqas'],
+    boards: ['edexcel'],
   },
   {
     id: 'p194',
@@ -1616,6 +1629,7 @@ const poetryQuestions: QuizQuestion[] = [
     explanation:
       'Owen Sheers wrote "Mametz Wood", describing the discovery of soldiers\' remains from the Battle of the Somme decades after World War I.',
     boards: ['eduqas'],
+    retired: 'Eduqas anthology, examined until summer 2026',
   },
   {
     id: 'p195',
@@ -1631,6 +1645,7 @@ const poetryQuestions: QuizQuestion[] = [
     explanation:
       "Sheers describes the skeletons as having arms linked as if in a dance, with the broken bird image suggesting both fragility and the soldiers' lost youth.",
     boards: ['eduqas'],
+    retired: 'Eduqas anthology, examined until summer 2026',
   },
   {
     id: 'p196',
@@ -1646,16 +1661,17 @@ const poetryQuestions: QuizQuestion[] = [
     explanation:
       "Owen's poem directly challenges Jessie Pope and other pro-war propagandists who encouraged young men to enlist by glorifying sacrifice.",
     boards: ['eduqas'],
+    retired: 'Eduqas anthology, examined until summer 2026',
   },
   {
     id: 'p197',
     topic: 'poetry',
-    question: 'Who wrote "To Autumn" studied in the Eduqas anthology?',
+    question: 'Who wrote "To Autumn"?',
     options: ['Percy Bysshe Shelley', 'William Wordsworth', 'John Keats', 'Lord Byron'],
     correctIndex: 2,
     explanation:
       'John Keats wrote "To Autumn", a rich sensory ode celebrating the season of harvest while subtly acknowledging the approach of winter and mortality.',
-    boards: ['eduqas'],
+    boards: ['edexcel'],
   },
   {
     id: 'p198',
@@ -1665,7 +1681,7 @@ const poetryQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       '"To Autumn" is an ode -- a formal lyric poem addressing a subject (here, the season of autumn) with elaborate structure and elevated language.',
-    boards: ['eduqas'],
+    boards: ['edexcel'],
   },
   {
     id: 'p199',
@@ -1682,6 +1698,7 @@ const poetryQuestions: QuizQuestion[] = [
     explanation:
       'Heaney describes how a childhood fascination with frogspawn turns to disgust and fear, representing the loss of innocence and the darker side of nature.',
     boards: ['eduqas'],
+    retired: 'Eduqas anthology, examined until summer 2026',
   },
   {
     id: 'p200',
@@ -1698,6 +1715,7 @@ const poetryQuestions: QuizQuestion[] = [
     explanation:
       'Heaney uses harsh plosive sounds and militaristic language ("invaded", "grenades") to make the frogs seem threatening, reflecting the child\'s fear.',
     boards: ['eduqas'],
+    retired: 'Eduqas anthology, examined until summer 2026',
   },
 ]
 
@@ -6936,6 +6954,7 @@ export function getShuffledQuestion(
 
 /** True if a question applies to the given board (untagged = all boards). */
 export function questionMatchesBoard(q: QuizQuestion, board: ExamBoard | null): boolean {
+  if (q.retired) return false
   if (!board) return true
   if (!q.boards || q.boards.length === 0) return true
   return q.boards.includes(board)

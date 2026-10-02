@@ -322,9 +322,16 @@ export const examTechniqueDecks: FlashcardDeck[] = [
       },
       // ── Literature: Exploring Effects and Impact ──
       {
+        // Corrected 2 October 2026 against the J352 specification, Version 3.0, and the
+        // J352/02 paper of 20 May 2025. This card described Paper 2 as three sections
+        // (anthology comparison, unseen poetry, Shakespeare) with other marks and AOs.
+        // Paper 2 has two: Section A, Poetry across time (40 marks: part (a) compares a
+        // cluster poem with an unseen poem, part (b) explores one other anthology poem;
+        // AO1 and AO2), and Section B, Shakespeare (40 marks; AO4 is assessed there).
+        // It also said there were no separate SPaG marks; AO4 carries 5%.
         id: 'ocr-et-6',
         front: 'OCR Literature - Paper Overview',
-        back: 'OCR has TWO Literature papers:\n\nPAPER 1: Exploring Modern and Literary Heritage Texts (2 hours)\n• Section A: Modern prose or drama (with extract).\n• Section B: Literary heritage text - 19th century (with extract).\n\nPAPER 2: Exploring Poetry and Shakespeare (2 hours)\n• Section A: Poetry anthology - comparison.\n• Section B: Unseen poetry.\n• Section C: Shakespeare (with extract).\n\nKEY OCR DIFFERENCES:\n• Shakespeare is in Paper 2 (not Paper 1 like AQA).\n• No separate SPaG marks - quality of written communication is part of the marking guide throughout.\n• AO4 (alternative interpretations) is not a separate AO - but showing different readings still helps.',
+        back: 'OCR has TWO Literature papers, each 2 hours and 80 marks:\n\nPAPER 1: Exploring Modern and Literary Heritage Texts\n• Section A: Modern prose or drama (with extract).\n• Section B: Literary heritage text - 19th century (with extract).\n\nPAPER 2: Exploring Poetry and Shakespeare\n• Section A: Poetry across time (40 marks) - (a) compare a poem from your cluster with an unseen poem; (b) explore one other poem from the anthology.\n• Section B: Shakespeare (40 marks) - an extract-based question or a discursive question, your choice.\n\nKEY OCR DIFFERENCES:\n• Shakespeare is in Paper 2 (not Paper 1 like AQA).\n• The unseen poem is part of the anthology question, not a separate section.\n• Spelling, punctuation and grammar (AO4) are assessed in Section B of each paper.',
       },
       {
         id: 'ocr-et-7',
@@ -337,19 +344,37 @@ export const examTechniqueDecks: FlashcardDeck[] = [
         back: 'WHAT IT TESTS: AO1, AO2, AO3.\n\nMARKS: 40 marks\nTIMING: 55-60 minutes\n\nFORMAT: Extract + essay question.\n\nAPPROACH:\n• Same structure as Section A.\n• Pay particular attention to CONTEXT (AO3 is heavily weighted).\n• Analyse the writer\'s language choices in the extract closely.\n• Connect to the broader themes and structure of the novel.\n\nCONTEXT TO WEAVE IN:\n• Victorian social hierarchy.\n• Gender expectations.\n• Attitudes to poverty, crime, and education.\n• Scientific developments (evolution, psychology).\n• The author\'s personal beliefs and intentions.\n\nSENTENCE STARTERS:\n• "[Author] challenges/reinforces Victorian attitudes towards... by..."\n• "Writing in [year], [Author] reflects contemporary anxieties about..."\n\nCOMMON MISTAKES: Context as a bolt-on, not analysing language in the extract, ignoring the wider text.',
       },
       {
+        // Corrected 2 October 2026 against the J352 specification, Version 3.0, and the
+        // J352/02 paper of 20 May 2025. This card described Paper 2 as three sections
+        // (anthology comparison, unseen poetry, Shakespeare) with other marks and AOs.
+        // Paper 2 has two: Section A, Poetry across time (40 marks: part (a) compares a
+        // cluster poem with an unseen poem, part (b) explores one other anthology poem;
+        // AO1 and AO2), and Section B, Shakespeare (40 marks; AO4 is assessed there).
         id: 'ocr-et-9',
-        front: 'OCR Literature Paper 2 - Poetry Anthology (Section A)',
-        back: "WHAT IT TESTS: AO1, AO2, AO3.\n\nMARKS: 30 marks\nTIMING: 40 minutes\n\nFORMAT: One named poem printed. Compare with one other from the anthology.\n\nAPPROACH:\n1. Read the printed poem carefully.\n2. Choose your comparison poem (the one with the best overlap AND that you know well).\n3. Compare throughout - don't write about one then the other.\n\nSTRUCTURE:\n• Intro: State both poems and your comparative thesis.\n• 3-4 alternating paragraphs (Poem A method → Poem B method).\n• Conclusion: Summarise the key difference in approach.\n\nCOMPARE:\n• Themes and ideas.\n• Language and imagery.\n• Form and structure.\n• Tone and voice.\n\nCOMMON MISTAKES: Writing about poems separately, only comparing themes (not methods), choosing a poem you don't know well.",
+        front: 'OCR Literature Paper 2 - Poetry across time (Section A)',
+        back: "WHAT IT TESTS: AO1 and AO2. Context (AO3) is not assessed in this section.\n\nMARKS: 40 - part (a) 20, part (b) 20\nTIMING: about 45 minutes for (a), 30 for (b)\n\nFORMAT:\n(a) A poem from your cluster is printed beside an UNSEEN poem. Compare them.\n(b) Explore one other poem from the anthology, from memory.\n\nAPPROACH FOR (a):\n1. Read both poems carefully; annotate the unseen one first.\n2. Compare throughout - don't write about one then the other.\n\nAPPROACH FOR (b):\n• Choose a poem that fits the theme the question names and that you can quote from memory.\n\nCOMPARE:\n• Themes and ideas.\n• Language and imagery.\n• Form and structure.\n• Tone and voice.\n\nCOMMON MISTAKES: Writing about the poems separately in (a), only comparing themes (not methods), choosing a (b) poem you don't know well.",
       },
       {
+        // Corrected 2 October 2026 against the J352 specification, Version 3.0, and the
+        // J352/02 paper of 20 May 2025. This card described Paper 2 as three sections
+        // (anthology comparison, unseen poetry, Shakespeare) with other marks and AOs.
+        // Paper 2 has two: Section A, Poetry across time (40 marks: part (a) compares a
+        // cluster poem with an unseen poem, part (b) explores one other anthology poem;
+        // AO1 and AO2), and Section B, Shakespeare (40 marks; AO4 is assessed there).
         id: 'ocr-et-10',
-        front: 'OCR Literature Paper 2 - Unseen Poetry (Section B)',
-        back: 'WHAT IT TESTS: AO1, AO2.\n\nMARKS: 24 marks total\nTIMING: 30 minutes\n\nFORMAT: Two unseen poems. Usually one question on one poem, then a comparison.\n\nFIRST READ STRATEGY:\n1. Read the title - it often reveals the subject.\n2. Read the whole poem once for general meaning.\n3. Re-read, annotating: imagery, tone, structure, key words.\n4. Identify the speaker\'s attitude.\n\nFOR THE COMPARISON:\n• Focus on ONE key difference or similarity in method.\n• Keep paragraphs focused - 2-3 is enough.\n\nSENTENCE STARTERS:\n• "The poet creates a tone of... through the use of..."\n• "The image of \'...\' suggests... because..."\n• "Both poems use... to convey..., although Poem A... while Poem B..."\n\nCOMMON MISTAKES: Paraphrasing the poem, not identifying techniques, spending too long on one poem.',
+        front: 'OCR Literature Paper 2 - Reading the Unseen Poem (Section A, part a)',
+        back: 'WHAT IT TESTS: AO1, AO2.\n\nWHERE IT COMES: Part (a) of the poetry question prints one unseen poem beside a poem from your cluster, and asks you to compare them (20 marks, about 45 minutes).\n\nFIRST READ STRATEGY:\n1. Read the title - it often reveals the subject.\n2. Read the whole poem once for general meaning.\n3. Re-read, annotating: imagery, tone, structure, key words.\n4. Identify the speaker\'s attitude.\n\nFOR THE COMPARISON:\n• Focus on ONE key difference or similarity in method at a time.\n• Keep both poems in every paragraph.\n\nSENTENCE STARTERS:\n• "The poet creates a tone of... through the use of..."\n• "The image of \'...\' suggests... because..."\n• "Both poems use... to convey..., although Poem A... while Poem B..."\n\nCOMMON MISTAKES: Paraphrasing the poem, not identifying techniques, spending too long on one poem.',
       },
       {
+        // Corrected 2 October 2026 against the J352 specification, Version 3.0, and the
+        // J352/02 paper of 20 May 2025. This card described Paper 2 as three sections
+        // (anthology comparison, unseen poetry, Shakespeare) with other marks and AOs.
+        // Paper 2 has two: Section A, Poetry across time (40 marks: part (a) compares a
+        // cluster poem with an unseen poem, part (b) explores one other anthology poem;
+        // AO1 and AO2), and Section B, Shakespeare (40 marks; AO4 is assessed there).
         id: 'ocr-et-11',
-        front: 'OCR Literature Paper 2 - Shakespeare (Section C)',
-        back: "WHAT IT TESTS: AO1, AO2, AO3.\n\nMARKS: 30 marks\nTIMING: 40 minutes\n\nFORMAT: Extract + essay question.\n\nAPPROACH:\n• Analyse the extract closely for Shakespeare's language choices.\n• Discuss the wider play - character arc, themes, dramatic significance.\n• Embed Elizabethan/Jacobean context.\n\nSTRUCTURE:\n1. Intro: thesis + direct engagement with the question.\n2. 2 paragraphs on the extract.\n3. 2 paragraphs on the wider play.\n4. Brief conclusion.\n\nCONTEXT IDEAS:\n• The Great Chain of Being / Divine Right of Kings.\n• Gender roles in Elizabethan/Jacobean society.\n• Religious beliefs (sin, redemption, damnation).\n• Theatre conventions (soliloquy, aside, dramatic irony).\n\nCOMMON MISTAKES: Only writing about the extract, context that doesn't connect to analysis, ignoring Shakespeare's language.",
+        front: 'OCR Literature Paper 2 - Shakespeare (Section B)',
+        back: "WHAT IT TESTS: AO1, AO2, AO3, and AO4 (spelling, punctuation and grammar).\n\nMARKS: 40 marks\nTIMING: about 45 minutes, the rest of the two hours\n\nFORMAT: Your choice of an extract-based question, making links to the whole play, or a discursive essay question.\n\nAPPROACH:\n• Analyse the extract closely for Shakespeare's language choices.\n• Discuss the wider play - character arc, themes, dramatic significance.\n• Embed Elizabethan/Jacobean context.\n\nSTRUCTURE:\n1. Intro: thesis + direct engagement with the question.\n2. 2 paragraphs on the extract.\n3. 2 paragraphs on the wider play.\n4. Brief conclusion.\n\nCONTEXT IDEAS:\n• The Great Chain of Being / Divine Right of Kings.\n• Gender roles in Elizabethan/Jacobean society.\n• Religious beliefs (sin, redemption, damnation).\n• Theatre conventions (soliloquy, aside, dramatic irony).\n\nCOMMON MISTAKES: Only writing about the extract, context that doesn't connect to analysis, ignoring Shakespeare's language.",
       },
       {
         id: 'ocr-et-12',

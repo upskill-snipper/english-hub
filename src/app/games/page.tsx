@@ -381,7 +381,7 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     ],
   },
 
-  // ── Ozymandias (AQA Power & Conflict, Eduqas anthology, OCR) ─────────────
+  // ── Ozymandias (AQA Power and Conflict) ──────────────────────────────────
   {
     quote: '"Look on my Works, ye Mighty, and despair!"',
     textSlug: 'ozymandias',
@@ -394,7 +394,7 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     ],
   },
 
-  // ── Dulce et Decorum Est (Eduqas anthology) ──────────────────────────────
+  // ── Dulce et Decorum Est (Eduqas anthology examined until summer 2026) ───
   {
     quote: '"Bent double, like old beggars under sacks."',
     textSlug: 'dulce-et-decorum-est',
@@ -1716,9 +1716,13 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
     // Those aren't in set-texts but are board-specific - map a short allow-list per board.
     const boardPoemSlugs: Record<string, string[]> = {
       aqa: ['ozymandias', 'london', 'my-last-duchess', 'charge-of-the-light-brigade', 'exposure'],
-      edexcel: ['ozymandias', 'london'],
-      ocr: ['ozymandias'],
-      eduqas: ['ozymandias', 'london', 'dulce-et-decorum-est'],
+      // Until 2 October 2026 Edexcel and OCR students were shown Ozymandias,
+      // which neither sets, and Eduqas students three poems from the anthology
+      // Eduqas examined for the last time in summer 2026. See
+      // src/lib/board/ocr-anthology.ts and eduqas-anthology.ts.
+      edexcel: ['london'],
+      ocr: [],
+      eduqas: [],
       'edexcel-igcse': [],
       'cambridge-0500': [],
       'cambridge-0990': [],

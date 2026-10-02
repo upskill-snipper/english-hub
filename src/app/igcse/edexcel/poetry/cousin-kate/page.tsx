@@ -820,9 +820,13 @@ export default function CousinKatePage() {
               prints it, in its Conflict cluster.
             </p>
             <p>
-              "Cousin Kate" is a set text in the{' '}
-              <strong className="text-foreground">Eduqas GCSE 2025 poetry cluster</strong>. For the
-              canonical cluster context (set alongside the other Eduqas anthology poems), see{' '}
+              {/* Said "Eduqas GCSE 2025 poetry cluster" until 2 October 2026: the Eduqas
+                  anthology is not a cluster and is examined from summer 2027. */}
+              "Cousin Kate" is in the{' '}
+              <strong className="text-foreground">
+                Eduqas GCSE anthology examined from summer 2027
+              </strong>
+              . Eduqas prints a different text of the poem, differing in several words; for it, see{' '}
               <Link
                 href="/revision/poetry/eduqas/cousin-kate"
                 className="underline underline-offset-2 hover:text-foreground"

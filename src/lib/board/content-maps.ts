@@ -87,7 +87,7 @@ export const SET_TEXTS_BY_BOARD: Record<
       'love-and-relationships-ocr',
       'conflict-ocr',
       'youth-and-age',
-      'power-and-natural-world',
+      // OCR has no Power and the Natural World cluster; removed 2 October 2026.
     ],
   },
   eduqas: {

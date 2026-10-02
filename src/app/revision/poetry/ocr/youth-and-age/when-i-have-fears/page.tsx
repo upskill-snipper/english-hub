@@ -10,6 +10,7 @@ import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
+import OcrWiderReadingNotice from '../../_components/OcrWiderReadingNotice'
 import { useT } from '@/lib/i18n/use-t'
 const whenIHaveFears: PoemData = {
   title: 'When I Have Fears',
@@ -631,7 +632,7 @@ const REVISION_TOPICS = [
 
 const ESSAY_PROMPTS = [
   'How does Keats present the fear of mortality in When I Have Fears?',
-  'Compare how death is presented in When I Have Fears and one other poem from the anthology.',
+  'Compare how death is presented in When I Have Fears and one poem from the OCR Youth and Age cluster.',
   'How does Keats use the sonnet form to explore multiple fears and reach a resolution?',
 ]
 
@@ -655,6 +656,14 @@ export default function WhenIHaveFearsPage() {
           {t('rev.poetry.shared.back_to_youth_and_age')}
         </Button>
 
+        <OcrWiderReadingNotice clusterSlug="youth-and-age" clusterTitle="Youth and Age">
+          <>
+            When I have fears that I may cease to be was in OCR&rsquo;s Youth and Age cluster until
+            OCR revised the anthology for first teaching in September 2022, and it has not been set
+            since. Do not prepare it as one of your fifteen.
+          </>
+        </OcrWiderReadingNotice>
+
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
             <BookOpen className="size-5 text-clay-600" />
@@ -662,22 +671,16 @@ export default function WhenIHaveFearsPage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">When I Have Fears</h1>
             <p className="text-body-sm text-muted-foreground">
-              John Keats &middot; Youth and Age cluster
+              John Keats &middot; Wider reading for OCR Youth and Age
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              OCR
+              OCR wider reading
             </Badge>
           </div>
         </div>
       </div>
 
-      <StudyTools
-        textName="When I Have Fears"
-        textType="poem"
-        examBoard="OCR"
-        cluster="Youth and Age"
-        variant="compact"
-      />
+      <StudyTools textName="When I Have Fears" textType="poem" examBoard="OCR" variant="compact" />
       <InlineStudyEngine
         textName="When I Have Fears"
         questions={QUIZ_QUESTIONS}
@@ -704,7 +707,8 @@ export default function WhenIHaveFearsPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong pairings for the OCR Youth and Age cluster.
+          Practise comparing it with another poem: part (a) of the OCR exam compares a poem from
+          your cluster with one you have not seen.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

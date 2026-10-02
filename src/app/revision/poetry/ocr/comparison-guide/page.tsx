@@ -21,6 +21,16 @@ import { Button } from '@/components/ui/button'
 import { useT } from '@/lib/i18n/use-t'
 
 // ─── Page ────────────────────────────────────────────────────────────────────
+//
+// CORRECTED 2 October 2026. This guide described a different exam. It put the
+// poetry in Section B (it is Section A), said the paper prints one poem and asks
+// you to compare it with "another poem of your choice" from the cluster (part
+// (a) prints a cluster poem beside an UNSEEN poem; part (b) is one other poem on
+// its own), gave the section "up to 24 marks" in "approximately 40 minutes" (40
+// marks, about 75 minutes), and said AO3 is tested (OCR assesses AO1 and AO2 in
+// the poetry; context is assessed in Section B, Shakespeare). Sources: the J352
+// specification, Version 3.0, and the J352/02 paper of 20 May 2025; the facts
+// are recorded in src/lib/board/ocr-anthology.ts as OCR_POETRY_EXAM.
 
 export default function OCRComparisonGuidePage() {
   const t = useT()
@@ -75,17 +85,17 @@ export default function OCRComparisonGuidePage() {
 
         <div className="space-y-4 text-body-sm text-muted-foreground leading-relaxed">
           <p>
-            In Paper 2 (Exploring Poetry and Shakespeare), Section B tests your knowledge of the OCR{' '}
-            <em>Towards a World Unknown</em> poetry anthology (J352). You will be given{' '}
-            <strong className="text-foreground">one poem</strong> from your studied cluster printed
-            on the paper, along with a question that asks you to compare it with{' '}
-            <strong className="text-foreground">another poem of your choice</strong> from the same
-            cluster.
+            In J352/02 (Exploring poetry and Shakespeare), Section A tests the cluster you studied
+            from OCR&rsquo;s <em>Towards a World Unknown</em> anthology, in two parts. In{' '}
+            <strong className="text-foreground">part (a)</strong> the paper prints a poem from your
+            cluster beside an <strong className="text-foreground">unseen poem</strong> and asks you
+            to compare them. In <strong className="text-foreground">part (b)</strong> you explore
+            one other poem from the anthology, on its own and from memory.
           </p>
           <p>
-            The question will focus on a theme, idea, or method -- for example, "How do the poets
-            present conflict?" or "Compare how the poets use nature to explore ideas about power."
-            You must write a comparative essay that analyses both poems in detail.
+            Both parts are tied to a theme. In May 2025, for example, the Love and Relationships
+            question asked students to compare how two poems present a relationship in which one
+            person feels more strongly than the other. This guide is about part (a), the comparison.
           </p>
         </div>
 
@@ -174,13 +184,13 @@ export default function OCRComparisonGuidePage() {
               </Badge>
               <div>
                 <p className="text-sm font-semibold text-foreground">
-                  Show understanding of context
+                  Context is not assessed here
                 </p>
                 <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
-                  Weave in relevant biographical, historical or literary context -- but only where
-                  it deepens your analysis. Avoid bolting on context as a separate paragraph;
-                  instead, use it to explain why a poet might have chosen a particular word or
-                  image.
+                  OCR assesses AO1 and AO2 in the poetry section. Context (AO3) is assessed in
+                  Section B, on Shakespeare. Use what you know of a poem&rsquo;s background only
+                  where it sharpens a point about its language or structure; it earns no marks on
+                  its own here.
                 </p>
               </div>
             </div>
@@ -200,9 +210,9 @@ export default function OCRComparisonGuidePage() {
         </div>
 
         <p className="mb-6 text-body-sm text-muted-foreground leading-relaxed">
-          There is no single "correct" structure, but the approach below is tried and tested for OCR
-          poetry comparisons. It keeps both poems in play throughout, which is what examiners want
-          to see.
+          There is no single correct structure, but this one works for part (a), where you compare
+          the poem from your cluster with the unseen poem. It keeps both poems in play throughout,
+          which is what examiners want to see.
         </p>
 
         <div className="space-y-6">
@@ -270,7 +280,7 @@ export default function OCRComparisonGuidePage() {
             <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
               Consider how the poems are built. Compare their use of stanza structure, rhyme scheme,
               enjambment, caesura, or overall shape. Explain how these structural choices reinforce
-              the poets' messages. Weave in context where it illuminates the choice of form.
+              the poets' messages.
             </p>
           </div>
 
@@ -406,8 +416,9 @@ export default function OCRComparisonGuidePage() {
         </div>
 
         <p className="mb-5 text-body-sm text-muted-foreground leading-relaxed">
-          In the exam, one poem is given to you and you choose the second. Here is how to make a
-          strong choice quickly.
+          Part (b) asks you to explore one other poem from the anthology, chosen by you, that fits
+          the theme it names. It is not printed, so you write about it from memory. Here is how to
+          choose quickly.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2">
@@ -417,19 +428,19 @@ export default function OCRComparisonGuidePage() {
               <h3 className="text-sm font-semibold text-foreground">{t('poetry_hub.ocr.cg.do')}</h3>
             </div>
             <ul className="space-y-2 text-body-sm text-muted-foreground leading-relaxed">
+              <li>Choose a poem that fits the theme the question names, not just the cluster.</li>
               <li>
-                Choose a poem that shares the theme but takes a different approach -- this gives you
-                plenty to compare.
+                Pick a poem you know well enough to quote from memory. It will not be printed on the
+                paper.
               </li>
               <li>
-                Pick a poem you know well enough to quote from memory. You will not have the text in
-                front of you for the second poem.
+                Go in knowing which two or three poems you would use for each of your
+                cluster&rsquo;s main themes.
               </li>
               <li>
-                Consider poems that use contrasting methods (e.g., one uses a regular form, the
-                other uses free verse).
+                It must be a different poem from the one printed in part (a), and it must be in the
+                anthology: wider reading does not count here.
               </li>
-              <li>Have 2--3 prepared pairings for each major theme before you enter the exam.</li>
             </ul>
           </div>
 
@@ -446,8 +457,8 @@ export default function OCRComparisonGuidePage() {
                 idea.
               </li>
               <li>
-                Picking two poems that are too similar. If both poems say the same thing in the same
-                way, you will struggle to compare.
+                Comparing it with the part (a) poems at length. Part (b) asks you to explore one
+                poem in detail.
               </li>
               <li>
                 Choosing a poem you cannot quote from. Without quotations you cannot score AO2
@@ -492,11 +503,11 @@ export default function OCRComparisonGuidePage() {
           </div>
 
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
-            <h3 className="mb-2 text-sm font-semibold text-red-400">Bolting on context</h3>
+            <h3 className="mb-2 text-sm font-semibold text-red-400">Writing about context</h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              Do not write a separate "context paragraph". Instead, weave context into your
-              analysis: "Owen, writing from the Western Front, uses half-rhyme to reflect the
-              dissonance of trench life..."
+              Context earns no marks in OCR&rsquo;s poetry section, so a paragraph of it is time
+              taken from the language and structure that do. Mention background only where it
+              explains a choice the poet made.
             </p>
           </div>
 
@@ -534,7 +545,7 @@ export default function OCRComparisonGuidePage() {
             'Named specific techniques (not just "imagery")',
             'Explained the effect of each technique on the reader',
             'Used comparison connectives (however, in contrast, similarly)',
-            'Included relevant context woven into analysis',
+            'Spent your time on language, form and structure, not on context',
             'Compared methods (language, form, structure), not just content',
             'Written a conclusion that evaluates which poet is more effective',
           ].map((item) => (
@@ -552,10 +563,10 @@ export default function OCRComparisonGuidePage() {
           {t('poetry_hub.ocr.cg.quotes_in_exam_title')}
         </h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
-          The exam paper prints the given poem in full. For your chosen comparison poem, you must
-          quote from memory. Focus on learning 2--3 short, technique-rich quotations per poem. You
-          can practise with the study pages on this site -- public-domain poems include full
-          annotated text, and all poems have key quotation analysis.
+          Part (a) prints both poems, the one from your cluster and the unseen one, so you quote
+          from the paper. Part (b) prints nothing: you quote your chosen poem from memory, and you
+          may not take the anthology into the exam. Learn two or three short, technique-rich
+          quotations for each poem in your cluster.
         </p>
       </section>
 
@@ -566,8 +577,7 @@ export default function OCRComparisonGuidePage() {
           {t('poetry_hub.ocr.cg.ready_practise')}
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Try one of our 10 ready-made essay plans, or head to your cluster to revise individual
-          poems.
+          Try a practice comparison plan, or head to your cluster to see the fifteen poems OCR sets.
         </p>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           <Button

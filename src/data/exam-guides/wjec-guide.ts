@@ -8,9 +8,13 @@ export const wjecGuide: BoardExamGuide = {
   boardName: 'WJEC Eduqas',
   boardColor: '#DC2626',
 
+  // The poetry paragraph below said, until 2 October 2026, that the anthology
+  // was "three thematic clusters of 18 poems" and that the second poem must come
+  // from the named poem's cluster. Eduqas sets one anthology with no clusters;
+  // see src/lib/board/eduqas-anthology.ts.
   overview: `<p>WJEC Eduqas is the England-facing specification from WJEC, the Welsh exam board, and it brings several distinctive features that set it apart from AQA, Edexcel, and OCR. The Language qualification (C700QS) is built around two components weighted 40%/60%, while the Literature qualification (C720QS) mirrors this split. What makes Eduqas genuinely unique among all GCSE English boards is its <strong>proofreading and editing task</strong> in Language Component 1 - no other board assesses this skill in a formal exam context. Students must identify and correct errors in spelling, punctuation, and grammar within a given passage, rewarding precise editing skills alongside analytical ability.</p>
 
-<p>The Literature specification organises its poetry anthology into <strong>three thematic clusters of 18 poems</strong>, a structure that encourages students to think comparatively within and across clusters rather than treating each poem in isolation. This "three-cluster" approach is unique to Eduqas and shapes how students prepare for the poetry comparison question: they must select a poem of their own choice from the same cluster as the named poem, making strategic poem selection a key exam skill. The board also places significant emphasis on <strong>oracy</strong>, with continuous assessment of spoken language skills feeding into the overall qualification profile.</p>
+<p>The Literature specification sets <strong>one poetry anthology, with no clusters</strong>, and students study every poem in it: fifteen in the anthology examined from summer 2027, which replaced an eighteen-poem anthology examined for the last time in summer 2026. The exam asks about one named poem, then asks students to choose a second poem from the anthology and compare it with the first, so knowing every poem well enough to quote from memory is a key exam skill. The board also places significant emphasis on <strong>oracy</strong>, with continuous assessment of spoken language skills feeding into the overall qualification profile.</p>
 
 <p>Eduqas marking guides are widely regarded as among the clearest and most structured of any board, with six precisely defined levels and transparent descriptors that make self-assessment and targeted improvement straightforward. The top band rewards "sophisticated, assured analysis" with "perceptive, conceptualised" responses - students who thread an overarching interpretation through their entire answer rather than analysing quotations in isolation. Grade boundaries have remained relatively stable, with a Grade 4 requiring approximately 29% and a Grade 9 requiring around 76% across both qualifications combined. Strategic preparation should focus on mastering the proofreading component (free marks that many students leave on the table), developing confident comparative skills for the poetry anthology, and practising the two distinct writing modes required in Component 2.</p>`,
 
@@ -301,13 +305,13 @@ export const wjecGuide: BoardExamGuide = {
           questions: [
             {
               question:
-                'Analyse the named poem from the anthology, then compare it with one other poem of your choice from the same thematic cluster. Explore how both poets present [a shared theme or idea].',
+                'Analyse the named poem from the anthology, then compare it with one other poem of your choice from the anthology. Explore how both poets present [a shared theme or idea].',
               marks: 40,
               ao: 'AO1 + AO2 + AO3',
-              skill: 'Analysis of named poem + comparison with chosen poem from same cluster',
+              skill: 'Analysis of named poem + comparison with a chosen poem from the anthology',
               time: '50 minutes',
               advice:
-                'The named poem is printed on the paper, but your comparison poem is not - you must know your second poem from memory. Choose your comparison poem quickly (within 2 minutes) based on the strongest thematic or methodological links. The three-cluster structure means you must select from the same cluster as the named poem. Structure comparatively throughout: do not write about one poem then the other. Each paragraph should address both poems, using comparative connectives. Analyse language, form, and structure in both poems, and comment on how context shapes meaning. Top-band responses treat both poems as crafted artefacts, exploring how meaning is constructed rather than simply what the poems are "about".',
+                'The named poem is printed on the paper, but your comparison poem is not - you must know your second poem from memory. Choose your comparison poem quickly (within 2 minutes) based on the strongest thematic or methodological links. Any other poem in the anthology can be your second poem: there are no clusters. Structure comparatively throughout: do not write about one poem then the other. Each paragraph should address both poems, using comparative connectives. Analyse language, form, and structure in both poems, and comment on how context shapes meaning. Top-band responses treat both poems as crafted artefacts, exploring how meaning is constructed rather than simply what the poems are "about".',
             },
           ],
         },
@@ -524,11 +528,11 @@ export const wjecGuide: BoardExamGuide = {
     {
       question: 'Literature Component 1 - Poetry Anthology',
       tips: [
-        'The three-cluster structure means you must select your comparison poem from the same cluster as the named poem. Know which poems belong to which cluster.',
+        'There are no clusters: your comparison poem can be any other poem in the anthology, so know every poem well enough to quote it from memory.',
         'Choose your comparison poem quickly (within 2 minutes) based on the strongest thematic or methodological links. Do not waste time deliberating.',
         'Structure your response comparatively throughout - do not write about one poem and then the other. Each paragraph should address both poems.',
         'For each poem, comment on language, form, and structure. Analyse how these formal choices reinforce or complicate meaning.',
-        'Prepare at least three potential comparison poems for each cluster so you have flexibility regardless of which poem is named.',
+        'Prepare at least three potential comparison poems for each main theme, so you have flexibility whichever poem is named.',
       ],
     },
     {
@@ -547,7 +551,7 @@ export const wjecGuide: BoardExamGuide = {
     {
       year: '2026',
       change:
-        'Updated anthology selections: the poetry anthology has been refreshed with new poem choices across all three thematic clusters, while retaining the distinctive three-cluster structure.',
+        'New anthology: from summer 2027 Eduqas examines a new fifteen-poem anthology, with no poem in common with the one examined until summer 2026.',
     },
     {
       year: '2026',
@@ -999,7 +1003,7 @@ export const wjecGuide: BoardExamGuide = {
   // ─── Unique Features ─────────────────────────────────────────────────────────
   uniqueFeatures: [
     "Proofreading and editing task in Language Component 1 - the only GCSE English board to formally assess students' ability to identify and correct errors in spelling, punctuation, and grammar within a given passage.",
-    'Three-cluster poetry anthology of 18 poems - poems are organised into three thematic clusters, and students must choose their comparison poem from the same cluster as the named poem. This unique structure requires strategic preparation across all clusters.',
+    'One poetry anthology, with no clusters - students study every poem, and in the exam choose any second poem from the anthology to compare with the named one. This requires secure knowledge of the whole anthology.',
     'Oracy assessment: WJEC Eduqas includes continuous assessment of spoken language skills (oracy) as part of the overall qualification profile, placing greater emphasis on oral communication than other boards.',
     'Structured marking guides with six clearly defined levels - widely regarded as among the clearest and most transparent of any board, making self-assessment and targeted improvement straightforward for students and teachers.',
     'Component 2 requires two transactional writing tasks of different lengths (one shorter, one longer), testing a range of forms including letters, articles, speeches, and reviews within a single exam sitting.',

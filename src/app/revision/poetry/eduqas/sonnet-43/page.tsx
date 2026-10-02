@@ -11,6 +11,7 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
+import EduqasPreviousAnthologyNotice from '../_components/EduqasPreviousAnthologyNotice'
 const sonnet43: PoemData = {
   title: 'Sonnet 43',
   poet: 'Elizabeth Barrett Browning',
@@ -672,13 +673,9 @@ export default function Sonnet43EduqasPage() {
           {t('rev.poetry.shared.back_to_eduqas_poetry')}
         </Button>
 
-        <div className="mb-5 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-body-sm text-amber-100">
-          <p className="font-semibold mb-1">Legacy anthology notice</p>
-          <p className="text-amber-100/90 leading-relaxed">
-            This page is from the legacy pre-2025 Eduqas anthology. The current Eduqas 2025 cluster
-            does not include this poem. The content remains as a study reference.
-          </p>
-        </div>
+        <EduqasPreviousAnthologyNotice title="Sonnet 43">
+          Pearson Edexcel GCSE sets it, in Relationships.
+        </EduqasPreviousAnthologyNotice>
 
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-pink-500/10">
@@ -687,22 +684,16 @@ export default function Sonnet43EduqasPage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">Sonnet 43</h1>
             <p className="text-body-sm text-muted-foreground">
-              Elizabeth Barrett Browning &middot; Eduqas Poetry Anthology
+              Elizabeth Barrett Browning &middot; Previous Eduqas anthology, to 2026
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              Eduqas
+              Eduqas, to 2026
             </Badge>
           </div>
         </div>
       </div>
 
-      <StudyTools
-        textName="Sonnet 43"
-        textType="poem"
-        examBoard="Eduqas"
-        cluster="Eduqas Poetry Anthology"
-        variant="compact"
-      />
+      <StudyTools textName="Sonnet 43" textType="poem" variant="compact" />
       <InlineStudyEngine
         textName="Sonnet 43"
         questions={QUIZ_QUESTIONS}
@@ -720,7 +711,7 @@ export default function Sonnet43EduqasPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong Eduqas pairings for comparison questions involving Sonnet 43.
+          Other pages written for the same anthology, to compare it with.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -199,14 +199,14 @@ const guide3: ComparisonGuide = {
 const guide4: ComparisonGuide = {
   id: 'aqa-love-relationships-2',
   // BOARD-ISOLATION NOTE: This is a cross-board comparison. "First Love" by John Clare is NOT on the
-  // AQA Love & Relationships anthology - it appears in pre-1914 collections used by Eduqas and
-  // some legacy specs. "Walking Away" by C. Day-Lewis IS on the AQA Love & Relationships cluster.
-  // Title and textPair updated to make the cross-board pairing explicit so students don't assume
-  // both poems are AQA anthology poems.
-  title: 'Love & Relationships: First Love (pre-1914 / Eduqas) vs Walking Away (AQA L&R)',
-  board: 'Cross-board (AQA + Eduqas/pre-1914)',
+  // AQA Love & Relationships anthology. "Walking Away" by C. Day-Lewis IS on the AQA Love &
+  // Relationships cluster. Until 2 October 2026 this called First Love an Eduqas anthology poem:
+  // it is in neither Eduqas anthology, the one examined until summer 2026 or the one examined from
+  // 2027 (src/lib/board/eduqas-anthology.ts), so it is labelled wider reading.
+  title: 'Love & Relationships: First Love (wider reading) vs Walking Away (AQA L&R)',
+  board: 'Cross-board (AQA + wider reading)',
   textPair: [
-    'First Love - John Clare (pre-1914 / Eduqas anthology)',
+    'First Love - John Clare (wider reading; not in a current GCSE anthology this site covers)',
     'Walking Away - C. Day-Lewis (AQA Love & Relationships)',
   ],
   themes: ['Sudden versus gradual love', 'Loss and separation', 'Growth and independence'],
@@ -341,16 +341,18 @@ const guide5: ComparisonGuide = {
 const guide6: ComparisonGuide = {
   id: 'aqa-love-relationships-3',
   // BOARD-ISOLATION NOTE: Neither poem is on the AQA Love & Relationships anthology.
-  // - "How Do I Love Thee?" / Sonnet 43 (Barrett Browning) appears on Eduqas and WJEC poetry anthologies.
-  //   (AQA L&R uses her DIFFERENT sonnet, "Sonnet 29 - I think of thee.")
+  // - "How Do I Love Thee?" / Sonnet 43 (Barrett Browning) is in the Pearson Edexcel GCSE anthology
+  //   (Relationships). It was also in the Eduqas anthology examined until summer 2026; this said
+  //   "Eduqas and WJEC" until 2 October 2026. (AQA L&R uses her DIFFERENT sonnet, "Sonnet 29 - I
+  //   think of thee.")
   // - "Rapture" (Duffy) is from her 2005 collection, NOT on any current GCSE poetry anthology.
   // This guide is therefore wider-reading thematic comparison rather than an anthology pairing.
   // Title and textPair updated to make the off-anthology status explicit.
   title:
-    'Love & Relationships (wider-reading): How Do I Love Thee / Sonnet 43 (Eduqas / WJEC) vs Rapture (off-anthology)',
-  board: 'Cross-board / off-anthology (Eduqas + wider reading)',
+    'Love & Relationships (wider-reading): How Do I Love Thee / Sonnet 43 (Pearson Edexcel GCSE) vs Rapture (off-anthology)',
+  board: 'Cross-board / off-anthology (Edexcel + wider reading)',
   textPair: [
-    'How Do I Love Thee - Elizabeth Barrett Browning (Sonnet 43; Eduqas / WJEC anthology - NOT on AQA L&R, which uses her Sonnet 29 instead)',
+    'How Do I Love Thee - Elizabeth Barrett Browning (Sonnet 43; Pearson Edexcel GCSE Relationships - NOT on AQA L&R, which uses her Sonnet 29 instead)',
     'Rapture - Carol Ann Duffy (off-anthology wider reading; not on any current GCSE cluster)',
   ],
   themes: ['Celebration of love', 'Physical and spiritual union', 'Female desire and agency'],
@@ -495,21 +497,17 @@ const guide8: ComparisonGuide = {
   id: 'aqa-love-relationships-5',
   // BOARD-ISOLATION NOTE: This is a cross-board comparison.
   // - "When We Two Parted" (Byron) IS on the AQA Love & Relationships anthology.
-  // - "The Manhunt" (Armitage) is NOT on the AQA L&R anthology. It appears on:
-  //     • Eduqas Poetry Anthology (Love & Relationships cluster)
-  //     • Edexcel GCSE English Literature anthology (Relationships cluster)
-  //     • WJEC Poetry Anthology (Love and Relationships cluster)
-  //     • OCR "Towards a World Unknown" - Love and Relationships cluster
-  //   So any reference to "Manhunt" must specify which board's cluster the analysis is anchored in,
-  //   because each board sets it within a slightly different surrounding anthology of comparison
-  //   poems. This guide treats it as the Eduqas/Edexcel/OCR cluster poem (the standard one).
+  // - "The Manhunt" (Armitage) is NOT on the AQA L&R anthology. Pearson Edexcel GCSE sets it, in
+  //   Relationships, and it was in the Eduqas anthology examined until summer 2026. Until
+  //   2 October 2026 this also listed OCR, which has never set it, and gave the Eduqas anthology as
+  //   current. See src/lib/board/ocr-anthology.ts and eduqas-anthology.ts.
   // Title and textPair updated to disambiguate the cross-board pairing.
   title:
-    'Love & Relationships (cross-board): When We Two Parted (AQA L&R) vs The Manhunt (Eduqas / Edexcel / OCR / WJEC clusters)',
-  board: 'Cross-board (AQA + Eduqas/Edexcel/OCR/WJEC)',
+    'Love & Relationships (cross-board): When We Two Parted (AQA L&R) vs The Manhunt (Pearson Edexcel GCSE)',
+  board: 'Cross-board (AQA + Edexcel)',
   textPair: [
     'When We Two Parted - Byron (AQA Love & Relationships)',
-    'The Manhunt - Simon Armitage (Eduqas / Edexcel / OCR / WJEC Love & Relationships clusters - NOT on AQA L&R)',
+    'The Manhunt - Simon Armitage (Pearson Edexcel GCSE Relationships - NOT on AQA L&R)',
   ],
   themes: ['Secrecy and shame', 'Aftermath of love', 'Physical manifestation of emotional pain'],
   // NOTE: Byron lines retained as verified PD canonical extracts. Armitage's "The Manhunt" is in copyright; unverified Armitage quotations replaced with structural commentary directing readers to a licensed edition (Option B).

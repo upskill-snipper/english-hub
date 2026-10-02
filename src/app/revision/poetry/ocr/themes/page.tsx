@@ -56,14 +56,21 @@ const CLUSTER_BADGE: Record<string, string> = {
   'Love and Relationships': 'bg-pink-500/15 text-pink-300 border-pink-500/20',
   Conflict: 'bg-red-500/15 text-red-300 border-red-500/20',
   'Youth and Age': 'bg-amber-500/15 text-amber-700 border-amber-500/20',
-  'Power and the Natural World': 'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
+  'Wider reading': 'bg-muted text-muted-foreground border-border',
 }
 
 // ─── Theme data ──────────────────────────────────────────────────────────────
 //
 // Analysis references themes and methods only. No copyrighted poem text
-// is reproduced. Students should consult the OCR "Towards a World Unknown"
-// anthology (ISBN 9781398384408) for full poems.
+// is reproduced.
+//
+// RELABELLED 2 October 2026. Every poem here was badged with an OCR cluster,
+// including a fourth, "Power and the Natural World", that OCR has never set,
+// and the page said it listed "every poem in the anthology". Few of these poems
+// are in OCR's anthology (see src/lib/board/ocr-anthology.ts). Each badge now
+// says what is true: the OCR cluster a poem is in, or "Wider reading". The
+// 1799 Prelude entry is OCR's Boat Stealing, which is in Conflict. The theme
+// notes themselves were not re-reviewed in this change.
 // ─────────────────────────────────────────────────────────────────────────────
 
 const THEMES: Theme[] = [
@@ -78,25 +85,25 @@ const THEMES: Theme[] = [
       {
         title: 'Sonnet 43',
         poet: 'Elizabeth Barrett Browning',
-        cluster: 'Love and Relationships',
+        cluster: 'Wider reading',
         note: 'Love as a spiritual, limitless force measured in abstract dimensions.',
       },
       {
         title: 'She Walks in Beauty',
         poet: 'Lord Byron',
-        cluster: 'Love and Relationships',
+        cluster: 'Wider reading',
         note: 'Reverent admiration of beauty that harmonises darkness and light.',
       },
       {
         title: 'i wanna be yours',
         poet: 'John Cooper Clarke',
-        cluster: 'Love and Relationships',
+        cluster: 'Wider reading',
         note: 'Devotion expressed through everyday objects in a punk-poetry register.',
       },
       {
         title: 'Valentine',
         poet: 'Carol Ann Duffy',
-        cluster: 'Love and Relationships',
+        cluster: 'Wider reading',
         note: 'Love as honest and painful, rejecting cliched romantic gestures.',
       },
     ],
@@ -112,37 +119,37 @@ const THEMES: Theme[] = [
       {
         title: 'Neutral Tones',
         poet: 'Thomas Hardy',
-        cluster: 'Love and Relationships',
+        cluster: 'Wider reading',
         note: 'A bleak winter scene mirrors the death of a relationship, with loss permanently scarring memory.',
       },
       {
         title: 'A Complaint',
         poet: 'William Wordsworth',
-        cluster: 'Love and Relationships',
+        cluster: 'Wider reading',
         note: 'Grief for a cooled friendship, expressed through a dwindling fountain metaphor.',
       },
       {
         title: 'She Dwelt Among the Untrodden Ways',
         poet: 'William Wordsworth',
-        cluster: 'Love and Relationships',
+        cluster: 'Wider reading',
         note: 'An elegy for an unknown woman whose death matters only to the speaker.',
       },
       {
         title: 'Long Distance II',
         poet: 'Tony Harrison',
-        cluster: 'Love and Relationships',
+        cluster: 'Wider reading',
         note: 'A father maintains domestic rituals for his dead wife; the son discovers he does the same.',
       },
       {
         title: 'On My First Son',
         poet: 'Ben Jonson',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: "A father's anguished elegy for his seven-year-old child.",
       },
       {
         title: 'Poppies',
         poet: 'Jane Weir',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: "A mother's grief conveyed through sensory domestic details as her son leaves for war.",
       },
       {
@@ -154,7 +161,7 @@ const THEMES: Theme[] = [
       {
         title: 'From a Mother in a Refugee Camp',
         poet: 'Chinua Achebe',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: "A mother's tender, doomed act of care for her dying child in a refugee camp.",
       },
     ],
@@ -170,13 +177,13 @@ const THEMES: Theme[] = [
       {
         title: 'Exposure',
         poet: 'Wilfred Owen',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'The slow death of soldiers through cold and inaction rather than enemy fire.',
       },
       {
         title: 'The Charge of the Light Brigade',
         poet: 'Alfred Lord Tennyson',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'Heroic duty celebrated in galloping rhythm; soldiers ride knowingly into death.',
       },
       {
@@ -188,19 +195,19 @@ const THEMES: Theme[] = [
       {
         title: 'The Man He Killed',
         poet: 'Thomas Hardy',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: "A soldier's colloquial, halting attempt to justify killing another human being.",
       },
       {
         title: 'War Photographer',
         poet: 'Carole Satyamurti',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: "The moral cost of documenting other people's suffering for a distant audience.",
       },
       {
         title: 'Belfast Confetti',
         poet: 'Ciaran Carson',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'Urban violence in Belfast rendered through fragmented punctuation and syntax.',
       },
     ],
@@ -216,19 +223,19 @@ const THEMES: Theme[] = [
       {
         title: 'Half-caste',
         poet: 'John Agard',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'A defiant, witty dismantling of a racial slur, celebrating mixed heritage.',
       },
       {
         title: 'No Problem',
         poet: 'Benjamin Zephaniah',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'A dub-rhythmed assertion of self against racial stereotyping.',
       },
       {
         title: 'The Class Game',
         poet: 'Mary Casey',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'A Liverpudlian working-class voice fires back at middle-class snobbery.',
       },
       {
@@ -246,19 +253,19 @@ const THEMES: Theme[] = [
       {
         title: 'The \u00c9migr\u00e9e',
         poet: 'Carol Rumens',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'A woman clings to a sunlit memory of the homeland she can never return to.',
       },
       {
         title: 'Taller',
         poet: 'Toby Campion',
-        cluster: 'Love and Relationships',
+        cluster: 'Wider reading',
         note: 'A young speaker reflects on identity, family, and growing into himself.',
       },
       {
         title: 'Lineage',
         poet: 'Margaret Walker',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'A granddaughter celebrates the strength of her foremothers and questions her own.',
       },
     ],
@@ -274,31 +281,31 @@ const THEMES: Theme[] = [
       {
         title: 'Ozymandias',
         poet: 'Percy Bysshe Shelley',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'A shattered statue reveals the futility of tyrannical power against time.',
       },
       {
         title: 'London',
         poet: 'William Blake',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'Institutional power -- Church, monarchy, commerce -- mapped onto the streets of London.',
       },
       {
         title: 'Cousin Kate',
         poet: 'Christina Rossetti',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: "A lord's sexual and social power exploits a lower-class woman.",
       },
       {
         title: 'The Charge of the Light Brigade',
         poet: 'Alfred Lord Tennyson',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'Military authority sends soldiers to certain death; duty is unquestioned.',
       },
       {
         title: 'Living Space',
         poet: 'Imtiaz Dharker',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'Human resilience in the face of poverty and precarious living conditions.',
       },
     ],
@@ -314,61 +321,61 @@ const THEMES: Theme[] = [
       {
         title: 'Ode to the West Wind',
         poet: 'Percy Bysshe Shelley',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'The wind as destroyer and preserver -- a force of creative and political renewal.',
       },
       {
         title: 'Inversnaid',
         poet: 'Gerard Manley Hopkins',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'A passionate plea to preserve wild places from human interference.',
       },
       {
         title: 'The Eagle',
         poet: 'Alfred Lord Tennyson',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'A miniature portrait of a majestic bird poised between earth, sea, and sky.',
       },
       {
         title: 'Composed Upon Westminster Bridge',
         poet: 'William Wordsworth',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'A city at dawn described in the language of natural beauty.',
       },
       {
-        title: 'The Prelude (extract) - 1799 two-part Prelude (Part First, lines 81-129)',
+        title: 'Boat Stealing (from 1799 Prelude)',
         poet: 'William Wordsworth',
-        cluster: 'Power and the Natural World',
+        cluster: 'Conflict',
         note: "Nature as a terrifying, educative force that dwarfs human confidence. OCR prescribes the 1799 two-part Prelude (Part First, lines 81-129), drafted in Wordsworth's lifetime but unpublished until 1973 - not the 1850 posthumous Prelude used by AQA. The wording is materially different; never cross-quote between versions.",
       },
       {
         title: 'Wind',
         poet: 'Ted Hughes',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'Violent wind besieges a house, testing the boundary between safety and chaos.',
       },
       {
         title: 'Storm on the Island',
         poet: 'Seamus Heaney',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'A community braces against a storm; the absence of trees becomes its own threat.',
       },
       {
         title: 'Snow',
         poet: 'Louis MacNeice',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'A sudden snowfall reveals the overwhelming variety and strangeness of the world.',
       },
       {
         title: 'Below the Green Corrie',
         poet: 'Norman MacCaig',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: "Highland mountains personified as bandits who demand the speaker's life and praise.",
       },
       {
         title: 'At a Potato Digging',
         poet: 'Seamus Heaney',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'Modern farmers digging potatoes are haunted by the folk memory of the Irish Famine.',
       },
     ],
@@ -384,37 +391,37 @@ const THEMES: Theme[] = [
       {
         title: 'I Remember, I Remember',
         poet: 'Thomas Hood',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'A litany of lost childhood joys contrasted with the diminished present.',
       },
       {
         title: 'Piano',
         poet: 'D.H. Lawrence',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'A song carries the speaker back to the lost intimacy of childhood.',
       },
       {
         title: 'Neutral Tones',
         poet: 'Thomas Hardy',
-        cluster: 'Love and Relationships',
+        cluster: 'Wider reading',
         note: "A single bitter memory of a relationship's death colours all subsequent experience.",
       },
       {
         title: 'On an Old Song',
         poet: 'Douglas Dunn',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'A folk tune unlocks a meditation on time, memory, and past generations.',
       },
       {
         title: 'Where They Lived',
         poet: 'Norman MacCaig',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'An empty house haunted by the absence of those who once filled it.',
       },
       {
         title: 'The \u00c9migr\u00e9e',
         poet: 'Carol Rumens',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'Idealised memory of a homeland that may no longer exist as the speaker remembers it.',
       },
     ],
@@ -430,37 +437,37 @@ const THEMES: Theme[] = [
       {
         title: 'I Remember, I Remember',
         poet: 'Thomas Hood',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'Childhood remembered as a lost paradise of unselfconscious joy.',
       },
       {
         title: 'To My Nine-Year-Old Self',
         poet: 'Helen Dunmore',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'An adult writes an apologetic letter to her younger, braver self.',
       },
       {
         title: 'Walking Away',
         poet: 'C. Day-Lewis',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'A father watches his son walk away into independence for the first time.',
       },
       {
         title: 'Little Boy Crying',
         poet: 'Mervyn Morris',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'A father watches his small son rage after a smack and confronts the pain of discipline.',
       },
       {
         title: 'Piano',
         poet: 'D.H. Lawrence',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'A grown man is reduced to tears by a childhood memory of his mother.',
       },
       {
         title: 'A Child to his Sick Grandfather',
         poet: 'Joanna Baillie',
-        cluster: 'Love and Relationships',
+        cluster: 'Wider reading',
         note: 'A child speaks tenderly to his dying grandfather, blending innocence with grief.',
       },
     ],
@@ -476,55 +483,55 @@ const THEMES: Theme[] = [
       {
         title: 'On My First Son',
         poet: 'Ben Jonson',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'A father\'s elegy for his child, described as his "best piece of poetry".',
       },
       {
         title: 'The Song of the Old Mother',
         poet: 'W.B. Yeats',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: "A mother's weariness contrasted with the idleness of her children.",
       },
       {
         title: 'Follower',
         poet: 'Seamus Heaney',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'A son worships his ploughman father as a child; the roles reverse as the father ages.',
       },
       {
         title: 'Walking Away',
         poet: 'C. Day-Lewis',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'The painful act of letting a child go as an expression of love.',
       },
       {
         title: 'Little Boy Crying',
         poet: 'Mervyn Morris',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'Parental discipline as a form of necessary but painful love.',
       },
       {
         title: 'Catrin',
         poet: 'Gillian Clarke',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'A mother remembers the moment of birth and the ongoing tug-of-war with her daughter.',
       },
       {
         title: 'Nettles',
         poet: 'Vernon Scannell',
-        cluster: 'Love and Relationships',
+        cluster: 'Wider reading',
         note: "A father's fury after his son is stung becomes a meditation on protective love.",
       },
       {
         title: 'Poppies',
         poet: 'Jane Weir',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: "A mother's quiet grief expressed through domestic rituals and sensory detail.",
       },
       {
         title: 'Lineage',
         poet: 'Margaret Walker',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'The strength of foremothers celebrated; the speaker questions her own resilience.',
       },
     ],
@@ -540,37 +547,37 @@ const THEMES: Theme[] = [
       {
         title: 'When I Have Fears',
         poet: 'John Keats',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'Keats confronts his terror of dying before fulfilling his poetic potential.',
       },
       {
         title: 'Crossing the Bar',
         poet: 'Alfred Lord Tennyson',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'Death accepted calmly as a sea voyage towards a meeting with the divine.',
       },
       {
         title: 'Death the Leveller',
         poet: 'James Shirley',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'Death as the great equaliser -- no power or rank can prevent it.',
       },
       {
         title: 'Ozymandias',
         poet: 'Percy Bysshe Shelley',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'Time reduces even the greatest tyrant to dust and rubble.',
       },
       {
         title: 'The Song of the Old Mother',
         poet: 'W.B. Yeats',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: "The dying of the fire as a metaphor for the speaker's fading vitality.",
       },
       {
         title: 'One Flesh',
         poet: 'Elizabeth Jennings',
-        cluster: 'Love and Relationships',
+        cluster: 'Wider reading',
         note: 'Aged parents observed from a distance, their emotional and physical decline.',
       },
     ],
@@ -586,31 +593,31 @@ const THEMES: Theme[] = [
       {
         title: 'Half-caste',
         poet: 'John Agard',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'A witty, furious challenge to racial categorisation.',
       },
       {
         title: 'No Problem',
         poet: 'Benjamin Zephaniah',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'Racial profiling answered with resilience and rhythmic defiance.',
       },
       {
         title: 'The Class Game',
         poet: 'Mary Casey',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'Class snobbery challenged head-on in a working-class Liverpool voice.',
       },
       {
         title: 'Cousin Kate',
         poet: 'Christina Rossetti',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'Gender and class exploitation -- a woman discarded by a powerful lord.',
       },
       {
         title: 'London',
         poet: 'William Blake',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'Systemic injustice visible in every face and street of the capital.',
       },
       {
@@ -632,37 +639,37 @@ const THEMES: Theme[] = [
       {
         title: 'London',
         poet: 'William Blake',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'London as a map of human suffering and institutional oppression.',
       },
       {
         title: 'Composed Upon Westminster Bridge',
         poet: 'William Wordsworth',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'London at dawn as a moment of transcendent, silent beauty.',
       },
       {
         title: 'The \u00c9migr\u00e9e',
         poet: 'Carol Rumens',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'A sunlit homeland preserved in memory against a darker present reality.',
       },
       {
         title: 'Belfast Confetti',
         poet: 'Ciaran Carson',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'Belfast as a city made unreadable by violence -- streets become dead ends.',
       },
       {
         title: 'Where They Lived',
         poet: 'Norman MacCaig',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'An empty house as a metaphor for absence, the traces that people leave on a place.',
       },
       {
         title: 'At a Potato Digging',
         poet: 'Seamus Heaney',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: 'Irish land haunted by the historical memory of famine.',
       },
     ],
@@ -678,31 +685,31 @@ const THEMES: Theme[] = [
       {
         title: 'Ozymandias',
         poet: 'Percy Bysshe Shelley',
-        cluster: 'Power and the Natural World',
+        cluster: 'Wider reading',
         note: "The sculptor's art outlasts the tyrant's empire -- art as a form of preservation.",
       },
       {
         title: 'When I Have Fears',
         poet: 'John Keats',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'The fear of dying before writing the poetry the speaker feels inside him.',
       },
       {
         title: 'On My First Son',
         poet: 'Ben Jonson',
-        cluster: 'Youth and Age',
+        cluster: 'Wider reading',
         note: 'The child described as the father\'s "best piece of poetry" -- art and life entwined.',
       },
       {
         title: 'Half-caste',
         poet: 'John Agard',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'Language itself is the battleground -- the speaker reclaims the power to name himself.',
       },
       {
         title: 'Belfast Confetti',
         poet: 'Ciaran Carson',
-        cluster: 'Conflict',
+        cluster: 'Wider reading',
         note: 'Punctuation becomes shrapnel -- the poet makes language and violence inseparable.',
       },
     ],
@@ -761,12 +768,14 @@ export default function OCRThemesPage() {
             </h2>
             <ul className="mt-2 space-y-1.5 text-body-sm text-muted-foreground leading-relaxed">
               <li>
-                Each theme lists every poem in the anthology that engages with it, across all 4
-                clusters. The cluster each poem belongs to is shown with a coloured badge.
+                Most poems on this page are not in OCR&rsquo;s anthology. They are wider reading,
+                and their badge says so; a poem that is in the anthology carries the name of its OCR
+                cluster.
               </li>
               <li>
-                In the exam you compare poems from your own cluster. Use this page to find pairings
-                within your cluster that share a theme but treat it differently.
+                Part (a) of the exam compares a poem from your cluster with a poem you have not
+                seen, so reading widely around your cluster&rsquo;s themes is good preparation. For
+                the fifteen poems OCR sets, see your cluster&rsquo;s page.
               </li>
               <li>
                 Many poems appear under multiple themes -- this is deliberate. A strong essay
@@ -832,9 +841,8 @@ export default function OCRThemesPage() {
         </h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
           These theme descriptions discuss ideas, methods and context rather than reproducing
-          copyrighted poem text. You will need a copy of the OCR <em>Towards a World Unknown</em>{' '}
-          anthology (ISBN 9781398384408) to read the full poems. Public-domain poems have full
-          annotated study pages available on this site.
+          copyrighted poem text. For the poems you will be examined on, use OCR&rsquo;s anthology,{' '}
+          <em>Towards a World Unknown</em>, which OCR publishes free of charge at ocr.org.uk.
         </p>
       </section>
 

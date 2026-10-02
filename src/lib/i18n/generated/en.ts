@@ -927,8 +927,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'board.step_of': 'Step {current} of {total}',
   'board.desc.aqa': 'Power & Conflict, Love & Relationships, Worlds & Lives.',
   'board.desc.edexcel_gcse': 'Time & Place, Conflict, Relationships anthology.',
-  'board.desc.ocr': 'Love, Conflict, Power & Natural World, Youth & Age.',
-  'board.desc.eduqas': 'Eduqas Anthology poems with annotated walkthroughs.',
+  'board.desc.ocr': 'Love and Relationships, Conflict, Youth and Age.',
+  'board.desc.eduqas': 'The 15-poem Eduqas anthology, first examined in 2027.',
   'board.desc.cambridge_igcse': '0500 and 0990 - Reading, Composition, model answers.',
   'board.desc.edexcel_igcse_lit': 'Drama, Prose, Shakespeare, Unseen Poetry.',
   'board.desc.edexcel_igcse_lang': 'Non-fiction anthology, reading and transactional writing.',
@@ -2905,7 +2905,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'resources.poetry.anth.edex_tap.title': 'Time and Place',
   'resources.poetry.anth.edex_tap.desc': 'Poems about places and the memories attached to them.',
   'resources.poetry.anth.eduqas.title': 'Eduqas anthology',
-  'resources.poetry.anth.eduqas.desc': 'The Eduqas poetry anthology, poem by poem.',
+  'resources.poetry.anth.eduqas.desc':
+    'The fifteen poems Eduqas sets from 2027, with comparison plans.',
   'aff_comp.resources.platform.twitter': 'X (Twitter)',
   'aff_comp.resources.platform.instagram': 'Instagram',
   'aff_comp.resources.platform.tiktok': 'TikTok',
@@ -3512,7 +3513,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'poetry.edexcel.view_full': 'View full Edexcel anthology hub',
   'poetry.ocr.title': 'Towards a World Unknown',
   'poetry.ocr.description':
-    "The OCR anthology has 4 thematic clusters of 15 poems each. You'll study one cluster prescribed by your teacher.",
+    "The OCR anthology has 3 thematic clusters of 15 poems each. You'll study the one your school chooses.",
   'poetry.ocr.cluster_lar.title': 'Love and Relationships',
   'poetry.ocr.cluster_lar.desc':
     'Romantic, familial and complicated forms of love across centuries.',
@@ -3520,13 +3521,10 @@ export const EN_MESSAGES: Record<string, string> = {
   'poetry.ocr.cluster_conflict.desc': 'Personal, political and global conflict in poetry.',
   'poetry.ocr.cluster_youth_age.title': 'Youth and Age',
   'poetry.ocr.cluster_youth_age.desc': 'Time, growing up, mortality and looking back.',
-  'poetry.ocr.cluster_power_nature.title': 'Power and the Natural World',
-  'poetry.ocr.cluster_power_nature.desc':
-    "Nature's force, human power and our relationship with the environment.",
   'poetry.ocr.view_full': 'View full OCR anthology hub',
   'poetry.eduqas.title': 'Eduqas Poetry Anthology',
   'poetry.eduqas.description':
-    "The Eduqas 2025 anthology has 12 poems that all students study. You'll be asked to compare two of them in the exam - strong pairings are essential. Six of the twelve remain in copyright; quotations are short fair-dealing extracts.",
+    'The Eduqas anthology for exams from summer 2027 has 15 poems, and you study all of them. The exam asks about one poem, then a second of your choice compared with it. Most of the fifteen are in copyright, so quotations here are short fair-dealing extracts.',
   'poetry.eduqas.view': 'View Eduqas anthology',
   'poetry.edexcel_igcse.title': 'Edexcel IGCSE Poetry Anthology',
   'poetry.edexcel_igcse.description':
@@ -9058,68 +9056,84 @@ export const EN_MESSAGES: Record<string, string> = {
   'poetry_hub.ocr.badge_anthology': 'OCR Towards a World Unknown',
   'poetry_hub.ocr.hero_title': 'Towards a World Unknown',
   'poetry_hub.ocr.hero_lead':
-    'The OCR poetry anthology contains 60 poems split across 4 themed clusters of 15 poems each. For your exam, you only need to study one cluster - the one chosen by your school or teacher.',
+    "OCR's poetry anthology, Towards a World Unknown, has 45 poems in three clusters of 15. You study one cluster, the one your school chooses.",
   'poetry_hub.ocr.which_cluster': 'Which cluster do I study?',
   'poetry_hub.ocr.which_cluster_body':
-    'Check with your teacher to find out which of the 4 clusters your class is studying. Most schools choose one cluster at the start of Year 10 and stick with it through to the exam. You will be assessed on poems from that cluster only.',
-  'poetry_hub.ocr.four_clusters': 'The Four Clusters',
+    'Check with your teacher which of the three clusters your class is studying. The exam asks about that cluster only: one of its poems compared with a poem you have not seen, then one other poem of your choice.',
+  'poetry_hub.ocr.three_clusters': 'The Three Clusters',
   'poetry_hub.ocr.poems_count': 'poems',
   'poetry_hub.ocr.study': 'Study',
   'poetry_hub.ocr.about_pages_title': 'About these study pages',
   'poetry_hub.ocr.about_pages_body':
-    'For older, public-domain poems we provide full interactive study pages with annotations, context, and quotation analysis. For poems still in copyright, we provide context, themes, and key quotation analysis only - you will need a copy of the OCR anthology (Towards a World Unknown, ISBN 9781398384408) to read the full text.',
+    "Where a poem is out of copyright we can print it in full, with annotations; where it is still in copyright we quote it only briefly. Most of OCR's 45 poems are in copyright, and two have a study page on this site so far. OCR publishes the anthology free of charge at ocr.org.uk.",
   'poetry_hub.ocr.different_board_title': 'Studying a different exam board?',
   'poetry_hub.ocr.different_board_body':
     'Head back to the Poetry hub to switch boards or explore unseen poetry techniques and general poetry skills that apply to every exam board.',
   'poetry_hub.ocr.back_to_hub': 'Back to Poetry Hub',
   'poetry_hub.ocr.cluster.lr.title': 'Love and Relationships',
   'poetry_hub.ocr.cluster.lr.desc':
-    'Romantic, familial and complex relationships from Byron and Wordsworth to Carol Ann Duffy and John Cooper Clarke.',
+    'Love, desire and loss, from Keats and Emily Brontë to Carol Ann Duffy, Jackie Kay and Raymond Antrobus.',
   'poetry_hub.ocr.cluster.conflict.title': 'Conflict',
   'poetry_hub.ocr.cluster.conflict.desc':
-    'War, prejudice and personal struggle, from Tennyson and Owen to Agard, Zephaniah and Imtiaz Dharker.',
+    'War, power and division, from Byron and Wordsworth to Gillian Clarke, John Agard and Caleb Femi.',
   'poetry_hub.ocr.cluster.ya.title': 'Youth and Age',
   'poetry_hub.ocr.cluster.ya.desc':
-    'Childhood, growing up, parenthood and mortality, from Yeats and Keats to Helen Dunmore and Carol Rumens.',
-  'poetry_hub.ocr.cluster.pnw.title': 'Power and the Natural World',
-  'poetry_hub.ocr.cluster.pnw.desc':
-    'Nature, environment and human power, from Shelley and Blake to Ted Hughes, Seamus Heaney and Achebe.',
-  'poetry_hub.ocr.lr.hero_lead':
-    "15 poems exploring romantic, familial and complex relationships across more than two centuries. From Byron's celebration of beauty to John Cooper Clarke's punk devotion.",
-  'poetry_hub.ocr.conflict.hero_lead':
-    '15 poems exploring war, prejudice, identity and personal struggle. From Tennyson and Owen to Agard, Zephaniah and Imtiaz Dharker.',
-  'poetry_hub.ocr.ya.hero_lead':
-    '15 poems exploring childhood, growing up, parenthood and mortality. From Yeats and Keats to Helen Dunmore and Carol Rumens.',
-  'poetry_hub.ocr.pnw.hero_lead':
-    '15 poems exploring nature, environment and human power. From Shelley and Blake to Ted Hughes, Seamus Heaney and Chinua Achebe.',
+    'Childhood, growing up and growing old, from Blake and Hardy to Sylvia Plath, Langston Hughes and Warsan Shire.',
   'poetry_hub.ocr.all_15': 'All 15 Poems',
-  'poetry_hub.ocr.full_study': 'Full study page',
-  'poetry_hub.ocr.quotes_only': 'Key quotations only',
-  'poetry_hub.ocr.why_locked': 'Why are some poems locked?',
-  'poetry_hub.ocr.why_locked_body':
-    'Older poems are public domain so we provide full annotated study pages. More recent poems are still in copyright - for those we offer context, themes and key quotation analysis only. You will need a copy of the OCR Towards a World Unknown anthology to read the full text.',
   'poetry_hub.ocr.rights_notice_label': 'Rights notice.',
-  'poetry_hub.ocr.prelude_version_title': 'Version note: The Prelude (1799 two-part edition)',
-  'poetry_hub.ocr.prelude_version_body':
-    "OCR prescribes the 1799 two-part Prelude, drafted in Wordsworth's lifetime but unpublished until 1973. The boat-stealing episode appears in Part First, lines 81-129. AQA prescribes the 1850 posthumous Prelude (edited by Wordsworth's widow Mary). The wording is materially different between the two editions - never cross-quote between versions. If you are revising for OCR, use only the 1799 text.",
   'poetry_hub.ocr.explore_other_clusters': 'Explore other clusters',
+  'poetry_hub.ocr.cluster_lead':
+    'The 15 poems OCR sets for this cluster, as the anthology has stood since OCR revised it for first teaching in September 2022.',
+  'poetry_hub.ocr.exam_title': 'How it is examined',
+  'poetry_hub.ocr.exam_body':
+    'In J352/02 Exploring poetry and Shakespeare, Section A, you answer one question on your cluster, in two parts. Part (a) prints a poem from the cluster beside a poem you have not seen and asks you to compare them (20 marks, about 45 minutes). Part (b) asks you to explore one other poem from the anthology, from memory (20 marks, about 30 minutes). You may not take the anthology into the exam.',
+  'poetry_hub.ocr.no_study_page': 'No study page yet',
+  'poetry_hub.ocr.added_2022': 'Added in 2022',
+  'poetry_hub.ocr.on_edexcel_pages': 'On our Pearson Edexcel Conflict pages',
+  'poetry_hub.ocr.on_igcse_pages': 'On our International GCSE pages',
+  'poetry_hub.ocr.wider_title': 'Wider reading on this site',
+  'poetry_hub.ocr.wider_body':
+    "These poems are not in OCR's anthology. OCR's specification asks you to read beyond your cluster, because part (a) sets a poem you have not seen, and these are annotated in full.",
+  'poetry_hub.ocr.wider.edexcel_relationships':
+    'Set by Pearson Edexcel GCSE (Relationships), not by OCR.',
+  'poetry_hub.ocr.wider.aqa_and_edexcel':
+    'Set by AQA (Love and Relationships) and Pearson Edexcel GCSE (Relationships), not by OCR.',
+  'poetry_hub.ocr.wider.not_in_anthology': "Not in OCR's anthology.",
+  'poetry_hub.ocr.wider.removed_2022':
+    'In this cluster until OCR revised the anthology in 2022; no longer set.',
+  'poetry_hub.ocr.removed_title': 'No longer set',
+  'poetry_hub.ocr.removed_body':
+    'OCR replaced five poems in this cluster in 2022: {list}. A revision guide that lists any of them was written for the earlier anthology.',
+  'poetry_hub.ocr.rights_body':
+    'Most of these poems are still in copyright, so this site quotes them only briefly, for criticism and review under the fair dealing provisions of the Copyright, Designs and Patents Act 1988. OCR publishes the anthology free of charge at ocr.org.uk.',
+  'poetry_hub.ocr.pnw_notice.badge': 'Not an OCR cluster',
+  'poetry_hub.ocr.pnw_notice.title': 'OCR has no Power and the Natural World cluster',
+  'poetry_hub.ocr.pnw_notice.body':
+    "OCR's anthology, Towards a World Unknown, has three clusters: Love and Relationships, Conflict, and Youth and Age. This page used to list a fourth, Power and the Natural World, with fifteen poems. OCR has never set that cluster. Of those fifteen, one is an OCR poem: Boat Stealing, from the 1799 Prelude, which is in Conflict.",
+  'poetry_hub.ocr.pnw_notice.choose_cluster': "Choose one of OCR's three clusters",
+  'poetry_hub.ocr.pnw_notice.elsewhere_title': 'Where some of those poems are set',
+  'poetry_hub.ocr.pnw_notice.aqa_pc': 'AQA, Power and Conflict',
+  'poetry_hub.ocr.pnw_notice.edexcel_tp': 'Pearson Edexcel GCSE, Time and Place',
+  'poetry_hub.ocr.pnw_notice.ocr_conflict': 'OCR, Conflict',
+  'poetry_hub.ocr.pnw_notice.wider': 'Not set by OCR: wider reading',
   'poetry_hub.ocr.cg.title': 'How to Write a Poetry Comparison',
   'poetry_hub.ocr.cg.lead':
     'A step-by-step guide to writing a top-band OCR poetry comparison essay. Covers structure, technique, and the most common mistakes students make.',
   'poetry_hub.ocr.cg.what_asks_title': 'What the OCR exam asks you to do',
   'poetry_hub.ocr.cg.time_label': 'Time',
-  'poetry_hub.ocr.cg.time_value': 'Approximately 40 minutes',
+  'poetry_hub.ocr.cg.time_value': 'About 75 minutes: 45 for part (a), 30 for part (b)',
   'poetry_hub.ocr.cg.marks_label': 'Marks',
-  'poetry_hub.ocr.cg.marks_value': 'Up to 24 marks for this section',
+  'poetry_hub.ocr.cg.marks_value': '40 marks: 20 for each part',
   'poetry_hub.ocr.cg.assess_label': 'Assessment',
-  'poetry_hub.ocr.cg.assess_value': 'AO1, AO2, AO3 are all tested',
+  'poetry_hub.ocr.cg.assess_value':
+    'AO1 and AO2. Context (AO3) is assessed in the Shakespeare section, not here.',
   'poetry_hub.ocr.cg.aos_title': 'The Assessment Objectives',
   'poetry_hub.ocr.cg.structure_title': 'Recommended Essay Structure',
   'poetry_hub.ocr.cg.connectives_title': 'Comparison Connectives',
   'poetry_hub.ocr.cg.connectives_sim': 'For similarities',
   'poetry_hub.ocr.cg.connectives_diff': 'For differences',
   'poetry_hub.ocr.cg.quoting_title': 'How to Analyse a Quotation',
-  'poetry_hub.ocr.cg.choosing_title': 'Choosing Your Comparison Poem',
+  'poetry_hub.ocr.cg.choosing_title': 'Choosing your part (b) poem',
   'poetry_hub.ocr.cg.do': 'Do',
   'poetry_hub.ocr.cg.avoid': 'Avoid',
   'poetry_hub.ocr.cg.mistakes_title': 'Common Mistakes to Avoid',
@@ -9129,7 +9143,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'poetry_hub.ocr.cg.essay_plans_cta': 'Essay Plans',
   'poetry_hub.ocr.ep.title': 'Poetry Comparison Essay Plans',
   'poetry_hub.ocr.ep.lead':
-    '10 ready-made essay plans covering all 4 OCR clusters. Each plan pairs two poems, provides a three-point structure with side-by-side analysis, and includes an exam tip.',
+    'Ten practice comparison plans. Their poems are wider reading rather than OCR set poems (plan 4 uses The Destruction of Sennacherib, from Conflict), so use them to practise part (a): comparing a poem with one you have not studied.',
   'poetry_hub.ocr.ep.how_to_title': 'How to use these plans',
   'poetry_hub.ocr.ep.all_plans': 'All 10 Essay Plans',
   'poetry_hub.ocr.ep.quotes_note_title': 'A note on quotations',
@@ -9139,9 +9153,9 @@ export const EN_MESSAGES: Record<string, string> = {
   'poetry_hub.ocr.ep.point_label': 'Point',
   'poetry_hub.ocr.ep.conclusion_label': 'Conclusion',
   'poetry_hub.ocr.ep.exam_tip': 'Exam tip',
-  'poetry_hub.ocr.themes.title': 'Themes Across All Clusters',
+  'poetry_hub.ocr.themes.title': 'Themes and Wider Reading',
   'poetry_hub.ocr.themes.lead':
-    'Every major theme in the OCR anthology mapped to the poems that explore it. Use this to find strong comparison pairings and to see how the same idea appears across different clusters.',
+    "Themes that run through OCR's three clusters, mapped to poems that explore them. Most of these poems are wider reading, not OCR set poems, and each is badged to say which.",
   'poetry_hub.ocr.themes.how_title': 'How to use this page',
   'poetry_hub.ocr.themes.poem_singular': 'poem',
   'poetry_hub.ocr.themes.poem_plural': 'poems',
@@ -9196,7 +9210,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'poetry_hub.edexcel.ep.how_title': 'How to use these plans',
   'poetry_hub.edexcel.ep.all_plans': 'All Essay Plans',
   'poetry_hub.eduqas.back_to_poetry': 'Back to Poetry',
-  'poetry_hub.eduqas.badge_anthology': 'Eduqas GCSE 2025 Anthology',
+  'poetry_hub.eduqas.badge_anthology': 'Eduqas anthology, exams from 2027',
   'poetry_hub.eduqas.hero_title': 'WJEC Eduqas Poetry',
   'poetry_hub.eduqas.rights_notice_label': 'Rights notice:',
   'poetry_hub.eduqas.comparison_heading': 'Comparison Question Practice',
@@ -9208,16 +9222,15 @@ export const EN_MESSAGES: Record<string, string> = {
   'poetry_hub.eduqas.love_betrayal_title': 'Love & betrayal pair',
   'poetry_hub.eduqas.love_betrayal_desc': 'A Victorian comparison anchor',
   'poetry_hub.eduqas.love_betrayal_body':
-    'Sonnet 29 (Barrett Browning) and Cousin Kate (Rossetti) are both Victorian, both from female speakers, and both about absent or lost lovers - a strong cluster pairing for the comparison question.',
+    'Sonnet 29 (Barrett Browning) and Cousin Kate (Rossetti) are both Victorian, both from female speakers, and both about absent or lost lovers: a strong pairing for the comparison question.',
   'poetry_hub.eduqas.war_identity_title': 'War & identity pair',
   'poetry_hub.eduqas.war_identity_desc': 'Two wars, two erasures',
   'poetry_hub.eduqas.war_identity_body':
     "Hardy's Drummer Hodge (Second Boer War, 1899) and Owen's Disabled (WWI) both interrogate what war takes from young men. Strong contrast in form, voice, and the kind of loss each poet exposes.",
   'poetry_hub.eduqas.boer_note': 'Note: Drummer Hodge is a Boer War poem (1899), not WWI.',
-  'poetry_hub.eduqas.copyright_only':
-    'In copyright - study notes only (short fair-dealing extracts)',
-  'poetry_hub.eduqas.pd_soon': 'Public domain - study page coming soon',
-  'poetry_hub.eduqas.in_copyright_aria': 'In copyright - study notes only',
+  'poetry_hub.eduqas.copyright_only': 'In copyright: no study page yet',
+  'poetry_hub.eduqas.pd_soon': 'Public domain: no study page yet',
+  'poetry_hub.eduqas.in_copyright_aria': 'In copyright: no study page yet',
   'poetry_hub.eduqas.theme.childhood_nature': 'Childhood & Nature',
   'poetry_hub.eduqas.theme.love': 'Love & Relationships',
   'poetry_hub.eduqas.theme.war': 'War & Conflict',
@@ -9230,7 +9243,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'poetry_hub.eduqas.cb_context': "Link analysis to context and the poet's intention",
   'poetry_hub.eduqas.ep.title': 'Eduqas Poetry Comparison Essay Plans',
   'poetry_hub.eduqas.ep.lead':
-    'Ready-made comparison plans across the Eduqas 2025 anthology. Each plan provides a thesis, three full paragraphs with evidence and analysis, a conclusion and an exam tip.',
+    'Ready-made comparison plans for the Eduqas anthology examined from summer 2027. Each plan provides a thesis, three full paragraphs with evidence and analysis, a conclusion and an exam tip.',
   'poetry_hub.eduqas.ep.how_title': 'How to use these plans',
   'poetry_hub.eduqas.ep.all_plans': 'All Essay Plans',
   'poetry_hub.lr.back_to_poetry': 'Back to Poetry',
@@ -9320,8 +9333,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'homepage.board.eal_supported.aria': 'EAL learner support is available for this board',
   'homepage.board.aqa.blurb': 'Power & Conflict, Love & Relationships, Worlds & Lives.',
   'homepage.board.edexcel.blurb': 'Time & Place, Conflict, Relationships anthology.',
-  'homepage.board.ocr.blurb': 'Love, Conflict, Power & Natural World, Youth & Age.',
-  'homepage.board.eduqas.blurb': 'Eduqas anthology with annotated walkthroughs.',
+  'homepage.board.ocr.blurb': 'Love and Relationships, Conflict, Youth and Age.',
+  'homepage.board.eduqas.blurb': 'The 15-poem Eduqas anthology, first examined in 2027.',
   'homepage.board.cambridge.blurb': '0500 and 0990 - Reading, Composition, model answers.',
   'homepage.board.edexcel_igcse_lit.blurb': 'Drama, Prose, Shakespeare, Unseen Poetry.',
   'homepage.board.edexcel_igcse_lang.blurb': 'Anthology, non-fiction, transactional writing.',
@@ -18473,7 +18486,6 @@ export const EN_MESSAGES: Record<string, string> = {
   'rev.poetry.shared.back_to_time_and_place': 'Back to Time and Place cluster',
   'rev.poetry.shared.back_to_conflict_cluster': 'Back to Conflict cluster',
   'rev.poetry.shared.back_to_youth_and_age': 'Back to Youth and Age',
-  'rev.poetry.shared.back_to_power_natural_world': 'Back to Power and the Natural World',
   'rev.poetry.shared.back_to_love_and_relationships': 'Back to Love and Relationships',
   'rev.poetry.shared.back_label_love_and_relationships': 'Love and Relationships',
   'rev.poetry.unseen.badge_guide': 'Comprehensive Guide',
@@ -19787,7 +19799,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'rev.poetry2.eduqas.ep.badge': 'Eduqas Essay Plans',
   'rev.poetry2.eduqas.ep.title': 'Comparison Essay Plans',
   'rev.poetry2.eduqas.ep.lead':
-    '{count} fully planned comparison essays drawn from the Eduqas GCSE 2025 anthology. Each plan provides a comparative question, a thesis, three comparative paragraphs with evidence, and a conclusion.',
+    '{count} fully planned comparison essays drawn from the Eduqas anthology examined from summer 2027. Each plan provides a comparative question, a thesis, three comparative paragraphs with evidence, and a conclusion.',
   'rev.poetry2.eduqas.ep.how_title': 'How to use these essay plans',
   'rev.poetry2.eduqas.ep.all_plans': 'All {count} Essay Plans',
   'rev.poetry2.lr.back_to_lr': 'Back to Love & Relationships',

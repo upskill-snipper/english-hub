@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'WJEC Eduqas English Literature Revision - The English Hub',
     description:
-      'WJEC Eduqas GCSE English Literature set-text guides, Eduqas anthology poetry, unseen poetry and exam technique aligned to the 2025 specification.',
+      'WJEC Eduqas GCSE English Literature set-text guides, the poetry anthology examined from 2027, unseen poetry and exam technique.',
     images: [
       {
         url: '/api/og?title=WJEC+Eduqas+English+Literature+Revision+-+The+English+Hub',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   title: 'WJEC Eduqas English Literature Revision',
   description:
-    'WJEC Eduqas GCSE English Literature set-text guides, Eduqas anthology poetry, unseen poetry and exam technique aligned to the 2025 specification.',
+    'WJEC Eduqas GCSE English Literature set-text guides, the poetry anthology examined from 2027, unseen poetry and exam technique.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/wjec' },
 }
 
@@ -30,7 +30,7 @@ const COMPONENTS = [
   {
     title: 'Paper 1: Shakespeare and Poetry',
     description:
-      'Section A: Shakespeare - one play studied in depth with an extract-based essay question. Section B: Poetry - two poems from the WJEC anthology compared in a single essay.',
+      'Section A: Shakespeare - one play studied in depth with an extract-based essay question. Section B: Poetry - a question on one anthology poem, then a second poem of your choice compared with it.',
     marks: '80 marks - 40% of GCSE',
     duration: '2 hours',
   },
@@ -38,7 +38,7 @@ const COMPONENTS = [
     title: 'Paper 2: Post-1914 Prose/Drama, 19th Century Prose & Unseen Poetry',
     description:
       'Section A: Post-1914 prose or drama (extract-based and essay). Section B: 19th-century prose (extract-based and essay). Section C: Unseen poetry - one analysis and one comparison.',
-    marks: '80 marks - 60% of GCSE',
+    marks: '120 marks - 60% of GCSE',
     duration: '2 hours 30 minutes',
   },
 ]
@@ -128,6 +128,11 @@ export default function WJECEnglishLiteraturePage() {
       </section>
 
       {/* ── Paper 1 detail ────────────────────────────────── */}
+      {/* CORRECTED 2 October 2026 against the Eduqas specification, Version 4:
+          the anthology question prints one poem and the student chooses the
+          second (this said both were printed, in one essay), and Paper 2 has
+          three 40-mark sections, 120 marks (this said 80, with 20-mark sections
+          A and B, and called Section C half the paper). */}
       <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">Paper 1: Shakespeare and Poetry</h2>
@@ -155,8 +160,10 @@ export default function WJECEnglishLiteraturePage() {
               <h3 className="font-semibold text-foreground">Section B: Poetry (40 marks)</h3>
               <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 <li>&bull; Two poems from the WJEC Eduqas poetry anthology</li>
-                <li>&bull; Both poems are printed on the paper</li>
-                <li>&bull; One essay comparing the two poems</li>
+                <li>&bull; The first poem is printed on the paper; you choose the second</li>
+                <li>
+                  &bull; One question on the printed poem, then one comparing your poem with it
+                </li>
                 <li>&bull; Must analyse language, imagery, structure, and form</li>
                 <li>&bull; Should consider poets&apos; purposes and effects on the reader</li>
               </ul>
@@ -172,13 +179,13 @@ export default function WJECEnglishLiteraturePage() {
             Paper 2: Post-1914 Prose/Drama, 19th Century Prose &amp; Unseen Poetry
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            2 hours 30 minutes &bull; 80 marks &bull; 60% of GCSE
+            2 hours 30 minutes &bull; 120 marks &bull; 60% of GCSE
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             <div className="rounded-lg border border-border bg-card p-5">
               <h3 className="font-semibold text-foreground">
-                Section A: Post-1914 Prose/Drama (20 marks)
+                Section A: Post-1914 Prose/Drama (40 marks)
               </h3>
               <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 <li>&bull; One post-1914 prose or drama text</li>
@@ -189,7 +196,7 @@ export default function WJECEnglishLiteraturePage() {
             </div>
             <div className="rounded-lg border border-border bg-card p-5">
               <h3 className="font-semibold text-foreground">
-                Section B: 19th Century Prose (20 marks)
+                Section B: 19th Century Prose (40 marks)
               </h3>
               <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 <li>&bull; One 19th-century prose text</li>
@@ -309,17 +316,19 @@ export default function WJECEnglishLiteraturePage() {
           </h2>
           <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
             <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4">
-              <h3 className="font-semibold text-foreground">Both anthology poems are printed</h3>
+              <h3 className="font-semibold text-foreground">
+                You choose the second anthology poem
+              </h3>
               <p className="mt-1 text-sm">
-                WJEC Eduqas prints both anthology poems on the paper and asks you to compare them in
-                a single essay. This removes the need to memorise which poem to choose, but you must
-                be ready to compare any pairing.
+                WJEC Eduqas prints one anthology poem and asks about it, then asks you to choose a
+                second poem from the anthology and compare it with the first. The second poem is not
+                printed, so you need to know every poem well enough to quote it from memory.
               </p>
             </div>
             <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4">
               <h3 className="font-semibold text-foreground">Unseen poetry carries heavy weight</h3>
               <p className="mt-1 text-sm">
-                Section C of Paper 2 is worth 40 marks (half of the paper, 25% of the total GCSE).
+                Section C of Paper 2 is worth 40 marks (a third of the paper, 20% of the GCSE).
                 Strong unseen poetry skills are essential for a high grade.
               </p>
             </div>

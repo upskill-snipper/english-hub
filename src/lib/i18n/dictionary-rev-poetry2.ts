@@ -55,9 +55,9 @@ export const REV_POETRY2_DICTIONARY: Record<string, { en: string; ar?: string; e
     es: 'Planes de redacción de comparación',
   },
   'rev.poetry2.eduqas.ep.lead': {
-    en: '{count} fully planned comparison essays drawn from the Eduqas GCSE 2025 anthology. Each plan provides a comparative question, a thesis, three comparative paragraphs with evidence, and a conclusion.',
-    ar: '{count} مقالات مقارنة مخطّطة بالكامل مأخوذة من مختارات Eduqas GCSE 2025. كل خطة توفّر سؤال مقارنة وأطروحة وثلاث فقرات مقارنة بالأدلّة وخاتمة.',
-    es: '{count} redacciones de comparación totalmente planificadas a partir de la antología Eduqas GCSE 2025. Cada plan ofrece una pregunta comparativa, una tesis, tres párrafos comparativos con evidencia y una conclusión.',
+    en: '{count} fully planned comparison essays drawn from the Eduqas anthology examined from summer 2027. Each plan provides a comparative question, a thesis, three comparative paragraphs with evidence, and a conclusion.',
+    ar: '{count} مقالات مقارنة مخطّطة بالكامل مأخوذة من مختارات Eduqas اللي تنمتحن من صيف ٢٠٢٧. كل خطة توفّر سؤال مقارنة وأطروحة وثلاث فقرات مقارنة بالأدلّة وخاتمة.',
+    es: '{count} redacciones de comparación totalmente planificadas a partir de la antología de Eduqas que se examina desde el verano de 2027. Cada plan ofrece una pregunta comparativa, una tesis, tres párrafos comparativos con evidencia y una conclusión.',
   },
   'rev.poetry2.eduqas.ep.how_title': {
     en: 'How to use these essay plans',
