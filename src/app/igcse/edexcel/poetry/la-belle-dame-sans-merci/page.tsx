@@ -660,10 +660,17 @@ Archaic diction: Keats uses words like "ail", "thee", "haggard", "woe-begone", "
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 three cards were counted as if there were no
+  // stanza breaks, so each named a line one to three lines early, and the cards on the ballad form
+  // and the frame narrative printed descriptions between the quotation marks the viewer adds; they
+  // are now in square brackets, the mark these pages use for the site's own words.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Ballad form',
-      example: 'Four-line stanzas with a short final line',
+      example: '[Four-line stanzas with a short final line]',
       effect:
         'Keats borrows the medieval ballad form and adds his own signature: a short last line in every stanza. The short line creates a dying-away effect, as if each stanza runs out of breath. The simple folkloric form gives the poem a timeless, oral quality, as if we are hearing a story passed down through generations.',
       lineRef: 0,
@@ -680,14 +687,14 @@ Archaic diction: Keats uses words like "ail", "thee", "haggard", "woe-begone", "
       example: 'lily on thy brow… fading rose… starved lips',
       effect:
         'Keats uses flower and body symbols that traditional readers would recognise instantly. The lily is death, the rose is love and youth, the starved lips are the wasting of vitality. These symbols load the poem with associations without Keats having to explain them - they work like folklore shorthand.',
-      lineRef: 8,
+      lineRef: 10,
     },
     {
       device: 'Frame narrative',
-      example: 'Speaker asks → Knight answers → Dream-kings warn',
+      example: '[Speaker asks → Knight answers → Dream-kings warn]',
       effect:
         'The poem has layers of voice. An outer speaker questions the knight; the knight tells his story; in his story, dream-kings cry the title aloud. Each layer adds distance and uncertainty. Crucially, the lady herself never speaks in her own voice - everything we know about her is second-hand, making her unknowable.',
-      lineRef: 12,
+      lineRef: 15,
     },
     {
       device: 'Repetition',
@@ -701,7 +708,7 @@ Archaic diction: Keats uses words like "ail", "thee", "haggard", "woe-begone", "
       example: 'as she did love… language strange… sweet moan… wild wild eyes',
       effect:
         'Keats fills the central love encounter with words that could mean love or danger. "As she did love" - did she love him or only appear to? "Language strange" - can the knight really translate her meaning? "Sweet moan" - pleasure or distress? "Wild wild eyes" - fearful or ferocious? The ambiguity refuses to let the reader decide whether the lady is victim or villain.',
-      lineRef: 18,
+      lineRef: 22,
     },
   ],
 }

@@ -488,6 +488,12 @@ Capitalisation: Dickinson \u062a\u0643\u0627\u067e\u062a\u0644 (\u062a\u0643\u06
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 two cards pointed at stanza breaks, which show no
+  // line number, and two printed descriptions between the quotation marks the viewer adds; they are
+  // now in square brackets, the mark these pages use for the site's own words.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Sustained personification',
@@ -512,13 +518,13 @@ Capitalisation: Dickinson \u062a\u0643\u0627\u067e\u062a\u0644 (\u062a\u0643\u06
       example: 'Tide / Sea / Mighty / Solid Town',
       effect:
         'Dickinson capitalises ordinary nouns to elevate them. By turning "Tide" and "Sea" into proper nouns, she gives them the weight of characters. The Solid Town becomes the named opposite of the fluid Sea.',
-      lineRef: 9,
+      lineRef: 10,
       effectAr:
         'Dickinson \u062a\u0643\u0627\u067e\u062a\u0644 \u0623\u0633\u0645\u0627\u0621 \u0639\u0627\u062f\u064a\u0629 \u0639\u0634\u0627\u0646 \u062a\u0631\u0641\u0639\u0647\u0627. \u0644\u0645\u0651\u0627 \u062a\u062d\u0648\u0651\u0644 "Tide" \u0648"Sea" \u0625\u0644\u0649 \u0623\u0633\u0645\u0627\u0621 \u0639\u0644\u0645\u060c \u062a\u0639\u0637\u064a\u0647\u0627 \u062b\u0642\u0644 \u0627\u0644\u0634\u062e\u0635\u064a\u0627\u062a. \u0648\u0627\u0644\u0640Solid Town \u064a\u0635\u064a\u0631 \u0627\u0644\u0646\u0642\u064a\u0636 \u0627\u0644\u0645\u0633\u0645\u0651\u0649 \u0644\u0644\u0640Sea \u0627\u0644\u0633\u0627\u0626\u0644.',
     },
     {
       device: 'Extended metaphor',
-      example: 'the sea as a house \u2014 basement, upper floor, hempen hands',
+      example: '[the sea as a house \u2014 basement, upper floor, hempen hands]',
       effect:
         'The sea is reimagined as a building with rooms. The metaphor makes the immense ocean small and domestic, while the speaker\u2019s small body becomes the visitor inside it. The reversal of scale destabilises the reader.',
       lineRef: 2,
@@ -530,13 +536,13 @@ Capitalisation: Dickinson \u062a\u0643\u0627\u067e\u062a\u0644 (\u062a\u0643\u06
       example: 'I started Early... I \u2013 started \u2013 too',
       effect:
         'The verb "started" appears twice with completely different meanings: set out and was startled. The echo retroactively darkens the opening, making the casual beginning of the poem feel ominous in hindsight.',
-      lineRef: 19,
+      lineRef: 0,
       effectAr:
         '\u0627\u0644\u0641\u0639\u0644 "started" \u064a\u062c\u064a \u0645\u0631\u0651\u062a\u064a\u0646 \u0628\u0645\u0639\u0646\u064a\u064a\u0646 \u0645\u062e\u062a\u0644\u0641\u064a\u0646 \u062a\u0645\u0627\u0645\u0627\u064b: \u0637\u0644\u0639 \u0645\u0646 \u0628\u064a\u062a\u0647\u060c \u0648\u0627\u0646\u0641\u0632\u0639. \u0648\u0627\u0644\u0635\u062f\u0649 \u064a\u0635\u0628\u063a \u0627\u0644\u0627\u0641\u062a\u062a\u0627\u062d\u064a\u0629 \u0628\u0638\u0644\u0627\u0644 \u0623\u063a\u0645\u0642 \u0628\u0623\u062b\u0631 \u0631\u062c\u0639\u064a\u060c \u0648\u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u0639\u0641\u0648\u064a\u0629 \u062a\u062d\u0633\u0651\u0647\u0627 \u0645\u0634\u0624\u0648\u0645\u0629 \u0644\u0645\u0651\u0627 \u062a\u0641\u0643\u0651\u0631 \u0641\u064a\u0647\u0627 \u0628\u0639\u062f \u0645\u0627 \u062a\u062e\u0644\u0651\u0635 \u0627\u0644\u0642\u0635\u064a\u062f\u0629.',
     },
     {
       device: 'Common metre',
-      example: 'alternating 8 and 6 syllable lines, ballad rhythm',
+      example: '[alternating 8 and 6 syllable lines, ballad rhythm]',
       effect:
         'The hymn-like metre is reassuring and familiar \u2014 the kind of rhythm a child might recite. The contrast between the soothing form and the disturbing content is one of Dickinson\u2019s most characteristic effects.',
       lineRef: 0,

@@ -460,6 +460,12 @@ Relationship to "The Lamb": The poem is best read alongside "The Lamb" from Song
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 three cards named the wrong line: the Prometheus
+  // allusion line 7 for line 8, the blacksmith's questions line 12 for line 13, and the single-word
+  // change line 20, a line it does not quote, for line 4.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Rhetorical questions',
@@ -472,7 +478,10 @@ Relationship to "The Lamb": The poem is best read alongside "The Lamb" from Song
     },
     {
       device: 'Symbolism',
-      example: 'Tyger… Lamb… fire… forests of the night',
+      // In the poem's order since 2 October 2026: the ellipses put the Lamb, line 20, before the
+      // fire and the forests, lines 6 and 2. scripts/check-quotations.mjs found it once it read
+      // device examples.
+      example: 'Tyger… forests of the night… fire… Lamb',
       effect:
         'Every noun in the poem is loaded with symbolic meaning. The tiger stands for fear, evil, energy, beauty, revolution, or the unknown. The lamb stands for innocence and Christ. Fire stands for creation and destruction. The "forests of the night" stand for the mysterious unknown. Blake builds his poem from symbols, leaving the reader to decode them.',
       lineRef: 0,
@@ -484,7 +493,7 @@ Relationship to "The Lamb": The poem is best read alongside "The Lamb" from Song
       example: 'What the hand, dare seize the fire?',
       effect:
         'The allusion to Prometheus, who stole fire from the gods, gives the creator a mythological frame. Creation becomes transgressive - reaching into forbidden territory to bring something powerful back. The creator is not a peaceful craftsman but a daring thief.',
-      lineRef: 7,
+      lineRef: 8,
       effectAr:
         'الإحالة إلى Prometheus، الذي سرق النارَ من الآلهة، تُكسب الخالقَ إطاراً ميثولوجيّاً. الخلق يصير اعتداءً - اقتحاماً لأرضٍ محرّمة لإحضار شيءٍ بالغ القوّة. الخالقُ هنا ليس صانعاً مسالماً بل سارقاً جريئاً.',
     },
@@ -496,7 +505,7 @@ Relationship to "The Lamb": The poem is best read alongside "The Lamb" from Song
         'What the hammer? what the chain, / In what furnace was thy brain? / What the anvil?',
       effect:
         "Stanza 4 extends a single metaphor: the creator as blacksmith. This domesticates divine creation - it becomes physical labour, not magic. The tools of an industrial forge become the tools of God. This connects creation to Blake's own time and the anxieties of the Industrial Revolution.",
-      lineRef: 13,
+      lineRef: 15,
       effectAr:
         'يمدّ المقطع الرابع استعارةً واحدة: الخالق حدّاداً. وهذا يُؤنِس الخلق الإلهيّ - يصير عملاً جسديّاً لا سحراً. أدواتُ المصنع الصناعيّ تصير أدواتِ الله. وبهذا يربط Blake الخلقَ بزمانه هو وبقلقه من الثورة الصناعيّة.',
     },
@@ -514,7 +523,7 @@ Relationship to "The Lamb": The poem is best read alongside "The Lamb" from Song
       example: 'Could frame thy fearful symmetry → Dare frame thy fearful symmetry',
       effect:
         'The poem opens and closes with almost the same stanza, but one word has changed. "Could" becomes "Dare". This tiny edit transforms the whole meaning: the question shifts from divine possibility to divine courage. The circularity traps the reader in the question, and the single-word change gives the whole poem its volta.',
-      lineRef: 23,
+      lineRef: 3,
       effectAr:
         'تفتح القصيدةُ وتُغلَق بالمقطع نفسه تقريباً، لكنّ كلمةً واحدة تغيّرت. "Could" صارت "Dare". هذا التعديل الضئيل يقلب المعنى كلّه: ينتقل السؤال من الإمكان الإلهيّ إلى الجرأة الإلهيّة. والتركيبُ الدائريّ يحبس القارئَ في السؤال، فيما يُهدي تغييرُ الكلمة الواحدة القصيدةَ كلَّها volta-ها.',
     },

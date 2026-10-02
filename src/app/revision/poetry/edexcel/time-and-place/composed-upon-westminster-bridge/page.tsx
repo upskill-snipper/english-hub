@@ -372,6 +372,11 @@ Metre: iambic pentameter (\u0639\u0634\u0631\u0629 \u0645\u0642\u0627\u0637\u063
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the sonnet-form card printed a description between
+  // the quotation marks the viewer adds; it is now in square brackets, the mark these pages use for
+  // the site's own words. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Hyperbole',
@@ -403,7 +408,7 @@ Metre: iambic pentameter (\u0639\u0634\u0631\u0629 \u0645\u0642\u0627\u0637\u063
     },
     {
       device: 'Petrarchan sonnet form',
-      example: 'octave then sestet, with volta at line 9',
+      example: '[octave then sestet, with volta at line 9]',
       effect:
         'The traditional sonnet form provides a solemn, classical container for Wordsworth\u2019s personal awe. The volta at line 9 lets him pivot from describing the cityscape to comparing it with the natural world \u2014 a structural argument for the city\u2019s beauty.',
       lineRef: 8,

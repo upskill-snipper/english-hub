@@ -578,13 +578,20 @@ Apostrophe: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0651\u0647\
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 five of the six cards named the wrong line, two of
+  // them a stanza break, which shows no line number, and the three-stage-structure card printed a
+  // description between the quotation marks the viewer adds; it is now in square brackets, the mark
+  // these pages use for the site's own words, and names line 1.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Personification',
       example: 'Thee sitting careless on a granary floor',
       effect:
         'Autumn is personified throughout the ode as a woman: working, resting, watching. The sustained personification turns the season into a companion the speaker knows. The whole poem is essentially an address to her.',
-      lineRef: 13,
+      lineRef: 14,
       effectAr:
         '\u0627\u0644\u062e\u0631\u064a\u0641 \u0645\u0634\u062e\u0651\u0635 \u0637\u0648\u0644 \u0627\u0644\u0640ode \u0643\u0627\u0645\u0631\u0623\u0629: \u062a\u0634\u062a\u063a\u0644\u060c \u062a\u0633\u062a\u0631\u064a\u062d\u060c \u062a\u062a\u0641\u0631\u0651\u062c. \u0648\u0627\u0644\u062a\u0634\u062e\u064a\u0635 \u0627\u0644\u0645\u0645\u062a\u062f\u0651 \u064a\u062d\u0648\u0651\u0644 \u0627\u0644\u0641\u0635\u0644 \u0625\u0644\u0649 \u0631\u0641\u064a\u0642\u0629 \u064a\u0639\u0631\u0641\u0647\u0627 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0651\u0647\u0627 \u0628\u062c\u0648\u0647\u0631\u0647\u0627 \u0645\u062e\u0627\u0637\u0628\u0629 \u0644\u0647\u0627.',
     },
@@ -602,16 +609,16 @@ Apostrophe: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0651\u0647\
       example: 'soft-lifted by the winnowing wind',
       effect:
         'Alliteration ("soft", "lifted"), assonance ("soft", "winnowing"), and the gentle "w" sounds combine to make the line itself feel like a soft breeze. The form imitates the content.',
-      lineRef: 14,
+      lineRef: 15,
       effectAr:
         'Alliteration \u0628\u064a\u0646 "soft" \u0648"lifted"\u060c assonance \u0628\u064a\u0646 "soft" \u0648"winnowing"\u060c \u0648\u0623\u0635\u0648\u0627\u062a "w" \u0627\u0644\u0646\u0627\u0639\u0645\u0629\u060c \u0643\u0644\u0651\u0647\u0627 \u062a\u062a\u0636\u0627\u0641\u0631 \u0639\u0634\u0627\u0646 \u0627\u0644\u0628\u064a\u062a \u0628\u0646\u0641\u0633\u0647 \u064a\u062d\u0633\u0651 \u0643\u0623\u0646\u0647 \u0646\u0633\u064a\u0645 \u062e\u0641\u064a\u0641. \u0627\u0644\u0634\u0643\u0644 \u064a\u0642\u0644\u0651\u062f \u0627\u0644\u0645\u062d\u062a\u0648\u0649.',
     },
     {
       device: 'Three-stage structure',
-      example: 'stanza 1 ripening, stanza 2 resting, stanza 3 evening',
+      example: '[stanza 1 ripening, stanza 2 resting, stanza 3 evening]',
       effect:
         'Each stanza marks a different stage of the season and a different time of day. The reader experiences a whole autumn in three movements. The structure carries the meaning: time is passing, gently but inevitably.',
-      lineRef: 11,
+      lineRef: 0,
       effectAr:
         '\u0643\u0644 \u0645\u0642\u0637\u0639 \u064a\u0639\u0644\u0651\u0645 \u0639\u0644\u0649 \u0645\u0631\u062d\u0644\u0629 \u0645\u062e\u062a\u0644\u0641\u0629 \u0645\u0646 \u0627\u0644\u0641\u0635\u0644 \u0648\u0648\u0642\u062a \u0645\u062e\u062a\u0644\u0641 \u0645\u0646 \u0627\u0644\u064a\u0648\u0645. \u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u062c\u0631\u0651\u0628 \u062e\u0631\u064a\u0641\u0627\u064b \u0643\u0627\u0645\u0644\u0627\u064b \u0641\u064a \u062b\u0644\u0627\u062b \u062d\u0631\u0643\u0627\u062a. \u0648\u0627\u0644\u0628\u0646\u064a\u0629 \u062a\u062d\u0645\u0644 \u0627\u0644\u0645\u0639\u0646\u0649: \u0627\u0644\u0648\u0642\u062a \u064a\u0645\u0631\u0651\u060c \u0628\u0631\u0642\u0651\u0629 \u0628\u0633 \u0628\u062d\u062a\u0645\u064a\u0629.',
     },
@@ -621,7 +628,7 @@ Apostrophe: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0651\u0647\
         'Where are the songs of spring? Ay, where are they? / Think not of them, thou hast thy music too',
       effect:
         'The turn at the start of stanza 3 refuses nostalgia. Keats opens the door to mourning spring and then closes it again. The ode\u2019s philosophical move is this refusal \u2014 a celebration of the present in its own right.',
-      lineRef: 23,
+      lineRef: 24,
       effectAr:
         '\u0627\u0644\u0627\u0646\u0639\u0637\u0627\u0641 \u0641\u064a \u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u0645\u0642\u0637\u0639 3 \u064a\u0631\u0641\u0636 \u0627\u0644\u062d\u0646\u064a\u0646. Keats \u064a\u0641\u062a\u062d \u0627\u0644\u0628\u0627\u0628 \u0644\u0644\u0646\u0648\u0627\u062d \u0639\u0644\u0649 \u0627\u0644\u0631\u0628\u064a\u0639 \u062b\u0645 \u064a\u0633\u0643\u0651\u0631\u0647 \u0645\u0631\u0629 \u062b\u0627\u0646\u064a\u0629. \u0648\u0627\u0644\u062d\u0631\u0643\u0629 \u0627\u0644\u0641\u0644\u0633\u0641\u064a\u0629 \u0644\u0644\u0640ode \u0647\u064a \u0647\u0627\u0644\u0631\u0641\u0636 \u2014 \u0627\u062d\u062a\u0641\u0627\u0644 \u0628\u0627\u0644\u062d\u0627\u0636\u0631 \u0628\u062d\u0642\u0651\u0647 \u0647\u0648.',
     },
@@ -630,7 +637,7 @@ Apostrophe: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0651\u0647\
       example: 'Season of mists... thou hast thy music too',
       effect:
         'The whole poem is addressed to autumn. Apostrophe (direct address to an absent or non-human being) gives the ode its intimate, conversational tone. Autumn is not just observed \u2014 she is spoken to.',
-      lineRef: 24,
+      lineRef: 0,
       effectAr:
         '\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0651\u0647\u0627 \u0645\u062e\u0627\u0637\u0628\u0629 \u0645\u0648\u062c\u0651\u0647\u0629 \u0644\u0644\u062e\u0631\u064a\u0641. \u0627\u0644\u0640apostrophe (\u0645\u062e\u0627\u0637\u0628\u0629 \u0645\u0628\u0627\u0634\u0631\u0629 \u0644\u0634\u064a \u063a\u0627\u0626\u0628 \u0623\u0648 \u063a\u064a\u0631 \u0628\u0634\u0631\u064a) \u062a\u0639\u0637\u064a \u0627\u0644\u0640ode \u0646\u0628\u0631\u062a\u0647\u0627 \u0627\u0644\u062d\u0645\u064a\u0645\u064a\u0629 \u0627\u0644\u0645\u062d\u0627\u0648\u0650\u0631\u0629. \u0627\u0644\u062e\u0631\u064a\u0641 \u0645\u0648 \u0641\u0642\u0637 \u0645\u0644\u0627\u062d\u0638 \u2014 \u0647\u0648 \u0645\u0643\u0644\u064e\u0651\u0645.',
     },

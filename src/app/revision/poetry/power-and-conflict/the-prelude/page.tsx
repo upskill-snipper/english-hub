@@ -540,48 +540,53 @@ Volta / نقطة التحوّل
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 seven of the eight cards named the wrong line,
+  // from three lines late to seventeen early. a-device-card-cites-the-line-it-quotes.test.tsx now
+  // checks every card.
   languageDevices: [
     {
       device: 'Personification',
       example: 'Upreared its head ... Strode after me',
       effect:
         'The mountain is given human and animal qualities -- rising up and striding after the boy like a predator. This transforms nature from a passive setting into an active, terrifying force with its own will and purpose.',
-      lineRef: 18,
+      lineRef: 23,
     },
     {
       device: 'Sublime imagery',
       example: 'a huge peak, black and huge, / As if with voluntary power instinct',
       effect:
         'The mountain embodies the Romantic sublime: something so vast and powerful it overwhelms human understanding. The encounter fills the boy with awe and terror, forcing him to confront his own insignificance.',
-      lineRef: 16,
+      lineRef: 21,
     },
     {
       device: 'Sibilance',
       example: 'silent ... stole ... stealth',
       effect:
         'The repeated "s" sounds create a hushed, secretive atmosphere throughout the extract. They link the boy\'s initial act of theft with his fearful retreat, bookending the experience with guilt and secrecy.',
-      lineRef: 12,
+      lineRef: 29,
     },
     {
       device: 'Enjambment',
       example: 'my brain / Worked with a dim and undetermined sense',
       effect:
         "Lines spill into each other without pause, mirroring both the physical momentum of the boat and the way the experience overflows into the boy's consciousness, refusing to be contained.",
-      lineRef: 25,
+      lineRef: 34,
     },
     {
       device: 'Contrast',
       example: '"lustily I dipped" vs "trembling oars I turned"',
       effect:
         "The dramatic contrast between the boy's confident outward journey and his terrified return underscores nature's power to humble and transform. His physical control gives way to emotional vulnerability.",
-      lineRef: 19,
+      lineRef: 16,
     },
     {
       device: 'Simile',
       example: 'Went heaving through the water like a swan',
       effect:
         'The swan simile evokes grace, beauty, and harmony with nature during the confident phase of the journey. It also carries connotations of elegance that contrast sharply with the violent imagery of the mountain encounter.',
-      lineRef: 8,
+      lineRef: 19,
     },
     {
       device: 'Oxymoron',
@@ -595,7 +600,7 @@ Volta / نقطة التحوّل
       example: 'There hung a darkness, call it solitude / Or blank desertion',
       effect:
         'Darkness becomes a metaphor for psychological transformation. It "hangs" over his thoughts like a physical weight, suggesting the experience has permanently clouded his understanding of the world.',
-      lineRef: 28,
+      lineRef: 37,
     },
   ],
 }

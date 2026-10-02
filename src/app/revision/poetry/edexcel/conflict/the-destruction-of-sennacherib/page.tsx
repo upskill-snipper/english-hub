@@ -474,6 +474,12 @@ Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rid
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the repeated-simile card named line 6 for a
+  // quotation that starts on line 5, the anaphora card pointed at a stanza break, which shows no
+  // line number, and the religious-diction card named line 20 for one that starts on line 22.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Anapaestic tetrameter',
@@ -490,7 +496,7 @@ Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rid
         'Like the leaves of the forest when Summer is green / Like the leaves of the forest when Autumn hath blown',
       effect:
         'Byron repeats the same syntactic frame with one season swapped for another. The repetition itself dramatises the speed of the fall: the army goes from summer to autumn in two lines. The form embodies the meaning.',
-      lineRef: 6,
+      lineRef: 5,
       effectAr:
         'Byron \u064a\u0643\u0631\u0651\u0631 \u0646\u0641\u0633 \u0627\u0644\u0625\u0637\u0627\u0631 \u0627\u0644\u0646\u062d\u0648\u064a \u0645\u0639 \u062a\u0628\u062f\u064a\u0644 \u0641\u0635\u0644 \u0648\u0627\u062d\u062f \u0628\u0641\u0635\u0644 \u062b\u0627\u0646\u064a. \u0627\u0644\u062a\u0643\u0631\u0627\u0631 \u0628\u062d\u062f \u0630\u0627\u062a\u0647 \u064a\u062c\u0633\u0651\u062f \u0633\u0631\u0639\u0629 \u0627\u0644\u0633\u0642\u0648\u0637: \u0627\u0644\u062c\u064a\u0634 \u064a\u062a\u062d\u0648\u0651\u0644 \u0645\u0646 \u0627\u0644\u0635\u064a\u0641 \u0644\u0644\u062e\u0631\u064a\u0641 \u0641\u064a \u0628\u064a\u062a\u064a\u0646. \u0627\u0644\u0634\u0643\u0644 \u064a\u062d\u0645\u0644 \u0627\u0644\u0645\u0639\u0646\u0649.',
     },
@@ -508,7 +514,7 @@ Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rid
       example: 'And there lay the steed... And there lay the rider...',
       effect:
         'The repetition of "And there lay" turns the battlefield into a slow camera pan across corpses. Each instance forces the reader to look at one more death. The cumulative effect is overwhelming.',
-      lineRef: 14,
+      lineRef: 15,
       effectAr:
         '\u062a\u0643\u0631\u0627\u0631 "And there lay" \u064a\u062d\u0648\u0651\u0644 \u0633\u0627\u062d\u0629 \u0627\u0644\u0645\u0639\u0631\u0643\u0629 \u0644\u0643\u0627\u0645\u064a\u0631\u0627 \u062a\u062a\u062d\u0631\u0651\u0643 \u0628\u0628\u0637\u0621 \u0641\u0648\u0642 \u0627\u0644\u062c\u062b\u062b. \u0643\u0644 \u0645\u0631\u0651\u0629 \u064a\u062c\u0628\u0631 \u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u0637\u0627\u0644\u0639 \u0645\u0648\u062a \u0622\u062e\u0631. \u0627\u0644\u062a\u0623\u062b\u064a\u0631 \u0627\u0644\u062a\u0631\u0627\u0643\u0645\u064a \u064a\u0637\u0641\u062d \u0639\u0644\u0649 \u0627\u0644\u0642\u0627\u0631\u0626.',
     },
@@ -517,7 +523,7 @@ Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rid
       example: 'the temple of Baal / the glance of the Lord',
       effect:
         'Byron uses Old Testament vocabulary throughout. The "temple of Baal" represents pagan worship; "the glance of the Lord" represents the true God. The contrast frames the destruction as a religious as well as a military victory.',
-      lineRef: 23,
+      lineRef: 26,
       effectAr:
         'Byron \u064a\u0633\u062a\u062e\u062f\u0645 \u0645\u0641\u0631\u062f\u0627\u062a \u0645\u0646 \u0627\u0644\u0639\u0647\u062f \u0627\u0644\u0642\u062f\u064a\u0645 \u0637\u0648\u0644 \u0627\u0644\u0642\u0635\u064a\u062f\u0629. "the temple of Baal" \u064a\u0631\u0645\u0632 \u0644\u0644\u0639\u0628\u0627\u062f\u0629 \u0627\u0644\u0648\u062b\u0646\u064a\u0629\u061b \u0648"the glance of the Lord" \u064a\u0631\u0645\u0632 \u0644\u0644\u0625\u0644\u0647 \u0627\u0644\u062d\u0642\u064a\u0642\u064a. \u0627\u0644\u062a\u0636\u0627\u062f \u064a\u0623\u0637\u0651\u0631 \u0627\u0644\u062f\u0645\u0627\u0631 \u0639\u0644\u0649 \u0625\u0646\u0647 \u0646\u0635\u0631 \u062f\u064a\u0646\u064a\u060c \u0645\u0648 \u0628\u0633 \u0639\u0633\u0643\u0631\u064a.',
     },

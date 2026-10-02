@@ -335,6 +335,12 @@ Caesura: النقطة في نص البيت "Nothing beside remains." في الب
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the juxtaposition card named line 12 for a
+  // quotation that starts on line 10, and the symbolism card printed a description between the
+  // quotation marks the viewer adds; it is now in square brackets, the mark these pages use for the
+  // site's own words. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Dramatic irony',
@@ -356,7 +362,7 @@ Caesura: النقطة في نص البيت "Nothing beside remains." في الب
     },
     {
       device: 'Symbolism',
-      example: 'the desert and the ruined statue',
+      example: '[the desert and the ruined statue]',
       effect:
         'The desert symbolises the erasure of human achievement by time and nature. The broken statue symbolises the inevitable fall of all tyrannical power.',
       lineRef: 2,
@@ -368,7 +374,7 @@ Caesura: النقطة في نص البيت "Nothing beside remains." في الب
       example: '"King of Kings" vs "Nothing beside remains"',
       effect:
         "The poem places Ozymandias's grandiose self-description directly beside the reality of his total obscurity. The bigger the boast, the more devastating the reality.",
-      lineRef: 11,
+      lineRef: 9,
       effectAr:
         'القصيدة تحط وصف Ozymandias المتعالي لنفسه يم حقيقة إنه انّمحى تماماً. كل ما زاد التفاخر، صارت الحقيقة أكثر تدميراً.',
     },

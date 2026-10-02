@@ -387,6 +387,10 @@ Punctuation: Blake يستخدم الفواصل المنقوطة (semicolons) و�
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the trochaic-metre card named line 14 for a
+  // quotation of line 15. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Extended metaphor',
@@ -429,7 +433,7 @@ Punctuation: Blake يستخدم الفواصل المنقوطة (semicolons) و�
       example: 'In the morning glad I see',
       effect:
         'The falling trochaic rhythm gives the poem a hypnotic, chant-like quality, almost a nursery rhyme. The simple beat makes the moral horror at the end land harder by contrast.',
-      lineRef: 16,
+      lineRef: 17,
       effectAr:
         '\u0627\u0644\u0625\u064a\u0642\u0627\u0639 \u0627\u0644\u0646\u0627\u0632\u0644 \u0644\u0644\u0640trochee \u064a\u0639\u0637\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0637\u0627\u0628\u0639 \u0645\u0646\u0648\u0651\u0645 \u0634\u0628\u064a\u0647 \u0628\u0627\u0644\u062a\u0631\u062a\u064a\u0644\u060c \u062a\u0642\u0631\u064a\u0628\u0627\u064b \u0645\u062b\u0644 \u0623\u0646\u0634\u0648\u062f\u0629 \u0623\u0637\u0641\u0627\u0644. \u0627\u0644\u0625\u064a\u0642\u0627\u0639 \u0627\u0644\u0628\u0633\u064a\u0637 \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0631\u0639\u0628 \u0627\u0644\u0623\u062e\u0644\u0627\u0642\u064a \u0641\u064a \u0627\u0644\u0646\u0647\u0627\u064a\u0629 \u064a\u0636\u0631\u0628 \u0623\u0642\u0648\u0649 \u0628\u0627\u0644\u062a\u0628\u0627\u064a\u0646.',
     },

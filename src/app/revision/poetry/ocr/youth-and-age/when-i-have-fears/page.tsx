@@ -351,6 +351,12 @@ Volta: التحوّل التقليدي في الـsonnet يصير في البي�
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the visual-imagery card named line 13 for a
+  // quotation that starts on line 12, and the metre card printed a description between the
+  // quotation marks the viewer adds; it is now in square brackets, the mark these pages use for the
+  // site's own words. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Anaphora',
@@ -393,7 +399,7 @@ Volta: التحوّل التقليدي في الـsonnet يصير في البي�
       example: 'on the shore / Of the wide world I stand alone',
       effect:
         'The closing image places the speaker on a beach, alone, gazing at vast distances. He becomes a tiny figure at the edge of an immense world. The visual emphasises his insignificance and isolation.',
-      lineRef: 12,
+      lineRef: 11,
       effectAr:
         'الصورة الختامية تحطّ المتكلّم على شطّ، وحده، يطلّ على مسافات شاسعة. يصير شخصية صغيرة على حافة عالم هائل. الصورة البصرية تأكّد ضآلته وعزلته.',
     },
@@ -408,7 +414,7 @@ Volta: التحوّل التقليدي في الـsonnet يصير في البي�
     },
     {
       device: 'Iambic pentameter',
-      example: 'the entire sonnet',
+      example: '[the entire sonnet]',
       effect:
         'The regular ten-syllable lines give the poem a measured, controlled quality. Even when the speaker is afraid, the metre remains steady -- Keats is in control of the form even as he confronts the loss of control over his own life.',
       lineRef: 0,

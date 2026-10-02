@@ -628,6 +628,12 @@ The last stanza returns to the refrain and then answers it, giving the speaker t
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the vision card named line 4 for an example that
+  // starts with "Blind me", in line 5. The rows above are paraphrases, so that test cannot compare
+  // words here; this was judged by hand against the poem.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Phonetic Dialect (Caribbean Creole)',
@@ -684,7 +690,7 @@ The last stanza returns to the refrain and then answers it, giving the speaker t
       example: 'Blind me ... see-far woman ... de beacon',
       effect:
         'The poem builds a sustained semantic field around sight and blindness. The British system bandages and blinds, while the Caribbean heroes are associated with vision ("see-far woman") and light ("beacon"). Reclaiming history is presented as an act of recovering sight.',
-      lineRef: 4,
+      lineRef: 5,
     },
   ],
 }

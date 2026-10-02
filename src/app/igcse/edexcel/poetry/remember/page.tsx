@@ -324,6 +324,10 @@ Tone: Tender, quiet, loving. Remarkably, there is no anger, no fear, no bitterne
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the euphemism card named line 2, though "gone
+  // away" is in line 1. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Anaphora',
@@ -367,7 +371,7 @@ Tone: Tender, quiet, loving. Remarkably, there is no anger, no fear, no bitterne
       example: 'gone away… silent land… darkness and corruption',
       effect:
         'Rossetti rarely uses the word "death" directly. Instead she circles it with gentle alternatives: "gone away", "silent land", and even the more direct "darkness and corruption" are still metaphorical rather than literal. The accumulation of euphemisms softens death and lets the poem remain a love poem rather than a horror.',
-      lineRef: 1,
+      lineRef: 0,
       effectAr:
         'لا تستعمل Rossetti كلمة "death" أبداً. وتُحيط بها بدائلَ ناعمة: "gone away" و"silent land"، بل حتى "darkness and corruption" الأشدّ صراحة تبقى استعاريّة لا حرفيّة. وتراكمُ التلطّفات يُليّن الموتَ ويُبقي القصيدةَ قصيدةَ حبٍّ لا قصيدةَ رعب.',
     },

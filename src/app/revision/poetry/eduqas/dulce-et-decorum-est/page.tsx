@@ -512,13 +512,18 @@ Volta: في تحوّلان. الأول "Gas! GAS!" - الانتقال المفا
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 all seven cards named the line after the one they
+  // quote: their lineRefs were line numbers counted from 1.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Simile',
       example: "like old beggars under sacks ... like a devil's sick of sin ... obscene as cancer",
       effect:
         "Owen's similes consistently use ugly, degrading comparisons. Soldiers are like beggars, hags, devils, cancer victims. Every comparison strips away any romantic or heroic image of war. The cumulative effect is overwhelming disgust.",
-      lineRef: 1,
+      lineRef: 0,
       effectAr:
         'تشبيهات Owen دايماً تستخدم مقارنات قبيحة ومُذِلّة. الجنود مثل المتسوّلين، العجائز، الشياطين، مرضى السرطان. كل مقارنة تنزع أي صورة رومانسية أو بطولية للحرب. والأثر التراكمي اشمئزاز ساحق.',
     },
@@ -527,7 +532,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" - الانتقال المفا
       example: 'guttering, choking, drowning ... blood gargling from froth-corrupted lungs',
       effect:
         'Owen forces the reader to see, hear, and almost taste the horror. The sensory details are deliberately graphic and unpleasant. The reader cannot look away - just as the speaker cannot escape the memory.',
-      lineRef: 16,
+      lineRef: 15,
       effectAr:
         'Owen يجبر القارئ يشوف ويسمع ويتذوّق الرعب تقريباً. التفاصيل الحسّية فاحشة ومزعجة عمداً. والقارئ ما يقدر يبعد نظره - تماماً مثل ما المتكلّم ما يقدر يهرب من الذكرى.',
     },
@@ -536,7 +541,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" - الانتقال المفا
       example: 'If in some smothering dreams, you too could pace ... My friend',
       effect:
         'In the final stanza, Owen addresses the reader directly, especially those who romanticise war. The "you" forces complicity. We are no longer passive witnesses - we are part of the lie if we don\'t see the truth.',
-      lineRef: 17,
+      lineRef: 16,
       effectAr:
         'في المقطع الأخير، Owen يخاطب القارئ بشكل مباشر، وبالأخص اللي يرومنسون الحرب. الضمير "you" يفرض الشراكة. ما عدنا شاهدين سلبيين - صرنا جزء من الكذبة لو ما شفنا الحقيقة.',
     },
@@ -545,7 +550,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" - الانتقال المفا
       example: 'Gas! GAS! Quick, boys!',
       effect:
         'The poem accelerates from slow, exhausted trudging to immediate panic. The shift in pace mirrors the unpredictability of war - peace and horror are seconds apart.',
-      lineRef: 9,
+      lineRef: 8,
       effectAr:
         'القصيدة تتسارع من مشية بطيئة ومرهَقة إلى ذعر فوري. والانتقال في الإيقاع يعكس عدم القابلية للتنبّؤ في الحرب - السكينة والرعب ما بينهم إلا ثواني.',
     },
@@ -554,7 +559,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" - الانتقال المفا
       example: 'Dulce et decorum est / Pro patria mori',
       effect:
         "Owen quotes Horace's patriotic motto only to demolish it. The Latin sounds high-minded and noble - until you place it after the description of a man drowning in poison gas. The juxtaposition is the poem's entire argument.",
-      lineRef: 27,
+      lineRef: 26,
       effectAr:
         'Owen يقتبس لازمة Horace الوطنية فقط ليهدمها. اللاتينية تطنّ سامية ونبيلة - لين ما تحطّها بعد وصف رجل يغرق في غاز سام. والمقارنة الجنبية هي حجّة القصيدة بكاملها.',
     },
@@ -563,7 +568,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" - الانتقال المفا
       example: 'guttering, choking, drowning',
       effect:
         "Three present-tense verbs in a row make the death immediate and inescapable. The accumulation creates a sense of slow suffocation. The fact that they are present tense - happening now, in the speaker's mind - is devastating.",
-      lineRef: 16,
+      lineRef: 15,
       effectAr:
         'ثلاث أفعال بالمضارع ورا بعض تخلّي الموت فوري ومستحيل الهرب. والتراكم يخلق إحساس بخنق بطيء. وحقيقة إنها بالمضارع - تصير الحين، في ذهن المتكلّم - مدمّرة.',
     },
@@ -572,7 +577,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" - الانتقال المفا
       example: 'sludge, trudge, fumbling, gargling, froth-corrupted',
       effect:
         "Owen's word choices are deliberately ugly. The harsh consonants and unpleasant sounds make the poem itself feel disgusting. The language enacts the horror it describes.",
-      lineRef: 2,
+      lineRef: 1,
       effectAr:
         'اختيارات Owen للكلمات قبيحة عمداً. الحروف الساكنة القاسية والأصوات المزعجة تخلّي القصيدة بنفسها تحسّ مقرفة. واللغة تجسّد الرعب اللي توصفه.',
     },

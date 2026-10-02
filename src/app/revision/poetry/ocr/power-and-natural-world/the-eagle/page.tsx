@@ -243,6 +243,11 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the contrast card printed a description between
+  // the quotation marks the viewer adds; it is now in square brackets, the mark these pages use for
+  // the site's own words. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Personification',
@@ -291,7 +296,7 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
     },
     {
       device: 'Contrast',
-      example: 'stillness (lines 1--5) vs sudden movement (line 6)',
+      example: '[stillness (lines 1--5) vs sudden movement (line 6)]',
       effect:
         'The poem builds tension through five lines of patient stillness, then releases it in a single line of explosive action. The contrast makes the dive feel even more sudden and devastating.',
       lineRef: 5,

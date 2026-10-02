@@ -398,6 +398,11 @@ Volta: \u0639\u0628\u0627\u0631\u0629 "But most" \u0641\u064a \u0627\u0644\u0628
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 five of the six cards named a line before the one
+  // they quote, or a stanza break, which shows no line number.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Repetition',
@@ -413,7 +418,7 @@ Volta: \u0639\u0628\u0627\u0631\u0629 "But most" \u0641\u064a \u0627\u0644\u0628
       example: 'In every cry... In every Infants... In every voice... in every ban',
       effect:
         'The repeated "in every" turns stanza 2 into a relentless catalogue. The structure leaves no space for relief or exception \u2014 suffering is total. Blake writes prosecution, not description.',
-      lineRef: 4,
+      lineRef: 5,
       effectAr:
         '\u062a\u0643\u0631\u0627\u0631 "in every" \u064a\u062d\u0648\u0651\u0644 \u0627\u0644\u0645\u0642\u0637\u0639 2 \u0625\u0644\u0649 \u0642\u0627\u0626\u0645\u0629 \u0644\u0627 \u062a\u062a\u0648\u0642\u0651\u0641. \u0648\u0627\u0644\u0628\u0646\u064a\u0629 \u0645\u0627 \u062a\u062a\u0631\u0643 \u0645\u0643\u0627\u0646 \u0644\u0644\u0631\u0627\u062d\u0629 \u0623\u0648 \u0627\u0644\u0627\u0633\u062a\u062b\u0646\u0627\u0621 \u2014 \u0627\u0644\u0645\u0639\u0627\u0646\u0627\u0629 \u0643\u0644\u0651\u064a\u0629. Blake \u064a\u0643\u062a\u0628 \u0644\u0627\u0626\u062d\u0629 \u0627\u062a\u0647\u0627\u0645\u060c \u0645\u0648 \u0648\u0635\u0641\u0627\u064b.',
     },
@@ -422,7 +427,7 @@ Volta: \u0639\u0628\u0627\u0631\u0629 "But most" \u0641\u064a \u0627\u0644\u0628
       example: 'The mind-forg\u2019d manacles I hear',
       effect:
         'Blake invents a single image that names psychological oppression. Manacles are physical chains; "mind-forg\u2019d" relocates them inside the head. The poem\u2019s critique cuts deeper than law \u2014 it targets accepted belief.',
-      lineRef: 7,
+      lineRef: 8,
       effectAr:
         'Blake \u064a\u0628\u062a\u0643\u0631 \u0635\u0648\u0631\u0629 \u0648\u062d\u062f\u0629 \u062a\u0633\u0645\u0651\u064a \u0627\u0644\u0638\u0644\u0645 \u0627\u0644\u0646\u0641\u0633\u064a. \u0627\u0644\u0640manacles \u0642\u064a\u0648\u062f \u0645\u0627\u062f\u064a\u0629\u060c \u0648"mind-forg\u2019d" \u062a\u0646\u0642\u0644\u0647\u0627 \u0625\u0644\u0649 \u062f\u0627\u062e\u0644 \u0627\u0644\u0631\u0623\u0633. \u0648\u0646\u0642\u062f \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u064a\u0642\u0637\u0639 \u0623\u0639\u0645\u0642 \u0645\u0646 \u0627\u0644\u0642\u0627\u0646\u0648\u0646 \u2014 \u064a\u0633\u062a\u0647\u062f\u0641 \u0627\u0644\u0645\u0639\u062a\u0642\u062f \u0627\u0644\u0645\u0642\u0628\u0648\u0644.',
     },
@@ -431,7 +436,7 @@ Volta: \u0639\u0628\u0627\u0631\u0629 "But most" \u0641\u064a \u0627\u0644\u0628
       example: 'blackning Church / Palace walls',
       effect:
         'Two institutions become symbols of the corrupt system. The Church symbolises hypocrisy (preaching mercy while ignoring children dying in chimneys); the Palace symbolises the warmaking power of monarchy. Blake makes architecture moral.',
-      lineRef: 10,
+      lineRef: 11,
       effectAr:
         '\u0645\u0624\u0633\u0651\u0633\u062a\u0627\u0646 \u062a\u0635\u064a\u0631\u0627\u0646 \u0631\u0645\u0648\u0632\u0627\u064b \u0644\u0644\u0646\u0638\u0627\u0645 \u0627\u0644\u0641\u0627\u0633\u062f. \u0627\u0644\u0643\u0646\u064a\u0633\u0629 \u062a\u0631\u0645\u0632 \u0644\u0644\u0646\u0641\u0627\u0642 (\u062a\u0639\u0638 \u0628\u0627\u0644\u0631\u062d\u0645\u0629 \u0648\u0647\u064a \u062a\u062a\u062c\u0627\u0647\u0644 \u0623\u0637\u0641\u0627\u0644\u0627\u064b \u064a\u0645\u0648\u062a\u0648\u0646 \u0641\u064a \u0627\u0644\u0645\u062f\u0627\u062e\u0646)\u061b \u0648\u0627\u0644\u0642\u0635\u0631 \u064a\u0631\u0645\u0632 \u0644\u0642\u0648\u0651\u0629 \u0627\u0644\u0645\u0644\u0643\u064a\u0629 \u0641\u064a \u0635\u0646\u0639 \u0627\u0644\u062d\u0631\u0648\u0628. Blake \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0639\u0645\u0627\u0631\u0629 \u0623\u062e\u0644\u0627\u0642\u064a\u0629.',
     },
@@ -440,7 +445,7 @@ Volta: \u0639\u0628\u0627\u0631\u0629 "But most" \u0641\u064a \u0627\u0644\u0628
       example: 'the hapless Soldiers sigh / Runs in blood down Palace walls',
       effect:
         'A sound (a sigh) becomes a substance (blood) on a surface (palace walls). The mixing of senses creates a surreal, indelible image. The blood is the consequence of the sigh \u2014 cause and effect collapsed into one image.',
-      lineRef: 11,
+      lineRef: 12,
       effectAr:
         '\u0635\u0648\u062a (\u062a\u0646\u0647\u064a\u062f\u0629) \u064a\u0635\u064a\u0631 \u0645\u0627\u062f\u0629 (\u062f\u0645) \u0639\u0644\u0649 \u0633\u0637\u062d (\u062c\u062f\u0631\u0627\u0646 \u0642\u0635\u0631). \u062e\u0644\u0637 \u0627\u0644\u062d\u0648\u0627\u0633\u0651 \u064a\u062e\u0644\u0642 \u0635\u0648\u0631\u0629 \u0633\u0648\u0631\u064a\u0627\u0644\u064a\u0629 \u0645\u0627 \u062a\u0646\u0645\u062d\u064a. \u0648\u0627\u0644\u062f\u0645 \u0646\u062a\u064a\u062c\u0629 \u0627\u0644\u062a\u0646\u0647\u064a\u062f\u0629 \u2014 \u0627\u0644\u0633\u0628\u0628 \u0648\u0627\u0644\u0646\u062a\u064a\u062c\u0629 \u0645\u0646\u0647\u0627\u0631\u064a\u0646 \u0641\u064a \u0635\u0648\u0631\u0629 \u0648\u062d\u062f\u0629.',
     },
@@ -449,7 +454,7 @@ Volta: \u0639\u0628\u0627\u0631\u0629 "But most" \u0641\u064a \u0627\u0644\u0628
       example: 'Marriage hearse',
       effect:
         'Two opposites \u2014 wedding and funeral \u2014 are forced into a single phrase. The figure is shocking and refuses resolution. In Blake\u2019s London, the institution most associated with new life is also a vehicle for death.',
-      lineRef: 16,
+      lineRef: 18,
       effectAr:
         '\u0646\u0642\u064a\u0636\u0627\u0646 \u2014 \u0632\u0641\u0627\u0641 \u0648\u062c\u0646\u0627\u0632\u0629 \u2014 \u0645\u062c\u0628\u0648\u0631\u064a\u0646 \u0641\u064a \u0639\u0628\u0627\u0631\u0629 \u0648\u062d\u062f\u0629. \u0627\u0644\u0635\u0648\u0631\u0629 \u0635\u0627\u062f\u0645\u0629 \u0648\u062a\u0631\u0641\u0636 \u0623\u064a\u0651 \u062d\u0644\u0651. \u0641\u064a London \u0639\u0646\u062f Blake\u060c \u0627\u0644\u0645\u0624\u0633\u0651\u0633\u0629 \u0627\u0644\u0623\u0643\u062b\u0631 \u0627\u0631\u062a\u0628\u0627\u0637\u0627\u064b \u0628\u062d\u064a\u0627\u0629 \u062c\u062f\u064a\u062f\u0629 \u0647\u064a \u0628\u0646\u0641\u0633\u0647\u0627 \u0645\u0631\u0643\u0628\u0629 \u0645\u0648\u062a.',
     },

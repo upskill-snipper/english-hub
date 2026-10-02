@@ -236,6 +236,12 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 two cards named a line two before the one they
+  // quote, and the ballad-form card printed a description between the quotation marks the viewer
+  // adds; it is now in square brackets, the mark these pages use for the site's own words.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'South African vocabulary',
@@ -269,7 +275,7 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
       example: 'homely Northern breast and brain / Grow to some Southern tree',
       effect:
         'Hardy juxtaposes "homely Northern" (familiar, English) with "Southern tree" (foreign, African). The geographical contrast enacts the speaker’s grief at how far Hodge has been taken from home, even in death.',
-      lineRef: 14,
+      lineRef: 16,
       effectAr:
         'Hardy يضع "homely Northern" (المألوف، الإنجليزي) جنباً إلى جنب مع "Southern tree" (الغريب، الأفريقي). والتضاد الجغرافي يجسّد حزن المتكلّم على بُعد Hodge عن بيته، حتى في الموت.',
     },
@@ -278,13 +284,13 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
       example: 'strange-eyed constellations reign / His stars eternally',
       effect:
         '"Strange-eyed" and "reign" give the constellations a watchful, imperial presence. They become almost the rulers of Hodge’s eternal sky. The image is at once consoling (he has stars) and chilling (they are foreign).',
-      lineRef: 16,
+      lineRef: 18,
       effectAr:
         'كلمتا "strange-eyed" و"reign" تعطيان الكواكب حضور مراقِب وإمبريالي. صارت تقريباً حكّام سماء Hodge الأبدية. والصورة في نفس الوقت معزّية (له نجوم) ومرعبة (هاي النجوم غريبة).',
     },
     {
       device: 'Ballad form',
-      example: 'Three sestets in alternating tetrameter and trimeter, ABABAB',
+      example: '[Three sestets in alternating tetrameter and trimeter, ABABAB]',
       effect:
         'The English ballad form belongs at home in Wessex. Hardy applies it to a death in South Africa -- the form itself enacts the displacement, an English tune for a foreign grave.',
       lineRef: 0,

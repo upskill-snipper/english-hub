@@ -444,6 +444,11 @@ VOLTA: الانتقال من المقطع 5 للمقطع 6 يمثّل تحوّل
   ],
 
   /* ── Language Devices ────────────────────────────────────────── */
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the imperative card pointed at a stanza break,
+  // which shows no line number. a-device-card-cites-the-line-it-quotes.test.tsx now checks every
+  // card.
   languageDevices: [
     {
       device: 'Anaphora',
@@ -504,7 +509,7 @@ VOLTA: الانتقال من المقطع 5 للمقطع 6 يمثّل تحوّل
       example: 'Honour the charge they made! / Honour the Light Brigade',
       effect:
         'Tennyson shifts from third-person narrative to second-person command. The imperative "Honour" transforms the poem from a story about the past into a demand upon the present reader\u2014it is not enough to know what happened; you must actively remember and revere it.',
-      lineRef: 53,
+      lineRef: 57,
       effectAr:
         'Tennyson \u064a\u0646\u062a\u0642\u0644 \u0645\u0646 \u0633\u0631\u062f \u0628\u0636\u0645\u064a\u0631 \u0627\u0644\u063a\u0627\u0626\u0628 \u0625\u0644\u0649 \u0623\u0645\u0631 \u0628\u0636\u0645\u064a\u0631 \u0627\u0644\u0645\u062e\u0627\u0637\u0628. \u0648\u0641\u0639\u0644 \u0627\u0644\u0623\u0645\u0631 "Honour" \u064a\u062d\u0648\u0651\u0644 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0646 \u0642\u0635\u0629 \u0639\u0646 \u0627\u0644\u0645\u0627\u0636\u064a \u0644\u0645\u0637\u0644\u0628 \u0639\u0644\u0649 \u0627\u0644\u0642\u0627\u0631\u0626 \u0641\u064a \u0627\u0644\u062d\u0627\u0636\u0631 \u2014 \u0645\u0648 \u0643\u0627\u0641\u064a \u0625\u0646\u0643 \u062a\u0639\u0631\u0641 \u0627\u064a\u0634 \u0635\u0627\u0631\u061b \u0644\u0627\u0632\u0645 \u062a\u062a\u0630\u0643\u0651\u0631 \u0648\u062a\u0643\u0631\u0651\u0645.',
     },

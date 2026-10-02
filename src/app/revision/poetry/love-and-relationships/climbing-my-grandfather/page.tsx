@@ -436,6 +436,12 @@ const climbingMyGrandfatherPoem: PoemData = {
   ],
 
   // lineRef is the entry's index in `lines`: one entry per line, so line N is N - 1.
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the enjambment card named line 26, the line that
+  // runs on, for an example from line 27. The rows above are paraphrases, so that test cannot
+  // compare words here; this was judged by hand against the poem.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Extended metaphor',
@@ -478,7 +484,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       example: 'slow pulse',
       effect:
         'Lines run into each other, mimicking the continuous, hand-over-hand motion of climbing. Line 26 ends on the verb of knowing, so the object of that knowledge, the "slow pulse" of the last line, arrives only after a pause.',
-      lineRef: 25,
+      lineRef: 26,
       effectAr:
         'الأبيات تنساب من واحد للثاني، عشان تحاكي حركة التسلّق المستمرّة (يد فوق يد). والبيت 26 يخلص على فعل المعرفة، فالشي المعروف، "slow pulse" في البيت الأخير، ما يوصل إلا بعد توقّف.',
     },

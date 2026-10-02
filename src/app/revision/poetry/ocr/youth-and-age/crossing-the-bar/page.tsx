@@ -327,10 +327,16 @@ Metre (الوزن): الوزن غير منتظم، يتناوب بين أبيا�
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the parallelism card named line 9, the second of
+  // the two lines it quotes, and two cards printed descriptions between the quotation marks the
+  // viewer adds; they are now in square brackets, the mark these pages use for the site's own
+  // words. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Extended metaphor',
-      example: 'crossing the bar / putting out to sea / the Pilot',
+      example: '[crossing the bar / putting out to sea / the Pilot]',
       effect:
         'The whole poem is built on a sustained sea voyage metaphor: life is the harbour, death is the bar, eternity is the open ocean, God is the Pilot. The metaphor is never broken, giving the poem unity and depth.',
       lineRef: 2,
@@ -369,13 +375,13 @@ Metre (الوزن): الوزن غير منتظم، يتناوب بين أبيا�
       example: 'Sunset and evening star / Twilight and evening bell',
       effect:
         'Stanzas 1 and 3 begin with parallel imagery -- "evening" combined with a sight (star) or sound (bell). The parallelism creates a sense of stately ritual, like the movements of a church service.',
-      lineRef: 8,
+      lineRef: 0,
       effectAr:
         'Stanzas 1 و3 يبدّأون بصور متوازية - "evening" مع مرئي (نجمة) أو صوت (جرس). الـparallelism تخلق إحساس بشعيرة وقورة، مثل حركات قدّاس كنيسة.',
     },
     {
       device: 'Sound and rhythm',
-      example: 'rising and falling line lengths',
+      example: '[rising and falling line lengths]',
       effect:
         'Each stanza alternates long and short lines, creating a swelling-and-receding rhythm that mimics ocean waves. The form physically embodies the content: the poem moves like the tide.',
       lineRef: 4,

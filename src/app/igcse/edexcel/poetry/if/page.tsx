@@ -533,7 +533,7 @@ Direct address: The poem speaks to "you" throughout, but names its listener only
       example: 'If you can keep your head… / If you can trust yourself… / If you can wait…',
       effect:
         'The repetition of "If you can…" hammers the conditions home. Its relentlessness mirrors the difficulty of the task - the son must prove himself over and over again. It also builds enormous grammatical tension, because the sentence cannot finish until all the conditions are met.',
-      lineRef: 2,
+      lineRef: 0,
       effectAr:
         'تكرارُ "If you can…" يُرسّخ الشروطَ ترسيخاً. وإلحاحُه يحاكي صعوبةَ المهمّة - على الابن أن يُثبت نفسَه مراراً وتكراراً. كما يُولّد توتّراً نحويّاً ضخماً، إذ لا تنتهي الجملةُ قبل استيفاء جميع الشروط.',
     },
@@ -560,7 +560,7 @@ Direct address: The poem speaks to "you" throughout, but names its listener only
       example: 'your heart and nerve and sinew',
       effect:
         'Kipling uses three-part lists to give his moral claims the force of proverb. "Heart and nerve and sinew" covers emotion, courage and body - a total picture of the self. The rhythm of three is memorable and chant-like.',
-      lineRef: 21,
+      lineRef: 22,
       effectAr:
         'يستعمل Kipling قوائمَ ثلاثيّة ليُكسب ادّعاءاتِه الأخلاقيّة قوّةَ المثل. "Heart and nerve and sinew" تجمع العاطفةَ والشجاعةَ والجسد في صورةٍ كاملة للذات. وإيقاعُ الثلاث يُيسّر الحفظ ويُكسب العبارةَ نغمةً إنشاديّة.',
     },
@@ -569,7 +569,7 @@ Direct address: The poem speaks to "you" throughout, but names its listener only
       example: "fill the unforgiving minute / With sixty seconds' worth of distance run",
       effect:
         'Kipling turns life into a race against the clock. Every minute is personified as a stern examiner that demands sixty seconds of real effort. The metaphor imports the language of sport and physical training into a moral sermon.',
-      lineRef: 29,
+      lineRef: 31,
       effectAr:
         'يُحوّل Kipling الحياةَ إلى سباقٍ مع الساعة. كلّ دقيقة شخصٌ مُشخَّص بمنزلة فاحصٍ صارم يُطالب بستّين ثانية من الجهد الحقيقيّ. وتنقل الاستعارةُ لغةَ الرياضة والتدريب البدنيّ إلى موعظةٍ أخلاقيّة.',
     },
@@ -578,7 +578,7 @@ Direct address: The poem speaks to "you" throughout, but names its listener only
       example: "you'll be a Man, my son!",
       effect:
         'The poem holds back its direct address until the very last word. "My son" collapses the whole poem into a private conversation between father and child. It turns public moral code into intimate love - and gives the poem its emotional punch.',
-      lineRef: 32,
+      lineRef: 34,
       effectAr:
         'تُؤخّر القصيدةُ النداءَ المباشر إلى آخر كلمة. عبارة "my son" تختزل القصيدةَ كلّها في حوارٍ خاصّ بين أبٍ وابنه. تُحوّل المدوّنةَ الأخلاقيّة العامّة إلى محبّةٍ حميمة - وتمنح القصيدةَ ضربتَها الأخيرة العاطفيّة.',
     },

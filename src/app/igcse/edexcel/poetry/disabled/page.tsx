@@ -661,13 +661,19 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the rhyme card named line 1, though its example
+  // begins with "park", in line 3, and printed its pairs of rhyme words as a quotation, in which a
+  // " / " marks a line break; they are now in square brackets, the mark these pages use for the
+  // site's own words. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Irregular rhyme',
-      example: 'park / dark; knees / disease',
+      example: '[park / dark; knees / disease]',
       effect:
         'Disabled mostly uses full rhymes, not the pararhyme Owen is known for elsewhere, but it places them unpredictably: sometimes several lines apart, sometimes across a stanza break. The ear keeps expecting a pattern that never settles, like a body that no longer works as it did.',
-      lineRef: 0,
+      lineRef: 2,
       effectAr:
         'تعتمد "Disabled" في الغالب قوافيَ تامّة، لا الـ pararhyme الذي عُرف به Owen في قصائد أخرى، لكنّه يوزّعها على نحوٍ غير متوقّع: تتباعد أحياناً عدّة أسطر، وتعبر أحياناً الفاصلَ بين مقطعين. تظلّ الأذن تترقّب نمطاً لا يستقرّ أبداً، كجسدٍ لم يعد يعمل كما كان.',
     },

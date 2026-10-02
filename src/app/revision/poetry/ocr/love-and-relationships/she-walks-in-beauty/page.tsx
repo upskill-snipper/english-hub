@@ -352,6 +352,11 @@ Metre (الوزن): iambic tetrameter (أربع iambs في كل بيت، ثما�
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the tonal-contrast card named line 6 for a
+  // quotation that starts on line 5. a-device-card-cites-the-line-it-quotes.test.tsx now checks
+  // every card.
   languageDevices: [
     {
       device: 'Simile',
@@ -403,7 +408,7 @@ Metre (الوزن): iambic tetrameter (أربع iambs في كل بيت، ثما�
       example: 'mellowed to that tender light / Which heaven to gaudy day denies',
       effect:
         'The contrast between "tender light" and "gaudy day" devalues showy, ostentatious beauty in favour of soft, refined beauty. "Gaudy" is the only harsh word in the poem -- and it is used to dismiss its opposite.',
-      lineRef: 5,
+      lineRef: 4,
       effectAr:
         'التضاد بين "tender light" و"gaudy day" يقلّل من قيمة الجمال الفاضح المتباهي لصالح الجمال الناعم الراقي. كلمة "gaudy" هي الكلمة القاسية الوحيدة في القصيدة - ومستخدمة عشان ترفض عكسها.',
     },

@@ -307,6 +307,12 @@ const followerPoem: PoemData = {
       ],
     },
   ],
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the repetition card named line 23 for an example
+  // that starts with "stumbled", in line 13. The rows above are paraphrases, so that test cannot
+  // compare words here; this was judged by hand against the poem.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Nautical imagery',
@@ -349,7 +355,7 @@ const followerPoem: PoemData = {
       example: 'stumbled ... stumbling',
       effect:
         "The same verb applied to both generations, to the child in line 13 and to the father in line 23, enacts the role reversal structurally. The child's past clumsiness becomes the father's present frailty.",
-      lineRef: 27,
+      lineRef: 15,
       effectAr:
         'نفس الفعل يطبّق على الجيلين، عشان يجسّد قلب الأدوار بنيوياً. خرق الولد في الماضي يصير ضعف الأب في الحاضر.',
     },

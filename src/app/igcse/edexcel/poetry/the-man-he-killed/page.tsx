@@ -346,10 +346,17 @@ Tone: Conversational, confused, regretful, understated. The speaker is not angry
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the understatement card pointed at a stanza break,
+  // which shows no line number, the circular-structure card named line 18, which holds neither
+  // "inn" nor "bar", and the dramatic-monologue card printed a description between the quotation
+  // marks the viewer adds; it is now in square brackets, the mark these pages use for the site's
+  // own words. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Dramatic monologue',
-      example: 'The entire poem in quotation marks - "Had he and I but met..."',
+      example: '[The entire poem in quotation marks - "Had he and I but met..."]',
       effect:
         'Hardy creates a character distinct from himself - an ordinary, uneducated soldier. The quotation marks frame the poem as testimony, as if the speaker is telling his story aloud (perhaps in the very pub he mentions). This makes the anti-war message more credible: it comes from direct experience, not intellectual argument.',
       lineRef: 0,
@@ -388,7 +395,7 @@ Tone: Conversational, confused, regretful, understated. The speaker is not angry
       example: 'Yes; quaint and curious war is!',
       effect:
         'Calling war "quaint and curious" is a radical understatement. The gap between the mild words and the terrible reality creates an irony that is more devastating than outrage. The speaker\'s inability to find adequate words IS the point - the experience has exceeded his language.',
-      lineRef: 19,
+      lineRef: 20,
       effectAr:
         'وصفُ الحرب بـ"quaint and curious" تهوينٌ راديكاليّ. والمسافةُ بين الكلمات اللطيفة والواقع المرعب تُولّد مفارقةً أشدّ وقعاً من أيّ غضب. وعجزُ المتكلّم عن إيجاد الكلمات الكافية هو المقصد - التجربةُ تجاوزت لغتَه.',
     },
@@ -397,7 +404,7 @@ Tone: Conversational, confused, regretful, understated. The speaker is not angry
       example: 'inn (stanza 1) → bar (stanza 5)',
       effect:
         'The poem begins and ends with the image of sharing a drink. The circularity traps the speaker and the reader in the central paradox: war makes enemies of men who should be friends. The return to the bar is not comforting - it is a reminder of what has been destroyed.',
-      lineRef: 21,
+      lineRef: 1,
       effectAr:
         'تبدأ القصيدة وتنتهي بصورة احتساء الشراب معاً. والبنيةُ الدائريّة تحبس المتكلّمَ والقارئ في المفارقة المحوريّة: تجعل الحربُ أعداءً من رجالٍ كان ينبغي أن يكونوا أصدقاء. والعودةُ إلى الحانة ليست مواسيةً - بل تذكيرٌ بما قد دُمِّر.',
     },

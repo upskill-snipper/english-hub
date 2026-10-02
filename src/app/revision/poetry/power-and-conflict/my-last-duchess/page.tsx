@@ -557,6 +557,10 @@ SINGLE STANZA (مقطوعة واحدة)
       themesAr: ['تشييء المرأة', 'السلطة الذكورية', 'السلطة الدورية'],
     },
   ],
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the Neptune card named line 55 for a quotation
+  // that starts on line 54. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Dramatic irony',
@@ -590,7 +594,7 @@ SINGLE STANZA (مقطوعة واحدة)
       example: 'Neptune... Taming a sea-horse',
       effect:
         'The bronze sculpture at the poem\'s end acts as a metaphor for the Duke\'s relationship with women. Like Neptune, he sees himself as a god who tames wild, beautiful creatures. The word "taming" implies violence disguised as control.',
-      lineRef: 54,
+      lineRef: 53,
       effectAr:
         'التمثال البرونزي في نهاية القصيدة يشتغل كاستعارة عن علاقة الـDuke بالنساء. مثل Neptune، يشوف نفسه كإله يروّض المخلوقات البرّية الجميلة. وكلمة "taming" تلمّح بعنف ملبّس بثوب السيطرة.',
     },

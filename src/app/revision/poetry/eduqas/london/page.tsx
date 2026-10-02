@@ -364,6 +364,10 @@ Volta: ما في تحوّل تقليدي. القصيدة تنتقل من الم�
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the repetition card named line 2 for a quotation
+  // that starts on line 1. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Anaphora',
@@ -415,7 +419,7 @@ Volta: ما في تحوّل تقليدي. القصيدة تنتقل من الم�
       example: "charter'd street ... charter'd Thames / marks of weakness, marks of woe",
       effect:
         'Heavy repetition creates a hammering, oppressive rhythm. The reader cannot escape the words just as Londoners cannot escape suffering. "Charter\'d" repeated emphasises that even nature has been controlled.',
-      lineRef: 1,
+      lineRef: 0,
       effectAr:
         'التكرار الكثيف يخلق إيقاع دقّاق وقامع. القارئ ما يقدر يهرب من الكلمات تماماً مثل ما ما يقدر أهل لندن يهربون من المعاناة. وتكرار "charter\'d" يأكّد إن حتى الطبيعة صارت تحت السيطرة.',
     },

@@ -651,6 +651,13 @@ Personification: الطبيعة دايماً مشخصنة. القارب عنده
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the first-person card named line 2 for a quotation
+  // that starts on line 1, and the blank-verse card printed a description between the quotation
+  // marks the viewer adds; it is now in square brackets, the mark these pages use for the site's
+  // own words, and names line 1. a-device-card-cites-the-line-it-quotes.test.tsx now checks every
+  // card.
   languageDevices: [
     {
       device: 'Personification',
@@ -700,10 +707,10 @@ Personification: الطبيعة دايماً مشخصنة. القارب عنده
     },
     {
       device: 'Blank verse',
-      example: 'Continuous unrhymed iambic pentameter throughout',
+      example: '[Continuous unrhymed iambic pentameter throughout]',
       effect:
         'The blank verse gives the personal memory the weight of epic poetry. It feels conversational yet elevated. The lack of rhyme allows the language to flow naturally, mirroring how memory and reflection actually work in the mind.',
-      lineRef: 1,
+      lineRef: 0,
       effectAr:
         'الـblank verse يعطي الذكرى الشخصية ثقل الشعر الملحمي. تحسّ حوارية ورفيعة في نفس الوقت. غياب القافية يخلّي اللغة تنساب طبيعياً، تحاكي كيف تشتغل الذاكرة والتأمّل فعلياً في العقل.',
     },
@@ -712,7 +719,7 @@ Personification: الطبيعة دايماً مشخصنة. القارب عنده
       example: 'I found ... I struck ... my brain',
       effect:
         "The first person makes the experience intimate and confessional. We feel both the boy's immediate terror and the adult's reflective wisdom. This dual voice is essential to The Prelude's autobiographical project.",
-      lineRef: 1,
+      lineRef: 0,
       effectAr:
         'ضمير المتكلّم يخلّي التجربة حميمة واعترافية. نحسّ بذعر الولد المباشر وحكمة الراوي البالغ المتأمّل. هالصوت المزدوج جوهري لمشروع The Prelude السيري.',
     },

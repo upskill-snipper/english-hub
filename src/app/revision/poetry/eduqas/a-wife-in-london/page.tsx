@@ -426,13 +426,18 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين - "the fo
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 five of the seven cards named the line after the
+  // one they quote: their lineRefs were line numbers counted from 1.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Pathetic fallacy',
       example: 'tawny vapour ... fog hangs thicker ... glimmers cold',
       effect:
         'The London fog mirrors the wife\'s emotional state. As her grief deepens between sections, the fog "hangs thicker". Hardy uses weather as a physical embodiment of psychological suffering.',
-      lineRef: 2,
+      lineRef: 1,
       effectAr:
         'ضباب لندن يعكس الحالة الانفعالية للزوجة. لمّا يتعمّق حزنها بين القسمين، الضباب "hangs thicker". Hardy يستخدم الطقس كتجسيد مادي لمعاناة نفسية.',
     },
@@ -441,7 +446,7 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين - "the fo
       example: 'His hand, whom the worm now knows ... Page-full of his hoped return',
       effect:
         'The reader knows what the wife knows: the husband is dead. So when we read his hopeful letter, we feel the irony - his plans are impossible. The structure of two sections creates the irony by separating the moment of knowledge from the moment of his hope.',
-      lineRef: 17,
+      lineRef: 16,
       effectAr:
         'القارئ يعرف اللي تعرفه الزوجة: إن الزوج ميت. ولمّا نقرأ رسالته المفعمة بالأمل، نحسّ بالمفارقة - خططه مستحيلة. بنية القسمين تخلق المفارقة عبر فصل لحظة المعرفة عن لحظة أمله.',
     },
@@ -450,7 +455,7 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين - "the fo
       example: 'He - has fallen - in the far South Land ... Fresh - firm - penned',
       effect:
         "The dashes mimic the wife's halting, breathless speech and reading. They mark moments of shock where she cannot continue. The visual fragmentation on the page enacts the emotional fragmentation of grief.",
-      lineRef: 11,
+      lineRef: 10,
       effectAr:
         'الـdashes تحاكي كلام وقراءة الزوجة المتقطّعة واللاهثة. وتعلّم لحظات صدمة ما تقدر تكمل عندها. والتفكّك البصري على الصفحة يجسّد التفكّك الانفعالي للحزن.',
     },
@@ -468,7 +473,7 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين - "the fo
       example: 'the City lanes have uprolled ... His hand, whom the worm now knows',
       effect:
         'The city is personified as actively producing the fog (it "uprolled" the vapour). Even more chillingly, the worm "knows" the husband\'s hand - decay is given consciousness. London and death become hostile presences.',
-      lineRef: 3,
+      lineRef: 2,
       effectAr:
         'المدينة تتشخّص كأنها هي بنفسها تنتج الضباب (شوارعها "uprolled" البخار). والأكثر رعباً، إن الدودة "تعرف" يد الزوج - التحلّل صار له وعي. لندن والموت يصيرون حضوراً معادياً.',
     },
@@ -477,7 +482,7 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين - "the fo
       example: 'I - The Tragedy / II - The Irony',
       effect:
         "Hardy formally announces the poem's structure with section titles. The two parts create a dramatic before/after. The labels also signal Hardy's argument: the universe arranges events to maximise suffering.",
-      lineRef: 1,
+      lineRef: 0,
       effectAr:
         'Hardy يعلن بنية القصيدة بشكل صريح بعناوين الأقسام. القسمان يخلقان قبل/بعد درامي. والعناوين تعلن حجة Hardy: إن الكون يرتّب الأحداث عشان يكثّر المعاناة قدر الإمكان.',
     },

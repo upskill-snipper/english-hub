@@ -392,13 +392,19 @@ CAESURA: توقّفات استراتيجية (النقطتين بعد أول ك�
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the military-metaphor card named line 17 for an
+  // example that starts with "dives", in line 16. The rows above are paraphrases, so that test
+  // cannot compare words here; this was judged by hand against the poem.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Military metaphor (sustained)',
       example: 'dives ... strafes ... salvo ... bombarded',
       effect:
         'The sustained military language of lines 16 to 18, prepared for by the sea "exploding" in line 13, transforms the storm into a military assault. This links the natural event to the political violence of the Troubles and suggests the community is under siege.',
-      lineRef: 16,
+      lineRef: 15,
       effectAr:
         'اللغة العسكرية المتواصلة في الأبيات 16 لين 18، واللي يمهّد لها البحر "exploding" في البيت 13، تحوّل العاصفة لهجوم عسكري. هذا يربط الحدث الطبيعي بالعنف السياسي في الـTroubles، ويلمّح إن المجتمع تحت حصار.',
     },

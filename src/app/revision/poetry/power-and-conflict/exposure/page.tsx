@@ -802,6 +802,12 @@ ELLIPSIS:
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the pararhyme card named line 4 for an example
+  // that starts on line 1, the rhetorical-question card pointed at a stanza break, which shows no
+  // line number, and the juxtaposition card named line 21 for a quotation of line 31.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Personification of weather',
@@ -817,7 +823,7 @@ ELLIPSIS:
       example: 'knive us / nervous; silence / nonchalance; snow / renew',
       effect:
         "Owen's signature technique. The consonants match but the vowels shift, producing sounds that almost rhyme but never quite resolve. This creates a persistent sense of discomfort and incompleteness that mirrors the soldiers' unresolved suffering and the poem's refusal to offer closure.",
-      lineRef: 3,
+      lineRef: 0,
       effectAr:
         'التقنية اللي تميّز Owen. الأصوات الساكنة تتطابق بس الحركات تتغيّر، فينتج صوت يكاد يصير قافية بس ما يصلها. هالشي يخلق إحساس متواصل بعدم الارتياح وعدم الاكتمال، يعكس معاناة الجنود اللي ما لها حل، ورفض القصيدة إنها تعطي القارئ أي خاتمة.',
     },
@@ -826,7 +832,7 @@ ELLIPSIS:
       example: 'What are we doing here?',
       effect:
         "Breaks the descriptive mode with a direct, unanswerable question. It voices the soldiers' bewilderment and sense of purposelessness. There is no answer because the war itself has no justifiable purpose in Owen's view.",
-      lineRef: 11,
+      lineRef: 10,
       effectAr:
         'يكسر نمط الوصف بسؤال مباشر ما له إجابة. السؤال يعبّر عن حيرة الجنود وإحساسهم إن وجودهم بلا هدف. وما فيه إجابة لأن الحرب نفسها، عند Owen، ما لها أي مبرّر يدافع عنه.',
     },
@@ -862,7 +868,7 @@ ELLIPSIS:
       example: 'kind fires burn / But nothing happens',
       effect:
         'Owen repeatedly contrasts the warmth and safety of home ("kind fires", "crickets jingle", "innocent mice") with the frozen horror of the trenches. This juxtaposition emphasises what the soldiers have lost and highlights the unbridgeable gap between civilian life and the reality of war.',
-      lineRef: 24,
+      lineRef: 36,
       effectAr:
         'Owen يقابل مرّة بعد مرّة بين دفء البيت وأمانه ("kind fires"، "crickets jingle"، "innocent mice") ورعب الخنادق المتجمّد. الـjuxtaposition تأكّد على اللي خسرته الجنود، وتبرز الهوّة اللي ما تنردم بين الحياة المدنية وواقع الحرب.',
     },

@@ -571,6 +571,12 @@ const poemData: PoemData = {
       themesAr: ['الأخلاق', 'الدين', 'الجنون'],
     },
   ],
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the hair card named line 36 for a quotation that
+  // starts on line 35, and the dramatic-monologue card printed a description between the quotation
+  // marks the viewer adds; it is now in square brackets, the mark these pages use for the site's
+  // own words. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Pathetic fallacy',
@@ -583,7 +589,7 @@ const poemData: PoemData = {
     },
     {
       device: 'Dramatic monologue',
-      example: 'entire poem',
+      example: '[entire poem]',
       effect:
         "The single-speaker form forces readers to experience events through the murderer's distorted lens, creating dramatic irony as we see truths the speaker cannot.",
       lineRef: 0,
@@ -622,7 +628,7 @@ const poemData: PoemData = {
       example: 'all her hair / In one long yellow string I wound',
       effect:
         "Porphyria's hair, symbolising her sexuality and freedom throughout, becomes the murder weapon. Her own identity is literally turned against her.",
-      lineRef: 35,
+      lineRef: 34,
       effectAr:
         'شعر Porphyria، اللي كان يرمز لجنسانيتها وحريّتها طول القصيدة، يتحوّل إلى أداة القتل. هويّتها نفسها تنقلب ضدّها حرفياً.',
     },

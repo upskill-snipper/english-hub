@@ -419,7 +419,8 @@ Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: 
     },
     {
       device: 'Symbolism',
-      example: 'the ash tree',
+      // Quoted "the ash tree" until 2 October 2026: Hardy writes "an ash" (line 4).
+      example: 'an ash',
       effect:
         'The ash is symbolic in two ways: "ash" suggests the burnt remains of fire (love that has burned out), and ash trees are traditionally associated with grief. The fallen leaves visually echo the fallen love.',
       lineRef: 3,

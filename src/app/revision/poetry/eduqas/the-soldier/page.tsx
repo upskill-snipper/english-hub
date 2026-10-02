@@ -331,13 +331,20 @@ Volta: في بداية الـsestet ("And think, this heart...")، القصيد�
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 six cards named the line after the one they quote,
+  // their lineRefs being line numbers counted from 1, and the sonnet-form card printed a
+  // description between the quotation marks the viewer adds; it is now in square brackets, the mark
+  // these pages use for the site's own words, and names line 1.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Personification',
       example: 'A dust whom England bore, shaped, made aware ... her flowers to love',
       effect:
         "England is personified as a mother throughout the poem. She gives birth, shapes character, provides flowers and freedom. This makes patriotism feel familial and natural - dying for England becomes like dying for one's mother.",
-      lineRef: 5,
+      lineRef: 4,
       effectAr:
         'إنجلترا مشخصنة كأم طول القصيدة. تلد، تشكّل الشخصية، تعطي زهور وحرية. هذا يخلّي الوطنية تحسّ عائلية وطبيعية - الموت من أجل إنجلترا يصير مثل الموت من أجل أم الإنسان.',
     },
@@ -346,7 +353,7 @@ Volta: في بداية الـsestet ("And think, this heart...")، القصيد�
       example: "England ... English ... England's ... English ... English",
       effect:
         'England and English are repeated 8 times in 14 lines. The repetition functions like an incantation, fixing England as the only meaningful identity. The reader cannot escape the word - just as the speaker cannot escape his national identity.',
-      lineRef: 3,
+      lineRef: 2,
       effectAr:
         '"England" و"English" تتكرّر 8 مرات في 14 بيت. التكرار يشتغل كتعويذة، يثبّت إنجلترا كالهوية الوحيدة ذات المعنى. القارئ ما يقدر يهرب من الكلمة - مثل ما المتكلّم ما يقدر يهرب من هويته القومية.',
     },
@@ -355,16 +362,16 @@ Volta: في بداية الـsestet ("And think, this heart...")، القصيد�
       example: 'blest ... evil shed away ... eternal ... heaven',
       effect:
         'The language is religious and ceremonial. England becomes a sacred place; death becomes purification; the afterlife is "an English heaven". The religious tone elevates patriotism into a kind of faith.',
-      lineRef: 8,
+      lineRef: 7,
       effectAr:
         'اللغة دينية ومراسمية. إنجلترا تصير مكان مقدّس؛ الموت يصير تطهير؛ الحياة الآخرة "an English heaven". النبرة الدينية ترفع الوطنية لنوع من الإيمان.',
     },
     {
       device: 'Sonnet form',
-      example: 'Traditional Petrarchan sonnet with octave/sestet division',
+      example: '[Traditional Petrarchan sonnet with octave/sestet division]',
       effect:
         "The sonnet form is traditionally used for love poetry. Brooke writes a love poem to his country. The form's dignified tradition gives the patriotic content authority and beauty - it sounds inherited, eternal, sacred.",
-      lineRef: 1,
+      lineRef: 0,
       effectAr:
         'شكل الـsonnet يُستخدم تقليدياً لشعر الحب. Brooke يكتب قصيدة حب لبلده. تقليد الشكل المهيب يعطي المحتوى الوطني سلطة وجمال - يحسّ موروث، أبدي، مقدّس.',
     },
@@ -373,7 +380,7 @@ Volta: في بداية الـsestet ("And think, this heart...")، القصيد�
       example: 'for ever England ... eternal mind ... English heaven',
       effect:
         'The poem repeatedly uses hyperbolic language - "for ever", "eternal", "heaven". The exaggeration is not accidental - Brooke\'s patriotism is deliberately monumental. Nothing about this vision is small or modest.',
-      lineRef: 3,
+      lineRef: 2,
       effectAr:
         'القصيدة تستخدم لغة مبالغة بشكل متكرّر - "for ever"، "eternal"، "heaven". المبالغة مو صدفة - وطنية Brooke ضخمة عن قصد. ما فيه شي في هالرؤية صغير ولا متواضع.',
     },
@@ -382,7 +389,7 @@ Volta: في بداية الـsestet ("And think, this heart...")، القصيد�
       example: 'And think, this heart, all evil shed away',
       effect:
         'The traditional sonnet turn moves the poem from body (octave) to soul (sestet). The shift signals a move from physical sacrifice to spiritual immortality. The volta is the structural heart of the patriotic vision.',
-      lineRef: 9,
+      lineRef: 8,
       effectAr:
         'التحوّل التقليدي في الـsonnet ينقل القصيدة من الجسم (octave) للروح (sestet). الانتقال يأشّر للحركة من التضحية المادية للخلود الروحي. الـvolta هو القلب البنيوي للرؤية الوطنية.',
     },
@@ -391,7 +398,7 @@ Volta: في بداية الـsestet ("And think, this heart...")، القصيد�
       example: 'her flowers to love, her ways to roam ... washed by the rivers, blest by suns',
       effect:
         'Brooke uses idyllic pastoral imagery - flowers, rivers, sunshine. England is presented as a beautiful, gentle landscape. The reader is invited to love England as a place worth dying for.',
-      lineRef: 6,
+      lineRef: 5,
       effectAr:
         'Brooke يستخدم صور ريفية مثالية - زهور، أنهار، أشعة شمس. إنجلترا تُقدَّم كمنظر جميل ولطيف. القارئ يُدعى يحبّ إنجلترا كمكان يستحقّ الموت من أجله.',
     },

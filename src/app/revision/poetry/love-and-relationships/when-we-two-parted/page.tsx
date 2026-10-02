@@ -382,6 +382,11 @@ const poemData: PoemData = {
       themesAr: ['الحزن الدائري', 'السرّية', 'فقدان الأمل'],
     },
   ],
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the cyclical-structure card named the last line
+  // for a quotation that starts on line 2. a-device-card-cites-the-line-it-quotes.test.tsx now
+  // checks every card.
   languageDevices: [
     {
       device: 'Monosyllabic diction',
@@ -424,7 +429,7 @@ const poemData: PoemData = {
       example: 'In silence and tears / With silence and tears',
       effect:
         'The near-identical opening and closing lines create a circular poem, suggesting the speaker is trapped in a cycle of grief with no possibility of escape or resolution.',
-      lineRef: 30,
+      lineRef: 1,
       effectAr:
         'افتتاحية وخاتمة شبه متطابقتين تخلقان قصيدة دائريّة، تلمّح إن المتكلّم محاصر في دوّامة حزن بدون إمكانيّة هروب ولا حل.',
     },

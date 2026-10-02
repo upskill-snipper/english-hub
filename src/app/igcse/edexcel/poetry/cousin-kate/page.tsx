@@ -412,6 +412,13 @@ Tone: Bitter, accusatory, proud, tender. The tone shifts throughout - from nosta
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 two cards pointed a row early, one of them at a
+  // stanza break, which shows no line number, and the ballad-form card printed a description
+  // between the quotation marks the viewer adds; it is now in square brackets, the mark these pages
+  // use for the site's own words. a-device-card-cites-the-line-it-quotes.test.tsx now checks every
+  // card.
   languageDevices: [
     {
       device: 'Simile / Objectification',
@@ -427,7 +434,7 @@ Tone: Bitter, accusatory, proud, tender. The tone shifts throughout - from nosta
       example: 'O Lady Kate, my cousin Kate',
       effect:
         "The poem is addressed directly to Kate, creating an intimate confrontation. The speaker is not making a public argument but a private accusation. The direct address forces the reader into Kate's position - we must listen, as Kate must, to the speaker's pain and challenge.",
-      lineRef: 18,
+      lineRef: 19,
       effectAr:
         'القصيدة موجَّهةٌ مباشرةً إلى Kate، فتولّد مواجهةً حميمة. المتكلّمةُ لا تطرح حُجّةً علنيّة بل اتّهاماً خاصّاً. والنداءُ المباشر يُلزم القارئَ بأن يضع نفسه في موضع Kate - علينا أن نُصغي، كما يجب على Kate أن تُصغي، إلى ألم المتكلّمة وتحدّيها.',
     },
@@ -445,7 +452,7 @@ Tone: Bitter, accusatory, proud, tender. The tone shifts throughout - from nosta
       example: 'my shame, my pride',
       effect:
         'The son is simultaneously shame and pride - the evidence of the speaker\'s ruin and the source of her only joy. The paradox refuses simple moral categories. Rossetti challenges Victorian morality by showing that what society calls "shame" can also be the deepest source of love.',
-      lineRef: 31,
+      lineRef: 32,
       effectAr:
         'الابنُ في آنٍ معاً عارٌ وفخر - دليلُ خراب المتكلّمة ومصدرُ فرحها الوحيد. المفارقةُ تأبى التصنيفات الأخلاقيّة البسيطة. تتحدّى Rossetti أخلاق العصر الفيكتوريّ ببرهنتها على أنّ ما يسمّيه المجتمع "عاراً" يمكن أن يكون كذلك أعمقَ مصادر الحبّ.',
     },
@@ -460,7 +467,7 @@ Tone: Bitter, accusatory, proud, tender. The tone shifts throughout - from nosta
     },
     {
       device: 'Ballad form',
-      example: 'ABAB rhyme scheme, alternating tetrameter/trimeter',
+      example: '[ABAB rhyme scheme, alternating tetrameter/trimeter]',
       effect:
         'The ballad form connects the poem to a long tradition of folk songs about seduction, betrayal and abandoned women. The simple, song-like form makes the poem feel oral and traditional - as if this story has been told many times by many women. The regularity of the rhyme creates a controlled, measured tone that contains powerful emotions.',
       lineRef: 0,

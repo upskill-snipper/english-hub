@@ -217,6 +217,11 @@ Volta: التحوّل الدرامي يجي في المقطع الأخير، ل�
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the direct-address card pointed at a stanza break,
+  // which shows no line number. a-device-card-cites-the-line-it-quotes.test.tsx now checks every
+  // card.
   languageDevices: [
     {
       device: 'Simile',
@@ -241,7 +246,7 @@ Volta: التحوّل الدرامي يجي في المقطع الأخير، ل�
       example: 'O Lady Kate, my cousin Kate',
       effect:
         'The speaker turns from grievance to direct confrontation, calling Kate to account. The repetition of "Kate" insists on familial intimacy precisely as the speaker accuses Kate of betrayal.',
-      lineRef: 17,
+      lineRef: 18,
       effectAr:
         'المتكلّمة تنتقل من الشكوى إلى المواجهة المباشرة، وتستدعي كيت للحساب. تكرار اسم "Kate" يُصرّ على الحميمية العائلية تحديداً في اللحظة اللي تتّهم فيها المتكلّمة كيت بالخيانة.',
     },

@@ -345,6 +345,13 @@ Volta: التحوّل التقليدي يجي في البيت 9 - "I love thee w
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 five cards named the line after the one they
+  // quote, their lineRefs being line numbers counted from 1, and the sonnet-form card printed a
+  // description between the quotation marks the viewer adds; it is now in square brackets, the mark
+  // these pages use for the site's own words, and names line 1.
+  // a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Anaphora',
@@ -360,7 +367,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 - "I love thee w
       example: 'depth and breadth and height',
       effect:
         "Three spatial dimensions create a sense of total coverage. The tricolon makes love feel measurable, even as it claims to exceed measurement. The list captures the speaker's attempt to articulate the inexpressible.",
-      lineRef: 2,
+      lineRef: 1,
       effectAr:
         'ثلاثة أبعاد مكانية تخلق إحساس بتغطية كاملة. الـtricolon يخلّي الحب يحسّ كأنه قابل للقياس، حتى وهو يدّعي إنه يتجاوز القياس. القائمة تلتقط محاولة المتكلّمة إنها تعبّر عن اللي ما يتعبّر عنه.',
     },
@@ -369,16 +376,16 @@ Volta: التحوّل التقليدي يجي في البيت 9 - "I love thee w
       example: 'soul ... ideal grace ... my lost saints ... if God choose',
       effect:
         "The poem is saturated with religious language. Love becomes a spiritual experience, equivalent to faith. The speaker's past religious doubt is transformed into a new kind of devotion - to her beloved.",
-      lineRef: 3,
+      lineRef: 2,
       effectAr:
         'القصيدة مشبّعة بلغة دينية. الحب يصير تجربة روحية، تعادل الإيمان. الشك الديني السابق عند المتكلّمة يتحوّل لنوع جديد من التفاني - لمحبوبها.',
     },
     {
       device: 'Sonnet form',
-      example: 'Traditional Petrarchan sonnet',
+      example: '[Traditional Petrarchan sonnet]',
       effect:
         'The 14-line Petrarchan form gives the poem dignity and places it in centuries of love poetry tradition. The strict form contains and shapes the overflowing emotion. The contrast between formal control and passionate content creates power.',
-      lineRef: 1,
+      lineRef: 0,
       effectAr:
         'شكل Petrarchan من 14 بيت يعطي القصيدة هيبة، ويحطّها داخل قرون من تقليد شعر الحب. الشكل الصارم يحتوي ويصوغ العاطفة الفائضة. التضاد بين السيطرة الشكلية والمحتوى الشغوف يخلق قوة.',
     },
@@ -387,7 +394,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 - "I love thee w
       example: 'I love thee with the passion put to use / In my old griefs',
       effect:
         'The traditional turn at line 9 shifts the poem from public, abstract dimensions of love to personal, confessional ones. The speaker reveals her past suffering and lost faith. The volta makes the poem feel deeply personal.',
-      lineRef: 9,
+      lineRef: 8,
       effectAr:
         'التحوّل التقليدي في البيت 9 ينقل القصيدة من أبعاد الحب العامة المجرّدة لأبعاد شخصية اعترافية. المتكلّمة تكشف عن آلامها السابقة وإيمانها المفقود. الـvolta يخلّي القصيدة تحسّ عميقة الشخصانية.',
     },
@@ -396,7 +403,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 - "I love thee w
       example: 'as men strive for Right ... as they turn from Praise',
       effect:
         'The similes compare love to noble moral pursuits - political struggle and humility. Love is not separate from ethics but a form of ethical commitment. The comparisons elevate love to the status of moral virtue.',
-      lineRef: 7,
+      lineRef: 6,
       effectAr:
         'الـsimiles تشبّه الحب بمساعي أخلاقية نبيلة - الكفاح السياسي والتواضع. الحب مو منفصل عن الأخلاق، بل نوع من الالتزام الأخلاقي. المقارنات ترفع الحب لمستوى الفضيلة الأخلاقية.',
     },
@@ -405,7 +412,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 - "I love thee w
       example: 'I LOVE thee FREEly, AS men STRIVE for RIGHT',
       effect:
         'The regular metre creates a steady, prayer-like rhythm. The iambic pulse mirrors a heartbeat, making the poem feel both controlled and deeply alive. The rhythm carries the reader smoothly through emotional intensity.',
-      lineRef: 7,
+      lineRef: 6,
       effectAr:
         'الوزن المنتظم يخلق إيقاع ثابت يشبه الدعاء. نبض الـiambic يحاكي ضربات القلب، يخلّي القصيدة تحسّ مسيطر عليها وحيّة في نفس الوقت. الإيقاع ينقل القارئ بانسيابية عبر الشدّة العاطفية.',
     },

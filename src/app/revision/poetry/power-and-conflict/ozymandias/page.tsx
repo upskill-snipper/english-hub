@@ -380,6 +380,12 @@ Caesura: أهم caesura هو النقطة في نص البيت 12 "Nothing besid
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the juxtaposition card named line 12 for a
+  // quotation that starts on line 10, and two cards printed descriptions between the quotation
+  // marks the viewer adds; they are now in square brackets, the mark these pages use for the site's
+  // own words. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Dramatic irony',
@@ -401,7 +407,7 @@ Caesura: أهم caesura هو النقطة في نص البيت 12 "Nothing besid
     },
     {
       device: 'Symbolism',
-      example: 'the desert and the ruined statue',
+      example: '[the desert and the ruined statue]',
       effect:
         "The desert symbolises the erasure of human achievement by time and nature. The broken statue symbolises the inevitable fall of all tyrannical power. Together, they create a visual metaphor: no matter how grand a ruler's ambitions, nature will reclaim everything.",
       lineRef: 2,
@@ -413,7 +419,7 @@ Caesura: أهم caesura هو النقطة في نص البيت 12 "Nothing besid
       example: '"king of kings" vs "Nothing beside remains"',
       effect:
         "The poem places Ozymandias's grandiose self-description directly beside the reality of his total obscurity. This contrast is the poem's central mechanism: the bigger the boast, the more devastating the reality. The juxtaposition forces the reader to see the absurdity of claiming eternal greatness.",
-      lineRef: 11,
+      lineRef: 9,
       effectAr:
         'القصيدة تحط وصف Ozymandias المتعالي لنفسه يم حقيقة إنه انّمحى تماماً. هذا التضاد هو الآلية الأساسية في القصيدة: كل ما زاد التفاخر، صارت الحقيقة أكثر تدميراً. والـjuxtaposition تجبر القارئ إنه يشوف عبثية الادّعاء بالعظمة الأبدية.',
     },
@@ -446,7 +452,7 @@ Caesura: أهم caesura هو النقطة في نص البيت 12 "Nothing besid
     },
     {
       device: 'Irony (situational)',
-      example: "The sculptor's work survives, the king's does not",
+      example: "[The sculptor's work survives, the king's does not]",
       effect:
         "Ozymandias commissioned the statue to immortalise his power, but it is the sculptor's skill - the accurate depiction of cruelty - that actually endures. Art outlasts political power. The irony is that the king is remembered not for his achievements but for his arrogance and the sculptor's talent.",
       lineRef: 5,

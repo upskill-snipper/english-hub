@@ -334,13 +334,19 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 all seven were line numbers counted from 1, so
+  // each card named and lit the line after the one it quotes, and the last pointed past the poem
+  // and showed no number at all. a-device-card-cites-the-line-it-quotes.test.tsx now checks every
+  // card.
   languageDevices: [
     {
       device: 'Frame narrative',
       example: 'I met a traveller from an antique land, / Who said…',
       effect:
         "Shelley pushes the king several voices away from us. The poem is the speaker quoting a traveller quoting a statue's inscription. Each frame increases the distance, making Ozymandias feel small and remote - a ruler who needs three layers of reporting before he can be heard.",
-      lineRef: 1,
+      lineRef: 0,
       effectAr:
         'يُبعد Shelley الملكَ عنّا بأصواتٍ عدّة. القصيدةُ متكلّمٌ يقتبس عن رحّالةٍ يقتبس عن نقشٍ على تمثال. كلُّ طبقةٍ تزيد المسافة، وتجعل Ozymandias يبدو صغيراً قَصيّاً - حاكمٌ يحتاج إلى ثلاث طبقاتٍ من النقل قبل أن يُسمَع صوته.',
     },
@@ -349,7 +355,7 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       example: 'Stand in the desert. Near them, on the sand,',
       effect:
         'The full stop in the middle of line 3 breaks the line into separate fragments - like the statue itself. Throughout the poem, Shelley uses mid-line pauses to mimic the rubble: each phrase isolated, as if scattered across the desert.',
-      lineRef: 3,
+      lineRef: 2,
       effectAr:
         'النقطةُ في وسط السطر الثالث تُكسّر السطر إلى شظايا منفصلة - كالتمثال نفسه. وعلى امتداد القصيدة يستعمل Shelley وقفاتٍ في وسط السطر تحاكي الأنقاض: كلّ عبارةٍ معزولة، كأنّها مبعثرة في الصحراء.',
     },
@@ -358,7 +364,7 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       example: 'frown, / And wrinkled lip, and sneer of cold command',
       effect:
         'A three-part list of facial features, each one hostile. The cumulative effect is a face composed entirely of contempt. Shelley denies us a single human expression on the king - only the residue of his anger.',
-      lineRef: 5,
+      lineRef: 3,
       effectAr:
         'قائمةٌ ثلاثيّة من ملامح الوجه، كلّها عدوانيّ. أثرُها التراكميّ وجهٌ مصنوعٌ بالكامل من الازدراء. يحرمنا Shelley من تعبيرٍ إنسانيٍّ واحدٍ على الملك - لا يبقى إلّا أثرُ غضبه.',
     },
@@ -367,7 +373,7 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       example: 'The hand that mocked them and the heart that fed',
       effect:
         '"Mocked" means both "imitated" and "ridiculed". The sculptor\'s hand reproduced the king\'s passions, but in doing so it also exposed them. Shelley quietly hands the victory to the artist: the sculptor outlives the tyrant.',
-      lineRef: 8,
+      lineRef: 7,
       effectAr:
         'لفظة "mocked" تعني "حاكى" و"سخر" معاً. يدُ النحّات نسخت شَهَوات الملك، وبفعل النسخ كشفتها. يُسلّم Shelley النصرَ هادئاً للفنّان: النحّات يبقى بعد الطاغية.',
     },
@@ -376,7 +382,7 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       example: 'Look on my Works, ye Mighty, and despair!',
       effect:
         "Ozymandias's boast comes true in the opposite way to what he meant. He intended other kings to despair at his power; instead, every reader despairs at the inevitability of all empires falling. The line works against itself.",
-      lineRef: 11,
+      lineRef: 10,
       effectAr:
         'تتحقّق مفاخرةُ Ozymandias على النقيض ممّا قصد. أرادها أن تجعل الملوكَ الآخرين ييأسون من سلطته؛ فإذا بكلّ قارئٍ ييأس من حتميّة سقوط كلّ الإمبراطوريّات. السطر يعمل ضدّ نفسه.',
     },
@@ -385,7 +391,7 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       example: 'Nothing beside remains.',
       effect:
         "The classic sonnet turn arrives at line 12 in three flat words. After the king's thunder, this short sentence is almost silent. The contrast in pace and volume is what makes the irony land - Ozymandias shouts; time replies in a whisper.",
-      lineRef: 12,
+      lineRef: 11,
       effectAr:
         'انعطافةُ السونيتة الكلاسيكيّة تأتي في السطر الثاني عشر بثلاث كلماتٍ مسطّحة. بعد رعد الملك، تكاد هذه الجملةُ القصيرة تكون صامتة. والتقابل في الإيقاع والحجم هو ما يُمكّن المفارقة من الوصول - يصرخ Ozymandias؛ يُجيب الزمن بهمس.',
     },
@@ -394,7 +400,7 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       example: 'The lone and level sands stretch far away',
       effect:
         'The repeated "l" sounds and long vowels stretch the line out across the page. The metre is loose and slow, mimicking the endless flatness of desert. Shelley ends not with a moral but with an image of indifferent space.',
-      lineRef: 14,
+      lineRef: 13,
       effectAr:
         'صوتُ الـ"l" المكرّر والصوائتُ الممدودة تُمدّ السطرَ عبر الصفحة. الوزنُ رخوٌ بطيء يحاكي بسطَ الصحراء الذي لا ينتهي. يختم Shelley لا بموعظةٍ بل بصورةٍ لمكانٍ لا يكترث.',
     },

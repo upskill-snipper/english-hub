@@ -288,6 +288,12 @@ Volta (نقطة التحوّل): التحوّل يصير في آخر بيتين:
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the plain-diction card printed a description
+  // between the quotation marks the viewer adds; it is now in square brackets, the mark these pages
+  // use for the site's own words. a-device-card-cites-the-line-it-quotes.test.tsx now checks every
+  // card.
   languageDevices: [
     {
       device: 'Metaphor',
@@ -345,7 +351,7 @@ Volta (نقطة التحوّل): التحوّل يصير في آخر بيتين:
     },
     {
       device: 'Plain diction',
-      example: 'the entire poem',
+      example: '[the entire poem]',
       effect:
         'Wordsworth uses simple, ordinary language throughout -- no Latinate vocabulary, no learned references. This plainness reflects Lucy\'s humble life and Wordsworth\'s belief that poetry should be written in "the real language of men".',
       lineRef: 0,

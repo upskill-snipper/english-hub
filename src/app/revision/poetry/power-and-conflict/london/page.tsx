@@ -377,6 +377,11 @@ const londonPoem: PoemData = {
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 five of the eight cards named a line after the one
+  // they quote, a stanza break, which shows no line number, or a row past the poem, which shows
+  // nothing. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Anaphora',
@@ -393,7 +398,7 @@ const londonPoem: PoemData = {
       example: 'Marriage hearse',
       effect:
         "Fusing two contradictory concepts \u2014 marriage (celebration of life) and hearse (vehicle of death) \u2014 creates a shocking final image. It encapsulates Blake's argument that corruption has poisoned every aspect of human life, even love itself.",
-      lineRef: 19,
+      lineRef: 18,
       effectAr:
         '\u062f\u0645\u062c \u0645\u0641\u0647\u0648\u0645\u064a\u0646 \u0645\u062a\u0646\u0627\u0642\u0636\u064a\u0646 \u2014 \u0627\u0644\u0632\u0648\u0627\u062c (\u0627\u062d\u062a\u0641\u0627\u0644 \u0628\u0627\u0644\u062d\u064a\u0627\u0629) \u0648\u0627\u0644\u0640hearse (\u0639\u0631\u0628\u0629 \u0627\u0644\u0645\u0648\u062a\u0649) \u2014 \u064a\u062e\u0644\u0642 \u0635\u0648\u0631\u0629 \u062e\u062a\u0627\u0645\u064a\u0629 \u0635\u0627\u062f\u0645\u0629. \u0648\u062a\u0644\u062e\u0651\u0635 \u062d\u062c\u0629 Blake \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629: \u0627\u0644\u0641\u0633\u0627\u062f \u0633\u0645\u0651\u0645 \u0643\u0644 \u062c\u0627\u0646\u0628 \u0645\u0646 \u062c\u0648\u0627\u0646\u0628 \u0627\u0644\u062d\u064a\u0627\u0629 \u0627\u0644\u0628\u0634\u0631\u064a\u0629\u060c \u062d\u062a\u0649 \u0627\u0644\u062d\u0628 \u0646\u0641\u0633\u0647.',
     },
@@ -411,7 +416,7 @@ const londonPoem: PoemData = {
       example: 'Runs in blood down Palace walls',
       effect:
         "This vivid, violent image transforms an abstract concept (the cost of war) into something viscerally concrete. The reader can see the blood, making the monarch's responsibility undeniable.",
-      lineRef: 15,
+      lineRef: 13,
       effectAr:
         '\u0647\u0627\u0644\u0635\u0648\u0631\u0629 \u0627\u0644\u0639\u0646\u064a\u0641\u0629 \u0648\u0627\u0644\u062d\u064a\u0651\u0629 \u062a\u062d\u0648\u0651\u0644 \u0645\u0641\u0647\u0648\u0645 \u0645\u062c\u0631\u0651\u062f (\u0643\u0644\u0641\u0629 \u0627\u0644\u062d\u0631\u0628) \u0644\u0634\u064a \u0645\u0644\u0645\u0648\u0633 \u0648\u0645\u0631\u0626\u064a. \u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u0642\u062f\u0631 \u064a\u0634\u0648\u0641 \u0627\u0644\u062f\u0645 \u0628\u0639\u064a\u0646\u0647\u060c \u0648\u0647\u0630\u0627 \u064a\u062e\u0644\u0651\u064a \u0645\u0633\u0624\u0648\u0644\u064a\u0629 \u0627\u0644\u0645\u0644\u0643 \u0645\u0627 \u062a\u0646\u0643\u0631.',
     },
@@ -420,7 +425,7 @@ const londonPoem: PoemData = {
       example: 'hapless Soldier\u2019s sigh',
       effect:
         '"Hapless" evokes pity, while "sigh" suggests resignation and powerlessness. Together they portray the soldier as a victim, not a hero \u2014 challenging patriotic narratives of military glory.',
-      lineRef: 14,
+      lineRef: 12,
       effectAr:
         '\u0643\u0644\u0645\u0629 "hapless" \u062a\u0633\u062a\u062d\u0636\u0631 \u0627\u0644\u0634\u0641\u0642\u0629\u060c \u0623\u0645\u0627 "sigh" \u0641\u062a\u0648\u062d\u064a \u0628\u0627\u0644\u0627\u0633\u062a\u0633\u0644\u0627\u0645 \u0648\u0627\u0644\u0639\u062c\u0632. \u0627\u0644\u0643\u0644\u0645\u062a\u064a\u0646 \u0645\u0639 \u0628\u0639\u0636 \u064a\u0635\u0648\u0651\u0631\u0648\u0646 \u0627\u0644\u062c\u0646\u062f\u064a \u0643\u0636\u062d\u064a\u0629\u060c \u0645\u0648 \u0643\u0628\u0637\u0644 \u2014 \u0648\u0647\u0630\u0627 \u062a\u062d\u062f\u0651\u064a \u0644\u0644\u0633\u0631\u062f\u064a\u0627\u062a \u0627\u0644\u0648\u0637\u0646\u064a\u0629 \u0627\u0644\u0644\u064a \u062a\u0645\u062c\u0651\u062f \u0627\u0644\u0645\u062c\u062f \u0627\u0644\u0639\u0633\u0643\u0631\u064a.',
     },
@@ -429,7 +434,7 @@ const londonPoem: PoemData = {
       example: 'every black\u2019ning Church',
       effect:
         'The Church symbolises institutional religion and its moral authority. "Black\'ning" symbolises both industrial pollution and moral decay. Blake attacks the Church as a hypocritical institution that ignores suffering.',
-      lineRef: 13,
+      lineRef: 11,
       effectAr:
         '\u0627\u0644\u0643\u0646\u064a\u0633\u0629 \u062a\u0631\u0645\u0632 \u0644\u0644\u062f\u064a\u0646 \u0627\u0644\u0645\u0624\u0633\u0651\u0633\u064a \u0648\u0633\u0644\u0637\u062a\u0647 \u0627\u0644\u0623\u062e\u0644\u0627\u0642\u064a\u0629. \u0648\u0643\u0644\u0645\u0629 "black\'ning" \u062a\u0631\u0645\u0632 \u0644\u0644\u062a\u0644\u0648\u0651\u062b \u0627\u0644\u0635\u0646\u0627\u0639\u064a \u0648\u0644\u0644\u062a\u0639\u0641\u0651\u0646 \u0627\u0644\u0623\u062e\u0644\u0627\u0642\u064a \u0645\u0639 \u0628\u0639\u0636. Blake \u064a\u0647\u0627\u062c\u0645 \u0627\u0644\u0643\u0646\u064a\u0633\u0629 \u0643\u0645\u0624\u0633\u0633\u0629 \u0645\u0646\u0627\u0641\u0642\u0629 \u062a\u062a\u062c\u0627\u0647\u0644 \u0627\u0644\u0645\u0639\u0627\u0646\u0627\u0629 \u0627\u0644\u0644\u064a \u062d\u0648\u0627\u0644\u064a\u0647\u0627.',
     },
@@ -447,7 +452,7 @@ const londonPoem: PoemData = {
       example: 'Blasts the new-born Infant\u2019s tear / And blights with plagues',
       effect:
         'The harsh plosive "b" sounds in "Blasts", "blights", and "plagues" create an aggressive, violent aural quality. The sounds themselves feel destructive, mirroring the content.',
-      lineRef: 18,
+      lineRef: 17,
       effectAr:
         '\u0623\u0635\u0648\u0627\u062a \u0627\u0644\u0640plosive \u0627\u0644\u0642\u0627\u0633\u064a\u0629 \u0641\u064a \u062d\u0631\u0641 "b" \u0641\u064a \u0643\u0644\u0645\u0627\u062a "Blasts" \u0648"blights" \u0648"plagues" \u062a\u062e\u0644\u0642 \u0637\u0627\u0628\u0639 \u0635\u0648\u062a\u064a \u0639\u062f\u0648\u0627\u0646\u064a \u0648\u0639\u0646\u064a\u0641. \u0627\u0644\u0623\u0635\u0648\u0627\u062a \u0628\u0646\u0641\u0633\u0647\u0627 \u062a\u062d\u0633\u0651 \u0645\u062f\u0645\u0651\u0631\u0629\u060c \u0648\u062a\u0639\u0643\u0633 \u0627\u0644\u0645\u0639\u0646\u0649.',
     },

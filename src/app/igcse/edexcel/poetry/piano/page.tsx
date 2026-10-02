@@ -295,6 +295,11 @@ Volta: The soft volta comes at the start of stanza 3 ("So now it is vain…"). T
   // the viewer highlights poem.lines[lineRef]. Four of these pointed at blank
   // rows or the wrong line until 26 September 2026 (personification 4, now 5;
   // juxtaposition 9, now 11; flood and circular structure 11, now 13).
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 the juxtaposition and circular-structure cards
+  // named the later of the lines they quote, 10 and 12, not the lines their quotations start on, 8
+  // and 3. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Metaphor (memory as vista)',
@@ -322,7 +327,7 @@ Volta: The soft volta comes at the start of stanza 3 ("So now it is vain…"). T
       example: 'tinkling piano (memory) vs. great black piano appassionato (present)',
       effect:
         'The two pianos are set directly against each other. "Tinkling" is light, homely, domestic; "great black piano" is serious, theatrical, grand. The contrast makes the point that the present cannot compete with the past. The adjectives do all the work.',
-      lineRef: 11,
+      lineRef: 8,
     },
     {
       device: 'Metaphor (flood)',
@@ -338,7 +343,7 @@ Volta: The soft volta comes at the start of stanza 3 ("So now it is vain…"). T
       example: 'A child sitting under the piano… I weep like a child for the past',
       effect:
         "The poem begins with an image of the child and ends with the adult speaker returning to the same state. The circularity is the poem's quiet argument: time does not move in a line. Memory and music can put you back exactly where you started.",
-      lineRef: 13,
+      lineRef: 2,
     },
   ],
 }

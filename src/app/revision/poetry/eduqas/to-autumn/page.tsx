@@ -530,6 +530,11 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 - "Wh
     },
   ],
 
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 four cards named the line after the one they quote
+  // and the cataloguing card the line before. a-device-card-cites-the-line-it-quotes.test.tsx now
+  // checks every card.
   languageDevices: [
     {
       device: 'Personification',
@@ -537,7 +542,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 - "Wh
         'Close bosom-friend of the maturing sun ... Thee sitting careless on a granary floor',
       effect:
         'Autumn is personified throughout, addressed as "thou" and described as a worker resting in the fields. This makes the season intimate and tangible, transforming an abstract idea into a companion. It is the central technique of the poem.',
-      lineRef: 2,
+      lineRef: 1,
       effectAr:
         'الخريف مشخصن طول القصيدة، يخاطَب كـ"thou" ويوصف كعامل يستريح في الحقول. هذا يخلّي الموسم حميم وملموس، يحوّل فكرة مجرّدة لرفيق. هذي هي التقنية المركزية في القصيدة.',
     },
@@ -546,7 +551,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 - "Wh
       example: "mists and mellow fruitfulness / Drows'd with the fume of poppies",
       effect:
         'Each stanza emphasises a different sense. Stanza 1 is visual and tactile (ripe fruit). Stanza 2 is languid and dreamy (drowsiness, slow movement). Stanza 3 is auditory (songs and music). The poem becomes a total sensory experience of autumn.',
-      lineRef: 1,
+      lineRef: 0,
       effectAr:
         'كل مقطع يأكّد على حاسة مختلفة. المقطع 1 بصري ولمسي (فاكهة ناضجة). المقطع 2 خامل وحالم (نعاس، حركة بطيئة). المقطع 3 سمعي (أغاني وموسيقى). القصيدة تصير تجربة حسّية كاملة للخريف.',
     },
@@ -555,7 +560,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 - "Wh
       example: 'Season of mists ... Conspiring with him ... soft-dying day',
       effect:
         'The "s" sounds create a soft, hushed quality throughout. The poem feels whispered rather than spoken. This sibilance evokes the gentle stillness of autumn afternoons - the calm of the season.',
-      lineRef: 1,
+      lineRef: 0,
       effectAr:
         'أصوات حرف "s" تخلق جودة ناعمة وهادئة طول القصيدة. القصيدة تحسّ كأنها همس، مو كلام. هالـsibilance يستحضر السكون اللطيف لعصاري الخريف - هدوء الموسم.',
     },
@@ -583,7 +588,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 - "Wh
         'gnats mourn ... lambs loud bleat ... crickets sing ... red-breast whistles ... swallows twitter',
       effect:
         'The third stanza catalogues the music of autumn. Each creature has its own song, building up to a full chorus. The catalogue suggests that autumn is rich with sound, not silent.',
-      lineRef: 25,
+      lineRef: 26,
       effectAr:
         'المقطع الثالث يعدّ موسيقى الخريف. كل مخلوق عنده أغنيته، يبنون كورس كامل. القائمة توحي إن الخريف غني بالصوت، مو صامت.',
     },
@@ -592,7 +597,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 - "Wh
       example: 'mellow ... swell ... plump ... ripeness ... laden',
       effect:
         "Keats's word choices throughout emphasise fullness, weight, and ripeness. The language itself feels heavy with abundance, mirroring the season's overflow.",
-      lineRef: 1,
+      lineRef: 0,
       effectAr:
         'اختيارات Keats للكلمات طول القصيدة تأكّد على الامتلاء والثقل والنضج. اللغة نفسها تحسّ ثقيلة بالوفرة، تحاكي فيضان الموسم.',
     },

@@ -255,6 +255,12 @@ const farmersBridePoem: PoemData = {
       ],
     },
   ],
+  // Each card's lineRef is the row of `lines` where its example begins, stanza breaks counted: the
+  // viewer lights that row and labels the card with its line number (poemLineNumbers in
+  // InteractivePoemViewer). Until 2 October 2026 two cards pointed past these rows, which summarise
+  // the poem section by section, and two at the gaps between sections, which show no number; each
+  // now names the section it describes, as do the dialect and self-correction cards, which named
+  // the wrong one. a-device-card-cites-the-line-it-quotes.test.tsx now checks every card.
   languageDevices: [
     {
       device: 'Dramatic monologue',
@@ -270,7 +276,7 @@ const farmersBridePoem: PoemData = {
       example: 'The bride likened to a mouse and to a frightened fairy-creature (paraphrase)',
       effect:
         'Repeated animal and fairy comparisons dehumanise the bride, reducing her to a creature to be caught and kept rather than a person with agency.',
-      lineRef: 18,
+      lineRef: 9,
       effectAr:
         '\u0627\u0644\u062a\u0634\u0628\u064a\u0647\u0627\u062a \u0627\u0644\u0645\u062a\u0643\u0631\u0651\u0631\u0629 \u0628\u0627\u0644\u062d\u064a\u0648\u0627\u0646\u0627\u062a \u0648\u0627\u0644\u0643\u0627\u0626\u0646\u0627\u062a \u0627\u0644\u062e\u0631\u0627\u0641\u064a\u0629 \u062a\u062c\u0631\u0651\u062f \u0627\u0644\u0639\u0631\u0648\u0633 \u0645\u0646 \u0625\u0646\u0633\u0627\u0646\u064a\u062a\u0647\u0627\u060c \u0648\u062a\u062e\u062a\u0632\u0644\u0647\u0627 \u0625\u0644\u0649 \u0645\u062e\u0644\u0648\u0642 \u064a\u062a\u0645\u0651 \u0627\u0635\u0637\u064a\u0627\u062f\u0647 \u0648\u0627\u0644\u0627\u062d\u062a\u0641\u0627\u0638 \u0628\u0647 \u0628\u062f\u0644 \u0645\u0627 \u062a\u0643\u0648\u0646 \u0634\u062e\u0635 \u0644\u0647 \u0641\u0627\u0639\u0644\u064a\u0629.',
     },
@@ -280,7 +286,7 @@ const farmersBridePoem: PoemData = {
         'Non-standard rural grammar in the farmer’s narration of the wedding and her flight (paraphrase)',
       effect:
         "Non-standard grammar establishes the farmer's rural working-class voice and creates authenticity, but also suggests limited self-awareness.",
-      lineRef: 3,
+      lineRef: 2,
       effectAr:
         '\u0627\u0644\u0642\u0648\u0627\u0639\u062f \u063a\u064a\u0631 \u0627\u0644\u0645\u0639\u064a\u0627\u0631\u064a\u0629 \u062a\u062b\u0628\u0651\u062a \u0635\u0648\u062a \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u0627\u0644\u0631\u064a\u0641\u064a \u0645\u0646 \u0627\u0644\u0637\u0628\u0642\u0629 \u0627\u0644\u0639\u0627\u0645\u0644\u0629\u060c \u0648\u062a\u0639\u0637\u064a \u0625\u062d\u0633\u0627\u0633 \u0628\u0627\u0644\u0623\u0635\u0627\u0644\u0629\u060c \u0628\u0633 \u0643\u0645\u0627\u0646 \u062a\u0644\u0645\u0651\u062d \u0625\u0646 \u0648\u0639\u064a\u0647 \u0627\u0644\u0630\u0627\u062a\u064a \u0645\u062d\u062f\u0648\u062f.',
     },
@@ -289,7 +295,7 @@ const farmersBridePoem: PoemData = {
       example: 'The farmer’s verbs of choosing, catching and bringing her home (paraphrase)',
       effect:
         'Verbs of ownership and control reveal the patriarchal power structures underlying the marriage. She is acted upon, never acting.',
-      lineRef: 11,
+      lineRef: 0,
       effectAr:
         '\u0623\u0641\u0639\u0627\u0644 \u0627\u0644\u062a\u0645\u0644\u0651\u0643 \u0648\u0627\u0644\u0633\u064a\u0637\u0631\u0629 \u062a\u0643\u0634\u0641 \u0628\u0646\u0649 \u0627\u0644\u0633\u0644\u0637\u0629 \u0627\u0644\u0623\u0628\u0648\u064a\u0629 \u0627\u0644\u0644\u064a \u064a\u0642\u0648\u0645 \u0639\u0644\u064a\u0647\u0627 \u0627\u0644\u0632\u0648\u0627\u062c. \u0647\u064a \u0634\u064a \u064a\u0642\u0639 \u0639\u0644\u064a\u0647\u0627 \u0627\u0644\u0641\u0639\u0644\u060c \u0645\u0648 \u0630\u0627\u062a \u062a\u0641\u0639\u0644.',
     },
@@ -298,7 +304,7 @@ const farmersBridePoem: PoemData = {
       example: 'The farmer’s repeated, exclamatory fixation on her hair at the climax (paraphrase)',
       effect:
         "The obsessive repetition at the poem's climax reveals the farmer's desire overwhelming his restraint, creating an ominous, unsettling ending.",
-      lineRef: 22,
+      lineRef: 12,
       effectAr:
         '\u0627\u0644\u062a\u0643\u0631\u0627\u0631 \u0627\u0644\u0647\u0648\u0633\u064a \u0639\u0646\u062f \u0630\u0631\u0648\u0629 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u064a\u0643\u0634\u0641 \u0631\u063a\u0628\u0629 \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u0648\u0647\u064a \u062a\u0637\u063a\u0649 \u0639\u0644\u0649 \u0636\u0628\u0637 \u0646\u0641\u0633\u0647\u060c \u0648\u064a\u062e\u0644\u0642 \u062e\u0627\u062a\u0645\u0629 \u0645\u0634\u0624\u0648\u0645\u0629 \u0648\u0645\u0642\u0644\u0642\u0629.',
     },
@@ -307,7 +313,7 @@ const farmersBridePoem: PoemData = {
       example: 'Her vanished warmth compared to the close of a winter day (paraphrase)',
       effect:
         'Captures the sudden, cold withdrawal of the bride\'s warmth. "Shut" is abrupt and final, while winter connotes death and emotional barrenness.',
-      lineRef: 5,
+      lineRef: 3,
       effectAr:
         '\u064a\u0644\u062a\u0642\u0637 \u0627\u0644\u0627\u0646\u0633\u062d\u0627\u0628 \u0627\u0644\u0645\u0641\u0627\u062c\u0626 \u0648\u0627\u0644\u0628\u0627\u0631\u062f \u0644\u062f\u0641\u0621 \u0627\u0644\u0639\u0631\u0648\u0633. \u0643\u0644\u0645\u0629 "shut" \u0645\u0641\u0627\u062c\u0626\u0629 \u0648\u0646\u0647\u0627\u0626\u064a\u0629\u060c \u0648\u0627\u0644\u0634\u062a\u0627\u0621 \u064a\u0648\u062d\u064a \u0628\u0627\u0644\u0645\u0648\u062a \u0648\u0627\u0644\u0639\u0642\u0645 \u0627\u0644\u0639\u0627\u0637\u0641\u064a.',
     },
@@ -316,7 +322,7 @@ const farmersBridePoem: PoemData = {
       example: 'The farmer revising his account of who recaptured her (paraphrase)',
       effect:
         "The farmer's self-correction reveals guilt and awareness that the recapture was violent, even as he tries to distance himself from it.",
-      lineRef: 12,
+      lineRef: 6,
       effectAr:
         '\u062a\u0635\u062d\u064a\u062d \u0627\u0644\u0645\u0632\u0627\u0631\u0639 \u0644\u0646\u0641\u0633\u0647 \u064a\u0643\u0634\u0641 \u0630\u0646\u0628\u0627\u064b \u0648\u0648\u0639\u064a\u0627\u064b \u0625\u0646 \u0625\u0639\u0627\u062f\u0629 \u0627\u0644\u0642\u0628\u0636 \u0639\u0644\u064a\u0647\u0627 \u0643\u0627\u0646\u062a \u0639\u0646\u064a\u0641\u0629\u060c \u062d\u062a\u0649 \u0648\u0647\u0648 \u064a\u062d\u0627\u0648\u0644 \u064a\u0628\u0639\u062f \u0646\u0641\u0633\u0647 \u0639\u0646 \u0627\u0644\u0641\u0639\u0644.',
     },
