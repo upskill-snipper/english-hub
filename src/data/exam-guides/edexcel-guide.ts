@@ -296,7 +296,7 @@ export const edexcelGuide: BoardExamGuide = {
               skill: 'An argument across the rest of the play, with context',
               time: '25 minutes',
               advice:
-                'Range across three or four moments from elsewhere in the play, quoting from memory. AO1 (15 marks) rewards an informed personal response; AO3 (5 marks) rewards context that shapes your interpretation, so weave Jacobean ideas in where they explain the play rather than bolting them on. Select quotations <strong>judiciously</strong> - Edexcel\'s marking guide specifically rewards quality of selection over quantity.',
+                "Range across three or four moments from elsewhere in the play, quoting from memory. AO1 (15 marks) rewards an informed personal response; AO3 (5 marks) rewards context that shapes your interpretation, so weave Jacobean ideas in where they explain the play rather than bolting them on. Select quotations <strong>judiciously</strong> - Edexcel's marking guide specifically rewards quality of selection over quantity.",
             },
           ],
         },
@@ -548,7 +548,10 @@ export const edexcelGuide: BoardExamGuide = {
     {
       question: 'Literature General - Achieving the Top Bands',
       tips: [
-        '"Perceptive" and "assured" are the key descriptors for Level 6. This means threading a clear, overarching argument through your entire essay.',
+        // 9 October 2026: this said "Level 6". Pearson's Literature grids have five levels, the
+        // top one Level 5 (17-20 on a 20-mark question, 27-32 on the post-1914 essay's AO1 and
+        // AO3), in its June 2024 mark schemes for both papers.
+        '"Perceptive" and "assured" are the key descriptors for Level 5, the top level. This means threading a clear, overarching argument through your entire essay.',
         '"Judicious" quotation selection is specifically rewarded - choose the most revealing quotations rather than the longest.',
         'Sustained personal response means maintaining your critical voice throughout, not just in the introduction and conclusion.',
         'Context should illuminate meaning, not demonstrate knowledge for its own sake. Ask: "How does this context change how we read the text?"',
