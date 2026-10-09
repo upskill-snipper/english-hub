@@ -38,6 +38,15 @@
       "summary": "Stack exhaustion merging recursive object graphs",
       "why": "Reached when the Prisma CLI merges its own configuration at build and migration time, from files in this repository. It is not on any request path. The fixes available are an override to a new major of Prisma's internals, or prisma 8, which is a release candidate. Migrations are the one place in this repository where a silent failure has already cost four months, so neither is worth doing for a build-time parser.",
       "revisit": "When a stable prisma release depends on deepmerge-ts >= 8."
+    },
+    {
+      "id": "GHSA-hp3w-g68c-fv3c",
+      "package": "sprintf-js",
+      "via": "argparse, from js-yaml 3, from gray-matter",
+      "severity": "moderate",
+      "summary": "Denial of service through unbounded precision specifiers",
+      "why": "Never loaded. argparse is required only by js-yaml's command-line tool (bin/js-yaml.js); js-yaml's library code, the only part gray-matter calls when it reads the front matter of this repository's own MDX files, does not require it (checked in node_modules/js-yaml/lib, 9 October 2026). Nothing else in production depends on sprintf-js. The only npm-offered fix is gray-matter 2.0.1, a major downgrade from 4.0.3.",
+      "revisit": "When gray-matter moves to js-yaml 4, which dropped argparse, or when anything else in production comes to depend on sprintf-js."
     }
   ]
 }
