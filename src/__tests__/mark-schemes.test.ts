@@ -4,9 +4,10 @@ import { MARK_SCHEMES, getMarkScheme, listMarkSchemeIds } from '@/lib/marking/ma
 describe('Mark Scheme Registry', () => {
   // ── Registry contents ───────────────────────────────────────────────
 
-  it('contains 21 mark schemes', () => {
+  it('contains 22 mark schemes', () => {
+    // 22 since 9 October 2026, when AQA Literature Paper 2 (aqa-lit-paper2) was added.
     const ids = listMarkSchemeIds()
-    expect(ids).toHaveLength(21)
+    expect(ids).toHaveLength(22)
   })
 
   it('has unique ids for every scheme', () => {
