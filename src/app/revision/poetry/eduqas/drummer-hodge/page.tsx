@@ -24,6 +24,10 @@ const drummerHodge: PoemData = {
   // anthology also has "drummer" in lower case in line 7 and does not indent alternate
   // lines. The header above called this "verified PD text" while it differed from the
   // set text.
+  // Until 9 October 2026 every quotation of line 2 on this page and on the Eduqas essay
+  // plans printed "Uncoffined -- just as found", even where a note names its em dash: the
+  // May 2026 sweep that removed em dashes from src (f82b978f) reached quotations too, and
+  // the anthology test compares words, not punctuation. They now print the poem's dash.
   lines: [
     {
       text: 'They throw in Drummer Hodge, to rest',
@@ -40,7 +44,7 @@ const drummerHodge: PoemData = {
       annotations: [
         {
           type: 'Key quote',
-          note: '"Uncoffined -- just as found" -- the em-dash isolates the brutal fact. There is no coffin, no preparation, no ceremony. The colon then opens onto the description of his makeshift grave. Hardy strips away every Victorian ritual of mourning.',
+          note: '"Uncoffined — just as found" -- the em-dash isolates the brutal fact. There is no coffin, no preparation, no ceremony. The colon then opens onto the description of his makeshift grave. Hardy strips away every Victorian ritual of mourning.',
           color: '#f59e0b',
         },
       ],
@@ -160,7 +164,7 @@ RHYME SCHEME: ABABAB in each stanza -- a tightly woven, balladic pattern. The cl
 
 LANDSCAPE-LANGUAGE CONTRAST: Hardy juxtaposes English ballad form and Wessex diction ("homely", "Northern", "gloam") with South African vocabulary ("kopje", "veldt", "Karoo"). The clash enacts Hodge’s displacement.
 
-EM-DASHES AND PUNCTUATION: "Uncoffined -- just as found:" The em-dash and colon create a hard pause that isolates the brutal fact. Hardy uses punctuation to refuse easy continuity, refusing to let the reader move smoothly past the horror.
+EM-DASHES AND PUNCTUATION: "Uncoffined — just as found:" The em-dash and colon create a hard pause that isolates the brutal fact. Hardy uses punctuation to refuse easy continuity, refusing to let the reader move smoothly past the horror.
 
 NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath (stanza 3). The poem traces Hodge from death into the slow, strange consolation of becoming part of the foreign land.`,
 
@@ -172,13 +176,13 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
 
 تضاد المشهد واللغة: Hardy يضع شكل البالاد الإنجليزية ومفردات Wessex ("homely"، "Northern"، "gloam") جنباً إلى جنب مع مفردات جنوب أفريقية ("kopje"، "veldt"، "Karoo"). والتصادم يجسّد اقتلاع Hodge من بيئته.
 
-شَرَط ونقطتان (em-dashes and colons): "Uncoffined -- just as found:" الشَّرَط والنقطتان يخلقون وقفة قاسية تعزل الحقيقة المروّعة. Hardy يستخدم علامات الترقيم عشان يرفض الاستمرارية السهلة، ويرفض يخلّي القارئ يتجاوز الرعب بسلاسة.
+شَرَط ونقطتان (em-dashes and colons): "Uncoffined — just as found:" الشَّرَط والنقطتان يخلقون وقفة قاسية تعزل الحقيقة المروّعة. Hardy يستخدم علامات الترقيم عشان يرفض الاستمرارية السهلة، ويرفض يخلّي القارئ يتجاوز الرعب بسلاسة.
 
 القوس السردي: الدفن (المقطع 1) → الخلفية (المقطع 2) → الأبدية (المقطع 3). القصيدة تتبّع Hodge من الموت إلى العزاء البطيء الغريب بصيرورته جزء من الأرض الغريبة.`,
 
   keyQuotes: [
     {
-      quote: 'They throw in Drummer Hodge, to rest / Uncoffined -- just as found:',
+      quote: 'They throw in Drummer Hodge, to rest / Uncoffined — just as found:',
       analysis:
         '"Throw in" is the brutal verb of disposal. The em-dash before "just as found" isolates the absence of ceremony. Hardy denies Hodge every Victorian ritual of mourning -- no coffin, no preparation, no service. The colon then opens onto the description of the makeshift grave.',
       themes: ['Anonymous death', 'War', 'Imperial cost'],
@@ -271,7 +275,7 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
     },
     {
       device: 'Em-dash and colon',
-      example: 'Uncoffined -- just as found:',
+      example: 'Uncoffined — just as found:',
       effect:
         'The em-dash creates a stark pause that isolates the absence of a coffin. The colon then opens onto the makeshift grave. Hardy uses punctuation to refuse continuity, forcing the reader to feel each brutal fact separately.',
       lineRef: 1,

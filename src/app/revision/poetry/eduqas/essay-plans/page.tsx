@@ -63,7 +63,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemAPoint:
           'Hardy presents Hodge as a rural English boy reduced to a discarded body in an alien landscape.',
         poemAEvidence:
-          '"They throw in Drummer Hodge, to rest / Uncoffined -- just as found" - the brutal verb "throw" and the em-dash strip away every Victorian ritual of mourning.',
+          '"They throw in Drummer Hodge, to rest / Uncoffined — just as found" - the brutal verb "throw" and the em-dash strip away every Victorian ritual of mourning.',
         poemBPoint:
           'Owen presents the veteran as a once-vital young man now physically and socially diminished.',
         poemBEvidence:
@@ -236,7 +236,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemBPoint:
           "Hardy's drummer is buried by anonymous hands, severed from his Wessex community by death and distance.",
         poemBEvidence:
-          '"They throw in Drummer Hodge, to rest / Uncoffined -- just as found" - the unnamed "they" stand in for the absent community that should have buried him properly.',
+          '"They throw in Drummer Hodge, to rest / Uncoffined — just as found" - the unnamed "they" stand in for the absent community that should have buried him properly.',
         comparison:
           "Both soldiers are erased - Garland's by social shunning, Hardy's by burial in alien soil. The cruelty in Garland is collective and chosen; the cruelty in Hardy is bureaucratic and structural. Both ask: what is owed to the soldier by the people he came from?",
       },

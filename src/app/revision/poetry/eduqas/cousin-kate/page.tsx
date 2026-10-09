@@ -16,6 +16,10 @@ import { useT } from '@/lib/i18n/use-t'
 const cousinKate: PoemData = {
   title: 'Cousin Kate',
   poet: 'Christina Rossetti',
+  // Until 9 October 2026 the two dashes that end lines 9 and 10 in the Eduqas anthology
+  // for examination from 2027 were printed "--": the May 2026 sweep that removed em
+  // dashes from src (f82b978f) reached the poem itself, and the anthology test compares
+  // words, not punctuation. They are the anthology's dashes again, checked against its PDF.
   lines: [
     { text: 'I was a cottage maiden' },
     { text: '  Hardened by sun and air,' },
@@ -27,8 +31,8 @@ const cousinKate: PoemData = {
     { text: '  To fill my heart with care?' },
     { text: '' },
 
-    { text: 'He lured me to his palace home--' },
-    { text: '  Woe’s me for joy thereof--' },
+    { text: 'He lured me to his palace home—' },
+    { text: '  Woe’s me for joy thereof—' },
     { text: 'To lead a shameless shameful life,' },
     { text: '  His plaything and his love.' },
     {
