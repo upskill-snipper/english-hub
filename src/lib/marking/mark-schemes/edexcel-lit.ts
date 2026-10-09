@@ -48,9 +48,25 @@ import type { MarkScheme, AssessmentObjective } from './types'
 import { scaleAO } from './scale-ao'
 
 // ─── Assessment Objectives ─────────────────────────────────────────────────
-// Edexcel Literature uses AO1-AO4. Band descriptors use 6 levels for the main
-// essay-type AOs, mirroring Edexcel's published Level 1 (Simple) through
-// Level 6 (Convincing) grids.
+// Edexcel Literature uses AO1-AO4. AO1, AO2 and AO3 below each carry a ladder
+// of six levels, written for this site, which scaleAO fits to each question.
+//
+// THESE ARE NOT PEARSON'S LEVELS (9 October 2026). Until then this comment
+// said the six levels mirrored Pearson's published grids. Pearson's grids have
+// five (its 1ET0/01 mark scheme, June 2024). A 20-mark question runs Level 1
+// 1-4, 5-8, 9-12, 13-16, Level 5 17-20, where these ladders scale to 1-3, 4-5,
+// 6-9, 10-13, 14-16 and a "Level 6" of 17-20. Pearson marks Paper 1 part (b)
+// on one 20-mark grid for AO1 and AO3 together, where these split it into an
+// AO1 ladder and a 5-mark AO3 ladder with no Level 2. It marks the post-1914
+// essay's AO1 and AO3 on one 32-mark grid (1-6, 7-12, 13-19, 20-26, 27-32),
+// with AO4 in three levels (1-2, 3-5, 6-8), the one grid here that matches.
+// The top marks coincide, but the marker is asked to place answers in a
+// "Level 6" Pearson does not have, its written justifications, which students
+// see, can name it, and the boundaries below the top differ by up to three
+// marks. Rebuilding the ladders to Pearson's would change how every Edexcel
+// Literature answer is scored, through the GCSE marker, essay feedback and the
+// examiner tool's published-grid packs, so it is the founder's decision and is
+// on the founder's list. Nothing is rescaled here.
 
 // AO1 - used across multiple questions with different mark allocations
 const ao1Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {

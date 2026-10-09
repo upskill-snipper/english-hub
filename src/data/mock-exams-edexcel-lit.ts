@@ -100,6 +100,19 @@ import { passage, playPassage } from '@/lib/study-guides/passage'
  * with one of the student's choice from the same collection (AO2 15, AO3 5);
  * and two unseen poems compared (AO1 8, AO2 12). Papers 2A and 2B in
  * mock-exams/edexcel-lit-a.ts were rebuilt to that shape that day.
+ *
+ * Its three Paper 1s would need rebuilding too (noted 9 October 2026). Each
+ * sets Shakespeare as a choice of 40-mark essays, some on a printed extract
+ * and some on the whole play, in bands of its own (Band 5, 32-40, at the top),
+ * and papers 001 and 002 set the post-1914 essay on "the post-1914 literature
+ * anthology", which does not exist. Pearson's 1ET0/01 (specification Issue 2,
+ * PDF page 23, and its June 2024 mark scheme) sets one two-part Shakespeare
+ * question: (a) on a printed extract of about 30 lines, for AO2 (20 marks),
+ * and (b) on a theme from it elsewhere in the play, for AO1 (15) and AO3 (5).
+ * The post-1914 essay is one of two on the student's set text, each opening
+ * with a short quotation from it, for AO1 (16), AO3 (16) and AO4 (8), in five
+ * levels with AO4 in three. Papers 1A to 1C in mock-exams/edexcel-lit-a.ts are
+ * marked to that shape.
  */
 
 /**
