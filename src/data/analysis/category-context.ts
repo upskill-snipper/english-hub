@@ -133,8 +133,9 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
       // 9 October 2026: this gave AO1 10, AO2 20 and AO4 10. Eduqas Component 1 carries AO4 at
       // 2.5% of the GCSE (specification, page 11), which is 5 of its 80 marks, all in the
       // Shakespeare essay; its Summer 2025 examiners' report says the extract question assesses
-      // AO1 and AO2 and the essay AO1, AO2 and AO4. No published document here splits the
-      // other 35 marks between AO1 and AO2, so they are given together.
+      // AO1 and AO2 and the essay AO1, AO2 and AO4. Its Summer 2024 mark scheme (C720U10-1)
+      // sets the extract question at 15 marks and the essay at 20 plus 5 for AO4, with AO1 and
+      // AO2 "equally weighted" in both, and its question paper advises about 20 and 40 minutes.
       {
         board: 'Eduqas Component 1',
         paper: 'Component 1 Section A - Shakespeare',
@@ -145,7 +146,8 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
           {
             ao: 'AO1 + AO2',
             weight: '35 marks',
-            description: 'Response, textual support and analysis, across both questions',
+            description:
+              'Response, textual support and analysis, equally weighted: 15 in the extract question, 20 in the essay',
           },
           { ao: 'AO4', weight: '5 marks', description: 'Written accuracy, in the essay' },
         ],

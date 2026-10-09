@@ -315,6 +315,16 @@ describe('question bank', () => {
     ['aqa-p2-cwv-1', ['aqa-lang-paper2/Q4']],
     ['wjec-p1-ec-1', ['eduqas-lang-comp1/A4']],
     ['wjec-p2-pw-1', ['eduqas-lang-comp2/B1', 'eduqas-lang-comp2/B2']],
+    // Eduqas Literature, since 9 October 2026: the Shakespeare extract question
+    // and essay, the anthology comparison, post-1914 and 19th-century prose,
+    // and the two unseen questions, which had no scheme before.
+    ['wjec-lit-eba-1', ['eduqas-lit-comp1/Section A (a)']],
+    ['wjec-lit-er-1', ['eduqas-lit-comp1/Section A (b)']],
+    ['wjec-lit-pc-1', ['eduqas-lit-comp1/Section B (b)']],
+    ['wjec-lit-eba-3', ['eduqas-lit-comp2/Section A']],
+    ['wjec-lit-eba-2', ['eduqas-lit-comp2/Section B']],
+    ['wjec-lit-up-1', ['eduqas-lit-comp2/Section C (a)']],
+    ['wjec-lit-up-3', ['eduqas-lit-comp2/Section C (b)']],
     ['edx-p2-pw-custom', []],
   ])('maps %s to %j', (id, expected) => {
     const q = examQuestions.find((e) => e.id === id)

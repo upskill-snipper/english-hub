@@ -322,10 +322,20 @@ function literatureRef(
       if (kind === 'shakespeare') return ref('ocr-lit-component02', 'Section B')
       return null
     case 'WJEC':
-      if (kind === 'shakespeare') return ref('eduqas-lit-comp1', 'Section A')
-      if (kind === 'poetry-anthology') return ref('eduqas-lit-comp1', 'Section B')
+      // Since 9 October 2026 the Eduqas schemes are set as Eduqas sets them:
+      // Component 1's Shakespeare section is an extract question and then an
+      // essay on the play, and its poetry section a named anthology poem and
+      // then a comparison with a second; Component 2 ends with unseen poetry in
+      // the same two steps. Each was one question until then, and unseen poetry
+      // had no scheme at all.
+      if (kind === 'shakespeare')
+        return ref('eduqas-lit-comp1', extract ? 'Section A (a)' : 'Section A (b)')
+      if (kind === 'poetry-anthology')
+        return ref('eduqas-lit-comp1', compares ? 'Section B (b)' : 'Section B (a)')
       if (kind === 'modern') return ref('eduqas-lit-comp2', 'Section A')
       if (kind === '19th-century') return ref('eduqas-lit-comp2', 'Section B')
+      if (kind === 'unseen')
+        return ref('eduqas-lit-comp2', compares ? 'Section C (b)' : 'Section C (a)')
       return null
     default:
       return null

@@ -89,12 +89,12 @@ Mark schemes are hand-authored TypeScript, roughly 6 700 lines across [`src/lib/
 | Scheme id                                           | Board           | Version          | Questions      |
 | --------------------------------------------------- | --------------- | ---------------- | -------------- |
 | `aqa-lang-paper1`, `aqa-lang-paper2`                | AQA             | 8700/1, 8700/2   | 5, 5           |
-| `aqa-lit-paper1`                                    | AQA             | 8702/1           | 2              |
-| `edexcel-lang-paper1/2`, `edexcel-lit-paper1/2`     | Edexcel         | 1EN0, 1ET0       | 11, 4 total    |
+| `aqa-lit-paper1`, `aqa-lit-paper2`                  | AQA             | 8702/1, 8702/2   | 2, 4           |
+| `edexcel-lang-paper1/2`, `edexcel-lit-paper1/2`     | Edexcel         | 1EN0, 1ET0       | 14, 7 total    |
 | `edexcel-igcse-lang-paper1`, `edexcel-igcse-lit`    | Edexcel IGCSE   | 4EA1/01, 4ET1/01 | 6, 3           |
-| `eduqas-lang-comp1/2`, `eduqas-lit-comp1/2`         | WJEC Eduqas     | -                | 13, 4          |
-| `ocr-lang-component01/02`, `ocr-lit-component01/02` | OCR             | -                | 10, 4          |
-| `cambridge-0500-paper1/2`                           | Cambridge       | 0500             | 5              |
+| `eduqas-lang-comp1/2`, `eduqas-lit-comp1/2`         | WJEC Eduqas     | C700, C720       | 13, 8          |
+| `ocr-lang-component01/02`, `ocr-lit-component01/02` | OCR             | J351, J352       | 10, 6          |
+| `cambridge-0500-paper1/2`                           | Cambridge       | 0500             | 6              |
 | `cambridge-0990-paper1/2`                           | Cambridge (9-1) | 0990             | spread of 0500 |
 
 `cambridge-0990-*` is a spread of the 0500 objects with a handful of fields overridden ([`cambridge-0990.ts:18`](../../src/lib/marking/mark-schemes/cambridge-0990.ts) and [:30](../../src/lib/marking/mark-schemes/cambridge-0990.ts)): `id`, `board`, `version` and `sourceUrl` on both papers, plus `totalMarks: 50` on Paper 1 only. Note the asymmetry - Paper 1's total is restated with a comment saying it is stated explicitly "so the paper total cannot silently drift", and Paper 2's is not. Questions, AOs and band descriptors are inherited verbatim, so the 9-1 papers carry 0500's descriptors exactly. Whether that is correct is a subject-matter question I could not resolve from the code.
