@@ -116,7 +116,7 @@ import type { MockExamPaper } from './types'
  *     first question's extract above every question in its section.
  *
  * PAPERS 2A AND 2B REBUILT (9 October 2026). They did not follow Pearson's
- * 1ET0/02 (specification Issue 2, PDF pages 23 and 26). Each was 96 marks: a
+ * 1ET0/02 (specification Issue 2, PDF pages 24 and 26). Each was 96 marks: a
  * 30-mark comparison of any two anthology poems, an unseen section of a
  * 24-mark single poem and an 8-mark comparison, which is AQA's shape, and a
  * 34-mark "Section C: Nineteenth-Century Poetry" with 4 marks for SPaG, a

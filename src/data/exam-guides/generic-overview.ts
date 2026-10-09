@@ -4,6 +4,10 @@
 export const genericOverview = {
   landscape: {
     title: 'The English GCSE Landscape',
+    // 9 October 2026: "Question framing" said Edexcel gives broader essay-style questions
+    // where AQA gives an extract. Edexcel prints an extract for part (a) of both its
+    // Shakespeare and its 19th-century novel questions (1ET0 specification, Issue 2, PDF
+    // pages 23 and 24). Nothing imports genericOverview at present.
     content: `
       <p><strong>English at GCSE level is split into two entirely separate qualifications:</strong> English Language and English Literature. You sit exams for both, you receive two separate grades (each on the 9-1 scale), and universities and employers see them independently on your results slip. This is important - doing brilliantly in Literature does <em>not</em> compensate for a weak Language grade, and vice versa.</p>
 
@@ -20,7 +24,7 @@ export const genericOverview = {
       <p><strong>So what actually differs between boards?</strong> Quite a lot in practice:</p>
 
       <ul>
-        <li><strong>Question framing:</strong> AQA tends to give you a specific extract and ask you to analyse it; Edexcel often gives broader essay-style questions</li>
+        <li><strong>Question framing:</strong> boards set their questions differently. Edexcel, for example, splits its Shakespeare and 19th-century novel questions into two parts, one on a printed extract and one on the rest of the text, while its post-1914 question is an essay with no extract</li>
         <li><strong>Text choices:</strong> The set texts and poetry anthologies differ significantly - AQA's anthology includes poets like Simon Armitage and Carol Ann Duffy, while Edexcel features different selections</li>
         <li><strong>Paper structure:</strong> AQA splits Language into two papers (Explorations in Creative Reading/Writing and Writers' Viewpoints/Perspectives); Edexcel also uses two papers but with different emphases</li>
         <li><strong>Weighting of AOs:</strong> While the AOs are the same, boards weight them differently across papers - for instance, AQA gives roughly equal weight to reading and writing in Language, while other boards may lean more heavily on one</li>

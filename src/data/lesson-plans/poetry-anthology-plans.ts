@@ -30,6 +30,13 @@
 // Yorkshire and The Farmer's Bride are AQA Love and Relationships poems, so
 // lessons 2 and 3 are now tagged AQA, and lesson 1, which pairs an Edexcel poem
 // with an AQA one, is a cross-board lesson like 4-9.
+//
+// 9 October 2026: lesson 10, the Edexcel unseen-poetry lesson, set a "32-mark"
+// comparison (32 is AQA's unseen section, 24 and 8). Edexcel's unseen question is
+// Paper 2 Section B Part 2, one comparison of two poems worth 20 marks, AO1 8 and AO2
+// 12 (1ET0 specification, Issue 2, PDF pages 24 and 26); the lesson now sets that, in
+// the exam's 35 minutes. The mark tariffs in the cross-board and AQA lessons were not
+// checked here. This file is not imported by any page.
 
 export interface LessonActivity {
   title: string
@@ -1502,13 +1509,13 @@ const edexcelRelationshipsLesson10: PoetryLesson = {
     title: 'Timed Unseen Poetry Analysis & Comparison',
     duration: '72 minutes',
     instructions:
-      "PART 1 (45 mins): Provide two unseen love poems (related thematically but contrasting in approach). Students complete timed analysis (40 mins): (1) Read both poems twice (5 mins total). (2) Annotate form, voice, imagery, tone (10 mins). (3) Identify comparison focus: What is similar/different about how they present love? (5 mins). (4) Write bullet-point plan for comparison essay (10 mins). (5) Write opening paragraph establishing comparison (10 mins). Poems should exemplify techniques learned: perhaps one dramatic monologue vs one lyric, or one celebrates love vs one critiques it, mirroring patterns from anthology study. PART 2 (27 mins): Class discussion of analysis. Students share observations: What techniques did you spot? What's the relationship between the two poems? Complete one model comparison paragraph together, with teacher facilitating. Discuss: How does unfamiliar context require slowing down and close reading? PART 3 (homework): Students complete full 32-mark essay at home, applying unseen poetry techniques.",
+      "PART 1 (45 mins): Provide two unseen love poems (related thematically but contrasting in approach). Students complete timed analysis (40 mins): (1) Read both poems twice (5 mins total). (2) Annotate form, voice, imagery, tone (10 mins). (3) Identify comparison focus: What is similar/different about how they present love? (5 mins). (4) Write bullet-point plan for comparison essay (10 mins). (5) Write opening paragraph establishing comparison (10 mins). Poems should exemplify techniques learned: perhaps one dramatic monologue vs one lyric, or one celebrates love vs one critiques it, mirroring patterns from anthology study. PART 2 (27 mins): Class discussion of analysis. Students share observations: What techniques did you spot? What's the relationship between the two poems? Complete one model comparison paragraph together, with teacher facilitating. Discuss: How does unfamiliar context require slowing down and close reading? PART 3 (homework): Students complete a full 20-mark comparison at home, in 35 minutes, applying unseen poetry techniques.",
     differentiation: {
       support:
         'Provide annotation framework (form/voice/imagery/tone checklist). Comparison prompt provided with 3 suggested comparisons listed. Sentence starters for opening paragraph.',
       core: 'Open-ended analysis with annotation framework. Independent comparison identification. Full opening paragraph required.',
       stretch:
-        'No framework; complete independent analysis. Write full opening and central paragraph (12 marks of 32). Evaluate how techniques work together to create meaning.',
+        'No framework; complete independent analysis. Write the full opening and a central paragraph of the 20-mark comparison. Evaluate how techniques work together to create meaning.',
     },
     resources: [
       'Two unseen poems (selected to exemplify anthology techniques)',
@@ -1529,7 +1536,7 @@ const edexcelRelationshipsLesson10: PoetryLesson = {
     },
   },
   homework:
-    'Complete full 32-mark comparison essay (40 mins) responding to unseen poetry prompt, applying techniques learned across anthology.',
+    'Complete a full 20-mark comparison essay (35 mins, as in the exam) responding to an unseen poetry prompt, applying techniques learned across the anthology.',
   resourcesNeeded: [
     'Two carefully selected unseen love poems',
     'Annotation framework (optional)',
@@ -1564,7 +1571,7 @@ const edexcelRelationshipsLesson10: PoetryLesson = {
     'Emotional approach variation',
   ],
   examPractice:
-    'Full timed 32-mark unseen poetry comparison essay (homework), simulating real exam conditions.',
+    'Full timed 20-mark unseen poetry comparison (homework, 35 mins), as Edexcel Paper 2 Section B Part 2 sets it.',
 }
 
 // ════════════════════════════════════════════════════════════════════════════

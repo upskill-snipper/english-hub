@@ -90,6 +90,16 @@ import { passage, playPassage } from '@/lib/study-guides/passage'
  * If this bank is ever served: the mock-exam page prints only the first
  * question's extract in a section, so paper 001's balcony-scene extract (q3)
  * would never be shown, and q3 would sit under the Act 3 extract.
+ *
+ * Its three Paper 2s would need rebuilding first (noted 9 October 2026). Each
+ * is 96 marks: a choice of two 48-mark novel questions and a choice of 48-mark
+ * poetry questions that allow one poem or two. Pearson's 1ET0/02
+ * (specification Issue 2, PDF pages 24 and 26) is 80 marks in four answers of
+ * 20, with no AO4: the novel in two parts, (a) on a printed extract (AO2) and
+ * (b) on the novel elsewhere (AO1); a named anthology poem, printed, compared
+ * with one of the student's choice from the same collection (AO2 15, AO3 5);
+ * and two unseen poems compared (AO1 8, AO2 12). Papers 2A and 2B in
+ * mock-exams/edexcel-lit-a.ts were rebuilt to that shape that day.
  */
 
 /**
