@@ -179,24 +179,25 @@ describe('mock papers', () => {
     },
   )
 
-  it('maps AQA Literature Paper 2 question by question where a mock is set as AQA sets it', () => {
+  it('maps every AQA Literature Paper 2 mock question by question', () => {
     // Until 9 October 2026 there was no 8702/2 scheme and every answer got
-    // general feedback. Papers 04 and 05 are AQA's shape: 34, 30, 24 and 8.
-    for (const id of ['aqa-lit-p2-04', 'aqa-lit-p2-05']) {
+    // general feedback. Papers 04 and 05 were AQA's shape: 34, 30, 24 and 8.
+    // Papers 01 to 03 as served were 100-mark papers from another bank, which
+    // mapped to nothing; that bank's copies are retired, and the AQA-shaped
+    // papers with the same ids are served instead.
+    for (const id of [
+      'aqa-lit-p2-01',
+      'aqa-lit-p2-02',
+      'aqa-lit-p2-03',
+      'aqa-lit-p2-04',
+      'aqa-lit-p2-05',
+    ]) {
       expect(refsFor(id).map(refString)).toEqual([
         'aqa-lit-paper2/Section A',
         'aqa-lit-paper2/Section B',
         'aqa-lit-paper2/Section C (a)',
         'aqa-lit-paper2/Section C (b)',
       ])
-    }
-  })
-
-  it('does not map AQA Literature Paper 2 mocks whose sections are not AQA’s', () => {
-    // Papers 01 to 03 are 100 marks: a 40-mark modern-text essay, a 40-mark
-    // analysis of one anthology poem and a 20-mark anthology comparison.
-    for (const id of ['aqa-lit-p2-01', 'aqa-lit-p2-02', 'aqa-lit-p2-03']) {
-      expect(refsFor(id).every((r) => r === null)).toBe(true)
     }
   })
 })

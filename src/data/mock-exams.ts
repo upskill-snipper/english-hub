@@ -45,11 +45,18 @@ export { formatExamTime } from './mock-exams/paper-index'
 /**
  * All mock exam papers, deduplicated by id (first occurrence wins).
  *
- * The aqa-lit-p2-* papers reach this list twice - once via
+ * The aqa-lit-p2-* papers reached this list twice - once via
  * `aqaLitMockExams` and again inside `expandedMockExams` - which doubled
  * three cards on /mock-exams and made /mock-exams/[id] ambiguous. Sources
  * may legitimately overlap as banks grow, so dedupe here at the
  * aggregation point rather than chasing the import graph.
+ *
+ * Which copy wins matters. Until 9 October 2026 the winner for aqa-lit-p2-01
+ * to 03 was `aqaLitMockExams`'s, 100 marks and not AQA's shape, so the
+ * AQA-shaped papers with the same ids in mock-exams/aqa-lit-p2-a.ts were
+ * never served. That bank no longer builds Paper 2s, and no id is defined
+ * twice today; a test in src/__tests__/aqa-lit-p2-a-is-set-as-aqa-sets-it.test.ts
+ * fails if one is.
  *
  * Order and dedupe must stay in step with `SOURCES` in
  * `src/data/mock-exams/_build-index.mjs`, which generates the listing index

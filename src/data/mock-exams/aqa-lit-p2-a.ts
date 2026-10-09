@@ -6,6 +6,64 @@ import type { MockExamPaper } from './types'
 // 5 complete mock papers - An Inspector Calls, Power & Conflict, Unseen Poetry
 // ═══════════════════════════════════════════════════════════════════════════════
 
+/**
+ * Five papers set as AQA sets 8702/2 (June 2023 mark scheme): 96 marks in 2
+ * hours 15 minutes. Section A, a modern text, one essay of 30 marks plus 4 for
+ * AO4; Section B, the anthology, a named poem compared with one other from the
+ * cluster, 30; Section C, unseen poetry, 24 on one poem and 8 comparing it with
+ * a second, the papers' 27.1 and 27.2.
+ *
+ * SERVED SINCE 9 OCTOBER 2026. Papers 01 to 03 shared their ids with three
+ * 100-mark papers in src/data/mock-exams-aqa-lit.ts, and src/data/mock-exams.ts
+ * keeps the first copy of an id and listed that bank first, so these three were
+ * never served. That bank's Paper 2s were retired the same day.
+ *
+ * WHAT WAS CORRECTED, 9 October 2026. Every quotation in the model answers was
+ * checked: An Inspector Calls against a published script of the play (used for
+ * checking only; Priestley is in UK copyright and nothing of it is held here),
+ * the anthology poems against AQA's anthology as students are given it (Past
+ * and present: poetry anthology, Version 1.0 June 2015).
+ *   - Remains was quoted six times as "dug in behind my eyes"; Armitage wrote
+ *     "he's here in my head when I close my eyes, / dug in behind enemy lines".
+ *     Its first line is "we get sent out", not "we got sent out", twice.
+ *   - Poppies was quoted as "smoothed down your collar" (it is "smoothed down
+ *     your shirt's / upturned collar"), "Sellotape bandaged around his hand"
+ *     ("my hand"), "lean against it like a wishbone" ("leaned"), "playing at
+ *     being Eskimos" ("play at / being Eskimos") and "the poppy petals"
+ *     ("crimped petals"); "plastic toys" is not in the poem.
+ *   - Exposure was given "glowing coals", which it does not contain, and a
+ *     "Forgotten" that is the dreams' in Owen's line, not the soldiers'.
+ *   - Remains was credited with "the public", which it does not contain.
+ *   - An Inspector Calls: "the ones I knew are the ones who died", twice, and
+ *     "her own people", twice, are not in the play; Sheila's "you're forgetting
+ *     one thing I still can't forget" and Mrs Birling's "Girls of that class"
+ *     are. "gave herself ridiculous airs" is "giving herself ridiculous airs",
+ *     "war is inevitable" is "war's inevitable", and "It burnt her inside out"
+ *     is "Burnt her inside out". Nine quotations of the play ran to 15 words
+ *     or more, one to 46; each is cut to under 15, the house limit for a text
+ *     in copyright, by deletion only.
+ *   - Ozymandias is quoted as AQA prints it: "works" and "wreck", not the
+ *     "Works" and "Wreck" of Shelley's 1818 text.
+ *   - Five model answers carried an editor's instruction to the writer ("cite
+ *     exactly as printed; do not abbreviate to etc."), shown to students; it
+ *     is gone, and the analysis around it kept.
+ * Section B named two poems and printed neither. It now asks AQA's question,
+ * "in [the named poem] and in one other poem from 'Power and conflict'", and
+ * prints the named poem where it is out of copyright (Exposure, Ozymandias);
+ * where it is not (Poppies, Remains) the section says so. Each mark scheme
+ * names the second poem its model answers chose. The bands in every mark
+ * scheme were the site's own ("Band 3-4 (7-8 marks)"); they are now AQA's
+ * levels and ranges.
+ *
+ * The unseen poems are the site's own, written for these papers and attributed
+ * to no one. src/__tests__/aqa-lit-p2-a-is-set-as-aqa-sets-it.test.ts holds the
+ * papers to AQA's shape, the printed poems to the site's AQA poem pages, the
+ * answers' quotations of them to the printed text, every quotation of a text in
+ * copyright to under 15 words, and the misquotations above out. It cannot check
+ * a quotation of a poem or play this site does not hold; those were checked by
+ * hand on 9 October 2026, speaker by speaker for the play.
+ */
+
 // ─── Unseen Poems ───────────────────────────────────────────────────────────────
 
 // Paper 1 - Unseen Poems
@@ -238,6 +296,94 @@ we each carry a portion,
 passing it between us at the table
 like a dish no one remembers ordering.`
 
+// ─── Named anthology poems ─────────────────────────────────────────────────────
+
+// Section B prints its named poem when the poem is out of UK copyright, as the
+// real paper prints it. These are the texts AQA prints in the book students are
+// given (Past and present: poetry anthology, Version 1.0 June 2015, Power and
+// conflict), as the site's AQA poem pages hold them after checking them line by
+// line against the book on 2 October 2026:
+// src/app/revision/poetry/power-and-conflict/exposure/page.tsx and
+// .../ozymandias/page.tsx. src/__tests__/aqa-lit-p2-a-is-set-as-aqa-sets-it.test.ts
+// holds these strings to those pages, and the model answers' quotations of them
+// to these strings. "Remains", "Poppies", "Bayonet Charge" and "Storm on the
+// Island" are in copyright and are not printed.
+
+const EXPOSURE = `Exposure
+by Wilfred Owen
+
+Our brains ache, in the merciless iced east winds that knive us ...
+Wearied we keep awake because the night is silent ...
+Low, drooping flares confuse our memory of the salient ...
+Worried by silence, sentries whisper, curious, nervous,
+But nothing happens.
+
+Watching, we hear the mad gusts tugging on the wire,
+Like twitching agonies of men among its brambles.
+Northward, incessantly, the flickering gunnery rumbles,
+Far off, like a dull rumour of some other war.
+What are we doing here?
+
+The poignant misery of dawn begins to grow ...
+We only know war lasts, rain soaks, and clouds sag stormy.
+Dawn massing in the east her melancholy army
+Attacks once more in ranks on shivering ranks of grey,
+But nothing happens.
+
+Sudden successive flights of bullets streak the silence.
+Less deadly than the air that shudders black with snow,
+With sidelong flowing flakes that flock, pause, and renew,
+We watch them wandering up and down the wind's nonchalance,
+But nothing happens.
+
+Pale flakes with fingering stealth come feeling for our faces –
+We cringe in holes, back on forgotten dreams, and stare, snow-dazed,
+Deep into grassier ditches. So we drowse, sun-dozed,
+Littered with blossoms trickling where the blackbird fusses.
+– Is it that we are dying?
+
+Slowly our ghosts drag home: glimpsing the sunk fires, glozed
+With crusted dark-red jewels; crickets jingle there;
+For hours the innocent mice rejoice: the house is theirs;
+Shutters and doors, all closed: on us the doors are closed, -
+We turn back to our dying.
+
+Since we believe not otherwise can kind fires burn;
+Nor ever suns smile true on child, or field, or fruit.
+For God's invincible spring our love is made afraid;
+Therefore, not loath, we lie out here; therefore were born,
+For love of God seems dying.
+
+Tonight, this frost will fasten on this mud and us,
+Shrivelling many hands, puckering foreheads crisp.
+The burying-party, picks and shovels in shaking grasp,
+Pause over half-known faces. All their eyes are ice,
+But nothing happens.`
+
+const EXPOSURE_SOURCE =
+  'Wilfred Owen (1893-1918), "Exposure", as printed in AQA\'s Past and present: poetry anthology (Version 1.0, June 2015), Power and conflict. Out of UK copyright.'
+
+const OZYMANDIAS = `Ozymandias
+by Percy Bysshe Shelley
+
+I met a traveller from an antique land
+Who said: Two vast and trunkless legs of stone
+Stand in the desert. Near them on the sand,
+Half sunk, a shattered visage lies, whose frown
+And wrinkled lip, and sneer of cold command
+Tell that its sculptor well those passions read
+Which yet survive, stamped on these lifeless things,
+The hand that mocked them and the heart that fed;
+And on the pedestal these words appear:
+'My name is Ozymandias, king of kings:
+Look on my works, ye Mighty, and despair!'
+Nothing beside remains. Round the decay
+Of that colossal wreck, boundless and bare,
+The lone and level sands stretch far away.`
+
+const OZYMANDIAS_SOURCE =
+  'Percy Bysshe Shelley (1792-1822), "Ozymandias", as printed in AQA\'s Past and present: poetry anthology (Version 1.0, June 2015), Power and conflict. Out of UK copyright.'
+
 // ─── Papers ─────────────────────────────────────────────────────────────────────
 
 export const aqaLitP2Papers: MockExamPaper[] = [
@@ -271,7 +417,7 @@ export const aqaLitP2Papers: MockExamPaper[] = [
             suggestedTimeMinutes: 50,
             questionType: 'evaluation',
             modelAnswers: {
-              'Grade 4-5': `Priestley uses Mr Birling to show ideas about responsibility. At the start of the play, Birling makes a speech about how "a man has to mind his own business and look after himself and his own." This shows he doesn't care about other people and only thinks about himself and his family. He is a capitalist who thinks everyone should look after themselves.
+              'Grade 4-5': `Priestley uses Mr Birling to show ideas about responsibility. At the start of the play, Birling makes a speech about how "a man has to mind his own business and look after himself". This shows he doesn't care about other people and only thinks about himself and his family. He is a capitalist who thinks everyone should look after themselves.
 
 When the Inspector arrives and tells them about Eva Smith, Birling doesn't want to take responsibility. He fired Eva from his factory because she asked for higher wages. He says "I can't accept any responsibility" which shows he doesn't think he did anything wrong. He thinks paying workers less is just good business.
 
@@ -291,7 +437,7 @@ Significantly, Birling does not undergo any transformation. While Sheila and Eri
 Through Birling, Priestley argues that social responsibility cannot be optional: it must be understood as a fundamental obligation, or the consequences - as the Inspector's final speech makes clear - will be "fire and blood and anguish."`,
               'Grade 8-9': `Priestley deploys Mr Birling as both a character and an ideological construct - a concentrated expression of the Edwardian capitalist mindset that the play systematically dismantles. Birling is not merely a bad man; he is a system of thought made flesh, and Priestley's genius lies in ensuring that the audience's rejection of Birling's character becomes, inevitably, a rejection of the economic philosophy he represents.
 
-From the outset, Birling is presented through a carefully orchestrated pattern of dramatic irony so devastating that it functions almost as satire. His confident assertions - the Titanic is "unsinkable absolutely unsinkable," war is impossible because "the Germans don't want war" - are not simply wrong but wrong on a civilisational scale. Writing in 1945, in the aftermath of two world wars and the sinking of the Titanic, Priestley weaponises the audience's historical knowledge against Birling's rhetoric. The effect is to establish a hermeneutic principle for the entire play: when Birling speaks with certainty, the opposite is true. Thus, when he insists that "a man has to mind his own business and look after himself and his own," the audience is already primed to understand this not as common sense but as the foundational delusion of a worldview that has produced catastrophe.
+From the outset, Birling is presented through a carefully orchestrated pattern of dramatic irony so devastating that it functions almost as satire. His confident assertions - the Titanic is "unsinkable absolutely unsinkable," war is impossible because "the Germans don't want war" - are not simply wrong but wrong on a civilisational scale. Writing in 1945, in the aftermath of two world wars and the sinking of the Titanic, Priestley weaponises the audience's historical knowledge against Birling's rhetoric. The effect is to establish a hermeneutic principle for the entire play: when Birling speaks with certainty, the opposite is true. Thus, when he insists that "a man has to mind his own business and look after himself", the audience is already primed to understand this not as common sense but as the foundational delusion of a worldview that has produced catastrophe.
 
 Birling's response to Eva Smith's death reveals the moral architecture of that delusion with surgical precision. His language - "I can't accept any responsibility" - is revealing in its passive construction. Responsibility, in Birling's grammar, is something external that arrives, like a bill, and can be returned to sender. Priestley contrasts this with the Inspector's active formulation: "we are members of one body. We are responsible for each other." The clash is not merely between two opinions but between two ontologies - Birling's atomised individualism, in which each person is a discrete economic unit, and the Inspector's collectivism, in which identity is relational and obligation is intrinsic.
 
@@ -306,9 +452,13 @@ Through Birling, Priestley crafts a devastating argument: that the language of p
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
               'AO3: Show understanding of context (6 marks)',
               'AO4: SPaG - spelling, punctuation, grammar, vocabulary (4 marks)',
-              'Band 5-6: Thoughtful/critical response, judicious references, analysis of methods with terminology, context convincingly explored',
-              'Band 3-4: Clear/explained response, effective references, clear understanding of methods, context clearly understood',
-              'Band 1-2: Simple/emerging response, some references, awareness of methods, some context',
+              'Level 6 (26-30): convincing, critical analysis and exploration',
+              'Level 5 (21-25): thoughtful, developed consideration',
+              'Level 4 (16-20): clear understanding',
+              'Level 3 (11-15): explained, structured comments',
+              'Level 2 (6-10): supported, relevant comments',
+              'Level 1 (1-5): simple, explicit comments',
+              'AO4: high performance 4 marks, intermediate 2-3, threshold 1',
             ],
           },
         ],
@@ -316,7 +466,8 @@ Through Birling, Priestley crafts a devastating argument: that the language of p
       {
         id: 'aqa-lit-p2-01-secB',
         title: 'Section B: Poetry Anthology',
-        description: 'Answer one question from this section.\n\nPower and Conflict Anthology',
+        description:
+          'Answer one question from this section.\n\nPower and conflict. The named poem is printed with the question. Choose the second poem yourself, from the same cluster, and write about it from memory: the exam is closed book.',
         totalMarks: 30,
         suggestedTimeMinutes: 45,
         questions: [
@@ -324,12 +475,14 @@ Through Birling, Priestley crafts a devastating argument: that the language of p
             id: 'aqa-lit-p2-01-q2',
             questionNumber: 2,
             questionText:
-              'Compare how poets present the lasting effects of conflict in "Remains" by Simon Armitage and "Exposure" by Wilfred Owen.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
+              'Compare how poets present the lasting effects of conflict in "Exposure" and in one other poem from "Power and conflict".\n\n[30 marks]',
             marks: 30,
             suggestedTimeMinutes: 45,
             questionType: 'comparison',
+            extract: EXPOSURE,
+            extractSource: EXPOSURE_SOURCE,
             modelAnswers: {
-              'Grade 4-5': `Both "Remains" and "Exposure" show the lasting effects of conflict on soldiers. In "Remains," Armitage writes about a soldier who can't forget killing a man. The line "his blood-shadow stays on the street" shows that the memory won't go away, like a stain. The soldier tries to get rid of the memory by drinking and taking drugs but "the image of the dead man" is "dug in behind my eyes." This shows the psychological effects of war.
+              'Grade 4-5': `Both "Remains" and "Exposure" show the lasting effects of conflict on soldiers. In "Remains," Armitage writes about a soldier who can't forget killing a man. The line "his blood-shadow stays on the street" shows that the memory won't go away, like a stain. The soldier tries to get rid of the memory by drinking and taking drugs but the dead man is "here in my head when I close my eyes, / dug in behind enemy lines." This shows the psychological effects of war.
 
 In "Exposure," Owen shows how soldiers suffer from the cold and waiting. The repeated line "But nothing happens" shows how boring and painful war is. The cold is described as attacking them: "the merciless iced east winds that knive us." This personification makes the weather seem like an enemy.
 
@@ -338,7 +491,7 @@ Both poems show that conflict causes suffering that lasts. In "Remains" it's psy
 The context is different because Owen wrote during World War One and experienced the trenches himself, while Armitage based "Remains" on a documentary about modern soldiers in Iraq. Both poets are showing that war damages people no matter when it happens.`,
               'Grade 6-7': `Armitage and Owen both present conflict as an experience that inflicts enduring psychological and physical damage, though they approach this theme from markedly different temporal and stylistic positions.
 
-In "Remains," the lasting effects of conflict are figured primarily as psychological haunting. The speaker's casual, colloquial register - "probably armed, possibly not" - initially disguises the trauma beneath a veneer of soldierly nonchalance, but the poem's structure enacts the progressive collapse of that defence. The transition from the collective "we" to the isolated "I" tracks the soldier's descent into individual guilt, while the image of the dead man whose "blood-shadow stays on the street" transforms a specific memory into something permanent and archetypal. Armitage's use of enjambment - "his bloody life in my bloody hands" - forces the reader to inhabit the soldier's inability to contain or control the memory. The final metaphor of the dead man "dug in behind my eyes" is grimly military in its vocabulary, suggesting that the victim has become an occupying force in the soldier's consciousness.
+In "Remains," the lasting effects of conflict are figured primarily as psychological haunting. The speaker's casual, colloquial register - "probably armed, possibly not" - initially disguises the trauma beneath a veneer of soldierly nonchalance, but the poem's structure enacts the progressive collapse of that defence. The transition from the collective "we" to the isolated "I" tracks the soldier's descent into individual guilt, while the image of the dead man whose "blood-shadow stays on the street" transforms a specific memory into something permanent and archetypal. Armitage's use of enjambment - "his bloody life in my bloody hands" - forces the reader to inhabit the soldier's inability to contain or control the memory. The metaphor of the dead man "dug in behind enemy lines" is grimly military in its vocabulary, suggesting that the victim has become an occupying force in the soldier's consciousness.
 
 Owen's approach in "Exposure" is more systematic and less individual. The lasting effects of conflict are presented not as a single traumatic event but as a grinding, cumulative process of attrition. The pararhyme - "knive us... nervous," "silent... salient" - creates a formal architecture of near-misses that mirrors the soldiers' experience of almost-but-not-quite dying, a sustained tension that is its own form of suffering. The repeated refrain "But nothing happens" is devastating in its simplicity: it reconfigures inaction itself as a form of violence, suggesting that the waiting and the cold are not interruptions to war but its truest expression.
 
@@ -347,24 +500,28 @@ Contextually, both poems respond to the gap between official narratives of confl
 Both poets ultimately suggest that the lasting effects of conflict cannot be contained by conventional language or structure. Owen's half-rhymes and Armitage's colloquialisms are both, in their different ways, attempts to find a form adequate to an experience that resists neat articulation.`,
               'Grade 8-9': `Armitage and Owen construct complementary but formally distinct meditations on the persistence of conflict within the human mind and body, each deploying poetic structure as a mechanism for enacting - rather than merely describing - the lasting damage of war.
 
-"Remains" operates through a carefully orchestrated collapse of register and perspective. The opening stanza's colloquial informality - "On another occasion, we got sent out" - performs the speaker's initial attempt to process trauma through the language of anecdote, as though the killing can be domesticated by being narrated casually. The shift from plural to singular pronouns ("we" to "I") is not merely a grammatical change but a moral one: it charts the moment at which collective military action becomes individual guilt. Armitage's formal choices reinforce this disintegration - the poem's loose, unrhymed stanzas suggest a narrative structure that cannot quite hold itself together, while the enjambment across stanza breaks ("probably armed, possibly not" straddling a line break) enacts the speaker's inability to establish certainty about his own actions. The central image - "his blood-shadow stays on the street" - operates on multiple levels: it is both a literal description and a metaphor for the indelible psychological imprint of violence. The compound "blood-shadow" refuses to resolve into a single semantic category, yoking the physical (blood) to the immaterial (shadow) in a way that captures the paradox of traumatic memory - simultaneously vivid and unreal.
+"Remains" operates through a carefully orchestrated collapse of register and perspective. The opening stanza's colloquial informality - "On another occasion, we get sent out" - performs the speaker's initial attempt to process trauma through the language of anecdote, as though the killing can be domesticated by being narrated casually. The shift from plural to singular pronouns ("we" to "I") is not merely a grammatical change but a moral one: it charts the moment at which collective military action becomes individual guilt. Armitage's formal choices reinforce this disintegration - the poem's loose, unrhymed stanzas suggest a narrative structure that cannot quite hold itself together, while the enjambment across stanza breaks ("probably armed, possibly not" straddling a line break) enacts the speaker's inability to establish certainty about his own actions. The central image - "his blood-shadow stays on the street" - operates on multiple levels: it is both a literal description and a metaphor for the indelible psychological imprint of violence. The compound "blood-shadow" refuses to resolve into a single semantic category, yoking the physical (blood) to the immaterial (shadow) in a way that captures the paradox of traumatic memory - simultaneously vivid and unreal.
 
 Owen's "Exposure," by contrast, presents lasting damage not as a dramatic event but as an atmospheric condition. The poem's pararhyme - "knive us / nervous," "wire / war," "snow-dazed / sun-dozed" - creates a soundscape of perpetual near-resolution, in which rhyme almost arrives but never quite does. This formal choice is precisely calibrated to the poem's thematic content: the soldiers exist in a state of permanent anticipation that never resolves into action or relief. The repeated "But nothing happens" gains cumulative force through each iteration, transforming from a report into an indictment - the "nothing" that happens is itself a form of destruction, a slow erasure of identity, purpose, and hope.
 
 Owen's manipulation of tense is particularly striking. The present tense ("Our brains ache") creates an eternal present from which there is no escape - the suffering is not remembered but perpetually re-experienced, a formal anticipation of what would later be understood as the temporality of PTSD. Armitage achieves a similar effect through different means: the shift in "Remains" from past tense narration to the present-tense final stanza ("he's here in my head") collapses the distance between event and aftermath, suggesting that for the traumatised mind, the past is not past.
 
-Contextually, both poems interrogate the relationship between conflict and visibility. Owen's soldiers are rendered "Forgotten" by the very society they defend - the domestic world of "kind fires" and "glowing coals" exists in a separate reality that cannot accommodate the truth of the trenches. Armitage addresses a contemporary parallel: the speaker in "Remains" has been physically present on a street where "the public" can watch, yet his psychological damage remains invisible, undiagnosed, untreated. Both poets suggest that the lasting effects of conflict are compounded by society's refusal to witness them.
+Contextually, both poems interrogate the relationship between conflict and visibility. Owen's soldiers find the doors of home shut against them ("on us the doors are closed"): the domestic world of "sunk fires" and "kind fires" exists in a separate reality that cannot accommodate the truth of the trenches. Armitage addresses a contemporary parallel: the speaker in "Remains" killed a man in the open street, yet his psychological damage remains invisible, undiagnosed, untreated. Both poets suggest that the lasting effects of conflict are compounded by society's refusal to witness them.
 
-Structurally, the two poems arrive at parallel conclusions through inverse methods. Owen moves from the specific ("Our brains ache") to the cosmic ("For love of God seems dying"), suggesting that exposure destroys not just individual soldiers but the moral framework of civilisation itself. Armitage narrows from the collective to the agonisingly personal, ending with the dead man "dug in behind my eyes" - a metaphor that turns the vocabulary of military entrenchment against the soldier himself, suggesting that in modern conflict, the true occupation occurs within the mind of the survivor.`,
+Structurally, the two poems arrive at parallel conclusions through inverse methods. Owen moves from the specific ("Our brains ache") to the cosmic ("For love of God seems dying"), suggesting that exposure destroys not just individual soldiers but the moral framework of civilisation itself. Armitage narrows from the collective to the agonisingly personal, placing the dead man, in its closing lines, "dug in behind enemy lines" - a metaphor that turns the vocabulary of military entrenchment against the soldier himself, suggesting that in modern conflict, the true occupation occurs within the mind of the survivor.`,
             },
             markScheme: [
               'AO1: Read, understand and respond - use textual references to support interpretation (12 marks)',
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
               'AO3: Show understanding of context (6 marks)',
               'Must compare both poems throughout - not two separate essays',
-              'Band 5-6: Critical comparison, exploratory analysis of methods, convincing context',
-              'Band 3-4: Clear comparison, explained analysis of methods, clear context',
-              'Band 1-2: Simple comparison, awareness of methods, some context',
+              'These model answers choose "Remains" by Simon Armitage as the second poem; any poem from "Power and conflict" that suits the question would do.',
+              'Level 6 (26-30): convincing, critical analysis and exploration',
+              'Level 5 (21-25): thoughtful, developed consideration',
+              'Level 4 (16-20): clear understanding',
+              'Level 3 (11-15): explained, structured comments',
+              'Level 2 (6-10): supported, relevant comments',
+              'Level 1 (1-5): simple, explicit comments',
             ],
           },
         ],
@@ -414,9 +571,12 @@ The poem's form - regular quatrains with subdued, irregular rhyme - embodies its
             markScheme: [
               'AO1: Read, understand and respond - use textual references to support interpretation (12 marks)',
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
-              'Band 5-6: Critical, exploratory response with judicious references; analysis of methods with integrated terminology',
-              'Band 3-4: Clear, explained response with effective references; clear understanding of methods',
-              'Band 1-2: Simple response with some references; awareness of methods',
+              'Level 6 (21-24): convincing, critical analysis and exploration',
+              'Level 5 (17-20): thoughtful, developed consideration',
+              'Level 4 (13-16): clear understanding',
+              'Level 3 (9-12): explained, structured comments',
+              'Level 2 (5-8): supported, relevant comments',
+              'Level 1 (1-4): simple, explicit comments',
             ],
           },
           {
@@ -445,9 +605,10 @@ The poems also diverge in their emotional trajectories. "Shift's End" permits a 
             markScheme: [
               'AO2: Analyse language, form and structure using subject terminology (8 marks)',
               'Must compare: identify similarities AND/OR differences',
-              'Band 3-4 (7-8 marks): Exploratory comparison with well-chosen references',
-              'Band 2-3 (4-6 marks): Clear comparison with relevant references',
-              'Band 1 (1-3 marks): Simple comparison with some references',
+              "Level 4 (7-8): critical, insightful comparison of the poets' methods",
+              "Level 3 (5-6): thoughtful comparison of the poets' methods",
+              'Level 2 (3-4): clear comparison of the poems',
+              'Level 1 (1-2): simple comment on one or both poems',
             ],
           },
         ],
@@ -498,9 +659,9 @@ Overall, Priestley shows that social class creates inequality and that the upper
 
 The play's opening stage directions establish class as a performed identity. The Birlings' dining room, with its "heavily comfortable" furnishings and port glasses, signals bourgeois prosperity, but the qualifier "not cosy and homelike" introduces an early note of unease. Priestley suggests that the Birlings' class position is maintained through display rather than genuine comfort - it is a performance of respectability rather than an expression of authentic wellbeing.
 
-Class hierarchy is central to each character's treatment of Eva Smith. Birling dismisses her wage request as the disruption of an economic order he considers natural: cheap labour is simply how business works. Mrs Birling's refusal to help Eva at the Brumley Women's Charity Organisation reveals an even more insidious form of class prejudice. Her objection - that Eva "gave herself ridiculous airs" and "was claiming elaborate fine feelings" - exposes the assumption that emotional depth and social aspiration are privileges of the upper classes. To Mrs Birling, a working-class woman who uses an upper-class name is committing a form of trespass.
+Class hierarchy is central to each character's treatment of Eva Smith. Birling dismisses her wage request as the disruption of an economic order he considers natural: cheap labour is simply how business works. Mrs Birling's refusal to help Eva at the Brumley Women's Charity Organisation reveals an even more insidious form of class prejudice. Her objection - that Eva was "giving herself ridiculous airs" and "claiming elaborate fine feelings" - exposes the assumption that emotional depth and social aspiration are privileges of the upper classes. To Mrs Birling, a working-class woman who uses an upper-class name is committing a form of trespass.
 
-Gerald Croft's relationship with Eva/Daisy reveals how class intersects with gender to create particular forms of exploitation. His "rescue" of Daisy from Alderman Meggarty positions him as the benevolent upper-class protector, but the relationship is fundamentally unequal - Daisy is dependent on Gerald's generosity, and when he tires of her, she has no recourse. Priestley suggests that cross-class relationships within a hierarchical society are inherently exploitative, regardless of individual intention.
+Gerald Croft's relationship with Eva/Daisy reveals how class intersects with gender to create particular forms of exploitation. His supposed rescue of Daisy from Alderman Meggarty positions him as the benevolent upper-class protector, but the relationship is fundamentally unequal - Daisy is dependent on Gerald's generosity, and when he tires of her, she has no recourse. Priestley suggests that cross-class relationships within a hierarchical society are inherently exploitative, regardless of individual intention.
 
 The Inspector's function is to dismantle these class-based justifications. His final speech - "We are members of one body. We are responsible for each other" - articulates the socialist principle that class is an artificial division that obscures a deeper human interdependence. Written in 1945, with the Beveridge Report and the incoming Labour government promising a welfare state, Priestley's message is both a critique of the past and an argument for the collectivist future.
 
@@ -509,11 +670,11 @@ The generational divide is crucial. Sheila and Eric, the younger Birlings, demon
 
 The play's dramaturgical architecture is itself a class statement. The single setting - the Birlings' dining room - confines the audience within the bourgeois interior, forcing a confrontation with the values that space represents. Priestley's stage directions specify "heavily comfortable but not cosy" furniture and lighting that is "pink and intimate" before the Inspector's arrival, then "brighter and harder" afterwards. This lighting shift is a theatrical metaphor for ideological exposure: the rosy glow of class privilege is replaced by the harsh illumination of scrutiny. The Birlings' comfort is revealed as contingent upon the suffering of those excluded from the room - Eva Smith, who is never seen on stage, is structurally positioned outside the bourgeois space, her absence a permanent accusation.
 
-Each Birling's interaction with Eva exposes a different mechanism by which class hierarchy produces harm. Birling's sacking of Eva for demanding higher wages reveals the economic dimension: capital's structural dependence on cheap, disposable labour. Significantly, Birling frames this not as cruelty but as rationality - "If you don't come down sharply on some of these people, they'd soon be asking for the earth." The metaphor is revealing: "the earth" implies that fair wages represent an impossibly excessive demand, naturalising exploitation as common sense.
+Each Birling's interaction with Eva exposes a different mechanism by which class hierarchy produces harm. Birling's sacking of Eva for demanding higher wages reveals the economic dimension: capital's structural dependence on cheap, disposable labour. Significantly, Birling frames this not as cruelty but as rationality: if he did not come down sharply on such workers, "they'd soon be asking for the earth." The metaphor is revealing: "the earth" implies that fair wages represent an impossibly excessive demand, naturalising exploitation as common sense.
 
 Mrs Birling's contribution is perhaps the most ideologically revealing. Her objection to Eva is not economic but ontological: Eva has transgressed class boundaries by claiming the Birling name and displaying "fine feelings" that Mrs Birling considers the exclusive property of her own class. This is class as epistemology - Mrs Birling cannot recognise Eva as fully human because her conceptual framework categorises working-class experience as inherently less complex, less worthy of sympathy, less real. Her insistence that the father of Eva's child should bear sole responsibility, and her assumption that this father must be a working-class man ("some drunken young idler"), exposes the recursive logic of class prejudice: the upper classes attribute moral failure to the lower classes, then use those attributed failures to justify further indifference.
 
-Gerald's treatment of Eva/Daisy Renton introduces the intersection of class and gender. His "rescue" narrative - saving a vulnerable woman from Alderman Meggarty - performs the feudal archetype of noblesse oblige, but Priestley carefully deconstructs its benevolence. Gerald provides Daisy with accommodation and financial support, but these gifts create dependency rather than agency; when the relationship ends, Daisy is returned to precisely the vulnerability from which Gerald "saved" her, now compounded by emotional attachment. Priestley suggests that individual kindness across class lines, however genuine, cannot compensate for structural inequality - it merely personalises and sentimentalises what is fundamentally a political problem.
+Gerald's treatment of Eva/Daisy Renton introduces the intersection of class and gender. His story of a rescue - saving a vulnerable woman from Alderman Meggarty - performs the feudal archetype of noblesse oblige, but Priestley carefully deconstructs its benevolence. Gerald provides Daisy with accommodation and financial support, but these gifts create dependency rather than agency; when the relationship ends, Daisy is returned to precisely the vulnerability from which Gerald "saved" her, now compounded by emotional attachment. Priestley suggests that individual kindness across class lines, however genuine, cannot compensate for structural inequality - it merely personalises and sentimentalises what is fundamentally a political problem.
 
 The Inspector functions as a destabilising force within the class system the Birlings represent. His refusal to defer to Birling's social status - ignoring references to the Chief Constable, the aldermanship, the knighthood - constitutes a performative challenge to the authority of class. His language, too, operates outside class conventions: the directness of "We are members of one body" cuts through the euphemisms and circumlocutions that characterise bourgeois discourse in the play, replacing the Birlings' language of obligation ("I can't accept any responsibility") with a language of ontological interconnection.
 
@@ -524,9 +685,13 @@ The play's conclusion - the telephone announcement of a girl's death and a real 
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
               'AO3: Show understanding of context (6 marks)',
               'AO4: SPaG - spelling, punctuation, grammar, vocabulary (4 marks)',
-              "Band 5-6: Critical exploratory response; analysis of writer's methods; convincing context",
-              'Band 3-4: Clear explained response; understanding of methods; clear context',
-              'Band 1-2: Simple response; awareness of methods; some context',
+              'Level 6 (26-30): convincing, critical analysis and exploration',
+              'Level 5 (21-25): thoughtful, developed consideration',
+              'Level 4 (16-20): clear understanding',
+              'Level 3 (11-15): explained, structured comments',
+              'Level 2 (6-10): supported, relevant comments',
+              'Level 1 (1-5): simple, explicit comments',
+              'AO4: high performance 4 marks, intermediate 2-3, threshold 1',
             ],
           },
         ],
@@ -534,7 +699,8 @@ The play's conclusion - the telephone announcement of a girl's death and a real 
       {
         id: 'aqa-lit-p2-02-secB',
         title: 'Section B: Poetry Anthology',
-        description: 'Answer one question from this section.\n\nPower and Conflict Anthology',
+        description:
+          'Answer one question from this section.\n\nPower and conflict. The named poem is printed with the question. Choose the second poem yourself, from the same cluster, and write about it from memory: the exam is closed book.',
         totalMarks: 30,
         suggestedTimeMinutes: 45,
         questions: [
@@ -542,10 +708,12 @@ The play's conclusion - the telephone announcement of a girl's death and a real 
             id: 'aqa-lit-p2-02-q2',
             questionNumber: 2,
             questionText:
-              'Compare how poets present the power of nature in "Storm on the Island" by Seamus Heaney and "Ozymandias" by Percy Bysshe Shelley.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
+              'Compare how poets present the power of nature in "Ozymandias" and in one other poem from "Power and conflict".\n\n[30 marks]',
             marks: 30,
             suggestedTimeMinutes: 45,
             questionType: 'comparison',
+            extract: OZYMANDIAS,
+            extractSource: OZYMANDIAS_SOURCE,
             modelAnswers: {
               'Grade 4-5': `Both "Storm on the Island" and "Ozymandias" present nature as more powerful than humans. In "Storm on the Island," Heaney describes a fierce storm that attacks the island community. The wind is described as a "huge nothing" which is an oxymoron showing that something invisible can still be terrifying and powerful. The people prepare for the storm by building strong houses, but nature is still frightening.
 
@@ -560,7 +728,7 @@ In "Storm on the Island," nature's power is presented as an assault. Heaney's la
 
 The poem's most striking paradox is the "huge nothing that we fear." This oxymoron captures the peculiar terror of facing an invisible, formless power. The collective pronoun "we" positions the speaker within a community, but this community is ultimately helpless - their preparations ("We are prepared: we build our houses squat") cannot protect them from what they cannot see. Heaney's blank verse form, which mimics conversational speech but carries the weight of iambic pentameter, reflects this tension between ordinariness and threat.
 
-Shelley's approach in "Ozymandias" is architecturally different. Nature's power is not dramatised but revealed through aftermath. The "colossal Wreck" of Ozymandias's statue functions as a memento mori for all human ambition: the inscription "Look on my Works, ye Mighty, and despair!" is rendered bitterly ironic by the "lone and level sands" that have replaced those works. Shelley's sonnet form - traditionally associated with permanence and artistic immortality - is subverted to convey impermanence. The poem's fragmented structure (the story is relayed through multiple voices: the narrator, the traveller, the sculptor, Ozymandias himself) mirrors the fragmentation of the statue, form enacting content.
+Shelley's approach in "Ozymandias" is architecturally different. Nature's power is not dramatised but revealed through aftermath. The "colossal wreck" of Ozymandias's statue functions as a memento mori for all human ambition: the inscription "Look on my works, ye Mighty, and despair!" is rendered bitterly ironic by the "lone and level sands" that have replaced those works. Shelley's sonnet form - traditionally associated with permanence and artistic immortality - is subverted to convey impermanence. The poem's fragmented structure (the story is relayed through multiple voices: the narrator, the traveller, the sculptor, Ozymandias himself) mirrors the fragmentation of the statue, form enacting content.
 
 Both poets suggest that human attempts to control or resist nature are fundamentally futile, but they locate this futility differently. Heaney's community experiences it as present fear; Shelley's Ozymandias represents it as historical fact. Together, they suggest that whether nature acts in the violence of a storm or the patience of erosion, the outcome is the same.`,
               'Grade 8-9': `Heaney and Shelley construct complementary but temporally and formally distinct arguments about nature's supremacy over human agency, each deploying the resources of poetic form to enact - rather than merely assert - the inadequacy of human structures (literal and metaphorical) in the face of natural power.
@@ -571,7 +739,7 @@ The poem's militarised vocabulary - "bombarded," "strafes," "salvo" - introduces
 
 Shelley's "Ozymandias" operates in an entirely different temporal register: not the compressed present of the storm but the vast retrospect of geological time. Nature's power here is not violent but patient - the "lone and level sands" have not destroyed Ozymandias's monument through force but through the accumulation of time itself. The poem's structure brilliantly enacts this temporal perspective through its layered narrative frames: the poet speaks to us, relaying the words of a traveller, who describes the work of a sculptor, who recorded the expression of Ozymandias. Each frame adds a layer of mediation, suggesting that as time passes, human achievements become increasingly remote, increasingly filtered through other perspectives, until they lose all original authority.
 
-The irony of the inscription - "Look on my Works, ye Mighty, and despair!" - is typically read as simple dramatic irony (the works have vanished), but Shelley's critique is more sophisticated. The command "despair" was originally directed at rival kings, who should despair at Ozymandias's superiority. Now, the same word acquires a new meaning: the mighty should despair because the same fate awaits their works. Nature, in Shelley's formulation, does not merely destroy - it recontextualises, transforming the very language of power into an inadvertent confession of impermanence. This is nature as an author, rewriting human texts.
+The irony of the inscription - "Look on my works, ye Mighty, and despair!" - is typically read as simple dramatic irony (the works have vanished), but Shelley's critique is more sophisticated. The command "despair" was originally directed at rival kings, who should despair at Ozymandias's superiority. Now, the same word acquires a new meaning: the mighty should despair because the same fate awaits their works. Nature, in Shelley's formulation, does not merely destroy - it recontextualises, transforming the very language of power into an inadvertent confession of impermanence. This is nature as an author, rewriting human texts.
 
 Formally, Shelley subverts the Petrarchan sonnet - a form associated with permanence and artistic immortality - by refusing to resolve its rhyme scheme neatly. The irregular rhyme (ABABACDCEDEFEF) creates a sense of structural instability that mirrors the statue's decay, while the volta arrives not at the expected line 9 but at line 12, delaying the thematic turn and compressing the poem's devastating conclusion into just two and a half lines.
 
@@ -584,9 +752,13 @@ Both poems ultimately suggest that human power - whether political, imperial, or
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
               'AO3: Show understanding of context (6 marks)',
               'Must compare both poems throughout',
-              'Band 5-6: Critical comparison with exploratory analysis and convincing context',
-              'Band 3-4: Clear comparison with explained analysis and clear context',
-              'Band 1-2: Simple comparison with awareness of methods and some context',
+              'These model answers choose "Storm on the Island" by Seamus Heaney as the second poem; any poem from "Power and conflict" that suits the question would do.',
+              'Level 6 (26-30): convincing, critical analysis and exploration',
+              'Level 5 (21-25): thoughtful, developed consideration',
+              'Level 4 (16-20): clear understanding',
+              'Level 3 (11-15): explained, structured comments',
+              'Level 2 (6-10): supported, relevant comments',
+              'Level 1 (1-5): simple, explicit comments',
             ],
           },
         ],
@@ -640,9 +812,12 @@ The closing stanza's sunflowers, "their heads bowed as if in welcome, / or in gr
             markScheme: [
               'AO1: Read, understand and respond - use textual references to support interpretation (12 marks)',
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
-              'Band 5-6: Critical, exploratory response with judicious references and integrated analysis',
-              'Band 3-4: Clear, explained response with effective references and understanding of methods',
-              'Band 1-2: Simple response with some references and awareness of methods',
+              'Level 6 (21-24): convincing, critical analysis and exploration',
+              'Level 5 (17-20): thoughtful, developed consideration',
+              'Level 4 (13-16): clear understanding',
+              'Level 3 (9-12): explained, structured comments',
+              'Level 2 (5-8): supported, relevant comments',
+              'Level 1 (1-4): simple, explicit comments',
             ],
           },
           {
@@ -673,9 +848,10 @@ Most strikingly, the poems construct opposing models of arrival. "Border Country
             markScheme: [
               'AO2: Analyse language, form and structure using subject terminology (8 marks)',
               'Must compare: identify similarities AND/OR differences',
-              'Band 3-4 (7-8 marks): Exploratory comparison with well-chosen references',
-              'Band 2-3 (4-6 marks): Clear comparison with relevant references',
-              'Band 1 (1-3 marks): Simple comparison with some references',
+              "Level 4 (7-8): critical, insightful comparison of the poets' methods",
+              "Level 3 (5-6): thoughtful comparison of the poets' methods",
+              'Level 2 (3-4): clear comparison of the poems',
+              'Level 1 (1-2): simple comment on one or both poems',
             ],
           },
         ],
@@ -730,7 +906,7 @@ Her complicity in Eva Smith's fate - getting Eva dismissed from Milwards out of 
 
 Sheila's developing role as the Inspector's ally is structurally significant. Her warning to Gerald - "you fool - he knows" - demonstrates not just intelligence but a newly developed capacity to read situations through a moral rather than social lens. She has internalised the Inspector's method: truth is not optional, and concealment compounds guilt. This positioning establishes Sheila as a bridge figure between the Inspector's values and the audience's potential for transformation.
 
-The generational contrast is Priestley's central political argument. Sheila and Eric represent the post-war generation that Priestley believed could build the welfare state: young enough to have their assumptions shattered, morally flexible enough to construct new values from the wreckage. Sheila's refusal to return to normalcy - "the ones I knew are the ones who died" - is not simply personal growth but ideological conversion. She has moved from the Birlings' individualism to the Inspector's collectivism, and Priestley positions this movement as available to any audience member willing to undergo it.
+The generational contrast is Priestley's central political argument. Sheila and Eric represent the post-war generation that Priestley believed could build the welfare state: young enough to have their assumptions shattered, morally flexible enough to construct new values from the wreckage. Sheila's refusal to return to normalcy - "you're forgetting one thing I still can't forget" - is not simply personal growth but ideological conversion. She has moved from the Birlings' individualism to the Inspector's collectivism, and Priestley positions this movement as available to any audience member willing to undergo it.
 
 Her insistence, even after the Inspector's apparent exposure, that "everything we said had happened really had happened" is the play's moral cornerstone. Sheila understands what her parents cannot: that the truth of their culpability does not depend on the Inspector's institutional legitimacy. Guilt is not a legal verdict but a moral condition, and it persists regardless of whether anyone is watching.`,
               'Grade 8-9': `Priestley deploys Sheila Birling as the play's primary mechanism of audience identification and ideological transformation, constructing her journey from complicit bourgeois innocence to active moral consciousness as a template for the change he demands of his post-war audience.
@@ -752,9 +928,13 @@ Contextually, Sheila embodies the audience Priestley is addressing. Writing in 1
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
               'AO3: Show understanding of context (6 marks)',
               'AO4: SPaG - spelling, punctuation, grammar, vocabulary (4 marks)',
-              'Band 5-6: Critical/exploratory response; judicious use of references; analysis of methods; convincing context',
-              'Band 3-4: Clear/explained response; effective references; clear understanding of methods; clear context',
-              'Band 1-2: Simple/emerging response; some references; awareness of methods; some context',
+              'Level 6 (26-30): convincing, critical analysis and exploration',
+              'Level 5 (21-25): thoughtful, developed consideration',
+              'Level 4 (16-20): clear understanding',
+              'Level 3 (11-15): explained, structured comments',
+              'Level 2 (6-10): supported, relevant comments',
+              'Level 1 (1-5): simple, explicit comments',
+              'AO4: high performance 4 marks, intermediate 2-3, threshold 1',
             ],
           },
         ],
@@ -762,7 +942,8 @@ Contextually, Sheila embodies the audience Priestley is addressing. Writing in 1
       {
         id: 'aqa-lit-p2-03-secB',
         title: 'Section B: Poetry Anthology',
-        description: 'Answer one question from this section.\n\nPower and Conflict Anthology',
+        description:
+          'Answer one question from this section.\n\nPower and conflict. In the exam the named poem is printed with the question; "Poppies" is still in copyright, so this practice paper cannot print it. Use your copy of the anthology for it, choose the second poem yourself from the same cluster, and write about that one from memory.',
         totalMarks: 30,
         suggestedTimeMinutes: 45,
         questions: [
@@ -770,23 +951,23 @@ Contextually, Sheila embodies the audience Priestley is addressing. Writing in 1
             id: 'aqa-lit-p2-03-q2',
             questionNumber: 2,
             questionText:
-              'Compare how poets present the experience of loss in "Poppies" by Jane Weir and "Bayonet Charge" by Ted Hughes.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
+              'Compare how poets present the experience of loss in "Poppies" and in one other poem from "Power and conflict".\n\n[30 marks]',
             marks: 30,
             suggestedTimeMinutes: 45,
             questionType: 'comparison',
             modelAnswers: {
               'Grade 4-5': `Both "Poppies" and "Bayonet Charge" deal with loss caused by war, but from very different perspectives. "Poppies" is written from a mother's point of view as she watches her son leave for war, while "Bayonet Charge" shows a soldier in the middle of battle.
 
-In "Poppies," the mother describes small, personal details that show her love and loss. She "smoothed down your collar" and later goes to the memorial to "lean against it like a wishbone." The wishbone image is sad because it shows she is making a wish, probably for her son to come home safely. The poem is full of domestic images - "sellotape," "cat hairs" - which contrast with the war theme and show how the mother connects war to everyday life.
+In "Poppies," the mother describes small, personal details that show her love and loss. She "smoothed down your shirt's / upturned collar", and at the war memorial she "leaned against it like a wishbone." The wishbone image is sad because it shows she is making a wish, probably for her son to come home safely. The poem is full of domestic images - "sellotape," "cat hairs" - which contrast with the war theme and show how the mother connects war to everyday life.
 
-In "Bayonet Charge," Hughes shows a soldier running towards the enemy. The soldier's thoughts are described violently: "The patriotic tear that had brimmed in his eye" has been replaced by "terror." He has lost his belief in why he is fighting. He sees a "yellow hare" rolling in pain, which represents the innocent suffering of war.
+In "Bayonet Charge," Hughes shows a soldier running towards the enemy. The soldier's thoughts are described violently: "The patriotic tear that had brimmed in his eye" has given way to fear: by the end, "His terror's touchy dynamite." He has lost his belief in why he is fighting. He sees a "yellow hare" rolling in pain, which represents the innocent suffering of war.
 
 Both poets show loss, but differently. Weir shows the emotional loss of a parent sending a child to war. Hughes shows the loss of idealism and humanity in battle. Weir's poem is gentle and domestic, while Hughes's is chaotic and frightening. The context is relevant because Weir wrote "Poppies" in response to modern conflicts, while Hughes was born in 1930 and never fought in any war - he drew on his father William's WWI accounts (William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment) to imagine the soldier's terror.`,
               'Grade 6-7': `Weir and Hughes present loss as operating in fundamentally different registers - the domestic and the visceral - yet both poets suggest that war's destruction extends far beyond physical harm to encompass the erosion of meaning, identity, and connection.
 
-"Poppies" constructs loss through an accumulation of sensory, domestic details that function as indices of intimacy. The mother's actions - smoothing the son's collar, noting "cat hairs" on his jacket - are simultaneously ordinary and charged with the knowledge that these mundane gestures may be the last points of physical contact. Weir's use of textile imagery throughout ("bandaged," "sellotape," "bias binding") creates an extended metaphor of maternal care as mending and covering, but also, implicitly, of wounds that cannot be repaired. The poem's temporal structure, which conflates the son's childhood (playing with "plastic toys") with his departure for war, suggests that for the mother, time has collapsed: all moments of intimacy are simultaneously present, and all are shadowed by anticipated loss.
+"Poppies" constructs loss through an accumulation of sensory, domestic details that function as indices of intimacy. The mother's actions - smoothing the son's collar, noting "cat hairs" on his jacket - are simultaneously ordinary and charged with the knowledge that these mundane gestures may be the last points of physical contact. Weir's use of textile imagery throughout ("bandaged," "sellotape," "bias binding") creates an extended metaphor of maternal care as mending and covering, but also, implicitly, of wounds that cannot be repaired. The poem's temporal structure, which conflates the son's childhood ("when / you were little") with his departure for war, suggests that for the mother, time has collapsed: all moments of intimacy are simultaneously present, and all are shadowed by anticipated loss.
 
-Hughes constructs loss as an immediate, embodied experience. "Bayonet Charge" opens in medias res - "Suddenly he awoke and was running" - plunging the reader into the disorientation of combat without preamble or explanation. The loss here is epistemological: the soldier has lost the framework of meaning that justified his presence. "King, honour, human dignity, etcetera" - Hughes writes "etcetera" once (cite exactly as printed; do not abbreviate to "etc.", and don't double the word). The dismissive single "etcetera" reduces patriotic abstractions to an exhausted list, something barely worth completing. Hughes suggests that combat does not merely endanger the body but dismantles the conceptual structures (patriotism, honour, duty) that made violence seem rational.
+Hughes constructs loss as an immediate, embodied experience. "Bayonet Charge" opens in medias res - "Suddenly he awoke and was running" - plunging the reader into the disorientation of combat without preamble or explanation. The loss here is epistemological: the soldier has lost the framework of meaning that justified his presence. "King, honour, human dignity, etcetera" - the dismissive single "etcetera" reduces patriotic abstractions to an exhausted list, something barely worth completing. Hughes suggests that combat does not merely endanger the body but dismantles the conceptual structures (patriotism, honour, duty) that made violence seem rational.
 
 The "yellow hare" that "rolled like a flame" functions as a concentrated symbol of innocent suffering. Its pain is purposeless and unexplained, mirroring the soldier's growing realisation that his own suffering lacks the justification he was promised. The simile "like a flame" connects the hare to the warfare around it while individualising its pain, suggesting that war's most devastating losses are the ones too small and specific to appear in any official narrative.
 
@@ -795,11 +976,11 @@ Structurally, the poems' forms embody their respective modes of loss. "Poppies" 
 Contextually, both poets address the gap between public commemorative narratives and private experience. Weir, writing in response to the Iraq and Afghanistan conflicts, places her poem in dialogue with Remembrance Sunday rituals - poppies, memorials, the expected performance of national grief - while insisting on the irreducibly personal nature of a mother's loss. Hughes, who was born in 1930 and never fought in any war, drew on his father William's WWI accounts - William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment - to dismantle the rhetoric of heroism that sustained public support for war, replacing it with the brute phenomenology of terror.`,
               'Grade 8-9': `Weir and Hughes construct antiphonal accounts of war's capacity for destruction, each locating loss in a different domain - the domestic interior and the battlefield - yet converging on the shared recognition that war's deepest damage is to meaning itself: the frameworks of love, duty, honour, and connection through which human beings make sense of violence.
 
-"Poppies" operates through a poetics of displacement, in which the mother's grief is expressed not directly but through a meticulously curated sequence of sensory and domestic details that function as affective surrogates. The "sellotape bandaged" around her son's finger, the "cat hairs" on his blazer, the maternal gesture of smoothing a collar - each detail carries a double charge, simultaneously evoking the mundane intimacy of family life and the knowledge that these small physical contacts are threatened or already lost. Weir's textile imagery - "bias binding," "the poppy petals" she "pinned" - weaves an extended metaphor of fabrication and mending that is also, inescapably, an image of insufficient protection: cloth cannot stop bullets, and the mother's acts of care cannot prevent the harm she fears.
+"Poppies" operates through a poetics of displacement, in which the mother's grief is expressed not directly but through a meticulously curated sequence of sensory and domestic details that function as affective surrogates. The "sellotape bandaged" around her son's finger, the "cat hairs" on his blazer, the maternal gesture of smoothing a collar - each detail carries a double charge, simultaneously evoking the mundane intimacy of family life and the knowledge that these small physical contacts are threatened or already lost. Weir's textile imagery - "bias binding," the "crimped petals" she "pinned" - weaves an extended metaphor of fabrication and mending that is also, inescapably, an image of insufficient protection: cloth cannot stop bullets, and the mother's acts of care cannot prevent the harm she fears.
 
-The poem's temporal structure is its most formally innovative feature. Weir collapses chronological sequence, moving fluidly between the son's childhood ("playing at being Eskimos"), his departure, and the mother's solitary visit to the war memorial, without clear transitions. This technique mimics the phenomenology of anticipatory grief, in which past and future contaminate each other: every memory of the child is simultaneously an apprehension of loss, every domestic moment retrospectively charged with the knowledge of what is coming. The final image - the mother leaning against the memorial "like a wishbone" - is devastating in its implications. A wishbone is a structure designed to be broken, and its breaking is associated with the granting of wishes. The simile suggests both the mother's fragility and the desperate, futile quality of her hope.
+The poem's temporal structure is its most formally innovative feature. Weir collapses chronological sequence, moving fluidly between the son's childhood ("play at / being Eskimos"), his departure, and the mother's solitary visit to the war memorial, without clear transitions. This technique mimics the phenomenology of anticipatory grief, in which past and future contaminate each other: every memory of the child is simultaneously an apprehension of loss, every domestic moment retrospectively charged with the knowledge of what is coming. The final image - the mother leaning against the memorial "like a wishbone" - is devastating in its implications. A wishbone is a structure designed to be broken, and its breaking is associated with the granting of wishes. The simile suggests both the mother's fragility and the desperate, futile quality of her hope.
 
-Hughes's "Bayonet Charge" approaches loss from the opposite direction - not the slow accumulation of domestic grief but the sudden, violent annihilation of conceptual coherence. The poem's opening - "Suddenly he awoke and was running" - is masterful in its disorientation: "awoke" suggests not alertness but its opposite, a transition into a reality so extreme that previous consciousness now seems like sleep. The soldier's physical experience is rendered with hallucinatory intensity ("bullets smacking the belly out of the air," "blue crackling air"), but it is the collapse of ideological framework that constitutes the poem's central loss. The parenthetical - "(King, honour, human dignity, etcetera / Dropped like luxuries in a yelling alarm)" - is Hughes's most corrosive device. Hughes writes "etcetera" once (cite exactly as printed; do not abbreviate to "etc.", and don't double the word), and the dismissive single word performs the very exhaustion it describes, reducing the entire apparatus of patriotic justification to a list too tedious to complete. "Luxuries" is equally devastating: it implies that moral principles are affordable only in peacetime, that they are possessions discarded in extremis rather than foundations that sustain.
+Hughes's "Bayonet Charge" approaches loss from the opposite direction - not the slow accumulation of domestic grief but the sudden, violent annihilation of conceptual coherence. The poem's opening - "Suddenly he awoke and was running" - is masterful in its disorientation: "awoke" suggests not alertness but its opposite, a transition into a reality so extreme that previous consciousness now seems like sleep. The soldier's physical experience is rendered with hallucinatory intensity ("bullets smacking the belly out of the air," "blue crackling air"), but it is the collapse of ideological framework that constitutes the poem's central loss. The parenthetical - "(King, honour, human dignity, etcetera / Dropped like luxuries in a yelling alarm)" - is Hughes's most corrosive device: the dismissive single word performs the very exhaustion it describes, reducing the entire apparatus of patriotic justification to a list too tedious to complete. "Luxuries" is equally devastating: it implies that moral principles are affordable only in peacetime, that they are possessions discarded in extremis rather than foundations that sustain.
 
 The "yellow hare" that "rolled like a flame / And crawled in a threshing circle" is the poem's structural and moral pivot. It is the only moment of individualised suffering in a landscape of anonymous violence, and its impact derives precisely from its irrelevance - the hare's pain serves no strategic purpose, illustrates no principle, advances no cause. It is suffering as pure fact, stripped of narrative justification. Hughes suggests that this - not heroism, not sacrifice, not any of the stories war tells about itself - is the truth of combat: purposeless damage inflicted on sentient beings. The soldier's final act - running towards the enemy "his terror's touchy dynamite" - is not courage but the absence of any alternative, a "loss" of selfhood so complete that forward momentum is all that remains.
 
@@ -810,9 +991,13 @@ Both poets, though separated by context and approach, converge on a shared insig
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
               'AO3: Show understanding of context (6 marks)',
               'Must compare both poems throughout - not two separate essays',
-              'Band 5-6: Critical comparison with exploratory analysis; convincing context',
-              'Band 3-4: Clear comparison with explained analysis; clear context',
-              'Band 1-2: Simple comparison with awareness of methods; some context',
+              'These model answers choose "Bayonet Charge" by Ted Hughes as the second poem; any poem from "Power and conflict" that suits the question would do.',
+              'Level 6 (26-30): convincing, critical analysis and exploration',
+              'Level 5 (21-25): thoughtful, developed consideration',
+              'Level 4 (16-20): clear understanding',
+              'Level 3 (11-15): explained, structured comments',
+              'Level 2 (6-10): supported, relevant comments',
+              'Level 1 (1-5): simple, explicit comments',
             ],
           },
         ],
@@ -866,9 +1051,12 @@ The poem's deepest unsettling is its refusal to sentimentalise this indifference
             markScheme: [
               'AO1: Read, understand and respond - use textual references to support interpretation (12 marks)',
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
-              'Band 5-6: Critical, exploratory response; judicious references; integrated analysis of methods',
-              'Band 3-4: Clear, explained response; effective references; clear understanding of methods',
-              'Band 1-2: Simple response; some references; awareness of methods',
+              'Level 6 (21-24): convincing, critical analysis and exploration',
+              'Level 5 (17-20): thoughtful, developed consideration',
+              'Level 4 (13-16): clear understanding',
+              'Level 3 (9-12): explained, structured comments',
+              'Level 2 (5-8): supported, relevant comments',
+              'Level 1 (1-4): simple, explicit comments',
             ],
           },
           {
@@ -899,9 +1087,10 @@ This physical immersion enables "Estuary's" devastating concluding metaphor: gri
             markScheme: [
               'AO2: Analyse language, form and structure using subject terminology (8 marks)',
               'Must compare: identify similarities AND/OR differences',
-              'Band 3-4 (7-8 marks): Exploratory comparison with well-chosen references',
-              'Band 2-3 (4-6 marks): Clear comparison with relevant references',
-              'Band 1 (1-3 marks): Simple comparison with some references',
+              "Level 4 (7-8): critical, insightful comparison of the poets' methods",
+              "Level 3 (5-6): thoughtful comparison of the poets' methods",
+              'Level 2 (3-4): clear comparison of the poems',
+              'Level 1 (1-2): simple comment on one or both poems',
             ],
           },
         ],
@@ -945,7 +1134,7 @@ When the Inspector arrives, the stage directions say he creates "an impression o
 
 The Inspector controls the investigation by showing each character a photograph one at a time. He says "one person and one line of inquiry at a time" which shows he has a method and won't let the Birlings take control. He is different from the Birlings because he doesn't care about their social status - he ignores Birling's mentions of knowing the Chief Constable.
 
-The Inspector's famous speech at the end is very important: "We don't live alone. We are members of one body. We are responsible for each other." This is Priestley's message to the audience. It's a socialist message about how everyone in society should look after each other, not just themselves.
+The Inspector's famous speech at the end is very important: "We are members of one body. We are responsible for each other." This is Priestley's message to the audience. It's a socialist message about how everyone in society should look after each other, not just themselves.
 
 After the Inspector leaves, the family argue about whether he was real. This mystery makes the Inspector seem supernatural or like a figure representing conscience. Priestley uses him to deliver the message that even if nobody is watching, we should still behave responsibly.`,
               'Grade 6-7': `Priestley constructs the Inspector as a multi-functional dramatic device: he is simultaneously an investigator, a moral authority, a structural mechanism, and a symbolic figure whose ambiguous ontological status - is he real? supernatural? allegorical? - amplifies the play's thematic impact.
@@ -954,22 +1143,22 @@ The Inspector's entrance is carefully staged to disrupt the Birlings' complacenc
 
 The Inspector's investigative method is itself a statement of values. His insistence on showing the photograph to "one person... at a time" rejects the Birlings' instinct to construct a collective defence, instead isolating each individual with their specific guilt. This methodology embodies Priestley's moral argument: responsibility cannot be shared, diluted, or distributed - it must be individually acknowledged. The Inspector's refusal to defer to Birling's social connections demonstrates that in his moral framework, status confers no exemption.
 
-His language operates in a different register from the Birlings' evasive, euphemistic discourse. Where Birling speaks of "duty" and Mrs Birling of "her own people," the Inspector speaks in concrete, physical terms: Eva Smith "swallowed a lot of strong disinfectant" and "died in misery and agony." This refusal to sanitise suffering is a deliberate confrontation with the Birlings' habit of abstracting real consequences into comfortable categories.
+His language operates in a different register from the Birlings' evasive, euphemistic discourse. Where Birling speaks of "duty" and Mrs Birling of "Girls of that class", the Inspector speaks in concrete, physical terms: Eva Smith "swallowed a lot of strong disinfectant" and "died in misery and agony." This refusal to sanitise suffering is a deliberate confrontation with the Birlings' habit of abstracting real consequences into comfortable categories.
 
-The Inspector's final speech - "We are members of one body. We are responsible for each other" - operates on the boundary between dramatic dialogue and direct address to the audience. Its rhetorical structure - anaphoric repetition of "we," escalation from statement to warning ("if men will not learn that lesson, then they will be taught it in fire and blood and anguish") - draws on the traditions of both political oratory and biblical prophecy. For Priestley's 1945 audience, the "fire and blood and anguish" would have evoked both world wars, transforming the Inspector's warning from prediction to retrospective diagnosis.
+The Inspector's final speech - "We are members of one body. We are responsible for each other" - operates on the boundary between dramatic dialogue and direct address to the audience. Its rhetorical structure - anaphoric repetition of "we," escalation from statement to warning ("they will be taught it in fire and blood and anguish") - draws on the traditions of both political oratory and biblical prophecy. For Priestley's 1945 audience, the "fire and blood and anguish" would have evoked both world wars, transforming the Inspector's warning from prediction to retrospective diagnosis.
 
 The ambiguity surrounding the Inspector's identity - confirmed by the final phone call which announces a real inspector is on the way - prevents the Birlings (and the audience) from dismissing his message as fraudulent. Priestley ensures that the moral challenge outlasts the challenger, suggesting that conscience cannot be debunked by discrediting its messenger.`,
               'Grade 8-9': `The Inspector in An Inspector Calls occupies a unique position in English dramatic literature: he is at once a realistic character (a police investigator), a structural device (the mechanism through which each Birling's guilt is exposed), a rhetorical figure (Priestley's mouthpiece for socialist ideology), and a symbolic or supernatural presence whose irreducible ambiguity prevents the audience from domesticating his challenge into any single interpretive framework.
 
 Priestley's stage directions introduce the Inspector through a vocabulary of materiality - "massiveness, solidity and purposefulness" - that is paradoxically destabilised by everything that follows. A character described in terms of physical weight turns out to have no verifiable institutional existence; his "solidity" is a quality of presence, not of identity. This initial misdirection is deliberate: Priestley establishes the Inspector as something the audience can see and feel but not categorise, a figure who resists the very impulse to classify and contain that defines the Birlings' worldview.
 
-The Inspector's dramatic entrance interrupts Birling's speech at the precise moment when its ideological content is most explicitly stated: "a man has to mind his own business and look after himself and his own." The timing is not coincidental but structural: the Inspector arrives as the antithesis of Birling's thesis, the play's dialectical architecture announced in its staging. The lighting change - from "pink and intimate" to "brighter and harder" - translates this ideological confrontation into visual language, suggesting that the Inspector's function is not merely to investigate but to illuminate: to replace the Birlings' preferred self-image with something closer to objective truth.
+The Inspector's dramatic entrance interrupts Birling's speech at the precise moment when its ideological content is most explicitly stated: "a man has to mind his own business and look after himself". The timing is not coincidental but structural: the Inspector arrives as the antithesis of Birling's thesis, the play's dialectical architecture announced in its staging. The lighting change - from "pink and intimate" to "brighter and harder" - translates this ideological confrontation into visual language, suggesting that the Inspector's function is not merely to investigate but to illuminate: to replace the Birlings' preferred self-image with something closer to objective truth.
 
 The Inspector's investigative methodology is itself an ideological statement of considerable sophistication. His insistence on "one person and one line of inquiry at a time" has been read as a technique of police procedure, but it functions more precisely as a dismantling of collective responsibility in favour of individual accountability. The Birlings instinctively seek to distribute guilt - each pointing to the next link in the chain - but the Inspector forces each to confront their specific contribution in isolation. This is Priestley's answer to the most common defence of systemic injustice: the claim that individual actions are insignificant within larger structures. The Inspector demonstrates that the structure is nothing but individual actions, and that responsibility cannot be evaded by gesturing at complexity.
 
-The Inspector's language constitutes a sustained assault on the Birlings' discursive conventions. Where the family employs euphemism, abstraction, and circumlocution - "a girl of that sort," "her own people," "I can't accept any responsibility" - the Inspector insists on the material, the physical, the specific: "She'd swallowed a lot of strong disinfectant. It burnt her inside out." This linguistic strategy is not merely rhetorical effectiveness but philosophical commitment: the Inspector refuses to permit the distance between language and reality that makes indifference possible. By forcing the Birlings to hear what actually happened to Eva Smith's body, he collapses the gap between their actions and their consequences.
+The Inspector's language constitutes a sustained assault on the Birlings' discursive conventions. Where the family employs euphemism, abstraction, and circumlocution - "a girl of that sort," "Girls of that class," "I can't accept any responsibility" - the Inspector insists on the material, the physical, the specific: "she'd swallowed a lot of strong disinfectant. Burnt her inside out". This linguistic strategy is not merely rhetorical effectiveness but philosophical commitment: the Inspector refuses to permit the distance between language and reality that makes indifference possible. By forcing the Birlings to hear what actually happened to Eva Smith's body, he collapses the gap between their actions and their consequences.
 
-The Inspector's final speech represents Priestley's most direct intervention in the dramatic texture. The passage - "We don't live alone. We are members of one body. We are responsible for each other. And I tell you that the time will soon come when, if men will not learn that lesson, then they will be taught it in fire and blood and anguish" - operates simultaneously in several registers. It is prophetic (the "fire and blood" anticipates both world wars for the 1912 characters); it is retrospective (the 1945 audience has already witnessed the fulfilment of this prophecy); and it is prospective (Priestley is arguing that the lesson must be learned now, in 1945, or it will be taught again). The temporal layering transforms the speech from a character's dialogue into a direct address to the audience, breaking the fourth wall without technically doing so.
+The Inspector's final speech represents Priestley's most direct intervention in the dramatic texture. The passage - "We are members of one body ... fire and blood and anguish" - operates simultaneously in several registers. It is prophetic (the "fire and blood" anticipates both world wars for the 1912 characters); it is retrospective (the 1945 audience has already witnessed the fulfilment of this prophecy); and it is prospective (Priestley is arguing that the lesson must be learned now, in 1945, or it will be taught again). The temporal layering transforms the speech from a character's dialogue into a direct address to the audience, breaking the fourth wall without technically doing so.
 
 The question of the Inspector's ontological status - human, supernatural, temporal anomaly, collective conscience - is not a puzzle to be solved but a deliberately irresolvable ambiguity that is the play's final and most sophisticated argumentative move. If the Inspector is real, his message has institutional authority; if supernatural, it has metaphysical authority; if allegorical, it has philosophical authority. By refusing to confirm any single reading, Priestley ensures that the Inspector's challenge cannot be domesticated into a framework that the audience can manage and thereby dismiss. The final phone call - announcing a real inspector and a real death - seals this strategy: it reasserts the reality of consequence at the precise moment when the Birlings (and potentially the audience) have begun to construct a narrative of escape. The play ends not with resolution but with the renewal of the challenge, suggesting that the Inspector's function is not to judge but to return - as many times as necessary, in as many forms as necessary - until the lesson is learned.`,
             },
@@ -978,9 +1167,13 @@ The question of the Inspector's ontological status - human, supernatural, tempor
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
               'AO3: Show understanding of context (6 marks)',
               'AO4: SPaG - spelling, punctuation, grammar, vocabulary (4 marks)',
-              'Band 5-6: Critical/exploratory response; judicious references; analysis of methods; convincing context',
-              'Band 3-4: Clear/explained response; effective references; understanding of methods; clear context',
-              'Band 1-2: Simple/emerging response; some references; awareness of methods; some context',
+              'Level 6 (26-30): convincing, critical analysis and exploration',
+              'Level 5 (21-25): thoughtful, developed consideration',
+              'Level 4 (16-20): clear understanding',
+              'Level 3 (11-15): explained, structured comments',
+              'Level 2 (6-10): supported, relevant comments',
+              'Level 1 (1-5): simple, explicit comments',
+              'AO4: high performance 4 marks, intermediate 2-3, threshold 1',
             ],
           },
         ],
@@ -988,7 +1181,8 @@ The question of the Inspector's ontological status - human, supernatural, tempor
       {
         id: 'aqa-lit-p2-04-secB',
         title: 'Section B: Poetry Anthology',
-        description: 'Answer one question from this section.\n\nPower and Conflict Anthology',
+        description:
+          'Answer one question from this section.\n\nPower and conflict. In the exam the named poem is printed with the question; "Remains" is still in copyright, so this practice paper cannot print it. Use your copy of the anthology for it, choose the second poem yourself from the same cluster, and write about that one from memory.',
         totalMarks: 30,
         suggestedTimeMinutes: 45,
         questions: [
@@ -996,36 +1190,36 @@ The question of the Inspector's ontological status - human, supernatural, tempor
             id: 'aqa-lit-p2-04-q2',
             questionNumber: 2,
             questionText:
-              'Compare how poets present the effects of conflict on identity in "Remains" by Simon Armitage and "Bayonet Charge" by Ted Hughes.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
+              'Compare how poets present the effects of conflict on identity in "Remains" and in one other poem from "Power and conflict".\n\n[30 marks]',
             marks: 30,
             suggestedTimeMinutes: 45,
             questionType: 'comparison',
             modelAnswers: {
-              'Grade 4-5': `Both "Remains" and "Bayonet Charge" show how conflict destroys a person's sense of who they are. In "Remains," the soldier can't escape the memory of killing someone. The dead man is "dug in behind my eyes" which is a metaphor showing the memory has become part of him. His identity has been changed by what he did.
+              'Grade 4-5': `Both "Remains" and "Bayonet Charge" show how conflict destroys a person's sense of who they are. In "Remains," the soldier can't escape the memory of killing someone. The dead man is "here in my head when I close my eyes, / dug in behind enemy lines", a metaphor showing the memory has become part of him. His identity has been changed by what he did.
 
-In "Bayonet Charge," the soldier loses his beliefs during battle. He started out believing in "King, honour, human dignity, etcetera" but during the charge these ideas "dropped like luxuries." (Hughes writes "etcetera" once - cite exactly as printed; do not abbreviate to "etc.", and don't double the word.) The word "luxuries" shows that in the middle of battle, beliefs are not important anymore - only survival matters. His identity as a patriotic soldier is replaced by pure fear.
+In "Bayonet Charge," the soldier loses his beliefs during battle. He started out believing in "King, honour, human dignity, etcetera" but during the charge these ideas "dropped like luxuries." The word "luxuries" shows that in the middle of battle, beliefs are not important anymore - only survival matters. His identity as a patriotic soldier is replaced by pure fear.
 
 Both poems show soldiers whose identities are damaged, but in different ways. Armitage's soldier suffers after the event - he can't sleep and tries to "flush" the memory away. Hughes's soldier suffers during the event - he is confused and frightened in the middle of the charge. The colloquial language in "Remains" ("legs it up the road") makes it sound like real speech, while Hughes uses more poetic imagery ("blue crackling air").
 
 The context matters because "Remains" is based on real accounts from soldiers in Iraq, while "Bayonet Charge" imagines a World War One infantry charge. Hughes was born in 1930 and never fought in any war - he drew on his father William's WWI accounts (William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment) to imagine the soldier's terror. Both poems show that whatever the war, conflict strips away people's sense of self.`,
               'Grade 6-7': `Armitage and Hughes both present conflict as a force that fragments and reconstitutes identity, but they locate this transformation at different points in the temporal arc of combat experience - Armitage in the aftermath, Hughes in the immediate moment of violence.
 
-In "Remains," the dissolution of identity is tracked through the poem's pronominal structure. The opening stanzas employ the collective "we" - "We get sent out," "all three of us open fire" - distributing responsibility across the group and maintaining the soldier's identity as part of a unit. The transition to the singular "I" - "I see broad daylight on the other side" - marks the moment at which collective identity fails as a protective mechanism. The soldier's individual consciousness becomes inescapable, and with it, individual guilt. The dead man, "dug in behind my eyes," has colonised the speaker's perceptual apparatus; the military metaphor of being "dug in" suggests that the victim has become a permanent occupant of the soldier's identity, a presence that cannot be dislodged.
+In "Remains," the dissolution of identity is tracked through the poem's pronominal structure. The opening stanzas employ the collective "we" - "We get sent out," "all three of us open fire" - distributing responsibility across the group and maintaining the soldier's identity as part of a unit. The transition to the singular "I" - "I see broad daylight on the other side" - marks the moment at which collective identity fails as a protective mechanism. The soldier's individual consciousness becomes inescapable, and with it, individual guilt. The dead man, "here in my head when I close my eyes," has colonised the speaker's perceptual apparatus; the military metaphor of being "dug in behind enemy lines" suggests that the victim has become a permanent occupant of the soldier's identity, a presence that cannot be dislodged.
 
-Hughes constructs identity-loss as a real-time process. The opening - "Suddenly he awoke and was running" - presents a protagonist already mid-action, denied the orienting framework of beginning. The third-person pronoun "he" creates distance, as though the speaker cannot fully identify with the figure being described - or as though the soldier has become sufficiently alien to himself that first-person narration is impossible. The parenthetical aside - "(King, honour, human dignity, etcetera / Dropped like luxuries in a yelling alarm)" - dramatises the shedding of ideological identity under extreme pressure. Hughes writes "etcetera" once (cite exactly as printed; do not abbreviate to "etc.", and don't double the word); the single dismissive word performs the bankruptcy of patriotic language, trailing off into an admission that the entire framework was always a list - enumerable, disposable, not fundamental.
+Hughes constructs identity-loss as a real-time process. The opening - "Suddenly he awoke and was running" - presents a protagonist already mid-action, denied the orienting framework of beginning. The third-person pronoun "he" creates distance, as though the speaker cannot fully identify with the figure being described - or as though the soldier has become sufficiently alien to himself that first-person narration is impossible. The parenthetical aside - "(King, honour, human dignity, etcetera / Dropped like luxuries in a yelling alarm)" - dramatises the shedding of ideological identity under extreme pressure: the single dismissive word performs the bankruptcy of patriotic language, trailing off into an admission that the entire framework was always a list - enumerable, disposable, not fundamental.
 
 Structurally, the poems mirror their protagonists' psychological states. "Remains" begins with the appearance of narrative coherence (stanzas, a chronological account) but disintegrates into the final couplet's isolation: "his bloody life in my bloody hands." The polysemy of "bloody" - literally blood-stained, colloquially emphatic - captures the contamination of everyday language by violent experience. "Bayonet Charge" deploys three stanzas of increasing fragmentation, the enjambments and caesurae accelerating until the final image of the soldier "plunged past" understanding itself, running on pure instinct where identity once was.
 
 Both poets suggest that conflict does not merely threaten the body but dismantles the narrative structures through which identity is maintained. Armitage's soldier cannot construct a version of events that allows him to live with himself; Hughes's soldier cannot sustain the version of himself that made the charge seem meaningful. In both cases, the "self" that entered conflict no longer exists, and what replaces it is not a new identity but an absence - a space where coherent selfhood used to be.`,
               'Grade 8-9': `Armitage and Hughes construct complementary phenomenologies of identity-destruction under the pressure of combat, each deploying form, voice, and imagery as diagnostic instruments that reveal the specific mechanisms by which warfare dismantles the coherent selfhood soldiers carry into battle.
 
-"Remains" dramatises the progressive failure of the strategies through which the soldier attempts to contain his experience within a manageable identity. The opening's collective voice - "On another occasion, we got sent out" - performs the regiment's institutional function: by distributing agency across the group ("all three of us open fire"), the military collective absorbs individual responsibility, allowing each soldier to understand himself as a component rather than an author of violence. Armitage tracks the collapse of this protective mechanism with forensic precision. The shift to "I" at the poem's centre marks the moment at which the collective identity proves insufficient to the moral weight of what has occurred. The soldier's attempt to manage this through narrative - the anecdotal, conversational register ("and somebody else and somebody else") - likewise fails: the colloquial voice that initially suggests casual control increasingly reveals itself as a form of compulsive repetition, the verbal tic of a mind unable to stop returning to the scene it cannot process.
+"Remains" dramatises the progressive failure of the strategies through which the soldier attempts to contain his experience within a manageable identity. The opening's collective voice - "On another occasion, we get sent out" - performs the regiment's institutional function: by distributing agency across the group ("all three of us open fire"), the military collective absorbs individual responsibility, allowing each soldier to understand himself as a component rather than an author of violence. Armitage tracks the collapse of this protective mechanism with forensic precision. The shift to "I" at the poem's centre marks the moment at which the collective identity proves insufficient to the moral weight of what has occurred. The soldier's attempt to manage this through narrative - the anecdotal, conversational register ("and somebody else and somebody else") - likewise fails: the colloquial voice that initially suggests casual control increasingly reveals itself as a form of compulsive repetition, the verbal tic of a mind unable to stop returning to the scene it cannot process.
 
-The climactic image - the dead man "dug in behind my eyes" - is the poem's most concentrated statement of identity-corruption. "Dug in" imports the military vocabulary of entrenchment into the psychological domain, suggesting that the victim has established a permanent fortified position within the soldier's consciousness. The eyes, the organs of witness, have been occupied by the object of their witnessing. Armitage suggests that the act of killing does not merely produce guilt but restructures perception itself: the soldier now sees through the dead man, his visual field permanently mediated by the presence that inhabits it.
+The climactic image - the dead man "here in my head when I close my eyes, / dug in behind enemy lines" - is the poem's most concentrated statement of identity-corruption. "Dug in" imports the military vocabulary of entrenchment into the psychological domain, suggesting that the victim has established a permanent fortified position within the soldier's consciousness. The eyes, the organs of witness, have been occupied by the object of their witnessing. Armitage suggests that the act of killing does not merely produce guilt but restructures perception itself: the soldier now sees through the dead man, his visual field permanently mediated by the presence that inhabits it.
 
-Hughes approaches identity-dissolution from a radically different angle: not the retrospective failure of narrative containment but the real-time evacuation of ideological content under physical duress. "Bayonet Charge" presents a protagonist mid-action whose identity - the complex of beliefs, loyalties, and self-understandings that motivated his enlistment - is being stripped away faster than consciousness can register. The opening "Suddenly he awoke" positions the charge as a transition between states of consciousness: the "sleep" of peacetime ideology and the violent "waking" of combat reality. The third-person narration is crucial: Hughes's refusal of "I" suggests that the experience is too extreme for the first-person to accommodate - the soldier has become an object, a body in motion, witnessed rather than witnessing.
+Hughes approaches identity-dissolution from a radically different angle: not the retrospective failure of narrative containment but the real-time evacuation of ideological content under physical duress. "Bayonet Charge" presents a protagonist mid-action whose identity - the complex of beliefs, loyalties, and self-understandings that motivated his enlistment - is being stripped away faster than consciousness can register. The opening "Suddenly he awoke" positions the charge as a transition between states of consciousness: the sleep of peacetime ideology and the violent waking of combat reality. The third-person narration is crucial: Hughes's refusal of "I" suggests that the experience is too extreme for the first-person to accommodate - the soldier has become an object, a body in motion, witnessed rather than witnessing.
 
-The parenthetical - "(King, honour, human dignity, etcetera / Dropped like luxuries in a yelling alarm)" - is Hughes's most devastating formal move. The parentheses themselves perform relegation: the entire structure of patriotic identity is bracketed, enclosed, set aside from the poem's "real" content (which is physical sensation and terror). The dismissive single "etcetera" - which Hughes writes once and which should be cited exactly as printed (never doubled, never abbreviated to "etc.") - detonates the passage: it transforms patriotic values from convictions into a list, and a list not worth completing. "Luxuries" extends the metaphor: ideals are possessions rather than foundations, items one carries when circumstances permit and discards when they do not. Hughes implies that ideological identity - the sense of oneself as a patriot, a citizen, a moral agent - is not hardwired but accessory, and that combat reveals this with merciless clarity.
+The parenthetical - "(King, honour, human dignity, etcetera / Dropped like luxuries in a yelling alarm)" - is Hughes's most devastating formal move. The parentheses themselves perform relegation: the entire structure of patriotic identity is bracketed, enclosed, set aside from the poem's "real" content (which is physical sensation and terror). The dismissive single "etcetera" detonates the passage: it transforms patriotic values from convictions into a list, and a list not worth completing. "Luxuries" extends the metaphor: ideals are possessions rather than foundations, items one carries when circumstances permit and discards when they do not. Hughes implies that ideological identity - the sense of oneself as a patriot, a citizen, a moral agent - is not hardwired but accessory, and that combat reveals this with merciless clarity.
 
 Both poets converge on the recognition that conflict does not merely harm identity but reveals its contingency. Armitage shows that the soldier's post-combat identity is not a damaged version of his former self but evidence that the former self was always a construction - one that depended on never having to accommodate the reality of killing. Hughes shows that the patriotic self was always provisional - a set of propositions that functioned only in the absence of the experiences they purported to justify. In both cases, combat does not destroy a real self but exposes the fragility of what was taken for one, leaving not a wounded identity but the vertiginous recognition that identity itself may be less substantial than it appears.`,
             },
@@ -1034,9 +1228,13 @@ Both poets converge on the recognition that conflict does not merely harm identi
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
               'AO3: Show understanding of context (6 marks)',
               'Must compare both poems throughout',
-              'Band 5-6: Critical comparison with exploratory analysis; convincing context',
-              'Band 3-4: Clear comparison with explained analysis; clear context',
-              'Band 1-2: Simple comparison with awareness of methods; some context',
+              'These model answers choose "Bayonet Charge" by Ted Hughes as the second poem; any poem from "Power and conflict" that suits the question would do.',
+              'Level 6 (26-30): convincing, critical analysis and exploration',
+              'Level 5 (21-25): thoughtful, developed consideration',
+              'Level 4 (16-20): clear understanding',
+              'Level 3 (11-15): explained, structured comments',
+              'Level 2 (6-10): supported, relevant comments',
+              'Level 1 (1-5): simple, explicit comments',
             ],
           },
         ],
@@ -1090,9 +1288,12 @@ The final stanza performs the poem's most sophisticated critique. The data "says
             markScheme: [
               'AO1: Read, understand and respond - use textual references to support interpretation (12 marks)',
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
-              'Band 5-6: Critical, exploratory response; judicious references; integrated analysis of methods',
-              'Band 3-4: Clear, explained response; effective references; clear understanding of methods',
-              'Band 1-2: Simple response; some references; awareness of methods',
+              'Level 6 (21-24): convincing, critical analysis and exploration',
+              'Level 5 (17-20): thoughtful, developed consideration',
+              'Level 4 (13-16): clear understanding',
+              'Level 3 (9-12): explained, structured comments',
+              'Level 2 (5-8): supported, relevant comments',
+              'Level 1 (1-4): simple, explicit comments',
             ],
           },
           {
@@ -1123,9 +1324,10 @@ The phrase "that particular loss" in "Assembly" carries special weight. "Particu
             markScheme: [
               'AO2: Analyse language, form and structure using subject terminology (8 marks)',
               'Must compare: identify similarities AND/OR differences',
-              'Band 3-4 (7-8 marks): Exploratory comparison with well-chosen references',
-              'Band 2-3 (4-6 marks): Clear comparison with relevant references',
-              'Band 1 (1-3 marks): Simple comparison with some references',
+              "Level 4 (7-8): critical, insightful comparison of the poets' methods",
+              "Level 3 (5-6): thoughtful comparison of the poets' methods",
+              'Level 2 (3-4): clear comparison of the poems',
+              'Level 1 (1-2): simple comment on one or both poems',
             ],
           },
         ],
@@ -1176,13 +1378,13 @@ At the end, when the family thinks the Inspector was fake, the parents celebrate
 Priestley uses this to show his audience that the younger generation can build a better society based on caring for others, not selfishness. He wrote the play in 1945 when there was hope for a new, fairer society.`,
               'Grade 6-7': `Priestley structures An Inspector Calls around a generational fault line that serves as both a realistic dramatic conflict and an allegorical argument about the possibility of social transformation. The older Birlings - Arthur and Sybil - represent the entrenched values of Edwardian capitalism, while Sheila and Eric embody the potential for moral evolution that Priestley identifies with the post-war generation.
 
-The play's opening establishes generational harmony as a surface condition. The family's celebration of Sheila's engagement creates an appearance of unity, but Priestley plants early signs of instability. Birling's patronising speeches to Eric and Gerald ("you'll hear some people say that war is inevitable") position the younger generation as a passive audience for patriarchal wisdom, while Sheila's playful challenge to Gerald about his summer absence hints at an independent intelligence not yet activated.
+The play's opening establishes generational harmony as a surface condition. The family's celebration of Sheila's engagement creates an appearance of unity, but Priestley plants early signs of instability. Birling's patronising speeches to Eric and Gerald ("you'll hear some people say that war's inevitable") position the younger generation as a passive audience for patriarchal wisdom, while Sheila's playful challenge to Gerald about his summer absence hints at an independent intelligence not yet activated.
 
 The Inspector's investigation systematically activates this latent generational tension. Each revelation widens the divide, but the crucial distinction is not between innocence and guilt - all four Birlings are implicated - but between the capacity and the refusal to learn. Sheila's immediate, visceral response ("I'll never, never do it again") represents what the play values: the willingness to allow experience to restructure moral understanding. Her parents' responses - Birling's economic rationalism, Mrs Birling's class-based dismissal - represent its opposite: the deployment of existing ideological frameworks to neutralise moral challenge.
 
-Eric's role in the generational conflict is more complex than Sheila's. His culpability is arguably the greatest - he has exploited Eva sexually and stolen money - yet Priestley presents his honest acknowledgement of guilt as morally superior to his parents' evasions. Eric's outburst - "you're not the kind of father a chap could go to when he's in trouble" - punctures Birling's patriarchal authority, revealing that the older generation's claim to moral leadership is hollow.
+Eric's role in the generational conflict is more complex than Sheila's. His culpability is arguably the greatest - he has exploited Eva sexually and stolen money - yet Priestley presents his honest acknowledgement of guilt as morally superior to his parents' evasions. Eric's outburst - "you're not the kind of father a chap could go to" - punctures Birling's patriarchal authority, revealing that the older generation's claim to moral leadership is hollow.
 
-The play's denouement crystallises the generational divide into a philosophical opposition. Birling and Mrs Birling eagerly deconstruct the Inspector's credentials, treating the investigation as a problem of verification rather than morality. Sheila and Eric resist this retreat: Sheila's insistence that "the ones I knew are the ones who died" and Eric's contemptuous "you lot may be letting yourselves out nicely" demonstrate that their transformation is irreversible.
+The play's denouement crystallises the generational divide into a philosophical opposition. Birling and Mrs Birling eagerly deconstruct the Inspector's credentials, treating the investigation as a problem of verification rather than morality. Sheila and Eric resist this retreat: Sheila's insistence that "you're forgetting one thing I still can't forget" and Eric's contemptuous "you lot may be letting yourselves out nicely" demonstrate that their transformation is irreversible.
 
 Contextually, Priestley's generational argument is inseparable from the play's 1945 context. Writing as Britain prepared to elect a Labour government committed to the welfare state, Priestley presents the younger generation as the agents of a collectivist future - not because they are innocent, but because they are capable of change. The older generation, locked into the individualist assumptions of the Edwardian era, cannot change because they have too much invested in the existing order. The play thus argues that social progress depends not on the conversion of those who benefit from inequality but on the moral courage of those young enough to imagine alternatives.`,
               'Grade 8-9': `Priestley's dramatisation of generational conflict in An Inspector Calls operates on three interlocking levels: as a psychologically credible family drama, as a structural analysis of how ideological reproduction is disrupted, and as a performative argument addressed to the 1945 audience about the historical agency of the post-war generation.
@@ -1191,7 +1393,7 @@ The play's architecture systematically demonstrates that the generational divide
 
 Sheila and Eric, by contrast, demonstrate what might be called epistemological porosity: the capacity to allow new moral information to restructure existing understanding. Sheila's trajectory is particularly revealing. Her initial guilt is emotional and reactive - "I'll never, never do it again" - but it develops into something more sophisticated. By Act Three, she has internalised not merely the Inspector's conclusions but his method: she reads Gerald's evasions with the Inspector's acuity, warning "you fool - he knows." This evolution from passive recipient of moral instruction to active moral agent is Priestley's model for the transformation he hopes to catalyse in his audience.
 
-Eric's generational rebellion is more volatile and more conflicted. His crimes - the sexual exploitation of Eva, the theft from his father's business - represent not merely individual moral failures but the logical consequences of the older generation's values. Eric has learned from his father that women of Eva's class are available for use, and from his mother that one's own needs take precedence over others' suffering. His guilt is genuine, but so is his fury: "you're not the kind of father a chap could go to when he's in trouble" is simultaneously a personal accusation and a structural critique - Eric's failings are the products of a parental model that taught self-interest and withheld emotional intimacy. Priestley suggests that the younger generation's moral potential is compromised, though not destroyed, by the older generation's inheritance.
+Eric's generational rebellion is more volatile and more conflicted. His crimes - the sexual exploitation of Eva, the theft from his father's business - represent not merely individual moral failures but the logical consequences of the older generation's values. Eric has learned from his father that women of Eva's class are available for use, and from his mother that one's own needs take precedence over others' suffering. His guilt is genuine, but so is his fury: "you're not the kind of father a chap could go to" is simultaneously a personal accusation and a structural critique - Eric's failings are the products of a parental model that taught self-interest and withheld emotional intimacy. Priestley suggests that the younger generation's moral potential is compromised, though not destroyed, by the older generation's inheritance.
 
 The play's denouement stages the generational conflict as an irreconcilable epistemological crisis. When Birling and Mrs Birling discover that the Inspector may not have been genuine, they experience not merely relief but vindication - if the messenger is discredited, the message can be dismissed. Their celebratory mood is a precise dramatisation of how ideological systems protect themselves: by converting a question of morality into a question of evidence, and by treating the absence of external verification as proof that no moral obligation exists. Sheila's counter-argument - "everything we said had happened really had happened" - articulates a radically different epistemology: moral truth is self-authenticating and does not require institutional endorsement.
 
@@ -1204,9 +1406,13 @@ Priestley's 1945 audience occupies precisely the position he has prepared for th
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
               'AO3: Show understanding of context (6 marks)',
               'AO4: SPaG - spelling, punctuation, grammar, vocabulary (4 marks)',
-              'Band 5-6: Critical/exploratory response; judicious references; analysis of methods; convincing context',
-              'Band 3-4: Clear/explained response; effective references; understanding of methods; clear context',
-              'Band 1-2: Simple/emerging response; some references; awareness of methods; some context',
+              'Level 6 (26-30): convincing, critical analysis and exploration',
+              'Level 5 (21-25): thoughtful, developed consideration',
+              'Level 4 (16-20): clear understanding',
+              'Level 3 (11-15): explained, structured comments',
+              'Level 2 (6-10): supported, relevant comments',
+              'Level 1 (1-5): simple, explicit comments',
+              'AO4: high performance 4 marks, intermediate 2-3, threshold 1',
             ],
           },
         ],
@@ -1214,7 +1420,8 @@ Priestley's 1945 audience occupies precisely the position he has prepared for th
       {
         id: 'aqa-lit-p2-05-secB',
         title: 'Section B: Poetry Anthology',
-        description: 'Answer one question from this section.\n\nPower and Conflict Anthology',
+        description:
+          'Answer one question from this section.\n\nPower and conflict. The named poem is printed with the question. Choose the second poem yourself, from the same cluster, and write about it from memory: the exam is closed book.',
         totalMarks: 30,
         suggestedTimeMinutes: 45,
         questions: [
@@ -1222,36 +1429,38 @@ Priestley's 1945 audience occupies precisely the position he has prepared for th
             id: 'aqa-lit-p2-05-q2',
             questionNumber: 2,
             questionText:
-              'Compare how poets present ideas about memory and the past in "Ozymandias" by Percy Bysshe Shelley and "Poppies" by Jane Weir.\n\nIn your answer you should consider:\n• the poets\' use of language, form and structure\n• the influence of the contexts in which the poems were written.\n\n[30 marks]',
+              'Compare how poets present ideas about memory and the past in "Ozymandias" and in one other poem from "Power and conflict".\n\n[30 marks]',
             marks: 30,
             suggestedTimeMinutes: 45,
             questionType: 'comparison',
+            extract: OZYMANDIAS,
+            extractSource: OZYMANDIAS_SOURCE,
             modelAnswers: {
               'Grade 4-5': `Both "Ozymandias" and "Poppies" deal with the past and memory but in very different ways. "Ozymandias" is about how a powerful king from the past has been forgotten, while "Poppies" is about a mother remembering her son who has gone to war.
 
-In "Ozymandias," the past is shown through a ruined statue in the desert. The inscription says "Look on my Works, ye Mighty, and despair!" but there is nothing left - just "lone and level sands." This shows that even the most powerful people will be forgotten. Memory of Ozymandias only survives because of the sculptor who captured his expression.
+In "Ozymandias," the past is shown through a ruined statue in the desert. The inscription says "Look on my works, ye Mighty, and despair!" but there is nothing left - just "lone and level sands." This shows that even the most powerful people will be forgotten. Memory of Ozymandias only survives because of the sculptor who captured his expression.
 
-In "Poppies," the mother remembers personal, intimate details about her son: "smoothed down your collar," "cat hairs," "Sellotape bandaged around his hand." These small memories are very different from Ozymandias's grand inscription. The mother's memories are about love and everyday life, while Ozymandias tried to be remembered through power and fear.
+In "Poppies," the mother remembers personal, intimate details about her son: "smoothed down your shirt's / upturned collar," "white cat hairs," "Sellotape bandaged around my hand." These small memories are very different from Ozymandias's grand inscription. The mother's memories are about love and everyday life, while Ozymandias tried to be remembered through power and fear.
 
-Both poems show that the past doesn't stay the same. Ozymandias wanted to be remembered as powerful but is now just a "colossal Wreck." The mother in "Poppies" has clear, vivid memories but they are mixed with sadness because her son might not come back.
+Both poems show that the past doesn't stay the same. Ozymandias wanted to be remembered as powerful but is now just a "colossal wreck." The mother in "Poppies" has clear, vivid memories but they are mixed with sadness because her son might not come back.
 
 Shelley was a Romantic poet who criticised powerful rulers, while Weir wrote about modern warfare and the personal cost of conflict. Both show that what we remember - and how we remember - matters.`,
               // 2 October 2026: the desert "stretches far away" misquoted Shelley, whose line is "The
               // lone and level sands stretch far away".
               'Grade 6-7': `Shelley and Weir engage with memory and the past from diametrically opposed positions - the monumental and the intimate - yet both poets ultimately reveal the fragility of all attempts to preserve the past, whether through imperial inscription or maternal love.
 
-"Ozymandias" presents the past as something that actively resists preservation. The statue's "shattered visage" and "trunkless legs" are images of deliberate decomposition: time has not merely eroded Ozymandias's monument but dismembered it, reducing imperial ambition to archaeological fragments. The irony of the inscription - "Look on my Works, ye Mighty, and despair!" - depends on the gap between intended and actual meaning: Ozymandias commanded future generations to despair at his greatness, but the "works" have vanished, and the despair the inscription now provokes is existential rather than intimidatory. Memory, Shelley suggests, is unreliable not because it distorts but because it fails - the "lone and level sands stretch far away", their blankness an image of historical amnesia.
+"Ozymandias" presents the past as something that actively resists preservation. The statue's "shattered visage" and "trunkless legs" are images of deliberate decomposition: time has not merely eroded Ozymandias's monument but dismembered it, reducing imperial ambition to archaeological fragments. The irony of the inscription - "Look on my works, ye Mighty, and despair!" - depends on the gap between intended and actual meaning: Ozymandias commanded future generations to despair at his greatness, but the "works" have vanished, and the despair the inscription now provokes is existential rather than intimidatory. Memory, Shelley suggests, is unreliable not because it distorts but because it fails - the "lone and level sands stretch far away", their blankness an image of historical amnesia.
 
 However, the poem preserves a counter-memory. The sculptor's art - which "well those passions read / Which yet survive, stamped on these lifeless things" - has outlasted the king's political power. The sculptor read Ozymandias's character and "stamped" it in stone, and this act of observation (rather than Ozymandias's own self-aggrandisement) is what survives. Shelley implies that artistic memory - based on truthful observation - is more durable than political memory - based on self-serving propaganda.
 
-"Poppies" constructs memory as a sensory, embodied experience inseparable from the body that remembers. The mother's recollections - "the world overflowing / like a treasure chest," "Sellotape bandaged around his hand" - are not chronological or analytical but associative, triggered by physical sensations and domestic objects. Weir's temporal structure, which collapses past and present into a single continuous moment, mirrors the phenomenology of grief: for the bereaved mother, the son's childhood and his departure are not sequential events but co-present realities, each contaminating the other.
+"Poppies" constructs memory as a sensory, embodied experience inseparable from the body that remembers. The mother's recollections - "the world overflowing / like a treasure chest," "Sellotape bandaged around my hand" - are not chronological or analytical but associative, triggered by physical sensations and domestic objects. Weir's temporal structure, which collapses past and present into a single continuous moment, mirrors the phenomenology of grief: for the bereaved mother, the son's childhood and his departure are not sequential events but co-present realities, each contaminating the other.
 
 Structurally, the poems embody different relationships to time. "Ozymandias" is framed through multiple temporal layers - the poet, the traveller, the sculptor, Ozymandias - each adding distance from the original moment. "Poppies" resists temporal distance through the second person ("you"), addressing the absent son directly and collapsing the space between past and present. Where Shelley's layers of narration enact historical remoteness, Weir's direct address performs memory's insistence on intimacy.
 
 Both poems suggest that the past is defined less by what it contained than by who is remembering and why. Ozymandias sought to control his legacy through force; the mother cannot control hers at all. Yet the mother's vulnerable, fragmented memories prove more emotionally enduring than Ozymandias's calculated inscription - suggesting that it is precisely the uncontrolled, involuntary quality of personal memory that gives it its power.`,
               'Grade 8-9': `Shelley and Weir construct antithetical but ultimately complementary models of how the past persists - and fails to persist - in human consciousness, each exploring the tension between the desire to preserve and the inevitability of loss.
 
-"Ozymandias" interrogates monumental memory: the deliberate, public attempt to project the self into the future through enduring material inscription. Ozymandias's statue is memory-as-architecture, designed to communicate power across centuries. The poem's devastating irony lies in the fact that the monument has indeed survived, but communicates precisely the opposite of its intended message. The inscription - "Look on my Works, ye Mighty, and despair!" - persists as text, but the referent (the "Works") has been erased by time. What remains is a speech act divorced from its context, a command that now points at emptiness. Shelley suggests that monumental memory is inherently self-undermining: the more emphatically the past insists on its own significance, the more poignant its inevitable failure becomes.
+"Ozymandias" interrogates monumental memory: the deliberate, public attempt to project the self into the future through enduring material inscription. Ozymandias's statue is memory-as-architecture, designed to communicate power across centuries. The poem's devastating irony lies in the fact that the monument has indeed survived, but communicates precisely the opposite of its intended message. The inscription - "Look on my works, ye Mighty, and despair!" - persists as text, but the referent (the "works") has been erased by time. What remains is a speech act divorced from its context, a command that now points at emptiness. Shelley suggests that monumental memory is inherently self-undermining: the more emphatically the past insists on its own significance, the more poignant its inevitable failure becomes.
 
 Yet the poem preserves a second, unintended form of memory. The sculptor, whose art "well those passions read / Which yet survive, stamped on these lifeless things," has achieved what Ozymandias could not: a truthful record of character rather than a propagandistic projection of power. The word "survive" is crucial - it is the passions, not the power, that endure, and they endure because the sculptor's observational fidelity was more durable than the king's self-mythologising. Shelley's argument is that authentic memory - memory grounded in truthful perception rather than self-interested construction - is paradoxically more lasting than the deliberate monuments designed to ensure remembrance.
 
@@ -1268,9 +1477,13 @@ Both poems arrive, through opposite routes, at a shared recognition: that the pa
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
               'AO3: Show understanding of context (6 marks)',
               'Must compare both poems throughout',
-              'Band 5-6: Critical comparison with exploratory analysis; convincing context',
-              'Band 3-4: Clear comparison with explained analysis; clear context',
-              'Band 1-2: Simple comparison with awareness of methods; some context',
+              'These model answers choose "Poppies" by Jane Weir as the second poem; any poem from "Power and conflict" that suits the question would do.',
+              'Level 6 (26-30): convincing, critical analysis and exploration',
+              'Level 5 (21-25): thoughtful, developed consideration',
+              'Level 4 (16-20): clear understanding',
+              'Level 3 (11-15): explained, structured comments',
+              'Level 2 (6-10): supported, relevant comments',
+              'Level 1 (1-5): simple, explicit comments',
             ],
           },
         ],
@@ -1326,9 +1539,12 @@ The word "evicted" is loaded with additional connotations: forced removal, displ
             markScheme: [
               'AO1: Read, understand and respond - use textual references to support interpretation (12 marks)',
               'AO2: Analyse language, form and structure using subject terminology (12 marks)',
-              'Band 5-6: Critical, exploratory response; judicious references; integrated analysis of methods',
-              'Band 3-4: Clear, explained response; effective references; clear understanding of methods',
-              'Band 1-2: Simple response; some references; awareness of methods',
+              'Level 6 (21-24): convincing, critical analysis and exploration',
+              'Level 5 (17-20): thoughtful, developed consideration',
+              'Level 4 (13-16): clear understanding',
+              'Level 3 (9-12): explained, structured comments',
+              'Level 2 (5-8): supported, relevant comments',
+              'Level 1 (1-4): simple, explicit comments',
             ],
           },
           {
@@ -1359,9 +1575,10 @@ The poems' most profound divergence lies in their closing images. "Inheritance" 
             markScheme: [
               'AO2: Analyse language, form and structure using subject terminology (8 marks)',
               'Must compare: identify similarities AND/OR differences',
-              'Band 3-4 (7-8 marks): Exploratory comparison with well-chosen references',
-              'Band 2-3 (4-6 marks): Clear comparison with relevant references',
-              'Band 1 (1-3 marks): Simple comparison with some references',
+              "Level 4 (7-8): critical, insightful comparison of the poets' methods",
+              "Level 3 (5-6): thoughtful comparison of the poets' methods",
+              'Level 2 (3-4): clear comparison of the poems',
+              'Level 1 (1-2): simple comment on one or both poems',
             ],
           },
         ],

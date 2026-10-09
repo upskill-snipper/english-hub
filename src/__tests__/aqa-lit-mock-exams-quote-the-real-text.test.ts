@@ -5,8 +5,7 @@ import type { TextData } from '@/components/study/InteractiveTextViewer'
 import { aqaLitMockExams } from '@/data/mock-exams-aqa-lit'
 import { aChristmasCarolText } from '@/data/full-texts/a-christmas-carol'
 import { macbethText } from '@/data/full-texts/macbeth'
-import { myLastDuchessText } from '@/data/full-texts/my-last-duchess'
-import { passage, poemLines } from '@/lib/study-guides/passage'
+import { passage } from '@/lib/study-guides/passage'
 
 /**
  * The AQA Literature mock papers print the held editions' words, and their
@@ -43,6 +42,13 @@ import { passage, poemLines } from '@/lib/study-guides/passage'
  * real AQA paper does. The last block below keeps it that way: no extract, no
  * quotation that nothing here could check, and no label anywhere on these
  * papers that calls its own passage fabricated.
+ *
+ * THE PAPER 2s WERE RETIRED ON 9 OCTOBER 2026. The bank's three Paper 2s
+ * shadowed AQA-shaped papers with the same ids in
+ * src/data/mock-exams/aqa-lit-p2-a.ts and were removed (see the docblock of
+ * src/data/mock-exams-aqa-lit.ts), so the checks below now cover its three
+ * Paper 1s; src/__tests__/aqa-lit-p2-a-is-set-as-aqa-sets-it.test.ts guards the
+ * Paper 2s students are given.
  *
  * WHAT IT CANNOT SEE. "Ozymandias" and "London" are not held on this site,
  * so nothing here cuts them again: they were cut by script from Project
@@ -107,11 +113,6 @@ describe('the AQA Literature mock extracts are the held editions', () => {
     },
   )
 
-  it('prints My Last Duchess whole, as held', () => {
-    const printed = question('aqa-lit-p2-03', 1).extract ?? ''
-    expect(flat(printed)).toBe(flat(poemLines(myLastDuchessText).join('\n')))
-  })
-
   it('names the edition each Paper 1 extract was cut from', () => {
     for (const id of ['aqa-lit-p1-01', 'aqa-lit-p1-02', 'aqa-lit-p1-03']) {
       expect(question(id, 0).extractSource).toContain('Project Gutenberg eBook #1533')
@@ -148,21 +149,15 @@ const TITLES = new Set(['Ozymandias', 'London', 'My Last Duchess'].map(words))
 
 const MACBETH = words(held(macbethText))
 const CAROL = words(held(aChristmasCarolText))
-const POEMS = aqaLitMockExams
-  .filter((p) => p.paperNumber === 2)
-  .map((p) => words(p.sections[1].questions[0].extract ?? ''))
 
 /** The texts each rewritten question may quote from. */
 const QUESTIONS: [string, number, () => string[]][] = []
 for (const n of ['01', '02', '03']) {
   const p1 = `aqa-lit-p1-${n}`
-  const p2 = `aqa-lit-p2-${n}`
   QUESTIONS.push(
     [p1, 0, () => [words(question(p1, 0).extract ?? ''), MACBETH]],
     [p1, 1, () => [words(question(p1, 1).extract ?? ''), CAROL]],
     [p1, 2, () => [MACBETH, CAROL]],
-    [p2, 1, () => [words(question(p2, 1).extract ?? '')]],
-    [p2, 2, () => POEMS],
   )
 }
 
@@ -230,30 +225,11 @@ describe('the rewritten model answers quote only the texts they are about', () =
 })
 
 describe('nothing on these papers is invented and passed off as a real text', () => {
-  const papers = aqaLitMockExams.filter((p) => /^aqa-lit-p[12]-0[123]$/.test(p.id))
+  const papers = aqaLitMockExams.filter((p) => /^aqa-lit-p1-0[123]$/.test(p.id))
 
-  it('covers all six papers', () => {
-    expect(papers).toHaveLength(6)
-  })
-
-  it('sets An Inspector Calls as an essay on the whole play, quoting nothing', () => {
-    for (const n of ['01', '02', '03']) {
-      const q = question(`aqa-lit-p2-${n}`, 0)
-      expect(q.questionText).toContain('An Inspector Calls')
-      expect(q.extract).toBeUndefined()
-      expect(q.extractSource).toBeUndefined()
-      expect(q.modelAnswers).toBeUndefined()
-      // Priestley is in UK copyright and not held, so no quotation of his
-      // could be checked; the question and mark scheme must not make one.
-      const notes = [q.questionText, ...(Array.isArray(q.markScheme) ? q.markScheme : [])]
-      expect(notes.flatMap(quotations)).toEqual([])
-      expect(notes.join(' ')).not.toMatch(/this extract|the extract\b/i)
-    }
-    // Three papers, three different questions.
-    const asked = new Set(
-      ['01', '02', '03'].map((n) => question(`aqa-lit-p2-${n}`, 0).questionText),
-    )
-    expect(asked.size).toBe(3)
+  it('covers the three Paper 1s, and builds no Paper 2', () => {
+    expect(papers).toHaveLength(3)
+    expect(aqaLitMockExams.filter((p) => p.paperNumber === 2)).toEqual([])
   })
 
   it('labels every printed passage with the edition it was cut from', () => {
@@ -264,14 +240,5 @@ describe('nothing on these papers is invented and passed off as a real text', ()
           expect(q.extractSource).toMatch(/Project Gutenberg eBook #\d+/)
           expect(q.extractSource).not.toMatch(/fabricated|not verbatim|practice composition/i)
         }
-  })
-
-  it('asks each poetry question about the poem its paper prints', () => {
-    for (const n of ['01', '02', '03']) {
-      const q = question(`aqa-lit-p2-${n}`, 1)
-      const title = /'([^']+)'/.exec(q.questionText)?.[1]
-      expect(title).toBeTruthy()
-      expect(q.extractSource).toContain(`'${title}'`)
-    }
   })
 })

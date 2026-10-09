@@ -1321,6 +1321,17 @@ function auditQuotes(q, works, paperHay, paperValues, fileBlocks, invented = [])
       // what extent do you agree?") is a statement to argue with, not a
       // quotation of the text; it is wrong only when it misquotes the text.
       if (a.where === 'question' && how === 'not in the text') continue
+      // AQA's anthology question names one poem, printed, and asks about it
+      // "and ... one other poem from" the cluster, which the student chooses
+      // and quotes from memory and the paper does not print. A quotation that
+      // shares no run of words with the paper's passages is that second
+      // poem's, so it cannot be checked here and is counted unverifiable, as
+      // it was before these papers printed the named poem (9 October 2026). One
+      // that borrows from a printed passage but changes it is still reported.
+      if (how === 'not in the text' && /\bin one other poem from\b/i.test(q.questionText ?? '')) {
+        out.unverifiable++
+        continue
+      }
       out.missing.push({ where: a.where, quote, w, how })
     }
   }
