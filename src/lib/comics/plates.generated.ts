@@ -112,6 +112,68 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
   'lc-animal-farm-without-cause': '/comics/animal-farm/without-cause.cab910dcf077.svg',
   'lc-animal-farm-working-like-slaves': '/comics/animal-farm/working-like-slaves.6bf29ffb7d9d.svg',
   'lc-animal-farm-years-pass': '/comics/animal-farm/years-pass.8ebe1fa88324.svg',
+  'lc-antony-and-cleopatra-a-day-of-victory':
+    '/comics/antony-and-cleopatra/a-day-of-victory.5dd35b338fdb.svg',
+  'lc-antony-and-cleopatra-a-marriage-and-a-barge':
+    '/comics/antony-and-cleopatra/a-marriage-and-a-barge.405643960e01.svg',
+  'lc-antony-and-cleopatra-a-pair-so-famous':
+    '/comics/antony-and-cleopatra/a-pair-so-famous.ecbe7de88bd7.svg',
+  'lc-antony-and-cleopatra-a-parting-performed':
+    '/comics/antony-and-cleopatra/a-parting-performed.f475fe345b8b.svg',
+  'lc-antony-and-cleopatra-actium': '/comics/antony-and-cleopatra/actium.31f8e42931c3.svg',
+  'lc-antony-and-cleopatra-again-for-cydnus':
+    '/comics/antony-and-cleopatra/again-for-cydnus.74db8947b984.svg',
+  'lc-antony-and-cleopatra-all-is-lost':
+    '/comics/antony-and-cleopatra/all-is-lost.d05eecac1e75.svg',
+  'lc-antony-and-cleopatra-antony': '/comics/antony-and-cleopatra/antony.abe3776466f0.svg',
+  'lc-antony-and-cleopatra-by-sea-by-sea':
+    '/comics/antony-and-cleopatra/by-sea-by-sea.7fbeaf3dca58.svg',
+  'lc-antony-and-cleopatra-caesar-mourns-his-rival':
+    '/comics/antony-and-cleopatra/caesar-mourns-his-rival.d4d20c7803e0.svg',
+  'lc-antony-and-cleopatra-caesar-s-case-against-antony':
+    '/comics/antony-and-cleopatra/caesar-s-case-against-antony.f5ad7145152a.svg',
+  'lc-antony-and-cleopatra-charmian': '/comics/antony-and-cleopatra/charmian.975480614d37.svg',
+  'lc-antony-and-cleopatra-cleopatra': '/comics/antony-and-cleopatra/cleopatra.a8b2cee7feef.svg',
+  'lc-antony-and-cleopatra-death-in-the-monument':
+    '/comics/antony-and-cleopatra/death-in-the-monument.0c9abb6b4db5.svg',
+  'lc-antony-and-cleopatra-dolabella': '/comics/antony-and-cleopatra/dolabella.256430fd9f4d.svg',
+  'lc-antony-and-cleopatra-enobarbus': '/comics/antony-and-cleopatra/enobarbus.07c4d418a9bd.svg',
+  'lc-antony-and-cleopatra-enobarbus-dies':
+    '/comics/antony-and-cleopatra/enobarbus-dies.4e30f501927e.svg',
+  'lc-antony-and-cleopatra-enthroned-in-alexandria':
+    '/comics/antony-and-cleopatra/enthroned-in-alexandria.2cbebb7ff284.svg',
+  'lc-antony-and-cleopatra-eros': '/comics/antony-and-cleopatra/eros.95064cfe1020.svg',
+  'lc-antony-and-cleopatra-hercules-leaves-him':
+    '/comics/antony-and-cleopatra/hercules-leaves-him.b5d8c9a0457a.svg',
+  'lc-antony-and-cleopatra-iras': '/comics/antony-and-cleopatra/iras.f741dcac9a14.svg',
+  'lc-antony-and-cleopatra-lepidus': '/comics/antony-and-cleopatra/lepidus.70a4266225b8.svg',
+  'lc-antony-and-cleopatra-menas': '/comics/antony-and-cleopatra/menas.a6f4e65c14d9.svg',
+  'lc-antony-and-cleopatra-news-from-rome':
+    '/comics/antony-and-cleopatra/news-from-rome.58a8bf45865e.svg',
+  'lc-antony-and-cleopatra-octavia': '/comics/antony-and-cleopatra/octavia.9dcae2e7e841.svg',
+  'lc-antony-and-cleopatra-octavius-caesar':
+    '/comics/antony-and-cleopatra/octavius-caesar.d1bd0bd3441a.svg',
+  'lc-antony-and-cleopatra-pompey': '/comics/antony-and-cleopatra/pompey.643ece91aeb3.svg',
+  'lc-antony-and-cleopatra-pompey-s-galley':
+    '/comics/antony-and-cleopatra/pompey-s-galley.d141ce81b09e.svg',
+  'lc-antony-and-cleopatra-rome-s-verdict-egypt-s-reply':
+    '/comics/antony-and-cleopatra/rome-s-verdict-egypt-s-reply.5c56396f174c.svg',
+  'lc-antony-and-cleopatra-serpent-of-old-nile':
+    '/comics/antony-and-cleopatra/serpent-of-old-nile.b82e60a822a8.svg',
+  'lc-antony-and-cleopatra-shame-and-a-kiss':
+    '/comics/antony-and-cleopatra/shame-and-a-kiss.7701ade2d830.svg',
+  'lc-antony-and-cleopatra-the-dream-of-antony':
+    '/comics/antony-and-cleopatra/the-dream-of-antony.a1d643c72315.svg',
+  'lc-antony-and-cleopatra-the-messenger':
+    '/comics/antony-and-cleopatra/the-messenger.7a89add08567.svg',
+  'lc-antony-and-cleopatra-the-shape-of-a-cloud':
+    '/comics/antony-and-cleopatra/the-shape-of-a-cloud.e369ea34cffa.svg',
+  'lc-antony-and-cleopatra-the-soothsayer-s-warning':
+    '/comics/antony-and-cleopatra/the-soothsayer-s-warning.52810af2cb8f.svg',
+  'lc-antony-and-cleopatra-the-treasure-sent-after-him':
+    '/comics/antony-and-cleopatra/the-treasure-sent-after-him.0eaf5dcfce22.svg',
+  'lc-antony-and-cleopatra-thidias-whipped':
+    '/comics/antony-and-cleopatra/thidias-whipped.c4f59e120662.svg',
   'lc-frankenstein-a-geneva-childhood-and-a-fatal-subject':
     '/comics/frankenstein/a-geneva-childhood-and-a-fatal-subject.2112965f20b2.svg',
   'lc-frankenstein-alphonse-frankenstein':
@@ -190,6 +252,57 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
     '/comics/hamlet/the-rogue-and-peasant-slave.51e8ab855a9a.svg',
   'lc-hamlet-to-be-or-not-to-be-and-the-nunnery-scene':
     '/comics/hamlet/to-be-or-not-to-be-and-the-nunnery-scene.f5a9f231b138.svg',
+  'lc-henry-v-a-little-touch-of-harry': '/comics/henry-v/a-little-touch-of-harry.b5b1e001d24b.svg',
+  'lc-henry-v-an-english-lesson': '/comics/henry-v/an-english-lesson.b1a94ee1db82.svg',
+  'lc-henry-v-archbishop-of-canterbury':
+    '/comics/henry-v/archbishop-of-canterbury.ff923fb73b6a.svg',
+  'lc-henry-v-bardolph': '/comics/henry-v/bardolph.0b924d9bd7d3.svg',
+  'lc-henry-v-bardolph-is-condemned': '/comics/henry-v/bardolph-is-condemned.331387bc7108.svg',
+  'lc-henry-v-exeter': '/comics/henry-v/exeter.6b963f032d6e.svg',
+  'lc-henry-v-fluellen': '/comics/henry-v/fluellen.c153dd8691a9.svg',
+  'lc-henry-v-gower': '/comics/henry-v/gower.034d2f07dbc7.svg',
+  'lc-henry-v-home-and-back-again': '/comics/henry-v/home-and-back-again.d00b03637dd6.svg',
+  'lc-henry-v-king-henry-v': '/comics/henry-v/king-henry-v.0e4db2cfa2e3.svg',
+  'lc-henry-v-mistress-quickly': '/comics/henry-v/mistress-quickly.7848c1e0d579.svg',
+  'lc-henry-v-old-friends-new-quarrels':
+    '/comics/henry-v/old-friends-new-quarrels.37f189b4b81e.svg',
+  'lc-henry-v-once-more-unto-the-breach':
+    '/comics/henry-v/once-more-unto-the-breach.d64923ba70f4.svg',
+  'lc-henry-v-peace-and-the-wooing': '/comics/henry-v/peace-and-the-wooing.2728216891a0.svg',
+  'lc-henry-v-pistol': '/comics/henry-v/pistol.50a0189b9809.svg',
+  'lc-henry-v-pistol-eats-the-leek': '/comics/henry-v/pistol-eats-the-leek.e74bd2808264.svg',
+  'lc-henry-v-pistol-takes-a-prisoner': '/comics/henry-v/pistol-takes-a-prisoner.9e163aa6c8f1.svg',
+  'lc-henry-v-princess-katherine': '/comics/henry-v/princess-katherine.329670cf17ac.svg',
+  'lc-henry-v-scroop': '/comics/henry-v/scroop.9b4390e66fbb.svg',
+  'lc-henry-v-small-time': '/comics/henry-v/small-time.28f7c35b1ab1.svg',
+  'lc-henry-v-the-boys-and-the-luggage':
+    '/comics/henry-v/the-boys-and-the-luggage.69137601d06f.svg',
+  'lc-henry-v-the-breach-seen-from-below':
+    '/comics/henry-v/the-breach-seen-from-below.c63b0491f586.svg',
+  'lc-henry-v-the-chorus-asks-for-imagination':
+    '/comics/henry-v/the-chorus-asks-for-imagination.61bc745fd539.svg',
+  'lc-henry-v-the-church-makes-an-offer':
+    '/comics/henry-v/the-church-makes-an-offer.868ece7c101e.svg',
+  'lc-henry-v-the-claim-and-the-tennis-balls':
+    '/comics/henry-v/the-claim-and-the-tennis-balls.6f1c41b0826c.svg',
+  'lc-henry-v-the-constable': '/comics/henry-v/the-constable.2743b327de63.svg',
+  'lc-henry-v-the-dauphin': '/comics/henry-v/the-dauphin.01f614184c3f.svg',
+  'lc-henry-v-the-death-of-falstaff': '/comics/henry-v/the-death-of-falstaff.2f7017402321.svg',
+  'lc-henry-v-the-feast-of-crispian': '/comics/henry-v/the-feast-of-crispian.0e5483316699.svg',
+  'lc-henry-v-the-french-court-divided':
+    '/comics/henry-v/the-french-court-divided.aad57ad7ce6b.svg',
+  'lc-henry-v-the-french-wait-for-morning':
+    '/comics/henry-v/the-french-wait-for-morning.46d9bc58a0b6.svg',
+  'lc-henry-v-the-glove-and-the-count-of-the-dead':
+    '/comics/henry-v/the-glove-and-the-count-of-the-dead.256cc61295ee.svg',
+  'lc-henry-v-the-king-in-disguise': '/comics/henry-v/the-king-in-disguise.c93313fab4d7.svg',
+  'lc-henry-v-the-traitors-at-southampton':
+    '/comics/henry-v/the-traitors-at-southampton.57f0a04ed06a.svg',
+  'lc-henry-v-the-ultimatum-to-harfleur':
+    '/comics/henry-v/the-ultimatum-to-harfleur.4996921fde42.svg',
+  'lc-henry-v-williams': '/comics/henry-v/williams.79e72b3346ff.svg',
+  'lc-henry-v-york-suffolk-and-the-prisoners':
+    '/comics/henry-v/york-suffolk-and-the-prisoners.0319fb452563.svg',
   'lc-jekyll-and-hyde-dr-hastie-lanyon':
     '/comics/jekyll-and-hyde/dr-hastie-lanyon.73a56dc5b2f8.svg',
   'lc-jekyll-and-hyde-dr-henry-jekyll': '/comics/jekyll-and-hyde/dr-henry-jekyll.8f2611ebefc9.svg',
