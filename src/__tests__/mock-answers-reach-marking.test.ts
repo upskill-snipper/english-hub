@@ -107,16 +107,41 @@ describe('choosing a mark scheme', () => {
   })
 
   it('says so when it has fallen back to the nearest paper', () => {
+    // Offering another paper silently would put the answer against the wrong
+    // grid. This used AQA Literature Paper 2, which had no scheme until
+    // 9 October 2026; since then every board's Papers 1 and 2 have one, so the
+    // fallback is reached here with a paper number the type does not allow.
+    const target = resolveHandoffTarget({
+      examBoard: 'AQA',
+      paperType: 'literature',
+      paperNumber: 3 as unknown as 1 | 2,
+    })
+    expect(target.exact).toBe(false)
+    expect(target.note).toBeTruthy()
+    expect(target.note).toMatch(/Check it fits/)
+  })
+
+  it('finds AQA Literature Paper 2 exactly, now that it has a scheme', () => {
     const target = resolveHandoffTarget({
       examBoard: 'AQA',
       paperType: 'literature',
       paperNumber: 2,
     })
-    // There is no AQA Literature Paper 2 scheme. Offering Paper 1 silently
-    // would put a Paper 2 answer against a Paper 1 grid.
-    expect(target.exact).toBe(false)
-    expect(target.note).toBeTruthy()
-    expect(target.note).toMatch(/Check it fits/)
+    expect(target.exact).toBe(true)
+    expect(target.schemeId).toBe('aqa-lit-paper2')
+  })
+
+  it.each([
+    ['literature', 1, 'ocr-lit-component01'],
+    ['literature', 2, 'ocr-lit-component02'],
+    ['language', 1, 'ocr-lang-component01'],
+    ['language', 2, 'ocr-lang-component02'],
+  ] as const)('finds OCR %s Paper %i exactly, though OCR calls it a component', (type, n, id) => {
+    // Until 9 October 2026 "\b2\b" never matched "Component 02", and an OCR
+    // Paper 2 answer went to the Component 01 scheme.
+    const target = resolveHandoffTarget({ examBoard: 'OCR', paperType: type, paperNumber: n })
+    expect(target.exact).toBe(true)
+    expect(target.schemeId).toBe(id)
   })
 
   it('never calls a two-board paper an exact match', () => {

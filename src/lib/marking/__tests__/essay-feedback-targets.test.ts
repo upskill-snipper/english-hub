@@ -62,6 +62,7 @@ describe('paper codes', () => {
     ['8700/1', 'aqa-lang-paper1'],
     ['8700/2', 'aqa-lang-paper2'],
     ['8702/1', 'aqa-lit-paper1'],
+    ['8702/2', 'aqa-lit-paper2'],
     ['1EN0/01', 'edexcel-lang-paper1'],
     ['1EN0/02', 'edexcel-lang-paper2'],
     ['1ET0/01', 'edexcel-lit-paper1'],
@@ -79,8 +80,8 @@ describe('paper codes', () => {
     expect(MARK_SCHEMES[schemeId]).toBeDefined()
   })
 
-  it('knows AQA Literature Paper 2 has no scheme yet, and says nothing without a code', () => {
-    expect(schemeIdForPaperCode('8702/2')).toBeNull()
+  it('says nothing without a code', () => {
+    // 8702/2 was the one known code with no scheme, until 9 October 2026.
     expect(schemeIdForPaperCode('Paper 2')).toBeUndefined()
   })
 
@@ -166,10 +167,25 @@ describe('mock papers', () => {
     expect(refsFor('ocr-lit-01').every((r) => r === null)).toBe(true)
   })
 
-  it('gives AQA Literature Paper 2 general feedback: there is no scheme for it', () => {
-    const aqaLit2 = all.filter((m) => /8702\/2/.test(m.ref.paperText))
-    expect(aqaLit2.length).toBeGreaterThan(0)
-    expect(aqaLit2.every((m) => m.target === null)).toBe(true)
+  it('maps AQA Literature Paper 2 question by question where a mock is set as AQA sets it', () => {
+    // Until 9 October 2026 there was no 8702/2 scheme and every answer got
+    // general feedback. Papers 04 and 05 are AQA's shape: 34, 30, 24 and 8.
+    for (const id of ['aqa-lit-p2-04', 'aqa-lit-p2-05']) {
+      expect(refsFor(id).map(refString)).toEqual([
+        'aqa-lit-paper2/Section A',
+        'aqa-lit-paper2/Section B',
+        'aqa-lit-paper2/Section C (a)',
+        'aqa-lit-paper2/Section C (b)',
+      ])
+    }
+  })
+
+  it('does not map AQA Literature Paper 2 mocks whose sections are not AQA’s', () => {
+    // Papers 01 to 03 are 100 marks: a 40-mark modern-text essay, a 40-mark
+    // analysis of one anthology poem and a 20-mark anthology comparison.
+    for (const id of ['aqa-lit-p2-01', 'aqa-lit-p2-02', 'aqa-lit-p2-03']) {
+      expect(refsFor(id).every((r) => r === null)).toBe(true)
+    }
   })
 })
 
@@ -275,6 +291,13 @@ describe('question bank', () => {
     ['edx-lit-ta-4', ['edexcel-lit-paper2/Section A (b)']],
     ['edx-lit-pc-1', ['edexcel-lit-paper2/Section B Part 1']],
     ['edx-lit-up-1', ['edexcel-lit-paper2/Section B Part 2']],
+    // AQA Paper 2, since 9 October 2026: the modern text (no extract printed),
+    // the anthology, and the two unseen questions, 27.1 and 27.2.
+    ['aqa-lit-er-1', ['aqa-lit-paper2/Section A']],
+    ['aqa-lit-eba-3', []],
+    ['aqa-lit-pc-1', ['aqa-lit-paper2/Section B']],
+    ['aqa-lit-up-1', ['aqa-lit-paper2/Section C (a)']],
+    ['aqa-lit-up-3', ['aqa-lit-paper2/Section C (b)']],
     ['aqa-p2-cwv-1', ['aqa-lang-paper2/Q4']],
     ['wjec-p1-ec-1', ['eduqas-lang-comp1/A4']],
     ['wjec-p2-pw-1', ['eduqas-lang-comp2/B1', 'eduqas-lang-comp2/B2']],

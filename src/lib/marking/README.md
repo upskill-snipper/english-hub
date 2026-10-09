@@ -9,7 +9,7 @@ listed only the three AQA files, which had been untrue for months and would
 lead a reader to think a non-AQA board was unsupported.
 
 **Read `../marking/examiner/verification.ts` before trusting any of it.** The
-corpus is hand-authored. Only three of the twenty-one registered papers have
+corpus is hand-authored. Only three of the twenty-two registered papers have
 been checked against a board's published specification; the rest say so, on
 every surface a teacher can reach. "Grounded in the exact AOs and band
 descriptors" is the intent, and is true of the verified three.

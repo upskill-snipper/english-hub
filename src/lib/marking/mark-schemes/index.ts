@@ -5,6 +5,7 @@
 
 import type { MarkScheme } from './types'
 import { aqaLitPaper1 } from './aqa-lit-paper1'
+import { aqaLitPaper2 } from './aqa-lit-paper2'
 import { aqaLangPaper1 } from './aqa-lang-paper1'
 import { aqaLangPaper2 } from './aqa-lang-paper2'
 import { eduqasLitComp1, eduqasLitComp2 } from './eduqas-lit'
@@ -41,6 +42,7 @@ export type {
  */
 export const MARK_SCHEMES: Readonly<Record<string, MarkScheme>> = {
   [aqaLitPaper1.id]: aqaLitPaper1,
+  [aqaLitPaper2.id]: aqaLitPaper2,
   [aqaLangPaper1.id]: aqaLangPaper1,
   [aqaLangPaper2.id]: aqaLangPaper2,
   [eduqasLitComp1.id]: eduqasLitComp1,
@@ -89,7 +91,7 @@ export function listMarkSchemeIds(): string[] {
   return Object.keys(MARK_SCHEMES)
 }
 
-export { aqaLitPaper1, aqaLangPaper1, aqaLangPaper2 }
+export { aqaLitPaper1, aqaLitPaper2, aqaLangPaper1, aqaLangPaper2 }
 export { eduqasLitComp1, eduqasLitComp2 } from './eduqas-lit'
 export { eduqasLangComp1, eduqasLangComp2 } from './eduqas-lang'
 export { ocrLitComponent01, ocrLitComponent02 } from './ocr-lit'

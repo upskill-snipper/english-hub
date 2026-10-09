@@ -275,6 +275,10 @@ const ao4: AssessmentObjective = {
   ],
 }
 
+// AQA marks Paper 2's modern texts, anthology and unseen poetry with the same
+// grids, so ./aqa-lit-paper2.ts uses these ladders too.
+export { ao1 as aqaLitAO1, ao2 as aqaLitAO2, ao3 as aqaLitAO3, ao4 as aqaLitAO4 }
+
 // ─── Paper ───────────────────────────────────────────────────────────────────
 
 export const aqaLitPaper1: MarkScheme = {

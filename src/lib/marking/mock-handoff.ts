@@ -158,7 +158,13 @@ export function resolveHandoffTarget(paper: MockPaperIdentity): HandoffTarget {
     }
   }
 
-  const match = sameSubject.find((s) => new RegExp(`\\b${paper.paperNumber}\\b`).test(s.paper))
+  // By number, not by pattern. The pattern \b2\b never matched OCR's
+  // "Component 02", so until 9 October 2026 every OCR mock fell through to the
+  // nearest paper below, and an OCR Literature Paper 2 answer was handed to the
+  // Component 01 scheme with a note saying OCR had no Paper 2 scheme.
+  const match = sameSubject.find((s) =>
+    (s.paper.match(/\d+/g) ?? []).map(Number).includes(paper.paperNumber),
+  )
   if (match) {
     if (namesSeveralBoards) {
       return {

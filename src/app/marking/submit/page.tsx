@@ -893,7 +893,7 @@ export default function SubmitEssayPage() {
               </div>
 
               {/* ── Unverified paper warning ────────────────
-                  Nine of the twenty-one papers in the corpus have never been
+                  All but three of the papers in the corpus have never been
                   checked against the board's published specification, and the
                   first audit of them found a mislabelled assessment objective
                   and a five-mark shortfall. The dropdown label says so, but a

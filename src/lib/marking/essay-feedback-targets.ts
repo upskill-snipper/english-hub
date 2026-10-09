@@ -38,13 +38,13 @@ export interface FeedbackRef {
 
 /**
  * Paper codes to scheme ids. Null where the paper is known but has no scheme
- * on the site yet (AQA Literature Paper 2).
+ * on the site yet; AQA Literature Paper 2 was the last, until 9 October 2026.
  */
 const PAPER_CODES: readonly (readonly [RegExp, string | null])[] = [
   [/\b8700\/1\b/, 'aqa-lang-paper1'],
   [/\b8700\/2\b/, 'aqa-lang-paper2'],
   [/\b8702\/1\b/, 'aqa-lit-paper1'],
-  [/\b8702\/2\b/, null],
+  [/\b8702\/2\b/, 'aqa-lit-paper2'],
   [/\b1EN0\/01\b/i, 'edexcel-lang-paper1'],
   [/\b1EN0\/02\b/i, 'edexcel-lang-paper2'],
   [/\b1ET0\/01\b/i, 'edexcel-lit-paper1'],
@@ -281,16 +281,26 @@ function literatureKind(q: BankQuestion): LiteratureKind | null {
 
 /**
  * Where each kind of Literature question sits on each board. "(a)" and "(b)"
- * are Edexcel's extract and whole-text parts; null where the board's paper has
- * no scheme on the site, or (Edexcel Section B) where a printed extract would
- * misdescribe a paper that prints none.
+ * are Edexcel's extract and whole-text parts, and AQA's two unseen-poetry
+ * questions, 27.1 on one poem and 27.2 comparing two; null where the board's
+ * paper has no scheme on the site, or where a printed extract would misdescribe
+ * a paper that prints none (Edexcel Paper 1 Section B, AQA Paper 2 Section A).
  */
-function literatureRef(board: string, kind: LiteratureKind, extract: boolean): FeedbackRef | null {
+function literatureRef(
+  board: string,
+  kind: LiteratureKind,
+  extract: boolean,
+  compares: boolean,
+): FeedbackRef | null {
   const ref = (schemeId: string, questionId: string) => ({ schemeId, questionId })
   switch (board) {
     case 'AQA':
       if (kind === 'shakespeare') return ref('aqa-lit-paper1', 'Section A')
       if (kind === '19th-century') return ref('aqa-lit-paper1', 'Section B')
+      if (kind === 'modern') return extract ? null : ref('aqa-lit-paper2', 'Section A')
+      if (kind === 'poetry-anthology') return ref('aqa-lit-paper2', 'Section B')
+      if (kind === 'unseen')
+        return ref('aqa-lit-paper2', compares ? 'Section C (b)' : 'Section C (a)')
       return null
     case 'Edexcel':
       if (kind === 'shakespeare')
@@ -427,7 +437,8 @@ export function bankTargets(q: BankQuestion): FeedbackRef[] {
   const kind = literatureKind(q)
   if (!kind) return []
   const extract = q.questionType === 'Extract-Based Analysis' || /\bextract\b/i.test(q.text)
-  const ref = literatureRef(q.board, kind, extract)
+  const compares = /\bcompar|\bboth poems\b|\bsimilarit|\bdifferences?\b/i.test(q.text)
+  const ref = literatureRef(q.board, kind, extract, compares)
   return ref ? [ref] : []
 }
 
