@@ -492,6 +492,12 @@ export default function AnimalFarmPage() {
           <h2 className="text-2xl font-bold text-foreground">
             Edexcel Paper 1, Section B - What You Need to Know
           </h2>
+          {/* 9 October 2026: this said Section B prints an extract to analyse before an essay on
+              the wider novella, marked for analysis of methods with no SPaG, in 50-55 minutes.
+              Pearson's 1ET0/01 (specification Issue 2, PDF page 23, and its June 2024 question
+              paper and mark scheme) prints no extract: the student answers one of two essay
+              questions, each opening with a short quotation, marked for AO1 (16), AO3 (16) and
+              AO4 (8), with no AO2. Pearson advises about 50 minutes on the section. */}
           <div className="mt-6 rounded-xl border-2 border-primary bg-blue-500/10 p-6">
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-2">
@@ -504,30 +510,33 @@ export default function AnimalFarmPage() {
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>Format:</strong> You are given an <strong>extract</strong> from the
-                  novella, followed by an essay question. You must analyse the extract and then
-                  explore the theme/character across the whole text.
+                  <strong>Format:</strong> You answer <strong>one essay question</strong> on the
+                  novella from a choice of two. No extract is printed: each question opens with a
+                  short quotation, and you explore the theme/character across the whole text.
                 </span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
                   <strong>Marks:</strong> 40 marks total (reading and response: response and
-                  quotation; analysis of methods: language, form, structure; context).
+                  quotation, 16 marks; context, 16 marks; accuracy: vocabulary, sentence structures,
+                  spelling and punctuation, 8 marks). There are no marks for analysis of language,
+                  form and structure in this section.
                 </span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>Timing:</strong> Approximately 50-55 minutes. Spend 5 minutes planning,
-                  40-45 minutes writing, and 5 minutes checking.
+                  <strong>Timing:</strong> About 50 minutes. Spend 5 minutes planning, 40 minutes
+                  writing, and 5 minutes checking.
                 </span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>Key requirement:</strong> You must write about the extract AND the wider
-                  novella. Answers that only discuss the extract cannot achieve top marks.
+                  <strong>Key requirement:</strong> The question tells you to refer to the
+                  novella&apos;s context, which is worth as much as your response to the text. Range
+                  across the whole novella rather than staying with the opening quotation.
                 </span>
               </li>
             </ul>
@@ -618,9 +627,13 @@ export default function AnimalFarmPage() {
         {/* ── Key quotes ────────────────────────────────────────── */}
         <section id="quotes" className="mt-14 scroll-mt-20">
           <h2 className="text-2xl font-bold text-foreground">Key Quotes (15+)</h2>
+          {/* 9 October 2026: this said the exam provides an extract. Pearson's 1ET0/01 prints
+              none in Section B: each question opens with a short quotation, and the paper is
+              closed book. */}
           <p className="mt-2 text-muted-foreground">
-            The Edexcel exam provides an extract, but you must also recall quotations from across
-            the novella. Learn these quotes and practise embedding them into analytical paragraphs.
+            The Edexcel exam prints no extract from the novella: each question opens with a short
+            quotation, and you must recall the rest of your quotations from across the novella.
+            Learn these quotes and practise embedding them into analytical paragraphs.
           </p>
           <div className="mt-6 space-y-4">
             {KEY_QUOTES.map((q, i) => (
@@ -676,45 +689,62 @@ export default function AnimalFarmPage() {
 
           <div className="mt-6 space-y-6">
             <div className="rounded-xl bg-muted p-6">
+              {/* 9 October 2026: this said a question follows an extract, and the examples named
+                  extracts to analyse "in this extract and in the novella as a whole". Pearson's
+                  1ET0/01 (specification Issue 2, PDF page 23, and its June 2024 question paper)
+                  prints no extract in Section B: each question opens with a short quotation and
+                  asks for the context. The examples' quotations are cut from the held edition
+                  (src/data/full-texts/animal-farm.ts) and are already on this page. */}
               <h3 className="text-lg font-bold text-foreground">
                 What Does an Edexcel Question Look Like?
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                You will be given an <strong>extract</strong> from Animal Farm, followed by a
-                question that asks you to analyse the extract and then explore the theme or
-                character across the whole novella.
+                You choose <strong>one of two questions</strong> on Animal Farm. No extract is
+                printed: each question opens with a short quotation from the novella, then asks you
+                to explore a theme or character across the whole text.
               </p>
               <div className="mt-4 space-y-3">
                 <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 1
                   </p>
-                  <p className="mt-1 text-xs italic text-muted-foreground">
-                    [Extract from Chapter 7 - the executions scene]
+                  <p className="mt-2 text-sm italic text-muted-foreground">
+                    &quot;He carried a whip in his trotter.&quot;
                   </p>
                   <p className="mt-2 text-sm text-foreground font-medium">
-                    How does Orwell present the abuse of power in this extract and in the novella as
-                    a whole?
+                    Explore how Orwell presents the abuse of power in <em>Animal Farm</em>.
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    You must refer to the context of the novel in your answer. (40 marks, includes 8
+                    marks for the range of appropriate vocabulary and sentence structures, and
+                    accurate use of spelling and punctuation)
                   </p>
                 </div>
                 <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 2
                   </p>
-                  <p className="mt-1 text-xs italic text-muted-foreground">
-                    [Extract from Chapter 3 - Squealer justifying the milk and apples]
+                  <p className="mt-2 text-sm italic text-muted-foreground">
+                    &quot;The others said of Squealer that he could turn black into white.&quot;
                   </p>
                   <p className="mt-2 text-sm text-foreground font-medium">
-                    How does Orwell present the role of propaganda in this extract and in the
-                    novella as a whole?
+                    Explore how Orwell presents the role of propaganda in <em>Animal Farm</em>.
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    You must refer to the context of the novel in your answer. (40 marks, includes 8
+                    marks for the range of appropriate vocabulary and sentence structures, and
+                    accurate use of spelling and punctuation)
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="rounded-xl bg-muted p-6">
+              {/* 9 October 2026: this was headed "Extract + Essay" and spent two or three
+                  paragraphs on an extract. Pearson's 1ET0/01 prints none in Section B, so the essay
+                  is on the whole novella from the start. */}
               <h3 className="text-lg font-bold text-foreground">
-                How to Structure Your Answer (Extract + Essay)
+                How to Structure Your Answer (40-Mark Essay)
               </h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
@@ -732,9 +762,9 @@ export default function AnimalFarmPage() {
                     2
                   </span>
                   <span>
-                    <strong>Analyse the extract (2-3 paragraphs)</strong> - work through the extract
-                    closely. Identify key language, literary techniques, and what Orwell is
-                    conveying. Use short, embedded quotations from the extract.
+                    <strong>Start from the opening quotation</strong> - the question opens with a
+                    short quotation, not an extract to work through. Use it as a way into the
+                    question if it helps, then move on to the rest of the novella.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -742,9 +772,9 @@ export default function AnimalFarmPage() {
                     3
                   </span>
                   <span>
-                    <strong>Explore the wider novella (2-3 paragraphs)</strong> - move beyond the
-                    extract. Discuss how the theme/character is presented elsewhere, tracking
-                    development across the text. Recall your own quotations.
+                    <strong>Explore the whole novella (4-5 paragraphs)</strong> - discuss how the
+                    theme/character is presented from beginning to end, tracking development across
+                    the text. Recall your own quotations.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -771,13 +801,18 @@ export default function AnimalFarmPage() {
             </div>
 
             <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
+              {/* 9 October 2026: these tips credited analysis of methods and close language
+                  analysis, asked for equal weight on an extract and the wider text, and said the
+                  question had no SPaG marks. Pearson's 1ET0/01 prints no extract in Section B and
+                  marks it for AO1 (16), AO3 (16) and AO4 (8): no AO2, and 8 marks for accuracy. */}
               <h3 className="text-lg font-bold text-foreground">Top Tips for Top Marks</h3>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Always use &quot;Orwell&quot; as the subject - &quot;Orwell
-                  presents/uses/suggests/criticises...&quot; This demonstrates awareness of the
-                  writer&apos;s craft (analysis of methods).
+                  presents/uses/suggests/criticises...&quot; This shows you understand the novella
+                  as a deliberate construction with a message, part of an informed, critical
+                  response (reading and response).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -787,9 +822,10 @@ export default function AnimalFarmPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Analyse <strong>language closely</strong> - pick out individual words and explain
-                  their connotations. E.g., &quot;The noun &apos;comrades&apos; initially unites the
-                  animals, but is later weaponised by Squealer to manipulate them.&quot;
+                  Use <strong>language as evidence</strong> - a single word can carry a point, but
+                  Section B gives no marks for analysing language as such, so tie it to the
+                  question. E.g., &quot;The noun &apos;comrades&apos; initially unites the animals,
+                  but is later weaponised by Squealer to manipulate them.&quot;
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -805,13 +841,14 @@ export default function AnimalFarmPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  <strong>Balance extract and wider text</strong> - top-band answers give roughly
-                  equal weight to both. Do not neglect the wider novella.
+                  <strong>Cover the whole novella</strong> - the opening quotation is only a
+                  starting point. Range across the text, from beginning to end.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Note: No separate SPaG marks on this question, but clear, accurate writing still
-                  matters for reading and response.
+                  Note: 8 of the 40 marks on this question are for your range of vocabulary and
+                  sentence structures and your spelling and punctuation, so write accurately and
+                  check names and key terms.
                 </li>
               </ul>
             </div>

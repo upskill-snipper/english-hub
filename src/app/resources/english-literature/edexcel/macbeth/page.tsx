@@ -514,9 +514,13 @@ export default function MacbethPage() {
         {/* ── Context ───────────────────────────────────────────── */}
         <section id="context" className="mt-14 scroll-mt-20">
           <h2 className="text-2xl font-bold text-foreground">Historical Context</h2>
+          {/* 9 October 2026: this said context belongs woven into analysis, without saying where
+              it is marked. Pearson's 1ET0/01 gives context (AO3) 5 of part (b)'s 20 marks and
+              none in part (a), which is marked for analysis of the extract (AO2) alone. */}
           <p className="mt-2 text-muted-foreground">
-            Context is assessed through the context skill. The best responses weave context into
-            analysis rather than treating it as a bolt-on paragraph.
+            Context is assessed in part (b) of the Shakespeare question, where it is worth 5 of the
+            20 marks; part (a) gives it none. The best part (b) answers weave context into their
+            argument rather than treating it as a bolt-on paragraph.
           </p>
           <div className="mt-6 space-y-4">
             {CONTEXT_POINTS.map((c) => (
@@ -534,29 +538,55 @@ export default function MacbethPage() {
 
           <div className="mt-6 space-y-6">
             <div className="rounded-xl bg-muted p-6">
+              {/* 9 October 2026: this said the question was one essay on the whole play, with no
+                  extract and 4 marks for SPaG. Pearson's 1ET0/01 (specification Issue 2, PDF page
+                  23, and its June 2024 question paper and mark scheme) prints an extract of about
+                  30 lines and sets two parts on it: (a) on the extract, for AO2 alone, and (b) on
+                  a theme from it elsewhere in the play, for AO1 and AO3. Section A has no SPaG. */}
               <h3 className="text-lg font-bold text-foreground">
                 What Does an Edexcel Macbeth Question Look Like?
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                You will be given one question (no choice) that asks about a character, theme, or
-                idea across the whole play. There is no extract - you must recall your own evidence.
+                You will be given one two-part question (no choice) on a printed extract of about 30
+                lines. Part (a) asks how Shakespeare presents something in the extract. Part (b)
+                asks about the importance of a theme from the extract elsewhere in the play, and for
+                that you must recall your own evidence.
               </p>
               <div className="mt-4 rounded-lg border-2 border-dashed border-primary bg-card p-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                   Example Question
                 </p>
+                <p className="mt-1 text-xs italic text-muted-foreground">
+                  [Extract from Act 2 Scene 2 - Macbeth returns from murdering Duncan]
+                </p>
                 <p className="mt-2 text-sm text-foreground font-medium">
-                  Explore how Shakespeare presents the theme of guilt in
-                  <em> Macbeth</em>.
+                  (a) Explore how Shakespeare presents guilt in this extract. Refer closely to the
+                  extract in your answer.
+                </p>
+                <p className="mt-1 text-xs text-muted-foreground">(20 marks)</p>
+                <p className="mt-3 text-sm text-foreground font-medium">
+                  (b) In this extract, Macbeth is horrified by what he has done. Explain the
+                  importance of guilt elsewhere in the play.
                 </p>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  You must refer to the context of the play in your answer. (40 marks, including 4
-                  marks for SPaG)
+                  In your answer, you must consider:
+                </p>
+                <ul className="mt-1 list-disc space-y-0.5 ps-5 text-xs text-muted-foreground">
+                  <li>how guilt affects different characters</li>
+                  <li>how Macbeth&apos;s guilt changes during the play.</li>
+                </ul>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  You must refer to the context of the play in your answer. (20 marks)
                 </p>
               </div>
             </div>
 
             <div className="rounded-xl bg-muted p-6">
+              {/* 9 October 2026: these steps described one essay across the whole play, with
+                  analysis and context in every paragraph, which fits neither part. Pearson's
+                  1ET0/01 marks part (a) for analysis of the extract (AO2) alone, and part (b), on a
+                  theme elsewhere in the play, for AO1 (15) and AO3 (5). The steps now take the two
+                  parts in turn. */}
               <h3 className="text-lg font-bold text-foreground">How to Structure Your Answer</h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
@@ -564,9 +594,9 @@ export default function MacbethPage() {
                     1
                   </span>
                   <span>
-                    <strong>Brief introduction</strong> - outline Shakespeare&apos;s overall
-                    presentation of the theme/character in 2-3 sentences. Mention the play&apos;s
-                    context.
+                    <strong>Part (a): brief introduction</strong> - outline in 1-2 sentences how
+                    Shakespeare presents the theme/character in the printed extract. Leave context
+                    out: part (a) is marked only for analysis of language, form and structure.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -574,9 +604,10 @@ export default function MacbethPage() {
                     2
                   </span>
                   <span>
-                    <strong>4-5 analytical paragraphs</strong> covering different moments across the
-                    play. Each paragraph: Point &rarr; Evidence (embedded quote) &rarr; Analysis of
-                    language/technique &rarr; Context woven in.
+                    <strong>Part (a): 3-4 analytical paragraphs</strong> covering different moments
+                    in the extract. Each paragraph: Point &rarr; Evidence (embedded quote from the
+                    extract) &rarr; Analysis of language/technique. Context and the rest of the play
+                    earn nothing in part (a).
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -584,8 +615,10 @@ export default function MacbethPage() {
                     3
                   </span>
                   <span>
-                    <strong>Track development</strong> - show how the theme/character changes across
-                    the play (beginning &rarr; middle &rarr; end).
+                    <strong>Part (b): track development</strong> - show how the theme changes
+                    elsewhere in the play (beginning &rarr; middle &rarr; end), covering both points
+                    the question lists. Each paragraph: Point &rarr; Evidence (a quote you have
+                    memorised) &rarr; Explanation &rarr; Context woven in.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -593,14 +626,18 @@ export default function MacbethPage() {
                     4
                   </span>
                   <span>
-                    <strong>Conclude briefly</strong> - summarise Shakespeare&apos;s message and its
-                    relevance to the Jacobean audience.
+                    <strong>Conclude part (b) briefly</strong> - summarise Shakespeare&apos;s
+                    message and its relevance to the Jacobean audience.
                   </span>
                 </li>
               </ol>
             </div>
 
             <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
+              {/* 9 October 2026: two tips here were wrong for Section A. One put context into
+                  analysis, where it earns nothing in part (a); the other said SPaG was worth 4
+                  marks. Pearson's 1ET0/01 gives context 5 marks in part (b) alone, and Section A
+                  has no SPaG: the paper's 8 marks for it (AO4) are in Section B. */}
               <h3 className="text-lg font-bold text-foreground">Top Tips for Top Marks</h3>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
@@ -615,9 +652,9 @@ export default function MacbethPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Embed context into analysis: &quot;A Jacobean audience would have seen
-                  Macbeth&apos;s regicide as a sin against God, given the widespread belief in the
-                  Divine Right of Kings.&quot;
+                  In part (b), embed context into your argument: &quot;A Jacobean audience would
+                  have seen Macbeth&apos;s regicide as a sin against God, given the widespread
+                  belief in the Divine Right of Kings.&quot; Part (a) gives context no marks.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -632,7 +669,9 @@ export default function MacbethPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Remember SPaG is worth 4 marks - write accurately and use paragraphs.
+                  Section A has no marks for spelling, punctuation and grammar: the paper&apos;s 8
+                  marks for accuracy are in Section B. Use paragraphs all the same, so your argument
+                  is easy to follow.
                 </li>
               </ul>
             </div>

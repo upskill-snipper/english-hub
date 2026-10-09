@@ -515,36 +515,61 @@ export default function InspectorCallsPage() {
 
           <div className="mt-6 space-y-6">
             <div className="rounded-xl bg-muted p-6">
+              {/* 9 October 2026: the examples here had no opening quotation and no instruction on
+                  context. Pearson's 1ET0/01 (specification Issue 2, PDF page 23, and its June 2024
+                  question paper) opens each Section B question with a short quotation, as in June
+                  2024 Q7 on Eva Smith/Daisy Renton, and tells the student to refer to the context
+                  of the play. The quotations are the page's own. */}
               <h3 className="text-lg font-bold text-foreground">
                 What Does an Edexcel Question Look Like?
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                You will typically have a choice of two questions. There is no extract - you must
-                recall your own evidence from the play.
+                You will have a choice of two questions on the play, and answer one. There is no
+                extract: each question opens with a short quotation from the play, and you must
+                recall the rest of your evidence.
               </p>
               <div className="mt-4 space-y-3">
                 <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 1
                   </p>
+                  <p className="mt-2 text-sm italic text-muted-foreground">
+                    &quot;We are members of one body. We are responsible for each other.&quot;
+                  </p>
                   <p className="mt-2 text-sm text-foreground font-medium">
-                    How does Priestley present the theme of social responsibility in{' '}
-                    <em>An Inspector Calls</em>?
+                    Explore how Priestley presents the theme of social responsibility in{' '}
+                    <em>An Inspector Calls</em>.
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    You must refer to the context of the play in your answer. (40 marks, includes 8
+                    marks for the range of appropriate vocabulary and sentence structures, and
+                    accurate use of spelling and punctuation)
                   </p>
                 </div>
                 <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 2
                   </p>
+                  <p className="mt-2 text-sm italic text-muted-foreground">
+                    &quot;But these girls aren&apos;t cheap labour - they&apos;re people.&quot;
+                  </p>
                   <p className="mt-2 text-sm text-foreground font-medium">
-                    How does Priestley use the character of Sheila to convey his message in{' '}
-                    <em>An Inspector Calls</em>?
+                    Explore how Priestley uses the character of Sheila to convey his message in{' '}
+                    <em>An Inspector Calls</em>.
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    You must refer to the context of the play in your answer. (40 marks, includes 8
+                    marks for the range of appropriate vocabulary and sentence structures, and
+                    accurate use of spelling and punctuation)
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="rounded-xl bg-muted p-6">
+              {/* 9 October 2026: step 3 said to analyse the language within quotations. Pearson's
+                  1ET0/01 marks Section B for AO1 (16), AO3 (16) and AO4 (8), with no AO2, so
+                  language analysis earns nothing as such. */}
               <h3 className="text-lg font-bold text-foreground">How to Structure Your Answer</h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
@@ -573,7 +598,8 @@ export default function InspectorCallsPage() {
                   </span>
                   <span>
                     <strong>Embed quotations</strong> - short quotes woven into sentences work best.
-                    Analyse the language within your quotes.
+                    Explain what each one shows about the question: Section B gives no marks for
+                    analysing language as such.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -600,12 +626,17 @@ export default function InspectorCallsPage() {
             </div>
 
             <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
+              {/* 9 October 2026: these tips called the writer's name "an analysis of methods
+                  requirement" and said Section B had no SPaG marks. Pearson's 1ET0/01 marks
+                  Section B for AO1 (16), AO3 (16) and AO4 (8): no AO2, and 8 marks for accuracy. */}
               <h3 className="text-lg font-bold text-foreground">Top Tips for Top Marks</h3>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Always use &quot;Priestley&quot; as the subject - &quot;Priestley
-                  presents/uses/suggests...&quot; This is an analysis of methods requirement.
+                  presents/uses/suggests...&quot; This shows you understand the play as a deliberate
+                  construction with a message, part of an informed, critical response (reading and
+                  response).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -624,8 +655,9 @@ export default function InspectorCallsPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Note: No SPaG marks on Section B, but clear writing still matters for reading and
-                  response.
+                  Note: 8 of the 40 marks in Section B are for your range of vocabulary and sentence
+                  structures and your spelling and punctuation, so write accurately and check names
+                  and key terms.
                 </li>
               </ul>
             </div>

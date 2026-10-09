@@ -60,8 +60,10 @@ const CHARACTERS = [
     name: 'Ralph',
     description:
       "The elected leader who represents democracy, civilisation, and order. He insists on maintaining the signal fire and building shelters. Ralph is attractive, athletic, and initially confident, but his authority gradually crumbles as the boys are seduced by Jack's savagery. He tries to hold onto reason and morality but is complicit in Simon's murder. By the end, he is hunted like an animal. Ralph's journey represents the fragility of civilised values under pressure.",
+    // 9 October 2026: "We've got to have rules and obey them. After all, we're not
+    // savages" was listed here as Ralph's. Jack says it, in Chapter 2, which is the
+    // irony Jack's own list draws from it; it is no longer listed under Ralph.
     key_quotes: [
-      '"We\'ve got to have rules and obey them. After all, we\'re not savages"',
       '"The rules are the only thing we\'ve got!"',
       '"Ralph wept for the end of innocence, the darkness of man\'s heart"',
       '"I\'m chief. I was chosen"',
@@ -218,9 +220,10 @@ const SYMBOLISM = [
 const KEY_QUOTES = [
   {
     quote: '"We\'ve got to have rules and obey them. After all, we\'re not savages"',
-    speaker: 'Ralph (Ch. 2)',
+    // 9 October 2026: the speaker was given as Ralph. It is Jack, in Chapter 2.
+    speaker: 'Jack (Ch. 2)',
     significance:
-      'Dramatic irony - this is exactly what the boys become. Establishes the central tension between civilisation and savagery.',
+      'Dramatic irony - Jack, who says it, becomes the most savage of all the boys. Establishes the central tension between civilisation and savagery.',
   },
   {
     quote: '"The rules are the only thing we\'ve got!"',
@@ -505,9 +508,13 @@ export default function LordOfTheFliesPage() {
         {/* ── Key quotes ────────────────────────────────────────── */}
         <section id="quotes" className="mt-14 scroll-mt-20">
           <h2 className="text-2xl font-bold text-foreground">Key Quotes (15+)</h2>
+          {/* 9 October 2026: this said the exam provides an extract. Pearson's 1ET0/01 prints
+              none in Section B: each question opens with a short quotation, and the paper is
+              closed book. */}
           <p className="mt-2 text-muted-foreground">
-            The Edexcel exam provides an extract, but you will also need to reference the wider
-            novel. Learn these quotes and practise embedding them into analytical paragraphs.
+            The Edexcel exam is closed book and prints no extract from the novel: each question
+            opens with a short quotation, and the rest of your evidence comes from memory. Learn
+            these quotes and practise embedding them into analytical paragraphs.
           </p>
           <div className="mt-6 space-y-4">
             {KEY_QUOTES.map((q, i) => (
@@ -541,38 +548,66 @@ export default function LordOfTheFliesPage() {
 
           <div className="mt-6 space-y-6">
             <div className="rounded-xl bg-muted p-6">
+              {/* 9 October 2026: this said Section B prints an extract to analyse before an essay
+                  on the wider novel. Pearson's 1ET0/01 (specification Issue 2, PDF page 23, and its
+                  June 2024 question paper) prints none: the student answers one of two essay
+                  questions, each opening with a short quotation from the text, and must refer to
+                  the novel's context. The example questions now take that shape; their quotations
+                  are the page's own. */}
               <h3 className="text-lg font-bold text-foreground">
                 What Does the Edexcel Question Look Like?
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                Paper 1, Section B is worth <strong>40 marks</strong>. You are given an{' '}
-                <strong>extract</strong> from the novel and asked a question about a theme or
-                character. You must analyse the extract and then write about the theme/character in
-                the <strong>wider novel</strong>. This is an extract + essay format.
+                Paper 1, Section B is worth <strong>40 marks</strong>. You answer{' '}
+                <strong>one essay question</strong> on the novel from a choice of two. No extract is
+                printed: each question opens with a <strong>short quotation</strong> from the novel,
+                then asks about a theme or character across the <strong>whole novel</strong>, and
+                you must refer to its context.
               </p>
               <div className="mt-4 space-y-3">
                 <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 1
                   </p>
+                  <p className="mt-2 text-sm italic text-muted-foreground">
+                    &quot;The world, that understandable and lawful world, was slipping away.&quot;
+                  </p>
                   <p className="mt-2 text-sm text-foreground font-medium">
-                    Explore how Golding presents the conflict between civilisation and savagery in
-                    this extract and in the novel as a whole.
+                    Explore how Golding presents the conflict between civilisation and savagery in{' '}
+                    <em>Lord of the Flies</em>.
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    You must refer to the context of the novel in your answer. (40 marks, includes 8
+                    marks for the range of appropriate vocabulary and sentence structures, and
+                    accurate use of spelling and punctuation)
                   </p>
                 </div>
                 <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 2
                   </p>
+                  <p className="mt-2 text-sm italic text-muted-foreground">
+                    &quot;I ought to be chief... because I&apos;m chapter chorister and head
+                    boy.&quot;
+                  </p>
                   <p className="mt-2 text-sm text-foreground font-medium">
-                    How does Golding present the importance of power in this extract and in the
-                    novel as a whole?
+                    Explore how Golding presents the importance of power in{' '}
+                    <em>Lord of the Flies</em>.
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    You must refer to the context of the novel in your answer. (40 marks, includes 8
+                    marks for the range of appropriate vocabulary and sentence structures, and
+                    accurate use of spelling and punctuation)
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="rounded-xl bg-muted p-6">
+              {/* 9 October 2026: these steps analysed an extract Section B does not print, and
+                  called methods "key for analysis of methods", which Section B does not mark.
+                  Pearson's 1ET0/01 marks the essay for AO1 (16), AO3 (16) and AO4 (8), with no
+                  AO2. */}
               <h3 className="text-lg font-bold text-foreground">
                 How to Structure Your Answer (40 marks)
               </h3>
@@ -592,9 +627,9 @@ export default function LordOfTheFliesPage() {
                     2
                   </span>
                   <span>
-                    <strong>Analyse the extract</strong> - close-read the given passage. Analyse
-                    language, structure, and form. Embed short quotations from the extract and
-                    explore individual words and their connotations.
+                    <strong>Start from the opening quotation</strong> - the question opens with a
+                    short quotation, not an extract to analyse. Use it as a way into the question if
+                    it helps, then move on to your own evidence from across the novel.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -602,7 +637,7 @@ export default function LordOfTheFliesPage() {
                     3
                   </span>
                   <span>
-                    <strong>Write about the wider novel</strong> - use 3-4 paragraphs that track the
+                    <strong>Write about the whole novel</strong> - use 4-5 paragraphs that track the
                     theme/character across the whole text. Show how Golding develops the idea from
                     beginning to end.
                   </span>
@@ -612,10 +647,13 @@ export default function LordOfTheFliesPage() {
                     4
                   </span>
                   <span>
-                    <strong>Embed quotations and analyse language</strong> - short quotes woven into
-                    sentences are most effective. Zoom in on individual words: &quot;Golding&apos;s
-                    use of the verb &apos;snarling&apos; reduces Jack to an animal,
-                    suggesting...&quot;
+                    {/* 9 October 2026: this called 'snarling' a verb. In the line it comes from,
+                        "his laughter became a bloodthirsty snarling", it is a noun. */}
+                    <strong>Embed quotations</strong> - short quotes woven into sentences are most
+                    effective. Zoom in on a word when it supports your argument: &quot;The noun
+                    &apos;snarling&apos; for Jack&apos;s laughter reduces him to an animal,
+                    suggesting...&quot; Section B gives no marks for analysing language as such, so
+                    keep each comment tied to the question.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -636,20 +674,26 @@ export default function LordOfTheFliesPage() {
                   <span>
                     <strong>Discuss Golding&apos;s methods</strong> - symbolism (conch, glasses, the
                     beast, face paint), allegory, foreshadowing, biblical allusion, the ironic
-                    ending, and narrative perspective. This is key for analysis of methods.
+                    ending, and narrative perspective. Use them as evidence for your argument:
+                    Section B has no separate marks for analysis of methods.
                   </span>
                 </li>
               </ol>
             </div>
 
             <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
+              {/* 9 October 2026: these tips credited analysis of methods, told the reader to start
+                  from an extract, and gave Section B 4 marks for SPaG. Pearson's 1ET0/01 prints no
+                  extract in Section B and marks it for AO1 (16), AO3 (16) and AO4 (8), with no
+                  AO2. */}
               <h3 className="text-lg font-bold text-foreground">Top Tips for Top Marks</h3>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Always use &quot;Golding&quot; as the subject - &quot;Golding
-                  presents/suggests/uses...&quot; This demonstrates awareness of the writer&apos;s
-                  craft (analysis of methods).
+                  presents/suggests/uses...&quot; This shows you understand the novel as a
+                  deliberate construction with a message, part of an informed, critical response
+                  (reading and response).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -665,8 +709,8 @@ export default function LordOfTheFliesPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Use the extract as a springboard - analyse it closely first, then widen your
-                  argument to the whole novel. Do not ignore the extract.
+                  Use the opening quotation as a springboard - it is a way into the question, not an
+                  extract to analyse. Widen your argument to the whole novel from the start.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -676,10 +720,10 @@ export default function LordOfTheFliesPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Remember the marking guide: Reading and response (response to text, use of
-                  quotes), Analysis of methods (analysis of writer&apos;s methods - language, form,
-                  structure), Context (context), Accuracy (SPaG - 4 marks are available for
-                  spelling, punctuation, and grammar in Section B).
+                  Remember the marking guide for Section B: Reading and response (response to text,
+                  use of quotes: AO1, 16 marks), Context (AO3, 16 marks), Accuracy (vocabulary,
+                  sentence structures, spelling and punctuation: AO4, 8 marks). There are no marks
+                  for analysis of language, form and structure in this section.
                 </li>
               </ul>
             </div>

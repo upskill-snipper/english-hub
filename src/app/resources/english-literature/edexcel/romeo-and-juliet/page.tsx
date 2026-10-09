@@ -424,6 +424,12 @@ export default function RomeoAndJulietPage() {
 
         {/* ── Paper 1 Section A overview ──────────────────────────── */}
         <section className="mt-14 scroll-mt-20">
+          {/* 9 October 2026: this said the question was one essay on the whole play with no
+              extract, marked up to 12, 12 and 8 for reading, methods and context, plus 4 for SPaG,
+              in 50-55 minutes. Pearson's 1ET0/01 (specification Issue 2, PDF page 23, and its June
+              2024 mark scheme) sets two parts on a printed extract of about 30 lines: (a) for AO2
+              alone (20 marks) and (b) for AO1 (15) and AO3 (5). Section A has no SPaG, and Pearson
+              advises about 55 minutes on it, divided equally between the parts. */}
           <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
             <h2 className="text-lg font-bold text-foreground">
               Edexcel Paper 1, Section A - Shakespeare (40 marks)
@@ -431,23 +437,25 @@ export default function RomeoAndJulietPage() {
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                You will receive <strong>one question</strong> on Romeo and Juliet (no choice). The
-                question asks about a character, theme, or relationship across the{' '}
-                <strong>whole play</strong>.
+                You will receive <strong>one two-part question</strong> on Romeo and Juliet (no
+                choice), built on a <strong>printed extract</strong> of about 30 lines.
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                There is <strong>no extract</strong> - you must recall your own quotations and
-                evidence from memory.
+                <strong>Part (a), 20 marks</strong>, asks how Shakespeare presents something in the
+                extract. <strong>Part (b), 20 marks</strong>, asks about the importance of a theme
+                from the extract elsewhere in the play: for that you must recall your own quotations
+                and evidence from memory.
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                <strong>40 marks total</strong>: 36 marks for content and analysis + 4 marks for
-                spelling, punctuation, and grammar (SPaG).
+                <strong>40 marks total</strong>, with no marks for spelling, punctuation, and
+                grammar (SPaG) in this section.
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                Recommended time: approximately <strong>50-55 minutes</strong>.
+                Recommended time: about <strong>55 minutes</strong>, divided equally between the two
+                parts.
               </li>
             </ul>
             <div className="mt-4 rounded-lg bg-card p-4">
@@ -457,21 +465,25 @@ export default function RomeoAndJulietPage() {
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>
                   <strong>Reading and response</strong> - Read, respond, and use textual references
-                  (including quotations) to support interpretation. <em>(Up to 12 marks)</em>
+                  (including quotations) to support interpretation.{' '}
+                  <em>(AO1: 15 marks, in part (b) only)</em>
                 </li>
                 <li>
                   <strong>Analysis of methods</strong> - Analyse the language, form, and structure
                   used by a writer to create meanings and effects, using relevant subject
-                  terminology. <em>(Up to 12 marks)</em>
+                  terminology. <em>(AO2: 20 marks, in part (a) only)</em>
                 </li>
                 <li>
                   <strong>Context</strong> - Show understanding of the relationships between texts
-                  and the contexts in which they were written. <em>(Up to 8 marks)</em>
+                  and the contexts in which they were written.{' '}
+                  <em>(AO3: 5 marks, in part (b) only)</em>
                 </li>
                 <li>
                   <strong>Accuracy</strong> - Use a range of vocabulary and sentence structures for
                   clarity, purpose, and effect, with accurate spelling and punctuation.{' '}
-                  <em>(4 marks)</em>
+                  <em>
+                    (Not marked in Section A: the paper&apos;s 8 marks for it are in Section B)
+                  </em>
                 </li>
               </ul>
             </div>
@@ -571,9 +583,13 @@ export default function RomeoAndJulietPage() {
         {/* ── Context ───────────────────────────────────────────── */}
         <section id="context" className="mt-14 scroll-mt-20">
           <h2 className="text-2xl font-bold text-foreground">Historical Context</h2>
+          {/* 9 October 2026: this said context belongs woven into analysis, without saying where
+              it is marked. Pearson's 1ET0/01 gives context (AO3) 5 of part (b)'s 20 marks and
+              none in part (a), which is marked for analysis of the extract (AO2) alone. */}
           <p className="mt-2 text-muted-foreground">
-            Context is assessed through the context skill. The best responses weave context into
-            analysis rather than treating it as a bolt-on paragraph.
+            Context is assessed in part (b) of the Shakespeare question, where it is worth 5 of the
+            20 marks; part (a) gives it none. The best part (b) answers weave context into their
+            argument rather than treating it as a bolt-on paragraph.
           </p>
           <div className="mt-6 space-y-4">
             {CONTEXT_POINTS.map((c) => (
@@ -593,42 +609,83 @@ export default function RomeoAndJulietPage() {
 
           <div className="mt-6 space-y-6">
             <div className="rounded-xl bg-muted p-6">
+              {/* 9 October 2026: this said the question was one essay on the whole play, with no
+                  extract and 4 marks for SPaG. Pearson's 1ET0/01 (specification Issue 2, PDF page
+                  23, and its June 2024 question paper and mark scheme) prints an extract of about
+                  30 lines and sets two parts on it: (a) on the extract, for AO2 alone, and (b) on
+                  a theme from it elsewhere in the play, for AO1 and AO3. Section A has no SPaG. */}
               <h3 className="text-lg font-bold text-foreground">
                 What Does an Edexcel Romeo and Juliet Question Look Like?
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                You will be given one question (no choice) that asks about a character, theme, or
-                idea across the whole play. There is no extract - you must recall your own evidence.
+                You will be given one two-part question (no choice) on a printed extract of about 30
+                lines. Part (a) asks how Shakespeare presents something in the extract. Part (b)
+                asks about the importance of a theme from the extract elsewhere in the play, and for
+                that you must recall your own evidence.
               </p>
               <div className="mt-4 rounded-lg border-2 border-dashed border-primary bg-card p-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                   Example Question
                 </p>
+                <p className="mt-1 text-xs italic text-muted-foreground">
+                  [Extract from Act 3 Scene 1 - Mercutio and Tybalt fight, and Mercutio is fatally
+                  wounded]
+                </p>
                 <p className="mt-2 text-sm text-foreground font-medium">
-                  Explore how Shakespeare presents the theme of conflict in
-                  <em> Romeo and Juliet</em>.
+                  (a) Explore how Shakespeare presents conflict in this extract. Refer closely to
+                  the extract in your answer.
+                </p>
+                <p className="mt-1 text-xs text-muted-foreground">(20 marks)</p>
+                <p className="mt-3 text-sm text-foreground font-medium">
+                  (b) In this extract, the feud between the two families leads to violence. Explain
+                  the importance of conflict elsewhere in the play.
                 </p>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  You must refer to the context of the play in your answer. (40 marks, including 4
-                  marks for SPaG)
+                  In your answer, you must consider:
+                </p>
+                <ul className="mt-1 list-disc space-y-0.5 ps-5 text-xs text-muted-foreground">
+                  <li>conflict between the Montagues and the Capulets</li>
+                  <li>conflict within the Capulet family.</li>
+                </ul>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  You must refer to the context of the play in your answer. (20 marks)
                 </p>
               </div>
               <div className="mt-3 rounded-lg border-2 border-dashed border-primary bg-card p-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                   Example Question
                 </p>
+                <p className="mt-1 text-xs italic text-muted-foreground">
+                  [Extract from Act 3 Scene 5 - Juliet refuses to marry Paris]
+                </p>
                 <p className="mt-2 text-sm text-foreground font-medium">
-                  Explore how Shakespeare presents Juliet as a strong character in
-                  <em> Romeo and Juliet</em>.
+                  (a) Explore how Shakespeare presents Juliet as a strong character in this extract.
+                  Refer closely to the extract in your answer.
+                </p>
+                <p className="mt-1 text-xs text-muted-foreground">(20 marks)</p>
+                <p className="mt-3 text-sm text-foreground font-medium">
+                  (b) In this extract, Juliet defies her father. Explain the importance of parents
+                  and children elsewhere in the play.
                 </p>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  You must refer to the context of the play in your answer. (40 marks, including 4
-                  marks for SPaG)
+                  In your answer, you must consider:
+                </p>
+                <ul className="mt-1 list-disc space-y-0.5 ps-5 text-xs text-muted-foreground">
+                  <li>how Juliet&apos;s relationship with her parents changes</li>
+                  <li>the reasons for conflict between parents and children.</li>
+                </ul>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  You must refer to the context of the play in your answer. (20 marks)
                 </p>
               </div>
             </div>
 
             <div className="rounded-xl bg-muted p-6">
+              {/* 9 October 2026: these steps described one essay across the whole play, with
+                  analysis and context in every paragraph, which fits neither part. Pearson's
+                  1ET0/01 marks part (a) for analysis of the extract (AO2) alone, and part (b), on a
+                  theme elsewhere in the play, for AO1 (15) and AO3 (5). The steps now take the two
+                  parts in turn. */}
               <h3 className="text-lg font-bold text-foreground">How to Structure Your Answer</h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
@@ -636,9 +693,9 @@ export default function RomeoAndJulietPage() {
                     1
                   </span>
                   <span>
-                    <strong>Brief introduction</strong> - outline Shakespeare&apos;s overall
-                    presentation of the theme/character in 2-3 sentences. Mention the play&apos;s
-                    context (Elizabethan society, attitudes to love/marriage/honour).
+                    <strong>Part (a): brief introduction</strong> - outline in 1-2 sentences how
+                    Shakespeare presents the theme/character in the printed extract. Leave context
+                    out: part (a) is marked only for analysis of language, form and structure.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -646,10 +703,10 @@ export default function RomeoAndJulietPage() {
                     2
                   </span>
                   <span>
-                    <strong>4-5 analytical paragraphs</strong> covering different moments across the
-                    play. Each paragraph: Point &rarr; Evidence (embedded quote) &rarr; Analysis of
-                    language/technique &rarr; Context woven in. Track how the theme/character
-                    develops from beginning to end.
+                    <strong>Part (a): 3-4 analytical paragraphs</strong> covering different moments
+                    in the extract. Each paragraph: Point &rarr; Evidence (embedded quote from the
+                    extract) &rarr; Analysis of language/technique. Context and the rest of the play
+                    earn nothing in part (a).
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -657,9 +714,11 @@ export default function RomeoAndJulietPage() {
                     3
                   </span>
                   <span>
-                    <strong>Track development across the play</strong> - show how the
-                    theme/character changes (e.g. Juliet&apos;s journey from obedient daughter to
-                    defiant lover; conflict escalating from verbal sparring to fatal violence).
+                    <strong>Part (b): track development across the play</strong> - show how the
+                    theme changes elsewhere in the play (e.g. Juliet&apos;s journey from obedient
+                    daughter to defiant lover; conflict escalating from verbal sparring to fatal
+                    violence), covering both points the question lists. Weave in context
+                    (Elizabethan society, attitudes to love/marriage/honour) as you go.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -667,18 +726,24 @@ export default function RomeoAndJulietPage() {
                     4
                   </span>
                   <span>
-                    <strong>Conclude briefly</strong> - summarise Shakespeare&apos;s message and its
-                    relevance to the Elizabethan audience. What is Shakespeare&apos;s purpose? What
-                    does he want the audience to think or feel?
+                    <strong>Conclude part (b) briefly</strong> - summarise Shakespeare&apos;s
+                    message and its relevance to the Elizabethan audience. What is
+                    Shakespeare&apos;s purpose? What does he want the audience to think or feel?
                   </span>
                 </li>
               </ol>
             </div>
 
             <div className="rounded-xl bg-muted p-6">
-              <h3 className="text-lg font-bold text-foreground">
-                Model Paragraph Structure (PEAL)
-              </h3>
+              {/* 9 October 2026: this paragraph analysed language and then linked to Elizabethan
+                  context, which fits neither part of Pearson's 1ET0/01 question: part (a) gives
+                  context no marks, and part (b) gives none for analysis of language as such. It is
+                  now a part (a) paragraph on the first example's extract, ending on the question,
+                  with a line on part (b)'s shape. */}
+              <h3 className="text-lg font-bold text-foreground">Model Part (a) Paragraph (PEAL)</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                On an extract from Act 3 Scene 1, like the first example question above.
+              </p>
               <div className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <div className="rounded-lg border border-border bg-card p-4">
                   <p>
@@ -703,16 +768,26 @@ export default function RomeoAndJulietPage() {
                 </div>
                 <div className="rounded-lg border border-border bg-card p-4">
                   <p>
-                    <strong className="text-foreground">L</strong>ink - Shakespeare uses Mercutio -
-                    a character outside the feud - to show that honour-based violence in Elizabethan
-                    society destroyed innocent bystanders. This would resonate with an audience
-                    familiar with the devastation of civil conflict.
+                    <strong className="text-foreground">L</strong>ink - Cursing both houses,
+                    Mercutio shows he belongs to neither, so in this extract Shakespeare presents
+                    conflict as destroying even those outside the feud.
                   </p>
                 </div>
               </div>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Part (a) gives no marks for context, so this paragraph links back to the question
+                rather than to Elizabethan society. In part (b), the shape is Point, Evidence,
+                Explanation, Context: a quotation you have memorised from elsewhere in the play,
+                what it shows about the theme, and context woven in, such as the honour culture in
+                which refusing a challenge was cowardly.
+              </p>
             </div>
 
             <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
+              {/* 9 October 2026: two tips here were wrong for Section A. One put context into
+                  analysis, where it earns nothing in part (a); the other said SPaG was worth 4
+                  marks. Pearson's 1ET0/01 gives context 5 marks in part (b) alone, and Section A
+                  has no SPaG: the paper's 8 marks for it (AO4) are in Section B. */}
               <h3 className="text-lg font-bold text-foreground">Top Tips for Top Marks</h3>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
@@ -728,9 +803,10 @@ export default function RomeoAndJulietPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  <strong>Embed context into analysis</strong> (context): &quot;An Elizabethan
-                  audience would have understood Juliet&apos;s defiance as deeply transgressive,
-                  given that daughters were expected to obey their fathers without question.&quot;
+                  In part (b), <strong>embed context into your argument</strong> (context): &quot;An
+                  Elizabethan audience would have understood Juliet&apos;s defiance as deeply
+                  transgressive, given that daughters were expected to obey their fathers without
+                  question.&quot; Part (a) gives context no marks.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -761,8 +837,9 @@ export default function RomeoAndJulietPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Remember <strong>SPaG is worth 4 marks</strong> - write in clear paragraphs, use
-                  accurate spelling, and vary your sentence structures.
+                  Remember <strong>Section A has no SPaG marks</strong> - the paper&apos;s 8 marks
+                  for accuracy are in Section B. Write in clear paragraphs all the same, so your
+                  argument is easy to follow.
                 </li>
               </ul>
             </div>
