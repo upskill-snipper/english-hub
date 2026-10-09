@@ -198,3 +198,112 @@ describe('both Edexcel qualifications', () => {
     }
   })
 })
+
+/**
+ * Pearson's five levels, not the site's six.
+ *
+ * Until 9 October 2026 every AO1, AO2 and AO3 ladder in edexcel-lit.ts had six
+ * levels topping out at 16, so a 20-mark question was marked 1-3, 4-5, 6-9,
+ * 10-13, 14-16 and a "Level 6" of 17-20, a level Pearson does not have. Its
+ * grids have five (1ET0/01 mark scheme, June 2024: 1-4, 5-8, 9-12, 13-16,
+ * 17-20 on a 20-mark question; 1-6, 7-12, 13-19, 20-26, 27-32 on the post-1914
+ * essay's AO1 and AO3, which halve to 1-3, 4-6, 7-10, 11-13, 14-16; AO4 1-2,
+ * 3-5, 6-8). The contiguity test above passes either way, so this pins the
+ * ranges themselves.
+ */
+describe('Edexcel Literature levels are Pearson\u2019s five', () => {
+  const FIVE_20 = [
+    [1, 4],
+    [5, 8],
+    [9, 12],
+    [13, 16],
+    [17, 20],
+  ]
+  const FIVE_16 = [
+    [1, 3],
+    [4, 6],
+    [7, 10],
+    [11, 13],
+    [14, 16],
+  ]
+  const FIVE_15 = [
+    [1, 3],
+    [4, 6],
+    [7, 9],
+    [10, 12],
+    [13, 15],
+  ]
+  const FIVE_5 = [
+    [1, 1],
+    [2, 2],
+    [3, 3],
+    [4, 4],
+    [5, 5],
+  ]
+
+  function ranges(id: string, questionId: string, aoId: string): number[][] {
+    const scheme = MARK_SCHEMES[id]!
+    const q = scheme.questions.find((x) => x.id === questionId)
+    if (!q) throw new Error(`${scheme.id} has no ${questionId}`)
+    const ao = q.assessmentObjectives.find((a) => a.id === aoId)
+    if (!ao) throw new Error(`${scheme.id} ${questionId} has no ${aoId}`)
+    return [...ao.bands]
+      .sort((x, y) => x.minMarks - y.minMarks)
+      .map((b) => [b.minMarks, b.maxMarks])
+  }
+
+  it.each([
+    ['edexcel-lit-paper1', 'Section A (a)', 'AO2', FIVE_20],
+    ['edexcel-lit-paper1', 'Section A (b)', 'AO1', FIVE_15],
+    ['edexcel-lit-paper1', 'Section A (b)', 'AO3', FIVE_5],
+    ['edexcel-lit-paper1', 'Section B', 'AO1', FIVE_16],
+    ['edexcel-lit-paper1', 'Section B', 'AO3', FIVE_16],
+    [
+      'edexcel-lit-paper1',
+      'Section B',
+      'AO4',
+      [
+        [1, 2],
+        [3, 5],
+        [6, 8],
+      ],
+    ],
+    ['edexcel-lit-paper2', 'Section A (a)', 'AO2', FIVE_20],
+    ['edexcel-lit-paper2', 'Section A (b)', 'AO1', FIVE_20],
+    ['edexcel-lit-paper2', 'Section B Part 1', 'AO2', FIVE_15],
+    ['edexcel-lit-paper2', 'Section B Part 1', 'AO3', FIVE_5],
+    [
+      'edexcel-lit-paper2',
+      'Section B Part 2',
+      'AO1',
+      [
+        [1, 2],
+        [3, 3],
+        [4, 5],
+        [6, 6],
+        [7, 8],
+      ],
+    ],
+    [
+      'edexcel-lit-paper2',
+      'Section B Part 2',
+      'AO2',
+      [
+        [1, 2],
+        [3, 5],
+        [6, 7],
+        [8, 10],
+        [11, 12],
+      ],
+    ],
+  ] as const)('%s %s %s runs %j', (id, questionId, aoId, expected) => {
+    expect(ranges(id, questionId, aoId)).toEqual(expected)
+  })
+
+  it('names no level Pearson does not have', () => {
+    const names = [lit1, lit2].flatMap((s) =>
+      s.questions.flatMap((q) => q.assessmentObjectives.flatMap((a) => a.bands.map((b) => b.band))),
+    )
+    expect(names.filter((n) => /Level [6-9]/.test(n))).toEqual([])
+  })
+})

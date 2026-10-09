@@ -33,7 +33,9 @@
 // assessed there at all.
 //
 // WHAT IS AND IS NOT SOURCED: the structure and AO allocations are the
-// specification's own. The level descriptors are written in Pearson's ladder
+// specification's own, and since 9 October 2026 so are the five levels and
+// their mark ranges (Pearson's June 2024 1ET0/01 mark scheme; see the note on
+// the ladders below). The level descriptors are written in Pearson's ladder
 // lexis and are NOT transcribed verbatim from the four published mark schemes,
 // so this scheme is deliberately absent from
 // src/lib/marking/examiner/verification.ts and derives as `unverified-grid`.
@@ -42,6 +44,7 @@
 //   https://qualifications.pearson.com/en/qualifications/edexcel-gcses/english-literature-2015.html
 //   1ET0 specification Issue 2, "Breakdown of Assessment Objectives by
 //   component".
+//   1ET0/01 mark scheme, June 2024, the level grids for Sections A and B.
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { MarkScheme, AssessmentObjective } from './types'
@@ -49,24 +52,41 @@ import { scaleAO } from './scale-ao'
 
 // ─── Assessment Objectives ─────────────────────────────────────────────────
 // Edexcel Literature uses AO1-AO4. AO1, AO2 and AO3 below each carry a ladder
-// of six levels, written for this site, which scaleAO fits to each question.
+// of Pearson's five levels at 20 marks, which scaleAO fits to each question.
 //
-// THESE ARE NOT PEARSON'S LEVELS (9 October 2026). Until then this comment
-// said the six levels mirrored Pearson's published grids. Pearson's grids have
-// five (its 1ET0/01 mark scheme, June 2024). A 20-mark question runs Level 1
-// 1-4, 5-8, 9-12, 13-16, Level 5 17-20, where these ladders scale to 1-3, 4-5,
-// 6-9, 10-13, 14-16 and a "Level 6" of 17-20. Pearson marks Paper 1 part (b)
-// on one 20-mark grid for AO1 and AO3 together, where these split it into an
-// AO1 ladder and a 5-mark AO3 ladder with no Level 2. It marks the post-1914
-// essay's AO1 and AO3 on one 32-mark grid (1-6, 7-12, 13-19, 20-26, 27-32),
-// with AO4 in three levels (1-2, 3-5, 6-8), the one grid here that matches.
-// The top marks coincide, but the marker is asked to place answers in a
-// "Level 6" Pearson does not have, its written justifications, which students
-// see, can name it, and the boundaries below the top differ by up to three
-// marks. Rebuilding the ladders to Pearson's would change how every Edexcel
-// Literature answer is scored, through the GCSE marker, essay feedback and the
-// examiner tool's published-grid packs, so it is the founder's decision and is
-// on the founder's list. Nothing is rescaled here.
+// REBUILT TO PEARSON'S FIVE LEVELS, 9 October 2026. Until then each ladder had
+// six levels, written for this site, topping out at 16: scaled to a 20-mark
+// question they ran 1-3, 4-5, 6-9, 10-13, 14-16 and a "Level 6" of 17-20.
+// Pearson's grids have five levels and no Level 6 (its 1ET0/01 mark scheme,
+// June 2024): a 20-mark question runs 1-4, 5-8, 9-12, 13-16, 17-20. So the
+// marker was asked to place answers in a level Pearson does not have, its
+// written justifications, which students see, could name it, and the
+// boundaries below the top differed from Pearson's by up to three marks. The
+// founder approved the rebuild the same day.
+//
+// What the rebuild changes, question by question, for each objective's ladder:
+//
+//   20 marks (P1 A(a) AO2, P2 A(a) AO2, P2 A(b) AO1)
+//     was 1-3, 4-5, 6-9, 10-13, 14-16, 17-20   now 1-4, 5-8, 9-12, 13-16, 17-20
+//   16 marks (P1 Section B AO1 and AO3)
+//     was 1-2, 3-4, 5-7, 8-10, 11-13, 14-16    now 1-3, 4-6, 7-10, 11-13, 14-16
+//   15 marks (P1 A(b) AO1, P2 B Part 1 AO2)
+//     was 1-2, 3-4, 5-7, 8-9, 10-12, 13-15     now 1-3, 4-6, 7-9, 10-12, 13-15
+//   12 marks (P2 B Part 2 AO2)
+//     was 1-2, 3, 4-5, 6-8, 9-10, 11-12        now 1-2, 3-5, 6-7, 8-10, 11-12
+//    8 marks (P2 B Part 2 AO1)
+//     was 1, 2, 3-4, 5, 6-7, 8                 now 1-2, 3, 4-5, 6, 7-8
+//    5 marks (P1 A(b) AO3, P2 B Part 1 AO3)
+//     was 1, 2, 3, 4, 5 under Levels 1, 3, 4, 5 and 6   now one mark a level, Levels 1-5
+//
+// Pearson marks each question on ONE grid: Paper 1 part (b) on a 20-mark grid
+// whose bullets are AO1 (15) and AO3 (5), the post-1914 essay's AO1 and AO3 on
+// one 32-mark grid (1-6, 7-12, 13-19, 20-26, 27-32). This file keeps one ladder
+// per objective, so each objective's share of a level is that grid's range in
+// proportion: half the 32-mark grid is 1-3, 4-6, 7-10 (9.5 rounds up), 11-13,
+// 14-16. AO4 keeps the three levels it already had, which are Pearson's
+// (1-2, 3-5, 6-8). The descriptors paraphrase Pearson's level wording; they
+// are not transcribed, so the scheme still derives as `unverified-grid`.
 
 // AO1 - used across multiple questions with different mark allocations
 const ao1Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
@@ -78,10 +98,10 @@ const ao1Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
     {
       band: 'Level 1',
       minMarks: 1,
-      maxMarks: 2,
+      maxMarks: 4,
       label: 'Simple',
       descriptor:
-        'Simple comments that show basic awareness of the text. Limited textual reference with little relevance to the task.',
+        'A simple response with little personal response and little sign of a critical style. Few references to the text, with little relevance to the task.',
       indicators: [
         'Retells or paraphrases rather than responds to the question',
         'References are general or narrative-based',
@@ -90,24 +110,24 @@ const ao1Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
     },
     {
       band: 'Level 2',
-      minMarks: 3,
-      maxMarks: 4,
-      label: 'Supported',
+      minMarks: 5,
+      maxMarks: 8,
+      label: 'Some response',
       descriptor:
-        'Supported comments with some relevant textual reference. Begins to shape a response around the task.',
+        'A response that may be largely narrative but has some personal response and some critical style, not always applied securely. Some valid points, without consistent focus.',
       indicators: [
         'Makes some relevant points about the text',
-        'Some quotations used to support ideas',
-        'Response begins to address the question',
+        'Some references support the ideas',
+        'Focus on the question is not always secure',
       ],
     },
     {
       band: 'Level 3',
-      minMarks: 5,
-      maxMarks: 7,
-      label: 'Explained',
+      minMarks: 9,
+      maxMarks: 12,
+      label: 'Sound',
       descriptor:
-        'Explained response with clear understanding. Effective use of textual references to support a structured argument.',
+        'A relevant personal response, soundly related to the text, in an appropriate critical style. Focused points supported from the text show a sound interpretation.',
       indicators: [
         'Clear and relevant points developed with explanation',
         'Quotations are well-chosen and embedded',
@@ -116,11 +136,11 @@ const ao1Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
     },
     {
       band: 'Level 4',
-      minMarks: 8,
-      maxMarks: 10,
-      label: 'Thoughtful',
+      minMarks: 13,
+      maxMarks: 16,
+      label: 'Developed',
       descriptor:
-        'Thoughtful, developed response demonstrating a secure understanding. Apt textual references integrated into interpretation.',
+        'A developed personal response with thorough engagement, fully related to the text. A sustained critical style and well-developed interpretation, with well-chosen references supporting a range of points.',
       indicators: [
         'Sustained interpretation across the response',
         'References are precise and serve the argument',
@@ -129,28 +149,15 @@ const ao1Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
     },
     {
       band: 'Level 5',
-      minMarks: 11,
-      maxMarks: 13,
-      label: 'Exploratory',
+      minMarks: 17,
+      maxMarks: 20,
+      label: 'Assured',
       descriptor:
-        'Exploratory, critical response with an assured personal interpretation. Judicious use of precise textual references.',
+        'An assured personal response showing a high level of engagement. A mature critical style with perceptive interpretation, in which discerning references are integral to the argument.',
       indicators: [
-        'Alternative interpretations explored with confidence',
-        'Evidence is judiciously selected and precisely deployed',
-        'Critical argument is sustained and compelling',
-      ],
-    },
-    {
-      band: 'Level 6',
-      minMarks: 14,
-      maxMarks: 16,
-      label: 'Convincing',
-      descriptor:
-        'Convincing, critical analysis demonstrating independent thought. A sophisticated personal response supported throughout by precise, apt references.',
-      indicators: [
-        'Original and perceptive reading of the text',
-        'Analysis is deeply rooted in textual evidence',
-        'Response is cohesive, fluent and convincing throughout',
+        'Perceptive, independent reading of the text',
+        'Evidence is judiciously selected and integral to the argument',
+        'Critical argument is sustained, mature and convincing',
       ],
     },
   ],
@@ -165,10 +172,10 @@ const ao2Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
     {
       band: 'Level 1',
       minMarks: 1,
-      maxMarks: 2,
-      label: 'Simple awareness',
+      maxMarks: 4,
+      label: 'Simple identification',
       descriptor:
-        'Simple awareness of language, form or structure. Limited use of subject terminology, often inaccurate.',
+        'A simple response with minimal identification of language, form and structure, and little relevant subject terminology.',
       indicators: [
         'Identifies obvious features (e.g. simile) without discussing effect',
         'Subject terminology is limited or misapplied',
@@ -176,11 +183,11 @@ const ao2Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
     },
     {
       band: 'Level 2',
-      minMarks: 3,
-      maxMarks: 4,
-      label: 'Identification with comment',
+      minMarks: 5,
+      maxMarks: 8,
+      label: 'Largely descriptive',
       descriptor:
-        'Identifies language and/or structural features with some comment on their effect. Some relevant subject terminology.',
+        'Largely descriptive, with some comment on language, form and structure. Limited subject terminology in support of the examples given.',
       indicators: [
         'Names methods and makes simple comments on effect',
         'Some accurate subject terminology used',
@@ -188,11 +195,11 @@ const ao2Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
     },
     {
       band: 'Level 3',
-      minMarks: 5,
-      maxMarks: 7,
-      label: 'Clear explanation',
+      minMarks: 9,
+      maxMarks: 12,
+      label: 'Understanding',
       descriptor:
-        'Clear explanation of how the writer uses language and/or structure to create effects. Appropriate and accurate subject terminology.',
+        'Understanding of a range of language, form and structure features, linked to their effect on the reader. Relevant subject terminology supports the examples.',
       indicators: [
         'Explains how methods create meaning and effects',
         'Accurate subject terminology used consistently',
@@ -201,11 +208,11 @@ const ao2Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
     },
     {
       band: 'Level 4',
-      minMarks: 8,
-      maxMarks: 10,
-      label: 'Examination',
+      minMarks: 13,
+      maxMarks: 16,
+      label: 'Sustained analysis',
       descriptor:
-        "Examination of the writer's methods with detailed consideration of their effects. Subject terminology used effectively to support analysis.",
+        'A focused, detailed response that sustains analysis of language, form and structure and their effect on the reader. Subject terminology is used accurately to develop ideas.',
       indicators: [
         'Considers layered effects of language and structure',
         'Terminology is embedded and supports the argument',
@@ -214,28 +221,15 @@ const ao2Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
     },
     {
       band: 'Level 5',
-      minMarks: 11,
-      maxMarks: 13,
-      label: 'Exploration',
+      minMarks: 17,
+      maxMarks: 20,
+      label: 'Cohesive evaluation',
       descriptor:
-        'Exploration of how language, form and structure work together to create complex meanings. Subject terminology used judiciously.',
-      indicators: [
-        'Analyses subtle and implicit effects',
-        'Terminology is a precise analytical tool',
-        'Considers why choices were made, not just what they are',
-      ],
-    },
-    {
-      band: 'Level 6',
-      minMarks: 14,
-      maxMarks: 16,
-      label: 'Analysis',
-      descriptor:
-        "Perceptive analysis of how the writer's methods combine to create sophisticated meanings and effects on the reader. Precise and judicious use of subject terminology.",
+        'A cohesive evaluation of how language, form and structure work together and affect the reader. Subject terminology is precise and integrated.',
       indicators: [
         'Perceptive, layered analysis of craft and reader response',
-        'Terminology enhances rather than decorates the argument',
-        'Considers the whole text as a crafted artefact',
+        'Terminology is a precise analytical tool, not decoration',
+        'Considers how methods combine, not just what they are',
       ],
     },
   ],
@@ -250,10 +244,10 @@ const ao3Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
     {
       band: 'Level 1',
       minMarks: 1,
-      maxMarks: 2,
-      label: 'Simple awareness',
+      maxMarks: 4,
+      label: 'Little awareness',
       descriptor:
-        'Simple awareness of contextual factors. Context is mentioned as isolated facts with no link to the text.',
+        'Little awareness of relevant context, and little comment on how the text and its context relate.',
       indicators: [
         'Bolt-on contextual facts with no integration',
         'No link between context and meaning',
@@ -261,11 +255,11 @@ const ao3Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
     },
     {
       band: 'Level 2',
-      minMarks: 3,
-      maxMarks: 4,
-      label: 'Some understanding',
+      minMarks: 5,
+      maxMarks: 8,
+      label: 'Some awareness',
       descriptor:
-        'Some understanding of context with some links made between context and the text/task.',
+        'Some awareness of relevant context, with some comment on the relationship between text and context.',
       indicators: [
         'Some relevant contextual points linked to the text',
         'Context begins to inform interpretation',
@@ -273,11 +267,11 @@ const ao3Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
     },
     {
       band: 'Level 3',
-      minMarks: 5,
-      maxMarks: 7,
-      label: 'Clear understanding',
+      minMarks: 9,
+      maxMarks: 12,
+      label: 'Sound comment',
       descriptor:
-        'Clear understanding of contextual factors shown through specific links between context and the text/task.',
+        'Sound comment on relevant context, and on how it relates to the text and the task.',
       indicators: [
         'Context is used to support points about theme or character',
         'Understanding of ideas and attitudes of the period',
@@ -285,11 +279,11 @@ const ao3Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
     },
     {
       band: 'Level 4',
-      minMarks: 8,
-      maxMarks: 10,
-      label: 'Developed understanding',
+      minMarks: 13,
+      maxMarks: 16,
+      label: 'Sustained comment',
       descriptor:
-        'Developed understanding of context integrated into the interpretation. Specific and detailed links between context, text and task.',
+        'Sustained comment on relevant context, with detailed awareness of the relationship between text and context.',
       indicators: [
         'Context is woven into the argument throughout',
         "Understands how context shapes the writer's purpose and choices",
@@ -297,28 +291,14 @@ const ao3Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
     },
     {
       band: 'Level 5',
-      minMarks: 11,
-      maxMarks: 13,
-      label: 'Exploration',
+      minMarks: 17,
+      maxMarks: 20,
+      label: 'Convincing integration',
       descriptor:
-        'Exploration of contextual factors with detailed and specific links showing how context shapes meaning.',
-      indicators: [
-        'Context deepens interpretation throughout',
-        'Considers multiple contextual perspectives',
-        'Moves beyond biographical context to social and literary context',
-      ],
-    },
-    {
-      band: 'Level 6',
-      minMarks: 14,
-      maxMarks: 16,
-      label: 'Convincing exploration',
-      descriptor:
-        "Convincing exploration of context fully integrated into a sophisticated interpretation. Context is used to illuminate the writer's intentions and the text's reception.",
+        'An excellent grasp of relevant context, with the relationship between text and context integrated convincingly into the argument.',
       indicators: [
         'Context is seamlessly integrated as a critical lens',
-        'Considers how context shapes meaning at multiple levels',
-        'Sophisticated understanding of literary and social contexts',
+        'Considers how context shapes meaning at more than one level',
       ],
     },
   ],
