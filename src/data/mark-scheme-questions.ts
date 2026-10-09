@@ -32,6 +32,10 @@
 // AQA unseen comparison beside it went from 24 marks to Question 27.2's 8. Only
 // those tariffs are checked; every level descriptor here is still unverified.
 //
+// 9 October 2026: the Edexcel Literature Paper 1 entries were rebuilt as well
+// (see the note above them). Their sections, tariffs and level ranges are now
+// Pearson's; their descriptors are still this file's own paraphrase.
+//
 /**
  * Question-level marking guide data for all GCSE English exam boards.
  * Each entry describes a single question with its level descriptors,
@@ -1712,50 +1716,118 @@ const edexcelLanguage: MarkScheme[] = [
 // ── Edexcel English Literature ───────────────────────────────────────────────
 
 const edexcelLiterature: MarkScheme[] = [
+  // The four Edexcel Literature Paper 1 entries below were rebuilt on 9 October 2026 against
+  // Pearson's specification (1ET0, Issue 2, PDF page 23) and its June 2024 Paper 1 mark scheme
+  // and question paper. They were two, each on four levels of 1-10 to 31-40: Section A as one
+  // 40-mark extract-based essay on AO1-AO4 with SPaG, and Section B on AO1-AO4 with "method
+  // analysis" and SPaG, whose first tip said there might be an extract. Section A is one
+  // two-part question on a printed extract of about 30 lines: (a) for AO2 alone, (b) for a
+  // theme from the extract elsewhere in the play, AO1 15 and AO3 5, each on one 20-mark grid
+  // of five levels, and there is no SPaG. Section B prints no extract, and there is no AO2:
+  // AO1 and AO3 share one 32-mark grid of five levels, and AO4 has its own 8-mark grid of
+  // three. The viewer shows one ladder per entry, so there is one entry per Pearson grid, as
+  // the Paper 2 entries split Section A into its parts. Level ranges are Pearson's; the
+  // descriptors are this file's own paraphrase of what each level rewards.
   {
-    id: 'edexcel-lit-p1-sa',
+    id: 'edexcel-lit-p1-sa-a',
     board: 'Edexcel',
     subject: 'Literature',
     paper: 'Paper 1: Shakespeare and Post-1914 Literature',
-    question: `Section A - Shakespeare: extract-based essay (AO1, AO2, AO3, AO4)`,
-    totalMarks: 40,
+    question: `Section A part (a) - Shakespeare: the printed extract (AO2)`,
+    totalMarks: 20,
     levels: [
       {
         level: 1,
-        marks: '1-10',
+        marks: '1-4',
         descriptor:
-          'Simple, limited response. Simple comment on language/structure. Limited context. Basic SPaG.',
+          'Simple comment on the extract, with little attention to language, form or structure and little terminology.',
       },
       {
         level: 2,
-        marks: '11-20',
+        marks: '5-8',
         descriptor:
-          'Some personal response with references. Some analysis of methods. Some awareness of context. Reasonable SPaG.',
+          'Mostly describes the extract, with some comment on its language, form or structure and some terminology.',
       },
       {
         level: 3,
-        marks: '21-30',
+        marks: '9-12',
         descriptor:
-          'Clear, developed response. Clear analysis of methods with terminology. Clear contextual understanding. Good SPaG.',
+          'Relevant analysis of the language, form and structure of the extract, with fitting examples and mostly appropriate terminology.',
       },
       {
         level: 4,
-        marks: '31-40',
+        marks: '13-16',
         descriptor:
-          'Critical, exploratory response. Sophisticated method analysis. Perceptive contextual understanding. Excellent SPaG.',
+          'Thorough exploration of how the language, form and structure of the extract create meaning, with well-chosen examples and apt terminology.',
+      },
+      {
+        level: 5,
+        marks: '17-20',
+        descriptor:
+          'Cohesive evaluation of how language, form and structure work together in the extract, with precise, integrated terminology.',
       },
     ],
     topTips: [
-      'Start with close analysis of the extract, then broaden to the whole play.',
-      'Use context to deepen analysis, not as a bolt-on.',
-      'Cover language, form, and structure.',
-      'SPaG quality contributes to your overall mark.',
+      'Stay in the printed extract - it is the only thing part (a) marks.',
+      'Cover language, form and structure: imagery, verse and prose, dramatic devices.',
+      'Use short quotations from the extract, embedded in your sentences.',
+      "Spend about half of Section A's 55 minutes here.",
     ],
     commonMistakes: [
-      'Only discussing the extract without the wider play.',
+      'Writing about the rest of the play, or about context, in part (a): neither earns marks here.',
+      'Retelling the extract instead of analysing it.',
+      'Not using terminology.',
+    ],
+  },
+  {
+    id: 'edexcel-lit-p1-sa-b',
+    board: 'Edexcel',
+    subject: 'Literature',
+    paper: 'Paper 1: Shakespeare and Post-1914 Literature',
+    question: `Section A part (b) - Shakespeare: the theme elsewhere in the play (AO1, AO3)`,
+    totalMarks: 20,
+    levels: [
+      {
+        level: 1,
+        marks: '1-4',
+        descriptor:
+          'Simple response with few references to the play, and little awareness of context.',
+      },
+      {
+        level: 2,
+        marks: '5-8',
+        descriptor:
+          'Some personal response, often narrative, with some references; some awareness of context.',
+      },
+      {
+        level: 3,
+        marks: '9-12',
+        descriptor:
+          'Relevant personal response, supported by apt references from elsewhere in the play; relevant links to context.',
+      },
+      {
+        level: 4,
+        marks: '13-16',
+        descriptor:
+          'Thorough, sustained personal response with well-chosen references; detailed understanding of context, linked to the argument.',
+      },
+      {
+        level: 5,
+        marks: '17-20',
+        descriptor:
+          'Assured, critical personal response with discerning references; perceptive understanding of context, integrated throughout.',
+      },
+    ],
+    topTips: [
+      'Write about the theme elsewhere in the play, not in the extract.',
+      'Range across three or four moments from the rest of the play, quoting from memory.',
+      'Use context to deepen the argument, not as a bolt-on: it is worth 5 of the 20 marks.',
+    ],
+    commonMistakes: [
+      'Writing about the extract again instead of elsewhere in the play.',
       'Context added as a separate paragraph.',
       'Retelling the plot.',
-      'Not using terminology.',
+      'Spending part (b) on close language analysis, which earns no marks as such here.',
     ],
   },
   {
@@ -1763,44 +1835,89 @@ const edexcelLiterature: MarkScheme[] = [
     board: 'Edexcel',
     subject: 'Literature',
     paper: 'Paper 1: Shakespeare and Post-1914 Literature',
-    question: `Section B - Post-1914 British play or novel (AO1, AO2, AO3, AO4)`,
-    totalMarks: 40,
+    question: `Section B - Post-1914 British play or novel: the essay's AO1 and AO3 grid`,
+    totalMarks: 32,
     levels: [
       {
         level: 1,
-        marks: '1-10',
+        marks: '1-6',
         descriptor:
-          'Simple personal response. Simple identification of methods. Limited context. Basic SPaG.',
+          'Simple response to the text with few references, and little awareness of context.',
       },
       {
         level: 2,
-        marks: '11-20',
+        marks: '7-12',
         descriptor:
-          'Some response with references. Some method analysis. Some context. Reasonable SPaG.',
+          'Some personal response, often narrative, with some references; some awareness of context, not always linked to the text.',
       },
       {
         level: 3,
-        marks: '21-30',
-        descriptor: 'Clear, developed response. Clear method analysis. Clear context. Good SPaG.',
+        marks: '13-19',
+        descriptor:
+          'Relevant personal response, supported by apt references from across the text; relevant understanding of context, linked to it.',
       },
       {
         level: 4,
-        marks: '31-40',
+        marks: '20-26',
         descriptor:
-          'Critical, exploratory response. Sophisticated analysis. Perceptive context. Excellent SPaG.',
+          'Thorough, sustained personal response with well-chosen references; detailed understanding of context, integrated into the argument.',
+      },
+      {
+        level: 5,
+        marks: '27-32',
+        descriptor:
+          'Assured, critical personal response with discerning references; perceptive understanding of context, integrated throughout.',
       },
     ],
     topTips: [
-      `You may or may not have an extract - check the question carefully.`,
+      'No extract is printed: each question opens with a short quotation, so quote from memory.',
       'Select your own quotations from across the text.',
-      'Integrate context meaningfully.',
+      'Integrate context meaningfully: it is worth 16 marks, as much as your response.',
       'Structure your essay around the question, not the plot.',
+      'The essay is out of 40: these 32 marks, and 8 for AO4 on its own grid.',
     ],
     commonMistakes: [
       'Writing a pre-prepared response.',
       'Not enough quotation evidence.',
       'Plot retelling.',
       'Ignoring the specific focus of the question.',
+    ],
+  },
+  {
+    id: 'edexcel-lit-p1-sb-ao4',
+    board: 'Edexcel',
+    subject: 'Literature',
+    paper: 'Paper 1: Shakespeare and Post-1914 Literature',
+    question: `Section B - Post-1914 British play or novel: the essay's AO4 grid`,
+    totalMarks: 8,
+    levels: [
+      {
+        level: 1,
+        marks: '1-2',
+        descriptor:
+          'Basic accuracy in spelling and punctuation, with a limited range of vocabulary and sentence structures.',
+      },
+      {
+        level: 2,
+        marks: '3-5',
+        descriptor:
+          'Reasonable accuracy in spelling and punctuation, with some range of vocabulary and sentence structures.',
+      },
+      {
+        level: 3,
+        marks: '6-8',
+        descriptor:
+          'Consistent accuracy in spelling and punctuation, with a wide range of vocabulary and sentence structures used for effect.',
+      },
+    ],
+    topTips: [
+      'AO4 is the same essay marked again, for vocabulary, sentence structures, spelling and punctuation.',
+      'Leave a few minutes to proofread.',
+      'Check the spelling of names and key terms.',
+    ],
+    commonMistakes: [
+      'Misspelling character names and the writer.',
+      'Leaving no time to proofread.',
     ],
   },
   // The four Edexcel Literature Paper 2 entries below were rebuilt on 2 October 2026 against

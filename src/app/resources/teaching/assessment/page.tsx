@@ -437,9 +437,13 @@ const ESSAY_QUESTIONS: EssayQuestion[] = [
   // assesses all four (1ET0 specification, Issue 2): a whole-play Shakespeare question is part
   // (b), AO1 and AO3, 20 marks; the post-1914 essay is AO1, AO3 and AO4; the novel is Paper 2,
   // and its whole-text part (b) is AO1 only, 20 marks.
+  // 9 October 2026: eq4 said "You should consider the whole play in your answer". Part (b) of
+  // Pearson's 1ET0/01 Shakespeare question asks about a theme from the printed extract
+  // elsewhere in the play (June 2024 question paper), so it is now asked in that question's
+  // own words, with its instruction on context.
   {
     id: 'eq4',
-    text: 'Explore the significance of guilt in Macbeth. You should consider the whole play in your answer.',
+    text: 'Explain the importance of guilt elsewhere in Macbeth, away from the printed extract. You must refer to the context of the play in your answer.',
     subject: 'English Literature',
     topic: 'Macbeth',
     marks: 20,
@@ -773,34 +777,55 @@ const MARK_SCHEME_TEMPLATES: MarkSchemeTemplate[] = [
       },
     ],
   },
+  // 9 October 2026: this was "Edexcel Literature Essay (40 marks)", in levels of 1-8 up to a
+  // "Level 5 (33-40)", with analysis of language, form and structure (AO2) in every level. The
+  // only 40-mark Edexcel Literature essay is Paper 1 Section B (1ET0 specification Issue 2, PDF
+  // page 23; Pearson's June 2024 mark scheme), and it has no AO2: AO1 and AO3 are marked
+  // together on one 32-mark grid of five levels, and AO4 on its own 8-mark grid of three.
+  // The ranges are Pearson's; the descriptors are this page's own paraphrase.
   {
-    title: 'Edexcel Literature Essay (40 marks)',
+    title: 'Edexcel Literature Paper 1 Section B - Post-1914 Essay (40 marks)',
     examBoard: 'Edexcel',
     levels: [
       {
-        level: 'Level 5 (33-40)',
+        level: 'AO1/AO3 Level 5 (27-32)',
         descriptor:
-          'Assured, personal response with cogent argument. Precise, apt textual references integrated into interpretation. Perceptive analysis of language, form and structure. Convincing, evaluative engagement with context (AO3).',
+          'Assured, critical personal response with a cogent argument. Discerning references integrated into the interpretation. Perceptive understanding of context, woven through the argument.',
       },
       {
-        level: 'Level 4 (25-32)',
+        level: 'AO1/AO3 Level 4 (20-26)',
         descriptor:
-          'Sustained, coherent interpretation. Well-chosen textual references support ideas. Detailed analysis of language, form and structure. Thoughtful consideration of context.',
+          'Thorough, sustained personal response. Well-chosen references support the ideas. Detailed understanding of context, linked to the argument.',
       },
       {
-        level: 'Level 3 (17-24)',
+        level: 'AO1/AO3 Level 3 (13-19)',
         descriptor:
-          'Developed personal response. Relevant textual references. Explanation of effects of language, form and structure. Understanding of relevant contexts.',
+          'Relevant personal response. Apt references support most points. Relevant understanding of context, linked to the text.',
       },
       {
-        level: 'Level 2 (9-16)',
+        level: 'AO1/AO3 Level 2 (7-12)',
         descriptor:
-          'Some supported personal response. Some appropriate references. Some comment on language, form and structure. Some awareness of context.',
+          'Some personal response, often narrative. Some appropriate references. Some awareness of context, not always linked to the text.',
       },
       {
-        level: 'Level 1 (1-8)',
+        level: 'AO1/AO3 Level 1 (1-6)',
         descriptor:
-          'Simple personal response. Limited textual reference. Simple identification of language, form and structure. Limited awareness of context.',
+          'Simple personal response. Few references to the text. Little awareness of context.',
+      },
+      {
+        level: 'AO4 Level 3 (6-8)',
+        descriptor:
+          'Wide range of vocabulary and sentence structures, used for effect. Spelling and punctuation consistently accurate.',
+      },
+      {
+        level: 'AO4 Level 2 (3-5)',
+        descriptor:
+          'Some range of vocabulary and sentence structures. Spelling and punctuation reasonably accurate.',
+      },
+      {
+        level: 'AO4 Level 1 (1-2)',
+        descriptor:
+          'Limited range of vocabulary and sentence structures. Basic accuracy in spelling and punctuation.',
       },
     ],
   },

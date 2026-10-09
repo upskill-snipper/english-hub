@@ -285,8 +285,10 @@ describe('question bank', () => {
     ['edx-lit-eba-1', ['edexcel-lit-paper1/Section A (a)']],
     ['edx-lit-er-1', ['edexcel-lit-paper1/Section A (b)']],
     ['edx-lit-er-3', ['edexcel-lit-paper1/Section B']],
-    // An Inspector Calls with a printed extract: Edexcel's Section B prints none.
-    ['edx-lit-eba-3', []],
+    // An Inspector Calls. Until 9 October 2026 it printed an extract, which
+    // Edexcel's Section B never does, and mapped to nothing; it is now a
+    // whole-play character question, which is what Section B sets.
+    ['edx-lit-eba-3', ['edexcel-lit-paper1/Section B']],
     ['edx-lit-eba-2', ['edexcel-lit-paper2/Section A (a)']],
     ['edx-lit-ta-4', ['edexcel-lit-paper2/Section A (b)']],
     ['edx-lit-pc-1', ['edexcel-lit-paper2/Section B Part 1']],

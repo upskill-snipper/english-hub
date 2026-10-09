@@ -451,8 +451,15 @@ Thank you.`,
     // the "final" breakdown on the strength of that order.
     extract: `Pr\'ythee, see there!\nBehold! look! lo! how say you?\n[...]\nIf I stand here, I saw him.\n\n[...]\n\nAvaunt! and quit my sight! let the earth hide thee!\nThy bones are marrowless, thy blood is cold;\nThou hast no speculation in those eyes\nWhich thou dost glare with!`,
     extractSource: "Shakespeare's Macbeth, Act 3 Scene 4",
+    // 9 October 2026: this was one 40-mark essay on the extract "and elsewhere in the play",
+    // marked "15 AO1, 15 AO2, 10 AO3", and its tips said context is worth 10 marks and the
+    // rest of the play deserves equal weight. Pearson's 1ET0/01 Section A is one question in
+    // two parts of 20: (a) the extract alone, AO2 only; (b) the theme elsewhere in the play,
+    // AO1 15 and AO3 5, with no SPaG. It now asks both parts in Pearson's wording, as the
+    // A Christmas Carol items below do. The model answers are unchanged: they take the
+    // extract first and the rest of the play after.
     question:
-      "Explore how Shakespeare presents Macbeth's guilt and fear in this extract and elsewhere in the play. You must refer to the context of the play in your answer. (40 marks - 15 AO1, 15 AO2, 10 AO3)",
+      "(a) Explore how Shakespeare presents Macbeth's guilt and fear in this extract. Refer closely to the extract in your answer. (20 marks)\n(b) In this extract, Macbeth sees the ghost of Banquo at the banquet. Explain the importance of guilt elsewhere in the play.\nIn your answer, you must consider:\n• what guilt makes Macbeth see and hear\n• the consequences of guilt.\nYou must refer to the context of the play in your answer. (20 marks)",
     marks: 40,
     timing: '55 minutes',
     modelAnswers: {
@@ -483,18 +490,18 @@ Shakespeare architecturally embeds guilt into the play\'s dramatic structure. Th
 The contextual significance of the ghost scene extends beyond Jacobean supernaturalism. James I\'s Daemonologie provides one framework, but the scene also engages with classical precedents - the ghost at the feast echoes Seneca\'s Thyestes, a revenge tragedy in which the violated dead return to contaminate the living. Shakespeare synthesises these traditions to create a guilt that is simultaneously psychological, theological, and political. The public setting of the banquet is essential: Macbeth\'s guilt does not merely torment him privately but erupts into the political sphere, disrupting the feast that is supposed to cement his authority. The body politic mirrors the individual body - both are haunted, both are disintegrating, and both will ultimately collapse under the weight of the crime that inaugurated them.`,
     },
     markScheme: [
-      'Analyses how Shakespeare presents guilt and fear through language, imagery, and dramatic technique',
-      'Explores the significance of specific words and phrases in the extract',
-      'Discusses guilt and fear across the whole play with well-chosen references',
-      'Considers relevant context (Jacobean beliefs, Divine Right, supernatural)',
-      'Uses precisely embedded quotations to support a sustained argument',
-      "Shows understanding of Shakespeare's dramatic methods and purposes",
+      '(a) Analyses how Shakespeare presents guilt and fear in the extract through language, imagery, and dramatic technique (AO2)',
+      '(a) Explores the significance of specific words and phrases in the extract',
+      "(a) Shows understanding of Shakespeare's dramatic methods and purposes",
+      '(b) Discusses guilt elsewhere in the play with well-chosen references (AO1)',
+      '(b) Considers relevant context (Jacobean beliefs, Divine Right, supernatural) (AO3)',
+      '(b) Uses precisely embedded quotations to support a sustained argument',
     ],
     examinerTips: [
-      'Edexcel awards 10 marks for context (AO3) - weave it throughout your answer, do not bolt it on.',
+      'Context (AO3) is worth 5 of the 20 marks in part (b), and nothing in part (a) - weave it into part (b), do not bolt it on.',
       'Consider the dramatic effect: how does this scene work on stage and for the audience?',
       'The best responses connect guilt to wider themes: power, kingship, the natural order.',
-      'Use the extract as a springboard but give equal weight to the rest of the play.',
+      'Answer each part on its own terms: part (a) stays inside the extract, part (b) moves to other moments in the play. Divide your time equally between them.',
     ],
   },
   {
@@ -510,8 +517,11 @@ The contextual significance of the ghost scene extends beyond Jacobean supernatu
     // seven lines between with nothing to show it; the cut is marked now.
     extract: `When shall we three meet again\nIn thunder, lightning, or in rain?\n\nWhen the hurlyburly\'s done,\nWhen the battle\'s lost and won.\n\n[...]\n\nFair is foul, and foul is fair:\nHover through the fog and filthy air.`,
     extractSource: "Shakespeare's Macbeth, Act 1 Scene 1",
+    // 9 October 2026: as in the item above, this was one 40-mark essay on the extract "and
+    // elsewhere in the play". It now asks Pearson's two parts of 20: (a) the extract alone,
+    // for AO2; (b) the supernatural elsewhere in the play, for AO1 and AO3.
     question:
-      'Explore how Shakespeare presents the supernatural as a disruptive force in this extract and elsewhere in the play. You must refer to the context of the play in your answer. (40 marks)',
+      "(a) Explore how Shakespeare presents the supernatural as a disruptive force in this extract. Refer closely to the extract in your answer. (20 marks)\n(b) In this extract, the witches open the play. Explain the importance of the supernatural elsewhere in the play.\nIn your answer, you must consider:\n• the witches' prophecies and apparitions\n• the effect of the supernatural on Macbeth.\nYou must refer to the context of the play in your answer. (20 marks)",
     marks: 40,
     timing: '55 minutes',
     modelAnswers: {
@@ -546,17 +556,17 @@ The paradox "lost and won" deserves particular attention because it anticipates 
 Shakespeare\'s engagement with the supernatural is inseparable from its political context. James I\'s dual identity as author of Daemonologie and patron of Shakespeare\'s company creates a specific dynamic: the play simultaneously validates the king\'s beliefs about witchcraft and dramatises the vulnerability of kingship to supernatural manipulation. But Shakespeare\'s treatment is more subtle than royal flattery. By making the witches\' power operate primarily through language - through prophecy, equivocation, and the dissolution of semantic categories - he transforms the supernatural from a folk belief into an investigation of how meaning itself can be corrupted. The witches are dangerous not because they command storms or conjure apparitions but because they demonstrate that language, the instrument through which political and moral order is maintained, can be turned against itself. In this reading, the supernatural is not an external force that disrupts a stable world but a revelation that stability was always an illusion, maintained only by the fragile consensus that fair means fair and foul means foul.`,
     },
     markScheme: [
-      'Analyses how Shakespeare presents the supernatural through language, form, and dramatic structure',
-      'Explores the effects of specific words, rhythm, and rhetorical devices in the extract',
-      'Discusses the supernatural across the whole play with well-selected references',
-      'Considers relevant context (Jacobean attitudes to witchcraft, James I, equivocation)',
-      'Uses precisely embedded quotations to support a sustained argument',
-      'Develops a conceptualised response to the idea of disruption',
+      '(a) Analyses how Shakespeare presents the supernatural in the extract through language, form, and dramatic structure (AO2)',
+      '(a) Explores the effects of specific words, rhythm, and rhetorical devices in the extract',
+      '(b) Discusses the supernatural elsewhere in the play with well-selected references (AO1)',
+      '(b) Considers relevant context (Jacobean attitudes to witchcraft, James I, equivocation) (AO3)',
+      '(b) Uses precisely embedded quotations to support a sustained argument',
+      '(b) Develops a conceptualised response to the idea of disruption',
     ],
     examinerTips: [
       "Consider the witches' language as a dramatic technique, not just as speech.",
       'The best responses connect the supernatural to themes of power, language, and order.',
-      'Context about James I and witchcraft should deepen your analysis, not sit separately.',
+      'Context about James I and witchcraft belongs in part (b), where it earns 5 marks: let it deepen your argument, not sit separately.',
       'Do not just describe what happens - analyse how and why Shakespeare constructs meaning.',
     ],
   },
@@ -578,7 +588,7 @@ Shakespeare\'s engagement with the supernatural is inseparable from its politica
     // essay on extract and novella together; Paper 2 Section A sets two parts of 20, (a) on
     // the extract (AO2) and (b) on the novel as a whole (AO1), with no marks for context.
     // The model answers take the parts in that order: extract first, then the novella.
-    extractSource: "Charles Dickens, A Christmas Carol, Stave 5",
+    extractSource: 'Charles Dickens, A Christmas Carol, Stave 5',
     question:
       "(a) Explore how Dickens presents Scrooge's transformation in this extract. (20 marks)\n(b) Explore how Dickens presents Scrooge's transformation in the novella as a whole. (20 marks)",
     marks: 40,
@@ -641,7 +651,7 @@ The novella\'s power as social criticism lies in its formal choice: the fairy ta
     // Dickens's own Stave 1, and it dropped "laying down the pen again" without a mark, now
     // restored from the held edition. The question is now Section A's two parts of 20, as in
     // the item above; the model answers take the extract first, then the novella.
-    extractSource: "Charles Dickens, A Christmas Carol, Stave 1",
+    extractSource: 'Charles Dickens, A Christmas Carol, Stave 1',
     question:
       '(a) Explore how Dickens uses the character of Scrooge to present ideas about social responsibility in this extract. (20 marks)\n(b) Explore how Dickens presents ideas about social responsibility in the novella as a whole. (20 marks)',
     marks: 40,

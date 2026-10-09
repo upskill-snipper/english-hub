@@ -284,7 +284,9 @@ export const edexcelGuide: BoardExamGuide = {
               marks: 20,
               ao: 'AO2',
               skill: 'Close analysis of the extract: language, form and structure',
-              time: '25 minutes',
+              // 9 October 2026: both parts said 25 minutes. Pearson's 1ET0/01 question paper
+              // advises about 55 minutes on Section A, divided equally between (a) and (b).
+              time: 'About 27 minutes, half of the 55 for Section A',
               advice:
                 "Read the extract twice and underline the key words in the question. Analyse Shakespeare's word-level choices, imagery, use of verse or prose, and dramatic devices, with short embedded quotations from the extract. Part (a) is marked for writer's methods alone, so keep the rest of the play for part (b).",
             },
@@ -294,7 +296,7 @@ export const edexcelGuide: BoardExamGuide = {
               marks: 20,
               ao: 'AO1 + AO3',
               skill: 'An argument across the rest of the play, with context',
-              time: '25 minutes',
+              time: 'About 27 minutes, the other half of the 55 for Section A',
               advice:
                 "Range across three or four moments from elsewhere in the play, quoting from memory. AO1 (15 marks) rewards an informed personal response; AO3 (5 marks) rewards context that shapes your interpretation, so weave Jacobean ideas in where they explain the play rather than bolting them on. Select quotations <strong>judiciously</strong> - Edexcel's marking guide specifically rewards quality of selection over quantity.",
             },
@@ -311,8 +313,11 @@ export const edexcelGuide: BoardExamGuide = {
               ao: 'AO1 + AO3 + AO4',
               skill: 'Whole-text essay from memory on post-1914 prose or drama',
               time: '50 minutes, including 5 to proofread',
+              // 9 October 2026: the last sentence said AO4 rewards "spelling, punctuation,
+              // grammar and a range of vocabulary". Pearson's AO4 is a range of vocabulary and
+              // sentence structures, with accurate spelling and punctuation (1ET0, Issue 2).
               advice:
-                'No extract is provided, so you must have memorised quotations from across the text. Aim for 10-15 short, precise quotations committed to memory. Structure your essay thematically rather than chronologically. Each paragraph should make a clear point, support it with an embedded quotation, and link it to context: AO1 and AO3 are worth 16 marks each here. Edexcel rewards <strong>assured personal response</strong> - thread a clear, overarching argument through your entire essay rather than analysing quotations in isolation. AO4 (8 marks) rewards spelling, punctuation, grammar and a range of vocabulary, so leave time to proofread.',
+                'No extract is provided, so you must have memorised quotations from across the text. Aim for 10-15 short, precise quotations committed to memory. Structure your essay thematically rather than chronologically. Each paragraph should make a clear point, support it with an embedded quotation, and link it to context: AO1 and AO3 are worth 16 marks each here. Edexcel rewards <strong>assured personal response</strong> - thread a clear, overarching argument through your entire essay rather than analysing quotations in isolation. AO4 (8 marks) rewards a range of vocabulary and sentence structures, with accurate spelling and punctuation, so leave time to proofread.',
             },
           ],
         },
@@ -337,7 +342,10 @@ export const edexcelGuide: BoardExamGuide = {
               marks: 20,
               ao: 'AO2',
               skill: 'Close language analysis of the extract',
-              time: '30 minutes',
+              // 9 October 2026: the two parts said 30 minutes each and the unseen comparison 35.
+              // Pearson's 1ET0/02 question paper advises about 55 minutes on Section A, divided
+              // equally between (a) and (b), and about 45 on Section B Part 2.
+              time: 'About 27 minutes, half of the 55 for Section A',
               advice:
                 "Close-read the writer's language choices, sentence structures and narrative techniques in the extract, with short embedded quotations and analysis at word level. Part (a) is marked for writer's methods alone, so keep the rest of the novel for part (b).",
             },
@@ -347,7 +355,7 @@ export const edexcelGuide: BoardExamGuide = {
               marks: 20,
               ao: 'AO1',
               skill: 'An informed argument about the whole novel, from memory',
-              time: '30 minutes',
+              time: 'About 27 minutes, the other half of the 55 for Section A',
               advice:
                 'Select key moments from across the novel that develop the theme or character, and build a clear argument supported by references. Section A gives no marks for context in its own right: use Victorian society, class, gender or morality only where it sharpens your argument. Plan before you write and keep the argument clear from start to finish.',
             },
@@ -380,7 +388,7 @@ export const edexcelGuide: BoardExamGuide = {
               marks: 20,
               ao: 'AO1 + AO2',
               skill: 'Compare two unseen poems on a shared theme',
-              time: '35 minutes',
+              time: 'About 45 minutes',
               advice:
                 'Read both poems at least twice before writing, noting each poem\'s subject, tone and shifts in mood. Then compare methods (how the poets achieve their effects) rather than just content: imagery, diction, sound, form, enjambment and stanza breaks, with short embedded quotations. Use comparative language: "Both poets use…", "While Poem 1 employs…, Poem 2 instead…". AO2 is worth 12 of the 20 marks and AO1 8. Do not try to cover every line - select the richest details and analyse them in depth.',
             },
@@ -391,48 +399,50 @@ export const edexcelGuide: BoardExamGuide = {
   ],
 
   // ─── Mark Bands ──────────────────────────────────────────────────────────────
+  // 9 October 2026: this had six levels, topped by a Level 6 "Convincing, critical
+  // analysis". Pearson's Literature grids have five, and no Level 6 (its 1ET0/01 mark
+  // scheme, June 2024). These are the five for a 20-mark question, running 1-4, 5-8, 9-12,
+  // 13-16 and 17-20: on Paper 1, part (a) is marked on them for AO2 alone and part (b) for
+  // AO1 and AO3 together, so each column applies where its objective is assessed. The
+  // post-1914 essay has its own grids: AO1 and AO3 share one of 32 marks (1-6, 7-12, 13-19,
+  // 20-26, 27-32), AO4 has one of 8 (1-2, 3-5, 6-8), and there is no AO2. The type has no
+  // marks field, so each range is in the descriptor. The wording is this guide's own
+  // paraphrase, not Pearson's.
   markBands: [
     {
-      level: 6,
-      descriptor: 'Convincing, critical analysis',
-      ao1: 'Perceptive, assured personal response. Judicious selection of textual references. Critical style maintained throughout with a coherent, overarching argument.',
-      ao2: 'Perceptive, detailed analysis of language, form and structure. Convincing exploration of effects on the reader. Sophisticated and accurate use of subject terminology.',
-      ao3: 'Convincing, perceptive understanding of contextual factors. Context is seamlessly integrated into the argument and illuminates meaning.',
-    },
-    {
       level: 5,
-      descriptor: 'Thoughtful, developed response',
-      ao1: 'Thoughtful, developed response with apt textual detail. Well-chosen references integrated into a sustained interpretation. Secure critical style throughout.',
-      ao2: "Thoughtful, developed analysis of writer's methods. Thorough exploration of effects on the reader. Accurate and effective use of subject terminology.",
-      ao3: 'Thoughtful, developed understanding of contextual factors with detailed links between context and textual meaning.',
+      descriptor: 'Assured and cohesive (17-20 marks)',
+      ao1: 'Assured, critical personal response, sustained throughout, with discerning references.',
+      ao2: 'Cohesive evaluation of how language, form and structure work together to create meaning, with precise, integrated terminology.',
+      ao3: 'Perceptive understanding of context, integrated so that it sharpens the interpretation.',
     },
     {
       level: 4,
-      descriptor: 'Clear, explained understanding',
-      ao1: 'Clear understanding with appropriate references. Clearly explained points with relevant textual support. Emerging critical style.',
-      ao2: 'Clear analysis of language, form and structure. Clear explanation of effects on the reader. Relevant use of subject terminology.',
-      ao3: 'Clear understanding of context with relevant links to the text.',
+      descriptor: 'Thorough and sustained (13-16 marks)',
+      ao1: 'Thorough, sustained personal response with well-chosen references.',
+      ao2: 'Thorough exploration of language, form and structure and their effects, with apt terminology.',
+      ao3: 'Detailed understanding of context, clearly linked to the text.',
     },
     {
       level: 3,
-      descriptor: 'Some explained response',
-      ao1: 'Some understanding of the text with general references. Some explained points but not always consistently developed.',
-      ao2: "Some comment on writer's methods with some use of subject terminology. Some reference to effect on the reader.",
-      ao3: 'Some understanding of context with some links to the text.',
+      descriptor: 'Relevant and supported (9-12 marks)',
+      ao1: 'Relevant personal response, supported by appropriate references.',
+      ao2: 'Relevant examination of language, form and structure, with mostly appropriate terminology.',
+      ao3: 'Relevant understanding of context, linked to the text.',
     },
     {
       level: 2,
-      descriptor: 'Supported, relevant comments',
-      ao1: 'Supported, relevant comments with paraphrase predominating over analysis. General references to the text.',
-      ao2: 'Simple identification of language, form and structure. Limited use of subject terminology. Basic reference to effect.',
-      ao3: 'Simple awareness of context with limited connection to the text.',
+      descriptor: 'Some response, often descriptive (5-8 marks)',
+      ao1: 'Some personal response, often narrative, with some references.',
+      ao2: 'Some comment on language, form and structure, mostly descriptive, with some terminology.',
+      ao3: 'Some awareness of context, not always linked to the text.',
     },
     {
       level: 1,
-      descriptor: 'Simple, limited response',
-      ao1: 'Simple, limited comment with little reference to the text. Response may be largely descriptive or narrative.',
-      ao2: "Basic identification of writer's methods. Minimal or no use of subject terminology. Little reference to effect on the reader.",
-      ao3: 'Basic, minimal awareness of context.',
+      descriptor: 'Simple and limited (1-4 marks)',
+      ao1: 'Simple response with little personal engagement and few references.',
+      ao2: 'Little examination of language, form and structure, and little terminology.',
+      ao3: 'Little awareness of context.',
     },
   ],
 

@@ -328,10 +328,14 @@ const CHECKLISTS: ChecklistBoard[] = [
       {
         title: 'Paper 1: Shakespeare and Post-1914 Literature',
         items: [
+          // 9 October 2026: this said "Shakespeare: extract-based essay", "Analyse extract +
+          // link to whole play". Pearson's 1ET0/01 (specification Issue 2, PDF page 23) sets one
+          // two-part question on a printed extract: (a) the extract itself, (b) a theme from it
+          // elsewhere in the play. The id is unchanged so a student's ticks survive.
           {
             id: 'edx-lit-1',
-            label: 'Shakespeare: extract-based essay',
-            detail: 'Analyse extract + link to whole play',
+            label: 'Shakespeare: two-part question on a printed extract',
+            detail: '(a) the extract; (b) its theme elsewhere in the play',
           },
           { id: 'edx-lit-2', label: 'Shakespeare: 15+ key quotes memorised' },
           { id: 'edx-lit-3', label: "Shakespeare: context and writer's purpose" },

@@ -18,6 +18,10 @@ export const inspectorCallsCourse: CourseData = {
     // MODULE 1 - Play Overview & Context
     // ──────────────────────────────────────────────
     {
+      // 9 October 2026: this said that, unlike AQA, Edexcel gives "a printed passage as a
+      // starting point", and quiz question 2 asked how the AQA question "differ[s] from
+      // Edexcel", with "AQA provides no extract" as the answer. Pearson sets the play in 1ET0/01
+      // Section B, where no extract is printed: each question opens with a short quotation.
       id: 'aic-m1',
       title: 'Play Overview & Context',
       duration: '60 min',
@@ -32,7 +36,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <p><em>An Inspector Calls</em> is examined as part of <strong>AQA GCSE English Literature Paper 2, Section A: Modern Texts</strong>. This paper is worth <strong>96 marks in total</strong> and lasts <strong>2 hours 15 minutes</strong>. Section A - the <em>An Inspector Calls</em> section - is worth <strong>34 marks</strong> (30 marks + 4 SPaG marks).</p>
 
-<p><strong>Crucially, AQA does NOT provide an extract.</strong> Unlike Edexcel, where students are given a printed passage as a starting point, AQA Modern Texts questions require you to write entirely from memory. You must recall quotations, plot details, and contextual knowledge without any text in front of you. This makes memorisation of key quotations absolutely essential.</p>
+<p><strong>Crucially, AQA does NOT provide an extract.</strong> AQA Modern Texts questions require you to write entirely from memory. (Edexcel, which examines the play in Paper 1, does not print an extract either, though each of its questions opens with a short quotation.) You must recall quotations, plot details, and contextual knowledge without any text in front of you. This makes memorisation of key quotations absolutely essential.</p>
 
 <div class="examiner-tip"><strong>Top Tip:</strong> Because AQA provides no extract, markers reward students who can recall and deploy short, precise quotations from memory. Aim to memorise 20-30 short quotations (3-8 words each). Longer quotations are harder to remember accurately and often waste time.</div>
 
@@ -123,7 +127,7 @@ export const inspectorCallsCourse: CourseData = {
         },
         {
           id: 'aic-m1-q2',
-          question: 'How does the AQA An Inspector Calls question differ from Edexcel?',
+          question: 'Which of these is true of the AQA An Inspector Calls question?',
           options: [
             'AQA gives a longer extract',
             'AQA provides no extract - students write entirely from memory',
@@ -1564,6 +1568,10 @@ export const inspectorCallsCourse: CourseData = {
     // MODULE 10 - Exam Technique: AQA Paper 2 Section A
     // ──────────────────────────────────────────────
     {
+      // 9 October 2026: this called AQA "fundamentally different from Edexcel (which provides
+      // an extract as a starting point)", and quiz question 2 gave "AQA provides no extract" as
+      // the difference between the boards. Pearson's 1ET0/01 Section B prints no extract either;
+      // each question opens with a short quotation.
       id: 'aic-m10',
       title: 'Exam Technique: AQA Paper 2 Section A Practice',
       duration: '65 min',
@@ -1576,7 +1584,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <p>This is the single most important thing to understand about AQA Paper 2 Section A: <strong>you do NOT receive an extract.</strong> There is no printed passage to refer to. You must write your entire essay from memory.</p>
 
-<p>This makes AQA fundamentally different from Edexcel (which provides an extract as a starting point). On AQA, you must:</p>
+<p>Edexcel, which examines the play in Paper 1, prints no extract either, though each of its questions opens with a short quotation. On AQA, you must:</p>
 
 <ul>
   <li>Recall relevant quotations from memory and embed them into your analysis.</li>
@@ -1736,7 +1744,7 @@ export const inspectorCallsCourse: CourseData = {
         {
           id: 'aic-m10-q2',
           question:
-            'What is the most important difference between AQA and Edexcel for An Inspector Calls?',
+            'What is the most important thing to know about the format of AQA Paper 2 Section A?',
           options: [
             'AQA tests the play in Paper 1 instead of Paper 2',
             'AQA provides no extract - students must write entirely from memory',

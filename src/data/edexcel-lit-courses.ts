@@ -12,8 +12,9 @@ const edexcelLitPaper1: CourseData = {
   subtitle: 'Shakespeare & Post-1914 Literature',
   tier: 'GCSE',
   board: 'Edexcel',
-  specId: '1ET2',
-  specCode: '1ET2/01',
+  // 9 October 2026: these read 1ET2 and 1ET2/01. Pearson's GCSE English Literature is 1ET0.
+  specId: '1ET0',
+  specCode: '1ET0/01',
   price: 0,
   duration: '14 weeks',
   level: 'GCSE (Years 10-11)',
@@ -33,6 +34,12 @@ const edexcelLitPaper1: CourseData = {
       // opened by a short quotation rather than an extract: AO1 16, AO3 16 and AO4 8. AO4 is
       // marked on the post-1914 essay only, and AO2 not at all in Section B. Modules 3, 5 and 7
       // to 10 and the assessment questions are corrected to match.
+      //
+      // 9 October 2026: the key term still called Section A "two separate questions", and the
+      // timing plan said "Pearson sets only the total time" and gave Section A 50 minutes. It is
+      // one question in two parts, and the 1ET0/01 question paper says to spend about 55 minutes
+      // on Section A, dividing the time equally between (a) and (b), and about 50 on Section B.
+      // Modules 5 and 10 and assessment question a12 gave the same 50 minutes.
       id: 'edx-lt1-m1',
       title: 'Paper 1 Overview & what markers look for',
       duration: '45 min',
@@ -41,7 +48,7 @@ const edexcelLitPaper1: CourseData = {
 
 <p>Paper 1 is titled <strong>Shakespeare and Post-1914 Literature</strong>. It is worth <strong>80 marks</strong> and accounts for <strong>50%</strong> of the total GCSE. You have <strong>1 hour and 45 minutes</strong> to complete two sections, each worth 40 marks. The paper is <strong>closed book</strong>: texts are not allowed in the exam.</p>
 
-<div class="key-term"><strong>Key Term: Two-Part Question</strong> - Section A asks two separate questions on your Shakespeare play. Part (a) prints an extract of about 30 lines and asks you to analyse it closely; part (b) asks how a theme from the extract is explored elsewhere in the play. Each part is marked on its own, for different things.</div>
+<div class="key-term"><strong>Key Term: Two-Part Question</strong> - Section A is one question in two parts on your Shakespeare play. Part (a) prints an extract of about 30 lines and asks you to analyse it closely; part (b) asks how a theme from the extract is explored elsewhere in the play. Each part is marked on its own, for different things.</div>
 
 <h3>Paper Structure at a Glance</h3>
 <ul>
@@ -69,12 +76,12 @@ const edexcelLitPaper1: CourseData = {
 <p>So the extract question rewards close analysis of language, while the Section B essay rewards your argument about the whole text and its context, written accurately. Writer's methods (AO2) earn no marks of their own in Section B, though noticing how the writer shapes the text can still strengthen your argument.</p>
 
 <h3>Recommended Timing Plan</h3>
-<p>Pearson sets only the total time. This plan divides it roughly by marks.</p>
+<p>The question paper tells you to spend about 55 minutes on Section A, dividing your time equally between parts (a) and (b), and about 50 minutes on Section B. This plan follows that.</p>
 <ol>
-  <li><strong>0-25 min:</strong> Section A part (a). Read the extract and the question, annotate key words and methods, and write about the extract (20 marks).</li>
-  <li><strong>25-50 min:</strong> Section A part (b). Plan, then write about the theme elsewhere in the play, with its context (20 marks).</li>
-  <li><strong>50-55 min:</strong> Section B. Read both questions, choose one, and plan your argument.</li>
-  <li><strong>55-100 min:</strong> Write your post-1914 essay (40 marks), weaving context into your argument.</li>
+  <li><strong>0-27 min:</strong> Section A part (a). Read the extract and the question, annotate key words and methods, and write about the extract (20 marks).</li>
+  <li><strong>27-55 min:</strong> Section A part (b). Plan, then write about the theme elsewhere in the play, with its context (20 marks).</li>
+  <li><strong>55-60 min:</strong> Section B. Read both questions, choose one, and plan your argument.</li>
+  <li><strong>60-100 min:</strong> Write your post-1914 essay (40 marks), weaving context into your argument.</li>
   <li><strong>100-105 min:</strong> Proofread the Section B essay for spelling, punctuation and grammar (AO4).</li>
 </ol>
 
@@ -98,7 +105,7 @@ const edexcelLitPaper1: CourseData = {
           options: ['1 hour 30 minutes', '1 hour 45 minutes', '2 hours', '2 hours 15 minutes'],
           correct: 1,
           explanation:
-            'Paper 1 is 1 hour and 45 minutes long. This must be split carefully between the Shakespeare section (about 50 minutes, across its two parts) and the post-1914 essay (about 50 minutes), with 5 minutes to proofread.',
+            'Paper 1 is 1 hour and 45 minutes long. The question paper suggests about 55 minutes for the Shakespeare section, divided equally between its two parts, and about 50 minutes for the post-1914 essay, including time to proofread it.',
         },
         {
           id: 'edx-lt1-m1-q2',
@@ -482,6 +489,10 @@ const edexcelLitPaper1: CourseData = {
     // MODULE 4 - Shakespeare: Language, Form & Structure
     // ──────────────────────────────────────────────
     {
+      // 9 October 2026: this module teaches part (a), but its WHAT-HOW-WHY step asked how the
+      // extract connects "to themes and context", and its Top Tip rewarded a point "reflecting
+      // Jacobean beliefs about divine punishment". Part (a) is marked for AO2 alone; context
+      // earns marks only in part (b) (see module 1).
       id: 'edx-lt1-m4',
       title: 'Shakespeare: Language, Form & Structure',
       duration: '55 min',
@@ -530,7 +541,7 @@ const edexcelLitPaper1: CourseData = {
 <ol>
   <li><strong>WHAT</strong> - What is happening?</li>
   <li><strong>HOW</strong> - What techniques does Shakespeare use? Quote precisely.</li>
-  <li><strong>WHY</strong> - What effect on the audience? How does it connect to themes and context?</li>
+  <li><strong>WHY</strong> - What effect on the audience? How does it connect to the theme in the question? (Context earns no marks in part (a): keep it for part (b).)</li>
 </ol>
 
 <div class="text-extract"><strong>Act 1 Scene 7:</strong> "If it were done when 'tis done, then 'twere well / It were done quickly."
@@ -540,7 +551,7 @@ const edexcelLitPaper1: CourseData = {
   <li><strong>Structure:</strong> Placed before Lady Macbeth persuades him - juxtaposition highlights her as catalyst.</li>
 </ul><div class="source">Annotated extract: WHAT-HOW-WHY</div></div>
 
-<div class="examiner-tip"><strong>Top Tip:</strong> Do not just name a technique - explain the <em>effect</em>. "Shakespeare uses a metaphor" earns little; "the blood metaphor conveys guilt, reflecting Jacobean beliefs about divine punishment" earns much more.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Do not just name a technique - explain the <em>effect</em>. "Shakespeare uses a metaphor" earns little; "the blood metaphor makes Macbeth's guilt a stain that no water can wash away" earns much more.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating language, form and structure as a checklist. The best responses integrate all three - e.g. prose in the sleepwalking scene reinforces fragmented imagery and mirrors structural collapse.</div>
 `,
@@ -628,13 +639,16 @@ const edexcelLitPaper1: CourseData = {
       // marked in Section A (see module 1). Two lines in its quotation bank, "I am settled: I will
       // rule in fear" and "There's none of my people know", are not in Macbeth; they are replaced
       // by lines checked against the held text (Project Gutenberg #1533).
+      //
+      // 9 October 2026: it still gave Section A about 50 minutes, 25 a part. The question paper
+      // says about 55, divided equally between (a) and (b).
       id: 'edx-lt1-m5',
       title: 'Shakespeare: Answering Parts (a) and (b)',
       duration: '55 min',
       content: `
 <h2>The Edexcel Shakespeare Question - Two Parts, Two Tasks</h2>
 
-<p>Section A of Paper 1 is worth <strong>40 marks</strong> and you should spend about <strong>50 minutes</strong> on it. It is <strong>one question in two parts</strong>, each worth 20 marks and each marked on its own:</p>
+<p>Section A of Paper 1 is worth <strong>40 marks</strong>, and the question paper tells you to spend about <strong>55 minutes</strong> on it. It is <strong>one question in two parts</strong>, each worth 20 marks and each marked on its own, and you should divide your time equally between them:</p>
 <ul>
   <li><strong>Part (a)</strong> prints an extract of about 30 lines and asks how Shakespeare presents a theme, character or idea <em>in the extract</em>. It is marked for writer's methods (AO2) alone: close analysis of language, form and structure.</li>
   <li><strong>Part (b)</strong> asks how a theme from the extract is explored <em>elsewhere in the play</em>. It is marked for personal response (AO1, 15 marks) and context (AO3, 5 marks).</li>
@@ -705,12 +719,12 @@ The prophecy itself fuels this ambition. The witches' "All hail, Macbeth, that s
 <strong>L - Link to Context (part (b)):</strong> A Jacobean audience familiar with James I's <em>Daemonologie</em> would recognise witches as real threats. Yet Shakespeare makes their power ambiguous, perhaps suggesting Macbeth's own agency in his downfall.
 </div>
 
-<h3>Timing (about 50 minutes)</h3>
+<h3>Timing (about 55 minutes, split equally)</h3>
 <ol>
   <li><strong>0-3 min:</strong> Read the extract and both questions. Annotate key words, literary devices and character tone.</li>
-  <li><strong>3-25 min:</strong> Write part (a): 3-4 paragraphs on the extract, with short embedded quotations (3-6 words each).</li>
-  <li><strong>25-28 min:</strong> Plan part (b): a one-sentence thesis and 3-4 moments from elsewhere in the play.</li>
-  <li><strong>28-50 min:</strong> Write part (b), weaving in context where it explains Shakespeare's choices.</li>
+  <li><strong>3-27 min:</strong> Write part (a): 3-4 paragraphs on the extract, with short embedded quotations (3-6 words each).</li>
+  <li><strong>27-30 min:</strong> Plan part (b): a one-sentence thesis and 3-4 moments from elsewhere in the play.</li>
+  <li><strong>30-55 min:</strong> Write part (b), weaving in context where it explains Shakespeare's choices.</li>
 </ol>
 
 <h3>Model Opening for Part (b) - Grade 8-9</h3>
@@ -741,7 +755,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
           options: ['20 marks', '30 marks', '40 marks', '50 marks'],
           correct: 2,
           explanation:
-            'Section A is worth 40 marks: 20 for part (a) on the extract and 20 for part (b) on the rest of the play. Spend about 50 minutes on it.',
+            'Section A is worth 40 marks: 20 for part (a) on the extract and 20 for part (b) on the rest of the play. Spend about 55 minutes on it, divided equally between the parts.',
         },
         {
           id: 'edx-lt1-m5-q2',
@@ -1460,6 +1474,10 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
       // not one extract-to-whole essay; Section B has no extract; SPaG is marked on the Section B
       // essay. The timing plan, pitfalls, checklist, mock walkthrough and quiz all assumed two
       // extract-based essays split 50/50 between extract and wider text.
+      //
+      // 9 October 2026: the timing plan, its Top Tip, the timed-answers tip and quiz questions 1
+      // and 2 still gave Section A 50 minutes and Section B 55. The question paper says about 55
+      // minutes on Section A, divided equally between (a) and (b), and about 50 on Section B.
       id: 'edx-lt1-m10',
       title: 'Paper 1 Exam Strategy & Practice',
       duration: '60 min',
@@ -1471,17 +1489,18 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 <div class="key-term"><strong>Key Term: Time-per-Mark</strong> - You have roughly 1.3 minutes per mark, but planning and proofreading time means writing windows are tighter than you think.</div>
 
 <h3>Full Timing Plan</h3>
+<p>The question paper tells you to spend about 55 minutes on Section A, dividing your time equally between parts (a) and (b), and about 50 minutes on Section B.</p>
 <ol>
   <li><strong>0-3 min:</strong> Shakespeare - read the extract twice and both parts of the question.</li>
-  <li><strong>3-25 min:</strong> Part (a) - write 3-4 paragraphs analysing the extract's language, form and structure.</li>
-  <li><strong>25-28 min:</strong> Part (b) - plan 3-4 moments from elsewhere in the play, with context.</li>
-  <li><strong>28-50 min:</strong> Part (b) - write.</li>
-  <li><strong>50-55 min:</strong> Post-1914 - read both questions, choose one, plan.</li>
-  <li><strong>55-100 min:</strong> Post-1914 - write. Do not let fatigue lower standards.</li>
+  <li><strong>3-27 min:</strong> Part (a) - write 3-4 paragraphs analysing the extract's language, form and structure.</li>
+  <li><strong>27-30 min:</strong> Part (b) - plan 3-4 moments from elsewhere in the play, with context.</li>
+  <li><strong>30-55 min:</strong> Part (b) - write.</li>
+  <li><strong>55-60 min:</strong> Post-1914 - read both questions, choose one, plan.</li>
+  <li><strong>60-100 min:</strong> Post-1914 - write. Do not let fatigue lower standards.</li>
   <li><strong>100-105 min:</strong> Proofread the post-1914 essay for spelling, punctuation and grammar (AO4), then a final check of name and candidate number.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Top Tip:</strong> If running over on Section A, stop at 50 minutes and move on. Two parts and an essay all attempted always beat one excellent answer and one rushed.</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> If running over on Section A, stop at about 55 minutes and move on. Two parts and an essay all attempted always beat one excellent answer and one rushed.</div>
 
 <h3>Reading the Extract (Section A part (a))</h3>
 <p><strong>First read:</strong> understand content, speaker, tone - do not write yet. <strong>Second read:</strong> annotate - underline key words, name techniques, note tone shifts. <strong>Then:</strong> highlight the question's instruction word; every paragraph must connect to it.</p>
@@ -1501,7 +1520,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
 <ul>
   <li><strong>Quote banks:</strong> 20-30 quotations per text by theme, each with a one-sentence analysis.</li>
   <li><strong>Theme maps:</strong> Mind maps linking characters, moments, quotes, and context.</li>
-  <li><strong>Timed answers:</strong> At least three per text: part (a) and part (b) in 50 minutes for Shakespeare, and the post-1914 essay in 45. Mark against the scheme.</li>
+  <li><strong>Timed answers:</strong> At least three per text: part (a) and part (b) in 55 minutes for Shakespeare, and the post-1914 essay in 50. Mark against the scheme.</li>
   <li><strong>Paragraph drills:</strong> 8-minute paragraphs - close analysis for part (a), argument with context for part (b) and Section B.</li>
 </ul>
 
@@ -1526,23 +1545,23 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
           id: 'edx-lt1-m10-q1',
           question:
             'According to the recommended timing plan, how long should you spend writing part (a), the extract question?',
-          options: ['15 minutes', '22 minutes', '35 minutes', '45 minutes'],
+          options: ['15 minutes', '24 minutes', '35 minutes', '45 minutes'],
           correct: 1,
           explanation:
-            'The timing plan allows about 22 minutes for writing part (a), after 3 minutes reading the extract and the questions - leaving about 25 minutes for part (b) and 50 for the whole of Section A.',
+            'The timing plan allows about 24 minutes for writing part (a), after 3 minutes reading the extract and the questions. That gives part (a) about half of the 55 minutes the question paper suggests for Section A, and part (b) the other half.',
         },
         {
           id: 'edx-lt1-m10-q2',
           question: 'What should you do if you are running over time on Section A (Shakespeare)?',
           options: [
             'Skip proofreading and keep writing',
-            'Stop at the 50-minute mark and move on to Section B',
+            'Stop at about the 55-minute mark and move on to Section B',
             'Write a shorter conclusion and continue for another 10 minutes',
             'Abandon Section B and focus entirely on Section A',
           ],
           correct: 1,
           explanation:
-            'Stopping at the 50-minute mark and moving to Section B is essential. Answering everything always earns more marks overall than one excellent answer and one rushed or incomplete one.',
+            'Stopping at about the 55-minute mark and moving to Section B is essential. Answering everything always earns more marks overall than one excellent answer and one rushed or incomplete one.',
         },
         {
           id: 'edx-lt1-m10-q3',
@@ -1701,17 +1720,19 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
         'The phone ringing again destroys any relief. Priestley shows that those who refuse to learn the lesson of social responsibility will be forced to confront it again.',
     },
     {
+      // 9 October 2026: this said to stop at 50 minutes, and called the paper "two solid
+      // essays". Section A is one question in two parts, with about 55 minutes (module 1).
       id: 'edx-lt1-a12',
       question: 'What should you do if you are running over time on Section A (Shakespeare)?',
       options: [
         'Skip the review and keep writing',
-        'Stop at the 50-minute mark and move on to Section B',
+        'Stop at about the 55-minute mark and move on to Section B',
         'Write a shorter conclusion and continue for another 10 minutes',
         'Abandon Section B entirely',
       ],
       correct: 1,
       explanation:
-        'Two solid essays always earn more marks than one excellent and one rushed essay. Stop at 50 minutes and move on.',
+        'Two parts and an essay, all answered, always earn more marks than one excellent answer and one rushed. Stop at about 55 minutes and move on.',
     },
   ],
 }
@@ -1722,8 +1743,9 @@ const edexcelLitPaper2: CourseData = {
   subtitle: '19th-Century Novel & Poetry Anthology',
   tier: 'GCSE',
   board: 'Edexcel',
-  specId: '1ET2',
-  specCode: '1ET2/02',
+  // 9 October 2026: these read 1ET2 and 1ET2/02. Pearson's GCSE English Literature is 1ET0.
+  specId: '1ET0',
+  specCode: '1ET0/02',
   price: 0,
   duration: '14 weeks',
   level: 'GCSE (Years 10-11)',
@@ -1744,6 +1766,11 @@ const edexcelLitPaper2: CourseData = {
       // unseen poems compared (AO1 8, AO2 12); no AO4 anywhere on the paper. Modules 6 to 10 and
       // the assessment questions are corrected to match; modules 2 to 5, on the novel, were
       // corrected the same day not to teach context as if Section A assessed it.
+      //
+      // 9 October 2026: the timing plan said Pearson sets only the total time, and gave
+      // Section A an hour and each poetry question 35 minutes, with 5 to review. Pearson's
+      // 1ET0/02 question papers (May 2017, May 2025) say about 55 minutes on Section A,
+      // divided equally between (a) and (b), 35 on Section B Part 1 and 45 on Part 2.
       id: 'edx-lt2-m1',
       title: 'Paper 2 Overview & what markers look for',
       duration: '45 min',
@@ -1782,14 +1809,14 @@ const edexcelLitPaper2: CourseData = {
 <p>Two things follow. Context earns marks only in Section B Part 1, so in Section A use it only where it helps you explain the novel. And no marks on this paper are given for spelling, punctuation and grammar, though clear writing is still how your ideas reach the marker.</p>
 
 <h3>Recommended Timing Plan</h3>
-<p>Pearson sets only the total time. This plan divides it roughly by marks, with a little extra for Section B, where you have three poems on the paper to read.</p>
+<p>The question paper tells you to spend about 55 minutes on Section A, dividing your time equally between parts (a) and (b), about 35 minutes on Section B Part 1, and about 45 minutes on Section B Part 2, where both poems are new to you. That is all 135 minutes, so check each answer in the last few minutes of its section.</p>
 <ol>
-  <li><strong>0-30 min:</strong> Section A part (a). Read the extract and the question, annotate key words and methods, and write about the extract (20 marks).</li>
-  <li><strong>30-60 min:</strong> Section A part (b). Plan, then write about the novel as a whole (20 marks).</li>
-  <li><strong>60-95 min:</strong> Section B Part 1. Read the named poem, choose the poem you will compare it with, plan three or four points of comparison and write (20 marks).</li>
-  <li><strong>95-130 min:</strong> Section B Part 2. Read both unseen poems twice, annotate them, then plan and write your comparison (20 marks).</li>
-  <li><strong>130-135 min:</strong> Review all four answers. Check quotation accuracy, the spelling of writers' names, and that every poetry paragraph compares.</li>
+  <li><strong>0-27 min:</strong> Section A part (a). Read the extract and the question, annotate key words and methods, and write about the extract (20 marks).</li>
+  <li><strong>27-55 min:</strong> Section A part (b). Plan, then write about the novel as a whole (20 marks).</li>
+  <li><strong>55-90 min:</strong> Section B Part 1. Read the named poem, choose the poem you will compare it with, plan three or four points of comparison and write (20 marks).</li>
+  <li><strong>90-135 min:</strong> Section B Part 2. Read both unseen poems twice, annotate them, then plan and write your comparison (20 marks).</li>
 </ol>
+<p>In the last few minutes of each section, check quotation accuracy, the spelling of writers' names, and that every poetry paragraph compares.</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating Section A as one essay. Parts (a) and (b) are separate questions, marked separately for different things: part (a) for close analysis of the extract's language, form and structure (AO2), part (b) for your response to the novel as a whole, supported by references (AO1). Answer each question as it is asked.</div>
 
@@ -2701,6 +2728,8 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       // comparisons, Part 1 the named anthology poem with another from the same collection and
       // Part 2 two unseen poems; see module 1. The examples now pair two Conflict poems, quoted as
       // Pearson's anthology prints them.
+      // 9 October 2026: the time-management table gave both comparisons 35 minutes. The
+      // 1ET0/02 question paper suggests about 35 for Part 1 and 45 for Part 2.
       id: 'edx-lt2-m9',
       title: 'Poetry: Writing the Comparison Essay',
       duration: '55 min',
@@ -2753,13 +2782,13 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
 
 <h3>Time Management</h3>
 
-<p>You have about <strong>35 minutes</strong> for each question. Divide your time like this:</p>
+<p>The question paper suggests about <strong>35 minutes</strong> for Part 1 and about <strong>45 minutes</strong> for Part 2, where both poems are new to you. Divide your time like this:</p>
 
 <table>
-  <tr><th>Phase</th><th>Time</th><th>What to do</th></tr>
-  <tr><td>Read &amp; Plan</td><td>7 min</td><td>Part 1: read the named poem and the question, choose your second poem, and jot down 3-4 comparison points with a contextual link for each poem. Part 2: read both poems twice, annotate them, and jot down 3-4 comparison points.</td></tr>
-  <tr><td>Write</td><td>25 min</td><td>Introduction + 3-4 PETER paragraphs + conclusion.</td></tr>
-  <tr><td>Review</td><td>3 min</td><td>Check that every paragraph compares both poems. Fix any missing connectives or unclear analysis.</td></tr>
+  <tr><th>Phase</th><th>Part 1</th><th>Part 2</th><th>What to do</th></tr>
+  <tr><td>Read &amp; Plan</td><td>7 min</td><td>10 min</td><td>Part 1: read the named poem and the question, choose your second poem, and jot down 3-4 comparison points with a contextual link for each poem. Part 2: read both poems twice, annotate them, and jot down 3-4 comparison points.</td></tr>
+  <tr><td>Write</td><td>25 min</td><td>32 min</td><td>Introduction + 3-4 PETER paragraphs + conclusion.</td></tr>
+  <tr><td>Review</td><td>3 min</td><td>3 min</td><td>Check that every paragraph compares both poems. Fix any missing connectives or unclear analysis.</td></tr>
 </table>
 
 <h3>Grade 5 vs Grade 9: What Is the Difference?</h3>
@@ -2803,11 +2832,11 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
         {
           id: 'edx-lt2-m9-q3',
           question:
-            'According to the recommended timing, how long should you spend writing each comparison essay (excluding reading and review)?',
+            'According to the recommended timing, how long should you spend writing the Part 1 anthology comparison (excluding reading and review)?',
           options: ['20 minutes', '25 minutes', '30 minutes', '35 minutes'],
           correct: 1,
           explanation:
-            'The recommended writing phase is 25 of the 35 minutes for each question, with 7 minutes for reading and planning and 3 minutes for reviewing your response.',
+            'The recommended writing phase for Part 1 is 25 of its 35 minutes, with 7 minutes for reading and planning and 3 for reviewing. Part 2, on two unseen poems, has about 45 minutes, so its writing phase is longer.',
         },
         {
           id: 'edx-lt2-m9-q4',
@@ -2832,6 +2861,10 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       // Until 2 October 2026 this module gave Paper 2 96 marks and an open-book poetry section,
       // timed a single novel essay, a single anthology poem and an anthology-and-unseen
       // comparison, and advised bookmarking an annotated anthology. See module 1 for the paper.
+      // 9 October 2026: the timing table gave Section A 60 minutes, each poetry comparison 35
+      // and a 5-minute final review, and said Pearson sets only the total. The 1ET0/02
+      // question paper says about 55 on Section A, divided equally between (a) and (b), 35 on
+      // Section B Part 1 and 45 on Part 2: all 135 minutes. Quiz question 2 follows.
       id: 'edx-lt2-m10',
       title: 'Paper 2 Exam Strategy & Practice',
       duration: '60 min',
@@ -2846,16 +2879,15 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
 
 <table>
   <tr><th>Section</th><th>Task</th><th>Marks</th><th>Time</th><th>Breakdown</th></tr>
-  <tr><td>A (a)</td><td>The extract</td><td>20</td><td>30 min</td><td>5 min read and annotate, 22 min write, 3 min check</td></tr>
-  <tr><td>A (b)</td><td>The novel as a whole</td><td>20</td><td>30 min</td><td>5 min plan, 22 min write, 3 min check</td></tr>
+  <tr><td>A (a)</td><td>The extract</td><td>20</td><td>27 min</td><td>4 min read and annotate, 21 min write, 2 min check</td></tr>
+  <tr><td>A (b)</td><td>The novel as a whole</td><td>20</td><td>28 min</td><td>4 min plan, 22 min write, 2 min check</td></tr>
   <tr><td>B Part 1</td><td>Anthology comparison (named poem + one of your choice)</td><td>20</td><td>35 min</td><td>7 min read and plan, 25 min write, 3 min check</td></tr>
-  <tr><td>B Part 2</td><td>Unseen comparison (two unseen poems)</td><td>20</td><td>35 min</td><td>7 min read both poems and plan, 25 min write, 3 min check</td></tr>
-  <tr><td colspan="3"><strong>Final review</strong></td><td>5 min</td><td>Re-read all four answers; fix slips and add missing analysis</td></tr>
+  <tr><td>B Part 2</td><td>Unseen comparison (two unseen poems)</td><td>20</td><td>45 min</td><td>10 min read both poems twice and plan, 32 min write, 3 min check</td></tr>
 </table>
 
-<p>This totals <strong>135 minutes</strong> - exactly the time available. Pearson sets only the total; this split follows the marks, with a little extra for Section B, where three poems on the paper have to be read. There is no spare time built in, which is why discipline with the plan is critical.</p>
+<p>This totals <strong>135 minutes</strong> - exactly the time available. The split is the question paper's own: about 55 minutes on Section A, divided equally between its parts, 35 on Section B Part 1 and 45 on Section B Part 2, where both poems are new to you. There is no spare time built in, which is why discipline with the plan is critical.</p>
 
-<div class="examiner-tip"><strong>Top Tip:</strong> Wear a watch or position yourself to see a clock. Write your target finish times at the top of each section before you begin. For example, for a 9:00 start: "Extract - 9:30. Whole novel - 10:00. Anthology comparison - 10:35. Unseen comparison - 11:10."</div>
+<div class="examiner-tip"><strong>Top Tip:</strong> Wear a watch or position yourself to see a clock. Write your target finish times at the top of each section before you begin. For example, for a 9:00 start: "Extract - 9:27. Whole novel - 9:55. Anthology comparison - 10:30. Unseen comparison - 11:15."</div>
 
 <h3>Closed-Book Strategy</h3>
 
@@ -2913,7 +2945,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
   <li>For the novel: answer part (a) on the extract and part (b) on the novel as a whole. Each part is marked on its own.</li>
   <li>For the anthology comparison: read the named poem closely, choose your second poem, and plan 3-4 points of comparison before you write.</li>
   <li>For the unseen comparison: read both poems twice. Annotate them. Plan your comparison points before writing.</li>
-  <li>In the final 5 minutes: re-read all four answers. Fix slips, add missing connectives, and check that every paragraph includes analysis - not just quotation.</li>
+  <li>In the last few minutes of each section: re-read that answer. Fix slips, add missing connectives, and check that every paragraph includes analysis - not just quotation.</li>
   <li>If you finish early, add an extra analytical point to your weakest response rather than sitting idle.</li>
 </ul>
 
@@ -2934,10 +2966,10 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
           id: 'edx-lt2-m10-q2',
           question:
             'According to the timing plan, how long should you spend reading the two unseen poems and planning your comparison?',
-          options: ['3 minutes', '5 minutes', '7 minutes', '12 minutes'],
+          options: ['3 minutes', '5 minutes', '10 minutes', '15 minutes'],
           correct: 2,
           explanation:
-            'The recommended plan allocates 7 minutes to reading both unseen poems twice, annotating them, and planning your comparison points before you begin writing.',
+            "The recommended plan allocates 10 of Part 2's 45 minutes to reading both unseen poems twice, annotating them, and planning your comparison points before you begin writing.",
         },
         {
           id: 'edx-lt2-m10-q3',

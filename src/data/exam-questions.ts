@@ -1196,9 +1196,14 @@ export const examQuestions: ExamQuestion[] = [
   // ============================================================
 
   // --- Edexcel Literature: Extract-Based Analysis ---
+  // 9 October 2026: the Macbeth and Romeo and Juliet entries asked about "this extract and
+  // in the play as a whole". They are offered as Section A part (a), which Pearson sets on
+  // the extract alone: "Refer closely to the extract in your answer". The An Inspector Calls
+  // entry printed an extract; Paper 1 Section B prints none, so it is now a whole-play
+  // character question, filed as one, and bankTargets() offers it under Paper 1 Section B.
   {
     id: 'edx-lit-eba-1',
-    text: "Read the following extract from Act 1 Scene 7 of Macbeth. Explore how Shakespeare presents Macbeth's inner conflict in this extract and in the play as a whole.",
+    text: "Read the following extract from Act 1 Scene 7 of Macbeth. Explore how Shakespeare presents Macbeth's inner conflict in this extract. Refer closely to the extract in your answer.",
     board: 'Edexcel',
     paper: 'Literature',
     questionType: 'Extract-Based Analysis',
@@ -1212,14 +1217,14 @@ export const examQuestions: ExamQuestion[] = [
   },
   {
     id: 'edx-lit-eba-3',
-    text: 'Read the following extract from Act 2 of An Inspector Calls. How does Priestley present the character of Mrs Birling in this extract and elsewhere in the play?',
+    text: 'How does Priestley present the character of Mrs Birling in An Inspector Calls? You must refer to the context of the play in your answer.',
     board: 'Edexcel',
     paper: 'Literature',
-    questionType: 'Extract-Based Analysis',
+    questionType: 'Character Analysis',
   },
   {
     id: 'edx-lit-eba-4',
-    text: 'Read the following extract from Act 2 Scene 2 of Romeo and Juliet. How does Shakespeare present the theme of love in this extract and in the play as a whole?',
+    text: 'Read the following extract from Act 2 Scene 2 of Romeo and Juliet. Explore how Shakespeare presents the theme of love in this extract. Refer closely to the extract in your answer.',
     board: 'Edexcel',
     paper: 'Literature',
     questionType: 'Extract-Based Analysis',

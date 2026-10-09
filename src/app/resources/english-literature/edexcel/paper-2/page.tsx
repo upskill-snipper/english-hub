@@ -82,8 +82,13 @@ export default async function Paper2Page() {
               <h3 className="text-lg font-bold text-foreground">
                 {_tr(`Section A: 19th-Century Novel`)}
               </h3>
+              {/* 9 October 2026: the timings on this page said about an hour on Section A and 35
+                  minutes on the unseen poems, and the timing guide said Pearson sets only the
+                  total time. Pearson's 1ET0/02 question papers (May 2017, May 2025) say about
+                  55 minutes on Section A, divided equally between (a) and (b), 35 on Section B
+                  Part 1 and 45 on Part 2. */}
               <p className="mt-1 text-sm font-medium text-muted-foreground">
-                40 marks &middot; ~1 hour
+                40 marks &middot; ~55 minutes
               </p>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
@@ -132,7 +137,7 @@ export default async function Paper2Page() {
             <div className="rounded-xl border border-border p-6 shadow-md">
               <h3 className="text-lg font-bold text-foreground">Section B: Unseen Poetry</h3>
               <p className="mt-1 text-sm font-medium text-muted-foreground">
-                Part 2 &middot; 20 marks &middot; ~35 minutes
+                Part 2 &middot; 20 marks &middot; ~45 minutes
               </p>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
@@ -711,13 +716,13 @@ export default async function Paper2Page() {
                 <tr className="border-b border-border">
                   <td className="py-3 pe-4 font-medium">A(a): The Extract</td>
                   <td className="py-3 pe-4">20</td>
-                  <td className="py-3 pe-4">~30 mins</td>
+                  <td className="py-3 pe-4">~27 mins</td>
                   <td className="py-3">Stay with the extract: language, form, structure</td>
                 </tr>
                 <tr className="border-b border-border">
                   <td className="py-3 pe-4 font-medium">A(b): The Whole Novel</td>
                   <td className="py-3 pe-4">20</td>
-                  <td className="py-3 pe-4">~30 mins</td>
+                  <td className="py-3 pe-4">~28 mins</td>
                   <td className="py-3">5 min plan, then range across the novel</td>
                 </tr>
                 <tr className="border-b border-border">
@@ -729,15 +734,15 @@ export default async function Paper2Page() {
                 <tr>
                   <td className="py-3 pe-4 font-medium">B Part 2: Unseen Poetry</td>
                   <td className="py-3 pe-4">20</td>
-                  <td className="py-3 pe-4">~35 mins</td>
+                  <td className="py-3 pe-4">~45 mins</td>
                   <td className="py-3">Read both poems twice, then compare</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-3 text-sm text-muted-foreground">
-            That leaves about 5 minutes to check your answers. Pearson sets only the total time;
-            this split follows the marks.
+            These are the question paper&apos;s own timings, and they add up to the full 2 hours 15
+            minutes, so check each answer in the last few minutes of its section.
           </p>
         </section>
 
