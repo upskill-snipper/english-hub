@@ -210,6 +210,43 @@ describe('each Paper 2 is set as Pearson sets 1ET0/02', () => {
   })
 })
 
+describe('each Paper 1 is marked as Pearson marks 1ET0/01', () => {
+  // Until 9 October 2026 part (a) was marked for AO1 as well as AO2, part (b)
+  // for AO2, and the essay for AO2 under a "Top band (33-40)" that is not one
+  // of Pearson's levels; and the higher part (a) answers ended on context,
+  // which part (a) does not mark.
+  const paper1s = papers.filter((p) => p.paperNumber === 1)
+  /** The objectives a mark scheme gives marks to, as [id, marks], in order. */
+  const tariffs = (q: Entry['q']): [string, number][] =>
+    (Array.isArray(q.markScheme) ? q.markScheme : [String(q.markScheme ?? '')]).flatMap((line) => {
+      const m = /^(AO\d) \((\d+) marks\)/.exec(line)
+      return m ? [[m[1], Number(m[2])] as [string, number]] : []
+    })
+  it('finds three Paper 1s', () => expect(paper1s).toHaveLength(3))
+  it.each(paper1s.map((p) => [p.id, p] as [string, (typeof paper1s)[number]]))('%s', (_id, p) => {
+    expect(p.totalMarks).toBe(80)
+    expect(p.totalTimeMinutes).toBe(105)
+    expect(p.sections.map((s) => s.totalMarks)).toEqual([40, 40])
+    const [a, b, essay] = p.sections.flatMap((s) => s.questions)
+    expect([a, b, essay].map((q) => q.marks)).toEqual([20, 20, 40])
+    expect(tariffs(a)).toEqual([['AO2', 20]])
+    expect(tariffs(b)).toEqual([
+      ['AO1', 15],
+      ['AO3', 5],
+    ])
+    expect(tariffs(essay)).toEqual([
+      ['AO1', 16],
+      ['AO3', 16],
+      ['AO4', 8],
+    ])
+    expect(b.questionText).toMatch(/elsewhere in the play/)
+    expect(JSON.stringify(p)).not.toMatch(/Top band \(33-40\)|Level 6/)
+    for (const answer of Object.values(a.modelAnswers ?? {})) {
+      expect(answer).not.toMatch(/Jacobean|James I\b|Daemonologie|Gunpowder|Elizabethan/)
+    }
+  })
+})
+
 const decode = (s: string) =>
   s
     .replace(/&quot;/g, '"')
