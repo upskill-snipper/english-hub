@@ -113,11 +113,11 @@ function kindsOf(text: string): Set<QuestionKind> {
 
 /**
  * Whether two descriptions can be the same question. A tariff and a number can
- * agree by accident: an OCR mock labelled J352/01 has a 40-mark "Poetry Across
- * Time" Section B, and J352/01's own Section B is a 40-mark prose or drama
- * essay. When both sides say what kind of question they are, they must share a
- * kind; when either says nothing ("Section A: Reading", "analysis"), the
- * number and tariff decide.
+ * agree by accident: until 9 October 2026 the OCR Literature mocks were
+ * labelled J352/01 and had a 40-mark "Poetry Across Time" Section B, while
+ * J352/01's own Section B is a 40-mark prose essay. When both sides say what
+ * kind of question they are, they must share a kind; when either says nothing
+ * ("Section A: Reading", "analysis"), the number and tariff decide.
  */
 function sameKind(a: string, b: string): boolean {
   const ka = kindsOf(a)

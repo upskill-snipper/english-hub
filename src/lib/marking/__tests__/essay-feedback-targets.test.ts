@@ -114,7 +114,8 @@ describe('mock papers', () => {
   const mapped = all.filter((m) => m.target)
 
   it('maps a substantial share, so a resolver that matched nothing would fail', () => {
-    // 225 of 854 on 9 October 2026; the rest get general feedback.
+    // 248 of 844 on 9 October 2026, once the OCR Literature mocks were rebuilt
+    // as J352/02; the rest get general feedback.
     expect(all.length).toBeGreaterThan(800)
     expect(mapped.length).toBeGreaterThanOrEqual(200)
   })
@@ -161,11 +162,22 @@ describe('mock papers', () => {
     ])
   })
 
-  it('does not mark an OCR poetry answer against the prose question it shares a tariff with', () => {
-    // These mocks carry J352/01, whose Section B is a 40-mark prose or drama
-    // essay, and their own Section B is 40-mark "Poetry Across Time".
-    expect(refsFor('ocr-lit-01').every((r) => r === null)).toBe(true)
-  })
+  it.each(['ocr-lit-01', 'ocr-lit-02', 'ocr-lit-03', 'ocr-lit-04', 'ocr-lit-05'])(
+    'maps OCR Literature mock %s to J352/02 part by part',
+    (id) => {
+      // Until 9 October 2026 these mocks carried J352/01 and a 40-mark "Poetry
+      // Across Time" Section B, which shared a tariff with J352/01's 40-mark
+      // prose essay; this test asserted that no answer was mapped, so that none
+      // was marked against the wrong component. They are now set as J352/02 is
+      // (src/data/mock-exams/ocr-lit-a.ts): the poetry comparison, the second
+      // poem and the Macbeth essay, each against its own question.
+      expect(refsFor(id).map(refString)).toEqual([
+        'ocr-lit-component02/Section A (a)',
+        'ocr-lit-component02/Section A (b)',
+        'ocr-lit-component02/Section B',
+      ])
+    },
+  )
 
   it('maps AQA Literature Paper 2 question by question where a mock is set as AQA sets it', () => {
     // Until 9 October 2026 there was no 8702/2 scheme and every answer got
