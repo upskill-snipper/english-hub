@@ -24,7 +24,6 @@ import { wjecMockExams } from './mock-exams-wjec'
 import { caieMockExams } from './mock-exams-caie'
 import { edexcelMockExams } from './mock-exams-edexcel'
 import { expandedMockExams } from './mock-exams/index'
-import { aqaLitMockExams } from './mock-exams-aqa-lit'
 import { ialMockExams } from './mock-exams-ial'
 
 export type {
@@ -54,9 +53,11 @@ export { formatExamTime } from './mock-exams/paper-index'
  * Which copy wins matters. Until 9 October 2026 the winner for aqa-lit-p2-01
  * to 03 was `aqaLitMockExams`'s, 100 marks and not AQA's shape, so the
  * AQA-shaped papers with the same ids in mock-exams/aqa-lit-p2-a.ts were
- * never served. That bank no longer builds Paper 2s, and no id is defined
- * twice today; a test in src/__tests__/aqa-lit-p2-a-is-set-as-aqa-sets-it.test.ts
- * fails if one is.
+ * never served. That bank's Paper 2s were retired that day and its three
+ * Paper 1s the same evening, when the bank itself (src/data/mock-exams-aqa-lit.ts)
+ * was removed: none was set as AQA sets 8702/1 or 8702/2. No id is defined
+ * twice today; src/__tests__/aqa-lit-p2-a-is-set-as-aqa-sets-it.test.ts fails
+ * if one is.
  *
  * Order and dedupe must stay in step with `SOURCES` in
  * `src/data/mock-exams/_build-index.mjs`, which generates the listing index
@@ -64,7 +65,6 @@ export { formatExamTime } from './mock-exams/paper-index'
  */
 const allSources: MockExamPaper[] = [
   ...mockExamPapers,
-  ...aqaLitMockExams,
   ...wjecMockExams,
   ...edexcelMockExams,
   ...caieMockExams,

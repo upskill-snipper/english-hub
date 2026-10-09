@@ -35,6 +35,13 @@ import { passage } from '@/lib/study-guides/passage'
  * "Full Statement" is found in Jekyll's last chapter heading. The three quoted
  * phrases that are not a set text's words are listed below, each with its
  * reason.
+ *
+ * WIDENED 9 OCTOBER 2026, when Section B became AQA's question on a printed
+ * extract (see the data file's docblock). It now also cuts each Section B
+ * extract again from the held novel and compares it exactly, and holds every
+ * Section B quotation to that extract or to one stave or chapter, where it had
+ * accepted words found anywhere in the book. And a NOT_THE_TEXT entry that no
+ * answer quotes any more fails, so the list cannot outlive its reasons.
  */
 
 const questions = aqaLitP1Papers.flatMap((p) => p.sections.map((s) => s.questions[0]))
@@ -138,6 +145,81 @@ describe('the aqa-lit-p1-a Macbeth extracts are the held edition', () => {
   })
 })
 
+/** Paper, edition, section, cut, the extract's source line, and where the question says it is from. */
+const NOVEL_CUTS: [string, TextData, string, string, string, string, string][] = [
+  [
+    'aqa-lit-p1-a-q2',
+    aChristmasCarolText,
+    'section-1',
+    'Oh! But he was a tight-fisted hand',
+    'nuts',
+    'Charles Dickens, A Christmas Carol, Stave 1 (Project Gutenberg eBook #46)',
+    'Chapter 1 of A Christmas Carol',
+  ],
+  [
+    'aqa-lit-p1-b-q2',
+    jekyllAndHydeText,
+    'section-1',
+    'It chanced on one of these rambles',
+    'very odd story',
+    'Robert Louis Stevenson, The Strange Case of Dr Jekyll and Mr Hyde, Chapter 1 (Project Gutenberg eBook #43)',
+    'Chapter 1 (Story of the Door) of The Strange Case of Dr Jekyll and Mr Hyde',
+  ],
+  [
+    'aqa-lit-p1-c-q2',
+    aChristmasCarolText,
+    'section-3',
+    'Forgive me if I am not justified',
+    'Are there no workhouses?',
+    'Charles Dickens, A Christmas Carol, Stave 3 (Project Gutenberg eBook #46)',
+    'Chapter 3 of A Christmas Carol',
+  ],
+  [
+    'aqa-lit-p1-d-q2',
+    jekyllAndHydeText,
+    'section-1',
+    'The pair walked on again for a while',
+    'With all my heart',
+    'Robert Louis Stevenson, The Strange Case of Dr Jekyll and Mr Hyde, Chapter 1 (Project Gutenberg eBook #43)',
+    'Chapter 1 (Story of the Door) of The Strange Case of Dr Jekyll and Mr Hyde',
+  ],
+  [
+    'aqa-lit-p1-e-q2',
+    aChristmasCarolText,
+    'section-3',
+    'Such a bustle ensued',
+    'a small pudding for a large family',
+    'Charles Dickens, A Christmas Carol, Stave 3 (Project Gutenberg eBook #46)',
+    'Chapter 3 of A Christmas Carol',
+  ],
+]
+
+describe('the aqa-lit-p1-a novel extracts are the held editions', () => {
+  it.each(NOVEL_CUTS)(
+    '%s prints its extract, cut again',
+    (id, text, sec, from, to, source, where) => {
+      const q = question(id)
+      // The edition marks italics with underscores, which the papers drop, as
+      // they drop them from Macbeth; nothing else may differ.
+      expect(q.extract).toBe(passage(text, sec, from, to).replace(/_/g, ''))
+      expect(q.extractSource).toBe(source)
+      expect(q.questionText).toContain(`from ${where} and then answer`)
+    },
+  )
+})
+
+/** Each section of an edition, as one string. */
+const sectionsOf = (t: TextData) =>
+  t.sections.map((s) =>
+    `${s.title} ${s.content}`
+      .replace(/<br\s*\/?>/g, ' ')
+      .replace(/<\/p>/g, ' ')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;|&apos;/g, "'")
+      .replace(/&amp;/g, '&'),
+  )
+
 const held = (t: TextData) =>
   t.sections
     .map((s) =>
@@ -167,8 +249,6 @@ const quotations = (t: string) =>
 const NOT_THE_TEXT = new Set(
   [
     'turn into', // a gloss on Macbeth's "become", aqa-lit-p1-b-q1
-    'empathy technology.', // "what we might now call", a coinage, aqa-lit-p1-c-q2
-    'gross indecency', // the Criminal Law Amendment Act 1885, s. 11, aqa-lit-p1-d-q2
   ].map(words),
 )
 
@@ -182,11 +262,11 @@ const HAY: [string, () => string[]][] = [
     id,
     () => [words(question(id).extract ?? ''), MACBETH],
   ]),
-  ['aqa-lit-p1-a-q2', () => [CAROL]],
-  ['aqa-lit-p1-b-q2', () => [JEKYLL]],
-  ['aqa-lit-p1-c-q2', () => [CAROL]],
-  ['aqa-lit-p1-d-q2', () => [JEKYLL]],
-  ['aqa-lit-p1-e-q2', () => [CAROL]],
+  // A Section B quotation is in its extract or in one stave or chapter.
+  ...NOVEL_CUTS.map(([id, text]): [string, () => string[]] => [
+    id,
+    () => [words(question(id).extract ?? ''), ...sectionsOf(text).map(words)],
+  ]),
 ]
 
 /** The quotations in `printed` that no text in `hay` contains, and those found. */
@@ -244,14 +324,11 @@ function unmarked(printed: string[], hay: string[]) {
 }
 
 const MACBETH_MARKS = marks(held(macbethText))
-const CAROL_MARKS = marks(held(aChristmasCarolText))
-const JEKYLL_MARKS = marks(held(jekyllAndHydeText))
-const marksHay = (id: string) =>
-  CUTS.some(([cut]) => cut === id)
-    ? [marks(question(id).extract ?? ''), MACBETH_MARKS]
-    : /-[bd]-q2$/.test(id)
-      ? [JEKYLL_MARKS]
-      : [CAROL_MARKS]
+const marksHay = (id: string) => {
+  if (CUTS.some(([cut]) => cut === id)) return [marks(question(id).extract ?? ''), MACBETH_MARKS]
+  const text = NOVEL_CUTS.find(([cut]) => cut === id)![1]
+  return [marks(question(id).extract ?? ''), ...sectionsOf(text).map(marks)]
+}
 
 describe('the aqa-lit-p1-a model answers quote only the texts they are about', () => {
   it('covers all ten questions', () => {
@@ -271,6 +348,18 @@ describe('the aqa-lit-p1-a model answers quote only the texts they are about', (
     expect(found.length).toBeGreaterThan(8)
     // And the edition's punctuation, not only its words.
     expect(unmarked(printed, marksHay(id))).toEqual([])
+  })
+
+  it('lists no quotation in NOT_THE_TEXT that nothing quotes any more', () => {
+    const quoted = questions
+      .flatMap((q) => [
+        ...Object.values(q.modelAnswers ?? {}).flat(),
+        ...(Array.isArray(q.markScheme) ? q.markScheme : []),
+        q.questionText,
+      ])
+      .flatMap(quotations)
+      .map(words)
+    expect([...NOT_THE_TEXT].filter((n) => !quoted.includes(n))).toEqual([])
   })
 
   it('fails an invented or altered line, and passes the real one', () => {

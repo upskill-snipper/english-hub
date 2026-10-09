@@ -8,7 +8,6 @@ import { allMockExamPapers } from '@/data/mock-exams'
 import { mockExamPapers } from '@/data/mock-exams/base'
 import { expandedMockExams } from '@/data/mock-exams/index'
 import { aqaLitP2Papers } from '@/data/mock-exams/aqa-lit-p2-a'
-import { aqaLitMockExams } from '@/data/mock-exams-aqa-lit'
 import { caieMockExams } from '@/data/mock-exams-caie'
 import { edexcelMockExams } from '@/data/mock-exams-edexcel'
 import { ialMockExams } from '@/data/mock-exams-ial'
@@ -295,7 +294,6 @@ describe('AQA Literature Paper 2 mocks (8702/2)', () => {
   it('share no id with any other paper in any bank', () => {
     const ids = [
       ...mockExamPapers,
-      ...aqaLitMockExams,
       ...wjecMockExams,
       ...edexcelMockExams,
       ...caieMockExams,

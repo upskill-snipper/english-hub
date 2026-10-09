@@ -24,7 +24,6 @@ import type { MockExamPaper, MockExamSourceKey } from './mock-exams/types'
  */
 const SOURCE_LOADERS: Record<MockExamSourceKey, () => Promise<MockExamPaper[]>> = {
   base: () => import('./mock-exams/base').then((m) => m.mockExamPapers),
-  'aqa-lit': () => import('./mock-exams-aqa-lit').then((m) => m.aqaLitMockExams),
   wjec: () => import('./mock-exams-wjec').then((m) => m.wjecMockExams),
   edexcel: () => import('./mock-exams-edexcel').then((m) => m.edexcelMockExams),
   caie: () => import('./mock-exams-caie').then((m) => m.caieMockExams),

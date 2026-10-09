@@ -39,7 +39,6 @@ const HERE = path.dirname(fileURLToPath(import.meta.url))
  */
 const SOURCES = [
   ['base', './base.ts', 'mockExamPapers'],
-  ['aqa-lit', '../mock-exams-aqa-lit.ts', 'aqaLitMockExams'],
   ['wjec', '../mock-exams-wjec.ts', 'wjecMockExams'],
   ['edexcel', '../mock-exams-edexcel.ts', 'edexcelMockExams'],
   ['caie', '../mock-exams-caie.ts', 'caieMockExams'],

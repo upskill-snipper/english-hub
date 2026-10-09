@@ -16,7 +16,8 @@ import type { MockExamPaper } from './types'
  * SERVED SINCE 9 OCTOBER 2026. Papers 01 to 03 shared their ids with three
  * 100-mark papers in src/data/mock-exams-aqa-lit.ts, and src/data/mock-exams.ts
  * keeps the first copy of an id and listed that bank first, so these three were
- * never served. That bank's Paper 2s were retired the same day.
+ * never served. That bank's Paper 2s were retired the same day, and the bank
+ * itself that evening, with its three Paper 1s.
  *
  * WHAT WAS CORRECTED, 9 October 2026. Every quotation in the model answers was
  * checked: An Inspector Calls against a published script of the play (used for

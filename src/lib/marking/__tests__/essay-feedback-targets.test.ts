@@ -201,6 +201,31 @@ describe('mock papers', () => {
     }
   })
 
+  it('maps every AQA Literature Paper 1 mock question by question', () => {
+    // Until 9 October 2026 three of the eight served Paper 1 mocks were 100
+    // marks with a comparison section AQA does not set, and mapped to nothing;
+    // they are retired. The five left are set as 8702/1 is, 34 and 30.
+    expect(allMockExamPapers.filter((p) => p.code === '8702/1').map((p) => p.id)).toEqual([
+      'aqa-lit-p1-a',
+      'aqa-lit-p1-b',
+      'aqa-lit-p1-c',
+      'aqa-lit-p1-d',
+      'aqa-lit-p1-e',
+    ])
+    for (const id of [
+      'aqa-lit-p1-a',
+      'aqa-lit-p1-b',
+      'aqa-lit-p1-c',
+      'aqa-lit-p1-d',
+      'aqa-lit-p1-e',
+    ]) {
+      expect(refsFor(id).map(refString)).toEqual([
+        'aqa-lit-paper1/Section A',
+        'aqa-lit-paper1/Section B',
+      ])
+    }
+  })
+
   it('maps every Eduqas Literature mock part by part', () => {
     // Until 9 October 2026 every section of these mocks was two 20-mark
     // questions, a tariff no Eduqas question has, so every answer got general

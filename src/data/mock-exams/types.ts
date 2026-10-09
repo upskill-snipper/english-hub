@@ -93,7 +93,6 @@ export interface MockExamPaper {
  */
 export type MockExamSourceKey =
   | 'base'
-  | 'aqa-lit'
   | 'wjec'
   | 'edexcel'
   | 'caie'
