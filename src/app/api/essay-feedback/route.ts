@@ -2,8 +2,20 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getAnthropicClient, ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
-import { formatMarkSchemeForPrompt } from '@/data/mark-schemes'
-import { validateRequest } from '@/lib/validate-request'
+import {
+  feedbackColumns,
+  feedbackSubject,
+  formatGeneralGuidance,
+  formatSchemeForFeedback,
+  normaliseAoScores,
+  questionLabel,
+  resolveSchemeTarget,
+  schemeLabel,
+  type FeedbackSubject,
+  type SchemeTarget,
+} from '@/lib/marking/essay-feedback'
+import { isSpecVerified } from '@/lib/marking/examiner/verification'
+import { validateRequest, type EssayFeedbackRequest } from '@/lib/validate-request'
 import { contentSafetyCheck } from '@/lib/content-safety'
 import {
   unauthorizedResponse,
@@ -38,7 +50,9 @@ function toExamBoardEnum(label: string): ExamBoard {
   const l = label.toLowerCase()
   if (l.includes('0500')) return 'CAMBRIDGE_0500'
   if (l.includes('0990')) return 'CAMBRIDGE_0990'
-  if (l.includes('cambridge')) return 'CAMBRIDGE_0500'
+  // "CAIE" is what the inline feedback sends for a Cambridge mock, every one of
+  // them 0500. Without this it would be stored as AQA.
+  if (l.includes('cambridge') || l.includes('caie')) return 'CAMBRIDGE_0500'
   if (l.includes('igcse')) return 'EDEXCEL_IGCSE'
   if (l.includes('edexcel') || l.includes('pearson')) return 'EDEXCEL'
   if (l.includes('ocr')) return 'OCR'
@@ -52,14 +66,6 @@ function toSubjectEnum(paper: string, questionType: string): Subject {
 }
 
 // ── Types ────────────────────────────────────────────────────────────────────
-
-interface EssayFeedbackRequest {
-  board: string
-  paper: string
-  questionType: string
-  questionText: string
-  essay: string
-}
 
 interface AOScore {
   id: string
@@ -80,21 +86,40 @@ interface FeedbackResponse {
 
 // ── System prompt ────────────────────────────────────────────────────────────
 
-function buildSystemPrompt(board: string, paper: string, questionType: string): string {
-  const markScheme = formatMarkSchemeForPrompt(board, paper)
+/**
+ * The system prompt, built from the scheme question the request names, or from
+ * the general objectives when it names none (see src/lib/marking/essay-feedback.ts).
+ *
+ * Until 9 October 2026 this read src/data/mark-schemes.ts, and interpolated the
+ * client's own board, paper and question-type strings into the prompt. The
+ * scheme's labels are used now, and the client's question type not at all: it
+ * is free text, and a system prompt is not the place for it.
+ */
+function buildSystemPrompt(
+  target: SchemeTarget | null,
+  subject: FeedbackSubject | null,
+  board: string,
+): string {
+  const marking = target
+    ? `You are marking a response to ${target.scheme.board} ${target.scheme.subject}, ${target.scheme.paper}, question ${target.question.id} (${target.question.questionType}).`
+    : `You are giving feedback on a ${board} ${subject ?? 'GCSE English'} response. No mark scheme on this site matches the question.`
+  const markScheme = target ? formatSchemeForFeedback(target) : formatGeneralGuidance(subject)
+  const aoContract = target
+    ? `"aoScores" has exactly one entry for each assessment objective listed in the mark scheme above and no others. Its "id" is the objective's id as listed ("AO1", "AO2" ...), its "maxScore" is the maximum stated for that objective, and its "score" is a whole number from 0 to that maximum.`
+    : `"aoScores" is an empty array: there is no mark scheme to award marks against.`
 
   return `You are an experienced GCSE English examiner. Your ONLY purpose is to provide feedback on a student's existing GCSE English essay. You must NEVER produce any other type of content, answer general knowledge questions, write code, or fulfil any request outside of English essay feedback. If asked to do anything else, respond with: {"error": "OFF_TOPIC"}
 
 You have over 15 years of marking experience. You are warm, encouraging and constructive - your student is aged 14-16 and deserves honest but supportive feedback.
 
-You are marking a ${board} ${paper} response (${questionType}).
+${marking}
 
 MARK SCHEME:
 ${markScheme}
 
 YOUR TASK:
 1. Read the student's essay carefully in response to the given question.
-2. Assess it against EACH assessment objective in the mark scheme above.
+2. ${target ? 'Assess it against EACH assessment objective in the mark scheme above, and only those.' : 'Assess it against the objectives above, in words only.'}
 3. Provide an overall estimated grade band (Grade 4-5, Grade 6-7, or Grade 8-9).
 4. Give 3-5 specific STRENGTHS - each must include a direct quote from the student's essay.
 5. Give 3-5 specific IMPROVEMENTS - each must include a brief, actionable suggestion (1-2 sentences max). Do NOT rewrite their work for them.
@@ -141,7 +166,9 @@ IMPORTANT: You MUST respond with ONLY a valid JSON object (no markdown, no code 
     }
   ],
   "annotatedFeedback": "Detailed paragraph-by-paragraph feedback in plain text. Use line breaks between paragraphs."
-}`
+}
+
+${aoContract}`
 }
 
 // ── Handler ──────────────────────────────────────────────────────────────────
@@ -228,6 +255,21 @@ export async function POST(request: NextRequest) {
       return badRequestResponse(safetyError)
     }
 
+    // 5b. The scheme question the request names, if it names one. A named
+    //     question that is not in the corpus is refused, not marked against
+    //     the nearest thing to it; with none named, the feedback is general
+    //     and carries no marks per objective.
+    const target = resolveSchemeTarget(body.schemeId, body.questionId)
+    if ((body.schemeId || body.questionId) && !target) {
+      return badRequestResponse(
+        'That paper or question is not one we can mark against. Please choose it again.',
+      )
+    }
+    const subject: FeedbackSubject | null = target
+      ? target.scheme.subject
+      : (feedbackSubject(body.subject) ??
+        (body.paper === 'Literature' ? 'English Literature' : null))
+
     // NO-CARD TRIAL AI CEILING. This is the last gate before we spend money,
     // and it sits in the same position as checkMinorAIConsent and
     // isAiOptedOutServer: after content-type / auth / entitlement / consent /
@@ -254,7 +296,7 @@ export async function POST(request: NextRequest) {
     const anthropic = getAnthropicClient(apiKey)
 
     const systemPrompt = withArabicDirective(
-      buildSystemPrompt(body.board, body.paper, body.questionType),
+      buildSystemPrompt(target, subject, body.board),
       request,
     )
 
@@ -271,7 +313,9 @@ export async function POST(request: NextRequest) {
       userId: user.id,
       locale: resolveLocaleFromRequest(request),
       inputText: body.essay,
-      promptSchemeId: `${body.board}/${body.paper}/${body.questionType}`,
+      promptSchemeId: target
+        ? `${target.scheme.id}/${target.question.id}`
+        : `general/${subject ?? 'english'}`,
       consentSnapshot: {
         aiOptOut: false,
         aiProcessingConsentOk: true,
@@ -408,6 +452,20 @@ export async function POST(request: NextRequest) {
         return serverErrorResponse('The AI returned an invalid grade band. Please try again.')
       }
 
+      // Held to the question: one mark per objective it carries, out of the
+      // scheme's own maximum, never the model's. General feedback has none.
+      if (target) {
+        const aoScores = normaliseAoScores(parsed.aoScores, target.question)
+        if (!aoScores) {
+          console.error('AI response did not mark every objective:', parsed.aoScores)
+          await refundTrialAllowance(trialGate)
+          return serverErrorResponse('The AI returned an incomplete response. Please try again.')
+        }
+        parsed.aoScores = aoScores
+      } else {
+        parsed.aoScores = []
+      }
+
       feedback = parsed
     } catch (parseError) {
       void logAiDecision({
@@ -487,29 +545,25 @@ export async function POST(request: NextRequest) {
           : null)
 
       if (dbUser) {
-        const totalScore = feedback.aoScores.reduce((s, ao) => s + (ao.score ?? 0), 0)
-        const totalMax = feedback.aoScores.reduce((s, ao) => s + (ao.maxScore ?? 0), 0)
-        const overall = totalMax > 0 ? Math.round((totalScore / totalMax) * 100) : 0
-        const aoByIndex = (i: number) => {
-          const ao = feedback.aoScores[i]
-          return ao && ao.maxScore > 0 ? Math.round((ao.score / ao.maxScore) * 100) : 0
-        }
+        // By meaning, not position, and neutral where the question does not
+        // assess an objective: see feedbackColumns for what broke.
+        const columns = feedbackColumns(feedback.aoScores, feedback.gradeBand, subject)
         const essay = await prisma.essay.create({
           data: {
             userId: dbUser.id,
             title: body.questionText.slice(0, 180) || 'Essay feedback',
             content: body.essay,
-            subject: toSubjectEnum(body.paper, body.questionType),
-            examBoard: toExamBoardEnum(body.board),
+            subject: subject
+              ? subject === 'English Literature'
+                ? 'LITERATURE'
+                : 'LANGUAGE'
+              : toSubjectEnum(body.paper, body.questionType),
+            // The scheme id carries 0500 or 0990, which the board label
+            // "Cambridge (9-1)" does not.
+            examBoard: toExamBoardEnum(`${body.board} ${target?.scheme.id ?? ''}`),
             aiFeedback: {
               create: {
-                overallScore: overall,
-                // Column names predate the AO model; stored in AO order so
-                // the mapping is stable: AO1, AO2, AO3, AO4.
-                argumentScore: aoByIndex(0),
-                structureScore: aoByIndex(1),
-                vocabularyScore: aoByIndex(2),
-                grammarScore: aoByIndex(3),
+                ...columns,
                 feedbackText: feedback.annotatedFeedback,
                 criteria: JSON.stringify({
                   gradeBand: feedback.gradeBand,
@@ -518,8 +572,9 @@ export async function POST(request: NextRequest) {
                   strengths: feedback.strengths,
                   improvements: feedback.improvements,
                 }),
-                limitations:
-                  'AI-generated feedback against the selected mark scheme; a predicted indication, not a moderated exam mark.',
+                limitations: target
+                  ? `AI-generated feedback against ${target.scheme.id}, ${target.question.id}${isSpecVerified(target.scheme.id) ? '' : ' (an unverified scheme)'}; a predicted indication, not a moderated exam mark.`
+                  : 'AI-generated general feedback: no mark scheme on the site matched the question, so there are no marks per objective, and the stored score is the grade band’s midpoint; a predicted indication, not a moderated exam mark.',
                 modelVersion: ANTHROPIC_MODEL,
               },
             },
@@ -535,12 +590,23 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 11. Return structured feedback
+    // 11. Return structured feedback, with the scheme it was marked against
+    //     (null for general feedback) so the page can say which, and whether
+    //     that scheme has been checked against the board's own.
     return applyAllowanceHeaders(
       NextResponse.json({
         feedback,
         essayId,
         remaining: rl.remaining,
+        scheme: target
+          ? {
+              id: target.scheme.id,
+              questionId: target.question.id,
+              label: schemeLabel(target.scheme),
+              question: questionLabel(target.question),
+              verified: isSpecVerified(target.scheme.id),
+            }
+          : null,
       }),
       trialGate.state,
     )

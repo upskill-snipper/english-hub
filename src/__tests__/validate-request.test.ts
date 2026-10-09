@@ -3,7 +3,8 @@ import { validateRequest } from '@/lib/validate-request'
 
 /** Helper: build a valid request, then override specific fields */
 function req(overrides: Partial<Parameters<typeof validateRequest>[0]> = {}) {
-  const words = 'The author uses vivid imagery and powerful language to convey the theme throughout the text in a compelling manner '
+  const words =
+    'The author uses vivid imagery and powerful language to convey the theme throughout the text in a compelling manner '
   return {
     board: 'AQA',
     paper: 'Paper 1',
@@ -36,7 +37,19 @@ describe('validateRequest', () => {
   })
 
   it('accepts all valid boards', () => {
-    for (const board of ['AQA', 'Edexcel', 'OCR', 'WJEC']) {
+    // CAIE is what the inline feedback sends for a Cambridge mock paper, and
+    // was refused as "Invalid exam board" until 9 October 2026. Eduqas and the
+    // Cambridge syllabus codes are the feedback page's own board values.
+    for (const board of [
+      'AQA',
+      'Edexcel',
+      'OCR',
+      'WJEC',
+      'Eduqas',
+      'CAIE',
+      'Cambridge-0500',
+      'Cambridge-0990',
+    ]) {
       expect(validateRequest(req({ board }))).toBeNull()
     }
   })
@@ -56,9 +69,43 @@ describe('validateRequest', () => {
   })
 
   it('accepts all valid papers', () => {
-    for (const paper of ['Paper 1', 'Paper 2', 'Literature']) {
+    // A scheme's own paper name, as the feedback page sends it, as well as
+    // the older callers' three.
+    for (const paper of ['Paper 1', 'Paper 2', 'Literature', 'Component 01', 'Component 2']) {
       expect(validateRequest(req({ paper }))).toBeNull()
     }
+  })
+
+  // ── Scheme and question ────────────────────────────────────────────────────
+
+  it('accepts a scheme and question named together', () => {
+    expect(
+      validateRequest(req({ schemeId: 'edexcel-lit-paper2', questionId: 'Section B Part 1' })),
+    ).toBeNull()
+  })
+
+  it('rejects a scheme without a question, and a question without a scheme', () => {
+    expect(validateRequest(req({ schemeId: 'edexcel-lit-paper2' }))).toContain(
+      'Choose both the paper and the question',
+    )
+    expect(validateRequest(req({ questionId: 'Section B Part 1' }))).toContain(
+      'Choose both the paper and the question',
+    )
+  })
+
+  it('rejects a scheme or question that is not a short string', () => {
+    expect(validateRequest(req({ schemeId: 42 as unknown as string, questionId: 'Q1' }))).toContain(
+      'Invalid paper or question',
+    )
+    expect(validateRequest(req({ schemeId: 'x'.repeat(81), questionId: 'Q1' }))).toContain(
+      'Invalid paper or question',
+    )
+  })
+
+  it('accepts the two subjects, and nothing else', () => {
+    expect(validateRequest(req({ subject: 'English Literature' }))).toBeNull()
+    expect(validateRequest(req({ subject: 'English Language' }))).toBeNull()
+    expect(validateRequest(req({ subject: 'Maths' }))).toContain('Invalid subject')
   })
 
   // ── Question type ──────────────────────────────────────────────────────────

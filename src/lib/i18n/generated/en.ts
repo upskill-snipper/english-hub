@@ -12851,6 +12851,9 @@ export const EN_MESSAGES: Record<string, string> = {
     'Type or paste the question you are answering...',
   'dashboard.essay_feedback.question_hint':
     'Choose a question from your exam board, or select "I\'ll type my own question" to enter a custom one.',
+  'dashboard.essay_feedback.option_custom_question': "I'll type my own question",
+  'dashboard.essay_feedback.no_marks_general':
+    'There are no marks for each objective: no mark scheme on the site matches this question yet, so this feedback is general.',
   'dashboard.essay_feedback.label_essay': 'Your Essay',
   'dashboard.essay_feedback.placeholder_essay': 'Paste or type your essay here...',
   'dashboard.essay_feedback.word': 'word',

@@ -293,6 +293,19 @@ export const B15_DASHBOARD_DICTIONARY: Record<string, { en: string; ar: string; 
     ar: 'اختر سؤالاً من لجنة امتحانك، أو اختر "سأكتب سؤالي الخاص" لإدخال سؤال مخصص.',
     es: 'Elige una pregunta de tu junta examinadora, o selecciona "Escribiré mi propia pregunta" para introducir una personalizada.',
   },
+  // Added 9 October 2026, when essay feedback moved to the verified mark
+  // schemes. The custom option was a row in the question bank, in English only;
+  // the page now adds it itself.
+  'dashboard.essay_feedback.option_custom_question': {
+    en: "I'll type my own question",
+    ar: 'سأكتب سؤالي الخاص',
+    es: 'Escribiré mi propia pregunta',
+  },
+  'dashboard.essay_feedback.no_marks_general': {
+    en: 'There are no marks for each objective: no mark scheme on the site matches this question yet, so this feedback is general.',
+    ar: 'لا توجد درجات لكل هدف تقييمي: لا يوجد على الموقع بعد مخطط تصحيح يطابق هذا السؤال، لذا فهذه الملاحظات عامة.',
+    es: 'No hay puntuación por objetivo: todavía no hay en el sitio ningún esquema de corrección que corresponda a esta pregunta, así que estos comentarios son generales.',
+  },
   'dashboard.essay_feedback.label_essay': { en: 'Your Essay', ar: 'مقالك', es: 'Tu ensayo' },
   'dashboard.essay_feedback.placeholder_essay': {
     en: 'Paste or type your essay here...',

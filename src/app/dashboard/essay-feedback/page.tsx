@@ -19,8 +19,17 @@ import {
 } from 'lucide-react'
 import { useAuthStore } from '@/store/auth-store'
 import { useBoard } from '@/hooks/useBoard'
-import { markSchemes, getPapersForBoard, getQuestionTypes } from '@/data/mark-schemes'
-import { getQuestionsForType } from '@/data/exam-questions'
+import {
+  FEEDBACK_BOARDS,
+  feedbackSchemesFor,
+  isEssayQuestion,
+  questionLabel,
+  schemeLabel,
+} from '@/lib/marking/essay-feedback'
+import { bankQuestionsFor } from '@/lib/marking/essay-feedback-targets'
+import { MARK_SCHEMES } from '@/lib/marking/mark-schemes'
+import { markingBoardFor } from '@/lib/board/marking-board-map'
+import { examQuestions } from '@/data/exam-questions'
 import { cn } from '@/lib/utils'
 import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
 import { RequestHumanReviewButton } from '@/components/ai/RequestHumanReviewButton'
@@ -63,6 +72,9 @@ interface FeedbackData {
   improvements: Array<{ point: string; suggestion: string }>
   annotatedFeedback: string
 }
+
+/** The question-picker value for "I'll type my own question". */
+const CUSTOM_QUESTION = 'custom'
 
 // ── Grade band colour helpers ────────────────────────────────────────────────
 
@@ -115,10 +127,16 @@ export default function EssayFeedbackPage() {
     }
   }, [isLoading, user, router])
 
-  // Form state - use null (not '') for empty selections so Base UI Select shows placeholders
+  // Form state - use null (not '') for empty selections so Base UI Select shows placeholders.
+  //
+  // 9 October 2026: the paper and question are a scheme and one of its questions
+  // in src/lib/marking/mark-schemes, which is what /api/essay-feedback now marks
+  // against. They were "Paper 1", "Paper 2" or "Literature" and a free label
+  // from src/data/mark-schemes.ts, a second corpus whose Literature objectives
+  // were wrong for every board (see src/lib/marking/essay-feedback.ts).
   const [board, setBoard] = useState<string | null>(null)
-  const [paper, setPaper] = useState<string | null>(null)
-  const [questionType, setQuestionType] = useState<string | null>(null)
+  const [schemeId, setSchemeId] = useState<string | null>(null)
+  const [questionId, setQuestionId] = useState<string | null>(null)
   const [questionText, setQuestionText] = useState('')
   const [selectedQuestionId, setSelectedQuestionId] = useState<string | null>(null)
   const [essay, setEssay] = useState('')
@@ -136,31 +154,39 @@ export default function EssayFeedbackPage() {
   const [essayId, setEssayId] = useState<string | null>(null)
   const [remaining, setRemaining] = useState<number | null>(null)
 
-  // Auto-populate board from global board-gate selection (skip KS3 as essay feedback is GCSE-only)
+  // Auto-populate board from global board-gate selection. The site board id
+  // ("edexcel-igcse-lang") is translated into the marking vocabulary
+  // ("Edexcel"); KS3 and the EAL profiles have no marking board and stay unset.
   useEffect(() => {
     if (globalBoard && board === null) {
-      setBoard(globalBoard)
+      setBoard(markingBoardFor(globalBoard))
     }
   }, [globalBoard]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Derived: available papers / question types
-  const availablePapers = useMemo(() => {
-    if (!board) return []
-    return getPapersForBoard(board)
-  }, [board])
+  // Derived: available papers / questions, all from the verified corpus.
+  const availablePapers = useMemo(() => feedbackSchemesFor(board), [board])
 
-  // Question types that are short-answer on the actual exam - not suitable for essay feedback
-  const SHORT_ANSWER_TYPES = ['Information Retrieval', 'Summary & Synthesis', 'Summary']
+  const scheme =
+    schemeId && Object.prototype.hasOwnProperty.call(MARK_SCHEMES, schemeId)
+      ? MARK_SCHEMES[schemeId]
+      : undefined
+  const schemeQuestion = scheme?.questions.find((q) => q.id === questionId)
 
-  const availableQuestionTypes = useMemo(() => {
-    if (!board || !paper) return []
-    return getQuestionTypes(board, paper).filter((qt) => !SHORT_ANSWER_TYPES.includes(qt))
-  }, [board, paper])
+  // Short-answer questions (retrieval, true or false, proofreading) are left out.
+  const availableQuestionTypes = useMemo(
+    () => (scheme ? scheme.questions.filter(isEssayQuestion) : []),
+    [scheme],
+  )
 
+  // Bank questions that belong to the chosen scheme question, then the option
+  // to type one's own.
   const availableQuestions = useMemo(() => {
-    if (!board || !paper || !questionType) return []
-    return getQuestionsForType(board, paper, questionType)
-  }, [board, paper, questionType])
+    if (!schemeId || !questionId) return []
+    return [
+      ...bankQuestionsFor(examQuestions, schemeId, questionId),
+      { id: CUSTOM_QUESTION, text: t('dashboard.essay_feedback.option_custom_question') },
+    ]
+  }, [schemeId, questionId, t])
 
   // Word count
   const wordCount = useMemo(() => {
@@ -172,25 +198,25 @@ export default function EssayFeedbackPage() {
   // Handle board change - reset downstream
   function handleBoardChange(value: string | null) {
     setBoard(value)
-    setPaper(null)
-    setQuestionType(null)
+    setSchemeId(null)
+    setQuestionId(null)
     setSelectedQuestionId(null)
     setQuestionText('')
   }
 
-  // Handle paper change - reset question type
+  // Handle paper change - reset the question
   function handlePaperChange(value: string | null) {
-    setPaper(value)
-    setQuestionType(null)
+    setSchemeId(value)
+    setQuestionId(null)
     setSelectedQuestionId(null)
     setQuestionText('')
   }
 
   // Handle question selection from dropdown
-  function handleQuestionSelect(questionId: string | null) {
-    setSelectedQuestionId(questionId)
-    const question = availableQuestions.find((q) => q.id === questionId)
-    if (question && !question.id.endsWith('-custom')) {
+  function handleQuestionSelect(bankId: string | null) {
+    setSelectedQuestionId(bankId)
+    const question = availableQuestions.find((q) => q.id === bankId)
+    if (question && question.id !== CUSTOM_QUESTION) {
       setQuestionText(question.text)
     } else {
       setQuestionText('')
@@ -204,7 +230,7 @@ export default function EssayFeedbackPage() {
       setError('Please sign in to use essay feedback.')
       return
     }
-    if (!board || !paper || !questionType || !questionText.trim() || wordCount < 100) {
+    if (!board || !scheme || !schemeQuestion || !questionText.trim() || wordCount < 100) {
       setError('Please fill in all fields. Your essay must be at least 100 words.')
       return
     }
@@ -221,8 +247,10 @@ export default function EssayFeedbackPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           board,
-          paper,
-          questionType,
+          paper: scheme.paper,
+          questionType: schemeQuestion.questionType.slice(0, 100),
+          schemeId: scheme.id,
+          questionId: schemeQuestion.id,
           questionText: questionText.trim(),
           essay: essay.trim(),
         }),
@@ -254,7 +282,13 @@ export default function EssayFeedbackPage() {
       // once-per-user-per-event analysis, which is cheaper and more
       // reliable than tracking "first" client-side. Consent-gated in
       // src/lib/posthog.ts.
-      phCapture(PH_EVENTS.FIRST_ESSAY_SUBMITTED, { board, paper, questionType })
+      // The same three labels as before the move to the verified schemes, so
+      // existing breakdowns keep their meaning.
+      phCapture(PH_EVENTS.FIRST_ESSAY_SUBMITTED, {
+        board,
+        paper: scheme.paper,
+        questionType: schemeQuestion.questionType,
+      })
     } catch {
       setError('Network error. Please check your connection and try again.')
     } finally {
@@ -335,9 +369,8 @@ export default function EssayFeedbackPage() {
           <FeedbackResults
             feedback={feedback}
             essayId={essayId}
-            board={board!}
-            paper={paper!}
-            questionType={questionType!}
+            paperLabel={scheme ? schemeLabel(scheme) : (board ?? '')}
+            questionLabel={schemeQuestion ? questionLabel(schemeQuestion) : ''}
             onTryAgain={handleTryAgain}
           />
         ) : (
@@ -352,8 +385,8 @@ export default function EssayFeedbackPage() {
                     <SelectValue placeholder={t('dashboard.essay_feedback.placeholder_board')} />
                   </SelectTrigger>
                   <SelectContent>
-                    {markSchemes.map((b) => (
-                      <SelectItem key={b.board} value={b.board}>
+                    {FEEDBACK_BOARDS.map((b) => (
+                      <SelectItem key={b.value} value={b.value}>
                         {b.label}
                       </SelectItem>
                     ))}
@@ -366,7 +399,7 @@ export default function EssayFeedbackPage() {
                 <Label htmlFor="paper">{t('dashboard.essay_feedback.label_paper')}</Label>
                 <Select
                   key={board}
-                  value={paper}
+                  value={schemeId}
                   onValueChange={handlePaperChange}
                   disabled={!board}
                 >
@@ -381,8 +414,8 @@ export default function EssayFeedbackPage() {
                   </SelectTrigger>
                   <SelectContent>
                     {availablePapers.map((p) => (
-                      <SelectItem key={p.paper} value={p.paper}>
-                        {p.paper} - {p.label}
+                      <SelectItem key={p.id} value={p.id}>
+                        {schemeLabel(p)}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -395,28 +428,28 @@ export default function EssayFeedbackPage() {
                   {t('dashboard.essay_feedback.label_question_type')}
                 </Label>
                 <Select
-                  key={`${board}-${paper}`}
-                  value={questionType}
+                  key={`${board}-${schemeId}`}
+                  value={questionId}
                   onValueChange={(v) => {
-                    setQuestionType(v)
+                    setQuestionId(v)
                     setSelectedQuestionId(null)
                     setQuestionText('')
                   }}
-                  disabled={!paper}
+                  disabled={!schemeId}
                 >
                   <SelectTrigger className="w-full">
                     <SelectValue
                       placeholder={
-                        paper
+                        schemeId
                           ? t('dashboard.essay_feedback.placeholder_question_type')
                           : t('dashboard.essay_feedback.placeholder_question_type_first')
                       }
                     />
                   </SelectTrigger>
                   <SelectContent>
-                    {availableQuestionTypes.map((qt) => (
-                      <SelectItem key={qt} value={qt}>
-                        {qt}
+                    {availableQuestionTypes.map((q) => (
+                      <SelectItem key={q.id} value={q.id}>
+                        {questionLabel(q)}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -428,15 +461,15 @@ export default function EssayFeedbackPage() {
             <div className="space-y-2">
               <Label htmlFor="questionSelect">{t('dashboard.essay_feedback.label_question')}</Label>
               <Select
-                key={`${board}-${paper}-${questionType}`}
+                key={`${board}-${schemeId}-${questionId}`}
                 value={selectedQuestionId}
                 onValueChange={handleQuestionSelect}
-                disabled={!questionType}
+                disabled={!questionId}
               >
                 <SelectTrigger className="w-full">
                   <SelectValue
                     placeholder={
-                      questionType
+                      questionId
                         ? t('dashboard.essay_feedback.placeholder_question')
                         : t('dashboard.essay_feedback.placeholder_question_first')
                     }
@@ -450,7 +483,7 @@ export default function EssayFeedbackPage() {
                   ))}
                 </SelectContent>
               </Select>
-              {selectedQuestionId?.endsWith('-custom') && (
+              {selectedQuestionId === CUSTOM_QUESTION && (
                 <Input
                   id="questionText"
                   placeholder={t('dashboard.essay_feedback.placeholder_question_custom')}
@@ -529,8 +562,8 @@ export default function EssayFeedbackPage() {
                 disabled={
                   submitting ||
                   !board ||
-                  !paper ||
-                  !questionType ||
+                  !scheme ||
+                  !schemeQuestion ||
                   !questionText.trim() ||
                   wordCount < 100
                 }
@@ -560,17 +593,17 @@ export default function EssayFeedbackPage() {
 function FeedbackResults({
   feedback,
   essayId,
-  board,
-  paper,
-  questionType,
+  paperLabel,
+  questionLabel,
   onTryAgain,
 }: {
   feedback: FeedbackData
   /** Persisted Essay row id - lets a human-review request name the work. */
   essayId: string | null
-  board: string
-  paper: string
-  questionType: string
+  /** The scheme marked against, as the paper picker names it. */
+  paperLabel: string
+  /** The scheme question, as the question picker names it. */
+  questionLabel: string
   onTryAgain: () => void
 }) {
   const t = useT()
@@ -607,12 +640,14 @@ function FeedbackResults({
                 <h2 className={cn('text-3xl font-bold tracking-tight', gradeStyle.text)}>
                   {feedback.gradeBand}
                 </h2>
-                <Badge variant="outline" className="text-xs uppercase">
-                  {board} {paper}
+                <Badge variant="outline" className="text-xs">
+                  {paperLabel}
                 </Badge>
-                <Badge variant="secondary" className="text-xs">
-                  {questionType}
-                </Badge>
+                {questionLabel && (
+                  <Badge variant="secondary" className="text-xs">
+                    {questionLabel}
+                  </Badge>
+                )}
                 {/* Read aloud - grade band + why it was awarded. */}
                 <ReadAloudButton
                   text={`${feedback.gradeBand}. ${feedback.gradeJustification}`}
@@ -638,6 +673,11 @@ function FeedbackResults({
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
+            {feedback.aoScores.length === 0 && (
+              <p className="text-sm text-muted-foreground">
+                {t('dashboard.essay_feedback.no_marks_general')}
+              </p>
+            )}
             {feedback.aoScores.map((ao) => {
               const pct = ao.maxScore > 0 ? (ao.score / ao.maxScore) * 100 : 0
               return (

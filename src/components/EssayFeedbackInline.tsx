@@ -19,6 +19,7 @@ import { useT } from '@/lib/i18n/use-t'
 import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
 import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
+import type { MockQuestionRef, PracticeQuestionRef } from '@/lib/marking/essay-feedback-targets'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -45,6 +46,41 @@ interface FeedbackData {
   annotatedFeedback: string
 }
 
+/**
+ * The scheme question the route marked against, as it names them: the label
+ * carries "(unverified - marks are indicative only)" where that is so, which
+ * is said here in the page rather than left to the model to mention.
+ */
+interface MarkedAgainst {
+  label: string
+  question: string
+}
+
+/** Where the question on screen comes from: a mock paper or the practice bank. */
+export type InlineFeedbackSource =
+  | { kind: 'mock'; ref: MockQuestionRef }
+  | { kind: 'practice'; ref: PracticeQuestionRef }
+
+/**
+ * The scheme question and subject for a source. The resolvers are loaded here,
+ * on submit, not imported at the top of the file: they carry the whole
+ * mark-scheme corpus (about 40 KB gzipped), which the practice and mock-exam
+ * pages would otherwise send to every visitor, most of whom never ask for
+ * feedback. A failed load throws, and the submit reports a network error.
+ */
+async function resolveSource(source: InlineFeedbackSource) {
+  const targets = await import('@/lib/marking/essay-feedback-targets')
+  return source.kind === 'mock'
+    ? {
+        target: targets.resolveMockFeedback(source.ref),
+        subject: targets.subjectForPaper(source.ref.paperText),
+      }
+    : {
+        target: targets.resolvePracticeFeedback(source.ref),
+        subject: targets.subjectForPractice(source.ref),
+      }
+}
+
 export interface EssayFeedbackInlineProps {
   /** Exam board (e.g. "AQA", "Edexcel") */
   board: string
@@ -54,6 +90,16 @@ export interface EssayFeedbackInlineProps {
   questionType: string
   /** The full question text to provide context to the AI */
   questionText: string
+  /**
+   * Where the question comes from. The answer is marked against its question
+   * in src/lib/marking/mark-schemes only when the paper code, the section and
+   * the tariff agree with it (src/lib/marking/essay-feedback-targets.ts);
+   * otherwise the feedback is general, with no marks per objective, in the
+   * subject the source names. Until 9 October 2026 "Paper 1" or "Paper 2"
+   * alone was read as the board's Language paper, and a Literature answer
+   * was marked against it.
+   */
+  source?: InlineFeedbackSource
   /**
    * If provided, the component uses this as the essay text instead of rendering its own textarea.
    * Useful when the student has already typed an answer in an existing textarea.
@@ -111,6 +157,7 @@ export default function EssayFeedbackInline({
   paper,
   questionType,
   questionText,
+  source,
   existingAnswer,
   autoSubmit = false,
   className,
@@ -124,6 +171,7 @@ export default function EssayFeedbackInline({
   // rather than being a message telling the learner to go elsewhere.
   const [consentRefusal, setConsentRefusal] = useState<AIConsentRefusal | null>(null)
   const [feedback, setFeedback] = useState<FeedbackData | null>(null)
+  const [markedAgainst, setMarkedAgainst] = useState<MarkedAgainst | null>(null)
   const [remaining, setRemaining] = useState<number | null>(null)
   const autoSubmitTriggered = useRef(false)
 
@@ -146,15 +194,21 @@ export default function EssayFeedbackInline({
     setError(null)
     setConsentRefusal(null)
     setFeedback(null)
+    setMarkedAgainst(null)
 
     try {
+      const resolved = source ? await resolveSource(source) : null
       const res = await fetch('/api/essay-feedback', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           board,
           paper,
-          questionType,
+          questionType: questionType.slice(0, 100),
+          ...(resolved?.target
+            ? { schemeId: resolved.target.schemeId, questionId: resolved.target.questionId }
+            : {}),
+          ...(resolved?.subject ? { subject: resolved.subject } : {}),
           questionText: questionText.trim(),
           essay: essayText.trim(),
         }),
@@ -176,6 +230,9 @@ export default function EssayFeedbackInline({
       }
 
       setFeedback(data.feedback)
+      setMarkedAgainst(
+        data.scheme ? { label: data.scheme.label, question: data.scheme.question } : null,
+      )
       if (typeof data.remaining === 'number') {
         setRemaining(data.remaining)
       }
@@ -197,6 +254,7 @@ export default function EssayFeedbackInline({
 
   function handleReset() {
     setFeedback(null)
+    setMarkedAgainst(null)
     setError(null)
     setConsentRefusal(null)
     autoSubmitTriggered.current = false
@@ -276,6 +334,7 @@ export default function EssayFeedbackInline({
               board={board}
               paper={paper}
               questionType={questionType}
+              markedAgainst={markedAgainst}
               onReset={handleReset}
             />
           )}
@@ -337,6 +396,7 @@ export default function EssayFeedbackInline({
               board={board}
               paper={paper}
               questionType={questionType}
+              markedAgainst={markedAgainst}
               onReset={handleReset}
             />
           ) : (
@@ -437,12 +497,15 @@ function InlineFeedbackResults({
   board,
   paper,
   questionType,
+  markedAgainst,
   onReset,
 }: {
   feedback: FeedbackData
   board: string
   paper: string
   questionType: string
+  /** Null for general feedback, which no scheme question matched. */
+  markedAgainst: MarkedAgainst | null
   onReset: () => void
 }) {
   const t = useT()
@@ -476,12 +539,25 @@ function InlineFeedbackResults({
             <span className={cn('text-xl font-bold tracking-tight', gradeStyle.text)}>
               {feedback.gradeBand}
             </span>
-            <Badge variant="outline" className="text-xs uppercase">
-              {board} {paper}
-            </Badge>
-            <Badge variant="secondary" className="text-xs">
-              {questionType}
-            </Badge>
+            {markedAgainst ? (
+              <>
+                <Badge variant="outline" className="text-xs">
+                  {markedAgainst.label}
+                </Badge>
+                <Badge variant="secondary" className="text-xs">
+                  {markedAgainst.question}
+                </Badge>
+              </>
+            ) : (
+              <>
+                <Badge variant="outline" className="text-xs uppercase">
+                  {board} {paper}
+                </Badge>
+                <Badge variant="secondary" className="text-xs">
+                  {questionType}
+                </Badge>
+              </>
+            )}
           </div>
           <p className="mt-0.5 text-xs text-muted-foreground line-clamp-2">
             {feedback.gradeJustification}
@@ -496,6 +572,11 @@ function InlineFeedbackResults({
           {t('marking.ao_breakdown_title')}
         </div>
         <div className="space-y-2.5">
+          {feedback.aoScores.length === 0 && (
+            <p className="text-xs text-muted-foreground">
+              {t('dashboard.essay_feedback.no_marks_general')}
+            </p>
+          )}
           {feedback.aoScores.map((ao) => {
             const pct = ao.maxScore > 0 ? (ao.score / ao.maxScore) * 100 : 0
             return (

@@ -609,6 +609,10 @@ export default function PracticePage() {
                     }
                     questionType={currentQuestion.questionType || currentQuestion.type || 'General'}
                     questionText={currentQuestion.question}
+                    // Marked against its scheme question only when the type
+                    // names one question and the tariff agrees; otherwise the
+                    // feedback is general, in the subject the labels name.
+                    source={{ kind: 'practice', ref: currentQuestion }}
                     existingAnswer={answer}
                     autoSubmit
                   />

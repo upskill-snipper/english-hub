@@ -13177,6 +13177,9 @@ export const ES_MESSAGES: Record<string, string> = {
     'Escribe o pega la pregunta que estás respondiendo...',
   'dashboard.essay_feedback.question_hint':
     'Elige una pregunta de tu junta examinadora, o selecciona "Escribiré mi propia pregunta" para introducir una personalizada.',
+  'dashboard.essay_feedback.option_custom_question': 'Escribiré mi propia pregunta',
+  'dashboard.essay_feedback.no_marks_general':
+    'No hay puntuación por objetivo: todavía no hay en el sitio ningún esquema de corrección que corresponda a esta pregunta, así que estos comentarios son generales.',
   'dashboard.essay_feedback.label_essay': 'Tu ensayo',
   'dashboard.essay_feedback.placeholder_essay': 'Pega o escribe tu ensayo aquí...',
   'dashboard.essay_feedback.word': 'palabra',

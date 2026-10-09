@@ -85,8 +85,12 @@ export function resolveMarkingBoard(examBoard: string): MarkingBoard | null {
   return null
 }
 
-/** Every scheme on a board, in the picker's own order. */
-function schemesForBoard(board: MarkingBoard): MarkScheme[] {
+/**
+ * Every scheme on a board, in the picker's own order. Exported for the essay
+ * feedback page (src/lib/marking/essay-feedback.ts), so the two pickers group
+ * schemes under boards the same way.
+ */
+export function schemesForBoard(board: MarkingBoard): MarkScheme[] {
   const tokens: Record<MarkingBoard, string[]> = {
     AQA: ['aqa'],
     Edexcel: ['edexcel', 'pearson edexcel'],

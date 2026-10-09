@@ -1248,7 +1248,7 @@ function ExamResults() {
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
-                {section.questions.map((question) => {
+                {section.questions.map((question, indexInSection) => {
                   const studentAnswer = latestAttempt.answers[question.id] ?? ''
                   const hasAnswer = studentAnswer.trim().length > 0
                   const isModelVisible = showModelAnswers[question.id]
@@ -1297,6 +1297,21 @@ function ExamResults() {
                           paper={`Paper ${paper.paperNumber}`}
                           questionType={question.questionType}
                           questionText={question.questionText}
+                          // Marked against its scheme question only when the
+                          // paper's code, the section and the tariff agree with
+                          // it. Until 9 October 2026 "Paper N" alone sent a
+                          // Literature answer to the Language paper.
+                          source={{
+                            kind: 'mock',
+                            ref: {
+                              paperText: `${paper.subtitle} ${paper.code} ${paper.title}`,
+                              sectionTitle: section.title,
+                              indexInSection,
+                              questionNumber: question.questionNumber,
+                              marks: question.marks,
+                              questionType: question.questionType,
+                            },
+                          }}
                           existingAnswer={studentAnswer}
                           className="my-2"
                         />

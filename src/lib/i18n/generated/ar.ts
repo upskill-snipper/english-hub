@@ -12543,6 +12543,9 @@ export const AR_MESSAGES: Record<string, string> = {
   'dashboard.essay_feedback.placeholder_question_custom': 'اكتب أو الصق السؤال الذي تجيب عنه...',
   'dashboard.essay_feedback.question_hint':
     'اختر سؤالاً من لجنة امتحانك، أو اختر "سأكتب سؤالي الخاص" لإدخال سؤال مخصص.',
+  'dashboard.essay_feedback.option_custom_question': 'سأكتب سؤالي الخاص',
+  'dashboard.essay_feedback.no_marks_general':
+    'لا توجد درجات لكل هدف تقييمي: لا يوجد على الموقع بعد مخطط تصحيح يطابق هذا السؤال، لذا فهذه الملاحظات عامة.',
   'dashboard.essay_feedback.label_essay': 'مقالك',
   'dashboard.essay_feedback.placeholder_essay': 'الصق مقالك هنا أو اكتبه...',
   'dashboard.essay_feedback.word': 'كلمة',
