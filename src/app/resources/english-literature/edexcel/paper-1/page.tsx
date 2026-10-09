@@ -453,26 +453,10 @@ export default async function Paper1Page() {
               </div>
             </div>
 
-            {/* Never Let Me Go */}
-            <div className="rounded-xl border border-border p-6 shadow-md">
-              <h3 className="text-xl font-bold text-foreground">
-                Never Let Me Go - Kazuo Ishiguro (2005)
-              </h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                Kathy H. narrates her life at Hailsham, a seemingly idyllic boarding school, and the
-                gradual revelation that she and her friends are clones raised as organ donors. The
-                novel explores mortality, identity, and what it means to be human.
-              </p>
-              <div className="mt-3">
-                <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
-                  {_tr(`Key Themes`)}
-                </h4>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Memory and nostalgia, identity, mortality, ethics of science, love and loss,
-                  conformity and acceptance
-                </p>
-              </div>
-            </div>
+            {/* 9 October 2026: a card here described Never Let Me Go, which is not one of
+                Pearson's twelve post-1914 texts for 1ET0/01 (the contents page of its June 2024
+                question paper lists them), so the page showed six texts under a sentence
+                promising five. */}
 
             {/* Anita and Me */}
             <div className="rounded-xl border border-border p-6 shadow-md">
