@@ -38,10 +38,13 @@ const deck: FlashcardDeck = {
       front: 'The Man He Killed - Thomas Hardy',
       back: `Key quote: "Yes; quaint and curious war is! / You shoot a fellow down / You\'d treat, if met where any bar is"\n\nThemes: Futility of war, class and conflict, shared humanity of enemies, senselessness of killing.\n\nTechniques: Dramatic monologue, colloquial language, caesura and dashes (hesitation = guilt), ironic understatement ("quaint and curious"), regular ballad metre (simple form for complex ideas).\n\nCompare with: What Were They Like? (questioning war), Exposure (soldiers\' suffering).`,
     },
+    // 2 October 2026: ecp-5 and ecp-9 suggested partners from Relationships (My Last
+    // Duchess, Nettles); the exam pairs poems from one collection. Their quotations now
+    // follow the anthology (Issue 4): no comma after "find me out", and Catrin's line breaks.
     {
       id: 'ecp-5',
       front: 'Cousin Kate - Christina Rossetti',
-      back: `Key quote: "Why did a great lord find me out, / And praise my flaxen hair?"\n\nThemes: Betrayal, sexual exploitation, class and gender, fallen women, power imbalance.\n\nTechniques: Ballad form, rhetorical questions, contrast between speaker and Kate, bitter tone, the child as "gift" vs "shame," defiant final stanza.\n\nCompare with: My Last Duchess (power and gender), The Class Game (class conflict).`,
+      back: `Key quote: "Why did a great lord find me out / And praise my flaxen hair?"\n\nThemes: Betrayal, sexual exploitation, class and gender, fallen women, power imbalance.\n\nTechniques: Ballad form, rhetorical questions, contrast between speaker and Kate, bitter tone, the child as "gift" vs "shame," defiant final stanza.\n\nCompare with: A Poison Tree (bitterness nursed against another), The Class Game (class conflict).`,
     },
     {
       id: 'ecp-6',
@@ -61,7 +64,7 @@ const deck: FlashcardDeck = {
     {
       id: 'ecp-9',
       front: 'Catrin - Gillian Clarke',
-      back: `Key quote: "I can remember you, child, / As I stood in a hot, white room"\n\nThemes: Parent-child conflict, love and separation, the struggle for independence, enduring bond.\n\nTechniques: Extended metaphor ("the tight, red rope" = umbilical cord and ongoing connection), two-stanza structure (birth / present day), enjambment, oxymoron of love and conflict ("our first fierce confrontation").\n\nCompare with: Nettles (from Relationships - parent-child love), A Poison Tree (personal conflict).`,
+      back: `Key quote: "I can remember you, child, / As I stood in a hot, white / Room"\n\nThemes: Parent-child conflict, love and separation, the struggle for independence, enduring bond.\n\nTechniques: Extended metaphor ("the tight / Red rope of love" = umbilical cord and ongoing connection), two-stanza structure (birth / present day), enjambment, oxymoron of love and conflict ("our first / Fierce confrontation").\n\nCompare with: Poppies (a mother and her child), A Poison Tree (personal conflict).`,
     },
     {
       id: 'ecp-10',

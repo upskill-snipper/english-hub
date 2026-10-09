@@ -10,9 +10,9 @@ export const edexcelGuide: BoardExamGuide = {
 
 <p>Key structural features set Edexcel apart from AQA and OCR. Language Paper 2 carries <strong>96 marks over 2 hours 5 minutes</strong>, making it one of the most demanding single papers at GCSE level. The reading section requires students to work across two non-fiction extracts - one 19th century and one modern - with synthesis, comparison, language analysis, and evaluation questions. The writing section uniquely demands <strong>two transactional writing tasks</strong> (one shorter, one longer), testing versatility across different forms such as letters, articles, speeches, and reviews. This dual-task format is exclusive to Edexcel and requires careful time management.</p>
 
-<p>In Literature, Edexcel's Paper 1 combines Shakespeare with a post-1914 British play or novel. The Shakespeare section splits into an <strong>extract-based essay and a whole-text essay</strong>, each worth 40 marks, demanding both close reading and panoramic textual knowledge. Paper 2 pairs a 19th-century novel with poetry - anthology comparison plus unseen poetry - across 2 hours 15 minutes. The marking guides reward <strong>"judicious" quotation selection</strong> and <strong>sustained personal response</strong>, with "perceptive" and "assured" as the key descriptors for the top band.</p>
+<p>In Literature, Edexcel's Paper 1 combines Shakespeare with a post-1914 British play or novel. The Shakespeare question splits into <strong>two parts, the printed extract and then the rest of the play</strong>, each worth 20 marks, demanding both close reading and panoramic textual knowledge. Paper 2 pairs a 19th-century novel, in the same two-part form, with poetry - anthology comparison plus a comparison of two unseen poems - across 2 hours 15 minutes. The marking guides reward <strong>"judicious" quotation selection</strong> and <strong>sustained personal response</strong>, with "perceptive" and "assured" as the key descriptors for the top band.</p>
 
-<p>The IGCSE (4EA1) features a particularly extensive <strong>45-poem anthology divided across 6 clusters</strong>, giving international students extraordinary breadth but also demanding thorough revision. For domestic GCSE students, the poetry anthology is divided into three collections - <em>Relationships</em>, <em>Conflict</em>, and <em>Time and Place</em> - and schools select one. Edexcel also applies an <strong>explicit SPaG grid for writing tasks</strong>, where spelling, punctuation, and grammar marks are clearly separated from content marks, making technical accuracy a visible and targetable component of the grade.</p>
+<p>For GCSE students, the poetry anthology has four collections of 15 poems - <em>Relationships</em>, <em>Conflict</em>, <em>Time and Place</em> and <em>Belonging</em> - and schools select one. Edexcel also applies an <strong>explicit SPaG grid for writing tasks</strong>, where spelling, punctuation, and grammar marks are clearly separated from content marks, making technical accuracy a visible and targetable component of the grade.</p>
 
 <p>Strategically, students should note that Edexcel's grade boundaries tend to be moderately demanding: a Grade 9 typically requires around 80% of the total mark, while a Grade 4 sits at approximately 31%. The most efficient revision strategy focuses on AO2 (language analysis), which carries the heaviest weighting across both Language and Literature, and on practising the dual transactional writing tasks under timed conditions. Always plan before writing, select quotations judiciously rather than copiously, and sustain your personal response throughout rather than bolting on a conclusion.</p>`,
 
@@ -63,30 +63,33 @@ export const edexcelGuide: BoardExamGuide = {
   ],
 
   // ─── Literature Assessment Objectives ────────────────────────────────────────
+  // Weightings corrected 2 October 2026 to the specification's own table (1ET0,
+  // Issue 2, PDF page 15): AO1 37%, AO2 42%, AO3 16%, AO4 5% - 59, 67, 26 and 8 of
+  // 160 raw marks. They read ~15%, ~25%, ~20% and ~40%.
   literatureAOs: [
     {
       code: 'AO1',
       description:
         'Read, understand and respond to texts. Students should be able to maintain a critical style and develop an informed personal response; use textual references, including quotations, to support and illustrate interpretations.',
-      weighting: '~15%',
+      weighting: '37%',
     },
     {
       code: 'AO2',
       description:
         'Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.',
-      weighting: '~25%',
+      weighting: '42%',
     },
     {
       code: 'AO3',
       description:
         'Show understanding of the relationships between texts and the contexts in which they were written.',
-      weighting: '~20%',
+      weighting: '16%',
     },
     {
       code: 'AO4',
       description:
         'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
-      weighting: '~40%',
+      weighting: '5%',
     },
   ],
 
@@ -247,6 +250,20 @@ export const edexcelGuide: BoardExamGuide = {
   ],
 
   // ─── Literature Papers ───────────────────────────────────────────────────────
+  //
+  // Rewritten 2 October 2026 against Pearson's specification (1ET0, Issue 2, PDF
+  // pages 24 and 26). Both papers were described wrongly:
+  // - Paper 1's Shakespeare question was one 40-mark essay on AO1 to AO4. It is
+  //   two 20-mark parts: (a) the extract, AO2; (b) elsewhere in the play, AO1 15
+  //   and AO3 5.
+  // - Paper 1's post-1914 essay listed AO2. It is AO1 16, AO3 16 and AO4 8.
+  // - Paper 2's novel question was one 40-mark essay on AO1 to AO4. It is two
+  //   20-mark parts: (a) the extract, AO2; (b) the novel as a whole, AO1.
+  // - The anthology comparison was 30 marks on AO1 to AO3. It is 20 marks:
+  //   AO2 15, AO3 5.
+  // - "Section C: Unseen Poetry" (6 marks for one poem, then 4 to compare) does
+  //   not exist. Section B Part 2 is one 20-mark comparison of two unseen
+  //   poems: AO1 8, AO2 12.
   literaturePapers: [
     {
       title: 'Paper 1: Shakespeare and Post-1914 Literature',
@@ -255,7 +272,7 @@ export const edexcelGuide: BoardExamGuide = {
       marks: 80,
       weighting: '50%',
       textType:
-        'Section A: Shakespeare play - extract-based essay (40 marks) combining close reading of a printed extract with exploration of the whole play. Section B: Post-1914 British play or novel - essay question (40 marks) requiring whole-text knowledge.',
+        'Section A: Shakespeare play - one two-part question (40 marks): (a) close analysis of a printed extract of about 30 lines, (b) how a theme from it is explored elsewhere in the play. Section B: Post-1914 British play or novel - one essay from a choice of two (40 marks), with no extract.',
       sections: [
         {
           title: 'Section A: Shakespeare',
@@ -263,13 +280,23 @@ export const edexcelGuide: BoardExamGuide = {
           questions: [
             {
               question:
-                'Respond to a printed extract and then explore a character or theme across the whole play. The question is extract-based but demands whole-text knowledge.',
-              marks: 40,
-              ao: 'AO1 + AO2 + AO3 + AO4',
-              skill: 'Extract-to-whole analysis of Shakespeare play',
-              time: '50-55 minutes',
+                'Part (a): explore how Shakespeare presents a theme, character or idea in a printed extract of about 30 lines.',
+              marks: 20,
+              ao: 'AO2',
+              skill: 'Close analysis of the extract: language, form and structure',
+              time: '25 minutes',
               advice:
-                "Divide your response roughly 40/60 between the extract and the wider play. Analyse the extract in close detail first - Shakespeare's word-level choices, imagery, dramatic irony, use of verse or prose, and rhetorical devices. Then broaden to the whole play, exploring how the theme or character develops across the text. Weave context (AO3) naturally into your analysis - do not bolt it on as a separate paragraph. AO4 rewards accurate written expression, so spell literary terms correctly and punctuate quotations accurately. Select quotations <strong>judiciously</strong> - Edexcel's marking guide specifically rewards quality of selection over quantity.",
+                "Read the extract twice and underline the key words in the question. Analyse Shakespeare's word-level choices, imagery, use of verse or prose, and dramatic devices, with short embedded quotations from the extract. Part (a) is marked for writer's methods alone, so keep the rest of the play for part (b).",
+            },
+            {
+              question:
+                'Part (b): explore how the theme from the extract is presented elsewhere in the play.',
+              marks: 20,
+              ao: 'AO1 + AO3',
+              skill: 'An argument across the rest of the play, with context',
+              time: '25 minutes',
+              advice:
+                'Range across three or four moments from elsewhere in the play, quoting from memory. AO1 (15 marks) rewards an informed personal response; AO3 (5 marks) rewards context that shapes your interpretation, so weave Jacobean ideas in where they explain the play rather than bolting them on. Select quotations <strong>judiciously</strong> - Edexcel\'s marking guide specifically rewards quality of selection over quantity.',
             },
           ],
         },
@@ -279,13 +306,13 @@ export const edexcelGuide: BoardExamGuide = {
           questions: [
             {
               question:
-                'Write about a character, theme, or idea in your studied post-1914 text. No extract is provided - this is a whole-text essay.',
+                'One essay from a choice of two on your studied post-1914 text. Each question opens with a short quotation from the text; no extract is printed.',
               marks: 40,
-              ao: 'AO1 + AO2 + AO3 + AO4',
-              skill: 'Whole-text essay from memory on post-1914 prose/drama',
-              time: '45-50 minutes',
+              ao: 'AO1 + AO3 + AO4',
+              skill: 'Whole-text essay from memory on post-1914 prose or drama',
+              time: '50 minutes, including 5 to proofread',
               advice:
-                'No extract is provided, so you must have memorised quotations from across the text. Aim for 10-15 short, precise quotations committed to memory. Structure your essay thematically rather than chronologically. Each paragraph should make a clear point, support it with an embedded quotation, analyse language in detail, and link to relevant context. Edexcel rewards <strong>assured personal response</strong> - thread a clear, overarching argument through your entire essay rather than analysing quotations in isolation. This is a 40-mark question, so allocate significant time and plan carefully.',
+                'No extract is provided, so you must have memorised quotations from across the text. Aim for 10-15 short, precise quotations committed to memory. Structure your essay thematically rather than chronologically. Each paragraph should make a clear point, support it with an embedded quotation, and link it to context: AO1 and AO3 are worth 16 marks each here. Edexcel rewards <strong>assured personal response</strong> - thread a clear, overarching argument through your entire essay rather than analysing quotations in isolation. AO4 (8 marks) rewards spelling, punctuation, grammar and a range of vocabulary, so leave time to proofread.',
             },
           ],
         },
@@ -298,7 +325,7 @@ export const edexcelGuide: BoardExamGuide = {
       marks: 80,
       weighting: '50%',
       textType:
-        'Section A: 19th-century novel (extract + essay, 40 marks). Section B: Poetry anthology comparison (one named poem + student choice, 30 marks) and unseen poetry (one analysis + one comparison, 10 marks).',
+        'Section A: 19th-century novel - one two-part question (40 marks): (a) a printed extract of about 400 words, (b) the novel as a whole. Section B: Part 1, the named anthology poem compared with one of your choice from the same collection (20 marks); Part 2, two unseen poems compared (20 marks). No SPaG marks on this paper.',
       sections: [
         {
           title: 'Section A: 19th-Century Novel',
@@ -306,55 +333,56 @@ export const edexcelGuide: BoardExamGuide = {
           questions: [
             {
               question:
-                'Respond to a printed extract and then explore a character or theme across the whole novel',
-              marks: 40,
-              ao: 'AO1 + AO2 + AO3 + AO4',
-              skill: 'Extract-to-whole analysis of 19th-century novel',
-              time: '55-60 minutes',
-              advice:
-                "Begin with detailed analysis of the extract - close-read the writer's language choices, sentence structures, and narrative techniques. Then broaden to the whole novel, selecting key moments that develop the theme or character. Context (AO3) is important for 19th-century texts - integrate understanding of Victorian society, class, gender, or morality where it illuminates meaning. Embed quotations fluently and analyse at word level. This is a high-tariff question, so plan carefully and maintain analytical depth throughout.",
-            },
-          ],
-        },
-        {
-          title: 'Section B: Poetry Anthology',
-          marks: 30,
-          questions: [
-            {
-              question:
-                'Compare a named poem from your studied collection with one other poem of your choice from the same collection',
-              marks: 30,
-              ao: 'AO1 + AO2 + AO3',
-              skill:
-                'Poetry comparison - named poem (printed) with free-choice poem from same cluster',
-              time: '35-40 minutes',
-              advice:
-                "The exam names one poem and prints it on the paper - you must choose the second from your studied collection and write about it from memory. Choose your comparison poem quickly (within 2 minutes) based on the strongest thematic or methodological links. Structure comparatively throughout: do not write about one poem then the other. Each paragraph should address both poems using comparative connectives. Analyse language, form, and structure in both poems. Context (AO3) should be integrated concisely - comment on how biographical or historical factors shape the poets' perspectives.",
-            },
-          ],
-        },
-        {
-          title: 'Section C: Unseen Poetry',
-          marks: 10,
-          questions: [
-            {
-              question:
-                'Part 1: Analyse one unseen poem - how does the poet present a theme or idea?',
-              marks: 6,
-              ao: 'AO1 + AO2',
-              skill: 'Analyse one unseen poem independently',
-              time: '10-12 minutes',
-              advice:
-                "Read the poem at least twice before writing. Identify the poem's subject, tone, and shifts in mood. Analyse language devices (imagery, diction, sound) and structural features (form, enjambment, stanza breaks). Use short embedded quotations and explore multiple layers of meaning. Do not try to cover every line - select the richest details and analyse them in depth.",
-            },
-            {
-              question: 'Part 2: Compare how the poets present a shared theme in both unseen poems',
-              marks: 4,
+                'Part (a): explore how the writer presents a theme, character or idea in a printed extract of about 400 words.',
+              marks: 20,
               ao: 'AO2',
-              skill: 'Compare two unseen poems on a shared theme',
-              time: '8-10 minutes',
+              skill: 'Close language analysis of the extract',
+              time: '30 minutes',
               advice:
-                'This is a shorter question - focus on two or three sharp comparative points. Compare methods (how the poets achieve their effects) rather than just content (what the poems are about). Use comparative language: "Both poets use…", "While Poem 1 employs…, Poem 2 instead…". Keep quotations very short - single words or phrases work best.',
+                "Close-read the writer's language choices, sentence structures and narrative techniques in the extract, with short embedded quotations and analysis at word level. Part (a) is marked for writer's methods alone, so keep the rest of the novel for part (b).",
+            },
+            {
+              question:
+                'Part (b): an essay on the novel as a whole, on a related theme, character or idea.',
+              marks: 20,
+              ao: 'AO1',
+              skill: 'An informed argument about the whole novel, from memory',
+              time: '30 minutes',
+              advice:
+                'Select key moments from across the novel that develop the theme or character, and build a clear argument supported by references. Section A gives no marks for context in its own right: use Victorian society, class, gender or morality only where it sharpens your argument. Plan before you write and keep the argument clear from start to finish.',
+            },
+          ],
+        },
+        {
+          title: 'Section B Part 1: Poetry Anthology',
+          marks: 20,
+          questions: [
+            {
+              question:
+                'Compare a named poem from your studied collection, printed on the paper, with one other poem of your choice from the same collection',
+              marks: 20,
+              ao: 'AO2 + AO3',
+              skill:
+                'Poetry comparison - named poem (printed) with a poem of your choice from the same collection',
+              time: '35 minutes',
+              advice:
+                "The exam names one poem and prints it on the paper - you must choose the second from your studied collection and write about it from memory. Choose your comparison poem quickly (within 2 minutes) based on the strongest thematic or methodological links. Structure comparatively throughout: do not write about one poem then the other. Each paragraph should address both poems using comparative connectives. Analyse language, form and structure in both poems (AO2, 15 marks). Context (AO3, 5 marks) should be integrated concisely - comment on how biographical or historical factors shape the poets' perspectives.",
+            },
+          ],
+        },
+        {
+          title: 'Section B Part 2: Unseen Poetry',
+          marks: 20,
+          questions: [
+            {
+              question:
+                'Compare how the poets present a shared theme in two unseen contemporary poems',
+              marks: 20,
+              ao: 'AO1 + AO2',
+              skill: 'Compare two unseen poems on a shared theme',
+              time: '35 minutes',
+              advice:
+                'Read both poems at least twice before writing, noting each poem\'s subject, tone and shifts in mood. Then compare methods (how the poets achieve their effects) rather than just content: imagery, diction, sound, form, enjambment and stanza breaks, with short embedded quotations. Use comparative language: "Both poets use…", "While Poem 1 employs…, Poem 2 instead…". AO2 is worth 12 of the 20 marks and AO1 8. Do not try to cover every line - select the richest details and analyse them in depth.',
             },
           ],
         },
@@ -498,15 +526,17 @@ export const edexcelGuide: BoardExamGuide = {
     {
       question: 'Literature Paper 1 - Shakespeare (40 marks)',
       tips: [
-        'The extract is printed, but you must also write about the whole play. Divide your response roughly 40/60 between extract and wider text.',
+        // 2 October 2026: these tips split one essay 40/60 between extract and play and promised
+        // 4 SPaG marks. The question is two parts of 20, and the Shakespeare question has no SPaG.
+        'The extract is printed for part (a); part (b) is about the rest of the play, from memory. Answer each part as it is asked - they are marked separately.',
         "Analyse Shakespeare's word-level choices: imagery, verse form, rhetorical devices, dramatic irony, use of prose vs. verse.",
         'Select quotations <strong>judiciously</strong> - Edexcel specifically rewards quality of selection over quantity.',
-        'Weave context (AO3) naturally into your analysis rather than bolting it on as a separate paragraph.',
-        'The 4 SPaG marks reward accurate spelling of literary terms, clear expression, and correct quotation punctuation.',
+        'Weave context (AO3, in part (b)) naturally into your argument rather than bolting it on as a separate paragraph.',
+        'There are no SPaG marks on the Shakespeare question - AO4 is marked only on the post-1914 essay - but spell literary terms correctly and punctuate quotations accurately.',
       ],
     },
     {
-      question: 'Literature Paper 2, Section B - Poetry Anthology (30 marks)',
+      question: 'Literature Paper 2, Section B Part 1 - Poetry Anthology (20 marks)',
       tips: [
         'Know every poem in your collection - the exam names one, and you must choose the comparison from memory.',
         'Choose your comparison poem quickly (within 2 minutes) based on the strongest thematic and methodological links.',
@@ -522,7 +552,7 @@ export const edexcelGuide: BoardExamGuide = {
         '"Judicious" quotation selection is specifically rewarded - choose the most revealing quotations rather than the longest.',
         'Sustained personal response means maintaining your critical voice throughout, not just in the introduction and conclusion.',
         'Context should illuminate meaning, not demonstrate knowledge for its own sake. Ask: "How does this context change how we read the text?"',
-        'AO4 (SPaG) carries up to 40% in Literature - accurate written expression is not optional at this level.',
+        'AO4 (SPaG) is 5% of Literature: 8 marks, all on the Paper 1 post-1914 essay. Accurate written expression still helps every answer communicate.',
       ],
     },
   ],
@@ -535,9 +565,12 @@ export const edexcelGuide: BoardExamGuide = {
         'Enhanced SPaG weighting: AO6 (spelling, punctuation, and grammar) carries increased emphasis across Language papers, with the explicit SPaG grid refined to reward a wider range of punctuation and sentence structures.',
     },
     {
-      year: '2026',
+      // 2 October 2026: claimed a 2026 revision "across all three collections". The current
+      // anthology is Issue 4, dated 9 January 2023, with four collections; no 2026 revision
+      // was found.
+      year: '2023',
       change:
-        'Revised anthology selections: the poetry anthology has been updated with revised poem selections across all three collections (Relationships, Conflict, Time and Place), requiring students to learn new texts.',
+        'Four anthology collections: Issue 4 of the poetry anthology (January 2023) has four collections of 15 poems - Relationships, Conflict, Time and Place, and Belonging. Schools choose one.',
     },
     {
       year: '2026',
@@ -612,7 +645,7 @@ export const edexcelGuide: BoardExamGuide = {
         },
       ],
       examStrategy:
-        "For Edexcel, focus on Priestley's dramatic methods - staging, dramatic irony, the well-made play structure, and the Inspector as a dramatic device. The post-1914 question carries 40 marks and demands both extract analysis and whole-text knowledge. Memorise quotations from across the play and structure your essay thematically. Context should focus on the 1912/1945 dual setting and Priestley's political purpose.",
+        "For Edexcel, the post-1914 question carries 40 marks: one essay from a choice of two, opened by a short quotation, with no extract. It is marked for your argument (AO1), context (AO3) and accuracy (AO4), not for methods on their own, so use Priestley's dramatic methods - staging, dramatic irony, the well-made play structure, and the Inspector as a dramatic device - as evidence for your argument. Memorise quotations from across the play and structure your essay thematically. Context should focus on the 1912/1945 dual setting and Priestley's political purpose.",
     },
     {
       title: 'A Christmas Carol',
@@ -671,7 +704,7 @@ export const edexcelGuide: BoardExamGuide = {
         },
       ],
       examStrategy:
-        "For Edexcel's 19th-century novel question (Paper 2, Section A, 40 marks), you will receive a printed extract and must write about both the extract and the whole text. Prioritise close language analysis (AO2) of Dickens's methods - his use of listing, personification, pathetic fallacy, and contrast. Context (AO3) should focus on Victorian attitudes to poverty, the Poor Law, and Dickens's social purpose. Memorise quotations from each Stave to demonstrate whole-text knowledge.",
+        "For Edexcel's 19th-century novel question (Paper 2, Section A, 40 marks in two parts of 20), part (a) prints an extract for close language analysis (AO2) of Dickens's methods - his use of listing, personification, pathetic fallacy, and contrast. Part (b) is an essay on the novel as a whole (AO1): memorise quotations from each Stave to support your argument. Neither part marks context on its own, but Victorian attitudes to poverty, the Poor Law and Dickens's social purpose can sharpen your points.",
     },
     {
       title: 'Romeo and Juliet',
@@ -732,7 +765,7 @@ export const edexcelGuide: BoardExamGuide = {
         },
       ],
       examStrategy:
-        "For Edexcel's Shakespeare question (Paper 1, Section A, 40 marks), you receive a printed extract and must write about both the extract and the whole play. Begin with close analysis of the extract - word-level choices, imagery, verse form, dramatic techniques - then broaden to the whole play. Weave context naturally into your analysis. Select quotations judiciously: a few well-chosen, deeply analysed quotations will outscore many superficial ones.",
+        "For Edexcel's Shakespeare question (Paper 1, Section A, 40 marks in two parts of 20), part (a) prints an extract for close analysis - word-level choices, imagery, verse form, dramatic techniques. Part (b) explores the same theme elsewhere in the play: weave context naturally into that argument. Select quotations judiciously: a few well-chosen, deeply analysed quotations will outscore many superficial ones.",
     },
     {
       title: 'Macbeth',
@@ -792,7 +825,7 @@ export const edexcelGuide: BoardExamGuide = {
         },
       ],
       examStrategy:
-        'For Edexcel\'s Shakespeare question, focus on close language analysis of the extract before broadening to the whole play. Macbeth is rich in imagery (blood, darkness, clothing, disease) - track these patterns across the text. Context should centre on Jacobean attitudes to regicide, the supernatural, and gender roles, but always link context to the effect on the audience rather than presenting it as standalone knowledge. The marking guide rewards "judicious" quotation - select the most revealing phrases and analyse them in depth.',
+        'For Edexcel\'s Shakespeare question, part (a) is close language analysis of the printed extract and part (b) explores the theme elsewhere in the play. Macbeth is rich in imagery (blood, darkness, clothing, disease) - track these patterns across the text. Context should centre on Jacobean attitudes to regicide, the supernatural, and gender roles, but always link context to the effect on the audience rather than presenting it as standalone knowledge. The marking guide rewards "judicious" quotation - select the most revealing phrases and analyse them in depth.',
     },
   ],
 
@@ -916,7 +949,7 @@ export const edexcelGuide: BoardExamGuide = {
     'Dual transactional writing tasks: Language Paper 2 uniquely requires two separate writing tasks (one shorter at ~16 marks, one longer at ~24 marks), testing versatility across different forms and demanding careful time management.',
     'Explicit SPaG grid for writing: Unlike boards where SPaG marks are embedded within content descriptors, Edexcel uses a separate, visible SPaG assessment grid, making technical accuracy a clearly targetable component of the grade.',
     'Paper 2 carries 96 marks over 2 hours 5 minutes: One of the most demanding single papers at GCSE level, requiring stamina and time management across reading and writing sections.',
-    'Poetry anthology divided into three collections (Relationships, Conflict, Time and Place): Schools choose one collection, and students must know every poem within it for the comparison question.',
+    'Poetry anthology divided into four collections (Relationships, Conflict, Time and Place, Belonging): Schools choose one collection, and students must know every poem within it for the comparison question.',
     '"Judicious" quotation is specifically rewarded in the marking guide: Edexcel\'s top-band descriptors emphasise quality of textual selection over quantity, rewarding students who choose the most revealing quotations rather than the most copious.',
     'Both domestic GCSE and International GCSE available: Edexcel is unique in offering both 1EN0/1ET0 (UK) and 4EA1 (international) pathways, giving schools worldwide access to Pearson qualifications.',
   ],

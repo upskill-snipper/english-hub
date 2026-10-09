@@ -84,16 +84,28 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
           { ao: 'AO4', weight: '+ 4 marks', description: 'Spelling, punctuation, grammar' },
         ],
       },
+      // Corrected 9 October 2026 against Pearson's specification (1ET0, Issue 2, PDF pages
+      // 23 and 26). This said 24 marks: AO1 8, AO2 12 and 4 for SPaG. The question has two
+      // parts of 20. Part (a) is AO2 alone; part (b) is AO1 15 and AO3 5. Edexcel marks SPaG
+      // only on the post-1914 essay in Section B.
       {
         board: 'Edexcel 1ET0',
         paper: 'Paper 1: Shakespeare and Post-1914 Literature',
-        section: 'Section A - Shakespeare',
-        marks: 24,
+        section: 'Section A - Shakespeare: (a) the extract, (b) the whole play',
+        marks: 40,
         timeGuide: '55 minutes',
         aoWeighting: [
-          { ao: 'AO1', weight: '8 marks', description: 'Response and textual references' },
-          { ao: 'AO2', weight: '12 marks', description: 'Analysis of language, form, structure' },
-          { ao: 'AO4', weight: '+ 4 marks', description: 'SPaG and vocabulary' },
+          {
+            ao: 'AO2',
+            weight: '20 marks',
+            description: 'Part (a): language, form and structure in the extract',
+          },
+          {
+            ao: 'AO1',
+            weight: '15 marks',
+            description: 'Part (b): response to the theme elsewhere in the play',
+          },
+          { ao: 'AO3', weight: '5 marks', description: 'Part (b): context' },
         ],
       },
       {
@@ -130,7 +142,7 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
       'Read the extract printed with the question first, then decide which moments elsewhere in the play connect - the question is always "extract + whole play".',
       'Use a conceptual thesis sentence in your opening paragraph. Not "This essay will discuss X" - instead a claim: "Shakespeare presents Macbeth as a tragic hero whose ambition was always already in him, and the witches merely speak it aloud."',
       'Do not retell the plot. Markers deduct implicitly for narrative rather than analytical paragraphs.',
-      "Treat Lady Macbeth as a feminist reading opportunity on AQA and OCR (AO3). On Edexcel, context isn't assessed on this question - don't waste time.",
+      "Treat Lady Macbeth as a feminist reading opportunity on AQA and OCR (AO3). On Edexcel, context earns 5 marks in part (b), the whole-play essay, and none in part (a), the extract question.",
       'Memorise 10-12 quotes that cover the full arc: two from Act 1, two each from Acts 2, 3, 4, and two from Act 5. That distribution lets you answer any thematic question.',
       "Quote embedding beats quote-then-comment. \"Macbeth's 'vaulting ambition' betrays him\" reads stronger than \"Macbeth has ambition. The quote 'vaulting ambition' shows this.\"",
     ],
@@ -207,7 +219,7 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
       {
         question: 'Do I have to use context in my Macbeth essay?',
         answer:
-          'On AQA (6 marks AO3), OCR (15 marks AO3), and Eduqas - yes, integrated context is required for the top bands. On Edexcel Paper 1 Section A, AO3 is NOT assessed for Shakespeare, so do not waste exam time on historical detail there.',
+          'On AQA (6 marks AO3), OCR (15 marks AO3), and Eduqas - yes, integrated context is required for the top bands. On Edexcel Paper 1 Section A, context is worth 5 marks, all of them in part (b), the essay on the whole play; part (a), the extract question, rewards analysis alone.',
       },
       {
         question: 'How many quotes do I need to memorise?',

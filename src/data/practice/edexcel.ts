@@ -229,70 +229,10 @@ I am not asking you to reject technology. I am asking you to reject the assumpti
 Thank you.`,
     },
   },
-  {
-    id: 'edexcel-7',
-    board: 'Edexcel',
-    type: 'Poetry Comparison',
-    tier: 'GCSE',
-    title: 'Literature Poetry Comparison',
-    extract: `Poem A - "Ozymandias" by Percy Bysshe Shelley:
-"I met a traveller from an antique land,
-Who said - 'Two vast and trunkless legs of stone
-Stand in the desert. . . . Near them, on the sand,
-Half sunk a shattered visage lies, whose frown,
-And wrinkled lip, and sneer of cold command,
-Tell that its sculptor well those passions read
-Which yet survive, stamped on these lifeless things,
-The hand that mocked them, and the heart that fed.'"
-
-Poem B - "My Last Duchess" by Robert Browning (extract):
-"That's my last Duchess painted on the wall,
-Looking as if she were alive. I call
-That piece a wonder, now: Fra Pandolf's hands
-Worked busily a day, and there she stands.
-Will't please you sit and look at her?"`,
-    question:
-      'Compare how the poets explore the theme of power and its limitations in "Ozymandias" and "My Last Duchess." (20 marks)',
-    marks: 20,
-    timing: '35 minutes',
-    markScheme: [
-      'Compares ideas about power across both poems',
-      "Analyses how the poets' methods convey attitudes to power",
-      'Uses well-selected quotations from both poems',
-      'Explores how form and structure contribute to meaning',
-      'Considers how context informs the treatment of power',
-      'Maintains an integrated comparative approach throughout',
-    ],
-    examinerTips: [
-      'Compare throughout. Do not write about one poem and then the other.',
-      'Consider how each poet uses form and structure, not just language.',
-      'Think about what both poems suggest about the nature of power itself.',
-      'Context should deepen your analysis, not exist as a separate paragraph.',
-    ],
-    modelAnswers: {
-      'Grade 4-5': `Both "Ozymandias" and "My Last Duchess" present powerful men who try to control others, but both poems suggest that power has limits.
-
-In "Ozymandias," the pharaoh is presented as arrogant and commanding. The description of his "frown, and wrinkled lip, and sneer of cold command" shows he was a cruel ruler who wanted to intimidate others. However, his statue is now broken and surrounded by empty desert, which shows that even the most powerful leaders are eventually forgotten. The word "shattered" suggests complete destruction of his power.
-
-In "My Last Duchess," the Duke is also controlling. He speaks about his dead wife as if she were a possession, calling her "my last Duchess" - the possessive pronoun "my" shows ownership. He controls who can look at her painting: "Will't please you sit and look at her?" is a command disguised as a polite question. The Duke's power seems more intact than Ozymandias's, but the fact that he can only control a painting, not a living person, reveals its limitation.
-
-Both poems use art to explore power. Ozymandias's power survives only through the sculptor's skill, while the Duke has replaced his wife with a portrait he can control. Both suggest that powerful men try to preserve their authority through art but ultimately reveal their own weakness.`,
-      'Grade 6-7': `Shelley and Browning both anatomise power through its material remnants - a statue and a painting - and both reveal that the desire to control outlasts the ability to do so.
-
-Shelley constructs Ozymandias's power as already ruined. The sonnet's opening removes the pharaoh from his own story: he does not speak directly but is reported through a chain of narration - traveller to poet to reader - that structurally enacts the erosion of authority. The "shattered visage" retains the "sneer of cold command," but the command is now directed at empty desert. The irony is architectural: the passions "yet survive," but only because the sculptor - the subordinate, the servant - captured them in stone. Power is preserved by the very craft it patronised, and the pharaoh's immortality depends on the artist he almost certainly considered beneath him. The volta comes in the inscription's boast - "Look on my Works, ye Mighty, and despair!" - which the surrounding "lone and level sands" render absurd.
-
-Browning's Duke presents a more insidious form of power: one that is current, active, and performed. The dramatic monologue allows the Duke to speak without interruption, his control of the conversation mirroring his desire to control everything around him. The painting of the Duchess is "a wonder" precisely because it is static - she cannot blush, cannot smile at other men, cannot exhibit the independence that so enraged him. The possessive "my last Duchess" reduces a human being to a catalogued item, and the phrase "last" implies she is one in a sequence, her replacement already being negotiated. Yet Browning's form subtly undermines the Duke's authority: the rhyming couplets are deliberately run-on, their enjambment suggesting a speaker who cannot quite control his own rhetoric, whose composure is a performance that threatens to slip.
-
-Both poems suggest that the truest expression of power is the attempt to outlast death - through statues, through portraits - and both reveal this attempt as ultimately futile. Ozymandias's monument is rubble; the Duke's control extends only to a painting on a wall. Art survives the powerful, but it does not serve them - it exposes them.`,
-      'Grade 8-9': `Both poems stage an encounter with power through its aesthetic afterlife - a broken statue, a commissioned portrait - and both discover that art, which the powerful deploy as an instrument of control, ultimately becomes the instrument of their exposure.
-
-Shelley's sonnet is a masterclass in structural irony. Ozymandias never speaks to us directly; his voice arrives through three mediations - sculptor to traveller to poet - each layer of remove enacting the historical distance that has rendered his authority meaningless. The "two vast and trunkless legs of stone" are a monument to dismemberment: the body of power has been amputated, leaving only the stance of authority without its substance. That the "sneer of cold command" survives while the empire does not is Shelley's central irony - the emotions of tyranny are more durable than its achievements. The sculptor "well those passions read" - and the verb "read" is crucial, positioning the artist as interpreter rather than servant. The hand that "mocked" the passions carries a deliberate ambiguity: it means both "copied" and "ridiculed," so the statue simultaneously memorialises and satirises its subject. Shelley, writing in the aftermath of the Napoleonic Wars, understood that empires generate monuments in direct proportion to their insecurity, and that the desert - patient, indifferent, infinite - is the only honest critic of human ambition.
-
-Browning's Duke operates in a different register of power - intimate, domestic, and therefore more disturbing. Where Ozymandias commanded armies, the Duke commands a conversation, and his dramatic monologue is itself an exercise in control: we hear only his voice, see only through his gaze. The Duchess has been converted from a living woman into "a piece" on a wall - the reduction is linguistic before it is literal. The crucial revelation - that the Duke "gave commands; / Then all smiles stopped together" - is delivered with a syntactic brevity that mirrors the efficiency of the violence it describes. The painting is not a memorial but a correction: it fixes the Duchess in the posture the Duke preferred, her smile now permanently directed by his permission. Yet Browning's form performs the same subversion as Shelley's. The enjambed couplets - technically closed but experientially open - create a tension between the Duke's desire for containment and the poem's refusal to be contained. His rhetoric slips: "I choose / Never to stoop" protests too much, and the final descent to negotiate a dowry exposes the transactional reality beneath the aesthetic surface.
-
-The poems converge on a devastating insight: power that requires a monument is power that suspects its own impermanence. Ozymandias commissions a colossus because empires end; the Duke commissions a portrait because wives die or are killed. Both men attempt to transcend their limitations through art, and both are betrayed by it - Ozymandias by a sculptor who embedded mockery in the stone, the Duke by a monologue that reveals far more than he intends. Shelley and Browning, writing within three decades of each other, both recognised that the Romantic fascination with power was inseparable from the recognition of its futility - and that the poet's task was not to celebrate or condemn the powerful but to let them speak until they condemned themselves.`,
-    },
-  },
+  // 2 October 2026: an Ozymandias and My Last Duchess comparison, 'edexcel-7', was filed
+  // here. Ozymandias is not in the Pearson Edexcel anthology, and the exam compares the
+  // named poem with one from its own collection. The same pairing is in the AQA bank as
+  // aqa-lit-poetry-comp-1, where both poems are set, so this copy was removed.
   {
     id: 'edexcel-p1-19c-reading-1',
     board: 'Edexcel',
@@ -633,11 +573,16 @@ Shakespeare\'s engagement with the supernatural is inseparable from its politica
     tier: 'GCSE',
     title: "A Christmas Carol - Scrooge's Transformation",
     extract: `He became as good a friend, as good a master, and as good a man, as the good old city knew, or any other good old city, town, or borough, in the good old world. Some people laughed to see the alteration in him, but he let them laugh, and little heeded them; for he was wise enough to know that nothing ever happened on this globe, for good, at which some people did not have their fill of laughter in the outset.`,
-    extractSource: "Written in the style of Charles Dickens's A Christmas Carol, Stave 5",
+    // 2 October 2026: extractSource said "Written in the style of" Dickens; the extract is
+    // Dickens's own Stave 5, checked against the held edition. The question was one 40-mark
+    // essay on extract and novella together; Paper 2 Section A sets two parts of 20, (a) on
+    // the extract (AO2) and (b) on the novel as a whole (AO1), with no marks for context.
+    // The model answers take the parts in that order: extract first, then the novella.
+    extractSource: "Charles Dickens, A Christmas Carol, Stave 5",
     question:
-      "Explore how Dickens presents Scrooge's transformation in this extract and in the novella as a whole. (40 marks)",
+      "(a) Explore how Dickens presents Scrooge's transformation in this extract. (20 marks)\n(b) Explore how Dickens presents Scrooge's transformation in the novella as a whole. (20 marks)",
     marks: 40,
-    timing: '55 minutes',
+    timing: '60 minutes',
     modelAnswers: {
       'Grade 4-5': `In this extract, Dickens presents Scrooge as completely changed from the cold, selfish man he was at the beginning. He is now described as "as good a friend, as good a master, and as good a man" which shows he has become kind in every part of his life - personally, professionally, and morally. The repetition of the word "good" six times in the first sentence emphasises how thoroughly he has changed.
 
@@ -670,12 +615,12 @@ The Ghost of Christmas Present shifts the register from personal memory to socia
 The novella\'s power as social criticism lies in its formal choice: the fairy tale. By casting economic injustice as a supernatural narrative with a redemptive arc, Dickens makes social reform emotionally accessible in a way that parliamentary reports could not. The transformation is deliberately excessive - Scrooge does not merely become adequate but becomes the best friend, master, and man in the city - because Dickens understood that political persuasion requires not just intellectual agreement but emotional conversion. The novella does not argue for the welfare state; it creates the feeling that makes the welfare state imaginable.`,
     },
     markScheme: [
-      "Analyses how Dickens presents Scrooge's transformation through language and narrative structure",
-      'Explores specific words, phrases, and rhetorical techniques in the extract',
-      'Traces the transformation across all five staves of the novella',
-      "Considers relevant context (Victorian poverty, Dickens's social purpose, the Poor Law)",
-      'Uses precisely embedded quotations to support a sustained argument',
-      'Develops a conceptualised response to the nature and purpose of transformation',
+      "(a) Analyses how Dickens presents Scrooge's transformation in the extract through language, form and structure (AO2)",
+      '(a) Explores specific words, phrases, and rhetorical techniques in the extract',
+      '(b) Traces the transformation across all five staves of the novella (AO1)',
+      '(b) Uses precisely embedded quotations to support a sustained argument',
+      '(b) Develops a conceptualised response to the nature and purpose of transformation',
+      'Uses context only where it sharpens a point: Section A gives no marks for context',
     ],
     examinerTips: [
       'The transformation is a process, not an event - trace how it develops across the whole novella.',
@@ -691,12 +636,16 @@ The novella\'s power as social criticism lies in its formal choice: the fairy ta
     questionType: 'Theme Analysis',
     tier: 'GCSE',
     title: 'A Christmas Carol - Social Criticism',
-    extract: `"Are there no prisons?" asked Scrooge.\n"Plenty of prisons," said the gentleman.\n"And the Union workhouses?" demanded Scrooge. "Are they still in operation?"\n"They are. Still," returned the gentleman, "I wish I could say they were not."\n"The Treadmill and the Poor Law are in full vigour, then?" said Scrooge.\n"Both very busy, sir."\n"Oh! I was afraid, from what you said at first, that something had occurred to stop them in their useful course," said Scrooge. "I\'m very glad to hear it."`,
-    extractSource: "Written in the style of Charles Dickens's A Christmas Carol, Stave 1",
+    extract: `"Are there no prisons?" asked Scrooge.\n"Plenty of prisons," said the gentleman, laying down the pen again.\n"And the Union workhouses?" demanded Scrooge. "Are they still in operation?"\n"They are. Still," returned the gentleman, "I wish I could say they were not."\n"The Treadmill and the Poor Law are in full vigour, then?" said Scrooge.\n"Both very busy, sir."\n"Oh! I was afraid, from what you said at first, that something had occurred to stop them in their useful course," said Scrooge. "I\'m very glad to hear it."`,
+    // 2 October 2026: extractSource said "Written in the style of" Dickens; the extract is
+    // Dickens's own Stave 1, and it dropped "laying down the pen again" without a mark, now
+    // restored from the held edition. The question is now Section A's two parts of 20, as in
+    // the item above; the model answers take the extract first, then the novella.
+    extractSource: "Charles Dickens, A Christmas Carol, Stave 1",
     question:
-      'Explore how Dickens uses the character of Scrooge to present ideas about social responsibility in this extract and in the novella as a whole. (40 marks)',
+      '(a) Explore how Dickens uses the character of Scrooge to present ideas about social responsibility in this extract. (20 marks)\n(b) Explore how Dickens presents ideas about social responsibility in the novella as a whole. (20 marks)',
     marks: 40,
-    timing: '55 minutes',
+    timing: '60 minutes',
     modelAnswers: {
       'Grade 4-5': `In this extract, Dickens shows Scrooge as someone who does not care about poor people at all. When asked to give money to charity, Scrooge asks "Are there no prisons?" and "And the Union workhouses?" This shows he thinks the poor should be dealt with by the government through harsh institutions, not by individual kindness. He calls prisons and the treadmill part of a "useful course," which shows he thinks punishing poor people is a good thing.
 
@@ -727,15 +676,15 @@ Dickens structures the novella so that each supernatural visitation removes one 
 The novella\'s choice of form - the Christmas ghost story - is inseparable from its social purpose. Dickens rejected the pamphlet he had originally planned (to be titled "An Appeal to the People of England on Behalf of the Poor Man\'s Child") in favour of fiction because he understood that emotional persuasion operates differently from rational argument. The ghost story permits what the essay cannot: the literal haunting of the comfortable by the consequences of their comfort. Scrooge\'s transformation is not a policy proposal but a moral demonstration, and its power lies in the reader\'s identification with the process - not merely observing change but imaginatively experiencing it. By making social responsibility a matter of feeling rather than argument, Dickens created a text that has influenced charitable behaviour for nearly two centuries, outlasting every parliamentary report that addressed the same conditions. The novella is itself a haunting: it visits the reader, shows them what they would prefer not to see, and demands a response.`,
     },
     markScheme: [
-      'Analyses how Dickens uses Scrooge to criticise Victorian attitudes to the poor',
-      'Explores specific language choices and their effects in the extract',
-      'Discusses social responsibility across the whole novella',
-      "Considers relevant context (the Poor Law, Malthusianism, Victorian poverty, Dickens's purpose)",
-      'Uses well-integrated quotations to support a sustained argument',
-      'Develops a conceptualised response linking character to social criticism',
+      '(a) Analyses how Dickens uses Scrooge in the extract to criticise Victorian attitudes to the poor (AO2)',
+      '(a) Explores specific language choices and their effects in the extract',
+      '(b) Discusses social responsibility across the whole novella (AO1)',
+      '(b) Uses well-integrated quotations to support a sustained argument',
+      '(b) Develops a conceptualised response linking character to social criticism',
+      'Uses context (the Poor Law, Malthusianism, Victorian poverty) only where it sharpens a point: Section A gives no marks for context',
     ],
     examinerTips: [
-      "Always connect Scrooge's attitudes to their real-world Victorian context.",
+      "Knowing the Victorian context helps you explain Scrooge's attitudes - use it where it makes a point sharper, not as a paragraph of its own.",
       'The best responses treat the novella as a deliberate social intervention, not just a story.',
       "Analyse Dickens's methods: why a ghost story? Why a fairy-tale structure?",
       'Consider the role of each ghost in challenging the philosophy Scrooge expresses here.',
@@ -796,16 +745,20 @@ The poems\' treatment of permanence reveals their deepest divergence. Browning l
     ],
   },
   {
+    // 2 October 2026: this was presented as the exam's unseen question - one poem, 20 marks.
+    // Edexcel sets no single unseen poem: Section B Part 2 compares two (AO1 8, AO2 12). The
+    // item stays as a warm-up for the close reading each half of that comparison needs, and
+    // now says so.
     id: 'edexcel-lit-unseen-1',
     board: 'Edexcel',
     type: 'Unseen Poetry',
     questionType: 'Unseen Poetry',
     tier: 'GCSE',
-    title: 'Unseen Poetry Analysis',
+    title: 'Unseen Poetry - Single-Poem Warm-up',
     extract: `First Snow\n\nThe garden has forgotten how to be itself.\nEvery blade, every branch, every bin lid\nis someone else - anonymous and clean.\n\nThe children have run out without their coats\nbecause joy is urgent and cannot wait\nfor zips.\n\nA blackbird stands on the white lawn\nlike a full stop on an empty page,\nthe only word the morning needs.`,
     extractSource: 'Original poem written for this exercise',
     question:
-      'In "First Snow," how does the poet use language and structure to present the experience of snow? (20 marks)',
+      'In "First Snow," how does the poet use language and structure to present the experience of snow? (Warm-up: the exam gives you two unseen poems to compare, for 20 marks. This single poem practises the close reading each half of that comparison needs.)',
     marks: 20,
     timing: '25 minutes',
     modelAnswers: {

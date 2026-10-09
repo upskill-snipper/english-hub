@@ -1344,30 +1344,33 @@ export const examQuestions: ExamQuestion[] = [
   },
 
   // --- Edexcel Literature: Poetry Comparison ---
+  // 2 October 2026: these asked for any two poems "you have studied" or "from the
+  // anthology". Section B Part 1 prints a named poem and asks for one other from the same
+  // collection, so each now names one poem, a different collection each time.
   {
     id: 'edx-lit-pc-1',
-    text: 'Compare how the poets present the experience of conflict in two poems you have studied.',
+    text: 'Re-read "Exposure". Choose one other poem from the Conflict collection. Compare how the poets present the experience of conflict in the two poems.',
     board: 'Edexcel',
     paper: 'Literature',
     questionType: 'Poetry Comparison',
   },
   {
     id: 'edx-lit-pc-2',
-    text: 'Compare how the poets explore the theme of identity in two poems from the anthology.',
+    text: 'Re-read "Island Man". Choose one other poem from the Belonging collection. Compare how the poets explore identity in the two poems.',
     board: 'Edexcel',
     paper: 'Literature',
     questionType: 'Poetry Comparison',
   },
   {
     id: 'edx-lit-pc-3',
-    text: 'Compare how two poets use imagery to present their feelings about a place.',
+    text: 'Re-read "Composed upon Westminster Bridge, September 3, 1802". Choose one other poem from the Time and Place collection. Compare how the poets use imagery to present their feelings about a place.',
     board: 'Edexcel',
     paper: 'Literature',
     questionType: 'Poetry Comparison',
   },
   {
     id: 'edx-lit-pc-4',
-    text: 'Compare how the poets explore ideas about time and change in two poems from the anthology.',
+    text: 'Re-read "Neutral Tones". Choose one other poem from the Relationships collection. Compare how the poets explore ideas about time and change in the two poems.',
     board: 'Edexcel',
     paper: 'Literature',
     questionType: 'Poetry Comparison',
@@ -1381,23 +1384,25 @@ export const examQuestions: ExamQuestion[] = [
   },
 
   // --- Edexcel Literature: Unseen Poetry ---
+  // 2 October 2026: two of these were single-poem questions. Section B Part 2 is one
+  // comparison of two unseen poems, with no single-poem question before it.
   {
     id: 'edx-lit-up-1',
-    text: "Read the poem carefully. How does the poet present ideas about memory? You should consider the poet's use of language, structure and form.",
+    text: "Read the two poems carefully. Compare how the poets present ideas about memory. You should consider the poets' use of language, form and structure.",
     board: 'Edexcel',
     paper: 'Literature',
     questionType: 'Unseen Poetry',
   },
   {
     id: 'edx-lit-up-2',
-    text: 'How does the poet create a sense of isolation in the poem? Consider the effects of language, imagery and structure.',
+    text: 'Compare how the poets create a sense of isolation in the two poems. Consider the effects of language, imagery and structure.',
     board: 'Edexcel',
     paper: 'Literature',
     questionType: 'Unseen Poetry',
   },
   {
     id: 'edx-lit-up-3',
-    text: 'Now read Poem 2. Compare the ways the poets present ideas about the passing of time in Poem 1 and Poem 2.',
+    text: 'Compare the ways the poets present ideas about the passing of time in Poem 1 and Poem 2.',
     board: 'Edexcel',
     paper: 'Literature',
     questionType: 'Unseen Poetry',

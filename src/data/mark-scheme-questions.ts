@@ -25,6 +25,13 @@
 // viewer from the verified registry. That is a larger change than a caveat,
 // and a caveat that is true today beats a rewrite that is half-finished.
 //
+// 2 October 2026: the Edexcel Literature Paper 2 entries were rebuilt to the
+// specification's four 20-mark questions (see the note above them). An entry
+// filed under Edexcel, a 24-mark single unseen poem, was removed: Edexcel sets
+// no such question; it is AQA's Question 27.1, which the AQA entry covers. The
+// AQA unseen comparison beside it went from 24 marks to Question 27.2's 8. Only
+// those tariffs are checked; every level descriptor here is still unverified.
+//
 /**
  * Question-level marking guide data for all GCSE English exam boards.
  * Each entry describes a single question with its level descriptors,
@@ -1796,47 +1803,96 @@ const edexcelLiterature: MarkScheme[] = [
       'Ignoring the specific focus of the question.',
     ],
   },
+  // The four Edexcel Literature Paper 2 entries below were rebuilt on 2 October 2026 against
+  // Pearson's specification (1ET0, Issue 2, PDF pages 24 and 26). They were three: Section A
+  // as one 40-mark essay on AO1-AO3, Section B as a 30-mark anthology question on AO1-AO4,
+  // and a 30-mark "Section C - Unseen poetry". The paper is 80 marks in four 20-mark
+  // answers, with no AO4. Sections, tariffs and objectives are now the specification's; the
+  // level ladders are still this file's own four-step paraphrase, not Pearson's grids.
   {
-    id: 'edexcel-lit-p2-sa',
+    id: 'edexcel-lit-p2-sa-a',
     board: 'Edexcel',
     subject: 'Literature',
     paper: 'Paper 2: 19th-Century Novel and Poetry since 1789',
-    question: `Section A - 19th-century novel: extract-based essay (AO1, AO2, AO3)`,
-    totalMarks: 40,
+    question: `Section A part (a) - 19th-century novel: the printed extract (AO2)`,
+    totalMarks: 20,
     levels: [
       {
         level: 1,
-        marks: '1-10',
+        marks: '1-5',
         descriptor:
-          'Simple response. Simple identification of language/structure. Limited context.',
+          'Simple identification of language, form or structure in the extract, with little comment on effect.',
       },
       {
         level: 2,
-        marks: '11-20',
-        descriptor: 'Some personal response. Some analysis of methods. Some context.',
+        marks: '6-10',
+        descriptor:
+          "Some comment on the writer's methods in the extract, with some relevant terminology.",
       },
       {
         level: 3,
-        marks: '21-30',
+        marks: '11-15',
         descriptor:
-          'Clear, developed response. Clear analysis with terminology. Clear contextual understanding.',
+          "Clear analysis of how the writer's language, form and structure create meaning in the extract, with accurate terminology.",
       },
       {
         level: 4,
-        marks: '31-40',
+        marks: '16-20',
         descriptor:
-          'Critical, exploratory response. Sophisticated analysis. Perceptive contextual insight.',
+          "Perceptive, detailed analysis of the writer's methods in the extract and their effects, with precise terminology.",
       },
     ],
     topTips: [
-      'Closely analyse the extract before moving to the wider text.',
-      'Consider 19th-century contexts: class, gender, morality, industrialisation.',
-      'Balance extract analysis with wider text discussion.',
+      'Stay in the printed extract - it is the only thing part (a) marks.',
+      'Analyse language, form and structure, not just what happens.',
+      'Use short quotations embedded in your sentences.',
     ],
     commonMistakes: [
-      'Spending all time on the extract.',
-      'Not knowing the wider novel.',
-      'Context as an afterthought.',
+      'Writing about the rest of the novel in part (a).',
+      'Retelling the extract instead of analysing it.',
+      'Naming techniques without explaining their effect.',
+    ],
+  },
+  {
+    id: 'edexcel-lit-p2-sa-b',
+    board: 'Edexcel',
+    subject: 'Literature',
+    paper: 'Paper 2: 19th-Century Novel and Poetry since 1789',
+    question: `Section A part (b) - 19th-century novel: the novel as a whole (AO1)`,
+    totalMarks: 20,
+    levels: [
+      {
+        level: 1,
+        marks: '1-5',
+        descriptor: 'Simple response with limited references to the novel.',
+      },
+      {
+        level: 2,
+        marks: '6-10',
+        descriptor: 'Some personal response, with relevant references from across the novel.',
+      },
+      {
+        level: 3,
+        marks: '11-15',
+        descriptor:
+          'Clear, developed argument about the novel as a whole, supported by well-chosen references.',
+      },
+      {
+        level: 4,
+        marks: '16-20',
+        descriptor:
+          'Assured, critical argument about the whole novel, with precise and judicious references.',
+      },
+    ],
+    topTips: [
+      'Range across the whole novel: beginning, middle and end.',
+      'Build an argument, not a list of moments.',
+      'Quote from memory - short, precise references are enough.',
+    ],
+    commonMistakes: [
+      'Writing about the extract again instead of the whole novel.',
+      'Retelling the plot.',
+      'Adding context that does not serve the argument - part (b) is marked for AO1 alone.',
     ],
   },
   {
@@ -1844,35 +1900,36 @@ const edexcelLiterature: MarkScheme[] = [
     board: 'Edexcel',
     subject: 'Literature',
     paper: 'Paper 2: 19th-Century Novel and Poetry since 1789',
-    question: `Section B - Poetry comparison from anthology (AO1, AO2, AO3, AO4)`,
-    totalMarks: 30,
+    question: `Section B Part 1 - Anthology poetry comparison (AO2, AO3)`,
+    totalMarks: 20,
     levels: [
       {
         level: 1,
-        marks: '1-7',
+        marks: '1-5',
         descriptor:
-          'Simple response to poems. Simple identification of methods. Limited comparison.',
+          'Simple comparison of the two poems, with simple identification of methods and little context.',
       },
       {
         level: 2,
-        marks: '8-14',
-        descriptor: 'Some understanding with references. Some method analysis. Some comparison.',
+        marks: '6-10',
+        descriptor: "Some comparison of the poets' methods, with some relevant context.",
       },
       {
         level: 3,
-        marks: '15-22',
-        descriptor: 'Clear understanding. Clear method analysis. Clear, sustained comparison.',
+        marks: '11-15',
+        descriptor:
+          'Clear, sustained comparison of how both poets use language, form and structure, with relevant context.',
       },
       {
         level: 4,
-        marks: '23-30',
+        marks: '16-20',
         descriptor:
-          'Exploratory, critical response. Sophisticated method analysis. Perceptive comparison.',
+          "Perceptive, integrated comparison of both poets' methods, with context that deepens the analysis.",
       },
     ],
     topTips: [
       `Compare throughout - never write about poems separately.`,
-      'Choose a comparison poem that creates meaningful links.',
+      'Choose a comparison poem from the same collection that creates meaningful links.',
       'Analyse methods in both poems.',
       'Consider how context influences each poem.',
     ],
@@ -1883,45 +1940,47 @@ const edexcelLiterature: MarkScheme[] = [
     ],
   },
   {
-    id: 'edexcel-lit-p2-sc',
+    id: 'edexcel-lit-p2-sb-part2',
     board: 'Edexcel',
     subject: 'Literature',
     paper: 'Paper 2: 19th-Century Novel and Poetry since 1789',
-    question: `Section C - Unseen poetry (AO1, AO2, AO4)`,
-    totalMarks: 30,
+    question: `Section B Part 2 - Unseen poetry comparison (AO1, AO2)`,
+    totalMarks: 20,
     levels: [
       {
         level: 1,
-        marks: '1-7',
+        marks: '1-5',
         descriptor:
-          'Simple response. Simple identification of language/structure. Limited comparison for part (b).',
+          'Simple response to the two poems, with simple identification of methods and limited comparison.',
       },
       {
         level: 2,
-        marks: '8-14',
-        descriptor: 'Some understanding. Some analysis. Some comparison for part (b).',
+        marks: '6-10',
+        descriptor: 'Some comparison of the poems, with some analysis of methods.',
       },
       {
         level: 3,
-        marks: '15-22',
-        descriptor: 'Clear analysis with terminology. Clear comparison for part (b).',
+        marks: '11-15',
+        descriptor:
+          'Clear comparison of how both poets present the theme, with clear analysis of methods and terminology.',
       },
       {
         level: 4,
-        marks: '23-30',
-        descriptor: 'Perceptive analysis. Sophisticated comparison for part (b).',
+        marks: '16-20',
+        descriptor:
+          "Perceptive, sustained comparison with sophisticated analysis of both poets' methods.",
       },
     ],
     topTips: [
       'Read each poem at least twice before writing.',
       'Identify tone and message first.',
+      'Compare throughout - there is no single-poem question first.',
       'Apply the same skills as for anthology poems.',
-      'For part (b), focus on comparison rather than detailed analysis.',
     ],
     commonMistakes: [
-      'Rushing into writing without understanding the poem.',
+      'Rushing into writing without understanding the poems.',
       'Only discussing content, not methods.',
-      'Not comparing in part (b).',
+      'Writing about one poem, then the other.',
     ],
   },
 ]
@@ -3155,29 +3214,29 @@ const unseenPoetryComparison: MarkScheme[] = [
     subject: 'Literature',
     paper: 'Paper 2: Unseen Poetry Comparison',
     question: 'Compare how two unseen poets present a common theme',
-    totalMarks: 24,
+    totalMarks: 8,
     levels: [
       {
         level: 1,
-        marks: '1-6',
+        marks: '1-2',
         descriptor:
           'Limited comparison. Simple observations about both poems. Minimal subject terminology.',
       },
       {
         level: 2,
-        marks: '7-12',
+        marks: '3-4',
         descriptor:
           'Some comparison of techniques. Some terminology used appropriately. Makes some relevant points.',
       },
       {
         level: 3,
-        marks: '13-18',
+        marks: '5-6',
         descriptor:
           'Clear comparison of how theme is presented. Good range of techniques discussed. Secure terminology.',
       },
       {
         level: 4,
-        marks: '19-24',
+        marks: '7-8',
         descriptor:
           'Sophisticated, sustained comparison. Perceptive analysis of how form and content differ. Precise terminology throughout.',
       },
@@ -3200,57 +3259,6 @@ const unseenPoetryComparison: MarkScheme[] = [
     ],
     exampleAnnotations:
       'Grade 9: "Both poets use natural imagery to explore loss, but whereas Heaney presents nature as indifferent and resistant to human emotion, Plath personifies nature as complicit in suffering. This difference reflects their distinct philosophical positions..." Grade 5: "Both poems use nature. They both show sadness."',
-  },
-  {
-    id: 'unseen-poetry-critical-response',
-    board: 'Edexcel',
-    subject: 'Literature',
-    paper: 'Paper 2: Unseen Poetry',
-    question: 'Critically analyse how an unseen poet uses techniques to convey meaning',
-    totalMarks: 24,
-    levels: [
-      {
-        level: 1,
-        marks: '1-6',
-        descriptor: 'Limited analysis. Simple identification of features with minimal terminology.',
-      },
-      {
-        level: 2,
-        marks: '7-12',
-        descriptor:
-          'Some analysis of techniques with some appropriate terminology. Makes some interpretive points.',
-      },
-      {
-        level: 3,
-        marks: '13-18',
-        descriptor:
-          'Clear analysis of techniques with secure terminology. Shows good understanding of how form and content interact.',
-      },
-      {
-        level: 4,
-        marks: '19-24',
-        descriptor:
-          'Perceptive analysis with precise terminology. Explores nuanced meanings and subtle effects. Shows sophisticated critical engagement.',
-      },
-    ],
-    topTips: [
-      'Read the poem multiple times: once for impression, then for detailed analysis.',
-      'Annotate carefully: mark interesting language, structural features, imagery patterns.',
-      `Analyse the speaker's voice: what is their perspective or position?`,
-      'Discuss form: is it a sonnet, free verse, haiku? How does form affect meaning?',
-      'Explore imagery types: visual, auditory, tactile, olfactory, gustatory.',
-      `Consider white space, line breaks, punctuation - these all communicate meaning.`,
-      `Compare the poet's word choice with alternative possibilities.`,
-      'Explore ambiguity and multiple interpretations.',
-    ],
-    commonMistakes: [
-      'Paraphrasing the poem instead of analysing it.',
-      'Ignoring form and structure, only discussing language.',
-      'Using terminology incorrectly or vaguely.',
-      'Making interpretations without textual support.',
-      `Being too superficial - analyse fewer techniques in greater depth.`,
-    ],
-    exampleAnnotations: `Grade 9: "The volta at line 8 marks a shift from observational to emotional register. The caesura in "hearts-break" fragments the metrical regularity, embodying the emotional fragmentation the speaker experiences, creating formal instability that mirrors psychological crisis..." Grade 5: "The poet uses a turning point in the poem. This shows change."`,
   },
 ]
 

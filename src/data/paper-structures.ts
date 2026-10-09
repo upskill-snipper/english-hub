@@ -294,18 +294,22 @@ const EDEXCEL_PAPERS: Paper[] = [
       },
     ],
   },
+  // Corrected 2 October 2026 against Pearson's specification (1ET0, Issue 2): totalMarks
+  // read 100 (it is 80), and a "Section C: Unseen Poetry" of two questions, one analysis and
+  // one comparison, stood in for Section B Part 2, one comparison of two unseen poems.
   {
     id: 'edexcel-lit-p2',
     name: 'Literature Paper 2',
     subtitle: '19th-century Novel and Poetry since 1789',
     examCode: '1ET0/02',
     duration: '2h 15m',
-    totalMarks: 100,
+    totalMarks: 80,
     colour: 'clay',
     sections: [
       {
         title: 'Section A: 19th-century Novel',
-        description: 'One extract-based question on your studied 19th-century novel.',
+        description:
+          'One two-part question on your studied 19th-century novel: (a) a printed extract, (b) the novel as a whole.',
         links: [
           { label: 'A Christmas Carol', href: '/revision/texts/a-christmas-carol', type: 'text' },
           { label: 'Jekyll & Hyde', href: '/revision/texts/jekyll-and-hyde', type: 'text' },
@@ -317,21 +321,26 @@ const EDEXCEL_PAPERS: Paper[] = [
         ],
       },
       {
-        title: 'Section B: Poetry Anthology',
-        description: 'One comparison question on a printed poem and one of your choice.',
+        title: 'Section B Part 1: Poetry Anthology',
+        description:
+          'One comparison question on a printed poem and one of your choice from the same collection.',
         links: [
           { label: 'Edexcel Poetry Anthology', href: '/revision/poetry/edexcel', type: 'poetry' },
-          { label: 'Conflict Cluster', href: '/revision/poetry/edexcel/conflict', type: 'poetry' },
           {
-            label: 'Time and Place Cluster',
+            label: 'Conflict Collection',
+            href: '/revision/poetry/edexcel/conflict',
+            type: 'poetry',
+          },
+          {
+            label: 'Time and Place Collection',
             href: '/revision/poetry/edexcel/time-and-place',
             type: 'poetry',
           },
         ],
       },
       {
-        title: 'Section C: Unseen Poetry',
-        description: 'Two questions on unseen poems: one analysis, one comparison.',
+        title: 'Section B Part 2: Unseen Poetry',
+        description: 'One question comparing two unseen poems linked by a theme.',
         links: [
           {
             label: 'Unseen Poetry Practice',
