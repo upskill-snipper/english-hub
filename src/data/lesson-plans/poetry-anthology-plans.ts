@@ -37,6 +37,14 @@
 // 12 (1ET0 specification, Issue 2, PDF pages 24 and 26); the lesson now sets that, in
 // the exam's 35 minutes. The mark tariffs in the cross-board and AQA lessons were not
 // checked here. This file is not imported by any page.
+//
+// 9 October 2026, later: the AQA lessons set "24-mark" (Power and Conflict) and
+// "32-mark" (Love and Relationships, lessons 2 and 3) anthology comparisons. AQA's
+// anthology question is 30 marks, AO1 12, AO2 12 and AO3 6, with no SPaG (8702/2 mark
+// scheme, June 2023); 24 and 8 are its unseen-poetry questions. Those lessons now set
+// 30 marks in 45 minutes. The cross-board lessons (1 and 4 to 9) set "32-mark"
+// comparisons, which match no board's anthology question; they now give a time and
+// no tariff.
 
 export interface LessonActivity {
   title: string
@@ -93,7 +101,7 @@ const aqaPowerConflictLesson1: PoetryLesson = {
     "Compare Shelley's presentation of imperial power with Blake's critique of urban society",
     'Examine contrasting narrative perspectives: second-hand account vs personal observation',
     'Develop comparison writing skills using structural and semantic techniques',
-    'Practice timed exam comparison question (24 marks)',
+    'Practice timed exam comparison question (30 marks)',
   ],
   starterActivity: {
     title: 'Power in Ruins: Image Analysis',
@@ -135,7 +143,7 @@ const aqaPowerConflictLesson1: PoetryLesson = {
     },
   },
   homework:
-    'Write full 24-mark exam response (30 minutes) comparing how both poets present power. Model answer to follow next lesson.',
+    'Write full 30-mark exam response (45 minutes) comparing how both poets present power. Model answer to follow next lesson.',
   resourcesNeeded: [
     'Ozymandias & London poems',
     'Image slides (ruins/19th-century London)',
@@ -170,7 +178,7 @@ const aqaPowerConflictLesson1: PoetryLesson = {
     'Temporal structure (past vs present)',
     'Tone (detachment vs anger)',
   ],
-  examPractice: 'Timed 24-mark comparison question. Model answer provided next lesson.',
+  examPractice: 'Timed 30-mark comparison question. Model answer provided next lesson.',
 }
 
 const aqaPowerConflictLesson2: PoetryLesson = {
@@ -229,7 +237,7 @@ const aqaPowerConflictLesson2: PoetryLesson = {
     },
   },
   homework:
-    "Write 50-word comparison paragraph on how form reflects each poet's experience of conflict. Then write timed exam response (24 marks) for homework.",
+    "Write 50-word comparison paragraph on how form reflects each poet's experience of conflict. Then write timed exam response (30 marks) for homework.",
   resourcesNeeded: [
     'Wordsworth & Owen poems',
     'Form analysis guide',
@@ -264,7 +272,7 @@ const aqaPowerConflictLesson2: PoetryLesson = {
     'Scale (personal terror vs mass warfare)',
     'Language (concrete vs abstract)',
   ],
-  examPractice: 'Timed comparison essay following 24-mark exam structure.',
+  examPractice: 'Timed comparison essay following 30-mark exam structure.',
 }
 
 const aqaPowerConflictLesson3: PoetryLesson = {
@@ -322,7 +330,7 @@ const aqaPowerConflictLesson3: PoetryLesson = {
     },
   },
   homework:
-    'Timed 24-mark comparison essay: "Compare how Hughes and Armitage present the moral impact of conflict on soldiers." (30 mins)',
+    'Timed 30-mark comparison essay: "Compare how Hughes and Armitage present the moral impact of conflict on soldiers." (45 mins)',
   resourcesNeeded: [
     'Both poems printed',
     'Annotation guides',
@@ -357,7 +365,7 @@ const aqaPowerConflictLesson3: PoetryLesson = {
     'Language intensity (animal metaphor vs contemporary reference)',
     'Moral presentation (confusion vs guilt)',
   ],
-  examPractice: 'Full timed 24-mark comparison essay with model answer for next lesson.',
+  examPractice: 'Full timed 30-mark comparison essay with model answer for next lesson.',
 }
 
 const aqaPowerConflictLesson4: PoetryLesson = {
@@ -415,7 +423,7 @@ const aqaPowerConflictLesson4: PoetryLesson = {
     },
   },
   homework:
-    'Timed 24-mark comparison (30 mins): "Compare how Weir and Duffy present emotional responses to conflict and its representation."',
+    'Timed 30-mark comparison (45 mins): "Compare how Weir and Duffy present emotional responses to conflict and its representation."',
   resourcesNeeded: [
     'Both poems',
     'Image slides',
@@ -510,7 +518,7 @@ const aqaPowerConflictLesson5: PoetryLesson = {
     },
   },
   homework:
-    'Timed 24-mark comparison (30 mins): "Compare how Garland and Agard challenge dominant narratives and present alternative perspectives."',
+    'Timed 30-mark comparison (45 mins): "Compare how Garland and Agard challenge dominant narratives and present alternative perspectives."',
   resourcesNeeded: [
     'Both poems',
     'Context information',
@@ -617,7 +625,7 @@ const edexcelRelationshipsLesson1: PoetryLesson = {
     },
   },
   homework:
-    'Timed 32-mark comparison (40 mins): "Compare how Browning and Byron present contrasting approaches to love through form and voice."',
+    'Timed comparison (40 mins): "Compare how Browning and Byron present contrasting approaches to love through form and voice."',
   resourcesNeeded: [
     'Both poems',
     'Sonnet and stanza form guides',
@@ -652,7 +660,7 @@ const edexcelRelationshipsLesson1: PoetryLesson = {
     'Voice (confident vs guarded)',
     'Emotional approach (expansion vs containment)',
   ],
-  examPractice: 'Full timed 32-mark comparison essay.',
+  examPractice: 'Full timed comparison essay.',
 }
 
 // NOTE: both poems are in AQA's Love & Relationships cluster, and their quotations
@@ -714,7 +722,7 @@ const edexcelRelationshipsLesson2: PoetryLesson = {
     },
   },
   homework:
-    'Timed 32-mark comparison: "Compare how Shelley and Hardy present contrasting views on love\'s nature and significance." (40 mins)',
+    'Timed 30-mark comparison: "Compare how Shelley and Hardy present contrasting views on love\'s nature and significance." (45 mins)',
   resourcesNeeded: [
     'Both poems',
     'Annotation guides',
@@ -749,7 +757,7 @@ const edexcelRelationshipsLesson2: PoetryLesson = {
     'Imagery (natural unity vs winter death)',
     'Structure (rhetorical vs narrative)',
   ],
-  examPractice: "Full timed 32-mark essay evaluating which poet's view of love is more convincing.",
+  examPractice: "Full timed 30-mark essay evaluating which poet's view of love is more convincing.",
 }
 
 // NOTE: both poems are in AQA's Love & Relationships cluster; tagged Edexcel until
@@ -807,7 +815,7 @@ const edexcelRelationshipsLesson3: PoetryLesson = {
     },
   },
   homework:
-    'Timed 32-mark comparison (40 mins): "Compare how Dooley and Mew present the relationship between distance and emotional intimacy in love."',
+    'Timed 30-mark comparison (45 mins): "Compare how Dooley and Mew present the relationship between distance and emotional intimacy in love."',
   resourcesNeeded: [
     'Both poems',
     'Map slides',
@@ -843,7 +851,7 @@ const edexcelRelationshipsLesson3: PoetryLesson = {
     'Voice (two perspectives vs single, excluding)',
   ],
   examPractice:
-    "Full timed 32-mark essay exploring how form and communication style shape each poet's portrayal of love.",
+    "Full timed 30-mark essay exploring how form and communication style shape each poet's portrayal of love.",
 }
 
 // NOTE: Porphyria's Lover is in the AQA Love & Relationships cluster (NOT Edexcel
@@ -906,7 +914,7 @@ const edexcelRelationshipsLesson4: PoetryLesson = {
     },
   },
   homework:
-    'Timed 32-mark comparison (40 mins): "Compare how Browning and Clare present extreme emotional responses to love, and evaluate the moral implications of each."',
+    'Timed comparison (40 mins): "Compare how Browning and Clare present extreme emotional responses to love, and evaluate the moral implications of each."',
   resourcesNeeded: [
     'Both poems with content warning',
     'Context information',
@@ -941,8 +949,7 @@ const edexcelRelationshipsLesson4: PoetryLesson = {
     'Form (control vs overwhelm)',
     'Moral status (villain vs victim)',
   ],
-  examPractice:
-    'Full timed 32-mark essay evaluating moral implications alongside literary analysis.',
+  examPractice: 'Full timed essay evaluating moral implications alongside literary analysis.',
 }
 
 // NOTE: 'She Walks in Beauty' (Byron) IS in the canonical Edexcel UK GCSE 1ET0
@@ -1006,7 +1013,7 @@ const edexcelRelationshipsLesson5: PoetryLesson = {
     },
   },
   homework:
-    'Timed 32-mark comparison (40 mins): "Compare how Byron and Meredith present contrasting views on love through idealization and realism." Include unseen poetry technique discussion.',
+    'Timed comparison (40 mins): "Compare how Byron and Meredith present contrasting views on love through idealization and realism." Include unseen poetry technique discussion.',
   resourcesNeeded: [
     'Both poems',
     'Art/photograph slides',
@@ -1041,7 +1048,7 @@ const edexcelRelationshipsLesson5: PoetryLesson = {
     'Tone (worship vs cynicism)',
     'Attitude (perfection vs pretense)',
   ],
-  examPractice: 'Full timed 32-mark essay including unseen poetry technique discussion.',
+  examPractice: 'Full timed essay including unseen poetry technique discussion.',
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -1136,7 +1143,7 @@ const edexcelRelationshipsLesson6: PoetryLesson = {
     },
   },
   homework:
-    'Timed 32-mark comparison (40 mins): "Compare how Donne and Wordsworth present moments of emotional and spiritual transformation."',
+    'Timed comparison (40 mins): "Compare how Donne and Wordsworth present moments of emotional and spiritual transformation."',
   resourcesNeeded: [
     'Both poems',
     'Image slides',
@@ -1170,7 +1177,7 @@ const edexcelRelationshipsLesson6: PoetryLesson = {
     'Emotion (intellectual vs sensory)',
     'Subject (love vs beauty)',
   ],
-  examPractice: 'Full timed 32-mark essay.',
+  examPractice: 'Full timed essay.',
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -1238,7 +1245,7 @@ const edexcelRelationshipsLesson7: PoetryLesson = {
     },
   },
   homework:
-    'Timed 32-mark comparison (40 mins): "Compare how Walsh and Chesterton present contrasting gender roles and female agency in love."',
+    'Timed comparison (40 mins): "Compare how Walsh and Chesterton present contrasting gender roles and female agency in love."',
   resourcesNeeded: [
     'Both poems',
     'Historical context sheets',
@@ -1273,7 +1280,7 @@ const edexcelRelationshipsLesson7: PoetryLesson = {
     'Voice (assertive vs lyrical)',
     'Gender role (rejection vs endorsement)',
   ],
-  examPractice: 'Full timed 32-mark essay evaluating competing visions of female agency.',
+  examPractice: 'Full timed essay evaluating competing visions of female agency.',
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -1341,7 +1348,7 @@ const edexcelRelationshipsLesson8: PoetryLesson = {
     },
   },
   homework:
-    'Timed 32-mark comparison (40 mins): "Compare how Barrett Browning and Donne express the transformative and transcendent nature of love."',
+    'Timed comparison (40 mins): "Compare how Barrett Browning and Donne express the transformative and transcendent nature of love."',
   resourcesNeeded: [
     'Both poems',
     'Annotation guides',
@@ -1374,7 +1381,7 @@ const edexcelRelationshipsLesson8: PoetryLesson = {
     'Approach (Romantic expansion vs metaphysical logic)',
     'Completeness (infinite vs self-contained)',
   ],
-  examPractice: 'Full timed 32-mark essay.',
+  examPractice: 'Full timed essay.',
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -1442,7 +1449,7 @@ const edexcelRelationshipsLesson9: PoetryLesson = {
     },
   },
   homework:
-    'Timed 32-mark comparison (40 mins): "Compare how Blake and Meredith present sacrifice, selfishness, and pain in love."',
+    'Timed comparison (40 mins): "Compare how Blake and Meredith present sacrifice, selfishness, and pain in love."',
   resourcesNeeded: [
     'Both poems',
     'Annotation guides',
@@ -1476,7 +1483,7 @@ const edexcelRelationshipsLesson9: PoetryLesson = {
     'Conclusion (ambiguous vs bitter)',
     'Sacrifice (noble vs self-harm)',
   ],
-  examPractice: "Full timed 32-mark essay evaluating competing views on love's cost.",
+  examPractice: "Full timed essay evaluating competing views on love's cost.",
 }
 
 // ════════════════════════════════════════════════════════════════════════════

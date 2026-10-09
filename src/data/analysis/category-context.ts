@@ -108,23 +108,33 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
           { ao: 'AO3', weight: '5 marks', description: 'Part (b): context' },
         ],
       },
+      // 9 October 2026: this put Shakespeare in OCR's Component 01 Section A, with AO3 15 and
+      // AO4 5. OCR sets it in Component 02, Section B (J352 specification, Version 3.0, page
+      // 16), and its J352/02 mark scheme (June 2018) weights it AO1 8.75%, AO2 8.75%, AO3 5%
+      // and AO4 2.5% of the GCSE: 14, 14, 8 and 4 of the paper's 80 marks. The time is half
+      // the 2-hour paper, for half its marks.
       {
         board: 'OCR J352',
-        paper: 'Paper 1: Exploring Modern and Literary Heritage Texts',
-        section: 'Section A - Shakespeare',
+        paper: 'Component 02: Exploring poetry and Shakespeare',
+        section: 'Section B - Shakespeare (an extract-based or a discursive question)',
         marks: 40,
-        timeGuide: '55 minutes',
+        timeGuide: '60 minutes',
         aoWeighting: [
-          { ao: 'AO1', weight: '10 marks', description: 'Informed personal response' },
+          { ao: 'AO1', weight: '14 marks', description: 'Informed personal response' },
           {
             ao: 'AO2',
-            weight: '10 marks',
+            weight: '14 marks',
             description: "Writer's methods including effects on reader",
           },
-          { ao: 'AO3', weight: '15 marks', description: 'Relationship between text and context' },
-          { ao: 'AO4', weight: '5 marks', description: 'Vocabulary, sentences, SPaG' },
+          { ao: 'AO3', weight: '8 marks', description: 'Relationship between text and context' },
+          { ao: 'AO4', weight: '4 marks', description: 'Vocabulary, sentences, SPaG' },
         ],
       },
+      // 9 October 2026: this gave AO1 10, AO2 20 and AO4 10. Eduqas Component 1 carries AO4 at
+      // 2.5% of the GCSE (specification, page 11), which is 5 of its 80 marks, all in the
+      // Shakespeare essay; its Summer 2025 examiners' report says the extract question assesses
+      // AO1 and AO2 and the essay AO1, AO2 and AO4. No published document here splits the
+      // other 35 marks between AO1 and AO2, so they are given together.
       {
         board: 'Eduqas Component 1',
         paper: 'Component 1 Section A - Shakespeare',
@@ -132,17 +142,22 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
         marks: 40,
         timeGuide: '60 minutes',
         aoWeighting: [
-          { ao: 'AO1', weight: '10 marks', description: 'Response and textual support' },
-          { ao: 'AO2', weight: '20 marks', description: 'Analysis of language, form, structure' },
-          { ao: 'AO4', weight: '10 marks', description: 'Written accuracy' },
+          {
+            ao: 'AO1 + AO2',
+            weight: '35 marks',
+            description: 'Response, textual support and analysis, across both questions',
+          },
+          { ao: 'AO4', weight: '5 marks', description: 'Written accuracy, in the essay' },
         ],
       },
     ],
     examTips: [
-      'Read the extract printed with the question first, then decide which moments elsewhere in the play connect - the question is always "extract + whole play".',
+      // 9 October 2026: this said the question is always "extract + whole play", which is true of
+      // AQA alone. The other boards' forms are from their specifications.
+      'On AQA, read the extract printed with the question first, then decide which moments elsewhere in the play connect: the question is always "extract + whole play". Edexcel and Eduqas set the extract and the rest of the play as separate questions, and OCR offers an extract-based question or a discursive one.',
       'Use a conceptual thesis sentence in your opening paragraph. Not "This essay will discuss X" - instead a claim: "Shakespeare presents Macbeth as a tragic hero whose ambition was always already in him, and the witches merely speak it aloud."',
       'Do not retell the plot. Markers deduct implicitly for narrative rather than analytical paragraphs.',
-      "Treat Lady Macbeth as a feminist reading opportunity on AQA and OCR (AO3). On Edexcel, context earns 5 marks in part (b), the whole-play essay, and none in part (a), the extract question.",
+      'Treat Lady Macbeth as a feminist reading opportunity on AQA and OCR (AO3). On Edexcel, context earns 5 marks in part (b), the whole-play essay, and none in part (a), the extract question.',
       'Memorise 10-12 quotes that cover the full arc: two from Act 1, two each from Acts 2, 3, 4, and two from Act 5. That distribution lets you answer any thematic question.',
       "Quote embedding beats quote-then-comment. \"Macbeth's 'vaulting ambition' betrays him\" reads stronger than \"Macbeth has ambition. The quote 'vaulting ambition' shows this.\"",
     ],
@@ -219,7 +234,9 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
       {
         question: 'Do I have to use context in my Macbeth essay?',
         answer:
-          'On AQA (6 marks AO3), OCR (15 marks AO3), and Eduqas - yes, integrated context is required for the top bands. On Edexcel Paper 1 Section A, context is worth 5 marks, all of them in part (b), the essay on the whole play; part (a), the extract question, rewards analysis alone.',
+          // 9 October 2026: this gave OCR 15 marks for context (it is 8) and said Eduqas required
+          // it, though Eduqas does not assess context (AO3) on Shakespeare at all.
+          'On AQA (6 marks AO3) and OCR (8 marks AO3) - yes, integrated context is required for the top bands. Eduqas does not assess context on its Shakespeare section. On Edexcel Paper 1 Section A, context is worth 5 marks, all of them in part (b), the essay on the whole play; part (a), the extract question, rewards analysis alone.',
       },
       {
         question: 'How many quotes do I need to memorise?',
@@ -235,8 +252,13 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
     overview:
       'Fifteen poems on love and relationships - familial, romantic, tragic, obsessive, lost. One of two AQA anthology clusters and the most commonly studied at KS4.',
     about: [
-      'The AQA Love and Relationships cluster sits in Section B of AQA Paper 2 (8702/2). Candidates answer one comparison question on one named poem plus one unseen poem of their choice from the rest of the cluster. The comparison is worth 30 marks plus 4 marks for SPaG.',
-      "The cluster spans four centuries: Shakespeare's Sonnet 29, Browning's dramatic monologues, Duffy's post-feminist love lyrics, Sheenagh Pugh's contemporary voices. Students find the range of form and period challenging - sonnet vs dramatic monologue vs free verse - but this variety is also what makes the cluster examinable in depth.",
+      // 9 October 2026: this called the second poem "unseen" and gave the question 4 marks for
+      // SPaG. The student chooses a studied poem from the cluster, and AQA assesses SPaG (AO4) on
+      // Section A only (8702/2 mark scheme, June 2023: Section B is 30 marks, AO1 12, AO2 12,
+      // AO3 6). The next paragraph named Sheenagh Pugh, who is not in the cluster, and gave
+      // Sonnet 29 to Shakespeare: it is Elizabeth Barrett Browning's (AQA anthology, 2015).
+      'The AQA Love and Relationships cluster sits in Section B of AQA Paper 2 (8702/2). Candidates answer one comparison question on one named poem, printed on the paper, and one other poem of their choice from the cluster, which they have studied. The comparison is worth 30 marks.',
+      "The cluster runs from Byron and Shelley in the early nineteenth century to Owen Sheers and Daljit Nagra in the twenty-first: Elizabeth Barrett Browning's Sonnet 29, Robert Browning's dramatic monologue Porphyria's Lover, Duffy's Before You Were Mine, Armitage's Mother, any distance. Students find the range of form and period challenging - sonnet vs dramatic monologue vs free verse - but this variety is also what makes the cluster examinable in depth.",
       'Strong Love and Relationships essays treat the poems as a conversation across time about what love means. Weak essays treat them as fifteen unrelated set texts. The single best move for most students is to map out 4-5 "thematic pairings" (e.g. grief of losing a parent: Walking Away + Mother Any Distance) that they can deploy regardless of which poem is named on the paper.',
     ],
     boards: ['AQA'],
@@ -263,30 +285,36 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
             weight: '6 marks',
             description: 'Context - romantic, Victorian, modern, contemporary',
           },
-          { ao: 'AO4', weight: '+ 4 marks', description: 'SPaG' },
         ],
       },
     ],
     examTips: [
       'Use a comparative thesis in your opening paragraph that names both poems and the shared theme explicitly.',
-      'Alternate poems paragraph-by-paragraph or point-by-point. Do NOT write all of Poem A and then all of Poem B - that scores lower on AQA AO2.',
+      // 9 October 2026: these said writing about one poem and then the other "scores lower on AQA
+      // AO2" (AQA's grid rewards comparison under AO1), called the chosen poem "unseen", and
+      // promised "three AO2 marks" for naming a form, though AQA marks the answer as a whole, by
+      // level.
+      'Alternate poems paragraph-by-paragraph or point-by-point. Do NOT write all of Poem A and then all of Poem B - that weakens the comparison, which AQA rewards under AO1.',
       'Memorise 3-4 quotes per poem. Thirty quotes across the 15-poem cluster is enough to answer any question.',
-      'Context matters but do not over-historicise. "Browning\'s dramatic monologue ventriloquises male power in Victorian marriage" is better than "In Victorian times men were in charge".',
-      'For the unseen paired poem, pick one you have prepared - AQA lets you choose. Pick the easiest valid comparison, not the most thematically ambitious.',
-      'Name the form: sonnet, dramatic monologue, free verse, ballad. Naming form is the fastest route to three AO2 marks.',
+      'Context matters but do not over-historicise. "Browning\'s dramatic monologue ventriloquises male possessiveness in Victorian love" is better than "In Victorian times men were in charge".',
+      'For the second poem, pick one you have prepared - AQA lets you choose any other poem from the cluster. Pick the easiest valid comparison, not the most thematically ambitious.',
+      'Name the form: sonnet, dramatic monologue, free verse, ballad. Naming it, and saying what it does, is part of the analysis of methods that AO2 rewards.',
     ],
+    // 9 October 2026: three of these quotations were from poems outside the cluster: Sonnet 43,
+    // My Last Duchess (a Power and Conflict poem) and Shakespeare's Sonnet 116. They are replaced
+    // by Sonnet 29, Porphyria's Lover and When We Two Parted, quoted from AQA's anthology (2015).
     keyQuotes: [
       {
-        quote: '"I love thee to the depth and breadth and height"',
-        source: 'Sonnet 43, Elizabeth Barrett Browning',
+        quote: '"my thoughts do twine and bud / About thee, as wild vines, about a tree"',
+        source: 'Sonnet 29, Elizabeth Barrett Browning',
         analysis:
-          'Tricolon + spatial metaphor + archaic "thee". EBB maps love onto dimensions - its hyperbole is sincere rather than comic, reinforced by the Petrarchan sonnet form.',
+          'Extended metaphor + simile. The speaker\'s thoughts grow over the beloved like vines over a tree until "nought" of him can be seen - and the sonnet then turns to want the man himself, not her thoughts of him.',
       },
       {
-        quote: '"I gave commands; / Then all smiles stopped together"',
-        source: 'My Last Duchess, Robert Browning',
+        quote: '"In one long yellow string I wound / Three times her little throat around"',
+        source: "Porphyria's Lover, Robert Browning",
         analysis:
-          "Caesura + euphemism. The Duke's three-word admission of uxoricide is made more chilling by the calm syntactic control - the line break does the work.",
+          'Dramatic monologue + steady rhythm and rhyme. The speaker narrates the killing in the same even metre as the love scene before it, and his "No pain felt she" shows how completely he has made her an object to keep.',
       },
       {
         quote: '"I can see / You walking away from me towards the school"',
@@ -295,10 +323,10 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
           'Present tense + direct address. Day-Lewis collapses the eighteen-year gap between the moment and the writing, making memory feel immediate. The line break enacts the separation it describes.',
       },
       {
-        quote: '"Love\'s not Time\'s fool"',
-        source: 'Sonnet 116, Shakespeare',
+        quote: '"In silence I grieve, / That thy heart could forget"',
+        source: 'When We Two Parted, Lord Byron',
         analysis:
-          'Personification + possessive. Love defies the temporal logic that governs every other human thing. The closed Shakespearean couplet enacts the permanence it claims.',
+          'Short lines + rhyme. The affair was conducted "In secret", so the speaker must grieve in silence too, and the rhyme of "met" with "forget" ties the secret meeting to the betrayal.',
       },
       {
         quote: '"my bride / she effing at my mum"',
@@ -325,7 +353,8 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
       {
         question: 'Which 3 AQA Love and Relationships poems should I prioritise?',
         answer:
-          'Strong starter trio: Sonnet 29 (Browning) - sonnet form is explicit, context is clear; Walking Away - emotional range and modern voice; My Last Duchess - dramatic monologue for gender/power essays.',
+          // 9 October 2026: this recommended My Last Duchess, a Power and Conflict poem.
+          "Strong starter trio: Sonnet 29 (Elizabeth Barrett Browning) - sonnet form is explicit, context is clear; Walking Away - emotional range and modern voice; Porphyria's Lover - dramatic monologue for essays on possession and power.",
       },
       {
         question: 'Do I have to compare the named poem with a specific second poem?',
@@ -343,7 +372,10 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
     about: [
       "Power and Conflict is the harder of the two AQA anthology clusters. It demands precise historical context - the Ozymandias-Shelley-Romantic moment, Owen\'s WWI trench reality, Armitage\'s post-Iraq-war shell-shock - and it rewards a political reading that Love and Relationships does not.",
       'The cluster is structured around three kinds of power: political (Ozymandias, My Last Duchess, London, Checking Out Me History, Tissue), natural (Storm on the Island, Exposure), and the power of war and its aftermath (Bayonet Charge, Remains, Poppies, War Photographer, Kamikaze, The Émigrée). Memorise this three-way map and your thematic pairings become automatic.',
-      "The exam setup is identical to Love and Relationships: one named poem plus one of your choice, 45 minutes, 30+4 marks. The difference is context: AQA Power and Conflict pays AO3 heavily, and the best answers anchor each poem to its specific historical moment rather than to a generic \'war is bad\' reading.",
+      // 9 October 2026: this said "30+4 marks" and that the cluster "pays AO3 heavily". The question
+      // is 30 marks with no SPaG, and both clusters give context (AO3) the same 6 of them (8702/2
+      // mark scheme, June 2023).
+      "The exam setup is identical to Love and Relationships: one named poem plus one of your choice, 45 minutes, 30 marks. Context (AO3) carries the same 6 marks in both clusters; the difference is that these poems are tied to specific historical moments, and the best answers anchor each poem to its own rather than to a generic \'war is bad\' reading.",
     ],
     boards: ['AQA'],
     assessmentContext: [
@@ -365,14 +397,16 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
             weight: '6 marks',
             description: 'Context - historical, political, cultural',
           },
-          { ao: 'AO4', weight: '+ 4 marks', description: 'SPaG' },
         ],
       },
     ],
     examTips: [
       'Build your thesis around the three-category map: political, natural, war. It accelerates comparison.',
-      'Context on Power and Conflict matters more than on Love and Relationships. Know the decade: Shelley 1818 · Owen 1917-18 · Armitage Remains 2008.',
-      'Name the form. Ozymandias is a Petrarchan sonnet with a disrupted volta. That observation alone unlocks two AO2 marks.',
+      // 9 October 2026: these said context mattered more here than in Love and Relationships (the
+      // marks are the same) and that naming Ozymandias's form "unlocks two AO2 marks" (AQA marks
+      // the answer as a whole, by level).
+      'Context carries the same marks as in Love and Relationships, but these poems are tied to particular moments. Know the decade: Shelley 1818 · Owen 1917-18 · Armitage Remains 2008.',
+      'Name the form. Ozymandias is a Petrarchan sonnet with a disrupted volta - say what that disruption does, which is the analysis of methods AO2 rewards.',
       'Quote sparingly but precisely. "Nothing beside remains" scores more than a long Ozymandias paraphrase.',
       "When you compare war poems, differentiate between WWI (Owen, Hughes's Bayonet Charge imagining the soldier) and modern war (Armitage, Weir, Garland).",
       'Political poems reward a critical reading. London does not describe London - it indicts it.',
@@ -462,7 +496,8 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
             weight: '6 marks',
             description: 'Context - Victorian social reform, poverty, Christianity',
           },
-          { ao: 'AO4', weight: '+ 4 marks', description: 'SPaG' },
+          // 9 October 2026: an AO4 line gave this question 4 marks for SPaG. AQA assesses AO4 on
+          // Paper 1 Section A, Shakespeare, only (8702/1 mark scheme, June 2023).
         ],
       },
     ],
@@ -564,7 +599,8 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
             weight: '6 marks',
             description: 'Context - late Victorian, Darwin, duality, Gothic tradition',
           },
-          { ao: 'AO4', weight: '+ 4 marks', description: 'SPaG' },
+          // 9 October 2026: an AO4 line gave this question 4 marks for SPaG. AQA assesses AO4 on
+          // Paper 1 Section A, Shakespeare, only (8702/1 mark scheme, June 2023).
         ],
       },
     ],
@@ -718,7 +754,9 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
     about: [
       'GCSE English Language is the separate qualification from GCSE English Literature - almost every UK student sits both. AQA, Edexcel, OCR, WJEC/Eduqas all use the same broad two-paper structure: one paper focused on creative / descriptive fiction, one on non-fiction / viewpoint writing.',
       'The paper is unseen: you do not prepare texts in advance. What you prepare are the techniques - structural analysis for Q3, comparison frameworks for Q4, descriptive writing for Section B - so that whatever extract appears on the day, you already have the tools.',
-      'AQA Paper 1 has five questions: one-mark list, four-mark language analysis, eight-mark structural analysis, twenty-mark evaluation, and a forty-mark writing task. Total 80 marks. Edexcel, OCR, and Eduqas follow similar but distinctive question mixes.',
+      // 9 October 2026: this said "one-mark list, four-mark language analysis". AQA 8700/1 is 4, 8,
+      // 8, 20 and 40 (src/lib/marking/mark-schemes/aqa-lang-paper1.ts, verified against AQA).
+      'AQA Paper 1 has five questions: a four-mark list, eight-mark language analysis, eight-mark structural analysis, twenty-mark evaluation, and a forty-mark writing task. Total 80 marks. Edexcel, OCR, and Eduqas follow similar but distinctive question mixes.',
     ],
     boards: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
     assessmentContext: [
