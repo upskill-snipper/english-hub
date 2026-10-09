@@ -648,15 +648,18 @@ export const EDEXCEL_CONTENT: BoardExamTechniqueContent = {
           marks: 'Prep',
           colour: 'prep',
         },
+        // 9 October 2026: part (a) ended at 0:25 and part (b) took 30 minutes. Pearson's
+        // 1ET0/01 question paper says about 55 minutes on Section A, divided equally between
+        // (a) and (b); part (b) asks about the theme elsewhere in the play, with its context.
         {
-          time: '0:05 - 0:25',
+          time: '0:05 - 0:27',
           label: 'Section A part (a) - Extract analysis (20 marks)',
           detail: 'Close analysis of the printed extract. Language, structure, form.',
           marks: '20 marks',
           colour: 'analysis',
         },
         {
-          time: '0:25 - 0:30',
+          time: '0:27 - 0:30',
           label: 'Plan part (b)',
           detail: 'Wider play essay. Thesis + 3 points + quotations from memory.',
           marks: 'Plan',
@@ -665,7 +668,7 @@ export const EDEXCEL_CONTENT: BoardExamTechniqueContent = {
         {
           time: '0:30 - 0:55',
           label: 'Section A part (b) - Wider play essay (20 marks)',
-          detail: 'Discuss the same theme/character across the wider play.',
+          detail: 'The theme from the extract elsewhere in the play, with its context (5 marks).',
           marks: '20 marks',
           colour: 'creative',
         },
@@ -712,22 +715,26 @@ export const EDEXCEL_CONTENT: BoardExamTechniqueContent = {
           marks: 'Prep',
           colour: 'prep',
         },
+        // 9 October 2026: Section A ran to 1:00, both poetry parts had 35 minutes and a final
+        // check took the last 5. Pearson's 1ET0/02 question papers (May 2017, May 2025) say
+        // about 55 minutes on Section A, divided equally between (a) and (b), 35 on Section B
+        // Part 1 and 45 on Part 2, which is the whole paper; checking happens within each.
         {
-          time: '0:05 - 0:30',
+          time: '0:05 - 0:27',
           label: 'Section A part (a) - Extract (20 marks)',
           detail: 'Close analysis of the printed extract: language, form and structure.',
           marks: '20 marks',
           colour: 'analysis',
         },
         {
-          time: '0:30 - 1:00',
+          time: '0:27 - 0:55',
           label: 'Section A part (b) - The novel as a whole (20 marks)',
           detail: 'An argument about the theme or character across the novel, from memory.',
           marks: '20 marks',
           colour: 'creative',
         },
         {
-          time: '1:00 - 1:35',
+          time: '0:55 - 1:30',
           label: 'Section B Part 1 - Anthology poetry comparison (20 marks)',
           detail:
             'Compare the named poem, printed on the paper, with one of your choice from the same collection. Compare methods within paragraphs.',
@@ -735,18 +742,12 @@ export const EDEXCEL_CONTENT: BoardExamTechniqueContent = {
           colour: 'comparison',
         },
         {
-          time: '1:35 - 2:10',
+          time: '1:30 - 2:15',
           label: 'Section B Part 2 - Unseen poetry comparison (20 marks)',
-          detail: 'Compare two unseen poems. 7 mins reading and planning, 25 mins writing.',
+          detail:
+            'Compare two unseen poems. 10 mins reading and planning, 32 mins writing, 3 mins checking.',
           marks: '20 marks',
           colour: 'comparison',
-        },
-        {
-          time: '2:10 - 2:15',
-          label: 'Final check',
-          detail: 'Re-read all four answers for slips.',
-          marks: 'Check',
-          colour: 'check',
         },
       ],
       warning:

@@ -237,12 +237,16 @@ const EDEXCEL_TIMINGS = {
       // Corrected 2 October 2026 against Pearson's specification (1ET0, Issue 2). The unseen
       // question was "Single unseen poem analysis"; it compares two unseen poems. The times
       // now account for all 135 minutes, as the Paper 2 course's timing plan does.
+      // 9 October 2026: they were 60, 35 and 35 with 5 to check. Pearson's 1ET0/02 question
+      // papers (May 2017, May 2025) advise about 55 minutes on Section A, divided equally
+      // between (a) and (b), 35 on Section B Part 1 and 45 on Part 2.
       questions: [
         {
           q: '19th-century novel: (a) extract + (b) essay',
           marks: 40,
-          time: '60 mins',
-          notes: 'Two parts of 20 marks: the printed extract, then the novel as a whole.',
+          time: '55 mins',
+          notes:
+            'Two parts of 20 marks: the printed extract, then the novel as a whole. Divide the time equally.',
         },
         {
           q: 'Poetry anthology comparison',
@@ -253,8 +257,8 @@ const EDEXCEL_TIMINGS = {
         {
           q: 'Unseen poetry comparison',
           marks: 20,
-          time: '35 mins',
-          notes: 'Compare two unseen poems linked by a theme. Leave 5 minutes to check.',
+          time: '45 mins',
+          notes: 'Compare two unseen poems linked by a theme. Both are new to you.',
         },
       ],
     },
