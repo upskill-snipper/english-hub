@@ -269,50 +269,63 @@ const ao4: AssessmentObjective = {
     'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
   maxMarks: 4,
   weighting: 0.1,
+  // 9 October 2026: four single-mark levels of this site's own. OCR marks AO4 in
+  // three performance levels, 1, 2-3 and 4 (J352/02 mark scheme, June 2018).
   bands: [
     {
-      band: 'Level 1',
+      band: 'Threshold',
       minMarks: 1,
       maxMarks: 1,
-      label: 'Limited',
+      label: 'Threshold performance',
       descriptor:
-        'Frequent errors in spelling and punctuation that hinder meaning. Simple vocabulary and repetitive sentence structures.',
-      indicators: ['Errors obscure meaning in places', 'Little variety in sentence structure'],
+        'Spelling and punctuation with reasonable accuracy, and a reasonable range of vocabulary and sentence structures; any errors do not hinder meaning.',
+      indicators: ['Errors do not obscure meaning', 'Some variety in sentence structure'],
     },
     {
-      band: 'Level 2',
+      band: 'Intermediate',
       minMarks: 2,
-      maxMarks: 2,
-      label: 'Some',
-      descriptor:
-        'Writing communicates with reasonable accuracy. Some variety of vocabulary and sentence structures, with errors that rarely hinder meaning.',
-      indicators: ['Some attempt at varied sentences', 'Writing is mostly clear with some errors'],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 3,
       maxMarks: 3,
-      label: 'Sound',
+      label: 'Intermediate performance',
       descriptor:
-        'Considerable accuracy in spelling and punctuation. A considerable range of vocabulary and sentence structures used with control.',
-      indicators: ['Errors are minor and infrequent', 'Writing is controlled and accurate'],
+        'Spelling and punctuation with considerable accuracy, and a considerable range of vocabulary and sentence structures to achieve general control of meaning.',
+      indicators: ['Errors are minor and infrequent', 'Writing is generally controlled'],
     },
     {
-      band: 'Level 4',
+      band: 'High',
       minMarks: 4,
       maxMarks: 4,
-      label: 'Assured',
+      label: 'High performance',
       descriptor:
-        'Consistently accurate spelling and punctuation. An ambitious vocabulary and a full range of sentence structures used with effective control of meaning.',
+        'Spelling and punctuation with consistent accuracy, and a wide range of vocabulary and sentence structures used to achieve effective control of meaning.',
       indicators: [
         'Ambitious vocabulary used with precision',
-        'Writing is fluent, precise and ambitious',
+        'Writing is fluent, precise and controlled',
       ],
     },
   ],
 }
 
-// ─── Component 01 ───────────────────────────────────────────────────────────
+// ─── The components, as OCR marks them ──────────────────────────────────────
+//
+// REBUILT 9 October 2026 against OCR's mark schemes for J352/01 (June 2023) and
+// J352/02 (June 2018) and the J352 specification (Version 3.0, page 16). Each
+// mark scheme gives the intended weighting of each objective in each question
+// as a share of the GCSE; on an 80-mark paper worth 50%, 1% is 1.6 marks.
+//
+// What was wrong: Section A of each component was one 40-mark question. OCR
+// sets two 20-mark parts. Component 01 put 8 marks of AO4 in Section A and
+// Component 02 put AO3 8 and AO4 8 in its poetry; OCR assesses AO4 in Section B
+// of each component only, 4 marks, and Component 02 assesses context only in its
+// Shakespeare section. Component 01 Section B was described as "literary
+// heritage prose or drama" with Romeo and Juliet as an example: it is
+// 19th-century prose, and Shakespeare is Component 02. Both Section B notes said
+// AO4 was not assessed there, which is where it is.
+//
+// OCR marks each answer as a whole on a six-level grid (18-20 at the top of a
+// 20-mark part; 31-36 for Section B's AO1 to AO3, with AO4 on its own grid);
+// this corpus keeps a ladder per objective, scaled to each tariff. The tariffs
+// below are OCR's; the ladders' wording is still the site's, so the schemes
+// stay unverified (../examiner/verification.ts).
 
 export const ocrLitComponent01: MarkScheme = {
   id: 'ocr-lit-component01',
@@ -326,37 +339,48 @@ export const ocrLitComponent01: MarkScheme = {
   sourceUrl: 'https://www.ocr.org.uk/qualifications/gcse/english-literature-j352/',
   questions: [
     {
-      id: 'Section A',
-      questionType: 'Modern prose or drama (extract + essay)',
+      id: 'Section A (a)',
+      questionType: 'Modern prose or drama: comparing the extract with an unseen extract',
       taskDescription:
-        'Answer one question on a studied modern prose or drama text. Use the extract as a starting point and refer to the text as a whole.',
-      totalMarks: 40,
+        'Compare how an idea is presented in an extract from the studied modern prose or drama text and in an unseen extract from a modern text of the same genre.',
+      totalMarks: 20,
+      // J352/01 June 2023: AO1 5%, AO2 2.5%, AO3 5%.
       assessmentObjectives: [
-        scaleAO(ao1, 16, 16 / 40),
-        scaleAO(ao2, 16, 16 / 40),
-        scaleAO(ao4, 8, 8 / 40),
+        scaleAO(ao1, 8, 8 / 20),
+        scaleAO(ao2, 4, 4 / 20),
+        scaleAO(ao3, 8, 8 / 20),
       ],
       examinerNotes:
-        'AO3 is not assessed in Section A. Reward sustained analysis that moves between the extract and the wider text. AO4 assesses written accuracy - range of vocabulary and sentence structures, spelling and punctuation.',
+        'Comparison is required throughout. Context counts in this part. AO4 is not assessed in Section A.',
+    },
+    {
+      id: 'Section A (b)',
+      questionType: 'Modern prose or drama: elsewhere in the studied text',
+      taskDescription:
+        'Explore a related idea elsewhere in the studied modern prose or drama text.',
+      totalMarks: 20,
+      // AO1 6.25%, AO2 6.25%.
+      assessmentObjectives: [scaleAO(ao1, 10, 10 / 20), scaleAO(ao2, 10, 10 / 20)],
+      examinerNotes: 'AO1 and AO2 are equally weighted. AO3 and AO4 are not assessed in this part.',
     },
     {
       id: 'Section B',
-      questionType: 'Literary heritage prose or drama (essay)',
+      questionType: '19th-century prose (extract-based or discursive)',
       taskDescription:
-        'Answer one question on a studied literary heritage text (e.g. Great Expectations, Pride and Prejudice, Romeo and Juliet). Refer to the text as a whole.',
+        'Answer one question, from a choice of an extract-based question and a discursive question, on the studied 19th-century prose text (for example Great Expectations, Jekyll and Hyde or A Christmas Carol).',
       totalMarks: 40,
+      // AO1 8.75%, AO2 8.75%, AO3 5%, AO4 2.5%.
       assessmentObjectives: [
-        scaleAO(ao1, 16, 16 / 40),
-        scaleAO(ao2, 16, 16 / 40),
+        scaleAO(ao1, 14, 14 / 40),
+        scaleAO(ao2, 14, 14 / 40),
         scaleAO(ao3, 8, 8 / 40),
+        scaleAO(ao4, 4, 4 / 40),
       ],
       examinerNotes:
-        'AO4 is not assessed in Section B. Context (AO3) should be integrated into the argument, not bolted on. Accept any valid interpretation supported by textual evidence.',
+        'AO1 to AO3 are marked together out of 36 and AO4 separately out of 4. Context (AO3) should be integrated into the argument, not bolted on.',
     },
   ],
 }
-
-// ─── Component 02 ───────────────────────────────────────────────────────────
 
 export const ocrLitComponent02: MarkScheme = {
   id: 'ocr-lit-component02',
@@ -370,33 +394,41 @@ export const ocrLitComponent02: MarkScheme = {
   sourceUrl: 'https://www.ocr.org.uk/qualifications/gcse/english-literature-j352/',
   questions: [
     {
-      id: 'Section A',
-      questionType: 'Poetry across time (comparative)',
+      id: 'Section A (a)',
+      questionType: 'Poetry across time: comparing a named anthology poem with an unseen poem',
       taskDescription:
-        'Compare how poets present a theme in one named poem and one other poem from the anthology. You must compare the two poems.',
-      totalMarks: 40,
-      assessmentObjectives: [
-        scaleAO(ao1, 12, 12 / 40),
-        scaleAO(ao2, 12, 12 / 40),
-        scaleAO(ao3, 8, 8 / 40),
-        scaleAO(ao4, 8, 8 / 40),
-      ],
+        'Compare how a named poem from the studied cluster of the OCR anthology and an unseen poem, both printed on the paper, present an idea or feeling.',
+      totalMarks: 20,
+      // J352/02 June 2018: AO1 5%, AO2 7.5%; AO2 is the dominant objective.
+      assessmentObjectives: [scaleAO(ao1, 8, 8 / 20), scaleAO(ao2, 12, 12 / 20)],
       examinerNotes:
-        'Reward genuine comparison, not sequential treatment of two poems. Context should illuminate the comparison. The named poem must be discussed.',
+        'AO2 is dominant. Comparison of the two poems is required throughout. AO3 and AO4 are not assessed in Section A.',
+    },
+    {
+      id: 'Section A (b)',
+      questionType: 'Poetry across time: another poem from the cluster',
+      taskDescription:
+        "Explore how an idea is presented in one other poem of the student's choice from the same anthology cluster.",
+      totalMarks: 20,
+      // AO1 6.25%, AO2 6.25%.
+      assessmentObjectives: [scaleAO(ao1, 10, 10 / 20), scaleAO(ao2, 10, 10 / 20)],
+      examinerNotes: 'AO1 and AO2 are equally weighted. AO3 and AO4 are not assessed in Section A.',
     },
     {
       id: 'Section B',
-      questionType: 'Shakespeare (extract + whole text)',
+      questionType: 'Shakespeare (extract-based or discursive)',
       taskDescription:
-        'Starting with an extract from a studied Shakespeare play, explore how a theme, character or relationship is presented in the extract and in the play as a whole.',
+        'Answer one question, from a choice of an extract-based question and a discursive question, on the studied Shakespeare play.',
       totalMarks: 40,
+      // AO1 8.75%, AO2 8.75%, AO3 5%, AO4 2.5%.
       assessmentObjectives: [
-        scaleAO(ao1, 16, 16 / 40),
-        scaleAO(ao2, 16, 16 / 40),
+        scaleAO(ao1, 14, 14 / 40),
+        scaleAO(ao2, 14, 14 / 40),
         scaleAO(ao3, 8, 8 / 40),
+        scaleAO(ao4, 4, 4 / 40),
       ],
       examinerNotes:
-        'AO4 is not assessed in Section B. Reward candidates who move fluently between the extract and the rest of the play. Context should deepen interpretation.',
+        'AO1 and AO2 are equally dominant; AO1 to AO3 are marked together out of 36 and AO4 separately out of 4.',
     },
   ],
 }

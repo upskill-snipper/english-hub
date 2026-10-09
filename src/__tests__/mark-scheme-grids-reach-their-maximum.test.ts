@@ -226,6 +226,7 @@ describe('AO4 on the England GCSE Literature papers', () => {
    */
   const ENGLAND_GCSE_LIT = [
     'aqa-lit-paper1',
+    'aqa-lit-paper2',
     'edexcel-lit-paper1',
     'edexcel-lit-paper2',
     'eduqas-lit-comp1',

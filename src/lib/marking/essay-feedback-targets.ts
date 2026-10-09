@@ -312,9 +312,13 @@ function literatureRef(
       if (kind === 'unseen') return ref('edexcel-lit-paper2', 'Section B Part 2')
       return null
     case 'OCR':
-      if (kind === 'modern') return ref('ocr-lit-component01', 'Section A')
+      // Since 9 October 2026 each component's Section A is two parts, as OCR
+      // sets it. Part (a) compares the studied text, or a named anthology poem,
+      // with an UNSEEN extract or poem, which no bank entry does, so nothing maps
+      // to it; a whole-text modern question is part (b), and a question comparing
+      // two anthology poems matches neither part.
+      if (kind === 'modern') return extract ? null : ref('ocr-lit-component01', 'Section A (b)')
       if (kind === '19th-century') return ref('ocr-lit-component01', 'Section B')
-      if (kind === 'poetry-anthology') return ref('ocr-lit-component02', 'Section A')
       if (kind === 'shakespeare') return ref('ocr-lit-component02', 'Section B')
       return null
     case 'WJEC':
