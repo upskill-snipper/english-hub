@@ -601,6 +601,33 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
   'lc-silas-marner-the-wedding': '/comics/silas-marner/the-wedding.c1a1e9a321e7.svg',
   'lc-silas-marner-too-late': '/comics/silas-marner/too-late.5c3a29d92342.svg',
   'lc-silas-marner-william-dane': '/comics/silas-marner/william-dane.0721bd9ded4b.svg',
+  'lc-the-great-gatsby-boats-against-the-current':
+    '/comics/the-great-gatsby/boats-against-the-current.cf07ed6818f9.svg',
+  'lc-the-great-gatsby-daisy-buchanan': '/comics/the-great-gatsby/daisy-buchanan.e4b6096f5ebe.svg',
+  'lc-the-great-gatsby-dinner-in-east-egg':
+    '/comics/the-great-gatsby/dinner-in-east-egg.ab7cf3a3b651.svg',
+  'lc-the-great-gatsby-gatsby-s-death': '/comics/the-great-gatsby/gatsby-s-death.793f1cb5c736.svg',
+  'lc-the-great-gatsby-gatsby-s-party': '/comics/the-great-gatsby/gatsby-s-party.96de6ae8da9a.svg',
+  'lc-the-great-gatsby-george-wilson': '/comics/the-great-gatsby/george-wilson.f49ea7537f41.svg',
+  'lc-the-great-gatsby-james-gatz': '/comics/the-great-gatsby/james-gatz.2aea7ca86c47.svg',
+  'lc-the-great-gatsby-jay-gatsby': '/comics/the-great-gatsby/jay-gatsby.c84b6f292bdb.svg',
+  'lc-the-great-gatsby-jordan-baker': '/comics/the-great-gatsby/jordan-baker.316f1735bdde.svg',
+  'lc-the-great-gatsby-meyer-wolfshiem':
+    '/comics/the-great-gatsby/meyer-wolfshiem.e9c6b13832f4.svg',
+  'lc-the-great-gatsby-myrtle-wilson': '/comics/the-great-gatsby/myrtle-wilson.e335e6f0473b.svg',
+  'lc-the-great-gatsby-nick-carraway': '/comics/the-great-gatsby/nick-carraway.e629925b6577.svg',
+  'lc-the-great-gatsby-the-death-car': '/comics/the-great-gatsby/the-death-car.bec9d749d6cb.svg',
+  'lc-the-great-gatsby-the-funeral': '/comics/the-great-gatsby/the-funeral.eb0bcf74145b.svg',
+  'lc-the-great-gatsby-the-green-light':
+    '/comics/the-great-gatsby/the-green-light.273e0aeba460.svg',
+  'lc-the-great-gatsby-the-plaza-hotel':
+    '/comics/the-great-gatsby/the-plaza-hotel.f1f1ea592b64.svg',
+  'lc-the-great-gatsby-the-reunion': '/comics/the-great-gatsby/the-reunion.4b9dd08dc0f2.svg',
+  'lc-the-great-gatsby-the-valley-of-ashes-and-the-flat':
+    '/comics/the-great-gatsby/the-valley-of-ashes-and-the-flat.e0586fd143ce.svg',
+  'lc-the-great-gatsby-tom-buchanan': '/comics/the-great-gatsby/tom-buchanan.8afddc1f4cf8.svg',
+  'lc-the-great-gatsby-wolfshiem-and-jordan-s-story':
+    '/comics/the-great-gatsby/wolfshiem-and-jordan-s-story.164f9cb591c1.svg',
   'lc-the-merchant-of-venice-antonio': '/comics/the-merchant-of-venice/antonio.8419d86baba4.svg',
   'lc-the-merchant-of-venice-antonio-s-sadness':
     '/comics/the-merchant-of-venice/antonio-s-sadness.20fa297111ed.svg',
