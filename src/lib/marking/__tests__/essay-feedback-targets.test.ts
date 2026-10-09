@@ -200,6 +200,30 @@ describe('mock papers', () => {
       ])
     }
   })
+
+  it('maps every Eduqas Literature mock part by part', () => {
+    // Until 9 October 2026 every section of these mocks was two 20-mark
+    // questions, a tariff no Eduqas question has, so every answer got general
+    // feedback. They are now set as C720 is (src/data/mock-exams/wjec-lit-a.ts):
+    // Component 1 in parts of 15 and 25, Component 2 in sections of 40 and an
+    // unseen section of 15 and 25.
+    for (const id of ['wjec-lit-01', 'wjec-lit-02', 'wjec-lit-03']) {
+      expect(refsFor(id).map(refString)).toEqual([
+        'eduqas-lit-comp1/Section A (a)',
+        'eduqas-lit-comp1/Section A (b)',
+        'eduqas-lit-comp1/Section B (a)',
+        'eduqas-lit-comp1/Section B (b)',
+      ])
+    }
+    for (const id of ['wjec-lit-04', 'wjec-lit-05']) {
+      expect(refsFor(id).map(refString)).toEqual([
+        'eduqas-lit-comp2/Section A',
+        'eduqas-lit-comp2/Section B',
+        'eduqas-lit-comp2/Section C (a)',
+        'eduqas-lit-comp2/Section C (b)',
+      ])
+    }
+  })
 })
 
 // ─── Practice questions ─────────────────────────────────────────────────
