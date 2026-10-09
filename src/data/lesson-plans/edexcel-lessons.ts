@@ -498,7 +498,9 @@ const lesson3: LessonPlan = {
     },
   ],
   teacherNotes: [
-    'The Edexcel Shakespeare question is in Paper 1 Section A and is worth 40 marks (with 4 marks for SPaG). Ensure students know SPaG counts here.',
+    // 9 October 2026: this said the question carried 4 marks for SPaG and that SPaG counted here.
+    // Pearson's 1ET0 specification (Issue 2, PDF pages 23 and 26) gives it none.
+    'The Edexcel Shakespeare question is in Paper 1 Section A and is worth 40 marks: part (a) 20 for analysis of the extract, part (b) 15 for the response to the play and 5 for context. It carries no SPaG marks; those 8 marks are on the post-1914 essay in Section B.',
     'Practise the extract-to-wider-play skill repeatedly - it is the most common area where students underperform on Edexcel.',
     'Act 1, Scene 7 is one of the most frequently examined extracts. Build a bank of 6-8 key extracts for exam preparation.',
     "Encourage students to learn 10-15 key quotations from across the play to support the 'wider play' element of their responses.",
@@ -527,13 +529,13 @@ const lesson4: LessonPlan = {
     'Understand how Edexcel assesses A Christmas Carol on Paper 2 Literature (1ET0/02)',
     "Explore Dickens's use of character as a vehicle for social commentary",
     "Analyse how Scrooge's transformation reflects key themes of redemption, social responsibility, and class",
-    'Practise structuring responses that balance character analysis with thematic exploration (AO1, AO2, AO4)',
+    'Practise structuring responses that balance character analysis with thematic exploration (AO2 in part (a), AO1 in part (b))',
   ],
   successCriteria: [
     'I can explain the structure of the Edexcel A Christmas Carol question',
     'I can analyse how Dickens uses Scrooge to convey ideas about social responsibility',
-    'I can link character development to Victorian context',
-    'I can write an analytical paragraph that addresses character, theme, and context',
+    'I can explain how Victorian context shapes what Dickens is arguing, knowing that Section A gives context no marks of its own',
+    'I can write a part (b) paragraph that builds an argument about a theme across the novel',
   ],
   keywords: [
     'redemption',
@@ -569,7 +571,7 @@ const lesson4: LessonPlan = {
       title: "Character as Social Commentary: Tracking Dickens's Message",
       duration: '22 minutes',
       instructions:
-        "Distribute a character-theme tracking grid covering Scrooge, Bob Cratchit, Tiny Tim, the Ghost of Christmas Present, and Ignorance and Want. For each character, students identify: (1) key quotation, (2) what the character represents, (3) what Dickens is criticising or advocating through them, (4) relevant Victorian context. Model the first row (Scrooge in Stave 1) as a class, emphasising how Scrooge's line 'decrease the surplus population' echoes Malthusian economics, which Dickens opposed. Students complete the remaining rows using their texts and notes.",
+        "Distribute a character-theme tracking grid covering Scrooge, Bob Cratchit, Tiny Tim, the Ghost of Christmas Present, and Ignorance and Want. For each character, students identify: (1) key quotation, (2) what the character represents, (3) what Dickens is criticising or advocating through them, (4) relevant Victorian context, as background to the reading (Section A gives context no marks of its own). Model the first row (Scrooge in Stave 1) as a class, emphasising how Scrooge's line 'decrease the surplus population' echoes Malthusian economics, which Dickens opposed. Students complete the remaining rows using their texts and notes.",
       differentiation: {
         support: 'Pre-fill quotations; students focus on interpretation and context columns.',
         core: 'Students complete the full grid independently, selecting their own quotations.',
@@ -586,10 +588,10 @@ const lesson4: LessonPlan = {
       title: 'Crafting an Edexcel Response: Character and Theme Paragraph',
       duration: '20 minutes',
       instructions:
-        "Display a sample Edexcel-style question: 'Explore how Dickens presents ideas about social responsibility in A Christmas Carol.' Discuss how this question requires both character analysis and thematic exploration. Model a paragraph structure: Argument (link character to theme), Evidence (embedded quotation), Analysis (language technique and effect), Context (Victorian social conditions), Evaluation (Dickens's purpose/message). Students write one paragraph using their tracking grid. Peer-assess using Edexcel Level descriptors.",
+        "Display a sample part (b) question in Pearson's form: 'Explain the importance of social responsibility elsewhere in the novel.' Discuss how this question requires both character analysis and thematic exploration across the novel. Part (b) is marked for AO1 alone, so model a paragraph that argues: Argument (a clear point about the theme), Evidence (a quotation or reference from memory), Explanation (what it shows and why it matters to the argument), Link (to another moment in the novel). Context and language analysis earn no marks of their own in part (b): use them only where they serve the argument. Students write one paragraph using their tracking grid. Peer-assess using the AO1 level descriptors.",
       differentiation: {
         support:
-          'Provide a paragraph frame with the argument and evidence pre-selected; students write analysis, context, and evaluation.',
+          'Provide a paragraph frame with the argument and evidence pre-selected; students write the explanation and the link.',
         core: 'Students write a full paragraph independently and peer-assess.',
         stretch:
           "Students write a counter-argument paragraph (e.g. exploring whether Dickens's message is too simplistic) and compare the two.",
@@ -614,14 +616,16 @@ const lesson4: LessonPlan = {
     },
   },
   homework:
-    "Write a full paragraph answering: 'How does Dickens use Tiny Tim to present ideas about poverty and compassion?' Include a quotation, language analysis, and Victorian context.",
+    "Write a full part (b) paragraph answering: 'Explain the importance of Tiny Tim in the novel.' Build an argument about poverty and compassion, supported by references from at least two staves.",
   worksheetQuestions: [
     {
       question:
         'How is A Christmas Carol assessed on the Edexcel Literature paper? Describe the question format.',
       lines: 4,
       modelAnswer:
-        "A Christmas Carol appears in Paper 2, Section A of the Edexcel English Literature exam. Students are given an essay-style question (no extract provided) and must write about the whole text. The question typically asks students to explore how Dickens presents a character, theme, or idea. It is worth 40 marks, testing AO1 (textual reference), AO2 (writer's methods), and AO4 (context, where relevant to the argument).",
+        // 9 October 2026: this said there was no extract, one 40-mark essay, and AO4 for context.
+        // Pearson's specification (1ET0, Issue 2, PDF pages 24 and 26) sets two parts of 20.
+        'A Christmas Carol is one of the seven novels in Paper 2, Section A (1ET0/02). The question is compulsory and has two parts. Part (a) prints an extract of about 400 words and asks how Dickens presents something in it: 20 marks, for AO2 (language, form and structure). Part (b) asks about the same idea elsewhere in the novel: 20 marks, for AO1 (a critical, personal response supported by references). Section A has no marks for context or for spelling, punctuation and grammar, and the exam is closed book.',
       marks: 4,
     },
     {
@@ -649,10 +653,10 @@ const lesson4: LessonPlan = {
     },
     {
       question:
-        'Why is Victorian context important when analysing A Christmas Carol for Edexcel? Give two specific examples.',
+        'Section A gives no marks for context. Why is Victorian context still worth knowing for A Christmas Carol? Give two specific examples.',
       lines: 6,
       modelAnswer:
-        "Victorian context is essential because Dickens wrote A Christmas Carol as direct social commentary. Example 1: The 1834 Poor Law Amendment Act created workhouses that punished poverty - Scrooge's reference to 'prisons' and 'workhouses' reflects the callous attitude Dickens criticised. Example 2: The novella was published in 1843, during a period of extreme inequality between the industrial rich and the urban poor - Dickens used Scrooge's wealth alongside the Cratchits' poverty to dramatise this divide and argue for compassion.",
+        "Context is not assessed in Paper 2 Section A, but Dickens wrote A Christmas Carol as direct social commentary, and knowing what he was answering sharpens the interpretation that part (b) rewards. Example 1: The 1834 Poor Law Amendment Act created workhouses that punished poverty - Scrooge's reference to 'prisons' and 'workhouses' reflects the callous attitude Dickens criticised. Example 2: The novella was published in 1843, during a period of extreme inequality between the industrial rich and the urban poor - Dickens used Scrooge's wealth alongside the Cratchits' poverty to dramatise this divide and argue for compassion. In the exam, context should serve the argument in a phrase, not fill paragraphs.",
       marks: 5,
     },
     {
@@ -665,17 +669,20 @@ const lesson4: LessonPlan = {
     },
   ],
   teacherNotes: [
-    'Unlike the Shakespeare question, the A Christmas Carol question on Edexcel does NOT provide an extract. Students must select their own evidence from across the whole text.',
+    // 9 October 2026: these notes said the question prints no extract, is one 40-mark essay, and caps
+    // answers without Victorian context. Pearson sets an extract for part (a), two parts of 20, and no
+    // marks for context in Section A.
+    'The question prints an extract of about 400 words for part (a). Part (b) asks about the rest of the novel, and the exam is closed book, so students must select their own evidence from memory.',
     'Ensure students have a bank of at least 15-20 key quotations memorised, spread across all five staves.',
-    'The question is in Paper 2, Section A and is worth 40 marks. There are no SPaG marks for this question (unlike Shakespeare).',
-    "Dickens's social message is central to high-scoring responses. Students who only analyse characters without connecting to Victorian context will be capped at lower levels.",
+    'The question is in Paper 2, Section A: two parts of 20 marks. Section A has no SPaG marks; on Edexcel Literature those 8 marks are on the post-1914 essay in Paper 1 only.',
+    "Dickens's social message is central to a strong part (b) argument, but context has no marks of its own in Section A. No answer is capped for leaving it out, and time spent on historical background is time not spent on the question.",
   ],
   targetedSkills: [
     'Character Analysis',
     'Theme Analysis',
     'AO1: Textual Reference',
     "AO2: Writer's Methods",
-    'AO4: Evaluation',
+    'Building an Argument',
     'Contextual Understanding',
     'Essay Structure',
   ],
@@ -844,32 +851,33 @@ const lesson5: LessonPlan = {
   ],
 }
 
-// ── Lesson 6: Edexcel Poetry Anthology - Time & Place Cluster ──
+// ── Lesson 6: Edexcel Poetry Anthology - Time and Place Collection ──
 
 // 2 October 2026: the example pairs named The Prelude (Edexcel's Conflict collection),
 // Kamikaze (an AQA poem) and The Émigrée (Edexcel's Belonging collection) as Time and
 // Place poems. Both pairs are now from Collection C of the Pearson Edexcel anthology.
 const lesson6: LessonPlan = {
   id: 'edexcel-06-poetry-time-and-place',
-  title: 'Edexcel Poetry Anthology: Time & Place Cluster',
+  // 9 October 2026: "cluster" is AQA's word; Pearson's anthology has four collections.
+  title: 'Edexcel Poetry Anthology: Time and Place Collection',
   text: 'Edexcel Poetry Anthology',
   board: 'Edexcel',
   yearGroup: '10-11',
   duration: '60 minutes',
   objectives: [
-    'Understand the structure of the Edexcel Poetry Anthology and how the Time and Place cluster is assessed',
-    'Analyse at least two poems from the Time and Place cluster in detail',
+    'Understand the structure of the Edexcel Poetry Anthology and how the Time and Place collection is assessed',
+    'Analyse at least two poems from the Time and Place collection in detail',
     'Develop comparison skills required for the Edexcel poetry comparison question',
     'Identify how poets use language, structure, and form to convey ideas about time and place',
   ],
   successCriteria: [
     'I can explain how the Edexcel poetry question requires comparison of two poems',
-    'I can analyse language, structure, and form in poems from the Time and Place cluster',
+    'I can analyse language, structure, and form in poems from the Time and Place collection',
     'I can identify similarities and differences between two poems on a shared theme',
     'I can write a comparative paragraph using appropriate connectives',
   ],
   keywords: [
-    'cluster',
+    'collection',
     'comparison',
     'imagery',
     'enjambment',
@@ -884,18 +892,18 @@ const lesson6: LessonPlan = {
     title: 'Time and Place Word Cloud',
     duration: '7 minutes',
     instructions:
-      "Display the titles of all poems in the Time and Place cluster. Students brainstorm associations with the phrase 'time and place' on a mind map - what themes might these poems explore? (e.g. memory, home, change, loss, belonging, travel, identity). After two minutes of individual brainstorming, share ideas as a class and create a collective word cloud on the board. This establishes the thematic territory of the cluster before close analysis begins.",
+      "Display the titles of all poems in the Time and Place collection. Students brainstorm associations with the phrase 'time and place' on a mind map - what themes might these poems explore? (e.g. memory, home, change, loss, belonging, travel, identity). After two minutes of individual brainstorming, share ideas as a class and create a collective word cloud on the board. This establishes the thematic territory of the collection before close analysis begins.",
     differentiation: {
       support: 'Provide a starter list of six associated words to build upon.',
       core: 'Students brainstorm independently and contribute at least five ideas.',
       stretch:
         'Students group their ideas into sub-themes and predict which poems might explore each one.',
     },
-    resources: ['Cluster poem title list slide', 'Mind map template'],
+    resources: ['Collection poem title list slide', 'Mind map template'],
   },
   mainActivities: [
     {
-      title: 'Close Analysis: Two Key Poems from the Cluster',
+      title: 'Close Analysis: Two Key Poems from the Collection',
       duration: '25 minutes',
       instructions:
         "Focus on two poems that offer strong comparison potential (e.g. 'London' by Blake and 'Nothing's Changed' by Tatamkhulu Afrika, or 'Composed upon Westminster Bridge' by Wordsworth and 'Hurricane Hits England' by Grace Nichols - select based on your school's chosen poems). Read both poems aloud. For each poem, students complete an analysis grid covering: subject/narrative, key quotations (3 per poem), language techniques, structural features, tone/mood, and the poet's message about time and/or place. Model the first poem's grid entries as a class, then students complete the second independently.",
@@ -943,14 +951,16 @@ const lesson6: LessonPlan = {
     },
   },
   homework:
-    'Choose a third poem from the Time and Place cluster. Write a paragraph comparing it to one of the two poems studied in class, using the comparison structure practised today.',
+    'Choose a third poem from the Time and Place collection. Write a paragraph comparing it to one of the two poems studied in class, using the comparison structure practised today.',
   worksheetQuestions: [
     {
       question:
         'How is the poetry anthology assessed on Edexcel Literature Paper 2? Describe the question format.',
       lines: 5,
       modelAnswer:
-        'The poetry anthology appears in Paper 2, Section B of Edexcel English Literature. Students are given one named poem from their studied cluster and must compare it with another poem of their choice from the same cluster. The question asks students to explore how both poets present a particular theme or idea. It is worth 30 marks, testing AO1, AO2, and AO3. Integrated comparison is expected throughout.',
+        // 9 October 2026: this said 30 marks on AO1, AO2 and AO3. Pearson's specification (1ET0,
+        // Issue 2, PDF pages 24 and 26) sets Section B Part 1 at 20: AO2 15 and AO3 5.
+        'The poetry anthology is in Paper 2, Section B Part 1. The paper prints one named poem from the collection the school has studied, and students compare it with a second poem of their own choice from the same collection, quoted from memory. The question asks how both poets present a particular theme or idea. It is worth 20 marks: 15 for AO2 (language, form and structure) and 5 for AO3 (context). Comparison is expected throughout: an answer on one poem alone cannot go above the top of Level 2.',
       marks: 4,
     },
     {
@@ -963,18 +973,22 @@ const lesson6: LessonPlan = {
     },
     {
       question:
-        'Choose one poem from the Time and Place cluster. Identify one key quotation and analyse the language technique used.',
+        'Choose one poem from the Time and Place collection. Identify one key quotation and analyse the language technique used.',
       lines: 6,
       modelAnswer:
-        "In 'The Prelude', Wordsworth describes the mountain as 'a huge peak, black and huge' - the repetition of 'huge' emphasises the overwhelming scale of nature, while 'black' creates a sinister, foreboding tone. The simplicity of the language mirrors the child narrator's limited ability to articulate terror, making the fear feel raw and immediate. This conveys the power of place to transform experience.",
+        // 9 October 2026: these model answers used the Extract from The Prelude (Collection B, Conflict)
+        // and The Émigrée (Collection D, Belonging) as Time and Place poems. They now use London and
+        // Composed upon Westminster Bridge, quoted as Pearson's anthology prints them (Issue 4, PDF
+        // pages 44 and 45).
+        "In 'London', Blake writes that he will 'mark in every face I meet / Marks of weakness, marks of woe.' The repetition of 'mark' and 'marks' turns a verb of noticing into a noun for damage, as if looking at Londoners is enough to see the scars the city leaves on them, and the alliteration of 'weakness' and 'woe' gives the line the weight of a lament. Blake presents the place as one that harms everyone who lives in it.",
       marks: 4,
     },
     {
       question:
-        "Explain one similarity and one difference between two poems from the cluster in terms of how they present 'place'.",
+        "Explain one similarity and one difference between two poems from the collection in terms of how they present 'place'.",
       lines: 6,
       modelAnswer:
-        "Similarity: Both 'The Prelude' and 'The Émigrée' present place as something that has a powerful emotional and psychological impact on the speaker - nature overwhelms in Wordsworth, while the homeland haunts in Rumens. Difference: In 'The Prelude', the place is physically present and experienced directly, while in 'The Émigrée', the place exists only in memory, making it idealised and potentially unreliable. This difference affects how each poet uses imagery - Wordsworth's is sensory and immediate, Rumens's is dreamlike and symbolic.",
+        "Similarity: 'London' and 'Composed upon Westminster Bridge' present the same city at almost the same time (1794 and 1802), each through a single observer. Difference: Blake walks 'thro’ each charter’d street' and finds suffering in every face, while Wordsworth looks at the city from the bridge at dawn and finds it beautiful: 'Earth has not anything to show more fair'. Blake's London is full of human cries; Wordsworth's is beautiful because its people are not yet awake, when 'the very houses seem asleep'.",
       marks: 5,
     },
     {
@@ -982,7 +996,7 @@ const lesson6: LessonPlan = {
         'Why might a poet choose to use enjambment when writing about time or place? Give an example if possible.',
       lines: 4,
       modelAnswer:
-        "Enjambment - where a sentence runs over a line break without punctuation - can mirror the continuous, uncontrollable flow of time or the experience of moving through a place. It creates momentum and prevents the reader from pausing, reflecting how memories or journeys feel relentless. In 'The Prelude', enjambment mirrors the flowing movement of the boat on the lake and the escalating sense of awe.",
+        "Enjambment - where a sentence runs over a line break without punctuation - can mirror the continuous, uncontrollable flow of time or the experience of moving through a place. It creates momentum and prevents the reader from pausing, reflecting how memories or journeys feel relentless. In 'Composed upon Westminster Bridge', Wordsworth runs a simile across a line break: 'This City now doth, like a garment, wear / The beauty of the morning'. The reader has to cross the line to find what the city is wearing, so the morning seems to settle over the city as the sentence settles over two lines.",
       marks: 3,
     },
     {
@@ -990,14 +1004,14 @@ const lesson6: LessonPlan = {
         'List three comparison connectives and write a sentence using each one to compare two poems.',
       lines: 6,
       modelAnswer:
-        "1. 'Similarly': Similarly, both Wordsworth and Rumens use natural imagery to convey the emotional significance of place. 2. 'Conversely': Conversely, while Wordsworth presents place as threatening, Rumens idealises her homeland as a source of comfort. 3. 'Whereas': Whereas 'The Prelude' uses first-person narration to create immediacy, 'The Émigrée' uses a more reflective, elegiac tone to convey distance from the remembered place.",
+        "1. 'Similarly': Similarly, both Blake and Wordsworth write about London as a single observer. 2. 'Conversely': Conversely, while Blake hears 'the mind-forg’d manacles' in every voice, Wordsworth finds 'a calm so deep' in the sleeping city. 3. 'Whereas': Whereas 'London' is filled with cries of suffering, 'Composed upon Westminster Bridge' is beautiful because its people are not yet awake.",
       marks: 3,
     },
   ],
   teacherNotes: [
-    "Edexcel's poetry anthology is divided into clusters. Check which cluster your school has been assigned - Time and Place is one option.",
-    'The comparison question names one poem; students choose the second. Practise making strategic choices about which poem to compare.',
-    'Build a comparison grid across all poems in the cluster over multiple lessons so students can see the full range of potential pairings.',
+    "Pearson's anthology has four collections of 15 poems: Relationships, Conflict, Time and Place, and Belonging. Each school studies one, and the exam sets a question on each; this lesson is for schools that study Time and Place.",
+    'The comparison question names one poem and prints it; students choose the second, from the same collection, and quote it from memory. Practise making strategic choices about which poem to compare.',
+    'Build a comparison grid across all poems in the collection over multiple lessons so students can see the full range of potential pairings.',
     'Students often struggle to compare rather than contrast. Explicitly teach that similarities can be just as analytically rich as differences.',
   ],
   targetedSkills: [
@@ -1005,29 +1019,33 @@ const lesson6: LessonPlan = {
     'Poetry Analysis',
     'Language Analysis',
     'Structural Techniques',
-    'AO1: Textual Reference',
     "AO2: Writer's Methods",
+    'AO3: Context',
     'Comparative Analysis',
   ],
 }
 
-// ── Lesson 7: Edexcel Poetry Anthology - Belonging Cluster ──
+// ── Lesson 7: Edexcel Poetry Anthology - Belonging Collection ──
 
 const lesson7: LessonPlan = {
   id: 'edexcel-07-poetry-belonging',
-  title: 'Edexcel Poetry Anthology: Belonging Cluster',
+  // 9 October 2026: this lesson's examples were Conflict poems (Half-caste, No Problem, What Were They
+  // Like?, Poppies are all in Collection B). Its examples are now Belonging poems, quoted as Pearson's
+  // anthology prints them (Issue 4, PDF pages 69, 73, 76 and 78), in short quotations: all four poems
+  // are in copyright.
+  title: 'Edexcel Poetry Anthology: Belonging Collection',
   text: 'Edexcel Poetry Anthology',
   board: 'Edexcel',
   yearGroup: '10-11',
   duration: '60 minutes',
   objectives: [
-    'Explore key poems from the Belonging cluster of the Edexcel Poetry Anthology',
+    'Explore key poems from the Belonging collection of the Edexcel Poetry Anthology',
     'Analyse how poets use language, structure, and form to present ideas about identity, community, and exclusion',
     'Develop comparison skills by identifying thematic and methodological links across poems',
     'Practise writing comparative analysis paragraphs to Edexcel mark scheme standards',
   ],
   successCriteria: [
-    'I can analyse at least two poems from the Belonging cluster in detail',
+    'I can analyse at least two poems from the Belonging collection in detail',
     'I can explain how different poets present ideas about belonging and identity',
     "I can compare poets' methods using integrated comparison",
     'I can identify how form and structure contribute to meaning in the poems',
@@ -1048,13 +1066,13 @@ const lesson7: LessonPlan = {
     title: 'Belonging Spectrum',
     duration: '8 minutes',
     instructions:
-      "Draw an imaginary spectrum across the room - one end labelled 'Total Belonging' and the other 'Total Exclusion'. Read out five brief scenarios (e.g. 'You move to a new country where you don't speak the language', 'Your family has lived in the same village for generations'). Students physically position themselves on the spectrum and explain their reasoning. Link to the idea that belonging is not binary - it exists on a spectrum, just as the poems in this cluster present varied, complex experiences of belonging.",
+      "Draw an imaginary spectrum across the room - one end labelled 'Total Belonging' and the other 'Total Exclusion'. Read out five brief scenarios (e.g. 'You move to a new country where you don't speak the language', 'Your family has lived in the same village for generations'). Students physically position themselves on the spectrum and explain their reasoning. Link to the idea that belonging is not binary - it exists on a spectrum, just as the poems in this collection present varied, complex experiences of belonging.",
     differentiation: {
       support:
         'Provide laminated position cards (Belonging / Mostly Belonging / Somewhere Between / Mostly Excluded / Excluded) for students to hold up instead of moving.',
       core: 'Students position themselves and articulate their reasoning verbally.',
       stretch:
-        'Students suggest which poems from the cluster might represent each position on the spectrum.',
+        'Students suggest which poems from the collection might represent each position on the spectrum.',
     },
     resources: ['Spectrum labels (printed A3)', 'Scenario cards'],
   },
@@ -1063,7 +1081,7 @@ const lesson7: LessonPlan = {
       title: 'Dual-Poem Analysis: Exploring Belonging Through Language and Structure',
       duration: '25 minutes',
       instructions:
-        "Select two poems from the Belonging cluster that offer rich comparison (e.g. 'Half-caste' by John Agard and 'No Problem' by Benjamin Zephaniah, or 'What Were They Like?' by Denise Levertov and 'Poppies' by Jane Weir - adjust to your school's selection). Read both poems aloud, the first with teacher modelling of tone and emphasis. For each poem, students complete a comparative analysis table: speaker's perspective, key imagery, tone shifts, structural choices, and how belonging/exclusion is presented. Model the first row (speaker's perspective) for both poems, then students complete the remaining rows.",
+        "Select two poems from the Belonging collection that offer rich comparison (e.g. 'Island Man' by Grace Nichols and 'The Émigrée' by Carol Rumens, two remembered homelands, or 'Us' by Zaffar Kunial and 'Jamaican British' by Raymond Antrobus, two divided identities - adjust to the poems your class has studied). Read both poems aloud, the first with teacher modelling of tone and emphasis. For each poem, students complete a comparative analysis table: speaker's perspective, key imagery, tone shifts, structural choices, and how belonging/exclusion is presented. Model the first row (speaker's perspective) for both poems, then students complete the remaining rows.",
       differentiation: {
         support:
           'Pre-fill the table for Poem A; students complete Poem B with guided prompts alongside.',
@@ -1081,7 +1099,7 @@ const lesson7: LessonPlan = {
       title: 'Comparative Writing: Crafting an Edexcel Response',
       duration: '18 minutes',
       instructions:
-        "Display an Edexcel-style question: 'Compare how poets present ideas about belonging in [Poem A] and one other poem from the Belonging cluster.' Recap the integrated comparison structure from Lesson 6. Students plan and write one comparative paragraph, choosing a specific aspect to compare (e.g. how both poets use voice/persona to convey belonging, or how structural choices reflect the experience of exclusion). Share two paragraphs under the visualiser. Class identifies strengths using the Edexcel Level 4/5 descriptors.",
+        "Display an Edexcel-style question: 'Compare how poets present ideas about belonging in [Poem A] and one other poem from the Belonging collection.' Recap the integrated comparison structure from Lesson 6. Students plan and write one comparative paragraph, choosing a specific aspect to compare (e.g. how both poets use voice/persona to convey belonging, or how structural choices reflect the experience of exclusion). Share two paragraphs under the visualiser. Class identifies strengths using the Edexcel Level 4/5 descriptors.",
       differentiation: {
         support:
           'Provide a planning frame with the comparison aspect pre-selected and sentence starters.',
@@ -1109,11 +1127,11 @@ const lesson7: LessonPlan = {
     },
   },
   homework:
-    "Write a comparison of two poems from the Belonging cluster, answering: 'How do the poets present the experience of feeling like an outsider?' Write at least two comparative paragraphs.",
+    "Write a comparison of two poems from the Belonging collection, answering: 'How do the poets present the experience of feeling like an outsider?' Write at least two comparative paragraphs.",
   worksheetQuestions: [
     {
       question:
-        'What themes might you expect to find in the Belonging cluster? List at least five.',
+        'What themes might you expect to find in the Belonging collection? List at least five.',
       lines: 4,
       modelAnswer:
         'Identity, cultural heritage, community, exclusion, alienation, displacement, home, family, race and ethnicity, language and dialect, nostalgia, acceptance, prejudice, migration, and the tension between individual and collective identity.',
@@ -1124,15 +1142,15 @@ const lesson7: LessonPlan = {
         'Why might a poet choose to write in dialect or non-standard English when exploring belonging?',
       lines: 5,
       modelAnswer:
-        "Writing in dialect or non-standard English is an act of cultural assertion - it claims belonging to a specific community and resists the dominance of 'standard' English. It can also convey authenticity, making the speaker's voice feel genuine and rooted in a particular place or culture. For example, John Agard's use of Caribbean dialect in 'Half-caste' challenges the reader's assumptions about what 'proper' English sounds like, turning language itself into a statement about belonging and identity.",
+        "Writing in dialect or non-standard English is an act of cultural assertion - it claims belonging to a specific community and resists the dominance of 'standard' English. It can also convey authenticity, making the speaker's voice feel genuine and rooted in a particular place or culture. For example, Zaffar Kunial's 'Us' opens with the non-standard 'us takes', and the speaker recalls that, in what may be 'a Midlands thing', 'us equally meant me': one dialect word becomes a way of asking who the speaker belongs with. Raymond Antrobus's 'Jamaican British' does something similar when the speaker, as a boy, tells his father 'I hate dem, all dem Jamaicans': the Jamaican form gives away the heritage he is denying.",
       marks: 4,
     },
     {
       question:
-        'Choose one poem from the Belonging cluster. Analyse how the poet uses imagery to convey ideas about belonging or exclusion.',
+        'Choose one poem from the Belonging collection. Analyse how the poet uses imagery to convey ideas about belonging or exclusion.',
       lines: 6,
       modelAnswer:
-        "In 'The Émigrée', Carol Rumens uses light imagery - 'my city takes me dancing', 'sunlight' - to present the speaker's remembered homeland as a place of warmth and joy. This idealised imagery conveys a deep sense of belonging to a place that exists now only in memory. The contrast with the 'dark city' of the present suggests that exclusion from the homeland has not diminished its emotional significance. The imagery implies that true belonging is felt internally, not determined by physical presence.",
+        "In 'The Émigrée', Carol Rumens builds the speaker's lost city out of light: the memory is 'sunlight-clear', the speaker is 'branded by an impression of sunlight', and the city's language 'tastes of sunlight'. The repeated image makes belonging something carried inside the speaker rather than a place to return to, since 'there’s no way back at all'. The contrast comes at the end, when people in the new city 'accuse me of being dark in their free city': the light of the remembered home is set against the suspicion the speaker meets now, so that the speaker belongs fully to neither.",
       marks: 4,
     },
     {
@@ -1140,7 +1158,7 @@ const lesson7: LessonPlan = {
         'Explain how form and structure can contribute to the theme of belonging. Give an example from one poem.',
       lines: 5,
       modelAnswer:
-        "Form and structure can mirror the experience of belonging or exclusion. For example, free verse (no regular rhyme or metre) can convey a sense of dislocation or freedom from constraint, reflecting a speaker who does not 'fit' conventional patterns. Alternatively, a tightly structured poem with regular rhyme might suggest order, stability, and rootedness. In 'Half-caste', the lack of punctuation and irregular line lengths create a sense of urgency and defiance, structurally embodying the speaker's refusal to be defined by others.",
+        "Form and structure can mirror the experience of belonging or exclusion. For example, free verse (no regular rhyme or metre) can convey a sense of dislocation or freedom from constraint, reflecting a speaker who does not 'fit' conventional patterns. Alternatively, a tightly structured poem with regular rhyme might suggest order, stability, and rootedness. In 'Island Man', Grace Nichols uses free verse with no punctuation, so the lines drift like the man's half-waking thoughts between his Caribbean island and London. The doubled words 'groggily groggily' and 'muffling muffling' slow the poem as he is pulled from his dream back to the 'dull North Circular roar', and it ends flatly on 'Another London day'. The structure enacts a man who belongs to one place in his head and to another in his waking life.",
       marks: 4,
     },
     {
@@ -1152,17 +1170,17 @@ const lesson7: LessonPlan = {
     },
     {
       question:
-        'Write a comparative sentence linking two poems from the Belonging cluster. Identify one similarity in method.',
+        'Write a comparative sentence linking two poems from the Belonging collection. Identify one similarity in method.',
       lines: 4,
       modelAnswer:
-        "Both 'Half-caste' and 'No Problem' use a direct, confrontational first-person voice to challenge societal prejudice, placing the reader in the position of the person who has been excluded. This shared method makes the experience of not belonging feel immediate and personal, demanding the reader's engagement rather than allowing passive sympathy.",
+        "Both 'Island Man' and 'The Émigrée' present a remembered home through imagery that arrives unbidden: Nichols's island comes back 'in his head' as he wakes, while Rumens's city 'comes to me in its own white plane', so in both poems the place that is lost is more vivid than the place the speaker lives in now.",
       marks: 3,
     },
   ],
   teacherNotes: [
-    'The Belonging cluster explores identity, race, culture, and community. Handle discussions sensitively, particularly around race and prejudice.',
-    'Ensure students have read all poems in the cluster before this lesson. This lesson focuses on comparison skills, not first encounters with the poems.',
-    "Adjust poem selections based on your school's chosen cluster. The Edexcel anthology offers different cluster options.",
+    'The Belonging collection explores identity, heritage, migration, home and community. Handle discussions sensitively, particularly around race and prejudice.',
+    'Ensure students have read all poems in the collection before this lesson. This lesson focuses on comparison skills, not first encounters with the poems.',
+    "This lesson is for schools that study Belonging, Collection D of Pearson's anthology. The anthology has four collections of 15 poems, and the exam sets a question on each; adjust the poem choices to those your class has studied.",
     'Display comparison connectives prominently in the classroom throughout the poetry unit.',
   ],
   targetedSkills: [
@@ -1170,8 +1188,8 @@ const lesson7: LessonPlan = {
     'Poetry Analysis',
     'Language Analysis',
     'Comparative Analysis',
-    'AO1: Textual Reference',
     "AO2: Writer's Methods",
+    'AO3: Context',
     'Cultural Context',
   ],
 }
@@ -1186,7 +1204,10 @@ const lesson8: LessonPlan = {
   yearGroup: '10-11',
   duration: '60 minutes',
   objectives: [
-    'Understand the structure of the Edexcel unseen poetry section (Paper 2 Literature, Section C)',
+    // 9 October 2026: this lesson described an unseen "Section C" of 32 marks, a single poem and then
+    // a comparison. Pearson sets one question, Section B Part 2: two unseen poems compared, 20 marks,
+    // AO1 8 and AO2 12 (1ET0 specification, Issue 2, PDF pages 24 and 26).
+    'Understand the structure of the Edexcel unseen poetry question (Paper 2 Literature, Section B Part 2: one comparison of two poems)',
     'Develop a systematic approach to reading and annotating an unseen poem under timed conditions',
     'Practise comparing two unseen poems on a shared theme, as required by the Edexcel exam',
     'Build confidence with the specific demands of the unseen poetry comparison question',
@@ -1227,7 +1248,7 @@ const lesson8: LessonPlan = {
       title: 'Reading and Analysing the First Unseen Poem',
       duration: '18 minutes',
       instructions:
-        "Distribute Unseen Poem A (select a poem on a clear theme such as nature, memory, or conflict - approximately 16-24 lines). Guide students through the systematic reading process: (1) Read the whole poem once for overall meaning (2 mins). (2) Re-read, annotating key features using the priority order (3 mins). (3) Identify the poet's message or attitude (1 min). Students then write three analytical bullet points, each identifying a technique, embedding a quotation, and explaining the effect. This mirrors the first part of the Edexcel unseen question.",
+        "Distribute Unseen Poem A (select a poem on a clear theme such as nature, memory, or conflict - approximately 16-24 lines). Guide students through the systematic reading process: (1) Read the whole poem once for overall meaning (2 mins). (2) Re-read, annotating key features using the priority order (3 mins). (3) Identify the poet's message or attitude (1 min). Students then write three analytical bullet points, each identifying a technique, embedding a quotation, and explaining the effect. This is the close reading that each half of the comparison depends on; the exam itself asks only for the comparison.",
       differentiation: {
         support:
           "Provide guided annotation prompts in the margin of the poem (e.g. 'What technique is used here?' 'What mood does this create?').",
@@ -1273,14 +1294,14 @@ const lesson8: LessonPlan = {
     },
   },
   homework:
-    'Complete a full unseen poetry comparison using two new poems provided on a homework sheet. Follow the systematic reading process and write at least two comparative paragraphs. Time yourself - aim for 30 minutes maximum.',
+    'Complete a full unseen poetry comparison using two new poems provided on a homework sheet. Follow the systematic reading process and write at least two comparative paragraphs. Time yourself - aim for about 35 minutes, as in the exam.',
   worksheetQuestions: [
     {
       question:
         'Describe the structure of the Edexcel unseen poetry question. How many poems are involved and what are you asked to do?',
       lines: 5,
       modelAnswer:
-        'The Edexcel unseen poetry section (Paper 2, Section C) involves two unseen poems. The first question asks students to analyse one poem, focusing on language, structure, and form (AO1/AO2). The second question provides a second poem and asks students to compare the two poems on a shared theme. The comparison question requires students to discuss similarities and/or differences in how the poets present the given theme, comparing methods as well as ideas.',
+        'The Edexcel unseen question is Paper 2, Section B Part 2: one question on two unseen contemporary poems linked by a theme. Students compare how the poets present that theme, through their ideas and their use of language, form and structure. It is worth 20 marks: 8 for AO1 (a critical, comparative response with references) and 12 for AO2 (analysis of language, form and structure). There is no separate question on a single poem.',
       marks: 4,
     },
     {
@@ -1320,15 +1341,15 @@ const lesson8: LessonPlan = {
         "Why is it important to discuss 'the effect on the reader' in your analysis? How does this relate to AO2?",
       lines: 4,
       modelAnswer:
-        "Discussing the effect on the reader shows that you understand how a writer's choices create meaning and impact. AO2 specifically asks students to analyse 'the effects of the writer's choices of language, structure and form.' Without discussing effect, analysis remains descriptive (feature-spotting) rather than analytical. Phrases like 'this creates a sense of...', 'this evokes...' or 'the reader is made to feel...' demonstrate engagement with AO2.",
+        "Discussing the effect on the reader shows that you understand how a writer's choices create meaning and impact. AO2 asks students to 'Analyse the language, form and structure used by a writer to create meanings and effects'. Without discussing effect, analysis remains descriptive (feature-spotting) rather than analytical. Phrases like 'this creates a sense of...', 'this evokes...' or 'the reader is made to feel...' demonstrate engagement with AO2.",
       marks: 3,
     },
   ],
   teacherNotes: [
-    'The unseen poetry section is in Paper 2, Section C and is worth 32 marks in total (20 for the first poem, 12 for the comparison).',
+    'The unseen question is Paper 2, Section B Part 2: one comparison of two poems, worth 20 marks (AO1 8, AO2 12). There is no single-poem question.',
     'Select unseen poems that are accessible but analytically rich. Avoid poems that are too obscure for the first practice session.',
     'Time pressure is significant in this section. Practise timed conditions regularly once the technique is established.',
-    'The comparison question carries fewer marks (12) but students often lose marks here by writing about the poems separately rather than comparatively.',
+    'Comparison is the whole task: an answer on only one poem cannot go above the top of Level 2 (8 marks), and students often lose marks by writing about the poems separately rather than comparatively.',
   ],
   targetedSkills: [
     'Unseen Poetry',
@@ -1612,7 +1633,7 @@ const lesson10: LessonPlan = {
         'List all four Edexcel English exam papers and state the duration and total marks for each.',
       lines: 6,
       modelAnswer:
-        'Language Paper 1 (1EN0/01): Fiction and Imaginative Writing - 1 hour 45 minutes, 64 marks. Language Paper 2 (1EN0/02): Non-Fiction and Transactional Writing - 2 hours 5 minutes, 96 marks. Literature Paper 1 (1ET0/01): Shakespeare and Post-1914 Literature - 1 hour 45 minutes, 80 marks (including 8 SPaG). Literature Paper 2 (1ET0/02): 19th-Century Novel, Poetry Anthology, and Unseen Poetry - 2 hours 15 minutes, 100 marks.',
+        'Language Paper 1 (1EN0/01): Fiction and Imaginative Writing - 1 hour 45 minutes, 64 marks. Language Paper 2 (1EN0/02): Non-Fiction and Transactional Writing - 2 hours 5 minutes, 96 marks. Literature Paper 1 (1ET0/01): Shakespeare and Post-1914 Literature - 1 hour 45 minutes, 80 marks (including 8 SPaG). Literature Paper 2 (1ET0/02): 19th-century Novel and Poetry since 1789 - 2 hours 15 minutes, 80 marks (no SPaG).',
       marks: 4,
     },
     {
@@ -1633,10 +1654,12 @@ const lesson10: LessonPlan = {
     },
     {
       question:
-        'Create a timing plan for Edexcel Literature Paper 2 (2 hours 15 minutes, 100 marks). Show your working.',
+        'Create a timing plan for Edexcel Literature Paper 2 (2 hours 15 minutes, 80 marks). Show your working.',
       lines: 6,
       modelAnswer:
-        'Total time: 135 minutes. Total marks: 100. Rate: approximately 1.35 minutes per mark. Section A (19th-century novel, 40 marks): 54 minutes - includes 5 minutes planning and 49 minutes writing. Section B (Poetry anthology comparison, 30 marks): 40 minutes - includes 5 minutes planning and 35 minutes writing. Section C (Unseen poetry, 20 + 12 marks = 32 marks): 38 minutes - split as 22 minutes on the first poem and 16 minutes on the comparison. Checking: 3 minutes.',
+        // 9 October 2026: this planned a 100-mark paper with a Section C of unseen poetry worth 32.
+        // Paper 2 is 80 marks in four answers of 20 (1ET0 specification, Issue 2, PDF page 24).
+        'Total time: 135 minutes. Total marks: 80, in four answers of 20. Rate: about 1.7 minutes per mark. Section A (19th-century novel, 40 marks): 60 minutes - 30 on part (a), the extract, and 30 on part (b), the novel elsewhere, each with about 5 minutes of planning. Section B Part 1 (anthology comparison, 20 marks): 35 minutes. Section B Part 2 (unseen poetry comparison, 20 marks): 35 minutes. Checking: 5 minutes.',
       marks: 5,
     },
     {
@@ -1644,7 +1667,7 @@ const lesson10: LessonPlan = {
         'Identify your two weakest areas across the four papers. For each, suggest one specific revision activity you could do.',
       lines: 6,
       modelAnswer:
-        'Example response: Weakest area 1: Language Paper 1 Q4 (evaluation). Revision activity: Practise three past paper Q4 questions per week, using the mark scheme to self-assess and identify whether I am making clear judgements supported by evidence. Weakest area 2: Literature Paper 2 unseen poetry comparison. Revision activity: Complete one unseen poetry comparison each week using poems from a revision anthology, timing myself to 16 minutes and practising integrated comparison structure.',
+        'Example response: Weakest area 1: Language Paper 1 Q4 (evaluation). Revision activity: Practise three past paper Q4 questions per week, using the mark scheme to self-assess and identify whether I am making clear judgements supported by evidence. Weakest area 2: Literature Paper 2 unseen poetry comparison. Revision activity: Complete one unseen poetry comparison each week using poems from a revision anthology, timing myself to 35 minutes and practising integrated comparison structure.',
       marks: 4,
     },
     {
