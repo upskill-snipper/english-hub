@@ -360,17 +360,22 @@ const lesson3: LessonPlan = {
   board: 'Edexcel',
   yearGroup: '10-11',
   duration: '60 minutes',
+  // 9 October 2026: this lesson taught one answer that moves from the extract to the wider play,
+  // with context throughout and AO1, AO2 and AO3 in every paragraph, which is AQA's Shakespeare
+  // question. Pearson's 1ET0/01 (specification Issue 2, PDF page 23, and its June 2024 mark
+  // scheme) sets two parts: (a) on the extract alone, for AO2 (20 marks), and (b) on a theme from
+  // it elsewhere in the play, for AO1 (15) and AO3 (5).
   objectives: [
     'Understand how Edexcel structures the Macbeth question on Paper 1 Literature (1ET0/01)',
-    'Practise the extract-to-wider-play approach required by the Edexcel mark scheme',
+    'Practise the two parts of the question: the extract alone in part (a), and a theme from it elsewhere in the play in part (b)',
     "Analyse Shakespeare's language, form, and structure in a key extract (Act 1, Scene 7 - 'If it were done')",
-    'Develop the skill of linking analysis to context and the wider play as required by AO1, AO2, and AO3',
+    'Know what each part rewards: AO2 alone in part (a); AO1 and AO3 in part (b)',
   ],
   successCriteria: [
     'I can explain the structure of the Edexcel Macbeth question and what it requires',
     'I can analyse language and dramatic techniques in the given extract',
-    'I can link my analysis of the extract to the wider play and relevant context',
-    'I can write a paragraph that addresses AO1, AO2, and AO3',
+    'I can keep part (a) on the extract, and save context and the rest of the play for part (b)',
+    'I can write a part (a) paragraph on the extract and a part (b) paragraph on a theme elsewhere in the play',
   ],
   keywords: [
     'extract',
@@ -387,7 +392,7 @@ const lesson3: LessonPlan = {
     title: 'Extract-Based Thinking: What Would Edexcel Ask?',
     duration: '8 minutes',
     instructions:
-      "Display a short extract from Act 1, Scene 7 (Macbeth's 'If it were done when 'tis done' soliloquy). Before revealing the question, ask students: 'If you were an examiner, what question would you ask about this extract?' Students write their predicted question on whiteboards. Reveal the actual Edexcel-style question and discuss how close their predictions were. Establish the pattern: Edexcel gives an extract and asks students to analyse it in relation to the whole play.",
+      "Display a short extract from Act 1, Scene 7 (Macbeth's 'If it were done when 'tis done' soliloquy). Before revealing the question, ask students: 'If you were an examiner, what question would you ask about this extract?' Students write their predicted question on whiteboards. Reveal the actual Edexcel-style question and discuss how close their predictions were. Establish the pattern: Edexcel prints an extract and asks two questions, part (a) on the extract itself and part (b) on a theme from it elsewhere in the play.",
     differentiation: {
       support: 'Provide three possible question stems to choose from.',
       core: 'Students write their own question independently.',
@@ -406,7 +411,7 @@ const lesson3: LessonPlan = {
           'Provide a partially annotated extract with key quotations underlined and prompts for analysis.',
         core: 'Students annotate independently using the three focus questions as a framework.',
         stretch:
-          'Students identify how the extract foreshadows later events and connects to the Jacobean context of regicide and the Divine Right of Kings.',
+          'Students list how the extract foreshadows later events and links to the Jacobean context of regicide and the Divine Right of Kings, as material for part (b): part (a) gives marks for neither.',
       },
       resources: [
         'Annotatable extract handout',
@@ -415,16 +420,16 @@ const lesson3: LessonPlan = {
       ],
     },
     {
-      title: 'Writing an Edexcel-Standard Paragraph: Extract to Wider Play',
+      title: 'Writing Edexcel Paragraphs: Part (a) and Part (b)',
       duration: '20 minutes',
       instructions:
-        'Introduce the Edexcel paragraph structure: Point (answer the question with a clear argument), Evidence (embed a quotation from the extract), Analyse (explore language/technique and effect), Context (link to Jacobean context), Wider Play (connect to another moment in the play). Model a full paragraph on the board. Students then write their own paragraph on a different aspect of the extract. Use the Edexcel mark scheme Level 4/5 descriptors as a success checklist. Two or three students share paragraphs under the visualiser for class feedback.',
+        'Introduce a paragraph structure for each part. Part (a), the extract alone (AO2): Point (answer the question with a clear argument), Evidence (embed a quotation from the extract), Analyse (explore the language, form or structure and its effect). Part (b), a theme elsewhere in the play (AO1 and AO3): Argument (a clear point about the theme), Evidence (a reference to another part of the play, from memory), Explanation (what it shows and why it matters), Context (woven in where it develops the argument). Model one paragraph of each kind on the board. Students then write their own part (a) paragraph on a different aspect of the extract. Use the Edexcel mark scheme Level 4/5 descriptors as a success checklist. Two or three students share paragraphs under the visualiser for class feedback.',
       differentiation: {
         support:
-          'Provide a paragraph frame with sentence starters for each element (Point, Evidence, Analyse, Context, Wider Play).',
-        core: 'Students write a full paragraph independently using the structure.',
+          'Provide paragraph frames with sentence starters for each element of both structures.',
+        core: 'Students write a full part (a) paragraph independently using the structure.',
         stretch:
-          'Students write two paragraphs and evaluate which would score higher against the mark scheme descriptors, explaining why.',
+          'Students also write a part (b) paragraph on a theme from the extract, then explain which objectives each paragraph earns marks for and why.',
       },
       resources: [
         'Model paragraph on visualiser/slide',
@@ -453,7 +458,9 @@ const lesson3: LessonPlan = {
         'How does the Edexcel Macbeth question differ from other exam boards? What is the extract-based approach?',
       lines: 5,
       modelAnswer:
-        "Edexcel provides a printed extract from the play and asks students to analyse it in relation to the whole text. Students must show close analysis of the extract's language, form, and structure, but also demonstrate knowledge of the wider play by linking to other scenes, characters, and themes. This differs from some boards which may focus purely on a theme across the whole text.",
+        // 9 October 2026: this described one answer analysing the extract "in relation to the
+        // whole text", which is AQA's question. Pearson sets two parts.
+        'Edexcel prints an extract of about 30 lines and sets a two-part question on it, worth 40 marks in Paper 1, Section A. Part (a) asks how Shakespeare presents something in the extract: 20 marks, for AO2 (language, form and structure) alone, so context and the rest of the play earn nothing there. Part (b) asks about the importance of a theme from the extract elsewhere in the play: 20 marks, 15 for AO1 (a critical, personal response supported by references) and 5 for AO3 (context). AQA, by contrast, sets one essay that starts with its extract and moves out to the play as a whole.',
       marks: 4,
     },
     {
@@ -474,7 +481,7 @@ const lesson3: LessonPlan = {
     },
     {
       question:
-        "How would a Jacobean audience have responded to Macbeth's contemplation of regicide? Link to context.",
+        "How would a Jacobean audience have responded to Macbeth's contemplation of regicide? Link to context, as you would in part (b): part (a) gives context no marks.",
       lines: 5,
       modelAnswer:
         "A Jacobean audience would have been horrified by Macbeth's plan to kill King Duncan. They believed in the Divine Right of Kings - that monarchs were appointed by God - so killing a king was not just murder but a sin against God and the natural order. This would have resonated especially strongly given the Gunpowder Plot of 1605, a recent attempt to assassinate King James I.",
@@ -482,18 +489,20 @@ const lesson3: LessonPlan = {
     },
     {
       question:
-        "Write a model paragraph analysing the metaphor 'trammel up the consequence' from the extract.",
+        "Write a model part (a) paragraph analysing the metaphor 'trammel up the consequence' from the extract.",
       lines: 8,
       modelAnswer:
-        "Shakespeare uses the metaphor 'trammel up the consequence' to reveal Macbeth's desperate wish to contain the repercussions of Duncan's murder. The word 'trammel' means to catch in a net, suggesting Macbeth sees the consequences as wild and uncontrollable - something that must be trapped. This reveals his awareness that the murder will unleash chaos, yet his ambition drives him to seek a way around it. A Jacobean audience would recognise this as hubris: the belief that a mortal can control fate. This foreshadows the unravelling of Macbeth's power in Acts 3-5, where guilt and paranoia consume him.",
+        // 9 October 2026: this paragraph ended on the Jacobean audience and on Acts 3-5. Part (a)
+        // is marked for AO2 alone, so it now stays with the extract's language.
+        "Shakespeare uses the metaphor 'trammel up the consequence' to reveal Macbeth's desperate wish to contain the repercussions of Duncan's murder. The word 'trammel' means to catch in a net, suggesting Macbeth sees the consequences as wild and uncontrollable - something that must be trapped. This reveals his awareness that the murder will unleash chaos, yet his ambition drives him to seek a way around it. The metaphor sits inside a conditional, 'If th' assassination / Could trammel up the consequence', so even as Macbeth imagines the aftermath he keeps the murder itself hypothetical, a sign of how far he is from committing to it.",
       marks: 6,
     },
     {
       question:
-        "Identify one moment later in the play that connects to Macbeth's conflict in this extract. Explain the link.",
+        "Part (b) practice: identify one moment later in the play that connects to Macbeth's conflict in this extract. Explain the link.",
       lines: 5,
       modelAnswer:
-        "In Act 5, Scene 1, Lady Macbeth sleepwalks and obsessively tries to wash imagined blood from her hands. This connects to Macbeth's fear in Act 1, Scene 7 that the murder cannot be cleanly 'done' - the consequences he feared have manifested as inescapable psychological torment. Shakespeare shows that the 'consequence' could not be 'trammelled up', fulfilling the prophecy of Macbeth's own anxieties.",
+        "In Act 5, Scene 1, Lady Macbeth sleepwalks and obsessively tries to wash imagined blood from her hands. This connects to Macbeth's fear in Act 1, Scene 7 that the murder cannot be cleanly 'done' - the consequences he feared have manifested as inescapable psychological torment. Shakespeare shows that the consequence Macbeth hoped to 'trammel up' could not be contained, so his own anxieties come true.",
       marks: 4,
     },
   ],
@@ -501,9 +510,12 @@ const lesson3: LessonPlan = {
     // 9 October 2026: this said the question carried 4 marks for SPaG and that SPaG counted here.
     // Pearson's 1ET0 specification (Issue 2, PDF pages 23 and 26) gives it none.
     'The Edexcel Shakespeare question is in Paper 1 Section A and is worth 40 marks: part (a) 20 for analysis of the extract, part (b) 15 for the response to the play and 5 for context. It carries no SPaG marks; those 8 marks are on the post-1914 essay in Section B.',
-    'Practise the extract-to-wider-play skill repeatedly - it is the most common area where students underperform on Edexcel.',
-    'Act 1, Scene 7 is one of the most frequently examined extracts. Build a bank of 6-8 key extracts for exam preparation.',
-    "Encourage students to learn 10-15 key quotations from across the play to support the 'wider play' element of their responses.",
+    // 9 October 2026: these notes taught the extract-to-wider-play approach, AQA's, and called
+    // Act 1, Scene 7 one of the most frequently examined extracts. Of the four papers checked
+    // (November 2020, 2023, 2024 and 2025), only 2023 set it, lines 35-67, not this soliloquy.
+    "Keep the two parts apart. Pearson's examiners' reports keep noting candidates who put context into part (a), where it earns nothing; in part (b), the stronger answers range across the rest of the play and weave context into the argument rather than adding it at the end.",
+    'The extract can come from anywhere in the play: recent papers set Act 4, Scene 3 (November 2020), Act 1, Scene 7, lines 35-67 (2023), Act 5, Scene 8 (2024) and Act 1, Scene 3 (2025). Build a bank of 6-8 key extracts for exam preparation.',
+    'Encourage students to learn 10-15 key quotations from across the play for part (b), which is answered from memory: the exam is closed book.',
   ],
   targetedSkills: [
     'Shakespeare',
@@ -701,13 +713,15 @@ const lesson5: LessonPlan = {
     'Understand how Romeo and Juliet is assessed on Edexcel Literature Paper 1 alongside Macbeth (1ET0/01)',
     'Explore how Shakespeare intertwines the themes of love, conflict, and tragedy across the play',
     'Analyse key extracts showing how love and conflict coexist, focusing on Act 1, Scene 5 and Act 3, Scene 1',
-    'Practise the Edexcel extract-plus-wider-play response structure',
+    // 9 October 2026: this was "the Edexcel extract-plus-wider-play response structure", which is
+    // AQA's. Pearson's question has two parts, as Lesson 3 sets out.
+    'Practise both parts of the Edexcel question: the extract alone in part (a) (AO2), and a theme from it elsewhere in the play in part (b) (AO1 and AO3)',
   ],
   successCriteria: [
     'I can explain how love and conflict are interconnected in Romeo and Juliet',
     "I can analyse Shakespeare's language in at least two key extracts",
-    'I can link the themes to Elizabethan context (honour, patriarchy, fate)',
-    'I can write an analytical paragraph that moves from extract to wider play',
+    'I can link the themes to Elizabethan context (honour, patriarchy, fate) in part (b), where context earns marks',
+    'I can write a part (a) paragraph on an extract and a part (b) paragraph on a theme elsewhere in the play',
   ],
   keywords: [
     'oxymoron',
@@ -738,13 +752,13 @@ const lesson5: LessonPlan = {
       title: 'Extract Analysis: Act 1, Scene 5 - The Shared Sonnet',
       duration: '20 minutes',
       instructions:
-        "Read the shared sonnet between Romeo and Juliet (Act 1, Scene 5, lines 93-110) aloud with two students taking the parts. Annotate the extract as a class, focusing on: the religious imagery ('holy shrine', 'pilgrim', 'saints'), the sonnet form as a symbol of perfect love, and the dramatic irony of their meeting at a Capulet feast. Students write one paragraph analysing how Shakespeare presents love in this extract. Emphasise that Edexcel expects close language analysis (AO2) supported by context (AO3).",
+        "Read the shared sonnet between Romeo and Juliet (Act 1, Scene 5, lines 93-110) aloud with two students taking the parts. Annotate the extract as a class, focusing on: the religious imagery ('holy shrine', 'pilgrim', 'saints'), the sonnet form as a symbol of perfect love, and the dramatic irony of their meeting at a Capulet feast. Students write one paragraph analysing how Shakespeare presents love in this extract. Emphasise that part (a) is marked for close analysis of language, form and structure (AO2) alone: context and the rest of the play earn no marks there.",
       differentiation: {
         support:
           'Provide a cloze paragraph with key analytical vocabulary missing for students to complete.',
         core: 'Students write a full paragraph independently, embedding at least two quotations.',
         stretch:
-          "Students compare the religious imagery to Romeo's earlier Petrarchan language about Rosaline, evaluating what the shift reveals about the nature of Romeo's love.",
+          "Students compare the religious imagery to Romeo's earlier Petrarchan language about Rosaline, evaluating what the shift reveals about the nature of Romeo's love: a part (b) point, since it reaches beyond the extract.",
       },
       resources: [
         'Extract handout (Act 1, Scene 5, lines 93-110)',
@@ -756,7 +770,7 @@ const lesson5: LessonPlan = {
       title: 'Linking Love to Conflict: Act 3, Scene 1 as Turning Point',
       duration: '22 minutes',
       instructions:
-        "Transition to Act 3, Scene 1 - the deaths of Mercutio and Tybalt. Read key extracts: Romeo's 'O, I am fortune's fool!' and his earlier attempt to keep peace ('Tybalt, the reason that I have to love thee / Doth much excuse the appertaining rage'). Discuss how Romeo's love for Juliet directly causes the conflict with Tybalt. Students create a dual-column analysis: left column analyses how love motivates Romeo's actions; right column analyses how conflict destroys them. This models the Edexcel skill of connecting extract analysis to the wider play.",
+        "Transition to Act 3, Scene 1 - the deaths of Mercutio and Tybalt. Read key extracts: Romeo's 'O, I am fortune's fool!' and his earlier attempt to keep peace ('Tybalt, the reason that I have to love thee / Doth much excuse the appertaining rage'). Discuss how Romeo's love for Juliet directly causes the conflict with Tybalt. Students create a dual-column analysis: left column analyses how love motivates Romeo's actions; right column analyses how conflict destroys them. This is part (b) thinking: following a theme from an extract to elsewhere in the play.",
       differentiation: {
         support:
           'Pre-populate the left column; students complete the conflict column with guided prompts.',
@@ -784,7 +798,7 @@ const lesson5: LessonPlan = {
     },
   },
   homework:
-    "Write two paragraphs answering: 'How does Shakespeare present the relationship between love and conflict in Romeo and Juliet?' One paragraph must focus on the extract studied today; the other must reference a different part of the play.",
+    "Write one paragraph for each part of the question. Part (a): 'Explore how Shakespeare presents love in this extract' (Act 1, Scene 5), analysing language, form and structure only. Part (b): 'Explain the importance of conflict elsewhere in the play', with references from memory and context woven into the argument.",
   worksheetQuestions: [
     {
       question: 'Explain the significance of the shared sonnet form in Act 1, Scene 5.',
@@ -798,7 +812,9 @@ const lesson5: LessonPlan = {
         "How does the religious imagery in the shared sonnet affect the audience's perception of Romeo and Juliet's love?",
       lines: 5,
       modelAnswer:
-        "The religious imagery ('holy shrine', 'pilgrim', 'saints', 'prayer') elevates their love from physical attraction to something sacred and divine. By framing their meeting in terms of worship and devotion, Shakespeare suggests their love transcends the worldly feud between their families. For an Elizabethan audience, this religious language would carry profound weight, implying their love is sanctioned by a higher power even as society forbids it.",
+        // 9 October 2026: this ended on the Elizabethan audience. An answer on the extract is
+        // part (a), marked for AO2 alone, so it now ends on the language.
+        "The religious imagery ('holy shrine', 'pilgrim', 'saints', 'prayer') elevates their love from physical attraction to something sacred and divine. By framing their meeting in terms of worship and devotion, Shakespeare suggests their love transcends the worldly feud between their families. Casting the kiss as a pilgrim's devotion makes their first meeting feel sacred, which raises the stakes before either of them learns who the other is.",
       marks: 4,
     },
     {
@@ -836,9 +852,12 @@ const lesson5: LessonPlan = {
   ],
   teacherNotes: [
     'Romeo and Juliet is an alternative Shakespeare text on Edexcel Paper 1 (alongside Macbeth, The Tempest, Twelfth Night, etc.). Check which text your school has chosen.',
-    'The extract-plus-wider-play structure is identical to the Macbeth approach. Cross-reference with Lesson 3 for consistency.',
+    // 9 October 2026: these notes called the question "extract-plus-wider-play", which is AQA's, and
+    // the shared sonnet one of the most commonly examined extracts; none of the four papers checked
+    // (November 2020, 2023, 2024 and 2025) set it.
+    'The question has the same two parts as the Macbeth question in Lesson 3: (a) the extract, for AO2 alone (20 marks); (b) a theme from it elsewhere in the play, for AO1 (15) and AO3 (5).',
     'Students often separate love and conflict into distinct themes - this lesson deliberately shows they are inseparable, which is key to high-level analysis.',
-    'The shared sonnet is one of the most commonly examined extracts. Ensure all students can analyse it confidently.',
+    'The extract can come from anywhere in the play: recent papers set Act 2, Scene 5 (November 2020), Act 5, Scene 1 (2023), Act 3, Scene 5 (2024) and Act 3, Scene 1 (2025). The shared sonnet is worth knowing well, as is every key scene.',
   ],
   targetedSkills: [
     'Shakespeare',
