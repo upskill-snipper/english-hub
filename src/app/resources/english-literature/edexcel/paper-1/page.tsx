@@ -66,8 +66,14 @@ export default async function Paper1Page() {
         {/* ── Exam structure ────────────────────────────────────── */}
         <section>
           <h2 className="text-2xl font-bold text-foreground">{_tr(`Exam Structure`)}</h2>
+          {/* 9 October 2026: this said Section A was one essay with no extract and 4 marks for
+              SPaG, and Section B had analysis of methods and no SPaG. Pearson's 1ET0/01
+              (specification Issue 2, PDF page 23, and its June 2024 mark scheme) has it the other
+              way round: Section A prints an extract and has no SPaG; Section B prints none, has
+              no marks for analysis of methods, and carries the paper's 8 marks for accuracy. */}
           <p className="mt-2 text-muted-foreground">
-            Paper 1 is divided into two sections. Both are closed-book - no texts are provided.
+            Paper 1 is divided into two sections, and the exam is closed book: you cannot take your
+            texts in.
           </p>
 
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
@@ -79,20 +85,23 @@ export default async function Paper1Page() {
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  You will answer one essay question on your studied Shakespeare play.
+                  One two-part question on your studied Shakespeare play, built on a printed extract
+                  of about 30 lines.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  No extract is provided - you must select your own evidence from across the play.
+                  Part (a), 20 marks: how Shakespeare presents something in the extract, marked for
+                  analysis of language, form and structure (AO2) only.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Questions typically focus on a character, theme, or relationship.
+                  Part (b), 20 marks: the importance of a theme from the extract elsewhere in the
+                  play, marked for your response to the play (AO1, 15 marks) and context (AO3, 5
+                  marks).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Assessed on reading and response, analysis of methods, context, and accuracy (SPaG
-                  - 4 marks).
+                  There are no marks for spelling, punctuation and grammar in this section.
                 </li>
               </ul>
             </div>
@@ -105,11 +114,13 @@ export default async function Paper1Page() {
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  You answer one essay question on your studied Post-1914 text.
+                  You answer one essay question on your studied post-1914 play or novel, from a
+                  choice of two.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  There is usually a choice of two questions per text.
+                  No extract is printed: each question opens with a short quotation from the text,
+                  and you select your own evidence from across it.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -117,8 +128,9 @@ export default async function Paper1Page() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Assessed on reading and response, analysis of methods, and context (no SPaG marks
-                  on this section).
+                  Marked for your response to the text (AO1, 16 marks), context (AO3, 16 marks), and
+                  vocabulary, sentence structures, spelling and punctuation (AO4, 8 marks). There
+                  are no marks for analysis of language, form and structure as such.
                 </li>
               </ul>
             </div>
@@ -340,8 +352,11 @@ export default async function Paper1Page() {
             Section B: Post-1914 Literature Set Texts
           </h2>
           <p className="mt-2 text-muted-foreground">
-            You will study one of the following modern texts. Questions may ask about a character,
-            theme, or the writer&apos;s ideas.
+            You will study one of twelve modern texts: six plays (An Inspector Calls, Hobson&apos;s
+            Choice, Blood Brothers, Journey&apos;s End, The Empress and Refugee Boy) and six novels
+            (Animal Farm, Lord of the Flies, Anita and Me, The Woman in Black, Coram Boy and Boys
+            Don&apos;t Cry). Five of them are below. Questions may ask about a character, theme, or
+            the writer&apos;s ideas.
           </p>
 
           <div className="mt-6 space-y-6">
@@ -498,8 +513,9 @@ export default async function Paper1Page() {
                     1
                   </span>
                   <span>
-                    <strong>Read the question carefully.</strong> Identify the key focus - is it a
-                    character, theme, or relationship? Underline the key word(s).
+                    <strong>Read both parts first.</strong> Part (a) is about the extract; part (b)
+                    is about a theme from it elsewhere in the play. Underline the key word(s) in
+                    each.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -507,9 +523,10 @@ export default async function Paper1Page() {
                     2
                   </span>
                   <span>
-                    <strong>{_tr(`Plan 3-4 main points`)}</strong> that cover different parts of the
-                    play (beginning, middle, end) to show awareness of the whole text and how the
-                    focus develops.
+                    <strong>{_tr(`Analyse language and dramatic techniques`)}</strong> - in part
+                    (a), explore Shakespeare&apos;s use of imagery, soliloquy, dramatic irony, verse
+                    vs prose, and stagecraft in the extract. That analysis is all part (a) is marked
+                    for: context and the rest of the play earn nothing there.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -517,8 +534,9 @@ export default async function Paper1Page() {
                     3
                   </span>
                   <span>
-                    <strong>{_tr(`Embed quotations`)}</strong> - since there is no extract, short,
-                    memorised quotes are essential. Aim for 2-3 quotes per paragraph.
+                    <strong>{_tr(`Plan 3-4 main points`)}</strong> for part (b) that cover different
+                    parts of the play (beginning, middle, end), away from the extract, to show how
+                    the theme develops.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -526,9 +544,9 @@ export default async function Paper1Page() {
                     4
                   </span>
                   <span>
-                    <strong>{_tr(`Analyse language and dramatic techniques`)}</strong> - explore
-                    Shakespeare&apos;s use of imagery, soliloquy, dramatic irony, verse vs prose,
-                    and stagecraft (analysis of methods).
+                    <strong>{_tr(`Embed quotations`)}</strong> - in part (a), short phrases from the
+                    printed extract; in part (b), short quotations you have memorised, since the
+                    rest of the play is not printed.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -536,9 +554,10 @@ export default async function Paper1Page() {
                     5
                   </span>
                   <span>
-                    <strong>Link to context meaningfully</strong> - connect ideas to
+                    <strong>Link to context meaningfully</strong> - in part (b), connect ideas to
                     Jacobean/Elizabethan society, audience reactions, and Shakespeare&apos;s
-                    intentions (context). Don&apos;t bolt on context as separate sentences.
+                    intentions. Context is worth 5 marks there and none in part (a). Don&apos;t bolt
+                    it on as separate sentences.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -546,8 +565,8 @@ export default async function Paper1Page() {
                     6
                   </span>
                   <span>
-                    <strong>{_tr(`Write accurately`)}</strong> - SPaG carries 4 marks on this
-                    section. Use literary terminology correctly and check your spelling.
+                    <strong>Divide your time equally.</strong> Pearson advises it: about 27 minutes
+                    on each part.
                   </span>
                 </li>
               </ol>
@@ -583,7 +602,8 @@ export default async function Paper1Page() {
                   <span>
                     <strong>{_tr(`Use the writer's name`)}</strong> - phrases like &quot;Priestley
                     presents...&quot; or &quot;Golding suggests...&quot; show you understand the
-                    text is a construct with a deliberate message (analysis of methods).
+                    text is a construct with a deliberate message, which is part of an informed,
+                    critical response.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -593,7 +613,7 @@ export default async function Paper1Page() {
                   <span>
                     <strong>{_tr(`Explore the writer's purpose`)}</strong> - why did they write this
                     text? What message are they conveying to the audience? This secures context
-                    marks.
+                    marks, which are worth 16 in this section, as much as your response to the text.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -605,16 +625,29 @@ export default async function Paper1Page() {
                     across the entire text to demonstrate thorough knowledge.
                   </span>
                 </li>
+                <li className="flex gap-3">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
+                    6
+                  </span>
+                  <span>
+                    <strong>{_tr(`Write accurately`)}</strong> - 8 marks in this section are for
+                    your vocabulary, sentence structures, spelling and punctuation. Check the
+                    spelling of names and key terms.
+                  </span>
+                </li>
               </ol>
             </div>
 
             {/* Sample paragraph */}
             <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
+              {/* 9 October 2026: this was one Point, Evidence, Analysis, Context paragraph for
+                  Section A, which fits neither part: part (a) gives context no marks, and part (b)
+                  gives none for analysis of language as such. It is now a part (b) paragraph. */}
               <h3 className="text-lg font-bold text-foreground">
-                Model Paragraph Structure (PEA+C)
+                Model Part (b) Paragraph (PEE+C)
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                Point &rarr; Evidence &rarr; Analysis &rarr; Context
+                Point &rarr; Evidence &rarr; Explanation &rarr; Context
               </p>
               <div className="mt-4 rounded-lg bg-card p-4 text-sm text-muted-foreground leading-relaxed">
                 <p>
@@ -623,15 +656,14 @@ export default async function Paper1Page() {
                 </p>
                 <p className="mt-2">
                   <strong className="text-foreground">Evidence:</strong> Immediately after the
-                  murder, Macbeth asks, &quot;Will all great Neptune&apos;s ocean wash this blood
-                  clean from my hand?&quot;
+                  murder, Macbeth asks, &quot;Will all great Neptune&apos;s ocean wash this blood /
+                  Clean from my hand?&quot;
                 </p>
                 <p className="mt-2">
-                  <strong className="text-foreground">Analysis:</strong> The rhetorical question
-                  reveals Macbeth&apos;s inner turmoil, while the hyperbolic reference to
-                  &quot;Neptune&apos;s ocean&quot; - the Roman god of the sea - suggests the crime
-                  is so vast that no natural force can undo it. The metaphor of blood as a permanent
-                  stain foreshadows how guilt will torment Macbeth for the remainder of the play.
+                  <strong className="text-foreground">Explanation:</strong> His guilt arrives at the
+                  moment of the crime, before anyone suspects him: he imagines the whole sea unable
+                  to clean his hand, so the guilt is already permanent. The same idea returns when
+                  Lady Macbeth, sleepwalking, cannot wash her hands clean either.
                 </p>
                 <p className="mt-2">
                   <strong className="text-foreground">Context:</strong> Shakespeare&apos;s Jacobean
@@ -640,6 +672,10 @@ export default async function Paper1Page() {
                   psychological but spiritual.
                 </p>
               </div>
+              <p className="mt-3 text-sm text-muted-foreground">
+                In part (a), the shape is Point, Evidence, Analysis: a quotation from the printed
+                extract and close analysis of its language, form or structure, with no context.
+              </p>
             </div>
           </div>
         </section>
@@ -660,7 +696,9 @@ export default async function Paper1Page() {
                 <tr className="border-b border-border">
                   <td className="py-3 pe-4 font-medium">{_tr(`Section A: Shakespeare`)}</td>
                   <td className="py-3 pe-4">~55 mins</td>
-                  <td className="py-3">{_tr(`Spend 5 mins planning. Write 4-5 paragraphs.`)}</td>
+                  <td className="py-3">
+                    {_tr(`About 27 minutes on each part, with a few minutes' planning for each.`)}
+                  </td>
                 </tr>
                 <tr className="border-b border-border">
                   <td className="py-3 pe-4 font-medium">{_tr(`Section B: Post-1914`)}</td>

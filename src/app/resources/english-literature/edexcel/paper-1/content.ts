@@ -36,4 +36,9 @@ export const STRINGS: Record<string, Bi> = {
     ar: `خلي بالك 5 دقائق في التخطيط. اكتب 4 إلى 5 فقرات.`,
   },
   s17: { en: `Section B: Post-1914`, ar: `القسم ب: بعد عام 1914` },
+  // 9 October 2026: Section A is two parts of 20, and Pearson advises dividing the time equally.
+  s18: {
+    en: `About 27 minutes on each part, with a few minutes' planning for each.`,
+    ar: `حوالي 27 دقيقة لكل جزء، مع كم دقيقة للتخطيط لكل جزء.`,
+  },
 }
