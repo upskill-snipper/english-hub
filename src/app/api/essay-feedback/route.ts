@@ -15,7 +15,11 @@ import {
   type SchemeTarget,
 } from '@/lib/marking/essay-feedback'
 import { isSpecVerified } from '@/lib/marking/examiner/verification'
-import { validateRequest, type EssayFeedbackRequest } from '@/lib/validate-request'
+import {
+  MAX_QUESTION_TEXT,
+  validateRequest,
+  type EssayFeedbackRequest,
+} from '@/lib/validate-request'
 import { contentSafetyCheck } from '@/lib/content-safety'
 import {
   unauthorizedResponse,
@@ -301,7 +305,7 @@ export async function POST(request: NextRequest) {
     )
 
     // Defence-in-depth: truncate inputs even though validation should catch oversized ones
-    const safeQuestion = body.questionText.slice(0, 500)
+    const safeQuestion = body.questionText.slice(0, MAX_QUESTION_TEXT)
     const safeEssay = body.essay.slice(0, 30_000)
     const userMessage = `QUESTION: ${safeQuestion}\n\nSTUDENT'S ESSAY:\n${safeEssay}`
 

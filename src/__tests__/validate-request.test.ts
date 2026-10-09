@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest'
-import { validateRequest } from '@/lib/validate-request'
+import { MAX_QUESTION_TEXT, validateRequest } from '@/lib/validate-request'
+import { allMockExamPapers } from '@/data/mock-exams'
+import { practiceQuestions } from '@/data/practice-data'
 
 /** Helper: build a valid request, then override specific fields */
 function req(overrides: Partial<Parameters<typeof validateRequest>[0]> = {}) {
@@ -137,6 +139,26 @@ describe('validateRequest', () => {
 
   it('accepts question text of exactly 5 characters', () => {
     expect(validateRequest(req({ questionText: 'abcde' }))).toBeNull()
+  })
+
+  it('accepts question text up to the limit, and not beyond it', () => {
+    expect(validateRequest(req({ questionText: 'q'.repeat(MAX_QUESTION_TEXT) }))).toBeNull()
+    expect(validateRequest(req({ questionText: 'q'.repeat(MAX_QUESTION_TEXT + 1) }))).toContain(
+      'Question text is too long',
+    )
+  })
+
+  it('accepts every question the mock-exam and practice pages can send', () => {
+    // The limit was 500 until 9 October 2026, and 43 of these were refused
+    // with an error the student could do nothing about.
+    const texts = [
+      ...allMockExamPapers.flatMap((p) =>
+        p.sections.flatMap((s) => s.questions.map((q) => q.questionText.trim())),
+      ),
+      ...practiceQuestions.map((q) => q.question.trim()),
+    ]
+    expect(texts.length).toBeGreaterThan(800)
+    expect(texts.filter((t) => t.length > MAX_QUESTION_TEXT)).toEqual([])
   })
 
   // ── Essay too short ────────────────────────────────────────────────────────

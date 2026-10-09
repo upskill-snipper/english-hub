@@ -50,6 +50,15 @@ export const VALID_PAPERS = [
 export const VALID_SUBJECTS = ['English Literature', 'English Language']
 
 /**
+ * The longest question text accepted, in characters. It was 500 until
+ * 9 October 2026, which refused inline feedback on 42 mock questions and one
+ * practice question (the longest is 1,015 characters) with "Question text is
+ * too long", an error the student could do nothing about: the question is the
+ * paper's, not theirs.
+ */
+export const MAX_QUESTION_TEXT = 1500
+
+/**
  * Validate the essay feedback request body.
  * Returns an error message string if invalid, or null if valid.
  */
@@ -90,8 +99,8 @@ export function validateRequest(body: EssayFeedbackRequest): string | null {
   if (!body.questionText || body.questionText.trim().length < 5) {
     return 'Please provide the question you are answering.'
   }
-  if (body.questionText.length > 500) {
-    return 'Question text is too long. Please keep it under 500 characters.'
+  if (body.questionText.length > MAX_QUESTION_TEXT) {
+    return 'Question text is too long. Please keep it under 1,500 characters.'
   }
   if (!body.essay || body.essay.trim().length === 0) {
     return 'Please provide your essay.'
