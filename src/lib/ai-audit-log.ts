@@ -62,6 +62,23 @@
 // carrying, and the class of the persistence failure itself, so the thing this
 // record exists to make visible survives the loss of the row.
 //
+// ── Outliving the response (fixed 10 October 2026) ──────────────────────────
+// Most routes call `void logAiDecision(...)` so the write adds no latency, and
+// the docblock on logAiDecision said that was safe. On Vercel it was not. Once
+// a route returns, the platform may freeze the function with the write still
+// pending: it resumes only when that instance serves another request, or never.
+// On /api/marking/run one OFF_TOPIC record of 19 September 2026 was written
+// 193 s after its run, at the moment the next essay arrived, and 2 of the 8
+// essays left unmarked to 10 October have no record at all (matched on
+// `inputSha256`). So the log undercounted exactly the failures it exists for.
+//
+// logAiDecision now hands its own write to Next's `after()`, which on Vercel
+// passes it to `waitUntil`: the function stays alive until the row is written,
+// and the response is not held up. Callers need no change, so a new route
+// cannot reintroduce this by forgetting a wrapper. Outside a request (a test, a
+// script) `after()` throws and the write simply runs; any other refusal is
+// printed, because a record that may be frozen must not pass silently.
+//
 // Persistence: writes to the existing `AuditLog` Prisma model
 // (action = 'ai_decision'). No new table/columns were introduced - the
 // `details Json?` column carries the structured record below. `ipAddress` is
@@ -70,6 +87,7 @@
 // ────────────────────────────────────────────────────────────────────────────
 
 import { createHash } from 'crypto'
+import { after } from 'next/server'
 
 import { ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 
@@ -445,11 +463,37 @@ export function formatAuditPersistenceFailure(args: {
  * it after the Anthropic response (or handled error) is known, on BOTH the
  * success and the handled-error branches, passing only data already in scope.
  *
- * Awaiting it is fine (the body is wrapped in try/catch) but callers may also
- * fire-and-forget with `void logAiDecision(...).catch(() => {})` if they must
- * not add latency - the function already self-suppresses errors regardless.
+ * Awaiting it is fine, and so is `void logAiDecision(...)` when a route must
+ * not add latency: the write registers itself with `after()`, so the function
+ * outlives the response until the row is written (see "Outliving the response"
+ * in the file header). The returned promise never rejects.
  */
-export async function logAiDecision(input: LogAiDecisionInput): Promise<void> {
+export function logAiDecision(input: LogAiDecisionInput): Promise<void> {
+  const write = writeAiDecision(input)
+  keepAliveFor(write)
+  return write
+}
+
+/**
+ * Ask the platform to keep the function alive until `write` settles. Never
+ * throws: a record the platform will not wait for is still attempted.
+ */
+function keepAliveFor(write: Promise<void>): void {
+  try {
+    after(write)
+  } catch (err) {
+    // E468 is Next's "`after` was called outside a request scope": a test or a
+    // script, with no response to outlive. Anything else - E91, "waitUntil is
+    // not available", or `after` missing altogether - means a request whose
+    // record may be frozen with the function, so say so.
+    if ((err as { __NEXT_ERROR_CODE?: unknown } | null)?.__NEXT_ERROR_CODE === 'E468') return
+    console.error(
+      `[ai-audit-log] record may not outlive the response: ${describeError(err).errorMessage}`,
+    )
+  }
+}
+
+async function writeAiDecision(input: LogAiDecisionInput): Promise<void> {
   let subject: AiAuditSubject | null = null
 
   try {
