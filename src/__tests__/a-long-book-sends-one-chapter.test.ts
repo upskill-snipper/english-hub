@@ -92,6 +92,23 @@ describe('a long novel is served by chapter', () => {
     }
   })
 
+  it.each(SLUGS)('%s: every chapter title and description fits a search result', async (slug) => {
+    // a-title-fits-in-a-search-result.test.ts cannot measure a computed title,
+    // so these are measured here: the title with the root layout's
+    // "%s - The English Hub" template within 60 characters, the description
+    // within 160, for every chapter.
+    const route = (await import(`@/app/revision/texts/${slug}/read/[chapter]/page`)) as Route & {
+      generateMetadata: (args: {
+        params: Promise<{ chapter: string }>
+      }) => Promise<{ title?: string; description?: string }>
+    }
+    for (const { chapter } of route.generateStaticParams()) {
+      const meta = await route.generateMetadata({ params: Promise.resolve({ chapter }) })
+      expect(`${meta.title} - The English Hub`.length, `${slug} ${chapter}`).toBeLessThanOrEqual(60)
+      expect((meta.description ?? '').length, `${slug} ${chapter}`).toBeLessThanOrEqual(160)
+    }
+  })
+
   it.each(SLUGS)('%s: a chapter that does not exist is not a page', async (slug) => {
     const route = (await import(`@/app/revision/texts/${slug}/read/[chapter]/page`)) as Route
     for (const bad of ['0', String(SERVED_BY_CHAPTER[slug] + 1), '01', 'one', '-1']) {

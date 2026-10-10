@@ -287,6 +287,10 @@ describe('a title fits in a search result', () => {
     // Computed titles cannot be measured here. Pinning the count means moving a
     // page into one to dodge this guard shows up as a number going the wrong
     // way rather than as silence.
-    expect(DYNAMIC.length).toBeLessThanOrEqual(50)
+    //
+    // 53 since 10 October 2026: the three long novels' chapter routes
+    // (src/app/revision/texts/<slug>/read/[chapter]), whose 158 computed
+    // titles and descriptions a-long-book-sends-one-chapter.test.ts measures.
+    expect(DYNAMIC.length).toBeLessThanOrEqual(53)
   })
 })
