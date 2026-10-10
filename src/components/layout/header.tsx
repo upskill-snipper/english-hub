@@ -54,10 +54,17 @@ function getNavForBoardType(
     // and "Demo" dropped from the learner nav: a student who has picked a
     // board does not need the B2B pitch or a synthetic demo in their primary
     // navigation, and both remain in the footer.
+    //
+    // 10 October 2026: "Games" added to both sets, at the founder's ask that
+    // learning by playing be a prominent part of the product. It goes to the
+    // hub rather than to one game: the hub reads the board itself and opens
+    // with the guided games on this student's own set texts. A sixth item did
+    // not fit the old desktop layout - see the breakpoint note in Header().
     return [
       { href: '/revision', labelKey: 'header.nav.your_hub' },
       { href: '/marking', labelKey: 'header.nav.marking' },
       { href: '/mock-exams', labelKey: 'header.nav.mock_exams' },
+      { href: '/games', labelKey: 'header.nav.games' },
       { href: '/ielts', labelKey: 'ielts.nav' },
       { href: '/pricing', labelKey: 'header.nav.pricing' },
     ]
@@ -74,6 +81,7 @@ function getNavForBoardType(
   // /schools and reachable from the footer.
   return [
     { href: '/revision', labelKey: 'header.nav.revision' },
+    { href: '/games', labelKey: 'header.nav.games' },
     { href: '/blog', labelKey: 'header.nav.blog' },
     { href: '/schools', labelKey: 'header.nav.schools' },
     { href: '/ielts', labelKey: 'ielts.nav' },
@@ -179,9 +187,40 @@ export function Header() {
           goes through t(). This header renders inside that document, so a
           second link here could only ever be the later of the two. */}
 
-      {/* Pill-shaped floating navbar */}
+      {/* Pill-shaped floating navbar.
+
+          THE DESKTOP LAYOUT STARTS AT xl (1280px), NOT lg (10 October 2026).
+          Measured in a browser before Games was added: from 1024 to 1279px
+          the five links overran their column, ran under the board switcher
+          and slid behind the theme and language toggles, and at 1280 on a
+          board page three of them wrapped onto two lines. The right-hand
+          cluster alone is 514px signed out (both toggles are 303px of it),
+          which leaves the links less room than they need until about 1366.
+          Below 1280 the menu sheet is used instead, as it already was on
+          tablets; it carries every link, the board change and reset, both
+          toggles and the sign-in buttons, so nothing becomes unreachable.
+
+          On desktop the theme toggle shows its icons without the words (each
+          button keeps its aria-label and title; the menu sheet keeps the
+          words), and the gaps and link padding are a step tighter than they
+          were. Measured signed out, with and without a board, at 1280, 1366,
+          1440 and 1536: six links on one line, nothing past its column. The
+          roomier spacing is NOT restored at 2xl: the pill stops growing at
+          1400px, so a wider screen adds about 24px and the old spacing costs
+          about 110px, which is how a first version of this overflowed at
+          1536 for a signed-in student.
+
+          Signed in, the cluster grows by Dashboard, Upgrade, Account and
+          Sign out (about 634px against 445; measured by putting those links
+          into the rendered header, not by signing in). With a board chosen
+          the first three links then wrap onto two lines at every desktop
+          width, as they did with five links before this change, and at 1280
+          the row still runs about 30px past its column (68px before). With
+          no board it runs 60px past at 1280 and 17px at 1366 (97 and 54
+          before). Fitting that state needs the account links folded into one
+          menu, which is a separate change. */}
       <div
-        className="mx-auto grid max-w-[1400px] grid-cols-[auto_1fr_auto] items-center gap-4 sm:gap-6 rounded-full px-4 sm:px-5 py-2.5"
+        className="mx-auto grid max-w-[1400px] grid-cols-[auto_1fr_auto] items-center gap-4 sm:gap-6 xl:gap-4 rounded-full px-4 sm:px-5 py-2.5"
         style={{
           background: 'rgba(15,20,17,0.92)',
           backdropFilter: 'blur(14px)',
@@ -200,7 +239,7 @@ export function Header() {
               legal / demo / general pages the switcher just adds
               clutter (and contributes to the header-overflow bug). */}
           {isBoardContextRoute(pathname) ? (
-            <div className="hidden lg:flex">
+            <div className="hidden xl:flex">
               <BoardSwitcher board={board} isHydrated={isBoardHydrated} />
             </div>
           ) : null}
@@ -209,7 +248,7 @@ export function Header() {
         {/* Desktop nav */}
         <nav
           aria-label={t('nav.main')}
-          className="hidden min-w-0 items-center gap-1 lg:flex justify-center"
+          className="hidden min-w-0 items-center justify-center gap-0.5 xl:flex"
         >
           {visibleNavLinks.map((link) => {
             const isActive = pathname === link.href || pathname.startsWith(link.href + '/')
@@ -219,7 +258,7 @@ export function Header() {
                 href={link.href}
                 aria-current={isActive ? 'page' : undefined}
                 className={cn(
-                  'px-3 py-1.5 rounded-full text-sm font-sans transition-colors duration-200',
+                  'px-2 py-1.5 rounded-full text-sm font-sans transition-colors duration-200',
                   isActive ? 'text-[#FBF7F0] bg-white/10' : 'text-[#B5B8B3] hover:text-[#FBF7F0]',
                 )}
               >
@@ -230,13 +269,15 @@ export function Header() {
         </nav>
 
         {/* Desktop auth / CTA */}
-        <div className="hidden shrink-0 items-center gap-2.5 lg:flex">
+        <div className="hidden shrink-0 items-center gap-2 xl:flex">
           {/* Theme + language toggles - always visible for ANY auth state
               so dark/light AND English/Arabic are reachable everywhere on
               desktop. The language toggle was previously rendered only in
               the signed-out branch, leaving logged-in desktop users with
-              no way to switch to / stay in Arabic ("losing Arabic"). */}
-          <ThemeToggle className="border-white/15 bg-white/5 text-[#B5B8B3]" />
+              no way to switch to / stay in Arabic ("losing Arabic").
+              Here the theme toggle drops its two words and keeps its icons:
+              see the layout note above. */}
+          <ThemeToggle className="border-white/15 bg-white/5 text-[#B5B8B3] [&_span]:hidden" />
           <LanguageToggle className="border-white/15 bg-white/5 text-[#B5B8B3]" />
           {isLoading ? (
             <Skeleton className="h-8 w-20 rounded-full bg-white/10" />
@@ -316,7 +357,7 @@ export function Header() {
             render={
               <button
                 type="button"
-                className="inline-flex items-center justify-center h-9 w-9 rounded-full text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/10 transition-colors duration-200 lg:hidden justify-self-end"
+                className="inline-flex items-center justify-center h-9 w-9 rounded-full text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/10 transition-colors duration-200 xl:hidden justify-self-end"
                 aria-label={t('header.action.open_menu')}
               />
             }

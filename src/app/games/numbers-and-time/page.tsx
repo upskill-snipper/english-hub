@@ -578,6 +578,7 @@ export default function NumbersAndTimePage() {
 
         <GameShell
           gameId="numbers-and-time"
+          audience="eal"
           title="Numbers & Time"
           description="Read numbers, ordinals, clock times and dates, then choose the correct English. Great practice for everyday English."
           difficulty="Foundation"

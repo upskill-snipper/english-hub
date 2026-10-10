@@ -602,6 +602,7 @@ export default function EverydayVocabFlashcardsPage() {
 
         <GameShell
           gameId="everyday-vocab-flashcards"
+          audience="eal"
           title="Everyday Vocabulary Flashcards"
           description="See an everyday English word and an example sentence. Think of the meaning, tap the card to check, then tell us whether you knew it. Words you miss come back again."
           difficulty="Foundation"

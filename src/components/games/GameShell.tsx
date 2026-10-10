@@ -16,9 +16,32 @@ import { useT } from '@/lib/i18n/use-t'
 
 export type GameState = 'idle' | 'playing' | 'paused' | 'finished'
 
+/**
+ * Who a game is written for. Decides whether a score is shown as a GCSE grade.
+ *
+ * WHY THIS EXISTS (10 October 2026). The shell turned every score into a GCSE
+ * grade from 1 to 9: during play, on the results screen, and in the best-score
+ * line before a game starts. That included the eighteen games for learners new
+ * to English and the twelve KS3 literacy games, so a beginner who got 7 of 20
+ * articles right in "A, An, The or Nothing?" was told they were at grade 3,
+ * with advice about embedding quotations in essays underneath. A GCSE grade is
+ * a statement about a GCSE student's exam performance and means nothing about
+ * either of those.
+ *
+ * Only 'gcse' games show a grade, and the grade is still only a GCSE-style
+ * conversion of the percentage, which is all it ever was. Every other game
+ * shows its score and percentage. A game that does not say who it is for gets
+ * no grade: the shell fails closed rather than guessing.
+ * only-a-gcse-game-gives-a-gcse-grade.test.tsx holds each game page to the
+ * audience its own metadata and its hub section name.
+ */
+export type GameAudience = 'gcse' | 'ks3' | 'eal'
+
 export interface GameShellProps {
   /** Unique identifier used for score persistence */
   gameId: string
+  /** Who the game is for. Only 'gcse' shows a GCSE-style grade; see GameAudience. */
+  audience?: GameAudience
   /** Display title */
   title: string
   /** Short description shown beneath the title */
@@ -135,48 +158,85 @@ interface ResultsProps {
   maxScore: number
   elapsedSeconds: number
   timed: boolean
+  showsGrade: boolean
   onPlayAgain: () => void
 }
 
-function ResultsScreen({ score, maxScore, elapsedSeconds, timed, onPlayAgain }: ResultsProps) {
+function ResultsScreen({
+  score,
+  maxScore,
+  elapsedSeconds,
+  timed,
+  showsGrade,
+  onPlayAgain,
+}: ResultsProps) {
   const t = useT()
   const percentage = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0
   const grade = percentageToGCSEGrade(percentage)
-  const recommendation = getGradeRecommendation(grade)
+  // The advice is about GCSE essays ("embed quotations", "integrate context"),
+  // so it goes wherever the grade goes and nowhere else.
+  const recommendation = showsGrade ? getGradeRecommendation(grade) : ''
 
   return (
     <div className="flex flex-col items-center gap-6 py-8">
-      {/* Grade circle */}
-      <div
-        className={cn(
-          'flex h-28 w-28 items-center justify-center rounded-full border-4',
-          gcseGradeBg(grade),
-          grade >= 8
-            ? 'border-emerald-500/40'
-            : grade >= 6
-              ? 'border-blue-500/40'
-              : grade >= 4
-                ? 'border-amber-500/40'
-                : 'border-red-500/40',
-        )}
-      >
-        <div className="text-center">
-          <div className={cn('text-4xl font-bold', gcseGradeColor(grade))}>{grade}</div>
-          <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
-            {t('games.shell.grade_label')}
+      {showsGrade ? (
+        /* Grade circle - GCSE games only */
+        <div
+          className={cn(
+            'flex h-28 w-28 items-center justify-center rounded-full border-4',
+            gcseGradeBg(grade),
+            grade >= 8
+              ? 'border-emerald-500/40'
+              : grade >= 6
+                ? 'border-blue-500/40'
+                : grade >= 4
+                  ? 'border-amber-500/40'
+                  : 'border-red-500/40',
+          )}
+        >
+          <div className="text-center">
+            <div className={cn('text-4xl font-bold', gcseGradeColor(grade))}>{grade}</div>
+            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+              {t('games.shell.grade_label')}
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        /* Every other game: the plain score, with no grade and no verdict
+           colour. A percentage is a fact about this round; red for a beginner
+           who got half of them right would be a judgement it cannot support. */
+        <div className="flex h-28 w-28 items-center justify-center rounded-full border-4 border-primary/30 bg-primary/10">
+          <div className="text-center">
+            {/* A timed sprint can pass 99 answers, and "104/110" at the
+                larger size is wider than the circle. */}
+            <div
+              className={cn(
+                'font-bold text-foreground tabular-nums',
+                `${score}/${maxScore}`.length > 5 ? 'text-2xl' : 'text-3xl',
+              )}
+            >
+              {score}/{maxScore}
+            </div>
+            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+              {t('games.shell.score_label')}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Stats row */}
       <div className="flex items-center gap-6 text-center">
-        <div>
-          <div className="text-2xl font-bold text-foreground">
-            {score}/{maxScore}
-          </div>
-          <div className="text-xs text-muted-foreground">{t('games.shell.score_label')}</div>
-        </div>
-        <div className="h-8 w-px bg-border" />
+        {showsGrade && (
+          <>
+            <div>
+              <div className="text-2xl font-bold text-foreground">
+                {score}/{maxScore}
+              </div>
+              <div className="text-xs text-muted-foreground">{t('games.shell.score_label')}</div>
+            </div>
+            <div className="h-8 w-px bg-border" />
+          </>
+        )}
         <div>
           <div className="text-2xl font-bold text-foreground">{percentage}%</div>
           <div className="text-xs text-muted-foreground">{t('games.shell.accuracy_label')}</div>
@@ -215,6 +275,7 @@ function ResultsScreen({ score, maxScore, elapsedSeconds, timed, onPlayAgain }: 
 
 export default function GameShell({
   gameId,
+  audience,
   title,
   description,
   difficulty,
@@ -230,6 +291,8 @@ export default function GameShell({
   className,
 }: GameShellProps) {
   const t = useT()
+  // Fails closed: no audience, no grade. See GameAudience.
+  const showsGrade = audience === 'gcse'
   const [timeLeft, setTimeLeft] = useState(timeLimitSeconds ?? 0)
   const [elapsed, setElapsed] = useState(0)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
@@ -325,8 +388,8 @@ export default function GameShell({
     }
   }, [gameState, onPause, onResume])
 
-  // Live grade indicator
-  const liveGrade = maxScore > 0 ? scoreToGrade(score, maxScore) : null
+  // Live grade indicator, for GCSE games only
+  const liveGrade = showsGrade && maxScore > 0 ? scoreToGrade(score, maxScore) : null
 
   return (
     <div
@@ -425,10 +488,18 @@ export default function GameShell({
                 <TrophyIcon className="h-4 w-4 text-clay-600" />
                 <span className="text-sm text-muted-foreground">
                   {t('games.shell.best_prefix')}{' '}
-                  <span className={cn('font-semibold', gcseGradeColor(highScore.grade))}>
-                    {t('games.shell.grade_label')} {highScore.grade}
-                  </span>{' '}
-                  ({highScore.percentage}%)
+                  {showsGrade ? (
+                    <>
+                      <span className={cn('font-semibold', gcseGradeColor(highScore.grade))}>
+                        {t('games.shell.grade_label')} {highScore.grade}
+                      </span>{' '}
+                      ({highScore.percentage}%)
+                    </>
+                  ) : (
+                    <span className="font-semibold text-foreground">
+                      {highScore.score}/{highScore.maxScore} ({highScore.percentage}%)
+                    </span>
+                  )}
                 </span>
               </div>
             )}
@@ -467,6 +538,7 @@ export default function GameShell({
             maxScore={maxScore}
             elapsedSeconds={elapsed}
             timed={timeLimitSeconds != null}
+            showsGrade={showsGrade}
             onPlayAgain={handlePlayAgain}
           />
         )}

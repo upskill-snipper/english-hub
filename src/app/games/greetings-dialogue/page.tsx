@@ -525,6 +525,7 @@ export default function GreetingsDialoguePage() {
 
         <GameShell
           gameId="greetings-dialogue"
+          audience="eal"
           title="What Do You Say?"
           description="Read each everyday situation and choose the most polite, natural reply. Perfect for practising greetings, thanks, apologies and requests."
           difficulty="Foundation"

@@ -359,6 +359,7 @@ export default function QuestionFormationPage() {
 
         <GameShell
           gameId="question-formation"
+          audience="eal"
           title="Build the Question"
           description="Tap the scrambled words in the correct order to form a grammatical English question. Watch your word order, auxiliaries and tags!"
           difficulty="Crossover"

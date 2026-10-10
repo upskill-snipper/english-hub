@@ -471,6 +471,7 @@ export default function SentenceBuilderPage() {
 
         <GameShell
           gameId="sentence-builder"
+          audience="ks3"
           title="Sentence Builder"
           description="Tap the word tiles in the right order to build a correct sentence. Sentences get trickier as you go: simple, then compound, then complex."
           difficulty="Crossover"

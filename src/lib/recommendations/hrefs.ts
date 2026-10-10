@@ -85,15 +85,19 @@ export function quizHref(_slug?: string | null): string {
 /**
  * The games hub.
  *
- * The caller used to append `?text=<slug>` here. Nothing under src/app/games
- * reads a search parameter - not the page, not any component in the tree - so
- * the filter never happened and the student got the unfiltered hub. That is not
- * a broken link, so it is not what this change is about, but a parameter no
- * reader consults is the same class of thing: a promise the code does not keep.
- * It is dropped rather than left in place looking load-bearing.
+ * The caller used to append `?text=<slug>` here. At the time nothing under
+ * src/app/games read a search parameter, so the filter never happened and the
+ * student got the unfiltered hub. It was dropped from this helper rather than
+ * left in place looking load-bearing.
  *
- * Making /games honour ?text= would be a real improvement. It is a feature, not
- * a navigation fix, so it is recorded rather than smuggled in here.
+ * SINCE 10 OCTOBER 2026 THE HUB DOES READ IT. `/games?text=<slug>` sends the
+ * student to /games/texts/<slug> when that text has guided games, and renders
+ * the hub as before when it does not (see TextParamRedirect in
+ * src/app/games/page.tsx). The "no game in five days" branch of focus-on.ts
+ * still builds that URL itself. For a text with guided games its "Practise
+ * <text> games" label is now true; for a text in copyright it still reaches
+ * the unfiltered hub, as it always did. This helper stays parameter-free: its
+ * callers have no text to pass.
  */
 export function gamesHref(): string {
   return GAMES_HUB

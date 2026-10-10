@@ -231,6 +231,7 @@ export default function PictureWordMatchPage() {
 
         <GameShell
           gameId="picture-word-match"
+          audience="eal"
           title="Picture Word Match"
           description="Look at the picture and tap the English word that matches it. A friendly way to build everyday vocabulary."
           difficulty="Foundation"

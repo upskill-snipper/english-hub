@@ -686,6 +686,7 @@ export default function ComparativesSuperlativesPage() {
 
         <GameShell
           gameId="comparatives-superlatives"
+          audience="eal"
           title="Bigger, Biggest!"
           description="Read the sentence and choose the correct comparative or superlative form of the adjective."
           difficulty="Foundation"

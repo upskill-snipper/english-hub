@@ -32,6 +32,7 @@
 
 import { TEXT_SUBPAGE_ROUTES } from '@/lib/revision/text-subpages.generated'
 import { textGuideHref } from '@/lib/revision/guide-href'
+import { textGamesHref } from '@/lib/revision/text-games-href'
 
 /** The five study objects a text page is organised around. */
 export type TextNavGroupKey = 'text' | 'characters' | 'ideas' | 'quotations' | 'exam'
@@ -73,6 +74,18 @@ export interface TextNav {
   groups: TextNavGroup[]
   /** How many real sections this text has. Zero means a stub. */
   sectionCount: number
+  /**
+   * "Play this text": the text's guided games, or null when it has none.
+   *
+   * Not one of the `groups`, and not counted in `sectionCount`, on purpose.
+   * The groups are the guide's own pages under /revision/texts, proven against
+   * the filesystem register; this is a different product area with its own
+   * rule (a public-domain guide, see text-games-href.ts). And `sectionCount`
+   * is how the rail tells a written guide from a placeholder, so counting a
+   * game in it would make Hamlet's rail fold the site-wide menu away for one
+   * link, and stop the rail saying so when a guide is still unwritten.
+   */
+  playHref: string | null
 }
 
 /**
@@ -193,6 +206,7 @@ export function buildTextNav(slug: string): TextNav {
     hubHref: textGuideHref(slug),
     groups,
     sectionCount: items.length,
+    playHref: textGamesHref(slug),
   }
 }
 

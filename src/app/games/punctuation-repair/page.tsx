@@ -779,6 +779,7 @@ export default function PunctuationRepairPage() {
 
         <GameShell
           gameId="punctuation-repair"
+          audience="ks3"
           title="Punctuation Repair"
           description="A sentence has been broken. Pick the version that uses punctuation correctly - capital letters, full stops, commas, speech marks and more."
           difficulty="Crossover"

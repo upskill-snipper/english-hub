@@ -258,6 +258,7 @@ export default function SpellingBeePage() {
 
         <GameShell
           gameId="spelling-bee"
+          audience="gcse"
           title="Spelling Bee"
           description="Listen to the word and its definition, then type the correct spelling. Difficulty increases as you progress."
           difficulty="Crossover"

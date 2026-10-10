@@ -457,6 +457,7 @@ export default function PhrasalVerbsMatchPage() {
 
         <GameShell
           gameId="phrasal-verbs-match"
+          audience="eal"
           title="Phrasal Verb Match"
           description="Read the example sentence, then choose the correct meaning of the phrasal verb. Build the everyday English you need with confidence."
           difficulty="Crossover"

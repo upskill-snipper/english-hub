@@ -728,6 +728,7 @@ export default function CapitalLetterQuestPage() {
 
         <GameShell
           gameId="capital-letter-quest"
+          audience="eal"
           title="Capital Letter Quest"
           description="Read the sentence, then choose the version with the correct capital letters. Watch for names, places, days, months, languages, titles and brands."
           difficulty="Foundation"

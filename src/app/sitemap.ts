@@ -10,6 +10,7 @@ import { BOARDS } from '@/lib/board/board-config'
 import { boardHasShelf } from '@/lib/board/board-landing'
 import { shelfIsVerified } from '@/lib/board/shelf-provenance'
 import { EAL } from '@/lib/eal/curriculum'
+import { textGameSlugs } from '@/lib/games/text-games/slugs'
 import { ALL_LESSONS } from '@/lib/ielts/lessons'
 import { KS3 } from '@/lib/ks3/curriculum'
 import { getAllLessonPlans, isLessonPlanPublished } from '@/lib/lesson-plans/list'
@@ -274,6 +275,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // nothing here to declare as paywalled-but-hidden.
   for (const route of await modelEssayRoutes()) {
     add(route, { priority: 0.6, changeFrequency: 'monthly' })
+  }
+
+  // Guided text games: /games/texts/<slug>, one per text with a path. The same
+  // list the route's generateStaticParams uses, so the sitemap cannot submit a
+  // text the route 404s or leave out one it serves.
+  for (const slug of textGameSlugs()) {
+    add(`/games/texts/${slug}`, { priority: 0.6, changeFrequency: 'monthly' })
   }
 
   // Analysis catch-all pages ([category, article] slug pairs).

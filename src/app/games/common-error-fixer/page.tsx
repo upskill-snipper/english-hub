@@ -801,6 +801,7 @@ export default function CommonErrorFixerPage() {
 
         <GameShell
           gameId="common-error-fixer"
+          audience="eal"
           title="Fix the Common Mistake"
           description="Each sentence has one typical English mistake. Choose the corrected version. Everyone makes these - spotting them is how we improve."
           difficulty="Crossover"

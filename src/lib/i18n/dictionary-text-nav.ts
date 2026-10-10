@@ -211,6 +211,20 @@ export const TEXT_NAV_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Comentarios de IA según el baremo real',
   },
 
+  // ── Play this text (10 October 2026) ─────────────────────────────────────
+  // The text's guided games, offered in the rail beside the marker. Only texts
+  // with a public-domain guide have them; see src/lib/revision/text-games-href.ts.
+  'textnav.play_text': {
+    en: 'Play this text',
+    ar: 'العب مع هذا النص',
+    es: 'Juega con este texto',
+  },
+  'textnav.play_text_hint': {
+    en: 'Guided games on this text',
+    ar: 'ألعاب موجّهة على هذا النص',
+    es: 'Juegos guiados sobre este texto',
+  },
+
   // ── Where this text sits on the exam ─────────────────────────────────────
   // Added 19 September 2026, replacing four paragraphs of study tips that were
   // byte-identical on all 108 set-text pages. For the 75 texts with no guide

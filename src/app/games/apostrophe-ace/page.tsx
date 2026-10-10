@@ -785,6 +785,7 @@ export default function ApostropheAcePage() {
 
         <GameShell
           gameId="apostrophe-ace"
+          audience="ks3"
           title="Apostrophe Ace"
           description="Pick the sentence where every apostrophe is used correctly. Contractions, possession and the no-apostrophe-for-plurals trap all feature."
           difficulty="Crossover"

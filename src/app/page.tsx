@@ -19,6 +19,10 @@ import {
   Award,
   BookOpen,
   Compass,
+  Gamepad2,
+  Timer,
+  Search,
+  TrendingUp,
 } from 'lucide-react'
 import { TrackEvent } from '@/components/analytics/TrackEvent'
 import { LanguageToggle } from '@/components/layout/language-toggle'
@@ -30,6 +34,10 @@ import { FeatureGrid } from '@/components/schools/FeatureGrid'
 import { TextSearchBox } from '@/components/search/text-search-box'
 import { PRICING_DISPLAY } from '@/constants/pricing'
 import { boardLandingHref } from '@/lib/board/board-landing'
+import { getBoardConfig } from '@/lib/board/board-config'
+import { getServerBoard } from '@/lib/board/get-server-board'
+import { getSetTextsForBoard } from '@/lib/board/set-texts'
+import { TEXT_GAMES_INDEX, textGamesHref } from '@/lib/revision/text-games-href'
 import { t } from '@/lib/i18n/t'
 
 const OG =
@@ -124,6 +132,11 @@ export default async function Home() {
 
       {/* 1. Hero — 7 demo cards + sales CTAs */}
       {await HomeHero()}
+
+      {/* 1b. Learn by playing (10 October 2026, founder ask): games are a
+             headline part of the product, so the homepage says so straight
+             after the hero rather than leaving them three clicks deep. */}
+      {await LearnByPlayingSection()}
 
       {/* 2. Institutional framing — "what the platform IS" */}
       {await SchoolPlatformSection()}
@@ -451,6 +464,186 @@ async function HomeHero() {
         <p className="mx-auto mt-8 max-w-xl text-xs leading-relaxed text-muted-foreground">
           {specNote}
         </p>
+      </div>
+    </section>
+  )
+}
+
+/**
+ * Learn by playing - the games, straight after the hero (10 October 2026).
+ *
+ * The founder's ask: games should be a prominent part of the product for
+ * guided learning. Before this, nothing on the homepage or in the header led
+ * to /games at all.
+ *
+ * The first card is the guided games on a student's own set texts. It is
+ * board-aware the way the rest of the product is: with the board cookie set it
+ * names that board's texts that have games and links straight to each one;
+ * without it, or for a board that sets no texts (KS3, Cambridge 0500 and 0990),
+ * it leads to the index of every text that has them. Which texts those are is
+ * decided in one place, textGamesHref, and nowhere here.
+ *
+ * The other four are the standalone games built for exam students. The EAL and
+ * KS3 games stay on /games, where they have their own sections.
+ */
+async function LearnByPlayingSection() {
+  const board = await getServerBoard()
+  const boardName = getBoardConfig(board)?.shortName ?? null
+  // Only when a board is chosen: getSetTextsForBoard(null) is every text on the
+  // site, which would be a list of somebody else's texts.
+  const playable = board
+    ? getSetTextsForBoard(board).flatMap((text) => {
+        const href = textGamesHref(text.slug)
+        return href ? [{ slug: text.slug, title: text.title, href }] : []
+      })
+    : []
+  const shown = playable.slice(0, 4)
+  const more = playable.length - shown.length
+
+  const copy = {
+    eyebrow: await t('home.play.eyebrow'),
+    heading: await t('home.play.heading'),
+    body: await t('home.play.body'),
+    textsTitle: await t('home.play.texts.title'),
+    textsBody: await t('home.play.texts.body'),
+    textsForBoard: (await t('home.play.texts.for_board')).replace('{board}', boardName ?? ''),
+    textsMore: (await t('home.play.texts.more')).replace('{count}', String(more)),
+    textsCta: await t('home.play.texts.cta'),
+    play: await t('home.play.play'),
+    allGames: await t('home.play.all_games'),
+  }
+
+  const GAME_CARDS = [
+    {
+      href: '/games/theme-matcher',
+      title: await t('home.play.theme_matcher.title'),
+      body: await t('home.play.theme_matcher.body'),
+      icon: Layers,
+      card: 'bg-gradient-to-br from-violet-500/15 via-violet-500/5 to-violet-500/[0.03] border-violet-500/30 hover:border-violet-500/55',
+      iconBg: 'bg-violet-500/20 ring-1 ring-violet-500/35',
+      iconText: 'text-violet-700 dark:text-violet-300',
+    },
+    {
+      href: '/games/speed-analysis',
+      title: await t('home.play.speed_analysis.title'),
+      body: await t('home.play.speed_analysis.body'),
+      icon: Timer,
+      card: 'bg-gradient-to-br from-teal-500/15 via-teal-500/5 to-teal-500/[0.03] border-teal-500/30 hover:border-teal-500/55',
+      iconBg: 'bg-teal-500/20 ring-1 ring-teal-500/35',
+      iconText: 'text-teal-700 dark:text-teal-300',
+    },
+    {
+      href: '/games/quote-detective',
+      title: await t('home.play.quote_detective.title'),
+      body: await t('home.play.quote_detective.body'),
+      icon: Search,
+      card: 'bg-gradient-to-br from-ochre-500/15 via-ochre-500/5 to-ochre-500/[0.03] border-ochre-500/30 hover:border-ochre-500/55',
+      iconBg: 'bg-ochre-500/20 ring-1 ring-ochre-500/35',
+      iconText: 'text-ochre-600 dark:text-ochre-300',
+    },
+    {
+      href: '/games/grade-climber',
+      title: await t('home.play.grade_climber.title'),
+      body: await t('home.play.grade_climber.body'),
+      icon: TrendingUp,
+      card: 'bg-gradient-to-br from-emerald-500/15 via-emerald-500/5 to-emerald-500/[0.03] border-emerald-500/30 hover:border-emerald-500/55',
+      iconBg: 'bg-emerald-500/20 ring-1 ring-emerald-500/35',
+      iconText: 'text-emerald-700 dark:text-emerald-300',
+    },
+  ]
+
+  return (
+    <section aria-labelledby="learn-by-playing-heading" className="border-b border-border/60">
+      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="text-center">
+          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
+            {copy.eyebrow}
+          </p>
+          <h2
+            id="learn-by-playing-heading"
+            className="mx-auto mt-4 max-w-3xl font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+          >
+            {copy.heading}
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+            {copy.body}
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {/* The set-text card holds several links (one per text), so it is a
+              container rather than one link: links cannot nest. */}
+          <div className="flex flex-col rounded-2xl border border-clay-500/30 bg-gradient-to-br from-clay-500/15 via-clay-500/5 to-clay-500/[0.03] p-6 text-start shadow-sm sm:col-span-2 lg:col-span-1 lg:row-span-2">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-clay-500/20 ring-1 ring-clay-500/35">
+              <Gamepad2 className="h-5 w-5 text-clay-700 dark:text-clay-300" aria-hidden="true" />
+            </span>
+            <h3 className="mt-4 font-serif text-xl font-semibold text-foreground">
+              {copy.textsTitle}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy.textsBody}</p>
+            {shown.length > 0 && (
+              <div className="mt-4">
+                <p className="text-xs font-medium text-foreground">{copy.textsForBoard}</p>
+                <ul className="mt-2 flex flex-wrap gap-2">
+                  {shown.map((text) => (
+                    <li key={text.slug}>
+                      <Link
+                        href={text.href}
+                        className="inline-flex items-center rounded-full border border-clay-500/30 bg-background/70 px-3 py-1 text-xs font-medium text-foreground transition-colors hover:border-clay-500/60 hover:bg-background"
+                      >
+                        {text.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                {more > 0 && <p className="mt-2 text-xs text-muted-foreground">{copy.textsMore}</p>}
+              </div>
+            )}
+            <Link
+              href={TEXT_GAMES_INDEX}
+              className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium text-clay-700 hover:underline dark:text-clay-300"
+            >
+              {copy.textsCta}
+              <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" aria-hidden="true" />
+            </Link>
+          </div>
+
+          {GAME_CARDS.map((game) => {
+            const Icon = game.icon
+            return (
+              <Link
+                key={game.href}
+                href={game.href}
+                className={`group flex flex-col rounded-2xl border p-5 text-start shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${game.card}`}
+              >
+                <span className="flex items-center gap-3">
+                  <span
+                    className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${game.iconBg}`}
+                  >
+                    <Icon className={`h-4 w-4 ${game.iconText}`} aria-hidden="true" />
+                  </span>
+                  <span className="font-semibold text-foreground">{game.title}</span>
+                </span>
+                <span className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {game.body}
+                </span>
+                <span
+                  className={`mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-medium ${game.iconText}`}
+                >
+                  {copy.play}
+                  <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" aria-hidden="true" />
+                </span>
+              </Link>
+            )
+          })}
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <Button variant="outline" size="lg" className="h-11 px-6" render={<Link href="/games" />}>
+            {copy.allGames}
+            <ArrowRight className="ms-1 h-3.5 w-3.5 rtl:rotate-180" aria-hidden="true" />
+          </Button>
+        </div>
       </div>
     </section>
   )

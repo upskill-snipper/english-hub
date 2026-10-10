@@ -293,6 +293,7 @@ export default function ClassroomObjectsPage() {
 
         <GameShell
           gameId="classroom-objects"
+          audience="eal"
           title="In the Classroom"
           description="Look at the picture and choose the correct English word. Some rounds ask where things are - on, in, under or next to!"
           difficulty="Foundation"

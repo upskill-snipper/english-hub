@@ -518,6 +518,7 @@ export default function HomophoneHeroPage() {
 
         <GameShell
           gameId="homophone-hero"
+          audience="ks3"
           title="Homophone Hero"
           description="Read each sentence and choose the homophone that fits the gap. Watch the tips to become a homophone hero!"
           difficulty="Crossover"

@@ -459,6 +459,7 @@ export default function PrepositionsOfPlacePage() {
 
         <GameShell
           gameId="prepositions-of-place"
+          audience="eal"
           title="Where Is It?"
           description="Read each short scene and choose the correct preposition of place or time. There are 15 questions per round."
           difficulty="Crossover"

@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef, useMemo, memo } from 'react'
+import { useState, useEffect, useCallback, useRef, useMemo, memo, Suspense } from 'react'
 import Link from 'next/link'
+import { useRouter, useSearchParams } from 'next/navigation'
 import {
   Gamepad2,
   Lock,
@@ -24,6 +25,9 @@ import {
   Crown,
   Layers,
   Target,
+  Search,
+  TrendingUp,
+  ArrowRight,
 } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
@@ -36,6 +40,8 @@ import { cn } from '@/lib/utils'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
+import { TEXT_GAMES_INDEX, textGamesHref } from '@/lib/revision/text-games-href'
+import { canonicalTextSlug } from '@/lib/revision/text-slug-aliases'
 import { useT } from '@/lib/i18n/use-t'
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -847,7 +853,7 @@ function WeeklyLeaderboard() {
               <TabsContent key={id} value={id}>
                 {top.length === 0 ? (
                   <p className="text-center text-sm text-muted-foreground py-6">
-                    No scores yet this week. Play a round to set your first one!
+                    No scores yet this week. Play a round to set your first one.
                   </p>
                 ) : (
                   <div className="space-y-1">
@@ -936,6 +942,14 @@ interface GameDef {
   id: string
   title: string
   description: string
+  /**
+   * Dictionary keys for the title and description. The cards added on
+   * 10 October 2026 carry them, so an Arabic or Spanish reader gets them
+   * translated; the older cards are still English literals, and render
+   * `title` and `description` as before.
+   */
+  titleKey?: string
+  descriptionKey?: string
   icon: React.ReactNode
   difficulty: 'Easy' | 'Medium' | 'Hard'
   locked: boolean
@@ -949,7 +963,7 @@ const GAMES: GameDef[] = [
   {
     id: 'word-scramble',
     title: 'Word Scramble',
-    description: 'Unscramble English & Literature terminology before time runs out!',
+    description: 'Unscramble English and Literature terminology before time runs out.',
     icon: <Shuffle className="size-6" />,
     difficulty: 'Easy',
     locked: false,
@@ -979,7 +993,7 @@ const GAMES: GameDef[] = [
   {
     id: 'theme-matcher',
     title: 'Theme Matcher',
-    description: 'Match themes to the correct GCSE set texts. Multiple answers per round!',
+    description: 'Match themes to the correct GCSE set texts, with more than one answer per round.',
     icon: <Layers className="size-6" />,
     difficulty: 'Hard',
     locked: false,
@@ -997,6 +1011,51 @@ const GAMES: GameDef[] = [
     color: 'text-rose-400',
     gradient: 'from-rose-500/20 to-rose-500/5',
     href: '/games/speed-analysis',
+  },
+  // These three were built and then listed nowhere: no hub section, no
+  // homepage card, no nav entry. A student could reach them only from a search
+  // result or a recommendation. All three are written for GCSE students (each
+  // one's own metadata says so), so they belong in this list and not with the
+  // EAL or KS3 games below. Added 10 October 2026.
+  {
+    id: 'quote-detective',
+    title: 'Quote Detective',
+    description: 'Work out which GCSE set text each quotation comes from.',
+    titleKey: 'games_page.list.quote_detective.title',
+    descriptionKey: 'games_page.list.quote_detective.desc',
+    icon: <Search className="size-6" />,
+    difficulty: 'Medium',
+    locked: false,
+    color: 'text-amber-400',
+    gradient: 'from-amber-500/20 to-amber-500/5',
+    href: '/games/quote-detective',
+  },
+  {
+    id: 'grade-climber',
+    title: 'Grade Climber',
+    description: 'GCSE-style questions that get harder: three right to climb a grade.',
+    titleKey: 'games_page.list.grade_climber.title',
+    descriptionKey: 'games_page.list.grade_climber.desc',
+    icon: <TrendingUp className="size-6" />,
+    difficulty: 'Hard',
+    locked: false,
+    color: 'text-emerald-400',
+    gradient: 'from-emerald-500/20 to-emerald-500/5',
+    href: '/games/grade-climber',
+  },
+  {
+    id: 'comprehension-challenge',
+    title: 'Comprehension Challenge',
+    description:
+      'Read a passage, then answer questions on inference, language, structure and evaluation.',
+    titleKey: 'games_page.list.comprehension_challenge.title',
+    descriptionKey: 'games_page.list.comprehension_challenge.desc',
+    icon: <BookOpen className="size-6" />,
+    difficulty: 'Hard',
+    locked: false,
+    color: 'text-sky-400',
+    gradient: 'from-sky-500/20 to-sky-500/5',
+    href: '/games/comprehension-challenge',
   },
   {
     id: 'vocabulary-builder',
@@ -1194,7 +1253,7 @@ const EAL_GAMES: GameDef[] = [
   ),
   mkGame(
     'comparatives-superlatives',
-    'Bigger, Biggest!',
+    'Big, Bigger, Biggest',
     'big → bigger → biggest. Form comparatives and superlatives.',
     <Zap className="size-6" />,
     'Easy',
@@ -1491,7 +1550,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
           <Trophy className="size-16 text-clay-600 animate-bounce" />
           <Sparkles className="size-6 text-amber-700 absolute -top-1 -end-1 animate-pulse" />
         </div>
-        <h3 className="text-2xl font-bold text-foreground">Game Over!</h3>
+        <h3 className="text-2xl font-bold text-foreground">Game over</h3>
         <div className="text-center space-y-1">
           <p className="text-4xl font-black text-emerald-400">
             {score}/{totalAnswered}
@@ -1657,14 +1716,14 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
           {gameState === 'correct' && (
             <div className="flex items-center gap-2 text-emerald-400 animate-in zoom-in duration-300">
               <CheckCircle className="size-6" />
-              <span className="font-bold text-lg">Correct!</span>
+              <span className="font-bold text-lg">Correct</span>
             </div>
           )}
           {gameState === 'wrong' && (
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-red-400 animate-in zoom-in duration-300">
                 <XCircle className="size-6" />
-                <span className="font-bold text-lg">Not quite!</span>
+                <span className="font-bold text-lg">Not quite</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 The answer was:{' '}
@@ -1676,7 +1735,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-clay-600 animate-in zoom-in duration-300">
                 <Timer className="size-6" />
-                <span className="font-bold text-lg">Time&apos;s up!</span>
+                <span className="font-bold text-lg">Time&apos;s up</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 The answer was:{' '}
@@ -1821,20 +1880,20 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
           <Trophy className="size-16 text-clay-600 animate-bounce" />
           <Sparkles className="size-6 text-violet-300 absolute -top-1 -end-1 animate-pulse" />
         </div>
-        <h3 className="text-2xl font-bold text-foreground">Game Over!</h3>
+        <h3 className="text-2xl font-bold text-foreground">Game over</h3>
         <div className="text-center space-y-1">
           <p className="text-4xl font-black text-violet-400">{score}/10</p>
           <p className="text-muted-foreground text-sm">correct matches</p>
         </div>
         {score >= 8 && (
-          <p className="text-emerald-400 font-medium">Outstanding literary knowledge!</p>
+          <p className="text-emerald-400 font-medium">Outstanding literary knowledge.</p>
         )}
         {score >= 5 && score < 8 && (
-          <p className="text-clay-600 font-medium">Good effort! Keep reading!</p>
+          <p className="text-clay-600 font-medium">Good effort. Keep reading.</p>
         )}
         {score < 5 && (
           <p className="text-muted-foreground font-medium">
-            Keep practising - you&apos;ll get there!
+            Keep practising - you&apos;ll get there.
           </p>
         )}
         <div className="flex gap-3">
@@ -2008,18 +2067,18 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
           <Trophy className="size-16 text-clay-600 animate-bounce" />
           <Sparkles className="size-6 text-amber-700 absolute -top-1 -end-1 animate-pulse" />
         </div>
-        <h3 className="text-2xl font-bold text-foreground">Game Over!</h3>
+        <h3 className="text-2xl font-bold text-foreground">Game over</h3>
         <div className="text-center space-y-1">
           <p className="text-4xl font-black text-clay-600">{score}/10</p>
           <p className="text-muted-foreground text-sm">correct fixes</p>
         </div>
         {score >= 8 && (
-          <p className="text-emerald-400 font-medium">Grammar guru status achieved!</p>
+          <p className="text-emerald-400 font-medium">Grammar guru status achieved.</p>
         )}
         {score >= 5 && score < 8 && (
-          <p className="text-clay-600 font-medium">Solid grammar skills!</p>
+          <p className="text-clay-600 font-medium">Solid grammar skills.</p>
         )}
-        {score < 5 && <p className="text-muted-foreground font-medium">Practice makes perfect!</p>}
+        {score < 5 && <p className="text-muted-foreground font-medium">Practice makes perfect.</p>}
         <div className="flex gap-3">
           <Button variant="outline" onClick={onExit}>
             <ArrowLeft className="size-4 me-1" /> Back to Games
@@ -2207,8 +2266,10 @@ const GameCard = memo(function GameCard({
             {game.difficulty}
           </Badge>
         </div>
-        <CardTitle className="mt-2">{game.title}</CardTitle>
-        <CardDescription>{game.description}</CardDescription>
+        <CardTitle className="mt-2">{game.titleKey ? t(game.titleKey) : game.title}</CardTitle>
+        <CardDescription>
+          {game.descriptionKey ? t(game.descriptionKey) : game.description}
+        </CardDescription>
       </CardHeader>
 
       {!game.locked && (
@@ -2237,6 +2298,132 @@ const GameCard = memo(function GameCard({
     </Card>
   )
 })
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// PLAY YOUR SET TEXTS
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/**
+ * The hub's first section: guided games on the student's own set texts.
+ *
+ * With a board chosen it lists that board's texts that have guided games, each
+ * linking straight to them; without one, or for a board that sets no texts, it
+ * leads to the index of every text that has them. Which texts have games is
+ * decided by textGamesHref alone, the same rule the text rail, the revision hub
+ * and the homepage use, so this list cannot offer a text the others do not.
+ *
+ * The board comes from the same store as the rest of this page. Before it
+ * hydrates the board is unknown, and the section shows only the index link
+ * rather than guessing.
+ */
+function PlayYourSetTexts() {
+  const t = useT()
+  const { board, isHydrated } = useBoard()
+  const boardName = getBoardConfig(board)?.shortName ?? null
+
+  const playable = useMemo(
+    () =>
+      isHydrated && board
+        ? getSetTextsForBoard(board).flatMap((text) => {
+            const href = textGamesHref(text.slug)
+            return href ? [{ slug: text.slug, title: text.title, href }] : []
+          })
+        : [],
+    [board, isHydrated],
+  )
+
+  return (
+    <section
+      aria-labelledby="play-your-set-texts-heading"
+      className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-0"
+    >
+      <div className="rounded-2xl border border-clay-500/30 bg-gradient-to-br from-clay-500/10 via-card to-amber-500/5 p-5 sm:p-8">
+        <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-start gap-4">
+            <span
+              aria-hidden="true"
+              className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-clay-500/15 ring-1 ring-clay-500/30"
+            >
+              <BookOpen className="size-5 text-clay-600" />
+            </span>
+            <div className="min-w-0">
+              <p className="text-xs font-semibold uppercase tracking-wider text-clay-600">
+                {t('games_page.texts.eyebrow')}
+              </p>
+              <h2
+                id="play-your-set-texts-heading"
+                className="mt-1 text-xl sm:text-2xl font-bold text-foreground"
+              >
+                {t('games_page.texts.heading')}
+              </h2>
+              <p className="mt-2 max-w-xl text-sm text-muted-foreground leading-relaxed">
+                {t('games_page.texts.body')}
+              </p>
+            </div>
+          </div>
+          <Button size="lg" className="shrink-0" render={<Link href={TEXT_GAMES_INDEX} />}>
+            {t('games_page.texts.cta_all')}
+            <ArrowRight className="size-4 ms-1 rtl:rotate-180" aria-hidden="true" />
+          </Button>
+        </div>
+
+        {playable.length > 0 && boardName && (
+          <div className="mt-6 border-t border-clay-500/20 pt-5">
+            <h3 className="text-sm font-semibold text-foreground">
+              {t('games_page.texts.for_board').replace('{board}', boardName)}
+            </h3>
+            {/* Chips rather than a row per text: a board can have sixteen,
+                and on a phone a list that long pushed every game below it
+                three screens down. */}
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {playable.map((text) => (
+                <li key={text.slug}>
+                  <Link
+                    href={text.href}
+                    className="inline-flex items-center rounded-full border border-border/60 bg-card px-3.5 py-1.5 text-sm font-medium text-foreground transition-colors hover:border-clay-500/50 hover:bg-clay-500/5"
+                  >
+                    {text.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
+
+/**
+ * Honours `/games?text=<slug>`.
+ *
+ * The "no game in five days" recommendation in src/lib/recommendations/
+ * focus-on.ts has always sent `?text=` with the student's weakest text, and
+ * until 10 October 2026 nothing here read it: the link promised "Practise
+ * Macbeth games" and landed on the unfiltered hub. When the text has guided
+ * games the student now goes straight to them. When it does not - a text in
+ * copyright, or a slug we do not recognise - the hub renders as before.
+ *
+ * `replace`, not `push`, so Back returns to wherever the link was clicked
+ * rather than to a hub page that immediately sends you forward again. The
+ * slug goes through the revision-notes alias map first, because progress rows
+ * can carry `christmas-carol` for A Christmas Carol.
+ *
+ * Its own component inside a Suspense boundary: useSearchParams opts the
+ * nearest boundary out of static rendering, and without one the whole hub
+ * would stop being prerendered.
+ */
+function TextParamRedirect() {
+  const params = useSearchParams()
+  const router = useRouter()
+  const target = textGamesHref(canonicalTextSlug((params.get('text') ?? '').trim().toLowerCase()))
+
+  useEffect(() => {
+    if (target) router.replace(target)
+  }, [target, router])
+
+  return null
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // MAIN PAGE
@@ -2349,6 +2536,17 @@ export default function GamesPage() {
           </div>
         </div>
       </section>
+
+      {/* /games?text=<slug> goes to that text's guided games, when it has
+          them. Renders nothing. */}
+      <Suspense fallback={null}>
+        <TextParamRedirect />
+      </Suspense>
+
+      {/* Play your set texts - the first thing under the hero (10 October
+          2026). Hidden while an inline game is open, like the panels below,
+          so the game sits near the top of the page. */}
+      {!activeGame && <PlayYourSetTexts />}
 
       {/* Leaderboard */}
       {!activeGame && (

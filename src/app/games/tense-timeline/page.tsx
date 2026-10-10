@@ -438,6 +438,7 @@ export default function TenseTimelinePage() {
 
         <GameShell
           gameId="tense-timeline"
+          audience="eal"
           title="Tense Timeline"
           description="Read each sentence and choose the verb tense it uses. Build your grammar instinct one sentence at a time."
           difficulty="Crossover"

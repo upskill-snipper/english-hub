@@ -44,6 +44,7 @@ import { isIgcseBoard, isGcseBoard } from '@/lib/board/board-filter'
 import { gradeDisplayLabel } from '@/lib/board/grade-boundaries'
 import { useT } from '@/lib/i18n/use-t'
 import { buildTextNav, textSlugFromPath } from '@/lib/revision/text-nav'
+import { canonicalTextSlug } from '@/lib/revision/text-slug-aliases'
 import { boardShelfHref } from '@/lib/board/board-landing'
 import { textBackLink } from '@/lib/revision/text-back-href'
 
@@ -97,6 +98,11 @@ const NAV_ITEMS: NavItem[] = [
   // any navigation surface - header, footer, this sidebar or the hub tiles.
   // A subscriber could only reach it by typing the URL.
   { labelKey: 'revision.shell.nav.mark_essay',         href: '/marking',                                             icon: PenTool,        colour: 'text-emerald-400',  group: 'top' },
+  // 10 October 2026: Games moved up from the closed "Practice" group. Learning
+  // by playing is now a headline part of the product, with guided games on the
+  // set texts themselves, and an entry that only appears after opening a
+  // collapsed group is not one a student finds.
+  { labelKey: 'revision.shell.nav.games',              href: '/games',                                               icon: Gamepad2,       colour: 'text-clay-600',     group: 'top' },
   // 2026-08-18: pointed at /demo/student - a synthetic-data demo - so a real
   // signed-in student clicking "Full Dashboard" landed on someone else's
   // fake progress. Now the real dashboard.
@@ -113,7 +119,6 @@ const NAV_ITEMS: NavItem[] = [
   { labelKey: 'revision.shell.nav.practice',           href: '/practice',                                            icon: Dumbbell,       colour: 'text-violet-400',                                       group: 'practice' },
   { labelKey: 'revision.shell.nav.quick_quizzes',      href: '/revision/quiz',                                       icon: Zap,            colour: 'text-clay-600',                                         group: 'practice' },
   { labelKey: 'revision.shell.nav.reading_assessment', href: '/assessment/reading',                                  icon: ClipboardList,  colour: 'text-blue-400',                                         group: 'practice' },
-  { labelKey: 'revision.shell.nav.games',              href: '/games',                                               icon: Gamepad2,       colour: 'text-clay-600',                                         group: 'practice' },
   // Skills & technique.
   { labelKey: 'revision.shell.nav.exam_technique',     href: '/revision/exam-technique',                             icon: Target,         colour: 'text-emerald-400',                                       group: 'skills' },
   { labelKey: 'revision.shell.nav.grade_targets',      href: '/revision/grade-targets',                              icon: TrendingUp,     colour: 'text-cyan-400',                                         group: 'skills' },
@@ -495,9 +500,10 @@ function SidebarNav({
           </div>
         </div>
 
-        {/* Top-tier nav - always-visible essentials (Your Hub, Full Dashboard,
-          Analytics, Study Plan). Rendered flat above the collapsible groups
-          so they read as the primary surface of the sidebar. */}
+        {/* Top-tier nav - always-visible essentials (Your Hub, Mark an essay,
+          Games, Full Dashboard, Analytics, Study Plan). Rendered flat above
+          the collapsible groups so they read as the primary surface of the
+          sidebar. */}
         {topItems.map((item) => (
           <NavLink
             key={item.href}
@@ -590,7 +596,12 @@ function MobileScrollRail({ navItems }: { navItems: NavItem[] }) {
   // ever see. The hamburger sheet renders SidebarNav and is already scoped.
   const textSlug = textSlugFromPath(pathname)
   if (textSlug) {
-    const nav = buildTextNav(textSlug)
+    // The canonical slug, as text-scoped-nav.tsx has used since 20 September
+    // 2026. Six revision-notes routes drop the article (`christmas-carol`), and
+    // the raw segment gave this rail no sections and an Overview chip pointing
+    // at /revision/texts/christmas-carol, which is "Set Text Not Found". The
+    // desktop rail was fixed; this one, which more students use, was not.
+    const nav = buildTextNav(canonicalTextSlug(textSlug))
     const items = nav.groups.flatMap((g) => g.items)
     return (
       <div
@@ -617,6 +628,11 @@ function MobileScrollRail({ navItems }: { navItems: NavItem[] }) {
             label={t('textnav.overview')}
             isActive={pathname === nav.hubHref}
           />
+          {/* Play this text, second only to the overview: on a phone this rail
+              is the only text-scoped navigation most students see. */}
+          {nav.playHref && (
+            <MobileChip href={nav.playHref} label={t('textnav.play_text')} isActive={false} />
+          )}
           {items.map((item) => (
             <MobileChip
               key={item.href}

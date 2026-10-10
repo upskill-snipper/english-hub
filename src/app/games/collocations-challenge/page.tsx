@@ -311,6 +311,7 @@ export default function CollocationsChallengePage() {
 
         <GameShell
           gameId="collocations-challenge"
+          audience="eal"
           title="Collocations Challenge"
           description="Choose the verb or noun that fits the sentence. Master make, do, have and take - the trickiest English word partners."
           difficulty="Crossover"

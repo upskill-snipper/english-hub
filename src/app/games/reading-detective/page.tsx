@@ -585,6 +585,7 @@ export default function ReadingDetectivePage() {
 
         <GameShell
           gameId="reading-detective"
+          audience="ks3"
           title="Reading Detective"
           description="Read each short passage carefully, then crack the clues. Mix of fact-finding and reading-between-the-lines questions."
           difficulty="Crossover"

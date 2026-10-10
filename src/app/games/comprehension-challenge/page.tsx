@@ -563,6 +563,7 @@ export default function ComprehensionChallengePage() {
 
       <GameShell
         gameId="comprehension-challenge"
+        audience="gcse"
         title="Comprehension Challenge"
         description={
           boardConfig

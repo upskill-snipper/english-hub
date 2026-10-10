@@ -489,6 +489,7 @@ export default function TrickyWordSpellingPage() {
 
         <GameShell
           gameId="tricky-word-spelling"
+          audience="eal"
           title="Tricky Word Sprint"
           description="Spot the correct spelling of everyday words that trip people up. Tap fast - you have 90 seconds!"
           difficulty="Foundation"

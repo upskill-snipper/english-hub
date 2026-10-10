@@ -415,6 +415,7 @@ export default function DictionarySkillsPage() {
 
         <GameShell
           gameId="dictionary-skills"
+          audience="ks3"
           title="Dictionary Skills"
           description="Practise the key skills for using a dictionary: alphabetical order, guide words, matching definitions and spotting word classes."
           difficulty="Foundation"

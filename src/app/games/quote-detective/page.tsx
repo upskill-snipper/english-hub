@@ -442,6 +442,7 @@ export default function QuoteDetectivePage() {
 
       <GameShell
         gameId="quote-detective"
+        audience="gcse"
         title="Quote Detective"
         description="Identify which GCSE set text each quote is from. 20 questions, 60 seconds each."
         difficulty="Crossover"

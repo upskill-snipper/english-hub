@@ -605,6 +605,7 @@ export default function SynonymShufflePage() {
 
         <GameShell
           gameId="synonym-shuffle"
+          audience="ks3"
           title="Synonym Shuffle"
           description="A tired word is hiding in each sentence. Pick the most precise, ambitious synonym for that context - because synonyms aren't always swappable."
           difficulty="Crossover"

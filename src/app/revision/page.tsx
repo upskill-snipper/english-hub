@@ -50,6 +50,7 @@ import { HeroStatPills } from './_components/hero-stat-pills'
 import { TrialCountdownBannerServer } from '@/components/billing/TrialCountdownBannerServer'
 import { t } from '@/lib/i18n/t'
 import { textGuideHref } from '@/lib/revision/guide-href'
+import { TEXT_GAMES_INDEX, textGamesHref } from '@/lib/revision/text-games-href'
 
 // ─── Section data ──────────────────────────────────────────────────────────
 
@@ -399,6 +400,30 @@ export default async function RevisionHubPage() {
     : ''
   const featuredCta = await t('revision_page.featured.cta')
 
+  // Learn by playing (10 October 2026). The most direct game is the guided one
+  // on the text this hub already features, when that text has them; then the
+  // guided games on the board's other texts; and for a board that sets no
+  // texts (KS3, Cambridge 0500 and 0990) the games hub itself. Which texts have
+  // games is decided by textGamesHref, not here.
+  const featuredGamesHref = featuredText && !isCambridge ? textGamesHref(featuredText.slug) : null
+  const boardHasPlayableTexts =
+    board !== null && setTexts.some((tx) => textGamesHref(tx.slug) !== null)
+  const play = {
+    eyebrow: await t('revision_page.play.eyebrow'),
+    title: await t('revision_page.play.title'),
+    body: await t('revision_page.play.body'),
+    primary:
+      featuredText && featuredGamesHref
+        ? {
+            href: featuredGamesHref,
+            label: (await t('revision_page.play.cta_text')).replace('{title}', featuredText.title),
+          }
+        : boardHasPlayableTexts
+          ? { href: TEXT_GAMES_INDEX, label: await t('revision_page.play.cta_texts') }
+          : { href: '/games', label: await t('revision_page.play.cta_hub') },
+    allGames: await t('revision_page.play.cta_all'),
+  }
+
   async function getSectionStrings(s: RevisionSection) {
     const [title, desc, stats, tag] = await Promise.all([
       t(s.titleKey),
@@ -602,6 +627,48 @@ export default async function RevisionHubPage() {
           </div>
         </section>
       )}
+
+      {/* ── Learn by playing ─────────────────────────────────────── */}
+      {/* Games were reachable from this page only through a tile inside the
+          closed "Browse all sections" panel. */}
+      <section
+        aria-labelledby="learn-by-playing-heading"
+        className="rounded-2xl border border-clay-500/30 bg-gradient-to-r from-clay-500/[0.06] via-card to-amber-500/[0.04] p-6 sm:p-8"
+      >
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-start gap-4">
+            <span
+              aria-hidden="true"
+              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-clay-500/15 text-clay-600 ring-1 ring-clay-500/30"
+            >
+              <Gamepad2 className="size-5" />
+            </span>
+            <div>
+              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-clay-600">
+                {play.eyebrow}
+              </p>
+              <h2
+                id="learn-by-playing-heading"
+                className="mt-1 text-heading-md font-heading text-foreground"
+              >
+                {play.title}
+              </h2>
+              <p className="mt-2 max-w-2xl text-body-sm text-muted-foreground">{play.body}</p>
+            </div>
+          </div>
+          <div className="flex shrink-0 flex-col gap-2 sm:items-end">
+            <Button size="lg" render={<Link href={play.primary.href} />}>
+              {play.primary.label}
+              <ArrowRight className="size-4 rtl:rotate-180" aria-hidden="true" />
+            </Button>
+            {play.primary.href !== '/games' && (
+              <Button variant="outline" size="lg" render={<Link href="/games" />}>
+                {play.allGames}
+              </Button>
+            )}
+          </div>
+        </div>
+      </section>
 
       {/* ── Recently Studied (client) ─────────────────────────────── */}
       <RecentlyStudied />

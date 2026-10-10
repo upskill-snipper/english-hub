@@ -151,6 +151,8 @@ import { REV_MISC_DICTIONARY } from './dictionary-rev-misc'
 import { REV_POETRY2_DICTIONARY } from './dictionary-rev-poetry2'
 // Text-scoped sidebar labels (textnav.*). See src/lib/revision/text-nav.ts.
 import { TEXT_NAV_DICTIONARY } from './dictionary-text-nav'
+// 2026-10-10: guided text games (text_games.*). See src/lib/games/text-games/.
+import { TEXT_GAMES_DICTIONARY } from './dictionary-text-games'
 // 2026-06-08: landing-page hero rebuild chrome (home.lp.*).
 import { HOME_LP_DICTIONARY } from './dictionary-home-hero'
 
@@ -184,6 +186,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'الامتحانات التجريبية',
     es: 'Exámenes de prueba',
   },
+  // 10 October 2026: Games joins the main nav, for learners and visitors alike.
+  'header.nav.games': { en: 'Games', ar: 'الألعاب', es: 'Juegos' },
   'header.nav.dashboard': { en: 'Dashboard', ar: 'لوحتك', es: 'Panel' },
   'header.nav.affiliates': { en: 'Affiliates', ar: 'الشراكات', es: 'Afiliados' },
   'header.nav.try_demo': { en: 'Try Demo', ar: 'جرّب الديمو', es: 'Probar la demo' },
@@ -11358,10 +11362,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'طوّر مهاراتك في الإنجليزي بألعاب ممتعة وتفاعلية. حلوة لمراجعة KS3 و GCSE.',
     es: 'Perfecciona tus habilidades de inglés con juegos divertidos e interactivos. Perfectos para el repaso de KS3 y GCSE.',
   },
+  // Was "7 Free Games" while the hub listed thirty-seven. No count here now: the
+  // hub's lists and the guided text games both grow, and a number in a badge is
+  // the copy nobody remembers to update.
   'games_page.badge_free_games': {
-    en: '7 Free Games',
-    ar: '٧ ألعاب ببلاش',
-    es: '7 juegos gratuitos',
+    en: 'Free to play',
+    ar: 'العب ببلاش',
+    es: 'Gratis',
   },
   'games_page.badge_track_score': {
     en: 'Track Your Score',
@@ -11388,6 +11395,64 @@ export const DICTIONARY: Dictionary = {
     es: 'Regístrate para jugar',
   },
   'games_page.card.locked_cta': { en: 'Get Started', ar: 'ابدأ', es: 'Empezar' },
+
+  // ─── Games hub: "Play your set texts", the first section (10 October 2026)
+  'games_page.texts.eyebrow': { en: 'Guided games', ar: 'ألعاب موجّهة', es: 'Juegos guiados' },
+  'games_page.texts.heading': {
+    en: 'Play your set texts',
+    ar: 'العب مع نصوصك المقررة',
+    es: 'Juega con tus textos prescritos',
+  },
+  'games_page.texts.body': {
+    en: 'Guided games on the set texts you study, built from our study guide to each one. Pick a text and play.',
+    ar: 'ألعاب موجّهة على النصوص المقررة اللي تدرسها، مبنية من دليل الدراسة حق كل نص. اختر نص وابدأ اللعب.',
+    es: 'Juegos guiados sobre los textos prescritos que estudias, creados a partir de nuestra guía de estudio de cada uno. Elige un texto y juega.',
+  },
+  'games_page.texts.cta_all': {
+    en: 'See every text with games',
+    ar: 'شوف كل النصوص اللي لها ألعاب',
+    es: 'Ver todos los textos con juegos',
+  },
+  // "{board}" is the board's short name, e.g. AQA.
+  'games_page.texts.for_board': {
+    en: 'Your {board} texts with guided games',
+    ar: 'نصوصك في {board} اللي لها ألعاب موجّهة',
+    es: 'Tus textos de {board} con juegos guiados',
+  },
+
+  // ─── Games hub: the three GCSE games that were in no list (10 October 2026).
+  // The game names stay in Latin script in every locale, like the other cards
+  // and like the game pages they open, so the card and the page agree.
+  'games_page.list.quote_detective.title': {
+    en: 'Quote Detective',
+    ar: 'Quote Detective',
+    es: 'Quote Detective',
+  },
+  'games_page.list.quote_detective.desc': {
+    en: 'Work out which GCSE set text each quotation comes from.',
+    ar: 'اعرف كل اقتباس من أي نص مقرر في GCSE.',
+    es: 'Averigua de qué texto prescrito de GCSE procede cada cita.',
+  },
+  'games_page.list.grade_climber.title': {
+    en: 'Grade Climber',
+    ar: 'Grade Climber',
+    es: 'Grade Climber',
+  },
+  'games_page.list.grade_climber.desc': {
+    en: 'GCSE-style questions that get harder: three right to climb a grade.',
+    ar: 'أسئلة بأسلوب GCSE تصعب شوي شوي: ثلاث إجابات صح وتطلع درجة.',
+    es: 'Preguntas de estilo GCSE cada vez más difíciles: tres aciertos para subir de nota.',
+  },
+  'games_page.list.comprehension_challenge.title': {
+    en: 'Comprehension Challenge',
+    ar: 'Comprehension Challenge',
+    es: 'Comprehension Challenge',
+  },
+  'games_page.list.comprehension_challenge.desc': {
+    en: 'Read a passage, then answer questions on inference, language, structure and evaluation.',
+    ar: 'اقرأ النص، وبعدها جاوب على أسئلة عن الاستنتاج واللغة والبنية والتقييم.',
+    es: 'Lee un texto y después responde preguntas de inferencia, lenguaje, estructura y valoración.',
+  },
 
   // ─── Poetry hub page (revision/poetry top-level) ─────────────────────
   'poetry.breadcrumb_revision': { en: 'Revision', ar: 'المراجعة', es: 'Repaso' },
@@ -14725,6 +14790,43 @@ export const DICTIONARY: Dictionary = {
     en: 'Play to learn',
     ar: 'العب وتعلّم',
     es: 'Juega para aprender',
+  },
+  // ─── Revision hub: the "Learn by playing" panel (10 October 2026) ───────
+  'revision_page.play.eyebrow': {
+    en: 'Learn by playing',
+    ar: 'تعلّم باللعب',
+    es: 'Aprende jugando',
+  },
+  'revision_page.play.title': {
+    en: 'Revision games',
+    ar: 'ألعاب المراجعة',
+    es: 'Juegos de repaso',
+  },
+  'revision_page.play.body': {
+    en: 'Guided games on set texts, and quick games for quotations, techniques, spelling and vocabulary.',
+    ar: 'ألعاب موجّهة على النصوص المقررة، وألعاب سريعة للاقتباسات والأساليب والإملاء والمفردات.',
+    es: 'Juegos guiados sobre los textos prescritos y juegos rápidos de citas, recursos, ortografía y vocabulario.',
+  },
+  // "{title}" is the set text's title, e.g. Macbeth.
+  'revision_page.play.cta_text': {
+    en: 'Play {title}',
+    ar: 'العب مع {title}',
+    es: 'Juega con {title}',
+  },
+  'revision_page.play.cta_texts': {
+    en: 'Play your set texts',
+    ar: 'العب مع نصوصك المقررة',
+    es: 'Juega con tus textos prescritos',
+  },
+  'revision_page.play.cta_hub': {
+    en: 'Open the games',
+    ar: 'افتح الألعاب',
+    es: 'Abrir los juegos',
+  },
+  'revision_page.play.cta_all': {
+    en: 'All games',
+    ar: 'كل الألعاب',
+    es: 'Todos los juegos',
   },
   'revision_page.section.resources.title': {
     en: 'Resources Hub',
@@ -25398,6 +25500,7 @@ export const DICTIONARY_CHAIN: Dictionary[] = [
   REV_MISC_DICTIONARY,
   REV_POETRY2_DICTIONARY,
   TEXT_NAV_DICTIONARY,
+  TEXT_GAMES_DICTIONARY,
   HOME_LP_DICTIONARY,
   IGCSE_PAGES_DICTIONARY,
   KS3_PAGES_DICTIONARY,

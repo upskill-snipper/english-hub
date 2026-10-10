@@ -849,6 +849,7 @@ export default function PrefixSuffixLabPage() {
 
         <GameShell
           gameId="prefix-suffix-lab"
+          audience="ks3"
           title="Prefix & Suffix Lab"
           description="Build new words by adding the right prefix or suffix. Read the root and the goal, then pick the affix that makes the word."
           difficulty="Crossover"

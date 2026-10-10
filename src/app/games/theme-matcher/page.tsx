@@ -307,6 +307,7 @@ export default function ThemeMatcherPage() {
 
         <GameShell
           gameId="theme-matcher"
+          audience="gcse"
           title="Theme Matcher"
           description="Select ALL texts where the given theme appears. 15 rounds covering major GCSE themes."
           difficulty="Higher"

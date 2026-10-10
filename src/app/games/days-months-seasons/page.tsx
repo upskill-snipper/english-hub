@@ -484,6 +484,7 @@ export default function DaysMonthsSeasonsPage() {
 
         <GameShell
           gameId="days-months-seasons"
+          audience="eal"
           title="Days, Months & Seasons"
           description="Learn the days of the week, the months of the year and the four seasons. Choose the correct answer for each question."
           difficulty="Foundation"

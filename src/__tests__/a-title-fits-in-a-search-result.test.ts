@@ -291,6 +291,10 @@ describe('a title fits in a search result', () => {
     // 53 since 10 October 2026: the three long novels' chapter routes
     // (src/app/revision/texts/<slug>/read/[chapter]), whose 158 computed
     // titles and descriptions a-long-book-sends-one-chapter.test.ts measures.
-    expect(DYNAMIC.length).toBeLessThanOrEqual(53)
+    // 54 the same day: src/app/games/texts/[slug]/page.tsx, one page per set
+    // text with guided games, whose titles are composed by
+    // src/lib/games/text-games/meta.ts and measured against the same 60 and
+    // 160 in text-games-are-built-from-the-guides.test.ts.
+    expect(DYNAMIC.length).toBeLessThanOrEqual(54)
   })
 })

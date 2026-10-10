@@ -38,6 +38,7 @@ import {
   Quote,
   ClipboardList,
   ScanText,
+  Gamepad2,
 } from 'lucide-react'
 
 import { useT } from '@/lib/i18n/use-t'
@@ -223,6 +224,34 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
             </span>
             <span className="block text-[11px] leading-tight text-muted-foreground">
               {t('textnav.mark_essay_hint')}
+            </span>
+          </span>
+        </Link>
+      )}
+
+      {/* Play this text (10 October 2026). The guided games for the text the
+          student is reading, beside the marker for the same reason the marker
+          is here: the rail reaches every guide in all five trees at once.
+
+          Gated on `playHref`, not on the title or the section count. Only a
+          text with a public-domain guide has games (see text-games-href.ts),
+          and that includes Hamlet and King Lear, whose guides have no
+          sub-pages and so no sections. Built from the canonical slug like
+          everything else here, so the revision-notes route for A Christmas
+          Carol offers /games/texts/a-christmas-carol, not a 404. */}
+      {nav.playHref && (
+        <Link
+          href={nav.playHref}
+          onClick={onNavigate}
+          className="mb-3 flex items-center gap-2.5 rounded-2xl border border-clay-500/30 bg-clay-500/5 p-3 transition-colors hover:border-clay-500/60 hover:bg-clay-500/10"
+        >
+          <Gamepad2 aria-hidden="true" className="size-4 shrink-0 text-clay-600" />
+          <span className="min-w-0">
+            <span className="block text-sm font-medium leading-tight text-foreground">
+              {t('textnav.play_text')}
+            </span>
+            <span className="block text-[11px] leading-tight text-muted-foreground">
+              {t('textnav.play_text_hint')}
             </span>
           </span>
         </Link>

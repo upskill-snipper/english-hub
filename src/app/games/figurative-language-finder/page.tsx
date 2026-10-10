@@ -457,6 +457,7 @@ export default function FigurativeLanguageFinderPage() {
 
         <GameShell
           gameId="figurative-language-finder"
+          audience="ks3"
           title="Figurative Language Finder"
           description="Read each original sentence and identify the figurative language device it uses. Spot similes, metaphors, personification and more!"
           difficulty="Crossover"

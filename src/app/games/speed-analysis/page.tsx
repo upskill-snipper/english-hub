@@ -314,6 +314,7 @@ export default function SpeedAnalysisPage() {
 
         <GameShell
           gameId="speed-analysis"
+          audience="gcse"
           title="Speed Analysis"
           description="Identify the literary device in each extract. 30 seconds per question, 20 questions per round."
           difficulty="Higher"

@@ -470,6 +470,7 @@ export default function ToBeConjugationPage() {
 
         <GameShell
           gameId="to-be-conjugation"
+          audience="eal"
           title="The Verb To Be"
           description="Read each sentence and choose the correct form of the verb 'to be' - am, is, are, was, were, will be, been or being."
           difficulty="Foundation"

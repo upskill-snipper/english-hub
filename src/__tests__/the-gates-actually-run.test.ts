@@ -228,10 +228,19 @@ describe('what the suite runs in', () => {
     // next page asked again. That is a mounted component re-rendering with a
     // cookie that changed in between; rendered to a string there is no mount,
     // no re-render and no document.cookie, and the old component passes.
+    //
+    // Then to 28 on 10 October 2026 for only-a-gcse-game-gives-a-gcse-grade
+    // .test.tsx. GameShell showed every game's score as a GCSE grade; the fix
+    // shows one only for a GCSE game, on the results screen and in the best
+    // score shown before play. That best score is read from localStorage in an
+    // effect, so rendered to a string it never appears and the old shell
+    // passes. The "Play this text" rail assertions from the same change went
+    // into the-rail-knows-which-text-it-is-in.test.tsx, already counted, rather
+    // than raising this twice.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(27)
+    ).toBeLessThanOrEqual(28)
   })
 })
 

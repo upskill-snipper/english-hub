@@ -513,6 +513,7 @@ export default function ParagraphJumblePage() {
 
         <GameShell
           gameId="paragraph-jumble"
+          audience="ks3"
           title="Paragraph Jumble"
           description="The sentences are mixed up! Reorder them into a paragraph that makes sense. Use the topic sentence, connectives and pronouns as your clues."
           difficulty="Crossover"

@@ -557,6 +557,7 @@ export default function WordClassSorterPage() {
 
         <GameShell
           gameId="word-class-sorter"
+          audience="ks3"
           title="Word Class Sorter"
           description="Read the sentence and decide the word class of the highlighted word. Remember - context changes the answer!"
           difficulty="Crossover"

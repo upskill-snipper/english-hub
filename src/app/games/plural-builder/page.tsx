@@ -205,6 +205,7 @@ export default function PluralBuilderPage() {
 
         <GameShell
           gameId="plural-builder"
+          audience="eal"
           title="Plural Builder"
           description="Read the singular noun, then type its plural. Learn the spelling rule after each one."
           difficulty="Foundation"

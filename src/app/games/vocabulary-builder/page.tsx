@@ -624,6 +624,7 @@ export default function VocabularyBuilderPage() {
 
         <GameShell
           gameId="vocabulary-builder"
+          audience="gcse"
           title="Vocabulary Builder"
           description="Select the correct definition for each word. Wrong answers reappear for spaced repetition."
           difficulty="Crossover"

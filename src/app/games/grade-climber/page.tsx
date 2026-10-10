@@ -2140,6 +2140,7 @@ export default function GradeClimberPage() {
 
       <GameShell
         gameId="grade-climber"
+        audience="gcse"
         title="Grade Climber"
         description={
           boardConfig

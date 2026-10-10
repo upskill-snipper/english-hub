@@ -428,6 +428,7 @@ export default function ArticleAAnThePage() {
 
         <GameShell
           gameId="article-a-an-the"
+          audience="eal"
           title="A, An, The or Nothing?"
           description="Read each sentence and tap the article that fits the gap: a, an, the, or no article. Learn the rule after every answer."
           difficulty="Foundation"

@@ -483,6 +483,7 @@ export default function SpellingPatternsPage() {
 
         <GameShell
           gameId="spelling-patterns"
+          audience="ks3"
           title="Spelling Patterns"
           description="Pick the correctly spelled word, then learn the rule behind it. Master patterns like 'i before e', consonant doubling, drop-the-e, y→i, -tion/-sion, and -ves plurals."
           difficulty="Crossover"
