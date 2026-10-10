@@ -3,10 +3,12 @@
  * from that text's study guide and comic art, and as the browser plays it.
  *
  * WHAT THIS IS (10 October 2026). The founder asked for games to be a guided
- * part of revision, with quick feedback, pictures and scores. Each public-domain
- * set text with a study guide gets a path of short rounds at
- * /games/texts/<slug>: who's who, story order, where a quotation comes from,
- * finishing a quotation, naming a method and matching a theme.
+ * part of revision, with quick feedback, pictures and scores. Each set text
+ * with a study guide gets a path of short rounds at /games/texts/<slug>: who's
+ * who, story order, where a quotation comes from, finishing a quotation,
+ * naming a method and matching a theme. Public-domain texts came first; texts
+ * in copyright followed the same day, once it was measured that a path quotes
+ * only what its guide page does (quoted.ts holds every such path to that).
  *
  * THE ONE RULE. Every question, every option and every explanation is the
  * guide's own data, never written here. A quotation is exactly a guide
@@ -143,4 +145,10 @@ export interface TextGame {
   rounds: Round[]
   /** Only the pieces some item uses. */
   art: GameArt
+  /**
+   * For a text in copyright, its guide's acknowledgement, which the page prints
+   * under the path: quotation is fair dealing only with one. Absent for a text
+   * in the public domain.
+   */
+  acknowledgement?: string
 }

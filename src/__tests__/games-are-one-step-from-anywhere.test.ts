@@ -88,9 +88,11 @@ describe('the games hub', () => {
     // in a browser. So it now checks where the links go.
     expect(textGamesOrHubHref('macbeth')).toBe('/games/texts/macbeth')
     expect(textGamesOrHubHref(' Macbeth ')).toBe('/games/texts/macbeth')
-    // A text in copyright has no guided games yet; the excluded poem has none.
-    expect(textGamesOrHubHref('an-inspector-calls')).toBe('/games')
+    // A text in copyright has guided games too (from 10 October 2026); the
+    // excluded poem and a slug that is no text have none.
+    expect(textGamesOrHubHref('an-inspector-calls')).toBe('/games/texts/an-inspector-calls')
     expect(textGamesOrHubHref('do-not-go-gentle-into-that-good-night')).toBe('/games')
+    expect(textGamesOrHubHref('not-a-set-text')).toBe('/games')
     expect(textGamesOrHubHref(null)).toBe('/games')
     expect(textGamesOrHubHref('../etc')).toBe('/games')
     const FOCUS = read('src/lib/recommendations/focus-on.ts')

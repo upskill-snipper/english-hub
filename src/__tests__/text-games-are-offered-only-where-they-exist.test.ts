@@ -3,7 +3,10 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { join, relative } from 'node:path'
 
 import { STUDY_GUIDE_LOADERS } from '@/data/study-guides'
-import { PUBLIC_DOMAIN_GUIDE_SLUGS } from '@/lib/study-guides/public-domain.generated'
+import {
+  COPYRIGHT_GUIDE_SLUGS,
+  PUBLIC_DOMAIN_GUIDE_SLUGS,
+} from '@/lib/study-guides/guide-rights.generated'
 import { TEXT_GAMES_INDEX, textGamesHref } from '@/lib/revision/text-games-href'
 import { LEFT_OUT_OF_TEXT_GAMES, textGameSlugs } from '@/lib/games/text-games/slugs'
 import { buildTextNav } from '@/lib/revision/text-nav'
@@ -15,13 +18,18 @@ import { SET_TEXTS } from '@/lib/board/set-texts'
  * WHAT IS BEING PROTECTED (10 October 2026). Guided games now sit at
  * /games/texts/<slug>, one path per text, and five places link to them: the
  * text-scoped rail ("Play this text"), its phone rail, the revision hub, the
- * games hub and the homepage. Only texts whose study guide is public domain
- * have games, because a game quotes and rearranges a text far more freely than
- * the fair-dealing limits allow for one in copyright, and one public-domain
+ * games hub and the homepage. Every text with a study guide has games, and one
  * text, Do not go gentle into that good night, is left out of them.
  *
+ * Until later the same day only texts whose guide is public domain had games,
+ * on the reasoning that a game quotes a text far more freely than the
+ * fair-dealing limits allow for one in copyright. Measured, a path quotes only
+ * what its guide page does, so texts in copyright have games too, each held to
+ * the limits by src/lib/games/text-games/quoted.ts (asserted in
+ * text-games-are-built-from-the-guides.test.ts).
+ *
  * So the ways this goes wrong are all the house shape, a link that renders and
- * goes nowhere: a copyrighted text offered a game, the left-out poem offered
+ * goes nowhere: a text with no guide offered a game, the left-out poem offered
  * one, or one surface deciding for itself and drifting from the games. The
  * games decide which texts they cover (src/lib/games/text-games/slugs.ts, read
  * by their route, their index and the sitemap); every link asks them through
@@ -33,32 +41,35 @@ import { SET_TEXTS } from '@/lib/board/set-texts'
  * failures name slugs only.
  */
 
-describe('the public-domain register says what the guides say', () => {
+describe('the rights register says what the guides say', () => {
   it('in both directions, guide by guide', async () => {
     // Every guide is loaded and asked. A register derived by reading source
     // files is only as good as the reading, so it is checked against the data.
     const publicDomain: string[] = []
+    const copyright: string[] = []
     for (const [slug, load] of Object.entries(STUDY_GUIDE_LOADERS)) {
       const guide = await load()
-      if (guide.rights.status === 'public-domain') publicDomain.push(slug)
+      ;(guide.rights.status === 'public-domain' ? publicDomain : copyright).push(slug)
     }
-    const register = [...PUBLIC_DOMAIN_GUIDE_SLUGS].sort()
-    expect(register, 'stale register: run node scripts/generate-public-domain-guides.mjs').toEqual(
-      publicDomain.sort(),
-    )
+    const stale = 'stale register: run node scripts/generate-guide-rights.mjs'
+    expect([...PUBLIC_DOMAIN_GUIDE_SLUGS].sort(), stale).toEqual(publicDomain.sort())
+    expect([...COPYRIGHT_GUIDE_SLUGS].sort(), stale).toEqual(copyright.sort())
   }, 60_000)
 
   it('has enough in it for that to mean something', () => {
     // Vacuity guard: an empty register agrees with nothing and offers nothing,
     // which would pass every assertion below.
     expect(PUBLIC_DOMAIN_GUIDE_SLUGS.size).toBeGreaterThan(30)
-    expect(Object.keys(STUDY_GUIDE_LOADERS).length).toBeGreaterThan(PUBLIC_DOMAIN_GUIDE_SLUGS.size)
+    expect(COPYRIGHT_GUIDE_SLUGS.size).toBeGreaterThan(60)
+    expect(PUBLIC_DOMAIN_GUIDE_SLUGS.size + COPYRIGHT_GUIDE_SLUGS.size).toBe(
+      Object.keys(STUDY_GUIDE_LOADERS).length,
+    )
   })
 })
 
 describe('which texts have games', () => {
-  it('is the public-domain register less the texts left out', () => {
-    const expected = [...PUBLIC_DOMAIN_GUIDE_SLUGS].filter((s) => !LEFT_OUT_OF_TEXT_GAMES.has(s))
+  it('is every text with a study guide, less the texts left out', () => {
+    const expected = Object.keys(STUDY_GUIDE_LOADERS).filter((s) => !LEFT_OUT_OF_TEXT_GAMES.has(s))
     expect(textGameSlugs()).toEqual(expected.sort())
   })
 
@@ -71,7 +82,8 @@ describe('which texts have games', () => {
 
   it('leaves out only texts the register holds, or the exclusion excludes nothing', () => {
     for (const slug of LEFT_OUT_OF_TEXT_GAMES) {
-      expect(PUBLIC_DOMAIN_GUIDE_SLUGS.has(slug), `${slug} is not in the register`).toBe(true)
+      const held = PUBLIC_DOMAIN_GUIDE_SLUGS.has(slug) || COPYRIGHT_GUIDE_SLUGS.has(slug)
+      expect(held, `${slug} is not in the register`).toBe(true)
     }
   })
 
@@ -82,15 +94,24 @@ describe('which texts have games', () => {
     expect(buildTextNav(slug).playHref).toBeNull()
   })
 
-  it('offers nothing for a text in copyright', () => {
+  it('offers the path for a text in copyright that has a guide', () => {
     // An Inspector Calls is the standing example: in copyright, and studied by
-    // more students on this site than almost anything else.
-    expect(textGamesHref('an-inspector-calls')).toBeNull()
+    // more students on this site than almost anything else. Until 10 October
+    // 2026 it was the example of a text with no games.
+    expect(textGamesHref('an-inspector-calls')).toBe(`${TEXT_GAMES_INDEX}/an-inspector-calls`)
     const copyright = SET_TEXTS.filter((t) => t.copyrightStatus === 'copyright')
     expect(copyright.length).toBeGreaterThan(30)
     for (const text of copyright) {
-      expect(textGamesHref(text.slug), text.slug).toBeNull()
+      const expected = COPYRIGHT_GUIDE_SLUGS.has(text.slug)
+        ? `${TEXT_GAMES_INDEX}/${text.slug}`
+        : null
+      expect(textGamesHref(text.slug), text.slug).toBe(expected)
     }
+  })
+
+  it('offers nothing for a slug with no study guide', () => {
+    expect(textGamesHref('not-a-set-text')).toBeNull()
+    expect(buildTextNav('not-a-set-text').playHref).toBeNull()
   })
 
   it('offers the path for a public-domain text', () => {

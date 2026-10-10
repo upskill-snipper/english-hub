@@ -26,12 +26,12 @@ import { CATEGORY_ORDER, categoryLabelKey } from '@/lib/revision/shelf'
 export const metadata: Metadata = {
   title: 'Set text games for GCSE and IGCSE English - The English Hub',
   description:
-    'Guided revision games on Shakespeare, 19th-century novels and poems: who’s who, story order, quotations, methods and themes, with instant feedback.',
+    'Guided revision games on GCSE and IGCSE set texts, from Shakespeare to modern plays, novels and poems: who’s who, story order, quotations, methods and themes.',
   alternates: { canonical: 'https://theenglishhub.app/games/texts' },
   openGraph: {
     title: 'Set text games - The English Hub',
     description:
-      'Guided revision games on Shakespeare, 19th-century novels and poems: who’s who, story order, quotations, methods and themes, with instant feedback.',
+      'Guided revision games on GCSE and IGCSE set texts, from Shakespeare to modern plays, novels and poems: who’s who, story order, quotations, methods and themes.',
     url: 'https://theenglishhub.app/games/texts',
     images: [
       {

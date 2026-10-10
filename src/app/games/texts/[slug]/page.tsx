@@ -24,7 +24,8 @@ import { textGuideHref } from '@/lib/revision/guide-href'
  * One set text's guided games: /games/texts/<slug>.
  *
  * The path is built here, on the server, from the text's study guide, its
- * comic art and the site's held edition (src/lib/games/text-games/load.ts),
+ * comic art and the site's held edition, where there are any
+ * (src/lib/games/text-games/load.ts),
  * and handed to the client runner as plain data: this text's rounds and the
  * descriptors of the panels and portraits they show, never another guide and
  * never a drawing. The browser fetches each drawing when it is about to be
@@ -152,6 +153,14 @@ export default async function TextGamePage({ params }: { params: Promise<Params>
       </header>
 
       <TextGameRunner game={game} />
+
+      {/* A text in copyright is quoted under fair dealing, which needs an
+          acknowledgement on the page that quotes it: the guide's own. */}
+      {game.acknowledgement && (
+        <EnglishText as="p" className="mt-10 text-body-sm text-muted-foreground">
+          {game.acknowledgement}
+        </EnglishText>
+      )}
     </div>
   )
 }

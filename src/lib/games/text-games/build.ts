@@ -597,5 +597,8 @@ export function buildTextGame({ guide, art, held = null }: BuildInput): TextGame
     author: guide.author,
     rounds,
     art: usedArt(rounds, art),
+    ...(guide.rights.status === 'copyright'
+      ? { acknowledgement: guide.rights.acknowledgement }
+      : {}),
   }
 }

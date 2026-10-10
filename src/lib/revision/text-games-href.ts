@@ -1,13 +1,12 @@
 /**
  * Where a set text's guided games are, or null when it has none.
  *
- * WHAT THE RULE IS. A text has guided games at /games/texts/<slug> when its
- * study guide is of a public-domain text and it is not one of the texts left
- * out of the games. A game quotes and rearranges the text far more freely than
- * a guide does, and the fair-dealing limits on a text in copyright do not
- * stretch that far, so copyrighted texts get no text games in this phase.
- * Offering "Play this text" on An Inspector Calls would be a link to a page
- * that does not exist.
+ * WHAT THE RULE IS. A text has guided games at /games/texts/<slug> when it has
+ * a study guide and it is not one of the texts left out of the games. Until 10
+ * October 2026 that also required the text to be in the public domain; texts
+ * in copyright now have paths too, held to the fair-dealing limits by
+ * src/lib/games/text-games/quoted.ts. Offering "Play this text" on a text with
+ * no path would be a link to a page that does not exist.
  *
  * THE RULE IS NOT DECIDED HERE. It belongs to the games themselves, in
  * src/lib/games/text-games/slugs.ts, which is also what the route's

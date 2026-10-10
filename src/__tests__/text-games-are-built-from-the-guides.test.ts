@@ -14,6 +14,7 @@ import {
   TITLE_LIMIT,
 } from '@/lib/games/text-games/meta'
 import { finishRound, finishRun, readProgress, startRound } from '@/lib/games/text-games/progress'
+import { overTheLimits, quotedInGame } from '@/lib/games/text-games/quoted'
 import { hasTextGame, LEFT_OUT_OF_TEXT_GAMES, textGameSlugs } from '@/lib/games/text-games/slugs'
 import {
   normForMatch,
@@ -26,7 +27,7 @@ import {
 } from '@/lib/games/text-games/text'
 import type { GameItem, TextGame } from '@/lib/games/text-games/types'
 import { TEXT_GAMES_DICTIONARY } from '@/lib/i18n/dictionary-text-games'
-import { PUBLIC_DOMAIN_GUIDE_SLUGS } from '@/lib/study-guides/public-domain.generated'
+import { limitsFor } from '@/lib/study-guides/fair-dealing'
 import type { StudyGuide } from '@/lib/study-guides/types'
 import { quotationsOf } from '@/lib/study-guides/validate'
 
@@ -48,8 +49,12 @@ import { quotationsOf } from '@/lib/study-guides/validate'
  *   another link between the same two people, no wrong theme is one the
  *   moment carries;
  * - every explanation is the guide's own words;
- * - only public-domain texts have paths, every one of them does, and the deal
- *   is deterministic.
+ * - every text with a guide has a path, but the one left out, and the deal is
+ *   deterministic;
+ * - a path quotes nothing its guide does not, and for a text in copyright
+ *   stays inside the fair-dealing limits (quoted.ts), printing the guide's
+ *   acknowledgement. Texts in copyright have had paths since 10 October 2026,
+ *   once it was measured that a path quotes less than its guide page.
  *
  * WHAT IT CANNOT SEE. Meaning. Two methods can describe one passage, and two
  * relationships can be true of one pair, in words that share nothing. The
@@ -124,28 +129,26 @@ function lineWith(item: Extract<GameItem, { kind: 'finish' }>, word: string): st
 }
 
 describe('which texts have games', () => {
-  it(
-    'every public-domain guide but the one left out, and nothing else',
-    async () => {
-      const expected = [...PUBLIC_DOMAIN_GUIDE_SLUGS]
-        .filter((s) => !LEFT_OUT_OF_TEXT_GAMES.has(s))
-        .sort()
-      expect(slugs).toEqual(expected)
-      expect(slugs.length).toBeGreaterThan(30)
-      // The register against the guides themselves, read here rather than trusted.
-      for (const slug of Object.keys(STUDY_GUIDE_LOADERS)) {
-        if (LEFT_OUT_OF_TEXT_GAMES.has(slug)) continue
-        const guide = await STUDY_GUIDE_LOADERS[slug]()
-        expect(hasTextGame(slug), slug).toBe(guide.rights.status === 'public-domain')
-      }
-    },
-    WARM_MS,
-  )
+  it('every guide but the one left out, and nothing else', () => {
+    const guides = Object.keys(STUDY_GUIDE_LOADERS)
+    const expected = guides.filter((s) => !LEFT_OUT_OF_TEXT_GAMES.has(s)).sort()
+    expect(slugs).toEqual(expected)
+    expect(slugs.length).toBeGreaterThan(100)
+    for (const slug of guides)
+      expect(hasTextGame(slug), slug).toBe(!LEFT_OUT_OF_TEXT_GAMES.has(slug))
+  })
 
-  it('a text in copyright, or one left out, has no path, and nothing of it is loaded', async () => {
-    expect(await loadTextGame('an-inspector-calls')).toBeNull()
+  it('both kinds of text, so the copyright checks below are not vacuous', () => {
+    const status = slugs.map((s) => get(s).guide.rights.status)
+    expect(status.filter((x) => x === 'public-domain').length).toBeGreaterThan(30)
+    expect(status.filter((x) => x === 'copyright').length).toBeGreaterThan(60)
+    expect(get('an-inspector-calls').guide.rights.status).toBe('copyright')
+  })
+
+  it('the text left out, or a slug that is no text, has no path, and nothing of it is loaded', async () => {
     for (const slug of LEFT_OUT_OF_TEXT_GAMES) expect(await loadTextGame(slug)).toBeNull()
     expect(await loadTextGame('../secrets')).toBeNull()
+    expect(await loadTextGame('not-a-set-text')).toBeNull()
   })
 
   it('every text with a path is on the set-text register, so the index lists it', () => {
@@ -358,6 +361,31 @@ describe.each(slugs)('%s', (slug) => {
     expect(dealReview(slug, review, 2)).toEqual(dealReview(slug, review, 2))
   })
 
+  it('quotes nothing its guide does not, and for a text in copyright stays inside the limits', () => {
+    const { game, guide } = get(slug)
+    expect(overTheLimits(game, guide)).toEqual([])
+    if (guide.rights.status === 'copyright') {
+      const lim = limitsFor(guide.form, guide.workLength)
+      const { words, passages } = quotedInGame(game)
+      expect(words).toBeLessThanOrEqual(lim.totalWords)
+      expect(passages.length, 'a path that quotes nothing has nothing to measure').toBeGreaterThan(
+        0,
+      )
+      expect(game.acknowledgement).toBe(guide.rights.acknowledgement)
+      expect(game.acknowledgement?.length ?? 0).toBeGreaterThan(10)
+      // Quotation is fair dealing for criticism only when comment follows it
+      // (fair-dealing.ts). Every quotation a path asks about is followed, once
+      // answered, by the guide's own comment on it: a key quotation's analysis
+      // or a scene card's summary.
+      for (const round of game.rounds)
+        for (const item of round.items)
+          if (item.kind === 'where' || item.kind === 'finish')
+            expect(item.explanation.split(/\s+/).length, item.id).toBeGreaterThanOrEqual(15)
+    } else {
+      expect(game.acknowledgement).toBeUndefined()
+    }
+  })
+
   it('has a title and description that fit a search result and promise only what it has', () => {
     const { game } = get(slug)
     const title = textGameTitle(game.title)
@@ -369,6 +397,61 @@ describe.each(slugs)('%s', (slug) => {
     const kinds = new Set(game.rounds.map((r) => r.kind))
     if (!kinds.has('method')) expect(description).not.toContain('methods')
     if (!kinds.has('who')) expect(description).not.toContain('characters')
+  })
+})
+
+describe('the fair-dealing measure of a path', () => {
+  // overTheLimits() is what stands between a path and quoting more of a text
+  // in copyright than the site's limits allow. So it is shown here to catch
+  // each breach, on a real path with one thing changed. Nothing here prints
+  // more of the text than the guide does.
+  const game = () => get('an-inspector-calls').game
+  const guide = () => get('an-inspector-calls').guide
+  const firstWhere = () =>
+    game().rounds.find((r) => r.kind === 'where')!.items[0] as Extract<GameItem, { kind: 'where' }>
+  const withOnly = (item: GameItem): TextGame => ({
+    ...game(),
+    rounds: [{ kind: item.kind, items: [item] }],
+  })
+
+  it('passes the real path', () => {
+    expect(overTheLimits(game(), guide())).toEqual([])
+  })
+
+  it('catches a quotation stretched past the limit, which the guide never made', () => {
+    const stretched = withOnly({
+      ...firstWhere(),
+      quote: `${firstWhere().quote} ${'and so on '.repeat(8)}`,
+    })
+    const out = overTheLimits(stretched, guide()).join('\n')
+    expect(out).toMatch(/over the 14-word limit/)
+    expect(out).toMatch(/a quotation its guide does not make/)
+  })
+
+  it('counts a quotation slipped into an explanation', () => {
+    const sneaked = withOnly({
+      ...firstWhere(),
+      explanation: 'As the play puts it, “words that this guide never quotes anywhere”.',
+    })
+    expect(overTheLimits(sneaked, guide()).join('\n')).toMatch(
+      /a quotation its guide does not make/,
+    )
+  })
+
+  it('caps the total by the length of the work, as on the guide page', () => {
+    // The same path, measured as if the play were a 500-word piece: ten per
+    // cent is 50 words, which the real path quotes more than.
+    const short = { ...guide(), workLength: { words: 500, basis: 'test' } }
+    expect(quotedInGame(game()).words).toBeGreaterThan(50)
+    expect(overTheLimits(game(), short).join('\n')).toMatch(/over the 50-word limit/)
+  })
+
+  it('holds a text in the public domain to no limits, as the guides do', () => {
+    const stretched = withOnly({
+      ...firstWhere(),
+      quote: `${firstWhere().quote} ${'and so on '.repeat(8)}`,
+    })
+    expect(overTheLimits(stretched, get('macbeth').guide)).toEqual([])
   })
 })
 

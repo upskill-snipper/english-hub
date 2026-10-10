@@ -8,12 +8,15 @@
  * src/__tests__/comics.test.ts fails if a 'use client' module reaches the
  * registry. The runner is given the result, never this module.
  *
- * WHICH TEXTS. Those hasTextGame() names (./slugs.ts): the public-domain
- * register, generated from each guide's own `rights.status`, less the texts
- * deliberately left out. A text in copyright has no path in this phase: a game
- * quotes and rearranges far more freely than the fair-dealing limits allow for
- * it. The guide's own status is checked again here, so a stale register can
- * never put a copyrighted text in a game.
+ * WHICH TEXTS. Those hasTextGame() names (./slugs.ts): every text with a study
+ * guide, from the register generated from each guide's own `rights.status`,
+ * less the texts deliberately left out. Until 10 October 2026 a text in
+ * copyright had no path, on the reasoning that a game quotes and rearranges a
+ * text far more freely than the fair-dealing limits allow. Measured that day,
+ * a path quotes only a subset of what its guide page does, so texts in
+ * copyright have paths now; the guide's own status is read again here, and a
+ * path for a text in copyright that breaks the limits is never returned (see
+ * quoted.ts).
  */
 
 import type { TextData } from '@/components/study/InteractiveTextViewer'
@@ -22,6 +25,7 @@ import { servedPanel, servedPortrait } from '@/lib/comics/served'
 import { loadStudyGuide } from '@/lib/study-guides/load'
 
 import { buildTextGame, heldEdition, type HeldEdition } from './build'
+import { overTheLimits } from './quoted'
 import { hasTextGame } from './slugs'
 import type { GameArt, TextGame } from './types'
 
@@ -52,7 +56,8 @@ function isMissingModule(e: unknown): boolean {
 
 /**
  * The site's held edition of a text, normalised for matching, or null when it
- * holds none (six public-domain guides have no edition in src/data/full-texts).
+ * holds none (six public-domain guides have no edition in src/data/full-texts,
+ * and the site holds no text in copyright).
  * The text games use it to keep a refrain out of "Where is it?" and to make
  * sure no wrong word in "Finish the quotation" makes a line the text prints.
  *
@@ -90,11 +95,23 @@ export async function loadGameArt(slug: string): Promise<GameArt> {
   return art
 }
 
-/** One text's path, or null for a text with no guided games. */
+/**
+ * One text's path, or null for a text with no guided games.
+ *
+ * A path for a text in copyright that quotes past the fair-dealing limits is
+ * thrown, not returned and not quietly dropped: dropped, the links to it would
+ * still render and lead nowhere; thrown, the page fails where it can be seen.
+ * The tests build every path through here, so it cannot reach a push.
+ */
 export async function loadTextGame(slug: string): Promise<TextGame | null> {
   if (!hasTextGame(slug)) return null
   const guide = await loadStudyGuide(slug)
-  if (!guide || guide.rights.status !== 'public-domain') return null
+  if (!guide) return null
   const [art, held] = await Promise.all([loadGameArt(slug), loadHeldEdition(slug)])
-  return buildTextGame({ guide, art, held })
+  const game = buildTextGame({ guide, art, held })
+  const over = overTheLimits(game, guide)
+  if (over.length > 0) {
+    throw new Error(`${slug}: its guided path breaks the fair-dealing limits: ${over.join('; ')}`)
+  }
+  return game
 }

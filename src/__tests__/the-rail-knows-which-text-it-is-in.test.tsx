@@ -128,11 +128,15 @@ describe('"Play this text", added 10 October 2026', () => {
     expect(playHrefs()).toEqual(['/games/texts/hamlet'])
   })
 
-  it.each(['an-inspector-calls', 'do-not-go-gentle-into-that-good-night'])(
-    'is not offered on %s, which has no games',
-    (slug) => {
-      const { container } = render(<TextScopedNav slug={slug} />)
-      expect(container.querySelector('a[href^="/games/texts"]')).toBeNull()
-    },
-  )
+  it('is offered on a text in copyright, which has games from 10 October 2026', () => {
+    // An Inspector Calls was the example of a text with no games until texts
+    // in copyright were given paths, held to the fair-dealing limits.
+    render(<TextScopedNav slug="an-inspector-calls" />)
+    expect(playHrefs()).toEqual(['/games/texts/an-inspector-calls'])
+  })
+
+  it('is not offered on do-not-go-gentle-into-that-good-night, which has no games', () => {
+    const { container } = render(<TextScopedNav slug="do-not-go-gentle-into-that-good-night" />)
+    expect(container.querySelector('a[href^="/games/texts"]')).toBeNull()
+  })
 })
