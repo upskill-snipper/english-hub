@@ -5,6 +5,7 @@ import { join } from 'node:path'
 import { EN_MESSAGES as en } from '@/lib/i18n/generated/en'
 import { AR_MESSAGES as ar } from '@/lib/i18n/generated/ar'
 import { ES_MESSAGES as es } from '@/lib/i18n/generated/es'
+import { textGamesOrHubHref } from '@/lib/recommendations/hrefs'
 
 /**
  * Games are a headline part of the product, and can be found from anywhere.
@@ -81,9 +82,21 @@ describe('the games hub', () => {
     expect(scores).toBeGreaterThan(texts)
   })
 
-  it('reads ?text= rather than discarding it', () => {
-    expect(HUB).toContain("params.get('text')")
-    expect(HUB).toMatch(/<Suspense fallback=\{null\}>\s*<TextParamRedirect \/>/)
+  it('is reached from a recommendation by the text page itself, not a parameter', () => {
+    // 10 October 2026: this test once checked that the hub's source read
+    // ?text= and passed, while the client-side redirect it found never ran
+    // in a browser. So it now checks where the links go.
+    expect(textGamesOrHubHref('macbeth')).toBe('/games/texts/macbeth')
+    expect(textGamesOrHubHref(' Macbeth ')).toBe('/games/texts/macbeth')
+    // A text in copyright has no guided games yet; the excluded poem has none.
+    expect(textGamesOrHubHref('an-inspector-calls')).toBe('/games')
+    expect(textGamesOrHubHref('do-not-go-gentle-into-that-good-night')).toBe('/games')
+    expect(textGamesOrHubHref(null)).toBe('/games')
+    expect(textGamesOrHubHref('../etc')).toBe('/games')
+    const FOCUS = read('src/lib/recommendations/focus-on.ts')
+    expect(FOCUS).toContain('textGamesOrHubHref(weakestText)')
+    expect(FOCUS).not.toContain('/games?text=')
+    expect(HUB).not.toContain("get('text')")
   })
 })
 

@@ -1,8 +1,7 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef, useMemo, memo, Suspense } from 'react'
+import { useState, useEffect, useCallback, useRef, useMemo, memo } from 'react'
 import Link from 'next/link'
-import { useRouter, useSearchParams } from 'next/navigation'
 import {
   Gamepad2,
   Lock,
@@ -41,7 +40,6 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { TEXT_GAMES_INDEX, textGamesHref } from '@/lib/revision/text-games-href'
-import { canonicalTextSlug } from '@/lib/revision/text-slug-aliases'
 import { useT } from '@/lib/i18n/use-t'
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -2394,37 +2392,6 @@ function PlayYourSetTexts() {
   )
 }
 
-/**
- * Honours `/games?text=<slug>`.
- *
- * The "no game in five days" recommendation in src/lib/recommendations/
- * focus-on.ts has always sent `?text=` with the student's weakest text, and
- * until 10 October 2026 nothing here read it: the link promised "Practise
- * Macbeth games" and landed on the unfiltered hub. When the text has guided
- * games the student now goes straight to them. When it does not - a text in
- * copyright, or a slug we do not recognise - the hub renders as before.
- *
- * `replace`, not `push`, so Back returns to wherever the link was clicked
- * rather than to a hub page that immediately sends you forward again. The
- * slug goes through the revision-notes alias map first, because progress rows
- * can carry `christmas-carol` for A Christmas Carol.
- *
- * Its own component inside a Suspense boundary: useSearchParams opts the
- * nearest boundary out of static rendering, and without one the whole hub
- * would stop being prerendered.
- */
-function TextParamRedirect() {
-  const params = useSearchParams()
-  const router = useRouter()
-  const target = textGamesHref(canonicalTextSlug((params.get('text') ?? '').trim().toLowerCase()))
-
-  useEffect(() => {
-    if (target) router.replace(target)
-  }, [target, router])
-
-  return null
-}
-
 // ═══════════════════════════════════════════════════════════════════════════════
 // MAIN PAGE
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -2536,12 +2503,6 @@ export default function GamesPage() {
           </div>
         </div>
       </section>
-
-      {/* /games?text=<slug> goes to that text's guided games, when it has
-          them. Renders nothing. */}
-      <Suspense fallback={null}>
-        <TextParamRedirect />
-      </Suspense>
 
       {/* Play your set texts - the first thing under the hero (10 October
           2026). Hidden while an inline game is open, like the panels below,

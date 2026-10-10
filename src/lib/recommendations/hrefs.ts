@@ -35,6 +35,7 @@
 import { GUIDE_LOCATIONS } from '@/lib/revision/guide-locations.generated'
 import { getSetText } from '@/lib/board/set-texts'
 import { canonicalTextSlug } from '@/lib/revision/text-slug-aliases'
+import { textGamesHref } from '@/lib/revision/text-games-href'
 
 /** Hubs. Each is a static route with a page.tsx, asserted by the test. */
 export const POETRY_HUB = '/revision/poetry'
@@ -90,15 +91,24 @@ export function quizHref(_slug?: string | null): string {
  * student got the unfiltered hub. It was dropped from this helper rather than
  * left in place looking load-bearing.
  *
- * SINCE 10 OCTOBER 2026 THE HUB DOES READ IT. `/games?text=<slug>` sends the
- * student to /games/texts/<slug> when that text has guided games, and renders
- * the hub as before when it does not (see TextParamRedirect in
- * src/app/games/page.tsx). The "no game in five days" branch of focus-on.ts
- * still builds that URL itself. For a text with guided games its "Practise
- * <text> games" label is now true; for a text in copyright it still reaches
- * the unfiltered hub, as it always did. This helper stays parameter-free: its
- * callers have no text to pass.
+ * A text's own games are textGamesOrHubHref below, which links to the page
+ * itself rather than to a parameter something has to read. This helper stays
+ * parameter-free: its callers have no text to pass.
  */
 export function gamesHref(): string {
   return GAMES_HUB
+}
+
+/**
+ * A text's guided games (/games/texts/<slug>) where it has them, else the hub.
+ *
+ * 10 October 2026: the "no game in five days" recommendation sent students to
+ * `/games?text=<slug>`. Nothing read that parameter until a client-side
+ * redirect was added the same day, and that redirect resolved on the server
+ * but never ran in a browser, on the live site or locally, while a test that
+ * read the page's source passed. So the link now goes to the page directly,
+ * and the hub reads no parameter.
+ */
+export function textGamesOrHubHref(slug?: string | null): string {
+  return (slug && textGamesHref(canonicalTextSlug(slug.trim().toLowerCase()))) || GAMES_HUB
 }

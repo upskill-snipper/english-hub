@@ -46,7 +46,7 @@
 
 import type { SupabaseClient, PostgrestError } from '@supabase/supabase-js'
 
-import { poemHref, textHref, quizHref, gamesHref, COMPREHENSION } from './hrefs'
+import { poemHref, textHref, quizHref, gamesHref, textGamesOrHubHref, COMPREHENSION } from './hrefs'
 
 /**
  * Report a query that failed, and say whether the table is simply absent.
@@ -360,10 +360,13 @@ export async function getFocusRecommendations(
           .find((q) => q.text_slug)?.text_slug ??
         null
 
-      const href = weakestText ? `/games?text=${encodeURIComponent(weakestText)}` : '/games'
-      const label = weakestText
-        ? `Practise ${prettySlug(weakestText)} games`
-        : 'Practise with a game'
+      // Straight to that text's guided games where it has them; otherwise the
+      // hub, labelled as the hub (see textGamesOrHubHref).
+      const href = textGamesOrHubHref(weakestText)
+      const label =
+        weakestText && href !== gamesHref()
+          ? `Practise ${prettySlug(weakestText)} games`
+          : 'Practise with a game'
       pushUnique(
         recs,
         {
