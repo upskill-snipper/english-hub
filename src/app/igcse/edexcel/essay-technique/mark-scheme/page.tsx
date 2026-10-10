@@ -72,7 +72,9 @@ const AOS: AO[] = [
       'Context integrated with analysis, not bolted on in a context paragraph',
       'Relevant, specific context -- avoid generic "in Victorian times" statements',
       'Context that genuinely shapes meaning, not just historical background',
-      'Light touch for unseen poetry -- context is minimal there',
+      // Until 10 October 2026: "Light touch for unseen poetry". Pearson's 4ET1
+      // examiners' reports say context is not assessed in either poetry section.
+      'Not assessed in the unseen poem or the anthology comparison on Paper 1',
     ],
   },
   {

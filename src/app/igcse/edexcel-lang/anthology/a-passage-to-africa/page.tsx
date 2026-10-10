@@ -803,13 +803,12 @@ export default async function APassageToAfricaPage() {
             {await t('anth_text.section.compare_with')}
           </h2>
         </div>
+        {/* 10 October 2026: removed a second sentence, added on 26 September
+            2026, that said again that the exam compares this text only with an
+            unseen passage. The shared intro (anth_text.compare_with.intro) says so
+            itself, so the page said it twice. */}
         <p className="text-body-sm text-muted-foreground mb-5">
-          {await t('anth_text.compare_with.intro')}{' '}
-          {/* Added 26 September 2026: the shared intro reads as if the exam
-              pairs two anthology texts. 4EA1 Q5 never does. */}
-          {ar
-            ? 'في الامتحان نفسه، يقرن السؤالُ 5 هذا النصَّ بنصٍّ غير مرئيّ، لا بنصٍّ آخر من المختارات؛ وهذه المقارنات للمراجعة.'
-            : 'In the exam itself, Question 5 pairs this text with an unseen passage, never with another anthology text: these comparisons are for revision.'}
+          {await t('anth_text.compare_with.intro')}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (

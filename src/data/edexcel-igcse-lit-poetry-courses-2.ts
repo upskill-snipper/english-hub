@@ -384,6 +384,26 @@ const laBelleDameCourse: CourseData = {
 // 2. Poem at Thirty-Nine - Alice Walker
 // ─────────────────────────────────────────────────────────────────────────────
 
+/**
+ * QUOTATIONS CORRECTED 10 October 2026, against the poem as printed on page 62
+ * of the anthology (Issue 8), after src/data/study-guides/poem-at-thirty-nine.ts
+ * flagged this module. Students were given lines the poem does not contain:
+ * "He taught me how / to pay attention" (line 8 is "He taught me how.", a
+ * sentence about filling in bank forms), "He would have laughed", "He would
+ * have admired", "money was / not that / important", "wrote so beautifully",
+ * and an ending in which he admires "the survey of works / I have
+ * accomplished" (line 43 is the woman she has become). Line 38 was quoted
+ * with meals where the anthology has life, and the cooking metaphor was read
+ * as being about meals. Every quotation now is the anthology's, with its line
+ * breaks, and analysis that rested on invented lines rests on real ones. The
+ * punctuation section, which said the poem has few full stops and reads as a
+ * stream of consciousness, now describes the full stop, exclamation mark,
+ * semicolon and colon the guide analyses. The typical questions, which asked
+ * about this poem alone, are Pearson's own two shapes, and the context advice
+ * now says what the examiners' reports say: Section B does not assess it.
+ * Each module is its own page, so each quotes at most 25 distinct words of
+ * the poem's 168, the 15 per cent share.
+ */
 const poemAtThirtyNineModules: CourseModule[] = [
   {
     id: 'igp2-thirty9-m1',
@@ -400,7 +420,7 @@ const poemAtThirtyNineModules: CourseModule[] = [
 <div class="key-term"><strong>Key Term: Elegy</strong> - A poem of serious reflection, typically mourning the dead. Elegies move through grief toward acceptance or celebration. Walker's poem is elegiac in tone but avoids despair, ultimately celebrating her father's legacy.</div>
 
 <h3>Overview of the Poem</h3>
-<p>The poem opens with the simple declaration "How I miss my father." Walker then reflects on specific things her father taught her - cooking, the value of money, writing, generosity. She recognises that she has become like him in many ways ("cooking, writing, chopping wood, staring into the fire") but has also forged her own identity. The poem concludes with the imagined response of her father, who would have "admired / the survey of works / I have accomplished."</p>
+<p>The poem opens with the simple declaration "How I miss my father." Walker then reflects on what her father taught her - how to fill in bank forms, and that honesty would not always be punished - and on the joy he took in cooking and sharing food. She finds that she has become like him, in how she looks and how she cooks, but has also forged her own identity. Near the end she imagines the response he did not live to give: he "would have grown / to admire" the woman she has become. The poem closes on a list of what she does now: "cooking, writing, chopping wood, / staring into the fire".</p>
 
 <p>The poem is notable for its <strong>free verse form</strong>, its <strong>conversational tone</strong>, and its use of <strong>listing</strong> to catalogue the father's influence. It moves between past and present, memory and reflection, grief and celebration.</p>
 
@@ -409,8 +429,8 @@ const poemAtThirtyNineModules: CourseModule[] = [
   <li><strong>Parent-child relationships:</strong> The poem explores the deep bond between father and daughter, showing how parental influence shapes identity long after death.</li>
   <li><strong>Memory and grief:</strong> Walker moves from the pain of loss ("How I miss my father") to a celebration of what he gave her. Memory becomes a way of keeping the dead alive.</li>
   <li><strong>Identity and inheritance:</strong> Walker has absorbed her father's values - generosity, creativity, hard work - but has also become her own person. She is both his continuation and her own creation.</li>
-  <li><strong>Gender and expectation:</strong> The poem implicitly challenges gender norms. Walker's father taught her skills (cooking, financial independence) that empowered her, and she has used them in ways that go beyond traditional expectations.</li>
-  <li><strong>Writing and creativity:</strong> Writing is presented as a shared bond - her father "wrote so beautifully" and Walker has made writing her life's work. Creativity is a form of inheritance.</li>
+  <li><strong>Gender and expectation:</strong> The poem implicitly challenges gender norms. Walker's father taught her to manage money, and she took his pleasure in cooking from watching him; she has used both in ways that go beyond traditional expectations, and her closing list joins the kitchen to the woodpile.</li>
+  <li><strong>Writing and creativity:</strong> Writing first appears as a practical lesson - her father taught her how to fill in deposit slips and cheques - and returns in the closing list of what she does now. Creativity, like his pleasure in cooking, is a form of inheritance.</li>
 </ul>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Walker's poem works well in comparison questions about parent-child relationships or memory. Be prepared to compare it with other poems in the anthology that deal with family bonds, loss, or the passage of time.</div>
@@ -469,30 +489,30 @@ const poemAtThirtyNineModules: CourseModule[] = [
 <p><strong>1. "How I miss my father."</strong><br/>
 The poem opens with stark simplicity. The exclamatory <em>How</em> conveys the depth of emotion, while the plain, monosyllabic language avoids sentimentality. This directness is characteristic of Walker's style - she trusts simple words to carry profound feeling.</p>
 
-<p><strong>2. "He taught me how / to pay attention"</strong><br/>
-The enjambment across the line break enacts the very attentiveness it describes - the reader must "pay attention" to follow the meaning across the line. The phrase "pay attention" frames awareness as something valuable, something worth investing in.</p>
+<p><strong>2. "He taught me how."</strong> (line 8)<br/>
+A whole sentence of four plain words. Filling in bank forms makes her think of him, and the full stop makes the memory certain: he showed her how. The lines that follow imagine his instructions, and line 10 admits she is guessing at what he said, so memory and imagination meet.</p>
 
-<p><strong>3. "He would have grown / to admire / the survey of works"</strong><br/>
-The verb <em>grown</em> is significant - it suggests Walker's father would have needed to expand his understanding to appreciate her achievements. This implies a generational or cultural gap that love would have bridged. The formal word <em>survey</em> lends dignity to her accomplishments.</p>
+<p><strong>3. "He would have grown / to admire"</strong> (lines 41-42)<br/>
+The verb <em>grown</em> is significant - it suggests that his admiration would have taken time, and so, quietly, that he did not feel it while he lived. The conditional (<em>would have</em>) imagines a reaction that can never happen now. What he would have admired is the woman she has become, not a list of achievements.</p>
 
-<p><strong>4. "cooking, writing, chopping wood, staring into the fire"</strong><br/>
-This <strong>list</strong> mixes the domestic and the creative, the physical and the contemplative. Cooking and chopping wood are her father's activities; writing is her own; staring into the fire is shared reflection. The list structure implies that all these activities are equally valuable - there is no hierarchy between manual labour and intellectual work.</p>
+<p><strong>4. "cooking, writing, chopping wood"</strong> (line 44)<br/>
+This <strong>list</strong> ends the poem, after the colon of line 43, as the evidence of the woman she has become, and it finishes with her staring into the fire. It mixes the domestic and the creative, the physical and the contemplative, and it leads with cooking, the activity that ties her most plainly to her father. The list structure implies that all these activities are equally valuable - there is no hierarchy between manual labour and intellectual work.</p>
 
-<p><strong>5. "He taught me that / money was / not that / important"</strong><br/>
-The heavy enjambment breaks this sentence across four lines, slowing the reader down and emphasising each element. The fragmented line breaks mirror the careful, deliberate way a parent teaches a child - one idea at a time.</p>
+<p><strong>5. "bits of paper"</strong> (line 13)<br/>
+Her father taught her to fill in deposit slips and cheques, and she learned to see those papers as a way out of the life he had known. The word <em>bits</em> makes them small and slight, which sharpens the irony that scraps are what free her.</p>
 
-<p><strong>6. "He would have laughed"</strong><br/>
-The conditional tense (<em>would have</em>) is poignant - it imagines a reaction that can never happen. Yet the imagined laughter is warm, not mocking. Walker creates a living presence from absence, keeping her father alive through imagination.</p>
+<p><strong>6. "voluptuous"</strong> (line 31)<br/>
+A surprising, sensuous word for a hard-working man's appetite. It attaches not to food itself but to sharing it: what he craved was the pleasure of eating together and feeding others. It shows a side of him that the exhausted father of the first stanza did not show her.</p>
 
-<p><strong>7. "seasoning / none of my meals the same way twice"</strong><br/>
-Cooking becomes a metaphor for creativity and individuality. Just as Walker never repeats a recipe, she never repeats her father's life exactly - she has taken his ingredients (his values) and made something uniquely her own. The word <em>seasoning</em> also suggests adding flavour and richness to experience.</p>
+<p><strong>7. "seasoning none of my life"</strong> (line 38)<br/>
+Cooking becomes a metaphor for living: the object of the verb is her life, not her food, and the thought runs on into line 39, where she never flavours it identically twice. She has taken his pleasure in food but not his insistence on one right way, and made something uniquely her own. The word <em>seasoning</em> also suggests adding flavour and richness to experience.</p>
 
 <h3>Language Features</h3>
 <ul>
-  <li><strong>Simple, conversational diction:</strong> Walker uses everyday language - "cooking," "money," "laughed" - creating intimacy and authenticity. The poem feels like a private conversation.</li>
+  <li><strong>Simple, conversational diction:</strong> Walker uses everyday language - "cooking", "paper", "father" - creating intimacy and authenticity. The poem feels like a private conversation.</li>
   <li><strong>Listing:</strong> The accumulation of activities and memories builds a portrait of the father through concrete details rather than abstract praise.</li>
-  <li><strong>Conditional tense:</strong> "He would have..." structures express simultaneous presence and absence - the father is imagined vividly but is irrevocably gone.</li>
-  <li><strong>Metaphor through everyday actions:</strong> Cooking, writing, and paying attention become metaphors for how we inherit, transform, and pass on identity.</li>
+  <li><strong>Conditional tense:</strong> "He would have grown / to admire" expresses simultaneous presence and absence - the father is imagined vividly but is irrevocably gone.</li>
+  <li><strong>Metaphor through everyday actions:</strong> Cooking, writing and filling in bank forms become ways of showing how we inherit, transform and pass on identity.</li>
 </ul>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Walker's simplicity is deliberate, not accidental. In your analysis, explain <em>why</em> simple language is effective here - it mirrors the honest, unpretentious relationship between father and daughter, and it trusts the reader to feel the emotion without being told what to feel.</div>
@@ -509,7 +529,7 @@ Cooking becomes a metaphor for creativity and individuality. Just as Walker neve
         ],
         correct: 2,
         explanation:
-          '"Seasoning none of my meals the same way twice" uses cooking as a metaphor for creativity - Walker has taken her father\'s "ingredients" (his values and teachings) and transformed them into something uniquely her own.',
+          'The line "seasoning none of my life" uses cooking as a metaphor for living - Walker has taken her father\'s pleasure in food and transformed it into something uniquely her own.',
       },
       {
         id: 'igp2-thirty9-m2-q2',
@@ -552,28 +572,28 @@ Cooking becomes a metaphor for creativity and individuality. Just as Walker neve
 <h3>Enjambment</h3>
 <p>Enjambment is the poem's most prominent structural feature. Lines frequently break mid-sentence or mid-phrase:</p>
 <ul>
-  <li>"He taught me how / to pay attention" - the break enacts attentiveness.</li>
-  <li>"money was / not that / important" - the fragmented breaks slow the reader, mimicking careful instruction.</li>
+  <li>"so tired" (line 3) - held on a line of its own, the phrase makes the reader wait through line 4 for the single word of line 5, her birth.</li>
+  <li>"a beating" (line 23) - a blunt two-word line after a long build-up, so the blow lands on its own.</li>
   <li>"He would have grown / to admire" - the break between "grown" and "to admire" creates a pause that emphasises the idea of growth and change.</li>
 </ul>
 <p>This pervasive enjambment creates a <strong>flowing, meditative quality</strong> - thoughts spill across line breaks just as memories flow unpredictably through the mind. It also forces the reader to keep moving forward, just as Walker herself has moved forward from grief.</p>
 
 <h3>Short Lines</h3>
-<p>Many lines are very short - sometimes just two or three words. This gives individual words and phrases extra weight. When Walker writes "How I miss my father," the short line isolates the emotion, making it impossible to skim over. Short lines also create <strong>white space</strong> on the page, which visually represents the absences and silences in the relationship.</p>
+<p>Many lines are very short - sometimes just two or three words. This gives individual words and phrases extra weight. When Walker opens with "How I miss my father.", the short line isolates the emotion, making it impossible to skim over. Short lines also create <strong>white space</strong> on the page, which visually represents the absences and silences in the relationship.</p>
 
 <h3>Structural Movement</h3>
 <p>The poem moves through several emotional phases:</p>
 <ol>
   <li><strong>Loss:</strong> "How I miss my father" - raw grief stated directly.</li>
-  <li><strong>Memory:</strong> Recollections of what her father taught her - cooking, money, attention.</li>
-  <li><strong>Recognition:</strong> Walker sees herself in her father's habits - "cooking, writing, chopping wood."</li>
-  <li><strong>Imagination:</strong> She imagines his response to her adult life - "He would have laughed," "He would have admired."</li>
+  <li><strong>Memory:</strong> Recollections of what her father taught her - how to fill in bank forms, and that honesty would not always be punished - and of his joy in cooking and sharing food.</li>
+  <li><strong>Recognition:</strong> Walker sees herself in her father, in how she looks and how she cooks.</li>
+  <li><strong>Imagination:</strong> She imagines his response to her adult life - he "would have grown / to admire" the woman she has become.</li>
   <li><strong>Celebration:</strong> The poem concludes with warmth rather than despair, affirming that her father's legacy lives on in her.</li>
 </ol>
 <p>This movement from grief to celebration is characteristic of the elegiac tradition. Walker does not deny her loss, but she transforms it into something life-affirming.</p>
 
-<h3>Absence of Punctuation</h3>
-<p>The poem uses minimal punctuation - few full stops, no speech marks, sparse commas. This creates a <strong>stream-of-consciousness</strong> effect, as though Walker is thinking aloud. It also blurs the boundaries between past and present, memory and imagination, reflecting how grief dissolves the distinction between then and now.</p>
+<h3>Punctuation</h3>
+<p>The punctuation is careful, and it does real work. The opening line ends with a full stop, so the grief sounds settled; when the same words return at line 27 they end with an exclamation mark, and the feeling breaks through. A semicolon in the third stanza turns from his lessons to her own truths, and a colon at the end of line 43 opens onto the closing list of what she does. Pointing to one of these is a sharper structural point than calling the poem free verse.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about free verse, never say "the poem has no structure." Free verse is a deliberate structural choice. Explain <em>why</em> Walker chose it - the conversational intimacy, the freedom to shape lines around meaning, the connection to speech rhythms.</div>
 `,
@@ -594,16 +614,16 @@ Cooking becomes a metaphor for creativity and individuality. Just as Walker neve
       {
         id: 'igp2-thirty9-m3-q2',
         question:
-          'What is the effect of the heavy enjambment in "money was / not that / important"?',
+          'What is the effect of the enjambment that leaves "so tired" on a line of its own?',
         options: [
           'It makes the line difficult to understand',
-          'It slows the reader down, mimicking the careful way a parent teaches a child',
-          'It creates a rhyme between "was" and "that"',
+          'It makes the reader wait for the single word of line 5, so the regret about her birth arrives slowly',
+          'It creates a rhyme with the next line',
           'It shows Walker disagreed with her father about money',
         ],
         correct: 1,
         explanation:
-          'The fragmented line breaks force the reader to pause on each element, recreating the deliberate, patient way a father imparts wisdom to a child. The form enacts the content.',
+          'Held on its own line, the phrase hangs, and the reader waits through line 4 before the single word of line 5, her birth. The form slows the regret down, so it arrives quietly. The form enacts the content.',
       },
       {
         id: 'igp2-thirty9-m3-q3',
@@ -628,34 +648,35 @@ Cooking becomes a metaphor for creativity and individuality. Just as Walker neve
 <h2>Exam Practice - Poem at Thirty-Nine</h2>
 
 <h3>Typical Exam Questions</h3>
+<p>In 4ET1 Paper 1 Section B this poem is always compared with a second Part 3 poem, and Pearson has set it both ways:</p>
 <ul>
-  <li>"How does Walker present the relationship between father and daughter in 'Poem at Thirty-Nine'?"</li>
-  <li>"Explore how Walker conveys a sense of loss and celebration in this poem."</li>
-  <li>"How does Walker use structure to convey meaning in 'Poem at Thirty-Nine'?"</li>
+  <li>Naming this poem only: "Compare the ways the writers present family relationships in Poem at Thirty-Nine and one other poem from the anthology." (June 2023)</li>
+  <li>Naming both poems: "Compare the ways the speakers convey their feelings about another person in Poem at Thirty-Nine and My Last Duchess." (June 2025, Paper 1R)</li>
 </ul>
 
 <h3>Planning Your Response</h3>
+<p>These points are the Poem at Thirty-Nine side of a plan: in the exam, pair each one with your second poem.</p>
 <ol>
   <li><strong>Argument:</strong> For example: "Walker presents her father's death not as an ending but as a transformation - his values have been absorbed into her identity, making grief inseparable from gratitude."</li>
-  <li><strong>Key quotations:</strong> "How I miss my father," "He taught me how / to pay attention," "seasoning none of my meals the same way twice," "He would have laughed."</li>
+  <li><strong>Key quotations:</strong> "How I miss my father.", "bits of paper", "seasoning none of my life", "He would have grown / to admire".</li>
   <li><strong>Techniques:</strong> Free verse, enjambment, listing, conditional tense, cooking metaphor, simple diction.</li>
-  <li><strong>Context:</strong> Walker's childhood in rural Georgia, her father's role as sharecropper and storyteller, the significance of writing as inherited craft.</li>
+  <li><strong>Context:</strong> not assessed in Section B, as Pearson's examiners' reports say. If Walker's childhood as a Georgia sharecropper's daughter sharpens a point about the bank forms, keep it to a clause.</li>
 </ol>
 
 <h3>Model Paragraph</h3>
 <div class="model-response">
-<p>Walker transforms grief into celebration by showing how her father's values have become inseparable from her own identity. The extended cooking metaphor - "seasoning none of my meals the same way twice" - presents inheritance not as passive repetition but as creative transformation: Walker has taken her father's "ingredients" (his teachings about generosity, attention, and creativity) and made something uniquely her own. The free verse form reinforces this theme of individual expression - just as Walker refuses to season her meals "the same way twice," she refuses to constrain her poem within a fixed form, asserting her artistic independence. Yet the pervasive enjambment - "He taught me how / to pay attention" - also enacts connection, as meaning flows across line breaks just as values flow across generations. The conditional tense in "He would have laughed" is particularly poignant, creating a vivid imagined presence that simultaneously affirms and denies the father's continued existence. Walker, whose father was a sharecropper who valued education and storytelling despite poverty, elevates his everyday teachings to the status of a profound legacy - suggesting that the most important inheritances are not material but moral.</p>
+<p>Walker transforms grief into celebration by showing how her father's values have become inseparable from her own identity. The extended cooking metaphor - "seasoning none of my life" - presents inheritance not as passive repetition but as creative transformation: Walker has taken her father's pleasure in cooking and sharing food, and his lessons about money and honesty, and made something uniquely her own. The free verse form reinforces this theme of individual expression - just as she never flavours her life identically twice, she refuses to constrain her poem within a fixed form, asserting her artistic independence. Yet the enjambment of "He would have grown / to admire" also enacts connection, carrying his imagined admiration across the line break just as values flow across generations. The conditional tense is particularly poignant, creating a vivid imagined presence that simultaneously affirms and denies the father's continued existence. Walker, the daughter of Georgia sharecroppers, elevates his everyday teachings, down to filling in "bits of paper", to the status of a profound legacy - suggesting that the most important inheritances are not material but moral.</p>
 </div>
 
-<h3>Key Quotations to Memorise</h3>
+<h3>Key Quotations</h3>
+<p>The poem is printed for you in the Poetry Booklet, so know where these are rather than memorising them.</p>
 <ol>
-  <li>"How I miss my father"</li>
-  <li>"He taught me how / to pay attention"</li>
-  <li>"money was / not that / important"</li>
-  <li>"cooking, writing, chopping wood, staring into the fire"</li>
-  <li>"seasoning none of my meals the same way twice"</li>
-  <li>"He would have laughed"</li>
-  <li>"He would have grown / to admire"</li>
+  <li>"How I miss my father." (line 1)</li>
+  <li>"He taught me how." (line 8)</li>
+  <li>"bits of paper" (line 13)</li>
+  <li>"seasoning none of my life" (line 38)</li>
+  <li>"He would have grown / to admire" (lines 41-42)</li>
+  <li>"cooking, writing, chopping wood" (line 44)</li>
 </ol>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> When comparing this poem with others, look for connections around parent-child relationships, memory, identity, and the passage of time. Walker's warm, celebratory tone contrasts effectively with poems that present more conflicted or painful family relationships.</div>
@@ -689,16 +710,16 @@ Cooking becomes a metaphor for creativity and individuality. Just as Walker neve
       },
       {
         id: 'igp2-thirty9-m4-q3',
-        question: 'What is the most effective way to use context in an essay on this poem?',
+        question: 'How should you use context in a 4ET1 Section B answer on this poem?',
         options: [
           "Write a separate paragraph about Walker's biography before beginning analysis",
-          'Mention context only in the conclusion',
-          "Integrate contextual points into the analysis, linking them to Walker's choices",
-          'Avoid context entirely and focus only on language',
+          'Put some in every paragraph, because it carries the most marks',
+          'Only in a clause, where it sharpens a point about the words: Section B does not assess context',
+          "Write about her father's life instead of the poem",
         ],
         correct: 2,
         explanation:
-          "Context should be woven into your analysis - for example, linking Walker's father's life as a sharecropper to the poem's theme that moral inheritance matters more than material wealth.",
+          "Pearson's 4ET1 examiners' reports say context is not assessed in either poetry section of Paper 1. A clause about the sharecropping background can sharpen a point about the bank forms, but it earns nothing on its own.",
       },
     ],
   },

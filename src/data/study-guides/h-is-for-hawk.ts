@@ -58,6 +58,16 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * The June 2023 evidence above was not re-read, so the introduction tip now
  * says only what the 2026 paper shows: the booklet's introduction need not
  * be the anthology's.
+ *
+ * ALSO 10 October 2026. The first hawk's character note, the summary of lines
+ * 17-45 and the scene card for lines 17-31 said the world rushes, or floods,
+ * into her eyes, as if that were the extract's picture of lines 26-31. Those
+ * lines only list what a bird that has known an aviary and a box can now see
+ * (a cormorant, waves, cars, hills, sky, water, sun and gulls); the
+ * extract's own image of the world entering her eyes comes at line 42, where
+ * it explains her stare. All three now describe the view and
+ * point to line 42 rather than putting the guide's verb in the extract's
+ * mouth. The quotation budget (99 of 104 words) left no room to quote it.
  */
 export const guide: StudyGuide = {
   slug: 'h-is-for-hawk',
@@ -106,7 +116,7 @@ export const guide: StudyGuide = {
     {
       name: 'The first hawk',
       role: 'The younger, smaller goshawk',
-      body: 'The hawk in the smaller box has worked her hood off and explodes into the light, twittering, all wings and talons. Macdonald cannot fix her in one image, so she tries many: magic, reptile, angel, a mythical beast, gold, a broken puppet. Then the point of view shifts to her, and Macdonald imagines the whole world, sea, cars, hills and gulls, rushing into eyes that have only ever seen an aviary and a box. The paperwork says she is meant for someone else. Macdonald’s growing certainty that she is nonetheless the right bird drives the whole second half of the extract.',
+      body: 'The hawk in the smaller box has worked her hood off and explodes into the light, twittering, all wings and talons. Macdonald cannot fix her in one image, so she tries many: magic, reptile, angel, a mythical beast, gold, a broken puppet. Then the point of view shifts to her: a bird that has known only an aviary and a box can suddenly see a cormorant, cars, hills and gulls (lines 26-31), and later Macdonald explains the hawk’s stare by that sudden view (line 42). The paperwork says she is meant for someone else. Macdonald’s growing certainty that she is nonetheless the right bird drives the whole second half of the extract.',
     },
     {
       name: 'The second hawk',
@@ -206,7 +216,7 @@ export const guide: StudyGuide = {
       pointer:
         'From the description of the hawk’s barred, beating wings at lines 17-18 to line 45, where Macdonald closes the hood and they check the ring numbers against the form.',
       summary:
-        'Macdonald piles up images to describe the hawk: magic, a reptile, an angel, a creature from a medieval book of beasts, gold, a broken puppet. For a moment the bird hangs upside down from the leather straps on her legs. The point of view then moves into the hawk, imagining the sea, the parked cars and the hills flooding into eyes that have known only an aviary and a box. The breeder calmly gathers her up; Macdonald describes how he hand-fed her as a newly hatched chick, feels a sudden love for him, and hoods the hawk herself.',
+        'Macdonald piles up images to describe the hawk: magic, a reptile, an angel, a creature from a medieval book of beasts, gold, a broken puppet. For a moment the bird hangs upside down from the leather straps on her legs. The point of view then moves into the hawk, which has known only an aviary and a box and can now see the waves, parked cars, hills and gulls. The breeder calmly gathers her up; Macdonald describes how he hand-fed her as a newly hatched chick, feels a sudden love for him, and hoods the hawk herself.',
       annotations: [
         {
           phrase: 'My heart jumps sideways.',
@@ -559,7 +569,7 @@ export const guide: StudyGuide = {
       where: 'Page 19, lines 17-31',
       title: 'Seeing the hawk',
       summary:
-        'Macdonald piles up contradictory images for the hawk, then undercuts them with the sight of her hanging upside down. The viewpoint moves into the hawk, imagining the whole world rushing into her eyes.',
+        'Macdonald piles up contradictory images for the hawk, then undercuts them with the sight of her hanging upside down. The viewpoint moves into the hawk, imagining everything a bird that has known only an aviary and a box can now see.',
       setting: 'The quayside, with sea, parked cars, hills and gulls in view',
       who: ['Helen Macdonald', 'The first hawk'],
       quote: 'She is a conjuring trick. A reptile. A fallen angel.',

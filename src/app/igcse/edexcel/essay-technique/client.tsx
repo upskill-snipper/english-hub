@@ -163,7 +163,9 @@ export default function EssayTechniqueHubPage() {
             {
               n: '3',
               title: 'Context (light touch)',
-              body: 'For set texts, one phrase of genuinely relevant context. For unseen poetry, skip context entirely -- it is not heavily weighted there.',
+              // Until 10 October 2026: context "not heavily weighted" for unseen
+              // poetry. 4ET1 Section A is marked on AO2 alone; context earns nothing.
+              body: 'For set texts, one phrase of genuinely relevant context. For the unseen poem, skip context entirely: it is not assessed there.',
             },
           ].map((s) => (
             <div key={s.n} className="rounded-xl border border-border/40 bg-background/50 p-4">

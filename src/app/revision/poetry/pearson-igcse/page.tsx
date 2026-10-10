@@ -107,9 +107,12 @@ export default async function PearsonIgcsePoetryHub() {
             Harrison&rsquo;s original <em>Guardian</em> publication;
           </li>
           <li>
-            the adapted non-fiction texts (&lsquo;Explorers or boys messing about?&rsquo; and
-            &lsquo;Young and dyslexic?&rsquo;) differ from their online originals - always use the
-            anthology version when answering Edexcel questions.
+            {/* Until 10 October 2026 this said Young and dyslexic? also differs from
+                its online original. The anthology says only that it prints the article
+                The Guardian published, itself adapted from a book (Issue 8, page 12). */}
+            the adapted non-fiction text &lsquo;Explorers or boys messing about?&rsquo; differs from
+            the <em>Guardian</em> article it was adapted from - always use the anthology version
+            when answering Edexcel questions.
           </li>
         </ol>
         <p className="text-body-xs text-muted-foreground">

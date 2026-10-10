@@ -781,33 +781,45 @@ const EDUQAS_PAPERS: Paper[] = [
 
 // ─── Edexcel IGCSE Literature ────────────────────────────────────────
 
+// Paper 1 CORRECTED 10 October 2026 against the 4ET1 specification (Issue 3,
+// Component 1) and the question papers from the specimen to June 2025. It gave
+// the paper as 1h 30m and 60 marks (it is 2 hours and 90), left out the unseen
+// poem (Section A), and put the anthology in Section A with "one comparison
+// question on a named poem and one of your choice", which is only one of the
+// two questions Section B offers. Its anthology links went to the clusters of
+// the UK GCSE (1ET0) anthology, which 4ET1 does not set, and its prose section
+// was called extract-based (the paper prints no extract) and listed Animal
+// Farm, which is not a 4ET1 text.
 const EDEXCEL_IGCSE_PAPERS: Paper[] = [
   {
     id: 'igcse-lit-p1',
     name: 'Paper 1',
     subtitle: 'Poetry and Modern Prose',
     examCode: '4ET1/01',
-    duration: '1h 30m',
-    totalMarks: 60,
+    duration: '2h',
+    totalMarks: 90,
     colour: 'teal',
     sections: [
       {
-        title: 'Section A: Poetry Anthology',
-        description: 'One comparison question on a named poem and one of your choice.',
+        title: 'Section A: Unseen Poetry',
+        description: 'One question on a single unseen poem, printed in the paper. No comparison.',
         links: [
-          { label: 'IGCSE Poetry Anthology', href: '/revision/poetry/edexcel', type: 'poetry' },
-          { label: 'Conflict Cluster', href: '/revision/poetry/edexcel/conflict', type: 'poetry' },
-          {
-            label: 'Time and Place Cluster',
-            href: '/revision/poetry/edexcel/time-and-place',
-            type: 'poetry',
-          },
+          { label: 'Unseen Poetry', href: '/igcse/edexcel/unseen-poetry', type: 'technique' },
+        ],
+      },
+      {
+        title: 'Section B: Anthology Poetry',
+        description:
+          'One question from a choice of two, both comparing two Part 3 poems: one names both, the other names one and you choose the second.',
+        links: [
+          { label: 'IGCSE Anthology Poetry', href: '/igcse/edexcel/poetry', type: 'poetry' },
           { label: 'IGCSE Lit Mock Exams', href: '/mock-exams?paper=igcse-lit', type: 'mock' },
         ],
       },
       {
-        title: 'Section B: Modern Prose',
-        description: 'One extract-based question on your studied modern prose text.',
+        title: 'Section C: Modern Prose',
+        description:
+          'One essay question, from a choice of two, on your studied modern prose text. Closed book.',
         links: [
           { label: 'Of Mice and Men', href: '/revision/texts/of-mice-and-men', type: 'text' },
           {
@@ -815,7 +827,6 @@ const EDEXCEL_IGCSE_PAPERS: Paper[] = [
             href: '/revision/texts/to-kill-a-mockingbird',
             type: 'text',
           },
-          { label: 'Animal Farm', href: '/revision/texts/animal-farm', type: 'text' },
           { label: 'Things Fall Apart', href: '/revision/texts/things-fall-apart', type: 'text' },
           {
             label: 'Essay Structure Guide',

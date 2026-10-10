@@ -89,7 +89,14 @@ export interface GuideExtract {
   summary?: string
   /** Close-reading notes on short phrases from the passage. */
   annotations: { phrase: string; note: string }[]
-  /** An exam-style question on the passage. */
+  /**
+   * A question on the passage, for close reading. Where the board's exam never
+   * sets a question on a passage alone, as for the 4ET1 Part 3 poems (Paper 1
+   * Section B compares two whole poems) and the 4EA1 anthology texts, the
+   * question says so itself, as those guides do ("Close-reading practice, not an
+   * exam question"). Until 10 October 2026 this comment called it "an
+   * exam-style question on the passage", which those guides contradict.
+   */
   question: string
 }
 

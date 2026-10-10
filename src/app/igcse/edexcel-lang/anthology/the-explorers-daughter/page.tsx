@@ -75,7 +75,8 @@ export const metadata: Metadata = {
  * Checked again on 10 October 2026. The personification note said the light
  * makes distances deceptive; the extract blames the Arctic for the distances
  * and gives the light only her doubt that the narwhal exist. (The q2 model
- * outline below still says so; it was not changed here.) Also corrected then:
+ * outline below said so too, until it was corrected to match later the same
+ * day, in English and Arabic.) Also corrected then:
  * a "second sighting" the extract never numbers, a net of hunters spread
  * across the water rather than around it, an argument for hunting said to
  * wait for the last paragraph (only the explicit one does), silence where the
@@ -292,14 +293,14 @@ const examPractice = {
     modelOutline: [
       "Identify Herbert's emotive verbs and first-person voice at the climax, which reveal her instinctive sympathy for the man and the whales alike, and explain how these draw the reader into her internal conflict.",
       "Analyse contrasting pairs (beauty / danger, admiration / unease) that mirror Herbert's own dual response to the Arctic and the hunt.",
-      'Examine the personification of the light in the opening paragraph, a playful trickster that makes distances deceptive and leaves Herbert unsure whether the narwhal are real, so the extract begins in wonder and uncertainty before the hunt comes into focus.',
+      'Examine the personification of the light in the opening paragraph, a playful trickster that leaves Herbert unsure whether the narwhal are real, while the deceptive distances belong to the Arctic itself, so the extract begins in wonder and uncertainty before the hunt comes into focus.',
       'Track the shift to practical, list-based language towards the end of the extract, which reframes the hunt in terms of survival rather than sentiment and complicates any easy moral judgement.',
       'Comment on structure at the climax: the extract stops the action as the hunter raises his harpoon, turns to her divided response and then to a new paragraph in which she names her dilemma, and never shows whether the hunt succeeds, so her feelings are left unresolved even as the final paragraph argues that hunting is necessary.',
     ],
     modelOutlineAr: [
       'حدّد استعمال Herbert للأفعال الانفعاليّة ولصوت المتكلّم عند الذروة، التي تكشف عن تعاطفها الغريزيّ مع الصيّاد والـ narwhal معاً، واشرح كيف تُدخل القارئَ في صراعها الداخليّ.',
       'حلِّل الأزواج المتضادّة (الجمال / الخطر، الإعجاب / القلق) التي تعكس استجابةَ Herbert الثنائيّةَ للقطب الشماليّ ولمشهد الصيد.',
-      'افحص تشخيصَ الضوء في الفقرة الأولى بوصفه مخادعاً لعوباً يُضلّل العينَ في تقدير المسافات، ويترك Herbert غيرَ واثقةٍ من أنّ الـ narwhal حقيقيّة، فيبدأ المقتطفُ بالدهشة والشكّ قبل أن يتّضح مشهدُ الصيد.',
+      'افحص تشخيصَ الضوء في الفقرة الأولى بوصفه مخادعاً لعوباً يترك Herbert غيرَ واثقةٍ من أنّ الـ narwhal حقيقيّة، أمّا خداعُ المسافات فتنسبه إلى القطب الشماليّ نفسه، فيبدأ المقتطفُ بالدهشة والشكّ قبل أن يتّضح مشهدُ الصيد.',
       'تتبّع الانتقال إلى لغةٍ عمليّة قائمة على التَّعداد قرب نهاية المقتطف، التي تُعيد تأطير الصيد بمنطق النجاة لا العاطفة، وتُعقّد أيَّ حُكمٍ أخلاقيّ سهل.',
       'علّق على البنية عند الذروة: يوقف المقتطفُ الحدثَ لحظةَ يرفع الصيّادُ حربتَه، فينتقل إلى استجابتها المنقسمة ثمّ إلى فقرةٍ جديدة تُسمّي فيها معضلتَها، ولا يكشف أبداً إن نجح الصيد، فتبقى مشاعرها بلا حسم حتّى وهي تُحاجّ في الفقرة الأخيرة بأنّ الصيد ضرورة.',
     ],
@@ -653,13 +654,12 @@ export default async function TheExplorersDaughterPage() {
             {await t('anth_text.section.compare_with')}
           </h2>
         </div>
-        {/* Second sentence added 26 September 2026: the shared intro calls these
-            pairings for the exam, but 4EA1 never pairs two anthology texts. */}
+        {/* 10 October 2026: removed a second sentence, added on 26 September
+            2026, that said again that the exam compares this text only with an
+            unseen passage. The shared intro (anth_text.compare_with.intro) says so
+            itself, so the page said it twice. */}
         <p className="text-body-sm text-muted-foreground mb-5">
-          {await t('anth_text.compare_with.intro')}{' '}
-          {ar
-            ? 'في الامتحان يُقارَن هذا النصّ دائماً بنصٍّ غير مرئيّ، لا بنصٍّ آخر من المختارات، لذا فهذه المقارنات للمراجعة.'
-            : 'In the exam this text is always compared with an unseen passage, never another anthology text, so these pairings are for revision.'}
+          {await t('anth_text.compare_with.intro')}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (

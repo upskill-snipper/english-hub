@@ -73,8 +73,11 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * Checked again on 10 October 2026, against nine mark schemes: only the note
  * to the question naming both poems asks for a personal response and warns
  * against summary, so the comparison tip no longer says the whole section
- * does. The first tip's two past papers are examples, not a full list: the
- * January 2019 R paper also paired this poem, with War Photographer.
+ * does. The first tip's past papers are examples, not a full list: the
+ * January 2019 R paper also paired this poem, with War Photographer. The
+ * January 2020 R pairing with Hide and Seek, on childhood, was added later on
+ * 10 October 2026, from Pearson's summary of questions set, June 2019 to
+ * November 2020; the Hide and Seek guide already gave it.
  *
  * THE EXAM'S OWN COPY, 10 October 2026. The Poetry Booklet is not word for word
  * the anthology. In all nine booklets checked by script (June 2019 to June
@@ -339,7 +342,7 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
-      'Know what the paper sets. Section B of Paper 1 offers two questions on the Part 3 poems and you answer one, in about 40 minutes. Both ask you to compare two poems, with reference to language, form and structure: one names both poems, and the other names one and lets you choose the second from Part 3, which should be a poem in which the question’s focus matters. Half-past Two has been set both ways: with Sonnet 116 on the passing of time in January 2023, and in June 2024 as the one named poem in a question on being alone, with the second poem left to the candidate. That year the examiners’ report found that answers often compared the two poems without focusing on being alone, especially with Hide and Seek, where they tended to write about childhood in general, so keep to the question’s focus throughout.',
+      'Know what the paper sets. Section B of Paper 1 offers two questions on the Part 3 poems and you answer one, in about 40 minutes. Both ask you to compare two poems, with reference to language, form and structure: one names both poems, and the other names one and lets you choose the second from Part 3, which should be a poem in which the question’s focus matters. Half-past Two has been set both ways: with Hide and Seek on childhood in the January 2020 R paper (sat by centres far from GMT) and with Sonnet 116 on the passing of time in January 2023, and in June 2024 as the one named poem in a question on being alone, with the second poem left to the candidate. That year the examiners’ report found that answers often compared the two poems without focusing on being alone, especially with Hide and Seek, where they tended to write about childhood in general, so keep to the question’s focus throughout.',
       'You will have the poem in front of you. The anthology says a Poetry Booklet containing all the Part 3 poems is provided with the question paper, so the credit comes from choosing precise details and analysing them, not from memorising. Quote a word or two and give the line.',
       'Quote the last stanza exactly as it is printed in front of you. Issue 8 of the anthology (February 2026) reads “clockless land for ever”, but the Poetry Booklet in every past paper checked for this guide, from June 2019 to June 2025, printed land of ever. In the exam, copy the wording from your booklet, and if it reads of ever, drop any point that rests on the words for ever.',
       'Track the capital letters, and their absence. She is capitalised in line 4, when she passes sentence, and Her in line 22, when only her desk is present; she is lower-case in lines 7, 25 and 28, when she forgets, returns flustered and fits him back into the day. The She that opens line 8 proves nothing, because every line of the poem begins with a capital. Time has a capital only in line 8. Noticing when the capitals disappear is the detail that lifts an answer.',
@@ -569,6 +572,11 @@ export const guide: StudyGuide = {
       label:
         'Pearson Edexcel, International GCSE English Literature (4ET1) Paper 1 question papers, January 2023 and June 2024, read on 10 October 2026: Section B offers question 2 or question 3, one to be answered in a suggested 40 minutes, each comparing two poems with reference to language, form and structure. January 2023 question 2 named Half-past Two and Sonnet 116, on the passing of time; June 2024 question 3 named Half-past Two, on being alone, with one other poem from the anthology. The Poetry Booklet of Part 3 poems that comes with each paper prints Half-past Two with a number beside every fifth line, as the anthology does, but not quite in its words: line 32 has of where Issue 8 has for, and line 9 has of where Issue 8 has at. Checked by script on eight papers from January 2023 to June 2025 (all but the January and June 2023 R papers, which were not opened) and on June 2019; the June 2024 mark scheme quotes the line with for.',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20240514.pdf',
+    },
+    {
+      label:
+        'Pearson, Summary of questions set for 4ET1, June 2019 to November 2020, read on 10 October 2026: Paper 1 Question 2 named Half-past Two and Hide and Seek, on childhood, in the January 2020 R paper (wording abbreviated by Pearson; R papers are sat by centres far from GMT).',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Teaching%20and%20learning%20materials/summary-of-questions-set-for-4et1-june-2019-to-november-2020.pdf',
     },
     {
       label:

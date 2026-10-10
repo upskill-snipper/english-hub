@@ -175,7 +175,10 @@ export default function LanguageAnalysisPage() {
         <div className="pointer-events-none absolute -end-16 -top-16 h-48 w-48 rounded-full bg-emerald-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="me-1 size-3" />
-          Analysing language and structure is where most marks are won
+          {/* Until 10 October 2026: "where most marks are won", and a framework
+              that scales "to a full comparative essay". Section A is marked on
+              AO2 alone and sets one poem, so there is no comparative essay. */}
+          In Section A, all 20 marks are for analysing language, form and structure
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
           The difference between spotting a technique and analysing it
@@ -183,8 +186,8 @@ export default function LanguageAnalysisPage() {
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
           "There is a metaphor here" is a starting point, not an answer. The examiner wants you to
           explain how the technique works and why the poet chose it. The What-How-Why framework is
-          the simplest, most reliable way to force your writing from identification into analysis --
-          and it scales from a single-paragraph answer to a full comparative essay.
+          the simplest, most reliable way to force your writing from identification into analysis,
+          and it scales from a single paragraph to a whole answer on the poem.
         </p>
       </section>
 

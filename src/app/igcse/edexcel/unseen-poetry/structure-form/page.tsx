@@ -1,15 +1,7 @@
 'use client'
 // [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
-import {
-  Layers,
-  ArrowLeft,
-  ArrowRight,
-  Sparkles,
-  BookOpen,
-  GitCompare,
-  Lightbulb,
-} from 'lucide-react'
+import { Layers, ArrowLeft, ArrowRight, Sparkles, BookOpen, PenTool, Lightbulb } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -265,13 +257,16 @@ export default function StructureFormPage() {
 
       {/* ── Next ────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-primary/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8 text-center">
-        <GitCompare className="mx-auto mb-3 size-8 text-violet-400" />
+        {/* Until 10 October 2026 this sent students to a guide on comparing
+            two unseen poems. Section A sets one poem; that guide now teaches
+            building an answer on it. */}
+        <PenTool className="mx-auto mb-3 size-8 text-violet-400" />
         <h2 className="text-heading-lg font-heading text-foreground">
-          Put it all together with comparison
+          Put it all together in your answer
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Form, language, comparison, and thesis -- the unseen poetry question pulls all of these
-          together. Revisit the comparison guide now that you have the full toolkit.
+          Form, language and a clear argument about the poem: the unseen question pulls all of these
+          together. Use the answer-building guide now that you have the full toolkit.
         </p>
         <Button
           variant="default"
@@ -279,7 +274,7 @@ export default function StructureFormPage() {
           className="mt-5"
           render={<Link href="/igcse/edexcel/unseen-poetry/comparison" />}
         >
-          Comparison Techniques
+          Building Your Answer
           <ArrowRight className="size-4" />
         </Button>
       </section>

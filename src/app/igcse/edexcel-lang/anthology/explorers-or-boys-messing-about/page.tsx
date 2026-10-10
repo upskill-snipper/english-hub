@@ -180,9 +180,11 @@ const ANTHOLOGY_TEXT_TITLE = 'Explorers or Boys Messing About?'
  * Arabic render used to pass typeAr, and while the mapping read only ASCII
  * digits and the word "marks" that silently removed every button on the Arabic
  * page. The mapping now reads Arabic labels too, but passing the English one
- * keeps the button independent of that. The "Compare with" intro now also says
- * the exam pairs this text with an unseen passage, since its shared string calls
- * these links pairings for comparison questions in the exam.
+ * keeps the button independent of that. The "Compare with" intro also said,
+ * until 10 October 2026, that the exam pairs this text with an unseen passage,
+ * because the shared string then called these links pairings for comparison
+ * questions in the exam; the shared string now says so itself, so that
+ * sentence went.
  */
 const examPractice = {
   q1: {
@@ -541,11 +543,12 @@ export default async function ExplorersOrBoysMessingAboutPage() {
             {await t('anth_text.section.compare_with')}
           </h2>
         </div>
+        {/* 10 October 2026: removed a second sentence, added on 26 September
+            2026, that said again that the exam compares this text only with an
+            unseen passage. The shared intro (anth_text.compare_with.intro) says so
+            itself, so the page said it twice. */}
         <p className="text-body-sm text-muted-foreground mb-5">
-          {await t('anth_text.compare_with.intro')}{' '}
-          {ar
-            ? 'في الامتحان يُقارَن هذا النصّ بنصٍّ غير مرئيّ، لا بنصٍّ آخر من المختارات، فهذه المقارنات للمراجعة.'
-            : 'In the exam this text is compared with an unseen passage, never another anthology text, so these pairings are for revision.'}
+          {await t('anth_text.compare_with.intro')}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (

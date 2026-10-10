@@ -430,10 +430,17 @@ export const SET_TEXTS: SetText[] = [
     copyrightStatus: 'copyright',
     year: '2003',
     keyThemes: ['Adventure', 'Risk', 'Responsibility', 'Public criticism'],
+    // CORRECTED 10 October 2026 to what Issue 8 itself says. Its headnote (page
+    // 9): "Adapted from an article published in The Guardian newspaper, 28
+    // January 2003"; its acknowledgements (page 71): an extract from the article,
+    // copyright Guardian News & Media Ltd 2016. Neither says who adapted it, so
+    // "adapted for the Edexcel anthology by Pearson" went, and so did the list of
+    // differences from the original ("cuts, re-orderings, and minor word
+    // choice"), which nothing in the anthology records.
     description:
-      'Originally published in The Guardian, 28 January 2003; adapted for the Edexcel anthology by Pearson. The article reports the rescue of two British explorers whose helicopter ditched in the sea off Antarctica, and the public debate over whether their expedition was bravery or recklessness.',
+      'The anthology prints this article adapted from one published in The Guardian on 28 January 2003. It reports the rescue of two British explorers whose helicopter ditched in the sea off Antarctica, and the public debate over whether their expedition was bravery or recklessness.',
     ukRightsNotice:
-      'Anthology version warning: This text is an adapted version printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available Guardian original (linked from many revision sites) differs in cuts, re-orderings, and minor word choice. Always use the anthology version when answering Edexcel exam questions - examiners will mark against the anthology text. Originally published in The Guardian, 28 January 2003; adapted for the Edexcel anthology by Pearson. © Guardian News & Media Ltd. Short fair-dealing extracts only.',
+      'Anthology version warning: The anthology (ISBN 978-1-446-93108-0) prints this text adapted from an article published in The Guardian on 28 January 2003, so it may not match the original article word for word. Use the anthology wording when answering Edexcel exam questions. The anthology acknowledges the article as copyright © Guardian News & Media Ltd 2016. Short fair-dealing extracts only.',
   },
   {
     slug: 'between-a-rock-and-a-hard-place',
@@ -466,10 +473,20 @@ export const SET_TEXTS: SetText[] = [
     // Kingsley Publishers, as the notice below says) and called the text
     // "originally" a Guardian piece, when the anthology's headnote says the
     // Guardian article was adapted from his contribution to a 2015 book.
+    //
+    // CORRECTED 10 October 2026 to what Issue 8 itself says (headnote, page 12;
+    // acknowledgements, page 71): the article The Guardian published online on 2
+    // October 2015, adapted from his contribution to Creative, Successful,
+    // Dyslexic. Nothing in the anthology says it was adapted again for the
+    // anthology, or that the online article differs from it "in cuts,
+    // re-orderings, and minor word choice", so both claims went; the
+    // anthology page corrected the same claim on 26 September. "Labelled as
+    // stupid because of dyslexia" went too: his teachers did not know what
+    // dyslexia was, and he learned the word only at 21.
     description:
-      'Benjamin Zephaniah (1958-2023) was a British dub poet and rights campaigner; he died on 7 December 2023. The text is a Guardian article (2 October 2015) adapted from his contribution to Creative, Successful, Dyslexic (2015), and has been adapted for the Edexcel anthology - the printed version differs from the freely-available online original in cuts and re-orderings. In it, Zephaniah wrote about growing up labelled as stupid because of dyslexia, and argued that creative thinking and refusal to be defined by an educational system are strengths.',
+      'Benjamin Zephaniah (1958-2023) was a British dub poet and rights campaigner; he died on 7 December 2023. The anthology prints the article The Guardian published online on 2 October 2015, which is adapted from his contribution to Creative, Successful, Dyslexic (2015). In it, Zephaniah writes about growing up dyslexic when his teachers did not know what dyslexia was, and argues that dyslexia is not a measure of intelligence and can make a person creative.',
     ukRightsNotice:
-      'Anthology version warning: This text is an adapted version printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available Guardian original (linked from many revision sites) differs in cuts, re-orderings, and minor word choice. Always use the anthology version when answering Edexcel exam questions - examiners will mark against the anthology text. Rights notice: the anthology prints no copyright line for this article, only that it is reproduced by permission of Jessica Kingsley Publishers. Quotations are short fair-dealing extracts.',
+      'Anthology version note: The anthology (ISBN 978-1-446-93108-0) prints the article as The Guardian published it online on 2 October 2015, adapted from his contribution to a 2015 book. Use the anthology wording, with its line numbers, when answering Edexcel exam questions. Rights notice: the anthology prints no copyright line for this article, only that it is reproduced by permission of Jessica Kingsley Publishers. Quotations are short fair-dealing extracts.',
   },
   {
     slug: 'a-game-of-polo-with-a-headless-goat',

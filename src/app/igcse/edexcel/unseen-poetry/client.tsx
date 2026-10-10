@@ -5,7 +5,7 @@ import {
   ArrowLeft,
   ArrowRight,
   Compass,
-  GitCompare,
+  PenTool,
   FileText,
   Sparkles,
   BookOpen,
@@ -35,12 +35,15 @@ const GUIDES = [
     bgColour: 'bg-sky-500/10',
     tag: 'Start Here',
   },
+  // Until 10 October 2026 this card taught comparing two unseen poems. 4ET1
+  // Section A sets one poem and asks for no comparison, so the page it links to
+  // now teaches building an answer on that one poem (its URL is unchanged).
   {
-    title: 'Comparison Techniques',
+    title: 'Building Your Answer',
     description:
-      'How to compare two unseen poems in a single response -- similarities, differences, and the linking vocabulary that lifts your grade.',
+      'Section A sets one poem, not two: how to plan quickly, organise by idea, and keep language, form and structure together in one analytical answer.',
     href: '/igcse/edexcel/unseen-poetry/comparison',
-    icon: GitCompare,
+    icon: PenTool,
     colour: 'text-violet-400',
     bgColour: 'bg-violet-500/10',
     tag: 'Essential',
@@ -138,9 +141,11 @@ const PRACTICE_TIPS = [
     body: 'Never identify a technique without explaining its effect. "The poet uses enjambment" is worthless. "Enjambment mimics the speaker\'s unbroken grief" is an answer.',
     icon: Lightbulb,
   },
+  // Until 10 October 2026: "roughly 35-40 minutes" and "comparative
+  // paragraphs". Every 4ET1 paper suggests 35 minutes, for one poem.
   {
     title: 'Watch the clock',
-    body: 'For the unseen poetry section you have roughly 35-40 minutes. Spend 5-8 minutes reading and planning, then write in sustained comparative paragraphs.',
+    body: 'Pearson suggests 35 minutes for the unseen poem. Spend about 10 minutes reading, annotating and planning, then write in sustained analytical paragraphs.',
     icon: Clock,
   },
 ]
@@ -174,7 +179,7 @@ export default function UnseenPoetryHubPage() {
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
-              Reading, analysing, and comparing poems you have never seen before
+              Reading and analysing a poem you have never seen before
             </p>
           </div>
         </div>
@@ -183,19 +188,27 @@ export default function UnseenPoetryHubPage() {
       {/* ── Overview banner ─────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-sky-500/[0.04] p-6 sm:p-8">
         <div className="pointer-events-none absolute -end-16 -top-16 h-48 w-48 rounded-full bg-sky-500/5 blur-3xl" />
+        {/* Until 10 October 2026 this badge said Paper 2 and the paragraph said
+            the exam asks you to compare two unseen poems. In 4ET1 the unseen poem
+            is Paper 1 Section A: one poem printed in the question paper, one
+            compulsory 20-mark question marked on AO2 alone, and 35 minutes
+            suggested (specification Issue 3, and every paper from the specimen
+            to June 2025). */}
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="me-1 size-3" />
-          {tr('igcse.page.badge_paper2_unseen')}
+          {tr('igcse.page.badge_paper1_unseen')}
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
-          Unseen poetry is the section students fear most -- and rewards most
+          One poem you have not seen before, one question, 20 marks
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          In Paper 2 of the Edexcel IGCSE Literature exam you will be asked to compare two poems you
-          have never read before. There is no way to "revise" the poems themselves -- but there is
-          absolutely a way to revise the skills. With a reliable reading approach, a toolkit of
-          analytical vocabulary, and a clear comparative structure, unseen poetry becomes the most
-          strategic section on the paper. This hub walks you through every step.
+          Section A of Paper 1 in the Edexcel International GCSE English Literature exam (4ET1)
+          prints a poem you have never read and asks one compulsory question on it: explore how the
+          writer presents a subject in this poem, considering the writer&rsquo;s descriptive skills,
+          choice of language, and use of form and structure. It is worth 20 marks, and Pearson
+          suggests 35 minutes. There is no second poem to compare, and context is not assessed: the
+          marks are for analysing language, form and structure. You cannot revise the poem itself,
+          but you can revise the skills, and this hub walks you through them.
         </p>
       </section>
 
@@ -297,35 +310,41 @@ export default function UnseenPoetryHubPage() {
             What the Examiner is Looking For
           </h2>
         </div>
+        {/* Until 10 October 2026 this listed four objectives, context and
+            comparison among them, for "the unseen poetry comparison question".
+            Section A is marked on AO2 alone, on one 20-mark grid; the cards now
+            follow the three bullets every 4ET1 Question 1 prints, and the mark
+            scheme's own note on what is not enough. */}
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          The unseen poetry comparison question rewards four assessment objectives. Every paragraph
-          you write should push at one of these.
+          Section A is marked on one assessment objective: analysing the language, form and
+          structure a writer uses to create meanings and effects. The question&rsquo;s three bullets
+          point you at the same things.
         </p>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {[
             {
-              ao: 'Understanding the text',
-              label: 'Informed personal response',
+              ao: 'Descriptive skills',
+              label: 'What the poem shows, and how',
               detail:
-                'Read, understand, and respond thoughtfully. Use precise textual references to support your interpretation.',
+                'The details the writer chooses, the scenes and people the poem builds, and the voice that describes them.',
             },
             {
-              ao: 'Analysing language and structure',
-              label: 'Language, form, structure',
+              ao: 'Choice of language',
+              label: 'Words, imagery and sound',
               detail:
-                'Analyse how poets use language, form, and structure to create meanings and effects, using subject terminology.',
+                'Word choices, imagery and sound effects, each linked to the meaning or effect it creates, using subject terminology.',
             },
             {
-              ao: 'Relating to context',
-              label: 'Context',
+              ao: 'Form and structure',
+              label: 'Shape and movement',
               detail:
-                'Show understanding of the relationships between texts and their contexts. Light touch for unseen poetry.',
+                'Stanzas, line lengths, rhyme, rhythm and turning points, and what each adds to the meaning.',
             },
             {
-              ao: 'Comparing texts',
-              label: 'Comparison',
+              ao: 'Not enough on its own',
+              label: 'Summary, device-spotting, context',
               detail:
-                "Explore connections across texts, evaluating similarities and differences in writers' methods and effects.",
+                "Pearson's mark scheme says summarising or paraphrasing the poem, or simply listing devices, is not enough, and that some personal response must be given. Context is not assessed, and there is no second poem to compare.",
             },
           ].map((item) => (
             // Badge above the text: these badges are phrases ("Analysing language
@@ -356,8 +375,8 @@ export default function UnseenPoetryHubPage() {
           Start with the 5-step approach
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Before you tackle comparison or analysis, you need a reading process you can trust. The
-          5-step approach gives you a reliable way in to any unseen poem.
+          Before you tackle analysis, you need a reading process you can trust. The 5-step approach
+          gives you a reliable way in to any unseen poem.
         </p>
         <Button
           variant="default"

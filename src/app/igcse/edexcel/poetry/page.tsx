@@ -55,6 +55,14 @@ type AnthologyPoem = {
 // Verified against TEXT_MASTER_LIST.csv - the Pearson Edexcel International GCSE
 // English Literature (4ET1) Anthology Issue 2 prescribes these 13 poems for the
 // Paper 1 Section B Anthology Poetry section. (Poetry-list audited April 2026.)
+//
+// NOT TRUE, found 10 October 2026 and not yet corrected. Part 3 of the
+// anthology (Issue 8, contents page) has sixteen poems, all set for Section B.
+// Six entries below are not among them: Ozymandias is not in the anthology at
+// all, and Disabled, Out, Out-, An Unknown Girl, The Bright Lights of Sarajevo
+// and Still I Rise are Part 2, set for English Language A. Nine Part 3 poems
+// are missing. The list needs its own pass; the comparison pairings further
+// down were rebuilt from Part 3 on 10 October 2026.
 const anthology: AnthologyPoem[] = [
   {
     number: 1,
@@ -209,6 +217,14 @@ const anthology: AnthologyPoem[] = [
 
 /* ── Comparison pairings ──────────────────────────────────────────── */
 
+// Rebuilt 10 October 2026. Nine of the twelve pairings here used a poem
+// Section B never sets: Ozymandias, which the anthology does not print, or a
+// Part 2 poem (one paired two Part 2 poems), so a student who followed them
+// would have compared a poem that is not in the Poetry Booklet. Every pairing
+// now is one Pearson set as Question 2, read from the papers themselves (the extra
+// assessment materials, June 2019, January 2023, June 2023, November 2023,
+// June 2024 and its 1R paper, November 2024, and June 2025 and its 1R paper),
+// each with the focus that paper gave it.
 const comparisonPairings = [
   {
     theme: 'Love and relationships',
@@ -216,42 +232,40 @@ const comparisonPairings = [
     bg: 'bg-rose-500/10',
     border: 'border-rose-500/20',
     pairs: [
-      'Sonnet 116 & Remember - enduring love and the test of time',
-      'La Belle Dame sans Merci & Remember - love, loss and the spectre of death',
-      'If- & War Photographer - moral codes and the burden of conscience',
+      'Sonnet 116 & Remember - feelings about love (specimen paper)',
+      'Sonnet 116 & My Last Duchess - thoughts about relationships (November 2023)',
+      'Poem at Thirty-Nine & My Last Duchess - feelings about another person (June 2025, Paper 1R)',
     ],
   },
   {
-    theme: 'Power and conflict',
+    theme: 'Experience and power',
     colour: 'text-clay-600',
     bg: 'bg-amber-500/10',
     border: 'border-amber-500/20',
     pairs: [
-      'Ozymandias & The Tyger - earthly versus divine power',
-      'War Photographer & Disabled - the human cost of war',
-      'The Bright Lights of Sarajevo & Out, Out- - life and indifference in the face of death',
+      'Blessing & War Photographer - different types of experience (June 2025)',
+      'La Belle Dame sans Merci & The Tyger - the effect the lady has on the knight, and how the writer is affected by the tiger (November 2024)',
     ],
   },
   {
-    theme: 'Identity and belonging',
+    theme: 'Identity, language and society',
     colour: 'text-blue-400',
     bg: 'bg-blue-500/10',
     border: 'border-blue-500/20',
     pairs: [
-      'An Unknown Girl & Half-Caste - cultural identity and self-definition',
-      'Still I Rise & Half-Caste - resilience against prejudice',
-      'If- & Still I Rise - strength of character under pressure',
+      'Search For My Tongue & Half-caste - concerns about language (June 2023)',
+      'Prayer Before Birth & Half-caste - concerns about society (June 2019)',
+      'Half-caste & Remember - how the writers express their feelings (June 2024)',
     ],
   },
   {
-    theme: 'Mortality and memory',
+    theme: 'Time and memory',
     colour: 'text-purple-400',
     bg: 'bg-purple-500/10',
     border: 'border-purple-500/20',
     pairs: [
-      'Remember & Out, Out- - confronting sudden death',
-      'Disabled & War Photographer - bearing witness to war',
-      'Ozymandias & Sonnet 116 - what endures and what fades',
+      'Half-past Two & Sonnet 116 - the passing of time (January 2023)',
+      'Piano & Remember - remembering (June 2024, Paper 1R)',
     ],
   },
 ]
@@ -277,7 +291,9 @@ const studyPlan = [
   {
     week: 'Weeks 9-10',
     title: 'Practise the anthology question',
-    task: 'Write timed responses to past-paper questions. Always link back to the named poem in the question and pick your comparison poem for a clear angle.',
+    // Until 10 October 2026 this spoke of "the named poem", as if Section B
+    // always named one; one of its two questions names both.
+    task: 'Write timed responses to past-paper questions, about 40 minutes each. Keep both poems in every paragraph, and when the second poem is yours to choose, pick one that gives you a clear angle on the question.',
   },
 ]
 
@@ -361,9 +377,12 @@ export default async function EdexcelPoetryAnthologyPage() {
             Harrison&rsquo;s original <em>Guardian</em> publication;
           </li>
           <li>
-            the adapted non-fiction texts (&lsquo;Explorers or boys messing about?&rsquo; and
-            &lsquo;Young and dyslexic?&rsquo;) differ from their online originals - always use the
-            anthology version when answering Edexcel questions.
+            {/* Until 10 October 2026 this said Young and dyslexic? also differs from
+                its online original. The anthology says only that it prints the article
+                The Guardian published, itself adapted from a book (Issue 8, page 12). */}
+            the adapted non-fiction text &lsquo;Explorers or boys messing about?&rsquo; differs from
+            the <em>Guardian</em> article it was adapted from - always use the anthology version
+            when answering Edexcel questions.
           </li>
         </ol>
         <p className="text-body-xs text-muted-foreground">
@@ -391,10 +410,13 @@ export default async function EdexcelPoetryAnthologyPage() {
               {await t('igcse.page.poetry.overview_anthology')}
             </h2>
           </div>
+          {/* Until 10 October 2026 this said the exam names one poem and asks you
+              to compare it with another of your choice, and counted 13 poems. Part 3
+              has sixteen, and Section B can name any of them in either question. */}
           <p className="text-xs text-muted-foreground leading-relaxed">
-            13 prescribed poems spanning four centuries, from Shakespeare and Blake to Duffy and
-            Agard. You must know every poem - the exam names one and asks you to compare it with
-            another of your choice.
+            Part 3 of the anthology spans four centuries, from Shakespeare and Blake to Duffy and
+            Agard. You must know every Part 3 poem: Section B can name any of them, in either of its
+            two questions.
           </p>
         </div>
 
@@ -405,9 +427,13 @@ export default async function EdexcelPoetryAnthologyPage() {
               {await t('igcse.page.poetry.overview_exam')}
             </h2>
           </div>
+          {/* Until 10 October 2026 this gave roughly 45 minutes to compare "the
+              named poem" with another. Every paper from the specimen to June 2025
+              suggests 40 minutes, and only one of the two questions names one poem. */}
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Paper 1 - Anthology Poetry (30 marks). You have roughly 45 minutes to compare the named
-            poem with another from the anthology, focusing on language, structure and ideas.
+            Paper 1 Section B - Anthology Poetry (30 marks, about 40 minutes). You answer one of two
+            questions, and both compare two Part 3 poems: one names both, and the other names one
+            and lets you choose the second. Both ask about language, form and structure.
           </p>
         </div>
 
@@ -557,10 +583,13 @@ export default async function EdexcelPoetryAnthologyPage() {
             {await t('igcse.page.poetry.pairings_heading')}
           </h2>
         </div>
+        {/* Until 10 October 2026 this said the anthology question always names
+            one poem. Question 2 names both; only Question 3 names one. */}
         <p className="text-body-sm text-muted-foreground mb-5 max-w-3xl">
-          The anthology question always names one poem. Your job is to choose a second poem from the
-          rest of the anthology that lets you say something sharp. These are the pairings we
-          recommend memorising:
+          Section B gives you a choice of two questions. One names both poems; the other names one
+          and leaves the second to you, from Part 3, and then your job is to pick a poem that lets
+          you say something sharp about the question&rsquo;s focus. Pearson has set every pairing
+          below as the two-poem question, so each is good practice for either:
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2">

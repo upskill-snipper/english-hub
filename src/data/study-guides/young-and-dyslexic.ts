@@ -76,6 +76,20 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * Booklet (P57186A) number Text Two every fifth line, and neither follows the
  * anthology: the first runs one to three lines behind it after line 10, the
  * second one line behind from line 10.
+ *
+ * ALSO 10 October 2026, against Issue 8, pages 12-13. Six statements went
+ * beyond the text. The overview said he "sometimes" draws something when he
+ * writes a word like knot: lines 56-57 say that writing the word knot he has to
+ * stop and think and has to draw something. The audience note sent him to "the
+ * parent of a dyslexic child at line 79": lines 79-80 address a parent of
+ * someone with dyslexia. A scene card was titled a diagnosis, a word the article
+ * never uses (line 52: a teacher tells him he is dyslexic), and so was a
+ * relationship note. The Brunel card said a good memory without passion is
+ * pointless; lines 63-65 say a good memory can get the right grade, but without
+ * passion, creativity and individuality there is no point. The teacher of line
+ * 21 was "the football teacher"; he is a teacher who suggests football. And the
+ * last card gave the creativity claim to parents, but lines 81-83 speak to
+ * "you", the dyslexic writer who cannot find a word and writes round it.
  */
 export const guide: StudyGuide = {
   slug: 'young-and-dyslexic',
@@ -106,7 +120,7 @@ export const guide: StudyGuide = {
     summary: [
       'Benjamin Zephaniah, the poet, novelist and university professor, writes in the first person about growing up dyslexic at a time when teachers did not know what dyslexia was. The anthology’s headnote says the article was published in The Guardian online on Friday 2 October 2015, and that it is adapted from his contribution to Creative, Successful, Dyslexic (Jessica Kingsley, 2015), a collection edited by Margaret Rooke in which twenty-three high achievers tell their stories. It is a personal essay written in a speaking voice, and in its final paragraphs it turns to address young dyslexic readers and their parents directly.',
       'It moves broadly through his life. After a two-sentence opening that states the argument before any story is told, he describes schools that lacked compassion and a run of teachers: one who calls him stupid for asking whether sleep is a design fault, one who speaks about Africa in racist terms and is outraged when he challenges her, and one who tells him kindly that not everyone can be intelligent and suggests he go outside and play football. He is expelled from his last school at 13, admits taking revenge on a teacher, and spends time in borstal. The statistics, he says, predicted prison for someone like him, yet he insists he never thought he was stupid. His girlfriend writes down the poems for his first book, and at 21 an adult education teacher tells him he is dyslexic.',
-      'The second half moves into the present. He still has to stop and think, and sometimes draw something, when he writes a word like knot, and by the time of writing he is professor of poetry and creative writing at Brunel University, teaching students who are officially more educated than he is. Then he speaks to the reader: anyone who cannot understand dyslexia is the one with the problem, being dyslexic is natural and it is the way we read and write that is unnatural, and dyslexia is not a measure of intelligence. He ends with the children who come up to him to say that they are dyslexic too.',
+      'The second half moves into the present. He still has to stop and think, and draw something, when he writes the word knot, and by the time of writing he is professor of poetry and creative writing at Brunel University, teaching students who are officially more educated than he is. Then he speaks to the reader: anyone who cannot understand dyslexia is the one with the problem, being dyslexic is natural and it is the way we read and write that is unnatural, and dyslexia is not a measure of intelligence. He ends with the children who come up to him to say that they are dyslexic too.',
       'The obvious reading is that this is an inspirational story: a boy written off by school becomes a professor. That is true, but it undersells the article. The more convincing reading is that it is an argument about where the problem lies. Again and again Zephaniah moves the fault away from himself: to an education system without compassion, to teachers who took difficulty with writing for a lack of intelligence, to people who cannot understand dyslexia, and finally to written language itself. His success is the evidence, not the point. A less comfortable reading notices what he chooses to leave in, the revenge, the borstal and the prisoners he regards as no less able than himself. He does not pretend that the labels did no harm; he argues that they were wrong.',
     ],
   },
@@ -115,7 +129,7 @@ export const guide: StudyGuide = {
     {
       name: 'Benjamin Zephaniah',
       role: 'The writer and first-person voice: performance poet, novelist and professor (1958-2023)',
-      body: 'Born in Birmingham in 1958, he grew up in Handsworth. His first book of poems, Pen Rhythm, came out in 1980, and he later wrote novels for teenagers, among them Face (1999) and Refugee Boy (2001). He refused an OBE in 2003, took up his first academic post at Brunel University in 2011, and died on 7 December 2023, aged 65. In the article he presents two selves: the boy who argued with teachers and was expelled, and the adult who can now name what was done to him. The gap between them is his method. As a boy he could only think a sarcastic “Oh great” at the football teacher’s advice; only the adult calls it “stereotyping”. He is also candid about weakness, admitting revenge, borstal and the spelling that still stops him, which makes his confidence easier to believe.',
+      body: 'Born in Birmingham in 1958, he grew up in Handsworth. His first book of poems, Pen Rhythm, came out in 1980, and he later wrote novels for teenagers, among them Face (1999) and Refugee Boy (2001). He refused an OBE in 2003, took up his first academic post at Brunel University in 2011, and died on 7 December 2023, aged 65. In the article he presents two selves: the boy who argued with teachers and was expelled, and the adult who can now name what was done to him. The gap between them is his method. As a boy he could only think a sarcastic “Oh great” at a teacher’s advice to go outside and play football; only the adult calls it “stereotyping”. He is also candid about weakness, admitting revenge, borstal and the spelling that still stops him, which makes his confidence easier to believe.',
     },
     {
       name: 'The teachers',
@@ -149,8 +163,8 @@ export const guide: StudyGuide = {
     },
     {
       name: 'Young dyslexic readers',
-      role: 'The reader addressed as “you” from line 73, the parents addressed at line 79, and the children who tell him they are dyslexic too (lines 84-88)',
-      body: 'They are the article’s real audience. He speaks to them in the second person from line 73, and to the parent of a dyslexic child at line 79. In the last paragraph they become characters, children who come up to him and say that they are dyslexic, whom he encourages to treat it as an advantage. He admits that he had no such example when he was a child, which quietly explains why he is writing at all.',
+      role: 'The reader addressed as “you” from line 73, the parent of someone with dyslexia addressed at lines 79-80, and the children who tell him they are dyslexic too (lines 84-88)',
+      body: 'They are the article’s real audience. He speaks to them in the second person from line 73, and at lines 79-80 to a parent of someone with dyslexia. In the last paragraph they become characters, children who come up to him and say that they are dyslexic, whom he encourages to treat it as an advantage. He admits that he had no such example when he was a child, which quietly explains why he is writing at all.',
     },
   ],
 
@@ -321,9 +335,9 @@ export const guide: StudyGuide = {
     {
       technique: 'Reported direct speech',
       example:
-        'The teacher’s “Shut up, stupid boy.” (line 14) and the football teacher’s “We can’t all be intelligent” (line 21)',
+        'The teacher’s “Shut up, stupid boy.” (line 14) and another teacher’s “We can’t all be intelligent” (line 21)',
       effect:
-        'Zephaniah lets the adults speak for themselves and keeps his own verdicts short: that the first teacher called him stupid for even thinking, and that the football teacher was stereotyping him. The reader judges them, which is more persuasive than being told what to think, and the gap between their confident words and his curious questions makes the adults look small. It also suits a performance poet: the article is full of voices, like a story told aloud.',
+        'Zephaniah lets the adults speak for themselves and keeps his own verdicts short: that the first teacher called him stupid for even thinking, and that the teacher who suggested football was stereotyping him. The reader judges them, which is more persuasive than being told what to think, and the gap between their confident words and his curious questions makes the adults look small. It also suits a performance poet: the article is full of voices, like a story told aloud.',
     },
     {
       technique: 'Tricolon',
@@ -580,7 +594,7 @@ export const guide: StudyGuide = {
     },
     {
       where: 'Paragraph 13, lines 51-54 (page 13)',
-      title: 'The diagnosis at 21',
+      title: 'Told he is dyslexic, at 21',
       summary:
         'At an adult education class in London a teacher tells him he is dyslexic. He asks whether he needs an operation, and when she explains what it means, he is relieved that there is a reason.',
       setting: 'An adult education class in London',
@@ -595,7 +609,7 @@ export const guide: StudyGuide = {
       where: 'Paragraphs 14-15, lines 55-69 (page 13)',
       title: 'The professor who still stops at a word',
       summary:
-        'He lists his poetry, novels, plays and music, but admits he still has to stop and think how to write a word such as knot, and puts a question mark in its place when he cannot spell question. As a Brunel professor he tells students that a good memory without passion is pointless.',
+        'He lists his poetry, novels, plays and music, but admits he still has to stop and think how to write a word such as knot, and puts a question mark in its place when he cannot spell question. As a Brunel professor he tells students that a good memory can earn them the right grade, but that without passion, creativity and individuality the course has no point.',
       setting: 'His working life: the university, festivals and the page',
       who: ['Benjamin Zephaniah', 'His students at Brunel'],
       quote: 'passion, creativity, individuality',
@@ -621,7 +635,7 @@ export const guide: StudyGuide = {
       where: 'Paragraphs 19-20, lines 79-88 (page 13)',
       title: 'Handing it on',
       summary:
-        'He tells readers not to be hard on themselves, tells parents that dyslexia is no measure of intelligence and can build creativity, and ends with children who tell him proudly that they are dyslexic too.',
+        'He tells readers not to be hard on themselves, and tells a parent of someone with dyslexia not to think of it as a defect, since it is no measure of intelligence. Then he turns to the dyslexic writer who cannot find a word: writing round it takes creativity, so dyslexia can build it. He ends with children who tell him proudly that they are dyslexic too.',
       setting: 'Speaking to parents, and to the children who come up to him',
       who: ['Benjamin Zephaniah', 'Young dyslexic readers'],
       quote: 'Us dyslexic people, we’ve got it going on',
@@ -655,7 +669,7 @@ export const guide: StudyGuide = {
       from: 'Benjamin Zephaniah',
       to: 'The adult education teacher',
       kind: 'learner and teacher',
-      note: 'The first teacher who explains rather than labels. Her diagnosis brings relief, not shame.',
+      note: 'The first teacher who explains rather than labels. Her explanation brings relief, not shame.',
     },
     {
       from: 'Benjamin Zephaniah',
@@ -694,7 +708,7 @@ export const guide: StudyGuide = {
       title: 'The Danger of a Single Story',
       href: '/igcse/edexcel-lang/anthology/the-danger-of-a-single-story',
       reason:
-        'Adichie shows how people are reduced to one thing; Zephaniah’s football teacher does exactly that to him, and both writers answer a stereotype with personal anecdote.',
+        'Adichie shows how people are reduced to one thing; the teacher who steers Zephaniah towards football does exactly that to him, and both writers answer a stereotype with personal anecdote.',
     },
     {
       title: 'Explorers or boys messing about? Either way, taxpayer gets rescue bill',

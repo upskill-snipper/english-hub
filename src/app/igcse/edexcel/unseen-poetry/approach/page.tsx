@@ -33,11 +33,16 @@ interface Step {
   example: string
 }
 
+// Until 10 October 2026 these steps added up to 15 minutes of reading, and the
+// intro said students who read for 12 to 15 minutes "almost always outperform"
+// the rest, a claim no Pearson document makes. Pearson suggests 35 minutes for
+// the whole of Section A, so the steps now add up to about 10, matching the
+// hub's own timing tip.
 const STEPS: Step[] = [
   {
     number: '01',
     title: 'First Impressions',
-    time: '2 minutes',
+    time: '1 minute',
     icon: Eye,
     colour: 'text-sky-400',
     bgColour: 'bg-sky-500/10',
@@ -55,7 +60,7 @@ const STEPS: Step[] = [
   {
     number: '02',
     title: 'Meaning and Narrative',
-    time: '3 minutes',
+    time: '2 minutes',
     icon: BookOpen,
     colour: 'text-emerald-400',
     bgColour: 'bg-emerald-500/10',
@@ -73,7 +78,7 @@ const STEPS: Step[] = [
   {
     number: '03',
     title: 'Language',
-    time: '5 minutes',
+    time: '3 minutes',
     icon: MessageSquare,
     colour: 'text-violet-400',
     bgColour: 'bg-violet-500/10',
@@ -91,7 +96,7 @@ const STEPS: Step[] = [
   {
     number: '04',
     title: 'Form and Structure',
-    time: '3 minutes',
+    time: '2 minutes',
     icon: Layers,
     colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
@@ -164,17 +169,17 @@ export default function UnseenPoetryApproachPage() {
         <div className="pointer-events-none absolute -end-16 -top-16 h-48 w-48 rounded-full bg-sky-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="me-1 size-3" />
-          15 Minutes of Reading
+          About 10 Minutes of Reading
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
           Before you write a single word, read like this
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          The most common mistake in unseen poetry is diving straight into writing. Students who
-          spend just 12-15 minutes reading and annotating almost always outperform those who start
-          writing in minute two. These five steps give you a repeatable process: the same reading
-          strategy works on any poem, from a Wordsworth sonnet to a contemporary free verse piece.
-          Follow the steps in order -- they build on each other.
+          It is tempting to start writing straight away. Pearson suggests 35 minutes for the unseen
+          poem, so give about the first 10 to reading and annotating: your annotations become your
+          plan. These five steps give you a repeatable process, and the same reading strategy works
+          on any poem, from a Wordsworth sonnet to a contemporary free verse piece. Follow the steps
+          in order, because they build on each other.
         </p>
       </section>
 
@@ -238,7 +243,7 @@ export default function UnseenPoetryApproachPage() {
         <div className="mb-4 flex items-center gap-3">
           <CheckCircle2 className="size-5 text-emerald-400" />
           <h2 className="text-heading-md font-heading text-foreground">
-            After 15 Minutes of Reading, You Should Have
+            After About 10 Minutes of Reading, You Should Have
           </h2>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -264,12 +269,14 @@ export default function UnseenPoetryApproachPage() {
       {/* ── Next step ───────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-violet-500/[0.06] via-card to-primary/[0.04] p-6 sm:p-8 text-center">
         <Layers className="mx-auto mb-3 size-8 text-violet-400" />
+        {/* Until 10 October 2026: "The unseen poetry question asks you to
+            compare." In 4ET1 it sets one poem and asks for no comparison. */}
         <h2 className="text-heading-lg font-heading text-foreground">
-          Now learn to compare two poems
+          Now turn your reading into an answer
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          The unseen poetry question asks you to compare. Once you can read a single poem well, the
-          next skill is holding two poems in mind at once.
+          The unseen question is about one poem. Once you can read it well, the next skill is
+          organising what you found into a clear, analytical answer.
         </p>
         <Button
           variant="default"
@@ -277,7 +284,7 @@ export default function UnseenPoetryApproachPage() {
           className="mt-5"
           render={<Link href="/igcse/edexcel/unseen-poetry/comparison" />}
         >
-          Comparison Techniques
+          Building Your Answer
           <ArrowRight className="size-4" />
         </Button>
       </section>

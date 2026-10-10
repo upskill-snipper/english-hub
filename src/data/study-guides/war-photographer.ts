@@ -38,7 +38,8 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * its stanza summaries and form section, so the mounted page as a whole is over
  * the share until those are cut.
  *
- * WHAT THE PAGE ABOVE GETS WRONG, and this file does not repeat. Stanza 3: the
+ * WHAT THE PAGE ABOVE GOT WRONG, all corrected there on 26 September 2026
+ * (checked again 10 October 2026), and this file does not repeat. Stanza 3: the
  * photographer SOUGHT approval, without words; the poem never says it was
  * given, and approving is not its word. Stanza 2 has no kitchen and no working
  * face. The ordered rows of line 2 are spools of film, not chemicals, and there
@@ -67,8 +68,8 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * its paper, the second from the cluster). Exam practice question 1 is
  * Pearson's own Question 3 from Paper 1R, June 2025, word for word. No mark
  * tariffs: the validator keeps those to ExamPlacementCard. The page above
- * still describes only the one-named-poem shape in its Compare with note;
- * that page is outside this file.
+ * described only the one-named-poem shape in its Compare with note until 10
+ * October 2026, when that note was corrected to give both questions.
  *
  * CHECKED AGAIN 10 October 2026. The context section's darkroom note said the
  * exam paper prints the anthology's wording without naming a board, although
@@ -726,6 +727,15 @@ export const guide: StudyGuide = {
         'In both, something in the present drags a man back into memory against his will, but Lawrence remembers comfort and Duffy’s photographer remembers a death.',
     },
     {
+      // Added 10 October 2026: Pearson set this pair as Question 2 in November
+      // 2020 (Summary of questions set, June 2019 to November 2020), and this
+      // list, where the guide records the pairings Pearson has used, left it out.
+      title: 'Hide and Seek (Vernon Scannell)',
+      href: '/resources/revision-notes/hide-and-seek',
+      reason:
+        'Pearson set this pair as Question 2 in November 2020 (the series titled June 2020), on isolation. Scannell’s child hides alone in a dark shed and comes out to an empty garden; Duffy’s photographer works alone in his darkroom on pictures of suffering that the readers at home barely pause over.',
+    },
+    {
       title: 'Do not go gentle into that good night (Dylan Thomas)',
       href: '/resources/revision-notes/do-not-go-gentle-into-that-good-night',
       reason:
@@ -745,6 +755,11 @@ export const guide: StudyGuide = {
       label:
         'Pearson, 4ET1/01 question paper, Monday 6 November 2023: prints the poem with the same wording as the anthology; Section B question wording (Re-read, Compare, one other poem from the anthology, reference to language, form and structure).',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20231107.pdf',
+    },
+    {
+      label:
+        'Pearson, Summary of questions set for 4ET1, June 2019 to November 2020, read on 10 October 2026: Paper 1 Question 2 named Hide and Seek and War Photographer, on isolation, in November 2020, the series titled June 2020 (wording abbreviated by Pearson).',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Teaching%20and%20learning%20materials/summary-of-questions-set-for-4et1-june-2019-to-november-2020.pdf',
     },
     {
       label:

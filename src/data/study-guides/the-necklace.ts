@@ -74,8 +74,8 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  *
  * RE-CHECKED, 10 October 2026, against the 2020 and June 2023 papers and the
  * November 2020 examiners' report on Paper 2. P73896A is not on disk and was
- * not re-read. The tips print under "What examiners reward", so three were
- * corrected. The first now allows for a stem about an effect (June 2023 asked
+ * not re-read. The tips printed under "What examiners reward" (renamed Exam
+ * tips later that day), so three were corrected. The first now allows for a stem about an effect (June 2023 asked
  * how the writer creates sympathy), and says to weave language and structure
  * through the essay: that report counts answers that left them to an add-on
  * at the end among the less successful. The translator tip said a point is

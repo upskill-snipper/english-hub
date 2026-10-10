@@ -218,9 +218,9 @@ const languageFeatures = [
  */
 const structuralAnalysis = {
   opening:
-    'The piece opens with its conclusion rather than its problem: Zephaniah admits he suffered as a child but says he learned to turn dyslexia to his advantage, and claims dyslexic people as the architects and designers. The school-era failures that follow are read in the light of that confident start.',
+    'The piece opens with its conclusion rather than its problem: Zephaniah admits he suffered as a child but says he learned to turn dyslexia to his advantage, and claims dyslexic people as the architects and designers. The teachers’ verdicts that follow are read in the light of that confident start.',
   openingAr:
-    'يفتتح المقالُ بخلاصته لا بمشكلته: يعترف Zephaniah بأنّه عانى طفلاً، لكنّه يقول إنّه تعلّم أن يحوّل الـ dyslexia إلى ميزة، ويَعُدّ ذوي الـ dyslexia هم المهندسين المعماريّين والمصمّمين. وتُقرأ إخفاقاتُ زمن المدرسة التي تلي ذلك في ضوء هذه البداية الواثقة.',
+    'يفتتح المقالُ بخلاصته لا بمشكلته: يعترف Zephaniah بأنّه عانى طفلاً، لكنّه يقول إنّه تعلّم أن يحوّل الـ dyslexia إلى ميزة، ويَعُدّ ذوي الـ dyslexia هم المهندسين المعماريّين والمصمّمين. وتُقرأ أحكامُ المعلّمين التي تلي ذلك في ضوء هذه البداية الواثقة.',
   development:
     'After that opening, the middle moves broadly chronologically: school, expulsion at 13, borstal, the first book of poems, learning at 21 that he was dyslexic, then his working life in the present. The clearest break in the chronology comes when the statistics that predicted prison lead him to the prisons he now visits, so the adult’s view is never far from the child’s story.',
   developmentAr:
@@ -370,9 +370,19 @@ const ANTHOLOGY_TEXT_TITLE = "Young and Dyslexic? You've Got It Going On"
  * language-and-structure question. Its fourth point used to place his humour in
  * his spelling; the article's joke about himself is the retold question about
  * needing an operation, and the spelling passage (lines 55-59) is candour, so
- * the point now names both. The "Compare with" intro now also says the
- * exam pairs this text with an unseen passage, since its shared string calls
- * these links pairings for comparison questions in the exam.
+ * the point now names both. The "Compare with" intro also said, until 10
+ * October 2026, that the exam pairs this text with an unseen passage, because
+ * the shared string then called these links pairings for comparison questions
+ * in the exam; the shared string now says so itself, so that sentence went.
+ *
+ * ALSO 10 October 2026. q2's first point stopped calling the reframing a move
+ * "from disability to difference" (the article has neither word; its words
+ * are stupid and defect), and its third stopped calling the school years a
+ * "catalogue of school-era failures": they are a run of teachers' verdicts on
+ * him, which the list of later work answers. Its fourth point said he laughs
+ * at his own confusion; nothing in the article says he laughs (see the note
+ * above the themes), so it now offers the comedy of the retold operation
+ * question as a reading.
  */
 const examPractice = {
   q1: {
@@ -391,17 +401,17 @@ const examPractice = {
     type: 'Language and structure - 12 marks',
     typeAr: 'اللغة والبنية - ١٢ درجة',
     modelOutline: [
-      'Zephaniah’s reframing of dyslexia - from disability to difference - is the article’s central rhetorical move, replacing one vocabulary with another to transform the meaning of the condition.',
+      'Zephaniah’s reframing of dyslexia is the article’s central rhetorical move. As a boy he was called stupid, and he tells parents not to think of dyslexia as a defect, while from its first lines the article claims dyslexic people as the architects and designers: one vocabulary replaces another to change what the condition means.',
       'Personal anecdote and direct address combine to give the piece its authority: the reader is being spoken to by someone who has lived through what is being described, rather than being lectured at by an outside expert.',
-      'The piling-up of later achievements answers the earlier catalogue of school-era failures, so that the structure of the prose itself argues against the labels of childhood.',
-      'Humour and candour about his own struggles disarm the reader: he laughs at his own confusion when he was told he was dyslexic, and admits without embarrassment the tricks he still uses to spell some words. Both challenge the assumption that surface accuracy equals intelligence - a serious argument carried by a light tone.',
+      'The list of his later work, poetry, novels, plays and music, answers the earlier run of teachers’ verdicts on him, so that the structure of the prose itself argues against the labels of childhood.',
+      'Humour and candour about his own struggles disarm the reader: in one reading, retelling his question about needing an operation turns his confusion when he was told he was dyslexic into comedy, and he admits without embarrassment the tricks he still uses to spell some words. Both challenge the assumption that surface accuracy equals intelligence - a serious argument carried by a light tone.',
       'The structure carries the challenge too: the article opens with its conclusion, claiming dyslexic people as the architects and designers before any story of school is told, so the teachers’ verdicts that follow read as already overturned. When he repeats that claim to children in the final paragraph, the challenge is handed on to the next generation.',
     ],
     modelOutlineAr: [
-      'إعادةُ Zephaniah تأطيرَ الـ dyslexia - من إعاقةٍ إلى اختلافٍ - هي الحركةُ البلاغيّة المركزيّة للمقال، إذ تستبدل مفرداتٍ بأخرى لتُحوّل معنى الحالة.',
+      'إعادةُ Zephaniah تأطيرَ الـ dyslexia هي الحركةُ البلاغيّة المركزيّة للمقال. فقد نُعت صبيّاً بالغباء، وهو يطلب من الآباء ألّا يروا في الـ dyslexia عيباً، بينما يَعُدّ المقالُ منذ سطريه الأوّلين ذوي الـ dyslexia هم المهندسين المعماريّين والمصمّمين: مفرداتٌ تحلّ محلّ أخرى لتُغيّر معنى الحالة.',
       'تتضافر الحكايةُ الشخصيّة والخطابُ المباشر لإكساب النصّ سلطته: يُكلَّم القارئ على لسان مَن عاش ما يُوصف، لا أن يُحاضَر فيه من خبيرٍ خارجيّ.',
-      'تكديسُ الإنجازات اللاحقة يُجيب عن تَعداد إخفاقات زمن المدرسة السابق، فتُحاجج بنيةُ النثر نفسها ضدّ وسوم الطفولة.',
-      'الفكاهةُ والصراحةُ بشأن متاعبه تُذيبان تحفّظَ القارئ: فهو يضحك من حيرته حين قيل له إنّ لديه dyslexia، ويعترف دون حرجٍ بالحيل التي ما زال يلجأ إليها لكتابة بعض الكلمات. وكلتاهما تتحدّى الافتراضَ القائل إنّ الدقّةَ السطحيّة تساوي الذكاء - حُجّةٌ جدّيّة تحملها نبرةٌ خفيفة.',
+      'قائمةُ أعماله اللاحقة، من الشعر والروايات والمسرحيّات والموسيقى، تُجيب عن سلسلة أحكام المعلّمين السابقة عليه، فتُحاجج بنيةُ النثر نفسها ضدّ وسوم الطفولة.',
+      'الفكاهةُ والصراحةُ بشأن متاعبه تُذيبان تحفّظَ القارئ: ففي إحدى القراءات يحوّل سؤالُه المرويّ عمّا إذا كان يحتاج إلى عمليّة حيرتَه حين قيل له إنّ لديه dyslexia إلى فكاهة، ويعترف دون حرجٍ بالحيل التي ما زال يلجأ إليها لكتابة بعض الكلمات. وكلتاهما تتحدّى الافتراضَ القائل إنّ الدقّةَ السطحيّة تساوي الذكاء - حُجّةٌ جدّيّة تحملها نبرةٌ خفيفة.',
       'والبنيةُ تحمل التحدّي أيضاً: يفتتح المقالُ بخلاصته، فيَعُدّ ذوي الـ dyslexia هم المهندسين المعماريّين والمصمّمين قبل أن يروي أيّ حكايةٍ عن المدرسة، فتُقرأ أحكامُ المعلّمين التي تلي ذلك كأنّها نُقضت سلفاً. وحين يكرّر هذه الفكرةَ لأطفالٍ في الفقرة الأخيرة، يُسلّم التحدّي إلى الجيل التالي.',
     ],
   },
@@ -920,11 +930,12 @@ export default async function YoungAndDyslexicPage() {
             {await t('anth_text.section.compare_with')}
           </h2>
         </div>
+        {/* 10 October 2026: removed a second sentence, added on 26 September
+            2026, that said again that the exam compares this text only with an
+            unseen passage. The shared intro (anth_text.compare_with.intro) says so
+            itself, so the page said it twice. */}
         <p className="text-body-sm text-muted-foreground mb-5">
-          {await t('anth_text.compare_with.intro')}{' '}
-          {ar
-            ? 'في الامتحان يُقارَن هذا النصّ بنصٍّ غير مرئيّ، لا بنصٍّ آخر من المختارات، فهذه المقارنات للمراجعة.'
-            : 'In the exam this text is compared with an unseen passage, never another anthology text, so these pairings are for revision.'}
+          {await t('anth_text.compare_with.intro')}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (

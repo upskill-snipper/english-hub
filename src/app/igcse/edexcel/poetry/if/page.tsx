@@ -706,9 +706,15 @@ export default function IfPage() {
             {tr('anth_text.section.compare_with')}
           </h2>
         </div>
+        {/* Until 10 October 2026 this said the exam asks you to compare the named
+            poem with another from the anthology. That is only one of the two
+            Section B questions: the other names both poems, as the study guide
+            below this page says. */}
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another from the anthology. These
-          are strong pairings for If-.
+          In Section B of 4ET1 Paper 1 you choose one of two comparison questions: one names two
+          Part 3 poems, and the other names one and asks you to choose the second from Part 3. These
+          are strong pairings for If- to revise, and to draw on when the second poem is yours to
+          choose.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

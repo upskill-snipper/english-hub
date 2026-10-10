@@ -362,12 +362,16 @@ export default function HalfPastTwoPage() {
                 analysis="The boy personifies the clock: it has eyes and a pair of legs where an adult would see a dial and hands. He knows the creature by sight, but the verb the poem chooses for his failure to understand it, 'click', is brilliant, suggesting both the clock's ticking and the moment of comprehension that refuses to come (personification plus onomatopoeia). The image is exact child-logic, charming on the surface and pointed underneath: the clock is a living gatekeeper speaking a foreign tongue."
               />
               {/* 26 September 2026: this card quoted the line as ending "land of ever" and
-                  read "ever" as a child's word; the anthology has "for ever", in the final
-                  stanza. The misreading was also in the time and escape cards and an exam tip. */}
+                  read "ever" as a child's word; Issue 8 of the anthology has "for ever", in
+                  the final stanza. 10 October 2026: "of ever" was not a misreading. The
+                  Poetry Booklet Pearson issues with the exam prints of in that line (all
+                  nine booklets checked, June 2019 to June 2025; see
+                  src/data/study-guides/half-past-two.ts), so the card now tells students to
+                  check the copy in front of them rather than treating either as a slip. */}
               <QuoteCard
                 quote="clockless land for ever"
                 speaker="Final stanza"
-                analysis="The line around this phrase makes him an escapee, which recasts the detention: the prisoner gets free not from the room but from time itself. The phrase 'clockless land' makes timelessness a place, a country reachable only by those who cannot read clocks. The closing 'for ever' is quietly paradoxical: the escape lasted only until the teacher came back, yet the adult narrator calls it permanent, because the memory never left him. This is the poem's still centre: punishment transformed into the purest freedom in the poem."
+                analysis="The line around this phrase makes him an escapee, which recasts the detention: the prisoner gets free not from the room but from time itself. The phrase 'clockless land' makes timelessness a place, a country reachable only by those who cannot read clocks. The closing 'for ever' is quietly paradoxical: the escape lasted only until the teacher came back, yet the adult narrator calls it permanent, because the memory never left him. This is the poem's still centre: punishment transformed into the purest freedom in the poem. In the exam, check this line in the Poetry Booklet: the booklets issued with past papers, from June 2019 to June 2025, print of where the anthology prints for, and if yours does, drop any point that rests on the words 'for ever'."
               />
               <QuoteCard
                 moment="Alone and outside time, he is absorbed in what he can smell and hear, starting with the teacher's chrysanthemums, which are past their best"
@@ -553,10 +557,14 @@ export default function HalfPastTwoPage() {
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            {/* Until 10 October 2026 this tip was headed "Structure questions". 4ET1
+                sets none: both Section B questions are comparisons that ask about
+                language, form and structure together. */}
             <span>
-              <strong>Structure questions: use the three time-worlds.</strong> Clock time, named
-              event-time, and the timeless country without clocks, with the teacher&apos;s return as
-              the structural snap back.
+              <strong>Write about structure through the three time-worlds.</strong> Section B asks
+              about language, form and structure together, never structure alone, so build it into
+              your comparison: clock time, named event-time, and the timeless country without
+              clocks, with the teacher&apos;s return as the structural snap back.
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -584,12 +592,15 @@ export default function HalfPastTwoPage() {
 
       {/* Rights notice */}
       <footer className="mt-8 text-xs text-muted-foreground">
+        {/* Until 10 October 2026 this sent students to an "Edexcel-licensed school
+            anthology". Pearson publishes the anthology free. */}
         <p>
           <em>Half-past Two</em> by U. A. Fanthorpe (1929-2009) was published in
           <em> Neck-Verse</em> (Peterloo Poets, 1992) and remains in copyright. Quotations on this
           page are short fair-dealing extracts under CDPA 1988 s.30 (criticism, review and
-          quotation). For the full text, students should consult the Edexcel-licensed school
-          anthology or Fanthorpe&apos;s <em>New and Collected Poems</em>.
+          quotation). For the full text, use the Pearson Edexcel International GCSE English
+          Anthology, which Pearson publishes free (the poem is on page 56 of Issue 8), or
+          Fanthorpe&apos;s <em>New and Collected Poems</em>.
         </p>
       </footer>
     </>

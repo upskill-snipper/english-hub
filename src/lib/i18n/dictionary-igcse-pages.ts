@@ -309,10 +309,12 @@ export const IGCSE_PAGES_DICTIONARY: Record<string, { en: string; ar?: string; e
     ar: 'الرجوع إلى Unseen Poetry',
     es: 'Volver a Unseen Poetry',
   },
-  'igcse.page.badge_paper2_unseen': {
-    en: 'Paper 2 - Unseen Poetry',
-    ar: 'Paper 2 - Unseen Poetry',
-    es: 'Paper 2 - Unseen Poetry',
+  // Was badge_paper2_unseen, 'Paper 2 - Unseen Poetry', until 10 October 2026.
+  // In 4ET1 the unseen poem is Paper 1 Section A.
+  'igcse.page.badge_paper1_unseen': {
+    en: 'Paper 1 Section A - Unseen Poetry',
+    ar: 'Paper 1 Section A - Unseen Poetry',
+    es: 'Paper 1 Section A - Unseen Poetry',
   },
   'igcse.page.back_to_essay_technique': {
     en: 'Back to Essay Technique',

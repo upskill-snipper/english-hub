@@ -500,11 +500,12 @@ export default async function BeyondTheSkyAndTheEarthPage() {
             {await t('anth_text.section.compare_with')}
           </h2>
         </div>
+        {/* 10 October 2026: removed a second sentence, added on 26 September
+            2026, that said again that the exam compares this text only with an
+            unseen passage. The shared intro (anth_text.compare_with.intro) says so
+            itself, so the page said it twice. */}
         <p className="text-body-sm text-muted-foreground mb-5">
-          {await t('anth_text.compare_with.intro')}{' '}
-          {ar
-            ? 'في الامتحان يُقارَن هذا النصّ دائماً بنصٍّ غير مرئيّ، لا بنصٍّ آخر من المختارات، لذا فهذه المقارنات للمراجعة.'
-            : 'In the exam this text is always compared with an unseen passage, never another anthology text, so these pairings are for revision.'}
+          {await t('anth_text.compare_with.intro')}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (

@@ -64,8 +64,8 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * - Its Buried Rhyme card says the rhyme never settles into a reliable scheme.
  *   The anthology text has four full rhyming couplets closing lines 5, 10, 15 and
  *   20 (out/shout, door/before, lane/again, coat/throat), a regular pattern that
- *   breaks after line 20. A tip below gives the pattern. Still on the page on 10
- *   October 2026.
+ *   breaks after line 20. A tip below gives the pattern. Corrected on the page on
+ *   10 October 2026.
  * - Its card on the seekers at the door says the only sounds left are wind, cold
  *   and silence; the poem mentions no wind. Its card on the cold lists numb feet;
  *   the poem says stiff legs. Corrected on the page on 26 September 2026.
@@ -73,8 +73,8 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  *   so; the blindness of line 11 may equally be the dark of the shed. Corrected on
  *   the page on 26 September 2026.
  * - It calls the child a boy throughout, as Pearson's own Getting Started Guide
- *   does. The poem never says. This file says the child. Still on the page on 10
- *   October 2026.
+ *   does. The poem never says. This file says the child. Corrected on the page on
+ *   10 October 2026, where a note keeps he for ease of reading.
  * - Its metadata describes it as a GCSE page; the poem is on International GCSE
  *   only. Corrected in the route's layout on 26 September 2026.
  * The set-text registry row gave the year as 1984 and the rights holder as Robson

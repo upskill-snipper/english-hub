@@ -3790,7 +3790,7 @@ export const ES_MESSAGES: Record<string, string> = {
     '¿Cómo quería el escritor que se sintiera el lector?',
   'anth_text.section.key_extracts': 'Extractos clave',
   'anth_text.section.language_analysis.guidance_intro':
-    'Técnicas clave del lenguaje que buscar en el extracto de la antología. Se añadirán citas concretas tras la revisión de las fuentes primarias - por ahora, localiza ejemplos en la antología, que Pearson publica gratis en PDF, y aplica la orientación de abajo.',
+    'Técnicas clave del lenguaje que buscar en el extracto de la antología. Estas notas describen cada una con nuestras propias palabras; la guía de estudio, más abajo en esta página, cita el extracto, con números de línea, de la antología, que Pearson publica gratis en PDF.',
   'model_answers.grade.label.9': 'Grade 9',
   'model_answers.grade.label.7': 'Grade 7',
   'model_answers.grade.label.5': 'Grade 5',
@@ -5928,9 +5928,9 @@ export const ES_MESSAGES: Record<string, string> = {
   'edexcel.lit.duration_3h30': '3 h 30 min en total',
   'edexcel.lit.set_texts_count': '11 textos fijados + antología',
   'edexcel.lit.paper1.title': 'Paper 1: Poesía y prosa moderna',
-  'edexcel.lit.paper1.meta': '2 horas · 60 puntos · 60% del total',
+  'edexcel.lit.paper1.meta': '2 horas · 90 puntos · 60% del total',
   'edexcel.lit.paper2.title': 'Paper 2: Teatro moderno y patrimonio literario',
-  'edexcel.lit.paper2.meta': '1 hora 30 minutos · 40 puntos · 40% del total',
+  'edexcel.lit.paper2.meta': '1 hora 30 minutos · 60 puntos · 40% del total',
   'edexcel.lit.set_texts.subtitle':
     'Todos los textos de Pearson Edexcel IGCSE Literature en una página',
   'edexcel.lit.set_texts.intro':
@@ -12310,7 +12310,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'study_guide.technique.example': 'Ejemplo',
   'study_guide.technique.effect': 'Efecto',
   'study_guide.exam.how_to_answer': 'Cómo responder',
-  'study_guide.exam.tips': 'Lo que premian los examinadores',
+  'study_guide.exam.tips': 'Consejos para el examen',
   'study_guide.model.question_label': 'La pregunta',
   'study_guide.model.why_it_works': 'Por qué funciona',
   'study_guide.scope_label': 'Qué estudias',
@@ -20655,7 +20655,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'igcse.page.back_to_edexcel_prose': 'Volver a Edexcel prose',
   'igcse.page.back_to_edexcel_hub': 'Volver a Edexcel IGCSE Hub',
   'igcse.page.back_to_unseen_poetry': 'Volver a Unseen Poetry',
-  'igcse.page.badge_paper2_unseen': 'Paper 2 - Unseen Poetry',
+  'igcse.page.badge_paper1_unseen': 'Paper 1 Section A - Unseen Poetry',
   'igcse.page.back_to_essay_technique': 'Volver a Essay Technique',
   'igcse.page.back_to_composition': 'Volver a la composición',
   'igcse.page.back_to_narrative': 'Volver a la narrativa',

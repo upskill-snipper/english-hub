@@ -12149,10 +12149,14 @@ export const DICTIONARY: Dictionary = {
     ar: 'مقاطع مفتاحيّة',
     es: 'Extractos clave',
   },
+  // Until 10 October 2026 this promised that specific quotations "will be added
+  // after primary-source review". The one page that renders it, The Explorer's
+  // Daughter, mounts a study guide whose quotations were checked against the
+  // anthology (Issue 8), so the promise was stale; it now says where they are.
   'anth_text.section.language_analysis.guidance_intro': {
-    en: 'Key language techniques to look for in the anthology extract. Specific quotations will be added after primary-source review - for now, locate examples in the anthology, which Pearson publishes free as a PDF, and apply the guidance below.',
-    ar: 'تقنيّات لغويّة رئيسة لرصدها في المقتطف من المختارات. ستُضاف الاقتباسات المحدّدة بعد مراجعة المصادر الأوليّة - لحينه، حدّد الأمثلة في المختارات، التي تنشرها Pearson مجّاناً بصيغة PDF، وطبّق الإرشاد أدناه.',
-    es: 'Técnicas clave del lenguaje que buscar en el extracto de la antología. Se añadirán citas concretas tras la revisión de las fuentes primarias - por ahora, localiza ejemplos en la antología, que Pearson publica gratis en PDF, y aplica la orientación de abajo.',
+    en: 'Key language techniques to look for in the anthology extract. These notes describe each one in our own words; the study guide further down this page quotes the extract, with line numbers, from the anthology, which Pearson publishes free as a PDF.',
+    ar: 'تقنيّات لغويّة رئيسة لرصدها في المقتطف من المختارات. تصف هذه الملاحظات كلّاً منها بكلماتنا؛ أمّا دليل الدراسة في أسفل هذه الصفحة فيقتبس من المقتطف، مع أرقام الأسطر، من المختارات التي تنشرها Pearson مجّاناً بصيغة PDF.',
+    es: 'Técnicas clave del lenguaje que buscar en el extracto de la antología. Estas notas describen cada una con nuestras propias palabras; la guía de estudio, más abajo en esta página, cita el extracto, con números de línea, de la antología, que Pearson publica gratis en PDF.',
   },
 
   // ─── Model answers (grade tabs + summary) ───────────────────────────
@@ -19447,10 +19451,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'Paper 1: الشعر والنثر الحديث',
     es: 'Paper 1: Poesía y prosa moderna',
   },
+  // 90 and 60 marks, not 60 and 40, corrected 10 October 2026: 4ET1
+  // specification Issue 3, Component 1 (2 hours, 90 marks, 60%) and Component
+  // 2 (1 hour 30 minutes, 60 marks, 40%).
   'edexcel.lit.paper1.meta': {
-    en: '2 hours · 60 marks · 60% of total',
-    ar: 'ساعتين · ٦٠ درجة · ٦٠٪ من المجموع',
-    es: '2 horas · 60 puntos · 60% del total',
+    en: '2 hours · 90 marks · 60% of total',
+    ar: 'ساعتين · ٩٠ درجة · ٦٠٪ من المجموع',
+    es: '2 horas · 90 puntos · 60% del total',
   },
   'edexcel.lit.paper2.title': {
     en: 'Paper 2: Modern Drama and Literary Heritage',
@@ -19458,9 +19465,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Paper 2: Teatro moderno y patrimonio literario',
   },
   'edexcel.lit.paper2.meta': {
-    en: '1 hour 30 minutes · 40 marks · 40% of total',
-    ar: 'ساعة و٣٠ دقيقة · ٤٠ درجة · ٤٠٪ من المجموع',
-    es: '1 hora 30 minutos · 40 puntos · 40% del total',
+    en: '1 hour 30 minutes · 60 marks · 40% of total',
+    ar: 'ساعة و٣٠ دقيقة · ٦٠ درجة · ٤٠٪ من المجموع',
+    es: '1 hora 30 minutos · 60 puntos · 40% del total',
   },
   'edexcel.lit.set_texts.subtitle': {
     en: 'Every Pearson Edexcel IGCSE Literature text on one page',

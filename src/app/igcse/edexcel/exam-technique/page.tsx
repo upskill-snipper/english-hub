@@ -45,8 +45,12 @@ const questionTypes = [
     icon: Layers,
     title: 'Comparison questions',
     subtitle: 'Paper 1, Section B - Anthology poetry',
+    // Until 10 October 2026 this described only one of the two questions (one
+    // named poem, the second of your choice) and listed AO1 among the skills.
+    // Section B offers a choice of two comparisons, one naming both poems, and
+    // is marked on AO2 and AO3 (specification Issue 3; every paper to June 2025).
     description:
-      'You are given one named anthology poem and asked to compare how another poem of your choice from the anthology presents a particular idea, theme or feeling.',
+      'You answer one of two questions, and both ask you to compare two Part 3 poems: one names both poems, the other names one and lets you choose the second from Part 3. Every Part 3 poem is printed in a Poetry Booklet that comes with the paper.',
     technique: [
       'Plan a thesis that captures similarity and difference in one sentence.',
       'Structure four integrated paragraphs, not two separate mini-essays.',
@@ -54,7 +58,7 @@ const questionTypes = [
       'Compare writers\u2019 methods (language and structure) and effects, not just subject matter.',
       'Keep comparison front and centre: almost every paragraph should reference both poems.',
     ],
-    ao: ['Understanding the text', 'Analysing language and structure', 'Comparing texts'],
+    ao: ['Analysing language and structure', 'Comparing texts'],
   },
   {
     icon: ScanText,
@@ -99,7 +103,9 @@ const questionTypes = [
       'Use subject terminology precisely - enjambment, caesura, sibilance.',
       'Write analytically, not descriptively: always link method to effect.',
     ],
-    ao: ['Understanding the text', 'Analysing language and structure'],
+    // Section A is marked on AO2 alone (specification Issue 3; every mark
+    // scheme to June 2025). Until 10 October 2026 this also listed AO1.
+    ao: ['Analysing language and structure'],
   },
 ]
 
@@ -126,8 +132,11 @@ const pitfalls = [
   },
   {
     title: 'Uneven comparison',
+    // Until 10 October 2026: "spending 75% of your answer on one poem caps your
+    // comparison mark". The mark scheme has no such rule. Its cap is for an
+    // answer that considers only one poem: no higher than the top of Level 2.
     detail:
-      'In Paper 1 Section B, spending 75% of your answer on one poem caps your comparison mark. Alternate texts paragraph by paragraph.',
+      'In Paper 1 Section B, an answer that considers only one poem cannot go beyond the top of Level 2, 12 of the 30 marks, and one that neglects a poem has less to compare. Keep both poems in every paragraph.',
   },
   {
     title: 'Running out of time',

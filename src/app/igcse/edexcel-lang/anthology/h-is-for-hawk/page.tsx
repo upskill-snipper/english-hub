@@ -62,7 +62,9 @@ export const metadata: Metadata = {
  * 10 October 2026: the theme said the world rushes into the hawk's eyes. At
  * lines 26-31 the extract says only that, after an aviary and a box, she can
  * now take in the whole view, and lists it. The rushing is the guide's
- * reading, so do not state it as the text.
+ * reading, so do not state it as the text. (The extract's own image of the
+ * world entering her eyes comes later, at line 42, where it explains her
+ * stare; the guide now says so too.)
  */
 const themes = [
   {
@@ -377,12 +379,12 @@ export default async function HIsForHawkPage() {
             {await t('anth_text.section.compare_with')}
           </h2>
         </div>
-        {/* Second sentence added 26 September 2026, when the shared intro called
-            these pairings for the exam; 4EA1 never pairs two anthology texts.
-            If the shared intro now says so itself, this repeats it: drop one. */}
+        {/* 10 October 2026: removed a second sentence, added on 26 September
+            2026, that said again that the exam compares this text only with an
+            unseen passage. The shared intro (anth_text.compare_with.intro) says so
+            itself, so the page said it twice. */}
         <p className="text-body-sm text-muted-foreground mb-5">
-          {await t('anth_text.compare_with.intro')} In the exam, Question 5 pairs this text with an
-          unseen passage, never another anthology text, so use these comparisons for revision.
+          {await t('anth_text.compare_with.intro')}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (

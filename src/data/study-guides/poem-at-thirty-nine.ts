@@ -28,8 +28,9 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * this poem in src/data/edexcel-igcse-lit-poetry-courses-2.ts gives students
  * "key quotations" that page 62 does not contain: a version of line 38 about
  * meals where the anthology has life, a line about paying attention, and a line
- * about laughing. None is repeated here, and that module needs checking against
- * the anthology before anyone relies on it.
+ * about laughing. None is repeated here. That module was checked against page
+ * 62 and corrected on 10 October 2026: it had more invented lines than these
+ * three, and its docblock lists them.
  *
  * SECOND CHECK, 26 September 2026. Every phrase was re-read against page 62
  * and the 17 May 2023 reprint, and the stanza breaks re-measured: all held.

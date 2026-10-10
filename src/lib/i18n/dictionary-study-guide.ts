@@ -69,10 +69,14 @@ export const STUDY_GUIDE_DICTIONARY: Record<string, { en: string; ar: string; es
     ar: 'كيف تجاوب عليه',
     es: 'Cómo responder',
   },
+  // Was "What examiners reward" until 10 October 2026. The tips under it also
+  // give the paper's format and revision advice, so the heading presented advice
+  // as examiners' rules. It heads the tips list in study-guide-sections.tsx and
+  // chapter-guide-page.tsx, and nothing else.
   'study_guide.exam.tips': {
-    en: 'What examiners reward',
-    ar: 'شنو يكافئ عليه المصحّحين',
-    es: 'Lo que premian los examinadores',
+    en: 'Exam tips',
+    ar: 'نصائح الامتحان',
+    es: 'Consejos para el examen',
   },
   'study_guide.model.question_label': { en: 'The question', ar: 'السؤال', es: 'La pregunta' },
   'study_guide.model.why_it_works': {

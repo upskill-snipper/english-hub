@@ -50,8 +50,8 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * 2024 paper, sat 23 May 2024, set it as Text Two), and tip 7 no longer claims
  * to know what the best answers do, which nothing here verified.
  *
- * TWO CLAIMS TAKEN OUT, 10 October 2026. Tips 1 and 5, which render under
- * "What examiners reward", had told students that the June 2024 Source
+ * TWO CLAIMS TAKEN OUT, 10 October 2026. Tips 1 and 5, which rendered under
+ * "What examiners reward" (renamed Exam tips later that day), had told students that the June 2024 Source
  * Booklet printed this extract in 58 lines numbered one or two behind these,
  * and that the June 2024 mark scheme allowed the Wacky Races comparison to be
  * read as condescending. No copy of either document was on this machine and

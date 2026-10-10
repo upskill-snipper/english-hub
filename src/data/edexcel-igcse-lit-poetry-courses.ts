@@ -1446,6 +1446,22 @@ const searchForMyTongueCourse: CourseData = {
 // 5. "Half-past Two" by U A Fanthorpe
 // ─────────────────────────────────────────────────────────────────────────────
 
+// CORRECTED 10 October 2026 against the poem as printed on page 56 of the
+// anthology (Issue 8), whose 33 lines are eleven tercets. This course quoted
+// line 32 as "the clockless land forever" and set it in the middle of the
+// poem: the anthology reads "the clockless land for ever", in the last stanza
+// only (Pearson's exam booklets have printed of in place of for there, so the
+// course now says to check). It said a single final line stood alone and broke
+// the tercet pattern; there is no such line. It joined lines 31 and 32 into one
+// eighteen-word quotation, and it quoted words the poem does not have:
+// "taborgotime" and a tabor, "Stay in till Half-past Two", "You were very
+// silly", "he'd been, he couldn't remember where". It also said the boy is kept
+// behind after school and scolded, and that He is capitalised for the child
+// throughout; the poem says none of these (see src/data/study-guides/
+// half-past-two.ts). Its typical exam questions asked about this poem alone,
+// which 4ET1 never does; they are now Pearson's own, from January 2023 and June
+// 2024. Each module is its own page (/learn/[courseId]/[moduleId]), so each
+// quotes at most 29 distinct words of the poem's 199, the 15 per cent share.
 const halfPastTwoModules: CourseModule[] = [
   {
     id: 'iglit-hpt-m1',
@@ -1454,7 +1470,7 @@ const halfPastTwoModules: CourseModule[] = [
     content: `
 <h2>"Half-past Two" by U A Fanthorpe: Context &amp; Overview</h2>
 
-<p>U A Fanthorpe (1929-2009) was a British poet known for her witty, compassionate, and often subversive exploration of everyday life. "Half-past Two" recounts an incident from childhood in which a young boy is kept behind after school as a punishment but, because he has not yet learned to tell the time, enters a timeless, almost mystical state of experience. The poem gently satirises adult authority while celebrating the richness of a child's perception.</p>
+<p>U A Fanthorpe (1929-2009) was a British poet known for her witty, compassionate, and often subversive exploration of everyday life. "Half-past Two" recounts an incident from childhood in which a young boy is kept in the classroom as a punishment but, because he has not yet learned to tell the time, enters a timeless, almost mystical state of experience. The poem gently satirises adult authority while celebrating the richness of a child's perception.</p>
 
 <h3>Context</h3>
 <p>Fanthorpe worked as a school teacher before becoming a poet, and many of her poems draw on the world of education. She was keenly aware of the <strong>power dynamics between adults and children</strong> - the way adult authority can seem arbitrary and bewildering from a child's perspective. "Half-past Two" explores this dynamic with humour and empathy, showing how a child's inability to read the clock becomes an unexpected gift rather than a limitation.</p>
@@ -1463,10 +1479,10 @@ const halfPastTwoModules: CourseModule[] = [
 
 <h3>Summary</h3>
 <ul>
-  <li><strong>Opening:</strong> A child has done "Something Very Wrong" (capitalised to show its importance in the child's mind) and is told by his teacher to stay behind until "Half-past Two".</li>
-  <li><strong>Problem:</strong> The child does not know how to tell the time. He knows time only through his own personal landmarks: "gettinguptime, timeyouwereofftime, taborgotime" (getting-up time, time-you-were-off time, tabor-go time).</li>
-  <li><strong>The experience:</strong> Left alone, the child enters a timeless state - "he was in the clockless land forever" - experiencing a profound, almost spiritual moment outside the constraints of measured time.</li>
-  <li><strong>Ending:</strong> The teacher returns and scolds him - "she slotted him back into schooltime" - but the child retains the memory of his escape into timelessness.</li>
+  <li><strong>Opening:</strong> A child has done "Something Very Wrong" (capitalised to show its importance in the child's mind) and is told by his teacher to stay in the school-room "till half-past two" (line 6).</li>
+  <li><strong>Problem:</strong> The child does not know how to tell the time. He knows time only through his own personal landmarks, run together into single words: "Gettinguptime, timeyouwereofftime" (line 11) and "Timeformykisstime" (line 13).</li>
+  <li><strong>The experience:</strong> Left alone, the child waits and passes out of measured time altogether, "into ever" (line 24): a profound, almost spiritual moment that the last stanza names "the clockless land".</li>
+  <li><strong>Ending:</strong> The teacher hurries back, admits she had forgotten him and sends him off - "she slotted him back into schooltime" (line 28) - but he never forgets his escape into timelessness.</li>
 </ul>
 
 <h3>Key Themes</h3>
@@ -1491,7 +1507,7 @@ const halfPastTwoModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'The child has not yet learned to read a clock. He knows time only through his own sensory landmarks - "gettinguptime", "taborgotime" - which means the teacher\'s instruction to stay until "Half-past Two" is meaningless to him.',
+          'The child has not yet learned to read a clock. He knows time only through his own landmarks - "Gettinguptime", "Timeformykisstime" - which means the teacher\'s instruction to stay "till half-past two" is meaningless to him.',
       },
       {
         id: 'iglit-hpt-m1-q2',
@@ -1499,12 +1515,12 @@ const halfPastTwoModules: CourseModule[] = [
         options: [
           'He becomes angry and rebellious',
           'He falls asleep and dreams',
-          'He enters a timeless, almost mystical state - "the clockless land forever"',
+          'He passes into a timeless, almost mystical state, which the last stanza calls "the clockless land"',
           'He learns to tell the time by himself',
         ],
         correct: 2,
         explanation:
-          'Unable to track time on the clock, the child drifts into a timeless state - "the clockless land forever" - experiencing a profound, almost transcendent moment outside the constraints of measured time.',
+          'Unable to read the clock, the child drifts out of measured time - "into ever", as line 24 puts it - experiencing a profound, almost transcendent moment. The last stanza names the place "the clockless land".',
       },
       {
         id: 'iglit-hpt-m1-q3',
@@ -1529,28 +1545,28 @@ const halfPastTwoModules: CourseModule[] = [
 <h2>"Half-past Two": Language &amp; Imagery Analysis</h2>
 
 <h3>Compound Time-Words (Neologisms)</h3>
-<p>One of the poem's most distinctive features is its use of <strong>compound words</strong> to represent the child's understanding of time: <strong>"gettinguptime", "timeyouwereofftime", "taborgotime", "timeformykisstime"</strong>. These invented words (neologisms) are written without spaces, replicating the way a young child <strong>perceives time as a single, undifferentiated flow</strong> rather than as discrete units. Time, for the child, is not abstract numbers on a clock but sensory, emotional, and experiential.</p>
+<p>One of the poem's most distinctive features is its use of <strong>compound words</strong> to represent the child's understanding of time: <strong>"Gettinguptime", "timeyouwereofftime", "Timetogohomenowtime", "Timeformykisstime"</strong> (lines 11 to 13). These invented words (neologisms) are written without spaces, replicating the way a young child <strong>perceives time as a single, undifferentiated flow</strong> rather than as discrete units. Time, for the child, is not abstract numbers on a clock but sensory, emotional, and experiential.</p>
 
 <div class="key-term"><strong>Key Term: Neologism</strong> - A newly coined word or expression. Fanthorpe creates neologisms to represent the child's pre-literate, intuitive understanding of time, which is richer and more immediate than the adult concept of clock time.</div>
 
 <h3>Capitalisation</h3>
-<p>Fanthorpe uses capitalisation to show the child's sense of scale: <strong>"Something Very Wrong"</strong>, <strong>"He"</strong> (referring to the child throughout), <strong>"She"</strong> (the teacher). The capitalisation of "Something Very Wrong" mimics the child's inflated sense of his own misdeed - to him, it is an event of enormous, terrifying importance. The capitalisation of pronouns suggests the almost mythic significance these authority figures hold in the child's world.</p>
+<p>Fanthorpe uses capitalisation to show the child's sense of scale. The capitals of <strong>"Something Very Wrong"</strong> mimic the child's inflated sense of his own misdeed - to him, it is an event of enormous, terrifying importance, an official category of badness. The teacher is a capital-letter <strong>"She"</strong> in line 4, when she passes sentence, but lower-case when she forgets him and when she comes back flustered (lines 7, 25 and 28). Every line of the poem begins with a capital, so only a capital in the middle of a line, like that one or <strong>"Time"</strong> in line 8, tells you anything.</p>
 
 <h3>Sensory Language</h3>
-<p>The child's experience of time while waiting is rendered through <strong>sensory impressions</strong> rather than abstract thought: "the little eyes and two long legs" (the clock's face and hands), "he'd been, he couldn't remember where". The child perceives the clock as a physical object with a face and limbs, not as a measuring instrument. This <strong>defamiliarisation</strong> makes the reader see the ordinary world through fresh eyes.</p>
+<p>The child's experience of time while waiting is rendered through <strong>sensory impressions</strong> rather than abstract thought. He sees the clock as a creature with "little eyes" and "two long legs" (lines 16 and 17), its face and hands, not as a measuring instrument. Then, as he waits, his attention moves to the smell of the old flowers on the teacher's desk and the "silent noise" of his own hangnail (lines 22 and 23). This <strong>defamiliarisation</strong> makes the reader see the ordinary world through fresh eyes.</p>
 
-<h3>The "Clockless Land"</h3>
-<p>The phrase <strong>"the clockless land forever"</strong> is the poem's central image. It describes the child's entry into a state beyond measured time - a timeless, almost mystical experience. The word "land" suggests a real place the child travels to, not just a psychological state. "Forever" captures the child's sense that this experience is infinite and boundless. This image resonates with Romantic ideas about childhood as a state of <strong>heightened perception and spiritual openness</strong>.</p>
+<h3>The Clockless Land</h3>
+<p>The phrase <strong>"the clockless land"</strong> comes only in the last stanza (line 32), where the narrator names the place the boy escaped to; the escape itself happens in lines 19 to 24. The word "land" suggests a real place the child travels to, not just a psychological state, and in the anthology the phrase ends "for ever", the same words as line 21, where he first knew his escape would last. This image resonates with Romantic ideas about childhood as a state of <strong>heightened perception and spiritual openness</strong>. In the exam, check line 32 in the Poetry Booklet before you build on "for ever": Pearson's booklets have printed of in place of for.</p>
 
 <h3>The Teacher's Language</h3>
-<p>The teacher's speech is rendered in italics: <em>"You were very silly"</em>, <em>"Stay in till Half-past Two"</em>. The italics visually separate her language from the child's, emphasising the <strong>gap between adult and child communication</strong>. Her language is formulaic and authoritative - she does not check whether the child understands. The phrase <strong>"slotted him back into schooltime"</strong> is particularly telling: "slotted" suggests the child is an object being placed into a machine, evoking <strong>conformity and loss of individuality</strong>.</p>
+<p>The teacher's own words, when she hurries back in lines 25 to 27, are printed in <strong>italics</strong> with no speech marks: she exclaims, admits she had forgotten him altogether and tells him to run along. The italics visually separate her language from the child's, emphasising the <strong>gap between adult and child</strong>. Her words are hurried and flustered rather than stern, but the phrase <strong>"slotted him back into schooltime"</strong> is particularly telling: "slotted" suggests the child is an object being placed into a machine, evoking <strong>conformity and loss of individuality</strong>.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The compound time-words are one of the poem's most quotable and analysable features. Make sure you discuss them in your essay and explain what they reveal about the child's perception - they are not just a stylistic quirk but central to the poem's meaning.</div>
 `,
     quiz: [
       {
         id: 'iglit-hpt-m2-q1',
-        question: 'What is the purpose of the compound time-words like "gettinguptime"?',
+        question: 'What is the purpose of the compound time-words like "Gettinguptime"?',
         options: [
           'They show the child is poorly educated',
           "They replicate the child's intuitive, sensory experience of time as undifferentiated flow",
@@ -1572,20 +1588,20 @@ const halfPastTwoModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          '"Slotted" suggests the child is an object being placed into a machine or system. It evokes conformity, loss of individuality, and the mechanical nature of institutional education - the child\'s transcendent experience is abruptly ended as he is forced back into "schooltime".',
+          'The verb "slotted" suggests the child is an object being placed into a machine or system. It evokes conformity, loss of individuality, and the mechanical nature of institutional education - the child\'s transcendent experience is abruptly ended as he is forced back into "schooltime".',
       },
       {
         id: 'iglit-hpt-m2-q3',
-        question: 'Why is "the clockless land forever" significant?',
+        question: 'Why is "the clockless land" in the last stanza significant?',
         options: [
           'It describes a real geographical location',
-          "It represents the child's entry into a timeless, almost mystical state beyond measured time",
+          'It names the timeless, almost mystical state the child escaped into, beyond measured time',
           'It is a reference to Narnia',
           "It describes the child's dream during a nap",
         ],
         correct: 1,
         explanation:
-          '"The clockless land forever" is the poem\'s central image. It describes a timeless, almost transcendent state that the child enters because he cannot tell the time. "Land" suggests a real place, and "forever" captures the child\'s sense of infinite, boundless experience.',
+          'The phrase "the clockless land" is the name the last stanza (line 32) gives the timeless, almost transcendent state the child entered because he could not tell the time. The word "land" suggests a real place, and in the anthology the phrase ends "for ever", the words of line 21.',
       },
     ],
   },
@@ -1597,45 +1613,44 @@ const halfPastTwoModules: CourseModule[] = [
 <h2>"Half-past Two": Structure &amp; Form</h2>
 
 <h3>Stanza Structure</h3>
-<p>"Half-past Two" is composed of <strong>eleven three-line stanzas (tercets)</strong> followed by a final single-line stanza. The regular tercet form creates a neat, ordered appearance - like the tidy world of school - but the content within each stanza resists this orderliness, reflecting the <strong>tension between the structured adult world and the child's fluid, unbounded experience</strong>.</p>
+<p>"Half-past Two" is composed of <strong>eleven three-line stanzas (tercets)</strong>, 33 lines in all, and no stanza breaks the pattern. The regular tercet form creates a neat, ordered appearance - like the tidy world of school - but the content within each stanza resists this orderliness, reflecting the <strong>tension between the structured adult world and the child's fluid, unbounded experience</strong>.</p>
 
 <h3>The Narrative Arc</h3>
 <p>The poem follows a clear <strong>narrative structure</strong>:</p>
 <ol>
-  <li><strong>Setup (stanzas 1-3):</strong> The child has done "Something Very Wrong" and is told to stay behind.</li>
-  <li><strong>Problem (stanzas 4-6):</strong> He cannot tell the time - his experience of time is revealed through compound words.</li>
-  <li><strong>Transcendence (stanzas 7-9):</strong> He drifts into "the clockless land forever" - the timeless experience.</li>
-  <li><strong>Return (stanzas 10-11):</strong> The teacher returns and "slots" him back into schooltime.</li>
-  <li><strong>Coda (final line):</strong> "But he never forgot how once by not knowing time, he escaped into the clockless land for ever." The single closing line breaks the tercet pattern, standing alone to emphasise the lasting significance of this experience.</li>
+  <li><strong>Setup (stanzas 1-3, lines 1-9):</strong> The child has done "Something Very Wrong" and must stay in the school-room; a bracketed stanza reveals that the teacher has never taught him to tell the time.</li>
+  <li><strong>Problem (stanzas 4-5, lines 10-15):</strong> The times he does know, in his run-together words, but not the one he has been given.</li>
+  <li><strong>Escape (stanzas 6-8, lines 16-24):</strong> He cannot read the clock, so he waits, and passes out of measured time "into ever".</li>
+  <li><strong>Return (stanzas 9-10, lines 25-30):</strong> The teacher hurries back, and "she slotted him back into schooltime".</li>
+  <li><strong>Coda (stanza 11, lines 31-33):</strong> The narrator steps back to sum up: "he never forgot" how, by not knowing time, he once escaped, and the stanza names the place "the clockless land".</li>
 </ol>
 
 <div class="key-term"><strong>Key Term: Tercet</strong> - A three-line stanza. The regular tercet form in "Half-past Two" creates an appearance of order that contrasts with the child's disordered, unbounded experience of time.</div>
 
-<h3>The Final Line</h3>
-<p>The poem's final line stands alone, breaking the tercet pattern: <strong>"But he never forgot how once by not knowing time, he escaped into the clockless land for ever."</strong> This structural isolation draws attention to the line's importance. It shifts the poem from past-tense narrative into a retrospective perspective - the child, now an adult, looks back and recognises the significance of this moment. The word "escaped" frames the clockless land as a <strong>liberation</strong>, and "for ever" (here written as two words) suggests the experience has permanently altered him.</p>
+<h3>The Final Stanza</h3>
+<p>The poem ends on a full tercet, not a single line, but the last stanza steps outside the story. <strong>"But he never forgot how once by not knowing time"</strong> (line 31) shifts the poem from narrative into retrospection: the narrator looks back and recognises the significance of this moment. The word "escaped" in line 32 frames "the clockless land" as a <strong>liberation</strong>, and in the anthology the line ends "for ever", the same words as line 21, where the boy first knew his escape would last. In the last line, time itself hides, without a tick, not yet born, and in the present tense, so the ending claims the timeless place still exists. In the exam, check line 32 in the Poetry Booklet before you build on "for ever": Pearson's booklets have printed of in place of for.</p>
 
 <h3>Tense and Perspective</h3>
-<p>The poem is written in the <strong>past tense</strong>, narrated by an adult speaker who is looking back on a childhood experience. This creates a dual perspective: we see the event through the <strong>child's eyes</strong> (the compound words, the sensory impressions) but also through the <strong>adult's understanding</strong> (the recognition that this was a transcendent moment). This interplay between child experience and adult reflection gives the poem its emotional depth.</p>
+<p>The poem is written mostly in the <strong>past tense</strong>, by a narrator who breaks in once, in line 3, and is looking back on a childhood experience. This creates a dual perspective: we see the event through the <strong>child's eyes</strong> (the compound words, the sensory impressions) but also through the <strong>adult's understanding</strong> (the recognition that this was a transcendent moment). This interplay between child experience and adult reflection gives the poem its emotional depth.</p>
 
 <h3>Italics</h3>
-<p>The teacher's words are rendered in <strong>italics</strong>, visually separating her adult language from the child's world. This typographical choice reinforces the gap between the two perspectives and highlights the <strong>failure of communication</strong> - the teacher speaks, but the child cannot fully understand what she means.</p>
+<p>The teacher's words when she returns (lines 25 to 27) are printed in <strong>italics</strong>, with no speech marks, visually separating her adult voice from the narration that follows the boy. This typographical choice reinforces the gap between the two perspectives.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The breaking of the tercet pattern in the final line is a structural detail that many candidates miss. Noting how Fanthorpe uses this break to emphasise the lasting significance of the child's experience will demonstrate sharp analytical awareness.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Stanza 7 is the only stanza in the poem that ends with no punctuation, at line 21, so at the moment of escape the sentence spills over into stanza 8. Pointing this out shows how the structure acts out the escape, a sharper point than simply naming the tercets.</div>
 `,
     quiz: [
       {
         id: 'iglit-hpt-m3-q1',
-        question:
-          'What is the significance of the final line standing alone, outside the tercet pattern?',
+        question: 'Why does stanza 7 end without any punctuation?',
         options: [
           "It is a mistake in the poem's formatting",
-          'It draws attention to the lasting significance of the experience by breaking the established structural pattern',
+          'The sentence runs over into stanza 8 as the boy escapes, so the structure acts out the escape',
           'It shows the poem is unfinished',
-          "It represents the teacher's final words",
+          "It marks the teacher's return",
         ],
         correct: 1,
         explanation:
-          'The final line breaks the tercet pattern to stand alone, drawing the reader\'s attention to its importance. It shifts from narrative to retrospection, emphasising that this childhood experience permanently altered the speaker - the word "escaped" frames the clockless land as a liberation.',
+          'Stanza 7 is the only stanza in the poem that ends with no punctuation, at line 21. As the boy passes out of measured time, the sentence breaks out of its three-line box and runs on into stanza 8, which carries him "into ever".',
       },
       {
         id: 'iglit-hpt-m3-q2',
@@ -1673,24 +1688,25 @@ const halfPastTwoModules: CourseModule[] = [
 <h2>"Half-past Two": Exam Practice &amp; Model Response</h2>
 
 <h3>Typical Exam Questions</h3>
+<p>In 4ET1 Paper 1 Section B this poem is always compared with a second Part 3 poem, and Pearson has set it both ways:</p>
 <ul>
-  <li>"How does Fanthorpe present the child's experience of time in 'Half-past Two'?"</li>
-  <li>"Explore how Fanthorpe uses language to convey the difference between a child's and an adult's view of the world."</li>
-  <li>"Compare how Fanthorpe in 'Half-past Two' and [another poet] present childhood experience."</li>
+  <li>Naming both poems: "Compare how the writers present the passing of time in Half-past Two and Sonnet 116." (January 2023)</li>
+  <li>Naming this poem only: "Compare the ways the writers present being alone in Half-past Two and one other poem from the anthology." (June 2024)</li>
 </ul>
 
 <h3>Planning Your Response</h3>
+<p>These points are the Half-past Two side of a plan: in the exam, pair each one with your second poem.</p>
 <ol>
   <li><strong>Thesis:</strong> Fanthorpe uses the child's inability to tell the time as a gateway to a transcendent experience, suggesting that childhood perception - intuitive, sensory, unbounded - is richer than the measured, rational world of adults.</li>
-  <li><strong>Point 1:</strong> Compound time-words ("gettinguptime") - the child's intuitive, experiential understanding of time.</li>
-  <li><strong>Point 2:</strong> "The clockless land forever" - the transcendent, timeless experience.</li>
-  <li><strong>Point 3:</strong> "Slotted him back into schooltime" - the adult world reimposing its structures.</li>
-  <li><strong>Point 4:</strong> The final isolated line - retrospective recognition of the experience's lasting significance.</li>
+  <li><strong>Point 1:</strong> Compound time-words ("Gettinguptime") - the child's intuitive, experiential understanding of time.</li>
+  <li><strong>Point 2:</strong> The escape of lines 19 to 24, "into ever" - the transcendent, timeless experience.</li>
+  <li><strong>Point 3:</strong> "slotted him back into schooltime" - the adult world reimposing its structures.</li>
+  <li><strong>Point 4:</strong> The final stanza - retrospective recognition of the experience's lasting significance.</li>
 </ol>
 
 <h3>Model Paragraph</h3>
 <div class="text-extract">
-<p><em>Fanthorpe's compound time-words - "gettinguptime", "timeyouwereofftime", "taborgotime" - are perhaps the poem's most inventive and revealing device. By fusing multiple words into single, unbroken units, Fanthorpe replicates the child's experience of time as a continuous, undifferentiated flow rather than as discrete, measurable units. Each compound word is anchored to a sensory or emotional experience - the feeling of getting up, the ritual of tabor time - rather than to a number on a clock. This suggests that the child's understanding of time is not inferior to the adult's but fundamentally different: it is embodied, experiential, and rooted in the rhythms of daily life. The lack of spaces within the words mirrors the lack of boundaries in the child's perception - time, for this child, does not stop and start but flows. When the teacher tells him to stay until "Half-past Two", the instruction is meaningless because it belongs to a system of understanding he has not yet entered.</em></p>
+<p><em>Fanthorpe's compound time-words - "Gettinguptime", "timeyouwereofftime", "Timeformykisstime" - are perhaps the poem's most inventive and revealing device. By fusing multiple words into single, unbroken units, Fanthorpe replicates the child's experience of time as a continuous, undifferentiated flow rather than as discrete, measurable units. Each compound word is anchored to a sensory or emotional experience - the feeling of getting up, the kiss that was Gran's time - rather than to a number on a clock. This suggests that the child's understanding of time is not inferior to the adult's but fundamentally different: it is embodied, experiential, and rooted in the rhythms of daily life. The lack of spaces within the words mirrors the lack of boundaries in the child's perception - time, for this child, does not stop and start but flows. When the teacher tells him to stay "till half-past two", the instruction is meaningless because it belongs to a system of understanding he has not yet entered.</em></p>
 </div>
 
 <h3>What Makes This Paragraph Effective?</h3>
@@ -1714,13 +1730,13 @@ const halfPastTwoModules: CourseModule[] = [
 <h3>Key Quotation Bank</h3>
 <p>Essential quotations for essay writing:</p>
 <ul>
-  <li><strong>"Something Very Wrong"</strong> - Demonstrates the child's inflated sense of their misdeed through capitalisation.</li>
-  <li><strong>"gettinguptime, timeyouwereofftime, taborgotime"</strong> - Shows the child's intuitive, experiential understanding of time through neologisms.</li>
-  <li><strong>"he was in the clockless land forever"</strong> - The poem's central transcendent image; represents escape from measured time.</li>
-  <li><strong>"she slotted him back into schooltime"</strong> - Metaphor for how authority reimpose adult structures; "slotted" suggests mechanical dehumanisation.</li>
-  <li><strong>"But he never forgot how once by not knowing time, he escaped into the clockless land for ever"</strong> - The final isolated line; shows lasting significance and retrospective recognition.</li>
-  <li><strong>"the little eyes and two long legs"</strong> - Defamiliarisation of the clock through sensory perception; the child sees the clock as a creature.</li>
-  <li><strong>"Stay in till Half-past Two"</strong> - The teacher's instruction; meaningful to adults but meaningless to the child who cannot read time.</li>
+  <li><strong>"Something Very Wrong"</strong> (line 2) - Demonstrates the child's inflated sense of their misdeed through capitalisation.</li>
+  <li><strong>"Gettinguptime, timeyouwereofftime"</strong> (line 11) and <strong>"Timeformykisstime"</strong> (line 13) - Show the child's intuitive, experiential understanding of time through run-together words.</li>
+  <li><strong>"into ever"</strong> (line 24) - The escape itself: ever becomes a place he can go into.</li>
+  <li><strong>"she slotted him back into schooltime"</strong> (line 28) - Metaphor for how authority reimposes adult structures; "slotted" suggests mechanical dehumanisation.</li>
+  <li><strong>"he never forgot"</strong> (line 31) - The final stanza's retrospective recognition of the experience's lasting significance.</li>
+  <li><strong>"the clockless land for ever"</strong> (line 32) - The last stanza names the timeless place. In the exam, check this line in the Poetry Booklet: Pearson's booklets have printed of in place of for.</li>
+  <li><strong>"till half-past two"</strong> (line 6) - The teacher's instruction; meaningful to adults but meaningless to the child who cannot read time.</li>
 </ul>
 
 <h3 style="background-color: #e8f4f8; padding: 10px; border-left: 4px solid #0066cc;"><strong>Grade 9 Insight: Why This Poem Challenges Binary Thinking</strong></h3>
@@ -1732,24 +1748,25 @@ const halfPastTwoModules: CourseModule[] = [
 <h3>Technique Analysis: Defamiliarisation</h3>
 <p>One of Fanthorpe's key techniques is <strong>defamiliarisation</strong> - making the ordinary world seem strange and new. Examples:</p>
 <ul>
-  <li>The clock described as having "little eyes and two long legs" - we see it through the child's eyes, not as a measuring instrument but as a creature.</li>
-  <li>Time known through "gettinguptime, timeyouwereofftime" - the familiar routines of daily life become the child's natural time-markers.</li>
-  <li>The teacher's action described as "slotting" the child back - a mechanical verb that makes institutional control visible and strange.</li>
+  <li>The clock described as a creature with eyes and legs (lines 16 and 17) - we see it through the child's eyes, not as a measuring instrument.</li>
+  <li>Time known through "Gettinguptime, timeyouwereofftime" - the familiar routines of daily life become the child's natural time-markers.</li>
+  <li>The teacher's action described with the verb "slotted" - a mechanical verb that makes institutional control visible and strange.</li>
 </ul>
-<p>This technique invites readers to question their own assumptions - why do we privileged clock time over the child's sensory, embodied experience?</p>
+<p>This technique invites readers to question their own assumptions - why do we privilege clock time over the child's sensory, embodied experience?</p>
 
-<h3>Model Exam Answer: "How does Fanthorpe present the nature of childhood in 'Half-past Two'?"</h3>
+<h3>Model Answer: How Fanthorpe Presents Childhood (the Half-past Two Half of a Comparison)</h3>
 <div class="text-extract">
 <p><em>Fanthorpe presents childhood as a fundamentally different way of being - not inferior to adulthood, but richer in certain respects. The child's inability to tell the time, which could be presented as a limitation, becomes the gateway to a transcendent experience. Fanthorpe creates a sophisticated argument that childhood perception is not merely innocent but profoundly meaningful.</em></p>
 
-<p><em>The compound time-words are crucial to understanding Fanthorpe's presentation. "Gettinguptime, timeyouwereofftime, taborgotime" - these neologisms show that the child understands time not as abstract numbers on a clock, but as sensory, emotional landmarks rooted in daily experience. Each compound word anchors time to a felt experience: the sensation of getting up, the ritual of leaving for school, the sound of tabor music. This is not a deficient understanding of time but a different understanding - embodied rather than abstract, intuitive rather than rational. The lack of spaces within the words mirrors the child's undifferentiated, continuous experience of time as a flow rather than discrete units.</em></p>
+<p><em>The compound time-words are crucial to understanding Fanthorpe's presentation. "Gettinguptime, timeyouwereofftime" and "Timeformykisstime" - these neologisms show that the child understands time not as abstract numbers on a clock, but as sensory, emotional landmarks rooted in daily experience. Each compound word anchors time to a felt experience: the sensation of getting up, the time to go home, the kiss that was Gran's time. This is not a deficient understanding of time but a different understanding - embodied rather than abstract, intuitive rather than rational. The lack of spaces within the words mirrors the child's undifferentiated, continuous experience of time as a flow rather than discrete units.</em></p>
 
-<p><em>The central image - "he was in the clockless land forever" - reveals Fanthorpe's deepest claim about childhood. The word "land" is significant: it is a real place, not merely a psychological state. "Forever" captures the child's sense of infinite, boundless time. This experience is transcendent, almost spiritual - a moment when the child touches something beyond the ordinary, rational world. The fact that this transcendence is triggered by a failure to understand adult systems suggests that institutional time (clock time, school time) actually diminishes human experience rather than enriching it.</em></p>
+<p><em>The central image - the boy's escape "into ever", which the last stanza calls "the clockless land" - reveals Fanthorpe's deepest claim about childhood. The word "land" is significant: it is a real place, not merely a psychological state, and "ever", normally an adverb, becomes somewhere he can go into, capturing the child's sense of infinite, boundless time. This experience is transcendent, almost spiritual - a moment when the child touches something beyond the ordinary, rational world. The fact that this transcendence is triggered by a failure to understand adult systems suggests that institutional time (clock time, school time) actually diminishes human experience rather than enriching it.</em></p>
 
 <p><em>However, Fanthorpe is not simply idealising childhood. The tone is gently satirical. The teacher's assumptions are mocked - she assumes the child understands her instruction because it is obvious to her. The phrase "slotted him back into schooltime" reveals the mechanical way institutions slot children into predetermined slots, draining them of their own rhythms. Yet there is warmth in Fanthorpe's depiction of the child's confusion and wonder. The poem celebrates childhood perception not as a permanent ideal but as a real, temporary state of being that has its own profound validity.</em></p>
 
-<p><em>The final isolated line - "But he never forgot how once by not knowing time, he escaped into the clockless land for ever" - shifts to retrospection. The adult narrator looks back and recognises that this childhood moment permanently altered him. This suggests that Fanthorpe sees childhood not as something to recover or return to, but as a foundational experience whose effects persist into adulthood. The word "escaped" frames the clockless land as a liberation, and the repetition of "forever" (now written as two words rather than one) emphasises that some experiences transcend the passage of time itself.</em></p>
+<p><em>The final stanza, in which "he never forgot" the escape, shifts to retrospection. The narrator looks back and recognises that this childhood moment permanently altered the boy. This suggests that Fanthorpe sees childhood not as something to recover or return to, but as a foundational experience whose effects persist into adulthood. Calling it an escape frames "the clockless land" as a liberation, and "for ever" repeats the words of line 21, emphasising that some experiences transcend the passage of time itself.</em></p>
 </div>
+<p>The point about "for ever" rests on the anthology's wording. In the exam, check line 32 in the Poetry Booklet first: Pearson's booklets have printed of in place of for.</p>
 `,
     quiz: [
       {

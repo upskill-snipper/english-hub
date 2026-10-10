@@ -65,11 +65,17 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * not list; the November 2023 mark scheme and June 2019 examiners' report are
  * now in it.
  *
- * WHERE THIS DISAGREES WITH THE PAGE ABOVE IT, and the extract bears this out:
- * the hunt is told in the past tense, not the present; the extract contains no
- * reflections on Herbert's childhood (only the anthology's introduction mentions
- * it); its first sentence already names the hunters; and its shortest paragraphs
- * are informational, not reflective.
+ * WHERE THIS USED TO DISAGREE WITH THE PAGE ABOVE IT. The page said the hunt
+ * is told in the present tense, that the extract reflects on Herbert's
+ * childhood, that the hunters appear only after the landscape, and that the
+ * shortest paragraphs are reflective. The extract bears this file out on all
+ * four: the hunt is told in the past tense; only the anthology's introduction
+ * mentions her childhood; the first sentence already names the hunters; and
+ * the shortest paragraphs are informational. The page was corrected to agree
+ * on 26 September 2026, and on 10 October 2026 its last disagreement, a model
+ * outline point that made the light the cause of the deceptive distances, was
+ * corrected too: the extract gives the distances to the Arctic. Until then
+ * this paragraph described the disagreements as current.
  */
 export const guide: StudyGuide = {
   slug: 'the-explorers-daughter',

@@ -70,15 +70,19 @@ const paper1Sections = [
     subLinks: [
       { label: 'Approach', href: '/igcse/edexcel/unseen-poetry/approach' },
       { label: 'Language analysis', href: '/igcse/edexcel/unseen-poetry/language-analysis' },
-      { label: 'Structure & form', href: '/igcse/edexcel/unseen-poetry/structure-form' },
-      { label: 'Comparison', href: '/igcse/edexcel/unseen-poetry/comparison' },
+      // Until 10 October 2026 this link was labelled Comparison: its page
+      // taught comparing two unseen poems, which Section A never sets.
+      { label: 'Building your answer', href: '/igcse/edexcel/unseen-poetry/comparison' },
       { label: 'Practice', href: '/igcse/edexcel/unseen-poetry/practice' },
     ],
   },
   {
     heading: 'Section B - Anthology Poetry',
     label: 'Paper 1 Section B',
-    detail: 'One question comparing two poems from the Pearson Edexcel Poetry Anthology.',
+    // The poems are Part 3 of the Pearson Edexcel International GCSE English
+    // Anthology; there is no separate "Poetry Anthology" for 4ET1.
+    detail:
+      'One question, from a choice of two, comparing two poems from Part 3 of the Pearson Edexcel International GCSE English Anthology.',
     href: '/igcse/edexcel/poetry',
     subLinks: [
       { label: 'If-', href: '/igcse/edexcel/poetry/if' },
@@ -459,9 +463,12 @@ export default async function EdexcelIgcseHubPage() {
               Harrison&rsquo;s original <em>Guardian</em> publication;
             </li>
             <li>
-              the adapted non-fiction texts (&lsquo;Explorers or boys messing about?&rsquo; and
-              &lsquo;Young and dyslexic?&rsquo;) differ from their online originals - always use the
-              anthology version when answering Edexcel questions.
+              {/* Until 10 October 2026 this said Young and dyslexic? also differs from
+                  its online original. The anthology says only that it prints the article
+                  The Guardian published, itself adapted from a book (Issue 8, page 12). */}
+              the adapted non-fiction text &lsquo;Explorers or boys messing about?&rsquo; differs
+              from the <em>Guardian</em> article it was adapted from - always use the anthology
+              version when answering Edexcel questions.
             </li>
           </ol>
           <p className="text-body-xs text-muted-foreground">

@@ -2,14 +2,14 @@
 // [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
 import {
-  GitCompare,
+  PenTool,
   ArrowLeft,
   ArrowRight,
   Lightbulb,
   AlertTriangle,
   Sparkles,
   Layers,
-  CheckCircle2,
+  GitCompare,
   MessageSquare,
 } from 'lucide-react'
 import Link from 'next/link'
@@ -17,57 +17,42 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { useT } from '@/lib/i18n/use-t'
 
-const LINKING_PHRASES = {
-  similarity: [
-    'Similarly, [Poet B]...',
-    'In the same way, [Poet B] also presents...',
-    'Like [Poet A], [Poet B] uses...',
-    'Both poets employ... to suggest...',
-    "Echoing [Poet A]'s use of..., [Poet B]...",
-    'This mirrors the way [Poet B] constructs...',
-  ],
-  difference: [
-    'In contrast, [Poet B]...',
-    'Whereas [Poet A] uses..., [Poet B] prefers...',
-    'Conversely, [Poet B] rejects this...',
-    'Unlike [Poet A], [Poet B] resists...',
-    'However, [Poet B] complicates this by...',
-    'While [Poet A] celebrates..., [Poet B] laments...',
-  ],
-  development: [
-    'This idea is pushed further in [Poem B], which...',
-    'Building on this, [Poet B]...',
-    '[Poem B] takes a similar starting point but arrives at...',
-    'Where [Poem A] stops, [Poem B] continues by...',
-  ],
-}
+/**
+ * REWRITTEN 10 October 2026. Until then this page taught comparing two unseen
+ * poems: a two-column plan, point-by-point and block structures, linking
+ * phrases, and a model paragraph setting Dickinson against Wordsworth. 4ET1
+ * never asks for that. Paper 1 Section A prints one poem and asks how the
+ * writer presents a subject in it, for 20 marks on AO2 alone, with no
+ * comparison and no context (specification Issue 3, and every question paper
+ * from the specimen to June 2025). Comparison is Section B, on two Part 3
+ * anthology poems. The URL is kept because other pages, the sitemap and
+ * llms.txt link to it.
+ *
+ * Each rule below comes from Pearson's own documents: the mark scheme's note
+ * that summary, paraphrase and a list of devices are not enough and that some
+ * personal response must be given (Question 1, June 2025 mark scheme), and the
+ * June 2025 examiners' report, which found that candidates who did well in the
+ * poetry sections analysed language, form and structure together rather than
+ * in separate paragraphs. The model paragraph quotes a public-domain poem that
+ * the practice page prints in full.
+ */
 
-const STRUCTURES = [
-  {
-    name: 'Point-by-point (recommended)',
-    description:
-      'Each paragraph takes one idea and compares both poems within it. Every paragraph is genuinely comparative. This is what scores highest for comparing texts.',
-    example:
-      'Paragraph 1: Imagery of nature. Both poets... / Paragraph 2: Use of form... / Paragraph 3: Emotional effect on the reader...',
-    strengths: 'Constant comparison, high marks for comparing texts, clear argument.',
-    weaknesses: 'Needs confident planning; easy to drift if you lose your thesis.',
-    colour: 'border-emerald-500/30 bg-emerald-500/[0.04]',
-    badge: 'Best for Grade 8-9',
-  },
-  {
-    name: 'Block then block',
-    description:
-      'First half of the essay covers Poem A, second half covers Poem B with comparative links. Easier to plan but weaker on comparison.',
-    example:
-      'Paragraphs 1-2: Everything about Poem A / Paragraphs 3-4: Everything about Poem B, linking back.',
-    strengths: 'Easy to structure, low risk of confusion.',
-    weaknesses: 'Weak comparative linkage, often caps around Grade 6.',
-    colour: 'border-amber-500/30 bg-amber-500/[0.04]',
-    badge: 'Only if time is tight',
-  },
+const PLAN_STEPS = [
+  'Underline the subject the question names. The paper asks how the writer presents it, so every point must be about that.',
+  'Pick three or four things the poem does with that subject, each with a short quotation you have already annotated.',
+  'Put them in an order that builds an argument: for example, from how the poem opens to where it ends up.',
+  'Write one sentence that answers the question. That is your opening.',
 ]
 
-export default function UnseenPoetryComparisonPage() {
+const MISTAKES = [
+  'Retelling the poem. The mark scheme says that summarising or paraphrasing is not enough.',
+  'Listing devices without saying what they do. The mark scheme says that simply listing literary devices is not enough either.',
+  'Writing about language, then form, then structure in separate blocks. The June 2025 examiners found that candidates who did well analysed them together.',
+  'Losing the question. Every paragraph should be about how the writer presents the subject the question names.',
+  'Adding context or a second poem. Neither is assessed in Section A, so the time is better spent on the poem in front of you.',
+]
+
+export default function UnseenPoetryAnswerPage() {
   const tr = useT()
   return (
     <div className="space-y-10 pb-16">
@@ -83,19 +68,17 @@ export default function UnseenPoetryComparisonPage() {
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-violet-500/10">
-            <GitCompare className="size-5 text-violet-400" />
+            <PenTool className="size-5 text-violet-400" />
           </div>
           <div className="flex min-w-0 flex-col gap-1">
             <div className="flex flex-wrap items-center gap-2">
-              <h1 className="text-heading-lg font-heading text-foreground">
-                Comparison Techniques
-              </h1>
+              <h1 className="text-heading-lg font-heading text-foreground">Building Your Answer</h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
                 {tr('igcse.page.badge_edexcel_lit')}
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
-              How to hold two poems in mind at once and write genuinely comparative analysis
+              How to turn your reading of one unseen poem into a clear, analytical answer
             </p>
           </div>
         </div>
@@ -106,176 +89,77 @@ export default function UnseenPoetryComparisonPage() {
         <div className="pointer-events-none absolute -end-16 -top-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="me-1 size-3" />
-          Comparing texts is the swing mark
+          One poem, one question
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
-          Strong comparison is the single biggest differentiator at the top end
+          The unseen question is not a comparison
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          Every IGCSE candidate can write about one poem. What separates a Grade 6 from a Grade 8 is
-          the ability to weave two poems together in sustained comparative paragraphs. The examiner
-          is not looking for "and now here is the other poem" -- they want you to read both poems
-          through the same analytical lens. That requires planning, linking vocabulary and a thesis
-          that could only come from reading both poems together.
+          Section A of 4ET1 Paper 1 prints one poem and asks how the writer presents a subject in
+          it, for 20 marks. There is no second poem to compare: comparison belongs to Section B,
+          where you compare two poems from Part 3 of the anthology. This page shows how to build an
+          answer on the one poem in front of you, in the 35 minutes Pearson suggests.
         </p>
       </section>
 
-      {/* ── Planning a comparison ───────────────────────────────── */}
+      {/* ── Step 1: plan ────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Layers className="size-5 text-sky-400" />
           <h2 className="text-heading-md font-heading text-foreground">
-            Step 1: Plan the Comparison (5 minutes)
+            Step 1: Turn Your Annotations into a Plan
           </h2>
         </div>
-        <p className="text-body-sm text-muted-foreground mb-5 leading-relaxed">
-          Draw two columns on your answer booklet, one for each poem. In each column, write: theme,
-          tone, key image, form, effect. Then circle the three most interesting points of connection
-          -- these become your three paragraphs.
-        </p>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-xl border border-border/40 bg-background/50 p-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-sky-400 mb-2">
-              Poem A column
-            </p>
-            <ul className="space-y-1.5 text-body-sm text-muted-foreground">
-              <li>Theme: hope as endurance</li>
-              <li>Tone: gentle, steadfast</li>
-              <li>Image: bird with feathers</li>
-              <li>Form: three quatrains, dashes</li>
-              <li>Effect: quiet resilience</li>
-            </ul>
-          </div>
-          <div className="rounded-xl border border-border/40 bg-background/50 p-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-rose-400 mb-2">
-              Poem B column
-            </p>
-            <ul className="space-y-1.5 text-body-sm text-muted-foreground">
-              <li>Theme: joy as transcendence</li>
-              <li>Tone: wondering, elevated</li>
-              <li>Image: dancing daffodils</li>
-              <li>Form: four sestets, ABABCC</li>
-              <li>Effect: memory as rescue</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Structures ──────────────────────────────────────────── */}
-      <section>
-        <div className="mb-5 flex items-center gap-3">
-          <GitCompare className="size-5 text-violet-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Step 2: Choose Your Structure
-          </h2>
-        </div>
-
-        <div className="grid gap-4">
-          {STRUCTURES.map((s) => (
-            <div key={s.name} className={`rounded-2xl border p-5 sm:p-6 ${s.colour}`}>
-              <div className="flex flex-wrap items-center gap-2 mb-3">
-                <h3 className="text-heading-md font-heading text-foreground">{s.name}</h3>
-                <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                  {s.badge}
-                </Badge>
-              </div>
-              <p className="text-body-sm text-muted-foreground leading-relaxed mb-3">
-                {s.description}
-              </p>
-              <div className="rounded-xl border border-border/40 bg-background/50 p-3 mb-3">
-                <p className="text-xs font-mono text-foreground/80">{s.example}</p>
-              </div>
-              <div className="grid gap-2 sm:grid-cols-2">
-                <div className="flex gap-2">
-                  <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-emerald-400" />
-                  <p className="text-xs text-muted-foreground">{s.strengths}</p>
-                </div>
-                <div className="flex gap-2">
-                  <AlertTriangle className="mt-0.5 size-3.5 shrink-0 text-clay-600" />
-                  <p className="text-xs text-muted-foreground">{s.weaknesses}</p>
-                </div>
-              </div>
-            </div>
+        <ol className="space-y-3">
+          {PLAN_STEPS.map((step, i) => (
+            <li key={step} className="flex gap-3">
+              <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-mono font-semibold text-primary">
+                {i + 1}
+              </span>
+              <p className="text-body-sm text-muted-foreground leading-relaxed">{step}</p>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
-      {/* ── Linking phrases ─────────────────────────────────────── */}
-      <section>
-        <div className="mb-5 flex items-center gap-3">
+      {/* ── Step 2: organise ────────────────────────────────────── */}
+      <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
+        <div className="mb-4 flex items-center gap-3">
           <MessageSquare className="size-5 text-emerald-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Step 3: The Linking Vocabulary
+          <h2 className="text-heading-md font-heading text-foreground">
+            Step 2: Organise by Idea, Not by Technique
           </h2>
         </div>
-        <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          These phrases signal to the examiner that you are comparing, not just listing. Aim to use
-          at least one linking phrase per paragraph, and vary them across your essay.
+        <p className="text-body-sm text-muted-foreground leading-relaxed">
+          Build each paragraph around one idea about the subject, then bring in whatever the writer
+          does to create it: a word choice, an image, a line break, a rhyme, a change in the last
+          stanza. Pearson&rsquo;s examiners reported in June 2025 that candidates who did well
+          thought about the deeper meaning of the poem and analysed language, form and structure
+          together, rather than in separate paragraphs.
         </p>
-
-        <div className="grid gap-4 sm:grid-cols-3">
-          <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.04] p-5">
-            <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-3">
-              For similarity
-            </p>
-            <ul className="space-y-2">
-              {LINKING_PHRASES.similarity.map((p) => (
-                <li key={p} className="text-body-sm text-muted-foreground italic">
-                  "{p}"
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-rose-500/20 bg-rose-500/[0.04] p-5">
-            <p className="text-xs font-semibold uppercase tracking-wider text-rose-400 mb-3">
-              For difference
-            </p>
-            <ul className="space-y-2">
-              {LINKING_PHRASES.difference.map((p) => (
-                <li key={p} className="text-body-sm text-muted-foreground italic">
-                  "{p}"
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-violet-500/20 bg-violet-500/[0.04] p-5">
-            <p className="text-xs font-semibold uppercase tracking-wider text-violet-400 mb-3">
-              For development
-            </p>
-            <ul className="space-y-2">
-              {LINKING_PHRASES.development.map((p) => (
-                <li key={p} className="text-body-sm text-muted-foreground italic">
-                  "{p}"
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
       </section>
 
       {/* ── Model paragraph ─────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Sparkles className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            Model Comparative Paragraph
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">Model Paragraph</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-4">
-          Comparing Dickinson{"'"}s &ldquo;Hope is the thing with feathers&rdquo; with Wordsworth
-          {"'"}s &ldquo;I Wandered Lonely as a Cloud&rdquo;:
+          On Dickinson&rsquo;s &ldquo;Hope is the thing with feathers&rdquo;, answering
+          &ldquo;Explore how the writer presents hope in this poem&rdquo;:
         </p>
         <div className="rounded-xl border border-border/40 bg-background/50 p-5 text-body-sm italic leading-relaxed text-foreground/90">
-          {`Both Dickinson and Wordsworth transform fleeting moments into enduring emotional anchors through natural imagery, though their methods reveal strikingly different relationships with the subject. Dickinson's extended metaphor of the bird that "perches in the soul" internalises hope as a constant tenant, while Wordsworth's daffodils remain decisively external, "fluttering and dancing in the breeze". Where Dickinson domesticates the natural image -- placing it safely within the speaker's self -- Wordsworth preserves the distance between observer and observed, allowing the scene its autonomy. Similarly, both poets use form to reinforce this contrast: Dickinson's trademark dashes create hesitant pauses that mirror hope's fragile persistence, whereas Wordsworth's steady iambic tetrameter and regular ABABCC rhyme suggest a memory already polished smooth. In this way, both poems argue that the natural world offers emotional sustenance, yet Dickinson finds her sustenance by absorbing nature inwards, while Wordsworth finds his by returning to nature in memory.`}
+          {`Dickinson presents hope as small and persistent rather than grand. The extended metaphor of "the thing with feathers" turns an abstract feeling into a bird that "perches in the soul", a verb that suggests it rests lightly but is always ready. It sings "without the words" and "never stops - at all", and the dashes that break up that line slow the reader down, so that hope seems to survive through pauses rather than force. The final stanza turns from what hope does to what it asks in return: even "in Extremity" it never "asked a crumb" of the speaker, and the poem ends by presenting hope as entirely selfless.`}
         </div>
         <div className="mt-4 flex gap-3 rounded-xl border border-emerald-500/20 bg-emerald-500/[0.06] p-4">
           <Lightbulb className="mt-0.5 size-4 shrink-0 text-emerald-400" />
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             <span className="font-semibold text-foreground">Notice: </span>
-            Every sentence holds both poems in mind. The comparative linking ("while", "whereas",
-            "similarly", "in this way") is relentless. And the thesis is something that could only
-            come from reading both poems together -- that is comparing texts at its best.
+            Every sentence says something about how hope is presented, and each method (the
+            metaphor, a verb, the punctuation, the turn in the last stanza) is there to support that
+            point. Language, form and structure sit in the same paragraph, and there is no context
+            and no second poem.
           </p>
         </div>
       </section>
@@ -287,19 +171,41 @@ export default function UnseenPoetryComparisonPage() {
           <h2 className="text-heading-md font-heading text-foreground">Common Mistakes</h2>
         </div>
         <ul className="space-y-3">
-          {[
-            'Writing about Poem A for half the essay, then Poem B, with barely a link between them. This caps at Grade 5.',
-            'Listing similarities and differences without any analysis of effect. "Both poems are about nature" is not an argument.',
-            'Comparing surface features (both have four stanzas) rather than meaning or effect. Form only matters if you link it to meaning.',
-            'Forgetting the question. Every paragraph should answer the actual focus -- "how do the poets present X" -- not just describe the poems.',
-            'Losing your personal response. Examiners reward candidates who have a genuine view about which poem does what more powerfully.',
-          ].map((m) => (
+          {MISTAKES.map((m) => (
             <li key={m} className="flex gap-3">
               <span className="mt-1 text-clay-600">-</span>
               <p className="text-body-sm text-muted-foreground leading-relaxed">{m}</p>
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* ── Where comparison is tested ──────────────────────────── */}
+      <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
+        <div className="mb-4 flex items-center gap-3">
+          <GitCompare className="size-5 text-violet-400" />
+          <h2 className="text-heading-md font-heading text-foreground">
+            Comparing Poems Is Section B
+          </h2>
+        </div>
+        <p className="text-body-sm text-muted-foreground leading-relaxed">
+          Comparison is tested in Section B of the same paper, where you compare two poems from Part
+          3 of the anthology, printed for you in a Poetry Booklet. For that question, see the{' '}
+          <Link
+            href="/igcse/edexcel/poetry"
+            className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
+          >
+            anthology poetry guide
+          </Link>{' '}
+          and the{' '}
+          <Link
+            href="/igcse/edexcel/essay-technique/comparison-essays"
+            className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
+          >
+            comparison essays guide
+          </Link>
+          .
+        </p>
       </section>
 
       {/* ── Next ────────────────────────────────────────────────── */}
@@ -309,8 +215,8 @@ export default function UnseenPoetryComparisonPage() {
           Now sharpen your language analysis
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Comparison is only as good as the analysis underneath it. Learn the What-How-Why framework
-          and turn observation into insight.
+          An answer is only as good as the analysis in it. Learn the What-How-Why framework and turn
+          observation into insight.
         </p>
         <Button
           variant="default"

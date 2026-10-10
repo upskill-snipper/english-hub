@@ -346,17 +346,20 @@ export default function UnseenPoetryPracticePage() {
         <div className="pointer-events-none absolute -end-16 -top-16 h-48 w-48 rounded-full bg-rose-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
           <Feather className="me-1 size-3" />
-          Read, annotate, then compare
+          Read, annotate, then write
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
           Three poems. Three questions. Three model openings.
         </h2>
+        {/* Until 10 October 2026 this page ended in comparison practice: compare
+            two of these poems in a timed essay of 40 minutes. 4ET1 Section A sets
+            one poem, asks for no comparison and suggests 35 minutes. */}
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
           Work through each poem in order. Read the poem first without looking at the question,
           apply the 5-step approach, then attempt the question yourself before revealing the model
           opening. The analysis notes show you how an examiner would break down language, form, and
-          structure. For extra challenge, try comparing any two of these poems in a single timed
-          essay.
+          structure. For a full challenge, write a complete answer on one poem in 35 minutes, the
+          time Pearson suggests for Section A.
         </p>
       </section>
 
@@ -372,10 +375,10 @@ export default function UnseenPoetryPracticePage() {
           {[
             'Read the poem three times without pressure. Do not peek at the question yet.',
             'Apply the 5-step approach: first impressions, meaning, language, form, effect.',
-            'Read the question. Write a plan with three comparative or thematic points.',
+            'Read the question. Write a plan with three points about how the poem presents its subject.',
             'Write a full opening paragraph, aiming for a clear thesis.',
             'Reveal the model opening and analysis notes. Compare your work.',
-            'For a full challenge, pick two poems and write a comparative essay in 40 minutes.',
+            'For a full challenge, write a complete answer on one poem in 35 minutes.',
           ].map((step, i) => (
             <li key={i} className="flex gap-3">
               <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-mono font-semibold text-primary">
@@ -394,21 +397,26 @@ export default function UnseenPoetryPracticePage() {
         ))}
       </section>
 
-      {/* ── Comparison challenge ────────────────────────────────── */}
+      {/* ── Timed challenge ─────────────────────────────────────── */}
+      {/* Until 10 October 2026 this was a "Comparison Challenge" of three
+          two-poem prompts. Section A never sets two poems; these prompts follow
+          the 4ET1 Question 1 form instead: one poem, how the writer presents a
+          subject, with the paper's three bullets. */}
       <section className="rounded-2xl border border-violet-500/20 bg-violet-500/[0.04] p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <CheckCircle2 className="size-5 text-violet-400" />
-          <h2 className="text-heading-md font-heading text-foreground">Comparison Challenge</h2>
+          <h2 className="text-heading-md font-heading text-foreground">Timed Challenge</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-4 leading-relaxed">
-          Once you are comfortable analysing each poem individually, try these comparison prompts.
-          Aim for a 40-minute timed response.
+          Once you are comfortable with each poem, answer one of these in full in 35 minutes. They
+          are worded the way Section A words its question; in each, consider the writer&rsquo;s
+          descriptive skills, choice of language, and use of form and structure.
         </p>
         <ul className="space-y-3">
           {[
-            'Compare how Dickinson\'s "Hope is the thing with feathers" and Wordsworth\'s "I Wandered Lonely as a Cloud" present emotional endurance through natural imagery.',
-            'Compare how Dickinson presents death and hope in "Because I could not stop for Death" and "Hope is the thing with feathers". How does her attitude shift?',
-            'Compare how Wordsworth and Dickinson use form and structure to reinforce their themes of memory and solitude.',
+            'Explore how the writer presents hope in "Hope is the thing with feathers".',
+            'Explore how the writer presents the speaker\'s memory of the daffodils in "I Wandered Lonely as a Cloud".',
+            'Explore how the writer presents death in "Because I could not stop for Death".',
           ].map((prompt, i) => (
             <li
               key={i}
