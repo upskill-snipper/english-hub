@@ -37,6 +37,12 @@
  *     and /revision/texts/<unknown> behaves the same way. A reader who
  *     trusted the header would have gone looking for a broken 404 that was
  *     never there.
+ *
+ *     FIXED 10 October 2026, outside this file: the middleware answers a
+ *     slug outside the catalogue with a real 404 before the route runs,
+ *     from the same getBlogSlugs() (src/lib/seo/known-pages.ts, which has
+ *     the measured cause: the root loading.tsx). The notFound() calls here
+ *     and the noindex stay, as the backstop.
  *   - A post that fails MDX compilation would throw per-request and
  *     collapse the page to an empty shell WITHOUT failing the build (19
  *     posts shipped broken this way until Aug 2026 - HTML `<!-- -->`
@@ -110,7 +116,10 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     // noindex on the streamed metadata, plus the body-level notFound() UI.
     // The June 2026 de-index audit confirmed GSC treats these as benign
     // soft-404s. A true 404 would need a blog-slug manifest consulted in
-    // middleware - revisit post-launch if GSC ever complains.
+    // middleware - and since 10 October 2026 there is one: the middleware
+    // answers a slug outside getBlogSlugs() with a real 404 before this
+    // route runs (src/lib/seo/known-pages.ts). This branch and its noindex
+    // remain for anything that still reaches the page.
     return {
       title: 'Article not found',
       description: 'The article you are looking for could not be found.',
@@ -687,7 +696,9 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
   // held back with `draft: true`. It swaps the article for the not-found UI
   // and a noindex, but it does NOT produce a 404 status: this route is
   // dynamically rendered and Next has already committed a 200. Measured on
-  // production, 20 September 2026, on a cache MISS.
+  // production, 20 September 2026, on a cache MISS. Since 10 October 2026
+  // the middleware answers such a slug with a real 404 first, from the same
+  // getBlogSlugs() (src/lib/seo/known-pages.ts), so this is the backstop.
   if (!getBlogSlugs().includes(slug)) notFound()
 
   const { locale, viaArUrl } = await resolveLocale()

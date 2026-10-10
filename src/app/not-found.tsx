@@ -11,8 +11,11 @@ import { tMany } from '@/lib/i18n/t'
  * tab bars and analytics that the user landed on the not-found route.
  * ──────────────────────────────────────────────────────────────────────── */
 
+// The root layout's title template adds " - The English Hub", so the brand is
+// not written here too: until 10 October 2026 every 404 tab read "404 - Page
+// not found - The English Hub - The English Hub".
 export const metadata: Metadata = {
-  title: '404 - Page not found - The English Hub',
+  title: '404 - Page not found',
   robots: { index: false, follow: false },
 }
 

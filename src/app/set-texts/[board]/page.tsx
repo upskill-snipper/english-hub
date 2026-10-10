@@ -45,7 +45,15 @@ const SITE = 'https://theenglishhub.app'
 // boards had no texts; measured with buildShelf it is three.)
 
 /**
- * A KNOWN, UNFIXED DEFECT, recorded here rather than papered over.
+ * A DEFECT, FIXED 10 OCTOBER 2026 OUTSIDE THIS FILE, kept as a record.
+ *
+ * The cause was not the async root not-found.tsx guessed below but the root
+ * loading.tsx: it wraps every page in a Suspense boundary, so the 200 is sent
+ * before notFound() runs. With it removed on the dev server, /set-texts/
+ * not-a-board answered 404 at once. The middleware now answers a board without
+ * a page with a real 404 before this route runs, from this very
+ * generateStaticParams (src/lib/seo/known-pages.ts); the notFound() below is
+ * the backstop. What follows is the record as it stood.
  *
  * /set-texts/<anything> returns HTTP 200 with the "Page not found" body. The
  * `notFound()` call below runs and renders the right UI, but the status stays
@@ -75,7 +83,9 @@ const SITE = 'https://theenglishhub.app'
  *
  * generateStaticParams is kept because it is correct and costs nothing: the
  * twelve boards with a shelf are a closed set, and it will prerender them the
- * moment the locale is resolved without reading headers.
+ * moment the locale is resolved without reading headers. It is also now the
+ * list the middleware's 404 is decided from, so it must name every board this
+ * page serves.
  */
 export function generateStaticParams() {
   return BOARDS.filter((b) => boardHasShelf(b.id)).map((b) => ({ board: b.id }))

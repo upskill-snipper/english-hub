@@ -28,6 +28,15 @@ export type CEFRLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2'
 export const CEFR_PRODUCT_BANDS = ['A2', 'B1', 'B2', 'C1'] as const
 export type CEFRBand = (typeof CEFR_PRODUCT_BANDS)[number]
 
+/**
+ * The same bands as the <level> segment of /eal/<topic>/level/<level> spells
+ * them, in lower case as every link and canonical does. Shared by the route and
+ * by the list of pages the middleware checks (src/lib/seo/known-pages.sources.ts),
+ * so the two cannot disagree about which levels exist.
+ */
+export const CEFR_LEVEL_SLUGS = ['a2', 'b1', 'b2', 'c1'] as const
+export type CefrLevelSlug = (typeof CEFR_LEVEL_SLUGS)[number]
+
 /** Ordered ladder, ascending. Index = rank. */
 export const CEFR_LADDER: readonly CEFRLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
 

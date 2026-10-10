@@ -7,6 +7,7 @@ import { BOARD_SPECIFIC_PREFIXES } from '@/lib/board/gated-paths'
 import { boardToRememberFromPath } from '@/lib/board/remember-shelf-board'
 import { shelflessBoardHub } from '@/lib/board/board-landing'
 import { evaluateCsrfAttestation } from '@/lib/security/csrf-origin'
+import { isMissingPage, NOT_FOUND_REWRITE } from '@/lib/seo/known-pages'
 // Note: the previous `import crypto from 'crypto'` worked on Vercel but
 // trips an edge-runtime warning in dev. We use the Web Crypto API
 // (`globalThis.crypto.randomUUID()` / `crypto.subtle.digest`) instead -
@@ -523,8 +524,9 @@ export async function middleware(request: NextRequest) {
   //
   // WHY HERE AND NOT IN THE PAGE. A redirect thrown from that page's render
   // does not reliably reach the browser as a status: the root loading.tsx
-  // streams the shell first, which is also why its notFound() comes back 200
-  // (see the page's docblock). A 308 from here is a real status a search engine
+  // streams the shell first, which is also why a page's notFound() came back
+  // 200 until the missing-page check further down took that decision here too.
+  // A 308 from here is a real status a search engine
   // acts on. It runs before the ?setBoard= handler and keeps the query, so an
   // old picker link still has its board written one hop later, and before the
   // /ar rewrite so the Arabic surface stays Arabic.
@@ -689,6 +691,25 @@ export async function middleware(request: NextRequest) {
     return NextResponse.json({ error: csrfDecision.error }, { status: csrfDecision.status })
   }
 
+  // ── A page that does not exist gets a real 404 (10 October 2026) ──────────
+  //
+  // A page under a dynamic route that does not serve the parameter calls
+  // notFound(), but the root loading.tsx has already streamed a 200 by then, so
+  // every unknown set text, game, chapter, blog post and revision note was a
+  // soft 404. Known here, before anything is sent, it is answered properly: the
+  // response below is rewritten to a path no route serves, and Next answers
+  // that with the not-found page and status 404. See src/lib/seo/known-pages.ts
+  // for what is covered and how a real page is protected from this.
+  //
+  // Judged on the route actually served, so /ar/blog/<unknown> is a 404 too.
+  // Checked before the board gate, so a missing page is not first bounced to
+  // /board-select, and NOT returned from here: it falls through to the shared
+  // tail like everything else, so the 404 carries the CSP and nonce the
+  // not-found page needs (see the two defects recorded on the /ar branch).
+  const servedRoute =
+    pathname === '/ar' ? '/' : pathname.startsWith('/ar/') ? pathname.slice(3) : pathname
+  const missingPage = isMissingPage(servedRoute)
+
   // Board gate: if no board cookie and path is not allowlisted, redirect to /board-select
   // Run this BEFORE supabase/affiliate so we don't do unnecessary work, but we still
   // preserve those flows for allowlisted paths.
@@ -717,6 +738,7 @@ export async function middleware(request: NextRequest) {
   const dashboardForSignedIn = hasAuthCookie && pathname.startsWith('/dashboard')
 
   if (
+    !missingPage &&
     !hasBoardCookie &&
     !dashboardForSignedIn &&
     isBoardRequired(pathname) &&
@@ -817,7 +839,7 @@ export async function middleware(request: NextRequest) {
     }
 
     servedPath = strippedPath
-    rewriteUrl.pathname = strippedPath
+    rewriteUrl.pathname = missingPage ? NOT_FOUND_REWRITE : strippedPath
     // Rewrite preserves the URL the browser sees while serving the
     // underlying page from the language-neutral route. Stamp x-lang
     // BEFORE the rewrite so server components see the right locale.
@@ -860,8 +882,13 @@ export async function middleware(request: NextRequest) {
 
     // Preserve existing behaviour: supabase auth session refresh + affiliate
     // tracking. The Arabic branch above has already run updateSession against
-    // its stripped path, so this must not run twice.
-    response = await updateSession(request)
+    // its stripped path, so this must not run twice. A missing page needs no
+    // session: it is rewritten to the 404 (see "A page that does not exist").
+    response = missingPage
+      ? NextResponse.rewrite(new URL(NOT_FOUND_REWRITE, request.url), {
+          request: { headers: request.headers },
+        })
+      : await updateSession(request)
   }
 
   // ── Remember the board a /set-texts/<board> URL names ─────────────────────

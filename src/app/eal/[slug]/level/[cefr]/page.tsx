@@ -16,10 +16,18 @@ import Link from 'next/link'
 import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
 import { findEALTopic } from '@/lib/eal/curriculum'
-import { CEFR_LABEL, CEFR_DESCRIPTORS, CEFR_PRODUCT_BANDS } from '@/lib/eal/cefr'
+import {
+  CEFR_LABEL,
+  CEFR_DESCRIPTORS,
+  CEFR_LEVEL_SLUGS,
+  CEFR_PRODUCT_BANDS,
+  type CefrLevelSlug,
+} from '@/lib/eal/cefr'
 
-const LEVELS = ['a2', 'b1', 'b2', 'c1'] as const
-type CefrSlug = (typeof LEVELS)[number]
+// Shared with the list of real pages the middleware checks, so a level added
+// here is never answered 404 there (src/lib/seo/known-pages.sources.ts).
+const LEVELS = CEFR_LEVEL_SLUGS
+type CefrSlug = CefrLevelSlug
 
 function toBand(slug: CefrSlug) {
   return slug.toUpperCase() as (typeof CEFR_PRODUCT_BANDS)[number]

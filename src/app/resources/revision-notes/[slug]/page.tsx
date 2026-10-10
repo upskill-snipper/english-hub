@@ -38,6 +38,14 @@ import { t } from '@/lib/i18n/t'
  * Real revision-notes content for the missing slugs is a content-team task
  * - when a page is hand-authored at /resources/revision-notes/<slug>/page.tsx
  * the static folder match takes over and this fallback is bypassed.
+ *
+ * NARROWED 10 October 2026. "Any slug" included slugs that name no text at
+ * all, so /resources/revision-notes/anything-at-all rendered a placeholder for
+ * a text called "Anything At All", under a 200. The middleware now answers a
+ * slug that names no set text, and is not one of the older spellings in
+ * TEXT_SLUG_ALIASES, with a real 404 before this page runs
+ * (src/lib/seo/known-pages.sources.ts). Every set text still gets this
+ * placeholder, which is what the founder's feedback asked for.
  */
 
 type Params = { slug: string }
