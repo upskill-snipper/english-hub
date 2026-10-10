@@ -15,13 +15,14 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { t } from '@/lib/i18n/t'
 import { ANTHOLOGY_SOURCE } from '@/lib/board/edexcel-igcse-anthology'
+import { part3Poems } from './part-3-poems'
 import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel IGCSE Literature Anthology Poetry - The English Hub',
     description:
-      'The 13 poems in the Edexcel IGCSE Literature 4ET1 anthology, with summaries, themes, comparison pairings and a study plan for Paper 1.',
+      'The 16 poems in Part 3 of the Edexcel IGCSE Literature 4ET1 anthology, with summaries, themes, comparison pairings and a study plan for Paper 1.',
     images: [
       {
         url: '/api/og?title=Edexcel+IGCSE+Literature+Anthology+Poetry+-+The+English+Hub',
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
   },
   title: 'Edexcel IGCSE Literature Anthology Poetry',
   description:
-    'The 13 poems in the Edexcel IGCSE Literature 4ET1 anthology, with summaries, themes, comparison pairings and a study plan for Paper 1.',
+    'The 16 poems in Part 3 of the Edexcel IGCSE Literature 4ET1 anthology, with summaries, themes, comparison pairings and a study plan for Paper 1.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/poetry',
   },
@@ -41,179 +42,10 @@ export const metadata: Metadata = {
 
 /* ── Poem list ────────────────────────────────────────────────────── */
 
-type AnthologyPoem = {
-  number: number
-  title: string
-  poet: string
-  year?: string
-  href?: string
-  themes: string[]
-  publicDomain: boolean
-  summary: string
-}
-
-// Verified against TEXT_MASTER_LIST.csv - the Pearson Edexcel International GCSE
-// English Literature (4ET1) Anthology Issue 2 prescribes these 13 poems for the
-// Paper 1 Section B Anthology Poetry section. (Poetry-list audited April 2026.)
-//
-// NOT TRUE, found 10 October 2026 and not yet corrected. Part 3 of the
-// anthology (Issue 8, contents page) has sixteen poems, all set for Section B.
-// Six entries below are not among them: Ozymandias is not in the anthology at
-// all, and Disabled, Out, Out-, An Unknown Girl, The Bright Lights of Sarajevo
-// and Still I Rise are Part 2, set for English Language A. Nine Part 3 poems
-// are missing. The list needs its own pass; the comparison pairings further
-// down were rebuilt from Part 3 on 10 October 2026.
-const anthology: AnthologyPoem[] = [
-  {
-    number: 1,
-    title: 'If-',
-    poet: 'Rudyard Kipling',
-    year: '1910',
-    href: '/igcse/edexcel/poetry/if',
-    themes: ['Stoicism', 'Identity', 'Growing up'],
-    publicDomain: true,
-    summary:
-      'A father addresses his son, listing the qualities required to live a balanced, honourable life and become a person of integrity.',
-  },
-  {
-    number: 2,
-    title: 'Sonnet 116',
-    poet: 'William Shakespeare',
-    year: '1609',
-    href: '/igcse/edexcel/poetry/sonnet-116',
-    themes: ['Love', 'Constancy', 'Time'],
-    publicDomain: true,
-    summary:
-      'A meditation on true love as a fixed and enduring force that cannot be altered by time, circumstance or trouble.',
-  },
-  {
-    number: 3,
-    title: 'La Belle Dame sans Merci',
-    poet: 'John Keats',
-    year: '1819',
-    href: '/igcse/edexcel/poetry/la-belle-dame-sans-merci',
-    themes: ['Obsession', 'Deception', 'Death'],
-    publicDomain: true,
-    // Until 2 October 2026 this said the anthology prints the 1820 Indicator
-    // version, the error the poem's own page corrected on 26 September. The
-    // anthology prints the earlier knight-at-arms text (read from the Pearson
-    // PDF, see src/data/study-guides/la-belle-dame-sans-merci.ts); the Indicator
-    // revision opens with a "wretched wight", and a student quoting it would
-    // misquote the anthology's text.
-    summary:
-      'A pale, wandering knight tells how a mysterious fairy woman enchanted him and left him alone on a cold hillside. The anthology prints the earlier knight-at-arms text, not the 1820 Indicator revision.',
-  },
-  {
-    number: 4,
-    title: 'The Tyger',
-    poet: 'William Blake',
-    year: '1794',
-    href: '/igcse/edexcel/poetry/the-tyger',
-    themes: ['Creation', 'Evil', 'Awe'],
-    publicDomain: true,
-    summary:
-      'The speaker asks what kind of creator could have made the terrifying, beautiful tiger - and the lamb too.',
-  },
-  {
-    number: 5,
-    title: 'Ozymandias',
-    poet: 'Percy Bysshe Shelley',
-    year: '1818',
-    href: '/igcse/edexcel/poetry/ozymandias',
-    themes: ['Power', 'Hubris', 'Time and decay'],
-    publicDomain: true,
-    summary:
-      'A traveller describes the shattered remains of a once-mighty statue in the desert - a meditation on the impermanence of power and empire.',
-  },
-  {
-    number: 6,
-    title: 'Remember',
-    poet: 'Christina Rossetti',
-    year: '1862',
-    href: '/igcse/edexcel/poetry/remember',
-    themes: ['Death', 'Memory', 'Love'],
-    publicDomain: true,
-    summary:
-      'A speaker asks her beloved to remember her after death - then, selflessly, prefers he forget and be happy.',
-  },
-  {
-    number: 7,
-    title: 'Disabled',
-    poet: 'Wilfred Owen',
-    year: '1917',
-    href: '/igcse/edexcel/poetry/disabled',
-    themes: ['War', 'Loss', 'Disability'],
-    publicDomain: true,
-    summary:
-      'A young soldier, now in a wheelchair after losing his limbs in the First World War, contrasts his current isolation with the vitality of his former life.',
-  },
-  {
-    number: 8,
-    title: 'Out, Out-',
-    poet: 'Robert Frost',
-    year: '1916',
-    href: '/igcse/edexcel/poetry/out-out',
-    themes: ['Mortality', 'Childhood', 'Indifference'],
-    publicDomain: false,
-    summary:
-      'A New England farm boy is fatally injured by a circular saw; the poem ends with the bystanders turning back to their work, indifferent to his death.',
-  },
-  {
-    number: 9,
-    title: 'War Photographer',
-    poet: 'Carol Ann Duffy',
-    year: '1985',
-    href: '/igcse/edexcel/poetry/war-photographer',
-    themes: ['War', 'Suffering', 'Moral responsibility'],
-    publicDomain: false,
-    summary:
-      "A war photographer develops pictures at home in England, caught between the horrors abroad and readers' short-lived sympathy.",
-  },
-  {
-    number: 10,
-    title: 'An Unknown Girl',
-    poet: 'Moniza Alvi',
-    year: '1996',
-    href: '/igcse/edexcel/poetry/an-unknown-girl',
-    themes: ['Identity', 'Cultural heritage', 'Belonging'],
-    publicDomain: false,
-    summary:
-      'A speaker has her hand decorated with henna by an unknown girl in an Indian bazaar, and reflects on her dual cultural identity.',
-  },
-  {
-    number: 11,
-    title: 'The Bright Lights of Sarajevo',
-    poet: 'Tony Harrison',
-    year: '1995',
-    href: '/igcse/edexcel/poetry/the-bright-lights-of-sarajevo',
-    themes: ['War', 'Resilience', 'Hope'],
-    publicDomain: false,
-    summary:
-      'During the siege of Sarajevo, young couples meet in candlelit cafés and walk under starlight - life persisting amid devastation. The anthology prints additional stanza breaks.',
-  },
-  {
-    number: 12,
-    title: 'Still I Rise',
-    poet: 'Maya Angelou',
-    year: '1978',
-    href: '/igcse/edexcel/poetry/still-i-rise',
-    themes: ['Resilience', 'Identity', 'Race'],
-    publicDomain: false,
-    summary:
-      'The speaker defies attempts to oppress and demean her, asserting her power and dignity through repeated declarations of resilience.',
-  },
-  {
-    number: 13,
-    title: 'Half-Caste',
-    poet: 'John Agard',
-    year: '1996',
-    href: '/igcse/edexcel/poetry/half-caste',
-    themes: ['Identity', 'Race', 'Language and prejudice'],
-    publicDomain: false,
-    summary:
-      'The speaker challenges the term ‘half-caste’ by mocking its illogic, drawing on art, music and weather to expose its absurdity. The anthology uses the spelling ‘yu’ (not ‘you’).',
-  },
-]
+// Part 3 of the anthology, from the register read off Issue 8. Until 10 October
+// 2026 this page kept its own list of thirteen, six of them poems Section B
+// never sets and nine Part 3 poems missing: see part-3-poems.ts.
+const anthology = part3Poems()
 
 /* ── Comparison pairings ──────────────────────────────────────────── */
 
@@ -367,22 +199,19 @@ export default async function EdexcelPoetryAnthologyPage() {
           (ISBN 978-1-446-93108-0). Material differences from freely-available online versions
           include:
         </p>
+        {/* Until 10 October 2026 this list also named The Bright Lights of
+            Sarajevo (Part 2) and Explorers or boys messing about? (Part 1), texts
+            set for English Language A that this Literature page does not cover;
+            the Language A hub keeps those notes. It now names Part 3 poems only. */}
         <ol className="mb-2 list-decimal space-y-1 ps-5 text-muted-foreground">
           <li>
-            <em>Half-Caste</em> uses Agard&rsquo;s spelling &lsquo;yu&rsquo; (not
+            <em>Half-caste</em> uses Agard&rsquo;s spelling &lsquo;yu&rsquo; (not
             &lsquo;you&rsquo;);
           </li>
           <li>
-            <em>The Bright Lights of Sarajevo</em> has additional stanza breaks not in
-            Harrison&rsquo;s original <em>Guardian</em> publication;
-          </li>
-          <li>
-            {/* Until 10 October 2026 this said Young and dyslexic? also differs from
-                its online original. The anthology says only that it prints the article
-                The Guardian published, itself adapted from a book (Issue 8, page 12). */}
-            the adapted non-fiction text &lsquo;Explorers or boys messing about?&rsquo; differs from
-            the <em>Guardian</em> article it was adapted from - always use the anthology version
-            when answering Edexcel questions.
+            <em>La Belle Dame sans Merci</em> is the earlier text, with its knight-at-arms, not the
+            1820 Indicator revision - always use the anthology version when answering Edexcel
+            questions.
           </li>
         </ol>
         <p className="text-body-xs text-muted-foreground">
