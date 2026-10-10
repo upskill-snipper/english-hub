@@ -337,9 +337,11 @@ export function Footer({ lastUpdated }: { lastUpdated?: string }) {
           </p>
         </div>
 
-        {/* Bottom bar */}
+        {/* Bottom bar. Stacked until 768 pixels (it was until 640), so the
+            legal links below have the full width to wrap in: side by side at
+            640 they were squeezed into four rows. */}
         <div
-          className="border-t py-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="border-t py-6 flex flex-col md:flex-row items-center justify-between gap-4"
           style={{ borderColor: 'rgba(255,255,255,0.08)' }}
         >
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-start">
@@ -353,8 +355,10 @@ export function Footer({ lastUpdated }: { lastUpdated?: string }) {
           </div>
           {/* Wraps on a phone. 10 October 2026: in one line the Spanish labels
               ran 14 pixels past a 360-pixel screen and the page scrolled
-              sideways. */}
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] font-mono tracking-wide sm:justify-end">
+              sideways. From 768 pixels it keeps one line, as before, and the
+              copyright text beside it gives way instead; at 640 the Spanish
+              line is 737 pixels wide, so it wraps until then. */}
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] font-mono tracking-wide md:shrink-0 md:flex-nowrap md:justify-end">
             <Link
               href="/legal/privacy"
               className="text-[#B5B8B3]/75 hover:text-[#FBF7F0] transition-colors"

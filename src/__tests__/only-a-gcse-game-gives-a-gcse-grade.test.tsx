@@ -118,7 +118,10 @@ describe('the best score shown before a game starts', () => {
 // ── Every game page says who it is for, and says it consistently ───────────
 
 const GAMES_DIR = join(process.cwd(), 'src/app/games')
-const HUB = readFileSync(join(GAMES_DIR, 'page.tsx'), 'utf8')
+// Line endings normalised: in a checkout with CRLF endings the list's closing
+// "\n]\n" was never found, so each list ran on into the next and every KS3
+// game also read as EAL (found in a fresh worktree, 10 October 2026).
+const HUB = readFileSync(join(GAMES_DIR, 'page.tsx'), 'utf8').replace(/\r\n/g, '\n')
 
 /** The standalone games: every directory whose page renders the shell. */
 const GAME_IDS = readdirSync(GAMES_DIR, { withFileTypes: true })
@@ -152,6 +155,7 @@ function hubList(name: string): string {
   const start = HUB.indexOf(`const ${name}: GameDef[] = [`)
   expect(start, `${name} is not in the hub`).toBeGreaterThan(-1)
   const end = HUB.indexOf('\n]\n', start)
+  expect(end, `${name} has no closing bracket`).toBeGreaterThan(start)
   return HUB.slice(start, end)
 }
 
