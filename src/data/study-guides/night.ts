@@ -31,6 +31,27 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  *
  * The anthology keeps Munro's North American spellings (it footnotes
  * "neighbors"). Quotations keep them; the guide's own prose is British English.
+ *
+ * EXAM FORMAT, 26 September 2026, against the 4EA1 specification (Issue 7) and
+ * the Paper 2 question papers of June and November 2023. Section A sets one
+ * Part 2 text, printed for the candidate (a prose text in the Source Booklet),
+ * and asks one compulsory essay question on how the writer presents something
+ * across the whole text, in about 45 minutes. Its bullets end with the use of
+ * language and structure, not "language, form and structure". It is never a
+ * comparison. The coursework essay (Assignment A) covers three Part 2 texts,
+ * at least one poem and one prose, and is marked for reading and analysis, not
+ * comparison. The three passage questions read as exam questions on a line
+ * range; they are now labelled as close-reading practice. The essay questions
+ * take the paper's form, the coursework task says it is one, and a tip says
+ * how the text is examined. Do not reintroduce a line-range, language-only or
+ * paired question here as if the exam set one. Mark tariffs stay out: the
+ * validator reserves them for ExamPlacementCard.
+ *
+ * TIPS, 10 October 2026. The tips render under the heading "What examiners
+ * reward". One also told students to write British English in their own
+ * sentences, but Section A is marked for reading and analysis, and the paper
+ * takes spelling into account only in Section B, so that clause is gone. Keep
+ * house style out of the tips.
  */
 
 const T_SILENCE = 'Silence and what goes unsaid'
@@ -296,7 +317,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer use language and structure in lines 90-111 to present the narrator’s fear of her own thoughts?',
+        'Close-reading practice on lines 90-111, not an exam question (the exam question covers the whole story): how does the writer use language and structure to present the narrator’s fear of her own thoughts?',
     },
     {
       title: 'The father on the stoop',
@@ -332,7 +353,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer create tension and present the father in lines 164-188, when the narrator finds him on the stoop?',
+        'Close-reading practice on lines 164-188, not an exam question (the exam question covers the whole story): how does the writer create tension and present the father when the narrator finds him on the stoop?',
     },
     {
       title: 'The confession and the answer',
@@ -368,7 +389,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer present the father’s response to the narrator in lines 213-236?',
+        'Close-reading practice on lines 213-236, not an exam question (the exam question covers the whole story): how does the writer present the father’s response to the narrator?',
     },
   ],
 
@@ -583,8 +604,8 @@ export const guide: StudyGuide = {
     questions: [
       {
         question:
-          'Explore how the writer presents the narrator’s fear in Night. In your answer you should consider the writer’s use of language, form and structure, and support your points with examples from the text.',
-        skill: 'Language, form and structure analysis across the whole story',
+          'How does the writer present the narrator’s fear in Night? In your answer, you should write about: how the thought comes to her and grows; where the fear happens and how it is released; the use of language and structure. You should support your answer with close reference to the story, including brief quotations.',
+        skill: 'Language and structure analysis across the whole story',
         guidance: [
           'Open with an overview: the fear is not of the dark or of an intruder but of her own mind, and it is released by being spoken.',
           'Show how the fear builds in stages: sleeplessness (lines 64-70), the house turning strange (lines 71-75), poetry dissolving into nonsense, and the one-line paragraph at line 83.',
@@ -597,7 +618,7 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'How does the writer present the relationship between the narrator and her father? In your answer you should consider the writer’s use of language, form and structure, and support your points with examples from the text.',
+          'How does the writer present the relationship between the narrator and her father in Night? In your answer, you should write about: how the father is presented before and during the meeting on the stoop; what the older narrator comes to understand about him; the use of language and structure. You should support your answer with close reference to the story, including brief quotations.',
         skill: 'Language and structure analysis of character and relationship',
         guidance: [
           'Begin with the distance between them: in this family even good morning is unusual (lines 175-178), and the father first appears as the man paying for her operation.',
@@ -610,24 +631,25 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'How does the writer use the house and its surroundings at night to create mood in Night? In your answer you should consider the writer’s use of language, form and structure, and support your points with examples from the text.',
-        skill: 'Language analysis of setting and atmosphere',
+          'How does the writer use the house and its surroundings at night to create mood in Night? In your answer, you should write about: the house and garden by night and by day; how the setting changes as the story moves towards the meeting on the stoop; the use of language and structure. You should support your answer with close reference to the story, including brief quotations.',
+        skill: 'Language and structure analysis of setting and atmosphere',
         guidance: [
           'Contrast day and night: the busy household, then the house as a stranger place once work falls away (lines 71-75).',
           'Analyse the named trees turned intensely black, and the careful movement round the pump handle and clothesline (lines 122-131).',
           'Explore the kitchen door and the chair under the doorknob as a ritual of escape and return.',
           'Look at the stoop as a threshold between house and town, and the sanity the narrator draws from looking towards town (lines 157-163).',
           'Trace the light: the whitening sky, the improbable faint light, and the breaking morning of line 250.',
+          'Give structure its share, since the question asks for it: the setting moves with the story, from the bedroom out to the lawns and then to the stoop, and the habitual nights give way at line 164 to the one night when she finds her father there.',
           'Link setting to theme: home as both the safest and the most frightening place, and the father met where night gives way to day.',
         ],
       },
       {
         question:
-          'Write an analytical essay exploring how writers present characters facing fear alone in Night and two other texts from Part 2 of the anthology, including at least one poem.',
+          'Coursework task, not an exam question (the exam never sets Night beside another text): write an analytical essay exploring how writers present characters facing fear alone in Night and two other texts from Part 2 of the anthology, including at least one poem.',
         skill: 'Analytical essay on three anthology texts (coursework route)',
         guidance: [
           'Choose partners that sharpen the discussion: Whistle and I’ll Come to You for fear at night in a house, and Out, Out- for a rural family and a medical emergency.',
-          'Build each paragraph around a point of connection or contrast, not around one text at a time.',
+          'Know what earns the credit: the assignment is marked for your understanding of the three texts and your analysis of how each writer uses language and structure, not for comparison as such. Links between the texts can organise the essay, but every point still needs close analysis.',
           'Compare narrative voice: Munro’s older narrator looking back, set against the voices of your other two texts.',
           'Compare what the fear is of: something outside, such as a sound or an injury, or something inside the mind.',
           'Compare endings: the narrator’s release into sleep set against the outcomes in your other texts.',
@@ -636,8 +658,9 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
-      'On the examination-only route, the anthology says the Part 2 text you are asked about will be included in the question paper. The skill is close analysis, not memorising quotations, so use line numbers to show exactly where your evidence comes from.',
-      'Quote the anthology’s wording and keep its North American spellings inside quotation marks, but write British English in your own sentences.',
+      'Know how Night is examined. On the examination route, Paper 2 sets one Part 2 text, poem or prose, with no choice. If it is Night, the story is printed for you in the Source Booklet, and there is one essay question, taking about 45 minutes, on how the writer presents something across the whole story. Its bullet points end with the use of language and structure. It is not a comparison: the exam never sets Night beside another text. On the coursework route, Night can be one of three Part 2 texts in a single essay, which must include at least one poem.',
+      'Because the story is printed for you, the skill is close analysis, not memorising quotations, so use line numbers to show exactly where your evidence comes from.',
+      'Quote the anthology’s wording exactly, and keep its North American spellings inside quotation marks.',
       'Call the speaker the narrator. The story is autobiographical in feeling, but an answer that treats it as Munro’s diary cannot analyse her choices as a writer.',
       'Write about the central thought precisely and calmly: say what the narrator fears and analyse how it is presented, without adding detail the story does not give.',
       'Do not diagnose the narrator, and do not claim the growth was cancer. The story insists on not knowing, and that uncertainty is something to analyse rather than solve.',
@@ -649,7 +672,7 @@ export const guide: StudyGuide = {
   },
 
   modelAnswer: {
-    question: 'Explore how the writer presents the narrator’s fear in Night.',
+    question: 'How does the writer present the narrator’s fear in Night?',
     paragraph:
       'Munro presents the narrator’s fear as a fear of her own mind, and she makes it frightening by giving the thought a life of its own. It is personified as a speaker that “was informing me that motives were not necessary”: the verb “informing” is cool, almost official, and makes it sound like a separate voice reasoning inside her. The thought of harming her sister arrives in the same sentence as the clause “whom I loved more than anybody in the world”, and the narrator insists straight afterwards that she might do it “not for jealousy, viciousness, or anger”. That juxtaposition is the heart of the horror: love and the worst possible act sit side by side, and the reader feels the contradiction as she does. Structure tightens it. Short paragraphs quicken the pace, and the rhetorical question “Why not try the worst?” is followed by the fragment “Here in the most familiar place”, so that the danger is located in the bedroom where the sisters have always felt safe. Yet the older narrator’s calm, hedged voice frames all of this, which suggests that the story is less about the fear itself than about how a fear that cannot be spoken grows, until at the stoop, at last, it can be.',
     commentary: [
@@ -658,6 +681,7 @@ export const guide: StudyGuide = {
       'Quotations are short and embedded in its own sentences, and it zooms in on a single word, the verb informing, where the analysis is sharpest.',
       'It links language to structure, showing how paragraphing and sentence form place the danger in the most familiar place.',
       'It ends with a judgement that reaches beyond the passage to the whole story and the meeting on the stoop, the kind of whole-text insight that separates a strong answer from a competent one.',
+      'It is one paragraph of a full answer, not the whole of one. The exam question covers the whole story, so the other paragraphs would take in the silence about the growth, the sleepless nights and the conversation on the stoop.',
     ],
   },
 

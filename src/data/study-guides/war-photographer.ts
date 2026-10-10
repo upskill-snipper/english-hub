@@ -49,6 +49,34 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * McCullin alone; the WJEC Eduqas notes name McCullin and Philip Jones
  * Griffiths. And two of its three comparison poems, Disabled and The Bright
  * Lights of Sarajevo, are in Part 2 of the anthology, which 4ET1 does not set.
+ *
+ * EXAM FORMAT, audited 10 October 2026 against the 4ET1 specification (Issue
+ * 3, August 2025) and the June 2025 question papers, mark schemes and
+ * examiners' reports. Section B of Paper 1 offers two questions and both are
+ * comparisons: one names two Part 3 poems, the other names one and the
+ * candidate chooses the second from Part 3. The whole of Part 3 comes with the
+ * paper in a separate Poetry Booklet, 40 minutes are suggested, an answer on
+ * one poem alone cannot go above Level 2 of five, and context is not assessed
+ * in either poetry section. Until then a tip told the student to learn the
+ * anthology's wording, as if the poem had to be quoted from memory; another
+ * implied that a sentence of context earns credit; and the three passage
+ * questions, shown under the label The question, read as exam questions on
+ * part of the poem. The passage questions now say they are close-reading
+ * practice, and every tip that states a rule says it is 4ET1's, because AQA
+ * sets the poem too and examines it differently (one named poem printed on
+ * its paper, the second from the cluster). Exam practice question 1 is
+ * Pearson's own Question 3 from Paper 1R, June 2025, word for word. No mark
+ * tariffs: the validator keeps those to ExamPlacementCard. The page above
+ * still describes only the one-named-poem shape in its Compare with note;
+ * that page is outside this file.
+ *
+ * CHECKED AGAIN 10 October 2026. The context section's darkroom note said the
+ * exam paper prints the anthology's wording without naming a board, although
+ * AQA sets the poem too. It now names the 4ET1 Poetry Booklet, which prints
+ * the poem word for word as the anthology does in all nine papers from June
+ * 2019 to June 2025. WJEC Eduqas (C720) also prints the poem, in its anthology
+ * for assessment from 2027; the repo does not tag it for Eduqas
+ * (prescribed-texts.ts), so this guide describes no Eduqas paper.
  */
 export const guide: StudyGuide = {
   slug: 'war-photographer',
@@ -90,7 +118,7 @@ export const guide: StudyGuide = {
     },
     {
       heading: 'Standing Female Nude, 1985',
-      body: 'The poem was published in Standing Female Nude, from Anvil Press Poetry, in 1985. It was not her first book: the Scottish Poetry Library lists three earlier publications, Fleshweathercock and Other Poems (Outposts, 1974), Beauty and the Beast, a pamphlet shared with Adrian Henri (1977), and Fifth Last Song (Headland, 1982), and she had won the National Poetry Competition in 1983. The poem was later included in New Selected Poems 1984-2004 (Picador, 2004). The anthology prints it on page 63 as one of the sixteen Part 3 poems, with two footnotes: one explains a Mass as a religious service, and the other explains a Sunday supplement as a regular additional section of a Sunday newspaper. One small point for anyone learning lines: the anthology prints darkroom as a single word in line 1, and some other printings, including the Scottish Poetry Library’s, split it into two. Follow the anthology, which is also what the exam paper prints.',
+      body: 'The poem was published in Standing Female Nude, from Anvil Press Poetry, in 1985. It was not her first book: the Scottish Poetry Library lists three earlier publications, Fleshweathercock and Other Poems (Outposts, 1974), Beauty and the Beast, a pamphlet shared with Adrian Henri (1977), and Fifth Last Song (Headland, 1982), and she had won the National Poetry Competition in 1983. The poem was later included in New Selected Poems 1984-2004 (Picador, 2004). The anthology prints it on page 63 as one of the sixteen Part 3 poems, with two footnotes: one explains a Mass as a religious service, and the other explains a Sunday supplement as a regular additional section of a Sunday newspaper. One small point for anyone learning lines: the anthology prints darkroom as a single word in line 1, and some other printings, including the Scottish Poetry Library’s, split it into two. Follow the anthology, which the Poetry Booklet given out with the 4ET1 paper prints word for word.',
     },
     {
       heading: 'The photographers behind the poem',
@@ -266,7 +294,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Re-read lines 1 to 12. How does Duffy present the contrast between the photographer’s work and his life at home? Refer to language, form and structure.',
+        'Close-reading practice, not an exam question (the 4ET1 exam asks you to compare the whole poem with another). Re-read lines 1 to 12. How does Duffy present the contrast between the photographer’s work and his life at home? Refer to language, form and structure.',
     },
     {
       title: 'The face in the tray',
@@ -290,7 +318,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Re-read stanza 3. How does Duffy show the photographer’s memory of what he witnessed breaking through his professional calm?',
+        'Close-reading practice, not an exam question (the 4ET1 exam asks you to compare the whole poem with another). Re-read stanza 3. How does Duffy show the photographer’s memory of what he witnessed breaking through his professional calm?',
     },
     {
       title: 'The editor, the reader and the flight',
@@ -318,7 +346,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Re-read stanza 4. How does Duffy present the public’s reaction to the photographer’s work, and in what state does the ending leave the photographer?',
+        'Close-reading practice, not an exam question (the 4ET1 exam asks you to compare the whole poem with another). Re-read stanza 4. How does Duffy present the public’s reaction to the photographer’s work, and in what state does the ending leave the photographer?',
     },
   ],
 
@@ -545,13 +573,14 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
+      'Know what the paper sets. In the Edexcel International GCSE (4ET1), the anthology poems are examined in Section B of Paper 1, where you answer one of two questions, and both are comparisons. One names two Part 3 poems; the other names one, and you choose the second. Both ask about language, form and structure, and Pearson suggests 40 minutes. Every Part 3 poem is printed in a Poetry Booklet that comes with the paper, so you work from the text, not from memory. An answer that discusses only one poem cannot go above Level 2 of the five in Pearson’s mark scheme. AQA also sets this poem and examines it differently, so AQA students should use this site’s Power and Conflict guide to it.',
       'Read the last line carefully. Its plural pronoun most naturally means the people at home, not the photographer. Pearson’s examiners, reporting on the November 2023 exam, noted an occasional misunderstanding that the photographer did not care; the poem shows the opposite, and a strong answer explains why his impassive face is not indifference.',
       'Treat the regular form as meaning, not decoration. Four matching sestets and the same rhyme scheme in every stanza mirror the order of the darkroom; the best answers show where that order strains, in the minor sentences of lines 6 and 9, the short, abrupt sentences that open lines 7 and 13, and the run-on lines at 16 and 21.',
-      'Use context in one precise sentence where it sharpens a point: the three conflicts behind line 6, or the Sunday magazine that printed photographs like these. A paragraph of history earns less than a sentence that changes how a quotation reads.',
+      'Context is not assessed in either poetry section of 4ET1 Paper 1, as Pearson’s examiners’ reports say, so a paragraph of history is not rewarded. Use context only where one precise sentence changes how a quotation reads: the three conflicts behind line 6, or the Sunday magazine that printed photographs like these.',
       'Argue about the ambiguity of the ending rather than silently choosing one reading. Is his blank face a mask or numbness, and is he looking down at England, where his pictures are sold, or towards the wars where he takes them? Say which reading you find more convincing and why.',
       'Compare throughout. Pearson’s mark schemes say that it is not enough to summarise or paraphrase the poems, or simply to list literary devices, and that some personal response is expected: say what the poems make you think and feel, and support it with analysis.',
-      'Choose your second poem from Part 3. Disabled and The Bright Lights of Sarajevo, sometimes paired with this poem, are Part 2 texts set for English Language A, not for this paper.',
-      'Learn the anthology’s wording, from page 63, which is also what the exam paper prints. It has darkroom as one word in line 1 and the reader in the singular in line 21, and even an example planning grid in Pearson’s own Getting Started Guide gets the wording of the church simile in line 4 wrong, so check every line you learn against the anthology itself.',
+      'When the 4ET1 question names only War Photographer, choose your second poem from Part 3, and pick one in which the focus of the question matters: Pearson’s mark schemes ask for an appropriate poem. Disabled and The Bright Lights of Sarajevo, sometimes paired with this poem, are Part 2 texts set for English Language A, not for this paper.',
+      'In the 4ET1 exam, quote from the copy in front of you, not from memory: the Poetry Booklet prints the anthology’s wording from page 63, with darkroom as one word in line 1 and the reader in the singular in line 21. Other printings differ, and even an example planning grid in Pearson’s own Getting Started Guide gets the wording of the church simile in line 4 wrong, so revise from the anthology itself.',
     ],
   },
 
@@ -796,6 +825,26 @@ export const guide: StudyGuide = {
       label:
         'Pearson, 4ET1 Paper 1 mark scheme, June 2024: Section B rewards comparison; a degree of personal response is required; it is not sufficient to summarise or paraphrase, or simply to list literary devices.',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-rms-20240822.pdf',
+    },
+    {
+      label:
+        'Pearson Edexcel International GCSE English Literature specification, Issue 3 (August 2025), read for the exam-format audit of 10 October 2026: Section B of Paper 1 (Component 1 in this issue) is one question from a choice of two, comparing two poems from Part 3; closed book, but the anthology poems are provided in the examination.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Specification%20and%20sample%20assessments/international-gcse-english-literature-specification.pdf',
+    },
+    {
+      label:
+        'Pearson, 4ET1/01R question paper, Monday 12 May 2025: Question 3 is exam practice question 1 in this guide, word for word, and Question 2 names two poems; one question from Section B, 40 minutes suggested, and the poems included with the paper in a separate Poetry Booklet.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01r-que-20250513.pdf',
+    },
+    {
+      label:
+        'Pearson, 4ET1 Paper 1R mark scheme, June 2025: Section B is marked on one grid of five levels; the mark cannot go beyond the top of Level 2 if only one poem has been considered; for Question 3 candidates may choose any other appropriate poem.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01r-rms-20250821.pdf',
+    },
+    {
+      label:
+        'Pearson, 4ET1 Paper 1 examiners’ report, June 2025: candidates receive a clean copy of the anthology poems; 40 minutes for Section B; context is not assessed in either poetry section.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-pef-20250821.pdf',
     },
     {
       label:

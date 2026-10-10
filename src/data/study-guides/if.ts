@@ -65,6 +65,26 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * responses to If- were stronger than to the Thomas poem; Epictetus, a Greek,
  * was called a Roman; and several readings stated as facts were marked as
  * readings.
+ *
+ * EXAM FORMAT (10 October 2026), from a reading that day of Pearson's 4ET1
+ * papers, mark schemes and reports, specimen to June 2025. Section B offers two
+ * questions and both are comparisons: Question 2 names two Part 3 poems,
+ * Question 3 names one and the candidate chooses the second, and all of Part 3
+ * is supplied in a separate Poetry Booklet. Fixed: the last tip said the
+ * anthology is provided, where only Part 3 is; and the passage questions did
+ * not say they are practice, though the exam never sets a question on part of
+ * one anthology poem. Added: a tip on the two shapes and the mark scheme's
+ * one-poem limit, with If- as the one named poem (giving advice) in the May
+ * 2024 Paper 1R. The May 2023 Paper 1R pairing was confirmed from Pearson's own
+ * summary of questions set.
+ *
+ * VERIFIED (10 October 2026), by a second reading of the same documents. Fixed:
+ * the first tip said that explaining the delayed main clause is structural
+ * analysis many answers miss, which no source here supports, and the June 2024
+ * Paper 1R examiners' report (PDF page 26) says many candidates did comment on
+ * the poem's list of conditions; the tip now says what both questions ask for.
+ * The June 2024 mark scheme's source label said its Question 3 content covers
+ * If- only, where it also sets the test for the second poem.
  */
 export const guide: StudyGuide = {
   slug: 'if',
@@ -164,7 +184,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Explore how Kipling presents the right response to success, failure and loss in lines 9 to 16. Write about the personification, the balanced structure of the lines, and the choice of verbs.',
+        'Explore how Kipling presents the right response to success, failure and loss in lines 9 to 16. Write about the personification, the balanced structure of the lines, and the choice of verbs. This is close-reading practice for the If- half of a comparison, not an exam question.',
     },
     {
       title: 'Hold on',
@@ -199,7 +219,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Kipling present endurance in lines 17 to 24? Write about the gambling image, the language of the body, and the way the stanza builds to its final command. Note that the stanza has only two conditions, each four lines long, fewer than any other stanza.',
+        'How does Kipling present endurance in lines 17 to 24? Write about the gambling image, the language of the body, and the way the stanza builds to its final command. Note that the stanza has only two conditions, each four lines long, fewer than any other stanza. This is close-reading practice for the If- half of a comparison, not an exam question.',
     },
     {
       title: 'The reward',
@@ -234,7 +254,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Explore how Kipling builds to the ending of the poem in lines 25 to 32. Write about the social world of the stanza, the image of time, and the effect of the final two lines on your reading of the whole poem.',
+        'Explore how Kipling builds to the ending of the poem in lines 25 to 32. Write about the social world of the stanza, the image of time, and the effect of the final two lines on your reading of the whole poem. This is close-reading practice for the If- half of a comparison, not an exam question.',
     },
   ],
 
@@ -385,14 +405,15 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
-      'Analyse the sentence, not only the words. The whole poem is one sentence: thirteen lines begin with If, and the main clause does not arrive until line 31. Saying what that delay does, making the son and the reader wait and endure, is structural analysis that many answers miss.',
+      'Analyse the sentence, not only the words. The whole poem is one sentence: thirteen lines begin with If, and the main clause does not arrive until line 31. Saying what that delay does, making the son and the reader wait and endure, is analysis of structure, which both Section B questions ask for alongside language and form.',
       'Be precise about rhythm. Every odd-numbered line ends on an unstressed syllable (“about you”, “waiting”, “master”) and every even-numbered line on a stress, which gives the poem its steady, swinging regularity. Vague remarks about the poem’s music earn little: the January 2020 examiners’ report singled them out as underdeveloped.',
       'The same report found answers on If- stronger than those on the Thomas poem, with many commenting on its contrasts, on the personification of Triumph and Disaster, and on how “my son” gives the poem a personal message of advice. It also criticised answers that simply named a term, gave an example and added only a very brief comment. Choose fewer examples and develop each one.',
       'Compare throughout. That report also found many candidates wrote about each poem separately and compared them only in the introduction and conclusion. Make every paragraph about both poems.',
       'Keep context brief. The specification describes Section B as testing the analysis of language, form and structure and the links between poems; context is not among the skills it lists for this section, and the January 2020 examiners’ report says context is not assessed there, though it may be included when it supports a relevant point. Jameson, John Kipling and the Empire are worth a clause only when they sharpen a point about the words.',
       'Write about the speaker, not Kipling. The poem never says I or me, and its only first-person word is “my”, in the last line. A father whose identity is revealed late is more accurate, and more interesting, than an assumption that this is Kipling talking to John.',
       'Have an opinion about the ideal. Is it admirable self-command, or an impossible standard that asks a man to hide his feelings? The strongest answers argue one view and show they have weighed the other, using lines 20 and 32 as evidence.',
-      'The anthology is provided in the exam, so give line numbers and quote short, exact phrases rather than whole lines. The papers checked for this guide (January 2020, May 2023 and May 2024) all advised spending 40 minutes on the Section B question.',
+      'Know the two question shapes. Section B offers a choice of two questions, and both are comparisons: one names two poems, and the other names one and asks you to choose a second from Part 3. If- has appeared in both: named with Prayer Before Birth in the May 2023 Paper 1R, and, in the May 2024 Paper 1R, as the one named poem in a question on giving advice. When the second poem is yours to choose, pick one in which the question’s focus is significant, and give both poems real weight: Pearson’s mark scheme does not let an answer on only one poem rise above the second of its five levels.',
+      'The Part 3 poems are provided in the exam, in a separate Poetry Booklet that numbers every fifth line as the anthology does, so give line numbers and quote short, exact phrases rather than whole lines. The papers checked for this guide (January 2020, May 2023 and May 2024) all advised spending 40 minutes on the Section B question.',
     ],
   },
 
@@ -603,6 +624,21 @@ export const guide: StudyGuide = {
       label:
         'Pearson 4ET1/01 question paper, 13 May 2024 (P75723A): the two Section B question shapes (two named poems, or one named poem and one of the candidate’s choice) and the standard instruction to refer to language, form and structure; 40 minutes advised',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20240514.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1/01R question paper, 13 May 2024 (P75724A, June 2024 series): Question 3 (PDF page 6) names only If- and asks for a comparison of giving advice in it and a second poem of the candidate’s choice; 40 minutes advised; the separate Poetry Booklet (cover PDF page 13) prints If- on PDF page 14 with a number beside every fifth line, matching the anthology. Read on 10 October 2026, as were the booklets of the June 2023, June 2024 and June 2025 Paper 1s, which number it the same way',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01r-que-20240514.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1/01R mark scheme, June 2024: the Question 3 indicative content (PDF pages 10 and 11) is written for If- and treats the second poem only in general terms, because candidates choose it themselves, though it must be a poem in which giving advice is significant; both Section B grids (PDF pages 9 and 12) have five levels, and an answer that considers only one poem cannot go beyond the top of Level 2',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01r-rms-20240822.pdf',
+    },
+    {
+      label:
+        'Pearson, Summary of questions set for 4ET1, January to November 2023 (Issue 1, April 2024), PDF page 1: the June 2023 R paper’s Question 2 compares thoughts about life in If- and Prayer Before Birth, which confirms the May 2023 question above from Pearson’s own document',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Teaching%20and%20learning%20materials/summary-of-questions-set-for-4et1.pdf',
     },
     {
       label:

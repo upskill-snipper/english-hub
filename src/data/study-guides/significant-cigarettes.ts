@@ -49,6 +49,32 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * London; Baryn is not called a town; and the examiners' report said the weakest
  * answers "often" stayed with the opening, not "rarely" left it. Readings that
  * were stated as Tremain's intentions are now framed as readings.
+ *
+ * An audit of every question and tip on 26 September 2026, against the 4EA1/02
+ * paper that set this text (it prints the whole extract), the specification and
+ * the examiners' report. Paper 2 Section A sets one Part 2 text with no choice
+ * and asks one essay question on the whole extract; it is never a comparison.
+ * The three passage questions used that exam wording with a line range and
+ * nothing to say they were not exam questions: they are now labelled as
+ * close-reading practice. The tips called the insert the extract booklet (the
+ * 2020 paper said Extract Booklet; current papers say Source Booklet) and never
+ * said the question is on this text alone, and the source note on the report
+ * still said "rarely". Do not put a line range on an exam question here, or
+ * pair this text with another as the exam's: pairing belongs to coursework.
+ *
+ * Second check, 10 October 2026. The coursework guidance told the student to
+ * compare, but Assignment A is marked for understanding each text and for its
+ * language and structure, with no comparison objective, so it now asks for
+ * analysis of each text. The context said the text "is set for Paper 2", which
+ * reads as if it were sure to be set; each paper names one Part 2 text. Past
+ * stems are not all "presents": June 2023 asked how Frost creates sympathy. The
+ * 2020 Extract Booklet numbers its own lines; read from the PDF's word
+ * positions, they match the anthology's for 125 lines and then run one behind,
+ * so a tip now says to take line numbers from the booklet. The first tip now
+ * passes on the November 2020 report's complaint about answers that followed
+ * the bullets rigidly. The fact-check above says three texts, not "three or
+ * more": the specification's Assignment A list does say three, but its Setting
+ * the question paragraph says three or more. Three is the number to give.
  */
 export const guide: StudyGuide = {
   slug: 'significant-cigarettes',
@@ -108,7 +134,7 @@ export const guide: StudyGuide = {
     },
     {
       heading: 'How the text is examined',
-      body: 'In English Language A the text is set for Paper 2, Section A, which has one essay question on a poem or prose text from Part 2 of the anthology; the specification advises 45 minutes, and the text is printed in the extract booklet in the exam. Past questions ask how the writer presents something and list what to write about, ending with the use of language and structure. Pearson has already set a question on the character of Lev, with bullet points on his feelings about home and about the future: its examiners’ report for the November 2020 series discusses the answers. Students taking the coursework option instead write one assignment on three texts from Part 2, including at least one poem and one prose text, so this extract may also be written about alongside a poem.',
+      body: 'In English Language A the text is one of the Part 2 texts that Paper 2, Section A can set. Each paper names one poem or prose text from Part 2 and asks one essay question on it: there is no choice of text, and the question is on that text alone, not a comparison. The specification advises 45 minutes. When this is the text set, the whole extract is printed for you in the Source Booklet (the 2020 paper that set it called this the Extract Booklet). Past questions ask how the writer presents something, or creates an effect such as sympathy, and list what to write about, ending with the use of language and structure. Pearson has already set a question on the character of Lev, with bullet points on his feelings about home and about the future: its examiners’ report for the November 2020 series discusses the answers. Students taking the coursework option instead write one assignment on three texts from Part 2, including at least one poem and one prose text, so this extract may also be written about alongside a poem.',
     },
   ],
 
@@ -312,7 +338,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer present Lev’s feelings at the start of his journey in lines 9-27? You should write about what he does and thinks on the coach, what he expects of England, and the use of language and structure.',
+        'Close-reading practice on lines 9-27, not an exam question (the exam question on this text covers the whole extract): how does the writer present Lev’s feelings at the start of his journey? Think about what he does and thinks on the coach, what he expects of England, and the use of language and structure.',
     },
     {
       title: 'Marina and the storks',
@@ -340,7 +366,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer use Lev’s memories in lines 38-57 to present his grief? You should write about what he remembers, what brings the memories back, and the use of language and structure.',
+        'Close-reading practice on lines 38-57, not an exam question (the exam question on this text covers the whole extract): how does the writer use Lev’s memories to present his grief? Think about what he remembers, what brings the memories back, and the use of language and structure.',
     },
     {
       title: 'The twenty-pound note',
@@ -372,7 +398,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer present Lev’s hopes for his new life in lines 128-150? You should write about what Lev sees on the note, what he believes about the English, and the use of language and structure.',
+        'Close-reading practice on lines 128-150, not an exam question (the exam question on this text covers the whole extract): how does the writer present Lev’s hopes for his new life? Think about what Lev sees on the note, what he believes about the English, and the use of language and structure.',
     },
   ],
 
@@ -651,7 +677,7 @@ export const guide: StudyGuide = {
       {
         question:
           'How does the writer present Lev’s hopes and fears about his new life in England? You should write about: what Lev imagines England will be like; what he needs and what he fears; the use of language and structure. Support your answer with close reference to the extract, including brief quotations.',
-        skill: 'Language and structure analysis, with a focus on the ending',
+        skill: 'Language and structure analysis across the whole extract, building to the ending',
         guidance: [
           'Set up the need: the closed sawmill, the tin jewellery that is not enough, and the list of Maya’s needs.',
           'Analyse England is my hope as one of the plainest things Lev says, and the cosy, second-hand picture of immigrants that comes before it.',
@@ -665,20 +691,23 @@ export const guide: StudyGuide = {
         question:
           'Coursework option: discuss how the writers use language and structure to present people imagining a different life in Significant Cigarettes, The Story of an Hour and An Unknown Girl.',
         skill:
-          'Non-examined assessment: one assignment on three anthology texts, including at least one poem and one prose text',
+          'Non-examined assessment, Assignment A: one essay on three Part 2 texts, including at least one poem and one prose text',
         guidance: [
           'Define the focus in your introduction: each central figure looks out at a world and imagines a life other than the one they have.',
           'Significant Cigarettes: a life imagined out of need, built from second-hand pictures of England and shadowed by grief and guilt.',
           'The Story of an Hour: Mrs Mallard at her open window after news of her husband’s death, imagining years that will belong to her alone.',
           'An Unknown Girl: the speaker in an evening bazaar in India, holding on to a culture she can touch only briefly, knowing the henna will fade.',
-          'Compare the language each writer uses for the imagined life: Lev’s clichés, Chopin’s imagery of spring and open sky, Alvi’s bright details that will not last.',
-          'Compare structure: Tremain’s single day ending in an open resolve, Chopin’s hour ending in a sudden reversal, Alvi’s short lines and closing image of longing.',
-          'Conclude on which imagined life seems most fragile, and why, moving between the texts in each paragraph where you can.',
+          'Analyse the language each writer uses for the imagined life: Lev’s clichés, Chopin’s imagery of spring and open sky, Alvi’s bright details that will not last.',
+          'Analyse the structure of each: Tremain’s single day ending in an open resolve, Chopin’s hour ending in a sudden reversal, Alvi’s short lines and closing image of longing.',
+          'Give each text its own close analysis. Brief links between them help the essay hang together, but the assignment is marked for understanding each text and analysing its language and structure, not for comparison as such.',
+          'Conclude on which imagined life seems most fragile, and why.',
         ],
       },
     ],
     tips: [
-      'In the exam the text is printed in the extract booklet, so you do not need to memorise quotations. Pearson’s examiners advise using the time to remind yourself of the text rather than rereading it, which only works if you know it well before you go in.',
+      'Know how this text is examined. Paper 2 Section A sets one Part 2 text, with no choice, and asks one essay question on that text alone, with about 45 minutes advised. Treat the bullet points under the question as prompts, not a plan: Pearson’s examiners faulted answers on this text that followed them rigidly and left language and structure to the end. It is never a comparison: writing about this extract alongside other Part 2 texts belongs to the coursework option, where one essay covers three.',
+      'When this is the Paper 2 text, the whole extract is printed for you in the Source Booklet (the 2020 paper that set it called this the Extract Booklet), so you do not need to memorise quotations. Pearson’s examiners advise using the time to remind yourself of the text rather than rereading it, which only works if you know it well before you go in.',
+      'Take line numbers from the booklet in front of you. Every line number in this guide is the anthology’s, and the booklet numbers its own lines: on the 2020 paper they matched for the first 125 lines and then ran one behind to the end.',
       'Cover the whole extract, from the coach at sunrise to the banknote at night. Pearson’s examiners noted that the weakest answers on Lev often did not get past the opening and the smoking, while stronger answers used the full extract.',
       'Keep quotations short and embedded in your sentences. The examiners’ report on this text observed that long quotations slowed students down on the way to their analysis.',
       'Name a technique only to explain it. Stronger answers, the examiners noted, explored the tone, the flashbacks, the descriptions of home, the parallel with Lydia and the significance of the few English words Lev can say, rather than listing devices.',
@@ -905,17 +934,22 @@ export const guide: StudyGuide = {
     },
     {
       label:
-        'Pearson Edexcel International GCSE English Language A (4EA1) specification, Issue 7, August 2025 (served at this address, which still carries the Issue 6 filename): Paper 2 Section A is one essay question on a Part 2 text, made available in the examination, with 45 minutes advised; coursework Assignment A is one response on three Part 2 texts, at least one poem and one prose text, with a suggested task format',
+        'Pearson Edexcel International GCSE English Language A (4EA1) specification, Issue 7, August 2025 (served at this address, which still carries the Issue 6 filename): Paper 2 Section A is one essay question on a Part 2 text, made available in the examination, with 45 minutes advised; coursework Assignment A is one response on three Part 2 texts, at least one poem and one prose text, with a suggested task format, assessed on reading and understanding and on language and structure, with no comparison objective',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Language%20A/2016/Specification%20and%20sample%20assessments/9781446954379-int-gcse-englang-a-iss6-02-02-2023.pdf',
     },
     {
       label:
-        'Pearson, 4EA1/02 question paper (cover dated Friday 5 June 2020; file dated 5 November 2020): Question 1 on the character of Lev in Significant Cigarettes, with bullet points on his thoughts and feelings about home and about the future, and the use of language and structure. The question here is modelled on it, not copied',
+        'Pearson, 4EA1/02 question paper (cover dated Friday 5 June 2020; file dated 5 November 2020): Question 1 on the character of Lev in Significant Cigarettes, with bullet points on his thoughts and feelings about home and about the future, and the use of language and structure. The question here is modelled on it, not copied. Its Extract Booklet prints the whole extract and numbers its own lines, which match the anthology’s to line 125 and run one behind after it (compared by script from the PDF, 10 October 2026)',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Language%20A/2016/exam-materials/4EA1_02_que_20201105.pdf',
     },
     {
       label:
-        'Pearson, Examiners’ Report, Principal Examiner Feedback, November 2020, 4EA1 Paper 2: weaker answers rarely moved past the opening and the smoking; stronger answers covered the full extract, the contrast with Lydia, the almost defiant ending, flashbacks and intertwined time frames, tone, the descriptions of home and the English words Lev can speak; advice to use short embedded quotations and to use exam time to remind rather than reread; a candidate’s point that the sawmill line shows even nature gave up on Lev. Paraphrased, not quoted',
+        'Pearson, 4EA1/02 question paper, Monday 12 June 2023: its Section A question asked how the writer creates sympathy for the boy in Out, Out-, with about 45 minutes advised, so past questions do not all ask how the writer presents something',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Language-A/2016/Exam-materials/4ea1-02-que-20230613.pdf',
+    },
+    {
+      label:
+        'Pearson, Examiners’ Report, Principal Examiner Feedback, November 2020, 4EA1 Paper 2: the weakest answers often did not move past the opening and the smoking; less successful answers followed the bullet points rigidly and left language and structure to the end; stronger answers covered the full extract, the contrast with Lydia, the almost defiant ending, flashbacks and intertwined time frames, tone, the descriptions of home and the English words Lev can speak; advice to use short embedded quotations and to use exam time to remind rather than reread; a candidate’s point that the sawmill line shows even nature gave up on Lev. Paraphrased, not quoted',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Language%20A/2016/exam-materials/4EA1_02_pef_20210211.pdf',
     },
     {

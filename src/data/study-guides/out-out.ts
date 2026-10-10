@@ -44,11 +44,35 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * else is paraphrased, with a line number. Adding a quotation here, or to the
  * existing page, means removing one.
  *
+ * UPDATE, 10 October 2026: the existing page no longer quotes that line-15
+ * phrase. A later fix on 26 September left it quoting only phrases this file
+ * already quotes, so by the validator's rules the URL as a whole now quotes
+ * this file's 41 words, not 45. no-poem-quoted-beyond-fair-dealing.test.ts
+ * counts the page and this guide together; run it before adding a quotation.
+ *
  * WHAT THE EXISTING PAGE GETS WRONG, and this file does not repeat: the boy
  * pleads with his SISTER, not with the doctor; the poem never says the doctor
  * amputates; the poem gives no reason why "no one believed"; and the poem does not
  * put the yard in Vermont: the view stretches into it. The page also labels the poem
  * 4ET1 Literature, but it is in Part 2 of the anthology, which is 4EA1 only.
+ * UPDATE, 10 October 2026: the existing page has since been corrected on all five
+ * points (its source and its served text checked that day). They stay listed here
+ * as the errors this file must not repeat.
+ *
+ * EXAM-FORMAT AUDIT, 26 September 2026, against the Issue 7 specification and
+ * the June 2023 4EA1/02 paper. Paper 2 Section A sets one essay on the whole of
+ * one named Part 2 text, printed for the candidate (in June 2023 on the question
+ * paper itself, without line numbers), with three bullets ending on language and
+ * structure, and never a comparison. The three extract questions were exam-shaped
+ * questions on line ranges under the label "The question", so they now say they
+ * are close-reading practice. The second essay asked how the writer "uses
+ * contrast", a technique-led stem the paper does not set, with four bullets; it
+ * now asks how the writer presents something, with three. The coursework guidance
+ * told the student to organise by comparison; Assignment A is marked for
+ * understanding and for language and structure only (the comparison objective is
+ * assessed on Paper 1 alone), so it now asks for analysis of each text. A first
+ * tip says what the paper sets. No mark tariffs: the validator keeps those to
+ * ExamPlacementCard.
  */
 export const guide: StudyGuide = {
   slug: 'out-out',
@@ -229,7 +253,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Frost use the setting in lines 1 to 9 to prepare the reader for the accident?',
+        'Close-reading practice on lines 1 to 9, not an exam question (the exam sets one essay on the whole poem): how does Frost use the setting to prepare the reader for the accident?',
     },
     {
       title: 'Supper, and the accident',
@@ -260,7 +284,8 @@ export const guide: StudyGuide = {
           note: 'The metaphor makes his life a liquid he tries to hold in, and the line break before it delays the realisation of how much is at stake.',
         },
       ],
-      question: 'How does Frost present the moment of the accident in lines 13 to 22?',
+      question:
+        'Close-reading practice on lines 13 to 22, not an exam question (the exam sets one essay on the whole poem): how does Frost present the moment of the accident?',
     },
     {
       title: "The boy's plea and his death",
@@ -288,7 +313,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Frost present the death of the boy and the reaction of the people around him in lines 22 to 34?',
+        'Close-reading practice on lines 22 to 34, not an exam question (the exam sets one essay on the whole poem): how does Frost present the death of the boy and the reaction of the people around him?',
     },
   ],
 
@@ -442,7 +467,8 @@ export const guide: StudyGuide = {
       {
         question:
           'How does the writer present the accident and its effects in ‘Out, Out-’? In your answer, you should write about: the setting before the accident; how the saw, the boy and the other people are presented; the use of language and structure. Support your answer with close reference to the poem, including brief quotations.',
-        skill: 'Language, form and structure analysis of an anthology poem',
+        skill:
+          'Paper 2 Section A essay: understanding the poem, and analysis of language and structure',
         guidance: [
           'Open with an overview that answers the question: a calm, beautiful evening is broken by a sudden accident, and the poem ends with a death the survivors do not mourn.',
           "Lines 1 to 9: analyse the setting as a false calm. Pair the sensory beauty (the “Sweet-scented” wood, the mountain view at sunset) with the saw's animal noise, and explain the dramatic irony of “nothing happened”.",
@@ -454,8 +480,9 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          "How does the writer use contrast in ‘Out, Out-’? In your answer, you should write about: the setting and the accident; the boy as worker and as child; the boy's death and the reaction of those around him; the use of language and structure.",
-        skill: 'Language and structure analysis, following one idea through the whole poem',
+          'How does the writer present the fragility of life in ‘Out, Out-’? In your answer, you should write about: the contrast between the calm evening and the sudden accident; the boy as both worker and child, and the reaction of those around him to his death; the use of language and structure. You should support your answer with close reference to the poem, including brief quotations.',
+        skill:
+          'Paper 2 Section A essay: understanding the poem, and analysis of language and structure',
         guidance: [
           'Define the contrasts in your first paragraph and say what they add up to: a poem in which beauty, childhood and life itself are shown to be fragile.',
           "Setting against accident: the pastoral opening and the sweet smell of wood against the saw's animal noise, and the calm statement in line 9 against what follows.",
@@ -467,28 +494,30 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Coursework (Assignment A): Discuss how the writers use language and structure to present sudden loss in ‘Out, Out-’, ‘Disabled’ and ‘The Story of an Hour’.',
-        skill: 'Comparison across three anthology texts, one of them prose',
+          "Coursework (Assignment A): Discuss how the writers use language and structure to present sudden loss in ‘Out, Out-’, ‘Disabled’ and ‘The Story of an Hour’. In your response you should: discuss the writers' ideas and perspectives about sudden loss; discuss how the writers use language and structure to achieve their effects; include textual references to illustrate the points you make.",
+        skill:
+          'Coursework option, Assignment A: three Part 2 texts, at least one poem and one prose text',
         guidance: [
           'Set out a line of argument across all three: each shows a life changed in a moment, and each asks how other people respond to it.',
           '‘Out, Out-’: the accident told in a few lines after a slow opening, the personified saw, the shared blame, and the survivors who return to work.',
-          "‘Disabled’: Owen's soldier, who lied about his age to enlist, now sits in a wheelchair waiting for night. Compare Owen's movement between past and present with Frost's single forward-moving account.",
-          "‘The Story of an Hour’: Louise Mallard is told her husband has died in a railway accident, feels a sudden freedom, and dies when he walks in alive. Compare the doctors' confident explanation of her death with the silence of Frost's onlookers.",
-          'Organise by points of comparison rather than text by text: the moment of loss, the language that presents it, the reactions of others, and the ending.',
-          "Include textual references from all three texts, keep quotations brief, and explain how each writer's choices shape the reader's response.",
+          "‘Disabled’: Owen's soldier, who lied about his age to enlist, now sits in a wheelchair waiting for night. Analyse Owen's movement between past and present; a brief contrast with Frost's single forward-moving account can sharpen the point.",
+          "‘The Story of an Hour’: Louise Mallard is told her husband has died in a railway accident, feels a sudden freedom, and dies when he walks in alive. Analyse how Chopin presents the doctors' confident explanation of her death; a brief link to the silence of Frost's onlookers can sharpen the point.",
+          'Plan around the focus (the moment of loss, the language that presents it, the reactions of others, the ending), but give each text its own close analysis: the assignment is marked for understanding each text and analysing its language and structure, not for comparison as such.',
+          "Include textual references from all three texts, keep quotations brief, and explain how each writer's choices shape the reader's response. The advised length is about 1,200 words, so share your evidence across the three texts before you write.",
         ],
       },
     ],
     tips: [
-      'In the 4EA1 examination you are given the text of the poem: the June 2023 paper printed it in full. You do not need to memorise long quotations; you need to know the poem well enough to find the right lines quickly, and to analyse short phrases closely.',
+      'Know what the paper sets. Section A of Paper 2 is one compulsory essay question on one Part 2 text, named on the paper, with about 45 minutes advised. If it is ‘Out, Out-’, the question is about the whole poem, which is printed for you, since the anthology may not be taken in. It asks how the writer presents something, or creates an effect, with bullet points that in past papers end with the use of language and structure. It is not a comparison: the other Part 2 texts come in only if you take the coursework option instead.',
+      'The June 2023 paper printed the poem in full on the question paper itself, without line numbers. You do not need to memorise long quotations; you need to know the poem well enough to find the right lines quickly, and to analyse short phrases closely. Quote the words rather than relying on the line numbers used in this guide.',
       'Pearson set this poem in the June 2023 paper, with a question on how Frost creates sympathy for the boy. Be ready for a question on the boy, on the saw, on the other people, or on the ending.',
       'Write about the saw carefully. Frost does not say it attacked the boy: it only “seemed to leap”, and the boy may have offered his hand. An answer that tracks the self-correction in lines 16 to 18 beats one that calls the saw evil.',
       'Do not invent. The poem does not name the boy, does not say the doctor cut off the hand, and does not say who the onlookers are or who took his pulse. Precise reading is rewarded.',
       'Argue about the ending. Saying that it is cold is competent; weighing whether it shows callousness or hard necessity, and saying which the evidence supports, is what marks out the strongest answers.',
       "Use the title briefly and precisely. One or two sentences on the Macbeth allusion, tied to the speed of the boy's death, are worth more than a retelling of the play.",
-      "Comment on structure as well as language: the slow opening, the sudden accident, the compressed death and the single first-person line all shape the reader's response.",
+      "Comment on structure as well as language, since the last bullet of past questions has asked for both: the slow opening, the sudden accident, the compressed death and the single first-person line all shape the reader's response.",
       "Copy the anthology's text exactly. It prints buzz saw as two words and leaped rather than leapt.",
-      'For the coursework, the specification requires at least one prose text among your three. The Story of an Hour pairs well, because it also ends with a sudden death and a reaction to it.',
+      'For the coursework option (Assignment A), you write one essay on three Part 2 texts, and the specification requires at least one poem and one prose text among them. The Story of an Hour works well beside this poem, because it also ends with a sudden death and a reaction to it. The essay is marked for understanding each text and analysing its language and structure, not for comparison as such.',
     ],
   },
 
@@ -655,7 +684,7 @@ export const guide: StudyGuide = {
     },
     {
       label:
-        'Pearson Edexcel International GCSE English Language A, Paper 2, June 2023 (P72391A): reprints the poem word for word as the anthology does, and sets a question on how Frost creates sympathy for the boy.',
+        'Pearson Edexcel International GCSE English Language A, Paper 2, June 2023 (P72391A): reprints the poem word for word as the anthology does, on the question paper itself and without line numbers, and sets a question on how Frost creates sympathy for the boy, with about 45 minutes advised for Section A; copies of the anthology may not be brought in.',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Language-A/2016/Exam-materials/4ea1-02-que-20230613.pdf',
     },
     {
@@ -675,7 +704,7 @@ export const guide: StudyGuide = {
     },
     {
       label:
-        'Pearson Edexcel International GCSE English Language A specification, Issue 7 (August 2025): Paper 2 Section A sets one essay question on a Part 2 text, provided in the examination; Assignment A uses three Part 2 texts, at least one poetry and one prose.',
+        'Pearson Edexcel International GCSE English Language A specification, Issue 7 (August 2025): Paper 2 Section A sets one essay question on a Part 2 text, provided in the examination, with 45 minutes advised; Assignment A uses three Part 2 texts, at least one poetry and one prose, in a response of about 1,200 words assessed on reading and understanding and on language and structure, with no comparison objective.',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Language%20A/2016/Specification%20and%20sample%20assessments/9781446954379-int-gcse-englang-a-iss6-02-02-2023.pdf',
     },
     {

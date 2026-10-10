@@ -14,6 +14,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { t } from '@/lib/i18n/t'
+import { ANTHOLOGY_SOURCE } from '@/lib/board/edexcel-igcse-anthology'
 import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
@@ -85,8 +86,14 @@ const anthology: AnthologyPoem[] = [
     href: '/igcse/edexcel/poetry/la-belle-dame-sans-merci',
     themes: ['Obsession', 'Deception', 'Death'],
     publicDomain: true,
+    // Until 2 October 2026 this said the anthology prints the 1820 Indicator
+    // version, the error the poem's own page corrected on 26 September. The
+    // anthology prints the earlier knight-at-arms text (read from the Pearson
+    // PDF, see src/data/study-guides/la-belle-dame-sans-merci.ts); the Indicator
+    // revision opens with a "wretched wight", and a student quoting it would
+    // misquote the anthology's text.
     summary:
-      'A pale, wandering knight tells how a mysterious fairy woman enchanted him and left him alone on a cold hillside. Edexcel anthology prints the 1820 Indicator version.',
+      'A pale, wandering knight tells how a mysterious fairy woman enchanted him and left him alone on a cold hillside. The anthology prints the earlier knight-at-arms text, not the 1820 Indicator revision.',
   },
   {
     number: 4,
@@ -174,7 +181,7 @@ const anthology: AnthologyPoem[] = [
     themes: ['War', 'Resilience', 'Hope'],
     publicDomain: false,
     summary:
-      'During the siege of Sarajevo, young couples meet in candlelit cafés and walk under starlight - life persisting amid devastation. Anthology Issue 2 prints additional stanza breaks.',
+      'During the siege of Sarajevo, young couples meet in candlelit cafés and walk under starlight - life persisting amid devastation. The anthology prints additional stanza breaks.',
   },
   {
     number: 12,
@@ -196,7 +203,7 @@ const anthology: AnthologyPoem[] = [
     themes: ['Identity', 'Race', 'Language and prejudice'],
     publicDomain: false,
     summary:
-      'The speaker challenges the term ‘half-caste’ by mocking its illogic, drawing on art, music and weather to expose its absurdity. Anthology Issue 2 uses the spelling ‘yu’ (not ‘you’).',
+      'The speaker challenges the term ‘half-caste’ by mocking its illogic, drawing on art, music and weather to expose its absurdity. The anthology uses the spelling ‘yu’ (not ‘you’).',
   },
 ]
 
@@ -331,12 +338,18 @@ export default async function EdexcelPoetryAnthologyPage() {
         aria-label="Anthology version notice"
         className="rounded-xl border border-amber-500/30 bg-amber-500/[0.06] p-5 text-body-sm text-card-foreground"
       >
+        {/* Until 26 September 2026 this notice named Issue 2 and said the full
+            anthology was available only through Pearson's school-licensed
+            editions. The current issue is 8 (February 2026), and Pearson
+            publishes it free as a PDF, so no licensed copy is needed. */}
         <p className="mb-2">
           <strong className="text-foreground">{await t('igcse.page.poetry.version_label')}</strong>{' '}
-          This site teaches the{' '}
-          <strong className="text-foreground">Edexcel IGCSE Anthology Issue 2</strong> (ISBN
-          978-1-446-93108-0, Pearson Education). Material differences from Issue 1 and from
-          freely-available online versions include:
+          This site teaches{' '}
+          <strong className="text-foreground">
+            Issue 8 (February 2026) of the Pearson Edexcel International GCSE English Anthology
+          </strong>{' '}
+          (ISBN 978-1-446-93108-0). Material differences from freely-available online versions
+          include:
         </p>
         <ol className="mb-2 list-decimal space-y-1 ps-5 text-muted-foreground">
           <li>
@@ -354,9 +367,18 @@ export default async function EdexcelPoetryAnthologyPage() {
           </li>
         </ol>
         <p className="text-body-xs text-muted-foreground">
-          © Pearson Education - quotations on individual set-text pages are short fair-dealing
-          extracts under CDPA s.30. The full anthology is available only through Pearson&rsquo;s
-          school-licensed editions.
+          Anthology © Pearson Education Limited 2026 - quotations on individual set-text pages are
+          short fair-dealing extracts under CDPA s.30. Pearson publishes the full anthology free as
+          a{' '}
+          <a
+            href={ANTHOLOGY_SOURCE.url}
+            className="underline underline-offset-2 hover:text-foreground"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            PDF on its qualifications website
+          </a>
+          .
         </p>
       </section>
 

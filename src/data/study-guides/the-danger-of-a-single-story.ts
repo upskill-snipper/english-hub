@@ -19,6 +19,39 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * quotations or a part of one, so it adds nothing to the total. A new phrase
  * added anywhere, even in an analysis sentence, spends from a budget that is
  * nearly used.
+ *
+ * EXAM-FORMAT CHECK, 26 September 2026, against the 4EA1 Paper 1 papers, mark
+ * schemes and examiners' reports from the 2016 samples to June 2026 (this text
+ * was Text Two in November 2024). The anthology text is always Text Two,
+ * printed in the Source Booklet beside an unseen Text One. Every short-answer
+ * question is on Text One; the anthology text has one question to itself, on
+ * language AND structure across the whole extract with no line range; and the
+ * comparison is always with the unseen Text One, never another anthology text.
+ * The three passage questions carried line ranges with nothing to say they
+ * were not exam questions, and are now labelled as close-reading practice. In
+ * the exam practice, the question on lines 28-60 now covers the whole extract,
+ * the question on how Adichie presents herself now asks about language and
+ * structure, the Alagiah comparison says in the question that it is a practice
+ * pairing (its guidance had called the unseen text the second text; it is
+ * Text One), and the tips now say what the paper sets. Do not add a retrieval
+ * question on this text, a language-only or structure-only exam question, or a
+ * line range to an exam question. Mark tariffs stay out: the validator
+ * reserves them for ExamPlacementCard.
+ *
+ * SECOND EXAM-FORMAT PASS, 26 September 2026. A tip said the examiner reads
+ * "the 83-line extract" in the Source Booklet and told students to revise with
+ * line numbers. The booklet prints the extract with its own line numbers, which
+ * need not be the anthology's (in June 2026 the Ralston extract's ran one
+ * behind after line 40: see between-a-rock-and-a-hard-place.ts), so the tip
+ * now says this guide's numbers are the anthology's and to check a reference
+ * against the booklet. Do not tell students the booklet's numbering matches.
+ *
+ * VERIFICATION, 10 October 2026. The whole-extract question on pity was badged
+ * as the one exam question on this text, which read as if it were the real
+ * question rather than its form. The context tip sits under what examiners
+ * reward but did not say that context is not assessed on this paper: the
+ * specification's objectives and the June 2026 grids never mention it. Both
+ * now say so. Do not badge a practice question as the exam question itself.
  */
 export const guide: StudyGuide = {
   slug: 'the-danger-of-a-single-story',
@@ -280,7 +313,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Adichie use her own childhood in lines 1-27 to introduce her argument about the danger of a single story?',
+        'Close-reading practice on lines 1-27, not an exam question (the exam asks about language and structure across the whole extract): how does Adichie use her own childhood to introduce her argument about the danger of a single story?',
     },
     {
       title: 'Fide and the roommate: the same mistake, twice',
@@ -316,7 +349,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'In lines 28-60, how does Adichie use language and structure to show that pity can be a form of prejudice?',
+        'Close-reading practice on lines 28-60, not an exam question (the exam asks about language and structure across the whole extract): how does Adichie use language and structure to show that pity can be a form of prejudice?',
     },
     {
       title: 'Mexico, the recipe and the ending',
@@ -352,7 +385,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Adichie use language and structure in lines 61-83 to bring her argument to a persuasive conclusion?',
+        'Close-reading practice on lines 61-83, not an exam question (the exam asks about language and structure across the whole extract): how does Adichie use language and structure to bring her argument to a persuasive conclusion?',
     },
   ],
 
@@ -460,10 +493,10 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Compare how the writers of From The Danger of a Single Story and From A Passage to Africa present the way people in Africa are seen by outsiders. You should support your answer with detailed reference to both texts.',
-        skill: 'Comparison of ideas and perspectives, and of the methods used to convey them',
+          'Practice pairing, not an exam pairing (in the exam this extract is compared with an unseen extract, Text One, never with another anthology text): compare how the writers of From The Danger of a Single Story and From A Passage to Africa present their ideas and perspectives about the way people in Africa are seen by outsiders. You should support your answer with detailed reference to both texts.',
+        skill: 'Comparison of ideas and perspectives, practised with a second anthology text',
         guidance: [
-          'Remember that in the examination the second text will be an unseen one. Practising with another anthology text builds the habit of comparing ideas and methods together, which is what the comparison question rewards.',
+          'Remember that in the examination the other text is an unseen extract, Text One, which you meet for the first time on the day. Practising with another anthology text builds the habit of comparing ideas and methods together, which is what the comparison question rewards.',
           'Set out the main similarity and difference in the introduction: both writers are concerned with how outsiders see African suffering, but Adichie criticises that picture as an African who has been misjudged, while Alagiah writes as a television reporter helping to make it.',
           'Compare perspectives: Adichie as a Nigerian pitied by an American roommate, and as a visitor who misjudged Mexicans; Alagiah as an outsider reporting from Somalia in 1991 and 1992, focusing on one face among a thousand.',
           "Compare methods: Adichie's anecdotes and stated lessons, humour, discourse markers and direct address, against Alagiah's descriptive reportage. Use a short quotation from each text in every paragraph.",
@@ -473,21 +506,25 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'In lines 28-60, how does Adichie use language and structure to show that pity can be a form of prejudice?',
-        skill: 'Close language and structure analysis of part of the text',
+          'How does Adichie use language and structure to show that pity can be a form of prejudice? You should support your answer with close reference to the text, including brief quotations.',
+        skill:
+          'Language and structure across the whole extract, in the form of the one exam question on this text alone',
         guidance: [
+          'The question covers the whole extract, so begin before pity appears: the lesson at lines 14-15, that we are “impressionable and vulnerable” in the face of stories, prepares for a pity that is taught to a child rather than chosen by her.',
           "Identify the two anecdotes and the link between them: the child's pity for Fide's family and the roommate's pity for Adichie, joined by her admission at lines 59-60.",
           "Analyse the mother's direct speech at line 34, especially the generalising “People like” and the absolute “nothing”.",
           'Explain the effect of the basket and the startled child (lines 36-39): the single story breaks at the first sight of skill and beauty.',
           'Analyse the language of line 50, the near-oxymoron of “patronizing” and “well-meaning”, and the narrowing repetition of line 51.',
           'Analyse the list at lines 56-59 and its climax: what the order of the list and the passive “to be saved” imply about who is allowed to act.',
+          'Carry the idea past line 60. At line 61 Adichie turns the charge on herself, and in Guadalajara the media story had shrunk a nation to “the abject immigrant” (line 71), whose adjective carries contempt as much as pity. Her shame at line 69 is the moment she sees that prejudice in herself.',
           'End with a judgement: Adichie treats pity as understandable, even kind, but shows that it prevents connection between equals.',
         ],
       },
       {
         question:
-          'How does Adichie present herself in this extract, and how does this make her argument persuasive?',
-        skill: "The writer's perspective and viewpoint: how a speaker builds trust",
+          'How does Adichie use language and structure to present herself, and to make her argument persuasive? You should support your answer with close reference to the text, including brief quotations.',
+        skill:
+          'Language and structure across the whole extract: how a speaker presents herself and builds trust',
         guidance: [
           'Show the three selves she presents: the child reader and writer, the 19-year-old student misjudged in America, and the adult visitor who misjudges Mexico.',
           "Analyse her humour and modesty: the correction of her mother at lines 3-4 and the Mariah Carey anecdote. Explain what they do to the audience's attitude.",
@@ -498,14 +535,15 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
-      'Answer on the anthology version. The talk online is longer and worded differently in places; the examiner is reading the 83-line extract printed in the Source Booklet, so revise with line numbers.',
+      'Know how this text is examined. When the paper sets it, it is Text Two, printed for you in the Source Booklet beside an unseen extract, Text One, and the short-answer questions are all on the unseen extract. This text has one question to itself, on how Adichie uses language and structure across the whole extract, and it is then compared with the unseen extract, never with another anthology text. Keep both texts in every paragraph of the comparison: the mark scheme caps an answer that deals with only one.',
+      "Answer on the extract printed for you in the Source Booklet, not the talk online, which is longer and worded differently in places. The line numbers in this guide are the anthology's own; the Source Booklet prints the extract with its own line numbers, which need not match, so check a reference against the booklet before you use it.",
       "Do not say Adichie calls stereotypes lies. Her subtler point is that a true story told alone is incomplete: Fide's family really was poor. Making that distinction is one of the clearest signs of a strong answer on this text.",
       "Treat it as a speech. Comment on spoken features such as the discourse markers, the humour, the announced ending and the inclusive we. An answer that treats it as an essay misses half of Adichie's methods.",
       "Track the mirror structure. The roommate's view of Adichie repeats Adichie's view of Fide's family, and she says so herself at lines 59-60. Naming that echo is a structural point that lifts an answer above a list of techniques.",
       'Use the turn at line 61. The confession about Mexico is where the argument becomes self-critical; explaining why that makes her more persuasive is a judgement, not just a description.',
       'Quote a few words and choose the loaded one: “abject”, “catastrophe”, “patronizing”, “paradise”. A short quotation analysed closely beats a long one that is only paraphrased.',
       'Copy spellings exactly as printed. The anthology keeps some American spellings, such as “patronizing”, beside the British “colour”. Your own sentences should use your usual spelling.',
-      "Use context only where it explains a choice: Nigeria's official English explains the roommate's surprise, Achebe and Laye explain the change in her reading, and the American immigration debate explains the single story of Mexicans.",
+      "Context is not assessed on this paper: the extract's own question is about Adichie's methods, and the comparison about ideas and perspectives. Use it only where it explains a choice: Nigeria's official English explains the roommate's surprise, Achebe and Laye explain the change in her reading, and the American immigration debate explains the single story of Mexicans.",
     ],
   },
 

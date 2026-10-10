@@ -45,6 +45,43 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * anthology printed it as "from Search For My Tongue". Pearson prints it under
  * the bare title. So where the guide speaks of the ending, it says the ending
  * of the anthology's section. Flagged in the report for the registry.
+ *
+ * EXAM-FORMAT AUDIT, 10 October 2026, against Pearson's 4ET1 specification
+ * (Issue 3, August 2025), the Paper 1 question papers and mark schemes from
+ * the specimen to June 2025, and Pearson's summaries of questions set. Section
+ * B is one question from a choice of two, and both compare two Part 3 poems:
+ * Question 2 names both, Question 3 names one and the candidate chooses the
+ * second. All of Part 3 is supplied in a Poetry Booklet with the paper. AQA,
+ * Pearson's GCSE (1ET0) and Eduqas do not set the poem; OCR's poem list could
+ * not be read, and no OCR paper from 2023 to 2025 names it, so the guide
+ * describes Pearson's format only (for the modular route, see the next
+ * paragraph). The June 2024 1R source below said every Section B question
+ * names two poems, which is true of Question 2 only; the three practice
+ * essays were modelled on it and all name both poems. That is a real
+ * shape, so they stay, and a new first tip describes both. The three
+ * extract questions were single-poem questions on line ranges under the label
+ * "The question", so they now say they are close-reading practice. The
+ * Blessing essay's skill line left out form, which every Section B question
+ * asks for, and its guidance never reached it; both now do. A tip said the
+ * skill being tested was choosing, but the section is marked on analysis and
+ * comparison, so it no longer says so. New: a tip on when the poem has been
+ * set, and the one-poem cap in the comparison tip. No mark tariffs: the
+ * validator keeps those to ExamPlacementCard.
+ *
+ * VERIFIED, 10 October 2026. The audit read only the linear 4ET1 papers, but
+ * the anthology is also set for the modular qualification, 4XET1, whose Unit 1
+ * (paper 4WET1/01) sets Section B exactly as 4ET1 Paper 1 does: checked by
+ * script on its June 2024, November 2024, June 2025 and June 2025 R papers and
+ * their mark schemes, one-poem cap included. Its November 2024 paper named
+ * this poem alone in Question 3, so the past-papers tip, which said four
+ * times, now says five, and the scope and the first tip name Unit 1. Also
+ * removed, because nothing supports them: two claims that few answers track
+ * the pronouns (the November 2024 examiners' report says candidates did write
+ * about the direct address), "nothing depends on memory" (choosing a second
+ * poem still takes knowing the anthology; the tip now says you need not
+ * memorise quotations), and a commentary line making a closing judgement what
+ * separates a perceptive answer from a descriptive one, which the mark scheme
+ * does not say.
  */
 export const guide: StudyGuide = {
   slug: 'search-for-my-tongue',
@@ -52,7 +89,7 @@ export const guide: StudyGuide = {
   author: 'Sujata Bhatt',
   form: 'poem',
   scope:
-    'The poem as printed on pages 54 and 55 of the Pearson Edexcel International GCSE English Anthology (Issue 8, February 2026), Part 3: 38 lines in three sections, English (lines 1-16), Gujarati (lines 17-30, seven lines in Gujarati script, each followed by a transliteration in brackets) and English again (lines 31-38). Line numbers in this guide follow the anthology’s margin numbering, which counts each Gujarati line and each transliteration as a line. In Bhatt’s collection Brunizem the poem is much longer, so the anthology prints a section of it; that section is what you study. Set for Pearson Edexcel International GCSE English Literature (4ET1), Paper 1 (Poetry and Modern Prose), Section B, where it is compared with another Part 3 poem.',
+    'The poem as printed on pages 54 and 55 of the Pearson Edexcel International GCSE English Anthology (Issue 8, February 2026), Part 3: 38 lines in three sections, English (lines 1-16), Gujarati (lines 17-30, seven lines in Gujarati script, each followed by a transliteration in brackets) and English again (lines 31-38). Line numbers in this guide follow the anthology’s margin numbering, which counts each Gujarati line and each transliteration as a line. In Bhatt’s collection Brunizem the poem is much longer, so the anthology prints a section of it; that section is what you study. Set for Pearson Edexcel International GCSE English Literature (4ET1), Paper 1 (Poetry and Modern Prose), Section B, and for the modular version of the qualification (4XET1), Unit 1, Section B; in both it is compared with another Part 3 poem.',
   rights: {
     status: 'copyright',
     acknowledgement:
@@ -218,7 +255,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Bhatt use the first fourteen lines to make the listener imagine what losing a language is like?',
+        'Close-reading practice, not an exam question (in the exam this poem is always compared with another Part 3 poem): how does Bhatt use the first fourteen lines to make the listener imagine what losing a language is like?',
     },
     {
       title: 'The confession and the dream',
@@ -246,7 +283,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the change of language in the middle of the poem help Bhatt to present the speaker’s feelings about her mother tongue?',
+        'Close-reading practice, not an exam question (in the exam this poem is always compared with another Part 3 poem): how does the change of language in the middle of the poem help Bhatt to present the speaker’s feelings about her mother tongue?',
     },
     {
       title: 'Blossoming',
@@ -270,7 +307,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Bhatt use the final lines of the poem to present the relationship between the speaker’s two languages?',
+        'Close-reading practice, not an exam question (in the exam this poem is always compared with another Part 3 poem): how does Bhatt use the final lines of the poem to present the relationship between the speaker’s two languages?',
     },
   ],
 
@@ -361,7 +398,7 @@ export const guide: StudyGuide = {
     },
     {
       heading: 'From you to I',
-      body: 'Lines 1 to 14 are built on the second person, as the speaker makes the listener imagine the loss. Line 15 switches to the first person, and from then on the poem is about her. Watch the mouth: in lines 4 and 13 it is yours, in lines 34 and 38 it is hers. The shift runs from argument to confession to celebration, and it lets the poem move from a general case, anyone who has had to live in a foreign tongue, to one person’s experience. Few answers use this, and it is some of the clearest structural evidence in the poem.',
+      body: 'Lines 1 to 14 are built on the second person, as the speaker makes the listener imagine the loss. Line 15 switches to the first person, and from then on the poem is about her. Watch the mouth: in lines 4 and 13 it is yours, in lines 34 and 38 it is hers. The shift runs from argument to confession to celebration, and it lets the poem move from a general case, anyone who has had to live in a foreign tongue, to one person’s experience. It is some of the clearest structural evidence in the poem.',
     },
     {
       heading: 'The turn',
@@ -498,26 +535,28 @@ export const guide: StudyGuide = {
         question:
           'Compare how the poets use images of the natural world to present strong feelings in Search For My Tongue and Blessing.',
         skill:
-          'Comparing two anthology poems: imagery, language and structure, and the links between the poems',
+          'Comparing two anthology poems: analysis of language, form and structure, and the links between the poems',
         guidance: [
           'Overview: both poets use nature to present something precious returning after a time of lack. For Dharker it is water arriving in a place where there is never enough; for Bhatt it is a language that seemed to have died.',
           'Compare the images of lack. Bhatt’s tongue will “rot and die” in the mouth; Dharker opens with skin split open by drought, compared to a dry seed case. Both poems begin with something dried out, broken or decaying, and both locate it in the body.',
           'Compare the images of return. Bhatt’s regrowth is a plant, from “stump of a shoot” to blossom, living and organic, gathering speed stage by stage; Dharker’s water arrives when a broken water main floods the street, sudden and loud. What feelings does each kind of return create?',
           'Compare voice. Dharker gives the rushing water a voice of many tongues; Bhatt gives her language a body. Both poets treat what is precious as something alive, and both find tongues in it.',
           'Compare the endings. Bhatt ends with a flower blossoming out of the mouth; Dharker ends with naked children shining in the sunlight, the water falling on their small bodies like a blessing. Is either ending wholly hopeful? Both carry the memory of scarcity with them.',
-          'Structure: compare where the turn comes in each poem, Bhatt’s at the dream in line 16 and Dharker’s at the burst of the pipe, and how each poet builds towards the moment of release.',
+          'Form and structure: both poems are in free verse, but they use the page differently. Bhatt sets fourteen lines of Gujarati at the centre of hers; Dharker’s stanzas grow from two lines to four to eleven as the water arrives. Compare where the turn comes in each poem, Bhatt’s at the dream in line 16 and Dharker’s at the burst of the pipe, and how each poet builds towards the moment of release.',
         ],
       },
     ],
     tips: [
+      'Know what the section sets. Section B of Paper 1 (Unit 1 if you are taking the modular qualification) gives you a choice of two questions, with about 40 minutes suggested, and both ask you to compare two Part 3 poems with reference to language, form and structure. One names both poems, like the three questions above. The other names one poem and asks you to compare it with one other poem from the anthology, which you choose; the mark scheme expects a poem in which the question’s focus clearly matters. Search For My Tongue can appear in either question, or be the poem you choose. You do not need it by heart: every Part 3 poem is printed in a separate Poetry Booklet that comes with the paper.',
+      'Search For My Tongue has been named in a question five times in Pearson’s papers up to June 2025. In 4ET1 it was paired with Half-caste in June 2018 (on feelings about identity) and June 2023 (on concerns about language), and with Poem at Thirty-Nine, on memories, in the June 2019 R paper (the version sat in countries far from UK time); it was named alone, on loss, with the second poem left to the candidate, in the January 2023 R paper. The modular Unit 1 paper of November 2024 also named it alone, on a challenge, and Pearson’s examiners reported that answers often covered the poem candidates chose more fully than this one, so give it as much attention as your second poem. Pearson’s mark schemes have also listed it as a suitable second poem when the question named Half-past Two, Hide and Seek or War Photographer.',
       'Explain the double meaning of tongue once, clearly, and then use it. Answers that keep repeating that tongue means language are describing; answers that show how the pun lets Bhatt make a language decay, grow and blossom are analysing.',
       'Do not skip the Gujarati. You do not need to read it: write about what it does. It puts the English reader in the speaker’s position, it sets the mother tongue at the centre of the poem, and it sits inside a sentence that runs from line 15 to line 35.',
       'Be careful about calling lines 31 to 38 a translation of the Gujarati. They continue the English sentence and develop its images in their own way. A published translation shows the Gujarati first repeating what lines 15 and 16 say, and including an image of ripening that the English never uses.',
-      'Track the pronouns and the mouth: you and your mouth in the first section, I and my mouth in the last. It is some of the clearest structural evidence in the poem, and few answers use it.',
+      'Track the pronouns and the mouth: you and your mouth in the first section, I and my mouth in the last. Noticing that the speaker addresses a listener is only a start: show where and why you gives way to I, which is some of the clearest structural evidence in the poem.',
       'Argue about the ending. Triumphant or anxious? The final sentence says the tongue returns every time she thinks it is lost, so the fear is part of the pattern. The best answers weigh both readings and say which they find more convincing, and why.',
-      'Compare all the way through. Each paragraph should hold both poems, linked by a shared idea, a contrast in method or a difference in effect, rather than an account of one poem followed by an account of the other.',
+      'Compare all the way through. Each paragraph should hold both poems, linked by a shared idea, a contrast in method or a difference in effect, rather than an account of one poem followed by an account of the other. An answer that discusses only one poem cannot rise above the second of the mark scheme’s five levels, however good its analysis.',
       'Use context lightly. This section of the paper is assessed on analysis of language, form and structure and on comparison, so Bhatt’s biography earns its place only when it sharpens a reading of the words. One sentence is usually enough.',
-      'The anthology poems are provided in the exam, so the skill being tested is choosing. Pick short phrases and analyse single words inside them, such as stump, shoot or knots, rather than copying out whole lines.',
+      'The anthology poems are provided in the exam, so you do not need to memorise quotations: credit comes from choosing precise details and analysing them. Pick short phrases and analyse single words inside them, such as stump, shoot or knots, rather than copying out whole lines.',
       'Write about the speaker rather than Bhatt, unless you are making a clearly signposted point about context.',
     ],
   },
@@ -532,7 +571,7 @@ export const guide: StudyGuide = {
       'Quotations are short and analysed at the level of single words: the repetition of “rot” across the line break, the fourfold “grows”, and the reversal of being tongue-tied in “the other tongue in knots”.',
       'It analyses structure as well as language, arguing that the untranslated Gujarati puts the reader in the speaker’s position and that the grammar reverses after the dream.',
       'The comparison with Half-caste is woven into the argument rather than added at the end, and it compares methods (making the reader an outsider) as well as ideas.',
-      'It ends with a judgement, marked as interpretation by arguably, which is what separates a perceptive answer from a descriptive one.',
+      'It ends with a judgement, marked as interpretation by arguably, so the comparison reaches a conclusion instead of stopping at a list of similarities and differences.',
     ],
   },
 
@@ -719,10 +758,32 @@ export const guide: StudyGuide = {
     {
       label:
         'Pearson Edexcel International GCSE in English Literature (4ET1) Specification, Issue 3 (August 2025): Component 1 Section B is one essay question from a choice of two, comparing two poems from Part 3 of the anthology, assessed on analysis of language, form and structure and on comparison; closed book, with the anthology poems provided in the examination.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Specification%20and%20sample%20assessments/international-gcse-english-literature-specification.pdf',
     },
     {
       label:
-        'Pearson, 4ET1 Paper 1R mark scheme, June 2024: Section B questions each name two Part 3 poems for comparison (Question 2 set Piano with Remember); used for the style of the practice questions and the details of Piano.',
+        'Pearson, 4ET1 Paper 1R mark scheme, June 2024: Question 2 named two Part 3 poems (Piano with Remember), and Question 3 named one (If-) and left the second to the candidate; used for the style of the practice questions and the details of Piano. Until 10 October 2026 this entry said every Section B question names two poems.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01r-rms-20240822.pdf',
+    },
+    {
+      label:
+        'Pearson, 4ET1 Paper 1 question paper, June 2023 (checked 10 October 2026): Question 2 named Search For My Tongue with Half-caste; Question 3 named one poem and asked for one other from the anthology; both ask for reference to language, form and structure; 40 minutes advised for Section B; the Part 3 poems supplied in a separate Poetry Booklet. The same two shapes and timing appear in every Paper 1 opened from the specimen to June 2025, and the booklet in every one from June 2019.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20230518.pdf',
+    },
+    {
+      label:
+        'Pearson, summaries of questions set for 4ET1 (checked 10 October 2026): this one, for January to November 2023, shows the poem named alone in Question 3 of the January 2023 R paper (loss) and with Half-caste in Question 2 of June 2023; the summaries for SAMs to January 2019 and June 2019 to November 2020, at the same path, show it with Half-caste in Question 2 of June 2018 (feelings about identity) and with Poem at Thirty-Nine in Question 2 of the June 2019 R paper (memories). Neither they nor the 4ET1 papers of June 2024, November 2024 and June 2025, R papers included, name it in any other 4ET1 series. The modular papers are the next entry.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Teaching%20and%20learning%20materials/summary-of-questions-set-for-4et1.pdf',
+    },
+    {
+      label:
+        'Pearson, International GCSE English Literature (Modular), 4XET1, Unit 1 question paper (4WET1/01), November 2024 (checked 10 October 2026): Question 3 named Search For My Tongue alone, on a challenge, with one other poem from the anthology. Section B is set exactly as in 4ET1 Paper 1 (two questions, both comparisons, 40 minutes advised, the Part 3 Poetry Booklet supplied), as it is in the modular Unit 1 papers of June 2024 and June 2025 and the June 2025 Unit 1R paper, none of which names the poem; their mark schemes carry the same one-poem cap. The examiners’ report for November 2024 (4wet1-01-pef-20250123.pdf, same path) says candidates often covered the second poem, which they knew better, more fully than Search For My Tongue, and that they wrote about the speaker’s direct address to the reader.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2023/Exam-materials/4wet1-01-que-20241105.pdf',
+    },
+    {
+      label:
+        'Pearson, 4ET1 Paper 1 mark scheme, June 2024 (checked 10 October 2026): the indicative content for Question 3 lists Search For My Tongue among suitable second poems, as do the November 2024 (4et1-01-rms-20250123.pdf) and June 2025 Paper 1R (4et1-01r-rms-20250821.pdf) mark schemes at the same path. Every Section B grid caps an answer that considers only one poem at the top of Level 2, the second of five.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-rms-20240822.pdf',
     },
   ],
 }

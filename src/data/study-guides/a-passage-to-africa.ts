@@ -39,6 +39,26 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * is nearly the opposite of a sudden turn; it had the old woman "abandoned" by
  * the army that shot her; and the rights line named Little, Brown where the
  * anthology prints from the Abacus edition, pp. 87-90.
+ *
+ * EXAM-FORMAT CHECK (26 September 2026), against 4EA1 Paper 1 papers and mark
+ * schemes from 2016 to 2026: the anthology text is always Text Two, printed in
+ * the Source Booklet. Its one question to itself asks about language AND
+ * structure across the whole extract, with no line range; the comparison is
+ * always with the unseen Text One; every short-answer question is on Text One.
+ * So the extract questions are labelled as close-reading practice, the
+ * exam-practice question that was set on lines 46-74 (a line range no real
+ * paper uses) now covers the whole extract, and the Adichie comparison says it
+ * is a practice pairing. Do not reintroduce a line-range, language-only or
+ * retrieval question here as if the exam set one.
+ *
+ * Verified the same day against the 4EA1/01 paper of 5 June 2023, which set
+ * this text: Text Two in the Source Booklet beside an unseen extract as Text
+ * One, Q4 on language and structure to shock the reader (examPractice question
+ * 1 and the model answer), and Q5 comparing ideas and perspectives. A script
+ * found its Source Booklet body text word for word the anthology's, apart
+ * from the headnote, so the "quote the anthology" tip holds in the exam room.
+ * A draft of the comparison note said the unseen text was "printed on the
+ * paper"; both texts are in the Source Booklet.
  */
 export const guide: StudyGuide = {
   slug: 'a-passage-to-africa',
@@ -229,7 +249,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Alagiah use language in lines 8-15 to present his feelings about his work as a journalist?',
+        'How does Alagiah use language in lines 8-15 to present his feelings about his work as a journalist? (Close-reading practice, not an exam question. In the exam, the one question on this text alone asks about language and structure across the whole extract.)',
     },
     {
       title: 'The smile and what it meant',
@@ -253,7 +273,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        "How does Alagiah use language and structure in lines 46-56 to show the importance of the man's smile?",
+        "How does Alagiah use language and structure in lines 46-56 to show the importance of the man's smile? (Close-reading practice, not an exam question. In the exam, the one question on this text alone asks about language and structure across the whole extract.)",
     },
     {
       title: 'The tables turned, and the debt',
@@ -285,7 +305,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Alagiah use language and structure in lines 57-74 to show how the encounter changed his view of his role as a reporter?',
+        'How does Alagiah use language and structure in lines 57-74 to show how the encounter changed his view of his role as a reporter? (Close-reading practice, not an exam question. In the exam, the one question on this text alone asks about language and structure across the whole extract.)',
     },
   ],
 
@@ -408,8 +428,8 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Compare how the writers of A Passage to Africa and The Danger of a Single Story present the way outsiders see people who are suffering or poor. (In the exam the second text will be unseen; practise the skill with another anthology text.)',
-        skill: 'Comparison of ideas and perspectives across two texts',
+          'Compare how the writers of A Passage to Africa and The Danger of a Single Story present their ideas and perspectives about the way outsiders see people who are suffering or poor. (A practice pairing: in the exam, A Passage to Africa is compared with an unseen extract, Text One, printed beside it in the Source Booklet, never with another anthology text.)',
+        skill: 'Comparison of ideas and perspectives across two texts (a practice pairing)',
         guidance: [
           "Start with the writers' positions. Alagiah is the outsider with the camera, looking at people in a famine; Adichie has been both the one pitied, by her American roommate, and the one holding a single story of others: as a child, pitying Fide's family, and as an adult, about Mexicans, which she realised on her first day in Guadalajara.",
           'Compare their views of pity. Adichie presents pity as a response that shuts out any connection between equals; Alagiah admits to pity mixed with revulsion, and shows the smile moving him beyond both.',
@@ -421,9 +441,11 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          "Look again at lines 46-74. How does Alagiah use language and structure to present the importance of the man's smile?",
-        skill: 'Close language and structure analysis of a section',
+          "How does Alagiah use language and structure in the extract to present the importance of the man's smile?",
+        skill:
+          'Language and structure analysis of the anthology text: one moment traced through the whole extract',
         guidance: [
+          'The question covers the whole extract, so begin before the smile appears: the opening promise of one face he will never forget, the single-sentence paragraph at line 32 that announces it, and the confession of pity and revulsion that delays it and sets the measure the smile goes beyond.',
           'Track how the meaning of the smile changes: an unexplained smile, a puzzle, an apology, a challenge to the rules of journalism, and finally a debt.',
           'Analyse the negation in lines 48-49, the interrupting “how could it be?”, and the phrase “the feeble smile that goes with apology”.',
           'Explain the reversal: the active and passive mirror of lines 59-60 and the idiom of turning the tables.',
@@ -433,6 +455,7 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
+      'Know how this text is examined. Each paper sets one of the ten Part 1 texts as Text Two, printed for you in the Source Booklet beside an unseen extract, Text One. When it is this one, it is examined twice: in one question on how Alagiah uses language and structure across the whole extract, and in a comparison with the unseen extract. The short-answer questions are all on the unseen extract, so revise this text for analysis and comparison, not retrieval.',
       "Pearson's examiners have singled out the smile as the part of this extract that separates the strongest answers from the rest. Spend real time on lines 46-65, and be exact about what the text says the smile was.",
       'Cover the whole extract. Examiner commentary on this text holds answers back for staying in the opening paragraphs, so choose references from the beginning, the middle and the end.',
       "Notice the tone. The best answers recognise how controlled, even detached, Alagiah's voice is, and the anger and embarrassment underneath it. The calm is a technique, not an absence of feeling.",

@@ -122,7 +122,10 @@ const texts = [
     title: 'H is for Hawk',
     author: 'Helen Macdonald',
     type: 'Memoir / nature writing',
-    theme: 'Grief, nature, obsession, identity',
+    // Until 26 September 2026: "Grief, nature, obsession, identity", the
+    // memoir's themes. The extract is the handover on the quayside, before any
+    // training, and never names the grief (see src/data/study-guides/h-is-for-hawk.ts).
+    theme: 'Unspoken grief, nature and the wild, recognition, loss of composure',
     icon: Bird,
   },
   {

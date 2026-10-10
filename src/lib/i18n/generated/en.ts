@@ -3608,7 +3608,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'when answering Edexcel exam questions - examiners will mark against the anthology text, not the Guardian originals you may find on revision websites.',
   'anth_page.texts_heading': 'All 10 Anthology Texts',
   'anth_page.texts_intro':
-    "Each text page includes key extracts, language and structural analysis, writer's purpose, vocabulary, exam practice and comparison links. Select a text to begin your study.",
+    'Each text page includes key extracts, language and structural analysis, vocabulary and exam practice, with other anthology texts to compare it with as revision practice. In the exam, the anthology text is compared with an unseen passage, never with another anthology text. Select a text to begin your study.',
   'anth_page.text_index_prefix': 'Text',
   'anth_page.study_this_text': 'Study this text',
   'anth_page.expect_heading': 'Paper 1 Section A - What to Expect',
@@ -3633,7 +3633,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'anth_text.section.themes': 'Themes',
   'anth_text.section.extract_focuses': 'Extract Focuses',
   'anth_text.section.extract_focuses.intro':
-    'Key moments in the extract and what each one is doing structurally and thematically. Refer to the licensed anthology for the exact wording.',
+    'Key moments in the extract and what each one is doing structurally and thematically. For the exact wording, use the anthology, which Pearson publishes free as a PDF.',
   'anth_text.section.language_analysis': 'Language Analysis',
   'anth_text.section.language_analysis.intro':
     'Key language features used by the writer and their effects on the reader. Discussed by technique rather than by quotation; bring exact wording from your anthology when you write up answers.',
@@ -3650,17 +3650,18 @@ export const EN_MESSAGES: Record<string, string> = {
   'anth_text.section.exam_practice': 'Exam Practice',
   'anth_text.exam.model_outline': 'Model answer outline',
   'anth_text.section.compare_with': 'Compare With',
-  'anth_text.compare_with.intro': 'Strong pairings for comparison questions in the exam.',
+  'anth_text.compare_with.intro':
+    'Anthology texts that pair well with this one, for comparison practice while you revise. In the exam, Question 5 compares the anthology text with an unseen passage, never with another anthology text.',
   'anth_text.rebuilt_label': 'Page rebuilt April 2026.',
   'anth_text.rebuilt_body':
-    'This page has been rewritten to remove unverifiable direct quotations. Analysis discusses structure, technique and effect without putting specific words into the writer’s mouth. For the exact text of the extract, students should use the licensed Pearson Edexcel anthology.',
+    'This page has been rewritten to remove unverifiable direct quotations. Analysis discusses structure, technique and effect without putting specific words into the writer’s mouth. For the exact text of the extract, students should use the Pearson Edexcel anthology, which Pearson publishes free as a PDF.',
   'anth_text.rights_notice_label': 'Rights notice:',
   'anth_text.footer_align': 'Aligned with Pearson Edexcel specification 4EA1.',
   'anth_text.moment_prefix': 'Moment',
   'anth_text.section.key_moments': 'Key Moments',
   'anth_text.use_with_anthology': 'Use with your anthology',
   'anth_text.key_moments.intro':
-    'Map of the extract’s key moments. Look up the exact wording in your licensed anthology.',
+    'Map of the extract’s key moments. Look up the exact wording in the anthology, which Pearson publishes free as a PDF.',
   'anth_text.teacher_note': 'Teacher note',
   'anth_text.section.key_vocabulary': 'Key Vocabulary',
   'anth_text.section.structural.paragraphing': 'Paragraph structure',
@@ -3674,7 +3675,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'anth_text.writers_purpose.reader_feel_past': 'How did the writer want the reader to feel?',
   'anth_text.section.key_extracts': 'Key Extracts',
   'anth_text.section.language_analysis.guidance_intro':
-    'Key language techniques to look for in the anthology extract. Specific quotations will be added after primary-source review - for now, locate examples in your licensed anthology and apply the guidance below.',
+    'Key language techniques to look for in the anthology extract. Specific quotations will be added after primary-source review - for now, locate examples in the anthology, which Pearson publishes free as a PDF, and apply the guidance below.',
   'model_answers.grade.label.9': 'Grade 9',
   'model_answers.grade.label.7': 'Grade 7',
   'model_answers.grade.label.5': 'Grade 5',
@@ -5935,7 +5936,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'when answering Edexcel exam questions - examiners will mark against the anthology text, not the online originals.',
   'anthology_hub.texts_heading': 'All 10 Anthology Texts',
   'anthology_hub.texts_intro':
-    "Each text page includes key extracts, language and structural analysis, writer's purpose, vocabulary, exam practice and comparison links. Select a text to begin your study.",
+    'Each text page includes key extracts, language and structural analysis, vocabulary and exam practice, with other anthology texts to compare it with as revision practice. In the exam, the anthology text is compared with an unseen passage, never with another anthology text. Select a text to begin your study.',
   'anthology_hub.text_index_prefix': 'Text',
   'anthology_hub.study_this_text': 'Study this text',
   'anthology_hub.expect_heading': 'Paper 1 Section A - What to Expect',

@@ -8,18 +8,23 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  *
  * TWO TEXTS OF THE POEM. The anthology (Issue 8, February 2026, page 25) prints
  * the later text: 46 lines, numbered in fives, in seven stanzas (6, 7, 7, 8, 8,
- * 3, 7), with lines 30 to 31 on the guilt of Germany and Austria. The edition held in
- * src/data/full-texts/disabled.ts is the 1920 Poems (Gutenberg #1034): 45 lines
- * in five stanzas, without those words, and with "pleasure" for "pleasures"
- * (line 5), "bloodsmear" for "blood-smear" (line 21) and "To-night" for
- * "Tonight" (line 43). Line and stanza references here follow the anthology,
- * because that is the copy a student has in the exam. Every quotation from the
- * poem was chosen from words the two texts share, checked against both, except
- * the anthology's own wording of lines 30 to 31, which the 1920 text lacks; it is
- * listed in quotesFromElsewhere and was read from the Pearson PDF. The other
- * entry there is Owen's Preface, not the poem. Extract C keeps the 1920 hyphen
- * in line 43 ("To-night"; the anthology prints "Tonight") because the test
- * checks passages against the held edition, and its pointer tells the student.
+ * 3, 7), with lines 30 to 31 on the guilt of Germany and Austria. The 1920
+ * Poems (Gutenberg #1034) has 45 lines in five stanzas, without those words,
+ * and "pleasure" for "pleasures" (line 5), "bloodsmear" for "blood-smear" (line
+ * 21) and "To-night" for "Tonight" (line 43). Line and stanza references here
+ * follow the anthology, because that is the copy a student has in the exam.
+ * Every quotation from the poem was chosen from words the two texts share,
+ * checked against both, except the anthology's own wording of lines 30 to 31,
+ * which the 1920 text lacks; it is listed in quotesFromElsewhere and was read
+ * from the Pearson PDF. The other entry there is Owen's Preface, not the poem.
+ *
+ * THE HELD EDITION, corrected 10 October 2026. Until 26 September 2026
+ * src/data/full-texts/disabled.ts was the 1920 text, and Extract C kept its
+ * hyphen ("To-night") to pass the test's check against it. That file now
+ * follows the anthology (see its header: it must not be regenerated from
+ * Gutenberg), so the test checks every quotation and passage against the
+ * anthology's words, and Extract C prints "Tonight" as the anthology does. This
+ * docblock went on saying the held edition was the 1920 text until this date.
  *
  * Fact-check, 25 September 2026: the June 2023 4EA1/02 paper printed its Part 2
  * poem with no line numbers, so the tips no longer tell a student to use the
@@ -32,6 +37,28 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * source. No misquotation was found. Four readings that had been stated as
  * facts are now hedged: the soldier's real age, a "charge" the poem never
  * mentions, "arterial" blood, and what the italic Thanked is for.
+ *
+ * Exam-format audit, 26 September 2026, against the Issue 7 specification and
+ * the 4EA1/02 papers. Paper 2 Section A sets one essay on the whole of one
+ * named Part 2 text, printed for the candidate, and never a comparison. The
+ * three extract questions were exam-shaped questions on line ranges under the
+ * label "The question", so they now say they are close-reading practice. The
+ * coursework guidance told the student to compare; Assignment A is marked for
+ * understanding and for language and structure only (the links-and-connections
+ * objective is assessed on Paper 1 alone), so it now asks for analysis of each
+ * text. A first tip says what the paper sets. No mark tariffs: the validator
+ * keeps those to ExamPlacementCard.
+ *
+ * Second exam-format check, 10 October 2026, against the sample paper and the
+ * November 2020, June 2023, November 2023, June 2024 and November 2024 papers.
+ * The first tip said the question asks how the writer presents something, but
+ * the June 2023 paper asked how the writer creates sympathy for the boy in
+ * Frost's poem, and the sample paper how the writer creates feelings of
+ * isolation, so the tip now says presents or creates (essay 4 here already took
+ * the June 2023 form). The extract labels said the exam sets one essay on the
+ * whole poem, which reads as if this poem were set every time; they now say if.
+ * The Compare with cards now say a pairing is for the coursework essay, since
+ * the exam asks about one text alone.
  */
 export const guide: StudyGuide = {
   slug: 'disabled',
@@ -165,7 +192,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        "Explore how Owen presents the soldier's memories of his life before the war in lines 7 to 13. You should write about the images of the town and the girls, the contrast with his present, and the use of language and structure.",
+        "Close-reading practice, not an exam question (if the exam sets this poem, it sets one essay on the whole of it). Explore how Owen presents the soldier's memories of his life before the war in lines 7 to 13. You should write about the images of the town and the girls, the contrast with his present, and the use of language and structure.",
     },
     {
       title: 'The decision to join',
@@ -196,7 +223,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        "How does Owen present the soldier's reasons for joining the army in lines 23 to 29? You should write about what he thought and felt, how other people influenced him, and the use of language and structure.",
+        "Close-reading practice, not an exam question (if the exam sets this poem, it sets one essay on the whole of it). How does Owen present the soldier's reasons for joining the army in lines 23 to 29? You should write about what he thought and felt, how other people influenced him, and the use of language and structure.",
     },
     {
       title: 'Homecoming and the final evening',
@@ -227,7 +254,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        "Explore how Owen presents the soldier's life after the war in lines 37 to 46. You should write about his return, his future, how other people treat him, and the use of language and structure.",
+        "Close-reading practice, not an exam question (if the exam sets this poem, it sets one essay on the whole of it). Explore how Owen presents the soldier's life after the war in lines 37 to 46. You should write about his return, his future, how other people treat him, and the use of language and structure.",
     },
   ],
 
@@ -375,9 +402,9 @@ export const guide: StudyGuide = {
           'Check your choice meets the rules: three texts from Part 2 of the anthology, with at least one poem and one prose text. This set pairs two poems about injury with a prose story about sudden news.',
           'Define the focus precisely in your introduction, for example the gap between how a life was expected to go and what one moment made of it.',
           "For ‘Disabled’, centre the decision: lines 23 to 29, the drink, the compliment, the recruiters' smiles, and the present-tense “He wonders why” that shows the decision still haunting him.",
-          "Compare methods, not just stories: Owen's movement between past and present against the structures of your other texts, and his third-person voice that slips into the soldier's thoughts against the narrative voices you find there.",
-          'Compare endings: ‘Disabled’ ends on an unanswered question. Decide how each of your other texts ends and what each ending leaves the reader with.',
-          'Keep comparison inside paragraphs and give each text a fair share. Three texts need planning, so allocate your evidence before you write.',
+          "Analyse methods, not just stories: Owen's movement between past and present and his third-person voice that slips into the soldier's thoughts, then the structure and narrative voice of each of your other texts. Brief links between the texts can help the essay hang together, but the assignment is marked for understanding each text and analysing its language and structure, not for comparison as such.",
+          'Look closely at endings: ‘Disabled’ ends on an unanswered question. Decide how each of your other texts ends and what each ending leaves the reader with.',
+          'Give each text a fair share of close analysis. The advised length is about 1,200 words, so allocate your evidence across the three texts before you write.',
           'Support every point with brief, exact references, and give line numbers for the poems.',
         ],
       },
@@ -396,6 +423,7 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
+      'Know what the paper sets. Section A of Paper 2 is one compulsory essay question on one Part 2 text, named on the paper, with about 45 minutes advised. If it is ‘Disabled’, the question is about the whole poem, which is printed for you, since the anthology may not be taken in. It asks how the writer presents something or creates an effect, such as sympathy for a character, and in past papers it has given three bullet points, the last of them the use of language and structure. It is not a comparison: the other Part 2 texts come in only if you take the coursework option instead.',
       "Know which text you are answering on. The anthology prints 46 lines, numbered in fives, in seven stanzas, including the line and a half about the guilt of Germany and Austria (lines 30 to 31). Some websites, and the 1920 edition, print a shorter version with different stanza breaks and small changes of wording, such as a singular noun in line 5. Learn the anthology's wording, and quote from the copy printed with your exam question, which may not carry line numbers: the June 2023 paper printed its poem without them, so quote the words rather than relying on a line reference.",
       'This is an English Language question. Credit comes from understanding the poem and from analysing how Owen uses language and structure; historical context helps only when it sharpens a point about the words on the page.',
       "Write about the narrative voice. It is easy to miss that the poem is in the third person yet keeps borrowing the soldier's own words, as in “Aye, that was it” and “How cold and late it is!”. Explaining that effect lifts an answer.",
@@ -572,13 +600,13 @@ export const guide: StudyGuide = {
       title: '‘Out, Out–’ by Robert Frost',
       href: '/igcse/edexcel/poetry/out-out',
       reason:
-        "Also in Part 2: a boy whose life is destroyed by a single injury, and people around him who carry on afterwards, which pairs closely with Owen's picture of a society that looks away.",
+        "Also in Part 2: a boy whose life is destroyed by a single injury, and people around him who carry on afterwards, which pairs closely with Owen's picture of a society that looks away. A pairing for the coursework essay on three Part 2 texts; the exam asks about one text alone.",
     },
     {
       title: 'The Bright Lights of Sarajevo by Tony Harrison',
       href: '/igcse/edexcel/poetry/the-bright-lights-of-sarajevo',
       reason:
-        "Another Part 2 poem about young people and war, in which courtship survives in a city under siege, a sharp contrast with the desire Owen's soldier has lost.",
+        "Another Part 2 poem about young people and war, in which courtship survives in a city under siege, a sharp contrast with the desire Owen's soldier has lost. A pairing for the coursework essay; the exam asks about one text alone.",
     },
     {
       title: 'The Story of an Hour by Kate Chopin',
@@ -590,7 +618,7 @@ export const guide: StudyGuide = {
       title: 'Significant Cigarettes by Rose Tremain',
       href: '/revision/texts/significant-cigarettes',
       reason:
-        "A Part 2 prose extract whose central character keeps being pulled from the present into memories of what he has lost, as the soldier is through one evening in Owen's poem.",
+        "A Part 2 prose extract whose central character keeps being pulled from the present into memories of what he has lost, as the soldier is through one evening in Owen's poem. Another prose choice for the coursework essay; the exam asks about one text alone.",
     },
   ],
 
@@ -605,8 +633,10 @@ export const guide: StudyGuide = {
 
   quotesFromElsewhere: [
     // The anthology's lines 30 to 31, read from the Pearson PDF (page 25). The
-    // 1920 edition held in src/data/full-texts does not contain these words, so
-    // the held-edition check cannot confirm them; the Pearson source below does.
+    // 1920 edition lacks these words, and this entry excused them while the held
+    // edition in src/data/full-texts was that text. Since 26 September 2026 the
+    // held edition follows the anthology and contains them (checked 10 October
+    // 2026), so the test would now find them without this entry.
     "Germans he scarcely thought of; all their guilt, / And Austria's, did not move him",
     // Owen's Preface, as printed in Poems (1920), Project Gutenberg #1034. The
     // sentence before it differs between editions ("The subject of it is War" in
@@ -622,7 +652,7 @@ export const guide: StudyGuide = {
     },
     {
       label:
-        'Poems by Wilfred Owen (1920), with an introduction by Siegfried Sassoon, Project Gutenberg eBook #1034: the edition held as a byte copy in src/data/full-texts/disabled.ts, against which every quotation and passage was also checked; and the Preface (“The Poetry is in the pity”)',
+        'Poems by Wilfred Owen (1920), with an introduction by Siegfried Sassoon, Project Gutenberg eBook #1034: held as a byte copy in src/data/full-texts/disabled.ts until 26 September 2026, when that file was changed to follow the anthology; every quotation and passage was also checked against it; and the Preface (“The Poetry is in the pity”)',
       url: 'https://www.gutenberg.org/ebooks/1034',
     },
     {

@@ -19,15 +19,18 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { getLocale, t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  // The title was cut off at the apostrophe ("The Explorer") in every field
+  // below until 26 September 2026.
   openGraph: {
-    title: 'The Explorer',
-    description: 'Study guide for The Explorer',
+    title: "The Explorer's Daughter - Kari Herbert - IGCSE Anthology - The English Hub",
+    description:
+      "Study guide for The Explorer's Daughter by Kari Herbert. Structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.",
     images: [
       {
-        url: '/api/og?title=The+Explorer',
+        url: '/api/og?title=The+Explorer%27s+Daughter+-+Kari+Herbert+-+IGCSE+Anthology+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'The Explorer',
+        alt: "The Explorer's Daughter - Kari Herbert - IGCSE Anthology - The English Hub",
       },
     ],
   },
@@ -39,22 +42,62 @@ export const metadata: Metadata = {
   },
 }
 
+/**
+ * CORRECTED 26 September 2026. The notes below, down to the comparison links,
+ * were written before the verified study guide mounted under this page, and
+ * described an imagined Arctic or the whole book rather than the extract. Each
+ * claim was checked by script against the extract as the anthology prints it
+ * (Issue 8, pages 6 and 7, 64 lines in seven paragraphs) and against the guide.
+ * What was wrong, so that it is not written back in:
+ *
+ * - The extract never mentions cold or wind and does not personify the sea or
+ *   the ice. The personification the guide analyses is of the light in the
+ *   opening, which is playful, not dominant. Herbert names harshness once, in
+ *   the last paragraph (the anthology's introduction also calls the
+ *   environment harsh); the opening is wonder, not hostility.
+ * - Its similes (the scene as a game on the water, the hunters as a net)
+ *   describe the hunt, not the landscape. Its shortest sentences are plain
+ *   statements and one question, not moments of realisation.
+ * - The first sentence already names the hunters and the narwhal, so the
+ *   opening is not landscape "before introducing any human characters".
+ * - The evening is told in the past tense, not the present, and nothing in the
+ *   extract looks back on Herbert's childhood: only the anthology's
+ *   introduction mentions it, and it says she lived there as a small child,
+ *   not that she grew up there.
+ * - The two shortest paragraphs (lines 13 to 16 and 41 to 44) are
+ *   informational; the reflective last paragraph is one of the three longest.
+ * - At the climax her heart goes to hunter and narwhal both. The final
+ *   paragraph settles the argument but not the feeling: she says the dilemma
+ *   lasted her whole stay. She argues from necessity and never calls the hunt
+ *   a tradition, ancient or sustainable; the extract dates the narwhal's uses
+ *   to centuries, not millennia.
+ *
+ * Checked again on 10 October 2026. The personification note said the light
+ * makes distances deceptive; the extract blames the Arctic for the distances
+ * and gives the light only her doubt that the narwhal exist. (The q2 model
+ * outline below still says so; it was not changed here.) Also corrected then:
+ * a "second sighting" the extract never numbers, a net of hunters spread
+ * across the water rather than around it, an argument for hunting said to
+ * wait for the last paragraph (only the explicit one does), silence where the
+ * extract says the hunters keep still, and two Arabic copies that said more
+ * than the English.
+ */
 const languageFeatures = [
   {
     technique: 'Imagery (visual)',
     techniqueAr: 'الصورة البصريّة',
     guidance:
-      'Look for visual imagery examples in the anthology extract - Herbert uses imagery to render the Arctic landscape as both beautiful and forbidding, conveying scale and atmosphere.',
+      'Look for visual imagery examples in the anthology extract - Herbert uses imagery of light and colour on the evening fjord to make the scene beautiful and slightly unreal: distances deceive, and at first she is unsure whether the narwhal are real.',
     guidanceAr:
-      'ابحث عن أمثلة على الصورة البصريّة في مقتطف المختارات - تستعمل Herbert الصورةَ لتقدّم منظر القطب الشماليّ جميلاً منيعاً في آنٍ معاً، فتنقل الحجم والمناخ.',
+      'ابحث عن أمثلة على الصورة البصريّة في مقتطف المختارات - تستعمل Herbert صورَ الضوء واللون على المضيق البحريّ في المساء لتجعل المشهدَ جميلاً وغيرَ حقيقيٍّ بعضَ الشيء: فالمسافات خادعة، وهي في البداية غيرُ واثقةٍ من أنّ الـ narwhal حقيقيّة.',
   },
   {
     technique: 'Personification',
     techniqueAr: 'التشخيص',
     guidance:
-      "Look for personification examples in the anthology extract - Herbert uses personification to give the natural world (sea, ice, wind) agency, reinforcing nature's dominance over human life.",
+      'Look for personification examples in the anthology extract - Herbert personifies the light in the opening paragraph as a playful trickster: she wonders whether the narwhal are really there or only the light playing tricks on her, so the extract begins in wonder rather than threat.',
     guidanceAr:
-      'ابحث عن أمثلة على التشخيص في مقتطف المختارات - تستعمل Herbert التشخيصَ لتمنح الطبيعةَ (البحرَ والجليدَ والريحَ) إرادةً، فيتعزّز تسلّطُها على حياة الإنسان.',
+      'ابحث عن أمثلة على التشخيص في مقتطف المختارات - تُشخّص Herbert الضوءَ في الفقرة الأولى مخادعاً لعوباً: فهي تتساءل إن كانت الـ narwhal موجودةً حقّاً أم أنّ الضوء يتلاعب بها، فيبدأ المقتطفُ بالدهشة لا بالتهديد.',
   },
   {
     technique: 'Contrast',
@@ -68,92 +111,92 @@ const languageFeatures = [
     technique: 'Emotive language',
     techniqueAr: 'اللغة الانفعاليّة',
     guidance:
-      'Look for emotive language examples in the anthology extract - Herbert uses emotive language to reveal her instinctive sympathy for the narwhal and to draw the reader into her internal conflict.',
+      'Look for emotive language examples in the anthology extract - Herbert uses emotive language at the climax to reveal her instinctive sympathy for both the hunter and the narwhal, and to draw the reader into her internal conflict.',
     guidanceAr:
-      'ابحث عن أمثلة على اللغة الانفعاليّة في المقتطف - تستعمل Herbert اللغةَ الانفعاليّة لتكشف عن تعاطفها الغريزيّ مع الـ narwhal، ولتُدخل القارئ في صراعها الداخليّ.',
+      'ابحث عن أمثلة على اللغة الانفعاليّة في المقتطف - تستعمل Herbert اللغةَ الانفعاليّة عند الذروة لتكشف عن تعاطفها الغريزيّ مع الصيّاد والـ narwhal معاً، ولتُدخل القارئ في صراعها الداخليّ.',
   },
   {
     technique: 'Sensory language',
     techniqueAr: 'اللغة الحسّيّة',
     guidance:
-      'Look for sensory language examples in the anthology extract - Herbert uses sensory language to immerse the reader in the physical reality of the Arctic, making the scene feel immediate and lived.',
+      'Look for sensory language examples in the anthology extract - Herbert’s sensory language is mostly sight and sound: the evening light and colour on the water in the opening, and later how well the narwhal hear, which is why the hunters must keep so still. It places the reader beside her at the lookout, watching and waiting.',
     guidanceAr:
-      'ابحث عن أمثلة على اللغة الحسّيّة في المقتطف - تستعمل Herbert اللغةَ الحسّيّة لتغمر القارئ في الواقع الجسديّ للقطب الشماليّ، فيغدو المشهدُ حاضراً معيشاً.',
+      'ابحث عن أمثلة على اللغة الحسّيّة في المقتطف - اللغة الحسّيّة عند Herbert بصريّةٌ وسمعيّةٌ في معظمها: ضوءُ المساء وألوانُه على الماء في الافتتاح، ثمّ حدّةُ سمع الـ narwhal، التي تفرض على الصيّادين أن يلزموا السكونَ التامّ. وتضع هذه اللغةُ القارئَ إلى جانبها في موضع المراقبة، يشاهد وينتظر.',
   },
   {
     technique: 'Simile',
     techniqueAr: 'التشبيه',
     guidance:
-      'Look for simile examples in the anthology extract - Herbert uses similes to convey the alien, extreme quality of the Arctic landscape and to translate unfamiliar scenes into images the reader can picture.',
+      'Look for simile examples in the anthology extract - Herbert’s similes describe the hunt, not the landscape: she compares the scene to a vast game played on water and the hunters to a net spread around it, which shows them working together and raises the tension before the climax.',
     guidanceAr:
-      'ابحث عن أمثلة على التشبيه في المقتطف - تستعمل Herbert التشبيهَ لتنقل الطابعَ الغريبَ المتطرّفَ لمنظر القطب الشماليّ، ولتترجم مشاهدَ مجهولةً إلى صورٍ يستطيع القارئ تخيُّلها.',
+      'ابحث عن أمثلة على التشبيه في المقتطف - تصف تشبيهاتُ Herbert مشهدَ الصيد لا المنظرَ الطبيعيّ: فهي تشبّه المشهدَ بلعبةٍ هائلةٍ تُلعب على الماء، وتشبّه الصيّادين بشبكةٍ منشورةٍ حوله، فتُظهر تعاونهم وتُصعّد التوتّر قبل الذروة.',
   },
   {
     technique: 'Semantic field',
     techniqueAr: 'الحقل الدلاليّ',
     guidance:
-      'Look for semantic-field examples in the anthology extract - Herbert draws on a coherent vocabulary set (cold, hunt, survival) to build the world of the text and dignify the practice she observes.',
+      'Look for semantic-field examples in the anthology extract - Herbert draws on coherent vocabulary sets: light and colour in the opening, food, vitamins and health in the information about the narwhal, and hunting throughout. The field of nourishment presents the narwhal as what keeps people alive, so the hunt reads as a need rather than a sport.',
     guidanceAr:
-      'ابحث عن أمثلة على الحقل الدلاليّ في المقتطف - تستثمر Herbert مجموعةً مفرداتيّةً متماسكة (البرد، الصيد، النجاة) لتبني عالم النصّ ولتُكرم الممارسةَ التي تشاهدها.',
+      'ابحث عن أمثلة على الحقل الدلاليّ في المقتطف - تستثمر Herbert مجموعاتٍ مفرداتيّةً متماسكة: الضوء واللون في الافتتاح، والطعام والفيتامينات والصحّة في المعلومات عن الـ narwhal، والصيد على امتداد النصّ. ويُقدّم حقلُ الغذاء الـ narwhal بوصفه ما يُبقي الناسَ أحياء، فيُقرأ الصيدُ حاجةً لا رياضة.',
   },
   {
     technique: 'Tone shift',
     techniqueAr: 'تبدّل النبرة',
     guidance:
-      'Look for tone-shift examples in the anthology extract - Herbert uses tone shifts to track her movement from observation to admiration to moral conflict to acceptance.',
+      'Look for tone-shift examples in the anthology extract - Herbert’s tone moves from wonder in the opening, to the calm, factual voice of the information about the narwhal, to suspense as the women watch, to divided feeling at the climax and to firm argument at the end. The argument ends firmly, but she says the dilemma lasted her whole stay in Greenland.',
     guidanceAr:
-      'ابحث عن أمثلة على تبدّل النبرة في المقتطف - تستعمل Herbert تبدّلَ النبرة لتتبّع انتقالها من المراقبة إلى الإعجاب إلى الصراع الأخلاقيّ إلى القبول.',
+      'ابحث عن أمثلة على تبدّل النبرة في المقتطف - تنتقل نبرة Herbert من الدهشة في الافتتاح، إلى الصوت الهادئ المعلوماتيّ في الحديث عن الـ narwhal، إلى الترقّب والنساءُ يراقبن، إلى المشاعر المنقسمة عند الذروة، ثمّ إلى الحُجّة الحازمة في الخاتمة. تنتهي الحُجّة بحزم، لكنّها تقول إنّ المعضلة لازمتها طوال إقامتها في غرينلاند.',
   },
   {
     technique: 'Short sentence for emphasis',
     techniqueAr: 'الجملة القصيرة للتوكيد',
     guidance:
-      'Look for short-sentence examples in the anthology extract - Herbert uses short sentences to mark moments of realisation, standing out against longer descriptive passages.',
+      'Look for short-sentence examples in the anthology extract - Herbert’s shortest sentences are plain and direct. They say where the hunters are and that every one of them is out on the water; at the end they voice the critics’ question about eating seal and make her flat final statement that hunting is still a necessity in Thule. Against her long, detailed sentences they stand out and carry weight.',
     guidanceAr:
-      'ابحث عن أمثلة على الجملة القصيرة في المقتطف - تستعمل Herbert الجملةَ القصيرة لتسِم لحظات الإدراك، فتبرز قبالةَ المقاطع الوصفيّة الأطول.',
+      'ابحث عن أمثلة على الجملة القصيرة في المقتطف - أقصرُ جمل Herbert بسيطةٌ مباشرة. فهي تحدّد مواقعَ الصيّادين وتقول إنّ كلّ واحدٍ منهم قد نزل إلى الماء؛ وفي الخاتمة تنقل سؤالَ المنتقدين عن أكل الفقمة وتُطلق عبارتَها الأخيرة الجازمة بأنّ الصيد لا يزال ضرورةً في Thule. وهي تبرز قبالةَ جملها الطويلة المفصّلة فتكتسب ثقلاً.',
   },
   {
     technique: 'Listing',
     techniqueAr: 'التَّعداد',
     guidance:
-      'Look for listing examples in the anthology extract - Herbert uses lists to ground the argument in practical necessity, shifting from emotional response to rational acceptance of the hunt.',
+      'Look for listing examples in the anthology extract - Herbert’s lists of what the narwhal provides (lines 17 to 32) set out what a catch is worth before the climax, and the facts in the final paragraph, about how the Inughuit hunt and how imports can meet only part of their need, ground her conclusion in practical necessity. Not every list is rational: the tricolon at the climax is a plea for the whales.',
     guidanceAr:
-      'ابحث عن أمثلة على التَّعداد في المقتطف - تستعمل Herbert التَّعدادَ لتُرسي الحُجّة على ضرورةٍ عمليّة، منتقلةً من الاستجابة العاطفيّة إلى القبول العقلانيّ بالصيد.',
+      'ابحث عن أمثلة على التَّعداد في المقتطف - تعدّد Herbert ما يقدّمه الـ narwhal (الأسطر ١٧ إلى ٣٢) فتبيّن قيمةَ الصيدة قبل الذروة، ثمّ تُرسي الحقائقُ في الفقرة الأخيرة، عن طريقة صيد الـ Inughuit وعن أنّ الواردات لا تسدّ إلّا جزءاً من حاجتهم، خلاصتَها على ضرورةٍ عمليّة. وليس كلّ تعدادٍ عقلانيّاً: فالتعدادُ الثلاثيّ عند الذروة رجاءٌ من أجل الحيتان.',
   },
 ]
 
 const structuralAnalysis = {
   opening:
-    'Herbert opens with a panoramic description of the Arctic landscape, establishing setting and atmosphere before introducing any human characters. This positions nature as the dominant force in the text.',
+    'The extract opens on the hunt, not on empty landscape: its first sentence names the hunters, who had come back two hours before, and the narwhal, sighted again. Herbert then climbs to the lookout and describes the fjord in golden evening light, where distances deceive and she is unsure whether the whales are real.',
   openingAr:
-    'تستهلّ Herbert بوصفٍ بانوراميٍّ لمنظر القطب الشماليّ، فتُرسّخ المكان والمناخ قبل أن تقدّم أيَّ شخصيّةٍ بشريّة. ويضع هذا الطبيعةَ في موقع القوّة المهيمنة في النصّ.',
+    'يفتتح المقتطفُ على مشهد الصيد لا على منظرٍ خالٍ: فجملته الأولى تذكر الصيّادين، الذين عادوا قبل ساعتين، والـ narwhal وقد شوهدت من جديد. ثمّ تصعد Herbert إلى موضع المراقبة وتصف المضيقَ البحريّ في ضوء المساء الذهبيّ، حيث المسافاتُ خادعة، وهي غيرُ واثقةٍ من أنّ الحيتان حقيقيّة.',
   development:
-    'The text develops by introducing the narwhal hunt, building tension as the hunters wait. Herbert gradually reveals her own emotional response, moving from observation to personal reflection.',
+    'The narrative then pauses for two paragraphs of information (lines 13 to 32): where narwhal live, and what they have given the hunters, from vitamins, light and heat to meat and ivory for tools. It returns to the scene as the women on the lookout follow their husbands through binoculars and every hunter goes out on the water, then pauses once more (lines 41 to 44) to explain why the hunters must keep so still. The pauses delay the climax and tell the reader what a catch is worth.',
   developmentAr:
-    'يتطوّر النصُّ بتقديم مشهد صيد الـ narwhal، وبتصاعد التوتّر مع انتظار الصيّادين. وتكشف Herbert تدريجيّاً استجابتها العاطفيّة، منتقلةً من المراقبة إلى التأمّل الشخصيّ.',
+    'ثمّ يتوقّف السردُ عند فقرتين من المعلومات (الأسطر ١٣ إلى ٣٢): أين تعيش الـ narwhal، وماذا قدّمت للصيّادين، من الفيتامينات والضوء والدفء إلى اللحم والعاج للأدوات. ويعود إلى المشهد والنساءُ في موضع المراقبة يتابعن أزواجهنّ بالمناظير وقد نزل كلّ الصيّادين إلى الماء، ثمّ يتوقّف مرّةً أخرى (الأسطر ٤١ إلى ٤٤) ليشرح لماذا يجب أن يلزم الصيّادون السكونَ التامّ. وتؤخّر هذه الوقفاتُ الذروةَ وتُعرّف القارئَ بقيمة الصيدة.',
   climax:
-    "The climax is the moment of internal conflict, where Herbert's instinctive sympathy for the narwhal collides with her understanding of the Inughuit's need to hunt. This dual pull is the moral centre of the text.",
+    'The climax (lines 45 to 51) comes when one hunter, in a kayak with a harpoon and no rifle, takes aim at two huge narwhal. Herbert’s heart goes out to both: she urges the man on and admires his courage, since he could be overturned and drowned, then in the same breath wills the whales to escape. The conflict is between two lives at risk; her explicit argument that hunting is necessary comes only in the final paragraph.',
   climaxAr:
-    'الذروةُ هي لحظةُ الصراع الداخليّ، حيث يصطدم تعاطفُ Herbert الغريزيُّ مع الـ narwhal بإدراكها لحاجة الـ Inughuit إلى الصيد. وهذا التجاذبُ الثنائيُّ هو القلب الأخلاقيّ للنصّ.',
+    'تأتي الذروة (الأسطر ٤٥ إلى ٥١) حين يُسدّد صيّادٌ في قارب kayak، بحربةٍ ومن دون بندقيّة، نحو اثنتين ضخمتين من الـ narwhal. فيخفق قلبُ Herbert للاثنين معاً: تحثّ الرجلَ على المضيّ وتُعجب بشجاعته، إذ قد ينقلب قاربُه فيغرق، ثمّ تتمنّى في اللحظة ذاتها أن تنجو الحيتان. فالصراعُ هنا بين حياتَين مُعرّضتَين للخطر؛ أمّا حُجّتها الصريحة بأنّ الصيد ضرورة فلا تأتي إلّا في الفقرة الأخيرة.',
   resolution:
-    "Herbert resolves her conflict by accepting the hunt as a necessary and ancient tradition. The resolution is earned through the argument she builds about the narwhal's importance to Inuit survival.",
+    'The feeling is not resolved. The final paragraph (lines 52 to 64) names it a dilemma that lasted her whole stay in Greenland, then turns to argument: it answers the question critics ask about eating seal and ends on the flat statement that hunting is still a necessity in Thule. The argument is settled; the dilemma is not, and the extract never says whether the harpoon struck.',
   resolutionAr:
-    'تَفُكّ Herbert صراعَها بقبول الصيد بوصفه تراثاً قديماً ضروريّاً. والخاتمةُ مُكتسبةٌ عبر الحُجّة التي تبنيها حول أهمّيّة الـ narwhal لنجاة الإنويت.',
+    'لا تُحسم المشاعر. فالفقرة الأخيرة (الأسطر ٥٢ إلى ٦٤) تُسمّيها معضلةً لازمتها طوال إقامتها في غرينلاند، ثمّ تنتقل إلى الحُجّة: تُجيب عن السؤال الذي يطرحه المنتقدون عن أكل الفقمة، وتنتهي بعبارةٍ جازمة بأنّ الصيد لا يزال ضرورةً في Thule. تُحسم الحُجّة ولا تُحسم المعضلة، ولا يقول المقتطف أبداً إن أصابت الحربة.',
   perspective:
-    "First person, with Herbert positioned as both insider (she grew up in the Arctic) and outsider (she has Western sensibilities about animal welfare). This dual perspective creates the text's central tension.",
+    'First person, with Herbert placed between insider and outsider. The anthology’s introduction says she lived among the Inughuit as a small child, so she is no tourist; but she watches from the lookout with the women rather than from a kayak, and in the final paragraph she counts herself among the people who want sea mammals protected for their beauty, before answering them with facts about how the Inughuit live and hunt. This double position creates the text’s central tension.',
   perspectiveAr:
-    'ضمير المتكلّم، مع تموضع Herbert ابنةَ البلاد (نشأت في القطب الشماليّ) وغريبةً (تحمل حساسيّةً غربيّة تجاه رفق الحيوان). وهذا المنظورُ الثنائيّ يُولّد التوتّرَ المركزيَّ في النصّ.',
+    'ضمير المتكلّم، مع تموضع Herbert بين ابنة البلاد والغريبة. تذكر مقدّمةُ المختارات أنّها عاشت بين الـ Inughuit طفلةً صغيرة، فليست سائحة؛ لكنّها تراقب من موضع المراقبة مع النساء لا من قاربٍ في الماء، وفي الفقرة الأخيرة تعدّ نفسها بين من يريدون حمايةَ الثدييات البحريّة لجمالها، قبل أن تردّ عليهم بحقائق عن حياة الـ Inughuit وطريقة صيدهم. وهذا الموقعُ المزدوج يُولّد التوتّرَ المركزيَّ في النصّ.',
   paragraphing:
-    "Descriptive paragraphs are long and immersive, creating the sensation of being in the Arctic. Reflective paragraphs are shorter, marking shifts in Herbert's thinking.",
+    'Seven paragraphs of very different lengths. The three longest are the descriptive opening (lines 1 to 12), the information about what the narwhal provides (lines 17 to 32) and the final argument (lines 52 to 64). The two shortest (lines 13 to 16 and 41 to 44) are informational pauses, not reflections. The climax is a single paragraph, and the break after it moves straight to her dilemma without showing what the harpoon did.',
   paragraphingAr:
-    'الفقرات الوصفيّة طويلةٌ غامرة، تُولّد إحساساً بالحضور في القطب الشماليّ. أمّا الفقرات التأمّليّة فأقصرُ، وتسِم تبدّلاتِ تفكير Herbert.',
-  time: "The text uses present-tense description for the hunt, creating immediacy, interspersed with past-tense reflections on Herbert's childhood in the Arctic. This blending of timeframes enriches the perspective.",
+    'سبعُ فقراتٍ متفاوتةِ الطول تفاوتاً كبيراً. أطولُها ثلاث: الافتتاح الوصفيّ (الأسطر ١ إلى ١٢)، والمعلومات عمّا تقدّمه الـ narwhal (الأسطر ١٧ إلى ٣٢)، والحُجّة الختاميّة (الأسطر ٥٢ إلى ٦٤). وأقصرُها اثنتان (الأسطر ١٣ إلى ١٦ و٤١ إلى ٤٤)، وهما وقفتان معلوماتيّتان لا تأمّليّتان. والذروةُ فقرةٌ واحدة، والانتقالُ بعدها يمضي مباشرةً إلى معضلتها من دون أن يُبيّن ما فعلته الحربة.',
+  time: 'The evening is narrated in the past tense, from the moment the whales are sighted again until the hunter takes aim. The information about the narwhal (lines 13 to 32 and 41 to 43) and the closing argument (lines 52 to 64) are mostly in the present, which makes them sound like permanent facts rather than one visitor’s impressions. The extract does not look back on Herbert’s childhood; only the anthology’s introduction mentions it.',
   timeAr:
-    'يستعمل النصُّ الوصفَ بصيغة المضارع لمشهد الصيد، فيُولّد فوريّةً، تتخلّلُها تأمّلاتٌ بصيغة الماضي عن طفولة Herbert في القطب الشماليّ. ويُثري هذا المزجُ بين الأزمنة المنظورَ.',
+    'يُروى المساءُ بصيغة الماضي، من رؤية الـ narwhal من جديد إلى تسديد الصيّاد. أمّا المعلومات عن الـ narwhal (الأسطر ١٣ إلى ٣٢ و٤١ إلى ٤٣) والحُجّة الختاميّة (الأسطر ٥٢ إلى ٦٤) فمعظمها بصيغة المضارع، فتبدو حقائقَ دائمةً لا انطباعاتِ زائرةٍ عابرة. ولا يعود المقتطفُ إلى طفولة Herbert؛ فمقدّمة المختارات وحدها تذكرها.',
   openingClosing:
-    "The opening frames the Arctic as harsh and indifferent; the closing reframes the hunt as purposeful survival. The text's arc moves from hostility to meaning, from outsider gaze to earned understanding.",
+    'The opening presents the Arctic as beautiful and hard to read: golden light, deceptive distances, whales that may not be real. Herbert names its harshness only in the final paragraph, which reframes the hunt as survival and ends on the claim that hunting is still a necessity in Thule. The arc moves from wonder to argument, from watching to explaining.',
   openingClosingAr:
-    'يُؤطّر الافتتاحُ القطبَ الشماليَّ قاسياً غيرَ آبهٍ؛ وتُعيد الخاتمةُ تأطيرَ الصيد بوصفه نجاةً ذاتَ غاية. وقوسُ النصّ ينتقل من العداء إلى المعنى، ومن نظرة الغريب إلى فهمٍ مُكتسَب.',
+    'يُقدّم الافتتاحُ القطبَ الشماليَّ جميلاً عصيّاً على القراءة: ضوءٌ ذهبيّ، ومسافاتٌ خادعة، وحيتانٌ قد لا تكون حقيقيّة. ولا تُسمّي Herbert قسوتَه إلّا في الفقرة الأخيرة، التي تُعيد تأطيرَ الصيد بوصفه نجاةً وتنتهي بأنّ الصيد لا يزال ضرورةً في Thule. وقوسُ النصّ ينتقل من الدهشة إلى الحُجّة، ومن المشاهدة إلى الشرح.',
 }
 
 const writersPurpose = {
@@ -166,17 +209,19 @@ const writersPurpose = {
   readerFeelAr:
     'تريد للقارئ أن يشاركها مشاعرها المتنازعة - أن يشعر بجاذبيّة الشفقة على الـ narwhal، وباحترام نمط حياة الإنويت في الوقت نفسه. ولا تريد أن يتسرّع القارئُ في الحكم.',
   message:
-    'Her central argument is that cultural practices must be understood in context. The narwhal hunt, which might seem cruel to Western eyes, is a vital, sustainable tradition that has sustained a people for millennia.',
+    'Her central argument is that hunting is still a necessity in Thule, and must be judged in the context of Arctic life. She concedes that images of seals being beaten for their fur have not helped the case for polar hunting, then answers with facts: the Inughuit neither kill that way nor hunt for sport, they waste nothing of what they catch, and imports can meet only part of their need, since a single supply ship reaches Qaanaaq each year and a small plane comes twice a week from West Greenland.',
   messageAr:
-    'حُجّتها المركزيّة أنّ الممارسات الثقافيّة لا بدّ أن تُفهم في سياقها. وصيدُ الـ narwhal، الذي قد يبدو قسوةً في العيون الغربيّة، تراثٌ حيويٌّ مستدامٌ سَنَدَ شعباً منذ آلاف السنين.',
+    'حُجّتها المركزيّة أنّ الصيد لا يزال ضرورةً في Thule، وأنّه لا بدّ أن يُحكم عليه في سياق الحياة في القطب الشماليّ. فهي تُقرّ بأنّ صور الفقمات التي تُضرب من أجل فرائها لم تخدم قضيّةَ الصيد القطبيّ، ثمّ تردّ بالحقائق: فالـ Inughuit لا يقتلون بتلك الطريقة ولا للرياضة، ولا يُهدرون شيئاً ممّا يصطادون، والواردات لا تسدّ إلّا جزءاً من حاجتهم، إذ لا تبلغ Qaanaaq إلّا سفينةُ إمدادٍ واحدة في السنة، وتأتي طائرةٌ صغيرة مرّتين في الأسبوع من غرب غرينلاند.',
 }
 
+/**
+ * Only words the extract uses. Until 26 September 2026 this list also held
+ * pitiless, incomparable, poised, sustain, tradition, barren, intimate and
+ * subsistence, none of which appears in the extract; "intimate" was defined as
+ * it is used "here". Tradition and barren were worse than absent: Herbert
+ * never calls the hunt a tradition, and never describes the land as barren.
+ */
 const keyVocabulary = [
-  {
-    word: 'pitiless',
-    definition: 'Showing no pity; merciless. Often used of harsh environments.',
-    definitionAr: 'لا يُظهر شفقةً؛ بلا رحمة. كثيراً ما يُستعمل للبيئات القاسية.',
-  },
   {
     word: 'harpoon',
     definition: 'A barbed spear-like weapon used for hunting large sea creatures.',
@@ -190,47 +235,9 @@ const keyVocabulary = [
       'حوتٌ من القطب الشماليّ بنابٍ حلزونيٍّ طويل، يصطاده الإنويت طلباً للطعام والمواد.',
   },
   {
-    word: 'incomparable',
-    definition: 'Without an equal; matchless. Beyond comparison.',
-    definitionAr: 'لا نظيرَ له؛ لا يُجارى. فوق المقارنة.',
-  },
-  {
-    word: 'poised',
-    definition: 'Ready and prepared for action; balanced and composed.',
-    definitionAr: 'مستعدٌّ مهيَّأٌ للفعل؛ متوازنٌ رابطُ الجأش.',
-  },
-  {
-    word: 'sustain',
-    definition: 'To provide what is needed for survival or to continue over time.',
-    definitionAr: 'أن يُقدّم ما يلزم للنجاة أو للاستمرار عبر الزمن.',
-  },
-  {
-    word: 'tradition',
-    definition: 'A custom or belief passed from generation to generation.',
-    definitionAr: 'عادةٌ أو معتقدٌ يُتوارث جيلاً بعد جيل.',
-  },
-  {
     word: 'necessity',
     definition: 'The state of being required or unavoidable; something essential.',
     definitionAr: 'حالُ ما هو مطلوبٌ أو لا مفرّ منه؛ شيءٌ ضروريّ.',
-  },
-  {
-    word: 'barren',
-    definition: 'Too poor to produce vegetation; unproductive and desolate.',
-    definitionAr: 'فقيرٌ إلى الحدّ الذي لا يُنبت معه نبات؛ غيرُ مُنتجٍ وموحش.',
-  },
-  {
-    word: 'intimate',
-    definition:
-      'Close and personal; here describing a deep knowledge of the land and its creatures.',
-    definitionAr: 'قريبٌ شخصيّ؛ ويُوصف به هنا فهمٌ عميق للأرض ومخلوقاتها.',
-  },
-  {
-    word: 'subsistence',
-    definition:
-      'The action of maintaining oneself at a minimum level; living off what you can hunt or grow.',
-    definitionAr:
-      'فعلُ الإبقاء على الذات في حدٍّ أدنى؛ العيشُ ممّا يستطيع المرءُ صيدَه أو زراعتَه.',
   },
 ]
 
@@ -307,37 +314,44 @@ const examPractice = {
   },
 }
 
+/**
+ * Reasons corrected 26 September 2026 against the four extracts. Herbert is
+ * not a stranger to the Arctic (she lived there as a small child), does not
+ * call the hunt a tradition and shows no culture shock; Zeppa's extract never
+ * calls Bhutan harsh; and Macdonald's is her first meeting with the hawks,
+ * before any bond or training.
+ */
 const comparisonLinks = [
   {
     title: 'A Game of Polo with a Headless Goat',
     author: 'Emma Levine',
     href: '/igcse/edexcel-lang/anthology/a-game-of-polo-with-a-headless-goat',
     reason:
-      'Both writers observe unfamiliar cultural traditions as outsiders. Compare how each writer balances observation with personal response, and how their attitudes to the events they witness shape their language.',
+      'Both writers watch a contest involving animals from the sidelines: Herbert from a lookout above the fjord, Levine from the open boot of a car at a donkey-cart race in Karachi. Compare how each writer balances observation with personal response, and how their attitudes to the events they witness shape their language.',
     reasonAr:
-      'تشاهد الكاتبتان تراثاً ثقافيّاً مجهولاً بوصفهما غريبتَين. قارن كيف توازن كلٌّ منهما بين المراقبة والاستجابة الشخصيّة، وكيف يُشكّل موقفهما من الحدث الذي تشهدانه لغتهما.',
-    themes: ['Cultural observation', 'Outsider perspective', 'Tradition'],
-    themesAr: ['الرصد الثقافيّ', 'منظور الغريب', 'التراث'],
+      'تشاهد الكاتبتان من خارج الحدث منافسةً تشارك فيها حيوانات: Herbert من موضع مراقبةٍ فوق المضيق البحريّ، وLevine من صندوق سيّارةٍ مفتوح في سباقٍ لعربات الحمير في كراتشي. قارن كيف توازن كلٌّ منهما بين المراقبة والاستجابة الشخصيّة، وكيف يُشكّل موقفهما من الحدث الذي تشهدانه لغتهما.',
+    themes: ['Cultural observation', 'Watching from the sidelines', 'Animals'],
+    themesAr: ['الرصد الثقافيّ', 'المشاهدة من خارج الحدث', 'الحيوانات'],
   },
   {
     title: 'Beyond the Sky and the Earth',
     author: 'Jamie Zeppa',
     href: '/igcse/edexcel-lang/anthology/beyond-the-sky-and-the-earth',
     reason:
-      "Both texts describe remote, beautiful landscapes and the writers' emotional responses to unfamiliar environments. Compare the use of sensory language and imagery in each text.",
+      "Both texts describe remote, beautiful places and the writers' responses to them: Zeppa arriving in Bhutan for the first time, Herbert returning to the Arctic where she lived as a small child. Compare the use of sensory language and imagery in each text, and how far each writer sees the place as an outsider.",
     reasonAr:
-      'يصف النصّان مناظرَ نائيةً جميلةً واستجابةَ الكاتبتَين العاطفيّة لبيئاتٍ مجهولة. قارن استعمالَ اللغة الحسّيّة والصور في كلّ نصّ.',
-    themes: ['Landscape', 'Culture shock', 'Beauty in harshness'],
-    themesAr: ['المنظر', 'الصدمة الثقافيّة', 'الجمال في القسوة'],
+      'يصف النصّان أماكنَ نائيةً جميلةً واستجابةَ الكاتبتَين لها: Zeppa تصل إلى بوتان أوّلَ مرّة، وHerbert تعود إلى القطب الشماليّ حيث عاشت طفلةً صغيرة. قارن استعمالَ اللغة الحسّيّة والصور في كلّ نصّ، وإلى أيّ حدٍّ ترى كلٌّ منهما المكانَ بعين الغريب.',
+    themes: ['Landscape', 'Imagery', 'Outsider and insider'],
+    themesAr: ['المنظر', 'الصور', 'الغريب وابن البلاد'],
   },
   {
     title: 'H is for Hawk',
     author: 'Helen Macdonald',
     href: '/igcse/edexcel-lang/anthology/h-is-for-hawk',
     reason:
-      "Both texts explore the relationship between humans and wild animals. Compare Herbert's conflicted view of hunting with Macdonald's intimate bond with her goshawk, and how each writer uses nature writing.",
+      "Both texts explore the relationship between humans and wild animals. Compare Herbert's divided feelings as she watches the hunt from the shore with Macdonald's overwhelmed response when she first meets the two hawks on the quayside, and how each writer describes a wild animal.",
     reasonAr:
-      'يستكشف النصّان العلاقةَ بين الإنسان والحيوان البرّيّ. قارن رؤيةَ Herbert المتنازعة للصيد بصلة Macdonald الحميمة مع صقرها، وكيف توظّف كلٌّ منهما كتابةَ الطبيعة.',
+      'يستكشف النصّان العلاقةَ بين الإنسان والحيوان البرّيّ. قارن مشاعرَ Herbert المنقسمة وهي تراقب الصيد من الشاطئ باستجابة Macdonald الجارفة حين تلتقي الصقرَين أوّلَ مرّة على رصيف الميناء، وكيف تصف كلٌّ منهما حيواناً برّيّاً.',
     themes: ['Nature', 'Animals', 'Human-animal relationships'],
     themesAr: ['الطبيعة', 'الحيوانات', 'العلاقات بين الإنسان والحيوان'],
   },
@@ -388,10 +402,15 @@ export default async function TheExplorersDaughterPage() {
           <AlertTriangle className="size-5 shrink-0 text-amber-700 dark:text-clay-600 mt-0.5" />
           <div className="text-body-sm text-foreground leading-relaxed">
             <p className="font-semibold">{await t('anth_text.rebuilt_label')}</p>
+            {/* Until 26 September 2026 this said quotations were pending review and
+                told students to cite their "licensed" anthology in the exam. The
+                verified guide below now quotes the extract; the anthology is free;
+                and the exam prints the extract in the Source Booklet, since the
+                anthology may not be taken in. */}
             <p className="mt-1 text-muted-foreground">
               {ar
-                ? 'أُزيلت الاقتباسات الحرفيّة بانتظار مراجعةٍ موثّقة للمصادر الأوليّة. اقتبس دائماً من مختاراتك المرخّصة من Edexcel في إجابات الامتحان.'
-                : 'Direct quotations have been removed pending verified primary-source review. Always cite from your licensed Edexcel anthology in exam answers.'}
+                ? 'لا تتضمّن ملاحظات هذه الصفحة اقتباسات. أمّا دليل الدراسة أدناه فيقتبس من المقتطف مع أرقام الأسطر كما في المختارات (الإصدار ٨، الصفحتان ٦ و٧). وفي الامتحان يُطبع المقتطف لك في كتيّب المصادر (Source Booklet): اقتبس منه.'
+                : 'This page’s own notes carry no quotations. The study guide below quotes the extract, with line numbers from the anthology (Issue 8, pages 6 and 7). In the exam the extract is printed for you in the Source Booklet: quote from that.'}
             </p>
           </div>
         </div>
@@ -405,19 +424,26 @@ export default async function TheExplorersDaughterPage() {
           </h2>
         </div>
         <div className="rounded-xl border border-border/40 bg-card p-4 text-body-sm text-muted-foreground leading-relaxed">
+          {/* Until 26 September 2026 this promised verified passages "once
+              primary-source text is reviewed" and certified the commentary above
+              as correct, while that commentary set the hunt in the present tense
+              and gave Herbert childhood reflections the extract does not have. */}
           {ar ? (
             <p>
-              <strong className="text-foreground">المقتطفات الموثَّقة قيد المراجعة.</strong> لا بدّ
-              من اقتباس المقتطفات الخمسة في المختارات من نسخة Pearson المرخّصة (ISBN
-              978-1-446-93108-0). تعليقاتنا البنائيّة والموضوعيّة صحيحة؛ وستُضاف المقاطع الموثّقة
-              المحدّدة بمجرّد مراجعة النصّ الأوليّ.
+              <strong className="text-foreground">
+                المقتطفات المفتاحيّة في دليل الدراسة أدناه.
+              </strong>{' '}
+              نُقلت اقتباساته المفتاحيّة ومقاطعه الثلاثة للقراءة المتأنّية من مختارات Pearson
+              (الإصدار ٨، ISBN 978-1-446-93108-0)، الصفحتين ٦ و٧، وتتبع أرقامَ الأسطر في المختارات.
             </p>
           ) : (
             <p>
-              <strong className="text-foreground">Verified extracts pending content review.</strong>{' '}
-              The 5 anthology extracts must be quoted from the licensed Pearson anthology (ISBN
-              978-1-446-93108-0). Our structural and thematic commentary is correct; the specific
-              verified passages will be added once primary-source text is reviewed.
+              <strong className="text-foreground">
+                Key extracts are in the study guide below.
+              </strong>{' '}
+              Its key quotations and three passages for close reading were copied from the Pearson
+              anthology (Issue 8, ISBN 978-1-446-93108-0), pages 6 and 7, and use the
+              anthology&apos;s line numbers.
             </p>
           )}
         </div>

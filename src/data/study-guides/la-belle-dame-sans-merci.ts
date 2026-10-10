@@ -53,6 +53,24 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * 1819; Scudder's 1899 headnote says the letter entry was 28 April. The letter
  * as a whole ran from 14 February to 3 May 1819, so this file says April 1819
  * and no day.
+ *
+ * HOW THE POEM IS EXAMINED, corrected 10 October 2026 against Pearson's 4ET1
+ * papers from June 2019 to June 2025, their mark schemes and reports, and the
+ * 1ET0 specification and anthology. Every 4ET1 Section B question compares
+ * two Part 3 poems, both named or one named and one chosen, and the Poetry
+ * Booklet issued with each paper prints all of Part 3: this poem keeps its
+ * numerals there, but its lines are numbered 1 to 48, not to 60 as in the
+ * anthology. Until this date the tips spoke of Section B and Pearson's
+ * specification without naming a board, said an anthology line number could
+ * be found at once in the exam, and said context earns little where the
+ * reports say it is not assessed; the extract questions were not marked as
+ * practice, and an essay on this poem alone sat among the exam questions. The
+ * poem is also set for 1ET0, in the Relationships collection, where only the
+ * named poem is printed, context is assessed and the anthology numbers the
+ * verse 1 to 48, so wherever the two boards differ the guide names the board.
+ * The practice labels say "in 4ET1 and 1ET0", not "in the exam" (changed on
+ * review, 10 October 2026): set-texts.ts also tags the poem for AQA A-level,
+ * whose format was not checked for this guide.
  */
 export const guide: StudyGuide = {
   slug: 'la-belle-dame-sans-merci',
@@ -60,7 +78,7 @@ export const guide: StudyGuide = {
   author: 'John Keats',
   form: 'poem',
   scope:
-    'The whole poem, as printed on pages 60 to 61 of the Pearson Edexcel International GCSE English Anthology (Issue 8, February 2026), Part 3, for English Literature (4ET1) Paper 1, Section B. The anthology prints the earlier text of the poem, the one that opens with a knight-at-arms, in twelve four-line stanzas headed I to XII. Its margin line numbers count each Roman numeral as a line, so stanza I ends at line 5 and stanza XII at line 60. Line references here follow those numbers; a guide that numbers only the 48 lines of verse will give different figures.',
+    'The whole poem, as printed on pages 60 to 61 of the Pearson Edexcel International GCSE English Anthology (Issue 8, February 2026), Part 3, for English Literature (4ET1) Paper 1, Section B. The anthology prints the earlier text of the poem, the one that opens with a knight-at-arms, in twelve four-line stanzas headed I to XII. Its margin line numbers count each Roman numeral as a line, so stanza I ends at line 5 and stanza XII at line 60. Line references here follow those numbers; a guide that numbers only the 48 lines of verse will give different figures. So do two printings students use: the Poetry Booklet issued with every 4ET1 paper checked for this guide, from June 2019 to June 2025, and the anthology for Pearson Edexcel GCSE English Literature (1ET0), which also sets the poem. Both number only the 48 lines of verse.',
   rights: {
     status: 'public-domain',
     acknowledgement:
@@ -165,7 +183,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        "How does Keats use language and structure in stanzas IV and V to present the lady and the knight's response to her?",
+        "Close-reading practice, not an exam question (in 4ET1 and 1ET0 this poem is always compared with another). How does Keats use language and structure in stanzas IV and V to present the lady and the knight's response to her?",
     },
     {
       title: 'The feast and the strange language',
@@ -192,7 +210,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        "How does Keats present the lady's power over the knight in stanza VII? Refer to language, form and structure.",
+        "Close-reading practice, not an exam question (in 4ET1 and 1ET0 this poem is always compared with another). How does Keats present the lady's power over the knight in stanza VII? Refer to language, form and structure.",
     },
     {
       title: 'The dream, the waking and the answer',
@@ -228,7 +246,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Explore how Keats uses structure in the last three stanzas to present the effect of the lady on the knight.',
+        'Close-reading practice, not an exam question (in 4ET1 and 1ET0 this poem is always compared with another). Explore how Keats uses structure in the last three stanzas to present the effect of the lady on the knight.',
     },
   ],
 
@@ -364,7 +382,7 @@ export const guide: StudyGuide = {
           'Compare the ways the writers present the effects of love in La Belle Dame sans Merci and one other poem from the anthology. You should make reference to language, form and structure. Support your answer with examples from the poems.',
         skill: 'Comparing two anthology poems: language, form and structure',
         guidance: [
-          'Choose a partner poem that gives you a clear contrast. Sonnet 116 works well, because it defines love as constant and unchanging, while Keats shows love as an enchantment that leaves the lover ruined.',
+          'Choose your second poem from Part 3, the part of the anthology the 4ET1 question draws on, and make it one in which the effects of love matter and which gives you a clear contrast. Sonnet 116 works well, because it defines love as constant and unchanging, while Keats shows love as an enchantment that leaves the lover ruined.',
           'Open with a comparative argument, for example that Keats shows the effects of love before their cause, as a story told by its victim, while Shakespeare argues about what love is rather than telling what it did.',
           'Start where Keats starts, with the effect: the knight “Alone and palely loitering” and the questioner’s diagnosis in stanza III. Analyse the lily, the fever-dew and the fading rose as signs of a body drained.',
           'Track the shift of control across stanzas V to IX: the knight’s verbs (made, set) give way to the lady’s (found, took, lulled). Say what this suggests about love’s effect on the will.',
@@ -396,7 +414,7 @@ export const guide: StudyGuide = {
           'Neither being is explained. Blake’s speaker never answers his questions about the maker, and Keats’s lady never explains her tears. Argue about what the missing answers do to the reader.',
           'Compare form and sound: The Tyger’s short, hammering lines in rhyming couplets against Keats’s quiet ballad stanzas with their fading fourth lines. One poem seems to cry out its awe; the other murmurs its dread.',
           'Consider when the danger is felt. Blake’s speaker contemplates the tiger from outside, in wonder at its “fearful symmetry”; Keats’s lady has already acted on the knight, so the fear in his poem looks back on what has happened.',
-          'Keep background brief. Both poets wrote in the Romantic period, but this section of the paper rewards close analysis and comparison far more than context.',
+          'Keep background brief. Both poets wrote in the Romantic period, but context is not assessed in 4ET1 Section B: the credit there is for close analysis and comparison.',
         ],
       },
       {
@@ -414,8 +432,8 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Examine the view that La Belle Dame sans Merci invites sympathy for the knight but refuses to judge the lady.',
-        skill: 'Whole-poem argument (an A-level style essay)',
+          'Practice for the Keats half of a comparison, not an exam question (in 4ET1 and 1ET0 this poem is always compared with another): examine the view that La Belle Dame sans Merci invites sympathy for the knight but refuses to judge the lady.',
+        skill: 'Whole-poem argument, as practice',
         guidance: [
           'Define the terms first: what would sympathy for the knight involve, and what would a judgement of the lady look like in a poem that never lets her speak?',
           'Build the case for sympathy: the questioner’s diagnosis in stanzas I to III, the knight’s isolation, and the circular ending that traps him.',
@@ -427,14 +445,16 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
-      'Quote the anthology, not a website. The anthology prints the earlier knight-at-arms text, and printings online differ from it: some give the revised 1820 text, in which the knight is a wretched wight, and some read hath thee where the anthology has “Thee hath in thrall”. Pearson’s specification says the anthology poems are provided in the examination, so check your wording against the copy in front of you.',
-      'Refer to stanzas by the anthology’s Roman numerals. Its margin numbers count each numeral as a line, so the 48 lines of verse are numbered up to 60, and a reference such as stanza X, line 48 is one an examiner can find at once.',
-      'Section B tests analysis of language, form and structure, and the links between the two poems. Keats’s life and the medieval sources are interesting, but they earn little unless they sharpen a point about the words on the page.',
+      'Know the shape of the 4ET1 question. Section B offers a choice of two questions, and both compare two Part 3 poems: one names both, and the other names one and lets you choose the second from Part 3, a poem in which the question’s focus matters. The paper suggests spending 40 minutes on the section. An answer that discusses only one poem cannot rise above the second of the mark scheme’s five levels.',
+      'Quote the anthology, not a website. The anthology prints the earlier knight-at-arms text, and printings online differ from it: some give the revised 1820 text, in which the knight is a wretched wight, and some read hath thee where the anthology has “Thee hath in thrall”. In the 4ET1 exam the whole of Part 3 is printed in a Poetry Booklet issued with the question paper, so check your wording against the copy in front of you.',
+      'Give the stanza’s numeral with any line number. The International GCSE anthology counts each Roman numeral as a line, so its margin numbers run to 60, and stanza X, line 48 is a reference you can find in it at once. The Poetry Booklet issued with every 4ET1 paper checked for this guide, from June 2019 to June 2025, prints the numerals but numbers only the 48 lines of verse, so in the exam take line numbers from the booklet in front of you.',
+      'In 4ET1, Section B rewards two things in equal measure: analysis of language, form and structure, and the links between the two poems. Context is not assessed there, so Keats’s life and the medieval sources earn nothing on their own; use them only where they sharpen a point about the words on the page.',
       'Track the verbs. The knight acts in stanzas V and VI, and from stanza VII he is mostly acted upon, his one act being to close her eyes with kisses; an answer that notices this shift in the grammar has a ready-made argument about power.',
       'Write about the short fourth line of each stanza. It is the poem’s signature: it cuts each stanza off, often on a single stark image, and many of the most quotable phrases fall there.',
       'Do not label the lady evil and move on. The strongest answers notice that she never speaks for herself, that her name is given by the pale kings of the dream, and that she weeps; then they argue for a reading anyway.',
       'Use the circular structure precisely. The last stanza repeats the first almost word for word, but the sedge that “has withered” in stanza I is withered in stanza XII, and the question has become “this is why”.',
       'Pathetic fallacy is a label, not an analysis. Say what the withered sedge, the full granary and the silent birds each do, and notice that nature’s plenty contrasts with the knight’s emptiness as well as mirroring his mood.',
+      'If you are sitting Pearson Edexcel GCSE English Literature (1ET0) instead, where the poem is in the Relationships collection of the GCSE anthology, the question works differently: only the named poem is printed in the paper, so if Keats’s poem is the one you choose you must quote it from memory; your second poem must come from the same collection; and context is assessed alongside language, form and structure. The practice questions above are written for 4ET1.',
     ],
   },
 
@@ -641,6 +661,31 @@ export const guide: StudyGuide = {
       label:
         'Pearson Edexcel International GCSE English Literature specification, Issue 3, August 2025: Component 1 Section B compares two Part 3 anthology poems; closed book, but the anthology poems are provided in the examination',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Specification%20and%20sample%20assessments/international-gcse-english-literature-specification.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1/01 question papers with their Poetry Booklets, read by script on 10 October 2026: June 2019, January 2023, June 2023, November 2023, June 2024 and its R paper, November 2024 (where Question 2 paired this poem with The Tyger), and June 2025 and its R paper. In every one Section B offers two comparison questions, one naming two Part 3 poems and one naming a single poem with a second of the candidate’s choice; 40 minutes is advised; and the booklet prints all of Part 3. Every booklet prints this poem as the knight-at-arms text reading Thee hath in thrall, with its stanza numerals, but with margin numbers 5 to 45 that count only the 48 lines of verse',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20241105.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1/01 mark schemes, November 2024, June 2025 and the June 2025 R paper: each Section B question marked on one grid of five levels, the mark unable to progress beyond the top of Level 2 if only one poem is considered, and the chosen second poem required to be one in which the focus of the question is significant',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-rms-20250821.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1/01 examiners’ reports, June 2024, June 2025 and the June 2025 R paper: context is not assessed in either poetry section',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-pef-20250821.pdf',
+    },
+    {
+      label:
+        'Pearson Edexcel GCSE (9-1) English Literature specification (1ET0), Issue 2, June 2019, printed pages 2 and 14 and Appendix 3: Paper 2 is closed book; Section B Part 1 compares a named poem, reproduced in the question paper, with a poem of the student’s choice from the same collection, and assesses the contexts in which the poems were written as well as language, form and structure; La Belle Dame sans Merci is in the Relationships collection. The basis for the 1ET0 notes in the scope and tips',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/GCSE/English%20Literature/2015/specification-and-sample-assesment/9781446914359_GCSE_2015_L12_Englit.pdf',
+    },
+    {
+      label:
+        'Pearson Edexcel GCSE (9-1) English Literature Poetry Anthology, Issue 4, January 2023, page 6: the knight-at-arms text, printed without stanza numerals and with margin numbers that count only the 48 lines of verse; read by script on 10 October 2026',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/GCSE/English%20Literature/2015/teaching-and-learning-materials/poetry-anthology-issue-4-jan-2023.pdf',
     },
     {
       label:

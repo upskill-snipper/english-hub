@@ -59,6 +59,32 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * among the men who have loved, which it does not state. Two examiners'-report
  * tips said more than the report does. And the glossary said Death carries a
  * sickle, where the usual image is a scythe.
+ *
+ * EXAM FORMAT, audited 10 October 2026 against the 4ET1 specification (Issue
+ * 3, August 2025) and ten Paper 1 question papers, the specimen to June 2025.
+ * Section B offers two questions, and each compares two whole Part 3 poems:
+ * one names both, the other names one and the student adds the second. No
+ * question on a Part 3 poem sets a few lines of it, yet the three extract
+ * questions asked about four lines, in the exam's phrasing, under the label
+ * "The question"; they now say they are close-reading practice. No tip said
+ * what the section sets, so a first tip does, with the 40 minutes and the
+ * Poetry Booklet. The exam questions, the model answer and the other tips were
+ * kept, after the November 2023 wording, mark-scheme points and printed text
+ * they rely on were rechecked against Pearson's documents.
+ *
+ * A second check the same day narrowed two things. The couplet tip said "the
+ * mark scheme" asks for a personal response; the nine Paper 1 mark schemes
+ * opened, the specimen to June 2025, ask for one on Question 2, which names
+ * both poems, and not on Question 3, so the tip now cites November 2023's,
+ * which set Sonnet 116 with My Last Duchess. It puts the year after "mark
+ * scheme" because the validator reads "2023 mark" as a mark tariff. And the
+ * label on the question where the student adds a poem now says that poem
+ * comes from Part 3, as the specification requires: the question's own "from
+ * the anthology" would also cover the Part 2 poems. The examiners'-report
+ * points (the tips on equal weight and on comparing what the poems lack, and
+ * the third point of guidance on the first exam question) were checked
+ * against a saved copy of the November 2023 report, the same size as the
+ * live file.
  */
 export const guide: StudyGuide = {
   slug: 'sonnet-116',
@@ -167,7 +193,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Explore how Shakespeare uses the first four lines of Sonnet 116 to set out his argument about love. You should write about the marriage imagery, the way love is defined, and the use of language and structure.',
+        'Close-reading practice, not an exam question (in the exam, Sonnet 116 is always compared, as a whole, with another Part 3 poem). Explore how Shakespeare uses the first four lines of Sonnet 116 to set out his argument about love. You should write about the marriage imagery, the way love is defined, and the use of language and structure.',
     },
     {
       title: 'The fixed mark and the star',
@@ -198,7 +224,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Shakespeare use images of the sea and the stars in lines 5 to 8 to present love? You should write about the sea-mark and the star, the personification, and the effect of the last line of the quatrain.',
+        'Close-reading practice, not an exam question (in the exam, Sonnet 116 is always compared, as a whole, with another Part 3 poem). How does Shakespeare use images of the sea and the stars in lines 5 to 8 to present love? You should write about the sea-mark and the star, the personification, and the effect of the last line of the quatrain.',
     },
     {
       title: 'Love against Time',
@@ -229,7 +255,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Shakespeare present the relationship between love and time in lines 9 to 12? You should write about the personification of Time, the contrast between beauty and love, and the use of language and structure.',
+        'Close-reading practice, not an exam question (in the exam, Sonnet 116 is always compared, as a whole, with another Part 3 poem). How does Shakespeare present the relationship between love and time in lines 9 to 12? You should write about the personification of Time, the contrast between beauty and love, and the use of language and structure.',
     },
   ],
 
@@ -359,7 +385,7 @@ export const guide: StudyGuide = {
         question:
           'Re-read Sonnet 116. Compare the ways the writers present the power of time in Sonnet 116 and one other poem from the anthology. You should make reference to language, form and structure. Support your answer with examples from the poems.',
         skill:
-          'Comparison with a poem of your choice: language, form and structure, and the links between them',
+          'Comparison with another Part 3 poem of your choice: language, form and structure, and the links between them',
         guidance: [
           "Choose a partner poem with a clear attitude to time or death. Remember and Do not go gentle into that good night both work well: Rossetti's speaker imagines being forgotten after death, and the speaker of Thomas's poem urges his father to fight against dying.",
           'State the contrast early. Shakespeare concedes that Time takes beauty but denies that it can touch love; say whether your second poem resists time, accepts it or fears it.',
@@ -398,6 +424,7 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
+      'Know what the section sets. Section B of Paper 1 offers a choice of two questions, and both compare two Part 3 poems. One names both, as the November 2023 paper named Sonnet 116 and My Last Duchess. The other names one and asks you to add one other poem from the anthology, which means another Part 3 poem: Sonnet 116 can be named in either, or be the one you add, if it suits the question’s focus. The paper advises 40 minutes. Every Part 3 poem is printed in a Poetry Booklet issued with the paper, so nothing has to be quoted from memory.',
       'Quote the anthology. Your booklet prints line 5 as “O no, it is an ever-fixèd mark”, with a comma after no where some editions print an exclamation mark, and prints wandering in full in line 7 where some print wand’ring. An answer built on an exclamation mark your booklet does not show will puzzle an examiner.',
       'Sound the accent. The è in fixèd tells you to pronounce the -ed as a separate syllable, which gives line 5 its ten syllables. The anthology marks La Belle Dame sans Merci the same way (“lullèd”, “gapèd”), a small point of form if you pair the two.',
       'Give Sonnet 116 equal weight. Two examiners quoted in the November 2023 report said that answers pairing it with My Last Duchess tended to be better on the Browning, with fewer points on the sonnet, and that the sonnet form was an easy point about structure that was not always grasped.',
@@ -407,7 +434,7 @@ export const guide: StudyGuide = {
       "Compare what the poems do, not what they both lack. The November 2023 examiners' report noted an occasional tendency to compare what the poems did not do, such as neither using alliteration, and found such comparisons often vague.",
       'Write about both poems throughout. The mark scheme holds an answer that considers only one poem to the lower levels, however good it is.',
       'Use short quotations and read them closely. Bends, fool, compass and doom each repay a sentence of analysis, and a single word explained well is worth more than a line copied out.',
-      'Argue about the couplet. The wager is clever, but it proves only that he wrote, not that anyone loved. Saying whether you find it convincing is the personal response the mark scheme asks for.',
+      'Argue about the couplet. The wager is clever, but it proves only that he wrote, not that anyone loved. Saying whether you find it convincing is the personal response the mark scheme asked for in November 2023.',
     ],
   },
 
@@ -611,6 +638,11 @@ export const guide: StudyGuide = {
       label:
         "Pearson 4ET1/01 examiners' report (Principal Examiner Feedback), November 2023: on Question 2, very able candidates saw Shakespeare's love transcending time and Browning trying to fix time through the portrait; responses tended to be better on My Last Duchess, with fewer points on Sonnet 116; the sonnet form was an easy structure point not always grasped; some compared what neither poem did, such as alliteration",
       url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-pef-20240125.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1/01 question papers, ten from the specimen (Extra Assessment Materials) to June 2025, both Paper 1R papers of June 2024 and June 2025 included, checked by script on 10 October 2026 for the first tip and the practice labels on the extracts. In every one, Section B is Question 2, naming two Part 3 poems, or Question 3, naming one and asking for one other poem from the anthology; both ask for reference to language, form and structure; 40 minutes are advised; and the poems come with the paper, in a separate Poetry Booklet in the nine live papers. The November 2023 and June 2025 mark schemes accept any other appropriate poem as the second. Linked: June 2025 Paper 1',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20250513.pdf',
     },
     {
       label:

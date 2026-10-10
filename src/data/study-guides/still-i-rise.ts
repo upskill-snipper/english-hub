@@ -18,19 +18,39 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * uses all 36. Deciding which 36 words carry the most analysis was the design
  * problem; everything else is located by line number and paraphrased.
  *
- * THE BUDGET IS THIS FILE'S, NOT THE MOUNTED PAGE'S. The page above also
- * quotes the line 12 refrain, the gold mines, air and the tide, which this file
- * does not. Measured together the two come to 43 distinct words, 18 per cent,
- * so the share holds for the combined page only once the page above drops
- * those four quotations, which are also the ones carrying its factual errors.
+ * THE BUDGET IS SHARED WITH THE MOUNTED PAGE. Until 26 September 2026 the page
+ * above also quoted the line 12 refrain, the gold mines, air and the tide,
+ * which this file does not, and the two together came to 43 distinct words, 18
+ * per cent. The page has since cut those four quotations, and
+ * no-poem-quoted-beyond-fair-dealing.test.ts now measures the page and this
+ * file as one route.
  *
- * THE PAGE ABOVE, checked while this was written, is right about the stanza
- * shape and wrong in places: it tags the poem to English Literature (4ET1),
- * which does not set it; it says the refrain ends every stanza (only stanzas
- * 1, 3 and 6 end on it before stanza 8); it calls air and the tide the closing
- * image (they are lines 24 and 34); its comparison poems Half-Caste and If-
- * are Part 3 texts that 4EA1 does not examine; and its Mandela claim is
- * unverified.
+ * THE PAGE ABOVE, checked while this was written, was right about the stanza
+ * shape and wrong in places, all corrected there on 26 September 2026: it
+ * tagged the poem to English Literature (4ET1), which does not set it; it said
+ * the refrain ends every stanza (only stanzas 1, 3 and 6 end on it before
+ * stanza 8); it called air and the tide the closing image (they are lines 24
+ * and 34); its comparison poems Half-Caste and If- were Part 3 texts that 4EA1
+ * does not examine; and its Mandela claim was unverified. Until 10 October 2026
+ * this paragraph and the one before it described those errors as current.
+ *
+ * EXAM FORMAT, audited 26 September 2026 against the Issue 7 specification,
+ * the January 2019 paper that set this poem and its examiners' report. Paper 2
+ * Section A sets one essay on the whole of one named Part 2 text, printed for
+ * the candidate (a poem goes in the question paper itself), and never a
+ * comparison. The three extract questions asked about a stanza or two under
+ * the label "The question", so they now say they are close-reading practice.
+ * The coursework guidance told the student to compare; Assignment A is marked
+ * for understanding and for language and structure only (the links-and-
+ * connections objective is assessed on Paper 1 alone), so it now asks for
+ * analysis of each text. A first tip says what the paper sets. No mark
+ * tariffs: the validator keeps those to ExamPlacementCard.
+ *
+ * 10 October 2026: that tip said without qualification that the question asks
+ * how the writer presents something, but the June 2023 paper asked how the
+ * writer creates sympathy, so it now says usually. A tip also claimed that few
+ * students notice three structural points, which no source supports; it now
+ * calls them easy to miss.
  */
 export const guide: StudyGuide = {
   slug: 'still-i-rise',
@@ -172,7 +192,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Angelou use the first stanza to establish the relationship between the speaker and the person she addresses?',
+        'Close-reading practice, not an exam question (the exam sets one essay on the whole poem). How does Angelou use the first stanza to establish the relationship between the speaker and the person she addresses?',
     },
     {
       title: 'Provocation, then certainty',
@@ -200,7 +220,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer use the contrast between stanzas 2 and 3 to present the speaker’s confidence?',
+        'Close-reading practice, not an exam question (the exam sets one essay on the whole poem). How does the writer use the contrast between stanzas 2 and 3 to present the speaker’s confidence?',
     },
     {
       title: 'Rising out of history',
@@ -224,7 +244,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the change of structure in the last two stanzas help to present the speaker’s feelings about the past and the future?',
+        'Close-reading practice, not an exam question (the exam sets one essay on the whole poem). How does the change of structure in the last two stanzas help to present the speaker’s feelings about the past and the future?',
     },
   ],
 
@@ -434,17 +454,18 @@ export const guide: StudyGuide = {
           'Build a thesis that covers all three texts, for example that the texts differ less in whether their people resist than in whether anyone hears them.',
           'For Still I Rise, focus on voice: direct address, the taunting questions, the refrain, and the addressee written out after stanza 7.',
           'For the prose text, analyse narrative method (point of view, setting, the ending) rather than retelling the plot.',
-          'Keep the texts in conversation: compare methods in the same paragraph where you can, not three separate essays.',
+          'Keep it one essay, not three: a shared focus and brief links between the texts help it hang together. But the assignment is marked for understanding each text and analysing its language and structure, not for comparison as such, so a link should never take the place of analysis.',
           'Use context lightly and precisely: slavery and its legacy for Angelou, and whatever limits shape the people in your other two texts.',
         ],
       },
     ],
     tips: [
+      'Know what the paper sets. Section A of Paper 2 is one compulsory essay question on one Part 2 text, named on the paper, with about 45 minutes advised. If it is Still I Rise, the question covers the whole poem, which is printed for you: in January 2019 it appeared in the question paper itself. The question usually asks how the writer presents something, with three bullet points, the last always the use of language and structure. It is not a comparison: the other Part 2 texts come in only if you take the coursework option instead.',
       'Go beyond confidence. The examiners’ report on the January 2019 paper found that answers at the lower and middle grades often went no further than broad ideas such as her pride, her confidence or her strength. The stronger answers covered the whole poem and saw the contrast between how she speaks of herself and how she speaks of others.',
       'Do not work stanza by stanza. The same report named a rigid stanza-by-stanza approach as a weakness. Organise by idea (pride, history, power) and move freely across the poem.',
       'Explain every device you name. Rule of three, repetition, rhetorical questions and rhyme were spotted in many 2019 answers, often without their effect being explained. One precise sentence on effect is worth more than three labels.',
       'Offer more than one reading of the refrain. The top answer in 2019 gave several interpretations of the same phrase, and the refrain is where this poem rewards it most: rising as survival, as defiance, as a people’s history, as a future.',
-      'Use the structural points few students notice: the addressee vanishes after stanza 7; the refrain changes from future to present tense; similes give way to metaphors in the last two stanzas.',
+      'Use the structural points that are easy to miss: the addressee vanishes after stanza 7; the refrain changes from future to present tense; similes give way to metaphors in the last two stanzas.',
       'Line numbers in this guide follow the anthology. The January 2019 exam paper printed the poem without them, so in the exam locate references by stanza and quote briefly.',
       'Link context to effect. Race and feminism were the contexts the 2019 report credited, and in the stronger answers they were tied to the language and structure being analysed. Use context that way, not as a paragraph about Angelou’s life.',
       'Write about the speaker, not simply Angelou. The 2019 question used the word narrator; either is fine, but treating the poem as a performed voice lets you discuss tone and persona.',

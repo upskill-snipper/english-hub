@@ -22,6 +22,21 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * Every quotation, line number and page number was checked against a text copy
  * made from the Issue 8 anthology PDF. The whole page quotes at most a tenth of
  * the extract, per fair-dealing.ts.
+ *
+ * EXAM PRACTICE AUDITED, 26 September 2026, against the 4EA1 Paper 1 format:
+ * this text is only ever Text Two, examined by one language-and-structure
+ * question on the whole extract and a comparison with an unseen Text One. So
+ * the line-range questions (the three passages and lines 1-19) are labelled
+ * practice, and the Explorers comparison a practice pairing. The June 2026
+ * Source Booklet printed its own, shorter introduction, without his plans, and
+ * its line numbers ran one behind the anthology's from line 41, so answer
+ * guidance does not lean on the introduction and the line-number tip says to
+ * use the booklet's numbers. Line numbers in this guide stay the anthology's.
+ * The first-half tip no longer says examiners reward following his thoughts
+ * and feelings: that was November 2023's focus, and June 2026 asked about his
+ * experiences in the canyon. Two context notes that described the anthology's
+ * introduction and 56 lines as what the examiner reads now allow for the paper
+ * printing its own introduction and line breaks.
  */
 export const guide: StudyGuide = {
   slug: 'between-a-rock-and-a-hard-place',
@@ -65,7 +80,7 @@ export const guide: StudyGuide = {
     },
     {
       heading: '127 Hours, the film',
-      body: 'The title the anthology uses comes from the film 127 Hours (2010), directed by Danny Boyle, with James Franco as Ralston, after which the book was reissued under that name. The film was nominated for six Academy Awards, including Best Picture and Best Actor, and was released in the United Kingdom in January 2011. The title counts the ordeal in hours. It is worth knowing about, because many students have seen the film, but it is not what you are examined on. The film shows the accident in its own way; the examiner is reading the words printed in the anthology, so every point you make should come from those 56 lines.',
+      body: 'The title the anthology uses comes from the film 127 Hours (2010), directed by Danny Boyle, with James Franco as Ralston, after which the book was reissued under that name. The film was nominated for six Academy Awards, including Best Picture and Best Actor, and was released in the United Kingdom in January 2011. The title counts the ordeal in hours. It is worth knowing about, because many students have seen the film, but it is not what you are examined on. The film shows the accident in its own way; the examiner is reading the extract as it is printed in the anthology and on the exam paper, so every point you make should come from those words.',
     },
     {
       heading: 'Canyoneering and slot canyons',
@@ -73,7 +88,7 @@ export const guide: StudyGuide = {
     },
     {
       heading: 'An American voice in a British exam',
-      body: "The anthology keeps Ralston's American English, in spelling, vocabulary and measurements in feet and inches, and one of its footnotes points out an American spelling. Quote the text exactly as printed and do not correct it. The italic introduction above the extract, which tells you that he had not told anyone his plans, is Pearson's framing rather than Ralston's writing. It shapes how you read, since you know from the first line that no one is coming, but your analysis should be of Ralston's words.",
+      body: "The anthology keeps Ralston's American English, in spelling, vocabulary and measurements in feet and inches, and one of its footnotes points out an American spelling. Quote the text exactly as printed and do not correct it. The anthology's italic introduction, which tells you that he had not told anyone his plans, is Pearson's framing rather than Ralston's writing. It shapes how you read, since you know from the first line that no one is coming, but the exam paper prints its own introduction, which may not say so, and your analysis should be of Ralston's words.",
     },
   ],
 
@@ -228,7 +243,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Ralston use language and structure in lines 8-28 to present himself as skilled and in control?',
+        'Practice on lines 8-28, not an exam question (the exam asks about the whole extract): how does Ralston use language and structure to present himself as skilled and in control?',
     },
     {
       title: 'The fall',
@@ -256,7 +271,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Ralston use language and structure to make the moment of the accident dramatic for the reader?',
+        'Practice on lines 29-41, not an exam question (the exam asks about the whole extract): how does Ralston use language and structure to make the moment of the accident dramatic for the reader?',
     },
     {
       title: 'Pain, panic and one last push',
@@ -288,7 +303,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Ralston use language and structure in lines 42-56 to show his thoughts and feelings after he becomes trapped?',
+        'Practice on lines 42-56, not an exam question (the exam asks about the whole extract): how does Ralston use language and structure to show his thoughts and feelings after he becomes trapped?',
     },
   ],
 
@@ -392,7 +407,7 @@ export const guide: StudyGuide = {
     },
     {
       heading: "The anthology's framing",
-      body: "The anthology prints a short italic introduction by Pearson before the extract. It tells you that a boulder crushed his hand and that he had not told anyone his plans. This creates a kind of dramatic irony: you know from the first line that the climb will go wrong and that no one knows where he is, while the Ralston of the present tense, calmly describing the canyon, does not know what is about to happen. The six footnotes, also Pearson's, explain five harder words and one American spelling. You can mention the introduction's effect on a reader, but keep your analysis on Ralston's writing.",
+      body: "The anthology prints a short italic introduction by Pearson before the extract. It tells you that a boulder crushed his hand and that he had not told anyone his plans. This creates a kind of dramatic irony: you know from the first line that the climb will go wrong and that no one knows where he is, while the Ralston of the present tense, calmly describing the canyon, does not know what is about to happen. The six footnotes, also Pearson's, explain five harder words and one American spelling. In the exam the Source Booklet prints its own introduction, which may differ: the June 2026 paper's was shorter and did not mention his plans. So keep your analysis on Ralston's writing, and do not build a point on an introduction the examiner may not have in front of them.",
     },
   ],
 
@@ -504,7 +519,7 @@ export const guide: StudyGuide = {
         question: 'How does the writer use language and structure to create tension?',
         skill: 'Language and structure analysis of the anthology text',
         guidance: [
-          'Show that tension builds before anything happens: the enclosed setting, the introduction telling you he had told no one his plans, and the warning that the chockstone “teeters”.',
+          "Show that tension builds before anything happens: the enclosed setting and the warning that the chockstone “teeters”. The anthology's introduction, which tells you he had told no one his plans, is Pearson's rather than Ralston's, and the one printed on the exam paper may be different, so do not build a point on it.",
           'Explain how the moment the stone moves at line 29 changes the pace, and analyse the sound of “a scraping quake” and the image of the rock that “consumes the sky”.',
           'Analyse the slow-motion sentence in lines 36-40 and how its colon and semicolons force the reader through each blow in turn.',
           'Show that the tension is never released: each attempt to escape ends in a short sentence of failure, and the extract ends without resolution.',
@@ -513,8 +528,9 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Compare how the writers of 127 Hours: Between a Rock and a Hard Place and Explorers or boys messing about? present people who take risks in wild places. (Practice pairing: in the exam, the anthology text is compared with an unseen text printed on the paper.)',
-        skill: 'Comparison of two texts: ideas, perspectives and methods',
+          'Practice pairing, not an exam pairing (in the exam this extract is compared with an unseen passage, never with another anthology text): compare how the writers of 127 Hours: Between a Rock and a Hard Place and Explorers or boys messing about? present their ideas and perspectives about people who take risks in wild places.',
+        skill:
+          'Comparison of ideas, perspectives and methods, practised with a second anthology text',
         guidance: [
           'Open with the key difference in perspective: Ralston writes from inside the danger, in the first person and the present tense, while the newspaper article reports on other people in danger from outside.',
           'Compare purposes: Ralston makes the reader live through the moment, while the article invites its readers to judge adventurers and the cost of rescuing them.',
@@ -522,12 +538,13 @@ export const guide: StudyGuide = {
           "Compare methods, with a short quotation from each text for every point: for example Ralston's technical vocabulary against the article's tone and its headline, or Ralston's slow-motion structure against the order in which a news report gives its facts.",
           'Keep the balance: the strongest comparisons use references from both texts throughout, so do not spend most of the answer on one of them.',
           'End with a judgement: which text makes you think harder about whether the risk was worth it, and why?',
+          'In the exam, use the same method on the unseen passage: you meet it for the first time on the day, so the points of comparison have to come from reading it there.',
         ],
       },
       {
         question:
-          "Explain how Ralston's description of the canyon and his technique in lines 1-19 prepares the reader for what happens next.",
-        skill: 'Close reading and structure',
+          "Close-reading practice on lines 1-19, not an exam question (the exam asks about language and structure across the whole extract): how does Ralston's description of the canyon and his technique prepare the reader for what happens next?",
+        skill: 'Close-reading practice on a short section',
         guidance: [
           'Find the details that make the canyon enclosed: the narrowing slot, three feet wide for fifty feet, and “the claustrophobic feel of a short tunnel”.',
           'Show how the chockstones are introduced as useful, something to step onto and hang from, before one of them becomes the trap.',
@@ -537,13 +554,14 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
+      'Know how this text is examined. When it is set, it is printed for you in the Source Booklet as Text Two, beside an unseen extract, Text One, and the short-answer questions are all on the unseen text. This extract has one question to itself, on how Ralston uses language and structure across the whole extract, and is then compared with the unseen text. Revise it for analysis and comparison, not retrieval.',
       'The extract ends with the boulder unmoved. Do not write about the days of waiting, the amputation or the rescue: they are in the book, not in the lines the examiner is reading, and writing about them wastes time and can look like a misreading.',
-      "Treat the first half as deliberate. Examiners reward answers that follow Ralston's changing thoughts and feelings through the whole extract, and the change only means something once you have shown how controlled he is in lines 1-28.",
-      'Use line numbers. The anthology numbers every fifth line, so you can refer to line 29 or lines 35-41 and show the examiner that you understand how the extract is built.',
+      'Treat the first half as deliberate. Whatever the focus of the question, it covers the whole extract, and the points suggested in the mark scheme for the June 2026 paper began with the calm opening paragraph. The change from control to crisis only means something once you have shown how controlled he is in lines 1-28.',
+      "Use line numbers, but the ones on the paper. The Source Booklet prints the extract with its own line numbers, which need not match the anthology's: in the June 2026 paper they agreed up to line 40 and then ran one behind, so paragraph 6 ended at line 40 and the last word of the extract was on line 55. The line numbers in this guide are the anthology's, so check a reference against the booklet before you use it.",
       'Quote as printed, keeping the American spelling and vocabulary, and keep quotations short: a word or phrase you then analyse is worth more than a whole sentence copied out.',
       'Be careful with the ellipses in lines 45 and 49. They are printed with a space on either side, unlike the one inside his speech in line 56, and the anthology does not say whether they are pauses Ralston wrote or mark words it has left out. You can comment on their effect, but do not build an argument on them.',
       'Name the grammatical shift, and state it carefully: before line 29 Ralston is the subject of nearly every action; afterwards he is still the subject of his own frantic efforts, but the rock, his body and his emotions increasingly take that place. It is a precise point, and it only convinces with examples.',
-      'In a comparison, perspective is the key: Ralston is inside the experience, and many texts you might compare him with look at danger from outside. Make that difference the spine of your answer.',
+      'In the comparison question the other text is an unseen passage, so you cannot plan the pairing. Perspective is a strong place to start: Ralston is inside the experience, so work out whether the unseen writer is too, or is looking at danger from outside, and build the answer on that similarity or difference. Keep both texts in every paragraph, because an answer on only one of them is capped low.',
     ],
   },
 
@@ -752,6 +770,10 @@ export const guide: StudyGuide = {
     {
       label:
         'Question style: the examiner pack at src/lib/marking/examiner/packs/pearson-igcse-english-a-paper1.ts, drawn from the published 4EA1 Paper 1 mark scheme (November 2023) and Pearson exemplar commentaries. Used for the kinds of question and what top answers do, not for tariffs.',
+    },
+    {
+      label:
+        'Pearson Edexcel International GCSE English Language A, Paper 1 (4EA1/01), June 2026 question paper, Source Booklet and mark scheme, checked 26 September 2026: the short-answer questions are on the unseen Text One; this extract is Text Two, with one language-and-structure question on it and a comparison with Text One; an answer on one text only is capped at the top of Level 2. The booklet prints its own shorter introduction, and its line numbers match the anthology to line 40 and then run one behind, ending at line 55.',
     },
   ],
 }

@@ -28,6 +28,35 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * anthology prints it in Part 2, which only English Language A (4EA1) examines,
  * and two of its three comparison poems are Part 3 texts a Language student
  * does not study. Its form notes say some lines are a single word; none is.
+ *
+ * THE QUESTIONS, corrected 26 September 2026 against the 4EA1 Paper 2 papers.
+ * The poem is examined in one way: Section A of Paper 2 is a single compulsory
+ * essay on the one Part 2 text named, printed on the question paper, with no
+ * anthology allowed in. The stem asks how the writer presents something, the
+ * bullets end with the use of language and structure, and the question covers
+ * the whole text, never a line range and never a comparison. Until this date
+ * the fourth exam question was a structure question pointed at lines 36-48,
+ * two others were labelled language analysis only, none had the bullets, and
+ * the extract questions, which are line-range close reading, did not say they
+ * were practice. Mark tariffs stay out: validate.ts rejects them in exam
+ * practice.
+ *
+ * CHECKED AGAIN 10 October 2026, against the paper that set this poem (4EA1/02,
+ * 6 June 2024). It printed the poem on the question paper with no line numbers
+ * and asked how the writer presents the importance of traditional Indian
+ * culture. So the stems now say the writer, as the paper does; the line-number
+ * tip names that paper; and the model answer's commentary no longer claims
+ * every claim carries a line number (two do, and the exam copy has none). A
+ * tip headed write about the speaker, not Alvi, told a student to ignore the
+ * writer the question names; it now keeps the two apart instead. The tips and
+ * this docblock had said comparison belongs to the coursework option. It does
+ * not: Assignment A is one essay on three Part 2 texts, marked like the exam
+ * essay for understanding and for language and structure, and the
+ * specification gives Components 2 and 3 no share of the comparison
+ * objective. The Compare with cards offer pairings for that essay, not for a
+ * comparison question. The bullet tip now says to weave the bullets together,
+ * because the November 2020 examiners' report counted essays that left
+ * language and structure to the end among the less successful.
  */
 export const guide: StudyGuide = {
   slug: 'an-unknown-girl',
@@ -190,7 +219,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Alvi use language and structure in lines 1-13 to present the speaker’s first experience of the bazaar?',
+        'Close-reading practice on these lines, not an exam question: the exam essay covers the whole poem. How does Alvi use language and structure in lines 1-13 to present the speaker’s first experience of the bazaar?',
     },
     {
       title: 'The peacock and the watching street',
@@ -214,7 +243,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Alvi present the bazaar as a place that is both exciting and unsettling in lines 14-27?',
+        'Close-reading practice on these lines, not an exam question. How does Alvi present the bazaar as a place that is both exciting and unsettling in lines 14-27?',
     },
     {
       title: 'Holding on and letting go',
@@ -245,7 +274,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Alvi use form and structure in lines 28-48 to show how the speaker’s feelings change by the end of the poem?',
+        'Close-reading practice on these lines, not an exam question. How does Alvi use form and structure in lines 28-48 to show how the speaker’s feelings change by the end of the poem?',
     },
   ],
 
@@ -428,8 +457,8 @@ export const guide: StudyGuide = {
     questions: [
       {
         question:
-          'How does Alvi present the speaker’s feelings about her cultural identity in An Unknown Girl? In your answer, comment on the writer’s use of language, form and structure, and refer closely to the poem.',
-        skill: 'Language, form and structure analysis across the whole poem',
+          'How does the writer present the speaker’s feelings about her cultural identity in An Unknown Girl? In your answer, you should write about: what the speaker sees and feels as her hand is decorated; how her feelings change by the end of the poem; the use of language and structure. Support your answer with close reference to the poem, including brief quotations.',
+        skill: 'Exam-style essay on the whole poem: language and structure together',
         guidance: [
           'Open with an argument, not a summary: for example, that the speaker’s sense of belonging grows while the henna is applied and then slips away, leaving longing rather than certainty.',
           'Analyse the opening: the neon setting and the metaphor of “icing my hand” show wonder, and also an outsider translating what she sees into familiar terms.',
@@ -441,20 +470,20 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Explore how Alvi uses the setting of the bazaar to convey the speaker’s experience.',
-        skill: 'Language analysis: setting and imagery',
+          'How does the writer present the bazaar in An Unknown Girl? In your answer, you should write about: the sights and sounds of the bazaar; how the bazaar affects the speaker; the use of language and structure. Support your answer with close reference to the poem, including brief quotations.',
+        skill: 'Exam-style essay on the whole poem: setting, language and structure',
         guidance: [
           'Start with light: the evening setting, the bazaar “studded with neon”, and the way the word neon returns in the last line.',
           'Look at the personified street in lines 18-26: colours drifting up into the air, watching dummies with “Western perms”, banners that “canopy” her. Decide whether the effect is joyful, overwhelming or both.',
           'Consider what these details say about India in the early 1990s: modern, commercial and looking West, not the timeless place a visitor might expect.',
-          'Show how the setting changes at lines 36-37, when the bustle falls silent, and what that silence does to the mood.',
+          'Show how the setting changes at lines 36-37, when the bustle falls silent, and what that silence does to the mood: it is the poem’s turn, so it is structure as well as setting.',
           'Conclude that the setting mirrors the speaker: a place where cultures mix, as they do in her.',
         ],
       },
       {
         question:
-          'How does Alvi present the unknown girl, and why do you think she remains unknown?',
-        skill: 'Language analysis and interpretation of a figure in the poem',
+          'How does the writer present the unknown girl in An Unknown Girl? In your answer, you should write about: what the speaker notices about the girl and her work; what the girl’s silence and namelessness suggest; the use of language and structure. Support your answer with close reference to the poem, including brief quotations.',
+        skill: 'Exam-style essay on the whole poem: a figure in the poem, language and structure',
         guidance: [
           'Gather what the poem gives us: her skill (“deftly”), her closeness as she holds the speaker’s hand on her knee, the payment, and her silence.',
           'Analyse the title phrase and its repetition at lines 3, 12 and 30, and the change from an indefinite to a definite article in the final echo at line 47.',
@@ -465,9 +494,10 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'How does the ending of An Unknown Girl change the way the reader understands what has come before? Refer to lines 36-48 and to the poem as a whole.',
-        skill: 'Structure and whole-text argument',
+          'How does the writer present memory and loss in An Unknown Girl? In your answer, you should write about: the henna pattern and what the speaker knows will happen to it; how the speaker imagines the future at the end of the poem; the use of language and structure. Support your answer with close reference to the poem, including brief quotations.',
+        skill: 'Exam-style essay on the whole poem: memory and loss, language and structure',
         guidance: [
+          'Start before the ending, because the question covers the whole poem: the present tense of the refrain keeps the henna in progress, and the train simile at lines 32-35 shows the speaker afraid of losing the moment while it is still happening.',
           'Identify the turn at line 36 and the move from the present tense of the refrain into the future.',
           'Analyse the scraping of the dried lines and the “amber bird beneath”: what is revealed, and what is lost.',
           'Explain how “fade in a week” reframes the earlier certainty of “I have new brown veins”.',
@@ -477,8 +507,11 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
-      'Use line numbers. The poem is one unbroken stanza of 48 lines, so refer to lines, not stanzas.',
-      'Write about the speaker, not Alvi. The biography is useful context, but the poem is set in India while Alvi was born in Pakistan, and the speaker is never named.',
+      'Know the task. If Paper 2 sets this poem, as it did in June 2024, Section A is one compulsory essay on it, with no choice of question and about 45 minutes advised for the whole section. The poem is printed for you on the question paper, and you may not take your anthology in. The June 2024 question asked how the writer presents the importance of traditional Indian culture, with bullets on the cultural experience with the girl, on feelings about the place, and on language and structure.',
+      'Answer on this poem alone. The exam question is not a comparison, so do not bring in other texts. Other Part 2 texts come in only on the coursework option: one essay on three Part 2 texts, including at least one poem and one prose text, marked for understanding each text and analysing its language and structure, not for comparison as such.',
+      'Cover every bullet point, but weave them together rather than taking them one at a time. The last is always the use of language and structure, which are rewarded together, so an essay about imagery alone leaves half of that bullet unanswered. The examiners’ report on the November 2020 paper counted essays that left language and structure to the end, as an add-on, among the less successful.',
+      'Do not refer to stanzas: the poem is one unbroken stanza of 48 lines. Revise with the anthology’s line numbers, but the June 2024 paper printed the poem without them, so in the exam a brief quotation is the surest way to point to a moment.',
+      'Do not treat the speaker as Alvi. The biography is useful context, but the poem is set in India while Alvi was born in Pakistan, and the speaker is never named. The question asks how the writer presents something, so write about Alvi’s choices and the speaker’s experience, not about Alvi’s own life.',
       'Follow the refrain and its changes. A repeated line that is not quite the same each time is one of the most rewarding things to analyse in this poem.',
       'Do not treat the bazaar as exotic background. The neon, the Western hairstyles and the 1993 banner are deliberate, and they complicate the idea of a traditional homeland.',
       'Offer alternatives, then choose: the girl as a real person and as a symbol; the henna as belonging and as a bought, temporary decoration. Say which reading you find more convincing, and why.',
@@ -489,7 +522,7 @@ export const guide: StudyGuide = {
 
   modelAnswer: {
     question:
-      'How does Alvi present the speaker’s feelings about her cultural identity in An Unknown Girl?',
+      'How does the writer present the speaker’s feelings about her cultural identity in An Unknown Girl?',
     paragraph:
       'Alvi presents the speaker’s sense of belonging as something that grows while the henna is applied and then begins to slip away. At first she describes the girl’s work from a slight distance: the metaphor “icing my hand” turns the traditional art of henna into a homely image of cake decoration, which suggests that she is translating the bazaar into the terms of the life she knows. By line 27, however, the distance has closed. The short declarative sentence “I have new brown veins” imagines the pattern entering her bloodstream, as if her heritage were now carried inside her like ancestry. Yet the adjective “new” quietly undercuts this certainty, because what is new has been acquired rather than inherited, and can be lost. Alvi’s structure confirms the doubt. Within a few lines the speaker is “clinging” to the pattern like a passenger on the outside of a train, and after the turn at line 36 the verbs move into the future, where she admits the stain will “fade in a week”. The refrain that once held her in the present, “is hennaing my hand”, is finally replaced by “longing”, so the poem ends not in belonging but in the desire for it.',
     commentary: [
@@ -497,7 +530,7 @@ export const guide: StudyGuide = {
       'It analyses single words closely, the icing metaphor and the adjective “new”, and says what each suggests about the speaker instead of only naming the technique.',
       'It moves from language to structure: the tense shift, the turn at line 36 and the changing refrain show how the form carries the meaning.',
       'It holds two readings in tension, belonging and its limits, and ends on the poem’s final movement, which shows a grasp of the whole text.',
-      'Every quotation is brief and embedded in the sentence, which leaves room for analysis, and every claim is anchored to a line number.',
+      'Every quotation is brief and embedded in the sentence, which leaves room for analysis, and each point rests on one. The two line numbers are for finding those moments in the anthology: the June 2024 paper printed the poem without them, so in the exam the quotations do that work.',
     ],
   },
 
@@ -577,25 +610,25 @@ export const guide: StudyGuide = {
       title: 'Still I Rise',
       href: '/igcse/edexcel/poetry/still-i-rise',
       reason:
-        'Also in Part 2 of the anthology: both poems build identity through a refrain and draw on a heritage, but Angelou’s speaker claims hers with defiant confidence while Alvi’s reaches for one she cannot quite hold.',
+        'Also in Part 2 of the anthology: both poems build identity through a refrain and draw on a heritage, but Angelou’s speaker claims hers with defiant confidence while Alvi’s reaches for one she cannot quite hold. A pairing for the coursework essay on three Part 2 texts; the exam asks about one text alone.',
     },
     {
       title: 'The Bright Lights of Sarajevo',
       href: '/igcse/edexcel/poetry/the-bright-lights-of-sarajevo',
       reason:
-        'Also in Part 2: both are set in a city street after dark, play light against darkness, and find a moment of closeness between two people in a public place.',
+        'Also in Part 2: both are set in a city street after dark, play light against darkness, and find a moment of closeness between two people in a public place. A pairing for the coursework essay; the exam asks about one text alone.',
     },
     {
       title: 'The Story of an Hour',
       href: '/revision/texts/the-story-of-an-hour',
       reason:
-        'A Part 2 prose text: both centre on a woman’s private sense of self, stirred by the sights and sounds of the street around her, and both show her reaching out towards something she will not have: Louise spreads her arms in welcome to years she does not live to see, and Alvi’s speaker holds out her hands to a girl she will never know.',
+        'A Part 2 prose text: both centre on a woman’s private sense of self, stirred by the sights and sounds of the street around her, and both show her reaching out towards something she will not have: Louise spreads her arms in welcome to years she does not live to see, and Alvi’s speaker holds out her hands to a girl she will never know. As the coursework essay needs a prose text, this makes a natural third; the exam asks about one text alone.',
     },
     {
       title: 'The Danger of a Single Story',
       href: '/igcse/edexcel-lang/anthology/the-danger-of-a-single-story',
       reason:
-        'From Part 1 of the same anthology: Adichie warns against seeing a people or a place as only one thing, and describes her own surprise, as a visitor to Guadalajara, at ordinary Mexican life in its streets and marketplace; Alvi’s neon, commercial bazaar likewise refuses the single exotic story of India a visitor might expect.',
+        'From Part 1 of the same anthology: Adichie warns against seeing a people or a place as only one thing, and describes her own surprise, as a visitor to Guadalajara, at ordinary Mexican life in its streets and marketplace; Alvi’s neon, commercial bazaar likewise refuses the single exotic story of India a visitor might expect. A pairing for thinking, not for an answer: Part 1 texts are examined on Paper 1, and the coursework essay uses Part 2 texts only.',
     },
   ],
 
@@ -606,6 +639,21 @@ export const guide: StudyGuide = {
       label:
         'Pearson Edexcel International GCSE English Anthology, Issue 8, February 2026, ISBN 978 1 446 93108 0, page 27: the text of the poem, its line numbering, its two footnotes, and the acknowledgement (reproduced by permission of Bloodaxe Books on behalf of the author, from Split World: Poems 1990-2005). Every quotation, line reference and word count on this page was checked against it. Also pages 2, 28, 29 and 30 onwards for the comparison texts.',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Language%20A/2016/Teaching%20and%20learning%20materials/9781446931080-int-gcse-eng-ant.pdf',
+    },
+    {
+      label:
+        'Pearson, 4EA1/02 question paper, Thursday 6 June 2024, read 10 October 2026: Section A sets this poem, printed on the question paper itself without line numbers, and asks how the writer presents the importance of traditional Indian culture, with three bullets, the last the use of language and structure; about 45 minutes advised; the anthology may not be brought in.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Language-A/2016/Exam-materials/4ea1-02-que-20240607.pdf',
+    },
+    {
+      label:
+        'Pearson Edexcel International GCSE English Language A specification, Issue 7 (August 2025), served at an address that still carries the Issue 6 filename: Paper 2 Section A is one essay question on a Part 2 text, provided in the examination, with 45 minutes advised; Assignment A, the coursework alternative, is one essay on three Part 2 texts including at least one poem and one prose text, assessed for reading and for language and structure only, and the comparison objective has no share in Components 2 and 3.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Language%20A/2016/Specification%20and%20sample%20assessments/9781446954379-int-gcse-englang-a-iss6-02-02-2023.pdf',
+    },
+    {
+      label:
+        'Pearson, Examiners’ Report, Principal Examiner Feedback, November 2020, 4EA1 Paper 2: a poem is printed in the question paper, the third bullet always asks for language and structure, and answers that followed the bullets rigidly, leaving language and structure to the end, were among the less successful.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Language%20A/2016/exam-materials/4EA1_02_pef_20210211.pdf',
     },
     {
       label:

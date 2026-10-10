@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { SET_TEXTS } from '@/lib/board/set-texts'
 import { t } from '@/lib/i18n/t'
+import { ANTHOLOGY_SOURCE } from '@/lib/board/edexcel-igcse-anthology'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -84,11 +85,17 @@ export default async function PearsonIgcsePoetryHub() {
         aria-label={await t('rev.poetry2.pearson.version_notice_aria')}
         className="rounded-xl border border-amber-500/30 bg-amber-500/[0.06] p-5 text-body-sm text-card-foreground"
       >
+        {/* Until 26 September 2026 this notice named Issue 2 and said the full
+            anthology was available only through Pearson's school-licensed
+            editions. The current issue is 8 (February 2026), and Pearson
+            publishes it free as a PDF, so no licensed copy is needed. */}
         <p className="mb-2">
-          <strong className="text-foreground">Anthology version:</strong> This site teaches the{' '}
-          <strong className="text-foreground">Edexcel IGCSE Anthology Issue 2</strong> (ISBN
-          978-1-446-93108-0, Pearson Education). Material differences from Issue 1 and from
-          freely-available online versions include:
+          <strong className="text-foreground">Anthology version:</strong> This site teaches{' '}
+          <strong className="text-foreground">
+            Issue 8 (February 2026) of the Pearson Edexcel International GCSE English Anthology
+          </strong>{' '}
+          (ISBN 978-1-446-93108-0). Material differences from freely-available online versions
+          include:
         </p>
         <ol className="mb-2 list-decimal space-y-1 ps-5 text-muted-foreground">
           <li>
@@ -106,9 +113,18 @@ export default async function PearsonIgcsePoetryHub() {
           </li>
         </ol>
         <p className="text-body-xs text-muted-foreground">
-          © Pearson Education - quotations on individual set-text pages are short fair-dealing
-          extracts under CDPA s.30. The full anthology is available only through Pearson&rsquo;s
-          school-licensed editions.
+          Anthology © Pearson Education Limited 2026 - quotations on individual set-text pages are
+          short fair-dealing extracts under CDPA s.30. Pearson publishes the full anthology free as
+          a{' '}
+          <a
+            href={ANTHOLOGY_SOURCE.url}
+            className="underline underline-offset-2 hover:text-foreground"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            PDF on its qualifications website
+          </a>
+          .
         </p>
       </section>
 

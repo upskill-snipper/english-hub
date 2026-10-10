@@ -31,8 +31,9 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * International GCSE English Anthology, Issue 8 (February 2026), Part 3, in
  * Pearson's PDF (a copy held in a scratch folder, whose Issue 8 footer and size,
  * 781,803 bytes, match the file qualifications.pearson.com served on 26 September
- * 2026), and against the 4ET1/01 question booklet of 6 November 2023, which
- * prints the same 27 lines word for word with the same line numbers.
+ * 2026), and against the Poetry Booklet issued with the 4ET1/01 question paper
+ * of 6 November 2023, which prints the same 27 lines word for word with the same
+ * line numbers.
  * The anthology prints the poem as one unbroken stanza with a number beside every
  * fifth line; line references here follow it.
  *
@@ -43,32 +44,43 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * of the twelve phrases already appear on the page above, so the combined page
  * gains five words (scuffle, caught, must be thinking). The page above on its own quotes about 60 distinct words, a
  * quarter of the poem, which is over the site's share before this file adds
- * anything; that is recorded here for the next editor, not changed.
+ * anything; that is recorded here for the next editor, not changed. Those page
+ * figures are history: on 26 September 2026, after this was written, the page was
+ * cut to phrases this file also quotes (see its own comment), and
+ * no-poem-quoted-beyond-fair-dealing.test.ts measures the page and this file
+ * together as one route.
  *
- * THE PAGE ABOVE is wrong, or goes beyond the text, in these places:
+ * THE PAGE ABOVE was wrong, or went beyond the text, in these places when this
+ * file was written. Until 10 October 2026 this paragraph described them all as
+ * current; each now says where it stands.
  * - It says the poem is set for English Language A and Literature. It is in Part
- *   3 of the anthology, which only English Literature (4ET1) studies.
+ *   3 of the anthology, which only English Literature (4ET1) studies. Corrected
+ *   on the page on 26 September 2026.
  * - It names assessment objectives by number throughout, and its tip labelled
  *   AO3 treats that objective as context. In 4ET1 that number is comparison, and
  *   Paper 1 Section B does not assess context at all (specification: language,
- *   form and structure, and links between texts).
+ *   form and structure, and links between texts). Corrected on the page on 26
+ *   September 2026.
  * - Its Buried Rhyme card says the rhyme never settles into a reliable scheme.
  *   The anthology text has four full rhyming couplets closing lines 5, 10, 15 and
  *   20 (out/shout, door/before, lane/again, coat/throat), a regular pattern that
- *   breaks after line 20. A tip below gives the pattern.
+ *   breaks after line 20. A tip below gives the pattern. Still on the page on 10
+ *   October 2026.
  * - Its card on the seekers at the door says the only sounds left are wind, cold
  *   and silence; the poem mentions no wind. Its card on the cold lists numb feet;
- *   the poem says stiff legs.
+ *   the poem says stiff legs. Corrected on the page on 26 September 2026.
  * - It says, as fact, that the child hides with eyes shut. The poem does not say
- *   so; the blindness of line 11 may equally be the dark of the shed.
+ *   so; the blindness of line 11 may equally be the dark of the shed. Corrected on
+ *   the page on 26 September 2026.
  * - It calls the child a boy throughout, as Pearson's own Getting Started Guide
- *   does. The poem never says. This file says the child.
+ *   does. The poem never says. This file says the child. Still on the page on 10
+ *   October 2026.
  * - Its metadata describes it as a GCSE page; the poem is on International GCSE
- *   only.
- * The set-text registry row gives the year as 1984 and the rights holder as Robson
- * Books. The sources below place the poem in Walking Wounded (1965), and the
- * anthology credits Collected Poems 1950-1993 (Faber & Faber, 2011), by permission
- * of the Estate of Vernon Scannell.
+ *   only. Corrected in the route's layout on 26 September 2026.
+ * The set-text registry row gave the year as 1984 and the rights holder as Robson
+ * Books; both were corrected on 26 September 2026. The sources below place the
+ * poem in Walking Wounded (1965), and the anthology credits Collected Poems
+ * 1950-1993 (Faber & Faber, 2011), by permission of the Estate of Vernon Scannell.
  *
  * FACT-CHECK, 26 September 2026, against a fresh download of the anthology and
  * the November 2023 booklet. Every quotation was confirmed; these were fixed:
@@ -86,6 +98,33 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  *   the hush as a sign, the game as lost, Fanthorpe's boy as rescued).
  * - The Wikipedia source said the first desertion came after the North African
  *   campaign; Wikipedia places it near Gabes in Tunisia, during the campaign.
+ *
+ * EXAM FORMAT, audited 10 October 2026 against the 4ET1 specification (Issue 3,
+ * August 2025) and the Paper 1 question papers, mark schemes and examiners'
+ * reports from the specimen to June 2025. Section B sets one question from a
+ * choice of two, and both are comparisons: one names two Part 3 poems, the other
+ * names one and the candidate chooses the second from Part 3. Every paper comes
+ * with a separate Poetry Booklet of all the Part 3 poems, 40 minutes are advised,
+ * and an answer on one poem cannot rise above Level 2. The three exam questions
+ * below already had those shapes and are unchanged. The three extract questions
+ * asked about a few lines under the label "The question", so they now say they
+ * are close-reading practice. A first tip now says what the section sets, and a
+ * tip after the past questions gives the examiners' report on November 2024, when
+ * this was the named poem in Question 3. The wording note above, workLength and
+ * the sources called the booklet that prints the poem the question booklet; it is
+ * the separate Poetry Booklet, and they now say so. Do not tell a student the
+ * named poem is printed in the question booklet itself. No mark tariffs: the
+ * validator keeps those to ExamPlacementCard.
+ *
+ * VERIFIED 10 October 2026 against the same documents. The past-questions tip gave
+ * only June 2018, when this was the one poem Question 3 named, so it read as if
+ * the poem is only ever named alone. Pearson's summary for June 2019 to November
+ * 2020 shows Question 2 naming it with Half-past Two (January 2020 R paper) and
+ * with War Photographer (November 2020), so the tip now gives all three roles:
+ * named alone, named in a pair, chosen as the second poem. Keep both shapes. The
+ * line 20 tip said exam booklet and now says Poetry Booklet, and the model
+ * answer's commentary credited the question with asking for a personal response;
+ * it is the mark scheme that requires one.
  */
 export const guide: StudyGuide = {
   slug: 'hide-and-seek',
@@ -103,7 +142,7 @@ export const guide: StudyGuide = {
     words: 233,
     lines: 27,
     basis:
-      'Counted on 26 September 2026 from page 58 of the Pearson Edexcel International GCSE English Anthology, Issue 8 (February 2026), in Pearson’s own PDF: 27 numbered lines in one stanza, title and poet’s name excluded. 233 words split on spaces; the poem has no hyphenated words, so the quotation counter’s rule gives the same figure. The 4ET1/01 question booklet of 6 November 2023 prints the same 27 lines word for word.',
+      'Counted on 26 September 2026 from page 58 of the Pearson Edexcel International GCSE English Anthology, Issue 8 (February 2026), in Pearson’s own PDF: 27 numbered lines in one stanza, title and poet’s name excluded. 233 words split on spaces; the poem has no hyphenated words, so the quotation counter’s rule gives the same figure. The Poetry Booklet issued with the 4ET1/01 question paper of 6 November 2023 prints the same 27 lines word for word.',
   },
 
   native: {
@@ -139,7 +178,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Scannell use language and structure in lines 1 to 8 to present the child’s excitement and confidence at the start of the game?',
+        'Close-reading practice, not an exam question (in the exam this poem is always compared with another Part 3 poem). How does Scannell use language and structure in lines 1 to 8 to present the child’s excitement and confidence at the start of the game?',
     },
     {
       title: 'The seekers at the door',
@@ -167,7 +206,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Explore how Scannell presents the seekers in lines 9 to 17, even though the child never sees them.',
+        'Close-reading practice, not an exam question (in the exam this poem is always compared with another Part 3 poem). Explore how Scannell presents the seekers in lines 9 to 17, even though the child never sees them.',
     },
     {
       title: 'Coming out',
@@ -199,7 +238,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Scannell use language, form and structure in lines 21 to 27 to present the change from triumph to isolation?',
+        'Close-reading practice, not an exam question (in the exam this poem is always compared with another Part 3 poem). How does Scannell use language, form and structure in lines 21 to 27 to present the change from triumph to isolation?',
     },
   ],
 
@@ -345,14 +384,16 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
+      'Know what the paper sets. Hide and Seek is examined in Section B of Paper 1 of English Literature (4ET1), where you answer one of two questions, with 40 minutes advised. Both questions are comparisons, and both ask about language, form and structure. One names two Part 3 poems; the other names one and asks you to choose the second, which must also come from Part 3 and be a poem in which the question’s focus is significant. Every Part 3 poem is printed for you in a separate Poetry Booklet that comes with the paper. An answer on one poem alone cannot rise above the second of the mark scheme’s five levels.',
       'The poem is printed for you in the exam (the November 2023 booklet numbers every fifth line, as the anthology does), so the credit goes to what you do with a quotation, not to remembering it. Quote a few words, give the line number and analyse them.',
       'Find the hidden pattern. Four rhyming couplets close lines 5, 10, 15 and 20 (out and shout, door and before, lane and again, coat and throat), a regular beat under the chatty surface. After line 20 it breaks, and the last rhyme ties the boast of line 24 to the question of line 27. Some revision guides say the rhyme has no pattern; check it in your own copy.',
       'Track the tenses. Almost every verb is in the present, which keeps the reader inside the game as it happens. The only two simple past verbs, in line 18 and in line 27, both belong to the seekers, and both say that they have stopped.',
       'Treat the middle of the poem as guesswork. Probably (line 6), the predictions of lines 14 to 15 and “must be thinking” (line 16) are the voice’s assumptions about people it cannot see. A strong answer might argue that the child’s mistake is not hiding too well but believing it knows what others are thinking.',
       'Context is not what this section of the paper rewards: it assesses how you analyse language, form and structure and how well you compare. Scannell’s war service and desertions are worth knowing, but if you use them at all, keep it to a clause and tie it to a technique.',
       'Say the child, or the hider. The poem never says whether the child is a boy or a girl, although many guides, Pearson’s own included, say boy. Precision like this is part of reading closely.',
-      'Prepare it both as the named poem and as a partner. Pearson’s summary of past questions shows a June 2018 question on personal experiences in Hide and Seek and one other poem, and the June 2024 Paper 1R mark scheme lists Hide and Seek among the poems in which giving advice is significant, as a second poem for If-.',
-      'Quote the anthology, not a revision guide. Line 20 has no comma between its two adjectives in the anthology or the exam booklet, although Pearson’s Getting Started Guide adds one. Copy the wording in front of you.',
+      'Prepare it in all three roles the paper has given it. Pearson’s summaries of past questions show it as the one poem named in Question 3 in June 2018 (personal experiences, with a second poem of your choice), and as one of the two poems named in Question 2 twice: with Half-past Two on childhood in January 2020 (the R paper, sat by centres far from GMT) and with War Photographer on isolation in November 2020 (the paper titled June 2020). The June 2024 Paper 1R mark scheme lists Hide and Seek among the poems in which giving advice is significant, as a second poem for If-.',
+      'Learn from November 2024. In that series Question 3 asked you to compare how the writers use vivid descriptions in Hide and Seek and one other poem. The examiners’ report says Half-past Two was the most popular second poem, and that Piano, Prayer Before Birth and War Photographer were also chosen, with some strong results. Comments on structure, the volta and rhyme did not always go on to explain their effect. Across the section, the stronger answers wove language, form and structure together rather than giving each its own paragraph, and gave both poems a fair share.',
+      'Quote the anthology, not a revision guide. Line 20 has no comma between its two adjectives in the anthology or the exam’s Poetry Booklet, although Pearson’s Getting Started Guide adds one. Copy the wording in front of you.',
       'Make the register shift work for you. The last line drops the contractions that fill the rest of the poem for a stiff, formal question; say what that change of voice does at the moment the child realises the truth.',
     ],
   },
@@ -368,7 +409,7 @@ export const guide: StudyGuide = {
       'It analyses form and structure as well as words: the reversal of roles, the mid-line full stops, the shift of register and the rhyme of caught with sought, each used as evidence for the interpretation rather than as a label.',
       'It notices a small grammatical fact, the past tense of sought, and makes it carry meaning, which is the close reading that separates a strong answer from a competent one.',
       'It brings Half-past Two in on the same idea, the ending, and on method (who returns, how the poem closes), so the comparison is more than two parallel descriptions.',
-      'It ends on a judgement that separates the poems, and justifies it, which is the personal response the question invites.',
+      'It ends on a judgement that separates the poems, and justifies it, which is the personal response Pearson’s mark scheme says an answer must show.',
     ],
   },
 
@@ -517,8 +558,23 @@ export const guide: StudyGuide = {
     },
     {
       label:
-        'Pearson 4ET1/01 question booklet, 6 November 2023: prints the poem as the anthology does, the same 27 lines word for word with the same line numbering. Used as the independent second text for every quotation, and for the wording of Section B questions.',
+        'Pearson 4ET1/01 question paper, 6 November 2023, with the Poetry Booklet of all the Part 3 poems issued with it: the booklet prints the poem as the anthology does, the same 27 lines word for word with the same line numbering. Used as the independent second text for every quotation, and the question paper for the wording of Section B questions.',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20231107.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1/01 question paper, 4 November 2024: Section B, answer one question, 40 minutes advised; Question 2 names two Part 3 poems, and Question 3 names Hide and Seek (vivid descriptions) and asks for one other poem from the anthology; the Poetry Booklet comes with the paper and numbers every fifth line of the poem.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20241105.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1/01 mark scheme, November 2024: indicative content for Hide and Seek in Question 3; the second poem must be one with vivid descriptions (other mark schemes say one in which the focus is significant); one grid for both objectives in five levels, and an answer on only one poem cannot go above Level 2.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-rms-20250123.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1/01 examiners’ report, November 2024: Half-past Two the most popular second poem for Question 3, with Piano, Prayer Before Birth and War Photographer; comments on structure, volta and rhyme not always carried through to effect; the Section B summary of what stronger answers did.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-pef-20250123.pdf',
     },
     {
       label:
@@ -529,6 +585,11 @@ export const guide: StudyGuide = {
       label:
         'Pearson, Summary of questions set for 4ET1, SAMs to January 2019: the June 2018 Paper 1 question on personal experiences in Hide and Seek and one other poem (wording abbreviated by Pearson).',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Teaching%20and%20learning%20materials/summary-of-questions-set-for-4et1-sams-to-january-2019.pdf',
+    },
+    {
+      label:
+        'Pearson, Summary of questions set for 4ET1, June 2019 to November 2020: Paper 1 Question 2 named Half-past Two and Hide and Seek (childhood) in the January 2020 R paper, and Hide and Seek and War Photographer (isolation) in November 2020, the series titled June 2020 (wording abbreviated by Pearson; R papers are sat by centres far from GMT).',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Teaching%20and%20learning%20materials/summary-of-questions-set-for-4et1-june-2019-to-november-2020.pdf',
     },
     {
       label:

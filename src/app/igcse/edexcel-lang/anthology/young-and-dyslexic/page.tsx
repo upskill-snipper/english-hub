@@ -42,46 +42,83 @@ export const metadata: Metadata = {
   },
 }
 
+/**
+ * CORRECTED 26 September 2026 against Pearson's anthology, Issue 8 (February
+ * 2026), pp. 12-13, and the verified guide. The themes and language notes were
+ * written in the past tense and several claims were not in the article: that he
+ * "left school early" (he was expelled from his last school at 13), that it
+ * addresses the young reader throughout (sustained second-person address begins
+ * only near the end), that it replaces a "language of disability" (the word is
+ * not in it; what he rejects is thinking of dyslexia as a defect), that it piles
+ * up achievements to overwhelm "stupid" (the list of his work is followed at
+ * once by words he still has to stop and think over), and that his humour is
+ * about his spelling (the joke is the retold question about an operation; the
+ * spelling passage is candour). Race and prejudice, which the guide tags as a
+ * theme and the article returns to repeatedly, was missing.
+ *
+ * RECHECKED 10 October 2026, by script against the same pages. Still wrong:
+ * seeing the world differently was put among what he tells parents (it is the
+ * opening's claim and his advice to the children at the end); the creativity
+ * lines are about writing round a word you cannot find, which makes creativity
+ * grow like a muscle, not about a word you cannot write; he tells his students a
+ * good memory can earn the right grade but without passion there is no point,
+ * not that memory is pointless; the parent is told plainly not to think of it
+ * as a defect, not to try not to; the parent addressed is the parent of someone
+ * dyslexic, and no child is mentioned there; he has to draw something, with no
+ * "sometimes"; and the article never calls it a diagnosis. Nothing says he laughs
+ * at the operation question, so the page now calls it comic as a reading. The
+ * teacher who suggests football is not a football teacher. Quotation marks round stupid and
+ * dyslexic added on 26 September were taken out again, so the page quotes no
+ * more than it did before.
+ */
 const themes = [
   {
     label: 'Reframing dyslexia',
     labelAr: 'إعادة تأطير الـ dyslexia',
     detail:
-      'Zephaniah challenged the deficit view of dyslexia. The text repositioned the condition as a different way of thinking rather than a failing - a difference, not a deficiency.',
+      'Zephaniah challenges the idea that dyslexia is a defect. The article opens by claiming dyslexic people as the architects and designers, argues that being dyslexic is natural and that it is the way we read and write that is unnatural, and tells parents that dyslexia says nothing about intelligence. At the start and again at the end, he presents dyslexia as a way of seeing the world differently: a difference, not a deficiency.',
     detailAr:
-      'يتحدّى Zephaniah النظرةَ القاصرة إلى الـ dyslexia. ويُعيد النصُّ تقديم هذه الحالة بوصفها طريقةً مختلفة في التفكير، لا قصوراً - اختلافاً لا عجزاً.',
+      'يتحدّى Zephaniah فكرةَ أنّ الـ dyslexia عيب. يفتتح المقالُ بعَدّ ذوي الـ dyslexia هم المهندسين المعماريّين والمصمّمين، ويُحاجج بأنّ الـ dyslexia حالةٌ طبيعيّة وأنّ طريقتنا في القراءة والكتابة هي غير الطبيعيّة، ويقول للآباء إنّ الـ dyslexia لا تقول شيئاً عن الذكاء. وفي البداية ثمّ في النهاية يقدّم الـ dyslexia طريقةً لرؤية العالم على نحوٍ مختلف: اختلافٌ لا نقص.',
   },
   {
     label: 'School and the education system',
     labelAr: 'المدرسة ومنظومة التعليم',
     detail:
-      'The article drew on Zephaniah’s own experience of leaving school early and being labelled by teachers. It indicted a system that mistook one narrow definition of intelligence for the whole.',
+      'The article draws on his schooling at a time when teachers did not know what dyslexia was: a teacher who called him stupid for asking a question, one who talked about Africa in racist terms, one who answered a request for help with writing by suggesting football, and expulsion from his last school at 13. He blames a system that lacked compassion rather than the teachers themselves, some of whom, he says, wanted to treat pupils as individuals and were not allowed to.',
     detailAr:
-      'يستند المقالُ إلى تجربة Zephaniah في ترك المدرسة مبكّراً وإلصاق المعلّمين به الوسومَ. ويُدين منظومةً خلطت بين تعريفٍ ضيّق للذكاء وبين الذكاء كلِّه.',
+      'يستند المقالُ إلى تجربته المدرسيّة في زمنٍ لم يكن المعلّمون يعرفون فيه ما الـ dyslexia: معلّمةٌ وصفته بالغباء لأنّه طرح سؤالاً، وأخرى تحدّثت عن إفريقيا بعباراتٍ عنصريّة، ومعلّمٌ ثالث ردّ على طلبه المساعدةَ في الكتابة باقتراح كرة القدم، ثمّ الطردُ من آخر مدارسه في الثالثة عشرة. ويلوم منظومةً افتقرت إلى الرحمة لا المعلّمين أنفسهم، إذ يقول إنّ بعضهم أراد أن يعامل التلاميذ أفراداً ولم يُسمح له بذلك.',
   },
   {
     label: 'Identity and self-worth',
     labelAr: 'الهويّة وقيمة الذات',
     detail:
-      'Zephaniah refused the labels imposed on him as a child. The text traced how he built an authorial identity that did not depend on the institutional approval he had been denied.',
+      'Zephaniah refuses the verdicts of his childhood. He says he never thought he was stupid, turns the word back on someone who reads well but holds racist views, and says simply that he had self-belief. He is candid about what went wrong, from revenge on a teacher to borstal, which makes that self-belief easier to trust.',
     detailAr:
-      'رفض Zephaniah الوسومَ المفروضة عليه طفلاً. ويتتبّع النصُّ كيف بنى هويّةً أدبيّةً لا تتّكئ على القبول المؤسّسيّ الذي حُرم منه.',
+      'يرفض Zephaniah أحكامَ طفولته. يقول إنّه لم يظنّ قطّ أنّه غبيّ، ويردّ الكلمةَ على شخصٍ يُحسن القراءة لكنّه يحمل آراءً عنصريّة، ويقول ببساطة إنّه كان يؤمن بنفسه. وهو صريحٌ في ما ساء من أمره، من انتقامه من معلّمٍ إلى الإصلاحيّة (borstal)، وهذا ما يجعل إيمانه بنفسه أجدرَ بالتصديق.',
   },
   {
     label: 'Creativity and alternative ability',
     labelAr: 'الإبداع والقدرات البديلة',
     detail:
-      'The piece argued that dyslexic thinking can underwrite creative achievement - in poetry, performance, problem-solving - and that conventional schooling often misses what such minds can do.',
+      'The article argues that dyslexia can make a person creative: having to work out how to write round a word that will not come, he tells the reader, makes creativity grow like a muscle. His own work is the evidence: poetry, novels for teenagers, plays and recorded music. As a professor he tells his students that a good memory can get them the grade they need, but that without passion, creativity and individuality there is no point.',
     detailAr:
-      'يُحاجج النصّ بأنّ تفكيرَ صاحب الـ dyslexia يمكن أن يُغذّي إنجازاً إبداعيّاً - في الشعر والأداء وحلّ المشكلات - وأنّ المدرسةَ التقليديّة كثيراً ما تُفوّت ما تستطيع مثلُ هذه العقول صنعَه.',
+      'يُحاجج المقالُ بأنّ الـ dyslexia قد تجعل صاحبها مبدعاً: فاضطرارُ المرء إلى أن يجد طريقةً يكتب بها متجاوزاً كلمةً لا تحضره، كما يقول للقارئ، يُنمّي الإبداع كما تنمو العضلة. وأعماله دليلٌ على ذلك: الشعر وروايات الناشئة والمسرحيّات والموسيقى المسجّلة. وبصفته أستاذاً جامعيّاً يقول لطلابه إنّ الذاكرة الجيّدة قد تمنحهم الدرجة التي يحتاجون إليها، لكن لا جدوى من ذلك من دون الشغف والإبداع والتفرّد.',
   },
   {
     label: 'Encouragement of young readers',
     labelAr: 'تشجيع القرّاء الشباب',
     detail:
-      'The closing of the piece addressed young dyslexic readers directly. Zephaniah used his own life as evidence that the labels of childhood need not become the verdict of adulthood.',
+      'Only in its last paragraphs does the article speak directly to dyslexic readers and their parents: a dyslexic reader who feels held back is told that it is not them, and parents are told not to see dyslexia as a defect. It ends with the children who come up to him to say they are dyslexic too, and his advice to them to use it to their advantage. His own life is the evidence that the labels of childhood need not become the verdict of adulthood.',
     detailAr:
-      'تخاطب خاتمةُ المقال القرّاءَ الشباب من ذوي الـ dyslexia مباشرةً. ويتّخذ Zephaniah من حياته دليلاً على أنّ وسومَ الطفولة لا تستوجب أن تصير حُكمَ سنّ الرشد.',
+      'لا يخاطب المقالُ القرّاءَ ذوي الـ dyslexia وآباءهم مباشرةً إلّا في فقراته الأخيرة: يُقال للقارئ ذي الـ dyslexia الذي يشعر بأنّ شيئاً يعوقه إنّ المشكلة ليست فيه، ويُقال للآباء ألّا يروا الـ dyslexia عيباً. ويُختتم بالأطفال الذين يأتون إليه ليقولوا إنّ لديهم dyslexia مثله، وبنصيحته لهم أن يجعلوها ميزةً لهم. وحياته نفسها دليلٌ على أنّ وسومَ الطفولة لا يلزم أن تصير حُكمَ سنّ الرشد.',
+  },
+  {
+    label: 'Race and prejudice',
+    labelAr: 'العِرق والتحيّز',
+    detail:
+      'Race runs through the article. He gets into trouble for challenging a teacher who talks about Africa in racist terms; the statistics he says predicted prison begin with his being a black man; he thinks that someone who reads well but calls black people savages is the stupid one; and he compares people who cannot understand dyslexia with those who oppress him because of his race. The comparison makes his argument about dyslexia an argument about prejudice too.',
+    detailAr:
+      'يسري العِرقُ في المقال كلّه. يقع في المتاعب لأنّه اعترض على معلّمةٍ تحدّثت عن إفريقيا بعباراتٍ عنصريّة؛ والإحصاءاتُ التي يقول إنّها تنبّأت له بالسجن تبدأ بكونه رجلاً أسود؛ ويرى أنّ مَن يُحسن القراءة لكنّه يصف السود بالمتوحّشين هو الغبيّ؛ ويُشبّه مَن لا يفهمون الـ dyslexia بمَن يضطهدونه بسبب عِرقه. وهكذا تصير حُجّتُه عن الـ dyslexia حُجّةً عن التحيّز أيضاً.',
   },
 ]
 
@@ -90,65 +127,65 @@ const languageFeatures = [
     technique: 'Conversational tone',
     techniqueAr: 'النبرة الحوارية',
     explanation:
-      'Zephaniah wrote in an informal, addressing-you register that resembled spoken speech rather than journalistic prose. The effect was warmth and immediacy - the article reads as a message from someone who has been where the young reader is now.',
+      'Zephaniah writes in an informal speaking voice rather than the neutral register of news reporting: he reports his own reactions as he might say them aloud, uses a sarcastic aside and closes with a joke that opens with a mild swear word. The effect is warmth and immediacy - the article reads as a message from someone who has been where a young dyslexic reader is now.',
     explanationAr:
-      'كتب Zephaniah بسجلٍّ غير رسميّ يخاطب القارئ مباشرةً، أقربَ إلى الكلام المنطوق منه إلى النثر الصحفيّ. والأثر دفءٌ وفوريّة - يُقرأ المقالُ رسالةً من إنسانٍ كان حيث القارئ الشابّ الآن.',
+      'يكتب Zephaniah بصوتٍ حواريّ غير رسميّ لا بالسجلّ المحايد للتقارير الإخباريّة: يروي ردودَ فعله كما قد ينطقها، ويستعمل تعليقاً ساخراً عابراً، ويختم بنكتةٍ تبدأ بشتيمةٍ خفيفة. والأثر دفءٌ وفوريّة - يُقرأ المقالُ رسالةً من إنسانٍ كان حيث القارئ الشابّ ذو الـ dyslexia الآن.',
   },
   {
     technique: 'Direct address',
     techniqueAr: 'الخطاب المباشر',
     explanation:
-      'The text spoke straight to the reader, with the young dyslexic person clearly imagined as the audience. Second-person address built solidarity and made each reader feel personally invited into the argument.',
+      'For most of the article the first person tells his own story; sustained second-person address arrives only in the last paragraphs, when he speaks to a dyslexic reader who feels held back and then to the parent of someone who is dyslexic. Because it comes after his story, the address carries the authority of experience, and each reader feels personally included in the argument.',
     explanationAr:
-      'يخاطب النصُّ القارئَ مباشرةً، والشابّ ذو الـ dyslexia جمهورُه الواضح في خياله. وضمير المخاطَب يبني تضامناً ويجعل كلَّ قارئٍ يحسّ أنّه مدعوٌّ شخصيّاً إلى الحجّة.',
+      'في معظم المقال يروي ضميرُ المتكلّم قصّته الخاصّة؛ ولا يأتي الخطابُ المتواصل بضمير المخاطَب إلّا في الفقرات الأخيرة، حين يخاطب قارئاً ذا dyslexia يشعر بأنّ شيئاً يعوقه، ثمّ والدَ شخصٍ ذي dyslexia. ولأنّه يأتي بعد قصّته، يحمل الخطابُ سلطةَ التجربة، ويشعر كلُّ قارئٍ بأنّه معنيٌّ بالحُجّة شخصيّاً.',
   },
   {
     technique: 'Personal anecdote',
     techniqueAr: 'الحكاية الشخصيّة',
     explanation:
-      'Zephaniah grounded his case in autobiographical detail - leaving school early, being labelled, finding alternative routes into work and writing. The authority of the piece came from lived experience rather than abstract advocacy.',
+      'Zephaniah grounds his case in his own life: a teacher who called him stupid, a racist lesson, expulsion at 13, borstal, the poems his girlfriend wrote down for his first book and being told at 21 that he was dyslexic. The authority of the piece comes from lived experience rather than from experts or figures.',
     explanationAr:
-      'يُؤسّس Zephaniah قضيّتَه على تفاصيلَ من سيرته - ترك المدرسة مبكّراً، إلصاق الوسوم، وإيجاد مساراتٍ بديلةٍ إلى العمل والكتابة. وتنبع سلطةُ النصّ من التجربة المعيشة لا من الدعوة المجرّدة.',
+      'يُؤسّس Zephaniah قضيّتَه على حياته: معلّمةٌ وصفته بالغباء، ودرسٌ عنصريّ، والطردُ في الثالثة عشرة، والإصلاحيّة (borstal)، والقصائدُ التي دوّنتها صديقته لكتابه الأوّل، ومعرفتُه في الحادية والعشرين أنّ لديه dyslexia. وتنبع سلطةُ النصّ من التجربة المعيشة لا من الخبراء أو الأرقام.',
   },
   {
     technique: 'Contrast and reframing',
     techniqueAr: 'التضادّ وإعادة التأطير',
     explanation:
-      'A central rhetorical move was the substitution of one frame for another - reading dyslexia not as a deficit but as a different ability. The piece worked by replacing the language of disability with the language of difference.',
+      'The central move is to turn a judgement round. Called stupid as a boy, he hands the word back to someone who reads well but holds racist views; the problem usually laid on the dyslexic person is handed to anyone who cannot understand dyslexia; and it is the way we read and write, not dyslexia, that he calls unnatural. Parents are asked to see not a defect but a child who may be a genius.',
     explanationAr:
-      'من أبرز الحركات البلاغيّة استبدالُ إطارٍ بآخر - قراءةُ الـ dyslexia لا قصوراً بل قدرةً مختلفة. ويعمل النصُّ باستبدال لغة الإعاقة بلغة الاختلاف.',
+      'الحركةُ المركزيّة قلبُ الحُكم. فقد وُصف صبيّاً بالغباء، فيردّ الوصفَ إلى شخصٍ يُحسن القراءة لكنّه يحمل آراءً عنصريّة؛ والمشكلةُ التي تُلقى عادةً على صاحب الـ dyslexia تُسلَّم إلى كلّ مَن لا يستطيع فهمها؛ وطريقتُنا في القراءة والكتابة، لا الـ dyslexia، هي ما يصفه بغير الطبيعيّ. ويُطلب من الآباء أن يروا لا عيباً بل طفلاً قد يكون عبقريّاً.',
   },
   {
     technique: 'Listing and accumulation',
     techniqueAr: 'التَّعداد والتراكم',
     explanation:
-      'The article piled up examples of achievement against the earlier catalogue of failure, using lists to overwhelm the reductive label of “stupid” with evidence of capability.',
+      'Two lists do opposite work. The first piles up everything that, he says, should have put him in prison, from his race and upbringing to having no qualifications, with dyslexia added last as the final weight. The second is what he has since done: poetry, novels for teenagers, plays, other books and recorded music. Yet the same paragraph admits that he still has to stop and think before writing some words, so achievement is set beside difficulty, not in place of it.',
     explanationAr:
-      'يُكدّس المقالُ نماذجَ الإنجاز قبالةَ التعداد السابق للإخفاق، مستعملاً القوائمَ ليُغرق وسمَ "stupid" المختزِل بدليلٍ على القدرة.',
+      'تؤدّي قائمتان عملين متعاكسين. الأولى تُكدّس كلَّ ما يقول إنّه كان ينبغي أن يقوده إلى السجن، من عِرقه ونشأته إلى خلوّه من المؤهّلات، وتُضيف الـ dyslexia أخيراً عبئاً فوق الأعباء. والثانية ما أنجزه منذ ذلك الحين: الشعر وروايات الناشئة والمسرحيّات وكتبٌ أخرى والموسيقى المسجّلة. غير أنّ الفقرة نفسها تعترف بأنّه ما زال يتوقّف ليفكّر قبل كتابة بعض الكلمات، فيُوضع الإنجاز بجانب الصعوبة لا مكانها.',
   },
   {
     technique: 'Humour and irony',
     techniqueAr: 'الفكاهة والمفارقة',
     explanation:
-      'Zephaniah used self-deprecating humour about his own struggles with spelling, which disarmed the reader and made the more serious argument easier to accept. The lightness of tone made the seriousness of the message more, not less, persuasive.',
+      'The humour is at his own expense and at the majority’s. When he retells how he was told at 21 that he was dyslexic, his younger self’s question, whether he needed an operation, reads as gently comic, and the article ends with a joke that makes non-dyslexic people the odd ones out. There is irony too in his students being officially more educated than their professor. His admission that he still has to stop and think, and draw something, over a word like knot is told with candour, not as a joke. The lightness keeps the piece free of self-pity and makes the serious argument easier to accept.',
     explanationAr:
-      'يستعمل Zephaniah فكاهةً ساخرةً من نفسه بشأن متاعبه مع الإملاء، فيُذيب تحفّظَ القارئ ويُسهّل قبولَ الحُجّة الأجدّ. والخفّةُ في النبرة تجعل جِديّةَ الرسالة أبلغَ إقناعاً لا أضعف.',
+      'الفكاهةُ على حسابه وعلى حساب الأغلبيّة. فحين يروي معرفته في الحادية والعشرين أنّ لديه dyslexia، يبدو سؤالُه آنذاك، إن كان يحتاج إلى عمليّة جراحيّة، طريفاً طرافةً لطيفة، وينتهي المقال بنكتةٍ تجعل غيرَ ذوي الـ dyslexia هم الغرباء. وثمّة مفارقةٌ أيضاً في أنّ طلابه أكثرُ تعليماً منه رسميّاً وهو أستاذهم. أمّا اعترافه بأنّه ما زال يتوقّف ليفكّر، ويرسم شيئاً، أمام كلمةٍ مثل knot فيرويه بصراحةٍ لا على سبيل النكتة. والخفّةُ في النبرة تُبعد المقالَ عن الشفقة على الذات وتُسهّل قبولَ الحُجّة الجدّيّة.',
   },
   {
     technique: 'Imperative and encouragement',
     techniqueAr: 'الأمر والتشجيع',
     explanation:
-      'The closing movement of the article shifted from memoir into instruction, urging the young dyslexic reader directly to reject the verdicts they had been handed. The change of register turned a personal story into a public message.',
+      'In the closing paragraphs memoir turns into advice. The imperatives are gentle, closer to reassurance than command: a dyslexic reader who feels held back is told to remember that it is not them and not to be hard on themselves, and a parent is told not to think of dyslexia as a defect. The change of register turns a personal story into a public message.',
     explanationAr:
-      'تنتقل حركةُ الختام في المقال من السيرة إلى التوجيه، حاثّةً القارئَ الشابّ ذا الـ dyslexia على رفض الأحكام التي سُلّمت إليه. وتُحوّل نقلةُ السجلّ قصّةً شخصيّة إلى رسالةٍ عامّة.',
+      'في الفقرات الختاميّة تتحوّل السيرةُ إلى نصيحة. وصيغُ الأمر رقيقة، أقربُ إلى الطمأنة منها إلى الأمر: يُقال للقارئ ذي الـ dyslexia الذي يشعر بأنّ شيئاً يعوقه أن يتذكّر أنّ المشكلة ليست فيه وألّا يقسو على نفسه، ويُقال لوالد مَن لديه dyslexia ألّا يرى فيها عيباً. وتُحوّل نقلةُ السجلّ قصّةً شخصيّة إلى رسالةٍ عامّة.',
   },
   {
     technique: 'Emotive vocabulary',
     techniqueAr: 'المفردات الانفعاليّة',
     explanation:
-      'Zephaniah did not soften the language used about him as a child. The blunt vocabulary of school-era judgement was reproduced precisely so the reader could feel the cruelty of those labels.',
+      'Zephaniah does not soften the words used to him and around him as a child. The teacher’s insult, the racist term used in a lesson and the polite dismissal from the teacher who suggests football are given in the adults’ own words, so the reader hears them as the boy did before the adult writer comments on them.',
     explanationAr:
-      'لا يُلطّف Zephaniah اللغةَ التي استُعملت عنه طفلاً. تُستعاد المفرداتُ الجارحةُ من حُكم زمن المدرسة بدقّةٍ كي يشعر القارئ بقسوة تلك الوسوم.',
+      'لا يُلطّف Zephaniah الكلماتِ التي قيلت له ومن حوله طفلاً. فشتيمةُ المعلّمة، والوصفُ العنصريّ في أحد الدروس، والصرفُ المهذّب من المعلّم الذي اقترح كرة القدم، تُنقل كلّها بكلمات الكبار أنفسهم، فيسمعها القارئ كما سمعها الصبيّ قبل أن يعلّق عليها الكاتب الراشد.',
   },
 ]
 
@@ -160,6 +197,24 @@ const languageFeatures = [
  * advantage; dyslexic people are the architects and designers) and its ending
  * repeats it, so the shape is circular. The perspective note said there were no
  * statistics; he appeals to them explicitly, though he gives no figures.
+ *
+ * Later the same day the rest was checked. The development note said early
+ * failure becomes "the precondition" for achievement, and the climax called the
+ * turn a "shift from disability to difference"; the article says neither, and
+ * "disability" is not in it. The paragraphing note said the text "was written to
+ * be spoken", which nothing supports: it was a book contribution adapted for a
+ * newspaper. The notes were also in the past tense, now the present.
+ *
+ * RECHECKED 10 October 2026. The development said the chronology "breaks once",
+ * but the present breaks in more than once (the realisation at line 23, the
+ * reversal he thinks at 46-47), so the prison passage is now its clearest
+ * break. The climax had the statistics answered by his never thinking he was
+ * stupid; the very next sentence (lines 40-41) answers them first, with what
+ * keeps a person out of prison. "The argument itself is stated outright only"
+ * at line 70 contradicted the opening note; it is that one claim, about whose
+ * problem it is, that waits. The paragraph count, twenty, was measured from
+ * the gaps between lines in Pearson's PDF, not from pdftotext, whose blank
+ * lines give twenty-six.
  */
 const structuralAnalysis = {
   opening:
@@ -167,47 +222,61 @@ const structuralAnalysis = {
   openingAr:
     'يفتتح المقالُ بخلاصته لا بمشكلته: يعترف Zephaniah بأنّه عانى طفلاً، لكنّه يقول إنّه تعلّم أن يحوّل الـ dyslexia إلى ميزة، ويَعُدّ ذوي الـ dyslexia هم المهندسين المعماريّين والمصمّمين. وتُقرأ إخفاقاتُ زمن المدرسة التي تلي ذلك في ضوء هذه البداية الواثقة.',
   development:
-    'After that opening, the middle moves broadly chronologically: school, expulsion at 13, learning at 21 that he was dyslexic, then his writing career and the present. Each section reframed the previous one, so that early failure became the precondition for later achievement rather than evidence of inadequacy.',
+    'After that opening, the middle moves broadly chronologically: school, expulsion at 13, borstal, the first book of poems, learning at 21 that he was dyslexic, then his working life in the present. The clearest break in the chronology comes when the statistics that predicted prison lead him to the prisons he now visits, so the adult’s view is never far from the child’s story.',
   developmentAr:
-    'بعد هذا الافتتاح، يسير وسطُ النصّ زمنيّاً في الجملة: المدرسة، فالطرد في الثالثة عشرة، فمعرفته في الحادية والعشرين أنّ لديه dyslexia، ثمّ مسيرته في الكتابة والحاضر. ويُعيد كلُّ قسمٍ تأطيرَ سابقه، فيصير الإخفاقُ المبكّر شرطاً لإنجازٍ لاحق لا دليلاً على قصور.',
+    'بعد هذا الافتتاح، يسير وسطُ النصّ زمنيّاً في الجملة: المدرسة، فالطرد في الثالثة عشرة، فالإصلاحيّة (borstal)، فكتابه الشعريّ الأوّل، فمعرفته في الحادية والعشرين أنّ لديه dyslexia، ثمّ حياته العمليّة في الحاضر. وأوضحُ انكسارٍ في التسلسل يأتي حين تقوده الإحصاءاتُ التي تنبّأت له بالسجن إلى السجون التي يزورها اليوم، فلا تبتعد نظرةُ الراشد عن قصّة الطفل.',
   climax:
-    'The structural climax was the moment of reframing - the shift from disability to difference - which transformed the article from personal memoir into general argument.',
+    'There is no single dramatic climax. The low point is the expulsion and borstal; the turn comes when he answers the statistics that predicted prison: what keeps a person out, he says, is overcoming their fears and finding their own way, and he never thought he was stupid. His central claim, that anyone who cannot understand dyslexia is the one with the problem, is stated outright only when the story of his life gives way to argument.',
   climaxAr:
-    'الذروةُ البنائيّة هي لحظةُ إعادة التأطير - الانتقالُ من الإعاقة إلى الاختلاف - التي تُحوّل المقالَ من سيرةٍ شخصيّة إلى حُجّةٍ عامّة.',
+    'لا ذروةَ دراميّةً واحدة. أدنى نقطةٍ هي الطردُ والإصلاحيّة؛ ويأتي المنعطف حين يردّ على الإحصاءات التي تنبّأت له بالسجن: فما يُبقي المرءَ خارجه، كما يقول، أن يتغلّب على مخاوفه ويجد طريقه، وهو لم يظنّ قطّ أنّه غبيّ. أمّا فكرتُه المركزيّة، أنّ مَن لا يستطيع فهم الـ dyslexia هو صاحب المشكلة، فلا تُعلن صراحةً إلّا حين تُفسح قصّةُ حياته المجالَ للحُجّة.',
   resolution:
-    'The resolution was outward-facing: having told his own story, Zephaniah turned to the young dyslexic reader and applied the lesson directly. The article ended as a message rather than as autobiography.',
+    'The ending faces outward: having told his own story, Zephaniah speaks to dyslexic readers and to parents, then ends with the children who come up to him to say they are dyslexic too. The article closes as advice handed on, with a joke, rather than as autobiography.',
   resolutionAr:
-    'الخاتمةُ خارجيّةُ الوجهة: بعد أن روى Zephaniah قصّته الخاصّة، التفت إلى القارئ الشابّ ذي الـ dyslexia وطبّق الدرسَ عليه مباشرةً. وينتهي المقال رسالةً لا سيرةً.',
+    'الخاتمةُ خارجيّةُ الوجهة: بعد أن روى Zephaniah قصّته الخاصّة، يخاطب القرّاءَ ذوي الـ dyslexia والآباءَ، ثمّ ينتهي بالأطفال الذين يأتون إليه ليقولوا إنّ لديهم dyslexia مثله. ويُختتم المقال نصيحةً تُسلَّم إلى الجيل التالي، مع نكتة، لا سيرةً ذاتيّة.',
   perspective:
     'First-person throughout. The authority of the piece rests almost entirely on lived experience: there are no expert voices, and although he appeals to the statistics on dyslexia in prison, he gives no figures, so Zephaniah’s own testimony carries the argument.',
   perspectiveAr:
     'ضمير المتكلّم في النصّ كلِّه. تتّكئ سلطةُ المقال كلّها تقريباً على التجربة المعيشة: لا أصواتَ من خبراء، ومع أنّه يحتكم إلى الإحصاءات عن الـ dyslexia في السجون، فإنّه لا يذكر أرقاماً، فتحمل شهادةُ Zephaniah الحُجّة.',
   paragraphing:
-    'Short paragraphs and direct sentences reflected Zephaniah’s background as a performance poet. The text was written to be spoken as much as read, with each unit landing as a discrete beat.',
+    'The paragraphs are short, twenty of them across 88 printed lines, and the sentences plain and direct, with blunt short statements set among longer anecdotes. The style suits a writer who, as he says, performs his poetry, and it lets each anecdote land as a discrete beat.',
   paragraphingAr:
-    'الفقرات القصيرة والجمل المباشرة تعكس خلفيّة Zephaniah شاعرَ أداء. كُتب النصُّ ليُلقى بقدر ما يُقرأ، فتسقط كلُّ وحدةٍ نبضةً منفصلة.',
-  time: 'Broadly chronological in the middle - past failure, present success, future hope - but framed by an opening and an ending that state the same confident conclusion. The temporal structure mirrored a redemption arc, from the labels of childhood to the agency of adulthood.',
+    'الفقراتُ قصيرة - عشرون فقرةً في 88 سطراً مطبوعاً - والجملُ بسيطةٌ ومباشرة، تتخلّل الحكاياتِ الأطولَ جملٌ قصيرةٌ حاسمة. ويلائم هذا الأسلوبُ كاتباً يُلقي شعره، كما يقول هو نفسه، فتسقط كلُّ حكايةٍ نبضةً منفصلة.',
+  time: 'Broadly chronological in the middle - past failure, present success, then a look ahead to the next generation - but framed by an opening and an ending that state the same confident conclusion. The movement is from the labels of childhood to the confidence of adulthood.',
   timeAr:
-    'زمنيٌّ في الجملة في وسطه - إخفاق ماضٍ، ونجاح حاضر، وأملٌ مستقبليّ - لكنّه مؤطَّرٌ بافتتاحٍ وخاتمةٍ يُعلنان الخلاصةَ الواثقة نفسها. وتعكس البنيةُ الزمنيّة قوسَ خلاصٍ ينتقل من وسوم الطفولة إلى فاعليّة سنّ الرشد.',
+    'زمنيٌّ في الجملة في وسطه - إخفاق ماضٍ، ونجاح حاضر، ثمّ نظرةٌ إلى الجيل التالي - لكنّه مؤطَّرٌ بافتتاحٍ وخاتمةٍ يُعلنان الخلاصةَ الواثقة نفسها. وتسير الحركةُ من وسوم الطفولة إلى ثقة سنّ الرشد.',
   openingClosing:
     'The opening and the ending make the same claim: the article begins with Zephaniah’s confident statement that dyslexic people are the architects and designers, and ends with him saying it again to children who tell him they are dyslexic too. The circular structure is the embodiment of the article’s argument.',
   openingClosingAr:
     'يُعلن الافتتاحُ والخاتمة الفكرةَ نفسها: يبدأ المقال بقول Zephaniah الواثق إنّ ذوي الـ dyslexia هم المهندسون المعماريّون والمصمّمون، وينتهي به يكرّرها لأطفالٍ يخبرونه أنّ لديهم dyslexia مثله. وهذه البنيةُ الدائريّة تجسيدٌ لحُجّة المقال.',
 }
 
+/**
+ * CORRECTED 26 September 2026. This said the article "reclaimed a label that had
+ * been used to diminish him". His teachers did not know what dyslexia was
+ * (line 3) and he learned the word only at 21; the word used on him was
+ * "stupid", which is what the article hands back. It also said that schools
+ * "fail dyslexic students" in the present tense, which he does not claim: he
+ * places the lack of compassion in the system of his own childhood.
+ *
+ * RECHECKED 10 October 2026. The message said "the schools of his childhood"
+ * took difficulty with writing for a lack of intelligence; in the article one
+ * teacher does, the one asked for help with writing (lines 20-22). The
+ * quotation marks round dyslexic, added that day, were removed; stupid stays
+ * quoted once in each language, as on main before the pass.
+ */
 const writersPurpose = {
   achieve:
-    'Zephaniah set out to challenge a reductive definition of dyslexia and to reach young dyslexic readers who had been made to feel inadequate by their schooling. The article reclaimed a label that had been used to diminish him.',
+    'Zephaniah sets out to show that dyslexia says nothing about intelligence and that the problem lies with people who cannot understand it, and to reach dyslexic readers and the parents of dyslexic children. The label used to diminish him as a boy was not dyslexia, since his teachers did not know what dyslexia was, but “stupid”: the article hands that word back and makes being dyslexic something to be proud of.',
   achieveAr:
-    'انطلق Zephaniah ليتحدّى تعريفاً مُختزِلاً للـ dyslexia، وليصل إلى قرّاءٍ شبابٍ ذوي dyslexia جعلتهم المدرسةُ يشعرون بالقصور. ويستردّ المقالُ وسماً استُعمل لتقليل شأنه.',
+    'ينطلق Zephaniah ليُثبت أنّ الـ dyslexia لا تقول شيئاً عن الذكاء وأنّ المشكلة عند مَن لا يستطيع فهمها، وليصل إلى القرّاء ذوي الـ dyslexia وإلى آباء الأطفال من ذويها. ولم يكن الوسمُ الذي استُعمل لتحقيره صبيّاً هو الـ dyslexia، إذ لم يكن معلّموه يعرفون ما هي، بل "stupid": فيردّ المقالُ تلك الكلمة ويجعل الـ dyslexia أمراً يُفتخر به.',
   readerFeel:
-    'He wanted young dyslexic readers to feel proud, hopeful and validated, and non-dyslexic readers to question their assumptions about what intelligence looks like.',
+    'He wants dyslexic readers to feel proud and hopeful rather than held back, parents to see possibility in a dyslexic child rather than a defect, and everyone else to question the assumption that reading and writing easily is a sign of intelligence.',
   readerFeelAr:
-    'يريد للقرّاء الشباب من ذوي الـ dyslexia أن يشعروا بالفخر والأمل والاعتراف، وللقرّاء من غير ذوي الـ dyslexia أن يُساءلوا افتراضاتهم عن شكل الذكاء.',
+    'يريد للقرّاء ذوي الـ dyslexia أن يشعروا بالفخر والأمل لا بأنّ شيئاً يعوقهم، وللآباء أن يروا في الطفل ذي الـ dyslexia إمكاناً لا عيباً، ولسائر القرّاء أن يُساءلوا الافتراضَ القائل إنّ سهولة القراءة والكتابة علامةٌ على الذكاء.',
   message:
-    'Dyslexia is a difference, not a deficit. The narrow definitions of intelligence used by schools fail dyslexic students, but the same different thinking is often a strength in creative and practical fields.',
+    'Dyslexia is a different way of seeing the world, not a defect or a verdict on intelligence. At school a teacher took his difficulty with writing for a lack of intelligence, but the same way of thinking can make a person creative: dyslexic people, he says, are the architects and designers.',
   messageAr:
-    'الـ dyslexia اختلافٌ لا قصور. تعريفاتُ الذكاء الضيّقة التي تعتمدها المدارس تُجحف الطلابَ ذوي الـ dyslexia، غير أنّ التفكيرَ المختلفَ نفسَه كثيراً ما يكون قوّةً في الميادين الإبداعيّة والعمليّة.',
+    'الـ dyslexia طريقةٌ مختلفة في رؤية العالم، لا عيبٌ ولا حُكمٌ على الذكاء. لقد عدّ أحدُ معلّميه في المدرسة صعوبتَه في الكتابة نقصاً في الذكاء، غير أنّ طريقة التفكير نفسها قد تجعل صاحبها مبدعاً: فذوو الـ dyslexia، كما يقول، هم المهندسون المعماريّون والمصمّمون.',
 }
 
 const keyVocabulary = [
@@ -346,15 +415,29 @@ const examPractice = {
   },
 }
 
+/**
+ * CORRECTED 26 September 2026 against the three anthology extracts. The single
+ * story told about Zephaniah was not that he was dyslexic (his teachers had no
+ * word for it) but that he could not be intelligent. The Chinese Cinderella
+ * extract has no "message of resilience": her father is proud of her prize,
+ * scoffs at her wish to write, and she does not contradict him. The 127 Hours
+ * extract covers the boulder crushing Ralston's right hand and his first
+ * resolve to free himself, not his survival, and no one in it labels him.
+ *
+ * RECHECKED 10 October 2026: the 127 Hours reason said the boulder "traps his
+ * arm" in "the seconds" of the extract. The extract spends most of its length
+ * on his climb down the canyon before the boulder crushes his right hand and
+ * leaves him stuck.
+ */
 const comparisonLinks = [
   {
     title: 'The Danger of a Single Story',
     author: 'Chimamanda Ngozi Adichie',
     href: '/igcse/edexcel-lang/anthology/the-danger-of-a-single-story',
     reason:
-      'Both writers challenge the reductive single story others have created about them - Adichie as an African woman, Zephaniah as a dyslexic person. Compare how each uses personal experience to dismantle stereotypes.',
+      'Adichie describes the single story her American roommate had of Africa; Zephaniah’s teachers had one of him, the boy who could not be intelligent and should go and play football. Compare how each writer answers a stereotype with personal anecdote.',
     reasonAr:
-      'كلا الكاتبَين يتحدّى القصّةَ الواحدة المُختزِلة التي صنعها عنه الآخرون - Adichie امرأةً إفريقيّة، وZephaniah شخصاً ذا dyslexia. قارن كيف يوظّف كلٌّ منهما التجربةَ الشخصيّة لتفكيك الصور النمطيّة.',
+      'تصف Adichie القصّةَ الواحدة التي كانت لدى زميلتها الأمريكيّة في السكن عن إفريقيا؛ وكانت لدى معلّمي Zephaniah قصّةٌ واحدة عنه: الصبيّ الذي لا يمكن أن يكون ذكيّاً وعليه أن يذهب ليلعب كرة القدم. قارن كيف يردّ كلٌّ من الكاتبَين على الصورة النمطيّة بالحكاية الشخصيّة.',
     themes: ['Identity', 'Stereotypes', 'Self-definition'],
     themesAr: ['الهويّة', 'الصور النمطيّة', 'تعريف الذات'],
   },
@@ -363,22 +446,22 @@ const comparisonLinks = [
     author: 'Adeline Yen Mah',
     href: '/igcse/edexcel-lang/anthology/chinese-cinderella',
     reason:
-      'Both texts describe childhood experiences of being made to feel worthless by authority figures. Compare how each writer uses early pain as the foundation for a message of resilience.',
+      'Both writers recall being judged by adults when young. Adeline Yen Mah’s father is proud of her writing prize but scoffs at her wish to be a writer and decides that she will study medicine, and she does not contradict him; Zephaniah’s ideas contradicted his teachers’. Compare the two responses to authority.',
     reasonAr:
-      'يصف النصّان تجارب طفولةٍ جعلت فيها سلطاتٌ مَن حولها يشعر بانعدام القيمة. قارن كيف يستعمل كلُّ كاتبٍ ألمَ البدايات أساساً لرسالة صمود.',
-    themes: ['Childhood', 'Rejection', 'Resilience'],
-    themesAr: ['الطفولة', 'الرفض', 'الصمود'],
+      'يستعيد الكاتبان حُكمَ الكبار عليهما في الصغر. فوالدُ Adeline Yen Mah فخورٌ بجائزتها في الكتابة، لكنّه يسخر من رغبتها في أن تصير كاتبة ويقرّر أن تدرس الطبّ، فلا تعارضه؛ أمّا أفكار Zephaniah فكانت تناقض أفكار معلّميه. قارن بين الاستجابتين للسلطة.',
+    themes: ['Childhood', 'Being judged', 'Response to authority'],
+    themesAr: ['الطفولة', 'حُكم الكبار', 'الاستجابة للسلطة'],
   },
   {
     title: '127 Hours',
     author: 'Aron Ralston',
     href: '/igcse/edexcel-lang/anthology/127-hours',
     reason:
-      'Both texts celebrate the power of human will. Compare Ralston’s physical survival with Zephaniah’s intellectual and emotional survival - both refuse the labels others place on them.',
+      'Both are first-person accounts of adversity, told very differently. Ralston narrates in the present tense how a boulder crushes his right hand and leaves him stuck, and how he realises he must free himself; Zephaniah looks back across a lifetime. Compare how each writer’s distance from events shapes the reader’s response.',
     reasonAr:
-      'يحتفي النصّان بقوّة الإرادة الإنسانيّة. قارن نجاةَ Ralston الجسديّة بنجاة Zephaniah الفكريّة والعاطفيّة - كلاهما يرفض الوسومَ التي يفرضها عليه الآخرون.',
-    themes: ['Resilience', 'Self-belief', 'Overcoming adversity'],
-    themesAr: ['الصمود', 'الثقة بالنفس', 'تجاوز الشدائد'],
+      'كلاهما روايةٌ بضمير المتكلّم عن الشدّة، لكنّهما تُرويان بطريقتين مختلفتين جدّاً. يروي Ralston بالزمن الحاضر كيف يسحق صخرٌ يدَه اليمنى فيعلق، وكيف يدرك أنّ عليه أن يحرّر نفسه؛ أمّا Zephaniah فينظر إلى الوراء عبر عمرٍ كامل. قارن كيف يُشكّل بُعدُ كلّ كاتبٍ عن الأحداث استجابةَ القارئ.',
+    themes: ['Adversity', 'Self-reliance', 'Perspective'],
+    themesAr: ['الشدائد', 'الاعتماد على النفس', 'زاوية النظر'],
   },
 ]
 
@@ -410,10 +493,14 @@ export default async function YoungAndDyslexicPage() {
             <p className="text-body-sm text-muted-foreground">
               Benjamin Zephaniah (1958&ndash;2023) &middot;{' '}
               {/* 2015, not 2017: the anthology's headnote and acknowledgements
-                  both give The Guardian, Friday 2 October 2015. */}
+                  both give The Guardian, Friday 2 October 2015. Until 26 September
+                  2026 this read "Opinion article ... adapted for the anthology". The
+                  headnote says the Guardian article is itself adapted from his
+                  contribution to a book, and nothing shows that Pearson altered it
+                  further or where the Guardian filed it. */}
               {ar
-                ? 'مقال رأي (Guardian، 2015 - مُكيَّف للمختارات)'
-                : 'Opinion article (Guardian, 2015 - adapted for the anthology)'}
+                ? 'مقال (The Guardian على الإنترنت، 2015)'
+                : 'Article (The Guardian online, 2015)'}
             </p>
             <div className="mt-1.5 flex flex-wrap gap-1.5">
               <Badge variant="secondary" className="text-[0.65rem]">
@@ -471,24 +558,36 @@ export default async function YoungAndDyslexicPage() {
         <div className="flex items-start gap-3">
           <AlertTriangle className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div>
+            {/* Until 26 September 2026 this box, and the footer, said the online
+                Guardian original "differs in cuts, re-orderings, and minor word
+                choice". Nothing checked supports that: the anthology's headnote says
+                only that the Guardian article is adapted from his contribution to a
+                book, and the one independent online copy the guide checked agreed
+                with the anthology on all fourteen phrases compared. What is certain
+                is that the exam prints the anthology text in its Source Booklet.
+                Until 10 October 2026 both boxes also said copies found online "do
+                not carry" the line numbers; Pearson's own PDF, which this page
+                recommends, is online and carries them, so they now say other copies
+                may not. */}
             <p className="mb-2">
               {ar ? (
                 <>
-                  <strong className="text-foreground">تحذير نسخة المختارات:</strong> هذا النصّ هو
-                  النسخة <strong className="text-foreground">المُكيَّفة</strong> المطبوعة في مختارات
-                  Edexcel IGCSE (ISBN 978-1-446-93108-0). نسخةُ <em>Guardian</em> الأصليّة المتاحة
-                  مجّاناً (المنشورة من كثيرٍ من مواقع المراجعة) تختلف في الحذف والترتيب وتفاصيل
-                  المفردات. استعمل دائماً نسخةَ المختارات حين تجيب على أسئلة Edexcel - يُصحّح
-                  الممتحنون قبالةَ نصّ المختارات.
+                  <strong className="text-foreground">تحذير نسخة المختارات:</strong> هذا هو المقال
+                  كما تطبعه مختارات Edexcel IGCSE (ISBN 978-1-446-93108-0) في الصفحتين 12-13: النصّ
+                  الذي نشرته <em>The Guardian</em> على الإنترنت عام 2015، وهو نفسه مُكيَّف من إسهام
+                  Zephaniah في كتاب. وقد لا تحمل النسخُ الأخرى المتاحة على الإنترنت أرقامَ أسطر
+                  المختارات، وقد لا تطابق صياغتها. استعمل دائماً نسخةَ المختارات حين تجيب على أسئلة
+                  Edexcel - يطبع الامتحانُ هذا النصّ في كتيّب المصادر، ويُصحّح الممتحنون قبالته.
                 </>
               ) : (
                 <>
-                  <strong className="text-foreground">Anthology version warning:</strong> This text
-                  is the <strong className="text-foreground">adapted</strong> version printed in the
-                  Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available{' '}
-                  <em>Guardian</em> original (linked from many revision sites) differs in cuts,
-                  re-orderings, and minor word choice. Always use the anthology version when
-                  answering Edexcel exam questions - examiners will mark against the anthology text.
+                  <strong className="text-foreground">Anthology version warning:</strong> This is
+                  the article as printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0),
+                  pages 12-13: the piece <em>The Guardian</em> published online in 2015, itself
+                  adapted from Zephaniah&apos;s contribution to a book. Other copies found online
+                  may not carry the anthology&apos;s line numbers or match its wording. Always use
+                  the anthology version when answering Edexcel exam questions - the exam prints that
+                  text in its Source Booklet, and examiners mark against it.
                 </>
               )}
             </p>
@@ -525,20 +624,31 @@ export default async function YoungAndDyslexicPage() {
             {await t('anth_text.section.context')}
           </h2>
         </div>
+        {/* CORRECTED 26 September 2026 against the anthology, Issue 8, pp. 12-13.
+            This said he "left school at thirteen" (the article: expelled from his
+            last school at 13), built a career on "oral storytelling" (nothing in
+            the article), addressed young dyslexic readers directly (only its last
+            paragraphs do), and that the anthology prints an adapted form of the
+            Guardian article (the headnote says the Guardian article is itself the
+            adaptation, of his contribution to a book). */}
         <div className="space-y-3 text-body-sm text-muted-foreground leading-relaxed">
           {ar ? (
             <>
               <p>
-                Benjamin Zephaniah (1958&ndash;2023) شاعرُ دَب بريطانيّ وروائيّ ومناضلٌ سياسيّ. ترك
-                المدرسة في الثالثة عشرة، وكافح مع الـ dyslexia، وبنى مسيرةً أدبيّة على الأداء والسرد
-                الشفهيّ، وعلى رفضٍ أن تُحدّده أحكامُ المؤسّسات. نشر هذا المقال في{' '}
-                <em>The Guardian</em> في 2 أكتوبر 2015، مخاطباً القرّاءَ الشباب من ذوي الـ dyslexia
-                مباشرةً.
+                Benjamin Zephaniah (1958&ndash;2023) شاعرُ دَب بريطانيّ وروائيّ ومناضلٌ سياسيّ.
+                يستعيد في هذا المقال نشأته في زمنٍ لم يكن المعلّمون يعرفون فيه ما الـ dyslexia: طُرد
+                من آخر مدارسه في الثالثة عشرة، وقضى وقتاً في الإصلاحيّة (borstal)، ولم يُقل له إنّ
+                لديه dyslexia إلّا في الحادية والعشرين، في صفٍّ لتعليم الكبار في لندن. دوّنت صديقتُه
+                قصائدَ كتابه الأوّل وهو يرويها لها؛ وحين كتب المقال كان قد كتب أيضاً رواياتٍ للناشئة
+                ومسرحيّات، وسجّل موسيقى، وصار أستاذاً للشعر والكتابة الإبداعيّة في Brunel
+                University.
               </p>
               <p>
-                نسخةُ المختارات المدروسة هنا صيغةٌ{' '}
-                <strong className="text-foreground">مُكيَّفة</strong> من مقال 2015. توفّي Zephaniah
-                في 7 ديسمبر 2023.
+                نُشر المقال في <em>The Guardian</em> على الإنترنت في 2 أكتوبر 2015، مُكيَّفاً من
+                إسهامه في كتاب <em>Creative, Successful, Dyslexic</em> (Jessica Kingsley Publishers،
+                2015)، الذي يروي فيه ثلاثةٌ وعشرون من أصحاب الإنجازات قصصَهم، وتطبعه المختارات في
+                الصفحتين 12-13. يتحدّث المقال عن حياته في معظمه، ولا يخاطب القرّاءَ ذوي الـ dyslexia
+                وآباءهم مباشرةً إلّا في فقراته الأخيرة. توفّي Zephaniah في 7 ديسمبر 2023.
               </p>
               <p>
                 يعمل المقال سيرةً وبيانَ مبادئ في آنٍ معاً - تجربةٌ شخصيّة تُستعمل محرّكاً لحُجّةٍ
@@ -549,15 +659,21 @@ export default async function YoungAndDyslexicPage() {
             <>
               <p>
                 Benjamin Zephaniah (1958&ndash;2023) was a British dub poet, novelist and political
-                campaigner. He left school at thirteen, struggled with dyslexia, and built a
-                literary career on performance, oral storytelling and a refusal to let institutional
-                verdicts define him. He published this article in <em>The Guardian</em> on 2 October
-                2015, addressing young dyslexic readers directly.
+                campaigner. In this article he looks back on growing up at a time when teachers did
+                not know what dyslexia was: he was expelled from his last school at 13, spent time
+                in borstal, and was told he was dyslexic only at 21, at an adult education class in
+                London. His girlfriend wrote down the poems for his first book as he told them to
+                her; by the time of writing he had also written novels for teenagers and plays,
+                recorded music, and become professor of poetry and creative writing at Brunel
+                University.
               </p>
               <p>
-                The anthology version studied here is an{' '}
-                <strong className="text-foreground">adapted</strong> form of that 2015 article.
-                Zephaniah died on 7 December 2023.
+                The article was published in <em>The Guardian</em> online on 2 October 2015, adapted
+                from his contribution to <em>Creative, Successful, Dyslexic</em> (Jessica Kingsley
+                Publishers, 2015), a book in which twenty-three high achievers tell their stories,
+                and the anthology prints it on pages 12-13. It speaks about his own life for most of
+                its length and turns to address dyslexic readers and their parents directly only in
+                its last paragraphs. Zephaniah died on 7 December 2023.
               </p>
               <p>
                 The piece functions as both memoir and manifesto - personal experience used as the
@@ -712,6 +828,14 @@ export default async function YoungAndDyslexicPage() {
             {await t('anth_text.section.key_vocabulary')}
           </h2>
         </div>
+        {/* Added 26 September 2026. Of these eleven words only dyslexia,
+            accommodate and creativity appear in the article (checked against the
+            anthology, Issue 8); the list read as if all of them were his. */}
+        <p className="text-body-sm text-muted-foreground mb-5">
+          {ar
+            ? 'مفرداتٌ للكتابة عن المقال. ثلاثٌ منها فقط - dyslexia وaccommodate وcreativity - ترد فيه؛ أمّا البقيّة فمصطلحاتٌ لمناقشة حُجّته، لا كلماتٌ يستعملها Zephaniah.'
+            : 'Words for writing about the article. Only three of them, dyslexia, accommodate and creativity, appear in it; the rest are terms for discussing its argument, not words Zephaniah uses.'}
+        </p>
         <div className="grid gap-3 sm:grid-cols-2">
           {keyVocabulary.map((v) => (
             <div key={v.word} className="rounded-lg border border-border/40 bg-muted/20 p-3">
@@ -835,11 +959,13 @@ export default async function YoungAndDyslexicPage() {
         {ar ? (
           <>
             <p>
-              <strong className="text-foreground">تحذير نسخة المختارات:</strong> هذا النصّ هو النسخة{' '}
-              <strong>المُكيَّفة</strong> المطبوعة في مختارات Edexcel IGCSE (ISBN
-              978-1-446-93108-0). نسخةُ <em>Guardian</em> الأصليّة المتاحة مجّاناً تختلف في الحذف
-              والترتيب وتفاصيل المفردات. استعمل دائماً نسخةَ المختارات حين تجيب على أسئلة Edexcel -
-              يُصحّح الممتحنون قبالةَ نصّ المختارات.
+              {/* See the version warning at the top of the page for why the
+                  "cuts and re-orderings" claim was removed on 26 September 2026. */}
+              <strong className="text-foreground">تحذير نسخة المختارات:</strong> هذا هو المقال كما
+              تطبعه مختارات Edexcel IGCSE (ISBN 978-1-446-93108-0)، وهو مُكيَّف من إسهام Zephaniah
+              في كتاب. وقد لا تحمل النسخُ الأخرى المتاحة على الإنترنت أرقامَ أسطر المختارات، وقد لا
+              تطابق صياغتها. استعمل دائماً نسخةَ المختارات حين تجيب على أسئلة Edexcel - يُصحّح
+              الممتحنون قبالةَ نصّ المختارات.
             </p>
             <p className="mt-2">
               <strong className="text-foreground">إشعار الحقوق:</strong> Benjamin Zephaniah
@@ -855,11 +981,12 @@ export default async function YoungAndDyslexicPage() {
         ) : (
           <>
             <p>
-              <strong className="text-foreground">Anthology version warning:</strong> This text is
-              the <strong>adapted</strong> version printed in the Edexcel IGCSE Anthology (ISBN
-              978-1-446-93108-0). The freely-available <em>Guardian</em> original differs in cuts,
-              re-orderings, and minor word choice. Always use the anthology version when answering
-              Edexcel exam questions - examiners will mark against the anthology text.
+              <strong className="text-foreground">Anthology version warning:</strong> This is the
+              article as printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0), itself
+              adapted from Zephaniah&apos;s contribution to a book. Other copies found online may
+              not carry the anthology&apos;s line numbers or match its wording. Always use the
+              anthology version when answering Edexcel exam questions - examiners mark against the
+              anthology text.
             </p>
             <p className="mt-2">
               <strong className="text-foreground">Rights notice:</strong> Benjamin Zephaniah

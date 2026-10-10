@@ -21,6 +21,35 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  *
  * Context facts are sourced below. Where only one source could be found (the
  * Toth reading), the guide attributes rather than asserts.
+ *
+ * Exam-format audit, 26 September 2026, against the Issue 7 specification and
+ * the 4EA1/02 papers. Paper 2 Section A sets one essay on the whole of one
+ * named Part 2 text, printed for the candidate, with bullet points ending on
+ * language and structure, and never a comparison. Found and changed: a
+ * structure-only exam question (now language and structure), a setting
+ * question labelled language analysis (the same), and an exam question
+ * comparing this story with The Necklace, which the paper never pairs: it is
+ * now the coursework option, Assignment A, three Part 2 texts including a
+ * poem, marked for understanding and for language and structure rather than
+ * for comparison. The three passage questions render under the label "The
+ * question" on line ranges, so they now say they are close-reading practice.
+ * A tip said the anthology numbers every line (it numbers in fives) and
+ * implied its numbers reach the exam; the printed copy may number its lines
+ * differently or not at all. No mark tariffs: the validator keeps those to
+ * ExamPlacementCard.
+ *
+ * Checked again 10 October 2026. The first essay question and the model answer
+ * still opened "Explore how", and that question's label said "language, form
+ * and structure": both are the Literature paper's (4ET1) wording, where the
+ * 4EA1 Paper 2 stem is "How does the writer present" (or "create") and its
+ * last bullet is language and structure. The setting question now uses that
+ * stem too, and the ending question, which was about the ending alone, now
+ * asks how shock is created across the story. The coursework task carried two
+ * poem titles in quotation marks, which read as added quotations, and the
+ * line-number advice in the first plan ignored a printed copy without numbers.
+ * The add-on warning in the structure tip is from the examiners' report on
+ * November 2020 Paper 2. Do not put "Explore" or "form" back into an exam
+ * question here.
  */
 export const guide: StudyGuide = {
   slug: 'the-story-of-an-hour',
@@ -288,7 +317,7 @@ She sat with her head thrown back upon the cushion of the chair, quite motionles
         },
       ],
       question:
-        'How does Chopin use the setting in lines 13 to 24 to prepare the reader for the change in Mrs Mallard? Refer closely to the language of the passage.',
+        'Close-reading practice, not an exam question (the exam sets one essay on the whole story). How does Chopin use the setting in lines 13 to 24 to prepare the reader for the change in Mrs Mallard? Refer closely to the language of the passage.',
     },
     {
       title: 'Free, free, free',
@@ -343,7 +372,7 @@ She knew that she would weep again when she saw the kind, tender hands folded in
         },
       ],
       question:
-        "How does Chopin present Mrs Mallard's feelings in lines 29 to 44? You should comment on language and on the way the passage is structured.",
+        "Close-reading practice, not an exam question (the exam sets one essay on the whole story). How does Chopin present Mrs Mallard's feelings in lines 29 to 44? You should comment on language and on the way the passage is structured.",
     },
     {
       title: 'The latchkey and the last line',
@@ -400,7 +429,7 @@ When the doctors came they said she had died of heart disease--of the joy that k
         },
       ],
       question:
-        'How does Chopin make the ending of the story, from line 57 to line 73, shocking for the reader? Refer to language and structure.',
+        'Close-reading practice, not an exam question (the exam sets one essay on the whole story). How does Chopin make the ending of the story, from line 57 to line 73, shocking for the reader? Refer to language and structure.',
     },
   ],
 
@@ -496,7 +525,7 @@ When the doctors came they said she had died of heart disease--of the joy that k
     },
     {
       heading: 'A twist ending and dramatic irony',
-      body: "The reversal in lines 67-73 is sudden, but it is prepared: the heart trouble in line 1, the fear of making herself ill, the “feverish” triumph. What gives it force is dramatic irony. The reader knows what the doctors do not, so the final line means one thing to the characters and the opposite to us. Chopin admired Maupassant, a master of the short story's closing reversal, and The Necklace in the same anthology is a useful comparison.",
+      body: "The reversal in lines 67-73 is sudden, but it is prepared: the heart trouble in line 1, the fear of making herself ill, the “feverish” triumph. What gives it force is dramatic irony. The reader knows what the doctors do not, so the final line means one thing to the characters and the opposite to us. Chopin admired Maupassant, a master of the short story's closing reversal, and The Necklace, also in Part 2 of the anthology, ends on a reversal too: a useful pairing if you take the coursework option, though the exam never asks you to compare the two.",
     },
     {
       heading: 'Third-person narration that moves in and out',
@@ -635,9 +664,9 @@ When the doctors came they said she had died of heart disease--of the joy that k
     questions: [
       {
         question:
-          "Explore how Chopin presents Mrs Mallard's feelings after she hears the news of her husband's death. Support your answer with close reference to the text.",
+          "How does Chopin present Mrs Mallard's feelings after she hears the news of her husband's death? In your answer, you should write about: her first reaction to the news and why she wants to be alone; the feeling that comes to her in her room and how she imagines the years ahead; the use of language and structure. Support your answer with close reference to the text, including brief quotations.",
         skill:
-          'Language, form and structure: how the writer presents a character across the whole story',
+          'Whole-story essay: how the writer presents a character, through language and structure',
         guidance: [
           'Open with a clear overview: Chopin presents a journey from grief, through fear, to a secret and physical joy, and then shows the world misread that joy completely.',
           "Start with the first reaction (lines 9-12): unlike “many women”, she weeps “at once”, in her sister's arms, and then insists on going to her room alone. Analyse the metaphor “the storm of grief” and the short sentence “She would have no one follow her.”",
@@ -645,29 +674,31 @@ When the doctors came they said she had died of heart disease--of the joy that k
           'Show that her feelings are mixed, not simple: she knows she will weep again at the “kind, tender hands”, and she admits she loved him “sometimes”. Explain why that honesty makes her more sympathetic.',
           'Look at the language of triumph (lines 57-65): the “elixir of life”, the prayer that life might be long, the “goddess of Victory”, and the warning in “feverish”.',
           "Finish with structure: the doctors' verdict in line 73 names the wrong feeling. Explain the dramatic irony and what it suggests about how others see her.",
-          'Throughout, embed short quotations, give line numbers, and name the method before you explain its effect.',
+          'Throughout, embed short quotations, give line numbers where your printed copy has them, and name the method before you explain its effect.',
         ],
       },
       {
         question:
-          'How does Chopin use the setting, including the room and the open window, to show the change in Mrs Mallard?',
-        skill: 'Language analysis of setting, imagery and symbol',
+          'How does Chopin present the change in Mrs Mallard through the setting, including the room and the open window? In your answer, you should write about: the world outside the window and what it brings to her; the room, the doors and the stairs, and how she moves between them; the use of language and structure. Support your answer with close reference to the text, including brief quotations.',
+        skill: 'Whole-story essay: setting, imagery and symbol, through language and structure',
         guidance: [
           'Establish the contrast between the house of mourning and the spring world outside the window, and explain pathetic fallacy.',
           'Analyse the sensory detail of lines 16-21: “aquiver”, “The delicious breath of rain”, the peddler, the song, the sparrows, and the “patches of blue sky” breaking through cloud.',
           'Show how the setting delivers the feeling to her: it comes “creeping out of the sky” through “the sounds, the scents, the color” (lines 30-31).',
           'Discuss the symbols: the open window (lines 13 and 58), the closed door with Josephine at the keyhole (line 54), and the front door opened with a latchkey (line 67).',
           'Track the vertical movement: she sinks into the chair, rises, and descends the stairs towards the door that lets Brently in.',
+          'Treat the setting as structure too: it divides the story into three movements, downstairs, her room, and downstairs again, and gives most of the story to the room with the open window.',
           'Conclude on the irony: the spring days she dreams of never come, so the season that promised renewal becomes part of the tragedy.',
         ],
       },
       {
         question:
-          'How does Chopin use structure to make the ending of The Story of an Hour shocking and powerful?',
-        skill: 'Structure and form: how the writer shapes the whole story',
+          'How does Chopin create a sense of shock in The Story of an Hour? In your answer, you should write about: how the earlier parts of the story prepare for the ending; what the reader knows that the characters and the doctors do not; the use of language and structure. Support your answer with close reference to the text, including brief quotations.',
+        skill: 'Whole-story essay: how the writer creates shock, through language and structure',
         guidance: [
           'Explain the three movements and their proportions: public news, the long private hour upstairs, and the brief public catastrophe.',
           "Show how the ending is prepared: the “heart trouble” of line 1, Josephine's warning “you will make yourself ill” (line 55), the “feverish triumph” (line 64).",
+          "Give language as much weight as structure: the drop from the goddess of Victory simile to Brently with his bag and umbrella is bathos, and the doctors' verdict in the last line turns on the word joy.",
           'Compare the two delays: the unnamed “something” (line 29) and the unnamed “Some one” at the door (line 67). One brings freedom and the other ends it.',
           'Analyse the collapse in pace: the long description in the room against the three final paragraphs, the last two only one sentence each.',
           "Explain the frame of official reports, the newspaper list and the doctors' verdict, and why both being wrong matters.",
@@ -676,38 +707,41 @@ When the doctors came they said she had died of heart disease--of the joy that k
       },
       {
         question:
-          'Compare how the writers of The Story of an Hour and The Necklace present a woman whose hopes are overturned by a final reversal.',
-        skill: 'Comparison of two anthology texts: methods, structure and effect',
+          'Coursework option (Assignment A), not an exam question: the exam never compares two anthology texts. Discuss how the writers use language and structure to present hopes overturned by a sudden reversal in The Story of an Hour, The Necklace and a Part 2 poem of your choice, such as Disabled by Wilfred Owen or Out, Out- by Robert Frost. In your response you should: discuss the ideas and perspectives of the writers about hopes and reversal; discuss how the writers use language and structure to achieve their effects; include textual references to illustrate the points you make.',
+        skill:
+          'Coursework option, Assignment A: three Part 2 texts, at least one poem and one prose text',
         guidance: [
-          "Open with a comparative overview: both stories centre on a woman's inner life and end with a reversal that makes the reader reread everything before it, but the hopes are very different.",
-          'Compare what each woman wants and how the writer shows it. For Chopin, use the imagery of the window and the “long procession of years”; for Maupassant, the equivalent passages of longing in your anthology.',
-          'Compare the endings: in Chopin, dramatic irony, since the reader knows more than the doctors; in Maupassant, a revelation that surprises the reader as much as the character.',
-          "Compare narrative voice: Chopin's close third person that withdraws at the end, set against the narrator of The Necklace.",
-          'Use context carefully: Chopin admired Maupassant, and both write in the late nineteenth century about women whose lives are shaped by marriage, and in Maupassant by money as well.',
-          'Keep both texts in every paragraph, and end with a judgement about which ending asks more of the reader and why.',
+          'Check your choice meets the rules: three texts from Part 2 of the anthology, with at least one poem and one prose text. The Story of an Hour and The Necklace are both prose, so the third text must be a poem.',
+          "Define the focus in your introduction: both stories centre on a woman's inner life and end with a reversal that makes the reader reread everything before it, but the hopes are very different. Say how your poem fits the same focus.",
+          'Analyse what each woman wants and how the writer shows it. For Chopin, use the imagery of the window and the “long procession of years”; for Maupassant, the equivalent passages of longing in your anthology.',
+          'Analyse each ending: in Chopin, dramatic irony, since the reader knows more than the doctors; in Maupassant, a revelation that surprises the reader as much as the character. Then ask what the ending of your poem leaves the reader with.',
+          "Analyse narrative voice: Chopin's close third person that withdraws at the end, the narrator of The Necklace, and the voice of your poem.",
+          'Use context carefully: Chopin admired Maupassant, and both write in the late nineteenth century about women whose lives are shaped by marriage, and in Maupassant by money as well. Context helps only when it sharpens a point about the writing.',
+          'Brief links between the texts can help the essay hang together, but the assignment is marked for understanding each text and analysing its language and structure, not for comparison as such. Give each text a fair share of close analysis; the advised length is about 1,200 words.',
         ],
       },
     ],
     tips: [
+      'Know what the paper sets. Section A of Paper 2 is one compulsory essay question on one Part 2 text, named on the paper, with about 45 minutes advised; this story was the text in November 2023. If it is The Story of an Hour, the question is about the whole story, which is printed for you in a Source Booklet, since the anthology may not be taken in. It asks how the writer presents or creates something, with bullet points that in past papers end with the use of language and structure. It is not a comparison: the other Part 2 texts come in only if you take the coursework option instead.',
       "Quote the anthology's wording, not a version you found online. The last line in your anthology ends “of the joy that kills”, and line 45 is “There would be no one to live for during those coming years”. Other editions differ.",
-      'Use line numbers. The anthology numbers every line, so a line number in brackets after a quotation is quick, precise and shows the examiner exactly where you are.',
+      "Use line numbers in revision, and check them in the exam. The anthology numbers its lines in fives, and every line number in this guide is the anthology's. In the exam you quote from the copy printed for you, and past papers have printed their texts both with line numbers and without them. If your copy is numbered, give its numbers, which may not match the anthology's; if it is not, let a short, exact quotation show the examiner where you are.",
       'Do not turn Brently into a villain. The story says he was kind and looked at her only with love. The stronger argument is that Chopin criticises marriage itself, or any relationship in which one will bends another.',
       'Explain the irony of the ending precisely. The doctors are right that an emotion killed her and wrong about which one. Say what the reader knows that they do not, and how Chopin made sure we know it.',
       "Keep technique names accurate. The spring scene is pathetic fallacy; the approaching feeling is personification; “monstrous joy” is an oxymoron; Brently's umbrella after the goddess of Victory is bathos.",
-      'Write about structure as well as language. The proportions of the story, the delayed reveals, the one-sentence paragraphs and the frame of official reports are all things a strong answer can point to.',
+      'Write about structure as well as language. The proportions of the story, the delayed reveals, the one-sentence paragraphs and the frame of official reports are all things a strong answer can point to. Weave both through the whole essay: examiners reporting on a past Paper 2 found that weaker answers followed the bullet points so rigidly that language and structure became an afterthought at the end.',
       'Balance your sympathy. Mrs Mallard grieves as well as rejoices. Answers that recognise both feelings, and explain why Chopin includes both, are more convincing than answers that call her heartless or simply heroic.',
-      "Be careful with biography. The railway accident that killed Chopin's father and her own early widowhood are interesting context, but present them as possible influences, not as proof of what the story means.",
+      "Be careful with biography. The railway accident that killed Chopin's father and her own early widowhood are interesting context, but present them as possible influences, not as proof of what the story means. This is an English Language question: credit comes from understanding the story and analysing its language and structure, so context earns its place only when it sharpens a point about the words on the page.",
     ],
   },
 
   modelAnswer: {
     question:
-      "Explore how Chopin presents Mrs Mallard's feelings after she hears the news of her husband's death.",
+      "How does Chopin present Mrs Mallard's feelings after she hears the news of her husband's death?",
     paragraph:
       "Chopin presents Mrs Mallard's new feeling first as something frightening, which suggests how deeply she has learned to fear her own desires. The narrator refuses to name it: “There was something coming to her and she was waiting for it, fearfully” (line 29). The vague pronoun “something” and the adverb “fearfully”, held back to the end of the sentence, build suspense and make the feeling sound like a threat. The personification that follows, “creeping out of the sky, reaching toward her”, gives it the movements of a stalker, and the verb “possess” could belong to a predator or a lover. Her response is to fight: she tries “to beat it back with her will”, yet the simile “as powerless as her two white slender hands” shows that her will is too weak, and the adjectives “white slender” present her as delicate and conventionally feminine. When she stops resisting, the word arrives only as a whisper, “free, free, free!” (line 36). The tripled word releases all the tension of the previous seven lines, and Chopin immediately shows its effect on her body: the look of terror leaves her eyes, which stay “keen and bright”, and her blood is “coursing”. The irony is that the woman with the weak heart is most alive at the moment her husband is thought dead, which prepares the reader for an ending in which that same heart fails.",
     commentary: [
       'It opens with an argument, not a summary: the feeling is frightening, and that tells us something about her life before the news.',
-      'Quotations are short, exact and embedded in the sentence, and the opening and climactic ones carry line numbers, so the examiner can check them at once.',
+      'Quotations are short, exact and embedded in the sentence, and the opening and climactic ones carry line numbers, so the examiner can check them at once. In the exam, use the numbering of the copy printed for you, if it has any.',
       'Every quotation is followed by a named method (pronoun, adverb placement, personification, simile, repetition) and an explanation of its effect.',
       'It comments on structure within the passage as well as language: the delayed adverb, the build-up of tension and its release in a single repeated word.',
       'It notices ambiguity (“possess” as predator or lover) instead of forcing one meaning, which is a mark of a perceptive reading.',

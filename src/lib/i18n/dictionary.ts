@@ -11822,10 +11822,14 @@ export const DICTIONARY: Dictionary = {
     ar: 'كل الـ١٠ نصوص من المختارات',
     es: 'Los 10 textos de la antología',
   },
+  // CORRECTED 26 September 2026. This promised "comparison links" as if the
+  // exam paired two anthology texts; in 4EA1 Q5 the anthology text is always
+  // compared with an unseen passage. It also promised a writer's purpose
+  // section on every page; the 127-hours and polo pages have none.
   'anth_page.texts_intro': {
-    en: "Each text page includes key extracts, language and structural analysis, writer's purpose, vocabulary, exam practice and comparison links. Select a text to begin your study.",
-    ar: 'كل صفحة نص فيها مقاطع أساسية وتحليل لغوي وبنائي وأهداف الكاتب والمفردات وتمارين امتحان وروابط المقارنة. اختر نص عشان تبدأ.',
-    es: 'La página de cada texto incluye extractos clave, análisis del lenguaje y de la estructura, el propósito del escritor, vocabulario, práctica de examen y enlaces de comparación. Selecciona un texto para comenzar tu estudio.',
+    en: 'Each text page includes key extracts, language and structural analysis, vocabulary and exam practice, with other anthology texts to compare it with as revision practice. In the exam, the anthology text is compared with an unseen passage, never with another anthology text. Select a text to begin your study.',
+    ar: 'كل صفحة نص فيها مقاطع أساسية وتحليل لغوي وبنائي والمفردات وتمارين امتحان، ونصوص ثانية من المختارات تتمرّن على المقارنة معها وأنت تراجع. في الامتحان، نص المختارات يتقارن بمقطع unseen، وأبداً ما يتقارن بنص ثاني من المختارات. اختر نص عشان تبدأ.',
+    es: 'La página de cada texto incluye extractos clave, análisis del lenguaje y de la estructura, vocabulario y práctica de examen, además de otros textos de la antología con los que compararlo como práctica de repaso. En el examen, el texto de la antología se compara con un extracto inédito, nunca con otro texto de la antología. Selecciona un texto para comenzar tu estudio.',
   },
   'anth_page.text_index_prefix': { en: 'Text', ar: 'نص', es: 'Texto' },
   'anth_page.study_this_text': {
@@ -11916,10 +11920,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'محاور المقتطف',
     es: 'Puntos clave del extracto',
   },
+  // Until 26 September 2026 this key, rebuilt_body, key_moments.intro and
+  // language_analysis.guidance_intro sent students to a "licensed" anthology.
+  // Pearson publishes it free as a PDF; no licensed copy is needed.
   'anth_text.section.extract_focuses.intro': {
-    en: 'Key moments in the extract and what each one is doing structurally and thematically. Refer to the licensed anthology for the exact wording.',
-    ar: 'لحظات مفتاحيّة في المقتطف ووظيفة كلٍّ منها بنائيّاً وموضوعيّاً. ارجع إلى المختارات المرخّصة للنصّ الحرفيّ.',
-    es: 'Momentos clave del extracto y lo que hace cada uno a nivel estructural y temático. Consulta la antología con licencia para ver la redacción exacta.',
+    en: 'Key moments in the extract and what each one is doing structurally and thematically. For the exact wording, use the anthology, which Pearson publishes free as a PDF.',
+    ar: 'لحظات مفتاحيّة في المقتطف ووظيفة كلٍّ منها بنائيّاً وموضوعيّاً. للنصّ الحرفيّ ارجع إلى المختارات، التي تنشرها Pearson مجّاناً بصيغة PDF.',
+    es: 'Momentos clave del extracto y lo que hace cada uno a nivel estructural y temático. Para ver la redacción exacta, consulta la antología, que Pearson publica gratis en PDF.',
   },
   'anth_text.section.language_analysis': {
     en: 'Language Analysis',
@@ -11980,10 +11987,14 @@ export const DICTIONARY: Dictionary = {
     es: 'Esquema de respuesta modelo',
   },
   'anth_text.section.compare_with': { en: 'Compare With', ar: 'قارن مع', es: 'Comparar con' },
+  // CORRECTED 26 September 2026 from "Strong pairings for comparison
+  // questions in the exam", which read as if the exam pairs two anthology
+  // texts. In 4EA1 Paper 1, Q5 compares the anthology text with an unseen
+  // passage and never with another anthology text.
   'anth_text.compare_with.intro': {
-    en: 'Strong pairings for comparison questions in the exam.',
-    ar: 'مقارنات قويّة لأسئلة المقابلة في الامتحان.',
-    es: 'Parejas sólidas para las preguntas de comparación del examen.',
+    en: 'Anthology texts that pair well with this one, for comparison practice while you revise. In the exam, Question 5 compares the anthology text with an unseen passage, never with another anthology text.',
+    ar: 'نصوص من المختارات تصلح للمقارنة بهذا النصّ، للتدرّب على المقارنة في أثناء المراجعة. أمّا في الامتحان، فيقارن السؤال 5 نصَّ المختارات بمقطعٍ لم تقرأه من قبل (unseen)، ولا يقارنه أبداً بنصٍّ آخر من المختارات.',
+    es: 'Textos de la antología que combinan bien con este, para practicar la comparación mientras repasas. En el examen, la pregunta 5 compara el texto de la antología con un extracto inédito, nunca con otro texto de la antología.',
   },
   'anth_text.rebuilt_label': {
     en: 'Page rebuilt April 2026.',
@@ -11991,9 +12002,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Página reconstruida en abril de 2026.',
   },
   'anth_text.rebuilt_body': {
-    en: 'This page has been rewritten to remove unverifiable direct quotations. Analysis discusses structure, technique and effect without putting specific words into the writer’s mouth. For the exact text of the extract, students should use the licensed Pearson Edexcel anthology.',
-    ar: 'أُعيدت كتابة هذه الصفحة لإزالة الاقتباسات الحرفيّة غير الموثّقة. يناقش التحليلُ البنية والأسلوب والأثر دون أن ينسب ألفاظاً بعينها إلى الكاتب. للحصول على النصّ الحرفيّ للمقتطف، ينبغي للطلاب الرجوع إلى مختارات Pearson Edexcel المرخّصة.',
-    es: 'Esta página se ha reescrito para eliminar las citas directas no verificables. El análisis trata la estructura, la técnica y el efecto sin poner palabras concretas en boca del escritor. Para el texto exacto del extracto, los estudiantes deben usar la antología con licencia de Pearson Edexcel.',
+    en: 'This page has been rewritten to remove unverifiable direct quotations. Analysis discusses structure, technique and effect without putting specific words into the writer’s mouth. For the exact text of the extract, students should use the Pearson Edexcel anthology, which Pearson publishes free as a PDF.',
+    ar: 'أُعيدت كتابة هذه الصفحة لإزالة الاقتباسات الحرفيّة غير الموثّقة. يناقش التحليلُ البنية والأسلوب والأثر دون أن ينسب ألفاظاً بعينها إلى الكاتب. للحصول على النصّ الحرفيّ للمقتطف، ينبغي للطلاب الرجوع إلى مختارات Pearson Edexcel، التي تنشرها Pearson مجّاناً بصيغة PDF.',
+    es: 'Esta página se ha reescrito para eliminar las citas directas no verificables. El análisis trata la estructura, la técnica y el efecto sin poner palabras concretas en boca del escritor. Para el texto exacto del extracto, los estudiantes deben usar la antología de Pearson Edexcel, que Pearson publica gratis en PDF.',
   },
   'anth_text.rights_notice_label': {
     en: 'Rights notice:',
@@ -12017,9 +12028,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Úsalo con tu antología',
   },
   'anth_text.key_moments.intro': {
-    en: 'Map of the extract’s key moments. Look up the exact wording in your licensed anthology.',
-    ar: 'خريطةُ اللحظات المفتاحيّة في المقتطف. ابحث عن النصّ الحرفيّ في مختاراتك المرخّصة.',
-    es: 'Mapa de los momentos clave del extracto. Busca la redacción exacta en tu antología con licencia.',
+    en: 'Map of the extract’s key moments. Look up the exact wording in the anthology, which Pearson publishes free as a PDF.',
+    ar: 'خريطةُ اللحظات المفتاحيّة في المقتطف. ابحث عن النصّ الحرفيّ في المختارات، التي تنشرها Pearson مجّاناً بصيغة PDF.',
+    es: 'Mapa de los momentos clave del extracto. Busca la redacción exacta en la antología, que Pearson publica gratis en PDF.',
   },
   'anth_text.teacher_note': {
     en: 'Teacher note',
@@ -12074,9 +12085,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Extractos clave',
   },
   'anth_text.section.language_analysis.guidance_intro': {
-    en: 'Key language techniques to look for in the anthology extract. Specific quotations will be added after primary-source review - for now, locate examples in your licensed anthology and apply the guidance below.',
-    ar: 'تقنيّات لغويّة رئيسة لرصدها في المقتطف من المختارات. ستُضاف الاقتباسات المحدّدة بعد مراجعة المصادر الأوليّة - لحينه، حدّد الأمثلة في مختاراتك المرخّصة وطبّق الإرشاد أدناه.',
-    es: 'Técnicas clave del lenguaje que buscar en el extracto de la antología. Se añadirán citas concretas tras la revisión de las fuentes primarias - por ahora, localiza ejemplos en tu antología con licencia y aplica la orientación de abajo.',
+    en: 'Key language techniques to look for in the anthology extract. Specific quotations will be added after primary-source review - for now, locate examples in the anthology, which Pearson publishes free as a PDF, and apply the guidance below.',
+    ar: 'تقنيّات لغويّة رئيسة لرصدها في المقتطف من المختارات. ستُضاف الاقتباسات المحدّدة بعد مراجعة المصادر الأوليّة - لحينه، حدّد الأمثلة في المختارات، التي تنشرها Pearson مجّاناً بصيغة PDF، وطبّق الإرشاد أدناه.',
+    es: 'Técnicas clave del lenguaje que buscar en el extracto de la antología. Se añadirán citas concretas tras la revisión de las fuentes primarias - por ahora, localiza ejemplos en la antología, que Pearson publica gratis en PDF, y aplica la orientación de abajo.',
   },
 
   // ─── Model answers (grade tabs + summary) ───────────────────────────
@@ -20031,10 +20042,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'كل الـ١٠ نصوص من المختارات',
     es: 'Los 10 textos de la antología',
   },
+  // Nothing renders this key (the hub reads anth_page.texts_intro). Kept in
+  // step with it on 26 September 2026 so a reuse cannot bring back the claim
+  // that the exam pairs two anthology texts.
   'anthology_hub.texts_intro': {
-    en: "Each text page includes key extracts, language and structural analysis, writer's purpose, vocabulary, exam practice and comparison links. Select a text to begin your study.",
-    ar: 'كل صفحة نص فيها مقاطع أساسية وتحليل لغوي وبنائي وأهداف الكاتب والمفردات وتمارين امتحان وروابط المقارنة. اختر نص عشان تبدأ.',
-    es: 'La página de cada texto incluye extractos clave, análisis del lenguaje y de la estructura, el propósito del escritor, vocabulario, práctica de examen y enlaces de comparación. Selecciona un texto para comenzar tu estudio.',
+    en: 'Each text page includes key extracts, language and structural analysis, vocabulary and exam practice, with other anthology texts to compare it with as revision practice. In the exam, the anthology text is compared with an unseen passage, never with another anthology text. Select a text to begin your study.',
+    ar: 'كل صفحة نص فيها مقاطع أساسية وتحليل لغوي وبنائي والمفردات وتمارين امتحان، ونصوص ثانية من المختارات تتمرّن على المقارنة معها وأنت تراجع. في الامتحان، نص المختارات يتقارن بمقطع unseen، وأبداً ما يتقارن بنص ثاني من المختارات. اختر نص عشان تبدأ.',
+    es: 'La página de cada texto incluye extractos clave, análisis del lenguaje y de la estructura, vocabulario y práctica de examen, además de otros textos de la antología con los que compararlo como práctica de repaso. En el examen, el texto de la antología se compara con un extracto inédito, nunca con otro texto de la antología. Selecciona un texto para comenzar tu estudio.',
   },
   'anthology_hub.text_index_prefix': {
     en: 'Text',

@@ -48,6 +48,28 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  *   literal, while its own line 11 note calls them literal images of the grave.
  * - two of its three comparison links (Do not go gentle, Poem at Thirty-Nine) go
  *   to the anthology index, not to the poems.
+ *
+ * EXAM PRACTICE AUDITED, 10 October 2026, against 4ET1 Paper 1 Section B as
+ * the specification (Issue 3), the papers from the specimen to June 2025,
+ * their mark schemes and examiner reports set it: one question from a choice
+ * of two, each comparing two Part 3 poems; a Poetry Booklet of every Part 3
+ * poem comes with the paper (its Remember matched the anthology's exactly in
+ * the five booklets checked); an answer on one poem is capped at the second
+ * of five levels; context is not assessed. So the passage questions now say
+ * they are close-reading practice, the punctuation tip no longer says to
+ * learn what the booklet prints, the context tip says context earns nothing
+ * by itself, and the pairings tip, which named only Sonnet 116 and Piano,
+ * adds Half-caste (June 2024) and the January 2020 question on Remember
+ * alone. Every statement about the exam names 4ET1, because the register also
+ * tags this poem for three A level boards whose formats were not checked. Do
+ * not present a question on this poem alone as the exam question.
+ *
+ * RE-CHECKED 10 October 2026: the tip on having the poem in front of you now
+ * names 4ET1 in its first words, and the speaker tip no longer reads as never
+ * naming Rossetti. Every 4ET1 Section B question asks for language, form and
+ * structure, which are the writer's choices, and Pearson's own mark scheme
+ * calls the speaker Rossetti, so the tip asks for the speaker only where the
+ * voice is meant.
  */
 export const guide: StudyGuide = {
   slug: 'remember',
@@ -142,7 +164,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Explore how Rossetti presents death and parting in lines 1 to 4. Write about the language, the sound and the structure of these lines.',
+        'Close-reading practice, not an exam question: in the 4ET1 exam, Remember is always compared with a second Part 3 poem. Explore how Rossetti presents death and parting in lines 1 to 4. Write about the language, the sound and the structure of these lines.',
     },
     {
       title: 'The planned future',
@@ -173,7 +195,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Rossetti use repetition and the idea of the future to present the relationship in lines 5 to 8?',
+        'Close-reading practice, not an exam question (the 4ET1 exam compares two poems): how does Rossetti use repetition and the idea of the future to present the relationship in lines 5 to 8?',
     },
     {
       title: 'The turn',
@@ -208,7 +230,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        "Explore how Rossetti changes the speaker's request in lines 9 to 14. Write about the volta, the language of the grave and the effect of the final two lines.",
+        "Close-reading practice, not an exam question (the 4ET1 exam compares two poems): explore how Rossetti changes the speaker's request in lines 9 to 14. Write about the volta, the language of the grave and the effect of the final two lines.",
     },
   ],
 
@@ -379,16 +401,16 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
-      "Learn the anthology's punctuation. The anthology, like the 1862 first edition, prints line 5 as “Remember me when no more day by day” without commas; some editions, including the Project Gutenberg text, add two. If you comment on punctuation, use the anthology's.",
+      "In the 4ET1 exam you will have the poem in front of you: a Poetry Booklet of all the Part 3 poems comes with the question paper, and the booklets checked print Remember exactly as the anthology does, so revise from the anthology's text rather than another edition. The anthology, like the 1862 first edition, prints line 5 as “Remember me when no more day by day” without commas; some editions, including the Project Gutenberg text, add two. If you comment on punctuation, use the anthology's.",
       'Quote line 8 exactly: “It will be late to counsel then or pray”. Do not add too: the line says late, and the quieter word is part of its effect.',
       '“Remember me” opens lines 1 and 5, not line 7. Line 7 opens with Only, and the phrase comes after it. Say anaphora for lines 1 and 5, and repetition for all three.',
       'Do not call lines 13 and 14 a rhyming couplet. The sestet rhymes CDDECE: smile rhymes with while in line 9 and sad with had in line 12. A Petrarchan sonnet has no closing couplet, which is one reason the ending feels like the end of an argument rather than a neat summary.',
-      "Write the speaker, not Rossetti, and remember that the poem never states either person's gender. If you write she and he, as most readers do, make sure your point does not depend on it.",
+      "When you mean the voice of the poem, write the speaker rather than Rossetti, and keep her name for her choices as the writer, in language, form and structure. The poem never states either person's gender: if you write she and he, as most readers do, make sure your point does not depend on it.",
       'Count what the poem avoids. It never uses the words death, dead or die. Building an argument around its substitutes, gone away, the silent land, the darkness and corruption, is more precise than simply naming euphemism.',
       'Track the small words: when (lines 1, 3 and 5) becomes if (lines 9 and 11), and me, six times in the first nine lines, never appears again. Small changes like these are what separate a strong answer from a competent one.',
-      'Use biographical context accurately or not at all. The poem is dated 25 July 1849, when Rossetti was eighteen, before her engagement to James Collinson ended; it cannot be about the end of an engagement that had not yet ended.',
+      "Use context sparingly and accurately. Pearson's 4ET1 examiner reports say context is not assessed in either poetry section of Paper 1, so a biographical point earns nothing by itself; use one only where it sharpens a reading, in a sentence. The poem is dated 25 July 1849, when Rossetti was eighteen, before her engagement to James Collinson ended; it cannot be about the end of an engagement that had not yet ended.",
       'Explain the paradox rather than just naming it. A poem called Remember ends by preferring forgetting because the speaker decides that memory which brings sadness is not worth having.',
-      'Keep the comparison running through every paragraph. Pearson has paired this poem with ‘Sonnet 116’ and with ‘Piano’, so be ready to write about love and about memory.',
+      "Keep the comparison running through every paragraph: the 4ET1 mark scheme does not let an answer that discusses only one poem go above the second of its five levels. Remember has appeared at least four times in Pearson's papers: with ‘Sonnet 116’ in the specimen paper (feelings about love), with ‘Half-caste’ in June 2024 (how the writers express their feelings), with ‘Piano’ in June 2024 Paper 1R (remembering), and in January 2020 as the one named poem in a question on sadness, compared with a second poem of the candidate's choice. So be ready to write about love, feelings and memory, and decide before the exam which poems you would pair it with.",
     ],
   },
 
@@ -576,8 +598,33 @@ export const guide: StudyGuide = {
     },
     {
       label:
-        "Pearson, Mark Scheme (Results) June 2024, International GCSE English Literature 4ET1, Paper 1R: Poetry and Modern Prose (publications code 4ET1_01R_2406_MS): Section B question 2 on Piano and Remember, with indicative content centred on remembering, including the reading that you planned may suggest the speaker knew something first or that the partner was controlling, and the description of the title against the ending as a paradox. The question's exact wording was not available, so the guide's version is marked as its own. Re-read on 26 September 2026: the indicative content calls the speaker Rossetti, says the pronoun you could suggest she knew she was ill before he did or that he was controlling, and calls the title against the final lines a paradox.",
+        "Pearson, Mark Scheme (Results) June 2024, International GCSE English Literature 4ET1, Paper 1R: Poetry and Modern Prose (publications code 4ET1_01R_2406_MS): Section B question 2 on Piano and Remember, with indicative content centred on remembering, including the reading that you planned may suggest the speaker knew something first or that the partner was controlling, and the description of the title against the ending as a paradox. The question's exact wording was not available, so the guide's version is marked as its own. Re-read on 26 September 2026: the indicative content calls the speaker Rossetti, says the pronoun you could suggest she knew she was ill before he did or that he was controlling, and calls the title against the final lines a paradox. The question paper (4et1-01r-que-20240514), read on 10 October 2026, differs from the guide's wording only in having how where the guide has the ways, so the guide's version stays marked as its own.",
       url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01r-rms-20240822.pdf',
+    },
+    {
+      label:
+        'Pearson Edexcel International GCSE in English Literature (4ET1) specification, Issue 3 (August 2025): Component 1 (printed Paper 1 on the question papers up to June 2025) Section B is one question from a choice of two, each comparing two Part 3 poems; the paper is closed book, but the anthology poems are supplied in the exam room. Read for the exam-practice audit on 10 October 2026.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Specification%20and%20sample%20assessments/international-gcse-english-literature-specification.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1 Paper 1 question paper, June 2024 (4et1-01-que-20240514): Section B question 2 on how the writers express their feelings in Half-caste and Remember. Its Poetry Booklet, and those issued with the June 2024 Paper 1R, November 2024 and June 2025 Paper 1 and 1R papers, print Remember character for character as the anthology does (compared by script, 10 October 2026). The specimen paper (Extra Assessment Materials) question 2 confirms the Sonnet 116 pairing on feelings about love.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20240514.pdf',
+    },
+    {
+      label:
+        'Pearson, Summary of questions set for 4ET1, June 2019 to November 2020: January 2020 Paper 1, Section B question 3, named Remember alone, on sadness, for comparison with one other poem from the anthology.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Teaching%20and%20learning%20materials/summary-of-questions-set-for-4et1-june-2019-to-november-2020.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1 Paper 1 mark schemes, June 2024 (Paper 1 and 1R) and June 2025: Section B is marked on one grid of five levels, and an answer on a single poem is held to the top of Level 2 at most.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-rms-20250821.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1 Paper 1 examiner reports, June 2023, June 2024 (Paper 1 and 1R) and June 2025 (Paper 1 and 1R): context is not assessed in either poetry section, A or B.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01r-pef-20250821.pdf',
     },
     {
       label:

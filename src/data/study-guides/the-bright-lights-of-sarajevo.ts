@@ -28,6 +28,29 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * and the match-and-cigarette line, nearly whole), which the quotation counter
  * cannot see, so they are now paraphrased; the "I think" note put line 27 in
  * line 25; and the Pleiades entry said "either way" of one pronunciation.
+ *
+ * EXAM-FORMAT CHECK (26 September 2026), against the 4EA1 specification (Issue
+ * 7) and the Paper 2 question papers of June 2023, November 2023, June 2024 and
+ * November 2024: a Part 2 text is examined in Paper 2 Section A by one
+ * compulsory essay on the one named text, printed for the candidate, with about 45
+ * minutes advised. The stem asks how the writer presents or creates something,
+ * with bullet points whose last is always the use of language and structure.
+ * It covers the whole text and is not a comparison. The coursework alternative
+ * (Component 3, Assignment A) is one essay on three Part 2 texts, at least one
+ * poem and one prose text. So the extract questions are labelled as
+ * close-reading practice, the exam-practice questions take the real essay's
+ * shape, the lines 25-42 question now covers the whole poem, and a tip says how
+ * the poem is examined. Do not reintroduce a line-range, language-only or
+ * comparison question here as if the exam set one.
+ *
+ * RE-VERIFIED 10 October 2026 against the June 2023 Paper 2, whose stem asked
+ * how the writer creates sympathy in Out, Out-, and the November 2020 Paper 2
+ * and its examiners' report. The practice labels no longer assume the exam
+ * will set this poem, or say that it only asks how the writer presents
+ * something; the conversational voice is no longer filed under structure; and
+ * the format tip now warns against leaving language and structure to the end,
+ * which the report counts as a weakness, and says the school, not the student,
+ * takes the coursework route.
  */
 export const guide: StudyGuide = {
   slug: 'the-bright-lights-of-sarajevo',
@@ -196,7 +219,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Harrison use language and structure in lines 1-20 to present the contrast between daytime survival and evening life in Sarajevo?',
+        'How does Harrison use language and structure in lines 1-20 to present the contrast between daytime survival and evening life in Sarajevo? (Close-reading practice, not an exam question. If the exam sets this poem, its question covers the whole poem.)',
     },
     {
       title: 'The shell scars and the stars',
@@ -228,7 +251,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Harrison use language, form and structure in lines 25-42 to bring together the massacre of the past and the romance of the present?',
+        'How does Harrison use language, form and structure in lines 25-42 to bring together the massacre of the past and the romance of the present? (Close-reading practice, not an exam question. If the exam sets this poem, its question covers the whole poem.)',
     },
     {
       title: 'Coffee behind the sandbags',
@@ -252,7 +275,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How effective is the ending of The Bright Lights of Sarajevo? Refer closely to the language and structure of lines 43-46 and to the rest of the poem.',
+        'How effective is the ending of The Bright Lights of Sarajevo? Refer closely to the language and structure of lines 43-46 and to the rest of the poem. (Close-reading practice, not an exam question. If the exam sets this poem, its question asks how Harrison presents or creates something across the whole poem, not how effective a part of it is.)',
     },
   ],
 
@@ -422,21 +445,21 @@ export const guide: StudyGuide = {
     questions: [
       {
         question:
-          'How does Harrison present the effects of war on ordinary people in The Bright Lights of Sarajevo? In your answer, write about the writer’s use of language, form and structure, and refer closely to the poem, using brief quotations.',
-        skill: 'Language, form and structure analysis across the whole poem',
+          'How does Harrison present the effects of war on ordinary people in The Bright Lights of Sarajevo? In your answer, you should write about: the hardships of daily life under the siege; how the young people of the city respond to them; the use of language and structure. Support your answer with close reference to the poem, including brief quotations.',
+        skill: 'Whole-poem essay in the form of the exam question',
         guidance: [
           'Open with a clear argument: the poem shows war less as battle than as the wearing texture of daily life, and it shows ordinary people answering it with ordinary life.',
           'Stanza 1: analyse the list of chores and the long, delayed sentence. Link “dodging snipers” to how danger has become routine.',
           'Stanzas 2 and 3: explore how the dark removes ethnic labels, and how the courtship is described with tender humour, including the metaphor of “tender radar”.',
           'Stanza 4: analyse the two massacre couplets (lines 29-32), their alliteration and the compound adjective “blood-dunked”, and the way the speaker’s attention moves from the couple to the ground beneath them.',
           'Stanza 5: show how the ending holds love and defence together in the sandbags made from aid sacks.',
-          'Throughout, comment on form: the steady couplets and the conversational voice, and what they do to the shocking content.',
+          'Throughout, comment on what the steady couplets (form, which counts as structure) and the conversational voice (language) do to the shocking content.',
         ],
       },
       {
         question:
-          'Explore how Harrison uses contrast to present hope in The Bright Lights of Sarajevo.',
-        skill: 'Language and structure analysis: contrast',
+          'How does Harrison present hope in The Bright Lights of Sarajevo? In your answer, you should write about: the contrasts between day and night, and between light and dark; the stars in the shell-holes and the ending; the use of language and structure. Support your answer with close reference to the poem, including brief quotations.',
+        skill: 'Whole-poem essay in the form of the exam question, argued through contrast',
         guidance: [
           'Define the hope carefully: not victory or peace, but the survival of normal life and of love.',
           'Contrast day and night: the labour of the first stanza against the walking of the second, turned by “that’s just not the case”.',
@@ -447,10 +470,11 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'How does Harrison present the relationship between the boy and the girl in The Bright Lights of Sarajevo?',
-        skill: 'Language analysis: presentation of a relationship',
+          'How does Harrison present the relationship between the boy and the girl in The Bright Lights of Sarajevo? In your answer, you should write about: how the courtship develops, from the dark streets to the café; how the siege affects it; the use of language and structure. Support your answer with close reference to the poem, including brief quotations.',
+        skill: 'Whole-poem essay in the form of the exam question: presentation of a relationship',
         guidance: [
           'Trace the stages of the courtship in order: the deliberate collision, the voice, the match flare, the hand, the café.',
+          'Comment on structure: stanzas 2 and 3 describe how any courtship goes in the dark, stanza 4 narrows to one couple before the memory of the massacre interrupts them, and the final two couplets return to them.',
           'Analyse how the vocabulary of war is borrowed for love, as in “tender radar”, and how the girl’s approval steers each stage.',
           'Show how the setting interrupts the romance: they stand on shell scars, and the boy sees the stars in the mortar holes.',
           'Consider what the relationship stands for, the city’s refusal to give up ordinary life, and weigh the view that the couple are symbols against the view that they are simply two young people.',
@@ -458,10 +482,12 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Look again at lines 25-42. How does Harrison use language and structure to present the past and the present in this part of the poem?',
-        skill: 'Close language and structure analysis of a section',
+          'How does Harrison present the past and the present in The Bright Lights of Sarajevo? In your answer, you should write about: the massacre of 1992 and how it is remembered; how the present-day courtship is set against it; the use of language and structure. Support your answer with close reference to the poem, including brief quotations.',
+        skill:
+          'Whole-poem essay in the form of the exam question, centred on stanza 4 but covering the whole poem',
         guidance: [
-          'Identify the movement: from the couple in the present, down to the massacre of 1992, then back to the present sky reflected in the holes.',
+          'The question covers the whole poem, so set stanza 4 in its frame: the bread queues of stanza 1 are the same routine that the 1992 shells struck, and the final stanza returns to the present, where sacks that brought aid now shelter the couple.',
+          'In stanza 4, identify the movement: from the couple in the present, down to the massacre of 1992, then back to the present sky reflected in the holes.',
           'Analyse the two massacre couplets (lines 29-32): the alliteration, the blunt verb, and the domestic horror of “blood-dunked crusts of shredded bread”.',
           'Analyse the stars in the water, the shrapnel words used for them, and the irony of a clear sky for the “bomber’s eye”.',
           'Comment on structure: two long sentences built up with and, the second holding back its main verb until line 39, when the boy looks down.',
@@ -469,13 +495,14 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
+      'Know how this poem is examined. Section A of Paper 2 sets one essay on one named Part 2 text, with no choice. When it is this poem, the poem is printed for you, and the question asks how Harrison presents or creates something across the whole poem, with bullet points to guide you, the last always the use of language and structure. Work language and structure into the whole essay rather than saving them for the end: an examiners’ report on this paper counts leaving them to the end as a weakness. It is not a comparison, and about 45 minutes are advised. If your school takes the coursework route instead, you write one essay on three Part 2 texts, including at least one poem and one prose text, so the poems suggested under Compare with would need a prose text beside them.',
       'Quote the poem as the anthology prints it, including its spelling of the words for bread. This guide’s references follow the Issue 8 layout, with five verse paragraphs: lines 1-11, 12-20, 21-24, 25-42 and 43-46.',
       'Do not call the poem simply hopeful or simply bleak. The strongest answers show that Harrison holds both at once, and then decide which the ending leans towards.',
       'Write about the speaker as an observer. His hedged, conversational voice is a choice, and saying what it does lifts an answer above a list of techniques.',
       'Use context briefly and only where it explains a line: the siege, the three communities, the 1992 attack on a bread queue. Do not retell the history of the war.',
       'Track a motif across the poem to write precisely about structure. Bread appears in lines 5, 16, 30 and 31, with flour in line 46; light, or its absence, in lines 14-15, 18, 23, 26, 37-40 and 44.',
       'Treat the violence factually and briefly. Credit comes from analysing how Harrison makes the massacre shocking, not from describing the massacre itself.',
-      'Comment on the form. Twenty-three tidy rhyming couplets carrying a massacre is a striking choice, and its effect is worth a paragraph of its own.',
+      'Comment on the form, which counts as part of the structure the question asks about. Twenty-three tidy rhyming couplets carrying a massacre is a striking choice, and its effect is worth a paragraph of its own.',
     ],
   },
 

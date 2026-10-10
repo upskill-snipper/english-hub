@@ -19,9 +19,9 @@ import { guide } from '@/data/study-guides/between-a-rock-and-a-hard-place'
  * Schuster, 2010, pp. 22-24) that ends minutes after the boulder traps Ralston's
  * arm. Four of the page's five "extract focuses", its climax and resolution
  * (the self-amputation and the walk out), its "tracks hours and days"
- * structure note and eight of its twelve vocabulary words (tourniquet,
- * amputation, hallucination and others) were about events the extract does
- * not contain. None of it was kept.
+ * structure note and five of its twelve vocabulary words (tourniquet,
+ * amputation, hallucination, dehydration and hypothermia) were about events
+ * the extract does not contain. None of it was kept.
  *
  * The body is now the verified study guide in
  * src/data/study-guides/between-a-rock-and-a-hard-place.ts, written from the
@@ -29,12 +29,20 @@ import { guide } from '@/data/study-guides/between-a-rock-and-a-hard-place'
  * is /revision/texts/between-a-rock-and-a-hard-place, and this page's
  * canonical points there so the guide is one page to a search engine. This
  * page kept its frame and its practice questions with their marking buttons:
- * those are how a student gets an answer on this extract marked. Two
+ * those are how a student gets an answer on this extract marked. All three
  * questions were reworded to fit the extract (the first asked about "his time
- * trapped in the canyon", the third about "the moment of his escape"), and the
- * model outline, which described the amputation, is gone. Later the same day
- * the practice set itself was replaced, because it did not match the paper:
- * see the comment above examPractice.
+ * trapped in the canyon", the second about "his survival experience", the
+ * third about "the moment of his escape"), and the model outline, which cited
+ * thirst and cold that the extract never mentions, is gone. Later the same
+ * day the practice set itself was replaced, because it did not match the
+ * paper: see the comment above examPractice.
+ *
+ * CORRECTED 26 September 2026. This note, and the commit that made the
+ * rewrite, first said eight vocabulary words, two reworded questions and an
+ * outline that "described the amputation". Checked against the old page (git
+ * show 5f8a4fd5^): ten of its twelve words never occur in the extract and five
+ * of those name events it lacks, all three questions were reworded, and its
+ * outline never mentions the amputation.
  */
 
 export const metadata: Metadata = {

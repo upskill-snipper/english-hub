@@ -27,8 +27,42 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * WHY SO FEW WORDS ARE QUOTED. The extract is 870 words, a short work under
  * fair-dealing.ts, so the whole page may quote a tenth of it. The quotations
  * were chosen as one set and every analysis reuses them, so each key phrase is
- * counted once. Anything else is referred to by line number, which works
- * because the extract is printed, with those numbers, in the examination.
+ * counted once. Anything else is referred to by line number. The extract is
+ * printed in the examination, but nothing here shows that it is printed there
+ * with these numbers: see below.
+ *
+ * PRACTICE CHECKED AGAINST THE PAPER, 26 September 2026. In 4EA1 Paper 1 this
+ * extract is Text Two. The one question on it alone asks how Levine uses
+ * language and structure, together, across the whole extract; the other
+ * compares it with an unseen Text One; the short-answer questions are all on
+ * the unseen text. The line-range questions here, on the passages and in exam
+ * practice, now say they are practice, the feelings question takes the exam's
+ * language-and-structure form, and the comparison no longer calls the unseen
+ * text the second one (it is Text One). Do not add a retrieval question, a
+ * language-only or structure-only exam question, or a line range to one.
+ *
+ * LINE NUMBERS IN THE EXAM, 26 September 2026. The docblock said the extract
+ * is printed in the examination with the anthology's line numbers. Tip 1 told
+ * students to learn places by line; it now says to learn them by paragraph and
+ * check a line number against the copy printed with the paper. Do not tell
+ * students the numbers match. Tip 3 and the comparison now say when this
+ * extract is set, since each paper sets one of the ten Part 1 texts (the June
+ * 2024 paper, sat 23 May 2024, set it as Text Two), and tip 7 no longer claims
+ * to know what the best answers do, which nothing here verified.
+ *
+ * TWO CLAIMS TAKEN OUT, 10 October 2026. Tips 1 and 5, which render under
+ * "What examiners reward", had told students that the June 2024 Source
+ * Booklet printed this extract in 58 lines numbered one or two behind these,
+ * and that the June 2024 mark scheme allowed the Wacky Races comparison to be
+ * read as condescending. No copy of either document was on this machine and
+ * no record showed how either was checked, so both are out. The two June 2024
+ * sources now record only where the extract sat on that paper and how its
+ * question was marked, as checked on 26 September. Read
+ * 4ea1-01-que-20240524.pdf and 4ea1-01-rms-20240822.pdf before putting either
+ * claim back. The feelings question asked only about the race and
+ * afterwards while its guidance starts before the race; it now spans the whole
+ * extract, as the exam's question does. The form note no longer says what
+ * examiners reward.
  */
 export const guide: StudyGuide = {
   slug: 'a-game-of-polo-with-a-headless-goat',
@@ -220,7 +254,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Levine use language and structure in lines 1-13 to build anticipation before the race arrives?',
+        'Practice on lines 1-13, not an exam question (the exam asks about the whole extract): how does Levine use language and structure to build anticipation before the race arrives?',
     },
     {
       title: 'Inside the convoy',
@@ -252,7 +286,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Levine use language to make the race seem both exciting and chaotic in lines 14-38?',
+        'Practice on lines 14-38, not an exam question (the exam asks about language and structure together, across the whole extract): how does Levine use language to make the race seem both exciting and chaotic?',
     },
     {
       title: 'The fall, the argument and the reveal',
@@ -284,7 +318,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Levine use structure in lines 39-59 to change the mood of the extract after the race is over?',
+        'Practice on lines 39-59, not an exam question (the exam asks about language and structure together, across the whole extract): how does Levine use structure to change the mood of the extract after the race is over?',
     },
   ],
 
@@ -379,7 +413,7 @@ export const guide: StudyGuide = {
     },
     {
       heading: 'Form: travel writing that informs and entertains',
-      body: 'The extract is first-person travel writing, and it does two jobs at once. It entertains, through comedy, suspense and a twist, and it informs, through details a distant reader needs: the donkeys’ speed, what the rattles are, who has money on the result. Examiners reward answers that notice both purposes and show how a single sentence can serve them together, as the bracketed explanation of the rattles does.',
+      body: 'The extract is first-person travel writing, and it does two jobs at once. It entertains, through comedy, suspense and a twist, and it informs, through details a distant reader needs: the donkeys’ speed, what the rattles are, who has money on the result. A strong answer notices both purposes and shows how a single sentence can serve them together, as the bracketed explanation of the rattles does.',
     },
     {
       heading: 'What the extract does not tell you',
@@ -506,8 +540,8 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'In lines 43-59, how does Levine show that the mood changes once the race is over?',
-        skill: 'Language and structure analysis of one section',
+          'Practice on one section, not an exam question (the exam asks about the whole extract): in lines 43-59, how does Levine use language and structure to show that the mood changes once the race is over?',
+        skill: 'Language and structure in one section, as practice',
         guidance: [
           'Identify the turning point: “And then the trouble began” at the top of page 15, a short sentence that opens a new stage.',
           'Track the escalation in lines 43-50, from Levine’s mild assumption about the winner to the tricolon in line 48 and the demand for a re-run.',
@@ -518,37 +552,37 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Compare how Emma Levine and Kari Herbert, in From The Explorer’s Daughter, present their experiences of watching a local event as visitors. Practise with this pairing; in the examination the second text will be an unseen passage.',
+          'Compare how Emma Levine and Kari Herbert, in From The Explorer’s Daughter, present their ideas and perspectives about watching a local event as visitors. This pairing is for practice only: when Levine’s extract is set in the examination it is Text Two, and the other text is an unseen passage, Text One, never another anthology text.',
         skill: 'Comparison of ideas, perspectives and methods',
         guidance: [
           'Establish what each writer watches and what each feels about it, and state the main similarity and the main difference in one sentence.',
           'Compare purpose and tone: Levine chiefly entertains, through comedy and self-mockery, while also informing; decide how far the other writer does the same.',
           'Compare methods point by point rather than text by text: description, the writer’s own feelings, explanation for the reader, and how each extract ends.',
           'Use comparative connectives (whereas, similarly, in contrast) inside every paragraph, not only at the start.',
-          'Support each point with short quotations from both texts, and in the examination take the second text’s evidence from the unseen passage in front of you.',
+          'Support each point with short quotations from both texts, and in the examination take the other text’s evidence from the unseen passage in front of you.',
         ],
       },
       {
         question:
-          'How does Levine present her own feelings and attitudes during the race and afterwards?',
+          'How does Emma Levine use language and structure to convey her own feelings and attitudes, before, during and after the race? Support your answer with examples from the text.',
         skill: 'Writer’s perspective, through language and structure',
         guidance: [
           'Before the race: impatience and self-mockery, in the hyperbole of line 7, feeling foolish and losing faith (lines 8 and 12-13).',
-          'During the race: excitement shown indirectly, through the energy of her lists and metaphors rather than any statement that she is thrilled.',
+          'During the race: excitement shown indirectly, through the energy of her lists, metaphors and long, running sentences rather than any statement that she is thrilled.',
           'After the fall: her assumption about who won, which not everyone shares, and her dependence on the lads once the mood turns.',
-          'At the end: the reveal, and her relief expressed through understatement in lines 57-59.',
+          'At the end: the reveal, held back until line 56, and her relief expressed through understatement in lines 57-59.',
           'Argue a line through the answer: her attitude moves from amused observer to relieved survivor, and humour is how she holds both.',
         ],
       },
     ],
     tips: [
-      'The anthology text is printed in the examination, so do not spend revision memorising long quotations. Learn where things are, by paragraph and line, so you can find and quote the right words in seconds.',
+      'The anthology text is printed in the examination, so do not spend revision memorising long quotations. Learn where things are by paragraph, so you can find and quote the right words in seconds. The line numbers in the copy printed with your paper need not match this guide’s, so check a line number against that copy before you use it.',
       'Keep quotations short and embedded. A phrase such as “gone anarchic” analysed word by word earns more than a whole sentence copied out and paraphrased.',
-      'Structure is where many answers on this text are thin. Say what the long wait, the short sentence at line 42, the second contest and the delayed reveal each do to the reader.',
+      'When this extract is set in the examination, the one question on it alone asks how Levine uses language and structure together, across the whole extract, so give structure as much care as language. Say what the long wait, the short sentence at line 42, the second contest and the delayed reveal each do to the reader.',
       'Write about the writer, not just the events. Use verbs such as presents, suggests, undercuts and withholds, and avoid retelling the story.',
-      'Handle perspective carefully. Levine is a visitor, and a strong answer can discuss how she presents a local tradition, but claiming that she mocks Pakistan or its people ignores that most of the jokes are at her own expense.',
+      'Handle perspective carefully. Levine is a visitor, and a strong answer can discuss how she presents a local tradition, including whether comparisons such as Wacky Races turn it into a comic spectacle for foreign readers. Weigh that against the fact that most of the jokes are at her own expense, rather than claiming that she mocks Pakistan or its people.',
       'Do not bring in the sport in the book’s title. There is no goat and no horseback game in this extract.',
-      'Link comedy to danger. The best answers show that the humour is how Levine makes a risky experience readable, not a sign that the risk was unimportant.',
+      'Link comedy to danger. A strong answer shows that the humour is how Levine makes a risky experience readable, not a sign that the risk was unimportant.',
     ],
   },
 
@@ -729,6 +763,16 @@ export const guide: StudyGuide = {
       label:
         'Pearson Edexcel International GCSE English Language A (4EA1) specification, Issue 7, August 2025: Paper 1 Section A, the anthology text provided in the examination, travel writing among the non-fiction forms',
       url: 'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-english-language-a-2016.coursematerials.html',
+    },
+    {
+      label:
+        'Pearson Edexcel International GCSE English Language A, Paper 1 (4EA1/01), June 2024 (sat 23 May 2024), question paper, checked 26 September 2026: this extract set as Text Two beside an unseen Text One, with one language-and-structure question on it and a comparison with Text One',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Language-A/2016/Exam-materials/4ea1-01-que-20240524.pdf',
+    },
+    {
+      label:
+        'Pearson Edexcel International GCSE English Language A, Paper 1 (4EA1/01), mark scheme, June 2024: the question on this extract marked on one grid for language and structure together',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Language-A/2016/Exam-materials/4ea1-01-rms-20240822.pdf',
     },
     {
       label:

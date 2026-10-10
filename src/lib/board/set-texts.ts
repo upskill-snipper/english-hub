@@ -370,6 +370,11 @@ export const SET_TEXTS: SetText[] = [
   // page, not by copying a neighbouring row: that is how the wrong holder
   // spread.
   //
+  // Until 26 September 2026 fifteen notices below also sent students to an
+  // "Edexcel-licensed school edition". No licensed copy is needed: Pearson
+  // publishes the anthology free as a PDF (ANTHOLOGY_SOURCE in
+  // edexcel-igcse-anthology.ts). Point to that, not to a licensed copy.
+  //
   // Section A - Non-fiction (10 texts)
   {
     slug: 'the-danger-of-a-single-story',
@@ -400,7 +405,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       "George Alagiah (1955-2023) was a Sri Lankan-born British BBC journalist and broadcaster. In this memoir extract, Alagiah recalled reporting on famine in Somalia and the moment one man's apologetic smile forced him to question how journalism turns suffering into spectacle.",
     ukRightsNotice:
-      'Rights notice: © George Alagiah 2001, reproduced in the anthology by permission of Little, Brown Book Group and the author c/o The Hanbury Agency. Short fair-dealing extracts; full anthology selections require an Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © George Alagiah 2001, reproduced in the anthology by permission of Little, Brown Book Group and the author c/o The Hanbury Agency. Short fair-dealing extracts only. For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF.',
   },
   {
     slug: 'the-explorers-daughter',
@@ -414,7 +419,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       "Herbert watches Inuit hunters pursue narwhal in the Arctic and reflects on the tension between her instinctive sympathy for the whales and the community's need to hunt to survive.",
     ukRightsNotice:
-      'Rights notice: © Kari Herbert 2004, reproduced in the anthology by permission of Aitken Alexander Associates. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Kari Herbert 2004, reproduced in the anthology by permission of Aitken Alexander Associates. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF.',
   },
   {
     slug: 'explorers-or-boys-messing-about',
@@ -445,7 +450,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'Ralston recounts the moment a falling boulder crushed his hand and trapped his arm in a remote Utah canyon, and his first desperate attempts to free himself - a meditation on solitude, willpower and the limits of the body.',
     ukRightsNotice:
-      'Rights notice: © Aron Ralston 2004. The anthology prints the extract from the Simon & Schuster 2010 edition, by permission of Simon & Schuster UK and Atria Books, a division of Simon & Schuster, Inc. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Aron Ralston 2004. The anthology prints the extract from the Simon & Schuster 2010 edition, by permission of Simon & Schuster UK and Atria Books, a division of Simon & Schuster, Inc. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF.',
   },
   {
     slug: 'young-and-dyslexic',
@@ -486,7 +491,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       "Levine's account of filming a donkey-cart race along a main road in Karachi, from the long wait to the chaotic chase that follows it.",
     ukRightsNotice:
-      'Rights notice: © Emma Levine 2000, reproduced in the anthology by permission of Carlton Publishing Group. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Emma Levine 2000, reproduced in the anthology by permission of Carlton Publishing Group. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF.',
   },
   {
     slug: 'beyond-the-sky-and-the-earth',
@@ -496,11 +501,22 @@ export const SET_TEXTS: SetText[] = [
     boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
     year: '1999',
-    keyThemes: ['Culture shock', 'Isolation', 'Beauty', 'Transformation'],
+    // CORRECTED 26 September 2026. The themes and description were of the
+    // memoir: isolation in a remote posting, and a slow transformation of her
+    // sense of home. The extract is her first week in Thimphu, before she
+    // travels east, and ends in admiration, not belonging. Themes follow
+    // src/data/study-guides/beyond-the-sky-and-the-earth.ts.
+    keyThemes: [
+      'Beauty and landscape',
+      'Culture shock',
+      'Tradition and the outside world',
+      'History and independence',
+      'Admiration and respect',
+    ],
     description:
-      "Zeppa's memoir of arriving as a young Canadian teacher in remote Bhutan, and how the strangeness of the landscape and language slowly reshaped her sense of home.",
+      "In the anthology extract from her memoir, Zeppa, a young Canadian who has come to Bhutan to teach, spends her first night and first week in the capital, Thimphu, before her posting in the east. She takes in the mountains, the town and its people, learns the country's history, and ends admiring Bhutan for keeping its independence.",
     ukRightsNotice:
-      'Rights notice: © Jamie Zeppa 1999, reproduced in the anthology by permission of The McDermid Agency, Riverhead (Penguin Random House) and Doubleday Canada. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Jamie Zeppa 1999, reproduced in the anthology by permission of The McDermid Agency, Riverhead (Penguin Random House) and Doubleday Canada. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF.',
   },
   {
     slug: 'h-is-for-hawk',
@@ -510,7 +526,10 @@ export const SET_TEXTS: SetText[] = [
     boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
     year: '2014',
-    keyThemes: ['Grief', 'Nature', 'Obsession', 'Identity'],
+    // Until 26 September 2026 the themes ended 'Obsession', 'Identity': the
+    // memoir's, whose training of the hawk the extract never reaches. These
+    // follow src/data/study-guides/h-is-for-hawk.ts.
+    keyThemes: ['Grief', 'Nature and the wild', 'Recognition', 'Loss of composure'],
     // CORRECTED 26 September 2026. The description was of the memoir
     // ("training a goshawk"); the extract is the handover on the quayside and
     // ends before any training. The notice sent students to an
@@ -533,7 +552,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'Yen Mah recalls her childhood in mid-twentieth-century China as the unwanted daughter blamed for her mother’s death, and how academic success became her way of being seen.',
     ukRightsNotice:
-      'Rights notice: © Adeline Yen Mah 1999, reproduced in the anthology by permission of Penguin Books, Delacorte Press (Random House Children’s Books) and Penguin Random House Australia. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Adeline Yen Mah 1999, reproduced in the anthology by permission of Penguin Books, Delacorte Press (Random House Children’s Books) and Penguin Random House Australia. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF.',
   },
 
   // Poetry. This heading read "Section B - Poetry (15 poems)" until 26
@@ -587,7 +606,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'In an Indian bazaar, the speaker has her hand decorated with henna by a girl she does not know; the temporary pattern becomes a meditation on her own divided sense of cultural identity.',
     ukRightsNotice:
-      'Rights notice: © Moniza Alvi, reproduced in the anthology by permission of Bloodaxe Books on behalf of the author. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Alvi’s collection Carrying My Wife (2000).',
+      'Rights notice: © Moniza Alvi, reproduced in the anthology by permission of Bloodaxe Books on behalf of the author. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF, or Alvi’s collection Carrying My Wife (2000).',
   },
   {
     slug: 'the-bright-lights-of-sarajevo',
@@ -603,7 +622,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'Harrison reports from besieged Sarajevo, where young couples flirt in the dark streets between sniper fire and shell craters - the persistence of ordinary life inside war.',
     ukRightsNotice:
-      'Rights notice: © Tony Harrison, reproduced in the anthology by kind permission of Tony Harrison. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0). Note: the anthology layout uses extra stanza breaks not in the original 1995 Guardian text or the Bloodaxe collected edition - students should revise from the anthology.',
+      'Rights notice: © Tony Harrison, reproduced in the anthology by kind permission of Tony Harrison. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF. Note: the anthology layout uses extra stanza breaks not in the original 1995 Guardian text or the Bloodaxe collected edition - students should revise from the anthology.',
   },
   {
     slug: 'still-i-rise',
@@ -617,7 +636,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'Angelou addresses an oppressor directly and refuses to be broken by hatred, history or contempt; the refrain "I rise" enacts the unbreakable spirit she describes.',
     ukRightsNotice:
-      'Rights notice: © Random House / Penguin Random House on behalf of the Maya Angelou estate (1928-2014). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Angelou’s collection And Still I Rise (1978).',
+      'Rights notice: © Random House / Penguin Random House on behalf of the Maya Angelou estate (1928-2014). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF, or Angelou’s collection And Still I Rise (1978).',
   },
   {
     slug: 'do-not-go-gentle-into-that-good-night',
@@ -634,7 +653,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       "A son's villanelle urging his dying father to resist death with rage and fire rather than accept it quietly; the circling repetitions enact the refusal to let go.",
     ukRightsNotice:
-      'Rights notice: © David Higham Associates on behalf of the Dylan Thomas estate (1914-1953). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Thomas’s Collected Poems (Dent / Weidenfeld).',
+      'Rights notice: © David Higham Associates on behalf of the Dylan Thomas estate (1914-1953). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF, or Thomas’s Collected Poems (Dent / Weidenfeld).',
   },
   {
     slug: 'refugee-blues',
@@ -674,7 +693,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'A war photographer develops his pictures alone in a darkroom in rural England, caught between the horrors he has witnessed abroad and the brief sympathy of distant readers.',
     ukRightsNotice:
-      'Rights notice: © Picador / Pan Macmillan and Rogers Coleridge & White on behalf of Carol Ann Duffy. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Duffy’s collection Standing Female Nude (1985).',
+      'Rights notice: © Picador / Pan Macmillan and Rogers Coleridge & White on behalf of Carol Ann Duffy. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF, or Duffy’s collection Standing Female Nude (1985).',
   },
   {
     slug: 'if',
@@ -700,7 +719,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       "An unborn child pleads to be protected from the violence, dehumanisation and moral corruption of the adult world; the prayer's mounting urgency reflects mid-war anxiety.",
     ukRightsNotice:
-      'Rights notice: © The Estate of Louis MacNeice (1907-1963), 1966 and 1979, reproduced in the anthology by permission of David Higham Associates. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or MacNeice’s Collected Poems (Faber).',
+      'Rights notice: © The Estate of Louis MacNeice (1907-1963), 1966 and 1979, reproduced in the anthology by permission of David Higham Associates. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF, or MacNeice’s Collected Poems (Faber).',
   },
   {
     slug: 'piano',
@@ -729,7 +748,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'A child hiding in an ingenious spot waits to be found, only to discover with a jolt that the others have already gone and the hider is alone in the dark.',
     ukRightsNotice:
-      'Rights notice: the anthology reproduces the poem, from Collected Poems 1950-1993 (Faber & Faber, 2011), by permission of the Estate of Vernon Scannell (1922-2007). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: the anthology reproduces the poem, from Collected Poems 1950-1993 (Faber & Faber, 2011), by permission of the Estate of Vernon Scannell (1922-2007). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF.',
   },
   {
     slug: 'half-past-two',
@@ -743,7 +762,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'A small boy kept in the schoolroom as a punishment becomes lost in a timeless world because he cannot yet read a clock, and a careless punishment becomes an accidental gift of escape.',
     ukRightsNotice:
-      'Rights notice: © Peterloo Poets / Enitharmon on behalf of the U.A. Fanthorpe estate (1929-2009). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Peterloo Poets / Enitharmon on behalf of the U.A. Fanthorpe estate (1929-2009). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF.',
   },
   {
     slug: 'my-last-duchess',
@@ -842,7 +861,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'On a long coach journey from rural Eastern Europe to London, a migrant worker named Lev contemplates the past he is leaving and the precarious future ahead.',
     ukRightsNotice:
-      'Rights notice: © Rose Tremain 2007, reproduced in the anthology by permission of The Random House Group and Little, Brown and Company. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Tremain’s novel The Road Home (2007).',
+      'Rights notice: © Rose Tremain 2007, reproduced in the anthology by permission of The Random House Group and Little, Brown and Company. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF, or Tremain’s novel The Road Home (2007).',
   },
   {
     slug: 'whistle-and-ill-come-to-you',

@@ -31,23 +31,60 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * poem named in analysis (the verb hides, the word schooltime) are mentioned
  * rather than quoted, as in the other guides.
  *
- * THE PAGE ABOVE, checked while this was written, is right about the eleven
- * tercets and most of its short quotations, and wrong in these places:
- * - It quotes line 32 as the clockless land "of ever", four times (the Escape
+ * THE PAGE ABOVE, checked while this was written, was right about the eleven
+ * tercets and most of its short quotations, and wrong in these places, all
+ * corrected there on 26 September 2026:
+ * - It quoted line 32 as the clockless land "of ever", four times (the Escape
  *   theme, two key-quotation cards and an exam tip). The anthology reads
- *   "clockless land for ever". The "ever" it is thinking of is
- *   line 24, "into ever". This guide quotes the line correctly and a tip warns
- *   students about the slip.
- * - Its card on Something Very Wrong says the boy "must never forget" it. The
+ *   "clockless land for ever". This file used to say the page was thinking of
+ *   line 24, "into ever". That guess was wrong (10 October 2026): Pearson's own
+ *   exam Poetry Booklet prints of ever, so the page had probably followed it.
+ *   See THE EXAM'S OWN COPY below.
+ * - Its card on Something Very Wrong said the boy "must never forget" it. The
  *   poem contains no such words: lines 5-6 say he must stay in the school-room.
- * - It prints "timeformykisstime" and "into the smell..." in lower case; the
+ * - It printed "timeformykisstime" and "into the smell..." in lower case; the
  *   anthology capitalises both (lines 13 and 22).
- * - It says the boy is kept behind "after school", and calls kiss time a
+ * - It said the boy is kept behind "after school", and called kiss time a
  *   goodnight kiss. The poem says neither.
- * - It says the poem is set for English Language A and Literature. The
+ * - It said the poem is set for English Language A and Literature. The
  *   anthology puts it in Part 3, which only English Literature (4ET1) studies.
- * - It names assessment objectives by number throughout, which the house rule
+ * - It named assessment objectives by number throughout, which the house rule
  *   now forbids.
+ * Until 10 October 2026 this paragraph described those errors as current, and
+ * the tip on the last stanza told students the page above still made the slip.
+ *
+ * EXAM FORMAT, audited 10 October 2026 against Pearson's 4ET1 Paper 1
+ * question papers, mark schemes and examiners' reports, specimen to June 2025.
+ * Section B offers two questions and the candidate answers one. Both compare
+ * two Part 3 poems: one names both, the other names one and lets the candidate
+ * choose the second, which the mark schemes say must suit the question. A
+ * Poetry Booklet of all the Part 3 poems comes with every paper and numbers
+ * this poem's lines as the anthology does; 40 minutes are suggested; an answer
+ * on one poem cannot rise above the top of Level 2; and the examiners' reports
+ * say context is not assessed in either poetry section. The four essay
+ * questions were already of those two shapes and stay. What changed: the three
+ * passage questions now say they are close-reading practice, since the exam
+ * never asks about a few lines of one poem; a first tip says what the section
+ * sets; the context tip, which told students to use context in a sentence, now
+ * says it earns no credit there; the comparison tip gives the one-poem cap; and
+ * the time question says the second poem must suit the question. No mark
+ * tariffs: the validator keeps those to ExamPlacementCard.
+ *
+ * Checked again on 10 October 2026, against nine mark schemes: only the note
+ * to the question naming both poems asks for a personal response and warns
+ * against summary, so the comparison tip no longer says the whole section
+ * does. The first tip's two past papers are examples, not a full list: the
+ * January 2019 R paper also paired this poem, with War Photographer.
+ *
+ * THE EXAM'S OWN COPY, 10 October 2026. The Poetry Booklet is not word for word
+ * the anthology. In all nine booklets checked by script (June 2019 to June
+ * 2025) line 32 has of where Issue 8 has for, and line 9 has of where Issue 8
+ * has at; the June 2024 mark scheme quotes for ever. Later booklets are behind
+ * Pearson's login. So the last-stanza tip tells students to quote the booklet
+ * in front of them, the clockless-land note no longer calls of ever a slip of
+ * memory, and the model answer's commentary flags that its for ever point
+ * needs the anthology's wording. Do not turn these back into warnings about
+ * misremembering.
  */
 export const guide: StudyGuide = {
   slug: 'half-past-two',
@@ -101,7 +138,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Fanthorpe use the first three stanzas to present the relationship between the boy and his teacher?',
+        'Close-reading practice, not an exam question (the exam asks you to compare two poems). How does Fanthorpe use the first three stanzas to present the relationship between the boy and his teacher?',
     },
     {
       title: 'The clock he cannot read, and the escape',
@@ -133,7 +170,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Fanthorpe use language and structure in lines 16 to 24 to present the boy’s experience of being outside time?',
+        'Close-reading practice, not an exam question (the exam asks you to compare two poems). How does Fanthorpe use language and structure in lines 16 to 24 to present the boy’s experience of being outside time?',
     },
     {
       title: 'The teacher returns, and what he kept',
@@ -153,7 +190,7 @@ export const guide: StudyGuide = {
         },
         {
           phrase: 'clockless land for ever',
-          note: 'The final stanza replays line 21, where he knew his escape was permanent, and now names the place: a land without clocks. The words “for ever” work twice over, for how long the memory has lasted and for the timeless country it records. Learn the wording exactly, because the line is often misremembered.',
+          note: 'The final stanza replays line 21, where he knew his escape was permanent, and now names the place: a land without clocks. The words “for ever” work twice over, for how long the memory has lasted and for the timeless country it records. In the exam, check this line in the Poetry Booklet before you build on it: Pearson’s booklets have printed of in place of for.',
         },
         {
           phrase: 'tick-less',
@@ -161,7 +198,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Fanthorpe present the contrast between school time and the boy’s own experience of time in the last three stanzas?',
+        'Close-reading practice, not an exam question (the exam asks you to compare two poems). How does Fanthorpe present the contrast between school time and the boy’s own experience of time in the last three stanzas?',
     },
   ],
 
@@ -268,7 +305,7 @@ export const guide: StudyGuide = {
           'Compare the ways in which time is presented in Half-past Two and one other poem from the anthology.',
         skill: 'Comparative essay with a second poem of your own choice from Part 3',
         guidance: [
-          'Choose a partner that gives you a real contrast. Sonnet 116 personifies Time as a destroyer that true love outlasts; If- tells its listener to fill every minute with effort; Piano shows time collapsing when a song carries an adult back to childhood.',
+          'Choose a partner in which time matters too, because the second poem has to suit the question, and one that gives you a real contrast. Sonnet 116 personifies Time as a destroyer that true love outlasts; If- tells its listener to fill every minute with effort; Piano shows time collapsing when a song carries an adult back to childhood.',
           'Establish Fanthorpe’s two kinds of time: the capital-T Time of school and the classroom clock, which the boy cannot read (lines 8 and 16-18), and the lived, named times of his own day (lines 10-15), measured in routines and people.',
           'Analyse the escape in lines 19 to 24 as a third state, outside both, and show how the structure enacts it: the only unpunctuated stanza ending at line 21, the repeated Into, and the final “into ever”.',
           'Bring your second poem in point by point beside Fanthorpe’s, comparing methods (personification, form, tense), not in a separate half of the essay.',
@@ -302,14 +339,15 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
+      'Know what the paper sets. Section B of Paper 1 offers two questions on the Part 3 poems and you answer one, in about 40 minutes. Both ask you to compare two poems, with reference to language, form and structure: one names both poems, and the other names one and lets you choose the second from Part 3, which should be a poem in which the question’s focus matters. Half-past Two has been set both ways: with Sonnet 116 on the passing of time in January 2023, and in June 2024 as the one named poem in a question on being alone, with the second poem left to the candidate. That year the examiners’ report found that answers often compared the two poems without focusing on being alone, especially with Hide and Seek, where they tended to write about childhood in general, so keep to the question’s focus throughout.',
       'You will have the poem in front of you. The anthology says a Poetry Booklet containing all the Part 3 poems is provided with the question paper, so the credit comes from choosing precise details and analysing them, not from memorising. Quote a word or two and give the line.',
-      'Quote the last stanza exactly. The anthology reads “clockless land for ever”. It is easy to misremember it as land of ever, which blurs it with “into ever” in line 24; the page above makes that slip, so check your own copy.',
+      'Quote the last stanza exactly as it is printed in front of you. Issue 8 of the anthology (February 2026) reads “clockless land for ever”, but the Poetry Booklet in every past paper checked for this guide, from June 2019 to June 2025, printed land of ever. In the exam, copy the wording from your booklet, and if it reads of ever, drop any point that rests on the words for ever.',
       'Track the capital letters, and their absence. She is capitalised in line 4, when she passes sentence, and Her in line 22, when only her desk is present; she is lower-case in lines 7, 25 and 28, when she forgets, returns flustered and fits him back into the day. The She that opens line 8 proves nothing, because every line of the poem begins with a capital. Time has a capital only in line 8. Noticing when the capitals disappear is the detail that lifts an answer.',
       'Be careful about calling the teacher cruel. She is cross, forgetful and hurried. The poem’s criticism falls on a system of labels and timetables rather than on one woman, and strong answers hold its comedy and its seriousness together.',
       'Name the invented words precisely, as coinages or run-together compounds, then say what they are made of: routines, comforts and people, such as the kiss that was Gran’s time in line 13. The point is that the boy measures time in relationships, not numbers.',
       'Use structure as evidence. Stanza 7 is the only stanza that ends with no punctuation, so at the moment of escape the sentence spills over into stanza 8. The three lines of stanza 10 all end on words ending in time, as if the clock has taken over the poem again.',
-      'Use context in a sentence, not a paragraph. Fanthorpe taught English at Cheltenham Ladies’ College for sixteen years before leaving to work in Bristol as a secretary, receptionist and hospital clerk. She knew the classroom from the teacher’s side of the desk, which may explain why the poem is so fair to her.',
-      'Compare throughout. Pearson’s mark scheme for this section rewards points clearly based on comparison, asks for evidence of a personal response, and warns that summarising the poems or simply listing devices is not enough. Say what you think each poem argues, and whether it convinces you.',
+      'Context earns no credit in this section: Pearson’s examiners’ reports say it is not assessed in either poetry section of the paper. If a fact about Fanthorpe sharpens a reading, keep it to a clause. She taught English at Cheltenham Ladies’ College for sixteen years before leaving to work in Bristol as a secretary, receptionist and hospital clerk, so she knew the classroom from the teacher’s side of the desk, which may explain why the poem is so fair to her.',
+      'Compare throughout. Pearson’s mark scheme for this section rewards points clearly based on comparison of the two poems. For the question that names both poems, it also asks for evidence of a personal response and warns that summarising the poems or simply listing devices is not enough. An answer that considers only one poem cannot go above the second of its five levels, so bring the second poem into every paragraph. Say what you think each poem argues, and whether it convinces you.',
     ],
   },
 
@@ -320,7 +358,7 @@ export const guide: StudyGuide = {
     commentary: [
       'It opens with a comparative argument, forgetting against remembering, rather than a summary of either poem, so the reader knows the line of the whole answer from the first sentence.',
       'It follows one idea across the whole of Half-past Two, from line 3 to line 33, so the quotations build a pattern instead of illustrating separate points.',
-      'Every quotation is a few words long, embedded in the sentence and analysed, including a close point about the double meaning of for ever.',
+      'Every quotation is a few words long, embedded in the sentence and analysed, including a close point about the double meaning of for ever. That point needs the anthology’s wording, so check the line in your exam booklet first (see the tips above).',
       'It uses a structural detail, the present tense of the final line, as evidence for an interpretation rather than as a label.',
       'It brings Piano in on the same idea, and on method as well as meaning (the uninvited song, the rhymed couplets), which is what makes the comparison more than two parallel descriptions.',
       'It ends on a judgement that separates the two poems, loss against possession, which is the personal response the mark scheme asks for.',
@@ -520,7 +558,27 @@ export const guide: StudyGuide = {
     },
     {
       label:
-        'Pearson Edexcel, Mark Scheme (Results), June 2024, International GCSE English Literature (4ET1) Paper 1R, Section B: questions compare two anthology poems (question 2 names both, question 3 names one and lets the candidate choose the other); examiners reward points clearly based on comparison, require a degree of personal response, and say summary, paraphrase or a list of devices is not enough. Read from a local copy of the mark scheme.',
+        'Pearson Edexcel, Mark Scheme (Results), June 2024, International GCSE English Literature (4ET1) Paper 1R, Section B: questions compare two anthology poems (question 2 names both, question 3 names one and lets the candidate choose the other); examiners reward points clearly based on comparison and, in the note to question 2, require a degree of personal response and say summary, paraphrase or a list of devices is not enough. Read from a local copy of the mark scheme.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01r-rms-20240822.pdf',
+    },
+    {
+      label:
+        'Pearson Edexcel, mark schemes for 4ET1 Paper 1, Section B, read on 10 October 2026: in the specimen, June 2019, June 2023, June 2024 R and June 2025 schemes, an answer that considers only one poem cannot go beyond the top of Level 2, and for question 3 the candidate may choose any other appropriate poem from the selection. The June 2025 grid has five levels, each describing analysis and comparison together. In all nine schemes read (specimen to June 2025 R), only the note to question 2, which names both poems, asks for a degree of personal response and says summary, paraphrase or a list of devices is not enough; the note to question 3 does not.',
+    },
+    {
+      label:
+        'Pearson Edexcel, International GCSE English Literature (4ET1) Paper 1 question papers, January 2023 and June 2024, read on 10 October 2026: Section B offers question 2 or question 3, one to be answered in a suggested 40 minutes, each comparing two poems with reference to language, form and structure. January 2023 question 2 named Half-past Two and Sonnet 116, on the passing of time; June 2024 question 3 named Half-past Two, on being alone, with one other poem from the anthology. The Poetry Booklet of Part 3 poems that comes with each paper prints Half-past Two with a number beside every fifth line, as the anthology does, but not quite in its words: line 32 has of where Issue 8 has for, and line 9 has of where Issue 8 has at. Checked by script on eight papers from January 2023 to June 2025 (all but the January and June 2023 R papers, which were not opened) and on June 2019; the June 2024 mark scheme quotes the line with for.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20240514.pdf',
+    },
+    {
+      label:
+        'Pearson Edexcel, International GCSE English Literature (4ET1) Paper 1 question paper, January 2023, read on 10 October 2026: question 2 on Half-past Two and Sonnet 116, cited above. The poem is on page 38 of the PDF, in the Poetry Booklet.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/exam-materials/4et1-01-que-20230110.pdf',
+    },
+    {
+      label:
+        'Pearson Edexcel, Examiners’ report, June 2024, International GCSE English Literature (4ET1) Paper 1: on question 3 (Half-past Two and one other poem, on being alone) Hide and Seek was the most popular partner, and answers often compared the two poems without keeping to the focus, especially with Hide and Seek, where they tended to write about childhood in general; candidates are advised to spend about 40 minutes on the anthology question; context is not assessed in either poetry section. Read on 10 October 2026.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-pef-20240822.pdf',
     },
     {
       label:

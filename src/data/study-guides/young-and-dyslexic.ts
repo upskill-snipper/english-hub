@@ -42,6 +42,40 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * quote a tenth of it in total. Quotations are reused across sections so that
  * the distinct words quoted stay inside that share; longer passages are pointed
  * to by line number and summarised.
+ *
+ * EXAM-FORMAT CHECK, 26 September 2026, against the 4EA1 Paper 1 papers, mark
+ * schemes and examiners' reports from the 2016 samples to June 2026, as read
+ * for the site-wide audit that day (this article was Text Two in the 2017 extra
+ * assessment materials, June 2023 (4EA1/01R) and June 2025). The anthology text
+ * is always Text Two, printed in the Source Booklet beside an unseen Text One.
+ * Every short-answer question is on Text One; the anthology text has one
+ * question to itself, on language AND structure across the whole text with no
+ * line range; and the comparison is always with the unseen Text One, never
+ * another anthology text. So the three passage questions, which had line ranges
+ * and one a language-only and one a structure-only focus, are now labelled as
+ * close-reading practice; the exam question and the model answer on lines 3-35
+ * now cover the whole article, with guidance past borstal; the Chinese
+ * Cinderella comparison says in the question that it is a practice pairing (it
+ * had called the unseen text the second text; it is Text One) and asks about
+ * ideas and perspectives, as the exam's comparison does; and the tips say what
+ * the paper sets, and that the Source Booklet's line numbers need not be the
+ * anthology's. The whole-article question on how he presents himself already
+ * had the exam's form and is unchanged. Do not add a retrieval question on this
+ * text, a language-only or structure-only exam question, or a line range to an
+ * exam question. Mark tariffs stay out: the validator reserves them for
+ * ExamPlacementCard.
+ *
+ * RECHECKED, 10 October 2026. The first exam-practice badge called its question
+ * "the one exam question on this text alone", which read as a prediction that
+ * the exam will ask about school. The exam sets that form with a focus of its
+ * own (the 26 September audit records a different one in 2017, June 2023 and
+ * June 2025), so the badge now says the question is in that form. June 2023
+ * above is the 4EA1/01R paper: the 4EA1/01 paper sat the same day (P72856A)
+ * set A Passage to Africa. Keep the line-number tip sending students to the
+ * booklet's numbers. P72856A's Source Booklet and the June 2019 Extracts
+ * Booklet (P57186A) number Text Two every fifth line, and neither follows the
+ * anthology: the first runs one to three lines behind it after line 10, the
+ * second one line behind from line 10.
  */
 export const guide: StudyGuide = {
   slug: 'young-and-dyslexic',
@@ -223,7 +257,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Zephaniah use the teachers’ own words to present his experience of school in lines 9-23?',
+        'Close-reading practice on lines 9-23, not an exam question (the exam asks about language and structure across the whole article): how does Zephaniah use the teachers’ own words to present his experience of school?',
     },
     {
       title: 'The statistics and the choice',
@@ -247,7 +281,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Zephaniah structure lines 28-47 to move from his worst moments to a statement of self-belief?',
+        'Close-reading practice on lines 28-47, not an exam question (the exam asks about language and structure across the whole article): how does Zephaniah structure this passage to move from his worst moments to a statement of self-belief?',
     },
     {
       title: 'Whose problem is it?',
@@ -279,7 +313,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Zephaniah use language in lines 70-88 to persuade young dyslexic readers to see themselves differently?',
+        'Close-reading practice on lines 70-88, not an exam question (the exam asks about language and structure across the whole article): how does Zephaniah use language to persuade young dyslexic readers to see themselves differently?',
     },
   ],
 
@@ -353,8 +387,9 @@ export const guide: StudyGuide = {
     questions: [
       {
         question:
-          'How does Zephaniah present his experiences of school in lines 3-35 of Young and dyslexic? You should refer closely to the text, using brief quotations, and comment on his use of language and structure.',
-        skill: 'Language and structure analysis of the anthology text',
+          'How does the writer, Benjamin Zephaniah, use language and structure to present his experiences of school? You should support your answer with close reference to the text, including brief quotations.',
+        skill:
+          'Language and structure across the whole article, in the form of the one exam question on this text alone',
         guidance: [
           'Open with an argument, not a summary: for example, that he presents school as a place where curiosity was punished, and that he lets the teachers condemn themselves.',
           'Start with his even-handed opening (lines 3-8). He blames the system of that time rather than individuals and says he is not angry. Explain why this makes what follows more believable.',
@@ -362,19 +397,21 @@ export const guide: StudyGuide = {
           'Show the double perspective: the boy who reacts at the time and the adult who understands later, marked by the move into the present tense at line 23.',
           'Discuss the Africa anecdote (lines 17-19) and what it shows about racism in his schooling, keeping your comments factual and precise.',
           'Deal honestly with the expulsion and revenge (lines 28-31). Consider why he includes them, and what placing the revenge beside the teacher’s remark about the Nazis invites the reader to weigh.',
-          'Finish on structure: the school section is a run of short anecdotes, each a small scene ending in a verdict, and it closes in borstal (lines 32-35) with a lesson he taught himself by watching, not one a teacher gave him.',
+          'Comment on structure: the school section is a run of short anecdotes, each a small scene ending in a verdict, and it closes in borstal (lines 32-35) with a lesson he taught himself by watching, not one a teacher gave him.',
+          'The question has no line range, so do not stop at borstal. Education returns later in the article: at 21 an adult education teacher is the first to explain rather than label (lines 51-54), and at Brunel the boy once steered towards football teaches students with more formal education than he has (lines 61-65). Finish on that reversal: by the second half of the article he is the one teaching, and what he asks of his students is what his own teachers failed to value.',
         ],
       },
       {
         question:
-          'Compare how the writers of Young and dyslexic? and Chinese Cinderella present young people being judged by the adults around them. In the exam your second text will be an unseen passage, so use this pairing to practise the method.',
-        skill: 'Comparison of two texts: ideas, perspectives and methods',
+          'Practice pairing, not an exam pairing (in the exam this article is compared with an unseen extract, Text One, never with another anthology text): compare how the writers of Young and dyslexic? You’ve got it going on and From Chinese Cinderella present their ideas and perspectives about young people being judged by the adults around them. Support your answer with detailed examples from both texts, including brief quotations.',
+        skill: 'Comparison of ideas and perspectives, practised with a second anthology text',
         guidance: [
           'Open with a comparative argument: both writers show a young person’s worth being judged by an adult, but Zephaniah rejects the verdicts, while Adeline Yen Mah, in the anthology extract, stays silent in front of her father.',
           'Compare the judgements. His teachers call him stupid and steer him towards sport; her father is proud of her writing prize but scoffs at her wish to be a writer and decides that she will study medicine.',
           'Compare the methods. Both use reported direct speech to let the adults reveal themselves. Zephaniah looks back from adulthood with humour; Mah narrates her hopes and fears as she felt them in the moment.',
           'Compare the responses. His ideas contradicted his teachers’, while she chooses not to contradict her father. Consider what each writer wants the reader to feel about that response.',
           'Compare the endings and purposes. He closes with advice to young readers; the extract ends with her accepting her father’s plan. Keep every paragraph about both texts, and use comparative connectives.',
+          'In the exam, use the same method on the unseen extract, Text One. You meet it for the first time on the day, so the points of comparison have to come from reading it there, not from a pairing prepared in advance.',
         ],
       },
       {
@@ -391,20 +428,21 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
-      'Use the line numbers. The anthology numbers every fifth line, and locating a moment precisely, such as the diagnosis at lines 51-54, shows control of the whole text.',
+      'Know how this text is examined. When the paper sets it, the article is printed for you in the Source Booklet as Text Two, beside an unseen extract, Text One, and the short-answer questions are all on the unseen extract. This article has one question to itself, on how Zephaniah uses language and structure across the whole text, and it is then compared with the unseen extract. Revise it for analysis and comparison, not retrieval; there is no need to memorise quotations.',
+      'Use line numbers, but the ones on the paper. The line numbers in this guide are the anthology’s, which numbers every fifth line; the Source Booklet prints the article with its own line numbers, which need not match, so check a reference against the booklet before you use it. Locating a moment precisely, such as the diagnosis (lines 51-54 in the anthology), shows control of the whole text.',
       'Keep the two Zephaniahs apart: the boy who reacted and the adult who explains. Many of his best effects come from that gap, and naming it lifts an answer above paraphrase.',
       'Do not treat the humour as decoration. The retold question about an operation and the closing swipe at non-dyslexics are part of the argument, because laughing at a label takes away its power.',
       'Handle race directly and factually. The Africa lesson, the retort at line 47 and the comparison with racism at lines 70-72 are central, not a side issue: an answer that leaves them out misses half his argument about labels.',
       'Quote little and analyse a lot. His sentences are short, so a word or two is often enough: “stupid”, “squiggle” and “architects” each carry an argument.',
       'Remember the form. It is a personal article in a speaking voice, adapted from his contribution to a book and published online by a newspaper, so comment on how it is built to reach a general reader and to be heard as a voice.',
       'Be precise about his claim. He does not say dyslexia is easy: he still stops at words and never reads his novels in public. He says it is not a measure of intelligence, and the difference matters.',
-      'For comparison with an unseen text, have three flexible points ready: being labelled by others, turning a judgement round, and turning personal experience into advice.',
+      'In the comparison question the other text is always the unseen extract, never another anthology text. Have three flexible points from this article ready to test against it: being labelled by others, turning a judgement round, and turning personal experience into advice. Keep both texts in every paragraph: the mark scheme caps an answer that deals with only one of them.',
     ],
   },
 
   modelAnswer: {
     question:
-      'How does Zephaniah present his experiences of school in lines 3-35 of Young and dyslexic? You should refer closely to the text, using brief quotations, and comment on his use of language and structure.',
+      'How does the writer, Benjamin Zephaniah, use language and structure to present his experiences of school? You should support your answer with close reference to the text, including brief quotations.',
     paragraph:
       'Zephaniah presents his schooling as a place where curiosity was punished, and his main method is to let the teachers condemn themselves. When he asks whether sleep is a design fault, the reply is reported as direct speech: “Shut up, stupid boy.” The four clipped words contrast sharply with the long, eager question that provoked them, so the adult sounds less thoughtful than the child. His own comment is brief and restrained, “I was just being creative”, and “just” suggests he still has to defend an innocent question. The football teacher is more polite but no kinder. “We can’t all be intelligent” uses an inclusive “we” to soften what is really an exclusion, and the boy’s sarcastic “Oh great” shows that he felt the insult before he could name it. Only at line 23 does the adult voice supply the name, “stereotyping”, and the shift into the present tense marks the distance between the boy who suffered and the man who understands. The structure matters too. Zephaniah has already said that he is not angry with his teachers, and that restraint makes the anecdotes more damning, because he appears to be reporting rather than settling scores. It could be argued that the portraits are selective, but the effect survives that objection: the reader is left to reach the verdict he declines to state.',
     commentary: [
@@ -413,6 +451,7 @@ export const guide: StudyGuide = {
       'Techniques are named only where they explain an effect: reported speech, contrast, the inclusive pronoun and the change of tense.',
       'It deals with structure as well as language, linking the anecdotes back to his earlier refusal to blame the teachers.',
       'It raises an alternative view and shows why the effect survives it, which is what separates an argued answer from a list of features.',
+      'It is one paragraph of a longer answer. The question has no line range, so a full answer would go on to the adult education class at 21 and to his own teaching at Brunel, where the article turns the classroom round.',
     ],
   },
 

@@ -49,49 +49,74 @@ export const metadata: Metadata = {
  * Guardian date was given as 24 January in places; the anthology's note and
  * acknowledgements both give 28 January 2003. The structure notes said expert
  * criticism clusters mid-article and that Morris quotes the men less than their
- * critics: the only named critic (Endres) comes near the end, the one explorer
+ * critics: the only named expert (Endres) comes near the end, the one explorer
  * quoted calls their survival a miracle, and neither man is quoted directly.
+ *
+ * Checked again the same day against the anthology and the study guide. The
+ * article calls both men experienced adventurers, so "amateur" went. It never
+ * says the men endangered their rescuers, reports no human cost (nobody was
+ * hurt) and no celebration by the media, and gives nothing in the men's own
+ * words, since neither speaks. Its one rhetorical question is the headline.
+ * Endres is its one named expert, not its one named critic, since Brooks's
+ * wife supplies the headline's picture of boys; nor is she an outsider. Levine
+ * joins the cars chasing the donkey race, in a book about her travels, not a
+ * news report; the Ralston extract is the accident, not the whole survival
+ * story. The anthology says only that the text is adapted, not by whom or how,
+ * so the header no longer says "adapted for the anthology" and the warning no
+ * longer lists "cuts, re-orderings" that nobody here has compared.
+ *
+ * A third check the same day: the experts doubt the helicopter in a hostile
+ * environment, not in dangerous conditions, because the article calls the
+ * weather clear and the flying conditions excellent. And the Zeppa card now
+ * describes the extract, her first days in Bhutan, not her whole memoir, which
+ * the anthology says only grew out of an essay about those days.
+ *
+ * Checked again 10 October 2026. The message said the article never states
+ * its argument outright, but the headline and the Ministry of Defence state
+ * the bill plainly; what Morris leaves to other voices is the doubt about the
+ * men's judgement. The Zeppa card was tagged Risk, which nothing in her
+ * extract or its guide supports, so the tag is now Remote places.
  */
 const themes = [
   {
     label: 'Risk and recklessness',
     labelAr: 'المخاطرة والاستهتار',
     detail:
-      'Morris foregrounds the question of whether the explorers’ behaviour was bold adventure or irresponsible danger to themselves and rescuers.',
+      'Morris foregrounds the question of whether the explorers’ flight was bold adventure or recklessness. Experts doubt the sense of taking a small, single-engined helicopter into so harsh an environment, and the one named expert suspects the men were pushing things too far.',
     detailAr:
-      'يُبرز Morris سؤالاً عمّا إذا كان سلوك المستكشفَين مغامرةً جريئة أم خطراً غير مسؤول على ذاتيهما وعلى المنقذين.',
+      'يُبرز Morris سؤالاً عمّا إذا كانت رحلة المستكشفَين مغامرةً جريئة أم استهتاراً. فالخبراء يشكّكون في حكمة اصطحاب مروحيّةٍ صغيرة بمحرّكٍ واحد إلى بيئةٍ بهذه القسوة، والخبير الوحيد المُسمّى يظنّ أنّ الرجلَين تجاوزا الحدّ.',
   },
   {
-    label: 'Hubris and judgement',
-    labelAr: 'الغرور والحُكم',
+    label: 'Experience and judgement',
+    labelAr: 'الخبرة وحُسن التقدير',
     detail:
-      'The article weighs the men’s confidence against the harsh reality of an Antarctic crash, inviting readers to evaluate their decision-making.',
+      'The article sets the men’s long record of adventure against experts’ doubts about their choice of helicopter, inviting readers to ask whether experience is the same as good judgement.',
     detailAr:
-      'يضع المقالُ ثقةَ الرجلَين في كفّة، ووعورةَ تحطّمٍ في أنتاركتيكا في كفّةٍ أخرى، ويدعو القرّاء إلى تقييم قراراتهم.',
+      'يضع المقالُ سجلَّ الرجلَين الطويلَ في المغامرة في كفّة، وشكوكَ الخبراء في اختيارهما للمروحيّة في كفّةٍ أخرى، ويدعو القرّاء إلى التساؤل: هل الخبرةُ هي حُسنُ التقدير نفسه؟',
   },
   {
     label: 'Media framing',
     labelAr: 'تأطير الإعلام',
     detail:
-      'A newspaper article that consciously shapes readers’ views through loaded vocabulary, expert quotation and rhetorical questioning.',
+      'A newspaper report that shapes readers’ views while appearing only to relay facts: through loaded vocabulary, its choice of whom to quote, and the rhetorical question in its headline.',
     detailAr:
-      'مقالٌ صحفيّ يُشكّل آراءَ القرّاء عن وعيٍ، عبر مفرداتٍ مُحمَّلة، واقتباساتٍ من الخبراء، وأسئلةٍ بلاغيّة.',
+      'تقريرٌ صحفيّ يُشكّل آراءَ القرّاء وهو يبدو ناقلاً للوقائع فحسب: عبر مفرداتٍ مُحمَّلة، واختيارِ مَن يقتبس كلامهم، والسؤالِ البلاغيّ في عنوانه.',
   },
   {
     label: 'Exploration vs. recreation',
     labelAr: 'الاستكشاف في مقابل التسلية',
     detail:
-      'Morris draws a contested line between serious exploration and amateur thrill-seeking - the title itself poses the dilemma.',
+      'Morris draws a contested line between serious exploration and boys at play. The headline itself poses the dilemma, and its second option is borrowed from Brooks’s own wife.',
     detailAr:
-      'يرسم Morris خطّاً متنازَعاً عليه بين الاستكشاف الجادّ والسعي الهاوي خلف الإثارة - والعنوان نفسه يطرح المعضلة.',
+      'يرسم Morris خطّاً متنازَعاً عليه بين الاستكشاف الجادّ ولهو الصبية. والعنوانُ نفسه يطرح المعضلة، وخيارُه الثاني مستعارٌ من كلام زوجة Brooks نفسها.',
   },
   {
     label: 'Cost and responsibility',
     labelAr: 'الكلفة والمسؤوليّة',
     detail:
-      'The piece raises the financial and human cost of rescue when adventurers misjudge their preparedness.',
+      'The cost of the rescue frames the piece. The headline says the taxpayer pays either way, an early paragraph reports resentment at a five-figure bill for British and Chilean taxpayers, and near the end the Ministry of Defence confirms the public will pay, while calling that normal for rescues.',
     detailAr:
-      'يُثير المقالُ مسألةَ الكلفة الماليّة والإنسانيّة لعمليّات الإنقاذ حين يُسيء المغامرون تقدير استعدادهم.',
+      'تُؤطِّر كلفةُ الإنقاذ المقالَ كلَّه. فالعنوان يقول إنّ دافع الضرائب يدفع في كلّ الأحوال، وفقرةٌ مبكّرة تنقل استياءً من فاتورةٍ بعشرات الآلاف من الجنيهات على دافعي الضرائب في بريطانيا وتشيلي، وقُرب النهاية تؤكّد وزارة الدفاع أنّ المال العامّ سيتحمّل الكلفة، مع أنّها تَعُدّ ذلك معتاداً في عمليّات الإنقاذ.',
   },
 ]
 
@@ -101,36 +126,36 @@ const structuralAnalysis = {
   openingAr:
     'يطرح العنوانُ سؤالاً ثنائيّاً - “Explorers or boys messing about?” - يؤطّر المقالَ فوراً بوصفه حُكماً لا تقريراً محايداً. ويُدعى القارئ إلى اختيار موقفٍ من السطر الأوّل.',
   development:
-    'Morris alternates the bare facts of the incident (the crash, the satellite phone call, the rescue) with critical voices, building an evidence-based case that leans toward the “messing about” verdict.',
+    'Morris alternates the bare facts of the incident (the crash, the satellite phone call, the rescue) with critical voices, building an evidence-based case that leans toward the “messing about” verdict. The longest passage of praise, the men’s record of adventure, is followed at once by an earlier embarrassment in the Bering Strait.',
   developmentAr:
-    'يتناوب Morris بين الحقائق الجرداء للحادثة (التحطّم، مكالمة الهاتف الفضائيّ، الإنقاذ) وبين أصواتٍ ناقدة، فيبني قضيّةً قائمةً على الدليل تميل إلى حُكم “messing about”.',
+    'يتناوب Morris بين الحقائق الجرداء للحادثة (التحطّم، مكالمة الهاتف الفضائيّ، الإنقاذ) وبين أصواتٍ ناقدة، فيبني قضيّةً قائمةً على الدليل تميل إلى حُكم “messing about”. ويتلو أطولَ مقطعٍ في مدح الرجلَين، أي سجلَّهما في المغامرة، مباشرةً إحراجٌ سابق في مضيق Bering.',
   climax:
-    'There is no single climax of criticism. Experts’ doubts about the small helicopter are reported early; the one Antarctic explorer quoted calls their survival a miracle rather than criticising them; and the only named critic, the helicopter expert Günter Endres, is held back until near the end, shortly before the Ministry of Defence confirms the taxpayer will pay.',
+    'There is no single climax of criticism. Experts’ doubts about the small helicopter are reported early; the one Antarctic explorer quoted calls their survival a miracle, which credits it to luck without criticising them outright; and the only named expert, Günter Endres, is held back until near the end, shortly before the Ministry of Defence confirms the taxpayer will pay.',
   climaxAr:
-    'لا توجد ذروةٌ واحدة للنقد. تُنقل شكوكُ الخبراء في المروحيّة الصغيرة في وقتٍ مبكّر؛ والمستكشف القطبيّ الوحيد المُقتبَس يَعُدّ نجاتهما معجزةً ولا ينتقدهما؛ أمّا الناقد الوحيد المُسمّى، خبير المروحيّات Günter Endres، فيُؤجَّل إلى قرب النهاية، قُبيل تأكيد وزارة الدفاع أنّ دافع الضرائب سيتحمّل الكلفة.',
+    'لا توجد ذروةٌ واحدة للنقد. تُنقل شكوكُ الخبراء في المروحيّة الصغيرة في وقتٍ مبكّر؛ والمستكشف القطبيّ الوحيد المُقتبَس يَعُدّ نجاتهما معجزةً، فينسبها إلى الحظّ دون أن ينتقدهما صراحةً؛ أمّا الخبير الوحيد المُسمّى، Günter Endres، فيُؤجَّل إلى قرب النهاية، قُبيل تأكيد وزارة الدفاع أنّ دافع الضرائب سيتحمّل الكلفة.',
   resolution:
-    'The piece closes without resolving the question outright, leaving readers to weigh the evidence - but the cumulative framing has already nudged them toward scepticism of the men’s judgement.',
+    'The piece closes not on a verdict but on Ms Vestey’s joke about the punishment waiting for the men, so the question is never resolved outright. By then, though, the cumulative framing has nudged readers toward scepticism of the men’s judgement, and the joke returns to the headline’s picture of boys.',
   resolutionAr:
-    'يُختم المقالُ دون حسمٍ صريحٍ للسؤال، تاركاً للقرّاء وزنَ الأدلّة - غير أنّ التأطيرَ التراكميَّ يكون قد دفعهم سلفاً نحو الارتياب من حُكم الرجلَين.',
+    'يُختم المقالُ لا بحُكمٍ بل بمزحة Ms Vestey عن العقاب الذي ينتظر الرجلَين، فلا يُحسَم السؤال صراحةً. غير أنّ التأطيرَ التراكميَّ يكون قد دفع القرّاء سلفاً نحو الارتياب من حُكم الرجلَين، والمزحةُ تعود إلى صورة الصبية في العنوان.',
   perspective:
-    'Third-person reportage with an embedded editorial slant. Neither man is quoted directly: Brooks is heard only through his wife’s account of his phone call and through a spokesman. Other voices (Ms Vestey, an Antarctic explorer, Endres, the Ministry of Defence) fill the article, so outsiders shape the moral verdict.',
+    'Third-person reportage with an embedded editorial slant. Neither man is quoted directly: Brooks is heard only through his wife’s account of his phone call and through a spokesman. Other voices (Ms Vestey, an Antarctic explorer, Endres, the Ministry of Defence) fill the article, so other people, not the two men, shape the moral verdict, and its most damaging phrase comes from Brooks’s own wife.',
   perspectiveAr:
-    'تقريرٌ بضمير الغائب مع ميلٍ تحريريٍّ مُضمَّن. لا يُقتبس أيٌّ من الرجلَين مباشرةً: لا نسمع Brooks إلّا عبر رواية زوجته لمكالمته الهاتفيّة، وعبر متحدّثٍ باسمهما. وتملأ المقالَ أصواتٌ أخرى (Ms Vestey، ومستكشفٌ قطبيّ، وEndres، ووزارة الدفاع)، فيصوغ الغرباءُ الحُكمَ الأخلاقيّ.',
+    'تقريرٌ بضمير الغائب مع ميلٍ تحريريٍّ مُضمَّن. لا يُقتبس أيٌّ من الرجلَين مباشرةً: لا نسمع Brooks إلّا عبر رواية زوجته لمكالمته الهاتفيّة، وعبر متحدّثٍ باسمهما. وتملأ المقالَ أصواتٌ أخرى (Ms Vestey، ومستكشفٌ قطبيّ، وEndres، ووزارة الدفاع)، فيصوغ الآخرون، لا الرجلان، الحُكمَ الأخلاقيّ، وتأتي أشدُّ عباراته ضرراً من زوجة Brooks نفسها.',
 }
 
 const writersPurpose = {
   achieve:
-    'Morris reports the rescue while simultaneously interrogating its meaning - was this a heroic mishap or a foreseeable consequence of inadequate preparation?',
+    'Morris reports the rescue while simultaneously interrogating its meaning: was this bold exploration that went wrong, or the result of poor judgement, such as taking a small, single-engined helicopter on such a long sea crossing?',
   achieveAr:
-    'يُغطّي Morris عمليّةَ الإنقاذ مُستجوِباً معناها في الوقت نفسه - هل هو تعثّرٌ بطوليّ، أم نتيجةٌ متوقَّعةٌ لقصور الاستعداد؟',
+    'يُغطّي Morris عمليّةَ الإنقاذ مُستجوِباً معناها في الوقت نفسه: هل كانت استكشافاً جريئاً انتهى بتعثّر، أم نتيجةً لسوء التقدير، كاصطحاب مروحيّةٍ صغيرة بمحرّكٍ واحد في رحلةٍ طويلة فوق البحر؟',
   readerFeel:
-    'He wants the reader to feel uneasy about the celebration of risk-taking, and to consider the cost (human and financial) of rescue operations triggered by amateur adventuring.',
+    'He wants the reader to doubt the men’s judgement and to question why the public should pay to rescue private adventurers, while letting other people’s words, rather than his own voice, do most of the judging.',
   readerFeelAr:
-    'يريد للقارئ أن يشعر بضيقٍ من تمجيد المخاطرة، وأن يتأمّل الكلفة الإنسانيّة والماليّة لعمليّات الإنقاذ التي تستدعيها مغامرةُ الهواة.',
+    'يريد للقارئ أن يشكّ في حُسن تقدير الرجلَين، وأن يتساءل لماذا يدفع الجمهور كلفةَ إنقاذ مغامرَين يخوضان مغامراتٍ خاصّة، تاركاً لكلام الآخرين، لا لصوته هو، معظمَ إصدار الأحكام.',
   message:
-    'The implicit argument is that being privileged enough to attempt a polar adventure does not absolve one of the responsibility to be properly prepared - and that media celebrations of such mishaps deserve scrutiny.',
+    'The implicit argument is that long experience of adventure is not the same as good judgement, and that it is the public, not the adventurers, who pays when that judgement fails. The bill is stated outright, in the headline and by the Ministry of Defence, but Morris never says in his own voice that the men misjudged: the voices he quotes, and the order he puts them in, make that case.',
   messageAr:
-    'الحُجّة الضمنيّة أنّ الحظوة بإمكانيّة خوض مغامرةٍ قطبيّة لا تُعفي المرءَ من مسؤوليّة الاستعداد الجادّ - وأنّ احتفاءَ الإعلام بمثل هذه الإخفاقات يستحقّ التدقيق.',
+    'الحُجّة الضمنيّة أنّ الخبرة الطويلة في المغامرة ليست هي حُسنَ التقدير، وأنّ الجمهور، لا المغامرين، هو مَن يدفع الكلفة حين يخطئ تقديرُهم. أمّا الفاتورة فمُصرَّحٌ بها، في العنوان وعلى لسان وزارة الدفاع، غير أنّ Morris لا يقول أبداً بصوته هو إنّ الرجلَين أساءا التقدير: فالأصواتُ التي يقتبسها، والترتيبُ الذي يضعها فيه، هي التي تصنع هذه الحُجّة.',
 }
 
 /** The text these practice questions are about, sent to the marker as context. */
@@ -192,9 +217,9 @@ const comparisonLinks = [
     author: 'Aron Ralston',
     href: '/igcse/edexcel-lang/anthology/127-hours',
     reason:
-      'Both texts concern adventurers in serious danger. Compare Morris’s critical outsider report with Ralston’s first-person survival narrative - judgement from outside vs. determination from within.',
+      'Both texts concern adventurers in serious danger. Compare Morris’s critical outsider report with Ralston’s first-hand account of a boulder trapping his hand: judgement from outside vs. determination from within.',
     reasonAr:
-      'يتناول النصّان مغامرين في خطرٍ جسيم. قارن تقريرَ Morris الناقدَ من الخارج بسرد Ralston الناجي بضمير المتكلّم - حُكمٌ من الخارج في مقابل عزيمةٍ من الداخل.',
+      'يتناول النصّان مغامرين في خطرٍ جسيم. قارن تقريرَ Morris الناقدَ من الخارج بسرد Ralston المباشر لصخرةٍ حبست يده: حُكمٌ من الخارج في مقابل عزيمةٍ من الداخل.',
     themes: ['Adventure', 'Risk', 'Different perspectives'],
     themesAr: ['المغامرة', 'المخاطرة', 'منظورات مختلفة'],
   },
@@ -203,22 +228,22 @@ const comparisonLinks = [
     author: 'Jamie Zeppa',
     href: '/igcse/edexcel-lang/anthology/beyond-the-sky-and-the-earth',
     reason:
-      'Both texts deal with travel into challenging environments. Compare Morris’s critical reporting with Zeppa’s reflective travel memoir - the same idea of “going somewhere remote” treated very differently.',
+      'Both texts deal with travel into challenging environments. Compare Morris’s critical reporting with Zeppa’s reflective account, from her memoir, of her first days in Bhutan, where she had come to teach: the same idea of going somewhere remote, treated very differently.',
     reasonAr:
-      'يتناول النصّان السفرَ إلى بيئاتٍ عَسِرة. قارن تقريرَ Morris الناقدَ بسيرة Zeppa الرحليّة المتأمّلة - فكرةُ “الذهاب إلى مكانٍ ناءٍ” نفسُها تُعالَج بطريقتَين مختلفتَين وايد.',
-    themes: ['Travel', 'Risk', 'Genre contrast'],
-    themesAr: ['السفر', 'المخاطرة', 'تباين الأجناس الأدبيّة'],
+      'يتناول النصّان السفرَ إلى بيئاتٍ عَسِرة. قارن تقريرَ Morris الناقدَ بسرد Zeppa المتأمّل، من مذكّراتها، لأيّامها الأولى في بوتان، التي جاءتها لتُدرِّس: فكرةُ الذهاب إلى مكانٍ ناءٍ نفسُها تُعالَج بطريقتَين مختلفتَين تماماً.',
+    themes: ['Travel', 'Remote places', 'Genre contrast'],
+    themesAr: ['السفر', 'الأماكن النائية', 'تباين الأجناس الأدبيّة'],
   },
   {
     title: 'A Game of Polo with a Headless Goat',
     author: 'Emma Levine',
     href: '/igcse/edexcel-lang/anthology/a-game-of-polo-with-a-headless-goat',
     reason:
-      'Both texts are journalistic in register but adopt different stances toward danger and spectacle. Compare Morris’s sceptical framing with Levine’s curious observational mode.',
+      'Both texts show people taking risks for excitement, but the writers stand in different places. Compare Morris’s sceptical outsider’s framing with Levine’s first-person account of a donkey race in Karachi, which she follows by joining the cars chasing it.',
     reasonAr:
-      'كلا النصّين صحفيُّ السجلّ، غير أنّهما يتبنّيان موقفَين مختلفَين من الخطر والمشهد. قارن تأطير Morris المرتاب بنمط Levine الفضوليّ الراصد.',
-    themes: ['Journalism', 'Spectacle', 'Authorial stance'],
-    themesAr: ['الصحافة', 'المشهد', 'موقف الكاتب'],
+      'يُظهر النصّان أناساً يخاطرون طلباً للإثارة، غير أنّ الكاتبَين يقفان في موقعَين مختلفَين. قارن تأطير Morris المرتاب من الخارج بسرد Levine بضمير المتكلّم لسباق حميرٍ في كراتشي، تتابعه بالانضمام إلى السيّارات التي تلاحقه.',
+    themes: ['Risk', 'Spectacle', 'Authorial stance'],
+    themesAr: ['المخاطرة', 'المشهد', 'موقف الكاتب'],
   },
 ]
 
@@ -251,11 +276,11 @@ export default async function ExplorersOrBoysMessingAboutPage() {
               Steven Morris &middot;{' '}
               {ar ? (
                 <>
-                  مقال صحفيّ (<em>The Guardian</em>، 28 يناير 2003 - مُكيَّف للمختارات)
+                  مقال صحفيّ (<em>The Guardian</em>، 28 يناير 2003، بصيغةٍ مُكيَّفة في المختارات)
                 </>
               ) : (
                 <>
-                  Newspaper article (<em>The Guardian</em>, 28 January 2003 - adapted for the
+                  Newspaper article (<em>The Guardian</em>, 28 January 2003, in adapted form in the
                   anthology)
                 </>
               )}
@@ -284,17 +309,17 @@ export default async function ExplorersOrBoysMessingAboutPage() {
                 <>
                   <strong className="text-foreground">تحذير نسخة المختارات:</strong> هذا النصّ هو
                   النسخة <strong className="text-foreground">المُكيَّفة</strong> المطبوعة في مختارات
-                  Edexcel IGCSE Issue 8 (ISBN 978-1-446-93108-0). نسخةُ <em>Guardian</em> الأصليّة
-                  المتاحة مجّاناً تختلف في الحذف والترتيب وتفاصيل المفردات. استعمل دائماً نسخةَ
-                  المختارات حين تجيب على أسئلة Edexcel - يُصحّح الممتحنون قبالةَ نصّ المختارات، لا
-                  قبالةَ النسخ المنشورة على الإنترنت.
+                  Edexcel IGCSE Issue 8 (ISBN 978-1-446-93108-0). ومقالُ <em>Guardian</em> الأصليّ،
+                  المتاح على الإنترنت، يختلف عنها في الصياغة. استعمل دائماً نسخةَ المختارات حين تجيب
+                  على أسئلة Edexcel - يُصحّح الممتحنون قبالةَ نصّ المختارات، لا قبالةَ النسخ
+                  المنشورة على الإنترنت.
                 </>
               ) : (
                 <>
                   <strong className="text-foreground">Anthology version warning:</strong> This text
                   is the <strong className="text-foreground">adapted</strong> version printed in the
-                  Edexcel IGCSE Anthology Issue 8 (ISBN 978-1-446-93108-0). The freely-available{' '}
-                  <em>Guardian</em> original differs in cuts, re-orderings, and minor word choice.
+                  Edexcel IGCSE Anthology Issue 8 (ISBN 978-1-446-93108-0). The original{' '}
+                  <em>Guardian</em> article, which can be read online, differs from it in wording.
                   Always use the anthology version when answering Edexcel questions - examiners mark
                   against the anthology text, not online reproductions.
                 </>
@@ -318,13 +343,14 @@ export default async function ExplorersOrBoysMessingAboutPage() {
                 في يناير 2003، سقطت مروحيّةُ المغامرَين البريطانيَّين Steve Brooks وQuentin Smith في
                 البحر على بُعد نحو 100 ميل من أنتاركتيكا، فلجآ إلى طوّافة نجاة، واتّصل Brooks بزوجته
                 في لندن من هاتفه الفضائيّ. وتلت ذلك عمليّةُ إنقاذ شاركت فيها البحريّة الملكيّة وسلاح
-                الجوّ الملكيّ وخفر السواحل البريطانيّ.
+                الجوّ الملكيّ وخفر السواحل البريطانيّ، وانتهت بعد نحو تسع ساعات حين انتشلتهما سفينةٌ
+                بحريّة تشيليّة.
               </p>
               <p>
                 مقالُ Steven Morris، المنشورُ أصلاً في <em>The Guardian</em> في 28 يناير 2003، غطّى
-                الحادثةَ لكنّه أطّرها بسؤالٍ موجَّه: هل كان هذان مستكشفَين، أم هاويَين أَوقَع
-                استهتارُهما الآخرين في الخطر؟ والعنوانُ نفسه يطرح المعضلةَ التي يُدعى القارئ إلى
-                وزنها.
+                الحادثةَ لكنّه أطّرها بسؤال عنوانه: هل هذان مستكشفان، أم صبيّان يعبثان؟ ثمّ يُنحّي
+                النصفُ الثاني من العنوان السؤالَ جانباً: أيّاً كان الجواب، فدافعُ الضرائب هو مَن
+                يدفع فاتورة الإنقاذ.
               </p>
               <p>
                 النصّ دراسةٌ نافعة في{' '}
@@ -336,16 +362,18 @@ export default async function ExplorersOrBoysMessingAboutPage() {
           ) : (
             <>
               <p>
-                In January 2003, two British adventurers, Steve Brooks and Quentin Smith, ditched
-                their helicopter in the sea about 100 miles off Antarctica and scrambled into a
-                liferaft. Brooks called his wife in London on his satellite phone, and a rescue
-                involving the Royal Navy, the RAF and British coastguards followed.
+                In January 2003, two British adventurers, Steve Brooks and Quentin Smith, came down
+                in the sea in their helicopter about 100 miles off Antarctica and climbed into their
+                liferaft. Brooks rang his wife in London by satellite phone. British coastguards,
+                the RAF and the Royal Navy all took part in the rescue that followed, which ended
+                about nine hours later, when a Chilean naval vessel picked the men up.
               </p>
               <p>
                 Steven Morris&apos;s article, originally published in <em>The Guardian</em> on 28
-                January 2003, reported the incident but framed it through a pointed question: were
-                these men explorers, or were they amateurs whose recklessness placed others at risk?
-                The headline itself poses the dilemma the reader is invited to weigh.
+                January 2003, reported the incident but framed it through its headline&apos;s
+                question: were these men explorers, or boys messing about? The headline&apos;s
+                second half then sets the question aside: whichever the answer, the taxpayer pays
+                for the rescue.
               </p>
               <p>
                 The text is a useful study of{' '}

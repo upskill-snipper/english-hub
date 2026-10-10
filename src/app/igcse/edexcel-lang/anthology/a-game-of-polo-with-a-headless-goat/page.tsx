@@ -18,10 +18,14 @@ import { guide } from '@/data/study-guides/a-game-of-polo-with-a-headless-goat'
  * wrong text. It analysed buzkashi, the Central Asian sport in the book's
  * title, while the extract Pearson prints in the anthology is Emma Levine
  * filming a donkey-cart race on a main road in Karachi, in which
- * buzkashi does not appear. Its themes, language notes, structure notes and
- * model outline all described the sport, so none of it was kept. Its rights
- * notice also named the wrong publisher (Little, Brown; the book is André
- * Deutsch's).
+ * buzkashi does not appear. Its themes, extract focuses, language notes and
+ * model outline described the sport, by name or through its horses and riders,
+ * as did one of its three comparison links. Its structure notes did not name
+ * it, but followed the same arc as the extract focuses, climaxing at "the chaotic
+ * peak of the game" and ending in "awe rather than verdict", while the extract
+ * climaxes in a fall at the finishing line and ends on Levine's relief. None of
+ * it was kept. Its context and rights notice also named the wrong publisher
+ * (Little, Brown; the book is André Deutsch's).
  *
  * The body is now the verified study guide in
  * src/data/study-guides/a-game-of-polo-with-a-headless-goat.ts, written from

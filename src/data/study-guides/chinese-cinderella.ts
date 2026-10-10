@@ -33,6 +33,35 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * where they are only mentioned; and several readings stated as fact are now
  * offered as readings. Absent people stay out of `who` unless the scene quotes
  * their words, because the animation draws everyone listed there.
+ *
+ * EXAM-FORMAT CHECK, 26 September 2026, against the 4EA1 Paper 1 papers, mark
+ * schemes and examiners' reports from the 2016 samples to June 2026. The
+ * anthology text is always Text Two, printed in the Source Booklet beside an
+ * unseen Text One. Every short-answer question is on Text One; the anthology
+ * text has one question to itself, on language AND structure across the whole
+ * extract with no line range; and the comparison is always with the unseen
+ * Text One, never another anthology text. The three passage questions had the
+ * exam's wording with a line range and nothing to say they were not exam
+ * questions; they are now labelled as close-reading practice. The two
+ * comparisons said they were practice pairings only in the badge, and one
+ * called the unseen text the second text (it is Text One); the question itself
+ * now says so, and the Ralston pairing asks about ideas and perspectives, as
+ * the exam's comparison does. The tips now say what the paper sets and what
+ * the comparison is with, and that the Source Booklet's line numbers need not
+ * be the anthology's (in June 2026 the Ralston extract's ran one behind after
+ * line 40: see between-a-rock-and-a-hard-place.ts). The two whole-extract
+ * questions and the model answer already had the exam's form and are
+ * unchanged. Do not add a retrieval question on this text, a language-only or
+ * structure-only exam question, or a line range to an exam question. Mark
+ * tariffs stay out: the validator reserves them for ExamPlacementCard.
+ *
+ * SECOND EXAM-FORMAT PASS, 26 September 2026. A tip said a bare technique
+ * label earns nothing, which the mark scheme contradicts: its lowest level is
+ * for basic identification, so the tip now says that instead. The ending's
+ * point from the anthology's introduction now warns that the Source Booklet
+ * may print a shorter introduction of its own, as it did for the Ralston
+ * extract in June 2026, so a student should not build on words the examiner
+ * may not have in front of them.
  */
 export const guide: StudyGuide = {
   slug: 'chinese-cinderella',
@@ -207,7 +236,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer use language and structure in lines 1-37 to show Adeline’s fear and uncertainty?',
+        'Close-reading practice on lines 1-37, not an exam question (the exam asks about language and structure across the whole extract): how does Yen Mah use language and structure to show Adeline’s fear and uncertainty?',
     },
     {
       title: 'The newspaper and the prize',
@@ -239,7 +268,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer use language and structure in lines 38-65 to present the changes in Adeline’s feelings?',
+        'Close-reading practice on lines 38-65, not an exam question (the exam asks about language and structure across the whole extract): how does Yen Mah use language and structure to present the changes in Adeline’s feelings?',
     },
     {
       title: 'Father’s plan',
@@ -275,7 +304,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer use language and structure in lines 66-86 to present the relationship between Adeline and her father?',
+        'Close-reading practice on lines 66-86, not an exam question (the exam asks about language and structure across the whole extract): how does Yen Mah use language and structure to present the relationship between Adeline and her father?',
     },
   ],
 
@@ -383,7 +412,7 @@ export const guide: StudyGuide = {
     },
     {
       heading: 'An ending that closes and opens',
-      body: 'The extract ends politely and happily on the surface: she has her place in England and her father’s approval, and she thanks him with emphatic gratitude. Underneath, she has given up the ambition she named only a few lines earlier. Yen Mah offers no direct judgement on this, and the silence is a structural choice that leaves the reader to weigh the bargain. The anthology’s introduction adds that this was one of the few times she went home, which makes the rare warmth of the scene more poignant.',
+      body: 'The extract ends politely and happily on the surface: she has her place in England and her father’s approval, and she thanks him with emphatic gratitude. Underneath, she has given up the ambition she named only a few lines earlier. Yen Mah offers no direct judgement on this, and the silence is a structural choice that leaves the reader to weigh the bargain. The anthology’s introduction adds that this was one of the few times she went home, which makes the rare warmth of the scene more poignant. The Source Booklet in the exam may print a shorter introduction of its own, so use this point only if the booklet’s introduction says it too.',
     },
   ],
 
@@ -494,9 +523,8 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Compare how the writers of From Chinese Cinderella and Young and dyslexic? You’ve got it going on present their ideas and perspectives about being judged by adults. Support your answer with detailed examples from both texts, including brief quotations.',
-        skill:
-          'Comparison of ideas and perspectives (a practice pairing: in the examination the second text is unseen)',
+          'Practice pairing, not an exam pairing (in the exam this extract is compared with an unseen extract, Text One, never with another anthology text): compare how the writers of From Chinese Cinderella and Young and dyslexic? You’ve got it going on present their ideas and perspectives about being judged by adults. Support your answer with detailed examples from both texts, including brief quotations.',
+        skill: 'Comparison of ideas and perspectives, practised with a second anthology text',
         guidance: [
           'Name the shared idea: an adult decides what a young person can become. Father dismisses Adeline’s wish to be a writer (lines 73-76); one of Zephaniah’s teachers calls him stupid, and another steers him towards football when he asks for help with writing (lines 14-23 of his article).',
           'Contrast the perspectives: Yen Mah recreates her feelings at fourteen and leaves the judgement to the reader, while Zephaniah argues openly as an adult and says that, looking back, he does not feel angry with his teachers.',
@@ -508,26 +536,28 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Compare how the writers of From Chinese Cinderella and From 127 Hours: Between a Rock and a Hard Place present their thoughts and feelings during a short period of time that changed their lives. Support your answer with detailed examples from both texts, including brief quotations.',
-        skill: 'Comparison of ideas and perspectives (a practice pairing)',
+          'Practice pairing, not an exam pairing (in the exam this extract is compared with an unseen extract, Text One, never with another anthology text): compare how the writers of From Chinese Cinderella and From 127 Hours: Between a Rock and a Hard Place present their ideas and perspectives about a short period of time that changed their lives. Support your answer with detailed examples from both texts, including brief quotations.',
+        skill: 'Comparison of ideas and perspectives, practised with a second anthology text',
         guidance: [
           'Identify the common ground: both are first-person accounts that slow down a short span of time in which a life turns, one emotionally and one physically.',
           'Compare tense and viewpoint: Ralston narrates in the present tense, while Yen Mah writes in the past tense with hindsight but slips into present-tense thought at line 49.',
           'Compare how each builds tension before the crisis: Adeline’s dread on the way home (lines 14-37) and Ralston’s careful, technical account of the climb before the boulder moves.',
           'Compare the moment itself: both writers reach for the idea of a dream, Ralston as time seems to slow and Yen Mah as she reads the newspaper, but one moment brings disaster and the other joy.',
           'Compare the aftermath: Ralston’s panic and struggle against the rock, and Adeline’s silence and agreement, and what each writer wants the reader to feel.',
-          'Balance the two texts in every paragraph and keep the focus on thoughts and feelings rather than on retelling events.',
+          'Balance the two texts in every paragraph and keep the focus on ideas and perspectives, what each writer thought and felt, rather than on retelling events.',
+          'In the exam, use the same method on the unseen extract: you meet it for the first time on the day, so the points of comparison have to come from reading it there.',
         ],
       },
     ],
     tips: [
-      'The anthology text is printed for you in the examination, so there is no need to memorise quotations. Revise the shape of the extract instead, so that you can find the moment you need in seconds; the line numbers in this guide are the anthology’s own.',
+      'Know how this text is examined. When it is set, the extract is printed for you in the Source Booklet as Text Two, beside an unseen extract, Text One. The short-answer questions are all on the unseen extract. This extract has one question to itself, on how Yen Mah uses language and structure across the whole extract, and it is then compared with the unseen extract. Revise it for analysis and comparison, not retrieval.',
+      'Because the extract is printed for you, there is no need to memorise quotations. Revise the shape of the extract instead, so that you can find the moment you need in seconds. The line numbers in this guide are the anthology’s own; the Source Booklet prints the extract with its own line numbers, which need not match, so check a reference against the booklet before you use it.',
       'Cover structure as fully as language. For this text the strongest structural points are the journey inward to Father’s room, the newspaper report at the centre, the echoes across the extract (nightmare and dream, stars and starving, an ending and a dawn) and the way Adeline’s share of the dialogue shrinks.',
       'Keep the writer and the girl apart. Use Yen Mah for choices made in the writing and Adeline, or the young Adeline, for what she feels at fourteen. Much of the best analysis sits in the gap between them.',
       'Do not call the ending simply happy. A strong answer weighs what Adeline gains, England, university and her father’s approval, against what she gives up, her wish to write, and says which the writing makes the reader feel more.',
       'Use the idea of face only where it explains something in the text, such as why Father’s pride depends on C.Y. Tung. Context that is not attached to a quotation adds little.',
-      'Name a technique only when you can say what it does. The label simile earns nothing on its own; what the toothache suggests about a fear that will not go away is worth a great deal.',
-      'In a comparison, compare perspectives as well as methods: what each writer thinks and feels about the experience, and how each wants the reader to respond.',
+      'Name a technique only when you can say what it does. Calling something a simile and stopping there is basic identification, which the mark scheme places at its lowest level; what the toothache suggests about a fear that will not go away is what lifts an answer.',
+      'In the comparison question the other text is always the unseen extract, never another anthology text. Compare perspectives as well as methods: what each writer thinks and feels about the experience, and how each wants the reader to respond. Keep both texts in every paragraph: the mark scheme caps an answer that deals with only one of them.',
     ],
   },
 
@@ -715,6 +745,16 @@ export const guide: StudyGuide = {
       label:
         'Pearson 4EA1/01 question paper, November 2023: the wording of the anthology language-and-structure question and the comparison question, followed in the exam practice here (tariffs deliberately omitted)',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Language-A/2016/Exam-materials/4ea1-01-que-20231108.pdf',
+    },
+    {
+      label:
+        'Pearson 4EA1/01 mark scheme, November 2023: the short-answer questions are all on the unseen Text One, the anthology text’s own question is marked on one grid for language and structure together, and a comparison that deals with only one text is capped',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Language-A/2016/Exam-materials/4ea1-01-rms-20240125.pdf',
+    },
+    {
+      label:
+        'Pearson 4EA1/01 examiners’ report, June 2019: the unseen passage for the short-answer questions, the anthology text for the language and structure question, and the two compared in the last question of the section',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Language%20A/2016/exam-materials/4EA1_01_pef_20190822.pdf',
     },
     {
       label:

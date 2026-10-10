@@ -19,7 +19,8 @@ import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Chinese Cinderella - Adeline Yen Mah - IGCSE Anthology - The English Hub',
-    description: 'Study guide for ',
+    description:
+      'The Adeline Yen Mah anthology extract for Edexcel IGCSE Language A: themes, structural analysis, purpose and Paper 1 Section A practice.',
     images: [
       {
         url: '/api/og?title=Chinese+Cinderella+-+Adeline+Yen+Mah+-+IGCSE+Anthology+-+The+English+Hub',
@@ -37,57 +38,68 @@ export const metadata: Metadata = {
   },
 }
 
+// Until 26 September 2026 these described the whole book: a worth she
+// "slowly" came to suspect, "school success", an endurance that would
+// "eventually become success". The extract is one afternoon and the prize is
+// international. The labels are the ones the study guide's timeline tags its
+// scenes with, so keep them.
 const themes = [
   {
     label: 'Family rejection',
     detail:
-      'Yen Mah recounts a childhood in which she was treated as unwanted within her own family. The text registers the steady weight of being unloved.',
+      'The anthology’s introduction explains that her stepmother has rejected her and her brothers and sisters look down on her. The extract shows it without saying so: a call home makes her fear that someone has died, she does not know the house her family has moved to, and when she arrives her stepmother is out playing bridge and her brothers and sister are by the pool.',
   },
   {
     label: 'Identity and worth',
     detail:
-      'The young Adeline struggles to reconcile what she is told about herself with what she begins, slowly, to suspect she might be capable of.',
+      'Reading of her prize, Adeline can hardly believe that the winner is her. Her worth in her father’s eyes rises because she has given him face in front of a respected colleague, and when she names her own ambition, to be a writer, he dismisses it and decides that she will study medicine.',
   },
   {
     label: 'Resilience',
     detail:
-      'Despite emotional neglect, Yen Mah does not break. The text traces a quiet, stubborn endurance that will eventually become success.',
+      'Her resilience in the extract is quiet and practical. Her joke about how she won can be read as a way of keeping her father in a good mood, she dares to ask to go to university in England, and when he overrules her ambition she says nothing and agrees, because she would study anything to get there.',
   },
   {
     label: 'Recognition and validation',
     detail:
-      'A key turning point comes when an external achievement (school success) is finally acknowledged - even briefly - by family. The text shows what such recognition costs and means.',
+      'The recognition comes from outside the family: a newspaper report that she has won first prize in an international play-writing competition held in London. Father learns of it from a colleague and is openly proud, but within minutes he is deciding her future for her. The extract shows how much the recognition means to her and how little it changes who holds the power.',
   },
   {
     label: 'Childhood memory',
     detail:
-      'Written from adult perspective, the memoir reconstructs a child’s experience with adult understanding - without losing the child’s original feelings.',
+      'The extract is one remembered afternoon, told by the adult Yen Mah about herself at fourteen. It recreates the girl’s dread and joy as she felt them, while the adult chooses what to show and, now and then, judges her younger self.',
   },
 ]
 
+// Until 26 September 2026 the climax was set against a "long preceding
+// pattern of neglect" the extract never narrates, and the resolution did not
+// say what happens: Father overrules her wish to write and she agrees.
 const structuralAnalysis = {
   opening:
-    'Yen Mah opens with a small, specific moment that immediately situates the reader inside the young Adeline’s emotional world - concrete detail rather than abstract framing.',
+    'The extract opens on an ordinary Saturday at boarding school: a game of Monopoly, hot weather and a radio warning that a typhoon may come, while the thought that her schooling may soon end nags at Adeline. The calm surface is shadowed by worry before anything has happened.',
   // Until 26 September 2026 this described "accumulated incidents" that
   // "establish a pattern". The anthology extract (Issue 8, pp. 21-23) is one
   // continuous episode on a single Saturday afternoon.
   development:
     'The text follows a single continuous episode on one Saturday afternoon: Adeline is called away from a game of Monopoly at school, driven home full of foreboding, and summoned to her father’s room. Tension builds through her uncertainty about why she has been sent for.',
   climax:
-    'A moment of unexpected recognition or success becomes the structural climax, all the more powerful for being set against the long preceding pattern of neglect.',
+    'The turning point sits at the centre of the extract, when Father shows her a newspaper report: she has won first prize in an international play-writing competition held in London. Set against the dread that comes before it, the news turns fear into disbelief and then joy.',
   resolution:
-    'The resolution is bittersweet - recognition is granted but feels precarious. The text resists tidy redemption.',
+    'The ending is bittersweet. Father agrees that she may go to university in England, but mocks her wish to be a writer and decides that she will study medicine; she stays silent, then agrees and thanks him. Yen Mah offers no direct judgement, leaving the reader to weigh what Adeline has gained against what she has given up.',
   perspective:
-    'First-person memoir written by adult Yen Mah recounting her childhood. The two voices - child experiencing, adult understanding - work together throughout.',
+    'First-person autobiography, mostly in the past tense, written by the adult Yen Mah about herself at fourteen. Two perspectives work together: the girl’s feelings, sometimes given as present-tense thoughts, and the adult’s hindsight, which lets the reader see what the girl could not.',
 }
 
+// Until 26 September 2026 this had her finding proof of her worth
+// "elsewhere" and growing a self her family "failed to nurture": her later
+// life, not the extract, which ends with Father choosing her career.
 const writersPurpose = {
   achieve:
-    'Yen Mah wants to give voice to a childhood experience of being unwanted within one’s own family - an experience that is often invisible from the outside.',
+    'Yen Mah recreates one afternoon of her childhood that shows what it meant to be the unwanted daughter of the book’s subtitle: her father’s pride appears to be rare, is prompted from outside the family and comes with conditions.',
   readerFeel:
-    'She wants the reader to feel both the loneliness of the unloved child and the quiet hope of the child who is starting to find proof of her own worth elsewhere.',
+    'She wants the reader to share the girl’s dread, disbelief and joy, while seeing more clearly than the fourteen-year-old could how conditional her father’s approval is and what her agreement costs her.',
   message:
-    'Worth is not granted by family alone. A child’s achievements, recognised even briefly, can be the seed of a self that the family failed to nurture.',
+    'Recognition from outside the family can open a door, but it does not give a child control of her own future. The extract passes no verdict on the bargain Adeline accepts; it leaves the reader to judge it.',
 }
 
 /** The text these practice questions are about, sent to the marker as context. */
@@ -126,21 +138,28 @@ const examPractice = {
   },
 }
 
+// Until 26 September 2026 these had Alagiah reflecting on "early life events"
+// (in his extract he is an adult television reporter in Somalia) and Adeline
+// refusing "others' verdicts" (she agrees to her father's plan). The same day's
+// first rewrite gave a teacher calling Zephaniah stupid as an adult deciding
+// his future (the teacher who does that points him at football) and had
+// Adichie's roommate shocked at her English (she is shocked by Adichie, then
+// asks about her English).
 const comparisonLinks = [
   {
     title: 'A Passage to Africa',
     author: 'George Alagiah (1955-2023)',
     href: '/igcse/edexcel-lang/anthology/a-passage-to-africa',
     reason:
-      'Both writers reflect on early life events that shaped their adult selves. Compare the personal-childhood focus of Yen Mah with the witnessed-stranger focus of Alagiah.',
-    themes: ['Memoir', 'Identity', 'Reflection'],
+      'Both are first-person accounts, told with hindsight, of one day and a single encounter within it. Compare Yen Mah’s private, family focus, a daughter summoned by her father, with Alagiah’s account of a stranger he met briefly while reporting from Somalia for television.',
+    themes: ['Memoir', 'One encounter', 'Reflection'],
   },
   {
     title: 'Young and Dyslexic? You’ve Got It Going On',
     author: 'Benjamin Zephaniah (1958-2023)',
     href: '/igcse/edexcel-lang/anthology/young-and-dyslexic',
     reason:
-      'Both texts describe being misjudged by authority figures (family / school) and finding self-worth elsewhere. Compare the two narratives of overlooked young people who refused to accept others’ verdicts on them.',
+      'Both writers show an adult deciding what a young person can become: Father dismisses Adeline’s wish to be a writer, and when Zephaniah asks a teacher for help with his writing, the teacher tells him he will make a good sportsperson and suggests he go and play football. Compare their responses: Adeline stays silent and agrees, while Zephaniah often argued with his teachers and was expelled partly for it. Both became published writers.',
     themes: ['Self-worth', 'Resilience', 'Misjudgement'],
   },
   {
@@ -148,8 +167,8 @@ const comparisonLinks = [
     author: 'Chimamanda Ngozi Adichie',
     href: '/igcse/edexcel-lang/anthology/the-danger-of-a-single-story',
     reason:
-      'Both writers explore the harm of being defined by a single, reductive narrative. Compare Yen Mah’s family-imposed story with Adichie’s critique of cultural single stories.',
-    themes: ['Identity', 'Narrative', 'Self-definition'],
+      'Both writers were writing from a young age, and both had their English judged by someone with a limited view of them: Father doubts that Adeline could write English as well as a native speaker, and Adichie’s American roommate, shocked by her, asks where she learned such good English, not knowing that it is Nigeria’s official language. Compare Yen Mah’s private family scene with Adichie’s public argument about single stories.',
+    themes: ['Identity', 'Language', 'Being judged'],
   },
 ]
 
@@ -198,19 +217,30 @@ export default async function ChineseCinderellaPage() {
             {await t('anth_text.section.context')}
           </h2>
         </div>
+        {/* Until 26 September 2026 this described the whole book (1940s China, a
+            refuge in academic achievement) and called the prize a "small" moment in
+            her school life. The extract is one afternoon, mostly in Father's room,
+            and the prize is international. On 10 October 2026 the first paragraph
+            was reworded: it repeated nine words of the anthology's introduction
+            without quotation marks. Paraphrase the introduction, do not copy it. */}
         <div className="space-y-3 text-body-sm text-muted-foreground leading-relaxed">
           <p>
-            Adeline Yen Mah&apos;s <em>Chinese Cinderella</em> is the autobiographical account of
-            her childhood in 1940s and 1950s China and Hong Kong. Treated as unwanted by her
-            stepmother and largely overlooked by her father, the young Adeline found refuge in
-            academic achievement and, eventually, in writing.
+            <em>Chinese Cinderella</em> (Penguin, 1999) is Adeline Yen Mah&apos;s autobiography of
+            her childhood. As the anthology&apos;s introduction explains, her family was wealthy and
+            she grew up in Hong Kong in the 1950s, rejected by her stepmother, looked down on by her
+            brothers and sisters, and sent away to boarding school.
           </p>
           <p>
-            The anthology extract focuses on a moment in her school life that becomes a turning
-            point - a small but consequential instance of recognition that contrasts sharply with
-            the emotional neglect of her home.
+            The extract is a single episode on one Saturday afternoon, when Adeline is fourteen.
+            Called home from school to her father&apos;s room, she learns that she has won first
+            prize in an international play-writing competition held in London. Father is proud and
+            agrees that she may go to university in England, but when she says she wants to be a
+            writer he mocks the idea and decides that she will study medicine.
           </p>
-          <p>Published by Penguin.</p>
+          <p>
+            Outside the extract, Yen Mah did go to England, qualified in medicine in London in 1960
+            and later became a published writer.
+          </p>
         </div>
       </section>
 
@@ -348,9 +378,8 @@ export default async function ChineseCinderellaPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          {await t('anth_text.compare_with.intro')} In the exam, though, this text is always
-          compared with an unseen passage, never another anthology text, so these pairings are for
-          revision.
+          {await t('anth_text.compare_with.intro')} In the exam, this text is always compared with
+          an unseen passage, never another anthology text, so these pairings are for revision.
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (
@@ -382,9 +411,15 @@ export default async function ChineseCinderellaPage() {
       <footer className="rounded-lg bg-muted/50 p-4 text-center text-body-xs text-muted-foreground">
         <p>
           <strong className="text-foreground">{await t('anth_text.rights_notice_label')}</strong>{' '}
-          &copy; Penguin / Adeline Yen Mah. Brief paraphrases on this page are for criticism, review
-          and quotation under CDPA 1988 &sect;30. For full text, students should consult the
-          licensed school edition (Pearson Edexcel IGCSE anthology, ISBN 978-1-446-93108-0).
+          {/* As the anthology's acknowledgements give it. Penguin is the publisher,
+              not the copyright holder; until 26 September 2026 this read "Penguin /
+              Adeline Yen Mah" and sent students to a licensed school edition. */}
+          &copy; Adeline Yen Mah 1999, from <em>Chinese Cinderella</em> (Penguin, 1999), reproduced
+          in the anthology with permission of Penguin Books Ltd; Delacorte Press, an imprint of
+          Random House Children&apos;s Books, a division of Penguin Random House LLC; and Penguin
+          Random House Australia. Brief paraphrases on this page are for criticism, review and
+          quotation under CDPA 1988 &sect;30. For the full text, use the Pearson Edexcel IGCSE
+          anthology (ISBN 978-1-446-93108-0), which Pearson publishes free.
         </p>
         <p className="mt-2">{await t('anth_text.footer_align')}</p>
       </footer>

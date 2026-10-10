@@ -43,6 +43,31 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * on the indefinite article, not on the small g alone; Bloodaxe now gives her
  * home as London; War Photographer's Belfast is not a "poorer place"; the
  * mark-scheme summary now follows its actual level wording.
+ *
+ * EXAM FORMAT, checked 10 October 2026 against the 4ET1 specification (Issue
+ * 3, August 2025), Pearson's summaries of questions set, and the Paper 1
+ * question papers, mark schemes and examiner reports to June 2025. Section B
+ * is one question from a choice of two, and both are comparisons: Question 2
+ * names both poems, Question 3 names one and the student chooses the second.
+ * A Poetry Booklet of all the Part 3 poems comes with every paper, and context
+ * is not assessed in the section. The guide read as a memory test: two tips
+ * said to learn a line and learn phrases, and the model answer's commentary
+ * spoke of using a poem without the text in front of you. They now say to
+ * quote from the booklet. The extract questions read as exam questions on
+ * line ranges, which this exam never sets, so they are labelled close-reading
+ * practice. The exam section described only the June 2024 paper; it now gives
+ * the pattern, the 40 minutes, the one-poem cap at the top of Level 2 and the
+ * five papers that set Blessing, and a new first tip says what the section
+ * sets. No mark tariff in the tips: the validator keeps those out of exam
+ * practice.
+ *
+ * Re-checked the same day. A tip said the mark scheme "holds" a one-poem
+ * answer at the top of Level 2, which reads as a placement; it is a ceiling.
+ * The exam section said nothing has to be quoted from memory, which is untrue
+ * of the paper's closed-book prose section, so it now says no poem in this
+ * section. The single-poem task in exam practice is now labelled not an exam
+ * question, as the extract questions are, and the quote note says study the
+ * other lines rather than learn them.
  */
 export const guide: StudyGuide = {
   slug: 'blessing',
@@ -64,7 +89,7 @@ export const guide: StudyGuide = {
   },
 
   quoteNote:
-    'Blessing is in copyright and only 100 words long, so this page quotes no more than 15 of its words in all, and every quotation is a short phrase. Everything else is described in our own words with a stanza and line number from the anthology, page 53, so you can read the surrounding lines in your own copy. Learn the other lines from the anthology itself, not from websites or other books: some print them wrongly.',
+    'Blessing is in copyright and only 100 words long, so this page quotes no more than 15 of its words in all, and every quotation is a short phrase. Everything else is described in our own words with a stanza and line number from the anthology, page 53, so you can read the surrounding lines in your own copy. Study the other lines in the anthology itself, not on websites or in other books: some print them wrongly.',
 
   overview: {
     summary: [
@@ -98,7 +123,7 @@ export const guide: StudyGuide = {
     },
     {
       heading: 'Blessing in the exam',
-      body: 'Blessing is one of the sixteen poems in Part 3 of the anthology, all of which are prescribed for English Literature (4ET1) and none of which is examined in English Language A. In Paper 1, Section B, the questions ask you to compare two poems. In the June 2024 paper one question named both poems, and the other named one poem and asked you to choose a second from the anthology. The published mark scheme for that paper says that summarising, paraphrasing or simply listing devices is not enough, that the strongest answers compare the poems across a wide range of similarities and differences with well-chosen examples, and that an answer which discusses only one poem cannot rise above a low level however good it is. So learn Blessing alongside two or three poems it compares with well: the suggestions at the foot of this page are a start.',
+      body: 'Blessing is one of the sixteen poems in Part 3 of the anthology, all of which are prescribed for English Literature (4ET1) and none of which is examined in English Language A. Part 3 is examined in Paper 1 (Component 1 in the current specification), Section B: you answer one question from a choice of two, worth 30 of the paper’s 90 marks, with about 40 minutes advised. Both questions ask you to compare two Part 3 poems. Question 2 names both poems; Question 3 names one and asks you to choose a second from the anthology, which must be a poem in which the question’s focus is significant. Every Section B from Pearson’s sample papers to June 2025 follows that pattern. No poem in this section has to be quoted from memory: the paper is otherwise closed book, but a Poetry Booklet holding all the Part 3 poems comes with it. The section rewards two skills, analysing language, form and structure and comparing the poems; context is not one of them, so use it only where it sharpens a reading. Pearson’s mark schemes say that summarising, paraphrasing or simply listing devices is not enough, that the strongest answers compare the poems across a wide range of similarities and differences with well-chosen examples, and that an answer which discusses only one poem cannot go beyond the top of Level 2, 12 marks out of 30, however good it is. In those papers Blessing was set five times: in Question 2 with War Photographer in the sample assessment materials (powerful images) and in June 2025 (different types of experience), and with The Tyger in the November 2020 R paper, the version sat in countries far from UK time (a sense of wonder); and in Question 3 in June 2019 (a moment in time) and January 2023 (the story of an event). Because Question 2 can pair it with any other Part 3 poem, know all sixteen; for Question 3, have two or three partners ready that suit different focuses: the suggestions at the foot of this page are a start.',
     },
   ],
 
@@ -240,7 +265,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Dharker use language and structure in lines 1-6 to present the effects of drought on the people of the poem?',
+        'Close-reading practice, not an exam question (in the exam, Blessing is always one of two whole poems you compare). How does Dharker use language and structure in lines 1-6 to present the effects of drought on the people of the poem?',
     },
     {
       title: 'The pipe bursts',
@@ -268,7 +293,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Dharker use language and structure in stanza 3 to convey the excitement and urgency of the moment the pipe bursts?',
+        'Close-reading practice, not an exam question (in the exam, Blessing is always one of two whole poems you compare). How does Dharker use language and structure in stanza 3 to convey the excitement and urgency of the moment the pipe bursts?',
     },
     {
       title: 'The children in the spray',
@@ -292,7 +317,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Dharker use language and form in the final stanza to present the children, and how does the ending affect your response to the poem as a whole?',
+        'Close-reading practice, not an exam question (in the exam, Blessing is always one of two whole poems you compare). How does Dharker use language and form in the final stanza to present the children, and how does the ending affect your response to the poem as a whole?',
     },
   ],
 
@@ -546,7 +571,7 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Practice for the Blessing half of an essay: how does Dharker use language, form and structure to present the importance of water?',
+          'Practice for the Blessing half of a comparison, not an exam question (in the exam, Blessing is always one of two whole poems you compare): how does Dharker use language, form and structure to present the importance of water?',
         skill: 'Language, form and structure analysis of one poem',
         guidance: [
           'Open with an argument: water is presented as holy, as wealth and as joy, and every one of those images also reminds us of how scarce it is.',
@@ -559,14 +584,15 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
-      'Learn line 2 exactly as your anthology prints it. Its word order is unusual, and it is often misquoted in the ordinary order, even in a proof of one of Pearson’s own textbooks.',
+      'Know what Section B sets. You answer one of two questions, and both compare two Part 3 poems: one names both, and the other names one and lets you choose a second in which the question’s focus is significant. About 40 minutes is advised, and both poems are in the Poetry Booklet given out with the paper. The marks are for analysing language, form and structure and for comparing; context is not assessed here, so use it only where it sharpens a reading.',
+      'Quote line 2 exactly as it is printed: in the exam, copy it from the Poetry Booklet rather than from memory. Its word order is unusual, and it is often misquoted in the ordinary order, even in a proof of one of Pearson’s own textbooks.',
       'Refer to stanzas and lines. The poem has four stanzas of 2, 4, 11 and 6 lines, and the anthology numbers every fifth line, so an examiner can find every reference.',
       'Do not state as fact that the poem is about Dharavi. The poem names no place. You can say it is set in a poor neighbourhood of a hot city, and that Pearson places it in Bombay in the dry season.',
       'Follow the shape. The strongest answers show how the poem moves from drought, to imagining, to flood, to the children, and how its stanzas, sentences and sounds grow with the water.',
       'Argue about the title. Say whether you read the religious language as sincere wonder, as irony, or as both, and say which you find more convincing and why.',
       'Do not stop at the joy. The last phrase, “small bones”, changes the whole poem, and an answer that ignores it has missed the turn.',
-      'Keep both poems in every paragraph. The mark scheme holds back an answer that discusses only one poem, and it says that listing devices or retelling the poem is not enough.',
-      'Learn short phrases, not whole lines. Two or three words embedded in your own sentence leave more room for analysis, and Blessing rewards close attention to single words.',
+      'Keep both poems in every paragraph. The mark scheme will not take an answer that discusses only one poem beyond the top of Level 2 of five, however good it is, and it says that listing devices or retelling the poem is not enough.',
+      'Quote short phrases, not whole lines. With both poems in front of you, the skill is in the choosing: two or three words embedded in your own sentence leave more room for analysis, and Blessing rewards close attention to single words.',
     ],
   },
 
@@ -581,7 +607,7 @@ export const guide: StudyGuide = {
       'It offers an interpretation with appropriate caution, that the ending sounds almost like a burial prayer, and grounds it in the text rather than asserting it as fact.',
       'It moves from language to structure, showing how the sentence running from line 11 to the end shapes the reader’s experience of the ending.',
       'It keeps both poems in the same paragraph and compares their purposes as well as their content, which is what separates developed comparison from two separate analyses.',
-      'Every quotation is brief and embedded, and the partner poem is referred to through precise details, the landmined fields and the Sunday readers, which is how to use a poem you have learned without the text in front of you.',
+      'Every quotation is brief and embedded, and the partner poem is referred to through precise details, the landmined fields and the Sunday readers. In the exam both poems are in the Poetry Booklet in front of you, so choose the details that serve the comparison, and quote a word or two from the partner poem as well where it helps.',
     ],
   },
 
@@ -696,6 +722,26 @@ export const guide: StudyGuide = {
     {
       label:
         'Pearson Edexcel International GCSE English Literature (4ET1) Paper 1R, Mark Scheme (Results), June 2024, Section B: the two question shapes (two named poems; one named poem and one of the candidate’s choice), the warning against summary and device-listing, and the limit on an answer that considers only one poem. Read from a local copy on 25 September 2026.',
+    },
+    {
+      label:
+        'Pearson Edexcel International GCSE English Literature (4ET1) specification, Issue 3, August 2025, Component 1 overview: Section B is one 30-mark question from a choice of two, comparing two Part 3 poems, and assesses analysis of language, form and structure and links between texts; the paper is closed book, but the anthology poems are provided. Read on 10 October 2026.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Specification%20and%20sample%20assessments/international-gcse-english-literature-specification.pdf',
+    },
+    {
+      label:
+        'Pearson Edexcel International GCSE English Literature (4ET1) Paper 1, June 2025, question paper: Question 2 pairs Blessing with War Photographer, Section B advises 40 minutes, and the Part 3 Poetry Booklet comes with the paper, numbering every fifth line as the anthology does. Read on 10 October 2026.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20250513.pdf',
+    },
+    {
+      label:
+        'Pearson, examiner report on 4ET1 Paper 1, June 2025: candidates have a clean copy of the anthology poems, about 40 minutes is advised for the anthology question, and context is not assessed in either poetry section. Read on 10 October 2026.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-pef-20250821.pdf',
+    },
+    {
+      label:
+        'Pearson, summaries of questions set for 4ET1 (sample assessment materials to January 2019; June 2019 to November 2020; January to November 2023), with the question papers of June 2019, January 2023, June 2024 (Paper 1 and 1R), November 2024 and June 2025 (Paper 1 and 1R): every Section B in the same two shapes, and Blessing set in five of them. Read on 10 October 2026.',
+      url: 'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-english-literature-2016.html',
     },
     {
       label:

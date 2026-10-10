@@ -46,6 +46,23 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * Kipling's own father; the speaker was called "the object of almost every
  * verb", which the grammar does not bear out; and a few readings were being
  * stated as facts.
+ *
+ * EXAM FORMAT (10 October 2026), checked against the 4ET1 specification (Issue
+ * 3, August 2025) and the Paper 1 question papers and mark schemes from the
+ * specimen to June 2025. Section B is always a comparison of two Part 3 poems:
+ * one question names both, the other names one and leaves the second to the
+ * student, and every Part 3 poem is supplied in a Poetry Booklet. The four exam
+ * questions and the model answer already take those two shapes and are kept.
+ * The three extract questions were exam-shaped tasks on four lines of Piano
+ * alone, shown under the label "The question". No paper sets a single-poem task
+ * on an anthology poem (the single-poem question is Section A's, on an unseen
+ * poem), so each now says it is close-reading practice. No mark tariff is given
+ * here: the validator keeps those to ExamPlacementCard. The context entry on the
+ * two versions said the direction of the revision is what matters for an essay;
+ * drafting history is context, which Section B does not credit, so it now says
+ * the revision is worth a mention only where it sharpens a reading. And the
+ * specification's source label said Paper 1, a name Issue 3 never uses (it says
+ * Component 1); the question papers still print Paper 1, so both are given.
  */
 export const guide: StudyGuide = {
   slug: 'piano',
@@ -88,7 +105,7 @@ export const guide: StudyGuide = {
     },
     {
       heading: 'Two versions of the poem',
-      body: 'Piano was collected in New Poems, published in London by Martin Secker in October 1918 and dedicated to the American poet Amy Lowell. An earlier and longer version survives in one of Lawrence’s notebooks. The poet George Szirtes prints it on his blog beside the published poem: it runs to twenty lines against the published twelve, and it includes a description of the mother’s own small brown piano and a sister singing at home, both of which are gone from the final version. Sources give different dates for the draft and the revision, and neither could be confirmed, so no date is given here. What matters for an essay is the direction of the revision. One way to describe it, close to Szirtes’s own, is that Lawrence cut explanation and kept sensation, so the finished poem is built almost entirely from the child under the piano, the Sunday hymns and the adult’s tears.',
+      body: 'Piano was collected in New Poems, published in London by Martin Secker in October 1918 and dedicated to the American poet Amy Lowell. An earlier and longer version survives in one of Lawrence’s notebooks. The poet George Szirtes prints it on his blog beside the published poem: it runs to twenty lines against the published twelve, and it includes a description of the mother’s own small brown piano and a sister singing at home, both of which are gone from the final version. Sources give different dates for the draft and the revision, and neither could be confirmed, so no date is given here. Drafting history is context, which Section B does not reward, so in an essay the revision is worth a mention only where it sharpens a reading of the published poem. One way to describe the direction of the revision, close to Szirtes’s own, is that Lawrence cut explanation and kept sensation, so the finished poem is built almost entirely from the child under the piano, the Sunday hymns and the adult’s tears.',
     },
     {
       heading: 'Music in the family parlour',
@@ -176,7 +193,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Explore how Lawrence presents the speaker’s memory of childhood in lines 1 to 4. You should write about the move from the present to the past, the images of the child and the mother, and the use of sound.',
+        'Close-reading practice, not an exam question (the exam only asks about Piano in a comparison with another Part 3 poem). Explore how Lawrence presents the speaker’s memory of childhood in lines 1 to 4. You should write about the move from the present to the past, the images of the child and the mother, and the use of sound.',
     },
     {
       title: 'Betrayed back to Sunday evenings',
@@ -211,7 +228,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Lawrence use language in lines 5 to 8 to present the speaker’s feelings about the past? Refer closely to the words and phrases he uses.',
+        'Close-reading practice, not an exam question (the exam only asks about Piano in a comparison with another Part 3 poem). How does Lawrence use language in lines 5 to 8 to present the speaker’s feelings about the past? Refer closely to the words and phrases he uses.',
     },
     {
       title: 'The flood of remembrance',
@@ -246,7 +263,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Explore how Lawrence presents the speaker’s loss of control in lines 9 to 12. You should write about the contrast between present and past, the choice of words, and the way the lines are structured.',
+        'Close-reading practice, not an exam question (the exam only asks about Piano in a comparison with another Part 3 poem). Explore how Lawrence presents the speaker’s loss of control in lines 9 to 12. You should write about the contrast between present and past, the choice of words, and the way the lines are structured.',
     },
   ],
 
@@ -599,7 +616,7 @@ export const guide: StudyGuide = {
     },
     {
       label:
-        'Pearson Edexcel International GCSE in English Literature (4ET1) specification, Issue 3 (August 2025): Paper 1 Section B is a choice of two essay questions comparing two Part 3 poems; closed book, with the anthology poems provided in the examination; the section assesses language, form and structure and comparison, not context. Read from Pearson’s PDF, 26 September 2026. The anthology’s introduction adds that a Poetry Booklet of all the Part 3 poems is provided as an insert with the question paper.',
+        'Pearson Edexcel International GCSE in English Literature (4ET1) specification, Issue 3 (August 2025): Component 1 Section B, printed as Paper 1 on the question papers, is a choice of two essay questions comparing two Part 3 poems; closed book, with the anthology poems provided in the examination; the section assesses language, form and structure and comparison, not context. Read from Pearson’s PDF, 26 September 2026. The anthology’s introduction adds that a Poetry Booklet of all the Part 3 poems is provided as an insert with the question paper.',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Specification%20and%20sample%20assessments/international-gcse-english-literature-specification.pdf',
     },
     {

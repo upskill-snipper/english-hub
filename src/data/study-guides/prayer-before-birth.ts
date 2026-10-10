@@ -59,6 +59,42 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * tips (36 or 37 in 1944, not late thirties); and two places that implied
  * context is credited in Section B, which the specification says assesses
  * language, form and structure, and comparison only.
+ *
+ * EXAM-FORMAT AUDIT, 10 October 2026, against the specification, the specimen,
+ * the June 2019 and June 2025 Paper 1 question papers, the June 2024 and June
+ * 2025 mark schemes and Pearson's summaries of questions set. Section B is one
+ * question from a choice of two, both comparisons of two Part 3 poems: one
+ * names both, the other names one and the candidate chooses a second in which
+ * the question's focus is significant. Pearson advises 40 minutes, an answer on
+ * one poem cannot go beyond the top of Level 2 (of five), and context is not
+ * assessed. No anthology poem is printed in the question booklet: a separate
+ * Poetry Booklet holds all of Part 3, and in the nine papers checked, June
+ * 2019 to June 2025, it gives this poem the anthology's words line for line
+ * and numbers every fifth line, so this guide's line numbers hold in the exam.
+ * Changed: the single-poem essay and the three passage questions now say they
+ * are practice; a first tip says what the paper sets; the booklet and
+ * comparison tips say what the booklet holds and what a one-poem answer
+ * loses; the record of questions, which named only the specimen, names the
+ * four papers to June 2025 that set the poem (specimen, June 2019, June 2023 R,
+ * June 2025; later papers are behind Pearson's login); and the If- essay no
+ * longer ends on context. AQA, Pearson 1ET0 and Eduqas do not set the poem
+ * and OCR's list could not be read, so only 4ET1 is described (the modular
+ * 4XET1 was not checked). Do not add a single-poem exam question or a line
+ * range on an exam question, which no test catches, or a mark tariff, which
+ * the validator rejects because placement facts belong to ExamPlacementCard.
+ *
+ * THAT AUDIT RE-CHECKED, 10 October 2026, by script against the same Pearson
+ * PDFs and the Issue 8 text, printing no poem text: the question record, the
+ * nine booklets (39 lines each, every word as on page 52, margin numbers 5 to
+ * 35) and every quotation on the page, each on the line the guide gives it.
+ * Corrected: the question-record tip named two mark schemes that suggest the
+ * poem as a second poem, as if there were no others, though the November 2024
+ * and June 2025 R mark schemes suggest it too; the first tip did not say
+ * outright that the chosen poem must come from Part 3, though the question's
+ * own words allow any poem in an anthology that also holds the Language A
+ * poems of Part 2; and the booklet tip said every Paper 1 comes with a printed
+ * booklet, though the current specification also offers the paper on screen
+ * and promises only that the poems are provided.
  */
 export const guide: StudyGuide = {
   slug: 'prayer-before-birth',
@@ -259,7 +295,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Look at lines 1 to 7. How does MacNeice present the unborn child’s fears in these lines? Refer closely to his language and to the way the two stanzas are arranged.',
+        'Close-reading practice on lines 1 to 7, not an exam question (the exam compares two whole poems): how does MacNeice present the unborn child’s fears in these lines? Refer closely to his language and to the way the two stanzas are arranged.',
     },
     {
       title: 'Hope, then guilt',
@@ -283,7 +319,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Look at lines 8 to 17. How does MacNeice use the contrast between these two stanzas to present the world the child is about to enter?',
+        'Close-reading practice on lines 8 to 17, not an exam question (the exam compares two whole poems): how does MacNeice use the contrast between these two stanzas to present the world the child is about to enter?',
     },
     {
       title: 'The machine and the ultimatum',
@@ -315,7 +351,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Look at lines 25 to 39. How does MacNeice build the poem towards its ending? Refer to language, form and structure.',
+        'Close-reading practice on lines 25 to 39, not an exam question (the exam compares two whole poems): how does MacNeice build the poem towards its ending? Refer to language, form and structure.',
     },
   ],
 
@@ -560,7 +596,7 @@ export const guide: StudyGuide = {
           'Compare the view of other people: in If- others doubt, lie and hate, but can be endured; in Prayer Before Birth they lie, torture and turn the child into a machine.',
           'Compare form: Kipling’s regular stanzas and tight rhymes suggest control and confidence; MacNeice’s free verse, swelling stanzas and stepped lines suggest panic.',
           'Compare voice: an adult speaking from experience, against a speaker with no experience at all.',
-          'Conclude on which vision of the future is more convincing, and how each suits the moment it was written in.',
+          'Conclude on which vision of the future is more convincing, and why, from the evidence of the two poems: context is not assessed in this section, so the dates they were written earn nothing on their own.',
         ],
       },
       {
@@ -591,7 +627,7 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'How does MacNeice present the threats of the adult world in Prayer Before Birth?',
+          'Practice for the Prayer Before Birth half of a comparison, not an exam question: how does MacNeice present the threats of the adult world?',
         skill:
           'Single-poem practice: language, form and structure, as the first half of a comparison',
         guidance: [
@@ -600,14 +636,16 @@ export const guide: StudyGuide = {
           'Explore the guilt of stanza 4 and the grammar of “my death when they live me”.',
           'Analyse stanza 6 as a human monster in the place of the ghoul.',
           'Analyse the machine imagery of stanza 7 and the ultimatum of stanza 8.',
-          'Context is not assessed in this section, so bring it in only where it explains a line: conscription with the “lethal automaton”, the Blitz with the violence of stanza 2. Then practise adding a second poem.',
+          'Context is not assessed in Section B, so bring it in only where it explains a line: conscription with the “lethal automaton”, the Blitz with the violence of stanza 2.',
+          'In the exam this becomes one half of a comparison. Both Section B questions ask for two poems, and the mark scheme holds an answer on one poem alone to the top of Level 2 of its five levels, so practise ending each paragraph with a sentence that could link to a second poem, such as If- or Hide and Seek.',
         ],
       },
     ],
     tips: [
-      'The specification says the anthology poems are provided in the exam, so learning the poem by heart matters less than knowing it well. Refer to stanza and line numbers, and quote short phrases exactly from the printed page.',
-      'Always compare. This section asks for two poems, so keep both in every paragraph rather than writing two separate essays with a sentence of comparison at the end.',
-      'Pearson’s specimen paper set this poem with a task on a strong point of view, and a later paper set If- with ideas about the future. Expect questions on fear, the future, innocence, the power of the state, or prayer and pleading.',
+      'Know what the paper sets. This poem is examined in Section B of Paper 1 (Component 1 in the current specification) of Pearson Edexcel International GCSE English Literature, 4ET1. You answer one question from a choice of two, with 40 minutes advised, and both compare two Part 3 poems, asking you to refer to language, form and structure. One question names both poems. The other names one and lets you choose one other poem from the anthology, which must also come from Part 3 and, the mark scheme says, be one in which the question’s focus is significant. Context is not assessed in this section.',
+      'You will have the poem in front of you: the specification says the anthology poems are provided in the exam, which can be sat on paper or on screen. The printed paper comes with a separate Poetry Booklet of all the Part 3 poems, so you will also have whichever second poem you choose. In every booklet checked for this guide, from June 2019 to June 2025, this poem has the anthology’s words line for line, with every fifth line numbered, so the line numbers in this guide match it. Learning it by heart matters less than knowing it well: refer to stanzas and lines, and quote short phrases exactly from the page in front of you.',
+      'Always compare. Both questions ask for two poems, and the mark scheme holds an answer that discusses only one poem to the top of Level 2 of its five levels, however good it is. Keep both poems in every paragraph rather than writing two separate essays with a sentence of comparison at the end.',
+      'Pearson’s specimen paper set this poem with a task on a strong point of view, and so did the June 2025 paper. June 2019 paired it with Half-caste on concerns about society, and the June 2023 R paper (the version sat in countries far from UK time) paired it with If- on thoughts about life; the June 2018 R paper set If- with ideas about the future. Mark schemes have also listed this poem among suitable second poems for questions on other themes, including being alone, giving advice, vivid descriptions and suffering. Expect questions on fear, the future, innocence, the power of the state, or prayer and pleading.',
       'Keep MacNeice and the speaker apart. The unborn child is a created voice; MacNeice was a BBC writer of 36 or 37 when he wrote it. Refer to the child when you analyse what the poem says, and to MacNeice when you discuss the choices he made.',
       'Do not tie the poem to a single event or call it a Holocaust poem. It names no war, country or enemy. Say it was written in wartime London in 1944, and let the images carry the context.',
       'Use structure as evidence. Every stanza ends on “me”, the stanzas swell to ten lines and collapse to two, and the final stanza drops the refrain. Points like these are what separate strong answers from competent ones.',
@@ -855,13 +893,53 @@ export const guide: StudyGuide = {
     },
     {
       label:
-        'Pearson Edexcel International GCSE English Literature (4ET1) Specification, Issue 3, August 2025: Component 1 Section B compares two poems from Part 3 of the anthology and assesses language, form and structure, and comparison, with context assessed in Section C; closed book, but the anthology poems are provided in the examination',
+        'Pearson Edexcel International GCSE English Literature (4ET1) Specification, Issue 3, August 2025: Component 1 Section B compares two poems from Part 3 of the anthology and assesses language, form and structure, and comparison, with context assessed in Section C; closed book, but the anthology poems are provided in the examination; the component can be sat on paper or on screen',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Specification%20and%20sample%20assessments/international-gcse-english-literature-specification.pdf',
     },
     {
       label:
         'Pearson, summary of questions set for 4ET1, sample assessments to January 2019: the specimen paper asks for a comparison of a strong point of view in Prayer Before Birth and one other poem; the June 2018 R paper asks about ideas about the future in If- and one other poem',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Teaching%20and%20learning%20materials/summary-of-questions-set-for-4et1-sams-to-january-2019.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1/01 question paper, June 2019 (P57066A), read on 10 October 2026: Section B, one question from two with 40 minutes advised; question 2 compares concerns about society in Prayer Before Birth and Half-caste. The Poetry Booklet issued with it gives the poem the anthology’s words line for line and numbers every fifth line, as do the booklets of the January, June and November 2023, June 2024 (01 and 01R), November 2024 and June 2025 (01 and 01R) papers',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/exam-materials/4ET1_01_que_20190516.pdf',
+    },
+    {
+      label:
+        'Pearson, summary of questions set for 4ET1, January to November 2023 (Issue 1, April 2024): the June 2023 R paper, question 2, compares thoughts about life in If- and Prayer Before Birth',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Teaching%20and%20learning%20materials/summary-of-questions-set-for-4et1.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1/01 question paper, June 2025 (P77906A), read on 10 October 2026: question 3 compares a strong point of view in Prayer Before Birth and one other poem from the anthology; 40 minutes advised for Section B; the poems come in a separate Poetry Booklet, not in the question booklet',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20250513.pdf',
+    },
+    {
+      label:
+        'Pearson mark scheme, June 2025, 4ET1/01: for question 3 the second poem must be one in which a strong point of view is significant; in both Section B questions the mark cannot go beyond the top of Level 2, of five, if only one poem has been considered',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-rms-20250821.pdf',
+    },
+    {
+      label:
+        'Pearson mark scheme, June 2024, 4ET1/01, question 3 (being alone in Half-past Two and one other poem): Prayer Before Birth is among the suggested second poems',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-rms-20240822.pdf',
+    },
+    {
+      label:
+        'Pearson mark scheme, June 2024, 4ET1/01R, question 3 (giving advice in If- and one other poem): Prayer Before Birth is among the suggested second poems',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01r-rms-20240822.pdf',
+    },
+    {
+      label:
+        'Pearson mark scheme, November 2024, 4ET1/01, question 3 (vivid descriptions in Hide and Seek and one other poem): Prayer Before Birth is among the suggested second poems',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-rms-20250123.pdf',
+    },
+    {
+      label:
+        'Pearson mark scheme, June 2025, 4ET1/01R, question 3 (suffering in War Photographer and one other poem): Prayer Before Birth is among the suggested second poems',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01r-rms-20250821.pdf',
     },
     {
       label:

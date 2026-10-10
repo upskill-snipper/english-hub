@@ -66,6 +66,45 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  *   "the envoy speaks for him" of a man who never speaks, "sittings" for a
  *   portrait done in a day, dramatic irony claimed for what the same sentence
  *   called a deliberate pose, and readings stated as facts.
+ *
+ * EXAM-FORMAT AUDIT, 10 October 2026, against the 4ET1 specification (Issue 3,
+ * August 2025), ten Paper 1 question papers from the specimen to June 2025,
+ * most with their mark schemes and examiners' reports, and the AQA 8702 and
+ * Pearson 1ET0 specifications. Section B of 4ET1 Paper 1 offers two questions
+ * and the candidate answers one, in about 40 minutes. Both are comparisons: Q2
+ * names two Part 3 poems, and Q3 names one and leaves the candidate to choose a
+ * second from Part 3 that suits the question's focus. Every Part 3 poem is in a
+ * separate Poetry Booklet issued with the paper, and this one is printed there
+ * with its lines numbered in fives (checked by script in nine live papers, June
+ * 2019 to June 2025, each number on the line the anthology gives it). AQA and
+ * 1ET0 also set a comparison, but print only the named poem. None of the three
+ * sets a question on a few lines of it. So:
+ * - the three passage questions, exam-shaped tasks on line ranges under the
+ *   label "The question", now say they are close-reading practice;
+ * - the four practice questions in the International GCSE's form named no
+ *   board, or only "Edexcel", which a student of the Edexcel GCSE (1ET0), whose
+ *   paper names one poem and prints only that one, could take for their own;
+ *   their badges now name the International GCSE, and say Part 3 where the
+ *   student chooses the second poem;
+ * - the one-poem cap now says where it falls (the top of Level 2 of five) and
+ *   whose mark scheme sets it, instead of "the Edexcel mark scheme";
+ * - a first tip says what Section B sets, and four new sources record where
+ *   each part of it was read.
+ * The AQA practice question was checked again, word for word, against the
+ * June 2023 8702/2 paper (question 26), and the poems its guidance credits to
+ * AQA's mark scheme against that question's indicative content. No mark
+ * tariffs: the validator keeps those to ExamPlacementCard.
+ *
+ * VERIFIED the same day, 10 October 2026, and four things corrected. The
+ * close-reading label said "the GCSE and International GCSE exams" ask for a
+ * comparison, which speaks for boards whose papers were not read here, so it
+ * now names the three that were. The theme on art and the Sonnet 116 card
+ * still cited "the November 2023 Edexcel paper", which a 1ET0 student could
+ * take for their own, so both now say International GCSE, as the tips do. This
+ * note and the sources no longer read as if the papers checked were all there
+ * were: Pearson set others, Paper 1R among them, between the specimen and June
+ * 2025. And the source for AQA's mark scheme now lists Exposure, which the
+ * fifth practice question's guidance credits to it.
  */
 export const guide: StudyGuide = {
   slug: 'my-last-duchess',
@@ -113,7 +152,7 @@ export const guide: StudyGuide = {
     },
     {
       title: 'Art and the frozen life',
-      body: "The poem begins with a painting and ends with a statue, and between them the Duchess changes from a woman into a work of art. The portrait is so lifelike that she is “Looking as if she were alive” (line 2), and when the story of how her smiles stopped is over, the phrase returns, shortened: “As if alive” (line 47). The repetition closes the circle of the story and makes the words as if carry their full weight. The painting preserves exactly what the Duke resented, “The depth and passion of its earnest glance” (line 8), but that glance is now his to reveal or to hide behind a curtain. The examiners' report on the November 2023 Edexcel paper noted that some very able candidates read the portrait as an attempt to fix time, and it is a productive idea: art gives the Duke a wife who can no longer smile at anyone else. There is another way to see it. The painting is also the one place where the Duchess still unsettles people. Strangers still seem to ask “How such a glance came there” (line 12), and the Duke still has to explain her. In that reading, Frà Pandolf's work keeps alive the very joy the Duke tried to stop.",
+      body: "The poem begins with a painting and ends with a statue, and between them the Duchess changes from a woman into a work of art. The portrait is so lifelike that she is “Looking as if she were alive” (line 2), and when the story of how her smiles stopped is over, the phrase returns, shortened: “As if alive” (line 47). The repetition closes the circle of the story and makes the words as if carry their full weight. The painting preserves exactly what the Duke resented, “The depth and passion of its earnest glance” (line 8), but that glance is now his to reveal or to hide behind a curtain. The examiners' report on the November 2023 Edexcel International GCSE paper noted that some very able candidates read the portrait as an attempt to fix time, and it is a productive idea: art gives the Duke a wife who can no longer smile at anyone else. There is another way to see it. The painting is also the one place where the Duchess still unsettles people. Strangers still seem to ask “How such a glance came there” (line 12), and the Duke still has to explain her. In that reading, Frà Pandolf's work keeps alive the very joy the Duke tried to stop.",
     },
     {
       title: 'Marriage as a bargain',
@@ -198,7 +237,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        "Explore how Browning presents the Duke's control over the portrait and over his visitor in lines 1 to 13. You should make reference to language, form and structure.",
+        "Close-reading practice, not an exam question (the Edexcel International GCSE, AQA and Edexcel GCSE papers that set this poem ask you to compare the whole of it with another poem). Explore how Browning presents the Duke's control over the portrait and over his visitor in lines 1 to 13. You should make reference to language, form and structure.",
     },
     {
       title: 'Never to stoop',
@@ -237,7 +276,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        "Explore how Browning presents the Duke's pride in lines 31 to 43. You should make reference to language, form and structure.",
+        "Close-reading practice, not an exam question (the Edexcel International GCSE, AQA and Edexcel GCSE papers that set this poem ask you to compare the whole of it with another poem). Explore how Browning presents the Duke's pride in lines 31 to 43. You should make reference to language, form and structure.",
     },
     {
       title: 'The commands and the next bargain',
@@ -281,7 +320,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        "Explore how Browning connects the Duke's last marriage with his next one in lines 45 to 56. You should make reference to language, form and structure.",
+        "Close-reading practice, not an exam question (the Edexcel International GCSE, AQA and Edexcel GCSE papers that set this poem ask you to compare the whole of it with another poem). Explore how Browning connects the Duke's last marriage with his next one in lines 45 to 56. You should make reference to language, form and structure.",
     },
   ],
 
@@ -410,7 +449,7 @@ export const guide: StudyGuide = {
         question:
           'Re-read Sonnet 116 and My Last Duchess. Compare how the writers present their thoughts about relationships in Sonnet 116 and My Last Duchess. You should make reference to language, form and structure. Support your answer with examples from the poems.',
         skill:
-          'Comparison of two named poems, as set on the November 2023 Edexcel paper: language, form and structure',
+          'Comparison of two named poems, as set on the November 2023 Edexcel International GCSE paper: language, form and structure',
         guidance: [
           "Open with a comparative argument, not a summary: Shakespeare's speaker defines an ideal of love that stays constant whatever changes, while Browning's Duke reveals a marriage in which he expected his wife to change without ever telling her so, and stopped her when she did not.",
           'Compare voice. The sonnet speaks in general terms about love and names no partner; the dramatic monologue gives one man, one dead wife and one listener, so its thoughts about relationships come out through a story and through what the speaker lets slip. The word love never appears in My Last Duchess.',
@@ -423,7 +462,8 @@ export const guide: StudyGuide = {
       {
         question:
           'Re-read My Last Duchess and La Belle Dame sans Merci. Compare how the writers present power in relationships between men and women in My Last Duchess and La Belle Dame sans Merci. You should make reference to language, form and structure. Support your answer with examples from the poems.',
-        skill: 'Comparison of two named poems: language, form and structure',
+        skill:
+          'Comparison of two named poems, in the Edexcel International GCSE format: language, form and structure',
         guidance: [
           "Set up the contrast: in Browning's poem the man holds power and uses it; in Keats's ballad the knight tells a story in which a woman held power over him, and he woke to find her gone.",
           "Compare who tells the story. In both poems it is the man involved: the Duke, and the knight. The Duchess is given no words at all, and the lady in Keats's poem speaks only through the knight's report, so in both poems the reader has to judge the man's account.",
@@ -436,7 +476,8 @@ export const guide: StudyGuide = {
       {
         question:
           'Re-read My Last Duchess. Compare the ways the writers present a person who is remembered in My Last Duchess and one other poem from the anthology. You should make reference to language, form and structure. Support your answer with examples from the poems.',
-        skill: 'Comparison with a poem of your choice: language, form and structure',
+        skill:
+          'Comparison with a Part 3 poem of your choice, in the Edexcel International GCSE format: language, form and structure',
         guidance: [
           "Choose a second poem that gives a real contrast. Piano and Poem at Thirty-Nine remember a parent with love, and in Remember the speaker asks a loved one to remember them; any of the three throws the Duke's grievance into relief.",
           'Compare who controls the memory. The Duchess is remembered only by the man who silenced her; in Remember, the speaker talks for themselves about how they want to be remembered after death.',
@@ -449,7 +490,8 @@ export const guide: StudyGuide = {
       {
         question:
           'Re-read My Last Duchess. Compare how the writers present a speaker who tries to influence a listener in My Last Duchess and one other poem from the anthology. You should make reference to language, form and structure. Support your answer with examples from the poems.',
-        skill: 'Comparison with a poem of your choice: voice and address',
+        skill:
+          'Comparison with a Part 3 poem of your choice, in the Edexcel International GCSE format: voice and address',
         guidance: [
           'Choose a poem with a clear speaker and listener: If- (advice addressed to a son), Do not go gentle into that good night (a speaker urging a dying father) or Remember (a speaker addressing a loved one) all work.',
           'Say what each speaker wants. The Duke wants a dowry and, arguably, an obedient next wife; state the aim of your second speaker just as precisely.',
@@ -475,12 +517,13 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
+      'Know how the Edexcel International GCSE sets this poem. Section B of Paper 1 offers two questions and you answer one, in about 40 minutes. Both ask you to compare two poems: one question names both, and the other names one and leaves you to choose a second from Part 3 that suits its focus. All the Part 3 poems are in a separate Poetry Booklet issued with the paper, so both poems are in front of you, and this one is printed there with its lines numbered in fives. AQA and the Edexcel GCSE set it differently: each also asks for a comparison, but prints only the named poem.',
       'Treat the Duke as a performer. The strongest answers analyse what he is doing to the envoy, not only what he says about the Duchess: every courtesy is also a move in a negotiation.',
       'Read the ending back into the poem. Once the dowry appears (lines 49 to 53), the story of the last Duchess looks like a message for the next one. Answers that notice this, and weigh it against the idea of an unguarded confession, stand out.',
       'Be exact about what the poem does not say. It never states that the Duchess was killed. Most readers take her death to be implied, and Browning himself once allowed another possibility, a convent. Write that the commands strongly suggest her death, and show how the euphemism works, rather than retelling a murder the poem never describes.',
       'Say what the form does, not only what it is. Naming rhyming couplets and iambic pentameter earns little on its own; explaining that enjambment muffles the rhymes, so the Duke sounds casual while speaking in tightly controlled verse, earns a great deal.',
       'Use line references. In the Edexcel International GCSE exam the anthology poems for this section are printed with the paper, and AQA prints the named poem beside its question, so short, exact quotations with line numbers are worth more than long ones learned by heart.',
-      "Compare all the way through. The examiners' report on the November 2023 Edexcel paper found that answers which made links between the poems throughout were more focused, and it noted vague comparisons of what neither poem does, such as saying that neither uses alliteration. The Edexcel mark scheme also caps an answer that discusses only one poem at its lower levels.",
+      "Compare all the way through. The examiners' report on the November 2023 Edexcel International GCSE paper found that answers which made links between the poems throughout were more focused, and it noted vague comparisons of what neither poem does, such as saying that neither uses alliteration. The International GCSE mark scheme also caps an answer that discusses only one poem at the top of Level 2, the second of its five levels.",
       "Explore the word last in the title and first line. The same examiners' report noted answers that asked whether it means there will be no other Duchess or simply that this one is dead. The rest of the poem points one way: another Duchess is being arranged, so last means latest, and she is one of a series.",
       "Weigh history by board. For the Edexcel International GCSE question the mark scheme rewards analysis of language, form and structure and comparison between the poems, so Alfonso II and Lucrezia de' Medici are worth a sentence only when they sharpen a point about the words. AQA's mark scheme says context is assessed throughout its paper, through ideas, perspectives and contextual factors, so for AQA a well-chosen point about the Duke's world, or about the Victorian readers Browning wrote for, earns its place. Other boards that set the poem may differ again: check your own specification.",
     ],
@@ -669,7 +712,7 @@ export const guide: StudyGuide = {
       title: 'Sonnet 116 by William Shakespeare',
       href: '/igcse/edexcel/poetry/sonnet-116',
       reason:
-        'Paired with My Last Duchess on the November 2023 Edexcel paper: an ideal of love that never alters, set against a husband who could not accept his wife as she was.',
+        'Paired with My Last Duchess on the November 2023 Edexcel International GCSE paper: an ideal of love that never alters, set against a husband who could not accept his wife as she was.',
     },
     {
       title: 'La Belle Dame sans Merci by John Keats',
@@ -740,12 +783,32 @@ export const guide: StudyGuide = {
     },
     {
       label:
+        'Pearson Edexcel International GCSE English Literature (4ET1) specification, Issue 3, August 2025: Section B of Component 1 (printed Paper 1 on the question papers) is one question from a choice of two, comparing two poems from Part 3 of the anthology, assessed for analysis of language, form and structure and for links and connections between the poems; the examination is closed book, but the anthology poems are provided in it. Read 10 October 2026, for the first tip',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Specification%20and%20sample%20assessments/international-gcse-english-literature-specification.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1/01 question papers: nine live papers from June 2019 to June 2025, among them the June 2024 and June 2025 Paper 1R, checked by script on 10 October 2026: in each, Section B offers question 2, naming two poems, or question 3, naming one and asking for one other poem from the anthology, with 40 minutes advised; the Section B poems come in a separate Poetry Booklet with the paper, which prints this poem with its lines numbered in fives. Linked here is the June 2025 Paper 1R, whose question 2 paired this poem with Poem at Thirty-Nine',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01r-que-20250513.pdf',
+    },
+    {
+      label:
+        'AQA GCSE English Literature (8702) specification, version 1.3: in Paper 2 Section B, one comparative question on one named poem printed on the paper and one other poem from the chosen anthology cluster',
+      url: 'https://cdn.sanity.io/files/p28bar15/green/1d552450a822e04717de340917da5d3b91896f1a.pdf',
+    },
+    {
+      label:
+        'Pearson Edexcel GCSE English Literature (1ET0) specification, Issue 2, June 2019: Section B, Part 1 is one question comparing a named poem from the chosen anthology collection with another poem from that collection; only the named poem is shown in the question paper, and the examinations are closed book. My Last Duchess is in the Relationships collection',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/GCSE/English%20Literature/2015/specification-and-sample-assesment/9781446914359_GCSE_2015_L12_Englit.pdf',
+    },
+    {
+      label:
         'AQA GCSE English Literature 8702/2 question paper, 24 May 2023: question 26 (the effects of power in My Last Duchess and one other poem from Power and Conflict), used verbatim as the fifth practice question; My Last Duchess printed beside the question with the same 56 lines and line numbers as the Pearson anthology, and no second poem printed',
       url: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-87022-QP-JUN23-CR.PDF',
     },
     {
       label:
-        'AQA 8702/2 mark scheme, June 2023: indicative content for question 26, including the suggested comparisons with Ozymandias, London, Kamikaze and Remains, and dramatic monologue as a structural point',
+        'AQA 8702/2 mark scheme, June 2023: indicative content for question 26, including the suggested comparisons with Ozymandias, London, Kamikaze, Remains and Exposure, and dramatic monologue as a structural point',
       url: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-87022-MS-JUN23.PDF',
     },
     {

@@ -19,6 +19,45 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * the whole page may quote about a tenth of it. Every quotation is chosen to be
  * reused: a phrase in the prose is, wherever possible, a part of a key
  * quotation, so that it adds nothing to the total.
+ *
+ * EXAM-FORMAT CHECK, 26 September 2026, against the 4EA1 Paper 1 papers, mark
+ * schemes and examiners' reports from the 2016 samples to June 2026. The
+ * anthology text is always Text Two, printed in the Source Booklet beside an
+ * unseen Text One. Every short-answer question is on Text One; the anthology
+ * text has one question to itself, on language AND structure across the whole
+ * extract with no line range; and the comparison is always with Text One,
+ * never another anthology text. The guide had a retrieval question on lines
+ * 32-45 (removed), an exam question on lines 46-70 (it now covers the whole
+ * extract), a whole-extract question whose plan stopped at line 48 (it now
+ * runs to line 70), three passage questions with nothing to say they were not
+ * exam questions (now labelled as close-reading practice), and a comparison
+ * that called the unseen text the second text (it is Text One).
+ *
+ * Two tips, and the advice on the father repeated in the character note and
+ * the model answer, assumed the student has the anthology in the exam. The
+ * Source Booklet sets the extract under a one-sentence introduction of its
+ * own, not the anthology's (5 June 2023, Alagiah; 21 May 2026, Ralston), so it
+ * may not mention Macdonald's father, and a student should say it is the
+ * anthology's introduction that does. The booklet also breaks the lines
+ * differently (in June 2023 Alagiah's line 15 was not the anthology's line
+ * 15), so its line numbers need not match this guide's.
+ *
+ * Do not add a retrieval question on this text, a language-only or
+ * structure-only exam question, or a line range to an exam question. Mark
+ * tariffs stay out: the validator reserves them for ExamPlacementCard.
+ *
+ * RE-CHECKED 10 October 2026 against the 21 May 2026 paper and its mark
+ * scheme. The line-number tip told students to give line numbers in every
+ * paragraph because they show the examiner something. Q4 asks for close
+ * reference including brief quotations, and that mark scheme never mentions
+ * line numbers, so the tip now offers them for structural points, beside a
+ * quotation. Do not tell students that line numbers earn credit. The booklet
+ * claims hold on that paper: its one-sentence introduction to Ralston shares
+ * no more than three words in a row with the anthology's, and from line 41
+ * its line numbers run one lower than the anthology's for the same words.
+ * The June 2023 evidence above was not re-read, so the introduction tip now
+ * says only what the 2026 paper shows: the booklet's introduction need not
+ * be the anthology's.
  */
 export const guide: StudyGuide = {
   slug: 'h-is-for-hawk',
@@ -77,7 +116,7 @@ export const guide: StudyGuide = {
     {
       name: 'Macdonald’s father',
       role: 'Never mentioned in the extract itself',
-      body: 'Alisdair Macdonald, a press photographer, died suddenly in 2007; the anthology’s introduction says it was a heart attack. He is not mentioned anywhere in the seventy lines, but the introduction invites every reader to read the extract in his shadow, and you may use it. Do so with care. It is fair to argue that the loss of control, the fierce attachments and the exhausted face at the end are shaped by grief. It is not accurate to say the extract describes grief directly: say that the introduction tells us, and then show how the language hints.',
+      body: 'Alisdair Macdonald, a press photographer, died suddenly in 2007; the anthology’s introduction says it was a heart attack. He is not mentioned anywhere in the seventy lines, but the introduction invites every reader to read the extract in his shadow, and you may use it. Do so with care. It is fair to argue that the loss of control, the fierce attachments and the exhausted face at the end are shaped by grief. It is not accurate to say the extract describes grief directly: say that the anthology’s introduction tells us, and then show how the language hints.',
     },
   ],
 
@@ -159,7 +198,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Macdonald use language and structure to build tension as the box is opened in lines 5-17?',
+        'Close-reading practice on lines 5-17, not an exam question (the exam asks about language and structure across the whole extract): how does Macdonald use language and structure to build tension as the box is opened?',
     },
     {
       title: 'The hawk revealed',
@@ -191,7 +230,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Macdonald use language to convey the impact the hawk has on her in lines 17-45?',
+        'Close-reading practice on lines 17-45, not an exam question (the exam asks about language and structure across the whole extract): how does Macdonald use language to convey the impact the hawk has on her?',
     },
     {
       title: 'The wrong bird and the plea',
@@ -223,7 +262,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Macdonald use language and structure to present her feelings about the second hawk and her request in lines 46-70?',
+        'Close-reading practice on lines 46-70, not an exam question (the exam asks about language and structure across the whole extract): how does Macdonald use language and structure to present her feelings about the second hawk and her request?',
     },
   ],
 
@@ -424,22 +463,25 @@ export const guide: StudyGuide = {
       {
         question:
           'How does Helen Macdonald use language and structure to present her first meeting with the hawk?',
-        skill: 'Language and structure analysis of the anthology text',
+        skill:
+          'Language and structure across the whole extract, the one exam question on this text alone',
         guidance: [
           'Open with an overview: the meeting is overwhelming, and Macdonald presents it as both wonderful and frightening, with grief beneath it.',
           'Build-up, lines 5-13: the simile of the punch and the minor sentences. Explain how the slowed pace creates suspense.',
           'The release, lines 13-17: the single long sentence and the switch to the present tense at line 15. Explain why reliving the moment makes it vivid.',
           'The description, lines 17-31: the list of contradictory metaphors, then the bathos of the turkey. Comment on the contradictions, not just the number of images.',
           'The shift into the hawk’s point of view, lines 26-31: what it shows about Macdonald’s empathy.',
-          'End with the reversal at lines 46-48, so the structure of the whole meeting is covered, and link back to your overview.',
+          'The question has no line range, so carry the meeting through to the end of the extract: the reversal at lines 46-48, the contrast with the second hawk, and the plea that ends in silence at line 70, by which time the hawk she first met is the one she wants. Link back to your overview.',
         ],
       },
       {
         question:
-          'How does Macdonald use language and structure to show her changing feelings in lines 46-70?',
-        skill: 'Language and structure analysis of a section',
+          'How does Helen Macdonald use language and structure to show her changing feelings?',
+        skill:
+          'Language and structure across the whole extract, the one exam question on this text alone',
         guidance: [
-          'Start with the reversal: the flat sentence at lines 46-47 and the one-word paragraph at line 48. Explain the effect of the white space.',
+          'The question has no line range, so trace the change across the whole extract. Keep the first half brief: suspense as the box is opened (lines 5-13), wonder and fear as the hawk appears (lines 13-31), and the sudden love for the breeder at lines 39-40. The feelings change most sharply from line 46, so give the second half the most room.',
+          'Then the reversal: the flat sentence at lines 46-47 and the one-word paragraph at line 48. Explain the effect of the white space.',
           'The second hawk: the melodrama and madwoman allusions, and the sound of her wailing compared with the first hawk’s twittering.',
           'Her failure to recognise the bird, and the italic refrain about which hawk is hers. Explain how italics make it an inner voice.',
           'The plea: hyperbole about etiquette, the stammering questions, the ellipsis. Explain the comedy and the desperation together.',
@@ -448,36 +490,27 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Compare how Helen Macdonald in H is for Hawk and Kari Herbert in The Explorer’s Daughter present their feelings about wild animals.',
-        skill:
-          'Comparison of two texts (in the exam the second text is unseen; another anthology text is used here for practice)',
+          'Practice pairing, not an exam pairing (in the exam this extract is compared with an unseen extract, Text One, never with another anthology text): compare how Helen Macdonald in H is for Hawk and Kari Herbert in The Explorer’s Daughter present their ideas and perspectives about wild animals.',
+        skill: 'Comparison of ideas and perspectives, practised with a second anthology text',
         guidance: [
           'Begin with a comparative overview: both writers watch wild animals intently, and both have mixed feelings, but for different reasons. Macdonald is close enough to touch her hawk; Herbert watches from a lookout on the shore.',
           'Compare purpose and situation: Macdonald is receiving a hawk she will live with; Herbert is watching a hunt. Say what each writer wants the reader to feel.',
           'Compare language: choose a method from each text (for Macdonald, the list of metaphors or the bathos) and compare effects, not just techniques.',
           'Compare structure: how each writer builds to a moment of intensity, and where each leaves the reader at the end.',
           'Keep every paragraph comparative, using connectives such as whereas, similarly and in contrast, and support each point from both texts.',
-        ],
-      },
-      {
-        question: 'From lines 32-45, what do we learn about the breeder?',
-        skill:
-          'Retrieval practice: short, accurate points in your own words, as a warm-up for close reading',
-        guidance: [
-          'Read only the lines named: points from elsewhere in the extract answer a different question.',
-          'Make separate, brief points: he stays calm; he handles the hawk skilfully; he is concerned for her; he has cared for her since she hatched in an incubator; he hand-fed her as a chick.',
-          'Use your own words where you can, and keep any quotation very short.',
-          'Do not analyse: retrieval questions reward accurate facts, not interpretation.',
+          'In the exam, use the same method on the unseen extract: you meet it for the first time on the day, so the points of comparison have to come from reading it there.',
         ],
       },
     ],
     tips: [
-      'The extract never mentions Macdonald’s father or her grief. The introduction does. Say that the introduction tells us, then show how the language hints: this is more accurate, and more impressive, than claiming the extract says it outright.',
-      'Use the anthology’s line numbers in every paragraph. They show the examiner you know where things happen, and they make structural comments precise.',
+      'Know how this text is examined. Each Paper 1 sets one Part 1 text as Text Two, printed for you in the Source Booklet beside an unseen extract, Text One. When it is this one, it is examined twice: in one question on how Macdonald uses language and structure across the whole extract, and in a comparison with the unseen extract. The short-answer questions are all on the unseen extract, so revise this text for analysis and comparison, not retrieval.',
+      'The extract never mentions Macdonald’s father or her grief; the anthology’s introduction does. Do not count on the exam paper to remind you: the Source Booklet prints the extract under a short introduction of its own, which need not be the anthology’s. If you use her father’s death, say that the anthology’s introduction tells us, then show how the language hints: this is more accurate, and more impressive, than claiming the extract says it outright.',
+      'Where a structural point depends on where something happens, give the line number from the Source Booklet in front of you alongside a brief quotation, not in place of one: the language and structure question asks for close reference, including brief quotations. This guide uses the anthology’s numbering, and the booklet can break the lines differently, so learn the moments rather than the numbers.',
       'The tense shift at line 15 is one of the most useful structural points in the extract, and it is easy to miss. Say where it starts, where it ends (line 32) and why.',
       'Do not just count metaphors. The list at lines 20-23 matters because the images contradict each other; say what the contradictions suggest about the hawk and about Macdonald.',
       'Notice the humour. The madwoman pun, the monstrous breach of etiquette and the seaside Medea are jokes at her own expense, and a strong answer explains how comedy and pain work together.',
       'Do not say the breeder agrees to the swap. The extract ends before he answers, and the silence is the point.',
+      'In the comparison question the other text is always the unseen extract, never another anthology text. Compare ideas and perspectives as well as methods, and keep both texts in every paragraph: the mark scheme caps an answer that deals with only one of them.',
     ],
   },
 
@@ -485,7 +518,7 @@ export const guide: StudyGuide = {
     question:
       'How does Helen Macdonald use language and structure to present her first meeting with the hawk?',
     paragraph:
-      'Macdonald presents the first meeting as an experience so overwhelming that ordinary language, and even ordinary time, break down. Before the hawk is seen at all, the box shakes “as if someone had punched it, hard, from within”: the simile gives the unseen bird the force of a human fist, and the commas around “hard” make the reader feel the blow land. Macdonald then slows time almost to a stop with the minor sentences “Concentration. Infinite caution.”, so that the release, when it comes, feels like an explosion. Structurally, that explosion is marked by a switch from the past to the present tense at line 15, as though Macdonald is no longer remembering the moment but reliving it, and the hawk herself defeats description: she is “a conjuring trick. A reptile. A fallen angel.” Each metaphor cancels the last, moving from illusion to cold-blooded ancestry to a heavenly being cast down, which suggests a creature too strange to be held by any single image. Yet Macdonald refuses to let the moment become simply glorious. Hanging from her jesses, the hawk is “like a turkey in a butcher’s shop”, an image of dead meat that intrudes on the gold and angels. One reading is that death is never far from the mind of a writer whose father, the introduction tells us, died suddenly; the bathos reminds the reader that this wonder is being experienced through grief.',
+      'Macdonald presents the first meeting as an experience so overwhelming that ordinary language, and even ordinary time, break down. Before the hawk is seen at all, the box shakes “as if someone had punched it, hard, from within”: the simile gives the unseen bird the force of a human fist, and the commas around “hard” make the reader feel the blow land. Macdonald then slows time almost to a stop with the minor sentences “Concentration. Infinite caution.”, so that the release, when it comes, feels like an explosion. Structurally, that explosion is marked by a switch from the past to the present tense at line 15, as though Macdonald is no longer remembering the moment but reliving it, and the hawk herself defeats description: she is “a conjuring trick. A reptile. A fallen angel.” Each metaphor cancels the last, moving from illusion to cold-blooded ancestry to a heavenly being cast down, which suggests a creature too strange to be held by any single image. Yet Macdonald refuses to let the moment become simply glorious. Hanging from her jesses, the hawk is “like a turkey in a butcher’s shop”, an image of dead meat that intrudes on the gold and angels. One reading is that death is never far from the mind of a writer whose father, the anthology’s introduction tells us, died suddenly; the bathos reminds the reader that this wonder is being experienced through grief.',
     commentary: [
       'It opens with an argument about the whole meeting, not a technique, so every quotation that follows serves a point.',
       'Quotations are short and embedded in the sentence, and each is followed by close analysis of particular words, such as the commas around “hard”.',

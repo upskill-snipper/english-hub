@@ -35,6 +35,27 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * acknowledgement now follows the anthology's own (page 71), and the length is
  * recounted from the anthology.
  *
+ * Exam format, 26 September 2026, from a survey of the 4EA1 Paper 1
+ * question papers, mark schemes and examiners' reports, 2016 samples to June
+ * 2026. Each paper sets one of the ten Part 1 texts; when it is this one, it
+ * is printed in the Source Booklet as Text Two beside an unseen Text One. The
+ * short answers are all on Text One; the extract has one question to itself,
+ * on language and structure together across the whole extract, and is then
+ * compared with Text One, never with another anthology text. The guide had
+ * set a question on the second half of the extract as if it were an exam
+ * question, and a language-only question and three line-range extract
+ * questions with nothing to say they were not. The second-half question now
+ * covers the whole extract, the others are labelled as practice, and the tips
+ * say what the paper sets and what the comparison is with. Mark tariffs stay
+ * out: the validator reserves them for ExamPlacementCard. A second pass the
+ * same day found four more. The format tip said the extract is printed for
+ * you, as if every paper set it. A context tip allowed one sentence of context
+ * as if it earned credit, when neither grid that applies to this text (the
+ * language-and-structure question and the comparison) assesses context. Both
+ * whole-extract questions were badged as the one exam question, which read as
+ * if each were the real question rather than its form. And the close-reading
+ * question was badged language only above a last step on structure.
+ *
  * Fact-check, 25 September 2026: every quotation was re-confirmed in at least
  * two sources. What changed was prose that went beyond the extract. It placed
  * Zeppa "beside" Tashichho Dzong when she answers Gordon (the extract only
@@ -213,7 +234,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Zeppa use language to present the landscape of Bhutan in the opening of the extract?',
+        'Practice on these lines only, not an exam question (the exam asks about language and structure across the whole extract): how does Zeppa use language to present the landscape of Bhutan in the opening?',
     },
     {
       title: "Thimphu's main road",
@@ -241,7 +262,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer present the contrast between tradition and the modern world in this part of the extract?',
+        "Practice on these lines only, not an exam question (the exam asks about language and structure across the whole extract): how does Zeppa present the contrast between tradition and the modern world on Thimphu's main road?",
     },
     {
       title: 'History and the final verdict',
@@ -269,7 +290,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        "How does Zeppa use the history of Bhutan to shape the reader's view of the country by the end of the extract?",
+        "Practice on these lines only, not an exam question (the exam asks about language and structure across the whole extract): how does Zeppa use the history of Bhutan to shape the reader's view of the country by the end?",
     },
   ],
 
@@ -471,8 +492,9 @@ export const guide: StudyGuide = {
     questions: [
       {
         question:
-          'How does the writer present her first experiences of Bhutan in From Beyond the Sky and the Earth? You should support your answer with close reference to the text, including brief quotations.',
-        skill: 'Language and structure analysis of the anthology text',
+          'How does the writer, Jamie Zeppa, use language and structure to present her first experiences of Bhutan? Support your answer with close reference to the extract, including brief quotations.',
+        skill:
+          'Language and structure across the whole extract, in the form of the one exam question on this text alone',
         guidance: [
           '1. Open with an overview that answers the question: Zeppa moves from exhausted uncertainty to confident admiration, and presents Bhutan as a traditional country she respects.',
           '2. Start with the opening: the hyperbole and the giant-child metaphor present a landscape she can explain in scientific terms but cannot imagine, which establishes her awe.',
@@ -485,8 +507,8 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          "Practice pairing (in the exam the comparison is with an unseen text): compare how the writers of From Beyond the Sky and the Earth and The Explorer's Daughter present their responses to a remote place and the people who live there.",
-        skill: 'Comparison of ideas, perspectives and methods across two texts',
+          "Practice pairing, not an exam pairing (in the exam this extract is compared with an unseen passage, never with another anthology text): compare how the writers of From Beyond the Sky and the Earth and The Explorer's Daughter present their ideas and perspectives about a remote place and the people who live there.",
+        skill: 'Comparison of ideas and perspectives, practised with a second anthology text',
         guidance: [
           '1. Establish the shared ground in one sentence: both are first-person accounts by outsiders watching a traditional community in a harsh landscape.',
           "2. Compare attitudes first: Zeppa's admiration grows steadily and ends in praise, whereas Herbert is divided between sympathy for the narwhal and understanding of the hunters' need to survive.",
@@ -494,47 +516,52 @@ export const guide: StudyGuide = {
           "4. Compare methods, always pairing a point about one writer with a point about the other: Zeppa's present-tense, diary-like narration and her history lesson, set against the methods Herbert uses to show her mixed feelings.",
           '5. Use comparative connectives such as ‘whereas’, ‘similarly’ and ‘in contrast’ inside paragraphs, not only between them.',
           '6. Conclude with a judgement: which writer is more troubled by what she sees, and what that shows about her perspective as a visitor.',
+          '7. In the exam, use the same method on the unseen text: you will meet it for the first time on the day, so the points of comparison have to come from reading it there.',
         ],
       },
       {
         question:
-          'How does the writer present the people and the history of Bhutan in the second half of the extract? You should support your answer with close reference to the text, including brief quotations.',
-        skill: 'Language and structure analysis of the anthology text',
+          'How does the writer, Jamie Zeppa, use language and structure to present the Bhutanese people and the history of their country? Support your answer with close reference to the extract, including brief quotations.',
+        skill:
+          'Language and structure across the whole extract, in the form of the one exam question on this text alone',
         guidance: [
-          '1. Begin with the people: the admiring vocabulary, the national dress explained for a reader who has never seen it, and the curiosity without surprise.',
-          "2. Analyse the George Bogle quotation: why she borrows an eighteenth-century voice, and what its language about bodies suggests about an outsider's gaze.",
-          '3. Use the young man at the hotel, and her admission that she can find “no single word” for the people, as evidence that she presents them as beyond easy description.',
-          '4. Show how the history section changes register, and how the beautiful old names, such as the Land of the Thunder Dragon, keep it vivid.',
-          '5. Analyse the Eden episode as farce, and explain whose side the humour takes.',
-          '6. End on the final sentence: how “small” and “admiration” turn history into a verdict.',
+          "1. Range across the whole extract, as the exam question does. The people first appear on the main road, in the policemen directing traffic by hand, and the history begins with Gordon's account of how young the town is, before the second half gives both its full attention.",
+          '2. Then the people she describes at length: the admiring vocabulary, the national dress explained for a reader who has never seen it, and the curiosity without surprise.',
+          "3. Analyse the George Bogle quotation: why she borrows an eighteenth-century voice, and what its language about bodies suggests about an outsider's gaze.",
+          '4. Use the young man at the hotel, and her admission that she can find “no single word” for the people, as evidence that she presents them as beyond easy description.',
+          '5. Show how the history section changes register, and how the beautiful old names, such as the Land of the Thunder Dragon, keep it vivid.',
+          '6. Analyse the Eden episode as farce, and explain whose side the humour takes.',
+          '7. End on the final sentence: how “small” and “admiration” turn history into a verdict.',
         ],
       },
       {
         question:
-          'How does the writer use the landscape to convey her feelings at the start of the extract?',
-        skill: 'Language analysis of a short section',
+          'Close-reading practice on lines 1 to 18, not an exam question (the exam asks about language and structure across the whole extract): how does Zeppa use the landscape to convey her feelings at the start?',
+        skill: 'Close-reading practice on a short section, language first',
         guidance: [
           '1. Identify the feeling first: awe mixed with bewilderment and tiredness.',
           '2. Analyse the hyperbole and the metaphor of the giant child, and what her admission that she cannot imagine the geology shows.',
           '3. Explore the repetition of mountains and the sense of being enclosed and far from home.',
           '4. Analyse the personification of mountains rising to meet the moon, and the calm it brings after the long journey.',
+          '5. Finish with structure: how the opening sets up the admiration of the ending. That link is what carries this close reading into a whole-extract exam answer.',
         ],
       },
     ],
     tips: [
+      'Know what the paper asks of this extract. Each Paper 1 sets one of the ten Part 1 texts. When it is this one, it is printed for you in the Source Booklet as Text Two, beside an unseen Text One, and the short-answer questions are all on the unseen text. The extract has one question to itself, on how Zeppa uses language and structure, answered from the whole extract; it is then compared with the unseen text.',
       'Quote in short phrases and analyse single words: “all and only”, “Bhutanese-ness”, “startling”, “small”. Precise comment on a word earns more than a long quotation.',
       'Treat structure as part of the argument. The movement from the mountains to the town, the people, the history and finally a verdict is how Zeppa persuades the reader.',
       'Do not write that she has settled in or feels at home by the end. The extract covers her first week in Thimphu, before she reaches her posting in the east.',
-      "Use context lightly and accurately: 1988, a two-year teaching contract, a Canadian organisation. One sentence is enough, because the question is about the writer's methods.",
-      "Evaluate her perspective. The best answers notice both the respect and the outsider's gaze: the Bogle quotation, the generalisations about appearance, and what can be read as a wish that Thimphu stay as it is.",
+      "Context is not assessed on this paper: the extract's own question is about Zeppa's methods, and the comparison about ideas and perspectives. If you use it, keep it to one accurate sentence that explains something in the text: 1988, a two-year teaching contract, a Canadian organisation.",
+      "Evaluate her perspective, which the comparison question asks about directly. The best answers notice both the respect and the outsider's gaze: the Bogle quotation, the generalisations about appearance, and what can be read as a wish that Thimphu stay as it is.",
       'Be precise about the Western influence. She finds more signs of the outside world than she expected, but calls them few overall; their power lies in how startling they look, not in how many there are.',
-      'In the comparison question, compare methods as well as ideas, and keep both texts in every paragraph.',
+      'In the comparison question the other text is always the unseen passage, never another anthology text. Compare ideas and perspectives as well as methods, and keep both texts in every paragraph: the mark scheme caps an answer that deals with only one of them.',
     ],
   },
 
   modelAnswer: {
     question:
-      'How does the writer present her first experiences of Bhutan in From Beyond the Sky and the Earth?',
+      'How does the writer, Jamie Zeppa, use language and structure to present her first experiences of Bhutan?',
     paragraph:
       "Zeppa presents her first experience of Bhutan as a gradual movement from bewilderment to admiration, and she begins by making the landscape too large to grasp. The hyperbole of “Bhutan is all and only mountains” leaves room for nothing else, and when she admits that she knows the scientific explanation but cannot imagine it, she turns instead to the metaphor of “a giant child” shaping the earth. The image is playful and almost mythical, suggesting that Bhutan asks to be felt rather than explained. Yet this wonder sits beside real uncertainty. After a sleepless first night, she stays close to her fellow teachers the next morning, “hoping to pick up some of their enthusiasm”, a confession that makes enthusiasm sound like something catching which she has not yet caught. The structure then tracks her growing confidence. When Gordon predicts that the capital will one day seem like New York, she answers him silently: “Thimphu will never look like New York to me, I think.” The tentative “I think” shows a view still forming, but it is her own. By the final sentence, after a history lesson in which a British envoy is made ridiculous, the doubtful newcomer has become a judge, “full of admiration for this small country”. The adjective “small” turns Bhutan's survival beside far larger powers into an achievement, and suggests that what Zeppa admires most is a country that has stayed itself.",
     commentary: [

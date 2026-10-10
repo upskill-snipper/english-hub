@@ -7,8 +7,8 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * WORDING. Every quotation was checked on 26 September 2026 against the poem as
  * printed on page 62 of the Pearson Edexcel International GCSE English
  * Anthology, Issue 8 (February 2026), read from Pearson's own PDF, and again
- * against the reprint in the question booklet of the 4ET1/01 paper of 17 May
- * 2023. The two agree word for word and in their line numbering. Line numbers
+ * against the reprint in the Poetry Booklet issued with the 4ET1/01 paper of 17
+ * May 2023. The two agree word for word and in their line numbering. Line numbers
  * here are the anthology's, which prints one beside every fifth line. The stanza
  * breaks were measured from the line spacing in the PDF, not read from a text
  * extraction: a plain extraction shows false breaks after lines 24 and 35, where
@@ -41,6 +41,31 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * fact where the poem says only "many of my truths"; and twelve runs of four to
  * six words from the poem sat unmarked in the prose, where they escaped the
  * quotation budget. They are paraphrased now.
+ *
+ * EXAM-FORMAT AUDIT, 10 October 2026, against the 4ET1 specification (Issue 3,
+ * August 2025) and the Paper 1 papers and mark schemes from the specimen to June
+ * 2025. Section B sets one question from a choice of two, and both compare two
+ * Part 3 poems: Question 2 names both, Question 3 names one and the candidate
+ * chooses the other. No Part 3 poem is printed in the question booklet, which
+ * prints only Section A's unseen poem. All of Part 3 comes in a separate
+ * Poetry Booklet with each paper, and that is where the 17 May 2023 reprint is
+ * (PDF page 22, after the booklet's cover on page 13). Until today this
+ * header, the length note and the source line placed it in the question
+ * booklet. The two extract questions were single-poem questions under the
+ * label "The question"; they now say they are close-reading practice.
+ * A first tip says what Section B sets, including the mark scheme's rule that
+ * an answer on one poem cannot go above Level 2, given as a level because the
+ * validator keeps mark tariffs out of exam practice. The May 2023 question
+ * matches the paper word for word and the June 2018 R question matches Pearson's
+ * summary; the January 2023 R question was outside this check. The overview
+ * says the poem has been set at least three times. Pearson's summaries and
+ * papers show two more: the June 2019 R paper (Question 2, beside Search For My
+ * Tongue, on memories) and the June 2025 R paper (Question 2, beside My Last
+ * Duchess, on feelings about another person). That list should gain them.
+ * The close-analysis tip said "the January 2023 paper". The only January
+ * report this guide cites is the R paper's, and the main January 2023 paper's
+ * Section B did not name this poem, so the tip now names the R paper. Its
+ * finding was not re-read against that report today.
  */
 export const guide: StudyGuide = {
   slug: 'poem-at-thirty-nine',
@@ -58,7 +83,7 @@ export const guide: StudyGuide = {
     words: 168,
     lines: 45,
     basis:
-      'Counted on 26 September 2026 from page 62 of the Pearson Edexcel International GCSE English Anthology, Issue 8 (February 2026), in Pearson’s own PDF: 45 lines in six stanzas (5, 14, 7, 7, 7 and 5 lines, the breaks measured from the PDF’s line spacing), 168 words by the validator’s word count, title and author line excluded. The line count matches the anthology’s own numbering, which reaches 45 at the last line, and the reprint in the question booklet of 17 May 2023, which is numbered the same way.',
+      'Counted on 26 September 2026 from page 62 of the Pearson Edexcel International GCSE English Anthology, Issue 8 (February 2026), in Pearson’s own PDF: 45 lines in six stanzas (5, 14, 7, 7, 7 and 5 lines, the breaks measured from the PDF’s line spacing), 168 words by the validator’s word count, title and author line excluded. The line count matches the anthology’s own numbering, which reaches 45 at the last line, and the reprint in the Poetry Booklet issued with the paper of 17 May 2023, which is numbered the same way.',
   },
 
   overview: {
@@ -217,7 +242,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Walker use the first three stanzas to present the speaker’s feelings about what her father taught her?',
+        'Close-reading practice on stanzas 1 to 3, not an exam question (in the exam this poem is always compared with another Part 3 poem): how does Walker present the speaker’s feelings about what her father taught her?',
     },
     {
       title: 'What she shares with him',
@@ -249,7 +274,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Walker present the speaker’s sense of who she has become in the last three stanzas of the poem?',
+        'Close-reading practice on stanzas 4 to 6, not an exam question (in the exam this poem is always compared with another Part 3 poem): how does Walker present the speaker’s sense of who she has become?',
     },
   ],
 
@@ -505,11 +530,12 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
+      'Know what Section B sets. You answer one of two questions, and both ask you to compare two Part 3 poems: one names both poems, and the other names one and leaves you to choose the second, so pick a Part 3 poem that suits the question’s focus. An answer that considers only one poem cannot go above Level 2 of the mark scheme’s five levels, however good its analysis.',
       'The Part 3 poems are printed for you in the examination, so you do not need to memorise long quotations. Know where things are instead: stanza 2 for money, stanza 3 for honesty, stanza 4 for food, and the last two stanzas for who she has become.',
       'Section B assesses two skills: analysis of language, form and structure, and comparison between the poems. Context is not one of the skills this section assesses, so use Walker’s life only in a clause, where it sharpens a point about the words.',
       'Compare all the way through. In the June 2023 examiners’ report, weaker answers dealt with each poem separately, with minimal links, while the ablest wove structural and language analysis of both poems together.',
       'Choose your partner poem with care when the choice is yours. On the May 2023 paper most candidates chose Piano, If- or Do not go gentle into that good night, and the examiners’ report says all worked well; Prayer Before Birth, Remember and Sonnet 116 generally produced less positive answers, because they are less closely tied to family, though one examiner found Remember often ably compared. If you choose Do not go gentle, cover the whole poem, not just its refrains.',
-      'Sustain the close analysis. On the January 2023 paper, the examiners found that some answers gave a good range of examples without exploring them in enough detail, and that techniques needed linking to their effect on the reader.',
+      'Sustain the close analysis. On the January 2023 R paper, the examiners found that some answers gave a good range of examples without exploring them in enough detail, and that techniques needed linking to their effect on the reader.',
       'Do not flatten the relationship into a simple loving tribute: that misses stanzas 1 and 3. One examiner described the poem as offering celebration, regret, grief and reminiscence. The strongest overall point is that these sit side by side, and that the poem’s honesty about his faults is what makes its love convincing.',
       'Use the structural details few students notice: the one repeated line and its change of punctuation; the two modal verbs of deduction in lines 10 and 25; and the noun way in lines 11, 14, 39 and 40, which moves from his one right way to her refusal to repeat herself.',
       'Check your wording against the anthology. Line 38 is about seasoning her life, not her food, and misremembering it as a line about meals throws away the metaphor.',
@@ -667,12 +693,12 @@ export const guide: StudyGuide = {
     },
     {
       label:
-        'Pearson, 4ET1/01 question booklet, 17 May 2023: Section B Question 3 on family relationships, wording reproduced in exam practice; Section B advised at 40 minutes; the poems included with the paper; the reprint of the poem, identical in wording and line numbering to the anthology, used as a second check of every quoted phrase; its acknowledgement names Horses Make a Landscape Look More Beautiful.',
+        'Pearson, 4ET1/01 question paper, 17 May 2023, with its Poetry Booklet: Section B Question 3 on family relationships, wording reproduced in exam practice, offered as the alternative to Question 2, which names two poems; Section B advised at 40 minutes; the poems for Section B included with the paper as a separate Poetry Booklet, Part 3 of the anthology, and none printed in the question booklet; the reprint of the poem in that booklet (PDF page 22), identical in wording and line numbering to the anthology, used as a second check of every quoted phrase; the booklet’s acknowledgements name Horses Make a Landscape Look More Beautiful.',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20230518.pdf',
     },
     {
       label:
-        'Pearson, Mark scheme (Results) Summer 2023, 4ET1/01, Question 3: the poem as autobiographical and the title as Walker’s age when she wrote it; the relationship not as close as she would have liked; the father sometimes beating her for the truth; the poet seeking his approval; free verse and the first person; the division into past and present; the suggested comparison poems; the section assessing language, form and structure and links between texts.',
+        'Pearson, Mark scheme (Results) Summer 2023, 4ET1/01, Question 3: the poem as autobiographical and the title as Walker’s age when she wrote it; the relationship not as close as she would have liked; the father sometimes beating her for the truth; the poet seeking his approval; free verse and the first person; the division into past and present; the suggested comparison poems; the section assessing language, form and structure and links between texts; an answer that considers only one poem held to the top of Level 2, in the grids for both Section B questions.',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-rms-20230824.pdf',
     },
     {
@@ -689,6 +715,21 @@ export const guide: StudyGuide = {
       label:
         'Pearson, Question style for 4ET1 SAMs to January 2019 (Issue 1, February 2021): the June 2018 R paper, Section B Question 2, on feelings about parents in Piano and Poem at Thirty-Nine (abbreviated); R papers are sat in countries with major time differences to GMT; Section B assesses language, form and structure.',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Teaching%20and%20learning%20materials/summary-of-questions-set-for-4et1-sams-to-january-2019.pdf',
+    },
+    {
+      label:
+        'Pearson, Question style for 4ET1 June 2019 to November 2020 (Issue 1, February 2021): the June 2019 R paper, Section B Question 2, on memories in Search For My Tongue and Poem at Thirty-Nine (abbreviated). Read on 10 October 2026; not yet in the overview.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Teaching%20and%20learning%20materials/summary-of-questions-set-for-4et1-june-2019-to-november-2020.pdf',
+    },
+    {
+      label:
+        'Pearson, 4ET1/01R question paper, Monday 12 May 2025 (June 2025 R paper): Section B Question 2 names Poem at Thirty-Nine and My Last Duchess, on feelings about another person; the poems for Section B in a separate Poetry Booklet issued with the paper. Read on 10 October 2026; not yet in the overview.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01r-que-20250513.pdf',
+    },
+    {
+      label:
+        'Pearson Edexcel International GCSE English Literature specification, Issue 3 (August 2025), PDF page 10: Component 1 Section B is one essay question from a choice of two, comparing two poems from Part 3 of the anthology, and candidates are provided with the anthology poems in the examination.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Specification%20and%20sample%20assessments/international-gcse-english-literature-specification.pdf',
     },
     {
       label:

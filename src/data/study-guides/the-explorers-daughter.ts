@@ -43,6 +43,28 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * could otherwise place Herbert beside the air base; and the note on how the text
  * is examined now says that the June 2026 anthology text was 127 Hours, not this.
  *
+ * Exam format, 26 September 2026, against the 4EA1 Paper 1 papers and mark
+ * schemes from the 2016 samples to June 2026. The extract is printed in the
+ * Source Booklet as Text Two beside an unseen Text One; the short answers are
+ * all on Text One; the extract has one question to itself, on language and
+ * structure together across the whole extract, and is then compared with Text
+ * One, never with another anthology text. The three passage questions (one of
+ * them language only) read as exam questions on a line range, and the
+ * Alagiah comparison called the unseen text the second one. The passage
+ * questions are now labelled as practice, the comparison as a practice
+ * pairing, the narwhal question's guidance covers structure as well as
+ * language, the tips say what the paper sets, and the model answer says it is
+ * one paragraph of a whole-extract answer. Do not reintroduce a retrieval,
+ * language-only or line-range question here as if the exam set one. Mark
+ * tariffs stay out: the validator reserves them for ExamPlacementCard.
+ *
+ * Checked again on 10 October 2026. The June 2026 paper gives line ranges for
+ * its three short answers on Text One and none for the anthology question or
+ * the comparison, and prints Text Two with margin line numbers, so the tips
+ * stand. Their claims about every paper rested on documents that `sources` did
+ * not list; the November 2023 mark scheme and June 2019 examiners' report are
+ * now in it.
+ *
  * WHERE THIS DISAGREES WITH THE PAGE ABOVE IT, and the extract bears this out:
  * the hunt is told in the past tense, not the present; the extract contains no
  * reflections on Herbert's childhood (only the anthology's introduction mentions
@@ -267,7 +289,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Herbert use language in lines 1 to 12 to present the Arctic landscape and the start of the hunt?',
+        'Close-reading practice on lines 1 to 12, not an exam question (the exam asks about language and structure together, across the whole extract): how does Herbert use language to present the Arctic landscape and the start of the hunt?',
     },
     {
       title: 'The hunter takes aim',
@@ -299,7 +321,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Herbert use language and structure in lines 45 to 51 to create tension and to show her conflicting feelings?',
+        'Close-reading practice on lines 45 to 51, not an exam question (the exam asks about the whole extract): how does Herbert use language and structure to create tension and to show her conflicting feelings?',
     },
     {
       title: 'Answering the critics',
@@ -327,7 +349,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Herbert use language and structure in the final paragraph to persuade the reader that hunting in Thule is necessary?',
+        'Close-reading practice on the final paragraph, lines 52 to 64, not an exam question (the exam asks about the whole extract): how does Herbert use language and structure to persuade the reader that hunting in Thule is necessary?',
     },
   ],
 
@@ -438,14 +460,14 @@ export const guide: StudyGuide = {
           "The studied animal: the confident, factual register of lines 13 to 32 and 41 to 43, the whales' range, their hearing and the way they talk under the water, and the careful hedging about the tusk.",
           'The means of life: the listing of what the narwhal provides, food, vitamins, light, heat, tools and income, and the parenthesis about feeding a team of dogs for a month.',
           'The climax: the plain clause “they were huge” and the tricolon “to dive, to leave, to survive”, which give the whale its own will to live.',
+          'Give structure its share, since the question asks for both: the facts about the narwhal come in two pauses that hold up the hunt (lines 13 to 32 and 41 to 43), so the reader learns what a whale is worth before the climax, and how keenly it hears just before the hunter takes aim; and the extract never says whether the whale escapes.',
           "Conclude that the narwhal is both a creature with its own life and a resource a community needs, and that this double view is the source of Herbert's dilemma.",
         ],
       },
       {
         question:
-          "Compare how the writers of From The Explorer's Daughter and From A Passage to Africa present their ideas and perspectives about the people they watch. Support your answer with detailed examples from both texts, including brief quotations.",
-        skill:
-          'Comparison of ideas and perspectives across two texts (in the exam, the second text is unseen; practising with another anthology text builds the same skill)',
+          "Practice pairing, not an exam pairing (in the exam this extract is Text Two and is compared with an unseen passage, Text One, never with another anthology text): compare how the writers of From The Explorer's Daughter and From A Passage to Africa present their ideas and perspectives about the people they watch. Support your answer with detailed examples from both texts, including brief quotations.",
+        skill: 'Comparison of ideas and perspectives, practised with a second anthology text',
         guidance: [
           "Set out each perspective in a sentence. Herbert is torn between sympathy for the narwhal and understanding of the hunters' need. Alagiah, a BBC television reporter in Somalia in 1991 and 1992, is shaken out of professional detachment by the apologetic smile of one man weakened by hunger.",
           "Compare their positions as observers: Herbert watches from the lookout among the hunters' families; Alagiah tours the huts with his cameraman. Both are watching other people struggle to survive, but Alagiah openly questions what his watching means, while Herbert questions her own feelings.",
@@ -453,6 +475,7 @@ export const guide: StudyGuide = {
           "Compare the turning points: the instant the hunter raises his harpoon, and the moment of the smile. Both are brief, and both bring the writer's feelings into the open.",
           "Compare the endings: Herbert argues outwards, answering critics with facts; Alagiah turns inwards, resolving to tell the story well and regretting that he never learned the man's name.",
           'Keep the comparison running through every paragraph with connectives such as whereas, similarly and by contrast, and support both sides with brief quotations.',
+          'In the exam, use the same method on the unseen passage: you will read it for the first time on the day, so the points of comparison have to come from reading it there.',
         ],
       },
       {
@@ -470,14 +493,15 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
+      'Know how this text is examined. Each Paper 1 sets one of the ten Part 1 texts as Text Two, printed for you in the Source Booklet beside an unseen extract, Text One, and the short-answer questions are all on the unseen extract. When this is the text set, it has one question to itself, on how Herbert uses language and structure across the whole extract, and it is then compared with the unseen extract, never with another anthology text. Revise it for analysis and comparison, not retrieval.',
       'Get the tenses right. The evening is told in the past tense; the facts about the narwhal (lines 13 to 32 and 41 to 43) and the closing argument (lines 52 to 64) are mostly in the present. The switch is a structural point in itself: the present tense makes her claims sound permanently true.',
       "Do not treat the ellipses as Herbert's pauses or trailing thoughts. At lines 12, 17, 21, 35, 41 and 43 they appear to mark words cut for the anthology, so analysing them as her stylistic choice is likely to be a misreading.",
       'Write about what is missing. The outcome of the hunt is never shown: the extract cuts from the raised harpoon to her dilemma. Explaining why a writer withholds something is a strong structural point.',
-      "Keep the focus on methods. The question asks how Herbert presents her experience or feelings, not whether hunting is right. Your own view of hunting earns credit only when it becomes a comment on how she shapes the reader's.",
+      "Keep the focus on methods. The exam question asks how Herbert uses language and structure to achieve an effect it names, such as presenting her experience or her feelings, not whether hunting is right. Your own view of hunting earns credit only when it becomes a comment on how she shapes the reader's.",
       'Show the balance. A weak answer says Herbert is against the hunt, or for it. She is both, and the best answers track the swing from one to the other, especially at “And yet” in line 50.',
       'Use the line numbers in the margin to find evidence quickly, and quote short phrases of two to six words. The text is printed for you, so the skill lies in choosing the right words, not in remembering them.',
       'Answer on the version printed in the Source Booklet. The June 2026 paper printed its anthology text as an adapted version, so check that any phrase you quote is on the page in front of you.',
-      "In the comparison question, Herbert's perspective is divided and then argued. Decide whether the other writer is certain, divided or changes their mind, and build the comparison around that.",
+      "In the comparison question, Herbert's perspective is divided and then argued. The other text is the unseen extract, which you read for the first time on the day: decide whether its writer is certain, divided or changes their mind, build the comparison around that, and keep both texts in every paragraph, because the mark scheme caps an answer that deals with only one.",
       'Use Inughuit or Inuit in your own voice. Quote the older word at line 20 only if you are commenting on it.',
     ],
   },
@@ -493,6 +517,7 @@ export const guide: StudyGuide = {
       'Each technique it names, metaphor, balanced judgement, conjunction and tricolon, is followed straight away by its effect on the reader.',
       'It deals with structure as well as language, as the question requires: the withheld outcome and the move to the next paragraph are treated as choices the writer made.',
       'It ends with a hedged interpretation, introduced by the words This suggests, that links the moment to the whole extract, including the final sentence, which shows a view of the text as a whole.',
+      'It is one paragraph of a full answer, not the whole of one. The exam question covers the whole extract, so the other paragraphs would take in the opening description, the pauses for information and the closing argument.',
     ],
   },
 
@@ -731,6 +756,16 @@ export const guide: StudyGuide = {
     {
       label:
         'Pearson Edexcel International GCSE English Language A, Paper 1, June 2026 (P79647A), question paper and source booklet, from the copy held by The English Hub: the anthology text printed as Text Two, adapted; the wording of the language-and-structure and comparison questions; the rule that the anthology may not be taken into the exam',
+    },
+    {
+      label:
+        "Pearson 4EA1/01 mark scheme, November 2023: the short-answer questions are all on the unseen Text One, the anthology text's own question is marked on one grid for language and structure together, and a comparison that deals with only one text is capped",
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Language-A/2016/Exam-materials/4ea1-01-rms-20240125.pdf',
+    },
+    {
+      label:
+        "Pearson 4EA1/01 examiners' report, June 2019: the unseen passage for the short-answer questions, the anthology text for the language and structure question (the report says this is always so), and the two compared in the last question of the section",
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Language%20A/2016/exam-materials/4EA1_01_pef_20190822.pdf',
     },
   ],
 }

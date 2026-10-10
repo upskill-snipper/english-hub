@@ -38,6 +38,30 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * own wording, the longest about twenty words, sat in the prose without
  * quotation marks, where the quotation counter cannot see them; they are now
  * paraphrase. Keep it that way, or the budget above is meaningless.
+ *
+ * Exam-format audit, 26 September 2026, against the Issue 7 specification and
+ * the 4EA1/02 papers of June 2020 and June 2023. Paper 2 Section A sets one
+ * essay on the whole of one named Part 2 text, printed for the candidate, with
+ * bullet points ending on language and structure, and never a comparison. The
+ * three extract questions were exam-shaped questions on line ranges under the
+ * label "The question", so they now say they are close-reading practice. The
+ * essay questions asked for "language, form and structure", which is the
+ * Literature formula; they now take the paper's shape. The coursework guidance
+ * told the student to compare, but Assignment A is marked for understanding
+ * and for language and structure only, so it now asks for analysis of each
+ * text. A first tip says what the paper sets. No mark tariffs: the validator
+ * keeps those to ExamPlacementCard.
+ *
+ * Second check, 10 October 2026. The extract questions said the exam "sets one
+ * essay on the whole extract", which reads as if this text were certain to be
+ * set; Pearson sets one Part 2 text a series, so they now say the question on
+ * this text covers the whole extract. The model answer's commentary called its
+ * own question "the exam question". A tip, under the heading What examiners
+ * reward, said what "the best answers" argue about the ghost; no mark scheme
+ * prescribes a reading, so it now asks for the analysis the question rewards.
+ * The first tip now says the bullets are prompts, not a plan, because the
+ * November 2020 examiners' report faulted answers that left language and
+ * structure to the end.
  */
 export const guide: StudyGuide = {
   slug: 'whistle-and-ill-come-to-you',
@@ -262,7 +286,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer use language and structure in lines 1-18 to move the narrator from alarm, to comfort, and back to fear?',
+        'Close-reading practice, not an exam question (the exam question on this text covers the whole extract). How does the writer use language and structure in lines 1-18 to move the narrator from alarm, to comfort, and back to fear?',
     },
     {
       title: 'The presence on the landing',
@@ -286,7 +310,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer create tension in lines 29-51? You should consider the narrator’s thoughts and feelings and the writer’s use of language and structure.',
+        'Close-reading practice, not an exam question (the exam question on this text covers the whole extract). How does the writer create tension in lines 29-51? You should consider the narrator’s thoughts and feelings and the writer’s use of language and structure.',
     },
     {
       title: 'The broken torch and Spider',
@@ -314,7 +338,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer use the ending of the extract, lines 52-65, to present the narrator’s feelings?',
+        'Close-reading practice, not an exam question (the exam question on this text covers the whole extract). How does the writer use the ending of the extract, lines 52-65, to present the narrator’s feelings?',
     },
   ],
 
@@ -507,8 +531,8 @@ export const guide: StudyGuide = {
     questions: [
       {
         question:
-          'How does the writer present the narrator’s fear in Whistle and I’ll Come to You? In your answer you should consider the writer’s use of language, form and structure, and support your points with examples from the text.',
-        skill: 'Language, form and structure across the whole extract',
+          'How does the writer present the narrator’s fear in Whistle and I’ll Come to You? In your answer, you should write about: what frightens him and how he tries to control it; how his fear develops through the extract; the use of language and structure. Support your answer with close reference to the extract, including brief quotations.',
+        skill: 'Whole-extract essay: language and structure',
         guidance: [
           'Open with an argument, not a summary: for example, that Hill makes the narrator’s fear frightening because it grows from what he cannot see, explain or control.',
           'Begin with the storm (lines 1-6): the ship simile and the personified wind create fear before anything supernatural happens.',
@@ -521,7 +545,7 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Explore how the writer uses setting to create tension in Whistle and I’ll Come to You. In your answer you should consider the writer’s use of language, form and structure, and support your points with examples from the text.',
+          'How does the writer use setting to create tension in Whistle and I’ll Come to You? In your answer, you should write about: the storm, the house and the darkness; the narrator’s memory of his childhood nursery; the use of language and structure. Support your answer with close reference to the extract, including brief quotations.',
         skill: 'Setting, language and structure',
         guidance: [
           'Define setting broadly: the storm and marsh outside, the house and its rooms, and the darkness, as well as the remembered nursery in Sussex.',
@@ -534,7 +558,7 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'How does the writer present the struggle between reason and the supernatural in Whistle and I’ll Come to You? In your answer you should consider the writer’s use of language, form and structure, and support your points with examples from the text.',
+          'How does the writer present the struggle between reason and the supernatural in Whistle and I’ll Come to You? In your answer, you should write about: how the narrator tries to explain what he hears and senses; how his certainty changes; the use of language and structure. Support your answer with close reference to the extract, including brief quotations.',
         skill: 'Argument about meaning, supported by language and structure',
         guidance: [
           'State a view: for example, that Hill lets reason lose, not because the narrator is foolish, but because his sound reasoning cannot explain what he experiences.',
@@ -547,22 +571,23 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Coursework-style task: explore how writers present vulnerability in Whistle and I’ll Come to You and two other texts from Part 2 of the anthology, at least one of which is a poem.',
+          'Coursework task (Assignment A, for schools that take the coursework option instead of Paper 2): explore how writers present vulnerability in Whistle and I’ll Come to You and two other texts from Part 2 of the anthology, at least one of which is a poem.',
         skill: 'Extended essay across three anthology texts',
         guidance: [
           'Choose partners that make a real argument possible, for example Night by Alice Munro and Out, Out- by Robert Frost.',
           'Define vulnerability for each text: in Hill, a grown man reduced to a frightened child, and a dead child whom no one can help.',
           'Organise by idea, not by text: for example, vulnerability at night, the vulnerability of children, and how adults respond to it.',
-          'For each idea, analyse a short quotation or precise moment from each text, and compare the methods the writers use: first-person narration, setting, sound, structure.',
+          'For each idea, analyse a short quotation or precise moment from each text and the methods each writer uses: first-person narration, setting, sound, structure. Brief links between the texts help the essay hang together, but the assignment is marked for understanding each text and analysing its language and structure, not for comparison as such.',
           'Make sure the poem gets equal analytical weight, including its form, not just its content.',
           'Conclude with a judgement: which text makes vulnerability most disturbing, and through which technique.',
         ],
       },
     ],
     tips: [
+      'Know what the paper sets. Section A of Paper 2 is one compulsory essay question on one Part 2 text, named on the paper, with about 45 minutes advised. If it is this text, the question is about the whole extract, which is printed for you, since the anthology may not be taken into the exam. It asks how the writer presents or creates something, with bullet points that in past papers end with the use of language and structure. Treat the bullets as prompts, not a plan: Pearson’s examiners have praised answers that cover the whole extract and criticised those that leave language and structure to the end as an afterthought. It is not a comparison: the other Part 2 texts come in only if your school takes the coursework option instead.',
       'Stay inside the 65 lines. You will have the extract in front of you, and credit comes from analysing it. A sentence of context from the rest of the novel can support a point, but retelling the plot of The Woman in Black earns nothing.',
       'Do not confuse this text with M. R. James’s ghost story of a similar title. Your text is Susan Hill’s, and its narrator is Arthur Kipps, even though the extract never names him.',
-      'Say something precise about the uncertainty. The best answers argue that Hill never confirms the ghost and explain why that makes the extract more frightening, rather than deciding what the presence was.',
+      'Say something precise about the uncertainty. Hill never confirms the ghost, so explain how leaving it unexplained makes the extract more frightening. That analyses the writer’s choices, which is what the question asks for; simply deciding what the presence was does not.',
       'Pathetic fallacy is the obvious technique here, so go further than naming it: show that the storm does different jobs at different points, threatening, then something to be survived, then the carrier of the cry.',
       'Use the calm-and-interruption pattern with line numbers to write about structure. Saying where a shift happens, and what it shifts from and to, is structural analysis; saying the extract builds tension is not.',
       'Quote briefly and analyse closely. A single word such as catapulting or inexplicably, examined for its effect, is worth more than a long quotation copied out.',
@@ -572,7 +597,7 @@ export const guide: StudyGuide = {
 
   modelAnswer: {
     question:
-      'How does the writer create fear and tension in Whistle and I’ll Come to You? In your answer you should consider the writer’s use of language, form and structure.',
+      'How does the writer create fear and tension in Whistle and I’ll Come to You? In your answer, you should write about: the narrator’s thoughts and feelings; how the tension builds; the use of language and structure.',
     paragraph:
       'Hill creates fear by letting the narrator’s reasoning fail in stages, so that the reader watches his defences fall one by one. At first reason holds: the house has stood “steady as a lighthouse”, a simile of endurance and guidance that makes the storm seem survivable. The child’s cry breaks that calm, and his response is a pair of short, flat sentences, “There was no child. I knew that.”, whose certainty sounds like a man talking himself into it rather than a man who believes it. The rhetorical question that follows immediately exposes the doubt the full stops were trying to hold back. By line 51 the confidence has gone completely: “I began to doubt my own reality”. The noun reality is the most frightening word in the extract, because it shows that the threat is no longer only outside in the storm but inside his own mind. Structurally, Hill places this admission straight after a list of explanations he has already called “wild, incoherent fantasies”, so the reader feels reason exhausted just before the torch breaks and the last light goes. The tension comes less from what is in the house than from the narrator losing every way to explain it.',
     commentary: [
@@ -581,6 +606,7 @@ export const guide: StudyGuide = {
       'It tracks structure with a line reference and explains why the placement matters, putting the admission of doubt directly before the broken torch.',
       'It notices the tension between what a sentence says and how it sounds, reading the flat certainty of line 22 as a sign of doubt, which is the kind of interpretation that separates a strong answer from a competent one.',
       'It ends with a clear judgement that answers the question directly: the fear lies in the narrator’s loss of explanation more than in the house itself.',
+      'It is one paragraph of a full answer, not the whole of one. The question covers the whole extract, so the other paragraphs would take in the storm and the memory of the nursery, the child’s cry, and the ending with Spider.',
     ],
   },
 
@@ -754,6 +780,14 @@ export const guide: StudyGuide = {
     {
       label:
         'Pearson Edexcel International GCSE English Language A specification (Issue 7): Component 2 Section A, one essay question on a Part 2 anthology text, which is made available in the examination; Component 3 Assignment A, an essay on any three Part 2 texts including at least one poem and one prose text',
+    },
+    {
+      label:
+        'Pearson Edexcel 4EA1/02 question papers dated 5 June 2020 (Significant Cigarettes) and 12 June 2023 (Out, Out-), read for the exam-practice shape: Section A is one question on the named text, with about 45 minutes advised, asking how the writer presents or creates something, with bullet points ending on the use of language and structure; the front page says copies of the anthology may not be brought into the examination',
+    },
+    {
+      label:
+        'Pearson Edexcel Principal Examiner Feedback, 4EA1/02, November 2020 (the June 2020 paper on Significant Cigarettes, sat in November after the summer series was cancelled): three bullet points, the third always on language and structure; examiners praised coverage of the whole extract and criticised answers that followed the bullets so rigidly that language and structure became an afterthought at the end, feature-spotting and over-long quotations',
     },
     {
       label:

@@ -3705,7 +3705,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'al responder a las preguntas de examen de Edexcel - los examinadores corregirán según el texto de la antología, no según los originales de The Guardian que puedas encontrar en webs de repaso.',
   'anth_page.texts_heading': 'Los 10 textos de la antología',
   'anth_page.texts_intro':
-    'La página de cada texto incluye extractos clave, análisis del lenguaje y de la estructura, el propósito del escritor, vocabulario, práctica de examen y enlaces de comparación. Selecciona un texto para comenzar tu estudio.',
+    'La página de cada texto incluye extractos clave, análisis del lenguaje y de la estructura, vocabulario y práctica de examen, además de otros textos de la antología con los que compararlo como práctica de repaso. En el examen, el texto de la antología se compara con un extracto inédito, nunca con otro texto de la antología. Selecciona un texto para comenzar tu estudio.',
   'anth_page.text_index_prefix': 'Texto',
   'anth_page.study_this_text': 'Estudiar este texto',
   'anth_page.expect_heading': 'Paper 1 Section A - qué esperar',
@@ -3731,7 +3731,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'anth_text.section.themes': 'Temas',
   'anth_text.section.extract_focuses': 'Puntos clave del extracto',
   'anth_text.section.extract_focuses.intro':
-    'Momentos clave del extracto y lo que hace cada uno a nivel estructural y temático. Consulta la antología con licencia para ver la redacción exacta.',
+    'Momentos clave del extracto y lo que hace cada uno a nivel estructural y temático. Para ver la redacción exacta, consulta la antología, que Pearson publica gratis en PDF.',
   'anth_text.section.language_analysis': 'Análisis del lenguaje',
   'anth_text.section.language_analysis.intro':
     'Rasgos clave del lenguaje que usa el escritor y sus efectos en el lector. Se tratan por técnica en lugar de por cita; usa la redacción exacta de tu antología cuando redactes las respuestas.',
@@ -3748,17 +3748,18 @@ export const ES_MESSAGES: Record<string, string> = {
   'anth_text.section.exam_practice': 'Práctica de examen',
   'anth_text.exam.model_outline': 'Esquema de respuesta modelo',
   'anth_text.section.compare_with': 'Comparar con',
-  'anth_text.compare_with.intro': 'Parejas sólidas para las preguntas de comparación del examen.',
+  'anth_text.compare_with.intro':
+    'Textos de la antología que combinan bien con este, para practicar la comparación mientras repasas. En el examen, la pregunta 5 compara el texto de la antología con un extracto inédito, nunca con otro texto de la antología.',
   'anth_text.rebuilt_label': 'Página reconstruida en abril de 2026.',
   'anth_text.rebuilt_body':
-    'Esta página se ha reescrito para eliminar las citas directas no verificables. El análisis trata la estructura, la técnica y el efecto sin poner palabras concretas en boca del escritor. Para el texto exacto del extracto, los estudiantes deben usar la antología con licencia de Pearson Edexcel.',
+    'Esta página se ha reescrito para eliminar las citas directas no verificables. El análisis trata la estructura, la técnica y el efecto sin poner palabras concretas en boca del escritor. Para el texto exacto del extracto, los estudiantes deben usar la antología de Pearson Edexcel, que Pearson publica gratis en PDF.',
   'anth_text.rights_notice_label': 'Aviso de derechos:',
   'anth_text.footer_align': 'Alineado con la especificación 4EA1 de Pearson Edexcel.',
   'anth_text.moment_prefix': 'Momento',
   'anth_text.section.key_moments': 'Momentos clave',
   'anth_text.use_with_anthology': 'Úsalo con tu antología',
   'anth_text.key_moments.intro':
-    'Mapa de los momentos clave del extracto. Busca la redacción exacta en tu antología con licencia.',
+    'Mapa de los momentos clave del extracto. Busca la redacción exacta en la antología, que Pearson publica gratis en PDF.',
   'anth_text.teacher_note': 'Nota para el profesor',
   'anth_text.section.key_vocabulary': 'Vocabulario clave',
   'anth_text.section.structural.paragraphing': 'Estructura de los párrafos',
@@ -3773,7 +3774,7 @@ export const ES_MESSAGES: Record<string, string> = {
     '¿Cómo quería el escritor que se sintiera el lector?',
   'anth_text.section.key_extracts': 'Extractos clave',
   'anth_text.section.language_analysis.guidance_intro':
-    'Técnicas clave del lenguaje que buscar en el extracto de la antología. Se añadirán citas concretas tras la revisión de las fuentes primarias - por ahora, localiza ejemplos en tu antología con licencia y aplica la orientación de abajo.',
+    'Técnicas clave del lenguaje que buscar en el extracto de la antología. Se añadirán citas concretas tras la revisión de las fuentes primarias - por ahora, localiza ejemplos en la antología, que Pearson publica gratis en PDF, y aplica la orientación de abajo.',
   'model_answers.grade.label.9': 'Grade 9',
   'model_answers.grade.label.7': 'Grade 7',
   'model_answers.grade.label.5': 'Grade 5',
@@ -6088,7 +6089,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'al responder a las preguntas de examen de Edexcel - los examinadores corregirán según el texto de la antología, no según los originales en línea.',
   'anthology_hub.texts_heading': 'Los 10 textos de la antología',
   'anthology_hub.texts_intro':
-    'La página de cada texto incluye extractos clave, análisis del lenguaje y de la estructura, el propósito del escritor, vocabulario, práctica de examen y enlaces de comparación. Selecciona un texto para comenzar tu estudio.',
+    'La página de cada texto incluye extractos clave, análisis del lenguaje y de la estructura, vocabulario y práctica de examen, además de otros textos de la antología con los que compararlo como práctica de repaso. En el examen, el texto de la antología se compara con un extracto inédito, nunca con otro texto de la antología. Selecciona un texto para comenzar tu estudio.',
   'anthology_hub.text_index_prefix': 'Texto',
   'anthology_hub.study_this_text': 'Estudiar este texto',
   'anthology_hub.expect_heading': 'Paper 1 Section A - qué esperar',

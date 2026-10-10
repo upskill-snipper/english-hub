@@ -584,8 +584,14 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     keyQuotes: ['"I am not de problem"', '"I am born academic"', '"Black is not de problem"'],
     comparisonLinks:
       "Compare with 'Half-caste' (racism and identity), 'The Class Game' (prejudice), or 'Belfast Confetti' (identity under threat).",
+    // Until 26 September 2026 this credited the "Zephaniah estate via Pearson
+    // Education" and sent students to an "Edexcel-licensed school edition"
+    // with the ISBN of the International GCSE anthology, which does not print
+    // this poem (No Problem is set for GCSE 1ET0, from its own anthology). No
+    // holder is named because the 1ET0 anthology's acknowledgements were not
+    // read.
     rightsNotice:
-      '© Zephaniah estate via Pearson Education. Short fair-dealing extracts; full anthology selections require an Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: Benjamin Zephaniah (1958-2023); the poem is in copyright. Short fair-dealing extracts only. For full text, students should consult the Edexcel GCSE poetry anthology.',
   },
   {
     title: 'What Were They Like?',

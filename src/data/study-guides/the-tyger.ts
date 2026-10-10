@@ -53,6 +53,43 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * given to the maker as fact, though the feet may be the tiger's; Blake's
  * despair at the Terror was "recorded" when the source only says it; and the
  * plate comparison above had missed three differences.
+ *
+ * THE EXAM, checked 10 October 2026 against Pearson's 4ET1 documents: the
+ * specification (Issue 3, August 2025), the Paper 1 question papers, mark
+ * schemes and examiners' reports from June 2019 to June 2025, and the
+ * summaries of questions set. Section B is one question from a choice of two,
+ * and both compare two Part 3 poems: one names both, the other names one and
+ * the student chooses the second from Part 3. The Tyger has been set both
+ * ways: named alone, on power, in January 2019 (question 3), and named with
+ * Blessing on the November 2020 R paper (which Pearson titles June 2020) and
+ * with La Belle Dame sans Merci in November 2024 (question 2 both times). The
+ * poems come in a separate Poetry Booklet, so nothing is quoted from memory.
+ *
+ * Until this date the three passage questions did not say they were practice,
+ * though Section B never sets a poem alone; the last tip told every student to
+ * choose a second poem, which only one of the two questions asks; the context
+ * tip described the section as language, form and structure and left out
+ * comparison, half of what it rewards; a tip said to write the speaker, not
+ * Blake, though the questions ask how the writers present, and November 2024
+ * asked how the writer is affected by the tiger; the Lamb's card told an exam
+ * answer to keep its focus on The Tyger, when the answer must compare two
+ * Part 3 poems and The Lamb cannot be one; and the first tip said to comment
+ * on the anthology's punctuation, though the booklet issued with each of the
+ * nine papers compared by script, June 2019 to June 2025, has the anthology's
+ * words but different punctuation in lines 8, 13 and 15. The format tip names
+ * 4ET1 because the set-text registry also lists this poem for A-level boards,
+ * whose exams were not checked. Mark tariffs stay out: validate.ts rejects
+ * them in exam practice.
+ *
+ * Verified 10 October 2026, the same day. The first passage question and the
+ * Lamb's card still said the exam, and the tips on context, the question's
+ * wording and the one-poem cap said this section or Pearson's, which could be
+ * read as true of the A-level boards the registry also lists. They now name
+ * 4ET1, and the context tip says Section B, since under the guide's heading
+ * this section could mean the guide itself. A second script run agreed on the
+ * booklet: only lines 8, 13 and 15 differ, and in all nine papers line 16
+ * still holds the poem's only exclamation mark, so the stanza 4 tip is true
+ * of the text the student has in the exam.
  */
 export const guide: StudyGuide = {
   slug: 'the-tyger',
@@ -128,7 +165,7 @@ export const guide: StudyGuide = {
     {
       name: 'The Lamb',
       role: 'The gentle creature named once, in line 20',
-      body: "The Lamb is mentioned only once, but it is central to the poem's argument. A lamb is the traditional Christian image of Christ, and in Songs of Innocence Blake gave it a poem of its own, The Lamb, in which a child asks the lamb who made it and answers gladly that its maker is meek and mild and calls himself a Lamb. Setting the tiger beside the lamb makes them contraries: fierce and gentle, experience and innocence. The Tyger's speaker cannot put the two together, and that failure is the heart of the poem's final question. The Lamb is not printed in the anthology, so an exam answer should use it briefly, as context for line 20, and keep its focus on The Tyger.",
+      body: "The Lamb is mentioned only once, but it is central to the poem's argument. A lamb is the traditional Christian image of Christ, and in Songs of Innocence Blake gave it a poem of its own, The Lamb, in which a child asks the lamb who made it and answers gladly that its maker is meek and mild and calls himself a Lamb. Setting the tiger beside the lamb makes them contraries: fierce and gentle, experience and innocence. The Tyger's speaker cannot put the two together, and that failure is the heart of the poem's final question. The Lamb is not printed in the anthology, so it cannot be the second poem in a 4ET1 exam comparison: use it briefly, as context for line 20, and keep the answer's focus on The Tyger and the Part 3 poem it is compared with.",
     },
   ],
 
@@ -162,7 +199,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Explore how Blake presents the tiger and the question of its making in the first stanza. Write about the language, the sound and the structure of these four lines.',
+        'Close-reading practice, not an exam question: in the 4ET1 exam The Tyger is always compared with a second Part 3 poem. Explore how Blake presents the tiger and the question of its making in the first stanza. Write about the language, the sound and the structure of these four lines.',
     },
     {
       title: 'The forge',
@@ -189,7 +226,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Blake use the imagery of the forge to present the making of the tiger in lines 13 to 16? Write about the language, the sound and the effect of the questions.',
+        'Close-reading practice, not an exam question. How does Blake use the imagery of the forge to present the making of the tiger in lines 13 to 16? Write about the language, the sound and the effect of the questions.',
     },
     {
       title: 'The stars, the Lamb and the changed refrain',
@@ -220,7 +257,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Explore how Blake presents the maker of the tiger in lines 17 to 24. Write about the image of the stars, the two questions in lines 19 and 20, and the effect of the changed final line.',
+        'Close-reading practice, not an exam question. Explore how Blake presents the maker of the tiger in lines 17 to 24. Write about the image of the stars, the two questions in lines 19 and 20, and the effect of the changed final line.',
     },
   ],
 
@@ -400,15 +437,16 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
-      "Learn the anthology's punctuation, not a website's. Editions differ: some open with exclamation marks, some modernise the spelling of line 18 and the ampersands of lines 9 and 12, some keep Blake's own spelling of seize in line 8, which on his plate is sieze, and some end line 16 with a question mark where the anthology has an exclamation mark. The words hardly change, but if you comment on punctuation, make sure it is the anthology's.",
+      'Know the two shapes of the question. In Paper 1 Section B of the Pearson Edexcel International GCSE (4ET1) you answer one of two questions, and both ask you to compare two Part 3 poems with reference to language, form and structure. One names both poems: Pearson paired The Tyger with Blessing in November 2020 and with La Belle Dame sans Merci in November 2024. The other names one poem and lets you choose the second from Part 3, as the January 2019 question on power in The Tyger did. Pearson suggests spending 40 minutes on it.',
+      "Revise from the anthology, not a website, and in the exam work from the Poetry Booklet of all the Part 3 poems that comes with the question paper, so nothing has to be quoted from memory. Editions differ: some open with exclamation marks, some modernise the spelling of line 18 and the ampersands of lines 9 and 12, some keep Blake's own spelling of seize in line 8, which on his plate is sieze, and some end line 16 with a question mark where the anthology has an exclamation mark. Even the booklet issued with the June 2025 paper, which has the anthology's words, punctuates lines 8, 13 and 15 differently. The words hardly change, but if you comment on punctuation, make sure it is the punctuation in front of you.",
       "Do not say that every stanza is a question, or that stanza 4 has none. In the anthology stanzas 1, 2, 3, 5 and 6 all end with a question mark; stanza 4 is full of questions but ends with the poem's only exclamation mark, at the height of the forge imagery.",
       "The change from “Could frame” to “Dare frame” is the best-known feature of the poem, so noticing it is not enough. Say what it does: a question about ability becomes a question about nerve, and the speaker's fear has grown.",
       "Write about the maker as much as the tiger. Most of the poem's questions are about who made the creature and how; an answer that only describes the tiger misses most of the poem.",
       'Do not call the tiger evil as if that were settled. The language admires it as well as fearing it, and a stronger answer weighs awe against terror and says which dominates where.',
-      "Use context lightly. Pearson's own summary of past questions describes this section as assessing language, form and structure, so The Lamb, the French Revolution or Blake's work as an engraver should appear only where they sharpen a point about the words.",
-      "Write the speaker, not Blake, unless you are making a deliberate point about the poet, and call the creator the maker: the poem never uses the word God, though the anthology's footnote does.",
+      "Use context lightly. Section B rewards analysis of language, form and structure and comparison between the two poems, and Pearson's 4ET1 examiners' reports say context is not assessed in either poetry section of the paper, so The Lamb, the French Revolution or Blake's work as an engraver should appear only where they sharpen a point about the words.",
+      "Use the question's words and keep your own terms clear. Pearson's 4ET1 questions ask how the writers present things, and the November 2024 one asked how the writer is affected by the tiger, so do not avoid the word writer; when you mean the voice that asks the poem's questions, the speaker is the more careful name, since the poem never says it is Blake. Call the creator the maker: the poem never uses the word God, though the anthology's footnote does.",
       'Name techniques precisely and explain them in the same sentence: apostrophe (addressing the tiger), synecdoche (hand and eye for the maker), rhetorical questions, the forge as an extended metaphor, rhyming couplets.',
-      'Keep the comparison running through every paragraph, and choose a second poem that lets you argue about differences, not only list similarities.',
+      "Keep the comparison running through every paragraph: Pearson's 4ET1 mark schemes say that an answer which considers only one poem cannot go beyond the top of Level 2. When the question names only The Tyger, choose a second Part 3 poem in which its focus matters, and one that lets you argue about differences, not only list similarities.",
     ],
   },
 
@@ -642,6 +680,26 @@ export const guide: StudyGuide = {
       label:
         'Pearson, Summary of questions set for 4ET1, SAMs to January 2019 (Issue 1, February 2021), rendered and read on 26 September 2026: January 2019 Paper 1 Section B, question 3, asked candidates to compare how the writers present power in The Tyger and one other poem from the anthology; the section is headed as assessing language, form and structure. The table says its questions are abbreviated.',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Teaching%20and%20learning%20materials/summary-of-questions-set-for-4et1-sams-to-january-2019.pdf',
+    },
+    {
+      label:
+        'Pearson, Summary of questions set for 4ET1, June 2019 to November 2020, read in table layout on 10 October 2026: Section B question 2 on the November 2020 R paper (titled June 2020) asked candidates to compare how the writers present a sense of wonder in Blessing and The Tyger. No other paper in that summary set The Tyger.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Teaching%20and%20learning%20materials/summary-of-questions-set-for-4et1-june-2019-to-november-2020.pdf',
+    },
+    {
+      label:
+        'Pearson, International GCSE English Literature (4ET1) specification, Issue 3 (August 2025), read on 10 October 2026 for the exam tips: Component 1, still printed Paper 1 on the question papers, has a Section B of one essay question from a choice of two, each comparing two poems from Part 3 of the anthology, and the anthology poems are provided in the examination.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Specification%20and%20sample%20assessments/international-gcse-english-literature-specification.pdf',
+    },
+    {
+      label:
+        "Pearson, 4ET1 Paper 1 question paper and mark scheme, November 2024, read on 10 October 2026: question 2 named La Belle Dame sans Merci and The Tyger, and question 3 named one poem and asked for one other from the anthology; 40 minutes suggested for Section B; the Part 3 poems supplied in a separate Poetry Booklet; an answer on only one poem cannot go beyond the top of Level 2, as in the June 2024 and June 2025 mark schemes. The booklet's text of The Tyger was compared by script with the anthology's in the nine papers from June 2019 to June 2025 (June 2019, January 2023, June 2023, November 2023, June 2024 1 and 1R, November 2024, June 2025 1 and 1R): the same words in all, and in all the same punctuation differences, in lines 8, 13 and 15. Not checked: the November 2025 and June 2026 papers, which are behind Pearson's login.",
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20241105.pdf',
+    },
+    {
+      label:
+        "Pearson, 4ET1 Paper 1 examiners' reports, June 2023, June 2024 (Papers 1 and 1R) and June 2025 (Papers 1 and 1R), read on 10 October 2026: context is not assessed in either poetry section.",
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-pef-20250821.pdf',
     },
     {
       label:

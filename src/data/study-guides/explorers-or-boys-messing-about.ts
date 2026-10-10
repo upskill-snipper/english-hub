@@ -11,8 +11,11 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * English Anthology, Issue 8 (February 2026), pages 8-9, fetched from Pearson
  * that day and byte-identical to the copy read on 19 September for
  * src/lib/board/edexcel-igcse-anthology.ts. Line numbers were mapped from the
- * numbers printed in the margin (5, 10 ... 65), so they match the copy a
- * candidate is given in the exam.
+ * numbers printed in the margin (5, 10 ... 65), so they match the anthology a
+ * candidate revises from. (Corrected 26 September 2026: this used to say they
+ * match the copy given in the exam. In the exam the text is reprinted in the
+ * Source Booklet, and no 4EA1 Source Booklet was to hand to check its line
+ * numbers, so nothing student-facing should claim they match.)
  *
  * The anthology prints an ADAPTED version of the Guardian article, dated
  * 28 January 2003 in its own note. Nothing here is taken from the online
@@ -48,6 +51,23 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * rescue began with his call to her; the Zephaniah piece was adapted from a
  * book contribution, not "for the anthology"; and the rescue narrative is
  * lines 19-32, not 19-35.
+ *
+ * PRACTICE CHECKED AGAINST THE PAPER, 26 September 2026. In 4EA1 Paper 1 this
+ * article is Text Two, printed in the Source Booklet. The one question on it
+ * alone asks how Morris uses language and structure, together, across the
+ * whole article, with no line range; the other compares it with an unseen
+ * Text One, never with another anthology text; the short-answer questions are
+ * all on the unseen text. So the line-range questions on the passages now say
+ * they are practice, the "how effective" question on the ending (a form this
+ * paper does not set) asks how, the two language-only exam questions ask
+ * about language and structure, the comparison question and the 127 Hours
+ * card under Compare with say plainly that pairing two anthology texts is
+ * practice, and two tips say how the article is examined. Do not add a
+ * retrieval question, a language-only or structure-only exam question, a line
+ * range to an exam question, or a mark tariff (the validator rejects one).
+ * A second check the same day renamed an "Evaluate" step in the guidance to
+ * "Conclude on the effect": 4EA1 has no evaluation objective, and the question
+ * on this article rewards how its choices influence the reader (AO2).
  */
 export const guide: StudyGuide = {
   slug: 'explorers-or-boys-messing-about',
@@ -253,7 +273,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        "How does Morris use language and structure in lines 1-18 to shape the reader's first impression of Steve Brooks and Quentin Smith?",
+        "Practice on lines 1-18, not an exam question (the exam asks about the whole article): how does Morris use language and structure to shape the reader's first impression of Steve Brooks and Quentin Smith?",
     },
     {
       title: 'Experience on trial',
@@ -285,7 +305,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        "How does Morris present the men's experience in lines 33-55, and how does the order of the paragraphs affect the reader's view of it?",
+        "Practice on lines 33-55, not an exam question (the exam asks about the whole article): how does Morris use language and structure to present the men's experience, and how does the order of the paragraphs affect the reader's view of it?",
     },
     {
       title: 'The verdicts and the last word',
@@ -313,7 +333,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How effective is the ending of the article? Refer closely to lines 56-69 and to the headline in your answer.',
+        'Practice on lines 56-69 and the headline, not an exam question (the exam asks about the whole article): how does Morris use language and structure to end the article, and how does the ending link back to the headline?',
     },
   ],
 
@@ -522,19 +542,20 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          "How does Morris use the words of other people to influence the reader's view of the rescue and of the two men?",
-        skill: "Language analysis: how quotation and attribution shape a reader's view",
+          "How does Steven Morris use language and structure, including the words of other people, to influence the reader's view of the rescue and of the two men? Support your answer with examples from the text.",
+        skill:
+          "Language and structure: how quotation, attribution and placing shape a reader's view",
         guidance: [
           "Map the voices in the order they appear: the unnamed resentful (line 10), the unnamed experts (line 12), the website (line 15), Vestey (lines 17-18 and 22-23), an Antarctic explorer (line 34), Endres (lines 56-59), the pair's spokesman (lines 60-61), the Ministry of Defence (lines 62-64), and Vestey again at the end.",
           'For each, ask three questions: named or unnamed, supporter or critic, early or late in the article?',
           "Analyse Vestey's phrase closely, and explain how its meaning changes when Morris makes it the headline.",
           "Analyse how the men's own side is reported: the website's and the spokesman's words in quotation marks, and the doubting verb claims.",
-          'Evaluate: Morris gives almost no direct opinion, yet the selection of voices builds a judgement. Say whether that makes the article more persuasive, and why.',
+          'Conclude on the effect: Morris gives almost no direct opinion, yet the selection of voices builds a judgement. Say whether that makes the article more persuasive, and why.',
         ],
       },
       {
         question:
-          'Compare how the writers present people who take risks in remote and dangerous places in Explorers or boys messing about? and From 127 Hours: Between a Rock and a Hard Place. (In the exam this kind of question pairs the anthology text with an unseen extract; practise the skill here with another anthology text.)',
+          "Compare how the writers present their ideas and perspectives about people who take risks in remote and dangerous places, in Explorers or boys messing about? and From 127 Hours: Between a Rock and a Hard Place. This pairing is for practice only: in the examination Morris's article is Text Two and the other text is an unseen passage, Text One, never another anthology text.",
         skill: "Comparison of writers' ideas and perspectives, and of how they are conveyed",
         guidance: [
           'Establish the key difference in perspective: Morris writes as an outside reporter judging two men; Ralston tells his own story from inside the danger, in the first person.',
@@ -546,10 +567,11 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'How does Morris use language to present the rescue and the people who carried it out?',
-        skill: 'Language analysis',
+          'How does Steven Morris use language and structure to present the rescue and the people who carried it out? Support your answer with examples from the text.',
+        skill: 'Language and structure analysis',
         guidance: [
           'Locate the rescue narrative: it is the one chronological section of the article, lines 19-32, followed by the comment on their survival in lines 33-35, and most of the rest is reaction and background.',
+          'Consider where the rescue sits: it is announced in lines 4-9, then held back behind four paragraphs of resentment and doubt (lines 10-18) before it is told in full, so the reader meets the bill before the detailed account of the rescue.',
           'Analyse the precise times, distances and names (1am, 100 miles, 36 miles north of Smith Island, 180 miles, 10.20am) and the authority and tension they create.',
           "Analyse the roll-call of services, from Falmouth coastguard and RAF Kinloss to HMS Endurance, its two Lynx helicopters and the Chilean vessel, and link it to the headline's bill.",
           'Contrast the passive verbs used of the men at the moment of rescue, starting with “plucked”, with the energetic active verbs given to HMS Endurance.',
@@ -565,7 +587,8 @@ export const guide: StudyGuide = {
       'Notice who is never quoted. Neither Brooks nor Smith speaks directly in the article, and pointing out a silence is the kind of observation that lifts an answer.',
       "Treat the balance as a technique. The paragraphs on the men's experience make the criticism look fair-minded, and fair-minded criticism is more persuasive.",
       'Offer an alternative reading and then judge it. The tone can be read as gentle comedy, but the comedy is how the argument works.',
-      'Link language to structure by tracing an idea across the text: the boys of the headline, line 18 and the ending, or the bill of the headline, line 10 and lines 62-64.',
+      'The one exam question on this article alone asks how Morris uses language and structure together, across the whole article, so link the two by tracing an idea across the text: the boys of the headline, line 18 and the ending, or the bill of the headline, line 10 and lines 62-64.',
+      'The only other exam question on this article compares it with an unseen passage, never with another anthology text, and none of the short-answer questions is on it. Practise comparing it with writing you have not seen before, and keep both texts in view throughout.',
       'Get the facts right. The helicopter came down in the sea about 100 miles off Antarctica, not on the ice, and the men were picked up from a liferaft by a Chilean naval vessel.',
       'Be careful with the term inverted pyramid: this article opens with background, the earlier farce, rather than with the news, and that departure from news convention is itself worth analysing.',
       'Keep quotations short and embedded, a word or a phrase, and analyse single words such as “farce”, “claims” and “plucked”.',
@@ -766,7 +789,7 @@ export const guide: StudyGuide = {
       title: 'From 127 Hours: Between a Rock and a Hard Place (Aron Ralston)',
       href: '/igcse/edexcel-lang/anthology/127-hours',
       reason:
-        "Ralston tells his own story of a boulder crushing his hand in a canyon after telling no one where he was going, so it pairs well for comparing a first-person account of risk with Morris's outsider's judgement of it.",
+        "Ralston tells his own story of a boulder crushing his hand in a canyon after telling no one where he was going, so it is good practice for comparing a first-person account of risk with Morris's outsider's judgement of it. In the exam, though, the article is compared with an unseen passage, not with another anthology text.",
     },
     {
       title: "From The Explorer's Daughter (Kari Herbert)",

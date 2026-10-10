@@ -41,9 +41,28 @@ export const metadata: Metadata = {
  * 2026), pp. 19-20. The themes and structure notes described the book, not the
  * extract: training and flying the hawk, a climax of self-recognition, a
  * resolution of quieter understanding. The extract is her first meeting with
- * the hawks. It opens on the seller checking ring numbers against paperwork,
+ * the hawks. It opens on the seller's talk of ring numbers and paperwork,
  * contains no training or flying, and ends unresolved, in silence, before the
  * seller answers her plea. Grief is named only in the anthology's introduction.
+ *
+ * Checked again the same day, by script against the extract: the remaining
+ * themes, purpose, context and comparison notes also described the book. The
+ * extract offers no refuge, consolation or taming (it ends in panic and
+ * silence), the seller brings two hawks, the opening only proposes the
+ * ring-number check (it is made at line 45), and the Ralston extract covers
+ * minutes, not prolonged stress. Claims neither the anthology nor the verified
+ * guide could confirm were removed, among them that the book is "widely
+ * regarded as a landmark of contemporary British nature writing".
+ *
+ * A second check, also 26 September 2026: "Both hawks are wild" became
+ * captive-bred (line 3; only the first hawk's eyes are called wild, line 41),
+ * the one hatched in an incubator is the hawk, not Macdonald, and she slows
+ * time while the box is untied, before the hawk appears, not as it does.
+ *
+ * 10 October 2026: the theme said the world rushes into the hawk's eyes. At
+ * lines 26-31 the extract says only that, after an aviary and a box, she can
+ * now take in the whole view, and lists it. The rushing is the guide's
+ * reading, so do not state it as the text.
  */
 const themes = [
   {
@@ -54,32 +73,32 @@ const themes = [
   {
     label: 'Nature and the wild',
     detail:
-      'The goshawk represents something fierce, alien and untameable. Macdonald is drawn to its difference from human emotional life.',
+      'Both hawks are captive-bred, yet Macdonald presents the first as fierce, alien and impossible to pin down, trying image after image to describe her. She also imagines the hawk’s view: a bird that has known only an aviary and then a box can now take in everything, from a cormorant to parked cars and gulls. The hawk becomes a creature with her own experience, not only a symbol of Macdonald’s feelings.',
   },
   {
     label: 'Obsession',
     detail:
-      'She has only just met the hawks, yet her sense of which bird is hers is already overwhelming: when the hawk meant for her feels wrong, she breaks etiquette and pleads with the seller in a desperate, incoherent barrage. The text registers obsession as both a refuge and a danger.',
+      'She has only just met the hawks, yet her sense of which bird is hers is already overwhelming. The forms say the larger, older hawk is hers, but she does not recognise her, and a refrain in italics keeps returning to which hawk is hers. Once the money has changed hands she breaks etiquette and pleads with the seller in a desperate rush of questions. Her certainty is instinctive, not rational, and it overrides rules she knows well.',
   },
   {
     label: 'Identity and self',
     detail:
-      'In her closeness to the bird, Macdonald loses and finds parts of herself. The text questions where the human ends and the wild begins.',
+      'Macdonald is an experienced falconer who knows the rituals, the ring numbers, the forms and the hood, yet in the extract she loses her composure. The only description of how she looks comes at the end, when she imagines how the seller sees her: tall, pale and dishevelled, pleading like a tragic heroine. One reading is that she has become a stranger to herself.',
   },
   {
     label: 'Memory and loss',
     detail:
-      'The hawk is also a way of remembering - a relationship to loss that does not require words.',
+      'Loss is never named in the extract, but it can be sensed. As the seller gathers up the first hawk, Macdonald tells how the hawk was hatched in an incubator and how he fed her as a chick from tweezers, and all at once she loves him. One reading is that a picture of patient, parental care moves her because of what she has lost.',
   },
 ]
 
 const structuralAnalysis = {
   opening:
-    'Macdonald opens with dialogue and paperwork: the seller checking the hawks’ ring numbers against their official documents. The procedural start delays the moment the reader is waiting for, the first sight of the hawk.',
+    'Macdonald opens with the seller’s words about paperwork: they will check the hawks’ ring numbers against the official forms, so that she does not go home with the wrong bird. The procedural start delays the moment the reader is waiting for, the first sight of the hawk, and the remark about the wrong bird foreshadows the reversal at line 46.',
   development:
-    'The text moves between external action (unboxing and hooding the hawks, checking the ring numbers) and Macdonald’s internal reaction, the two threads tightening as the narrative progresses.',
+    'The text moves between external action (unboxing and hooding the hawks, checking the ring numbers) and Macdonald’s internal reaction. The tension rises as the first box is untied and reaches a first peak as the hawk is pulled out into the sunlight, where the narrative slips from the past tense into the present (line 15). It eases when the past tense returns with the seller’s calm at line 32.',
   climax:
-    'The turning point comes when the ring numbers show that the first hawk, the younger and smaller one, is the wrong bird. The second, meant to be hers, is wild and wailing and she cannot recognise it as her hawk; the climax is her slow panic and desperate plea to the seller to let her have the first bird instead.',
+    'The turning point comes when the ring numbers show that the first hawk, the younger and smaller one, is the wrong bird. The second, meant to be hers, is darker, much bigger and wailing, and she cannot recognise her as her hawk; the climax is her slow panic and desperate plea to the seller to let her have the first bird instead.',
   resolution:
     'There is no resolution. The extract ends in silence, before the seller answers her plea, leaving the reader in suspense.',
   perspective:
@@ -88,11 +107,11 @@ const structuralAnalysis = {
 
 const writersPurpose = {
   achieve:
-    'Macdonald wants to render grief in a register that does not depend on conventional emotional vocabulary - instead, through nature, attention and a non-human presence.',
+    'To make the reader feel what her first meeting with the hawks was like: overwhelming, wonderful and frightening at once. The extract never names her grief; the anthology’s introduction supplies it, and her intense reactions can be read in its light.',
   readerFeel:
-    'She wants the reader to feel the strange consolation of being absorbed by something other than oneself, and the way attention to a creature can become attention to one’s own pain.',
+    'Wonder and fear at the hawk’s wildness, amusement and sympathy at a loss of composure that Macdonald herself mocks, and suspense at the end, when the reader is left waiting, like her, for the seller’s answer.',
   message:
-    'Grief is survivable but not solvable. Sometimes the path through it runs not through human comfort but through a deep encounter with something wholly other.',
+    'Recognition is instinctive, not rational: the forms say one hawk is hers, but she feels that the other is. Read with the introduction, the extract suggests how strong feeling can surface without ever being named.',
 }
 
 /** The text these practice questions are about, sent to the marker as context. */
@@ -141,24 +160,24 @@ const comparisonLinks = [
     author: 'Kari Herbert',
     href: '/igcse/edexcel-lang/anthology/the-explorers-daughter',
     reason:
-      'Both texts confront humans’ relationship with wild creatures. Compare Macdonald’s intimate single-bird focus with Herbert’s wider community-and-prey perspective.',
-    themes: ['Nature', 'Animals', 'Ethics'],
+      'Both writers watch wild animals intently and have mixed feelings about them. Compare Macdonald, close enough to touch the two hawks on the quayside, with Herbert, watching a narwhal hunt from a lookout on the shore and torn between the hunters and the hunted.',
+    themes: ['Nature', 'Animals', 'Mixed feelings'],
   },
   {
     title: '127 Hours',
     author: 'Aron Ralston',
     href: '/igcse/edexcel-lang/anthology/127-hours',
     reason:
-      'Both texts describe extreme psychological states under prolonged stress. Compare Macdonald’s grief with Ralston’s survival - both narrators changed by what they endure.',
-    themes: ['Endurance', 'Psychology', 'Transformation'],
+      'Both writers slow time as their most intense moment arrives: Ralston stretches the three seconds of the rockfall, Macdonald the untying of the box. Ralston tells his accident in the present tense throughout, while Macdonald switches into it as the hawk is pulled out of the box, and both end before the outcome is known.',
+    themes: ['Present tense', 'Pace', 'Suspense'],
   },
   {
     title: 'A Passage to Africa',
     author: 'George Alagiah (1955-2023)',
     href: '/igcse/edexcel-lang/anthology/a-passage-to-africa',
     reason:
-      'Both writers process emotionally heavy material with literary precision. Compare Macdonald’s grief-memoir with Alagiah’s witness-reportage - two careful prose styles handling pain.',
-    themes: ['Grief', 'Witness', 'Prose style'],
+      'Both are memoirs in which one encounter affects the writer deeply, and both writers are unsparing about themselves: Alagiah, unsettled by a starving man’s apologetic smile, questions his own profession, while Macdonald mocks her own loss of composure. Compare how each presents their own reactions.',
+    themes: ['Memoir', 'Self-examination', 'Encounter'],
   },
 ]
 
@@ -211,15 +230,17 @@ export default async function HIsForHawkPage() {
           <p>
             Helen Macdonald&apos;s <em>H is for Hawk</em> (2014) is a literary memoir interweaving
             three strands: her grief after the sudden death of her father, her training of a goshawk
-            named Mabel, and her reading of T. H. White&apos;s earlier book <em>The Goshawk</em>.
+            named Mabel, and a portrait of T. H. White, whose book <em>The Goshawk</em> (1951)
+            records his own attempt to train one.
           </p>
           <p>
-            The book won the Samuel Johnson Prize and the Costa Book of the Year, and is widely
-            regarded as a landmark of contemporary British nature writing. The anthology extract is
-            Macdonald&apos;s first meeting with her hawk, as the man selling the birds unpacks them
-            on a quayside.
+            The book won the 2014 Samuel Johnson Prize and the 2014 Costa Book of the Year. The
+            anthology extract is Macdonald&apos;s first meeting with her hawk, on a quayside, where
+            the man selling the birds has brought two hawks, one of them meant for another falconer.
+            It contains no training or flying, and it never mentions her father: only the
+            anthology&apos;s introduction does.
           </p>
-          <p>Published by Jonathan Cape (Penguin Random House).</p>
+          <p>First published by Jonathan Cape in 2014.</p>
         </div>
       </section>
 
@@ -356,8 +377,9 @@ export default async function HIsForHawkPage() {
             {await t('anth_text.section.compare_with')}
           </h2>
         </div>
-        {/* Second sentence added 26 September 2026: the shared intro calls these
-            pairings for the exam, but 4EA1 never pairs two anthology texts. */}
+        {/* Second sentence added 26 September 2026, when the shared intro called
+            these pairings for the exam; 4EA1 never pairs two anthology texts.
+            If the shared intro now says so itself, this repeats it: drop one. */}
         <p className="text-body-sm text-muted-foreground mb-5">
           {await t('anth_text.compare_with.intro')} In the exam, Question 5 pairs this text with an
           unseen passage, never another anthology text, so use these comparisons for revision.

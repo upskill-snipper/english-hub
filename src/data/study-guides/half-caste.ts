@@ -22,10 +22,11 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * THE LINE NUMBERS. The anthology's margin numbers are right to line 47. On
  * page 68 it prints 50 beside the line about the ear, which is line 49 by
  * count; the GCSE printing puts 50 one line later, beside the line about the
- * mind, which agrees with the count, and so does the copy printed in the May
- * 2024 4ET1 question paper (question booklet page 14), which also runs the last
- * three lines on without the anthology's stanza gap. So this guide numbers the
- * last six lines 48 to 53, and the scope tells the student why.
+ * mind, which agrees with the count, and so does the copy in the Poetry Booklet
+ * issued with the May 2024 4ET1 question paper (booklet page 14, PDF page 26),
+ * which also runs the last three lines on without the anthology's stanza gap.
+ * So this guide numbers the last six lines 48 to 53, and the scope tells the
+ * student why.
  *
  * THE LIMIT. The poem is counted at 235 words (see workLength), so the site's
  * 15 per cent allows 35 distinct quoted words, and this page quotes exactly
@@ -70,6 +71,25 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * publisher of Get Back Pimple was not confirmed and is not named. Wikipedia
  * mentions only a 2005 collection of the same name; both Pearson anthologies
  * date the poem 1996, which the dossier's Get Back Pimple (1996) supports.
+ *
+ * EXAM FORMAT, audited 10 October 2026 against the 4ET1 specification (Issue
+ * 3, August 2025), the Paper 1 question papers, mark schemes and examiners'
+ * reports from the specimen to June 2025, Pearson's summaries of questions set
+ * and the 1ET0 specification. The four practice questions were the right
+ * kinds. Section B is one question from a choice of two, both comparisons: one
+ * names both poems (the first two here; the June 2019 one is now confirmed word
+ * for word from that paper), the other names one and the candidate picks a
+ * second Part 3 poem that suits its focus (the last two). None of the format
+ * reached the page, though: the supplement does not render the scope, and the
+ * page above says only that the exam compares the named poem with another. So
+ * a first tip now gives the section as set and how 1ET0 differs, the skill
+ * labels name 4ET1, and the three passage questions, which carried the label
+ * The question, say they are close-reading practice. This file also put the
+ * May 2024 printing of the poem on question booklet page 14. It is page 14 of
+ * the separate Poetry Booklet that holds every Part 3 poem (PDF page 26), and
+ * no Part 3 poem is printed in the question booklet itself: keep that apart
+ * from 1ET0, whose question paper does print the named poem. No mark tariffs:
+ * the validator keeps those to ExamPlacementCard.
  */
 export const guide: StudyGuide = {
   slug: 'half-caste',
@@ -87,7 +107,7 @@ export const guide: StudyGuide = {
     words: 235,
     lines: 53,
     basis:
-      'Counted on 26 September 2026 from pages 67 and 68 of the Pearson Edexcel International GCSE English Anthology, Issue 8 (February 2026), in Pearson’s own PDF, read as extracted text and checked against the rendered page images, title and author’s name excluded. 235 words by the site validator’s word count, which counts each part of a hyphenated word separately (half-caste as two words, half-a-shadow as three), exactly as it counts the words this page quotes. Counting each hyphenated compound as one word gives 217. The 53 lines were counted and agree with Pearson’s GCSE printing of the poem and with the copy printed in the May 2024 4ET1 question paper, both of which place 50 in the margin beside the line about the mind.',
+      'Counted on 26 September 2026 from pages 67 and 68 of the Pearson Edexcel International GCSE English Anthology, Issue 8 (February 2026), in Pearson’s own PDF, read as extracted text and checked against the rendered page images, title and author’s name excluded. 235 words by the site validator’s word count, which counts each part of a hyphenated word separately (half-caste as two words, half-a-shadow as three), exactly as it counts the words this page quotes. Counting each hyphenated compound as one word gives 217. The 53 lines were counted and agree with Pearson’s GCSE printing of the poem and with the copy in the Poetry Booklet issued with the May 2024 4ET1 question paper, both of which place 50 in the margin beside the line about the mind.',
   },
 
   native: {
@@ -205,7 +225,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Agard use the opening nine lines to challenge the listener? Refer closely to language, form and structure.',
+        'Close-reading practice, not an exam question (in the exam you compare two poems). How does Agard use the opening nine lines to challenge the listener? Refer closely to language, form and structure.',
     },
     {
       title: 'England’s weather',
@@ -233,7 +253,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'Explore how Agard uses humour in lines 10 to 22 to attack the word half-caste. Refer closely to language, form and structure.',
+        'Close-reading practice, not an exam question (in the exam you compare two poems). Explore how Agard uses humour in lines 10 to 22 to attack the word half-caste. Refer closely to language, form and structure.',
     },
     {
       title: 'Half a person, and the whole of the listener',
@@ -261,7 +281,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does Agard use the ending of the poem to change the meaning of the word half? Refer closely to lines 40 to 53.',
+        'Close-reading practice, not an exam question (in the exam you compare two poems). How does Agard use the ending of the poem to change the meaning of the word half? Refer closely to lines 40 to 53.',
     },
   ],
 
@@ -364,7 +384,7 @@ export const guide: StudyGuide = {
         question:
           'Re-read Half-caste and Remember. Compare the ways the writers express their feelings in Half-caste and Remember. You should make reference to language, form and structure. Support your answer with examples from the poems.',
         skill:
-          'Comparison of two named poems, as set on the May 2024 paper: language, form and structure',
+          'Comparison of two named poems, as set on the May 2024 4ET1 paper: language, form and structure',
         guidance: [
           'Open with a comparative argument, not a summary. Both speakers address a listener directly, but Rossetti’s feelings soften as her sonnet turns, while Agard’s harden into a demand.',
           'Name the feelings precisely. For Agard: indignation, contempt for the label, exasperation (the curse in line 22) and, underneath, pride. For Rossetti: love, fear of being forgotten, and finally a selfless wish that her lover should be happy rather than grieve.',
@@ -378,7 +398,7 @@ export const guide: StudyGuide = {
         question:
           'Re-read Prayer Before Birth and Half-caste. Compare the ways the writers present concerns about society in Prayer Before Birth and Half-caste. You should make reference to language, form and structure. Support your answer with examples from the poems.',
         skill:
-          'Comparison of two named poems, on the pairing and topic set in June 2019: language, form and structure',
+          'Comparison of two named poems, as set on the June 2019 4ET1 paper: language, form and structure',
         guidance: [
           'Define each poem’s concern. MacNeice’s unborn child fears a society that will turn people into instruments; Agard’s speaker attacks a society that labels people and sees them only in part.',
           'Compare the voices. Both speakers address a listener who never replies, and both make demands: MacNeice’s child through a refrain of pleas, seven of its eight stanzas opening the same way; Agard’s speaker through the refrain “Explain yuself / wha yu mean”.',
@@ -391,7 +411,7 @@ export const guide: StudyGuide = {
       {
         question:
           'Re-read Half-caste. Compare the ways the writers present a speaker who challenges a listener in Half-caste and one other poem from the anthology. You should make reference to language, form and structure. Support your answer with examples from the poems.',
-        skill: 'Comparison with a poem of your choice: voice and address',
+        skill: '4ET1 comparison with a Part 3 poem of your choice: voice and address',
         guidance: [
           'Choose a second poem with a clear speaker and listener. If- (a father instructing a son), Prayer Before Birth (an unborn child pleading) and My Last Duchess (a duke talking to an envoy) all give strong contrasts.',
           'Say what each speaker wants from the listener. Agard’s speaker wants the listener to explain the word and, finally, to come back and see him whole; state your second speaker’s aim just as precisely.',
@@ -404,7 +424,7 @@ export const guide: StudyGuide = {
       {
         question:
           'Re-read Half-caste. Compare the ways the writers present identity in Half-caste and one other poem from the anthology. You should make reference to language, form and structure. Support your answer with examples from the poems.',
-        skill: 'Comparison with a poem of your choice: theme and language',
+        skill: '4ET1 comparison with a Part 3 poem of your choice: theme and language',
         guidance: [
           'Search For My Tongue makes the strongest partner: both speakers have two languages, and both put the language of home on the page, Bhatt in Gujarati script and Agard in Caribbean Creole.',
           'Compare what threatens each identity. For Agard it is a label imposed from outside; for Bhatt it is the fear of losing her mother tongue from within.',
@@ -416,6 +436,7 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
+      'Know what the paper sets. On 4ET1 the poem is in Paper 1, Section B: you answer one of two questions in about 40 minutes, and both are comparisons. One names two Part 3 poems, the form in which Pearson set Half-caste in 2018 and 2023 beside Search For My Tongue, in 2019 beside Prayer Before Birth and in 2024 beside Remember. The other names one poem, and you choose a second from Part 3 to suit the question’s focus. Every Part 3 poem is printed in a Poetry Booklet issued with the paper, so both poems will be in front of you. The marks are for analysing language, form and structure and for comparing the poems, and an answer on one poem alone cannot rise above the second of Pearson’s five levels. On the GCSE (1ET0) paper only the named poem is printed, so the second, which must come from the Conflict collection, is written about from memory.',
       'Quote exactly as the anthology prints it: lower-case picasso, england and tchaikovsky, hyphens in half-a-shadow, slashes where they fall. Even some published guides tidy these up. The spelling is the poem’s argument, so do not correct it.',
       'Get the order of the analogies right: the painter (lines 7 to 9), the weather (lines 13 to 22), the piano (lines 26 to 30). The weather section is the longest and the funniest, and it ends in the curse of line 22.',
       'Name the language precisely and never call it bad or incorrect English. Caribbean Creole, or the Afro-Caribbean patois of Pearson’s mark scheme, is a language with its own rules. Then show that the speaker also uses Standard English when he chooses, in lines 37, 38 and 42.',
@@ -591,7 +612,7 @@ export const guide: StudyGuide = {
     },
     {
       label:
-        'Pearson 4ET1/01 question paper, 13 May 2024: Section B question 2 (Half-caste and Remember, feelings), used verbatim as the first practice question; the note that the Section B poems are included with the paper; the format of the named-pair and one-of-your-choice questions. Its printing of the poem (question booklet page 14) has the same wording as the anthology, places 50 in the margin beside the line about the mind, and runs the last three lines on without a stanza gap',
+        'Pearson 4ET1/01 question paper, 13 May 2024: Section B question 2 (Half-caste and Remember, feelings), used verbatim as the first practice question; the note that the Section B poems are included with the paper; the format of the named-pair and one-of-your-choice questions. Its printing of the poem, on page 14 of the separate Poetry Booklet issued with the paper (PDF page 26), not in the question booklet, has the same wording as the anthology, places 50 in the margin beside the line about the mind, and runs the last three lines on without a stanza gap',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20240514.pdf',
     },
     {
@@ -608,6 +629,11 @@ export const guide: StudyGuide = {
       label:
         'Pearson 4ET1/01 examiners’ report, June 2019 (4ET1_01_1906_ER): Section B question 2, Compare the ways the writers present concerns about society in Prayer Before Birth and Half-caste, whose core sentence is used in the second practice question with the standard framing of the 2024 paper; comments on the accusatory tone of the pronoun, the intimidating, sarcastic and satirical tone, comparison throughout, and context not being marked',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/exam-materials/4ET1_01_pef_20190822.pdf',
+    },
+    {
+      label:
+        'Pearson 4ET1 specification, Issue 3, August 2025; the Paper 1 question papers and mark schemes from the specimen to June 2025; and Pearson’s summaries of questions set, which run from the sample assessment materials to November 2023. Read on 10 October 2026 for the first tip: Section B is one question from a choice of two, both comparisons, one naming two Part 3 poems and the other naming one with a second chosen by the candidate to suit the focus; every live paper checked, June 2019 to June 2025, comes with a Poetry Booklet of the Part 3 poems; 40 minutes suggested; an answer on only one poem cannot pass the top of Level 2. Half-caste was named in question 2 in June 2018 and June 2023 (with Search For My Tongue), June 2019 (with Prayer Before Birth, worded exactly as the second practice question, from that paper) and May 2024 (with Remember)',
+      url: 'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-english-literature-2016.html',
     },
     {
       label:

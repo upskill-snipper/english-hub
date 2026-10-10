@@ -41,6 +41,51 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * broken catch (lines 154-157) and first proposes replacing the necklace
  * (lines 159-160). The guide says so, and presents the pride reading as one
  * reading among others.
+ *
+ * EXAM-FORMAT CHECK, 26 September 2026, against the specification (Issue 7)
+ * and three 4EA1 Paper 2 question papers: P62599A (2020), P72391A (12 June
+ * 2023) and P73896A (7 November 2024). Only the last set The Necklace; the
+ * other two set Significant Cigarettes and a poem. A Part 2 text is examined
+ * in one essay. Section A sets one text, with no choice, prints it for the
+ * candidate (in November 2024 the whole story, in the Source Booklet) and asks
+ * how the writer presents something or creates an effect, under bullet points
+ * whose last is always the use of language and structure. About 45 minutes
+ * are advised and nothing is compared with it. The coursework alternative
+ * (Component 3, Assignment A) is one essay on three Part 2 texts, at least one
+ * of them a poem, assessed for reading and analysis, not for comparison.
+ *
+ * All five exam-practice questions and one passage question asked about
+ * "language, form and structure", the Literature (4ET1) wording; Paper 2
+ * names language and structure. One essay question asked how the ending
+ * shapes the reader's response, a structure-led stem Paper 2 does not set,
+ * and is now a whole-story question on appearance and reality that keeps its
+ * plan. The four essay questions and the model answer now take the paper's
+ * form. The three passage questions carried line ranges with nothing to say
+ * they were not exam questions (now labelled close-reading practice). The
+ * comparison with The Story of an Hour was presented as exam practice (now
+ * labelled as practice in linking texts, for the coursework route). One tip
+ * now says how the story is examined, and another that the Source Booklet
+ * numbers its own lines, so this guide's line references are the
+ * anthology's, not the exam's.
+ *
+ * Do not add a comparison presented as a Paper 2 question, a language-only or
+ * structure-only exam question, or a line range to an exam question. Mark
+ * tariffs stay out: the validator reserves them for ExamPlacementCard.
+ *
+ * RE-CHECKED, 10 October 2026, against the 2020 and June 2023 papers and the
+ * November 2020 examiners' report on Paper 2. P73896A is not on disk and was
+ * not re-read. The tips print under "What examiners reward", so three were
+ * corrected. The first now allows for a stem about an effect (June 2023 asked
+ * how the writer creates sympathy), and says to weave language and structure
+ * through the essay: that report counts answers that left them to an add-on
+ * at the end among the less successful. The translator tip said a point is
+ * "strongest" when it names Coward, which no assessment objective rewards.
+ * The line-numbers tip dropped a November 2024 offset (six lines by the end)
+ * that could not be re-read; the 2020 booklet shows the same kind of drift,
+ * one or two lines by line 140. Do not restore either claim without the
+ * paper in hand. The whole-story claim stays: the specification says the
+ * text is made available, and the 2020 booklet printed the whole anthology
+ * text of Significant Cigarettes.
  */
 export const guide: StudyGuide = {
   slug: 'the-necklace',
@@ -289,7 +334,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer use language in lines 12-35 to present Mathilde’s longing for a different life?',
+        'Close-reading practice on lines 12-35, not an exam question (Paper 2 asks one question about the whole story, covering language and structure): how does the writer use language to present Mathilde’s longing for a different life?',
     },
     {
       title: 'The ball and the way home',
@@ -325,7 +370,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer use language and structure in lines 103-128 to present the contrast between Mathilde’s triumph and her return to reality?',
+        'Close-reading practice on lines 103-128, not an exam question (Paper 2 asks one question about the whole story, covering language and structure): how does the writer use language and structure to present the contrast between Mathilde’s triumph and her return to reality?',
     },
     {
       title: 'The final meeting',
@@ -361,7 +406,7 @@ export const guide: StudyGuide = {
         },
       ],
       question:
-        'How does the writer use language, form and structure in lines 212-239 to create a powerful ending to the story?',
+        'Close-reading practice on lines 212-239, not an exam question (Paper 2 asks one question about the whole story, covering language and structure): how does the writer use language and structure to create a powerful ending to the story?',
     },
   ],
 
@@ -561,8 +606,8 @@ export const guide: StudyGuide = {
     questions: [
       {
         question:
-          'Explore how the writer presents Mathilde Loisel’s dissatisfaction with her life in The Necklace. In your answer you should consider the writer’s use of language, form and structure, and support your points with examples from the text.',
-        skill: 'Language, form and structure analysis of character',
+          'How does the writer present Mathilde Loisel’s dissatisfaction with her life in The Necklace? In your answer you should write about: her dreams set against her real life; how her dissatisfaction drives the plot and what becomes of it; the use of language and structure. Support your answer with close reference to the story, including brief quotations.',
+        skill: 'Whole-story essay on a character, in the form Paper 2 sets',
         guidance: [
           'Open with an overview: her dissatisfaction is both real suffering and self-deception, and the narrator lets us see both.',
           'Analyse the opening: “apparently by some error of Fate”, the narrator’s generalisation about women, and the hyperbole of “was torture to her”.',
@@ -575,10 +620,12 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'How does the writer use the ending of The Necklace to shape the reader’s response to the whole story? In your answer you should consider the writer’s use of language, form and structure, and support your points with examples from the text.',
-        skill: 'Structure and form: the whole text read through its ending',
+          'How does the writer present the gap between appearance and reality in The Necklace? In your answer you should write about: the necklace and what the characters believe about it; the ending and what it reveals; the use of language and structure. Support your answer with close reference to the story, including brief quotations.',
+        skill: 'Whole-story essay on a theme, built towards the ending',
         guidance: [
-          'Begin with what the last two lines reveal and how bluntly they do it, in Madame Forestier’s voice rather than the narrator’s.',
+          'Open with an overview: the story is full of things that are not what they seem, and the last two lines turn that into its structure.',
+          'Trace appearances through the story: Mathilde passing for a society lady at the ball, the coat and the old cab that tell the truth about her, the letter about the broken catch, and a replacement that looks identical and is real.',
+          'Then the ending: what the last two lines reveal and how bluntly they do it, in Madame Forestier’s voice rather than the narrator’s.',
           'Analyse the lead-up: the narrator’s exclamation about how little it takes to make or break us, then Mathilde’s “proud, innocent smile”, the last moment of her ignorance.',
           'Show how the ending makes the reader reread earlier moments: the jeweller who supplied only the case, the case that is never opened, the letter about the catch.',
           'Explore the irony of value: thirty-six thousand francs and ten years against a necklace worth not much more than five hundred francs.',
@@ -588,8 +635,8 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Explore how the writer presents the effects of losing the necklace on Monsieur and Madame Loisel. In your answer you should consider the writer’s use of language, form and structure, and support your points with examples from the text.',
-        skill: 'Language and structure analysis of theme and change',
+          'How does the writer present the effects of losing the necklace on Monsieur and Madame Loisel? In your answer you should write about: how each of them responds to the loss; what the ten years of debt do to them; the use of language and structure. Support your answer with close reference to the story, including brief quotations.',
+        skill: 'Whole-story essay on change, in the form Paper 2 sets',
         guidance: [
           'Start with the moment of loss (lines 129-146): the exclamation, the short panicked dialogue, and Mathilde sitting in her evening gown by the empty grate, unable to think.',
           'Analyse Loisel’s response: the search, the letter he dictates, the replacement he proposes, and the fact that he ages five years in a week.',
@@ -601,8 +648,8 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Explore how the writer presents the relationship between Mathilde and her husband in The Necklace. In your answer you should consider the writer’s use of language, form and structure, and support your points with examples from the text.',
-        skill: 'Language and structure analysis of relationship',
+          'How does the writer present the relationship between Mathilde and her husband in The Necklace? In your answer you should write about: how they treat each other before the loss; how the loss and the debt change their marriage; the use of language and structure. Support your answer with close reference to the story, including brief quotations.',
+        skill: 'Whole-story essay on a relationship, in the form Paper 2 sets',
         guidance: [
           'Set up the imbalance: he is contented and eager to please; she is dissatisfied and barely sees him.',
           'Analyse the dinner table (lines 25-32) and the contrast between his exclamations and her dreams.',
@@ -614,25 +661,27 @@ export const guide: StudyGuide = {
       },
       {
         question:
-          'Compare how the writers of The Necklace and The Story of an Hour present a woman whose hopes are overturned by a final reversal. In your answer you should consider the writers’ use of language, form and structure, and support your points with examples from both texts.',
-        skill: 'Comparison of two anthology texts',
+          'Practice in linking texts, not an exam question (Paper 2 sets The Necklace on its own and never asks for a comparison): how do the writers of The Necklace and The Story of an Hour present a woman whose hopes are overturned by a final reversal?',
+        skill: 'Linking two Part 2 stories, as preparation for the coursework essay',
         guidance: [
           'Open with the shared shape: each story follows a woman’s inner life and ends with a reversal in its final lines that makes the reader reread everything.',
           'Compare what each woman hopes for, Mathilde luxury and admiration, Mrs Mallard freedom, and how each writer shows it: Maupassant’s dream lists, Chopin’s view from the open window.',
           'Compare the narrators: Maupassant’s comments openly and generalises; Chopin’s stays close to Mrs Mallard and withdraws in the last line.',
           'Compare the endings: Chopin uses dramatic irony, since the reader knows what the doctors do not; Maupassant surprises the reader as much as the character.',
           'Use context carefully: both are nineteenth-century stories about women whose lives are shaped by marriage and money.',
-          'Keep both texts in every paragraph, and end with a judgement about which ending is crueller, and why.',
+          'Link the two stories wherever the link is real, and end with a judgement about which ending is crueller, and why.',
+          'For the coursework essay, the alternative to Paper 2, you would add a Part 2 poem, since the three texts must include one, and choose a focus that fits all three. It is marked on how you read and analyse each text, not on comparison as such.',
         ],
       },
     ],
     tips: [
+      'Know how the story is examined. Paper 2 Section A sets one Part 2 text, and you do not choose it. When it is The Necklace, as it was in November 2024, the story is printed for you (that year the whole story, in the Source Booklet) and you write one essay, with about 45 minutes advised, on how the writer presents something, or creates an effect, across the story. Bullet points under the question say what to cover, and the last is always the use of language and structure. Weave that through the whole essay: an examiners’ report on Paper 2 counted answers that left it as an add-on at the end among the less successful. Nothing is compared with it.',
       'Quote only the anthology’s wording, which is David Coward’s translation. Versions of The Necklace found free online are older translations with different wording, and a quotation from one of them will not match the text in front of you.',
-      'Name the translator when it matters. Maupassant presents the plot and structure, but a point about a single English word is strongest when it shows you know the word is Coward’s choice.',
+      'Name the translator when it matters. The plot and structure are Maupassant’s, but every English word is Coward’s choice, so a point about a single word can say so. What earns credit is what you show about the word’s effect, not the name.',
       'Do not blame everything on Mathilde’s pride without checking the text. It is Loisel who dictates the letter and first proposes replacing the necklace, and the questions at lines 184-185 show her fear of being thought a thief. Precise answers notice this.',
       'Do not invent a sequel. The story stops at Madame Forestier’s words, and nothing says whether the Loisels get anything back. A guess presented as fact is not credited; a point about what the silence means is.',
-      'Use line numbers and the shape of the story. Saying that the loss falls just past the middle, or that ten years pass in a single short paragraph, shows structural understanding in a sentence.',
-      'Track the narrator’s attitude. The move from irony to sympathy, from “immoderate” desire to endurance it calls heroic, is one of the richest things to analyse, and it is language, form and structure at once.',
+      'Use line numbers and the shape of the story. Saying that the loss falls just past the middle, or that ten years pass in a single short paragraph, shows structural understanding in a sentence. Take the numbers from the Source Booklet in front of you: this guide uses the anthology’s, and the booklet numbers its own lines, which can match at the start and drift apart later.',
+      'Track the narrator’s attitude. The move from irony to sympathy, from “immoderate” desire to endurance it calls heroic, is one of the richest things to analyse, and it is language and structure at once, the pairing the last bullet of the question always names.',
       'Use the numbers: four hundred francs, thirty-six thousand, five hundred, and five sous a page. The arithmetic of the story is part of its irony.',
       'Treat the ending as a key, not just a twist. The best answers explain what it changes about the whole story, rather than simply saying it is surprising.',
     ],
@@ -640,7 +689,7 @@ export const guide: StudyGuide = {
 
   modelAnswer: {
     question:
-      'Explore how the writer presents Mathilde Loisel’s dissatisfaction with her life in The Necklace.',
+      'How does the writer present Mathilde Loisel’s dissatisfaction with her life in The Necklace?',
     paragraph:
       'Maupassant presents Mathilde’s dissatisfaction as both real suffering and self-deception, and the narrator’s irony lets the reader feel both at once. The first sentence says she was born into a family of very minor civil servants “apparently by some error of Fate”: the capital letter makes Fate a grand power that has wronged her, but “apparently” quietly marks this as her view of herself rather than the narrator’s. Her longing is then built through repetition, as “She dreamed of” opens clause after clause, so that the dream world grows richer and more detailed than the real apartment. Maupassant sharpens this with bathos. Her husband lifts the lid of the soup-tureen and cries “Ah! Stew! Splendid!”, three exclamations of simple contentment, while in her head she is being served “the pink flesh of a trout”. The juxtaposition is comic, but it is also sad, because the man who loves her is exactly what she cannot see. The colour returns much later, when she is “wearing down her pink nails on the greasy pots and saucepans”, so the colour of luxury becomes the colour of labour. One reading is that the story simply punishes her vanity. The more convincing one is that it exposes a society in which, as the narrator says, “Women have neither rank nor class”, and a pretty girl’s looks are her only fortune.',
     commentary: [

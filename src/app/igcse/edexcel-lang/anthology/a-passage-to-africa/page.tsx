@@ -54,52 +54,64 @@ export const metadata: Metadata = {
  * outside Gufgaduud, and the extract ends with his resolve to write the story
  * and a debt to a man whose name he never learned, not with the smile as an
  * "assertion of humanity". Check any new wording against the anthology first.
+ *
+ * SECOND PASS, 26 September 2026, same PDF. The moments ran out of order: the
+ * smile came second and the search for the shocking third, although the
+ * extract reaches the smile only at line 48 (the face appears at line 46; this
+ * said 46 until 10 October 2026). The "most-quoted line" claim had
+ * no source. The smile was said to be re-read "not as a greeting", but Alagiah
+ * rules out a greeting before he asks the translator; what the answer changes is
+ * that he understands it as an apology. The closing was said to recover an
+ * individual "the opening submerged in the mass", but the opening sentence
+ * already singles out the one face. Amina, the old woman and the confession of
+ * revulsion, a third of the extract, were missing, and moments told as the
+ * writer's technique were in the past tense.
  */
 const keyMoments = [
   {
     id: 1,
-    label: 'Opening - the catalogue of suffering',
-    labelAr: 'الافتتاح - تَعدادُ المعاناة',
+    label: 'Opening - a thousand faces, and one',
+    labelAr: 'الافتتاح - ألفُ وجهٍ، ووجهٌ واحد',
     context:
-      'Alagiah opened with a panoramic view of starvation across Somalia, criss-crossing the country between the end of 1991 and December 1992. The accumulation of suffering establishes the scale of the 1992 famine and his role as a journalist witnessing it.',
+      'Alagiah opens with a single sentence. He saw a thousand starving faces between the end of 1991 and December 1992, as he criss-crossed Somalia, but one of them he will never forget. The wide view of the famine and the promise of one face arrive together, and the rest of the extract delays that face. The next paragraph takes the reader to a little hamlet outside Gufgaduud, which aid agencies had not yet reached, with directions copied from his notebook.',
     contextAr:
-      'يستهلّ Alagiah بنظرةٍ بانوراميّة على المجاعة في أنحاء الصومال، متنقّلاً في أرجائها بين أواخر 1991 وديسمبر 1992. ويُرسّخ تراكمُ المعاناة حجمَ مجاعة 1992، ودورَه صحفيّاً يشهدها.',
+      'يستهلّ Alagiah بجملةٍ واحدة: رأى ألفَ وجهٍ جائع وهو يجوب الصومال بين أواخر 1991 وديسمبر 1992، لكنّ وجهاً واحداً منها لن ينساه أبداً. فتأتي النظرةُ الواسعة إلى المجاعة والوعدُ بوجهٍ واحد معاً، ويؤجّل بقيّةُ المقتطف ذلك الوجه. وتنقل الفقرةُ التالية القارئَ إلى نجعٍ صغيرٍ على مشارف Gufgaduud لم تبلغه وكالاتُ الإغاثة بعد، مع إرشاداتٍ منقولةٍ من دفتر ملاحظاته.',
   },
   {
     id: 2,
-    label: 'The encounter outside Gufgaduud',
-    labelAr: 'لقاءٌ على مشارف Gufgaduud',
+    label: 'The search for the shocking, hut by hut',
+    labelAr: 'البحث عن الصادم، كوخاً كوخاً',
     context:
-      'In a small hamlet just outside the village of Gufgaduud, Alagiah glimpsed a man whose eyes met his for only a few seconds, and who smiled before retreating into a hut. This single human gesture, made amid devastation, becomes the emotional centre of the extract and the moment Alagiah cannot forget.',
+      'Alagiah and his cameraman go from hut to hut after the most striking pictures, and he admits that sights which would have appalled them when the trip began, only days before, no longer impress them much. He compares the search for shocking images to a craving for a drug that needs ever heavier doses, notes that pictures which stun editors one day are dismissed as routine the next, and admits this sounds callous before calling it a fact of life. What they find is set down flatly: Amina Abdirahman comes back from searching for wild roots to find that her daughter Habiba, aged ten, has died, and an old woman, left in her hut by relatives too weak to take her with them, lies with a rotting gunshot wound in her leg.',
     contextAr:
-      'في نجعٍ صغيرٍ على مشارف قرية Gufgaduud، لمح Alagiah رجلاً التقت عيناه بعينيه ثوانيَ معدودة، فابتسم ثمّ انسحب إلى كوخ. هذه الإيماءةُ الإنسانيّة الوحيدة، الصادرةُ وسط الدمار، تصير المركزَ العاطفيَّ للمقتطف، واللحظةَ التي لا يستطيع Alagiah نسيانها.',
+      'يتنقّل Alagiah ومصوّرُه من كوخٍ إلى كوخ بحثاً عن أشدّ الصور وقعاً، ويعترف بأنّ مشاهدَ كانت ستُفزعهما حين بدأت الرحلة، قبل أيّامٍ قليلة فقط، لم تعد تؤثّر فيهما كثيراً. ويشبّه البحثَ عن الصور الصادمة بالتعطّش إلى مخدّرٍ يحتاج جرعاتٍ أثقل فأثقل، ويذكر أنّ الصور التي تُذهل المحرّرين يوماً تُعدّ مكرّرةً في اليوم التالي، ويُقرّ بأنّ ذلك يبدو قاسياً قبل أن يعدّه أمراً واقعاً. أمّا ما يجدانه فيرويه بنبرةٍ مسطّحة: تعود Amina Abdirahman من البحث عن جذورٍ برّيّة لتجد أنّ ابنتها Habiba، ذات السنوات العشر، قد ماتت؛ وترقد امرأةٌ عجوز في كوخها، تركها أقاربُ أضعفُ من أن يأخذوها معهم، وفي ساقها جرحٌ متعفّن من رصاصة.',
   },
   {
     id: 3,
-    label: 'The search for the shocking',
-    labelAr: 'البحث عن الصادم',
+    label: 'The encounter outside Gufgaduud',
+    labelAr: 'لقاءٌ على مشارف Gufgaduud',
     context:
-      'Alagiah reflected on the disturbing logic of news reporting: the search for shocking images works like a craving for a drug, needing ever heavier doses, and pictures that stun editors one day are dismissed as routine the next. He admits this sounds callous, but calls it a fact of life in how such images are gathered.',
+      'A one-line paragraph announces the face he will never forget, but Alagiah holds it back. First he confesses that his reaction to everyone else he met that day was pity and revulsion, a feeling he says TV reports never admit. Then a man meets his eyes for only a few seconds and smiles before retreating into another hut. The smile is neither a greeting nor a sign of joy, yet it moves Alagiah beyond pity or revulsion. This single human gesture, made amid devastation, becomes the emotional centre of the extract.',
     contextAr:
-      'يتأمّل Alagiah في منطق التغطية الإخباريّة المزعج: البحثُ عن الصور الصادمة يشبه التعطّشَ إلى مخدّرٍ يحتاج جرعاتٍ أثقل فأثقل، والصورُ التي تُذهل المحرّرين يوماً تُعدّ مكرّرةً في اليوم التالي. ويُقرّ بأنّ ذلك يبدو قاسياً، لكنّه يعدّه أمراً واقعاً في طريقة جمع هذه الصور.',
+      'تُعلن فقرةٌ من سطرٍ واحد الوجهَ الذي لن ينساه أبداً، لكنّ Alagiah يؤجّله. فهو يعترف أوّلاً بأنّ ردّ فعله تجاه كلّ مَن سواه ممّن التقاهم ذلك اليوم كان الشفقةَ والاشمئزاز، وهو شعورٌ يقول إنّ تقارير التلفزيون لا تعترف به أبداً. ثمّ يلتقي رجلٌ عينَي Alagiah ثوانيَ معدودة، فيبتسم قبل أن ينسحب إلى كوخٍ آخر. ليست الابتسامة تحيّةً ولا علامةَ فرح، لكنّها تحرّك Alagiah على نحوٍ يتجاوز الشفقة والاشمئزاز. هذه الإيماءةُ الإنسانيّة الوحيدة، الصادرةُ وسط الدمار، تصير المركزَ العاطفيَّ للمقتطف.',
   },
   {
     id: 4,
     label: 'The meaning of the smile',
     labelAr: 'معنى الابتسامة',
     context:
-      'The teacher note below explains why this is the most-quoted line of the piece. Alagiah re-read the smile not as a greeting but as something more painful - a recognition of being witnessed in degradation.',
+      'Alagiah cannot explain the smile, so he has his translator ask the man about it. The answer, that the man was embarrassed to be seen in that state, makes everything click: the smile was an apology, the kind given by someone who feels he is in the wrong. The starving man apologises to the well-fed visitor. The teacher note below gives Alagiah’s exact words.',
     contextAr:
-      'تشرح ملاحظةُ المعلّم أدناه لماذا هذا أكثرُ سطرٍ يُقتبس من العمل. يُعيد Alagiah قراءةَ الابتسامة، لا تحيّةً، بل شيئاً أوجع - اعترافاً بأنّ المرء يُرى وهو في إذلاله.',
+      'لا يستطيع Alagiah أن يفسّر الابتسامة، فيطلب من مترجمه أن يسأل الرجل عنها. والجواب، أنّ الرجل كان محرَجاً لأن يُرى على تلك الحال، يجعل كلّ شيءٍ يتّضح: كانت الابتسامة اعتذاراً، من النوع الذي يبديه مَن يشعر بأنّه المخطئ. فالرجل الجائع يعتذر إلى الزائر الشبعان. وتورد ملاحظةُ المعلّم أدناه كلماتِ Alagiah بنصّها.',
   },
   {
     id: 5,
     label: 'Closing reflection',
     labelAr: 'التأمّل الختاميّ',
     context:
-      'Alagiah ended by turning the smile back on himself: if the man was embarrassed to be found weakened by hunger, how should he feel, standing there strong and confident? He resolved to write the story of Gufgaduud, admitted he never found out the man’s name, and closed by telling his nameless friend that he owes him one. The closing recovers the individual that the opening submerged in the mass.',
+      'Alagiah ends by turning the smile back on himself: if the man was embarrassed to be found weakened by hunger, how should he feel, standing there strong and confident? He resolves to write the story of Gufgaduud, admits that he never found out the man’s name, and closes by telling his nameless friend that, if he is still alive, he owes him one. The extract has narrowed from a thousand faces to one, yet it cannot give that one a name.',
     contextAr:
-      'يختم Alagiah بأن يُدير الابتسامةَ نحو نفسه: إن كان الرجل محرَجاً لأنّ الجوع أنهكه، فبماذا ينبغي أن يشعر هو، الواقفُ هناك قويّاً واثقاً؟ فيعزم على كتابة قصّة Gufgaduud، ويعترف بأنّه لم يعرف اسمَ الرجل قطّ، ويختم بمخاطبة صديقه المجهول الاسم مُقرّاً بأنّه مدينٌ له. وتستردّ الخاتمةُ الفردَ الذي أغرقه الافتتاحُ في الجموع.',
+      'يختم Alagiah بأن يُدير الابتسامةَ نحو نفسه: إن كان الرجل محرَجاً لأنّ الجوع أنهكه، فبماذا ينبغي أن يشعر هو، الواقفُ هناك قويّاً واثقاً؟ فيعزم على كتابة قصّة Gufgaduud، ويعترف بأنّه لم يعرف اسمَ الرجل قطّ، ويختم بمخاطبة صديقه المجهول الاسم مُقرّاً بأنّه، إن كان لا يزال حيّاً، مدينٌ له. لقد ضاق المقتطف من ألف وجهٍ إلى وجهٍ واحد، لكنّه لا يستطيع أن يمنح ذلك الوجه اسماً.',
   },
 ]
 
@@ -108,9 +120,9 @@ const languageFeatures = [
     technique: 'Listing / accumulation',
     techniqueAr: 'التَّعداد / التَّراكُم',
     explanation:
-      'Alagiah accumulated adjectives across physical, emotional and political registers in his opening, overwhelming the reader with the multidimensional nature of the famine. The list does the work of a wide camera shot.',
+      'Alagiah accumulates adjectives across physical, emotional and political registers in his opening sentence, overwhelming the reader with the multidimensional nature of the famine. The list does the work of a wide camera shot, and the same sentence then narrows to one face.',
     explanationAr:
-      'يُكدّس Alagiah الصفاتِ في افتتاحه عبر مستوياتٍ جسديّة وعاطفيّة وسياسيّة، فيُغرق القارئَ بأبعاد المجاعة المتعدّدة. ويؤدّي التَّعدادُ وظيفةَ لقطةٍ سينمائيّة واسعة.',
+      'يُكدّس Alagiah الصفاتِ في جملته الافتتاحيّة عبر مستوياتٍ جسديّة وعاطفيّة وسياسيّة، فيُغرق القارئَ بأبعاد المجاعة المتعدّدة. ويؤدّي التَّعدادُ وظيفةَ لقطةٍ سينمائيّة واسعة، ثمّ تضيق الجملةُ نفسها إلى وجهٍ واحد.',
   },
   {
     technique: 'Simile of addiction',
@@ -132,15 +144,15 @@ const languageFeatures = [
     technique: 'Emotive and visceral diction',
     techniqueAr: 'المعجم الانفعاليّ الحسّيّ',
     explanation:
-      'Alagiah chose words that connote violent destruction and bodily decay, making abstract suffering concrete. The reader cannot maintain emotional distance from the language he selected.',
+      'Alagiah chooses words that connote violent destruction and bodily decay, making abstract suffering concrete. The reader cannot maintain emotional distance from the language he selects.',
     explanationAr:
-      'يختار Alagiah ألفاظاً توحي بالدمار العنيف والتحلّل الجسديّ، فيُحوّل المعاناة المجرّدة إلى محسوس. ولا يستطيع القارئ أن يحفظ مسافةً عاطفيّةً عن اللغة التي انتقاها.',
+      'يختار Alagiah ألفاظاً توحي بالدمار العنيف والتحلّل الجسديّ، فيُحوّل المعاناة المجرّدة إلى محسوس. ولا يستطيع القارئ أن يحفظ مسافةً عاطفيّةً عن اللغة التي ينتقيها.',
   },
   {
     technique: 'Sensory language',
     techniqueAr: 'اللغة الحسّيّة',
     explanation:
-      'He layered in sensory detail - particularly smell, the most unavoidable sense - to immerse the reader in the reality of the famine. You can look away from a photograph, but not a smell.',
+      'He layers in sensory detail - particularly smell, the most unavoidable sense - to immerse the reader in the reality of the famine. You can look away from a photograph, but not a smell.',
     explanationAr:
       'يُكدّس التفاصيلَ الحسيّة - لا سيّما الشمّ، أكثر الحواسّ استعصاءً على التجنّب - كي يغمر القارئ في واقع المجاعة. يمكنك أن تُعرض عن صورة، لكنّك لا تستطيع أن تُعرض عن رائحة.',
   },
@@ -164,17 +176,20 @@ const languageFeatures = [
     technique: 'Repetition',
     techniqueAr: 'التكرار',
     explanation:
-      "The motif of the smile recurs through the extract and is redefined each time: first by what it is not (neither a greeting nor joy), then, once the translator explains the man's embarrassment, as the feeble smile that goes with apology. The repetition tracks Alagiah's changing understanding of a single gesture.",
+      "The motif of the smile recurs through the three paragraphs that begin when the face finally appears, and is redefined each time: first by what it is not (neither a greeting nor joy), then, once the translator explains the man's embarrassment, as the feeble smile that goes with apology, and finally as the gesture that has turned the tables on the unwritten code between journalist and subject. The repetition tracks Alagiah's changing understanding of a single gesture.",
     explanationAr:
-      'يتكرّر موتيفُ الابتسامة عبر المقتطف، ويُعاد تعريفُه في كلّ مرّة: أوّلاً بما ليس هو (لا تحيّة ولا فرح)، ثمّ، بعد أن يشرح المترجم حرجَ الرجل، بوصفه ابتسامةَ اعتذارٍ واهنة. ويلاحق التكرار تطوُّرَ فهم Alagiah لإيماءةٍ واحدة.',
+      'يتكرّر موتيفُ الابتسامة في الفقرات الثلاث التي تبدأ حين يظهر الوجه أخيراً، ويُعاد تعريفُه في كلّ مرّة: أوّلاً بما ليس هو (لا تحيّة ولا فرح)، ثمّ، بعد أن يشرح المترجم حرجَ الرجل، بوصفه ابتسامةَ اعتذارٍ واهنة، وأخيراً بوصفه الإيماءةَ التي قلبت الموازين على العُرف غير المكتوب بين الصحفيّ وموضوعه. ويلاحق التكرار تطوُّرَ فهم Alagiah لإيماءةٍ واحدة.',
   },
   {
+    // Until 26 September 2026 this said the text "shifts from reportage to
+    // memoir". The whole extract is memoir, and it asks no question at all
+    // before the smile (lines 49, 52 and 63-65 hold its only three).
     technique: 'Rhetorical questioning',
     techniqueAr: 'السؤال البلاغيّ',
     explanation:
-      'Alagiah used rhetorical questions to invite the reader into his moral investigation. The text shifts from reportage to memoir as the reader becomes a fellow investigator of conscience.',
+      'Alagiah uses questions to draw the reader into his moral investigation, and he asks none until the smile appears. Then he breaks off to ask how it could have been a smile of joy, asks what it was about the smile, and ends the paragraph on the unwritten code by asking how he himself should feel. He never says how he should feel: his only answer is an action, to write the story, so the feeling is left to the reader, who becomes a fellow investigator of conscience.',
     explanationAr:
-      'يستعمل Alagiah الأسئلة البلاغيّة ليُدخل القارئَ في تحقيقه الأخلاقيّ. وينتقل النصّ من التقرير إلى السيرة، إذ يصير القارئ شريكاً في تحقيق الضمير.',
+      'يستعمل Alagiah الأسئلة ليُدخل القارئَ في تحقيقه الأخلاقيّ، ولا يطرح أيّاً منها قبل ظهور الابتسامة. ثمّ يقطع كلامه ليسأل كيف يمكن أن تكون ابتسامةَ فرح، ويسأل ما الذي كان في تلك الابتسامة، ويختم الفقرةَ التي تتناول العُرف غير المكتوب بسؤاله كيف ينبغي أن يشعر هو نفسه. ولا يقول أبداً كيف ينبغي أن يشعر: جوابه الوحيد فعلٌ، هو أن يكتب القصّة، فيُترك الشعورُ للقارئ الذي يصير شريكاً في تحقيق الضمير.',
   },
   {
     technique: 'First-person reflective voice',
@@ -186,53 +201,71 @@ const languageFeatures = [
   },
 ]
 
+/**
+ * CORRECTED 26 September 2026 against the anthology's 13 paragraphs and 74
+ * lines. Four claims were false. "Covering Somalia over weeks": the extract
+ * gives the end of 1991 to December 1992. "Deadlines": the extract never
+ * mentions one. Short paragraphs "for emotional moments": Habiba's death, the
+ * old woman's wound and the confession of revulsion each fill an eight-line
+ * paragraph; only the opening (2 lines), the face announced (1) and the
+ * resolution (3) are short. And "the opening presents suffering as a mass": its
+ * one sentence already picks out the face he will never forget. The climax was
+ * also said to re-read the smile "not as a greeting", which Alagiah had ruled
+ * out before he asked, and the resolution named a "guilt" the text never does
+ * (it names a regret and a debt). The news-broadcast analogy had no source.
+ */
 const structuralAnalysis = {
   opening:
-    'Alagiah opened with a panoramic view of suffering across Somalia - a wide shot establishing the overwhelming scale. This mirrors the technique of a news broadcast, starting with the big picture before zooming in.',
+    'Alagiah opens with a single sentence that holds both scales at once: a thousand faces seen across Somalia, and the one face he will never forget. The wide shot comes first, but the close-up is promised in the same sentence, and the rest of the extract delays it.',
   openingAr:
-    'يستهلّ Alagiah بنظرةٍ بانوراميّة على المعاناة في أنحاء الصومال - لقطةٌ واسعة تُرسّخ الحجمَ الطاغي. ويعكس هذا أسلوبَ النشرة الإخباريّة، الذي يبدأ من الصورة الكبرى قبل أن يقرّب التركيز.',
+    'يستهلّ Alagiah بجملةٍ واحدة تجمع المقياسَين معاً: ألفُ وجهٍ رآها في أنحاء الصومال، والوجهُ الواحد الذي لن ينساه أبداً. تأتي اللقطةُ الواسعة أوّلاً، لكنّ اللقطة القريبة يُوعَد بها في الجملة نفسها، ويؤجّلها بقيّةُ المقتطف.',
   development:
-    "The text gradually narrows its focus from the general (a country, a famine, many faces) to the particular (one hamlet, one man, one smile). This structural movement from wide to close-up is the text's most powerful device.",
+    'The text narrows its focus step by step: from a country and a thousand faces, to a hamlet outside Gufgaduud, then hut by hut to named people (Amina Abdirahman and her daughters Habiba and Ayaan) and an old woman, and finally to one man and one smile. Three paragraphs in a row open with the same construction, the third announcing the face; Alagiah then delays once more, confessing his feelings about everyone else before he describes it. This movement from wide shot to close-up is the text’s central structural device.',
   developmentAr:
-    'يضيّق النصّ تدريجيّاً مدى تركيزه من العامّ (بلدٌ، مجاعةٌ، وجوهٌ كثيرة) إلى الخاصّ (نجعٌ واحد، رجلٌ واحد، ابتسامةٌ واحدة). وهذا الانتقال البنائيّ من الواسع إلى القريب هو أقوى أدوات النصّ.',
+    'يضيّق النصّ مدى تركيزه خطوةً خطوة: من بلدٍ وألف وجه، إلى نجعٍ على مشارف Gufgaduud، ثمّ كوخاً كوخاً إلى أناسٍ بأسمائهم (Amina Abdirahman وابنتَيها Habiba وAyaan) وامرأةٍ عجوز، وأخيراً إلى رجلٍ واحد وابتسامةٍ واحدة. وتبدأ ثلاثُ فقراتٍ متتالية بالتركيب نفسه، وتُعلن الثالثةُ منها الوجه؛ ثمّ يؤجّل Alagiah مرّةً أخرى، فيعترف بمشاعره تجاه كلّ مَن سواه قبل أن يصفه. وهذا الانتقال من اللقطة الواسعة إلى اللقطة القريبة هو الأداةُ البنائيّة المحوريّة في النصّ.',
   climax:
-    'The climax is the moment of realisation about the smile - when Alagiah reinterpreted it not as a greeting but as something more troubling. This is both an emotional and intellectual climax.',
+    'The emotional climax is the moment the translator’s answer makes the smile’s meaning click: it was an apology. The moral climax follows at once, as Alagiah sees that the smile has turned the tables on the unwritten code in which the journalist watches and the subject is watched.',
   climaxAr:
-    'الذروةُ هي لحظةُ إدراك معنى الابتسامة - حين أعاد Alagiah تأويلَها لا تحيّةً بل شيئاً أكثر إقلاقاً. وهذه ذروةٌ عاطفيّة وفكريّة في آنٍ معاً.',
+    'الذروةُ العاطفيّة هي اللحظة التي يجعل فيها جوابُ المترجم معنى الابتسامة يتّضح: كانت اعتذاراً. وتليها مباشرةً الذروةُ الأخلاقيّة، إذ يرى Alagiah أنّ الابتسامة قلبت الموازين على العُرف غير المكتوب الذي يُراقِب فيه الصحفيُّ ويُراقَب فيه موضوعُه.',
   resolution:
-    'Alagiah turned the smile into a question about himself and the rich world, resolved to write the story of Gufgaduud, and closed by addressing the man whose name he never learned. The resolution is not neat - the guilt remains - but the writer reaches a deeper understanding of what the encounter meant.',
+    'Alagiah turns the smile into a question about himself and about the rich and poor worlds, resolves to write the story of Gufgaduud, and closes by addressing the man whose name he never learned. The resolution is not neat: the regret and the debt remain. But he calls the meeting a formative moment in the slow gathering of experience that gives facts their meaning.',
   resolutionAr:
-    'يُحوّل Alagiah الابتسامةَ إلى سؤالٍ عن نفسه وعن العالم الغنيّ، ويعزم على كتابة قصّة Gufgaduud، ثمّ يختم بمخاطبة الرجل الذي لم يعرف اسمه قطّ. والخاتمةُ ليست مرتّبة - يبقى الشعور بالذنب - لكنّ الكاتب يبلغ فهماً أعمق لما يعنيه ذلك اللقاء.',
+    'يُحوّل Alagiah الابتسامةَ إلى سؤالٍ عن نفسه وعن العالمَين الغنيّ والفقير، ويعزم على كتابة قصّة Gufgaduud، ثمّ يختم بمخاطبة الرجل الذي لم يعرف اسمه قطّ. والخاتمةُ ليست مرتّبة: يبقى الندمُ ويبقى الدَّين. لكنّه يصف اللقاء بأنّه لحظةٌ مُكوِّنة في التراكم البطيء للتجربة الذي يمنح الحقائقَ معناها.',
   perspective:
-    'First person throughout. Alagiah wrote as both journalist (observer) and human being (participant). The tension between these two roles drives the text: the professional who must record suffering and the person who feels it.',
+    'First person throughout. Alagiah writes as both journalist (observer) and human being (participant). The tension between these two roles drives the text: the professional who must record suffering and the person who feels it.',
   perspectiveAr:
     'ضمير المتكلّم في النصّ كلّه. يكتب Alagiah بوصفه صحفيّاً (مُراقباً) وإنساناً (مُشاركاً). ويحرّك التوتّرُ بين هذين الدورَين النصَّ: المحترفُ الذي يلزمه تسجيل المعاناة، والإنسانُ الذي يشعر بها.',
   paragraphing:
-    'Short paragraphs create pace and impact, particularly around the key revelation. Longer paragraphs are used for description and context, shorter ones for emotional moments.',
+    'Most of the thirteen paragraphs run to between five and nine lines. Three stand out for their brevity: the one-sentence opening, the one-line paragraph that announces the face he will never forget, and the three-line paragraph in which he resolves to write the story. The most harrowing material (Habiba’s death, the old woman’s wound, the confession of revulsion) sits in full-length paragraphs, where the impact comes from short sentences inside them rather than from short paragraphs.',
   paragraphingAr:
-    'تُولّد الفقرات القصيرة إيقاعاً وأثراً، ولا سيّما حول الكشفِ المفتاحيّ. وتُستعمل الفقرات الأطول للوصف والسياق، والفقرات الأقصر للّحظات العاطفيّة.',
-  time: 'The text moves between the general past (covering Somalia over weeks) and one specific moment (the man who smiled outside Gufgaduud). There is a shift from professional time (deadlines, filing reports) to personal time (the moment that haunts you).',
+    'تتراوح معظمُ الفقرات الثلاث عشرة بين خمسة أسطر وتسعة. وتبرز ثلاثٌ منها بقِصَرها: الافتتاحُ المكوَّن من جملةٍ واحدة، والفقرةُ ذات السطر الواحد التي تُعلن الوجهَ الذي لن ينساه أبداً، والفقرةُ ذات الأسطر الثلاثة التي يعزم فيها على كتابة القصّة. أمّا أقسى المادّة (موتُ Habiba، وجرحُ المرأة العجوز، والاعترافُ بالاشمئزاز) فتقع في فقراتٍ كاملة الطول، يأتي أثرُها من الجمل القصيرة داخلها لا من قِصَر الفقرات.',
+  time: 'The extract moves between the months he spent criss-crossing Somalia, from the end of 1991 to December 1992, and one day in a hamlet outside Gufgaduud. It also keeps two times in view: the reporter then, whose notebook directions and broadcast dispatch Alagiah quotes, and the writer looking back, who says his resolution still seems as right as it did then, and who has searched his notes and the BBC’s broadcast only to find that he never learned the man’s name.',
   timeAr:
-    'يتنقّل النصّ بين الزمن الماضي العامّ (تغطية الصومال على مدى أسابيع) ولحظةٍ واحدة محدّدة (الرجل الذي ابتسم على مشارف Gufgaduud). وثمّة انتقالٌ من الزمن المهنيّ (المواعيد النهائيّة، تقديم التقارير) إلى الزمن الشخصيّ (اللحظة التي تطاردك).',
+    'يتنقّل المقتطف بين الأشهر التي قضاها يجوب الصومال، من أواخر 1991 إلى ديسمبر 1992، ويومٍ واحد في نجعٍ على مشارف Gufgaduud. ويُبقي كذلك زمنَين في الأفق: المراسلَ آنذاك، الذي يقتبس Alagiah إرشاداتِ دفتره وتقريرَه المُذاع، والكاتبَ الذي ينظر إلى الوراء، فيقول إنّ عزمه ما زال يبدو صائباً كما بدا حينها، وقد بحث في ملاحظاته وفي ما بثّته BBC ليجد أنّه لم يعرف اسمَ الرجل قطّ.',
   openingClosing:
-    "The opening presents suffering as a mass; the closing recovers the individual. This structural arc - from dehumanisation to re-humanisation - embodies the text's central message about the importance of seeing individuals.",
+    'The opening sentence moves from a thousand faces to the one he will never forget; the closing sentence speaks to that one man directly, as a friend whose name he never learned. The arc from crowd to individual is complete, but the man is recovered as a presence rather than as a person, and Alagiah is honest enough to let the reader see it.',
   openingClosingAr:
-    'يقدّم الافتتاحُ المعاناةَ جموعاً؛ وتستردّ الخاتمةُ الفردَ. وهذا القوسُ البنائيّ - من نزع الإنسانيّة إلى استعادتها - يجسّد رسالةَ النصّ المركزيّة عن أهمّيّة رؤية الأفراد.',
+    'تنتقل جملةُ الافتتاح من ألف وجهٍ إلى الوجه الواحد الذي لن ينساه أبداً؛ وتخاطب جملةُ الختام ذلك الرجلَ نفسه مباشرةً، صديقاً لم يعرف اسمه قطّ. يكتمل القوسُ من الجموع إلى الفرد، لكنّ الرجل يُستعاد حضوراً لا شخصاً، وAlagiah صادقٌ بما يكفي ليدع القارئ يرى ذلك.',
 }
 
+// Two claims here were not in the extract until 26 September 2026: that
+// Alagiah asks whether the media dehumanises people "it claims to help" (the
+// extract never says the media claims to help anyone), and that the central
+// argument is a human being "behind every news report". The last paragraph's
+// argument is about facts and where they sit, which it calls context.
 const writersPurpose = {
   achieve:
-    'Alagiah wanted to explore the moral complexity of being a journalist in a crisis zone. He questioned whether the media dehumanises the people it claims to help, and whether his own presence as a reporter contributed to the indignity of those he witnessed.',
+    'Alagiah wanted to explore the moral complexity of being a journalist in a crisis zone, and to do it from inside his own trade. In the extract he is frank about the hunt for shocking pictures, admits that he and his cameraman were hardened within days, and shows how one man’s embarrassment at being seen made him ask how he himself should feel.',
   achieveAr:
-    'أراد Alagiah أن يستكشف التعقيدَ الأخلاقيَّ في كون المرء صحفيّاً داخل منطقة أزمة. وتساءل: هل ينزع الإعلامُ إنسانيّةَ من يدّعي مساعدتهم؟ وهل ساهم حضورُه مراسلاً في إذلال من شَهِدَهم؟',
+    'أراد Alagiah أن يستكشف التعقيدَ الأخلاقيَّ في كون المرء صحفيّاً داخل منطقة أزمة، وأن يفعل ذلك من داخل مهنته. ففي المقتطف يتحدّث بصراحة عن البحث عن الصور الصادمة، ويعترف بأنّه ومصوّرَه تبلّدا خلال أيّام، ويُبيّن كيف دفعه حرجُ رجلٍ واحد من أن يُرى على حاله إلى أن يسأل كيف ينبغي أن يشعر هو نفسه.',
   readerFeel:
     'He wanted the reader to feel the uncomfortable tension between compassion and voyeurism - the same tension he felt as a correspondent. He also wanted to restore humanity to the people he reported on.',
   readerFeelAr:
     'أراد للقارئ أن يشعر بالتوتّر المُربك بين الشفقة والفُرجة - التوتّر نفسه الذي شعر به مراسلاً. كما أراد أن يستعيد إنسانيّةَ من غطّى أحوالَهم.',
   message:
-    "His central argument is that facts and figures are the easy part of journalism: behind every news report is a human being who deserves to be seen as an individual. The man's apologetic smile makes Alagiah ask how he himself should feel, standing there strong and confident. The extract notes that even people in utter despair aspire to dignity, and the smile can be read in that light.",
+    "His central argument, stated in the last paragraph, is that facts and figures are the easy part of journalism, and that the hard part is seeing where they fit in the wider scheme; meeting the man was a formative moment in learning it. The man's apologetic smile makes Alagiah ask how he himself should feel, standing there strong and confident. The extract notes that even people in utter despair aspire to dignity, and the smile can be read in that light.",
   messageAr:
-    'حُجّتُه المركزيّة أنّ الحقائق والأرقام هي الجزء السهل من الصحافة: وراء كلّ خبرٍ إنسانٌ يستحقّ أن يُرى فرداً. وابتسامةُ الرجل الاعتذاريّة تدفع Alagiah إلى أن يسأل كيف ينبغي أن يشعر هو، وهو واقفٌ هناك قويّاً واثقاً. ويذكر المقتطف أنّ مَن بلغوا أقصى اليأس يطمحون مع ذلك إلى الكرامة، ويمكن قراءة الابتسامة في ضوء ذلك.',
+    'حُجّتُه المركزيّة، كما يصرّح بها في الفقرة الأخيرة، أنّ الحقائق والأرقام هي الجزء السهل من الصحافة، وأنّ الجزء الصعب هو إدراك موقعها من الصورة الأوسع؛ وكان لقاؤه بالرجل لحظةً مُكوِّنة في تعلّم ذلك. وابتسامةُ الرجل الاعتذاريّة تدفع Alagiah إلى أن يسأل كيف ينبغي أن يشعر هو، وهو واقفٌ هناك قويّاً واثقاً. ويذكر المقتطف أنّ مَن بلغوا أقصى اليأس يطمحون مع ذلك إلى الكرامة، ويمكن قراءة الابتسامة في ضوء ذلك.',
 }
 
 // Every word below is in the anthology extract; revulsion, surreptitiously and
@@ -247,16 +280,19 @@ const keyVocabulary = [
   {
     word: 'revulsion',
     definition:
-      'Strong disgust (the anthology’s gloss). Alagiah admits his reaction to the people he met that day was a mixture of pity and revulsion.',
+      'Strong disgust; the anthology glosses it simply as disgust. Alagiah admits his reaction to everyone else he met that day, apart from the man who smiled, was a mixture of pity and revulsion.',
     definitionAr:
-      'اشمئزازٌ شديد (وهو شرح المختارات). يعترف Alagiah بأنّ ردّ فعله تجاه مَن التقاهم ذلك اليوم كان مزيجاً من الشفقة والاشمئزاز.',
+      'اشمئزازٌ شديد؛ وتشرحها المختارات بكلمةٍ واحدة: الاشمئزاز. يعترف Alagiah بأنّ ردّ فعله تجاه كلّ مَن التقاهم ذلك اليوم، ما عدا صاحبَ الابتسامة، كان مزيجاً من الشفقة والاشمئزاز.',
   },
   {
+    // The anthology's three glosses are single words (disgust, secretly,
+    // hardened). Until 26 September 2026 the fuller definitions below were
+    // labelled as the anthology's own.
     word: 'surreptitiously',
     definition:
-      'Secretly, so as not to be noticed (the anthology’s gloss). Used of wiping your hands on your trousers in a feeding centre.',
+      'Secretly (the anthology’s gloss), so as not to be noticed. Used of wiping your hands on your trousers in a feeding centre.',
     definitionAr:
-      'خِفيةً، دون أن يلاحظ أحد (وهو شرح المختارات). تُستعمل لوصف مسح اليدين بالسروال خِلسةً في مركز التغذية.',
+      'خِفيةً (وهو شرح المختارات)، دون أن يلاحظ أحد. تُستعمل لوصف مسح اليدين بالسروال خِلسةً في مركز التغذية.',
   },
   {
     word: 'degeneration',
@@ -267,9 +303,9 @@ const keyVocabulary = [
   {
     word: 'inured',
     definition:
-      'Hardened, so that something unpleasant no longer has much effect (the anthology’s gloss). Alagiah was normally inured to stories of suffering, yet one smile unsettled him.',
+      'Hardened (the anthology’s gloss), so that something unpleasant no longer has much effect. Alagiah was normally inured to stories of suffering, yet one smile unsettled him.',
     definitionAr:
-      'متبلّدُ الحسّ، فلا يعود الأمرُ المؤلم يؤثّر فيه كثيراً (وهو شرح المختارات). كان Alagiah عادةً متبلّداً تجاه قصص المعاناة، لكنّ ابتسامةً واحدة أقلقته.',
+      'متبلّدُ الحسّ (وهو شرح المختارات)، فلا يعود الأمرُ المؤلم يؤثّر فيه كثيراً. كان Alagiah عادةً متبلّداً تجاه قصص المعاناة، لكنّ ابتسامةً واحدة أقلقته.',
   },
   {
     word: 'callous',
@@ -299,10 +335,13 @@ const keyVocabulary = [
     definitionAr: 'تقريرٌ يُرسله المراسل؛ وهنا تقارير Alagiah من الصومال إلى BBC.',
   },
   {
+    // Until 10 October 2026 the Arabic called it a pivotal moment (مفصليّة),
+    // which reads as a turning point. The extract makes it one moment in a
+    // gradual collection of experiences, so it is formative, as elsewhere here.
     word: 'seminal',
     definition:
       'Strongly influencing what comes later; Alagiah calls meeting the man a seminal moment.',
-    definitionAr: 'بالغُ الأثر فيما يليه؛ يصف Alagiah لقاءه بالرجل بأنّه لحظةٌ مفصليّة.',
+    definitionAr: 'بالغُ الأثر فيما يليه؛ يصف Alagiah لقاءه بالرجل بأنّه لحظةٌ مُكوِّنة.',
   },
   {
     word: 'shrivelled',
@@ -382,15 +421,22 @@ const examPractice = {
   },
 }
 
+// Reasons checked 26 September 2026 against the anthology's Adichie, Zeppa and
+// Ralston extracts. The Adichie card said Alagiah's media "creates" the single
+// story, which neither extract says (Adichie blames popular images; Alagiah
+// admits the media's appetite for shocking pictures). The Zeppa card called his
+// extract an encounter with "unfamiliar cultures" and "guilt-laden", and hers a
+// "travel memoir": his is about a famine and names a regret, not guilt, and hers
+// is a memoir of her early days teaching in Bhutan.
 const comparisonLinks = [
   {
     title: 'The Danger of a Single Story',
     author: 'Chimamanda Ngozi Adichie',
     href: '/igcse/edexcel-lang/anthology/the-danger-of-a-single-story',
     reason:
-      'Adichie warns about the single-story portrayal of Africa; Alagiah, as a BBC correspondent, was part of the media that creates it. Compare how each writer handles the ethics of representing Africa and the tension between individual stories and collective narratives.',
+      'Adichie warns against a single story of Africa as a place of catastrophe, one that popular images feed; Alagiah, a BBC correspondent, admits the media’s appetite for shocking pictures. Compare how each writer handles the ethics of representing Africa and the tension between individual stories and collective narratives.',
     reasonAr:
-      'تحذّر Adichie من تصوير إفريقيا بقصّةٍ واحدة؛ وكان Alagiah مراسلاً للـ BBC جزءاً من الإعلام الذي يصنع تلك القصّة. قارن كيف يتعامل كلّ كاتب مع أخلاقيّات تمثيل إفريقيا، ومع التوتّر بين القصص الفرديّة والروايات الجماعيّة.',
+      'تحذّر Adichie من قصّةٍ واحدة عن إفريقيا بوصفها مكاناً للكوارث، قصّةٍ تغذّيها الصورُ الشائعة؛ ويعترف Alagiah، مراسلُ BBC، بنَهَم الإعلام إلى الصور الصادمة. قارن كيف يتعامل كلّ كاتب مع أخلاقيّات تمثيل إفريقيا، ومع التوتّر بين القصص الفرديّة والروايات الجماعيّة.',
     themes: ['Africa', 'Representation', 'Media'],
     themesAr: ['إفريقيا', 'التمثيل', 'الإعلام'],
   },
@@ -399,9 +445,9 @@ const comparisonLinks = [
     author: 'Jamie Zeppa',
     href: '/igcse/edexcel-lang/anthology/beyond-the-sky-and-the-earth',
     reason:
-      "Both writers are outsiders encountering unfamiliar cultures. Compare Alagiah's guilt-laden journalism in a crisis zone with Zeppa's wonder-filled travel memoir - two very different ways of writing about the unfamiliar.",
+      'Both writers are outsiders far from home: Alagiah a television reporter in a famine, Zeppa a young Canadian newly arrived to teach in Bhutan. Compare Alagiah’s self-questioning account of a crisis with Zeppa’s wonder-filled memoir of her first days in the country: two very different ways of writing about the unfamiliar.',
     reasonAr:
-      'كلا الكاتبَين غريبٌ يلتقي ثقافاتٍ مجهولة. قارن صحافةَ Alagiah المُثقَلة بالشعور بالذنب في منطقة أزمة، بسيرة Zeppa الرحليّة المُفعمة بالدهشة - طريقتان مختلفتان وايد في الكتابة عن المجهول.',
+      'كلا الكاتبَين غريبٌ بعيدٌ عن وطنه: Alagiah مراسلٌ تلفزيونيّ في مجاعة، وZeppa كنديّةٌ شابّة وصلت لتوّها لتُدرّس في بوتان. قارن رواية Alagiah التي يُسائل فيها نفسه عن أزمة، بسيرة Zeppa المُفعمة بالدهشة عن أيّامها الأولى في البلد: طريقتان مختلفتان جدّاً في الكتابة عن المجهول.',
     themes: ['Outsider perspective', 'Cultural encounter', 'Personal growth'],
     themesAr: ['منظور الغريب', 'اللقاء الثقافيّ', 'النموّ الشخصيّ'],
   },

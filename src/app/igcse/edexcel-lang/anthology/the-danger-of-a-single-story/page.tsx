@@ -43,27 +43,32 @@ export const metadata: Metadata = {
 
 /* ─── Data ───────────────────────────────────────────────────────────── */
 
+// Checked by script against the anthology on 26 September 2026. Until then
+// quotation 2 began with a lower-case "stories" and quotation 3 with a capital
+// "When", neither as printed, and the notes placed the lines in "the TED talk"
+// rather than in the extract the exam prints. Line numbers in the notes are the
+// anthology's.
 const verifiedTedLines = [
   {
     id: 1,
     label: 'On the cumulative effect of a single story',
     text: '"…as only one thing, over and over again, and that is what they become."',
     context:
-      'A widely-attested line from the TED talk, capturing how repeated narratives harden into perceived reality.',
+      'Lines 73-74 of the extract, where Adichie sums up how a single story is made. Repetition does the damage: what is said about a people often enough becomes what they are taken to be.',
   },
   {
     id: 2,
     label: 'On the importance of stories',
-    text: '"…stories matter. Many stories matter."',
+    text: '"Stories matter. Many stories matter."',
     context:
-      'A concise refrain near the close of the talk, asserting that no single narrative is sufficient.',
+      'Line 75: two short sentences after the long one at lines 73-74. The second repeats the first with one word added, turning the extract from the danger to the remedy: no single story is enough.',
   },
   {
     id: 3,
     label: 'Closing image - paradise regained',
-    text: '"When we reject the single story, ... we regain a kind of paradise."',
+    text: '"…when we reject the single story, … we regain a kind of paradise."',
     context:
-      'The final sentence of the TED talk: rejecting the single story is framed as a recovery of fullness and humanity.',
+      'The last sentence of the extract (lines 82-83), which Adichie announces as her closing thought. She borrows the image of paradise regained from the Alice Walker story just before it, so rejecting the single story is framed as getting back something that was lost.',
   },
 ]
 
@@ -71,17 +76,21 @@ const languageFeatures = [
   {
     technique: 'Anecdote',
     explanation:
-      'Adichie opens with a personal anecdote about her childhood reading habits, establishing intimacy with the audience and grounding her argument in lived experience rather than abstract theory.',
+      'After introducing herself as a storyteller, Adichie begins with a personal anecdote about her childhood reading, establishing intimacy with the audience and grounding her argument in lived experience rather than abstract theory.',
   },
   {
     technique: 'Repetition',
     explanation:
       'The phrase "single story" recurs throughout the text like a refrain, reinforcing the central concept and ensuring it stays in the audience\'s mind. The repetition mirrors how single stories themselves are reinforced through repeated telling.',
   },
+  // Until 26 September 2026 this said her emotive language conveyed the
+  // frustration and hurt of being stereotyped. The extract voices neither: the
+  // roommate story is told with humour, and the strongest feeling it names is
+  // her own shame in Guadalajara (line 69).
   {
     technique: 'Emotive language',
     explanation:
-      'Adichie uses emotionally charged vocabulary to convey the frustration and hurt of being reduced to a stereotype, prompting the audience to share her discomfort.',
+      'Adichie keeps her most emotive language for her own mistake rather than for the wrongs done to her: the roommate story is told with humour, but in Guadalajara she feels a shame strong enough to overwhelm her. Morally weighted nouns late in the extract, shame, dignity and paradise, raise the emotional register as the argument turns from anecdote to principle, so the audience is moved as well as persuaded.',
   },
   {
     technique: 'Contrast / antithesis',
@@ -99,22 +108,28 @@ const languageFeatures = [
   {
     technique: 'List of three',
     explanation:
-      "Triadic structures give Adichie's arguments a persuasive, rhythmic quality. Lists build from identification of the problem toward its consequence, following a logical chain.",
+      "Triadic structures give Adichie's arguments a persuasive, rhythmic quality. The clearest is at lines 52-53, where three phrases in a row, each beginning with the same two words, set out what the roommate's single story rules out, building to the gravest loss: any connection between equals.",
   },
+  // Until 26 September 2026 this said the text addresses its audience
+  // "throughout". It says "you" to the audience once, at line 1; the only
+  // other "you" is her mother's, at the dinner table. Until 10 October 2026 it
+  // also said that in between she draws them in through "we": between lines 1
+  // and 82 the only "we" that includes the audience is at line 14, and the
+  // others mean her family or the people around her in Nigeria.
   {
     technique: 'Direct address',
     explanation:
-      'As a speech, the text directly addresses its audience throughout. This creates a sense of personal conversation, breaking down the barrier between speaker and listener.',
+      'As a talk, the text speaks to a listening audience. Adichie speaks to them directly at the start, where she promises to tell them a few personal stories (line 1), and again at the end, where she announces her closing thought (line 82). Line 1 is the only place she addresses them with a second-person pronoun; in between, the only pronoun that includes them is the first person plural of her first lesson (line 14). This creates a sense of personal conversation, breaking down the barrier between speaker and listener.',
   },
   {
     technique: 'Inclusive pronouns',
     explanation:
-      'Adichie uses "we" to include herself and the audience in the problem. She is not exempting herself from the tendency to create single stories - she admits her own complicity.',
+      'Adichie uses "we" at her first lesson (line 14) and in her last sentence (lines 82-83) to include herself and the audience in both the problem and the remedy. She does not exempt herself from the tendency to create single stories: at line 61 she admits, in the first person, that she too is guilty.',
   },
   {
     technique: 'Irony',
     explanation:
-      'There is irony in a Nigerian child writing imitation stories about white children playing in the snow. Adichie uses this to show how powerfully imported narratives shape imagination, even when they bear no relation to lived reality.',
+      'There is irony in a Nigerian child who had never left Nigeria writing stories about white, blue-eyed characters who played in the snow. Adichie uses this to show how powerfully imported narratives shape imagination, even when they bear no relation to lived reality.',
   },
   {
     technique: 'Metaphor',
@@ -123,31 +138,48 @@ const languageFeatures = [
   },
 ]
 
+// Corrected on 26 September 2026 against the anthology and the study guide.
+// The climax was put at the roommate story, told "painfully"; the guide and the
+// text put the turn at line 61 and the peak at her shame in Guadalajara, and
+// the roommate story is told with humour. Fide was missing from the sequence,
+// the ending was called a call to action (it is a promise), and the time note
+// now names the two looks back to Fide's family. On 10 October 2026 its "one
+// jump forward, at line 54" became the three markers of time the extract has
+// (lines 42, 54 and 61-62), and the development note became broadly
+// chronological: the extract never says how old she was when she found
+// African books, so it cannot show that this came before Fide.
+// Paragraph lengths were measured from the line spacing of Pearson's PDF: a
+// plain text dump shows paragraph breaks at lines 16, 26, 51 and 56 that the
+// printed page does not have.
 const structuralAnalysis = {
   opening:
-    'Adichie opens with a personal childhood anecdote about reading British and American books. This disarms the audience by starting with vulnerability and self-deprecation rather than direct argument.',
+    'Adichie opens by introducing herself as a storyteller who will tell a few personal stories (line 1), then begins the first: a childhood spent reading British and American books. Starting with gentle, self-deprecating humour about her early reading and writing, rather than with direct argument, disarms the audience.',
   development:
-    "The text develops chronologically through Adichie's life: childhood reading, discovering African literature, arriving in America, travelling to Mexico. Each anecdote builds the argument that single stories are everywhere and affect everyone.",
+    "The text follows Adichie's life broadly in order: childhood reading, discovering African literature, Fide's family when she was eight, her American roommate when she went to university at 19, and a visit to Mexico a few years before the talk. Each anecdote builds the argument that single stories are everywhere and affect everyone.",
   climax:
-    "The emotional climax comes when Adichie describes her American roommate's patronising assumptions - this is the moment where the abstract concept of the single story becomes painfully personal and concrete.",
+    'The turning point comes at line 61: having described how her roommate misjudged her, Adichie admits that she too is guilty. The emotional peak follows in Guadalajara, where she feels first surprise and then shame at people simply living ordinary lives (lines 67-69). The roommate story is told with humour rather than pain; the strongest feeling in the extract is her shame at her own single story.',
   resolution:
-    'Adichie resolves by widening her argument from personal experience to a universal principle: that seeking many stories is an act of empowerment. She ends with a call to action rather than a neat conclusion.',
+    "Adichie resolves by widening her argument from personal experience to a principle: stories have been used to harm, but they can also empower and repair the dignity they break (lines 75-77). She ends not on accusation but on hope, borrowing Alice Walker's image of paradise regained for the closing thought she announces at line 82.",
   perspective:
-    'First person throughout, using "I" to ground every argument in personal experience. This is a deliberate rhetorical choice: by making herself both victim and perpetrator of single stories, Adichie removes any sense of moral superiority.',
+    'First person throughout: "I" grounds the argument in personal experience, and the inclusive plural of her first lesson and her last sentence widens it to the audience. This is a deliberate rhetorical choice: by making herself both victim and perpetrator of single stories, Adichie removes any sense of moral superiority.',
   paragraphing:
-    'As a speech transcript, the text uses short, punchy paragraphs suited to oral delivery. Longer narrative sections alternate with concise, memorable thesis statements.',
-  time: 'Broadly chronological (childhood to adulthood) but with embedded flashbacks and flash-forwards. The chronological structure mirrors a journey of understanding - the speaker grows as the text progresses.',
+    "The anthology prints the extract in short paragraphs of one to eight lines, suited to oral delivery. Early on, the lessons are folded into paragraphs that also carry the story, as at lines 14-15 and 40-41; at the end, the principle gets short paragraphs of its own (lines 73-74 and 75-77). The one-line paragraph at line 48 lets the roommate's assumption about the stove land on its own.",
+  time: "Broadly chronological (childhood to adulthood), told from the present of the talk. Markers of time carry it forward in jumps of years, at lines 42, 54 and 61-62, and twice she looks back to Fide's family (lines 42 and 59-60), which ties the anecdotes together. The chronological structure mirrors a journey of understanding: the speaker grows as the text progresses.",
   openingClosing:
-    'The opening uses a specific, small-scale anecdote (a child reading); the closing uses a large-scale, universal claim about the power of stories. This movement from particular to universal gives the text its persuasive arc.',
+    "The opening uses a specific, small-scale anecdote (a child reading); the closing, after one more story, Alice Walker's, makes a large-scale, universal claim that reaches every place and every listener. This movement from particular to universal gives the text its persuasive arc.",
 }
 
+// Until 26 September 2026 this said she argues that stereotypes are untrue
+// only in being incomplete, and that the antidote is a balance of stories.
+// Both come from parts of the talk the anthology cuts: the extract never uses
+// "stereotype", "incomplete" or "balance". What it shows instead is below.
 const writersPurpose = {
   achieve:
-    'Adichie wants to persuade her audience that relying on a single narrative about any group of people is dangerous. She argues that stereotypes are not necessarily untrue but are fundamentally incomplete.',
+    "Adichie wants to persuade her audience that relying on a single story about any group of people is dangerous. She does not claim that single stories are false: Fide's family really was poor. Her point, shown through the anecdotes rather than stated, is that a story told alone leaves out everything else that is true.",
   readerFeel:
-    'She wants the audience to feel uncomfortable - to recognise their own single stories and the harm those stories cause. She also wants them to feel empowered to seek out multiple perspectives.',
+    'She wants the audience to recognise their own single stories, as she recognises hers, without feeling attacked: her humour and her confession at line 61 make that possible. She also wants them to leave hopeful that more stories can repair what a single story breaks.',
   message:
-    'Her central argument is that stories carry power, and that the dominance of a single story - whether about Africa, about immigrants, about any group - flattens complexity and denies humanity. The antidote is a balance of stories.',
+    "Her central argument is that stories carry power, and that a single story, whether about Africa, about Mexicans or about any people, flattens complexity, rules out connection between equals and can break a people's dignity. The antidote is not fewer stories but more.",
 }
 
 // Every headword below is in the anthology extract, spelled as it prints it
@@ -156,9 +188,11 @@ const writersPurpose = {
 // "patronising" and "humanise".
 const keyVocabulary = [
   {
+    // The sentence runs on to line 76, where malign is: cited as 75-76 since
+    // 10 October 2026, not line 75 alone.
     word: 'dispossess',
     definition:
-      'To deprive someone of land, property, or other belongings; here used metaphorically to mean stripping people of their identity.',
+      'To deprive someone of land, property, or other belongings; Adichie names it, with malign, as something stories have been used to do (lines 75-76).',
   },
   {
     word: 'malign',
@@ -203,9 +237,12 @@ const keyVocabulary = [
       'To give someone power or confidence; Adichie sets it against dispossess and malign as a use of stories.',
   },
   {
+    // Until 26 September 2026 glossed as "the assumed story about a group". At
+    // line 49 it is the roommate's position towards Adichie herself; the
+    // sentence ends on line 50, so it is cited as 49-50.
     word: 'default',
     definition:
-      'A preselected option or position adopted automatically; here meaning the assumed story about a group.',
+      "A preselected option or position adopted automatically; here, the roommate's automatic attitude to Adichie as an African, before she had even seen her (lines 49-50).",
   },
 ]
 
@@ -256,21 +293,28 @@ const examPractice = {
   },
 }
 
+// Until 26 September 2026 the Chinese Cinderella pairing said Yen Mah
+// challenges a limiting narrative. In the anthology extract she does not: she
+// accepts her father's plan for her and thanks him. The Zephaniah pairing
+// credited Adichie with direct address throughout; she speaks to the audience
+// directly only at the start and the end. On 10 October 2026 "spoken voice"
+// became "conversational voice", as the study guide has it: the anthology's
+// headnote presents Zephaniah's text as a Guardian article, not a talk.
 const comparisonLinks = [
   {
     title: 'Chinese Cinderella',
     author: 'Adeline Yen Mah',
     href: '/igcse/edexcel-lang/anthology/chinese-cinderella',
     reason:
-      'Both texts explore how identity is shaped by the stories others tell about you. Adichie examines cultural stereotyping; Yen Mah examines family rejection. Compare how each writer uses personal experience to challenge limiting narratives.',
-    themes: ['Identity', 'Stereotypes', 'Belonging'],
+      'Both are first-person accounts in which a writer looks back on her younger self. Adichie shows the single stories she learned as a child and later met in America; Yen Mah, rejected by her family, shows a father whose pride in her comes with conditions. Compare how each writer uses the distance between the young self and the adult telling the story.',
+    themes: ['Identity', 'Childhood', 'Looking back'],
   },
   {
     title: 'Young and Dyslexic',
     author: 'Benjamin Zephaniah (1958-2023)',
     href: '/igcse/edexcel-lang/anthology/young-and-dyslexic',
     reason:
-      'Both writers challenge the single story others have constructed about them - Adichie as an African, Zephaniah as a dyslexic person. Compare how each uses personal voice and direct address to reclaim their identity.',
+      'Both writers challenge the single story others told about them: Adichie as an African, Zephaniah as a dyslexic child. Compare how each argues from personal experience in a direct, conversational voice, and where each finds the fault: Zephaniah moves it away from himself, while Adichie admits her own single stories too.',
     themes: ['Identity', 'Challenging assumptions', 'Self-belief'],
   },
   {
@@ -585,12 +629,17 @@ export default async function TheDangerOfASingleStoryPage() {
         <p>
           <strong className="text-foreground">{await t('anth_text.rights_notice_label')}</strong>{' '}
           {/* As the anthology's acknowledgements give it. Until 26 September 2026
-              this read "Wylie Agency / TED Conferences / Pearson Education". */}
+              this read "Wylie Agency / TED Conferences / Pearson Education", and
+              it offered the TED transcript as the full text; the talk online is
+              longer and worded differently in places, and the exam prints the
+              anthology's version. Since 10 October 2026 it says "full extract",
+              not "full text": the anthology prints only part of the talk. */}
           &copy; Chimamanda Ngozi Adichie 2009, reproduced in the anthology by permission of The
           Wylie Agency (UK) Limited. Quotations are short fair-dealing extracts under CDPA 1988
-          &sect;30 (criticism, review, quotation). For the full text, use the Pearson Edexcel
+          &sect;30 (criticism, review, quotation). For the full extract, use the Pearson Edexcel
           International GCSE English Anthology (ISBN 978-1-446-93108-0), which Pearson publishes
-          free, or the original TEDGlobal 2009 talk transcript.
+          free. The TEDGlobal 2009 talk is longer and worded differently in places, so revise from
+          the anthology&apos;s version.
         </p>
         <p className="mt-2">Aligned with Pearson Edexcel specification 4EA1</p>
       </footer>
