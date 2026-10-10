@@ -450,10 +450,12 @@ async function HomeHero() {
             pilot is kept as a distinct conversion path because it is
             the primary Qatar Expo / GCC school sales motion. */}
         <div className="mt-9 flex items-center justify-center">
+          {/* Wraps rather than running off a phone: 10 October 2026, the
+              Spanish label ran 8 pixels past a 360-pixel screen. */}
           <Button
             variant="outline"
             size="lg"
-            className="h-11 px-6"
+            className="h-auto min-h-11 max-w-full whitespace-normal px-6 py-2 text-center"
             render={<Link href="/school-pilot" />}
           >
             {ctaPilot}

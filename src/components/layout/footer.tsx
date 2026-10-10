@@ -351,7 +351,10 @@ export function Footer({ lastUpdated }: { lastUpdated?: string }) {
               {t('footer.company_registration')}
             </p>
           </div>
-          <div className="flex items-center gap-4 text-[11px] font-mono tracking-wide">
+          {/* Wraps on a phone. 10 October 2026: in one line the Spanish labels
+              ran 14 pixels past a 360-pixel screen and the page scrolled
+              sideways. */}
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] font-mono tracking-wide sm:justify-end">
             <Link
               href="/legal/privacy"
               className="text-[#B5B8B3]/75 hover:text-[#FBF7F0] transition-colors"
