@@ -215,6 +215,64 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
     '/comics/frankenstein/william-frankenstein.50cabb40c004.svg',
   'lc-frankenstein-william-s-murder-and-justine-s-trial':
     '/comics/frankenstein/william-s-murder-and-justine-s-trial.6629a56dc29e.svg',
+  'lc-great-expectations-abel-magwitch':
+    '/comics/great-expectations/abel-magwitch.fcad79585903.svg',
+  'lc-great-expectations-bentley-drummle':
+    '/comics/great-expectations/bentley-drummle.64e2d701efd5.svg',
+  'lc-great-expectations-biddy': '/comics/great-expectations/biddy.8d523228733e.svg',
+  'lc-great-expectations-compeyson': '/comics/great-expectations/compeyson.cf4f02bda8e0.svg',
+  'lc-great-expectations-eleven-years-later':
+    '/comics/great-expectations/eleven-years-later.32053931e30a.svg',
+  'lc-great-expectations-escape-down-the-river':
+    '/comics/great-expectations/escape-down-the-river.b5c82b786abf.svg',
+  'lc-great-expectations-estella': '/comics/great-expectations/estella.3947dba85a52.svg',
+  'lc-great-expectations-estella-s-engagement':
+    '/comics/great-expectations/estella-s-engagement.225761051f8f.svg',
+  'lc-great-expectations-estella-s-parents':
+    '/comics/great-expectations/estella-s-parents.7b2e4afe9971.svg',
+  'lc-great-expectations-estella-turns-on-her-maker':
+    '/comics/great-expectations/estella-turns-on-her-maker.eac9b7384c15.svg',
+  'lc-great-expectations-first-visit-to-satis-house':
+    '/comics/great-expectations/first-visit-to-satis-house.f6ae752ba7c2.svg',
+  'lc-great-expectations-great-expectations':
+    '/comics/great-expectations/great-expectations.a678e2c320fa.svg',
+  'lc-great-expectations-herbert-pocket':
+    '/comics/great-expectations/herbert-pocket.b2dfb4d386a8.svg',
+  'lc-great-expectations-joe-gargery': '/comics/great-expectations/joe-gargery.9fd27021c3c4.svg',
+  'lc-great-expectations-joe-s-care-and-biddy-s-wedding':
+    '/comics/great-expectations/joe-s-care-and-biddy-s-wedding.7d0d9d19a2b6.svg',
+  'lc-great-expectations-joe-s-visit-to-london':
+    '/comics/great-expectations/joe-s-visit-to-london.54847a596aa2.svg',
+  'lc-great-expectations-leaving-the-forge':
+    '/comics/great-expectations/leaving-the-forge.42fe789e6a6d.svg',
+  'lc-great-expectations-magwitch-s-death':
+    '/comics/great-expectations/magwitch-s-death.8a5f08d2276b.svg',
+  'lc-great-expectations-magwitch-s-story':
+    '/comics/great-expectations/magwitch-s-story.ea1bf7118949.svg',
+  'lc-great-expectations-miss-havisham':
+    '/comics/great-expectations/miss-havisham.5efc27a792e9.svg',
+  'lc-great-expectations-miss-havisham-s-command':
+    '/comics/great-expectations/miss-havisham-s-command.a4b1385e9008.svg',
+  'lc-great-expectations-molly': '/comics/great-expectations/molly.3f9776fee1a6.svg',
+  'lc-great-expectations-mr-jaggers': '/comics/great-expectations/mr-jaggers.19eb997a6fdc.svg',
+  'lc-great-expectations-mrs-joe-gargery':
+    '/comics/great-expectations/mrs-joe-gargery.daa57eae8e0e.svg',
+  'lc-great-expectations-orlick': '/comics/great-expectations/orlick.6c0cba345329.svg',
+  'lc-great-expectations-orlick-s-trap':
+    '/comics/great-expectations/orlick-s-trap.c088a4de1f66.svg',
+  'lc-great-expectations-pip': '/comics/great-expectations/pip.756b0b1768b3.svg',
+  'lc-great-expectations-remorse-and-fire':
+    '/comics/great-expectations/remorse-and-fire.1e8fc1bb5c1b.svg',
+  'lc-great-expectations-stolen-food-and-a-recaptured-convict':
+    '/comics/great-expectations/stolen-food-and-a-recaptured-convict.0378c04d50e2.svg',
+  'lc-great-expectations-the-attack-on-mrs-joe':
+    '/comics/great-expectations/the-attack-on-mrs-joe.204d22b0d30c.svg',
+  'lc-great-expectations-the-convict-in-the-churchyard':
+    '/comics/great-expectations/the-convict-in-the-churchyard.f7d25e1f86db.svg',
+  'lc-great-expectations-the-convict-returns':
+    '/comics/great-expectations/the-convict-returns.6a95939fd0e8.svg',
+  'lc-great-expectations-visits-a-fight-and-an-apprenticeship':
+    '/comics/great-expectations/visits-a-fight-and-an-apprenticeship.9835ec6b712d.svg',
   'lc-hamlet-claudius': '/comics/hamlet/claudius.0b1c3b3ee607.svg',
   'lc-hamlet-fortinbras': '/comics/hamlet/fortinbras.bb30c5609421.svg',
   'lc-hamlet-fortinbras-s-army': '/comics/hamlet/fortinbras-s-army.e6fbf020c8bd.svg',
@@ -303,6 +361,52 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
   'lc-henry-v-williams': '/comics/henry-v/williams.79e72b3346ff.svg',
   'lc-henry-v-york-suffolk-and-the-prisoners':
     '/comics/henry-v/york-suffolk-and-the-prisoners.0319fb452563.svg',
+  'lc-jane-eyre-a-blackened-ruin': '/comics/jane-eyre/a-blackened-ruin.336251965b08.svg',
+  'lc-jane-eyre-a-wound-in-the-night': '/comics/jane-eyre/a-wound-in-the-night.4280fff7b9d2.svg',
+  'lc-jane-eyre-ade-le-varens': '/comics/jane-eyre/ade-le-varens.4aa4100d09bf.svg',
+  'lc-jane-eyre-bertha-mason': '/comics/jane-eyre/bertha-mason.b51bb4941a20.svg',
+  'lc-jane-eyre-bessie': '/comics/jane-eyre/bessie.39b62962b266.svg',
+  'lc-jane-eyre-blanche-ingram': '/comics/jane-eyre/blanche-ingram.8530ceda866f.svg',
+  'lc-jane-eyre-destitute-at-whitcross':
+    '/comics/jane-eyre/destitute-at-whitcross.efe4b26fa136.svg',
+  'lc-jane-eyre-diana-and-mary-rivers': '/comics/jane-eyre/diana-and-mary-rivers.2a7410b46e24.svg',
+  'lc-jane-eyre-ferndean': '/comics/jane-eyre/ferndean.949af462fd8e.svg',
+  'lc-jane-eyre-fire-in-the-night': '/comics/jane-eyre/fire-in-the-night.cc54a8ee2e7e.svg',
+  'lc-jane-eyre-flight-from-thornfield':
+    '/comics/jane-eyre/flight-from-thornfield.b789dd829a26.svg',
+  'lc-jane-eyre-grace-poole': '/comics/jane-eyre/grace-poole.f4df44c73fa4.svg',
+  'lc-jane-eyre-helen-burns': '/comics/jane-eyre/helen-burns.bb5c06907f87.svg',
+  'lc-jane-eyre-jane-eyre': '/comics/jane-eyre/jane-eyre.a561ba639b84.svg',
+  'lc-jane-eyre-john-eyre': '/comics/jane-eyre/john-eyre.65aa33db927d.svg',
+  'lc-jane-eyre-john-reed': '/comics/jane-eyre/john-reed.4cfdb90e046b.svg',
+  'lc-jane-eyre-miss-temple': '/comics/jane-eyre/miss-temple.9c1b9ecf53f5.svg',
+  'lc-jane-eyre-mr-brocklehurst': '/comics/jane-eyre/mr-brocklehurst.fb0cb7da170e.svg',
+  'lc-jane-eyre-mr-rochester': '/comics/jane-eyre/mr-rochester.9a5ca8eabde5.svg',
+  'lc-jane-eyre-mrs-fairfax': '/comics/jane-eyre/mrs-fairfax.926fe1620d75.svg',
+  'lc-jane-eyre-mrs-reed': '/comics/jane-eyre/mrs-reed.1b00cf46760e.svg',
+  'lc-jane-eyre-mrs-reed-s-confession': '/comics/jane-eyre/mrs-reed-s-confession.8bc16c9a7c56.svg',
+  'lc-jane-eyre-reader-i-married-him': '/comics/jane-eyre/reader-i-married-him.c661c4908be7.svg',
+  'lc-jane-eyre-resurgam': '/comics/jane-eyre/resurgam.c789d378e770.svg',
+  'lc-jane-eyre-richard-mason': '/comics/jane-eyre/richard-mason.6429b6a94f80.svg',
+  'lc-jane-eyre-rosamond-oliver': '/comics/jane-eyre/rosamond-oliver.240c71a0ba2a.svg',
+  'lc-jane-eyre-silks-and-a-seraglio': '/comics/jane-eyre/silks-and-a-seraglio.25670b6b565a.svg',
+  'lc-jane-eyre-st-john-rivers': '/comics/jane-eyre/st-john-rivers.1c765a15f18d.svg',
+  'lc-jane-eyre-the-black-pillar': '/comics/jane-eyre/the-black-pillar.99bc0f302c9b.svg',
+  'lc-jane-eyre-the-book-and-the-blow': '/comics/jane-eyre/the-book-and-the-blow.10f2ce6f38eb.svg',
+  'lc-jane-eyre-the-house-party': '/comics/jane-eyre/the-house-party.e4251e7c07e8.svg',
+  'lc-jane-eyre-the-impediment': '/comics/jane-eyre/the-impediment.3207a1661bd6.svg',
+  'lc-jane-eyre-the-missionary-s-wife': '/comics/jane-eyre/the-missionary-s-wife.20b345c52d19.svg',
+  'lc-jane-eyre-the-proposal-in-the-orchard':
+    '/comics/jane-eyre/the-proposal-in-the-orchard.896ac7372243.svg',
+  'lc-jane-eyre-the-red-room': '/comics/jane-eyre/the-red-room.8b3f50536a9a.svg',
+  'lc-jane-eyre-the-rider-in-hay-lane': '/comics/jane-eyre/the-rider-in-hay-lane.3772b8844e35.svg',
+  'lc-jane-eyre-the-stool-of-shame': '/comics/jane-eyre/the-stool-of-shame.046100aa1bdd.svg',
+  'lc-jane-eyre-the-torn-veil': '/comics/jane-eyre/the-torn-veil.5b19a373e5cb.svg',
+  'lc-jane-eyre-the-voice': '/comics/jane-eyre/the-voice.ee8c34ac75c7.svg',
+  'lc-jane-eyre-thornfield-and-the-laugh':
+    '/comics/jane-eyre/thornfield-and-the-laugh.91e0233a478c.svg',
+  'lc-jane-eyre-twenty-thousand-pounds':
+    '/comics/jane-eyre/twenty-thousand-pounds.458581247569.svg',
   'lc-jekyll-and-hyde-dr-hastie-lanyon':
     '/comics/jekyll-and-hyde/dr-hastie-lanyon.73a56dc5b2f8.svg',
   'lc-jekyll-and-hyde-dr-henry-jekyll': '/comics/jekyll-and-hyde/dr-henry-jekyll.8f2611ebefc9.svg',
@@ -514,6 +618,50 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
   'lc-othello-the-trance-and-the-blow': '/comics/othello/the-trance-and-the-blow.8a2ffa3761ba.svg',
   'lc-othello-the-vow-of-revenge': '/comics/othello/the-vow-of-revenge.335b5276a7fb.svg',
   'lc-othello-the-willow-song': '/comics/othello/the-willow-song.fd72683a017f.svg',
+  'lc-pride-and-prejudice-a-rich-young-man-takes-netherfield':
+    '/comics/pride-and-prejudice/a-rich-young-man-takes-netherfield.2fc1af9071be.svg',
+  'lc-pride-and-prejudice-charlotte-accepts-mr-collins':
+    '/comics/pride-and-prejudice/charlotte-accepts-mr-collins.cafc3661c6ee.svg',
+  'lc-pride-and-prejudice-charlotte-lucas':
+    '/comics/pride-and-prejudice/charlotte-lucas.7737af6ca0a7.svg',
+  'lc-pride-and-prejudice-darcy-s-secret':
+    '/comics/pride-and-prejudice/darcy-s-secret.b69a9b81d87b.svg',
+  'lc-pride-and-prejudice-elizabeth-bennet':
+    '/comics/pride-and-prejudice/elizabeth-bennet.865f325a9068.svg',
+  'lc-pride-and-prejudice-endings': '/comics/pride-and-prejudice/endings.0b0864ab4f19.svg',
+  'lc-pride-and-prejudice-georgiana-darcy':
+    '/comics/pride-and-prejudice/georgiana-darcy.eb1577b08cc1.svg',
+  'lc-pride-and-prejudice-jane-bennet': '/comics/pride-and-prejudice/jane-bennet.ac906502d198.svg',
+  'lc-pride-and-prejudice-lady-catherine-de-bourgh':
+    '/comics/pride-and-prejudice/lady-catherine-de-bourgh.39b2b0947183.svg',
+  'lc-pride-and-prejudice-lady-catherine-s-visit':
+    '/comics/pride-and-prejudice/lady-catherine-s-visit.9254f00817e0.svg',
+  'lc-pride-and-prejudice-lydia-bennet':
+    '/comics/pride-and-prejudice/lydia-bennet.0c366a02c731.svg',
+  'lc-pride-and-prejudice-lydia-has-gone':
+    '/comics/pride-and-prejudice/lydia-has-gone.7107a499bc27.svg',
+  'lc-pride-and-prejudice-mr-bennet': '/comics/pride-and-prejudice/mr-bennet.b057886a5f76.svg',
+  'lc-pride-and-prejudice-mr-bingley': '/comics/pride-and-prejudice/mr-bingley.b70a93ec1873.svg',
+  'lc-pride-and-prejudice-mr-collins': '/comics/pride-and-prejudice/mr-collins.c45ef11e31e4.svg',
+  'lc-pride-and-prejudice-mr-collins-proposes':
+    '/comics/pride-and-prejudice/mr-collins-proposes.8448b691dfb4.svg',
+  'lc-pride-and-prejudice-mr-darcy': '/comics/pride-and-prejudice/mr-darcy.4b07b99a9de8.svg',
+  'lc-pride-and-prejudice-mr-wickham': '/comics/pride-and-prejudice/mr-wickham.53b37f20ff8e.svg',
+  'lc-pride-and-prejudice-mrs-bennet': '/comics/pride-and-prejudice/mrs-bennet.637473cc1b3e.svg',
+  'lc-pride-and-prejudice-mrs-gardiner':
+    '/comics/pride-and-prejudice/mrs-gardiner.8521a26a6b4d.svg',
+  'lc-pride-and-prejudice-pemberley': '/comics/pride-and-prejudice/pemberley.20c11b38304a.svg',
+  'lc-pride-and-prejudice-the-first-proposal':
+    '/comics/pride-and-prejudice/the-first-proposal.1eb1f6d6ea91.svg',
+  'lc-pride-and-prejudice-the-letter': '/comics/pride-and-prejudice/the-letter.2b3ab20c0096.svg',
+  'lc-pride-and-prejudice-the-meryton-assembly':
+    '/comics/pride-and-prejudice/the-meryton-assembly.72001a1754a2.svg',
+  'lc-pride-and-prejudice-the-netherfield-ball':
+    '/comics/pride-and-prejudice/the-netherfield-ball.632f3999279c.svg',
+  'lc-pride-and-prejudice-the-second-proposal':
+    '/comics/pride-and-prejudice/the-second-proposal.5804952e129b.svg',
+  'lc-pride-and-prejudice-wickham-s-story':
+    '/comics/pride-and-prejudice/wickham-s-story.74e1e1837769.svg',
   'lc-romeo-and-juliet-a-brawl-in-the-streets':
     '/comics/romeo-and-juliet/a-brawl-in-the-streets.c19f882804bd.svg',
   'lc-romeo-and-juliet-a-glooming-peace':
