@@ -389,6 +389,28 @@ describe('the build', () => {
     WARM_MS,
   )
 
+  it('puts the right answer in every position about equally, over many plays', () => {
+    // The guides list each answer first among its options, so a round dealt
+    // in authored order would be answered by always choosing A, which is the
+    // fault no-quiz-answer-is-always-b.test.ts was written for (10 October
+    // 2026). Counted over every choice question of every path and 20 plays.
+    const counts = [0, 0, 0, 0]
+    let total = 0
+    for (const slug of slugs)
+      for (const round of get(slug).game.rounds)
+        for (let play = 0; play < 20; play++)
+          for (const d of dealRound(slug, round, play)) {
+            if (d.item.kind === 'order' || d.options.length !== 4) continue
+            counts[d.options.indexOf(d.item.answer)]++
+            total++
+          }
+    expect(total).toBeGreaterThan(2000)
+    for (const [i, n] of counts.entries())
+      expect(n / total, `answer in position ${'ABCD'[i]}`).toBeGreaterThan(0.18)
+    for (const [i, n] of counts.entries())
+      expect(n / total, `answer in position ${'ABCD'[i]}`).toBeLessThan(0.32)
+  })
+
   it('replays deal differently somewhere, or the seed is not reaching the shuffle', () => {
     const differs = slugs.some((slug) =>
       get(slug).game.rounds.some(

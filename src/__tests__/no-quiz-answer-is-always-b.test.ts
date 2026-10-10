@@ -487,12 +487,22 @@ describe('every surface that marks a clicked option', () => {
     const wrapper = readFileSync('src/lib/ielts/objective.ts', 'utf8')
     expect(wrapper).toMatch(/import \{ shuffledOptionsFor \} from '@\/lib\/quiz\/shuffle'/)
     expect(wrapper).toMatch(/return shuffledOptionsFor\(/)
+    // The guided text games deal each round through dealRound, which shuffles
+    // every question's options with the same shared shuffle (10 October 2026).
+    // Held to delegating, as the IELTS wrapper is.
+    const games = readFileSync('src/lib/games/text-games/arrange.ts', 'utf8')
+    expect(games).toMatch(/import \{ shuffleOptionsDeterministic \} from '@\/lib\/quiz\/shuffle'/)
+    expect(games).toMatch(/options: shuffleOptionsDeterministic\(item\.options,/)
 
     const offences = inScope()
       .filter((f) => !(f in KEEPS_ITS_OWN_ORDER))
       .filter((f) => {
         const src = readFileSync(f, 'utf8')
-        return !/from '@\/lib\/quiz\/shuffle'/.test(src) && !/\bshownMcqOptions\b/.test(src)
+        return (
+          !/from '@\/lib\/quiz\/shuffle'/.test(src) &&
+          !/\bshownMcqOptions\b/.test(src) &&
+          !/import \{[^}]*\bdealRound\b[^}]*\} from '@\/lib\/games\/text-games\/arrange'/.test(src)
+        )
       })
     expect(offences).toEqual([])
   })

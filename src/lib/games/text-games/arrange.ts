@@ -8,6 +8,7 @@
  * is safe in a 'use client' module.
  */
 
+import { shuffleOptionsDeterministic } from '@/lib/quiz/shuffle'
 import { hashSeed, seededPick, seededShuffle } from './seed'
 import type { GameItem, Round, RoundKind } from './types'
 
@@ -44,7 +45,11 @@ export function dealItem(item: GameItem, seed: number): Dealt {
     if (deck.every((v, i) => v === i)) deck = [...deck.slice(1), deck[0]]
     return { item, options: [], deck }
   }
-  return { item, options: seededShuffle(item.options, seed), deck: [] }
+  // The site's one option shuffle (src/lib/quiz/shuffle.ts), as every quiz
+  // surface uses it, so no-quiz-answer-is-always-b.test.ts holds the games to
+  // the same rule: the answer is found by its value, never by where it was
+  // written. The guides list it first, so an unshuffled round would be all A.
+  return { item, options: shuffleOptionsDeterministic(item.options, String(seed)), deck: [] }
 }
 
 /**
