@@ -127,7 +127,7 @@ Locally: `npm run schema:check` (add `--all` to list the known findings).
 
 ### Duration
 
-`vercel.json:7-11` caps every `src/app/api/**/*.ts` function at `maxDuration: 60`. Three cron routes export a larger segment value: `maxDuration = 300` in both Trustpilot 7d/90d routes and `= 120` in `trustpilot-retention-invite`. **Which value wins is unresolved.** Next.js route segment config and the `vercel.json` `functions` block both claim the setting, and I did not find anything in this repo that settles it. If a Trustpilot cron is being cut off at 60 seconds, this is the first thing to check.
+`vercel.json:7-11` caps every `src/app/api/**/*.ts` function at `maxDuration: 60` unless the route exports its own. Three cron routes do: `maxDuration = 300` in both Trustpilot 7d/90d routes and `= 120` in `trustpilot-retention-invite`. **The route's own value wins** (settled 10 October 2026, from source rather than a deployment). Next.js writes a route's segment `maxDuration` into `functions-config-manifest.json` (`next/dist/build/index.js` in Next 15.5), and Vercel's Next.js builder merges that over the `vercel.json` match with `opts = { ...vercelConfigOpts, ...opts }` (`getPageLambdaGroups` in `packages/next/src/utils.ts` of the vercel/vercel repository). So the Trustpilot crons get 300 and 120 seconds.
 
 ---
 
@@ -330,7 +330,6 @@ Before trusting any query against these tables, remember the baselining problem:
 ## What I could not determine
 
 - Whether Vercel Cron retries a 500 on this account's plan. Several routes are written as if it does.
-- Whether the route-segment `maxDuration` (300/120) or the `vercel.json` value (60) wins for the three Trustpilot routes.
 - Whether the `trustpilot_invite.user_id` cuid/uuid mismatch actually errors in production, or whether the deployed column differs from the migration. The migration says `uuid`; verify against `information_schema`.
 - Whether `trustpilot-retention-90d` has ever matched a candidate, given its `paymentCount >= 1` filter and the RevenueCat-only nature of that counter.
 - The real current value of `coverage.unprojectedAccounts`. The 8-of-200 figure is from the 17 September 2026 audit comment in `coverage.ts`, not from a reading I took.

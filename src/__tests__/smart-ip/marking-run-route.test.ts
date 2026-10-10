@@ -12,8 +12,10 @@
 // status argument rather than re-implementing the model path.
 // ────────────────────────────────────────────────────────────────────────────
 
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { NextRequest } from 'next/server'
+import { logAiDecision } from '@/lib/ai-audit-log'
+import { refundTrialAllowance } from '@/lib/usage/trial-allowance'
 
 interface Session {
   user: { id: string; email?: string } | null
@@ -117,10 +119,17 @@ vi.mock('@/lib/ai-audit-log', () => ({
   logAiDecision: vi.fn(),
   hashAuditInput: (v: string) => `H(${v})`,
 }))
-const anthropicCreate = vi.fn(async (..._args: unknown[]) => ({
-  content: [{ type: 'text', text: '{"ok":true}' }],
-  usage: { input_tokens: 10, output_tokens: 20 },
-}))
+interface ModelReply {
+  content: { type: string; text: string }[]
+  usage: { input_tokens: number; output_tokens: number }
+  stop_reason?: string
+}
+const anthropicCreate = vi.fn(
+  async (..._args: unknown[]): Promise<ModelReply> => ({
+    content: [{ type: 'text', text: '{"ok":true}' }],
+    usage: { input_tokens: 10, output_tokens: 20 },
+  }),
+)
 // The no-card trial AI ceiling. These fixtures are subscribers, not no-card
 // trials, so the meter is a pass-through here - exactly as it is in production
 // for anyone who has paid. The meter itself is covered by
@@ -350,5 +359,161 @@ describe('POST /api/marking/run - model-path rejections do not persist', () => {
     const res = await POST(makeReq())
     expect(res.status).toBe(503)
     expect(applyAiResultMock).not.toHaveBeenCalled()
+  })
+})
+
+// ─── The reply budget (10 October 2026) ─────────────────────────────────────
+//
+// Four of the 36 runs in production's AI audit log failed as "Model response
+// was not valid JSON", every one at exactly 4,096 output tokens: the cap had
+// cut the reply off, the model had not written bad JSON. "The reply budget"
+// in the route has the whole account. The figures below are what the new
+// numbers rest on, read from the audit log on 10 October 2026.
+// ────────────────────────────────────────────────────────────────────────────
+
+/** The longest reply production had marked when the cap was raised. */
+const LONGEST_MARKED_REPLY = 3_980
+/** The slowest rate any marked reply over 1,000 tokens was written at. */
+const SLOWEST_TOKENS_PER_SECOND = 86
+/** How long Cloudflare, in front of the site, waits for the origin before showing its 524 page. */
+const CLOUDFLARE_WAIT_S = 125
+
+const NOT_JSON = {
+  ok: false,
+  error: { type: 'INVALID_RESPONSE', reason: 'Model response was not valid JSON' },
+}
+
+/** A reply the model was stopped in the middle of, as production's four were. */
+const cutOff = (over: Partial<ModelReply> = {}): ModelReply => ({
+  content: [{ type: 'text', text: '{"aoScores": [{"id": "AO1", "justification": "The response' }],
+  usage: { input_tokens: 10, output_tokens: 8_192 },
+  stop_reason: 'max_tokens',
+  ...over,
+})
+
+/** What the route sent with its one call to the model. */
+function sentToModel() {
+  expect(anthropicCreate).toHaveBeenCalledOnce()
+  const [body, options] = anthropicCreate.mock.calls[0] as [
+    { max_tokens: number },
+    { timeout: number; signal?: AbortSignal },
+  ]
+  return { body, options }
+}
+
+describe('POST /api/marking/run - a reply cut off at max_tokens', () => {
+  beforeEach(() => {
+    vi.mocked(logAiDecision).mockClear()
+    vi.mocked(refundTrialAllowance).mockClear()
+  })
+
+  it('is logged as TRUNCATED, not as malformed JSON, and is refunded and not persisted', async () => {
+    feedbackResult = NOT_JSON
+    anthropicCreate.mockResolvedValueOnce(cutOff())
+    const res = await POST(makeReq())
+    expect(res.status).toBe(500)
+    expect(applyAiResultMock).not.toHaveBeenCalled()
+    expect(refundTrialAllowance).toHaveBeenCalledOnce()
+    expect(logAiDecision).toHaveBeenCalledWith(
+      expect.objectContaining({
+        success: false,
+        errorClass: 'TRUNCATED',
+        outputSummary: { rejected: 'TRUNCATED' },
+        tokenUsage: expect.objectContaining({ outputTokens: 8_192 }),
+      }),
+    )
+  })
+
+  it('but a reply that finished and was malformed is still INVALID_RESPONSE', async () => {
+    feedbackResult = NOT_JSON
+    anthropicCreate.mockResolvedValueOnce(cutOff({ stop_reason: 'end_turn' }))
+    const res = await POST(makeReq())
+    expect(res.status).toBe(500)
+    expect(logAiDecision).toHaveBeenCalledWith(
+      expect.objectContaining({ success: false, errorClass: 'INVALID_RESPONSE' }),
+    )
+  })
+
+  it('and a reply that reached the cap after its JSON closed is marked as normal', async () => {
+    // The parser reads from the first { to the last }, so text after the JSON
+    // can run into the cap without harming the mark. Rejecting on stop_reason
+    // alone would throw that mark away.
+    anthropicCreate.mockResolvedValueOnce(cutOff())
+    const res = await POST(makeReq())
+    expect(res.status).toBe(200)
+    expect(applyAiResultMock).toHaveBeenCalledTimes(1)
+  })
+})
+
+describe('POST /api/marking/run - the reply budget', () => {
+  afterEach(() => {
+    vi.useRealTimers()
+  })
+
+  it('leaves room for twice the longest reply ever marked', async () => {
+    await POST(makeReq())
+    expect(sentToModel().body.max_tokens).toBeGreaterThanOrEqual(2 * LONGEST_MARKED_REPLY)
+  })
+
+  it('gives the model time to write that much at the slowest rate seen', async () => {
+    await POST(makeReq())
+    const { body, options } = sentToModel()
+    // Without its own timeout the call gets the client's 50 s per attempt.
+    expect(body.max_tokens / SLOWEST_TOKENS_PER_SECOND).toBeLessThan(options.timeout / 1000)
+  })
+
+  it('and lets the function outlive the call, but not past what Cloudflare will wait', async () => {
+    const { maxDuration } = await import('@/app/api/marking/run/route')
+    await POST(makeReq())
+    // Ten seconds after the deadline to refund, log and answer.
+    expect(maxDuration).toBeGreaterThanOrEqual(sentToModel().options.timeout / 1000 + 10)
+    expect(maxDuration).toBeLessThan(CLOUDFLARE_WAIT_S)
+  })
+
+  it("a call still running at the deadline gets the route's own 503, refunded and logged, before Vercel would end the function", async () => {
+    vi.mocked(logAiDecision).mockClear()
+    vi.mocked(refundTrialAllowance).mockClear()
+    vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout'] })
+    const { maxDuration } = await import('@/app/api/marking/run/route')
+    // A model that never answers. Only the route's deadline signal ends the
+    // call: the SDK's own per-attempt timeout is followed by a retry.
+    anthropicCreate.mockImplementationOnce(
+      (_body: unknown, options: unknown) =>
+        new Promise<ModelReply>((_resolve, reject) => {
+          const signal = (options as { signal?: AbortSignal } | undefined)?.signal
+          if (!signal) {
+            reject(new Error('no deadline: the call runs until Vercel ends the function'))
+            return
+          }
+          signal.addEventListener('abort', () => reject(new Error('Request was aborted.')))
+        }),
+    )
+    let settled = false
+    const pending = POST(makeReq()).then((res) => {
+      settled = true
+      return res
+    })
+    // Let the route reach the model, and so start its deadline, before the
+    // clock moves. setImmediate is real here; only setTimeout is faked.
+    for (let i = 0; i < 100 && anthropicCreate.mock.calls.length === 0; i++) {
+      await new Promise((resolve) => setImmediate(resolve))
+    }
+    expect(anthropicCreate).toHaveBeenCalledOnce()
+    await vi.advanceTimersByTimeAsync((maxDuration - 10) * 1000)
+    expect(settled, 'the call was still running ten seconds before Vercel would end it').toBe(true)
+    const res = await pending
+    expect(res.status).toBe(503)
+    expect((await res.json()).error).toMatch(/timed out/i)
+    expect(refundTrialAllowance).toHaveBeenCalledOnce()
+    expect(logAiDecision).toHaveBeenCalledWith(
+      expect.objectContaining({ success: false, errorClass: 'timeout' }),
+    )
+  })
+
+  it('and the deadline is cleared once the model answers', async () => {
+    vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout'] })
+    const res = await POST(makeReq())
+    expect(res.status).toBe(200)
+    expect(vi.getTimerCount()).toBe(0)
   })
 })

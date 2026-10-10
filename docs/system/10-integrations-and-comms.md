@@ -551,9 +551,9 @@ to work around explicitly
 
 **Vercel** is hosting, the env store and the cron scheduler.
 [`vercel.json`](../../vercel.json) pins region `lhr1`, a 60-second function ceiling for
-all API routes, and fifteen crons. Crons require a Pro or Enterprise plan. `CRON_SECRET`
-authenticates every `/api/cron/*` route with a `timingSafeEqual` bearer comparison, and
-the same pattern guards `/api/health/ai`.
+API routes that do not export their own `maxDuration`, and twenty crons. Crons require a
+Pro or Enterprise plan. `CRON_SECRET` authenticates every `/api/cron/*` route with a
+`timingSafeEqual` bearer comparison, and the same pattern guards `/api/health/ai`.
 
 Nine of the fifteen crons contain a path that sends mail to a human, and **two of those
 nine are switched off by an environment variable**. Check the flag before you

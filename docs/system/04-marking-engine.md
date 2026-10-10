@@ -74,9 +74,9 @@ Rate limits are per-route and do not agree: `mark:${userId}` 10/day (shared by `
 
 **User message** (line 178) is just `QUESTION:\n<2 000 chars>\n\nSTUDENT'S RESPONSE:\n<30 000 chars>`.
 
-The call itself is plain text completion, not tool use: `model: ANTHROPIC_MODEL, max_tokens: 4096`, no `temperature`, no `tools`, 50-second timeout. There is **no prompt caching** on this path and no `cache_control` breakpoint, even though the system prompt is large and stable per scheme. `buildMarkingPrompt` returns a `cacheKey` that nothing consumes.
+The call itself is plain text completion, not tool use: `model: ANTHROPIC_MODEL`, no `temperature`, no `tools`. On `/api/marking/run`, the path learners take, `max_tokens` is 8,192 and the whole call, retries included, has one 105-second deadline under a 120-second `maxDuration` (the reasoning is in the route's "reply budget" comment); `/api/mark` keeps `max_tokens: 4096` and a 50-second timeout per attempt. The mark scheme is a cached prefix: since 18 September 2026 `cachedSystemBlocks` ([`src/lib/ai/cached-system.ts`](../../src/lib/ai/cached-system.ts)) puts a `cache_control` breakpoint after it, and the audit log shows 29 of the first 36 spine runs writing the cache and 7 reading it. `buildMarkingPrompt` returns a `cacheKey` that nothing consumes.
 
-The response is parsed by [`src/lib/marking/feedback-generator.ts:71`](../../src/lib/marking/feedback-generator.ts): `tryParseJSON`, then two sentinel checks (`{"error":"INVALID_SUBMISSION"}` and `{"error":"OFF_TOPIC"}`), then normalisation with hard caps (5 strengths, 5 improvements, 4 next steps, 250-char suggestions, 200-char quotes, 1 500-char summary). Because the model replies in prose-wrapped JSON rather than a forced tool, an unparseable reply is a real and recurring failure mode; it returns `INVALID_RESPONSE` and the route answers 500.
+The response is parsed by [`src/lib/marking/feedback-generator.ts:71`](../../src/lib/marking/feedback-generator.ts): `tryParseJSON`, then two sentinel checks (`{"error":"INVALID_SUBMISSION"}` and `{"error":"OFF_TOPIC"}`), then normalisation with hard caps (5 strengths, 5 improvements, 4 next steps, 250-char suggestions, 200-char quotes, 1 500-char summary). Because the model replies in prose-wrapped JSON rather than a forced tool, an unparseable reply is a real and recurring failure mode; it returns `INVALID_RESPONSE` and the route answers 500. In production, though, every such failure on the spine to 10 October 2026 (4 of 36 runs, all at exactly 4,096 output tokens) was a reply cut off at the old cap rather than malformed JSON. `/api/marking/run` now logs a reply that stops at `max_tokens` as `TRUNCATED`.
 
 There is **no evidence verification on this path**. The prompt asks for quotes from the essay; nothing checks that they exist. The quote-verification machinery exists only in System B (§6).
 
@@ -236,12 +236,15 @@ Every live marking route maps provider failure to a 503 with a friendly string, 
 | Condition                                                          | Response | Allowance           |
 | ------------------------------------------------------------------ | -------- | ------------------- |
 | Missing `ANTHROPIC_API_KEY`                                        | 503      | refunded            |
-| Anthropic timeout (50 s client cap)                                | 503      | refunded            |
+| Anthropic timeout (`/api/marking/run`: one 105 s deadline)         | 503      | refunded            |
 | Anthropic 429                                                      | 503      | refunded            |
 | Any other Anthropic error, including a retired model id (HTTP 400) | 503      | refunded            |
 | `INVALID_SUBMISSION` / `OFF_TOPIC` sentinel                        | 400      | refunded            |
 | Unparseable JSON                                                   | 500      | refunded            |
+| Reply cut off at `max_tokens` (`TRUNCATED`; `/api/marking/run`)    | 500      | refunded            |
 | DB write failure after a successful mark                           | 500      | refunded, mark lost |
+
+The timeout row holds only for `/api/marking/run`. `/api/mark` and `/api/essay-feedback` pass a 50-second timeout under a 60-second `maxDuration`, but the SDK applies `timeout` to each attempt and retries a timed-out attempt twice (`maxRetries` defaults to 2), so their timeout branch cannot run inside 60 seconds. Vercel ends the function first: the learner gets Vercel's 504, the allowance is not refunded and no audit row is written.
 
 That uniform 503 is exactly why two model-retirement outages ran undiagnosed for weeks: from the learner's side a retired model id is indistinguishable from an overloaded provider. The mitigations are `logAiDecision` ([`src/lib/ai-audit-log.ts`](../../src/lib/ai-audit-log.ts)), which records `errorClass` and the model actually called, and `GET /api/health/ai`, which makes a real AI call and reports `shared` / `marker` / `escalation` / `classifier` ids. **Check that `/api/health/ai` is actually wired to a scheduled monitor** - the comment in [`src/lib/anthropic-client.ts:82`](../../src/lib/anthropic-client.ts) says "wire it to a cron/monitor" in the imperative, and I could not find a cron entry that calls it.
 
