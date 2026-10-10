@@ -46,9 +46,13 @@ import { findOrphans } from '../../scripts/check-tr-literals-have-translations.m
  * they stood before 1 October, none of the 44 ever had Arabic. The entity
  * clean-up (50da380c) decoded the pages and their content files together. They
  * want translating, which is not this item.
+ *
+ * LOWERED FROM 118 TO 111 ON 10 OCTOBER 2026: the AI feedback head-to-head
+ * page's orphans were translated when its Edexcel and OCR cards were re-marked
+ * (five of the seven; the other two went with the false copy they labelled).
  */
 
-const PINNED_ORPHANS = 118
+const PINNED_ORPHANS = 111
 
 /** The pages corrected under EXAM-3, which must stay at zero. */
 const MUST_BE_COMPLETE = 'src/app/resources/english-language/edexcel'
