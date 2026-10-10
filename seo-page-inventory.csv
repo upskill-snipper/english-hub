@@ -58,7 +58,6 @@ URL,Purpose,Audience,SEO_Score,Conversion_Score,Priority,Main_Issue,Recommended_
 /revision/texts/pigeon-english,Pigeon English,Students,5,5,Low,Audit,Same.
 /igcse,IGCSE landing,Students/parents,7,7,High,Cookie-driven redirect for IGCSE-cookied users,None major. Strong.
 /igcse/edexcel,Pearson Edexcel IGCSE Lit,Students,7,7,High,Strong content; banner integrated 02 May,Add Course schema for 4ET1.
-/igcse/edexcel/syllabus,4ET1 syllabus,Students,7,5,Medium,Useful for SEO,Strong.
 /igcse/edexcel/past-papers,Past papers,Students,7,5,Medium,Useful,Strong.
 /igcse/edexcel/exam-technique,Exam technique,Students,7,5,Medium,Strong,Add HowTo schema.
 /igcse/edexcel/essay-technique,Essay technique,Students,7,5,Medium,Strong,Add HowTo schema.
