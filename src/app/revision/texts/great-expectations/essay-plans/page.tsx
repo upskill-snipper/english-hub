@@ -192,7 +192,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic:
           "Dickens carefully constructs Magwitch's backstory to show that he was criminalised by poverty, not by moral deficiency. Magwitch was orphaned, starved and punished for existing before he ever committed a crime.",
         quote:
-          '"So fur as I could find, there warn\'t a soul that see young Abel Magwitch, with us little on him as in him, but wot caught fright at him, and either drove him off, or took him up."',
+          '"So fur as I could find, there warn\'t a soul that see young Abel Magwitch, with as little on him as in him, but wot caught fright at him, and either drove him off, or took him up."',
         analysis:
           'Magwitch speaks of his boyhood self in the third person, as the authorities saw him: "young Abel Magwitch" is a case, not a child. Being "took up" (arrested) is what happens to him simply for being seen, which makes his very existence a crime - Dickens shows that society punishes the poor for being poor, treating poverty as a moral choice rather than a social condition. The rough dialect ("warn\'t", "wot") marks him as one of the class the law was built to police.',
         context:

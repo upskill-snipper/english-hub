@@ -19408,6 +19408,11 @@ export const AR_MESSAGES: Record<string, string> = {
   'textnav.off_board_hint': 'مجلسك ما يقرر هذا النص. تقدر تقراه على أي حال.',
   'fulltext.crumb': 'النص الكامل',
   'fulltext.back_to_guide': 'رجوع لدليل الدراسة',
+  'fulltext.all_chapters': 'كل الفصول',
+  'fulltext.start_reading': 'ابدأ القراءة',
+  'fulltext.carry_on_reading': 'كمّل القراءة',
+  'fulltext.next_chapter': 'الفصل التالي',
+  'fulltext.previous_chapter': 'الفصل السابق',
   'fulltext.rights.play':
     'هذا العمل خرج من حقوق النشر في بريطانيا، فنقدر ننشره كامل. النص منسوخ من طبعة منشورة للمسرحية بالإملاء الحديث، مو مكتوب من جديد.',
   'fulltext.rights.edition':

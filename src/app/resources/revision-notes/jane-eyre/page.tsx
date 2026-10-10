@@ -543,8 +543,8 @@ export default function JaneEyrePage() {
           />
           <QuoteCard
             quote="I would always rather be happy than dignified."
-            speaker="Jane (Chapter 24)"
-            analysis="A disarmingly simple statement that challenges Victorian propriety. 'Dignity' in Jane's world means conforming to social expectations &mdash; being quiet, grateful, and submissive. Jane chooses happiness, which requires independence and authenticity. The contrast between 'happy' and 'dignified' exposes the gap between true fulfilment and mere respectability."
+            speaker="Jane (Chapter 34)"
+            analysis="A disarmingly simple statement that challenges Victorian propriety. After a quarrel with St John on the moor, Jane runs after him to make peace: she has 'not much pride under such circumstances'. To be 'dignified' here is to stand on one's pride and wait to be approached; Jane chooses happiness, which requires warmth and honesty. The contrast between 'happy' and 'dignified' exposes the gap between true fulfilment and mere respectability."
           />
           <QuoteCard
             quote="Laws and principles are not for the times when there is no temptation: they are for such moments as this, when body and soul rise in mutiny against their rigour."
@@ -588,7 +588,7 @@ export default function JaneEyrePage() {
           />
           <QuoteCard
             quote="I could not unlove him now, merely because I found that he had ceased to notice me."
-            speaker="Jane (Chapter 17)"
+            speaker="Jane (Chapter 18)"
             analysis="Jane reflects on her feelings during Rochester's apparent courtship of Blanche. 'Unlove' is a coinage &mdash; love, once given, cannot simply be withdrawn. Jane's love is presented as involuntary and irreversible, beyond rational control. Yet she does not surrender to it: she forces herself to accept her feelings without acting on them inappropriately. This is the tension between passion and principle that drives the novel."
           />
           <QuoteCard
@@ -602,9 +602,9 @@ export default function JaneEyrePage() {
             analysis="Rochester repeatedly compares Jane to a bird &mdash; a caged bird, a wild bird, a bird that will fly away. Jane rejects the metaphor entirely. She is not a creature to be caught, kept, or admired in a cage. The 'net' represents all the social traps that could ensnare a woman: financial dependence, marriage as ownership, beauty as currency. Jane insists on being fully, unmetaphorically human."
           />
           <QuoteCard
-            quote="The soul, fortunately, has an interpreter &mdash; often an unconscious but still a faithful interpreter &mdash; in the eye."
-            speaker="Jane (Chapter 28)"
-            analysis="Jane reflects on how Diana Rivers's kind expression communicated trustworthiness before any words were spoken. The 'eye as interpreter' connects to the novel's broader interest in seeing and being seen. Rochester, blinded at the novel's end, must see Jane with his soul rather than his eyes &mdash; the truest form of seeing. Appearance deceives; the soul does not."
+            quote="The soul, fortunately, has an interpreter &mdash; often an unconscious, but still a truthful interpreter &mdash; in the eye."
+            speaker="Jane (Chapter 27)"
+            analysis="As Rochester, enraged that she will not stay with him, seizes her, Jane is 'powerless as stubble' in body but still possesses her soul, and her eye shows it to him. The 'eye as interpreter' connects to the novel's broader interest in seeing and being seen. Rochester, blinded at the novel's end, must see Jane with his soul rather than his eyes &mdash; the truest form of seeing. Appearance deceives; the soul does not."
           />
           <QuoteCard
             quote="I will hold to the principles received by me when I was sane, and not mad &mdash; as I am now."
@@ -613,13 +613,13 @@ export default function JaneEyrePage() {
           />
           <QuoteCard
             quote="I was experiencing an ordeal: a hand of fiery iron grasped my vitals."
-            speaker="Jane (Chapter 26)"
-            analysis="Jane's physical reaction to the revelation of Rochester's existing marriage. 'Hand of fiery iron' and 'grasped my vitals' convey visceral, bodily agony. The Gothic imagery transforms emotional pain into physical torture. Bront&euml; insists that women's emotional suffering is not trivial or performative but genuinely destructive. The 'ordeal' is both a trial and a judgement."
+            speaker="Jane (Chapter 27)"
+            analysis="Jane's physical reaction when Rochester, after the revelation of his existing marriage, asks her to pledge herself to him. 'Hand of fiery iron' and 'grasped my vitals' convey visceral, bodily agony. The Gothic imagery transforms emotional pain into physical torture. Bront&euml; insists that women's emotional suffering is not trivial or performative but genuinely destructive. The 'ordeal' is both a trial and a judgement."
           />
           <QuoteCard
             quote="Human beings never enjoy complete happiness in this world."
-            speaker="Jane (Chapter 38)"
-            analysis="Spoken in the final chapter, tempering the novel's happy ending with mature realism. Jane does not promise a fairy tale but an honest, imperfect fulfilment. This sobriety distinguishes Jane Eyre from conventional romance: happiness is possible but never 'complete.' The statement reflects Bront&euml;'s Protestant sensibility that earthly life always falls short of perfection."
+            speaker="Jane (Chapter 24)"
+            analysis="Spoken to Rochester the morning after his proposal, when he calls her his 'girl-bride'. Jane cannot trust her own happiness: to imagine such a lot, she says, is 'a fairy tale'. The doubt proves well founded when the wedding is stopped at the altar two chapters later. This sobriety distinguishes Jane Eyre from conventional romance: happiness is possible but never 'complete.' The statement reflects Bront&euml;'s Protestant sensibility that earthly life always falls short of perfection."
           />
         </div>
       </Section>

@@ -260,7 +260,7 @@ const lesson2: LessonPlan = {
       question: 'How are Bingley and Darcy presented as foils at the Meryton ball?',
       lines: 5,
       modelAnswer:
-        'Bingley is described as "good-looking and gentlemanlike" with "easy, unaffected manners," while Darcy, though initially admired for his wealth and appearance, quickly becomes seen as "the proudest, most disagreeable man in the world." Bingley dances with everyone and praises the company; Darcy refuses to dance and dismisses the women present. Austen uses this contrast to highlight Darcy\'s pride: placed beside Bingley\'s warmth, Darcy\'s coldness is magnified. The foil structure also reflects the theme of first impressions - the community\'s rapid judgement of both men is based on surface behaviour rather than true character.',
+        'Bingley is described as "good looking and gentleman-like" with "easy, unaffected manners," while Darcy, though initially admired for his wealth and appearance, quickly becomes seen as "the proudest, most disagreeable man in the world." Bingley dances with everyone and praises the company; Darcy refuses to dance and dismisses the women present. Austen uses this contrast to highlight Darcy\'s pride: placed beside Bingley\'s warmth, Darcy\'s coldness is magnified. The foil structure also reflects the theme of first impressions - the community\'s rapid judgement of both men is based on surface behaviour rather than true character.',
       marks: 4,
     },
     {
@@ -364,7 +364,7 @@ const lesson3: LessonPlan = {
       title: "Elizabeth's Response: The Moment of Anagnorisis",
       duration: '18 minutes',
       instructions:
-        'Read Elizabeth\'s response to the letter from Chapter 36: "How despicably I have acted!... Till this moment I never knew myself." Introduce the term "anagnorisis" - a moment of critical self-recognition in a protagonist. Students discuss in pairs: What does Elizabeth realise about herself? Why is "I never knew myself" such a powerful admission? How does this change the direction of the novel? Students write an analytical paragraph exploring how Austen uses Elizabeth\'s response to the letter to develop the theme of self-awareness, using the quotation "Till this moment I never knew myself" as their focus.',
+        'Read Elizabeth\'s response to the letter from Chapter 36: "How despicably have I acted!... Till this moment, I never knew myself." Introduce the term "anagnorisis" - a moment of critical self-recognition in a protagonist. Students discuss in pairs: What does Elizabeth realise about herself? Why is "I never knew myself" such a powerful admission? How does this change the direction of the novel? Students write an analytical paragraph exploring how Austen uses Elizabeth\'s response to the letter to develop the theme of self-awareness, using the quotation "Till this moment, I never knew myself" as their focus.',
       differentiation: {
         support:
           'Provide a paragraph frame with sentence starters and the quotation already embedded.',
@@ -405,7 +405,7 @@ const lesson3: LessonPlan = {
     },
     {
       question:
-        'Analyse the significance of Elizabeth\'s admission: "Till this moment I never knew myself."',
+        'Analyse the significance of Elizabeth\'s admission: "Till this moment, I never knew myself."',
       lines: 5,
       modelAnswer:
         "This line represents Elizabeth's anagnorisis - her moment of painful self-recognition. She realises that she, who prided herself on her wit and perceptiveness, has been blind to Wickham's deception and unfair to Darcy. The word \"never\" emphasises the totality of her self-deception; she has not merely made a minor error but has fundamentally misunderstood herself. Austen uses this moment to develop the theme of prejudice: Elizabeth's prejudice against Darcy was not just an opinion but a flaw in her own character that she must acknowledge and overcome. Structurally, this line marks the novel's turning point - from this moment, Elizabeth begins to change.",
@@ -545,7 +545,7 @@ const lesson4: LessonPlan = {
       question: "In what ways does Elizabeth's prejudice function as a character flaw?",
       lines: 5,
       modelAnswer:
-        "Elizabeth's prejudice against Darcy is established at the Meryton ball and reinforced by Wickham's false account of Darcy's behaviour. Her flaw is not simply disliking Darcy but believing her own judgement is infallible. She trusts Wickham because he is charming and tells her what she wants to hear, while dismissing Darcy because he wounded her pride. Austen shows that prejudice is not the opposite of intelligence - Elizabeth is the most perceptive character in the novel, yet her perception is distorted by personal bias. Her admission, \"Till this moment I never knew myself,\" reveals that prejudice had blinded her not just to Darcy's character but to her own.",
+        "Elizabeth's prejudice against Darcy is established at the Meryton ball and reinforced by Wickham's false account of Darcy's behaviour. Her flaw is not simply disliking Darcy but believing her own judgement is infallible. She trusts Wickham because he is charming and tells her what she wants to hear, while dismissing Darcy because he wounded her pride. Austen shows that prejudice is not the opposite of intelligence - Elizabeth is the most perceptive character in the novel, yet her perception is distorted by personal bias. Her admission, \"Till this moment, I never knew myself,\" reveals that prejudice had blinded her not just to Darcy's character but to her own.",
       marks: 4,
     },
     {
@@ -672,7 +672,7 @@ const lesson5: LessonPlan = {
       question: "How does the language of Darcy's first proposal reveal his pride?",
       lines: 6,
       modelAnswer:
-        'Darcy\'s first proposal is framed as a struggle against his own feelings: "In vain I have struggled." The word "vain" and the verb "struggled" suggest that loving Elizabeth is something he has fought against because she is socially beneath him. He spends more time explaining why he should not love her - her family\'s lack of connections, their embarrassing behaviour - than expressing genuine affection. The phrase "my feelings will not be repressed" positions his love as an involuntary weakness rather than a joyful choice. Austen uses this proposal to expose Darcy\'s pride at its most damaging: he offers Elizabeth marriage while simultaneously insulting everything about her. Elizabeth\'s furious rejection - "had you behaved in a more gentlemanlike manner" - forces Darcy to confront his arrogance for the first time.',
+        'Darcy\'s first proposal is framed as a struggle against his own feelings: "In vain I have struggled." The word "vain" and the verb "struggled" suggest that loving Elizabeth is something he has fought against because she is socially beneath him. He spends more time explaining why he should not love her - her family\'s lack of connections, their embarrassing behaviour - than expressing genuine affection. The phrase "my feelings will not be repressed" positions his love as an involuntary weakness rather than a joyful choice. Austen uses this proposal to expose Darcy\'s pride at its most damaging: he offers Elizabeth marriage while simultaneously insulting everything about her. Elizabeth\'s furious rejection - "had you behaved in a more gentleman-like manner" - forces Darcy to confront his arrogance for the first time.',
       marks: 5,
     },
     {
@@ -1200,7 +1200,7 @@ const lesson9: LessonPlan = {
           'Provide the three extracts with key words highlighted and a partially completed transformation map.',
         core: 'Students complete the transformation map independently with textual evidence.',
         stretch:
-          'Students evaluate Elizabeth\'s own self-mocking comment - "of this place I might have been mistress" - is she genuinely mercenary, or is Austen using humour to defuse the reader\'s suspicion?',
+          'Students evaluate Elizabeth\'s own self-mocking comment - "of this place ... I might have been mistress" - is she genuinely mercenary, or is Austen using humour to defuse the reader\'s suspicion?',
       },
       resources: [
         'Three extracts',
@@ -1251,14 +1251,14 @@ const lesson9: LessonPlan = {
         "How does Elizabeth's response to Pemberley reveal her changing feelings about Darcy?",
       lines: 5,
       modelAnswer:
-        'Elizabeth\'s response to Pemberley is marked by "delight" and admiration - she has "never seen a place for which nature had done more." Her response is significant because it is aesthetic and moral rather than purely mercenary: she admires the taste, not just the wealth. However, Austen includes Elizabeth\'s self-aware reflection - "of this place I might have been mistress" - which acknowledges the material dimension of her feelings. This honesty is characteristic of both Elizabeth and Austen: neither pretends that wealth is irrelevant. The key shift is that Elizabeth now associates Pemberley\'s qualities with Darcy\'s character rather than dismissing him as merely proud. Her delight in the estate becomes, implicitly, a delight in the man who shaped it - the beginning of love built on genuine understanding rather than first impressions.',
+        'Elizabeth\'s response to Pemberley is marked by "delight" and admiration - she has "never seen a place for which nature had done more." Her response is significant because it is aesthetic and moral rather than purely mercenary: she admires the taste, not just the wealth. However, Austen includes Elizabeth\'s self-aware reflection - "of this place ... I might have been mistress" - which acknowledges the material dimension of her feelings. This honesty is characteristic of both Elizabeth and Austen: neither pretends that wealth is irrelevant. The key shift is that Elizabeth now associates Pemberley\'s qualities with Darcy\'s character rather than dismissing him as merely proud. Her delight in the estate becomes, implicitly, a delight in the man who shaped it - the beginning of love built on genuine understanding rather than first impressions.',
       marks: 5,
     },
   ],
   teacherNotes: [
     "This lesson focuses heavily on AO2 (writer's methods) - specifically the use of setting. Ensure students can articulate how setting functions as characterisation.",
     'The Pemberley/Rosings comparison is excellent exam material and can be used for structural analysis (AO2) in essay responses.',
-    'Elizabeth\'s "of this place I might have been mistress" line is often quoted out of context to accuse Elizabeth of materialism. Ensure students understand Austen\'s ironic self-awareness here.',
+    'Elizabeth\'s "of this place ... I might have been mistress" line is often quoted out of context to accuse Elizabeth of materialism. Ensure students understand Austen\'s ironic self-awareness here.',
     'If time allows, showing images of real Regency estates (Chatsworth, which inspired Pemberley) can help students visualise the setting.',
   ],
   targetedSkills: [
@@ -1375,7 +1375,7 @@ const lesson10: LessonPlan = {
         "Write a paragraph exploring how Austen uses Elizabeth's prejudice as a flaw that drives the plot. Include a reference to Regency context (AO3).",
       lines: 8,
       modelAnswer:
-        "Elizabeth's prejudice against Darcy is established at the Meryton ball and reinforced by Wickham's false testimony, but Austen presents it as something more dangerous than simple dislike: it is a failure of the very perceptiveness Elizabeth values in herself. When she declares, \"Till this moment I never knew myself,\" Austen reveals that Elizabeth's prejudice was not merely an opinion about Darcy but a fundamental blindness to her own biases. In Regency England, where a woman's future depended on her ability to judge character - since she would be legally and financially bound to the man she married - Elizabeth's misjudgement carries real stakes. Her prejudice against Darcy nearly costs her the marriage that would provide both love and security, while her trust in Wickham could have exposed her family to the same ruin that Lydia eventually causes. Austen uses Elizabeth's prejudice to argue that intelligence without self-awareness is insufficient: the novel's moral is that true judgement requires humility, the willingness to admit error and revise one's conclusions in light of new evidence.",
+        "Elizabeth's prejudice against Darcy is established at the Meryton ball and reinforced by Wickham's false testimony, but Austen presents it as something more dangerous than simple dislike: it is a failure of the very perceptiveness Elizabeth values in herself. When she declares, \"Till this moment, I never knew myself,\" Austen reveals that Elizabeth's prejudice was not merely an opinion about Darcy but a fundamental blindness to her own biases. In Regency England, where a woman's future depended on her ability to judge character - since she would be legally and financially bound to the man she married - Elizabeth's misjudgement carries real stakes. Her prejudice against Darcy nearly costs her the marriage that would provide both love and security, while her trust in Wickham could have exposed her family to the same ruin that Lydia eventually causes. Austen uses Elizabeth's prejudice to argue that intelligence without self-awareness is insufficient: the novel's moral is that true judgement requires humility, the willingness to admit error and revise one's conclusions in light of new evidence.",
       marks: 6,
     },
     {

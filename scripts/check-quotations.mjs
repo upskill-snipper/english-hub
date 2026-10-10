@@ -1088,9 +1088,13 @@ const NAMES = {
   disabled: { title: /[‘'"“]Disabled[’'"”,.]|\bDisabled\b(?= by | \(Owen| \(Wilfred|[’'"”])|Owen['’]s Disabled/, path: /(?:^|\/)disabled(?:\/|\.ts|$)/ },
   'do-not-go-gentle-into-that-good-night': { title: /\bDo [Nn]ot [Gg]o [Gg]entle\b/, people: /\bDylan Thomas\b/, path: /do-not-go-gentle/ },
   frankenstein: { title: /\bFrankenstein\b/, people: /\bClerval\b|\bJustine\b|\bDe Lacey\b|\bMary Shelley\b/, path: /frankenstein/ },
+  // No bare "Dickens": A Christmas Carol is held too.
+  'great-expectations': { title: /\bGreat Expectations\b/, people: /\bPip\b|\bMagwitch\b|\bHavisham\b|\bEstella\b|\bJaggers\b|\bWemmick\b|\bPumblechook\b|\bGargery\b|\bMrs Joe\b|\bHerbert Pocket\b|\bDrummle\b|\bOrlick\b|\bCompeyson\b|\bSatis House\b/, path: /great-expectations/ },
   hamlet: { title: /\bHamlet\b/, people: /\bOphelia\b|\bPolonius\b|\bClaudius\b|\bGertrude\b|\bLaertes\b|\bHoratio\b|\bElsinore\b/, path: /hamlet/ },
   'henry-v': { title: /\bHenry V\b/, people: /\bKing Henry\b|\bFluellen\b|\bAgincourt\b|\bHarfleur\b/, path: /henry-v(?!i)/ },
   if: { title: /[‘'"“]If[—–-]*[’'"”]|\bIf—/, people: /\bKipling\b/, path: /(?:^|\/)if(?:\/|\.ts|$)|kipling/ },
+  // No bare "Jane" or "Charlotte": Pride and Prejudice has both.
+  'jane-eyre': { title: /\bJane Eyre\b/, people: /\bRochester\b|\bThornfield\b|\bLowood\b|\bGateshead\b|\bBrocklehurst\b|\bHelen Burns\b|\bSt\.? John Rivers\b|\bBertha Mason\b|\bGrace Poole\b|\bAd[eè]le Varens\b|\bMrs\.? Fairfax\b|\bFerndean\b|\bCharlotte Bront[eë]\b/, path: /jane-eyre/ },
   'jekyll-and-hyde': { title: /\bJekyll and Hyde\b|\bJekyll & Hyde\b/, people: /\bJekyll\b|\bHyde\b(?! Park)|\bUtterson\b|\bLanyon\b|\bEnfield\b|\bCarew\b|\bStevenson\b/, path: /jekyll/ },
   'julius-caesar': { title: /\bJulius Caesar\b/, people: /\bBrutus\b|\bCassius\b|\bCalpurnia\b|\bCasca\b/, path: /julius-caesar/ },
   'king-lear': { title: /\bKing Lear\b/, people: /\bLear\b|\bCordelia\b|\bGoneril\b|\bRegan\b|\bGloucester\b/, path: /king-lear/ },
@@ -1100,6 +1104,8 @@ const NAMES = {
   'my-last-duchess': { title: /\bLast Duchess\b/, people: /\bDuchess\b|\bFerrara\b/, path: /my-last-duchess/ },
   othello: { title: /\bOthello\b/, people: /\bIago\b|\bDesdemona\b|\bCassio\b|\bRoderigo\b|\bBrabantio\b/, path: /othello/ },
   piano: { title: /[‘'"“]Piano[’'"”,.]|\bPiano\b(?= by | \(D)|Lawrence['’]s Piano/, people: /\bD\.\s?H\.\s?Lawrence\b/, path: /(?:^|\/)piano(?:\/|\.ts|$)/ },
+  // No bare "Elizabeth" (Frankenstein has one) or "Jane" (Jane Eyre).
+  'pride-and-prejudice': { title: /\bPride and Prejudice\b/, people: /\bDarcy\b|\bBingley\b|\bWickham\b|\bBennets?\b|\bLady Catherine\b|\bCharlotte Lucas\b|\bMr\.? Collins\b|\bPemberley\b|\bLongbourn\b|\bNetherfield\b|\bRosings\b|\bMeryton\b|\bJane Austen\b/, path: /pride-and-prejudice/ },
   remember: { title: /[‘'"“]Remember[’'"”,.]|\bRemember\b(?= by | \(Ross)/, people: /\bChristina Rossetti\b/, path: /(?:^|\/)remember(?:\/|\.ts|$)/ },
   'romeo-and-juliet': { title: /\bRomeo and Juliet\b|\bRomeo & Juliet\b/, people: /\bRomeo\b|\bJuliet\b|\bMercutio\b|\bTybalt\b|\bCapulets?\b|\bMontagues?\b|\bBenvolio\b|\bFriar Lau?rence\b/, path: /romeo/ },
   'silas-marner': { title: /\bSilas Marner\b/, people: /\bSilas\b|\bMarner\b|\bEppie\b|\bGodfrey\b|\bDunstan\b|\bRaveloe\b|\bLantern Yard\b|\bGeorge Eliot\b/, path: /silas-marner/ },

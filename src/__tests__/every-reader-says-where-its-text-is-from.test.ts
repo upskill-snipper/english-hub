@@ -45,8 +45,10 @@ describe('the rights line under each held text', () => {
   it('has texts to check', () => {
     // 31 and 29 since 2 October 2026, when The Great Gatsby joined with a
     // FullTextReader page.
-    expect(TEXTS.length).toBe(31)
-    expect(TEXTS.filter(readsThroughFullTextReader)).toHaveLength(29)
+    // 34 since 10 October 2026: the three long novels, whose /read page lists
+    // their chapters through FullTextReader and prints the same rights line.
+    expect(TEXTS.length).toBe(34)
+    expect(TEXTS.filter(readsThroughFullTextReader)).toHaveLength(32)
   })
 
   it.each(TEXTS.filter(readsThroughFullTextReader))('%s', (slug) => {

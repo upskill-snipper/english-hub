@@ -239,7 +239,168 @@ const BOOKS = [
     ],
     expect: 9,
   },
+
+  // THE THREE LONG NOVELS (10 October 2026), held so that their comics can be
+  // checked against the book, and served a chapter to a page because of their
+  // length (src/lib/revision/served-by-chapter.ts). Each edition was chosen by
+  // comparing every candidate word for word: the counts below are from that
+  // comparison, and the scripts and per-chapter tables are in the session's
+  // research notes. Chapters are numbered straight through, 1 to 61, 1 to 59
+  // and 1 to 38, as students know them, whatever volume the edition prints
+  // them in; `label` takes the chapter's position for that reason.
+  {
+    // THE 1813 FIRST EDITION, AS PROJECT GUTENBERG #42671 TRANSCRIBES IT.
+    // Wikisource's only fully validated Pride and Prejudice is the 1817 third
+    // edition, which differs from 1813 at 707 words and introduces errors the
+    // first edition does not have: "blameless" where Austen wrote "blameable",
+    // "imprudence" for "impudence". Its transcription of 1813 has 35 chapters
+    // checked by one reader only, and page-break slips left in them
+    // ("contemplation, templation"). #42671 is an independent transcription of
+    // the same 1813 printing; word for word the two agree at 122,321 of
+    // 122,486 words, and the 165 that differ are the printer's misprints,
+    // which #42671 corrects ("persn", "purdose", "neices"), compounds
+    // ("gentlemanlike"), and a few spellings its transcribers made consistent
+    // ("stile", "stedfastly", "Phillips"). The site's guide cites the 1813
+    // volumes. The edition numbers its chapters within each of three volumes
+    // (23, 19 and 19), so the label checks the printed number against the
+    // position before using the position.
+    slug: 'pride-and-prejudice',
+    id: 42671,
+    title: 'Pride and Prejudice',
+    displayTitle: 'Pride and Prejudice',
+    author: 'Jane Austen',
+    type: 'novel',
+    printing: 'first edition, printed for T. Egerton (London, 1813), in three volumes',
+    note: `Project Gutenberg's transcribers corrected the printer's evident misprints
+("persn", "purdose") and made a few inconsistent spellings consistent ("stile",
+"stedfastly"). Checked word for word against Wikisource's independent
+transcription of the same printing, made from the page scans: the two agree at
+122,321 of 122,486 words, and the differences are chiefly those corrections,
+those spellings and the joining of compounds ("gentlemanlike").`,
+    heading: /^CHAPTER\s+([IVXLC]+)\.$/,
+    part: /^VOL\.\s+(I{1,3})\.$/,
+    label: (n, part, i) => {
+      const printed = { I: 0, II: 23, III: 42 }[part] + fromRoman(n)
+      if (printed !== i) throw new Error(`Volume ${part} Chapter ${n} parsed as chapter ${i}`)
+      return `Chapter ${i}`
+    },
+    end: /^\s*\*(?:\s+\*){4}\s*\r?\n(?:\s*\r?\n)*Transcriber's note:/m,
+    endWhy: 'everything after its last line (Project Gutenberg’s transcriber’s note)',
+    strip: [
+      {
+        pattern: /^\[Illustration:[\s\S]*?\]\r?$/gm,
+        count: 4,
+        why: 'the captions of four illustrations, which are not reproduced',
+      },
+      {
+        pattern: /^END OF (?:VOL\. I|THE SECOND VOLUME)\.\r?$/gm,
+        count: 2,
+        why: 'the two end-of-volume lines',
+      },
+      {
+        pattern: /^\s*PRIDE AND PREJUDICE:\r?$[\s\S]*?Sense and Sensibility\."\r?$/gm,
+        count: 3,
+        why: 'the title-page lines above each volume',
+      },
+      {
+        pattern: /^\s*London:\r?\n\s*Printed for T\. Egerton,[\s\S]*?^\s*1813\.\r?$/gm,
+        count: 3,
+        why: 'the imprint below each volume’s title',
+      },
+      {
+        pattern: /^\s*PRIDE & PREJUDICE\.\r?$/gm,
+        count: 3,
+        why: 'the three half-titles',
+      },
+    ],
+    expect: 61,
+  },
+  {
+    // THE 1890 P. F. COLLIER AND SON PRINTING, AS WIKISOURCE TRANSCRIBES IT,
+    // every page validated. Wikisource's first edition (1861) has 30 chapters
+    // checked by one reader only and dozens of misreadings left in them
+    // ("Wemnick", "Havishan", "disagrecable", "seemned"), so it cannot be held
+    // as it stands. Project Gutenberg's only Great Expectations, #1400, is
+    // partly Americanised ("check" for "cheque", "savory", "forever") and
+    // cannot be checked against scans. The 1890 text follows Dickens's
+    // revised ending, "I saw no shadow of another parting from her", which is
+    // the line the site quotes (the 1861 edition reads "I saw the shadow of no
+    // parting from her"). Three of the guide's 66 quotations differ from it
+    // and were corrected with it. Chapter XXII's heading is transcribed
+    // "CHAPTER XII" with no full stop (the scan reads XXII), which is why the
+    // label uses the position and the stop is optional.
+    slug: 'great-expectations',
+    wikisource: 'Great_Expectations_(1890)',
+    page: (n) => `Great_Expectations_(1890)/Chapter_${toRoman(n)}`,
+    printing: 'P. F. Collier and Son edition (New York, 1890)',
+    title: 'Great Expectations (1890)',
+    displayTitle: 'Great Expectations',
+    author: 'Charles Dickens',
+    type: 'novel',
+    heading: /^CHAPTER\s+([IVXLC]+)\.?$/,
+    label: (_n, _part, i) => `Chapter ${i}`,
+    // A letter's sign-off (Chapter XXVII), a song (XV) and a note (LVII) are
+    // set outside any paragraph.
+    wrapLoose: true,
+    expect: 59,
+  },
+  {
+    // THE 1897 SERVICE & PATON PRINTING, AS PROJECT GUTENBERG #1260
+    // TRANSCRIBES IT. No Wikisource Jane Eyre qualifies: its first edition
+    // (1847) has 34 of 38 chapters checked by one reader only, and its fully
+    // validated text (W. Nicholson & Sons, about 1900) is undated and departs
+    // from its own scans, closing 92 compounds the page prints with a hyphen
+    // ("to-night", "to-morrow"). #1260 holds all 33 quotations on the site's
+    // revision pages and 127 of the guide's 134; the other seven are readings
+    // of 1847, quotations from reviews and from the title page. Its Preface and
+    // Note to the Third Edition come before Chapter I and are front matter.
+    // The last heading is "CHAPTER XXXVIII—CONCLUSION"; the empty group puts
+    // "CONCLUSION" where the parser looks for a title.
+    slug: 'jane-eyre',
+    id: 1260,
+    title: 'Jane Eyre: An Autobiography',
+    displayTitle: 'Jane Eyre',
+    author: 'Charlotte Brontë',
+    type: 'novel',
+    printing: 'Service & Paton edition (London, 1897)',
+    heading: /^CHAPTER\s+([IVXLC]+)()(?:—(.+))?$/,
+    label: (_n, _part, i) => `Chapter ${i}`,
+    expect: 38,
+  },
 ]
+
+const ROMAN = { I: 1, V: 5, X: 10, L: 50, C: 100 }
+
+/** XXIV to 24, for an edition that numbers chapters within each volume. */
+function fromRoman(s) {
+  let n = 0
+  for (let i = 0; i < s.length; i++) {
+    const a = ROMAN[s[i]]
+    const b = ROMAN[s[i + 1]] ?? 0
+    n += a < b ? -a : a
+  }
+  return n
+}
+
+/** 24 to XXIV, for a Wikisource transcription whose pages are named in numerals. */
+function toRoman(n) {
+  let out = ''
+  for (const [v, r] of [
+    [50, 'L'],
+    [40, 'XL'],
+    [10, 'X'],
+    [9, 'IX'],
+    [5, 'V'],
+    [4, 'IV'],
+    [1, 'I'],
+  ]) {
+    while (n >= v) {
+      out += r
+      n -= v
+    }
+  }
+  return out
+}
 
 const MIN_CHARS = 8000
 
@@ -455,6 +616,57 @@ function trimToText(body, book) {
   return out
 }
 
+const BLOCK_TAGS = new Set([
+  'P',
+  'DIV',
+  'TABLE',
+  'UL',
+  'OL',
+  'LI',
+  'DL',
+  'DD',
+  'DT',
+  'BLOCKQUOTE',
+  'H1',
+  'H2',
+  'H3',
+  'H4',
+  'H5',
+  'H6',
+  'HR',
+  'CENTER',
+  'PRE',
+  'LINK',
+  'STYLE',
+])
+
+/**
+ * Text set directly inside a block that is not a paragraph (a letter's
+ * salutation in a div, a sign-off indented with ":" and so rendered as a
+ * <dd>, a centred song) becomes paragraphs: each run of inline content
+ * between the block's own block children is one. Verse and tables are left to
+ * their own handling below.
+ */
+function wrapLooseText(root, doc) {
+  for (const box of [root, ...root.querySelectorAll('div, dd, dt, li, blockquote, center')]) {
+    if (box.closest('.ws-poem, table')) continue
+    let run = []
+    const flush = (before) => {
+      if (run.some((n) => n.textContent.trim())) {
+        const p = doc.createElement('p')
+        box.insertBefore(p, before)
+        for (const n of run) p.appendChild(n)
+      }
+      run = []
+    }
+    for (const child of [...box.childNodes]) {
+      if (child.nodeType === 1 && BLOCK_TAGS.has(child.tagName)) flush(child)
+      else run.push(child)
+    }
+    flush(null)
+  }
+}
+
 /**
  * A work transcribed on Wikisource, fetched chapter by chapter through the
  * MediaWiki API, as the plain text parseSections reads.
@@ -484,7 +696,7 @@ async function fetchWikisource(book) {
   const dropped = new Set()
   const chapters = []
   for (let n = 1; n <= book.expect; n++) {
-    const page = `${book.wikisource}/Chapter_${n}`
+    const page = book.page ? book.page(n) : `${book.wikisource}/Chapter_${n}`
     const url =
       'https://en.wikisource.org/w/api.php?action=parse&format=json&formatversion=2' +
       `&prop=text&disablelimitreport=1&disableeditsection=1&page=${encodeURIComponent(page)}`
@@ -506,14 +718,27 @@ async function fetchWikisource(book) {
       .querySelectorAll('.ws-noexport, .pagenum, style, #dynamic_layout_overrider')
       .forEach((e) => e.remove())
     const root = doc.querySelector('.prp-pages-output')
-    if (!root)
-      throw new Error(`${page}: no transcluded text`)
-      // Verse quoted in the prose (a song) is set in .ws-poem, outside any
-      // paragraph: each line becomes its own block, unless the book drops that
-      // block for copyright, in which case a bracketed note marks the place.
-      // A drop names its chapter, its place among that chapter's verse blocks
-      // and its line count, never its words, so the words are not in this
-      // repository either; a transcription that has changed shape fails here.
+    if (!root) throw new Error(`${page}: no transcluded text`)
+    // A letter's salutation and sign-off, a dateline or a song can be set
+    // straight inside a div or an indented <dd> rather than in a paragraph,
+    // which the paragraph check below would refuse. Each run of such text
+    // becomes a paragraph of its own (Great Expectations, 10 October 2026).
+    if (book.wrapLoose) wrapLooseText(root, doc)
+    // A rule between scenes has no text, so the paragraph check cannot see it
+    // go: until 10 October 2026 it was dropped without a word. It prints as
+    // the line of spaced asterisks the Gutenberg editions use, as Frankenstein
+    // does.
+    for (const hr of root.querySelectorAll('hr')) {
+      const p = doc.createElement('p')
+      p.textContent = '*       *       *       *       *'
+      hr.replaceWith(p)
+    }
+    // Verse quoted in the prose (a song) is set in .ws-poem, outside any
+    // paragraph: each line becomes its own block, unless the book drops that
+    // block for copyright, in which case a bracketed note marks the place.
+    // A drop names its chapter, its place among that chapter's verse blocks
+    // and its line count, never its words, so the words are not in this
+    // repository either; a transcription that has changed shape fails here.
     ;[...root.querySelectorAll('.ws-poem')].forEach((poem, index) => {
       const lines = [...poem.querySelectorAll('.ws-poem-line')]
         .map((l) => l.textContent.replace(/\s+/g, ' ').trim())
@@ -626,12 +851,19 @@ async function build(book) {
     )
   }
 
+  // A rule after a chapter's last paragraph separates nothing: the 1890 Great
+  // Expectations closes four chapters with one. Only a rule between two
+  // passages is a scene break, and only that is printed (10 October 2026).
+  for (const s of parsed) {
+    while (s.lines.length > 0 && /^[\s*]*$/.test(s.lines[s.lines.length - 1])) s.lines.pop()
+  }
+
   const sections = parsed.map((s, i) => ({
     id: `section-${i + 1}`,
     // The War of the Worlds prints its chapter titles with a closing full
     // stop - "The Eve of the War." - which reads as a typo in a sidebar.
     title:
-      book.label(s.numeral, s.part) +
+      book.label(s.numeral, s.part, i + 1) +
       (s.subtitle ? `: ${titleCase(s.subtitle).replace(/\.$/, '')}` : ''),
     content: toHtml(s.lines, book),
   }))
@@ -659,9 +891,21 @@ async function build(book) {
         ? `Project
 // Gutenberg Australia, ${book.pga}, whose header and licence text are stripped;
 // the underlying work is out of UK copyright.`
-        : `Project
+        : book.printing
+          ? `the
+// ${book.printing}, as transcribed by Project Gutenberg #${book.id}, whose
+// branding and licence text are stripped per their terms; the underlying work
+// is out of copyright.`
+          : `Project
 // Gutenberg #${book.id}, whose branding and licence text are stripped per their
 // terms; the underlying work is out of copyright.`
+  }${
+    book.note
+      ? `\n//\n${book.note
+          .split('\n')
+          .map((l) => `// ${l}`)
+          .join('\n')}`
+      : ''
   }${
     book.strip || book.end || book.dropVerse
       ? `
@@ -670,7 +914,10 @@ async function build(book) {
           ...(book.strip ?? []).map((s) => s.why),
           ...(book.dropVerse ?? []).map((d) => d.why),
           ...(book.end
-            ? ['everything after its last line (an imprint and a transcriber’s note)']
+            ? [
+                book.endWhy ??
+                  'everything after its last line (an imprint and a transcriber’s note)',
+              ]
             : []),
         ]
           .map((why) => `\n//   - ${why}`)

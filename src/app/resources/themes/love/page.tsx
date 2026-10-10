@@ -102,7 +102,7 @@ const TEXTS = [
           "Darcy's first proposal reveals love entangled with class prejudice -- he loves Elizabeth despite her social inferiority, and his language reveals the internal conflict.",
       },
       {
-        text: '"Till this moment I never knew myself"',
+        text: '"Till this moment, I never knew myself"',
         analysis:
           "Elizabeth's moment of self-awareness after reading Darcy's letter shows that genuine love requires honest self-examination and the humility to change.",
       },

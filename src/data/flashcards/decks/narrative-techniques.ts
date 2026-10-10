@@ -81,7 +81,7 @@ const deck: FlashcardDeck = {
     {
       id: 'nt-14',
       front: 'Verbal Irony',
-      back: `Definition: A character says the opposite of what they mean, often for sarcasm or humour.\n\nHow Writers Use It:\n• Austen: "It is a truth universally acknowledged..." is ironic\n• Browning ("My Last Duchess"): Duke praises his courtesy while revealing jealousy\n• Modern dialogue: "Oh, great, a traffic jam" (said sarcastically)\n\nEffect: Creates humour; reveals character attitude`,
+      back: `Definition: A character says the opposite of what they mean, often for sarcasm or humour.\n\nHow Writers Use It:\n• Austen (Pride and Prejudice): "It is a truth universally acknowledged..." is ironic\n• Browning ("My Last Duchess"): Duke praises his courtesy while revealing jealousy\n• Modern dialogue: "Oh, great, a traffic jam" (said sarcastically)\n\nEffect: Creates humour; reveals character attitude`,
     },
     {
       id: 'nt-15',

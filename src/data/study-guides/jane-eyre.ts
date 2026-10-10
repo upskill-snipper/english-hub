@@ -6,9 +6,9 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * quotations; this file adds the eight sections that page lacked, and the
  * timeline and character map the animations draw.
  *
- * No edition of the novel is held in src/data/full-texts, so the guide test
- * cannot check these quotations. Every one was therefore copied from the
- * Project Gutenberg text (eBook #1260, transcribed from the 1897 Service &
+ * Until 10 October 2026 no edition of the novel was held in src/data/full-texts,
+ * so no test could check these quotations. Every one was therefore copied from
+ * the Project Gutenberg text (eBook #1260, transcribed from the 1897 Service &
  * Paton reprint) and its chapter and speaker read in context there, then
  * compared word for word with the first edition of 1847 as transcribed on
  * Wikisource. Where the two editions differ only in punctuation (the first
@@ -1098,7 +1098,8 @@ export const guide: StudyGuide = {
       url: 'https://www.gutenberg.org/ebooks/1260',
     },
     {
-      label: 'Project Gutenberg #1260 plain text, the file searched for every quotation',
+      label:
+        'Project Gutenberg #1260 plain text, the file searched for every quotation, and since 10 October 2026 the text this site holds in full (src/data/full-texts/jane-eyre.ts)',
       url: 'https://www.gutenberg.org/cache/epub/1260/pg1260.txt',
     },
     {

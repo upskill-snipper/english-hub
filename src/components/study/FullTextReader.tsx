@@ -3,13 +3,15 @@
 import { useMemo } from 'react'
 import Link from 'next/link'
 import { EnglishText } from '@/components/i18n/EnglishText'
-import { ArrowLeft, BookOpen } from 'lucide-react'
+import { ArrowLeft, BookOpen, ListOrdered } from 'lucide-react'
 import { InteractiveTextViewer, type TextData } from '@/components/study/InteractiveTextViewer'
+import { BookContents } from '@/components/study/BookContents'
 import { setSectionForTheViewer } from '@/components/study/set-play-for-the-viewer'
 import { rightsLineKey } from '@/components/study/rights-line'
 
 import { useT } from '@/lib/i18n/use-t'
 import { textGuideHref } from '@/lib/revision/guide-href'
+import { readerHref, type BookChapter } from '@/lib/revision/served-by-chapter'
 import { TEXT_ANNOTATIONS } from '@/data/text-annotations.generated'
 
 /**
@@ -49,12 +51,20 @@ export function FullTextReader({
   data,
   slug,
   year,
+  book,
 }: {
   data: TextData
   /** The set-text slug, so the page can link back to that text's guide. */
   slug: string
   /** First performance or publication, where it is uncontested. */
   year?: string
+  /**
+   * A long book served a chapter to a page (src/lib/revision/served-by-chapter.ts):
+   * its whole contents, built on the server. On the book's /read page `data`
+   * carries no sections and this lists the chapters; on /read/<n> it carries
+   * that chapter alone and the reader links to the rest.
+   */
+  book?: { chapters: BookChapter[] }
 }) {
   const t = useT()
   const guideHref = textGuideHref(slug)
@@ -102,6 +112,15 @@ export function FullTextReader({
         <ArrowLeft aria-hidden="true" className="size-3.5" />
         {t('fulltext.back_to_guide')}
       </Link>
+      {book && data.sections.length > 0 ? (
+        <Link
+          href={readerHref(slug)}
+          className="mb-4 ms-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ListOrdered aria-hidden="true" className="size-3.5" />
+          {t('fulltext.all_chapters')}
+        </Link>
+      ) : null}
 
       {/* The title and the author are the work's, in every locale. */}
       <EnglishText as="h1" className="font-heading text-display-sm text-foreground sm:text-display">
@@ -123,16 +142,25 @@ export function FullTextReader({
         <span>{t(rightsLineKey(slug, data.type))}</span>
       </p>
 
-      <div className="mt-8">
-        <InteractiveTextViewer
-          data={annotated}
-          storageKey={slug}
-          /* This component already renders the page heading above, with the
-           same text. Without this the 26 pages using FullTextReader served
-           two h1s saying the same thing. */
-          titleAs="h2"
-        />
-      </div>
+      {book && data.sections.length === 0 ? (
+        <BookContents slug={slug} chapters={book.chapters} />
+      ) : (
+        <div className="mt-8">
+          <InteractiveTextViewer
+            /* One reader per chapter: moving to the next chapter's page starts
+             it afresh at that chapter rather than keeping the last one's
+             place. */
+            key={book ? data.sections[0]?.id : undefined}
+            data={annotated}
+            storageKey={slug}
+            /* This component already renders the page heading above, with the
+             same text. Without this the 26 pages using FullTextReader served
+             two h1s saying the same thing. */
+            titleAs="h2"
+            book={book}
+          />
+        </div>
+      )}
     </div>
   )
 }

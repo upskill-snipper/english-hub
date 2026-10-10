@@ -8,9 +8,9 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * practice and a model answer) plus the timeline and character map the
  * animations draw from.
  *
- * No edition of the novel is held in src/data/full-texts, so the test cannot
- * check these quotations. They follow the Wikisource transcription of the first
- * edition (three volumes, Egerton, 1813). On 25 September 2026 every quoted
+ * Until 10 October 2026 no edition of the novel was held in src/data/full-texts,
+ * so no test could check these quotations. They follow the Wikisource
+ * transcription of the first edition (three volumes, Egerton, 1813). On 25 September 2026 every quoted
  * phrase in this file, the three printed passages included, was extracted by
  * script and searched for, chapter by chapter, in two complete copies: the
  * Wikisource 1813 text and the Republic of Pemberley electronic text. Every one
@@ -46,6 +46,12 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * Chapters are given both ways, because editions differ: by volume, as first
  * printed (Volume I has 23 chapters, Volumes II and III 19 each), and
  * continuously from 1 to 61.
+ *
+ * HELD FROM 10 OCTOBER 2026. The novel is now held (src/data/full-texts,
+ * Project Gutenberg's transcription of the same 1813 edition, #42671), so the
+ * test reads this file against it. Of the words quoted here the two
+ * transcriptions differ in one: Gutenberg prints "gentleman-like" (Chapter 25)
+ * where Wikisource joins it, and this file now follows the held text.
  */
 export const guide: StudyGuide = {
   slug: 'pride-and-prejudice',
@@ -57,7 +63,7 @@ export const guide: StudyGuide = {
   rights: {
     status: 'public-domain',
     acknowledgement:
-      'First published anonymously in three volumes by Thomas Egerton, London, on 28 January 1813. Quotations follow the text of the first edition as transcribed by Wikisource; punctuation varies slightly between modern editions.',
+      'First published anonymously in three volumes by Thomas Egerton, London, on 28 January 1813. Quotations follow the text of the first edition, which this site holds in full as Project Gutenberg transcribes it (eBook #42671); punctuation varies slightly between modern editions.',
   },
 
   native: {
@@ -82,7 +88,7 @@ export const guide: StudyGuide = {
     },
     {
       title: 'Class and rank',
-      body: "The society of the novel is finely graded, and much of its comedy comes from people guarding their place in it. Darcy's first proposal asks whether Elizabeth could expect him “to rejoice in the inferiority of your connections” (Chapter 34). Lady Catherine asks whether “the shades of Pemberley” are “to be thus polluted” (Chapter 56). Mr Collins, her clergyman, praises her “affability and condescension” (Chapter 14) as if rudeness from the great were a gift. Elizabeth's answer to Lady Catherine is the novel's clearest statement on the subject: “He is a gentleman; I am a gentleman's daughter; so far we are equal.” Notice how careful that claim is. Elizabeth does not reject rank; she claims her place within it. That is why one reading calls the novel conservative: it ends with a gentleman's daughter becoming mistress of a great estate and the order of things untouched. A more persuasive reading looks at who is honoured and who is exposed. Mr Gardiner, who lives “by trade, and within view of his own warehouses”, is “a sensible, gentlemanlike man” (Chapter 25), and the last sentence of the novel records the Darcys' “warmest gratitude” to him and his wife. Lady Catherine, the highest-ranking character, is the rudest. Austen does not overturn class, but she insists that manners and conduct, not birth, decide who deserves respect.",
+      body: "The society of the novel is finely graded, and much of its comedy comes from people guarding their place in it. Darcy's first proposal asks whether Elizabeth could expect him “to rejoice in the inferiority of your connections” (Chapter 34). Lady Catherine asks whether “the shades of Pemberley” are “to be thus polluted” (Chapter 56). Mr Collins, her clergyman, praises her “affability and condescension” (Chapter 14) as if rudeness from the great were a gift. Elizabeth's answer to Lady Catherine is the novel's clearest statement on the subject: “He is a gentleman; I am a gentleman's daughter; so far we are equal.” Notice how careful that claim is. Elizabeth does not reject rank; she claims her place within it. That is why one reading calls the novel conservative: it ends with a gentleman's daughter becoming mistress of a great estate and the order of things untouched. A more persuasive reading looks at who is honoured and who is exposed. Mr Gardiner, who lives “by trade, and within view of his own warehouses”, is “a sensible, gentleman-like man” (Chapter 25), and the last sentence of the novel records the Darcys' “warmest gratitude” to him and his wife. Lady Catherine, the highest-ranking character, is the rudest. Austen does not overturn class, but she insists that manners and conduct, not birth, decide who deserves respect.",
     },
     {
       title: 'Women and dependence',
@@ -820,6 +826,11 @@ export const guide: StudyGuide = {
   ],
 
   sources: [
+    {
+      label:
+        'Project Gutenberg eBook #42671, the 1813 first edition: the text this site holds in full since 10 October 2026 (src/data/full-texts/pride-and-prejudice.ts), against which every quotation here is now checked',
+      url: 'https://www.gutenberg.org/ebooks/42671',
+    },
     {
       label:
         'Wikisource, Pride and Prejudice (1813), the first edition in three volumes, transcribed from scans: the copy every quotation and passage follows, all 61 chapters searched by script on 25 September 2026',

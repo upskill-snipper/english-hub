@@ -20426,6 +20426,11 @@ export const ES_MESSAGES: Record<string, string> = {
   'textnav.off_board_hint': 'Tu junta no incluye este texto. Puedes leerlo igualmente.',
   'fulltext.crumb': 'Texto completo',
   'fulltext.back_to_guide': 'Volver a la guía de estudio',
+  'fulltext.all_chapters': 'Todos los capítulos',
+  'fulltext.start_reading': 'Empezar a leer',
+  'fulltext.carry_on_reading': 'Seguir leyendo',
+  'fulltext.next_chapter': 'Capítulo siguiente',
+  'fulltext.previous_chapter': 'Capítulo anterior',
   'fulltext.rights.play':
     'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es una copia de una edición publicada de la obra con ortografía moderna, no una transcripción.',
   'fulltext.rights.edition':

@@ -7,9 +7,9 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * lacked (passages for close reading, language analysis, structure and form,
  * vocabulary) together with the timeline and character map the visuals draw.
  *
- * No edition of this novel is held in src/data/full-texts, so the test cannot
- * check these quotations. Every passage, scene-card quotation and quoted phrase
- * below was copied from Project Gutenberg eBook #1400 and matched against it
+ * Until 10 October 2026 no edition of this novel was held in src/data/full-texts,
+ * so no test could check these quotations. Every passage, scene-card quotation
+ * and quoted phrase below was copied from Project Gutenberg eBook #1400 and matched against it
  * word for word, and its speaker and chapter were checked by reading the
  * chapter it comes from, not by searching for the phrase alone. Chapter numbers
  * are the continuous 1 to 59 of that edition.
@@ -45,6 +45,18 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * not in the novel in the form printed, and a quiz answer that has Magwitch die
  * awaiting trial. They are listed in the report that produced this file; none
  * of them is repeated here.
+ *
+ * HELD FROM 10 OCTOBER 2026. The novel is now held (src/data/full-texts, the
+ * P. F. Collier and Son edition of 1890 as validated on Wikisource), so the
+ * test and scripts/check-quotations.mjs read this file against that printing.
+ * It words six of the Gutenberg strings otherwise, and each now follows it:
+ * "dykes" (Chapter 1), "speckled-legged" (Chapter 11), "as if it were a
+ * surgeon" (Chapter 26), and "mud, mud, mud" with no "and" before it and "in
+ * the open air" (both Chapter 39). The glossary quoted the officers' "returned
+ * Transport" (Chapter 54), which this printing gives as "a return transport";
+ * it now quotes Pip's fear of Magwitch being found out as "a returned
+ * transport" (Chapter 41). The rights note and the sources below name the
+ * held printing first, and keep #1400 as the copy the rest was checked against.
  */
 export const guide: StudyGuide = {
   slug: 'great-expectations',
@@ -56,7 +68,7 @@ export const guide: StudyGuide = {
   rights: {
     status: 'public-domain',
     acknowledgement:
-      "First published in weekly parts in All the Year Round (1860 to 1861) and in three volumes by Chapman and Hall in 1861. Passages and quotations follow the Project Gutenberg edition, eBook #1400, which Project Gutenberg labels the 1867 edition, the edition AQA's GCSE specification names; editions based on the 1861 text differ from it in some punctuation and in the wording of the final sentence.",
+      "First published in weekly parts in All the Year Round (1860 to 1861) and in three volumes by Chapman and Hall in 1861. Passages and quotations follow the P. F. Collier and Son edition (New York, 1890), which this site holds in full as Wikisource's volunteers transcribed and validated it. It has Dickens's revised wording, as does the Project Gutenberg edition (eBook #1400, labelled the 1867 edition) that AQA's GCSE specification names; editions based on the 1861 text differ from both in some punctuation and in the wording of the final sentence.",
   },
 
   native: {
@@ -75,7 +87,7 @@ export const guide: StudyGuide = {
       where: 'Chapter 1',
       pointer:
         'The third paragraph of the novel and the two that follow: from “Ours was the marsh country” to “as he seized me by the chin.”',
-      text: 'Ours was the marsh country, down by the river, within, as the river wound, twenty miles of the sea. My first most vivid and broad impression of the identity of things seems to me to have been gained on a memorable raw afternoon towards evening. At such a time I found out for certain that this bleak place overgrown with nettles was the churchyard; and that Philip Pirrip, late of this parish, and also Georgiana wife of the above, were dead and buried; and that Alexander, Bartholomew, Abraham, Tobias, and Roger, infant children of the aforesaid, were also dead and buried; and that the dark flat wilderness beyond the churchyard, intersected with dikes and mounds and gates, with scattered cattle feeding on it, was the marshes; and that the low leaden line beyond was the river; and that the distant savage lair from which the wind was rushing was the sea; and that the small bundle of shivers growing afraid of it all and beginning to cry, was Pip.\n\n“Hold your noise!” cried a terrible voice, as a man started up from among the graves at the side of the church porch. “Keep still, you little devil, or I’ll cut your throat!”\n\nA fearful man, all in coarse grey, with a great iron on his leg. A man with no hat, and with broken shoes, and with an old rag tied round his head. A man who had been soaked in water, and smothered in mud, and lamed by stones, and cut by flints, and stung by nettles, and torn by briars; who limped, and shivered, and glared, and growled; and whose teeth chattered in his head as he seized me by the chin.',
+      text: 'Ours was the marsh country, down by the river, within, as the river wound, twenty miles of the sea. My first most vivid and broad impression of the identity of things seems to me to have been gained on a memorable raw afternoon towards evening. At such a time I found out for certain that this bleak place overgrown with nettles was the churchyard; and that Philip Pirrip, late of this parish, and also Georgiana wife of the above, were dead and buried; and that Alexander, Bartholomew, Abraham, Tobias, and Roger, infant children of the aforesaid, were also dead and buried; and that the dark flat wilderness beyond the churchyard, intersected with dykes and mounds and gates, with scattered cattle feeding on it, was the marshes; and that the low leaden line beyond was the river; and that the distant savage lair from which the wind was rushing was the sea; and that the small bundle of shivers growing afraid of it all and beginning to cry, was Pip.\n\n“Hold your noise!” cried a terrible voice, as a man started up from among the graves at the side of the church porch. “Keep still, you little devil, or I’ll cut your throat!”\n\nA fearful man, all in coarse grey, with a great iron on his leg. A man with no hat, and with broken shoes, and with an old rag tied round his head. A man who had been soaked in water, and smothered in mud, and lamed by stones, and cut by flints, and stung by nettles, and torn by briars; who limped, and shivered, and glared, and growled; and whose teeth chattered in his head as he seized me by the chin.',
       annotations: [
         {
           phrase: 'the dark flat wilderness beyond the churchyard',
@@ -150,7 +162,7 @@ export const guide: StudyGuide = {
       where: 'Chapter 39',
       pointer:
         "Near the middle of the chapter, after Magwitch guesses the first letter of Jaggers's name and Pip nearly faints: from “Yes, Pip, dear boy, I’ve made a gentleman on you!” to “and beat ’em!”",
-      text: '“Yes, Pip, dear boy, I’ve made a gentleman on you! It’s me wot has done it! I swore that time, sure as ever I earned a guinea, that guinea should go to you. I swore arterwards, sure as ever I spec’lated and got rich, you should get rich. I lived rough, that you should live smooth; I worked hard, that you should be above work. What odds, dear boy? Do I tell it, fur you to feel a obligation? Not a bit. I tell it, fur you to know as that there hunted dunghill dog wot you kep life in, got his head so high that he could make a gentleman,—and, Pip, you’re him!”\n\nThe abhorrence in which I held the man, the dread I had of him, the repugnance with which I shrank from him, could not have been exceeded if he had been some terrible beast.\n\n“Look’ee here, Pip. I’m your second father. You’re my son,—more to me nor any son. I’ve put away money, only for you to spend. When I was a hired-out shepherd in a solitary hut, not seeing no faces but faces of sheep till I half forgot wot men’s and women’s faces wos like, I see yourn. I drops my knife many a time in that hut when I was a-eating my dinner or my supper, and I says, ‘Here’s the boy again, a looking at me whiles I eats and drinks!’ I see you there a many times, as plain as ever I see you on them misty marshes. ‘Lord strike me dead!’ I says each time,—and I goes out in the air to say it under the open heavens,—‘but wot, if I gets liberty and money, I’ll make that boy a gentleman!’ And I done it. Why, look at you, dear boy! Look at these here lodgings of yourn, fit for a lord! A lord? Ah! You shall show money with lords for wagers, and beat ’em!”',
+      text: '“Yes, Pip, dear boy, I’ve made a gentleman on you! It’s me wot has done it! I swore that time, sure as ever I earned a guinea, that guinea should go to you. I swore arterwards, sure as ever I spec’lated and got rich, you should get rich. I lived rough, that you should live smooth; I worked hard, that you should be above work. What odds, dear boy? Do I tell it, fur you to feel a obligation? Not a bit. I tell it, fur you to know as that there hunted dunghill dog wot you kep life in, got his head so high that he could make a gentleman,—and, Pip, you’re him!”\n\nThe abhorrence in which I held the man, the dread I had of him, the repugnance with which I shrank from him, could not have been exceeded if he had been some terrible beast.\n\n“Look’ee here, Pip. I’m your second father. You’re my son,—more to me nor any son. I’ve put away money, only for you to spend. When I was a hired-out shepherd in a solitary hut, not seeing no faces but faces of sheep till I half forgot wot men’s and women’s faces wos like, I see yourn. I drops my knife many a time in that hut when I was a-eating my dinner or my supper, and I says, ‘Here’s the boy again, a looking at me whiles I eats and drinks!’ I see you there a many times, as plain as ever I see you on them misty marshes. ‘Lord strike me dead!’ I says each time,—and I goes out in the open air to say it under the open heavens,—‘but wot, if I gets liberty and money, I’ll make that boy a gentleman!’ And I done it. Why, look at you, dear boy! Look at these here lodgings of yourn, fit for a lord! A lord? Ah! You shall show money with lords for wagers, and beat ’em!”',
       annotations: [
         {
           phrase: 'I’ve made a gentleman on you! It’s me wot has done it!',
@@ -201,14 +213,14 @@ export const guide: StudyGuide = {
     {
       technique: 'Gothic imagery and the symbolism of decay',
       example:
-        'In Chapter 11 the cobwebbed centrepiece on the feast table, which Miss Havisham reveals is her bride-cake, seems to grow “like a black fungus”, with “speckle-legged spiders with blotchy bodies running home to it”; in Chapter 8 the bride “had withered like the dress, and like the flowers”.',
+        'In Chapter 11 the cobwebbed centrepiece on the feast table, which Miss Havisham reveals is her bride-cake, seems to grow “like a black fungus”, with “speckled-legged spiders with blotchy bodies running home to it”; in Chapter 8 the bride “had withered like the dress, and like the flowers”.',
       effect:
         "Dickens borrows the Gothic's ruined house, living corpse and darkness, but uses them psychologically. Food meant for a celebration has become a breeding ground, and a woman has become part of her furniture. The imagery argues that refusing to let time pass does not preserve the past but rots it. The comic touch of the busy spiders keeps the scene grotesque rather than simply horrifying, which is typical of Dickens.",
     },
     {
       technique: 'Pathetic fallacy and repetition',
       example:
-        'Early in Chapter 39 the weather is “stormy and wet, stormy and wet; and mud, mud, mud, deep in all the streets”, and the wind rushing up the river shakes the house where Pip lives “like discharges of cannon, or breakings of a sea”.',
+        'Early in Chapter 39 the weather is “stormy and wet, stormy and wet; mud, mud, mud, deep in all the streets”, and the wind rushing up the river shakes the house where Pip lives “like discharges of cannon, or breakings of a sea”.',
       effect:
         "The heavy, repeated words create dread before anything has happened, and the storm keeps sounding through the scene until Pip says he “could not separate his voice from those voices”. The weather arrives with Magwitch and wrecks Pip's world with him. At the end of the chapter Dickens turns it into Pip's own metaphor: he sees that “the ship in which I had sailed was gone to pieces”.",
     },
@@ -238,7 +250,7 @@ export const guide: StudyGuide = {
       example:
         "In Chapter 51 Jaggers tells Estella's history without admitting anything, as a hypothetical: “Put the case that a woman, under such circumstances as you have mentioned, held her child concealed”, and he repeats “Put the case” again and again.",
       effect:
-        'Jaggers speaks like a barrister building an argument in court, so even a story about saving a child comes out cold and careful. The repeated formula lets him confess the truth while protecting himself, which is typical of a man who “washed his clients off, as if he were a surgeon or a dentist” (Chapter 26). Yet the case he puts is about pity for children who grow up “to be hanged”, so the legal manner, which admits nothing, half hides the one kind act the case reveals.',
+        'Jaggers speaks like a barrister building an argument in court, so even a story about saving a child comes out cold and careful. The repeated formula lets him confess the truth while protecting himself, which is typical of a man who “washed his clients off, as if it were a surgeon or a dentist” (Chapter 26). Yet the case he puts is about pity for children who grow up “to be hanged”, so the legal manner, which admits nothing, half hides the one kind act the case reveals.',
     },
     {
       technique: 'Hands as a recurring symbol',
@@ -306,7 +318,7 @@ export const guide: StudyGuide = {
     {
       term: 'Transportation',
       definition:
-        'A sentence under which convicts were shipped to a penal colony, above all in Australia. Magwitch was transported to New South Wales for life, and coming back was punishable by death: “It’s death to come back” (Chapter 39). The officers who arrest him call him “a returned Transport” (Chapter 54).',
+        'A sentence under which convicts were shipped to a penal colony, above all in Australia. Magwitch was transported to New South Wales for life, and coming back was punishable by death: “It’s death to come back” (Chapter 39). Once Magwitch is back, Pip lives in fear of his being found out as “a returned transport” (Chapter 41).',
     },
     {
       term: 'The Hulks',
@@ -758,6 +770,11 @@ export const guide: StudyGuide = {
   ],
 
   sources: [
+    {
+      label:
+        'Wikisource, Great Expectations (1890), the P. F. Collier and Son edition, every page validated: the text this site holds in full since 10 October 2026 (src/data/full-texts/great-expectations.ts), against which every quotation here is now checked; six strings were reworded to it (see the docblock)',
+      url: 'https://en.wikisource.org/wiki/Great_Expectations_(1890)',
+    },
     {
       label:
         'Great Expectations, Project Gutenberg eBook #1400 (labelled the 1867 edition): every passage, scene-card quotation and quoted phrase in this file was copied from it and matched word for word, and the chapters cited were read in full to check speakers and plot facts',

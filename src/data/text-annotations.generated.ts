@@ -1177,6 +1177,366 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
     ],
   },
+  'great-expectations': {
+    'section-1': [
+      {
+        type: 'quote',
+        text: "My father's family name being Pirrip, and my Christian name Philip, my infant tongue could make of both names nothing longer or more explicit than Pip. So, I called myself Pip, and came to be called Pip",
+        note: 'Pip — Chapter 1. The opening sentence establishes the first-person retrospective voice and dramatises self-making at the level of the name itself: Pip has, in a small way, already invented himself.',
+      },
+      {
+        type: 'quote',
+        text: "Keep still, you little devil, or I'll cut your throat",
+        note: 'Magwitch — Chapter 1. Magwitch’s terrifying first words cast him as the Gothic threat of the marshes, but the novel will later reframe this moment as the beginning of a long, hidden act of gratitude.',
+      },
+      {
+        type: 'theme',
+        text: "My father's family name being Pirrip, and my Christian name Philip, my infant tongue could make of both names nothing longer or more explicit than Pip. So, I called myself Pip, and came to be called Pip",
+        note: 'Identity. The novel\'s opening sentence is an act of self-naming that is also a self-diminution. Pip cannot fully articulate his own name, so he abbreviates himself. The passive "came to be called" suggests that identity happens to Pip rather than being chosen by him. Dickens signals from the first line that Pip\'s sense of self will be shaped by forces beyond his control.',
+      },
+      {
+        type: 'quote',
+        text: 'Hold your noise!" cried a terrible voice, as a man started up from among the graves at the side of the church porch. "Keep still, you little devil, or I\'ll cut your throat',
+        note: 'Magwitch - Chapter 1. Magwitch erupts from "among the graves," associating him with death and the underworld. The violent threat establishes the power imbalance between adult and child, criminal and innocent. Yet Dickens gradually reveals Magwitch\'s own desperation, complicating our initial terror with sympathy. The convict\'s aggression is born of starvation and fear, not malice.',
+      },
+      {
+        type: 'theme',
+        text: 'Hold your noise!" cried a terrible voice, as a man started up from among the graves at the side of the church porch. "Keep still, you little devil, or I\'ll cut your throat',
+        note: 'Crime and Justice. Magwitch erupts from "among the graves," associating him with death and the underworld. The violent threat establishes the power imbalance between adult and child, criminal and innocent. Yet Dickens gradually reveals Magwitch\'s own desperation, complicating our initial terror with sympathy. The convict\'s aggression is born of starvation and fear, not malice.',
+      },
+    ],
+    'section-12': [
+      {
+        type: 'quote',
+        text: 'Break their hearts, my pride and hope, break their hearts and have no mercy',
+        note: 'Miss Havisham — Chapter 12. The triple imperative exposes Miss Havisham’s use of Estella as an instrument of revenge, and the word "pride" admits that she is investing her own wounded self in her adopted daughter.',
+      },
+      {
+        type: 'character',
+        text: 'Break their hearts, my pride and hope, break their hearts and have no mercy',
+        note: '"Break their hearts my pride and hope, break their hearts and have no mercy!"',
+      },
+      {
+        type: 'theme',
+        text: 'Break their hearts, my pride and hope, break their hearts and have no mercy',
+        note: 'Love. Miss Havisham\'s instruction to Estella reveals her as a manipulator who has weaponised a child. The words "pride and hope" are maternal vocabulary repurposed for revenge. She treats Estella not as a daughter but as a weapon - the thing she is "proud" of is Estella\'s capacity to destroy. Dickens shows how victimhood can generate cruelty: Miss Havisham was hurt, so she creates a tool to hurt others.',
+      },
+    ],
+    'section-29': [
+      {
+        type: 'quote',
+        text: 'I loved her against reason, against promise, against peace, against hope, against happiness, against all discouragement that could be',
+        note: 'Pip on Estella. The insistent anaphora of "against" makes clear that Pip’s love is self-destructive and chosen in defiance of his own judgement — a portrait of romantic obsession as a form of willed suffering.',
+      },
+      {
+        type: 'theme',
+        text: 'I loved her against reason, against promise, against peace, against hope, against happiness, against all discouragement that could be',
+        note: '"I loved her against reason, against promise, against peace, against hope, against happiness, against all discouragement that could be."',
+      },
+      {
+        type: 'language',
+        text: 'I loved her against reason, against promise, against peace, against hope, against happiness, against all discouragement that could be',
+        note: 'repetition. The anaphoric repetition of "against" makes Pip\'s love an act of wilful self-destruction. Each "against" names something healthy that his love opposes: reason, peace, hope, happiness. Dickens presents romantic obsession not as noble but as a form of self-harm. The listing structure creates a sense of accumulation - Pip is drowning in his own passion, and he knows it.',
+      },
+    ],
+    'section-7': [
+      {
+        type: 'quote',
+        text: "Ever the best of friends; ain't us, Pip",
+        note: 'Joe Gargery. Joe’s repeated refrain is the novel’s moral keynote: a constant, unconditional loyalty that Pip betrays in London and has to earn the right to hear again.',
+      },
+      {
+        type: 'character',
+        text: 'Ever the best of friends',
+        note: 'Joe Gargery. His refrain "Ever the best of friends" runs through the novel as a moral baseline that Pip strays from and eventually returns to.',
+      },
+    ],
+    'section-59': [
+      {
+        type: 'quote',
+        text: 'I have been bent and broken, but—I hope—into a better shape',
+        note: 'Estella — closing chapter (revised ending). The metalworking image links Estella to the forge she has always despised and acknowledges that suffering has, at last, made her capable of feeling. The tentative "I hope" refuses full certainty.',
+      },
+      {
+        type: 'quote',
+        text: 'I saw no shadow of another parting from her',
+        note: 'Pip — closing line (revised ending). The famous ambiguous ending refuses a clean romantic resolution. The absence of a "shadow" is a negative image rather than a promise, leaving the future open between hope and doubt.',
+      },
+      {
+        type: 'theme',
+        text: 'I have been bent and broken, but—I hope—into a better shape',
+        note: '"I have been bent and broken, but - I hope - into a better shape."',
+      },
+      {
+        type: 'character',
+        text: 'suffering has been stronger than all other teaching',
+        note: 'In the revised ending, she tells Pip that "suffering has been stronger than all other teaching," suggesting that pain has restored the emotional capacity Miss Havisham destroyed.',
+      },
+      {
+        type: 'character',
+        text: 'suffering has been stronger than all other teaching, and has taught me to understand what your heart used to be. I have been bent and broken, but—I hope—into a better shape',
+        note: '"Suffering has been stronger than all other teaching, and has taught me to understand what your heart used to be. I have been bent and broken, but - I hope - into a better shape."',
+      },
+      {
+        type: 'quote',
+        text: 'suffering has been stronger than all other teaching, and has taught me to understand what your heart used to be. I have been bent and broken, but—I hope—into a better shape',
+        note: 'Estella - Chapter 59. The metalwork metaphor ("bent and broken... into a better shape") connects Estella to Joe\'s world of forge and anvil. She has been remade through suffering, not social climbing. The hesitation "I hope" is crucial - she is not certain of her own reformation. Dickens avoids a triumphant resolution: real change is tentative, earned through pain, and never guaranteed.',
+      },
+      {
+        type: 'theme',
+        text: 'suffering has been stronger than all other teaching, and has taught me to understand what your heart used to be. I have been bent and broken, but—I hope—into a better shape',
+        note: 'Love. The metalwork metaphor ("bent and broken... into a better shape") connects Estella to Joe\'s world of forge and anvil. She has been remade through suffering, not social climbing. The hesitation "I hope" is crucial - she is not certain of her own reformation. Dickens avoids a triumphant resolution: real change is tentative, earned through pain, and never guaranteed.',
+      },
+      {
+        type: 'language',
+        text: 'suffering has been stronger than all other teaching, and has taught me to understand what your heart used to be. I have been bent and broken, but—I hope—into a better shape',
+        note: 'metaphor. The metalwork metaphor ("bent and broken... into a better shape") connects Estella to Joe\'s world of forge and anvil. She has been remade through suffering, not social climbing. The hesitation "I hope" is crucial - she is not certain of her own reformation. Dickens avoids a triumphant resolution: real change is tentative, earned through pain, and never guaranteed.',
+      },
+      {
+        type: 'quote',
+        text: 'I took her hand in mine, and we went out of the ruined place; and, as the morning mists had risen long ago when I first left the forge, so, the evening mists were rising now, and in all the broad expanse of tranquil light they showed to me, I saw no shadow of another parting from her',
+        note: 'Pip (narrator) - Chapter 59. The novel\'s final sentence is deliberately ambiguous. "No shadow of another parting" could mean they will never part, or it could mean Pip cannot yet see the parting ahead. The mist motif connects back to Chapter 19 - the same image of revelation, but now evening rather than morning. The "ruined place" is both Satis House and the ruins of their former selves. Dickens leaves the reader to decide.',
+      },
+      {
+        type: 'theme',
+        text: 'I took her hand in mine, and we went out of the ruined place; and, as the morning mists had risen long ago when I first left the forge, so, the evening mists were rising now, and in all the broad expanse of tranquil light they showed to me, I saw no shadow of another parting from her',
+        note: 'Love. The novel\'s final sentence is deliberately ambiguous. "No shadow of another parting" could mean they will never part, or it could mean Pip cannot yet see the parting ahead. The mist motif connects back to Chapter 19 - the same image of revelation, but now evening rather than morning. The "ruined place" is both Satis House and the ruins of their former selves. Dickens leaves the reader to decide.',
+      },
+      {
+        type: 'language',
+        text: 'I took her hand in mine, and we went out of the ruined place; and, as the morning mists had risen long ago when I first left the forge, so, the evening mists were rising now, and in all the broad expanse of tranquil light they showed to me, I saw no shadow of another parting from her',
+        note: 'motif. The novel\'s final sentence is deliberately ambiguous. "No shadow of another parting" could mean they will never part, or it could mean Pip cannot yet see the parting ahead. The mist motif connects back to Chapter 19 - the same image of revelation, but now evening rather than morning. The "ruined place" is both Satis House and the ruins of their former selves. Dickens leaves the reader to decide.',
+      },
+    ],
+    'section-38': [
+      {
+        type: 'quote',
+        text: 'I am what you have made me',
+        note: 'Estella — Chapter 38. Estella’s cold verdict on her upbringing turns Miss Havisham’s revenge back on her: the heartless girl is not a monster but a product, and responsibility lies with the parent, not the child.',
+      },
+    ],
+    'section-9': [
+      {
+        type: 'quote',
+        text: 'Pause you who read this, and think for a moment of the long chain of iron or gold, of thorns or flowers, that would never have bound you, but for the formation of the first link on one memorable day',
+        note: 'Pip — Chapter 9. The older narrator addresses the reader directly. The four-part "chain" image (iron/gold, thorns/flowers) captures how a single meeting at Satis House determines the whole shape of Pip’s life.',
+      },
+    ],
+    'section-17': [
+      {
+        type: 'quote',
+        text: 'I have particular reasons for wanting to be a gentleman',
+        note: 'Pip — Chapter 17. The embarrassed euphemism "particular reasons" is Pip confessing, without quite saying so, that his social ambition is driven by love of Estella, a confession he makes plain a moment later ("I want to be a gentleman on her account").',
+      },
+      {
+        type: 'theme',
+        text: 'Do you want to be a gentleman, to spite her or to gain her over',
+        note: 'Biddy\'s question - "Do you want to be a gentleman, to spite her or to gain her over?" - exposes Pip\'s ambition as reactive, not authentic.',
+      },
+      {
+        type: 'character',
+        text: 'Do you want to be a gentleman, to spite her or to gain her over',
+        note: '"Do you want to be a gentleman, to spite her or to gain her over?"',
+      },
+      {
+        type: 'quote',
+        text: 'Do you want to be a gentleman, to spite her or to gain her over',
+        note: 'Biddy - Chapter 17. Biddy cuts to the heart of Pip\'s motivation with surgical precision. Her question exposes that Pip\'s ambition is not self-generated but Estella-driven - reactive rather than authentic. The alternatives she offers ("spite" or "gain her over") are both forms of emotional manipulation. Biddy sees what Pip cannot: his desire for self-improvement is really a desire for someone else\'s approval.',
+      },
+    ],
+    'section-19': [
+      {
+        type: 'quote',
+        text: 'Heaven knows we need never be ashamed of our tears, for they are rain upon the blinding dust of earth, overlying our hard hearts',
+        note: 'Pip — Chapter 19. The older narrator’s aphoristic reflection on leaving home for London blends natural imagery with moral insight and signals the mature perspective that judges the younger Pip’s shame.',
+      },
+    ],
+    'section-27': [
+      {
+        type: 'quote',
+        text: 'So, throughout life, our worst weaknesses and meannesses are usually committed for the sake of the people whom we most despise',
+        note: 'Pip. A generalising maxim from the older narrator. Pip has learned that the meanness he showed Joe was driven by Estella’s scorn — by caring for the judgement of people he should not have valued.',
+      },
+    ],
+    'section-44': [
+      {
+        type: 'quote',
+        text: 'You have been in every line I have ever read',
+        note: 'Pip to Estella — Chapter 44. A declaration of love as literary haunting: Estella has become part of how Pip reads the world. The quotation captures the novel’s linking of love, reading and self-knowledge.',
+      },
+    ],
+    'section-22': [
+      {
+        type: 'quote',
+        text: "Take another glass of wine, and excuse my mentioning that society as a body does not expect one to be so strictly conscientious in emptying one's glass, as to turn it bottom upwards with the rim on one's nose",
+        note: 'Herbert Pocket. Herbert’s gentle correction of Pip’s table manners shows class being taught as etiquette, and shows friendship at its best: a correction offered with such tact it barely registers as one.',
+      },
+      {
+        type: 'character',
+        text: 'in London it is not the custom to put the knife in the mouth',
+        note: '"in London it is not the custom to put the knife in the mouth"',
+      },
+      {
+        type: 'character',
+        text: 'brought up by Miss Havisham to wreak revenge on all the male sex',
+        note: 'Estella Estella is Miss Havisham\'s weapon - in Herbert\'s words, she has been "brought up by Miss Havisham to wreak revenge on all the male sex." She is beautiful but emotionally frozen, trained to attract men and then destroy them.',
+      },
+    ],
+    'section-18': [
+      {
+        type: 'quote',
+        text: "O dear good Joe, whom I was so ready to leave and so unthankful to, I see you again, with your muscular blacksmith's arm before your eyes, and your broad chest heaving, and your voice dying away",
+        note: 'Pip — later reflection. The older narrator’s apostrophe to Joe — "O dear good Joe" — performs the very gratitude the younger Pip withheld, turning the prose itself into an act of late restitution.',
+      },
+    ],
+    'section-11': [
+      {
+        type: 'character',
+        text: 'the pale young gentleman',
+        note: 'Herbert Pocket. The cheerful, well-meaning Herbert is Miss Havisham’s distant relative whom Pip first meets as "the pale young gentleman" at Satis House.',
+      },
+    ],
+    'section-4': [
+      {
+        type: 'theme',
+        text: 'I was always treated as if I had insisted on being born in opposition to the dictates of reason, religion, and morality',
+        note: '"I was always treated as if I had insisted on being born in opposition to the dictates of reason, religion, and morality."',
+      },
+      {
+        type: 'quote',
+        text: 'I was always treated as if I had insisted on being born in opposition to the dictates of reason, religion, and morality',
+        note: 'Pip (narrator) - Chapter 4. Pip describes his childhood in the mock-legal language of a trial ("in opposition to the dictates of reason, religion, and morality"). The suggestion that he "insisted on being born" treats his very existence as an offence, which links the orphan Pip to the convict Magwitch, whom society also treated as guilty from the start. Dickens exposes the Victorian habit of treating the poor and the dependent as moral failures rather than people.',
+      },
+    ],
+    'section-8': [
+      {
+        type: 'theme',
+        text: 'I wished Joe had been rather more genteelly brought up, and then I should have been so too',
+        note: '"I wished Joe had been rather more genteelly brought up, and then I should have been so too."',
+      },
+      {
+        type: 'character',
+        text: 'I took the opportunity of being alone in the courtyard, to look at my coarse hands and my common boots. My opinion of those accessories was not favourable. They had never troubled me before, but they troubled me now, as vulgar appendages',
+        note: '"I took the opportunity of being alone in the courtyard to look at my coarse hands and my common boots. My opinion of those accessories was not favourable. They had never troubled me before, but they troubled me now, as vulgar appendages."',
+      },
+      {
+        type: 'quote',
+        text: 'I took the opportunity of being alone in the courtyard, to look at my coarse hands and my common boots. My opinion of those accessories was not favourable. They had never troubled me before, but they troubled me now, as vulgar appendages',
+        note: 'Pip (narrator) - Chapter 8. Pip begins to see himself through Estella\'s eyes. The words "coarse," "common" and "vulgar" are not his own vocabulary - they are imported from the upper-class gaze. Dickens shows the exact moment class shame takes root: Pip\'s hands and boots have not changed, but his perception of them has. Self-hatred is externally imposed.',
+      },
+      {
+        type: 'theme',
+        text: 'I took the opportunity of being alone in the courtyard, to look at my coarse hands and my common boots. My opinion of those accessories was not favourable. They had never troubled me before, but they troubled me now, as vulgar appendages',
+        note: 'Social Class. Pip begins to see himself through Estella\'s eyes. The words "coarse," "common" and "vulgar" are not his own vocabulary - they are imported from the upper-class gaze. Dickens shows the exact moment class shame takes root: Pip\'s hands and boots have not changed, but his perception of them has. Self-hatred is externally imposed.',
+      },
+      {
+        type: 'quote',
+        text: 'I wished Joe had been rather more genteelly brought up, and then I should have been so too',
+        note: 'Pip (narrator) - Chapter 8. Pip wishes for a different upbringing - effectively wishing to be a different person. The conditional "should have been" reveals how deeply he has internalised the belief that identity is determined by class. Rather than changing himself, he wishes his guardian had been changed for him. Dickens shows class ideology distorting not just perception but imagination.',
+      },
+      {
+        type: 'character',
+        text: 'I took the opportunity of being alone in the courtyard, to look at my coarse hands and my common boots. My opinion of those accessories was not favourable. They had never troubled me before, but they troubled me now',
+        note: 'His encounter with Estella at Satis House transforms his self-image: "I took the opportunity of being alone in the courtyard to look at my coarse hands and my common boots. My opinion of those accessories was not favourable. They had never troubled me before, but they troubled me now." The shift from unselfconscious contentment to agonised self-awareness is the moment Pip begins to measure himself by external, class-based standards rather than by his own moral compass.',
+      },
+    ],
+    'section-49': [
+      {
+        type: 'character',
+        text: 'What have I done? What have I done',
+        note: 'When she sees that Estella cannot love even her, she is devastated: "What have I done! What have I done!" Her attempt to help Pip financially and her desperate plea for forgiveness come too late - she catches fire from the hearth and dies from her injuries.',
+      },
+    ],
+    'section-39': [
+      {
+        type: 'character',
+        text: "Yes, Pip, dear boy, I've made a gentleman on you! It's me wot has done it",
+        note: '"Yes, Pip, dear boy, I\'ve made a gentleman on you! It\'s me wot has done it!"',
+      },
+      {
+        type: 'quote',
+        text: "Yes, Pip, dear boy, I've made a gentleman on you! It's me wot has done it",
+        note: 'Magwitch - Chapter 39. The revelation scene\'s crucial line. Magwitch\'s non-standard grammar ("wot," "on you") marks him as lower-class, yet he is the creator of Pip\'s gentleman identity. The verb "made" reduces Pip to a manufactured product. The irony is devastating: the man who cannot speak like a gentleman has funded one. Dickens forces the reader to confront the arbitrary nature of class.',
+      },
+      {
+        type: 'theme',
+        text: "Yes, Pip, dear boy, I've made a gentleman on you! It's me wot has done it",
+        note: 'Social Class. The revelation scene\'s crucial line. Magwitch\'s non-standard grammar ("wot," "on you") marks him as lower-class, yet he is the creator of Pip\'s gentleman identity. The verb "made" reduces Pip to a manufactured product. The irony is devastating: the man who cannot speak like a gentleman has funded one. Dickens forces the reader to confront the arbitrary nature of class.',
+      },
+      {
+        type: 'language',
+        text: "Yes, Pip, dear boy, I've made a gentleman on you! It's me wot has done it",
+        note: 'irony. The revelation scene\'s crucial line. Magwitch\'s non-standard grammar ("wot," "on you") marks him as lower-class, yet he is the creator of Pip\'s gentleman identity. The verb "made" reduces Pip to a manufactured product. The irony is devastating: the man who cannot speak like a gentleman has funded one. Dickens forces the reader to confront the arbitrary nature of class.',
+      },
+      {
+        type: 'character',
+        text: "I've made a gentleman on you",
+        note: "Magwitch's generosity to Pip - \"I've made a gentleman on you!\" - is more genuine than any act of Miss Havisham's, despite being tainted by his own desire to create a social revenge.",
+      },
+    ],
+    'section-30': [
+      {
+        type: 'character',
+        text: 'seriously disagreeable',
+        note: 'Herbert is willing to make himself "seriously disagreeable" to warn Pip about Estella - his friendship puts Pip\'s welfare before his own comfort.',
+      },
+    ],
+    'section-51': [
+      {
+        type: 'character',
+        text: 'Put the case that he lived in an atmosphere of evil, and that all he saw of children was, their being generated in great numbers for certain destruction',
+        note: '"Put the case that he lived in an atmosphere of evil, and that all he saw of children was their being generated in great numbers for certain destruction."',
+      },
+    ],
+    'section-25': [
+      {
+        type: 'character',
+        text: 'the office is one thing, and private life is another. When I go into the office, I leave the Castle behind me, and when I come into the Castle, I leave the office behind me',
+        note: '"The office is one thing, and private life is another. When I go into the office, I leave the Castle behind me, and when I come into the Castle, I leave the office behind me."',
+      },
+      {
+        type: 'character',
+        text: 'the office is one thing, and private life is another',
+        note: 'The phrase "the office is one thing, and private life is another" encapsulates the Victorian tendency to separate public and private ethics.',
+      },
+    ],
+    'section-36': [
+      {
+        type: 'character',
+        text: 'My Walworth sentiments must be taken at Walworth; none but my official sentiments can be taken in this office',
+        note: '"My Walworth sentiments must be taken at Walworth; none but my official sentiments can be taken in this office."',
+      },
+    ],
+    'section-14': [
+      {
+        type: 'quote',
+        text: 'It is a most miserable thing to feel ashamed of home',
+        note: 'Pip (narrator) - Chapter 14. The adult narrator passes moral judgment on his younger self with devastating simplicity. No imagery, no elaboration - just a plain, honest verdict. "Miserable" carries both its modern meaning (unhappy) and its older sense (morally wretched). This is one of the novel\'s most important sentences: Dickens arguing, through Pip\'s hindsight, that class ambition poisons the capacity for love.',
+      },
+      {
+        type: 'theme',
+        text: 'It is a most miserable thing to feel ashamed of home',
+        note: 'Social Class. The adult narrator passes moral judgment on his younger self with devastating simplicity. No imagery, no elaboration - just a plain, honest verdict. "Miserable" carries both its modern meaning (unhappy) and its older sense (morally wretched). This is one of the novel\'s most important sentences: Dickens arguing, through Pip\'s hindsight, that class ambition poisons the capacity for love.',
+      },
+      {
+        type: 'language',
+        text: 'It is a most miserable thing to feel ashamed of home',
+        note: 'imagery. The adult narrator passes moral judgment on his younger self with devastating simplicity. No imagery, no elaboration - just a plain, honest verdict. "Miserable" carries both its modern meaning (unhappy) and its older sense (morally wretched). This is one of the novel\'s most important sentences: Dickens arguing, through Pip\'s hindsight, that class ambition poisons the capacity for love.',
+      },
+    ],
+    'section-35': [
+      {
+        type: 'quote',
+        text: 'I am not angry, but I am hurt',
+        note: 'Pip, to Biddy - Chapter 35. Pip says this at parting after Biddy doubts that he will come back often to see Joe. The distinction between "angry" and "hurt" sounds dignified, but it is wounded pride: Biddy answers "let only me be hurt, if I have been ungenerous", and the older narrator admits that she "was quite right". Dickens lets Pip\'s own words condemn him.',
+      },
+      {
+        type: 'theme',
+        text: 'I am not angry, but I am hurt',
+        note: 'Loyalty. Pip says this at parting after Biddy doubts that he will come back often to see Joe. The distinction between "angry" and "hurt" sounds dignified, but it is wounded pride: Biddy answers "let only me be hurt, if I have been ungenerous", and the older narrator admits that she "was quite right". Dickens lets Pip\'s own words condemn him.',
+      },
+    ],
+  },
   hamlet: {
     'actiii-scenei': [
       {
@@ -1591,6 +1951,317 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'character',
         text: 'discipline ought to be used',
         note: "Bardolph. Pistol begs Fluellen to speak to the Duke for his life, and Fluellen refuses, because 'discipline ought to be used'.",
+      },
+    ],
+  },
+  'jane-eyre': {
+    'section-23': [
+      {
+        type: 'quote',
+        text: 'Do you think, because I am poor, obscure, plain, and little, I am soulless and heartless',
+        note: 'Jane - Chapter 23. Jane challenges Rochester and the class system in a single breath, insisting that inner worth has nothing to do with outward appearance or social rank.',
+      },
+      {
+        type: 'context',
+        text: 'I am no bird; and no net ensnares me',
+        note: 'Jane\'s declaration, "I am no bird; and no net ensnares me," became a touchstone for feminist thought.',
+      },
+      {
+        type: 'quote',
+        text: 'I am no bird; and no net ensnares me; I am a free human being with an independent will',
+        note: "Jane (Chapter 23). Jane's declaration of autonomy at the moment Rochester proposes. The bird metaphor recurs throughout the novel - Rochester calls Jane his 'caged bird.' Jane rejects this: she is not a creature to be trapped or kept. 'Free human being' asserts her personhood in a society that defined women by their relationships to men. 'Independent will' is the novel's central value.",
+      },
+      {
+        type: 'quote',
+        text: 'Do you think, because I am poor, obscure, plain, and little, I am soulless and heartless? You think wrong!—I have as much soul as you,—and full as much heart',
+        note: "Jane (Chapter 23). Jane's most famous speech, challenging Rochester's apparent intention to marry Blanche. She systematically lists every disadvantage Victorian society holds against her - poverty, obscurity, plainness, small stature - and refuses to accept that these diminish her inner worth. The exclamation marks convey passionate conviction. This is Bront&euml;'s feminist manifesto: worth is measured by soul and heart, not appearance or status.",
+      },
+      {
+        type: 'quote',
+        text: 'I am not talking to you now through the medium of custom, conventionalities, nor even of mortal flesh;—it is my spirit that addresses your spirit; just as if both had passed through the grave, and we stood at God’s feet, equal,—as we are',
+        note: "Jane (Chapter 23). Jane strips away every social barrier between herself and Rochester. 'Custom, conventionalities' are the social rules that separate governess from master. 'Mortal flesh' removes the physical body, which society judges by beauty and sex. Only at the level of the spirit can Jane and Rochester be truly equal. The religious language ('God's feet') appeals to a higher authority than human social hierarchy.",
+      },
+      {
+        type: 'quote',
+        text: 'I am no bird; and no net ensnares me',
+        note: "Jane (Chapter 23). Rochester repeatedly compares Jane to a bird - a caged bird, a wild bird, a bird that will fly away. Jane rejects the metaphor entirely. She is not a creature to be caught, kept, or admired in a cage. The 'net' represents all the social traps that could ensnare a woman: financial dependence, marriage as ownership, beauty as currency. Jane insists on being fully, unmetaphorically human.",
+      },
+      {
+        type: 'character',
+        text: 'as if both had passed through the grave, and we stood at God',
+        note: "Jane Eyre. She insists on being treated as Rochester's equal - 'as if both had passed through the grave, and we stood at God's feet, equal - as we are!' Jane is both a Romantic heroine (driven by feeling) and a moral agent (governed by principle).",
+      },
+      {
+        type: 'theme',
+        text: 'I am no bird; and no net ensnares me; I am a free human being with an independent will',
+        note: 'Independence. The bird/net metaphor rejects the idea that Jane can be trapped or possessed. The triple declaration builds in rhetorical force, culminating in "independent will" -- the philosophical foundation of Jane\'s identity. Bronte uses this speech to insist that love must be entered freely, never coerced.',
+      },
+      {
+        type: 'language',
+        text: 'I am no bird; and no net ensnares me; I am a free human being with an independent will',
+        note: 'metaphor. The bird/net metaphor rejects the idea that Jane can be trapped or possessed. The triple declaration builds in rhetorical force, culminating in "independent will" -- the philosophical foundation of Jane\'s identity. Bronte uses this speech to insist that love must be entered freely, never coerced.',
+      },
+      {
+        type: 'theme',
+        text: 'Do you think, because I am poor, obscure, plain, and little, I am soulless and heartless',
+        note: 'Class. Jane lists four social disadvantages -- poverty, anonymity, plainness, small stature -- and rejects the idea that external circumstances determine inner worth. The rhetorical question forces the listener to confront class prejudice. "Soulless" raises the argument from social inequality to spiritual equality.',
+      },
+      {
+        type: 'language',
+        text: 'Do you think, because I am poor, obscure, plain, and little, I am soulless and heartless',
+        note: 'rhetorical question. Jane lists four social disadvantages -- poverty, anonymity, plainness, small stature -- and rejects the idea that external circumstances determine inner worth. The rhetorical question forces the listener to confront class prejudice. "Soulless" raises the argument from social inequality to spiritual equality.',
+      },
+      {
+        type: 'quote',
+        text: 'I am a free human being with an independent will, which I now exert to leave you',
+        note: 'Jane -- Chapter 23. The verb "exert" transforms freedom from an abstract principle into a concrete action. Jane does not merely claim independence -- she demonstrates it by choosing departure over comfortable dependence. Bronte shows that freedom is meaningless unless it is exercised, especially when exercising it is painful.',
+      },
+      {
+        type: 'theme',
+        text: 'I am a free human being with an independent will, which I now exert to leave you',
+        note: 'Independence. The verb "exert" transforms freedom from an abstract principle into a concrete action. Jane does not merely claim independence -- she demonstrates it by choosing departure over comfortable dependence. Bronte shows that freedom is meaningless unless it is exercised, especially when exercising it is painful.',
+      },
+    ],
+    'section-12': [
+      {
+        type: 'quote',
+        text: 'women feel just as men feel; they need exercise for their faculties, and a field for their efforts',
+        note: 'Jane - Chapter 12. A direct challenge to Victorian gender ideology. Brontë insists that women have the same intellectual and emotional needs as men.',
+      },
+      {
+        type: 'quote',
+        text: 'women feel just as men feel; they need exercise for their faculties, and a field for their efforts, as much as their brothers do',
+        note: "Jane (Chapter 12). Jane's direct address to the reader while pacing the third floor at Thornfield. This passage was considered shocking and 'unfeminine' by contemporary reviewers. Jane explicitly argues for gender equality in intellectual and emotional life. The language is deliberately plain and rational, not hysterical - Bront&euml; undercuts the accusation that women's demands for equality are mere emotional outbursts.",
+      },
+      {
+        type: 'quote',
+        text: 'It is in vain to say human beings ought to be satisfied with tranquillity: they must have action; and they will make it if they cannot find it',
+        note: "Jane (Chapter 12). Part of Jane's feminist passage on the third floor. 'In vain' dismisses the Victorian prescription that women should be content with domestic life. 'They must have action' is a universal psychological truth. Bront&euml; links women's restlessness not to irrationality but to a natural human need for purpose and stimulation. The statement applies equally to men and women.",
+      },
+      {
+        type: 'theme',
+        text: 'women feel just as men feel; they need exercise for their faculties, and a field for their efforts, as much as their brothers do',
+        note: 'Gender. This is the novel\'s most explicitly feminist statement. "Faculties" elevates the argument from emotion to intellect, insisting on women\'s rational equality. "Field for their efforts" demands opportunity, not just sympathy. Bronte directly challenges the Victorian doctrine of separate spheres.',
+      },
+      {
+        type: 'quote',
+        text: 'I could not help it: the restlessness was in my nature; it agitated me to pain sometimes',
+        note: 'Jane (narration) -- Chapter 12. Jane frankly acknowledges her inner restlessness, challenging Victorian expectations of feminine contentment. "Nature" presents this drive as innate rather than a fault. Bronte frames female ambition and intellectual hunger not as aberrations but as natural human needs suppressed by social convention.',
+      },
+      {
+        type: 'theme',
+        text: 'I could not help it: the restlessness was in my nature; it agitated me to pain sometimes',
+        note: 'Gender. Jane frankly acknowledges her inner restlessness, challenging Victorian expectations of feminine contentment. "Nature" presents this drive as innate rather than a fault. Bronte frames female ambition and intellectual hunger not as aberrations but as natural human needs suppressed by social convention.',
+      },
+      {
+        type: 'theme',
+        text: 'It is in vain to say human beings ought to be satisfied with tranquillity: they must have action; and they will make it if they cannot find it',
+        note: 'Gender. The universal claim ("human beings") deliberately includes women, who were expected to find fulfilment in domestic tranquillity. The imperative "must" presents the need for action as a law of human nature, not a personal failing. Bronte challenges the reader to recognise that confining women to passivity creates frustration, not contentment.',
+      },
+      {
+        type: 'language',
+        text: 'It is in vain to say human beings ought to be satisfied with tranquillity: they must have action; and they will make it if they cannot find it',
+        note: 'imperative. The universal claim ("human beings") deliberately includes women, who were expected to find fulfilment in domestic tranquillity. The imperative "must" presents the need for action as a law of human nature, not a personal failing. Bronte challenges the reader to recognise that confining women to passivity creates frustration, not contentment.',
+      },
+    ],
+    'section-27': [
+      {
+        type: 'quote',
+        text: 'I care for myself. The more solitary, the more friendless, the more unsustained I am, the more I will respect myself',
+        note: "Jane (Chapter 27). Spoken as Jane resolves to leave Rochester after the failed wedding. This is her moral bedrock: self-respect is non-negotiable, even at the cost of love and companionship. The triple repetition ('the more... the more... the more') builds to a climax of resolve. Bront&euml; presents self-respect as the foundation of all other virtues - without it, love becomes servitude.",
+      },
+      {
+        type: 'quote',
+        text: 'Laws and principles are not for the times when there is no temptation: they are for such moments as this, when body and soul rise in mutiny against their rigour',
+        note: "Jane (Chapter 27). Jane articulates why she must leave Rochester. Her argument is moral philosophy: principles exist precisely for the moments when breaking them is most tempting. 'Body and soul rise in mutiny' acknowledges the overwhelming power of her desire. 'Rigour' acknowledges that morality is hard. This is not cold duty but passionate self-governance - the novel's most mature ethical statement.",
+      },
+      {
+        type: 'quote',
+        text: 'Gentle reader, may you never feel what I then felt! May your eyes never shed such stormy, scalding, heart-wrung tears as poured from mine',
+        note: "Jane (Chapter 27). Jane addresses the reader directly after leaving Rochester. The intensity of 'stormy, scalding, heart-wrung' conveys physical anguish. This is not sentimental self-pity but genuine suffering. Bront&euml; makes the reader a confidant, creating an intimacy that is central to the novel's power. Jane's pain is real precisely because her moral choice is real.",
+      },
+      {
+        type: 'quote',
+        text: 'The soul, fortunately, has an interpreter—often an unconscious, but still a truthful interpreter—in the eye',
+        note: "Jane (Chapter 27). As Rochester, enraged that she will not stay with him, seizes her, Jane is 'powerless as stubble' in body but still possesses her soul, and her eye shows it to him. The 'eye as interpreter' connects to the novel's broader interest in seeing and being seen. Rochester, blinded at the novel's end, must see Jane with his soul rather than his eyes - the truest form of seeing. Appearance deceives; the soul does not.",
+      },
+      {
+        type: 'quote',
+        text: 'I will hold to the principles received by me when I was sane, and not mad—as I am now',
+        note: "Jane (Chapter 27). Jane acknowledges that her grief at leaving Rochester is a form of temporary madness, but insists that her principles, formed in rational moments, must override her current anguish. This is Bront&euml;'s most sophisticated moral argument: we must live by rules established in clarity, not decisions made in crisis. The contrast between 'sane' and 'mad' also echoes Bertha's condition, distinguishing Jane's chosen self-control from Bertha's forced confinement.",
+      },
+      {
+        type: 'quote',
+        text: 'I was experiencing an ordeal: a hand of fiery iron grasped my vitals',
+        note: "Jane (Chapter 27). Jane's physical reaction when Rochester, after the revelation of his existing marriage, asks her to pledge herself to him. 'Hand of fiery iron' and 'grasped my vitals' convey visceral, bodily agony. The Gothic imagery transforms emotional pain into physical torture. Bront&euml; insists that women's emotional suffering is not trivial or performative but genuinely destructive. The 'ordeal' is both a trial and a judgement.",
+      },
+      {
+        type: 'theme',
+        text: 'I care for myself. The more solitary, the more friendless, the more unsustained I am, the more I will respect myself',
+        note: 'Independence. The escalating tricolon ("solitary... friendless... unsustained") acknowledges the enormous personal cost of her decision. The verb "respect" is deliberately chosen over "love" or "comfort" -- self-respect is the non-negotiable value that governs Jane\'s choices. Bronte positions moral integrity as more important than romantic happiness.',
+      },
+      {
+        type: 'language',
+        text: 'I care for myself. The more solitary, the more friendless, the more unsustained I am, the more I will respect myself',
+        note: 'tricolon. The escalating tricolon ("solitary... friendless... unsustained") acknowledges the enormous personal cost of her decision. The verb "respect" is deliberately chosen over "love" or "comfort" -- self-respect is the non-negotiable value that governs Jane\'s choices. Bronte positions moral integrity as more important than romantic happiness.',
+      },
+      {
+        type: 'theme',
+        text: 'I will hold to the principles received by me when I was sane, and not mad—as I am now',
+        note: 'Morality. The contrast between "sane" and "mad" dramatises the internal conflict between reason and passion. Jane acknowledges that love has temporarily overwhelmed her judgement but refuses to act on that state. The word "received" suggests her principles were earned through suffering at Lowood and Gateshead, making them too precious to abandon.',
+      },
+      {
+        type: 'theme',
+        text: 'Gentle reader, may you never feel what I then felt! May your eyes never shed such stormy, scalding, heart-wrung tears as poured from mine',
+        note: 'Love. The direct address to the reader creates emotional intimacy, while the cascade of adjectives ("stormy, scalding, heart-wrung") conveys almost unbearable pain. Bronte insists that Jane\'s moral choice does not come easily -- it costs her everything. The passage prevents the reader from seeing Jane as cold or unfeeling.',
+      },
+    ],
+    'section-34': [
+      {
+        type: 'quote',
+        text: 'I would always rather be happy than dignified',
+        note: "Jane (Chapter 34). A disarmingly simple statement that challenges Victorian propriety. After a quarrel with St John on the moor, Jane runs after him to make peace: she has 'not much pride under such circumstances'. To be 'dignified' here is to stand on one's pride and wait to be approached; Jane chooses happiness, which requires warmth and honesty. The contrast between 'happy' and 'dignified' exposes the gap between true fulfilment and mere respectability.",
+      },
+      {
+        type: 'character',
+        text: 'If I join St. John, I abandon half myself',
+        note: "St John Rivers. Jane recognises that marriage to St John would be spiritual death: 'If I join St John, I abandon half myself.' He serves as a foil to Rochester: where Rochester is all passion, St John is all repression.",
+      },
+      {
+        type: 'theme',
+        text: 'I would always rather be happy than dignified',
+        note: 'Independence. This deceptively simple statement challenges the Victorian prioritisation of outward respectability. "Dignified" implies the stiff, performative virtue expected of women; "happy" implies authentic emotional fulfilment. Bronte suggests that true morality is about genuine feeling, not social display.',
+      },
+      {
+        type: 'quote',
+        text: 'If I join St. John, I abandon half myself: if I go to India, I go to premature death',
+        note: 'Jane -- Chapter 34. Jane frames St John\'s offer as a form of self-destruction. "Abandon half myself" means surrendering her emotional nature to a man who values only duty. Bronte draws a direct parallel with Rochester\'s earlier offer: both men ask Jane to sacrifice a vital part of her identity. Only a union that honours the whole self is acceptable.',
+      },
+      {
+        type: 'theme',
+        text: 'If I join St. John, I abandon half myself: if I go to India, I go to premature death',
+        note: 'Independence. Jane frames St John\'s offer as a form of self-destruction. "Abandon half myself" means surrendering her emotional nature to a man who values only duty. Bronte draws a direct parallel with Rochester\'s earlier offer: both men ask Jane to sacrifice a vital part of her identity. Only a union that honours the whole self is acceptable.',
+      },
+    ],
+    'section-29': [
+      {
+        type: 'quote',
+        text: 'Prejudices, it is well known, are most difficult to eradicate from the heart whose soil has never been loosened or fertilised by education',
+        note: "Narrator (Chapter 29). Bront&euml; connects prejudice to ignorance. The agricultural metaphor ('soil,' 'loosened,' 'fertilised') suggests that minds, like fields, must be cultivated to produce anything worthwhile. This applies to the class prejudice Jane faces throughout the novel and to broader Victorian social attitudes. Education is presented as the antidote to bigotry.",
+      },
+    ],
+    'section-1': [
+      {
+        type: 'quote',
+        text: 'There was no possibility of taking a walk that day',
+        note: "Jane (Chapter 1, opening line). The novel's famous opening sets the tone immediately: confinement, restriction, impossibility. Jane is trapped - physically by the weather, socially by her dependent position. The passive construction ('no possibility') emphasises her powerlessness. The entire novel is the story of Jane finding the 'possibility' that this opening denies her.",
+      },
+      {
+        type: 'theme',
+        text: 'There was no possibility of taking a walk that day',
+        note: 'Independence. The very first sentence establishes confinement as the novel\'s starting condition. "No possibility" is absolute -- Jane has no choice, no freedom, no access to the natural world. The sentence works on both literal and symbolic levels: Jane is trapped physically by the weather and socially by her dependence on the Reeds. The entire novel becomes a journey from this confinement towards freedom.',
+      },
+      {
+        type: 'language',
+        text: 'There was no possibility of taking a walk that day',
+        note: 'symbol. The very first sentence establishes confinement as the novel\'s starting condition. "No possibility" is absolute -- Jane has no choice, no freedom, no access to the natural world. The sentence works on both literal and symbolic levels: Jane is trapped physically by the weather and socially by her dependence on the Reeds. The entire novel becomes a journey from this confinement towards freedom.',
+      },
+    ],
+    'section-2': [
+      {
+        type: 'quote',
+        text: 'I resisted all the way: a new thing for me',
+        note: "Jane (Chapter 2). Jane's first act of rebellion, as she is dragged to the red room. 'A new thing for me' signals the birth of her resistance. Until this moment, she has endured passively. The novel proper begins when Jane starts fighting back. The brevity of the sentence mirrors the decisiveness of the act. This resistance will define her character throughout.",
+      },
+      {
+        type: 'quote',
+        text: 'I was a discord in Gateshead Hall: I was like nobody there',
+        note: 'Jane (narration) -- Chapter 2. The musical metaphor of "discord" suggests Jane disrupts the Reed family\'s harmony simply by existing. "Like nobody" conveys both isolation and the erasure of identity. Bronte establishes from the opening pages that Jane\'s story is a search for belonging that does not require the sacrifice of selfhood.',
+      },
+      {
+        type: 'theme',
+        text: 'I was a discord in Gateshead Hall: I was like nobody there',
+        note: 'Independence. The musical metaphor of "discord" suggests Jane disrupts the Reed family\'s harmony simply by existing. "Like nobody" conveys both isolation and the erasure of identity. Bronte establishes from the opening pages that Jane\'s story is a search for belonging that does not require the sacrifice of selfhood.',
+      },
+      {
+        type: 'language',
+        text: 'I was a discord in Gateshead Hall: I was like nobody there',
+        note: 'metaphor. The musical metaphor of "discord" suggests Jane disrupts the Reed family\'s harmony simply by existing. "Like nobody" conveys both isolation and the erasure of identity. Bronte establishes from the opening pages that Jane\'s story is a search for belonging that does not require the sacrifice of selfhood.',
+      },
+      {
+        type: 'quote',
+        text: 'Unjust!—unjust!” said my reason, forced by the agonising stimulus into precocious though transitory power',
+        note: 'Jane (narration) -- Chapter 2. The exclamatory repetition captures raw moral outrage. "Reason" is personified as a force that can be activated by injustice, suggesting that Jane\'s intellect is sharpened by suffering. "Precocious though transitory" shows the adult narrator reflecting on the limits of a child\'s power -- she can perceive injustice but cannot yet sustain resistance.',
+      },
+      {
+        type: 'theme',
+        text: 'Unjust!—unjust!” said my reason, forced by the agonising stimulus into precocious though transitory power',
+        note: 'Independence. The exclamatory repetition captures raw moral outrage. "Reason" is personified as a force that can be activated by injustice, suggesting that Jane\'s intellect is sharpened by suffering. "Precocious though transitory" shows the adult narrator reflecting on the limits of a child\'s power -- she can perceive injustice but cannot yet sustain resistance.',
+      },
+      {
+        type: 'language',
+        text: 'Unjust!—unjust!” said my reason, forced by the agonising stimulus into precocious though transitory power',
+        note: 'repetition. The exclamatory repetition captures raw moral outrage. "Reason" is personified as a force that can be activated by injustice, suggesting that Jane\'s intellect is sharpened by suffering. "Precocious though transitory" shows the adult narrator reflecting on the limits of a child\'s power -- she can perceive injustice but cannot yet sustain resistance.',
+      },
+      {
+        type: 'theme',
+        text: 'I resisted all the way: a new thing for me',
+        note: 'Independence. The brevity and matter-of-fact tone make this statement quietly devastating. "A new thing for me" reveals that Jane has, until this point, accepted her mistreatment passively. This is the moment she becomes a resister, and Bronte marks it with characteristic understatement. The colon creates a pause that gives weight to the revelation.',
+      },
+    ],
+    'section-4': [
+      {
+        type: 'quote',
+        text: 'You think I have no feelings, and that I can do without one bit of love or kindness; but I cannot live so',
+        note: "Jane to Mrs Reed (Chapter 4). Jane's explosive confrontation with her aunt before leaving for Lowood. For the first time, she speaks her truth to an authority figure. 'You think I have no feelings' accuses Mrs Reed of denying Jane's humanity. 'I cannot live so' is both a statement of emotional need and a declaration of independence. This speech is the template for every later assertion of her rights.",
+      },
+      {
+        type: 'quote',
+        text: 'Ere I had finished this reply, my soul began to expand, to exult, with the strangest sense of freedom, of triumph, I ever felt',
+        note: 'Jane (narration) -- Chapter 4. The language of spiritual liberation ("soul," "expand," "exult") elevates a child\'s defiance to a moral victory. "Freedom" and "triumph" are the rewards of speaking truth to power. The passage establishes speaking honestly as an act of self-liberation, a pattern that recurs throughout the novel.',
+      },
+      {
+        type: 'theme',
+        text: 'Ere I had finished this reply, my soul began to expand, to exult, with the strangest sense of freedom, of triumph, I ever felt',
+        note: 'Independence. The language of spiritual liberation ("soul," "expand," "exult") elevates a child\'s defiance to a moral victory. "Freedom" and "triumph" are the rewards of speaking truth to power. The passage establishes speaking honestly as an act of self-liberation, a pattern that recurs throughout the novel.',
+      },
+    ],
+    'section-18': [
+      {
+        type: 'quote',
+        text: 'I could not unlove him now, merely because I found that he had ceased to notice me',
+        note: "Jane (Chapter 18). Jane reflects on her feelings during Rochester's apparent courtship of Blanche. 'Unlove' is a coinage - love, once given, cannot simply be withdrawn. Jane's love is presented as involuntary and irreversible, beyond rational control. Yet she does not surrender to it: she forces herself to accept her feelings without acting on them inappropriately. This is the tension between passion and principle that drives the novel.",
+      },
+    ],
+    'section-8': [
+      {
+        type: 'quote',
+        text: 'If all the world hated you, and believed you wicked, while your own conscience approved you, and absolved you from guilt, you would not be without friends',
+        note: "Helen Burns (Chapter 8). Helen's response to Jane's fear of being branded a liar by Brocklehurst. Helen argues that conscience is the only judge that matters. 'The world' versus 'your own conscience' establishes the novel's central moral framework: external opinion is worthless compared to inner integrity. Jane absorbs this lesson, and it becomes the foundation of her self-respect.",
+      },
+      {
+        type: 'theme',
+        text: 'If all the world hated you, and believed you wicked, while your own conscience approved you, and absolved you from guilt, you would not be without friends',
+        note: 'Religion. Helen articulates a philosophy of inner moral authority that profoundly influences Jane. The idea that conscience can "absolve" independently of public opinion is revolutionary for a child raised to believe she is inherently bad. This principle becomes central to Jane\'s decision to leave Rochester.',
+      },
+    ],
+    'section-24': [
+      {
+        type: 'quote',
+        text: 'Human beings never enjoy complete happiness in this world',
+        note: "Jane (Chapter 24). Spoken to Rochester the morning after his proposal, when he calls her his 'girl-bride'. Jane cannot trust her own happiness: to imagine such a lot, she says, is 'a fairy tale'. The doubt proves well founded when the wedding is stopped at the altar two chapters later. This sobriety distinguishes Jane Eyre from conventional romance: happiness is possible but never 'complete.' The statement reflects Bront&euml;'s Protestant sensibility that earthly life always falls short of perfection.",
+      },
+    ],
+    'section-17': [
+      {
+        type: 'quote',
+        text: 'I had not intended to love him; the reader knows I had wrought hard to extirpate from my soul the germs of love there detected',
+        note: 'Jane (narration) -- Chapter 17. The clinical vocabulary ("extirpate," "germs," "detected") treats love as a disease to be surgically removed, revealing Jane\'s fear of emotional vulnerability. The passive construction "there detected" suggests love appeared without her consent. Bronte shows that Jane\'s independence, while admirable, also creates a defensive fear of attachment.',
+      },
+      {
+        type: 'theme',
+        text: 'I had not intended to love him; the reader knows I had wrought hard to extirpate from my soul the germs of love there detected',
+        note: 'Love. The clinical vocabulary ("extirpate," "germs," "detected") treats love as a disease to be surgically removed, revealing Jane\'s fear of emotional vulnerability. The passive construction "there detected" suggests love appeared without her consent. Bronte shows that Jane\'s independence, while admirable, also creates a defensive fear of attachment.',
       },
     ],
   },
@@ -3140,6 +3811,258 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'language',
         text: 'the insidious mastery of song\nBetrays me back',
         note: 'Enjambment Despite the neat rhyme scheme, Lawrence uses enjambment across several lines: "the insidious mastery of song / Betrays me back".',
+      },
+    ],
+  },
+  'pride-and-prejudice': {
+    'section-1': [
+      {
+        type: 'quote',
+        text: 'It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife',
+        note: 'Narrator - Chapter 1. The novel\'s famous opening sentence is pure irony. The "truth" is really the assumption of matchmaking mothers, not a universal law.',
+      },
+      {
+        type: 'character',
+        text: 'a woman of mean understanding, little information, and uncertain temper',
+        note: 'She is the novel\'s most obviously comic character, and Austen\'s narrator treats her with cool contempt: she is "a woman of mean understanding, little information, and uncertain temper." Yet Austen also makes her situation sympathetically clear: if Mr Bennet dies, Mrs Bennet and her unmarried daughters will be homeless, since the estate is entailed away to Mr Collins.',
+      },
+      {
+        type: 'character',
+        text: 'a woman of mean understanding, little information, and uncertain temper. When she was discontented she fancied herself nervous. The business of her life was to get her daughters married',
+        note: '"A woman of mean understanding, little information, and uncertain temper. When she was discontented she fancied herself nervous. The business of her life was to get her daughters married."',
+      },
+      {
+        type: 'context',
+        text: 'It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife',
+        note: 'The novel\'s famous opening line - "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife" - is deeply ironic, exposing the mercenary logic that underpins the apparently civilised rituals of courtship.',
+      },
+      {
+        type: 'language',
+        text: 'It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife',
+        note: 'The opening line is the most famous example: "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife." The sentence presents social convention as if it were natural law, exposing its absurdity.',
+      },
+    ],
+    'section-56': [
+      {
+        type: 'quote',
+        text: 'I am only resolved to act in that manner, which will, in my own opinion, constitute my happiness',
+        note: 'Elizabeth - Chapter 56. Elizabeth defies Lady Catherine with quiet dignity, asserting her right to choose her own future regardless of rank.',
+      },
+      {
+        type: 'character',
+        text: 'I am only resolved to act in that manner, which will, in my own opinion, constitute my happiness, without reference to you, or to any person so wholly unconnected with me',
+        note: '"I am only resolved to act in that manner, which will, in my own opinion, constitute my happiness, without reference to you, or to any person so wholly unconnected with me."',
+      },
+      {
+        type: 'character',
+        text: 'Are the shades of Pemberley to be thus polluted',
+        note: 'Her fury at Elizabeth\'s defiance - "Are the shades of Pemberley to be thus polluted?" - reveals the class anxiety beneath aristocratic confidence.',
+      },
+      {
+        type: 'character',
+        text: 'I am almost the nearest relation he has in the world, and am entitled to know all his dearest concerns',
+        note: '"I am almost the nearest relation he has in the world, and am entitled to know all his dearest concerns."',
+      },
+    ],
+    'section-5': [
+      {
+        type: 'character',
+        text: 'I could easily forgive his pride, if he had not mortified mine',
+        note: '"I could easily forgive his pride, if he had not mortified mine."',
+      },
+      {
+        type: 'quote',
+        text: 'I could easily forgive his pride, if he had not mortified mine',
+        note: "Elizabeth. Elizabeth's early assessment reveals more about herself than about Darcy. She objects not to pride in principle but to being its victim. 'Mortified' -- meaning humiliated -- shows that Elizabeth's prejudice against Darcy is partly wounded vanity. Austen slyly reveals that Elizabeth's pride and Darcy's are mirror images: both are affronted when they feel undervalued. The symmetry of the sentence enacts the novel's central pairing.",
+      },
+      {
+        type: 'quote',
+        text: 'Vanity and pride are different things, though the words are often used synonimously. A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us',
+        note: "Mary Bennet. Mary's pedantic distinction is comic in context (she is the least socially aware Bennet sister), but it is thematically essential. Darcy is proud but not vain -- he cares about his own standards, not others' opinions. Elizabeth is vain but calls it pride -- her 'fine eyes' and wit give her a sense of superiority that she mistakes for principled judgement. Austen uses the least perceptive character to state the novel's most important thematic distinction.",
+      },
+    ],
+    'section-58': [
+      {
+        type: 'character',
+        text: 'given good principles, but left to follow them in pride and conceit',
+        note: 'His pride is rooted in his upbringing: he was "given good principles, but left to follow them in pride and conceit." He is honest, principled and deeply loyal, but his social manners are terrible - he lacks the easy charm that makes Bingley and Wickham immediately likeable.',
+      },
+      {
+        type: 'quote',
+        text: 'You are too generous to trifle with me. If your feelings are still what they were last April, tell me so at once. My affections and wishes are unchanged, but one word from you will silence me on this subject for ever',
+        note: "Darcy (second proposal). Compare this to the first proposal. Darcy is humble ('too generous to trifle'), conditional ('if'), and respectful ('one word from you will silence me'). He acknowledges Elizabeth's power over him without resentment. 'My affections and wishes are unchanged' -- he still loves her but has learned to express it without condescension. The transformation in his language mirrors his moral growth.",
+      },
+      {
+        type: 'quote',
+        text: 'You must learn some of my philosophy. Think only of the past as its remembrance gives you pleasure',
+        note: "Elizabeth. Elizabeth advises Darcy to let go of his regrets. This echoes the novel's optimistic conclusion: the past (pride, prejudice, mistakes) can be acknowledged and moved beyond. However, there is also irony -- Elizabeth herself spent much of the novel clinging to past impressions rather than revising them. The advice reflects her growth: she now understands that dwelling on errors is less valuable than learning from them.",
+      },
+      {
+        type: 'quote',
+        text: 'I have been a selfish being all my life, in practice, though not in principle',
+        note: "Darcy. Darcy's crucial self-assessment near the novel's end. He distinguishes between his moral principles (which were sound) and his behaviour (which was not). 'In practice, though not in principle' is a devastatingly honest distinction -- he was taught 'right principles' but 'left to follow them in pride and conceit.' Austen argues that good principles without good behaviour are worthless.",
+      },
+      {
+        type: 'quote',
+        text: 'You shewed me how insufficient were all my pretensions to please a woman worthy of being pleased',
+        note: "Darcy. Darcy credits Elizabeth with his transformation. 'Pretensions' -- claims without justification -- is precisely the right word. His wealth, status, and connections, which he thought entitled him to any woman's acceptance, were 'insufficient' when confronted by Elizabeth's standards. 'A woman worthy of being pleased' elevates Elizabeth's judgement as the true measure of value, inverting the social hierarchy.",
+      },
+    ],
+    'section-34': [
+      {
+        type: 'character',
+        text: 'In vain have I struggled. It will not do. My feelings will not be repressed. You must allow me to tell you how ardently I admire and love you',
+        note: '"In vain have I struggled. It will not do. My feelings will not be repressed. You must allow me to tell you how ardently I admire and love you."',
+      },
+    ],
+    'section-24': [
+      {
+        type: 'character',
+        text: 'There are few people whom I really love, and still fewer of whom I think well. The more I see of the world, the more am I dissatisfied with it',
+        note: '"There are few people whom I really love, and still fewer of whom I think well. The more I see of the world, the more am I dissatisfied with it."',
+      },
+      {
+        type: 'quote',
+        text: 'There are few people whom I really love, and still fewer of whom I think well',
+        note: "Elizabeth. A characteristically witty self-assessment. Elizabeth distinguishes between love (emotional attachment) and respect (intellectual esteem), implying that the two rarely coincide. This is both attractive (she has high standards) and revealing (she may be too quick to judge). Austen makes Elizabeth's intelligence a double-edged sword -- it gives her insight but also feeds her prejudice.",
+      },
+    ],
+    'section-18': [
+      {
+        type: 'character',
+        text: 'Mr. Wickham is blessed with such happy manners as may ensure his making friends--whether he may be equally capable of retaining them, is less certain',
+        note: '"Mr Wickham is blessed with such happy manners as may ensure his making friends - whether he may be equally capable of retaining them, is less certain."',
+      },
+    ],
+    'section-35': [
+      {
+        type: 'character',
+        text: "Mr. Wickham's chief object was unquestionably my sister's fortune, which is thirty thousand pounds",
+        note: '"Mr Wickham\'s chief object was unquestionably my sister\'s fortune, which is thirty thousand pounds."',
+      },
+    ],
+    'section-48': [
+      {
+        type: 'character',
+        text: 'I am not afraid of being overpowered by the impression. It will pass away soon enough',
+        note: 'After Lydia\'s elopement he admits, "I am not afraid of being overpowered by the impression. It will pass away soon enough." Even his remorse is filtered through irony.',
+      },
+    ],
+    'section-57': [
+      {
+        type: 'character',
+        text: 'For what do we live, but to make sport for our neighbours, and laugh at them in our turn',
+        note: '"For what do we live, but to make sport for our neighbours, and laugh at them in our turn?"',
+      },
+      {
+        type: 'quote',
+        text: 'For what do we live, but to make sport for our neighbours, and laugh at them in our turn',
+        note: "Mr Bennet. Mr Bennet's philosophy of life as entertainment. While comic, this reveals his fundamental irresponsibility -- he treats his family's crises as amusing spectacles rather than problems requiring action. His detachment, while producing excellent wit, fails his daughters when they need him most. Austen implies that humour without engagement is a form of neglect.",
+      },
+    ],
+    'section-52': [
+      {
+        type: 'character',
+        text: 'She was sure they should be married some time or other, and it did not much signify when',
+        note: '"She was sure they should be married some time or other, and it did not much signify when."',
+      },
+    ],
+    'section-3': [
+      {
+        type: 'quote',
+        text: 'She is tolerable; but not handsome enough to tempt me',
+        note: "Darcy. Darcy's dismissal of Elizabeth at the Meryton ball. 'Tolerable' is devastatingly faint praise -- it acknowledges competence while denying attraction. 'Tempt me' implies that Darcy sees himself as above temptation, revealing his social pride. This line establishes the 'prejudice' that both characters must overcome. Austen gives Darcy the most insulting possible introduction, making his later transformation all the more dramatic.",
+      },
+      {
+        type: 'language',
+        text: 'She is tolerable; but not handsome enough to tempt me',
+        note: 'Darcy\'s dismissive remark - "She is tolerable, but not handsome enough to tempt me" - wounds Elizabeth\'s pride and sets the tone for their antagonistic relationship.',
+      },
+      {
+        type: 'character',
+        text: 'She is tolerable; but not handsome enough to tempt me',
+        note: 'His remark at the Meryton Assembly - "She is tolerable, but not handsome enough to tempt me" - establishes him as arrogant.',
+      },
+    ],
+    'section-36': [
+      {
+        type: 'quote',
+        text: 'Till this moment, I never knew myself',
+        note: "Elizabeth. Elizabeth's moment of anagnorisis (self-recognition) after reading Darcy's letter. She realises her pride in her own judgement was a form of vanity, and her prejudice against Darcy was based on wounded ego and Wickham's charm. This single sentence encapsulates the novel's moral argument: self-knowledge is the prerequisite for good judgement, genuine love, and moral growth. It is the pivot on which the entire plot turns.",
+      },
+      {
+        type: 'character',
+        text: 'Till this moment, I never knew myself',
+        note: 'After reading Darcy\'s letter, she exclaims: "Till this moment, I never knew myself." This is the emotional and moral climax of her journey - the moment she recognises that her prejudice has been as damaging as Darcy\'s pride.',
+      },
+      {
+        type: 'language',
+        text: 'She grew absolutely ashamed of herself.--Of neither Darcy nor Wickham could she think, without feeling that she had been blind, partial, prejudiced, absurd',
+        note: 'Consider this passage describing Elizabeth\'s reaction to Darcy\'s letter: "She grew absolutely ashamed of herself.—Of neither Darcy nor Wickham could she think, without feeling that she had been blind, partial, prejudiced, absurd." This is not direct speech (Elizabeth does not say these words aloud) nor is it pure narration (the emotional intensity belongs to Elizabeth).',
+      },
+    ],
+    'section-22': [
+      {
+        type: 'quote',
+        text: 'I am not romantic you know. I never was. I ask only a comfortable home',
+        note: "Charlotte Lucas. Charlotte's justification for marrying Collins. 'Comfortable' -- not happy, not loving, merely comfortable -- reveals the limited aspirations available to women without fortune or exceptional beauty. 'I never was' romantic is partly self-defence and partly honest acknowledgement of her situation. Austen does not mock Charlotte but presents her pragmatism as a rational response to a system that offers women few alternatives.",
+      },
+      {
+        type: 'character',
+        text: 'I am not romantic you know. I never was. I ask only a comfortable home',
+        note: "Charlotte Lucas. At twenty-seven, she accepts Collins's proposal not out of love but necessity -- 'I am not romantic, you know; I never was. I ask only a comfortable home.' Her choice horrifies Elizabeth but is entirely rational within the constraints of Regency society.",
+      },
+    ],
+    'section-6': [
+      {
+        type: 'quote',
+        text: 'Happiness in marriage is entirely a matter of chance',
+        note: "Charlotte Lucas. Charlotte's philosophy of marriage, stated before she accepts Collins. It is the opposite of Elizabeth's romantic idealism -- and arguably closer to the novel's reality. Many marriages in the book are unhappy (the Bennets, Lydia and Wickham). Charlotte's 'chance' removes agency and responsibility from marriage, which Austen resists -- Elizabeth and Darcy's happiness is not chance but the result of self-examination and moral growth.",
+      },
+      {
+        type: 'quote',
+        text: "A lady's imagination is very rapid; it jumps from admiration to love, from love to matrimony in a moment",
+        note: "Darcy. Darcy's ironic observation about the speed with which society assumes romantic interest equals marital intention. Austen uses this line both to satirise Mrs Bennet's matchmaking and to comment on the pressure women face to convert any male attention into a marriage proposal. The irony cuts both ways -- Darcy's own feelings eventually follow a similar trajectory.",
+      },
+    ],
+    'section-27': [
+      {
+        type: 'quote',
+        text: 'What are men to rocks and mountains',
+        note: "Elizabeth. Elizabeth's witty dismissal of romantic concerns when anticipating her trip to the Lake District. On the surface, she prefers landscape to love. But Austen is being ironic -- Elizabeth will soon visit Pemberley (Darcy's estate), where the landscape quite literally leads her to reconsider the man. The quip reveals Elizabeth's habit of using wit to deflect genuine feeling.",
+      },
+    ],
+    'section-31': [
+      {
+        type: 'quote',
+        text: 'My courage always rises with every attempt to intimidate me',
+        note: "Elizabeth. Elizabeth's retort to Darcy at Rosings, when he comes to stand by the instrument while she plays. This defines her character: she is defiant in the face of social pressure. It is both admirable (she will not be bullied) and slightly reckless (she sometimes fights battles she does not need to fight). The line foreshadows her rejection of Darcy's first proposal and her confrontation with Lady Catherine.",
+      },
+    ],
+    'section-54': [
+      {
+        type: 'quote',
+        text: 'We all love to instruct, though we can teach only what is not worth knowing',
+        note: "Elizabeth. A self-deprecating observation about the limits of advice-giving. Elizabeth recognises that the most important lessons -- self-knowledge, humility, genuine love -- cannot be taught by others but must be learned through experience. This is the novel's educational philosophy: Elizabeth and Darcy do not change because they are lectured but because they are confronted with the consequences of their own failings.",
+      },
+    ],
+    'section-50': [
+      {
+        type: 'quote',
+        text: 'how little of permanent happiness could belong to a couple who were only brought together because their passions were stronger than their virtue',
+        note: "Narrator, on Lydia and Wickham. Austen's devastating verdict on Lydia's marriage. 'Permanent happiness' -- the novel's standard for a good marriage -- requires more than passion. The opposition of 'passions' and 'virtue' reflects Austen's moral framework: desire without self-control leads to misery. This directly contrasts with Elizabeth and Darcy, whose relationship is built on the hard work of self-improvement.",
+      },
+    ],
+    'section-60': [
+      {
+        type: 'quote',
+        text: 'I was in the middle before I knew that I had begun',
+        note: 'Darcy. Darcy explains when he fell in love with Elizabeth. The sentence captures the unconscious nature of genuine love -- it is not a decision but a gradual process that becomes apparent only in retrospect. This contrasts with his first proposal, where he tried to rationalise and control his feelings. By the second proposal, he accepts love as something that happened to him naturally.',
+      },
+      {
+        type: 'character',
+        text: 'the liveliness of your mind',
+        note: 'Elizabeth\'s defining characteristic is what Darcy calls "the liveliness of your mind" - what he says he admired in her, when she asks him to account for falling in love with her.',
       },
     ],
   },

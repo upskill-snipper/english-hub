@@ -159,7 +159,7 @@ const CHARACTERS: CharacterProfile[] = [
       "Herbert represents what a \"gentleman\" should actually be: considerate, loyal and industrious. While Pip wastes his allowance, Herbert dreams of becoming a merchant and eventually succeeds through honest work. He helps Pip hide and protect Magwitch, risking his own safety out of friendship. Pip's secret arrangement to buy Herbert a partnership in Clarriker's business is one of Pip's few genuinely selfless acts during his London years and foreshadows his moral recovery. Herbert's steady goodness provides a counterpoint to Pip's instability.",
     keyQuotes: [
       {
-        text: '"Handel, my good fellow... I have been thinking since we have been talking with our feet on this fender, that Estella surely cannot be a condition of your inheritance"',
+        text: '"Handel, my good fellow... I have been thinking since we have been talking with our feet on this fender, that Estella cannot surely be a condition of your inheritance"',
         context:
           'Herbert is willing to make himself "seriously disagreeable" to warn Pip about Estella - his friendship puts Pip\'s welfare before his own comfort.',
       },

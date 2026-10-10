@@ -200,10 +200,10 @@ const keyQuotes = [
   {
     quote:
       'In a word, I was too cowardly to do what I knew to be right, as I had been too cowardly to avoid doing what I knew to be wrong.',
-    chapter: 'Chapter 28',
+    chapter: 'Chapter 6',
     speaker: 'Pip (narrator)',
     analysis:
-      "Pip's devastating self-assessment of his treatment of Joe. The balanced syntax (too cowardly to do right / too cowardly to avoid wrong) exposes the moral paralysis caused by social ambition. Pip knows he is behaving badly but cannot stop because admitting Joe publicly would threaten his status as a gentleman. The word 'cowardly' is significant: Pip's failing is not ignorance but moral cowardice. This is one of the novel's most important moments of self-knowledge.",
+      "The older Pip's devastating verdict on his childhood silence towards Joe. The balanced syntax (too cowardly to do right / too cowardly to avoid wrong) pairs the silence with the theft itself: fear of the convict made him rob the pantry and take Joe's file, and fear of losing Joe's confidence now stops him confessing. Pip knows he ought to tell Joe the truth, but fears that Joe would 'think me worse than I was'. The word 'cowardly' is significant: Pip's failing is not ignorance but moral cowardice. The same pattern returns when ambition makes him ashamed of Joe, which makes this early passage one of the novel's most important moments of self-knowledge.",
   },
   {
     quote:
@@ -215,7 +215,7 @@ const keyQuotes = [
   },
   {
     quote:
-      'I am what you have made me. Take all the praise, take all the blame; take all the success, take all the failure; in a word, take me.',
+      'I am what you have made me. Take all the praise, take all the blame; take all the success, take all the failure; in short, take me.',
     chapter: 'Chapter 38',
     speaker: 'Estella to Miss Havisham',
     analysis:
@@ -223,7 +223,7 @@ const keyQuotes = [
   },
   {
     quote:
-      'He calls the knaves, Jacks, this boy! And what coarse hands he has! And what thick boots!',
+      'He calls the knaves, Jacks, this boy! ... And what coarse hands he has! And what thick boots!',
     chapter: 'Chapter 8',
     speaker: 'Estella',
     analysis:
@@ -237,11 +237,11 @@ const keyQuotes = [
       "Joe's simple but profound observation uses the language of the forge ('welded') to describe human experience. The metaphor transforms loss into something constructive: partings are not simply breaks but are joined together to make a whole life. The warmth of 'dear old chap' contrasts painfully with Pip's cold reception of Joe in London. Joe's wisdom, expressed in the language of manual labour, challenges the assumption that education and class produce superior insight.",
   },
   {
-    quote: 'I want to be a gentleman... I am ashamed of home.',
+    quote: 'I want to be a gentleman... I am disgusted with my calling and with my life.',
     chapter: 'Chapter 17',
     speaker: 'Pip',
     analysis:
-      "Pip's confession to Biddy is the novel's turning point in terms of character. The brevity of 'I am ashamed of home' is devastating in its honesty. Biddy rightly questions whether Estella is 'worth' this self-rejection. Pip's shame is not innate but learned: it was installed by Estella's contempt. Dickens shows how class ideology operates: it convinces people to despise their own origins and to seek validation from those who despise them.",
+      "Pip's confession to Biddy is the novel's turning point in terms of character. The bluntness of 'I am disgusted with my calling and with my life' is devastating in its honesty. Biddy rightly questions whether Estella is 'worth' this self-rejection. Pip's shame is not innate but learned: it was installed by Estella's contempt. Dickens shows how class ideology operates: it convinces people to despise their own origins and to seek validation from those who despise them.",
   },
   {
     quote: 'It is a most miserable thing to feel ashamed of home.',
@@ -282,11 +282,11 @@ const keyQuotes = [
   },
   {
     quote:
-      'There was a long hard time when I kept far from me the remembrance of what I had thrown away when I was quite ignorant of its worth.',
-    chapter: 'Chapter 58',
-    speaker: 'Pip (narrator)',
+      'There was a long hard time when I kept far from me, the remembrance of what I had thrown away when I was quite ignorant of its worth.',
+    chapter: 'Chapter 59',
+    speaker: 'Estella',
     analysis:
-      "Pip reflects on his neglect of Joe and Biddy. The phrase 'quite ignorant of its worth' inverts the novel's central irony: Pip spent years trying to acquire 'worth' through wealth and status while discarding the genuine worth of Joe's love. The word 'thrown away' implies reckless waste. This is a key moment of anagnorisis (self-recognition) in which the older Pip fully comprehends the cost of his younger self's snobbery.",
+      "Estella, meeting Pip again on the site of Satis House, admits what she rejected. 'What I had thrown away' is Pip's love, and the phrase 'quite ignorant of its worth' inverts the novel's central irony: Pip spent years trying to acquire 'worth' through wealth and status, while Estella, raised by Miss Havisham to break hearts, threw away the love he offered her. The phrase 'thrown away' implies reckless waste. This is Estella's moment of anagnorisis (self-recognition), and it mirrors Pip's: both learn the value of what they discarded only after losing it.",
   },
   {
     quote:

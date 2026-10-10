@@ -17,6 +17,7 @@ import { getAllPrintables, isPublished } from '@/lib/printables/list'
 import staticRoutes from '@/lib/seo/static-routes.json'
 import ROUTE_LASTMOD from '@/lib/seo/route-lastmod.json'
 import { modelEssayRoutes } from '@/lib/revision/model-essays'
+import { SERVED_BY_CHAPTER, chapterHref } from '@/lib/revision/served-by-chapter'
 
 // ============================================================
 // Sitemap — filesystem-driven since 2026-06-10.
@@ -186,6 +187,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // these pages too: they are real page.tsx files.
   for (const slug of PLACEHOLDER_TEXT_SLUGS) {
     if (guideElsewhere(slug)) entries.delete(`/revision/texts/${slug}`)
+  }
+
+  // The chapters of the long novels the reader serves a chapter to a page
+  // (src/lib/revision/served-by-chapter.ts). Each book's /read contents page is
+  // a real page.tsx and is in the static scan; its chapters are a dynamic
+  // segment the scan cannot see, so they are listed from the counts here.
+  for (const [slug, chapters] of Object.entries(SERVED_BY_CHAPTER)) {
+    for (let n = 1; n <= chapters; n++) {
+      add(chapterHref(slug, n), { priority: 0.4, changeFrequency: 'yearly' })
+    }
   }
 
   // The board shelves: /set-texts/<board>, one per specification.

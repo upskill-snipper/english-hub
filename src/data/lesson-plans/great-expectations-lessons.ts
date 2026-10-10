@@ -192,7 +192,7 @@ const lesson2: LessonPlan = {
       title: 'Gothic Description: Analysing Satis House',
       duration: '20 minutes',
       instructions:
-        'Students read the extract describing Pip\'s arrival at Satis House (Chapter 8). Teacher highlights key Gothic elements: darkness ("no glimpse of daylight"), decay ("the cold wind seemed to blow colder there than outside the gate"), and the stopped clocks ("I saw that her watch had stopped at twenty minutes to nine, and that a clock in the room had stopped at twenty minutes to nine"). Students complete a table with three columns: Quotation | Technique | Effect on Reader. Teacher models one row, then students work independently. Class discussion: What does the stopped time symbolise? How does Dickens use the house as an extension of Miss Havisham\'s psychology?',
+        'Students read the extract describing Pip\'s arrival at Satis House (Chapter 8). Teacher highlights key Gothic elements: darkness ("no glimpse of daylight"), decay ("the cold wind seemed to blow colder there than outside the gate"), and the stopped clocks (Pip "saw that her watch had stopped at twenty minutes to nine, and that a clock in the room had stopped at twenty minutes to nine"). Students complete a table with three columns: Quotation | Technique | Effect on Reader. Teacher models one row, then students work independently. Class discussion: What does the stopped time symbolise? How does Dickens use the house as an extension of Miss Havisham\'s psychology?',
       differentiation: {
         support:
           'Provide quotations pre-selected with technique names in a word bank; students focus on writing the "effect" column.',
@@ -320,7 +320,7 @@ const lesson3: LessonPlan = {
     title: "Before and After: Pip's Journey",
     duration: '8 minutes',
     instructions:
-      'Display two quotations side by side. Young Pip: "I was too coarse and common." London Pip (to Joe): "I was not at all pleased by the arrival of Joe." Students discuss: How has Pip changed? Is this a positive or negative change? Teacher introduces the concept of a bildungsroman and the question at the heart of Pip\'s story - does becoming a gentleman make you a better person?',
+      'Display two quotations side by side. Young Pip, on his home: "Now, it was all coarse and common." London Pip, on Joe\'s coming visit: "If I could have kept him away by paying money, I certainly would have paid money." Students discuss: How has Pip changed? Is this a positive or negative change? Teacher introduces the concept of a bildungsroman and the question at the heart of Pip\'s story - does becoming a gentleman make you a better person?',
     differentiation: {
       support:
         'Provide a simple comparison table: "Pip at the Forge" vs "Pip in London" with guiding prompts.',
@@ -599,7 +599,7 @@ const lesson5: LessonPlan = {
       title: "Pip's Guilt: A Textual Journey",
       duration: '20 minutes',
       instructions:
-        'Students examine three key moments of Pip\'s guilt: (1) Stealing food for Magwitch as a child - "the guilty knowledge that I was going to rob Mrs Joe"; (2) Being ashamed of Joe when he receives his expectations - the guilt of ingratitude; (3) Realising Magwitch, not Miss Havisham, is his benefactor - "the sharpest and deepest pain of all." For each moment, students analyse a key quotation using the structure: What is Pip guilty about? How does Dickens convey this guilt through language? What does this guilt reveal about Pip\'s moral development? Students write one analytical paragraph on the moment they find most significant.',
+        'Students examine three key moments of Pip\'s guilt: (1) Stealing food for Magwitch as a child - "the guilty knowledge that I was going to rob Mrs Joe"; (2) Being ashamed of Joe when he receives his expectations - the guilt of ingratitude; (3) Realising Magwitch, not Miss Havisham, is his benefactor - "sharpest and deepest pain of all." For each moment, students analyse a key quotation using the structure: What is Pip guilty about? How does Dickens convey this guilt through language? What does this guilt reveal about Pip\'s moral development? Students write one analytical paragraph on the moment they find most significant.',
       differentiation: {
         support: 'Provide the three quotations pre-selected with guided annotation questions.',
         core: 'Students analyse all three moments and choose the most significant for their paragraph.',
@@ -1117,7 +1117,7 @@ const lesson9: LessonPlan = {
       title: 'Magwitch vs Compeyson: Justice and Class',
       duration: '22 minutes',
       instructions:
-        'Students examine the courtroom scene where Magwitch and Compeyson are tried together (Chapter 42). Key detail: Compeyson, the gentleman, received a lighter sentence than Magwitch, the uneducated labourer, despite Compeyson being the mastermind. Students create a comparison table covering: social class, role in the crime, appearance in court, sentence received, and Dickens\'s purpose. Key quotation from Magwitch: "And when we was put in the dock, I noticed first of all what a gentleman Compeyson looked, wi\' his curly hair and his black clothes and his white pocket-handkercher." Students analyse how appearance and class determined legal outcomes. Write a paragraph: "How does Dickens use the contrast between Magwitch and Compeyson to critique the Victorian justice system?"',
+        'Students examine the courtroom scene where Magwitch and Compeyson are tried together (Chapter 42). Key detail: Compeyson, the gentleman, received a lighter sentence than Magwitch, the uneducated labourer, despite Compeyson being the mastermind. Students create a comparison table covering: social class, role in the crime, appearance in court, sentence received, and Dickens\'s purpose. Key quotation from Magwitch: "When we was put in the dock, I noticed first of all what a gentleman Compeyson looked, wi\' his curly hair and his black clothes and his white pocket-handkercher." Students analyse how appearance and class determined legal outcomes. Write a paragraph: "How does Dickens use the contrast between Magwitch and Compeyson to critique the Victorian justice system?"',
       differentiation: {
         support:
           'Provide the comparison table partially completed and a paragraph frame for the writing task.',
@@ -1305,7 +1305,7 @@ const lesson10: LessonPlan = {
         'Write a single analytical paragraph responding to: "How does Dickens present Pip\'s shame about his social background?"',
       lines: 6,
       modelAnswer:
-        'Dickens presents Pip\'s shame as a destructive force that separates him from the people who genuinely love him. After visiting Satis House, Pip becomes acutely conscious of his "coarse hands" and "thick boots," internalising Estella\'s contempt as self-hatred. The adjectives "coarse" and "thick" carry connotations of roughness and stupidity, reducing Pip\'s identity to his working-class physicality. His shame deepens when he receives his "great expectations" and begins to view Joe as an embarrassment rather than a friend: "I wished I could have kept him away." Dickens uses the retrospective narrator to reveal Pip\'s later regret - "I had neither the good sense nor the good feeling to know that this was all my fault" - showing that shame blinded Pip to his own cruelty. Dickens\'s message is that class-based shame is a poison that corrodes authentic relationships, and that recognising this truth is the first step towards genuine moral growth.',
+        'Dickens presents Pip\'s shame as a destructive force that separates him from the people who genuinely love him. After visiting Satis House, Pip becomes acutely conscious of his "coarse hands" and "thick boots," internalising Estella\'s contempt as self-hatred. The adjectives "coarse" and "thick" carry connotations of roughness and stupidity, reducing Pip\'s identity to his working-class physicality. His shame deepens when he receives his "great expectations" and begins to view Joe as an embarrassment rather than a friend: "If I could have kept him away by paying money, I certainly would have paid money." Dickens uses the retrospective narrator to reveal Pip\'s later regret - "I had neither the good sense nor the good feeling to know that this was all my fault" - showing that shame blinded Pip to his own cruelty. Dickens\'s message is that class-based shame is a poison that corrodes authentic relationships, and that recognising this truth is the first step towards genuine moral growth.',
       marks: 8,
     },
     {

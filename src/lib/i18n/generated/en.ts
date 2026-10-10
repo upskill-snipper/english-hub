@@ -19921,6 +19921,11 @@ export const EN_MESSAGES: Record<string, string> = {
   'textnav.off_board_hint': 'Your board does not set this text. You can still read it.',
   'fulltext.crumb': 'Full text',
   'fulltext.back_to_guide': 'Back to the study guide',
+  'fulltext.all_chapters': 'All chapters',
+  'fulltext.start_reading': 'Start reading',
+  'fulltext.carry_on_reading': 'Carry on reading',
+  'fulltext.next_chapter': 'Next chapter',
+  'fulltext.previous_chapter': 'Previous chapter',
   'fulltext.rights.play':
     'This work is out of copyright in the UK, so we can publish it in full. The text is a copy of a published modern-spelling edition of the play, not a retyping.',
   'fulltext.rights.edition':

@@ -208,9 +208,9 @@ const prideAndPrejudiceModules: CourseModule[] = [
 <h3>Elizabeth Bennet</h3>
 <p>Elizabeth is the novel's protagonist and moral centre. Austen constructs her as intelligent, witty, and independent - qualities that set her apart from the conventional heroines of the period. However, Elizabeth is also flawed: her <strong>quick judgments and intellectual vanity</strong> lead her to misjudge both Darcy and Wickham.</p>
 
-<p>Elizabeth's defining characteristic is her <em>"liveliness of mind"</em> - a phrase Darcy uses to describe what first attracted him to her. This intellectual vitality is both her greatest strength and her greatest vulnerability. She prides herself on her ability to read people, yet she reads Darcy and Wickham completely wrong.</p>
+<p>Elizabeth's defining characteristic is what Darcy calls <em>"the liveliness of your mind"</em> - what he says he admired in her, when she asks him to account for falling in love with her. This intellectual vitality is both her greatest strength and her greatest vulnerability. She prides herself on her ability to read people, yet she reads Darcy and Wickham completely wrong.</p>
 
-<p>Her arc is one of <strong>self-recognition</strong>. After reading Darcy's letter, she exclaims: <em>"Till this moment I never knew myself."</em> This is the emotional and moral climax of her journey - the moment she recognises that her prejudice has been as damaging as Darcy's pride.</p>
+<p>Her arc is one of <strong>self-recognition</strong>. After reading Darcy's letter, she exclaims: <em>"Till this moment, I never knew myself."</em> This is the emotional and moral climax of her journey - the moment she recognises that her prejudice has been as damaging as Darcy's pride.</p>
 
 <div class="key-term"><strong>Key Term: Free Indirect Discourse</strong> - A narrative technique in which the narrator's voice merges with a character's thoughts. Austen uses this extensively with Elizabeth, allowing us to share her perceptions while also recognising, through subtle irony, when those perceptions are wrong.</div>
 
@@ -241,7 +241,7 @@ const prideAndPrejudiceModules: CourseModule[] = [
       {
         id: 'igcse-classic-pp-m3-q1',
         question:
-          'What is the significance of Elizabeth\'s statement "Till this moment I never knew myself"?',
+          'What is the significance of Elizabeth\'s statement "Till this moment, I never knew myself"?',
         options: [
           'She realises she has forgotten important personal details',
           "It marks the climax of her self-recognition, acknowledging that her prejudice has been as damaging as Darcy's pride",
@@ -304,7 +304,7 @@ const prideAndPrejudiceModules: CourseModule[] = [
 
 <h3>Prejudice</h3>
 <p>Prejudice in the novel takes the form of <strong>premature judgment</strong> - forming opinions based on insufficient evidence. Elizabeth's prejudice against Darcy is rooted in his initial slight and reinforced by Wickham's lies. Darcy's prejudice against Elizabeth's family is rooted in their lack of social standing and Mrs Bennet's embarrassing behaviour.</p>
-<p>The novel demonstrates that prejudice is not merely an intellectual error but a <strong>moral failure</strong>. It prevents genuine understanding and leads to injustice. Elizabeth's recognition of her own prejudice - <em>"How despicably I have acted! ... I, who have prided myself on my discernment!"</em> - is presented as a moment of moral awakening.</p>
+<p>The novel demonstrates that prejudice is not merely an intellectual error but a <strong>moral failure</strong>. It prevents genuine understanding and leads to injustice. Elizabeth's recognition of her own prejudice - <em>"How despicably have I acted! ... I, who have prided myself on my discernment!"</em> - is presented as a moment of moral awakening.</p>
 
 <h3>Marriage</h3>
 <p>Marriage is the novel's dominant structural and thematic concern. Austen presents a <strong>spectrum of marriages</strong>:</p>
@@ -400,7 +400,7 @@ const prideAndPrejudiceModules: CourseModule[] = [
 
 <h3>Free Indirect Discourse</h3>
 <p>This is perhaps Austen's most important stylistic innovation. Consider this passage describing Elizabeth's reaction to Darcy's letter:</p>
-<p><em>"She grew absolutely ashamed of herself. Of neither Darcy nor Wickham could she think without feeling she had been blind, partial, prejudiced, absurd."</em></p>
+<p><em>"She grew absolutely ashamed of herself.—Of neither Darcy nor Wickham could she think, without feeling that she had been blind, partial, prejudiced, absurd."</em></p>
 <p>This is not direct speech (Elizabeth does not say these words aloud) nor is it pure narration (the emotional intensity belongs to Elizabeth). The narrator and character merge, creating a uniquely intimate and yet critically distanced perspective. FID allows Austen to <strong>simultaneously convey and evaluate</strong> a character's thoughts.</p>
 
 <h3>Dialogue</h3>
@@ -782,7 +782,7 @@ const greatExpectationsModules: CourseModule[] = [
 <p>Dickens uses Miss Havisham as a study in <strong>the destructive power of arrested development</strong>. By refusing to move beyond her moment of trauma, she has corrupted herself and everyone around her. Her late recognition of the damage she has caused - <em>"What have I done!"</em> - is one of the novel's most tragic moments.</p>
 
 <h3>Estella</h3>
-<p>Estella is Miss Havisham's weapon - <em>"raised to wreak revenge on all the male sex."</em> She is beautiful but emotionally frozen, trained to attract men and then destroy them. Dickens presents her as both a <strong>victim of Miss Havisham's manipulation</strong> and a character who must eventually find her own humanity.</p>
+<p>Estella is Miss Havisham's weapon - in Herbert's words, she has been <em>"brought up by Miss Havisham to wreak revenge on all the male sex."</em> She is beautiful but emotionally frozen, trained to attract men and then destroy them. Dickens presents her as both a <strong>victim of Miss Havisham's manipulation</strong> and a character who must eventually find her own humanity.</p>
 
 <p>The revelation that Estella is Magwitch's daughter is one of the novel's most powerful ironies: the woman Pip idolises as the pinnacle of gentility is the child of a convict, just as Pip's own gentility is funded by that same convict.</p>
 

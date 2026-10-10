@@ -556,8 +556,10 @@ describe('verse is marked for its hanging indent, and prose is not', () => {
         expect(stray(parseSectionHtml(laid).nodes, false), `${slug} ${s.id}`).toBe(0)
       }
     }
-    // 31 since 2 October 2026, when The Great Gatsby joined.
-    expect(texts).toBe(31)
+    // 31 since 2 October 2026, when The Great Gatsby joined; 34 since
+    // 10 October, when Pride and Prejudice, Great Expectations and Jane Eyre
+    // joined, served a chapter to a page.
+    expect(texts).toBe(34)
     // Every line of verse in the thirteen plays and the poems, and each
     // speaker’s name above a speech in verse: 41,068 on 27 September 2026, of
     // them 9,793 names.

@@ -112,7 +112,7 @@ const KEY_QUOTES: KeyQuote[] = [
     quote:
       '"I wished Joe had been rather more genteelly brought up, and then I should have been so too."',
     speaker: 'Pip (narrator)',
-    chapter: 'Chapter 15',
+    chapter: 'Chapter 8',
     themes: ['Social Class', 'Loyalty'],
     analysis:
       'Pip wishes for a different upbringing - effectively wishing to be a different person. The conditional "should have been" reveals how deeply he has internalised the belief that identity is determined by class. Rather than changing himself, he wishes his guardian had been changed for him. Dickens shows class ideology distorting not just perception but imagination.',
@@ -171,7 +171,7 @@ const KEY_QUOTES: KeyQuote[] = [
     quote:
       "\"I've come to the old country fur to see my gentleman spend his money like a gentleman. That'll be my pleasure. My pleasure 'ull be fur to see him do it.\"",
     speaker: 'Magwitch',
-    chapter: 'Chapter 39',
+    chapter: 'Chapter 40',
     themes: ['Social Class', 'Loyalty'],
     analysis:
       'The repetition of "gentleman" becomes almost satirical - the word has been emptied of meaning. Magwitch\'s possessive pride ("my gentleman") reveals that he sees Pip as a living trophy, a proof of his own worth. Dickens makes us see that Magwitch\'s devotion, though genuine, is also a form of objectification. Pip is not loved for who he is but for what he represents.',

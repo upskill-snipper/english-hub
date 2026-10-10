@@ -14,7 +14,7 @@ const characters = [
   {
     name: 'Estella',
     description:
-      "Miss Havisham's adopted daughter, raised from infancy to break men's hearts as an instrument of revenge. Estella is cold, proud, and contemptuous of Pip's low origins, yet she repeatedly warns him that she has 'no heart' and cannot love. She is both victim and weapon: Havisham has deliberately suppressed her capacity for emotion. Her marriage to the brutal Drummle - chosen precisely because it will cause suffering - demonstrates her self-destructive obedience to Havisham's programme. Estella's true parentage (daughter of Magwitch and Molly) creates a profound irony: she is no more 'genteel' by birth than Pip. In the revised ending, her suffering has given her 'a heart to understand what my heart used to be', suggesting that empathy can be learned through pain.",
+      "Miss Havisham's adopted daughter, raised from infancy to break men's hearts as an instrument of revenge. Estella is cold, proud, and contemptuous of Pip's low origins, yet she repeatedly warns him that she has 'no heart' and cannot love. She is both victim and weapon: Havisham has deliberately suppressed her capacity for emotion. Her marriage to the brutal Drummle - chosen precisely because it will cause suffering - demonstrates her self-destructive obedience to Havisham's programme. Estella's true parentage (daughter of Magwitch and Molly) creates a profound irony: she is no more 'genteel' by birth than Pip. In the revised ending, she tells Pip that suffering 'has taught me to understand what your heart used to be', suggesting that empathy can be learned through pain.",
   },
   {
     name: 'Miss Havisham',
@@ -90,15 +90,15 @@ const partSummary = [
       },
       {
         quote:
-          'He calls the knaves, Jacks, this boy! And what coarse hands he has! And what thick boots!',
+          'He calls the knaves, Jacks, this boy! ... And what coarse hands he has! And what thick boots!',
         analysis:
           "Estella's contempt awakens Pip's class consciousness. The tricolon of disdainful observations reduces Pip to his social markers. Dickens shows how the upper class dehumanises the poor through language, and how internalising this judgement distorts Pip's sense of self-worth.",
       },
       {
         quote:
-          'I took the opportunity of being alone in the courtyard, to look at my coarse hands and my common boots. I had never thought of being ashamed of my hands before.',
+          'I took the opportunity of being alone in the courtyard, to look at my coarse hands and my common boots. My opinion of those accessories was not favourable. They had never troubled me before, but they troubled me now, as vulgar appendages.',
         analysis:
-          "A pivotal moment: Pip adopts Estella's perspective and begins to see himself through the lens of class. 'I had never thought of being ashamed' reveals that shame is not natural but socially constructed. Satis House has infected Pip with a dissatisfaction that will drive the entire novel.",
+          "A pivotal moment: Pip adopts Estella's perspective and begins to see himself through the lens of class. 'They had never troubled me before' reveals that shame is not natural but socially constructed. Satis House has infected Pip with a dissatisfaction that will drive the entire novel.",
       },
     ],
   },

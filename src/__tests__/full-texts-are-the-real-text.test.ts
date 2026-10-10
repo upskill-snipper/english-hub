@@ -115,7 +115,7 @@ function dataFor(slug: string): string {
 }
 
 describe('the texts are there', () => {
-  it('has thirteen plays, nine prose works and nine poems', () => {
+  it('has thirteen plays, twelve prose works and nine poems', () => {
     // 26 September 2026: Animal Farm (from Project Gutenberg Australia) and Do
     // not go gentle (from the Pearson anthology) joined, once the site began
     // judging copyright by UK law only.
@@ -135,8 +135,13 @@ describe('the texts are there', () => {
     // for Fitzgerald's "orgastic", which would have pulled the site's correct
     // quotations away from what he published. Its 10 misquotations across the
     // site were corrected in the same change.
+    //
+    // 10 October 2026: Pride and Prejudice, Great Expectations and Jane Eyre
+    // joined as the tenth to twelfth, served a chapter to a page because of
+    // their length (src/lib/revision/served-by-chapter.ts). Why each edition
+    // was chosen is in scripts/fetch-public-domain-prose.mjs.
     expect(PLAYS).toHaveLength(13)
-    expect(PROSE).toHaveLength(9)
+    expect(PROSE).toHaveLength(12)
     expect(POEMS).toHaveLength(9)
   })
 
@@ -249,6 +254,10 @@ describe('the prose works parse to their real chapter counts', () => {
     ['the-scarlet-letter', 24],
     // The 1831 Introduction, the Preface, four letters and 24 chapters.
     ['frankenstein', 30],
+    // Numbered straight through, whatever volume each edition prints them in.
+    ['pride-and-prejudice', 61],
+    ['great-expectations', 59],
+    ['jane-eyre', 38],
   ])('%s has %i sections', (slug, count) => {
     const sections = [...dataFor(slug).matchAll(/["']?id["']?:\s*["']section-\d+["']/g)].length
     expect(sections).toBe(count)

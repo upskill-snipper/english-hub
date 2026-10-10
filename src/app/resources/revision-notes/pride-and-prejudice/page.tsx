@@ -166,8 +166,8 @@ export default function PrideAndPrejudicePage() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Elizabeth reads Darcy&apos;s letter and is forced to acknowledge her own prejudice.
               She realises she judged Darcy harshly and Wickham favourably based on charm rather
-              than evidence. &ldquo;Till this moment I never knew myself,&rdquo; she admits. This is
-              the novel&apos;s turning point. She visits Pemberley, Darcy&apos;s estate, with the
+              than evidence. &ldquo;Till this moment, I never knew myself,&rdquo; she admits. This
+              is the novel&apos;s turning point. She visits Pemberley, Darcy&apos;s estate, with the
               Gardiners (her sensible uncle and aunt). The house and grounds impress her, and Darcy
               appears unexpectedly, behaving with warmth and courtesy.
             </p>
@@ -256,7 +256,7 @@ export default function PrideAndPrejudicePage() {
           />
           <ThemeCard
             title="Prejudice"
-            description="Elizabeth prejudges Darcy based on his behaviour at the ball and Wickham's lies. Her prejudice is reinforced by her pride in her own judgement -- she cannot admit she was wrong. Darcy prejudges Elizabeth's family as beneath him. Both must overcome their prejudices to find happiness. Austen shows that prejudice is not simply ignorance but a failure of self-knowledge: we judge others harshly when we refuse to examine our own biases. Elizabeth's moment of recognition -- 'Till this moment I never knew myself' -- is the novel's emotional and thematic climax."
+            description="Elizabeth prejudges Darcy based on his behaviour at the ball and Wickham's lies. Her prejudice is reinforced by her pride in her own judgement -- she cannot admit she was wrong. Darcy prejudges Elizabeth's family as beneath him. Both must overcome their prejudices to find happiness. Austen shows that prejudice is not simply ignorance but a failure of self-knowledge: we judge others harshly when we refuse to examine our own biases. Elizabeth's moment of recognition -- 'Till this moment, I never knew myself' -- is the novel's emotional and thematic climax."
           />
           <ThemeCard
             title="Love and Marriage"
@@ -295,7 +295,7 @@ export default function PrideAndPrejudicePage() {
             analysis="Darcy's dismissal of Elizabeth at the Meryton ball. 'Tolerable' is devastatingly faint praise -- it acknowledges competence while denying attraction. 'Tempt me' implies that Darcy sees himself as above temptation, revealing his social pride. This line establishes the 'prejudice' that both characters must overcome. Austen gives Darcy the most insulting possible introduction, making his later transformation all the more dramatic."
           />
           <QuoteCard
-            quote="Till this moment I never knew myself."
+            quote="Till this moment, I never knew myself."
             speaker="Elizabeth"
             analysis="Elizabeth's moment of anagnorisis (self-recognition) after reading Darcy's letter. She realises her pride in her own judgement was a form of vanity, and her prejudice against Darcy was based on wounded ego and Wickham's charm. This single sentence encapsulates the novel's moral argument: self-knowledge is the prerequisite for good judgement, genuine love, and moral growth. It is the pivot on which the entire plot turns."
           />
@@ -350,9 +350,9 @@ export default function PrideAndPrejudicePage() {
             analysis="Darcy's crucial self-assessment near the novel's end. He distinguishes between his moral principles (which were sound) and his behaviour (which was not). 'In practice, though not in principle' is a devastatingly honest distinction -- he was taught 'right principles' but 'left to follow them in pride and conceit.' Austen argues that good principles without good behaviour are worthless."
           />
           <QuoteCard
-            quote="My courage always rises at every attempt to intimidate me."
+            quote="My courage always rises with every attempt to intimidate me."
             speaker="Elizabeth"
-            analysis="Elizabeth's response to Darcy's friend Colonel Fitzwilliam. This defines her character: she is defiant in the face of social pressure. It is both admirable (she will not be bullied) and slightly reckless (she sometimes fights battles she does not need to fight). The line foreshadows her rejection of Darcy's first proposal and her confrontation with Lady Catherine."
+            analysis="Elizabeth's retort to Darcy at Rosings, when he comes to stand by the instrument while she plays. This defines her character: she is defiant in the face of social pressure. It is both admirable (she will not be bullied) and slightly reckless (she sometimes fights battles she does not need to fight). The line foreshadows her rejection of Darcy's first proposal and her confrontation with Lady Catherine."
           />
           <QuoteCard
             quote="We all love to instruct, though we can teach only what is not worth knowing."
@@ -365,7 +365,7 @@ export default function PrideAndPrejudicePage() {
             analysis="Mr Bennet's philosophy of life as entertainment. While comic, this reveals his fundamental irresponsibility -- he treats his family's crises as amusing spectacles rather than problems requiring action. His detachment, while producing excellent wit, fails his daughters when they need him most. Austen implies that humour without engagement is a form of neglect."
           />
           <QuoteCard
-            quote="You showed me how insufficient were all my pretensions to please a woman worthy of being pleased."
+            quote="You shewed me how insufficient were all my pretensions to please a woman worthy of being pleased."
             speaker="Darcy"
             analysis="Darcy credits Elizabeth with his transformation. 'Pretensions' -- claims without justification -- is precisely the right word. His wealth, status, and connections, which he thought entitled him to any woman's acceptance, were 'insufficient' when confronted by Elizabeth's standards. 'A woman worthy of being pleased' elevates Elizabeth's judgement as the true measure of value, inverting the social hierarchy."
           />
@@ -380,7 +380,7 @@ export default function PrideAndPrejudicePage() {
             analysis="Darcy explains when he fell in love with Elizabeth. The sentence captures the unconscious nature of genuine love -- it is not a decision but a gradual process that becomes apparent only in retrospect. This contrasts with his first proposal, where he tried to rationalise and control his feelings. By the second proposal, he accepts love as something that happened to him naturally."
           />
           <QuoteCard
-            quote="Vanity and pride are different things, though the words are often used synonymously. A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us."
+            quote="Vanity and pride are different things, though the words are often used synonimously. A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us."
             speaker="Mary Bennet"
             analysis="Mary's pedantic distinction is comic in context (she is the least socially aware Bennet sister), but it is thematically essential. Darcy is proud but not vain -- he cares about his own standards, not others' opinions. Elizabeth is vain but calls it pride -- her 'fine eyes' and wit give her a sense of superiority that she mistakes for principled judgement. Austen uses the least perceptive character to state the novel's most important thematic distinction."
           />

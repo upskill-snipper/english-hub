@@ -1,7 +1,9 @@
 'use client'
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
+import Link from 'next/link'
 import { EnglishText } from '@/components/i18n/EnglishText'
+import type { BookChapter } from '@/lib/revision/served-by-chapter'
 import { sanitiseHtml } from '@/lib/html/sanitise'
 import { ReadingProgressTracker } from './ReadingProgressTracker'
 import { BLOCK_TAGS, decodeEntities, parseSectionHtml, type HtmlNode } from './section-html'
@@ -79,6 +81,13 @@ interface InteractiveTextViewerProps {
    * 2026; they were the only pages on the site with more than one.
    */
   titleAs?: 'h1' | 'h2'
+  /**
+   * A long book served a chapter to a page (src/lib/revision/served-by-chapter.ts):
+   * the whole book's contents, while `data` holds only this page's chapter.
+   * The contents then link to the other chapters' pages, and the progress and
+   * the end of the chapter count the whole book, not the one chapter here.
+   */
+  book?: { chapters: BookChapter[] }
 }
 
 // ─── Constants ───────────────────────────────────────────────────────────────
@@ -618,16 +627,46 @@ function withHighlights(nodes: HtmlNode[], highlights: Highlight[]): React.React
 
 // ─── Section navigation sidebar (desktop) ────────────────────────────────────
 
+/**
+ * One entry in the contents: a button that scrolls the reader to a section on
+ * this page, or, for a book served a chapter to a page, a link to a chapter on
+ * another (`href`). A link and not a scripted jump, so it can be opened in a
+ * new tab and followed without JavaScript.
+ */
+function ContentsEntry({
+  href,
+  onSelect,
+  className,
+  children,
+}: {
+  href?: string
+  onSelect: () => void
+  className: string
+  children: React.ReactNode
+}) {
+  return href ? (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  ) : (
+    <button onClick={onSelect} className={className}>
+      {children}
+    </button>
+  )
+}
+
 function SectionSidebar({
   sections,
   activeSectionId,
   completedSections,
   onSelect,
+  hrefFor,
 }: {
-  sections: TextSection[]
+  sections: Pick<TextSection, 'id' | 'title'>[]
   activeSectionId: string
   completedSections: Set<string>
   onSelect: (id: string) => void
+  hrefFor?: (id: string) => string | undefined
 }) {
   const t = useT()
   return (
@@ -643,9 +682,10 @@ function SectionSidebar({
         const isComplete = completedSections.has(section.id)
 
         return (
-          <button
+          <ContentsEntry
             key={section.id}
-            onClick={() => onSelect(section.id)}
+            href={hrefFor?.(section.id)}
+            onSelect={() => onSelect(section.id)}
             className={[
               'flex items-center gap-2 rounded-lg px-3 py-2 text-start text-sm transition-colors',
               isActive
@@ -665,7 +705,7 @@ function SectionSidebar({
               </span>
             )}
             <span className="truncate">{section.title}</span>
-          </button>
+          </ContentsEntry>
         )
       })}
     </nav>
@@ -679,11 +719,13 @@ function SectionDropdown({
   activeSectionId,
   completedSections,
   onSelect,
+  hrefFor,
 }: {
-  sections: TextSection[]
+  sections: Pick<TextSection, 'id' | 'title'>[]
   activeSectionId: string
   completedSections: Set<string>
   onSelect: (id: string) => void
+  hrefFor?: (id: string) => string | undefined
 }) {
   const t = useT()
   const [open, setOpen] = useState(false)
@@ -709,9 +751,10 @@ function SectionDropdown({
             const isComplete = completedSections.has(section.id)
 
             return (
-              <button
+              <ContentsEntry
                 key={section.id}
-                onClick={() => {
+                href={hrefFor?.(section.id)}
+                onSelect={() => {
                   onSelect(section.id)
                   setOpen(false)
                 }}
@@ -724,7 +767,7 @@ function SectionDropdown({
               >
                 {isComplete && <CheckCircleIcon className="h-4 w-4 flex-shrink-0 text-primary" />}
                 <span className="truncate">{section.title}</span>
-              </button>
+              </ContentsEntry>
             )
           })}
         </div>
@@ -934,8 +977,25 @@ function InteractiveTextViewer({
   storageKey,
   className = '',
   titleAs: TitleTag = 'h1',
+  book,
 }: InteractiveTextViewerProps) {
   const t = useT()
+  // What the contents list and the progress count: this page's sections, or,
+  // for a book served a chapter to a page, every chapter of the book. Only the
+  // chapter on this page scrolls; the others are links to their own pages.
+  const contents: Pick<TextSection, 'id' | 'title'>[] = book?.chapters ?? data.sections
+  const hrefFor = useMemo(() => {
+    if (!book) return undefined
+    const here = data.sections[0]?.id
+    const hrefs = new Map(book.chapters.map((c) => [c.id, c.href]))
+    return (id: string) => (id === here ? undefined : hrefs.get(id))
+  }, [book, data.sections])
+  /** The chapters either side of this page's, in a book served by chapter. */
+  const turn = useMemo((): { previous?: BookChapter; next?: BookChapter } => {
+    const chapters = book?.chapters ?? []
+    const i = chapters.findIndex((c) => c.id === data.sections[0]?.id)
+    return i < 0 ? {} : { previous: chapters[i - 1], next: chapters[i + 1] }
+  }, [book, data.sections])
   // ── Persisted state ──────────────────────────────────────────────────────
   // Both start as the server renders them (nothing read, the first section)
   // and are restored from this browser's storage after mount, below.
@@ -993,8 +1053,11 @@ function InteractiveTextViewer({
 
   // ── Word counts and timing ───────────────────────────────────────────────
   const sectionWordCounts = useMemo(
-    () => data.sections.map((s) => ({ id: s.id, words: countWords(s.content) })),
-    [data.sections],
+    () =>
+      book
+        ? book.chapters.map((c) => ({ id: c.id, words: c.words }))
+        : data.sections.map((s) => ({ id: s.id, words: countWords(s.content) })),
+    [book, data.sections],
   )
 
   const totalWords = useMemo(
@@ -1095,7 +1158,10 @@ function InteractiveTextViewer({
     setCompletedSections(
       new Set(loadFromStorage<string[]>(getStorageKey(storageKey, 'completed'), [])),
     )
-    const last = loadFromStorage<string>(getStorageKey(storageKey, 'active'), '')
+    // A book served by chapter opens at the chapter on this page, whichever
+    // the reader last left: that one is on another page. Saving this one as
+    // the last opened is what lets the book's contents offer to carry on.
+    const last = book ? '' : loadFromStorage<string>(getStorageKey(storageKey, 'active'), '')
     const wanted = new URLSearchParams(window.location.search).get('section')
     const linked = data.sections.some((s) => s.id === wanted)
     const box = contentRef.current
@@ -1109,7 +1175,7 @@ function InteractiveTextViewer({
       }, 300)
     }
     setRestored(true)
-  }, [storageKey, data.sections])
+  }, [storageKey, data.sections, book])
 
   // A chapter guide's "Read this chapter in full" links to ?section=section-5.
   // Read after mount, so the server render and the first client render agree,
@@ -1174,7 +1240,7 @@ function InteractiveTextViewer({
               </TitleTag>
               <p className="text-xs text-muted-foreground">
                 {data.author} &middot; <span>{t(`text_viewer.type_${data.type}`)}</span> &middot;{' '}
-                {partsNamed(data)}{' '}
+                {book ? book.chapters.length : partsNamed(data)}{' '}
                 {data.type === 'play'
                   ? t('text_viewer.scenes')
                   : data.type === 'poem'
@@ -1212,7 +1278,7 @@ function InteractiveTextViewer({
           <ReadingProgressTracker
             percentage={percentage}
             sectionsCompleted={completedSections.size}
-            totalSections={data.sections.length}
+            totalSections={contents.length}
             estimatedMinutesRemaining={remainingMinutes}
             variant="bar"
           />
@@ -1241,10 +1307,11 @@ function InteractiveTextViewer({
       {/* ── Mobile section dropdown ─────────────────────────────────────── */}
       <div className="border-b border-border bg-card px-4 py-3 lg:hidden">
         <SectionDropdown
-          sections={data.sections}
+          sections={contents}
           activeSectionId={activeSectionId}
           completedSections={completedSections}
           onSelect={navigateToSection}
+          hrefFor={hrefFor}
         />
       </div>
 
@@ -1262,10 +1329,11 @@ function InteractiveTextViewer({
         {/* Desktop sidebar (the dropdown above serves narrower screens) */}
         <div className="hidden w-64 flex-shrink-0 overflow-y-auto lg:block">
           <SectionSidebar
-            sections={data.sections}
+            sections={contents}
             activeSectionId={activeSectionId}
             completedSections={completedSections}
             onSelect={navigateToSection}
+            hrefFor={hrefFor}
           />
         </div>
 
@@ -1318,18 +1386,38 @@ function InteractiveTextViewer({
             </section>
           ))}
 
-          {/* End of text */}
+          {/* End of text, or, in a book served a chapter to a page, the way on */}
           <div className="flex flex-col items-center gap-4 py-8 text-center">
-            <CheckCircleIcon className="h-8 w-8 text-brand-accent" />
-            <p className="text-sm font-semibold text-foreground">
-              {data.type === 'play'
-                ? t('text_viewer.end_of_play')
-                : data.type === 'poem'
-                  ? t('text_viewer.end_of_poem')
-                  : t('text_viewer.end_of_text')}
-            </p>
+            {book && turn.next ? (
+              <Link
+                href={turn.next.href}
+                className="inline-block max-w-full rounded-full bg-primary px-5 py-2.5 text-center text-sm font-medium text-primary-foreground hover:bg-primary/90"
+              >
+                {t('fulltext.next_chapter')}: <EnglishText as="span">{turn.next.title}</EnglishText>
+              </Link>
+            ) : (
+              <>
+                <CheckCircleIcon className="h-8 w-8 text-brand-accent" />
+                <p className="text-sm font-semibold text-foreground">
+                  {data.type === 'play'
+                    ? t('text_viewer.end_of_play')
+                    : data.type === 'poem'
+                      ? t('text_viewer.end_of_poem')
+                      : t('text_viewer.end_of_text')}
+                </p>
+              </>
+            )}
+            {book && turn.previous ? (
+              <Link
+                href={turn.previous.href}
+                className="text-sm text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
+              >
+                {t('fulltext.previous_chapter')}:{' '}
+                <EnglishText as="span">{turn.previous.title}</EnglishText>
+              </Link>
+            ) : null}
             <p className="text-xs text-muted-foreground">
-              {completedSections.size} {t('text_viewer.of')} {data.sections.length}{' '}
+              {completedSections.size} {t('text_viewer.of')} {contents.length}{' '}
               {t('text_viewer.sections_completed')}
             </p>
           </div>
@@ -1346,6 +1434,8 @@ function InteractiveTextViewer({
 
 export {
   InteractiveTextViewer,
+  getStorageKey,
+  loadFromStorage,
   type InteractiveTextViewerProps,
   type TextData,
   type TextSection,

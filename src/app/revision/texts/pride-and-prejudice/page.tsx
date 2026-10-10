@@ -245,13 +245,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Meeting Darcy at Pemberley',
-      'Reading Darcy\'s letter and realising "Till this moment I never knew myself"',
+      'Reading Darcy\'s letter and realising "Till this moment, I never knew myself"',
       "Lydia's elopement",
       'The second proposal',
     ],
     correctIndex: 1,
     explanation:
-      'After reading Darcy\'s letter, which reveals Wickham as a liar and explains his actions, Elizabeth has her moment of self-recognition: "Till this moment I never knew myself." She realises her pride in her own judgement was her greatest flaw.',
+      'After reading Darcy\'s letter, which reveals Wickham as a liar and explains his actions, Elizabeth has her moment of self-recognition: "Till this moment, I never knew myself." She realises her pride in her own judgement was her greatest flaw.',
     topic: 'Characters',
     difficulty: 'foundation',
   },
@@ -409,7 +409,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       "Darcy's pride in social position leads him to insult Elizabeth",
       "Elizabeth's pride in her own judgement makes her blind to Wickham's lies",
-      '"Till this moment I never knew myself" - Elizabeth\'s self-recognition',
+      '"Till this moment, I never knew myself" - Elizabeth\'s self-recognition',
       'Darcy learns humility; Elizabeth learns to question first impressions',
       'Self-knowledge is the foundation of moral growth',
     ],

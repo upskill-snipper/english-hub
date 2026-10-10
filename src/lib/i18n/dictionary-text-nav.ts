@@ -278,6 +278,32 @@ export const TEXT_NAV_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     ar: 'رجوع لدليل الدراسة',
     es: 'Volver a la guía de estudio',
   },
+  // A long novel served a chapter to a page (src/lib/revision/served-by-chapter.ts).
+  'fulltext.all_chapters': {
+    en: 'All chapters',
+    ar: 'كل الفصول',
+    es: 'Todos los capítulos',
+  },
+  'fulltext.start_reading': {
+    en: 'Start reading',
+    ar: 'ابدأ القراءة',
+    es: 'Empezar a leer',
+  },
+  'fulltext.carry_on_reading': {
+    en: 'Carry on reading',
+    ar: 'كمّل القراءة',
+    es: 'Seguir leyendo',
+  },
+  'fulltext.next_chapter': {
+    en: 'Next chapter',
+    ar: 'الفصل التالي',
+    es: 'Capítulo siguiente',
+  },
+  'fulltext.previous_chapter': {
+    en: 'Previous chapter',
+    ar: 'الفصل السابق',
+    es: 'Capítulo anterior',
+  },
   // The rights line under a held text's title, one per kind of source (see
   // src/components/study/rights-line.ts). Until 26 September 2026 one line,
   // "a published modern-spelling edition", was printed on every reader, and
