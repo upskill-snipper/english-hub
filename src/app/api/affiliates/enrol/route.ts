@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServiceRoleClient, createServerSupabaseClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { sendAffiliateWelcomeEmail } from '@/lib/email/affiliate-welcome'
+import { keepAlive } from '@/lib/keep-alive'
 
 // ─── POST /api/affiliates/enrol ────────────────────────────────────────────
 // Self-serve, instant-approve affiliate enrolment. No review queue.
@@ -224,8 +225,10 @@ export async function POST(request: NextRequest) {
 
     // Fire-and-forget welcome email. Never await - a mail-service outage
     // must not block the user from seeing their code. Logs delivery
-    // outcomes inside sendViaResend.
-    void sendAffiliateWelcomeEmail({
+    // outcomes inside sendViaResend. Kept alive past the response, which goes
+    // out next, so the send cannot be frozen with the function
+    // (src/lib/keep-alive.ts).
+    const welcome = sendAffiliateWelcomeEmail({
       toEmail: user.email,
       displayName: display,
       code: inserted.code,
@@ -234,6 +237,7 @@ export async function POST(request: NextRequest) {
     }).catch((err) => {
       console.warn('[affiliates/enrol] welcome email failed', err)
     })
+    keepAlive(welcome, '[affiliates/enrol] welcome email')
 
     return NextResponse.json({
       success: true,

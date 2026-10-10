@@ -3,6 +3,7 @@ import { prisma } from '@/lib/prisma'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { shouldBccTrustpilot } from '@/lib/trustpilot/should-bcc'
 import { sendViaResend } from '@/lib/email/resend'
+import { keepAlive } from '@/lib/keep-alive'
 
 // ─── Transport selection ────────────────────────────────────────────────
 //
@@ -166,10 +167,16 @@ export async function sendEmail(
     }
     const info = { messageId }
 
-    // Fire-and-forget - do not block the caller on the audit-row write.
+    // Fire-and-forget - do not block the caller on the audit-row write. But
+    // keep the function alive for it: the caller usually answers its request
+    // next, and a write left pending can be frozen with the function, losing
+    // the row that stops a second invite (src/lib/keep-alive.ts).
     if (trustpilotDecision) {
-      void recordTrustpilotOutcome(trustpilotDecision, info.messageId).catch((err) =>
-        console.warn('[email] trustpilot_invite row write failed', err),
+      keepAlive(
+        recordTrustpilotOutcome(trustpilotDecision, info.messageId).catch((err) =>
+          console.warn('[email] trustpilot_invite row write failed', err),
+        ),
+        '[email] trustpilot_invite row',
       )
     }
 

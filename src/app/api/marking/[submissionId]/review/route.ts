@@ -39,6 +39,7 @@ import { getCurrentMarker } from '@/lib/marker-auth'
 // anonymised training_data corpus (fire-and-forget below), which then feeds
 // live per-board calibration back into AI marking.
 import { prepareTrainingRecord } from '@/lib/training/prepare'
+import { keepAlive } from '@/lib/keep-alive'
 // Per-board access (Stage B): a marker may only review a row whose board they
 // are APPROVED for — not merely assigned. Closes the open-self-service hole.
 import { canMarkSubmission } from '@/lib/marker-board-access'
@@ -662,8 +663,14 @@ export async function handleReview(
     //     affects this response. Teacher/school/site-admin approvals are
     //     unchanged (handledByMarker is false for them).
     if (handledByMarker && decision === 'approve') {
-      void prepareTrainingRecord(subId).catch((err) =>
-        console.warn('[marking/review] auto-prepare training record failed', err),
+      // Kept alive past the response, so the corpus row and its
+      // training_prepare audit row are written, not frozen with the function
+      // (src/lib/keep-alive.ts).
+      keepAlive(
+        prepareTrainingRecord(subId).catch((err) =>
+          console.warn('[marking/review] auto-prepare training record failed', err),
+        ),
+        '[marking/review] training record',
       )
     }
 

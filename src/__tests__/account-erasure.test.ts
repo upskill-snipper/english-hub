@@ -182,6 +182,15 @@ vi.mock('@/lib/privacy/dormancy', () => ({
   processChildDormancy: vi.fn(),
 }))
 
+// The confirmation emails are handed to after() so they outlive the response
+// (src/lib/keep-alive.ts). The real after() throws outside a request; this
+// records what the route asked the platform to wait for.
+const afterMock = vi.hoisted(() => vi.fn())
+vi.mock('next/server', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('next/server')>()),
+  after: (task: unknown) => afterMock(task),
+}))
+
 // ─── Imports under test (after the mocks) ───────────────────────────────
 
 import { DELETE } from '@/app/api/account/delete/route'
@@ -215,6 +224,31 @@ function signedIn(): void {
     data: { user: { id: SUPABASE_UUID, email: SUBJECT_EMAIL } },
     error: null,
   })
+}
+
+/** Hold the next confirmation email in flight until the returned function is called. */
+function holdTheNextEmail(): () => void {
+  let release = () => {}
+  sendViaResend.mockImplementationOnce(
+    () =>
+      new Promise((resolve) => {
+        release = () => resolve({ sent: true, messageId: 'held' })
+      }),
+  )
+  return () => release()
+}
+
+/** Whether everything the route asked the platform to wait for has finished. */
+async function keptWorkHasFinished(): Promise<boolean> {
+  const states = afterMock.mock.calls.map(([task]) => {
+    const state = { done: false }
+    void (task as Promise<unknown>).then(() => {
+      state.done = true
+    })
+    return state
+  })
+  await new Promise((resolve) => setImmediate(resolve))
+  return states.length > 0 && states.every((s) => s.done)
 }
 
 beforeEach(() => {
@@ -302,6 +336,20 @@ describe('DELETE /api/account/delete - account with no Prisma row', () => {
     expect(email.to).toBe(SUBJECT_EMAIL)
     expect(email.subject).toMatch(/has been deleted/i)
     expect(email.text).not.toMatch(/scheduled for deletion/i)
+  })
+
+  it('answers at once, but keeps the function alive until that email has gone', async () => {
+    // FIXED 10 October 2026: the send was `void`, so on Vercel it could be
+    // frozen with the function once this response went (src/lib/keep-alive.ts).
+    const release = holdTheNextEmail()
+    const res = await DELETE(deleteRequest())
+
+    expect(res.status).toBe(200)
+    expect(sendViaResend).toHaveBeenCalledTimes(1)
+    expect(afterMock, 'nothing asked the platform to wait for the email').toHaveBeenCalled()
+    expect(await keptWorkHasFinished()).toBe(false)
+    release()
+    expect(await keptWorkHasFinished()).toBe(true)
   })
 })
 
@@ -437,6 +485,19 @@ describe('DELETE /api/account/delete - account with a Prisma row', () => {
     expect(typeof body.scheduledPurgeAt).toBe('string')
     const entry = prismaMock.auditLog.create.mock.calls[0][0].data
     expect(entry.details.dataAccessRequestError).toBe('db down')
+  })
+
+  it('answers at once, but keeps the function alive until the email saying how to undo it has gone', async () => {
+    prismaMock.user.findFirst.mockResolvedValue(PRISMA_USER)
+    const release = holdTheNextEmail()
+    const res = await DELETE(deleteRequest())
+
+    expect(res.status).toBe(200)
+    expect(sendViaResend.mock.calls[0][0].subject).toMatch(/scheduled for deletion/i)
+    expect(afterMock, 'nothing asked the platform to wait for the email').toHaveBeenCalled()
+    expect(await keptWorkHasFinished()).toBe(false)
+    release()
+    expect(await keptWorkHasFinished()).toBe(true)
   })
 })
 

@@ -208,6 +208,20 @@ because every path here is written to fail soft.
 | Supabase auth mail      | `resetPasswordForEmail`                                                                                    | Password resets                                                                                                     | Supabase dashboard, outside this repo                                                                                              |
 | SendGrid                | `sendTrustpilotInvite()` [`src/lib/trustpilot/send-invite.ts:57`](../../src/lib/trustpilot/send-invite.ts) | Trustpilot invites only                                                                                             | `SENDGRID_API_KEY`, in no env documentation; gated by `TRUSTPILOT_ENABLED`, which the code defaults off and `.env.example` sets on |
 
+### Sends a route does not wait for
+
+Several routes send mail without awaiting it, so nobody waits on a mail service: the
+parent-link pair (one tells the student an adult now sees their account), both
+account-deletion confirmations, the bulk-upload welcome that carries a pupil's
+temporary password, and the affiliate welcome. Until 10 October 2026 these were plain
+`void` or bare `.catch()` calls. On Vercel a function can be frozen once it has
+answered, with a send still pending: it resumes when the instance serves another
+request, or never. Each now goes through `keepAlive()`
+([`src/lib/keep-alive.ts`](../../src/lib/keep-alive.ts)), which hands the promise to
+Next's `after()` and so to Vercel's `waitUntil`. The response still goes out at once.
+[`work-a-route-starts-outlives-its-response.test.ts`](../../src/__tests__/work-a-route-starts-outlives-its-response.test.ts)
+fails if server code goes back to either idiom.
+
 ### The SMTP problem
 
 `src/lib/email.ts` builds its nodemailer transport at module scope from `SMTP_HOST`,
@@ -301,7 +315,9 @@ and on an `ok` result appends `TRUSTPILOT_INVITE_EMAIL` to BCC and writes a
 `trustpilot_invite` row. The gate refuses under-18s outright, and refuses anyone with
 `marketingEnabled=false` or `aiOptOut=true`, plus a 12-month per-trigger and 90-day
 global dedup. Failures in the whole pipeline are caught and logged so they cannot
-block the primary send. This is the only place a marketing-adjacent recipient is added
+block the primary send. The `trustpilot_invite` row is what that dedup reads, so its
+write, still not awaited, has been kept alive past the response since 10 October 2026
+(`keepAlive`, above). This is the only place a marketing-adjacent recipient is added
 to a transactional email, and the age gate in it is a compliance control, not a nicety.
 
 ---

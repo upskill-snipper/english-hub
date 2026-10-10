@@ -44,6 +44,7 @@ import { buildMarkingPrompt } from '@/lib/marking/prompt-builder'
 import { getExaminerExemplars } from '@/lib/marking/calibration/examiner-anchors'
 import { generateFeedback } from '@/lib/marking/feedback-generator'
 import { fireStudentFirstMark } from '@/lib/trustpilot/trigger-invite'
+import { keepAlive } from '@/lib/keep-alive'
 import { resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
 import { cachedSystemBlocks } from '@/lib/ai/cached-system'
 import { logAiDecision, aiAuditTokenUsage } from '@/lib/ai-audit-log'
@@ -348,9 +349,14 @@ export async function POST(request: NextRequest) {
     // Trustpilot review solicitation - fire-and-forget on first successful
     // mark. Dedup in the trigger orchestrator ensures only the first invocation
     // per user actually sends an invite; subsequent marks no-op cheaply. If
-    // TRUSTPILOT_ENABLED is unset, the trigger logs only.
-    void fireStudentFirstMark(user.id).catch((err) =>
-      console.warn('[api/mark] Trustpilot trigger dispatch failed', err),
+    // TRUSTPILOT_ENABLED is unset, the trigger logs only. Kept alive so the
+    // send and its trustpilot_invite row cannot be frozen with the function
+    // once the response goes (src/lib/keep-alive.ts).
+    keepAlive(
+      fireStudentFirstMark(user.id).catch((err) =>
+        console.warn('[api/mark] Trustpilot trigger dispatch failed', err),
+      ),
+      '[api/mark] Trustpilot trigger',
     )
 
     // ── Persist the submission (SF-2) ────────────────────────────────────

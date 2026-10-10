@@ -3,6 +3,7 @@ import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { prisma } from '@/lib/prisma'
 import { rateLimit } from '@/lib/rate-limit'
 import { sendViaResend, escapeHtml } from '@/lib/email/resend'
+import { keepAlive } from '@/lib/keep-alive'
 import { DPO_EMAIL, ErasureIncompleteError, eraseSupabaseIdentity } from '@/lib/data-retention'
 
 /**
@@ -92,7 +93,7 @@ function sendScheduledEmail(recipient: string, firstName: string, purgeAt: Date)
   const firstNameSafe = escapeHtml(firstName || 'there')
   const purgeDateSafe = escapeHtml(purgeDateLabel)
 
-  void sendViaResend({
+  const sent = sendViaResend({
     to: recipient,
     subject: 'Your English Hub account has been scheduled for deletion',
     html: `
@@ -143,13 +144,16 @@ function sendScheduledEmail(recipient: string, firstName: string, purgeAt: Date)
   }).catch((err) => {
     console.error('[account-delete] confirmation email failed', err)
   })
+  // The route answers straight after this, so without keepAlive the email that
+  // tells someone how to undo the deletion could be frozen with the function.
+  keepAlive(sent, '[account-delete] deletion-scheduled email')
 }
 
 /** Confirmation that erasure has already happened. Branch B only. */
 function sendErasedEmail(recipient: string, erasedAt: Date): void {
   const erasedLabel = escapeHtml(formatDate(erasedAt))
 
-  void sendViaResend({
+  const sent = sendViaResend({
     to: recipient,
     subject: 'Your English Hub account has been deleted',
     html: `
@@ -201,6 +205,7 @@ function sendErasedEmail(recipient: string, erasedAt: Date): void {
   }).catch((err) => {
     console.error('[account-delete] erasure email failed', err)
   })
+  keepAlive(sent, '[account-delete] deletion-completed email')
 }
 
 export async function DELETE(request: NextRequest) {

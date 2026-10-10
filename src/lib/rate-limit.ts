@@ -144,6 +144,7 @@
 import { createHash } from 'crypto'
 import { Ratelimit } from '@upstash/ratelimit'
 import { Redis } from '@upstash/redis'
+import { keepAlive } from '@/lib/keep-alive'
 
 // ---------------------------------------------------------------------------
 // Public types
@@ -384,8 +385,11 @@ function reportToSentry(reason: RateLimitDegradedReason): void {
   // project, so the degradation is raised there as an error rather than left
   // in a log stream. Imported dynamically and failure-tolerant: a missing or
   // uninitialised Sentry must never break a request path.
+  // Kept alive until the event is sent, so it is not frozen with the function
+  // once the request that noticed the degradation has been answered
+  // (src/lib/keep-alive.ts).
   try {
-    void import('@sentry/nextjs')
+    const report = import('@sentry/nextjs')
       .then((Sentry) => {
         Sentry.captureMessage('Rate limiting is not enforced (no shared backend)', {
           level: 'error',
@@ -401,10 +405,12 @@ function reportToSentry(reason: RateLimitDegradedReason): void {
             degradedSince: degradation.since ? new Date(degradation.since).toISOString() : null,
           },
         })
+        return Sentry.flush(2000)
       })
       .catch(() => {
         /* Sentry unavailable; the console banner still stands. */
       })
+    keepAlive(report, '[rate-limit] Sentry report')
   } catch {
     /* Dynamic import unsupported in this runtime; the banner still stands. */
   }
@@ -614,13 +620,17 @@ function toMillis(value: Date | string): number {
  * self-limiting without this (one row per active caller, reused across
  * windows), so the sweep is what stops a caller who never returns from leaving
  * a row behind for ever - which matters for retention as much as for size.
+ * Not awaited, but kept alive, so a sweep is not frozen half-way once the
+ * request it rode in on has been answered (src/lib/keep-alive.ts).
  */
 function maybeSweep(client: PrismaLike): void {
   if (Math.random() * SWEEP_ONE_IN >= 1) return
   const cutoff = new Date(Date.now() - 60 * 60 * 1000)
-  void client.$executeRaw`DELETE FROM rate_limit_counter WHERE window_end < ${cutoff}`.catch(() => {
-    /* Housekeeping only. A failed sweep must never affect a decision. */
-  })
+  const sweep =
+    client.$executeRaw`DELETE FROM rate_limit_counter WHERE window_end < ${cutoff}`.catch(() => {
+      /* Housekeeping only. A failed sweep must never affect a decision. */
+    })
+  keepAlive(sweep, '[rate-limit] sweep')
 }
 
 /**

@@ -13,6 +13,7 @@ import {
 } from '@/lib/parent-linking'
 import { sendEmail } from '@/lib/email'
 import { parentLinkedEmail, studentLinkedNotificationEmail } from '@/lib/email-templates'
+import { keepAlive } from '@/lib/keep-alive'
 import { rateLimit } from '@/lib/rate-limit'
 
 // ─── Validation ─────────────────────────────────────────────────────────
@@ -163,6 +164,10 @@ export async function POST(request: NextRequest) {
     }
 
     // ── Send confirmation emails (non-blocking) ────────────────────────
+    // Non-blocking, but kept alive: the response goes out straight after, and
+    // until 10 October 2026 nothing kept the function running for these, so
+    // the student's notice that an adult now sees their account could be
+    // frozen with it and never sent. See src/lib/keep-alive.ts.
     const studentUser = await prisma.user.findUnique({
       where: { id: student.id },
       select: { email: true, firstName: true },
@@ -170,22 +175,24 @@ export async function POST(request: NextRequest) {
 
     if (studentUser) {
       // Email to parent
-      sendEmail(
+      const toParent = sendEmail(
         user.email,
         "You are now linked to your child's account",
         parentLinkedEmail(user.firstName, studentUser.firstName),
       ).catch((err) => {
         console.error('[parent/link] Failed to send parent email:', err)
       })
+      keepAlive(toParent, '[parent/link] parent email')
 
       // Email to student
-      sendEmail(
+      const toStudent = sendEmail(
         studentUser.email,
         'A parent has been linked to your account',
         studentLinkedNotificationEmail(studentUser.firstName, user.firstName),
       ).catch((err) => {
         console.error('[parent/link] Failed to send student email:', err)
       })
+      keepAlive(toStudent, '[parent/link] student email')
     }
 
     return NextResponse.json(

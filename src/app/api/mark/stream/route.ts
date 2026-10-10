@@ -34,6 +34,7 @@ import { generateFeedback } from '@/lib/marking/feedback-generator'
 import { resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
 import { cachedSystemBlocks } from '@/lib/ai/cached-system'
 import { logAiDecision, aiAuditTokenUsage } from '@/lib/ai-audit-log'
+import { keepAlive } from '@/lib/keep-alive'
 
 export const maxDuration = 60
 export const runtime = 'nodejs'
@@ -249,16 +250,23 @@ export async function POST(request: NextRequest) {
             // the model stopped emitting the shape the prompt asks for, which
             // breaks marking for EVERY learner at once, so it is exactly the
             // thing worth waking someone for.
-            void import('@sentry/nextjs')
-              .then((Sentry) =>
-                Sentry.captureException(
-                  new Error(
-                    `mark/stream could not parse the model response: ${feedback.error.type}`,
-                  ),
-                  { tags: { feature: 'marking', route: 'mark/stream' } },
-                ),
-              )
-              .catch(() => {})
+            // Kept alive until the event is sent: the stream closes next, and
+            // a report left pending can be frozen with the function
+            // (src/lib/keep-alive.ts).
+            keepAlive(
+              import('@sentry/nextjs')
+                .then((Sentry) => {
+                  Sentry.captureException(
+                    new Error(
+                      `mark/stream could not parse the model response: ${feedback.error.type}`,
+                    ),
+                    { tags: { feature: 'marking', route: 'mark/stream' } },
+                  )
+                  return Sentry.flush(2000)
+                })
+                .catch(() => {}),
+              '[api/mark/stream] Sentry report',
+            )
             send({
               type: 'error',
               message: 'Failed to process the AI response. Please try again.',

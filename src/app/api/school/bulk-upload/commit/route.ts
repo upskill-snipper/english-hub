@@ -30,6 +30,7 @@ import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supab
 import { verifySchoolMember } from '@/lib/school-auth'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { sendEmail } from '@/lib/email'
+import { keepAlive } from '@/lib/keep-alive'
 import type { StudentRow, ParseError } from '@/lib/school/csv-parse'
 
 export const dynamic = 'force-dynamic'
@@ -348,9 +349,12 @@ export async function POST(request: NextRequest) {
           outcomes.push({ row: row.row, email, action: 'created' })
 
           // Schedule welcome email (fire-and-forget; we do not await inside
-          // the tx to keep the transaction short).
+          // the tx to keep the transaction short). Kept alive past the
+          // response: it carries the pupil's only copy of their temporary
+          // password, and a send left pending can be frozen with the function
+          // (src/lib/keep-alive.ts).
           const loginUrl = 'https://theenglishhub.app/login'
-          void sendEmail(
+          const welcome = sendEmail(
             email,
             'Your English Hub account',
             welcomeEmailHtml({
@@ -361,6 +365,7 @@ export async function POST(request: NextRequest) {
           ).catch((e) => {
             console.warn('bulk-upload: welcome email failed', email, e)
           })
+          keepAlive(welcome, 'bulk-upload: welcome email')
         }
 
         // Flip the job row to completed inside the same tx.
