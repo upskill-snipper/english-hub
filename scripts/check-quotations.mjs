@@ -1775,6 +1775,16 @@ const OTHER_PRINTINGS = [
     files: /^src\/data\/edexcel-igcse-lit-poetry-courses-2\.ts$/,
     printing: "the anthology's letter text, as its version note says, not the held Colvin text",
   },
+  {
+    // The page's footer: "The poem is printed as it appears in the WJEC Eduqas GCSE
+    // (9-1) English Literature Poetry Anthology (C720)", and its note above the poem on
+    // the 1920 edition. Eduqas prints the words of Owen's Poems (1920): "pleasure",
+    // "bloodsmear", "To-night", no "all their guilt, / And Austria's". The held text is
+    // Pearson's IGCSE printing (src/data/full-texts/disabled.ts), which has them.
+    text: 'disabled',
+    files: /^src\/app\/revision\/poetry\/eduqas\/disabled\//,
+    printing: "the Eduqas anthology's text, in the words of Owen's Poems (1920), not the held Pearson text",
+  },
 ]
 
 /**

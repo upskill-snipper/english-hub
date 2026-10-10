@@ -34,6 +34,8 @@ import { useT } from '@/lib/i18n/use-t'
 // Phone and Remains were missing. The grouping by theme below is this site's,
 // not Eduqas's: Eduqas sets one anthology and every poem in it. The list is held
 // to src/lib/board/eduqas-anthology.ts by a-poem-board-claim-is-true.test.ts.
+// Since 10 October 2026 each of the seven public-domain poems has a page printing
+// Eduqas's text; the eight in copyright are not printed, and have none.
 
 interface EduqasPoem {
   title: string
@@ -49,14 +51,14 @@ const CHILDHOOD_AND_NATURE: EduqasPoem[] = [
   {
     title: 'The Schoolboy',
     poet: 'William Blake',
-    slug: null,
+    slug: 'the-schoolboy',
     publicDomain: true,
     themes: ['Childhood', 'Nature', 'Freedom'],
   },
   {
     title: 'I Wandered Lonely as a Cloud',
     poet: 'William Wordsworth',
-    slug: null,
+    slug: 'i-wandered-lonely-as-a-cloud',
     publicDomain: true,
     themes: ['Nature', 'Memory', 'Joy'],
   },
@@ -73,7 +75,7 @@ const LOVE_AND_RELATIONSHIPS: EduqasPoem[] = [
   {
     title: 'Sonnet 29 ("I think of thee")',
     poet: 'Elizabeth Barrett Browning',
-    slug: null,
+    slug: 'sonnet-29',
     publicDomain: true,
     themes: ['Love', 'Longing', 'Devotion'],
   },
@@ -112,7 +114,7 @@ const WAR_AND_CONFLICT: EduqasPoem[] = [
   {
     title: 'Disabled',
     poet: 'Wilfred Owen',
-    slug: null,
+    slug: 'disabled',
     publicDomain: true,
     themes: ['War', 'Loss', 'Suffering'],
   },
@@ -143,7 +145,7 @@ const IDENTITY_AND_VOICE: EduqasPoem[] = [
   {
     title: 'I Shall Return',
     poet: 'Claude McKay',
-    slug: null,
+    slug: 'i-shall-return',
     publicDomain: true,
     themes: ['Identity', 'Place', 'Belonging'],
   },
@@ -230,7 +232,7 @@ const COMPARISON_PAIRINGS = [
   {
     theme: 'Identity and Belonging',
     poems: ['I Shall Return', 'Origin Story'],
-    tip: "McKay's Jamaican-American return to a beloved homeland compared with Ewing's reimagined origins for Black American identity.",
+    tip: "McKay's vow, as a Jamaican in America, to return to the homeland he remembers, compared with Ewing's reimagined origins for Black American identity.",
   },
 ]
 

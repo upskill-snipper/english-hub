@@ -156,6 +156,40 @@ const VERIFIED: Verified[] = [
     shape: '6,6,6',
     words: '3cbc365a2384e354',
   },
+  // The other five public-domain poems of the 2027 anthology, given pages on 10 October
+  // 2026: each built from the PDF's text layer and checked line by line against an image
+  // of its page, and identical with the text held for the Eduqas mocks where one is held.
+  {
+    page: 'src/app/revision/poetry/eduqas/the-schoolboy/page.tsx',
+    source: 'WJEC Eduqas GCSE Poetry Anthology (from 2027), p. 4',
+    shape: '5,5,5,5,5,5',
+    words: '8280226c257b6498',
+  },
+  {
+    page: 'src/app/revision/poetry/eduqas/i-wandered-lonely-as-a-cloud/page.tsx',
+    source: 'WJEC Eduqas GCSE Poetry Anthology (from 2027), p. 5',
+    shape: '6,6,6,6',
+    words: 'a543ccc63b64aaf2',
+  },
+  {
+    page: 'src/app/revision/poetry/eduqas/sonnet-29/page.tsx',
+    source: 'WJEC Eduqas GCSE Poetry Anthology (from 2027), p. 8',
+    shape: '14',
+    words: '61b826c7ed60f170',
+  },
+  {
+    page: 'src/app/revision/poetry/eduqas/disabled/page.tsx',
+    source:
+      'WJEC Eduqas GCSE Poetry Anthology (from 2027), pp. 10-11 (the stanza that begins at "That\'s why", where the page turns, is the page\'s reading, as it says above the poem)',
+    shape: '6,7,12,13,7',
+    words: '8a7eb7e565cdf9c8',
+  },
+  {
+    page: 'src/app/revision/poetry/eduqas/i-shall-return/page.tsx',
+    source: 'WJEC Eduqas GCSE Poetry Anthology (from 2027), p. 12',
+    shape: '14',
+    words: 'eb3854ea074400e3',
+  },
   {
     page: 'src/app/revision/poetry/eduqas/dulce-et-decorum-est/page.tsx',
     source: 'WJEC Eduqas GCSE Poetry Anthology (2014)',

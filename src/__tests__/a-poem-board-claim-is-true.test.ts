@@ -200,6 +200,41 @@ describe('OCR: what the site says OCR sets', () => {
 describe('Eduqas: what the site says Eduqas sets', () => {
   const HUB = 'src/app/revision/poetry/eduqas/page.tsx'
 
+  /** The hub's card for each poem of the 2027 anthology: its title, slug and status. */
+  const cards2027 = () => {
+    const sf = ts.createSourceFile(HUB, read(HUB), ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX)
+    const arrays = [
+      'CHILDHOOD_AND_NATURE',
+      'LOVE_AND_RELATIONSHIPS',
+      'WAR_AND_CONFLICT',
+      'IDENTITY_AND_VOICE',
+    ]
+    const out: { title: string; slug: string | null; publicDomain: boolean }[] = []
+    sf.forEachChild((node) => {
+      if (!ts.isVariableStatement(node)) return
+      for (const d of node.declarationList.declarations) {
+        if (!ts.isIdentifier(d.name) || !arrays.includes(d.name.text)) continue
+        if (!d.initializer || !ts.isArrayLiteralExpression(d.initializer)) continue
+        for (const e of d.initializer.elements) {
+          if (!ts.isObjectLiteralExpression(e)) continue
+          const get = (name: string) =>
+            e.properties.find(
+              (p): p is ts.PropertyAssignment =>
+                ts.isPropertyAssignment(p) && ts.isIdentifier(p.name) && p.name.text === name,
+            )?.initializer
+          const title = get('title')
+          const slug = get('slug')
+          out.push({
+            title: title && ts.isStringLiteralLike(title) ? title.text : '',
+            slug: slug && ts.isStringLiteralLike(slug) ? slug.text : null,
+            publicDomain: get('publicDomain')?.kind === ts.SyntaxKind.TrueKeyword,
+          })
+        }
+      }
+    })
+    return out
+  }
+
   it('records fifteen poems from 2027 and eighteen to 2026, with none in common', () => {
     expect(EDUQAS_ANTHOLOGY_2027.poems).toHaveLength(15)
     expect(EDUQAS_ANTHOLOGY_2014.poems).toHaveLength(18)
@@ -218,8 +253,32 @@ describe('Eduqas: what the site says Eduqas sets', () => {
     expect(read(HUB)).not.toMatch(/Source confidence: LOW/)
   })
 
+  /**
+   * ADDED 10 October 2026. Until then five of the seven public-domain poems of the
+   * 2027 anthology (The Schoolboy, I Wandered Lonely as a Cloud, Sonnet 29, Disabled
+   * and I Shall Return) had no page, and the hub said "no study page yet" beside each.
+   * Every poem Eduqas sets that the site may print now has one, and this holds it so.
+   */
+  it('gives every public-domain poem of the 2027 anthology a page, linked from the hub', () => {
+    const pd = cards2027().filter((c) => c.publicDomain)
+    // The vacuity guard: were the hub misread, no poem would be public domain.
+    expect(pd.map((c) => c.title.replace(/\s*\([^)]*\)\s*$/, '')).sort()).toEqual([
+      'Cousin Kate',
+      'Disabled',
+      'Drummer Hodge',
+      'I Shall Return',
+      'I Wandered Lonely as a Cloud',
+      'Sonnet 29',
+      'The Schoolboy',
+    ])
+    for (const c of pd) {
+      expect(c.slug, c.title).toBeTruthy()
+      expect(pageExists(`revision/poetry/eduqas/${c.slug}`), c.title).toBe(true)
+    }
+  })
+
   it('labels every page written for the 2014 anthology as such, and lists each on the hub', () => {
-    const current = new Set(['cousin-kate', 'drummer-hodge'])
+    const current = new Set(cards2027().flatMap((c) => (c.slug ? [c.slug] : [])))
     const pages = readdirSync(join(ROOT, 'src/app/revision/poetry/eduqas')).filter(
       (d) =>
         !d.startsWith('_') &&

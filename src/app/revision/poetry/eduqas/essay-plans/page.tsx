@@ -21,6 +21,19 @@ import { useT } from '@/lib/i18n/use-t'
 
 /* ── Essay plan data ─────────────────────────────────────────────── */
 
+// CORRECTED 10 October 2026, when the public-domain poems of the 2027
+// anthology that had no study page were given one. Some quotations of them here
+// were in neither Eduqas's printing nor the poet's: Hodge "thrown in" (the poem
+// has "They throw in"), Owen's "a queer disease" ("some queer disease"), and
+// Blake's "nipped", "buds nipped", "sigh and dismay" and "weary" (Eduqas prints
+// "nip’d", "buds are nip’d", "sighing and dismay" and "dreary"). Two Sonnet 29
+// lines had lost their dashes to the May 2026 sweep that removed em dashes from
+// src, and one ran two lines together without a slash. Three claims were wrong:
+// Disabled does not alternate short and long lines; Sonnet 29's command to
+// "Renew thy presence" comes in lines 7 and 8, before the sonnet's traditional
+// turn, where a card called line 11 that turn; and McKay, who left Jamaica in
+// 1912, never went back, so I Shall Return is a vow, not a homecoming.
+
 interface EssayPlan {
   id: number
   title: string
@@ -69,7 +82,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemBEvidence:
           'Owen\'s soldier sits "in a wheeled chair, waiting for dark" - the static posture and passive waiting contrast with the youth he has lost. The poem moves between his shattered present and the recruitment-day past.',
         comparison:
-          "Both poets reduce their soldier to an object: Hardy's Hodge is \"thrown in\" like rubbish; Owen's veteran is wheeled and handled by others. But Hardy's loss is total and bodily, while Owen's is a slower, conscious erasure the soldier must witness in himself.",
+          "Both poets reduce their soldier to an object: in Hardy, \"They throw in\" Hodge like rubbish; Owen's veteran is wheeled and handled by others. But Hardy's loss is total and bodily, while Owen's is a slower, conscious erasure the soldier must witness in himself.",
       },
       {
         topic: 'The role of place and belonging',
@@ -123,7 +136,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemBPoint:
           "Barrett Browning's speaker is the active subject of her own thinking, her thoughts climbing and clinging to the absent beloved like vines around a tree.",
         poemBEvidence:
-          'Her thoughts "twine and bud about thee" with such abundance she fears they hide him. She then commands the beloved - "Renew thy presence" - to overwhelm her thoughts with himself.',
+          'Her thoughts "twine and bud / About thee" with such abundance she fears they hide him. She then commands the beloved - "Renew thy presence" - to overwhelm her thoughts with himself.',
         comparison:
           "Rossetti's speaker has been an object of someone else's use; Barrett Browning's speaker is the agent of her own desire. Rossetti exposes love as power; Barrett Browning celebrates love as mutual. The contrast is between possession of and possession by.",
       },
@@ -136,7 +149,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemBPoint:
           "Barrett Browning's speaker asserts the demands of her love with equal certainty, even daring to find her own thoughts inadequate next to the beloved's real presence.",
         poemBEvidence:
-          'She insists "I do not think of thee - I am too near thee" once he is present - a paradox that makes physical nearness more powerful than imagination.',
+          'She insists "I do not think of thee—I am too near thee" once he is present - a paradox that makes physical nearness more powerful than imagination.',
         comparison:
           'Both speakers refuse to be passive. Rossetti\'s defiance is born of betrayal; Barrett Browning\'s confidence is born of reciprocal love. Both use the female "I" to assert a self that Victorian convention often muted.',
       },
@@ -149,7 +162,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemBPoint:
           'Barrett Browning uses the Petrarchan sonnet, claiming a tradition male poets had built around male desire - and turning it to female longing.',
         poemBEvidence:
-          'The volta from imagined thoughts to commanded presence - "Drop heavily down - burst, shattered, everywhere!" - uses the sonnet\'s traditional turn to enact a moment of assertive female desire.',
+          'The turn from imagined thoughts to commanded presence comes before the sonnet\'s traditional turn at line 9: "Rather, instantly / Renew thy presence" opens a command that builds to "Drop heavily down,—burst, shattered, everywhere!", a moment of assertive female desire.',
         comparison:
           'Rossetti uses a popular form to expose class injustice; Barrett Browning re-occupies a high-status form to assert female agency. Both use form as a political claim about who is allowed to speak about love.',
       },
@@ -299,9 +312,9 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         topic: 'How adult systems intrude on natural joy',
         poemAPoint:
-          'Blake makes the schoolroom an explicit enemy of natural growth, asking how a child can "the summer fruits appear" if his bud is "nipped" early.',
+          'Blake makes the schoolroom an explicit enemy of natural growth, asking how "the summer fruits" can "appear" if "buds are nip’d" in spring.',
         poemAEvidence:
-          'The closing stanzas use plant imagery - "buds nipped", "blossoms blown away" - to argue that early formal education ruins the very growth it claims to nurture.',
+          'The closing stanzas use plant imagery - "buds are nip’d", "blossoms blown away" - to argue that early formal education ruins the very growth it claims to nurture.',
         poemBPoint:
           'Wordsworth does not name an enemy, but the contrast between the "lonely" wanderer and the dancing crowd of flowers implies the modern adult\'s isolation.',
         poemBEvidence:
@@ -314,7 +327,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemAPoint:
           "Blake uses regular five-line stanzas with a controlled rhyme scheme - almost the orderliness of the schoolroom he condemns - to make the child's protest formally legible.",
         poemAEvidence:
-          'The control of the form mirrors the control the child resents; the protest comes through diction ("dismay", "sigh and dismay", "weary") rather than formal disorder.',
+          'The control of the form mirrors the control the child resents; the protest comes through diction ("sighing and dismay", "anxious hour", "dreary shower") rather than formal disorder.',
         poemBPoint:
           "Wordsworth uses four six-line stanzas of measured iambic tetrameter to mirror the speaker's wandering pace and the rhythm of recollection.",
         poemBEvidence:
@@ -337,7 +350,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     poemB: 'I Shall Return',
     poetB: 'Claude McKay',
     thesis:
-      'Both Black diasporic poets reclaim identity through an act of imaginative return, but McKay writes a confident promise to a beloved homeland he will rejoin, while Ewing writes a defiant origin myth for a self the world has tried to define from outside.',
+      'Both Black diasporic poets reclaim identity through an act of imaginative return, but McKay writes a vow to return to a beloved homeland, while Ewing writes a defiant origin myth for a self the world has tried to define from outside.',
     paragraphs: [
       {
         topic: 'How each speaker constructs the self',
@@ -380,7 +393,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
     ],
     conclusion:
-      "McKay and Ewing both insist that Black identity is not something granted from outside - it is authored, remembered, returned to. McKay's sonnet of homecoming and Ewing's contemporary self-mythology are nearly a century apart, but both refuse to let the dominant culture tell the speaker who she is.",
+      "McKay and Ewing both insist that Black identity is not something granted from outside - it is authored, remembered, returned to. McKay's sonnet of longing for home and Ewing's contemporary self-mythology are nearly a century apart, but both refuse to let the dominant culture tell a speaker who they are.",
   },
   {
     id: 7,
@@ -418,7 +431,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemBPoint:
           "Owen catalogues the veteran's diminished body in plain, almost clinical phrases that refuse aesthetic consolation.",
         poemBEvidence:
-          'The veteran is reduced to "a queer disease" in the eyes of others - the deflating language strips away any patriotic glamour the recruitment poster once promised.',
+          'Girls now "touch him like some queer disease": in the eyes of others the veteran is reduced to something to be avoided, and the deflating language strips away the glamour that drew him to enlist.',
         comparison:
           'Ghose worries that art beautifies suffering; Owen refuses any beauty at all. The two poets meet at the same ethical question - what does it mean to look? - but Ghose attacks the artist, while Owen attacks the casual viewer.',
       },
@@ -429,7 +442,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemAEvidence:
           "The poem's deliberate, considered movement enacts looking-then-judging - form embodies the moral process the poem describes. (Refer to the verified anthology edition for line-level references.)",
         poemBPoint:
-          "Owen alternates short and long lines, present and past, to enact the soldier's broken consciousness as he sits being looked at.",
+          "Owen moves between present and past, in stanzas of uneven length, to enact the soldier's broken consciousness as he sits being looked at.",
         poemBEvidence:
           'The closing line - "Why don\'t they come?" - leaves the soldier waiting for a gaze that will not arrive, just as the women\'s eyes have already moved on.',
         comparison:
