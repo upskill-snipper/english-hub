@@ -19,6 +19,18 @@ import { useT } from '@/lib/i18n/use-t'
 
 /* ── AO breakdown ────────────────────────────────────────────── */
 
+// 10 October 2026: the weights below were "roughly" 25, 40, 15 and 20 per cent
+// with no source, the note under the intro gave AO3 as context and AO4 as
+// comparison, and the intro said examiners give a level for each skill. The
+// 4ET1 specification (Issue 3, PDF p29) weights AO1 30%, AO2 40%, AO3 10% and
+// AO4 20%; AO3 is comparison, assessed only in the Paper 1 anthology question,
+// and AO4 is context, assessed only in Paper 1 Section C and Paper 2 Section B
+// (PDF p30). Pearson's mark schemes place an answer on one grid per question,
+// by best fit (Paper 1 mark scheme, June 2025). The grade boundary note gave
+// percentages no document supports; it now gives Pearson's notional boundaries
+// for June 2025 (Notional Component Grade Boundaries, page 9). Two pitfalls
+// gave mark figures no mark scheme states ("worth zero", "forfeits half"); one
+// now quotes the mark scheme's own rule on listing devices.
 interface AO {
   code: string
   label: string
@@ -33,7 +45,7 @@ const AOS: AO[] = [
   {
     code: 'Understanding the text',
     label: 'Personal response and textual references',
-    weight: 'Roughly 25% of total marks',
+    weight: 'AO1: 30% of the qualification',
     colour: 'text-sky-400',
     bgColour: 'bg-sky-500/10',
     description:
@@ -48,7 +60,7 @@ const AOS: AO[] = [
   {
     code: 'Analysing language and structure',
     label: 'Language, form, and structure',
-    weight: 'Roughly 40% of total marks -- the heaviest weighting',
+    weight: 'AO2: 40% of the qualification -- the heaviest weighting',
     colour: 'text-violet-400',
     bgColour: 'bg-violet-500/10',
     description:
@@ -63,7 +75,8 @@ const AOS: AO[] = [
   {
     code: 'Relating to context',
     label: 'Context',
-    weight: 'Roughly 15% of total marks (set texts only)',
+    weight:
+      'AO4: 20% of the qualification, in the modern prose essay (Paper 1) and the literary heritage essay (Paper 2)',
     colour: 'text-emerald-400',
     bgColour: 'bg-emerald-500/10',
     description:
@@ -73,14 +86,16 @@ const AOS: AO[] = [
       'Relevant, specific context -- avoid generic "in Victorian times" statements',
       'Context that genuinely shapes meaning, not just historical background',
       // Until 10 October 2026: "Light touch for unseen poetry". Pearson's 4ET1
-      // examiners' reports say context is not assessed in either poetry section.
-      'Not assessed in the unseen poem or the anthology comparison on Paper 1',
+      // examiners' reports say context is not assessed in either poetry section,
+      // and the specification gives Paper 2's drama section AO1 and AO2 only.
+      'Not assessed in the unseen poem, the anthology comparison or the drama essay',
     ],
   },
   {
     code: 'Comparing texts',
     label: 'Comparison',
-    weight: 'Roughly 20% of total marks on comparison questions',
+    weight:
+      'AO3: 10% of the qualification, all in the Paper 1 anthology comparison, where it is 15 of the 30 marks',
     colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
     description:
@@ -186,7 +201,7 @@ const LOSSES = [
   {
     title: 'Technique spotting',
     detail:
-      'Identifying a technique without explaining its effect. "This is a simile" is worth zero language-and-structure marks on its own.',
+      'Identifying a technique without explaining its effect. Pearson’s mark schemes say it is not sufficient simply to list literary devices: "This is a simile" earns little on its own.',
   },
   {
     title: 'Block structure comparison',
@@ -196,7 +211,7 @@ const LOSSES = [
   {
     title: 'Ignoring form',
     detail:
-      'Writing entirely about language while ignoring stanzas, rhyme, enjambment, and structure. Forfeits half of your language-and-structure marks.',
+      'Writing entirely about language while ignoring stanzas, rhyme, enjambment, and structure. The objective asks for language, form and structure, so this leaves two of the three out.',
   },
 ]
 
@@ -244,16 +259,17 @@ export default function MarkSchemePage() {
           Understanding the mark scheme is half the battle
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          IGCSE Literature examiners do not mark holistically -- they read with specific skills in
-          mind and assign your response a level for each one. Knowing which skill carries the most
-          weight (it is language and structure analysis), what separates "clear" from "perceptive",
-          and exactly what moves signal a top-band response lets you write with the examiner in
-          mind. This guide translates the official mark scheme into practical advice.
+          IGCSE Literature examiners place each answer at the level that fits it best on a single
+          grid for the question, and the grid&apos;s descriptors name the skills that question
+          tests. Knowing which skill carries the most weight (it is language and structure
+          analysis), what separates &quot;clear&quot; from &quot;perceptive&quot;, and exactly what
+          moves signal a top-band response lets you write with the examiner in mind. This guide
+          translates the official mark scheme into practical advice.
         </p>
         <p className="mt-3 text-body-xs text-muted-foreground-subtle max-w-2xl leading-relaxed italic">
           In official mark schemes these skills are called Assessment Objectives: AO1 =
-          Understanding the text, AO2 = Language and structure, AO3 = Context, AO4 = Comparing
-          texts.
+          Understanding the text, AO2 = Language and structure, AO3 = Comparing texts, AO4 =
+          Context.
         </p>
       </section>
 
@@ -352,12 +368,12 @@ export default function MarkSchemePage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Edexcel grade boundaries for IGCSE Literature shift slightly each year, but recent
-          sessions suggest a rough guide of: Grade 9 around 78-82%, Grade 7 around 62-66%, Grade 5
-          around 42-46%, and Grade 4 around 32-36%. These are indicative only -- boundaries are set
-          after each exam series based on candidate performance. What is constant is that the top
-          band always rewards perceptive, comparative, word-level analysis grounded in a confident
-          personal reading.
+          Edexcel grade boundaries for IGCSE Literature shift each series. As a guide,
+          Pearson&apos;s notional boundaries for June 2025 put grade 9 at 72, grade 7 at 61 and
+          grade 4 at 41 of Paper 1&apos;s 90 marks, and grade 9 at 48, grade 7 at 44 and grade 4 at
+          28 of Paper 2&apos;s 60. These are indicative only -- boundaries are set after each exam
+          series based on candidate performance. What is constant is that the top band always
+          rewards perceptive, word-level analysis grounded in a confident personal reading.
         </p>
       </section>
 
