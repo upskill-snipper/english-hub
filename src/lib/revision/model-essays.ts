@@ -133,11 +133,20 @@ function paragraphsOf(raw: any): ModelEssayParagraph[] {
  * The essays for one text. A missing or malformed data file degrades to an
  * empty array rather than throwing, which is what let this route compile
  * before all five files existed.
+ *
+ * WHY A RELATIVE PATH WITH ITS EXTENSION (10 October 2026). This imported
+ * `@/data/model-essays/${key}`. Webpack (Next) resolves an alias in a variable
+ * import; Vite's SSR loader does not, and the catch below turned that into an
+ * empty list for every text. scripts/generate-known-pages.mjs runs under that
+ * loader, and found all 25 essays missing: had it written that list, the
+ * middleware would have answered every model essay with a 404. A relative path
+ * ending in `.ts` is the form both turn into a map of the directory, as
+ * src/lib/games/text-games/load.ts found for the held editions.
  */
 export async function loadEssaysFor(key: TextKey): Promise<ModelEssay[]> {
   try {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const mod: any = await import(`@/data/model-essays/${key}`)
+    const mod: any = await import(`../../data/model-essays/${key}.ts`)
     const candidates = [
       mod?.default,
       mod?.essays,
