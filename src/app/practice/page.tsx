@@ -18,6 +18,8 @@ import {
   Loader2,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
+import { savePracticeSession } from '@/lib/practice/save-session'
+import { reportSaveFailure } from '@/lib/save-failure-report'
 import { useAuthStore } from '@/store/auth-store'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-config'
@@ -268,52 +270,26 @@ export default function PracticePage() {
 
   // ── Save session ───────────────────────────────────────────────────────
 
+  // The insert, and the report a failed one sends the team, live in
+  // src/lib/practice/save-session.ts (moved there 10 October 2026).
   async function saveSession() {
     if (!user || !currentQuestion || saving) return
     setSaving(true)
     setSaveError(null)
     try {
-      const supabase = createClient()
-      // ─── Column names, verified against the live table ───────────────────
-      //
-      // THE DEFECT THIS FIXES (19 September 2026). This insert named five
-      // columns that do not exist: question_id, board, answer, time_seconds
-      // and timed_mode. The live table has exam_board, user_answer,
-      // time_spent_seconds and a question_data JSONB, and has had since
-      // 001_initial_schema.sql. So every save on this page failed, the student
-      // saw "Could not save", and practice_sessions held 0 rows - ever.
-      //
-      // /dashboard/grades reads this table to count a student's practice, so
-      // that count has been zero for everyone since the page shipped.
-      //
-      // Checked against information_schema on the production database rather
-      // than against the migration, per CLAUDE.md structural fact 3: the
-      // tracker records an intention, not a reality. Here they agreed, and it
-      // was the CODE that had drifted.
-      const { error } = await supabase.from('practice_sessions').insert({
-        user_id: user.id,
-        exam_board: currentQuestion.board,
-        paper: currentQuestion.paper != null ? String(currentQuestion.paper) : null,
-        question_type: currentQuestion.questionType || currentQuestion.type || null,
-        // The three fields with no column of their own. question_data is JSONB
-        // and exists for exactly this, so nothing is silently dropped.
-        question_data: {
-          questionId: currentQuestion.id,
-          title: currentQuestion.title ?? null,
-          marks: currentQuestion.marks ?? null,
-          timedMode,
-        },
-        user_answer: answer,
-        // `rating` is 0 until the student picks a star, and the column is
-        // CHECK (self_rating BETWEEN 1 AND 5). Sending 0 would fail the insert
-        // for anyone who saved without rating themselves - a second, separate
-        // reason this never worked. The column is nullable; unrated means null.
-        self_rating: rating > 0 ? rating : null,
-        time_spent_seconds: elapsed,
+      const ok = await savePracticeSession(createClient(), {
+        userId: user.id,
+        currentQuestion,
+        answer,
+        rating,
+        elapsed,
+        timedMode,
       })
-      if (error) throw error
-      setSaved(true)
-    } catch {
+      if (ok) setSaved(true)
+      else setSaveError(t('marking.save_session_failed'))
+    } catch (err) {
+      // Only createClient() can throw here: savePracticeSession never does.
+      reportSaveFailure('practice', err)
       setSaveError(t('marking.save_session_failed'))
     } finally {
       setSaving(false)

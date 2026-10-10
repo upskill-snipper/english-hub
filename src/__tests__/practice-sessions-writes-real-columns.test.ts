@@ -34,10 +34,16 @@ import { join } from 'node:path'
  * still looks like this; re-verify with information_schema if a migration
  * touches the table. What it does catch is the thing that actually happened:
  * somebody writing a plausible column name that no table has.
+ *
+ * MOVED 10 OCTOBER 2026. The insert left the page for
+ * src/lib/practice/save-session.ts, so that a failed save is reported to the
+ * team, and this reads it there. The page must save through that module and
+ * never insert itself, or a second insert could drift past this test.
  */
 
 const ROOT = process.cwd()
-const PRACTICE = readFileSync(join(ROOT, 'src/app/practice/page.tsx'), 'utf8')
+const PRACTICE = readFileSync(join(ROOT, 'src/lib/practice/save-session.ts'), 'utf8')
+const PAGE = readFileSync(join(ROOT, 'src/app/practice/page.tsx'), 'utf8')
 const GRADES = readFileSync(join(ROOT, 'src/app/dashboard/grades/page.tsx'), 'utf8')
 const MIGRATION = readFileSync(join(ROOT, 'supabase/migrations/001_initial_schema.sql'), 'utf8')
 
@@ -93,6 +99,11 @@ describe('the insert was found at all', () => {
     // Without this, every assertion below passes by parsing nothing - the
     // failure mode of every check in this repository that has gone quiet.
     expect(insertedKeys(PRACTICE).length).toBeGreaterThan(5)
+  })
+
+  it('and it is the only one: the page saves through it', () => {
+    expect(PAGE).toContain('savePracticeSession(')
+    expect(PAGE).not.toContain(".from('practice_sessions')")
   })
 })
 

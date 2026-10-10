@@ -28,6 +28,7 @@
 // explicit that written answers are self-marked against the mark scheme.
 
 import type { SupabaseClient } from '@supabase/supabase-js'
+import { reportSaveFailure, type SaveFailureReporter } from '@/lib/save-failure-report'
 
 export interface MockAttemptQuestion {
   number: number
@@ -116,23 +117,37 @@ export function attemptRow(userId: string, attempt: MockAttempt) {
  * here. The outcome is returned so the caller can say so on screen, because a
  * caught exception with a reassuring comment is the single most common defect
  * in this codebase.
+ *
+ * REPORTED TO THE TEAM SINCE 10 OCTOBER 2026. Saying so on screen was all it
+ * did until then: the console.error below lands in the student's own browser,
+ * which nobody else reads, so a failure reached the student and no one else.
+ * When practice_sessions was found empty that day, nothing could say whether
+ * these saves were failing. A failed save is now also sent, once, through
+ * src/lib/save-failure-report.ts to /api/save-failures, carrying the error's
+ * code and status but never the student's answers. `report` is a parameter so
+ * the tests can count the reports.
  */
 export async function persistMockAttempt(
   supabase: SupabaseClient,
   userId: string | null | undefined,
   attempt: MockAttempt,
+  report: SaveFailureReporter = reportSaveFailure,
 ): Promise<PersistOutcome> {
   if (!userId) return { attempted: false, saved: false }
 
   try {
-    const { error } = await supabase.from('practice_sessions').insert(attemptRow(userId, attempt))
+    const { error, status } = await supabase
+      .from('practice_sessions')
+      .insert(attemptRow(userId, attempt))
     if (error) {
       console.error('[mock-exams] could not save attempt', error)
+      report('mock-exam', error, status)
       return { attempted: true, saved: false, error: error.message }
     }
     return { attempted: true, saved: true }
   } catch (err) {
     console.error('[mock-exams] could not save attempt', err)
+    report('mock-exam', err)
     return {
       attempted: true,
       saved: false,

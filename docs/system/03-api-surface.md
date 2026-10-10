@@ -259,6 +259,8 @@ The webhook handles nine event types and carries the most important identity not
 
 `POST /api/quiz/response` exists to populate `quiz_responses`, without which `getQuestionDifficulty` and `getHardestQuestions` return empty arrays. `GET /api/recommendations` returns an empty array unless `profiles.personalised_recommendations` is explicitly true (Children's Code).
 
+`POST /api/save-failures` (added 10 October 2026) takes a report from a signed-in student's browser when saving a /practice answer or a finished mock exam to `practice_sessions` fails, and writes one `[save-failure]` line to the server log and a Sentry event tagged `area: student-save`. The report holds the save path, the error code, the HTTP status and the message with quoted values removed, never the answer, the question, the account or the error's `details`, which Postgres fills with the failing row ([`lib/save-failure-report.ts`](../../src/lib/save-failure-report.ts)). Twenty an hour per account. Until then a failed save reached nobody, and an empty `practice_sessions` could not be told from a broken one ([`route.ts`](../../src/app/api/save-failures/route.ts)).
+
 ### 3.12 Toolkit and content generation
 
 `POST /api/toolkit/generate-notes` is a full AI route with the complete gate chain. `POST /api/toolkit/generate-test` is **not**: session and subscription only, no consent gate, no AI opt-out check, no allowance meter, because it assembles questions from a bank rather than calling a model. `POST /api/generate-pptx` renders a lesson plan to PowerPoint behind session plus subscription. `POST /api/certificates` re-derives score and grade from the stored attempt and never trusts client values, using the service role to bypass the certificates RLS insert policy deliberately.
