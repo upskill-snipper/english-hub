@@ -403,6 +403,14 @@ const laBelleDameCourse: CourseData = {
  * now says what the examiners' reports say: Section B does not assess it.
  * Each module is its own page, so each quotes at most 25 distinct words of
  * the poem's 168, the 15 per cent share.
+ *
+ * Later on 10 October 2026, module 1's context and its quiz said Walker's
+ * father "valued education" (with storytelling and self-reliance, and in the
+ * quiz creativity and generosity). The reference works the guide cites do not
+ * say so: one records that his own schooling was limited and that he feared
+ * education would put barriers between him and his children, Sally Wolff that
+ * he helped to establish the local school in 1948, and they agree that the
+ * relationship was difficult. Both places now say what those sources support.
  */
 const poemAtThirtyNineModules: CourseModule[] = [
   {
@@ -413,7 +421,7 @@ const poemAtThirtyNineModules: CourseModule[] = [
 <h2>Poem at Thirty-Nine - Alice Walker (1984)</h2>
 
 <h3>Context</h3>
-<p>Alice Walker (born 1944) is an American novelist, poet, and activist, best known for her Pulitzer Prize-winning novel <em>The Color Purple</em> (1982). She grew up in rural Georgia as the eighth child of African American sharecroppers. Her father, Willie Lee Walker, was a significant influence on her life - he valued education, storytelling, and self-reliance despite the poverty and racial oppression the family endured.</p>
+<p>Alice Walker (born 1944) is an American novelist, poet, and activist, best known for her Pulitzer Prize-winning novel <em>The Color Purple</em> (1982). She grew up in rural Georgia as the eighth child of African American sharecroppers. Her father, Willie Lee Walker, was a significant influence on her life, though the reference works describe a difficult relationship. His own schooling had been limited; one reference work records that he feared education would put barriers between him and his children, and another that he had helped to establish the local school.</p>
 
 <p>"Poem at Thirty-Nine" was published in the collection <em>Horses Make a Landscape Look More Beautiful</em> (1984). It is a deeply personal elegy for Walker's father, who had died in 1973. The poem reflects on their relationship, her grief at his absence, and the ways in which she has inherited and transformed his values. Walker was thirty-nine when she wrote it - old enough to recognise how profoundly her father shaped her identity.</p>
 
@@ -460,7 +468,7 @@ const poemAtThirtyNineModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          "Walker's father was a sharecropper - a poor farmer who worked land owned by someone else. Despite poverty and racial oppression, he valued education, creativity, and generosity.",
+          "Walker's father was a sharecropper - a poor farmer who worked land owned by someone else. The reference works describe a difficult relationship: his own schooling had been limited, and he feared education would put barriers between him and his children.",
       },
       {
         id: 'igp2-thirty9-m1-q3',

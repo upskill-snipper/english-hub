@@ -64,6 +64,10 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * Blessing on the November 2020 R paper (which Pearson titles June 2020) and
  * with La Belle Dame sans Merci in November 2024 (question 2 both times). The
  * poems come in a separate Poetry Booklet, so nothing is quoted from memory.
+ * The exam tip that lists these pairings dated the Blessing one "November 2020"
+ * until later on 10 October 2026; Pearson's summary puts it on that series' R
+ * paper, the version sat by centres in countries with major time differences
+ * to GMT, so the tip now says so.
  *
  * Until this date the three passage questions did not say they were practice,
  * though Section B never sets a poem alone; the last tip told every student to
@@ -437,7 +441,7 @@ export const guide: StudyGuide = {
       },
     ],
     tips: [
-      'Know the two shapes of the question. In Paper 1 Section B of the Pearson Edexcel International GCSE (4ET1) you answer one of two questions, and both ask you to compare two Part 3 poems with reference to language, form and structure. One names both poems: Pearson paired The Tyger with Blessing in November 2020 and with La Belle Dame sans Merci in November 2024. The other names one poem and lets you choose the second from Part 3, as the January 2019 question on power in The Tyger did. Pearson suggests spending 40 minutes on it.',
+      'Know the two shapes of the question. In Paper 1 Section B of the Pearson Edexcel International GCSE (4ET1) you answer one of two questions, and both ask you to compare two Part 3 poems with reference to language, form and structure. One names both poems: Pearson paired The Tyger with Blessing on the November 2020 R paper (which Pearson titles June 2020) and with La Belle Dame sans Merci in November 2024. The other names one poem and lets you choose the second from Part 3, as the January 2019 question on power in The Tyger did. Pearson suggests spending 40 minutes on it.',
       "Revise from the anthology, not a website, and in the exam work from the Poetry Booklet of all the Part 3 poems that comes with the question paper, so nothing has to be quoted from memory. Editions differ: some open with exclamation marks, some modernise the spelling of line 18 and the ampersands of lines 9 and 12, some keep Blake's own spelling of seize in line 8, which on his plate is sieze, and some end line 16 with a question mark where the anthology has an exclamation mark. Even the booklet issued with the June 2025 paper, which has the anthology's words, punctuates lines 8, 13 and 15 differently. The words hardly change, but if you comment on punctuation, make sure it is the punctuation in front of you.",
       "Do not say that every stanza is a question, or that stanza 4 has none. In the anthology stanzas 1, 2, 3, 5 and 6 all end with a question mark; stanza 4 is full of questions but ends with the poem's only exclamation mark, at the height of the forge imagery.",
       "The change from “Could frame” to “Dare frame” is the best-known feature of the poem, so noticing it is not enough. Say what it does: a question about ability becomes a question about nerve, and the speaker's fear has grown.",

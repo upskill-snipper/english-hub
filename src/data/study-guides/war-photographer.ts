@@ -709,10 +709,13 @@ export const guide: StudyGuide = {
 
   compareWith: [
     {
+      // 10 October 2026: this cited only the Getting Started Guide, though
+      // Pearson set the pair as Question 2 on Paper 1 in June 2025, on different
+      // types of experience (question paper of 12 May 2025, now in sources).
       title: 'Blessing (Imtiaz Dharker)',
       href: '/revision/texts/blessing',
       reason:
-        'Pearson’s own Getting Started Guide sets this pair on powerful images: Dharker’s burst pipe brings a crowd together in sudden joy, while Duffy’s images of suffering are developed alone in the dark.',
+        'Pearson set this pair as Question 2 on Paper 1 in June 2025, on different types of experience, and its Getting Started Guide uses it for an example question on powerful images: Dharker’s burst pipe brings a crowd together in sudden joy, while Duffy’s images of suffering are developed alone in the dark.',
     },
     {
       title: 'If- (Rudyard Kipling)',
@@ -845,6 +848,11 @@ export const guide: StudyGuide = {
       label:
         'Pearson Edexcel International GCSE English Literature specification, Issue 3 (August 2025), read for the exam-format audit of 10 October 2026: Section B of Paper 1 (Component 1 in this issue) is one question from a choice of two, comparing two poems from Part 3; closed book, but the anthology poems are provided in the examination.',
       url: 'https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Specification%20and%20sample%20assessments/international-gcse-english-literature-specification.pdf',
+    },
+    {
+      label:
+        'Pearson, 4ET1/01 question paper, Monday 12 May 2025: Question 2 asked candidates to compare the ways the writers present different types of experience in Blessing and War Photographer, with reference to language, form and structure.',
+      url: 'https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-que-20250513.pdf',
     },
     {
       label:

@@ -9,8 +9,8 @@ import { useState } from 'react'
  * no-poem-quoted-beyond-fair-dealing.test.ts measures it). It now quotes a few
  * short phrases where the analysis leans on them hardest, each in one card; the
  * other cards describe their moment in the site's own words, and the rest of
- * the page refers back. It sits at its cap, so do not add quotations: that test
- * counts every quoted word, in any string on the page.
+ * the page refers back. The route sits near its cap (figures below), so do not
+ * add quotations: that test counts every quoted word, in any string on the page.
  *
  * A paraphrase must be the site's words, not the poem's with a word swapped. The
  * first pass left a card that was a poem line with two words changed, printed in
@@ -20,17 +20,27 @@ import { useState } from 'react'
  * also keeps the poem's case: the final-stanza card once opened sentences with
  * its phrases capitalised, which the poem prints in lower case.
  *
- * ONE BUDGET FOR THE ROUTE (26 September 2026, later the same day). layout.tsx
- * mounts GuideSupplement with src/data/study-guides/half-past-two.ts, which
- * prints its own short quotations on this route. The test once followed only
- * this file's imports, so the two were counted apart; it now follows the layout
- * too, and the route as served quoted 44 distinct words against the cap of 29.
- * The guide takes all 29 on its own: 25 in its verified quotations, and 4 from
- * the route path in its `native.keyQuotes`, a quotation field the scanner reads
- * like any other. So this page quotes only phrases the guide already quotes,
- * which cost nothing counted once: the opening line is described rather than
- * quoted, and the cards on the teacher's return and the final line quote only
- * the single words the guide quotes.
+ * ONE BUDGET FOR THE ROUTE (26 September 2026, later the same day; recounted
+ * 10 October 2026). layout.tsx mounts GuideSupplement with
+ * src/data/study-guides/half-past-two.ts, which prints its own short quotations
+ * on this route. The test once followed only this file's imports, so the two
+ * were counted apart; it now follows the layout too, and the route as served
+ * quoted 44 distinct words against the cap of 29. This paragraph then said the
+ * guide took all 29 on its own, 25 in its verified quotations and 4 from the
+ * route path in its `native.keyQuotes`. That is stale: the scanner now reads a
+ * section path as a route, not a quotation. Recounted on 10 October 2026, each
+ * by its own test's rules (15 per cent of the poem's 199 words, so a cap of 29):
+ *  - no-poem-quoted-beyond-fair-dealing.test.ts measures the route, page and
+ *    guide together, at 25. Every word is in a phrase the guide quotes; this
+ *    page adds none of its own.
+ *  - study-guides.test.ts, applying quotedTotals in validate.ts to the guide
+ *    alone, counts 27: the same 25, and two one-word annotation phrases in the
+ *    guide's extract notes, which the route test's scanner does not read.
+ * So at most two more distinct words fit, and only where both measures allow
+ * them. This page quotes only phrases the guide already quotes, which cost
+ * nothing counted once: the opening line is described rather than quoted, and
+ * the cards on the teacher's return and the final line quote only the single
+ * words the guide quotes.
  * Before adding a quotation here, check that the guide quotes the same phrase
  * or a longer one containing it: a phrase that merely shares words with the
  * guide's is counted in full.

@@ -65,6 +65,14 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * not list; the November 2023 mark scheme and June 2019 examiners' report are
  * now in it.
  *
+ * Corrected later on 10 October 2026, against line 12 on page 6. The overview
+ * said distances were "so deceptive that" she wondered whether the whales were
+ * real, which turns the extract's "and" into a cause; the extract joins the two
+ * clauses with "and". The annotation on line 12 said the light is mischievous,
+ * where the extract gives the word to the tricks of the shifting light. The
+ * overview now quotes only "Distances are always deceptive", an annotated
+ * phrase, so the quoted total is unchanged.
+ *
  * WHERE THIS USED TO DISAGREE WITH THE PAGE ABOVE IT. The page said the hunt
  * is told in the present tense, that the extract reflects on Herbert's
  * childhood, that the hunters appear only after the landscape, and that the
@@ -99,7 +107,7 @@ export const guide: StudyGuide = {
   overview: {
     summary: [
       "From The Explorer's Daughter is a 64-line extract, printed on pages 6 and 7 of the anthology, from Kari Herbert's 2004 memoir of returning to the Arctic where she spent her earliest years. The anthology's introduction explains that she lived among the Inughuit as a small child and went back in 2002, staying near Thule in North Greenland. The extract covers a single summer evening on the Inglefield Fjord, when the narwhal return and the hunters go out in their kayaks while Herbert watches from a lookout on the shore.",
-      'It moves through four kinds of writing. It opens with description: the fjord in golden evening light, where distances are so deceptive that she wonders whether the whales are real. It pauses for information, explaining where narwhal live and how their mattak (the fatty skin), meat and tusk have kept the hunters alive. It returns to the scene as the women watch their husbands, and one hunter, far from land in a kayak, raises his harpoon beside two huge narwhal, the moment at which Herbert finds herself urging the man on and, at the same time, willing the whales to escape. It ends with argument: she names her dilemma, repeats the question she is so often asked about eating seal, and answers it with facts about how the Inughuit hunt and why they must.',
+      'It moves through four kinds of writing. It opens with description: the fjord in golden evening light. “Distances are always deceptive”, she remarks of the Arctic, and she wonders whether the narwhal exist at all. It pauses for information, explaining where narwhal live and how their mattak (the fatty skin), meat and tusk have kept the hunters alive. It returns to the scene as the women watch their husbands, and one hunter, far from land in a kayak, raises his harpoon beside two huge narwhal, the moment at which Herbert finds herself urging the man on and, at the same time, willing the whales to escape. It ends with argument: she names her dilemma, repeats the question she is so often asked about eating seal, and answers it with facts about how the Inughuit hunt and why they must.',
       "The extract never says whether the hunter's harpoon strikes. That silence is the key to reading it. Herbert's reason reaches a firm conclusion, that hunting is still a necessity, but her feeling is left exactly where the action stopped, split between hunter and hunted. The strongest answers show how her language and structure hold both, and argue about which has the last word. This guide argues that the argument wins the ending but the dilemma wins the extract: the final sentence closes the case, yet the paragraph before it is the one a reader remembers.",
     ],
   },
@@ -216,7 +224,7 @@ export const guide: StudyGuide = {
       text: 'mischievous tricks of the shifting light',
       where: 'Paragraph 1, line 12 (page 6)',
       analysis:
-        'Personification: the light is “mischievous”, a playful trickster, and Herbert wonders whether the narwhal exist at all. The effect is dreamlike and slightly unsettling. It may also plant an idea that matters later: in the Arctic, appearances deceive, and people who judge from a distance, as the critics in the last paragraph do, may not see what is really there. The first paragraph ends on uncertainty rather than on action.',
+        'Personification: the shifting light seems to play tricks, and Herbert calls them “mischievous”, as if the light were a playful trickster. She wonders whether the narwhal exist at all. The effect is dreamlike and slightly unsettling. It may also plant an idea that matters later: in the Arctic, appearances deceive, and people who judge from a distance, as the critics in the last paragraph do, may not see what is really there. The first paragraph ends on uncertainty rather than on action.',
     },
     {
       text: 'essential contributor to the survival',
