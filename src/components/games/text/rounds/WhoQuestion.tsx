@@ -1,5 +1,6 @@
 'use client'
 
+import { midSentence } from '@/lib/games/text-games/text'
 import type { WhoRelationItem, WhoRoleItem } from '@/lib/games/text-games/types'
 
 import { En, fill, PortraitArt, PromptCard } from '../parts'
@@ -38,8 +39,8 @@ export function WhoQuestion(props: QuestionProps) {
     <ChoiceQuestion
       props={props}
       question={fill(t('text_games.q.who_relation'), {
-        from: <En>{item.from}</En>,
-        to: <En>{item.to}</En>,
+        from: <En>{midSentence(item.from)}</En>,
+        to: <En>{midSentence(item.to)}</En>,
       })}
       prompt={
         portraits.length > 0 && (

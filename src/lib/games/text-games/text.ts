@@ -179,6 +179,17 @@ function sentenceEnd(text: string, from: number): number {
 }
 
 /**
+ * A character's name as it reads inside a sentence. Guides name many people by
+ * role ("The speaker", "The wife", "The Inspector"), and the cast list rightly
+ * capitalises them; "What is The photographer to The wife?" does not read as
+ * English (seen on the live site, 10 October 2026). Only a leading "The" is
+ * lowered; the rest of the name is the guide's.
+ */
+export function midSentence(name: string): string {
+  return name.replace(/^The (?=\S)/, 'the ')
+}
+
+/**
  * The opening of `text`, whole sentences only, at least `min` characters where
  * the text allows: the first sentence, or the first two when the first is
  * short. Always a prefix of `text`, so it is the guide's own words.
