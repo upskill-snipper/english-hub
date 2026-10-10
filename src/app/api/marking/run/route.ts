@@ -73,22 +73,25 @@ export const dynamic = 'force-dynamic'
 // twice, so the timeout branch below could not run inside 60 s. Vercel would
 // end the function first, with no 503, no refund and no audit row. The three
 // numbers now move together:
-//   - MARKING_MAX_TOKENS, 8,192: twice the longest marked reply.
-//   - MARKING_DEADLINE_MS, 105 s: 8,192 tokens at 86 a second is 95 s. It is
+//   - MARKING_MAX_TOKENS, 8,000: twice the longest marked reply. Three of the
+//     cut-off essays were sent again and came back at 3,356 to 3,980 tokens,
+//     so the cut-off replies were probably not far past 4,096.
+//   - MARKING_DEADLINE_MS, 95 s: 8,000 tokens at 86 a second is 93 s. It is
 //     ONE deadline for the whole call, retries included: an abort signal that
 //     ends the attempt in flight and stops the SDK starting another.
-//   - maxDuration, 120 s: time after the deadline to refund and answer, and
-//     under the 125 s Cloudflare waits for this site's origin before it shows
-//     its own 524 page.
+//   - maxDuration, 120 s. Up to 9 s were seen between saving the essay and
+//     calling the model, and up to 14 s between its reply and the audit row,
+//     so 9 + 95 + 14 = 118 s still fits. It also stays under the 125 s
+//     Cloudflare waits for this site's origin before it shows its own 524.
 // Vercel applies this export, not vercel.json's 60 s for src/app/api/**: the
 // Next.js builder spreads a route's own config over the vercel.json match
 // (getPageLambdaGroups in @vercel/next). A reply that still stops at the cap
 // is logged as TRUNCATED, not INVALID_RESPONSE, so the audit log says whether
-// 8,192 is enough. Pinned by src/__tests__/smart-ip/marking-run-route.test.ts.
+// 8,000 is enough. Pinned by src/__tests__/smart-ip/marking-run-route.test.ts.
 // ────────────────────────────────────────────────────────────────────────────
 export const maxDuration = 120
-const MARKING_MAX_TOKENS = 8_192
-const MARKING_DEADLINE_MS = 105_000
+const MARKING_MAX_TOKENS = 8_000
+const MARKING_DEADLINE_MS = 95_000
 
 interface RunRequestBody {
   submissionId: string

@@ -368,13 +368,19 @@ describe('POST /api/marking/run - model-path rejections do not persist', () => {
 // was not valid JSON", every one at exactly 4,096 output tokens: the cap had
 // cut the reply off, the model had not written bad JSON. "The reply budget"
 // in the route has the whole account. The figures below are what the new
-// numbers rest on, read from the audit log on 10 October 2026.
+// numbers rest on: the first four read from production's audit log and
+// marking_submissions on 10 October 2026, the last from Cloudflare's own
+// documentation of its 524 error.
 // ────────────────────────────────────────────────────────────────────────────
 
 /** The longest reply production had marked when the cap was raised. */
 const LONGEST_MARKED_REPLY = 3_980
 /** The slowest rate any marked reply over 1,000 tokens was written at. */
 const SLOWEST_TOKENS_PER_SECOND = 86
+/** The longest gap seen between saving an essay and calling the model for it. */
+const LONGEST_BEFORE_CALL_S = 9.4
+/** The longest gap seen between a marked reply and its audit row: saving the mark and logging it. */
+const LONGEST_AFTER_CALL_S = 14.4
 /** How long Cloudflare, in front of the site, waits for the origin before showing its 524 page. */
 const CLOUDFLARE_WAIT_S = 125
 
@@ -386,7 +392,7 @@ const NOT_JSON = {
 /** A reply the model was stopped in the middle of, as production's four were. */
 const cutOff = (over: Partial<ModelReply> = {}): ModelReply => ({
   content: [{ type: 'text', text: '{"aoScores": [{"id": "AO1", "justification": "The response' }],
-  usage: { input_tokens: 10, output_tokens: 8_192 },
+  usage: { input_tokens: 10, output_tokens: 8_000 },
   stop_reason: 'max_tokens',
   ...over,
 })
@@ -419,7 +425,7 @@ describe('POST /api/marking/run - a reply cut off at max_tokens', () => {
         success: false,
         errorClass: 'TRUNCATED',
         outputSummary: { rejected: 'TRUNCATED' },
-        tokenUsage: expect.objectContaining({ outputTokens: 8_192 }),
+        tokenUsage: expect.objectContaining({ outputTokens: 8_000 }),
       }),
     )
   })
@@ -462,11 +468,13 @@ describe('POST /api/marking/run - the reply budget', () => {
     expect(body.max_tokens / SLOWEST_TOKENS_PER_SECOND).toBeLessThan(options.timeout / 1000)
   })
 
-  it('and lets the function outlive the call, but not past what Cloudflare will wait', async () => {
+  it('and lets the function finish around the call, but not past what Cloudflare will wait', async () => {
     const { maxDuration } = await import('@/app/api/marking/run/route')
     await POST(makeReq())
-    // Ten seconds after the deadline to refund, log and answer.
-    expect(maxDuration).toBeGreaterThanOrEqual(sentToModel().options.timeout / 1000 + 10)
+    const deadline = sentToModel().options.timeout / 1000
+    expect(maxDuration).toBeGreaterThanOrEqual(
+      LONGEST_BEFORE_CALL_S + deadline + LONGEST_AFTER_CALL_S,
+    )
     expect(maxDuration).toBeLessThan(CLOUDFLARE_WAIT_S)
   })
 
