@@ -1,6 +1,60 @@
 // @ts-nocheck
 import type { BoardExamGuide } from './types'
 
+/**
+ * Pearson Edexcel International GCSE English Language A (4EA1), with the
+ * International GCSE English Literature (4ET1) objectives and poems it touches.
+ *
+ * WHO SEES IT. Only `examinerTips` is rendered anywhere: /practice
+ * (src/app/practice/page.tsx) loads this guide through loadGuideByBoard and
+ * shows one tip beside the question. board-guide-map.ts sends five boards here:
+ * edexcel-igcse-lang (4EA1), edexcel-igcse (4ET1) and the three Cambridge
+ * boards (0500, 0990, 0475). So each paper's tip heading names 4EA1, and the
+ * two general headings name the anthology and timing. No other field is read
+ * by any page today.
+ *
+ * REWRITTEN 10 October 2026. It described a different qualification:
+ * - "a 45-poem anthology in six clusters" (Culture and Identity, Belonging and
+ *   so on). The Pearson Edexcel International GCSE English Anthology has three
+ *   parts: ten non-fiction texts (Part 1), five poems and five prose texts
+ *   (Part 2), and sixteen poems for 4ET1 only (Part 3). Its poem list held
+ *   eight poems the anthology does not print, among them Ozymandias, Exposure
+ *   and Storm on the Island.
+ * - a Paper 2 question comparing an unseen poem with a named anthology poem,
+ *   quoted "from memory". Paper 2 sets one essay on one named Part 2 poem or
+ *   prose text, printed in the exam, with no unseen poem and no comparison.
+ * - Paper 1 as four reading questions of 10, 10, 15 and 10 marks and two
+ *   writing tasks of 20 and 25. It is five reading questions of 2, 4, 5, 12
+ *   and 22 marks and one 45-mark writing task from a choice of two.
+ * - "no spoken language endorsement". There is an optional one, 4EA1/E.
+ * - objective weightings of about 25, 25, 10, 25 and 15 per cent. They are 15,
+ *   20, 15, 30 and 20. The Literature objectives left out AO3 (comparison) and
+ *   described AO4 as personal response, which is part of 4ET1's AO1; its AO4 is
+ *   context.
+ * - grade boundaries out of 150 for 2023 to 2025 and three "key changes"
+ *   (2017, 2019, 2024) that no Pearson document supports.
+ *
+ * SOURCES, all read locally on 10 October 2026:
+ * - 4EA1 specification, Issue 7, August 2025 (ISBN 978 1 446 95437 9): cover
+ *   (first teaching 2016, first examination June 2018); PDF pp9-11 (the
+ *   components and the endorsement); p12 (the anthology texts); p13 (the
+ *   transactional forms); p15 and p17 (Sections A and B, their timings and
+ *   objectives); pp23-24 (the AO1 and AO2 grids for Assignment A); p32 (the
+ *   objectives and weightings); p33 (raw marks by question).
+ * - 4ET1 specification, Issue 3, August 2025: PDF p29 (objectives and
+ *   weightings).
+ * - Pearson Edexcel International GCSE English Anthology, Issue 8, February
+ *   2026: the contents, the introduction on how each part is examined, and the
+ *   summary of Issue 8 changes. src/lib/board/edexcel-igcse-anthology.ts lists
+ *   the same contents.
+ * - 4EA1/01 mark scheme, Summer 2026 (publication code 4EA1_01_2606_MS): the
+ *   Question 4 and 5 grids, the one-text cap and the Section B letter note.
+ * - 4EA1/02 question papers, June 2020 and June 2023: the Question 1 form and
+ *   the three Section B prompts. A research note of 26 September 2026 read the
+ *   same three-bullet form on the November 2023, June 2024 and November 2024
+ *   papers, and every 4EA1/01 paper from the 2016 samples to June 2026.
+ * - Pearson, Notional Component Grade Boundaries, June 2025, page 9.
+ */
 export const igcseGuide: BoardExamGuide = {
   boardId: 'IGCSE',
   boardName: 'Edexcel IGCSE',
@@ -8,105 +62,117 @@ export const igcseGuide: BoardExamGuide = {
 
   overview: `
     <p>
-      Pearson Edexcel International GCSE English Language A (<strong>4EA1</strong>) is one of the most widely sat
-      international qualifications in British schools overseas, international schools, and independent schools in
-      the UK. It is graded <strong>9-1</strong>, mirroring the domestic GCSE scale, and is recognised by universities
-      and employers worldwide. The qualification is structured across <strong>two papers</strong>: Paper 1 focuses on
-      non-fiction reading and transactional writing, while Paper 2 combines poetry from a set anthology with
-      imaginative/creative writing.
+      Pearson Edexcel International GCSE English Language A (<strong>4EA1</strong>) is graded
+      <strong>9 to 1</strong>. First taught in September 2016 and first examined in June 2018, it has
+      a compulsory <strong>Paper 1</strong>, Non-fiction Texts and Transactional Writing (2 hours 15
+      minutes, 90 marks, 60%), and then either <strong>Paper 2</strong>, Poetry and Prose Texts and
+      Imaginative Writing (1 hour 30 minutes, 60 marks, 40%), or a coursework option of two
+      assignments, an essay on the Part 2 texts and a piece of imaginative writing (60 marks, 40%).
     </p>
     <p>
-      The most distinctive feature of the IGCSE English Language A specification is its <strong>45-poem anthology</strong>,
-      organised into <strong>six thematic clusters</strong> - the largest anthology of any English qualification at this
-      level. The clusters are: <em>Culture and Identity</em>, <em>Belonging</em>, <em>Conflict</em>,
-      <em>War and its Aftermath</em>, <em>Time and Place</em>, and <em>The Natural World</em>. Students study poems
-      from all six clusters, and the examination may draw from any of them. This breadth demands sustained revision
-      across a wide range of poetic voices, periods, and traditions - from Romantic and Victorian poets through to
-      modern and contemporary writers.
+      Its set texts are in the <strong>Pearson Edexcel International GCSE English Anthology</strong>
+      (Issue 8, February 2026), which has three parts. <strong>Part 1</strong> holds ten non-fiction
+      texts for Paper 1, and <strong>Part 2</strong> holds five poems and five prose texts for Paper
+      2 and the coursework. <strong>Part 3</strong>, sixteen poems, is examined only in International
+      GCSE English Literature (<strong>4ET1</strong>), whose Paper 1 asks you to compare two of them.
+      Every anthology text a question is on is printed for you in the exam, and copies of the
+      anthology may not be taken in.
     </p>
     <p>
-      Unlike the domestic Edexcel GCSE, the IGCSE has <strong>no spoken language endorsement</strong>. Assessment is
-      entirely through written examinations. Paper 1 carries <strong>60%</strong> of the total marks and Paper 2
-      carries <strong>40%</strong>, making Paper 1 the critical paper for overall grade outcomes. The specification
-      shares Edexcel's emphasis on <strong>"Reading as a Writer"</strong> - the principle that students should analyse
-      how writers craft language for deliberate effect, rather than simply identifying techniques.
+      Assessment is by written examination, apart from the coursework option. There is also an
+      optional <strong>spoken language endorsement</strong> (4EA1/E): a prepared presentation of up
+      to 10 minutes, reported separately as Pass, Merit, Distinction or Not Classified. It does not
+      count towards the 9 to 1 grade.
     </p>
     <p>
-      Strategic advice for IGCSE students centres on three priorities. First, invest heavily in Paper 1, which
-      dominates the weighting - strong reading comprehension and confident transactional writing here can secure
-      the majority of your grade. Second, for Paper 2 poetry, ensure you have studied poems across <strong>all six
-      clusters</strong>, with at least two poems per cluster memorised in detail (key quotations, form, context).
-      Third, practise the comparison element of the poetry question rigorously - the exam asks you to compare an
-      unseen poem with one from the anthology, requiring both analytical flexibility and deep anthology knowledge.
-      Finally, in all writing tasks, prioritise <strong>accuracy</strong> - spelling, punctuation, and grammar are
-      assessed explicitly and can make the difference between adjacent grades.
+      Strategy for 4EA1 students centres on three priorities. First, Paper 1 carries 60% of the
+      grade, and in its reading section the comparison (Question 5) is worth 22 of the 45 marks: it
+      always sets the anthology text beside an unseen extract, so practise comparing each Part 1
+      text with unseen non-fiction. Second, for Paper 2, know all ten Part 2 texts, since any one of
+      them may be named; the question is on that text alone. Third, in all writing, prioritise
+      <strong>accuracy</strong> and range: AO5, which covers vocabulary, sentence structures,
+      paragraphing, spelling, grammar and punctuation, is 20% of the qualification.
     </p>
   `,
 
+  // 4EB1 (English Language B) was listed here, though nothing in this guide
+  // describes it. 4ET1's objectives and four of its anthology poems are below.
   specCodes: [
     { subject: 'English Language A', code: '4EA1' },
-    { subject: 'English Language B', code: '4EB1' },
+    { subject: 'English Literature', code: '4ET1' },
   ],
 
   // ─── Language Assessment Objectives ──────────────────────────────────────────
+  // The specification's own wording and weightings (4EA1 Issue 7, PDF p32).
+  // AO6 is the optional spoken language endorsement, reported separately and
+  // not weighted.
   languageAOs: [
     {
       code: 'AO1',
       description:
         'Read and understand a variety of texts, selecting and interpreting information, ideas and perspectives.',
-      weighting: '~25%',
+      weighting: '15%',
     },
     {
       code: 'AO2',
       description:
-        'Understand and analyse how writers use linguistic and structural devices to achieve their effects, using relevant terminology to support their views.',
-      weighting: '~25%',
+        'Understand and analyse how writers use linguistic and structural devices to achieve their effects.',
+      weighting: '20%',
     },
     {
       code: 'AO3',
       description:
         "Explore links and connections between writers' ideas and perspectives, as well as how these are conveyed.",
-      weighting: '~10%',
+      weighting: '15%',
     },
     {
       code: 'AO4',
       description:
-        'Communicate effectively and imaginatively, adapting form, tone and register for different purposes and audiences. Organise information and ideas, using structural and grammatical features to support coherence and cohesion.',
-      weighting: '~25%',
+        'Communicate effectively and imaginatively, adapting form, tone and register of writing for specific purposes and audiences.',
+      weighting: '30%',
     },
     {
       code: 'AO5',
       description:
-        'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
-      weighting: '~15%',
+        'Write clearly, using a range of vocabulary and sentence structures, with appropriate paragraphing and accurate spelling, grammar and punctuation.',
+      weighting: '20%',
     },
   ],
 
   // ─── Literature Assessment Objectives ────────────────────────────────────────
+  // 4ET1, specification Issue 3, PDF p29: the four objectives and their
+  // weightings. AO3 is comparison and AO4 is context.
   literatureAOs: [
     {
       code: 'AO1',
       description:
-        'A close knowledge of the content of the poetry anthology and the ability to refer to it in detail.',
-      weighting: '~30%',
+        'Demonstrate a close knowledge and understanding of texts, maintaining a critical style and presenting an informed personal engagement.',
+      weighting: '30%',
     },
     {
       code: 'AO2',
       description:
-        'Understanding and analysis of how writers use linguistic, structural and presentational devices to achieve their effects, with appropriate use of terminology.',
-      weighting: '~40%',
+        'Analyse the language, form and structure used by a writer to create meanings and effects.',
+      weighting: '40%',
+    },
+    {
+      code: 'AO3',
+      description: 'Explore links and connections between texts.',
+      weighting: '10%',
     },
     {
       code: 'AO4',
       description:
-        "A personal and informed response to the poems studied, showing engagement with and understanding of the writers' ideas and attitudes.",
-      weighting: '~30%',
+        'Show understanding of the relationships between texts and the contexts in which they were written.',
+      weighting: '20%',
     },
   ],
 
   // ─── Language Papers ─────────────────────────────────────────────────────────
   languagePapers: [
     // ── Paper 1: Non-fiction Texts & Transactional Writing ──
+    // Pearson advises 1 hour 30 minutes for Section A, including reading time,
+    // and gives no time per question, so none is invented here.
     {
       title: 'Paper 1: Non-fiction Texts and Transactional Writing',
       code: '4EA1/01',
@@ -114,48 +180,58 @@ export const igcseGuide: BoardExamGuide = {
       marks: 90,
       weighting: '60%',
       textType:
-        'Non-fiction extracts (e.g. articles, letters, speeches, travel writing, autobiography)',
+        'One Part 1 anthology text (Text Two) and one unseen non-fiction extract (Text One), both printed in a source booklet',
       sections: [
         {
           title: 'Section A: Reading',
           marks: 45,
           questions: [
             {
-              question: 'Q1 - Short-answer comprehension questions on a non-fiction extract',
-              marks: 10,
+              question: 'Q1 - Short-answer question on Text One, the unseen extract',
+              marks: 2,
               ao: 'AO1',
-              skill: 'Information retrieval and inference',
-              time: '10-12 minutes',
+              skill: 'Selecting information from given lines',
+              time: "Part of Section A's 1 hour 30 minutes",
               advice:
-                'Read the extract carefully before answering. These questions test your ability to locate explicit information and make simple inferences. Keep answers concise and use evidence from the text.',
+                'Questions 1 to 3 are all on Text One and are point-marked. Answer from the lines the question gives, briefly and precisely.',
+            },
+            {
+              question: 'Q2 - Short-answer question on Text One, in your own words',
+              marks: 4,
+              ao: 'AO1',
+              skill: 'Explaining information from given lines',
+              time: "Part of Section A's 1 hour 30 minutes",
+              advice:
+                'Use your own words where the question asks for them, and make each point clearly and separately.',
+            },
+            {
+              question: 'Q3 - Question on Text One, from given lines',
+              marks: 5,
+              ao: 'AO1',
+              skill: 'Explaining or describing from the text',
+              time: "Part of Section A's 1 hour 30 minutes",
+              advice:
+                'Brief quotations are optional here: precise, relevant points from the given lines earn the marks.',
             },
             {
               question:
-                'Q2 - Explain how the writer uses language and structure to achieve effects',
-              marks: 10,
+                'Q4 - How does the writer use language and structure? (Text Two, the anthology text)',
+              marks: 12,
               ao: 'AO2',
               skill: 'Language and structure analysis',
-              time: '12-15 minutes',
+              time: "Part of Section A's 1 hour 30 minutes",
               advice:
-                'Focus on specific word choices, imagery, and structural decisions. Embed short quotations and analyse the <em>effect</em> of each technique rather than simply naming it. The "Reading as a Writer" principle applies here - think about <em>why</em> the writer made these choices.',
+                'The only question on the anthology extract. It covers the whole extract, with no line range, and one grid marks language and structure together: its upper levels look for vocabulary, sentence structure and other language features, explained and then explored for their effect. Name the effect of each choice, not only the technique.',
             },
             {
-              question: "Q3 - Compare writers' ideas and perspectives across two non-fiction texts",
-              marks: 15,
-              ao: 'AO1 + AO3',
-              skill: 'Comparison and synthesis',
-              time: '18-20 minutes',
+              question:
+                'Q5 - Compare how the writers of Text One and Text Two present their ideas and perspectives',
+              marks: 22,
+              ao: 'AO3',
+              skill: 'Comparison',
+              time: "Part of Section A's 1 hour 30 minutes",
               advice:
-                'You must address <strong>both</strong> texts with equal depth. Structure your response comparatively - do not write about one text then the other. Identify similarities and differences in the writers\' viewpoints and the methods they use to convey them. Use connectives like "whereas", "similarly", "in contrast".',
-            },
-            {
-              question: 'Q4 - Analyse how language is used in a specified section of the text',
-              marks: 10,
-              ao: 'AO2',
-              skill: 'Close language analysis',
-              time: '12-15 minutes',
-              advice:
-                'This question demands detailed, word-level analysis. Select precise quotations and explore connotations, figurative language, and tone. Avoid feature-spotting - every technique identified must be linked to its effect on the reader.',
+                'Always the unseen extract against the anthology text. Compare throughout rather than writing about one text and then the other. An answer on one text only cannot go beyond the top of Level 2 (8 marks), and Levels 4 and 5 need references balanced across both texts.',
             },
           ],
         },
@@ -164,23 +240,13 @@ export const igcseGuide: BoardExamGuide = {
           marks: 45,
           questions: [
             {
-              question:
-                'Q5 - Transactional writing task (e.g. letter, article, speech, report, review)',
-              marks: 20,
-              ao: 'AO4 (15) + AO5 (5)',
+              question: 'Q6 or Q7 - One transactional writing task, from a choice of two',
+              marks: 45,
+              ao: 'AO4 (27) + AO5 (18)',
               skill: 'Transactional writing',
-              time: '25-30 minutes',
+              time: '45 minutes',
               advice:
-                'Match form, audience, and purpose precisely. Use rhetorical techniques (tricolon, anaphora, direct address) with control. A strong opening and clear paragraphing are essential. Proofread for accuracy - AO5 marks reward correct spelling, punctuation, and grammar.',
-            },
-            {
-              question: 'Q6 - Second transactional writing task (different form from Q5)',
-              marks: 25,
-              ao: 'AO4 (19) + AO5 (6)',
-              skill: 'Transactional writing',
-              time: '30-35 minutes',
-              advice:
-                'This is the higher-tariff writing question. Adapt your style confidently to the specified form. Demonstrate range - varied sentence structures, ambitious vocabulary, and conscious structural choices. Plan for 3-5 minutes before writing. Accuracy remains critical.',
+                'The task names an audience, form or purpose. The forms set are an article for a magazine or newspaper, a speech, a letter, a guide, a review or the text of a leaflet. Match your register to the reader, organise the response for its form, and leave time to proofread for AO5.',
             },
           ],
         },
@@ -195,21 +261,20 @@ export const igcseGuide: BoardExamGuide = {
       marks: 60,
       weighting: '40%',
       textType:
-        'Poetry from the Edexcel IGCSE anthology (45 poems across 6 clusters) + unseen poem',
+        'One Part 2 anthology poem or prose text, printed for you (Part 2 has five of each), and your own imaginative writing',
       sections: [
         {
-          title: 'Section A: Poetry',
+          title: 'Section A: Poetry and Prose Texts',
           marks: 30,
           questions: [
             {
-              question:
-                'Q1 - Respond to an unseen poem and compare it with a named poem from the anthology',
+              question: 'Q1 - Essay on one named Part 2 poem or prose text',
               marks: 30,
-              ao: 'AO1 + AO2 + AO4',
-              skill: 'Poetry analysis and comparison',
+              ao: 'AO1 (12) + AO2 (18)',
+              skill: 'Analysis of a poem or prose text',
               time: '45 minutes',
               advice:
-                'This question is the centrepiece of Paper 2. You are given an unseen poem and asked to compare it with a named poem from the anthology. Read the unseen poem at least twice. Identify thematic and stylistic connections. Structure your response comparatively - weave analysis of both poems together rather than writing about them separately. AO2 is dominant: analyse language, form, and structure in both poems. Your anthology knowledge must be secure - you need to quote from memory.',
+                'One compulsory question, with no choice of text, no comparison and no unseen poem. The text is printed in the paper or an enclosed booklet, so analyse it closely rather than quoting from memory. The question asks how the writer presents something and lists three things to write about, the last the use of language and structure. Support your points with close reference and brief quotations.',
             },
           ],
         },
@@ -218,13 +283,13 @@ export const igcseGuide: BoardExamGuide = {
           marks: 30,
           questions: [
             {
-              question: 'Q2 - Imaginative/creative writing from a choice of prompts',
+              question: 'Q2, Q3 or Q4 - One imaginative writing task, from a choice of three',
               marks: 30,
-              ao: 'AO4 (24) + AO5 (6)',
-              skill: 'Imaginative/creative writing',
-              time: '40-45 minutes',
+              ao: 'AO4 (18) + AO5 (12)',
+              skill: 'Imaginative writing',
+              time: '45 minutes',
               advice:
-                'Choose the prompt that plays to your strengths. Plan for 5 minutes - a clear narrative arc or descriptive structure will score higher than unplanned writing. Use varied sentence lengths for effect, ambitious vocabulary, and conscious techniques (e.g. cyclical structure, symbolism, pathetic fallacy). Proofread carefully - AO5 rewards spelling and punctuation accuracy.',
+                'On the June 2020 and June 2023 papers the three prompts were: write about a time when you, or someone you know, did something; a story with a given title; and a story that begins with a given sentence, with images you may use. Each said the response could be real or imagined, and that it would be marked for vocabulary, spelling, punctuation and grammar. Plan briefly, shape the writing for the reader, and proofread.',
             },
           ],
         },
@@ -232,305 +297,238 @@ export const igcseGuide: BoardExamGuide = {
     },
   ],
 
-  // ─── Literature Papers (IGCSE is Language-only; left empty) ────────────────
+  // ─── Literature Papers ─────────────────────────────────────────────────────
+  // Left empty. This said "IGCSE is Language-only", but 4ET1 is International
+  // GCSE English Literature, and its students are sent to this guide. Its papers
+  // are set out in src/data/paper-structures.ts, from the specification, and its
+  // set texts in src/lib/board/edexcel-igcse-literature.ts.
   literaturePapers: [],
 
   // ─── Mark Bands ──────────────────────────────────────────────────────────────
+  // These had five generic levels ("Exceptional, Conceptualised") that are no
+  // Pearson grid's. Now: ao1 and ao2 are the grids the 4EA1 specification
+  // prints for Assignment A (Issue 7, PDF pp23-24), which has the same split as
+  // Paper 2 Question 1, AO1 12 on four levels and AO2 18 on five; the research
+  // note found the same level boundaries in the June 2024 and Summer 2025
+  // Paper 2 mark schemes. ao3 is Paper 1 Question 5 (Summer 2026 mark scheme).
+  // Each objective's text opens with its mark range, since the type has no
+  // marks field. The wording is this guide's paraphrase, keeping Pearson's key
+  // words.
   markBands: [
     {
       level: 5,
-      descriptor: 'Exceptional, Conceptualised',
-      ao1: 'Assured, perceptive interpretation with judicious and precise textual references integrated fluently',
-      ao2: "Sophisticated analysis of writer's craft with precise, assured use of subject terminology; nuanced exploration of effects on the reader",
+      descriptor: 'Discriminating, perceptive, analytical',
+      ao1: 'There is no Level 5 for AO1: its grid has four levels.',
+      ao2: 'AO2, 15-18 of 18: subtle and discriminating selection of language and structural devices, discriminating and assured use of references, and a perceptive analysis of their effects.',
+      ao3: "AO3, Paper 1 Question 5, 19-22 of 22: a varied and comprehensive range of comparisons, analysis of the writers' ideas and perspectives, and references balanced across both texts and discriminating.",
     },
     {
       level: 4,
-      descriptor: 'Perceptive, Detailed',
-      ao1: 'Critical, exploratory response demonstrating a secure understanding of the text with well-chosen references',
-      ao2: "Detailed analysis of writer's methods with confident use of relevant subject terminology; clear exploration of effects on the reader",
+      descriptor: 'Detailed, perceptive (AO1); thorough, confident, exploratory (AO2)',
+      ao1: 'AO1, 10-12 of 12: detailed and persuasive selection of information, ideas and perspectives, discriminating use of quotations and references, and perceptive interpretation.',
+      ao2: 'AO2, 11-14: thorough and confident selection of devices, confident and detailed use of references, and a detailed exploration of their effects.',
+      ao3: "AO3, 14-18: a wide range of comparisons, exploration of the writers' ideas and perspectives across the texts, and references balanced across both.",
     },
     {
       level: 3,
-      descriptor: 'Clear, Relevant',
-      ao1: 'Clear, sustained response with effective use of references to support interpretation',
-      ao2: "Clear explanation of writer's methods with appropriate use of subject terminology; clear understanding of effects on the reader",
+      descriptor: 'Clear, relevant, explanatory',
+      ao1: 'AO1, 7-9: clear and relevant selection of information and ideas, clear and relevant supporting references, and relevant interpretation showing clear understanding.',
+      ao2: 'AO2, 7-10: clear and relevant selection of devices, relevant use of references, and clear explanations of the effects of language and structure.',
+      ao3: "AO3, 9-13: a range of comparisons, explanation of the writers' ideas and perspectives, and appropriate, relevant references.",
     },
     {
       level: 2,
-      descriptor: 'Supported, Some',
-      ao1: 'Some understanding demonstrated with references used to support a range of statements',
-      ao2: "Some identification and comment on writer's methods with some use of subject terminology; some reference to effect on the reader",
+      descriptor: 'Some, developing',
+      ao1: 'AO1, 4-6: some selection of valid information and ideas, some valid references, and some valid interpretation.',
+      ao2: 'AO2, 4-6: some identification of devices, some accurate references, and some developing comment on their effects.',
+      ao3: 'AO3, 5-8: obvious comparisons, comment on ideas and perspectives, and valid but undeveloped references. An answer on one text only cannot go higher.',
     },
     {
       level: 1,
-      descriptor: 'Simple, Limited',
-      ao1: 'Simple, limited comment with occasional references that rarely support interpretation',
-      ao2: "Simple awareness of writer's methods with limited use of subject terminology; little or no reference to effect",
+      descriptor: 'Limited, basic',
+      ao1: 'AO1, 1-3: basic selection of information and ideas, limited use of references, and limited understanding, likely shown through retelling or paraphrase.',
+      ao2: 'AO2, 1-3: limited identification of devices, limited references, and basic comment on their effects.',
+      ao3: 'AO3, 1-4: no comparison of the texts, description of ideas and perspectives, and limited references.',
     },
   ],
 
   // ─── Grade Boundaries ────────────────────────────────────────────────────────
+  // These gave qualification boundaries out of 150 for 2023 to 2025 that no
+  // local Pearson document supports. Pearson's Notional Component Grade
+  // Boundaries for June 2025 (page 9) give each paper's instead. They are
+  // notional: the grade is awarded on the qualification as a whole, and the
+  // boundaries move each series.
   gradeBoundaries: [
     {
-      year: '2025 (4EA1)',
-      max: 150,
-      grade9: 127,
-      grade8: 118,
-      grade7: 109,
-      grade6: 97,
-      grade5: 85,
-      grade4: 74,
+      year: 'June 2025, Paper 1 (4EA1/01), notional',
+      max: 90,
+      grade9: 70,
+      grade8: 66,
+      grade7: 63,
+      grade6: 58,
+      grade5: 53,
+      grade4: 48,
     },
     {
-      year: '2024 (4EA1)',
-      max: 150,
-      grade9: 125,
-      grade8: 116,
-      grade7: 107,
-      grade6: 95,
-      grade5: 84,
-      grade4: 73,
-    },
-    {
-      year: '2023 (4EA1)',
-      max: 150,
-      grade9: 123,
-      grade8: 114,
-      grade7: 105,
-      grade6: 93,
-      grade5: 82,
-      grade4: 71,
+      year: 'June 2025, Paper 2 (4EA1/02), notional',
+      max: 60,
+      grade9: 43,
+      grade8: 39,
+      grade7: 36,
+      grade6: 32,
+      grade5: 28,
+      grade4: 25,
     },
   ],
 
   // ─── Examiner Tips ───────────────────────────────────────────────────────────
+  // /practice picks a group by matching its heading: /language|ao2/ for
+  // language and analysis questions, /creative|writing|ao5|ao6/ for writing,
+  // /evaluat|ao4/ for evaluation, and the first group otherwise. Keep those
+  // words where they are, or a different group starts showing.
   examinerTips: [
     {
-      question: 'Paper 1, Section A (Non-fiction Reading)',
+      question: '4EA1 Paper 1, Section A (Non-fiction Reading)',
       tips: [
-        'The reading section carries 45 marks - nearly a third of the entire qualification. Approach it with the same seriousness as the writing tasks.',
-        'For Q1 (retrieval), keep answers short and precise. Do not over-elaborate on simple comprehension questions.',
-        'For Q2 and Q4 (language analysis), always explain the <em>effect</em> of techniques - naming a metaphor without exploring its impact will not access the higher mark bands.',
-        'For Q3 (comparison), examiners consistently report that weaker responses focus too heavily on one text. Ensure genuine balance across both sources.',
+        "Section A is 45 of the paper's 90 marks. Pearson advises 1 hour 30 minutes for it, including reading time, and every question must be answered.",
+        'Questions 1 to 3 are on Text One, the unseen extract: short answers worth 2, 4 and 5 marks, each on the lines it gives. They are point-marked, so keep each answer precise.',
+        'Question 4 (12 marks) is the only question on Text Two, the anthology text. It asks how the writer uses language and structure across the whole extract, and one grid marks both: explain the effect of each choice, not only the technique.',
+        'Question 5 (22 marks) compares the two texts. An answer on one text only cannot go beyond the top of Level 2 (8 marks), and Levels 4 and 5 need references balanced across both texts.',
       ],
     },
     {
-      question: 'Paper 1, Section B (Transactional Writing)',
+      question: '4EA1 Paper 1, Section B (Transactional Writing)',
       tips: [
-        'Accuracy is heavily rewarded. Proofread every response - common errors in spelling, apostrophes, and sentence demarcation cost marks across both AO4 and AO5.',
-        'Match the conventions of the specified form precisely. A speech should use rhetorical devices and direct address; a letter needs appropriate opening/closing; an article needs a headline and subheading.',
-        'Plan before you write. A well-structured response with a clear opening, developed middle, and purposeful conclusion will always outscore a longer but rambling answer.',
-        'Q6 carries more marks than Q5 - allocate your time accordingly and do not rush the second task.',
+        'You write one task from a choice of two (Question 6 or 7), for 45 marks: 27 for AO4 (communication, form, tone and register) and 18 for AO5 (vocabulary, sentences, paragraphing and accuracy). Pearson advises 45 minutes.',
+        'The specification lists the forms you can be asked to write: an article for a magazine or newspaper, a speech, a letter, a guide, a review or the text of a leaflet.',
+        "Set the response out in its form. For a letter, Pearson's Summer 2026 mark scheme expects a fitting salutation and ending, though not postal addresses.",
+        'Plan before you write, and leave time to proofread: AO5 is 18 of the 45 marks.',
       ],
     },
     {
-      question: 'Paper 2, Section A (Poetry Comparison)',
+      question: '4EA1 Paper 2, Section A (Poetry and Prose Texts)',
       tips: [
-        '<strong>This is the single most challenging question on the IGCSE.</strong> You must analyse an unseen poem and compare it with a named anthology poem - all from memory.',
-        'Read the unseen poem at least twice before writing. Annotate it for key techniques, tone, and themes.',
-        'Your anthology knowledge must be secure. You need to quote from the named poem from memory - vague paraphrasing will not access the higher mark bands.',
-        'Structure comparatively throughout. The strongest responses weave analysis of both poems together, using connectives such as "similarly", "in contrast", "both poets employ".',
-        'AO2 dominates - focus on <em>how</em> poets use language, form, and structure rather than simply <em>what</em> the poems are about.',
+        'There is one compulsory question, worth 30 marks, on one named text from Part 2 of the anthology: one of its five poems or five prose texts. There is no choice of text, no comparison and no unseen poem.',
+        'The text is printed for you, in the paper or an enclosed booklet, and copies of the anthology may not be taken in. Know all ten texts well, but you will not need to quote from memory.',
+        'The question lists three things to write about, the last the use of language and structure. Support your points with close reference and brief quotations.',
+        'It is marked for AO1 (12 marks: selecting and interpreting ideas) and AO2 (18 marks: how the writer uses language and structure). Pearson advises about 45 minutes.',
       ],
     },
     {
-      question: 'Paper 2, Section B (Imaginative Writing)',
+      question: '4EA1 Paper 2, Section B (Imaginative Writing)',
       tips: [
-        'Choose the prompt that allows you to demonstrate your best writing. If you are stronger at narrative, choose a story prompt; if descriptive writing is your strength, choose accordingly.',
-        'Conscious crafting scores higher than length. A shorter, carefully structured piece with deliberate language choices will outscore a long, unfocused response.',
-        'Use techniques you have studied in the poetry anthology - imagery, symbolism, varied sentence structures, shifts in tone - to elevate your own writing.',
-        'Leave 3-5 minutes to proofread. AO5 accuracy marks are the easiest to secure and the easiest to lose through carelessness.',
+        'You write one response from a choice of three prompts (Questions 2 to 4), for 30 marks: 18 for AO4 and 12 for AO5. Pearson advises about 45 minutes.',
+        'On the June 2020 and June 2023 papers the prompts were: write about a time when you, or someone you know, did something; a story with a given title; and a story that begins with a given sentence, with images you may use.',
+        "The specification asks you to use what you learn about the writer's craft from reading fiction in your own imaginative writing.",
+        'Each prompt says it will be marked for the accurate and appropriate use of vocabulary, spelling, punctuation and grammar, so leave time to proofread.',
       ],
     },
     {
-      question: 'General - Anthology Revision Strategy',
+      question: 'General - The Anthology',
       tips: [
-        'With 45 poems across 6 clusters, you cannot afford to revise selectively. The named poem in the exam could come from any cluster.',
-        'Create a revision grid: for each poem, note the poet, era, key themes, form/structure, 2-3 key quotations, and a top comparison partner.',
-        'Practise writing comparative paragraphs under timed conditions - aim for a developed comparison point in 8-10 minutes.',
-        'Group poems thematically across clusters (e.g. all poems about loss, all poems using nature imagery) to build flexible comparison skills.',
+        'The Pearson Edexcel International GCSE English Anthology (Issue 8, February 2026) has three parts. Part 1, ten non-fiction texts, is for Paper 1; Part 2, five poems and five prose texts, is for Paper 2 or the coursework; Part 3, sixteen poems, is for English Literature (4ET1) only.',
+        'Study all ten Part 1 texts. Paper 1 prints one as Text Two, asks one question on it, and compares it with an unseen extract: practise comparing each with unseen non-fiction, not with the other anthology texts.',
+        'Study all ten Part 2 texts too: Paper 2 names one, and the coursework asks for an essay on any three, including both poetry and prose.',
+        'For each text, know its ideas and perspectives, how it is structured from opening to ending, and where its key moments are, so that you can find your evidence quickly in the printed copy.',
       ],
     },
     {
       question: 'General - Time Management',
       tips: [
-        'Paper 1 is 2 hours 15 minutes for 90 marks. Budget roughly 1.5 minutes per mark: ~55 minutes for reading, ~65 minutes for writing, ~15 minutes for planning and checking.',
-        'Paper 2 is 1 hour 30 minutes for 60 marks. Budget ~45 minutes for the poetry question and ~45 minutes for the writing task.',
-        'The most common examiner complaint is incomplete responses. Pace yourself and ensure every question receives a full answer.',
+        'Paper 1 is 2 hours 15 minutes for 90 marks: Pearson advises 1 hour 30 minutes for Section A, including reading time, and 45 minutes for Section B.',
+        'Paper 2 is 1 hour 30 minutes for 60 marks: about 45 minutes for each section.',
+        'Pace yourself so that every question gets a complete answer.',
       ],
     },
   ],
 
   // ─── Key Changes ─────────────────────────────────────────────────────────────
+  // The three entries here (2017, 2019 and 2024) matched no Pearson document:
+  // the specification was first taught in 2016 and first examined in 2018, and
+  // the anthology never had a 45-poem structure. These are from the
+  // specification's cover and its Issue 7 change list, Pearson's news item of 31
+  // July 2025, and the anthology's Issue 8 change list.
   keyChanges: [
     {
-      year: '2019',
+      year: '2018',
       change:
-        'The IGCSE English Language A specification (4EA1) was revised with updated anthology content and a move to the 9-1 grading scale, aligning with the domestic GCSE reform.',
+        'First examination of the 4EA1 specification (first taught from September 2016), graded 9 to 1.',
     },
     {
-      year: '2017',
+      year: '2025',
       change:
-        'Pearson confirmed 9-1 grading for all Edexcel International GCSEs, replacing the legacy A*-G scale. First teaching of the revised 4EA1 specification began.',
+        'Specification Issue 7 (August 2025) lists the transactional forms Paper 1 Section B sets: an article for a magazine or newspaper, a speech, a letter, a guide, a review and the text of a leaflet. Pearson applied the list from the November 2025 papers.',
     },
     {
-      year: '2024',
+      year: '2026',
       change:
-        'Updated poetry anthology with refreshed selection across all six clusters, maintaining the 45-poem structure but introducing several new contemporary voices.',
+        'Anthology Issue 8 (February 2026) made minor corrections to spelling, punctuation and grammar in several texts.',
     },
   ],
 
-  // ─── Poetry Anthology (45 poems across 6 clusters - representative selection) ─
+  // ─── Anthology poems ───────────────────────────────────────────────────────
+  // Four of the sixteen Part 3 poems, which 4ET1 sets and 4EA1 does not. The
+  // list was headed "45 poems across 6 clusters" and held eight poems the
+  // anthology does not print. Corrected 10 October 2026 against Issue 8 and
+  // the site's checked guides to each poem: Search For My Tongue's quotation
+  // joined lines 15 and 16 to line 31 with no ellipsis, Half-caste's ran to
+  // three lines, and War Photographer's to seventeen words; War Photographer
+  // rhymes ABBCDD, not in near-rhyme; and each top comparison is now a Part 3
+  // poem Pearson has set with it as Question 2 (June 2023, June 2024 Paper
+  // 1R, June 2025), where Piano's and War Photographer's were poems the
+  // anthology does not print.
   poems: [
-    // ── Cluster 1: Culture and Identity ──
     {
       title: 'Search For My Tongue',
       poet: 'Sujata Bhatt',
       era: 'Contemporary',
       themes: ['Cultural identity', 'Language', 'Belonging', 'Displacement'],
-      topComparison: 'Half-Caste',
+      topComparison: 'Half-caste',
       formAnalysis:
-        "Bilingual poem incorporating Gujarati script. The extended metaphor of the tongue as a plant - dying, then regrowing - enacts the poem's central argument about the resilience of mother tongue.",
-      keyQuotation: '"I thought I spit it out / but overnight while I dream, / it grows back"',
+        'A bilingual poem: lines 17 to 30 are Gujarati, printed in Gujarati script with a transliteration under each line, between two sections of English. The extended metaphor of the tongue as a plant, dying and then growing back from a stump, enacts the argument that the mother tongue survives.',
+      keyQuotation: '"it grows back, a stump of a shoot"',
     },
     {
-      title: 'Half-Caste',
+      title: 'Half-caste',
       poet: 'John Agard',
       era: 'Contemporary',
       themes: ['Racial identity', 'Prejudice', 'Language and labelling', 'Humour as resistance'],
       topComparison: 'Search For My Tongue',
       formAnalysis:
         'Caribbean dialect and phonetic spelling challenge Standard English conventions. The poem\'s structure - a series of absurd hypotheticals - dismantles the logic of the term "half-caste" through reductio ad absurdum.',
-      keyQuotation: '"Explain yuself / wha yu mean / when yu say half-caste"',
+      keyQuotation: '"Explain yuself / wha yu mean"',
     },
-
-    // ── Cluster 2: Belonging ──
     {
       title: 'Piano',
-      poet: 'D. H. Lawrence',
+      poet: 'D H Lawrence',
       era: '20th Century',
       themes: ['Nostalgia', 'Childhood', 'Memory', 'Loss of innocence'],
-      topComparison: 'Once Upon a Time',
+      topComparison: 'Remember',
       formAnalysis:
-        "Three quatrains with a regular AABB rhyme scheme. The musical imagery (piano, singing) mirrors the poem's exploration of how sound triggers involuntary memory.",
+        "Three quatrains rhyming AABB. The musical imagery (piano, singing) mirrors the poem's exploration of how sound triggers involuntary memory.",
       keyQuotation: '"In spite of myself, the insidious mastery of song / Betrays me back"',
-    },
-    {
-      title: 'Once Upon a Time',
-      poet: 'Gabriel Okara',
-      era: '20th Century',
-      themes: [
-        'Authenticity vs. performance',
-        'Colonialism',
-        'Loss of innocence',
-        'Father-child bond',
-      ],
-      topComparison: 'Piano',
-      formAnalysis:
-        'Seven stanzas of free verse with a conversational, confessional tone. The father addresses his son directly, creating an intimate dramatic monologue that shifts from cynicism to hope.',
-      keyQuotation: '"So show me, son, / how to laugh; show me how / I used to laugh and smile"',
-    },
-
-    // ── Cluster 3: Conflict ──
-    {
-      title: 'The Class Game',
-      poet: 'Mary Casey',
-      era: 'Contemporary',
-      themes: ['Class division', 'Social prejudice', 'Identity', 'Defiance'],
-      topComparison: 'Half-Caste',
-      formAnalysis:
-        "Confrontational dramatic monologue in colloquial, working-class dialect. Rhetorical questions drive the poem's challenge to class-based assumptions. The irregular form mirrors the speaker's raw energy.",
-      keyQuotation: '"How can you tell what class I\'m from? / Can you tell what class I\'m from?"',
-    },
-    {
-      title: 'Exposure',
-      poet: 'Wilfred Owen',
-      era: 'World War I',
-      themes: ['Suffering', 'Futility of war', 'Nature as enemy', 'Hopelessness'],
-      topComparison: 'Dulce et Decorum Est',
-      formAnalysis:
-        'Eight stanzas of pararhyme (half-rhyme) with a shortened final line in each stanza, creating a sense of incompleteness and exhaustion. The present tense places the reader in the trenches.',
-      keyQuotation: '"But nothing happens" - the refrain that encapsulates the futile waiting',
-    },
-
-    // ── Cluster 4: War and its Aftermath ──
-    {
-      title: 'Dulce et Decorum Est',
-      poet: 'Wilfred Owen',
-      era: 'World War I',
-      themes: ['Horror of war', 'Propaganda', 'Suffering', 'Truth vs. lies'],
-      topComparison: 'Exposure',
-      formAnalysis:
-        'Loosely sonnet-like structure subverted by the horror of its content. The shift from exhausted march to gas attack to bitter address demonstrates masterful structural control. Iambic pentameter fragments under the violence.',
-      keyQuotation:
-        '"If you could hear, at every jolt, the blood / Come gargling from the froth-corrupted lungs"',
     },
     {
       title: 'War Photographer',
       poet: 'Carol Ann Duffy',
       era: 'Contemporary',
       themes: ['Conflict', 'Guilt', 'Apathy', 'Suffering vs. comfort'],
-      topComparison: 'Poppies',
+      topComparison: 'Blessing',
       formAnalysis:
-        "Four regular sestets with a near-rhyme scheme. The controlled form mirrors the photographer's professional detachment, while the content reveals his inner turmoil.",
-      keyQuotation:
-        '"A hundred agonies in black and white / from which his editor will pick out five or six"',
-    },
-
-    // ── Cluster 5: Time and Place ──
-    {
-      title: 'Ozymandias',
-      poet: 'Percy Bysshe Shelley',
-      era: 'Romantic',
-      themes: ['Power and its transience', 'Hubris', 'Art vs. time', 'Empire'],
-      topComparison: 'London',
-      formAnalysis:
-        'Irregular sonnet with an unusual rhyme scheme that breaks from both Petrarchan and Shakespearean conventions - the fractured form mirrors the shattered statue it describes.',
-      keyQuotation: '"Look on my Works, ye Mighty, and despair! / Nothing beside remains"',
-    },
-    {
-      title: 'London',
-      poet: 'William Blake',
-      era: 'Romantic',
-      themes: ['Oppression', 'Poverty', 'Corruption', 'Social injustice'],
-      topComparison: 'Ozymandias',
-      formAnalysis:
-        'Four quatrains with an ABAB rhyme scheme. The relentless regularity mirrors the inescapable systems of control the speaker observes. Anaphora of "In every" hammers the universality of suffering.',
-      keyQuotation: '"In every cry of every Man, / In every Infant\'s cry of fear"',
-    },
-
-    // ── Cluster 6: The Natural World ──
-    {
-      title: 'Hawk Roosting',
-      poet: 'Ted Hughes',
-      era: '20th Century',
-      themes: ['Power', 'Nature', 'Violence', 'Control', 'God complex'],
-      topComparison: 'Ozymandias',
-      formAnalysis:
-        "Six quatrains of free verse spoken in the hawk's voice - a dramatic monologue of absolute authority. The lack of enjambment and end-stopped lines reflect the hawk's total self-assurance.",
-      keyQuotation: '"I kill where I please because it is all mine"',
-    },
-    {
-      title: 'Storm on the Island',
-      poet: 'Seamus Heaney',
-      era: 'Contemporary',
-      themes: ["Nature's power", 'Fear', 'Vulnerability', 'Community resilience'],
-      topComparison: 'Exposure',
-      formAnalysis:
-        'Blank verse (unrhymed iambic pentameter) in a single stanza. The conversational opening ("We are prepared") gives way to increasingly violent imagery as the storm asserts its dominance.',
-      keyQuotation: '"It is a huge nothing that we fear"',
+        "Four regular sestets, each rhyming ABBCDD and closing on a rhyming couplet. The controlled form mirrors the photographer's professional detachment, while the content reveals his inner turmoil.",
+      keyQuotation: '"A hundred agonies in black and white"',
     },
   ],
 
   // ─── Unique Features ─────────────────────────────────────────────────────────
   uniqueFeatures: [
-    'Largest poetry anthology of any English qualification at this level - 45 poems across 6 thematic clusters (Culture and Identity, Belonging, Conflict, War and its Aftermath, Time and Place, The Natural World)',
-    'International curriculum designed for British schools overseas, international schools, and independent schools - recognised globally alongside domestic GCSEs',
-    'No spoken language endorsement - assessment is entirely through written examinations, simplifying the qualification structure',
-    'Shares the Edexcel "Reading as a Writer" philosophy with the domestic specification - students are expected to analyse how writers craft language for deliberate effect, not simply identify techniques',
-    'Paper 2 poetry question requires comparison of an unseen poem with a named anthology poem, demanding both flexible analytical skills and secure memorisation of the anthology',
-    'Two transactional writing tasks on Paper 1 (unlike some boards which offer only one), testing adaptability across different forms, audiences, and purposes',
-    'Graded 9-1, fully aligned with the domestic GCSE grading scale, ensuring equivalence in university and employer recognition',
-    'The 60/40 paper weighting heavily favours Paper 1 - strategic revision should prioritise non-fiction reading and transactional writing skills',
+    'One anthology serves two qualifications: Parts 1 and 2 are for English Language A (4EA1), and Part 3, sixteen poems, is for English Literature (4ET1) only.',
+    'Every anthology text a question is on is printed for you in the exam: on Paper 1 in a source booklet beside an unseen extract, on Paper 2 in the paper or an enclosed booklet. Copies of the anthology may not be taken in.',
+    'Paper 1 compares the anthology text with an unseen extract (Question 5, 22 marks), never with another anthology text.',
+    'Paper 2 sets one essay on one named Part 2 poem or prose text, with no comparison.',
+    'A coursework option can replace Paper 2: an essay on any three Part 2 texts, including poetry and prose, and an imaginative writing task, 60 marks in all.',
+    'An optional spoken language endorsement (4EA1/E), a prepared presentation of up to 10 minutes, is reported separately and does not count towards the grade.',
+    'Graded 9 to 1. Paper 1 carries 60% and Paper 2, or the coursework, 40%.',
+    'Reading and writing carry half each: AO1, AO2 and AO3 make 50%, and AO4 and AO5 the other 50%.',
   ],
 }
