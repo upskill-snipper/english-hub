@@ -19426,15 +19426,21 @@ export const DICTIONARY: Dictionary = {
     es: 'poesía, prosa moderna, teatro moderno',
   },
   'edexcel.lit.hero_lead_and': { en: ' and a ', ar: ' بالإضافة لـ ', es: ' y una ' },
+  // 10 October 2026: these said the literary heritage text is a Shakespeare
+  // play and that everything is "assessed closed book". The 4ET1 specification
+  // (Issue 3, PDF pp11 and 14) offers three plays and three novels for literary
+  // heritage, and Paper 2 is open book: a clean, unmarked copy of each set text
+  // may be taken in, as the Paper 2 question booklets of 2023 and 2024 say on
+  // their covers.
   'edexcel.lit.hero_lead_shakes': {
-    en: 'literary heritage Shakespeare play',
-    ar: 'مسرحية شكسبير من التراث الأدبي',
-    es: 'obra de Shakespeare del patrimonio literario',
+    en: 'literary heritage text (a Shakespeare play or a novel by Austen, Dickens or Hawthorne)',
+    ar: 'نص من التراث الأدبي (مسرحية لشكسبير أو رواية لأوستن أو ديكنز أو هوثورن)',
+    es: 'obra del patrimonio literario (una obra de Shakespeare o una novela de Austen, Dickens o Hawthorne)',
   },
   'edexcel.lit.hero_lead_post': {
-    en: ', all assessed closed book.',
-    ar: '، وكلها بتنقيَّم بنظام الكتاب المغلق.',
-    es: ', todo evaluado a libro cerrado.',
+    en: '. Paper 1 is closed book; for Paper 2 you may take in clean copies of your set texts.',
+    ar: '. Paper 1 بنظام الكتاب المغلق، وفي Paper 2 تقدر تاخد معاك نسخ نظيفة من نصوصك المقرَّرة.',
+    es: '. El Paper 1 es a libro cerrado; en el Paper 2 puedes llevar ejemplares limpios de tus textos.',
   },
   'edexcel.lit.duration_3h30': {
     en: '3h 30m total',
@@ -19521,10 +19527,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'أسلوب الامتحان',
     es: 'Técnica de examen',
   },
+  // 10 October 2026: this promised strategies for "extract" questions. 4ET1
+  // prints no extract on either paper: the unseen poem, the anthology
+  // comparison and whole-text essays are its question types.
   'edexcel.lit.exam.technique.desc': {
-    en: 'IGCSE-specific strategies for comparison, extract and essay questions.',
-    ar: 'استراتيجيات لـ IGCSE لأسئلة المقارنة والمقطع والمقال.',
-    es: 'Estrategias específicas de IGCSE para las preguntas de comparación, de extracto y de redacción.',
+    en: 'IGCSE-specific strategies for the unseen poem, the poetry comparison and essay questions.',
+    ar: 'استراتيجيات لـ IGCSE لسؤال القصيدة غير المرئية ومقارنة القصائد وأسئلة المقال.',
+    es: 'Estrategias específicas de IGCSE para el poema no visto, la comparación de poemas y las preguntas de redacción.',
   },
   'edexcel.lit.exam.essay.title': {
     en: 'Essay Technique',

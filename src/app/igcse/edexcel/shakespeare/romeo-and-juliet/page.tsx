@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Romeo and Juliet - Edexcel IGCSE Literature Study Guide',
     description:
-      'Romeo and Juliet study hub for Edexcel IGCSE English Literature: plot, characters, themes overview, and exam technique for the two-part Shakespeare question.',
+      'Romeo and Juliet study hub for Edexcel IGCSE English Literature: plot, characters, themes overview, and exam technique for the Paper 2 essay.',
     images: [
       {
         url: '/api/og?title=Romeo+and+Juliet+-+Edexcel+IGCSE+Literature+Study+Guide',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   title: 'Romeo and Juliet - Edexcel IGCSE Literature Study Guide',
   description:
-    'Romeo and Juliet study hub for Edexcel IGCSE English Literature: plot, characters, themes overview, and exam technique for the two-part Shakespeare question.',
+    'Romeo and Juliet study hub for Edexcel IGCSE English Literature: plot, characters, themes overview, and exam technique for the Paper 2 essay.',
 }
 
 const PLOT = [
@@ -256,41 +256,46 @@ export default async function RomeoAndJulietHubPage() {
             <Lightbulb className="h-5 w-5" />
             <span className="text-xs font-semibold uppercase tracking-wide">Study tip</span>
           </div>
+          {/* 10 October 2026: this described the UK GCSE (1ET0) question, an
+              extract part and a whole-play part, with memorised quotations. On
+              4ET1 Romeo and Juliet is a Paper 2 Section B literary heritage text:
+              one essay from a choice of two, no extract, open book
+              (specification Issue 3, PDF pp11 and 19; Paper 2 question papers,
+              May 2023 and May 2024). */}
           <h2 className="mt-2 text-xl font-bold text-foreground">
-            How the IGCSE Romeo and Juliet question differs from GCSE
+            How the IGCSE Romeo and Juliet question works
           </h2>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            The Edexcel IGCSE Literature Shakespeare question comes in{' '}
-            <strong>two linked parts</strong>:
+            On the Edexcel IGCSE Literature exam, Romeo and Juliet is one of six literary heritage
+            texts in Paper 2 Section B, and the question comes as <strong>one essay</strong>:
           </p>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li className="flex gap-3">
               <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
-                a
+                1
               </span>
               <span>
-                <strong>Extract</strong> &mdash; a printed passage asking you to explore how
-                Shakespeare presents a character, mood or idea. Stay tightly within the extract:
-                zoom in on language, imagery and form.
+                <strong>No extract</strong>: you choose one of two questions on the play, worth 30
+                marks. Some open with a short quotation or a statement; each asks about the play as
+                a whole, and tells you to consider language, form and structure and to refer to the
+                play&rsquo;s context.
               </span>
             </li>
             <li className="flex gap-3">
               <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
-                b
+                2
               </span>
               <span>
-                <strong>Whole play</strong> &mdash; the same idea, traced across the rest of the
-                play using <em>your own</em> memorised quotes. The extract is not reprinted, so your
-                mental map must cover Acts 1 through 5.
+                <strong>Open book</strong>: you may take in a clean, unmarked copy of the prescribed
+                edition, so your quotations can come from the page. The copy carries no notes, so
+                your map of the play must cover Acts 1 to 5.
               </span>
             </li>
           </ul>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-            Most GCSE boards give a single essay tied to one extract. IGCSE demands close reading{' '}
-            <em>and</em> a longer comparison-style response. For Romeo and Juliet, that means you
-            must be able to discuss the same theme from the opening brawl, the balcony, the wedding,
-            Tybalt&rsquo;s death, the Friar&rsquo;s plot and the tomb &mdash; not just your
-            favourite scene.
+            For Romeo and Juliet, that means you must be able to discuss a theme from the opening
+            brawl, the balcony, the wedding, Tybalt&rsquo;s death, the Friar&rsquo;s plot and the
+            tomb, not just your favourite scene.
           </p>
         </section>
       </div>

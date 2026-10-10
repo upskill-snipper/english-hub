@@ -5923,8 +5923,10 @@ export const ES_MESSAGES: Record<string, string> = {
     'El Pearson Edexcel International GCSE in English Literature es una titulación de dos exámenes que se estudia en más de 85 países. Cubre ',
   'edexcel.lit.hero_lead_poetry': 'poesía, prosa moderna, teatro moderno',
   'edexcel.lit.hero_lead_and': ' y una ',
-  'edexcel.lit.hero_lead_shakes': 'obra de Shakespeare del patrimonio literario',
-  'edexcel.lit.hero_lead_post': ', todo evaluado a libro cerrado.',
+  'edexcel.lit.hero_lead_shakes':
+    'obra del patrimonio literario (una obra de Shakespeare o una novela de Austen, Dickens o Hawthorne)',
+  'edexcel.lit.hero_lead_post':
+    '. El Paper 1 es a libro cerrado; en el Paper 2 puedes llevar ejemplares limpios de tus textos.',
   'edexcel.lit.duration_3h30': '3 h 30 min en total',
   'edexcel.lit.set_texts_count': '11 textos fijados + antología',
   'edexcel.lit.paper1.title': 'Paper 1: Poesía y prosa moderna',
@@ -5948,7 +5950,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Dónde encontrar los exámenes anteriores oficiales de Edexcel, además de consejos de estudio para usarlos.',
   'edexcel.lit.exam.technique.title': 'Técnica de examen',
   'edexcel.lit.exam.technique.desc':
-    'Estrategias específicas de IGCSE para las preguntas de comparación, de extracto y de redacción.',
+    'Estrategias específicas de IGCSE para el poema no visto, la comparación de poemas y las preguntas de redacción.',
   'edexcel.lit.exam.essay.title': 'Técnica de redacción',
   'edexcel.lit.exam.essay.desc':
     'Cómo estructurar y desarrollar las redacciones de Literature en todos los exámenes.',

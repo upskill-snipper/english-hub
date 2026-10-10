@@ -837,35 +837,68 @@ const EDEXCEL_IGCSE_PAPERS: Paper[] = [
       },
     ],
   },
+  // Paper 2 CORRECTED 10 October 2026 against the specification (Issue 3, PDF
+  // pp11, 14 and 19), the Paper 2 question papers of May 2023 and May 2024 (2
+  // and 2R) and src/lib/board/edexcel-igcse-literature.ts. Section A listed
+  // Romeo and Juliet and Macbeth, which are literary heritage texts; Section B
+  // was "one extract-based question on your studied heritage prose text" and
+  // linked A Christmas Carol and Jekyll and Hyde, which 4ET1 does not set. Each
+  // section is one 30-mark essay from a choice of two on each text, with no
+  // extract; Section B's six texts are three plays and three novels, and it
+  // alone assesses context. The paper is open book: clean copies of the set
+  // texts may be taken in. The links are the eleven Paper 2 set texts.
   {
     id: 'igcse-lit-p2',
     name: 'Paper 2',
-    subtitle: 'Drama and Literary Heritage Texts',
+    subtitle: 'Modern Drama and Literary Heritage Texts',
     examCode: '4ET1/02',
     duration: '1h 30m',
     totalMarks: 60,
     colour: 'clay',
     sections: [
       {
-        title: 'Section A: Drama',
-        description: 'One essay question on your studied drama text (no extract).',
+        title: 'Section A: Modern Drama',
+        description:
+          'One essay question, from a choice of two, on your studied play (no extract). Open book: a clean copy of the play is allowed.',
         links: [
           { label: 'An Inspector Calls', href: '/revision/texts/an-inspector-calls', type: 'text' },
-          { label: 'Romeo & Juliet', href: '/revision/texts/romeo-and-juliet', type: 'text' },
-          { label: 'Macbeth', href: '/revision/texts/macbeth', type: 'text' },
           {
             label: 'A View from the Bridge',
             href: '/revision/texts/a-view-from-the-bridge',
             type: 'text',
           },
+          {
+            label: 'The Curious Incident of the Dog in the Night-time',
+            href: '/revision/texts/curious-incident',
+            type: 'text',
+          },
+          { label: 'Kindertransport', href: '/revision/texts/kindertransport', type: 'text' },
+          {
+            label: "Death and the King's Horseman",
+            href: '/revision/texts/death-and-the-kings-horseman',
+            type: 'text',
+          },
         ],
       },
       {
-        title: 'Section B: Literary Heritage Text',
-        description: 'One extract-based question on your studied heritage prose text.',
+        title: 'Section B: Literary Heritage Texts',
+        description:
+          'One essay question, from a choice of two, on your studied Shakespeare play or novel (no extract), with context assessed. Open book: a clean copy of the text is allowed.',
         links: [
-          { label: 'A Christmas Carol', href: '/revision/texts/a-christmas-carol', type: 'text' },
-          { label: 'Jekyll & Hyde', href: '/revision/texts/jekyll-and-hyde', type: 'text' },
+          { label: 'Romeo & Juliet', href: '/revision/texts/romeo-and-juliet', type: 'text' },
+          { label: 'Macbeth', href: '/revision/texts/macbeth', type: 'text' },
+          {
+            label: 'The Merchant of Venice',
+            href: '/revision/texts/the-merchant-of-venice',
+            type: 'text',
+          },
+          {
+            label: 'Pride and Prejudice',
+            href: '/revision/texts/pride-and-prejudice',
+            type: 'text',
+          },
+          { label: 'Great Expectations', href: '/revision/texts/great-expectations', type: 'text' },
+          { label: 'The Scarlet Letter', href: '/revision/texts/the-scarlet-letter', type: 'text' },
           {
             label: 'Question Types',
             href: '/revision/exam-technique/question-types',

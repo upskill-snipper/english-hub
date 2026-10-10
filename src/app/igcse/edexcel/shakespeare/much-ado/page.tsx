@@ -256,39 +256,26 @@ export default async function MuchAdoHubPage() {
             <Lightbulb className="h-5 w-5" />
             <span className="text-xs font-semibold uppercase tracking-wide">Study tip</span>
           </div>
+          {/* 10 October 2026: this described an IGCSE Much Ado question in two
+              linked parts, an extract and the whole play. Pearson does not set
+              the play for 4ET1 (specification Issue 3, PDF p14;
+              src/lib/board/edexcel-igcse-literature.ts), and its Paper 2 prints
+              no extract. The hub pages no longer list this route; whether to
+              keep it is an open decision. */}
           <h2 className="mt-2 text-xl font-bold text-foreground">
-            How the IGCSE Much Ado question differs from GCSE
+            Much Ado and the Edexcel International GCSE
           </h2>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            The Edexcel IGCSE Literature Shakespeare question has two linked parts:
+            Pearson does not set Much Ado About Nothing for International GCSE English Literature
+            (4ET1). Its Paper 2 literary heritage texts are Romeo and Juliet, Macbeth, The Merchant
+            of Venice, Pride and Prejudice, Great Expectations and The Scarlet Letter, so check
+            which text your school is teaching before you revise this one.
           </p>
-          <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-            <li className="flex gap-3">
-              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
-                a
-              </span>
-              <span>
-                <strong>Extract</strong> &mdash; a printed passage (often a verbal sparring scene or
-                a confrontation) inviting close reading. Analyse language, imagery, prose vs verse,
-                and dramatic method.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
-                b
-              </span>
-              <span>
-                <strong>Whole play</strong> &mdash; the same idea across the rest of the play, using{' '}
-                <em>your own</em> memorised quotes.
-              </span>
-            </li>
-          </ul>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-            Much Ado rewards IGCSE candidates who can move smoothly between the play&rsquo;s two
-            tones. The comic wit of Beatrice and Benedick and the dark seriousness of the broken
-            wedding are <em>connected</em>, not contradictory &mdash; examiners love answers that
-            see both registers working together. Because the plot depends on misunderstandings, pay
-            particular attention to who knows what at any given moment, and to the difference
+            If you are reading the play for another course, learn to move between its two tones. The
+            comic wit of Beatrice and Benedick and the dark seriousness of the broken wedding are{' '}
+            <em>connected</em>, not contradictory. Because the plot depends on misunderstandings,
+            pay particular attention to who knows what at any given moment, and to the difference
             between prose and verse in the characters&rsquo; speech.
           </p>
         </section>

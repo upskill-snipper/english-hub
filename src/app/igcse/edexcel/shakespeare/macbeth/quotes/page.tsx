@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Macbeth Key Quotes - Edexcel IGCSE Literature',
     description:
-      '20 key Macbeth quotations with speaker, scene reference and detailed analysis for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
+      '20 key Macbeth quotations with speaker, scene reference and detailed analysis for the Edexcel IGCSE Literature Paper 2 essay, an open-book exam.',
     images: [
       {
         url: '/api/og?title=Macbeth+Key+Quotes+-+Edexcel+IGCSE+Literature',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   title: 'Macbeth Key Quotes - Edexcel IGCSE Literature',
   description:
-    '20 key Macbeth quotations with speaker, scene reference and detailed analysis for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
+    '20 key Macbeth quotations with speaker, scene reference and detailed analysis for the Edexcel IGCSE Literature Paper 2 essay, an open-book exam.',
 }
 
 const QUOTES = [
@@ -195,9 +195,15 @@ export default async function MacbethQuotesPage() {
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Macbeth &mdash; 20 key quotes
           </h1>
+          {/* 10 October 2026: this said the exam is closed book, and the last
+              revision tip below named a "part (b) whole-play question". 4ET1
+              sets Macbeth in Paper 2, which is open book (a clean copy of the
+              play), as one whole-play essay with no extract (specification
+              Issue 3, PDF pp11 and 19). */}
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            The Edexcel IGCSE Shakespeare exam is closed book. Memorise these 20 quotations and
-            you&rsquo;ll have evidence for every likely theme.
+            In the Edexcel IGCSE exam you may have a clean copy of the play, but no notes. Know
+            these 20 quotations and where they sit, and you&rsquo;ll have evidence for every likely
+            theme.
           </p>
         </div>
       </section>
@@ -222,8 +228,8 @@ export default async function MacbethQuotesPage() {
             </li>
             <li className="flex gap-2">
               <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-              Spread your chosen quotes across all five acts &mdash; the part&nbsp;(b) whole-play
-              question rewards breadth.
+              Spread your chosen quotes across all five acts: the essay is on the whole play, so it
+              rewards breadth.
             </li>
           </ul>
         </div>

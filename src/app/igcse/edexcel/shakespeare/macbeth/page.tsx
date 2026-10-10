@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Macbeth - Edexcel IGCSE Literature Study Guide',
     description:
-      'Macbeth study guide for Edexcel IGCSE Literature: plot, characters, themes, quotes and context for the two-part Shakespeare question.',
+      'Macbeth study guide for Edexcel IGCSE Literature: plot, characters, themes, quotes and context for the Paper 2 literary heritage essay.',
     images: [
       {
         url: '/api/og?title=Macbeth+-+Edexcel+IGCSE+Literature+Study+Guide',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   title: 'Macbeth - Edexcel IGCSE Literature Study Guide',
   description:
-    'Macbeth study guide for Edexcel IGCSE Literature: plot, characters, themes, quotes and context for the two-part Shakespeare question.',
+    'Macbeth study guide for Edexcel IGCSE Literature: plot, characters, themes, quotes and context for the Paper 2 literary heritage essay.',
 }
 
 const SUB_PAGES = [
@@ -64,7 +64,7 @@ const SUB_PAGES = [
     href: '/igcse/edexcel/shakespeare/macbeth/quotes',
     title: 'Key quotes',
     summary:
-      '20 memorable quotations with speaker, scene reference and detailed analysis - ready for a closed-book exam.',
+      '20 memorable quotations with speaker, scene reference and detailed analysis - quick to find in your copy in the exam.',
     icon: Quote,
   },
   {
@@ -173,7 +173,7 @@ export default async function MacbethHubPage() {
           <h2 className="text-2xl font-bold text-foreground">Full study guide</h2>
           <p className="mt-2 text-muted-foreground">
             Drill down into each part of the play. Every section is written for the Edexcel IGCSE
-            Literature two-part Shakespeare question.
+            Literature Paper 2 essay on the play.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {SUB_PAGES.map((page) => {
@@ -231,40 +231,45 @@ export default async function MacbethHubPage() {
             <Lightbulb className="h-5 w-5" />
             <span className="text-xs font-semibold uppercase tracking-wide">Study tip</span>
           </div>
+          {/* 10 October 2026: this described the UK GCSE (1ET0) question, an
+              extract part and a whole-play part, with memorised quotations. On
+              4ET1 Macbeth is a Paper 2 Section B literary heritage text: one
+              essay from a choice of two, no extract, open book (specification
+              Issue 3, PDF pp11 and 19; Paper 2 question papers, May 2023 and May
+              2024). */}
           <h2 className="mt-2 text-xl font-bold text-foreground">
-            How the IGCSE Macbeth question differs from GCSE
+            How the IGCSE Macbeth question works
           </h2>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            On the Edexcel IGCSE Literature paper, Shakespeare comes as a{' '}
-            <strong>two-part question</strong>:
+            On the Edexcel IGCSE Literature exam, Macbeth is one of six literary heritage texts in
+            Paper 2 Section B, and the question comes as <strong>one essay</strong>:
           </p>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li className="flex gap-3">
               <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
-                a
+                1
               </span>
               <span>
-                <strong>Extract analysis</strong> &mdash; you&rsquo;re given a printed passage and
-                asked to explore how Shakespeare presents a character, mood or idea. Focus on
-                language, structure and dramatic method within the extract itself.
+                <strong>No extract</strong>: you choose one of two questions on the play, worth 30
+                marks. Some open with a short quotation or a statement; each asks about the play as
+                a whole, and tells you to consider language, form and structure and to refer to the
+                play&rsquo;s context.
               </span>
             </li>
             <li className="flex gap-3">
               <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
-                b
+                2
               </span>
               <span>
-                <strong>Whole-play essay</strong> &mdash; you then explore the same idea across the
-                rest of the play, bringing in <em>your own</em> memorised quotations. The extract is{' '}
-                <em>not</em> reprinted, so you must carry a mental map of the whole play into the
-                exam.
+                <strong>Open book</strong>: you may take in a clean, unmarked copy of the prescribed
+                edition. Your quotations can come from the page, but the copy carries no notes, so
+                you need to know where things happen.
               </span>
             </li>
           </ul>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-            By contrast, most GCSE boards give you a single essay tied to one extract. IGCSE demands
-            both close reading <em>and</em> a longer, comparison-style whole-play response &mdash;
-            so revision must cover <strong>every act</strong>, not just set scenes.
+            With about 45 minutes for one essay on the whole play, revision must cover{' '}
+            <strong>every act</strong>, not just set scenes.
           </p>
           <div className="mt-4 rounded-lg border border-primary/30 bg-card p-4">
             <p className="text-xs font-semibold uppercase tracking-wide text-primary">
@@ -273,12 +278,13 @@ export default async function MacbethHubPage() {
             <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                Memorise 15&ndash;20 short, embeddable quotes spread across all five acts.
+                Know 15 to 20 short, embeddable quotes across all five acts, and where each sits in
+                your copy.
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                Practise writing about the same moment at two depths: line by line <em>and</em>{' '}
-                across the whole play.
+                Practise tracing one idea across the whole play, analysing a few key moments
+                closely.
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />

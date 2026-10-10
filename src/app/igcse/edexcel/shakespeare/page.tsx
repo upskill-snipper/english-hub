@@ -8,11 +8,20 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { t } from '@/lib/i18n/t'
 import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 
+// 10 October 2026: this page described the UK GCSE (1ET0) question, two linked
+// parts on a printed extract and the whole play, in a closed-book exam, and
+// offered Much Ado About Nothing as a set play. 4ET1 sets Shakespeare in Paper 2
+// Section B, as three of six literary heritage texts (Romeo and Juliet, Macbeth
+// and The Merchant of Venice, beside novels by Austen, Dickens and Hawthorne),
+// and does not set Much Ado. Section B is one 30-mark essay from a choice of
+// two on your text, with no extract, marked AO1 10, AO2 10 and AO4 10, and the
+// paper is open book (specification Issue 3, PDF pp11, 14, 19 and 30; Paper 2
+// question papers, May 2023 and May 2024).
 export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel IGCSE Shakespeare - Macbeth, Romeo and Juliet - The English Hub',
     description:
-      'Pearson Edexcel IGCSE Literature 4ET1 Shakespeare section. Three plays: Macbeth, Romeo and Juliet, Much Ado About Nothing. Themes, characters, essay plans.',
+      'Pearson Edexcel IGCSE Literature 4ET1: guides to Macbeth and Romeo and Juliet, two of the Shakespeare plays set for Paper 2. Themes, characters, essay plans.',
     images: [
       {
         url: '/api/og?title=Edexcel+IGCSE+Shakespeare+-+Macbeth%2C+Romeo+and+Juliet+-+The+English+Hub',
@@ -27,7 +36,7 @@ export const metadata: Metadata = {
   },
   title: 'Edexcel IGCSE Shakespeare - Macbeth, Romeo and Juliet',
   description:
-    'Pearson Edexcel IGCSE Literature 4ET1 Shakespeare section. Three plays: Macbeth, Romeo and Juliet, Much Ado About Nothing. Themes, characters, essay plans.',
+    'Pearson Edexcel IGCSE Literature 4ET1: guides to Macbeth and Romeo and Juliet, two of the Shakespeare plays set for Paper 2. Themes, characters, essay plans.',
 }
 
 const PLAYS = [
@@ -59,20 +68,6 @@ const PLAYS = [
     ],
     cta: 'Start the Romeo and Juliet guide',
   },
-  {
-    slug: 'much-ado',
-    title: 'Much Ado About Nothing',
-    tagline: 'Love, deception and the games people play',
-    period: 'First performed c. 1598',
-    summary:
-      "Two couples - the witty Beatrice and Benedick, and the earnest Claudio and Hero - are pushed together and torn apart by a tangle of eavesdropping, pranks and slander. Shakespeare's sharpest romantic comedy also asks hard questions about honour, reputation and how women are judged.",
-    highlights: [
-      'Hub page summarising plot, characters and themes',
-      '15 key quotes with analysis',
-      'Themes: love, deception, honour, marriage, gender',
-    ],
-    cta: 'Start the Much Ado guide',
-  },
 ]
 
 export default async function ShakespeareHubPage() {
@@ -82,7 +77,7 @@ export default async function ShakespeareHubPage() {
     <div className="min-h-screen bg-background">
       <LearningResourceJsonLd
         name="Edexcel IGCSE Literature Shakespeare section"
-        description="Three Shakespeare set texts - Macbeth, Romeo and Juliet, Much Ado About Nothing - for Pearson Edexcel IGCSE Literature 4ET1."
+        description="Guides to Macbeth and Romeo and Juliet, two of the three Shakespeare plays Pearson sets for Edexcel IGCSE Literature 4ET1 Paper 2."
         educationalLevel="IGCSE"
         learningResourceType="Study guide"
         inLanguage="en-GB"
@@ -104,8 +99,10 @@ export default async function ShakespeareHubPage() {
             Shakespeare Study Guides
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Edexcel IGCSE English Literature offers three Shakespeare set texts. You only study{' '}
-            <strong>one</strong> - use the guides below to revise the play your school is teaching.
+            Edexcel IGCSE English Literature sets three Shakespeare plays among its six literary
+            heritage texts: Romeo and Juliet, Macbeth and The Merchant of Venice. You study{' '}
+            <strong>one</strong> heritage text, which may be a novel instead - use the guides below
+            if your school is teaching Macbeth or Romeo and Juliet.
           </p>
         </div>
       </section>
@@ -121,29 +118,29 @@ export default async function ShakespeareHubPage() {
           </div>
           <h2 className="mt-2 text-2xl font-bold text-foreground">The Shakespeare question</h2>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            In the Edexcel IGCSE Literature exam, you will answer{' '}
-            <strong>two linked questions</strong> on your chosen play: a part (a) question focused
-            on a printed extract, and a part (b) question that asks you to explore the same idea,
-            theme or character across the play as a whole. The exam is <strong>closed book</strong>{' '}
-            - you must memorise your own quotes for part (b).
+            In Paper 2 Section B of the Edexcel IGCSE Literature exam, you answer{' '}
+            <strong>one essay question</strong>, from a choice of two on your play. No extract is
+            printed: some questions open with a short quotation or a statement, and each asks about
+            the play as a whole. The exam is <strong>open book</strong> - you may take in a clean,
+            unmarked copy of the prescribed edition.
           </p>
           <ul className="mt-4 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
             <li className="flex gap-2">
               <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-              Part (a): close analysis of a printed extract (~20 marks)
+              One essay from a choice of two on your play (30 marks)
             </li>
             <li className="flex gap-2">
               <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-              Part (b): whole-play essay with your own quotations (~20 marks)
+              About 45 minutes, half of Paper 2&rsquo;s 1 hour 30 minutes
             </li>
             <li className="flex gap-2">
               <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
               Assessed on: understanding the text, analysing language and structure, and relating to
-              context
+              context, 10 marks each
             </li>
             <li className="flex gap-2">
               <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-              Closed book - embed short, memorised quotations
+              Open book - your copy must be clean, so know where the key scenes are
             </li>
           </ul>
         </section>
@@ -154,7 +151,7 @@ export default async function ShakespeareHubPage() {
             {await t('igcse.page.choose_set_text')}
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Students study one of the three plays below. Pick the one your teacher has selected.
+            Guides to two of the three plays are below. Pick the one your teacher has selected.
           </p>
 
           <div className="mt-8 space-y-6">
@@ -209,15 +206,14 @@ export default async function ShakespeareHubPage() {
             Studying IGCSE, not GCSE? Here&rsquo;s what changes
           </h2>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            Edexcel IGCSE Literature questions look a little different from GCSE ones. Instead of a
-            single essay with an extract, you answer <strong>two linked questions</strong> on the
-            same play: a close extract analysis <em>and</em> a whole-play response. That means you
-            need both forensic close reading <em>and</em> a strong mental map of the whole play
-            &mdash; not just your favourite scenes.
+            If you have seen GCSE Shakespeare questions built on a printed extract, note that this
+            paper prints none. You write <strong>one essay on the play as a whole</strong>, and you
+            may have a clean copy of the play with you. That means you need a strong map of the
+            whole play, and quick bearings in your own copy, not just a few favourite scenes.
           </p>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            Every play hub below includes a dedicated <strong>Study tip</strong> section explaining
-            how to prepare for the two-part question and how it differs from GCSE.
+            Each play hub below includes a <strong>Study tip</strong> section on how to prepare for
+            this question.
           </p>
         </section>
       </div>

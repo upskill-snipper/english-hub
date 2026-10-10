@@ -1140,22 +1140,30 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 11 - IGCSE Essay Writing: Extract to Whole Text
+  // MODULE 11 - IGCSE Essay Writing: Key Scenes and the Whole Play
+  // 10 October 2026: this was "Extract to Whole Text" and said the IGCSE essay
+  // on the play gives a printed extract of 30 to 40 lines, to be answered two
+  // thirds on the extract; its quiz and module 12's timing plan said the same.
+  // Pearson prints no extract: An Inspector Calls is a 4ET1 Paper 2 Section A
+  // text, one 30-mark essay from a choice of two on the whole play, open book
+  // (specification Issue 3, PDF pp11 and 19; Paper 2 question papers, May
+  // 2023 and May 2024). The extract work is kept as practice and says so. The
+  // title is mirrored in src/data/course-index.ts.
   // ──────────────────────────────────────────────
   {
     id: 'ic-m11',
-    title: 'IGCSE Essay Writing: Extract to Whole Text',
+    title: 'IGCSE Essay Writing: Key Scenes and the Whole Play',
     duration: '60 min',
     content: `
 <h2>Writing IGCSE Literature Essays on An Inspector Calls</h2>
 
-<p>At IGCSE level, your literature essay on <em>An Inspector Calls</em> will typically require you to respond to an <strong>extract</strong> from the play and then extend your analysis to the <strong>whole text</strong>. This is a two-part structure that tests different skills: close analysis of language, form, and structure in the extract, and broader knowledge of themes, characters, and Priestley's intentions across the entire play. Mastering this structure - and understanding exactly what examiners are looking for - is essential for achieving the highest grades.</p>
+<p>On Pearson's Edexcel IGCSE Literature exam, <em>An Inspector Calls</em> is a Paper 2 Section A text. You answer <strong>one of two essay questions</strong> on the play, for 30 marks. No extract is printed: some questions open with a short quotation or a statement, and each asks about the play as a whole and tells you to consider language, form and structure. The paper is open book, so you may have a clean copy of the play. A strong essay builds its argument from close analysis of a few key scenes, linked across the whole play, and this module practises exactly that, using a passage as the starting point.</p>
 
-<h3>Understanding the Two-Part Structure</h3>
+<h3>Practising With a Passage</h3>
 
-<p>The typical IGCSE literature question on a set text will provide an extract (usually around 30-40 lines) and ask you to analyse how Priestley presents a particular theme, character, or idea <strong>in this extract and in the play as a whole</strong>. This means your essay must do two things: first, provide detailed close analysis of the extract itself - examining specific words, phrases, stage directions, and dramatic techniques - and second, extend your argument to the wider play, showing how the ideas in the extract connect to other moments, characters, and themes across all three acts.</p>
+<p>A useful practice task gives you a passage of about 30 to 40 lines and asks how Priestley presents a particular theme, character, or idea <strong>in this extract and in the play as a whole</strong>. The exam itself prints no passage, but the task trains both halves of a good essay: first, detailed close analysis of a moment - specific words, phrases, stage directions, and dramatic techniques - and second, connections to other moments, characters, and themes across all three acts.</p>
 
-<p>A common structure is to spend approximately <strong>two-thirds</strong> of your response on the extract and <strong>one-third</strong> on the wider play, though this is a guideline rather than a rigid rule. The key principle is that your extract analysis should be detailed and closely focused on language, while your whole-text analysis should show breadth of knowledge and the ability to make connections across the play.</p>
+<p>In such a practice task, a common split is about <strong>two-thirds</strong> on the passage and <strong>one-third</strong> on the wider play, though this is a guideline rather than a rigid rule. In the exam, where no passage is printed, choose your own key moments and give each the same close attention, while showing breadth of knowledge across the play.</p>
 
 <div class="key-term"><strong>Key Term: Close Analysis</strong> - The detailed examination of specific words, phrases, images, and techniques within a short passage. Close analysis requires you to select precise quotations, identify the techniques being used, explain their effects, and link them to the writer's purpose. It is the foundation of high-quality literary essay writing.</div>
 
@@ -1215,17 +1223,16 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
     quiz: [
       {
         id: 'ic-m11-q1',
-        question:
-          'What is the typical two-part structure of an IGCSE literature essay on a set text?',
+        question: 'What does the Edexcel IGCSE Paper 2 question on An Inspector Calls ask for?',
         options: [
           'Introduction and conclusion',
-          'Close analysis of an extract and extension to the whole text',
+          'An essay on the play as a whole, built on close analysis of key moments',
           'Character analysis and theme analysis',
           'Historical context and personal response',
         ],
         correct: 1,
         explanation:
-          "IGCSE literature essays typically require close analysis of a provided extract followed by discussion of the whole text. This tests both detailed close reading skills and broader knowledge of the play's themes, characters, and the writer's methods.",
+          "Paper 2 prints no extract. You answer one of two essay questions on the whole play, considering language, form and structure, so the strongest essays build their argument from close analysis of well-chosen key moments, which tests both close reading and broader knowledge of the play's themes, characters, and the writer's methods.",
       },
       {
         id: 'ic-m11-q2',
@@ -1244,7 +1251,7 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
       {
         id: 'ic-m11-q3',
         question:
-          'Approximately how should you divide your essay between the extract and the whole text?',
+          'In a passage-based practice task, how might you divide your answer between the passage and the whole play?',
         options: [
           'Equal halves - 50% extract, 50% whole text',
           'Approximately two-thirds on the extract, one-third on the whole text',
@@ -1253,7 +1260,7 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'A common guideline is two-thirds on the extract (detailed close analysis) and one-third on the whole text (broader connections). This ensures you demonstrate both close reading skills and comprehensive knowledge of the play.',
+          'A common guideline for practice is two-thirds on the passage (detailed close analysis) and one-third on the whole play (broader connections). In the exam, which prints no passage, give the key moments you choose the same close analysis.',
       },
       {
         id: 'ic-m11-q4',
@@ -1299,12 +1306,12 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
 
 <h3>Time Management Under Exam Conditions</h3>
 
-<p>For an IGCSE Literature exam, you will typically have approximately <strong>45 minutes</strong> to write your response on <em>An Inspector Calls</em> (though this varies by specification - check your exam board's timings carefully). Here is a recommended breakdown:</p>
+<p>On Pearson's Edexcel IGCSE Literature Paper 2 you have about <strong>45 minutes</strong> for your essay on <em>An Inspector Calls</em>: the question paper suggests 45 minutes for each section. Here is a recommended breakdown:</p>
 
 <ul>
-  <li><strong>5 minutes: Reading and planning.</strong> Read the extract carefully, annotate key words and techniques, and create a brief plan (4-5 analytical points for the extract, 2-3 points for the whole text).</li>
-  <li><strong>25 minutes: Writing the extract analysis.</strong> Write 3-4 detailed analytical paragraphs on the extract, each following the Point-Evidence-Analysis-Context structure.</li>
-  <li><strong>12 minutes: Writing the whole-text analysis.</strong> Write 2-3 paragraphs linking the extract's ideas to the rest of the play.</li>
+  <li><strong>5 minutes: Reading and planning.</strong> Read the question carefully, choose key moments from across the play that you can find quickly in your copy, and create a brief plan (4-5 analytical points, then 2-3 connections across the play).</li>
+  <li><strong>25 minutes: Writing the close analysis.</strong> Write 3-4 detailed analytical paragraphs on your key moments, each following the Point-Evidence-Analysis-Context structure.</li>
+  <li><strong>12 minutes: Writing the whole-text analysis.</strong> Write 2-3 paragraphs tracing the question's idea across the rest of the play.</li>
   <li><strong>3 minutes: Checking and refining.</strong> Read through your essay, correct errors, and ensure your argument is coherent.</li>
 </ul>
 
@@ -1312,7 +1319,7 @@ export const y11IgcseLitInspectorModules: CourseModule[] = [
 
 <h3>Model Essay Plan: "How Does Priestley Present the Theme of Responsibility?"</h3>
 
-<p>Imagine the exam provides an extract from the Inspector's final speech, including the line about being <strong>"members of one body"</strong>. Here is a model plan:</p>
+<p>Imagine you are practising with an extract from the Inspector's final speech, including the line about being <strong>"members of one body"</strong>. Here is a model plan:</p>
 
 <p><strong>Extract Analysis Points:</strong></p>
 <ol>

@@ -124,11 +124,21 @@ const paper1Sections = [
   },
 ]
 
+// Paper 2 corrected 10 October 2026 against the 4ET1 specification (Issue 3,
+// PDF pp11, 14 and 19) and the Paper 2 question papers of May 2023 and May 2024
+// (2 and 2R). Drama was "extract-based" and literary heritage "a studied
+// Shakespeare play. Closed book". Each section is one 30-mark essay from a
+// choice of two on each text, with no extract printed (some questions open
+// with a short quotation); literary heritage offers three novels as well as
+// three plays; and the paper is open book, with clean copies of the set texts
+// allowed. Much Ado About Nothing was listed under Section B: 4ET1 does not
+// set it (src/lib/board/edexcel-igcse-literature.ts), so it is no longer here.
 const paper2Sections = [
   {
     heading: 'Section A - Modern Drama',
     label: 'Paper 2 Section A',
-    detail: 'One extract-based question on a studied modern drama text.',
+    detail:
+      'One essay question, from a choice of two, on your modern drama text. No extract is printed. Open book: you may take in a clean copy of the play.',
     href: '/igcse/edexcel/drama',
     texts: [
       {
@@ -158,7 +168,8 @@ const paper2Sections = [
   {
     heading: 'Section B - Literary Heritage',
     label: 'Paper 2 Section B',
-    detail: 'One essay question on a studied Shakespeare play. Closed book.',
+    detail:
+      'One essay question, from a choice of two, on your literary heritage text: a Shakespeare play, or a novel by Austen, Dickens or Hawthorne. Context is assessed. Open book: you may take in a clean copy of the text.',
     href: '/igcse/edexcel/shakespeare',
     texts: [
       {
@@ -180,15 +191,6 @@ const paper2Sections = [
         subLinks: [
           { label: 'Themes', href: '/igcse/edexcel/shakespeare/romeo-and-juliet/themes' },
           { label: 'Key Quotes', href: '/igcse/edexcel/shakespeare/romeo-and-juliet/quotes' },
-        ],
-      },
-      {
-        name: 'Much Ado About Nothing',
-        author: 'William Shakespeare',
-        href: '/igcse/edexcel/shakespeare/much-ado',
-        subLinks: [
-          { label: 'Themes', href: '/igcse/edexcel/shakespeare/much-ado/themes' },
-          { label: 'Key Quotes', href: '/igcse/edexcel/shakespeare/much-ado/quotes' },
         ],
       },
     ] as TextEntry[],

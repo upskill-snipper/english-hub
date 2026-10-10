@@ -9,6 +9,16 @@ import type { CourseData, CourseModule, CourseQuiz } from './courses'
 // 1. A View from the Bridge - Arthur Miller
 // ─────────────────────────────────────────────────────────────────────────────
 
+// 10 October 2026: the exam practice modules of all eight courses here told
+// students the drama exam is "extract-based", gave each a "Sample Question" on
+// a printed extract, and one credited context to AO3 in a drama answer. 4ET1
+// Paper 2 prints no extract: Section A (drama) and Section B (literary
+// heritage) each set one 30-mark essay from a choice of two on each text, about
+// the whole text, and the paper is open book (specification Issue 3, PDF pp11,
+// 19 and 30; Paper 2 question papers, May 2023 and May 2024). Section A is
+// marked on AO1 and AO2 only; AO3 is comparison and AO4 context, which only
+// Section B assesses. The format paragraphs now say so, and the extract tasks
+// are labelled close-reading practice.
 const viewFromBridgeModules: CourseModule[] = [
   {
     id: 'vftb-m1',
@@ -454,10 +464,10 @@ const viewFromBridgeModules: CourseModule[] = [
 <h2>Exam Practice &amp; Model Response - <em>A View from the Bridge</em></h2>
 
 <h3>Understanding the Edexcel IGCSE Question Format</h3>
-<p>For the Edexcel IGCSE Literature drama exam, you will typically encounter an <strong>extract-based question</strong>. You will be given a printed passage from your set text and asked a question that requires you to analyse the extract closely <strong>and</strong> discuss the wider play.</p>
+<p>In Paper 2 Section A you answer <strong>one of two essay questions</strong> on the play, for 30 marks. No extract is printed: some questions open with a short quotation or a statement, and each asks about the play as a whole and tells you to consider language, form and structure. The paper is open book, so you may have a clean, unmarked copy of the play.</p>
 
-<p>A typical question might look like:</p>
-<div class="text-extract"><strong>Sample Question:</strong> Read the extract from Act One (the boxing scene).<br><br>Explore how Miller presents the conflict between Eddie and Rodolpho in this extract and in the play as a whole.</div>
+<p>The task below is close-reading practice on one scene, the kind of moment you will choose for yourself to support an argument about the whole play:</p>
+<div class="text-extract"><strong>Practice task:</strong> Read the extract from Act One (the boxing scene).<br><br>Explore how Miller presents the conflict between Eddie and Rodolpho in this extract and in the play as a whole.</div>
 
 <h3>Planning Your Response</h3>
 <p>Spend <strong>5 minutes planning</strong> before you write. A strong plan might include:</p>
@@ -478,7 +488,7 @@ const viewFromBridgeModules: CourseModule[] = [
 <ul>
   <li><strong>Writer-focused:</strong> Every sentence refers to what Miller does - "Miller constructs," "Miller's audience," "Miller uses." This keeps the focus on the writer's craft (AO2).</li>
   <li><strong>Close language analysis:</strong> Specific words ("staggers," "come on") are analysed for their connotations and effects.</li>
-  <li><strong>Embedded context:</strong> The reference to Rodolpho's vulnerability as an illegal immigrant integrates context naturally (AO3).</li>
+  <li><strong>Embedded context:</strong> The reference to Rodolpho's vulnerability as an illegal immigrant brings in context briefly. Section A does not assess context, so keep it to what sharpens the analysis.</li>
   <li><strong>Structural awareness:</strong> The paragraph connects the extract to the wider play (the final confrontation) and identifies the scene as a structural turning point.</li>
   <li><strong>Conceptualised argument:</strong> The paragraph sustains a clear thesis about masculinity and power throughout.</li>
 </ul>
@@ -509,13 +519,13 @@ const viewFromBridgeModules: CourseModule[] = [
         question: 'What should the first 5 minutes of your exam response be spent doing?',
         options: [
           'Writing the introduction',
-          'Reading the extract once quickly',
-          'Planning your argument - annotating the extract, identifying key points, and structuring your thesis',
+          'Reading the question once quickly',
+          'Planning your argument - choosing key moments from across the play, identifying key points, and structuring your thesis',
           'Memorising quotations from the wider text',
         ],
         correct: 2,
         explanation:
-          'Spending 5 minutes planning ensures your essay has a clear structure, a conceptualised argument, and a balance between extract analysis and wider text discussion. Rushing into writing without a plan typically produces disorganised, unfocused responses.',
+          'Spending 5 minutes planning ensures your essay has a clear structure, a conceptualised argument, and a balance between close analysis of key moments and the play as a whole. Rushing into writing without a plan typically produces disorganised, unfocused responses.',
       },
       {
         id: 'vftb-m6-q2',
@@ -1001,9 +1011,9 @@ const inspectorCallsIGModules: CourseModule[] = [
 <h2>Exam Practice &amp; Model Response - <em>An Inspector Calls</em></h2>
 
 <h3>The Edexcel IGCSE Question Format</h3>
-<p>For IGCSE Literature, drama questions are typically extract-based. You will receive a printed passage and be asked to analyse it while also discussing the wider play. You must demonstrate close analysis of language and stagecraft (AO2) alongside personal response (AO1) and contextual understanding (AO3).</p>
+<p>In Paper 2 Section A you answer one of two essay questions on the play, for 30 marks, with no extract printed and a clean copy of the play allowed. Each question asks about the play as a whole. You must demonstrate close analysis of language, form and structure (AO2) alongside knowledge of the text and personal engagement (AO1); this section does not assess context.</p>
 
-<p><strong>Sample question:</strong></p>
+<p><strong>Practice task</strong> (close reading of one scene, the kind of moment you will choose for yourself in the essay):</p>
 <div class="text-extract">Read the extract from Act Three, beginning with the Inspector's final speech.<br><br>How does Priestley use the Inspector to convey his ideas about responsibility in this extract and in the play as a whole?</div>
 
 <h3>Planning Your Response</h3>
@@ -1587,8 +1597,9 @@ Stephens stages Christopher's journey through London as a series of obstacles th
     content: `
 <h2>Exam Practice &amp; Model Response - <em>The Curious Incident</em></h2>
 
-<h3>Sample Question</h3>
-<div class="text-extract"><strong>Sample Question:</strong> Read the extract from Part Two (Christopher's arrival at the train station).<br><br>How does Stephens present Christopher's experience of the wider world in this extract and in the play as a whole?</div>
+<h3>Practice Task</h3>
+<p>Paper 2 prints no extract: you answer one of two essay questions on the whole text, with a clean copy allowed. This task practises close analysis of one scene, the kind of moment you will choose for yourself in that essay.</p>
+<div class="text-extract"><strong>Practice task:</strong> Read the extract from Part Two (Christopher's arrival at the train station).<br><br>How does Stephens present Christopher's experience of the wider world in this extract and in the play as a whole?</div>
 
 <h3>Model Paragraph</h3>
 <div class="text-extract">
@@ -2210,14 +2221,15 @@ The Kindertransport operated with good intentions but catastrophic cultural cons
     content: `
 <h2>Exam Practice &amp; Model Response - <em>Kindertransport</em></h2>
 
-<h3>Sample Question</h3>
-<div class="text-extract"><strong>Sample Question:</strong> Read the extract from Act One (Helga's farewell to Eva).<br><br>How does Samuels present the theme of separation in this extract and in the play as a whole?</div>
+<h3>Practice Task</h3>
+<p>Paper 2 prints no extract: you answer one of two essay questions on the whole text, with a clean copy allowed. This task practises close analysis of one scene, the kind of moment you will choose for yourself in that essay.</p>
+<div class="text-extract"><strong>Practice task:</strong> Read the extract from Act One (Helga's farewell to Eva).<br><br>How does Samuels present the theme of separation in this extract and in the play as a whole?</div>
 
 <h3>Context for the Extract</h3>
 <p>This scene occurs at the railway station in Vienna or Berlin in 1939. Helga is placing her daughter Eva on the Kindertransport - a train bound for England. This is their final goodbye, though neither knows it will be final. Helga has written a letter and given Eva a doll to comfort her during the journey. The scene is staged with minimal scenery, focusing attention on the physical and emotional separation that is about to occur.</p>
 
 <div class="grade-9-insight">
-<strong>Grade 9 Insight on This Extract:</strong> When you encounter an extract question, never rush into analysis. Spend time understanding the historical and dramatic context. This is not merely a mother saying goodbye to her child - it is a woman condemning her child to life as a stranger in a foreign land in order to save her from genocide. The emotional weight of this scene rests entirely on what is not said: the knowledge that this is goodbye forever, that Helga will almost certainly die in the Holocaust, that Eva will forget her. This context makes even the smallest details - a doll, a letter, the word "brave" - emotionally devastating.
+<strong>Grade 9 Insight on This Extract:</strong> When you work on a key scene, never rush into analysis. Spend time understanding the historical and dramatic context. This is not merely a mother saying goodbye to her child - it is a woman condemning her child to life as a stranger in a foreign land in order to save her from genocide. The emotional weight of this scene rests entirely on what is not said: the knowledge that this is goodbye forever, that Helga will almost certainly die in the Holocaust, that Eva will forget her. This context makes even the smallest details - a doll, a letter, the word "brave" - emotionally devastating.
 </div>
 
 <h3>Model Paragraph 1: Close Analysis of Language</h3>
@@ -2792,8 +2804,9 @@ const deathKingsHorsemanModules: CourseModule[] = [
     content: `
 <h2>Exam Practice &amp; Model Response - <em>Death and the King's Horseman</em></h2>
 
-<h3>Sample Question</h3>
-<div class="text-extract"><strong>Sample Question:</strong> Read the extract from Scene One (Elesin's arrival in the market).<br><br>How does Soyinka present the relationship between the individual and the community in this extract and in the play as a whole?</div>
+<h3>Practice Task</h3>
+<p>Paper 2 prints no extract: you answer one of two essay questions on the whole text, with a clean copy allowed. This task practises close analysis of one scene, the kind of moment you will choose for yourself in that essay.</p>
+<div class="text-extract"><strong>Practice task:</strong> Read the extract from Scene One (Elesin's arrival in the market).<br><br>How does Soyinka present the relationship between the individual and the community in this extract and in the play as a whole?</div>
 
 <h3>Model Paragraph</h3>
 <div class="text-extract">
@@ -3285,8 +3298,9 @@ const romeoJulietIGModules: CourseModule[] = [
     content: `
 <h2>Exam Practice &amp; Model Response - <em>Romeo and Juliet</em></h2>
 
-<h3>Sample Question</h3>
-<div class="text-extract"><strong>Sample Question:</strong> Read the extract from Act 2, Scene 2 (the balcony scene).<br><br>How does Shakespeare present the theme of love in this extract and in the play as a whole?</div>
+<h3>Practice Task</h3>
+<p>Paper 2 prints no extract: you answer one of two essay questions on the whole text, with a clean copy allowed. This task practises close analysis of one scene, the kind of moment you will choose for yourself in that essay.</p>
+<div class="text-extract"><strong>Practice task:</strong> Read the extract from Act 2, Scene 2 (the balcony scene).<br><br>How does Shakespeare present the theme of love in this extract and in the play as a whole?</div>
 
 <h3>Model Paragraph</h3>
 <div class="text-extract">
@@ -3755,8 +3769,9 @@ const macbethIGModules: CourseModule[] = [
     content: `
 <h2>Exam Practice &amp; Model Response - <em>Macbeth</em></h2>
 
-<h3>Sample Question</h3>
-<div class="text-extract"><strong>Sample Question:</strong> Read the extract from Act 2, Scene 2 (immediately after Duncan's murder).<br><br>How does Shakespeare present the theme of guilt in this extract and in the play as a whole?</div>
+<h3>Practice Task</h3>
+<p>Paper 2 prints no extract: you answer one of two essay questions on the whole text, with a clean copy allowed. This task practises close analysis of one scene, the kind of moment you will choose for yourself in that essay.</p>
+<div class="text-extract"><strong>Practice task:</strong> Read the extract from Act 2, Scene 2 (immediately after Duncan's murder).<br><br>How does Shakespeare present the theme of guilt in this extract and in the play as a whole?</div>
 
 <h3>Model Paragraph</h3>
 <div class="text-extract">
@@ -3814,17 +3829,16 @@ const macbethIGModules: CourseModule[] = [
       },
       {
         id: 'mac-ig-m6-q3',
-        question:
-          'How should you approach the "wider text" element of an extract question on Macbeth?',
+        question: 'How should you connect a key scene to the rest of Macbeth in your essay?',
         options: [
           'Write a separate essay about the rest of the play',
-          'Ignore the extract and focus entirely on the wider text',
-          'Weave connections between the extract and other moments in the play, showing how themes develop across the full dramatic arc',
+          'Ignore the key scene and write only about the rest of the play',
+          'Weave connections between the scene and other moments in the play, showing how themes develop across the full dramatic arc',
           'List every scene in the play that relates to the question topic',
         ],
         correct: 2,
         explanation:
-          'The best responses weave between extract and wider text, using connective phrases to show how themes develop across the play. This demonstrates both close reading skills and structural awareness.',
+          'The best responses weave between close analysis of key scenes and the play as a whole, using connective phrases to show how themes develop across the play. This demonstrates both close reading skills and structural awareness.',
       },
     ],
   },
@@ -4231,8 +4245,9 @@ const merchantVeniceModules: CourseModule[] = [
     content: `
 <h2>Exam Practice &amp; Model Response - <em>The Merchant of Venice</em></h2>
 
-<h3>Sample Question</h3>
-<div class="text-extract"><strong>Sample Question:</strong> Read the extract from Act 4, Scene 1 (the trial scene, including Portia's mercy speech).<br><br>How does Shakespeare present ideas about justice and mercy in this extract and in the play as a whole?</div>
+<h3>Practice Task</h3>
+<p>Paper 2 prints no extract: you answer one of two essay questions on the whole text, with a clean copy allowed. This task practises close analysis of one scene, the kind of moment you will choose for yourself in that essay.</p>
+<div class="text-extract"><strong>Practice task:</strong> Read the extract from Act 4, Scene 1 (the trial scene, including Portia's mercy speech).<br><br>How does Shakespeare present ideas about justice and mercy in this extract and in the play as a whole?</div>
 
 <h3>Model Paragraph</h3>
 <div class="text-extract">

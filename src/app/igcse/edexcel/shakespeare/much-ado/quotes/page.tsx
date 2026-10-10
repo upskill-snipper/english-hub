@@ -3,7 +3,7 @@
  *
  * A line shown as Shakespeare's must be the words of the edition the site
  * holds, src/data/full-texts/much-ado-about-nothing.ts (Project Gutenberg
- * #1519), because students learn these fifteen for a closed-book exam. When
+ * #1519), because students learn these fifteen word for word. When
  * scripts/check-quotations.mjs first compared this page with that text (2
  * October 2026), two were wrong: Beatrice's "stuff'd man" for the edition's
  * "stuffed man", and "I take thee for pity" given to Beatrice, though it is
@@ -19,6 +19,11 @@
  * though she is shamed at her wedding, in church; and "curtsies", a noun in
  * Beatrice's line, was called a verb. Each analysis now says only what the
  * line does.
+ *
+ * 10 October 2026: the description and the hero said these were for "the
+ * Edexcel IGCSE Literature closed-book Shakespeare exam". Pearson does not set
+ * Much Ado for 4ET1 (specification Issue 3, PDF p14), and the 4ET1 paper that
+ * sets Shakespeare, Paper 2, is open book. Both now say so.
  */
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -31,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Much Ado About Nothing Key Quotes - Edexcel IGCSE Literature',
     description:
-      '15 key Much Ado About Nothing quotations with speaker, scene and analysis for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
+      '15 key Much Ado About Nothing quotations with speaker, scene and analysis. Pearson does not set the play for Edexcel IGCSE Literature (4ET1).',
     images: [
       {
         url: '/api/og?title=Much+Ado+About+Nothing+Key+Quotes+-+Edexcel+IGCSE+Literature',
@@ -46,7 +51,7 @@ export const metadata: Metadata = {
   },
   title: 'Much Ado About Nothing Key Quotes - Edexcel IGCSE Literature',
   description:
-    '15 key Much Ado About Nothing quotations with speaker, scene and analysis for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
+    '15 key Much Ado About Nothing quotations with speaker, scene and analysis. Pearson does not set the play for Edexcel IGCSE Literature (4ET1).',
 }
 
 const QUOTES = [
@@ -179,8 +184,8 @@ export default async function MuchAdoQuotesPage() {
             Much Ado About Nothing &mdash; 15 key quotes
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            Short, embeddable quotations covering the play&rsquo;s wit and its darker moral edge,
-            ready for a closed-book exam.
+            Short, embeddable quotations covering the play&rsquo;s wit and its darker moral edge.
+            Pearson does not set Much Ado for Edexcel IGCSE Literature (4ET1).
           </p>
         </div>
       </section>

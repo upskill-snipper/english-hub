@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Romeo and Juliet Key Quotes - Edexcel IGCSE Literature',
     description:
-      '20 key Romeo and Juliet quotations with speaker, scene reference and analysis, for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
+      '20 key Romeo and Juliet quotations with speaker, scene reference and analysis, for the Edexcel IGCSE Literature Paper 2 essay, an open-book exam.',
     images: [
       {
         url: '/api/og?title=Romeo+and+Juliet+Key+Quotes+-+Edexcel+IGCSE+Literature',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   title: 'Romeo and Juliet Key Quotes - Edexcel IGCSE Literature',
   description:
-    '20 key Romeo and Juliet quotations with speaker, scene reference and analysis, for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
+    '20 key Romeo and Juliet quotations with speaker, scene reference and analysis, for the Edexcel IGCSE Literature Paper 2 essay, an open-book exam.',
 }
 
 const QUOTES = [
@@ -191,9 +191,14 @@ export default async function RomeoAndJulietQuotesPage() {
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Romeo and Juliet &mdash; 20 key quotes
           </h1>
+          {/* 10 October 2026: this called the question closed book, and the last
+              revision tip below named a "part (b) whole-play question". 4ET1 sets
+              the play in Paper 2, which is open book (a clean copy of the play),
+              as one whole-play essay with no extract (specification Issue 3, PDF
+              pp11 and 19). */}
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            Short, embeddable quotations spread across every act, ready for the closed-book
-            Shakespeare question.
+            Short, embeddable quotations spread across every act, ready for the Paper 2 essay, where
+            you may have a clean copy of the play but no notes.
           </p>
         </div>
       </section>
@@ -213,7 +218,7 @@ export default async function RomeoAndJulietQuotesPage() {
             </li>
             <li className="flex gap-2">
               <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-              Cover Acts 1 through 5 &mdash; the part (b) whole-play question rewards breadth.
+              Cover Acts 1 to 5: the essay is on the whole play, so it rewards breadth.
             </li>
           </ul>
         </div>

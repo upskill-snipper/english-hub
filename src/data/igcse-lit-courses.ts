@@ -157,21 +157,31 @@ const dramaProseModules: CourseModule[] = [
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 2 - Extract-Based Essay Technique
+  // MODULE 2 - Close Reading: Essays Built on Key Passages
+  // 10 October 2026: this was "Extract-Based Essay Technique" and opened by
+  // saying many questions on the paper are extract-based, with a printed passage.
+  // No 4ET1 paper prints an extract: every essay is on the whole text, Paper 1
+  // Section C closed book and Paper 2 open book (specification Issue 3, PDF
+  // pp10, 11 and 19; question papers, May 2023 to June 2025). It also said AO4
+  // rewards spelling, punctuation and grammar: 4ET1 has no such objective, and
+  // its AO4 is context (PDF p29). The module now teaches the same method as
+  // passage-based practice, and its exam claims say what the papers set. The
+  // title, and the course description's "extract-based essay technique", were
+  // changed in src/data/course-index.ts to match.
   // ──────────────────────────────────────────────
   {
     id: 'iglit-dp-m2',
-    title: 'Extract-Based Essay Technique',
+    title: 'Close Reading: Essays Built on Key Passages',
     duration: '2 hours',
     content: `
-<h2>Mastering the Extract-Based Essay: Complete Guide</h2>
+<h2>Close Reading: Essays Built on Key Passages</h2>
 
-<p>Many questions on the Edexcel IGCSE Literature paper are <strong>extract-based</strong>. You are given a printed passage from your set text and asked to use it as a starting point for your response. This format requires a specific set of skills that differ from a purely discursive essay. Mastering extract-based technique is one of the fastest ways to improve your Literature grade.</p>
+<p>Pearson's Edexcel IGCSE Literature papers print <strong>no extract</strong> from your set texts. Each essay question is on the whole text: Paper 1 Section C on your modern prose text, closed book, and Paper 2 on your drama and literary heritage texts, open book, with a clean copy of each text allowed. What earns marks in those essays is close analysis of well-chosen moments, tied to an argument about the whole text. This module practises that skill: you analyse a passage closely, then widen out to the text as a whole.</p>
 
-<div class="key-term"><strong>Key Term: Extract-Based Question</strong> - A question that prints a passage from the studied text and asks you to analyse it. You must refer closely to the extract but also discuss the wider text to access the highest marks.</div>
+<div class="key-term"><strong>Key Term: Passage-Based Practice</strong> - A practice task that gives you a passage from your text and asks how the writer presents something in it and in the text as a whole. It trains the close analysis your exam essays need; the exam itself does not print the passage.</div>
 
-<h3>The Structure of an Extract Question</h3>
-<p>A typical extract-based question will look something like this:</p>
+<h3>The Structure of a Practice Task</h3>
+<p>A practice task will look something like this:</p>
 <div class="text-extract">Read the extract from Act 3, Scene 4 of <em>Macbeth</em>.<br><br>How does Shakespeare present the theme of guilt in this extract and in the play as a whole?</div>
 
 <p>Notice the two-part demand: <strong>"in this extract"</strong> and <strong>"in the play as a whole"</strong>. Both parts must be addressed. Candidates who only write about the extract, or who abandon the extract after the first paragraph, cannot access the top mark bands.</p>
@@ -180,7 +190,7 @@ const dramaProseModules: CourseModule[] = [
 <p>The following structure has been refined through examiner feedback and consistently produces strong results:</p>
 
 <h4>Step 1: Read and Annotate (5 minutes)</h4>
-<p>Before writing anything, read the extract at least twice. On your second read, annotate directly on the exam paper:</p>
+<p>Before writing anything, read the extract at least twice. On your second read, annotate directly on the page:</p>
 <ul>
   <li>Circle or underline <strong>key words and phrases</strong> that relate to the question focus.</li>
   <li>Note any <strong>literary devices</strong> - metaphors, similes, repetition, contrasts, imagery.</li>
@@ -248,8 +258,8 @@ const dramaProseModules: CourseModule[] = [
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Abandoning the extract entirely after the first paragraph and writing a pre-prepared essay about the wider text. Examiners can tell when candidates are recycling a memorised response. Keep returning to the extract throughout your essay.</div>
 
-<h3>Timing for Extract-Based Questions</h3>
-<p>If you have approximately 45 minutes for an extract question, aim for:</p>
+<h3>Timing</h3>
+<p>Pearson suggests 45 minutes for each set-text essay: Paper 1 Section C, and each section of Paper 2. For a 45-minute practice task, aim for:</p>
 <ul>
   <li><strong>Reading and annotating:</strong> 5 minutes</li>
   <li><strong>Planning:</strong> 3-5 minutes</li>
@@ -257,14 +267,14 @@ const dramaProseModules: CourseModule[] = [
   <li><strong>Proofreading:</strong> 2-3 minutes</li>
 </ul>
 
-<p>This timing ensures you have enough time to develop your points fully without rushing the conclusion or skipping the proofreading stage, which is essential for AO4 marks.</p>
+<p>This timing ensures you have enough time to develop your points fully without rushing the conclusion or skipping the proofreading stage, which keeps your argument clear.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Proofreading is not optional. AO4 marks for spelling, punctuation and grammar are available on every response. Two minutes of careful checking can gain you several marks that cost nothing in terms of analytical skill.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Proofreading is not optional. IGCSE Literature has no separate marks for spelling, punctuation and grammar, but AO1 rewards a critical style, and careless errors blur your argument. Two minutes of careful checking cost nothing in terms of analytical skill.</div>
 
-<h3>Worked Example: Extract-Based Response (An Inspector Calls)</h3>
+<h3>Worked Example: Passage-Based Practice (An Inspector Calls)</h3>
 
 <div class="example-box">
-<strong>Question: How does Priestley use this extract to explore the theme of responsibility? Use the extract and your understanding of the play as a whole.</strong>
+<strong>Practice task: How does Priestley use this extract to explore the theme of responsibility? Use the extract and your understanding of the play as a whole.</strong>
 
 <p><strong>Extract (Inspector's final speech):</strong> "We are all responsible for each other... each of you helped to kill her. And I tell you that the time will soon come when, if men will not learn that lesson, then they will be taught it in fire and blood and anguish..."</p>
 
@@ -281,7 +291,7 @@ const dramaProseModules: CourseModule[] = [
 <p>This speech gains power from what precedes it. Throughout the play, Priestley has shown the Birlings and Gerald evading responsibility. Sheila and Eric, however, accept their guilt early, with Sheila's line "I know I'm one of the guilty ones" demonstrating a moral sensitivity that the older generation lacks. The contrast between the young and old suggests that Priestley believes responsibility must be learned, not inherited. The Inspector's final warning thus represents a last-ditch attempt to educate those beyond education - a sobering note on which to end.</p>
 </div>
 
-<h3>Grade 9 Insight: What Examiners Reward in Extract-Based Writing</h3>
+<h3>Grade 9 Insight: What Top-Band Close Reading Looks Like</h3>
 
 <div class="grade9-box">
 <strong>Top-band responses typically feature:</strong>
@@ -316,7 +326,7 @@ const dramaProseModules: CourseModule[] = [
 
 <h3>Exam Technique: Annotation in Action</h3>
 
-<p>When you receive an extract in the exam, you should annotate it within the first 5 minutes. Here is what annotation looks like for an actual Macbeth extract:</p>
+<p>When you practise with a passage, annotate it within the first 5 minutes. Here is what annotation looks like for an actual Macbeth extract:</p>
 
 <div class="annotation-example">
 <p><strong>Original text:</strong> "Life's but a walking shadow, a poor player that struts and frets his hour upon the stage and then is heard no more."</p>
@@ -1700,8 +1710,9 @@ Aim for at least one sentence of integrated context (not separate context, but w
   <li>You must practise regularly to build stamina and speed.</li>
 </ul>
 
-<h3>Model Question 1: Macbeth (Extract-Based)</h3>
-<div class="text-extract"><strong>Question:</strong> Read the extract from Act 2, Scene 2 (Macbeth returns from killing Duncan). How does Shakespeare present guilt in this extract and in the play as a whole?</div>
+<h3>Model Question 1: Macbeth (Passage-Based Practice)</h3>
+<p>Paper 2 prints no extract; this practises the close analysis your whole-play essay needs.</p>
+<div class="text-extract"><strong>Practice task:</strong> Read the extract from Act 2, Scene 2 (Macbeth returns from killing Duncan). How does Shakespeare present guilt in this extract and in the play as a whole?</div>
 
 <h4>Model Plan (5 minutes)</h4>
 <p><strong>Thesis:</strong> Shakespeare presents guilt as an inescapable, corrosive force that destroys Macbeth psychologically even as his political power grows, suggesting that moral transgression carries an internal punishment more devastating than any external consequence.</p>

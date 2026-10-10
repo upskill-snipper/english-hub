@@ -1271,32 +1271,40 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 11 - IGCSE Essay Structure: Extract + Whole Text Response
+  // MODULE 11 - IGCSE Essay Structure: Key Passages and the Whole Text
+  // 10 October 2026: this said the IGCSE question on the novella prints an
+  // extract of 20 to 30 lines and asks two parts, (a) on the extract and (b) on
+  // the whole text, with the marks split between them and language analysis
+  // rewarded in both. Pearson's 4ET1 Paper 1 Section C prints no extract: one
+  // 40-mark essay from a choice of two on each set text, closed book, marked
+  // AO1 20 and AO4 20, with 45 minutes advised (specification Issue 3, PDF pp10
+  // and 30; question papers, November 2023 to June 2025). The two-part task is
+  // kept as practice and says so. The title is mirrored in course-index.ts.
   // ──────────────────────────────────────────────
   {
     id: 'omam-m11',
-    title: 'IGCSE Essay Structure: Extract + Whole Text Response',
+    title: 'IGCSE Essay Structure: Key Passages and the Whole Text',
     duration: '55 min',
     content: `
 <h2>How to Structure a Top-Band IGCSE Literature Essay</h2>
 
-<p>Knowing the text is necessary but not sufficient for IGCSE success. You must also know how to <strong>structure a response</strong> that demonstrates your knowledge in the way examiners reward. The typical IGCSE Literature question on a prose text gives you an <strong>extract</strong> from the set text and asks you to analyse the extract in detail before discussing the theme, character, or technique in the <strong>wider novella</strong>. This module teaches you the exact structure and strategy that produces grades 7-9.</p>
+<p>Knowing the text is necessary but not sufficient for IGCSE success. You must also know how to <strong>structure a response</strong> that demonstrates your knowledge in the way examiners reward. On Pearson's Edexcel IGCSE Literature Paper 1, Section C sets <strong>one essay question</strong>, from a choice of two, on <em>Of Mice and Men</em>, for 40 marks. No extract is printed and the exam is closed book, so you work from memory. This module practises the essay in two parts, a key passage and then the <strong>wider novella</strong>, because strong essays combine close detail with breadth.</p>
 
-<h3>Understanding the Question Format</h3>
+<h3>The Practice Task</h3>
 
-<p>A typical IGCSE Literature question on <em>Of Mice and Men</em> will follow this pattern:</p>
+<p>Practise with a two-part task like this:</p>
 
 <blockquote>
-<p><strong>Read the extract below.</strong> [An extract of approximately 20-30 lines from the novella is printed on the exam paper.]</p>
+<p><strong>Read the extract below.</strong> [Choose a passage of about 20-30 lines from the novella. The exam prints none: this is practice.]</p>
 <p>(a) Explore how Steinbeck presents [theme/character/technique] in this extract. Use examples from the extract to support your answer.</p>
 <p>(b) How does Steinbeck present [theme/character/technique] in the novella as a whole?</p>
 </blockquote>
 
-<p>The marks are typically split between the two parts, with part (a) focusing on <strong>close textual analysis</strong> and part (b) requiring <strong>broader knowledge of the whole text</strong>. Both parts require you to analyse Steinbeck's methods - language, structure, and form - rather than simply describing what happens.</p>
+<p>In the exam, Section C is marked for close knowledge of the text, a critical style and personal engagement (AO1) and for context (AO4), 20 marks each. Analysing Steinbeck's methods - language, structure, and form - is how you show close knowledge and a critical style, rather than simply describing what happens. Part (a) of the practice trains <strong>close textual analysis</strong>, and part (b) <strong>broader knowledge of the whole text</strong>.</p>
 
-<div class="key-term"><strong>Key Term: Close Textual Analysis</strong> - The detailed examination of a specific passage, focusing on individual word choices, imagery, sentence structure, and their effects on the reader. This is the skill most heavily rewarded in part (a) of the IGCSE Literature question.</div>
+<div class="key-term"><strong>Key Term: Close Textual Analysis</strong> - The detailed examination of a specific passage, focusing on individual word choices, imagery, sentence structure, and their effects on the reader. It is what makes the evidence in your essay precise.</div>
 
-<h3>Part (a): The Extract Response</h3>
+<h3>Part (a): The Passage</h3>
 
 <p>Your extract response should demonstrate the ability to <strong>zoom in</strong> on specific words, phrases, and techniques. Here is a proven structure:</p>
 
@@ -1349,11 +1357,10 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
 
 <h3>Time Management</h3>
 
-<p>In the exam, you will have a limited time allocation for your literature response. A sensible division is:</p>
+<p>In the exam, Pearson suggests 45 minutes for Section C. A sensible division is:</p>
 <ul>
-  <li><strong>5 minutes:</strong> Reading the extract and planning your response (annotating the extract, selecting key quotations, jotting down paragraph topics).</li>
-  <li><strong>20 minutes:</strong> Writing part (a) - the extract analysis.</li>
-  <li><strong>20 minutes:</strong> Writing part (b) - the whole text response.</li>
+  <li><strong>5 minutes:</strong> Reading the question and planning your response (choosing moments from across the novella, the quotations you know, and your paragraph topics).</li>
+  <li><strong>35 minutes:</strong> Writing your essay, moving from close analysis of key moments to the novella as a whole.</li>
   <li><strong>5 minutes:</strong> Reviewing and editing.</li>
 </ul>
 
@@ -1510,7 +1517,7 @@ export const y10IgcseLitOmamModules: CourseModule[] = [
 
 <h3>Practice Questions</h3>
 
-<p>Use the following questions for timed practice. Spend 5 minutes planning, 20 minutes writing part (a), and 20 minutes writing part (b):</p>
+<p>Use the following two-part tasks for timed practice. Spend 5 minutes planning, 20 minutes on part (a) and 20 minutes on part (b). In the exam itself you will answer one essay question on the novella as a whole:</p>
 
 <ol>
   <li><strong>Question 1:</strong> Explore how Steinbeck presents the relationship between George and Lennie in the extract from Chapter 1 (the dream sequence). How does Steinbeck present their relationship in the novella as a whole?</li>

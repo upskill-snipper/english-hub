@@ -178,7 +178,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <p>When Lady Macbeth enters and Macbeth tells her "We will proceed no further in this business," she deploys a devastating psychological attack. She questions his manhood: "When you durst do it, then you were a man." She invokes the shocking image of dashing her own nursing infant's brains out to prove she would keep a promise - an image of maternal violence so extreme that it is designed to shame Macbeth into action. Her strategy works. Macbeth's resolve crumbles and he agrees to the murder: "I am settled, and bend up / Each corporal agent to this terrible feat."</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Act 1 Scene 7 is one of the most commonly set extract questions in the IGCSE exam. Be prepared to analyse Macbeth's soliloquy in detail - the conditional "if," the lists of reasons against murder, the metaphor of vaulting ambition - and Lady Macbeth's persuasion techniques, including her manipulation of gender roles and her use of violent imagery to shame Macbeth.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Act 1 Scene 7 is a key scene for essays on ambition, guilt or persuasion. Be prepared to analyse Macbeth's soliloquy in detail - the conditional "if," the lists of reasons against murder, the metaphor of vaulting ambition - and Lady Macbeth's persuasion techniques, including her manipulation of gender roles and her use of violent imagery to shame Macbeth.</div>
 `,
     quiz: [
       {
@@ -1280,7 +1280,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Students often list language techniques without explaining their <em>effect</em>. Identifying that Macbeth uses a metaphor is not enough - you must explain what the metaphor reveals about his state of mind, how it contributes to the play's themes, and why Shakespeare chose that particular image at that particular moment. Analysis means explaining the "so what?" - not just the "what."</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> In the IGCSE extract question, you will typically be asked to analyse how Shakespeare uses language in a specific passage. Structure your paragraphs using the formula: <strong>technique + quotation + analysis of effect + link to theme or character</strong>. For example: "Shakespeare uses the metaphor 'full of scorpions is my mind' to convey Macbeth's psychological torment. The scorpions suggest thoughts that sting and poison from within, revealing that his guilty conscience has turned his own mind into an instrument of self-torture. This connects to the theme of guilt as an inescapable, self-inflicted punishment."</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> When an essay question asks how Shakespeare presents an idea, analyse his language closely in the passages you choose. Structure your paragraphs using the formula: <strong>technique + quotation + analysis of effect + link to theme or character</strong>. For example: "Shakespeare uses the metaphor 'full of scorpions is my mind' to convey Macbeth's psychological torment. The scorpions suggest thoughts that sting and poison from within, revealing that his guilty conscience has turned his own mind into an instrument of self-torture. This connects to the theme of guilt as an inescapable, self-inflicted punishment."</div>
 `,
     quiz: [
       {
@@ -1353,31 +1353,40 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 12 - IGCSE Essay Practice: Extract Response and Model Answers
+  // MODULE 12 - IGCSE Essay Practice: Close Reading and Model Answers
+  // 10 October 2026: this was "Extract Response and Model Answers" and said
+  // Macbeth is examined by an extract-based question of 20 to 40 lines or an
+  // essay, and it gave the objectives as AO3 context and AO4 personal response;
+  // two tips in earlier modules spoke of the IGCSE extract question. On 4ET1
+  // Macbeth is a Paper 2 Section B text: one 30-mark essay from a choice of two
+  // on the whole play, no extract, open book, marked AO1 10, AO2 10 and AO4 10;
+  // AO3 is comparison, assessed only in the Paper 1 poetry section
+  // (specification Issue 3, PDF pp11, 19, 29 and 30). The passage work is kept
+  // as practice and says so. The title is mirrored in src/data/course-index.ts.
   // ──────────────────────────────────────────────
   {
     id: 'macbeth-m12',
-    title: 'IGCSE Essay Practice: Extract Response and Model Answers',
+    title: 'IGCSE Essay Practice: Close Reading and Model Answers',
     duration: '60 min',
     content: `
-<h2>IGCSE Essay Practice: Mastering the Extract and Essay Response</h2>
+<h2>IGCSE Essay Practice: Close Reading and the Essay Response</h2>
 
-<p>The IGCSE Literature exam tests your ability to write analytically about a set text under timed conditions. This module gives you a clear framework for tackling the two main question types - the <strong>extract-based question</strong> and the <strong>essay question</strong> - with step-by-step strategies, common pitfalls, and annotated model paragraph structures. Mastering exam technique is the difference between a student who knows the text and a student who achieves the highest grades.</p>
+<p>The IGCSE Literature exam tests your ability to write analytically about a set text under timed conditions. This module gives you a clear framework for the <strong>essay question</strong> on <em>Macbeth</em>, and for the <strong>close reading of passages</strong> that its best paragraphs are built from - with step-by-step strategies, common pitfalls, and annotated model paragraph structures. Mastering exam technique is the difference between a student who knows the text and a student who achieves the highest grades.</p>
 
-<h3>Understanding the IGCSE Literature Question Types</h3>
+<h3>Understanding the IGCSE Literature Question</h3>
 
-<p>For <em>Macbeth</em>, you will typically encounter two question formats:</p>
+<p>On Pearson's Edexcel IGCSE Literature exam, <em>Macbeth</em> is one of six literary heritage texts in Paper 2 Section B. You answer one of two essay questions on the play, for 30 marks. No extract is printed: some questions open with a short quotation or a statement, and each asks about the whole play. The paper is open book, so you may have a clean copy of the play. This module practises two things:</p>
 
 <ol>
-  <li><strong>Extract-based question:</strong> You are given a passage from the play (usually 20-40 lines) and asked to analyse how Shakespeare uses language and dramatic techniques to create specific effects. The question often asks you to consider the extract in relation to the play as a whole.</li>
-  <li><strong>Essay question:</strong> You are asked to write about a character, theme, or aspect of the play across the entire text, selecting your own evidence and constructing a sustained argument.</li>
+  <li><strong>Passage practice:</strong> You take a passage from the play (say 20-40 lines) and analyse how Shakespeare uses language and dramatic techniques to create specific effects, then consider it in relation to the play as a whole. The exam does not set this as a question, but it is how you build the close analysis your essay needs.</li>
+  <li><strong>Essay question:</strong> This is what the exam sets. You write about a character, theme, or aspect of the play across the entire text, selecting your own evidence and constructing a sustained argument.</li>
 </ol>
 
-<p>Both question types assess the same skills: <strong>close reading</strong>, <strong>textual analysis</strong>, <strong>understanding of context</strong>, and <strong>coherent argument</strong>. The extract question tests your ability to work intensively with a specific passage; the essay question tests your ability to range across the whole play.</p>
+<p>Both practise the skills the essay rewards: <strong>close reading</strong>, <strong>textual analysis</strong>, <strong>understanding of context</strong>, and <strong>coherent argument</strong>. Passage practice trains you to work intensively with a specific moment; the essay tests your ability to range across the whole play.</p>
 
-<div class="key-term"><strong>Key Term: Assessment Objectives (AOs) for IGCSE Literature</strong> - The skills examiners reward: AO1 (knowledge and understanding of the text), AO2 (analysis of language, form, and structure), AO3 (understanding of context and its influence on meaning), AO4 (personal response supported by evidence). Every paragraph you write should demonstrate at least two of these skills simultaneously.</div>
+<div class="key-term"><strong>Key Term: Assessment Objectives (AOs) for IGCSE Literature</strong> - The skills examiners reward in the Macbeth essay: AO1 (close knowledge and understanding of the text, a critical style and an informed personal engagement), AO2 (analysis of language, form, and structure) and AO4 (understanding of the relationship between the text and its context), 10 marks each. AO3, comparing texts, is assessed only in the Paper 1 poetry comparison. Every paragraph you write should demonstrate at least two of these skills simultaneously.</div>
 
-<h3>Strategy for the Extract-Based Question</h3>
+<h3>Strategy for Passage Practice</h3>
 
 <p>Follow this step-by-step approach:</p>
 
@@ -1389,9 +1398,9 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
   <li><strong>Write a brief introduction</strong> (2-3 sentences) that identifies the extract's position in the play and its significance, then move directly into analysis. Do not waste time on lengthy introductions.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The most common error in extract questions is <strong>paraphrasing</strong> - retelling what happens in the extract instead of analysing how Shakespeare creates meaning. The examiner knows what happens. They want to see you identify techniques, select precise quotations, and explain their effects. Every sentence should be analytical, not descriptive.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The most common error in close analysis is <strong>paraphrasing</strong> - retelling what happens in the extract instead of analysing how Shakespeare creates meaning. The examiner knows what happens. They want to see you identify techniques, select precise quotations, and explain their effects. Every sentence should be analytical, not descriptive.</div>
 
-<h3>Model Analytical Paragraph: Extract Response</h3>
+<h3>Model Analytical Paragraph: Passage Practice</h3>
 
 <p>Imagine the extract is from Act 1 Scene 7, Macbeth's "If it were done" soliloquy. Here is a model paragraph demonstrating the analytical structure:</p>
 
@@ -1455,7 +1464,7 @@ export const y11IgcseLitMacbethModules: CourseModule[] = [
     quiz: [
       {
         id: 'macbeth-m12-q1',
-        question: 'What is the most common error students make in extract-based questions?',
+        question: 'What is the most common error students make when analysing a passage?',
         options: [
           'Using too many quotations',
           'Paraphrasing - retelling what happens instead of analysing how Shakespeare creates meaning',

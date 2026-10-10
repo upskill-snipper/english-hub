@@ -1367,10 +1367,17 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
     ],
   },
 
+  // 10 October 2026: this lesson taught an Edexcel IGCSE extract question on
+  // Macbeth, told teachers the exam is closed book, and labelled context AO3.
+  // On 4ET1 Macbeth is a Paper 2 Section B text: one 30-mark essay from a choice
+  // of two on the whole play, no extract, open book with a clean copy, marked
+  // AO1, AO2 and AO4 (context), 10 marks each (specification Issue 3, PDF pp11,
+  // 19, 29 and 30). The extract work stays as practice and says so, and the
+  // third decoder question is Pearson's own, from the May 2023 Paper 2.
   // ── Lesson 10: Exam Preparation ───────────────────────────────────────────
   {
     id: 'y11mac-10',
-    title: 'Exam Preparation: Extract and Essay Questions',
+    title: 'Exam Preparation: Close Reading and the Essay Question',
     text: 'Macbeth',
     board: 'Edexcel IGCSE',
     yearGroup: 'Year 11',
@@ -1390,7 +1397,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
     keywords: [
       'thesis',
       'assessment objectives',
-      'extract question',
+      'passage practice',
       'essay question',
       'argument',
       'evidence',
@@ -1403,10 +1410,10 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
       title: 'Exam Question Decoder',
       duration: '8 minutes',
       instructions:
-        'Display three sample Macbeth exam questions on the board: (1) "Explore how Shakespeare presents the theme of ambition in the following extract and in the play as a whole."; (2) "How does Shakespeare present Lady Macbeth as a powerful figure in Act 1?"; (3) "Starting with this speech, explore how Shakespeare presents Macbeth\'s guilt throughout the play." Students work in pairs to decode each question: What is the key theme or character? What does "explore" mean in terms of writing style? What is the balance between extract and whole-play analysis? Does the question require contextual knowledge? After three minutes, class compares responses. Teacher clarifies the expectations for each question type and introduces the lesson structure.',
+        'Display three Macbeth questions on the board: (1) a practice task, "Explore how Shakespeare presents the theme of ambition in the following extract and in the play as a whole."; (2) "How does Shakespeare present Lady Macbeth as a powerful figure in the play?"; (3) Pearson\'s own Paper 2 question from May 2023, "In what ways does Macduff contribute to Macbeth\'s downfall in the play?" Students work in pairs to decode each question: What is the key theme or character? What does "explore" mean in terms of writing style? Which questions are about the whole play, as every Edexcel IGCSE question is? Does the question require contextual knowledge? After three minutes, class compares responses. Teacher clarifies that the exam prints no extract, so passage tasks are practice, and introduces the lesson structure.',
       differentiation: {
         support:
-          'Provide a decoder checklist: Key word | Character or theme? | AO1/AO2/AO3 focus | Whole play or extract?',
+          'Provide a decoder checklist: Key word | Character or theme? | AO1/AO2/AO4 focus | Whole play or practice passage?',
         core: 'Students decode the questions in pairs.',
         stretch:
           'Students draft a thesis sentence for each of the three questions without looking at any notes, then discuss which thesis is the strongest and why.',
@@ -1424,7 +1431,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
             'Provide a planning frame: Thesis (complete this sentence: "Shakespeare presents guilt as...") / Paragraph 1 - Extract: / Paragraph 2 - Act 1 or 2: / Paragraph 3 - Act 5:',
           core: 'Students plan and write independently.',
           stretch:
-            'Students write both the opening paragraph and one full analytical paragraph on the extract within the time, aiming to include AO2 (language technique), AO1 (argument), and AO3 (context) in a single paragraph.',
+            'Students write both the opening paragraph and one full analytical paragraph on the extract within the time, aiming to include AO2 (language technique), AO1 (argument), and AO4 (context) in a single paragraph.',
         },
         resources: [
           'Act 3 Scene 4 extract',
@@ -1487,7 +1494,7 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
       },
       {
         question:
-          'Write one full analytical paragraph responding to: "How does Shakespeare present Macbeth as a tragic hero?" Your paragraph should cover AO1 (argument), AO2 (language/technique), and AO3 (context).',
+          'Write one full analytical paragraph responding to: "How does Shakespeare present Macbeth as a tragic hero?" Your paragraph should cover AO1 (argument), AO2 (language/technique), and AO4 (context).',
         lines: 8,
         modelAnswer:
           "Shakespeare presents Macbeth as a tragic hero by ensuring that his greatness and his flaw are inseparable: the same qualities that make him a celebrated warrior - courage, determination, physical boldness - make him susceptible to the witches' temptation and Lady Macbeth's manipulation. His Act 1 Scene 7 soliloquy demonstrates the hallmark of the Aristotelian tragic hero: moral self-awareness coexisting with fatal inability to act on it. Macbeth identifies \"vaulting ambition\" as his spur yet proceeds regardless. The metaphor of ambition as a horse jumping too high and falling is acutely self-diagnostic - he knows the danger and cannot stop himself. For a Jacobean audience schooled in the idea that kings were appointed by God, Macbeth's transgression was of cosmic significance, making his suffering proportionate to his crime. Shakespeare maintains audience sympathy even through Macbeth's worst acts by providing soliloquies that reveal his interior anguish, ensuring we understand rather than simply condemn him.",
@@ -1495,10 +1502,10 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
       },
       {
         question:
-          'What are the key differences between an extract question and a whole-play essay question on Macbeth? How should you approach each type?',
+          'What is the difference between practising on a printed extract and answering the whole-play essay question that Edexcel IGCSE Paper 2 sets on Macbeth? How should you approach each?',
         lines: 6,
         modelAnswer:
-          'An extract question requires close analysis of the given passage - attention to specific word choices, imagery, and dramatic technique within that section - combined with references to relevant moments elsewhere in the play. The extract is the starting point: spend roughly half your time on it before broadening to the whole play. A whole-play essay question does not provide a passage; you must select your own evidence from across the play, demonstrating knowledge of multiple acts and the ability to construct an argument that develops across several paragraphs. Both question types require a thesis-led opening, embedded quotation, language analysis (AO2), and contextual integration (AO3). The key distinction is that the extract question tests close reading skills alongside whole-play awareness, while the essay question tests the ability to select, organise, and deploy evidence independently.',
+          'A practice extract task asks for close analysis of the given passage - attention to specific word choices, imagery, and dramatic technique within that section - combined with references to relevant moments elsewhere in the play. The Paper 2 question provides no passage: you choose one of two essay questions on the whole play and select your own evidence from across it, using your clean copy, showing knowledge of several acts and an argument that develops across several paragraphs. Both need a thesis-led opening, embedded quotation, language analysis (AO2) and contextual integration (AO4). The practice task trains close reading; the essay tests your ability to select, organise, and deploy evidence independently.',
         marks: 6,
       },
       {
@@ -1511,10 +1518,10 @@ export const y11IgcseLitMacbethLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'The exam question decoder activity is a good diagnostic of how well students understand the difference between AO1, AO2, and AO3 demands. If students cannot distinguish between the objectives, a brief recap before the writing activities is worth the time.',
+      'The exam question decoder activity is a good diagnostic of how well students understand the difference between AO1, AO2, and AO4 demands. If students cannot distinguish between the objectives, a brief recap before the writing activities is worth the time.',
       'Thesis-led writing is the single skill that most reliably differentiates higher-band from middle-band responses. Spending time explicitly modelling what a thesis is - a claim that the rest of the essay proves, not a statement of what the essay is going to do - is essential in this lesson.',
-      'The AO labelling exercise (students annotate their own paragraphs with AO1/AO2/AO3) is a powerful metacognitive tool. Students who can identify where each objective is or is not being addressed can self-correct much more effectively.',
-      'Remind students that for Edexcel IGCSE, the assessment is currently based on closed-book conditions: all quotations must be learned. Use the final minutes of this lesson to reinforce the importance of the quotation banks students have been building throughout the scheme of work.',
+      'The AO labelling exercise (students annotate their own paragraphs with AO1/AO2/AO4) is a powerful metacognitive tool. Students who can identify where each objective is or is not being addressed can self-correct much more effectively.',
+      'Remind students that for Edexcel IGCSE, Macbeth is examined in Paper 2, which is open book: they may take in a clean, unmarked copy of the prescribed edition, so knowing where key lines are matters more than reciting them. Use the final minutes of this lesson to reinforce the importance of the quotation banks students have been building throughout the scheme of work.',
     ],
     targetedSkills: [
       'AO1 - Thesis-led essay writing with sustained argument',

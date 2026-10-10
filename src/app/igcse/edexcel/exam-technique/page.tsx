@@ -18,11 +18,18 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { t } from '@/lib/i18n/t'
 
+// 10 October 2026: the description, the hero and the second card offered
+// "extract-based" questions on Paper 2's drama section, and the essay card
+// called both papers closed book and literary heritage Shakespeare. No 4ET1
+// paper prints an extract: Paper 2's questions, from the May 2023 and May 2024
+// papers, are whole-text essays, some opening with a short quotation, and
+// the specification (Issue 3, PDF pp11, 14 and 19) makes Paper 2 open book and
+// lets literary heritage be a novel by Austen, Dickens or Hawthorne.
 export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel IGCSE Literature Exam Technique - The English Hub',
     description:
-      'Paper 1 and Paper 2 exam technique for Pearson Edexcel IGCSE English Literature. Comparison, extract-based and essay-style question strategies.',
+      'Paper 1 and Paper 2 exam technique for Pearson Edexcel IGCSE English Literature: the unseen poem, the poetry comparison and whole-text essay questions.',
     images: [
       {
         url: '/api/og?title=Edexcel+IGCSE+Literature+Exam+Technique+-+The+English+Hub',
@@ -34,7 +41,7 @@ export const metadata: Metadata = {
   },
   title: 'Edexcel IGCSE Literature Exam Technique',
   description:
-    'Paper 1 and Paper 2 exam technique for Pearson Edexcel IGCSE English Literature. Comparison, extract-based and essay-style question strategies.',
+    'Paper 1 and Paper 2 exam technique for Pearson Edexcel IGCSE English Literature: the unseen poem, the poetry comparison and whole-text essay questions.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/exam-technique',
   },
@@ -62,16 +69,16 @@ const questionTypes = [
   },
   {
     icon: ScanText,
-    title: 'Extract-based questions',
+    title: 'Drama essay questions',
     subtitle: 'Paper 2, Section A - Modern Drama',
     description:
-      'You are given a short extract from the studied drama text and asked to analyse how the writer presents a character, theme or dramatic moment in the extract and wider play.',
+      'You answer one of two essay questions on your play, for 30 marks. No extract is printed: some questions open with a short quotation or a statement, but each asks about the play as a whole and tells you to consider language, form and structure. The paper is open book, so you may take in a clean, unmarked copy of the play.',
     technique: [
-      'Spend 5 minutes annotating the extract before writing.',
-      'Anchor every paragraph in a specific quotation or stage direction from the extract.',
-      'Zoom out regularly - show how the moment connects to the whole play.',
+      'Spend a few minutes planning: choose moments from across the play that answer the question.',
+      'Anchor every paragraph in a specific quotation or stage direction.',
+      'Range across the whole play - its opening, turning points and ending.',
       'Track dramatic methods: stage directions, dialogue, silence, lighting.',
-      'Balance extract and wider play - roughly 60% extract, 40% elsewhere.',
+      'Your copy is clean, so know where the key scenes are: searching for them costs time.',
     ],
     ao: ['Understanding the text', 'Analysing language and structure'],
   },
@@ -80,9 +87,9 @@ const questionTypes = [
     title: 'Essay-style questions',
     subtitle: 'Paper 1 Section C and Paper 2 Section B',
     description:
-      'Closed-book essays on modern prose and Shakespeare. You must recall quotations from memory and structure a sustained argument in response to a thematic prompt.',
+      'Each is one essay from a choice of two on your text, argued in response to the question. Paper 1 Section C (modern prose) is closed book, so you quote from memory, and it is marked for knowledge of the text and for context. Paper 2 Section B (literary heritage: a Shakespeare play, or a novel by Austen, Dickens or Hawthorne) is open book, with a clean copy of your text allowed, and is marked for knowledge of the text, language, form and structure, and context.',
     technique: [
-      'Memorise 20-30 short, flexible quotations per text - prioritise range over length.',
+      'For Paper 1, learn short, flexible quotations: your prose text is not allowed in.',
       'Open with a clear, argumentative thesis. Avoid plot summary.',
       'Use a five-paragraph PEEAL (Point, Evidence, Explain, Analyse, Link) structure.',
       'Weave context into analysis, not a separate paragraph.',
@@ -193,9 +200,9 @@ export default async function EdexcelExamTechniquePage() {
             IGCSE Literature Exam Technique
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Specific strategies for the three question types that show up in Edexcel IGCSE English
-            Literature - comparison, extract-based and essay-style questions. Each approach is
-            mapped to what examiners are actually rewarding.
+            Specific strategies for the question types in Edexcel IGCSE English Literature: the
+            unseen poem, the poetry comparison, and the essay questions on your prose, drama and
+            literary heritage texts. Each approach is mapped to the skills the mark schemes reward.
           </p>
         </div>
       </section>

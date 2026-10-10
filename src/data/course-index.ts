@@ -1143,7 +1143,7 @@ export const COURSE_INDEX: CourseIndexEntry[] = [
     duration: '12 weeks',
     level: 'IGCSE (Years 10-11)',
     description:
-      'The complete Edexcel IGCSE English Literature course for drama and prose set texts. Master extract-based essay technique, character and theme analysis, close reading skills, and timed essay writing - with in-depth study guides for Macbeth and An Inspector Calls, examiner-level strategies, and model analytical approaches.',
+      'The complete Edexcel IGCSE English Literature course for drama and prose set texts. Master close reading and whole-text essay technique, character and theme analysis, close reading skills, and timed essay writing - with in-depth study guides for Macbeth and An Inspector Calls, examiner-level strategies, and model analytical approaches.',
     color: '#8b5cf6',
     moduleCount: 10,
     quizCount: 42,
@@ -1155,7 +1155,7 @@ export const COURSE_INDEX: CourseIndexEntry[] = [
       },
       {
         id: 'iglit-dp-m2',
-        title: 'Extract-Based Essay Technique',
+        title: 'Close Reading: Essays Built on Key Passages',
         duration: '2 hours',
       },
       {
@@ -4596,7 +4596,7 @@ export const COURSE_INDEX: CourseIndexEntry[] = [
       },
       {
         id: 'omam-m11',
-        title: 'IGCSE Essay Structure: Extract + Whole Text Response',
+        title: 'IGCSE Essay Structure: Key Passages and the Whole Text',
         duration: '55 min',
       },
       {
@@ -4693,7 +4693,7 @@ export const COURSE_INDEX: CourseIndexEntry[] = [
     duration: '8-10 hours',
     level: 'Year 11',
     description:
-      "Complete study of J.B. Priestley's An Inspector Calls for Edexcel IGCSE Literature. Analyse every character, explore themes of responsibility and social class, and master the extract and essay questions with model answers and examiner tips.",
+      "Complete study of J.B. Priestley's An Inspector Calls for Edexcel IGCSE Literature. Analyse every character, explore themes of responsibility and social class, and master the essay question with model answers and examiner tips.",
     color: '#b45309',
     moduleCount: 12,
     quizCount: 60,
@@ -4750,7 +4750,7 @@ export const COURSE_INDEX: CourseIndexEntry[] = [
       },
       {
         id: 'ic-m11',
-        title: 'IGCSE Essay Writing: Extract to Whole Text',
+        title: 'IGCSE Essay Writing: Key Scenes and the Whole Play',
         duration: '60 min',
       },
       {
@@ -4770,7 +4770,7 @@ export const COURSE_INDEX: CourseIndexEntry[] = [
     duration: '8-10 hours',
     level: 'Year 11',
     description:
-      "In-depth study of Shakespeare's Macbeth for Edexcel IGCSE Literature. Master all characters, themes, dramatic techniques, and contextual factors. Full exam preparation with extract analysis skills and essay planning frameworks.",
+      "In-depth study of Shakespeare's Macbeth for Edexcel IGCSE Literature. Master all characters, themes, dramatic techniques, and contextual factors. Full exam preparation with close reading skills and essay planning frameworks.",
     color: '#4b5563',
     moduleCount: 12,
     quizCount: 60,
@@ -4832,7 +4832,7 @@ export const COURSE_INDEX: CourseIndexEntry[] = [
       },
       {
         id: 'macbeth-m12',
-        title: 'IGCSE Essay Practice: Extract Response and Model Answers',
+        title: 'IGCSE Essay Practice: Close Reading and Model Answers',
         duration: '60 min',
       },
     ],

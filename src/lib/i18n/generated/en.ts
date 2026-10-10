@@ -5779,8 +5779,10 @@ export const EN_MESSAGES: Record<string, string> = {
     'The Pearson Edexcel International GCSE in English Literature is a two-paper qualification studied in over 85 countries. It covers ',
   'edexcel.lit.hero_lead_poetry': 'poetry, modern prose, modern drama',
   'edexcel.lit.hero_lead_and': ' and a ',
-  'edexcel.lit.hero_lead_shakes': 'literary heritage Shakespeare play',
-  'edexcel.lit.hero_lead_post': ', all assessed closed book.',
+  'edexcel.lit.hero_lead_shakes':
+    'literary heritage text (a Shakespeare play or a novel by Austen, Dickens or Hawthorne)',
+  'edexcel.lit.hero_lead_post':
+    '. Paper 1 is closed book; for Paper 2 you may take in clean copies of your set texts.',
   'edexcel.lit.duration_3h30': '3h 30m total',
   'edexcel.lit.set_texts_count': '11 set texts + anthology',
   'edexcel.lit.paper1.title': 'Paper 1: Poetry and Modern Prose',
@@ -5803,7 +5805,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Where to find official Edexcel past papers plus study tips for using them.',
   'edexcel.lit.exam.technique.title': 'Exam Technique',
   'edexcel.lit.exam.technique.desc':
-    'IGCSE-specific strategies for comparison, extract and essay questions.',
+    'IGCSE-specific strategies for the unseen poem, the poetry comparison and essay questions.',
   'edexcel.lit.exam.essay.title': 'Essay Technique',
   'edexcel.lit.exam.essay.desc':
     'How to structure and develop Literature essays across all papers.',

@@ -9,6 +9,13 @@ import type { CourseData, CourseModule, CourseQuiz } from './courses'
 // 1. Pride and Prejudice - Jane Austen
 // ─────────────────────────────────────────────────────────────────────────────
 
+// 10 October 2026: the three context modules called context AO3, and the Pride
+// and Prejudice exam module said questions take two forms, one of them
+// "extract-based". On 4ET1 context is AO4 and AO3 is comparison (specification
+// Issue 3, PDF p29); these novels are Paper 2 Section B texts, where each
+// question is one essay from a choice of two on the whole novel, with no
+// extract, and the paper is open book (PDF pp11 and 19; Paper 2 question
+// papers, May 2023 and May 2024).
 const prideAndPrejudiceModules: CourseModule[] = [
   // ──────────────────────────────────────────────
   // MODULE 1 - Context & Author Background
@@ -20,7 +27,7 @@ const prideAndPrejudiceModules: CourseModule[] = [
     content: `
 <h2>Jane Austen and the World of <em>Pride and Prejudice</em></h2>
 
-<p>Understanding the context in which Jane Austen wrote <em>Pride and Prejudice</em> (1813) is essential for achieving the highest marks in your IGCSE Literature exam, particularly for <strong>AO3</strong> - demonstrating understanding of the relationships between texts and the contexts in which they were written. However, context must never be bolted on; it must be woven seamlessly into your analysis of character, theme, and language.</p>
+<p>Understanding the context in which Jane Austen wrote <em>Pride and Prejudice</em> (1813) is essential for achieving the highest marks in your IGCSE Literature exam, particularly for <strong>AO4</strong> - showing understanding of the relationships between texts and the contexts in which they were written. However, context must never be bolted on; it must be woven seamlessly into your analysis of character, theme, and language.</p>
 
 <h3>Jane Austen: Life and Influences</h3>
 <p>Jane Austen (1775-1817) was born in Steventon, Hampshire, the seventh of eight children in a close-knit, literate family. Her father was a clergyman, and the household valued reading, writing, and intellectual conversation. Austen began writing as a teenager, producing satirical sketches and parodies that reveal the sharp wit that would define her mature work.</p>
@@ -480,12 +487,8 @@ const prideAndPrejudiceModules: CourseModule[] = [
 <p>This module brings together everything you have learned and applies it to exam-style questions. The Edexcel IGCSE Literature exam tests your ability to write sustained, analytical responses under timed conditions. Success requires not just knowledge of the text but the ability to <strong>construct a coherent argument, integrate evidence, and analyse the writer's methods</strong>.</p>
 
 <h3>Understanding the Question</h3>
-<p>IGCSE Literature questions typically take one of two forms:</p>
-<ul>
-  <li><strong>Extract-based questions:</strong> You are given a passage and asked to analyse it in detail, then connect your analysis to the wider text.</li>
-  <li><strong>Discursive essay questions:</strong> You are asked to discuss a theme, character, or technique across the whole novel.</li>
-</ul>
-<p>In both cases, the question will usually focus on <strong>how the writer presents</strong> something - a character, theme, relationship, or idea. The word "how" is crucial: it directs you to analyse Austen's methods, not simply describe what happens.</p>
+<p>In Paper 2 Section B you answer <strong>one of two essay questions</strong> on your novel, for 30 marks. No extract is printed: some questions open with a short quotation or a statement, and each asks you to discuss a theme, character or relationship across the whole novel, considering language, form and structure and referring to its context. The paper is open book, so you may have a clean, unmarked copy of the novel.</p>
+<p>The question will usually focus on <strong>how the writer presents</strong> something - a character, theme, relationship, or idea. The word "how" is crucial: it directs you to analyse Austen's methods, not simply describe what happens.</p>
 
 <h3>Sample Question</h3>
 <div class="text-extract"><strong>Question:</strong> How does Austen present the theme of pride in <em>Pride and Prejudice</em>?<br><br>You should consider:<br>• how pride is shown through different characters<br>• how Austen uses language and structure to explore pride<br>• the significance of pride in the novel as a whole</div>
@@ -585,7 +588,7 @@ const greatExpectationsModules: CourseModule[] = [
     content: `
 <h2>Charles Dickens and the World of <em>Great Expectations</em></h2>
 
-<p>Charles Dickens (1812-1870) is arguably the most important English novelist of the Victorian era. Understanding his life, his social concerns, and the world he wrote about is essential for <strong>AO3</strong> and will enrich every aspect of your analysis of <em>Great Expectations</em> (1860-61).</p>
+<p>Charles Dickens (1812-1870) is arguably the most important English novelist of the Victorian era. Understanding his life, his social concerns, and the world he wrote about is essential for <strong>AO4</strong> (context) and will enrich every aspect of your analysis of <em>Great Expectations</em> (1860-61).</p>
 
 <h3>Dickens's Early Life</h3>
 <p>Dickens's childhood experiences profoundly shaped his writing. When he was twelve, his father was imprisoned in the Marshalsea debtors' prison, and the young Charles was sent to work in a blacking factory, pasting labels on bottles of boot polish. This traumatic period - which Dickens kept secret for most of his life - left him with a <strong>lifelong empathy for the poor and a visceral understanding of the shame and humiliation of poverty</strong>.</p>
@@ -1150,7 +1153,7 @@ const scarletLetterModules: CourseModule[] = [
     content: `
 <h2>Nathaniel Hawthorne and the World of <em>The Scarlet Letter</em></h2>
 
-<p>Nathaniel Hawthorne (1804-1864) published <em>The Scarlet Letter</em> in 1850, but the novel is set two centuries earlier, in the Puritan Massachusetts Bay Colony of the 1640s. Understanding both the historical setting and Hawthorne's own complex relationship with his Puritan ancestors is essential for <strong>AO3</strong>.</p>
+<p>Nathaniel Hawthorne (1804-1864) published <em>The Scarlet Letter</em> in 1850, but the novel is set two centuries earlier, in the Puritan Massachusetts Bay Colony of the 1640s. Understanding both the historical setting and Hawthorne's own complex relationship with his Puritan ancestors is essential for <strong>AO4</strong> (context).</p>
 
 <h3>Hawthorne's Puritan Heritage</h3>
 <p>Hawthorne was born in Salem, Massachusetts, into a family with deep roots in American Puritanism. His ancestor William Hathorne was a magistrate involved in the persecution of Quakers, and his great-great-grandfather John Hathorne was one of the judges in the Salem witch trials of 1692. Hawthorne was <strong>haunted by his family's history of intolerance and persecution</strong>, and he reportedly added the "w" to his surname to distance himself from this legacy.</p>

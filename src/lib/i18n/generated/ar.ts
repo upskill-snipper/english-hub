@@ -5664,8 +5664,10 @@ export const AR_MESSAGES: Record<string, string> = {
     'مؤهّل Pearson Edexcel International GCSE in English Literature بورقتين امتحان، ويذاكره الطلاب في أكثر من ٨٥ دولة. ويغطّي ',
   'edexcel.lit.hero_lead_poetry': 'الشعر، النثر الحديث، الدراما الحديثة',
   'edexcel.lit.hero_lead_and': ' بالإضافة لـ ',
-  'edexcel.lit.hero_lead_shakes': 'مسرحية شكسبير من التراث الأدبي',
-  'edexcel.lit.hero_lead_post': '، وكلها بتنقيَّم بنظام الكتاب المغلق.',
+  'edexcel.lit.hero_lead_shakes':
+    'نص من التراث الأدبي (مسرحية لشكسبير أو رواية لأوستن أو ديكنز أو هوثورن)',
+  'edexcel.lit.hero_lead_post':
+    '. Paper 1 بنظام الكتاب المغلق، وفي Paper 2 تقدر تاخد معاك نسخ نظيفة من نصوصك المقرَّرة.',
   'edexcel.lit.duration_3h30': '٣ ساعات و٣٠ دقيقة إجمالاً',
   'edexcel.lit.set_texts_count': '١١ نص مقرَّر + الـ Anthology',
   'edexcel.lit.paper1.title': 'Paper 1: الشعر والنثر الحديث',
@@ -5687,7 +5689,8 @@ export const AR_MESSAGES: Record<string, string> = {
   'edexcel.lit.exam.past_papers.desc':
     'وين تلقى امتحانات Edexcel السابقة الرسمية، مع نصايح للمذاكرة منها.',
   'edexcel.lit.exam.technique.title': 'أسلوب الامتحان',
-  'edexcel.lit.exam.technique.desc': 'استراتيجيات لـ IGCSE لأسئلة المقارنة والمقطع والمقال.',
+  'edexcel.lit.exam.technique.desc':
+    'استراتيجيات لـ IGCSE لسؤال القصيدة غير المرئية ومقارنة القصائد وأسئلة المقال.',
   'edexcel.lit.exam.essay.title': 'أسلوب كتابة المقال',
   'edexcel.lit.exam.essay.desc': 'طريقة هيكلة وتطوير مقالات Literature في كل الأوراق.',
   'edexcel.lit.exam.grade.title': 'مستويات الدرجات',

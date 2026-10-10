@@ -40,18 +40,26 @@ export const metadata: Metadata = {
   },
 }
 
+// 10 October 2026: the first card said papers are hosted for "every series
+// since the 2016 specification launch", but the specification was first
+// examined in June 2018 (4ET1 specification, Issue 3, PDF p29), and the
+// November 2025 and June 2026 papers are behind Pearson's secure login. The
+// anthology is the International GCSE English Anthology, not a poetry
+// anthology: its Part 3 holds the poems. Further down, two tips called the
+// exam closed book throughout and offered "extract questions": Paper 2 is open
+// book (specification PDF pp11 and 19), and no 4ET1 paper prints an extract.
 const officialSources = [
   {
     name: 'Pearson Qualifications - Past papers and mark schemes',
     href: 'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses.html',
     description:
-      'The official Edexcel site hosts question papers, mark schemes and examiner reports for every series since the 2016 specification launch.',
+      'The official Edexcel site hosts question papers, mark schemes and examiner reports for past series of the current specification, first examined in 2018. The most recent series are kept behind a login for schools, so ask your teacher for those.',
   },
   {
     name: 'Pearson Qualifications - Specification and sample assessment',
     href: 'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses.html',
     description:
-      'Sample assessment materials (SAMs), the full specification document and the poetry anthology are all available as free downloads.',
+      'Sample assessment materials (SAMs), the full specification document and the International GCSE English Anthology, whose Part 3 holds the poems, are all available as free downloads.',
   },
   {
     name: 'Pearson Examiner reports',
@@ -66,7 +74,7 @@ const studyTips = [
     icon: Clock,
     title: 'Practise under full timing',
     description:
-      'Sit complete papers under strict 2-hour (Paper 1) or 90-minute (Paper 2) conditions. Handwriting endurance matters in a closed-book literature exam.',
+      'Sit complete papers under strict 2-hour (Paper 1) or 90-minute (Paper 2) conditions, with the real rules: no texts for Paper 1, and only clean copies of your set texts for Paper 2. Handwriting endurance matters.',
   },
   {
     icon: BookOpen,
@@ -84,7 +92,7 @@ const studyTips = [
     icon: CheckCircle2,
     title: 'Target weaknesses first',
     description:
-      'Drill the sections you score lowest on. Unseen poetry and extract questions have specific techniques that reward focused practice.',
+      'Drill the sections you score lowest on. The unseen poem and the poetry comparison have specific techniques that reward focused practice.',
   },
   {
     icon: Calendar,
@@ -148,9 +156,9 @@ export default async function EdexcelPastPapersPage() {
       <section className="flex items-start gap-3 rounded-xl border border-blue-500/20 bg-blue-500/5 p-4">
         <Info className="mt-0.5 size-4 shrink-0 text-blue-400" />
         <p className="text-body-sm text-muted-foreground">
-          We do not host Edexcel past papers on The English Hub. Pearson publishes all question
-          papers, mark schemes and examiner reports for free on their official site - always use
-          those to guarantee the latest, unedited versions.
+          We do not host Edexcel past papers on The English Hub. Pearson publishes question papers,
+          mark schemes and examiner reports free on its official site, apart from the most recent
+          series - always use those to guarantee the latest, unedited versions.
         </p>
       </section>
 
@@ -259,7 +267,8 @@ export default async function EdexcelPastPapersPage() {
             </span>
             <span>
               <strong className="text-foreground">10-55 min:</strong> Write the response in full
-              exam conditions. Phone on airplane mode, no notes, no text.
+              exam conditions. Phone on aeroplane mode, no notes, and no text, except a clean copy
+              of your set text for a Paper 2 question.
             </span>
           </li>
           <li className="flex items-start gap-3">
