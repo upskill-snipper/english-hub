@@ -207,6 +207,14 @@ export default function BulkUploadPage() {
       })
       if (!res.ok) {
         const body = await res.json().catch(() => ({ error: 'Commit failed' }))
+        // An attempt that failed saved nothing, so pressing the button again
+        // must be a NEW attempt: until 11 October 2026 it reused this key, and
+        // the server replayed the failure as a 200 with nothing created. A key
+        // whose upload is still running (409 'pending') is kept, so a second
+        // press waits for that upload instead of starting another.
+        if (res.status >= 500 || body.jobStatus === 'failed') {
+          idempotencyKeyRef.current = null
+        }
         throw new Error(body.error || `HTTP ${res.status}`)
       }
       const data = (await res.json()) as CommitResponse

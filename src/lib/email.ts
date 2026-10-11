@@ -2,7 +2,7 @@ import nodemailer, { type Transporter } from 'nodemailer'
 import { prisma } from '@/lib/prisma'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { shouldBccTrustpilot } from '@/lib/trustpilot/should-bcc'
-import { sendViaResend } from '@/lib/email/resend'
+import { sendBatchViaResend, sendViaResend } from '@/lib/email/resend'
 import { keepAlive } from '@/lib/keep-alive'
 
 // ─── Transport selection ────────────────────────────────────────────────
@@ -185,6 +185,52 @@ export async function sendEmail(
     const message = err instanceof Error ? err.message : 'Unknown email error'
     console.error(`[email] Failed to send to ${to}: ${message}`)
     return { success: false, error: message }
+  }
+}
+
+// ─── Send many at once ──────────────────────────────────────────────────
+
+/**
+ * Send many emails for one bulk job: the school bulk upload's welcome emails,
+ * up to 500 at a time. Same sender and same transport choice as sendEmail.
+ * Over Resend that is its batch endpoint, 100 to a request, because 500 single
+ * sends would run into Resend's 10-a-second limit (see sendBatchViaResend).
+ * Over SMTP it is one message at a time on the shared transporter.
+ *
+ * Never throws. Returns how many were accepted and the addresses that were
+ * not, so a caller can report them.
+ */
+export async function sendEmailBatch(
+  messages: ReadonlyArray<{ to: string; subject: string; html: string; text?: string }>,
+): Promise<{ sent: number; failed: string[] }> {
+  if (messages.length === 0) return { sent: 0, failed: [] }
+
+  if (smtpConfigured()) {
+    let sent = 0
+    const failed: string[] = []
+    for (const m of messages) {
+      try {
+        await getTransporter().sendMail({
+          from: FROM,
+          to: m.to,
+          subject: m.subject,
+          html: m.html,
+          ...(m.text ? { text: m.text } : {}),
+        })
+        sent += 1
+      } catch (err) {
+        const message = err instanceof Error ? err.message : 'Unknown email error'
+        console.error(`[email] Failed to send to ${m.to}: ${message}`)
+        failed.push(m.to)
+      }
+    }
+    return { sent, failed }
+  }
+
+  const result = await sendBatchViaResend(messages.map((m) => ({ ...m, from: FROM })))
+  return {
+    sent: result.sent,
+    failed: result.failed.map((f) => (Array.isArray(f.to) ? f.to.join(', ') : f.to)),
   }
 }
 

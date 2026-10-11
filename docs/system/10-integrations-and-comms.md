@@ -222,6 +222,13 @@ Next's `after()` and so to Vercel's `waitUntil`. The response still goes out at 
 [`work-a-route-starts-outlives-its-response.test.ts`](../../src/__tests__/work-a-route-starts-outlives-its-response.test.ts)
 fails if server code goes back to either idiom.
 
+A bulk send must also respect Resend's limit of 10 requests a second per team, shared
+with every other email the site sends: beyond it Resend answers 429 and the email is
+lost. The bulk-upload welcomes, up to 500 at once, therefore go through
+`sendEmailBatch()` ([`src/lib/email.ts`](../../src/lib/email.ts)), which uses Resend's
+batch endpoint, 100 emails to a request (`sendBatchViaResend()` in the wrapper), and
+the same sender address as `sendEmail()`.
+
 ### The SMTP problem
 
 `src/lib/email.ts` builds its nodemailer transport at module scope from `SMTP_HOST`,

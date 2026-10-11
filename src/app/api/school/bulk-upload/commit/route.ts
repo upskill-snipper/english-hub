@@ -5,24 +5,31 @@
  *
  *   1. Authenticate. Require `admin` school role (site admins bypass).
  *   2. Parse the JSON body - expect `{ rows: StudentRow[], fileName, idempotencyKey }`.
- *   3. Short-circuit on a duplicate `idempotencyKey`: return the cached result.
+ *   3. Short-circuit on a duplicate `idempotencyKey`: return the cached result
+ *      of a completed job; refuse a key whose job is running or failed.
  *   4. Insert a BulkUploadJob row with status='pending'.
- *   5. For each row, either upsert the Prisma User (re-use existing by email,
- *      otherwise create with a temporary password) and link/update the class
- *      membership in Supabase. Collect per-row errors without aborting the batch.
- *      Either everything in the Prisma transaction succeeds or the job row is
- *      flipped to 'failed' and nothing is persisted.
- *   6. Fire welcome emails for freshly-created users (best-effort), only once
- *      the transaction has committed (step 7b below).
- *   7. Stamp completedAt and return `{ jobId, created, updated, skipped, errors }`.
+ *   5. Create an auth user for each new pupil, a few at a time and outside any
+ *      transaction, then record every new pupil's Prisma User row and complete
+ *      the job in one short transaction. Collect per-row errors without
+ *      aborting the batch. If the transaction fails, or the accounts take too
+ *      long, every auth user created is revoked and nothing is persisted.
+ *   6. Fire welcome emails for freshly-created users (best-effort, in batches),
+ *      only once the transaction has committed (step 7d below).
+ *   7. Link school_members, stamp completedAt and return
+ *      `{ jobId, created, updated, skipped, errors }`.
  *
  * Tested by `./route.test.ts`:
  *   - idempotency (same key twice returns same body; writes once)
  *   - transactional rollback on partial failure (Prisma-level failure reverts
  *     every row in the batch, and no welcome email is sent)
  *   - RBAC (non-admin → 403)
- *   - welcome emails go out after the commit, one per new pupil, each with
- *     the password its account was created with
+ *   - welcome emails go out after the commit, in one batch, one per new
+ *     pupil, each with the password its account was created with
+ *   - no Supabase call runs inside the transaction, which has explicit
+ *     options; accounts are made a few at a time and abandoned, and revoked,
+ *     when they run out of time
+ *   - only a completed job is replayed for a repeated idempotency key
+ *   - an existing pupil is linked to school_members by their Supabase id
  *
  * On 11 October 2026 production had no BulkUploadJob table (known drift in
  * scripts/schema-drift-known.json; nothing in the build applies
@@ -37,11 +44,39 @@ import { prisma } from '@/lib/prisma'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { verifySchoolMember } from '@/lib/school-auth'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
-import { sendEmail } from '@/lib/email'
+import { sendEmailBatch } from '@/lib/email'
 import { keepAlive } from '@/lib/keep-alive'
+import { mapWithConcurrency } from '@/lib/concurrency'
 import type { StudentRow, ParseError } from '@/lib/school/csv-parse'
 
 export const dynamic = 'force-dynamic'
+
+// ─── The time budget (11 October 2026) ──────────────────────────────────────
+// This route could not have handled a real school. It created each pupil's
+// auth user with a Supabase admin call INSIDE the Prisma transaction, one at
+// a time. Prisma closes an interactive transaction after 5 s by default
+// (6.19.3, and src/lib/prisma.ts sets no transactionOptions), so an upload of
+// more than a few dozen new pupils would expire mid-way and roll back. Even
+// outside a transaction, 500 calls one after another take minutes, while the
+// function had vercel.json's 60 s. Stopped by the platform part-way, it would
+// leave auth users that nothing ever revoked.
+//
+// Now the auth users are made SUPABASE_CONCURRENCY at a time, outside any
+// transaction, with ACCOUNT_PHASE_BUDGET_MS to do it in. After that no new
+// account is started, and the whole upload is revoked and refused, so the
+// function always ends in its own rollback rather than the platform's kill.
+// The transaction holds two statements (a createMany and the job update),
+// under an explicit TRANSACTION_OPTIONS. maxDuration covers the account phase,
+// a full revocation and the member links. It stays under the 125 s
+// Cloudflare waits for this site's origin.
+export const maxDuration = 120
+
+/** Supabase admin calls in flight at once: account creation, revocation, member links. */
+const SUPABASE_CONCURRENCY = 5
+/** How long account creation may run before the upload is abandoned and revoked. */
+const ACCOUNT_PHASE_BUDGET_MS = 60_000
+/** The transaction does no network calls now; this bounds two statements. */
+const TRANSACTION_OPTIONS = { maxWait: 10_000, timeout: 20_000 }
 
 // ---------------------------------------------------------------------------
 // Types
@@ -233,6 +268,22 @@ export async function POST(request: NextRequest) {
       where: { idempotencyKey: body.idempotencyKey },
     })
     if (existing) {
+      // Only a COMPLETED job is a result to replay. Until 11 October 2026 a
+      // failed or still-running job was replayed too, as a 200 with nothing
+      // created, and the upload page reuses its key when the school presses
+      // the button again, so a retry after any failure could never succeed.
+      if (existing.status !== 'completed') {
+        return NextResponse.json(
+          {
+            error:
+              existing.status === 'pending'
+                ? 'This upload is already being processed. Wait a minute, then check the upload log.'
+                : 'That attempt failed and nothing was saved. Please run the upload again.',
+            jobStatus: existing.status,
+          },
+          { status: 409 },
+        )
+      }
       return NextResponse.json(
         {
           jobId: existing.id,
@@ -265,18 +316,22 @@ export async function POST(request: NextRequest) {
     const emails = Array.from(new Set(normalisedRows.map((r) => r.email.toLowerCase())))
     const existingUsers = await prisma.user.findMany({
       where: { email: { in: emails } },
-      select: { id: true, email: true },
+      // supabaseUserId is what school_members.user_id holds (step 8).
+      select: { id: true, email: true, supabaseUserId: true },
     })
     const existingByEmail = new Map(existingUsers.map((u) => [u.email.toLowerCase(), u]))
 
-    // 7. Transactional commit. The Prisma transaction wraps all DB writes to
-    //    the Prisma-owned tables (`User`, `BulkUploadJob`). Supabase-side
-    //    writes (auth users + school_members) happen outside the Prisma tx
-    //    because they live in a different backing store; on transaction
-    //    failure we roll back the auth side by revoking what we just created.
+    // 7. Accounts first, then one short transaction.
+    //
+    // The auth users and school_members live in Supabase, a different store
+    // from the Prisma-owned tables (`User`, `BulkUploadJob`), so they cannot
+    // share the transaction. The auth users are made first, outside it (see
+    // "The time budget" at the top), and the transaction then records them
+    // all at once. On any failure every auth user made here is revoked, so the
+    // commit is atomic end-to-end.
     const createdAuthIds: Array<{ email: string; authId: string }> = []
-    // Welcome emails are collected inside the transaction and sent only after
-    // it commits (step 7b), so no pupil is emailed a password for an account a
+    // Welcome emails are queued here and sent only once the transaction has
+    // committed (step 7d), so no pupil is emailed a password for an account a
     // rollback then deletes.
     const welcomes: Array<{ email: string; firstName: string; tempPassword: string }> = []
     const outcomes: PerRowOutcome[] = []
@@ -287,23 +342,48 @@ export async function POST(request: NextRequest) {
 
     const admin = createServiceRoleClient()
 
-    try {
-      await prisma.$transaction(async (tx) => {
-        for (const row of normalisedRows) {
-          const email = row.email.toLowerCase()
-          const existing = existingByEmail.get(email)
+    /** The rollback for the Supabase side: revoke every auth user made here. */
+    const revokeCreatedAccounts = () =>
+      mapWithConcurrency(createdAuthIds, SUPABASE_CONCURRENCY, async ({ authId }) => {
+        try {
+          await admin.auth.admin.deleteUser(authId)
+        } catch (e) {
+          console.warn('bulk-upload.commit: failed to revoke auth user', e)
+        }
+      })
 
-          if (existing) {
-            // Existing user: refresh class assignment in Supabase
-            // school_members without touching Prisma's `User` row (leave
-            // their name, DOB, consent untouched).
-            outcomes.push({ row: row.row, email, action: 'updated' })
-            updatedCount++
-            continue
-          }
+    /** Mark the job failed, with the reason the school sees in its upload log. */
+    const failJob = (message: string) =>
+      prisma.bulkUploadJob.update({
+        where: { id: job.id },
+        data: {
+          status: 'failed',
+          completedAt: new Date(),
+          errorsJson: [{ row: 0, code: 'INVALID_EMAIL', message }] as unknown as object,
+        },
+      })
 
-          // New user: create the auth user first so we have a Supabase UID.
-          const tempPassword = generateTempPassword()
+    // 7a. Sort the rows, in file order. A pupil Prisma already knows is
+    // updated, a repeat of an email earlier in the file is skipped, and anyone
+    // else needs an account.
+    const seen = new Set<string>()
+    const plan = normalisedRows.map((row) => {
+      const email = row.email.toLowerCase()
+      const kind = existingByEmail.has(email) ? 'existing' : seen.has(email) ? 'repeat' : 'new'
+      seen.add(email)
+      return { row, email, kind }
+    })
+    const needAccounts = plan.filter((p) => p.kind === 'new')
+
+    // 7b. Create the auth users, SUPABASE_CONCURRENCY at a time, starting no
+    // new one once ACCOUNT_PHASE_BUDGET_MS has passed.
+    const deadline = Date.now() + ACCOUNT_PHASE_BUDGET_MS
+    const attempts = await mapWithConcurrency(
+      needAccounts,
+      SUPABASE_CONCURRENCY,
+      async ({ row, email }) => {
+        const tempPassword = generateTempPassword()
+        try {
           const { data: authData, error: authErr } = await admin.auth.admin.createUser({
             email,
             password: tempPassword,
@@ -324,22 +404,86 @@ export async function POST(request: NextRequest) {
               needs_password_change: true,
             },
           })
-          if (authErr || !authData?.user) {
-            errors.push({
-              row: row.row,
-              field: 'email',
-              code: 'INVALID_EMAIL',
-              message: `Failed to create auth user for ${email}.`,
-            })
-            skippedCount++
-            outcomes.push({ row: row.row, email, action: 'skipped' })
-            continue
-          }
-          const authId = authData.user.id
-          createdAuthIds.push({ email, authId })
+          if (authErr || !authData?.user) return { ok: false as const, threw: false }
+          createdAuthIds.push({ email, authId: authData.user.id })
+          return { ok: true as const, authId: authData.user.id, tempPassword }
+        } catch (err) {
+          // Not a bad row: the call never answered. The old transaction undid
+          // the whole upload on a throw, and so does this.
+          console.error('bulk-upload.commit: createUser threw', err)
+          return { ok: false as const, threw: true }
+        }
+      },
+      () => Date.now() < deadline,
+    )
 
-          await tx.user.create({
-            data: {
+    const ranOutOfTime = attempts.some((a) => a === undefined)
+    if (ranOutOfTime || attempts.some((a) => a !== undefined && !a.ok && a.threw)) {
+      console.error(
+        `bulk-upload.commit: ${ranOutOfTime ? 'account creation ran out of time' : 'createUser threw'}; revoking ${createdAuthIds.length} accounts`,
+      )
+      await revokeCreatedAccounts()
+      await failJob(
+        ranOutOfTime
+          ? 'Account creation ran out of time; nothing was saved.'
+          : 'Account creation failed part-way; nothing was saved.',
+      )
+      return NextResponse.json(
+        {
+          error: ranOutOfTime
+            ? 'This upload took too long and was stopped. No accounts were created. Please split the file into smaller files and try again.'
+            : 'Commit failed. No accounts were created. Please review errors and retry.',
+        },
+        { status: ranOutOfTime ? 503 : 500 },
+      )
+    }
+
+    // Outcomes, counts and the rows to record, in file order.
+    const attemptByEmail = new Map(needAccounts.map((p, i) => [p.email, attempts[i]]))
+    const accounts: Array<{ email: string; authId: string; row: StudentRow }> = []
+    for (const { row, email, kind } of plan) {
+      if (kind === 'existing') {
+        // Existing user: refresh their school_members link (step 8) without
+        // touching Prisma's `User` row (leave their name, DOB, consent
+        // untouched).
+        outcomes.push({ row: row.row, email, action: 'updated' })
+        updatedCount++
+        continue
+      }
+      const attempt = attemptByEmail.get(email)
+      if (kind === 'repeat' || !attempt || !attempt.ok) {
+        errors.push(
+          kind === 'repeat'
+            ? {
+                row: row.row,
+                field: 'email',
+                code: 'DUPLICATE_EMAIL_IN_FILE',
+                message: `${email} appears earlier in this file.`,
+              }
+            : {
+                row: row.row,
+                field: 'email',
+                code: 'INVALID_EMAIL',
+                message: `Failed to create auth user for ${email}.`,
+              },
+        )
+        skippedCount++
+        outcomes.push({ row: row.row, email, action: 'skipped' })
+        continue
+      }
+      accounts.push({ email, authId: attempt.authId, row })
+      createdCount++
+      outcomes.push({ row: row.row, email, action: 'created' })
+      welcomes.push({ email, firstName: row.firstName, tempPassword: attempt.tempPassword })
+    }
+
+    // 7c. Record the new pupils and complete the job: one transaction, two
+    // statements, no network calls.
+    try {
+      await prisma.$transaction(async (tx) => {
+        if (accounts.length > 0) {
+          await tx.user.createMany({
+            data: accounts.map(({ email, authId, row }) => ({
               email,
               supabaseUserId: authId,
               passwordHash: '',
@@ -351,17 +495,11 @@ export async function POST(request: NextRequest) {
               // prompts the user to correct.
               dateOfBirth: new Date('2000-01-01'),
               country: 'GB',
-              role: 'STUDENT',
+              role: 'STUDENT' as const,
               school: schoolId,
               isMinor: true,
-            },
+            })),
           })
-
-          createdCount++
-          outcomes.push({ row: row.row, email, action: 'created' })
-
-          // Queue the welcome email; it is sent once the transaction commits.
-          welcomes.push({ email, firstName: row.firstName, tempPassword })
         }
 
         // Flip the job row to completed inside the same tx.
@@ -378,35 +516,17 @@ export async function POST(request: NextRequest) {
             completedAt: new Date(),
           },
         })
-      })
+      }, TRANSACTION_OPTIONS)
     } catch (txErr) {
-      // Prisma tx rolled back. Revoke any auth users we created outside it so
-      // the commit is atomic end-to-end.
+      // Prisma tx rolled back. Revoke the auth users made above so the commit
+      // is atomic end-to-end.
       console.error('bulk-upload.commit: tx failed, rolling back', txErr)
-      for (const { authId } of createdAuthIds) {
-        try {
-          await admin.auth.admin.deleteUser(authId)
-        } catch (e) {
-          console.warn('bulk-upload.commit: failed to revoke auth user', e)
-        }
-      }
-      await prisma.bulkUploadJob.update({
-        where: { id: job.id },
-        data: {
-          status: 'failed',
-          completedAt: new Date(),
-          errorsJson: [
-            {
-              row: 0,
-              code: 'INVALID_EMAIL',
-              message:
-                txErr instanceof Error
-                  ? txErr.message
-                  : 'Transactional commit failed; no rows were persisted.',
-            },
-          ] as unknown as object,
-        },
-      })
+      await revokeCreatedAccounts()
+      await failJob(
+        txErr instanceof Error
+          ? txErr.message
+          : 'Transactional commit failed; no rows were persisted.',
+      )
       return NextResponse.json(
         {
           error: 'Commit failed. No accounts were created. Please review errors and retry.',
@@ -415,35 +535,45 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 7b. Welcome emails, now that the accounts are committed.
+    // 7d. Welcome emails, now that the accounts are committed.
     //
     // FIXED 11 October 2026. These were sent from inside the transaction, as
     // each account was created. If a later row or the job update then failed,
     // the transaction rolled back and the catch above deleted every auth user
     // it had made, and told the school "No accounts were created". But each
     // email already started had gone out, giving a pupil a temporary password
-    // for an account that no longer existed. A rollback is not exotic: the
-    // transaction makes a Supabase call per new pupil under Prisma's default
-    // 5-second interactive limit, so a large upload can time out part-way.
+    // for an account that no longer existed.
+    //
+    // They were also one request each, fired together. Resend allows 10
+    // requests a second per team and refuses the rest with 429, so most of a
+    // large upload's emails would have been lost. sendEmailBatch sends them
+    // 100 to a request.
     //
     // Sent from here, an email only ever describes an account that exists.
     // Still not awaited, so a mail-service outage does not hold up the school,
     // and still kept alive past the response, because each carries the
     // pupil's only copy of their password (src/lib/keep-alive.ts).
-    const loginUrl = 'https://theenglishhub.app/login'
-    for (const welcome of welcomes) {
-      const sent = sendEmail(
-        welcome.email,
-        'Your English Hub account',
-        welcomeEmailHtml({
-          firstName: welcome.firstName,
-          tempPassword: welcome.tempPassword,
-          loginUrl,
-        }),
-      ).catch((e) => {
-        console.warn('bulk-upload: welcome email failed', welcome.email, e)
+    if (welcomes.length > 0) {
+      const loginUrl = 'https://theenglishhub.app/login'
+      const sending = sendEmailBatch(
+        welcomes.map((welcome) => ({
+          to: welcome.email,
+          subject: 'Your English Hub account',
+          html: welcomeEmailHtml({
+            firstName: welcome.firstName,
+            tempPassword: welcome.tempPassword,
+            loginUrl,
+          }),
+        })),
+      ).then(({ failed }) => {
+        if (failed.length > 0) {
+          console.warn(
+            `bulk-upload: ${failed.length} of ${welcomes.length} welcome emails were not sent`,
+            failed,
+          )
+        }
       })
-      keepAlive(sent, 'bulk-upload: welcome email')
+      keepAlive(sending, 'bulk-upload: welcome emails')
     }
 
     // 8. Link Supabase school_members for every row.
@@ -465,15 +595,30 @@ export async function POST(request: NextRequest) {
     // import is a real piece of work and is not being guessed at tonight - so
     // the code the teacher supplied is reported back per row instead of being
     // silently dropped into a column that does not exist.
+    //
+    // A few rows at a time (SUPABASE_CONCURRENCY): one call each, in turn,
+    // would not fit a full file into the time budget.
+    //
+    // FIXED 11 October 2026: a pupil Prisma already knew was linked under their
+    // Prisma `User.id`, a cuid, but school_members.user_id holds the Supabase
+    // auth uuid (CLAUDE.md, structural fact 1), so the link never matched them.
+    // It now uses their `supabaseUserId`, falling back to `id` only for rows
+    // whose id IS the Supabase id, the second case src/lib/identity/lookup.ts
+    // allows for.
     const memberFailures: string[] = []
     let classCodesSupplied = 0
     for (const row of normalisedRows) {
-      const email = row.email.toLowerCase()
       if (row.classCode) classCodesSupplied += 1
+    }
+    await mapWithConcurrency(normalisedRows, SUPABASE_CONCURRENCY, async (row) => {
+      const email = row.email.toLowerCase()
       try {
+        const existing = existingByEmail.get(email)
         const authId =
-          createdAuthIds.find((a) => a.email === email)?.authId ?? existingByEmail.get(email)?.id
-        if (!authId) continue
+          createdAuthIds.find((a) => a.email === email)?.authId ??
+          existing?.supabaseUserId ??
+          existing?.id
+        if (!authId) return
         const { error: memberError } = await admin.from('school_members').upsert(
           {
             school_id: schoolId,
@@ -494,7 +639,10 @@ export async function POST(request: NextRequest) {
         console.error('bulk-upload.commit: school_members upsert threw', email, e)
         memberFailures.push(email)
       }
-    }
+    })
+    // Rows finish out of order when run together; report them in file order.
+    const fileOrder = new Map(normalisedRows.map((r, i) => [r.email.toLowerCase(), i]))
+    memberFailures.sort((a, b) => (fileOrder.get(a) ?? 0) - (fileOrder.get(b) ?? 0))
     if (memberFailures.length) {
       console.error(
         `bulk-upload.commit: ${memberFailures.length} of ${normalisedRows.length} school_members rows failed`,
