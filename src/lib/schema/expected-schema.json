@@ -14,6 +14,7 @@
     "app_config_setting": "20260917_free_allowance_usage.sql",
     "assessment_attempts": "001_initial_schema.sql",
     "bulk_import_jobs": "20260404_school_promo_and_access.sql",
+    "bulkuploadjob": "20261011_bulk_upload_job.sql",
     "calibration_baselines": "20260530_calibration_baselines.sql",
     "cancellation_feedback": "20260919_cancellation_feedback.sql",
     "certificates": "001_initial_schema.sql",
@@ -272,6 +273,7 @@
     "assignmentsubmission:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
     "auditlog:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
     "bulk_import_jobs:school_admins_view_import_jobs": "20260404_school_promo_and_access.sql",
+    "bulkuploadjob:service_role_full_access": "20261011_bulk_upload_job.sql",
     "calibration_baselines:calibration_baselines_service_role_all": "20260530_calibration_baselines.sql",
     "cancellation_feedback:cancellation_feedback_owner_select": "20260919_cancellation_feedback.sql",
     "cancellation_feedback:cancellation_feedback_service_role_all": "20260919_cancellation_feedback.sql",
@@ -373,6 +375,18 @@
     "weeklystudentdigest:service_role_full_access": "20260823_weekly_student_digest_ledger.sql"
   },
   "indexes": {
+    "bulkuploadjob_admin_user_id_idx": {
+      "file": "20261011_bulk_upload_job.sql",
+      "table": "bulkuploadjob"
+    },
+    "bulkuploadjob_idempotency_key_key": {
+      "file": "20261011_bulk_upload_job.sql",
+      "table": "bulkuploadjob"
+    },
+    "bulkuploadjob_school_id_created_at_idx": {
+      "file": "20261011_bulk_upload_job.sql",
+      "table": "bulkuploadjob"
+    },
     "cancellation_feedback_created_at_idx": {
       "file": "20260919_cancellation_feedback.sql",
       "table": "cancellation_feedback"

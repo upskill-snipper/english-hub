@@ -9,7 +9,10 @@
     "list cannot quietly become a second document that lies about the schema.",
     "",
     "Measured against production on 19 September 2026: 529 expectations checked,",
-    "31 findings, all listed below."
+    "31 findings, all listed below.",
+    "",
+    "11 October 2026: BulkUploadJob deleted from the list, because",
+    "supabase/migrations/20261011_bulk_upload_job.sql creates it. 30 remain."
   ],
   "allow": [
     {
@@ -88,11 +91,6 @@
       "kind": "code-references-missing-table",
       "object": "import_jobs",
       "why": "Read by the school login export. Known dual-store problem, DATA-9."
-    },
-    {
-      "kind": "prisma-model-without-table",
-      "object": "BulkUploadJob",
-      "why": "Prisma model with no @@map and no table. Known dual-store problem, DATA-9."
     },
 
     {

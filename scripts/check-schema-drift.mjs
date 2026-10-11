@@ -40,7 +40,7 @@
  *   node --env-file=.env.local scripts/check-schema-drift.mjs --all
  *
  * `--all` lists the known drift as well as the new. Without it, only NEW drift
- * is shown and only new drift sets exit code 1: the 31 findings recorded in
+ * is shown and only new drift sets exit code 1: the findings recorded in
  * `schema-drift-known.json` are debt with a decision attached, and a report
  * that is red every single day is one nobody reads.
  *

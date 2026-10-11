@@ -126,7 +126,7 @@ describe('the known-drift allowlist', () => {
     // The tempting way to "fix" a red check is to empty this file. That is not
     // a fix; it is deleting the only written record of which decisions
     // (DATA-3 to DATA-9) these findings are waiting on. Emptying it also makes
-    // the CLI report all 31 as new and exit 1, but a mutation check showed the
+    // the CLI report every one of them as new and exit 1, but a mutation check showed the
     // suite itself said nothing, so it says something now.
     expect(known.allow.length).toBeGreaterThanOrEqual(25)
 
@@ -134,7 +134,9 @@ describe('the known-drift allowlist', () => {
     for (const required of [
       'email_subscribers', // DATA-3
       'student_progress', // DATA-4, and the mobile 500
-      'BulkUploadJob', // DATA-9
+      // DATA-9. BulkUploadJob left the register on 11 October 2026, when
+      // supabase/migrations/20261011_bulk_upload_job.sql created it.
+      'import_jobs',
       'marking_submissions.pack_version', // DATA-6
       'profiles_updated_at', // DATA-7, a baselined-unexecuted trigger
     ]) {

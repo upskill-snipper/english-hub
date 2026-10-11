@@ -25,7 +25,7 @@
 // generated and committed, and a test fails when it goes stale.
 //
 // IT REPORTS NEW DRIFT, NOT ALL DRIFT. `scripts/schema-drift-known.json` holds
-// the 31 findings already recorded against DATA-3 to DATA-9, each with its
+// the findings already recorded against DATA-3 to DATA-9, each with its
 // reason. Without that split this endpoint would be red on its first run and
 // every run after, which is indistinguishable from being broken.
 // ────────────────────────────────────────────────────────────────────────────
