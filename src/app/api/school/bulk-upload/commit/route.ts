@@ -12,14 +12,22 @@
  *      membership in Supabase. Collect per-row errors without aborting the batch.
  *      Either everything in the Prisma transaction succeeds or the job row is
  *      flipped to 'failed' and nothing is persisted.
- *   6. Fire welcome emails for freshly-created users (best-effort).
+ *   6. Fire welcome emails for freshly-created users (best-effort), only once
+ *      the transaction has committed (step 7b below).
  *   7. Stamp completedAt and return `{ jobId, created, updated, skipped, errors }`.
  *
  * Tested by `./route.test.ts`:
  *   - idempotency (same key twice returns same body; writes once)
  *   - transactional rollback on partial failure (Prisma-level failure reverts
- *     every row in the batch)
+ *     every row in the batch, and no welcome email is sent)
  *   - RBAC (non-admin → 403)
+ *   - welcome emails go out after the commit, one per new pupil, each with
+ *     the password its account was created with
+ *
+ * On 11 October 2026 production had no BulkUploadJob table (known drift in
+ * scripts/schema-drift-known.json; nothing in the build applies
+ * prisma/migrations/), so this route failed at its first query. Check
+ * information_schema, not this comment, before relying on it.
  */
 
 import { NextRequest, NextResponse } from 'next/server'
@@ -267,6 +275,10 @@ export async function POST(request: NextRequest) {
     //    because they live in a different backing store; on transaction
     //    failure we roll back the auth side by revoking what we just created.
     const createdAuthIds: Array<{ email: string; authId: string }> = []
+    // Welcome emails are collected inside the transaction and sent only after
+    // it commits (step 7b), so no pupil is emailed a password for an account a
+    // rollback then deletes.
+    const welcomes: Array<{ email: string; firstName: string; tempPassword: string }> = []
     const outcomes: PerRowOutcome[] = []
     const errors: ParseError[] = []
     let createdCount = 0
@@ -348,24 +360,8 @@ export async function POST(request: NextRequest) {
           createdCount++
           outcomes.push({ row: row.row, email, action: 'created' })
 
-          // Schedule welcome email (fire-and-forget; we do not await inside
-          // the tx to keep the transaction short). Kept alive past the
-          // response: it carries the pupil's only copy of their temporary
-          // password, and a send left pending can be frozen with the function
-          // (src/lib/keep-alive.ts).
-          const loginUrl = 'https://theenglishhub.app/login'
-          const welcome = sendEmail(
-            email,
-            'Your English Hub account',
-            welcomeEmailHtml({
-              firstName: row.firstName,
-              tempPassword,
-              loginUrl,
-            }),
-          ).catch((e) => {
-            console.warn('bulk-upload: welcome email failed', email, e)
-          })
-          keepAlive(welcome, 'bulk-upload: welcome email')
+          // Queue the welcome email; it is sent once the transaction commits.
+          welcomes.push({ email, firstName: row.firstName, tempPassword })
         }
 
         // Flip the job row to completed inside the same tx.
@@ -417,6 +413,37 @@ export async function POST(request: NextRequest) {
         },
         { status: 500 },
       )
+    }
+
+    // 7b. Welcome emails, now that the accounts are committed.
+    //
+    // FIXED 11 October 2026. These were sent from inside the transaction, as
+    // each account was created. If a later row or the job update then failed,
+    // the transaction rolled back and the catch above deleted every auth user
+    // it had made, and told the school "No accounts were created". But each
+    // email already started had gone out, giving a pupil a temporary password
+    // for an account that no longer existed. A rollback is not exotic: the
+    // transaction makes a Supabase call per new pupil under Prisma's default
+    // 5-second interactive limit, so a large upload can time out part-way.
+    //
+    // Sent from here, an email only ever describes an account that exists.
+    // Still not awaited, so a mail-service outage does not hold up the school,
+    // and still kept alive past the response, because each carries the
+    // pupil's only copy of their password (src/lib/keep-alive.ts).
+    const loginUrl = 'https://theenglishhub.app/login'
+    for (const welcome of welcomes) {
+      const sent = sendEmail(
+        welcome.email,
+        'Your English Hub account',
+        welcomeEmailHtml({
+          firstName: welcome.firstName,
+          tempPassword: welcome.tempPassword,
+          loginUrl,
+        }),
+      ).catch((e) => {
+        console.warn('bulk-upload: welcome email failed', welcome.email, e)
+      })
+      keepAlive(sent, 'bulk-upload: welcome email')
     }
 
     // 8. Link Supabase school_members for every row.

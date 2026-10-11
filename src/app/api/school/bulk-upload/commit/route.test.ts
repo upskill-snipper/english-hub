@@ -1,12 +1,15 @@
 /**
  * Unit tests for POST /api/school/bulk-upload/commit.
  *
- * Three binding behaviours under test:
+ * Four binding behaviours under test:
  *   1. RBAC - a signed-in user who is NOT a school admin receives 403.
  *   2. Idempotency - the same idempotencyKey submitted twice returns the
  *      cached response and does not create users a second time.
  *   3. Transactional rollback - a Prisma failure mid-batch reverts every
  *      User create AND every auth user created in the same request.
+ *   4. Welcome emails wait for the commit. Until 11 October 2026 each was
+ *      sent from inside the transaction, so a rollback left pupils holding
+ *      passwords for accounts that had just been deleted.
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest'
@@ -193,6 +196,7 @@ vi.mock('@/lib/prisma', () => ({
 
 // Import the handler AFTER the mocks are registered.
 import { POST } from './route'
+import { sendEmail } from '@/lib/email'
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -251,6 +255,7 @@ beforeEach(() => {
   vi.clearAllMocks()
   // Re-attach default prisma findMany behaviour (cleared by clearAllMocks).
   prismaMock.user.findMany.mockImplementation(async () => [])
+  vi.mocked(sendEmail).mockImplementation(async () => ({ success: true, messageId: 'm-1' }))
 })
 
 // ---------------------------------------------------------------------------
@@ -318,6 +323,61 @@ describe('POST /api/school/bulk-upload/commit', () => {
     expect(deletedAuthUserIds.length).toBeGreaterThan(0)
     // Job row reflects the failure.
     expect(jobs[0].status).toBe('failed')
+    // And nobody was emailed a password for an account that was just deleted.
+    // The first pupil's account existed for a moment before the rollback;
+    // until 11 October 2026 their welcome had already gone out.
+    expect(sendEmail).not.toHaveBeenCalled()
+  })
+
+  it('sends each new pupil one welcome email, only after the accounts are committed', async () => {
+    const events: string[] = []
+    prismaMock.$transaction.mockImplementationOnce(
+      async (cb: (tx: unknown) => Promise<unknown>) => {
+        const result = await cb(prismaMock)
+        events.push('committed')
+        return result
+      },
+    )
+    vi.mocked(sendEmail).mockImplementation(async (to: string) => {
+      events.push(`welcome:${to}`)
+      return { success: true, messageId: 'm-1' }
+    })
+
+    const res = await POST(makeRequest(freshBody()))
+    expect(res.status).toBe(200)
+    expect(events).toEqual([
+      'committed',
+      'welcome:alex@example.school.uk',
+      'welcome:priya@example.school.uk',
+    ])
+  })
+
+  it('and each email carries the password that pupil was created with', async () => {
+    const res = await POST(makeRequest(freshBody()))
+    expect(res.status).toBe(200)
+    // The mock declares only `email`; the route also passes `password`.
+    const created = vi.mocked(serviceRoleClientMock.auth.admin.createUser).mock
+      .calls as unknown as [{ email: string; password: string }][]
+    const passwords = new Map(created.map(([arg]) => [arg.email, arg.password]))
+    expect(passwords.size).toBe(2)
+    for (const [to, , html] of vi.mocked(sendEmail).mock.calls as unknown as [
+      string,
+      string,
+      string,
+    ][]) {
+      expect(html).toContain(`<code>${passwords.get(to)}</code>`)
+    }
+    expect(sendEmail).toHaveBeenCalledTimes(2)
+  })
+
+  it('and a pupil who already had an account gets no welcome email', async () => {
+    prismaMock.user.findMany.mockImplementation(async () => [
+      { id: 'u-existing', email: 'alex@example.school.uk' },
+    ])
+    const res = await POST(makeRequest(freshBody()))
+    expect(res.status).toBe(200)
+    expect(sendEmail).toHaveBeenCalledTimes(1)
+    expect(vi.mocked(sendEmail).mock.calls[0][0]).toBe('priya@example.school.uk')
   })
 
   it('rejects commits missing an idempotency key', async () => {
