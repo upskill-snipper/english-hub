@@ -28,7 +28,9 @@ Consequences you will actually hit:
 
 [`getSchoolAccess`](../../src/lib/school-access.ts) (line 29-34), [`getSchoolForUser`](../../src/lib/school-access.ts) (line 152) and [`verifySchoolMember`](../../src/lib/school-auth.ts) (line 14-20) all query `school_members` filtered only by `user_id` and `invite_status = 'accepted'`, then call `.single()`. A person with accepted memberships at **two** schools makes that query return multiple rows: `getSchoolAccess` returns `null` (locked out of the portal entirely) and `verifySchoolMember` **throws** `SchoolAuthError` (line 30) rather than returning null, which most callers do not catch as a 403.
 
-This is reachable today. [`/api/school/invite`](../../src/app/api/school/invite/route.ts) at lines 226-253 adds an already-registered email straight in as `invite_status: 'accepted'` without checking whether that person already belongs to another school. Inviting a teacher who already works at another client school silently breaks both accounts.
+The staff invitation used to reach it: it added an already-registered email straight in as `invite_status: 'accepted'` without checking whether that person already belonged to another school, so inviting a teacher who already worked at another client school silently broke both accounts. **Since 12 October 2026** the invitation ([`src/lib/school/invite-staff.ts`](../../src/lib/school/invite-staff.ts), used by `/api/school/invite` and the operator's `/api/admin/schools/[schoolId]/staff`) skips anyone with an accepted membership at a different school, checked by email and again by account id, writes nothing, sends nothing, and reports them.
+
+Two paths still reach it. [`/api/school/invite/accept`](../../src/app/api/school/invite/accept/route.ts) accepts a pending invitation without the check, so someone invited by school A who is accepted at school B before they open A's link ends up in both. And the pupil upload links a pupil by email without it, so a pupil accepted at one school and uploaded by another ends up in both.
 
 ---
 
@@ -63,7 +65,7 @@ Do not "fix" this by making one call the other without deciding which is authori
 
 Every page under [`src/app/admin/`](../../src/app/admin) is `'use client'` except [`training-data/page.tsx`](../../src/app/admin/training-data/page.tsx), which is a server component that calls `verifyAdmin()` directly (lines 61, 99). The rest, including [`admin/page.tsx`](../../src/app/admin/page.tsx), render a spinner, call their data API, and `router.push('/dashboard')` on a 403 (lines 84-92). The protection is real - it lives in the APIs - but the HTML shell, the tool names and the layout are served to any signed-in user. `/admin` is in the middleware `protectedRoutes` list ([`src/lib/supabase/middleware.ts:170-184`](../../src/lib/supabase/middleware.ts)), so it is at least behind sign-in, and the layout sets `robots: noindex`.
 
-Admin tools reachable from the dashboard: examiner board approvals, marker drive, marker QA, board agreement, marker pay, the marker console, training data, model performance, prompt management, rubric management, AI marking config, verify user, school provisioning, email diagnostics. [`/admin/affiliates`](../../src/app/admin/affiliates/page.tsx) exists but is linked from nowhere.
+Admin tools reachable from the dashboard: examiner board approvals, marker drive, marker QA, board agreement, marker pay, the marker console, training data, model performance, prompt management, rubric management, AI marking config, verify user, school provisioning, school setup (`/admin/schools`, section 4), email diagnostics. [`/admin/affiliates`](../../src/app/admin/affiliates/page.tsx) exists but is linked from nowhere.
 
 ---
 
@@ -74,6 +76,8 @@ There is exactly one code path that creates a tenant, and it is operator-driven.
 1. **Enquiry.** The `/schools` and `/school-pilot` lead forms POST to `/api/school-inquiry`, inserting into `school_inquiries` ([`20260823_school_inquiries.sql`](../../supabase/migrations/20260823_school_inquiries.sql)). That table had no migration until August 2026 and leads were being dropped with a `42P01`. RLS is on with no policies - service-role reads only, and there is no admin UI that lists these leads.
 2. **Provisioning.** A site admin opens [`/admin/school-provisioning`](../../src/app/admin/school-provisioning/page.tsx), which generates a random temporary password in the browser and POSTs to `/api/school/register`. The page header (lines 3-22) records why it exists: the product sold school registration in several places but nothing ever called the only handler that creates a school, so signed schools had no route in at all.
 3. **`POST /api/school/register`** ([route](../../src/app/api/school/register/route.ts)) is gated by `verifyAdmin()` at line 109. It was public until 2026-08-23, protected only by an IP rate limit, which meant any visitor could mint a privileged account plus a paying-school row (the comment at lines 96-108 is the incident note). It then: resolves the promo code, generates a unique slug, creates an email-confirmed Supabase auth user, inserts `schools`, inserts the admin's `school_members` row as `accepted`, upserts `profiles`, and rolls back the earlier steps on any later failure.
+
+4. **Setup.** From 12 October 2026 the operator then sets the school up from the spreadsheet it returns, at [`/admin/schools`](../../src/app/admin/schools/page.tsx) (linked from the admin dashboard as "School setup"). The page for one school, `/admin/schools/[schoolId]`, has four steps in order: the school's AI authorisation (the statement in [`src/lib/school/ai-authorisation.ts`](../../src/lib/school/ai-authorisation.ts) word for word, plus a note saying where the school's written confirmation is held, which goes to the `AuditLog` as `SCHOOL_AI_AUTHORISED`), then its Staff, Classes and Pupils sheets, each pasted or uploaded and answered row by row. The routes are under [`src/app/api/admin/schools/`](../../src/app/api/admin/schools): every one is `verifyAdmin`-gated, takes the school from the path and checks it exists, and uses the service-role client, because a site admin's only "school" is `'__site_admin__'` (section 2). Staff go through the same invitation as the school's own (section 5); classes set `teacher_id` to the teacher's `school_members.id` (section 7); pupils go through the same upload as the school's own (section 9), with the operator recorded as the uploader.
 
 **Fixed 12 October 2026:** the `schools` insert writes `exam_board` and `curriculum`, and production had neither column (checked in `information_schema`), so every provisioning attempt would have failed. Nobody had noticed, because production held no schools at all. [`20261012_schools_pilot_columns.sql`](../../supabase/migrations/20261012_schools_pilot_columns.sql) adds them. It also adds `website` and `timezone`, which the settings route reads, and `ai_authorised_at` / `ai_authorised_by`. Those last two record a school's confirmation, as data controller, that its privacy notice covers AI marking and that parents have been told.
 
@@ -125,19 +129,22 @@ Three further mentions are comments that go stale with them: [`register/route.ts
 
 Two routes, plus one that is admin-only bookkeeping.
 
-| Route                               | Guard                                          | Effect                                                                                                             |
-| ----------------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `POST /api/school/invite`           | `verifySchoolMember(['admin'])`                | up to 50 emails, role `teacher` or `head_of_department` only ([line 11](../../src/app/api/school/invite/route.ts)) |
-| `GET /api/school/invite`            | `verifySchoolMember(['admin'])`                | lists pending invites                                                                                              |
-| `DELETE /api/school/invite/[token]` | `verifySchoolMember(['admin'])`                | revokes                                                                                                            |
-| `POST /api/school/members`          | any member, but 403s teachers inline (line 24) | older invite path; HoDs cannot invite admins (line 51)                                                             |
-| `POST/DELETE /api/school/roles`     | `verifySchoolMember(['admin'])`                | change role, remove member; cannot demote/remove self                                                              |
+| Route                                      | Guard                                          | Effect                                                                                                                 |
+| ------------------------------------------ | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `POST /api/school/invite`                  | `verifySchoolMember(['admin'])`                | up to 50 emails, role `teacher` or `head_of_department` only ([invite-staff.ts](../../src/lib/school/invite-staff.ts)) |
+| `POST /api/admin/schools/[schoolId]/staff` | `verifyAdmin()`                                | the operator's Staff sheet, through the same invitation, up to 100 people a run                                        |
+| `GET /api/school/invite`                   | `verifySchoolMember(['admin'])`                | lists pending invites                                                                                                  |
+| `DELETE /api/school/invite/[token]`        | `verifySchoolMember(['admin'])`                | revokes                                                                                                                |
+| `POST /api/school/members`                 | any member, but 403s teachers inline (line 24) | older invite path; HoDs cannot invite admins (line 51)                                                                 |
+| `POST/DELETE /api/school/roles`            | `verifySchoolMember(['admin'])`                | change role, remove member; cannot demote/remove self                                                                  |
 
-Invite mechanics: a 7-day `crypto.randomUUID()` token goes in `school_members.invite_token` with `invite_expires_at` ([added by `20260322_new_features.sql:68`](../../supabase/migrations/20260322_new_features.sql)). Three branches:
+Invite mechanics live in [`src/lib/school/invite-staff.ts`](../../src/lib/school/invite-staff.ts) since 12 October 2026, shared by the school's route and the operator's. A 7-day `crypto.randomUUID()` token goes in `school_members.invite_token` with `invite_expires_at` ([added by `20260322_new_features.sql:68`](../../supabase/migrations/20260322_new_features.sql)). First, anyone with an accepted membership at a different school is skipped and reported (section 1). Then three branches:
 
 - Existing pending/expired invite for that email → new token, status back to `pending`, re-send.
-- **Email already has a `profiles` row → inserted directly as `invite_status: 'accepted'`** (lines 226-253). No consent from the invitee, and no check for an existing membership elsewhere. This is the multi-school break described in section 1.
-- New email → `user_id: null`, `full_name` derived from the email local-part, status `pending`.
+- **Email already has a `profiles` row → inserted directly as `invite_status: 'accepted'`**, after the same cross-school check on the account id. No consent from the invitee.
+- New email → `user_id: null`, `full_name` the name the caller gave (the operator's Staff sheet has one) or derived from the email local-part, status `pending`.
+
+Each person's result says whether their email went. Until 12 October an invitation whose email failed was counted as sent, and the re-issue's database update was never checked.
 
 Acceptance is [`/api/school/invite/accept`](../../src/app/api/school/invite/accept/route.ts): `GET` is unauthenticated (so the landing page can show the school name), `POST` requires a session and requires `user.email` to match `member.email` exactly (line 144). On success it sets `user_id`, `invite_status: 'accepted'`, `invite_token: null` and `last_active_at` - but **never sets `accepted_at`**, so that column is null for every invited teacher and is not a usable signal.
 
@@ -149,11 +156,11 @@ Acceptance is [`/api/school/invite/accept`](../../src/app/api/school/invite/acce
 
 There are three enrolment paths and they write to different tables.
 
-| Path                               | Writes                                                                         | Produces a `school_members` row?    |
-| ---------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------- |
-| Join code, `POST /api/school/join` | `school_students` (+ `class_students` if the code carries a class)             | **no**                              |
-| `POST /api/school/students`        | `school_members` with `role: 'student'`                                        | yes                                 |
-| Bulk upload commit                 | Prisma `User` + Supabase auth user, then a best-effort `school_members` upsert | intended yes, in practice see below |
+| Path                                    | Writes                                                                                            | Produces a `school_members` row?       |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| Join code, `POST /api/school/join`      | `school_students` (+ `class_students` if the code carries a class)                                | **no**                                 |
+| `POST /api/school/students`             | `school_members` with `role: 'student'`                                                           | yes                                    |
+| Bulk upload commit (school or operator) | Prisma `User` + Supabase auth user, then `school_members`, `class_students` and `school_students` | yes, since 12 October 2026 (section 9) |
 
 [`src/lib/school-students.ts`](../../src/lib/school-students.ts) exists to paper over this. Its header (lines 1-21) names the four competing definitions - `school_members role='student'`, `school_students`, `class_students`, and the Prisma `User` row - and `getSchoolStudents()` unions the first two, deduplicating on `user_id` and preferring the `school_members` row because it carries name and email. It is used by `/api/school/students`, `/api/school/analytics` and `/api/school/export/report`. **If you add a new "how many pupils" surface, use `getSchoolStudents`, not a direct table read.** `class_students` is deliberately a class roster, not a membership source.
 
@@ -245,17 +252,27 @@ There are two importers. Both are admin-only, both accept CSV, and only one is i
 
 **Legacy: `POST /api/school/import`** ([route](../../src/app/api/school/import/route.ts)), UI at [`/school/import`](../../src/app/school/import/page.tsx). Multipart upload, handles students _and_ teachers, writes `bulk_import_jobs` and `import_results` ([`20260404:36-65`](../../supabase/migrations/20260404_school_promo_and_access.sql)) including a plaintext `temporary_password` per row for the credentials export at `/api/school/export/logins`. This is the one in the sidebar (`school.sidebar.import_users`).
 
-**Current: `POST /api/school/bulk-upload/validate` then `/commit`** ([commit route](../../src/app/api/school/bulk-upload/commit/route.ts)), UI at [`/school/admin/bulk-upload`](../../src/app/school/admin/bulk-upload/page.tsx). Students only, idempotency-keyed, 500 rows max, writes the Prisma `BulkUploadJob` table, and is genuinely transactional - a Prisma failure deletes the Supabase auth users it created outside the transaction (lines 370-397). It is **not linked from the sidebar**; only its own log page links to it.
+**Current: `POST /api/school/bulk-upload/validate` then `/commit`** ([commit route](../../src/app/api/school/bulk-upload/commit/route.ts)), UI at [`/school/admin/bulk-upload`](../../src/app/school/admin/bulk-upload/page.tsx). Students only, idempotency-keyed, 500 rows max, writes the Prisma `BulkUploadJob` table, and is genuinely transactional - a Prisma failure deletes the Supabase auth users it created outside the transaction. It is **not linked from the sidebar**; only its own log page links to it.
 
-Three defects in the commit path, all of which fail quietly:
+Since 12 October 2026 the commit's work is [`commitBulkUpload`](../../src/lib/school/bulk-upload-commit.ts), which the operator's Pupils step (`/api/admin/schools/[schoolId]/pupils`) also calls; each route does its own auth and names the school. For each pupil with an account it now:
 
-1. The `school_members` upsert at lines 405-428 passes `{ onConflict: 'school_id,user_id' }`. `school_members` has `UNIQUE(school_id, email)`, not `(school_id, user_id)` ([`003:37`](../../supabase/migrations/003_school_analytics.sql)) - only `school_students` has the latter ([`20260404:76`](../../supabase/migrations/20260404_school_promo_and_access.sql)). Postgres answers `42P10`.
-2. The same payload writes `class_code`, a column no migration creates on `school_members`. The CSV header maps to it at [`src/lib/school/csv-parse.ts:132`](../../src/lib/school/csv-parse.ts).
-3. For a row whose email already has a Prisma `User`, the loop `continue`s (line 271-277) and step 8 then uses `existingByEmail.get(email)?.id` - a **Prisma cuid** - as `school_members.user_id`, which is a uuid FK to `auth.users`. Postgres answers `22P02`.
+- links them in `school_members`, upserting on `(school_id, email)`;
+- places them in the class whose `classes.name` matches their class code (trimmed, any case, the school's active classes only): a `class_students` row on `(class_id, student_id)` and a `school_students` row on `(school_id, user_id)`, then recounts each touched class's `student_count` from its active places;
+- reports, per row, every link and place that failed and every class code that matched no class, in the response and on the job, so the upload log counts them. The done screen lists every category.
 
-All three are inside `try { … } catch (e) { console.warn(…) }`. The import reports success, the pupils get their welcome emails and can sign in, and **no school membership is created**, so the class list stays empty. This is the two-identity defect class from chapter 05 reappearing in the B2B surface.
+It does **not** move `schools.seats_used` (the module says why), and it refuses a row whose email belongs to a member of staff at the school: with the corrected key, the upsert would otherwise rewrite that person's membership as a pupil's.
 
-Also note the placeholder identity written at lines 320-332: `dateOfBirth: new Date('2000-01-01')` with `isMinor: true` hard-coded. The `User` model comment at [`prisma/schema.prisma:161-173`](../../prisma/schema.prisma) explains at length why exactly that placeholder is dangerous - it computes to age 26 and switches the parental-consent gate off. Here the two fields contradict each other; the DOB is a lie and `isMinor` happens to be the safe lie.
+What was broken until then, all of it quietly:
+
+1. The `school_members` upsert passed `{ onConflict: 'school_id,user_id' }`. `school_members` has `UNIQUE(school_id, email)`, not `(school_id, user_id)` ([`003:37`](../../supabase/migrations/003_school_analytics.sql)). Postgres refused every row with `42P10`, so no pupil was ever linked.
+2. The same payload once wrote `class_code`, a column `school_members` does not have (removed 19 September).
+3. A pupil Prisma already knew was linked by their Prisma cuid (fixed 11 October).
+4. The class code was required on every row and then ignored: no pupil was placed in a class, so no teacher saw an uploaded pupil's work.
+5. The welcome email linked `https://theenglishhub.app/login`, a 404; it is `/auth/login`.
+6. The validate route selected a `classes.code` column that does not exist, ignored the error, and let any class code through.
+7. A site admin reaching the school route uploaded against the synthetic school `'__site_admin__'`; that is now refused with a pointer to `/admin/schools`.
+
+Also note the placeholder identity written for each new pupil: `dateOfBirth: new Date('2000-01-01')` with `isMinor: true` hard-coded. The `User` model comment at [`prisma/schema.prisma:161-173`](../../prisma/schema.prisma) explains at length why exactly that placeholder is dangerous - it computes to age 26 and switches the parental-consent gate off. Here the two fields contradict each other; the DOB is a lie and `isMinor` happens to be the safe lie.
 
 Temporary passwords are rotation-gated: `user_metadata.needs_password_change` is set on create and [`src/lib/supabase/middleware.ts:94-100`](../../src/lib/supabase/middleware.ts) holds the account on `/auth/set-password`. The welcome-email copy was corrected in August 2026 because it claimed the password was single-use, which it is not (commit route lines 87-95).
 
@@ -341,7 +358,7 @@ Surfaces that assume columns nothing creates:
 
 - `GET/PUT /api/school/settings` selected `website, timezone, subscription_expires_at, max_members` from `schools`, and none of the four existed. PostgREST rejects the **whole** SELECT when one column is missing, so the settings page could never load. **Fixed 12 October 2026:** `website` and `timezone` are now real columns, and the other two are read as the existing `access_until` and `seat_limit` under the names the page expects.
 - `/api/school/register` and `exam_board`/`curriculum` on `schools` (section 4).
-- Bulk-upload commit and `school_members.class_code` (section 9).
+- Bulk-upload commit and `school_members.class_code` (section 9, removed 19 September 2026), and the validate route's `classes.code` (section 9, fixed 12 October 2026).
 - `school_join_codes.type` versus `.role` (section 6).
 
 Check all of these against `information_schema.columns` before changing code. In this repo a missing column is a much more likely explanation for a dead feature than a logic bug.
