@@ -25,6 +25,10 @@ interface RegisterBody {
   phone?: string
   password?: string
   promoCode?: string
+  /** 'paid' (a paid pilot or founding place, with accessUntil) or 'trial'. */
+  accessType?: string
+  /** YYYY-MM-DD, the last day of access. Required when accessType is 'paid'. */
+  accessUntil?: string
 }
 
 interface PromoResult {
@@ -164,6 +168,8 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     phone: (raw.phone ?? adminObj.phone) as string | undefined,
     password: (raw.password ?? adminObj.password) as string | undefined,
     promoCode: (raw.promoCode ?? planObj.promoCode) as string | undefined,
+    accessType: (raw.accessType ?? planObj.accessType) as string | undefined,
+    accessUntil: (raw.accessUntil ?? planObj.accessUntil) as string | undefined,
   }
 
   // ── Validate required fields ─────────────────────────────────────────────
@@ -183,7 +189,37 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     phone,
     password,
     promoCode,
+    accessType: requestedAccess,
+    accessUntil: requestedUntil,
   } = body
+
+  // ── Access requested by the operator ─────────────────────────────────────
+  // A DEFECT, FIXED 12 OCTOBER 2026. Provisioning could only write 'trial'
+  // (no end date) or 'founder' with the FOUNDER code's 2026-08-31, which had
+  // already passed, so a paying school could not be given access for the term
+  // it paid for, and a FOUNDER school was locked out the moment it was made.
+  // A paid pilot or founding place now carries its own last day.
+  let paidUntil: string | null = null
+  if (requestedAccess !== undefined && requestedAccess !== 'paid' && requestedAccess !== 'trial') {
+    return NextResponse.json({ error: 'accessType must be "paid" or "trial".' }, { status: 422 })
+  }
+  if (requestedAccess === 'paid') {
+    const day = typeof requestedUntil === 'string' ? requestedUntil.trim() : ''
+    const end = /^\d{4}-\d{2}-\d{2}$/.test(day) ? new Date(`${day}T23:59:59Z`) : null
+    if (!end || Number.isNaN(end.getTime()) || end.toISOString().slice(0, 10) !== day) {
+      return NextResponse.json(
+        { error: 'A paid school needs its last day of access as a date (YYYY-MM-DD).' },
+        { status: 422 },
+      )
+    }
+    if (end < new Date()) {
+      return NextResponse.json(
+        { error: `The last day of access (${day}) has already passed.` },
+        { status: 422 },
+      )
+    }
+    paidUntil = end.toISOString()
+  }
 
   const missing: string[] = []
   if (!schoolName || typeof schoolName !== 'string' || !schoolName.trim()) {
@@ -272,15 +308,25 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     if ('error' in result) {
       return NextResponse.json({ error: result.error }, { status: 422 })
     }
+    // A promo whose access date has passed would create a school that is
+    // locked out at once (the FOUNDER code's date is 2026-08-31). Refuse it
+    // and say why, rather than create a school nobody can open.
+    if (result.accessUntil && new Date(result.accessUntil) < new Date()) {
+      return NextResponse.json(
+        {
+          error: `This promo code's access period ended on ${result.accessUntil}. Provision the school as paid with its own last day instead.`,
+        },
+        { status: 422 },
+      )
+    }
     promoResult = result
   }
 
-  const accessType = promoResult?.accessType ?? 'standard'
-  const accessUntil = promoResult?.accessUntil ?? null
-  // Use 'trialing' as DB value until a migration adds 'founder' to the
-  // subscription_status CHECK constraint on the schools table.
-  // The accessType field in the API response carries the founder distinction.
-  const subscriptionStatus: 'trialing' = 'trialing'
+  const accessType = paidUntil ? 'paid' : (promoResult?.accessType ?? 'standard')
+  const accessUntil = paidUntil ?? promoResult?.accessUntil ?? null
+  // 'founder' is not in the subscription_status CHECK, so the founder
+  // distinction lives in access_type only (see docs/system/08 section 4).
+  const subscriptionStatus: 'active' | 'trialing' = paidUntil ? 'active' : 'trialing'
 
   // ── Generate and verify school slug ─────────────────────────────────────
   const baseSlug = generateSlug(schoolName!.trim())
@@ -389,7 +435,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     seat_limit: 9999,
     // The schools.access_type CHECK allows trial/founder/paid/expired, so
     // the resolver's 'standard' maps onto 'trial'.
-    access_type: accessType === 'founder' ? 'founder' : 'trial',
+    access_type: accessType === 'paid' ? 'paid' : accessType === 'founder' ? 'founder' : 'trial',
     access_until: accessUntil,
     promo_code_used: promoCode?.trim() ? promoCode.trim().toUpperCase() : null,
   }
@@ -449,11 +495,16 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   }
 
   // ── Upsert profile with school_id and role ───────────────────────────────
+  // profiles.role is CHECK-constrained to student, teacher, parent and admin.
+  // This used to write 'school_admin', so the upsert always failed (swallowed
+  // below) and the school's administrator kept the signup trigger's default
+  // of 'student'. Their school role lives in school_members; on the profile
+  // they are staff, which is 'teacher'. 'admin' would mean a site admin.
   const profileUpsert: Record<string, unknown> = {
     id: adminUserId,
     email: normalizedEmail,
     full_name: `${adminFirstName!.trim()} ${adminLastName!.trim()}`,
-    role: 'school_admin',
+    role: 'teacher',
     school_name: schoolName!.trim(),
   }
 

@@ -58,12 +58,18 @@ export async function GET(request: NextRequest) {
 
     const admin = createServiceRoleClient()
 
+    // A DEFECT, FIXED 12 OCTOBER 2026. This select named website, timezone,
+    // subscription_expires_at and max_members, none of which existed on
+    // schools, and PostgREST refuses the whole select when one column is
+    // unknown, so the settings page could never load. website and timezone are
+    // now real columns (20261012_schools_pilot_columns.sql); the other two are
+    // the existing access_until and seat_limit under the names the page reads.
     const { data: school, error: schoolError } = await admin
       .from('schools')
       .select(
         'id, name, address, contact_email, contact_phone, website, timezone, ' +
-          'subscription_plan, subscription_status, subscription_expires_at, ' +
-          'max_members, created_at, updated_at',
+          'subscription_plan, subscription_status, subscription_expires_at:access_until, ' +
+          'max_members:seat_limit, created_at, updated_at',
       )
       .eq('id', member.school_id)
       .single()
@@ -187,8 +193,8 @@ export async function PUT(request: NextRequest) {
       .eq('id', actor.school_id)
       .select(
         'id, name, address, contact_email, contact_phone, website, timezone, ' +
-          'subscription_plan, subscription_status, subscription_expires_at, ' +
-          'max_members, created_at, updated_at',
+          'subscription_plan, subscription_status, subscription_expires_at:access_until, ' +
+          'max_members:seat_limit, created_at, updated_at',
       )
       .single()
 

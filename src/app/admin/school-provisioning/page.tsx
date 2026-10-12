@@ -115,7 +115,10 @@ export default function AdminSchoolProvisioningPage() {
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
 
-  // Commercial
+  // Commercial. A paid pilot or founding place ends on its own last day;
+  // the access rule closes the portal after it (src/lib/school-access.ts).
+  const [accessKind, setAccessKind] = useState<'paid' | 'trial'>('paid')
+  const [accessUntil, setAccessUntil] = useState('')
   const [promoCode, setPromoCode] = useState('')
 
   const [submitting, setSubmitting] = useState(false)
@@ -208,6 +211,10 @@ export default function AdminSchoolProvisioningPage() {
       setError('Select at least one curriculum.')
       return
     }
+    if (accessKind === 'paid' && !accessUntil) {
+      setError('Enter the last day of access for a paid school.')
+      return
+    }
 
     const password = generateTemporaryPassword()
 
@@ -230,6 +237,8 @@ export default function AdminSchoolProvisioningPage() {
           email: trimmedEmail,
           phone: phone.trim() || undefined,
           password,
+          accessType: accessKind,
+          accessUntil: accessKind === 'paid' ? accessUntil : undefined,
           promoCode: promoCode.trim() || undefined,
         }),
       })
@@ -646,6 +655,41 @@ export default function AdminSchoolProvisioningPage() {
 
             <fieldset className="space-y-4 rounded-xl border border-border bg-card p-6">
               <legend className="px-1 text-sm font-semibold text-foreground">Access</legend>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="space-y-1.5">
+                  <label htmlFor="accessKind" className="text-sm font-medium text-foreground">
+                    Access type
+                  </label>
+                  <select
+                    id="accessKind"
+                    value={accessKind}
+                    onChange={(ev) => setAccessKind(ev.target.value as 'paid' | 'trial')}
+                    className={inputClass}
+                  >
+                    <option value="paid">Paid pilot or founding place</option>
+                    <option value="trial">Trial, no end date</option>
+                  </select>
+                </div>
+                {accessKind === 'paid' && (
+                  <div className="space-y-1.5">
+                    <label htmlFor="accessUntil" className="text-sm font-medium text-foreground">
+                      Last day of access
+                    </label>
+                    <input
+                      id="accessUntil"
+                      type="date"
+                      value={accessUntil}
+                      onChange={(ev) => setAccessUntil(ev.target.value)}
+                      className={inputClass}
+                      required
+                    />
+                  </div>
+                )}
+              </div>
+              <p className="text-xs text-muted-foreground">
+                The school&rsquo;s portal and its pupils&rsquo; access close at the end of the last
+                day (at 23:59 UTC).
+              </p>
               <div className="space-y-1.5">
                 <label htmlFor="promoCode" className="text-sm font-medium text-foreground">
                   Promo code
@@ -659,8 +703,9 @@ export default function AdminSchoolProvisioningPage() {
                   spellCheck={false}
                 />
                 <p className="text-xs text-muted-foreground">
-                  Optional. The code is validated server side against the promo_codes table and sets
-                  the school&rsquo;s access type and expiry. Leave blank for a standard trial.
+                  Optional. The code is validated server side against the promo_codes table. A code
+                  whose access date has passed is refused (FOUNDER&rsquo;s ended on 31 August 2026),
+                  and a paid school&rsquo;s own last day takes precedence over any code.
                 </p>
               </div>
             </fieldset>

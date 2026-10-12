@@ -20,7 +20,7 @@ This is the single most important thing in the chapter. "Role" means four differ
 Consequences you will actually hit:
 
 - A school teacher normally has `school_members.role = 'teacher'` and Prisma `User.role = 'STUDENT'` (the default), because nothing writes `TEACHER` when a teacher accepts a school invite. The portal works anyway, because the portal never reads the Prisma role.
-- [`/api/school/register`](../../src/app/api/school/register/route.ts) writes `profiles.role = 'school_admin'` at lines 326, 456 and 475. `school_admin` is **not** in the profiles CHECK constraint. The profile upsert at line 460 is therefore expected to fail, and the failure is swallowed as non-fatal at line 464-467. The auth `user_metadata.role` write does succeed, because that is free-form JSON.
+- [`/api/school/register`](../../src/app/api/school/register/route.ts) wrote `profiles.role = 'school_admin'`, which the profiles CHECK constraint rejects, so the profile upsert always failed and the failure was swallowed as non-fatal. Since 12 October 2026 it writes `'teacher'`: the administrator's school role lives in `school_members`, and `profiles.role = 'admin'` would mean a site admin. `user_metadata.role` still says `school_admin`, because that is free-form JSON, and the signup trigger maps any unknown role there to `student`.
 - [`src/lib/identity/projection.ts:111-118`](../../src/lib/identity/projection.ts) maps `profiles.role` to the Prisma enum and treats anything it does not recognise - including `school_admin` - as `STUDENT`. `ADMIN` and `REVIEWER` are deliberately never assignable from a profile.
 - `REVIEWER` exists in the Prisma enum and is filterable in [`/api/admin/users`](../../src/app/api/admin/users/route.ts) (line 54), but nothing assigns it and there is no reviewer UI. It is vestigial. The human-review-request tables it implies are read only through `getUserDetails` in [`src/lib/admin.ts`](../../src/lib/admin.ts).
 
@@ -75,26 +75,26 @@ There is exactly one code path that creates a tenant, and it is operator-driven.
 2. **Provisioning.** A site admin opens [`/admin/school-provisioning`](../../src/app/admin/school-provisioning/page.tsx), which generates a random temporary password in the browser and POSTs to `/api/school/register`. The page header (lines 3-22) records why it exists: the product sold school registration in several places but nothing ever called the only handler that creates a school, so signed schools had no route in at all.
 3. **`POST /api/school/register`** ([route](../../src/app/api/school/register/route.ts)) is gated by `verifyAdmin()` at line 109. It was public until 2026-08-23, protected only by an IP rate limit, which meant any visitor could mint a privileged account plus a paying-school row (the comment at lines 96-108 is the incident note). It then: resolves the promo code, generates a unique slug, creates an email-confirmed Supabase auth user, inserts `schools`, inserts the admin's `school_members` row as `accepted`, upserts `profiles`, and rolls back the earlier steps on any later failure.
 
-**Trap:** the `schools` insert at lines 376-395 writes `exam_board` and `curriculum`. No migration adds either column to `schools` ([`003_school_analytics.sql:2-20`](../../supabase/migrations/003_school_analytics.sql) plus [`20260404_school_promo_and_access.sql:80-83`](../../supabase/migrations/20260404_school_promo_and_access.sql) are the only DDL for that table). If they are genuinely absent, provisioning fails with a `PGRST204`/`42703` and returns the raw Postgres message in `detail` - which is at least honest. Verify against `information_schema.columns` before concluding anything; they may have been added by hand.
+**Fixed 12 October 2026:** the `schools` insert writes `exam_board` and `curriculum`, and production had neither column (checked in `information_schema`), so every provisioning attempt would have failed. Nobody had noticed, because production held no schools at all. [`20261012_schools_pilot_columns.sql`](../../supabase/migrations/20261012_schools_pilot_columns.sql) adds them. It also adds `website` and `timezone`, which the settings route reads, and `ai_authorised_at` / `ai_authorised_by`. Those last two record a school's confirmation, as data controller, that its privacy notice covers AI marking and that parents have been told.
 
 ### Access and expiry
 
-`schools.access_type` is `trial | founder | paid | expired`; `schools.subscription_status` is `trialing | active | past_due | cancelled`. [`school-access.ts:65-82`](../../src/lib/school-access.ts) derives a canonical `accessType` from `access_type ?? subscription_status ?? 'standard'`.
+`schools.access_type` is `trial | founder | paid | expired`; `schools.subscription_status` is `trialing | active | past_due | cancelled`. Whether a school is live is decided in one place: `resolveSchoolAccessType` / `isSchoolAccessActive` in [`src/lib/school-access.ts`](../../src/lib/school-access.ts), which `getSchoolAccess` (the portal gate) and `checkSchoolAccessActive` both call, and which pupil entitlement is to import. Do not write a second copy.
 
-The FOUNDER promo hard-codes `2026-08-31`, and **that date is in the past**. What follows from it depends entirely on whether the `schools` row carries an explicit `access_until`, so be precise about which case you are looking at.
+The rule reads `access_type ?? subscription_status ?? 'standard'`:
 
-The live portal resolves access through `getSchoolAccess` in [`src/lib/school-access.ts`](../../src/lib/school-access.ts), which at line 72 calls `isFounderAccessExpired(accessUntil)`. That helper, at line 203, is:
+- **Live.** `founder`, `paid`, `active`, `standard`, `trial` and `trialing` are live until `access_until`.
+- **Expired.** Once `access_until` passes, the school is expired, whatever its type.
+- **Fail closed.** An `access_until` that does not parse, and any other value (`expired`, `cancelled`, `past_due`, anything new), counts as expired.
 
-```ts
-export function isFounderAccessExpired(accessUntil: string | null): boolean {
-  if (!accessUntil) return false
-  return new Date(accessUntil) < new Date()
-}
-```
+**A defect, fixed 12 October 2026.** The old mapping recognised only `founder`, `trialing`, `active` and `standard`. Provisioning writes `trial` (also the column default), so `trial` and `paid` both fell through to `expired`, and every school provisioned through `/api/school/register` would have been locked out of its own portal. The two copies of the rule also disagreed about `access_until` on paid plans.
 
-A founder school with **no** `access_until` therefore returns `false`, keeps `accessType: 'founder'` and stays active. A founder school carrying an explicit past `access_until` resolves to `expired`, which makes `isActive` false (line 82), which makes the portal gate render `NotAuthorised` instead of the portal ([`school-portal-gate.tsx:103`](../../src/app/school/school-portal-gate.tsx)).
+**How provisioning sets access now:**
 
-The second case is the one provisioning produces. `resolvePromoCode` returns `accessUntil: '2026-08-31'` ([line 56](../../src/app/api/school/register/route.ts)) and the `schools` insert persists it as `access_until` (line 393) - deliberately, and the comment at lines 368-375 explains why: the resolved promo outcome used to be echoed in the response and discarded, so `getSchoolAccess` could never see the real expiry. **Every school provisioned with the FOUNDER code through `/api/school/register` therefore holds an explicit, already-past `access_until` and is locked out of the portal.** A founder school whose row was hand-inserted with a NULL `access_until` is not. If a pilot school reports being locked out, read its `schools.access_until` first, before touching any of this code.
+- A paid pilot or founding place is provisioned with `accessType: 'paid'` and its last day (`/admin/school-provisioning` asks for both). The route stores the end of that day, 23:59:59 UTC, with `subscription_status: 'active'`.
+- A promo code whose access date has passed is refused with a 422. Before, it would have created a school that was locked out at once.
+- The FOUNDER code's date is `2026-08-31`, so FOUNDER is now always refused.
+- Without an access type the route still creates a `trial` school with no end date.
 
 The opposite rule - defaulting a NULL `access_until` to `2026-08-31` and expiring the school - exists only in [`src/lib/school-middleware.ts:154`](../../src/lib/school-middleware.ts), which nothing in the repo imports (see [chapter 01](01-architecture.md)). Do not reason about live behaviour from that file, and do not "fix" `school-access.ts` to match it.
 
@@ -117,7 +117,7 @@ Extending or retiring FOUNDER is not a three-line change. The repo mentions `202
 
 Three further mentions are comments that go stale with them: [`register/route.ts:375`](../../src/app/api/school/register/route.ts), [`school-access.ts:105`](../../src/lib/school-access.ts) and [`school-middleware.ts:152`](../../src/lib/school-middleware.ts). The note at [`promo/validate/route.ts:46-49`](../../src/app/api/school/promo/validate/route.ts) already records the open decision - extend the date or retire the code - and that the customer-facing copy was made date-neutral in the meantime.
 
-Note also that `register` writes `subscription_status: 'trialing'` unconditionally (line 283) because `'founder'` is not in the `subscription_status` CHECK; the founder distinction lives only in `access_type`.
+`register` writes `subscription_status: 'active'` for a paid school and `'trialing'` otherwise. `'founder'` is not in the `subscription_status` CHECK, so the founder distinction lives only in `access_type`.
 
 ---
 
@@ -161,14 +161,11 @@ Note that a join-code pupil has no `school_members` row, so `getSchoolAccess` re
 
 ### The join-code column mismatch
 
-This one is live and load-bearing. [`/api/school/join-codes`](../../src/app/api/school/join-codes/route.ts) creates a code with a **`type`** column (line 218). [`/api/school/join`](../../src/app/api/school/join/route.ts) branches on **`joinCode.role`** (line 92), defaulting to `'student'`. Neither `type` nor `role` is created by any migration for `school_join_codes` ([`003_school_analytics.sql:67-78`](../../supabase/migrations/003_school_analytics.sql) is the only DDL).
+[`/api/school/join-codes`](../../src/app/api/school/join-codes/route.ts) creates a code with a **`type`** column, and the portal reads `code.type`. [`/api/school/join`](../../src/app/api/school/join/route.ts) branches on **`joinCode.role`**, defaulting to `'student'`.
 
-So either:
+**Settled on 12 October 2026: production had neither column**, so creating any join code failed. The `information_schema` check showed this. [`20261012_school_join_codes_type.sql`](../../supabase/migrations/20261012_school_join_codes_type.sql) adds `type`, a text column that is either `student` or `teacher` and defaults to `student`.
 
-- `type` exists in production (added by hand) - in which case `joinCode.role` is always `undefined`, `codeRole` is always `'student'`, and **a teacher join code enrols the teacher as a pupil**, silently. The teacher-path code at lines 100-177 is unreachable; or
-- `type` does not exist - in which case creating any join code 500s.
-
-The UI reads `code.type` ([`src/app/school/join-codes/page.tsx:347,469`](../../src/app/school/join-codes/page.tsx)), which suggests the first. Check `information_schema.columns` for `school_join_codes` before changing either side.
+Until `/api/school/join` reads `type` instead of `role`, every code redeems as a pupil code, so **a teacher join code would enrol the teacher as a pupil**. The pupil-side school work owns that change. Until it lands, do not issue teacher codes. Invite teachers by email instead.
 
 Join-code mechanics that are correct and worth keeping: the use counter is incremented through the `increment_join_code_uses` RPC ([`20260419_school_join_code_atomic_increment.sql`](../../supabase/migrations/20260419_school_join_code_atomic_increment.sql)) rather than read-then-write, and both paths roll back the membership they created if the cap was hit in between. Seat accounting uses a `.lt('seats_used', seat_limit)` guard on the update so two concurrent joins cannot both win.
 
@@ -202,14 +199,43 @@ Teacher scoping to pupil work happens in three places and they are consistent, w
 
 Two asymmetries to know about:
 
-- `teacher_moderations_school_select` ([`20260518:360-376`](../../supabase/migrations/20260518_smart_ip_marking.sql)) lets **any** accepted teacher in the school read moderation rows for **any** submission in that school - it checks school membership only, with no class scoping. The submissions themselves are class-scoped; their moderation history is not.
+- `teacher_moderations_school_select` ([`20260518:360-376`](../../supabase/migrations/20260518_smart_ip_marking.sql)) reads as if any accepted teacher could see moderation rows for any submission in the school. In practice it is class-scoped. Its subquery reads `marking_submissions` under that table's own RLS, so a teacher matches only the submissions they can already see. A local Postgres test of the 12 October rules confirmed this: a second teacher saw none of the first teacher's moderations.
 - `anyone_can_read_active_join_codes` from [`004_fix_school_rls.sql:322-325`](../../supabase/migrations/004_fix_school_rls.sql) let every authenticated user enumerate every school's live join codes. It was dropped again by [`20260419_drop_school_join_codes_select_policy.sql`](../../supabase/migrations/20260419_drop_school_join_codes_select_policy.sql). If you re-apply 004 wholesale you will reintroduce it.
+
+### 12 October 2026: the school tables' RLS, proved broken and repaired
+
+Read on production with `pg_policies` and probed read-only. Each table was counted as role `authenticated`, inside a rolled-back READ ONLY transaction, using the method in `.tmp-rls/school-rls-probe.mjs` in the main checkout. Three faults:
+
+1. **Infinite recursion (42P17).** Signed-in reads of `school_members`, `school_students`, `school_join_codes`, `classes`, `class_students`, `marking_submissions`, `teacher_moderations`, `bulk_import_jobs` and `import_results` all failed. Two policies caused it:
+   - `school_members` had a SELECT policy that queried `school_members`;
+   - the `classes` and `class_students` policies queried each other.
+
+   The portal gate reads with the service role, so it still worked. But every browser-side read of these tables failed. So did `/api/school/marking`, which reads with the user's session and turns any error into an empty list.
+
+2. **A pupil could make themselves a school admin.** `members_update_own_row` let any member update every column of their own `school_members` row, role included. Only the recursion blocked it; fixing the recursion alone would have opened it.
+3. **Pupils saw the staff view.** Any member could read every member's name and email, every class enrolment and every join code in their school, including teacher codes, and could add anyone to any class.
+
+[`20261012_school_access_rules.sql`](../../supabase/migrations/20261012_school_access_rules.sql) replaces those policies. The rule it follows: **no policy reads its own table, or a table whose policies read back.** Membership is checked through SECURITY DEFINER functions:
+
+- `get_user_school_role` and `get_user_school_ids`, which already existed;
+- `get_class_school_id` and `is_active_class_student`, which are new.
+
+Staff means an accepted `admin`, `head_of_department` or `teacher`. Under the new policies:
+
+- **school_members:** staff read their school's members; anyone reads their own row. There is no self-update policy; writes go through the service role.
+- **classes:** staff read their school's classes; a pupil reads the classes they are actively enrolled in.
+- **class_students:** staff read, add and update; an admin removes; a pupil reads only their own enrolments.
+- **school_join_codes:** staff read; pupils do not, because redeeming a code uses the service role.
+
+The rules were tested before they were written down. A local Postgres 17 (PGlite) held the production policies verbatim and reproduced the recursion on the same nine tables. After the migration, 73 read and write checks passed, across two schools, pupils, teachers, a head of department, admins, an outsider and anon. The test harness is not in the repo.
+
+**After deploy,** repeat the read-only probe. It should report counts, not 42P17.
 
 ### The RLS you are reading may not be the RLS that is deployed
 
 [`scripts/apply-migrations.mjs:42`](../../scripts/apply-migrations.mjs) sets `BASELINE_CUTOFF = '20260530'`. On its first run it inserted every file sorting before that into `_migrations_applied` **without executing it**. Numeric-prefixed files sort before `2`, so `003_school_analytics.sql` and `004_fix_school_rls.sql` - which between them create the whole school schema and all of its RLS - were baselined, not run. They were presumably applied by hand first; `20260512_user_is_minor.sql` was baselined the same way and had **not** been, which is the incident [`scripts/check-schema-drift.mjs`](../../scripts/check-schema-drift.mjs) was written to catch.
 
-The drift checker explicitly does not check constraints, indexes or policies (its lines 37-45). For this subsystem that means: **you cannot establish the deployed RLS state from this repo.** Query `pg_policies` for `schools`, `school_members`, `classes`, `class_students`, `school_join_codes` and `marking_submissions` before you rely on any of it. If 004 never ran, the `FOR ALL USING (true)` policies from 003 are still in place and every authenticated user can read and write every school's data.
+The drift checker explicitly does not check constraints, indexes or policies (its lines 37-45). So for any table not covered above, **you cannot establish the deployed RLS state from this repo**: query `pg_policies` before you rely on it. For the school tables it was read on 12 October 2026. No `FOR ALL USING (true)` policy from 003 was present. The live set mixed some of 004's policies with several that no migration creates, for example "Users can view members of their schools". The faults were the three above.
 
 ---
 
@@ -313,7 +339,7 @@ The sidebar ([`SchoolSidebarNav.tsx:44-59`](../../src/components/school/SchoolSi
 
 Surfaces that assume columns nothing creates:
 
-- `GET/PUT /api/school/settings` selects `website, timezone, subscription_expires_at, max_members` from `schools` ([lines 64 and 189](../../src/app/api/school/settings/route.ts)). None of the four appears in any migration. PostgREST rejects the **whole** SELECT when one column is missing, so this endpoint returns an error rather than partial data - the same failure mode that made `/api/school/students` report zero pupils before the `year_group` fix. The `.strict()` zod schema at lines 9-26 accepts `website` and `timezone` as writable.
+- `GET/PUT /api/school/settings` selected `website, timezone, subscription_expires_at, max_members` from `schools`, and none of the four existed. PostgREST rejects the **whole** SELECT when one column is missing, so the settings page could never load. **Fixed 12 October 2026:** `website` and `timezone` are now real columns, and the other two are read as the existing `access_until` and `seat_limit` under the names the page expects.
 - `/api/school/register` and `exam_board`/`curriculum` on `schools` (section 4).
 - Bulk-upload commit and `school_members.class_code` (section 9).
 - `school_join_codes.type` versus `.role` (section 6).
@@ -324,9 +350,9 @@ Check all of these against `information_schema.columns` before changing code. In
 
 ## 13. What I could not determine from the code
 
-- **The deployed RLS state.** 003 and 004 were baselined rather than executed. Whether the permissive `FOR ALL USING (true)` policies were ever actually dropped is only answerable from `pg_policies`.
-- **Which of the missing columns actually exist in production.** `schools.exam_board`, `schools.curriculum`, `schools.website`, `schools.timezone`, `schools.max_members`, `schools.subscription_expires_at`, `school_members.class_code`, `school_join_codes.type`/`role`. All are written or read by code and created by no migration.
-- **Whether any school has ever been provisioned through `/admin/school-provisioning`,** or whether every existing `schools` row was hand-inserted. Nothing in the repo records this.
-- **Whether `profiles.role` has been widened to accept `school_admin`.** The CHECK in the repo says no; the register route writes it anyway and swallows the error.
+- **The deployed RLS state, beyond the school tables.** Settled for `schools`, `school_members`, `school_students`, `school_join_codes`, `classes`, `class_students`, `marking_submissions` and `teacher_moderations` on 12 October 2026 (section 8). Other tables still need `pg_policies` read before anything relies on them.
+- **Which of the missing columns exist in production.** Settled on 12 October 2026: none of them did. `schools.exam_board`, `curriculum`, `website` and `timezone`, and `school_join_codes.type`, are added by the 20261012 migrations. `max_members` and `subscription_expires_at` are read as `seat_limit` and `access_until`. `school_members.class_code` is no longer written. `school_join_codes.role` does not exist; `/api/school/join` must read `type`.
+- **Whether any school has ever been provisioned.** Settled: on 12 October 2026 production's `schools` table held no rows, and provisioning could not have succeeded (section 4).
+- **Whether `profiles.role` accepts `school_admin`.** It does not (production CHECK, 12 October 2026). The register route now writes `teacher` (section 1).
 - **Which of the FOUNDER cohort carry an explicit `access_until`.** The ones that do are already expired out of the portal, because the date is past; the ones with a NULL `access_until` are still active. Provisioning through `/api/school/register` writes the explicit date, so the split is really "provisioned by the route" versus "inserted by hand", and only the `schools` table can tell you which is which.
 - **Whether `class_students.is_active` is ever reconciled with `classes.student_count`.** The counter is maintained by hand in two routes and I found no reconciliation job.
