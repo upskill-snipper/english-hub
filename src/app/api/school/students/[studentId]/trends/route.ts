@@ -1,8 +1,16 @@
+// GET /api/school/students/[studentId]/trends - eight weeks of a pupil's
+// quiz scores, modules and practice.
+//
+// SCOPED 12 OCTOBER 2026, like /api/school/students/[studentId]: a teacher
+// may read only pupils actively enrolled in a class they teach; admins and
+// heads of department any pupil of the school. It used to admit any member
+// of the school for any pupil in it, a teacher included, and a pupil for
+// themselves. Failed reads now answer 500 instead of an all-zero series.
+
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
-import { verifySchoolMember } from '@/lib/school-auth'
-import { verifyStudentInSchool } from '@/lib/school-student-auth'
+import { canViewPupil, resolveStaffScope } from '../../../_lib/staff-scope'
 
 export const dynamic = 'force-dynamic'
 
@@ -46,27 +54,16 @@ export async function GET(request: NextRequest, props: { params: Promise<{ stude
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const membership = await verifySchoolMember(user.id)
-    if (!membership) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
-    }
-
     const { studentId } = params
-    const staffRoles = ['admin', 'head_of_department', 'teacher']
-
-    // Students can only view their own trends
-    if (!staffRoles.includes(membership.role) && user.id !== studentId) {
-      return NextResponse.json(
-        { error: 'Forbidden: you can only view your own progress' },
-        { status: 403 },
-      )
-    }
-
-    if (!(await verifyStudentInSchool(studentId, membership.school_id))) {
-      return NextResponse.json({ error: 'Student not found in your school' }, { status: 404 })
-    }
-
     const admin = createServiceRoleClient()
+    const resolved = await resolveStaffScope(admin, user.id)
+    if (!resolved.ok) {
+      return NextResponse.json({ error: resolved.error }, { status: resolved.status })
+    }
+    if (!(await canViewPupil(admin, resolved.scope, studentId))) {
+      return NextResponse.json({ error: 'That pupil is not in your classes.' }, { status: 404 })
+    }
+
     const eightWeeksAgo = new Date(Date.now() - 8 * 7 * 24 * 60 * 60 * 1000).toISOString()
 
     const [progressResult, practiceResult] = await Promise.all([
@@ -84,6 +81,10 @@ export async function GET(request: NextRequest, props: { params: Promise<{ stude
         .gte('created_at', eightWeeksAgo)
         .order('created_at', { ascending: true }),
     ])
+    if (progressResult.error || practiceResult.error) {
+      console.error('Student trends read failed:', progressResult.error ?? practiceResult.error)
+      return NextResponse.json({ error: "Could not read this pupil's activity" }, { status: 500 })
+    }
 
     // Initialize the last 8 weeks
     const weeks = new Map<string, WeekBucket>()

@@ -1,1658 +1,229 @@
 'use client'
 
-import { useEffect, useState, useMemo, useCallback } from 'react'
-import { useParams } from 'next/navigation'
+// ─── One pupil ──────────────────────────────────────────────────────────────
+// /school/students/[studentId]
+//
+// REBUILT 12 OCTOBER 2026. The page crashed for every pupil. It spread
+// `student.modules`, but /api/school/students/[studentId] returns
+// `{ analytics, enrolments, module_progress, ... }`: the page had been
+// written against a shape no API has ever returned (modules, quizHistory,
+// mockExamResults, examReadiness, predictedGrade and more), so `modules` was
+// undefined and `[...undefined]` threw. Alongside that it carried:
+//   * a "Predicted Grade" hero and an "exam readiness" gauge, which the API
+//     derived by mapping a quiz average onto a GCSE grade;
+//   * a "Generate Study Plan" button that was an alert();
+//   * teacher notes kept in the browser's localStorage, which another
+//     teacher, or the same teacher on another computer, could never see;
+//   * "Contact parent", which opened an email to the PUPIL's own address
+//     beginning "Dear Parent/Guardian".
+// All of those are gone. The page now shows what the API really returns:
+// the pupil, their strongest and weakest assessment objectives across their
+// marked essays (the promise in the pilot proposal), their essays, and their
+// course progress, with no grade invented from a quiz.
+// ────────────────────────────────────────────────────────────────────────────
+
+import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowUp,
-  ArrowDown,
-  Minus,
-  BookOpen,
-  CheckCircle,
-  Award,
-  Clock,
-  Flame,
-  FileText,
-  BarChart3,
-  Target,
-  Zap,
-  XCircle,
-  ExternalLink,
-  TrendingUp,
-  TrendingDown,
-  Printer,
-  Mail,
-  CalendarDays,
-  PenLine,
-  Save,
-  Trash2,
-  Plus,
-  ChevronDown,
-  ChevronUp,
-  AlertTriangle,
-  GraduationCap,
-  Activity,
-  Dumbbell,
-} from 'lucide-react'
-import { useT } from '@/lib/i18n/use-t'
-import { Skeleton } from '@/components/ui/skeleton'
-import { Badge } from '@/components/ui/badge'
+import { useParams } from 'next/navigation'
+import { AlertTriangle, ArrowLeft, Printer } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Separator } from '@/components/ui/separator'
-import {
-  GlassPanel,
-  PanelEyebrow,
-  KpiTile,
-  AnimatedNumber,
-  TrendArea,
-  RadialScore,
-  RankBars,
-  SkillRadar,
-  SERIES,
-  pct,
-} from '@/components/dataviz'
-import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from '@/lib/grades'
-import { DictationButton } from '@/components/speech/DictationButton'
-import { ReadAloudButton } from '@/components/speech/ReadAloudButton'
+import { Skeleton } from '@/components/ui/skeleton'
+import { GlassPanel, PanelEyebrow } from '@/components/dataviz'
+import { useT } from '@/lib/i18n/use-t'
+import { useFormatDate } from '@/lib/i18n/use-format-date'
+import { StatusBadge } from '@/components/school/marking/StatusBadge'
+import { PupilStrengths } from '@/components/school/objectives/PupilStrengths'
+import type { PupilResponse } from '@/app/api/school/students/[studentId]/route'
 
-// ─── Types ───────────────────────────────────────────────────────────────────
+type LoadState =
+  | { kind: 'loading' }
+  | { kind: 'error'; message: string }
+  | { kind: 'not_found'; message: string }
+  | { kind: 'ready'; data: PupilResponse }
 
-interface ModuleProgressItem {
-  moduleId: string
-  moduleName: string
-  courseName: string
-  status: 'complete' | 'in_progress' | 'not_started'
-  quizScore: number | null
-  timeSpentMinutes: number
-  attempts: number
-}
-
-interface StrengthWeaknessItem {
-  area: string
-  score: number
-}
-
-interface Recommendation {
-  id: string
-  title: string
-  description: string
-  link: string
-  type: 'improvement' | 'praise' | 'suggestion'
-}
-
-interface ActivityItem {
-  id: string
-  type: 'module_complete' | 'quiz_score' | 'certificate' | 'practice' | 'enrolment'
-  text: string
-  timestamp: string
-}
-
-interface WeeklyScore {
-  week: string
-  score: number
-  trend: 'up' | 'down' | 'stable'
-}
-
-interface QuizAttempt {
-  id: string
-  quizName: string
-  score: number
-  maxScore: number
-  date: string
-  moduleName: string
-}
-
-interface MockExamResult {
-  id: string
-  examName: string
-  score: number
-  maxScore: number
-  grade: string
-  date: string
-  areasForImprovement: string[]
-}
-
-interface EssaySubmission {
-  id: string
-  title: string
-  grade: string
-  score: number
-  submittedAt: string
-  feedbackPoints: string[]
-  wordCount: number
-}
-
-interface RevisionWeek {
-  week: string
-  hours: number
-}
-
-interface TeacherNote {
-  id: string
-  text: string
-  createdAt: string
-  updatedAt: string
-}
-
-interface StudentData {
-  id: string
-  name: string
-  email: string
-  yearGroup: string
-  examBoard: string
-  predictedGrade: number
-  averageScore: number
-  trajectory: { trend: 'improving' | 'stable' | 'declining'; change: number }
-  lastActive: string
-  classId: string
-  className: string
-  modulesCompleted: number
-  totalModules: number
-  averageQuizScore: number
-  totalStudyTimeMinutes: number
-  practiceSessions: number
-  certificatesEarned: number
-  currentStreak: number
-  examReadiness: number
-  modules: ModuleProgressItem[]
-  strengths: StrengthWeaknessItem[]
-  weaknesses: StrengthWeaknessItem[]
-  recommendations: Recommendation[]
-  recentActivity: ActivityItem[]
-  quizHistory: QuizAttempt[]
-  mockExamResults: MockExamResult[]
-  essaySubmissions: EssaySubmission[]
-  revisionHours: RevisionWeek[]
-}
-
-interface TrendsData {
-  weeklyScores: WeeklyScore[]
-}
-
-// ─── Helpers ─────────────────────────────────────────────────────────────────
-
-function gradeColorClass(grade: number): string {
-  if (grade >= 8) return 'text-purple-400'
-  if (grade >= 6) return 'text-green-400'
-  if (grade >= 4) return 'text-clay-600'
-  return 'text-red-400'
-}
-
-function gradeBgClass(grade: number): string {
-  if (grade >= 8) return 'bg-purple-500/10 border-purple-500/20'
-  if (grade >= 6) return 'bg-green-500/10 border-green-500/20'
-  if (grade >= 4) return 'bg-amber-500/10 border-amber-500/20'
-  return 'bg-red-500/10 border-red-500/20'
-}
-
-function scoreBarColor(score: number): string {
-  if (score >= 70) return 'bg-green-500'
-  if (score >= 50) return 'bg-amber-500'
-  return 'bg-red-500'
-}
-
-function scoreTextColor(score: number): string {
-  if (score >= 70) return 'text-green-400'
-  if (score >= 50) return 'text-clay-600'
-  return 'text-red-400'
-}
-
-function formatStudyTime(totalMinutes: number): string {
-  const hours = Math.floor(totalMinutes / 60)
-  const minutes = totalMinutes % 60
-  return `${hours}h ${minutes.toString().padStart(2, '0')}m`
-}
-
-function relativeTime(dateStr: string): string {
-  const now = new Date()
-  const date = new Date(dateStr)
-  const diffMs = now.getTime() - date.getTime()
-  const diffMins = Math.floor(diffMs / 60000)
-  const diffHours = Math.floor(diffMins / 60)
-  const diffDays = Math.floor(diffHours / 24)
-  const diffWeeks = Math.floor(diffDays / 7)
-
-  if (diffMins < 1) return 'just now'
-  if (diffMins < 60) return `${diffMins} minute${diffMins === 1 ? '' : 's'} ago`
-  if (diffHours < 24) return `${diffHours} hour${diffHours === 1 ? '' : 's'} ago`
-  if (diffDays < 7) return `${diffDays} day${diffDays === 1 ? '' : 's'} ago`
-  if (diffWeeks < 5) return `${diffWeeks} week${diffWeeks === 1 ? '' : 's'} ago`
-  return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
-}
-
-function formatDate(dateStr: string): string {
-  return new Date(dateStr).toLocaleDateString('en-GB', {
-    day: 'numeric',
-    month: 'short',
-    year: 'numeric',
-  })
-}
-
-function statusBadge(status: ModuleProgressItem['status'], t: (k: string) => string) {
-  switch (status) {
-    case 'complete':
-      return (
-        <span className="inline-flex items-center gap-1 rounded-full bg-green-500/10 border border-green-500/20 px-2 py-0.5 text-xs font-medium text-green-400">
-          <CheckCircle className="h-3 w-3" />
-          {t('school.students.detail.module.complete')}
-        </span>
-      )
-    case 'in_progress':
-      return (
-        <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-xs font-medium text-clay-600">
-          <Clock className="h-3 w-3" />
-          {t('school.students.detail.module.in_progress')}
-        </span>
-      )
-    case 'not_started':
-      return (
-        <span className="inline-flex items-center gap-1 rounded-full bg-border/50 px-2 py-0.5 text-xs font-medium text-muted-foreground">
-          <Minus className="h-3 w-3" />
-          {t('school.students.detail.module.not_started')}
-        </span>
-      )
-  }
-}
-
-function activityIcon(type: ActivityItem['type']) {
-  switch (type) {
-    case 'module_complete':
-      return <BookOpen className="h-4 w-4 text-blue-400" />
-    case 'quiz_score':
-      return <CheckCircle className="h-4 w-4 text-green-400" />
-    case 'certificate':
-      return <Award className="h-4 w-4 text-clay-600" />
-    case 'practice':
-      return <Target className="h-4 w-4 text-purple-400" />
-    case 'enrolment':
-      return <BookOpen className="h-4 w-4 text-cyan-400" />
-    default:
-      return <FileText className="h-4 w-4 text-muted-foreground" />
-  }
-}
-
-function recommendationIcon(type: Recommendation['type']) {
-  switch (type) {
-    case 'improvement':
-      return <Target className="h-5 w-5 text-clay-600" />
-    case 'praise':
-      return <Zap className="h-5 w-5 text-green-400" />
-    case 'suggestion':
-      return <BookOpen className="h-5 w-5 text-blue-400" />
-  }
-}
-
-function recommendationBorder(type: Recommendation['type']) {
-  switch (type) {
-    case 'improvement':
-      return 'border-amber-500/20 hover:border-amber-500/40'
-    case 'praise':
-      return 'border-green-500/20 hover:border-green-500/40'
-    case 'suggestion':
-      return 'border-blue-500/20 hover:border-blue-500/40'
-  }
-}
-
-// ─── Skeleton Components ─────────────────────────────────────────────────────
-
-function HeaderSkeleton() {
-  return (
-    <div className="rounded-2xl border border-border/60 bg-card/60 p-6 animate-pulse backdrop-blur-xl">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="space-y-3">
-          <Skeleton className="h-8 w-48" />
-          <div className="flex gap-2">
-            <Skeleton className="h-5 w-20 rounded-full" />
-            <Skeleton className="h-5 w-24 rounded-full" />
-          </div>
-          <Skeleton className="h-4 w-32" />
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <Skeleton className="h-32 w-32 rounded-full" />
-          <Skeleton className="h-4 w-24" />
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function OverviewCardSkeleton() {
-  return (
-    <div className="rounded-2xl border border-border/60 bg-card/60 p-5 animate-pulse backdrop-blur-xl">
-      <Skeleton className="h-4 w-24 mb-3" />
-      <Skeleton className="h-8 w-16 mb-1" />
-      <Skeleton className="h-3 w-20" />
-    </div>
-  )
-}
-
-function TableSkeleton() {
-  return (
-    <div className="rounded-2xl border border-border/60 bg-card/60 p-6 animate-pulse backdrop-blur-xl">
-      <Skeleton className="h-6 w-40 mb-4" />
-      <div className="space-y-3">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <Skeleton key={i} className="h-12 w-full" />
-        ))}
-      </div>
-    </div>
-  )
-}
-
-function SidebarSkeleton() {
-  return (
-    <div className="space-y-6">
-      <div className="rounded-2xl border border-border/60 bg-card/60 p-6 animate-pulse backdrop-blur-xl">
-        <Skeleton className="h-5 w-28 mb-4" />
-        <div className="space-y-2">
-          <Skeleton className="h-10 w-full" />
-          <Skeleton className="h-10 w-full" />
-          <Skeleton className="h-10 w-full" />
-        </div>
-      </div>
-      <div className="rounded-2xl border border-border/60 bg-card/60 p-6 animate-pulse backdrop-blur-xl">
-        <Skeleton className="h-5 w-28 mb-4" />
-        <div className="space-y-2">
-          <Skeleton className="h-10 w-full" />
-          <Skeleton className="h-10 w-full" />
-          <Skeleton className="h-10 w-full" />
-        </div>
-      </div>
-      <div className="rounded-2xl border border-border/60 bg-card/60 p-6 animate-pulse backdrop-blur-xl">
-        <Skeleton className="h-5 w-24 mb-4" />
-        <div className="space-y-3">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <Skeleton key={i} className="h-8 w-full" />
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-// ─── Teacher Notes Hook ──────────────────────────────────────────────────────
-
-function useTeacherNotes(studentId: string) {
-  const storageKey = `teacher-notes-${studentId}`
-
-  const [notes, setNotes] = useState<TeacherNote[]>([])
-
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem(storageKey)
-      if (stored) setNotes(JSON.parse(stored))
-    } catch {
-      // ignore parse errors
-    }
-  }, [storageKey])
-
-  const saveNotes = useCallback(
-    (updated: TeacherNote[]) => {
-      setNotes(updated)
-      localStorage.setItem(storageKey, JSON.stringify(updated))
-    },
-    [storageKey],
-  )
-
-  const addNote = useCallback(
-    (text: string) => {
-      const note: TeacherNote = {
-        id: crypto.randomUUID(),
-        text,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      }
-      saveNotes([note, ...notes])
-    },
-    [notes, saveNotes],
-  )
-
-  const updateNote = useCallback(
-    (id: string, text: string) => {
-      saveNotes(
-        notes.map((n) => (n.id === id ? { ...n, text, updatedAt: new Date().toISOString() } : n)),
-      )
-    },
-    [notes, saveNotes],
-  )
-
-  const deleteNote = useCallback(
-    (id: string) => {
-      saveNotes(notes.filter((n) => n.id !== id))
-    },
-    [notes, saveNotes],
-  )
-
-  return { notes, addNote, updateNote, deleteNote }
-}
-
-// ─── Main Component ──────────────────────────────────────────────────────────
-
-export default function StudentDrilldownPage() {
+export default function PupilPage() {
   const t = useT()
+  const fmt = useFormatDate()
   const params = useParams()
-  const studentId = params.studentId as string
+  const studentId = String(params.studentId ?? '')
+  const [state, setState] = useState<LoadState>({ kind: 'loading' })
 
-  const [student, setStudent] = useState<StudentData | null>(null)
-  const [trends, setTrends] = useState<TrendsData | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [sortBy, setSortBy] = useState<'status' | 'score'>('status')
-
-  // Teacher notes
-  const { notes, addNote, updateNote, deleteNote } = useTeacherNotes(studentId)
-  const [newNoteText, setNewNoteText] = useState('')
-  const [editingNoteId, setEditingNoteId] = useState<string | null>(null)
-  const [editingNoteText, setEditingNoteText] = useState('')
-
-  // Collapsible sections
-  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
-    quizHistory: true,
-    mockExams: true,
-    essays: true,
-    revisionTime: true,
-    recommendations: true,
-    notes: true,
-    activity: false,
-  })
-
-  const toggleSection = (key: string) => {
-    setExpandedSections((prev) => ({ ...prev, [key]: !prev[key] }))
-  }
-
-  useEffect(() => {
-    if (!studentId) return
-
-    async function fetchData() {
-      try {
-        const [studentRes, trendsRes] = await Promise.all([
-          fetch(`/api/school/students/${studentId}`),
-          fetch(`/api/school/students/${studentId}/trends`),
-        ])
-
-        if (studentRes.ok) {
-          const data = await studentRes.json()
-          setStudent(data)
-        }
-
-        if (trendsRes.ok) {
-          const data = await trendsRes.json()
-          setTrends(data)
-        }
-      } catch (err) {
-        console.error('Failed to fetch student data:', err)
-      } finally {
-        setLoading(false)
+  const load = useCallback(async () => {
+    setState({ kind: 'loading' })
+    try {
+      const res = await fetch(`/api/school/students/${studentId}`, { cache: 'no-store' })
+      const body = (await res.json().catch(() => ({}))) as PupilResponse & { error?: string }
+      if (res.status === 404 || res.status === 403) {
+        setState({ kind: 'not_found', message: body.error ?? t('school.pupil.not_found') })
+        return
       }
+      if (!res.ok) throw new Error(body.error ?? t('school.pupil.load_error'))
+      setState({ kind: 'ready', data: body })
+    } catch (err) {
+      setState({
+        kind: 'error',
+        message: err instanceof Error ? err.message : t('school.pupil.load_error'),
+      })
     }
-
-    fetchData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [studentId])
 
-  // ── Sorted modules ──────────────────────────────────────────────────────
+  useEffect(() => {
+    if (studentId) load()
+  }, [studentId, load])
 
-  const sortedModules = useMemo(() => {
-    if (!student) return []
-    const mods = [...student.modules]
-    if (sortBy === 'score') {
-      return mods.sort((a, b) => (b.quizScore ?? -1) - (a.quizScore ?? -1))
-    }
-    const statusOrder = { in_progress: 0, not_started: 1, complete: 2 }
-    return mods.sort((a, b) => statusOrder[a.status] - statusOrder[b.status])
-  }, [student, sortBy])
-
-  // ── Completion percentage ───────────────────────────────────────────────
-
-  const completionPct = useMemo(() => {
-    if (!student || student.totalModules === 0) return 0
-    return Math.round((student.modulesCompleted / student.totalModules) * 100)
-  }, [student])
-
-  // ── Quiz history for trend area ─────────────────────────────────────────
-
-  const quizChartData = useMemo(() => {
-    if (!student?.quizHistory) return []
-    return student.quizHistory.slice(-10).map((q) => ({
-      label: formatDate(q.date).replace(/\s\d{4}$/, ''),
-      score: Math.round((q.score / q.maxScore) * 100),
-    }))
-  }, [student])
-
-  // ── Skill profile for radar (strengths + weaknesses) ────────────────────
-
-  const skillRadarData = useMemo(() => {
-    if (!student) return []
-    return [...student.strengths, ...student.weaknesses]
-      .slice(0, 8)
-      .map((s) => ({ area: s.area, score: s.score }))
-  }, [student])
-
-  // ── Weekly scores as a trend series ─────────────────────────────────────
-
-  const weeklyChartData = useMemo(() => {
-    const weeklyScores = trends?.weeklyScores ?? []
-    return weeklyScores.map((w) => ({ week: w.week, score: w.score }))
-  }, [trends])
-
-  // ── Revision hours bars ─────────────────────────────────────────────────
-
-  const revisionChartData = useMemo(() => {
-    if (!student?.revisionHours) return []
-    return student.revisionHours.map((r) => ({ week: r.week, hours: r.hours }))
-  }, [student])
-
-  // ── Action handlers ─────────────────────────────────────────────────────
-
-  const handlePrintReport = () => {
-    window.print()
-  }
-
-  const handleGenerateStudyPlan = () => {
-    // Placeholder: would trigger API call to generate AI study plan
-    alert(
-      `Study plan generation requested for ${student?.name}. This feature will create a personalised revision schedule based on their strengths and weaknesses.`,
+  if (state.kind === 'loading') {
+    return (
+      <div className="space-y-4" aria-busy="true">
+        <Skeleton className="h-6 w-40" />
+        <Skeleton className="h-28 w-full rounded-2xl" />
+        <Skeleton className="h-64 w-full rounded-2xl" />
+      </div>
     )
   }
 
-  const handleContactParent = () => {
-    if (student?.email) {
-      window.location.href = `mailto:${student.email}?subject=Progress Update: ${student.name}&body=Dear Parent/Guardian,%0D%0A%0D%0AI would like to discuss ${student.name}'s progress in English.%0D%0A%0D%0AKind regards`
-    }
-  }
-
-  // ── Loading state ───────────────────────────────────────────────────────
-
-  if (loading) {
+  if (state.kind !== 'ready') {
     return (
-      <div className="min-h-screen bg-background text-foreground">
-        <div className="px-4 py-8 sm:px-6 lg:px-8">
-          <div className="mb-6">
-            <Skeleton className="h-4 w-32 mb-6" />
-          </div>
-          <HeaderSkeleton />
-          <div className="mt-6 grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <OverviewCardSkeleton key={i} />
-            ))}
-          </div>
-          <div className="mt-6 flex justify-center">
-            <Skeleton className="h-32 w-32 rounded-full" />
-          </div>
-          <div className="mt-6 grid gap-6 lg:grid-cols-3">
-            <div className="lg:col-span-2">
-              <TableSkeleton />
-            </div>
-            <SidebarSkeleton />
-          </div>
-          <div className="mt-6">
-            <Skeleton className="h-64 w-full rounded-xl" />
-          </div>
+      <div className="space-y-6">
+        <Link
+          href="/school/classes"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+        >
+          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+          {t('school.pupil.back_to_classes')}
+        </Link>
+        <div
+          role="alert"
+          className="flex flex-col items-start gap-3 rounded-xl border border-border bg-card p-6"
+        >
+          <p className="flex items-center gap-2 text-sm text-foreground">
+            <AlertTriangle className="h-4 w-4 shrink-0 text-amber-600" aria-hidden="true" />
+            {state.message}
+          </p>
+          {state.kind === 'error' ? (
+            <Button variant="outline" size="sm" onClick={load}>
+              {t('school.queue.retry')}
+            </Button>
+          ) : null}
         </div>
       </div>
     )
   }
 
-  if (!student) {
-    return (
-      <div className="min-h-screen bg-background text-foreground">
-        <div className="px-4 py-8 sm:px-6 lg:px-8">
-          <Link
-            href="/school"
-            className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to School Dashboard
-          </Link>
-          <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-border bg-card/50 py-16 text-center">
-            <p className="text-lg font-semibold text-foreground">Student not found</p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              The student you are looking for does not exist or you do not have permission to view
-              their profile.
-            </p>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  const weeklyScores = trends?.weeklyScores ?? []
-  const examReadinessGrade = percentageToGCSEGrade(student.examReadiness)
-
-  // ── Section header helper ───────────────────────────────────────────────
-
-  function SectionHeader({
-    sectionKey,
-    icon,
-    title,
-    count,
-  }: {
-    sectionKey: string
-    icon: React.ReactNode
-    title: string
-    count?: number
-  }) {
-    return (
-      <button
-        onClick={() => toggleSection(sectionKey)}
-        className="w-full flex items-center justify-between mb-4"
-      >
-        <span className="flex items-center gap-2">
-          {icon}
-          <PanelEyebrow>{title}</PanelEyebrow>
-          {count !== undefined && (
-            <span className="ms-1 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
-              {count}
-            </span>
-          )}
-        </span>
-        {expandedSections[sectionKey] ? (
-          <ChevronUp className="h-4 w-4 text-muted-foreground" />
-        ) : (
-          <ChevronDown className="h-4 w-4 text-muted-foreground" />
-        )}
-      </button>
-    )
-  }
+  const { data } = state
+  const { pupil, analytics } = data
+  const firstClass = pupil.classes[0]
 
   return (
-    <div className="min-h-screen bg-background text-foreground print:bg-white print:text-black">
-      <div className="px-4 py-8 sm:px-6 lg:px-8">
-        {/* ── Back Link ──────────────────────────────────────────────────── */}
-        <div className="mb-6 flex items-center justify-between print:hidden">
-          <Link
-            href={student.classId ? `/school/classes/${student.classId}` : '/school'}
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to {student.className || 'Class'}
-          </Link>
-
-          {/* Action Buttons */}
-          <div className="flex items-center gap-2">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleGenerateStudyPlan}
-              className="gap-1.5"
-            >
-              <CalendarDays className="h-4 w-4" />
-              <span className="hidden sm:inline">Generate Study Plan</span>
-            </Button>
-            <Button variant="outline" size="sm" onClick={handlePrintReport} className="gap-1.5">
-              <Printer className="h-4 w-4" />
-              <span className="hidden sm:inline">Print Report</span>
-            </Button>
-            <Button variant="outline" size="sm" onClick={handleContactParent} className="gap-1.5">
-              <Mail className="h-4 w-4" />
-              <span className="hidden sm:inline">Contact Parent</span>
-            </Button>
-          </div>
-        </div>
-
-        {/* ── Cinematic Student Header ───────────────────────────────────── */}
-        <GlassPanel accent="primary" className="p-6 sm:p-8 print:border print:bg-white">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            {/* Left: Name, badges, trajectory, last active */}
-            <div className="space-y-3">
-              <PanelEyebrow>Student Profile</PanelEyebrow>
-              <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-                {student.name}
-              </h1>
-              <div className="flex flex-wrap items-center gap-2">
-                <Badge variant="secondary" className="bg-primary/10 text-primary border-0">
-                  {student.yearGroup}
-                </Badge>
-                <Badge
-                  variant="outline"
-                  className="border-blue-500/20 text-blue-400 bg-blue-500/10"
-                >
-                  {student.examBoard}
-                </Badge>
-                {student.className && (
-                  <Badge
-                    variant="outline"
-                    className="border-violet-500/20 text-violet-400 bg-violet-500/10"
-                  >
-                    {student.className}
-                  </Badge>
-                )}
-              </div>
-
-              {/* Trajectory */}
-              <div className="flex items-center gap-2">
-                {student.trajectory.trend === 'improving' ? (
-                  <span className="inline-flex items-center gap-1 text-sm font-medium text-green-400">
-                    <ArrowUp className="h-4 w-4" />
-                    Improving
-                  </span>
-                ) : student.trajectory.trend === 'declining' ? (
-                  <span className="inline-flex items-center gap-1 text-sm font-medium text-red-400">
-                    <ArrowDown className="h-4 w-4" />
-                    Declining
-                  </span>
-                ) : (
-                  <span className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground">
-                    <Minus className="h-4 w-4" />
-                    Stable
-                  </span>
-                )}
-                {student.trajectory.change !== 0 && (
-                  <span className="text-xs text-muted-foreground">
-                    ({student.trajectory.change > 0 ? '+' : ''}
-                    {student.trajectory.change}%)
-                  </span>
-                )}
-              </div>
-
-              {/* Last active */}
-              <p className="text-sm text-muted-foreground">
-                Last active: {student.lastActive ? relativeTime(student.lastActive) : 'Never'}
-              </p>
-            </div>
-
-            {/* Right: Exam readiness gauge + predicted-grade hero */}
-            <div className="flex flex-wrap items-center gap-6 sm:gap-8">
-              {/* Exam readiness radial */}
-              <div className="flex flex-col items-center gap-2">
-                <RadialScore value={student.examReadiness} size={150} />
-                <span className="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                  Exam Readiness
-                </span>
-                <span className={`text-xs font-semibold ${gcseGradeColor(examReadinessGrade)}`}>
-                  Grade {examReadinessGrade} &middot; {pct(student.examReadiness)}
-                </span>
-              </div>
-
-              {/* Predicted grade hero */}
-              <div
-                className={`flex flex-col items-center gap-1 rounded-2xl border-2 p-5 ${gradeBgClass(student.predictedGrade)}`}
-              >
-                <span className="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                  Predicted Grade
-                </span>
-                <AnimatedNumber
-                  value={student.predictedGrade}
-                  className={`font-heading text-5xl font-bold tracking-tight ${gradeColorClass(student.predictedGrade)}`}
-                />
-                <div className="flex items-center gap-1 mt-1">
-                  {student.trajectory.trend === 'improving' ? (
-                    <TrendingUp className="h-3.5 w-3.5 text-green-400" />
-                  ) : student.trajectory.trend === 'declining' ? (
-                    <TrendingDown className="h-3.5 w-3.5 text-red-400" />
-                  ) : (
-                    <Minus className="h-3.5 w-3.5 text-muted-foreground" />
-                  )}
-                  <span
-                    className={`text-xs font-medium ${
-                      student.trajectory.trend === 'improving'
-                        ? 'text-green-400'
-                        : student.trajectory.trend === 'declining'
-                          ? 'text-red-400'
-                          : 'text-muted-foreground'
-                    }`}
-                  >
-                    {student.trajectory.trend === 'improving'
-                      ? 'Upward trajectory'
-                      : student.trajectory.trend === 'declining'
-                        ? 'Downward trajectory'
-                        : 'Holding steady'}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </GlassPanel>
-
-        {/* ── Overview KPI Tiles ──────────────────────────────────────────── */}
-        <div className="mt-6 grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
-          <KpiTile
-            label="Modules"
-            value={student.modulesCompleted}
-            suffix={`/${student.totalModules}`}
-            icon={BookOpen}
-            accent="primary"
-          />
-          <KpiTile
-            label="Working Grade"
-            value={percentageToGCSEGrade(student.averageQuizScore)}
-            prefix="G"
-            icon={BarChart3}
-            accent="teal"
-          />
-          <KpiTile
-            label="Study Time"
-            value={Math.round(student.totalStudyTimeMinutes / 60)}
-            suffix="h"
-            icon={Clock}
-            accent="sage"
-          />
-          <KpiTile label="Practice" value={student.practiceSessions} icon={Target} accent="ochre" />
-          <KpiTile
-            label="Certificates"
-            value={student.certificatesEarned}
-            icon={Award}
-            accent="clay"
-          />
-          <KpiTile
-            label="Streak"
-            value={student.currentStreak}
-            suffix="d"
-            icon={Flame}
-            accent="ochre"
-          />
-        </div>
-
-        {/* ── Module Completion ────────────────────────────────────────────── */}
-        <GlassPanel accent="primary" className="mt-6 p-6">
-          <div className="flex items-center justify-between mb-3">
-            <PanelEyebrow>Module Completion</PanelEyebrow>
-            <span className="text-sm font-semibold tabular-nums">
-              <AnimatedNumber value={completionPct} suffix="%" />{' '}
-              <span className="text-muted-foreground font-normal">
-                ({student.modulesCompleted}/{student.totalModules})
-              </span>
-            </span>
-          </div>
-          <div className="h-3 w-full overflow-hidden rounded-full bg-muted">
-            <div
-              className="h-full rounded-full bg-primary transition-all duration-700 ease-out"
-              style={{ width: `${completionPct}%` }}
-            />
-          </div>
-          {/* Module status summary */}
-          <div className="mt-3 flex flex-wrap gap-4 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1">
-              <span className="h-2 w-2 rounded-full bg-green-500" />
-              {student.modules.filter((m) => m.status === 'complete').length} Complete
-            </span>
-            <span className="flex items-center gap-1">
-              <span className="h-2 w-2 rounded-full bg-amber-500" />
-              {student.modules.filter((m) => m.status === 'in_progress').length} In Progress
-            </span>
-            <span className="flex items-center gap-1">
-              <span className="h-2 w-2 rounded-full bg-border" />
-              {student.modules.filter((m) => m.status === 'not_started').length} Not Started
-            </span>
-          </div>
-        </GlassPanel>
-
-        {/* ── Exam Readiness + Skill Profile Radar ─────────────────────────── */}
-        <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          <GlassPanel accent="teal" className="p-6">
-            <div className="mb-4 flex items-center gap-2">
-              <Target className="h-4 w-4 text-teal-400" />
-              <PanelEyebrow>Exam Readiness</PanelEyebrow>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <RadialScore value={student.examReadiness} label="ready" size={180} />
-              <span className={`text-sm font-semibold ${gcseGradeColor(examReadinessGrade)}`}>
-                Grade {examReadinessGrade} &middot; {pct(student.examReadiness)}
-              </span>
-            </div>
-          </GlassPanel>
-
-          {/* Skill Profile Radar */}
-          <GlassPanel accent="sage" className="p-6">
-            <div className="mb-4 flex items-center gap-2">
-              <Activity className="h-4 w-4 text-sage-400" />
-              <PanelEyebrow>Skill Profile</PanelEyebrow>
-            </div>
-            {skillRadarData.length >= 3 ? (
-              <SkillRadar
-                data={skillRadarData}
-                angleKey="area"
-                valueKey="score"
-                height={260}
-                color={SERIES[1]}
-              />
-            ) : (
-              <div className="flex h-[260px] items-center justify-center text-sm text-muted-foreground">
-                Not enough skill data to plot a radar yet.
-              </div>
-            )}
-            {/* Accessible text equivalent */}
-            <ul className="sr-only">
-              {skillRadarData.map((s) => (
-                <li key={s.area}>
-                  {s.area}: {s.score}% (Grade {percentageToGCSEGrade(s.score)})
-                </li>
-              ))}
-            </ul>
-          </GlassPanel>
-        </div>
-
-        {/* ── Two-Column Layout: Modules + Strengths/Weaknesses ────────────── */}
-        <div className="mt-6 grid gap-6 lg:grid-cols-3">
-          {/* Left Column: Module Progress Table */}
-          <GlassPanel accent="primary" className="lg:col-span-2 p-6">
-            <div className="mb-4 flex items-center justify-between">
-              <PanelEyebrow>Module Progress</PanelEyebrow>
-              <div className="flex items-center gap-1 rounded-lg bg-background/60 p-0.5">
-                <button
-                  onClick={() => setSortBy('status')}
-                  className={`rounded-md px-2.5 py-1 text-xs font-medium transition-colors ${
-                    sortBy === 'status'
-                      ? 'bg-card text-foreground shadow-sm'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  Status
-                </button>
-                <button
-                  onClick={() => setSortBy('score')}
-                  className={`rounded-md px-2.5 py-1 text-xs font-medium transition-colors ${
-                    sortBy === 'score'
-                      ? 'bg-card text-foreground shadow-sm'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  Score
-                </button>
-              </div>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-border text-start text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    <th className="pb-3 pe-4">Module</th>
-                    <th className="pb-3 pe-4">Status</th>
-                    <th className="pb-3 pe-4">Quiz Score</th>
-                    <th className="pb-3 pe-4">Time</th>
-                    <th className="pb-3">Attempts</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-border">
-                  {sortedModules.map((mod) => (
-                    <tr key={mod.moduleId} className="group">
-                      <td className="py-3 pe-4">
-                        <div>
-                          <p className="font-medium text-foreground">{mod.moduleName}</p>
-                          <p className="text-xs text-muted-foreground">{mod.courseName}</p>
-                        </div>
-                      </td>
-                      <td className="py-3 pe-4">{statusBadge(mod.status, t)}</td>
-                      <td className="py-3 pe-4">
-                        {mod.quizScore !== null ? (
-                          <div className="flex items-center gap-2">
-                            <div className="h-2 w-16 overflow-hidden rounded-full bg-muted">
-                              <div
-                                className={`h-full rounded-full transition-all duration-500 ${scoreBarColor(mod.quizScore)}`}
-                                style={{ width: `${mod.quizScore}%` }}
-                              />
-                            </div>
-                            <span
-                              className={`text-xs font-medium tabular-nums ${scoreTextColor(mod.quizScore)}`}
-                            >
-                              {mod.quizScore}%
-                            </span>
-                          </div>
-                        ) : (
-                          <span className="text-xs text-muted-foreground">&mdash;</span>
-                        )}
-                      </td>
-                      <td className="py-3 pe-4">
-                        <span className="text-xs tabular-nums text-muted-foreground">
-                          {mod.timeSpentMinutes}m
-                        </span>
-                      </td>
-                      <td className="py-3">
-                        <span className="text-xs tabular-nums text-muted-foreground">
-                          {mod.attempts}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-
-              {sortedModules.length === 0 && (
-                <div className="py-8 text-center text-sm text-muted-foreground">
-                  No module data available.
-                </div>
-              )}
-            </div>
-          </GlassPanel>
-
-          {/* Right Column: Strengths, Weaknesses */}
-          <div className="space-y-6">
-            {/* Strengths Panel */}
-            <GlassPanel accent="sage" glow={false} className="border-green-500/20 p-5">
-              <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-green-400">
-                <Award className="h-4 w-4" />
-                Strengths
-              </h3>
-              {student.strengths.length > 0 ? (
-                <div className="space-y-2">
-                  {student.strengths.map((s, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center justify-between rounded-lg bg-green-500/10 border border-green-500/15 px-3 py-2"
-                    >
-                      <span className="flex items-center gap-2 text-sm font-medium text-foreground">
-                        <CheckCircle className="h-3.5 w-3.5 text-green-400 shrink-0" />
-                        <span className="truncate">{s.area}</span>
-                      </span>
-                      <span className="shrink-0 rounded-md bg-green-500/20 px-2 py-0.5 text-xs font-semibold text-green-400 tabular-nums">
-                        G{percentageToGCSEGrade(s.score)}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-xs text-muted-foreground">Not enough data yet.</p>
-              )}
-            </GlassPanel>
-
-            {/* Weaknesses Panel */}
-            <GlassPanel accent="clay" glow={false} className="border-red-500/20 p-5">
-              <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-red-400">
-                <XCircle className="h-4 w-4" />
-                Weaknesses
-              </h3>
-              {student.weaknesses.length > 0 ? (
-                <div className="space-y-2">
-                  {student.weaknesses.map((w, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center justify-between rounded-lg bg-red-500/10 border border-red-500/15 px-3 py-2"
-                    >
-                      <span className="flex items-center gap-2 text-sm font-medium text-foreground">
-                        <XCircle className="h-3.5 w-3.5 text-red-400 shrink-0" />
-                        <span className="truncate">{w.area}</span>
-                      </span>
-                      <span className="shrink-0 rounded-md bg-red-500/20 px-2 py-0.5 text-xs font-semibold text-red-400 tabular-nums">
-                        G{percentageToGCSEGrade(w.score)}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-xs text-muted-foreground">Not enough data yet.</p>
-              )}
-            </GlassPanel>
-
-            {/* Performance Summary */}
-            <GlassPanel accent="primary" className="p-5">
-              <div className="mb-4">
-                <PanelEyebrow>Performance Summary</PanelEyebrow>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">Overall Score</span>
-                  <span
-                    className={`font-semibold tabular-nums ${scoreTextColor(student.averageQuizScore)}`}
-                  >
-                    {student.averageQuizScore}%
-                  </span>
-                </div>
-                <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
-                  <div
-                    className={`h-full rounded-full transition-all duration-500 ${scoreBarColor(student.averageQuizScore)}`}
-                    style={{ width: `${student.averageQuizScore}%` }}
-                  />
-                </div>
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">Completion</span>
-                  <span className="font-semibold tabular-nums text-foreground">
-                    {completionPct}%
-                  </span>
-                </div>
-                <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
-                  <div
-                    className="h-full rounded-full bg-primary transition-all duration-500"
-                    style={{ width: `${completionPct}%` }}
-                  />
-                </div>
-              </div>
-            </GlassPanel>
-          </div>
-        </div>
-
-        {/* ── Quiz & Assessment Score History (Trend Area) ─────────────────── */}
-        <GlassPanel accent="primary" className="mt-6 p-6">
-          <SectionHeader
-            sectionKey="quizHistory"
-            icon={<BarChart3 className="h-4 w-4 text-indigo-400" />}
-            title="Quiz & Assessment Scores - Last 10 Attempts"
-            count={student.quizHistory?.length}
-          />
-
-          {expandedSections.quizHistory && (
-            <>
-              {quizChartData.length > 0 ? (
-                <>
-                  <div className="print:hidden">
-                    <TrendArea
-                      data={quizChartData}
-                      xKey="label"
-                      yKey="score"
-                      height={240}
-                      color={SERIES[3]}
-                      suffix="%"
-                      domain={[0, 100]}
-                    />
-                  </div>
-                  {/* Accessible / print table equivalent */}
-                  <table className="mt-2 hidden w-full text-sm print:table">
-                    <thead>
-                      <tr className="border-b border-border text-start text-xs uppercase text-muted-foreground">
-                        <th className="pb-2 pe-4">Attempt</th>
-                        <th className="pb-2">Score</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-border">
-                      {quizChartData.map((q, i) => (
-                        <tr key={i}>
-                          <td className="py-1.5 pe-4">{q.label}</td>
-                          <td className="py-1.5 tabular-nums">{q.score}%</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </>
-              ) : (
-                <div className="flex h-48 items-center justify-center text-muted-foreground text-sm">
-                  No quiz attempts recorded yet.
-                </div>
-              )}
-            </>
-          )}
-        </GlassPanel>
-
-        {/* ── Weekly Score Trend ────────────────────────────────────────────── */}
-        <GlassPanel accent="teal" className="mt-6 p-6">
-          <div className="mb-4 flex items-center gap-2">
-            <TrendingUp className="h-4 w-4 text-teal-400" />
-            <PanelEyebrow>Weekly Quiz Scores - Last 8 Weeks</PanelEyebrow>
-          </div>
-
-          {weeklyChartData.length > 0 ? (
-            <>
-              <div className="print:hidden">
-                <TrendArea
-                  data={weeklyChartData}
-                  xKey="week"
-                  yKey="score"
-                  height={240}
-                  color={SERIES[0]}
-                  suffix="%"
-                  domain={[0, 100]}
-                />
-              </div>
-              {/* Accessible / print table equivalent */}
-              <table className="mt-2 hidden w-full text-sm print:table">
-                <thead>
-                  <tr className="border-b border-border text-start text-xs uppercase text-muted-foreground">
-                    <th className="pb-2 pe-4">Week</th>
-                    <th className="pb-2 pe-4">Score</th>
-                    <th className="pb-2">Trend</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-border">
-                  {weeklyScores.map((w, i) => (
-                    <tr key={i}>
-                      <td className="py-1.5 pe-4">{w.week}</td>
-                      <td className="py-1.5 pe-4 tabular-nums">
-                        {percentageToGCSEGradeLabel(w.score)} ({w.score}%)
-                      </td>
-                      <td className="py-1.5 capitalize">{w.trend}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </>
-          ) : (
-            <div className="flex h-48 items-center justify-center text-muted-foreground text-sm">
-              No weekly score data available yet.
-            </div>
-          )}
-        </GlassPanel>
-
-        {/* ── Mock Exam Results Table ──────────────────────────────────────── */}
-        <GlassPanel accent="ochre" className="mt-6 p-6">
-          <SectionHeader
-            sectionKey="mockExams"
-            icon={<GraduationCap className="h-4 w-4 text-purple-400" />}
-            title="Mock Exam Results"
-            count={student.mockExamResults?.length}
-          />
-
-          {expandedSections.mockExams && (
-            <>
-              {student.mockExamResults && student.mockExamResults.length > 0 ? (
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="border-b border-border text-start text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                        <th className="pb-3 pe-4">Exam</th>
-                        <th className="pb-3 pe-4">Date</th>
-                        <th className="pb-3 pe-4">Score</th>
-                        <th className="pb-3 pe-4">Grade</th>
-                        <th className="pb-3">Areas for Improvement</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-border">
-                      {student.mockExamResults.map((exam) => {
-                        const examPct = Math.round((exam.score / exam.maxScore) * 100)
-                        return (
-                          <tr key={exam.id}>
-                            <td className="py-3 pe-4 font-medium text-foreground">
-                              {exam.examName}
-                            </td>
-                            <td className="py-3 pe-4 text-xs text-muted-foreground">
-                              {formatDate(exam.date)}
-                            </td>
-                            <td className="py-3 pe-4">
-                              <div className="flex items-center gap-2">
-                                <div className="h-2 w-16 overflow-hidden rounded-full bg-muted">
-                                  <div
-                                    className={`h-full rounded-full ${scoreBarColor(examPct)}`}
-                                    style={{ width: `${examPct}%` }}
-                                  />
-                                </div>
-                                <span
-                                  className={`text-xs font-semibold tabular-nums ${scoreTextColor(examPct)}`}
-                                >
-                                  {exam.score}/{exam.maxScore}
-                                </span>
-                              </div>
-                            </td>
-                            <td className="py-3 pe-4">
-                              <Badge
-                                variant="outline"
-                                className={`text-xs ${
-                                  exam.grade === '9' || exam.grade === '8'
-                                    ? 'border-purple-500/30 text-purple-400'
-                                    : exam.grade === '7' || exam.grade === '6'
-                                      ? 'border-green-500/30 text-green-400'
-                                      : exam.grade === '5' || exam.grade === '4'
-                                        ? 'border-amber-500/30 text-clay-600'
-                                        : 'border-red-500/30 text-red-400'
-                                }`}
-                              >
-                                Grade {exam.grade}
-                              </Badge>
-                            </td>
-                            <td className="py-3">
-                              <div className="flex flex-wrap gap-1">
-                                {exam.areasForImprovement.map((area, i) => (
-                                  <span
-                                    key={i}
-                                    className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-[10px] font-medium text-clay-600"
-                                  >
-                                    <AlertTriangle className="h-2.5 w-2.5" />
-                                    {area}
-                                  </span>
-                                ))}
-                              </div>
-                            </td>
-                          </tr>
-                        )
-                      })}
-                    </tbody>
-                  </table>
-                </div>
-              ) : (
-                <div className="py-8 text-center text-sm text-muted-foreground">
-                  No mock exam results recorded yet.
-                </div>
-              )}
-            </>
-          )}
-        </GlassPanel>
-
-        {/* ── Essay Feedback History ───────────────────────────────────────── */}
-        <GlassPanel accent="clay" className="mt-6 p-6">
-          <SectionHeader
-            sectionKey="essays"
-            icon={<PenLine className="h-4 w-4 text-cyan-400" />}
-            title="Essay Feedback History"
-            count={student.essaySubmissions?.length}
-          />
-
-          {expandedSections.essays && (
-            <>
-              {student.essaySubmissions && student.essaySubmissions.length > 0 ? (
-                <div className="space-y-4">
-                  {student.essaySubmissions.map((essay) => (
-                    <div
-                      key={essay.id}
-                      className="rounded-lg border border-border bg-background/60 p-4 hover:border-border/80 transition-colors"
-                    >
-                      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                        <div className="min-w-0">
-                          <h4 className="font-medium text-foreground truncate">{essay.title}</h4>
-                          <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-                            <span>{formatDate(essay.submittedAt)}</span>
-                            <span className="text-border">|</span>
-                            <span>{essay.wordCount} words</span>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2 shrink-0">
-                          {essay.feedbackPoints.length > 0 && (
-                            <ReadAloudButton
-                              text={`Feedback for ${essay.title}. ${essay.feedbackPoints.join('. ')}`}
-                              iconOnly
-                              label="Read feedback aloud"
-                              className="print:hidden"
-                            />
-                          )}
-                          <Badge
-                            variant="outline"
-                            className={`text-sm font-bold ${
-                              essay.score >= 70
-                                ? 'border-green-500/30 text-green-400'
-                                : essay.score >= 50
-                                  ? 'border-amber-500/30 text-clay-600'
-                                  : 'border-red-500/30 text-red-400'
-                            }`}
-                          >
-                            {essay.grade}
-                          </Badge>
-                          <span
-                            className={`text-sm font-semibold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(essay.score))}`}
-                          >
-                            {percentageToGCSEGradeLabel(essay.score)}
-                          </span>
-                        </div>
-                      </div>
-                      {essay.feedbackPoints.length > 0 && (
-                        <div className="mt-3 space-y-1">
-                          {essay.feedbackPoints.map((point, i) => (
-                            <div
-                              key={i}
-                              className="flex items-start gap-2 text-xs text-muted-foreground"
-                            >
-                              <span className="mt-1 h-1 w-1 rounded-full bg-muted-foreground shrink-0" />
-                              <span>{point}</span>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="py-8 text-center text-sm text-muted-foreground">
-                  No essay submissions recorded yet.
-                </div>
-              )}
-            </>
-          )}
-        </GlassPanel>
-
-        {/* ── Revision Time ────────────────────────────────────────────────── */}
-        <GlassPanel accent="sage" className="mt-6 p-6">
-          <SectionHeader
-            sectionKey="revisionTime"
-            icon={<Dumbbell className="h-4 w-4 text-indigo-400" />}
-            title="Revision Time - Last 8 Weeks"
-          />
-
-          {expandedSections.revisionTime && (
-            <>
-              {revisionChartData.length > 0 ? (
-                <>
-                  <div className="print:hidden">
-                    <RankBars
-                      data={revisionChartData}
-                      labelKey="week"
-                      valueKey="hours"
-                      height={Math.max(220, revisionChartData.length * 36)}
-                      suffix="h"
-                    />
-                  </div>
-                  {/* Accessible / print table equivalent */}
-                  <table className="mt-2 hidden w-full text-sm print:table">
-                    <thead>
-                      <tr className="border-b border-border text-start text-xs uppercase text-muted-foreground">
-                        <th className="pb-2 pe-4">Week</th>
-                        <th className="pb-2">Hours</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-border">
-                      {revisionChartData.map((r, i) => (
-                        <tr key={i}>
-                          <td className="py-1.5 pe-4">{r.week}</td>
-                          <td className="py-1.5 tabular-nums">{r.hours}h</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </>
-              ) : (
-                <div className="flex h-48 items-center justify-center text-muted-foreground text-sm">
-                  No revision time data available yet.
-                </div>
-              )}
-            </>
-          )}
-        </GlassPanel>
-
-        {/* ── Personalized Recommendations ────────────────────────────────── */}
-        <GlassPanel accent="primary" className="mt-6 p-6">
-          <SectionHeader
-            sectionKey="recommendations"
-            icon={<Zap className="h-4 w-4 text-primary" />}
-            title="What This Student Should Focus on Next"
-            count={student.recommendations.length}
-          />
-
-          {expandedSections.recommendations && (
-            <>
-              {student.recommendations.length > 0 ? (
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {student.recommendations.map((rec) => (
-                    <div
-                      key={rec.id}
-                      className={`rounded-xl border bg-background/60 p-4 transition-colors ${recommendationBorder(rec.type)}`}
-                    >
-                      <div className="mb-2 flex items-start gap-3">
-                        <div className="shrink-0 mt-0.5">{recommendationIcon(rec.type)}</div>
-                        <div className="min-w-0">
-                          <h4 className="text-sm font-semibold text-foreground leading-snug">
-                            {rec.title}
-                          </h4>
-                          <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                            {rec.description}
-                          </p>
-                        </div>
-                      </div>
-                      {rec.link && (
-                        <Link
-                          href={rec.link}
-                          className="mt-2 inline-flex items-center gap-1.5 rounded-lg bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary transition-colors hover:bg-primary/20"
-                        >
-                          <ExternalLink className="h-3 w-3" />
-                          Go to resource
-                        </Link>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-sm text-muted-foreground">
-                  Complete more activities to receive personalised recommendations.
-                </p>
-              )}
-            </>
-          )}
-        </GlassPanel>
-
-        {/* ── Teacher Notes ────────────────────────────────────────────────── */}
-        <GlassPanel accent="clay" className="mt-6 p-6 print:hidden">
-          <SectionHeader
-            sectionKey="notes"
-            icon={<FileText className="h-4 w-4 text-clay-600" />}
-            title="Teacher Notes"
-            count={notes.length}
-          />
-
-          {expandedSections.notes && (
-            <div className="space-y-4">
-              {/* Add note form */}
-              <div className="flex gap-2">
-                <textarea
-                  value={newNoteText}
-                  onChange={(e) => setNewNoteText(e.target.value)}
-                  placeholder="Add a note about this student..."
-                  className="flex-1 rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
-                  rows={2}
-                />
-                <div className="flex flex-col items-center gap-2 self-end">
-                  <DictationButton
-                    onText={(t) => setNewNoteText((v) => (v ? v.trimEnd() + ' ' : '') + t)}
-                    iconOnly
-                  />
-                  <Button
-                    size="sm"
-                    onClick={() => {
-                      if (newNoteText.trim()) {
-                        addNote(newNoteText.trim())
-                        setNewNoteText('')
-                      }
-                    }}
-                    disabled={!newNoteText.trim()}
-                    className="gap-1.5"
-                  >
-                    <Plus className="h-4 w-4" />
-                    Add
-                  </Button>
-                </div>
-              </div>
-
-              <Separator />
-
-              {/* Notes list */}
-              {notes.length > 0 ? (
-                <div className="space-y-3">
-                  {notes.map((note) => (
-                    <div
-                      key={note.id}
-                      className="rounded-lg border border-border bg-background/60 p-4"
-                    >
-                      {editingNoteId === note.id ? (
-                        <div className="space-y-2">
-                          <textarea
-                            value={editingNoteText}
-                            onChange={(e) => setEditingNoteText(e.target.value)}
-                            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
-                            rows={3}
-                          />
-                          <div className="flex items-center gap-2">
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={() => {
-                                updateNote(note.id, editingNoteText.trim())
-                                setEditingNoteId(null)
-                              }}
-                              disabled={!editingNoteText.trim()}
-                              className="gap-1"
-                            >
-                              <Save className="h-3 w-3" />
-                              Save
-                            </Button>
-                            <Button
-                              size="sm"
-                              variant="ghost"
-                              onClick={() => setEditingNoteId(null)}
-                            >
-                              Cancel
-                            </Button>
-                            <DictationButton
-                              onText={(t) =>
-                                setEditingNoteText((v) => (v ? v.trimEnd() + ' ' : '') + t)
-                              }
-                              iconOnly
-                              className="ms-auto"
-                            />
-                          </div>
-                        </div>
-                      ) : (
-                        <>
-                          <p className="text-sm text-foreground whitespace-pre-wrap">{note.text}</p>
-                          <div className="mt-2 flex items-center justify-between">
-                            <span className="text-[10px] text-muted-foreground">
-                              {formatDate(note.createdAt)}
-                              {note.updatedAt !== note.createdAt && ' (edited)'}
-                            </span>
-                            <div className="flex items-center gap-1">
-                              <button
-                                onClick={() => {
-                                  setEditingNoteId(note.id)
-                                  setEditingNoteText(note.text)
-                                }}
-                                className="rounded p-1 text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-                                title="Edit note"
-                              >
-                                <PenLine className="h-3 w-3" />
-                              </button>
-                              <button
-                                onClick={() => deleteNote(note.id)}
-                                className="rounded p-1 text-muted-foreground hover:text-red-400 hover:bg-red-500/10 transition-colors"
-                                title="Delete note"
-                              >
-                                <Trash2 className="h-3 w-3" />
-                              </button>
-                            </div>
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="py-4 text-center text-sm text-muted-foreground">
-                  No notes yet. Add a note above to keep track of observations about this student.
-                </p>
-              )}
-            </div>
-          )}
-        </GlassPanel>
-
-        {/* ── Recent Activity Feed ────────────────────────────────────────── */}
-        <GlassPanel accent="primary" className="mt-6 p-6">
-          <SectionHeader
-            sectionKey="activity"
-            icon={<Clock className="h-4 w-4 text-muted-foreground" />}
-            title="Recent Activity"
-            count={student.recentActivity.length}
-          />
-
-          {expandedSections.activity && (
-            <>
-              {student.recentActivity.length > 0 ? (
-                <div className="relative">
-                  <div className="absolute start-[11px] top-0 bottom-0 w-px bg-border" />
-
-                  <div className="space-y-0">
-                    {student.recentActivity.map((activity) => (
-                      <div key={activity.id} className="relative flex items-start gap-4 py-3">
-                        <div className="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-card border border-border">
-                          {activityIcon(activity.type)}
-                        </div>
-
-                        <div className="min-w-0 flex-1">
-                          <p className="text-sm text-foreground leading-snug">{activity.text}</p>
-                          <p className="mt-0.5 text-xs text-muted-foreground">
-                            {relativeTime(activity.timestamp)}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <div className="py-8 text-center text-sm text-muted-foreground">
-                  No recent activity.
-                </div>
-              )}
-            </>
-          )}
-        </GlassPanel>
+    <div className="space-y-6 print:text-black">
+      <div className="flex flex-wrap items-center justify-between gap-3 print:hidden">
+        <Link
+          href={firstClass ? `/school/classes/${firstClass.id}` : '/school/classes'}
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+        >
+          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+          {firstClass
+            ? t('school.pupil.back_to_class').replace(
+                '{class}',
+                firstClass.name ?? t('school.queue.unnamed_class'),
+              )
+            : t('school.pupil.back_to_classes')}
+        </Link>
+        <Button variant="outline" size="sm" onClick={() => window.print()}>
+          <Printer className="h-4 w-4" aria-hidden="true" />
+          {t('school.pupil.print')}
+        </Button>
       </div>
+
+      <GlassPanel className="p-5 sm:p-6">
+        <h1 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          {pupil.name ?? pupil.email ?? t('school.queue.unnamed_pupil')}
+        </h1>
+        <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
+          {pupil.yearGroup ? <span>{pupil.yearGroup}</span> : null}
+          {pupil.classes.length > 0 ? (
+            <span>
+              {pupil.classes.map((c) => c.name ?? t('school.queue.unnamed_class')).join(', ')}
+            </span>
+          ) : null}
+          <span>
+            {data.lastActivityAt
+              ? t('school.pupil.last_active').replace('{date}', fmt(data.lastActivityAt))
+              : t('school.pupil.no_activity')}
+          </span>
+        </p>
+      </GlassPanel>
+
+      <GlassPanel className="p-5 sm:p-6">
+        <PanelEyebrow>{t('school.pupil.objectives_title')}</PanelEyebrow>
+        <p className="mb-4 text-xs text-muted-foreground">{t('school.pupil.objectives_hint')}</p>
+        <PupilStrengths objectives={data.objectives} />
+      </GlassPanel>
+
+      <GlassPanel className="p-5 sm:p-6">
+        <PanelEyebrow>{t('school.pupil.essays_title')}</PanelEyebrow>
+        {data.essays.length === 0 ? (
+          <p className="mt-2 text-sm text-muted-foreground">{t('school.pupil.no_essays')}</p>
+        ) : (
+          <ul className="mt-3 divide-y divide-border/60">
+            {data.essays.map((e) => (
+              <li key={e.id} className="flex flex-wrap items-center gap-x-4 gap-y-2 py-3">
+                <div className="min-w-0 flex-1">
+                  <p className="line-clamp-2 text-sm text-foreground">
+                    {e.title ?? t('school.queue.untitled')}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {[e.className, fmt(e.submittedAt)].filter(Boolean).join(' · ')}
+                  </p>
+                </div>
+                <span className="text-sm tabular-nums text-foreground">
+                  {e.aiScore !== null && e.aiMaxMarks !== null
+                    ? `${e.aiScore} / ${e.aiMaxMarks}`
+                    : ''}
+                </span>
+                <StatusBadge status={e.status} />
+                <Link
+                  href={`/school/marking?open=${e.id}`}
+                  className="text-xs text-primary hover:underline print:hidden"
+                >
+                  {t('school.pupil.open_in_queue')}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </GlassPanel>
+
+      <GlassPanel className="p-5 sm:p-6">
+        <PanelEyebrow>{t('school.pupil.progress_title')}</PanelEyebrow>
+        <dl className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {[
+            {
+              label: t('school.pupil.modules_completed'),
+              value: `${analytics.modules_completed} / ${analytics.total_modules}`,
+            },
+            {
+              label: t('school.pupil.quiz_average'),
+              value: data.module_progress.some(
+                (m) => m.quiz_score !== null && m.quiz_score !== undefined,
+              )
+                ? `${analytics.avg_quiz_score}%`
+                : t('school.pupil.quiz_average_none'),
+            },
+            {
+              label: t('school.pupil.practice_sessions'),
+              value: String(analytics.practice_sessions_count),
+            },
+            { label: t('school.pupil.certificates'), value: String(analytics.certificates_count) },
+          ].map((s) => (
+            <div key={s.label} className="rounded-xl border border-border/60 bg-background/40 p-3">
+              <dt className="text-xs text-muted-foreground">{s.label}</dt>
+              <dd className="mt-1 text-lg font-semibold tabular-nums text-foreground">{s.value}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className="mt-3 text-xs text-muted-foreground">{t('school.pupil.quiz_note')}</p>
+      </GlassPanel>
     </div>
   )
 }
