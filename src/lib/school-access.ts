@@ -62,23 +62,10 @@ export async function getSchoolAccess(
 
   if (!school) return null
 
-  const rawAccessType = school.access_type ?? school.subscription_status ?? 'standard'
   const accessUntil: string | null = school.access_until ?? null
   const role = member.role as 'admin' | 'head_of_department' | 'teacher' | 'student'
 
-  // Derive a canonical accessType
-  let accessType: 'founder' | 'paid' | 'trial' | 'expired'
-  if (rawAccessType === 'founder') {
-    accessType = isFounderAccessExpired(accessUntil) ? 'expired' : 'founder'
-  } else if (rawAccessType === 'trialing') {
-    accessType = 'trial'
-  } else if (rawAccessType === 'active' || rawAccessType === 'standard') {
-    accessType = 'paid'
-  } else {
-    // expired, cancelled, etc.
-    accessType = 'expired'
-  }
-
+  const accessType = resolveSchoolAccessType(school)
   const isActive = accessType !== 'expired'
 
   // Calculate days remaining
@@ -100,9 +87,63 @@ export async function getSchoolAccess(
 }
 
 // ---------------------------------------------------------------------------
+// resolveSchoolAccessType / isSchoolAccessActive
+// THE rule for whether a school's access is live. Pure, so that the portal
+// gate, a pupil's entitlement check and anything else asking "is this school
+// active?" share one answer. Do not write a second copy of it.
+//
+// A DEFECT, FIXED 12 OCTOBER 2026. The schools.access_type CHECK allows
+// trial, founder, paid and expired, and the column defaults to 'trial', which
+// is also what /api/school/register writes for every school provisioned
+// without the FOUNDER code. The old mapping recognised only founder,
+// trialing, active and standard, so 'trial' and 'paid' fell through to
+// 'expired' and every provisioned school was locked out of its own portal
+// ("You do not have access to the school portal"). Production held no
+// schools, so nobody had seen it. checkSchoolAccessActive carried a second,
+// different copy of the rule (it honoured access_until on paid plans, the
+// gate did not); both now call this one.
+//
+// access_until ends access for every type, not only founder. A value that
+// does not parse as a date counts as lapsed: fail closed.
+// ---------------------------------------------------------------------------
+
+export interface SchoolAccessRow {
+  access_type: string | null
+  access_until: string | null
+  subscription_status: string | null
+}
+
+export function resolveSchoolAccessType(
+  school: SchoolAccessRow,
+  now: Date = new Date(),
+): SchoolAccess['accessType'] {
+  const raw = school.access_type ?? school.subscription_status ?? 'standard'
+  const until = school.access_until ? new Date(school.access_until) : null
+  const lapsed = until !== null && (Number.isNaN(until.getTime()) || until < now)
+
+  switch (raw) {
+    case 'founder':
+      return lapsed ? 'expired' : 'founder'
+    case 'paid':
+    case 'active':
+    case 'standard':
+      return lapsed ? 'expired' : 'paid'
+    case 'trial':
+    case 'trialing':
+      return lapsed ? 'expired' : 'trial'
+    default:
+      // expired, cancelled, past_due, or anything unrecognised.
+      return 'expired'
+  }
+}
+
+export function isSchoolAccessActive(school: SchoolAccessRow, now: Date = new Date()): boolean {
+  return resolveSchoolAccessType(school, now) !== 'expired'
+}
+
+// ---------------------------------------------------------------------------
 // checkSchoolAccessActive
 // Returns true if the school currently has valid access.
-// FOUNDER access expires 2026-08-31.
 // ---------------------------------------------------------------------------
 
 export async function checkSchoolAccessActive(schoolId: string): Promise<boolean> {
@@ -116,26 +157,7 @@ export async function checkSchoolAccessActive(schoolId: string): Promise<boolean
 
   if (error || !school) return false
 
-  const rawAccessType = school.access_type ?? school.subscription_status ?? 'standard'
-  const accessUntil: string | null = school.access_until ?? null
-
-  if (rawAccessType === 'founder') {
-    return !isFounderAccessExpired(accessUntil)
-  }
-
-  if (rawAccessType === 'active' || rawAccessType === 'standard') {
-    // Paid plan - active if no expiry set, or expiry is in the future
-    if (!accessUntil) return true
-    return new Date(accessUntil) >= new Date()
-  }
-
-  if (rawAccessType === 'trialing') {
-    if (!accessUntil) return true
-    return new Date(accessUntil) >= new Date()
-  }
-
-  // expired, cancelled, or unknown
-  return false
+  return isSchoolAccessActive(school as SchoolAccessRow)
 }
 
 // ---------------------------------------------------------------------------
