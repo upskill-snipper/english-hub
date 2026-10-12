@@ -12,7 +12,11 @@
     "31 findings, all listed below.",
     "",
     "11 October 2026: BulkUploadJob deleted from the list, because",
-    "supabase/migrations/20261011_bulk_upload_job.sql creates it. 30 remain."
+    "supabase/migrations/20261011_bulk_upload_job.sql creates it. 30 remain.",
+    "",
+    "12 October 2026: four school policies from 004_fix_school_rls.sql added,",
+    "because 20261012_school_access_rules.sql drops them deliberately (the",
+    "manifest does not follow DROP POLICY). 34 entries."
   ],
   "allow": [
     {
@@ -97,6 +101,26 @@
       "kind": "missing-policy",
       "object": "school_join_codes:anyone_can_read_active_join_codes",
       "why": "Deliberately dropped. A later migration replaced open read of join codes with a service-role check; restoring it would let any visitor enumerate school join codes."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "school_members:members_update_own_row",
+      "why": "Deliberately dropped by 20261012_school_access_rules.sql. It let any member update every column of their own row, role included, so a pupil could make themselves a school admin. All member writes go through the service role."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "classes:students_select_own_classes",
+      "why": "Deliberately dropped by 20261012_school_access_rules.sql: it read class_students, whose policies read classes, and Postgres refused both with 42P17. Replaced by classes_select_own_pupil, which checks through a SECURITY DEFINER function."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "class_students:school_staff_insert_class_students",
+      "why": "Deliberately dropped by 20261012_school_access_rules.sql: it let any accepted member, pupils included, add anyone to a class. Replaced by class_students_insert_staff."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "class_students:school_admin_delete_class_students",
+      "why": "Deliberately dropped by 20261012_school_access_rules.sql and replaced by class_students_delete_admin, the same rule checked through get_class_school_id."
     },
 
     {
