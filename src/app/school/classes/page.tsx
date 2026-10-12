@@ -71,14 +71,30 @@ const YEAR_GROUPS = ['Year 7', 'Year 8', 'Year 9', 'Year 10', 'Year 11', 'Year 1
 
 const EXAM_BOARDS = ['AQA', 'Edexcel', 'Edexcel IGCSE', 'Edexcel IAL', 'OCR', 'WJEC', 'CAIE IGCSE']
 
-const ACADEMIC_YEARS = ['2024-2025', '2025-2026', '2026-2027']
+/**
+ * The current academic year, September to August, and its neighbours.
+ *
+ * FIXED 12 October 2026: the form defaulted every new class to '2025-2026'
+ * and offered 2024 to 2027, so a class created for an autumn 2026 pilot was
+ * filed under the previous school year unless someone noticed.
+ */
+function currentAcademicYear(now = new Date()): string {
+  const start = now.getMonth() >= 8 ? now.getFullYear() : now.getFullYear() - 1
+  return `${start}-${start + 1}`
+}
+
+const CURRENT_ACADEMIC_YEAR = currentAcademicYear()
+const ACADEMIC_YEARS = [-1, 0, 1].map((offset) => {
+  const start = Number(CURRENT_ACADEMIC_YEAR.slice(0, 4)) + offset
+  return `${start}-${start + 1}`
+})
 
 const EMPTY_FORM: FormData = {
   name: '',
   year_group: '',
   exam_board: '',
   teacher_id: '',
-  academic_year: '2025-2026',
+  academic_year: CURRENT_ACADEMIC_YEAR,
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -418,7 +434,7 @@ export default function ClassListPage() {
       year_group: cls.year_group ?? '',
       exam_board: cls.exam_board ?? '',
       teacher_id: cls.teacher_id ?? '',
-      academic_year: cls.academic_year ?? '2025-2026',
+      academic_year: cls.academic_year ?? CURRENT_ACADEMIC_YEAR,
     })
     setEditError(null)
   }

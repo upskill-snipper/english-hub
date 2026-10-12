@@ -35,8 +35,13 @@ import { join } from 'node:path'
  * which of these features is actually wanted, not a defect fix, so the list
  * below is a recorded gap rather than something silently patched.
  *
- * The test's job is to stop it GROWING. A ninth undeclared table fails the
+ * The test's job is to stop it GROWING. A new undeclared table fails the
  * build; declaring one of these fails the build until its entry is removed.
+ *
+ * 12 October 2026: seven remain. `assignment_submissions` left the list when
+ * /api/school/analytics stopped counting assignment submissions (nothing
+ * creates one) and its comment quoting the old query went with it, so no
+ * file names the table any more.
  */
 
 const SRC = join(process.cwd(), 'src')
@@ -51,9 +56,7 @@ const KNOWN_UNDECLARED: Readonly<Record<string, string>> = {
   student_progress:
     'Queried by /api/progress and src/lib/progress/sync.ts. The progress_* tables created on 19 September cover per-activity progress; whether this aggregate table is still wanted is open.',
   assignments:
-    'Queried ONLY by the client component src/app/school/dashboard/page.tsx. The server routes were repointed to Prisma on 19 September (DATA-9) - the real store is the quoted-camelCase `Assignment` table from 0_init, verified present in production by a read-only information_schema probe. This snake_case table has never existed. The dashboard tile still reads it directly from the browser and so still shows 0; it cannot use Prisma from a client component and needs an API route of its own.',
-  assignment_submissions:
-    'Same as `assignments`: no snake_case table has ever existed. The server-side roll-ups now read Prisma `AssignmentSubmission`, whose studentId holds a SUPABASE uuid (the write path fills it from class_students.student_id), so the id spaces match.',
+    'No code queries it any more. The last read, from the browser in src/app/school/dashboard/page.tsx, was removed on 12 October 2026: the dashboard now reads GET /api/school/summary. The scanner below still finds the name because the DATA-9 comments in src/app/api/school/overview/route.ts quote the old `.from()` call. The real store is the quoted-camelCase `Assignment` table from 0_init, verified present in production by a read-only information_schema probe on 19 September; this snake_case table has never existed.',
   import_jobs:
     'Queried by /api/school/import, its [jobId] route and /api/school/export/logins. The bulk-import feature cannot work without it.',
   poems:
@@ -122,7 +125,7 @@ describe('every table the code queries', () => {
     expect(declared.size).toBeGreaterThan(30)
   })
 
-  it('is declared by a migration, except the eight recorded gaps', () => {
+  it('is declared by a migration, except the recorded gaps', () => {
     const unexpected = undeclared.filter((t) => !(t in KNOWN_UNDECLARED))
     expect(
       unexpected,
@@ -131,7 +134,7 @@ describe('every table the code queries', () => {
     ).toEqual([])
   })
 
-  it('has exactly the eight gaps found on 19 September, no more', () => {
+  it('has exactly the gaps recorded above, no more and no fewer', () => {
     // Pinned so the list cannot grow quietly. A new undeclared table is a new
     // feature written against a table nobody created.
     expect(undeclared.sort()).toEqual(Object.keys(KNOWN_UNDECLARED).sort())

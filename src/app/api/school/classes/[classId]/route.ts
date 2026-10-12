@@ -1,9 +1,26 @@
+// GET / PATCH / DELETE /api/school/classes/[classId]
+//
+// SCOPED 12 OCTOBER 2026:
+//   * GET admitted any member of the school, so a pupil holding a
+//     school_members row could read a class's whole roster, with every
+//     classmate's email address. It is now for staff only, and a teacher
+//     still sees only a class they teach.
+//   * PATCH let any member, a pupil included, rename any class in the school
+//     or reassign its teacher, which is also how one teacher could have made
+//     another teacher's class, and its pupils' essays, their own. Now an
+//     admin or head of department may edit any class; a teacher may edit
+//     only a class they teach, and may not reassign it.
+//   * Reads that fail answer 500 instead of an empty roster.
+
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { verifySchoolMember } from '@/lib/school-auth'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { readAllPages } from '../../_lib/reads'
 
 export const dynamic = 'force-dynamic'
+
+const STAFF = ['admin', 'head_of_department', 'teacher']
 
 async function verifyClassBelongsToSchool(classId: string, schoolId: string) {
   const admin = createServiceRoleClient()
@@ -40,9 +57,9 @@ export async function GET(request: NextRequest, props: { params: Promise<{ class
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
+    const member = await verifySchoolMember(user.id, STAFF)
     if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+      return NextResponse.json({ error: 'Forbidden: school staff only' }, { status: 403 })
     }
 
     const { classId } = params
@@ -73,11 +90,15 @@ export async function GET(request: NextRequest, props: { params: Promise<{ class
     }
 
     // Get students in this class
-    const { data: classStudents } = await admin
+    const { data: classStudents, error: rosterError } = await admin
       .from('class_students')
       .select('student_id, joined_at')
       .eq('class_id', classId)
       .eq('is_active', true)
+    if (rosterError) {
+      console.error('Class roster read failed:', rosterError)
+      return NextResponse.json({ error: 'Failed to read the class' }, { status: 500 })
+    }
 
     const studentIds = (classStudents || []).map((s: { student_id: string }) => s.student_id)
 
@@ -89,21 +110,44 @@ export async function GET(request: NextRequest, props: { params: Promise<{ class
       })
     }
 
-    // Fetch profiles, progress, and practice sessions in parallel
-    const [profilesResult, progressResult, practiceResult, certsResult] = await Promise.all([
+    // Progress, practice and certificates are paged: a class of thirty can
+    // pass PostgREST's 1,000-row cap, which truncates without an error. A
+    // failed page throws, and the handler answers 500.
+    const paged = <T>(table: string, columns: string, orderBy: string[]) =>
+      readAllPages<T>(table, (from, to) => {
+        let q = admin.from(table).select(columns, { count: 'exact' }).in('user_id', studentIds)
+        for (const col of orderBy) q = q.order(col)
+        return q.range(from, to)
+      })
+    type ProgressRow = {
+      user_id: string
+      module_id: string
+      course_id: string
+      quiz_score: number | null
+      completed: boolean
+      time_spent_seconds: number
+      completed_at: string | null
+    }
+    const [profilesResult, progressRows, practiceRows, certRows] = await Promise.all([
       admin
         .from('profiles')
         .select('id, email, full_name, year_group, exam_board')
         .in('id', studentIds),
-      admin
-        .from('module_progress')
-        .select(
-          'user_id, module_id, course_id, quiz_score, completed, time_spent_seconds, completed_at',
-        )
-        .in('user_id', studentIds),
-      admin.from('practice_sessions').select('user_id, created_at').in('user_id', studentIds),
-      admin.from('certificates').select('user_id').in('user_id', studentIds),
+      paged<ProgressRow>(
+        'module_progress',
+        'user_id, module_id, course_id, quiz_score, completed, time_spent_seconds, completed_at',
+        ['user_id', 'module_id'],
+      ),
+      paged<{ user_id: string }>('practice_sessions', 'user_id', ['id']),
+      paged<{ user_id: string }>('certificates', 'user_id', ['id']),
     ])
+    if (profilesResult.error) {
+      console.error('Class profiles read failed:', profilesResult.error)
+      return NextResponse.json({ error: 'Failed to read the class' }, { status: 500 })
+    }
+    const progressResult = { data: progressRows }
+    const practiceResult = { data: practiceRows }
+    const certsResult = { data: certRows }
 
     // Aggregate progress by student
     const progressByStudent = new Map<
@@ -246,9 +290,9 @@ export async function PATCH(request: NextRequest, props: { params: Promise<{ cla
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
+    const member = await verifySchoolMember(user.id, STAFF)
     if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+      return NextResponse.json({ error: 'Forbidden: school staff only' }, { status: 403 })
     }
 
     const { classId } = params
@@ -261,6 +305,33 @@ export async function PATCH(request: NextRequest, props: { params: Promise<{ cla
       body = await request.json()
     } catch {
       return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
+    }
+
+    // A teacher may edit only a class they teach, and may not hand it to
+    // anyone else (see the header).
+    if (member.role === 'teacher') {
+      const { data: owned, error: ownedError } = await createServiceRoleClient()
+        .from('classes')
+        .select('id')
+        .eq('id', classId)
+        .eq('teacher_id', member.id)
+        .maybeSingle()
+      if (ownedError) {
+        console.error('Class ownership check failed:', ownedError)
+        return NextResponse.json({ error: 'Failed to check the class' }, { status: 500 })
+      }
+      if (!owned) {
+        return NextResponse.json(
+          { error: 'Forbidden: you are not assigned to this class' },
+          { status: 403 },
+        )
+      }
+      if (body.teacher_id !== undefined) {
+        return NextResponse.json(
+          { error: 'Only an administrator or head of department can reassign a class' },
+          { status: 403 },
+        )
+      }
     }
 
     // Only allow specific fields to be updated

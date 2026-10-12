@@ -19,11 +19,11 @@ import {
   GraduationCap,
   Activity,
   ChevronRight,
+  ClipboardCheck,
 } from 'lucide-react'
 import { toast } from 'sonner'
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
-import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from '@/lib/grades'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -362,7 +362,9 @@ function AnalyticsTab({ students, t }: AnalyticsTabProps) {
     .sort((a, b) => (b.avg_quiz_score ?? 0) - (a.avg_quiz_score ?? 0))
     .slice(0, 5)
 
-  // Fabricate 4-week activity bars from last_activity data
+  // Four weekly bars, each counting the pupils whose MOST RECENT activity
+  // fell in that week. A pupil active every week counts once, in the
+  // latest; the caption says so.
   const now = Date.now()
   const weekLabels = [
     t('school.classes.detail.analytics.week.three_ago'),
@@ -381,20 +383,21 @@ function AnalyticsTab({ students, t }: AnalyticsTabProps) {
   })
   const maxCount = Math.max(...weekCounts, 1)
 
-  // Distribution of students across attainment bands. Band labels are
-  // GCSE grade strings from @/lib/grades (NOT i18n keys) - the same raw
-  // grade labels the rest of this page renders (e.g. "Grade 7").
+  // Distribution of pupils across quiz-score bands. FIXED 12 October 2026:
+  // the bands were labelled with GCSE grades ("Grade 7") computed from a
+  // quiz percentage, which is not a grade. They are labelled as the
+  // percentage ranges they are.
   const bands = [
-    { repPct: 90, test: (v: number) => v >= 80 },
-    { repPct: 65, test: (v: number) => v >= 60 && v < 80 },
-    { repPct: 45, test: (v: number) => v >= 40 && v < 60 },
-    { repPct: 20, test: (v: number) => v < 40 },
+    { label: '80-100%', test: (v: number) => v >= 80 },
+    { label: '60-79%', test: (v: number) => v >= 60 && v < 80 },
+    { label: '40-59%', test: (v: number) => v >= 40 && v < 60 },
+    { label: '0-39%', test: (v: number) => v < 40 },
   ]
   const totalScored = scored.length || 1
   const bandData = bands.map((b) => {
     const count = scored.filter((s) => b.test(s.avg_quiz_score ?? 0)).length
     return {
-      band: percentageToGCSEGradeLabel(b.repPct),
+      band: b.label,
       value: Math.round((count / totalScored) * 100),
       count,
     }
@@ -420,9 +423,7 @@ function AnalyticsTab({ students, t }: AnalyticsTabProps) {
             )}
             <p className="mt-3 text-center text-sm text-muted-foreground">
               {avgScore !== null && (
-                <span className={cn('font-semibold', scoreColor(avgScore))}>
-                  {percentageToGCSEGradeLabel(avgScore)}
-                </span>
+                <span className={cn('font-semibold', scoreColor(avgScore))}>{avgScore}%</span>
               )}{' '}
               · {scored.length}{' '}
               {scored.length === 1
@@ -503,10 +504,10 @@ function AnalyticsTab({ students, t }: AnalyticsTabProps) {
                     <span
                       className={cn(
                         'text-sm font-semibold tabular-nums',
-                        gcseGradeColor(percentageToGCSEGrade(s.avg_quiz_score ?? 0)),
+                        scoreColor(s.avg_quiz_score),
                       )}
                     >
-                      {percentageToGCSEGradeLabel(s.avg_quiz_score ?? 0)}
+                      {s.avg_quiz_score ?? 0}%
                     </span>
                   </li>
                 ))}
@@ -541,7 +542,7 @@ function AnalyticsTab({ students, t }: AnalyticsTabProps) {
             ))}
           </div>
           <p className="mt-2 text-xs text-muted-foreground">
-            {t('school.classes.detail.analytics.weekly_activity_sub')}
+            {t('school.portal.class.weekly_last_activity')}
           </p>
         </GlassPanel>
       </div>
@@ -574,9 +575,7 @@ function AnalyticsTab({ students, t }: AnalyticsTabProps) {
                     </Link>
                     <div className="flex gap-2 mt-0.5">
                       {lowScore && (
-                        <span className="text-xs text-red-400">
-                          {percentageToGCSEGradeLabel(s.avg_quiz_score ?? 0)}
-                        </span>
+                        <span className="text-xs text-red-400">{s.avg_quiz_score ?? 0}%</span>
                       )}
                       {noActivity && (
                         <span className="text-xs text-clay-600">
@@ -862,9 +861,7 @@ export default function ClassDetailPage() {
               {avgAttainment > 0 && (
                 <span className="flex items-center gap-1.5">
                   <GraduationCap className="h-4 w-4 shrink-0" aria-hidden />
-                  <span className="font-medium text-foreground">
-                    {percentageToGCSEGradeLabel(avgAttainment)}
-                  </span>
+                  <span className="font-medium text-foreground">{avgAttainment}%</span>
                   &nbsp;{t('school.classes.detail.analytics.avg_score_title')}
                 </span>
               )}
@@ -907,29 +904,30 @@ export default function ClassDetailPage() {
           </div>
         </section>
 
-        {/* Assign Work section */}
-        <GlassPanel accent="sage" className="p-6" aria-labelledby="assign-work-heading">
+        {/* This class's essays. Replaced 12 October 2026: "Set Homework" and
+            "Create Assignment" were buttons whose only effect was a
+            "coming soon" toast. */}
+        <GlassPanel accent="sage" className="p-6" aria-labelledby="class-essays-heading">
           <div className="flex items-center gap-2">
-            <BookOpen className="h-4 w-4 text-primary" aria-hidden />
-            <PanelEyebrow>{t('school.classes.detail.assign_work')}</PanelEyebrow>
+            <ClipboardCheck className="h-4 w-4 text-primary" aria-hidden />
+            <PanelEyebrow>{t('school.portal.class.essays_title')}</PanelEyebrow>
           </div>
-          <h2 id="assign-work-heading" className="sr-only">
-            {t('school.classes.detail.assign_work')}
+          <h2 id="class-essays-heading" className="sr-only">
+            {t('school.portal.class.essays_title')}
           </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {t('school.portal.class.essays_hint')}
+          </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Button
               variant="outline"
               size="sm"
-              onClick={() => toast.info(t('school.classes.detail.coming_soon_homework'))}
+              render={<Link href={`/school/marking?class=${classId}`} />}
             >
-              {t('school.classes.detail.set_homework')}
+              {t('school.portal.class.open_queue')}
             </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => toast.info(t('school.classes.detail.coming_soon_assignment'))}
-            >
-              {t('school.classes.detail.create_assignment')}
+            <Button variant="outline" size="sm" render={<Link href="/school/analytics/marking" />}>
+              {t('school.portal.nav.objectives')}
             </Button>
           </div>
         </GlassPanel>
@@ -1084,13 +1082,11 @@ export default function ClassDetailPage() {
                             </div>
                             <span
                               className={cn(
-                                'text-xs font-semibold tabular-nums w-8 shrink-0 text-end',
+                                'text-xs font-semibold tabular-nums w-10 shrink-0 text-end',
                                 scoreColor(s.avg_quiz_score),
                               )}
                             >
-                              {s.avg_quiz_score !== null
-                                ? `G${percentageToGCSEGrade(s.avg_quiz_score)}`
-                                : '-'}
+                              {s.avg_quiz_score !== null ? `${s.avg_quiz_score}%` : '-'}
                             </span>
                           </div>
                         </td>

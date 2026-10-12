@@ -331,14 +331,13 @@ function AdminAccountsSection() {
   return (
     <Card>
       <CardHeader>
+        {/* The "User Management" button that sat here linked to /school/users,
+            removed 12 October 2026 because none of its edits were saved. */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Settings className="h-5 w-5 text-muted-foreground" />
             <CardTitle>{t('school.settings.admins.title')}</CardTitle>
           </div>
-          <Button variant="outline" size="sm" render={<Link href="/school/users" />}>
-            {t('school.b15.users.title')}
-          </Button>
         </div>
         <CardDescription>{t('school.settings.admins.desc')}</CardDescription>
       </CardHeader>

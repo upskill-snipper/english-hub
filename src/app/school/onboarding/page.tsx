@@ -19,9 +19,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { createClient } from '@/lib/supabase/client'
-import { useAuthStore } from '@/store/auth-store'
 import { useT } from '@/lib/i18n/use-t'
+import type { SchoolSummary } from '@/app/api/school/summary/route'
 
 // ── Constants ────────────────────────────────────────────────────────────────
 
@@ -57,6 +56,8 @@ interface SchoolStats {
   classCount: number
   schoolName: string
   joinCode: string | null
+  /** Only a founder school is shown the founder badge; a paid pilot is not. */
+  isFounder: boolean
 }
 
 interface ClassForm {
@@ -221,7 +222,6 @@ function StepIndicator({ currentStep }: { currentStep: number }) {
 
 export default function SchoolOnboardingPage() {
   const router = useRouter()
-  const { user } = useAuthStore()
   const t = useT()
 
   // Wizard persistence
@@ -235,9 +235,11 @@ export default function SchoolOnboardingPage() {
     classCount: 0,
     schoolName: 'Your School',
     joinCode: null,
+    isFounder: false,
   })
   const [teachers, setTeachers] = useState<TeacherMember[]>([])
   const [statsLoading, setStatsLoading] = useState(true)
+  const [statsError, setStatsError] = useState<string | null>(null)
 
   // Step 2 - teacher invite
   const [inviteEmail, setInviteEmail] = useState('')
@@ -273,84 +275,70 @@ export default function SchoolOnboardingPage() {
   }, [])
 
   // ── Fetch school data on mount ───────────────────────────────────────────
+  //
+  // FIXED 12 OCTOBER 2026. This read school_members, schools and classes
+  // straight from the browser with the user's own session, so row-level
+  // security decided the answer. Production RLS on those tables was
+  // recursing (42P17); every read failed, `count ?? 0` turned the failures
+  // into zeros, and the wizard told an established school it had no
+  // teachers, pupils or classes. It now reads GET /api/school/summary, which
+  // uses the service role and the viewer's membership, and says so when that
+  // read fails instead of counting zeros.
 
   useEffect(() => {
-    if (!user) return
+    let cancelled = false
 
     async function fetchData() {
       setStatsLoading(true)
-      const supabase = createClient()
-
-      const { data: membership } = await supabase
-        .from('school_members')
-        .select('*, schools(*)')
-        .eq('user_id', user!.id)
-        .eq('invite_status', 'accepted')
-        .limit(1)
-        .single()
-
-      if (!membership?.school_id) {
-        setStatsLoading(false)
-        return
-      }
-
-      const schoolId = membership.school_id
-      const schoolRow = (membership as { schools?: { name?: string } }).schools
-
-      const [studentsRes, teachersRes, classesRes, membersListRes, joinCodesRes] =
-        await Promise.all([
-          supabase
-            .from('school_members')
-            .select('id', { count: 'exact', head: true })
-            .eq('school_id', schoolId)
-            .eq('role', 'student')
-            .eq('invite_status', 'accepted'),
-          supabase
-            .from('school_members')
-            .select('id', { count: 'exact', head: true })
-            .eq('school_id', schoolId)
-            .in('role', ['teacher', 'head_of_department'])
-            .eq('invite_status', 'accepted'),
-          supabase
-            .from('classes')
-            .select('id', { count: 'exact', head: true })
-            .eq('school_id', schoolId)
-            .eq('is_active', true),
-          supabase
-            .from('school_members')
-            .select('id, full_name')
-            .eq('school_id', schoolId)
-            .in('role', ['teacher', 'head_of_department'])
-            .eq('invite_status', 'accepted'),
-          fetch('/api/school/join-codes'),
-        ])
-
-      let joinCode: string | null = null
+      setStatsError(null)
       try {
+        const [summaryRes, joinCodesRes] = await Promise.all([
+          fetch('/api/school/summary', { cache: 'no-store' }),
+          fetch('/api/school/join-codes', { cache: 'no-store' }),
+        ])
+        if (!summaryRes.ok) {
+          const body = (await summaryRes.json().catch(() => ({}))) as { error?: string }
+          throw new Error(body.error ?? t('school.portal.dash.load_error'))
+        }
+        const summary = (await summaryRes.json()) as SchoolSummary
+
+        // The join code is optional here; a school without one simply has
+        // none to show, and the step says how to make one.
+        let joinCode: string | null = null
         if (joinCodesRes.ok) {
-          const jcData = (await joinCodesRes.json()) as {
+          const jcData = (await joinCodesRes.json().catch(() => ({}))) as {
             join_codes?: JoinCodeEntry[]
           }
           const usable = (jcData.join_codes ?? []).find((c) => c.is_usable && !c.class_id)
           if (usable) joinCode = usable.code
         }
-      } catch {
-        // ignore
-      }
 
-      setStats({
-        teacherCount: teachersRes.count ?? 0,
-        studentCount: studentsRes.count ?? 0,
-        classCount: classesRes.count ?? 0,
-        schoolName: schoolRow?.name ?? 'Your School',
-        joinCode,
-      })
-      setTeachers((membersListRes.data ?? []) as TeacherMember[])
-      setStatsLoading(false)
+        const staff = summary.staffList ?? []
+        if (cancelled) return
+        setStats({
+          teacherCount: staff.length,
+          studentCount: summary.counts.pupils,
+          classCount: summary.counts.classes,
+          schoolName: summary.school.name,
+          joinCode,
+          isFounder: summary.school.accessType === 'founder',
+        })
+        setTeachers(staff.map((s) => ({ id: s.id, full_name: s.name ?? '' })))
+      } catch (err) {
+        if (!cancelled) {
+          setStatsError(err instanceof Error ? err.message : t('school.portal.dash.load_error'))
+        }
+      } finally {
+        if (!cancelled) setStatsLoading(false)
+      }
     }
 
     fetchData()
-  }, [user])
+    return () => {
+      cancelled = true
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   // ── Navigation ───────────────────────────────────────────────────────────
 
@@ -494,10 +482,17 @@ export default function SchoolOnboardingPage() {
                 <div className="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center">
                   <GraduationCap className="w-5 h-5 text-indigo-400" />
                 </div>
-                <Badge className="bg-amber-500/10 text-clay-600 border-amber-500/20 text-xs font-semibold">
-                  {t('onboarding.s1.founder_badge')}
-                </Badge>
+                {stats.isFounder ? (
+                  <Badge className="bg-amber-500/10 text-clay-600 border-amber-500/20 text-xs font-semibold">
+                    {t('onboarding.s1.founder_badge')}
+                  </Badge>
+                ) : null}
               </div>
+              {statsError ? (
+                <p role="alert" className="mb-3 text-sm text-red-400">
+                  {statsError}
+                </p>
+              ) : null}
               <CardTitle className="text-2xl text-zinc-100 leading-snug">
                 {t('onboarding.s1.welcome_prefix')}{' '}
                 <span className="text-indigo-400">
@@ -507,7 +502,6 @@ export default function SchoolOnboardingPage() {
                       ? t('onboarding.default_school_name')
                       : stats.schoolName}
                 </span>
-                !
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-5">
@@ -1070,15 +1064,6 @@ export default function SchoolOnboardingPage() {
                   {t('onboarding.s5.go_dashboard')}
                   <ArrowRight className="w-4 h-4 ms-2" />
                 </Button>
-
-                <Link href="/school/guide">
-                  <Button
-                    variant="outline"
-                    className="w-full border-zinc-700 text-zinc-400 hover:bg-zinc-800"
-                  >
-                    {t('onboarding.s5.view_guide')}
-                  </Button>
-                </Link>
               </div>
             </CardContent>
           </Card>

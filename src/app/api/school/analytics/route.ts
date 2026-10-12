@@ -1,573 +1,390 @@
+// ─── School analytics: activity and quiz progress ──────────────────────────
+//
+// GET /api/school/analytics?period=week|month|term|year
+//
+// Scope, as everywhere in the portal (../_lib/staff-scope.ts): admins and
+// heads of department see the whole school, a teacher the pupils in the
+// classes they teach. Reads use the service role; any failed read answers
+// 500. The assessment-objective view is /api/school/analytics/marking.
+//
+// REBUILT 12 OCTOBER 2026. What the previous version reported, wrongly:
+//   * Every pupil "Never logged in", last active 1 January 1970. It read
+//     school_members.last_active_at, which nothing updates as pupils work,
+//     and filled the gap with `new Date(0)`. Last activity is now the newest
+//     thing the pupil actually did here: a quiz or module finished, a
+//     practice session, an assessment, an essay submitted for marking. A
+//     pupil with none of those is "no activity yet", and their date is null.
+//   * "Assignments submitted" counted assignments CREATED (Prisma
+//     Assignment.createdAt). Nothing in the codebase creates an
+//     AssignmentSubmission, so a true count could only ever be zero. It is
+//     replaced by essays submitted for marking, the pupils' real work in the
+//     pilot.
+//   * Quiz averages were converted into GCSE grades on the page ("Grade 6
+//     average working grade"). A quiz percentage is not a grade; they are
+//     reported as percentages.
+//   * A class with no quiz scores averaged 0 per cent; it is now null.
+//   * resourceUsage was always empty, because no table records resource use,
+//     and is gone rather than promised.
+//   * Most reads ignored their error, so a failed read became a zero.
+//
+// Reads that can exceed PostgREST's row cap are paged (../_lib/reads.ts
+// readAllPages), so a large school's history is read whole, not cut off at
+// 1,000 rows without a word.
+
 import { NextRequest, NextResponse } from 'next/server'
-import { prisma } from '@/lib/prisma'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
-import { verifySchoolMember } from '@/lib/school-auth'
-import { rateLimit, getClientIp } from '@/lib/rate-limit'
-import { getSchoolStudents, type SchoolStudentRecord } from '@/lib/school-students'
+import { rateLimit } from '@/lib/rate-limit'
+import { getSchoolStudents } from '@/lib/school-students'
+import {
+  errorResponse,
+  rateLimitResponse,
+  serverErrorResponse,
+  unauthorizedResponse,
+} from '@/lib/api-response'
+import { IN_CHUNK, STAFF_ROLES, chunks, resolveStaffScope } from '../_lib/staff-scope'
+import {
+  ScopedReadError,
+  countScopedSubmissions,
+  readAllPages,
+  readPupilIdentities,
+} from '../_lib/reads'
 
 export const dynamic = 'force-dynamic'
 
-// ---------------------------------------------------------------------------
-// Types
-// ---------------------------------------------------------------------------
+const DAY = 86_400_000
+const PERIOD_DAYS: Record<string, number> = { week: 7, month: 30, term: 90, year: 365 }
+const WEEKS = 8
+/** A pupil whose last activity is at least this old is listed as inactive. */
+const INACTIVE_DAYS = 7
+/** A quiz average below this is listed. */
+const LOW_QUIZ_AVERAGE = 40
 
-interface AtRiskStudent {
-  userId: string
-  name: string
-  email: string
-  yearGroup: string
-  lastActiveAt: string
-  issues: string[]
-}
+export type PupilIssue =
+  | { kind: 'no_activity' }
+  | { kind: 'inactive'; days: number }
+  | { kind: 'low_quiz_average'; percent: number }
 
-interface YearGroupStat {
-  yearGroup: string
-  studentCount: number
-  averageProgress: number
-  assignmentsCompleted: number
-  atRiskCount: number
-}
-
-interface TopClass {
-  classId: string
-  className: string
-  teacherName: string
-  studentCount: number
-  averageScore: number
-}
-
-interface ResourceUsage {
-  resourceName: string
-  accessCount: number
-}
-
-interface WeeklyActivity {
-  weekStart: string
-  activeStudents: number
-  assignmentsSubmitted: number
-}
-
-interface AnalyticsResponse {
+export interface AnalyticsResponse {
+  scope: 'school' | 'teacher'
+  period: string
   totalStudents: number
-  totalTeachers: number
+  /** Accepted staff; whole-school viewers only. */
+  totalTeachers: number | null
   totalClasses: number
+  /** Pupils with any recorded activity in the last 7 days. */
   activeStudentsThisWeek: number
-  assignmentsSubmittedThisWeek: number
-  /** Null when no scored work exists yet - never a fabricated value. */
-  averageScore: number | null
-  atRiskStudents: AtRiskStudent[]
-  yearGroupStats: YearGroupStat[]
-  topClasses: TopClass[]
-  resourceUsage: ResourceUsage[]
-  weeklyActivity: WeeklyActivity[]
+  /** Essays submitted for marking in the last 7 days. */
+  essaysSubmittedThisWeek: number
+  /** Mean quiz score in the period, as a percentage; null with no quiz scores. */
+  averageQuizScore: number | null
+  atRisk: {
+    total: number
+    pupils: Array<{
+      userId: string
+      name: string | null
+      yearGroup: string | null
+      /** Null when the pupil has done nothing the platform records. */
+      lastActiveAt: string | null
+      issues: PupilIssue[]
+    }>
+  }
+  yearGroupStats: Array<{
+    yearGroup: string | null
+    studentCount: number
+    averageQuizScore: number | null
+    quizzesCompleted: number
+    atRiskCount: number
+  }>
+  classStats: Array<{
+    classId: string
+    className: string | null
+    teacherName: string | null
+    studentCount: number
+    averageQuizScore: number | null
+  }>
+  weeklyActivity: Array<{ weekStart: string; activeStudents: number; essaysSubmitted: number }>
 }
 
-// NOTE: this route previously carried mock/fallback generators (a fixed
-// averageScore of 62, three invented classes, six invented resource rows and
-// a Math.random() weekly-activity series). All fabricated fallbacks were
-// removed on 2026-08-18: a children's education product must never present
-// invented figures as real school data. Empty/null values are returned
-// honestly and the UI owns the empty states.
+type Svc = ReturnType<typeof createServiceRoleClient>
 
-// ---------------------------------------------------------------------------
-// GET /api/school/analytics
-//
-// Auth: school admin or teacher (teachers see only their own classes).
-// Query params:
-//   period  - "week" | "month" | "term" | "year"  (default: "month")
-//
-// Returns comprehensive analytics for the school dashboard.
-// ---------------------------------------------------------------------------
+/**
+ * Every row of one per-pupil activity table, for these pupils, paged.
+ * `pupilColumn` holds the pupil's auth uuid; the table must have an `id`
+ * primary key, used to keep pages stable.
+ */
+async function readActivity<T>(
+  svc: Svc,
+  table: string,
+  columns: string,
+  pupilColumn: string,
+  tsColumn: string,
+  pupilIds: string[],
+  extra?: { schoolId: string },
+): Promise<T[]> {
+  const out: T[] = []
+  for (const chunk of chunks(pupilIds, IN_CHUNK)) {
+    out.push(
+      ...(await readAllPages<T>(table, (from, to) => {
+        let q = svc
+          .from(table)
+          .select(columns, { count: 'exact' })
+          .in(pupilColumn, chunk)
+          .not(tsColumn, 'is', null)
+        if (extra) q = q.eq('school_id', extra.schoolId)
+        // `id` (each table's primary key) last, so rows that share a
+        // timestamp still sort the same way on every page.
+        return q.order(tsColumn, { ascending: false }).order('id').range(from, to)
+      })),
+    )
+  }
+  return out
+}
+
+function mean(xs: number[]): number | null {
+  return xs.length > 0 ? Math.round(xs.reduce((a, b) => a + b, 0) / xs.length) : null
+}
 
 export async function GET(request: NextRequest) {
   try {
-    // ── Rate limit ──────────────────────────────────────────────────────────
-    const ip = getClientIp(request.headers)
-    const rl = await rateLimit(`school-analytics:${ip}`, { limit: 20, windowSeconds: 60 })
-    if (!rl.success) {
-      return NextResponse.json(
-        { error: 'Too many requests. Please try again later.' },
-        {
-          status: 429,
-          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
-        },
-      )
-    }
-
-    // ── Auth ────────────────────────────────────────────────────────────────
     const supabase = createServerSupabaseClient()
     const {
       data: { user },
       error: authError,
     } = await supabase.auth.getUser()
-    if (authError || !user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    if (authError || !user) return unauthorizedResponse('Sign in required')
+
+    const limit = await rateLimit(`school-analytics:${user.id}`, { limit: 20, windowSeconds: 60 })
+    if (!limit.success) return rateLimitResponse(limit.resetAt)
+
+    const svc = createServiceRoleClient()
+    const resolved = await resolveStaffScope(svc, user.id)
+    if (!resolved.ok) return errorResponse(resolved.error, resolved.status)
+    const { scope } = resolved
+
+    const period = new URL(request.url).searchParams.get('period') ?? 'month'
+    const now = Date.now()
+    const periodStart = now - (PERIOD_DAYS[period] ?? PERIOD_DAYS.month) * DAY
+
+    const classes = scope.classes.filter((c) => c.is_active !== false)
+
+    // ── Who is in scope ─────────────────────────────────────────────────────
+    const roster: Array<{ class_id: string; student_id: string }> = []
+    for (const chunk of chunks(
+      classes.map((c) => c.id),
+      IN_CHUNK,
+    )) {
+      const { data, error } = await svc
+        .from('class_students')
+        .select('class_id, student_id')
+        .in('class_id', chunk)
+        .eq('is_active', true)
+      if (error) throw new ScopedReadError('class_students', error.message)
+      roster.push(...((data ?? []) as typeof roster))
     }
 
-    const member = await verifySchoolMember(user.id, ['admin', 'head_of_department', 'teacher'])
-    if (!member) {
-      return NextResponse.json(
-        { error: 'Forbidden: school admin or teacher access required' },
-        { status: 403 },
-      )
+    const pupilIds = new Set(roster.map((r) => r.student_id))
+    const memberActive = new Map<string, string>()
+    let totalTeachers: number | null = null
+    const staffNames = new Map<string, string | null>()
+
+    if (scope.wholeSchool) {
+      const [members, staffRes] = await Promise.all([
+        getSchoolStudents(svc, scope.schoolId, { acceptedOnly: true }),
+        svc
+          .from('school_members')
+          .select('id, full_name, email, role')
+          .eq('school_id', scope.schoolId)
+          .eq('invite_status', 'accepted')
+          .in('role', [...STAFF_ROLES]),
+      ])
+      if (staffRes.error) throw new ScopedReadError('school_members', staffRes.error.message)
+      for (const m of members) {
+        if (!m.user_id) continue
+        pupilIds.add(m.user_id)
+        if (m.last_active_at) memberActive.set(m.user_id, m.last_active_at)
+      }
+      const staff = (staffRes.data ?? []) as Array<{
+        id: string
+        full_name: string | null
+        email: string | null
+        role: string
+      }>
+      totalTeachers = staff.length
+      for (const s of staff) staffNames.set(s.id, s.full_name?.trim() || s.email || null)
     }
 
-    const isTeacher = member.role === 'teacher'
-    const admin = createServiceRoleClient()
-    const schoolId = member.school_id as string
+    const ids = Array.from(pupilIds)
 
-    // ── Period window ───────────────────────────────────────────────────────
-    const { searchParams } = new URL(request.url)
-    const period = searchParams.get('period') ?? 'month'
-
-    const periodMs: Record<string, number> = {
-      week: 7 * 24 * 60 * 60 * 1000,
-      month: 30 * 24 * 60 * 60 * 1000,
-      term: 90 * 24 * 60 * 60 * 1000,
-      year: 365 * 24 * 60 * 60 * 1000,
-    }
-    const windowMs = periodMs[period] ?? periodMs.month
-    const periodStart = new Date(Date.now() - windowMs).toISOString()
-    const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
-    const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
-
-    // ── Fetch school members (staff) + canonical students ───────────────────
-    // Staff come from school_members; students come from the shared
-    // getSchoolStudents helper, which unions school_members role='student'
-    // with school_students (the join-code flow) so both write paths count.
-    const [schoolResult, membersResult, studentRecords] = await Promise.all([
-      admin.from('schools').select('id, name').eq('id', schoolId).single(),
-      admin
-        .from('school_members')
-        .select('id, user_id, full_name, email, role, year_group, last_active_at, invite_status')
-        .eq('school_id', schoolId)
-        .eq('invite_status', 'accepted'),
-      getSchoolStudents(admin, schoolId, { acceptedOnly: true }),
+    // ── What they did ───────────────────────────────────────────────────────
+    const [progress, practice, attempts, essays, identities, essaysThisWeek] = await Promise.all([
+      readActivity<{ user_id: string; completed_at: string; quiz_score: number | null }>(
+        svc,
+        'module_progress',
+        'user_id, completed_at, quiz_score',
+        'user_id',
+        'completed_at',
+        ids,
+      ),
+      readActivity<{ user_id: string; created_at: string }>(
+        svc,
+        'practice_sessions',
+        'user_id, created_at',
+        'user_id',
+        'created_at',
+        ids,
+      ),
+      readActivity<{ user_id: string; attempted_at: string }>(
+        svc,
+        'assessment_attempts',
+        'user_id, attempted_at',
+        'user_id',
+        'attempted_at',
+        ids,
+      ),
+      readActivity<{ student_id: string; submitted_at: string; class_id: string | null }>(
+        svc,
+        'marking_submissions',
+        'student_id, submitted_at, class_id',
+        'student_id',
+        'submitted_at',
+        ids,
+        { schoolId: scope.schoolId },
+      ),
+      readPupilIdentities(svc, scope.schoolId, ids),
+      countScopedSubmissions(svc, scope, { since: new Date(now - 7 * DAY).toISOString() }),
     ])
 
-    if (!schoolResult.data) {
-      return NextResponse.json({ error: 'School not found' }, { status: 404 })
+    // Every timestamp of activity, per pupil.
+    const events: Array<{ id: string; at: number }> = [
+      ...progress.map((r) => ({ id: r.user_id, at: Date.parse(r.completed_at) })),
+      ...practice.map((r) => ({ id: r.user_id, at: Date.parse(r.created_at) })),
+      ...attempts.map((r) => ({ id: r.user_id, at: Date.parse(r.attempted_at) })),
+      ...essays.map((r) => ({ id: r.student_id, at: Date.parse(r.submitted_at) })),
+      ...Array.from(memberActive.entries()).map(([id, at]) => ({ id, at: Date.parse(at) })),
+    ].filter((e) => Number.isFinite(e.at))
+
+    const last = new Map<string, number>()
+    for (const e of events) if (e.at > (last.get(e.id) ?? -Infinity)) last.set(e.id, e.at)
+
+    // Quiz scores: all-time per pupil for risk; within the period for the headline.
+    const quizAll = new Map<string, number[]>()
+    const quizPeriod: number[] = []
+    for (const r of progress) {
+      if (typeof r.quiz_score !== 'number') continue
+      const list = quizAll.get(r.user_id) ?? []
+      list.push(r.quiz_score)
+      quizAll.set(r.user_id, list)
+      if (Date.parse(r.completed_at) >= periodStart) quizPeriod.push(r.quiz_score)
     }
 
-    type MemberRow = {
-      id: string
-      user_id: string
-      full_name: string | null
-      email: string | null
-      role: string
-      year_group: string | null
-      last_active_at: string | null
-      invite_status: string
-    }
-
-    const allMembers = (membersResult.data ?? []) as MemberRow[]
-    const studentMembers = studentRecords.filter(
-      (s): s is SchoolStudentRecord & { user_id: string } => s.user_id !== null,
-    )
-    const teacherMembers = allMembers.filter(
-      (m) => m.role === 'teacher' || m.role === 'head_of_department' || m.role === 'admin',
-    )
-
-    // ── Fetch classes ───────────────────────────────────────────────────────
-    // Teachers only see their own classes; admins see all.
-    let classesQuery = admin
-      .from('classes')
-      .select('id, name, teacher_id, year_group, is_active')
-      .eq('school_id', schoolId)
-      .eq('is_active', true)
-
-    if (isTeacher) {
-      classesQuery = classesQuery.eq('teacher_id', member.id)
-    }
-
-    const { data: classRows } = await classesQuery.order('name')
-    type ClassRow = {
-      id: string
-      name: string
-      teacher_id: string | null
-      year_group: string | null
-      is_active: boolean
-    }
-    const classes = (classRows ?? []) as ClassRow[]
-    const classIds = classes.map((c) => c.id)
-
-    // ── Count unique students in classes (for teacher scope) ────────────────
-    // For admins use school_members; for teachers use class_students.
-    let scopedStudentIds: string[] = []
-
-    if (isTeacher && classIds.length > 0) {
-      const { data: csRows } = await admin
-        .from('class_students')
-        .select('student_id')
-        .in('class_id', classIds)
-        .eq('is_active', true)
-      scopedStudentIds = Array.from(
-        new Set((csRows ?? []).map((r: { student_id: string }) => r.student_id)),
-      )
-    } else {
-      scopedStudentIds = Array.from(new Set(studentMembers.map((m) => m.user_id)))
-    }
-
-    const totalStudents = isTeacher ? scopedStudentIds.length : studentMembers.length
-    const totalTeachers = teacherMembers.length
-    const totalClasses = classes.length
-
-    // ── Active students this week ───────────────────────────────────────────
-    // Primary: last_active_at on school_members (students active in last 7 days).
-    // Fallback: count from module_progress.
-    let activeStudentsThisWeek = 0
-
-    const activeFromMembers = studentMembers.filter(
-      (m) =>
-        m.last_active_at &&
-        new Date(m.last_active_at) >= sevenDaysAgo &&
-        (isTeacher ? scopedStudentIds.includes(m.user_id) : true),
-    )
-
-    if (activeFromMembers.length > 0) {
-      activeStudentsThisWeek = activeFromMembers.length
-    } else if (scopedStudentIds.length > 0) {
-      // Fallback: derive from module_progress
-      const { data: activeRows } = await admin
-        .from('module_progress')
-        .select('user_id')
-        .in('user_id', scopedStudentIds)
-        .gte('completed_at', oneWeekAgo)
-        .not('completed_at', 'is', null)
-
-      activeStudentsThisWeek = new Set(
-        (activeRows ?? []).map((r: { user_id: string }) => r.user_id),
-      ).size
-    }
-
-    // ── Assignments submitted this week ─────────────────────────────────────
-    let assignmentsSubmittedThisWeek = 0
-
-    // DATA-9 (19 September 2026). This read `.from('assignments')` - a table
-    // that DOES NOT EXIST. No migration declares it, and a read-only
-    // information_schema probe against production confirms it is absent.
-    // supabase-js returns `{ error }` rather than throwing, the error was
-    // never destructured, and `count ?? 0` turned a missing relation into a
-    // confident zero. The tile has therefore read "0 assignments" since the
-    // day it shipped, and would have gone on doing so for ever.
-    //
-    // The real store is Prisma's `Assignment` (quoted camelCase, created by
-    // 0_init, verified present in production with 0 rows). Its column is
-    // `classId`, not `class_id`.
-    //
-    // Wrapped so a database problem cannot become a 500: this value feeds a
-    // dashboard tile, and `useSchool` turns any non-ok response from these
-    // routes into "you are not a school member" across four surfaces. A count
-    // is never worth an entitlement flip.
-    if (classIds.length > 0) {
-      try {
-        assignmentsSubmittedThisWeek = await prisma.assignment.count({
-          where: { classId: { in: classIds }, createdAt: { gte: new Date(oneWeekAgo) } },
-        })
-      } catch (err) {
-        console.error('[api/school/analytics] assignment count failed', err)
-        assignmentsSubmittedThisWeek = 0
+    // ── At risk ─────────────────────────────────────────────────────────────
+    const flagged: AnalyticsResponse['atRisk']['pupils'] = []
+    for (const id of ids) {
+      const issues: PupilIssue[] = []
+      const at = last.get(id)
+      if (at === undefined) issues.push({ kind: 'no_activity' })
+      else {
+        const days = Math.floor((now - at) / DAY)
+        if (days >= INACTIVE_DAYS) issues.push({ kind: 'inactive', days })
       }
+      const avg = mean(quizAll.get(id) ?? [])
+      if (avg !== null && avg < LOW_QUIZ_AVERAGE) {
+        issues.push({ kind: 'low_quiz_average', percent: avg })
+      }
+      if (issues.length === 0) continue
+      const who = identities.get(id)
+      flagged.push({
+        userId: id,
+        name: who?.name ?? who?.email ?? null,
+        yearGroup: who?.yearGroup ?? null,
+        lastActiveAt: at === undefined ? null : new Date(at).toISOString(),
+        issues,
+      })
     }
+    // Longest without activity first; never-active pupils before them.
+    flagged.sort((a, b) => (a.lastActiveAt ?? '').localeCompare(b.lastActiveAt ?? ''))
 
-    // ── Average score from module_progress ─────────────────────────────────
-    // Null when there is no scored work in the period. The previous fixed
-    // fallback of 62 was a fabricated statistic and has been removed.
-    let averageScore: number | null = null
-
-    if (scopedStudentIds.length > 0) {
-      const { data: scoreRows } = await admin
-        .from('module_progress')
-        .select('quiz_score')
-        .in('user_id', scopedStudentIds)
-        .not('quiz_score', 'is', null)
-        .gte('completed_at', periodStart)
-
-      const scores = (scoreRows ?? [])
-        .map((r: { quiz_score: number }) => r.quiz_score)
-        .filter((s: number) => typeof s === 'number')
-
-      if (scores.length > 0) {
-        averageScore = Math.round(scores.reduce((a: number, b: number) => a + b, 0) / scores.length)
-      }
+    // ── Year groups ─────────────────────────────────────────────────────────
+    const flaggedIds = new Set(flagged.map((f) => f.userId))
+    const byYear = new Map<string | null, string[]>()
+    for (const id of ids) {
+      const yg = identities.get(id)?.yearGroup ?? null
+      byYear.set(yg, [...(byYear.get(yg) ?? []), id])
     }
-
-    // ── At-risk students ────────────────────────────────────────────────────
-    // Students inactive for 7+ days OR with low average scores.
-    const atRiskStudents: AtRiskStudent[] = []
-
-    const relevantStudentMembers = isTeacher
-      ? studentMembers.filter((m) => scopedStudentIds.includes(m.user_id))
-      : studentMembers
-
-    // Determine average scores per student for risk detection. The per-student
-    // completion counts are kept too so year-group stats can report a REAL
-    // completed-work figure instead of the previous invented one.
-    let studentScoreMap = new Map<string, number>()
-    const studentCompletedCountMap = new Map<string, number>()
-
-    if (scopedStudentIds.length > 0) {
-      const { data: allProgressRows } = await admin
-        .from('module_progress')
-        .select('user_id, quiz_score')
-        .in('user_id', scopedStudentIds)
-        .not('quiz_score', 'is', null)
-
-      const scoreAccum = new Map<string, { total: number; count: number }>()
-      for (const row of allProgressRows ?? []) {
-        const r = row as { user_id: string; quiz_score: number }
-        if (!scoreAccum.has(r.user_id)) scoreAccum.set(r.user_id, { total: 0, count: 0 })
-        const entry = scoreAccum.get(r.user_id)!
-        entry.total += r.quiz_score
-        entry.count++
-      }
-
-      for (const [uid, agg] of scoreAccum) {
-        studentScoreMap.set(uid, Math.round(agg.total / agg.count))
-        studentCompletedCountMap.set(uid, agg.count)
-      }
-    }
-
-    for (const student of relevantStudentMembers) {
-      const issues: string[] = []
-      const lastActive = student.last_active_at ? new Date(student.last_active_at) : null
-      const inactiveDays = lastActive
-        ? Math.floor((Date.now() - lastActive.getTime()) / (24 * 60 * 60 * 1000))
-        : null
-
-      if (inactiveDays !== null && inactiveDays >= 7) {
-        issues.push(`Inactive for ${inactiveDays} days`)
-      } else if (inactiveDays === null) {
-        issues.push('Never logged in')
-      }
-
-      const studentAvg = studentScoreMap.get(student.user_id)
-      if (studentAvg !== undefined && studentAvg < 40) {
-        issues.push(`Low average score: ${studentAvg}%`)
-      }
-
-      if (issues.length > 0) {
-        const entry: AtRiskStudent = {
-          userId: student.user_id,
-          name: student.full_name ?? 'Unknown',
-          email: member.role === 'admin' ? (student.email ?? '') : '',
-          yearGroup: student.year_group ?? 'Unknown',
-          lastActiveAt: student.last_active_at ?? new Date(0).toISOString(),
-          issues,
+    const yearGroupStats = Array.from(byYear.entries())
+      .map(([yearGroup, members]) => {
+        const scores = members.flatMap((id) => quizAll.get(id) ?? [])
+        return {
+          yearGroup,
+          studentCount: members.length,
+          averageQuizScore: mean(scores),
+          quizzesCompleted: scores.length,
+          atRiskCount: members.filter((id) => flaggedIds.has(id)).length,
         }
-        atRiskStudents.push(entry)
-      }
-    }
+      })
+      .sort((a, b) => (a.yearGroup ?? '~').localeCompare(b.yearGroup ?? '~'))
 
-    // If no real at-risk data, return empty array (not mocked - it's high-stakes info).
-    // Cap at 20 to keep response size reasonable.
-    const cappedAtRisk = atRiskStudents.slice(0, 20)
-
-    // ── Year group stats ────────────────────────────────────────────────────
-    // Group students by year_group from school_members.
-    const yearGroupMap = new Map<string, { studentIds: string[]; atRiskCount: number }>()
-
-    for (const student of relevantStudentMembers) {
-      const yg = student.year_group ?? 'Unknown'
-      if (!yearGroupMap.has(yg)) yearGroupMap.set(yg, { studentIds: [], atRiskCount: 0 })
-      const entry = yearGroupMap.get(yg)!
-      entry.studentIds.push(student.user_id)
-    }
-
-    // Count at-risk per year group
-    for (const risk of cappedAtRisk) {
-      const yg = risk.yearGroup
-      if (yearGroupMap.has(yg)) {
-        yearGroupMap.get(yg)!.atRiskCount++
-      }
-    }
-
-    const yearGroupStats: YearGroupStat[] = []
-    for (const [yg, data] of yearGroupMap) {
-      // Compute average progress for this year group from scoreMap
-      const ygScores = data.studentIds
-        .map((uid) => studentScoreMap.get(uid))
-        .filter((s): s is number => s !== undefined)
-
-      const averageProgress =
-        ygScores.length > 0 ? Math.round(ygScores.reduce((a, b) => a + b, 0) / ygScores.length) : 0
-
-      // assignmentsCompleted: the real count of scored module completions
-      // for this year group's students. Zero when nothing is completed -
-      // the previous pseudo-random placeholder was a fabricated statistic.
-      const assignmentsCompleted = data.studentIds.reduce(
-        (sum, uid) => sum + (studentCompletedCountMap.get(uid) ?? 0),
-        0,
+    // ── Classes ─────────────────────────────────────────────────────────────
+    const classStats = classes
+      .map((c) => {
+        const members = Array.from(
+          new Set(roster.filter((r) => r.class_id === c.id).map((r) => r.student_id)),
+        )
+        return {
+          classId: c.id,
+          className: c.name,
+          teacherName: c.teacher_id ? (staffNames.get(c.teacher_id) ?? null) : null,
+          studentCount: members.length,
+          averageQuizScore: mean(members.flatMap((id) => quizAll.get(id) ?? [])),
+        }
+      })
+      .sort(
+        (a, b) =>
+          (b.averageQuizScore ?? -1) - (a.averageQuizScore ?? -1) ||
+          (a.className ?? '').localeCompare(b.className ?? ''),
       )
 
-      yearGroupStats.push({
-        yearGroup: yg,
-        studentCount: data.studentIds.length,
-        averageProgress,
-        assignmentsCompleted,
-        atRiskCount: data.atRiskCount,
+    // ── Last eight weeks ────────────────────────────────────────────────────
+    // A pupil's activity anywhere counts towards "active"; an essay counts
+    // towards a teacher's figures only if it was written in their class.
+    const classIds = new Set(scope.classes.map((c) => c.id))
+    const essaysInScope = scope.wholeSchool
+      ? essays
+      : essays.filter((r) => r.class_id !== null && classIds.has(r.class_id))
+    const weeklyActivity: AnalyticsResponse['weeklyActivity'] = []
+    for (let i = WEEKS - 1; i >= 0; i--) {
+      const start = now - (i + 1) * 7 * DAY
+      const end = now - i * 7 * DAY
+      weeklyActivity.push({
+        weekStart: new Date(start).toISOString().split('T')[0],
+        activeStudents: new Set(
+          events.filter((e) => e.at >= start && e.at < end && pupilIds.has(e.id)).map((e) => e.id),
+        ).size,
+        essaysSubmitted: essaysInScope.filter((r) => {
+          const at = Date.parse(r.submitted_at)
+          return at >= start && at < end
+        }).length,
       })
     }
 
-    // Sort by year group name
-    yearGroupStats.sort((a, b) => a.yearGroup.localeCompare(b.yearGroup))
-
-    // ── Top classes by average score ────────────────────────────────────────
-    const topClasses: TopClass[] = []
-
-    if (classIds.length > 0) {
-      // Fetch class students
-      const { data: csAllRows } = await admin
-        .from('class_students')
-        .select('student_id, class_id')
-        .in('class_id', classIds)
-        .eq('is_active', true)
-
-      type CSRow = { student_id: string; class_id: string }
-      const csByClass = new Map<string, string[]>()
-      for (const row of (csAllRows ?? []) as CSRow[]) {
-        if (!csByClass.has(row.class_id)) csByClass.set(row.class_id, [])
-        csByClass.get(row.class_id)!.push(row.student_id)
-      }
-
-      // Build teacher lookup from allMembers (by member id, since teacher_id refs member.id)
-      const memberById = new Map(allMembers.map((m) => [m.id, m]))
-
-      for (const cls of classes) {
-        const classStudentIds = csByClass.get(cls.id) ?? []
-        const classScores = classStudentIds
-          .map((uid) => studentScoreMap.get(uid))
-          .filter((s): s is number => s !== undefined)
-
-        const avgScore =
-          classScores.length > 0
-            ? Math.round(classScores.reduce((a, b) => a + b, 0) / classScores.length)
-            : 0
-
-        const teacher = cls.teacher_id ? memberById.get(cls.teacher_id) : null
-
-        topClasses.push({
-          classId: cls.id,
-          className: cls.name,
-          teacherName: teacher?.full_name ?? 'Unknown',
-          studentCount: classStudentIds.length,
-          averageScore: avgScore,
-        })
-      }
-
-      // Sort descending by averageScore, take top 5
-      topClasses.sort((a, b) => b.averageScore - a.averageScore)
-      topClasses.splice(5)
-    }
-
-    // No class data yet is reported honestly as an empty list. The previous
-    // three invented classes (with named teachers) were fabricated data.
-
-    // ── Resource usage ──────────────────────────────────────────────────────
-    // No resource-access tracking table exists in the committed schema, so
-    // there is nothing truthful to report yet. Empty until real per-resource
-    // tracking lands - the previous six invented rows were fabricated data.
-    const resourceUsage: ResourceUsage[] = []
-
-    // ── Weekly activity (last 8 weeks) ──────────────────────────────────────
-    const weeklyActivity: WeeklyActivity[] = []
-    const WEEKS = 8
-
-    if (scopedStudentIds.length > 0) {
-      // Fetch module_progress completed_at for all students in this school
-      const eightWeeksAgo = new Date(Date.now() - WEEKS * 7 * 24 * 60 * 60 * 1000).toISOString()
-
-      const { data: weeklyProgressRows } = await admin
-        .from('module_progress')
-        .select('user_id, completed_at')
-        .in('user_id', scopedStudentIds)
-        .gte('completed_at', eightWeeksAgo)
-        .not('completed_at', 'is', null)
-
-      // Also fetch assignment submissions. Scoped to this school's students:
-      // without the filter this counted every school's submissions into this
-      // school's chart.
-      //
-      // DATA-9: read `.from('assignment_submissions')`, which does not exist -
-      // no migration declares it and a read-only probe against production
-      // confirms it absent. The error was never destructured, so `?? []`
-      // turned a missing relation into an empty chart series.
-      //
-      // The real store is Prisma's `AssignmentSubmission`. Its `studentId`
-      // holds a SUPABASE uuid, not a Prisma cuid - the write path populates it
-      // from `class_students.student_id` - so `scopedStudentIds` is the right
-      // id space here. Worth stating explicitly, because the two-identity
-      // model makes the opposite assumption the usual one, and a mismatch
-      // would silently return nothing and look exactly like a fix.
-      let weeklyAssignRows: { studentId: string; submittedAt: Date | null }[] = []
-      try {
-        weeklyAssignRows = await prisma.assignmentSubmission.findMany({
-          where: {
-            studentId: { in: scopedStudentIds },
-            submittedAt: { gte: new Date(eightWeeksAgo), not: null },
-          },
-          select: { studentId: true, submittedAt: true },
-        })
-      } catch (err) {
-        console.error('[api/school/analytics] assignment submissions read failed', err)
-        weeklyAssignRows = []
-      }
-
-      type ProgressRow = { user_id: string; completed_at: string }
-      type AssignRow = { student_id: string; submitted_at: string }
-
-      const progressRows = (weeklyProgressRows ?? []) as ProgressRow[]
-      // Map Prisma's camelCase back onto the shape the loop below expects.
-      const assignRows: AssignRow[] = weeklyAssignRows
-        .filter((r) => r.submittedAt !== null)
-        .map((r) => ({ student_id: r.studentId, submitted_at: r.submittedAt!.toISOString() }))
-
-      for (let i = WEEKS - 1; i >= 0; i--) {
-        const wStart = new Date(Date.now() - (i + 1) * 7 * 24 * 60 * 60 * 1000)
-        const wEnd = new Date(Date.now() - i * 7 * 24 * 60 * 60 * 1000)
-        const wStartISO = wStart.toISOString()
-        const wEndISO = wEnd.toISOString()
-
-        const activeInWeek = new Set(
-          progressRows
-            .filter((r) => r.completed_at >= wStartISO && r.completed_at < wEndISO)
-            .map((r) => r.user_id),
-        ).size
-
-        const submittedInWeek = assignRows.filter(
-          (r) => r.submitted_at >= wStartISO && r.submitted_at < wEndISO,
-        ).length
-
-        weeklyActivity.push({
-          weekStart: wStart.toISOString().split('T')[0],
-          activeStudents: activeInWeek,
-          assignmentsSubmitted: submittedInWeek,
-        })
-      }
-    }
-
-    // An all-zero series is returned as-is: it is the truth about a school
-    // with no activity yet. The previous Math.random() replacement chart
-    // was fabricated data and changed on every refresh.
-
-    // ── Build and return response ────────────────────────────────────────────
-    const response: AnalyticsResponse = {
-      totalStudents,
+    const body: AnalyticsResponse = {
+      scope: scope.wholeSchool ? 'school' : 'teacher',
+      period,
+      totalStudents: ids.length,
       totalTeachers,
-      totalClasses,
-      activeStudentsThisWeek,
-      assignmentsSubmittedThisWeek,
-      averageScore,
-      atRiskStudents: cappedAtRisk,
+      totalClasses: classes.length,
+      activeStudentsThisWeek: ids.filter((id) => (last.get(id) ?? -Infinity) >= now - 7 * DAY)
+        .length,
+      essaysSubmittedThisWeek: essaysThisWeek,
+      averageQuizScore: mean(quizPeriod),
+      atRisk: { total: flagged.length, pupils: flagged.slice(0, 100) },
       yearGroupStats,
-      topClasses,
-      resourceUsage,
+      classStats,
       weeklyActivity,
     }
-
-    return NextResponse.json(response)
-  } catch (error) {
-    console.error('[school/analytics] GET error:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    return NextResponse.json(body)
+  } catch (err) {
+    console.error('[school/analytics GET] failed', err)
+    return serverErrorResponse('We could not load your school analytics. Please try again.')
   }
 }

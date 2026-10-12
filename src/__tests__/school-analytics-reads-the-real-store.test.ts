@@ -31,6 +31,16 @@ import { join } from 'node:path'
  * school member" across four surfaces. Swapping a read that fails silently for
  * one that throws would convert a cosmetic zero into an app-wide entitlement
  * flip. A count is never worth a 500.
+ *
+ * 12 OCTOBER 2026: `/api/school/analytics` NO LONGER READS EITHER TABLE. Its
+ * "assignments submitted" counted Assignment rows CREATED, and nothing in the
+ * codebase creates an AssignmentSubmission, so no true count could ever be
+ * above zero. It now reports essays submitted for marking, from
+ * marking_submissions, and fails with a 500 when a read fails: `useSchool`
+ * reads only `/api/school/overview`, so the reason above for swallowing
+ * errors never applied to it, and its own page shows an error state. The
+ * assertions about wrapped Prisma reads and a zero fallback therefore hold
+ * for the overview route alone.
  */
 
 const ROOT = process.cwd()
@@ -55,51 +65,49 @@ describe('the server-side school routes', () => {
     expect(body).not.toMatch(/\.from\(\s*['"]assignment_submissions['"]\s*\)/)
   })
 
-  it.each([
-    ['analytics', ANALYTICS],
-    ['overview', OVERVIEW],
-  ])('%s reads the Prisma store instead', (_name, body) => {
-    expect(body).toMatch(/prisma\.assignment/i)
+  it('overview reads the Prisma store instead', () => {
+    expect(OVERVIEW).toMatch(/prisma\.assignment/i)
   })
 
-  it('reads submissions from Prisma too', () => {
-    expect(ANALYTICS).toMatch(/prisma\.assignmentSubmission\.findMany/)
+  it('analytics no longer reports assignments, which nobody can submit', () => {
+    expect(ANALYTICS).not.toMatch(/prisma\.assignment/i)
+    expect(ANALYTICS).not.toMatch(/assignmentsSubmitted/)
+    // It counts the pupils' real work instead.
+    expect(ANALYTICS).toMatch(/essaysSubmittedThisWeek/)
+    expect(ANALYTICS).toMatch(/'marking_submissions'/)
   })
 })
 
 describe('the new reads cannot take the school workspace down', () => {
-  it.each([
-    ['analytics', ANALYTICS],
-    ['overview', OVERVIEW],
-  ])('%s wraps every Prisma assignment read in its OWN try/catch', (_name, body) => {
-    // The first version of this assertion looked for `catch (` anywhere in the
-    // 700 characters after the call. Both routes have a catch-all at the end of
-    // the handler, so it passed with the guard deleted - it was measuring the
-    // route's own error handler, not the wrap. Removing the guard is exactly
-    // the regression this test exists to catch, and it did not catch it.
-    //
-    // Now: walk backwards from each call to the nearest block opener and
-    // require it to be `try {`.
-    const calls = [...body.matchAll(/prisma\.assignment\w*\./g)]
-    expect(calls.length).toBeGreaterThan(0)
-    for (const call of calls) {
-      const before = body.slice(0, call.index ?? 0)
-      const lastTry = before.lastIndexOf('try {')
-      const lastBrace = Math.max(before.lastIndexOf('{'), before.lastIndexOf('}'))
-      expect(
-        lastTry !== -1 && lastTry + 4 >= lastBrace,
-        `the read at offset ${call.index} is not inside a try block of its own - ` +
-          'a missing relation would throw P2021, the route would 500, and useSchool ' +
-          'would reclassify every school user as not-a-member',
-      ).toBe(true)
-    }
-  })
+  it.each([['overview', OVERVIEW]])(
+    '%s wraps every Prisma assignment read in its OWN try/catch',
+    (_name, body) => {
+      // The first version of this assertion looked for `catch (` anywhere in the
+      // 700 characters after the call. Both routes have a catch-all at the end of
+      // the handler, so it passed with the guard deleted - it was measuring the
+      // route's own error handler, not the wrap. Removing the guard is exactly
+      // the regression this test exists to catch, and it did not catch it.
+      //
+      // Now: walk backwards from each call to the nearest block opener and
+      // require it to be `try {`.
+      const calls = [...body.matchAll(/prisma\.assignment\w*\./g)]
+      expect(calls.length).toBeGreaterThan(0)
+      for (const call of calls) {
+        const before = body.slice(0, call.index ?? 0)
+        const lastTry = before.lastIndexOf('try {')
+        const lastBrace = Math.max(before.lastIndexOf('{'), before.lastIndexOf('}'))
+        expect(
+          lastTry !== -1 && lastTry + 4 >= lastBrace,
+          `the read at offset ${call.index} is not inside a try block of its own - ` +
+            'a missing relation would throw P2021, the route would 500, and useSchool ' +
+            'would reclassify every school user as not-a-member',
+        ).toBe(true)
+      }
+    },
+  )
 
-  it.each([
-    ['analytics', ANALYTICS],
-    ['overview', OVERVIEW],
-  ])('%s still falls back to a zero rather than an error', (_name, body) => {
-    expect(body).toMatch(/assignments(?:Submitted)?ThisWeek = 0/)
+  it('overview still falls back to a zero rather than an error', () => {
+    expect(OVERVIEW).toMatch(/assignments(?:Submitted)?ThisWeek = 0/)
   })
 })
 
@@ -116,9 +124,11 @@ describe('the record of what is still undeclared', () => {
     expect(RECORD).not.toContain('neither exists, so the school analytics page has never had data')
   })
 
-  it('names the client component that still reads the missing table', () => {
-    // /school/dashboard queries Supabase straight from the browser, so it
-    // cannot use Prisma and still shows 0. Recorded rather than quietly left.
+  it('records that the dashboard no longer reads the missing table', () => {
+    // /school/dashboard queried Supabase straight from the browser and so
+    // showed 0 for ever. Since 12 October 2026 it reads GET
+    // /api/school/summary, and the record says so rather than still naming it.
     expect(RECORD).toContain('src/app/school/dashboard/page.tsx')
+    expect(RECORD).toContain('removed on 12 October 2026')
   })
 })

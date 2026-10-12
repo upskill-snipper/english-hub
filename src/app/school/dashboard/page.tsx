@@ -1,820 +1,370 @@
 'use client'
 
-import { useEffect, useState, useMemo } from 'react'
+// ─── School portal dashboard ───────────────────────────────────────────────
+// /school/dashboard
+//
+// REBUILT 12 OCTOBER 2026. What the old dashboard showed, so nobody brings
+// it back:
+//   * Every count came from the browser reading school_members and classes
+//     with the user's own session. With production RLS recursing (42P17)
+//     each read failed, the failure counted as zero, and a school saw no
+//     pupils, no classes and a checklist telling it to start again.
+//   * "Assignments this week" read a table that has never existed
+//     (`assignments`), so it said 0 for ever.
+//   * "Working At", "Predicted" and "On Track" were hard-coded to "--".
+//   * "Hardest questions" listed quiz questions from the whole platform under
+//     a heading that said they were this school's pupils'.
+//   * A "View Demo Dashboard" card sent a paying school to sample data.
+//   * The year-group and class filters changed nothing on the page.
+//   * Quick actions sent teachers to admin pages that refuse them, and to an
+//     importer that queries a table that does not exist.
+// Everything now comes from GET /api/school/summary, read server-side and
+// scoped: a teacher sees their own classes, school leaders the whole school.
+// ────────────────────────────────────────────────────────────────────────────
+
+import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import {
-  LayoutDashboard,
-  Users,
-  BookOpen,
-  BarChart3,
-  Upload,
-  Download,
-  CheckCircle,
-  Clock,
-  School,
-  GraduationCap,
-  Filter,
-  BookOpenCheck,
-  ArrowRight,
   AlertTriangle,
+  BookOpen,
+  CheckCircle,
+  ClipboardCheck,
+  LayoutDashboard,
+  Mail,
+  School,
+  Target,
+  Upload,
+  Users,
 } from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { createClient } from '@/lib/supabase/client'
-import { useAuthStore } from '@/store/auth-store'
+import { Skeleton } from '@/components/ui/skeleton'
 import { useT } from '@/lib/i18n/use-t'
-// Grade utilities - used when student assessment data is available
-// import {
-//   percentageToGCSEGrade,
-//   gcseGradeColor,
-//   gcseGradeBg,
-//   calculateWorkingAtGrade,
-//   calculatePredictedGrade,
-//   calculateTargetGrade,
-//   type GCSEGrade,
-// } from "@/lib/grades"
+import { useFormatDate } from '@/lib/i18n/use-format-date'
+import type { SchoolSummary } from '@/app/api/school/summary/route'
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface DashboardStats {
-  totalStudents: number
-  totalTeachers: number
-  activeClasses: number
-  assignmentsThisWeek: number
+/**
+ * A school's last day of access as a calendar date. Provisioning stores the
+ * END of that day in UTC (23:59:59Z), which a browser east of Greenwich
+ * would show as the next day; noon UTC on the same date is that date in
+ * every timezone a school is in.
+ */
+function lastDay(accessUntil: string): string {
+  return `${accessUntil.slice(0, 10)}T12:00:00Z`
 }
 
-interface SchoolData {
-  id: string
-  name: string
-  subscription_plan: string
-  created_at: string
+function Tile({ label, value, hint }: { label: string; value: number; hint?: string }) {
+  return (
+    <div className="rounded-xl border border-border bg-card p-5 shadow-sm">
+      <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{label}</p>
+      <p className="mt-2 text-3xl font-bold tabular-nums text-foreground">{value}</p>
+      {hint ? <p className="mt-1 text-xs text-muted-foreground">{hint}</p> : null}
+    </div>
+  )
 }
-
-interface ClassData {
-  id: string
-  name: string
-  year_group: string | null
-  is_active: boolean
-}
-
-interface HardestQuestion {
-  questionId: string
-  correctRate: number
-  totalAttempts: number
-  avgTimeSeconds: number
-  difficulty: 'easy' | 'medium' | 'hard' | 'very-hard'
-}
-
-// ── Setup checklist ──────────────────────────────────────────────────────────
-
-interface SetupStep {
-  label: string
-  done: boolean
-}
-
-// ── Component ────────────────────────────────────────────────────────────────
 
 export default function SchoolDashboardPage() {
   const t = useT()
-  const { user } = useAuthStore()
-  const [school, setSchool] = useState<SchoolData | null>(null)
-  const [stats, setStats] = useState<DashboardStats>({
-    totalStudents: 0,
-    totalTeachers: 0,
-    activeClasses: 0,
-    assignmentsThisWeek: 0,
-  })
-  const [classes, setClasses] = useState<ClassData[]>([])
-  const [isFounder, setIsFounder] = useState(false)
-  const [accessUntil, setAccessUntil] = useState<string | null>(null)
-  const [setupSteps, setSetupSteps] = useState<SetupStep[]>([])
-  const [hardestQuestions, setHardestQuestions] = useState<HardestQuestion[]>([])
+  const fmt = useFormatDate()
+  const [data, setData] = useState<SchoolSummary | null>(null)
+  const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
 
-  // Filters
-  const [selectedClass, setSelectedClass] = useState<string>('all')
-  const [selectedYear, setSelectedYear] = useState<string>('all')
-
-  useEffect(() => {
-    if (!user) return
-
-    async function fetchDashboardData() {
-      const supabase = createClient()
-
-      // Fetch school membership
-      const { data: membership } = await supabase
-        .from('school_members')
-        .select('*, schools(*)')
-        .eq('user_id', user!.id)
-        .eq('invite_status', 'accepted')
-        .limit(1)
-        .single()
-
-      if (!membership?.school_id) {
-        setLoading(false)
-        return
+  const load = useCallback(async () => {
+    setLoading(true)
+    setError(null)
+    try {
+      const res = await fetch('/api/school/summary', { cache: 'no-store' })
+      if (!res.ok) {
+        const body = (await res.json().catch(() => ({}))) as { error?: string }
+        throw new Error(body.error ?? t('school.portal.dash.load_error'))
       }
-
-      const schoolData = (membership as { schools?: SchoolData }).schools
-      if (schoolData) {
-        setSchool(schoolData)
-      }
-
-      // Founder status and expiry come from GET /api/school/access - the
-      // server derives both from the schools row, so the banner can never
-      // contradict billing.
-      try {
-        const accessRes = await fetch('/api/school/access')
-        if (accessRes.ok) {
-          const accessJson = (await accessRes.json()) as {
-            accessType?: string
-            accessUntil?: string | null
-          }
-          setIsFounder(accessJson.accessType === 'founder')
-          setAccessUntil(accessJson.accessUntil ?? null)
-        }
-      } catch {
-        // Leave the banner hidden if access status cannot be loaded.
-      }
-
-      const schoolId = membership.school_id
-
-      // Fetch stats and classes in parallel
-      const [studentsRes, teachersRes, classesRes, assignmentsRes, classListRes] =
-        await Promise.all([
-          supabase
-            .from('school_members')
-            .select('id', { count: 'exact', head: true })
-            .eq('school_id', schoolId)
-            .eq('role', 'student')
-            .eq('invite_status', 'accepted'),
-          supabase
-            .from('school_members')
-            .select('id', { count: 'exact', head: true })
-            .eq('school_id', schoolId)
-            .in('role', ['teacher', 'head_of_department'])
-            .eq('invite_status', 'accepted'),
-          supabase
-            .from('classes')
-            .select('id', { count: 'exact', head: true })
-            .eq('school_id', schoolId)
-            .eq('is_active', true),
-          supabase
-            .from('assignments')
-            .select('id', { count: 'exact', head: true })
-            .eq('school_id', schoolId)
-            .gte('created_at', new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()),
-          supabase
-            .from('classes')
-            .select('id, name, year_group, is_active')
-            .eq('school_id', schoolId)
-            .eq('is_active', true)
-            .order('name'),
-        ])
-
-      const totalStudents = studentsRes.count ?? 0
-      const totalTeachers = teachersRes.count ?? 0
-      const activeClasses = classesRes.count ?? 0
-      const assignmentsThisWeek = assignmentsRes.count ?? 0
-
-      setStats({ totalStudents, totalTeachers, activeClasses, assignmentsThisWeek })
-      setClasses((classListRes.data as ClassData[]) || [])
-
-      // Build setup checklist
-      setSetupSteps([
-        { label: t('school.dash.setup.create_school'), done: true },
-        { label: t('school.dash.setup.import_teachers'), done: totalTeachers > 0 },
-        { label: t('school.dash.setup.import_students'), done: totalStudents > 0 },
-        { label: t('school.dash.setup.create_classes'), done: activeClasses > 0 },
-        {
-          label: t('school.dash.setup.assign_students'),
-          done: activeClasses > 0 && totalStudents > 0,
-        },
-      ])
-
-      // Hardest questions (real data via getHardestQuestions).
-      // Fire-and-forget: if it fails we just render the empty state.
-      try {
-        const res = await fetch('/api/school/analytics/hardest-questions?limit=10')
-        if (res.ok) {
-          const json = (await res.json()) as { hardestQuestions?: HardestQuestion[] }
-          setHardestQuestions(json.hardestQuestions ?? [])
-        }
-      } catch {
-        // Network error - leave list empty; the UI shows the empty-state copy.
-      }
-
+      setData((await res.json()) as SchoolSummary)
+    } catch (err) {
+      setData(null)
+      setError(err instanceof Error ? err.message : t('school.portal.dash.load_error'))
+    } finally {
       setLoading(false)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
-    fetchDashboardData()
-  }, [user])
+  useEffect(() => {
+    load()
+  }, [load])
 
-  // Filter classes by year group
-  const availableClasses = useMemo(() => {
-    if (selectedYear === 'all') return classes
-    return classes.filter((c) => c.year_group === selectedYear)
-  }, [selectedYear, classes])
+  if (loading) {
+    return (
+      <div className="space-y-4" aria-busy="true">
+        <Skeleton className="h-10 w-64" />
+        <Skeleton className="h-36 w-full rounded-xl" />
+        <div className="grid gap-4 sm:grid-cols-3">
+          <Skeleton className="h-28 rounded-xl" />
+          <Skeleton className="h-28 rounded-xl" />
+          <Skeleton className="h-28 rounded-xl" />
+        </div>
+      </div>
+    )
+  }
 
-  // Get unique year groups from classes
-  const yearGroups = useMemo(() => {
-    const ygs = new Set(classes.map((c) => c.year_group).filter(Boolean))
-    return Array.from(ygs).sort() as string[]
-  }, [classes])
+  if (error || !data) {
+    return (
+      <div
+        role="alert"
+        className="flex flex-col items-start gap-3 rounded-xl border border-destructive/30 bg-destructive/5 p-5"
+      >
+        <p className="flex items-center gap-2 text-sm text-destructive">
+          <AlertTriangle className="h-4 w-4 shrink-0" aria-hidden="true" />
+          {error ?? t('school.portal.dash.load_error')}
+        </p>
+        <Button variant="outline" size="sm" onClick={load}>
+          {t('school.queue.retry')}
+        </Button>
+      </div>
+    )
+  }
 
-  const isNewSchool =
-    !loading && stats.totalTeachers === 0 && stats.totalStudents === 0 && stats.activeClasses === 0
+  const isAdmin = data.viewer.role === 'admin'
+  const wholeSchool = data.viewer.scope === 'school'
+  const setupSteps = data.setup
+    ? [
+        {
+          label: t('school.portal.dash.setup.staff'),
+          done: data.setup.hasStaff,
+          href: '/school/invite',
+          adminOnly: true,
+        },
+        {
+          label: t('school.portal.dash.setup.pupils'),
+          done: data.setup.hasPupils,
+          href: '/school/admin/bulk-upload',
+          adminOnly: true,
+        },
+        {
+          label: t('school.portal.dash.setup.classes'),
+          done: data.setup.hasClasses,
+          href: '/school/classes',
+          adminOnly: false,
+        },
+        {
+          label: t('school.portal.dash.setup.enrol'),
+          done: data.setup.hasEnrolments,
+          href: '/school/classes',
+          adminOnly: false,
+        },
+      ]
+    : []
+  const setupIncomplete = setupSteps.some((s) => !s.done)
 
-  const hasData = !loading && stats.totalStudents > 0
+  const actions = [
+    {
+      href: '/school/marking',
+      label: t('school.portal.nav.marking_queue'),
+      icon: ClipboardCheck,
+      show: true,
+    },
+    {
+      href: '/school/analytics/marking',
+      label: t('school.portal.nav.objectives'),
+      icon: Target,
+      show: true,
+    },
+    { href: '/school/classes', label: t('school.sidebar.classes'), icon: BookOpen, show: true },
+    {
+      href: '/school/invite',
+      label: t('school.sidebar.invite_teachers'),
+      icon: Mail,
+      show: isAdmin,
+    },
+    {
+      href: '/school/admin/bulk-upload',
+      label: t('school.portal.nav.import_pupils'),
+      icon: Upload,
+      show: isAdmin,
+    },
+  ].filter((a) => a.show)
 
   return (
-    <div className="px-4 py-8 sm:px-6 lg:px-8">
-      {/* Header */}
-      <div className="mb-8 flex items-start justify-between gap-4">
-        <div>
-          <div className="flex items-center gap-3">
-            <LayoutDashboard className="h-7 w-7 text-primary" />
-            <h1 className="text-2xl font-bold text-foreground">{t('school.dash.title')}</h1>
-          </div>
-          {school && (
-            <p className="mt-1 flex items-center gap-2 text-muted-foreground">
-              <School className="h-4 w-4" />
-              {school.name}
-            </p>
-          )}
+    <div className="space-y-8">
+      <header>
+        <div className="flex items-center gap-3">
+          <LayoutDashboard className="h-7 w-7 text-primary" aria-hidden="true" />
+          <h1 className="text-2xl font-bold text-foreground">{t('school.dash.title')}</h1>
         </div>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm" render={<Link href="/school/analytics" />}>
-            <BarChart3 className="me-1.5 h-3.5 w-3.5" />
-            {t('school.sidebar.analytics')}
-          </Button>
-          <Button variant="outline" size="sm" render={<Link href="/school/guide" />}>
-            {t('school.sidebar.setup_guide')}
-          </Button>
-        </div>
-      </div>
+        <p className="mt-1 flex items-center gap-2 text-muted-foreground">
+          <School className="h-4 w-4" aria-hidden="true" />
+          {data.school.name}
+        </p>
+        {data.school.accessUntil ? (
+          <p className="mt-1 text-xs text-muted-foreground">
+            {t('school.portal.dash.access_until').replace(
+              '{date}',
+              fmt(lastDay(data.school.accessUntil)),
+            )}
+          </p>
+        ) : null}
+      </header>
 
-      {/* FOUNDER access banner - expiry from /api/school/access, never hard-coded */}
-      {isFounder && accessUntil && (
-        <div className="mb-6 rounded-lg border border-amber-500/30 bg-amber-500/10 px-5 py-4">
-          <div className="flex items-start gap-3">
-            <span className="mt-0.5 text-lg">&#9733;</span>
-            <div>
-              <p className="font-semibold text-clay-600">
-                {t('school.dash.founder.active_until_prefix')}{' '}
-                {new Date(accessUntil).toLocaleDateString('en-GB', {
-                  day: 'numeric',
-                  month: 'long',
-                  year: 'numeric',
-                })}
-                .
-              </p>
-              <p className="mt-0.5 text-sm text-clay-600/80">
-                {t('school.dash.founder.rate_locked')}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ── Filters (shown when there's data) ────────────────────────────── */}
-      {hasData && yearGroups.length > 0 && (
-        <div className="mb-6 flex flex-wrap items-center gap-3">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Filter className="h-4 w-4" />
-            <span className="font-medium">{t('school.dash.filter_label')}</span>
-          </div>
-          <select
-            value={selectedYear}
-            onChange={(e) => {
-              setSelectedYear(e.target.value)
-              setSelectedClass('all')
-            }}
-            className="rounded-md border border-border bg-background px-3 py-1.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-          >
-            <option value="all">{t('school.dash.filter.all_year_groups')}</option>
-            {yearGroups.map((yg) => (
-              <option key={yg} value={yg}>
-                {yg}
-              </option>
-            ))}
-          </select>
-          <select
-            value={selectedClass}
-            onChange={(e) => setSelectedClass(e.target.value)}
-            className="rounded-md border border-border bg-background px-3 py-1.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-          >
-            <option value="all">{t('school.dash.filter.all_classes')}</option>
-            {availableClasses.map((c) => (
-              <option key={c.id} value={c.name}>
-                {c.name}
-              </option>
-            ))}
-          </select>
-          {(selectedYear !== 'all' || selectedClass !== 'all') && (
-            <button
-              onClick={() => {
-                setSelectedYear('all')
-                setSelectedClass('all')
-              }}
-              className="text-xs text-primary hover:underline"
+      {/* ── Marking: the part of the portal a teacher opens it for ─────── */}
+      <section
+        aria-labelledby="dash-marking"
+        className="rounded-xl border border-primary/30 bg-primary/5 p-5"
+      >
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <h2
+              id="dash-marking"
+              className="flex items-center gap-2 text-base font-semibold text-foreground"
             >
-              {t('school.dash.filter.clear')}
-            </button>
-          )}
-        </div>
-      )}
-
-      {/* ── Hero Stat Cards ──────────────────────────────────────────────── */}
-      <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {/* Total Students */}
-        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
-          <div className="flex items-start justify-between">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-blue-400/80">
-                {t('school.dash.stat.total_students')}
-              </p>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
-                {loading ? <span className="text-muted-foreground">--</span> : stats.totalStudents}
-              </p>
-              <p className="mt-1 text-xs text-muted-foreground">
-                {t('school.dash.stat.enrolled_students')}
-              </p>
-            </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/15">
-              <Users className="h-5 w-5 text-blue-400" />
-            </div>
+              <ClipboardCheck className="h-4 w-4 text-primary" aria-hidden="true" />
+              {t('school.portal.dash.marking_title')}
+            </h2>
+            <p className="mt-2 text-2xl font-bold tabular-nums text-foreground">
+              {t('school.portal.dash.awaiting').replace('{n}', String(data.marking.awaitingReview))}
+            </p>
+            <dl className="mt-3 grid grid-cols-1 gap-x-6 gap-y-1 text-sm text-muted-foreground sm:grid-cols-3">
+              <div className="flex gap-2">
+                <dt>{t('school.portal.dash.submitted_7d')}</dt>
+                <dd className="font-semibold tabular-nums text-foreground">
+                  {data.marking.submittedLast7Days}
+                </dd>
+              </div>
+              <div className="flex gap-2">
+                <dt>{t('school.portal.dash.reviewed_7d')}</dt>
+                <dd className="font-semibold tabular-nums text-foreground">
+                  {data.marking.reviewedLast7Days}
+                </dd>
+              </div>
+              <div className="flex gap-2">
+                <dt>{t('school.portal.dash.not_marked')}</dt>
+                <dd className="font-semibold tabular-nums text-foreground">
+                  {data.marking.notYetMarked}
+                </dd>
+              </div>
+            </dl>
           </div>
+          <Button render={<Link href="/school/marking" />}>
+            {t('school.objectives.open_queue')}
+          </Button>
         </div>
+      </section>
 
-        {/* Active Classes */}
-        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
-          <div className="flex items-start justify-between">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-emerald-400/80">
-                {t('school.dash.stat.active_classes')}
-              </p>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
-                {loading ? <span className="text-muted-foreground">--</span> : stats.activeClasses}
-              </p>
-              <p className="mt-1 text-xs text-muted-foreground">
-                <Link href="/school/classes" className="text-primary hover:underline">
-                  {t('school.dash.stat.manage_classes')}
-                </Link>
-              </p>
-            </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/15">
-              <BookOpen className="h-5 w-5 text-emerald-400" />
-            </div>
-          </div>
-        </div>
-
-        {/* Total Teachers */}
-        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-violet-500/10 to-violet-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
-          <div className="flex items-start justify-between">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-violet-400/80">
-                {t('school.dash.stat.teachers')}
-              </p>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
-                {loading ? <span className="text-muted-foreground">--</span> : stats.totalTeachers}
-              </p>
-              <p className="mt-1 text-xs text-muted-foreground">
-                {t('school.dash.stat.active_staff')}
-              </p>
-            </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/15">
-              <GraduationCap className="h-5 w-5 text-violet-400" />
-            </div>
-          </div>
-        </div>
-
-        {/* Assignments This Week */}
-        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-amber-500/10 to-amber-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
-          <div className="flex items-start justify-between">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-clay-600/80">
-                {t('school.dash.stat.assignments')}
-              </p>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
-                {loading ? (
-                  <span className="text-muted-foreground">--</span>
-                ) : (
-                  stats.assignmentsThisWeek
-                )}
-              </p>
-              <p className="mt-1 text-xs text-muted-foreground">
-                {t('school.dash.stat.set_this_week')}
-              </p>
-            </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-500/15">
-              <BarChart3 className="h-5 w-5 text-clay-600" />
-            </div>
-          </div>
-        </div>
-      </div>
+      <section aria-label={t('school.dash.title')} className="grid gap-4 sm:grid-cols-3">
+        <Tile
+          label={t('school.portal.dash.pupils')}
+          value={data.counts.pupils}
+          hint={
+            wholeSchool
+              ? t('school.objectives.overall_school')
+              : t('school.portal.dash.pupils_teacher_hint')
+          }
+        />
+        <Tile label={t('school.sidebar.classes')} value={data.counts.classes} />
+        {data.counts.staff !== null ? (
+          <Tile label={t('school.portal.dash.staff')} value={data.counts.staff} />
+        ) : null}
+      </section>
 
       <div className="grid gap-6 lg:grid-cols-3">
-        {/* Left column: main content */}
-        <div className="space-y-6 lg:col-span-2">
-          {/* Student Overview - shown when school has data */}
-          {hasData && (
-            <Card className="border-border bg-card/60">
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
-                    <Users className="h-4 w-4 text-blue-400" />
-                    {t('school.dash.overview.title')}
-                  </CardTitle>
-                  <Link href="/school/analytics" className="text-xs text-primary hover:underline">
-                    {t('school.dash.overview.full_analytics')}
-                  </Link>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-sm text-muted-foreground">
-                  {t('school.dash.overview.body')}
-                </p>
-                <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-lg border border-border bg-background/50 p-4 text-center">
-                    <p className="text-xs text-muted-foreground">
-                      {t('school.dash.grade.working_at')}
-                    </p>
-                    <p className="mt-1 text-2xl font-bold text-foreground">--</p>
-                    <p className="mt-0.5 text-[11px] text-muted-foreground">
-                      {t('school.dash.grade.avg_across')}
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-border bg-background/50 p-4 text-center">
-                    <p className="text-xs text-muted-foreground">
-                      {t('school.dash.grade.predicted')}
-                    </p>
-                    <p className="mt-1 text-2xl font-bold text-foreground">--</p>
-                    <p className="mt-0.5 text-[11px] text-muted-foreground">
-                      {t('school.dash.grade.based_on_trajectory')}
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-border bg-background/50 p-4 text-center">
-                    <p className="text-xs text-muted-foreground">
-                      {t('school.dash.grade.on_track')}
-                    </p>
-                    <p className="mt-1 text-2xl font-bold text-foreground">--%</p>
-                    <p className="mt-0.5 text-[11px] text-muted-foreground">
-                      {t('school.dash.grade.meeting_target')}
-                    </p>
-                  </div>
-                </div>
-                <div className="mt-4 rounded-lg border border-blue-500/20 bg-blue-500/5 p-3">
-                  <p className="text-xs text-blue-300">{t('school.dash.overview.hint')}</p>
-                </div>
-              </CardContent>
-            </Card>
-          )}
-
-          {/* Quick actions */}
-          <Card className="border-border bg-card/60">
-            <CardHeader>
-              <CardTitle className="text-base font-semibold text-foreground">
-                {t('school.dash.quick_actions.title')}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="grid gap-3 sm:grid-cols-2">
-              <Button
-                variant="outline"
-                className="h-auto justify-start gap-3 px-4 py-3"
-                render={<Link href="/school/import" />}
-              >
-                <Upload className="h-4 w-4 shrink-0 text-primary" />
-                <div className="text-start">
-                  <p className="text-sm font-medium">{t('school.dash.quick_actions.import')}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {t('school.dash.quick_actions.import_sub')}
-                  </p>
-                </div>
-              </Button>
-
-              <Button
-                variant="outline"
-                className="h-auto justify-start gap-3 px-4 py-3"
-                render={<Link href="/school/classes" />}
-              >
-                <BookOpen className="h-4 w-4 shrink-0 text-primary" />
-                <div className="text-start">
-                  <p className="text-sm font-medium">
-                    {t('school.dash.quick_actions.manage_classes')}
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    {t('school.dash.quick_actions.manage_classes_sub')}
-                  </p>
-                </div>
-              </Button>
-
-              <Button
-                variant="outline"
-                className="h-auto justify-start gap-3 px-4 py-3"
-                render={<Link href="/school/analytics" />}
-              >
-                <BarChart3 className="h-4 w-4 shrink-0 text-primary" />
-                <div className="text-start">
-                  <p className="text-sm font-medium">
-                    {t('school.dash.quick_actions.view_analytics')}
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    {t('school.dash.quick_actions.view_analytics_sub')}
-                  </p>
-                </div>
-              </Button>
-
-              <Button
-                variant="outline"
-                className="h-auto justify-start gap-3 px-4 py-3"
-                render={<Link href="/school/import" />}
-              >
-                <Download className="h-4 w-4 shrink-0 text-primary" />
-                <div className="text-start">
-                  <p className="text-sm font-medium">
-                    {t('school.dash.quick_actions.download_logins')}
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    {t('school.dash.quick_actions.download_logins_sub')}
-                  </p>
-                </div>
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Hardest Questions - powered by getHardestQuestions (real data) */}
-          <Card className="border-border bg-card/60">
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
-                  <AlertTriangle className="h-4 w-4 text-clay-600" />
-                  {t('school.dash.hardest.title')}
-                </CardTitle>
-                <Link href="/school/analytics" className="text-xs text-primary hover:underline">
-                  {t('school.dash.hardest.view_all')}
-                </Link>
-              </div>
-            </CardHeader>
-            <CardContent>
-              {/*
-                TODO(school-scope): results are currently platform-wide.
-                Filtering to this school's students requires joining through
-                school_members.user_id → quiz_responses.user_id - tracked for a
-                follow-up. For now this surfaces useful signal while data grows.
-              */}
-              {loading ? (
-                <p className="text-sm text-muted-foreground">{t('school.dash.hardest.loading')}</p>
-              ) : hardestQuestions.length === 0 ? (
-                <div className="flex flex-col items-center justify-center rounded-lg border border-dashed border-border bg-background/40 py-8 text-center">
-                  <AlertTriangle className="mb-3 h-8 w-8 text-muted-foreground/40" />
-                  <p className="text-sm text-muted-foreground">{t('school.dash.hardest.empty')}</p>
-                </div>
-              ) : (
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="border-b border-border/60">
-                        <th className="pb-2 text-start font-medium text-muted-foreground">
-                          {t('school.dash.hardest.col.topic')}
-                        </th>
-                        <th className="pb-2 text-end font-medium text-muted-foreground">
-                          {t('school.dash.hardest.col.correct')}
-                        </th>
-                        <th className="pb-2 text-end font-medium text-muted-foreground">
-                          {t('school.dash.hardest.col.attempts')}
-                        </th>
-                        <th className="pb-2 text-end font-medium text-muted-foreground">
-                          {t('school.dash.hardest.col.avg_time')}
-                        </th>
-                        <th className="pb-2 ps-3 text-start font-medium text-muted-foreground">
-                          {t('school.dash.hardest.col.difficulty')}
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-border/40">
-                      {hardestQuestions.map((q) => {
-                        // Best-effort topic derivation: many question IDs look
-                        // like `topic.subtopic` or `topic-123`. Split on the
-                        // first `.` or `-` to surface something human-readable.
-                        const topicRaw = q.questionId.split(/[.-]/)[0] ?? q.questionId
-                        const topic = topicRaw.replace(/_/g, ' ')
-                        return (
-                          <tr key={q.questionId} className="hover:bg-muted/20 transition-colors">
-                            <td className="py-2 font-medium">
-                              <span className="block truncate" title={q.questionId}>
-                                {topic || q.questionId}
-                              </span>
-                            </td>
-                            <td className="py-2 text-end tabular-nums">{q.correctRate}%</td>
-                            <td className="py-2 text-end tabular-nums text-muted-foreground">
-                              {q.totalAttempts}
-                            </td>
-                            <td className="py-2 text-end tabular-nums text-muted-foreground">
-                              {q.avgTimeSeconds}s
-                            </td>
-                            <td className="py-2 ps-3">
-                              <span
-                                className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-semibold capitalize ${
-                                  q.difficulty === 'very-hard'
-                                    ? 'bg-red-500/15 text-red-400'
-                                    : q.difficulty === 'hard'
-                                      ? 'bg-orange-500/15 text-orange-400'
-                                      : q.difficulty === 'medium'
-                                        ? 'bg-amber-500/15 text-clay-600'
-                                        : 'bg-emerald-500/15 text-emerald-400'
-                                }`}
-                              >
-                                {q.difficulty.replace('-', ' ')}
-                              </span>
-                            </td>
-                          </tr>
-                        )
-                      })}
-                    </tbody>
-                  </table>
-                </div>
-              )}
-            </CardContent>
-          </Card>
-
-          {/* Reading Age Section */}
-          {hasData && (
-            <Card className="border-border bg-card/60">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
-                  <BookOpenCheck className="h-4 w-4 text-cyan-400" />
-                  {t('school.dash.reading_age.title')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-3 text-sm text-muted-foreground">
-                  {t('school.dash.reading_age.body')}
-                </p>
-                <Button variant="outline" size="sm" render={<Link href="/assessment/reading" />}>
-                  <BookOpenCheck className="me-1.5 h-3.5 w-3.5" />
-                  {t('school.dash.reading_age.cta')}
-                </Button>
-              </CardContent>
-            </Card>
-          )}
-
-          {/* Activity placeholder */}
-          {!hasData && (
-            <Card className="border-border bg-card/60">
-              <CardHeader>
-                <CardTitle className="text-base font-semibold text-foreground">
-                  {t('school.dash.activity.title')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-col items-center justify-center py-8 text-center">
-                  <Clock className="mb-3 h-8 w-8 text-muted-foreground/40" />
-                  <p className="text-sm text-muted-foreground">{t('school.dash.activity.empty')}</p>
-                </div>
-              </CardContent>
-            </Card>
-          )}
-        </div>
-
-        {/* Right column: setup + grade info */}
-        <div className="space-y-6">
-          {isNewSchool && (
-            <Card className="border-border bg-card/60">
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-base font-semibold text-foreground">
-                    {t('school.dash.setup.progress_title')}
-                  </CardTitle>
-                  <Badge variant="secondary" className="text-xs">
-                    {t('school.dash.setup.getting_started')}
-                  </Badge>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ol className="space-y-3">
-                  {setupSteps.map((step, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      {step.done ? (
-                        <CheckCircle className="h-5 w-5 shrink-0 text-green-500" />
-                      ) : (
-                        <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-border text-xs font-bold text-muted-foreground">
-                          {index + 1}
-                        </div>
-                      )}
-                      <span
-                        className={
-                          step.done
-                            ? 'text-sm text-muted-foreground line-through'
-                            : 'text-sm font-medium text-foreground'
-                        }
-                      >
-                        {step.label}
-                      </span>
-                    </li>
-                  ))}
-                </ol>
-                <Button className="mt-6 w-full" size="sm" render={<Link href="/school/guide" />}>
-                  {t('school.dash.setup.view_guide')}
-                </Button>
-              </CardContent>
-            </Card>
-          )}
-
-          {!isNewSchool && !loading && (
-            <Card className="border-border bg-card/60">
-              <CardHeader>
-                <CardTitle className="text-base font-semibold text-foreground">
-                  {t('school.dash.setup.complete_title')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-col items-center py-4 text-center">
-                  <CheckCircle className="mb-3 h-10 w-10 text-green-500" />
-                  <p className="text-sm text-muted-foreground">
-                    {t('school.dash.setup.complete_body')}
-                  </p>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="mt-4"
-                    render={<Link href="/school/guide" />}
+        <section aria-labelledby="dash-classes" className="space-y-3 lg:col-span-2">
+          <h2 id="dash-classes" className="text-base font-semibold text-foreground">
+            {wholeSchool ? t('school.sidebar.classes') : t('school.portal.dash.your_classes')}
+          </h2>
+          {data.classes.length === 0 ? (
+            <p className="rounded-xl border border-dashed border-border p-5 text-sm text-muted-foreground">
+              {wholeSchool
+                ? t('school.portal.dash.no_classes_school')
+                : t('school.queue.no_classes_body')}
+            </p>
+          ) : (
+            <ul className="divide-y divide-border rounded-xl border border-border bg-card">
+              {data.classes.map((c) => (
+                <li key={c.id}>
+                  <Link
+                    href={`/school/classes/${c.id}`}
+                    className="flex flex-wrap items-center justify-between gap-2 px-4 py-3 hover:bg-accent/40"
                   >
-                    {t('school.sidebar.setup_guide')}
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                    <span className="font-medium text-foreground">
+                      {c.name ?? t('school.queue.unnamed_class')}
+                      <span className="ms-2 text-xs font-normal text-muted-foreground">
+                        {[c.yearGroup, c.examBoard].filter(Boolean).join(' · ')}
+                      </span>
+                    </span>
+                    <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                      <Users className="h-3.5 w-3.5" aria-hidden="true" />
+                      {t('school.portal.dash.class_pupils').replace('{n}', String(c.pupils))}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           )}
+        </section>
 
-          {/* Grade System Info */}
-          {hasData && (
-            <Card className="border-border bg-card/60">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-base font-semibold text-foreground">
-                  {t('school.dash.grade_tracking.title')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  <div className="rounded-lg border border-border bg-background/50 px-3 py-2.5">
-                    <p className="text-xs font-medium text-foreground">
-                      {t('school.dash.grade.working_at')}
-                    </p>
-                    <p className="mt-0.5 text-[11px] text-muted-foreground">
-                      {t('school.dash.grade_tracking.working_at_desc')}
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-border bg-background/50 px-3 py-2.5">
-                    <p className="text-xs font-medium text-foreground">
-                      {t('school.dash.grade.predicted')}
-                    </p>
-                    <p className="mt-0.5 text-[11px] text-muted-foreground">
-                      {t('school.dash.grade_tracking.predicted_desc')}
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-border bg-background/50 px-3 py-2.5">
-                    <p className="text-xs font-medium text-foreground">
-                      {t('school.dash.grade.target')}
-                    </p>
-                    <p className="mt-0.5 text-[11px] text-muted-foreground">
-                      {t('school.dash.grade_tracking.target_desc')}
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/5 px-3 py-2.5">
-                    <p className="text-xs font-medium text-emerald-400">
-                      {t('school.dash.grade.on_track')}
-                    </p>
-                    <p className="mt-0.5 text-[11px] text-muted-foreground">
-                      {t('school.dash.grade_tracking.on_track_desc')}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          )}
+        <div className="space-y-6">
+          {data.setup && setupIncomplete ? (
+            <section
+              aria-labelledby="dash-setup"
+              className="rounded-xl border border-border bg-card p-5"
+            >
+              <h2 id="dash-setup" className="mb-3 text-base font-semibold text-foreground">
+                {t('school.dash.setup.progress_title')}
+              </h2>
+              <ol className="space-y-3">
+                {setupSteps.map((step, i) => {
+                  const linkable = !step.done && (!step.adminOnly || isAdmin)
+                  return (
+                    <li key={step.label} className="flex items-center gap-3 text-sm">
+                      {step.done ? (
+                        <CheckCircle
+                          className="h-5 w-5 shrink-0 text-green-600"
+                          aria-hidden="true"
+                        />
+                      ) : (
+                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-border text-xs font-bold text-muted-foreground">
+                          {i + 1}
+                        </span>
+                      )}
+                      {linkable ? (
+                        <Link href={step.href} className="font-medium text-primary hover:underline">
+                          {step.label}
+                        </Link>
+                      ) : (
+                        <span
+                          className={
+                            step.done ? 'text-muted-foreground line-through' : 'text-foreground'
+                          }
+                        >
+                          {step.label}
+                        </span>
+                      )}
+                    </li>
+                  )
+                })}
+              </ol>
+            </section>
+          ) : null}
 
-          {/* Demo link */}
-          <Card className="border-border bg-card/60">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base font-semibold text-foreground">
-                {t('school.dash.demo.title')}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="mb-3 text-xs text-muted-foreground">{t('school.dash.demo.body')}</p>
-              <Button
-                variant="outline"
-                size="sm"
-                className="w-full"
-                render={<Link href="/demo/school" />}
-              >
-                {t('school.dash.demo.cta')}
-                <ArrowRight className="ms-1.5 h-3.5 w-3.5" />
-              </Button>
-            </CardContent>
-          </Card>
+          <section
+            aria-labelledby="dash-actions"
+            className="rounded-xl border border-border bg-card p-5"
+          >
+            <h2 id="dash-actions" className="mb-3 text-base font-semibold text-foreground">
+              {t('school.dash.quick_actions.title')}
+            </h2>
+            <ul className="space-y-1">
+              {actions.map((a) => (
+                <li key={a.href}>
+                  <Link
+                    href={a.href}
+                    className="flex items-center gap-3 rounded-lg px-2 py-2 text-sm text-foreground hover:bg-accent/40"
+                  >
+                    <a.icon className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                    {a.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
       </div>
     </div>

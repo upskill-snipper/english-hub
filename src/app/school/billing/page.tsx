@@ -1,692 +1,92 @@
-'use client'
+// ─── Access and billing ─────────────────────────────────────────────────────
+// /school/billing
+//
+// REPLACED 12 OCTOBER 2026. The page offered four per-pupil price tiers
+// (£12, £15, £22 and £26 a pupil, with "founder" halves), a "founding schools
+// remaining" counter and renewal pricing, none of it from
+// src/constants/pricing.ts, and all of it contradicting what schools are
+// actually sold: a pilot for a term or a founding place for a year, agreed
+// in writing and invoiced, with no billing inside the portal. A head of
+// department reading it would have seen prices nobody had offered them.
+//
+// It now states the school's real access, read server-side by
+// requireSchoolAdmin (the same rule as the portal gate), that schools are
+// invoiced, and whom to ask. It names no prices: the price is in the
+// school's own agreement, and the one place prices live in code is
+// src/constants/pricing.ts.
+//
+// Admins and heads of department only, matching the sidebar.
 
-import { useEffect, useState } from 'react'
-import {
-  CreditCard,
-  Calendar,
-  CheckCircle,
-  AlertTriangle,
-  Mail,
-  TrendingUp,
-  Users,
-  Building2,
-  GraduationCap,
-  Sparkles,
-} from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { useT } from '@/lib/i18n/use-t'
+import { requireSchoolAdmin } from '@/lib/school-access'
 import { SCHOOLS_CONTACT_EMAIL } from '@/config/company'
+import { getLocale, t } from '@/lib/i18n/t'
+import { formatDate, type FormatLocale } from '@/lib/utils'
 
-// ---------------------------------------------------------------------------
-// Types
-// ---------------------------------------------------------------------------
+export const dynamic = 'force-dynamic'
 
-interface SchoolAccessData {
-  schoolId: string
-  schoolName: string
-  accessType: 'founder' | 'paid' | 'trial' | 'expired'
-  accessUntil: string | null
-  isActive: boolean
-  daysRemaining: number | null
-  userRole: 'admin' | 'head_of_department' | 'teacher' | 'student'
-  renewalPrice?: number
-  renewalCurrency?: string
-}
+export default async function SchoolBillingPage() {
+  const access = await requireSchoolAdmin()
+  const locale = await getLocale()
 
-interface UsageStats {
-  totalStudents: number
-  totalTeachers: number
-}
-
-// ---------------------------------------------------------------------------
-// Constants
-// ---------------------------------------------------------------------------
-
-const BILLING_EMAIL = SCHOOLS_CONTACT_EMAIL
-const RENEWAL_WARNING_DAYS = 60
-const FOUNDING_SCHOOLS_TOTAL = 10
-
-interface PricingTier {
-  id: string
-  name: string
-  yearGroups: string
-  pricePerPupil: number
-  founderPricePerPupil: number
-  description: string
-}
-
-const PRICING_TIERS: PricingTier[] = [
-  {
-    id: 'ks3',
-    name: 'KS3 Only',
-    yearGroups: 'Years 7\u20139',
-    pricePerPupil: 12,
-    founderPricePerPupil: 6,
-    description: 'Key Stage 3 English resources for Years 7\u20139',
-  },
-  {
-    id: 'ks4',
-    name: 'KS4 Only',
-    yearGroups: 'Years 10\u201311',
-    pricePerPupil: 15,
-    founderPricePerPupil: 7.5,
-    description: 'GCSE English resources for Years 10\u201311',
-  },
-  {
-    id: 'ks3-ks4',
-    name: 'KS3 + KS4',
-    yearGroups: 'Years 7\u201311',
-    pricePerPupil: 22,
-    founderPricePerPupil: 11,
-    description: 'Complete KS3 and GCSE English coverage',
-  },
-  {
-    id: 'whole-secondary',
-    name: 'Whole Secondary',
-    yearGroups: 'Years 7\u201313',
-    pricePerPupil: 26,
-    founderPricePerPupil: 13,
-    description: 'Full secondary including KS5 / Sixth Form',
-  },
-]
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString('en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
-}
-
-function buildRenewalMailto(schoolName: string): string {
-  const subject = encodeURIComponent(`Renewal - ${schoolName}`)
-  return `mailto:${BILLING_EMAIL}?subject=${subject}`
-}
-
-// ---------------------------------------------------------------------------
-// Sub-components
-// ---------------------------------------------------------------------------
-
-function LoadingSkeleton() {
-  return (
-    <div className="space-y-6 animate-pulse">
-      {[1, 2, 3].map((i) => (
-        <div key={i} className="h-40 rounded-xl bg-muted/40" />
-      ))}
-    </div>
-  )
-}
-
-function FounderPlanCard({
-  access,
-  daysRemaining,
-}: {
-  access: SchoolAccessData
-  daysRemaining: number
-}) {
-  const t = useT()
-  const showRenewalWarning = daysRemaining <= RENEWAL_WARNING_DAYS
-
-  return (
-    <Card className="border-amber-500/30 bg-amber-500/5">
-      <CardHeader className="pb-3">
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <CreditCard className="h-5 w-5 text-clay-600" />
-            <CardTitle className="text-foreground">{t('school.billing.current_plan')}</CardTitle>
-          </div>
-          <Badge className="shrink-0 border border-amber-500/40 bg-amber-500/15 text-clay-600 text-xs font-semibold">
-            {t('school.billing.founder_badge')}
-          </Badge>
-        </div>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        {/* Plan heading + active badge */}
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="text-2xl font-bold tracking-tight text-foreground">
-            {t('school.billing.founder_access_heading')}
-          </h2>
-          <Badge className="w-fit border border-emerald-500/30 bg-emerald-500/15 text-emerald-400 text-xs">
-            <CheckCircle className="me-1 h-3 w-3" />
-            {t('school.billing.active')}
-          </Badge>
-        </div>
-
-        {/* Expiry info */}
-        <div className="rounded-lg border border-border bg-muted/30 px-4 py-3 space-y-2">
-          <div className="flex items-center gap-2 text-sm text-foreground">
-            <Calendar className="h-4 w-4 text-muted-foreground" />
-            <span className="font-medium">{t('school.billing.free_until')}</span>
-          </div>
-          <p className="text-sm text-muted-foreground ps-6">
-            {t('school.billing.after_expiry_pre')}{' '}
-            <span className="text-foreground font-medium">&pound;6/pupil/year</span>{' '}
-            {t('school.billing.after_expiry_founder_suffix')}{' '}
-            <span className="text-foreground font-medium">&pound;12/pupil/year</span>{' '}
-            {t('school.billing.after_expiry_standard_suffix')}
-          </p>
-          <div className="ps-6 pt-1">
-            <span className="inline-block rounded-md bg-muted/60 px-3 py-1 text-sm font-semibold text-foreground tabular-nums">
-              {daysRemaining}{' '}
-              {daysRemaining === 1
-                ? t('school.billing.day_singular')
-                : t('school.billing.day_plural')}{' '}
-              {t('school.billing.remaining')}
-            </span>
-          </div>
-        </div>
-
-        {/* Renewal warning */}
-        {showRenewalWarning && (
-          <div className="rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 flex items-start gap-3">
-            <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-clay-600" />
-            <p className="text-sm text-amber-700">
-              {t('school.billing.warning_pre')}{' '}
-              <span className="font-semibold">
-                {daysRemaining} {t('school.billing.day_plural')}
-              </span>
-              . {t('school.billing.warning_post')}
-            </p>
-          </div>
-        )}
-
-        {/* Actions */}
-        <div className="flex flex-col gap-2 pt-1 sm:flex-row">
-          <Button
-            variant="outline"
-            className="border-amber-500/40 text-clay-600 hover:bg-amber-500/10 hover:text-amber-700"
-            render={<a href={buildRenewalMailto(access.schoolName)} />}
-          >
-            <Mail className="me-2 h-4 w-4" />
-            {t('school.billing.contact_renew')}
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-muted-foreground hover:text-foreground"
-            render={
-              <a
-                href={`mailto:${BILLING_EMAIL}?subject=Early%20Renewal%20-%20${encodeURIComponent(access.schoolName)}`}
-              />
-            }
-          >
-            {t('school.billing.renew_early')}
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
-  )
-}
-
-function PaidPlanCard({ access }: { access: SchoolAccessData }) {
-  const t = useT()
-  const [showCancelConfirm, setShowCancelConfirm] = useState(false)
-
-  return (
-    <Card className="border-border bg-card/60">
-      <CardHeader className="pb-3">
-        <div className="flex items-center gap-3">
-          <CreditCard className="h-5 w-5 text-muted-foreground" />
-          <CardTitle className="text-foreground">{t('school.billing.current_plan')}</CardTitle>
-        </div>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="text-2xl font-bold tracking-tight text-foreground">
-            {t('school.billing.subscription_heading')}
-          </h2>
-          <div className="flex items-center gap-2">
-            <Badge className="w-fit border border-emerald-500/30 bg-emerald-500/15 text-emerald-400 text-xs">
-              <CheckCircle className="me-1 h-3 w-3" />
-              {t('school.billing.active')}
-            </Badge>
-            <span className="text-sm text-muted-foreground font-medium">
-              {t('school.billing.per_pupil_pricing')}
-            </span>
-          </div>
-        </div>
-
-        {access.accessUntil && (
-          <div className="rounded-lg border border-border bg-muted/30 px-4 py-3 space-y-1">
-            <div className="flex items-center gap-2 text-sm">
-              <Calendar className="h-4 w-4 text-muted-foreground" />
-              <span className="text-muted-foreground">{t('school.billing.renews_label')}</span>
-              <span className="font-medium text-foreground">{formatDate(access.accessUntil)}</span>
-            </div>
-            {access.daysRemaining !== null && (
-              <p className="ps-6 text-xs text-muted-foreground">
-                {access.daysRemaining} {t('school.billing.days_until_renewal')}
-              </p>
-            )}
-          </div>
-        )}
-
-        {!showCancelConfirm ? (
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-muted-foreground hover:text-destructive"
-            onClick={() => setShowCancelConfirm(true)}
-          >
-            {t('school.billing.cancel_subscription')}
-          </Button>
-        ) : (
-          <div className="rounded-lg border border-destructive/40 bg-destructive/5 px-4 py-3 space-y-3">
-            <p className="text-sm font-medium text-destructive">
-              {t('school.billing.cancel_sure')}
-            </p>
-            <p className="text-xs text-muted-foreground">{t('school.billing.cancel_note')}</p>
-            <div className="flex gap-2">
-              <Button
-                size="sm"
-                variant="outline"
-                className="border-destructive/40 text-destructive hover:bg-destructive/10"
-                render={
-                  <a
-                    href={`mailto:${BILLING_EMAIL}?subject=Cancel%20Subscription%20-%20${encodeURIComponent(access.schoolName)}`}
-                  />
-                }
-              >
-                <Mail className="me-1.5 h-3.5 w-3.5" />
-                {t('school.billing.email_cancel')}
-              </Button>
-              <Button variant="ghost" size="sm" onClick={() => setShowCancelConfirm(false)}>
-                {t('school.billing.keep_subscription')}
-              </Button>
-            </div>
-          </div>
-        )}
-      </CardContent>
-    </Card>
-  )
-}
-
-function PricingTierRow({ tier, isFounder }: { tier: PricingTier; isFounder: boolean }) {
-  const displayPrice = isFounder ? tier.founderPricePerPupil : tier.pricePerPupil
-  const formattedPrice = displayPrice % 1 === 0 ? `${displayPrice}` : displayPrice.toFixed(2)
-
-  return (
-    <div className="flex items-center justify-between rounded-lg border border-border bg-muted/20 px-4 py-3">
-      <div className="space-y-0.5">
-        <p className="text-sm font-semibold text-foreground">{tier.name}</p>
-        <p className="text-xs text-muted-foreground">{tier.yearGroups}</p>
-      </div>
-      <div className="text-end">
-        <div className="flex items-baseline gap-1">
-          <span className="text-lg font-bold text-foreground tabular-nums">
-            &pound;{formattedPrice}
-          </span>
-          <span className="text-xs text-muted-foreground">/pupil/year</span>
-        </div>
-        {isFounder && (
-          <p className="text-xs text-muted-foreground line-through">
-            &pound;{tier.pricePerPupil}/pupil/year
-          </p>
-        )}
-      </div>
-    </div>
-  )
-}
-
-function PricingCard({ isFounder }: { isFounder: boolean }) {
-  const t = useT()
-  const featureKeys = [
-    'school.billing.feat.per_pupil',
-    'school.billing.feat.all_teachers',
-    'school.billing.feat.full_library',
-    'school.billing.feat.admin_portal',
-    'school.billing.feat.analytics',
-    'school.billing.feat.priority_support',
-  ]
-  return (
-    <Card className="border-border bg-card/60">
-      <CardHeader className="pb-3">
-        <div className="flex items-center gap-3">
-          <GraduationCap className="h-5 w-5 text-muted-foreground" />
-          <div>
-            <CardTitle className="text-foreground">{t('school.billing.pricing_title')}</CardTitle>
-            <CardDescription className="mt-0.5">{t('school.billing.pricing_desc')}</CardDescription>
-          </div>
-        </div>
-      </CardHeader>
-      <CardContent className="space-y-5">
-        {/* Founding Schools banner */}
-        <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 px-4 py-3 flex items-start gap-3">
-          <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-clay-600" />
-          <div className="space-y-1">
-            <p className="text-sm font-semibold text-amber-700">
-              {t('school.billing.founding_50_title')}
-            </p>
-            <p className="text-xs text-muted-foreground">
-              {t('school.billing.founding_50_pre')} {FOUNDING_SCHOOLS_TOTAL}{' '}
-              {isFounder
-                ? t('school.billing.founding_50_post_isfounder')
-                : t('school.billing.founding_50_post_standard')}
-            </p>
-          </div>
-        </div>
-
-        {/* Pricing tiers */}
-        <div className="space-y-2">
-          {PRICING_TIERS.map((tier) => (
-            <PricingTierRow key={tier.id} tier={tier} isFounder={isFounder} />
-          ))}
-        </div>
-
-        {/* Example calculation */}
-        <div className="rounded-lg border border-border bg-muted/30 px-4 py-3 space-y-1">
-          <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-            {t('school.billing.example_label')}
-          </p>
-          <p className="text-sm text-foreground">
-            {t('school.billing.example_pre')}{' '}
-            <span className="font-semibold">{t('school.billing.example_pupils')}</span>{' '}
-            {t('school.billing.example_would_pay')}{' '}
-            <span className="font-semibold">&pound;17,600{t('school.billing.example_year')}</span>{' '}
-            {t('school.billing.example_standard_or')}{' '}
-            <span className="font-semibold text-clay-600">
-              &pound;8,800{t('school.billing.example_year')}
-            </span>{' '}
-            {t('school.billing.example_founding_suffix')}
-          </p>
-        </div>
-
-        {/* Features */}
-        <ul className="space-y-2">
-          {featureKeys.map((key) => (
-            <li key={key} className="flex items-center gap-2.5 text-sm text-foreground">
-              <CheckCircle className="h-4 w-4 shrink-0 text-emerald-500" />
-              {t(key)}
-            </li>
-          ))}
-        </ul>
-
-        {/* CTA */}
-        <div className="flex flex-col gap-2 pt-1 sm:flex-row">
-          <Button
-            className="bg-primary hover:bg-primary/90"
-            render={<a href={`mailto:${BILLING_EMAIL}?subject=Subscription%20Enquiry`} />}
-          >
-            <Mail className="me-2 h-4 w-4" />
-            {t('school.billing.get_quote')}
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            className="text-muted-foreground"
-            render={<a href={`mailto:${BILLING_EMAIL}?subject=Pricing%20Question`} />}
-          >
-            {t('school.billing.ask_question')}
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
-  )
-}
-
-function UsageStatsCard({ stats, loading }: { stats: UsageStats; loading: boolean }) {
-  const t = useT()
-  const rows = [
-    {
-      icon: Users,
-      label: t('school.billing.usage.students_enrolled'),
-      value: loading ? t('school.billing.usage.dash') : String(stats.totalStudents),
-      limit: t('school.billing.usage.billed_per_pupil'),
-    },
-    {
-      icon: Users,
-      label: t('school.billing.usage.teachers'),
-      value: loading ? t('school.billing.usage.dash') : String(stats.totalTeachers),
-      limit: t('school.billing.usage.teachers_included'),
-    },
-    {
-      icon: TrendingUp,
-      label: t('school.billing.usage.resources'),
-      value: t('school.billing.usage.resources_full'),
-      limit: t('school.billing.usage.all_included'),
-    },
-  ]
-
-  return (
-    <Card className="border-border bg-card/60">
-      <CardHeader className="pb-3">
-        <div className="flex items-center gap-3">
-          <TrendingUp className="h-5 w-5 text-muted-foreground" />
-          <CardTitle className="text-foreground">{t('school.billing.usage_title')}</CardTitle>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <ul className="divide-y divide-border">
-          {rows.map(({ icon: Icon, label, value, limit }) => (
-            <li key={label} className="flex items-center justify-between py-3">
-              <div className="flex items-center gap-2.5">
-                <Icon className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm font-medium text-foreground">{label}</span>
-              </div>
-              <div className="text-end">
-                <span className="text-sm font-semibold text-foreground tabular-nums">{value}</span>
-                <span className="mx-1 text-xs text-muted-foreground">
-                  {t('school.billing.usage.of')}
-                </span>
-                <span className="text-sm text-muted-foreground">{limit}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </CardContent>
-    </Card>
-  )
-}
-
-function InvoiceHistoryCard({ isFounder }: { isFounder: boolean }) {
-  const t = useT()
-  return (
-    <Card className="border-border bg-card/60">
-      <CardHeader className="pb-3">
-        <div className="flex items-center gap-3">
-          <CreditCard className="h-5 w-5 text-muted-foreground" />
-          <CardTitle className="text-foreground">{t('school.billing.invoice_title')}</CardTitle>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <div className="flex flex-col items-center justify-center py-8 text-center">
-          <CreditCard className="mb-3 h-8 w-8 text-muted-foreground/30" />
-          <p className="text-sm text-muted-foreground">
-            {isFounder
-              ? t('school.billing.invoice_empty_founder')
-              : t('school.billing.invoice_empty_standard')}
-          </p>
-          <p className="mt-1 text-xs text-muted-foreground">
-            {t('school.billing.invoice_appear_when')}
-          </p>
-        </div>
-      </CardContent>
-    </Card>
-  )
-}
-
-function RenewalCtaCard({
-  daysRemaining,
-  schoolName,
-}: {
-  daysRemaining: number
-  schoolName: string
-}) {
-  const t = useT()
-  if (daysRemaining > RENEWAL_WARNING_DAYS) return null
-
-  return (
-    <div className="rounded-xl border border-amber-500/40 bg-amber-500/10 px-5 py-4">
-      <div className="flex items-start gap-3">
-        <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-clay-600" />
-        <div className="flex-1 space-y-3">
-          <p className="text-sm font-semibold text-amber-700">
-            {t('school.billing.renewal_cta.pre')}{' '}
-            <span className="font-bold">
-              {daysRemaining}{' '}
-              {daysRemaining === 1
-                ? t('school.billing.day_singular')
-                : t('school.billing.day_plural')}
-            </span>
-            {t('school.billing.renewal_cta.post')}
-          </p>
-          <Button
-            className="bg-amber-500 text-amber-950 hover:bg-amber-400 font-semibold"
-            size="sm"
-            render={<a href={buildRenewalMailto(schoolName)} />}
-          >
-            <Mail className="me-2 h-4 w-4" />
-            {t('school.billing.renewal_cta.button')}
-          </Button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function BillingContactCard() {
-  const t = useT()
-  return (
-    <Card className="border-border bg-card/60">
-      <CardContent className="flex items-center gap-3 py-4">
-        <Mail className="h-4 w-4 shrink-0 text-muted-foreground" />
+  if (!access) {
+    return (
+      <div className="mx-auto max-w-2xl rounded-xl border border-border bg-card p-6">
         <p className="text-sm text-muted-foreground">
-          {t('school.billing.contact.prefix')}{' '}
+          {await t('school.portal.billing.staff_only')}
+        </p>
+      </div>
+    )
+  }
+
+  const statusKey =
+    access.accessType === 'founder'
+      ? 'school.portal.billing.status_founder'
+      : access.accessType === 'trial'
+        ? 'school.portal.billing.status_trial'
+        : 'school.portal.billing.status_paid'
+
+  const [title, status, until, noEnd, invoiced, contact] = await Promise.all([
+    t('school.portal.nav.billing'),
+    t(statusKey),
+    t('school.portal.billing.until'),
+    t('school.portal.billing.no_end'),
+    t('school.portal.billing.invoiced'),
+    t('school.portal.billing.contact'),
+  ])
+  const [before, after] = contact.split('{email}')
+
+  return (
+    <div className="mx-auto max-w-2xl space-y-6">
+      <h1 className="text-2xl font-bold text-foreground">{title}</h1>
+
+      <section className="rounded-xl border border-border bg-card p-6">
+        <p className="text-base font-semibold text-foreground">{access.schoolName}</p>
+        <p className="mt-2 text-sm text-foreground">{status}</p>
+        <p className="mt-1 text-sm text-muted-foreground">
+          {access.accessUntil
+            ? until.replace(
+                '{date}',
+                // Provisioning stores the end of the last day in UTC; noon UTC
+                // on that date reads as the same date in any timezone.
+                formatDate(`${access.accessUntil.slice(0, 10)}T12:00:00Z`, locale as FormatLocale),
+              )
+            : noEnd}
+        </p>
+      </section>
+
+      <section className="space-y-3 rounded-xl border border-border bg-card p-6 text-sm text-muted-foreground">
+        <p>{invoiced}</p>
+        <p>
+          {before}
           <a
-            href={`mailto:${BILLING_EMAIL}`}
+            href={`mailto:${SCHOOLS_CONTACT_EMAIL}`}
             className="font-medium text-primary underline-offset-4 hover:underline"
           >
-            {BILLING_EMAIL}
+            {SCHOOLS_CONTACT_EMAIL}
           </a>
+          {after}
         </p>
-      </CardContent>
-    </Card>
-  )
-}
-
-// ---------------------------------------------------------------------------
-// Page
-// ---------------------------------------------------------------------------
-
-export default function SchoolBillingPage() {
-  const t = useT()
-  const [access, setAccess] = useState<SchoolAccessData | null>(null)
-  const [stats, setStats] = useState<UsageStats>({ totalStudents: 0, totalTeachers: 0 })
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-  const [statsLoading, setStatsLoading] = useState(true)
-
-  // Fetch access data
-  useEffect(() => {
-    async function fetchAccess() {
-      try {
-        const res = await fetch('/api/school/access')
-        if (!res.ok) {
-          const json = await res.json().catch(() => ({}))
-          setError((json as { error?: string }).error ?? t('school.billing.error_load'))
-          return
-        }
-        const data: SchoolAccessData = await res.json()
-        setAccess(data)
-      } catch {
-        setError(t('school.billing.error_load_refresh'))
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchAccess()
-  }, [t])
-
-  // Fetch usage stats via overview endpoint
-  useEffect(() => {
-    async function fetchStats() {
-      try {
-        const res = await fetch('/api/school/overview')
-        if (!res.ok) return
-        const json = await res.json()
-        setStats({
-          totalStudents: json?.overview?.total_students ?? 0,
-          totalTeachers: json?.overview?.total_teachers ?? 0,
-        })
-      } catch {
-        // Stats are non-critical - fail silently
-      } finally {
-        setStatsLoading(false)
-      }
-    }
-
-    fetchStats()
-  }, [])
-
-  const isFounder = access?.accessType === 'founder'
-  const isPaid = access?.accessType === 'paid'
-  // Days remaining always comes from GET /api/school/access - never a
-  // hard-coded expiry date that can drift from the database.
-  const daysRemaining = access?.daysRemaining ?? 0
-
-  return (
-    <div className="px-4 py-8 sm:px-6 lg:px-8">
-      {/* Header */}
-      <div className="mb-8 flex items-center gap-3">
-        <CreditCard className="h-6 w-6 text-muted-foreground" />
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight text-foreground">
-            {t('school.billing.page_title')}
-          </h1>
-          {access?.schoolName && (
-            <p className="mt-0.5 flex items-center gap-1.5 text-sm text-muted-foreground">
-              <Building2 className="h-3.5 w-3.5" />
-              {access.schoolName}
-            </p>
-          )}
-        </div>
-      </div>
-
-      {/* Loading state */}
-      {loading && <LoadingSkeleton />}
-
-      {/* Error state */}
-      {!loading && error && (
-        <div className="rounded-lg border border-destructive/40 bg-destructive/10 px-5 py-4">
-          <div className="flex items-center gap-3">
-            <AlertTriangle className="h-5 w-5 text-destructive" />
-            <p className="text-sm text-destructive">{error}</p>
-          </div>
-        </div>
-      )}
-
-      {/* Main content */}
-      {!loading && !error && access && (
-        <div className="flex flex-col gap-6">
-          {/* Renewal CTA (shown when < 60 days from expiry) */}
-          {isFounder && (
-            <RenewalCtaCard daysRemaining={daysRemaining} schoolName={access.schoolName} />
-          )}
-
-          {/* Current plan card */}
-          {isFounder && <FounderPlanCard access={access} daysRemaining={daysRemaining} />}
-          {isPaid && <PaidPlanCard access={access} />}
-
-          {/* Per-pupil pricing */}
-          <PricingCard isFounder={isFounder} />
-
-          {/* Usage stats */}
-          <UsageStatsCard stats={stats} loading={statsLoading} />
-
-          {/* Invoice history */}
-          <InvoiceHistoryCard isFounder={isFounder} />
-
-          {/* Billing contact */}
-          <BillingContactCard />
-        </div>
-      )}
+      </section>
     </div>
   )
 }
