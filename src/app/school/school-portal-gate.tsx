@@ -109,13 +109,16 @@ export function SchoolPortalGate({
 
   return (
     <div className="flex min-h-screen bg-background">
-      {/* Sidebar (fixed 240px desktop, hamburger on mobile) */}
+      {/* Sidebar (fixed 240px desktop, hamburger on mobile). The role
+          decides which items it lists: a teacher is not shown admin pages
+          whose APIs would refuse them. */}
       <SchoolSidebarNav
         schoolName={access.schoolName}
         userEmail={userEmail}
         accessType={access.accessType}
         founderAccess={access.accessType === 'founder'}
         accessUntil={access.accessUntil ?? undefined}
+        userRole={access.userRole}
       />
 
       {/* Main content area - id matches the skip-to-content link in

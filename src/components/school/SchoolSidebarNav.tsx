@@ -1,65 +1,148 @@
 'use client'
 
+// ─── School portal sidebar ──────────────────────────────────────────────────
+//
+// FIXED 12 OCTOBER 2026, four ways:
+//   * The marking queue (/school/marking) was not listed, so the page where
+//     every pupil's essay reaches its teacher could not be found.
+//   * No item was filtered by role. A teacher was shown Users, Import,
+//     Billing, Permissions and Settings and was refused by the API behind
+//     each one. Each item now names the roles its own API admits.
+//   * Users, Permissions and the Setup Guide were mock or wrong and are
+//     gone; Import pointed at the legacy importer, which queries a table that
+//     does not exist (import_jobs), and now points at the bulk upload.
+//   * "Log out" was a link to /auth/login and signed nobody out. On a shared
+//     classroom computer the next person to sit down inherited the teacher's
+//     session and their pupils' work. It now ends the session.
+// ────────────────────────────────────────────────────────────────────────────
+
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import {
-  LayoutDashboard,
-  Users,
-  Upload,
-  Mail,
-  BookOpen,
   BarChart3,
-  Target,
-  CreditCard,
-  Shield,
-  HelpCircle,
-  Settings,
-  ExternalLink,
-  LogOut,
-  School,
-  Menu,
-  X,
+  BookOpen,
   ChevronRight,
+  ClipboardCheck,
+  CreditCard,
+  ExternalLink,
+  LayoutDashboard,
+  LogOut,
+  Mail,
+  Menu,
+  School,
+  Settings,
+  Target,
+  Upload,
+  X,
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
+import { useFormatDate } from '@/lib/i18n/use-format-date'
+import { useAuthStore } from '@/store/auth-store'
 
-// ── Types ────────────────────────────────────────────────────────────────────
+export type PortalRole = 'admin' | 'head_of_department' | 'teacher' | 'student'
 
 interface SchoolSidebarNavProps {
   schoolName?: string
   adminName?: string
   founderAccess?: boolean
   accessUntil?: string
-  // Legacy props forwarded from the server layout
   userEmail?: string
   accessType?: 'founder' | 'paid' | 'trial' | 'expired' | null
+  /** The viewer's school role. Items their role cannot use are not shown. */
+  userRole: PortalRole
 }
 
-// ── Navigation items ─────────────────────────────────────────────────────────
+interface NavItem {
+  labelKey: string
+  href: string
+  icon: typeof LayoutDashboard
+  roles: readonly PortalRole[]
+}
 
-const NAV_ITEMS = [
-  { labelKey: 'school.sidebar.dashboard', href: '/school/dashboard', icon: LayoutDashboard },
-  { labelKey: 'school.sidebar.users', href: '/school/users', icon: Users },
-  { labelKey: 'school.sidebar.import_users', href: '/school/import', icon: Upload },
-  { labelKey: 'school.sidebar.invite_teachers', href: '/school/invite', icon: Mail },
-  { labelKey: 'school.sidebar.classes', href: '/school/classes', icon: BookOpen },
-  { labelKey: 'school.sidebar.analytics', href: '/school/analytics', icon: BarChart3 },
-  // 2026-08-25: the marking-analytics API (assessment objectives teachers
-  // adjust most, by school and by class) had been complete and correctly
-  // authorised for months with NO consumer anywhere in the codebase - the
-  // department-level insight schools pay for was unreachable. Page and nav
-  // entry added together, deliberately: an unlinked page is the same defect.
-  { labelKey: 'school.sidebar.marking_insight', href: '/school/analytics/marking', icon: Target },
-  { labelKey: 'school.sidebar.billing', href: '/school/billing', icon: CreditCard },
-  { labelKey: 'school.sidebar.permissions', href: '/school/permissions', icon: Shield },
-  { labelKey: 'school.sidebar.setup_guide', href: '/school/guide', icon: HelpCircle },
-  { labelKey: 'school.sidebar.settings', href: '/school/settings', icon: Settings },
-] as const
+const STAFF: readonly PortalRole[] = ['admin', 'head_of_department', 'teacher']
 
-// ── Component ────────────────────────────────────────────────────────────────
+/**
+ * Each item's roles are the roles its API admits, so nobody is shown a page
+ * that refuses them:
+ *   invite        POST /api/school/invite                 admin
+ *   bulk upload   /api/school/bulk-upload/*               admin
+ *   billing       page gate (requireSchoolAdmin)          admin, head of department
+ *   settings      PUT /api/school/settings                admin
+ */
+export const NAV_ITEMS: readonly NavItem[] = [
+  {
+    labelKey: 'school.sidebar.dashboard',
+    href: '/school/dashboard',
+    icon: LayoutDashboard,
+    roles: STAFF,
+  },
+  {
+    labelKey: 'school.portal.nav.marking_queue',
+    href: '/school/marking',
+    icon: ClipboardCheck,
+    roles: STAFF,
+  },
+  { labelKey: 'school.sidebar.classes', href: '/school/classes', icon: BookOpen, roles: STAFF },
+  {
+    labelKey: 'school.sidebar.analytics',
+    href: '/school/analytics',
+    icon: BarChart3,
+    roles: STAFF,
+  },
+  {
+    labelKey: 'school.portal.nav.objectives',
+    href: '/school/analytics/marking',
+    icon: Target,
+    roles: STAFF,
+  },
+  {
+    labelKey: 'school.sidebar.invite_teachers',
+    href: '/school/invite',
+    icon: Mail,
+    roles: ['admin'],
+  },
+  {
+    labelKey: 'school.portal.nav.import_pupils',
+    href: '/school/admin/bulk-upload',
+    icon: Upload,
+    roles: ['admin'],
+  },
+  {
+    labelKey: 'school.portal.nav.billing',
+    href: '/school/billing',
+    icon: CreditCard,
+    roles: ['admin', 'head_of_department'],
+  },
+  {
+    labelKey: 'school.sidebar.settings',
+    href: '/school/settings',
+    icon: Settings,
+    roles: ['admin'],
+  },
+]
+
+/** The items a role may see. */
+export function navItemsFor(role: PortalRole): NavItem[] {
+  return NAV_ITEMS.filter((item) => item.roles.includes(role))
+}
+
+/**
+ * The one item to highlight: the longest href the path sits under, so
+ * /school/analytics/marking lights "Assessment objectives" and not also
+ * "Analytics".
+ */
+export function activeHref(pathname: string, items: readonly NavItem[]): string | null {
+  let best: string | null = null
+  for (const { href } of items) {
+    if (pathname === href || pathname.startsWith(`${href}/`)) {
+      if (!best || href.length > best.length) best = href
+    }
+  }
+  return best
+}
 
 export function SchoolSidebarNav({
   schoolName,
@@ -68,75 +151,82 @@ export function SchoolSidebarNav({
   accessUntil,
   userEmail,
   accessType,
+  userRole,
 }: SchoolSidebarNavProps) {
   const t = useT()
-  const pathname = usePathname()
+  const fmt = useFormatDate()
+  const pathname = usePathname() ?? ''
+  const clearAuth = useAuthStore((s) => s.clear)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [signingOut, setSigningOut] = useState(false)
 
-  // Resolve founder status from either the explicit prop or the legacy accessType
+  const items = navItemsFor(userRole)
+  const current = activeHref(pathname, items)
   const isFounder = founderAccess ?? accessType === 'founder'
 
-  // Resolve the "active until" label
+  // The date was printed as the raw timestamp ("2026-08-31T23:59:59+00:00").
+  // Provisioning stores the end of the last day in UTC, so it is shown as
+  // that calendar date, read at noon UTC to stay the same date everywhere.
   const founderActivePrefix = t('school.sidebar.founder_active_until')
   const founderLabel = accessUntil
-    ? `${founderActivePrefix} ${accessUntil}`
+    ? `${founderActivePrefix} ${fmt(`${accessUntil.slice(0, 10)}T12:00:00Z`)}`
     : `${founderActivePrefix} ${t('school.sidebar.founder_default_until')}`
-
-  function isActive(href: string) {
-    return pathname === href || pathname.startsWith(href + '/')
-  }
 
   function closeMobile() {
     setMobileOpen(false)
   }
 
+  async function signOut() {
+    setSigningOut(true)
+    try {
+      const { createClient } = await import('@/lib/supabase/client')
+      await createClient().auth.signOut()
+    } finally {
+      // Leave the portal even if the network call failed: the local session
+      // is cleared by signOut before it calls the server, and staying on a
+      // page full of pupils' work is the worse outcome.
+      clearAuth()
+      window.location.href = '/'
+    }
+  }
+
   function renderSidebarContent() {
     return (
       <div className="flex h-full flex-col">
-        {/* ── Header ──────────────────────────────────────────────────── */}
         <div className="border-b border-white/10 px-5 py-5">
-          {/* Wordmark */}
           <div className="flex items-center gap-2">
-            <School className="h-5 w-5 shrink-0 text-primary" />
+            <School className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
             <span className="text-base font-bold tracking-tight text-white">The English Hub</span>
           </div>
-
-          {/* Subtitle */}
           <p className="mt-0.5 ps-7 text-[11px] font-medium uppercase tracking-widest text-white/40">
-            {t('school.sidebar.admin_portal')}
+            {t('school.portal.nav.subtitle')}
           </p>
-
-          {/* School name */}
-          {schoolName && (
+          {schoolName ? (
             <p className="mt-3 truncate text-sm font-semibold text-white/90">{schoolName}</p>
-          )}
-
-          {/* Admin name */}
-          {(adminName || userEmail) && (
+          ) : null}
+          {adminName || userEmail ? (
             <p className="mt-0.5 truncate text-xs text-white/40">{adminName ?? userEmail}</p>
-          )}
-
-          {/* FOUNDER badge */}
-          {isFounder && (
+          ) : null}
+          {isFounder ? (
             <div className="mt-3 flex items-center gap-1.5 rounded-md bg-amber-400/15 px-3 py-1.5">
-              <ChevronRight className="h-3 w-3 shrink-0 text-clay-600" />
+              <ChevronRight className="h-3 w-3 shrink-0 text-clay-600" aria-hidden="true" />
               <span className="text-[11px] font-semibold leading-snug text-amber-700">
                 {founderLabel}
               </span>
             </div>
-          )}
+          ) : null}
         </div>
 
-        {/* ── Navigation ──────────────────────────────────────────────── */}
         <nav className="flex-1 space-y-0.5 overflow-y-auto px-3 py-4">
-          {NAV_ITEMS.map((item) => {
-            const active = isActive(item.href)
+          {items.map((item) => {
+            const active = item.href === current
             const Icon = item.icon
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={closeMobile}
+                aria-current={active ? 'page' : undefined}
                 className={cn(
                   'group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
                   active
@@ -149,6 +239,7 @@ export function SchoolSidebarNav({
                     'h-4 w-4 shrink-0 transition-colors',
                     active ? 'text-primary' : 'text-white/40 group-hover:text-white',
                   )}
+                  aria-hidden="true"
                 />
                 {t(item.labelKey)}
               </Link>
@@ -156,20 +247,20 @@ export function SchoolSidebarNav({
           })}
         </nav>
 
-        {/* ── Bottom section ──────────────────────────────────────────── */}
-        <div className="border-t border-white/10 px-3 py-4 space-y-0.5">
-          {/* Back to site */}
+        <div className="space-y-0.5 border-t border-white/10 px-3 py-4">
           <Link
             href="/"
             onClick={closeMobile}
             className="group flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-white/50 transition-colors hover:bg-white/5 hover:text-white"
           >
-            <ExternalLink className="h-4 w-4 shrink-0 text-white/40 transition-colors group-hover:text-white" />
+            <ExternalLink
+              className="h-4 w-4 shrink-0 text-white/40 transition-colors group-hover:text-white"
+              aria-hidden="true"
+            />
             {t('school.sidebar.back_to_site')}
           </Link>
 
-          {/* School name footer chip */}
-          {schoolName && (
+          {schoolName ? (
             <div className="flex items-center gap-2 px-3 py-2">
               <Badge
                 variant="secondary"
@@ -178,17 +269,20 @@ export function SchoolSidebarNav({
                 {schoolName}
               </Badge>
             </div>
-          )}
+          ) : null}
 
-          {/* Logout */}
-          <Link
-            href="/auth/login"
-            onClick={closeMobile}
-            className="group flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-white/50 transition-colors hover:bg-red-500/10 hover:text-red-400"
+          <button
+            type="button"
+            onClick={signOut}
+            disabled={signingOut}
+            className="group flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-white/50 transition-colors hover:bg-red-500/10 hover:text-red-400 disabled:opacity-60"
           >
-            <LogOut className="h-4 w-4 shrink-0 text-white/40 transition-colors group-hover:text-red-400" />
+            <LogOut
+              className="h-4 w-4 shrink-0 text-white/40 transition-colors group-hover:text-red-400"
+              aria-hidden="true"
+            />
             {t('school.sidebar.logout')}
-          </Link>
+          </button>
         </div>
       </div>
     )
@@ -196,7 +290,6 @@ export function SchoolSidebarNav({
 
   return (
     <>
-      {/* ── Mobile hamburger ──────────────────────────────────────────── */}
       <button
         type="button"
         className="fixed start-4 top-4 z-50 flex h-9 w-9 items-center justify-center rounded-lg bg-sidebar text-sidebar-foreground shadow-md lg:hidden"
@@ -206,16 +299,14 @@ export function SchoolSidebarNav({
         {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>
 
-      {/* ── Mobile overlay ────────────────────────────────────────────── */}
-      {mobileOpen && (
+      {mobileOpen ? (
         <div
           className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
           onClick={closeMobile}
           aria-hidden="true"
         />
-      )}
+      ) : null}
 
-      {/* ── Mobile drawer ─────────────────────────────────────────────── */}
       <aside
         className={cn(
           'fixed inset-y-0 start-0 z-40 w-[240px] bg-sidebar transition-transform duration-200 ease-in-out lg:hidden',
@@ -226,7 +317,6 @@ export function SchoolSidebarNav({
         {renderSidebarContent()}
       </aside>
 
-      {/* ── Desktop sidebar ───────────────────────────────────────────── */}
       <aside
         className="hidden w-[240px] shrink-0 bg-sidebar lg:flex lg:flex-col"
         aria-label={t('school.sidebar.nav_label')}
