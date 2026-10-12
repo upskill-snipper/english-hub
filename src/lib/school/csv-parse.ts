@@ -37,7 +37,11 @@ export interface StudentRow {
   readonly classCode: string
 }
 
-/** Error classes surfaced to the admin in the preview table. */
+/**
+ * Error classes surfaced to the admin in the preview table, and by the commit
+ * step (src/lib/school/bulk-upload-commit.ts) for what went wrong after a row
+ * was accepted: the last four are only ever written there.
+ */
 export type ParseErrorCode =
   | 'MISSING_HEADER'
   | 'MISSING_REQUIRED'
@@ -46,6 +50,10 @@ export type ParseErrorCode =
   | 'DUPLICATE_EMAIL_IN_FILE'
   | 'INVALID_ROLE'
   | 'EMPTY_FILE'
+  | 'ACCOUNT_NOT_CREATED'
+  | 'MEMBER_LINK_FAILED'
+  | 'CLASS_PLACEMENT_FAILED'
+  | 'CLASS_COUNT_FAILED'
 
 export interface ParseError {
   readonly row: number
@@ -149,14 +157,49 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 // ---------------------------------------------------------------------------
 
 /**
+ * The cell separator of a pasted or uploaded sheet: a tab or a comma.
+ *
+ * A range copied out of Excel or Google Sheets reaches the clipboard as
+ * tab-separated text, not CSV, and the operator setting a school up pastes
+ * exactly that (src/app/admin/schools/[schoolId]). Read with commas alone, its
+ * header is one long cell and every required column is reported missing.
+ *
+ * The header line decides: a tab-separated header has more tabs than commas
+ * outside quotes, even when one of its cells contains a comma, such as
+ * "Classes taught (class codes, comma-separated)". Comment lines (`#`) and
+ * blank lines before the header are passed over, as the parser does.
+ */
+export function detectDelimiter(raw: string): ',' | '\t' {
+  for (const line of raw.split(/\r\n|\n|\r/)) {
+    const trimmed = line.trim()
+    if (trimmed === '' || trimmed.startsWith('#')) continue
+    let tabs = 0
+    let commas = 0
+    let inQuotes = false
+    for (const ch of line) {
+      if (ch === '"') inQuotes = !inQuotes
+      else if (!inQuotes && ch === '\t') tabs += 1
+      else if (!inQuotes && ch === ',') commas += 1
+    }
+    return tabs > commas ? '\t' : ','
+  }
+  return ','
+}
+
+/**
  * Tokenise raw CSV text into rows of string cells. RFC 4180-ish: supports
  * quoted fields ("…"), escaped quotes ("" inside a quoted field), embedded
  * commas and embedded newlines inside quoted fields.
+ *
+ * Tab-separated text (a range pasted from a spreadsheet) is read the same way
+ * with a tab as the separator; see detectDelimiter. Exported for the staff and
+ * classes sheets (src/lib/school/setup-sheets.ts), which share this reader.
  */
-function tokeniseCsv(raw: string): string[][] {
+export function tokeniseCsv(raw: string): string[][] {
   // Strip UTF-8 BOM if present.
   const stripped = raw.charCodeAt(0) === 0xfeff ? raw.slice(1) : raw
   if (stripped.length === 0) return []
+  const delimiter = detectDelimiter(stripped)
 
   const rows: string[][] = []
   let cell = ''
@@ -185,7 +228,7 @@ function tokeniseCsv(raw: string): string[][] {
       continue
     }
 
-    if (ch === ',') {
+    if (ch === delimiter) {
       row.push(cell)
       cell = ''
       continue

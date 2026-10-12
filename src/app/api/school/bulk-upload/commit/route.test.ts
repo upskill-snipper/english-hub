@@ -15,10 +15,20 @@
  *      a few at a time and revoked if they run out of time; emails in one
  *      batch; a failed attempt never replayed as success; an existing pupil
  *      linked to school_members by their Supabase id.
+ *
+ * Since 12 October 2026 the pipeline lives in src/lib/school/bulk-upload-commit.ts
+ * (its own tests cover the member link's key, class places and the reporting);
+ * these tests run it through the school's route. Table calls go to
+ * FakeSupabase, which holds the live columns and unique keys, so the member
+ * link, the staff check and the class places run as they would in production.
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { NextRequest } from 'next/server'
+
+import { FakeSupabase } from '@/lib/school/__tests__/fake-supabase'
+
+const SCHOOL_ID = '5c400000-0000-4000-8000-000000000001'
 
 // ---------------------------------------------------------------------------
 // Mocks
@@ -44,8 +54,10 @@ vi.mock('@/lib/supabase/server', () => ({
 }))
 
 // verifySchoolMember: flip between admin / teacher / null based on the
-// mocked user id.
+// mocked user id. `memberSchoolId` lets a test be the site administrator,
+// whose synthetic membership carries '__site_admin__' (src/lib/school-auth.ts).
 let memberRole: 'admin' | 'teacher' | null = 'admin'
+let memberSchoolId = SCHOOL_ID
 vi.mock('@/lib/school-auth', () => ({
   verifySchoolMember: vi.fn(async (_userId: string, roles?: string[]) => {
     if (memberRole === null) return null
@@ -53,10 +65,10 @@ vi.mock('@/lib/school-auth', () => ({
     return {
       id: 'member-1',
       user_id: 'supa-admin-1',
-      school_id: 'school-1',
+      school_id: memberSchoolId,
       role: memberRole,
       invite_status: 'accepted',
-      schools: { id: 'school-1', name: 'Test Academy' },
+      schools: { id: memberSchoolId, name: 'Test Academy' },
     }
   }),
 }))
@@ -76,7 +88,10 @@ vi.mock('@/lib/email', () => ({
 // Service role client - auth admin + supabase-table helpers.
 const createdAuthUsers: Array<{ email: string; id: string }> = []
 const deletedAuthUserIds: string[] = []
-const memberUpserts: Array<Record<string, unknown>> = []
+let fake = new FakeSupabase()
+/** What the member link upserted, in call order. */
+const memberUpserts = () =>
+  fake.callsTo('school_members', 'upsert').map((c) => c.payload as Record<string, unknown>)
 let authCreateUserShouldFail = false
 // What the account calls saw: whether a transaction was open, how many ran at
 // once, and a hook a test can use to move a fake clock on.
@@ -108,12 +123,7 @@ const serviceRoleClientMock = {
       }),
     },
   },
-  from: vi.fn(() => ({
-    upsert: vi.fn(async (row: Record<string, unknown>) => {
-      memberUpserts.push(row)
-      return { data: null, error: null }
-    }),
-  })),
+  from: (table: string) => fake.from(table),
 }
 
 // Prisma mock - in-memory state so idempotency and rollback can be asserted.
@@ -287,7 +297,10 @@ beforeEach(() => {
   userCreateShouldFailOn = null
   authUser = { id: 'supa-admin-1', email: 'admin@example.school.uk' }
   memberRole = 'admin'
-  memberUpserts.length = 0
+  memberSchoolId = SCHOOL_ID
+  fake = new FakeSupabase()
+  fake.seed('schools', [{ id: SCHOOL_ID, name: 'Test Academy' }])
+  fake.seed('classes', [{ school_id: SCHOOL_ID, name: '10A' }])
   insideTransaction = false
   createUserCalledInsideTransaction = false
   createUserInFlight = 0
@@ -506,8 +519,30 @@ describe('POST /api/school/bulk-upload/commit', () => {
     ])
     const res = await POST(makeRequest(freshBody()))
     expect(res.status).toBe(200)
-    const alex = memberUpserts.find((r) => r.email === 'alex@example.school.uk')
+    const alex = memberUpserts().find((r) => r.email === 'alex@example.school.uk')
     expect(alex?.user_id).toBe('supa-alex')
+  })
+
+  it('links and places every pupil, and reports nothing failed, on the happy path', async () => {
+    const res = await POST(makeRequest(freshBody()))
+    const json = await res.json()
+    expect(res.status).toBe(200)
+    expect(json.memberLinkFailures).toEqual([])
+    expect(json.unmatchedClassCodes).toEqual([])
+    expect(json.placementFailures).toEqual([])
+    expect(fake.rows('school_members')).toHaveLength(2)
+    expect(fake.rows('class_students')).toHaveLength(2)
+  })
+
+  it("refuses a site administrator's synthetic school, so no account is made against it", async () => {
+    // verifySchoolMember gives a site admin school_id '__site_admin__'. Before
+    // 12 October 2026 this route created real accounts against it.
+    memberSchoolId = '__site_admin__'
+    const res = await POST(makeRequest(freshBody()))
+    expect(res.status).toBe(422)
+    expect((await res.json()).error).toMatch(/admin\/schools/)
+    expect(createdAuthUsers).toHaveLength(0)
+    expect(jobs).toHaveLength(0)
   })
 
   it('skips a repeat of an email earlier in the file, with the reason', async () => {

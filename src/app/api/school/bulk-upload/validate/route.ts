@@ -15,7 +15,10 @@
  *     knownClassCodesChecked: boolean,
  *   }
  *
- * Auth: Supabase user + verifySchoolMember(['admin']). Site admins bypass.
+ * Auth: Supabase user + verifySchoolMember(['admin']). A site admin passes the
+ * role check with a synthetic membership that has no real school, so they are
+ * refused with a 422 pointing at /admin/schools, where the operator uploads
+ * pupils into a named school.
  * Rate limit: 10/min per school to discourage enumeration of class codes.
  *
  * Note: this endpoint never persists rows - its only side-effect is a rate
@@ -28,6 +31,8 @@ import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supab
 import { verifySchoolMember } from '@/lib/school-auth'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { parseStudentsCsv, MAX_ROWS } from '@/lib/school/csv-parse'
+import { loadActiveClasses } from '@/lib/school/school-classes'
+import { isUuid } from '@/lib/school/is-uuid'
 
 export const dynamic = 'force-dynamic'
 
@@ -49,6 +54,17 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Forbidden: school admin role required' }, { status: 403 })
     }
     const schoolId = member.school_id as string
+    // A site administrator's synthetic membership has no real school; the
+    // commit refuses it, so the preview says so first (see isUuid).
+    if (!isUuid(schoolId)) {
+      return NextResponse.json(
+        {
+          error:
+            'This account is not attached to a school. A site administrator uploads pupils from /admin/schools.',
+        },
+        { status: 422 },
+      )
+    }
 
     // 3. Rate limit - 10/min per school
     const ip = getClientIp(request.headers)
@@ -121,30 +137,31 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Failed to read uploaded file.' }, { status: 400 })
     }
 
-    // 5. Load the school's known class codes so the parser can validate
-    //    membership. Non-fatal if the classes table is unavailable - the
-    //    parser still runs and we flag the response so the client can show
-    //    a degraded-mode banner.
+    // 5. Load the school's class codes so the parser can check each row's.
+    //    A class code is the class's `name`, matched among the school's
+    //    ACTIVE classes, exactly as the commit places pupils
+    //    (src/lib/school/school-classes.ts).
+    //
+    //    FIXED 12 October 2026: this selected `id, name, code`. `classes` has
+    //    no `code` column, PostgREST refused the whole select, and the error
+    //    was ignored, so every preview said the codes "could not be
+    //    validated" and let any code through to the commit.
+    //
+    //    If the classes cannot be read the parser still runs, the response
+    //    says the codes were not checked, and the page shows a warning. The
+    //    reason is logged at error level: it is a fault, not a mode.
     let knownClassCodes: Set<string> | undefined
     let knownClassCodesChecked = false
     try {
-      const admin = createServiceRoleClient()
-      const { data: classRows, error: classErr } = await admin
-        .from('classes')
-        .select('id, name, code')
-        .eq('school_id', schoolId)
-        .eq('is_active', true)
-      if (!classErr && classRows) {
-        knownClassCodes = new Set(
-          classRows
-            .flatMap((r) => [r.code, r.name])
-            .filter((v): v is string => typeof v === 'string' && v.length > 0),
-        )
+      const loaded = await loadActiveClasses(createServiceRoleClient(), schoolId)
+      if (loaded.error === null) {
+        knownClassCodes = new Set(loaded.classes.map((c) => c.name).filter((n) => n.length > 0))
         knownClassCodesChecked = true
+      } else {
+        console.error('bulk-upload.validate: failed to load classes', loaded.error)
       }
     } catch (err) {
-      // Swallow - the parser will skip the class-existence check.
-      console.warn('bulk-upload.validate: failed to load classes', err)
+      console.error('bulk-upload.validate: failed to load classes', err)
     }
 
     // 6. Parse and validate

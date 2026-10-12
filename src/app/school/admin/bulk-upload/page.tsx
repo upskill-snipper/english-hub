@@ -7,7 +7,9 @@
  *                     "Download errors CSV" CTA.
  *   3. Confirm     - summary card ("32 new students, 4 existing, 2 excluded"),
  *                     idempotency-keyed submit button.
- *   4. Done        - success summary plus a "View import log" deep-link.
+ *   4. Done        - the counts, every row that failed in any way (see
+ *                     ./upload-result.tsx), a download of those problems and a
+ *                     "View import log" deep-link.
  *
  * Admin-gating: the API endpoints refuse non-admins with a 403. The page is
  * also listed at `/school/admin/bulk-upload` - the existing `school/layout.tsx`
@@ -44,6 +46,13 @@ import { Badge } from '@/components/ui/badge'
 import { STUDENT_CSV_TEMPLATE_FILENAME, getStudentCsvTemplate } from '@/lib/school/csv-template'
 import { errorsToCsv, type ParseError, type StudentRow } from '@/lib/school/csv-parse'
 
+import {
+  UploadResultSummary,
+  problemGroups,
+  problemsToCsv,
+  type UploadResult,
+} from './upload-result'
+
 // ---------------------------------------------------------------------------
 // Local types
 // ---------------------------------------------------------------------------
@@ -58,14 +67,8 @@ interface ValidateResponse {
   fileName: string
 }
 
-interface CommitResponse {
-  jobId: string
-  created: number
-  updated: number
-  skipped: number
-  errors: ParseError[]
-  idempotent?: boolean
-}
+/** The commit's answer: src/lib/school/bulk-upload-commit.ts has the shape. */
+type CommitResponse = UploadResult
 
 // ---------------------------------------------------------------------------
 // Browser-safe helpers
@@ -433,8 +436,9 @@ export default function BulkUploadPage() {
               <CardHeader>
                 <CardTitle>Ready to import?</CardTitle>
                 <CardDescription>
-                  Once you confirm, accounts will be created and welcome emails sent. This cannot be
-                  undone in one click.
+                  Once you confirm, accounts will be created, each pupil will be added to your
+                  school and placed in the class their class code names, and welcome emails will be
+                  sent. This cannot be undone in one click.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -493,30 +497,37 @@ export default function BulkUploadPage() {
           </>
         )}
 
-        {/* ── Step 4: Done ── */}
+        {/* ── Step 4: Done ──
+            Every failure category the commit returns is listed by
+            UploadResultSummary (./upload-result.tsx). Until 12 October 2026
+            this card showed only the three counts under "Import complete",
+            whatever had failed. */}
         {step === 'done' && commit && (
-          <Card className="border-emerald-900/50 bg-emerald-950/20">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <CheckCircle className="size-5 text-emerald-400" />
-                Import complete
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid grid-cols-3 gap-3">
-                <SummaryPill label="Created" value={commit.created} tone="emerald" />
-                <SummaryPill label="Updated" value={commit.updated} tone="indigo" />
-                <SummaryPill label="Skipped" value={commit.skipped} tone="zinc" />
-              </div>
-              {commit.idempotent && (
-                <div className="text-xs text-zinc-500">
-                  This run matched a previous submission - no duplicate accounts were created.
-                </div>
-              )}
+          <Card
+            className={
+              problemGroups(commit).length > 0 ||
+              (!('idempotent' in commit) && commit.failuresNotLogged)
+                ? 'border-amber-900/50 bg-amber-950/10'
+                : 'border-emerald-900/50 bg-emerald-950/20'
+            }
+          >
+            <CardContent className="space-y-4 pt-5">
+              <UploadResultSummary result={commit} />
               <div className="flex flex-wrap gap-2">
-                <Link href={`/school/admin/bulk-upload/log`}>
-                  <Button variant="outline">View import log</Button>
-                </Link>
+                {problemGroups(commit).length > 0 && (
+                  <Button
+                    variant="outline"
+                    onClick={() =>
+                      triggerDownload('bulk-upload-problems.csv', problemsToCsv(commit))
+                    }
+                  >
+                    <Download className="size-4 me-1.5" />
+                    Download the problems
+                  </Button>
+                )}
+                <Button variant="outline" render={<Link href="/school/admin/bulk-upload/log" />}>
+                  View import log
+                </Button>
                 <Button variant="outline" onClick={reset}>
                   Upload another file
                 </Button>

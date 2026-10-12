@@ -26,18 +26,24 @@ import { join } from 'node:path'
  * worked. This is the B2B onboarding path, and "founding schools" is a live
  * campaign.
  *
- * WHAT IS DELIBERATELY NOT FIXED HERE. The class code. Class membership lives
- * in `class_students`, and joining a student to a class moves
- * `schools.seats_used`, which is seat billing. That is a real piece of work and
- * guessing at it from a CSV import at night is how billing defects are made.
- * The count of unassigned class codes is returned instead, so the caller knows
- * the codes were not acted on rather than assuming they were.
+ * WHAT WAS DELIBERATELY NOT FIXED THEN: the class code, which was counted and
+ * reported as `classCodesNotAssigned` instead of acted on.
+ *
+ * 12 OCTOBER 2026. The upload moved to src/lib/school/bulk-upload-commit.ts,
+ * shared by the school's route and the operator's setup page, and this file
+ * now reads it there. Two more defects were found and fixed:
+ *   - the upsert's onConflict was 'school_id,user_id', but the table's only
+ *     unique key besides its id is (school_id, email), so Postgres refused
+ *     every row with 42P10: STILL no pupil was linked;
+ *   - pupils are now placed in their class (class_students, school_students,
+ *     the class's student_count), and a code with no class is reported per
+ *     row. schools.seats_used is still not moved; the module says why.
+ * The behaviour is tested against a strict fake in
+ * src/lib/school/bulk-upload-commit.test.ts; this file keeps the source-level
+ * guards that were written first.
  */
 
-const ROUTE = readFileSync(
-  join(process.cwd(), 'src/app/api/school/bulk-upload/commit/route.ts'),
-  'utf8',
-)
+const ROUTE = readFileSync(join(process.cwd(), 'src/lib/school/bulk-upload-commit.ts'), 'utf8')
 
 /**
  * The live columns of school_members, read from the production database on
@@ -99,6 +105,13 @@ describe('it writes only columns school_members has', () => {
   it('and class_code, the one that broke it, is gone', () => {
     expect(upsertedKeys()).not.toContain('class_code')
   })
+
+  it("and it conflicts on (school_id, email), the table's unique key, not (school_id, user_id)", () => {
+    const at = ROUTE.indexOf(".from('school_members').upsert(")
+    const call = ROUTE.slice(at, ROUTE.indexOf('if (memberError)', at))
+    expect(call).toContain("{ onConflict: 'school_id,email' }")
+    expect(call).not.toContain("'school_id,user_id'")
+  })
 })
 
 describe('a failure can no longer pass for success', () => {
@@ -109,14 +122,14 @@ describe('a failure can no longer pass for success', () => {
   })
 
   it('and a failed row is recorded, not just logged', () => {
-    expect(ROUTE).toContain('memberFailures.push(email)')
-    expect(ROUTE).toContain('memberLinkFailures')
+    expect(ROUTE).toContain('memberLinkFailures.push({ row: row.row, email, reason:')
   })
 
   it('and reaches the caller, not only the server log', () => {
     // A console line on a serverless function is not a report. The school ran
     // this import and was told it had worked.
-    expect(ROUTE).toContain('memberLinkFailures: memberFailures')
+    const body = ROUTE.slice(ROUTE.indexOf('const body: CommitBulkUploadBody = {'))
+    expect(body).toMatch(/^\s+memberLinkFailures,$/m)
   })
 
   it('and the catch logs at error level rather than warn', () => {
@@ -126,20 +139,29 @@ describe('a failure can no longer pass for success', () => {
     // Scoped to the school_members block, not the whole file: the auth-user
     // rollback further up warns on purpose, and a blanket ban on the prefix
     // failed for that reason on the first run.
-    const at = ROUTE.indexOf('// 8. Link Supabase school_members')
+    const at = ROUTE.indexOf('// 7. Link Supabase school_members')
     expect(at).toBeGreaterThan(-1)
-    const block = ROUTE.slice(at, ROUTE.indexOf('const response: CommitResponse', at))
+    const block = ROUTE.slice(at, ROUTE.indexOf('// 8. Place each pupil', at))
+    expect(block.length).toBeGreaterThan(200)
     expect(block).not.toContain('console.warn(')
     expect(block).toContain("console.error('bulk-upload.commit")
   })
 })
 
-describe('the class code is not quietly dropped', () => {
-  it('rows supplying one are counted', () => {
-    expect(ROUTE).toContain('classCodesSupplied += 1')
+describe('the class code is acted on, and never quietly dropped', () => {
+  it('a pupil is placed in the class the code names', () => {
+    // Whitespace-tolerant: prettier wraps a chain when it grows.
+    expect(ROUTE).toMatch(/\.from\('class_students'\)\s*\.upsert\(/)
+    expect(ROUTE).toMatch(/\.from\('school_students'\)\s*\.upsert\(/)
   })
 
-  it('and the count is returned so nobody assumes it was applied', () => {
-    expect(ROUTE).toContain('classCodesNotAssigned: classCodesSupplied')
+  it('a code with no class is reported, per row, to the caller', () => {
+    expect(ROUTE).toContain('unmatchedClassCodes.push({ row: row.row, email, classCode })')
+    const body = ROUTE.slice(ROUTE.indexOf('const body: CommitBulkUploadBody = {'))
+    expect(body).toMatch(/^\s+unmatchedClassCodes,$/m)
+  })
+
+  it('and the old "not assigned" count, which said codes were ignored, is gone', () => {
+    expect(ROUTE).not.toContain('classCodesNotAssigned')
   })
 })
