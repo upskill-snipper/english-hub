@@ -56,29 +56,26 @@ Two more invariants worth stating plainly:
 
 ## 2. Sign-in routes, and the one that does the extra work
 
-| Route                                 | Mechanism                                                                                                                                               | Calls `/api/auth/record-login`? | Projects a Prisma row?                |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- | ------------------------------------- |
-| Email + password                      | `signInWithPassword` at [`auth/login/page.tsx:61`](../../src/app/auth/login/page.tsx)                                                                   | Yes, line 71, fire-and-forget   | Yes, as a side effect of record-login |
-| Google                                | `signInWithOAuth({provider:'google'})` → `/auth/callback` ([`GoogleSignInButton.tsx:71`](../../src/components/auth/GoogleSignInButton.tsx))             | **No**                          | No                                    |
-| Apple                                 | `signInWithOAuth({provider:'apple'})` → `/auth/callback` ([`AppleSignInButton.tsx:57`](../../src/components/auth/AppleSignInButton.tsx))                | **No**                          | No                                    |
-| Email confirmation                    | PKCE `code` or `token_hash` at [`auth/callback/route.ts`](../../src/app/auth/callback/route.ts)                                                         | **No**                          | No                                    |
-| Magic link (resend-verification only) | admin `generateLink({type:'magiclink'})` → `/auth/callback` ([`resend-verification/route.ts:186`](../../src/app/api/auth/resend-verification/route.ts)) | **No**                          | No                                    |
-| Password recovery                     | `/auth/callback?type=recovery` → `/auth/reset-password`                                                                                                 | **No**                          | No                                    |
+| Route                                 | Mechanism                                                                                                                                                                                  | Records the sign-in (`lastLoginAt`)?         | Projects a Prisma row? |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------- | ---------------------- |
+| Email + password                      | `signInWithPassword` at [`auth/login/page.tsx`](../../src/app/auth/login/page.tsx), then a fire-and-forget POST to `/api/auth/record-login`                                                | Yes, through `record-login`                  | Yes, same call         |
+| Google                                | `signInWithOAuth({provider:'google'})` → `/auth/callback` ([`GoogleSignInButton.tsx`](../../src/components/auth/GoogleSignInButton.tsx))                                                   | Yes, in the callback (since 12 October 2026) | Yes, same call         |
+| Apple                                 | `signInWithOAuth({provider:'apple'})` → `/auth/callback` ([`AppleSignInButton.tsx`](../../src/components/auth/AppleSignInButton.tsx))                                                      | Yes, in the callback (since 12 October 2026) | Yes, same call         |
+| Email confirmation                    | PKCE `code` or `token_hash` at [`auth/callback/route.ts`](../../src/app/auth/callback/route.ts)                                                                                            | Yes, in the callback (since 12 October 2026) | Yes, same call         |
+| Magic link (resend-verification only) | admin `generateLink({type:'magiclink'})`, emailed by us as a `token_hash` link to `/auth/callback` ([`resend-verification/route.ts`](../../src/app/api/auth/resend-verification/route.ts)) | Yes, in the callback (since 12 October 2026) | Yes, same call         |
+| Password recovery                     | `/auth/callback` with `type=recovery` or `next=/auth/reset-password` → `/auth/reset-password`                                                                                              | Yes, in the callback (since 12 October 2026) | Yes, same call         |
 
-Both OAuth buttons render **nothing** unless `NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED` / `NEXT_PUBLIC_APPLE_OAUTH_ENABLED` is exactly `'true'` (hard guards at `GoogleSignInButton.tsx:59` and `AppleSignInButton.tsx:45`). There is no user-initiated magic-link sign-in surface; the only magic link the product mints is the re-verification one.
+Both OAuth buttons render **nothing** unless `NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED` / `NEXT_PUBLIC_APPLE_OAUTH_ENABLED` is exactly `'true'` (hard guards in `GoogleSignInButton.tsx` and `AppleSignInButton.tsx`). There is no user-initiated magic-link sign-in surface; the only magic link the product mints is the re-verification one. Until 12 October 2026 that email carried Supabase's own `action_link`, which finishes an admin-generated token the implicit way, with the session in the URL fragment: the callback never saw it and the PKCE browser client refused it, so the link confirmed the address and signed nobody in. It now carries the hashed token to the callback's `token_hash` branch, which works in any browser.
 
-### What the record-login gap costs
+### Recording the sign-in
 
-[`/api/auth/record-login`](../../src/app/api/auth/record-login/route.ts) does two things: it stamps `User.lastLoginAt` (the dormancy-deletion cron reads this column - it used to read `updatedAt`, which any profile write reset), and it is the **eager projection point**. It calls `tryPrismaUserId` first, which creates the missing row, then stamps.
+`User.lastLoginAt` is the clock the adult dormancy warning and the child dormancy purge read, and `record-login` is also the **eager projection point**. Both jobs live in one helper, [`stampLogin`](../../src/lib/auth/stamp-login.ts): it calls `tryPrismaUserId`, which creates the missing row, then stamps, and it never throws.
 
-Because only the password form calls it, a person who only ever uses Google or Apple:
+Until 12 October 2026 only the password form reached it, so a person who only ever used Google, Apple or an email link was never stamped (the dormancy cron saw an account that had _never_ logged in) and was not projected until something else forced it. `/auth/callback` now calls `stampLogin` for every session it establishes. It calls the helper directly rather than POSTing to `record-login`, because that endpoint authenticates from the session cookie and, while the callback runs, the new cookies exist only on the response it is building.
 
-1. never gets `lastLoginAt` stamped, so the dormancy cron sees an account that has _never_ logged in;
-2. is not projected until something else forces it - the first AI call, a consent write, or a DOB save.
+Two gaps remain: the mobile app stamps nothing, and a session kept alive by refresh tokens is not re-stamped, so `lastLoginAt` is a sign-in clock rather than an activity clock (chapter 09 has the consequences). Do not "fix" the second by calling `projectSupabaseUser` from the middleware - that runs on every request.
 
-Just-in-time projection covers (2) safely, so this is a data-quality and cron-correctness problem rather than an access-control one. The fix is one fetch in the callback route, and it has not been written. Do not "fix" it by calling `projectSupabaseUser` from the middleware - that runs on every request.
-
-`record-login` never fails a login: an unresolvable identity logs and returns `200 {ok:false}` (line 58), a throw returns `200 {ok:false}` (line 75). Rate limited 20/hour per user.
+`record-login` never fails a login: when `stampLogin` reports false it returns `200 {ok:false, rows:0}`, and any other throw returns `200 {ok:false}`. Rate limited 20/hour per user.
 
 ### Signup, briefly
 

@@ -176,10 +176,26 @@ export async function POST(request: NextRequest) {
   // Supabase's `generateLink({ type: 'signup' })` requires the password,
   // which we don't have (and shouldn't ask for). For an existing
   // unconfirmed user, the correct admin operation is `type: 'magiclink'`,
-  // which mints a one-time link that - when clicked - confirms the email
-  // address (equivalent UX to the signup confirmation link). The user
-  // lands on /auth/callback exactly as they would after the original
-  // signup email.
+  // which mints a one-time token that confirms the email address when it
+  // is verified (Supabase's recoverVerify confirms an unconfirmed user).
+  //
+  // A DEFECT, FIXED 12 OCTOBER 2026: the email used to carry Supabase's
+  // `action_link`, and that link could confirm an address but never sign
+  // anyone in. An admin-generated token has no PKCE prefix, so Supabase's
+  // /verify finishes it the implicit way and redirects to /auth/callback
+  // with the session in the URL fragment (#access_token=...). A server route
+  // never sees a fragment, so the callback found no code and sent the person
+  // to /auth/login with an error; the browser client then refuses the
+  // fragment too, because it runs PKCE ("Not a valid PKCE flow url." in
+  // auth-js). The login page's error offered this resend, so the way out of
+  // a failed link was a second link that failed the same way.
+  //
+  // The link now points at the callback's token_hash branch, which verifies
+  // the token server-side with verifyOtp and sets the session cookies. It
+  // needs nothing from the browser that asked for it, so it works on any
+  // device and inside a mail app. `verification_type` is 'magiclink' for an
+  // existing user (Supabase stores the token as a recovery token), and the
+  // callback must verify it with that same type.
   let actionLink: string | null = null
   try {
     const { data, error } = await admin.auth.admin.generateLink({
@@ -189,8 +205,13 @@ export async function POST(request: NextRequest) {
         redirectTo: `${siteUrl}/auth/callback`,
       },
     })
-    if (!error && data?.properties?.action_link) {
-      actionLink = data.properties.action_link
+    const tokenHash = data?.properties?.hashed_token
+    if (!error && tokenHash) {
+      const params = new URLSearchParams({
+        token_hash: tokenHash,
+        type: data.properties.verification_type || 'magiclink',
+      })
+      actionLink = `${siteUrl}/auth/callback?${params.toString()}`
     } else if (error) {
       console.error('[resend-verification] generateLink error:', error)
     }

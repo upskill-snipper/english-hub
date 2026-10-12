@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 import { provisionSignupTrial } from '@/lib/billing/provision-signup-trial'
+import { stampLogin } from '@/lib/auth/stamp-login'
 
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url)
@@ -191,6 +192,13 @@ export async function GET(request: NextRequest) {
     }
 
     if (!error) {
+      // Every session this route establishes is a sign-in, and until 12
+      // October 2026 none of them was recorded: only the password form
+      // stamped lastLoginAt. See src/lib/auth/stamp-login.ts.
+      if (data?.user?.id) {
+        await stampLogin(data.user.id)
+      }
+
       // Password recovery via PKCE: Supabase tags the session as a
       // recovery session, but we still need to land the user on
       // /auth/reset-password rather than the default `next` (which the
@@ -252,10 +260,13 @@ export async function GET(request: NextRequest) {
 
   // Handle token_hash flow (email verification, magic links, recovery via
   // the legacy non-PKCE flow that some Supabase email templates still use).
+  // It is also where the re-verification email lands: since 12 October 2026
+  // /api/auth/resend-verification links here with type=magiclink, because
+  // the implicit-flow link it used to send could not sign anyone in.
   if (token_hash && type) {
     const { data, error } = await supabase.auth.verifyOtp({
       token_hash,
-      type: type as 'signup' | 'email' | 'recovery' | 'invite',
+      type: type as 'signup' | 'email' | 'recovery' | 'invite' | 'magiclink',
     })
 
     if (error) {
@@ -274,6 +285,10 @@ export async function GET(request: NextRequest) {
     }
 
     if (!error) {
+      if (data?.user?.id) {
+        await stampLogin(data.user.id)
+      }
+
       if (type === 'recovery') {
         return redirectTo('/auth/reset-password')
       }
@@ -286,7 +301,10 @@ export async function GET(request: NextRequest) {
         await provisionSignupTrial(data.user.id)
       }
 
-      if (type === 'signup') {
+      // The only magic link the product mints is the re-verification one, and
+      // it is sent only to an address that is not yet confirmed, so it is a
+      // first session too and lands like a confirmed signup.
+      if (type === 'signup' || type === 'magiclink') {
         // Routing for a confirmed signup: the welcome flag and the role-aware
         // landing page.
         let target = safeNext

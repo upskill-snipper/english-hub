@@ -154,24 +154,23 @@ A purged row then becomes a `cleanupExpiredData` step 1 candidate 30 days later 
 
 ### `lastLoginAt` is not recorded for every sign-in method
 
-**This is the single most important finding in this chapter, and it is a live false-positive generator.**
+**Partly fixed on 12 October 2026. What remains is still the most important finding in this chapter.**
 
-The dormancy clocks read `User.lastLoginAt`. That column is written in exactly one place: [`src/app/api/auth/record-login/route.ts:65`](../../src/app/api/auth/record-login/route.ts). That endpoint is called from exactly one place: [`src/app/auth/login/page.tsx:71`](../../src/app/auth/login/page.tsx), fire-and-forget, immediately after `signInWithPassword` succeeds.
+The dormancy clocks read `User.lastLoginAt`. One helper writes it, `stampLogin` in [`src/lib/auth/stamp-login.ts`](../../src/lib/auth/stamp-login.ts), which projects the Prisma row through `tryPrismaUserId` and then stamps. Two entry points call it:
 
-Every other way into the product leaves `lastLoginAt` untouched:
+- [`/api/auth/record-login`](../../src/app/api/auth/record-login/route.ts), which the password form at [`src/app/auth/login/page.tsx`](../../src/app/auth/login/page.tsx) calls fire-and-forget after `signInWithPassword` succeeds;
+- [`/auth/callback`](../../src/app/auth/callback/route.ts), for every session it establishes: Google and Apple, email-confirmation links, the re-verification link and password-reset links. Before 12 October 2026 the callback stamped nothing, so every one of those sign-ins left `lastLoginAt` untouched.
 
-- **Google and Apple OAuth.** `GoogleSignInButton` and `AppleSignInButton` call `supabase.auth.signInWithOAuth` and land on [`src/app/auth/callback/route.ts`](../../src/app/auth/callback/route.ts), which exchanges the code and redirects. It never calls `record-login`. I checked the whole file; there is no such call.
-- **Magic links and email-confirmation sign-in**, which take the same `/auth/callback` path.
-- **The mobile app.** The only routes under `src/app/api/mobile/` are `devices` and `devices/[id]`. Nothing there or anywhere else stamps `lastLoginAt`.
-- **A session that is simply still valid.** Returning with a live cookie is not a sign-in and calls nothing.
+Two ways into the product still leave it untouched:
 
-The consequence, in `dormancy-check`'s adult pass at [`route.ts:97-110`](../../src/app/api/cron/dormancy-check/route.ts): the query matches `lastLoginAt <= cutoff` **or** (`lastLoginAt IS NULL` and `createdAt <= cutoff`). A Google-only adult who has used the product every day since signing up has `lastLoginAt = NULL` for ever, so on the 730th day after account creation they are emailed "we noticed you have not logged in for over two years" and flipped to `SUSPENDED`. The child path is worse because it reads a different column entirely (see below).
+- **The mobile app.** The only routes under `src/app/api/mobile/` are `devices` and `devices/[id]`. Nothing there stamps `lastLoginAt`.
+- **A session that is simply still valid.** Returning with a live cookie is not a sign-in and calls nothing, so `lastLoginAt` is a sign-in clock, not an activity clock.
+
+The consequence, in `dormancy-check`'s adult pass at [`route.ts:97-110`](../../src/app/api/cron/dormancy-check/route.ts): the query matches `lastLoginAt <= cutoff` **or** (`lastLoginAt IS NULL` and `createdAt <= cutoff`). Before the callback fix, a Google-only adult who used the product every day had `lastLoginAt = NULL` for ever, so on the 730th day after account creation they would have been emailed "we noticed you have not logged in for over two years" and flipped to `SUSPENDED`. The same is still true of a mobile-only account, and of anyone who stays signed in on one device for two years without signing in again. The child path is worse because it reads a different column entirely (see below).
 
 The fallback comment at line 93-96 claims the `createdAt` branch "errs on the side of NOT deleting them until they log in once". That was true when password login was the only route in. It is not true now.
 
-Before you reach for the obvious fix, note the shape of the endpoint. `record-login` exports **only `POST`** ([`route.ts:32`](../../src/app/api/auth/record-login/route.ts)) and it takes no user identifier: it authenticates from the session cookie, calling `supabase.auth.getUser()` through `createServerSupabaseClient()` and returning 401 if that yields nothing ([`route.ts:33-41`](../../src/app/api/auth/record-login/route.ts)). It is also rate-limited to 20 calls per hour per user. So it can only be driven by something that already holds the browser's session cookies, and it cannot be triggered by a redirect.
-
-That rules out the naive version of the fix. `/auth/callback` is a `GET` route handler that ends in a 3xx, and at the moment it runs, the new session cookies exist only on the response it is building - they are not yet on the browser and an outbound server-side `fetch` would not carry them. **The fix is therefore one of two shapes: either `/auth/callback` stamps directly after a successful `exchangeCodeForSession`, reusing the same `tryPrismaUserId` + `user.update({ lastLoginAt })` pair the endpoint uses, or the page it redirects to fires the same fire-and-forget `POST` that [`login/page.tsx:71`](../../src/app/auth/login/page.tsx) already does.** The mobile session bootstrap needs the same treatment. Until one of those lands, no dormancy deletion should be trusted without a manual cross-check against `auth.users.last_sign_in_at`, which Supabase does maintain for every method.
+The callback calls the helper directly rather than POSTing to `record-login`, because that endpoint authenticates from the session cookie and, while the callback runs, the new session cookies exist only on the response it is building. The mobile session bootstrap needs the same treatment, and a sign-in clock cannot see a long-lived session at all. Until both are addressed, no dormancy deletion should be trusted without a manual cross-check against `auth.users.last_sign_in_at`, which Supabase maintains for every sign-in method.
 
 ### The two dormancy clocks disagree
 

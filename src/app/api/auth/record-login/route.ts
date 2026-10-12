@@ -2,9 +2,8 @@
 // 2026-09-17: identity resolution delegated to src/lib/identity.
 import { NextResponse } from 'next/server'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
-import { prisma } from '@/lib/prisma'
 import { rateLimit } from '@/lib/rate-limit'
-import { tryPrismaUserId } from '@/lib/identity'
+import { stampLogin } from '@/lib/auth/stamp-login'
 import { provisionSignupTrial } from '@/lib/billing/provision-signup-trial'
 import type { NextRequest } from 'next/server'
 
@@ -52,19 +51,13 @@ export async function POST(_request: NextRequest) {
   }
 
   try {
-    // Project first, then stamp. tryPrismaUserId rather than the throwing
-    // form: a login must not fail because identity could not be resolved,
-    // and dormancy is a lagging signal.
-    const prismaUserId = await tryPrismaUserId(user.id)
-    if (!prismaUserId) {
-      console.error('[record-login] could not resolve identity for', user.id)
+    // Project first, then stamp, through the same helper /auth/callback uses
+    // for Google, Apple and email-link sign-ins. It logs and returns false
+    // rather than throwing: a login must not fail because identity could not
+    // be resolved, and dormancy is a lagging signal.
+    if (!(await stampLogin(user.id))) {
       return NextResponse.json({ ok: false, rows: 0 }, { status: 200 })
     }
-
-    await prisma.user.update({
-      where: { id: prismaUserId },
-      data: { lastLoginAt: new Date() },
-    })
 
     // Second net for the trial. The auth callback is the primary provisioning
     // point; this covers an account that confirmed while the callback was

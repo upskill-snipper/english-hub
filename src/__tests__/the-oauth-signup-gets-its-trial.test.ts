@@ -52,6 +52,9 @@ vi.mock('@/lib/billing/provision-signup-trial', () => ({
   provisionSignupTrial: (...a: unknown[]) => provision(...a),
 }))
 
+// Recording the sign-in is pinned in every-sign-in-records-the-sign-in.test.ts.
+vi.mock('@/lib/auth/stamp-login', () => ({ stampLogin: async () => true }))
+
 const exchangeCodeForSession = vi.fn()
 const verifyOtp = vi.fn()
 vi.mock('@supabase/ssr', () => ({
