@@ -37,22 +37,22 @@ const CHECKLISTS: ChecklistBoard[] = [
           {
             id: 'aqa-l-1',
             label: 'Q1: Identify and interpret explicit information',
-            detail: '4 marks -- list 4 things',
+            detail: '4 marks - list 4 things',
           },
           {
             id: 'aqa-l-2',
             label: 'Q2: Analyse language using subject terminology',
-            detail: '8 marks -- 2-3 detailed paragraphs',
+            detail: '8 marks - 2-3 detailed paragraphs',
           },
           {
             id: 'aqa-l-3',
             label: 'Q3: Analyse structure and organisation',
-            detail: '8 marks -- focus, shift, narrative perspective',
+            detail: '8 marks - focus, shift, narrative perspective',
           },
           {
             id: 'aqa-l-4',
             label: 'Q4: Critically evaluate texts',
-            detail: '20 marks -- agree/disagree with statement',
+            detail: '20 marks - agree/disagree with statement',
           },
           {
             id: 'aqa-l-5',
@@ -74,26 +74,26 @@ const CHECKLISTS: ChecklistBoard[] = [
       {
         title: "Paper 2: Writers' Viewpoints and Perspectives",
         items: [
-          { id: 'aqa-l-8', label: 'Q1: True/false statements', detail: '4 marks -- shade boxes' },
+          { id: 'aqa-l-8', label: 'Q1: True/false statements', detail: '4 marks - shade boxes' },
           {
             id: 'aqa-l-9',
             label: 'Q2: Summarise differences/similarities',
-            detail: '8 marks -- use both sources',
+            detail: '8 marks - use both sources',
           },
           {
             id: 'aqa-l-10',
             label: 'Q3: Analyse language in one source',
-            detail: '12 marks -- detailed analysis',
+            detail: '12 marks - detailed analysis',
           },
           {
             id: 'aqa-l-11',
             label: "Q4: Compare writers' viewpoints",
-            detail: '16 marks -- compare methods and perspectives',
+            detail: '16 marks - compare methods and perspectives',
           },
           {
             id: 'aqa-l-12',
             label: 'Q5: Writing to present a viewpoint',
-            detail: '40 marks -- letter, article, speech, essay',
+            detail: '40 marks - letter, article, speech, essay',
           },
           {
             id: 'aqa-l-13',
@@ -200,7 +200,7 @@ const CHECKLISTS: ChecklistBoard[] = [
           {
             id: 'aqa-lit-10',
             label: 'Poetry anthology: compare two poems',
-            detail: '30 marks -- named poem + your choice',
+            detail: '30 marks - named poem + your choice',
           },
           {
             id: 'aqa-lit-11',
@@ -298,7 +298,7 @@ const CHECKLISTS: ChecklistBoard[] = [
           },
           {
             id: 'edx-l-8',
-            label: 'Q1--Q4: retrieval, inference, language, synthesis',
+            label: 'Q1 to Q4: retrieval, inference, language, synthesis',
             detail: 'Progress through question types',
           },
           {
@@ -388,17 +388,17 @@ const CHECKLISTS: ChecklistBoard[] = [
           {
             id: 'caie-l-1',
             label: 'Q1: Retrieve and organise information',
-            detail: '15 marks -- select relevant points',
+            detail: '15 marks - select relevant points',
           },
           {
             id: 'caie-l-2',
             label: 'Q2: Understand and analyse language',
-            detail: '25 marks -- explain effects of language choices',
+            detail: '25 marks - explain effects of language choices',
           },
           {
             id: 'caie-l-3',
             label: 'Q3: Summary writing',
-            detail: '10 marks -- concise, own words',
+            detail: '10 marks - concise, own words',
           },
         ],
       },
@@ -408,17 +408,17 @@ const CHECKLISTS: ChecklistBoard[] = [
           {
             id: 'caie-l-4',
             label: 'Directed writing: respond to passage in given form',
-            detail: '25 marks -- adapt style to audience/purpose',
+            detail: '25 marks - adapt style to audience/purpose',
           },
           {
             id: 'caie-l-5',
             label: 'Composition: descriptive writing',
-            detail: '25 marks -- sensory detail, structure',
+            detail: '25 marks - sensory detail, structure',
           },
           {
             id: 'caie-l-6',
             label: 'Composition: narrative writing',
-            detail: '25 marks -- plot, characterisation, atmosphere',
+            detail: '25 marks - plot, characterisation, atmosphere',
           },
           {
             id: 'caie-l-7',

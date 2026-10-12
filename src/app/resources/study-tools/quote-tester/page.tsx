@@ -352,7 +352,7 @@ const TEXT_DATA: TextData[] = [
       },
       {
         id: 'qt-aic-3',
-        quote: "But these girls aren't cheap labour -- they're people",
+        quote: "But these girls aren't cheap labour - they're people",
         speaker: 'Sheila Birling',
         location: 'Act One',
         technique: 'Antithesis / Corrective',
@@ -364,7 +364,7 @@ const TEXT_DATA: TextData[] = [
       },
       {
         id: 'qt-aic-4',
-        quote: 'The Titanic -- she sails next week... unsinkable, absolutely unsinkable',
+        quote: 'The Titanic - she sails next week... unsinkable, absolutely unsinkable',
         speaker: 'Mr Birling',
         location: 'Act One',
         technique: 'Dramatic irony',
@@ -388,7 +388,7 @@ const TEXT_DATA: TextData[] = [
       },
       {
         id: 'qt-aic-6',
-        quote: 'A man has to make his own way -- has to look after himself',
+        quote: 'A man has to make his own way - has to look after himself',
         speaker: 'Mr Birling',
         location: 'Act One',
         technique: 'Repetition / Declarative',
@@ -1073,7 +1073,7 @@ export default function QuoteTesterPage() {
           </h1>
           {retryWrongMode && (
             <p className="mt-1 text-sm font-medium text-primary">
-              Retry Mode -- focusing on previously wrong answers
+              Retry Mode - focusing on previously wrong answers
             </p>
           )}
         </div>
@@ -1116,7 +1116,7 @@ export default function QuoteTesterPage() {
                 </p>
               ) : pct >= 70 ? (
                 <p className="text-sm font-semibold text-primary">
-                  Great work! A few more to nail down -- try the retry mode.
+                  Great work! A few more to nail down - try the retry mode.
                 </p>
               ) : pct >= 50 ? (
                 <p className="text-sm font-semibold text-amber-500">

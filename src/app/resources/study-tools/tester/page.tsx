@@ -106,7 +106,7 @@ const TEXT_SETS: TextSet[] = [
         character: 'Macbeth',
         act: 'Act 2, Scene 2',
         analysis:
-          'Hyperbolic imagery -- even the god of the ocean cannot cleanse his guilt. The blood symbolises the permanent moral stain of regicide.',
+          'Hyperbolic imagery - even the god of the ocean cannot cleanse his guilt. The blood symbolises the permanent moral stain of regicide.',
         themes: ['Guilt', 'Kingship', 'Violence'],
       },
       {
@@ -154,7 +154,7 @@ const TEXT_SETS: TextSet[] = [
         character: 'Second Witch',
         act: 'Act 4, Scene 1',
         analysis:
-          "The Witches now call Macbeth 'wicked' -- he has become more evil than the supernatural forces that tempted him.",
+          "The Witches now call Macbeth 'wicked' - he has become more evil than the supernatural forces that tempted him.",
         themes: ['Supernatural', 'Evil', 'Fate'],
       },
     ],
@@ -212,7 +212,7 @@ const TEXT_SETS: TextSet[] = [
         id: 'acc-6',
         quote: 'Solitary as an oyster',
         analysis:
-          "Simile establishing Scrooge's self-imposed isolation. An oyster is hard-shelled but contains a pearl -- foreshadowing the goodness hidden within.",
+          "Simile establishing Scrooge's self-imposed isolation. An oyster is hard-shelled but contains a pearl - foreshadowing the goodness hidden within.",
         themes: ['Isolation', 'Redemption'],
       },
       {
@@ -256,7 +256,7 @@ const TEXT_SETS: TextSet[] = [
       },
       {
         id: 'aic-3',
-        quote: "But these girls aren't cheap labour -- they're people",
+        quote: "But these girls aren't cheap labour - they're people",
         character: 'Sheila Birling',
         analysis:
           "Sheila's moral growth is shown as she recognises workers' humanity. She rejects her father's capitalist view of workers as commodities.",
@@ -264,7 +264,7 @@ const TEXT_SETS: TextSet[] = [
       },
       {
         id: 'aic-4',
-        quote: 'The Titanic -- she sails next week... unsinkable, absolutely unsinkable',
+        quote: 'The Titanic - she sails next week... unsinkable, absolutely unsinkable',
         character: 'Mr Birling',
         analysis:
           "Dramatic irony: the audience knows the Titanic sank. Birling's confident repetition establishes him as foolish and overconfident.",
@@ -288,7 +288,7 @@ const TEXT_SETS: TextSet[] = [
       },
       {
         id: 'aic-7',
-        quote: 'A man has to make his own way -- has to look after himself',
+        quote: 'A man has to make his own way - has to look after himself',
         character: 'Mr Birling',
         analysis:
           "Birling's individualist philosophy is the antithesis of the Inspector's message. Priestley presents this capitalist self-interest as morally bankrupt.",
@@ -299,7 +299,7 @@ const TEXT_SETS: TextSet[] = [
         quote: "We don't live alone. We are members of one body",
         character: 'Inspector Goole',
         analysis:
-          "The metaphor of 'one body' implies society functions like a human body -- if one part suffers, all are affected.",
+          "The metaphor of 'one body' implies society functions like a human body - if one part suffers, all are affected.",
         themes: ['Social Responsibility', 'Community', 'Equality'],
       },
     ],
@@ -340,7 +340,7 @@ const TEXT_SETS: TextSet[] = [
         id: 'jh-4',
         quote: "Trampled calmly over the child's body",
         analysis:
-          "The oxymoron 'trampled calmly' is deeply unsettling -- Hyde's violence is casual, not passionate. Stevenson shows evil as indifferent.",
+          "The oxymoron 'trampled calmly' is deeply unsettling - Hyde's violence is casual, not passionate. Stevenson shows evil as indifferent.",
         themes: ['Violence', 'Evil', 'Duality'],
       },
       {
@@ -355,7 +355,7 @@ const TEXT_SETS: TextSet[] = [
         id: 'jh-6',
         quote: 'With ape-like fury',
         analysis:
-          "Hyde's animalistic behaviour references Darwinian evolution -- he is a regression to a primitive state. Stevenson links moral degeneration to physical devolution.",
+          "Hyde's animalistic behaviour references Darwinian evolution - he is a regression to a primitive state. Stevenson links moral degeneration to physical devolution.",
         themes: ['Evolution', 'Violence', 'Duality'],
       },
       {
@@ -363,7 +363,7 @@ const TEXT_SETS: TextSet[] = [
         quote: 'All human beings, as we meet them, are commingled out of good and evil',
         character: 'Dr Jekyll',
         analysis:
-          "'Commingled' means thoroughly mixed -- good and evil cannot be separated. The universal 'all human beings' makes this about humanity, not just Jekyll.",
+          "'Commingled' means thoroughly mixed - good and evil cannot be separated. The universal 'all human beings' makes this about humanity, not just Jekyll.",
         themes: ['Duality', 'Human Nature', 'Morality'],
       },
       {
@@ -397,7 +397,7 @@ const TEXT_SETS: TextSet[] = [
         character: 'Romeo',
         act: 'Act 1, Scene 5',
         analysis:
-          "Romeo's first sight of Juliet uses light imagery -- she outshines artificial light. The personification elevates Juliet to something transcendent.",
+          "Romeo's first sight of Juliet uses light imagery - she outshines artificial light. The personification elevates Juliet to something transcendent.",
         themes: ['Love', 'Light/Dark', 'Beauty'],
       },
       {
@@ -416,7 +416,7 @@ const TEXT_SETS: TextSet[] = [
         character: 'Romeo',
         act: 'Act 2, Scene 2',
         analysis:
-          "Celestial imagery -- Juliet as 'the sun' makes her the centre of Romeo's universe, the source of light and life.",
+          "Celestial imagery - Juliet as 'the sun' makes her the centre of Romeo's universe, the source of light and life.",
         themes: ['Love', 'Light/Dark', 'Nature'],
       },
       {
@@ -461,7 +461,7 @@ const TEXT_SETS: TextSet[] = [
         quote: 'For never was a story of more woe / Than this of Juliet and her Romeo',
         act: 'Act 5, Scene 3',
         analysis:
-          "The Prince's closing couplet provides formal closure. 'Her Romeo' shows possession in death -- they finally belong to each other.",
+          "The Prince's closing couplet provides formal closure. 'Her Romeo' shows possession in death - they finally belong to each other.",
         themes: ['Love', 'Death', 'Fate', 'Family'],
       },
     ],
@@ -603,7 +603,7 @@ function generateQuiz(
         prompt: `Complete the quote: "${blanked}"`,
         correctAnswer: answer,
         options: shuffle([answer, ...wrongs]),
-        explanation: `The full quote is: "${card.quote}"${card.character ? ` -- ${card.character}` : ''}, ${set.title}. ${card.analysis}`,
+        explanation: `The full quote is: "${card.quote}"${card.character ? ` - ${card.character}` : ''}, ${set.title}. ${card.analysis}`,
       }
     }
 
@@ -907,7 +907,7 @@ export default function QuoteTesterPage() {
             {percentage >= 90
               ? 'Outstanding! You really know your quotes.'
               : percentage >= 70
-                ? 'Great work -- keep revising to push even higher.'
+                ? 'Great work - keep revising to push even higher.'
                 : percentage >= 50
                   ? 'A solid effort. Review the quotes you missed and try again.'
                   : 'Keep practising! Use the flashcards to build your knowledge.'}
@@ -1011,7 +1011,7 @@ export default function QuoteTesterPage() {
                   <span className="text-sm text-muted-foreground">
                     <span className="font-medium">Your answer:</span>{' '}
                     {result.chosenAnswer ?? (
-                      <em className="text-muted-foreground">Time expired -- no answer</em>
+                      <em className="text-muted-foreground">Time expired - no answer</em>
                     )}
                   </span>
                 </div>

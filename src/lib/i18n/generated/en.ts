@@ -10345,7 +10345,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Pick your exam board, then tick off topics as you finish revising them.',
   'resources.study_tools.qtester.title': 'Quote Tester',
   'resources.study_tools.qtester.subtitle':
-    'Test how well you have memorised your key quotes. Pick a text and fill in the missing words against the clock.',
+    'Test how well you know your key quotes. Pick a text, then for each quote name the speaker, where it comes in the text, the technique and the theme.',
   'resources.study_tools.tester.title': 'Knowledge Tester',
   'resources.study_tools.tester.subtitle':
     'Quick multiple-choice quizzes on your set texts - characters, themes, context and quotations. Get instant feedback and review what you missed.',

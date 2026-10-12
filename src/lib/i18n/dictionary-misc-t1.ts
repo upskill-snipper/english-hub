@@ -287,10 +287,12 @@ export const MISC_T1_DICTIONARY: Record<string, { en: string; ar: string; es?: s
     ar: 'اختبار الاقتباسات',
     es: 'Probador de citas',
   },
+  // Until 12 October 2026 this promised "fill in the missing words against the
+  // clock". The tester has neither: it asks four questions about each quote.
   'resources.study_tools.qtester.subtitle': {
-    en: 'Test how well you have memorised your key quotes. Pick a text and fill in the missing words against the clock.',
-    ar: 'اختبر قد إيش حافظ اقتباساتك المهمة. اختر نص واملأ الكلمات الناقصة وإنت تسابق الوقت.',
-    es: 'Comprueba lo bien que has memorizado tus citas clave. Elige un texto y completa las palabras que faltan contrarreloj.',
+    en: 'Test how well you know your key quotes. Pick a text, then for each quote name the speaker, where it comes in the text, the technique and the theme.',
+    ar: 'اختبر قد إيش تعرف اقتباساتك المهمة. اختر نص، وبعدين لكل اقتباس حدد مين قاله، ووين يجي في النص، والأسلوب، والموضوع.',
+    es: 'Comprueba lo bien que conoces tus citas clave. Elige un texto y, para cada cita, indica quién la dice, en qué parte del texto aparece, la técnica y el tema.',
   },
 
   // Tester sub-app (/resources/study-tools/tester)

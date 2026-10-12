@@ -10596,7 +10596,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Elige tu junta examinadora y luego marca los temas a medida que termines de repasarlos.',
   'resources.study_tools.qtester.title': 'Probador de citas',
   'resources.study_tools.qtester.subtitle':
-    'Comprueba lo bien que has memorizado tus citas clave. Elige un texto y completa las palabras que faltan contrarreloj.',
+    'Comprueba lo bien que conoces tus citas clave. Elige un texto y, para cada cita, indica quién la dice, en qué parte del texto aparece, la técnica y el tema.',
   'resources.study_tools.tester.title': 'Probador de conocimientos',
   'resources.study_tools.tester.subtitle':
     'Cuestionarios rápidos de opción múltiple sobre tus textos prescritos: personajes, temas, contexto y citas. Recibe valoración instantánea y repasa lo que fallaste.',
