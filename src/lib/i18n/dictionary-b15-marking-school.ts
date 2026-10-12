@@ -2019,4 +2019,852 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<
     ar: 'تعذّر حفظ القرار',
     es: 'No se pudo guardar la decisión',
   },
+
+  // ─── /school/marking - the teacher marking queue, rebuilt 12 Oct 2026 ─────
+  // Curated EN + Khaleeji (Gulf) AR, teacher-facing. "AO", "AI" stay as the
+  // product's own terms in EN/ES; AR says الذكاء الاصطناعي in full. Values
+  // with {placeholders} are filled by .replace() at the call site.
+  'school.queue.title': { en: 'Marking queue', ar: 'قائمة التصحيح', es: 'Cola de corrección' },
+  'school.queue.subtitle_teacher': {
+    en: "Essays your pupils have submitted for marking, with the AI's mark for each assessment objective. Approve each mark or adjust it.",
+    ar: 'المقالات اللي سلّمها طلابك للتصحيح، مع درجة الذكاء الاصطناعي لكل هدف تقييم. اعتمد كل درجة أو عدّلها.',
+    es: 'Las redacciones que tus alumnos han enviado a corregir, con la nota de la IA para cada objetivo de evaluación. Aprueba cada nota o ajústala.',
+  },
+  'school.queue.subtitle_school': {
+    en: "Every essay pupils have submitted for marking across the school, with the AI's mark for each assessment objective.",
+    ar: 'كل المقالات اللي سلّمها الطلاب للتصحيح في المدرسة كلها، مع درجة الذكاء الاصطناعي لكل هدف تقييم.',
+    es: 'Todas las redacciones que los alumnos han enviado a corregir en el centro, con la nota de la IA para cada objetivo de evaluación.',
+  },
+  'school.queue.ai_first_note': {
+    en: "Pupils see the AI's feedback as soon as it is ready. Your review then confirms or corrects the marks.",
+    ar: 'الطلاب يشوفون ملاحظات الذكاء الاصطناعي أول ما تجهز، وبعدين مراجعتك تثبّت الدرجات أو تصحّحها.',
+    es: 'Los alumnos ven los comentarios de la IA en cuanto están listos. Después, tu revisión confirma o corrige las notas.',
+  },
+  'school.queue.load_error': {
+    en: 'We could not load the marking queue.',
+    ar: 'ما قدرنا نحمّل قائمة التصحيح.',
+    es: 'No se pudo cargar la cola de corrección.',
+  },
+  'school.queue.retry': { en: 'Try again', ar: 'حاول مرة ثانية', es: 'Intentar de nuevo' },
+  'school.queue.no_classes_title': {
+    en: 'You do not teach any classes yet',
+    ar: 'ما عندك صفوف لين الحين',
+    es: 'Todavía no impartes ninguna clase',
+  },
+  'school.queue.no_classes_body': {
+    en: 'Essays reach you through your classes. Ask your school administrator to make you the teacher of a class.',
+    ar: 'المقالات توصلك عن طريق صفوفك. اطلب من مسؤول المدرسة يعيّنك معلّم لصف.',
+    es: 'Las redacciones te llegan a través de tus clases. Pide al administrador del centro que te asigne como profesor de una clase.',
+  },
+  'school.queue.empty_title': {
+    en: 'No essays yet',
+    ar: 'ما فيه مقالات لين الحين',
+    es: 'Todavía no hay redacciones',
+  },
+  'school.queue.empty_body': {
+    en: "When your pupils submit essays for marking, they appear here with the AI's mark for each assessment objective.",
+    ar: 'لما يسلّم طلابك مقالات للتصحيح، بتطلع هنا مع درجة الذكاء الاصطناعي لكل هدف تقييم.',
+    es: 'Cuando tus alumnos envíen redacciones a corregir, aparecerán aquí con la nota de la IA para cada objetivo de evaluación.',
+  },
+  'school.queue.filter.label': { en: 'Show essays', ar: 'عرض المقالات', es: 'Mostrar redacciones' },
+  'school.queue.filter.awaiting': {
+    en: 'Awaiting your review',
+    ar: 'تنتظر مراجعتك',
+    es: 'Pendientes de tu revisión',
+  },
+  'school.queue.filter.done': { en: 'Reviewed', ar: 'تمّت مراجعتها', es: 'Revisadas' },
+  'school.queue.filter.not_marked': {
+    en: 'Not yet marked',
+    ar: 'ما تصحّحت بعد',
+    es: 'Aún sin corregir',
+  },
+  'school.queue.filter.all': { en: 'All', ar: 'الكل', es: 'Todas' },
+  'school.queue.filter.class_label': { en: 'Class', ar: 'الصف', es: 'Clase' },
+  'school.queue.filter.class_all': { en: 'All classes', ar: 'كل الصفوف', es: 'Todas las clases' },
+  'school.queue.search_placeholder': {
+    en: 'Search by pupil, class or question',
+    ar: 'ابحث باسم الطالب أو الصف أو السؤال',
+    es: 'Buscar por alumno, clase o pregunta',
+  },
+  'school.queue.clear': { en: 'Clear', ar: 'مسح', es: 'Borrar' },
+  'school.queue.filter_empty': {
+    en: 'No essays match these filters.',
+    ar: 'ما فيه مقالات تطابق هذي الفلاتر.',
+    es: 'Ninguna redacción coincide con estos filtros.',
+  },
+  'school.queue.col.pupil': { en: 'Pupil', ar: 'الطالب', es: 'Alumno' },
+  'school.queue.col.essay': { en: 'Essay', ar: 'المقالة', es: 'Redacción' },
+  'school.queue.col.ai_mark': { en: 'AI mark', ar: 'درجة الذكاء الاصطناعي', es: 'Nota de la IA' },
+  'school.queue.col.submitted': { en: 'Submitted', ar: 'تاريخ التسليم', es: 'Entregada' },
+  'school.queue.col.status': { en: 'Status', ar: 'الحالة', es: 'Estado' },
+  'school.queue.unnamed_pupil': {
+    en: 'Unnamed pupil',
+    ar: 'طالب بدون اسم',
+    es: 'Alumno sin nombre',
+  },
+  'school.queue.unnamed_class': { en: 'Unnamed class', ar: 'صف بدون اسم', es: 'Clase sin nombre' },
+  'school.queue.no_class': { en: 'No class', ar: 'بدون صف', es: 'Sin clase' },
+  'school.queue.untitled': {
+    en: 'Untitled essay',
+    ar: 'مقالة بدون عنوان',
+    es: 'Redacción sin título',
+  },
+  'school.queue.words': { en: '{n} words', ar: '{n} كلمة', es: '{n} palabras' },
+  'school.queue.status.not_marked': {
+    en: 'Waiting for the AI to mark',
+    ar: 'بانتظار تصحيح الذكاء الاصطناعي',
+    es: 'A la espera de la corrección de la IA',
+  },
+  'school.queue.status.ai_marked': {
+    en: 'AI-marked, awaiting your review',
+    ar: 'صحّحها الذكاء الاصطناعي، وتنتظر مراجعتك',
+    es: 'Corregida por la IA, pendiente de tu revisión',
+  },
+  'school.queue.status.in_review': {
+    en: 'Adjusted, not yet approved',
+    ar: 'معدّلة، وما انعتمدت بعد',
+    es: 'Ajustada, aún sin aprobar',
+  },
+  'school.queue.status.reviewed': { en: 'Reviewed', ar: 'تمّت مراجعتها', es: 'Revisada' },
+  'school.queue.status.approved': { en: 'Approved', ar: 'معتمدة', es: 'Aprobada' },
+  'school.queue.status.returned': {
+    en: 'Returned to the pupil',
+    ar: 'رجعت للطالب',
+    es: 'Devuelta al alumno',
+  },
+  'school.queue.status.rejected': {
+    en: 'AI mark rejected',
+    ar: 'درجة الذكاء الاصطناعي مرفوضة',
+    es: 'Nota de la IA rechazada',
+  },
+  'school.queue.status.unknown': {
+    en: 'Status not recognised',
+    ar: 'حالة غير معروفة',
+    es: 'Estado no reconocido',
+  },
+  'school.queue.decision.approved': { en: 'Approved', ar: 'اعتماد', es: 'Aprobada' },
+  'school.queue.decision.rejected': {
+    en: 'AI mark rejected',
+    ar: 'رفض درجة الذكاء الاصطناعي',
+    es: 'Nota de la IA rechazada',
+  },
+  'school.queue.decision.corrected': {
+    en: 'Adjusted and saved',
+    ar: 'تعديل وحفظ',
+    es: 'Ajustada y guardada',
+  },
+  'school.queue.decision.sent_back': {
+    en: 'Returned to the pupil',
+    ar: 'إرجاع للطالب',
+    es: 'Devuelta al alumno',
+  },
+  'school.queue.decision.other': {
+    en: 'Decision recorded',
+    ar: 'تم تسجيل قرار',
+    es: 'Decisión registrada',
+  },
+  'school.queue.drawer.loading': {
+    en: 'Opening the essay',
+    ar: 'قاعدين نفتح المقالة',
+    es: 'Abriendo la redacción',
+  },
+  'school.queue.drawer.load_error': {
+    en: 'We could not open this essay.',
+    ar: 'ما قدرنا نفتح هذي المقالة.',
+    es: 'No se pudo abrir esta redacción.',
+  },
+  'school.queue.drawer.question': { en: 'Question', ar: 'السؤال', es: 'Pregunta' },
+  'school.queue.drawer.essay': {
+    en: "Pupil's essay",
+    ar: 'مقالة الطالب',
+    es: 'Redacción del alumno',
+  },
+  'school.queue.drawer.objectives': {
+    en: 'Marks for each assessment objective',
+    ar: 'الدرجات لكل هدف تقييم',
+    es: 'Notas por objetivo de evaluación',
+  },
+  'school.queue.drawer.objectives_hint': {
+    en: "Each objective shows the AI's mark and its reason. Change a mark where you disagree and leave it where you agree.",
+    ar: 'كل هدف يبيّن درجة الذكاء الاصطناعي وسببها. غيّر الدرجة إذا ما توافق عليها، وخلّها إذا توافق.',
+    es: 'Cada objetivo muestra la nota de la IA y su motivo. Cambia la nota si no estás de acuerdo y déjala si lo estás.',
+  },
+  'school.queue.drawer.no_objectives': {
+    en: "The AI's mark for each objective was not recorded for this essay.",
+    ar: 'درجة الذكاء الاصطناعي لكل هدف ما انحفظت لهذي المقالة.',
+    es: 'No se registró la nota de la IA para cada objetivo en esta redacción.',
+  },
+  'school.queue.drawer.ai_mark': { en: 'AI', ar: 'الذكاء الاصطناعي', es: 'IA' },
+  'school.queue.drawer.ai_comment': {
+    en: "AI's comment",
+    ar: 'تعليق الذكاء الاصطناعي',
+    es: 'Comentario de la IA',
+  },
+  'school.queue.drawer.your_mark': { en: 'Your mark', ar: 'درجتك', es: 'Tu nota' },
+  'school.queue.drawer.out_of': { en: 'out of {max}', ar: 'من {max}', es: 'de {max}' },
+  'school.queue.drawer.adjusted': { en: 'Adjusted', ar: 'معدّلة', es: 'Ajustada' },
+  'school.queue.drawer.mark_invalid': {
+    en: 'Enter a mark from 0 to {max}.',
+    ar: 'اكتب درجة من 0 إلى {max}.',
+    es: 'Escribe una nota de 0 a {max}.',
+  },
+  'school.queue.drawer.your_comment': {
+    en: 'Your comment on this objective (optional)',
+    ar: 'تعليقك على هذا الهدف (اختياري)',
+    es: 'Tu comentario sobre este objetivo (opcional)',
+  },
+  'school.queue.drawer.total_ai_only': {
+    en: 'Total: AI {ai} out of {max}',
+    ar: 'المجموع: الذكاء الاصطناعي {ai} من {max}',
+    es: 'Total: IA {ai} de {max}',
+  },
+  'school.queue.drawer.total_line': {
+    en: 'Total: AI {ai} out of {max}; with your marks {yours} out of {max}',
+    ar: 'المجموع: الذكاء الاصطناعي {ai} من {max}، وبدرجاتك {yours} من {max}',
+    es: 'Total: IA {ai} de {max}; con tus notas, {yours} de {max}',
+  },
+  'school.queue.drawer.fix_marks': {
+    en: 'Some objective marks need correcting before you can save.',
+    ar: 'فيه درجات أهداف لازم تصلّحها قبل الحفظ.',
+    es: 'Hay notas por objetivo que debes corregir antes de guardar.',
+  },
+  'school.queue.drawer.ai_feedback': {
+    en: "The AI's feedback to the pupil",
+    ar: 'ملاحظات الذكاء الاصطناعي للطالب',
+    es: 'Comentarios de la IA para el alumno',
+  },
+  'school.queue.drawer.ai_grade': {
+    en: 'The AI suggested grade {grade}.',
+    ar: 'الذكاء الاصطناعي اقترح الدرجة {grade}.',
+    es: 'La IA sugirió la nota {grade}.',
+  },
+  'school.queue.drawer.ai_grade_none': {
+    en: 'The AI did not suggest a grade.',
+    ar: 'الذكاء الاصطناعي ما اقترح درجة.',
+    es: 'La IA no sugirió ninguna nota.',
+  },
+  'school.queue.drawer.ai_grade_indicative': {
+    en: "It is indicative only: this board's own grade boundaries were not available.",
+    ar: 'وهي تقريبية بس: حدود الدرجات الخاصة بهذي اللجنة ما كانت متوفرة.',
+    es: 'Es solo orientativa: no se disponía de los límites de calificación propios de esta junta examinadora.',
+  },
+  'school.queue.drawer.grade_check': {
+    en: 'You have changed objective marks. Check the final grade still fits.',
+    ar: 'غيّرت درجات بعض الأهداف. تأكد إن الدرجة النهائية لسه مناسبة.',
+    es: 'Has cambiado notas de objetivos. Comprueba que la nota final sigue siendo adecuada.',
+  },
+  'school.queue.drawer.your_feedback': {
+    en: 'Your feedback to the pupil (optional)',
+    ar: 'ملاحظاتك للطالب (اختياري)',
+    es: 'Tus comentarios para el alumno (opcional)',
+  },
+  'school.queue.drawer.your_feedback_placeholder': {
+    en: "Anything you want the pupil to read from you, alongside the AI's feedback",
+    ar: 'أي شي تبي الطالب يقراه منك، مع ملاحظات الذكاء الاصطناعي',
+    es: 'Lo que quieras que el alumno lea de tu parte, junto a los comentarios de la IA',
+  },
+  'school.queue.drawer.approve': { en: 'Approve', ar: 'اعتمد', es: 'Aprobar' },
+  'school.queue.drawer.save': {
+    en: 'Save without approving',
+    ar: 'احفظ بدون اعتماد',
+    es: 'Guardar sin aprobar',
+  },
+  'school.queue.drawer.return': {
+    en: 'Return to the pupil',
+    ar: 'رجّعها للطالب',
+    es: 'Devolver al alumno',
+  },
+  'school.queue.drawer.reject': {
+    en: "Reject the AI's mark",
+    ar: 'ارفض درجة الذكاء الاصطناعي',
+    es: 'Rechazar la nota de la IA',
+  },
+  'school.queue.drawer.decision_hint': {
+    en: 'Approve confirms the marks above, with any changes you made. Save keeps your changes without approving. Return sends the essay back to the pupil with your feedback.',
+    ar: 'الاعتماد يثبّت الدرجات اللي فوق مع أي تعديل سوّيته. الحفظ يحتفظ بتعديلاتك بدون اعتماد. الإرجاع يرجّع المقالة للطالب مع ملاحظاتك.',
+    es: 'Aprobar confirma las notas de arriba con los cambios que hayas hecho. Guardar conserva tus cambios sin aprobar. Devolver envía la redacción al alumno con tus comentarios.',
+  },
+  'school.queue.drawer.history': {
+    en: 'Decisions so far',
+    ar: 'القرارات لين الحين',
+    es: 'Decisiones hasta ahora',
+  },
+  'school.queue.drawer.grade_short': {
+    en: 'grade {grade}',
+    ar: 'الدرجة {grade}',
+    es: 'nota {grade}',
+  },
+  'school.queue.open_truncated': {
+    en: 'Only the {n} most recent essays still to review are listed here.',
+    ar: 'نعرض هنا بس آخر {n} مقالة لسه تحتاج مراجعة.',
+    es: 'Aquí solo se muestran las {n} redacciones pendientes más recientes.',
+  },
+  'school.queue.done_truncated': {
+    en: 'Only the {n} most recent reviewed essays are listed here.',
+    ar: 'نعرض هنا بس آخر {n} مقالة تمّت مراجعتها.',
+    es: 'Aquí solo se muestran las {n} redacciones revisadas más recientes.',
+  },
+
+  // ─── School portal sidebar, 12 Oct 2026 (items now filtered by role) ──────
+  'school.portal.nav.subtitle': {
+    en: 'School portal',
+    ar: 'بوابة المدرسة',
+    es: 'Portal del centro',
+  },
+  'school.portal.nav.marking_queue': {
+    en: 'Marking queue',
+    ar: 'قائمة التصحيح',
+    es: 'Cola de corrección',
+  },
+  'school.portal.nav.objectives': {
+    en: 'Assessment objectives',
+    ar: 'أهداف التقييم',
+    es: 'Objetivos de evaluación',
+  },
+  'school.portal.nav.import_pupils': {
+    en: 'Import pupils',
+    ar: 'استيراد الطلاب',
+    es: 'Importar alumnos',
+  },
+  'school.portal.nav.billing': {
+    en: 'Access and billing',
+    ar: 'الاشتراك والفواتير',
+    es: 'Acceso y facturación',
+  },
+
+  // ─── /school/analytics/marking - assessment objectives, 12 Oct 2026 ───────
+  // A share of marks is never called a grade here. AR uses تقدير for a
+  // grade (9-1) and درجة for a mark, so the two are never confused.
+  'school.objectives.title': {
+    en: 'Assessment objectives',
+    ar: 'أهداف التقييم',
+    es: 'Objetivos de evaluación',
+  },
+  'school.objectives.subtitle': {
+    en: "How pupils are doing on each assessment objective, from every essay the AI has marked. Where a teacher adjusted a mark, the teacher's mark is used.",
+    ar: 'شلون مستوى الطلاب في كل هدف تقييم، من كل مقالة صحّحها الذكاء الاصطناعي. وإذا عدّل المعلّم درجة، نعتمد درجة المعلّم.',
+    es: 'Cómo van los alumnos en cada objetivo de evaluación, a partir de todas las redacciones que ha corregido la IA. Cuando un profesor ajustó una nota, se usa la del profesor.',
+  },
+  'school.objectives.back': {
+    en: 'Back to analytics',
+    ar: 'رجوع للتحليلات',
+    es: 'Volver a las analíticas',
+  },
+  'school.objectives.breadcrumb': {
+    en: 'Breadcrumb',
+    ar: 'مسار التنقّل',
+    es: 'Ruta de navegación',
+  },
+  'school.objectives.period.label': { en: 'Period', ar: 'الفترة', es: 'Periodo' },
+  'school.objectives.period.90d': { en: 'Last 90 days', ar: 'آخر 90 يوم', es: 'Últimos 90 días' },
+  'school.objectives.period.12m': {
+    en: 'Last 12 months',
+    ar: 'آخر 12 شهر',
+    es: 'Últimos 12 meses',
+  },
+  'school.objectives.period.all': { en: 'All time', ar: 'كل الفترات', es: 'Todo el periodo' },
+  'school.objectives.load_error': {
+    en: 'We could not load the assessment objective view.',
+    ar: 'ما قدرنا نحمّل عرض أهداف التقييم.',
+    es: 'No se pudo cargar la vista de objetivos de evaluación.',
+  },
+  'school.objectives.empty_title': {
+    en: 'No marked essays yet',
+    ar: 'ما فيه مقالات مصحّحة لين الحين',
+    es: 'Todavía no hay redacciones corregidas',
+  },
+  'school.objectives.empty_body_none': {
+    en: 'This view fills in as your pupils submit essays and the AI marks them. Nothing here is estimated or filled in.',
+    ar: 'هذا العرض يتعبّى لما يسلّم طلابك مقالات ويصحّحها الذكاء الاصطناعي. ما فيه شي هنا تقديري أو معبّى من عندنا.',
+    es: 'Esta vista se completa a medida que tus alumnos envían redacciones y la IA las corrige. Aquí no hay nada estimado ni inventado.',
+  },
+  'school.objectives.empty_body_waiting': {
+    en: '{n} essays have been submitted in this period, but none has a mark for each objective yet.',
+    ar: 'انسلّمت {n} مقالة في هذي الفترة، بس ولا وحدة عندها درجة لكل هدف لين الحين.',
+    es: 'Se han enviado {n} redacciones en este periodo, pero ninguna tiene todavía nota por objetivo.',
+  },
+  'school.objectives.open_queue': {
+    en: 'Open the marking queue',
+    ar: 'افتح قائمة التصحيح',
+    es: 'Abrir la cola de corrección',
+  },
+  'school.objectives.scope_teacher': {
+    en: 'You are seeing your own classes. Heads of department and administrators see the whole school.',
+    ar: 'أنت تشوف صفوفك بس. رؤساء الأقسام ومسؤولو المدرسة يشوفون المدرسة كلها.',
+    es: 'Estás viendo solo tus clases. Los jefes de departamento y los administradores ven todo el centro.',
+  },
+  'school.objectives.share_note': {
+    en: 'Each figure is the share of the available marks pupils achieved on that objective, averaged across essays. It is not a grade.',
+    ar: 'كل رقم هو نسبة الدرجات المتاحة اللي حصّلها الطلاب في هذا الهدف، بالمتوسط على المقالات. وهي مو تقدير.',
+    es: 'Cada cifra es la proporción de los puntos disponibles que los alumnos obtuvieron en ese objetivo, de media entre las redacciones. No es una nota.',
+  },
+  'school.objectives.overall_school': {
+    en: 'Across the school',
+    ar: 'على مستوى المدرسة',
+    es: 'En todo el centro',
+  },
+  'school.objectives.overall_teacher': {
+    en: 'Across your classes',
+    ar: 'على مستوى صفوفك',
+    es: 'En tus clases',
+  },
+  'school.objectives.by_class': { en: 'By class', ar: 'حسب الصف', es: 'Por clase' },
+  'school.objectives.by_class_hint': {
+    en: 'Weakest objective first in each class.',
+    ar: 'أضعف هدف أول في كل صف.',
+    es: 'En cada clase, primero el objetivo más débil.',
+  },
+  'school.objectives.by_pupil': { en: 'By pupil', ar: 'حسب الطالب', es: 'Por alumno' },
+  'school.objectives.by_pupil_hint': {
+    en: "Each pupil's strongest objective and the one holding them back, across their essays.",
+    ar: 'أقوى هدف عند كل طالب والهدف اللي يأخّره، على كل مقالاته.',
+    es: 'El objetivo más fuerte de cada alumno y el que le frena, en todas sus redacciones.',
+  },
+  'school.objectives.col.pupil': { en: 'Pupil', ar: 'الطالب', es: 'Alumno' },
+  'school.objectives.col.essays': { en: 'Essays', ar: 'المقالات', es: 'Redacciones' },
+  'school.objectives.col.strongest': { en: 'Strongest', ar: 'الأقوى', es: 'Más fuerte' },
+  'school.objectives.col.weakest': {
+    en: 'Holding them back',
+    ar: 'اللي يأخّره',
+    es: 'Lo que le frena',
+  },
+  'school.objectives.essays_n': { en: 'Essays: {n}', ar: 'المقالات: {n}', es: 'Redacciones: {n}' },
+  'school.objectives.small_sample': {
+    en: 'Small sample',
+    ar: 'عيّنة صغيرة',
+    es: 'Muestra pequeña',
+  },
+  'school.objectives.small_sample_hint': {
+    en: 'Fewer than 3 essays: treat it as a signal, not a pattern.',
+    ar: 'أقل من 3 مقالات: اعتبرها مؤشر، مو نمط ثابت.',
+    es: 'Menos de 3 redacciones: tómalo como una señal, no como una tendencia.',
+  },
+  'school.objectives.adjusted_n': {
+    en: 'A teacher adjusted this mark on {n} of these essays.',
+    ar: 'المعلّم عدّل هذي الدرجة في {n} من هذي المقالات.',
+    es: 'Un profesor ajustó esta nota en {n} de estas redacciones.',
+  },
+  'school.objectives.one_objective': {
+    en: 'Only one objective has been assessed so far.',
+    ar: 'انقيّم هدف واحد بس لين الحين.',
+    es: 'Hasta ahora solo se ha evaluado un objetivo.',
+  },
+  'school.objectives.no_difference': {
+    en: 'No difference between objectives yet.',
+    ar: 'ما فيه فرق بين الأهداف لين الحين.',
+    es: 'Todavía no hay diferencia entre objetivos.',
+  },
+  'school.objectives.agreement_title': {
+    en: "How often a review changed the AI's total",
+    ar: 'كم مرة غيّرت المراجعة مجموع الذكاء الاصطناعي',
+    es: 'Con qué frecuencia una revisión cambió el total de la IA',
+  },
+  'school.objectives.agreement.reviewed': {
+    en: 'Essays reviewed',
+    ar: 'مقالات انراجعت',
+    es: 'Redacciones revisadas',
+  },
+  'school.objectives.agreement.unchanged': {
+    en: 'Total unchanged',
+    ar: 'المجموع ما تغيّر',
+    es: 'Total sin cambios',
+  },
+  'school.objectives.agreement.raised': {
+    en: 'Total raised',
+    ar: 'المجموع ارتفع',
+    es: 'Total subido',
+  },
+  'school.objectives.agreement.lowered': {
+    en: 'Total lowered',
+    ar: 'المجموع نزل',
+    es: 'Total bajado',
+  },
+  'school.objectives.agreement.mean_change': {
+    en: 'When a teacher changed the total, it moved by {n} marks on average.',
+    ar: 'لما المعلّم غيّر المجموع، تحرّك بمتوسط {n} درجة.',
+    es: 'Cuando un profesor cambió el total, se movió {n} puntos de media.',
+  },
+  'school.objectives.adjustments_title': {
+    en: 'Objectives teachers adjust most',
+    ar: 'الأهداف اللي يعدّلها المعلّمين أكثر شي',
+    es: 'Objetivos que los profesores ajustan más',
+  },
+  'school.objectives.adjustments_hint': {
+    en: "How often teachers changed the AI's mark on each objective, and the average change in marks (teacher minus AI).",
+    ar: 'كم مرة غيّر المعلّمين درجة الذكاء الاصطناعي في كل هدف، ومتوسط التغيير بالدرجات (المعلّم ناقص الذكاء الاصطناعي).',
+    es: 'Con qué frecuencia los profesores cambiaron la nota de la IA en cada objetivo y el cambio medio en puntos (profesor menos IA).',
+  },
+  'school.objectives.mean_change': {
+    en: 'average change {n} marks',
+    ar: 'متوسط التغيير {n} درجة',
+    es: 'cambio medio de {n} puntos',
+  },
+  'school.objectives.questions_title': {
+    en: 'Questions with the lowest share of marks',
+    ar: 'الأسئلة اللي نسبة درجاتها أقل شي',
+    es: 'Preguntas con menor proporción de puntos',
+  },
+  'school.objectives.questions_hint': {
+    en: 'The share of the available marks achieved on each question, averaged across the essays that answered it.',
+    ar: 'نسبة الدرجات المتاحة اللي انحصّلت في كل سؤال، بالمتوسط على المقالات اللي جاوبت عليه.',
+    es: 'La proporción de los puntos disponibles obtenida en cada pregunta, de media entre las redacciones que la respondieron.',
+  },
+  'school.objectives.generated': {
+    en: 'Built from {n} marked essays, {date}.',
+    ar: 'مبني على {n} مقالة مصحّحة، {date}.',
+    es: 'Elaborado a partir de {n} redacciones corregidas, {date}.',
+  },
+  'school.objectives.not_marked_note': {
+    en: '{n} essays are not yet marked and are not counted.',
+    ar: 'فيه {n} مقالة ما تصحّحت بعد وما انحسبت.',
+    es: 'Hay {n} redacciones aún sin corregir que no se cuentan.',
+  },
+  'school.objectives.no_breakdown_note': {
+    en: '{n} marked essays have no mark for each objective and are not counted.',
+    ar: 'فيه {n} مقالة مصحّحة ما لها درجة لكل هدف وما انحسبت.',
+    es: 'Hay {n} redacciones corregidas sin nota por objetivo que no se cuentan.',
+  },
+  'school.objectives.truncated': {
+    en: 'Only the most recent essays are included; older ones were left out.',
+    ar: 'محسوبة على أحدث المقالات بس؛ القديمة ما انحسبت.',
+    es: 'Solo se incluyen las redacciones más recientes; las más antiguas quedaron fuera.',
+  },
+
+  // ─── /school/students/[studentId] - one pupil, rebuilt 12 Oct 2026 ────────
+  'school.pupil.not_found': {
+    en: 'This pupil is not in your classes.',
+    ar: 'هذا الطالب مو في صفوفك.',
+    es: 'Este alumno no está en tus clases.',
+  },
+  'school.pupil.load_error': {
+    en: "We could not load this pupil's record.",
+    ar: 'ما قدرنا نحمّل سجلّ هذا الطالب.',
+    es: 'No se pudo cargar el expediente de este alumno.',
+  },
+  'school.pupil.back_to_classes': {
+    en: 'Back to classes',
+    ar: 'رجوع للصفوف',
+    es: 'Volver a las clases',
+  },
+  'school.pupil.back_to_class': {
+    en: 'Back to {class}',
+    ar: 'رجوع إلى {class}',
+    es: 'Volver a {class}',
+  },
+  'school.pupil.print': { en: 'Print', ar: 'اطبع', es: 'Imprimir' },
+  'school.pupil.last_active': {
+    en: 'Last active {date}',
+    ar: 'آخر نشاط: {date}',
+    es: 'Última actividad: {date}',
+  },
+  'school.pupil.no_activity': {
+    en: 'No activity yet',
+    ar: 'ما فيه نشاط لين الحين',
+    es: 'Sin actividad todavía',
+  },
+  'school.pupil.objectives_title': {
+    en: 'Strengths and what is holding them back',
+    ar: 'نقاط القوة واللي يأخّره',
+    es: 'Puntos fuertes y lo que le frena',
+  },
+  'school.pupil.objectives_hint': {
+    en: "From every essay of theirs the AI has marked, using a teacher's adjusted mark where there is one. Shares of marks, not grades.",
+    ar: 'من كل مقالة له صحّحها الذكاء الاصطناعي، وإذا عدّل المعلّم الدرجة نعتمد درجته. نسب من الدرجات، مو تقديرات.',
+    es: 'A partir de todas sus redacciones corregidas por la IA, con la nota ajustada por el profesor cuando la hay. Proporciones de puntos, no notas.',
+  },
+  'school.pupil.strongest': {
+    en: 'Strongest objective',
+    ar: 'أقوى هدف',
+    es: 'Objetivo más fuerte',
+  },
+  'school.pupil.weakest': { en: 'Holding them back', ar: 'اللي يأخّره', es: 'Lo que le frena' },
+  'school.pupil.no_objectives': {
+    en: 'No marked essays yet, so there is nothing to show.',
+    ar: 'ما فيه مقالات مصحّحة لين الحين، فما عندنا شي نعرضه.',
+    es: 'Todavía no hay redacciones corregidas, así que no hay nada que mostrar.',
+  },
+  'school.pupil.essays_title': {
+    en: 'Essays submitted for marking',
+    ar: 'المقالات المسلّمة للتصحيح',
+    es: 'Redacciones enviadas a corregir',
+  },
+  'school.pupil.no_essays': {
+    en: 'No essays submitted yet.',
+    ar: 'ما سلّم مقالات لين الحين.',
+    es: 'Todavía no ha enviado redacciones.',
+  },
+  'school.pupil.open_in_queue': {
+    en: 'Open in the marking queue',
+    ar: 'افتحها في قائمة التصحيح',
+    es: 'Abrir en la cola de corrección',
+  },
+  'school.pupil.progress_title': {
+    en: 'Course progress',
+    ar: 'التقدّم في الدورات',
+    es: 'Progreso en los cursos',
+  },
+  'school.pupil.modules_completed': {
+    en: 'Modules completed',
+    ar: 'الوحدات المكتملة',
+    es: 'Módulos completados',
+  },
+  'school.pupil.quiz_average': {
+    en: 'Quiz average',
+    ar: 'متوسط الاختبارات القصيرة',
+    es: 'Media de los cuestionarios',
+  },
+  'school.pupil.quiz_average_none': {
+    en: 'No quizzes yet',
+    ar: 'ما فيه اختبارات لين الحين',
+    es: 'Aún sin cuestionarios',
+  },
+  'school.pupil.practice_sessions': {
+    en: 'Practice sessions',
+    ar: 'جلسات التدريب',
+    es: 'Sesiones de práctica',
+  },
+  'school.pupil.certificates': { en: 'Certificates', ar: 'الشهادات', es: 'Certificados' },
+  'school.pupil.quiz_note': {
+    en: "The quiz average is a percentage from the platform's short quizzes. It is not a grade.",
+    ar: 'متوسط الاختبارات القصيرة نسبة مئوية من اختبارات المنصة القصيرة، ومو تقدير.',
+    es: 'La media de los cuestionarios es un porcentaje de los cuestionarios breves de la plataforma. No es una nota.',
+  },
+
+  // ─── /school/dashboard, rebuilt 12 Oct 2026 on /api/school/summary ───────
+  'school.portal.dash.load_error': {
+    en: 'We could not load your dashboard.',
+    ar: 'ما قدرنا نحمّل لوحة التحكم.',
+    es: 'No se pudo cargar tu panel.',
+  },
+  'school.portal.dash.access_until': {
+    en: "Your school's access runs until {date}.",
+    ar: 'اشتراك مدرستك ساري لين {date}.',
+    es: 'El acceso de tu centro está activo hasta el {date}.',
+  },
+  'school.portal.dash.marking_title': { en: 'Marking', ar: 'التصحيح', es: 'Corrección' },
+  'school.portal.dash.awaiting': {
+    en: 'Awaiting review: {n}',
+    ar: 'تنتظر المراجعة: {n}',
+    es: 'Pendientes de revisión: {n}',
+  },
+  'school.portal.dash.submitted_7d': {
+    en: 'Submitted in the last 7 days',
+    ar: 'انسلّمت في آخر 7 أيام',
+    es: 'Enviadas en los últimos 7 días',
+  },
+  'school.portal.dash.reviewed_7d': {
+    en: 'Reviewed in the last 7 days',
+    ar: 'انراجعت في آخر 7 أيام',
+    es: 'Revisadas en los últimos 7 días',
+  },
+  'school.portal.dash.not_marked': {
+    en: 'Waiting for the AI',
+    ar: 'تنتظر الذكاء الاصطناعي',
+    es: 'A la espera de la IA',
+  },
+  'school.portal.dash.pupils': { en: 'Pupils', ar: 'الطلاب', es: 'Alumnos' },
+  'school.portal.dash.pupils_teacher_hint': {
+    en: 'In your classes',
+    ar: 'في صفوفك',
+    es: 'En tus clases',
+  },
+  'school.portal.dash.staff': { en: 'Staff', ar: 'الطاقم التعليمي', es: 'Personal docente' },
+  'school.portal.dash.your_classes': { en: 'Your classes', ar: 'صفوفك', es: 'Tus clases' },
+  'school.portal.dash.no_classes_school': {
+    en: 'No classes yet.',
+    ar: 'ما فيه صفوف لين الحين.',
+    es: 'Todavía no hay clases.',
+  },
+  'school.portal.dash.class_pupils': { en: 'Pupils: {n}', ar: 'الطلاب: {n}', es: 'Alumnos: {n}' },
+  'school.portal.dash.setup.staff': {
+    en: 'Invite your teachers',
+    ar: 'ارسل دعوات للمعلّمين',
+    es: 'Invita a tus profesores',
+  },
+  'school.portal.dash.setup.pupils': {
+    en: 'Add your pupils',
+    ar: 'ضيف طلابك',
+    es: 'Añade a tus alumnos',
+  },
+  'school.portal.dash.setup.classes': {
+    en: 'Create your classes',
+    ar: 'سوّ صفوفك',
+    es: 'Crea tus clases',
+  },
+  'school.portal.dash.setup.enrol': {
+    en: 'Put pupils into their classes',
+    ar: 'حط الطلاب في صفوفهم',
+    es: 'Asigna a los alumnos a sus clases',
+  },
+
+  // ─── /school/analytics, rebuilt 12 Oct 2026 ───────────────────────────────
+  'school.portal.analytics.load_error': {
+    en: "We could not load your school's analytics.",
+    ar: 'ما قدرنا نحمّل تحليلات مدرستك.',
+    es: 'No se pudieron cargar las analíticas de tu centro.',
+  },
+  'school.portal.analytics.objectives_link': {
+    en: 'See which assessment objectives are costing marks, class by class',
+    ar: 'شوف أي أهداف التقييم تضيّع الدرجات، صف بصف',
+    es: 'Mira qué objetivos de evaluación están costando puntos, clase por clase',
+  },
+  'school.portal.analytics.essays_week': {
+    en: 'Essays submitted, last 7 days',
+    ar: 'المقالات المسلّمة، آخر 7 أيام',
+    es: 'Redacciones enviadas, últimos 7 días',
+  },
+  'school.portal.analytics.no_quiz_scores': {
+    en: 'No quiz scores in this period',
+    ar: 'ما فيه نتائج اختبارات في هذي الفترة',
+    es: 'Sin resultados de cuestionarios en este periodo',
+  },
+  'school.portal.analytics.flagged': {
+    en: 'Pupils flagged',
+    ar: 'طلاب يحتاجون متابعة',
+    es: 'Alumnos señalados',
+  },
+  'school.portal.analytics.year_group_hint': {
+    en: 'Quiz averages and pupils flagged, by year group.',
+    ar: 'متوسط الاختبارات والطلاب اللي يحتاجون متابعة، حسب السنة الدراسية.',
+    es: 'Medias de los cuestionarios y alumnos señalados, por curso.',
+  },
+  'school.portal.analytics.no_pupils': {
+    en: 'No pupils yet.',
+    ar: 'ما فيه طلاب لين الحين.',
+    es: 'Todavía no hay alumnos.',
+  },
+  'school.portal.analytics.col.quizzes': {
+    en: 'Quizzes completed',
+    ar: 'الاختبارات المكتملة',
+    es: 'Cuestionarios completados',
+  },
+  'school.portal.analytics.unknown_year': {
+    en: 'Year not recorded',
+    ar: 'السنة غير مسجّلة',
+    es: 'Curso no registrado',
+  },
+  'school.portal.analytics.flagged_hint': {
+    en: 'Pupils with no recent activity, or a low quiz average.',
+    ar: 'طلاب ما لهم نشاط من فترة، أو متوسط اختباراتهم منخفض.',
+    es: 'Alumnos sin actividad reciente o con una media baja en los cuestionarios.',
+  },
+  'school.portal.analytics.none_flagged': {
+    en: 'No pupils are flagged.',
+    ar: 'ما فيه طلاب يحتاجون متابعة.',
+    es: 'No hay alumnos señalados.',
+  },
+  'school.portal.analytics.issue.inactive': {
+    en: 'No activity for {n} days',
+    ar: 'ما فيه نشاط من {n} يوم',
+    es: 'Sin actividad desde hace {n} días',
+  },
+  'school.portal.analytics.issue.low_quiz': {
+    en: 'Quiz average {n}%',
+    ar: 'متوسط الاختبارات {n}%',
+    es: 'Media de cuestionarios: {n} %',
+  },
+  'school.portal.analytics.flagged_more': {
+    en: 'Showing the first 100 of {n}.',
+    ar: 'نعرض أول 100 من {n}.',
+    es: 'Se muestran los 100 primeros de {n}.',
+  },
+  'school.portal.analytics.classes_title': {
+    en: 'Classes by quiz average',
+    ar: 'الصفوف حسب متوسط الاختبارات',
+    es: 'Clases por media de cuestionarios',
+  },
+  'school.portal.analytics.classes_hint': {
+    en: 'The all-time quiz average of the pupils in each class.',
+    ar: 'متوسط الاختبارات لطلاب كل صف، من البداية لين الحين.',
+    es: 'La media histórica de los cuestionarios de los alumnos de cada clase.',
+  },
+  'school.portal.analytics.weekly_title': {
+    en: 'Weekly activity',
+    ar: 'النشاط الأسبوعي',
+    es: 'Actividad semanal',
+  },
+  'school.portal.analytics.weekly_hint': {
+    en: 'Pupils with any recorded activity, and essays submitted for marking, week by week.',
+    ar: 'الطلاب اللي سجّلوا أي نشاط، والمقالات المسلّمة للتصحيح، أسبوع بأسبوع.',
+    es: 'Alumnos con alguna actividad registrada y redacciones enviadas a corregir, semana a semana.',
+  },
+  'school.portal.analytics.week_beginning': {
+    en: 'Week beginning',
+    ar: 'بداية الأسبوع',
+    es: 'Semana que empieza el',
+  },
+  'school.portal.analytics.active_pupils': {
+    en: 'Active pupils',
+    ar: 'طلاب نشطين',
+    es: 'Alumnos activos',
+  },
+  'school.portal.analytics.essays_submitted': {
+    en: 'Essays submitted',
+    ar: 'المقالات المسلّمة',
+    es: 'Redacciones enviadas',
+  },
+
+  // ─── /school/classes/[classId], 12 Oct 2026 ───────────────────────────────
+  'school.portal.class.weekly_last_activity': {
+    en: 'Each pupil is counted in the week of their most recent activity',
+    ar: 'كل طالب ينحسب في أسبوع آخر نشاط له',
+    es: 'Cada alumno cuenta en la semana de su actividad más reciente',
+  },
+  'school.portal.class.essays_title': {
+    en: 'Essays for marking',
+    ar: 'مقالات للتصحيح',
+    es: 'Redacciones para corregir',
+  },
+  'school.portal.class.essays_hint': {
+    en: "Essays this class submits reach you in the marking queue, with the AI's mark for each assessment objective.",
+    ar: 'المقالات اللي يسلّمها هذا الصف توصلك في قائمة التصحيح، مع درجة الذكاء الاصطناعي لكل هدف تقييم.',
+    es: 'Las redacciones que envía esta clase te llegan a la cola de corrección, con la nota de la IA para cada objetivo de evaluación.',
+  },
+  'school.portal.class.open_queue': {
+    en: "Open this class's marking queue",
+    ar: 'افتح قائمة تصحيح هذا الصف',
+    es: 'Abrir la cola de corrección de esta clase',
+  },
+
+  // ─── /school/billing, replaced 12 Oct 2026 (no prices; schools are invoiced)
+  'school.portal.billing.staff_only': {
+    en: 'Access and billing are for school administrators and heads of department.',
+    ar: 'الاشتراك والفواتير لمسؤولي المدرسة ورؤساء الأقسام بس.',
+    es: 'El acceso y la facturación son para administradores y jefes de departamento.',
+  },
+  'school.portal.billing.status_paid': {
+    en: 'Your school has paid access.',
+    ar: 'مدرستك عندها اشتراك مدفوع.',
+    es: 'Tu centro tiene acceso de pago.',
+  },
+  'school.portal.billing.status_founder': {
+    en: 'Your school holds a founding place.',
+    ar: 'مدرستك عندها مقعد تأسيسي.',
+    es: 'Tu centro tiene una plaza fundadora.',
+  },
+  'school.portal.billing.status_trial': {
+    en: 'Your school is on a trial.',
+    ar: 'مدرستك على فترة تجربة.',
+    es: 'Tu centro está en periodo de prueba.',
+  },
+  'school.portal.billing.until': {
+    en: 'Access runs until {date}.',
+    ar: 'الاشتراك ساري لين {date}.',
+    es: 'El acceso está activo hasta el {date}.',
+  },
+  'school.portal.billing.no_end': {
+    en: 'No end date is set.',
+    ar: 'ما فيه تاريخ انتهاء محدّد.',
+    es: 'No hay fecha de finalización.',
+  },
+  'school.portal.billing.invoiced': {
+    en: 'Schools are invoiced by Upskill Energy Limited, which trades as The English Hub. There is no billing or payment inside the portal.',
+    ar: 'المدارس توصلها الفواتير من Upskill Energy Limited، الشركة اللي تشغّل The English Hub. ما فيه فواتير أو دفع داخل البوابة.',
+    es: 'Los centros reciben la factura de Upskill Energy Limited, que opera como The English Hub. En el portal no hay facturación ni pagos.',
+  },
+  'school.portal.billing.contact': {
+    en: "For your invoice, renewal or anything about your school's access, email {email}.",
+    ar: 'لأي شي يخص الفاتورة أو التجديد أو اشتراك مدرستك، راسلنا على {email}.',
+    es: 'Para la factura, la renovación o cualquier cuestión sobre el acceso de tu centro, escribe a {email}.',
+  },
 }
