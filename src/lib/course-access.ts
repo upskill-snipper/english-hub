@@ -1,22 +1,82 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
+import { getPupilSchoolAccess, type PupilSchoolAccess } from '@/lib/school-entitlement'
 
 /**
  * Course access verification utility.
  *
  * A user has access to a course if ANY of the following are true:
  *   1. They have an active subscription (subscription_status = 'pro')
- *   2. They have purchased the specific course (enrolment record exists)
- *   3. The content is a free preview module (caller must check this separately)
+ *   2. They are a pupil of a school whose access is live (12 October 2026)
+ *   3. They have purchased the specific course (enrolment record exists)
+ *   4. The content is a free preview module (caller must check this separately)
  *
  * This module is intended for server-side use in API routes and server
- * components. For client-side checks, see the `checkAccess` logic in the
- * learn page client components (which should mirror this logic).
+ * components. Client components ask GET /api/user/access, which answers
+ * from resolvePaidAccess below, rather than reading the profile themselves.
  */
 
 export interface CourseAccessResult {
   hasAccess: boolean
-  reason: 'pro_subscription' | 'course_enrolment' | 'no_access'
+  reason: 'pro_subscription' | 'school_access' | 'course_enrolment' | 'no_access'
   subscriptionStatus: string | null
+}
+
+// ─── The paid-access choke point ────────────────────────────────────────────
+//
+// A DEFECT, FIXED 12 OCTOBER 2026. Every GCSE AI route asked one question,
+// `profiles.subscription_status === 'pro'`, and nothing else. So being added
+// to a school gave a pupil no AI access that lasted: the school paths wrote
+// 'pro' onto the pupil's profile to get past this test, the trial-expiry cron
+// wiped it after seven days, and an uploaded pupil had only the 40-call
+// no-card trial. Calum decided that a school pupil's access comes from the
+// school's live pilot, checked at the moment of use, with nothing written to
+// the profile. `subscription_status` is one field per PERSON (CLAUDE.md,
+// structural fact 2), and a school's access is a fact about the school.
+//
+// So this is the one place that answers "may this person use a paid
+// feature?", and it has two sources: the person's own subscription or trial,
+// and their school. Each is judged on its own evidence. A failed profile read
+// grants nothing, and does not stop a school that is independently confirmed
+// live; a failed school read grants nothing either (getPupilSchoolAccess
+// fails closed). The school is only asked when the profile does not already
+// answer yes, so a paying subscriber costs no extra query.
+//
+// IELTS is NOT covered: a school's pilot is for GCSE, and hasIeltsAccess
+// below keeps its own entitlement.
+
+/** Why this person may use paid features, or that they may not. */
+export type PaidAccess =
+  | { allowed: true; via: 'subscription' }
+  | { allowed: true; via: 'school'; school: PupilSchoolAccess }
+  | { allowed: false; via: null }
+
+/**
+ * Resolve whether a user may use paid (non-IELTS) features, and through
+ * which source.
+ *
+ * @param supabase - An authenticated Supabase client (server or service role)
+ * @param userId   - The Supabase auth uuid
+ */
+export async function resolvePaidAccess(
+  supabase: SupabaseClient,
+  userId: string,
+): Promise<PaidAccess> {
+  const { data: profile, error } = await supabase
+    .from('profiles')
+    .select('subscription_status')
+    .eq('id', userId)
+    .single()
+
+  if (error) {
+    console.error('[course-access] Failed to check subscription:', error)
+  } else if (profile?.subscription_status === 'pro') {
+    return { allowed: true, via: 'subscription' }
+  }
+
+  const school = await getPupilSchoolAccess(userId)
+  if (school) return { allowed: true, via: 'school', school }
+
+  return { allowed: false, via: null }
 }
 
 /**
@@ -50,7 +110,12 @@ export async function checkCourseAccess(
     return { hasAccess: true, reason: 'pro_subscription', subscriptionStatus }
   }
 
-  // 2. Check for a one-time purchase enrolment
+  // 2. A pupil of a live school: the same answer resolvePaidAccess gives.
+  if (await getPupilSchoolAccess(userId)) {
+    return { hasAccess: true, reason: 'school_access', subscriptionStatus }
+  }
+
+  // 3. Check for a one-time purchase enrolment
   const { data: enrolment, error: enrolError } = await supabase
     .from('enrolments')
     .select('id')
@@ -71,31 +136,23 @@ export async function checkCourseAccess(
 }
 
 /**
- * Check whether a user has an active subscription (pro status).
+ * Whether a user may use paid features: their own subscription or trial
+ * ('pro'), or a school whose access is live. The name predates the school
+ * source and is kept because every paywalled route calls it; see
+ * resolvePaidAccess for the rule and why it has two sources.
  *
  * Use this for features that are subscription-gated but not tied to a
  * specific course (e.g., AI essay feedback, premium tools).
  *
  * @param supabase  - An authenticated Supabase client
- * @param userId    - The user's ID
- * @returns         - Whether the user has an active subscription
+ * @param userId    - The Supabase auth uuid
+ * @returns         - Whether the user may use paid features
  */
 export async function hasActiveSubscription(
   supabase: SupabaseClient,
   userId: string,
 ): Promise<boolean> {
-  const { data: profile, error } = await supabase
-    .from('profiles')
-    .select('subscription_status')
-    .eq('id', userId)
-    .single()
-
-  if (error) {
-    console.error('[course-access] Failed to check subscription:', error)
-    return false
-  }
-
-  return profile?.subscription_status === 'pro'
+  return (await resolvePaidAccess(supabase, userId)).allowed
 }
 
 /**

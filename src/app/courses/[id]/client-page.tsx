@@ -15,6 +15,7 @@ import {
 import { createClient } from '@/lib/supabase/client'
 import { PRICING } from '@/constants/pricing'
 import { useAuthStore } from '@/store/auth-store'
+import { usePaidAccess } from '@/hooks/usePaidAccess'
 import type { CourseData } from '@/data/courses'
 import { LearningTip } from '@/components/ui/learning-tip'
 import { Button } from '@/components/ui/button'
@@ -26,12 +27,15 @@ interface CourseDetailPageProps {
 
 export default function CourseDetailPage({ course }: CourseDetailPageProps) {
   const t = useT()
-  const { user, profile } = useAuthStore()
+  const { user } = useAuthStore()
 
   const [isEnrolled, setIsEnrolled] = useState(false)
   const [loading, setLoading] = useState(true)
 
-  const isPro = profile?.subscription_status === 'pro'
+  // The server's answer (GET /api/user/access), not a read of
+  // profile.subscription_status: since 12 October 2026 a pupil of a live
+  // school has paid access with nothing written to that field.
+  const isPro = usePaidAccess()?.premium === true
 
   /* ---- Check enrolment ---- */
   useEffect(() => {

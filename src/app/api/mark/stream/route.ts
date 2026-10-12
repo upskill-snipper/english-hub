@@ -150,7 +150,9 @@ export async function POST(request: NextRequest) {
   //     reads, so without this a free account streams unlimited AI marking.
   //     Refunded below if the stream aborts before any content reaches the
   //     learner.
-  const trialGate = await enforceTrialAllowance(request, user)
+  //     `schoolFunded`: a pupil of a live school is paid for by the school
+  //     here, not by their trial (src/lib/usage/trial-allowance.ts).
+  const trialGate = await enforceTrialAllowance(request, user, { schoolFunded: true })
   if (trialGate.response) return trialGate.response
 
   // 9. Spin up the stream (shared client - privacy posture documented in
@@ -172,6 +174,7 @@ export async function POST(request: NextRequest) {
     consentSnapshot: {
       aiOptOut: false,
       aiProcessingConsentOk: true,
+      parentalConsentBasis: consentCheck.basis,
     },
     ipAddress: request.headers.get('x-forwarded-for'),
   }

@@ -17,6 +17,7 @@ import { getTrialState } from '@/lib/billing/trial-state'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { peekAllowance, resolveUsageSubject } from '@/lib/usage/free-allowance'
 import { resolveNoCardTrial } from '@/lib/usage/trial-allowance'
+import { getPupilSchoolAccess } from '@/lib/school-entitlement'
 import { TrialCountdownBanner } from './TrialCountdownBanner'
 import { NotOnProCard } from './NotOnProCard'
 
@@ -24,11 +25,35 @@ interface Props {
   className?: string
 }
 
+/**
+ * Whether the signed-in person is a pupil of a school whose access is live.
+ * Never throws; a failed read answers false, which only means the usual
+ * banner is shown.
+ */
+async function isLiveSchoolPupil(): Promise<boolean> {
+  try {
+    const supabase = createServerSupabaseClient()
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+    return user ? Boolean(await getPupilSchoolAccess(user.id)) : false
+  } catch (err) {
+    console.error('[TrialCountdownBannerServer] school lookup failed', err)
+    return false
+  }
+}
+
 export async function TrialCountdownBannerServer({ className }: Props) {
   const { trialEndsAt, isPremium, kind, trialEndedAt } = await getTrialState()
 
   // A paying customer needs nothing here.
   if (isPremium) return null
+
+  // Nor does a pupil whose school pays (12 October 2026). Their access comes
+  // from the school's live pilot, not from a plan of their own, so a trial
+  // countdown or a "you are not on Pro, see plans" card would ask a child to
+  // pay for what their school already provides.
+  if (await isLiveSchoolPupil()) return null
 
   // Day 8 onwards. This used to return null, so at 04:15 the expiry cron
   // flipped the account to free and the dashboard simply went quiet - no

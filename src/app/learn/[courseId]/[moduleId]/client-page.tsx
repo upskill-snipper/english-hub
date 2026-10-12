@@ -22,6 +22,7 @@ import { loadCourseById } from '@/data/course-loader'
 import type { CourseData, CourseModule, CourseQuiz } from '@/data/courses'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthUserProfile } from '@/store/auth-store'
+import { usePaidAccess } from '@/hooks/usePaidAccess'
 import { useCourseStore, useCourseProgress, useCourseActions } from '@/store/course-store'
 import { useBoard } from '@/hooks/useBoard'
 import { matchesBoard } from '@/lib/board-filter'
@@ -406,7 +407,7 @@ export default function CoursePlayerPage() {
   const courseId = params.courseId as string
   const moduleId = params.moduleId as string
 
-  const { user, profile } = useAuthUserProfile()
+  const { user } = useAuthUserProfile()
   const { completedModules, markModuleComplete } = useCourseProgress()
   const { setCourse, setModule } = useCourseActions()
   const { board: selectedBoard } = useBoard()
@@ -443,7 +444,13 @@ export default function CoursePlayerPage() {
   // Is this a free preview module? (first module in the course)
   const isPreviewModule = moduleIndex === 0
 
-  // Check if user has access (preview module, pro subscriber, OR enrolled)
+  // Paid access is the server's answer (GET /api/user/access), not a read
+  // of profile.subscription_status: since 12 October 2026 a pupil of a live
+  // school has paid access with nothing written to that field (CLAUDE.md,
+  // structural fact 2), so the old browser-side 'pro' test locked them out.
+  const paidAccess = usePaidAccess()
+
+  // Check if user has access (preview module, paid access, OR enrolled)
   useEffect(() => {
     // Don't check access until course data has loaded - without it we can't
     // know which module index this is and whether it's the free preview.
@@ -462,9 +469,12 @@ export default function CoursePlayerPage() {
         return
       }
 
+      // Wait for the server's answer rather than flash a locked module.
+      if (!paidAccess) return
+
       try {
-        // Pro subscribers have access to everything
-        if (profile?.subscription_status === 'pro') {
+        // Paid access (own plan or a live school) opens everything
+        if (paidAccess.premium) {
           setHasAccess(true)
           return
         }
@@ -491,7 +501,7 @@ export default function CoursePlayerPage() {
       }
     }
     checkAccess()
-  }, [user, profile, courseId, moduleId, course, isPreviewModule])
+  }, [user, paidAccess, courseId, moduleId, course, isPreviewModule])
 
   // Load progress from Supabase
   useEffect(() => {
@@ -840,7 +850,7 @@ export default function CoursePlayerPage() {
             )}
 
             {/* Preview CTA - shown on free preview modules for non-subscribed users */}
-            {isPreviewModule && (!user || profile?.subscription_status !== 'pro') && (
+            {isPreviewModule && (!user || paidAccess?.premium !== true) && (
               <div className="mt-10 rounded-xl border border-primary/30 bg-primary/5 p-6 sm:p-8 text-center">
                 <h3 className="text-xl font-bold text-foreground mb-2">
                   {t('learn.preview.cta.title')}

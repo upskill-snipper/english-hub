@@ -49,9 +49,7 @@ export async function POST(request: NextRequest) {
     // Look up the join code with school and class info
     const { data: joinCode, error: codeError } = await admin
       .from('school_join_codes')
-      .select(
-        '*, schools(id, name, seat_limit, seats_used, subscription_status), classes(id, name)',
-      )
+      .select('*, schools(id, name, seat_limit, seats_used), classes(id, name)')
       .eq('code', code)
       .eq('is_active', true)
       .single()
@@ -84,12 +82,19 @@ export async function POST(request: NextRequest) {
       name: string
       seat_limit: number
       seats_used: number
-      subscription_status: string | null
     } | null
 
     const schoolId = joinCode.school_id as string
     const classId = joinCode.class_id as string | null
-    const codeRole: string = (joinCode.role ?? 'student').toLowerCase()
+    // A DEFECT, FIXED 12 OCTOBER 2026: this read `joinCode.role`, a column
+    // that has never existed. /api/school/join-codes writes the code's kind
+    // to `type` ('student' or 'teacher', added by
+    // 20261012_school_join_codes_type.sql), so every code fell through to the
+    // 'student' default and a teacher code enrolled the teacher as a pupil.
+    // Only an exact 'teacher' takes the staff path: anything else, a missing
+    // value included, is a pupil code, so a bad row can never make someone
+    // staff.
+    const codeRole: string = String(joinCode.type ?? 'student').toLowerCase()
 
     const schoolName = school?.name ?? 'your school'
     const className = (joinCode.classes as { name: string } | null)?.name ?? null
@@ -367,11 +372,19 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Grant pro access if the school has an active subscription
-    const schoolSubStatus = school?.subscription_status
-    if (schoolSubStatus === 'active' || schoolSubStatus === 'trialing') {
-      await admin.from('profiles').update({ subscription_status: 'pro' }).eq('id', user.id)
-    }
+    // NOTHING is written to the pupil's profiles.subscription_status here.
+    //
+    // A DEFECT, FIXED 12 OCTOBER 2026: this wrote 'pro' to the pupil's
+    // profile whenever the school's own subscription_status was 'active' or
+    // 'trialing'. That field is one per PERSON (CLAUDE.md, structural fact
+    // 2), so the school's access was stored as if the pupil had bought a
+    // plan: the trial-expiry cron then wiped it after seven days with no
+    // school exception, a grant made before the pupil's first sign-in never
+    // expired at all, and nothing ever took it back when the school's pilot
+    // ended. Calum decided that a school pupil's access comes from the
+    // school's live pilot, checked at the moment of use: the school_students
+    // and class_students rows written above are what grant it, through
+    // getPupilSchoolAccess in src/lib/school-entitlement.ts.
 
     // Check if the student is under 16 and flag for parental consent
     let parentalConsentStatus: string | null = null

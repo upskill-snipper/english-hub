@@ -298,6 +298,7 @@ export async function POST(request: NextRequest) {
       consentSnapshot: {
         aiOptOut: false,
         aiProcessingConsentOk: true,
+        parentalConsentBasis: consentCheck.basis,
       },
       ipAddress: request.headers.get('x-forwarded-for'),
     }
@@ -310,7 +311,9 @@ export async function POST(request: NextRequest) {
     // identical flag the paywall above reads, so without this a free account
     // has the same unlimited AI access a paying one does. Refused with 402 and
     // code 'free_allowance_exhausted', never 403 or 429.
-    trialGate = await enforceTrialAllowance(request, user)
+    // `schoolFunded`: a pupil of a live school is paid for by the school on this
+    // route, not by their trial (src/lib/usage/trial-allowance.ts).
+    trialGate = await enforceTrialAllowance(request, user, { schoolFunded: true })
     if (trialGate.response) return trialGate.response
 
     // 4. Generate AI feedback

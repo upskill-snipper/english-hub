@@ -34,6 +34,7 @@ import {
   type Meter,
 } from '@/lib/usage/free-allowance'
 import { serviceUnavailableResponse } from '@/lib/api-response'
+import { getPupilSchoolAccess } from '@/lib/school-entitlement'
 
 export interface NoCardTrial {
   subscriptionId: string
@@ -120,10 +121,32 @@ export const EMPTY_TRIAL_GATE: TrialAllowanceGate = {
 
 const NOOP: TrialAllowanceGate = EMPTY_TRIAL_GATE
 
+export interface TrialAllowanceOptions {
+  /**
+   * Set by a route whose paywall a school's live access also opens (the GCSE
+   * marking routes, all behind hasActiveSubscription in
+   * src/lib/course-access.ts).
+   *
+   * A DEFECT, FIXED 12 OCTOBER 2026. A pupil who was also on a no-card trial
+   * (anyone who signed up before joining with a code, or within their first
+   * seven days) was metered like any trialist: 15 AI calls a day, 40 in all,
+   * then refused with a 402, although their school's pilot was paying for
+   * the same feature. Calum decided that a school pupil's access comes from
+   * the school's live pilot, so on these routes such a pupil is funded by
+   * the school and the trial ceiling does not apply; the route's own daily
+   * rate limit still does.
+   *
+   * Off by default, so a route that forgets it meters, and the IELTS routes
+   * leave it off on purpose: a school's pilot does not cover IELTS.
+   */
+  schoolFunded?: boolean
+}
+
 /**
  * The one call a paywalled AI route makes, placed immediately before the first
  * model call. A paying subscriber and a card-on-file trial pass straight
- * through and never touch the meter.
+ * through and never touch the meter, and so does a pupil of a live school on
+ * a route that passes `schoolFunded` (see TrialAllowanceOptions).
  *
  * Consumes BOTH the daily sub-cap and the whole-trial ceiling, so a single
  * scripted day cannot drain the seven-day allowance before anyone sees it. If
@@ -132,6 +155,7 @@ const NOOP: TrialAllowanceGate = EMPTY_TRIAL_GATE
 export async function enforceTrialAllowance(
   request: { headers: Headers },
   session: { id: string; email?: string | null },
+  gate: TrialAllowanceOptions = {},
 ): Promise<TrialAllowanceGate> {
   let trial: NoCardTrial | null
   try {
@@ -151,6 +175,10 @@ export async function enforceTrialAllowance(
   }
 
   if (!trial) return NOOP
+
+  // Asked only of a no-card trialist, so nobody else pays for the lookup. It
+  // never throws, and a failed read answers "not a pupil": the meter applies.
+  if (gate.schoolFunded && (await getPupilSchoolAccess(session.id))) return NOOP
 
   const subject = resolveUsageSubject(request, session.id)
   const options = { trialSubscriptionId: trial.subscriptionId, trialEndsAt: trial.trialEndsAt }

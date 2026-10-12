@@ -45,12 +45,21 @@
 //     period.
 //   • It never throws. Every caller is in an authentication path; a failure
 //     to provision must never cost someone their sign-in.
+//   • It gives no trial to a pupil of a live school (12 October 2026). Calum
+//     decided that a school pupil's access comes from the school's pilot,
+//     checked at the moment of use, and that nothing is written to their
+//     `profiles.subscription_status`. An uploaded pupil used to get this
+//     trial at first sign-in, which wrote 'pro' to their profile, metered
+//     them at 40 AI calls, and then told a child on a school pilot that their
+//     trial had ended and to see plans. A failed school lookup answers "not a
+//     pupil", so the trial is provisioned exactly as before.
 // ────────────────────────────────────────────────────────────────────────────
 
 import * as Sentry from '@sentry/nextjs'
 import { prisma } from '@/lib/prisma'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { tryPrismaUserId } from '@/lib/identity'
+import { getPupilSchoolAccess } from '@/lib/school-entitlement'
 import { PRICING } from '@/constants/pricing'
 
 /**
@@ -66,6 +75,7 @@ export type TrialProvisionResult =
         | 'no-profile'
         | 'already-subscribed'
         | 'outside-window'
+        | 'school-pupil'
         | 'identity-unresolved'
         | 'error'
     }
@@ -115,6 +125,11 @@ export async function provisionSignupTrial(supabaseUserId: string): Promise<Tria
     }
     if (now.getTime() - createdAt.getTime() > TRIAL_MS) {
       return { provisioned: false, reason: 'outside-window' }
+    }
+
+    // A pupil of a live school is covered by the school (see the header).
+    if (await getPupilSchoolAccess(supabaseUserId)) {
+      return { provisioned: false, reason: 'school-pupil' }
     }
 
     // Project the Prisma user. `tryPrismaUserId` creates the row if the

@@ -5,6 +5,20 @@ import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
 
+// ─── Who may use this route: staff only ──────────────────────────────────────
+//
+// FIXED 12 OCTOBER 2026. Every handler here called verifySchoolMember with no
+// roles, so a PUPIL with a school_members row could list a class's pupils
+// (names, emails, progress), add any account to any class in the school, and
+// remove pupils from classes. That mattered more from that day: an active
+// enrolment in an active class now makes someone a school pupil
+// (src/lib/school-entitlement.ts), which opens AI marking paid for by the
+// school and, where the school has recorded its AI authorisation, stands in
+// for a parent's consent. Enrolment is therefore a staff act, matching the
+// class_students access rules in 20261012_school_access_rules.sql. Every
+// caller of this route is a /school portal page, which admits staff only.
+const STAFF_ROLES = ['admin', 'head_of_department', 'teacher']
+
 async function verifyClassBelongsToSchool(classId: string, schoolId: string) {
   const admin = createServiceRoleClient()
   const { data, error } = await admin
@@ -55,9 +69,9 @@ export async function GET(request: NextRequest, props: { params: Promise<{ class
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
+    const member = await verifySchoolMember(user.id, STAFF_ROLES)
     if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+      return NextResponse.json({ error: 'Forbidden: school staff only' }, { status: 403 })
     }
 
     const { classId } = params
@@ -197,9 +211,9 @@ export async function POST(request: NextRequest, props: { params: Promise<{ clas
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
+    const member = await verifySchoolMember(user.id, STAFF_ROLES)
     if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+      return NextResponse.json({ error: 'Forbidden: school staff only' }, { status: 403 })
     }
 
     const { classId } = params
@@ -252,11 +266,7 @@ export async function POST(request: NextRequest, props: { params: Promise<{ clas
 
     // Fetch school + all class IDs in this school IN PARALLEL (2 reads).
     const [schoolResult, schoolClassesResult] = await Promise.all([
-      admin
-        .from('schools')
-        .select('seat_limit, seats_used, subscription_status')
-        .eq('id', member.school_id)
-        .single(),
+      admin.from('schools').select('seat_limit, seats_used').eq('id', member.school_id).single(),
       admin.from('classes').select('id').eq('school_id', member.school_id),
     ])
 
@@ -442,19 +452,18 @@ export async function POST(request: NextRequest, props: { params: Promise<{ clas
       }
     }
 
-    // ── Step 6: batch grant pro access ──
-    const schoolSubStatus = school?.subscription_status
-    if ((schoolSubStatus === 'active' || schoolSubStatus === 'trialing') && added.length > 0) {
-      const { error: proError } = await admin
-        .from('profiles')
-        .update({ subscription_status: 'pro' })
-        .in('id', added)
-      if (proError) {
-        // Not fatal to the enrolment - log and surface as a soft error.
-        console.error('Grant pro access error:', proError)
-        errors.push(`subscription_status update failed: ${proError.message}`)
-      }
-    }
+    // ── Step 6: NOTHING is written to the pupils' profiles ──
+    //
+    // A DEFECT, FIXED 12 OCTOBER 2026: this step wrote 'pro' to every added
+    // pupil's profiles.subscription_status when the school's own
+    // subscription_status was 'active' or 'trialing'. That field is one per
+    // PERSON (CLAUDE.md, structural fact 2): the trial-expiry cron wiped the
+    // grant after seven days with no school exception, a grant made before a
+    // pupil's first sign-in never expired, and nothing took it back when the
+    // school's pilot ended. Calum decided that a school pupil's access comes
+    // from the school's live pilot, checked at the moment of use; the
+    // class_students rows written above are what grant it, through
+    // getPupilSchoolAccess in src/lib/school-entitlement.ts.
 
     // ── Step 7: refresh class.student_count ──
     const { count: studentCount } = await admin
@@ -512,9 +521,9 @@ export async function DELETE(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
+    const member = await verifySchoolMember(user.id, STAFF_ROLES)
     if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+      return NextResponse.json({ error: 'Forbidden: school staff only' }, { status: 403 })
     }
 
     const { classId } = params

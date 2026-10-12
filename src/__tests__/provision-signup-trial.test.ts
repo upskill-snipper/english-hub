@@ -29,6 +29,14 @@ vi.mock('@/lib/prisma', () => ({
 
 vi.mock('@sentry/nextjs', () => ({ captureException: vi.fn() }))
 
+// 12 October 2026: a pupil of a live school gets no trial. Not a pupil unless
+// a test says so; the lookup itself is tested in
+// a-pupil-is-entitled-by-their-school.test.ts.
+const mockGetPupilSchoolAccess = vi.fn()
+vi.mock('@/lib/school-entitlement', () => ({
+  getPupilSchoolAccess: (...args: unknown[]) => mockGetPupilSchoolAccess(...args),
+}))
+
 // A profile row the SELECT chain will return, and a capture of the UPDATE.
 let profileRow: Record<string, unknown> | null = null
 let selectThrows = false
@@ -72,6 +80,31 @@ beforeEach(() => {
   updateCall = null
   mockTryPrismaUserId.mockResolvedValue('cuid_prisma_user')
   mockUpsert.mockResolvedValue({})
+  mockGetPupilSchoolAccess.mockResolvedValue(null)
+})
+
+// ─── A pupil of a live school (12 October 2026) ─────────────────────────
+
+describe('provisionSignupTrial: a pupil whose school pays', () => {
+  it('gets no trial, and nothing is written to their subscription_status', async () => {
+    // An uploaded pupil used to get this trial at first sign-in: 'pro' on the
+    // profile, 40 AI calls, then "your trial has ended, see plans" on a
+    // school pilot. Their access comes from the school, checked at use.
+    mockGetPupilSchoolAccess.mockResolvedValue({ schoolId: 'school-1', aiAuthorised: true })
+
+    const result = await provisionSignupTrial(UID)
+
+    expect(result).toEqual({ provisioned: false, reason: 'school-pupil' })
+    expect(mockGetPupilSchoolAccess).toHaveBeenCalledWith(UID)
+    expect(mockUpsert).not.toHaveBeenCalled()
+    expect(updateCall).toBeNull()
+  })
+
+  it('a failed school lookup answers "not a pupil", so the trial is given as before', async () => {
+    mockGetPupilSchoolAccess.mockResolvedValue(null)
+    const result = await provisionSignupTrial(UID)
+    expect(result.provisioned).toBe(true)
+  })
 })
 
 // ─── The path that has never once run in production ─────────────────────

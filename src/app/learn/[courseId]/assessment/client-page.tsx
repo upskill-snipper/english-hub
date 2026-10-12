@@ -21,6 +21,7 @@ import type { CourseData } from '@/data/courses'
 import type { CourseQuiz } from '@/data/courses'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
+import { usePaidAccess } from '@/hooks/usePaidAccess'
 import { useBoard } from '@/hooks/useBoard'
 import { matchesBoard } from '@/lib/board-filter'
 import { shuffleArray, formatTime } from '@/lib/utils'
@@ -110,7 +111,13 @@ export default function AssessmentPage() {
     })
   }, [courseId])
 
-  // Check if user has access (pro subscriber OR enrolled in this course)
+  // Paid access is the server's answer (GET /api/user/access), not a read
+  // of profile.subscription_status: since 12 October 2026 a pupil of a live
+  // school has paid access with nothing written to that field (CLAUDE.md,
+  // structural fact 2), so the old browser-side 'pro' test locked them out.
+  const paidAccess = usePaidAccess()
+
+  // Check if user has access (paid access OR enrolled in this course)
   useEffect(() => {
     async function checkAccess() {
       if (!user) {
@@ -118,8 +125,11 @@ export default function AssessmentPage() {
         return
       }
 
-      // Pro subscribers have access to everything
-      if (profile?.subscription_status === 'pro') {
+      // Wait for the server's answer rather than flash a locked assessment.
+      if (!paidAccess) return
+
+      // Paid access (own plan or a live school) opens everything
+      if (paidAccess.premium) {
         setHasAccess(true)
         return
       }
@@ -136,7 +146,7 @@ export default function AssessmentPage() {
       setHasAccess(!!data)
     }
     checkAccess()
-  }, [user, profile, courseId])
+  }, [user, paidAccess, courseId])
 
   // Build question pool: prefer curated assessment questions, fall back to module quizzes
   const allQuestions: AssessmentQuestion[] = useMemo(() => {
