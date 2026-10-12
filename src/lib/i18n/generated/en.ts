@@ -1110,6 +1110,48 @@ export const EN_MESSAGES: Record<string, string> = {
   'consent.cookies.analytics_body': 'Help us understand how visitors interact with the site.',
   'consent.cookies.analytics_toggle_label': 'Toggle analytics cookies',
   'consent.cookies.save_preferences': 'Save Preferences',
+  'consent.inline.withdraw_before': 'You can withdraw this at any time from',
+  'consent.inline.manage_link': 'Manage your consents',
+  'consent.inline.withdraw_after': '. No reason needed, and it takes effect immediately.',
+  'consent.inline.error_record': 'We could not record your choice. Please try again.',
+  'consent.inline.ai.title': 'Turn on AI feedback to carry on',
+  'consent.inline.ai.intro':
+    'AI feedback is switched off for your account, so we stopped before sending anything. Here is what turning it on means.',
+  'consent.inline.ai.use_label': 'What we use AI for:',
+  'consent.inline.ai.use_body':
+    'marking the work you submit and writing feedback on it, including strengths, improvements and a predicted grade.',
+  'consent.inline.ai.sent_label': 'What is sent:',
+  'consent.inline.ai.sent_body':
+    'the answer you submit and the question details you chose, such as the exam board, the paper and the question text. These go to our AI provider, Anthropic, which processes them to produce the feedback.',
+  'consent.inline.ai.grade_label': 'It is not a certified grade:',
+  'consent.inline.ai.grade_body':
+    'AI feedback is a practice estimate produced by software. No human examiner has checked it and no exam board has approved it.',
+  'consent.inline.ai.read_more_before': 'Read more in our',
+  'consent.inline.ai.transparency_link': 'AI transparency notice',
+  'consent.inline.ai.read_more_and': 'and our',
+  'consent.inline.ai.privacy_link': 'privacy notice',
+  'consent.inline.ai.no_version_before':
+    'We could not load the current privacy notice version, so we will not record a consent against a version we cannot name. Please open',
+  'consent.inline.ai.no_version_after': 'and give it there, then come back and try again.',
+  'consent.inline.ai.recording': 'Recording your choice',
+  'consent.inline.ai.agree': 'I agree, turn on AI feedback',
+  'consent.inline.ai.not_now': 'Not now',
+  'consent.inline.ai.nothing_unless': 'Nothing is switched on unless you press the button above',
+  'consent.inline.ai.version_note': '(privacy notice version {version})',
+  'consent.inline.ai.closing_records_nothing': '. Closing this panel records nothing.',
+  'consent.inline.guardian.title': 'A parent or guardian needs to approve this',
+  'consent.inline.guardian.body':
+    'This cannot be turned on from here. Our records show this account belongs to a child, so a parent or guardian has to give permission before AI feedback can be used.',
+  'consent.inline.guardian.link': 'Check or send the request to your parent or guardian',
+  'consent.inline.guardian.work_kept':
+    'Your work is still here. Once permission is given, come back to this page and try again.',
+  'consent.inline.dob.error_save': 'We could not save your date of birth. Please try again.',
+  'consent.inline.dob.title': 'We need your date of birth first',
+  'consent.inline.dob.body':
+    'We do not hold your date of birth, so we cannot tell whether a parent or guardian needs to approve AI feedback for this account. Adding it switches nothing on by itself.',
+  'consent.inline.dob.label': 'Date of birth',
+  'consent.inline.dob.saving': 'Saving',
+  'consent.inline.dob.save': 'Save date of birth',
   'consent.guardian.required_title': 'Parental Consent Required',
   'consent.guardian.email_required': "Please enter your parent/guardian's email address.",
   'consent.guardian.send_failed': 'Failed to send consent request.',

@@ -3915,6 +3915,179 @@ export const DICTIONARY: Dictionary = {
     ar: 'احفظ التفضيلات',
     es: 'Guardar preferencias',
   },
+  // The inline AI consent panel (src/components/consent/InlineAIConsentPrompt.tsx).
+  // English is the panel's wording as it stood on 12 October 2026, unchanged:
+  // this is consent copy. The Arabic and Spanish need a native speaker's read.
+  'consent.inline.withdraw_before': {
+    en: 'You can withdraw this at any time from',
+    ar: 'تقدر تسحب هالموافقة في أي وقت من',
+    es: 'Puedes retirarlo en cualquier momento desde',
+  },
+  'consent.inline.manage_link': {
+    en: 'Manage your consents',
+    ar: 'دير موافقاتك',
+    es: 'Gestiona tus consentimientos',
+  },
+  'consent.inline.withdraw_after': {
+    en: '. No reason needed, and it takes effect immediately.',
+    ar: '. ما تحتاج تعطي سبب، والسحب يصير فوراً.',
+    es: '. No hace falta dar ningún motivo y tiene efecto inmediato.',
+  },
+  'consent.inline.error_record': {
+    en: 'We could not record your choice. Please try again.',
+    ar: 'ما قدرنا نسجّل اختيارك. حاول مرة ثانية.',
+    es: 'No hemos podido registrar tu elección. Inténtalo de nuevo.',
+  },
+  'consent.inline.ai.title': {
+    en: 'Turn on AI feedback to carry on',
+    ar: 'شغّل ملاحظات الذكاء الاصطناعي عشان تكمّل',
+    es: 'Activa los comentarios con IA para continuar',
+  },
+  'consent.inline.ai.intro': {
+    en: 'AI feedback is switched off for your account, so we stopped before sending anything. Here is what turning it on means.',
+    ar: 'ملاحظات الذكاء الاصطناعي مطفّية في حسابك، فوقفنا قبل ما نرسل أي شي. هذا معنى إنك تشغّلها.',
+    es: 'Los comentarios con IA están desactivados en tu cuenta, así que nos hemos detenido antes de enviar nada. Esto es lo que significa activarlos.',
+  },
+  'consent.inline.ai.use_label': {
+    en: 'What we use AI for:',
+    ar: 'لشنو نستخدم الذكاء الاصطناعي:',
+    es: 'Para qué usamos la IA:',
+  },
+  'consent.inline.ai.use_body': {
+    en: 'marking the work you submit and writing feedback on it, including strengths, improvements and a predicted grade.',
+    ar: 'نصحّح الشغل اللي ترسله ونكتب عليه ملاحظات، منها نقاط القوة والأشياء اللي تحتاج تحسين ودرجة متوقعة.',
+    es: 'corregir el trabajo que envías y escribir comentarios sobre él, incluidos los puntos fuertes, las mejoras y una nota prevista.',
+  },
+  'consent.inline.ai.sent_label': {
+    en: 'What is sent:',
+    ar: 'شنو ينرسل:',
+    es: 'Qué se envía:',
+  },
+  'consent.inline.ai.sent_body': {
+    en: 'the answer you submit and the question details you chose, such as the exam board, the paper and the question text. These go to our AI provider, Anthropic, which processes them to produce the feedback.',
+    ar: 'الإجابة اللي ترسلها وتفاصيل السؤال اللي اخترتها، مثل جهة الامتحان والورقة ونص السؤال. هذي تروح لمزوّد الذكاء الاصطناعي عندنا، Anthropic، اللي يعالجها عشان يطلّع الملاحظات.',
+    es: 'la respuesta que envías y los detalles de la pregunta que elegiste, como el organismo examinador, el examen y el texto de la pregunta. Se envían a nuestro proveedor de IA, Anthropic, que los procesa para generar los comentarios.',
+  },
+  'consent.inline.ai.grade_label': {
+    en: 'It is not a certified grade:',
+    ar: 'مو درجة معتمدة:',
+    es: 'No es una nota certificada:',
+  },
+  'consent.inline.ai.grade_body': {
+    en: 'AI feedback is a practice estimate produced by software. No human examiner has checked it and no exam board has approved it.',
+    ar: 'ملاحظات الذكاء الاصطناعي تقدير للتدريب يطلّعه برنامج. ما راجعها أي مصحّح بشري وما اعتمدتها أي جهة امتحان.',
+    es: 'Los comentarios con IA son una estimación de práctica generada por software. Ningún examinador humano los ha revisado y ningún organismo examinador los ha aprobado.',
+  },
+  'consent.inline.ai.read_more_before': {
+    en: 'Read more in our',
+    ar: 'اقرأ أكثر في',
+    es: 'Lee más en nuestro',
+  },
+  'consent.inline.ai.transparency_link': {
+    en: 'AI transparency notice',
+    ar: 'إشعار شفافية الذكاء الاصطناعي',
+    es: 'aviso de transparencia sobre la IA',
+  },
+  'consent.inline.ai.read_more_and': {
+    en: 'and our',
+    ar: 'وفي',
+    es: 'y en nuestro',
+  },
+  'consent.inline.ai.privacy_link': {
+    en: 'privacy notice',
+    ar: 'إشعار الخصوصية',
+    es: 'aviso de privacidad',
+  },
+  'consent.inline.ai.no_version_before': {
+    en: 'We could not load the current privacy notice version, so we will not record a consent against a version we cannot name. Please open',
+    ar: 'ما قدرنا نحمّل نسخة إشعار الخصوصية الحالية، فما بنسجّل موافقة على نسخة ما نقدر نسمّيها. افتح',
+    es: 'No hemos podido cargar la versión actual del aviso de privacidad, así que no registraremos un consentimiento sobre una versión que no podemos identificar. Abre',
+  },
+  'consent.inline.ai.no_version_after': {
+    en: 'and give it there, then come back and try again.',
+    ar: 'وأعطِ الموافقة هناك، وبعدين ارجع وجرّب مرة ثانية.',
+    es: 'y dalo allí; después vuelve e inténtalo de nuevo.',
+  },
+  'consent.inline.ai.recording': {
+    en: 'Recording your choice',
+    ar: 'نسجّل اختيارك',
+    es: 'Registrando tu elección',
+  },
+  'consent.inline.ai.agree': {
+    en: 'I agree, turn on AI feedback',
+    ar: 'أوافق، شغّل ملاحظات الذكاء الاصطناعي',
+    es: 'Acepto, activa los comentarios con IA',
+  },
+  'consent.inline.ai.not_now': {
+    en: 'Not now',
+    ar: 'مو الحين',
+    es: 'Ahora no',
+  },
+  'consent.inline.ai.nothing_unless': {
+    en: 'Nothing is switched on unless you press the button above',
+    ar: 'ما يشتغل أي شي إلا إذا ضغطت الزر اللي فوق',
+    es: 'No se activa nada a menos que pulses el botón de arriba',
+  },
+  'consent.inline.ai.version_note': {
+    en: '(privacy notice version {version})',
+    ar: '(نسخة إشعار الخصوصية {version})',
+    es: '(versión del aviso de privacidad {version})',
+  },
+  'consent.inline.ai.closing_records_nothing': {
+    en: '. Closing this panel records nothing.',
+    ar: '. وإذا سكّرت هذا، ما ينسجّل أي شي.',
+    es: '. Cerrar este panel no registra nada.',
+  },
+  'consent.inline.guardian.title': {
+    en: 'A parent or guardian needs to approve this',
+    ar: 'لازم والدك أو ولي أمرك يوافق على هذا',
+    es: 'Un padre o tutor tiene que aprobarlo',
+  },
+  'consent.inline.guardian.body': {
+    en: 'This cannot be turned on from here. Our records show this account belongs to a child, so a parent or guardian has to give permission before AI feedback can be used.',
+    ar: 'ما ينفع تشغّله من هني. سجلاتنا تبيّن إن هالحساب لطفل، فلازم والده أو ولي أمره يعطي الإذن قبل ما تنستخدم ملاحظات الذكاء الاصطناعي.',
+    es: 'No se puede activar desde aquí. Nuestros registros indican que esta cuenta pertenece a un menor, así que un padre o tutor tiene que dar permiso antes de que se puedan usar los comentarios con IA.',
+  },
+  'consent.inline.guardian.link': {
+    en: 'Check or send the request to your parent or guardian',
+    ar: 'شيك على الطلب أو أرسله لوالدك أو ولي أمرك',
+    es: 'Consulta o envía la solicitud a tu padre o tutor',
+  },
+  'consent.inline.guardian.work_kept': {
+    en: 'Your work is still here. Once permission is given, come back to this page and try again.',
+    ar: 'شغلك لسا موجود. بعد ما ينعطى الإذن، ارجع لهالصفحة وجرّب مرة ثانية.',
+    es: 'Tu trabajo sigue aquí. Cuando se dé el permiso, vuelve a esta página e inténtalo de nuevo.',
+  },
+  'consent.inline.dob.error_save': {
+    en: 'We could not save your date of birth. Please try again.',
+    ar: 'ما قدرنا نحفظ تاريخ ميلادك. حاول مرة ثانية.',
+    es: 'No hemos podido guardar tu fecha de nacimiento. Inténtalo de nuevo.',
+  },
+  'consent.inline.dob.title': {
+    en: 'We need your date of birth first',
+    ar: 'نحتاج تاريخ ميلادك أول',
+    es: 'Primero necesitamos tu fecha de nacimiento',
+  },
+  'consent.inline.dob.body': {
+    en: 'We do not hold your date of birth, so we cannot tell whether a parent or guardian needs to approve AI feedback for this account. Adding it switches nothing on by itself.',
+    ar: 'ما عندنا تاريخ ميلادك، فما نقدر نعرف إذا لازم والدك أو ولي أمرك يوافق على ملاحظات الذكاء الاصطناعي لهالحساب. إضافته ما تشغّل أي شي بروحها.',
+    es: 'No tenemos tu fecha de nacimiento, así que no podemos saber si un padre o tutor tiene que aprobar los comentarios con IA para esta cuenta. Añadirla no activa nada por sí sola.',
+  },
+  'consent.inline.dob.label': {
+    en: 'Date of birth',
+    ar: 'تاريخ الميلاد',
+    es: 'Fecha de nacimiento',
+  },
+  'consent.inline.dob.saving': {
+    en: 'Saving',
+    ar: 'نحفظ',
+    es: 'Guardando',
+  },
+  'consent.inline.dob.save': {
+    en: 'Save date of birth',
+    ar: 'احفظ تاريخ الميلاد',
+    es: 'Guardar fecha de nacimiento',
+  },
   'consent.guardian.required_title': {
     en: 'Parental Consent Required',
     ar: 'موافقة ولي الأمر مطلوبة',

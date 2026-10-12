@@ -38,12 +38,21 @@
  * gap is real work; until it is closed the copy states what is true - no
  * reason needed, effective immediately - rather than a parity we have not
  * built.
+ *
+ * LANGUAGES (12 October 2026). Every visible string comes from the
+ * dictionary (consent.inline.*) in English, Arabic and Spanish. It was
+ * English-only, and that day it began appearing on IELTS and EAL pages read
+ * by Arabic-speaking learners in the Gulf: a consent decision has to be one
+ * the reader can read. The English is the wording this panel always had,
+ * unchanged. The Arabic and Spanish have not been checked by a native
+ * speaker. The server's own sentence (refusal.message) is shown as sent.
  */
 
 import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { AlertCircle, Loader2, ShieldCheck } from 'lucide-react'
 import { CONSENT_REFUSAL_CODES } from '@/lib/consent-codes'
+import { useT } from '@/lib/i18n/use-t'
 import type { AIConsentRefusal } from './ai-consent-refusal'
 
 // ─── Props ──────────────────────────────────────────────────────────────
@@ -110,13 +119,14 @@ function ErrorLine({ message }: { message: string }) {
 }
 
 function WithdrawNote() {
+  const t = useT()
   return (
     <p className="mt-3 text-xs text-muted-foreground">
-      You can withdraw this at any time from{' '}
+      {t('consent.inline.withdraw_before')}{' '}
       <Link href={CONSENT_PAGE} className="text-primary underline underline-offset-2">
-        Manage your consents
+        {t('consent.inline.manage_link')}
       </Link>
-      . No reason needed, and it takes effect immediately.
+      {t('consent.inline.withdraw_after')}
     </p>
   )
 }
@@ -128,6 +138,7 @@ function AIProcessingVariant({
   onDismiss,
   className,
 }: Omit<InlineAIConsentPromptProps, 'refusal'>) {
+  const t = useT()
   const [version, setVersion] = useState<string | null>(null)
   const [versionLoaded, setVersionLoaded] = useState(false)
   const [granting, setGranting] = useState(false)
@@ -177,67 +188,56 @@ function AIProcessingVariant({
       if (!res.ok) {
         const data = await res.json().catch(() => null)
         throw new Error(
-          (data as { error?: string } | null)?.error ??
-            'We could not record your choice. Please try again.',
+          (data as { error?: string } | null)?.error ?? t('consent.inline.error_record'),
         )
       }
       // Recorded. Retry the exact action they were blocked on.
       onResolved()
     } catch (err) {
-      setError(
-        err instanceof Error ? err.message : 'We could not record your choice. Please try again.',
-      )
+      setError(err instanceof Error ? err.message : t('consent.inline.error_record'))
     } finally {
       setGranting(false)
     }
-  }, [version, onResolved])
+  }, [version, onResolved, t])
 
   return (
-    <Panel title="Turn on AI feedback to carry on" className={className}>
-      <p className="mt-1 text-muted-foreground">
-        AI feedback is switched off for your account, so we stopped before sending anything. Here is
-        what turning it on means.
-      </p>
+    <Panel title={t('consent.inline.ai.title')} className={className}>
+      <p className="mt-1 text-muted-foreground">{t('consent.inline.ai.intro')}</p>
 
       <ul className="mt-3 list-disc space-y-1.5 ps-5 text-muted-foreground">
         <li>
-          <span className="font-medium text-foreground">What we use AI for:</span> marking the work
-          you submit and writing feedback on it, including strengths, improvements and a predicted
-          grade.
+          <span className="font-medium text-foreground">{t('consent.inline.ai.use_label')}</span>{' '}
+          {t('consent.inline.ai.use_body')}
         </li>
         <li>
-          <span className="font-medium text-foreground">What is sent:</span> the answer you submit
-          and the question details you chose, such as the exam board, the paper and the question
-          text. These go to our AI provider, Anthropic, which processes them to produce the
-          feedback.
+          <span className="font-medium text-foreground">{t('consent.inline.ai.sent_label')}</span>{' '}
+          {t('consent.inline.ai.sent_body')}
         </li>
         <li>
-          <span className="font-medium text-foreground">It is not a certified grade:</span> AI
-          feedback is a practice estimate produced by software. No human examiner has checked it and
-          no exam board has approved it.
+          <span className="font-medium text-foreground">{t('consent.inline.ai.grade_label')}</span>{' '}
+          {t('consent.inline.ai.grade_body')}
         </li>
       </ul>
 
       <p className="mt-3 text-xs text-muted-foreground">
-        Read more in our{' '}
+        {t('consent.inline.ai.read_more_before')}{' '}
         <Link href={AI_TRANSPARENCY_PAGE} className="text-primary underline underline-offset-2">
-          AI transparency notice
+          {t('consent.inline.ai.transparency_link')}
         </Link>{' '}
-        and our{' '}
+        {t('consent.inline.ai.read_more_and')}{' '}
         <Link href={PRIVACY_PAGE} className="text-primary underline underline-offset-2">
-          privacy notice
+          {t('consent.inline.ai.privacy_link')}
         </Link>
         .
       </p>
 
       {versionLoaded && !version ? (
         <p className="mt-3 text-muted-foreground">
-          We could not load the current privacy notice version, so we will not record a consent
-          against a version we cannot name. Please open{' '}
+          {t('consent.inline.ai.no_version_before')}{' '}
           <Link href={CONSENT_PAGE} className="text-primary underline underline-offset-2">
-            Manage your consents
+            {t('consent.inline.manage_link')}
           </Link>{' '}
-          and give it there, then come back and try again.
+          {t('consent.inline.ai.no_version_after')}
         </p>
       ) : (
         <>
@@ -249,7 +249,7 @@ function AIProcessingVariant({
               className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60"
             >
               {granting && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
-              {granting ? 'Recording your choice' : 'I agree, turn on AI feedback'}
+              {granting ? t('consent.inline.ai.recording') : t('consent.inline.ai.agree')}
             </button>
 
             {onDismiss && (
@@ -259,15 +259,17 @@ function AIProcessingVariant({
                 disabled={granting}
                 className="rounded-md border border-border px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground disabled:opacity-60"
               >
-                Not now
+                {t('consent.inline.ai.not_now')}
               </button>
             )}
           </div>
 
           <p className="mt-2 text-xs text-muted-foreground">
-            Nothing is switched on unless you press the button above
-            {version ? <> (privacy notice version {version})</> : null}. Closing this panel records
-            nothing.
+            {t('consent.inline.ai.nothing_unless')}
+            {version ? (
+              <> {t('consent.inline.ai.version_note').replace('{version}', version)}</>
+            ) : null}
+            {t('consent.inline.ai.closing_records_nothing')}
           </p>
         </>
       )}
@@ -281,24 +283,20 @@ function AIProcessingVariant({
 // ─── Variant: guardian approval required ────────────────────────────────
 
 function GuardianVariant({ message, className }: { message: string; className?: string }) {
+  const t = useT()
   return (
-    <Panel title="A parent or guardian needs to approve this" className={className}>
+    <Panel title={t('consent.inline.guardian.title')} className={className}>
       {message && <p className="mt-1 text-muted-foreground">{message}</p>}
-      <p className="mt-3 text-muted-foreground">
-        This cannot be turned on from here. Our records show this account belongs to a child, so a
-        parent or guardian has to give permission before AI feedback can be used.
-      </p>
+      <p className="mt-3 text-muted-foreground">{t('consent.inline.guardian.body')}</p>
       <p className="mt-3">
         <Link
           href={GUARDIAN_PAGE}
           className="inline-flex items-center rounded-md border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
         >
-          Check or send the request to your parent or guardian
+          {t('consent.inline.guardian.link')}
         </Link>
       </p>
-      <p className="mt-3 text-xs text-muted-foreground">
-        Your work is still here. Once permission is given, come back to this page and try again.
-      </p>
+      <p className="mt-3 text-xs text-muted-foreground">{t('consent.inline.guardian.work_kept')}</p>
     </Panel>
   )
 }
@@ -314,6 +312,7 @@ function DateOfBirthVariant({
   onResolved: () => void
   className?: string
 }) {
+  const t = useT()
   const [dob, setDob] = useState('')
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -331,35 +330,27 @@ function DateOfBirthVariant({
       if (!res.ok) {
         const data = await res.json().catch(() => null)
         throw new Error(
-          (data as { error?: string } | null)?.error ??
-            'We could not save your date of birth. Please try again.',
+          (data as { error?: string } | null)?.error ?? t('consent.inline.dob.error_save'),
         )
       }
       // Saved. Retry the original action: the gate will now answer with what
       // is actually needed, which may still be a parent or guardian.
       onResolved()
     } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : 'We could not save your date of birth. Please try again.',
-      )
+      setError(err instanceof Error ? err.message : t('consent.inline.dob.error_save'))
     } finally {
       setSaving(false)
     }
-  }, [dob, onResolved])
+  }, [dob, onResolved, t])
 
   return (
-    <Panel title="We need your date of birth first" className={className}>
+    <Panel title={t('consent.inline.dob.title')} className={className}>
       {message && <p className="mt-1 text-muted-foreground">{message}</p>}
-      <p className="mt-3 text-muted-foreground">
-        We do not hold your date of birth, so we cannot tell whether a parent or guardian needs to
-        approve AI feedback for this account. Adding it switches nothing on by itself.
-      </p>
+      <p className="mt-3 text-muted-foreground">{t('consent.inline.dob.body')}</p>
 
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <label htmlFor="inline-consent-dob" className="sr-only">
-          Date of birth
+          {t('consent.inline.dob.label')}
         </label>
         <input
           id="inline-consent-dob"
@@ -376,7 +367,7 @@ function DateOfBirthVariant({
           className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60"
         >
           {saving && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
-          {saving ? 'Saving' : 'Save date of birth'}
+          {saving ? t('consent.inline.dob.saving') : t('consent.inline.dob.save')}
         </button>
       </div>
 

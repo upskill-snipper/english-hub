@@ -1148,6 +1148,49 @@ export const ES_MESSAGES: Record<string, string> = {
     'Nos ayudan a entender cómo interactúan los visitantes con el sitio.',
   'consent.cookies.analytics_toggle_label': 'Activar o desactivar las cookies de analítica',
   'consent.cookies.save_preferences': 'Guardar preferencias',
+  'consent.inline.withdraw_before': 'Puedes retirarlo en cualquier momento desde',
+  'consent.inline.manage_link': 'Gestiona tus consentimientos',
+  'consent.inline.withdraw_after': '. No hace falta dar ningún motivo y tiene efecto inmediato.',
+  'consent.inline.error_record': 'No hemos podido registrar tu elección. Inténtalo de nuevo.',
+  'consent.inline.ai.title': 'Activa los comentarios con IA para continuar',
+  'consent.inline.ai.intro':
+    'Los comentarios con IA están desactivados en tu cuenta, así que nos hemos detenido antes de enviar nada. Esto es lo que significa activarlos.',
+  'consent.inline.ai.use_label': 'Para qué usamos la IA:',
+  'consent.inline.ai.use_body':
+    'corregir el trabajo que envías y escribir comentarios sobre él, incluidos los puntos fuertes, las mejoras y una nota prevista.',
+  'consent.inline.ai.sent_label': 'Qué se envía:',
+  'consent.inline.ai.sent_body':
+    'la respuesta que envías y los detalles de la pregunta que elegiste, como el organismo examinador, el examen y el texto de la pregunta. Se envían a nuestro proveedor de IA, Anthropic, que los procesa para generar los comentarios.',
+  'consent.inline.ai.grade_label': 'No es una nota certificada:',
+  'consent.inline.ai.grade_body':
+    'Los comentarios con IA son una estimación de práctica generada por software. Ningún examinador humano los ha revisado y ningún organismo examinador los ha aprobado.',
+  'consent.inline.ai.read_more_before': 'Lee más en nuestro',
+  'consent.inline.ai.transparency_link': 'aviso de transparencia sobre la IA',
+  'consent.inline.ai.read_more_and': 'y en nuestro',
+  'consent.inline.ai.privacy_link': 'aviso de privacidad',
+  'consent.inline.ai.no_version_before':
+    'No hemos podido cargar la versión actual del aviso de privacidad, así que no registraremos un consentimiento sobre una versión que no podemos identificar. Abre',
+  'consent.inline.ai.no_version_after': 'y dalo allí; después vuelve e inténtalo de nuevo.',
+  'consent.inline.ai.recording': 'Registrando tu elección',
+  'consent.inline.ai.agree': 'Acepto, activa los comentarios con IA',
+  'consent.inline.ai.not_now': 'Ahora no',
+  'consent.inline.ai.nothing_unless': 'No se activa nada a menos que pulses el botón de arriba',
+  'consent.inline.ai.version_note': '(versión del aviso de privacidad {version})',
+  'consent.inline.ai.closing_records_nothing': '. Cerrar este panel no registra nada.',
+  'consent.inline.guardian.title': 'Un padre o tutor tiene que aprobarlo',
+  'consent.inline.guardian.body':
+    'No se puede activar desde aquí. Nuestros registros indican que esta cuenta pertenece a un menor, así que un padre o tutor tiene que dar permiso antes de que se puedan usar los comentarios con IA.',
+  'consent.inline.guardian.link': 'Consulta o envía la solicitud a tu padre o tutor',
+  'consent.inline.guardian.work_kept':
+    'Tu trabajo sigue aquí. Cuando se dé el permiso, vuelve a esta página e inténtalo de nuevo.',
+  'consent.inline.dob.error_save':
+    'No hemos podido guardar tu fecha de nacimiento. Inténtalo de nuevo.',
+  'consent.inline.dob.title': 'Primero necesitamos tu fecha de nacimiento',
+  'consent.inline.dob.body':
+    'No tenemos tu fecha de nacimiento, así que no podemos saber si un padre o tutor tiene que aprobar los comentarios con IA para esta cuenta. Añadirla no activa nada por sí sola.',
+  'consent.inline.dob.label': 'Fecha de nacimiento',
+  'consent.inline.dob.saving': 'Guardando',
+  'consent.inline.dob.save': 'Guardar fecha de nacimiento',
   'consent.guardian.required_title': 'Se requiere consentimiento parental',
   'consent.guardian.email_required': 'Introduce el correo electrónico de tu padre/tutor.',
   'consent.guardian.send_failed': 'No se pudo enviar la solicitud de consentimiento.',

@@ -336,3 +336,61 @@ describe('InlineAIConsentPrompt - unknown code', () => {
     expect(consentPosts()).toHaveLength(0)
   })
 })
+
+// ─── In Arabic (12 October 2026) ────────────────────────────────────────
+//
+// The panel was English-only, and from 12 October it appears on IELTS and
+// EAL pages read by Arabic-speaking learners. A consent decision has to be
+// one the reader can read, so every variant must render in the reader's
+// language, with the same controls and the same rules. MUTATION RUN: putting
+// the guardian title back as an English literal fails the first case.
+
+describe('InlineAIConsentPrompt - in Arabic', () => {
+  beforeEach(() => {
+    document.documentElement.dataset.lang = 'ar'
+  })
+  afterEach(() => {
+    delete document.documentElement.dataset.lang
+  })
+
+  it('shows the guardian route in Arabic, still with no self-grant', async () => {
+    render(
+      <InlineAIConsentPrompt
+        refusal={{ code: CONSENT_REFUSAL_CODES.PARENTAL_CONSENT_REQUIRED, message: '' }}
+        onResolved={vi.fn()}
+      />,
+    )
+    expect(await screen.findByText('لازم والدك أو ولي أمرك يوافق على هذا')).toBeTruthy()
+    expect(screen.queryByText(/A parent or guardian needs to approve this/)).toBeNull()
+    expect(screen.queryByRole('button', { name: /أوافق/ })).toBeNull()
+  })
+
+  it('asks for the date of birth in Arabic', async () => {
+    render(
+      <InlineAIConsentPrompt
+        refusal={{ code: CONSENT_REFUSAL_CODES.DATE_OF_BIRTH_REQUIRED, message: '' }}
+        onResolved={vi.fn()}
+      />,
+    )
+    expect(await screen.findByRole('button', { name: 'احفظ تاريخ الميلاد' })).toBeTruthy()
+    expect(screen.getByText('نحتاج تاريخ ميلادك أول')).toBeTruthy()
+  })
+
+  it('explains AI processing and offers the one grant control in Arabic', async () => {
+    render(
+      <InlineAIConsentPrompt
+        refusal={{ code: CONSENT_REFUSAL_CODES.AI_PROCESSING_REQUIRED, message: '' }}
+        onResolved={vi.fn()}
+      />,
+    )
+    expect(
+      await screen.findByRole('button', { name: 'أوافق، شغّل ملاحظات الذكاء الاصطناعي' }),
+    ).toBeTruthy()
+    const text = document.body.textContent ?? ''
+    expect(text).toContain('شنو ينرسل:')
+    expect(text).toContain('Anthropic')
+    expect(text).not.toMatch(/What is sent/)
+    // Still nothing recorded until the button is pressed.
+    expect(consentPosts()).toHaveLength(0)
+  })
+})

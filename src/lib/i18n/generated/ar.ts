@@ -1092,6 +1092,48 @@ export const AR_MESSAGES: Record<string, string> = {
   'consent.cookies.analytics_body': 'تساعدنا نفهم كيف الزوار يتفاعلون مع الموقع.',
   'consent.cookies.analytics_toggle_label': 'تشغيل/إيقاف كوكيز التحليلات',
   'consent.cookies.save_preferences': 'احفظ التفضيلات',
+  'consent.inline.withdraw_before': 'تقدر تسحب هالموافقة في أي وقت من',
+  'consent.inline.manage_link': 'دير موافقاتك',
+  'consent.inline.withdraw_after': '. ما تحتاج تعطي سبب، والسحب يصير فوراً.',
+  'consent.inline.error_record': 'ما قدرنا نسجّل اختيارك. حاول مرة ثانية.',
+  'consent.inline.ai.title': 'شغّل ملاحظات الذكاء الاصطناعي عشان تكمّل',
+  'consent.inline.ai.intro':
+    'ملاحظات الذكاء الاصطناعي مطفّية في حسابك، فوقفنا قبل ما نرسل أي شي. هذا معنى إنك تشغّلها.',
+  'consent.inline.ai.use_label': 'لشنو نستخدم الذكاء الاصطناعي:',
+  'consent.inline.ai.use_body':
+    'نصحّح الشغل اللي ترسله ونكتب عليه ملاحظات، منها نقاط القوة والأشياء اللي تحتاج تحسين ودرجة متوقعة.',
+  'consent.inline.ai.sent_label': 'شنو ينرسل:',
+  'consent.inline.ai.sent_body':
+    'الإجابة اللي ترسلها وتفاصيل السؤال اللي اخترتها، مثل جهة الامتحان والورقة ونص السؤال. هذي تروح لمزوّد الذكاء الاصطناعي عندنا، Anthropic، اللي يعالجها عشان يطلّع الملاحظات.',
+  'consent.inline.ai.grade_label': 'مو درجة معتمدة:',
+  'consent.inline.ai.grade_body':
+    'ملاحظات الذكاء الاصطناعي تقدير للتدريب يطلّعه برنامج. ما راجعها أي مصحّح بشري وما اعتمدتها أي جهة امتحان.',
+  'consent.inline.ai.read_more_before': 'اقرأ أكثر في',
+  'consent.inline.ai.transparency_link': 'إشعار شفافية الذكاء الاصطناعي',
+  'consent.inline.ai.read_more_and': 'وفي',
+  'consent.inline.ai.privacy_link': 'إشعار الخصوصية',
+  'consent.inline.ai.no_version_before':
+    'ما قدرنا نحمّل نسخة إشعار الخصوصية الحالية، فما بنسجّل موافقة على نسخة ما نقدر نسمّيها. افتح',
+  'consent.inline.ai.no_version_after': 'وأعطِ الموافقة هناك، وبعدين ارجع وجرّب مرة ثانية.',
+  'consent.inline.ai.recording': 'نسجّل اختيارك',
+  'consent.inline.ai.agree': 'أوافق، شغّل ملاحظات الذكاء الاصطناعي',
+  'consent.inline.ai.not_now': 'مو الحين',
+  'consent.inline.ai.nothing_unless': 'ما يشتغل أي شي إلا إذا ضغطت الزر اللي فوق',
+  'consent.inline.ai.version_note': '(نسخة إشعار الخصوصية {version})',
+  'consent.inline.ai.closing_records_nothing': '. وإذا سكّرت هذا، ما ينسجّل أي شي.',
+  'consent.inline.guardian.title': 'لازم والدك أو ولي أمرك يوافق على هذا',
+  'consent.inline.guardian.body':
+    'ما ينفع تشغّله من هني. سجلاتنا تبيّن إن هالحساب لطفل، فلازم والده أو ولي أمره يعطي الإذن قبل ما تنستخدم ملاحظات الذكاء الاصطناعي.',
+  'consent.inline.guardian.link': 'شيك على الطلب أو أرسله لوالدك أو ولي أمرك',
+  'consent.inline.guardian.work_kept':
+    'شغلك لسا موجود. بعد ما ينعطى الإذن، ارجع لهالصفحة وجرّب مرة ثانية.',
+  'consent.inline.dob.error_save': 'ما قدرنا نحفظ تاريخ ميلادك. حاول مرة ثانية.',
+  'consent.inline.dob.title': 'نحتاج تاريخ ميلادك أول',
+  'consent.inline.dob.body':
+    'ما عندنا تاريخ ميلادك، فما نقدر نعرف إذا لازم والدك أو ولي أمرك يوافق على ملاحظات الذكاء الاصطناعي لهالحساب. إضافته ما تشغّل أي شي بروحها.',
+  'consent.inline.dob.label': 'تاريخ الميلاد',
+  'consent.inline.dob.saving': 'نحفظ',
+  'consent.inline.dob.save': 'احفظ تاريخ الميلاد',
   'consent.guardian.required_title': 'موافقة ولي الأمر مطلوبة',
   'consent.guardian.email_required': 'لو سمحت اكتب إيميل ولي الأمر.',
   'consent.guardian.send_failed': 'تعذّر إرسال طلب الموافقة.',
