@@ -20813,7 +20813,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'text_games.index.eyebrow': 'Juegos guiados',
   'text_games.index.title': 'Juegos de los textos',
   'text_games.index.lead':
-    'Un texto cada vez, en niveles breves: quién es quién, orden de la historia, citas, recursos y temas, con viñetas de cómic para coleccionar en los textos que hemos ilustrado. Cada pregunta sale de nuestra guía de estudio y cada respuesta se corrige al momento, con el porqué.',
+    'Un texto cada vez, en niveles breves: quién es quién, orden de la historia, citas, recursos y temas, con viñetas de cómic para coleccionar en los textos que hemos ilustrado. Las preguntas salen de nuestras guías de estudio y cómics, y cada respuesta se corrige al momento, casi siempre con el porqué.',
   'text_games.index.your_course': 'De tu curso',
   'text_games.index.comics': 'Con ilustraciones',
   'text_games.index.play': 'Jugar',
@@ -20845,7 +20845,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'quest.map.continue': 'Continuar: {level}',
   'quest.map.all_done': 'Tres estrellas en todos los niveles',
   'quest.map.how.levels':
-    'Cada parte del texto es un nivel breve. Cada respuesta se corrige al momento, con el porqué de la guía de estudio.',
+    'Cada parte del texto es un nivel breve. Cada respuesta se corrige al momento, casi siempre con el porqué.',
   'quest.map.how.comic':
     'Termina una parte para añadir sus viñetas a tu propio ejemplar del cómic.',
   'quest.map.how.review':

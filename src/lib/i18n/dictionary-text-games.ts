@@ -25,10 +25,15 @@ export const TEXT_GAMES_DICTIONARY: Record<string, { en: string; ar?: string; es
     ar: 'ألعاب النصوص المقررة',
     es: 'Juegos de los textos',
   },
+  // "Most", not "every". This line and quest.map.how.levels once said every
+  // answer came with the guide's reason, and every question from the guide.
+  // Measured over all 107 quests on 12 October 2026: the 747 story-order
+  // questions (of 8,768) show the right order and no reason, and 940 are built
+  // from the comics, not the guide.
   'text_games.index.lead': {
-    en: 'One set text at a time, in short levels: who’s who, story order, quotations, methods and themes, with comic panels to collect in the texts we have drawn. Every question comes from our study guide, and every answer is marked straight away, with the reason.',
-    ar: 'نص مقرر واحد كل مرة، في مستويات قصيرة: مين مين، ترتيب الأحداث، الاقتباسات، الأساليب والمواضيع، ومعها لوحات كوميك تجمعها في النصوص اللي رسمناها. كل سؤال مأخوذ من دليل الدراسة عندنا، وكل إجابة تتصحح على طول مع السبب.',
-    es: 'Un texto cada vez, en niveles breves: quién es quién, orden de la historia, citas, recursos y temas, con viñetas de cómic para coleccionar en los textos que hemos ilustrado. Cada pregunta sale de nuestra guía de estudio y cada respuesta se corrige al momento, con el porqué.',
+    en: 'One set text at a time, in short levels: who’s who, story order, quotations, methods and themes, with comic panels to collect in the texts we have drawn. The questions come from our study guides and comics, and every answer is marked straight away, most of them with the reason.',
+    ar: 'نص مقرر واحد كل مرة، في مستويات قصيرة: مين مين، ترتيب الأحداث، الاقتباسات، الأساليب والمواضيع، ومعها لوحات كوميك تجمعها في النصوص اللي رسمناها. الأسئلة مأخوذة من أدلة الدراسة والكوميك عندنا، وكل إجابة تتصحح على طول، وأغلبها مع السبب.',
+    es: 'Un texto cada vez, en niveles breves: quién es quién, orden de la historia, citas, recursos y temas, con viñetas de cómic para coleccionar en los textos que hemos ilustrado. Las preguntas salen de nuestras guías de estudio y cómics, y cada respuesta se corrige al momento, casi siempre con el porqué.',
   },
   'text_games.index.your_course': { en: 'On your course', ar: 'من مقررك', es: 'De tu curso' },
   'text_games.index.comics': { en: 'Comic art', ar: 'رسومات كوميك', es: 'Con ilustraciones' },
@@ -130,9 +135,9 @@ export const TEXT_GAMES_DICTIONARY: Record<string, { en: string; ar?: string; es
     es: 'Tres estrellas en todos los niveles',
   },
   'quest.map.how.levels': {
-    en: 'Each part of the text is a short level. Every answer is marked straight away, with the reason from the study guide.',
-    ar: 'كل جزء من النص مستوى قصير. كل إجابة تتصحح على طول، مع السبب من دليل الدراسة.',
-    es: 'Cada parte del texto es un nivel breve. Cada respuesta se corrige al momento, con el porqué de la guía de estudio.',
+    en: 'Each part of the text is a short level. Every answer is marked straight away, most of them with the reason.',
+    ar: 'كل جزء من النص مستوى قصير. كل إجابة تتصحح على طول، وأغلبها مع السبب.',
+    es: 'Cada parte del texto es un nivel breve. Cada respuesta se corrige al momento, casi siempre con el porqué.',
   },
   'quest.map.how.comic': {
     en: 'Finish a part to ink its panels into your own copy of the comic.',

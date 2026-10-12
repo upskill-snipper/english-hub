@@ -20298,7 +20298,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'text_games.index.eyebrow': 'Guided games',
   'text_games.index.title': 'Set text games',
   'text_games.index.lead':
-    'One set text at a time, in short levels: who’s who, story order, quotations, methods and themes, with comic panels to collect in the texts we have drawn. Every question comes from our study guide, and every answer is marked straight away, with the reason.',
+    'One set text at a time, in short levels: who’s who, story order, quotations, methods and themes, with comic panels to collect in the texts we have drawn. The questions come from our study guides and comics, and every answer is marked straight away, most of them with the reason.',
   'text_games.index.your_course': 'On your course',
   'text_games.index.comics': 'Comic art',
   'text_games.index.play': 'Play',
@@ -20330,7 +20330,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'quest.map.continue': 'Continue: {level}',
   'quest.map.all_done': 'Three stars on every level',
   'quest.map.how.levels':
-    'Each part of the text is a short level. Every answer is marked straight away, with the reason from the study guide.',
+    'Each part of the text is a short level. Every answer is marked straight away, most of them with the reason.',
   'quest.map.how.comic': 'Finish a part to ink its panels into your own copy of the comic.',
   'quest.map.how.review':
     'Questions you miss come back in Review. The ones you get right come back later, spaced out, so they stick.',
