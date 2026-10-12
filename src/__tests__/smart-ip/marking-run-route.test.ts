@@ -4,9 +4,9 @@
 //   • state guard - only status 'submitted' | 'pending' may be marked; any
 //     other status ⇒ 400 and NO persist
 //   • authorisation by source - b2c_self: owning student only; b2b_class:
-//     verified school member, same-school enforced
+//     the owning pupil, or a verified school member, same-school enforced
 //   • the AI mark is ALWAYS a DRAFT - applyAiResult is called with
-//     'ai_marked' (b2c) or 'teacher_review_required' (b2b); NEVER 'approved'
+//     'ai_marked' for both sources since 12 October 2026; NEVER 'approved'
 //
 // All heavy collaborators are mocked. We assert on the persistence mock's
 // status argument rather than re-implementing the model path.
@@ -83,6 +83,22 @@ vi.mock('@/lib/rate-limit', () => ({
 }))
 vi.mock('@/lib/school-auth', () => ({
   verifySchoolMember: async () => schoolMember,
+}))
+// 12 October 2026: the route checks the PUPIL's consent and AI opt-out before
+// the model call, and a staff run checks the school is live. Passing by
+// default here; their own behaviour is pinned in
+// a-class-pupil-gets-their-ai-mark.test.ts.
+vi.mock('@/lib/consent-check', () => ({
+  checkMinorAIConsent: async () => ({ allowed: true, basis: 'sixteen_or_over' }),
+}))
+vi.mock('@/lib/ai-preferences', () => ({
+  isAiOptedOutServer: async () => false,
+}))
+vi.mock('@/lib/school-access', () => ({
+  checkSchoolAccessActive: async () => true,
+}))
+vi.mock('@/lib/school-entitlement', () => ({
+  getPupilSchoolAccess: async () => null,
 }))
 vi.mock('@/lib/marking/persistence', () => ({
   loadSubmission: (...a: unknown[]) => loadSubmissionMock(...a),
@@ -281,8 +297,11 @@ describe('POST /api/marking/run - authorisation by source', () => {
     expect(res.status).toBe(200)
   })
 
-  it('b2b_class: forbids when caller is not a verified school member', async () => {
-    loadedRow = baseRow({ source: 'b2b_class', school_id: 'sch-1' })
+  // The staff cases run on ANOTHER pupil's essay. Until 12 October 2026 they
+  // used the caller's own essay, which is now the pupil branch: a class pupil
+  // may run marking on their own work (a-class-pupil-gets-their-ai-mark.test.ts).
+  it('b2b_class: forbids when caller is neither the pupil nor a verified school member', async () => {
+    loadedRow = baseRow({ source: 'b2b_class', school_id: 'sch-1', student_id: 'pupil-9' })
     schoolMember = null
     const res = await POST(makeReq())
     expect(res.status).toBe(403)
@@ -290,7 +309,7 @@ describe('POST /api/marking/run - authorisation by source', () => {
   })
 
   it('b2b_class: forbids a member from a DIFFERENT school', async () => {
-    loadedRow = baseRow({ source: 'b2b_class', school_id: 'sch-1' })
+    loadedRow = baseRow({ source: 'b2b_class', school_id: 'sch-1', student_id: 'pupil-9' })
     schoolMember = { school_id: 'sch-OTHER', role: 'teacher', id: 'mem-1' }
     const res = await POST(makeReq())
     expect(res.status).toBe(403)
@@ -298,7 +317,7 @@ describe('POST /api/marking/run - authorisation by source', () => {
   })
 
   it('b2b_class: same-school member is allowed', async () => {
-    loadedRow = baseRow({ source: 'b2b_class', school_id: 'sch-1' })
+    loadedRow = baseRow({ source: 'b2b_class', school_id: 'sch-1', student_id: 'pupil-9' })
     schoolMember = { school_id: 'sch-1', role: 'teacher', id: 'mem-1' }
     const res = await POST(makeReq())
     expect(res.status).toBe(200)
@@ -315,26 +334,32 @@ describe('POST /api/marking/run - AI mark is always a DRAFT', () => {
     expect(persistArg.status).not.toBe('approved')
   })
 
-  it("b2b_class ⇒ applyAiResult called with status 'teacher_review_required'", async () => {
-    loadedRow = baseRow({ source: 'b2b_class', school_id: 'sch-1' })
+  it("b2b_class ⇒ applyAiResult called with status 'ai_marked', so the pupil sees it straight away", async () => {
+    // CHANGED 12 October 2026: class work was written as
+    // 'teacher_review_required' and hidden from the pupil until approved.
+    // Calum decided a school pupil sees their AI feedback straight away,
+    // labelled as AI, and the teacher reviews afterwards.
+    loadedRow = baseRow({ source: 'b2b_class', school_id: 'sch-1', student_id: 'pupil-9' })
     schoolMember = { school_id: 'sch-1', role: 'admin', id: 'mem-1' }
     const res = await POST(makeReq())
     expect(res.status).toBe(200)
     const persistArg = applyAiResultMock.mock.calls[0][2] as { status: string }
-    expect(persistArg.status).toBe('teacher_review_required')
+    expect(persistArg.status).toBe('ai_marked')
     expect(persistArg.status).not.toBe('approved')
   })
 
   it('no status this route can ever persist equals "approved"', async () => {
-    // Exercise both branches; assert the union of persisted statuses excludes
+    // Exercise every branch; assert the union of persisted statuses excludes
     // 'approved' entirely (the AI mark is a draft by construction).
     loadedRow = baseRow({ source: 'b2c_self', student_id: 'student-1' })
     await POST(makeReq())
-    loadedRow = baseRow({ source: 'b2b_class', school_id: 'sch-1' })
+    loadedRow = baseRow({ source: 'b2b_class', school_id: 'sch-1', student_id: 'student-1' })
+    await POST(makeReq())
+    loadedRow = baseRow({ source: 'b2b_class', school_id: 'sch-1', student_id: 'pupil-9' })
     schoolMember = { school_id: 'sch-1', role: 'admin', id: 'mem-1' }
     await POST(makeReq())
     const statuses = applyAiResultMock.mock.calls.map((c) => (c[2] as { status: string }).status)
-    expect(statuses).toEqual(['ai_marked', 'teacher_review_required'])
+    expect(statuses).toEqual(['ai_marked', 'ai_marked', 'ai_marked'])
     expect(statuses).not.toContain('approved')
   })
 })

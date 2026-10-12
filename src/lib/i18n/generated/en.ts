@@ -14243,6 +14243,34 @@ export const EN_MESSAGES: Record<string, string> = {
   'marking.results.awaiting_body':
     'Your work has been submitted and is waiting for your teacher to review it. Your feedback and mark will appear here once your teacher has checked and approved them. You will not see an automated mark for teacher-set work before then.',
   'marking.results.awaiting_status': 'Status: waiting for teacher approval',
+  'ai_marking_notice.body_reviewed':
+    'The predicted grade and feedback below were produced automatically by an AI system (Anthropic’s Claude model). A person has since reviewed this essay, and their decision is shown above. The predicted grade is indicative, for practice, and is NOT an official exam result.',
+  'marking.results.school_review_note':
+    'Your teacher will look at this AI mark and may change it. If they do, their decision will appear on this page.',
+  'marking.results.review.heading_teacher': 'Your teacher’s decision',
+  'marking.results.review.heading_reviewer': 'A reviewer’s decision',
+  'marking.results.review.approved': 'This mark has been checked and approved.',
+  'marking.results.review.reviewed':
+    'This essay has been reviewed. A mark shown here replaces the AI’s predicted grade.',
+  'marking.results.review.returned': 'This essay has been sent back to you with comments.',
+  'marking.results.review.mark_label': 'Mark',
+  'marking.results.review.comments_label': 'Comments',
+  'marking.results.unmarked_title': 'Not marked yet',
+  'marking.results.unmarked_body':
+    'This essay was saved but has not been marked yet. If marking did not finish, submit it again from Mark an essay.',
+  'marking.results.reviewing_title': 'Your teacher is reviewing this mark',
+  'marking.results.reviewing_body':
+    'Your teacher is checking the AI’s mark for this essay and may change it. Their decision will appear here when they have finished.',
+  'marking.results.rejected_title': 'No mark has been released',
+  'marking.results.rejected_body':
+    'Your teacher has reviewed this essay and has not released a mark for it. Ask your teacher if you would like to know why.',
+  'marking.results.unavailable_title': 'This result is not available',
+  'marking.results.unavailable_body': 'The result for this essay cannot be shown at the moment.',
+  'marking.results.next.redraft_body_prefilled':
+    'Rewrite the parts the feedback picks out, then submit the new version. The board, paper and question are filled in for you, so it is marked against the same mark scheme.',
+  'marking.school_route.title': 'Your teacher sees your essays',
+  'marking.school_route.body':
+    'Your school marks essays through Mark an essay, so your teacher can see your work and check the AI’s mark. Your AI feedback still appears straight away.',
   'admin.aim.back_to_admin': 'Back to admin',
   'admin.aim.refresh': 'Refresh',
   'admin.aim.loading': 'Loading…',

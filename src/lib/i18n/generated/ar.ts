@@ -13897,6 +13897,34 @@ export const AR_MESSAGES: Record<string, string> = {
   'marking.results.awaiting_body':
     'انرسل شغلك وهو بانتظار معلّمك يراجعه. ملاحظاتك ودرجتك بتبيّن هني أول ما يشيّكها معلّمك ويعتمدها. ما بتشوف درجة تلقائية للشغل اللي حدّده المعلّم قبل جذي.',
   'marking.results.awaiting_status': 'الحالة: بانتظار اعتماد المعلّم',
+  'ai_marking_notice.body_reviewed':
+    'الدرجة المتوقعة والملاحظات اللي تحت تكوّنت تلقائياً بنظام ذكاء اصطناعي (نموذج Claude من Anthropic). بعدها راجع شخص هالمقالة، وقراره معروض فوق. الدرجة المتوقعة إرشادية للتدريب، وهي مو نتيجة امتحان رسمية.',
+  'marking.results.school_review_note':
+    'معلّمك بيشوف درجة الذكاء الاصطناعي هذي وممكن يعدّلها. وإذا عدّلها، قراره بيبيّن في هالصفحة.',
+  'marking.results.review.heading_teacher': 'قرار معلّمك',
+  'marking.results.review.heading_reviewer': 'قرار المراجِع',
+  'marking.results.review.approved': 'هالدرجة تشيّكت وانعتمدت.',
+  'marking.results.review.reviewed':
+    'هالمقالة تراجعت. أي درجة معروضة هني تحل محل الدرجة المتوقعة من الذكاء الاصطناعي.',
+  'marking.results.review.returned': 'هالمقالة انرجعت لك مع ملاحظات.',
+  'marking.results.review.mark_label': 'الدرجة',
+  'marking.results.review.comments_label': 'الملاحظات',
+  'marking.results.unmarked_title': 'ما تصحّحت للحين',
+  'marking.results.unmarked_body':
+    'انحفظت هالمقالة بس ما تصحّحت للحين. إذا التصحيح ما خلص، سلّمها مرة ثانية من «صحّح مقالة».',
+  'marking.results.reviewing_title': 'معلّمك يراجع هالدرجة',
+  'marking.results.reviewing_body':
+    'معلّمك يشيّك درجة الذكاء الاصطناعي لهالمقالة وممكن يعدّلها. قراره بيبيّن هني أول ما يخلّص.',
+  'marking.results.rejected_title': 'ما انعطت درجة',
+  'marking.results.rejected_body':
+    'معلّمك راجع هالمقالة وما عطى لها درجة. اسأل معلّمك إذا تبي تعرف السبب.',
+  'marking.results.unavailable_title': 'هالنتيجة مو متوفرة',
+  'marking.results.unavailable_body': 'ما نقدر نعرض نتيجة هالمقالة الحين.',
+  'marking.results.next.redraft_body_prefilled':
+    'أعد كتابة الأجزاء اللي أشارت لها الملاحظات، وبعدين سلّم النسخة الجديدة. البورد والورقة والسؤال معبّين لك، عشان تنصحّح على نفس دليل التصحيح.',
+  'marking.school_route.title': 'معلّمك يشوف مقالاتك',
+  'marking.school_route.body':
+    'مدرستك تصحّح المقالات من خلال «صحّح مقالة»، عشان يقدر معلّمك يشوف شغلك ويشيّك درجة الذكاء الاصطناعي. وملاحظات الذكاء الاصطناعي تبيّن لك على طول.',
   'admin.aim.back_to_admin': 'رجوع للوحة الأدمن',
   'admin.aim.refresh': 'تحديث',
   'admin.aim.loading': 'لحظة…',

@@ -12,39 +12,20 @@ import { AnnotatedEssay, type Annotation } from '@/components/marking/AnnotatedE
 import { RequestHumanReviewButton } from '@/components/ai/RequestHumanReviewButton'
 import { useT } from '@/lib/i18n/use-t'
 import { ReadAloudButton } from '@/components/speech/ReadAloudButton'
+import { ReviewDecisionCard, SchoolReviewNote } from '@/components/marking/ReviewDecisionCard'
+import {
+  canStudentSeeFeedback,
+  hiddenStateFor,
+  redraftLink,
+  serverToStoredResult,
+  type HiddenState,
+  type ServerSubmission,
+  type StoredResult,
+} from '@/lib/marking/results-view'
 
 /* ─── Types ────────────────────────────────────────────────── */
-
-interface FeedbackItem {
-  point: string
-  suggestion?: string
-  quote?: string
-}
-
-interface StoredResult {
-  id: string
-  title: string
-  board: string
-  paper: string
-  question?: string
-  essay: string
-  wordCount: number
-  grade: number
-  predictedGrade?: string
-  gradeBand?: string
-  totalMarks?: number
-  maxMarks?: number
-  scorePercent: number
-  /** legacy localStorage key written before the confidence→scorePercent rename */
-  confidence?: number
-  aos: AOScore[]
-  submittedAt: string
-  // AI feedback fields
-  strengths?: FeedbackItem[]
-  improvements?: FeedbackItem[]
-  nextStepsToNextGrade?: string[]
-  summary?: string
-}
+// The render shape, the server row and the visibility rule live in
+// src/lib/marking/results-view.ts, where they are tested.
 
 /* ─── No fallback data. Ever. ────────────────────────────────
  *
@@ -209,8 +190,9 @@ function aoDisplayName(ao: AOScore): string {
 
 /**
  * Copies the student's own essay so they can paste it into a redraft.
- * /marking/submit has no prefill parameter, so this is the honest way to
- * carry the text across without claiming the form will be pre-populated.
+ * "Submit a new version" pre-fills the board, paper and question, but not the
+ * essay, which does not belong in a URL; this is the honest way to carry the
+ * text across.
  */
 function CopyEssayButton({ essay, tx }: { essay: string; tx: (k: string) => string }) {
   const [state, setState] = useState<'idle' | 'copied' | 'failed'>('idle')
@@ -245,15 +227,25 @@ function CopyEssayButton({ essay, tx }: { essay: string; tx: (k: string) => stri
   )
 }
 
-/** The act-on-feedback block: redraft the essay, or practise the weakest AO. */
+/**
+ * The act-on-feedback block: redraft the essay, or practise the weakest AO.
+ *
+ * A DEFECT, FIXED 12 OCTOBER 2026: "Submit a new version" went to a bare
+ * /marking/submit, so a pupil redrafting had to find the board, paper and
+ * question again, and a wrong pick marked the new version against a different
+ * scheme. The submit page has read them from its URL since 19 September, so
+ * the link now carries them (redraftLink in src/lib/marking/results-view.ts).
+ */
 function NextStepsSection({
   tx,
   essay,
   aos,
+  redraft,
 }: {
   tx: (k: string) => string
   essay: string
   aos: AOScore[]
+  redraft: { href: string; prefilled: boolean }
 }) {
   const weakest = weakestAo(aos)
   const target = weakest ? practiseTargetForAo(weakest) : null
@@ -282,17 +274,23 @@ function NextStepsSection({
               {withFallback(tx, 'marking.results.next.redraft_title', 'Redraft this essay')}
             </CardTitle>
             <CardDescription>
-              {withFallback(
-                tx,
-                'marking.results.next.redraft_body',
-                'Rewrite the parts the feedback picks out, then submit the new version. Choose the same board, paper and question to be marked against the same mark scheme.',
-              )}
+              {redraft.prefilled
+                ? withFallback(
+                    tx,
+                    'marking.results.next.redraft_body_prefilled',
+                    'Rewrite the parts the feedback picks out, then submit the new version. The board, paper and question are filled in for you, so it is marked against the same mark scheme.',
+                  )
+                : withFallback(
+                    tx,
+                    'marking.results.next.redraft_body',
+                    'Rewrite the parts the feedback picks out, then submit the new version. Choose the same board, paper and question to be marked against the same mark scheme.',
+                  )}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
               {essay.trim() ? <CopyEssayButton essay={essay} tx={tx} /> : null}
-              <Button render={<Link href="/marking/submit" />}>
+              <Button render={<Link href={redraft.href} />}>
                 {withFallback(tx, 'marking.results.next.redraft_cta', 'Submit a new version')}
               </Button>
             </div>
@@ -357,157 +355,59 @@ function NextStepsSection({
   )
 }
 
-/* ─── Server submission (Smart IP spine) ───────────────────── */
+/* ─── Results a pupil may not see yet ──────────────────────── */
 
-/**
- * Shape returned by GET /api/marking/[submissionId] (built in parallel).
- * Only the fields this page consumes are typed; everything is optional so a
- * partially-populated row (e.g. AI not run yet) renders the right waiting
- * state rather than throwing.
- */
-interface ServerSubmission {
-  id: string
-  source?: 'b2c_self' | 'b2b_class' | string
-  status?: string
-  examBoard?: string | null
-  exam_board?: string | null
-  paper?: string | null
-  questionText?: string | null
-  question_text?: string | null
-  essayTitle?: string | null
-  studentAnswer?: string | null
-  essay_text?: string | null
-  aiResult?: unknown
-  ai_result?: unknown
-  aiScore?: number | null
-  aiMaxMarks?: number | null
-  aiGradeBand?: string | null
-  aiFeedback?: string | null
-  // Final teacher decision (B2B approved path)
-  finalTeacherMark?: string | null
-  finalTeacherFeedback?: string | null
-  teacherGrade?: string | null
-  teacherComment?: string | null
+/** Copy for each hidden state: dictionary key and the English used until the maps are rebuilt. */
+const HIDDEN_COPY: Record<HiddenState, { title: [string, string]; body: [string, string] }> = {
+  unmarked: {
+    title: ['marking.results.unmarked_title', 'Not marked yet'],
+    body: [
+      'marking.results.unmarked_body',
+      'This essay was saved but has not been marked yet. If marking did not finish, submit it again from Mark an essay.',
+    ],
+  },
+  reviewing: {
+    title: ['marking.results.reviewing_title', 'Your teacher is reviewing this mark'],
+    body: [
+      'marking.results.reviewing_body',
+      "Your teacher is checking the AI's mark for this essay and may change it. Their decision will appear here when they have finished.",
+    ],
+  },
+  rejected: {
+    title: ['marking.results.rejected_title', 'No mark has been released'],
+    body: [
+      'marking.results.rejected_body',
+      'Your teacher has reviewed this essay and has not released a mark for it. Ask your teacher if you would like to know why.',
+    ],
+  },
+  unavailable: {
+    title: ['marking.results.unavailable_title', 'This result is not available'],
+    body: [
+      'marking.results.unavailable_body',
+      'The result for this essay cannot be shown at the moment.',
+    ],
+  },
 }
 
 /**
- * Decide whether the viewing student is allowed to see AI/teacher feedback.
- *
- * SAFEGUARD (hard rule): a student on a B2B / teacher-linked submission
- * ('b2b_class') may ONLY ever see feedback once a teacher has APPROVED it
- * (status === 'approved'). They must NEVER see a draft AI mark for a
- * teacher-linked submission. B2C self-study ('b2c_self') has no teacher in
- * the loop, so AI feedback is visible once the model has marked it
- * ('ai_marked') or it was later approved.
+ * A result the pupil may not see yet, with a message that is true for its
+ * status. Until 12 October 2026 every such row, a self-study essay that had
+ * simply not been marked included, said it was waiting for a teacher and
+ * promised no automated mark before then. A school pupil now sees their AI
+ * mark straight away, so that promise is no longer made anywhere.
  */
-function canStudentSeeFeedback(sub: ServerSubmission): boolean {
-  const status = sub.status ?? ''
-  const source = sub.source ?? 'b2b_class' // default to the stricter path
-  if (source === 'b2b_class') {
-    return status === 'approved'
-  }
-  // b2c_self (or any non-b2b source): AI feedback is the product.
-  return status === 'ai_marked' || status === 'approved'
-}
-
-/** Map a server submission's AI result JSON into the StoredResult render shape. */
-function serverToStoredResult(sub: ServerSubmission): StoredResult {
-  const board = sub.examBoard ?? sub.exam_board ?? ''
-  const paper = sub.paper ?? ''
-  const question = sub.questionText ?? sub.question_text ?? undefined
-  const essay = sub.studentAnswer ?? sub.essay_text ?? ''
-  const title = sub.essayTitle?.trim() || question || 'Marked submission'
-
-  // ai_result is the full production MarkingResult JSON when present.
-  const ai = (sub.aiResult ?? sub.ai_result ?? null) as {
-    predictedGrade?: string
-    gradeBand?: string
-    totalMarks?: number
-    maxMarks?: number
-    summary?: string
-    strengths?: FeedbackItem[]
-    improvements?: FeedbackItem[]
-    nextStepsToNextGrade?: string[]
-    aoScores?: Array<{
-      id: string
-      label: string
-      marks: number
-      maxMarks: number
-      band?: string
-      justification?: string
-      evidence?: string[]
-    }>
-  } | null
-
-  // Prefer the teacher's final mark/feedback when this is an approved row.
-  const teacherMark = sub.finalTeacherMark ?? sub.teacherGrade ?? null
-  const numericGrade =
-    (teacherMark != null ? parseInt(teacherMark, 10) : NaN) ||
-    (ai?.predictedGrade != null ? parseInt(ai.predictedGrade, 10) : NaN) ||
-    (typeof sub.aiScore === 'number' ? sub.aiScore : 0)
-
-  const totalMarks = ai?.totalMarks ?? (typeof sub.aiScore === 'number' ? sub.aiScore : undefined)
-  const maxMarks = ai?.maxMarks ?? (typeof sub.aiMaxMarks === 'number' ? sub.aiMaxMarks : undefined)
-  const scorePercent =
-    totalMarks != null && maxMarks != null && maxMarks > 0
-      ? Math.round((totalMarks / maxMarks) * 100)
-      : 0
-
-  const teacherFeedback = sub.finalTeacherFeedback ?? sub.teacherComment ?? null
-
-  return {
-    id: sub.id,
-    title,
-    board,
-    paper,
-    question,
-    essay,
-    wordCount: essay.trim() ? essay.trim().split(/\s+/).length : 0,
-    grade: Number.isFinite(numericGrade) ? (numericGrade as number) : 0,
-    predictedGrade: ai?.predictedGrade,
-    gradeBand: ai?.gradeBand ?? sub.aiGradeBand ?? undefined,
-    totalMarks,
-    maxMarks,
-    scorePercent,
-    aos: (ai?.aoScores ?? []).map((ao) => ({
-      code: ao.id,
-      label: ao.label,
-      score: ao.marks,
-      max: ao.maxMarks,
-      band: ao.band,
-      justification: ao.justification,
-      evidence: ao.evidence,
-    })) as AOScore[],
-    strengths: ai?.strengths,
-    improvements: ai?.improvements,
-    nextStepsToNextGrade: ai?.nextStepsToNextGrade,
-    // When a teacher has finalised, surface their comment as the summary so
-    // the approved feedback the student sees is the human-reviewed one.
-    summary: teacherFeedback ?? ai?.summary,
-    submittedAt: new Date().toISOString(),
-  }
-}
-
-/* ─── Page ─────────────────────────────────────────────────── */
-
-/** Awaiting-teacher-review state for B2B submissions not yet approved. */
-function AwaitingReviewState({
+function HiddenResultState({
   tx,
+  state,
   title,
   meta,
 }: {
   tx: (k: string) => string
+  state: HiddenState
   title: string
   meta: string
 }) {
-  const awaitingTitle =
-    tx('marking.results.awaiting_title') === '[[marking.results.awaiting_title]]'
-      ? 'Awaiting teacher review'
-      : tx('marking.results.awaiting_title')
-  const awaitingBody =
-    tx('marking.results.awaiting_body') === '[[marking.results.awaiting_body]]'
-      ? 'Your work has been submitted and is waiting for your teacher to review it. Your feedback and mark will appear here once your teacher has checked and approved them. You will not see an automated mark for teacher-set work before then.'
-      : tx('marking.results.awaiting_body')
+  const copy = HIDDEN_COPY[state]
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
       <nav aria-label="Breadcrumb" className="mb-6">
@@ -531,31 +431,25 @@ function AwaitingReviewState({
 
       <Card>
         <CardHeader>
-          <CardTitle>{awaitingTitle}</CardTitle>
-          <CardDescription>{awaitingBody}</CardDescription>
+          <CardTitle>{withFallback(tx, ...copy.title)}</CardTitle>
+          <CardDescription>{withFallback(tx, ...copy.body)}</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center gap-3 rounded-lg border border-amber-500/40 bg-amber-500/[0.06] px-4 py-3 text-sm text-muted-foreground">
-            <span
-              aria-hidden
-              className="inline-block h-2.5 w-2.5 shrink-0 animate-pulse rounded-full bg-amber-500"
-            />
-            <span>
-              {tx('marking.results.awaiting_status') === '[[marking.results.awaiting_status]]'
-                ? 'Status: waiting for teacher approval'
-                : tx('marking.results.awaiting_status')}
-            </span>
-          </div>
-          <div className="mt-6">
+          <div className="flex flex-wrap gap-3">
             <Button variant="outline" render={<Link href="/marking/history" />}>
               {tx('marking.results.btn_back')}
             </Button>
+            {state === 'unmarked' && (
+              <Button render={<Link href="/marking/submit" />}>{tx('header.nav.marking')}</Button>
+            )}
           </div>
         </CardContent>
       </Card>
     </div>
   )
 }
+
+/* ─── Page ─────────────────────────────────────────────────── */
 
 export default function ResultsPage({ params }: { params: Promise<{ id: string }> }) {
   const tx = useT()
@@ -569,15 +463,17 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
    * Keyed off `result` rather than called at each `setResult` site, because
    * there are two of them - a localStorage render and the server spine - and a
    * marker added at one would quietly miss half the students. It deliberately
-   * does NOT fire for the awaiting state: work that is still queued for a
-   * teacher has not been read by anyone.
+   * does NOT fire for a hidden result: work with no visible mark has not been
+   * read by anyone.
    */
   useEffect(() => {
     if (result) markResultOpened()
   }, [result])
   const [loaded, setLoaded] = useState(false)
-  /** Set when the server says this is a teacher-linked row not yet approved. */
-  const [awaiting, setAwaiting] = useState<{ title: string; meta: string } | null>(null)
+  /** Set when the server row exists but its result is not the pupil's to see yet. */
+  const [hidden, setHidden] = useState<{ state: HiddenState; title: string; meta: string } | null>(
+    null,
+  )
   /** Terminal resolution failures get their own honest screens. */
   const [failure, setFailure] = useState<'not_found' | 'signin' | null>(null)
 
@@ -641,9 +537,10 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
 
           if (sub && sub.id) {
             const stored = serverToStoredResult(sub)
-            // SAFEGUARD: students only ever see APPROVED feedback for
-            // teacher-linked (b2b_class) work; B2C self-study sees AI
-            // feedback once marked. Anything else → awaiting state.
+            // The one visibility rule, the same function the API applies:
+            // AI feedback once marked, for class work as for self-study, and
+            // a teacher's decision once made. Anything else gets a message
+            // that is true for its status.
             if (!cancelled) {
               if (canStudentSeeFeedback(sub)) {
                 setResult(stored)
@@ -651,7 +548,7 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
                 const meta = [stored.board, stored.paper, stored.question]
                   .filter(Boolean)
                   .join(' · ')
-                setAwaiting({ title: stored.title, meta })
+                setHidden({ state: hiddenStateFor(sub), title: stored.title, meta })
               }
               setLoaded(true)
             }
@@ -678,8 +575,10 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
     )
   }
 
-  if (awaiting) {
-    return <AwaitingReviewState tx={tx} title={awaiting.title} meta={awaiting.meta} />
+  if (hidden) {
+    return (
+      <HiddenResultState tx={tx} state={hidden.state} title={hidden.title} meta={hidden.meta} />
+    )
   }
 
   if (failure || !result) {
@@ -754,6 +653,7 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
 
   // Combined feedback text for free browser read-aloud (accessibility / EAL).
   const feedbackToRead = [
+    result.review?.comment ? `Comments. ${result.review.comment}` : '',
     result.summary ? `Summary. ${result.summary}` : '',
     strengths.length ? `Strengths. ${strengths.join('. ')}.` : '',
     improvements.length ? `Areas to improve. ${improvements.join('. ')}.` : '',
@@ -787,12 +687,22 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
         </p>
       </header>
 
-      {/* Accurate AI-result disclosure (EU AI Act Art 13/50) - this is a
-          predicted, AI-generated, non-human-reviewed grade. */}
-      <AiMarkingNotice className="mb-6" />
+      {/* A person's decision comes first and stands apart from the AI's
+          result, so a pupil can always tell which mark is whose. */}
+      {result.review && <ReviewDecisionCard review={result.review} className="mb-6" />}
+
+      {/* Accurate AI-result disclosure (EU AI Act Art 13/50). Until a person
+          has reviewed the essay this is a predicted, AI-generated,
+          non-human-reviewed grade; once they have, the notice says so rather
+          than claiming no human has checked it. */}
+      <AiMarkingNotice className="mb-6" reviewed={Boolean(result.review)} />
+
+      {/* Class work: the AI mark is shown straight away, and the pupil is told
+          their teacher will review it (Calum's decision, 12 October 2026). */}
+      {result.schoolWork && !result.review && <SchoolReviewNote className="mb-6" />}
 
       {/* Listen to feedback - free browser read-aloud (helpful for EAL learners). */}
-      {hasAnyFeedback && (
+      {(hasAnyFeedback || !!result.review?.comment) && (
         <div className="mb-6 flex justify-end">
           <ReadAloudButton text={feedbackToRead} label="Listen to feedback" lang="en-GB" />
         </div>
@@ -899,7 +809,12 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
       {/* ── Act on this feedback ──────────────────────────────
           Closes the marking loop: before this the page ended at the
           feedback with no way to act on it. */}
-      <NextStepsSection tx={tx} essay={result.essay} aos={result.aos} />
+      <NextStepsSection
+        tx={tx}
+        essay={result.essay}
+        aos={result.aos}
+        redraft={redraftLink(result)}
+      />
 
       {/* ── Annotated essay ───────────────────────────────── */}
       <div className="mt-6">

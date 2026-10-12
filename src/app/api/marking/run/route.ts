@@ -2,19 +2,31 @@
 // Run the AI marker against a previously-submitted `marking_submissions` row.
 //
 // This is the SECOND step of the spine (POST /api/submissions is the first).
-// Separating them keeps the (teacher-gated, latency-heavy) model call off the
-// submission path and lets a B2B submission be marked then routed to a teacher
-// for review before any student ever sees a grade.
+// Separating them keeps the latency-heavy model call off the submission path.
 //
-// The AI mark produced here is ALWAYS A DRAFT. This route only ever writes
-// status 'ai_marked' (B2C self-study) or 'teacher_review_required' (B2B
-// class) - it NEVER writes 'approved'. Final marks are a human act, persisted
-// elsewhere (the override / moderation writers).
+// The AI mark produced here is ALWAYS A DRAFT, and is labelled as AI wherever
+// it is shown. This route only ever writes status 'ai_marked' - it NEVER
+// writes 'approved'. Final marks are a human act, persisted elsewhere (the
+// review / override writers).
 //
 // Body: { submissionId }. Authorisation:
 //   • b2c_self  - caller must be the owning student.
-//   • b2b_class - caller must be an accepted school member of the row's
-//                 school (verifySchoolMember), same-school checked.
+//   • b2b_class - caller must be the owning pupil, or an accepted member of
+//                 staff at the row's school (verifySchoolMember), same-school
+//                 checked, and the school's access must be live.
+//
+// A DEFECT, FIXED 12 OCTOBER 2026: a class pupil's essay was never marked. An
+// enrolled pupil's essay is saved as b2b_class, and this route let only staff
+// run marking on those, so the submit page told the pupil "Only school staff
+// can run marking for class submissions" and no staff screen called this
+// route either. Every class essay stayed 'submitted' for ever. Calum decided
+// that a school pupil sees their AI feedback straight away, labelled as AI,
+// as an individual pupil does; the teacher reviews afterwards, may change
+// the mark, and the pupil then sees the teacher's decision. So the pupil may
+// now run marking on their own class essay, a class essay is written as
+// 'ai_marked' like any other, and GET /api/marking/[submissionId] shows it to
+// them. 'teacher_review_required' is left to the review route's "correct"
+// decision, a correction in progress.
 //
 // DB access is via the Supabase service-role client only.
 // ────────────────────────────────────────────────────────────────────────────
@@ -24,7 +36,10 @@ import type Anthropic from '@anthropic-ai/sdk'
 import { getAnthropicClient, ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { verifySchoolMember } from '@/lib/school-auth'
+import { checkSchoolAccessActive } from '@/lib/school-access'
 import { hasActiveSubscription } from '@/lib/course-access'
+import { checkMinorAIConsent } from '@/lib/consent-check'
+import { isAiOptedOutServer } from '@/lib/ai-preferences'
 import {
   enforceTrialAllowance,
   refundTrialAllowance,
@@ -154,34 +169,59 @@ export async function POST(request: NextRequest) {
     }
     if (!row) return notFoundResponse('Submission not found.')
 
-    // 5. Authorise by source.
+    // 5. Authorise by source, and settle who pays for the run.
+    //
+    // 2026-06-08 paywall (audit H1): AI marking is billable. The owner
+    // branches previously trusted ownership alone, so a user who created a
+    // submission while on a paid plan and then lapsed could keep POSTing
+    // their leftover pending submissionId and consume paid AI marking (up to
+    // the 30/day rate limit) indefinitely. The owner is gated on the paid
+    // access choke point at the moment of use, which since 12 October 2026
+    // also admits a pupil of a school whose access is live.
+    const isOwner = row.student_id === user.id
+    let runByStaff = false
     if (row.source === 'b2c_self') {
-      if (row.student_id !== user.id) {
+      if (!isOwner) {
         return forbiddenResponse('You can only run marking on your own submission.')
       }
-      // 2026-06-08 paywall (audit H1): AI marking is billable. This branch
-      // previously trusted ownership alone, so a user who created a
-      // submission while on a paid plan and then lapsed could keep POSTing
-      // their leftover pending submissionId and consume paid AI marking
-      // (up to the 30/day rate limit) indefinitely. Gate on a live
-      // subscription / trial here. b2b_class stays governed by
-      // verifySchoolMember in the else-branch (school seat = entitlement).
       const isPremium = await hasActiveSubscription(supabase, user.id)
       if (!isPremium) {
         return forbiddenResponse(
           'AI marking is a Premium feature. Start your free trial to continue.',
         )
       }
+    } else if (isOwner) {
+      // b2b_class, the pupil's own essay (see the header for why this branch
+      // exists). Their access comes from their school's live pilot, or from
+      // their own plan, and is checked now rather than at enrolment.
+      const isPremium = await hasActiveSubscription(supabase, user.id)
+      if (!isPremium) {
+        return forbiddenResponse(
+          "Your school's AI marking is not active at the moment, so this essay was saved but not marked. Ask your teacher.",
+        )
+      }
     } else {
-      // b2b_class - caller must be an accepted member of the row's school.
+      // b2b_class - a member of staff at the row's school.
       const member = await verifySchoolMember(user.id, ['admin', 'head_of_department', 'teacher'])
       if (!member) {
-        return forbiddenResponse('Only school staff can run marking for class submissions.')
+        return forbiddenResponse(
+          'Only the pupil who wrote this essay, or staff at their school, can run marking on it.',
+        )
       }
       const memberSchoolId = (member as { school_id: string | null }).school_id
       if (row.school_id && memberSchoolId && row.school_id !== memberSchoolId) {
         return forbiddenResponse('Submission belongs to another school.')
       }
+      // The school pays for a run its staff start, so its access must be
+      // live now, by the one rule in src/lib/school-access.ts. Before 12
+      // October 2026 nothing here asked, so an expired school's staff could
+      // still spend on AI marking.
+      if (!row.school_id || !(await checkSchoolAccessActive(row.school_id))) {
+        return forbiddenResponse(
+          "This school's access has ended, so its pupils' essays cannot be marked.",
+        )
+      }
+      runByStaff = true
     }
 
     // 6. Guard the state machine - only mark a row that is awaiting marking.
@@ -216,6 +256,41 @@ export async function POST(request: NextRequest) {
       return badRequestResponse(err instanceof Error ? err.message : 'Invalid question.')
     }
 
+    // 7b. The PUPIL's consent and AI opt-out, at the moment their work goes to
+    //     the model.
+    //
+    // A DEFECT, FIXED 12 OCTOBER 2026 (docs/system/05 section 6): this route
+    // made a model call behind no consent gate and no opt-out check, then
+    // wrote an audit entry asserting that both had passed. /api/submissions
+    // checks them, but only when the essay is saved, so consent withdrawn in
+    // between was never seen, and opening class essays to pupils and staff
+    // made the gap wider. Both are now checked here, for row.student_id and
+    // not for the caller: when staff start the run the session is theirs, and
+    // a teacher's consent is not the one that matters. checkMinorAIConsent
+    // also admits a pupil of a live school that has recorded its AI
+    // authorisation, and says so in `basis`, which the audit entry records.
+    const consentCheck = await checkMinorAIConsent(row.student_id)
+    if (!consentCheck.allowed) {
+      if (runByStaff) {
+        // The pupil-facing sentence and code would point a teacher at a
+        // control that only the pupil or their parent can use.
+        return forbiddenResponse(
+          "This pupil's consent for AI marking is not in place, so their essay cannot be marked yet.",
+        )
+      }
+      return forbiddenResponse(
+        consentCheck.reason ?? 'Consent is required to use this feature.',
+        consentCheck.code ? { code: consentCheck.code } : undefined,
+      )
+    }
+    if (await isAiOptedOutServer(row.student_id)) {
+      return forbiddenResponse(
+        runByStaff
+          ? "AI features are turned off for this pupil's account, so their essay cannot be marked."
+          : 'AI features are currently disabled for your account. To re-enable them, visit your privacy settings or ask a parent/guardian to update your preferences.',
+      )
+    }
+
     // NO-CARD TRIAL AI CEILING. This is the last gate before we spend money,
     // and it sits in the same position as checkMinorAIConsent and
     // isAiOptedOutServer: after content-type / auth / entitlement / consent /
@@ -224,8 +299,15 @@ export async function POST(request: NextRequest) {
     // identical flag the paywall above reads, so without this a free account
     // has the same unlimited AI access a paying one does. Refused with 402 and
     // code 'free_allowance_exhausted', never 403 or 429.
-    trialGate = await enforceTrialAllowance(request, user)
-    if (trialGate.response) return trialGate.response
+    //
+    // `schoolFunded`: a pupil of a live school is paid for by the school here,
+    // not by their trial (src/lib/usage/trial-allowance.ts). A run started by
+    // staff is the school's, and its access was checked live above, so it is
+    // never charged to the teacher's own trial.
+    if (!runByStaff) {
+      trialGate = await enforceTrialAllowance(request, user, { schoolFunded: true })
+      if (trialGate.response) return trialGate.response
+    }
 
     // 8. Anthropic key
     const apiKey = process.env.ANTHROPIC_API_KEY
@@ -250,9 +332,11 @@ export async function POST(request: NextRequest) {
       markSchemeId: row.mark_scheme_id,
       questionId,
       promptSchemeId: row.mark_scheme_id,
+      // True now: both were checked for the pupil at step 7b.
       consentSnapshot: {
         aiOptOut: false,
         aiProcessingConsentOk: true,
+        parentalConsentBasis: consentCheck.basis,
       },
       ipAddress: request.headers.get('x-forwarded-for'),
     }
@@ -389,11 +473,12 @@ export async function POST(request: NextRequest) {
       qualification: row.qualification,
     })
 
-    // 12. Persist the DRAFT AI result. B2B class work must go to a teacher
-    //     before any student sees it → 'teacher_review_required'. B2C
-    //     self-study can surface the (clearly-labelled draft) immediately →
-    //     'ai_marked'. Never 'approved' from here.
-    const nextStatus = row.source === 'b2b_class' ? 'teacher_review_required' : 'ai_marked'
+    // 12. Persist the DRAFT AI result as 'ai_marked', for class work as for
+    //     self-study: the pupil sees it straight away, labelled as AI, and a
+    //     teacher reviews class work afterwards (see the header). Until 12
+    //     October 2026 class work was written as 'teacher_review_required'
+    //     and hidden from the pupil until approved. Never 'approved' from here.
+    const nextStatus = 'ai_marked' as const
     try {
       await applyAiResult(svc, submissionId, {
         result,
@@ -431,7 +516,7 @@ export async function POST(request: NextRequest) {
     })
 
     // The AI mark is a DRAFT - never presented as final. The caller/UI must
-    // label it accordingly; B2B work is not student-visible until approved.
+    // label it accordingly; a class pupil's teacher reviews it afterwards.
     return applyAllowanceHeaders(successResponse({ result }), trialGate.state)
   } catch (err) {
     console.error('[api/marking/run] unexpected error', err)

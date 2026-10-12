@@ -14599,6 +14599,35 @@ export const ES_MESSAGES: Record<string, string> = {
   'marking.results.awaiting_body':
     'Tu trabajo ha sido enviado y está a la espera de que tu profesor lo revise. Tus comentarios y tu nota aparecerán aquí una vez que tu profesor los haya comprobado y aprobado. No verás una nota automática del trabajo asignado por el profesor antes de eso.',
   'marking.results.awaiting_status': 'Estado: esperando la aprobación del profesor',
+  'ai_marking_notice.body_reviewed':
+    'La nota prevista y los comentarios de abajo fueron producidos automáticamente por un sistema de IA (el modelo Claude de Anthropic). Después, una persona ha revisado esta redacción y su decisión aparece arriba. La nota prevista es indicativa, para practicar, y NO es un resultado oficial de examen.',
+  'marking.results.school_review_note':
+    'Tu profesor revisará esta nota de la IA y puede cambiarla. Si lo hace, su decisión aparecerá en esta página.',
+  'marking.results.review.heading_teacher': 'La decisión de tu profesor',
+  'marking.results.review.heading_reviewer': 'La decisión de un revisor',
+  'marking.results.review.approved': 'Esta nota ha sido revisada y aprobada.',
+  'marking.results.review.reviewed':
+    'Esta redacción ha sido revisada. La nota que aparece aquí sustituye a la nota prevista por la IA.',
+  'marking.results.review.returned': 'Te han devuelto esta redacción con comentarios.',
+  'marking.results.review.mark_label': 'Nota',
+  'marking.results.review.comments_label': 'Comentarios',
+  'marking.results.unmarked_title': 'Aún sin corregir',
+  'marking.results.unmarked_body':
+    'Esta redacción se guardó, pero aún no se ha corregido. Si la corrección no terminó, vuelve a enviarla desde Corregir redacción.',
+  'marking.results.reviewing_title': 'Tu profesor está revisando esta nota',
+  'marking.results.reviewing_body':
+    'Tu profesor está comprobando la nota de la IA para esta redacción y puede cambiarla. Su decisión aparecerá aquí cuando termine.',
+  'marking.results.rejected_title': 'No se ha publicado ninguna nota',
+  'marking.results.rejected_body':
+    'Tu profesor ha revisado esta redacción y no ha publicado una nota para ella. Pregúntale a tu profesor si quieres saber por qué.',
+  'marking.results.unavailable_title': 'Este resultado no está disponible',
+  'marking.results.unavailable_body':
+    'El resultado de esta redacción no se puede mostrar en este momento.',
+  'marking.results.next.redraft_body_prefilled':
+    'Reescribe las partes que señalan los comentarios y envía la nueva versión. El consejo examinador, el examen y la pregunta ya vienen rellenados, para que se corrija con el mismo esquema de corrección.',
+  'marking.school_route.title': 'Tu profesor ve tus redacciones',
+  'marking.school_route.body':
+    'Tu escuela corrige las redacciones a través de Corregir redacción, para que tu profesor pueda ver tu trabajo y comprobar la nota de la IA. Los comentarios de la IA te siguen apareciendo al momento.',
   'admin.aim.back_to_admin': 'Volver a administración',
   'admin.aim.refresh': 'Actualizar',
   'admin.aim.loading': 'Cargando…',

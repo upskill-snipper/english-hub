@@ -17,8 +17,9 @@ import type { MarkingResult } from './mark-schemes/types'
 // ─── Status lifecycle ────────────────────────────────────────────────────────
 // Mirrors the CHECK constraint in
 // supabase/migrations/20260518_smart_ip_marking.sql. The AI-marking spine only
-// ever WRITES 'submitted', 'ai_marked' and 'teacher_review_required'. An AI
-// mark is always a DRAFT - this code never writes 'approved'.
+// ever WRITES 'submitted' and 'ai_marked' (the marker-drive batch drafts write
+// 'teacher_review_required'). An AI mark is always a DRAFT - this code never
+// writes 'approved'.
 
 export type SubmissionStatus =
   | 'submitted'
@@ -483,16 +484,33 @@ export async function listSubmissionsForStudent(
 /**
  * Whether a student may see the mark on their own submission yet.
  *
- * Mirrors the per-id route's safeguard exactly (see
- * `src/app/api/marking/[submissionId]/route.ts`). In particular 'returned' IS
- * visible for school pupils: it is teacher-initiated and always carries their
+ * THE ONE RULE. The per-id route (`src/app/api/marking/[submissionId]/route.ts`),
+ * the list endpoint (GET /api/submissions) and the results page all ask this
+ * function, so the three cannot disagree. In particular 'returned' IS visible
+ * for school pupils: it is teacher-initiated and always carries their
  * comments, and withholding it made "send back to student" a no-op from the
- * student's side. That was a real bug once; it must not come back through the
- * list endpoint.
+ * student's side. That was a real bug once; it must not come back.
+ *
+ * CHANGED 12 OCTOBER 2026, by Calum's decision: a school pupil sees their AI
+ * feedback straight away, labelled as AI, exactly as an individual pupil
+ * does; the teacher reviews afterwards and may change the mark, and the pupil
+ * then sees the teacher's decision. So a class ('b2b_class') pupil now sees
+ * 'ai_marked', 'approved', 'returned' and 'teacher_reviewed' (the override
+ * route's status for a teacher's changed mark). Before, they saw nothing
+ * until a teacher approved, and since no class essay was ever marked (see
+ * /api/marking/run), they saw nothing at all.
+ *
+ * Still hidden: 'teacher_review_required' (the review route's "correct"
+ * decision, a correction in progress), 'rejected', and anything not yet marked.
  */
-export function studentCanSeeGrade(status: SubmissionStatus, source: string): boolean {
+export function studentCanSeeGrade(status: string, source: string): boolean {
   if (source === 'b2b_class') {
-    return status === 'approved' || status === 'returned'
+    return (
+      status === 'ai_marked' ||
+      status === 'approved' ||
+      status === 'returned' ||
+      status === 'teacher_reviewed'
+    )
   }
   return status === 'ai_marked' || status === 'approved' || status === 'returned'
 }

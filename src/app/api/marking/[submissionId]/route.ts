@@ -2,12 +2,16 @@
 // Read a single submission, scoped so a student can never see an AI mark
 // before it is allowed to be shown.
 //
-// Visibility rules (safeguard: students see approved feedback only):
+// Visibility rules - one rule, studentCanSeeGrade in
+// src/lib/marking/persistence.ts, shared with the list endpoint:
 //   • Owning student, source = b2c_self : sees their row, but AI/teacher
-//     result fields are stripped UNLESS status ∈ ('ai_marked','approved').
-//   • Owning student, source = b2b_class: sees their row, but ALL feedback
-//     fields are stripped UNLESS status = 'approved' (a teacher must approve
-//     before a class student sees anything).
+//     result fields are stripped UNLESS status ∈ ('ai_marked','approved',
+//     'returned').
+//   • Owning student, source = b2b_class: as above, plus 'teacher_reviewed'.
+//     Until 12 October 2026 a class pupil saw nothing until a teacher had
+//     approved or returned the work. Calum then decided that a school pupil
+//     sees their AI feedback straight away, labelled as AI, and the
+//     teacher's decision once the teacher has reviewed it.
 //   • School member (admin / head_of_department / teacher) of the row's
 //     school: sees the full row.
 //   • Anyone else: 404 (do not leak existence).
@@ -30,7 +34,11 @@ import {
   successResponse,
   unauthorizedResponse,
 } from '@/lib/api-response'
-import { loadSubmission, type MarkingSubmissionRow } from '@/lib/marking/persistence'
+import {
+  loadSubmission,
+  studentCanSeeGrade,
+  type MarkingSubmissionRow,
+} from '@/lib/marking/persistence'
 
 export const dynamic = 'force-dynamic'
 
@@ -114,21 +122,11 @@ export async function GET(
     const isOwningStudent = row.student_id === user.id
 
     if (isOwningStudent) {
-      if (row.source === 'b2c_self') {
-        // Self-study: AI fields only once marked, approved, or returned.
-        const canSeeResult =
-          row.status === 'ai_marked' || row.status === 'approved' || row.status === 'returned'
-        return successResponse({
-          submission: canSeeResult ? row : stripResultFields(row),
-        })
-      }
-      // b2b_class student: feedback when a teacher has approved it, OR when a
-      // teacher has explicitly returned the work to them with feedback.
       // 'returned' is teacher-initiated and always carries their comments, so
-      // withholding it was the bug: it made "send back to student" a no-op
-      // from the student's side. 'teacher_review_required' stays hidden - that
-      // is an in-progress correction, not something shared yet.
-      const canSeeResult = row.status === 'approved' || row.status === 'returned'
+      // withholding it was once the bug: it made "send back to student" a
+      // no-op from the student's side. 'teacher_review_required' stays hidden
+      // - that is an in-progress correction, not something shared yet.
+      const canSeeResult = studentCanSeeGrade(row.status, row.source)
       return successResponse({
         submission: canSeeResult ? row : stripResultFields(row),
       })

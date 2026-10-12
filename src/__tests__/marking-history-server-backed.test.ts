@@ -68,11 +68,21 @@ describe('the student-visibility safeguard', () => {
     expect(studentCanSeeGrade('ai_marked', 'b2c_self')).toBe(true)
   })
 
-  it('withholds an AI draft from a school pupil until a teacher approves', () => {
-    // The teacher is in the loop by design: an unapproved AI mark reaching a
-    // pupil through a LIST view would defeat the per-id route's safeguard.
-    expect(studentCanSeeGrade('ai_marked', 'b2b_class')).toBe(false)
+  it('shows a school pupil their AI mark straight away, and the teacher’s decision after', () => {
+    // CHANGED 12 October 2026. This test used to pin the opposite: a class
+    // pupil saw nothing until a teacher approved. Calum decided that a school
+    // pupil sees their AI feedback straight away, labelled as AI, exactly as
+    // an individual pupil does; the teacher reviews afterwards, may change
+    // the mark, and the pupil then sees the teacher's decision.
+    expect(studentCanSeeGrade('ai_marked', 'b2b_class')).toBe(true)
+    expect(studentCanSeeGrade('teacher_reviewed', 'b2b_class')).toBe(true)
+  })
+
+  it('still withholds a correction in progress, and a rejected mark, from a school pupil', () => {
+    // 'teacher_review_required' is now only the review route's "correct"
+    // decision: the teacher is part-way through changing the mark.
     expect(studentCanSeeGrade('teacher_review_required', 'b2b_class')).toBe(false)
+    expect(studentCanSeeGrade('rejected', 'b2b_class')).toBe(false)
   })
 
   it('shows a school pupil work a teacher has RETURNED to them', () => {
