@@ -8,8 +8,26 @@ import {
   type AgeBand,
 } from '@/lib/identity'
 import { CONSENT_REFUSAL_CODES, type ConsentRefusalCode } from '@/lib/consent-codes'
+import { getPupilSchoolAccess } from '@/lib/school-entitlement'
 
 // ─── Types ──────────────────────────────────────────────────────────────
+
+/**
+ * Which rule let an account through the parental-consent step. Set on every
+ * admit, so that a record of an AI decision can say why a child's work was
+ * processed, not just that it was.
+ *
+ *   sixteen_or_over          consents for themselves (age known, 16+)
+ *   linked_parent            a parent is linked to the account
+ *   parental_consent_record  an approved row in parental_consents
+ *   school_ai_authorisation  a pupil of a live school that has recorded its
+ *                            authorisation for AI marking (12 October 2026)
+ */
+export type ParentalConsentBasis =
+  | 'sixteen_or_over'
+  | 'linked_parent'
+  | 'parental_consent_record'
+  | 'school_ai_authorisation'
 
 export interface ConsentCheckResult {
   allowed: boolean
@@ -24,6 +42,8 @@ export interface ConsentCheckResult {
    * consent problem from the 403 alone.
    */
   code?: ConsentRefusalCode
+  /** Set on every admit: which rule passed the parental-consent step. */
+  basis?: ParentalConsentBasis
 }
 
 // ─── Identity resolution ────────────────────────────────────────────────
@@ -79,6 +99,26 @@ async function hasApprovedParentalConsent(supabaseUserId: string): Promise<boole
   }
 }
 
+/**
+ * Whether this account is a pupil of a live school that has recorded its
+ * authorisation for AI marking.
+ *
+ * Calum decided on 12 October 2026 that a school, as data controller, gives
+ * this permission once for its pupils, by confirming in writing that its
+ * privacy notice covers AI marking and that parents have been told. It is
+ * stored as `schools.ai_authorised_at`. It stands in for the per-pupil
+ * parental step only: the pupil's own AI-processing consent is still asked
+ * for, unchanged, in checkMinorAIConsent.
+ *
+ * The school must also be live (getPupilSchoolAccess applies the one rule in
+ * src/lib/school-access.ts): a school's authorisation covers its use of the
+ * product, and ends with it. A failed read answers false, never yes.
+ */
+async function schoolHasAuthorisedAi(supabaseUserId: string): Promise<boolean> {
+  const school = await getPupilSchoolAccess(supabaseUserId)
+  return school?.aiAuthorised === true
+}
+
 // ─── Refusal messages ───────────────────────────────────────────────────
 //
 // Every message below has to name a control the learner can actually reach.
@@ -126,12 +166,22 @@ export const DATE_OF_BIRTH_REQUIRED =
  *   UNKNOWN             no date of birth held. NOT an adult: blocked, with
  *                       the message that asks for the date.
  *
+ * THE SCHOOL PATH (12 October 2026). A pupil of a live school that has
+ * recorded its AI authorisation passes this step whatever the band,
+ * including UNKNOWN: an uploaded pupil has no date of birth, and the school,
+ * as data controller, has given the permission a parent would otherwise give.
+ * It is asked only where the rules above would refuse, so every other account
+ * gets exactly the answer it got before. Each admit records its `basis`.
+ *
  * Takes the Supabase auth user id.
  */
 export async function checkParentalConsent(supabaseUserId: string): Promise<ConsentCheckResult> {
   const band: AgeBand = await resolveAgeBand(supabaseUserId)
 
   if (band === 'UNKNOWN') {
+    if (await schoolHasAuthorisedAi(supabaseUserId)) {
+      return { allowed: true, basis: 'school_ai_authorisation' }
+    }
     return {
       allowed: false,
       reason: DATE_OF_BIRTH_REQUIRED,
@@ -140,17 +190,22 @@ export async function checkParentalConsent(supabaseUserId: string): Promise<Cons
   }
 
   if (!requiresGuardianConsent(band)) {
-    return { allowed: true }
+    return { allowed: true, basis: 'sixteen_or_over' }
   }
 
   // Check 1: a linked parent via the parent-linking system.
   if (await linkedParentId(supabaseUserId)) {
-    return { allowed: true }
+    return { allowed: true, basis: 'linked_parent' }
   }
 
   // Check 2: an approved parental consent record (school or self-serve).
   if (await hasApprovedParentalConsent(supabaseUserId)) {
-    return { allowed: true }
+    return { allowed: true, basis: 'parental_consent_record' }
+  }
+
+  // Check 3: the school's own authorisation, for its pupils.
+  if (await schoolHasAuthorisedAi(supabaseUserId)) {
+    return { allowed: true, basis: 'school_ai_authorisation' }
   }
 
   return {
@@ -212,9 +267,10 @@ async function raiseGuardianConsentRequest(supabaseUserId: string): Promise<stri
  *   1. the account has whatever parental consent its age band requires, and
  *   2. the account has AI_PROCESSING consent (required for everyone).
  *
- * Returns { allowed: true } if all checks pass, or { allowed: false, reason }
- * with a user-facing message if any check fails. Every failure message names
- * a control that exists.
+ * Returns { allowed: true, basis } if all checks pass, where `basis` names the
+ * rule that passed the parental step, or { allowed: false, reason, code } with
+ * a user-facing message if any check fails. Every failure message names a
+ * control that exists.
  */
 export async function checkMinorAIConsent(supabaseUserId: string): Promise<ConsentCheckResult> {
   // ORDER IS LOAD-BEARING (changed 2026-08-23).
@@ -267,5 +323,6 @@ export async function checkMinorAIConsent(supabaseUserId: string): Promise<Conse
     }
   }
 
-  return { allowed: true }
+  // Carry the parental basis through, so the caller can record it.
+  return { allowed: true, basis: parental.basis }
 }

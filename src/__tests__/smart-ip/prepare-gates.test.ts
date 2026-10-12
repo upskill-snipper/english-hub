@@ -350,6 +350,22 @@ describe('Gate 7 - checkMinorAIConsent must allow', () => {
     expect(mockCheckMinorAIConsent).toHaveBeenCalledWith('prisma-stu-1')
     expect(insertCalls.filter((c) => c.table === 'training_data')).toHaveLength(0)
   })
+
+  it("rejects a pupil admitted only by their school's AI marking authorisation", async () => {
+    // 12 October 2026: the AI gate admits a pupil of a school that has
+    // recorded its authorisation for AI MARKING. That is the school's say-so
+    // for marking its pupils' work, not consent to put it in a training
+    // corpus, so it must never stand in for this step.
+    tables['marking_submissions'] = {
+      select: { data: approvedSubmissionRow({ source: 'b2b_class' }), error: null },
+    }
+    mockUserFindUnique.mockResolvedValue(activeStudentUser())
+    mockCheckMinorAIConsent.mockResolvedValue({ allowed: true, basis: 'school_ai_authorisation' })
+    const res = await run()
+    expect(res.ok).toBe(false)
+    if (!res.ok) expect(res.reason).toMatch(/does not cover training data/i)
+    expect(insertCalls.filter((c) => c.table === 'training_data')).toHaveLength(0)
+  })
 })
 
 // ── Gate 8 / happy path ──────────────────────────────────────────────────────

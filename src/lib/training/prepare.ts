@@ -267,6 +267,19 @@ export async function prepareTrainingRecord(submissionId: string): Promise<Prepa
         reason: minorConsent.reason ?? 'AI processing / parental consent not satisfied.',
       }
     }
+    // Since 12 October 2026 the AI gate also admits a pupil whose school has
+    // recorded its authorisation for AI MARKING (basis
+    // 'school_ai_authorisation'). That authorisation is the school's, as data
+    // controller, for marking its pupils' work; it says nothing about putting
+    // that work into a training corpus, so it must never stand in for the
+    // parental consent this step needs.
+    if (minorConsent.basis === 'school_ai_authorisation') {
+      await writeAudit(id, 'rejected', { reason: 'school_authorisation_not_for_training', source })
+      return {
+        ok: false,
+        reason: "A school's AI marking authorisation does not cover training data.",
+      }
+    }
   }
 
   // ── 4. Idempotency check ──────────────────────────────────────────────────

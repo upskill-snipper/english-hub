@@ -91,6 +91,7 @@
 import { createHash } from 'crypto'
 import { ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { keepAlive } from '@/lib/keep-alive'
+import type { ParentalConsentBasis } from '@/lib/consent-check'
 
 // ─── Configuration ───────────────────────────────────────────────────────────
 
@@ -205,6 +206,14 @@ export interface AiConsentSnapshot {
   aiProcessingConsentOk: boolean
   /** `PrivacySettings.aiTrainingOptIn`, if known in scope. */
   aiTrainingOptIn?: boolean
+  /**
+   * Which rule passed the parental-consent step (`basis` from
+   * checkMinorAIConsent), where the route has it. Added 12 October 2026 with
+   * the school path: a record that a child's work was processed must be able
+   * to say whether a parent, the pupil's own age or their school's
+   * authorisation allowed it. Absent on routes that do not pass it yet.
+   */
+  parentalConsentBasis?: ParentalConsentBasis
 }
 
 export interface LogAiDecisionInput {

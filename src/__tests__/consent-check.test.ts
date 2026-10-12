@@ -78,6 +78,14 @@ vi.mock('@/lib/parental-consent', () => ({
   getGuardianConsentState: (...args: unknown[]) => mockGetGuardianConsentState(...args),
 }))
 
+// The school path (12 October 2026). Its own lookup is tested against the
+// tables in a-pupil-is-entitled-by-their-school.test.ts; here it is the input.
+const mockGetPupilSchoolAccess = vi.fn()
+
+vi.mock('@/lib/school-entitlement', () => ({
+  getPupilSchoolAccess: (...args: unknown[]) => mockGetPupilSchoolAccess(...args),
+}))
+
 // ─── Helpers ────────────────────────────────────────────────────────────
 
 /** No approved row in parental_consents - what PostgREST returns for none. */
@@ -108,7 +116,10 @@ function resetMocks() {
   mockHasConsent.mockReset()
   mockSendGuardianConsentRequest.mockReset()
   mockGetGuardianConsentState.mockReset()
+  mockGetPupilSchoolAccess.mockReset()
 
+  // Not a school pupil unless a test says so.
+  mockGetPupilSchoolAccess.mockResolvedValue(null)
   mockSendGuardianConsentRequest.mockResolvedValue({ sent: false, reason: 'no_guardian_email' })
   mockGetGuardianConsentState.mockResolvedValue({ lastSentAt: null, guardianEmailMasked: null })
   projectedRowWithNoParent()
@@ -134,6 +145,7 @@ describe('checkParentalConsent', () => {
 
     expect(result.allowed).toBe(true)
     expect(result.reason).toBeUndefined()
+    expect(result.basis).toBe('sixteen_or_over')
   })
 
   it('blocks an under-16 with no guardian approval', async () => {
@@ -151,7 +163,10 @@ describe('checkParentalConsent', () => {
     approvedParentalConsent()
 
     const { checkParentalConsent } = await import('@/lib/consent-check')
-    await expect(checkParentalConsent('child-school-consent')).resolves.toEqual({ allowed: true })
+    await expect(checkParentalConsent('child-school-consent')).resolves.toEqual({
+      allowed: true,
+      basis: 'parental_consent_record',
+    })
   })
 
   it('allows an under-16 with a linked parent', async () => {
@@ -159,7 +174,10 @@ describe('checkParentalConsent', () => {
     mockFindUnique.mockResolvedValue({ parentId: 'cuid_parent', accountStatus: 'ACTIVE' })
 
     const { checkParentalConsent } = await import('@/lib/consent-check')
-    await expect(checkParentalConsent('child-with-parent')).resolves.toEqual({ allowed: true })
+    await expect(checkParentalConsent('child-with-parent')).resolves.toEqual({
+      allowed: true,
+      basis: 'linked_parent',
+    })
   })
 
   it('blocks a child of imprecise age - fails closed rather than guessing', async () => {
@@ -202,7 +220,10 @@ describe('checkMinorAIConsent', () => {
     mockHasConsent.mockResolvedValue(true)
 
     const { checkMinorAIConsent } = await import('@/lib/consent-check')
-    await expect(checkMinorAIConsent('adult-with-ai')).resolves.toEqual({ allowed: true })
+    await expect(checkMinorAIConsent('adult-with-ai')).resolves.toEqual({
+      allowed: true,
+      basis: 'sixteen_or_over',
+    })
   })
 
   it('names a control that exists when AI processing consent is missing', async () => {
@@ -236,7 +257,10 @@ describe('checkMinorAIConsent', () => {
     mockHasConsent.mockResolvedValue(true)
 
     const { checkMinorAIConsent } = await import('@/lib/consent-check')
-    await expect(checkMinorAIConsent('child-all-consent')).resolves.toEqual({ allowed: true })
+    await expect(checkMinorAIConsent('child-all-consent')).resolves.toEqual({
+      allowed: true,
+      basis: 'parental_consent_record',
+    })
   })
 
   it('blocks an unknown date of birth and asks for it, without emailing a guardian', async () => {
