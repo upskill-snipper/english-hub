@@ -290,6 +290,36 @@ describe('a play of a level', () => {
     }
   })
 
+  it('puts the right answer in every position about as often, across every quest', async () => {
+    // The site's rule (no-quiz-answer-is-always-b.test.ts) checks that a
+    // surface uses the shared shuffle. This measures what students meet: the
+    // right answer's position in every dealt choice, two plays of every level
+    // of every quest.
+    const at = new Map<number, number>()
+    let n = 0
+    for (const slug of slugs) {
+      const q = await questFor(slug)
+      for (const l of q.levels)
+        for (const play of [0, 1])
+          for (const d of dealLevel(q, l, play)) {
+            if (d.options.length < 3) continue
+            const c = d.challenge
+            const answer =
+              c.type === 'item'
+                ? (c.item as { answer: string }).answer
+                : (c as { answer: string }).answer
+            const i = d.options.indexOf(answer)
+            expect(i, `${slug} ${c.id}`).toBeGreaterThanOrEqual(0)
+            at.set(i, (at.get(i) ?? 0) + 1)
+            n++
+          }
+    }
+    expect(n).toBeGreaterThan(5000)
+    // Four options: a fair shuffle gives each first three positions about a
+    // quarter (the fourth slightly less, as some choices have three).
+    for (const i of [0, 1, 2]) expect((at.get(i) ?? 0) / n, `position ${i}`).toBeLessThan(0.3)
+  }, 300_000)
+
   it('is the same deal for the same play, and a different one for the next', async () => {
     const q = await questFor('macbeth')
     const l = q.levels[0]
@@ -325,6 +355,9 @@ describe('a play of a level', () => {
  *     claimed "appears on one panel only" would catch it. It cannot: no comic
  *     has a shared line, so that test never meets one. The synthetic case was
  *     written for it and catches it.
+ *   - the deal's shuffle removed (deal.ts): "puts the right answer in every
+ *     position" (position 0 at 100%), and "shuffles its options" in
+ *     no-quiz-answer-is-always-b.test.ts.
  *
  * The player's own mutations (scoring, review order, storage, the map, the
  * keyboard, marking, the comic) are listed in
