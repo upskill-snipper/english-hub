@@ -2391,6 +2391,39 @@ export const DICTIONARY: Dictionary = {
     ar: 'تجربتك المجانية تبدأ لما تأكد إيميلك.',
     es: 'Tu prueba gratuita empieza cuando confirmes tu correo.',
   },
+  'marking.submit.refusal.essay_kept': {
+    en: 'Your essay is kept in this tab for an hour, so it will still be here when you come back.',
+    ar: 'مقالتك محفوظة في هالتبويب لمدة ساعة، وبتلقاها هني يوم ترجع.',
+    es: 'Tu redacción se guarda en esta pestaña durante una hora, así que seguirá aquí cuando vuelvas.',
+  },
+  'marking.submit.refusal.plans_from': {
+    en: 'Student plans start at £{monthly}/month, or £{annual}/year.',
+    ar: 'باقات الطلاب تبدأ من £{monthly} بالشهر، أو £{annual} بالسنة.',
+    es: 'Los planes de estudiante empiezan en £{monthly} al mes, o £{annual} al año.',
+  },
+  'auth.complete_profile.title': {
+    en: 'One more step',
+    ar: 'باقي خطوة وحدة',
+    es: 'Un paso más',
+  },
+  'auth.complete_profile.body': {
+    en: 'Add your date of birth so that AI marking and feedback can switch on. We use it to apply the right protections for your age, and you only do this once.',
+    ar: 'أضف تاريخ ميلادك عشان يشتغل التصحيح والملاحظات بالذكاء الاصطناعي. نستخدمه عشان نطبّق الحماية المناسبة لعمرك، وتسويها مرة وحدة بس.',
+    es: 'Añade tu fecha de nacimiento para que se activen la corrección y los comentarios con IA. La usamos para aplicar las protecciones adecuadas a tu edad, y solo tienes que hacerlo una vez.',
+  },
+  'auth.complete_profile.continue': { en: 'Continue', ar: 'كمّل', es: 'Continuar' },
+  'auth.complete_profile.saving': { en: 'Saving…', ar: 'جاري الحفظ…', es: 'Guardando…' },
+  'auth.complete_profile.not_now': { en: 'Not now', ar: 'مو الحين', es: 'Ahora no' },
+  'auth.complete_profile.invalid_date': {
+    en: 'Please check that date of birth and try again.',
+    ar: 'تأكد من تاريخ الميلاد وجرّب مرة ثانية.',
+    es: 'Revisa esa fecha de nacimiento y vuelve a intentarlo.',
+  },
+  'auth.complete_profile.terms_before': {
+    en: 'By continuing, you agree to our',
+    ar: 'لما تكمّل، أنت توافق على',
+    es: 'Al continuar, aceptas nuestros',
+  },
   'auth.register.card_existing_account': {
     en: 'Already have an account with this email? We do not send another link, so sign in instead or reset your password:',
     ar: 'عندك حساب من قبل بهذا الإيميل؟ ما نرسل رابط ثاني، فسجّل دخولك أو غيّر الرمز السري:',
@@ -2703,10 +2736,15 @@ export const DICTIONARY: Dictionary = {
     ar: 'تاريخ الميلاد مطلوب.',
     es: 'La fecha de nacimiento es obligatoria.',
   },
+  'form.dob_not_a_real_date': {
+    en: 'That date does not exist. Please check the day and month.',
+    ar: 'هذا التاريخ مو موجود. تأكد من اليوم والشهر.',
+    es: 'Esa fecha no existe. Revisa el día y el mes.',
+  },
   'form.under_13_blocked': {
-    en: "You're not yet old enough to create your own account. Ask a parent or carer to set up a parent-linked account from /parent.",
-    ar: 'لسا ما عندك العمر الكافي تسوّي حساب بنفسك. اطلب من والدك أو ولي أمرك يسوّي حساب مربوط فيك من /parent.',
-    es: 'Todavía no tienes la edad suficiente para crear tu propia cuenta. Pide a un padre o cuidador que cree una cuenta vinculada a un padre desde /parent.',
+    en: 'You need to be 13 or over to create your own account. If your school uses The English Hub, your teacher can set one up for you. Our revision guides are free to read without an account.',
+    ar: 'لازم يكون عمرك ١٣ سنة أو أكثر عشان تسوّي حساب بنفسك. إذا مدرستك تستخدم The English Hub، معلمك يقدر يسوّي لك حساب. وأدلة المراجعة عندنا تقدر تقراها مجاناً بدون حساب.',
+    es: 'Tienes que tener 13 años o más para crear tu propia cuenta. Si tu centro usa The English Hub, tu profesor puede crearte una. Nuestras guías de repaso se pueden leer gratis sin cuenta.',
   },
   'form.guardian_email_required': {
     en: 'Parent/Guardian email is required for users under 16.',

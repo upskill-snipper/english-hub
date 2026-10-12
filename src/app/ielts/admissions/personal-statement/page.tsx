@@ -35,6 +35,8 @@ import { Textarea } from '@/components/ui/textarea'
 import { isAiOptedOut } from '@/lib/ai-preferences'
 import { setApplicationPsScores } from '@/lib/ielts/readiness-store'
 import { useT } from '@/lib/i18n/use-t'
+import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
+import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
 
 // ─── Public response contract (kept in sync with the API route) ──────────────
 
@@ -122,6 +124,18 @@ function friendlyError(status: number, body: string, t: (key: string) => string)
   return body || t('ielts.admissions.ps.err.generic')
 }
 
+/**
+ * Sign in, then come back to the coach on the surface the visitor is on. Read
+ * only after a refusal, so `window` exists.
+ */
+function signInHref(): string {
+  const here =
+    typeof window === 'undefined'
+      ? '/ielts/admissions/personal-statement'
+      : window.location.pathname
+  return `/auth/login?redirect=${encodeURIComponent(here)}`
+}
+
 /** Validate that one question's payload is a usable QuestionFeedback. */
 function isQuestionFeedback(value: unknown): value is QuestionFeedback {
   if (!value || typeof value !== 'object') return false
@@ -174,6 +188,15 @@ export default function PersonalStatementCoachPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [paywalled, setPaywalled] = useState(false)
+  // Refused for consent, held apart from the paywall. Every 403 used to set
+  // `paywalled`, and the route checks the IELTS plan BEFORE consent, so a 403
+  // with a consent code (for example no date of birth on file, true of 73% of
+  // signed-in accounts on 12 October 2026) reached only plan holders and told
+  // them to buy the plan they had. It now gets the consent step here, then the
+  // same submit again.
+  const [consentRefusal, setConsentRefusal] = useState<AIConsentRefusal | null>(null)
+  // A 401 names the way out (this page is not behind the sign-in wall).
+  const [signInNeeded, setSignInNeeded] = useState(false)
   const [feedback, setFeedback] = useState<StatementFeedback | null>(null)
   const [disclaimer, setDisclaimer] = useState<string>('')
 
@@ -201,6 +224,8 @@ export default function PersonalStatementCoachPage() {
     setIsSubmitting(true)
     setError(null)
     setPaywalled(false)
+    setConsentRefusal(null)
+    setSignInNeeded(false)
 
     try {
       const res = await fetch('/api/ielts/statement-feedback', {
@@ -211,13 +236,23 @@ export default function PersonalStatementCoachPage() {
 
       if (!res.ok) {
         let message = ''
+        let body: unknown = null
         try {
-          const body = (await res.json()) as { error?: string; message?: string }
-          message = body?.error ?? body?.message ?? ''
+          body = await res.json()
+          const parsed = body as { error?: string; message?: string } | null
+          message = parsed?.error ?? parsed?.message ?? ''
         } catch {
           /* non-JSON error body */
         }
+        // Switched on the machine-readable code, never on the 403 alone.
+        const refusal = readConsentRefusal(res.status, body)
+        if (refusal) {
+          setConsentRefusal(refusal)
+          setIsSubmitting(false)
+          return
+        }
         if (res.status === 403) setPaywalled(true)
+        if (res.status === 401) setSignInNeeded(true)
         setError(friendlyError(res.status, message, t))
         setIsSubmitting(false)
         return
@@ -373,6 +408,18 @@ export default function PersonalStatementCoachPage() {
             )}
           </div>
 
+          {/* Consent block, answerable here with the answers still written */}
+          {consentRefusal && !isSubmitting && (
+            <InlineAIConsentPrompt
+              refusal={consentRefusal}
+              onResolved={() => {
+                setConsentRefusal(null)
+                void handleSubmit()
+              }}
+              onDismiss={() => setConsentRefusal(null)}
+            />
+          )}
+
           {/* Error / paywall banner */}
           {error && (
             <div
@@ -387,6 +434,13 @@ export default function PersonalStatementCoachPage() {
                     className="font-semibold underline underline-offset-2"
                   >
                     {t('ielts.admissions.ps.view_premium') || 'View the IELTS plan'}
+                  </Link>
+                </p>
+              )}
+              {signInNeeded && (
+                <p className="mt-2">
+                  <Link href={signInHref()} className="font-semibold underline underline-offset-2">
+                    {t('auth.sign_in')}
                   </Link>
                 </p>
               )}
@@ -431,6 +485,8 @@ export default function PersonalStatementCoachPage() {
             setFeedback(null)
             setError(null)
             setPaywalled(false)
+            setConsentRefusal(null)
+            setSignInNeeded(false)
           }}
         />
       )}

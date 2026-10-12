@@ -38,6 +38,8 @@ import { genId, saveAttempt } from '@/lib/ielts/store'
 import type { Band, CriterionFeedback, TaskFeedback, WritingPrompt } from '@/lib/ielts/types'
 import { isAiOptedOut } from '@/lib/ai-preferences'
 import { useT } from '@/lib/i18n/use-t'
+import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
+import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
 import { TrackToggle, useIeltsTrack } from '../_components/TrackToggle'
 import { WRITING_PROMPTS } from './writing-prompts'
 import { WritingChart } from './_components/WritingChart'
@@ -72,6 +74,15 @@ function friendlyError(t: (key: string) => string, status: number, body: string)
   return body || t('ielts.writing.error.generic')
 }
 
+/**
+ * Sign in, then come back here on the surface the visitor is on (an Arabic
+ * reader on /ar/ielts/writing returns there). Read only after a refusal.
+ */
+function signInHref(): string {
+  const here = typeof window === 'undefined' ? '/ielts/writing' : window.location.pathname
+  return `/auth/login?redirect=${encodeURIComponent(here)}`
+}
+
 function formatClock(totalSeconds: number): string {
   const safe = Math.max(0, totalSeconds)
   const m = Math.floor(safe / 60)
@@ -102,6 +113,20 @@ export default function IeltsWritingPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [paywalled, setPaywalled] = useState(false)
+  /**
+   * Refused for consent, held apart from the paywall.
+   *
+   * THE DEFECT (found 12 October 2026): every 403 set `paywalled`. The route
+   * checks the IELTS plan BEFORE consent, so a 403 that carries a consent code
+   * reached only people who already hold the plan, for example with no date of
+   * birth on file, which is true of 73% of signed-in accounts (Google and Apple
+   * sign-ups). They were shown "View Premium plans" for a plan they already
+   * held, and the response they had written led nowhere. A coded 403 now gets
+   * the consent step in place, then the same submit again.
+   */
+  const [consentRefusal, setConsentRefusal] = useState<AIConsentRefusal | null>(null)
+  // A 401 names the way out (this page is not behind the sign-in wall).
+  const [signInNeeded, setSignInNeeded] = useState(false)
   const [feedback, setFeedback] = useState<TaskFeedback | null>(null)
   const [disclaimer, setDisclaimer] = useState<string>('')
 
@@ -170,6 +195,8 @@ export default function IeltsWritingPage() {
     setDisclaimer('')
     setError(null)
     setPaywalled(false)
+    setConsentRefusal(null)
+    setSignInNeeded(false)
     if (intervalRef.current) {
       clearInterval(intervalRef.current)
       intervalRef.current = null
@@ -190,6 +217,8 @@ export default function IeltsWritingPage() {
       setDisclaimer('')
       setError(null)
       setPaywalled(false)
+      setConsentRefusal(null)
+      setSignInNeeded(false)
       stopTimer()
     },
     [stopTimer],
@@ -200,6 +229,8 @@ export default function IeltsWritingPage() {
     setIsSubmitting(true)
     setError(null)
     setPaywalled(false)
+    setConsentRefusal(null)
+    setSignInNeeded(false)
     stopTimer()
 
     try {
@@ -217,13 +248,24 @@ export default function IeltsWritingPage() {
 
       if (!res.ok) {
         let message = ''
+        let body: unknown = null
         try {
-          const body = (await res.json()) as { error?: string; message?: string }
-          message = body?.error ?? body?.message ?? ''
+          body = await res.json()
+          const parsed = body as { error?: string; message?: string } | null
+          message = parsed?.error ?? parsed?.message ?? ''
         } catch {
           /* non-JSON error body */
         }
+        // Switched on the machine-readable code, never on the 403 alone,
+        // which is also the plan paywall below.
+        const refusal = readConsentRefusal(res.status, body)
+        if (refusal) {
+          setConsentRefusal(refusal)
+          setIsSubmitting(false)
+          return
+        }
         if (res.status === 403) setPaywalled(true)
+        if (res.status === 401) setSignInNeeded(true)
         setError(friendlyError(t, res.status, message))
         setIsSubmitting(false)
         return
@@ -477,6 +519,18 @@ export default function IeltsWritingPage() {
             </div>
           </div>
 
+          {/* Consent block, answerable here with the response still written */}
+          {consentRefusal && !isSubmitting && (
+            <InlineAIConsentPrompt
+              refusal={consentRefusal}
+              onResolved={() => {
+                setConsentRefusal(null)
+                void handleSubmit()
+              }}
+              onDismiss={() => setConsentRefusal(null)}
+            />
+          )}
+
           {/* Error / paywall banner */}
           {error && (
             <div
@@ -491,6 +545,13 @@ export default function IeltsWritingPage() {
                     className="font-semibold underline underline-offset-2"
                   >
                     {t('ielts.writing.paywall.view_plans')}
+                  </Link>
+                </p>
+              )}
+              {signInNeeded && (
+                <p className="mt-2">
+                  <Link href={signInHref()} className="font-semibold underline underline-offset-2">
+                    {t('auth.sign_in')}
                   </Link>
                 </p>
               )}
@@ -529,6 +590,8 @@ export default function IeltsWritingPage() {
             setResponse('')
             setError(null)
             setPaywalled(false)
+            setConsentRefusal(null)
+            setSignInNeeded(false)
           }}
           onNewPrompt={() => {
             setFeedback(null)

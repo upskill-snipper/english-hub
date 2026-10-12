@@ -237,10 +237,28 @@ describe('what the suite runs in', () => {
     // passes. The "Play this text" rail assertions from the same change went
     // into the-rail-knows-which-text-it-is-in.test.tsx, already counted, rather
     // than raising this twice.
+    //
+    // Then to 29 on 12 October 2026 for an-ai-refusal-names-a-step-that-works
+    // .test.tsx. Nine AI pages answered some refusal with a paywall, bare text
+    // or nothing; what each must now do (show a link, show the consent panel in
+    // place of the paywall, send the same request again after an asynchronous
+    // save) exists only once a fetch has settled and state has changed. The
+    // /marking/submit part of it had source-string tests that passed while the
+    // page's live path never ran the fix. One file for all nine pages, rather
+    // than one per page, so this rose by one.
+    //
+    // Then to 30, the same day, for a-google-sign-up-is-asked-for-its-date-of-birth
+    // .test.tsx. /auth/complete-profile is the one step a first Google or Apple
+    // sign-in passes through, and what it must get right happens only once it
+    // runs: it saves through the shared endpoint after a submit, then replaces
+    // the route with the destination it was given, and its "Not now" link
+    // never leaves the site whatever `next` says. The routing that sends people
+    // there is tested in the node environment, in
+    // a-new-account-lands-where-its-role-belongs.test.ts.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(28)
+    ).toBeLessThanOrEqual(30)
   })
 })
 

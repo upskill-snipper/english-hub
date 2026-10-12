@@ -719,6 +719,18 @@ export const ES_MESSAGES: Record<string, string> = {
   'auth.register.welcome_suffix':
     'Abre ese correo y sigue el enlace para terminar de crear tu cuenta. Podrás iniciar sesión cuando lo hayas hecho.',
   'auth.register.trial_ready_lead': 'Tu prueba gratuita empieza cuando confirmes tu correo.',
+  'marking.submit.refusal.essay_kept':
+    'Tu redacción se guarda en esta pestaña durante una hora, así que seguirá aquí cuando vuelvas.',
+  'marking.submit.refusal.plans_from':
+    'Los planes de estudiante empiezan en £{monthly} al mes, o £{annual} al año.',
+  'auth.complete_profile.title': 'Un paso más',
+  'auth.complete_profile.body':
+    'Añade tu fecha de nacimiento para que se activen la corrección y los comentarios con IA. La usamos para aplicar las protecciones adecuadas a tu edad, y solo tienes que hacerlo una vez.',
+  'auth.complete_profile.continue': 'Continuar',
+  'auth.complete_profile.saving': 'Guardando…',
+  'auth.complete_profile.not_now': 'Ahora no',
+  'auth.complete_profile.invalid_date': 'Revisa esa fecha de nacimiento y vuelve a intentarlo.',
+  'auth.complete_profile.terms_before': 'Al continuar, aceptas nuestros',
   'auth.register.card_existing_account':
     '¿Ya tienes una cuenta con este correo? No enviamos otro enlace, así que inicia sesión o restablece tu contraseña:',
   'auth.register.card_guardian_after_confirm':
@@ -806,8 +818,9 @@ export const ES_MESSAGES: Record<string, string> = {
   'form.confirm_password_required': 'Confirma tu contraseña.',
   'form.new_password_required': 'Introduce una nueva contraseña.',
   'form.dob_required': 'La fecha de nacimiento es obligatoria.',
+  'form.dob_not_a_real_date': 'Esa fecha no existe. Revisa el día y el mes.',
   'form.under_13_blocked':
-    'Todavía no tienes la edad suficiente para crear tu propia cuenta. Pide a un padre o cuidador que cree una cuenta vinculada a un padre desde /parent.',
+    'Tienes que tener 13 años o más para crear tu propia cuenta. Si tu centro usa The English Hub, tu profesor puede crearte una. Nuestras guías de repaso se pueden leer gratis sin cuenta.',
   'form.guardian_email_required':
     'El correo del padre/tutor es obligatorio para los usuarios menores de 16 años.',
   'form.guardian_email_placeholder': 'parent@example.com',

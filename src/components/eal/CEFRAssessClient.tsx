@@ -26,10 +26,21 @@ import { findEALTopic } from '@/lib/eal/curriculum'
 import { CEFR_LABEL } from '@/lib/eal/cefr'
 import type { CEFRAssessmentResult } from '@/lib/eal/assess'
 import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
+import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
+import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
 
 type Skill = 'writing' | 'speaking'
 
-/** Distinguishes auth/subscription errors so we can show the right CTA. */
+/**
+ * Distinguishes auth/subscription errors so we can show the right CTA.
+ *
+ * 'subscription' is a 403 with NO consent code. Until 12 October 2026 every
+ * 403 was, so a learner refused for consent (for example with no date of birth
+ * on file, true of 73% of signed-in accounts) was told to "Upgrade to
+ * Premium". The route checks the subscription BEFORE consent, so those
+ * learners were already Premium. A coded 403 now gets the consent step in
+ * place instead, and the same assessment runs again once it is answered.
+ */
 type ErrState = { kind: 'auth' | 'subscription' | 'rate' | 'generic'; message: string }
 
 const MIN_WORDS = 30
@@ -48,6 +59,7 @@ export function CEFRAssessClient({ slug, skill }: { slug: string; skill: Skill }
   const [text, setText] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [err, setErr] = useState<ErrState | null>(null)
+  const [consentRefusal, setConsentRefusal] = useState<AIConsentRefusal | null>(null)
   const [result, setResult] = useState<CEFRAssessmentResult | null>(null)
   const [remaining, setRemaining] = useState<number | null>(null)
 
@@ -85,6 +97,7 @@ export function CEFRAssessClient({ slug, skill }: { slug: string; skill: Skill }
     }
     setSubmitting(true)
     setErr(null)
+    setConsentRefusal(null)
     setResult(null)
     try {
       const res = await fetch('/api/cefr-assess', {
@@ -104,6 +117,12 @@ export function CEFRAssessClient({ slug, skill }: { slug: string; skill: Skill }
       }
 
       if (!res.ok) {
+        // Switched on the machine-readable code, never on the 403 alone.
+        const refusal = readConsentRefusal(res.status, data)
+        if (refusal) {
+          setConsentRefusal(refusal)
+          return
+        }
         const message =
           data.error ||
           (isAr ? 'حدث خطأ. حاول مرة أخرى.' : 'Something went wrong. Please try again.')
@@ -141,6 +160,7 @@ export function CEFRAssessClient({ slug, skill }: { slug: string; skill: Skill }
   function handleReset() {
     setResult(null)
     setErr(null)
+    setConsentRefusal(null)
   }
 
   return (
@@ -201,7 +221,18 @@ export function CEFRAssessClient({ slug, skill }: { slug: string; skill: Skill }
             )}
           </div>
 
-          {err && <ErrorPanel err={err} isAr={isAr} />}
+          {consentRefusal && !submitting && (
+            <InlineAIConsentPrompt
+              refusal={consentRefusal}
+              onResolved={() => {
+                setConsentRefusal(null)
+                void handleSubmit()
+              }}
+              onDismiss={() => setConsentRefusal(null)}
+            />
+          )}
+
+          {err && <ErrorPanel err={err} isAr={isAr} returnTo={`/eal/${slug}/${skill}`} />}
 
           <div className="mt-4 flex items-center justify-between gap-3">
             <p className="text-xs text-muted-foreground">
@@ -240,13 +271,19 @@ export function CEFRAssessClient({ slug, skill }: { slug: string; skill: Skill }
 
 // ─── Error panel with contextual CTA ──────────────────────────────────────────
 
-function ErrorPanel({ err, isAr }: { err: ErrState; isAr: boolean }) {
+function ErrorPanel({ err, isAr, returnTo }: { err: ErrState; isAr: boolean; returnTo: string }) {
+  // The sign-in link used to be a bare /auth/login, which lands on the
+  // dashboard afterwards, so the learner lost the task they were on. It now
+  // comes back here, on the surface they were reading (an Arabic reader on
+  // /ar/eal/... returns there). Rendered only after a refusal, so `window`
+  // exists when it is read.
+  const here = typeof window === 'undefined' ? returnTo : window.location.pathname
   return (
     <div className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/[0.06] p-4 text-sm">
       <p className="text-amber-800 dark:text-amber-300">{err.message}</p>
       {err.kind === 'auth' && (
         <Link
-          href="/auth/login"
+          href={`/auth/login?redirect=${encodeURIComponent(here)}`}
           className="mt-3 inline-block rounded-lg bg-teal-600 px-4 py-2 text-xs font-semibold text-white hover:bg-teal-700"
         >
           {isAr ? 'تسجيل الدخول' : 'Sign in'}

@@ -150,6 +150,10 @@ export default function EssayFeedbackPage() {
   // A consent block is a decision the learner can make on this page, with
   // their essay still in the box, rather than a message sending them away.
   const [consentRefusal, setConsentRefusal] = useState<AIConsentRefusal | null>(null)
+  // The way out of any other refusal. Until 12 October 2026 a 403 with no code
+  // ("Essay feedback is a Premium feature. Please upgrade...") and a 401 (the
+  // session ran out mid-essay) were the server's sentence with nothing to press.
+  const [errorStep, setErrorStep] = useState<'plans' | 'signin' | null>(null)
   const [feedback, setFeedback] = useState<FeedbackData | null>(null)
   // Server id of the persisted Essay row (2026-08-18: feedback is now
   // stored, so a human-review request can reference the actual work
@@ -235,6 +239,7 @@ export default function EssayFeedbackPage() {
   // Submit essay
   async function handleSubmit(e?: React.FormEvent) {
     e?.preventDefault()
+    setErrorStep(null)
     if (!user) {
       setError('Please sign in to use essay feedback.')
       return
@@ -279,6 +284,10 @@ export default function EssayFeedbackPage() {
           setConsentRefusal(refusal)
           return
         }
+        // Only now, with the school and consent codes ruled out, is a 403
+        // the paywall.
+        if (res.status === 401) setErrorStep('signin')
+        else if (res.status === 403) setErrorStep('plans')
         setError(data.error || 'Something went wrong. Please try again.')
         return
       }
@@ -313,6 +322,7 @@ export default function EssayFeedbackPage() {
   function handleTryAgain() {
     setFeedback(null)
     setError(null)
+    setErrorStep(null)
     setConsentRefusal(null)
     setEssay('')
     setQuestionText('')
@@ -582,7 +592,28 @@ export default function EssayFeedbackPage() {
             {error && (
               <div className="flex items-start gap-2 rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">
                 <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
-                {error}
+                <span>
+                  {error}
+                  {errorStep === 'plans' && (
+                    <>
+                      {' '}
+                      <Link href="/pricing" className="font-semibold underline underline-offset-2">
+                        {t('billing.notpro.cta')}
+                      </Link>
+                    </>
+                  )}
+                  {errorStep === 'signin' && (
+                    <>
+                      {' '}
+                      <Link
+                        href={`/auth/login?redirect=${encodeURIComponent(window.location.pathname)}`}
+                        className="font-semibold underline underline-offset-2"
+                      >
+                        {t('auth.sign_in')}
+                      </Link>
+                    </>
+                  )}
+                </span>
               </div>
             )}
 

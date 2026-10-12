@@ -125,8 +125,11 @@ describe('the refusal', () => {
   })
 
   it('offers a sign-in that returns to this page', () => {
+    // The href is built from the live path so an Arabic reader on
+    // /ar/marking/submit comes back to the Arabic surface. What it renders is
+    // pinned in an-ai-refusal-names-a-step-that-works.test.tsx.
     expect(page).toContain("refusalKind === 'signin'")
-    expect(page).toContain('/auth/login?redirect=%2Fmarking%2Fsubmit')
+    expect(page).toContain('/auth/login?redirect=${encodeURIComponent(here)}')
   })
 
   it('still carries the server sentence rather than replacing it', () => {

@@ -12,6 +12,16 @@
 // STILL recorded and the task is marked "submitted" (no band). The mock never
 // blocks on AI availability. The Writing band reported up is the average of the
 // task bands that scored; if neither scored, status is "submitted" with a note.
+//
+// The one exception is a refusal the candidate can answer: a 403 carrying a
+// consent code. Until 12 October 2026 it was swallowed like the rest, and the
+// report blamed an unavailable service or a missing Premium plan. The route
+// checks the IELTS plan BEFORE consent, so these candidates had the plan, and
+// could be missing nothing but a date of birth (73% of signed-in accounts had
+// none on file on 12 October 2026), yet lost the band for a 60-minute section.
+// The stage now holds, offers the consent step in place, and marks the same
+// answers once it is answered. Finishing the section without it records them
+// unscored.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { useCallback, useRef, useState } from 'react'
@@ -20,6 +30,8 @@ import { PenLine, Check, Loader2, AlertTriangle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
+import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
 import type {
   Band,
   CriterionFeedback,
@@ -37,10 +49,18 @@ import StageHeader from './StageHeader'
 
 type TaskTab = 'writing-task-1' | 'writing-task-2'
 
-interface ScoredTask {
-  band: Band | null
-  criteria: CriterionFeedback[]
-}
+/**
+ * What came back for one task. 'refused' is a 403 with a consent code, and is
+ * deliberately NOT recorded yet: the stage asks again once the consent step is
+ * answered, and recording it here as well would save the same answer twice.
+ */
+type TaskOutcome =
+  | { kind: 'scored'; band: Band; criteria: CriterionFeedback[] }
+  | { kind: 'unscored'; nextStep?: 'signin' | 'plans'; consentSkipped?: boolean }
+  | { kind: 'refused'; refusal: AIConsentRefusal }
+
+type ScoredOutcome = Extract<TaskOutcome, { kind: 'scored' }>
+type RefusedOutcome = Extract<TaskOutcome, { kind: 'refused' }>
 
 function countWords(text: string): number {
   const trimmed = text.trim()
@@ -62,18 +82,20 @@ function isTaskFeedback(value: unknown): value is TaskFeedback {
 /**
  * Score one writing task via the feedback API. Always resolves (never throws):
  * on any non-OK / network / parse problem it persists the response as a
- * "submitted" attempt and returns a null band so the mock can continue.
+ * "submitted" attempt and returns 'unscored' so the mock can continue. A
+ * consent refusal is returned as 'refused', unrecorded, for the stage to
+ * answer.
  */
 async function scoreTask(
   prompt: WritingPrompt,
   response: string,
   track: IeltsTrack,
-): Promise<ScoredTask> {
+): Promise<TaskOutcome> {
   const trimmed = response.trim()
   // Too short for the API's 50-char floor → record, don't score.
   if (trimmed.length < 50) {
     persistSubmitted(prompt, trimmed)
-    return { band: null, criteria: [] }
+    return { kind: 'unscored' }
   }
 
   try {
@@ -90,14 +112,21 @@ async function scoreTask(
     })
 
     if (!res.ok) {
+      // Switched on the machine-readable code, never on the 403 alone,
+      // which is also the IELTS-plan paywall.
+      const body: unknown = await res.json().catch(() => null)
+      const refusal = readConsentRefusal(res.status, body)
+      if (refusal) return { kind: 'refused', refusal }
       persistSubmitted(prompt, trimmed)
-      return { band: null, criteria: [] }
+      if (res.status === 401) return { kind: 'unscored', nextStep: 'signin' }
+      if (res.status === 403) return { kind: 'unscored', nextStep: 'plans' }
+      return { kind: 'unscored' }
     }
 
     const data = (await res.json().catch(() => null)) as { feedback?: unknown } | null
     if (!data || !isTaskFeedback(data.feedback)) {
       persistSubmitted(prompt, trimmed)
-      return { band: null, criteria: [] }
+      return { kind: 'unscored' }
     }
 
     const fb = data.feedback
@@ -116,10 +145,10 @@ async function scoreTask(
     } catch {
       /* non-fatal */
     }
-    return { band: fb.overallBand, criteria: fb.criteria }
+    return { kind: 'scored', band: fb.overallBand, criteria: fb.criteria }
   } catch {
     persistSubmitted(prompt, trimmed)
-    return { band: null, criteria: [] }
+    return { kind: 'unscored' }
   }
 }
 
@@ -161,6 +190,12 @@ export default function WritingStage({
   const [response2, setResponse2] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const finishedRef = useRef(false)
+  // Held on a consent refusal: the answers are final and the clock is paused
+  // (submitting stays true) while the candidate answers it or moves on.
+  const [held, setHeld] = useState<{
+    outcomes: [TaskOutcome, TaskOutcome]
+    refusal: AIConsentRefusal
+  } | null>(null)
 
   // Latest text held in refs so the timer's auto-submit always captures what is
   // on screen, even if it fires between renders.
@@ -169,41 +204,89 @@ export default function WritingStage({
   r1Ref.current = response1
   r2Ref.current = response2
 
-  const finish = useCallback(() => {
-    if (finishedRef.current) return
-    finishedRef.current = true
-    setSubmitting(true)
+  // The section result the report reads, from the two task outcomes.
+  const report = useCallback(
+    (outcomes: [TaskOutcome, TaskOutcome]) => {
+      const scored = outcomes.filter((o): o is ScoredOutcome => o.kind === 'scored')
 
-    void (async () => {
-      const [t1, t2] = await Promise.all([
-        scoreTask(task1, r1Ref.current, track),
-        scoreTask(task2, r2Ref.current, track),
-      ])
-
-      const scoredBands = [t1.band, t2.band].filter((b): b is Band => b !== null)
-      const criteria = [...t1.criteria, ...t2.criteria]
-
-      if (scoredBands.length === 0) {
+      if (scored.length === 0) {
+        const nextStep = outcomes
+          .map((o) => (o.kind === 'unscored' ? o.nextStep : undefined))
+          .find((step) => step !== undefined)
+        // The catch-all note guesses at an outage or a missing plan. Neither
+        // is true of a candidate who chose to carry on past the consent step,
+        // and a signed-out candidate is told the actual reason.
+        const consentSkipped = outcomes.some((o) => o.kind === 'unscored' && o.consentSkipped)
+        let note: string | undefined = t('ielts.mock.writing.note_none_scored')
+        if (consentSkipped) note = undefined
+        else if (nextStep === 'signin') note = t('ielts.writing.error.401')
         onComplete({
           skill: 'writing',
           status: 'submitted',
           band: null,
           criteria: [],
-          note: t('ielts.mock.writing.note_none_scored'),
+          note,
+          nextStep,
         })
         return
       }
 
-      const mean = scoredBands.reduce<number>((sum, b) => sum + b, 0) / scoredBands.length
+      const mean = scored.reduce<number>((sum, o) => sum + o.band, 0) / scored.length
       onComplete({
         skill: 'writing',
         status: 'scored',
         band: roundToBand(mean),
-        criteria,
-        note: scoredBands.length === 1 ? t('ielts.mock.writing.note_one_scored') : undefined,
+        criteria: scored.flatMap((o) => o.criteria),
+        note: scored.length === 1 ? t('ielts.mock.writing.note_one_scored') : undefined,
       })
-    })()
-  }, [task1, task2, track, onComplete, t])
+    },
+    [onComplete, t],
+  )
+
+  // Scores whichever tasks still need it. A band already returned is kept, so a
+  // retry after the consent step never sends, or saves, a task twice.
+  const settle = useCallback(
+    async (previous?: [TaskOutcome, TaskOutcome]) => {
+      const outcomes: [TaskOutcome, TaskOutcome] = await Promise.all([
+        previous && previous[0].kind !== 'refused'
+          ? previous[0]
+          : scoreTask(task1, r1Ref.current, track),
+        previous && previous[1].kind !== 'refused'
+          ? previous[1]
+          : scoreTask(task2, r2Ref.current, track),
+      ])
+      const refused = outcomes.find((o): o is RefusedOutcome => o.kind === 'refused')
+      if (refused) {
+        setHeld({ outcomes, refusal: refused.refusal })
+        return
+      }
+      report(outcomes)
+    },
+    [task1, task2, track, report],
+  )
+
+  const finish = useCallback(() => {
+    if (finishedRef.current) return
+    finishedRef.current = true
+    setSubmitting(true)
+    void settle()
+  }, [settle])
+
+  // Finishing the section without the consent step. The refused answers are
+  // recorded now, as any other unscored answer is.
+  const carryOn = useCallback(() => {
+    if (!held) return
+    const skip = (o: TaskOutcome, prompt: WritingPrompt, text: string): TaskOutcome => {
+      if (o.kind !== 'refused') return o
+      persistSubmitted(prompt, text.trim())
+      return { kind: 'unscored', consentSkipped: true }
+    }
+    setHeld(null)
+    report([
+      skip(held.outcomes[0], task1, r1Ref.current),
+      skip(held.outcomes[1], task2, r2Ref.current),
+    ])
+  }, [held, task1, task2, report])
 
   const active = tab === 'writing-task-1' ? task1 : task2
   const activeResponse = tab === 'writing-task-1' ? response1 : response2
@@ -315,21 +398,37 @@ export default function WritingStage({
           </div>
         </div>
 
-        {submitting && (
+        {submitting && !held && (
           <div className="mt-6 flex items-center gap-2 rounded-xl border border-border/60 bg-card p-4 text-sm text-muted-foreground">
             <Loader2 className="size-4 animate-spin text-primary" />
             {t('ielts.mock.writing.marking_notice')}
           </div>
         )}
 
+        {/* Answered in place; once it is, the same two answers are marked. */}
+        {held && (
+          <InlineAIConsentPrompt
+            refusal={held.refusal}
+            onResolved={() => {
+              const previous = held.outcomes
+              setHeld(null)
+              void settle(previous)
+            }}
+          />
+        )}
+
         <div className="mt-8 rounded-2xl border border-border/60 bg-card p-5">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="flex items-start gap-2 text-sm text-muted-foreground">
-              <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-500" />
-              <span>{t('ielts.mock.writing.finish_warning')}</span>
-            </p>
-            <Button size="lg" onClick={finish} disabled={submitting}>
-              {submitting ? (
+            {/* "Submitting marks both tasks" is not true while held: the
+                button below then moves on without marking. */}
+            {!held && (
+              <p className="flex items-start gap-2 text-sm text-muted-foreground">
+                <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-500" />
+                <span>{t('ielts.mock.writing.finish_warning')}</span>
+              </p>
+            )}
+            <Button size="lg" onClick={held ? carryOn : finish} disabled={submitting && !held}>
+              {submitting && !held ? (
                 <Loader2 className="size-4 animate-spin" />
               ) : (
                 <Check className="size-4" />

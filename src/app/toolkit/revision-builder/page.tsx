@@ -2,6 +2,7 @@
 
 import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
+import { useT } from '@/lib/i18n/use-t'
 import { useState, useCallback } from 'react'
 import { useTopicFromUrl } from '@/lib/toolkit/use-topic-from-url'
 import Link from 'next/link'
@@ -20,6 +21,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { Badge } from '@/components/ui/badge'
 import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
+import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
+import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
 import { Button } from '@/components/ui/button'
 import {
   LS_KEYS,
@@ -34,8 +37,20 @@ import {
 // based on their weak areas and target grade.
 // ──────────────────────────────────────────────────────────────────────────
 
+/**
+ * Sign in, then come back here on the surface the visitor is on. /toolkit is
+ * behind the sign-in wall, so a 401 here means the session ran out mid-task.
+ * Read only after a refusal, so `window` exists.
+ */
+function signInHref(): string {
+  const here =
+    typeof window === 'undefined' ? '/toolkit/revision-builder' : window.location.pathname
+  return `/auth/login?redirect=${encodeURIComponent(here)}`
+}
+
 export default function RevisionBuilderPage() {
   const locale = useLocale()
+  const t = useT()
   const tr = (en: string): string => {
     if (locale !== 'ar') return en
     for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
@@ -59,6 +74,19 @@ export default function RevisionBuilderPage() {
   const [loading, setLoading] = useState(false)
   const [notes, setNotes] = useState('')
   const [error, setError] = useState('')
+  /**
+   * Which way out the error offers.
+   *
+   * THE DEFECT (found 12 October 2026): every refusal became the server's
+   * sentence in a red box with nothing to press. A 403 carrying a consent code
+   * (for example no date of birth on file, true of 73% of signed-in accounts)
+   * told the learner to go and add it on another page; a 403 with no code said
+   * "Premium feature" and linked nowhere. The consent step now
+   * happens here and the same notes are generated once it is answered; plans
+   * and sign-in are offered only for the refusals they actually answer.
+   */
+  const [errorStep, setErrorStep] = useState<'plans' | 'signin' | null>(null)
+  const [consentRefusal, setConsentRefusal] = useState<AIConsentRefusal | null>(null)
   const [aiGenerated, setAiGenerated] = useState(false)
 
   // Detect weak areas from quiz history
@@ -79,6 +107,8 @@ export default function RevisionBuilderPage() {
 
   // Generate notes
   const generateNotes = useCallback(async () => {
+    setErrorStep(null)
+    setConsentRefusal(null)
     if (!topic) {
       setError('Please select a topic.')
       return
@@ -101,8 +131,17 @@ export default function RevisionBuilderPage() {
       })
 
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}))
-        throw new Error(data.error || 'Failed to generate notes')
+        const data: unknown = await res.json().catch(() => ({}))
+        // Switched on the machine-readable code, never on the 403 alone,
+        // which is also "not a subscriber".
+        const refusal = readConsentRefusal(res.status, data)
+        if (refusal) {
+          setConsentRefusal(refusal)
+          return
+        }
+        if (res.status === 401) setErrorStep('signin')
+        else if (res.status === 403) setErrorStep('plans')
+        throw new Error((data as { error?: string } | null)?.error || 'Failed to generate notes')
       }
 
       const data = await res.json()
@@ -210,10 +249,42 @@ export default function RevisionBuilderPage() {
         {!notes ? (
           /* ── Configuration ─────────────────────────────────────── */
           <div className="space-y-6">
+            {consentRefusal && !loading && (
+              <InlineAIConsentPrompt
+                refusal={consentRefusal}
+                onResolved={() => {
+                  setConsentRefusal(null)
+                  void generateNotes()
+                }}
+                onDismiss={() => setConsentRefusal(null)}
+              />
+            )}
+
             {error && (
               <div className="rounded-lg border border-red-500/20 bg-red-500/10 p-4 text-sm text-red-600 flex items-center gap-2">
                 <AlertTriangle className="h-4 w-4 shrink-0" />
-                {error}
+                <span>
+                  {error}
+                  {errorStep === 'plans' && (
+                    <>
+                      {' '}
+                      <Link href="/pricing" className="font-semibold underline underline-offset-2">
+                        {t('billing.notpro.cta')}
+                      </Link>
+                    </>
+                  )}
+                  {errorStep === 'signin' && (
+                    <>
+                      {' '}
+                      <Link
+                        href={signInHref()}
+                        className="font-semibold underline underline-offset-2"
+                      >
+                        {t('auth.sign_in')}
+                      </Link>
+                    </>
+                  )}
+                </span>
               </div>
             )}
 
@@ -392,6 +463,7 @@ export default function RevisionBuilderPage() {
                 onClick={() => {
                   setNotes('')
                   setError('')
+                  setErrorStep(null)
                 }}
               >
                 Generate New Notes

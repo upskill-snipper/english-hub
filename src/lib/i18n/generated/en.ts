@@ -697,6 +697,18 @@ export const EN_MESSAGES: Record<string, string> = {
   'auth.register.welcome_suffix':
     'Open that email and follow the link to finish creating your account. You can sign in once you have.',
   'auth.register.trial_ready_lead': 'Your free trial starts when you confirm your email.',
+  'marking.submit.refusal.essay_kept':
+    'Your essay is kept in this tab for an hour, so it will still be here when you come back.',
+  'marking.submit.refusal.plans_from':
+    'Student plans start at £{monthly}/month, or £{annual}/year.',
+  'auth.complete_profile.title': 'One more step',
+  'auth.complete_profile.body':
+    'Add your date of birth so that AI marking and feedback can switch on. We use it to apply the right protections for your age, and you only do this once.',
+  'auth.complete_profile.continue': 'Continue',
+  'auth.complete_profile.saving': 'Saving…',
+  'auth.complete_profile.not_now': 'Not now',
+  'auth.complete_profile.invalid_date': 'Please check that date of birth and try again.',
+  'auth.complete_profile.terms_before': 'By continuing, you agree to our',
   'auth.register.card_existing_account':
     'Already have an account with this email? We do not send another link, so sign in instead or reset your password:',
   'auth.register.card_guardian_after_confirm':
@@ -780,8 +792,9 @@ export const EN_MESSAGES: Record<string, string> = {
   'form.confirm_password_required': 'Please confirm your password.',
   'form.new_password_required': 'Please enter a new password.',
   'form.dob_required': 'Date of birth is required.',
+  'form.dob_not_a_real_date': 'That date does not exist. Please check the day and month.',
   'form.under_13_blocked':
-    "You're not yet old enough to create your own account. Ask a parent or carer to set up a parent-linked account from /parent.",
+    'You need to be 13 or over to create your own account. If your school uses The English Hub, your teacher can set one up for you. Our revision guides are free to read without an account.',
   'form.guardian_email_required': 'Parent/Guardian email is required for users under 16.',
   'form.guardian_email_placeholder': 'parent@example.com',
   'form.fix_errors_below': 'Please fix the errors below.',

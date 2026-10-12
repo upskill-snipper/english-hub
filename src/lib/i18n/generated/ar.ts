@@ -689,6 +689,18 @@ export const AR_MESSAGES: Record<string, string> = {
   'auth.register.welcome_suffix':
     'افتح الإيميل واضغط الرابط عشان تكمّل إنشاء حسابك. تقدر تسجّل دخولك بعدها.',
   'auth.register.trial_ready_lead': 'تجربتك المجانية تبدأ لما تأكد إيميلك.',
+  'marking.submit.refusal.essay_kept':
+    'مقالتك محفوظة في هالتبويب لمدة ساعة، وبتلقاها هني يوم ترجع.',
+  'marking.submit.refusal.plans_from':
+    'باقات الطلاب تبدأ من £{monthly} بالشهر، أو £{annual} بالسنة.',
+  'auth.complete_profile.title': 'باقي خطوة وحدة',
+  'auth.complete_profile.body':
+    'أضف تاريخ ميلادك عشان يشتغل التصحيح والملاحظات بالذكاء الاصطناعي. نستخدمه عشان نطبّق الحماية المناسبة لعمرك، وتسويها مرة وحدة بس.',
+  'auth.complete_profile.continue': 'كمّل',
+  'auth.complete_profile.saving': 'جاري الحفظ…',
+  'auth.complete_profile.not_now': 'مو الحين',
+  'auth.complete_profile.invalid_date': 'تأكد من تاريخ الميلاد وجرّب مرة ثانية.',
+  'auth.complete_profile.terms_before': 'لما تكمّل، أنت توافق على',
   'auth.register.card_existing_account':
     'عندك حساب من قبل بهذا الإيميل؟ ما نرسل رابط ثاني، فسجّل دخولك أو غيّر الرمز السري:',
   'auth.register.card_guardian_after_confirm':
@@ -767,8 +779,9 @@ export const AR_MESSAGES: Record<string, string> = {
   'form.confirm_password_required': 'أكد رمزك السري لو سمحت.',
   'form.new_password_required': 'اكتب رمز سري جديد لو سمحت.',
   'form.dob_required': 'تاريخ الميلاد مطلوب.',
+  'form.dob_not_a_real_date': 'هذا التاريخ مو موجود. تأكد من اليوم والشهر.',
   'form.under_13_blocked':
-    'لسا ما عندك العمر الكافي تسوّي حساب بنفسك. اطلب من والدك أو ولي أمرك يسوّي حساب مربوط فيك من /parent.',
+    'لازم يكون عمرك ١٣ سنة أو أكثر عشان تسوّي حساب بنفسك. إذا مدرستك تستخدم The English Hub، معلمك يقدر يسوّي لك حساب. وأدلة المراجعة عندنا تقدر تقراها مجاناً بدون حساب.',
   'form.guardian_email_required': 'إيميل ولي الأمر مطلوب للمستخدمين تحت ١٦ سنة.',
   'form.guardian_email_placeholder': 'parent@example.com',
   'form.fix_errors_below': 'صحّح الأخطاء اللي تحت لو سمحت.',

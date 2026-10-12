@@ -46,6 +46,8 @@ import { useLocale } from '@/lib/i18n/use-locale'
 import { IELTS_DIAGNOSTIC_DICTIONARY } from '@/lib/i18n/dictionary-ielts-diagnostic'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { DictationButton } from '@/components/speech/DictationButton'
+import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
+import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
 import { Recorder } from '../speaking/_components/Recorder'
 
 import {
@@ -108,10 +110,19 @@ interface AssessState {
   // 'exhausted' is NOT an error. The free AI allowance for this month is spent,
   // which is a normal, expected state with an upsell attached - rendering it in
   // red as a failure would tell a learner something went wrong when nothing did.
-  status: 'idle' | 'assessing' | 'done' | 'skipped' | 'error' | 'exhausted'
+  //
+  // 'consent' is not an error either (added 12 October 2026). A signed-in
+  // learner refused by the consent gate, for example with no date of birth on
+  // file (true of 73% of signed-in accounts), used to get the server's sentence
+  // in red, which sent them to their dashboard halfway through the diagnostic.
+  // The consent step is now offered here and the task is assessed again once
+  // it is answered.
+  status: 'idle' | 'assessing' | 'done' | 'skipped' | 'error' | 'exhausted' | 'consent'
   band?: Band
   justification?: string
   error?: string
+  /** 'consent' only: the refusal, read off its machine-readable code. */
+  refusal?: AIConsentRefusal
   /** 'exhausted' only: when the free allowance renews (ISO string). */
   resetsAt?: string
   /** 'exhausted' only: the cap that was in force. */
@@ -285,6 +296,16 @@ export default function IeltsDiagnosticPage() {
           return
         }
 
+        // A consent block. Only a signed-in learner can meet one: the route
+        // skips the consent check for anyone signed out.
+        const refusal = readConsentRefusal(res.status, data)
+        if (refusal) {
+          setState({ status: 'consent', refusal })
+          return
+        }
+
+        // Anything else, including a 403 with no code, which on this free
+        // route can only be the AI opt-out, so it is not dressed up as a plan.
         const message =
           typeof body.error === 'string' ? body.error : t('ielts.diagnostic.assess.error')
         setState({ status: 'error', error: message })
@@ -1157,6 +1178,12 @@ function AssessControls({
           <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
           <span>{state.error}</span>
         </div>
+      )}
+      {/* Answered in place; once it is, the same task is assessed again. The
+          skip button below stays, so a learner who cannot answer it here (a
+          child waiting for a parent) can still finish the diagnostic. */}
+      {state.status === 'consent' && state.refusal && (
+        <InlineAIConsentPrompt refusal={state.refusal} onResolved={onAssess} />
       )}
       <RemainingUsesLine t={t} allowance={allowance} />
       <div className="flex flex-wrap items-center gap-3">

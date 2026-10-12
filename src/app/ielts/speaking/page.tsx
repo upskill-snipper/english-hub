@@ -35,6 +35,8 @@ import {
 } from 'lucide-react'
 import { useAuthStore } from '@/store/auth-store'
 import { useT } from '@/lib/i18n/use-t'
+import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
+import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
 import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -79,6 +81,15 @@ function countWords(text: string): number {
 
 type Phase = 'idle' | 'prep' | 'speaking' | 'done'
 
+/**
+ * Sign in, then come back here on the surface the visitor is on. Read only
+ * after a refusal, so `window` exists.
+ */
+function signInHref(): string {
+  const here = typeof window === 'undefined' ? '/ielts/speaking' : window.location.pathname
+  return `/auth/login?redirect=${encodeURIComponent(here)}`
+}
+
 // ─── Page ──────────────────────────────────────────────────────────────────────
 
 export default function IeltsSpeakingPage() {
@@ -92,6 +103,20 @@ export default function IeltsSpeakingPage() {
   const [transcript, setTranscript] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  /**
+   * Which way out the error offers.
+   *
+   * THE DEFECT (found 12 October 2026): every error carried "View IELTS
+   * plans", including a network failure, a transcript that was too short, the
+   * daily limit, and a 403 with a consent code. The route checks the IELTS plan
+   * BEFORE consent, so that last one reached only plan holders (for example with
+   * no date of birth on file, true of 73% of signed-in accounts), and sent them
+   * to buy the plan they had. Plans are now offered only for a 403 with no code,
+   * sign-in for a 401, and a coded 403 gets the consent step in place, then the
+   * same submit again.
+   */
+  const [errorStep, setErrorStep] = useState<'plans' | 'signin' | null>(null)
+  const [consentRefusal, setConsentRefusal] = useState<AIConsentRefusal | null>(null)
   const [feedback, setFeedback] = useState<TaskFeedback | null>(null)
   const [disclaimer, setDisclaimer] = useState<string | null>(null)
   const [saved, setSaved] = useState(false)
@@ -131,6 +156,8 @@ export default function IeltsSpeakingPage() {
       setFeedback(null)
       setDisclaimer(null)
       setError(null)
+      setErrorStep(null)
+      setConsentRefusal(null)
       setSaved(false)
       setSelectedId(next?.id ?? null)
     },
@@ -179,11 +206,15 @@ export default function IeltsSpeakingPage() {
 
   // ── Submit transcript for feedback ───────────────────────────────────────
   const handleSubmit = useCallback(
-    async (e: React.FormEvent) => {
-      e.preventDefault()
+    // The event is optional so the consent panel can re-run the same submit.
+    async (e?: React.FormEvent) => {
+      e?.preventDefault()
       if (!cue) return
+      setErrorStep(null)
+      setConsentRefusal(null)
       if (!user) {
         setError(t('ielts.speaking.error.sign_in'))
+        setErrorStep('signin')
         return
       }
       const promptText = `${cue.title}\n\n${cue.prompts.join('\n')}`
@@ -212,11 +243,25 @@ export default function IeltsSpeakingPage() {
         const data: unknown = await res.json().catch(() => null)
 
         if (!res.ok) {
+          // Switched on the machine-readable code, never on the 403 alone,
+          // which is also the IELTS-plan paywall.
+          const refusal = readConsentRefusal(res.status, data)
+          if (refusal) {
+            setConsentRefusal(refusal)
+            return
+          }
+          if (res.status === 401) {
+            // The route's own 401 body is the bare word "Unauthorized".
+            setError(t('ielts.speaking.error.sign_in'))
+            setErrorStep('signin')
+            return
+          }
           const message =
             data && typeof data === 'object' && 'error' in data && typeof data.error === 'string'
               ? data.error
               : t('ielts.speaking.error.bad_request')
           setError(message)
+          if (res.status === 403) setErrorStep('plans')
           return
         }
 
@@ -268,6 +313,8 @@ export default function IeltsSpeakingPage() {
     setFeedback(null)
     setDisclaimer(null)
     setError(null)
+    setErrorStep(null)
+    setConsentRefusal(null)
     setSaved(false)
     setTranscript('')
     clearPhaseTimer()
@@ -564,18 +611,40 @@ export default function IeltsSpeakingPage() {
               />
             </div>
 
+            {/* Consent block, answerable here with the transcript still typed */}
+            {consentRefusal && !submitting && (
+              <InlineAIConsentPrompt
+                refusal={consentRefusal}
+                onResolved={() => {
+                  setConsentRefusal(null)
+                  void handleSubmit()
+                }}
+                onDismiss={() => setConsentRefusal(null)}
+              />
+            )}
+
             {error && (
               <div className="flex flex-col gap-2 rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">
                 <div className="flex items-start gap-2">
                   <AlertTriangle className="mt-0.5 size-4 shrink-0" />
                   <span>{error}</span>
                 </div>
-                <Link
-                  href="/pricing#ielts"
-                  className="self-start font-semibold underline underline-offset-2"
-                >
-                  View IELTS plans
-                </Link>
+                {errorStep === 'plans' && (
+                  <Link
+                    href="/pricing#ielts"
+                    className="self-start font-semibold underline underline-offset-2"
+                  >
+                    {t('ielts.modelans.upsell.cta')}
+                  </Link>
+                )}
+                {errorStep === 'signin' && (
+                  <Link
+                    href={signInHref()}
+                    className="self-start font-semibold underline underline-offset-2"
+                  >
+                    {t('auth.sign_in')}
+                  </Link>
+                )}
               </div>
             )}
 

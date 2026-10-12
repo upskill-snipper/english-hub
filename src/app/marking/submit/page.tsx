@@ -184,6 +184,28 @@ function friendlyError(status: number, body: string): string {
   return body || 'An unexpected error occurred. Please try again.'
 }
 
+/**
+ * Which way out of a refusal to offer. Asked only after readConsentRefusal has
+ * had its turn, so a 403 carrying a consent code never reaches here and
+ * 'upgrade' is left for the 403 with no code ("AI marking is a Premium
+ * feature").
+ */
+function refusalKindFor(status: number): 'upgrade' | 'signin' | null {
+  if (status === 401) return 'signin'
+  if (status === 403) return 'upgrade'
+  return null
+}
+
+/**
+ * Sign in, then come back to this page on the surface the visitor is on: an
+ * Arabic reader on /ar/marking/submit returns there, not to the English URL.
+ * Only rendered after a refusal, so `window` always exists when it is read.
+ */
+function signInHref(): string {
+  const here = typeof window === 'undefined' ? '/marking/submit' : window.location.pathname
+  return `/auth/login?redirect=${encodeURIComponent(here)}`
+}
+
 /* ─── Page ─────────────────────────────────────────────────── */
 
 export default function SubmitEssayPage() {
@@ -255,6 +277,14 @@ export default function SubmitEssayPage() {
    * offered no way to pay. A 401 was worse: /marking is not a protected route,
    * so a signed-out visitor could type a 600-word essay and be told "You need
    * to sign in" as text, with nothing carrying the essay through login.
+   *
+   * THE SAME DEFECT, STILL LIVE (found 12 October 2026). That fix was made on
+   * the /api/mark fallback only. The path every submission actually takes,
+   * /api/submissions then /api/marking/run, handed back nothing but a sentence,
+   * so the refusal kind never got set there: a signed-out visitor still got
+   * plain text and lost the essay, and a lapsed trial was still refused with
+   * no link to the plans. trySubmissionSpine now returns the kind with the
+   * sentence, and both paths go through the same `refuse` below.
    */
   const [refusalKind, setRefusalKind] = useState<'upgrade' | 'signin' | null>(null)
   // Refused for consent, as opposed to refused for anything else. Held
@@ -368,7 +398,7 @@ export default function SubmitEssayPage() {
     }): Promise<
       | { submissionId: string }
       | { unavailable: true }
-      | { failed: string }
+      | { failed: string; refusalKind?: 'upgrade' | 'signin' | null }
       | { consentRefusal: AIConsentRefusal }
     > => {
       let createRes: Response
@@ -425,7 +455,10 @@ export default function SubmitEssayPage() {
           surface: 'marking/submit',
         })
         if (refusal) return { consentRefusal: refusal }
-        return { failed: friendlyError(createRes.status, message) }
+        return {
+          failed: friendlyError(createRes.status, message),
+          refusalKind: refusalKindFor(createRes.status),
+        }
       }
 
       let submissionId = ''
@@ -475,7 +508,10 @@ export default function SubmitEssayPage() {
             surface: 'marking/submit',
           })
           if (refusal) return { consentRefusal: refusal }
-          return { failed: friendlyError(runRes.status, message) }
+          return {
+            failed: friendlyError(runRes.status, message),
+            refusalKind: refusalKindFor(runRes.status),
+          }
         }
       } catch {
         // Network failure between create and run: the submission exists but
@@ -515,6 +551,19 @@ export default function SubmitEssayPage() {
         (q) => q.id === question,
       )?.questionType
 
+      // A refusal with its way out, the same on both paths below.
+      const refuse = (kind: 'upgrade' | 'signin' | null, message: string) => {
+        if (kind === 'signin') {
+          // Carry the work through the login round trip. Session storage,
+          // not local: a shared or school machine must not keep someone
+          // else's essay after the tab closes.
+          saveMarkingDraft({ board, paper, question, title, essay })
+        }
+        setRefusalKind(kind)
+        setError(message)
+        setIsSubmitting(false)
+      }
+
       // ── Server persistence (Smart IP submission spine) ─────────────────
       // Preferred path: persist + AI-mark server-side and route by
       // submissionId. Falls back to the legacy /api/mark + localStorage
@@ -537,8 +586,7 @@ export default function SubmitEssayPage() {
         return
       }
       if ('failed' in spine) {
-        setError(spine.failed)
-        setIsSubmitting(false)
+        refuse(spine.refusalKind ?? null, spine.failed)
         return
       }
       if ('submissionId' in spine) {
@@ -628,16 +676,7 @@ export default function SubmitEssayPage() {
             setIsSubmitting(false)
             return
           }
-          if (res.status === 403) setRefusalKind('upgrade')
-          if (res.status === 401) {
-            // Carry the work through the login round trip. Session storage,
-            // not local: a shared or school machine must not keep someone
-            // else's essay after the tab closes.
-            saveMarkingDraft({ board, paper, question, title, essay })
-            setRefusalKind('signin')
-          }
-          setError(friendlyError(res.status, message))
-          setIsSubmitting(false)
+          refuse(refusalKindFor(res.status), friendlyError(res.status, message))
           return
         }
 
@@ -1064,24 +1103,28 @@ export default function SubmitEssayPage() {
                         href="/pricing?plan=student_monthly"
                         className="inline-flex items-center rounded-lg bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
                       >
-                        See plans
+                        {tx('billing.notpro.cta')}
                       </Link>
                       <span className="text-xs text-muted-foreground">
-                        Student plans start at &pound;{PRICING.STUDENT_MONTHLY}/month, or &pound;
-                        {PRICING.STUDENT_ANNUAL}/year.
+                        {tx('marking.submit.refusal.plans_from')
+                          .replace('{monthly}', String(PRICING.STUDENT_MONTHLY))
+                          .replace('{annual}', String(PRICING.STUDENT_ANNUAL))}
                       </span>
                     </div>
                   )}
                   {refusalKind === 'signin' && (
                     <div className="mt-3 flex flex-wrap items-center gap-2">
                       <Link
-                        href="/auth/login?redirect=%2Fmarking%2Fsubmit"
+                        href={signInHref()}
                         className="inline-flex items-center rounded-lg bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
                       >
-                        Sign in and come back
+                        {tx('auth.sign_in')}
                       </Link>
+                      {/* The draft lives in sessionStorage for an hour (see
+                          src/lib/marking/draft-store.ts), so the note says
+                          "this tab", not "this device". */}
                       <span className="text-xs text-muted-foreground">
-                        Your essay is saved on this device and will be here when you return.
+                        {tx('marking.submit.refusal.essay_kept')}
                       </span>
                     </div>
                   )}

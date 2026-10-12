@@ -29,6 +29,17 @@ interface SkillRow {
   status: 'scored' | 'submitted'
   criteria: CriterionFeedback[]
   note?: string
+  /** The way out of the refusal that left this section unscored, if any. */
+  nextStep?: 'signin' | 'plans'
+}
+
+/**
+ * Sign in, then come back to the mock on the surface the candidate is on. Read
+ * only on the report, in the browser, so `window` exists.
+ */
+function signInHref(): string {
+  const here = typeof window === 'undefined' ? '/ielts/mock' : window.location.pathname
+  return `/auth/login?redirect=${encodeURIComponent(here)}`
 }
 
 export default function MockReport({
@@ -79,6 +90,7 @@ export default function MockReport({
       status: results.writing?.status ?? 'submitted',
       criteria: results.writing?.criteria ?? [],
       note: results.writing?.note,
+      nextStep: results.writing?.nextStep,
     },
     {
       skill: 'speaking',
@@ -91,6 +103,7 @@ export default function MockReport({
       status: results.speaking?.status ?? 'submitted',
       criteria: results.speaking?.criteria ?? [],
       note: results.speaking?.note,
+      nextStep: results.speaking?.nextStep,
     },
   ]
 
@@ -156,6 +169,30 @@ export default function MockReport({
               {row.status === 'submitted' && row.note && (
                 <p className="mt-3 rounded-lg border border-amber-500/25 bg-amber-500/5 p-2.5 text-[11px] leading-relaxed text-muted-foreground">
                   {row.note}
+                  {/* A refusal names its way out: the note alone used to
+                      guess at an outage or a missing plan and link nowhere. */}
+                  {row.nextStep === 'signin' && (
+                    <>
+                      {' '}
+                      <Link
+                        href={signInHref()}
+                        className="font-semibold text-primary underline underline-offset-2"
+                      >
+                        {t('auth.sign_in')}
+                      </Link>
+                    </>
+                  )}
+                  {row.nextStep === 'plans' && (
+                    <>
+                      {' '}
+                      <Link
+                        href="/pricing#ielts"
+                        className="font-semibold text-primary underline underline-offset-2"
+                      >
+                        {t('ielts.modelans.upsell.cta')}
+                      </Link>
+                    </>
+                  )}
                 </p>
               )}
             </div>

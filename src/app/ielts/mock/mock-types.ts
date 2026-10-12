@@ -77,6 +77,14 @@ export interface TaskResult {
   criteria: CriterionFeedback[]
   /** Optional human note shown in the report when not scored (e.g. why). */
   note?: string
+  /**
+   * The way out the report offers when a refusal left this section unscored:
+   * 'signin' for a 401, 'plans' for a 403 with no consent code. A 403 WITH a
+   * consent code never reaches the report; the stage answers it in place
+   * (added 12 October 2026, when every refusal here read "may require a
+   * Premium subscription" and linked nowhere).
+   */
+  nextStep?: 'signin' | 'plans'
 }
 
 /** Per-skill result bucket the final report reads. */

@@ -15,6 +15,11 @@
 // /api/ielts/speaking-feedback. Resilience (per spec): any non-OK / network /
 // parse failure still records the response and reports a "submitted" result so
 // the mock completes regardless of AI availability.
+//
+// Except a 403 carrying a consent code (12 October 2026): see WritingStage for
+// the defect. The stage holds, offers the consent step in place, and asks for
+// the band again once it is answered; finishing without it records the answers
+// unscored.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { useCallback, useEffect, useRef, useState } from 'react'
@@ -22,6 +27,8 @@ import { Mic, Check, Loader2, Timer, AlertTriangle } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
+import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
+import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
 import type {
   Band,
   CriterionFeedback,
@@ -76,6 +83,8 @@ export default function SpeakingStage({
   const [t3, setT3] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const finishedRef = useRef(false)
+  // Held on a consent refusal, with the clock paused (submitting stays true).
+  const [heldRefusal, setHeldRefusal] = useState<AIConsentRefusal | null>(null)
 
   const transcriptRefs = useRef<Record<PartKey, string>>({ p1: '', p2: '', p3: '' })
   transcriptRefs.current = { p1: t1, p2: t2, p3: t3 }
@@ -134,27 +143,21 @@ export default function SpeakingStage({
   }, [clearSub])
 
   // ── Finish: combine transcripts, POST, persist, report up ─────────────────
-  const finish = useCallback(() => {
-    if (finishedRef.current) return
-    finishedRef.current = true
-    clearSub()
-    setSubmitting(true)
-
+  // The combined answer, read from the refs so a retry after the consent step
+  // sends exactly what was on screen when the section finished.
+  const combinedAnswer = useCallback(() => {
     const parts = transcriptRefs.current
-    const combined = [
+    return [
       `${part1.title}\n${parts.p1.trim()}`,
       `${part2.title}\n${parts.p2.trim()}`,
       `${part3.title}\n${parts.p3.trim()}`,
     ].join('\n\n')
+  }, [part1, part2, part3])
 
-    const promptText = [
-      `${part1.title}\n${part1.prompts.join('\n')}`,
-      `${part2.title}\n${part2.prompts.join('\n')}`,
-      `${part3.title}\n${part3.prompts.join('\n')}`,
-    ].join('\n\n')
-
-    const recordSubmitted = (note: string) => {
+  const recordSubmitted = useCallback(
+    (note: string | undefined, nextStep?: 'signin' | 'plans') => {
       // Persist what we have so the work is never lost, then report up.
+      const combined = combinedAnswer()
       try {
         if (combined.trim().length > 0) {
           saveAttempt({
@@ -172,62 +175,109 @@ export default function SpeakingStage({
       } catch {
         /* non-fatal */
       }
-      onComplete({ skill: 'speaking', status: 'submitted', band: null, criteria: [], note })
+      onComplete({
+        skill: 'speaking',
+        status: 'submitted',
+        band: null,
+        criteria: [],
+        note,
+        nextStep,
+      })
+    },
+    [combinedAnswer, part2, onComplete],
+  )
+
+  const requestBand = useCallback(async () => {
+    const combined = combinedAnswer()
+    const promptText = [
+      `${part1.title}\n${part1.prompts.join('\n')}`,
+      `${part2.title}\n${part2.prompts.join('\n')}`,
+      `${part3.title}\n${part3.prompts.join('\n')}`,
+    ].join('\n\n')
+
+    // Not enough typed to score (API floor is 20 chars) → record only.
+    if (combined.trim().length < 20) {
+      recordSubmitted(t('ielts.mock.speaking.note_too_short'))
+      return
     }
 
-    void (async () => {
-      // Not enough typed to score (API floor is 20 chars) → record only.
-      if (combined.trim().length < 20) {
-        recordSubmitted(t('ielts.mock.speaking.note_too_short'))
+    try {
+      const res = await fetch('/api/ielts/speaking-feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          part: 'speaking-part-2',
+          promptText,
+          transcript: combined.trim().slice(0, 8000),
+          promptId: part2.id,
+        }),
+      })
+
+      if (!res.ok) {
+        // Switched on the machine-readable code, never on the 403 alone,
+        // which is also the IELTS-plan paywall. A consent refusal is NOT
+        // recorded here: the band is asked for again once it is answered.
+        const body: unknown = await res.json().catch(() => null)
+        const refusal = readConsentRefusal(res.status, body)
+        if (refusal) {
+          setHeldRefusal(refusal)
+          return
+        }
+        if (res.status === 401) {
+          recordSubmitted(t('ielts.speaking.error.sign_in'), 'signin')
+          return
+        }
+        recordSubmitted(
+          t('ielts.mock.speaking.note_service_unavailable'),
+          res.status === 403 ? 'plans' : undefined,
+        )
         return
       }
 
-      try {
-        const res = await fetch('/api/ielts/speaking-feedback', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            part: 'speaking-part-2',
-            promptText,
-            transcript: combined.trim().slice(0, 8000),
-            promptId: part2.id,
-          }),
-        })
-
-        if (!res.ok) {
-          recordSubmitted(t('ielts.mock.speaking.note_service_unavailable'))
-          return
-        }
-
-        const data = (await res.json().catch(() => null)) as { feedback?: unknown } | null
-        if (!data || !isTaskFeedback(data.feedback)) {
-          recordSubmitted(t('ielts.mock.speaking.note_unreadable'))
-          return
-        }
-
-        const fb = data.feedback
-        const band: Band = fb.overallBand
-        const criteria: CriterionFeedback[] = fb.criteria
-        try {
-          saveAttempt({
-            id: genId('sp'),
-            skill: 'speaking',
-            taskType: 'speaking-part-2' as IeltsTaskType,
-            promptId: part2.id,
-            responseText: combined,
-            band,
-            criteria,
-            date: new Date().toISOString(),
-          })
-        } catch {
-          /* non-fatal */
-        }
-        onComplete({ skill: 'speaking', status: 'scored', band, criteria })
-      } catch {
-        recordSubmitted(t('ielts.mock.speaking.note_network_failed'))
+      const data = (await res.json().catch(() => null)) as { feedback?: unknown } | null
+      if (!data || !isTaskFeedback(data.feedback)) {
+        recordSubmitted(t('ielts.mock.speaking.note_unreadable'))
+        return
       }
-    })()
-  }, [clearSub, part1, part2, part3, onComplete, t])
+
+      const fb = data.feedback
+      const band: Band = fb.overallBand
+      const criteria: CriterionFeedback[] = fb.criteria
+      try {
+        saveAttempt({
+          id: genId('sp'),
+          skill: 'speaking',
+          taskType: 'speaking-part-2' as IeltsTaskType,
+          promptId: part2.id,
+          responseText: combined,
+          band,
+          criteria,
+          date: new Date().toISOString(),
+        })
+      } catch {
+        /* non-fatal */
+      }
+      onComplete({ skill: 'speaking', status: 'scored', band, criteria })
+    } catch {
+      recordSubmitted(t('ielts.mock.speaking.note_network_failed'))
+    }
+  }, [combinedAnswer, recordSubmitted, part1, part2, part3, onComplete, t])
+
+  const finish = useCallback(() => {
+    if (finishedRef.current) return
+    finishedRef.current = true
+    clearSub()
+    setSubmitting(true)
+    void requestBand()
+  }, [clearSub, requestBand])
+
+  // Finishing the mock without the consent step: recorded unscored, with no
+  // note, because the catch-all one guesses at an outage or a missing plan and
+  // neither is why this candidate has no band.
+  const carryOn = useCallback(() => {
+    setHeldRefusal(null)
+    recordSubmitted(undefined)
+  }, [recordSubmitted])
 
   return (
     <div className="min-h-screen bg-background">
@@ -358,11 +408,22 @@ export default function SpeakingStage({
           </PartBlock>
         </div>
 
-        {submitting && (
+        {submitting && !heldRefusal && (
           <div className="mt-6 flex items-center gap-2 rounded-xl border border-border/60 bg-card p-4 text-sm text-muted-foreground">
             <Loader2 className="size-4 animate-spin text-primary" />
             {t('ielts.mock.speaking.marking_notice')}
           </div>
+        )}
+
+        {/* Answered in place; once it is, the same answers are sent again. */}
+        {heldRefusal && (
+          <InlineAIConsentPrompt
+            refusal={heldRefusal}
+            onResolved={() => {
+              setHeldRefusal(null)
+              void requestBand()
+            }}
+          />
         )}
 
         <div className="mt-8 rounded-2xl border border-border/60 bg-card p-5">
@@ -375,8 +436,13 @@ export default function SpeakingStage({
                 })}
               </span>
             </p>
-            <Button size="lg" onClick={finish} disabled={submitting}>
-              {submitting ? (
+            {/* While held, this finishes the mock without the band. */}
+            <Button
+              size="lg"
+              onClick={heldRefusal ? carryOn : finish}
+              disabled={submitting && !heldRefusal}
+            >
+              {submitting && !heldRefusal ? (
                 <Loader2 className="size-4 animate-spin" />
               ) : (
                 <Check className="size-4" />
