@@ -622,6 +622,13 @@ export const EN_MESSAGES: Record<string, string> = {
   'auth.login.email_not_confirmed_prompt': 'Email not confirmed yet?',
   'auth.error.callback_failed':
     'Something went wrong verifying your account. Please try again or request a new link.',
+  'auth.login.notice.link_opened_elsewhere':
+    'Your email address is confirmed. To finish, sign in below with your email and password, or with Google or Apple if that is how you signed up. (This happens when the link opens in a different browser or app from the one you signed up in.)',
+  'auth.error.link_expired':
+    'That link has expired or has already been used. If you have already confirmed your email address, sign in below.',
+  'auth.error.reset_link_failed':
+    'That password reset link could not be used in this browser. Request a new link and open it on the same device and browser you request it from:',
+  'auth.login.request_new_reset_link': 'request a new reset link',
   'auth.error.signin_failed':
     "We couldn't sign you in. Double-check your email and password - or if you've just signed up, the verification link in your inbox might still be needed.",
   'auth.legacy_account_help_before':

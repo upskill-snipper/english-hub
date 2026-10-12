@@ -121,10 +121,74 @@ export async function GET(request: NextRequest) {
     }
   }
 
+  // ── Where a link that could not finish signing someone in sends them ─────
+  //
+  // A DEFECT, FIXED 12 OCTOBER 2026 (counted against production, read-only).
+  // In the 30 days to 12 October, 24 of 46 email sign-ups never signed in,
+  // while every Google and Apple sign-up did. 33 email-confirmation flows had
+  // their link clicked (Supabase confirmed the address and issued a code) but
+  // the code was never exchanged here; 10 of those people never signed in at
+  // all. The exchange needs the PKCE code verifier that signUp() stored in the
+  // browser the person signed up in. Open the email on a phone, or in the
+  // Gmail or Outlook app's own browser, and that verifier is not there, so
+  // the exchange fails, every time.
+  //
+  // Every failure used to land on /auth/login with "Something went wrong
+  // verifying your account. Please try again or request a new link." That was
+  // wrong in the case that matters: the address WAS confirmed (Supabase only
+  // issues the code after confirming it). Clicking the used link again fails,
+  // and a new confirmation email cannot help a confirmed account, so people
+  // gave up. Now each failure says what is true and what to do next:
+  //
+  //   link_opened_elsewhere  the code could not be exchanged: the address is
+  //                          confirmed, sign in here to finish
+  //   reset_link_failed      the same, for a password-reset link
+  //   link_expired           Supabase refused the link itself (expired or
+  //                          already used) and sent its error back here
+  //
+  // The lasting fix is configuration, not code: Supabase's email templates can
+  // link to this route with ?token_hash=...&type=..., which the token_hash
+  // branch below verifies without any code verifier, so the link works in any
+  // browser. That is a dashboard change for the founder (Authentication, Email
+  // Templates); until it is made, the PKCE links stay browser-bound.
+  const isRecovery = type === 'recovery' || safeNext.startsWith('/auth/reset-password')
+  const keepNext =
+    !isRecovery && safeNext !== '/dashboard' ? `&next=${encodeURIComponent(safeNext)}` : ''
+
+  const linkError = searchParams.get('error_code') ?? searchParams.get('error')
+  if (!code && !token_hash && linkError) {
+    const description = `${linkError} ${searchParams.get('error_description') ?? ''}`.toLowerCase()
+    console.error('[auth/callback] AUTH_CALLBACK_LINK_REFUSED', {
+      error: searchParams.get('error'),
+      errorCode: searchParams.get('error_code'),
+    })
+    if (description.includes('expired') || description.includes('invalid')) {
+      return redirectTo(
+        isRecovery ? '/auth/login?error=reset_link_failed' : '/auth/login?error=link_expired',
+      )
+    }
+    return redirectTo('/auth/login?error=auth_callback_error')
+  }
+
   // Handle PKCE flow (code exchange) - covers email-confirmed signup,
   // OAuth, magic links and password reset when the project uses PKCE.
   if (code) {
     const { data, error } = await supabase.auth.exchangeCodeForSession(code)
+
+    if (error) {
+      console.error('[auth/callback] AUTH_CALLBACK_EXCHANGE_FAILED', {
+        name: error.name,
+        status: error.status ?? null,
+        code: (error as { code?: string }).code ?? null,
+        message: error.message,
+        recovery: isRecovery,
+      })
+      return redirectTo(
+        isRecovery
+          ? '/auth/login?error=reset_link_failed'
+          : `/auth/login?error=link_opened_elsewhere${keepNext}`,
+      )
+    }
 
     if (!error) {
       // Password recovery via PKCE: Supabase tags the session as a
@@ -193,6 +257,21 @@ export async function GET(request: NextRequest) {
       token_hash,
       type: type as 'signup' | 'email' | 'recovery' | 'invite',
     })
+
+    if (error) {
+      // No verifier is involved here, so a failure means the link itself was
+      // refused: expired, already used or mistyped.
+      console.error('[auth/callback] AUTH_CALLBACK_VERIFY_FAILED', {
+        name: error.name,
+        status: error.status ?? null,
+        code: (error as { code?: string }).code ?? null,
+        message: error.message,
+        recovery: isRecovery,
+      })
+      return redirectTo(
+        isRecovery ? '/auth/login?error=reset_link_failed' : '/auth/login?error=link_expired',
+      )
+    }
 
     if (!error) {
       if (type === 'recovery') {

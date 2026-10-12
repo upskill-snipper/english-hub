@@ -635,6 +635,13 @@ export const ES_MESSAGES: Record<string, string> = {
   'auth.login.email_not_confirmed_prompt': '¿Aún no has confirmado tu correo?',
   'auth.error.callback_failed':
     'Algo salió mal al verificar tu cuenta. Inténtalo de nuevo o solicita un nuevo enlace.',
+  'auth.login.notice.link_opened_elsewhere':
+    'Tu dirección de correo electrónico está confirmada. Para terminar, inicia sesión abajo con tu correo y tu contraseña, o con Google o Apple si te registraste así. (Esto ocurre cuando el enlace se abre en un navegador o una aplicación distintos de los que usaste para registrarte.)',
+  'auth.error.link_expired':
+    'Ese enlace ha caducado o ya se ha usado. Si ya confirmaste tu dirección de correo electrónico, inicia sesión abajo.',
+  'auth.error.reset_link_failed':
+    'Ese enlace para restablecer la contraseña no se pudo usar en este navegador. Solicita un enlace nuevo y ábrelo en el mismo dispositivo y navegador desde el que lo pidas:',
+  'auth.login.request_new_reset_link': 'solicitar un nuevo enlace',
   'auth.error.signin_failed':
     'No pudimos iniciar tu sesión. Revisa bien tu correo y contraseña - o, si te acabas de registrar, quizá aún tengas que usar el enlace de verificación de tu bandeja de entrada.',
   'auth.legacy_account_help_before':

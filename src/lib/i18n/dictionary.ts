@@ -2091,6 +2091,26 @@ export const DICTIONARY: Dictionary = {
     ar: 'صار خطأ في تأكيد حسابك. جرّب مرة ثانية أو اطلب رابط جديد.',
     es: 'Algo salió mal al verificar tu cuenta. Inténtalo de nuevo o solicita un nuevo enlace.',
   },
+  'auth.login.notice.link_opened_elsewhere': {
+    en: 'Your email address is confirmed. To finish, sign in below with your email and password, or with Google or Apple if that is how you signed up. (This happens when the link opens in a different browser or app from the one you signed up in.)',
+    ar: 'تم تأكيد إيميلك. عشان تكمّل، سجّل دخولك تحت بالإيميل والرمز السري، أو بـ Google أو Apple إذا سجّلت فيهم. (هذا يصير إذا انفتح الرابط في متصفح أو تطبيق غير اللي سجّلت منه.)',
+    es: 'Tu dirección de correo electrónico está confirmada. Para terminar, inicia sesión abajo con tu correo y tu contraseña, o con Google o Apple si te registraste así. (Esto ocurre cuando el enlace se abre en un navegador o una aplicación distintos de los que usaste para registrarte.)',
+  },
+  'auth.error.link_expired': {
+    en: 'That link has expired or has already been used. If you have already confirmed your email address, sign in below.',
+    ar: 'الرابط انتهت صلاحيته أو انستخدم قبل. إذا أكّدت إيميلك من قبل، سجّل دخولك تحت.',
+    es: 'Ese enlace ha caducado o ya se ha usado. Si ya confirmaste tu dirección de correo electrónico, inicia sesión abajo.',
+  },
+  'auth.error.reset_link_failed': {
+    en: 'That password reset link could not be used in this browser. Request a new link and open it on the same device and browser you request it from:',
+    ar: 'رابط تغيير الرمز السري ما اشتغل في هذا المتصفح. اطلب رابط جديد وافتحه على نفس الجهاز والمتصفح اللي طلبته منه:',
+    es: 'Ese enlace para restablecer la contraseña no se pudo usar en este navegador. Solicita un enlace nuevo y ábrelo en el mismo dispositivo y navegador desde el que lo pidas:',
+  },
+  'auth.login.request_new_reset_link': {
+    en: 'request a new reset link',
+    ar: 'اطلب رابط جديد',
+    es: 'solicitar un nuevo enlace',
+  },
   'auth.error.signin_failed': {
     en: "We couldn't sign you in. Double-check your email and password - or if you've just signed up, the verification link in your inbox might still be needed.",
     ar: 'ما قدرنا نسجّل دخولك. تأكد من الإيميل والرمز السري - وإذا للتو سوّيت حساب، يمكن لازم تضغط رابط التأكيد في الإيميل أول.',

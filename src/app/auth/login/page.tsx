@@ -22,6 +22,15 @@ import { Alert, AlertDescription } from '@/components/ui/alert'
 import GoogleSignInButton from '@/components/auth/GoogleSignInButton'
 import AppleSignInButton from '@/components/auth/AppleSignInButton'
 
+/** The ?error= values /auth/callback sends here, each with its own message. */
+const CALLBACK_NOTICES = [
+  'link_opened_elsewhere',
+  'reset_link_failed',
+  'link_expired',
+  'auth_callback_error',
+] as const
+type CallbackNotice = (typeof CALLBACK_NOTICES)[number]
+
 function LoginForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -34,12 +43,17 @@ function LoginForm() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState<string | null>(() => {
+  const [error, setError] = useState<string | null>(null)
+  // What /auth/callback sends back when a link could not finish signing
+  // someone in (12 October 2026; the reasons are in that route's comment).
+  // Each names the next step that will actually work: a confirmed address is
+  // told so and asked to sign in, rather than to "request a new link", which
+  // could never help an account that is already confirmed.
+  const [callbackNotice, setCallbackNotice] = useState<CallbackNotice | null>(() => {
     const errorParam = searchParams.get('error')
-    if (errorParam === 'auth_callback_error') {
-      return t('auth.error.callback_failed')
-    }
-    return null
+    return errorParam && (CALLBACK_NOTICES as readonly string[]).includes(errorParam)
+      ? (errorParam as CallbackNotice)
+      : null
   })
   const [loading, setLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
@@ -53,6 +67,7 @@ function LoginForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
+    setCallbackNotice(null)
 
     if (!email || !password) {
       setError(t('form.fill_all_fields'))
@@ -156,6 +171,47 @@ function LoginForm() {
                   </div>
                 </div>
               </>
+            )}
+
+            {callbackNotice === 'link_opened_elsewhere' && (
+              <Alert className="mb-6" role="status">
+                <AlertDescription>{t('auth.login.notice.link_opened_elsewhere')}</AlertDescription>
+              </Alert>
+            )}
+
+            {callbackNotice === 'reset_link_failed' && (
+              <Alert variant="destructive" className="mb-6">
+                <AlertDescription>
+                  {t('auth.error.reset_link_failed')}{' '}
+                  <Link
+                    href="/auth/forgot-password"
+                    className="font-medium underline underline-offset-2 hover:no-underline"
+                  >
+                    {t('auth.login.request_new_reset_link')}
+                  </Link>
+                  .
+                </AlertDescription>
+              </Alert>
+            )}
+
+            {(callbackNotice === 'link_expired' || callbackNotice === 'auth_callback_error') && (
+              <Alert variant="destructive" className="mb-6">
+                <AlertDescription>
+                  {callbackNotice === 'link_expired'
+                    ? t('auth.error.link_expired')
+                    : t('auth.error.callback_failed')}
+                  <span className="mt-2 block">
+                    {t('auth.login.email_not_confirmed_prompt')}{' '}
+                    <Link
+                      href="/auth/resend-verification"
+                      className="font-medium underline underline-offset-2 hover:no-underline"
+                    >
+                      {t('auth.resend_verification_email')}
+                    </Link>
+                    .
+                  </span>
+                </AlertDescription>
+              </Alert>
             )}
 
             {error && (
