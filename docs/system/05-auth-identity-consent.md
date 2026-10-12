@@ -170,7 +170,7 @@ Two things worth knowing:
 
 Twelve of the thirteen AI routes call `checkMinorAIConsent(user.id)` ([`consent-check.ts:219`](../../src/lib/consent-check.ts)), passing the **Supabase uuid**. Callers: `cefr-assess`, `essay/feedback`, `essay-feedback`, `ielts/diagnostic-assess`, `ielts/speaking-feedback`, `ielts/statement-feedback`, `ielts/writing-feedback`, `mark`, `mark/stream`, `marking/ielts-writing-task2`, `submissions`, `toolkit/generate-notes`.
 
-Two qualifications on that list. `ielts/diagnostic-assess` runs the gate only when a session exists ([`route.ts:322`](../../src/app/api/ielts/diagnostic-assess/route.ts)), which is deliberate: an anonymous diagnostic has no account to check, and safeguarding still runs through `contentSafetyCheck` for everyone. The thirteenth route, `marking/run`, does not call it at all - see the end of this section.
+Two qualifications on that list. `ielts/diagnostic-assess` runs the gate only when a session exists ([`route.ts:322`](../../src/app/api/ielts/diagnostic-assess/route.ts)), which is deliberate: an anonymous diagnostic has no account to check, and safeguarding still runs through `contentSafetyCheck` for everyone. The thirteenth route, `marking/run`, did not call it at all until 12 October 2026, and now calls it for the pupil whose essay it is rather than the caller - see the end of this section.
 
 `checkMinorAIConsent` runs two legs, and **the order is load-bearing** (changed 2026-08-23, comment at line 220):
 
@@ -180,6 +180,8 @@ Two qualifications on that list. `ielts/diagnostic-assess` runs the gate only wh
 Parental consent runs _first_ because the guardian email is raised as a side effect of that leg. When the AI_PROCESSING check ran first, a 13-15 year-old who signed up directly was told to "consent to AI processing" and returned before any guardian was emailed - for exactly the population the self-serve guardian loop was built for, the trigger fired for nobody. Parental consent is also the only leg with an off-platform dependency (a guardian's inbox and a 7-day link), so it must start at the student's first blocked attempt.
 
 `checkParentalConsent` ([`:131`](../../src/lib/consent-check.ts)) unblocks a child on **either** a linked `parentId` **or** an approved row in `parental_consents` (school-requested or self-serve). The Supabase read is keyed on the **uuid**, because `parental_consents.student_user_id` references `profiles(id)` - do not "helpfully" swap in the Prisma id there (line 61).
+
+**The school path (12 October 2026, Calum's decision).** A pupil of a school whose access is live and which has recorded `schools.ai_authorised_at` (its confirmation, as data controller, that its privacy notice covers AI marking and parents have been told) passes the parental step whatever the band, `UNKNOWN` included: an uploaded pupil has no date of birth. It is asked only where the rules above would refuse, so every other account gets the answer it got before. The lookup is `getPupilSchoolAccess` in [`src/lib/school-entitlement.ts`](../../src/lib/school-entitlement.ts), which fails closed. The pupil's own `AI_PROCESSING` consent is still required. Every admit now carries a `basis` (`sixteen_or_over`, `linked_parent`, `parental_consent_record`, `school_ai_authorisation`), recorded as `consentSnapshot.parentalConsentBasis` in the AI decision log by the GCSE routes, and [`src/lib/training/prepare.ts`](../../src/lib/training/prepare.ts) refuses a `school_ai_authorisation` admit: the school authorised marking, not training.
 
 An `UNKNOWN` band does **not** raise a guardian request (line 240). We do not know the account belongs to a child and we have no guardian address for it, so the honest ask is self-service.
 
@@ -201,7 +203,9 @@ Every refusal message names a control that actually exists. The previous AI-proc
 
 Immediately after the consent gate, the same twelve routes call `isAiOptedOutServer(user.id)` - the Children's Code AI opt-out. That function queries `prisma.privacySettings.findUnique({ where: { userId } })` ([`ai-preferences.ts:40`](../../src/lib/ai-preferences.ts)), but `PrivacySettings.userId` is a foreign key to `User.id` (a cuid: [`schema.prisma:488`](../../prisma/schema.prisma), relation at [`:497`](../../prisma/schema.prisma)), and every call site passes the Supabase uuid. `PrivacySettings` rows are created with the Prisma id ([`privacy/settings/route.ts:96`](../../src/app/api/privacy/settings/route.ts), where `user` came from `prisma.user.findUnique`). **The lookup therefore never matches and the function returns `false` for everyone**, including a child whose parent has explicitly opted them out of AI. This is the same identity-mismatch class as the five defects the identity module was built for, and this one has not been fixed. It needs `tryPrismaUserId` in front of the query, and it is the highest-value thing in this chapter that is still broken.
 
-### The thirteenth route: `marking/run` has no gate to get wrong
+### The thirteenth route: `marking/run` (fixed 12 October 2026)
+
+**Fixed.** The route now calls `checkMinorAIConsent` and `isAiOptedOutServer` for `marking_submissions.student_id`, the pupil whose work it is, immediately before the model call, so a staff-started run checks the pupil and not the teacher, and its audit entry is no longer a record of checks that did not happen. The rest of this subsection describes the route as it was, for the record.
 
 `POST /api/marking/run` ([`route.ts`](../../src/app/api/marking/run/route.ts)) is the second step of the marking spine and it makes a model call, but it calls neither `checkMinorAIConsent` nor `isAiOptedOutServer`. Neither module is imported. Both names appear in the file only inside a comment at [`route.ts:182-183`](../../src/app/api/marking/run/route.ts), which describes the position the trial-allowance gate occupies relative to checks this route does not perform. Its actual gates are content-type, auth, a 30/day rate limit, ownership (`b2c_self`) or accepted school membership (`b2b_class`), an active subscription on the `b2c_self` branch, and the submission state machine.
 
@@ -287,7 +291,7 @@ One stale reference: the header of [`school/consent/route.ts:8`](../../src/app/a
 Stated plainly so nobody has to rediscover them:
 
 1. `isAiOptedOutServer` never matches a row - the parental AI opt-out does nothing (section 6).
-2. `POST /api/marking/run` makes a model call behind no consent gate and no AI opt-out check, and logs a `consentSnapshot` claiming both passed (section 6).
+2. ~~`POST /api/marking/run` makes a model call behind no consent gate and no AI opt-out check, and logs a `consentSnapshot` claiming both passed (section 6).~~ Fixed 12 October 2026: both are checked for the pupil.
 3. OAuth and email-confirmation sign-ins never stamp `lastLoginAt`, so the dormancy cron reads them as never-logged-in (section 2).
 4. No `TERMS` or `PRIVACY` consent row is ever written for a new account (section 5).
 5. `applyChildDefaults` is not called from the server signup route (section 9).

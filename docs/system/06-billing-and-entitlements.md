@@ -112,7 +112,7 @@ This is the load-bearing concept of the chapter.
 | Read by     | [`hasActiveSubscription`](../../src/lib/course-access.ts), [`checkCourseAccess`](../../src/lib/course-access.ts), [`hasIeltsAccess`](../../src/lib/course-access.ts), the AI routes, the billing page | [`src/lib/entitlements.ts`](../../src/lib/entitlements.ts), [`src/lib/billing/trial-state.ts`](../../src/lib/billing/trial-state.ts) |
 | Test        | **exact string equality with `'pro'`** ([`course-access.ts:98`](../../src/lib/course-access.ts))                                                                                                      | status projection, see below                                                                                                         |
 | Cardinality | **one field per person**                                                                                                                                                                              | one row per person                                                                                                                   |
-| Written by  | Stripe webhook, signup, school seats, trial-expiry cron                                                                                                                                               | Stripe webhook (via sync), signup, RevenueCat reconciler, trial crons                                                                |
+| Written by  | Stripe webhook, signup, trial-expiry cron (school enrolment stopped writing it on 12 October 2026)                                                                                                    | Stripe webhook (via sync), signup, RevenueCat reconciler, trial crons                                                                |
 
 `'pro'` is an exact match. `'active'`, `'trialing'` and `'paused'` all fail the web gate. Anything that writes something other than `'pro'` into that column silently revokes web access.
 
@@ -273,11 +273,15 @@ Product SKUs are mapped in `PRODUCT_CATALOGUE` ([lines 60-82](../../src/lib/reve
 
 ---
 
-## School seats - a third grant path
+## School pupils - access from the school, checked at use
 
-Schools do not buy through Stripe in-app. Two routes grant `profiles.subscription_status = 'pro'` directly when the school row's own `subscription_status` (a column on `schools`, distinct from the one on `profiles`) is `active` or `trialing`: [`/api/school/join:373`](../../src/app/api/school/join/route.ts) and [`/api/school/classes/[classId]/students:450`](../../src/app/api/school/classes/[classId]/students/route.ts).
+**Changed 12 October 2026 (Calum's decision).** A school pupil's access comes from the school's live pilot, checked at the moment of use, and nothing is written to their `profiles.subscription_status`.
 
-There is no revocation path. [`/api/cron/school-access`](../../src/app/api/cron/school-access/route.ts) marks the **school** `access_type = 'expired'` and emails the contact, but never touches the seat holders' `profiles.subscription_status`. A pupil granted `'pro'` by a school that has since expired keeps `'pro'` indefinitely, and `/api/cron/trial-expiry` will not catch them because they have no `TRIALING` Prisma row. I found no code that closes this.
+- **The choke point.** `resolvePaidAccess` in [`src/lib/course-access.ts`](../../src/lib/course-access.ts), which `hasActiveSubscription` now wraps, answers yes for `'pro'` or for a pupil of a school whose access is live: `getPupilSchoolAccess` in [`src/lib/school-entitlement.ts`](../../src/lib/school-entitlement.ts), which reads `school_members` (role student, accepted), `school_students` (active) and `class_students` (active, in an active class), keyed on the Supabase uuid, and applies `isSchoolAccessActive`. Any read error answers "not a pupil". IELTS is not covered. Client pages ask `GET /api/user/access` instead of reading the profile.
+- **No grant is written.** The join-code and class-enrolment routes used to write `'pro'` when the school's own `subscription_status` was `active` or `trialing`; the trial-expiry cron then wiped it after seven days, a grant made before first sign-in never expired, and nothing revoked it when the school lapsed. Both writes are gone, so an expired school's pupils lose access at once.
+- **No trial meter, no trial.** On the GCSE routes (`enforceTrialAllowance(..., { schoolFunded: true })`) a pupil of a live school is not metered against a no-card trial, and `provisionSignupTrial` gives no trial to one, so an uploaded pupil is never told their trial has ended. The routes' own daily caps (20 submissions, 30 marking runs) still apply.
+
+Mobile still reads the Prisma `Subscription` row through `/api/me/entitlements`, which knows nothing of schools.
 
 ---
 

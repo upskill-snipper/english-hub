@@ -172,7 +172,9 @@ Note that a join-code pupil has no `school_members` row, so `getSchoolAccess` re
 
 **Settled on 12 October 2026: production had neither column**, so creating any join code failed. The `information_schema` check showed this. [`20261012_school_join_codes_type.sql`](../../supabase/migrations/20261012_school_join_codes_type.sql) adds `type`, a text column that is either `student` or `teacher` and defaults to `student`.
 
-Until `/api/school/join` reads `type` instead of `role`, every code redeems as a pupil code, so **a teacher join code would enrol the teacher as a pupil**. The pupil-side school work owns that change. Until it lands, do not issue teacher codes. Invite teachers by email instead.
+**Fixed 12 October 2026:** `/api/school/join` now reads `type`. Before that every code redeemed as a pupil code, so a teacher join code enrolled the teacher as a pupil. Only an exact `'teacher'` takes the staff path; anything else, a missing value included, is a pupil code. Note that this lands with the pupil-side school work: until it is deployed, teacher codes still redeem as pupil codes.
+
+**Enrolment no longer writes a subscription (12 October 2026).** The join route and `POST /api/school/classes/[classId]/students` used to write `'pro'` to a pupil's `profiles.subscription_status`; neither does now, because a pupil's access comes from the school's live pilot, checked at use (chapter 06). The class-students route is also staff-only now (admin, head of department, teacher): enrolment confers AI access and, at a school that has recorded its AI authorisation, stands in for a parent's consent, and it used to admit any member, pupils included.
 
 Join-code mechanics that are correct and worth keeping: the use counter is incremented through the `increment_join_code_uses` RPC ([`20260419_school_join_code_atomic_increment.sql`](../../supabase/migrations/20260419_school_join_code_atomic_increment.sql)) rather than read-then-write, and both paths roll back the membership they created if the cap was hit in between. Seat accounting uses a `.lt('seats_used', seat_limit)` guard on the update so two concurrent joins cannot both win.
 
@@ -299,7 +301,7 @@ Because the whole flow keys on Prisma `User.id`, it needs both parties to have P
 
 ### Parent linking is not parental consent
 
-These are separate systems and it matters. Parental **consent** is `parental_consents` plus [`src/lib/consent-check.ts`](../../src/lib/consent-check.ts), which unblocks AI features for under-16s. `checkParentalConsent` accepts **either** a non-null `User.parentId` **or** an approved `parental_consents` row ([lines 146-154](../../src/lib/consent-check.ts)) - so completing a parent link does grant consent, but consent can also exist with no link. Both checks are reached only after `resolveAgeBand` returns something other than `UNKNOWN`; an unknown age blocks regardless.
+These are separate systems and it matters. Parental **consent** is `parental_consents` plus [`src/lib/consent-check.ts`](../../src/lib/consent-check.ts), which unblocks AI features for under-16s. `checkParentalConsent` accepts **either** a non-null `User.parentId` **or** an approved `parental_consents` row ([lines 146-154](../../src/lib/consent-check.ts)) - so completing a parent link does grant consent, but consent can also exist with no link. Both checks are reached only after `resolveAgeBand` returns something other than `UNKNOWN`; an unknown age blocks, with one exception since 12 October 2026: a pupil of a live school that has recorded `schools.ai_authorised_at` passes the parental step at any band, `UNKNOWN` included (chapter 05, section 6).
 
 Two consent entry points write to the same table:
 
