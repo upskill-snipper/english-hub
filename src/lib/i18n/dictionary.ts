@@ -2377,19 +2377,49 @@ export const DICTIONARY: Dictionary = {
     es: 'Si este correo electrónico es válido y no está ya registrado, le hemos enviado un enlace de verificación. Revisa tu bandeja de entrada (incluido el spam) y sigue el enlace para activar tu cuenta.',
   },
   'auth.register.welcome_prefix': {
-    en: "Welcome to The English Hub. We've sent a quick verification link to",
-    ar: 'حياك الله في The English Hub. رسّلنا رابط تأكيد سريع على',
-    es: 'Te damos la bienvenida a The English Hub. Hemos enviado un enlace de verificación rápido a',
+    en: "Welcome to The English Hub. We've sent a verification link to",
+    ar: 'حياك الله في The English Hub. رسّلنا رابط تأكيد على',
+    es: 'Te damos la bienvenida a The English Hub. Hemos enviado un enlace de verificación a',
   },
   'auth.register.welcome_suffix': {
-    en: 'so we can keep your account safe - but you can keep exploring while you wait. The link will let you log back in next time.',
-    ar: 'عشان نحافظ على أمان حسابك - بس تقدر تكمّل تتصفح وأنت تنتظر. الرابط بيخليك تدخل المرة الجاية.',
-    es: 'para mantener tu cuenta segura - pero puedes seguir explorando mientras esperas. El enlace te permitirá volver a iniciar sesión la próxima vez.',
+    en: 'Open that email and follow the link to finish creating your account. You can sign in once you have.',
+    ar: 'افتح الإيميل واضغط الرابط عشان تكمّل إنشاء حسابك. تقدر تسجّل دخولك بعدها.',
+    es: 'Abre ese correo y sigue el enlace para terminar de crear tu cuenta. Podrás iniciar sesión cuando lo hayas hecho.',
   },
   'auth.register.trial_ready_lead': {
-    en: 'Your free trial is ready.',
-    ar: 'تجربتك المجانية جاهزة.',
-    es: 'Tu prueba gratuita está lista.',
+    en: 'Your free trial starts when you confirm your email.',
+    ar: 'تجربتك المجانية تبدأ لما تأكد إيميلك.',
+    es: 'Tu prueba gratuita empieza cuando confirmes tu correo.',
+  },
+  'auth.register.card_existing_account': {
+    en: 'Already have an account with this email? We do not send another link, so sign in instead or reset your password:',
+    ar: 'عندك حساب من قبل بهذا الإيميل؟ ما نرسل رابط ثاني، فسجّل دخولك أو غيّر الرمز السري:',
+    es: '¿Ya tienes una cuenta con este correo? No enviamos otro enlace, así que inicia sesión o restablece tu contraseña:',
+  },
+  'auth.register.card_guardian_after_confirm': {
+    en: 'As you are under 16, a parent or guardian must give consent before you can use AI feedback. Once you have confirmed your email and signed in, you can send them the consent request from your account.',
+    ar: 'لأنك تحت ١٦ سنة، لازم والدك أو ولي أمرك يوافق قبل ما تستخدم ملاحظات الذكاء الاصطناعي. بعد ما تأكد إيميلك وتسجّل دخولك، تقدر ترسل له طلب الموافقة من حسابك.',
+    es: 'Como eres menor de 16 años, un padre o tutor debe dar su consentimiento antes de que puedas usar la corrección con IA. Cuando hayas confirmado tu correo e iniciado sesión, podrás enviarle la solicitud de consentimiento desde tu cuenta.',
+  },
+  'auth.register.error.weak_password': {
+    en: 'That password is not strong enough. Try a longer one that mixes letters, numbers and symbols and that you do not use on other sites.',
+    ar: 'الرمز السري هذا مو قوي كفاية. جرّب رمز أطول فيه حروف وأرقام ورموز، وما تستخدمه في مواقع ثانية.',
+    es: 'Esa contraseña no es lo bastante segura. Prueba una más larga que combine letras, números y símbolos y que no uses en otros sitios.',
+  },
+  'auth.register.error.rate_limited': {
+    en: 'We could not send your verification email just now because too many have been sent in a short time. Please wait a few minutes and try again.',
+    ar: 'ما قدرنا نرسل إيميل التأكيد الحين لأن انرسل عدد كبير في وقت قصير. انتظر كم دقيقة وجرّب مرة ثانية.',
+    es: 'No hemos podido enviar tu correo de verificación ahora porque se han enviado demasiados en poco tiempo. Espera unos minutos y vuelve a intentarlo.',
+  },
+  'auth.register.error.invalid_email': {
+    en: 'That email address does not look right. Please check it and try again.',
+    ar: 'الإيميل هذا شكله مو صحيح. تأكد منه وجرّب مرة ثانية.',
+    es: 'Esa dirección de correo no parece correcta. Revísala y vuelve a intentarlo.',
+  },
+  'auth.register.error.unavailable': {
+    en: 'We could not create your account just now. Please try again in a few minutes. If it keeps happening, email founder@theenglishhub.app.',
+    ar: 'ما قدرنا ننشئ حسابك الحين. جرّب مرة ثانية بعد كم دقيقة. وإذا تكرر، راسلنا على founder@theenglishhub.app.',
+    es: 'No hemos podido crear tu cuenta ahora. Vuelve a intentarlo en unos minutos. Si sigue pasando, escribe a founder@theenglishhub.app.',
   },
   'auth.register.trial_ready_body': {
     en: 'Your 7-day free trial includes every premium feature - AI marking, lesson plans, and more.',
@@ -12210,14 +12240,14 @@ export const DICTIONARY: Dictionary = {
 
   // ─── Profile (DOB nudge banner) ─────────────────────────────────────
   'profile.dob.title': {
-    en: 'Please confirm your date of birth',
-    ar: 'لو سمحت، أكّد تاريخ ميلادك',
-    es: 'Confirma tu fecha de nacimiento',
+    en: 'Add your date of birth to use AI marking and feedback',
+    ar: 'أضف تاريخ ميلادك عشان تستخدم التصحيح والملاحظات بالذكاء الاصطناعي',
+    es: 'Añade tu fecha de nacimiento para usar la corrección y los comentarios con IA',
   },
   'profile.dob.body': {
-    en: "We're missing this from your profile. It helps us give the right age-appropriate experience and meet our safeguarding obligations.",
-    ar: 'الحين هذا ناقص من ملفك الشخصي. يساعدنا نعطيك تجربة مناسبة لعمرك ونلتزم بالتزامات الحماية مالنا.',
-    es: 'Nos falta este dato en tu perfil. Nos ayuda a ofrecer la experiencia adecuada a tu edad y a cumplir nuestras obligaciones de protección de menores.',
+    en: 'AI marking and feedback stay switched off until we know your age, so that we can apply the right protections for it. You only need to do this once.',
+    ar: 'التصحيح والملاحظات بالذكاء الاصطناعي تبقى مقفلة لين نعرف عمرك، عشان نطبّق الحماية المناسبة له. تسويها مرة وحدة بس.',
+    es: 'La corrección y los comentarios con IA siguen desactivados hasta que sepamos tu edad, para poder aplicar las protecciones adecuadas. Solo tienes que hacerlo una vez.',
   },
   'profile.dob.input_label': {
     en: 'Date of birth',

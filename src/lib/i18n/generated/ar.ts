@@ -685,10 +685,21 @@ export const AR_MESSAGES: Record<string, string> = {
   'auth.register.teacher': 'معلم',
   'auth.register.neutral_signup_response':
     'إذا الإيميل صحيح وما هو مسجّل من قبل، رسّلنا له رابط تأكيد. شيك على الإيميل (والـ spam) واضغط الرابط عشان تفعّل حسابك.',
-  'auth.register.welcome_prefix': 'حياك الله في The English Hub. رسّلنا رابط تأكيد سريع على',
+  'auth.register.welcome_prefix': 'حياك الله في The English Hub. رسّلنا رابط تأكيد على',
   'auth.register.welcome_suffix':
-    'عشان نحافظ على أمان حسابك - بس تقدر تكمّل تتصفح وأنت تنتظر. الرابط بيخليك تدخل المرة الجاية.',
-  'auth.register.trial_ready_lead': 'تجربتك المجانية جاهزة.',
+    'افتح الإيميل واضغط الرابط عشان تكمّل إنشاء حسابك. تقدر تسجّل دخولك بعدها.',
+  'auth.register.trial_ready_lead': 'تجربتك المجانية تبدأ لما تأكد إيميلك.',
+  'auth.register.card_existing_account':
+    'عندك حساب من قبل بهذا الإيميل؟ ما نرسل رابط ثاني، فسجّل دخولك أو غيّر الرمز السري:',
+  'auth.register.card_guardian_after_confirm':
+    'لأنك تحت ١٦ سنة، لازم والدك أو ولي أمرك يوافق قبل ما تستخدم ملاحظات الذكاء الاصطناعي. بعد ما تأكد إيميلك وتسجّل دخولك، تقدر ترسل له طلب الموافقة من حسابك.',
+  'auth.register.error.weak_password':
+    'الرمز السري هذا مو قوي كفاية. جرّب رمز أطول فيه حروف وأرقام ورموز، وما تستخدمه في مواقع ثانية.',
+  'auth.register.error.rate_limited':
+    'ما قدرنا نرسل إيميل التأكيد الحين لأن انرسل عدد كبير في وقت قصير. انتظر كم دقيقة وجرّب مرة ثانية.',
+  'auth.register.error.invalid_email': 'الإيميل هذا شكله مو صحيح. تأكد منه وجرّب مرة ثانية.',
+  'auth.register.error.unavailable':
+    'ما قدرنا ننشئ حسابك الحين. جرّب مرة ثانية بعد كم دقيقة. وإذا تكرر، راسلنا على founder@theenglishhub.app.',
   'auth.register.trial_ready_body':
     'تجربتك المجانية ٧ أيام تشمل كل ميزات البريميوم - التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر.',
   'auth.register.teacher_after_verify':
@@ -3641,9 +3652,9 @@ export const AR_MESSAGES: Record<string, string> = {
   'model_answers.summary.heading_prefix': 'شنو اللي يخلّيها',
   'model_answers.tabs.empty': 'ما في إجابة نموذجية الحين لـ',
   'model_answers.tabs.empty_suffix': '.',
-  'profile.dob.title': 'لو سمحت، أكّد تاريخ ميلادك',
+  'profile.dob.title': 'أضف تاريخ ميلادك عشان تستخدم التصحيح والملاحظات بالذكاء الاصطناعي',
   'profile.dob.body':
-    'الحين هذا ناقص من ملفك الشخصي. يساعدنا نعطيك تجربة مناسبة لعمرك ونلتزم بالتزامات الحماية مالنا.',
+    'التصحيح والملاحظات بالذكاء الاصطناعي تبقى مقفلة لين نعرف عمرك، عشان نطبّق الحماية المناسبة له. تسويها مرة وحدة بس.',
   'profile.dob.input_label': 'تاريخ الميلاد',
   'profile.dob.save': 'احفظ',
   'profile.dob.saving': 'لحظة، نحفظ…',

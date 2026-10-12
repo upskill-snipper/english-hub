@@ -715,10 +715,22 @@ export const ES_MESSAGES: Record<string, string> = {
   'auth.register.neutral_signup_response':
     'Si este correo electrónico es válido y no está ya registrado, le hemos enviado un enlace de verificación. Revisa tu bandeja de entrada (incluido el spam) y sigue el enlace para activar tu cuenta.',
   'auth.register.welcome_prefix':
-    'Te damos la bienvenida a The English Hub. Hemos enviado un enlace de verificación rápido a',
+    'Te damos la bienvenida a The English Hub. Hemos enviado un enlace de verificación a',
   'auth.register.welcome_suffix':
-    'para mantener tu cuenta segura - pero puedes seguir explorando mientras esperas. El enlace te permitirá volver a iniciar sesión la próxima vez.',
-  'auth.register.trial_ready_lead': 'Tu prueba gratuita está lista.',
+    'Abre ese correo y sigue el enlace para terminar de crear tu cuenta. Podrás iniciar sesión cuando lo hayas hecho.',
+  'auth.register.trial_ready_lead': 'Tu prueba gratuita empieza cuando confirmes tu correo.',
+  'auth.register.card_existing_account':
+    '¿Ya tienes una cuenta con este correo? No enviamos otro enlace, así que inicia sesión o restablece tu contraseña:',
+  'auth.register.card_guardian_after_confirm':
+    'Como eres menor de 16 años, un padre o tutor debe dar su consentimiento antes de que puedas usar la corrección con IA. Cuando hayas confirmado tu correo e iniciado sesión, podrás enviarle la solicitud de consentimiento desde tu cuenta.',
+  'auth.register.error.weak_password':
+    'Esa contraseña no es lo bastante segura. Prueba una más larga que combine letras, números y símbolos y que no uses en otros sitios.',
+  'auth.register.error.rate_limited':
+    'No hemos podido enviar tu correo de verificación ahora porque se han enviado demasiados en poco tiempo. Espera unos minutos y vuelve a intentarlo.',
+  'auth.register.error.invalid_email':
+    'Esa dirección de correo no parece correcta. Revísala y vuelve a intentarlo.',
+  'auth.register.error.unavailable':
+    'No hemos podido crear tu cuenta ahora. Vuelve a intentarlo en unos minutos. Si sigue pasando, escribe a founder@theenglishhub.app.',
   'auth.register.trial_ready_body':
     'Tu prueba gratuita de 7 días incluye todas las funciones premium - corrección con IA, planes de clase y más.',
   'auth.register.teacher_after_verify':
@@ -3809,9 +3821,10 @@ export const ES_MESSAGES: Record<string, string> = {
   'model_answers.summary.heading_prefix': 'Qué hace que esto sea un',
   'model_answers.tabs.empty': 'No hay respuesta modelo disponible para',
   'model_answers.tabs.empty_suffix': 'todavía.',
-  'profile.dob.title': 'Confirma tu fecha de nacimiento',
+  'profile.dob.title':
+    'Añade tu fecha de nacimiento para usar la corrección y los comentarios con IA',
   'profile.dob.body':
-    'Nos falta este dato en tu perfil. Nos ayuda a ofrecer la experiencia adecuada a tu edad y a cumplir nuestras obligaciones de protección de menores.',
+    'La corrección y los comentarios con IA siguen desactivados hasta que sepamos tu edad, para poder aplicar las protecciones adecuadas. Solo tienes que hacerlo una vez.',
   'profile.dob.input_label': 'Fecha de nacimiento',
   'profile.dob.save': 'Guardar',
   'profile.dob.saving': 'Guardando…',

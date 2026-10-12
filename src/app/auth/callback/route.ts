@@ -1,7 +1,30 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
+import type { User } from '@supabase/supabase-js'
 import { provisionSignupTrial } from '@/lib/billing/provision-signup-trial'
 import { stampLogin } from '@/lib/auth/stamp-login'
+import { createServiceRoleClient } from '@/lib/supabase/server'
+import { BOARDS } from '@/lib/board/board-config'
+
+/**
+ * profiles.exam_board holds the sign-up form's coarse label, which the
+ * handle_new_user() trigger restricts to AQA, Edexcel, OCR, WJEC or Other.
+ * The board cookie needs a board id. Only the labels that name exactly one
+ * board on this site are mapped: Edexcel could be GCSE, IGCSE or A level,
+ * WJEC could be Eduqas or WJEC in Wales, and Other is nothing, so for those
+ * the board picker asks rather than the callback guessing.
+ */
+const BOARD_ID_FOR_PROFILE_LABEL: Record<string, string> = { AQA: 'aqa', OCR: 'ocr' }
+const VALID_BOARD_IDS = new Set<string>(BOARDS.map((b) => b.id))
+
+/** How long after creation or confirmation a session still counts as the first. */
+const FIRST_SESSION_WINDOW_MS = 10 * 60 * 1000
+
+function isWithinFirstSessionWindow(iso: string | null | undefined): boolean {
+  if (!iso) return false
+  const at = Date.parse(iso)
+  return Number.isFinite(at) && Date.now() - at < FIRST_SESSION_WINDOW_MS
+}
 
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url)
@@ -93,6 +116,16 @@ export async function GET(request: NextRequest) {
    *
    * Best-effort throughout: a failure here must never cost someone the sign-in
    * they just completed, so it falls back to /dashboard.
+   *
+   * A SECOND DEFECT, FIXED 12 OCTOBER 2026: the cookie write copied
+   * profiles.exam_board straight in, and that column holds the form's label
+   * ('AQA', 'Edexcel', 'Other'), not a board id. The middleware and the board
+   * modal accept any cookie value while the server reader rejects anything
+   * that is not a board id, so the board silently never applied and the site
+   * never asked for one. It was dormant only because a PKCE confirmation never
+   * reached this code (see landingAfterSignIn). Now only a label that names
+   * one board is written, and never over a valid board this browser already
+   * holds.
    */
   const landingFor = async (userId: string): Promise<string> => {
     try {
@@ -102,10 +135,12 @@ export async function GET(request: NextRequest) {
         .eq('id', userId)
         .single()
 
-      if (profile?.exam_board) {
+      const boardId = BOARD_ID_FOR_PROFILE_LABEL[String(profile?.exam_board ?? '')]
+      const heldBoard = request.cookies.get('english-hub-board')?.value
+      if (boardId && !(heldBoard && VALID_BOARD_IDS.has(heldBoard))) {
         // Same attributes as every other writer of this cookie (middleware
         // line ~445), so a later change to one is visible against the others.
-        response.cookies.set('english-hub-board', String(profile.exam_board), {
+        response.cookies.set('english-hub-board', boardId, {
           path: '/',
           maxAge: 60 * 60 * 24 * 365,
           sameSite: 'lax',
@@ -119,6 +154,78 @@ export async function GET(request: NextRequest) {
     } catch (err) {
       console.error('[auth/callback] could not resolve landing for', userId, err)
       return '/dashboard'
+    }
+  }
+
+  /**
+   * Where a session this route has just established lands, for every flow
+   * except password recovery.
+   *
+   * A DEFECT, FIXED 12 OCTOBER 2026. Role routing and the welcome flag sat
+   * inside `type === 'signup'`, and a PKCE redirect never carries `type`:
+   * auth-js keeps it in the browser beside the code verifier, because
+   * Supabase does not return it. So no email confirmation and no Google or
+   * Apple sign-up was ever routed by role or welcomed. Parents landed on the
+   * student dashboard with nothing linking to theirs. This decides from the
+   * user record instead: a session within ten minutes of the account being
+   * created or confirmed is a first session.
+   *
+   * An explicit `next` still wins, because whoever built the link asked for it.
+   */
+  const landingAfterSignIn = async (user: User, confirmedSignup: boolean): Promise<string> => {
+    const firstSession =
+      confirmedSignup ||
+      isWithinFirstSessionWindow(user.created_at) ||
+      isWithinFirstSessionWindow(user.email_confirmed_at)
+    let target = safeNext
+    if (rawNext === '/dashboard' || !searchParams.get('next')) {
+      target = await landingFor(user.id)
+    }
+    if (!firstSession) return target
+    // The dashboards read welcome=true to show their first-visit message.
+    const separator = target.includes('?') ? '&' : '?'
+    return `${target}${separator}welcome=true`
+  }
+
+  /**
+   * A brand-new Google or Apple account that started on a teacher or parent
+   * sign-up page gets that role.
+   *
+   * A DEFECT, FIXED 12 OCTOBER 2026. The email forms put the role in the
+   * sign-up metadata, which handle_new_user() stores. Google and Apple carry
+   * no such metadata, so the trigger recorded every one of them as a student,
+   * and nothing in the product can change a role afterwards. A teacher who
+   * pressed "Continue with Google" on /auth/teacher-register landed on
+   * /dashboard/teacher, was told it was for teachers only and was sent to the
+   * student dashboard, permanently.
+   *
+   * The intent travels in `next` (/dashboard/teacher or /dashboard/parent),
+   * which every OAuth button already passes through Supabase's redirect
+   * allow-list, so no new parameter is needed. It is applied only to an
+   * account created in the last ten minutes, only to a non-email provider and
+   * only over the trigger's default of 'student', so it can never change a
+   * role someone already holds. That grants nothing the email forms do not
+   * already let anyone choose for themselves. It runs before stampLogin so the
+   * Prisma projection copies the right role.
+   */
+  const applySignupRole = async (user: User): Promise<void> => {
+    const wanted = safeNext.startsWith('/dashboard/teacher')
+      ? 'teacher'
+      : safeNext.startsWith('/dashboard/parent')
+        ? 'parent'
+        : null
+    if (!wanted) return
+    if ((user.app_metadata?.provider ?? 'email') === 'email') return
+    if (!isWithinFirstSessionWindow(user.created_at)) return
+    try {
+      const { error } = await createServiceRoleClient()
+        .from('profiles')
+        .update({ role: wanted })
+        .eq('id', user.id)
+        .eq('role', 'student')
+      if (error) console.error('[auth/callback] could not apply sign-up role', wanted, error)
+    } catch (err) {
+      console.error('[auth/callback] could not apply sign-up role', wanted, err)
     }
   }
 
@@ -192,6 +299,10 @@ export async function GET(request: NextRequest) {
     }
 
     if (!error) {
+      if (data?.user) {
+        await applySignupRole(data.user)
+      }
+
       // Every session this route establishes is a sign-in, and until 12
       // October 2026 none of them was recorded: only the password form
       // stamped lastLoginAt. See src/lib/auth/stamp-login.ts.
@@ -241,18 +352,10 @@ export async function GET(request: NextRequest) {
         await provisionSignupTrial(data.user.id)
       }
 
-      // For signup verification, add welcome flag so dashboard shows onboarding
-      if (type === 'signup') {
-        let target = safeNext
-        if (data?.user?.id) {
-          // Only override the default. An explicit `next` was asked for by
-          // whoever built the confirmation link and must win.
-          if (rawNext === '/dashboard' || !searchParams.get('next')) {
-            target = await landingFor(data.user.id)
-          }
-        }
-        const separator = target.includes('?') ? '&' : '?'
-        return redirectTo(`${target}${separator}welcome=true`)
+      // Role routing and the welcome flag, decided from the user record,
+      // because `type` is never present here (see landingAfterSignIn).
+      if (data?.user) {
+        return redirectTo(await landingAfterSignIn(data.user, type === 'signup'))
       }
       return redirectTo(safeNext)
     }
@@ -304,17 +407,10 @@ export async function GET(request: NextRequest) {
       // The only magic link the product mints is the re-verification one, and
       // it is sent only to an address that is not yet confirmed, so it is a
       // first session too and lands like a confirmed signup.
-      if (type === 'signup' || type === 'magiclink') {
-        // Routing for a confirmed signup: the welcome flag and the role-aware
-        // landing page.
-        let target = safeNext
-        if (data?.user?.id) {
-          if (rawNext === '/dashboard' || !searchParams.get('next')) {
-            target = await landingFor(data.user.id)
-          }
-        }
-        const separator = target.includes('?') ? '&' : '?'
-        return redirectTo(`${target}${separator}welcome=true`)
+      if (data?.user) {
+        return redirectTo(
+          await landingAfterSignIn(data.user, type === 'signup' || type === 'magiclink'),
+        )
       }
       return redirectTo(safeNext)
     }

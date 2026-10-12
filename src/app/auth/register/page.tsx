@@ -26,7 +26,8 @@ import {
 } from 'lucide-react'
 
 import { getUtmParams } from '@/lib/utm'
-import { buildSignupMetadata } from '@/lib/auth/signup-metadata'
+import { buildSignupMetadata, examBoardLabelForBoardId } from '@/lib/auth/signup-metadata'
+import { signUpErrorMessageKey } from '@/lib/auth/signup-errors'
 import { trackEvent } from '@/lib/gtag'
 import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
@@ -99,6 +100,19 @@ function RegisterForm() {
         ? 'teacher'
         : 'student',
   )
+  // Where a Google or Apple sign-up from this page lands. Both buttons used to
+  // be hard-coded to /dashboard, so arrivals from pricing, /redeem and school
+  // invites lost their destination (12 October 2026). With no destination the
+  // account type picks the hub, and /auth/callback reads /dashboard/teacher or
+  // /dashboard/parent on a brand-new Google or Apple account as the role to
+  // record, because those providers carry no sign-up metadata.
+  const oauthNext =
+    safeNext ??
+    (accountType === 'teacher'
+      ? '/dashboard/teacher'
+      : accountType === 'parent'
+        ? '/dashboard/parent'
+        : '/dashboard')
   const [fullName, setFullName] = useState('')
   const [dobDay, setDobDay] = useState('')
   const [dobMonth, setDobMonth] = useState('')
@@ -140,7 +154,7 @@ function RegisterForm() {
 
   useEffect(() => {
     if (selectedBoard && !examBoard) {
-      setExamBoard(selectedBoard)
+      setExamBoard(examBoardLabelForBoardId(selectedBoard))
     }
   }, [selectedBoard, examBoard])
   const [showPassword, setShowPassword] = useState(false)
@@ -278,12 +292,22 @@ function RegisterForm() {
       // Account-enumeration defence (P1-SEC-6): do NOT surface Supabase's
       // raw "User already registered" message. That branch lets an attacker
       // probe which emails have existing accounts on a platform used by
-      // minors. We show the same neutral response regardless of whether
-      // the email was new, existed, or any other failure reason - the
-      // user's expected next action is the same in every case (check the
-      // inbox for a verification email; Supabase sends one automatically
-      // on duplicate signup to the existing account).
-      setError(t('auth.register.neutral_signup_response'))
+      // minors, so an existing address still gets the neutral response.
+      //
+      // A DEFECT, FIXED 12 OCTOBER 2026: every OTHER failure got that same
+      // neutral response too, which says a verification link was sent. A
+      // password Supabase rejects, an email rate limit, a mistyped address or
+      // an outage all told the person to go and wait for an email that was
+      // never coming, and because no account is created on those paths they
+      // left no trace in any count. Only the existing-address case needs the
+      // neutral wording (and with email confirmation on, Supabase returns
+      // success for that case rather than an error anyway), so the rest now
+      // say what happened and what to do.
+      setError(t(signUpErrorMessageKey(signUpError)))
+      phCapture(PH_EVENTS.SIGNUP_FAILED, {
+        accountType,
+        reason: signUpError.code ?? `status_${signUpError.status ?? 'none'}`,
+      })
       setLoading(false)
       return
     }
@@ -419,19 +443,13 @@ function RegisterForm() {
               )}
               {/* Under-16s are told at sign-up that we will email their
                   guardian. The email is raised once they are signed in (it
-                  cannot be sent before Supabase issues a session), so give
-                  them the page that raises and tracks it rather than leaving
-                  the promise hanging. */}
+                  cannot be sent before Supabase issues a session). This card
+                  used to link straight to /consent/status, which needs that
+                  session, so before confirming it was a sign-in wall
+                  (12 October 2026). It now says when the step opens. */}
               {accountType === 'student' && isUnder16 && (
                 <p className="text-sm text-muted-foreground mb-4">
-                  {t('form.under_16_guardian_consent_help')}{' '}
-                  <Link
-                    href="/consent/status"
-                    className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
-                  >
-                    {t('consent.guardian.send_request_short')}
-                  </Link>
-                  .
+                  {t('auth.register.card_guardian_after_confirm')}
                 </p>
               )}
               <p className="text-sm text-muted-foreground mb-4">
@@ -443,6 +461,25 @@ function RegisterForm() {
                   {t('auth.resend_verification_email')}
                 </Link>
                 .
+              </p>
+              {/* This card is shown for an address that already has an
+                  account too (the enumeration defence), and Supabase sends
+                  nothing in that case, so say where that person should go. */}
+              <p className="text-sm text-muted-foreground mb-4">
+                {t('auth.register.card_existing_account')}{' '}
+                <Link
+                  href="/auth/login"
+                  className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
+                >
+                  {t('auth.sign_in')}
+                </Link>{' '}
+                ·{' '}
+                <Link
+                  href="/auth/forgot-password"
+                  className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
+                >
+                  {t('form.forgot_password_q')}
+                </Link>
               </p>
               <div className="flex flex-col gap-2">
                 <Button className="w-full" render={<Link href="/revision" />}>
@@ -557,8 +594,8 @@ function RegisterForm() {
             {(process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED === 'true' ||
               process.env.NEXT_PUBLIC_APPLE_OAUTH_ENABLED === 'true') && (
               <div className="mb-5 space-y-4">
-                <GoogleSignInButton redirectTo="/dashboard" className="w-full" />
-                <AppleSignInButton redirectTo="/dashboard" className="w-full" />
+                <GoogleSignInButton redirectTo={oauthNext} className="w-full" />
+                <AppleSignInButton redirectTo={oauthNext} className="w-full" />
                 <div className="relative">
                   <div className="absolute inset-0 flex items-center">
                     <span className="w-full border-t border-border" />

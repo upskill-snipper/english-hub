@@ -17,9 +17,16 @@ export async function POST(request: NextRequest) {
   // non-functional in Vercel's serverless runtime (per-instance state).
   // Switched to Upstash Redis via the shared rateLimit helper - same
   // pattern as every other auth-adjacent endpoint.
+  //
+  // 60 per 15 minutes since 12 October 2026, up from 10. A class signing up
+  // together shares the school's one public IP, so from the eleventh pupil in
+  // a quarter of an hour the form said "Too many requests". This route stores
+  // nothing and sends nothing, so the limit only needs to stop flooding, and
+  // it is not what keeps a child from trying another date of birth: they
+  // could do that from any form.
   const ip = getClientIp(request.headers)
   const rl = await rateLimit(`validate-age:${ip}`, {
-    limit: 10,
+    limit: 60,
     windowSeconds: 15 * 60,
   })
   if (!rl.success) {

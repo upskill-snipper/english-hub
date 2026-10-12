@@ -147,3 +147,36 @@ export function buildSignupMetadata(input: SignupProfileInput): SignupMetadata {
   }
   return out
 }
+
+// ─── The exam-board label the trigger accepts ──────────────────────────────
+//
+// handle_new_user() keeps exam_board only if it is one of these labels (and
+// maps anything starting eduqas or wjec to WJEC); everything else is stored
+// as 'Other'. Both sign-up forms used to send values it did not recognise
+// (12 October 2026):
+//   • the student form pre-filled the site's board id ('aqa',
+//     'edexcel-igcse'), which matched none of its own options, so every
+//     student who arrived with a board chosen was recorded as Other;
+//   • the teacher form's values are Prisma enum names, so 'EDEXCEL' and
+//     'EDEXCEL_IGCSE' were recorded as Other too.
+
+export type ExamBoardLabel = 'AQA' | 'Edexcel' | 'OCR' | 'WJEC' | 'Other'
+
+/** The label for a site board id, e.g. 'edexcel-igcse' is 'Edexcel'. */
+export function examBoardLabelForBoardId(boardId: string): ExamBoardLabel {
+  if (boardId.startsWith('aqa')) return 'AQA'
+  if (boardId.startsWith('edexcel') || boardId === 'ial-edexcel') return 'Edexcel'
+  if (boardId.startsWith('ocr')) return 'OCR'
+  if (boardId.startsWith('eduqas') || boardId.startsWith('wjec')) return 'WJEC'
+  return 'Other'
+}
+
+/** The label for a Prisma ExamBoard enum name, as the teacher form uses. */
+export function examBoardLabelForPrismaBoard(value: string): ExamBoardLabel | null {
+  if (!value) return null
+  if (value === 'AQA') return 'AQA'
+  if (value === 'EDEXCEL' || value === 'EDEXCEL_IGCSE') return 'Edexcel'
+  if (value === 'OCR') return 'OCR'
+  if (value === 'EDUQAS') return 'WJEC'
+  return 'Other'
+}

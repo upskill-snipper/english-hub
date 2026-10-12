@@ -36,13 +36,40 @@ export function setAiOptedOut(optedOut: boolean): void {
  * relying on the client-side localStorage flag.
  *
  * Import only in server code (API routes, server components).
+ *
+ * A DEFECT, FIXED 12 OCTOBER 2026. Every caller (fifteen AI routes and the
+ * examiner gate) hands in the Supabase auth uuid, and this used to look
+ * `PrivacySettings` up by it directly. `PrivacySettings.userId` is the Prisma
+ * `User.id`, a cuid, which is what /api/privacy/settings writes, so the lookup
+ * could never match and an opt-out was never enforced on the server. Nobody
+ * had opted out when it was found (0 of 2 settings rows, counted read-only),
+ * so no one was marked against their choice.
+ *
+ * The uuid is now resolved to the Prisma row first, without creating one: a
+ * person with no Prisma row cannot have a settings row, because the foreign
+ * key requires the row. A database error propagates rather than reading as
+ * "not opted out", so the caller fails closed. Anything that is not
+ * uuid-shaped is taken as a Prisma id already (seeded rows such as the App
+ * Review account have non-uuid primary keys).
  */
+const SUPABASE_UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+
 export async function isAiOptedOutServer(userId: string): Promise<boolean> {
   // Dynamic import to avoid pulling Prisma into client bundles
   const { prisma } = await import('@/lib/prisma')
 
+  let prismaUserId = userId
+  if (SUPABASE_UUID.test(userId)) {
+    const owner = await prisma.user.findUnique({
+      where: { supabaseUserId: userId },
+      select: { id: true },
+    })
+    if (!owner) return false
+    prismaUserId = owner.id
+  }
+
   const settings = await prisma.privacySettings.findUnique({
-    where: { userId },
+    where: { userId: prismaUserId },
     select: { aiOptOut: true },
   })
 

@@ -298,6 +298,12 @@ export const EVENTS = {
   PRICING_VIEWED: 'pricing_viewed',
   SIGNUP_STARTED: 'signup_started',
   SIGNUP_COMPLETED: 'signup_completed',
+  /**
+   * A sign-up Supabase refused, with its error code and nothing else. No
+   * account exists after these, so until 12 October 2026 they appeared in no
+   * count at all, and the form told each person a link had been sent.
+   */
+  SIGNUP_FAILED: 'signup_failed',
   FIRST_ESSAY_SUBMITTED: 'first_essay_submitted',
   /**
    * A marking attempt the server refused. UX-2: /marking/submit is the screen

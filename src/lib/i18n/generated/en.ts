@@ -693,11 +693,22 @@ export const EN_MESSAGES: Record<string, string> = {
   'auth.register.teacher': 'Teacher',
   'auth.register.neutral_signup_response':
     'If this email address is valid and not already registered, we have sent a verification link to it. Please check your inbox (including spam) and follow the link to activate your account.',
-  'auth.register.welcome_prefix':
-    "Welcome to The English Hub. We've sent a quick verification link to",
+  'auth.register.welcome_prefix': "Welcome to The English Hub. We've sent a verification link to",
   'auth.register.welcome_suffix':
-    'so we can keep your account safe - but you can keep exploring while you wait. The link will let you log back in next time.',
-  'auth.register.trial_ready_lead': 'Your free trial is ready.',
+    'Open that email and follow the link to finish creating your account. You can sign in once you have.',
+  'auth.register.trial_ready_lead': 'Your free trial starts when you confirm your email.',
+  'auth.register.card_existing_account':
+    'Already have an account with this email? We do not send another link, so sign in instead or reset your password:',
+  'auth.register.card_guardian_after_confirm':
+    'As you are under 16, a parent or guardian must give consent before you can use AI feedback. Once you have confirmed your email and signed in, you can send them the consent request from your account.',
+  'auth.register.error.weak_password':
+    'That password is not strong enough. Try a longer one that mixes letters, numbers and symbols and that you do not use on other sites.',
+  'auth.register.error.rate_limited':
+    'We could not send your verification email just now because too many have been sent in a short time. Please wait a few minutes and try again.',
+  'auth.register.error.invalid_email':
+    'That email address does not look right. Please check it and try again.',
+  'auth.register.error.unavailable':
+    'We could not create your account just now. Please try again in a few minutes. If it keeps happening, email founder@theenglishhub.app.',
   'auth.register.trial_ready_body':
     'Your 7-day free trial includes every premium feature - AI marking, lesson plans, and more.',
   'auth.register.teacher_after_verify':
@@ -3709,9 +3720,9 @@ export const EN_MESSAGES: Record<string, string> = {
   'model_answers.summary.heading_prefix': 'What makes this a',
   'model_answers.tabs.empty': 'No model answer available for',
   'model_answers.tabs.empty_suffix': 'yet.',
-  'profile.dob.title': 'Please confirm your date of birth',
+  'profile.dob.title': 'Add your date of birth to use AI marking and feedback',
   'profile.dob.body':
-    "We're missing this from your profile. It helps us give the right age-appropriate experience and meet our safeguarding obligations.",
+    'AI marking and feedback stay switched off until we know your age, so that we can apply the right protections for it. You only need to do this once.',
   'profile.dob.input_label': 'Date of birth',
   'profile.dob.save': 'Save',
   'profile.dob.saving': 'Saving…',

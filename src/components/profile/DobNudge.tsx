@@ -4,11 +4,18 @@ import { useEffect, useState } from 'react'
 import { AlertCircle, Check, Loader2, X } from 'lucide-react'
 import { useT } from '@/lib/i18n/use-t'
 
-// Renders a dismissable banner prompting the user to confirm their date of
-// birth, but ONLY when the server-side check reports they have the
-// 2000-01-01 placeholder DOB from the 2026-04-20 backfill. For every other
-// user the component is a no-op (returns null) so it's safe to drop into
-// any authenticated page without flash-of-irrelevant-UI.
+// Renders a dismissable banner prompting the user to add their date of
+// birth, but ONLY when GET /api/profile/dob reports that we hold no usable
+// one: no date at all, or the 2000-01-01 placeholder from the 2026-04-20
+// backfill. For every other user the component is a no-op (returns null) so
+// it's safe to drop into any authenticated page without
+// flash-of-irrelevant-UI.
+//
+// Since 12 October 2026 its copy says what the missing date costs. It used to
+// ask the person to "confirm" a date for "an age-appropriate experience",
+// which never mentioned that AI marking and feedback refuse every request
+// until the date is held, and most Google and Apple sign-ups (no date is
+// collected on that route) met the refusal before they understood why.
 
 const DISMISS_KEY = 'dob-nudge-dismissed-until'
 

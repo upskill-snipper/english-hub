@@ -4,7 +4,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { buildSignupMetadata } from '@/lib/auth/signup-metadata'
+import { buildSignupMetadata, examBoardLabelForPrismaBoard } from '@/lib/auth/signup-metadata'
+import { signUpErrorMessageKey } from '@/lib/auth/signup-errors'
 import { useT } from '@/lib/i18n/use-t'
 import {
   User,
@@ -126,18 +127,34 @@ export default function TeacherRegisterPage() {
       const fullName = `${firstName.trim()} ${lastName.trim()}`
       const siteUrl = window.location.origin
 
+      const dateOfBirth = `${dobYear}-${dobMonth.padStart(2, '0')}-${dobDay.padStart(2, '0')}`
+
       const { data, error: signUpError } = await supabase.auth.signUp({
         email: email.trim(),
         password,
         options: {
           // Read by the handle_new_user() trigger, which writes the profile.
-          data: buildSignupMetadata({ fullName, role: 'teacher', schoolName }),
+          //
+          // The date of birth and board used to be sent only to
+          // /api/auth/teacher-signup below, which needs a session and so
+          // refuses every call while email confirmation is pending: both were
+          // collected (the 18+ check depends on the date) and then discarded,
+          // and the examiner tool asked for the date again (12 October 2026).
+          // The board goes in as the trigger's label, because it stores any
+          // value it does not recognise as 'Other'.
+          data: buildSignupMetadata({
+            fullName,
+            role: 'teacher',
+            schoolName,
+            dateOfBirth,
+            examBoard: examBoardLabelForPrismaBoard(selectedExamBoard),
+          }),
           emailRedirectTo: `${siteUrl}/auth/callback`,
         },
       })
 
       if (signUpError) {
-        setError(signUpError.message)
+        setError(t(signUpErrorMessageKey(signUpError)))
         setLoading(false)
         return
       }
@@ -155,7 +172,6 @@ export default function TeacherRegisterPage() {
         // mirror of Supabase Auth; feeds dormancy/DSAR/retention features
         // (see /api/auth/teacher-signup route.ts header). Must not block
         // the signup/verification UX.
-        const dateOfBirth = `${dobYear}-${dobMonth.padStart(2, '0')}-${dobDay.padStart(2, '0')}`
         fetch('/api/auth/teacher-signup', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
