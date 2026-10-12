@@ -14,9 +14,10 @@
     "11 October 2026: BulkUploadJob deleted from the list, because",
     "supabase/migrations/20261011_bulk_upload_job.sql creates it. 30 remain.",
     "",
-    "12 October 2026: four school policies from 004_fix_school_rls.sql added,",
+    "12 October 2026: five school policies from 004_fix_school_rls.sql added,",
     "because 20261012_school_access_rules.sql drops them deliberately (the",
-    "manifest does not follow DROP POLICY). 34 entries."
+    "manifest does not follow DROP POLICY). 35 entries. The fifth was missed",
+    "at first and reported as NEW drift by the post-deploy check, as it should."
   ],
   "allow": [
     {
@@ -116,6 +117,11 @@
       "kind": "missing-policy",
       "object": "class_students:school_staff_insert_class_students",
       "why": "Deliberately dropped by 20261012_school_access_rules.sql: it let any accepted member, pupils included, add anyone to a class. Replaced by class_students_insert_staff."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "class_students:school_staff_update_class_students",
+      "why": "Deliberately dropped by 20261012_school_access_rules.sql: it let any accepted member, pupils included, change any enrolment. Replaced by class_students_update_staff."
     },
     {
       "kind": "missing-policy",
