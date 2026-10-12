@@ -381,6 +381,15 @@ export default function AdminPage() {
                   title="School provisioning"
                   desc="Create a school and invite its first admin after a deal is signed."
                 />
+                {/* Everything after provisioning: the school's AI
+                    authorisation, then its staff, classes and pupils from
+                    the spreadsheet it returns. */}
+                <AdminToolCard
+                  href="/admin/schools"
+                  icon={<Users className="h-5 w-5 text-primary" />}
+                  title="School setup"
+                  desc="Record a school's AI authorisation, then load its staff, classes and pupils from its spreadsheet."
+                />
                 <AdminToolCard
                   href="/admin/email-diagnostics"
                   icon={<Mail className="h-5 w-5 text-primary" />}
