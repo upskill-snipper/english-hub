@@ -86,6 +86,14 @@ export interface BuildInput {
   guide: StudyGuide
   /** Every served panel and portrait the text has; the path keeps the ones it uses. */
   art: GameArt
+  /**
+   * The most items a choice round keeps. POOL_MAX unless the caller asks for
+   * more: a text quest (src/lib/games/quest) spreads a public-domain text's
+   * items across its chapters and wants every one the guide supports. A text
+   * in copyright is always held to POOL_MAX, whatever is asked, because its
+   * fair-dealing measure (quoted.ts) is taken on that path.
+   */
+  poolMax?: number
   /** The held edition, when the site holds one. Without it the refrain and true-quotation checks fall back to the guide. */
   held?: HeldEdition | null
 }
@@ -97,6 +105,8 @@ interface Ctx {
   slug: string
   /** Every guide quotation, normalised, for the true-quotation check. */
   quotations: string[]
+  /** The most items a choice round keeps: see BuildInput.poolMax. */
+  poolMax: number
 }
 
 // ── Shared ───────────────────────────────────────────────────────────────────
@@ -210,8 +220,8 @@ function buildWho(ctx: Ctx): GameItem[] {
   const items: GameItem[] = [...roles]
   // The cast list first; the character map fills the round where the cast list
   // is short or, in a supplement guide, lives on the text's own page.
-  if (items.length < POOL_MAX) items.push(...buildWhoRelations(ctx))
-  return pool(items, POOL_MAX, hashSeed(ctx.slug, 'who', 'pool'))
+  if (items.length < ctx.poolMax) items.push(...buildWhoRelations(ctx))
+  return pool(items, ctx.poolMax, hashSeed(ctx.slug, 'who', 'pool'))
 }
 
 // ── Story order ──────────────────────────────────────────────────────────────
@@ -344,7 +354,7 @@ function buildWhere(ctx: Ctx): GameItem[] {
     fromKeyQuotes.length >= MIN_ITEMS
       ? fromKeyQuotes
       : [...fromKeyQuotes, ...buildWhereFrom(ctx, scenes)]
-  return pool(items, POOL_MAX, hashSeed(ctx.slug, 'where', 'pool'))
+  return pool(items, ctx.poolMax, hashSeed(ctx.slug, 'where', 'pool'))
 }
 
 interface Token {
@@ -484,7 +494,7 @@ function buildFinish(ctx: Ctx): GameItem[] {
     fromKeyQuotes.length >= MIN_ITEMS
       ? fromKeyQuotes
       : [...fromKeyQuotes, ...buildFinishFrom(ctx, scenes, all)]
-  return pool(items, POOL_MAX, hashSeed(ctx.slug, 'finish', 'pool'))
+  return pool(items, ctx.poolMax, hashSeed(ctx.slug, 'finish', 'pool'))
 }
 
 // ── Method spotter ───────────────────────────────────────────────────────────
@@ -507,7 +517,7 @@ function buildMethod(ctx: Ctx): GameItem[] {
       explanation: t.effect,
     })
   })
-  return pool(items, POOL_MAX, hashSeed(ctx.slug, 'method', 'pool'))
+  return pool(items, ctx.poolMax, hashSeed(ctx.slug, 'method', 'pool'))
 }
 
 // ── Theme match ──────────────────────────────────────────────────────────────
@@ -540,7 +550,7 @@ function buildTheme(ctx: Ctx): GameItem[] {
       explanation: m.significance,
     })
   })
-  return pool(items, POOL_MAX, hashSeed(ctx.slug, 'theme', 'pool'))
+  return pool(items, ctx.poolMax, hashSeed(ctx.slug, 'theme', 'pool'))
 }
 
 // ── The path ─────────────────────────────────────────────────────────────────
@@ -575,12 +585,14 @@ function usedArt(rounds: Round[], art: GameArt): GameArt {
   }
 }
 
-export function buildTextGame({ guide, art, held = null }: BuildInput): TextGame {
+export function buildTextGame({ guide, art, held = null, poolMax }: BuildInput): TextGame {
   const ctx: Ctx = {
     guide,
     art,
     held,
     slug: guide.slug,
+    poolMax:
+      guide.rights.status === 'copyright' ? POOL_MAX : Math.max(POOL_MAX, poolMax ?? POOL_MAX),
     quotations: [
       ...(guide.keyQuotes ?? []).map((q) => q.text),
       ...guide.timeline.flatMap((m) => (m.quote ? [m.quote] : [])),

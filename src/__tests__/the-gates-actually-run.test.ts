@@ -255,10 +255,21 @@ describe('what the suite runs in', () => {
     // never leaves the site whatever `next` says. The routing that sends people
     // there is tested in the node environment, in
     // a-new-account-lands-where-its-role-belongs.test.ts.
+    //
+    // Then to 31, the same day, for a-quest-plays-from-the-map-to-the-comic
+    // .test.tsx. Text quests replaced the guided path on every /games/texts
+    // page, and what a student relies on exists only once the map and the
+    // player run: an answer chosen on screen is marked, a finished level's
+    // stars and panels are written and the map shows them when it reads them
+    // back, a miss is offered in Review, the finale stays shut until every
+    // part has a star, and the keyboard alone can play. The rules behind those
+    // screens are tested in the node environment, in
+    // a-quest-scores-and-remembers-what-it-says.test.ts and
+    // a-text-quest-is-built-from-checked-material.test.ts.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(30)
+    ).toBeLessThanOrEqual(31)
   })
 })
 

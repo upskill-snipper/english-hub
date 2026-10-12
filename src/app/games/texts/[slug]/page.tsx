@@ -5,12 +5,13 @@ import { cache } from 'react'
 import { ArrowLeft, BookOpen, Gamepad2 } from 'lucide-react'
 
 import { LinocutStyles } from '@/components/comics/linocut/styles'
-import { TextGameRunner } from '@/components/games/text/TextGameRunner'
+import { QuestMap } from '@/components/games/quest/QuestMap'
 import { TextGamesCrumbs } from '@/components/games/text/TextGamesCrumbs'
 import { EnglishText } from '@/components/i18n/EnglishText'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { loadQuest } from '@/lib/games/quest/load'
 import { loadTextGame, textGameSlugs } from '@/lib/games/text-games/load'
 import {
   textGameDescription,
@@ -21,15 +22,19 @@ import { t } from '@/lib/i18n/t'
 import { textGuideHref } from '@/lib/revision/guide-href'
 
 /**
- * One set text's guided games: /games/texts/<slug>.
+ * One set text's quest: /games/texts/<slug>.
  *
- * The path is built here, on the server, from the text's study guide, its
- * comic art and the site's held edition, where there are any
- * (src/lib/games/text-games/load.ts),
- * and handed to the client runner as plain data: this text's rounds and the
- * descriptors of the panels and portraits they show, never another guide and
- * never a drawing. The browser fetches each drawing when it is about to be
- * seen (src/components/comics/linocut/lazy-plate.tsx).
+ * The quest is built here, on the server, from the text's study guide, its
+ * comic registry, its comic art and the site's held edition, where there are
+ * any (src/lib/games/quest/load.ts), and handed to the client map as plain
+ * data: this text's levels and challenges and the descriptors of the panels
+ * and portraits they show, never another guide and never a drawing. The
+ * browser fetches each drawing when it is about to be seen
+ * (src/components/comics/linocut/lazy-plate.tsx).
+ *
+ * Until 12 October 2026 this page played the guided path of six rounds
+ * (src/lib/games/text-games). A quest is built from that path's checked items
+ * and more, so the search description still names what the path covers.
  *
  * Only the texts textGameSlugs() names have a page; any other slug is a 404.
  */
@@ -44,13 +49,14 @@ type Params = { slug: string }
 
 /** Built once per request, for the metadata and the page alike. */
 const getGame = cache(loadTextGame)
+const getQuest = cache(loadQuest)
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params
-  const game = await getGame(slug)
-  if (!game) return {}
+  const [game, quest] = await Promise.all([getGame(slug), getQuest(slug)])
+  if (!game || !quest) return {}
   const title = textGameTitle(game.title)
-  const description = textGameDescription(game)
+  const description = textGameDescription(game, quest.levels.length)
   const url = `https://theenglishhub.app/games/texts/${slug}`
   // Share cards do not inherit a title template, and are not cut at 60
   // characters, so they carry the whole title and the brand.
@@ -79,8 +85,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
 export default async function TextGamePage({ params }: { params: Promise<Params> }) {
   const { slug } = await params
-  const game = await getGame(slug)
-  if (!game) notFound()
+  const quest = await getQuest(slug)
+  if (!quest) notFound()
 
   const board = await getServerBoard()
   const [crumbs, home, games, textGames, eyebrow, by, guideLink, allGames] = await Promise.all([
@@ -95,12 +101,12 @@ export default async function TextGamePage({ params }: { params: Promise<Params>
   ])
   const [byBefore, byAfter = ''] = by.split('{author}')
   const hasArt =
-    Object.keys(game.art.panels).length > 0 || Object.keys(game.art.portraits).length > 0
+    Object.keys(quest.art.panels).length > 0 || Object.keys(quest.art.portraits).length > 0
 
   return (
     <div className="mx-auto max-w-3xl px-4 pb-16 pt-4 sm:px-6 sm:pt-6">
       {/* The comic frames' stylesheet, hoisted into <head> once. The frames
-          are drawn by the client runner and do not carry it (see
+          are drawn by the client map and do not carry it (see
           src/components/comics/linocut/styles.tsx). */}
       {hasArt && <LinocutStyles />}
 
@@ -110,7 +116,7 @@ export default async function TextGamePage({ params }: { params: Promise<Params>
           { label: home, href: '/' },
           { label: games, href: '/games' },
           { label: textGames, href: '/games/texts' },
-          { label: game.title, english: true },
+          { label: quest.title, english: true },
         ]}
       />
 
@@ -123,11 +129,11 @@ export default async function TextGamePage({ params }: { params: Promise<Params>
           as="h1"
           className="font-heading text-display-sm text-foreground sm:text-display"
         >
-          {game.title}
+          {quest.title}
         </EnglishText>
         <p className="text-body-lg text-muted-foreground">
           {byBefore}
-          <EnglishText as="span">{game.author}</EnglishText>
+          <EnglishText as="span">{quest.author}</EnglishText>
           {byAfter}
         </p>
         <div className="flex flex-wrap gap-2">
@@ -152,13 +158,13 @@ export default async function TextGamePage({ params }: { params: Promise<Params>
         </div>
       </header>
 
-      <TextGameRunner game={game} />
+      <QuestMap quest={quest} />
 
       {/* A text in copyright is quoted under fair dealing, which needs an
           acknowledgement on the page that quotes it: the guide's own. */}
-      {game.acknowledgement && (
+      {quest.acknowledgement && (
         <EnglishText as="p" className="mt-10 text-body-sm text-muted-foreground">
-          {game.acknowledgement}
+          {quest.acknowledgement}
         </EnglishText>
       )}
     </div>

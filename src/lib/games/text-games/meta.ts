@@ -12,6 +12,13 @@
  *
  * The description names only the rounds the path really has: a text whose
  * guide has no language analysis is not promised a methods round.
+ *
+ * Since 12 October 2026 the page plays the text's quest, whose levels are
+ * built from the path's items (src/lib/games/quest). Given the quest's level
+ * count, the description counts levels; what it says they cover is still read
+ * from the path. "levels" and "rounds" are the same length, and a quest has at
+ * most nine levels, so every description stays inside the limit the path's
+ * did.
  */
 
 import type { RoundKind, TextGame } from './types'
@@ -40,14 +47,18 @@ function list(items: string[]): string {
   return `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`
 }
 
-export function textGameDescription(game: Pick<TextGame, 'title' | 'author' | 'rounds'>): string {
+export function textGameDescription(
+  game: Pick<TextGame, 'title' | 'author' | 'rounds'>,
+  levels?: number,
+): string {
   const covers = list([...new Set(game.rounds.map((r) => COVERS[r.kind]))])
-  const n = game.rounds.length
+  const n = levels ?? game.rounds.length
+  const unit = levels === undefined ? 'rounds' : n === 1 ? 'level' : 'levels'
   const candidates = [
-    `Revise ${game.title} by ${game.author} in ${n} short rounds on ${covers}, built from our study guide, with every answer marked at once.`,
-    `Revise ${game.title} in ${n} short rounds on ${covers}, built from our study guide, with every answer marked at once.`,
-    `Revise ${game.title} in ${n} short rounds on ${covers}, built from our study guide.`,
-    `${n} short revision rounds on ${game.title}, built from our study guide.`,
+    `Revise ${game.title} by ${game.author} in ${n} short ${unit} on ${covers}, built from our study guide, with every answer marked at once.`,
+    `Revise ${game.title} in ${n} short ${unit} on ${covers}, built from our study guide, with every answer marked at once.`,
+    `Revise ${game.title} in ${n} short ${unit} on ${covers}, built from our study guide.`,
+    `${n} short revision ${unit} on ${game.title}, built from our study guide.`,
   ]
   return candidates.find((c) => c.length <= DESCRIPTION_LIMIT) ?? candidates[candidates.length - 1]
 }
