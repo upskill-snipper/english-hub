@@ -87,6 +87,14 @@ Signup is browser-driven (`supabase.auth.signUp`, [`register/page.tsx:229`](../.
 
 With confirmation ON, only the third of those actually runs. Treat `profiles` as the source of truth for what a learner declared at signup; treat the Prisma row as a lagging projection.
 
+Since 12 October 2026, from a trace of every sign-up journey:
+
+- A refused `signUp()` says why ([`signup-errors.ts`](../../src/lib/auth/signup-errors.ts)). Only an address that already has an account keeps the neutral "if this address is valid, we have sent a link" wording, which is the enumeration defence; a rejected password, a rate limit, a bad address or an outage used to get it too.
+- `/auth/callback` decides role routing and the welcome flag from the user record. A PKCE redirect never carries `type`, so the old `type === 'signup'` branch never ran for an email confirmation or any Google or Apple sign-in.
+- A first session with no date of birth on the profile passes once through [`/auth/complete-profile`](../../src/app/auth/complete-profile/page.tsx), which saves through `POST /api/profile/dob` and can be skipped. Google and Apple collect no date of birth, and the AI gate refuses every request without one.
+- A brand-new Google or Apple account whose `next` is `/dashboard/teacher` or `/dashboard/parent` gets that role, over the trigger's default only and within ten minutes of creation. Those providers carry no sign-up metadata, so every such teacher used to become a student for good.
+- A failed confirmation or reset link lands on `/auth/login` with a message that names the step that will work (`link_opened_elsewhere`, `link_expired`, `reset_link_failed`).
+
 ---
 
 ## 3. Session handling
@@ -196,7 +204,9 @@ Routes attach the code only if the gate set one: `forbiddenResponse(reason, code
 
 Every refusal message names a control that actually exists. The previous AI-processing message said "update your consent preferences in settings" and no such control existed anywhere - the consent page could only withdraw, and the ledger could not hold the row in any case ([`consent-check.ts:82-88`](../../src/lib/consent-check.ts)).
 
-### A live defect in the leg next door
+### A defect in the leg next door (fixed 12 October 2026)
+
+**Fixed.** `isAiOptedOutServer` now resolves the Supabase uuid to the Prisma row (without creating one) before it reads `PrivacySettings`, and a database error propagates instead of reading as "not opted out". No opt-out had been recorded when it was found (0 of 2 settings rows), so nobody was marked against their choice. The rest of this subsection describes the function as it was.
 
 Immediately after the consent gate, the same twelve routes call `isAiOptedOutServer(user.id)` - the Children's Code AI opt-out. That function queries `prisma.privacySettings.findUnique({ where: { userId } })` ([`ai-preferences.ts:40`](../../src/lib/ai-preferences.ts)), but `PrivacySettings.userId` is a foreign key to `User.id` (a cuid: [`schema.prisma:488`](../../prisma/schema.prisma), relation at [`:497`](../../prisma/schema.prisma)), and every call site passes the Supabase uuid. `PrivacySettings` rows are created with the Prisma id ([`privacy/settings/route.ts:96`](../../src/app/api/privacy/settings/route.ts), where `user` came from `prisma.user.findUnique`). **The lookup therefore never matches and the function returns `false` for everyone**, including a child whose parent has explicitly opted them out of AI. This is the same identity-mismatch class as the five defects the identity module was built for, and this one has not been fixed. It needs `tryPrismaUserId` in front of the query, and it is the highest-value thing in this chapter that is still broken.
 
@@ -280,20 +290,21 @@ One stale reference: the header of [`school/consent/route.ts:8`](../../src/app/a
 - **Age-appropriate application (Standard 3).** `resolveAgeBand`, with unknown blocking rather than passing. Under-13s cannot self-sign-up: blocked client-side, at `/api/auth/validate-age` and again at `/api/auth/register:197`.
 - **Default settings (Standard 8).** High-privacy defaults for under-16s at signup ([`child-defaults.ts`](../../src/lib/privacy/child-defaults.ts), written by [`apply-child-defaults.ts`](../../src/lib/privacy/apply-child-defaults.ts) and by the register page's `profiles` upsert). Note the register API's call site is still a commented-out TODO at [`register/route.ts:263`](../../src/app/api/auth/register/route.ts) - the helper exists, the route does not call it, and only the browser-side path applies the defaults.
 - **Detrimental use of data (Standard 6).** Streaks, nudges, personalisation and analytics off by default for minors.
-- **Parental controls (Standard 10).** The guardian loop above, plus the AI opt-out a parent can set - which, as section 6 records, currently never takes effect on the twelve routes that read it, and is not read at all by `marking/run`.
+- **Parental controls (Standard 10).** The guardian loop above, plus the AI opt-out a parent can set, which every AI route now enforces (it never took effect before 12 October 2026; section 6).
 - **Transparency.** Refusals name a real control; the inline panel states what is sent and to whom; nothing claims a certified grade.
 
 ## 10. The short list of what is still wrong
 
 Stated plainly so nobody has to rediscover them:
 
-1. `isAiOptedOutServer` never matches a row - the parental AI opt-out does nothing (section 6).
+1. ~~`isAiOptedOutServer` never matches a row - the parental AI opt-out does nothing (section 6).~~ Fixed 12 October 2026.
 2. ~~`POST /api/marking/run` makes a model call behind no consent gate and no AI opt-out check, and logs a `consentSnapshot` claiming both passed (section 6).~~ Fixed 12 October 2026: both are checked for the pupil.
-3. OAuth and email-confirmation sign-ins never stamp `lastLoginAt`, so the dormancy cron reads them as never-logged-in (section 2).
+3. ~~OAuth and email-confirmation sign-ins never stamp `lastLoginAt`, so the dormancy cron reads them as never-logged-in (section 2).~~ Fixed 12 October 2026 for every `/auth/callback` sign-in; the mobile app and long-lived sessions still are not stamped.
 4. No `TERMS` or `PRIVACY` consent row is ever written for a new account (section 5).
 5. `applyChildDefaults` is not called from the server signup route (section 9).
 6. There is no schema-contract test asserting the `profiles` columns the identity layer selects, so the next baselined-but-unexecuted migration will fail the same silent way (section 4).
 7. The forced password-rotation flag lives in user-writable `user_metadata` (section 3).
+8. ~~Any signed-in user could UPDATE every column of their own `profiles` row from the browser, including `subscription_status` (all that paid access reads), `date_of_birth`, `is_minor` and `role`.~~ Fixed 12 October 2026 by column privileges ([`20261012_profiles_users_edit_only_their_details.sql`](../../supabase/migrations/20261012_profiles_users_edit_only_their_details.sql)): users may update `full_name`, `year_group`, `exam_board`, `updated_at` and `stripe_customer_id` only. The last stays user-writable because checkout and promo redeem write it as the user; moving those two writes to the service role and revoking it is still open.
 
 None of these is theoretical. Each one was found by reading the code against the database, which is the only method that works here: the repo's root markdown is largely April-May 2026 and several files contradict what is actually deployed. Trust the code, and verify the schema against `information_schema`.
 

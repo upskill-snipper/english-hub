@@ -1,0 +1,52 @@
+-- ─── profiles: a signed-in user may edit only their own details ─────────────
+--
+-- THE EXPOSURE (found 12 October 2026, read-only)
+--
+-- Supabase's default grants gave `authenticated` UPDATE on every column of
+-- public.profiles, and the only update policy, "Users update own profile",
+-- is USING (auth.uid() = id) with no column restriction. So any signed-in
+-- person could, from their browser's console with the public anon key, set
+-- on their own row:
+--   * subscription_status to 'pro' and ielts_status to 'active', which is
+--     exactly what resolvePaidAccess and hasIeltsAccess read
+--     (src/lib/course-access.ts): every paid AI feature, free;
+--   * date_of_birth and is_minor, which the age gate and the Children's Code
+--     defaults read, so a child could record themselves as an adult and skip
+--     the guardian step;
+--   * role, parent_guardian_email, the Qatar cross-border consent and its
+--     timestamp, and the seven high-privacy child settings.
+-- Counted read-only before writing this: 61 'pro' profiles, 59 backed by a
+-- live subscription and 2 Apple sign-ups from September with none (one whose
+-- subscription was cancelled with its period ending 5 October). Nothing
+-- suggests the hole was used, but nothing would have recorded it if it had.
+--
+-- WHAT USERS STILL WRITE (inventory of src/ on 12 October 2026; the mobile
+-- app makes no direct table writes)
+--   * the /account profile form: full_name, year_group, exam_board, updated_at
+--   * /api/stripe/checkout and /api/promo/redeem, which run as the user:
+--     stripe_customer_id
+-- Every other profiles write goes through the service role, which this does
+-- not touch, or through the SECURITY DEFINER handle_new_user() trigger.
+--
+-- Column privileges rather than a trigger: Postgres refuses an UPDATE that
+-- names a column not granted, before RLS is consulted, and there is no
+-- trigger ordering to get wrong. A column added later is not editable by
+-- users until it is granted. A new user-editable field must be granted in a
+-- migration or written server-side; the list is pinned by
+-- src/__tests__/a-user-cannot-grant-themselves-paid-access.test.ts.
+--
+-- stripe_customer_id stays user-writable until checkout and promo redeem
+-- write it through the service role (an open item): revoking it here would
+-- make both routes fail and stop anyone paying.
+--
+-- anon keeps no UPDATE at all. It had the same full grant, inert only because
+-- RLS matched no row for it.
+--
+-- Revoking a table privilege also revokes the matching column privileges, so
+-- the GRANT below is the complete list afterwards. Idempotent.
+-- ────────────────────────────────────────────────────────────────────────────
+
+REVOKE UPDATE ON public.profiles FROM anon, authenticated;
+
+GRANT UPDATE (full_name, year_group, exam_board, updated_at, stripe_customer_id)
+  ON public.profiles TO authenticated;
