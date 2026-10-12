@@ -573,9 +573,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '¿Cómo funciona la corrección de redacciones con IA?',
   },
   'mkt.teachers.ft.faq.marking.a': {
-    en: 'Students submit essays through the platform. Our AI analyses the response against the mark scheme criteria for their exam board, provides detailed written feedback, and generates a predicted grade. You review and adjust everything before the student sees it.',
-    ar: 'الطلاب يسلّمون مقالاتهم عبر المنصّة. الـ AI حقّنا يحلّل الإجابة على معايير التصحيح حق بوردهم، يعطي تغذية راجعة مكتوبة ومفصّلة، ويطلّع درجة متوقّعة. وانت تراجع وتعدّل كل شي قبل ما يشوفه الطالب.',
-    es: 'Los estudiantes envían sus redacciones a través de la plataforma. Nuestra IA analiza la respuesta frente a los criterios del esquema de calificación de su junta examinadora, ofrece comentarios escritos detallados y genera una nota prevista. Tú revisas y ajustas todo antes de que el estudiante lo vea.',
+    en: 'Students submit essays through the platform. Our AI analyses the response against the mark scheme criteria for their exam board, provides detailed written feedback, and generates a predicted grade. The student sees it straight away, labelled as AI, and you review it afterwards and can adjust the mark and the feedback.',
+    ar: 'الطلاب يسلّمون مقالاتهم عبر المنصّة. الـ AI حقّنا يحلّل الإجابة على معايير التصحيح حق بوردهم، يعطي تغذية راجعة مكتوبة ومفصّلة، ويطلّع درجة متوقّعة. الطالب يشوفها على طول ومكتوب عليها إنها من الـ AI، وانت تراجعها بعدين وتقدر تعدّل الدرجة والملاحظات.',
+    es: 'Los estudiantes envían sus redacciones a través de la plataforma. Nuestra IA analiza la respuesta frente a los criterios del esquema de calificación de su junta examinadora, ofrece comentarios escritos detallados y genera una nota prevista. El estudiante lo ve al momento, señalado como generado por IA, y tú lo revisas después y puedes ajustar la nota y los comentarios.',
   },
   'mkt.teachers.ft.faq.upgrade.q': {
     en: 'Can I upgrade to a school plan later?',

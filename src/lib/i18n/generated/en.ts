@@ -6849,7 +6849,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Every revision page is keyed to one exam board and one paper. Cambridge 0500 students never see Pearson 4ET1 mark schemes by accident, and vice versa.',
   'intl.why.li2_strong': 'AI-marked practice.',
   'intl.why.li2':
-    'Students submit essays, the AI marks against the correct board’s assessment objectives, and the teacher reviews before the student sees the feedback. Removes the bottleneck of marking 60 mock essays in a week.',
+    'Students submit essays, the AI marks against the correct board’s assessment objectives, and the student sees the feedback straight away, labelled as AI. Their teacher then reviews it and can adjust the mark. Removes the bottleneck of marking 60 mock essays in a week.',
   'intl.why.li3_strong': 'Multi-board coverage in one product.',
   'intl.why.li3':
     'Pearson Edexcel 4ET1, 4EA1, and Cambridge 0500, 0990 - covered in the same library, accessible from the same department licence.',
@@ -6938,7 +6938,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'intl.faq.q2':
     'How does AI marking handle international students whose first language isn’t English?',
   'intl.faq.a2':
-    'The AI marks against the same mark scheme criteria the board uses, so feedback focuses on assessment objectives - reading, analysis, structure, vocabulary, and accuracy - rather than on whether English is a first language. EAL students often benefit because the feedback is specific (which sentence, which AO) rather than general. Teachers always review and can adjust marks before the student sees them.',
+    'The AI marks against the same mark scheme criteria the board uses, so feedback focuses on assessment objectives - reading, analysis, structure, vocabulary, and accuracy - rather than on whether English is a first language. EAL students often benefit because the feedback is specific (which sentence, which AO) rather than general. Students see the feedback straight away, labelled as AI, and teachers review it and can adjust the mark.',
   'intl.faq.q3': 'Can we customise revision schedules for a longer or shorter academic year?',
   'intl.faq.a3':
     'Revision content is on-demand rather than tied to a fixed UK academic calendar. Department leads pick which papers, set texts, and skills to prioritise; students work through them at their own pace. Schools running a Northern Hemisphere August-June year, a Southern Hemisphere January-November year, or a split-semester model all use the same library.',
@@ -15288,7 +15288,7 @@ export const EN_MESSAGES: Record<string, string> = {
     "We support all major boards: AQA, Edexcel, OCR, WJEC Eduqas, and IGCSE/CAIE. Your school selects one exam board during setup and all content - lessons, resources, mark schemes, and AI feedback - is tailored to that board's specification. You only ever see what is relevant to your students' exams.",
   'mkt.teachers.ft.faq.marking.q': 'How does AI Essay Marking work?',
   'mkt.teachers.ft.faq.marking.a':
-    'Students submit essays through the platform. Our AI analyses the response against the mark scheme criteria for their exam board, provides detailed written feedback, and generates a predicted grade. You review and adjust everything before the student sees it.',
+    'Students submit essays through the platform. Our AI analyses the response against the mark scheme criteria for their exam board, provides detailed written feedback, and generates a predicted grade. The student sees it straight away, labelled as AI, and you review it afterwards and can adjust the mark and the feedback.',
   'mkt.teachers.ft.faq.upgrade.q': 'Can I upgrade to a school plan later?',
   'mkt.teachers.ft.faq.upgrade.a':
     'Absolutely. If you want to roll The English Hub out to your department or whole school, visit our School Plans page or email us at info@Upskillenergy.com. We can migrate your existing data and give your colleagues instant access.',

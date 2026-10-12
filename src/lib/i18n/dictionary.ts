@@ -23163,9 +23163,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Práctica corregida con IA.',
   },
   'intl.why.li2': {
-    en: 'Students submit essays, the AI marks against the correct board’s assessment objectives, and the teacher reviews before the student sees the feedback. Removes the bottleneck of marking 60 mock essays in a week.',
-    ar: 'الطلاب يرسلون مقالات، الذكاء الاصطناعي يصحح مقابل أهداف تقييم البورد الصح، والمعلم يراجع قبل الطالب يشوف الملاحظات. يشيل عنق الزجاجة لتصحيح ٦٠ مقال موك بأسبوع.',
-    es: 'Los estudiantes envían redacciones, la IA corrige según los objetivos de evaluación de la junta correcta y el profesor revisa antes de que el estudiante vea el feedback. Elimina el cuello de botella de corregir 60 redacciones de prueba en una semana.',
+    en: 'Students submit essays, the AI marks against the correct board’s assessment objectives, and the student sees the feedback straight away, labelled as AI. Their teacher then reviews it and can adjust the mark. Removes the bottleneck of marking 60 mock essays in a week.',
+    ar: 'الطلاب يرسلون مقالات، الذكاء الاصطناعي يصحح مقابل أهداف تقييم البورد الصح، والطالب يشوف الملاحظات على طول ومكتوب عليها إنها من الذكاء الاصطناعي. بعدين المعلم يراجعها ويقدر يعدّل الدرجة. يشيل عنق الزجاجة لتصحيح ٦٠ مقال موك بأسبوع.',
+    es: 'Los estudiantes envían redacciones, la IA corrige según los objetivos de evaluación de la junta correcta y el estudiante ve el feedback al momento, señalado como generado por IA. Después, el profesor lo revisa y puede ajustar la nota. Elimina el cuello de botella de corregir 60 redacciones de prueba en una semana.',
   },
   'intl.why.li3_strong': {
     en: 'Multi-board coverage in one product.',
@@ -23452,9 +23452,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Cómo gestiona la corrección con IA a los estudiantes internacionales cuya primera lengua no es el inglés?',
   },
   'intl.faq.a2': {
-    en: 'The AI marks against the same mark scheme criteria the board uses, so feedback focuses on assessment objectives - reading, analysis, structure, vocabulary, and accuracy - rather than on whether English is a first language. EAL students often benefit because the feedback is specific (which sentence, which AO) rather than general. Teachers always review and can adjust marks before the student sees them.',
-    ar: 'الذكاء الاصطناعي يصحح مقابل نفس معايير مخطط التصحيح اللي البورد يستخدمه، فالملاحظات تركّز على أهداف التقييم - قراءة، تحليل، تركيب، مفردات، ودقة - مو على هل الإنجليزية لغة أولى ولا لا. طلاب EAL عادةً يستفيدون لأن الملاحظات محدّدة (يا جملة، يا AO) مو عامة. المعلمون دايماً يراجعون ويقدرون يعدّلون الدرجات قبل الطالب يشوفها.',
-    es: 'La IA corrige según los mismos criterios del esquema de calificación que usa la junta, así que el feedback se centra en los objetivos de evaluación - lectura, análisis, estructura, vocabulario y precisión - en lugar de en si el inglés es la primera lengua. Los estudiantes de EAL suelen beneficiarse porque el feedback es específico (qué frase, qué AO) en lugar de general. Los profesores siempre revisan y pueden ajustar las notas antes de que el estudiante las vea.',
+    en: 'The AI marks against the same mark scheme criteria the board uses, so feedback focuses on assessment objectives - reading, analysis, structure, vocabulary, and accuracy - rather than on whether English is a first language. EAL students often benefit because the feedback is specific (which sentence, which AO) rather than general. Students see the feedback straight away, labelled as AI, and teachers review it and can adjust the mark.',
+    ar: 'الذكاء الاصطناعي يصحح مقابل نفس معايير مخطط التصحيح اللي البورد يستخدمه، فالملاحظات تركّز على أهداف التقييم - قراءة، تحليل، تركيب، مفردات، ودقة - مو على هل الإنجليزية لغة أولى ولا لا. طلاب EAL عادةً يستفيدون لأن الملاحظات محدّدة (يا جملة، يا AO) مو عامة. الطلاب يشوفون الملاحظات على طول ومكتوب عليها إنها من الذكاء الاصطناعي، والمعلمون يراجعونها ويقدرون يعدّلون الدرجة.',
+    es: 'La IA corrige según los mismos criterios del esquema de calificación que usa la junta, así que el feedback se centra en los objetivos de evaluación - lectura, análisis, estructura, vocabulario y precisión - en lugar de en si el inglés es la primera lengua. Los estudiantes de EAL suelen beneficiarse porque el feedback es específico (qué frase, qué AO) en lugar de general. Los estudiantes ven el feedback al momento, señalado como generado por IA, y los profesores lo revisan y pueden ajustar la nota.',
   },
   'intl.faq.q3': {
     en: 'Can we customise revision schedules for a longer or shorter academic year?',

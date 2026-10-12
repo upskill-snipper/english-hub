@@ -7017,7 +7017,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Cada página de repaso está vinculada a una junta examinadora y a un examen. Los estudiantes de Cambridge 0500 nunca ven por accidente los esquemas de calificación de Pearson 4ET1, y viceversa.',
   'intl.why.li2_strong': 'Práctica corregida con IA.',
   'intl.why.li2':
-    'Los estudiantes envían redacciones, la IA corrige según los objetivos de evaluación de la junta correcta y el profesor revisa antes de que el estudiante vea el feedback. Elimina el cuello de botella de corregir 60 redacciones de prueba en una semana.',
+    'Los estudiantes envían redacciones, la IA corrige según los objetivos de evaluación de la junta correcta y el estudiante ve el feedback al momento, señalado como generado por IA. Después, el profesor lo revisa y puede ajustar la nota. Elimina el cuello de botella de corregir 60 redacciones de prueba en una semana.',
   'intl.why.li3_strong': 'Cobertura de varias juntas en un solo producto.',
   'intl.why.li3':
     'Pearson Edexcel 4ET1, 4EA1 y Cambridge 0500, 0990 - cubiertas en la misma biblioteca, accesibles desde la misma licencia de departamento.',
@@ -7106,7 +7106,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'intl.faq.q2':
     '¿Cómo gestiona la corrección con IA a los estudiantes internacionales cuya primera lengua no es el inglés?',
   'intl.faq.a2':
-    'La IA corrige según los mismos criterios del esquema de calificación que usa la junta, así que el feedback se centra en los objetivos de evaluación - lectura, análisis, estructura, vocabulario y precisión - en lugar de en si el inglés es la primera lengua. Los estudiantes de EAL suelen beneficiarse porque el feedback es específico (qué frase, qué AO) en lugar de general. Los profesores siempre revisan y pueden ajustar las notas antes de que el estudiante las vea.',
+    'La IA corrige según los mismos criterios del esquema de calificación que usa la junta, así que el feedback se centra en los objetivos de evaluación - lectura, análisis, estructura, vocabulario y precisión - en lugar de en si el inglés es la primera lengua. Los estudiantes de EAL suelen beneficiarse porque el feedback es específico (qué frase, qué AO) en lugar de general. Los estudiantes ven el feedback al momento, señalado como generado por IA, y los profesores lo revisan y pueden ajustar la nota.',
   'intl.faq.q3':
     '¿Podemos personalizar los horarios de repaso para un año académico más largo o más corto?',
   'intl.faq.a3':
@@ -15680,7 +15680,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Damos soporte a todas las juntas principales: AQA, Edexcel, OCR, WJEC Eduqas e IGCSE/CAIE. Tu colegio selecciona una junta examinadora durante la configuración y todo el contenido (lecciones, recursos, esquemas de calificación y comentarios de IA) se adapta al temario de esa junta. Solo ves lo que es relevante para los exámenes de tus estudiantes.',
   'mkt.teachers.ft.faq.marking.q': '¿Cómo funciona la corrección de redacciones con IA?',
   'mkt.teachers.ft.faq.marking.a':
-    'Los estudiantes envían sus redacciones a través de la plataforma. Nuestra IA analiza la respuesta frente a los criterios del esquema de calificación de su junta examinadora, ofrece comentarios escritos detallados y genera una nota prevista. Tú revisas y ajustas todo antes de que el estudiante lo vea.',
+    'Los estudiantes envían sus redacciones a través de la plataforma. Nuestra IA analiza la respuesta frente a los criterios del esquema de calificación de su junta examinadora, ofrece comentarios escritos detallados y genera una nota prevista. El estudiante lo ve al momento, señalado como generado por IA, y tú lo revisas después y puedes ajustar la nota y los comentarios.',
   'mkt.teachers.ft.faq.upgrade.q': '¿Puedo pasar a un plan para colegios más adelante?',
   'mkt.teachers.ft.faq.upgrade.a':
     'Por supuesto. Si quieres implantar The English Hub en tu departamento o en todo el colegio, visita nuestra página de Planes para Colegios o escríbenos a info@Upskillenergy.com. Podemos migrar tus datos existentes y dar a tus compañeros acceso inmediato.',
