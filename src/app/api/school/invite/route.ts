@@ -2,82 +2,30 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { verifySchoolMember } from '@/lib/school-auth'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
-import { sendEmail } from '@/lib/email'
-import { displayNameFromEmail } from '@/lib/school-students'
+import {
+  inviteStaff,
+  isValidEmail,
+  normaliseEmail,
+  VALID_INVITE_ROLES,
+  type InviteRole,
+} from '@/lib/school/invite-staff'
+import { isUuid } from '@/lib/school/is-uuid'
 
 export const dynamic = 'force-dynamic'
 
-const INVITE_TTL_MS = 7 * 24 * 60 * 60 * 1000 // 7 days
-const VALID_INVITE_ROLES = ['teacher', 'head_of_department'] as const
-type InviteRole = (typeof VALID_INVITE_ROLES)[number]
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-function isValidEmail(email: string): boolean {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-}
-
-function normaliseEmail(email: string): string {
-  return email.toLowerCase().trim()
-}
-
-/**
- * Build the invite-email HTML body inline so we don't require a separate
- * template function. Mirrors the layout used across the rest of the app.
- */
-function buildInviteEmailHtml(opts: {
-  schoolName: string
-  role: string
-  inviteUrl: string
-  message?: string
-}): string {
-  const BRAND_COLOR = '#1A5276'
-  const roleLabel = opts.role === 'head_of_department' ? 'Head of Department' : 'Teacher'
-
-  const messageBlock = opts.message
-    ? `<p style="margin:0 0 16px;padding:12px 16px;background:#f4f4f4;border-left:4px solid ${BRAND_COLOR};border-radius:4px;font-style:italic;color:#555;">
-        ${opts.message.replace(/</g, '&lt;').replace(/>/g, '&gt;')}
-      </p>`
-    : ''
-
-  return `<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>School Invitation</title></head>
-<body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,Helvetica,sans-serif;color:#333;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
-    <tr><td align="center" style="padding:24px 16px;">
-      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:8px;overflow:hidden;max-width:600px;width:100%;">
-        <tr><td style="background:${BRAND_COLOR};padding:24px 32px;text-align:center;">
-          <h1 style="margin:0;color:#fff;font-size:24px;font-weight:700;">The English Hub</h1>
-        </td></tr>
-        <tr><td style="padding:32px;">
-          <h2 style="margin:0 0 8px;font-size:20px;color:#111;">You have been invited to join ${opts.schoolName}</h2>
-          <p style="margin:0 0 16px;color:#555;">You have been invited as a <strong>${roleLabel}</strong>. Click the button below to accept your invitation. The link expires in 7 days.</p>
-          ${messageBlock}
-          <div style="text-align:center;margin:24px 0;">
-            <a href="${opts.inviteUrl}" style="display:inline-block;padding:14px 28px;background:${BRAND_COLOR};color:#fff;text-decoration:none;border-radius:6px;font-weight:700;font-size:16px;">
-              Accept Invitation
-            </a>
-          </div>
-          <p style="margin:16px 0 0;font-size:13px;color:#888;text-align:center;">
-            Or copy this link: <a href="${opts.inviteUrl}" style="color:${BRAND_COLOR};">${opts.inviteUrl}</a>
-          </p>
-          <hr style="margin:24px 0;border:none;border-top:1px solid #eee;"/>
-          <p style="margin:0;font-size:12px;color:#aaa;text-align:center;">
-            If you were not expecting this invitation, you can safely ignore this email.
-          </p>
-        </td></tr>
-      </table>
-    </td></tr>
-  </table>
-</body>
-</html>`
-}
-
 // ---------------------------------------------------------------------------
 // POST /api/school/invite
+//
+// A school administrator invites staff to their own school. The invitation
+// logic lives in src/lib/school/invite-staff.ts (12 October 2026), shared with
+// the operator's setup page; this route keeps its auth, rate limit, request
+// checks and response shape: `{ sent, alreadyMembers, errors }`.
+//
+// What changed with the move, as the school sees it:
+//   - someone already accepted at ANOTHER school is not invited, and is listed
+//     in `errors` (one person in two schools breaks the portal for both);
+//   - an invitation whose email could not be sent is listed in `errors`
+//     instead of being counted as sent.
 // ---------------------------------------------------------------------------
 
 export async function POST(request: NextRequest) {
@@ -170,138 +118,67 @@ export async function POST(request: NextRequest) {
     // Deduplicate
     const uniqueEmails = [...new Set(emails)]
 
-    const admin = createServiceRoleClient()
-    const schoolName = (actor.schools as unknown as { name: string } | null)?.name ?? 'your school'
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://theenglishhub.app'
+    // A site administrator's synthetic membership has no real school to
+    // invite anyone into; the operator invites staff from /admin/schools.
+    if (!isUuid(actor.school_id)) {
+      return NextResponse.json(
+        {
+          error:
+            'This account is not attached to a school. A site administrator invites staff from /admin/schools.',
+        },
+        { status: 422 },
+      )
+    }
 
+    const schoolName = (actor.schools as unknown as { name: string } | null)?.name ?? 'your school'
+
+    const results = await inviteStaff({
+      admin: createServiceRoleClient(),
+      school: { id: actor.school_id, name: schoolName },
+      invitees: uniqueEmails.map((email) => ({ email, role })),
+      message: rawMessage,
+    })
+
+    // The route's response, as before. `alreadyMembers` has always counted
+    // an existing account added straight in, as well as a current member.
     let sent = 0
     let alreadyMembers = 0
     const errors: { email: string; reason: string }[] = []
-
-    for (const email of uniqueEmails) {
-      try {
-        // Check if there's already a member record for this email in the school
-        const { data: existingMember } = await admin
-          .from('school_members')
-          .select('id, invite_status, user_id')
-          .eq('school_id', actor.school_id)
-          .eq('email', email)
-          .maybeSingle()
-
-        if (existingMember) {
-          if (existingMember.invite_status === 'accepted') {
-            alreadyMembers++
-            continue
-          }
-          // Has a pending/expired invite - re-issue a fresh token rather than erroring
-          const newToken = crypto.randomUUID()
-          const expiresAt = new Date(Date.now() + INVITE_TTL_MS).toISOString()
-          await admin
-            .from('school_members')
-            .update({
-              invite_token: newToken,
-              invite_expires_at: expiresAt,
-              invite_status: 'pending',
-              role,
+    for (const r of results) {
+      switch (r.outcome) {
+        case 'invited':
+        case 'reinvited':
+          if (r.emailSent) sent++
+          else
+            errors.push({
+              email: r.email,
+              reason:
+                'The invitation was saved, but its email could not be sent. Invite them again to re-send it.',
             })
-            .eq('id', existingMember.id)
-
-          const inviteUrl = `${appUrl}/school/invite/${newToken}`
-          await sendEmail(
-            email,
-            `You have been invited to join ${schoolName} on The English Hub`,
-            buildInviteEmailHtml({ schoolName, role, inviteUrl, message: rawMessage }),
-          )
-          sent++
-          continue
-        }
-
-        // Check if the email belongs to an existing Supabase auth user
-        const { data: existingProfile } = await admin
-          .from('profiles')
-          .select('id, full_name')
-          .eq('email', email)
-          .maybeSingle()
-
-        if (existingProfile) {
-          // User already has an account - add directly as accepted member.
-          // full_name must be supplied: the column predates the 20260818
-          // migration on most rows and a name is expected everywhere the
-          // member is displayed. Prefer the profile's real name, fall back
-          // to a name derived from the email local-part.
-          const { error: insertError } = await admin.from('school_members').insert({
-            school_id: actor.school_id,
-            user_id: existingProfile.id,
-            role,
-            full_name: existingProfile.full_name ?? displayNameFromEmail(email),
-            email,
-            invite_status: 'accepted',
-            invite_token: null,
-            invite_expires_at: null,
-            last_active_at: new Date().toISOString(),
-          })
-
-          if (insertError) {
-            console.error(`[invite] Failed to add existing user ${email}:`, insertError)
-            errors.push({ email, reason: 'Failed to add to school' })
-            continue
-          }
-
-          // Notify them that they have been added
-          await sendEmail(
-            email,
-            `You have been added to ${schoolName} on The English Hub`,
-            buildInviteEmailHtml({
-              schoolName,
-              role,
-              inviteUrl: `${appUrl}/school`,
-              message: rawMessage,
-            }),
-          )
+          break
+        case 'added_existing':
           alreadyMembers++
-          continue
-        }
-
-        // New user - create a pending invite with a UUID token
-        const inviteToken = crypto.randomUUID()
-        const inviteExpiresAt = new Date(Date.now() + INVITE_TTL_MS).toISOString()
-
-        // full_name is derived from the email local-part because it is all
-        // we know about the invitee at this point; the acceptance flow can
-        // overwrite it with their real name once they sign up.
-        const { error: insertError } = await admin.from('school_members').insert({
-          school_id: actor.school_id,
-          user_id: null,
-          role,
-          full_name: displayNameFromEmail(email),
-          email,
-          invite_status: 'pending',
-          invite_token: inviteToken,
-          invite_expires_at: inviteExpiresAt,
-        })
-
-        if (insertError) {
-          console.error(`[invite] Failed to insert pending invite for ${email}:`, insertError)
-          errors.push({ email, reason: 'Failed to create invite record' })
-          continue
-        }
-
-        const inviteUrl = `${appUrl}/school/invite/${inviteToken}`
-        const emailResult = await sendEmail(
-          email,
-          `You have been invited to join ${schoolName} on The English Hub`,
-          buildInviteEmailHtml({ schoolName, role, inviteUrl, message: rawMessage }),
-        )
-
-        if (!emailResult.success) {
-          console.warn(`[invite] Email delivery failed for ${email}: ${emailResult.error}`)
-          // The record was created successfully; don't block on email failures
-        }
-
-        sent++
-      } catch (err) {
-        console.error(`[invite] Unexpected error for ${email}:`, err)
-        errors.push({ email, reason: 'Unexpected error' })
+          if (r.emailSent === false) {
+            errors.push({
+              email: r.email,
+              reason: 'Added to the school, but the email telling them could not be sent.',
+            })
+          }
+          break
+        case 'already_member':
+          alreadyMembers++
+          break
+        case 'other_school':
+          // The other school is not named: that is another school's data.
+          errors.push({
+            email: r.email,
+            reason:
+              'Already a member of another school on The English Hub, so not invited. One person cannot belong to two schools.',
+          })
+          break
+        case 'failed':
+          errors.push({ email: r.email, reason: r.reason ?? 'Unexpected error' })
+          break
       }
     }
 
